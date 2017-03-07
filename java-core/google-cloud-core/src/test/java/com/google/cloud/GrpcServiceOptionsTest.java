@@ -43,18 +43,8 @@ public class GrpcServiceOptionsTest {
       .setMaxTimeout(5678)
       .setExecutorFactory(MOCK_EXECUTOR_FACTORY)
       .build();
-  private static final TestGrpcServiceOptions DEPRECATED_OPTIONS =
-      TestGrpcServiceOptions.newBuilder()
-          .projectId("project-id")
-          .initialTimeout(1234)
-          .timeoutMultiplier(1.6)
-          .maxTimeout(5678)
-          .executorFactory(MOCK_EXECUTOR_FACTORY)
-          .build();
   private static final TestGrpcServiceOptions DEFAULT_OPTIONS =
       TestGrpcServiceOptions.newBuilder().setProjectId("project-id").build();
-  private static final TestGrpcServiceOptions DEPRECATED_DEFAULT_OPTIONS =
-      TestGrpcServiceOptions.newBuilder().projectId("project-id").build();
   private static final TestGrpcServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
 
   private interface TestService extends Service<TestGrpcServiceOptions> {}
@@ -162,18 +152,6 @@ public class GrpcServiceOptionsTest {
     assertEquals(1.5, DEFAULT_OPTIONS.getTimeoutMultiplier(), 0.0);
     assertEquals(100000, DEFAULT_OPTIONS.getMaxTimeout());
     assertTrue(DEFAULT_OPTIONS.getExecutorFactory() instanceof DefaultExecutorFactory);
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(1234, DEPRECATED_OPTIONS.initialTimeout());
-    assertEquals(1.6, DEPRECATED_OPTIONS.timeoutMultiplier(), 0.0);
-    assertEquals(5678, DEPRECATED_OPTIONS.maxTimeout());
-    assertSame(MOCK_EXECUTOR_FACTORY, DEPRECATED_OPTIONS.executorFactory());
-    assertEquals(20000, DEPRECATED_DEFAULT_OPTIONS.initialTimeout());
-    assertEquals(1.5, DEPRECATED_DEFAULT_OPTIONS.timeoutMultiplier(), 0.0);
-    assertEquals(100000, DEPRECATED_DEFAULT_OPTIONS.maxTimeout());
-    assertTrue(DEPRECATED_DEFAULT_OPTIONS.executorFactory() instanceof DefaultExecutorFactory);
   }
 
   @Test
