@@ -66,7 +66,6 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
-import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 
 public class DefaultLoggingRpc implements LoggingRpc {
@@ -147,7 +146,7 @@ public class DefaultLoggingRpc implements LoggingRpc {
     }
   }
 
-  private static <V> Future<V> translate(
+  private static <V> ApiFuture<V> translate(
       ApiFuture<V> from, final boolean idempotent, Code... returnNullOn) {
     final Set<Code> returnNullOnSet;
     if (returnNullOn.length > 0) {
@@ -170,75 +169,75 @@ public class DefaultLoggingRpc implements LoggingRpc {
   }
 
   @Override
-  public Future<LogSink> create(CreateSinkRequest request) {
+  public ApiFuture<LogSink> create(CreateSinkRequest request) {
     return translate(configClient.createSinkCallable().futureCall(request), true);
   }
 
   @Override
-  public Future<LogSink> update(UpdateSinkRequest request) {
+  public ApiFuture<LogSink> update(UpdateSinkRequest request) {
     return translate(configClient.updateSinkCallable().futureCall(request), true);
   }
 
   @Override
-  public Future<LogSink> get(GetSinkRequest request) {
+  public ApiFuture<LogSink> get(GetSinkRequest request) {
     return translate(configClient.getSinkCallable().futureCall(request), true, Code.NOT_FOUND);
   }
 
   @Override
-  public Future<ListSinksResponse> list(ListSinksRequest request) {
+  public ApiFuture<ListSinksResponse> list(ListSinksRequest request) {
     return translate(configClient.listSinksCallable().futureCall(request), true);
   }
 
   @Override
-  public Future<Empty> delete(DeleteSinkRequest request) {
+  public ApiFuture<Empty> delete(DeleteSinkRequest request) {
     return translate(configClient.deleteSinkCallable().futureCall(request), true, Code.NOT_FOUND);
   }
 
   @Override
-  public Future<Empty> delete(DeleteLogRequest request) {
+  public ApiFuture<Empty> delete(DeleteLogRequest request) {
     return translate(loggingClient.deleteLogCallable().futureCall(request), true, Code.NOT_FOUND);
   }
 
   @Override
-  public Future<WriteLogEntriesResponse> write(WriteLogEntriesRequest request) {
+  public ApiFuture<WriteLogEntriesResponse> write(WriteLogEntriesRequest request) {
     return translate(loggingClient.writeLogEntriesCallable().futureCall(request), false);
   }
 
   @Override
-  public Future<ListLogEntriesResponse> list(ListLogEntriesRequest request) {
+  public ApiFuture<ListLogEntriesResponse> list(ListLogEntriesRequest request) {
     return translate(loggingClient.listLogEntriesCallable().futureCall(request), true);
   }
 
   @Override
-  public Future<ListMonitoredResourceDescriptorsResponse> list(
+  public ApiFuture<ListMonitoredResourceDescriptorsResponse> list(
       ListMonitoredResourceDescriptorsRequest request) {
     return translate(loggingClient.listMonitoredResourceDescriptorsCallable().futureCall(request),
         true);
   }
 
   @Override
-  public Future<LogMetric> create(CreateLogMetricRequest request) {
+  public ApiFuture<LogMetric> create(CreateLogMetricRequest request) {
     return translate(metricsClient.createLogMetricCallable().futureCall(request), true);
   }
 
   @Override
-  public Future<LogMetric> update(UpdateLogMetricRequest request) {
+  public ApiFuture<LogMetric> update(UpdateLogMetricRequest request) {
     return translate(metricsClient.updateLogMetricCallable().futureCall(request), true);
   }
 
   @Override
-  public Future<LogMetric> get(GetLogMetricRequest request) {
+  public ApiFuture<LogMetric> get(GetLogMetricRequest request) {
     return translate(
         metricsClient.getLogMetricCallable().futureCall(request), true, Code.NOT_FOUND);
   }
 
   @Override
-  public Future<ListLogMetricsResponse> list(ListLogMetricsRequest request) {
+  public ApiFuture<ListLogMetricsResponse> list(ListLogMetricsRequest request) {
     return translate(metricsClient.listLogMetricsCallable().futureCall(request), true);
   }
 
   @Override
-  public Future<Empty> delete(DeleteLogMetricRequest request) {
+  public ApiFuture<Empty> delete(DeleteLogMetricRequest request) {
     return translate(
         metricsClient.deleteLogMetricCallable().futureCall(request), true, Code.NOT_FOUND);
   }

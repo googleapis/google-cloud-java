@@ -16,6 +16,7 @@
 
 package com.google.cloud.logging.spi;
 
+import com.google.api.gax.core.ApiFuture;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
@@ -39,130 +40,128 @@ import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
 
-import java.util.concurrent.Future;
-
 public interface LoggingRpc extends AutoCloseable {
 
   /**
-   * Sends a request to create a sink. This method returns a {@code Future} object to consume the
-   * result. {@link Future#get()} returns the created sink.
+   * Sends a request to create a sink. This method returns a {@code ApiFuture} object to consume the
+   * result. {@link ApiFuture#get()} returns the created sink.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<LogSink> create(CreateSinkRequest request);
+  ApiFuture<LogSink> create(CreateSinkRequest request);
 
   /**
    * Sends a request to update a sink. If the sink does not exist, it is created. This method
-   * returns a {@code Future} object to consume the result. {@link Future#get()} returns the updated
+   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the updated
    * or created sink.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<LogSink> update(UpdateSinkRequest request);
+  ApiFuture<LogSink> update(UpdateSinkRequest request);
 
   /**
-   * Sends a request to get a sink. This method returns a {@code Future} object to consume the
-   * result. {@link Future#get()} returns the requested sink or {@code null} if not found.
+   * Sends a request to get a sink. This method returns a {@code ApiFuture} object to consume the
+   * result. {@link ApiFuture#get()} returns the requested sink or {@code null} if not found.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<LogSink> get(GetSinkRequest request);
+  ApiFuture<LogSink> get(GetSinkRequest request);
 
   /**
-   * Sends a request to list the sinks in a project. This method returns a {@code Future} object to
-   * consume the result. {@link Future#get()} returns a response object containing the listing
+   * Sends a request to list the sinks in a project. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns a response object containing the listing
    * result.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<ListSinksResponse> list(ListSinksRequest request);
+  ApiFuture<ListSinksResponse> list(ListSinksRequest request);
 
   /**
-   * Sends a request to delete a sink. This method returns a {@code Future} object to consume the
-   * result. {@link Future#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if the
+   * Sends a request to delete a sink. This method returns a {@code ApiFuture} object to consume the
+   * result. {@link ApiFuture#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if the
    * sink was not found.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<Empty> delete(DeleteSinkRequest request);
+  ApiFuture<Empty> delete(DeleteSinkRequest request);
 
   /**
-   * Sends a request to deletes a log. This method returns a {@code Future} object to consume the
-   * result. {@link Future#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if the
+   * Sends a request to deletes a log. This method returns a {@code ApiFuture} object to consume the
+   * result. {@link ApiFuture#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if the
    * log was not found. The deleted log will reappear if it receives new log entries.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<Empty> delete(DeleteLogRequest request);
+  ApiFuture<Empty> delete(DeleteLogRequest request);
 
   /**
    * Sends a request to write log entries to Stackdriver Logging. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a response object for
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a response object for
    * the write operation.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<WriteLogEntriesResponse> write(WriteLogEntriesRequest request);
+  ApiFuture<WriteLogEntriesResponse> write(WriteLogEntriesRequest request);
 
   /**
    * Sends a request to list log entries. Use this method to retrieve log entries from Cloud
-   * Logging. This method returns a {@code Future} object to consume the result.
-   * {@link Future#get()} returns a response object containing the listing result.
+   * Logging. This method returns a {@code ApiFuture} object to consume the result.
+   * {@link ApiFuture#get()} returns a response object containing the listing result.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<ListLogEntriesResponse> list(ListLogEntriesRequest request);
+  ApiFuture<ListLogEntriesResponse> list(ListLogEntriesRequest request);
 
   /**
-   * Sends a request to list monitored resource descriptors. This method returns a {@code Future}
-   * object to consume the result. {@link Future#get()} returns a response object containing the
+   * Sends a request to list monitored resource descriptors. This method returns a {@code ApiFuture}
+   * object to consume the result. {@link ApiFuture#get()} returns a response object containing the
    * listing result.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<ListMonitoredResourceDescriptorsResponse> list(
+  ApiFuture<ListMonitoredResourceDescriptorsResponse> list(
       ListMonitoredResourceDescriptorsRequest request);
 
   /**
-   * Sends a request to create a log metric. This method returns a {@code Future} object to consume
-   * the result. {@link Future#get()} returns the created metric.
+   * Sends a request to create a log metric. This method returns a {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns the created metric.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<LogMetric> create(CreateLogMetricRequest request);
+  ApiFuture<LogMetric> create(CreateLogMetricRequest request);
 
   /**
    * Sends a request to update a log metric. If the log metric does not exist, it is created. This
-   * method returns a {@code Future} object to consume the result. {@link Future#get()} returns the
+   * method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
    * updated or created log metric.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<LogMetric> update(UpdateLogMetricRequest request);
+  ApiFuture<LogMetric> update(UpdateLogMetricRequest request);
 
   /**
-   * Sends a request to get a log metric. This method returns a {@code Future} object to consume the
-   * result. {@link Future#get()} returns the requested log metric or {@code null} if not found.
+   * Sends a request to get a log metric. This method returns a {@code ApiFuture} object to consume the
+   * result. {@link ApiFuture#get()} returns the requested log metric or {@code null} if not found.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<LogMetric> get(GetLogMetricRequest request);
+  ApiFuture<LogMetric> get(GetLogMetricRequest request);
 
   /**
-   * Sends a request to list the log metrics in a project. This method returns a {@code Future}
-   * object to consume the result. {@link Future#get()} returns a response object containing the
+   * Sends a request to list the log metrics in a project. This method returns a {@code ApiFuture}
+   * object to consume the result. {@link ApiFuture#get()} returns a response object containing the
    * listing result.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<ListLogMetricsResponse> list(ListLogMetricsRequest request);
+  ApiFuture<ListLogMetricsResponse> list(ListLogMetricsRequest request);
 
   /**
-   * Sends a request to delete a log metric. This method returns a {@code Future} object to consume
-   * the result. {@link Future#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if
+   * Sends a request to delete a log metric. This method returns a {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if
    * the log was not found.
    *
    * @param request the request object containing all of the parameters for the API call
    */
-  Future<Empty> delete(DeleteLogMetricRequest request);
+  ApiFuture<Empty> delete(DeleteLogMetricRequest request);
 }
