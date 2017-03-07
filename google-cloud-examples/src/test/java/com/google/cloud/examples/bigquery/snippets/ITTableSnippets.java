@@ -40,6 +40,7 @@ import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.base.Function;
 import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
