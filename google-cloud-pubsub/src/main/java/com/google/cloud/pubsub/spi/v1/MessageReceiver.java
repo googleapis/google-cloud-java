@@ -27,7 +27,7 @@ public interface MessageReceiver {
    * <p>This {@code MessageReceiver} passes all messages to a {@code BlockingQueue}.
    * This method can be called concurrently from multiple threads,
    * so it is important that the queue be thread-safe.
-   * 
+   *
    * This example is for illustration. Implementations may directly process messages
    * instead of sending them to queues.
    * <pre> {@code

@@ -44,12 +44,6 @@ import java.util.concurrent.Future;
  */
 public interface AsyncPage<T> extends Page<T> {
 
-  /**
-   * Returns a {@link Future} object for the next page. {@link Future#get()} returns {@code null} if
-   * the last page has been reached.
-   */
-  @Deprecated
-  Future<AsyncPage<T>> nextPageAsync();
 
   /**
    * Returns a {@link Future} object for the next page. {@link Future#get()} returns {@code null} if

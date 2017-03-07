@@ -177,13 +177,6 @@ public final class RecordSet implements Serializable {
       return this;
     }
 
-    /**
-     * Replaces the current records with the provided list of records.
-     */
-    @Deprecated
-    public Builder records(List<String> records) {
-      return setRecords(records);
-    }
 
     /**
      * Replaces the current records with the provided list of records.
@@ -193,13 +186,6 @@ public final class RecordSet implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the name for this record set. For example, www.example.com.
-     */
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     /**
      * Sets the name for this record set. For example, www.example.com.
@@ -209,17 +195,6 @@ public final class RecordSet implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the time that this record can be cached by resolvers. This number must be non-negative.
-     * The maximum duration must be equivalent to at most {@link Integer#MAX_VALUE} seconds.
-     *
-     * @param duration A non-negative number of time units
-     * @param unit The unit of the ttl parameter
-     */
-    @Deprecated
-    public Builder ttl(int duration, TimeUnit unit) {
-      return setTtl(duration, unit);
-    }
 
     /**
      * Sets the time that this record can be cached by resolvers. This number must be non-negative.
@@ -238,13 +213,6 @@ public final class RecordSet implements Serializable {
       return this;
     }
 
-    /**
-     * The identifier of a supported record type, for example, A, AAAA, MX, TXT, and so on.
-     */
-    @Deprecated
-    public Builder type(Type type) {
-      return setType(type);
-    }
 
     /**
      * The identifier of a supported record type, for example, A, AAAA, MX, TXT, and so on.
@@ -276,13 +244,6 @@ public final class RecordSet implements Serializable {
     return new Builder(this);
   }
 
-  /**
-   * Creates a {@code RecordSet} builder for the given {@code name} and {@code type}.
-   */
-  @Deprecated
-  public static Builder builder(String name, Type type) {
-    return newBuilder(name, type);
-  }
 
   /**
    * Creates a {@code RecordSet} builder for the given {@code name} and {@code type}.
@@ -291,13 +252,6 @@ public final class RecordSet implements Serializable {
     return new Builder(name, type);
   }
 
-  /**
-   * Returns the user-assigned name of this record set.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Returns the user-assigned name of this record set.
@@ -306,13 +260,6 @@ public final class RecordSet implements Serializable {
     return name;
   }
 
-  /**
-   * Returns a list of records stored in this record set.
-   */
-  @Deprecated
-  public List<String> records() {
-    return getRecords();
-  }
 
   /**
    * Returns a list of records stored in this record set.
@@ -321,13 +268,6 @@ public final class RecordSet implements Serializable {
     return rrdatas;
   }
 
-  /**
-   * Returns the number of seconds that this record set can be cached by resolvers.
-   */
-  @Deprecated
-  public Integer ttl() {
-    return getTtl();
-  }
 
   /**
    * Returns the number of seconds that this record set can be cached by resolvers.
@@ -336,13 +276,6 @@ public final class RecordSet implements Serializable {
     return ttl;
   }
 
-  /**
-   * Returns the type of this record set.
-   */
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
 
   /**
    * Returns the type of this record set.

@@ -50,14 +50,6 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
       return this;
     }
 
-    /**
-     * Sets the query's projection clause (clearing any previously specified Projection settings).
-     */
-    @Override
-    @Deprecated
-    public Builder projection(String projection, String... others) {
-      return setProjection(projection, others);
-    }
 
     /**
      * Sets the query's projection clause (clearing any previously specified Projection settings).
@@ -86,14 +78,6 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
       return this;
     }
 
-    /**
-     * Sets the query's distinct on clause (clearing any previously specified distinct on settings).
-     */
-    @Override
-    @Deprecated
-    public Builder distinctOn(String property, String... others) {
-      return setDistinctOn(property, others);
-    }
 
     /**
      * Sets the query's distinct on clause (clearing any previously specified distinct on settings).

@@ -82,20 +82,6 @@ public class MetricTest {
     assertSame(serviceMockReturnsOptions, builtMetric.getLogging());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedMetric(2);
-    replay(logging);
-    Metric builtMetric = expectedMetric.toBuilder()
-        .name(NEW_NAME)
-        .filter(NEW_FILTER)
-        .description(NEW_DESCRIPTION)
-        .build();
-    assertEquals(NEW_NAME, builtMetric.name());
-    assertEquals(NEW_DESCRIPTION, builtMetric.description());
-    assertEquals(NEW_FILTER, builtMetric.filter());
-    assertSame(serviceMockReturnsOptions, builtMetric.logging());
-  }
 
   @Test
   public void testToBuilder() {

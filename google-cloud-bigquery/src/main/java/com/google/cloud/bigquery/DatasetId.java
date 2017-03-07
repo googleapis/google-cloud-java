@@ -33,13 +33,6 @@ public final class DatasetId implements Serializable {
   private final String project;
   private final String dataset;
 
-  /**
-   * Returns project's user-defined id.
-   */
-  @Deprecated
-  public String project() {
-    return getProject();
-  }
 
   /**
    * Returns project's user-defined id.
@@ -48,13 +41,6 @@ public final class DatasetId implements Serializable {
     return project;
   }
 
-  /**
-   * Returns dataset's user-defined id.
-   */
-  @Deprecated
-  public String dataset() {
-    return getDataset();
-  }
 
   /**
    * Returns dataset's user-defined id.

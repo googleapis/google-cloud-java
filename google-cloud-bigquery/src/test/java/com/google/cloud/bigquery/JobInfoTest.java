@@ -199,46 +199,6 @@ public class JobInfoTest {
       .setUserEmail(EMAIL)
       .setStatus(JOB_STATUS)
       .build();
-  private static final JobInfo DEPRECATED_COPY_JOB = JobInfo.builder(COPY_CONFIGURATION)
-      .jobId(JOB_ID)
-      .setStatistics(COPY_JOB_STATISTICS)
-      .jobId(JOB_ID)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setSelfLink(SELF_LINK)
-      .setUserEmail(EMAIL)
-      .setStatus(JOB_STATUS)
-      .build();
-  private static final JobInfo DEPRECATED_EXTRACT_JOB = JobInfo.builder(EXTRACT_CONFIGURATION)
-      .jobId(JOB_ID)
-      .setStatistics(EXTRACT_JOB_STATISTICS)
-      .jobId(JOB_ID)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setSelfLink(SELF_LINK)
-      .setUserEmail(EMAIL)
-      .setStatus(JOB_STATUS)
-      .build();
-  private static final JobInfo DEPRECATED_LOAD_JOB = JobInfo.builder(LOAD_CONFIGURATION)
-      .jobId(JOB_ID)
-      .setStatistics(LOAD_JOB_STATISTICS)
-      .jobId(JOB_ID)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setSelfLink(SELF_LINK)
-      .setUserEmail(EMAIL)
-      .setStatus(JOB_STATUS)
-      .build();
-  private static final JobInfo DEPRECATED_QUERY_JOB = JobInfo.builder(QUERY_CONFIGURATION)
-      .jobId(JOB_ID)
-      .setStatistics(QUERY_JOB_STATISTICS)
-      .jobId(JOB_ID)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setSelfLink(SELF_LINK)
-      .setUserEmail(EMAIL)
-      .setStatus(JOB_STATUS)
-      .build();
 
   @Test
   public void testToBuilder() {
@@ -339,45 +299,6 @@ public class JobInfoTest {
     assertEquals(JOB_STATUS, QUERY_JOB.getStatus());
     assertEquals(QUERY_CONFIGURATION, QUERY_JOB.getConfiguration());
     assertEquals(QUERY_JOB_STATISTICS, QUERY_JOB.getStatistics());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(ETAG, DEPRECATED_COPY_JOB.etag());
-    assertEquals(GENERATED_ID, DEPRECATED_COPY_JOB.generatedId());
-    assertEquals(SELF_LINK, DEPRECATED_COPY_JOB.selfLink());
-    assertEquals(EMAIL, DEPRECATED_COPY_JOB.userEmail());
-    assertEquals(JOB_ID, DEPRECATED_COPY_JOB.jobId());
-    assertEquals(JOB_STATUS, DEPRECATED_COPY_JOB.status());
-    assertEquals(COPY_CONFIGURATION, DEPRECATED_COPY_JOB.configuration());
-    assertEquals(COPY_JOB_STATISTICS, DEPRECATED_COPY_JOB.statistics());
-
-    assertEquals(ETAG, DEPRECATED_EXTRACT_JOB.etag());
-    assertEquals(GENERATED_ID, DEPRECATED_EXTRACT_JOB.generatedId());
-    assertEquals(SELF_LINK, DEPRECATED_EXTRACT_JOB.selfLink());
-    assertEquals(EMAIL, DEPRECATED_EXTRACT_JOB.userEmail());
-    assertEquals(JOB_ID, DEPRECATED_EXTRACT_JOB.jobId());
-    assertEquals(JOB_STATUS, DEPRECATED_EXTRACT_JOB.status());
-    assertEquals(EXTRACT_CONFIGURATION, DEPRECATED_EXTRACT_JOB.configuration());
-    assertEquals(EXTRACT_JOB_STATISTICS, DEPRECATED_EXTRACT_JOB.statistics());
-
-    assertEquals(ETAG, DEPRECATED_LOAD_JOB.etag());
-    assertEquals(GENERATED_ID, DEPRECATED_LOAD_JOB.generatedId());
-    assertEquals(SELF_LINK, DEPRECATED_LOAD_JOB.selfLink());
-    assertEquals(EMAIL, DEPRECATED_LOAD_JOB.userEmail());
-    assertEquals(JOB_ID, DEPRECATED_LOAD_JOB.jobId());
-    assertEquals(JOB_STATUS, DEPRECATED_LOAD_JOB.status());
-    assertEquals(LOAD_CONFIGURATION, DEPRECATED_LOAD_JOB.configuration());
-    assertEquals(LOAD_JOB_STATISTICS, DEPRECATED_LOAD_JOB.statistics());
-
-    assertEquals(ETAG, DEPRECATED_QUERY_JOB.etag());
-    assertEquals(GENERATED_ID, DEPRECATED_QUERY_JOB.generatedId());
-    assertEquals(SELF_LINK, DEPRECATED_QUERY_JOB.selfLink());
-    assertEquals(EMAIL, DEPRECATED_QUERY_JOB.userEmail());
-    assertEquals(JOB_ID, DEPRECATED_QUERY_JOB.jobId());
-    assertEquals(JOB_STATUS, DEPRECATED_QUERY_JOB.status());
-    assertEquals(QUERY_CONFIGURATION, DEPRECATED_QUERY_JOB.configuration());
-    assertEquals(QUERY_JOB_STATISTICS, DEPRECATED_QUERY_JOB.statistics());
   }
 
   @Test

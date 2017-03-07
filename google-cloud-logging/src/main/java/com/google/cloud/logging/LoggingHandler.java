@@ -56,8 +56,8 @@ import java.util.logging.SimpleFormatter;
  *
  * <p>Original Java logging levels are added as labels (with {@code levelName} and
  * {@code levelValue} keys, respectively) to the corresponding Stackdriver Logging {@link LogEntry}.
- * You can read entry labels using {@link LogEntry#labels()}. To use logging levels that correspond
- * to Stackdriver Logging severities you can use {@link LoggingLevel}.
+ * You can read entry labels using {@link LogEntry#getLabels()}. To use logging levels that
+ * correspond to Stackdriver Logging severities you can use {@link LoggingLevel}.
  *
  * <p><b>Configuration</b>: By default each {@code LoggingHandler} is initialized using the
  * following {@code LogManager} configuration properties (that you can set in the
@@ -81,7 +81,7 @@ import java.util.logging.SimpleFormatter;
  * <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
  *     of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds
  *     a {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
- * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when 
+ * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
  *     creating the default {@link MonitoredResource} (defaults to "global").
  * </ul>
  *
@@ -139,7 +139,7 @@ public class LoggingHandler extends Handler {
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
-   * @param monitoredResource the monitored resource to which log entries refer. If it is null 
+   * @param monitoredResource the monitored resource to which log entries refer. If it is null
    * then a default resource is created based on the project ID. When creating a default resource, if
    * any {@link Enhancer} instances are configured and then each
    * {@link Enhancer#enhanceMonitoredResource(com.google.cloud.MonitoredResource.Builder)} method
@@ -148,13 +148,13 @@ public class LoggingHandler extends Handler {
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource) {
     this(log, options, monitoredResource,null);
   }
-  
+
   /**
    * Creates a handler that publishes messages to Stackdriver Logging.
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
-   * @param monitoredResource the monitored resource to which log entries refer. If it is null 
+   * @param monitoredResource the monitored resource to which log entries refer. If it is null
    * then a default resource is created based on the project ID. When creating a default resource, if
    * any {@link Enhancer} instances are configured and then each
    * {@link Enhancer#enhanceMonitoredResource(com.google.cloud.MonitoredResource.Builder)} method
@@ -220,7 +220,7 @@ public class LoggingHandler extends Handler {
     for (Enhancer enhancer : enhancers) {
       enhancer.enhanceMonitoredResource(builder);
     }
-    return builder.build();    
+    return builder.build();
   }
 
   private static class LogConfigHelper {
@@ -278,16 +278,16 @@ public class LoggingHandler extends Handler {
       }
       return defaultValue;
     }
-    
+
     List<Enhancer> getEnhancerProperty(String name) {
       String list = manager.getProperty(name);
       try {
         List<Enhancer> enhancers = new ArrayList<>();
         if (list != null) {
           String[] items = list.split(",");
-          for (String e_name : items) { 
+          for (String e_name : items) {
             Class<? extends Enhancer> clz = (Class<? extends Enhancer>) ClassLoader.getSystemClassLoader().loadClass(e_name);
-            enhancers.add((Enhancer) clz.newInstance());
+            enhancers.add(clz.newInstance());
           }
         }
         return enhancers;
@@ -372,17 +372,17 @@ public class LoggingHandler extends Handler {
       enhanceLogEntry(builder, record);
       return builder.build();
     } catch (Exception ex) {
-      // Formatting or enhancing can fail but we should not throw an exception, 
+      // Formatting or enhancing can fail but we should not throw an exception,
       // we report the error instead
       reportError(null, ex, ErrorManager.FORMAT_FAILURE);
       return null;
     }
   }
-  
+
   @Deprecated
   protected void enhanceLogEntry(LogEntry.Builder builder, LogRecord record) {
   }
-  
+
   private static Severity severityFor(Level level) {
     if (level instanceof LoggingLevel) {
       return ((LoggingLevel) level).getSeverity();
@@ -494,7 +494,7 @@ public class LoggingHandler extends Handler {
   public static void addHandler(Logger logger, LoggingHandler handler) {
     logger.addHandler(handler);
   }
-  
+
   /**
    * A Log Enhancer.
    * May be used to enhance the {@link MonitoredResource} and/or the {@link LogEntry}

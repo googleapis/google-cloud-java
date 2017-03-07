@@ -69,13 +69,6 @@ public final class Blob implements Serializable {
     return obj == this || obj instanceof Blob && byteString.equals(((Blob) obj).byteString);
   }
 
-  /**
-   * Returns the size of this blob.
-   */
-  @Deprecated
-  public int length() {
-    return getLength();
-  }
 
   /**
    * Returns the size of this blob.

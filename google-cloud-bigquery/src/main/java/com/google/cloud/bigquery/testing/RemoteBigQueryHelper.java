@@ -49,13 +49,6 @@ public class RemoteBigQueryHelper {
     this.options = options;
   }
 
-  /**
-   * Returns a {@link BigQueryOptions} object to be used for testing.
-   */
-  @Deprecated
-  public BigQueryOptions options() {
-    return options;
-  }
 
   /**
    * Returns a {@link BigQueryOptions} object to be used for testing.

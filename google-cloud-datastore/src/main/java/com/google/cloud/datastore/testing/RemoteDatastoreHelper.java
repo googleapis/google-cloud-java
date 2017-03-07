@@ -52,14 +52,6 @@ public class RemoteDatastoreHelper {
     this.namespace = options.getNamespace();
   }
 
-  /**
-   * Returns a {@link DatastoreOptions} object to be used for testing. The options are associated
-   * to a randomly generated namespace.
-   */
-  @Deprecated
-  public DatastoreOptions options() {
-    return options;
-  }
 
   /**
    * Returns a {@link DatastoreOptions} object to be used for testing. The options are associated

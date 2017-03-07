@@ -52,11 +52,6 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -88,11 +83,6 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -121,11 +111,6 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -155,11 +140,6 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {

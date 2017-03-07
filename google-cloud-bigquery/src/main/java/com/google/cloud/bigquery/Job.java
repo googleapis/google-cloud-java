@@ -76,11 +76,6 @@ public class Job extends JobInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder jobId(JobId jobId) {
-      return setJobId(jobId);
-    }
 
     @Override
     public Builder setJobId(JobId jobId) {
@@ -112,11 +107,6 @@ public class Job extends JobInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder configuration(JobConfiguration configuration) {
-      return setConfiguration(configuration);
-    }
 
     @Override
     public Builder setConfiguration(JobConfiguration configuration) {
@@ -277,13 +267,6 @@ public class Job extends JobInfo {
     return bigquery.cancel(getJobId());
   }
 
-  /**
-   * Returns the job's {@code BigQuery} object used to issue requests.
-   */
-  @Deprecated
-  public BigQuery bigquery() {
-    return getBigquery();
-  }
 
   /**
    * Returns the job's {@code BigQuery} object used to issue requests.

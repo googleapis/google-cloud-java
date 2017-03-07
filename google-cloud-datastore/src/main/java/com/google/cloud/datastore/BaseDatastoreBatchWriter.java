@@ -203,11 +203,6 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     }
   }
 
-  @Override
-  @Deprecated
-  public boolean active() {
-    return isActive();
-  }
 
   @Override
   public boolean isActive() {
@@ -276,8 +271,6 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     return mutationsPb;
   }
 
-  @Deprecated
-  protected abstract Datastore datastore();
 
   protected abstract Datastore getDatastore();
 }

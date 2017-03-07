@@ -141,11 +141,6 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       super(serviceOptions, cursor, requestOptions);
     }
 
-    @Override
-    @Deprecated
-    public Future<AsyncPage<Sink>> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Future<AsyncPage<Sink>> getNextPage() {
@@ -163,11 +158,6 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       super(serviceOptions, cursor, requestOptions);
     }
 
-    @Override
-    @Deprecated
-    public Future<AsyncPage<MonitoredResourceDescriptor>> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Future<AsyncPage<MonitoredResourceDescriptor>> getNextPage() {
@@ -184,11 +174,6 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       super(serviceOptions, cursor, requestOptions);
     }
 
-    @Override
-    @Deprecated
-    public Future<AsyncPage<Metric>> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Future<AsyncPage<Metric>> getNextPage() {
@@ -205,11 +190,6 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       super(serviceOptions, cursor, requestOptions);
     }
 
-    @Override
-    @Deprecated
-    public Future<AsyncPage<LogEntry>> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Future<AsyncPage<LogEntry>> getNextPage() {

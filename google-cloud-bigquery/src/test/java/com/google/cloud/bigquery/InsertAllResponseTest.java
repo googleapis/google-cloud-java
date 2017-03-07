@@ -55,13 +55,6 @@ public class InsertAllResponseTest {
     assertNull(INSERT_ALL_RESPONSE.getErrorsFor(2L));
   }
 
-  @Test
-  public void testErrorsForDeprecated() {
-    assertEquals(ERRORS_MAP, INSERT_ALL_RESPONSE.insertErrors());
-    assertEquals(ERRORS1, INSERT_ALL_RESPONSE.errorsFor(0L));
-    assertEquals(ERRORS2, INSERT_ALL_RESPONSE.errorsFor(1L));
-    assertNull(INSERT_ALL_RESPONSE.errorsFor(2L));
-  }
 
   @Test
   public void testHasErrors() {

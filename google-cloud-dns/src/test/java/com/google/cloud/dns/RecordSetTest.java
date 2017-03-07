@@ -35,9 +35,6 @@ public class RecordSetTest {
   private static final RecordSet RECORD_SET = RecordSet.newBuilder(NAME, TYPE)
       .setTtl(UNIT_TTL, UNIT)
       .build();
-  private static final RecordSet DEPRECATED_RECORD_SET = RecordSet.builder(NAME, TYPE)
-      .ttl(UNIT_TTL, UNIT)
-      .build();
 
   @Test
   public void testDefaultDnsRecord() {
@@ -47,13 +44,6 @@ public class RecordSetTest {
     assertEquals(NAME, recordSet.getName());
   }
 
-  @Test
-  public void testDefaultDnsRecordDeprecated() {
-    RecordSet recordSet = RecordSet.builder(NAME, TYPE).build();
-    assertEquals(0, recordSet.records().size());
-    assertEquals(TYPE, recordSet.type());
-    assertEquals(NAME, recordSet.name());
-  }
 
   @Test
   public void testBuilder() {
@@ -73,23 +63,6 @@ public class RecordSetTest {
     assertTrue(anotherRecord.getRecords().contains(anotherTestingRecord));
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(NAME, DEPRECATED_RECORD_SET.name());
-    assertEquals(TTL, DEPRECATED_RECORD_SET.ttl());
-    assertEquals(TYPE, DEPRECATED_RECORD_SET.type());
-    assertEquals(0, DEPRECATED_RECORD_SET.records().size());
-    // verify that one can add records to the record set
-    String testingRecord = "Testing recordSet";
-    String anotherTestingRecord = "Another recordSet 123";
-    RecordSet anotherRecord = RECORD_SET.toBuilder()
-        .addRecord(testingRecord)
-        .addRecord(anotherTestingRecord)
-        .build();
-    assertEquals(2, anotherRecord.records().size());
-    assertTrue(anotherRecord.records().contains(testingRecord));
-    assertTrue(anotherRecord.records().contains(anotherTestingRecord));
-  }
 
   @Test
   public void testValidTtl() {
@@ -111,25 +84,6 @@ public class RecordSetTest {
     assertEquals(TTL, record.getTtl());
   }
 
-  @Test
-  public void testValidTtlDeprecated() {
-    try {
-      RecordSet.builder(NAME, TYPE).ttl(-1, TimeUnit.SECONDS);
-      fail("A negative value is not acceptable for ttl.");
-    } catch (IllegalArgumentException e) {
-      // expected
-    }
-    RecordSet.builder(NAME, TYPE).ttl(0, TimeUnit.SECONDS);
-    RecordSet.builder(NAME, TYPE).ttl(Integer.MAX_VALUE, TimeUnit.SECONDS);
-    try {
-      RecordSet.builder(NAME, TYPE).ttl(Integer.MAX_VALUE, TimeUnit.HOURS);
-      fail("This value is too large for int.");
-    } catch (IllegalArgumentException e) {
-      // expected
-    }
-    RecordSet record = RecordSet.builder(NAME, TYPE).ttl(UNIT_TTL, UNIT).build();
-    assertEquals(TTL, record.ttl());
-  }
 
   @Test
   public void testEqualsAndNotEquals() {

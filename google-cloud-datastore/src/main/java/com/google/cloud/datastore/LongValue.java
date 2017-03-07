@@ -77,10 +77,6 @@ public final class LongValue extends Value<Long> {
     return new LongValue(value);
   }
 
-  @Deprecated
-  public static Builder builder(long value) {
-    return newBuilder(value);
-  }
 
   public static Builder newBuilder(long value) {
     return new Builder().set(value);

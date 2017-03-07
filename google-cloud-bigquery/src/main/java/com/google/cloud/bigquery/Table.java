@@ -70,11 +70,6 @@ public class Table extends TableInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
 
     @Override
     public Builder setDescription(String description) {
@@ -88,11 +83,6 @@ public class Table extends TableInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder expirationTime(Long expirationTime) {
-      return setExpirationTime(expirationTime);
-    }
 
     @Override
     public Builder setExpirationTime(Long expirationTime) {
@@ -100,11 +90,6 @@ public class Table extends TableInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder friendlyName(String friendlyName) {
-      return setFriendlyName(friendlyName);
-    }
 
     @Override
     public Builder setFriendlyName(String friendlyName) {
@@ -130,11 +115,6 @@ public class Table extends TableInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder tableId(TableId tableId) {
-      return setTableId(tableId);
-    }
 
     @Override
     public Builder setTableId(TableId tableId) {
@@ -142,11 +122,6 @@ public class Table extends TableInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder definition(TableDefinition definition) {
-      return setDefinition(definition);
-    }
 
     @Override
     public Builder setDefinition(TableDefinition definition) {
@@ -544,13 +519,6 @@ public class Table extends TableInfo {
     return bigquery.create(JobInfo.of(loadConfig), options);
   }
 
-  /**
-   * Returns the table's {@code BigQuery} object used to issue requests.
-   */
-  @Deprecated
-  public BigQuery bigquery() {
-    return getBigquery();
-  }
 
   /**
    * Returns the table's {@code BigQuery} object used to issue requests.

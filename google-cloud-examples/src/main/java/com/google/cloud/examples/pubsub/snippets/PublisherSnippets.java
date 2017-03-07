@@ -19,7 +19,6 @@
  * This file is referenced in Publisher's javadoc. Any change to this file should be reflected in
  * Publisher's javadoc.
  */
-
 package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.gax.core.ApiFuture;

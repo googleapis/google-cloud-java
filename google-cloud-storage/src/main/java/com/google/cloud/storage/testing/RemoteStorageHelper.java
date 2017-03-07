@@ -61,14 +61,6 @@ public class RemoteStorageHelper {
   /**
    * Returns a {@link StorageOptions} object to be used for testing.
    */
-  @Deprecated
-  public StorageOptions options() {
-    return getOptions();
-  }
-
-  /**
-   * Returns a {@link StorageOptions} object to be used for testing.
-   */
   public StorageOptions getOptions() {
     return options;
   }

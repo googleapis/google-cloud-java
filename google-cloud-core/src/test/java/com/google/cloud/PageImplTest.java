@@ -41,11 +41,6 @@ public class PageImplTest {
     }
 
     @Override
-    public Page<String> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<String> getNextPage() {
       return nextResult;
     }
@@ -61,15 +56,6 @@ public class PageImplTest {
     assertEquals(VALUES, result.getValues());
   }
 
-  @Test
-  public void testPageDeprecated() {
-    final PageImpl<String> nextResult = new PageImpl<>(null, "c", NEXT_VALUES);
-    PageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
-    PageImpl<String> result = new PageImpl<>(fetcher, "c", VALUES);
-    assertEquals(nextResult, result.nextPage());
-    assertEquals("c", result.nextPageCursor());
-    assertEquals(VALUES, result.values());
-  }
 
   @Test
   public void testIterateAll() {

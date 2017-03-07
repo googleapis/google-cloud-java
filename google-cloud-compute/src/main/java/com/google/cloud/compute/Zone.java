@@ -231,7 +231,7 @@ public class Zone implements Serializable {
   }
 
   /**
-   * Returns the deprecation status of the zone. If {@link DeprecationStatus#status()} is either
+   * Returns the deprecation status of the zone. If {@link DeprecationStatus#getStatus()} is either
    * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the zone
    * should not be used. Returns {@code null} if the zone is not deprecated.
    */

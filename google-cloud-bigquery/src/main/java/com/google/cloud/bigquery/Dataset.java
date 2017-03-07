@@ -64,11 +64,6 @@ public class Dataset extends DatasetInfo {
       this.infoBuilder = new DatasetInfo.BuilderImpl(dataset);
     }
 
-    @Override
-    @Deprecated
-    public Builder datasetId(DatasetId datasetId) {
-      return setDatasetId(datasetId);
-    }
 
     @Override
     public Builder setDatasetId(DatasetId datasetId) {
@@ -76,11 +71,6 @@ public class Dataset extends DatasetInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder acl(List<Acl> acl) {
-      return setAcl(acl);
-    }
 
     @Override
     public Builder setAcl(List<Acl> acl) {
@@ -94,11 +84,6 @@ public class Dataset extends DatasetInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder defaultTableLifetime(Long defaultTableLifetime) {
-      return setDefaultTableLifetime(defaultTableLifetime);
-    }
 
     @Override
     public Builder setDefaultTableLifetime(Long defaultTableLifetime) {
@@ -106,11 +91,6 @@ public class Dataset extends DatasetInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
 
     @Override
     public Builder setDescription(String description) {
@@ -124,11 +104,6 @@ public class Dataset extends DatasetInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder friendlyName(String friendlyName) {
-      return setFriendlyName(friendlyName);
-    }
 
     @Override
     public Builder setFriendlyName(String friendlyName) {
@@ -148,11 +123,6 @@ public class Dataset extends DatasetInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder location(String location) {
-      return setLocation(location);
-    }
 
     @Override
     public Builder setLocation(String location) {
@@ -322,13 +292,6 @@ public class Dataset extends DatasetInfo {
     return bigquery.create(tableInfo, options);
   }
 
-  /**
-   * Returns the dataset's {@code BigQuery} object used to issue requests.
-   */
-  @Deprecated
-  public BigQuery bigquery() {
-    return getBigquery();
-  }
 
   /**
    * Returns the dataset's {@code BigQuery} object used to issue requests.

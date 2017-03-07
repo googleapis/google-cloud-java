@@ -90,21 +90,6 @@ public class SinkTest {
     assertEquals(NEW_VERSION, builtSink.getVersionFormat());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedSink(2);
-    replay(logging);
-    Sink builtSink = expectedSink.toBuilder()
-        .name(NEW_NAME)
-        .filter(NEW_FILTER)
-        .destination(DATASET_DESTINATION)
-        .versionFormat(NEW_VERSION)
-        .build();
-    assertEquals(NEW_NAME, builtSink.name());
-    assertEquals(DATASET_DESTINATION, builtSink.destination());
-    assertEquals(NEW_FILTER, builtSink.filter());
-    assertEquals(NEW_VERSION, builtSink.versionFormat());
-  }
 
   @Test
   public void testToBuilder() {
