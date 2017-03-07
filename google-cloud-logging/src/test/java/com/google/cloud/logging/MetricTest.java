@@ -27,12 +27,10 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.common.util.concurrent.Futures;
-
+import com.google.api.gax.core.ApiFutures;
+import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Test;
-
-import java.util.concurrent.ExecutionException;
 
 public class MetricTest {
 
@@ -121,7 +119,7 @@ public class MetricTest {
     Metric expectedMetric = new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
     expect(logging.getOptions()).andReturn(mockOptions);
     expect(logging.getMetricAsync(NAME))
-        .andReturn(Futures.immediateFuture(expectedMetric));
+        .andReturn(ApiFutures.immediateFuture(expectedMetric));
     replay(logging);
     initializeMetric();
     Metric updatedMetric = metric.reloadAsync().get();
@@ -132,7 +130,7 @@ public class MetricTest {
   public void testReloadAsyncNull() throws ExecutionException, InterruptedException {
     initializeExpectedMetric(1);
     expect(logging.getOptions()).andReturn(mockOptions);
-    expect(logging.getMetricAsync(NAME)).andReturn(Futures.<Metric>immediateFuture(null));
+    expect(logging.getMetricAsync(NAME)).andReturn(ApiFutures.<Metric>immediateFuture(null));
     replay(logging);
     initializeMetric();
     assertNull(metric.reloadAsync().get());
@@ -159,7 +157,7 @@ public class MetricTest {
     Metric expectedMetric =
         new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
     expect(logging.getOptions()).andReturn(mockOptions).times(2);
-    expect(logging.updateAsync(expectedMetric)).andReturn(Futures.immediateFuture(expectedMetric));
+    expect(logging.updateAsync(expectedMetric)).andReturn(ApiFutures.immediateFuture(expectedMetric));
     replay(logging);
     initializeMetric();
     Metric updatedMetric = metric.toBuilder().setFilter(NEW_FILTER).build().updateAsync().get();
@@ -190,7 +188,7 @@ public class MetricTest {
   public void testDeleteAsyncTrue() throws ExecutionException, InterruptedException {
     initializeExpectedMetric(1);
     expect(logging.getOptions()).andReturn(mockOptions);
-    expect(logging.deleteMetricAsync(NAME)).andReturn(Futures.immediateFuture(true));
+    expect(logging.deleteMetricAsync(NAME)).andReturn(ApiFutures.immediateFuture(true));
     replay(logging);
     initializeMetric();
     assertTrue(metric.deleteAsync().get());
@@ -200,7 +198,7 @@ public class MetricTest {
   public void testDeleteAsyncFalse() throws ExecutionException, InterruptedException {
     initializeExpectedMetric(1);
     expect(logging.getOptions()).andReturn(mockOptions);
-    expect(logging.deleteMetricAsync(NAME)).andReturn(Futures.immediateFuture(false));
+    expect(logging.deleteMetricAsync(NAME)).andReturn(ApiFutures.immediateFuture(false));
     replay(logging);
     initializeMetric();
     assertFalse(metric.deleteAsync().get());
