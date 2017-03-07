@@ -554,13 +554,13 @@ public class LoggingServiceV2Settings extends ClientSettings {
       builder
           .writeLogEntriesSettings()
           .getBundlingSettingsBuilder()
-          .setElementCountThreshold(100)
-          .setRequestByteThreshold(20480)
-          .setDelayThreshold(Duration.millis(10))
+          .setElementCountThreshold(1000)
+          .setRequestByteThreshold(1048576)
+          .setDelayThreshold(Duration.millis(50))
           .setFlowControlSettings(
               FlowControlSettings.newBuilder()
-                  .setMaxOutstandingElementCount(10000)
-                  .setMaxOutstandingRequestBytes(2048000)
+                  .setMaxOutstandingElementCount(100000)
+                  .setMaxOutstandingRequestBytes(10485760)
                   .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
                   .build());
       builder
