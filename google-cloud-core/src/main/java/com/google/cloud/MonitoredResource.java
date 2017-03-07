@@ -61,19 +61,10 @@ public final class MonitoredResource implements Serializable {
       this.labels = new HashMap<>(monitoredResource.labels);
     }
 
-    /**
-     * Sets the monitored resource type. This value must match the one of
-     * {@link MonitoredResourceDescriptor#type()} of a {@code MonitoredResourceDescriptor} object.
-     * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
-     */
-    @Deprecated
-    public Builder type(String type) {
-      return setType(type);
-    }
 
     /**
      * Sets the monitored resource type. This value must match the one of
-     * {@link MonitoredResourceDescriptor#type()} of a {@code MonitoredResourceDescriptor} object.
+     * {@link MonitoredResourceDescriptor#getType()} of a {@code MonitoredResourceDescriptor} object.
      * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
      */
     public Builder setType(String type) {
@@ -81,19 +72,10 @@ public final class MonitoredResource implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the values for all the labels required by the corresponding monitored resource
-     * descriptor (see {@link MonitoredResourceDescriptor#labels()}. For example, Google Compute
-     * Engine VM instances use the labels {@code instance_id} and {@code zone}.
-     */
-    @Deprecated
-    public Builder labels(Map<String, String> labels) {
-      return setLabels(labels);
-    }
 
     /**
      * Sets the values for all the labels required by the corresponding monitored resource
-     * descriptor (see {@link MonitoredResourceDescriptor#labels()}. For example, Google Compute
+     * descriptor (see {@link MonitoredResourceDescriptor#getLabels()}. For example, Google Compute
      * Engine VM instances use the labels {@code instance_id} and {@code zone}.
      */
     public Builder setLabels(Map<String, String> labels) {
@@ -127,38 +109,20 @@ public final class MonitoredResource implements Serializable {
     this.labels = ImmutableMap.copyOf(builder.labels);
   }
 
-  /**
-   * Returns the monitored resource type. This value must match the one of
-   * {@link MonitoredResourceDescriptor#type()} of a {@code MonitoredResourceDescriptor} object.
-   * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
-   */
-  @Deprecated
-  public String type() {
-    return getType();
-  }
 
   /**
    * Returns the monitored resource type. This value must match the one of
-   * {@link MonitoredResourceDescriptor#type()} of a {@code MonitoredResourceDescriptor} object.
+   * {@link MonitoredResourceDescriptor#getType()} of a {@code MonitoredResourceDescriptor} object.
    * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
    */
   public String getType() {
     return type;
   }
 
-  /**
-   * Returns the values for all the labels required by the corresponding monitored resource
-   * descriptor (see {@link MonitoredResourceDescriptor#labels()}. For example, Google Compute
-   * Engine VM instances use the labels {@code instance_id} and {@code zone}.
-   */
-  @Deprecated
-  public Map<String, String> labels() {
-    return getLabels();
-  }
 
   /**
    * Returns the values for all the labels required by the corresponding monitored resource
-   * descriptor (see {@link MonitoredResourceDescriptor#labels()}. For example, Google Compute
+   * descriptor (see {@link MonitoredResourceDescriptor#getLabels()}. For example, Google Compute
    * Engine VM instances use the labels {@code instance_id} and {@code zone}.
    */
   public Map<String, String> getLabels() {
@@ -204,13 +168,6 @@ public final class MonitoredResource implements Serializable {
     return new Builder(this);
   }
 
-  /**
-   * Returns a builder for {@code MonitoredResource} objects given the resource's type.
-   */
-  @Deprecated
-  public static Builder builder(String type) {
-    return newBuilder(type);
-  }
 
   /**
    * Returns a builder for {@code MonitoredResource} objects given the resource's type.

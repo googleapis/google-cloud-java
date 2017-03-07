@@ -66,14 +66,6 @@ public final class BigQueryException extends BaseServiceException {
     this.error = error;
   }
 
-  /**
-   * Returns the {@link BigQueryError} that caused this exception. Returns {@code null} if none
-   * exists.
-   */
-  @Deprecated
-  public BigQueryError error() {
-    return getError();
-  }
 
   /**
    * Returns the {@link BigQueryError} that caused this exception. Returns {@code null} if none

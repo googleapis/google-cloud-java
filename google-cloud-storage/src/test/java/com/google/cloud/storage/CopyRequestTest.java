@@ -80,40 +80,6 @@ public class CopyRequestTest {
   }
 
   @Test
-  public void testCopyRequestDeprecated() {
-    Storage.CopyRequest copyRequest1 = Storage.CopyRequest.builder()
-        .source(SOURCE_BLOB_ID)
-        .sourceOptions(BlobSourceOption.generationMatch(1))
-        .target(TARGET_BLOB_INFO, BlobTargetOption.predefinedAcl(PUBLIC_READ))
-        .build();
-    assertEquals(SOURCE_BLOB_ID, copyRequest1.source());
-    assertEquals(1, copyRequest1.sourceOptions().size());
-    assertEquals(BlobSourceOption.generationMatch(1), copyRequest1.sourceOptions().get(0));
-    assertEquals(TARGET_BLOB_INFO, copyRequest1.target());
-    assertTrue(copyRequest1.overrideInfo());
-    assertEquals(1, copyRequest1.targetOptions().size());
-    assertEquals(BlobTargetOption.predefinedAcl(PUBLIC_READ), copyRequest1.targetOptions().get(0));
-
-    Storage.CopyRequest copyRequest2 = Storage.CopyRequest.builder()
-        .source(SOURCE_BUCKET_NAME, SOURCE_BLOB_NAME)
-        .target(TARGET_BLOB_ID)
-        .build();
-    assertEquals(SOURCE_BLOB_ID, copyRequest2.source());
-    assertEquals(BlobInfo.builder(TARGET_BLOB_ID).build(), copyRequest2.target());
-    assertFalse(copyRequest2.overrideInfo());
-
-    Storage.CopyRequest copyRequest3 = Storage.CopyRequest.builder()
-        .source(SOURCE_BLOB_ID)
-        .target(TARGET_BLOB_INFO, ImmutableList.of(BlobTargetOption.predefinedAcl(PUBLIC_READ)))
-        .build();
-    assertEquals(SOURCE_BLOB_ID, copyRequest3.source());
-    assertEquals(TARGET_BLOB_INFO, copyRequest3.target());
-    assertTrue(copyRequest3.overrideInfo());
-    assertEquals(ImmutableList.of(BlobTargetOption.predefinedAcl(PUBLIC_READ)),
-        copyRequest3.targetOptions());
-  }
-
-  @Test
   public void testCopyRequestOf() {
     Storage.CopyRequest copyRequest1 = Storage.CopyRequest.of(SOURCE_BLOB_ID, TARGET_BLOB_INFO);
     assertEquals(SOURCE_BLOB_ID, copyRequest1.getSource());

@@ -279,8 +279,8 @@ public class SubscriptionInfo implements Serializable {
   }
 
   /**
-   * Returns the identity of the topic this subscription refers to. If {@link TopicId#project()} is
-   * {@code null} the topic is assumed to reside in the {@link PubSubOptions#getProjectId()}
+   * Returns the identity of the topic this subscription refers to. If {@link TopicId#getProject()}
+   * is {@code null} the topic is assumed to reside in the {@link PubSubOptions#getProjectId()}
    * project. After a topic is deleted, existing subscriptions to that topic are not deleted, but
    * their topic field is set to {@link TopicId#deletedTopic()}.
    */

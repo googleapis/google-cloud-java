@@ -58,11 +58,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       this.serviceOptions = serviceOptions;
     }
 
-    @Override
-    @Deprecated
-    public Page<Dataset> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<Dataset> getNextPage() {
@@ -85,11 +80,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       this.datasetId = datasetId;
     }
 
-    @Override
-    @Deprecated
-    public Page<Table> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<Table> getNextPage() {
@@ -110,11 +100,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       this.serviceOptions = serviceOptions;
     }
 
-    @Override
-    @Deprecated
-    public Page<Job> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<Job> getNextPage() {
@@ -137,11 +122,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       this.table = table;
     }
 
-    @Override
-    @Deprecated
-    public Page<List<FieldValue>> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<List<FieldValue>> getNextPage() {
@@ -165,11 +145,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       this.job = job;
     }
 
-    @Override
-    @Deprecated
-    public QueryResult nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public QueryResult getNextPage() {

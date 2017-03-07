@@ -33,8 +33,6 @@ public class ViewDefinitionTest {
       ImmutableList.of(UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final ViewDefinition VIEW_DEFINITION =
       ViewDefinition.newBuilder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
-  private static final ViewDefinition DEPRECATED_VIEW_DEFINITION =
-      ViewDefinition.builder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
 
   @Test
   public void testToBuilder() {
@@ -78,28 +76,6 @@ public class ViewDefinitionTest {
     assertNull(viewDefinition.getUserDefinedFunctions());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(VIEW_QUERY, DEPRECATED_VIEW_DEFINITION.query());
-    assertEquals(TableDefinition.Type.VIEW, DEPRECATED_VIEW_DEFINITION.type());
-    assertEquals(USER_DEFINED_FUNCTIONS, DEPRECATED_VIEW_DEFINITION.userDefinedFunctions());
-    ViewDefinition viewDefinition = ViewDefinition.builder(VIEW_QUERY)
-        .userDefinedFunctions(UserDefinedFunction.inline("Function"),
-            UserDefinedFunction.fromUri("URI"))
-        .build();
-    assertEquals(VIEW_QUERY, viewDefinition.query());
-    assertEquals(TableDefinition.Type.VIEW, viewDefinition.type());
-    assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.userDefinedFunctions());
-    viewDefinition = ViewDefinition.builder(VIEW_QUERY,
-        UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI")).build();
-    assertEquals(VIEW_QUERY, viewDefinition.query());
-    assertEquals(TableDefinition.Type.VIEW, viewDefinition.type());
-    assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.userDefinedFunctions());
-    viewDefinition = ViewDefinition.builder(VIEW_QUERY).build();
-    assertEquals(VIEW_QUERY, viewDefinition.query());
-    assertEquals(TableDefinition.Type.VIEW, viewDefinition.type());
-    assertNull(viewDefinition.userDefinedFunctions());
-  }
 
   @Test
   public void testToAndFromPb() {

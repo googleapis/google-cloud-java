@@ -84,25 +84,9 @@ public final class Acl implements Serializable {
     /**
      * Sets the entity for the ACL object.
      */
-    @Deprecated
-    public Builder entity(Entity entity) {
-      return setEntity(entity);
-    }
-
-    /**
-     * Sets the entity for the ACL object.
-     */
     public Builder setEntity(Entity entity) {
       this.entity = entity;
       return this;
-    }
-
-    /**
-     * Sets the role to associate to the {@code entity} object.
-     */
-    @Deprecated
-    public Builder role(Role role) {
-      return setRole(role);
     }
 
     /**
@@ -153,24 +137,8 @@ public final class Acl implements Serializable {
     /**
      * Returns the type of entity.
      */
-    @Deprecated
-    public Type type() {
-      return getType();
-    }
-
-    /**
-     * Returns the type of entity.
-     */
     public Type getType() {
       return type;
-    }
-
-    /**
-     * Returns the entity's value.
-     */
-    @Deprecated
-    protected String value() {
-      return getValue();
     }
 
     /**
@@ -251,14 +219,6 @@ public final class Acl implements Serializable {
     /**
      * Returns the domain associated to this entity.
      */
-    @Deprecated
-    public String domain() {
-      return getDomain();
-    }
-
-    /**
-     * Returns the domain associated to this entity.
-     */
     public String getDomain() {
       return getValue();
     }
@@ -278,14 +238,6 @@ public final class Acl implements Serializable {
      */
     public Group(String email) {
       super(Type.GROUP, email);
-    }
-
-    /**
-     * Returns the group email.
-     */
-    @Deprecated
-    public String email() {
-      return getEmail();
     }
 
     /**
@@ -312,14 +264,6 @@ public final class Acl implements Serializable {
      */
     public User(String email) {
       super(Type.USER, email);
-    }
-
-    /**
-     * Returns the user email.
-     */
-    @Deprecated
-    public String email() {
-      return getEmail();
     }
 
     /**
@@ -380,24 +324,8 @@ public final class Acl implements Serializable {
     /**
      * Returns the role in the project for this entity.
      */
-    @Deprecated
-    public ProjectRole projectRole() {
-      return getProjectRole();
-    }
-
-    /**
-     * Returns the role in the project for this entity.
-     */
     public ProjectRole getProjectRole() {
       return projectRole;
-    }
-
-    /**
-     * Returns the project id for this entity.
-     */
-    @Deprecated
-    public String projectId() {
-      return getProjectId();
     }
 
     /**
@@ -432,24 +360,8 @@ public final class Acl implements Serializable {
   /**
    * Returns the entity for this ACL object.
    */
-  @Deprecated
-  public Entity entity() {
-    return getEntity();
-  }
-
-  /**
-   * Returns the entity for this ACL object.
-   */
   public Entity getEntity() {
     return entity;
-  }
-
-  /**
-   * Returns the role associated to the entity in this ACL object.
-   */
-  @Deprecated
-  public Role role() {
-    return getRole();
   }
 
   /**
@@ -462,26 +374,8 @@ public final class Acl implements Serializable {
   /**
    * Returns the ID of the ACL entry.
    */
-  @Deprecated
-  public String id() {
-    return getId();
-  }
-
-  /**
-   * Returns the ID of the ACL entry.
-   */
   public String getId() {
     return id;
-  }
-
-  /**
-   * Returns HTTP 1.1 Entity tag for the ACL entry.
-   *
-   * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
-   */
-  @Deprecated
-  public String etag() {
-    return getEtag();
   }
 
   /**
@@ -508,17 +402,6 @@ public final class Acl implements Serializable {
    */
   public static Acl of(Entity entity, Role role) {
     return newBuilder(entity, role).build();
-  }
-
-  /**
-   * Returns a builder for {@code Acl} objects.
-   *
-   * @param entity the entity for this ACL object
-   * @param role the role to associate to the {@code entity} object
-   */
-  @Deprecated
-  public static Builder builder(Entity entity, Role role) {
-    return newBuilder(entity, role);
   }
 
   /**

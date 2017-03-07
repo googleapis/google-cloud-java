@@ -47,19 +47,11 @@ public abstract class BaseWriteChannel<
   private boolean isOpen = true;
   private int chunkSize = getDefaultChunkSize();
 
-  @Deprecated
-  protected int minChunkSize() {
-    return getMinChunkSize();
-  }
 
   protected int getMinChunkSize() {
     return MIN_CHUNK_SIZE;
   }
 
-  @Deprecated
-  protected int defaultChunkSize() {
-    return getDefaultChunkSize();
-  }
 
   protected int getDefaultChunkSize() {
     return DEFAULT_CHUNK_SIZE;
@@ -73,74 +65,41 @@ public abstract class BaseWriteChannel<
    */
   protected abstract void flushBuffer(int length, boolean last);
 
-  @Deprecated
-  protected ServiceOptionsT options() {
-    return options;
-  }
 
   protected ServiceOptionsT getOptions() {
     return options;
   }
 
-  @Deprecated
-  protected EntityT entity() {
-    return getEntity();
-  }
 
   protected EntityT getEntity() {
     return entity;
   }
 
-  @Deprecated
-  protected String uploadId() {
-    return getUploadId();
-  }
 
   protected String getUploadId() {
     return uploadId;
   }
 
-  @Deprecated
-  protected long position() {
-    return getPosition();
-  }
 
   protected long getPosition() {
     return position;
   }
 
-  @Deprecated
-  protected byte[] buffer() {
-    return getBuffer();
-  }
 
   protected byte[] getBuffer() {
     return buffer;
   }
 
-  @Deprecated
-  protected long limit() {
-    return getLimit();
-  }
 
   protected int getLimit() {
     return limit;
   }
 
-  @Deprecated
-  protected int chunkSize() {
-    return getChunkSize();
-  }
 
   protected int getChunkSize() {
     return chunkSize;
   }
 
-  @Override
-  @Deprecated
-  public final void chunkSize(int chunkSize) {
-    setChunkSize(chunkSize);
-  }
 
   @Override
   public final void setChunkSize(int chunkSize) {
@@ -285,40 +244,24 @@ public abstract class BaseWriteChannel<
         this.uploadId = uploadId;
       }
 
-      @Deprecated
-      public Builder<ServiceOptionsT, EntityT> position(int position) {
-        return setPosition(position);
-      }
 
       public Builder<ServiceOptionsT, EntityT> setPosition(long position) {
         this.position = position;
         return this;
       }
 
-      @Deprecated
-      public Builder<ServiceOptionsT, EntityT> buffer(byte[] buffer) {
-        return setBuffer(buffer);
-      }
 
       public Builder<ServiceOptionsT, EntityT> setBuffer(byte[] buffer) {
         this.buffer = buffer;
         return this;
       }
 
-      @Deprecated
-      public Builder<ServiceOptionsT, EntityT> isOpen(boolean isOpen) {
-        return setIsOpen(isOpen);
-      }
 
       public Builder<ServiceOptionsT, EntityT> setIsOpen(boolean isOpen) {
         this.isOpen = isOpen;
         return this;
       }
 
-      @Deprecated
-      public Builder<ServiceOptionsT, EntityT> chunkSize(int chunkSize) {
-        return setChunkSize(chunkSize);
-      }
 
       public Builder<ServiceOptionsT, EntityT> setChunkSize(int chunkSize) {
         this.chunkSize = chunkSize;

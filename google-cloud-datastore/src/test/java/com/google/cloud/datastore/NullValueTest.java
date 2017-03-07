@@ -47,13 +47,4 @@ public class NullValueTest {
     assertEquals(1, value.getMeaning());
     assertTrue(value.excludeFromIndexes());
   }
-
-  @Test
-  public void testBuilderDeprecated() throws Exception {
-    NullValue.Builder builder = NullValue.builder();
-    NullValue value = builder.meaning(1).excludeFromIndexes(true).build();
-    assertNull(value.get());
-    assertEquals(1, value.meaning());
-    assertTrue(value.excludeFromIndexes());
-  }
 }

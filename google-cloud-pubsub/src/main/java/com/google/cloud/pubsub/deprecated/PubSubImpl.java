@@ -155,12 +155,6 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     }
 
     @Override
-    @Deprecated
-    public Future<AsyncPage<Topic>> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Future<AsyncPage<Topic>> getNextPage() {
       return listTopicsAsync(serviceOptions(), requestOptions());
     }
@@ -173,12 +167,6 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     SubscriptionPageFetcher(PubSubOptions serviceOptions, String cursor,
         Map<Option.OptionType, ?> requestOptions) {
       super(serviceOptions, cursor, requestOptions);
-    }
-
-    @Override
-    @Deprecated
-    public Future<AsyncPage<Subscription>> nextPage() {
-      return getNextPage();
     }
 
     @Override
@@ -197,12 +185,6 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
         Map<Option.OptionType, ?> requestOptions) {
       super(serviceOptions, cursor, requestOptions);
       this.topic = topic;
-    }
-
-    @Override
-    @Deprecated
-    public Future<AsyncPage<SubscriptionId>> nextPage() {
-      return getNextPage();
     }
 
     @Override
@@ -449,6 +431,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     return get(listSubscriptionsAsync(options));
   }
 
+  @Override
   public Future<AsyncPage<Subscription>> listSubscriptionsAsync(ListOption... options) {
     return listSubscriptionsAsync(getOptions(), optionMap(options));
   }

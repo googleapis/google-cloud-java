@@ -55,7 +55,7 @@ public abstract class Value<V> implements Serializable {
     @Override
     public final B fromProto(com.google.datastore.v1.Value proto) {
       B builder = newBuilder(getValue(proto));
-      builder.excludeFromIndexes(proto.getExcludeFromIndexes());
+      builder.setExcludeFromIndexes(proto.getExcludeFromIndexes());
       builder.meaning(proto.getMeaning());
       return builder;
     }
@@ -101,20 +101,8 @@ public abstract class Value<V> implements Serializable {
     }
 
     @Override
-    @Deprecated
     public boolean getExcludeFromIndexes() {
-      return excludeFromIndexes();
-    }
-
-    @Override
-    public boolean excludeFromIndexes() {
       return excludeFromIndexes;
-    }
-
-    @Override
-    @Deprecated
-    public B excludeFromIndexes(boolean excludeFromIndexes) {
-      return setExcludeFromIndexes(excludeFromIndexes);
     }
 
     @Override
@@ -165,7 +153,7 @@ public abstract class Value<V> implements Serializable {
   @SuppressWarnings("deprecation")
   <P extends Value<V>, B extends BaseBuilder<V, P, B>> Value(ValueBuilder<V, P, B> builder) {
     valueType = builder.getValueType();
-    excludeFromIndexes = builder.excludeFromIndexes();
+    excludeFromIndexes = builder.getExcludeFromIndexes();
     meaning = builder.getMeaning();
     value = builder.get();
   }

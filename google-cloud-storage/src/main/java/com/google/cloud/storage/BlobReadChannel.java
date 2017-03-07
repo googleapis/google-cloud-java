@@ -107,11 +107,6 @@ class BlobReadChannel implements ReadChannel {
     endOfStream = false;
   }
 
-  @Override
-  @Deprecated
-  public void chunkSize(int chunkSize) {
-    setChunkSize(chunkSize);
-  }
 
   @Override
   public void setChunkSize(int chunkSize) {

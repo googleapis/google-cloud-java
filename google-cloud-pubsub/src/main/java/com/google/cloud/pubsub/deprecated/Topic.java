@@ -456,7 +456,7 @@ public class Topic extends TopicInfo {
    * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
    * the project's current policy, updating it locally, and then sending the modified policy for
    * writing. Cloud IAM solves the problem of conflicting processes simultaneously attempting to
-   * modify a policy by using the {@link Policy#etag etag} property. This property is used to
+   * modify a policy by using the {@link Policy#getEtag etag} property. This property is used to
    * verify whether the policy has changed since the last request. When you make a request with an
    * etag value, the value in the request is compared with the existing etag value associated with
    * the policy. The policy is written only if the etag values match. If the etags don't match,

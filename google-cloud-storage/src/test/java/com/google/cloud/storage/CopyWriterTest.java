@@ -94,18 +94,6 @@ public class CopyWriterTest {
   }
 
   @Test
-  public void testRewriteDeprecated() {
-    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
-        .andReturn(RESPONSE_WITH_OBJECT_DONE);
-    EasyMock.replay(storageRpcMock);
-    copyWriter = new CopyWriter(options, RESPONSE_WITH_OBJECT);
-    assertEquals(result, copyWriter.result());
-    assertTrue(copyWriter.isDone());
-    assertEquals(42L, copyWriter.totalBytesCopied());
-    assertEquals(42L, copyWriter.blobSize());
-  }
-
-  @Test
   public void testRewriteWithObject() {
     EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
         .andReturn(RESPONSE_WITH_OBJECT_DONE);

@@ -99,13 +99,6 @@ public abstract class TableDefinition implements Serializable {
       return self();
     }
 
-    /**
-     * Sets the table schema.
-     */
-    @Deprecated
-    public B schema(Schema schema) {
-      return setSchema(schema);
-    }
 
     /**
      * Sets the table schema.
@@ -126,15 +119,6 @@ public abstract class TableDefinition implements Serializable {
     this.schema = builder.schema;
   }
 
-  /**
-   * Returns the table's type. If this table is simple table the method returns {@link Type#TABLE}.
-   * If this table is an external table this method returns {@link Type#EXTERNAL}. If this table is
-   * a view table this method returns {@link Type#VIEW}.
-   */
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
 
   /**
    * Returns the table's type. If this table is simple table the method returns {@link Type#TABLE}.
@@ -145,13 +129,6 @@ public abstract class TableDefinition implements Serializable {
     return type;
   }
 
-  /**
-   * Returns the table's schema.
-   */
-  @Deprecated
-  public Schema schema() {
-    return getSchema();
-  }
 
   /**
    * Returns the table's schema.

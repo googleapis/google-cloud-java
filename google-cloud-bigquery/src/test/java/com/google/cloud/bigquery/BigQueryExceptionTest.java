@@ -43,7 +43,6 @@ public class BigQueryExceptionTest {
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertNull(exception.getError());
-    assertNull(exception.error());
     assertTrue(exception.isRetryable());
     assertTrue(exception.isIdempotent());
 
@@ -52,7 +51,6 @@ public class BigQueryExceptionTest {
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertNull(exception.getError());
-    assertNull(exception.error());
     assertTrue(exception.isRetryable());
     assertTrue(exception.isIdempotent());
 
@@ -61,7 +59,6 @@ public class BigQueryExceptionTest {
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertNull(exception.getError());
-    assertNull(exception.error());
     assertTrue(exception.isRetryable());
     assertTrue(exception.isIdempotent());
 
@@ -70,7 +67,6 @@ public class BigQueryExceptionTest {
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertNull(exception.getError());
-    assertNull(exception.error());
     assertTrue(exception.isRetryable());
     assertTrue(exception.isIdempotent());
 
@@ -79,7 +75,6 @@ public class BigQueryExceptionTest {
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertNull(exception.getError());
-    assertNull(exception.error());
     assertFalse(exception.isRetryable());
     assertTrue(exception.isIdempotent());
 
@@ -89,7 +84,6 @@ public class BigQueryExceptionTest {
     assertEquals("message", exception.getMessage());
     assertEquals("reason", exception.getReason());
     assertEquals(error, exception.getError());
-    assertEquals(error, exception.error());
     assertTrue(exception.isRetryable());
     assertTrue(exception.isIdempotent());
 
@@ -108,7 +102,6 @@ public class BigQueryExceptionTest {
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertNull(exception.getError());
-    assertNull(exception.error());
     assertTrue(exception.isRetryable());
     assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());

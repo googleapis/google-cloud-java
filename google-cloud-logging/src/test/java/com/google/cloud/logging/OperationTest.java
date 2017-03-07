@@ -32,10 +32,6 @@ public class OperationTest {
       .setFirst(FIRST)
       .setLast(LAST)
       .build();
-  private static final Operation DEPRECATED_OPERATION = Operation.builder(ID, PRODUCER)
-      .first(FIRST)
-      .last(LAST)
-      .build();
 
   @Test
   public void testBuilder() {
@@ -45,23 +41,6 @@ public class OperationTest {
     assertFalse(OPERATION.last());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(ID, DEPRECATED_OPERATION.id());
-    assertEquals(PRODUCER, DEPRECATED_OPERATION.producer());
-    assertTrue(DEPRECATED_OPERATION.first());
-    assertFalse(DEPRECATED_OPERATION.last());
-    Operation operation = DEPRECATED_OPERATION.toBuilder()
-        .id("newId")
-        .producer("newProducer")
-        .first(false)
-        .last(true)
-        .build();
-    assertEquals("newId", operation.id());
-    assertEquals("newProducer", operation.producer());
-    assertFalse(operation.first());
-    assertTrue(operation.last());
-  }
 
   @Test
   public void testToBuilder() {

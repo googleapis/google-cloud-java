@@ -68,7 +68,7 @@ public class BucketSnippets {
 
   /**
    * Example of getting the bucket's latest information, if its generation does not match the
-   * {@link Bucket#metageneration()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
    */
   // [TARGET reload(BucketSourceOption...)]
   public Bucket reload() {
@@ -94,7 +94,7 @@ public class BucketSnippets {
 
   /**
    * Example of deleting the bucket, if its metageneration matches the
-   * {@link Bucket#metageneration()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
    */
   // [TARGET delete(BucketSourceOption...)]
   public boolean delete() {

@@ -63,13 +63,6 @@ public class BaseServiceException extends RuntimeException {
       this.rejected = rejected;
     }
 
-    /**
-     * Returns the code associated with this exception.
-     */
-    @Deprecated
-    public Integer code() {
-      return getCode();
-    }
 
     /**
      * Returns the code associated with this exception.
@@ -78,15 +71,6 @@ public class BaseServiceException extends RuntimeException {
       return code;
     }
 
-    /**
-     * Returns true if the error indicates that the API call was certainly not accepted by the
-     * server. For instance, if the server returns a rate limit exceeded error, it certainly did not
-     * process the request and this method will return {@code true}.
-     */
-    @Deprecated
-    public boolean rejected() {
-      return isRejected();
-    }
 
     /**
      * Returns true if the error indicates that the API call was certainly not accepted by the
@@ -97,13 +81,6 @@ public class BaseServiceException extends RuntimeException {
       return rejected;
     }
 
-    /**
-     * Returns the reason that caused the exception.
-     */
-    @Deprecated
-    public String reason() {
-      return getReason();
-    }
 
     /**
      * Returns the reason that caused the exception.
@@ -214,10 +191,6 @@ public class BaseServiceException extends RuntimeException {
     this.debugInfo = null;
   }
 
-  @Deprecated
-  protected Set<Error> retryableErrors() {
-    return getRetryableErrors();
-  }
 
   protected Set<Error> getRetryableErrors() {
     return Collections.emptySet();
@@ -234,13 +207,6 @@ public class BaseServiceException extends RuntimeException {
     return idempotent && exceptionIsRetryable;
   }
 
-  /**
-   * Returns the code associated with this exception.
-   */
-  @Deprecated
-  public int code() {
-    return getCode();
-  }
 
   /**
    * Returns the code associated with this exception.
@@ -249,13 +215,6 @@ public class BaseServiceException extends RuntimeException {
     return code;
   }
 
-  /**
-   * Returns the reason that caused the exception.
-   */
-  @Deprecated
-  public String reason() {
-    return getReason();
-  }
 
   /**
    * Returns the reason that caused the exception.
@@ -264,13 +223,6 @@ public class BaseServiceException extends RuntimeException {
     return reason;
   }
 
-  /**
-   * Returns {@code true} when it is safe to retry the operation that caused this exception.
-   */
-  @Deprecated
-  public boolean retryable() {
-    return isRetryable();
-  }
 
   /**
    * Returns {@code true} when it is safe to retry the operation that caused this exception.
@@ -279,13 +231,6 @@ public class BaseServiceException extends RuntimeException {
     return retryable;
   }
 
-  /**
-   * Returns {@code true} when the operation that caused this exception had no side effects.
-   */
-  @Deprecated
-  public boolean idempotent() {
-    return isIdempotent();
-  }
 
   /**
    * Returns {@code true} when the operation that caused this exception had no side effects.
@@ -294,14 +239,6 @@ public class BaseServiceException extends RuntimeException {
     return idempotent;
   }
 
-  /**
-   * Returns the service location where the error causing the exception occurred. Returns {@code
-   * null} if not available.
-   */
-  @Deprecated
-  public String location() {
-    return getLocation();
-  }
 
   /**
    * Returns the service location where the error causing the exception occurred. Returns {@code
@@ -311,10 +248,6 @@ public class BaseServiceException extends RuntimeException {
     return location;
   }
 
-  @Deprecated
-  protected String debugInfo() {
-    return getDebugInfo();
-  }
 
   protected String getDebugInfo() {
     return debugInfo;

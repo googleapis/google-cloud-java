@@ -36,15 +36,6 @@ public class RoleTest {
     compareRoles(OWNER, Role.of("roles/owner"));
   }
 
-  @Test
-  public void testOfDeprecated() {
-    assertEquals("roles/viewer", VIEWER.value());
-    assertEquals("roles/editor", EDITOR.value());
-    assertEquals("roles/owner", OWNER.value());
-    compareRoles(VIEWER, Role.of("roles/viewer"));
-    compareRoles(EDITOR, Role.of("roles/editor"));
-    compareRoles(OWNER, Role.of("roles/owner"));
-  }
 
   @Test
   public void testViewer() {

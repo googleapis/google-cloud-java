@@ -122,15 +122,6 @@ public class ProjectInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    /**
-     * Set the user-assigned name of the project.
-     *
-     * <p>This field is optional and can remain unset. Allowed characters are: lowercase and
-     * uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.
-     * This field can be changed after project creation.
-     */
-    @Deprecated
-    public abstract Builder name(String name);
 
     /**
      * Set the user-assigned name of the project.
@@ -141,15 +132,6 @@ public class ProjectInfo implements Serializable {
      */
     public abstract Builder setName(String name);
 
-    /**
-     * Set the unique, user-assigned ID of the project.
-     *
-     * <p>The ID must be 6 to 30 lowercase letters, digits, or hyphens. It must start with a letter.
-     * Trailing hyphens are prohibited. This field cannot be changed after the server creates the
-     * project.
-     */
-    @Deprecated
-    public abstract Builder projectId(String projectId);
 
     /**
      * Set the unique, user-assigned ID of the project.
@@ -177,17 +159,6 @@ public class ProjectInfo implements Serializable {
      */
     public abstract Builder clearLabels();
 
-    /**
-     * Set the labels associated with this project.
-     *
-     * <p>Label keys must be between 1 and 63 characters long and must conform to the following
-     * regular expression: [a-z]([-a-z0-9]*[a-z0-9])?. Label values must be between 0 and 63
-     * characters long and must conform to the regular expression ([a-z]([-a-z0-9]*[a-z0-9])?)?. No
-     * more than 256 labels can be associated with a given resource. This field can be changed after
-     * project creation.
-     */
-    @Deprecated
-    public abstract Builder labels(Map<String, String> labels);
 
     /**
      * Set the labels associated with this project.
@@ -235,11 +206,6 @@ public class ProjectInfo implements Serializable {
       this.parent = info.parent;
     }
 
-    @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     @Override
     public Builder setName(String name) {
@@ -247,11 +213,6 @@ public class ProjectInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder projectId(String projectId) {
-      return setProjectId(projectId);
-    }
 
     @Override
     public Builder setProjectId(String projectId) {
@@ -277,11 +238,6 @@ public class ProjectInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder labels(Map<String, String> labels) {
-      return setLabels(labels);
-    }
 
     @Override
     public Builder setLabels(Map<String, String> labels) {
@@ -329,15 +285,6 @@ public class ProjectInfo implements Serializable {
     this.parent = builder.parent;
   }
 
-  /**
-   * Get the unique, user-assigned ID of the project.
-   *
-   * <p>This field cannot be changed after the server creates the project.
-   */
-  @Deprecated
-  public String projectId() {
-    return getProjectId();
-  }
 
   /**
    * Get the unique, user-assigned ID of the project.
@@ -348,15 +295,6 @@ public class ProjectInfo implements Serializable {
     return projectId;
   }
 
-  /**
-   * Get the user-assigned name of the project.
-   *
-   * <p>This field is optional, can remain unset, and can be changed after project creation.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Get the user-assigned name of the project.
@@ -367,15 +305,6 @@ public class ProjectInfo implements Serializable {
     return Data.isNull(name) ? null : name;
   }
 
-  /**
-   * Get number uniquely identifying the project.
-   *
-   * <p>This field is set by the server and is read-only.
-   */
-  @Deprecated
-  public Long projectNumber() {
-    return getProjectNumber();
-  }
 
   /**
    * Get number uniquely identifying the project.
@@ -386,13 +315,6 @@ public class ProjectInfo implements Serializable {
     return projectNumber;
   }
 
-  /**
-   * Get the immutable map of labels associated with this project.
-   */
-  @Deprecated
-  public Map<String, String> labels() {
-    return getLabels();
-  }
 
   /**
    * Get the immutable map of labels associated with this project.
@@ -401,16 +323,6 @@ public class ProjectInfo implements Serializable {
     return labels;
   }
 
-  /**
-   * Get the project's lifecycle state.
-   *
-   * <p>This is a read-only field. To change the lifecycle state of your project, use the
-   * {@code delete} or {@code undelete} method.
-   */
-  @Deprecated
-  public State state() {
-    return state;
-  }
 
   /**
    * Get the project's lifecycle state.
@@ -426,15 +338,6 @@ public class ProjectInfo implements Serializable {
     return parent;
   }
 
-  /**
-   * Get the project's creation time (in milliseconds).
-   *
-   * <p>This field is set by the server and is read-only.
-   */
-  @Deprecated
-  public Long createTimeMillis() {
-    return getCreateTimeMillis();
-  }
 
   /**
    * Get the project's creation time (in milliseconds).
@@ -458,10 +361,6 @@ public class ProjectInfo implements Serializable {
     return Objects.hash(name, projectId, labels, projectNumber, state, createTimeMillis, parent);
   }
 
-  @Deprecated
-  public static Builder builder(String id) {
-    return newBuilder(id);
-  }
 
   public static Builder newBuilder(String id) {
     return new BuilderImpl(id);

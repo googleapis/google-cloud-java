@@ -40,14 +40,6 @@ public final class Role implements Serializable {
     this.value = value;
   }
 
-  /**
-   * Returns the string identifier for this role. For example, {@code "roles/viewer"},
-   * {@code "roles/editor"}, or {@code "roles/owner"}.
-   */
-  @Deprecated
-  public String value() {
-    return getValue();
-  }
 
   /**
    * Returns the string identifier for this role. For example, {@code "roles/viewer"},
