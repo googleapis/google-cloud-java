@@ -83,7 +83,7 @@
   <licenses>
     <license>
       <name>Google Cloud Software License</name>
-      <url>https://raw.githubusercontent.com/GoogleCloudPlatform/google-cloud/master/LICENSE</url>
+      <url>https://raw.githubusercontent.com/GoogleCloudPlatform/google-cloud-java/master/LICENSE</url>
     </license>
   </licenses>
   <properties>
