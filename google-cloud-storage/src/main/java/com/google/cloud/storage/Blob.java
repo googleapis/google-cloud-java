@@ -303,6 +303,12 @@ public class Blob extends BlobInfo {
     }
 
     @Override
+    public Builder setStorageClass(StorageClass storageClass) {
+      infoBuilder.setStorageClass(storageClass);
+      return this;
+    }
+
+    @Override
     Builder setMetageneration(Long metageneration) {
       infoBuilder.setMetageneration(metageneration);
       return this;
