@@ -24,6 +24,7 @@ import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.StorageObject.Owner;
+import com.google.cloud.storage.Blob.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
@@ -78,6 +79,7 @@ public class BlobInfo implements Serializable {
   private final String contentEncoding;
   private final String contentDisposition;
   private final String contentLanguage;
+  private final StorageClass storageClass;
   private final Integer componentCount;
   private final boolean isDirectory;
   private final CustomerEncryption customerEncryption;
@@ -243,6 +245,11 @@ public class BlobInfo implements Serializable {
     abstract Builder setMediaLink(String mediaLink);
 
     /**
+     * Sets the blob's storage class.
+     */
+    public abstract Builder setStorageClass(StorageClass storageClass);
+
+    /**
      * Sets the blob's user provided metadata.
      */
     public abstract Builder setMetadata(Map<String, String> metadata);
@@ -290,6 +297,7 @@ public class BlobInfo implements Serializable {
     private Long createTime;
     private Boolean isDirectory;
     private CustomerEncryption customerEncryption;
+    private StorageClass storageClass;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -319,6 +327,7 @@ public class BlobInfo implements Serializable {
       updateTime = blobInfo.updateTime;
       createTime = blobInfo.createTime;
       isDirectory = blobInfo.isDirectory;
+      storageClass = blobInfo.storageClass;
     }
 
     @Override
@@ -425,6 +434,12 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
+    public Builder setStorageClass(StorageClass storageClass) {
+      this.storageClass = storageClass;
+      return this;
+    }
+
+    @Override
     Builder setMetageneration(Long metageneration) {
       this.metageneration = metageneration;
       return this;
@@ -491,6 +506,7 @@ public class BlobInfo implements Serializable {
     updateTime = builder.updateTime;
     createTime = builder.createTime;
     isDirectory = firstNonNull(builder.isDirectory, Boolean.FALSE);
+    storageClass = builder.storageClass;
   }
 
     /**
@@ -715,6 +731,13 @@ public class BlobInfo implements Serializable {
   }
 
   /**
+   * Returns the storage class of the blob.
+   */
+  public StorageClass getStorageClass() {
+    return storageClass;
+  }
+
+  /**
    * Returns a builder for the current blob.
    */
   public Builder toBuilder() {
@@ -771,6 +794,10 @@ public class BlobInfo implements Serializable {
     if (owner != null) {
       storageObject.setOwner(new Owner().setEntity(owner.toPb()));
     }
+    if (storageClass != null) {
+      storageObject.setStorageClass(storageClass.toString());
+    }
+
     Map<String, String> pbMetadata = metadata;
     if (metadata != null && !Data.isNull(metadata)) {
       pbMetadata = Maps.newHashMapWithExpectedSize(metadata.size());
@@ -908,6 +935,9 @@ public class BlobInfo implements Serializable {
     if (storageObject.getCustomerEncryption() != null) {
       builder.setCustomerEncryption(
           CustomerEncryption.fromPb(storageObject.getCustomerEncryption()));
+    }
+    if (storageObject.getStorageClass() != null) {
+      builder.setStorageClass(StorageClass.valueOf(storageObject.getStorageClass()));
     }
     return builder.build();
   }

@@ -518,7 +518,7 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
-    public Builder setStorageClass(String storageClass) {
+    public Builder setStorageClass(StorageClass storageClass) {
       infoBuilder.setStorageClass(storageClass);
       return this;
     }
