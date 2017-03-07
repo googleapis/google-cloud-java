@@ -16,10 +16,11 @@
 
 package com.google.cloud.pubsub.deprecated.spi;
 
-import com.google.api.gax.core.ForwardingRpcFuture;
+import com.google.api.gax.core.ForwardingApiFuture;
 import com.google.api.gax.core.Function;
-import com.google.api.gax.core.RpcFuture;
-import com.google.api.gax.core.RpcFutureCallback;
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutureCallback;
+import com.google.api.gax.core.ApiFutures;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
@@ -106,16 +107,17 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
   }
 
-  private static final class PullFutureImpl extends ForwardingRpcFuture<PullResponse>
+  private static final class PullFutureImpl extends ForwardingApiFuture<PullResponse>
       implements PullFuture {
-    PullFutureImpl(RpcFuture<PullResponse> delegate) {
+    PullFutureImpl(ApiFuture<PullResponse> delegate) {
       super(delegate);
     }
 
     @Override
     public void addCallback(final PullCallback callback) {
-      addCallback(
-          new RpcFutureCallback<PullResponse>() {
+      ApiFutures.addCallback(
+          this,
+          new ApiFutureCallback<PullResponse>() {
             @Override
             public void onSuccess(PullResponse response) {
               callback.success(response);
@@ -173,13 +175,14 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
   }
 
-  private static <V> RpcFuture<V> translate(
-      RpcFuture<V> from, final boolean idempotent, int... returnNullOn) {
+  private static <V> ApiFuture<V> translate(
+      ApiFuture<V> from, final boolean idempotent, int... returnNullOn) {
     final Set<Integer> returnNullOnSet = Sets.newHashSetWithExpectedSize(returnNullOn.length);
     for (int value : returnNullOn) {
       returnNullOnSet.add(value);
     }
-    return from.catching(
+    return ApiFutures.catching(
+        from,
         ApiException.class,
         new Function<ApiException, V>() {
           @Override

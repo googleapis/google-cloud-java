@@ -281,7 +281,7 @@ public class MetricServiceClient implements AutoCloseable {
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
    *     .setNameWithProjectName(name)
    *     .build();
-   *   RpcFuture&lt;ListMonitoredResourceDescriptorsPagedResponse&gt; future = metricServiceClient.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListMonitoredResourceDescriptorsPagedResponse&gt; future = metricServiceClient.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
    *   // Do something
    *   for (MonitoredResourceDescriptor element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -396,7 +396,7 @@ public class MetricServiceClient implements AutoCloseable {
    *   GetMonitoredResourceDescriptorRequest request = GetMonitoredResourceDescriptorRequest.newBuilder()
    *     .setNameWithMonitoredResourceDescriptorName(name)
    *     .build();
-   *   RpcFuture&lt;MonitoredResourceDescriptor&gt; future = metricServiceClient.getMonitoredResourceDescriptorCallable().futureCall(request);
+   *   ApiFuture&lt;MonitoredResourceDescriptor&gt; future = metricServiceClient.getMonitoredResourceDescriptorCallable().futureCall(request);
    *   // Do something
    *   MonitoredResourceDescriptor response = future.get();
    * }
@@ -473,7 +473,7 @@ public class MetricServiceClient implements AutoCloseable {
    *   ListMetricDescriptorsRequest request = ListMetricDescriptorsRequest.newBuilder()
    *     .setNameWithProjectName(name)
    *     .build();
-   *   RpcFuture&lt;ListMetricDescriptorsPagedResponse&gt; future = metricServiceClient.listMetricDescriptorsPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListMetricDescriptorsPagedResponse&gt; future = metricServiceClient.listMetricDescriptorsPagedCallable().futureCall(request);
    *   // Do something
    *   for (MetricDescriptor element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -579,7 +579,7 @@ public class MetricServiceClient implements AutoCloseable {
    *   GetMetricDescriptorRequest request = GetMetricDescriptorRequest.newBuilder()
    *     .setNameWithMetricDescriptorName(name)
    *     .build();
-   *   RpcFuture&lt;MetricDescriptor&gt; future = metricServiceClient.getMetricDescriptorCallable().futureCall(request);
+   *   ApiFuture&lt;MetricDescriptor&gt; future = metricServiceClient.getMetricDescriptorCallable().futureCall(request);
    *   // Do something
    *   MetricDescriptor response = future.get();
    * }
@@ -662,7 +662,7 @@ public class MetricServiceClient implements AutoCloseable {
    *     .setNameWithProjectName(name)
    *     .setMetricDescriptor(metricDescriptor)
    *     .build();
-   *   RpcFuture&lt;MetricDescriptor&gt; future = metricServiceClient.createMetricDescriptorCallable().futureCall(request);
+   *   ApiFuture&lt;MetricDescriptor&gt; future = metricServiceClient.createMetricDescriptorCallable().futureCall(request);
    *   // Do something
    *   MetricDescriptor response = future.get();
    * }
@@ -736,7 +736,7 @@ public class MetricServiceClient implements AutoCloseable {
    *   DeleteMetricDescriptorRequest request = DeleteMetricDescriptorRequest.newBuilder()
    *     .setNameWithMetricDescriptorName(name)
    *     .build();
-   *   RpcFuture&lt;Void&gt; future = metricServiceClient.deleteMetricDescriptorCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = metricServiceClient.deleteMetricDescriptorCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -841,7 +841,7 @@ public class MetricServiceClient implements AutoCloseable {
    *     .setInterval(interval)
    *     .setView(view)
    *     .build();
-   *   RpcFuture&lt;ListTimeSeriesPagedResponse&gt; future = metricServiceClient.listTimeSeriesPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListTimeSeriesPagedResponse&gt; future = metricServiceClient.listTimeSeriesPagedCallable().futureCall(request);
    *   // Do something
    *   for (TimeSeries element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -969,7 +969,7 @@ public class MetricServiceClient implements AutoCloseable {
    *     .setNameWithProjectName(name)
    *     .addAllTimeSeries(timeSeries)
    *     .build();
-   *   RpcFuture&lt;Void&gt; future = metricServiceClient.createTimeSeriesCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = metricServiceClient.createTimeSeriesCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }

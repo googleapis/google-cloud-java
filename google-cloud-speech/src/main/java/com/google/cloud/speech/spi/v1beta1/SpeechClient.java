@@ -292,7 +292,7 @@ public class SpeechClient implements AutoCloseable {
    *     .setConfig(config)
    *     .setAudio(audio)
    *     .build();
-   *   RpcFuture&lt;SyncRecognizeResponse&gt; future = speechClient.syncRecognizeCallable().futureCall(request);
+   *   ApiFuture&lt;SyncRecognizeResponse&gt; future = speechClient.syncRecognizeCallable().futureCall(request);
    *   // Do something
    *   SyncRecognizeResponse response = future.get();
    * }
@@ -434,7 +434,7 @@ public class SpeechClient implements AutoCloseable {
    *     .setConfig(config)
    *     .setAudio(audio)
    *     .build();
-   *   RpcFuture&lt;Operation&gt; future = speechClient.asyncRecognizeCallable().futureCall(request);
+   *   ApiFuture&lt;Operation&gt; future = speechClient.asyncRecognizeCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();
    * }

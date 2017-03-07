@@ -241,7 +241,7 @@ public class ReportErrorsServiceClient implements AutoCloseable {
    *     .setProjectNameWithProjectName(projectName)
    *     .setEvent(event)
    *     .build();
-   *   RpcFuture&lt;ReportErrorEventResponse&gt; future = reportErrorsServiceClient.reportErrorEventCallable().futureCall(request);
+   *   ApiFuture&lt;ReportErrorEventResponse&gt; future = reportErrorsServiceClient.reportErrorEventCallable().futureCall(request);
    *   // Do something
    *   ReportErrorEventResponse response = future.get();
    * }
