@@ -21,8 +21,9 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.core.RpcFutureCallback;
-import com.google.api.gax.core.SettableRpcFuture;
+import com.google.api.gax.core.ApiFutureCallback;
+import com.google.api.gax.core.ApiFutures;
+import com.google.api.gax.core.SettableApiFuture;
 import com.google.cloud.Identity;
 import com.google.cloud.Page;
 import com.google.cloud.Policy;
@@ -306,19 +307,18 @@ public class ITPubSubSnippets {
     try {
       publisher = Publisher.newBuilder(topicName).build();
       PublisherSnippets snippets = new PublisherSnippets(publisher);
-      final SettableRpcFuture<Void> done = new SettableRpcFuture<>();
-      snippets
-          .publish(messageToPublish)
-          .addCallback(
-              new RpcFutureCallback<String>() {
-                public void onSuccess(String messageId) {
-                  done.set(null);
-                }
+      final SettableApiFuture<Void> done = SettableApiFuture.create();
+      ApiFutures.addCallback(
+          snippets.publish(messageToPublish),
+          new ApiFutureCallback<String>() {
+            public void onSuccess(String messageId) {
+              done.set(null);
+            }
 
-                public void onFailure(Throwable t) {
-                  done.setException(t);
-                }
-              });
+            public void onFailure(Throwable t) {
+              done.setException(t);
+            }
+          });
       done.get();
     } finally {
       if (publisher != null) {
@@ -327,8 +327,8 @@ public class ITPubSubSnippets {
     }
 
     final BlockingQueue<PubsubMessage> queue = new ArrayBlockingQueue<>(1);
-    final SettableRpcFuture<Void> done = new SettableRpcFuture<>();
-    final SettableRpcFuture<PubsubMessage> received = new SettableRpcFuture<>();
+    final SettableApiFuture<Void> done = SettableApiFuture.create();
+    final SettableApiFuture<PubsubMessage> received = SettableApiFuture.create();
     SubscriberSnippets snippets =
         new SubscriberSnippets(
             subscriptionName,

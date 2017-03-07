@@ -111,7 +111,7 @@ try (PublisherClient publisherClient = PublisherClient.create()) {
 With Pub/Sub you can publish messages to a topic. Add the following import at the top of your file:
 
 ```java
-import com.google.api.gax.core.RpcFuture;
+import com.google.api.gax.core.ApiFuture;
 import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
@@ -124,7 +124,7 @@ try {
   publisher = Publisher.newBuilder(topic).build();
   ByteString data = ByteString.copyFromUtf8("my-message");
   PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-  RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+  ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
 } finally {
   if (publisher != null) {
     publisher.shutdown();
