@@ -8,6 +8,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.google.cloud%22%20a%3A%22google-cloud%22)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![API Testing](https://img.shields.io/badge/API%20Test-RapidAPI-blue.svg)](https://rapidapi.com/package/GoogleCloudStorage/functions?utm_source=GoogleCloudStorageGithub&utm_medium=button&utm_content=Vender_GitHub)
 
 -  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
 -  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs)
