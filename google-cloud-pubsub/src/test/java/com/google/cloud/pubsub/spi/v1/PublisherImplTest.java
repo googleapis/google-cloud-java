@@ -18,17 +18,17 @@ package com.google.cloud.pubsub.spi.v1;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.times;
 
-import com.google.api.gax.grpc.BundlingSettings;
+import com.google.api.gax.bundling.BundlingSettings;
+import com.google.api.gax.core.FlowControlSettings;
+import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
-import com.google.api.gax.grpc.FlowControlSettings;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.cloud.pubsub.spi.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
@@ -372,7 +372,6 @@ public class PublisherImplTest {
     Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
     builder.setChannelProvider(TEST_CHANNEL_PROVIDER);
     builder.setExecutorProvider(SINGLE_THREAD_EXECUTOR);
-    builder.setFailOnFlowControlLimits(true);
     builder.setBundlingSettings(
         BundlingSettings.newBuilder()
             .setRequestByteThreshold(10)
@@ -383,6 +382,7 @@ public class PublisherImplTest {
         FlowControlSettings.newBuilder()
             .setMaxOutstandingRequestBytes(13)
             .setMaxOutstandingElementCount(14)
+            .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
             .build());
     Publisher publisher = builder.build();
 
@@ -392,7 +392,9 @@ public class PublisherImplTest {
     assertEquals(12, (long) publisher.getBundlingSettings().getElementCountThreshold());
     assertEquals(13, (long) publisher.getFlowControlSettings().getMaxOutstandingRequestBytes());
     assertEquals(14, (long) publisher.getFlowControlSettings().getMaxOutstandingElementCount());
-    assertTrue(publisher.failOnFlowControlLimits());
+    assertEquals(
+        LimitExceededBehavior.ThrowException,
+        publisher.getFlowControlSettings().getLimitExceededBehavior());
     publisher.shutdown();
   }
 
@@ -401,7 +403,8 @@ public class PublisherImplTest {
     Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
     assertEquals(TEST_TOPIC, builder.topicName);
     assertEquals(Publisher.Builder.DEFAULT_EXECUTOR_PROVIDER, builder.executorProvider);
-    assertFalse(builder.failOnFlowControlLimits);
+    assertEquals(
+        LimitExceededBehavior.Block, builder.flowControlSettings.getLimitExceededBehavior());
     assertEquals(
         Publisher.Builder.DEFAULT_REQUEST_BYTES_THRESHOLD,
         builder.bundlingSettings.getRequestByteThreshold().longValue());
