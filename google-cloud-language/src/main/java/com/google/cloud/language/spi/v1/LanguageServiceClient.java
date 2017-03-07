@@ -225,7 +225,7 @@ public class LanguageServiceClient implements AutoCloseable {
    *   AnalyzeSentimentRequest request = AnalyzeSentimentRequest.newBuilder()
    *     .setDocument(document)
    *     .build();
-   *   RpcFuture&lt;AnalyzeSentimentResponse&gt; future = languageServiceClient.analyzeSentimentCallable().futureCall(request);
+   *   ApiFuture&lt;AnalyzeSentimentResponse&gt; future = languageServiceClient.analyzeSentimentCallable().futureCall(request);
    *   // Do something
    *   AnalyzeSentimentResponse response = future.get();
    * }
@@ -307,7 +307,7 @@ public class LanguageServiceClient implements AutoCloseable {
    *     .setDocument(document)
    *     .setEncodingType(encodingType)
    *     .build();
-   *   RpcFuture&lt;AnalyzeEntitiesResponse&gt; future = languageServiceClient.analyzeEntitiesCallable().futureCall(request);
+   *   ApiFuture&lt;AnalyzeEntitiesResponse&gt; future = languageServiceClient.analyzeEntitiesCallable().futureCall(request);
    *   // Do something
    *   AnalyzeEntitiesResponse response = future.get();
    * }
@@ -388,7 +388,7 @@ public class LanguageServiceClient implements AutoCloseable {
    *     .setDocument(document)
    *     .setEncodingType(encodingType)
    *     .build();
-   *   RpcFuture&lt;AnalyzeSyntaxResponse&gt; future = languageServiceClient.analyzeSyntaxCallable().futureCall(request);
+   *   ApiFuture&lt;AnalyzeSyntaxResponse&gt; future = languageServiceClient.analyzeSyntaxCallable().futureCall(request);
    *   // Do something
    *   AnalyzeSyntaxResponse response = future.get();
    * }
@@ -476,7 +476,7 @@ public class LanguageServiceClient implements AutoCloseable {
    *     .setFeatures(features)
    *     .setEncodingType(encodingType)
    *     .build();
-   *   RpcFuture&lt;AnnotateTextResponse&gt; future = languageServiceClient.annotateTextCallable().futureCall(request);
+   *   ApiFuture&lt;AnnotateTextResponse&gt; future = languageServiceClient.annotateTextCallable().futureCall(request);
    *   // Do something
    *   AnnotateTextResponse response = future.get();
    * }

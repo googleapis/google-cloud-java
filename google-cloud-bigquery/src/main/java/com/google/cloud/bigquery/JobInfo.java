@@ -97,11 +97,6 @@ public class JobInfo implements Serializable {
 
     abstract Builder setGeneratedId(String generatedId);
 
-    /**
-     * Sets the job identity.
-     */
-    @Deprecated
-    public abstract Builder jobId(JobId jobId);
 
     /**
      * Sets the job identity.
@@ -116,15 +111,6 @@ public class JobInfo implements Serializable {
 
     abstract Builder setUserEmail(String userEmail);
 
-    /**
-     * Sets a configuration for the {@code JobInfo} object. Use {@link CopyJobConfiguration} for a
-     * job that copies an existing table. Use {@link ExtractJobConfiguration} for a job that exports
-     * a table to Google Cloud Storage. Use {@link LoadJobConfiguration} for a job that loads data
-     * from Google Cloud Storage into a table. Use {@link QueryJobConfiguration} for a job that runs
-     * a query.
-     */
-    @Deprecated
-    public abstract Builder configuration(JobConfiguration configuration);
 
     /**
      * Sets a configuration for the {@code JobInfo} object. Use {@link CopyJobConfiguration} for a
@@ -194,11 +180,6 @@ public class JobInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder jobId(JobId jobId) {
-      return setJobId(jobId);
-    }
 
     @Override
     public Builder setJobId(JobId jobId) {
@@ -230,11 +211,6 @@ public class JobInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder configuration(JobConfiguration configuration) {
-      return setConfiguration(configuration);
-    }
 
     @Override
     public Builder setConfiguration(JobConfiguration configuration) {
@@ -259,13 +235,6 @@ public class JobInfo implements Serializable {
     this.configuration = builder.configuration;
   }
 
-  /**
-   * Returns the hash of the job resource.
-   */
-  @Deprecated
-  public String etag() {
-    return getEtag();
-  }
 
   /**
    * Returns the hash of the job resource.
@@ -274,13 +243,6 @@ public class JobInfo implements Serializable {
     return etag;
   }
 
-  /**
-   * Returns the service-generated id for the job.
-   */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
-  }
 
   /**
    * Returns the service-generated id for the job.
@@ -289,13 +251,6 @@ public class JobInfo implements Serializable {
     return generatedId;
   }
 
-  /**
-   * Returns the job identity.
-   */
-  @Deprecated
-  public JobId jobId() {
-    return getJobId();
-  }
 
   /**
    * Returns the job identity.
@@ -304,14 +259,6 @@ public class JobInfo implements Serializable {
     return jobId;
   }
 
-  /**
-   * Returns an URL that can be used to access the resource again. The returned URL can be used for
-   * GET requests.
-   */
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
-  }
 
   /**
    * Returns an URL that can be used to access the resource again. The returned URL can be used for
@@ -321,14 +268,6 @@ public class JobInfo implements Serializable {
     return selfLink;
   }
 
-  /**
-   * Returns the status of this job. Examine this value when polling an asynchronous job to see if
-   * the job is complete.
-   */
-  @Deprecated
-  public JobStatus status() {
-    return getStatus();
-  }
 
   /**
    * Returns the status of this job. Examine this value when polling an asynchronous job to see if
@@ -338,14 +277,6 @@ public class JobInfo implements Serializable {
     return status;
   }
 
-  /**
-   * Returns information about the job, including starting time and ending time of the job.
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public <S extends JobStatistics> S statistics() {
-    return getStatistics();
-  }
 
   /**
    * Returns information about the job, including starting time and ending time of the job.
@@ -355,13 +286,6 @@ public class JobInfo implements Serializable {
     return (S) statistics;
   }
 
-  /**
-   * Returns the email address of the user who ran the job.
-   */
-  @Deprecated
-  public String userEmail() {
-    return getUserEmail();
-  }
 
   /**
    * Returns the email address of the user who ran the job.
@@ -370,14 +294,6 @@ public class JobInfo implements Serializable {
     return userEmail;
   }
 
-  /**
-   * Returns the job's configuration.
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public <C extends JobConfiguration> C configuration() {
-    return getConfiguration();
-  }
 
   /**
    * Returns the job's configuration.
@@ -448,17 +364,6 @@ public class JobInfo implements Serializable {
     return jobPb;
   }
 
-  /**
-   * Returns a builder for a {@code JobInfo} object given the job configuration. Use
-   * {@link CopyJobConfiguration} for a job that copies an existing table. Use
-   * {@link ExtractJobConfiguration} for a job that exports a table to Google Cloud Storage. Use
-   * {@link LoadJobConfiguration} for a job that loads data from Google Cloud Storage into a table.
-   * Use {@link QueryJobConfiguration} for a job that runs a query.
-   */
-  @Deprecated
-  public static Builder builder(JobConfiguration configuration) {
-    return newBuilder(configuration);
-  }
 
   /**
    * Returns a builder for a {@code JobInfo} object given the job configuration. Use

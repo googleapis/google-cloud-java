@@ -51,13 +51,6 @@ public class Language implements Serializable {
     this.name = name;
   }
 
-  /**
-   * Returns the code of the language.
-   */
-  @Deprecated
-  public String code() {
-    return getCode();
-  }
 
   /**
    * Returns the code of the language.
@@ -66,13 +59,6 @@ public class Language implements Serializable {
     return code;
   }
 
-  /**
-   * Returns the name of the language.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Returns the name of the language.

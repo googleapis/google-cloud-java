@@ -796,7 +796,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Acknowledges the given messages for the provided subscription. Ack ids identify the messages to
-   * acknowledge, as returned in {@link ReceivedMessage#ackId()} by {@link #pull(String, int)} and
+   * acknowledge, as returned in {@link ReceivedMessage#getAckId()} by {@link #pull(String, int)} and
    * {@link #pullAsync(String, int)}.
    *
    * <p>Example of acking one message.
@@ -823,7 +823,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request to acknowledge the given messages for the provided subscription. Ack ids
-   * identify the messages to acknowledge, as returned in {@link ReceivedMessage#ackId()} by
+   * identify the messages to acknowledge, as returned in {@link ReceivedMessage#getAckId()} by
    * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. The method returns a
    * {@code Future} object that can be used to wait for the acknowledge operation to be completed.
    *
@@ -854,8 +854,8 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Acknowledges the given messages for the provided subscription. Ack ids identify the messages to
-   * acknowledge, as returned in {@link ReceivedMessage#ackId()} by {@link #pull(String, int)} and
-   * {@link #pullAsync(String, int)}.
+   * acknowledge, as returned in {@link ReceivedMessage#getAckId()} by {@link #pull(String, int)}
+   * and {@link #pullAsync(String, int)}.
    *
    * <p>Example of acking a list of messages.
    * <pre> {@code
@@ -876,7 +876,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request to acknowledge the given messages for the provided subscription. Ack ids
-   * identify the messages to acknowledge, as returned in {@link ReceivedMessage#ackId()} by
+   * identify the messages to acknowledge, as returned in {@link ReceivedMessage#getAckId()} by
    * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. The method returns a
    * {@code Future} object that can be used to wait for the acknowledge operation to be completed.
    *
@@ -900,7 +900,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * "Nacks" the given messages for the provided subscription. Ack ids identify the messages to
-   * "nack", as returned in {@link ReceivedMessage#ackId()} by {@link #pull(String, int)} and
+   * "nack", as returned in {@link ReceivedMessage#getAckId()} by {@link #pull(String, int)} and
    * {@link #pullAsync(String, int)}. This method corresponds to calling
    * {@link #modifyAckDeadline(String, int, TimeUnit, String, String...)} with a deadline of 0.
    *
@@ -928,7 +928,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request to "nack" the given messages for the provided subscription. Ack ids identify
-   * the messages to "nack", as returned in {@link ReceivedMessage#ackId()} by
+   * the messages to "nack", as returned in {@link ReceivedMessage#getAckId()} by
    * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. This method corresponds to
    * calling {@link #modifyAckDeadlineAsync(String, int, TimeUnit, String, String...)} with a
    * deadline of 0. The method returns a {@code Future} object that can be used to wait for the
@@ -961,7 +961,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * "Nacks" the given messages for the provided subscription. Ack ids identify the messages to
-   * "nack", as returned in {@link ReceivedMessage#ackId()} by {@link #pull(String, int)} and
+   * "nack", as returned in {@link ReceivedMessage#getAckId()} by {@link #pull(String, int)} and
    * {@link #pullAsync(String, int)}. This method corresponds to calling
    * {@link #modifyAckDeadline(String, int, TimeUnit, Iterable)} with a deadline of 0.
    *
@@ -984,7 +984,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request to "nack" the given messages for the provided subscription. Ack ids identify
-   * the messages to "nack", as returned in {@link ReceivedMessage#ackId()} by
+   * the messages to "nack", as returned in {@link ReceivedMessage#getAckId()} by
    * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. This method corresponds to
    * calling {@link #modifyAckDeadlineAsync(String, int, TimeUnit, Iterable)} with a deadline of 0.
    * The method returns a {@code Future} object that can be used to wait for the "nack" operation to
@@ -1217,7 +1217,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
    * the project's current policy, updating it locally, and then sending the modified policy for
    * writing. Cloud IAM solves the problem of conflicting processes simultaneously attempting to
-   * modify a policy by using the {@link Policy#etag etag} property. This property is used to
+   * modify a policy by using the {@link Policy#getEtag etag} property. This property is used to
    * verify whether the policy has changed since the last request. When you make a request with an
    * etag value, the value in the request is compared with the existing etag value associated with
    * the policy. The policy is written only if the etag values match. If the etags don't match,
@@ -1336,7 +1336,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
    * the project's current policy, updating it locally, and then sending the modified policy for
    * writing. Cloud IAM solves the problem of conflicting processes simultaneously attempting to
-   * modify a policy by using the {@link Policy#etag etag} property. This property is used to
+   * modify a policy by using the {@link Policy#getEtag etag} property. This property is used to
    * verify whether the policy has changed since the last request. When you make a request with an
    * etag value, the value in the request is compared with the existing etag value associated with
    * the policy. The policy is written only if the etag values match. If the etags don't match, a

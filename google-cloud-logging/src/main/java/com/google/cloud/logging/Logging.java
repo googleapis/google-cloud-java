@@ -85,7 +85,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
     }
 
     /**
-     * Returns an option to specify a default log name (see {@link LogEntry#logName()}) for those
+     * Returns an option to specify a default log name (see {@link LogEntry#getLogName()}) for those
      * log entries that do not specify their own log name. Example: {@code syslog}.
      */
     public static WriteOption logName(String logName) {
@@ -93,7 +93,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
     }
 
     /**
-     * Returns an option to specify a default monitored resource (see {@link LogEntry#resource()})
+     * Returns an option to specify a default monitored resource (see {@link LogEntry#getResource()})
      * for those log entries that do not specify their own resource.
      */
     public static WriteOption resource(MonitoredResource resource) {
@@ -101,9 +101,9 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
     }
 
     /**
-     * Sets an option to specify (key, value) pairs that are added to the {@link LogEntry#labels()}
-     * of each log entry written, except when a log entry already has a value associated to the
-     * same key.
+     * Sets an option to specify (key, value) pairs that are added to the
+     * {@link LogEntry#getLabels()} of each log entry written, except when a log entry already has a
+     * value associated to the same key.
      */
     public static WriteOption labels(Map<String, String> labels) {
       return new WriteOption(OptionType.LABELS, ImmutableMap.copyOf(labels));
@@ -175,7 +175,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
 
     /**
      * Returns an option to sort log entries. If not specified, log entries are sorted in ascending
-     * (most-recent last) order with respect to the {@link LogEntry#timestamp()} value.
+     * (most-recent last) order with respect to the {@link LogEntry#getTimestamp()} value.
      */
     public static EntryListOption sortOrder(SortingField field, SortingOrder order) {
       return new EntryListOption(OptionType.ORDER_BY, field.selector() + ' ' + order.selector());

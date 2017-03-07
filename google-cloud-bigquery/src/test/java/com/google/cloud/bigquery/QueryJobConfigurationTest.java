@@ -90,21 +90,6 @@ public class QueryJobConfigurationTest {
           .setDryRun(true)
           .setUseLegacySql(USE_LEGACY_SQL)
           .build();
-  private static final QueryJobConfiguration DEPRECATED_QUERY_JOB_CONFIGURATION =
-      QueryJobConfiguration.builder(QUERY)
-          .useQueryCache(USE_QUERY_CACHE)
-          .tableDefinitions(TABLE_DEFINITIONS)
-          .allowLargeResults(ALLOW_LARGE_RESULTS)
-          .createDisposition(CREATE_DISPOSITION)
-          .defaultDataset(DATASET_ID)
-          .destinationTable(TABLE_ID)
-          .writeDisposition(WRITE_DISPOSITION)
-          .priority(PRIORITY)
-          .flattenResults(FLATTEN_RESULTS)
-          .userDefinedFunctions(USER_DEFINED_FUNCTIONS)
-          .dryRun(true)
-          .useLegacySql(USE_LEGACY_SQL)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -128,41 +113,6 @@ public class QueryJobConfigurationTest {
   public void testToBuilderIncomplete() {
     QueryJobConfiguration job = QueryJobConfiguration.of(QUERY);
     compareQueryJobConfiguration(job, job.toBuilder().build());
-  }
-
-  @Test
-  public void testBuilder() {
-    assertEquals(ALLOW_LARGE_RESULTS, DEPRECATED_QUERY_JOB_CONFIGURATION.allowLargeResults());
-    assertEquals(CREATE_DISPOSITION, DEPRECATED_QUERY_JOB_CONFIGURATION.getCreateDisposition());
-    assertEquals(DATASET_ID, DEPRECATED_QUERY_JOB_CONFIGURATION.getDefaultDataset());
-    assertEquals(TABLE_ID, DEPRECATED_QUERY_JOB_CONFIGURATION.getDestinationTable());
-    assertEquals(FLATTEN_RESULTS, DEPRECATED_QUERY_JOB_CONFIGURATION.flattenResults());
-    assertEquals(PRIORITY, DEPRECATED_QUERY_JOB_CONFIGURATION.getPriority());
-    assertEquals(QUERY, DEPRECATED_QUERY_JOB_CONFIGURATION.getQuery());
-    assertEquals(TABLE_DEFINITIONS, DEPRECATED_QUERY_JOB_CONFIGURATION.getTableDefinitions());
-    assertEquals(USE_QUERY_CACHE, DEPRECATED_QUERY_JOB_CONFIGURATION.useQueryCache());
-    assertEquals(USER_DEFINED_FUNCTIONS,
-        DEPRECATED_QUERY_JOB_CONFIGURATION.getUserDefinedFunctions());
-    assertEquals(WRITE_DISPOSITION, DEPRECATED_QUERY_JOB_CONFIGURATION.getWriteDisposition());
-    assertTrue(DEPRECATED_QUERY_JOB_CONFIGURATION.dryRun());
-    assertTrue(DEPRECATED_QUERY_JOB_CONFIGURATION.useLegacySql());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(ALLOW_LARGE_RESULTS, QUERY_JOB_CONFIGURATION.allowLargeResults());
-    assertEquals(CREATE_DISPOSITION, QUERY_JOB_CONFIGURATION.createDisposition());
-    assertEquals(DATASET_ID, QUERY_JOB_CONFIGURATION.defaultDataset());
-    assertEquals(TABLE_ID, QUERY_JOB_CONFIGURATION.destinationTable());
-    assertEquals(FLATTEN_RESULTS, QUERY_JOB_CONFIGURATION.flattenResults());
-    assertEquals(PRIORITY, QUERY_JOB_CONFIGURATION.priority());
-    assertEquals(QUERY, QUERY_JOB_CONFIGURATION.query());
-    assertEquals(TABLE_DEFINITIONS, QUERY_JOB_CONFIGURATION.tableDefinitions());
-    assertEquals(USE_QUERY_CACHE, QUERY_JOB_CONFIGURATION.useQueryCache());
-    assertEquals(USER_DEFINED_FUNCTIONS, QUERY_JOB_CONFIGURATION.userDefinedFunctions());
-    assertEquals(WRITE_DISPOSITION, QUERY_JOB_CONFIGURATION.writeDisposition());
-    assertTrue(QUERY_JOB_CONFIGURATION.dryRun());
-    assertTrue(QUERY_JOB_CONFIGURATION.useLegacySql());
   }
 
   @Test

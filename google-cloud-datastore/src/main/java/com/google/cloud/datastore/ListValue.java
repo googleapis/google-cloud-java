@@ -317,13 +317,6 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
     return newBuilder().addValue(first, other).build();
   }
 
-  /**
-   * Returns a builder for {@code ListValue} objects.
-   */
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   /**
    * Returns a builder for {@code ListValue} objects.

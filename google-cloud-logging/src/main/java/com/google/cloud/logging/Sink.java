@@ -63,11 +63,6 @@ public class Sink extends SinkInfo {
       delegate = new BuilderImpl(sink);
     }
 
-    @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     @Override
     public Builder setName(String name) {
@@ -75,11 +70,6 @@ public class Sink extends SinkInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder destination(Destination destination) {
-      return setDestination(destination);
-    }
 
     @Override
     public Builder setDestination(Destination destination) {
@@ -87,11 +77,6 @@ public class Sink extends SinkInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder filter(String filter) {
-      return setFilter(filter);
-    }
 
     @Override
     public Builder setFilter(String filter) {
@@ -99,11 +84,6 @@ public class Sink extends SinkInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder versionFormat(VersionFormat versionFormat) {
-      return setVersionFormat(versionFormat);
-    }
 
     @Override
     public Builder setVersionFormat(VersionFormat versionFormat) {
@@ -145,13 +125,6 @@ public class Sink extends SinkInfo {
     return baseEquals(other) && Objects.equals(options, other.options);
   }
 
-  /**
-   * Returns the sinks's {@code Logging} object used to issue requests.
-   */
-  @Deprecated
-  public Logging logging() {
-    return getLogging();
-  }
 
   /**
    * Returns the sinks's {@code Logging} object used to issue requests.

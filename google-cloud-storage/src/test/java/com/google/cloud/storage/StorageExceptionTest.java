@@ -27,13 +27,13 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
-
-import org.junit.Test;
-
 import java.io.IOException;
 import java.net.SocketTimeoutException;
+import org.junit.Test;
 
 public class StorageExceptionTest {
 
@@ -112,6 +112,37 @@ public class StorageExceptionTest {
     assertFalse(exception.isRetryable());
     assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
+
+    HttpResponseException httpResponseException =
+        new HttpResponseException.Builder(404, "Service Unavailable", new HttpHeaders()).build();
+    exception = new StorageException(httpResponseException);
+    assertEquals(404, exception.getCode());
+    assertFalse(exception.isRetryable());
+
+    httpResponseException = new HttpResponseException.Builder(503, null, new HttpHeaders()).build();
+    exception = new StorageException(httpResponseException);
+    assertEquals(503, exception.getCode());
+    assertTrue(exception.isRetryable());
+
+    httpResponseException = new HttpResponseException.Builder(502, null, new HttpHeaders()).build();
+    exception = new StorageException(httpResponseException);
+    assertEquals(502, exception.getCode());
+    assertTrue(exception.isRetryable());
+
+    httpResponseException = new HttpResponseException.Builder(500, null, new HttpHeaders()).build();
+    exception = new StorageException(httpResponseException);
+    assertEquals(500, exception.getCode());
+    assertTrue(exception.isRetryable());
+
+    httpResponseException = new HttpResponseException.Builder(429, null, new HttpHeaders()).build();
+    exception = new StorageException(httpResponseException);
+    assertEquals(429, exception.getCode());
+    assertTrue(exception.isRetryable());
+
+    httpResponseException = new HttpResponseException.Builder(408, null, new HttpHeaders()).build();
+    exception = new StorageException(httpResponseException);
+    assertEquals(408, exception.getCode());
+    assertTrue(exception.isRetryable());
   }
 
   @Test

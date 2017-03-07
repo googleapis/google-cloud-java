@@ -45,7 +45,7 @@ import java.util.logging.SimpleFormatter;
  *
  * <p>Original Java logging levels are added as labels (with {@code levelName} and
  * {@code levelValue} keys, respectively) to the corresponding Stackdriver Logging {@link LogEntry}.
- * You can read entry labels using {@link LogEntry#labels()}. To use logging levels that correspond
+ * You can read entry labels using {@link LogEntry#getLabels()}. To use logging levels that correspond
  * to Stackdriver Logging severities you can use {@link LoggingLevel}.
  *
  * <p><b>Configuration</b>: By default each {@code AsyncLoggingHandler} is initialized using the

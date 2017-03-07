@@ -50,20 +50,6 @@ public class ExtractJobConfigurationTest {
           .setCompression(COMPRESSION)
           .setFormat(FORMAT)
           .build();
-  private static final ExtractJobConfiguration DEPRECATED_EXTRACT_CONFIGURATION =
-      ExtractJobConfiguration.builder(TABLE_ID, DESTINATION_URIS)
-          .printHeader(PRINT_HEADER)
-          .fieldDelimiter(FIELD_DELIMITER)
-          .compression(COMPRESSION)
-          .format(FORMAT)
-          .build();
-  private static final ExtractJobConfiguration DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI =
-      ExtractJobConfiguration.builder(TABLE_ID, DESTINATION_URI)
-          .printHeader(PRINT_HEADER)
-          .fieldDelimiter(FIELD_DELIMITER)
-          .compression(COMPRESSION)
-          .format(FORMAT)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -118,22 +104,6 @@ public class ExtractJobConfigurationTest {
     assertEquals(FORMAT, EXTRACT_CONFIGURATION_ONE_URI.getFormat());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(TABLE_ID, DEPRECATED_EXTRACT_CONFIGURATION.sourceTable());
-    assertEquals(DESTINATION_URIS, DEPRECATED_EXTRACT_CONFIGURATION.destinationUris());
-    assertEquals(FIELD_DELIMITER, DEPRECATED_EXTRACT_CONFIGURATION.fieldDelimiter());
-    assertEquals(COMPRESSION, DEPRECATED_EXTRACT_CONFIGURATION.compression());
-    assertEquals(PRINT_HEADER, DEPRECATED_EXTRACT_CONFIGURATION.printHeader());
-    assertEquals(FORMAT, DEPRECATED_EXTRACT_CONFIGURATION.format());
-    assertEquals(TABLE_ID, DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.sourceTable());
-    assertEquals(ImmutableList.of(DESTINATION_URI),
-        DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.destinationUris());
-    assertEquals(FIELD_DELIMITER, DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.fieldDelimiter());
-    assertEquals(COMPRESSION, DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.compression());
-    assertEquals(PRINT_HEADER, DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.printHeader());
-    assertEquals(FORMAT, DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.format());
-  }
 
   @Test
   public void testToPbAndFromPb() {

@@ -16,17 +16,17 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutureCallback;
+import com.google.api.gax.core.ApiFutures;
 import com.google.api.gax.core.Function;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.core.RpcFuture;
-import com.google.api.gax.core.RpcFutureCallback;
 import com.google.api.gax.grpc.BundlingSettings;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FlowControlSettings;
 import com.google.api.gax.grpc.FlowController;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.RpcFutures;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -174,16 +174,16 @@ public class Publisher {
    * be delayed based on the publisher bundling options.
    *
    * <p>Depending on chosen flow control {@link #failOnFlowControlLimits option}, the returned
-   * future might immediately fail with a {@link FlowController.FlowControlException} or block the
-   * current thread until there are more resources available to publish.
+   * future might immediately fail with a {@link com.google.api.gax.grpc.FlowController.FlowControlException}
+   * or block the current thread until there are more resources available to publish.
    *
    * <p>Example of publishing a message.
    * <pre> {@code
    * String message = "my_message";
    * ByteString data = ByteString.copyFromUtf8(message);
    * PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-   * RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-   * messageIdFuture.addCallback(new RpcFutureCallback<String>() {
+   * ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+   * messageIdFuture.addCallback(new ApiFutureCallback<String>() {
    *   public void onSuccess(String messageId) {
    *     System.out.println("published with message id: " + messageId);
    *   }
@@ -197,7 +197,7 @@ public class Publisher {
    * @param message the message to publish.
    * @return the message ID wrapped in a future.
    */
-  public RpcFuture<String> publish(PubsubMessage message) {
+  public ApiFuture<String> publish(PubsubMessage message) {
     if (shutdown.get()) {
       throw new IllegalStateException("Cannot publish on a shut-down publisher.");
     }
@@ -206,7 +206,7 @@ public class Publisher {
     try {
       flowController.reserve(1, messageSize);
     } catch (FlowController.FlowControlException e) {
-      return RpcFutures.immediateFailedFuture(e);
+      return ApiFutures.immediateFailedFuture(e);
     }
     OutstandingBundle bundleToSend = null;
     SettableFuture<String> publishResult = SettableFuture.create();
@@ -282,12 +282,12 @@ public class Publisher {
   }
 
   private static class ListenableFutureDelegate<V> extends SimpleForwardingListenableFuture<V>
-      implements RpcFuture<V> {
+      implements ApiFuture<V> {
     ListenableFutureDelegate(ListenableFuture<V> delegate) {
       super(delegate);
     }
 
-    public void addCallback(final RpcFutureCallback<? super V> callback) {
+    public void addCallback(final ApiFutureCallback<? super V> callback) {
       Futures.addCallback(
           this,
           new FutureCallback<V>() {
@@ -303,7 +303,7 @@ public class Publisher {
           });
     }
 
-    public <X extends Throwable> RpcFuture catching(
+    public <X extends Throwable> ApiFuture catching(
         Class<X> exceptionType, final Function<? super X, ? extends V> callback) {
       return new ListenableFutureDelegate<V>(
           Futures.catching(
@@ -321,7 +321,7 @@ public class Publisher {
   private void setupDurationBasedPublishAlarm() {
     if (!activeAlarm.getAndSet(true)) {
       long delayThresholdMs = getBundlingSettings().getDelayThreshold().getMillis();
-      logger.log(Level.INFO, "Setting up alarm for the next %d ms.", delayThresholdMs);
+      logger.log(Level.INFO, "Setting up alarm for the next {0} ms.", delayThresholdMs);
       currentAlarmFuture =
           executor.schedule(
               new Runnable() {
@@ -485,9 +485,9 @@ public class Publisher {
    * #getFlowControlSettings()}).
    *
    * <p>If set to false, a publish call will fail with either {@link
-   * FlowController.MaxOutstandingRequestBytesReachedException} or {@link
-   * FlowController.MaxOutstandingElementCountReachedException}, as appropriate, when flow control
-   * limits are reached.
+   * com.google.api.gax.grpc.FlowController.MaxOutstandingRequestBytesReachedException} or {@link
+   * com.google.api.gax.grpc.FlowController.MaxOutstandingElementCountReachedException}, as
+   * appropriate, when flow contro limits are reached.
    */
   public boolean failOnFlowControlLimits() {
     return failOnFlowControlLimits;
@@ -667,8 +667,9 @@ public class Publisher {
 
     /**
      * Whether to fail publish when reaching any of the flow control limits, with either a {@link
-     * FlowController.MaxOutstandingRequestBytesReachedException} or {@link
-     * FlowController.MaxOutstandingElementCountReachedException} as appropriate.
+     * com.google.api.gax.grpc.FlowController.MaxOutstandingRequestBytesReachedException} or {@link
+     * com.google.api.gax.grpc.FlowController.MaxOutstandingElementCountReachedException} as
+     * appropriate.
      *
      * <p>If set to false, then publish operations will block the current thread until the
      * outstanding requests go under the limits.

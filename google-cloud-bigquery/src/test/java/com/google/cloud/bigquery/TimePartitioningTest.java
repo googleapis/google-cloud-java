@@ -44,14 +44,6 @@ public class TimePartitioningTest {
     assertNull(partitioning.getExpirationMs());
   }
 
-  @Test
-  public void testOfDeprecated() {
-    assertEquals(TYPE, TIME_PARTITIONING.type());
-    assertEquals(EXPIRATION_MS, TIME_PARTITIONING.expirationMs().longValue());
-    TimePartitioning partitioning = TimePartitioning.of(TYPE);
-    assertEquals(TYPE, partitioning.type());
-    assertNull(partitioning.expirationMs());
-  }
 
   @Test
   public void testTypeOf_Npe() {

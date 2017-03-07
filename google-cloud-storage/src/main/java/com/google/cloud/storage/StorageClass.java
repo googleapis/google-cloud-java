@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,27 +20,27 @@ package com.google.cloud.storage;
  * See https://cloud.google.com/storage/docs/storage-classes for details.
  */
 public enum StorageClass {
-  
+
   /**
    * Regional storage class.
    */
   REGIONAL,
-  
+
   /**
    * Multi-regional storage class.
    */
   MULTI_REGIONAL,
-  
+
   /**
    * Nearline storage class.
    */
   NEARLINE,
-  
+
   /**
    * Coldline storage class.
    */
   COLDLINE,
-  
+
   /**
    * Standard storage class.
    */

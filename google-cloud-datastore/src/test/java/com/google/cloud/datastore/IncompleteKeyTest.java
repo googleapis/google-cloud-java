@@ -34,8 +34,6 @@ public class IncompleteKeyTest {
     pk1 = IncompleteKey.newBuilder("ds", "kind1").build();
     parent1 = Key.newBuilder("ds", "kind2", 10).setNamespace("ns").build();
     pk2 = IncompleteKey.newBuilder(parent1, "kind3").build();
-    deprecatedPk1 = IncompleteKey.builder("ds", "kind1").build();
-    deprecatedPk2 = IncompleteKey.builder(parent1, "kind3").build();
   }
 
   @Test
@@ -56,37 +54,11 @@ public class IncompleteKeyTest {
   }
 
   @Test
-  public void testBuildersDeprecated() throws Exception {
-    assertEquals("ds", deprecatedPk1.projectId());
-    assertEquals("kind1", deprecatedPk1.kind());
-    assertTrue(deprecatedPk1.ancestors().isEmpty());
-
-    assertEquals("ds", deprecatedPk2.projectId());
-    assertEquals("kind3", deprecatedPk2.kind());
-    assertEquals(parent1.path(), deprecatedPk2.ancestors());
-
-    assertEquals(deprecatedPk2, IncompleteKey.builder(deprecatedPk2).build());
-    IncompleteKey deprecatedPk3 = IncompleteKey.builder(deprecatedPk2).kind("kind4").build();
-    assertEquals("ds", deprecatedPk3.projectId());
-    assertEquals("kind4", deprecatedPk3.kind());
-    assertEquals(parent1.path(), deprecatedPk3.ancestors());
-  }
-
-  @Test
   public void testParent() {
     assertNull(pk1.getParent());
     assertEquals(parent1, pk2.getParent());
     Key parent2 = Key.newBuilder("ds", "kind3", "name").setNamespace("ns").build();
     IncompleteKey pk3 = IncompleteKey.newBuilder(parent2, "kind3").build();
     assertEquals(parent2, pk3.getParent());
-  }
-
-  @Test
-  public void testParentDeprecated() {
-    assertNull(deprecatedPk1.parent());
-    assertEquals(parent1, deprecatedPk2.parent());
-    Key parent2 = Key.newBuilder("ds", "kind3", "name").setName("ns").build();
-    IncompleteKey deprecatedPk3 = IncompleteKey.builder(parent2, "kind3").build();
-    assertEquals(parent2, deprecatedPk3.parent());
   }
 }

@@ -201,12 +201,6 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder blobId(BlobId blobId) {
-      return setBlobId(blobId);
-    }
-
-    @Override
     public Builder setBlobId(BlobId blobId) {
       infoBuilder.setBlobId(blobId);
       return this;
@@ -219,20 +213,9 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    public Builder contentType(String contentType) {
-      return setContentType(contentType);
-    }
-
-    @Override
     public Builder setContentType(String contentType) {
       infoBuilder.setContentType(contentType);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder contentDisposition(String contentDisposition) {
-      return setContentDisposition(contentDisposition);
     }
 
     @Override
@@ -242,21 +225,9 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder contentLanguage(String contentLanguage) {
-      return setContentLanguage(contentLanguage);
-    }
-
-    @Override
     public Builder setContentLanguage(String contentLanguage) {
       infoBuilder.setContentLanguage(contentLanguage);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder contentEncoding(String contentEncoding) {
-      return setContentEncoding(contentEncoding);
     }
 
     @Override
@@ -272,21 +243,9 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder cacheControl(String cacheControl) {
-      return setCacheControl(cacheControl);
-    }
-
-    @Override
     public Builder setCacheControl(String cacheControl) {
       infoBuilder.setCacheControl(cacheControl);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder acl(List<Acl> acl) {
-      return setAcl(acl);
     }
 
     @Override
@@ -320,21 +279,9 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder md5(String md5) {
-      return setMd5(md5);
-    }
-
-    @Override
     public Builder setMd5(String md5) {
       infoBuilder.setMd5(md5);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder crc32c(String crc32c) {
-      return setCrc32c(crc32c);
     }
 
     @Override
@@ -347,12 +294,6 @@ public class Blob extends BlobInfo {
     Builder setMediaLink(String mediaLink) {
       infoBuilder.setMediaLink(mediaLink);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder metadata(Map<String, String> metadata) {
-      return setMetadata(metadata);
     }
 
     @Override
@@ -442,19 +383,8 @@ public class Blob extends BlobInfo {
   /**
    * Returns this blob's content.
    *
-   * @param options blob read options
-   * @throws StorageException upon failure
-   */
-  @Deprecated
-  public byte[] content(BlobSourceOption... options) {
-    return storage.readAllBytes(getBlobId(), toSourceOptions(this, options));
-  }
-
-  /**
-   * Returns this blob's content.
-   *
    * <p>Example of reading all bytes of the blob, if its generation matches the
-   * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * byte[] content = blob.getContent(BlobSourceOption.generationMatch());
    * }</pre>
@@ -470,7 +400,7 @@ public class Blob extends BlobInfo {
    * Fetches current blob's latest information. Returns {@code null} if the blob does not exist.
    *
    * <p>Example of getting the blob's latest information, if its generation does not match the
-   * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * Blob latestBlob = blob.reload(BlobSourceOption.generationNotMatch());
    * if (latestBlob == null) {
@@ -518,8 +448,8 @@ public class Blob extends BlobInfo {
   /**
    * Deletes this blob.
    *
-   * <p>Example of deleting the blob, if its generation matches the {@link Blob#generation()} value,
-   * otherwise a {@link StorageException} is thrown.
+   * <p>Example of deleting the blob, if its generation matches the {@link Blob#getGeneration()}
+   * value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * boolean deleted = blob.delete(BlobSourceOption.generationMatch());
    * if (deleted) {
@@ -808,14 +738,6 @@ public class Blob extends BlobInfo {
    */
   public List<Acl> listAcls() {
     return storage.listAcls(getBlobId());
-  }
-
-  /**
-   * Returns the blob's {@code Storage} object used to issue requests.
-   */
-  @Deprecated
-  public Storage storage() {
-    return getStorage();
   }
 
   /**

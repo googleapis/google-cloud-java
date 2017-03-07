@@ -44,11 +44,6 @@ import java.util.Iterator;
  */
 public interface Page<T> {
 
-  /**
-   * Returns the values contained in this page.
-   */
-  @Deprecated
-  Iterable<T> values();
 
   /**
    * Returns the values contained in this page.
@@ -61,22 +56,12 @@ public interface Page<T> {
    */
   Iterator<T> iterateAll();
 
-  /**
-   * Returns the cursor for the nextPage or {@code null} if no more results.
-   */
-  @Deprecated
-  String nextPageCursor();
 
   /**
    * Returns the cursor for the nextPage or {@code null} if no more results.
    */
   String getNextPageCursor();
 
-  /**
-   * Returns the next page of results or {@code null} if no more result.
-   */
-  @Deprecated
-  Page<T> nextPage();
 
   /**
    * Returns the next page of results or {@code null} if no more result.

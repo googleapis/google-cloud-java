@@ -37,11 +37,6 @@ public class IdentityTest {
     assertNull(ALL_USERS.getValue());
   }
 
-  @Test
-  public void testAllUsersDeprecated() {
-    assertEquals(Identity.Type.ALL_USERS, ALL_USERS.type());
-    assertNull(ALL_USERS.value());
-  }
 
   @Test
   public void testAllAuthenticatedUsers() {
@@ -49,11 +44,6 @@ public class IdentityTest {
     assertNull(ALL_AUTH_USERS.getValue());
   }
 
-  @Test
-  public void testAllAuthenticatedUsersDeprecated() {
-    assertEquals(Identity.Type.ALL_AUTHENTICATED_USERS, ALL_AUTH_USERS.type());
-    assertNull(ALL_AUTH_USERS.value());
-  }
 
   @Test
   public void testUser() {
@@ -61,11 +51,6 @@ public class IdentityTest {
     assertEquals("abc@gmail.com", USER.getValue());
   }
 
-  @Test
-  public void testUserDeprecated() {
-    assertEquals(Identity.Type.USER, USER.type());
-    assertEquals("abc@gmail.com", USER.value());
-  }
 
   @Test(expected = NullPointerException.class)
   public void testUserNullEmail() {
@@ -78,11 +63,6 @@ public class IdentityTest {
     assertEquals("service-account@gmail.com", SERVICE_ACCOUNT.getValue());
   }
 
-  @Test
-  public void testServiceAccountDeprecated() {
-    assertEquals(Identity.Type.SERVICE_ACCOUNT, SERVICE_ACCOUNT.type());
-    assertEquals("service-account@gmail.com", SERVICE_ACCOUNT.value());
-  }
 
   @Test(expected = NullPointerException.class)
   public void testServiceAccountNullEmail() {
@@ -95,11 +75,6 @@ public class IdentityTest {
     assertEquals("group@gmail.com", GROUP.getValue());
   }
 
-  @Test
-  public void testGroupDeprecated() {
-    assertEquals(Identity.Type.GROUP, GROUP.type());
-    assertEquals("group@gmail.com", GROUP.value());
-  }
 
   @Test(expected = NullPointerException.class)
   public void testGroupNullEmail() {
@@ -112,11 +87,6 @@ public class IdentityTest {
     assertEquals("google.com", DOMAIN.getValue());
   }
 
-  @Test
-  public void testDomainDeprecated() {
-    assertEquals(Identity.Type.DOMAIN, DOMAIN.type());
-    assertEquals("google.com", DOMAIN.value());
-  }
 
   @Test(expected = NullPointerException.class)
   public void testDomainNullId() {

@@ -67,13 +67,6 @@ public class ViewDefinition extends TableDefinition {
       }
     }
 
-    /**
-     * Sets the query used to create the view.
-     */
-    @Deprecated
-    public Builder query(String query) {
-      return setQuery(query);
-    }
 
     /**
      * Sets the query used to create the view.
@@ -83,19 +76,9 @@ public class ViewDefinition extends TableDefinition {
       return self();
     }
 
-    /**
-     * Sets user defined functions that can be used by {@link #query()}.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
-     *     Functions</a>
-     */
-    @Deprecated
-    public Builder userDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
-      return setUserDefinedFunctions(userDefinedFunctions);
-    }
 
     /**
-     * Sets user defined functions that can be used by {@link #query()}.
+     * Sets user defined functions that can be used by {@link #getQuery()}.
      *
      * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
      *     Functions</a>
@@ -105,19 +88,9 @@ public class ViewDefinition extends TableDefinition {
       return self();
     }
 
-    /**
-     * Sets user defined functions that can be used by {@link #query()}.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
-     *     Functions</a>
-     */
-    @Deprecated
-    public Builder userDefinedFunctions(UserDefinedFunction... userDefinedFunctions) {
-      return setUserDefinedFunctions(userDefinedFunctions);
-    }
 
     /**
-     * Sets user defined functions that can be used by {@link #query()}.
+     * Sets user defined functions that can be used by {@link #getQuery()}.
      *
      * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
      *     Functions</a>
@@ -142,13 +115,6 @@ public class ViewDefinition extends TableDefinition {
     this.userDefinedFunctions = builder.userDefinedFunctions;
   }
 
-  /**
-   * Returns the query used to create the view.
-   */
-  @Deprecated
-  public String query() {
-    return getQuery();
-  }
 
   /**
    * Returns the query used to create the view.
@@ -157,20 +123,9 @@ public class ViewDefinition extends TableDefinition {
     return query;
   }
 
-  /**
-   * Returns user defined functions that can be used by {@link #query()}. Returns {@code null} if
-   * not set.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined Functions
-   *     </a>
-   */
-  @Deprecated
-  public List<UserDefinedFunction> userDefinedFunctions() {
-    return getUserDefinedFunctions();
-  }
 
   /**
-   * Returns user defined functions that can be used by {@link #query()}. Returns {@code null} if
+   * Returns user defined functions that can be used by {@link #getQuery()}. Returns {@code null} if
    * not set.
    *
    * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined Functions
@@ -221,15 +176,6 @@ public class ViewDefinition extends TableDefinition {
     return tablePb;
   }
 
-  /**
-   * Returns a builder for a BigQuery view definition.
-   *
-   * @param query the query used to generate the view
-   */
-  @Deprecated
-  public static Builder builder(String query) {
-    return newBuilder(query);
-  }
 
   /**
    * Returns a builder for a BigQuery view definition.
@@ -240,16 +186,6 @@ public class ViewDefinition extends TableDefinition {
     return new Builder().setQuery(query);
   }
 
-  /**
-   * Returns a builder for a BigQuery view definition.
-   *
-   * @param query the query used to generate the table
-   * @param functions user-defined functions that can be used by the query
-   */
-  @Deprecated
-  public static Builder builder(String query, List<UserDefinedFunction> functions) {
-    return newBuilder(query, functions);
-  }
 
   /**
    * Returns a builder for a BigQuery view definition.
@@ -261,16 +197,6 @@ public class ViewDefinition extends TableDefinition {
     return newBuilder(query).setUserDefinedFunctions(functions);
   }
 
-  /**
-   * Returns a builder for a BigQuery view definition.
-   *
-   * @param query the query used to generate the table
-   * @param functions user-defined functions that can be used by the query
-   */
-  @Deprecated
-  public static Builder builder(String query, UserDefinedFunction... functions) {
-    return newBuilder(query, functions);
-  }
 
   /**
    * Returns a builder for a BigQuery view definition.

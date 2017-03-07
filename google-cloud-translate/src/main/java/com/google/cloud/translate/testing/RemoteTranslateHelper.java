@@ -38,13 +38,6 @@ public class RemoteTranslateHelper {
     this.options = options;
   }
 
-  /**
-   * Returns a {@link TranslateOptions} object to be used for testing.
-   */
-  @Deprecated
-  public TranslateOptions options() {
-    return getOptions();
-  }
 
   /**
    * Returns a {@link TranslateOptions} object to be used for testing.

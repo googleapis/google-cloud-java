@@ -75,19 +75,6 @@ public class ZoneInfoTest {
     assertEquals(DNS_NAME, INFO.getDnsName());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(3, INFO.nameServers().size());
-    assertEquals(NS1, INFO.nameServers().get(0));
-    assertEquals(NS2, INFO.nameServers().get(1));
-    assertEquals(NS3, INFO.nameServers().get(2));
-    assertEquals(NAME, INFO.name());
-    assertEquals(GENERATED_ID, INFO.generatedId());
-    assertEquals(CREATION_TIME_MILLIS, INFO.creationTimeMillis());
-    assertEquals(NAME_SERVER_SET, INFO.nameServerSet());
-    assertEquals(DESCRIPTION, INFO.description());
-    assertEquals(DNS_NAME, INFO.dnsName());
-  }
 
   @Test
   public void testEqualsAndNotEquals() {

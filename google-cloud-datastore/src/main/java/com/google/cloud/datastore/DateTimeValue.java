@@ -78,10 +78,6 @@ public final class DateTimeValue extends Value<DateTime> {
     return new DateTimeValue(dateTime);
   }
 
-  @Deprecated
-  public static Builder builder(DateTime dateTime) {
-    return newBuilder(dateTime);
-  }
 
   public static Builder newBuilder(DateTime dateTime) {
     return new Builder().set(dateTime);

@@ -45,13 +45,6 @@ public class RemoteLoggingHelper {
     this.options = options;
   }
 
-  /**
-   * Returns a {@link LoggingOptions} object to be used for testing.
-   */
-  @Deprecated
-  public LoggingOptions options() {
-    return getOptions();
-  }
 
   /**
    * Returns a {@link LoggingOptions} object to be used for testing.
