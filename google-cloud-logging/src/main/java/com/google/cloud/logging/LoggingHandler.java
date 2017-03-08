@@ -53,25 +53,24 @@ import com.google.cloud.logging.Logging.WriteOption;
  * <tr><td>FINEST</td><td>DEBUG</td></tr>
  * </table>
  *
- * <p>Original Java logging levels are added as labels (with {@code levelName} and {@code
- * levelValue} keys, respectively) to the corresponding Stackdriver Logging {@link LogEntry}. You
- * can read entry labels using {@link LogEntry#getLabels()}. To use logging levels that correspond
- * to Stackdriver Logging severities you can use {@link LoggingLevel}.
+ * <p>Original Java logging levels are added as labels (with {@code levelName} and
+ * {@code levelValue} keys, respectively) to the corresponding Stackdriver Logging {@link LogEntry}.
+ * You can read entry labels using {@link LogEntry#getLabels()}. To use logging levels that
+ * correspond to Stackdriver Logging severities you can use {@link LoggingLevel}.
  *
  * <p><b>Configuration</b>: By default each {@code LoggingHandler} is initialized using the
- * following {@code LogManager} configuration properties (that you can set in the {@code
- * logging.properties} file). If properties are not defined (or have invalid values) then the
+ * following {@code LogManager} configuration properties (that you can set in the
+ * {@code logging.properties} file). If properties are not defined (or have invalid values) then the
  * specified default values are used.
- *
  * <ul>
- * <li>{@code com.google.cloud.logging.LoggingHandler.log} the log name (defaults to {@code
- *     java.log}).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.log} the log name (defaults to
+ *     {@code java.log}).
  * <li>{@code com.google.cloud.logging.LoggingHandler.level} specifies the default level for the
  *     handler (defaults to {@code Level.INFO}).
- * <li>{@code com.google.cloud.logging.LoggingHandler.filter} specifies the name of a {@link
- *     Filter} class to use (defaults to no filter).
- * <li>{@code com.google.cloud.logging.LoggingHandler.formatter} specifies the name of a {@link
- *     Formatter} class to use (defaults to {@link SimpleFormatter}).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.filter} specifies the name of a {@link Filter}
+ *     class to use (defaults to no filter).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.formatter} specifies the name of a
+ *     {@link Formatter} class to use (defaults to {@link SimpleFormatter}).
  * <li>{@code com.google.cloud.logging.LoggingHandler.flushSize} specifies the maximum size of the
  *     log buffer. Once reached, logs are transmitted to the Stackdriver Logging service (defaults
  *     to 1).
@@ -79,8 +78,8 @@ import com.google.cloud.logging.Logging.WriteOption;
  *     When a log with this level is published, logs are transmitted to the Stackdriver Logging
  *     service (defaults to {@link LoggingLevel#ERROR}).
  * <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
- *     of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds a
- *     {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
+ *     of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds
+ *     a {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
  * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
  *     creating the default {@link MonitoredResource} (defaults to "global").
  * <li>{@code com.google.cloud.logging.Synchronicity} the synchronicity of the write method to use
