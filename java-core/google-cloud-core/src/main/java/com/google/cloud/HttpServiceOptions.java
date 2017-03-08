@@ -98,11 +98,11 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
     @Override
     protected abstract HttpServiceOptions<ServiceT, ServiceRpcT, OptionsT> build();
 
+    @Override
     @SuppressWarnings("unchecked")
     protected B self() {
       return (B) this;
     }
-
 
     /**
      * Sets the HTTP transport factory.
@@ -113,7 +113,6 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
       this.httpTransportFactory = httpTransportFactory;
       return self();
     }
-
 
     /**
      * Sets the timeout in milliseconds to establish a connection.
@@ -126,7 +125,6 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
       this.connectTimeout = connectTimeout;
       return self();
     }
-
 
     /**
      * Sets the timeout in milliseconds to read data from an established connection.
@@ -153,14 +151,12 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
     readTimeout = builder.readTimeout;
   }
 
-
   /**
    * Returns the HTTP transport factory.
    */
   public HttpTransportFactory getHttpTransportFactory() {
     return httpTransportFactory;
   }
-
 
   /**
    * Returns a request initializer responsible for initializing requests according to service
@@ -191,18 +187,9 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
    * Returns the timeout in milliseconds to establish a connection. 0 is an infinite timeout, a
    * negative number is the default value (20000).
    */
-  public int connectTimeout() {
-    return getConnectTimeout();
-  }
-
-  /**
-   * Returns the timeout in milliseconds to establish a connection. 0 is an infinite timeout, a
-   * negative number is the default value (20000).
-   */
   public int getConnectTimeout() {
     return connectTimeout;
   }
-
 
   /**
    * Returns the timeout in milliseconds to read from an established connection. 0 is an infinite
