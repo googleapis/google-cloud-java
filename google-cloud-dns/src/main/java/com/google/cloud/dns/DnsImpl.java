@@ -57,11 +57,6 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       this.serviceOptions = serviceOptions;
     }
 
-    @Override
-    @Deprecated
-    public Page<Zone> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<Zone> getNextPage() {
@@ -84,11 +79,6 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       this.serviceOptions = serviceOptions;
     }
 
-    @Override
-    @Deprecated
-    public Page<ChangeRequest> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<ChangeRequest> getNextPage() {
@@ -111,11 +101,6 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       this.serviceOptions = serviceOptions;
     }
 
-    @Override
-    @Deprecated
-    public Page<RecordSet> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<RecordSet> getNextPage() {

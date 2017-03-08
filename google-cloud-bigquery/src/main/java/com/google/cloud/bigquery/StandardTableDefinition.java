@@ -61,13 +61,6 @@ public class StandardTableDefinition extends TableDefinition {
       this.oldestEntryTime = oldestEntryTime;
     }
 
-    /**
-     * Returns a lower-bound estimate of the number of rows currently in the streaming buffer.
-     */
-    @Deprecated
-    public long estimatedRows() {
-      return getEstimatedRows();
-    }
 
     /**
      * Returns a lower-bound estimate of the number of rows currently in the streaming buffer.
@@ -76,13 +69,6 @@ public class StandardTableDefinition extends TableDefinition {
       return estimatedRows;
     }
 
-    /**
-     * Returns a lower-bound estimate of the number of bytes currently in the streaming buffer.
-     */
-    @Deprecated
-    public long estimatedBytes() {
-      return getEstimatedBytes();
-    }
 
     /**
      * Returns a lower-bound estimate of the number of bytes currently in the streaming buffer.
@@ -91,14 +77,6 @@ public class StandardTableDefinition extends TableDefinition {
       return estimatedBytes;
     }
 
-    /**
-     * Returns the timestamp of the oldest entry in the streaming buffer, in milliseconds since
-     * epoch. Returns {@code null} if the streaming buffer is empty.
-     */
-    @Deprecated
-    public Long oldestEntryTime() {
-      return getOldestEntryTime();
-    }
 
     /**
      * Returns the timestamp of the oldest entry in the streaming buffer, in milliseconds since
@@ -203,14 +181,6 @@ public class StandardTableDefinition extends TableDefinition {
       return self();
     }
 
-    /**
-     * Sets the time partitioning configuration for the table. If not set, the table is not
-     * time-partitioned.
-     */
-    @Deprecated
-    public Builder timePartitioning(TimePartitioning timePartitioning) {
-      return setTimePartitioning(timePartitioning);
-    }
 
     /**
      * Sets the time partitioning configuration for the table. If not set, the table is not
@@ -239,13 +209,6 @@ public class StandardTableDefinition extends TableDefinition {
     this.timePartitioning = builder.timePartitioning;
   }
 
-  /**
-   * Returns the size of this table in bytes, excluding any data in the streaming buffer.
-   */
-  @Deprecated
-  public Long numBytes() {
-    return getNumBytes();
-  }
 
   /**
    * Returns the size of this table in bytes, excluding any data in the streaming buffer.
@@ -254,13 +217,6 @@ public class StandardTableDefinition extends TableDefinition {
     return numBytes;
   }
 
-  /**
-   * Returns the number of rows in this table, excluding any data in the streaming buffer.
-   */
-  @Deprecated
-  public Long numRows() {
-    return getNumRows();
-  }
 
   /**
    * Returns the number of rows in this table, excluding any data in the streaming buffer.
@@ -269,17 +225,6 @@ public class StandardTableDefinition extends TableDefinition {
     return numRows;
   }
 
-  /**
-   * Returns the geographic location where the table should reside. This value is inherited from the
-   * dataset.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
-   *     Dataset Location</a>
-   */
-  @Deprecated
-  public String location() {
-    return getLocation();
-  }
 
   /**
    * Returns the geographic location where the table should reside. This value is inherited from the
@@ -292,14 +237,6 @@ public class StandardTableDefinition extends TableDefinition {
     return location;
   }
 
-  /**
-   * Returns information on the table's streaming buffer if any exists. Returns {@code null} if no
-   * streaming buffer exists.
-   */
-  @Deprecated
-  public StreamingBuffer streamingBuffer() {
-    return getStreamingBuffer();
-  }
 
   /**
    * Returns information on the table's streaming buffer if any exists. Returns {@code null} if no
@@ -309,14 +246,6 @@ public class StandardTableDefinition extends TableDefinition {
     return streamingBuffer;
   }
 
-  /**
-   * Returns the time partitioning configuration for this table. If {@code null}, the table is not
-   * time-partitioned.
-   */
-  @Deprecated
-  public TimePartitioning timePartitioning() {
-    return getTimePartitioning();
-  }
 
   /**
    * Returns the time partitioning configuration for this table. If {@code null}, the table is not
@@ -326,13 +255,6 @@ public class StandardTableDefinition extends TableDefinition {
     return timePartitioning;
   }
 
-  /**
-   * Returns a builder for a BigQuery standard table definition.
-   */
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   /**
    * Returns a builder for a BigQuery standard table definition.

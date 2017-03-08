@@ -497,13 +497,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
           && direction == other.direction;
     }
 
-    /**
-     * Returns the property according to which the query result should be ordered.
-     */
-    @Deprecated
-    public String property() {
-      return getProperty();
-    }
 
     /**
      * Returns the property according to which the query result should be ordered.
@@ -512,13 +505,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return property;
     }
 
-    /**
-     * Returns the order's direction.
-     */
-    @Deprecated
-    public Direction direction() {
-      return getDirection();
-    }
 
     /**
      * Returns the order's direction.
@@ -557,77 +543,42 @@ public abstract class StructuredQuery<V> extends Query<V> {
    */
   public interface Builder<V> {
 
-    /**
-     * Sets the namespace for the query.
-     */
-    @Deprecated
-    Builder<V> namespace(String namespace);
 
     /**
      * Sets the namespace for the query.
      */
     Builder<V> setNamespace(String namespace);
 
-    /**
-     * Sets the kind for the query.
-     */
-    @Deprecated
-    Builder<V> kind(String kind);
 
     /**
      * Sets the kind for the query.
      */
     Builder<V> setKind(String kind);
 
-    /**
-     * Sets the start cursor for the query.
-     */
-    @Deprecated
-    Builder<V> startCursor(Cursor startCursor);
 
     /**
      * Sets the start cursor for the query.
      */
     Builder<V> setStartCursor(Cursor startCursor);
 
-    /**
-     * Sets the end cursor for the query.
-     */
-    @Deprecated
-    Builder<V> endCursor(Cursor endCursor);
 
     /**
      * Sets the end cursor for the query.
      */
     Builder<V> setEndCursor(Cursor endCursor);
 
-    /**
-     * Sets the offset for the query.
-     */
-    @Deprecated
-    Builder<V> offset(int offset);
 
     /**
      * Sets the offset for the query.
      */
     Builder<V> setOffset(int offset);
 
-    /**
-     * Sets the limit for the query.
-     */
-    @Deprecated
-    Builder<V> limit(Integer limit);
 
     /**
      * Sets the limit for the query.
      */
     Builder<V> setLimit(Integer limit);
 
-    /**
-     * Sets a filter for the query.
-     */
-    @Deprecated
-    Builder<V> filter(Filter filter);
 
     Builder<V> setFilter(Filter filter);
 
@@ -636,11 +587,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
      */
     Builder<V> clearOrderBy();
 
-    /**
-     * Sets the query's order by clause (clearing any previously specified order by settings).
-     */
-    @Deprecated
-    Builder<V> orderBy(OrderBy orderBy, OrderBy... others);
 
     /**
      * Sets the query's order by clause (clearing any previously specified order by settings).
@@ -698,11 +644,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return (B) this;
     }
 
-    @Override
-    @Deprecated
-    public B namespace(String namespace) {
-      return setNamespace(namespace);
-    }
 
     @Override
     public B setNamespace(String namespace) {
@@ -710,11 +651,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    @Override
-    @Deprecated
-    public B kind(String kind) {
-      return setKind(kind);
-    }
 
     @Override
     public B setKind(String kind) {
@@ -722,11 +658,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    @Override
-    @Deprecated
-    public B startCursor(Cursor startCursor) {
-      return setStartCursor(startCursor);
-    }
 
     @Override
     public B setStartCursor(Cursor startCursor) {
@@ -734,11 +665,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    @Override
-    @Deprecated
-    public B endCursor(Cursor endCursor) {
-      return setEndCursor(endCursor);
-    }
 
     @Override
     public B setEndCursor(Cursor endCursor) {
@@ -746,11 +672,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    @Override
-    @Deprecated
-    public B offset(int offset) {
-      return setOffset(offset);
-    }
 
     @Override
     public B setOffset(int offset) {
@@ -759,11 +680,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    @Override
-    @Deprecated
-    public B limit(Integer limit) {
-      return setLimit(limit);
-    }
 
     @Override
     public B setLimit(Integer limit) {
@@ -772,11 +688,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    @Override
-    @Deprecated
-    public B filter(Filter filter) {
-      return setFilter(filter);
-    }
 
     @Override
     public B setFilter(Filter filter) {
@@ -790,11 +701,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    @Override
-    @Deprecated
-    public B orderBy(OrderBy orderBy, OrderBy... others) {
-      return setOrderBy(orderBy, others);
-    }
 
     @Override
     public B setOrderBy(OrderBy orderBy, OrderBy... others) {
@@ -815,10 +721,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    @Deprecated
-    B projection(String projection, String... others) {
-      return setProjection(projection, others);
-    }
 
     B setProjection(String projection, String... others) {
       clearProjection();
@@ -837,10 +739,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    @Deprecated
-    B distinctOn(String property, String... others) {
-      return setDistinctOn(property, others);
-    }
 
     B setDistinctOn(String property, String... others) {
       clearDistinctOn();
@@ -943,13 +841,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
   }
 
-  /**
-   * Returns the kind for this query.
-   */
-  @Deprecated
-  public String kind() {
-    return getKind();
-  }
 
   /**
    * Returns the kind for this query.
@@ -962,13 +853,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
     return projection.size() == 1 && KEY_PROPERTY_NAME.equals(projection.get(0));
   }
 
-  /**
-   * Returns the projection for this query.
-   */
-  @Deprecated
-  public List<String> projection() {
-    return getProjection();
-  }
 
   /**
    * Returns the projection for this query.
@@ -977,13 +861,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
     return projection;
   }
 
-  /**
-   * Returns the filter for this query.
-   */
-  @Deprecated
-  public Filter filter() {
-    return getFilter();
-  }
 
   /**
    * Returns the filter for this query.
@@ -992,13 +869,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
     return filter;
   }
 
-  /**
-   * Returns the distinct on clause for this query.
-   */
-  @Deprecated
-  public List<String> distinctOn() {
-    return getDistinctOn();
-  }
 
   /**
    * Returns the distinct on clause for this query.
@@ -1007,13 +877,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
     return distinctOn;
   }
 
-  /**
-   * Returns the order by clause for this query.
-   */
-  @Deprecated
-  public ImmutableList<OrderBy> orderBy() {
-    return getOrderBy();
-  }
 
   /**
    * Returns the order by clause for this query.
@@ -1022,13 +885,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
     return orderBy;
   }
 
-  /**
-   * Returns the start cursor for this query.
-   */
-  @Deprecated
-  public Cursor startCursor() {
-    return getStartCursor();
-  }
 
   /**
    * Returns the start cursor for this query.
@@ -1037,13 +893,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
     return startCursor;
   }
 
-  /**
-   * Returns the end cursor for this query.
-   */
-  @Deprecated
-  public Cursor endCursor() {
-    return getEndCursor();
-  }
 
   /**
    * Returns the end cursor for this query.
@@ -1052,13 +901,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
     return endCursor;
   }
 
-  /**
-   * Returns the offset for this query.
-   */
-  @Deprecated
-  public int offset() {
-    return getOffset();
-  }
 
   /**
    * Returns the offset for this query.
@@ -1067,13 +909,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
     return offset;
   }
 
-  /**
-   * Returns the limit for this query.
-   */
-  @Deprecated
-  public Integer limit() {
-    return getLimit();
-  }
 
   /**
    * Returns the limit for this query.

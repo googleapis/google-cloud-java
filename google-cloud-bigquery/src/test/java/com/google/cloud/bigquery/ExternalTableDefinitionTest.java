@@ -53,12 +53,6 @@ public class ExternalTableDefinitionTest {
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .setMaxBadRecords(MAX_BAD_RECORDS)
           .build();
-  private static final ExternalTableDefinition DEPRECATED_EXTERNAL_TABLE_DEFINITION =
-      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
-          .compression(COMPRESSION)
-          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-          .maxBadRecords(MAX_BAD_RECORDS)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -91,16 +85,6 @@ public class ExternalTableDefinitionTest {
     assertEquals(SOURCE_URIS, EXTERNAL_TABLE_DEFINITION.getSourceUris());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(TableDefinition.Type.EXTERNAL, DEPRECATED_EXTERNAL_TABLE_DEFINITION.type());
-    assertEquals(COMPRESSION, DEPRECATED_EXTERNAL_TABLE_DEFINITION.compression());
-    assertEquals(CSV_OPTIONS, DEPRECATED_EXTERNAL_TABLE_DEFINITION.formatOptions());
-    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_EXTERNAL_TABLE_DEFINITION.ignoreUnknownValues());
-    assertEquals(MAX_BAD_RECORDS, DEPRECATED_EXTERNAL_TABLE_DEFINITION.maxBadRecords());
-    assertEquals(TABLE_SCHEMA, DEPRECATED_EXTERNAL_TABLE_DEFINITION.schema());
-    assertEquals(SOURCE_URIS, DEPRECATED_EXTERNAL_TABLE_DEFINITION.sourceUris());
-  }
 
   @Test
   public void testToAndFromPb() {

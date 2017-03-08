@@ -90,23 +90,11 @@ public class DnsOptions extends HttpServiceOptions<Dns, DnsRpc, DnsOptions> {
     return new Builder(this);
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  /**
-   * Creates a default instance of {@code DnsOptions} with the project ID and credentials inferred
-   * from the environment.
-   */
-  @Deprecated
-  public static DnsOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Creates a default instance of {@code DnsOptions} with the project ID and credentials inferred

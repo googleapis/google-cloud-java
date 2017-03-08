@@ -36,13 +36,6 @@ public class UserDefinedFunctionTest {
     assertEquals(UserDefinedFunction.Type.FROM_URI, URI_FUNCTION.getType());
   }
 
-  @Test
-  public void testConstructorDeprecated() {
-    assertEquals(INLINE, INLINE_FUNCTION.content());
-    assertEquals(UserDefinedFunction.Type.INLINE, INLINE_FUNCTION.type());
-    assertEquals(URI, URI_FUNCTION.content());
-    assertEquals(UserDefinedFunction.Type.FROM_URI, URI_FUNCTION.type());
-  }
 
   @Test
   public void testFactoryMethod() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016, Google Inc. All rights reserved.
+ * Copyright 2017, Google Inc. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ import org.joda.time.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
+@Generated("by GAPIC v0.0.5")
 @ExperimentalApi
 public class ConfigServiceV2Settings extends ClientSettings {
   /** The default address of the service. */
@@ -95,6 +95,9 @@ public class ConfigServiceV2Settings extends ClientSettings {
           .add("https://www.googleapis.com/auth/logging.read")
           .add("https://www.googleapis.com/auth/logging.write")
           .build();
+
+  private static final String DEFAULT_GAPIC_NAME = "gapic";
+  private static final String DEFAULT_GAPIC_VERSION = "";
 
   private final PagedCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
       listSinksSettings;
@@ -159,7 +162,13 @@ public class ConfigServiceV2Settings extends ClientSettings {
     return InstantiatingChannelProvider.newBuilder()
         .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
         .setPort(DEFAULT_SERVICE_PORT)
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+  }
+
+  private static String getGapicVersion() {
+    String packageVersion = ConfigServiceV2Settings.class.getPackage().getImplementationVersion();
+    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -257,7 +266,9 @@ public class ConfigServiceV2Settings extends ClientSettings {
           Sets.immutableEnumSet(
               Lists.<Status.Code>newArrayList(
                   Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
+      definitions.put(
+          "non_idempotent",
+          Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 

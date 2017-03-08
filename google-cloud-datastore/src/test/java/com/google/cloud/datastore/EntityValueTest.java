@@ -50,13 +50,4 @@ public class EntityValueTest {
     assertEquals(1, value.getMeaning());
     assertTrue(value.excludeFromIndexes());
   }
-
-  @Test
-  public void testBuilderDeprecated() throws Exception {
-    EntityValue.Builder builder = EntityValue.builder(CONTENT);
-    EntityValue value = builder.meaning(1).excludeFromIndexes(true).build();
-    assertEquals(CONTENT, value.get());
-    assertEquals(1, value.meaning());
-    assertTrue(value.excludeFromIndexes());
-  }
 }

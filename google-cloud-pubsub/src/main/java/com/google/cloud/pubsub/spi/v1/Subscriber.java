@@ -16,9 +16,9 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.core.FlowControlSettings;
+import com.google.api.gax.core.FlowController;
 import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.FlowControlSettings;
-import com.google.api.gax.grpc.FlowController;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
@@ -75,36 +75,6 @@ import org.joda.time.Duration;
  *
  * <p>If no credentials are provided, the {@link Subscriber} will use application default
  * credentials through {@link GoogleCredentials#getApplicationDefault}.
- *
- * <p>For example, a {@link Subscriber} can be constructed and used to receive messages as follows:
- *
- * <pre><code>
- * MessageReceiver receiver = new MessageReceiver() {
- *   &#64;Override
- *   public void receiveMessage(PubsubMessage message, SettableFuture&lt;AckReply&gt; response) {
- *     // ... process message ...
- *     return response.set(AckReply.ACK);
- *   }
- * }
- *
- * Subscriber subscriber =
- *     Subscriber.newBuilder(MY_SUBSCRIPTION, receiver)
- *         .setMaxBundleAcks(100)
- *         .build();
- *
- * subscriber.startAsync();
- *
- * // ... recommended, listen for fatal errors that break the subscriber streaming ...
- * subscriber.addListener(new Listener() {
- *   &#64;Override
- *   public void failed(State from, Throwable failure) {
- *     System.out.println("Subscriber failed with error: " + failure);
- *   }
- * }, Executors.newSingleThreadExecutor());
- *
- * // ... and when done with the subscriber ...
- * subscriber.stopAsync();
- * </code></pre>
  */
 public class Subscriber {
   private static final int THREADS_PER_CHANNEL = 5;
@@ -207,6 +177,25 @@ public class Subscriber {
     return impl.isRunning();
   }
 
+  /**
+   * Initiates service startup and returns immediately.
+   *
+   * <p>Example of receiving a specific number of messages.
+   * <pre> {@code
+   * Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
+   * subscriber.addListener(new Subscriber.SubscriberListener() {
+   *   public void failed(Subscriber.State from, Throwable failure) {
+   *     // Handle error.
+   *   }
+   * }, executor);
+   * subscriber.startAsync();
+   * 
+   * // Wait for a stop signal.
+   * done.get();
+   * subscriber.stopAsync().awaitTerminated();
+   * }</pre>
+   *
+   */
   public Subscriber startAsync() {
     impl.startAsync();
     return this;
@@ -294,7 +283,7 @@ public class Subscriber {
               Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
       clock = builder.clock.isPresent() ? builder.clock.get() : Clock.defaultClock();
 
-      flowController = new FlowController(builder.flowControlSettings, false);
+      flowController = new FlowController(builder.flowControlSettings);
 
       executor = builder.executorProvider.getExecutor();
       if (builder.executorProvider.shouldAutoClose()) {

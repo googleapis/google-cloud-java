@@ -42,7 +42,7 @@ import java.util.Map;
  *  translate <text>+"}</pre>
  *
  * <p>The first parameter is an optional {@code targetLanguage}. If the target language is not
- * supplied, {@code en} is used (see {@link TranslateOptions.Builder#setTargetLanguage(String)}).
+ * supplied, {@code en} is used (see {@link com.google.cloud.translate.TranslateOptions.Builder#setTargetLanguage(String)}).
  */
 public class TranslateExample {
 

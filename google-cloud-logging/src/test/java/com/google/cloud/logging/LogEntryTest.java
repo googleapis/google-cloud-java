@@ -83,36 +83,6 @@ public class LogEntryTest {
       .setLabels(LABELS)
       .setOperation(OPERATION)
       .build();
-  private static final LogEntry DEPRECATED_STRING_ENTRY = LogEntry.builder(STRING_PAYLOAD)
-      .logName(LOG_NAME)
-      .resource(RESOURCE)
-      .timestamp(TIMESTAMP)
-      .severity(SEVERITY)
-      .insertId(INSERT_ID)
-      .httpRequest(HTTP_REQUEST)
-      .labels(LABELS)
-      .operation(OPERATION)
-      .build();
-  private static final LogEntry DEPRECATED_JSON_ENTRY = LogEntry.builder(JSON_PAYLOAD)
-      .logName(LOG_NAME)
-      .resource(RESOURCE)
-      .timestamp(TIMESTAMP)
-      .severity(SEVERITY)
-      .insertId(INSERT_ID)
-      .httpRequest(HTTP_REQUEST)
-      .labels(LABELS)
-      .operation(OPERATION)
-      .build();
-  private static final LogEntry DEPRECATED_PROTO_ENTRY = LogEntry.builder(PROTO_PAYLOAD)
-      .logName(LOG_NAME)
-      .resource(RESOURCE)
-      .timestamp(TIMESTAMP)
-      .severity(SEVERITY)
-      .insertId(INSERT_ID)
-      .httpRequest(HTTP_REQUEST)
-      .labels(LABELS)
-      .operation(OPERATION)
-      .build();
 
   @Test
   public void testOf() {
@@ -191,57 +161,6 @@ public class LogEntryTest {
     assertEquals(StringPayload.of("otherPayload"), logEntry.getPayload());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(LOG_NAME, DEPRECATED_STRING_ENTRY.logName());
-    assertEquals(RESOURCE, DEPRECATED_STRING_ENTRY.resource());
-    assertEquals(TIMESTAMP, (long) DEPRECATED_STRING_ENTRY.timestamp());
-    assertEquals(SEVERITY, DEPRECATED_STRING_ENTRY.severity());
-    assertEquals(INSERT_ID, DEPRECATED_STRING_ENTRY.insertId());
-    assertEquals(HTTP_REQUEST, DEPRECATED_STRING_ENTRY.httpRequest());
-    assertEquals(LABELS, DEPRECATED_STRING_ENTRY.labels());
-    assertEquals(OPERATION, DEPRECATED_STRING_ENTRY.operation());
-    assertEquals(STRING_PAYLOAD, DEPRECATED_STRING_ENTRY.payload());
-    assertEquals(LOG_NAME, DEPRECATED_JSON_ENTRY.logName());
-    assertEquals(RESOURCE, DEPRECATED_JSON_ENTRY.resource());
-    assertEquals(TIMESTAMP, (long) DEPRECATED_JSON_ENTRY.timestamp());
-    assertEquals(SEVERITY, DEPRECATED_JSON_ENTRY.severity());
-    assertEquals(INSERT_ID, DEPRECATED_JSON_ENTRY.insertId());
-    assertEquals(HTTP_REQUEST, DEPRECATED_JSON_ENTRY.httpRequest());
-    assertEquals(LABELS, DEPRECATED_JSON_ENTRY.labels());
-    assertEquals(OPERATION, DEPRECATED_JSON_ENTRY.operation());
-    assertEquals(JSON_PAYLOAD, DEPRECATED_JSON_ENTRY.payload());
-    assertEquals(LOG_NAME, DEPRECATED_PROTO_ENTRY.logName());
-    assertEquals(RESOURCE, DEPRECATED_PROTO_ENTRY.resource());
-    assertEquals(TIMESTAMP, (long) DEPRECATED_PROTO_ENTRY.timestamp());
-    assertEquals(SEVERITY, DEPRECATED_PROTO_ENTRY.severity());
-    assertEquals(INSERT_ID, DEPRECATED_PROTO_ENTRY.insertId());
-    assertEquals(HTTP_REQUEST, DEPRECATED_PROTO_ENTRY.httpRequest());
-    assertEquals(LABELS, DEPRECATED_PROTO_ENTRY.labels());
-    assertEquals(OPERATION, DEPRECATED_PROTO_ENTRY.operation());
-    assertEquals(PROTO_PAYLOAD, DEPRECATED_PROTO_ENTRY.payload());
-    LogEntry logEntry = LogEntry.builder(STRING_PAYLOAD)
-        .payload(StringPayload.of("otherPayload"))
-        .logName(LOG_NAME)
-        .resource(RESOURCE)
-        .timestamp(TIMESTAMP)
-        .severity(SEVERITY)
-        .insertId(INSERT_ID)
-        .httpRequest(HTTP_REQUEST)
-        .addLabel("key1", "value1")
-        .addLabel("key2", "value2")
-        .operation(OPERATION)
-        .build();
-    assertEquals(LOG_NAME, logEntry.logName());
-    assertEquals(RESOURCE, logEntry.resource());
-    assertEquals(TIMESTAMP, (long) logEntry.timestamp());
-    assertEquals(SEVERITY, logEntry.severity());
-    assertEquals(INSERT_ID, logEntry.insertId());
-    assertEquals(HTTP_REQUEST, logEntry.httpRequest());
-    assertEquals(LABELS, logEntry.labels());
-    assertEquals(OPERATION, logEntry.operation());
-    assertEquals(StringPayload.of("otherPayload"), logEntry.payload());
-  }
 
   @Test
   public void testToBuilder() {

@@ -52,13 +52,6 @@ public class Translation implements Serializable {
     this.model = model;
   }
 
-  /**
-   * Returns the translated text.
-   */
-  @Deprecated
-  public String translatedText() {
-    return translatedText;
-  }
 
   /**
    * Returns the translated text.
@@ -67,14 +60,6 @@ public class Translation implements Serializable {
     return translatedText;
   }
 
-  /**
-   * Returns the language code of the source text. If no source language was provided this value is
-   * the source language as detected by the Google Translate service.
-   */
-  @Deprecated
-  public String sourceLanguage() {
-    return getSourceLanguage();
-  }
 
   /**
    * Returns the language code of the source text. If no source language was provided this value is

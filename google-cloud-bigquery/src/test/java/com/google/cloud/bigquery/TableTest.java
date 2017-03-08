@@ -132,32 +132,6 @@ public class TableTest {
     assertSame(serviceMockReturnsOptions, builtTable.getBigquery());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedTable(2);
-    replay(bigquery);
-    Table builtTable = new Table.Builder(serviceMockReturnsOptions, TABLE_ID1, TABLE_DEFINITION)
-        .setCreationTime(CREATION_TIME)
-        .description(DESCRIPTION)
-        .setEtag(ETAG)
-        .expirationTime(EXPIRATION_TIME)
-        .friendlyName(FRIENDLY_NAME)
-        .setGeneratedId(GENERATED_ID)
-        .setLastModifiedTime(LAST_MODIFIED_TIME)
-        .setSelfLink(SELF_LINK)
-        .build();
-    assertEquals(TABLE_ID1, builtTable.tableId());
-    assertEquals(CREATION_TIME, builtTable.creationTime());
-    assertEquals(DESCRIPTION, builtTable.description());
-    assertEquals(ETAG, builtTable.etag());
-    assertEquals(EXPIRATION_TIME, builtTable.expirationTime());
-    assertEquals(FRIENDLY_NAME, builtTable.friendlyName());
-    assertEquals(GENERATED_ID, builtTable.generatedId());
-    assertEquals(LAST_MODIFIED_TIME, builtTable.lastModifiedTime());
-    assertEquals(TABLE_DEFINITION, builtTable.definition());
-    assertEquals(SELF_LINK, builtTable.selfLink());
-    assertSame(serviceMockReturnsOptions, builtTable.bigquery());
-  }
 
   @Test
   public void testToBuilder() {

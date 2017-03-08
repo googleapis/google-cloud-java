@@ -35,14 +35,14 @@ import java.util.concurrent.Callable;
  * Google Storage blob copy writer. A {@code CopyWriter} object allows to copy both blob's data and
  * information. To override source blob's information supply a {@code BlobInfo} to the
  * {@code CopyRequest} using either
- * {@link Storage.CopyRequest.Builder#target(BlobInfo, Storage.BlobTargetOption...)} or
- * {@link Storage.CopyRequest.Builder#target(BlobInfo, Iterable)}.
+ * {@link Storage.CopyRequest.Builder#setTarget(BlobInfo, Storage.BlobTargetOption...)} or
+ * {@link Storage.CopyRequest.Builder#setTarget(BlobInfo, Iterable)}.
  *
  * <p>This class holds the result of a copy request. If source and
  * destination blobs share the same location and storage class the copy is completed in one RPC call
  * otherwise one or more {@link #copyChunk} calls are necessary to complete the copy. In addition,
- * {@link CopyWriter#result()} can be used to automatically complete the copy and return information
- * on the newly created blob.
+ * {@link CopyWriter#getResult()} can be used to automatically complete the copy and return
+ * information on the newly created blob.
  *
  * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite">Rewrite</a>
  */
@@ -71,37 +71,11 @@ public class CopyWriter implements Restorable<CopyWriter> {
    *
    * @throws StorageException upon failure
    */
-  @Deprecated
-  public Blob result() {
-    return getResult();
-  }
-
-  /**
-   * Returns the updated information for the written blob. Calling this method when {@code isDone()}
-   * is {@code false} will block until all pending chunks are copied.
-   *
-   * <p>This method has the same effect of doing:
-   * <pre> {@code
-   * while (!copyWriter.isDone()) {
-   *    copyWriter.copyChunk();
-   * }}
-   * </pre>
-   *
-   * @throws StorageException upon failure
-   */
   public Blob getResult() {
     while (!isDone()) {
       copyChunk();
     }
     return Blob.fromPb(serviceOptions.getService(), rewriteResponse.result);
-  }
-
-  /**
-   * Returns the size of the blob being copied.
-   */
-  @Deprecated
-  public long blobSize() {
-    return getBlobSize();
   }
 
   /**
@@ -116,14 +90,6 @@ public class CopyWriter implements Restorable<CopyWriter> {
    */
   public boolean isDone() {
     return rewriteResponse.isDone;
-  }
-
-  /**
-   * Returns the number of bytes copied.
-   */
-  @Deprecated
-  public long totalBytesCopied() {
-    return getTotalBytesCopied();
   }
 
   /**

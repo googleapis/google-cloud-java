@@ -199,19 +199,4 @@ public class ListValueTest {
     builder = builder.addValue(BLOB1, BLOB2);
     assertEquals(ImmutableList.of(BlobValue.of(BLOB1), BlobValue.of(BLOB2)), builder.build().get());
   }
-
-  @Test
-  public void testBuilderDeprecated() throws Exception {
-    ListValue.Builder builder = ListValue.builder().set(CONTENT);
-    ListValue value = builder.meaning(1).excludeFromIndexes(true).build();
-    assertEquals(CONTENT, value.get());
-    assertEquals(1, value.meaning());
-    assertTrue(value.excludeFromIndexes());
-
-    builder = ListValue.builder();
-    for (Value<?> v : CONTENT) {
-      builder.addValue(v);
-    }
-    assertEquals(CONTENT, builder.build().get());
-  }
 }

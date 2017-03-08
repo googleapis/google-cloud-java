@@ -51,24 +51,6 @@ public class ProjectInfoTest {
     assertEquals(ID, PROJECT_INFO.getId());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    ProjectInfo withId = ProjectInfo.newBuilder().setId(ID).build();
-    assertEquals(ID, withId.id());
-    assertNull(withId.getNumber());
-    assertNull(withId.quota());
-    ProjectInfo withNumber = ProjectInfo.newBuilder().setNumber(NUMBER).build();
-    assertEquals(NUMBER, withNumber.getNumber());
-    assertNull(withNumber.quota());
-    assertNull(withNumber.id());
-    ProjectInfo withQuota = ProjectInfo.newBuilder().setQuota(QUOTA).build();
-    assertEquals(QUOTA, withQuota.quota());
-    assertNull(withQuota.id());
-    assertNull(withQuota.getNumber());
-    assertEquals(QUOTA, PROJECT_INFO.quota());
-    assertEquals(NUMBER, PROJECT_INFO.getNumber());
-    assertEquals(ID, PROJECT_INFO.id());
-  }
 
   @Test
   public void testQuotaConstructor() {
@@ -80,15 +62,6 @@ public class ProjectInfoTest {
     assertEquals(6, QUOTA.getTotalRrdataSizePerChange());
   }
 
-  @Test
-  public void testQuotaConstructorDeprecated() {
-    assertEquals(1, QUOTA.zones());
-    assertEquals(2, QUOTA.resourceRecordsPerRrset());
-    assertEquals(3, QUOTA.rrsetAdditionsPerChange());
-    assertEquals(4, QUOTA.rrsetDeletionsPerChange());
-    assertEquals(5, QUOTA.rrsetsPerZone());
-    assertEquals(6, QUOTA.totalRrdataSizePerChange());
-  }
 
   @Test
   public void testEqualsAndNotEqualsQuota() {

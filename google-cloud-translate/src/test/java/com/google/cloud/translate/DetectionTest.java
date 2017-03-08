@@ -37,12 +37,6 @@ public class DetectionTest {
     compareDetection(DETECTION, Detection.fromPb(DETECTION_PB));
   }
 
-  @Test
-  public void testFromPbDeprecated() {
-    assertEquals(LANGUAGE, DETECTION.language());
-    assertEquals(CONFIDENCE, DETECTION.confidence(), 0);
-    compareDetection(DETECTION, Detection.fromPb(DETECTION_PB));
-  }
 
   private void compareDetection(Detection expected, Detection value) {
     assertEquals(expected, value);

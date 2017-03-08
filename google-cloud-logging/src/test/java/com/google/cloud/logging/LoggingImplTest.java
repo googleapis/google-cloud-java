@@ -23,6 +23,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.AsyncPage;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
@@ -41,7 +43,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.google.common.util.concurrent.Futures;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
@@ -64,18 +65,15 @@ import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
-
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 public class LoggingImplTest {
 
@@ -167,7 +165,7 @@ public class LoggingImplTest {
   @Test
   public void testCreateSink() {
     LogSink sinkPb = SINK_INFO.toPb(PROJECT);
-    Future<LogSink> response = Futures.immediateFuture(sinkPb);
+    ApiFuture<LogSink> response = ApiFutures.immediateFuture(sinkPb);
     CreateSinkRequest request = CreateSinkRequest.newBuilder()
         .setParent(PROJECT_PB)
         .setSink(sinkPb)
@@ -182,7 +180,7 @@ public class LoggingImplTest {
   @Test
   public void testCreateSinkAsync() throws ExecutionException, InterruptedException {
     LogSink sinkPb = SINK_INFO.toPb(PROJECT);
-    Future<LogSink> response = Futures.immediateFuture(sinkPb);
+    ApiFuture<LogSink> response = ApiFutures.immediateFuture(sinkPb);
     CreateSinkRequest request = CreateSinkRequest.newBuilder()
         .setParent(PROJECT_PB)
         .setSink(sinkPb)
@@ -197,7 +195,7 @@ public class LoggingImplTest {
   @Test
   public void testUpdateSink() {
     LogSink sinkPb = SINK_INFO.toPb(PROJECT);
-    Future<LogSink> response = Futures.immediateFuture(sinkPb);
+    ApiFuture<LogSink> response = ApiFutures.immediateFuture(sinkPb);
     UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
         .setSinkName(SINK_NAME_PB)
         .setSink(sinkPb)
@@ -212,7 +210,7 @@ public class LoggingImplTest {
   @Test
   public void testUpdateSinkAsync() throws ExecutionException, InterruptedException {
     LogSink sinkPb = SINK_INFO.toPb(PROJECT);
-    Future<LogSink> response = Futures.immediateFuture(sinkPb);
+    ApiFuture<LogSink> response = ApiFutures.immediateFuture(sinkPb);
     UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
         .setSinkName(SINK_NAME_PB)
         .setSink(sinkPb)
@@ -227,7 +225,7 @@ public class LoggingImplTest {
   @Test
   public void testGetSink() {
     LogSink sinkPb = SINK_INFO.toPb(PROJECT);
-    Future<LogSink> response = Futures.immediateFuture(sinkPb);
+    ApiFuture<LogSink> response = ApiFutures.immediateFuture(sinkPb);
     GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
     EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
@@ -238,7 +236,7 @@ public class LoggingImplTest {
 
   @Test
   public void testGetSink_Null() {
-    Future<LogSink> response = Futures.immediateFuture(null);
+    ApiFuture<LogSink> response = ApiFutures.immediateFuture(null);
     GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
     EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
@@ -249,7 +247,7 @@ public class LoggingImplTest {
   @Test
   public void testGetSinkAsync() throws ExecutionException, InterruptedException {
     LogSink sinkPb = SINK_INFO.toPb(PROJECT);
-    Future<LogSink> response = Futures.immediateFuture(sinkPb);
+    ApiFuture<LogSink> response = ApiFutures.immediateFuture(sinkPb);
     GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
     EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
@@ -260,7 +258,7 @@ public class LoggingImplTest {
 
   @Test
   public void testGetSinkAsync_Null() throws ExecutionException, InterruptedException {
-    Future<LogSink> response = Futures.immediateFuture(null);
+    ApiFuture<LogSink> response = ApiFutures.immediateFuture(null);
     GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
     EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
@@ -271,7 +269,7 @@ public class LoggingImplTest {
   @Test
   public void testDeleteSink() {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
-    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
@@ -281,7 +279,7 @@ public class LoggingImplTest {
   @Test
   public void testDeleteSink_Null() {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
-    Future<Empty> response = Futures.immediateFuture(null);
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
@@ -291,7 +289,7 @@ public class LoggingImplTest {
   @Test
   public void testDeleteSinkAsync() throws ExecutionException, InterruptedException {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
-    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
@@ -301,7 +299,7 @@ public class LoggingImplTest {
   @Test
   public void testDeleteSinkAsync_Null() throws ExecutionException, InterruptedException {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
-    Future<Empty> response = Futures.immediateFuture(null);
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
@@ -321,7 +319,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllSinks(Lists.transform(sinkList, SINK_TO_PB_FUNCTION))
         .build();
-    Future<ListSinksResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListSinksResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Sink> page = logging.listSinks();
@@ -353,8 +351,8 @@ public class LoggingImplTest {
         .setNextPageToken(cursor2)
         .addAllSinks(Lists.transform(sinkList2, SINK_TO_PB_FUNCTION))
         .build();
-    Future<ListSinksResponse> futureResponse1 = Futures.immediateFuture(response1);
-    Future<ListSinksResponse> futureResponse2 = Futures.immediateFuture(response2);
+    ApiFuture<ListSinksResponse> futureResponse1 = ApiFutures.immediateFuture(response1);
+    ApiFuture<ListSinksResponse> futureResponse2 = ApiFutures.immediateFuture(response2);
     EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
@@ -376,7 +374,7 @@ public class LoggingImplTest {
         .setNextPageToken("")
         .addAllSinks(Lists.transform(sinkList, SINK_TO_PB_FUNCTION))
         .build();
-    Future<ListSinksResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListSinksResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Sink> page = logging.listSinks();
@@ -402,7 +400,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllSinks(Lists.transform(sinkList, SINK_TO_PB_FUNCTION))
         .build();
-    Future<ListSinksResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListSinksResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Sink> page = logging.listSinks(ListOption.pageSize(42), ListOption.pageToken(cursor));
@@ -423,7 +421,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllSinks(Lists.transform(sinkList, SINK_TO_PB_FUNCTION))
         .build();
-    Future<ListSinksResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListSinksResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Sink> page = logging.listSinksAsync().get();
@@ -455,8 +453,8 @@ public class LoggingImplTest {
         .setNextPageToken(cursor2)
         .addAllSinks(Lists.transform(sinkList2, SINK_TO_PB_FUNCTION))
         .build();
-    Future<ListSinksResponse> futureResponse1 = Futures.immediateFuture(response1);
-    Future<ListSinksResponse> futureResponse2 = Futures.immediateFuture(response2);
+    ApiFuture<ListSinksResponse> futureResponse1 = ApiFutures.immediateFuture(response1);
+    ApiFuture<ListSinksResponse> futureResponse2 = ApiFutures.immediateFuture(response2);
     EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
@@ -478,7 +476,7 @@ public class LoggingImplTest {
         .setNextPageToken("")
         .addAllSinks(Lists.transform(sinkList, SINK_TO_PB_FUNCTION))
         .build();
-    Future<ListSinksResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListSinksResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Sink> page = logging.listSinksAsync().get();
@@ -504,7 +502,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllSinks(Lists.transform(sinkList, SINK_TO_PB_FUNCTION))
         .build();
-    Future<ListSinksResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListSinksResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Sink> page =
@@ -516,7 +514,7 @@ public class LoggingImplTest {
   @Test
   public void testCreateMetric() {
     LogMetric metricPb = METRIC_INFO.toPb();
-    Future<LogMetric> response = Futures.immediateFuture(metricPb);
+    ApiFuture<LogMetric> response = ApiFutures.immediateFuture(metricPb);
     CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
         .setParent(PROJECT_PB)
         .setMetric(metricPb)
@@ -531,7 +529,7 @@ public class LoggingImplTest {
   @Test
   public void testCreateMetricAsync() throws ExecutionException, InterruptedException {
     LogMetric metricPb = METRIC_INFO.toPb();
-    Future<LogMetric> response = Futures.immediateFuture(metricPb);
+    ApiFuture<LogMetric> response = ApiFutures.immediateFuture(metricPb);
     CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
         .setParent(PROJECT_PB)
         .setMetric(metricPb)
@@ -546,7 +544,7 @@ public class LoggingImplTest {
   @Test
   public void testUpdateMetric() {
     LogMetric sinkPb = METRIC_INFO.toPb();
-    Future<LogMetric> response = Futures.immediateFuture(sinkPb);
+    ApiFuture<LogMetric> response = ApiFutures.immediateFuture(sinkPb);
     UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
         .setMetricName(METRIC_NAME_PB)
         .setMetric(sinkPb)
@@ -561,7 +559,7 @@ public class LoggingImplTest {
   @Test
   public void testUpdateMetricAsync() throws ExecutionException, InterruptedException {
     LogMetric sinkPb = METRIC_INFO.toPb();
-    Future<LogMetric> response = Futures.immediateFuture(sinkPb);
+    ApiFuture<LogMetric> response = ApiFutures.immediateFuture(sinkPb);
     UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
         .setMetricName(METRIC_NAME_PB)
         .setMetric(sinkPb)
@@ -576,7 +574,7 @@ public class LoggingImplTest {
   @Test
   public void testGetMetric() {
     LogMetric sinkPb = METRIC_INFO.toPb();
-    Future<LogMetric> response = Futures.immediateFuture(sinkPb);
+    ApiFuture<LogMetric> response = ApiFutures.immediateFuture(sinkPb);
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
     EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
@@ -588,7 +586,7 @@ public class LoggingImplTest {
 
   @Test
   public void testGetMetric_Null() {
-    Future<LogMetric> response = Futures.immediateFuture(null);
+    ApiFuture<LogMetric> response = ApiFutures.immediateFuture(null);
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
     EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
@@ -600,7 +598,7 @@ public class LoggingImplTest {
   @Test
   public void testGetMetricAsync() throws ExecutionException, InterruptedException {
     LogMetric sinkPb = METRIC_INFO.toPb();
-    Future<LogMetric> response = Futures.immediateFuture(sinkPb);
+    ApiFuture<LogMetric> response = ApiFutures.immediateFuture(sinkPb);
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
     EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
@@ -612,7 +610,7 @@ public class LoggingImplTest {
 
   @Test
   public void testGetMetricAsync_Null() throws ExecutionException, InterruptedException {
-    Future<LogMetric> response = Futures.immediateFuture(null);
+    ApiFuture<LogMetric> response = ApiFutures.immediateFuture(null);
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
     EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
@@ -625,7 +623,7 @@ public class LoggingImplTest {
   public void testDeleteMetric() {
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
-    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
@@ -636,7 +634,7 @@ public class LoggingImplTest {
   public void testDeleteMetric_Null() {
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
-    Future<Empty> response = Futures.immediateFuture(null);
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
@@ -647,7 +645,7 @@ public class LoggingImplTest {
   public void testDeleteMetricAsync() throws ExecutionException, InterruptedException {
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
-    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
@@ -658,7 +656,7 @@ public class LoggingImplTest {
   public void testDeleteMetricAsync_Null() throws ExecutionException, InterruptedException {
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
-    Future<Empty> response = Futures.immediateFuture(null);
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
@@ -679,7 +677,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
         .build();
-    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogMetricsResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Metric> page = logging.listMetrics();
@@ -712,8 +710,8 @@ public class LoggingImplTest {
         .setNextPageToken(cursor2)
         .addAllMetrics(Lists.transform(sinkList2, METRIC_TO_PB_FUNCTION))
         .build();
-    Future<ListLogMetricsResponse> futureResponse1 = Futures.immediateFuture(response1);
-    Future<ListLogMetricsResponse> futureResponse2 = Futures.immediateFuture(response2);
+    ApiFuture<ListLogMetricsResponse> futureResponse1 = ApiFutures.immediateFuture(response1);
+    ApiFuture<ListLogMetricsResponse> futureResponse2 = ApiFutures.immediateFuture(response2);
     EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
@@ -736,7 +734,7 @@ public class LoggingImplTest {
         .setNextPageToken("")
         .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
         .build();
-    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogMetricsResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Metric> page = logging.listMetrics();
@@ -762,7 +760,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
         .build();
-    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogMetricsResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Metric> page = logging.listMetrics(ListOption.pageSize(42), ListOption.pageToken(cursor));
@@ -784,7 +782,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
         .build();
-    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogMetricsResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Metric> page = logging.listMetricsAsync().get();
@@ -817,8 +815,8 @@ public class LoggingImplTest {
         .setNextPageToken(cursor2)
         .addAllMetrics(Lists.transform(sinkList2, METRIC_TO_PB_FUNCTION))
         .build();
-    Future<ListLogMetricsResponse> futureResponse1 = Futures.immediateFuture(response1);
-    Future<ListLogMetricsResponse> futureResponse2 = Futures.immediateFuture(response2);
+    ApiFuture<ListLogMetricsResponse> futureResponse1 = ApiFutures.immediateFuture(response1);
+    ApiFuture<ListLogMetricsResponse> futureResponse2 = ApiFutures.immediateFuture(response2);
     EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
@@ -841,7 +839,7 @@ public class LoggingImplTest {
         .setNextPageToken("")
         .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
         .build();
-    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogMetricsResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Metric> page = logging.listMetricsAsync().get();
@@ -867,7 +865,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
         .build();
-    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogMetricsResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Metric> page =
@@ -889,8 +887,8 @@ public class LoggingImplTest {
             .setNextPageToken(cursor)
             .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
         .build();
-    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
-        Futures.immediateFuture(response);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptors();
@@ -921,10 +919,10 @@ public class LoggingImplTest {
             .setNextPageToken(cursor2)
             .addAllResourceDescriptors(Lists.transform(descriptorList2, DESCRIPTOR_TO_PB_FUNCTION))
             .build();
-    Future<ListMonitoredResourceDescriptorsResponse> futureResponse1 =
-        Futures.immediateFuture(response1);
-    Future<ListMonitoredResourceDescriptorsResponse> futureResponse2 =
-        Futures.immediateFuture(response2);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse1 =
+        ApiFutures.immediateFuture(response1);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse2 =
+        ApiFutures.immediateFuture(response2);
     EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
@@ -950,8 +948,8 @@ public class LoggingImplTest {
             .setNextPageToken("")
             .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
             .build();
-    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
-        Futures.immediateFuture(response);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptors();
@@ -977,8 +975,8 @@ public class LoggingImplTest {
             .setNextPageToken(cursor)
             .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
             .build();
-    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
-        Futures.immediateFuture(response);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptors(
@@ -1001,8 +999,8 @@ public class LoggingImplTest {
             .setNextPageToken(cursor)
             .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
             .build();
-    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
-        Futures.immediateFuture(response);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<MonitoredResourceDescriptor> page =
@@ -1034,10 +1032,10 @@ public class LoggingImplTest {
             .setNextPageToken(cursor2)
             .addAllResourceDescriptors(Lists.transform(descriptorList2, DESCRIPTOR_TO_PB_FUNCTION))
             .build();
-    Future<ListMonitoredResourceDescriptorsResponse> futureResponse1 =
-        Futures.immediateFuture(response1);
-    Future<ListMonitoredResourceDescriptorsResponse> futureResponse2 =
-        Futures.immediateFuture(response2);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse1 =
+        ApiFutures.immediateFuture(response1);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse2 =
+        ApiFutures.immediateFuture(response2);
     EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
@@ -1065,8 +1063,8 @@ public class LoggingImplTest {
             .setNextPageToken("")
             .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
             .build();
-    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
-        Futures.immediateFuture(response);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<MonitoredResourceDescriptor> page =
@@ -1094,8 +1092,8 @@ public class LoggingImplTest {
             .setNextPageToken(cursor)
             .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
             .build();
-    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
-        Futures.immediateFuture(response);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptorsAsync(
@@ -1108,7 +1106,7 @@ public class LoggingImplTest {
   @Test
   public void testDeleteLog() {
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PB).build();
-    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
@@ -1118,7 +1116,7 @@ public class LoggingImplTest {
   @Test
   public void testDeleteLog_Null() {
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PB).build();
-    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(Futures.<Empty>immediateFuture(null));
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(ApiFutures.<Empty>immediateFuture(null));
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
     assertFalse(logging.deleteLog(LOG_NAME));
@@ -1127,7 +1125,7 @@ public class LoggingImplTest {
   @Test
   public void testDeleteLogAync() throws ExecutionException, InterruptedException {
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PB).build();
-    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
@@ -1137,7 +1135,7 @@ public class LoggingImplTest {
   @Test
   public void testDeleteLogAsync_Null() throws ExecutionException, InterruptedException {
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PB).build();
-    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(Futures.<Empty>immediateFuture(null));
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(ApiFutures.<Empty>immediateFuture(null));
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
     assertFalse(logging.deleteLogAsync(LOG_NAME).get());
@@ -1150,7 +1148,7 @@ public class LoggingImplTest {
             LogEntry.toPbFunction(PROJECT)))
         .build();
     WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
-    EasyMock.expect(loggingRpcMock.write(request)).andReturn(Futures.immediateFuture(response));
+    EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
     logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2));
@@ -1167,7 +1165,7 @@ public class LoggingImplTest {
             LogEntry.toPbFunction(PROJECT)))
         .build();
     WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
-    EasyMock.expect(loggingRpcMock.write(request)).andReturn(Futures.immediateFuture(response));
+    EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
     logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), WriteOption.logName(LOG_NAME),
@@ -1181,7 +1179,7 @@ public class LoggingImplTest {
             LogEntry.toPbFunction(PROJECT)))
         .build();
     WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
-    EasyMock.expect(loggingRpcMock.write(request)).andReturn(Futures.immediateFuture(response));
+    EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
     logging.writeAsync(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2)).get();
@@ -1198,7 +1196,7 @@ public class LoggingImplTest {
             LogEntry.toPbFunction(PROJECT)))
         .build();
     WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
-    EasyMock.expect(loggingRpcMock.write(request)).andReturn(Futures.immediateFuture(response));
+    EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
     logging.writeAsync(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), WriteOption.logName(LOG_NAME),
@@ -1218,7 +1216,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllEntries(Lists.transform(entriesList, LogEntry.toPbFunction(PROJECT)))
         .build();
-    Future<ListLogEntriesResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogEntriesResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<LogEntry> page = logging.listLogEntries();
@@ -1249,8 +1247,8 @@ public class LoggingImplTest {
         .setNextPageToken(cursor2)
         .addAllEntries(Lists.transform(descriptorList2, LogEntry.toPbFunction(PROJECT)))
         .build();
-    Future<ListLogEntriesResponse> futureResponse1 = Futures.immediateFuture(response1);
-    Future<ListLogEntriesResponse> futureResponse2 = Futures.immediateFuture(response2);
+    ApiFuture<ListLogEntriesResponse> futureResponse1 = ApiFutures.immediateFuture(response1);
+    ApiFuture<ListLogEntriesResponse> futureResponse2 = ApiFutures.immediateFuture(response2);
     EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
@@ -1277,7 +1275,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllEntries(Lists.transform(entriesList, LogEntry.toPbFunction(PROJECT)))
         .build();
-    Future<ListLogEntriesResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogEntriesResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<LogEntry> page = logging.listLogEntries();
@@ -1300,7 +1298,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllEntries(Lists.transform(entriesList, LogEntry.toPbFunction(PROJECT)))
         .build();
-    Future<ListLogEntriesResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogEntriesResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<LogEntry> page = logging.listLogEntries(EntryListOption.filter("logName:syslog"),
@@ -1322,7 +1320,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllEntries(Lists.transform(entriesList, LogEntry.toPbFunction(PROJECT)))
         .build();
-    Future<ListLogEntriesResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogEntriesResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<LogEntry> page = logging.listLogEntriesAsync().get();
@@ -1353,8 +1351,8 @@ public class LoggingImplTest {
         .setNextPageToken(cursor2)
         .addAllEntries(Lists.transform(descriptorList2, LogEntry.toPbFunction(PROJECT)))
         .build();
-    Future<ListLogEntriesResponse> futureResponse1 = Futures.immediateFuture(response1);
-    Future<ListLogEntriesResponse> futureResponse2 = Futures.immediateFuture(response2);
+    ApiFuture<ListLogEntriesResponse> futureResponse1 = ApiFutures.immediateFuture(response1);
+    ApiFuture<ListLogEntriesResponse> futureResponse2 = ApiFutures.immediateFuture(response2);
     EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
@@ -1381,7 +1379,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllEntries(Lists.transform(entriesList, LogEntry.toPbFunction(PROJECT)))
         .build();
-    Future<ListLogEntriesResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogEntriesResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<LogEntry> page = logging.listLogEntriesAsync().get();
@@ -1404,7 +1402,7 @@ public class LoggingImplTest {
         .setNextPageToken(cursor)
         .addAllEntries(Lists.transform(entriesList, LogEntry.toPbFunction(PROJECT)))
         .build();
-    Future<ListLogEntriesResponse> futureResponse = Futures.immediateFuture(response);
+    ApiFuture<ListLogEntriesResponse> futureResponse = ApiFutures.immediateFuture(response);
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<LogEntry> page = logging.listLogEntriesAsync(EntryListOption.filter("logName:syslog"),

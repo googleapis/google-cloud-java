@@ -43,17 +43,6 @@ public class BigQueryErrorTest {
     assertEquals(MESSAGE, ERROR_INCOMPLETE.getMessage());
   }
 
-  @Test
-  public void testConstructorDeprecated() {
-    assertEquals(REASON, ERROR.reason());
-    assertEquals(LOCATION, ERROR.location());
-    assertEquals(DEBUG_INFO, ERROR.getDebugInfo());
-    assertEquals(MESSAGE, ERROR.message());
-    assertEquals(REASON, ERROR_INCOMPLETE.reason());
-    assertEquals(LOCATION, ERROR_INCOMPLETE.location());
-    assertEquals(null, ERROR_INCOMPLETE.getDebugInfo());
-    assertEquals(MESSAGE, ERROR_INCOMPLETE.message());
-  }
 
   @Test
   public void testToAndFromPb() {

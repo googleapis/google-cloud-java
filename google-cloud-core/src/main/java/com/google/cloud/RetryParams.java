@@ -107,16 +107,6 @@ public final class RetryParams implements Serializable {
       }
     }
 
-    /**
-     * Sets retryMinAttempts.
-     *
-     * @param retryMinAttempts the retryMinAttempts to set
-     * @return the Builder for chaining
-     */
-    @Deprecated
-    public Builder retryMinAttempts(int retryMinAttempts) {
-      return setRetryMinAttempts(retryMinAttempts);
-    }
 
     /**
      * Sets retryMinAttempts.
@@ -129,16 +119,6 @@ public final class RetryParams implements Serializable {
       return this;
     }
 
-    /**
-     * Sets retryMaxAttempts.
-     *
-     * @param retryMaxAttempts the retryMaxAttempts to set
-     * @return the Builder for chaining
-     */
-    @Deprecated
-    public Builder retryMaxAttempts(int retryMaxAttempts) {
-      return setRetryMaxAttempts(retryMaxAttempts);
-    }
 
     /**
      * Sets retryMaxAttempts.
@@ -151,16 +131,6 @@ public final class RetryParams implements Serializable {
       return this;
     }
 
-    /**
-     * Sets initialRetryDelayMillis.
-     *
-     * @param initialRetryDelayMillis the initialRetryDelayMillis to set
-     * @return the Builder for chaining
-     */
-    @Deprecated
-    public Builder initialRetryDelayMillis(long initialRetryDelayMillis) {
-      return setInitialRetryDelayMillis(initialRetryDelayMillis);
-    }
 
     /**
      * Sets initialRetryDelayMillis.
@@ -173,16 +143,6 @@ public final class RetryParams implements Serializable {
       return this;
     }
 
-    /**
-     * Sets maxRetryDelayMillis.
-     *
-     * @param maxRetryDelayMillis the maxRetryDelayMillis to set
-     * @return the Builder for chaining
-     */
-    @Deprecated
-    public Builder maxRetryDelayMillis(long maxRetryDelayMillis) {
-      return setMaxRetryDelayMillis(maxRetryDelayMillis);
-    }
 
     /**
      * Sets maxRetryDelayMillis.
@@ -195,16 +155,6 @@ public final class RetryParams implements Serializable {
       return this;
     }
 
-    /**
-     * Sets retryDelayBackoffFactor.
-     *
-     * @param retryDelayBackoffFactor the retryDelayBackoffFactor to set
-     * @return the Builder for chaining
-     */
-    @Deprecated
-    public Builder retryDelayBackoffFactor(double retryDelayBackoffFactor) {
-      return setRetryDelayBackoffFactor(retryDelayBackoffFactor);
-    }
 
     /**
      * Sets retryDelayBackoffFactor.
@@ -217,18 +167,6 @@ public final class RetryParams implements Serializable {
       return this;
     }
 
-    /**
-     * Sets totalRetryPeriodMillis. Note that App Engine Standard Environment front-end modules have
-     * a 60 second deadline for HTTP requests. For that reason, you should set the total retry
-     * period to under 60 seconds if you are using it on an App Engine front-end module.
-     *
-     * @param totalRetryPeriodMillis the totalRetryPeriodMillis to set
-     * @return the Builder for chaining
-     */
-    @Deprecated
-    public Builder totalRetryPeriodMillis(long totalRetryPeriodMillis) {
-      return setTotalRetryPeriodMillis(totalRetryPeriodMillis);
-    }
 
     /**
      * Sets totalRetryPeriodMillis. Note that App Engine Standard Environment front-end modules have
@@ -275,13 +213,6 @@ public final class RetryParams implements Serializable {
     checkArgument(totalRetryPeriodMillis >= 0, "totalRetryPeriodMillis must not be negative");
   }
 
-  /**
-   * Returns an instance with the default parameters.
-   */
-  @Deprecated
-  public static RetryParams defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns an instance with the default parameters.
@@ -298,13 +229,6 @@ public final class RetryParams implements Serializable {
     return NO_RETRIES;
   }
 
-  /**
-   * Returns the retryMinAttempts. Default value is {@value #DEFAULT_RETRY_MIN_ATTEMPTS}.
-   */
-  @Deprecated
-  public int retryMinAttempts() {
-    return getRetryMinAttempts();
-  }
 
   /**
    * Returns the retryMinAttempts. Default value is {@value #DEFAULT_RETRY_MIN_ATTEMPTS}.
@@ -313,13 +237,6 @@ public final class RetryParams implements Serializable {
     return retryMinAttempts;
   }
 
-  /**
-   * Returns the retryMaxAttempts. Default value is {@value #DEFAULT_RETRY_MAX_ATTEMPTS}.
-   */
-  @Deprecated
-  public int retryMaxAttempts() {
-    return getRetryMaxAttempts();
-  }
 
   /**
    * Returns the retryMaxAttempts. Default value is {@value #DEFAULT_RETRY_MAX_ATTEMPTS}.
@@ -328,14 +245,6 @@ public final class RetryParams implements Serializable {
     return retryMaxAttempts;
   }
 
-  /**
-   * Returns the initialRetryDelayMillis. Default value is
-   * {@value #DEFAULT_INITIAL_RETRY_DELAY_MILLIS}.
-   */
-  @Deprecated
-  public long initialRetryDelayMillis() {
-    return getInitialRetryDelayMillis();
-  }
 
   /**
    * Returns the initialRetryDelayMillis. Default value is
@@ -345,13 +254,6 @@ public final class RetryParams implements Serializable {
     return initialRetryDelayMillis;
   }
 
-  /**
-   * Returns the maxRetryDelayMillis. Default values is {@value #DEFAULT_MAX_RETRY_DELAY_MILLIS}.
-   */
-  @Deprecated
-  public long maxRetryDelayMillis() {
-    return getMaxRetryDelayMillis();
-  }
 
   /**
    * Returns the maxRetryDelayMillis. Default values is {@value #DEFAULT_MAX_RETRY_DELAY_MILLIS}.
@@ -360,14 +262,6 @@ public final class RetryParams implements Serializable {
     return maxRetryDelayMillis;
   }
 
-  /**
-   * Returns the maxRetryDelayBackoffFactor. Default values is
-   * {@value #DEFAULT_RETRY_DELAY_BACKOFF_FACTOR}.
-   */
-  @Deprecated
-  public double retryDelayBackoffFactor() {
-    return getRetryDelayBackoffFactor();
-  }
 
   /**
    * Returns the maxRetryDelayBackoffFactor. Default values is
@@ -377,14 +271,6 @@ public final class RetryParams implements Serializable {
     return retryDelayBackoffFactor;
   }
 
-  /**
-   * Returns the totalRetryPeriodMillis. Default value is
-   * {@value #DEFAULT_TOTAL_RETRY_PERIOD_MILLIS}.
-   */
-  @Deprecated
-  public long totalRetryPeriodMillis() {
-    return getTotalRetryPeriodMillis();
-  }
 
   /**
    * Returns the totalRetryPeriodMillis. Default value is
@@ -428,10 +314,6 @@ public final class RetryParams implements Serializable {
     return toStringHelper.toString();
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();

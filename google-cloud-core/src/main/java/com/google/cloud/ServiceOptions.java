@@ -104,7 +104,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
    * @param <B> the {@code ServiceOptions} builder
    */
-  protected abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
+  public abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
       OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
       B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {
 
@@ -135,13 +135,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return (B) this;
     }
 
-    /**
-     * Sets the service factory.
-     */
-    @Deprecated
-    public B serviceFactory(ServiceFactory<ServiceT, OptionsT> serviceFactory) {
-      return setServiceFactory(serviceFactory);
-    }
 
     /**
      * Sets the service factory.
@@ -151,17 +144,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
-     * replaced by Java8's {@code java.time.Clock}.
-     *
-     * @param clock the clock to set
-     * @return the builder
-     */
-    @Deprecated
-    public B clock(Clock clock) {
-      return setClock(clock);
-    }
 
     /**
      * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
@@ -175,18 +157,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets project id.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B projectId(String projectId) {
-      return setProjectId(projectId);
-    }
 
     /**
-     * Sets project id.
+     * Sets the project ID. If no project ID is set, {@link #getDefaultProjectId()} will be used to
+     * attempt getting the project ID from the environment.
      *
      * @return the builder
      */
@@ -195,15 +169,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets service host.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B host(String host) {
-      return setHost(host);
-    }
 
     /**
      * Sets service host.
@@ -231,17 +196,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets configuration parameters for request retries. If no configuration is set
-     * {@link RetryParams#getDefaultInstance()} is used. To disable retries, supply
-     * {@link RetryParams#noRetries()} here.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B retryParams(RetryParams retryParams) {
-      return setRetryParams(retryParams);
-    }
 
     /**
      * Sets configuration parameters for request retries. If no configuration is set
@@ -255,15 +209,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets the factory for rpc services.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B serviceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
-      return setServiceRpcFactory(serviceRpcFactory);
-    }
 
     /**
      * Sets the factory for rpc services.
@@ -316,40 +261,48 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  protected static String appEngineAppId() {
-    return System.getProperty("com.google.appengine.application.id");
-  }
-
-  @Deprecated
-  protected String defaultHost() {
-    return getDefaultHost();
-  }
 
   protected String getDefaultHost() {
     return DEFAULT_HOST;
   }
 
-  @Deprecated
-  protected String defaultProject() {
-    return getDefaultProject();
-  }
 
   protected String getDefaultProject() {
+    return getDefaultProjectId();
+  }
+
+  /**
+   * Returns the default project ID, or {@code null} if no default project ID could be found. This
+   * method returns the first available project ID among the following sources:
+   * <ol>
+   *   <li>The project ID specified by the GOOGLE_CLOUD_PROJECT environment variable
+   *   <li>The App Engine project ID
+   *   <li>The project ID specified in the JSON credentials file pointed by the
+   *   {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable
+   *   <li>The Google Cloud SDK project ID
+   *   <li>The Compute Engine project ID
+   * </ol>
+   */
+  public static String getDefaultProjectId() {
     String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
     if (projectId == null) {
       projectId =
           System.getProperty(LEGACY_PROJECT_ENV_NAME, System.getenv(LEGACY_PROJECT_ENV_NAME));
     }
     if (projectId == null) {
-      projectId = appEngineProjectId();
+      projectId = getAppEngineProjectId();
     }
     if (projectId == null) {
-      projectId = serviceAccountProjectId();
+      projectId = getServiceAccountProjectId();
     }
-    return projectId != null ? projectId : googleCloudProjectId();
+    return projectId != null ? projectId : getGoogleCloudProjectId();
   }
 
-  private static String activeGoogleCloudConfig(File configDir) {
+  protected static String getAppEngineAppId() {
+    return System.getProperty("com.google.appengine.application.id");
+  }
+
+  private static String getActiveGoogleCloudConfig(File configDir) {
     String activeGoogleCloudConfig = null;
     try {
       activeGoogleCloudConfig =
@@ -361,7 +314,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return firstNonNull(activeGoogleCloudConfig, "default");
   }
 
-  protected static String googleCloudProjectId() {
+  protected static String getGoogleCloudProjectId() {
     File configDir;
     if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
       configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
@@ -370,7 +323,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     } else {
       configDir = new File(System.getProperty("user.home"), ".config/gcloud");
     }
-    String activeConfig = activeGoogleCloudConfig(configDir);
+    String activeConfig = getActiveGoogleCloudConfig(configDir);
     FileReader fileReader = null;
     try {
       fileReader = new FileReader(new File(configDir, "configurations/config_" + activeConfig));
@@ -429,7 +382,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).contains("windows");
   }
 
-  protected static String appEngineProjectId() {
+  protected static String getAppEngineProjectId() {
     try {
       Class<?> factoryClass =
           Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
@@ -447,7 +400,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  protected static String serviceAccountProjectId() {
+  protected static String getServiceAccountProjectId() {
     String project = null;
     String credentialsPath = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
     if (credentialsPath != null) {
@@ -461,10 +414,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return project;
   }
 
-  @Deprecated
-  public ServiceT service() {
-    return getService();
-  }
 
   @SuppressWarnings("unchecked")
   public ServiceT getService() {
@@ -474,10 +423,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return service;
   }
 
-  @Deprecated
-  public ServiceRpcT rpc() {
-    return getRpc();
-  }
 
   @SuppressWarnings("unchecked")
   public ServiceRpcT getRpc() {
@@ -487,30 +432,15 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return rpc;
   }
 
-  /**
-   * Returns the project id. Return value can be null (for services that don't require a project
-   * id).
-   */
-  @Deprecated
-  public String projectId() {
-    return getProjectId();
-  }
 
   /**
-   * Returns the project id. Return value can be null (for services that don't require a project
-   * id).
+   * Returns the project ID. Return value can be null (for services that don't require a project
+   * ID).
    */
   public String getProjectId() {
     return projectId;
   }
 
-  /**
-   * Returns the service host.
-   */
-  @Deprecated
-  public String host() {
-    return getHost();
-  }
 
   /**
    * Returns the service host.
@@ -538,14 +468,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return credentialsToReturn;
   }
 
-  /**
-   * Returns configuration parameters for request retries. By default requests are retried:
-   * {@link RetryParams#getDefaultInstance()} is used.
-   */
-  @Deprecated
-  public RetryParams retryParams() {
-    return getRetryParams();
-  }
 
   /**
    * Returns configuration parameters for request retries. By default requests are retried:
@@ -555,14 +477,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return retryParams;
   }
 
-  /**
-   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
-   * current time.
-   */
-  @Deprecated
-  public Clock clock() {
-    return getClock();
-  }
 
   /**
    * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
@@ -572,13 +486,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return clock;
   }
 
-  /**
-   * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
-   */
-  @Deprecated
-  public String applicationName() {
-    return getApplicationName();
-  }
 
   /**
    * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
@@ -587,13 +494,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return APPLICATION_NAME;
   }
 
-  /**
-   * Returns the library's name, {@code gcloud-java}, as a string.
-   */
-  @Deprecated
-  public String libraryName() {
-    return getLibraryName();
-  }
 
   /**
    * Returns the library's name, {@code gcloud-java}, as a string.
@@ -653,24 +553,12 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  @Deprecated
-  protected ServiceFactory<ServiceT, OptionsT> defaultServiceFactory() {
-    return getDefaultServiceFactory();
-  }
 
   protected abstract ServiceFactory<ServiceT, OptionsT> getDefaultServiceFactory();
 
-  @Deprecated
-  protected ServiceRpcFactory<ServiceRpcT, OptionsT> defaultRpcFactory() {
-    return getDefaultRpcFactory();
-  }
 
   protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> getDefaultRpcFactory();
 
-  @Deprecated
-  protected Set<String> scopes() {
-    return getScopes();
-  }
 
   protected abstract Set<String> getScopes();
 

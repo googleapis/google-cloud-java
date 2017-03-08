@@ -41,13 +41,6 @@ public class FormatOptions implements Serializable {
     this.type = type;
   }
 
-  /**
-   * Returns the external data format, as a string.
-   */
-  @Deprecated
-  public String type() {
-    return getType();
-  }
 
   /**
    * Returns the external data format, as a string.
