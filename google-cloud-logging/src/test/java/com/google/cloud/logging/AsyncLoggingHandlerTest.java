@@ -18,21 +18,19 @@ package com.google.cloud.logging;
 
 import static com.google.cloud.logging.LoggingHandlerTest.TestFormatter;
 
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.util.concurrent.Futures;
-
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.concurrent.Future;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
 
 public class AsyncLoggingHandlerTest {
 
@@ -41,7 +39,7 @@ public class AsyncLoggingHandlerTest {
   private static final String PROJECT = "project";
   private static final MonitoredResource DEFAULT_RESOURCE =
       MonitoredResource.of("global", ImmutableMap.of("project_id", PROJECT));
-  private static final Future<Void> FUTURE = Futures.immediateFuture(null);
+  private static final ApiFuture<Void> FUTURE = ApiFutures.immediateFuture(null);
 
   private Logging logging;
   private LoggingOptions options;

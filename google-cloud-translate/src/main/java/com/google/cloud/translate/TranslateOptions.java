@@ -78,16 +78,6 @@ public class TranslateOptions extends
       this.apiKey = options.apiKey;
     }
 
-    /**
-     * Sets project id. Setting a project id has no impact on the {@link Translate} service.
-     *
-     * @return the builder
-     */
-    @Override
-    @Deprecated
-    public Builder projectId(String projectId) {
-      return setProjectId(projectId);
-    }
 
     /**
      * Sets project id. Setting a project id has no impact on the {@link Translate} service.
@@ -100,15 +90,6 @@ public class TranslateOptions extends
       return self();
     }
 
-    /**
-     * Sets the API key used to issue requets. If not set, the API key is looked for in the
-     * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key see
-     * <a href="https://cloud.google.com/translate/v2/quickstart">Translate quickstart</a>.
-     */
-    @Deprecated
-    public Builder apiKey(String apiKey) {
-      return setApiKey(apiKey);
-    }
 
     /**
      * Sets the API key used to issue requets. If not set, the API key is looked for in the
@@ -120,19 +101,6 @@ public class TranslateOptions extends
       return this;
     }
 
-    /**
-     * Sets the code for the default target language. If not set, english ({@code en}) is used.
-     * {@link Translate#translate(List, TranslateOption...)} and
-     * {@link Translate#translate(String, TranslateOption...)} calls will use this
-     * value unless a {@link TranslateOption#targetLanguage(String)} option is explicitly
-     * provided.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public Builder targetLanguage(String targetLanguage) {
-      return setTargetLanguage(targetLanguage);
-    }
 
     /**
      * Sets the code for the default target language. If not set, english ({@code en}) is used.
@@ -185,22 +153,11 @@ public class TranslateOptions extends
     return DEFAULT_HOST;
   }
 
-  @Deprecated
-  protected String defaultApiKey() {
-    return getDefaultApiKey();
-  }
 
   protected String getDefaultApiKey() {
     return System.getProperty(API_KEY_ENV_NAME, System.getenv(API_KEY_ENV_NAME));
   }
 
-  /**
-   * Returns the API key, to be used used to send requests.
-   */
-  @Deprecated
-  public String apiKey() {
-    return getApiKey();
-  }
 
   /**
    * Returns the API key, to be used used to send requests.
@@ -209,13 +166,6 @@ public class TranslateOptions extends
     return apiKey;
   }
 
-  /**
-   * Returns the code for the default target language.
-   */
-  @Deprecated
-  public String targetLanguage() {
-    return getTargetLanguage();
-  }
 
   /**
    * Returns the code for the default target language.
@@ -246,13 +196,6 @@ public class TranslateOptions extends
         && Objects.equals(targetLanguage, options.targetLanguage);
   }
 
-  /**
-   * Returns a default {@code TranslateOptions} instance.
-   */
-  @Deprecated
-  public static TranslateOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns a default {@code TranslateOptions} instance.
@@ -261,13 +204,6 @@ public class TranslateOptions extends
     return newBuilder().build();
   }
 
-  /**
-   * Returns a builder for {@code TranslateOptions} objects.
-   */
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   /**
    * Returns a builder for {@code TranslateOptions} objects.

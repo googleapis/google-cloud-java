@@ -33,13 +33,6 @@ public class JobIdTest {
     assertEquals("job", JOB_COMPLETE.getJob());
   }
 
-  @Test
-  public void testOfDeprecated() {
-    assertEquals(null, JOB.project());
-    assertEquals("job", JOB.job());
-    assertEquals("project", JOB_COMPLETE.project());
-    assertEquals("job", JOB_COMPLETE.job());
-  }
 
   @Test
   public void testEquals() {

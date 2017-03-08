@@ -33,9 +33,6 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
   private final long totalBytesProcessed;
 
   interface QueryResultsPageFetcher extends PageImpl.NextPageFetcher<List<FieldValue>> {
-    @Override
-    @Deprecated
-    QueryResult nextPage();
 
     @Override
     QueryResult getNextPage();
@@ -111,13 +108,6 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
     return cacheHit;
   }
 
-  /**
-   * Returns the schema of the results. This is present only when the query completes successfully.
-   */
-  @Deprecated
-  public Schema schema() {
-    return getSchema();
-  }
 
   /**
    * Returns the schema of the results. This is present only when the query completes successfully.
@@ -126,14 +116,6 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
     return schema;
   }
 
-  /**
-   * Returns the total number of bytes processed for the query. If this query was a dry run, this is
-   * the number of bytes that would be processed if the query were run.
-   */
-  @Deprecated
-  public long totalBytesProcessed() {
-    return getTotalBytesProcessed();
-  }
 
   /**
    * Returns the total number of bytes processed for the query. If this query was a dry run, this is
@@ -143,30 +125,16 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
     return totalBytesProcessed;
   }
 
-  /**
-   * Returns the total number of rows in the complete query result set, which can be more than the
-   * number of rows in the first page of results returned by {@link #values()}. Returns {@code 0}
-   * if the query was a dry run.
-   */
-  @Deprecated
-  public long totalRows() {
-    return getTotalRows();
-  }
 
   /**
    * Returns the total number of rows in the complete query result set, which can be more than the
-   * number of rows in the first page of results returned by {@link #values()}. Returns {@code 0}
+   * number of rows in the first page of results returned by {@link #getValues()}. Returns {@code 0}
    * if the query was a dry run.
    */
   public long getTotalRows() {
     return totalRows;
   }
 
-  @Override
-  @Deprecated
-  public QueryResult nextPage() {
-    return getNextPage();
-  }
 
   @Override
   public QueryResult getNextPage() {

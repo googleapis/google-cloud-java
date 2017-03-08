@@ -29,13 +29,7 @@ public interface ValueBuilder<V, P extends Value<V>, B extends ValueBuilder<V, P
 
   B mergeFrom(P other);
 
-  @Deprecated
   boolean getExcludeFromIndexes();
-
-  boolean excludeFromIndexes();
-
-  @Deprecated
-  B excludeFromIndexes(boolean excludeFromIndexes);
 
   B setExcludeFromIndexes(boolean excludeFromIndexes);
 

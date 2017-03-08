@@ -74,7 +74,7 @@ public class BucketTest {
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
-  private static final String STORAGE_CLASS = "STANDARD";
+  private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
   private static final Boolean VERSIONING_ENABLED = true;
   private static final BucketInfo FULL_BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACLS)
@@ -680,47 +680,5 @@ public class BucketTest {
     assertEquals(STORAGE_CLASS, bucket.getStorageClass());
     assertEquals(VERSIONING_ENABLED, bucket.versioningEnabled());
     assertEquals(storage.getOptions(), bucket.getStorage().getOptions());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedBucket(4);
-    expect(storage.getOptions()).andReturn(mockOptions).times(4);
-    replay(storage);
-    Bucket.Builder builder =
-        new Bucket.Builder(new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO)));
-    Bucket bucket = builder.acl(ACLS)
-        .setEtag(ETAG)
-        .setGeneratedId(GENERATED_ID)
-        .setMetageneration(META_GENERATION)
-        .setOwner(OWNER)
-        .setSelfLink(SELF_LINK)
-        .cors(CORS)
-        .setCreateTime(CREATE_TIME)
-        .defaultAcl(DEFAULT_ACL)
-        .deleteRules(DELETE_RULES)
-        .indexPage(INDEX_PAGE)
-        .notFoundPage(NOT_FOUND_PAGE)
-        .location(LOCATION)
-        .storageClass(STORAGE_CLASS)
-        .versioningEnabled(VERSIONING_ENABLED)
-        .build();
-    assertEquals("b", bucket.name());
-    assertEquals(ACLS, bucket.acl());
-    assertEquals(ETAG, bucket.etag());
-    assertEquals(GENERATED_ID, bucket.generatedId());
-    assertEquals(META_GENERATION, bucket.metageneration());
-    assertEquals(OWNER, bucket.owner());
-    assertEquals(SELF_LINK, bucket.selfLink());
-    assertEquals(CREATE_TIME, bucket.createTime());
-    assertEquals(CORS, bucket.cors());
-    assertEquals(DEFAULT_ACL, bucket.defaultAcl());
-    assertEquals(DELETE_RULES, bucket.deleteRules());
-    assertEquals(INDEX_PAGE, bucket.indexPage());
-    assertEquals(NOT_FOUND_PAGE, bucket.notFoundPage());
-    assertEquals(LOCATION, bucket.location());
-    assertEquals(STORAGE_CLASS, bucket.storageClass());
-    assertEquals(VERSIONING_ENABLED, bucket.versioningEnabled());
-    assertEquals(storage.getOptions(), bucket.storage().getOptions());
   }
 }

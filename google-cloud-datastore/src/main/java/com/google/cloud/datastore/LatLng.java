@@ -45,13 +45,6 @@ public final class LatLng implements Serializable {
     this.longitude = longitude;
   }
 
-  /**
-   * Returns the latitude.
-   */
-  @Deprecated
-  public double latitude() {
-    return getLatitude();
-  }
 
   /**
    * Returns the latitude.
@@ -60,13 +53,6 @@ public final class LatLng implements Serializable {
     return latitude;
   }
 
-  /**
-   * Returns the longitude.
-   */
-  @Deprecated
-  public double longitude() {
-    return getLongitude();
-  }
 
   /**
    * Returns the longitude.

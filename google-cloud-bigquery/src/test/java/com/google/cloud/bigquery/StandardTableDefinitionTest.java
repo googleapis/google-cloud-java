@@ -57,15 +57,6 @@ public class StandardTableDefinitionTest {
           .setSchema(TABLE_SCHEMA)
           .setTimePartitioning(TIME_PARTITIONING)
           .build();
-  private static final StandardTableDefinition DEPRECATED_TABLE_DEFINITION =
-      StandardTableDefinition.builder()
-          .setLocation(LOCATION)
-          .setNumBytes(NUM_BYTES)
-          .setNumRows(NUM_ROWS)
-          .setStreamingBuffer(STREAMING_BUFFER)
-          .schema(TABLE_SCHEMA)
-          .timePartitioning(TIME_PARTITIONING)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -96,16 +87,6 @@ public class StandardTableDefinitionTest {
     assertEquals(TIME_PARTITIONING, TABLE_DEFINITION.getTimePartitioning());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(TableDefinition.Type.TABLE, DEPRECATED_TABLE_DEFINITION.type());
-    assertEquals(TABLE_SCHEMA, DEPRECATED_TABLE_DEFINITION.schema());
-    assertEquals(LOCATION, DEPRECATED_TABLE_DEFINITION.location());
-    assertEquals(NUM_BYTES, DEPRECATED_TABLE_DEFINITION.numBytes());
-    assertEquals(NUM_ROWS, DEPRECATED_TABLE_DEFINITION.numRows());
-    assertEquals(STREAMING_BUFFER, DEPRECATED_TABLE_DEFINITION.streamingBuffer());
-    assertEquals(TIME_PARTITIONING, DEPRECATED_TABLE_DEFINITION.timePartitioning());
-  }
 
   @Test
   public void testOf() {

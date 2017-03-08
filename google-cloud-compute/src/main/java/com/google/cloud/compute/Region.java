@@ -373,7 +373,7 @@ public class Region implements Serializable {
   }
 
   /**
-   * Returns the deprecation status of the region. If {@link DeprecationStatus#status()} is either
+   * Returns the deprecation status of the region. If {@link DeprecationStatus#getStatus()} is either
    * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the
    * region should not be used. Returns {@code null} if the region is not deprecated.
    */

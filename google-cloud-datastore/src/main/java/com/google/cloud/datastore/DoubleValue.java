@@ -77,10 +77,6 @@ public final class DoubleValue extends Value<Double> {
     return new DoubleValue(value);
   }
 
-  @Deprecated
-  public static Builder builder(double value) {
-    return newBuilder(value);
-  }
 
   public static Builder newBuilder(double value) {
     return new Builder().set(value);

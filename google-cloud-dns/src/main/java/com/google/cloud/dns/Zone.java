@@ -55,11 +55,6 @@ public class Zone extends ZoneInfo {
       this.infoBuilder = new ZoneInfo.BuilderImpl(zone);
     }
 
-    @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     @Override
     public Builder setName(String name) {
@@ -79,11 +74,6 @@ public class Zone extends ZoneInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder dnsName(String dnsName) {
-      return setDnsName(dnsName);
-    }
 
     @Override
     public Builder setDnsName(String dnsName) {
@@ -91,11 +81,6 @@ public class Zone extends ZoneInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
 
     @Override
     public Builder setDescription(String description) {
@@ -206,13 +191,6 @@ public class Zone extends ZoneInfo {
     return dns.listChangeRequests(getName(), options);
   }
 
-  /**
-   * Returns the {@link Dns} service object associated with this zone.
-   */
-  @Deprecated
-  public Dns dns() {
-    return getDns();
-  }
 
   /**
    * Returns the {@link Dns} service object associated with this zone.

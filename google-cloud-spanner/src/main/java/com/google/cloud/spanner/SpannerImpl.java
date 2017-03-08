@@ -345,11 +345,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private abstract class PageFetcher<S, T> implements NextPageFetcher<S> {
     private String nextPageToken;
 
-    @Deprecated
-    @Override
-    public Page<S> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<S> getNextPage() {

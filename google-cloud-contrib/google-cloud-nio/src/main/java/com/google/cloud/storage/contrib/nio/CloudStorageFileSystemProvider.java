@@ -598,7 +598,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(dir);
     checkNotNull(filter);
     initStorage();
-    String prefix = cloudPath.toString();
+    String prefix = cloudPath.toRealPath().toString();
     final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(),
         Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
         Storage.BlobListOption.fields()).iterateAll();

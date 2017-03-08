@@ -118,30 +118,6 @@ public class JobTest {
     assertSame(serviceMockReturnsOptions, builtJob.getBigquery());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedJob(2);
-    replay(bigquery);
-    Job builtJob = new Job.Builder(serviceMockReturnsOptions, COPY_CONFIGURATION)
-        .jobId(JOB_ID)
-        .setStatistics(COPY_JOB_STATISTICS)
-        .jobId(JOB_ID)
-        .setEtag(ETAG)
-        .setGeneratedId(GENERATED_ID)
-        .setSelfLink(SELF_LINK)
-        .setUserEmail(EMAIL)
-        .setStatus(JOB_STATUS)
-        .build();
-    assertEquals(ETAG, builtJob.etag());
-    assertEquals(GENERATED_ID, builtJob.generatedId());
-    assertEquals(SELF_LINK, builtJob.selfLink());
-    assertEquals(EMAIL, builtJob.userEmail());
-    assertEquals(JOB_ID, builtJob.jobId());
-    assertEquals(JOB_STATUS, builtJob.status());
-    assertEquals(COPY_CONFIGURATION, builtJob.configuration());
-    assertEquals(COPY_JOB_STATISTICS, builtJob.statistics());
-    assertSame(serviceMockReturnsOptions, builtJob.bigquery());
-  }
 
   @Test
   public void testToBuilder() {

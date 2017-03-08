@@ -108,10 +108,6 @@ public class ByteArray implements Iterable<Byte>, Serializable {
     return byteString.newInput();
   }
 
-  @Deprecated
-  protected ByteString byteString() {
-    return getByteString();
-  }
 
   protected ByteString getByteString() {
     return byteString;

@@ -49,13 +49,4 @@ public class LongValueTest {
     assertEquals(1, value.getMeaning());
     assertTrue(value.excludeFromIndexes());
   }
-
-  @Test
-  public void testBuilderDeprecated() throws Exception {
-    LongValue.Builder builder = LongValue.builder(CONTENT);
-    LongValue value = builder.meaning(1).excludeFromIndexes(true).build();
-    assertEquals(CONTENT, value.get());
-    assertEquals(1, value.meaning());
-    assertTrue(value.excludeFromIndexes());
-  }
 }
