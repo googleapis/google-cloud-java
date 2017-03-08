@@ -23,6 +23,9 @@ import static com.google.cloud.pubsub.deprecated.PubSub.PullOption.OptionType.MA
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutureCallback;
+import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.AsyncPage;
 import com.google.cloud.AsyncPageImpl;
 import com.google.cloud.BaseService;
@@ -30,7 +33,6 @@ import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.Policy;
 import com.google.cloud.pubsub.deprecated.spi.PubSubRpc;
-import com.google.cloud.pubsub.deprecated.spi.PubSubRpc.PullFuture;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
@@ -40,7 +42,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
@@ -72,7 +73,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
@@ -155,7 +155,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     }
 
     @Override
-    public Future<AsyncPage<Topic>> getNextPage() {
+    public ApiFuture<AsyncPage<Topic>> getNextPage() {
       return listTopicsAsync(serviceOptions(), requestOptions());
     }
   }
@@ -170,7 +170,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     }
 
     @Override
-    public Future<AsyncPage<Subscription>> getNextPage() {
+    public ApiFuture<AsyncPage<Subscription>> getNextPage() {
       return listSubscriptionsAsync(serviceOptions(), requestOptions());
     }
   }
@@ -188,12 +188,12 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     }
 
     @Override
-    public Future<AsyncPage<SubscriptionId>> getNextPage() {
+    public ApiFuture<AsyncPage<SubscriptionId>> getNextPage() {
       return listSubscriptionsAsync(topic, serviceOptions(), requestOptions());
     }
   }
 
-  private static <V> V get(Future<V> future) {
+  private static <V> V get(ApiFuture<V> future) {
     try {
       return Uninterruptibles.getUninterruptibly(future);
     } catch (ExecutionException ex) {
@@ -201,9 +201,14 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     }
   }
 
-  private static <I, O> Future<O> transform(Future<I> future,
-      Function<? super I, ? extends O> function) {
-    return Futures.lazyTransform(future, function);
+  private static <I, O> ApiFuture<O> transform(ApiFuture<I> future,
+      final Function<? super I, ? extends O> function) {
+    return ApiFutures.transform(future, new com.google.api.gax.core.Function<I, O>() {
+      @Override
+      public O apply(I i) {
+        return function.apply(i);
+      }
+    });
   }
 
   @Override
@@ -212,7 +217,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Topic> createAsync(TopicInfo topic) {
+  public ApiFuture<Topic> createAsync(TopicInfo topic) {
     return transform(rpc.create(topic.toPb(getOptions().getProjectId())),
         Topic.fromPbFunction(this));
   }
@@ -223,7 +228,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Topic> getTopicAsync(String topic) {
+  public ApiFuture<Topic> getTopicAsync(String topic) {
     GetTopicRequest request = GetTopicRequest.newBuilder()
         .setTopicWithTopicName(TopicName.create(getOptions().getProjectId(), topic))
         .build();
@@ -236,7 +241,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Boolean> deleteTopicAsync(String topic) {
+  public ApiFuture<Boolean> deleteTopicAsync(String topic) {
     DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
         .setTopicWithTopicName(TopicName.create(getOptions().getProjectId(), topic))
         .build();
@@ -258,10 +263,10 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     return builder.build();
   }
 
-  private static Future<AsyncPage<Topic>> listTopicsAsync(final PubSubOptions serviceOptions,
+  private static ApiFuture<AsyncPage<Topic>> listTopicsAsync(final PubSubOptions serviceOptions,
       final Map<Option.OptionType, ?> options) {
     final ListTopicsRequest request = listTopicsRequest(serviceOptions, options);
-    Future<ListTopicsResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListTopicsResponse> list = serviceOptions.getRpc().list(request);
     return transform(list,  new Function<ListTopicsResponse, AsyncPage<Topic>>() {
       @Override
       public AsyncPage<Topic> apply(ListTopicsResponse listTopicsResponse) {
@@ -282,7 +287,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<AsyncPage<Topic>> listTopicsAsync(ListOption... options) {
+  public ApiFuture<AsyncPage<Topic>> listTopicsAsync(ListOption... options) {
     return listTopicsAsync(getOptions(), optionMap(options));
   }
 
@@ -300,7 +305,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<String> publishAsync(String topic, Message message) {
+  public ApiFuture<String> publishAsync(String topic, Message message) {
     return transform(
         rpc.publish(publishRequest(getOptions(), topic, Collections.singletonList(message))),
         new Function<PublishResponse, String>() {
@@ -317,7 +322,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<List<String>> publishAsync(String topic, Message message, Message... messages) {
+  public ApiFuture<List<String>> publishAsync(String topic, Message message, Message... messages) {
     return publishAsync(topic, Lists.asList(message, messages));
   }
 
@@ -327,7 +332,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<List<String>> publishAsync(String topic, Iterable<Message> messages) {
+  public ApiFuture<List<String>> publishAsync(String topic, Iterable<Message> messages) {
     return transform(rpc.publish(publishRequest(getOptions(), topic, messages)),
         new Function<PublishResponse, List<String>>() {
           @Override
@@ -343,7 +348,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Subscription> createAsync(SubscriptionInfo subscription) {
+  public ApiFuture<Subscription> createAsync(SubscriptionInfo subscription) {
     return transform(rpc.create(subscription.toPb(getOptions().getProjectId())),
         Subscription.fromPbFunction(this));
   }
@@ -354,7 +359,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Subscription> getSubscriptionAsync(String subscription) {
+  public ApiFuture<Subscription> getSubscriptionAsync(String subscription) {
     GetSubscriptionRequest request = GetSubscriptionRequest.newBuilder()
         .setSubscriptionWithSubscriptionName(
             SubscriptionName.create(getOptions().getProjectId(), subscription))
@@ -368,7 +373,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Void> replacePushConfigAsync(String subscription, PushConfig pushConfig) {
+  public ApiFuture<Void> replacePushConfigAsync(String subscription, PushConfig pushConfig) {
     ModifyPushConfigRequest request = ModifyPushConfigRequest.newBuilder()
         .setSubscriptionWithSubscriptionName(
             SubscriptionName.create(getOptions().getProjectId(), subscription))
@@ -384,7 +389,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Boolean> deleteSubscriptionAsync(String subscription) {
+  public ApiFuture<Boolean> deleteSubscriptionAsync(String subscription) {
     DeleteSubscriptionRequest request = DeleteSubscriptionRequest.newBuilder()
         .setSubscriptionWithSubscriptionName(
             SubscriptionName.create(getOptions().getProjectId(), subscription))
@@ -407,10 +412,10 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     return builder.build();
   }
 
-  private static Future<AsyncPage<Subscription>> listSubscriptionsAsync(
+  private static ApiFuture<AsyncPage<Subscription>> listSubscriptionsAsync(
       final PubSubOptions serviceOptions, final Map<Option.OptionType, ?> options) {
     final ListSubscriptionsRequest request = listSubscriptionsRequest(serviceOptions, options);
-    Future<ListSubscriptionsResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListSubscriptionsResponse> list = serviceOptions.getRpc().list(request);
     return transform(list, new Function<ListSubscriptionsResponse, AsyncPage<Subscription>>() {
       @Override
       public AsyncPage<Subscription> apply(ListSubscriptionsResponse listSubscriptionsResponse) {
@@ -432,7 +437,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<AsyncPage<Subscription>> listSubscriptionsAsync(ListOption... options) {
+  public ApiFuture<AsyncPage<Subscription>> listSubscriptionsAsync(ListOption... options) {
     return listSubscriptionsAsync(getOptions(), optionMap(options));
   }
 
@@ -451,11 +456,11 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     return builder.build();
   }
 
-  private static Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(final String topic,
+  private static ApiFuture<AsyncPage<SubscriptionId>> listSubscriptionsAsync(final String topic,
       final PubSubOptions serviceOptions, final Map<Option.OptionType, ?> options) {
     final ListTopicSubscriptionsRequest request =
         listSubscriptionsRequest(topic, serviceOptions, options);
-    Future<ListTopicSubscriptionsResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListTopicSubscriptionsResponse> list = serviceOptions.getRpc().list(request);
     return transform(list,
         new Function<ListTopicSubscriptionsResponse, AsyncPage<SubscriptionId>>() {
           @Override
@@ -486,12 +491,12 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic,
+  public ApiFuture<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic,
       ListOption... options) {
     return listSubscriptionsAsync(topic, getOptions(), optionMap(options));
   }
 
-  private Future<Iterator<ReceivedMessage>> pullAsync(final String subscription,
+  private ApiFuture<Iterator<ReceivedMessage>> pullAsync(final String subscription,
       int maxMessages, boolean returnImmediately) {
     PullRequest request = PullRequest.newBuilder()
         .setSubscriptionWithSubscriptionName(
@@ -499,20 +504,22 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
         .setMaxMessages(maxMessages)
         .setReturnImmediately(returnImmediately)
         .build();
-    PullFuture future = rpc.pull(request);
-    future.addCallback(new PubSubRpc.PullCallback() {
-      @Override
-      public void success(PullResponse response) {
-        List<String> ackIds = Lists.transform(response.getReceivedMessagesList(),
-            MESSAGE_TO_ACK_ID_FUNCTION);
-        ackDeadlineRenewer.add(subscription, ackIds);
-      }
+    ApiFuture<PullResponse> future = rpc.pull(request);
+    ApiFutures.addCallback(
+        future,
+        new ApiFutureCallback<PullResponse>() {
+          @Override
+          public void onSuccess(PullResponse response) {
+            List<String> ackIds = Lists.transform(response.getReceivedMessagesList(),
+                MESSAGE_TO_ACK_ID_FUNCTION);
+            ackDeadlineRenewer.add(subscription, ackIds);
+          }
 
-      @Override
-      public void failure(Throwable error) {
-        // ignore
-      }
-    });
+          @Override
+          public void onFailure(Throwable error) {
+            // ignore
+          }
+        });
     return transform(future, new Function<PullResponse, Iterator<ReceivedMessage>>() {
       @Override
       public Iterator<ReceivedMessage> apply(PullResponse response) {
@@ -535,7 +542,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages) {
+  public ApiFuture<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages) {
     return pullAsync(subscription, maxMessages, false);
   }
 
@@ -555,7 +562,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Void> ackAsync(String subscription, String ackId, String... ackIds) {
+  public ApiFuture<Void> ackAsync(String subscription, String ackId, String... ackIds) {
     return ackAsync(subscription, Lists.asList(ackId, ackIds));
   }
 
@@ -565,7 +572,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Void> ackAsync(String subscription, Iterable<String> ackIds) {
+  public ApiFuture<Void> ackAsync(String subscription, Iterable<String> ackIds) {
     AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
         .setSubscriptionWithSubscriptionName(
             SubscriptionName.create(getOptions().getProjectId(), subscription))
@@ -580,7 +587,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Void> nackAsync(String subscription, String ackId, String... ackIds) {
+  public ApiFuture<Void> nackAsync(String subscription, String ackId, String... ackIds) {
     return nackAsync(subscription, Lists.asList(ackId, ackIds));
   }
 
@@ -590,7 +597,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Void> nackAsync(String subscription, Iterable<String> ackIds) {
+  public ApiFuture<Void> nackAsync(String subscription, Iterable<String> ackIds) {
     return modifyAckDeadlineAsync(subscription, 0, TimeUnit.SECONDS, ackIds);
   }
 
@@ -601,7 +608,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
+  public ApiFuture<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
       String ackId, String... ackIds) {
     return modifyAckDeadlineAsync(subscription, deadline, unit, Lists.asList(ackId, ackIds));
   }
@@ -613,7 +620,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
+  public ApiFuture<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
       Iterable<String> ackIds) {
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setSubscriptionWithSubscriptionName(
@@ -630,7 +637,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Policy> getTopicPolicyAsync(String topic) {
+  public ApiFuture<Policy> getTopicPolicyAsync(String topic) {
     return transform(
         rpc.getIamPolicy(TopicName.create(getOptions().getProjectId(), topic).toString()),
         POLICY_TO_PB_FUNCTION);
@@ -642,7 +649,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Policy> replaceTopicPolicyAsync(String topic, Policy newPolicy) {
+  public ApiFuture<Policy> replaceTopicPolicyAsync(String topic, Policy newPolicy) {
     SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
         .setPolicy(PolicyMarshaller.INSTANCE.toPb(newPolicy))
         .setResource(TopicName.create(getOptions().getProjectId(), topic).toString())
@@ -656,7 +663,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<List<Boolean>> testTopicPermissionsAsync(String topic, List<String> permissions) {
+  public ApiFuture<List<Boolean>> testTopicPermissionsAsync(String topic, List<String> permissions) {
     TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
         .setResource(TopicName.create(getOptions().getProjectId(), topic).toString())
         .addAllPermissions(permissions)
@@ -670,7 +677,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Policy> getSubscriptionPolicyAsync(String subscription) {
+  public ApiFuture<Policy> getSubscriptionPolicyAsync(String subscription) {
     return transform(
         rpc.getIamPolicy(
             SubscriptionName.create(getOptions().getProjectId(), subscription).toString()),
@@ -683,7 +690,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Policy> replaceSubscriptionPolicyAsync(String subscription, Policy newPolicy) {
+  public ApiFuture<Policy> replaceSubscriptionPolicyAsync(String subscription, Policy newPolicy) {
     SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
         .setPolicy(PolicyMarshaller.INSTANCE.toPb(newPolicy))
         .setResource(
@@ -698,7 +705,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<List<Boolean>> testSubscriptionPermissionsAsync(String subscription,
+  public ApiFuture<List<Boolean>> testSubscriptionPermissionsAsync(String subscription,
       List<String> permissions) {
     TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
         .setResource(

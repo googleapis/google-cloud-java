@@ -18,13 +18,13 @@ package com.google.cloud.pubsub.deprecated;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.gax.core.ApiFuture;
 import com.google.cloud.ByteArray;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -218,12 +218,12 @@ public final class ReceivedMessage extends Message {
   }
 
   /**
-   * Sends a request to acknowledge the current message. The method returns a {@code Future} object
-   * that can be used to wait for the acknowledge operation to be completed.
+   * Sends a request to acknowledge the current message. The method returns a {@code ApiFuture}
+   * object that can be used to wait for the acknowledge operation to be completed.
    *
    * @throws PubSubException upon failure, or if the subscription was not found
    */
-  public Future<Void> ackAsync() {
+  public ApiFuture<Void> ackAsync() {
     return pubsub.ackAsync(subscription, ackId);
   }
 
@@ -240,11 +240,11 @@ public final class ReceivedMessage extends Message {
   /**
    * Sends a request to "nack" the current message. This method corresponds to calling
    * {@link #modifyAckDeadlineAsync(int, TimeUnit)} with a deadline of 0. The method returns a
-   * {@code Future} object that can be used to wait for the "nack" operation to be completed.
+   * {@code ApiFuture} object that can be used to wait for the "nack" operation to be completed.
    *
    * @throws PubSubException upon failure, or if the subscription was not found
    */
-  public Future<Void> nackAsync() {
+  public ApiFuture<Void> nackAsync() {
     return pubsub.nackAsync(subscription, ackId);
   }
 
@@ -271,15 +271,15 @@ public final class ReceivedMessage extends Message {
    * received by the Pub/Sub service. For example, if {@code deadline} is 10 and {@code unit} is
    * {@link TimeUnit#SECONDS}, the new ack deadline will expire 10 seconds after the modify request
    * was received by the service. Specifying 0 may be used to make the message available for another
-   * pull request (corresponds to calling {@link #nackAsync()}. The method returns a {@code Future}
-   * object that can be used to wait for the modify operation to be completed.
+   * pull request (corresponds to calling {@link #nackAsync()}. The method returns a
+   * {@code ApiFuture} object that can be used to wait for the modify operation to be completed.
    *
    * @param deadline the new deadline, relative to the time the modify request is received by the
    *     Pub/Sub service
    * @param unit {@code deadline} time unit
    * @throws PubSubException upon failure, or if the subscription was not found
    */
-  public Future<Void> modifyAckDeadlineAsync(int deadline, TimeUnit unit) {
+  public ApiFuture<Void> modifyAckDeadlineAsync(int deadline, TimeUnit unit) {
     return pubsub.modifyAckDeadlineAsync(subscription, deadline, unit, ackId);
   }
 

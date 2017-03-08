@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.deprecated;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.gax.core.ApiFuture;
 import com.google.cloud.AsyncPage;
 import com.google.cloud.Page;
 import com.google.cloud.Policy;
@@ -28,7 +29,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.Future;
 
 /**
  * A Google Cloud Pub/Sub topic. A topic is a named resource to which messages are sent by
@@ -141,13 +141,13 @@ public class Topic extends TopicInfo {
   }
 
   /**
-   * Sends a request for deleting this topic. This method returns a {@code Future} object to consume
-   * the result. {@link Future#get()} returns {@code true} if the topic was deleted, {@code false}
+   * Sends a request for deleting this topic. This method returns a {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns {@code true} if the topic was deleted, {@code false}
    * if it was not found.
    *
    * <p>Example of asynchronously deleting the topic.
    * <pre> {@code
-   * Future<Boolean> future = topic.deleteAsync();
+   * ApiFuture<Boolean> future = topic.deleteAsync();
    * // ...
    * boolean deleted = future.get();
    * if (deleted) {
@@ -159,7 +159,7 @@ public class Topic extends TopicInfo {
    *
    * @throws PubSubException upon failure
    */
-  public Future<Boolean> deleteAsync() {
+  public ApiFuture<Boolean> deleteAsync() {
     return pubsub.deleteTopicAsync(getName());
   }
 
@@ -183,12 +183,12 @@ public class Topic extends TopicInfo {
 
   /**
    * Sends a request to fetch current topic's latest information. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a {@code Topic}
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a {@code Topic}
    * object with latest information or {@code null} if not found.
    *
    * <p>Example of asynchronously getting the topic's latest information.
    * <pre> {@code
-   * Future<Topic> future = topic.reloadAsync();
+   * ApiFuture<Topic> future = topic.reloadAsync();
    * // ...
    * Topic latestTopic = future.get();
    * if (latestTopic == null) {
@@ -198,7 +198,7 @@ public class Topic extends TopicInfo {
    *
    * @throws PubSubException upon failure
    */
-  public Future<Topic> reloadAsync() {
+  public ApiFuture<Topic> reloadAsync() {
     return pubsub.getTopicAsync(getName());
   }
 
@@ -223,22 +223,22 @@ public class Topic extends TopicInfo {
 
   /**
    * Sends a request for publishing a message to the this topic. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a service-generated
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a service-generated
    * id for the published message. Service-generated ids are guaranteed to be unique within the
    * topic.
    *
    * <p>Example of asynchronously publishing one message to the topic.
    * <pre> {@code
    * Message message = Message.of("payload");
-   * Future<String> future = topic.publishAsync(message);
+   * ApiFuture<String> future = topic.publishAsync(message);
    * // ...
    * String messageId = future.get();
    * }</pre>
    *
    * @param message the message to publish
-   * @return a {@code Future} for the unique service-generated id for the message
+   * @return a {@code ApiFuture} for the unique service-generated id for the message
    */
-  public Future<String> publishAsync(Message message) {
+  public ApiFuture<String> publishAsync(Message message) {
     return pubsub.publishAsync(getName(), message);
   }
 
@@ -266,7 +266,7 @@ public class Topic extends TopicInfo {
 
   /**
    * Sends a request to publish a number of messages to this topic. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a list of
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a list of
    * service-generated ids for the published messages. Service-generated ids are guaranteed to be
    * unique within the topic.
    *
@@ -274,17 +274,17 @@ public class Topic extends TopicInfo {
    * <pre> {@code
    * Message message1 = Message.of("payload1");
    * Message message2 = Message.of("payload2");
-   * Future<List<String>> future = topic.publishAsync(message1, message2);
+   * ApiFuture<List<String>> future = topic.publishAsync(message1, message2);
    * // ...
    * List<String> messageIds = future.get();
    * }</pre>
    *
    * @param message the first message to publish
    * @param messages other messages to publish
-   * @return a {@code Future} for the unique, service-generated ids. Ids are in the same order as
+   * @return a {@code ApiFuture} for the unique, service-generated ids. Ids are in the same order as
    *     the messages.
    */
-  public Future<List<String>> publishAsync(Message message, Message... messages) {
+  public ApiFuture<List<String>> publishAsync(Message message, Message... messages) {
     return pubsub.publishAsync(getName(), message, messages);
   }
 
@@ -312,7 +312,7 @@ public class Topic extends TopicInfo {
 
   /**
    * Sends a request to publish a number of messages to this topic. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a list of
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a list of
    * service-generated ids for the published messages. Service-generated ids are guaranteed to be
    * unique within the topic.
    *
@@ -321,16 +321,16 @@ public class Topic extends TopicInfo {
    * List<Message> messages = new LinkedList<>();
    * messages.add(Message.of("payload1"));
    * messages.add(Message.of("payload2"));
-   * Future<List<String>> future = topic.publishAsync(messages);
+   * ApiFuture<List<String>> future = topic.publishAsync(messages);
    * // ...
    * List<String> messageIds = future.get();
    * }</pre>
    *
    * @param messages the messages to publish
-   * @return a {@code Future} for the unique, service-generated ids. Ids are in the same order as
+   * @return a {@code ApiFuture} for the unique, service-generated ids. Ids are in the same order as
    *     the messages.
    */
-  public Future<List<String>> publishAsync(Iterable<Message> messages) {
+  public ApiFuture<List<String>> publishAsync(Iterable<Message> messages) {
     return pubsub.publishAsync(getName(), messages);
   }
 
@@ -357,14 +357,14 @@ public class Topic extends TopicInfo {
 
   /**
    * Sends a request for listing the identities of subscriptions for this topic. This method returns
-   * a {@code Future} object to consume the result. {@link Future#get()} returns an
+   * a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns an
    * {@link AsyncPage} object that can be used to asynchronously handle paginated results. Use
    * {@link ListOption} to specify the page size or the page token from which to start listing
    * subscriptions.
    *
    * <p>Example of asynchronously listing subscriptions for the topic, specifying the page size.
    * <pre> {@code
-   * Future<AsyncPage<SubscriptionId>> future =
+   * ApiFuture<AsyncPage<SubscriptionId>> future =
    *     topic.listSubscriptionsAsync(ListOption.pageSize(100));
    * // ...
    * AsyncPage<SubscriptionId> subscriptions = future.get();
@@ -376,7 +376,7 @@ public class Topic extends TopicInfo {
    * }</pre>
    *
    */
-  public Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(ListOption... options) {
+  public ApiFuture<AsyncPage<SubscriptionId>> listSubscriptionsAsync(ListOption... options) {
     return pubsub.listSubscriptionsAsync(getName(), options);
   }
 
@@ -400,12 +400,12 @@ public class Topic extends TopicInfo {
 
   /**
    * Sends a request for getting the IAM access control policy for this topic. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns the requested policy
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the requested policy
    * or {@code null} if the topic was not found.
    *
    * <p>Example of asynchronously getting the topic's policy.
    * <pre> {@code
-   * Future<Policy> future = topic.getPolicyAsync();
+   * ApiFuture<Policy> future = topic.getPolicyAsync();
    * // ...
    * Policy policy = future.get();
    * if (policy == null) {
@@ -415,7 +415,7 @@ public class Topic extends TopicInfo {
    *
    * @throws PubSubException upon failure
    */
-  public Future<Policy> getPolicyAsync() {
+  public ApiFuture<Policy> getPolicyAsync() {
     return pubsub.getTopicPolicyAsync(this.getName());
   }
 
@@ -450,7 +450,7 @@ public class Topic extends TopicInfo {
 
   /**
    * Sends a request to set the IAM access control policy for this topic. Replaces any existing
-   * policy. This method returns a {@code Future} object to consume the result. {@link Future#get()}
+   * policy. This method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()}
    * returns the new policy.
    *
    * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
@@ -460,7 +460,7 @@ public class Topic extends TopicInfo {
    * verify whether the policy has changed since the last request. When you make a request with an
    * etag value, the value in the request is compared with the existing etag value associated with
    * the policy. The policy is written only if the etag values match. If the etags don't match,
-   * {@link Future#get()} will throw a {@link java.util.concurrent.ExecutionException} caused by a
+   * {@link ApiFuture#get()} will throw a {@link java.util.concurrent.ExecutionException} caused by a
    * {@code PubSubException}, denoting that the server aborted update. If an etag is not provided,
    * the policy is overwritten blindly.
    *
@@ -470,14 +470,14 @@ public class Topic extends TopicInfo {
    * Policy updatedPolicy = policy.toBuilder()
    *     .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
    *     .build();
-   * Future<Policy> future = topic.replacePolicyAsync(updatedPolicy);
+   * ApiFuture<Policy> future = topic.replacePolicyAsync(updatedPolicy);
    * // ...
    * updatedPolicy = future.get();
    * }</pre>
    *
    * @throws PubSubException upon failure
    */
-  public Future<Policy> replacePolicyAsync(Policy newPolicy) {
+  public ApiFuture<Policy> replacePolicyAsync(Policy newPolicy) {
     return pubsub.replaceTopicPolicyAsync(this.getName(), newPolicy);
   }
 
@@ -519,19 +519,19 @@ public class Topic extends TopicInfo {
    * <pre> {@code
    * List<String> permissions = new LinkedList<>();
    * permissions.add("pubsub.topics.get");
-   * Future<List<Boolean>> future = topic.testPermissionsAsync(permissions);
+   * ApiFuture<List<Boolean>> future = topic.testPermissionsAsync(permissions);
    * // ...
    * List<Boolean> testedPermissions = future.get();
    * }</pre>
    *
-   * @return A {@code Future} object to consume the result. {@link Future#get()} returns a list of
+   * @return A {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a list of
    *     booleans representing whether the caller has the permissions specified (in the order of the
    *     given permissions)
    * @throws PubSubException upon failure
    * @see <a href="https://cloud.google.com/pubsub/docs/access_control#permissions">
    *     Permissions and Roles</a>
    */
-  public Future<List<Boolean>> testPermissionsAsync(List<String> permissions) {
+  public ApiFuture<List<Boolean>> testPermissionsAsync(List<String> permissions) {
     return pubsub.testTopicPermissionsAsync(this.getName(), permissions);
   }
 
