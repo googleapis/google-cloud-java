@@ -164,13 +164,13 @@ public class ITDatabaseAdminTest {
 
     String instanceId = testHelper.getInstanceId().getInstance();
     for (String dbId : dbIds) {
-      dbAdminClient.createDatabase(instanceId, dbId, ImmutableList.<String>of()).waitFor();
+      dbs.add(dbAdminClient.createDatabase(instanceId, dbId, ImmutableList.<String>of()).waitFor()
+	.getResult());
     }
     Page<Database> page = dbAdminClient.listDatabases(instanceId, Options.pageSize(1));
     List<String> dbIdsGot = new ArrayList<>();
     while (page != null) {
       Database db = Iterables.getOnlyElement(page.getValues());
-      dbs.add(db);
       dbIdsGot.add(db.getId().getDatabase());
       page = page.getNextPage();
     }
