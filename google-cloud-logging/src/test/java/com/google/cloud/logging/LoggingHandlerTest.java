@@ -24,11 +24,17 @@ import com.google.cloud.logging.Payload.StringPayload;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.StringBufferInputStream;
+import java.io.StringReader;
 import java.util.Collections;
 import java.util.logging.ErrorManager;
 import java.util.logging.Formatter;
 import java.util.logging.Handler;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import org.easymock.EasyMock;
@@ -345,6 +351,34 @@ public class LoggingHandlerTest {
     handler.publish(newLogRecord(Level.CONFIG, MESSAGE));
     handler.publish(newLogRecord(Level.INFO, MESSAGE));
     handler.publish(newLogRecord(Level.WARNING, MESSAGE));
+  }
+
+  @Test
+  public void testSyncWrite() {
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
+    LogEntry entry = LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
+        .setSeverity(Severity.DEBUG)
+        .addLabel("levelName", "FINEST")
+        .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+        .setTimestamp(123456789L)
+        .build();
+    logging.write(ImmutableList.of(entry), WriteOption.logName(LOG_NAME),
+        WriteOption.resource(DEFAULT_RESOURCE));
+    EasyMock.replay(options, logging);
+    try {
+      LogManager.getLogManager().readConfiguration(
+          new ByteArrayInputStream(
+              "com.google.cloud.logging.LoggingHandler.writeLogMethod=SYNC".getBytes()));
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
+    handler.setLevel(Level.ALL);
+    handler.setFormatter(new TestFormatter());
+    LogRecord record = new LogRecord(Level.FINEST, MESSAGE);
+    record.setMillis(123456789L);
+    handler.publish(record);
   }
 
   @Test

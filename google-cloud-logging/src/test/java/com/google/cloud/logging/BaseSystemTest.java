@@ -41,6 +41,8 @@ import com.google.common.collect.Sets;
 import com.google.protobuf.Any;
 import com.google.protobuf.StringValue;
 
+import java.io.ByteArrayInputStream;
+import java.util.logging.LogManager;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -497,14 +499,21 @@ public abstract class BaseSystemTest {
   }
 
   @Test
-  public void testAsyncLoggingHandler() throws InterruptedException {
-    String logName = formatForTest("test-async-logging-handler");
+  public void testSyncLoggingHandler() throws InterruptedException {
+    String logName = formatForTest("test-sync-logging-handler");
+    try {
+      LogManager.getLogManager().readConfiguration(
+          new ByteArrayInputStream(
+              "com.google.cloud.logging.LoggingHandler.writeLogMethod=SYNC".getBytes()));
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
     LoggingOptions options = logging().getOptions();
     MonitoredResource resource = MonitoredResource.of("gce_instance",
         ImmutableMap.of("project_id", options.getProjectId(),
             "instance_id", "instance",
             "zone", "us-central1-a"));
-    LoggingHandler handler = new AsyncLoggingHandler(logName, options, resource);
+    LoggingHandler handler = new LoggingHandler(logName, options, resource);
     handler.setLevel(Level.WARNING);
     Logger logger = Logger.getLogger(getClass().getName());
     logger.addHandler(handler);
