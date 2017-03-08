@@ -30,12 +30,12 @@ import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.LoggingOptions;
-import com.google.cloud.logging.spi.v2.ConfigServiceV2Client;
-import com.google.cloud.logging.spi.v2.ConfigServiceV2Settings;
-import com.google.cloud.logging.spi.v2.LoggingServiceV2Client;
-import com.google.cloud.logging.spi.v2.LoggingServiceV2Settings;
-import com.google.cloud.logging.spi.v2.MetricsServiceV2Client;
-import com.google.cloud.logging.spi.v2.MetricsServiceV2Settings;
+import com.google.cloud.logging.spi.v2.ConfigClient;
+import com.google.cloud.logging.spi.v2.ConfigSettings;
+import com.google.cloud.logging.spi.v2.LoggingClient;
+import com.google.cloud.logging.spi.v2.LoggingSettings;
+import com.google.cloud.logging.spi.v2.MetricsClient;
+import com.google.cloud.logging.spi.v2.MetricsSettings;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
@@ -71,9 +71,9 @@ import java.util.concurrent.ScheduledExecutorService;
 
 public class DefaultLoggingRpc implements LoggingRpc {
 
-  private final ConfigServiceV2Client configClient;
-  private final LoggingServiceV2Client loggingClient;
-  private final MetricsServiceV2Client metricsClient;
+  private final ConfigClient configClient;
+  private final LoggingClient loggingClient;
+  private final MetricsClient metricsClient;
   private final ScheduledExecutorService executor;
   private final ProviderManager providerManager;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
@@ -127,21 +127,24 @@ public class DefaultLoggingRpc implements LoggingRpc {
           .setExecutorProvider(executorProvider)
           .build();
       UnaryCallSettings.Builder callSettingsBuilder = internalOptions.getApiCallSettings();
-      ConfigServiceV2Settings.Builder confBuilder = ConfigServiceV2Settings.defaultBuilder()
-          .setExecutorProvider(providerManager)
-          .setChannelProvider(providerManager)
-          .applyToAllUnaryMethods(callSettingsBuilder);
-      LoggingServiceV2Settings.Builder logBuilder = LoggingServiceV2Settings.defaultBuilder()
-          .setExecutorProvider(providerManager)
-          .setChannelProvider(providerManager)
-          .applyToAllUnaryMethods(callSettingsBuilder);
-      MetricsServiceV2Settings.Builder metricsBuilder = MetricsServiceV2Settings.defaultBuilder()
-          .setExecutorProvider(providerManager)
-          .setChannelProvider(providerManager)
-          .applyToAllUnaryMethods(callSettingsBuilder);
-      configClient = ConfigServiceV2Client.create(confBuilder.build());
-      loggingClient = LoggingServiceV2Client.create(logBuilder.build());
-      metricsClient = MetricsServiceV2Client.create(metricsBuilder.build());
+      ConfigSettings.Builder confBuilder =
+          ConfigSettings.defaultBuilder()
+              .setExecutorProvider(providerManager)
+              .setChannelProvider(providerManager)
+              .applyToAllUnaryMethods(callSettingsBuilder);
+      LoggingSettings.Builder logBuilder =
+          LoggingSettings.defaultBuilder()
+              .setExecutorProvider(providerManager)
+              .setChannelProvider(providerManager)
+              .applyToAllUnaryMethods(callSettingsBuilder);
+      MetricsSettings.Builder metricsBuilder =
+          MetricsSettings.defaultBuilder()
+              .setExecutorProvider(providerManager)
+              .setChannelProvider(providerManager)
+              .applyToAllUnaryMethods(callSettingsBuilder);
+      configClient = ConfigClient.create(confBuilder.build());
+      loggingClient = LoggingClient.create(logBuilder.build());
+      metricsClient = MetricsClient.create(metricsBuilder.build());
     } catch (Exception ex) {
       throw new IOException(ex);
     }
