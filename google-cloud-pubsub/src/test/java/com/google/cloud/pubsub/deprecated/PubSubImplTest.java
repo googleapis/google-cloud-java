@@ -1381,7 +1381,6 @@ public class PubSubImplTest {
     }
   }
 
-
   @Test
   public void testMessageConsumerWithOptions() throws Exception {
     pubsub = new PubSubImpl(options, renewerMock);
