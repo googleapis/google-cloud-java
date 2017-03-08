@@ -22,6 +22,7 @@ import com.google.cloud.ReadChannel;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageException;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -41,27 +42,41 @@ import javax.annotation.concurrent.ThreadSafe;
 @ThreadSafe
 final class CloudStorageReadChannel implements SeekableByteChannel {
 
-  private final ReadChannel channel;
+  private ReadChannel channel;
   private long position;
   private long size;
+  private Storage gcsStorage;
+  private BlobId file;
+  // max # of times we may reopen the file
+  private final int maxReopen;
+  // how many times we re-opened the file
+  private int reopens;
 
+  /**
+   * @param maxReopen max. number of times to try re-opening the channel if it closes on us unexpectedly.
+   */
   @CheckReturnValue
   @SuppressWarnings("resource")
-  static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position)
+  static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position, int maxReopen)
       throws IOException {
+    return new CloudStorageReadChannel(gcsStorage, file, position, maxReopen);
+  }
+
+  private CloudStorageReadChannel(Storage gcsStorage, BlobId file, long position, int maxReopen) throws IOException {
+    this.gcsStorage = gcsStorage;
+    this.file = file;
+    this.position = position;
+    this.maxReopen = maxReopen;
     // XXX: Reading size and opening file should be atomic.
-    long size = fetchSize(gcsStorage, file);
-    ReadChannel channel = gcsStorage.reader(file);
+    this.size = fetchSize(gcsStorage, file);
+    innerOpen();
+  }
+
+  private void innerOpen() throws IOException {
+    this.channel = gcsStorage.reader(file);
     if (position > 0) {
       channel.seek((int) position);
     }
-    return new CloudStorageReadChannel(position, size, channel);
-  }
-
-  private CloudStorageReadChannel(long position, long size, ReadChannel channel) {
-    this.position = position;
-    this.size = size;
-    this.channel = channel;
   }
 
   @Override
@@ -82,7 +97,45 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   public int read(ByteBuffer dst) throws IOException {
     synchronized (this) {
       checkOpen();
-      int amt = channel.read(dst);
+      int amt;
+      int retries = 0;
+      int maxRetries = 3;
+      dst.mark();
+      while (true) {
+        try {
+          dst.reset();
+          amt = channel.read(dst);
+          break;
+        } catch (StorageException exs) {
+          // this error isn't marked as retryable since the channel is closed;
+          // but here at this higher level we can retry it.
+          if (exs.getMessage().contains("Connection closed prematurely")) {
+            if (reopens < maxReopen) {
+              reopens++;
+              retryDelay(reopens);
+              innerOpen();
+              continue;
+            }
+          } else if (exs.getCode() == 500) {
+            // server error. Not retryable yet retrying works in my experience.
+            if (retries < maxRetries) {
+              retries++;
+              retryDelay(retries);
+              continue;
+            }
+          } else if (exs.getCode() == 503) {
+            // server temporarily unavailable. Marked not retriable,
+            // yet retrying works in my experience.
+            if (retries < maxRetries) {
+                retries++;
+                // wait a bit more since this error suggests the server's busy
+                retryDelay(retries + 1);
+                continue;
+            }
+          }
+          throw exs;
+        }
+      }
       if (amt > 0) {
         position += amt;
         // XXX: This would only ever happen if the fetchSize() race-condition occurred.
@@ -91,6 +144,15 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
         }
       }
       return amt;
+    }
+  }
+
+  private void retryDelay(int attempt) {
+    try {
+      Thread.sleep((attempt - 1) * 500);
+    } catch (InterruptedException iex) {
+      // reset interrupt flag
+      Thread.currentThread().interrupt();
     }
   }
 

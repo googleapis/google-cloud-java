@@ -226,6 +226,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   private SeekableByteChannel newReadChannel(Path path, Set<? extends OpenOption> options)
       throws IOException {
     initStorage();
+    int channelReopen = 0;
     for (OpenOption option : options) {
       if (option instanceof StandardOpenOption) {
         switch ((StandardOpenOption) option) {
@@ -247,6 +248,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           default:
             throw new UnsupportedOperationException(option.toString());
         }
+      } else if (option instanceof OptionChannelReopen) {
+        channelReopen = ((OptionChannelReopen)option).retry();
       } else {
         throw new UnsupportedOperationException(option.toString());
       }
@@ -255,7 +258,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
-    return CloudStorageReadChannel.create(storage, cloudPath.getBlobId(), 0);
+    return CloudStorageReadChannel.create(storage, cloudPath.getBlobId(), 0, channelReopen);
   }
 
   private SeekableByteChannel newWriteChannel(Path path, Set<? extends OpenOption> options)
