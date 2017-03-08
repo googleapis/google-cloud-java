@@ -47,12 +47,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class MetricsServiceV2ClientTest {
+public class MetricsClientTest {
   private static MockLoggingServiceV2 mockLoggingServiceV2;
   private static MockConfigServiceV2 mockConfigServiceV2;
   private static MockMetricsServiceV2 mockMetricsServiceV2;
   private static MockServiceHelper serviceHelper;
-  private MetricsServiceV2Client client;
+  private MetricsClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -75,11 +75,11 @@ public class MetricsServiceV2ClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
-    MetricsServiceV2Settings settings =
-        MetricsServiceV2Settings.defaultBuilder()
+    MetricsSettings settings =
+        MetricsSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    client = MetricsServiceV2Client.create(settings);
+    client = MetricsClient.create(settings);
   }
 
   @After

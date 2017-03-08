@@ -53,16 +53,15 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+ * try (LoggingClient loggingClient = LoggingClient.create()) {
  *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
- *   loggingServiceV2Client.deleteLog(logName);
+ *   loggingClient.deleteLog(logName);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the loggingServiceV2Client object to clean up resources
- * such as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the loggingClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -84,25 +83,25 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of LoggingServiceV2Settings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of LoggingSettings to create().
+ * For example:
  *
  * <pre>
  * <code>
  * InstantiatingChannelProvider channelProvider =
- *     LoggingServiceV2Settings.defaultChannelProviderBuilder()
+ *     LoggingSettings.defaultChannelProviderBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * LoggingServiceV2Settings loggingServiceV2Settings =
- *     LoggingServiceV2Settings.defaultBuilder().setChannelProvider(channelProvider).build();
- * LoggingServiceV2Client loggingServiceV2Client =
- *     LoggingServiceV2Client.create(loggingServiceV2Settings);
+ * LoggingSettings loggingSettings =
+ *     LoggingSettings.defaultBuilder().setChannelProvider(channelProvider).build();
+ * LoggingClient loggingClient =
+ *     LoggingClient.create(loggingSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC")
-public class LoggingServiceV2Client implements AutoCloseable {
-  private final LoggingServiceV2Settings settings;
+public class LoggingClient implements AutoCloseable {
+  private final LoggingSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
   private final List<AutoCloseable> closeables = new ArrayList<>();
@@ -122,26 +121,24 @@ public class LoggingServiceV2Client implements AutoCloseable {
   private final UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable;
   private final UnaryCallable<ListLogsRequest, ListLogsPagedResponse> listLogsPagedCallable;
 
-  /** Constructs an instance of LoggingServiceV2Client with default settings. */
-  public static final LoggingServiceV2Client create() throws IOException {
-    return create(LoggingServiceV2Settings.defaultBuilder().build());
+  /** Constructs an instance of LoggingClient with default settings. */
+  public static final LoggingClient create() throws IOException {
+    return create(LoggingSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of LoggingServiceV2Client, using the given settings. The channels are
-   * created based on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of LoggingClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final LoggingServiceV2Client create(LoggingServiceV2Settings settings)
-      throws IOException {
-    return new LoggingServiceV2Client(settings);
+  public static final LoggingClient create(LoggingSettings settings) throws IOException {
+    return new LoggingClient(settings);
   }
 
   /**
-   * Constructs an instance of LoggingServiceV2Client, using the given settings. This is protected
-   * so that it easy to make a subclass, but otherwise, the static factory methods should be
-   * preferred.
+   * Constructs an instance of LoggingClient, using the given settings. This is protected so that it
+   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected LoggingServiceV2Client(LoggingServiceV2Settings settings) throws IOException {
+  protected LoggingClient(LoggingSettings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -190,7 +187,7 @@ public class LoggingServiceV2Client implements AutoCloseable {
     }
   }
 
-  public final LoggingServiceV2Settings getSettings() {
+  public final LoggingSettings getSettings() {
     return settings;
   }
 
@@ -201,9 +198,9 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
-   *   loggingServiceV2Client.deleteLog(logName);
+   *   loggingClient.deleteLog(logName);
    * }
    * </code></pre>
    *
@@ -228,12 +225,12 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
    *     .setLogNameWithLogNameOneof(logName)
    *     .build();
-   *   loggingServiceV2Client.deleteLog(request);
+   *   loggingClient.deleteLog(request);
    * }
    * </code></pre>
    *
@@ -251,12 +248,12 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
    *     .setLogNameWithLogNameOneof(logName)
    *     .build();
-   *   ApiFuture&lt;Void&gt; future = loggingServiceV2Client.deleteLogCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = loggingClient.deleteLogCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -273,12 +270,12 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
    *   MonitoredResource resource = MonitoredResource.newBuilder().build();
    *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
-   *   WriteLogEntriesResponse response = loggingServiceV2Client.writeLogEntries(logName, resource, labels, entries);
+   *   WriteLogEntriesResponse response = loggingClient.writeLogEntries(logName, resource, labels, entries);
    * }
    * </code></pre>
    *
@@ -328,12 +325,12 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
    *   WriteLogEntriesRequest request = WriteLogEntriesRequest.newBuilder()
    *     .addAllEntries(entries)
    *     .build();
-   *   WriteLogEntriesResponse response = loggingServiceV2Client.writeLogEntries(request);
+   *   WriteLogEntriesResponse response = loggingClient.writeLogEntries(request);
    * }
    * </code></pre>
    *
@@ -351,12 +348,12 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
    *   WriteLogEntriesRequest request = WriteLogEntriesRequest.newBuilder()
    *     .addAllEntries(entries)
    *     .build();
-   *   ApiFuture&lt;WriteLogEntriesResponse&gt; future = loggingServiceV2Client.writeLogEntriesCallable().futureCall(request);
+   *   ApiFuture&lt;WriteLogEntriesResponse&gt; future = loggingClient.writeLogEntriesCallable().futureCall(request);
    *   // Do something
    *   WriteLogEntriesResponse response = future.get();
    * }
@@ -375,11 +372,11 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   String filter = "";
    *   String orderBy = "";
-   *   for (LogEntry element : loggingServiceV2Client.listLogEntries(resourceNames, filter, orderBy).iterateAllElements()) {
+   *   for (LogEntry element : loggingClient.listLogEntries(resourceNames, filter, orderBy).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -421,12 +418,12 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
    *     .addAllResourceNames(resourceNames)
    *     .build();
-   *   for (LogEntry element : loggingServiceV2Client.listLogEntries(request).iterateAllElements()) {
+   *   for (LogEntry element : loggingClient.listLogEntries(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -447,12 +444,12 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
    *     .addAllResourceNames(resourceNames)
    *     .build();
-   *   ApiFuture&lt;ListLogEntriesPagedResponse&gt; future = loggingServiceV2Client.listLogEntriesPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListLogEntriesPagedResponse&gt; future = loggingClient.listLogEntriesPagedCallable().futureCall(request);
    *   // Do something
    *   for (LogEntry element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -473,13 +470,13 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
    *     .addAllResourceNames(resourceNames)
    *     .build();
    *   while (true) {
-   *     ListLogEntriesResponse response = loggingServiceV2Client.listLogEntriesCallable().call(request);
+   *     ListLogEntriesResponse response = loggingClient.listLogEntriesCallable().call(request);
    *     for (LogEntry element : response.getEntriesList()) {
    *       // doThingsWith(element);
    *     }
@@ -505,9 +502,9 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
-   *   for (MonitoredResourceDescriptor element : loggingServiceV2Client.listMonitoredResourceDescriptors(request).iterateAllElements()) {
+   *   for (MonitoredResourceDescriptor element : loggingClient.listMonitoredResourceDescriptors(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -528,9 +525,9 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListMonitoredResourceDescriptorsPagedResponse&gt; future = loggingServiceV2Client.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListMonitoredResourceDescriptorsPagedResponse&gt; future = loggingClient.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
    *   // Do something
    *   for (MonitoredResourceDescriptor element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -551,10 +548,10 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
    *   while (true) {
-   *     ListMonitoredResourceDescriptorsResponse response = loggingServiceV2Client.listMonitoredResourceDescriptorsCallable().call(request);
+   *     ListMonitoredResourceDescriptorsResponse response = loggingClient.listMonitoredResourceDescriptorsCallable().call(request);
    *     for (MonitoredResourceDescriptor element : response.getResourceDescriptorsList()) {
    *       // doThingsWith(element);
    *     }
@@ -581,9 +578,9 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
-   *   for (String element : loggingServiceV2Client.listLogs(parent).iterateAllElements()) {
+   *   for (String element : loggingClient.listLogs(parent).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -606,12 +603,12 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();
-   *   for (String element : loggingServiceV2Client.listLogs(request).iterateAllElements()) {
+   *   for (String element : loggingClient.listLogs(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -631,12 +628,12 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();
-   *   ApiFuture&lt;ListLogsPagedResponse&gt; future = loggingServiceV2Client.listLogsPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListLogsPagedResponse&gt; future = loggingClient.listLogsPagedCallable().futureCall(request);
    *   // Do something
    *   for (String element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -655,13 +652,13 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();
    *   while (true) {
-   *     ListLogsResponse response = loggingServiceV2Client.listLogsCallable().call(request);
+   *     ListLogsResponse response = loggingClient.listLogsCallable().call(request);
    *     for (String element : response.getLogNamesList()) {
    *       // doThingsWith(element);
    *     }

@@ -67,7 +67,7 @@ import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link LoggingServiceV2Client}.
+ * Settings class to configure an instance of {@link LoggingClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -83,17 +83,17 @@ import org.joda.time.Duration;
  *
  * <pre>
  * <code>
- * LoggingServiceV2Settings.Builder loggingServiceV2SettingsBuilder =
- *     LoggingServiceV2Settings.defaultBuilder();
- * loggingServiceV2SettingsBuilder.deleteLogSettings().getRetrySettingsBuilder()
+ * LoggingSettings.Builder loggingSettingsBuilder =
+ *     LoggingSettings.defaultBuilder();
+ * loggingSettingsBuilder.deleteLogSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.standardSeconds(30));
- * LoggingServiceV2Settings loggingServiceV2Settings = loggingServiceV2SettingsBuilder.build();
+ * LoggingSettings loggingSettings = loggingSettingsBuilder.build();
  * </code>
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
-public class LoggingServiceV2Settings extends ClientSettings {
+public class LoggingSettings extends ClientSettings {
   /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
 
@@ -193,7 +193,7 @@ public class LoggingServiceV2Settings extends ClientSettings {
   }
 
   private static String getGapicVersion() {
-    String packageVersion = LoggingServiceV2Settings.class.getPackage().getImplementationVersion();
+    String packageVersion = LoggingSettings.class.getPackage().getImplementationVersion();
     return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
   }
 
@@ -212,7 +212,7 @@ public class LoggingServiceV2Settings extends ClientSettings {
     return new Builder(this);
   }
 
-  private LoggingServiceV2Settings(Builder settingsBuilder) throws IOException {
+  private LoggingSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder.getExecutorProvider(), settingsBuilder.getChannelProvider());
 
     deleteLogSettings = settingsBuilder.deleteLogSettings().build();
@@ -450,7 +450,7 @@ public class LoggingServiceV2Settings extends ClientSettings {
             }
           };
 
-  /** Builder for LoggingServiceV2Settings. */
+  /** Builder for LoggingSettings. */
   public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
@@ -586,7 +586,7 @@ public class LoggingServiceV2Settings extends ClientSettings {
       return builder;
     }
 
-    private Builder(LoggingServiceV2Settings settings) {
+    private Builder(LoggingSettings settings) {
       super(settings);
 
       deleteLogSettings = settings.deleteLogSettings.toBuilder();
@@ -662,8 +662,8 @@ public class LoggingServiceV2Settings extends ClientSettings {
     }
 
     @Override
-    public LoggingServiceV2Settings build() throws IOException {
-      return new LoggingServiceV2Settings(this);
+    public LoggingSettings build() throws IOException {
+      return new LoggingSettings(this);
     }
   }
 }
