@@ -64,33 +64,32 @@ import com.google.cloud.logging.Logging.WriteOption;
  * specified default values are used.
  *
  * <ul>
- *   <li>{@code com.google.cloud.logging.LoggingHandler.log} the log name (defaults to {@code
- *       java.log}).
- *   <li>{@code com.google.cloud.logging.LoggingHandler.level} specifies the default level for the
- *       handler (defaults to {@code Level.INFO}).
- *   <li>{@code com.google.cloud.logging.LoggingHandler.filter} specifies the name of a {@link
- *       Filter} class to use (defaults to no filter).
- *   <li>{@code com.google.cloud.logging.LoggingHandler.formatter} specifies the name of a {@link
- *       Formatter} class to use (defaults to {@link SimpleFormatter}).
- *   <li>{@code com.google.cloud.logging.LoggingHandler.flushSize} specifies the maximum size of the
- *       log buffer. Once reached, logs are transmitted to the Stackdriver Logging service (defaults
- *       to 1).
- *   <li>{@code com.google.cloud.logging.LoggingHandler.flushLevel} specifies the flush log level.
- *       When a log with this level is published, logs are transmitted to the Stackdriver Logging
- *       service (defaults to {@link LoggingLevel#ERROR}).
- *   <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
- *       of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds a
- *       {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
- *   <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
- *       creating the default {@link MonitoredResource} (defaults to "global").
- *   <li>{@code com.google.cloud.logging.WriteLogMethod} the type of write method to use to write
- *       logs to the Stackdriver Logging service (defaults to {@link WriteLogMethod#ASYNC}).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.log} the log name (defaults to {@code
+ *     java.log}).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.level} specifies the default level for the
+ *     handler (defaults to {@code Level.INFO}).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.filter} specifies the name of a {@link
+ *     Filter} class to use (defaults to no filter).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.formatter} specifies the name of a {@link
+ *     Formatter} class to use (defaults to {@link SimpleFormatter}).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.flushSize} specifies the maximum size of the
+ *     log buffer. Once reached, logs are transmitted to the Stackdriver Logging service (defaults
+ *     to 1).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.flushLevel} specifies the flush log level.
+ *     When a log with this level is published, logs are transmitted to the Stackdriver Logging
+ *     service (defaults to {@link LoggingLevel#ERROR}).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
+ *     of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds a
+ *     {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
+ *     creating the default {@link MonitoredResource} (defaults to "global").
+ * <li>{@code com.google.cloud.logging.WriteLogMethod} the type of write method to use to write
+ *     logs to the Stackdriver Logging service (defaults to {@link WriteLogMethod#ASYNC}).
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
  * recursion when logging, use the {@link #addHandler(Logger, LoggingHandler)} method. Alternatively
  * you can add the handler via {@code logging.properties}. For example using the following line:
- *
  * <pre>
  * {@code com.example.mypackage.handlers=com.google.cloud.logging.LoggingHandler}
  * </pre>
