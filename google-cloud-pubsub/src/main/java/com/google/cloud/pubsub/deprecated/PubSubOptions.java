@@ -132,11 +132,6 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
     return new Builder(this);
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
-
   public static Builder newBuilder() {
     return new Builder();
   }

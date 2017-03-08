@@ -18,12 +18,13 @@ package com.google.cloud.pubsub.deprecated;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutureCallback;
+import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.deprecated.spi.PubSubRpc;
-import com.google.cloud.pubsub.deprecated.spi.PubSubRpc.PullCallback;
-import com.google.cloud.pubsub.deprecated.spi.PubSubRpc.PullFuture;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.SubscriptionName;
@@ -71,7 +72,7 @@ final class MessageConsumerImpl implements MessageConsumer {
   private final NextPullPolicy pullPolicy;
   private boolean closed;
   private Future<?> scheduledFuture;
-  private PullFuture pullerFuture;
+  private ApiFuture<PullResponse> pullerFuture;
 
   /**
    * Interface for policies according to which the consumer should pull messages.
@@ -128,9 +129,9 @@ final class MessageConsumerImpl implements MessageConsumer {
         return;
       }
       pullerFuture = pubsubRpc.pull(createPullRequest());
-      pullerFuture.addCallback(new PullCallback() {
+      ApiFutures.addCallback(pullerFuture, new ApiFutureCallback<PullResponse>() {
         @Override
-        public void success(PullResponse response) {
+        public void onSuccess(PullResponse response) {
           List<com.google.pubsub.v1.ReceivedMessage> messages = response.getReceivedMessagesList();
           queuedCallbacks.addAndGet(messages.size());
           for (com.google.pubsub.v1.ReceivedMessage message : messages) {
@@ -142,7 +143,7 @@ final class MessageConsumerImpl implements MessageConsumer {
         }
 
         @Override
-        public void failure(Throwable error) {
+        public void onFailure(Throwable error) {
           if (!(error instanceof CancellationException)) {
             nextPull();
           }

@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub.deprecated;
 
+import com.google.api.gax.core.ApiFuture;
 import com.google.cloud.AsyncPage;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.Page;
@@ -26,7 +27,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -180,20 +180,20 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   Topic create(TopicInfo topic);
 
   /**
-   * Sends a request for creating a topic. This method returns a {@code Future} object to consume
-   * the result. {@link Future#get()} returns the created topic.
+   * Sends a request for creating a topic. This method returns a {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns the created topic.
    *
    * <p>Example of asynchronously creating a topic.
    * <pre> {@code
    * String topicName = "my_topic_name";
    * TopicInfo topicInfo = TopicInfo.of(topicName);
-   * Future<Topic> future = pubsub.createAsync(topicInfo);
+   * ApiFuture<Topic> future = pubsub.createAsync(topicInfo);
    * // ...
    * Topic topic = future.get();
    * }</pre>
    *
    */
-  Future<Topic> createAsync(TopicInfo topic);
+  ApiFuture<Topic> createAsync(TopicInfo topic);
 
   /**
    * Returns the requested topic or {@code null} if not found.
@@ -212,13 +212,13 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   Topic getTopic(String topic);
 
   /**
-   * Sends a request for getting a topic. This method returns a {@code Future} object to consume the
-   * result. {@link Future#get()} returns the requested topic or {@code null} if not found.
+   * Sends a request for getting a topic. This method returns a {@code ApiFuture} object to consume the
+   * result. {@link ApiFuture#get()} returns the requested topic or {@code null} if not found.
    *
    * <p>Example of asynchronously getting a topic.
    * <pre> {@code
    * String topicName = "my_topic_name";
-   * Future<Topic> future = pubsub.getTopicAsync(topicName);
+   * ApiFuture<Topic> future = pubsub.getTopicAsync(topicName);
    * // ...
    * Topic topic = future.get();
    * if (topic == null) {
@@ -228,7 +228,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    *
    * @throws PubSubException upon failure
    */
-  Future<Topic> getTopicAsync(String topic);
+  ApiFuture<Topic> getTopicAsync(String topic);
 
   /**
    * Deletes the requested topic.
@@ -249,14 +249,14 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   boolean deleteTopic(String topic);
 
   /**
-   * Sends a request for deleting a topic. This method returns a {@code Future} object to consume
-   * the result. {@link Future#get()} returns {@code true} if the topic was deleted, {@code false}
+   * Sends a request for deleting a topic. This method returns a {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns {@code true} if the topic was deleted, {@code false}
    * if it was not found.
    *
    * <p>Example of asynchronously deleting a topic.
    * <pre> {@code
    * String topicName = "my_topic_name";
-   * Future<Boolean> future = pubsub.deleteTopicAsync(topicName);
+   * ApiFuture<Boolean> future = pubsub.deleteTopicAsync(topicName);
    * // ...
    * boolean deleted = future.get();
    * if (deleted) {
@@ -267,7 +267,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * }</pre>
    *
    */
-  Future<Boolean> deleteTopicAsync(String topic);
+  ApiFuture<Boolean> deleteTopicAsync(String topic);
 
   /**
    * Lists the topics. This method returns a {@link Page} object that can be used to consume
@@ -289,14 +289,14 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   Page<Topic> listTopics(ListOption... options);
 
   /**
-   * Sends a request for listing topics. This method returns a {@code Future} object to consume
-   * the result. {@link Future#get()} returns an {@link AsyncPage} object that can be used to
+   * Sends a request for listing topics. This method returns a {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns an {@link AsyncPage} object that can be used to
    * asynchronously handle paginated results. Use {@link ListOption} to specify the page size or the
    * page token from which to start listing topics.
    *
    * <p>Example of asynchronously listing topics, specifying the page size.
    * <pre> {@code
-   * Future<AsyncPage<Topic>> future = pubsub.listTopicsAsync(ListOption.pageSize(100));
+   * ApiFuture<AsyncPage<Topic>> future = pubsub.listTopicsAsync(ListOption.pageSize(100));
    * // ...
    * AsyncPage<Topic> topics = future.get();
    * Iterator<Topic> topicIterator = topics.iterateAll();
@@ -307,7 +307,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * }</pre>
    *
    */
-  Future<AsyncPage<Topic>> listTopicsAsync(ListOption... options);
+  ApiFuture<AsyncPage<Topic>> listTopicsAsync(ListOption... options);
 
   /**
    * Publishes a message to the provided topic. This method returns a service-generated id for the
@@ -330,7 +330,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request for publishing a message to the provided topic. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a service-generated
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a service-generated
    * id for the published message. Service-generated ids are guaranteed to be unique within the
    * topic.
    *
@@ -338,16 +338,16 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * <pre> {@code
    * String topicName = "my_topic_name";
    * Message message = Message.of("payload");
-   * Future<String> future = pubsub.publishAsync(topicName, message);
+   * ApiFuture<String> future = pubsub.publishAsync(topicName, message);
    * // ...
    * String messageId = future.get();
    * }</pre>
    *
    * @param topic the topic where the message is published
    * @param message the message to publish
-   * @return a {@code Future} for the unique service-generated id for the message
+   * @return a {@code ApiFuture} for the unique service-generated id for the message
    */
-  Future<String> publishAsync(String topic, Message message);
+  ApiFuture<String> publishAsync(String topic, Message message);
 
   /**
    * Publishes a number of messages to the provided topic. This method returns a list of
@@ -373,7 +373,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request to publish a number of messages to the provided topic. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a list of
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a list of
    * service-generated ids for the published messages. Service-generated ids are guaranteed to be
    * unique within the topic.
    *
@@ -382,7 +382,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * String topicName = "my_topic_name";
    * Message message1 = Message.of("payload1");
    * Message message2 = Message.of("payload2");
-   * Future<List<String>> future = pubsub.publishAsync(topicName, message1, message2);
+   * ApiFuture<List<String>> future = pubsub.publishAsync(topicName, message1, message2);
    * // ...
    * List<String> messageIds = future.get();
    * }</pre>
@@ -390,10 +390,10 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * @param topic the topic where the message is published
    * @param message the first message to publish
    * @param messages other messages to publish
-   * @return a {@code Future} for the unique, service-generated ids. Ids are in the same order as
+   * @return a {@code ApiFuture} for the unique, service-generated ids. Ids are in the same order as
    *     the messages.
    */
-  Future<List<String>> publishAsync(String topic, Message message, Message... messages);
+  ApiFuture<List<String>> publishAsync(String topic, Message message, Message... messages);
 
   /**
    * Publishes a number of messages to the provided topic. This method returns a list of
@@ -419,7 +419,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request to publish a number of messages to the provided topic. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a list of
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a list of
    * service-generated ids for the published messages. Service-generated ids are guaranteed to be
    * unique within the topic.
    *
@@ -429,17 +429,17 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * List<Message> messages = new LinkedList<>();
    * messages.add(Message.of("payload1"));
    * messages.add(Message.of("payload2"));
-   * Future<List<String>> future = pubsub.publishAsync(topicName, messages);
+   * ApiFuture<List<String>> future = pubsub.publishAsync(topicName, messages);
    * // ...
    * List<String> messageIds = future.get();
    * }</pre>
    *
    * @param topic the topic where the message is published
    * @param messages the messages to publish
-   * @return a {@code Future} for the unique, service-generated ids. Ids are in the same order as
+   * @return a {@code ApiFuture} for the unique, service-generated ids. Ids are in the same order as
    *     the messages
    */
-  Future<List<String>> publishAsync(String topic, Iterable<Message> messages);
+  ApiFuture<List<String>> publishAsync(String topic, Iterable<Message> messages);
 
   /**
    * Creates a new subscription.
@@ -458,21 +458,21 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   Subscription create(SubscriptionInfo subscription);
 
   /**
-   * Sends a request for creating a subscription. This method returns a {@code Future} object to
-   * consume the result. {@link Future#get()} returns the created subscription.
+   * Sends a request for creating a subscription. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns the created subscription.
    *
    * <p>Example of asynchronously creating a pull subscription for a topic.
    * <pre> {@code
    * String topicName = "my_topic_name";
    * String subscriptionName = "my_subscription_name";
    * SubscriptionInfo subscriptionInfo = SubscriptionInfo.of(topicName, subscriptionName);
-   * Future<Subscription> future = pubsub.createAsync(subscriptionInfo);
+   * ApiFuture<Subscription> future = pubsub.createAsync(subscriptionInfo);
    * // ...
    * Subscription subscription = future.get();
    * }</pre>
    *
    */
-  Future<Subscription> createAsync(SubscriptionInfo subscription);
+  ApiFuture<Subscription> createAsync(SubscriptionInfo subscription);
 
   /**
    * Returns the requested subscription or {@code null} if not found.
@@ -490,14 +490,14 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   Subscription getSubscription(String subscription);
 
   /**
-   * Sends a request for getting a subscription. This method returns a {@code Future} object to
-   * consume the result. {@link Future#get()} returns the requested subscription or {@code null} if
+   * Sends a request for getting a subscription. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns the requested subscription or {@code null} if
    * not found.
    *
    * <p>Example of asynchronously getting a subscription.
    * <pre> {@code
    * String subscriptionName = "my_subscription_name";
-   * Future<Subscription> future = pubsub.getSubscriptionAsync(subscriptionName);
+   * ApiFuture<Subscription> future = pubsub.getSubscriptionAsync(subscriptionName);
    * // ...
    * Subscription subscription = future.get();
    * if (subscription == null) {
@@ -506,7 +506,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * }</pre>
    *
    */
-  Future<Subscription> getSubscriptionAsync(String subscription);
+  ApiFuture<Subscription> getSubscriptionAsync(String subscription);
 
   /**
    * Sets the push configuration for a specified subscription. This may be used to change a push
@@ -541,7 +541,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * used to change a push subscription to a pull one (passing a {@code null} {@code pushConfig}
    * parameter) or vice versa. This methods can also be used to change the endpoint URL and other
    * attributes of a push subscription. Messages will accumulate for delivery regardless of changes
-   * to the push configuration. The method returns a {@code Future} object that can be used to wait
+   * to the push configuration. The method returns a {@code ApiFuture} object that can be used to wait
    * for the replace operation to be completed.
    *
    * <p>Example of asynchronously replacing the push configuration of a subscription, setting the
@@ -550,7 +550,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * String subscriptionName = "my_subscription_name";
    * String endpoint = "https://www.example.com/push";
    * PushConfig pushConfig = PushConfig.of(endpoint);
-   * Future<Void> future = pubsub.replacePushConfigAsync(subscriptionName, pushConfig);
+   * ApiFuture<Void> future = pubsub.replacePushConfigAsync(subscriptionName, pushConfig);
    * // ...
    * future.get();
    * }</pre>
@@ -559,16 +559,16 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * pull subscription.
    * <pre> {@code
    * String subscriptionName = "my_subscription_name";
-   * Future<Void> future = pubsub.replacePushConfigAsync(subscriptionName, null);
+   * ApiFuture<Void> future = pubsub.replacePushConfigAsync(subscriptionName, null);
    * // ...
    * future.get();
    * }</pre>
    *
    * @param subscription the subscription for which to replace push configuration
    * @param pushConfig the new push configuration. Use {@code null} to unset it
-   * @return a {@code Future} to wait for the replace operation to be completed.
+   * @return a {@code ApiFuture} to wait for the replace operation to be completed.
    */
-  Future<Void> replacePushConfigAsync(String subscription, PushConfig pushConfig);
+  ApiFuture<Void> replacePushConfigAsync(String subscription, PushConfig pushConfig);
 
   /**
    * Deletes the requested subscription.
@@ -590,14 +590,14 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   boolean deleteSubscription(String subscription);
 
   /**
-   * Sends a request for deleting a subscription. This method returns a {@code Future} object to
-   * consume the result. {@link Future#get()} returns {@code true} if the subscription was deleted,
+   * Sends a request for deleting a subscription. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns {@code true} if the subscription was deleted,
    * {@code false} if it was not found.
    *
    * <p>Example of asynchronously deleting a subscription.
    * <pre> {@code
    * String subscriptionName = "my_subscription_name";
-   * Future<Boolean> future = pubsub.deleteSubscriptionAsync(subscriptionName);
+   * ApiFuture<Boolean> future = pubsub.deleteSubscriptionAsync(subscriptionName);
    * // ...
    * boolean deleted = future.get();
    * if (deleted) {
@@ -608,7 +608,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * }</pre>
    *
    */
-  Future<Boolean> deleteSubscriptionAsync(String subscription);
+  ApiFuture<Boolean> deleteSubscriptionAsync(String subscription);
 
   /**
    * Lists the subscriptions. This method returns a {@link Page} object that can be used to consume
@@ -630,14 +630,14 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   Page<Subscription> listSubscriptions(ListOption... options);
 
   /**
-   * Sends a request for listing subscriptions. This method returns a {@code Future} object to
-   * consume the result. {@link Future#get()} returns an {@link AsyncPage} object that can be used
+   * Sends a request for listing subscriptions. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns an {@link AsyncPage} object that can be used
    * to asynchronously handle paginated results. Use {@link ListOption} to specify the page size or
    * the page token from which to start listing subscriptions.
    *
    * <p>Example of asynchronously listing subscriptions, specifying the page size.
    * <pre> {@code
-   * Future<AsyncPage<Subscription>> future =
+   * ApiFuture<AsyncPage<Subscription>> future =
    *     pubsub.listSubscriptionsAsync(ListOption.pageSize(100));
    * // ...
    * AsyncPage<Subscription> subscriptions = future.get();
@@ -650,7 +650,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    *
    * @throws PubSubException upon failure
    */
-  Future<AsyncPage<Subscription>> listSubscriptionsAsync(ListOption... options);
+  ApiFuture<AsyncPage<Subscription>> listSubscriptionsAsync(ListOption... options);
 
   /**
    * Lists the identities of the subscriptions for the provided topic. This method returns a
@@ -676,7 +676,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request for listing the identities of subscriptions for the provided topic. This method
-   * returns a {@code Future} object to consume the result. {@link Future#get()} returns an
+   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns an
    * {@link AsyncPage} object that can be used to asynchronously handle paginated results. Use
    * {@link ListOption} to specify the page size or the page token from which to start listing
    * subscriptions.
@@ -684,7 +684,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * <p>Example of asynchronously listing subscriptions for a topic, specifying the page size.
    * <pre> {@code
    * String topicName = "my_topic_name";
-   * Future<AsyncPage<SubscriptionId>> future =
+   * ApiFuture<AsyncPage<SubscriptionId>> future =
    *     pubsub.listSubscriptionsAsync(topicName, ListOption.pageSize(100));
    * // ...
    * AsyncPage<SubscriptionId> subscriptions = future.get();
@@ -697,7 +697,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    *
    * @param topic the topic for which to list subscriptions
    */
-  Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic, ListOption... options);
+  ApiFuture<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic, ListOption... options);
 
   /**
    * Pulls messages from the provided subscription. This method possibly returns no messages if no
@@ -728,18 +728,18 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request for pulling messages from the provided subscription. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a message iterator.
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a message iterator.
    * When using this method the system is allowed to wait until at least one message is available
    * rather than returning no messages (i.e.
    * <a href="https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#google.pubsub.v1.PullRequest.FIELDS.bool.google.pubsub.v1.PullRequest.return_immediately">return_immediately</a>
    * option is set to {@code false}). The client may cancel the request by calling
-   * {@link Future#cancel(boolean)} if it does not wish to wait any longer. Notice that the Pub/Sub
+   * {@link ApiFuture#cancel(boolean)} if it does not wish to wait any longer. Notice that the Pub/Sub
    * service might still return no messages if a timeout is reached on the service side.
    *
    * <p>Example of asynchronously pulling a maximum number of messages from a subscription.
    * <pre> {@code
    * String subscriptionName = "my_subscription_name";
-   * Future<Iterator<ReceivedMessage>> future = pubsub.pullAsync(subscriptionName, 100);
+   * ApiFuture<Iterator<ReceivedMessage>> future = pubsub.pullAsync(subscriptionName, 100);
    * // ...
    * Iterator<ReceivedMessage> messages = future.get();
    * // Ack deadline is renewed until the message is consumed
@@ -755,7 +755,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    *     possibly return fewer messages.
    * @throws PubSubException upon failure
    */
-  Future<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages);
+  ApiFuture<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages);
 
   /**
    * Creates a message consumer that pulls messages from the provided subscription. You can stop
@@ -825,13 +825,13 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * Sends a request to acknowledge the given messages for the provided subscription. Ack ids
    * identify the messages to acknowledge, as returned in {@link ReceivedMessage#getAckId()} by
    * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. The method returns a
-   * {@code Future} object that can be used to wait for the acknowledge operation to be completed.
+   * {@code ApiFuture} object that can be used to wait for the acknowledge operation to be completed.
    *
    * <p>Example of asynchronously acking one message.
    * <pre> {@code
    * String subscriptionName = "my_subscription_name";
    * String ackId = "message_ack_id";
-   * Future<Void> future = pubsub.ackAsync(subscriptionName, ackId);
+   * ApiFuture<Void> future = pubsub.ackAsync(subscriptionName, ackId);
    * // ...
    * future.get();
    * }</pre>
@@ -841,7 +841,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * String subscriptionName = "my_subscription_name";
    * String ackId1 = "message1_ack_id";
    * String ackId2 = "message2_ack_id";
-   * Future<Void> future = pubsub.ackAsync(subscriptionName, ackId1, ackId2);
+   * ApiFuture<Void> future = pubsub.ackAsync(subscriptionName, ackId1, ackId2);
    * // ...
    * future.get();
    * }</pre>
@@ -850,7 +850,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * @param ackId the ack id of the first message to acknowledge
    * @param ackIds other ack ids of messages to acknowledge
    */
-  Future<Void> ackAsync(String subscription, String ackId, String... ackIds);
+  ApiFuture<Void> ackAsync(String subscription, String ackId, String... ackIds);
 
   /**
    * Acknowledges the given messages for the provided subscription. Ack ids identify the messages to
@@ -878,7 +878,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * Sends a request to acknowledge the given messages for the provided subscription. Ack ids
    * identify the messages to acknowledge, as returned in {@link ReceivedMessage#getAckId()} by
    * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. The method returns a
-   * {@code Future} object that can be used to wait for the acknowledge operation to be completed.
+   * {@code ApiFuture} object that can be used to wait for the acknowledge operation to be completed.
    *
    * <p>Example of asynchronously acking a list of messages.
    * <pre> {@code
@@ -888,7 +888,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * List<String> ackIds = new LinkedList<>();
    * ackIds.add(ackId1);
    * ackIds.add(ackId2);
-   * Future<Void> future = pubsub.ackAsync(subscriptionName, ackIds);
+   * ApiFuture<Void> future = pubsub.ackAsync(subscriptionName, ackIds);
    * // ...
    * future.get();
    * }</pre>
@@ -896,7 +896,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * @param subscription the subscription whose messages must be acknowledged
    * @param ackIds the ack ids of messages to acknowledge
    */
-  Future<Void> ackAsync(String subscription, Iterable<String> ackIds);
+  ApiFuture<Void> ackAsync(String subscription, Iterable<String> ackIds);
 
   /**
    * "Nacks" the given messages for the provided subscription. Ack ids identify the messages to
@@ -931,14 +931,14 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * the messages to "nack", as returned in {@link ReceivedMessage#getAckId()} by
    * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. This method corresponds to
    * calling {@link #modifyAckDeadlineAsync(String, int, TimeUnit, String, String...)} with a
-   * deadline of 0. The method returns a {@code Future} object that can be used to wait for the
+   * deadline of 0. The method returns a {@code ApiFuture} object that can be used to wait for the
    * "nack" operation to be completed.
    *
    * <p>Example of asynchronously nacking one message.
    * <pre> {@code
    * String subscriptionName = "my_subscription_name";
    * String ackId = "message_ack_id";
-   * Future<Void> future = pubsub.nackAsync(subscriptionName, ackId);
+   * ApiFuture<Void> future = pubsub.nackAsync(subscriptionName, ackId);
    * // ...
    * future.get();
    * }</pre>
@@ -948,7 +948,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * String subscriptionName = "my_subscription_name";
    * String ackId1 = "message1_ack_id";
    * String ackId2 = "message2_ack_id";
-   * Future<Void> future = pubsub.nackAsync(subscriptionName, ackId1, ackId2);
+   * ApiFuture<Void> future = pubsub.nackAsync(subscriptionName, ackId1, ackId2);
    * // ...
    * future.get();
    * }</pre>
@@ -957,7 +957,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * @param ackId the ack id of the first message to "nack"
    * @param ackIds other ack ids of messages to "nack"
    */
-  Future<Void> nackAsync(String subscription, String ackId, String... ackIds);
+  ApiFuture<Void> nackAsync(String subscription, String ackId, String... ackIds);
 
   /**
    * "Nacks" the given messages for the provided subscription. Ack ids identify the messages to
@@ -987,7 +987,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * the messages to "nack", as returned in {@link ReceivedMessage#getAckId()} by
    * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. This method corresponds to
    * calling {@link #modifyAckDeadlineAsync(String, int, TimeUnit, Iterable)} with a deadline of 0.
-   * The method returns a {@code Future} object that can be used to wait for the "nack" operation to
+   * The method returns a {@code ApiFuture} object that can be used to wait for the "nack" operation to
    * be completed.
    *
    * <p>Example of asynchronously nacking a list of messages.
@@ -998,7 +998,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * List<String> ackIds = new LinkedList<>();
    * ackIds.add(ackId1);
    * ackIds.add(ackId2);
-   * Future<Void> future = pubsub.nackAsync(subscriptionName, ackIds);
+   * ApiFuture<Void> future = pubsub.nackAsync(subscriptionName, ackIds);
    * // ...
    * future.get();
    * }</pre>
@@ -1006,7 +1006,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * @param subscription the subscription whose messages must be "nacked"
    * @param ackIds the ack ids of messages to "nack"
    */
-  Future<Void> nackAsync(String subscription, Iterable<String> ackIds);
+  ApiFuture<Void> nackAsync(String subscription, Iterable<String> ackIds);
 
   /**
    * Modifies the acknowledge deadline of the given messages. {@code deadline} must be &gt;= 0 and
@@ -1050,13 +1050,13 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * {@link TimeUnit#SECONDS}, the new ack deadline will expire 10 seconds after the modify request
    * was received by the service. Specifying 0 may be used to make the message available for another
    * pull request (corresponds to calling {@link #nackAsync(String, Iterable)}). The method returns
-   * a {@code Future} object that can be used to wait for the modify operation to be completed.
+   * a {@code ApiFuture} object that can be used to wait for the modify operation to be completed.
    *
    * <p>Example of asynchronously modifying the ack deadline of one message.
    * <pre> {@code
    * String subscriptionName = "my_subscription_name";
    * String ackId = "message_ack_id";
-   * Future<Void> future =
+   * ApiFuture<Void> future =
    *     pubsub.modifyAckDeadlineAsync(subscriptionName, 60, TimeUnit.SECONDS, ackId);
    * // ...
    * future.get();
@@ -1067,7 +1067,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * String subscriptionName = "my_subscription_name";
    * String ackId1 = "message1_ack_id";
    * String ackId2 = "message2_ack_id";
-   * Future<Void> future =
+   * ApiFuture<Void> future =
    *     pubsub.modifyAckDeadlineAsync(subscriptionName, 60, TimeUnit.SECONDS, ackId1, ackId2);
    * // ...
    * future.get();
@@ -1081,7 +1081,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    *     modified
    * @param ackIds other ack ids of messages for which the acknowledge deadline must be modified
    */
-  Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
+  ApiFuture<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
       String ackId, String... ackIds);
 
   /**
@@ -1119,7 +1119,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * {@link TimeUnit#SECONDS}, the new ack deadline will expire 10 seconds after the modify request
    * was received by the service. Specifying 0 may be used to make the message available for another
    * pull request (corresponds to calling {@link #nackAsync(String, Iterable)}). The method returns
-   * a {@code Future} object that can be used to wait for the modify operation to be completed.
+   * a {@code ApiFuture} object that can be used to wait for the modify operation to be completed.
    *
    * <p>Example of asynchronously modifying the ack deadline of a list of messages.
    * <pre> {@code
@@ -1129,7 +1129,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * List<String> ackIds = new LinkedList<>();
    * ackIds.add(ackId1);
    * ackIds.add(ackId2);
-   * Future<Void> future =
+   * ApiFuture<Void> future =
    *     pubsub.modifyAckDeadlineAsync(subscriptionName, 60, TimeUnit.SECONDS, ackIds);
    * // ...
    * future.get();
@@ -1141,7 +1141,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * @param unit time unit for the {@code deadline} parameter
    * @param ackIds the ack ids of messages for which the acknowledge deadline must be modified
    */
-  Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
+  ApiFuture<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
       Iterable<String> ackIds);
 
   /**
@@ -1163,13 +1163,13 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request for getting the IAM access control policy for the specified topic. This method
-   * returns a {@code Future} object to consume the result. {@link Future#get()} returns the
+   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
    * requested policy or {@code null} if the topic was not found.
    *
    * <p>Example of asynchronously getting a topic policy.
    * <pre> {@code
    * String topicName = "my_topic_name";
-   * Future<Policy> future = pubsub.getTopicPolicyAsync(topicName);
+   * ApiFuture<Policy> future = pubsub.getTopicPolicyAsync(topicName);
    * // ...
    * Policy policy = future.get();
    * if (policy == null) {
@@ -1179,7 +1179,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    *
    * @throws PubSubException upon failure
    */
-  Future<Policy> getTopicPolicyAsync(String topic);
+  ApiFuture<Policy> getTopicPolicyAsync(String topic);
 
   /**
    * Sets the IAM access control policy for the specified topic. Replaces any existing policy. This
@@ -1211,8 +1211,8 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request to set the IAM access control policy for the specified topic. Replaces any
-   * existing policy. This method returns a {@code Future} object to consume the result.
-   * {@link Future#get()} returns the new policy.
+   * existing policy. This method returns a {@code ApiFuture} object to consume the result.
+   * {@link ApiFuture#get()} returns the new policy.
    *
    * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
    * the project's current policy, updating it locally, and then sending the modified policy for
@@ -1221,7 +1221,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * verify whether the policy has changed since the last request. When you make a request with an
    * etag value, the value in the request is compared with the existing etag value associated with
    * the policy. The policy is written only if the etag values match. If the etags don't match,
-   * {@link Future#get()} will throw a {@link java.util.concurrent.ExecutionException} caused by a
+   * {@link ApiFuture#get()} will throw a {@link java.util.concurrent.ExecutionException} caused by a
    * {@code PubSubException}, denoting that the server aborted update. If an etag is not provided,
    * the policy is overwritten blindly.
    *
@@ -1232,14 +1232,14 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * Policy updatedPolicy = policy.toBuilder()
    *     .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
    *     .build();
-   * Future<Policy> future = pubsub.replaceTopicPolicyAsync(topicName, updatedPolicy);
+   * ApiFuture<Policy> future = pubsub.replaceTopicPolicyAsync(topicName, updatedPolicy);
    * // ...
    * updatedPolicy = future.get();
    * }</pre>
    *
    * @throws PubSubException upon failure
    */
-  Future<Policy> replaceTopicPolicyAsync(String topic, Policy newPolicy);
+  ApiFuture<Policy> replaceTopicPolicyAsync(String topic, Policy newPolicy);
 
   /**
    * Returns the permissions that a caller has on the specified topic.
@@ -1278,19 +1278,19 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * String topicName = "my_topic_name";
    * List<String> permissions = new LinkedList<>();
    * permissions.add("pubsub.topics.get");
-   * Future<List<Boolean>> future = pubsub.testTopicPermissionsAsync(topicName, permissions);
+   * ApiFuture<List<Boolean>> future = pubsub.testTopicPermissionsAsync(topicName, permissions);
    * // ...
    * List<Boolean> testedPermissions = future.get();
    * }</pre>
    *
-   * @return A {@code Future} object to consume the result. {@link Future#get()} returns a list of
+   * @return A {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a list of
    *     booleans representing whether the caller has the permissions specified (in the order of the
    *     given permissions)
    * @throws PubSubException upon failure
    * @see <a href="https://cloud.google.com/pubsub/docs/access_control#permissions">
    *     Permissions and Roles</a>
    */
-  Future<List<Boolean>> testTopicPermissionsAsync(String topic, List<String> permissions);
+  ApiFuture<List<Boolean>> testTopicPermissionsAsync(String topic, List<String> permissions);
 
   /**
    * Returns the IAM access control policy for the specified subscription. Returns {@code null} if
@@ -1311,13 +1311,13 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request for getting the IAM access control policy for the specified subscription. This
-   * method returns a {@code Future} object to consume the result. {@link Future#get()} returns the
+   * method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
    * requested policy or {@code null} if the subscription was not found.
    *
    * <p>Example of asynchronously getting a subscription policy.
    * <pre> {@code
    * String subscriptionName = "my_subscription_name";
-   * Future<Policy> future = pubsub.getSubscriptionPolicyAsync(subscriptionName);
+   * ApiFuture<Policy> future = pubsub.getSubscriptionPolicyAsync(subscriptionName);
    * // ...
    * Policy policy = future.get();
    * if (policy == null) {
@@ -1327,7 +1327,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    *
    * @throws PubSubException upon failure
    */
-  Future<Policy> getSubscriptionPolicyAsync(String subscription);
+  ApiFuture<Policy> getSubscriptionPolicyAsync(String subscription);
 
   /**
    * Sets the IAM access control policy for the specified subscription. Replaces any existing
@@ -1359,8 +1359,8 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request to set the IAM access control policy for the specified subscription. Replaces
-   * any existing policy. This method returns a {@code Future} object to consume the result.
-   * {@link Future#get()} returns the new policy.
+   * any existing policy. This method returns a {@code ApiFuture} object to consume the result.
+   * {@link ApiFuture#get()} returns the new policy.
    *
    * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
    * the project's current policy, updating it locally, and then sending the modified policy for
@@ -1369,7 +1369,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * verify whether the policy has changed since the last request. When you make a request with an
    * etag value, the value in the request is compared with the existing etag value associated with
    * the policy. The policy is written only if the etag values match. If the etags don't match,
-   * {@link Future#get()} will throw a {@link java.util.concurrent.ExecutionException} caused by a
+   * {@link ApiFuture#get()} will throw a {@link java.util.concurrent.ExecutionException} caused by a
    * {@code PubSubException}, denoting that the server aborted update. If an etag is not provided,
    * the policy is overwritten blindly.
    *
@@ -1380,7 +1380,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * Policy updatedPolicy = policy.toBuilder()
    *     .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
    *     .build();
-   * Future<Policy> future =
+   * ApiFuture<Policy> future =
    *     pubsub.replaceSubscriptionPolicyAsync(subscriptionName, updatedPolicy);
    * // ...
    * updatedPolicy = future.get();
@@ -1388,7 +1388,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    *
    * @throws PubSubException upon failure
    */
-  Future<Policy> replaceSubscriptionPolicyAsync(String subscription, Policy newPolicy);
+  ApiFuture<Policy> replaceSubscriptionPolicyAsync(String subscription, Policy newPolicy);
 
   /**
    * Returns the permissions that a caller has on the specified subscription. You typically don't
@@ -1428,19 +1428,19 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * String subscriptionName = "my_subscription_name";
    * List<String> permissions = new LinkedList<>();
    * permissions.add("pubsub.subscriptions.get");
-   * Future<List<Boolean>> future =
+   * ApiFuture<List<Boolean>> future =
    *     pubsub.testSubscriptionPermissionsAsync(subscriptionName, permissions);
    * // ...
    * List<Boolean> testedPermissions = future.get();
    * }</pre>
    *
-   * @return A {@code Future} object to consume the result. {@link Future#get()} returns a list of
+   * @return A {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a list of
    *     booleans representing whether the caller has the permissions specified (in the order of the
    *     given permissions)
    * @throws PubSubException upon failure
    * @see <a href="https://cloud.google.com/pubsub/docs/access_control#permissions">
    *     Permissions and Roles</a>
    */
-  Future<List<Boolean>> testSubscriptionPermissionsAsync(String subscription,
+  ApiFuture<List<Boolean>> testSubscriptionPermissionsAsync(String subscription,
       List<String> permissions);
 }

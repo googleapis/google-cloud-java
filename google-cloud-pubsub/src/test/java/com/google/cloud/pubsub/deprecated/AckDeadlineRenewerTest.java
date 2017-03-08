@@ -18,12 +18,12 @@ package com.google.cloud.pubsub.deprecated;
 
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.core.ApiFuture;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.pubsub.spi.v1.FakeScheduledExecutorService;
 import com.google.common.collect.ImmutableList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -86,11 +86,11 @@ public class AckDeadlineRenewerTest {
     ackDeadlineRenewer.close();
   }
 
-  private IAnswer<Future<Void>> createAnswer(final CountDownLatch latch,
+  private IAnswer<ApiFuture<Void>> createAnswer(final CountDownLatch latch,
       final AtomicLong renewal) {
-    return new IAnswer<Future<Void>>() {
+    return new IAnswer<ApiFuture<Void>>() {
       @Override
-      public Future<Void> answer() throws Throwable {
+      public ApiFuture<Void> answer() throws Throwable {
         latch.countDown();
         renewal.set(executorService.getClock().millis());
         return null;
