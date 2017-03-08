@@ -16,20 +16,16 @@
 
 package com.google.cloud.pubsub.deprecated;
 
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.deprecated.spi.PubSubRpc;
-import com.google.cloud.pubsub.deprecated.spi.PubSubRpc.PullCallback;
-import com.google.cloud.pubsub.deprecated.spi.PubSubRpc.PullFuture;
-import com.google.common.util.concurrent.ForwardingListenableFuture;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
 import org.easymock.EasyMock;
 import org.easymock.IAnswer;
 import org.junit.After;
@@ -84,30 +80,6 @@ public class MessageConsumerImplTest {
   @Rule
   public Timeout globalTimeout = Timeout.seconds(60);
 
-  static final class TestPullFuture
-      extends ForwardingListenableFuture.SimpleForwardingListenableFuture<PullResponse>
-      implements PullFuture {
-
-    TestPullFuture(PullResponse response) {
-      super(Futures.immediateFuture(response));
-    }
-
-    @Override
-    public void addCallback(final PullCallback callback) {
-      Futures.addCallback(delegate(), new FutureCallback<PullResponse>() {
-        @Override
-        public void onSuccess(PullResponse result) {
-          callback.success(result);
-        }
-
-        @Override
-        public void onFailure(Throwable error) {
-          callback.failure(error);
-        }
-      });
-    }
-  }
-
   @Before
   public void setUp() {
     pubsubRpc = EasyMock.createStrictMock(PubSubRpc.class);
@@ -154,9 +126,9 @@ public class MessageConsumerImplTest {
     EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
     EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID2)).andReturn(null);
     EasyMock.replay(pubsub);
-    EasyMock.expect(pubsubRpc.pull(request)).andReturn(new TestPullFuture(PULL_RESPONSE));
+    EasyMock.expect(pubsubRpc.pull(request)).andReturn(ApiFutures.immediateFuture(PULL_RESPONSE));
     EasyMock.expect(pubsubRpc.pull(EasyMock.<PullRequest>anyObject()))
-        .andReturn(new TestPullFuture(EMPTY_RESPONSE)).anyTimes();
+        .andReturn(ApiFutures.immediateFuture(EMPTY_RESPONSE)).anyTimes();
     renewer.add(SUBSCRIPTION, ACK_ID1);
     EasyMock.expectLastCall();
     renewer.add(SUBSCRIPTION, ACK_ID2);
@@ -185,9 +157,9 @@ public class MessageConsumerImplTest {
     EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
     EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID2)).andReturn(null);
     EasyMock.replay(pubsub);
-    EasyMock.expect(pubsubRpc.pull(request)).andReturn(new TestPullFuture(PULL_RESPONSE));
+    EasyMock.expect(pubsubRpc.pull(request)).andReturn(ApiFutures.immediateFuture(PULL_RESPONSE));
     EasyMock.expect(pubsubRpc.pull(EasyMock.<PullRequest>anyObject()))
-        .andReturn(new TestPullFuture(EMPTY_RESPONSE)).anyTimes();
+        .andReturn(ApiFutures.immediateFuture(EMPTY_RESPONSE)).anyTimes();
     renewer.add(SUBSCRIPTION, ACK_ID1);
     EasyMock.expectLastCall();
     renewer.add(SUBSCRIPTION, ACK_ID2);
@@ -221,9 +193,9 @@ public class MessageConsumerImplTest {
     final CountDownLatch nextPullLatch = new CountDownLatch(1);
     final CountDownLatch latch = new CountDownLatch(2);
     EasyMock.expect(pubsub.getOptions()).andReturn(options);
-    EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID1)).andAnswer(new IAnswer<Future<Void>>() {
+    EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID1)).andAnswer(new IAnswer<ApiFuture<Void>>() {
       @Override
-      public Future<Void> answer() throws Throwable {
+      public ApiFuture<Void> answer() throws Throwable {
         nextPullLatch.await();
         return null;
       }
@@ -231,16 +203,16 @@ public class MessageConsumerImplTest {
     EasyMock.expect(pubsub.getOptions()).andReturn(options);
     EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID2)).andReturn(null);
     EasyMock.replay(pubsub);
-    EasyMock.expect(pubsubRpc.pull(request1)).andReturn(new TestPullFuture(response1));
-    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<PullFuture>() {
+    EasyMock.expect(pubsubRpc.pull(request1)).andReturn(ApiFutures.immediateFuture(response1));
+    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<ApiFuture<PullResponse>>() {
       @Override
-      public PullFuture answer() throws Throwable {
+      public ApiFuture<PullResponse> answer() throws Throwable {
         nextPullLatch.countDown();
-        return new TestPullFuture(response2);
+        return ApiFutures.immediateFuture(response2);
       }
     });
     EasyMock.expect(pubsubRpc.pull(EasyMock.<PullRequest>anyObject()))
-        .andReturn(new TestPullFuture(EMPTY_RESPONSE)).anyTimes();
+        .andReturn(ApiFutures.immediateFuture(EMPTY_RESPONSE)).anyTimes();
     renewer.add(SUBSCRIPTION, ACK_ID1);
     EasyMock.expectLastCall();
     renewer.remove(SUBSCRIPTION, ACK_ID1);
@@ -274,9 +246,9 @@ public class MessageConsumerImplTest {
     final CountDownLatch nextPullLatch = new CountDownLatch(1);
     final CountDownLatch latch = new CountDownLatch(2);
     EasyMock.expect(pubsub.getOptions()).andReturn(options);
-    EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID1)).andAnswer(new IAnswer<Future<Void>>() {
+    EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID1)).andAnswer(new IAnswer<ApiFuture<Void>>() {
       @Override
-      public Future<Void> answer() throws Throwable {
+      public ApiFuture<Void> answer() throws Throwable {
         nextPullLatch.await();
         return null;
       }
@@ -284,16 +256,16 @@ public class MessageConsumerImplTest {
     EasyMock.expect(pubsub.getOptions()).andReturn(options);
     EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID2)).andReturn(null);
     EasyMock.replay(pubsub);
-    EasyMock.expect(pubsubRpc.pull(request1)).andReturn(new TestPullFuture(response1));
-    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<PullFuture>() {
+    EasyMock.expect(pubsubRpc.pull(request1)).andReturn(ApiFutures.immediateFuture(response1));
+    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<ApiFuture<PullResponse>>() {
       @Override
-      public PullFuture answer() throws Throwable {
+      public ApiFuture<PullResponse> answer() throws Throwable {
         nextPullLatch.countDown();
-        return new TestPullFuture(response2);
+        return ApiFutures.immediateFuture(response2);
       }
     });
     EasyMock.expect(pubsubRpc.pull(EasyMock.<PullRequest>anyObject()))
-        .andReturn(new TestPullFuture(EMPTY_RESPONSE)).anyTimes();
+        .andReturn(ApiFutures.immediateFuture(EMPTY_RESPONSE)).anyTimes();
     renewer.add(SUBSCRIPTION, ACK_ID1);
     EasyMock.expectLastCall();
     renewer.remove(SUBSCRIPTION, ACK_ID1);
@@ -325,9 +297,9 @@ public class MessageConsumerImplTest {
     final CountDownLatch nextPullLatch = new CountDownLatch(1);
     final CountDownLatch latch = new CountDownLatch(3);
     EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
-    EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID2)).andAnswer(new IAnswer<Future<Void>>() {
+    EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID2)).andAnswer(new IAnswer<ApiFuture<Void>>() {
       @Override
-      public Future<Void> answer() throws Throwable {
+      public ApiFuture<Void> answer() throws Throwable {
         nextPullLatch.await();
         return null;
       }
@@ -335,16 +307,16 @@ public class MessageConsumerImplTest {
     EasyMock.expect(pubsub.getOptions()).andReturn(options);
     EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
     EasyMock.replay(pubsub);
-    EasyMock.expect(pubsubRpc.pull(request1)).andReturn(new TestPullFuture(PULL_RESPONSE));
-    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<PullFuture>() {
+    EasyMock.expect(pubsubRpc.pull(request1)).andReturn(ApiFutures.immediateFuture(PULL_RESPONSE));
+    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<ApiFuture<PullResponse>>() {
       @Override
-      public PullFuture answer() throws Throwable {
+      public ApiFuture<PullResponse> answer() throws Throwable {
         nextPullLatch.countDown();
-        return new TestPullFuture(otherPullResponse);
+        return ApiFutures.immediateFuture(otherPullResponse);
       }
     });
     EasyMock.expect(pubsubRpc.pull(EasyMock.<PullRequest>anyObject()))
-        .andReturn(new TestPullFuture(EMPTY_RESPONSE)).anyTimes();
+        .andReturn(ApiFutures.immediateFuture(EMPTY_RESPONSE)).anyTimes();
     renewer.add(SUBSCRIPTION, ACK_ID1);
     EasyMock.expectLastCall();
     renewer.add(SUBSCRIPTION, ACK_ID2);
@@ -380,9 +352,9 @@ public class MessageConsumerImplTest {
     final CountDownLatch nextPullLatch = new CountDownLatch(1);
     final CountDownLatch latch = new CountDownLatch(3);
     EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
-    EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID2)).andAnswer(new IAnswer<Future<Void>>() {
+    EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID2)).andAnswer(new IAnswer<ApiFuture<Void>>() {
       @Override
-      public Future<Void> answer() throws Throwable {
+      public ApiFuture<Void> answer() throws Throwable {
         nextPullLatch.await();
         return null;
       }
@@ -390,16 +362,16 @@ public class MessageConsumerImplTest {
     EasyMock.expect(pubsub.getOptions()).andReturn(options);
     EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
     EasyMock.replay(pubsub);
-    EasyMock.expect(pubsubRpc.pull(request1)).andReturn(new TestPullFuture(PULL_RESPONSE));
-    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<PullFuture>() {
+    EasyMock.expect(pubsubRpc.pull(request1)).andReturn(ApiFutures.immediateFuture(PULL_RESPONSE));
+    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<ApiFuture<PullResponse>>() {
       @Override
-      public PullFuture answer() throws Throwable {
+      public ApiFuture<PullResponse> answer() throws Throwable {
         nextPullLatch.countDown();
-        return new TestPullFuture(otherPullResponse);
+        return ApiFutures.immediateFuture(otherPullResponse);
       }
     });
     EasyMock.expect(pubsubRpc.pull(EasyMock.<PullRequest>anyObject()))
-        .andReturn(new TestPullFuture(EMPTY_RESPONSE)).anyTimes();
+        .andReturn(ApiFutures.immediateFuture(EMPTY_RESPONSE)).anyTimes();
     renewer.add(SUBSCRIPTION, ACK_ID1);
     EasyMock.expectLastCall();
     renewer.add(SUBSCRIPTION, ACK_ID2);
