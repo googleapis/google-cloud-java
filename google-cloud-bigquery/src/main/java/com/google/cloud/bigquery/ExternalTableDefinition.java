@@ -104,18 +104,6 @@ public class ExternalTableDefinition extends TableDefinition {
       }
     }
 
-    /**
-     * Sets the fully-qualified URIs that point to your data in Google Cloud Storage (e.g.
-     * gs://bucket/path). Each URI can contain one '*' wildcard character that must come after the
-     * bucket's name. Size limits related to load jobs apply to external data sources, plus an
-     * additional limit of 10 GB maximum size across all URIs.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
-     */
-    @Deprecated
-    public Builder sourceUris(List<String> sourceUris) {
-      return setSourceUris(sourceUris);
-    }
 
     /**
      * Sets the fully-qualified URIs that point to your data in Google Cloud Storage (e.g.
@@ -130,17 +118,6 @@ public class ExternalTableDefinition extends TableDefinition {
       return this;
     }
 
-    /**
-     * Sets the source format, and possibly some parsing options, of the external data. Supported
-     * formats are {@code CSV} and {@code NEWLINE_DELIMITED_JSON}.
-     *
-     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
-     *     Source Format</a>
-     */
-    @Deprecated
-    public Builder formatOptions(FormatOptions formatOptions) {
-      return setFormatOptions(formatOptions);
-    }
 
     /**
      * Sets the source format, and possibly some parsing options, of the external data. Supported
@@ -154,15 +131,6 @@ public class ExternalTableDefinition extends TableDefinition {
       return this;
     }
 
-    /**
-     * Sets the maximum number of bad records that BigQuery can ignore when reading data. If the
-     * number of bad records exceeds this value, an invalid error is returned in the job result.
-     * The default value is 0, which requires that all records are valid.
-     */
-    @Deprecated
-    public Builder maxBadRecords(Integer maxBadRecords) {
-      return setMaxBadRecords(maxBadRecords);
-    }
 
     /**
      * Sets the maximum number of bad records that BigQuery can ignore when reading data. If the
@@ -174,26 +142,12 @@ public class ExternalTableDefinition extends TableDefinition {
       return this;
     }
 
-    /**
-     * Sets whether BigQuery should allow extra values that are not represented in the table schema.
-     * If true, the extra values are ignored. If false, records with extra columns are treated as
-     * bad records, and if there are too many bad records, an invalid error is returned in the job
-     * result. The default value is false. The value set with {@link #formatOptions(FormatOptions)}
-     * property determines what BigQuery treats as an extra value.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">
-     *     Ignore Unknown Values</a>
-     */
-    @Deprecated
-    public Builder ignoreUnknownValues(Boolean ignoreUnknownValues) {
-      return setIgnoreUnknownValues(ignoreUnknownValues);
-    }
 
     /**
      * Sets whether BigQuery should allow extra values that are not represented in the table schema.
      * If true, the extra values are ignored. If false, records with extra columns are treated as
      * bad records, and if there are too many bad records, an invalid error is returned in the job
-     * result. The default value is false. The value set with {@link #formatOptions(FormatOptions)}
+     * result. The default value is false. The value set with {@link #setFormatOptions(FormatOptions)}
      * property determines what BigQuery treats as an extra value.
      *
      * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">
@@ -204,16 +158,6 @@ public class ExternalTableDefinition extends TableDefinition {
       return this;
     }
 
-    /**
-     * Sets compression type of the data source. By default no compression is assumed.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.compression">
-     *     Compression</a>
-     */
-    @Deprecated
-    public Builder compression(String compression) {
-      return setCompression(compression);
-    }
 
     /**
      * Sets compression type of the data source. By default no compression is assumed.
@@ -244,16 +188,6 @@ public class ExternalTableDefinition extends TableDefinition {
     this.sourceUris = builder.sourceUris;
   }
 
-  /**
-   * Returns the compression type of the data source.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.compression">
-   *     Compression</a>
-   */
-  @Deprecated
-  public String compression() {
-    return getCompression();
-  }
 
   /**
    * Returns the compression type of the data source.
@@ -269,7 +203,7 @@ public class ExternalTableDefinition extends TableDefinition {
    * Returns whether BigQuery should allow extra values that are not represented in the table
    * schema. If true, the extra values are ignored. If false, records with extra columns are treated
    * as bad records, and if there are too many bad records, an invalid error is returned in the job
-   * result. The default value is false. The value of {@link #formatOptions()} determines what
+   * result. The default value is false. The value of {@link #getFormatOptions()} determines what
    * BigQuery treats as an extra value.
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">
@@ -279,14 +213,6 @@ public class ExternalTableDefinition extends TableDefinition {
     return ignoreUnknownValues;
   }
 
-  /**
-   * Returns the maximum number of bad records that BigQuery can ignore when reading data. If the
-   * number of bad records exceeds this value, an invalid error is returned in the job result.
-   */
-  @Deprecated
-  public Integer maxBadRecords() {
-    return getMaxBadRecords();
-  }
 
   /**
    * Returns the maximum number of bad records that BigQuery can ignore when reading data. If the
@@ -296,18 +222,6 @@ public class ExternalTableDefinition extends TableDefinition {
     return maxBadRecords;
   }
 
-  /**
-   * Returns the fully-qualified URIs that point to your data in Google Cloud Storage. Each URI can
-   * contain one '*' wildcard character that must come after the bucket's name. Size limits
-   * related to load jobs apply to external data sources, plus an additional limit of 10 GB
-   * maximum size across all URIs.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
-   */
-  @Deprecated
-  public List<String> sourceUris() {
-    return getSourceUris();
-  }
 
   /**
    * Returns the fully-qualified URIs that point to your data in Google Cloud Storage. Each URI can
@@ -321,15 +235,6 @@ public class ExternalTableDefinition extends TableDefinition {
     return sourceUris;
   }
 
-  /**
-   * Returns the source format, and possibly some parsing options, of the external data. Supported
-   * formats are {@code CSV} and {@code NEWLINE_DELIMITED_JSON}.
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public <F extends FormatOptions> F formatOptions() {
-    return getFormatOptions();
-  }
 
   /**
    * Returns the source format, and possibly some parsing options, of the external data. Supported
@@ -406,25 +311,6 @@ public class ExternalTableDefinition extends TableDefinition {
     return externalConfigurationPb;
   }
 
-  /**
-   * Creates a builder for an ExternalTableDefinition object.
-   *
-   * @param sourceUris the fully-qualified URIs that point to your data in Google Cloud Storage.
-   *     Each URI can contain one '*' wildcard character that must come after the bucket's name.
-   *     Size limits related to load jobs apply to external data sources, plus an additional limit
-   *     of 10 GB maximum size across all URIs.
-   * @param schema the schema for the external data
-   * @param format the source format of the external data
-   * @return a builder for an ExternalTableDefinition object given source URIs, schema and format
-   *
-   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
-   *     Source Format</a>
-   */
-  @Deprecated
-  public static Builder builder(List<String> sourceUris, Schema schema, FormatOptions format) {
-    return newBuilder(sourceUris, schema, format);
-  }
 
   /**
    * Creates a builder for an ExternalTableDefinition object.
@@ -445,24 +331,6 @@ public class ExternalTableDefinition extends TableDefinition {
     return new Builder().setSourceUris(sourceUris).setSchema(schema).setFormatOptions(format);
   }
 
-  /**
-   * Creates a builder for an ExternalTableDefinition object.
-   *
-   * @param sourceUri a fully-qualified URI that points to your data in Google Cloud Storage. The
-   *     URI can contain one '*' wildcard character that must come after the bucket's name. Size
-   *     limits related to load jobs apply to external data sources.
-   * @param schema the schema for the external data
-   * @param format the source format of the external data
-   * @return a builder for an ExternalTableDefinition object given source URI, schema and format
-   *
-   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
-   *     Source Format</a>
-   */
-  @Deprecated
-  public static Builder builder(String sourceUri, Schema schema, FormatOptions format) {
-    return newBuilder(sourceUri, schema, format);
-  }
 
   /**
    * Creates a builder for an ExternalTableDefinition object.

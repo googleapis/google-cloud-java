@@ -89,18 +89,8 @@ public class ServiceOptionsTest {
           .setProjectId("project-id")
           .setRetryParams(RetryParams.noRetries())
           .build();
-  private static final TestServiceOptions DEPRECATED_OPTIONS =
-      TestServiceOptions.newBuilder()
-          .setCredentials(credentials)
-          .clock(TEST_CLOCK)
-          .host("host")
-          .projectId("project-id")
-          .retryParams(RetryParams.noRetries())
-          .build();
   private static final TestServiceOptions DEFAULT_OPTIONS =
       TestServiceOptions.newBuilder().setProjectId("project-id").build();
-  private static final TestServiceOptions DEPRECATED_DEFAULT_OPTIONS =
-      TestServiceOptions.newBuilder().projectId("project-id").build();
   private static final TestServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
   private static final String LIBRARY_NAME = "gcloud-java";
   private static final Pattern APPLICATION_NAME_PATTERN =
@@ -234,18 +224,6 @@ public class ServiceOptionsTest {
   public void testBuilderNullCredentials() {
     thrown.expect(NullPointerException.class);
     TestServiceOptions.newBuilder().setCredentials(null).build();
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertSame(credentials, DEPRECATED_OPTIONS.getCredentials());
-    assertSame(TEST_CLOCK, DEPRECATED_OPTIONS.clock());
-    assertEquals("host", DEPRECATED_OPTIONS.host());
-    assertEquals("project-id", DEPRECATED_OPTIONS.projectId());
-    assertSame(RetryParams.noRetries(), DEPRECATED_OPTIONS.retryParams());
-    assertSame(Clock.defaultClock(), DEPRECATED_DEFAULT_OPTIONS.clock());
-    assertEquals("https://www.googleapis.com", DEPRECATED_DEFAULT_OPTIONS.host());
-    assertSame(RetryParams.getDefaultInstance(), DEPRECATED_DEFAULT_OPTIONS.retryParams());
   }
 
   @Test

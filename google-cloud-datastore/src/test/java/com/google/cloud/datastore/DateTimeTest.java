@@ -34,24 +34,10 @@ public class DateTimeTest {
   }
 
   @Test
-  public void testTimestampMicrosecondsDepreated() throws Exception {
-    Calendar cal = Calendar.getInstance();
-    DateTime date = DateTime.copyFrom(cal);
-    assertEquals(cal.getTimeInMillis() * 1000, date.timestampMicroseconds());
-  }
-
-  @Test
   public void testTimestampMillis() throws Exception {
     Calendar cal = Calendar.getInstance();
     DateTime date = DateTime.copyFrom(cal);
     assertEquals(cal.getTimeInMillis(), date.getTimestampMillis());
-  }
-
-  @Test
-  public void testTimestampMillisDepreated() throws Exception {
-    Calendar cal = Calendar.getInstance();
-    DateTime date = DateTime.copyFrom(cal);
-    assertEquals(cal.getTimeInMillis(), date.timestampMillis());
   }
 
   @Test

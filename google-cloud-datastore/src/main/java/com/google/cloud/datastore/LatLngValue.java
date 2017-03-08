@@ -78,10 +78,6 @@ public final class LatLngValue extends Value<LatLng> {
     return new LatLngValue(value);
   }
 
-  @Deprecated
-  public static Builder builder(LatLng value) {
-    return newBuilder(value);
-  }
 
   public static Builder newBuilder(LatLng value) {
     return new Builder().set(value);

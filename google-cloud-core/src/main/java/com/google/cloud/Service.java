@@ -22,8 +22,6 @@ package com.google.cloud;
  * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
  */
 public interface Service<OptionsT extends ServiceOptions<?, ?, OptionsT>> {
-  @Deprecated
-  OptionsT options();
 
   OptionsT getOptions();
 }

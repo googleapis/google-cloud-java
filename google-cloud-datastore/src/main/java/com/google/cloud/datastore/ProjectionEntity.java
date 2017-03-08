@@ -55,7 +55,7 @@ public final class ProjectionEntity extends BaseEntity<Key> {
   @Override
   public DateTime getDateTime(String name) {
     Value<?> value = getValue(name);
-    if (value.meaning() == 18 && value instanceof LongValue) {
+    if (value.getMeaning() == 18 && value instanceof LongValue) {
       return new DateTime(getLong(name));
     }
     return ((Value<DateTime>) value).get();
@@ -75,10 +75,6 @@ public final class ProjectionEntity extends BaseEntity<Key> {
     return new Builder().fill(entityPb).build();
   }
 
-  @Deprecated
-  public static Builder builder(ProjectionEntity copyFrom) {
-    return newBuilder(copyFrom);
-  }
 
   public static Builder newBuilder(ProjectionEntity copyFrom) {
     return new Builder(copyFrom);

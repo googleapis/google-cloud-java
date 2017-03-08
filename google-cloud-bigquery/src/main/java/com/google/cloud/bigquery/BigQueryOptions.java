@@ -105,19 +105,11 @@ public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, B
     return baseEquals(other);
   }
 
-  @Deprecated
-  public static BigQueryOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   public static BigQueryOptions getDefaultInstance() {
     return newBuilder().build();
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();

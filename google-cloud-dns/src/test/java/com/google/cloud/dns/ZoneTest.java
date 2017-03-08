@@ -97,13 +97,6 @@ public class ZoneTest {
     assertEquals(dns, zone.getDns());
   }
 
-  @Test
-  public void testConstructorDeprecated() {
-    replay(dns);
-    assertEquals(ZONE_INFO.toPb(), zone.toPb());
-    assertNotNull(zone.dns());
-    assertEquals(dns, zone.dns());
-  }
 
   @Test
   public void deleteByNameAndFound() {
@@ -512,26 +505,5 @@ public class ZoneTest {
         .build();
     assertEquals(zone, builder.build());
   }
-
-  @Test
-  public void testBuilderDeprecated() {
-    // one for each build() call because it invokes a constructor
-    expect(dns.getOptions()).andReturn(OPTIONS).times(8);
-    replay(dns);
-    assertNotEquals(zone, zone.toBuilder()
-        .setGeneratedId(new BigInteger(zone.generatedId()).add(BigInteger.ONE).toString())
-        .build());
-    assertNotEquals(zone, zone.toBuilder().dnsName(zone.name() + "aaaa").build());
-    assertNotEquals(zone, zone.toBuilder().setNameServerSet(zone.nameServerSet() + "aaaa").build());
-    assertNotEquals(zone, zone.toBuilder().setNameServers(ImmutableList.of("nameserverpppp")).build());
-    assertNotEquals(zone, zone.toBuilder().dnsName(zone.dnsName() + "aaaa").build());
-    assertNotEquals(zone, zone.toBuilder().setCreationTimeMillis(zone.creationTimeMillis() + 1)
-        .build());
-    Zone.Builder builder = zone.toBuilder();
-    builder.setGeneratedId(ZONE_ID)
-        .dnsName("example.com")
-        .setCreationTimeMillis(123478946464L)
-        .build();
-    assertEquals(zone, builder.build());
-  }
 }
+

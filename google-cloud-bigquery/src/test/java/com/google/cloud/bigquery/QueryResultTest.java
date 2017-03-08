@@ -29,18 +29,14 @@ public class QueryResultTest {
   private static final String CURSOR = "cursor";
   private static final Field FIELD_SCHEMA1 =
       Field.newBuilder("StringField", Field.Type.string())
-          .setMode(Field.Mode.NULLABLE)
-          .setDescription("FieldDescription1")
-          .build();
+      .setMode(Field.Mode.NULLABLE)
+      .setDescription("FieldDescription1")
+      .build();
+
   private static final Schema SCHEMA = Schema.of(FIELD_SCHEMA1);
   private static final long TOTAL_ROWS = 42L;
   private static final QueryResult.QueryResultsPageFetcher FETCHER =
       new QueryResult.QueryResultsPageFetcher() {
-        @Override
-        @Deprecated
-        public QueryResult nextPage() {
-          return getNextPage();
-        }
 
         @Override
         public QueryResult getNextPage() {
@@ -78,21 +74,6 @@ public class QueryResultTest {
     assertEquals(null, QUERY_RESULT_INCOMPLETE.getNextPage());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(SCHEMA, QUERY_RESULT.schema());
-    assertEquals(TOTAL_ROWS, QUERY_RESULT.totalRows());
-    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESULT.totalBytesProcessed());
-    assertEquals(CACHE_HIT, QUERY_RESULT.cacheHit());
-    assertEquals(CURSOR, QUERY_RESULT.nextPageCursor());
-    assertEquals(null, QUERY_RESULT.nextPage());
-    assertEquals(null, QUERY_RESULT_INCOMPLETE.schema());
-    assertEquals(0L, QUERY_RESULT_INCOMPLETE.totalRows());
-    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESULT_INCOMPLETE.totalBytesProcessed());
-    assertEquals(false, QUERY_RESULT_INCOMPLETE.cacheHit());
-    assertEquals(null, QUERY_RESULT_INCOMPLETE.nextPageCursor());
-    assertEquals(null, QUERY_RESULT_INCOMPLETE.nextPage());
-  }
 
   @Test
   public void testEquals() {

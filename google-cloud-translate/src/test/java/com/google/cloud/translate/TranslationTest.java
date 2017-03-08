@@ -38,12 +38,6 @@ public class TranslationTest {
     compareTranslation(TRANSLATION, Translation.fromPb(TRANSLATION_PB));
   }
 
-  @Test
-  public void testFromPbDeprecated() {
-    assertEquals(TRANSLATED_TEXT, TRANSLATION.translatedText());
-    assertEquals(SOURCE_LANGUAGE, TRANSLATION.sourceLanguage());
-    compareTranslation(TRANSLATION, Translation.fromPb(TRANSLATION_PB));
-  }
 
   private void compareTranslation(Translation expected, Translation value) {
     assertEquals(expected, value);

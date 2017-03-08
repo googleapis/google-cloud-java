@@ -33,13 +33,6 @@ public final class JobId implements Serializable {
   private final String project;
   private final String job;
 
-  /**
-   * Returns project's user-defined id.
-   */
-  @Deprecated
-  public String project() {
-    return getProject();
-  }
 
   /**
    * Returns project's user-defined id.
@@ -48,13 +41,6 @@ public final class JobId implements Serializable {
     return project;
   }
 
-  /**
-   * Returns the job's user-defined id.
-   */
-  @Deprecated
-  public String job() {
-    return getJob();
-  }
 
   /**
    * Returns the job's user-defined id.

@@ -93,13 +93,6 @@ public abstract class JobConfiguration implements Serializable {
     this.type = builder.type;
   }
 
-  /**
-   * Returns the type of the job configuration.
-   */
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
 
   /**
    * Returns the type of the job configuration.

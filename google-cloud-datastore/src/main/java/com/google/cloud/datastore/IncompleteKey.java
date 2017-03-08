@@ -73,14 +73,6 @@ public class IncompleteKey extends BaseKey {
     return new IncompleteKey(projectId, namespace, path);
   }
 
-  /**
-   * Returns the key's parent.
-   */
-  @Override
-  @Deprecated
-  public Key parent() {
-    return getParent();
-  }
 
   /**
    * Returns the key's parent.
@@ -105,28 +97,16 @@ public class IncompleteKey extends BaseKey {
     return keyBuilder.addAncestors(ancestors.subList(0, ancestors.size() - 1)).build();
   }
 
-  @Deprecated
-  public static Builder builder(String projectId, String kind) {
-    return newBuilder(projectId, kind);
-  }
 
   public static Builder newBuilder(String projectId, String kind) {
     return new Builder(projectId, kind);
   }
 
-  @Deprecated
-  public static Builder builder(IncompleteKey copyFrom) {
-    return newBuilder(copyFrom);
-  }
 
   public static Builder newBuilder(IncompleteKey copyFrom) {
     return new Builder(copyFrom);
   }
 
-  @Deprecated
-  public static Builder builder(Key parent, String kind) {
-    return newBuilder(parent, kind);
-  }
 
   public static Builder newBuilder(Key parent, String kind) {
     return newBuilder(parent.getProjectId(), kind)

@@ -34,17 +34,6 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
       this.numAutoAllocatedIds = numAutoAllocatedIds;
     }
 
-    @Override
-    @Deprecated
-    public List<Key> generatedKeys() {
-      Iterator<com.google.datastore.v1.MutationResult> results =
-          response.getMutationResultsList().iterator();
-      List<Key> generated = new ArrayList<>(numAutoAllocatedIds);
-      for (int i = 0; i < numAutoAllocatedIds; i++) {
-        generated.add(Key.fromPb(results.next().getKey()));
-      }
-      return generated;
-    }
 
     @Override
     public List<Key> getGeneratedKeys() {
@@ -76,11 +65,6 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
     return new ResponseImpl(responsePb, toAddAutoId().size());
   }
 
-  @Override
-  @Deprecated
-  public Datastore datastore() {
-    return getDatastore();
-  }
 
   @Override
   public Datastore getDatastore() {

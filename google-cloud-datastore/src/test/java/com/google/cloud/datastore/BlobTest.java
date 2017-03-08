@@ -59,11 +59,6 @@ public class BlobTest {
     assertEquals(bytes2.length, blob2.getLength());
   }
 
-  @Test
-  public void testLengthDeprecated() throws Exception {
-    assertEquals(bytes1.length, blob1.length());
-    assertEquals(bytes2.length, blob2.length());
-  }
 
   @Test
   public void testToByteArray() throws Exception {

@@ -98,13 +98,6 @@ public final class QueryRequest implements Serializable {
 
     private Builder() {}
 
-    /**
-     * Sets the BigQuery query to be executed.
-     */
-    @Deprecated
-    public Builder query(String query) {
-      return setQuery(query);
-    }
 
     /**
      * Sets the BigQuery query to be executed.
@@ -196,16 +189,6 @@ public final class QueryRequest implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the maximum number of rows of data to return per page of results. Setting this flag to a
-     * small value such as 1000 and then paging through results might improve reliability when the
-     * query result set is large. In addition to this limit, responses are also limited to 10 MB.
-     * By default, there is no maximum row count, and only the byte limit applies.
-     */
-    @Deprecated
-    public Builder pageSize(Long pageSize) {
-      return setPageSize(pageSize);
-    }
 
     /**
      * Sets the maximum number of rows of data to return per page of results. Setting this flag to a
@@ -218,13 +201,6 @@ public final class QueryRequest implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the default dataset to assume for any unqualified table names in the query.
-     */
-    @Deprecated
-    public Builder defaultDataset(DatasetId defaultDataset) {
-      return setDefaultDataset(defaultDataset);
-    }
 
     /**
      * Sets the default dataset to assume for any unqualified table names in the query.
@@ -234,13 +210,6 @@ public final class QueryRequest implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the default dataset to assume for any unqualified table names in the query.
-     */
-    @Deprecated
-    public Builder defaultDataset(String defaultDataset) {
-      return setDefaultDataset(DatasetId.of(defaultDataset));
-    }
 
     /**
      * Sets the default dataset to assume for any unqualified table names in the query.
@@ -249,17 +218,6 @@ public final class QueryRequest implements Serializable {
       return setDefaultDataset(DatasetId.of(defaultDataset));
     }
 
-    /**
-     * Sets how long to wait for the query to complete, in milliseconds, before the request times
-     * out and returns. Note that this is only a timeout for the request, not the query. If the
-     * query takes longer to run than the timeout value, the call returns without any results and
-     * with the {@link QueryResponse#jobCompleted()} set to {@code false}. If not set, a wait time
-     * of 10000 milliseconds (10 seconds) is used.
-     */
-    @Deprecated
-    public Builder maxWaitTime(Long maxWaitTime) {
-      return setMaxWaitTime(maxWaitTime);
-    }
 
     /**
      * Sets how long to wait for the query to complete, in milliseconds, before the request times
@@ -273,15 +231,6 @@ public final class QueryRequest implements Serializable {
       return this;
     }
 
-    /**
-     * Sets whether the query has to be dry run or not. If set, the query is not executed. If the
-     * query is valid statistics are returned on how many bytes would be processed. If the query is
-     * invalid an error is returned. If not set the query is executed.
-     */
-    @Deprecated
-    public Builder dryRun(Boolean dryRun) {
-      return setDryRun(dryRun);
-    }
 
     /**
      * Sets whether the query has to be dry run or not. If set, the query is not executed. If the
@@ -293,17 +242,6 @@ public final class QueryRequest implements Serializable {
       return this;
     }
 
-    /**
-     * Sets whether to look for the result in the query cache. The query cache is a best-effort
-     * cache that will be flushed whenever tables in the query are modified. If not specified the
-     * query cache is used.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
-     */
-    @Deprecated
-    public Builder useQueryCache(Boolean useQueryCache) {
-      return setUseQueryCache(useQueryCache);
-    }
 
     /**
      * Sets whether to look for the result in the query cache. The query cache is a best-effort
@@ -317,16 +255,6 @@ public final class QueryRequest implements Serializable {
       return this;
     }
 
-    /**
-     * Sets whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
-     * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
-     * Standard SQL</a>. If not set, legacy SQL dialect is used. This property is experimental and
-     * might be subject to change.
-     */
-    @Deprecated
-    public Builder useLegacySql(Boolean useLegacySql) {
-      return setUseLegacySql(useLegacySql);
-    }
 
     /**
      * Sets whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
@@ -364,13 +292,6 @@ public final class QueryRequest implements Serializable {
     useLegacySql = builder.useLegacySql;
   }
 
-  /**
-   * Sets the BigQuery query to be executed.
-   */
-  @Deprecated
-  public String query() {
-    return getQuery();
-  }
 
   /**
    * Sets the BigQuery query to be executed.
@@ -393,13 +314,6 @@ public final class QueryRequest implements Serializable {
     return namedParameters;
   }
 
-  /**
-   * Returns the maximum number of rows of data to return per page of results.
-   */
-  @Deprecated
-  public Long pageSize() {
-    return getPageSize();
-  }
 
   /**
    * Returns the maximum number of rows of data to return per page of results.
@@ -408,13 +322,6 @@ public final class QueryRequest implements Serializable {
     return pageSize;
   }
 
-  /**
-   * Returns the default dataset to assume for any unqualified table names in the query.
-   */
-  @Deprecated
-  public DatasetId defaultDataset() {
-    return getDefaultDataset();
-  }
 
   /**
    * Returns the default dataset to assume for any unqualified table names in the query.
@@ -423,19 +330,6 @@ public final class QueryRequest implements Serializable {
     return defaultDataset;
   }
 
-  /**
-   * Returns how long to wait for the query to complete, in milliseconds, before the request times
-   * out and returns. Note that this is only a timeout for the request, not the query. If the
-   * query takes longer to run than the timeout value, the call returns without any results and
-   * with the {@link QueryResponse#jobCompleted()} set to {@code false}. You can call
-   * {@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)} to wait for the query
-   * to complete and read the results. If not set, a wait time of 10000 milliseconds (10 seconds)
-   * is used.
-   */
-  @Deprecated
-  public Long maxWaitTime() {
-    return getMaxWaitTime();
-  }
 
   /**
    * Returns how long to wait for the query to complete, in milliseconds, before the request times
@@ -573,13 +467,6 @@ public final class QueryRequest implements Serializable {
     return queryRequestPb;
   }
 
-  /**
-   * Creates a builder for a {@code QueryRequest} given the BigQuery SQL query to be executed.
-   */
-  @Deprecated
-  public static Builder builder(String query) {
-    return newBuilder(query);
-  }
 
   /**
    * Creates a builder for a {@code QueryRequest} given the BigQuery SQL query to be executed.

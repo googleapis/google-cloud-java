@@ -58,21 +58,6 @@ public class HttpRequestTest {
       .setCacheValidatedWithOriginServer(CACHE_VALIDATED_WITH_ORIGIN_SERVER)
       .setCacheFillBytes(CACHE_FILL_BYTES)
       .build();
-  private static final HttpRequest DEPRECATED_HTTP_REQUEST = HttpRequest.builder()
-      .requestMethod(REQUEST_METHOD)
-      .requestUrl(REQUEST_URL)
-      .requestSize(REQUEST_SIZE)
-      .status(STATUS)
-      .responseSize(REPONSE_SIZE)
-      .userAgent(USER_AGENT)
-      .remoteIp(REMOTE_IP)
-      .serverIp(SERVER_IP)
-      .referer(REFERER)
-      .cacheLookup(CACHE_LOOKUP)
-      .cacheHit(CACHE_HIT)
-      .cacheValidatedWithOriginServer(CACHE_VALIDATED_WITH_ORIGIN_SERVER)
-      .cacheFillBytes(CACHE_FILL_BYTES)
-      .build();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -94,23 +79,6 @@ public class HttpRequestTest {
     assertEquals(CACHE_FILL_BYTES, HTTP_REQUEST.getCacheFillBytes());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(REQUEST_METHOD, DEPRECATED_HTTP_REQUEST.requestMethod());
-    assertEquals(REQUEST_URL, DEPRECATED_HTTP_REQUEST.requestUrl());
-    assertEquals(REQUEST_SIZE, DEPRECATED_HTTP_REQUEST.requestSize());
-    assertEquals(STATUS, DEPRECATED_HTTP_REQUEST.status());
-    assertEquals(REPONSE_SIZE, DEPRECATED_HTTP_REQUEST.responseSize());
-    assertEquals(USER_AGENT, DEPRECATED_HTTP_REQUEST.userAgent());
-    assertEquals(REMOTE_IP, DEPRECATED_HTTP_REQUEST.remoteIp());
-    assertEquals(SERVER_IP, DEPRECATED_HTTP_REQUEST.serverIp());
-    assertEquals(REFERER, DEPRECATED_HTTP_REQUEST.referer());
-    assertEquals(CACHE_LOOKUP, DEPRECATED_HTTP_REQUEST.cacheLookup());
-    assertEquals(CACHE_HIT, DEPRECATED_HTTP_REQUEST.cacheHit());
-    assertEquals(CACHE_VALIDATED_WITH_ORIGIN_SERVER,
-        DEPRECATED_HTTP_REQUEST.cacheValidatedWithOriginServer());
-    assertEquals(CACHE_FILL_BYTES, DEPRECATED_HTTP_REQUEST.cacheFillBytes());
-  }
 
   @Test
   public void testBuilderDefaultValues() {

@@ -34,18 +34,6 @@ public class FormatOptionsTest {
     assertEquals(FormatOptions.AVRO, options.getType());
   }
 
-  @Test
-  @SuppressWarnings("deprecation")
-  public void testConstructorDeprecated() {
-    FormatOptions options = new FormatOptions(FormatOptions.CSV);
-    assertEquals(FormatOptions.CSV, options.type());
-    options = new FormatOptions(FormatOptions.JSON);
-    assertEquals(FormatOptions.JSON, options.type());
-    options = new FormatOptions(FormatOptions.DATASTORE_BACKUP);
-    assertEquals(FormatOptions.DATASTORE_BACKUP, options.type());
-    options = new FormatOptions(FormatOptions.AVRO);
-    assertEquals(FormatOptions.AVRO, options.type());
-  }
 
   @Test
   public void testFactoryMethods() {

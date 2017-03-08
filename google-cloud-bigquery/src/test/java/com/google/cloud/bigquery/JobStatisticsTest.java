@@ -109,11 +109,7 @@ public class JobStatisticsTest {
       .build();
 
   @Test
-  public void testBuilderDeprecated() {
-    assertEquals(CREATION_TIME, COPY_STATISTICS.getCreationTime());
-    assertEquals(START_TIME, COPY_STATISTICS.getStartTime());
-    assertEquals(END_TIME, COPY_STATISTICS.getEndTime());
-
+  public void testBuilder() {
     assertEquals(CREATION_TIME, EXTRACT_STATISTICS.getCreationTime());
     assertEquals(START_TIME, EXTRACT_STATISTICS.getStartTime());
     assertEquals(END_TIME, EXTRACT_STATISTICS.getEndTime());
@@ -153,53 +149,6 @@ public class JobStatisticsTest {
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getTotalBytesBilled());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getTotalBytesProcessed());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getQueryPlan());
-  }
-
-  @Test
-  public void testBuilder() {
-    assertEquals(CREATION_TIME, COPY_STATISTICS.creationTime());
-    assertEquals(START_TIME, COPY_STATISTICS.startTime());
-    assertEquals(END_TIME, COPY_STATISTICS.endTime());
-
-    assertEquals(CREATION_TIME, EXTRACT_STATISTICS.creationTime());
-    assertEquals(START_TIME, EXTRACT_STATISTICS.startTime());
-    assertEquals(END_TIME, EXTRACT_STATISTICS.endTime());
-    assertEquals(FILE_COUNT, EXTRACT_STATISTICS.destinationUriFileCounts());
-
-    assertEquals(CREATION_TIME, LOAD_STATISTICS.creationTime());
-    assertEquals(START_TIME, LOAD_STATISTICS.startTime());
-    assertEquals(END_TIME, LOAD_STATISTICS.endTime());
-    assertEquals(INPUT_BYTES, LOAD_STATISTICS.inputBytes());
-    assertEquals(INPUT_FILES, LOAD_STATISTICS.inputFiles());
-    assertEquals(OUTPUT_BYTES, LOAD_STATISTICS.outputBytes());
-    assertEquals(OUTPUT_ROWS, LOAD_STATISTICS.outputRows());
-
-    assertEquals(CREATION_TIME, QUERY_STATISTICS.creationTime());
-    assertEquals(START_TIME, QUERY_STATISTICS.startTime());
-    assertEquals(END_TIME, QUERY_STATISTICS.endTime());
-    assertEquals(BILLING_TIER, QUERY_STATISTICS.billingTier());
-    assertEquals(CACHE_HIT, QUERY_STATISTICS.cacheHit());
-    assertEquals(TOTAL_BYTES_BILLED, QUERY_STATISTICS.totalBytesBilled());
-    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.totalBytesProcessed());
-    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.totalBytesProcessed());
-    assertEquals(QUERY_PLAN, QUERY_STATISTICS.queryPlan());
-
-    assertEquals(CREATION_TIME, LOAD_STATISTICS_INCOMPLETE.creationTime());
-    assertEquals(START_TIME, LOAD_STATISTICS_INCOMPLETE.startTime());
-    assertEquals(END_TIME, LOAD_STATISTICS_INCOMPLETE.endTime());
-    assertEquals(INPUT_BYTES, LOAD_STATISTICS_INCOMPLETE.inputBytes());
-    assertEquals(INPUT_FILES, LOAD_STATISTICS_INCOMPLETE.inputFiles());
-    assertEquals(null, LOAD_STATISTICS_INCOMPLETE.outputBytes());
-    assertEquals(null, LOAD_STATISTICS_INCOMPLETE.outputRows());
-
-    assertEquals(CREATION_TIME, QUERY_STATISTICS_INCOMPLETE.creationTime());
-    assertEquals(START_TIME, QUERY_STATISTICS_INCOMPLETE.startTime());
-    assertEquals(END_TIME, QUERY_STATISTICS_INCOMPLETE.endTime());
-    assertEquals(BILLING_TIER, QUERY_STATISTICS_INCOMPLETE.billingTier());
-    assertEquals(CACHE_HIT, QUERY_STATISTICS_INCOMPLETE.cacheHit());
-    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.totalBytesBilled());
-    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.totalBytesProcessed());
-    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.queryPlan());
   }
 
   @Test

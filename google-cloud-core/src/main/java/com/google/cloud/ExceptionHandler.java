@@ -87,16 +87,6 @@ public final class ExceptionHandler implements Serializable {
     private Builder() {}
 
 
-    /**
-     * Adds the exception handler interceptors. Call order will be maintained.
-     *
-     * @param interceptors the interceptors for this exception handler
-     * @return the Builder for chaining
-     */
-    @Deprecated
-    public Builder interceptor(Interceptor... interceptors) {
-      return addInterceptors(interceptors);
-    }
 
     /**
      * Adds the exception handler interceptors. Call order will be maintained.
@@ -243,19 +233,11 @@ public final class ExceptionHandler implements Serializable {
     }
   }
 
-  @Deprecated
-  public Set<Class<? extends Exception>> retriableExceptions() {
-    return getRetriableExceptions();
-  }
 
   public Set<Class<? extends Exception>> getRetriableExceptions() {
     return retriableExceptions;
   }
 
-  @Deprecated
-  public Set<Class<? extends Exception>> nonRetriableExceptions() {
-    return nonRetriableExceptions;
-  }
 
   public Set<Class<? extends Exception>> getNonRetriableExceptions() {
     return nonRetriableExceptions;
@@ -301,13 +283,6 @@ public final class ExceptionHandler implements Serializable {
         && Objects.equals(retryInfo, other.retryInfo);
   }
 
-  /**
-   * Returns an instance which retry any checked exception and abort on any runtime exception.
-   */
-  @Deprecated
-  public static ExceptionHandler defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns an instance which retry any checked exception and abort on any runtime exception.
@@ -316,10 +291,6 @@ public final class ExceptionHandler implements Serializable {
     return DEFAULT_INSTANCE;
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();

@@ -53,6 +53,7 @@ import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageBatch;
 import com.google.cloud.storage.StorageBatchResult;
+import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 
 import java.io.ByteArrayInputStream;
@@ -100,7 +101,7 @@ public class StorageSnippets {
     // [START createBucketWithStorageClassAndLocation]
     Bucket bucket = storage.create(BucketInfo.newBuilder(bucketName)
         // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
-        .setStorageClass("COLDLINE")
+        .setStorageClass(StorageClass.COLDLINE)
         // Possible values: http://g.co/cloud/storage/docs/bucket-locations#location-mr
         .setLocation("asia")
         .build());

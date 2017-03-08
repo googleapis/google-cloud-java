@@ -60,13 +60,6 @@ public abstract class WaitForOption implements Serializable {
       this.unit = unit;
     }
 
-    /**
-     * Returns the checking period.
-     */
-    @Deprecated
-    public long period() {
-      return getPeriod();
-    }
 
     /**
      * Returns the checking period.
@@ -75,13 +68,6 @@ public abstract class WaitForOption implements Serializable {
       return period;
     }
 
-    /**
-     * Returns the time unit for {@link #getPeriod()}.
-     */
-    @Deprecated
-    public TimeUnit unit() {
-      return getUnit();
-    }
 
     /**
      * Returns the time unit for {@link #getPeriod()}.
@@ -152,13 +138,6 @@ public abstract class WaitForOption implements Serializable {
       this.timeoutMillis = timeoutMillis;
     }
 
-    /**
-     * Returns the timeout in milliseconds.
-     */
-    @Deprecated
-    public long timeoutMillis() {
-      return getTimeoutMillis();
-    }
 
     /**
      * Returns the timeout in milliseconds.

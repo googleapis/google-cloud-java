@@ -84,13 +84,6 @@ public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, Stor
     return SCOPES;
   }
 
-  /**
-   * Returns a default {@code StorageOptions} instance.
-   */
-  @Deprecated
-  public static StorageOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns a default {@code StorageOptions} instance.
@@ -115,10 +108,6 @@ public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, Stor
     return obj instanceof StorageOptions && baseEquals((StorageOptions) obj);
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();
