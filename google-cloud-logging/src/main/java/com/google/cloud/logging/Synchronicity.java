@@ -16,7 +16,7 @@
 
 package com.google.cloud.logging;
 
-public enum WriteLogMethod {
+public enum Synchronicity {
   SYNC,
   ASYNC,
 }

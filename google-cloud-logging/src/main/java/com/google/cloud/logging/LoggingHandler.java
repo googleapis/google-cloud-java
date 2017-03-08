@@ -83,8 +83,8 @@ import com.google.cloud.logging.Logging.WriteOption;
  *     {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
  * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
  *     creating the default {@link MonitoredResource} (defaults to "global").
- * <li>{@code com.google.cloud.logging.WriteLogMethod} the type of write method to use to write
- *     logs to the Stackdriver Logging service (defaults to {@link WriteLogMethod#ASYNC}).
+ * <li>{@code com.google.cloud.logging.Synchronicity} the synchronicity of the write method to use
+ *     to write logs to the Stackdriver Logging service (defaults to {@link Synchronicity#ASYNC}).
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
@@ -108,7 +108,7 @@ public class LoggingHandler extends Handler {
   private volatile Logging logging;
   private Level flushLevel;
   private long flushSize;
-  private WriteLogMethod writeLogMethod;
+  private Synchronicity synchronicity;
   private final List<Enhancer> enhancers;
 
   /**
@@ -172,8 +172,8 @@ public class LoggingHandler extends Handler {
       this.options = options != null ? options : LoggingOptions.getDefaultInstance();
       this.flushLevel = helper.getLevelProperty(className + ".flushLevel", LoggingLevel.ERROR);
       this.flushSize = helper.getLongProperty(className + ".flushSize", 1L);
-      this.writeLogMethod =
-          helper.getWriteLogMethodProperty(className + ".writeLogMethod", WriteLogMethod.ASYNC);
+      this.synchronicity =
+          helper.getSynchronicityProperty(className + ".synchronicity", Synchronicity.ASYNC);
       setLevel(helper.getLevelProperty(className + ".level", Level.INFO));
       setFilter(helper.getFilterProperty(className + ".filter", null));
       setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
@@ -301,13 +301,13 @@ public class LoggingHandler extends Handler {
       }
       return Collections.emptyList();
     }
-    
-    WriteLogMethod getWriteLogMethodProperty(String name, WriteLogMethod defaultValue) {
-      String writeLogMethod = manager.getProperty(name);
+
+    Synchronicity getSynchronicityProperty(String name, Synchronicity defaultValue) {
+      String synchronicity = manager.getProperty(name);
       try {
-        return WriteLogMethod.valueOf(writeLogMethod);
+        return Synchronicity.valueOf(synchronicity);
       } catch (Exception ex) {
-        // If we cannot create the WriteLogMethod we fall back to default value
+        // If we cannot create the Synchronicity we fall back to default value
       }
       return defaultValue;
     }
@@ -434,7 +434,7 @@ public class LoggingHandler extends Handler {
    * how entries should be written.
    */
   void write(List<LogEntry> entries, WriteOption... options) {
-    switch (this.writeLogMethod) {
+    switch (this.synchronicity) {
       case SYNC:
         getLogging().write(entries, options);
         break;
@@ -507,6 +507,15 @@ public class LoggingHandler extends Handler {
   public synchronized long setFlushSize(long flushSize) {
     this.flushSize = flushSize;
     return flushSize;
+  }
+
+  /**
+   * Sets the synchronicity of the write method used to write logs to the Stackdriver Logging
+   * service. Defaults to {@link Synchronicity#ASYNC}.
+   */
+  public synchronized Synchronicity setSynchronicity(Synchronicity synchronicity) {
+    this.synchronicity = synchronicity;
+    return synchronicity;
   }
 
   /**

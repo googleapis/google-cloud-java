@@ -501,13 +501,6 @@ public abstract class BaseSystemTest {
   @Test
   public void testSyncLoggingHandler() throws InterruptedException {
     String logName = formatForTest("test-sync-logging-handler");
-    try {
-      LogManager.getLogManager().readConfiguration(
-          new ByteArrayInputStream(
-              "com.google.cloud.logging.LoggingHandler.writeLogMethod=SYNC".getBytes()));
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
     LoggingOptions options = logging().getOptions();
     MonitoredResource resource = MonitoredResource.of("gce_instance",
         ImmutableMap.of("project_id", options.getProjectId(),
@@ -515,6 +508,7 @@ public abstract class BaseSystemTest {
             "zone", "us-central1-a"));
     LoggingHandler handler = new LoggingHandler(logName, options, resource);
     handler.setLevel(Level.WARNING);
+    handler.setSynchronicity(Synchronicity.SYNC);
     Logger logger = Logger.getLogger(getClass().getName());
     logger.addHandler(handler);
     logger.setLevel(Level.WARNING);

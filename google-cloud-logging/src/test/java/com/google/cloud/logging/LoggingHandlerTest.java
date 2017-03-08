@@ -366,15 +366,9 @@ public class LoggingHandlerTest {
     logging.write(ImmutableList.of(entry), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
     EasyMock.replay(options, logging);
-    try {
-      LogManager.getLogManager().readConfiguration(
-          new ByteArrayInputStream(
-              "com.google.cloud.logging.LoggingHandler.writeLogMethod=SYNC".getBytes()));
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
+    handler.setSynchronicity(Synchronicity.SYNC);
     handler.setFormatter(new TestFormatter());
     LogRecord record = new LogRecord(Level.FINEST, MESSAGE);
     record.setMillis(123456789L);
