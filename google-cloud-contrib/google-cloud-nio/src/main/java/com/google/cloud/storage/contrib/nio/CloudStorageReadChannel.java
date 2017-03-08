@@ -42,11 +42,11 @@ import javax.annotation.concurrent.ThreadSafe;
 @ThreadSafe
 final class CloudStorageReadChannel implements SeekableByteChannel {
 
+  private final Storage gcsStorage;
+  private final BlobId file;
   private ReadChannel channel;
   private long position;
   private long size;
-  private Storage gcsStorage;
-  private BlobId file;
   // max # of times we may reopen the file
   private final int maxReopen;
   // how many times we re-opened the file
@@ -109,29 +109,23 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
         } catch (StorageException exs) {
           // this error isn't marked as retryable since the channel is closed;
           // but here at this higher level we can retry it.
-          if (exs.getMessage().contains("Connection closed prematurely")) {
-            if (reopens < maxReopen) {
-              reopens++;
-              retryDelay(reopens);
-              innerOpen();
-              continue;
-            }
-          } else if (exs.getCode() == 500) {
+          if (exs.getMessage().contains("Connection closed prematurely") && reopens < maxReopen) {
+            reopens++;
+            retryDelay(reopens);
+            innerOpen();
+            continue;
+          } else if (exs.getCode() == 500 && retries < maxRetries) {
             // server error. Not retryable yet retrying works in my experience.
-            if (retries < maxRetries) {
-              retries++;
-              retryDelay(retries);
-              continue;
-            }
-          } else if (exs.getCode() == 503) {
+            retries++;
+            retryDelay(retries);
+            continue;
+          } else if (exs.getCode() == 503 && retries < maxRetries) {
             // server temporarily unavailable. Marked not retriable,
             // yet retrying works in my experience.
-            if (retries < maxRetries) {
-                retries++;
-                // wait a bit more since this error suggests the server's busy
-                retryDelay(retries + 1);
-                continue;
-            }
+            retries++;
+            // wait a bit more since this error suggests the server's busy
+            retryDelay(retries + 1);
+            continue;
           }
           throw exs;
         }
