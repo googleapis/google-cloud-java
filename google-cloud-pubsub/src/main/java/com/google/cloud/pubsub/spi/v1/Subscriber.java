@@ -189,7 +189,7 @@ public class Subscriber {
    *   }
    * }, executor);
    * subscriber.startAsync();
-   * 
+   *
    * // Wait for a stop signal.
    * done.get();
    * subscriber.stopAsync().awaitTerminated();
@@ -466,9 +466,12 @@ public class Subscriber {
             new Runnable() {
               @Override
               public void run() {
-                subscriber.startAsync().awaitRunning();
-                subscribersStarting.countDown();
                 subscriber.addListener(connectionsListener, executor);
+                try {
+                  subscriber.startAsync().awaitRunning();
+                } finally {
+                  subscribersStarting.countDown();
+                }
               }
             });
       }
