@@ -18,7 +18,6 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.TransportOptions;
 import io.grpc.ManagedChannel;
 import io.grpc.netty.NettyChannelBuilder;

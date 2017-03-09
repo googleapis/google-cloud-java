@@ -24,13 +24,9 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.GrpcTransportOptions.DefaultExecutorFactory;
 import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
-import com.google.cloud.spi.ServiceRpcFactory;
-
+import java.util.concurrent.ScheduledExecutorService;
 import org.easymock.EasyMock;
 import org.junit.Test;
-
-import java.util.Set;
-import java.util.concurrent.ScheduledExecutorService;
 
 public class GrpcTransportOptionsTest {
 

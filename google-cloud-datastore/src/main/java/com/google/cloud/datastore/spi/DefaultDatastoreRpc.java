@@ -19,9 +19,7 @@ package com.google.cloud.datastore.spi;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
-import com.google.auth.Credentials;
 import com.google.cloud.HttpTransportOptions;
-import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.datastore.v1.AllocateIdsRequest;
@@ -36,7 +34,6 @@ import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
-
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URL;

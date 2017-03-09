@@ -42,10 +42,8 @@ import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
 import com.google.cloud.HttpTransportOptions;
-import com.google.cloud.TransportOptions;
 import com.google.cloud.dns.DnsException;
 import com.google.cloud.dns.DnsOptions;
-
 import java.io.IOException;
 import java.util.Map;
 

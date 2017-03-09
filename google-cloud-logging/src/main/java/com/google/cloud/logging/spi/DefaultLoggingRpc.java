@@ -29,7 +29,6 @@ import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.NoCredentials;
-import com.google.cloud.TransportOptions;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.spi.v2.ConfigClient;

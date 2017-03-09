@@ -23,12 +23,8 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.HttpTransportOptions.DefaultHttpTransportFactory;
-import com.google.cloud.spi.ServiceRpcFactory;
-
 import org.easymock.EasyMock;
 import org.junit.Test;
-
-import java.util.Set;
 
 public class HttpTransportOptionsTest {
 
