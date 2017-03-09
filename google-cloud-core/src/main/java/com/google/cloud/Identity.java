@@ -78,7 +78,22 @@ public final class Identity implements Serializable {
     /**
      * Represents all the users of a Google Apps domain name.
      */
-    DOMAIN
+    DOMAIN,
+    
+    /**
+     * Represents owners of a Google Cloud Platform project.
+     */
+    PROJECT_OWNER,
+    
+    /**
+     * Represents editors of a Google Cloud Platform project.
+     */
+    PROJECT_EDITOR,
+    
+    /**
+     * Represents viewers of a Google Cloud Platform project.
+     */
+    PROJECT_VIEWER
   }
 
   private Identity(Type type, String value) {
@@ -161,6 +176,30 @@ public final class Identity implements Serializable {
   public static Identity domain(String domain) {
     return new Identity(Type.DOMAIN, checkNotNull(domain));
   }
+  
+  /**
+   * Returns a new project owner identity.
+   * @param projectId A Google Cloud Platform project ID. For example, <I>my-sample-project</I>.
+   */
+  public static Identity projectOwner(String projectId) {
+    return new Identity(Type.PROJECT_OWNER, checkNotNull(projectId));
+  }
+  
+  /**
+   * Returns a new project editor identity.
+   * @param projectId A Google Cloud Platform project ID. For example, <I>my-sample-project</I>.
+   */
+  public static Identity projectEditor(String projectId) {
+    return new Identity(Type.PROJECT_EDITOR, checkNotNull(projectId));
+  }
+  
+  /**
+   * Returns a new project viewer identity.
+   * @param projectId A Google Cloud Platform project ID. For example, <I>my-sample-project</I>.
+   */
+  public static Identity projectViewer(String projectId) {
+    return new Identity(Type.PROJECT_VIEWER, checkNotNull(projectId));
+  }
 
   @Override
   public String toString() {
@@ -199,6 +238,12 @@ public final class Identity implements Serializable {
         return "group:" + value;
       case DOMAIN:
         return "domain:" + value;
+      case PROJECT_OWNER:
+        return "projectOwner:" + value;
+      case PROJECT_EDITOR:
+        return "projectEditor:" + value;
+      case PROJECT_VIEWER:
+        return "projectViewer:" + value;
       default:
         throw new IllegalStateException("Unexpected identity type: " + type);
     }
@@ -224,6 +269,12 @@ public final class Identity implements Serializable {
         return Identity.group(info[1]);
       case DOMAIN:
         return Identity.domain(info[1]);
+      case PROJECT_OWNER:
+        return Identity.projectOwner(info[1]);
+      case PROJECT_EDITOR:
+        return Identity.projectEditor(info[1]);
+      case PROJECT_VIEWER:
+        return Identity.projectViewer(info[1]);
       default:
         throw new IllegalStateException("Unexpected identity type " + type);
     }
