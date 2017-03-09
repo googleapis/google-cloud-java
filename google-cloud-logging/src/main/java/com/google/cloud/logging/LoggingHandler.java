@@ -21,7 +21,6 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -83,6 +82,8 @@ import java.util.logging.SimpleFormatter;
  *     a {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
  * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
  *     creating the default {@link MonitoredResource} (defaults to "global").
+ * <li>{@code com.google.cloud.logging.Synchronicity} the synchronicity of the write method to use
+ *     to write logs to the Stackdriver Logging service (defaults to {@link Synchronicity#ASYNC}).
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
@@ -106,6 +107,7 @@ public class LoggingHandler extends Handler {
   private volatile Logging logging;
   private Level flushLevel;
   private long flushSize;
+  private Synchronicity synchronicity;
   private final List<Enhancer> enhancers;
 
   /**
@@ -169,6 +171,8 @@ public class LoggingHandler extends Handler {
       this.options = options != null ? options : LoggingOptions.getDefaultInstance();
       this.flushLevel = helper.getLevelProperty(className + ".flushLevel", LoggingLevel.ERROR);
       this.flushSize = helper.getLongProperty(className + ".flushSize", 1L);
+      this.synchronicity =
+          helper.getSynchronicityProperty(className + ".synchronicity", Synchronicity.ASYNC);
       setLevel(helper.getLevelProperty(className + ".level", Level.INFO));
       setFilter(helper.getFilterProperty(className + ".filter", null));
       setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
@@ -296,6 +300,16 @@ public class LoggingHandler extends Handler {
       }
       return Collections.emptyList();
     }
+
+    Synchronicity getSynchronicityProperty(String name, Synchronicity defaultValue) {
+      String synchronicity = manager.getProperty(name);
+      try {
+        return Synchronicity.valueOf(synchronicity);
+      } catch (Exception ex) {
+        // If we cannot create the Synchronicity we fall back to default value
+      }
+      return defaultValue;
+    }
   }
 
   /**
@@ -419,7 +433,15 @@ public class LoggingHandler extends Handler {
    * how entries should be written.
    */
   void write(List<LogEntry> entries, WriteOption... options) {
-    getLogging().writeAsync(entries, options);
+    switch (this.synchronicity) {
+      case SYNC:
+        getLogging().write(entries, options);
+        break;
+      case ASYNC:
+      default:
+        getLogging().writeAsync(entries, options);
+        break;
+    }
   }
 
   @Override
@@ -476,6 +498,11 @@ public class LoggingHandler extends Handler {
     return flushLevel;
   }
 
+  /** Get the flush log level. */
+  public Level getFlushLevel() {
+    return this.flushLevel;
+  }
+
   /**
    * Sets the maximum size of the log buffer. Once the maximum size of the buffer is reached, logs
    * are transmitted to the Stackdriver Logging service. If not set, a log is sent to the service as
@@ -484,6 +511,28 @@ public class LoggingHandler extends Handler {
   public synchronized long setFlushSize(long flushSize) {
     this.flushSize = flushSize;
     return flushSize;
+  }
+
+  /** Get the maximum size of the log buffer. */
+  public long getFlushSize() {
+    return this.flushSize;
+  }
+
+  /**
+   * Sets the synchronicity of the write method used to write logs to the Stackdriver Logging
+   * service. Defaults to {@link Synchronicity#ASYNC}.
+   */
+  public synchronized Synchronicity setSynchronicity(Synchronicity synchronicity) {
+    this.synchronicity = synchronicity;
+    return synchronicity;
+  }
+
+  /**
+   * Get the synchronicity of the write method used to write logs to the Stackdriver Logging
+   * service.
+   */
+  public Synchronicity getSynchronicity() {
+    return this.synchronicity;
   }
 
   /**

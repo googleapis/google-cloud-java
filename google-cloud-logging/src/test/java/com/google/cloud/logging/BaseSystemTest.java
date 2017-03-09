@@ -40,17 +40,15 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.protobuf.Any;
 import com.google.protobuf.StringValue;
-
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.rules.Timeout;
-
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.rules.Timeout;
 
 /**
  * A base class for system tests. This class can be extended to run system tests in different
@@ -497,15 +495,16 @@ public abstract class BaseSystemTest {
   }
 
   @Test
-  public void testAsyncLoggingHandler() throws InterruptedException {
-    String logName = formatForTest("test-async-logging-handler");
+  public void testSyncLoggingHandler() throws InterruptedException {
+    String logName = formatForTest("test-sync-logging-handler");
     LoggingOptions options = logging().getOptions();
     MonitoredResource resource = MonitoredResource.of("gce_instance",
         ImmutableMap.of("project_id", options.getProjectId(),
             "instance_id", "instance",
             "zone", "us-central1-a"));
-    LoggingHandler handler = new AsyncLoggingHandler(logName, options, resource);
+    LoggingHandler handler = new LoggingHandler(logName, options, resource);
     handler.setLevel(Level.WARNING);
+    handler.setSynchronicity(Synchronicity.SYNC);
     Logger logger = Logger.getLogger(getClass().getName());
     logger.addHandler(handler);
     logger.setLevel(Level.WARNING);
