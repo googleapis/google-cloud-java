@@ -69,11 +69,9 @@ import com.google.api.services.compute.model.Tags;
 import com.google.api.services.compute.model.Zone;
 import com.google.api.services.compute.model.ZoneList;
 import com.google.cloud.HttpTransportOptions;
-import com.google.cloud.TransportOptions;
 import com.google.cloud.compute.ComputeException;
 import com.google.cloud.compute.ComputeOptions;
 import com.google.common.collect.ImmutableList;
-
 import java.io.IOException;
 import java.util.Map;
 
