@@ -483,7 +483,7 @@ public class LoggingHandlerTest {
     assertEquals(LoggingLevel.CRITICAL, handler.getFlushLevel());
     assertEquals(Synchronicity.SYNC, handler.getSynchronicity());
 
-    LogManager.getLogManager().readConfiguration();
+    LogManager.getLogManager().reset();
   }
 
   @Test
