@@ -498,6 +498,11 @@ public class LoggingHandler extends Handler {
     return flushLevel;
   }
 
+  /** Get the flush log level. */
+  public Level getFlushLevel() {
+    return this.flushLevel;
+  }
+
   /**
    * Sets the maximum size of the log buffer. Once the maximum size of the buffer is reached, logs
    * are transmitted to the Stackdriver Logging service. If not set, a log is sent to the service as
@@ -508,6 +513,11 @@ public class LoggingHandler extends Handler {
     return flushSize;
   }
 
+  /** Get the maximum size of the log buffer. */
+  public long getFlushSize() {
+    return this.flushSize;
+  }
+
   /**
    * Sets the synchronicity of the write method used to write logs to the Stackdriver Logging
    * service. Defaults to {@link Synchronicity#ASYNC}.
@@ -515,6 +525,14 @@ public class LoggingHandler extends Handler {
   public synchronized Synchronicity setSynchronicity(Synchronicity synchronicity) {
     this.synchronicity = synchronicity;
     return synchronicity;
+  }
+
+  /**
+   * Get the synchronicity of the write method used to write logs to the Stackdriver Logging
+   * service.
+   */
+  public Synchronicity getSynchronicity() {
+    return this.synchronicity;
   }
 
   /**
