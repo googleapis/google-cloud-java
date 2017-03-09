@@ -202,7 +202,7 @@ public class TaskList {
    * Exercises the methods defined in this class.
    *
    * <p>Assumes that you are authenticated using the Google Cloud SDK (using
-   * {@code gcloud auth login}).
+   * {@code gcloud auth application-default login}).
    */
   public static void main(String[] args) throws Exception {
     TaskList taskList = new TaskList();
