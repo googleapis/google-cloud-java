@@ -21,7 +21,7 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
-
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -97,6 +97,8 @@ public class LoggingHandler extends Handler {
   private static final String HANDLERS_PROPERTY = "handlers";
   private static final String ROOT_LOGGER_NAME = "";
   private static final String[] NO_HANDLERS = new String[0];
+  private static final String LEVEL_NAME_KEY = "levelName";
+  private static final String LEVEL_VALUE_KEY = "levelValue";
 
   private static final ThreadLocal<Boolean> inPublishCall = new ThreadLocal<>();
 
@@ -106,6 +108,7 @@ public class LoggingHandler extends Handler {
   private volatile Logging logging;
   private Level flushLevel;
   private long flushSize;
+  private final Level nativeLevel;
   private final List<Enhancer> enhancers;
 
   /**
@@ -169,14 +172,29 @@ public class LoggingHandler extends Handler {
       this.options = options != null ? options : LoggingOptions.getDefaultInstance();
       this.flushLevel = helper.getLevelProperty(className + ".flushLevel", LoggingLevel.ERROR);
       this.flushSize = helper.getLongProperty(className + ".flushSize", 1L);
-      setLevel(helper.getLevelProperty(className + ".level", Level.INFO));
+
+      Level level = helper.getLevelProperty(className + ".level", Level.INFO);
+      setLevel(level);
+      nativeLevel = level;
+
       setFilter(helper.getFilterProperty(className + ".filter", null));
       setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
       String logName = firstNonNull(log, helper.getProperty(className + ".log", "java.log"));
       this.enhancers = enhancers != null ? enhancers : helper.getEnhancerProperty(className + ".enhancers");
       String resourceType = helper.getProperty(className + ".resourceType", "global");
       MonitoredResource resource = monitoredResource != null ? monitoredResource : getDefaultResource(resourceType);
-      writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
+
+      writeOptions =
+          new WriteOption[] {
+            WriteOption.logName(logName),
+            WriteOption.resource(resource),
+            WriteOption.labels(
+                ImmutableMap.of(
+                    LEVEL_NAME_KEY,
+                    nativeLevel.getName(),
+                    LEVEL_VALUE_KEY,
+                    nativeLevel.intValue() + ""))
+          };
     } catch (Exception ex) {
       reportError(null, ex, ErrorManager.OPEN_FAILURE);
       throw ex;
@@ -223,7 +241,7 @@ public class LoggingHandler extends Handler {
     return builder.build();
   }
 
-  private static class LogConfigHelper {
+  static class LogConfigHelper {
 
     private final LogManager manager = LogManager.getLogManager();
 
@@ -356,15 +374,18 @@ public class LoggingHandler extends Handler {
   }
 
   private LogEntry entryFor(LogRecord record) {
-    String payload;
     try {
-      payload = getFormatter().format(record);
+      String payload = getFormatter().format(record);
       Level level = record.getLevel();
       LogEntry.Builder builder = LogEntry.newBuilder(Payload.StringPayload.of(payload))
-          .addLabel("levelName", level.getName())
-          .addLabel("levelValue", String.valueOf(level.intValue()))
           .setTimestamp(record.getMillis())
           .setSeverity(severityFor(level));
+
+      if (!nativeLevel.equals(level)) {
+        builder
+            .addLabel("levelName", level.getName())
+            .addLabel("levelValue", String.valueOf(level.intValue()));
+      }
 
       for (Enhancer enhancer : enhancers) {
         enhancer.enhanceLogEntry(builder, record);
