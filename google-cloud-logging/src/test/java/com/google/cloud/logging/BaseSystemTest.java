@@ -40,19 +40,15 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.protobuf.Any;
 import com.google.protobuf.StringValue;
-
-import java.io.ByteArrayInputStream;
-import java.util.logging.LogManager;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.rules.Timeout;
-
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.rules.Timeout;
 
 /**
  * A base class for system tests. This class can be extended to run system tests in different

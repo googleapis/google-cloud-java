@@ -18,6 +18,7 @@ package com.google.cloud.logging;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+
 import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.LogEntry.Builder;
@@ -26,7 +27,6 @@ import com.google.cloud.logging.LoggingHandler.Enhancer;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Collections;
@@ -135,26 +135,30 @@ public class LoggingHandlerTest {
       .addLabel("levelValue", String.valueOf(LoggingLevel.EMERGENCY.intValue()))
       .setTimestamp(123456789L)
       .build();
-  private static final String CONFIG_FILE_STRING = (new StringBuilder())
-      .append("com.google.cloud.logging.LoggingHandler.log=testLogName")
-      .append(System.lineSeparator())
-      .append("com.google.cloud.logging.LoggingHandler.level=ALL")
-      .append(System.lineSeparator())
-      .append("com.google.cloud.logging.LoggingHandler.filter=com.google.cloud.logging.LoggingHandlerTest$TestFilter")
-      .append(System.lineSeparator())
-      .append("com.google.cloud.logging.LoggingHandler.formatter=com.google.cloud.logging.LoggingHandlerTest$TestFormatter")
-      .append(System.lineSeparator())
-      .append("com.google.cloud.logging.LoggingHandler.flushSize=2")
-      .append(System.lineSeparator())
-      .append("com.google.cloud.logging.LoggingHandler.flushLevel=CRITICAL")
-      .append(System.lineSeparator())
-      .append("com.google.cloud.logging.LoggingHandler.enhancers=com.google.cloud.logging.LoggingHandlerTest$TestEnhancer")
-      .append(System.lineSeparator())
-      .append("com.google.cloud.logging.LoggingHandler.resourceType=testResourceType")
-      .append(System.lineSeparator())
-      .append("com.google.cloud.logging.LoggingHandler.synchronicity=SYNC")
-      .append(System.lineSeparator())
-      .toString();
+  private static final String CONFIG_FILE_STRING =
+      (new StringBuilder())
+          .append("com.google.cloud.logging.LoggingHandler.log=testLogName")
+          .append(System.lineSeparator())
+          .append("com.google.cloud.logging.LoggingHandler.level=ALL")
+          .append(System.lineSeparator())
+          .append(
+              "com.google.cloud.logging.LoggingHandler.filter=com.google.cloud.logging.LoggingHandlerTest$TestFilter")
+          .append(System.lineSeparator())
+          .append(
+              "com.google.cloud.logging.LoggingHandler.formatter=com.google.cloud.logging.LoggingHandlerTest$TestFormatter")
+          .append(System.lineSeparator())
+          .append("com.google.cloud.logging.LoggingHandler.flushSize=2")
+          .append(System.lineSeparator())
+          .append("com.google.cloud.logging.LoggingHandler.flushLevel=CRITICAL")
+          .append(System.lineSeparator())
+          .append(
+              "com.google.cloud.logging.LoggingHandler.enhancers=com.google.cloud.logging.LoggingHandlerTest$TestEnhancer")
+          .append(System.lineSeparator())
+          .append("com.google.cloud.logging.LoggingHandler.resourceType=testResourceType")
+          .append(System.lineSeparator())
+          .append("com.google.cloud.logging.LoggingHandler.synchronicity=SYNC")
+          .append(System.lineSeparator())
+          .toString();
 
   private Logging logging;
   private LoggingOptions options;
@@ -179,6 +183,7 @@ public class LoggingHandlerTest {
     public void enhanceMonitoredResource(MonitoredResource.Builder builder) {
       builder.addLabel("enhanced", "true");
     }
+
     @Override
     public void enhanceLogEntry(LogEntry.Builder builder, LogRecord record) {
       builder.addLabel("enhanced", "true");
@@ -396,13 +401,16 @@ public class LoggingHandlerTest {
   public void testSyncWrite() {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
-    LogEntry entry = LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
-        .setSeverity(Severity.DEBUG)
-        .addLabel("levelName", "FINEST")
-        .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
-        .setTimestamp(123456789L)
-        .build();
-    logging.write(ImmutableList.of(entry), WriteOption.logName(LOG_NAME),
+    LogEntry entry =
+        LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
+            .setSeverity(Severity.DEBUG)
+            .addLabel("levelName", "FINEST")
+            .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+            .setTimestamp(123456789L)
+            .build();
+    logging.write(
+        ImmutableList.of(entry),
+        WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
     EasyMock.replay(options, logging);
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
@@ -440,20 +448,23 @@ public class LoggingHandlerTest {
   public void testPropertiesFile() throws IOException, InterruptedException {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
-    LogEntry entry = LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
-        .setSeverity(Severity.DEBUG)
-        .addLabel("levelName", "FINEST")
-        .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
-        .addLabel("enhanced", "true")
-        .setTimestamp(123456789L)
-        .build();
-    logging.write(ImmutableList.of(entry), WriteOption.logName("testLogName"),
+    LogEntry entry =
+        LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
+            .setSeverity(Severity.DEBUG)
+            .addLabel("levelName", "FINEST")
+            .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+            .addLabel("enhanced", "true")
+            .setTimestamp(123456789L)
+            .build();
+    logging.write(
+        ImmutableList.of(entry),
+        WriteOption.logName("testLogName"),
         WriteOption.resource(
-            MonitoredResource.of("testResourceType",
-            ImmutableMap.of("project_id", PROJECT, "enhanced", "true"))));
+            MonitoredResource.of(
+                "testResourceType", ImmutableMap.of("project_id", PROJECT, "enhanced", "true"))));
     EasyMock.replay(options, logging);
-    LogManager.getLogManager().readConfiguration(
-        new ByteArrayInputStream(CONFIG_FILE_STRING.getBytes()));
+    LogManager.getLogManager()
+        .readConfiguration(new ByteArrayInputStream(CONFIG_FILE_STRING.getBytes()));
     LoggingHandler handler = new LoggingHandler(null, options);
     LogRecord record = new LogRecord(Level.FINEST, MESSAGE);
     record.setMillis(123456789L);
@@ -461,14 +472,18 @@ public class LoggingHandlerTest {
     handler.flush();
     assertEquals(Level.ALL, handler.getLevel());
     assertNotNull(handler.getFilter());
-    assertEquals("com.google.cloud.logging.LoggingHandlerTest$TestFilter",
+    assertEquals(
+        "com.google.cloud.logging.LoggingHandlerTest$TestFilter",
         handler.getFilter().getClass().getName());
     assertNotNull(handler.getFormatter());
-    assertEquals("com.google.cloud.logging.LoggingHandlerTest$TestFormatter",
+    assertEquals(
+        "com.google.cloud.logging.LoggingHandlerTest$TestFormatter",
         handler.getFormatter().getClass().getName());
     assertEquals(2, handler.getFlushSize());
     assertEquals(LoggingLevel.CRITICAL, handler.getFlushLevel());
     assertEquals(Synchronicity.SYNC, handler.getSynchronicity());
+
+    LogManager.getLogManager().readConfiguration();
   }
 
   @Test
