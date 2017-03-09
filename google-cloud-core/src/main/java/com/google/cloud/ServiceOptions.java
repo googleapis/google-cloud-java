@@ -90,6 +90,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private final String serviceFactoryClassName;
   private final Clock clock;
   private final Credentials credentials;
+  private final TransportOptions transportOptions;
 
   private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
@@ -115,6 +116,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
     private Clock clock;
+    private TransportOptions transportOptions;
 
     protected Builder() {}
 
@@ -126,6 +128,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       serviceFactory = options.serviceFactory;
       serviceRpcFactory = options.serviceRpcFactory;
       clock = options.clock;
+      transportOptions = options.transportOptions;
     }
 
     protected abstract ServiceOptions<ServiceT, ServiceRpcT, OptionsT> build();
@@ -219,6 +222,16 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       this.serviceRpcFactory = serviceRpcFactory;
       return self();
     }
+
+    /**
+     * Sets the transport options.
+     *
+     * @return the builder
+     */
+    public B setTransportOptions(TransportOptions transportOptions) {
+      this.transportOptions = transportOptions;
+      return self();
+    }
   }
 
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
@@ -241,6 +254,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
         getFromServiceLoader(rpcFactoryClass, getDefaultRpcFactory()));
     serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
     clock = firstNonNull(builder.clock, Clock.defaultClock());
+    transportOptions = firstNonNull(builder.transportOptions, getDefaultTransportOptions());
   }
 
   /**
@@ -486,6 +500,12 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return clock;
   }
 
+  /**
+   * Returns the transport-specific options for this service.
+   */
+  public TransportOptions getTransportOptions() {
+    return transportOptions;
+  }
 
   /**
    * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
@@ -507,13 +527,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    */
   public String getGoogApiClientLibName() {
     return X_GOOGLE_CLIENT_HEADER_NAME;
-  }
-
-  /**
-   * Returns the library's version as a string.
-   */
-  public String libraryVersion() {
-    return getLibraryVersion();
   }
 
   /**
@@ -553,12 +566,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-
   protected abstract ServiceFactory<ServiceT, OptionsT> getDefaultServiceFactory();
-
 
   protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> getDefaultRpcFactory();
 
+  protected abstract TransportOptions getDefaultTransportOptions();
 
   protected abstract Set<String> getScopes();
 

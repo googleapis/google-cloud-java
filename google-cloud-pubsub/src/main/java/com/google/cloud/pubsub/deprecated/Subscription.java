@@ -19,7 +19,7 @@ package com.google.cloud.pubsub.deprecated;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.gax.core.ApiFuture;
-import com.google.cloud.GrpcServiceOptions;
+import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.Policy;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageProcessor;
@@ -408,7 +408,7 @@ public class Subscription extends SubscriptionInfo {
    *
    * <p>The {@link PullOption#maxQueuedCallbacks(int)} option can be used to control the maximum
    * number of queued messages (messages either being processed or waiting to be processed). The
-   * {@link PullOption#executorFactory(GrpcServiceOptions.ExecutorFactory)} can be used to provide
+   * {@link PullOption#executorFactory(GrpcTransportOptions.ExecutorFactory)} can be used to provide
    * an executor to run message processor callbacks.
    *
    * <p>Example of continuously pulling messages from the subscription.

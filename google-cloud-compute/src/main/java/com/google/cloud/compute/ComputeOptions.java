@@ -16,7 +16,9 @@
 
 package com.google.cloud.compute;
 
-import com.google.cloud.HttpServiceOptions;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.compute.spi.ComputeRpc;
 import com.google.cloud.compute.spi.ComputeRpcFactory;
 import com.google.cloud.compute.spi.DefaultComputeRpc;
@@ -24,8 +26,9 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class ComputeOptions extends HttpServiceOptions<Compute, ComputeRpc, ComputeOptions> {
+public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeOptions> {
 
+  private static final String API_SHORT_NAME = "Compute";
   private static final String COMPUTE_SCOPE = "https://www.googleapis.com/auth/compute";
   private static final Set<String> SCOPES = ImmutableSet.of(COMPUTE_SCOPE);
   private static final long serialVersionUID = 6983703596543425691L;
@@ -51,13 +54,22 @@ public class ComputeOptions extends HttpServiceOptions<Compute, ComputeRpc, Comp
   }
 
   public static class Builder extends
-      HttpServiceOptions.Builder<Compute, ComputeRpc, ComputeOptions, Builder> {
+      ServiceOptions.Builder<Compute, ComputeRpc, ComputeOptions, Builder> {
 
     private Builder() {
     }
 
     private Builder(ComputeOptions options) {
       super(options);
+    }
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
     @Override
@@ -78,6 +90,19 @@ public class ComputeOptions extends HttpServiceOptions<Compute, ComputeRpc, Comp
   @Override
   protected ComputeRpcFactory getDefaultRpcFactory() {
     return DefaultComputeRpcFactory.INSTANCE;
+  }
+
+  @Override
+  public TransportOptions getDefaultTransportOptions() {
+    return getDefaultHttpTransportOptions();
+  }
+
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
+  }
+
+  public HttpTransportOptions getHttpTransportOptions() {
+    return (HttpTransportOptions) getTransportOptions();
   }
 
   @Override

@@ -33,6 +33,8 @@ import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.LanguagesListResponse;
 import com.google.api.services.translate.model.LanguagesResource;
 import com.google.api.services.translate.model.TranslationsResource;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.translate.TranslateException;
 import com.google.cloud.translate.TranslateOptions;
 import com.google.common.base.Function;
@@ -50,8 +52,9 @@ public class DefaultTranslateRpc implements TranslateRpc {
   private final Translate translate;
 
   public DefaultTranslateRpc(TranslateOptions options) {
-    HttpTransport transport = options.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer = options.getHttpRequestInitializer();
+    HttpTransportOptions transportOptions = options.getHttpTransportOptions();
+    HttpTransport transport = transportOptions.getHttpTransportFactory().create();
+    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
     translate = new Translate.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())

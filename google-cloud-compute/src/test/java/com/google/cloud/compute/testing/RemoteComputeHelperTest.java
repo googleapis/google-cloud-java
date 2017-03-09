@@ -21,6 +21,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.compute.ComputeOptions;
 import com.google.cloud.compute.testing.RemoteComputeHelper.ComputeHelperException;
 
@@ -77,8 +78,8 @@ public class RemoteComputeHelperTest {
     ComputeOptions options = helper.getOptions();
     assertEquals(options, helper.options());
     assertEquals(PROJECT_ID, options.getProjectId());
-    assertEquals(60000, options.getConnectTimeout());
-    assertEquals(60000, options.getReadTimeout());
+    assertEquals(60000, options.getHttpTransportOptions().getConnectTimeout());
+    assertEquals(60000, options.getHttpTransportOptions().getReadTimeout());
     assertEquals(10, options.getRetryParams().getRetryMaxAttempts());
     assertEquals(6, options.getRetryParams().getRetryMinAttempts());
     assertEquals(30000, options.getRetryParams().getMaxRetryDelayMillis());

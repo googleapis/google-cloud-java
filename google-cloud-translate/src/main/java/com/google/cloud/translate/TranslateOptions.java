@@ -19,9 +19,9 @@ package com.google.cloud.translate;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.auth.Credentials;
-import com.google.cloud.HttpServiceOptions;
-import com.google.cloud.NoCredentials;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.spi.DefaultTranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpc;
@@ -34,9 +34,10 @@ import java.util.Objects;
 import java.util.Set;
 
 public class TranslateOptions extends
-    HttpServiceOptions<Translate, TranslateRpc, TranslateOptions> {
+    ServiceOptions<Translate, TranslateRpc, TranslateOptions> {
 
   private static final long serialVersionUID = -572597134540398216L;
+  private static final String API_SHORT_NAME = "Translate";
   private static final String DEFAULT_HOST = "https://translation.googleapis.com";
   private static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
   private static final Set<String> SCOPES =
@@ -66,7 +67,7 @@ public class TranslateOptions extends
   }
 
   public static class Builder extends
-      HttpServiceOptions.Builder<Translate, TranslateRpc, TranslateOptions, Builder> {
+      ServiceOptions.Builder<Translate, TranslateRpc, TranslateOptions, Builder> {
 
     private String apiKey;
     private String targetLanguage;
@@ -78,6 +79,15 @@ public class TranslateOptions extends
       this.apiKey = options.apiKey;
     }
 
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
+    }
 
     /**
      * Sets project id. Setting a project id has no impact on the {@link Translate} service.
@@ -136,6 +146,19 @@ public class TranslateOptions extends
   @Override
   protected TranslateRpcFactory getDefaultRpcFactory() {
     return DefaultTranslateRpcFactory.INSTANCE;
+  }
+
+  @Override
+  public TransportOptions getDefaultTransportOptions() {
+    return getDefaultHttpTransportOptions();
+  }
+
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
+  }
+
+  public HttpTransportOptions getHttpTransportOptions() {
+    return (HttpTransportOptions) getTransportOptions();
   }
 
   @Override

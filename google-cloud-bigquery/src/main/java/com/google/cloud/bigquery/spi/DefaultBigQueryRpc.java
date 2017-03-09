@@ -58,6 +58,8 @@ import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableList;
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.api.services.bigquery.model.TableRow;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.common.base.Function;
@@ -80,8 +82,9 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   private final Bigquery bigquery;
 
   public DefaultBigQueryRpc(BigQueryOptions options) {
-    HttpTransport transport = options.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer = options.getHttpRequestInitializer();
+    HttpTransportOptions transportOptions = options.getHttpTransportOptions();
+    HttpTransport transport = transportOptions.getHttpTransportFactory().create();
+    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
     bigquery = new Bigquery.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())

@@ -16,7 +16,9 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.cloud.HttpServiceOptions;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.bigquery.spi.BigQueryRpc;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.DefaultBigQueryRpc;
@@ -24,8 +26,9 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, BigQueryOptions> {
+public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQueryOptions> {
 
+  private static final String API_SHORT_NAME = "BigQuery";
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
   private static final long serialVersionUID = -2437598817433266049L;
@@ -51,13 +54,22 @@ public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, B
   }
 
   public static class Builder extends
-      HttpServiceOptions.Builder<BigQuery, BigQueryRpc, BigQueryOptions, Builder> {
+      ServiceOptions.Builder<BigQuery, BigQueryRpc, BigQueryOptions, Builder> {
 
     private Builder() {
     }
 
     private Builder(BigQueryOptions options) {
       super(options);
+    }
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
     @Override
@@ -78,6 +90,19 @@ public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, B
   @Override
   protected BigQueryRpcFactory getDefaultRpcFactory() {
     return DefaultBigQueryRpcFactory.INSTANCE;
+  }
+
+  @Override
+  public TransportOptions getDefaultTransportOptions() {
+    return getDefaultHttpTransportOptions();
+  }
+
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
+  }
+
+  public HttpTransportOptions getHttpTransportOptions() {
+    return (HttpTransportOptions) getTransportOptions();
   }
 
   @Override

@@ -26,8 +26,11 @@ import com.google.api.gax.grpc.FixedChannelProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.ProviderManager;
 import com.google.api.gax.grpc.UnaryCallSettings;
-import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.pubsub.deprecated.PubSubException;
 import com.google.cloud.pubsub.deprecated.PubSubOptions;
 import com.google.cloud.pubsub.spi.v1.PublisherClient;
@@ -80,33 +83,9 @@ public class DefaultPubSubRpc implements PubSubRpc {
 
   private boolean closed;
 
-  private static final class InternalPubSubOptions extends PubSubOptions {
-
-    private static final long serialVersionUID = -7997372049256706185L;
-
-    private InternalPubSubOptions(PubSubOptions options) {
-      super(options.toBuilder());
-    }
-
-    @Override
-    protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
-      return super.getExecutorFactory();
-    }
-
-    @Override
-    protected UnaryCallSettings.Builder getApiCallSettings() {
-      return super.getApiCallSettings();
-    }
-
-    @Override
-    protected ChannelProvider getChannelProvider() {
-      return super.getChannelProvider();
-    }
-  }
-
   public DefaultPubSubRpc(PubSubOptions options) throws IOException {
-    InternalPubSubOptions internalOptions = new InternalPubSubOptions(options);
-    executorFactory = internalOptions.getExecutorFactory();
+    GrpcTransportOptions transportOptions = options.getGrpcTransportOptions();
+    executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();
     try {
       ExecutorProvider executorProvider = FixedExecutorProvider.create(executor);
@@ -120,13 +99,14 @@ public class DefaultPubSubRpc implements PubSubRpc {
             .build();
         channelProvider = FixedChannelProvider.create(managedChannel);
       } else {
-        channelProvider = internalOptions.getChannelProvider();
+        channelProvider = transportOptions.getChannelProvider(options);
       }
       providerManager = ProviderManager.newBuilder()
           .setChannelProvider(channelProvider)
           .setExecutorProvider(executorProvider)
           .build();
-      UnaryCallSettings.Builder callSettingsBuilder = internalOptions.getApiCallSettings();
+      UnaryCallSettings.Builder callSettingsBuilder = transportOptions
+          .getApiCallSettings(options.getRetryParams());
       PublisherSettings.Builder pubBuilder = PublisherSettings.defaultBuilder()
           .setExecutorProvider(providerManager)
           .setChannelProvider(providerManager)

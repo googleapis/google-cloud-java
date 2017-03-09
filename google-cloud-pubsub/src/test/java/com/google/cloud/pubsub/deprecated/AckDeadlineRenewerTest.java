@@ -19,7 +19,8 @@ package com.google.cloud.pubsub.deprecated;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.core.ApiFuture;
-import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.pubsub.spi.v1.FakeScheduledExecutorService;
 import com.google.common.collect.ImmutableList;
 import java.util.concurrent.CountDownLatch;
@@ -69,10 +70,12 @@ public class AckDeadlineRenewerTest {
         executorService.shutdown();
       }
     };
+    GrpcTransportOptions transportOptions = PubSubOptions.getDefaultGrpcTransportOptions();
+    transportOptions = transportOptions.toBuilder().setExecutorFactory(executorFactory).build();
     PubSubOptions options =
         PubSubOptions.newBuilder()
             .setProjectId("projectId")
-            .setExecutorFactory(executorFactory)
+            .setTransportOptions(transportOptions)
             .setClock(executorService.getClock())
             .build();
     EasyMock.expect(pubsub.getOptions()).andReturn(options);
@@ -273,9 +276,11 @@ public class AckDeadlineRenewerTest {
     ScheduledExecutorService executor = EasyMock.createStrictMock(ScheduledExecutorService.class);
     ExecutorFactory executorFactory = EasyMock.createStrictMock(ExecutorFactory.class);
     EasyMock.expect(executorFactory.get()).andReturn(executor);
+    GrpcTransportOptions transportOptions = PubSubOptions.getDefaultGrpcTransportOptions();
+    transportOptions = transportOptions.toBuilder().setExecutorFactory(executorFactory).build();
     PubSubOptions options = PubSubOptions.newBuilder()
         .setProjectId("projectId")
-        .setExecutorFactory(executorFactory)
+        .setTransportOptions(transportOptions)
         .build();
     EasyMock.expect(pubsub.getOptions()).andReturn(options);
     executorFactory.release(executor);
@@ -296,9 +301,11 @@ public class AckDeadlineRenewerTest {
     ScheduledFuture future = EasyMock.createStrictMock(ScheduledFuture.class);
     EasyMock.expect(executor.schedule(EasyMock.<Runnable>anyObject(), EasyMock.anyLong(),
         EasyMock.eq(TimeUnit.MILLISECONDS))).andReturn(future);
+    GrpcTransportOptions transportOptions = PubSubOptions.getDefaultGrpcTransportOptions();
+    transportOptions = transportOptions.toBuilder().setExecutorFactory(executorFactory).build();
     PubSubOptions options = PubSubOptions.newBuilder()
         .setProjectId("projectId")
-        .setExecutorFactory(executorFactory)
+        .setTransportOptions(transportOptions)
         .build();
     EasyMock.expect(pubsub.getOptions()).andReturn(options);
     EasyMock.expect(future.cancel(true)).andReturn(true);

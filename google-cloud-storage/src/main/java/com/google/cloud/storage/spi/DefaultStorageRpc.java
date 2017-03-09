@@ -68,6 +68,8 @@ import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Objects;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.BaseServiceException;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.base.Function;
@@ -99,8 +101,9 @@ public class DefaultStorageRpc implements StorageRpc {
   private static final long MEGABYTE = 1024L * 1024L;
 
   public DefaultStorageRpc(StorageOptions options) {
-    HttpTransport transport = options.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer = options.getHttpRequestInitializer();
+    HttpTransportOptions transportOptions = options.getHttpTransportOptions();
+    HttpTransport transport = transportOptions.getHttpTransportFactory().create();
+    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
     storage = new Storage.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())

@@ -16,7 +16,12 @@
 
 package com.google.cloud.datastore.spi;
 
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
+import com.google.auth.Credentials;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.datastore.v1.AllocateIdsRequest;
@@ -41,11 +46,12 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   private final com.google.datastore.v1.client.Datastore client;
 
   public DefaultDatastoreRpc(DatastoreOptions options) {
-    HttpTransport transport = options.getHttpTransportFactory().create();
+    HttpTransportOptions httpTransportOptions = options.getHttpTransportOptions();
+    HttpTransport transport = httpTransportOptions.getHttpTransportFactory().create();
     com.google.datastore.v1.client.DatastoreOptions.Builder clientBuilder =
         new com.google.datastore.v1.client.DatastoreOptions.Builder()
             .projectId(options.getProjectId())
-            .initializer(options.getHttpRequestInitializer())
+            .initializer(getHttpRequestInitializer(options, httpTransportOptions))
             .transport(transport);
     String normalizedHost = options.getHost() != null ? options.getHost().toLowerCase() : "";
     if (isLocalHost(normalizedHost)) {
@@ -65,6 +71,19 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     }
     client = com.google.datastore.v1.client.DatastoreFactory.get()
         .create(clientBuilder.build());
+  }
+
+  private HttpRequestInitializer getHttpRequestInitializer(final DatastoreOptions options,
+      HttpTransportOptions httpTransportOptions) {
+    final HttpRequestInitializer delegate = httpTransportOptions
+        .getHttpRequestInitializer(options);
+    return new HttpRequestInitializer() {
+      @Override
+      public void initialize(HttpRequest httpRequest) throws IOException {
+        delegate.initialize(httpRequest);
+        httpRequest.getHeaders().setUserAgent(options.getApplicationName());
+      }
+    };
   }
 
   private static boolean isLocalHost(String host) {

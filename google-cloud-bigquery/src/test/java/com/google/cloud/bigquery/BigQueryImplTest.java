@@ -32,6 +32,7 @@ import com.google.api.services.bigquery.model.TableCell;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableRow;
+import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.Page;
 import com.google.cloud.RetryParams;
 import com.google.cloud.WriteChannel;

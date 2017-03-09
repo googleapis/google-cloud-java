@@ -27,7 +27,7 @@ import static org.junit.Assert.fail;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.AsyncPage;
-import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.Identity;
 import com.google.cloud.Page;
 import com.google.cloud.Policy;

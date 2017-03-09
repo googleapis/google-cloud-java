@@ -68,6 +68,8 @@ import com.google.api.services.compute.model.SubnetworksScopedList;
 import com.google.api.services.compute.model.Tags;
 import com.google.api.services.compute.model.Zone;
 import com.google.api.services.compute.model.ZoneList;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.compute.ComputeException;
 import com.google.cloud.compute.ComputeOptions;
 import com.google.common.collect.ImmutableList;
@@ -81,8 +83,9 @@ public class DefaultComputeRpc implements ComputeRpc {
   private final Compute compute;
 
   public DefaultComputeRpc(ComputeOptions options) {
-    HttpTransport transport = options.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer = options.getHttpRequestInitializer();
+    HttpTransportOptions transportOptions = options.getHttpTransportOptions();
+    HttpTransport transport = transportOptions.getHttpTransportFactory().create();
+    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
     compute = new Compute.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())

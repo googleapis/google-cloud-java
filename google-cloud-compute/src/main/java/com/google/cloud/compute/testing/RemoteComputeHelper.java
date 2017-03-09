@@ -17,6 +17,7 @@
 package com.google.cloud.compute.testing;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.RetryParams;
 import com.google.cloud.compute.ComputeOptions;
 
@@ -34,7 +35,8 @@ import java.util.logging.Logger;
  * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
  * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
  * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
- * {@link ComputeOptions#getConnectTimeout()} and {@link ComputeOptions#getReadTimeout()} are both
+ * {@link HttpTransportOptions#getConnectTimeout()} and
+ * {@link HttpTransportOptions#getReadTimeout()} are both
  * set to {@code 60000}.
  */
 public class RemoteComputeHelper {
@@ -82,12 +84,14 @@ public class RemoteComputeHelper {
    */
   public static RemoteComputeHelper create(String projectId, InputStream keyStream) {
     try {
+      HttpTransportOptions transportOptions = ComputeOptions.getDefaultHttpTransportOptions();
+      transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+          .build();
       ComputeOptions computeOptions = ComputeOptions.newBuilder()
           .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
           .setRetryParams(retryParams())
-          .setConnectTimeout(60000)
-          .setReadTimeout(60000)
+          .setTransportOptions(transportOptions)
           .build();
       return new RemoteComputeHelper(computeOptions);
     } catch (IOException ex) {
@@ -103,10 +107,12 @@ public class RemoteComputeHelper {
    * credentials.
    */
   public static RemoteComputeHelper create() {
+    HttpTransportOptions transportOptions = ComputeOptions.getDefaultHttpTransportOptions();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+        .build();
     ComputeOptions computeOptions = ComputeOptions.newBuilder()
         .setRetryParams(retryParams())
-        .setConnectTimeout(60000)
-        .setReadTimeout(60000)
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteComputeHelper(computeOptions);
   }

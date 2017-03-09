@@ -16,7 +16,9 @@
 
 package com.google.cloud.resourcemanager;
 
-import com.google.cloud.HttpServiceOptions;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.resourcemanager.spi.DefaultResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
@@ -25,9 +27,10 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 
 public class ResourceManagerOptions
-    extends HttpServiceOptions<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
+    extends ServiceOptions<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
 
   private static final long serialVersionUID = 624147474447836183L;
+  private static final String API_SHORT_NAME = "ResourceManager";
   private static final String GCRM_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
   private static final Set<String> SCOPES = ImmutableSet.of(GCRM_SCOPE);
   private static final String DEFAULT_HOST = "https://cloudresourcemanager.googleapis.com";
@@ -64,13 +67,22 @@ public class ResourceManagerOptions
     return DEFAULT_HOST;
   }
 
-  public static class Builder extends HttpServiceOptions.Builder<ResourceManager,
+  public static class Builder extends ServiceOptions.Builder<ResourceManager,
       ResourceManagerRpc, ResourceManagerOptions, Builder> {
 
     private Builder() {}
 
     private Builder(ResourceManagerOptions options) {
       super(options);
+    }
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
     @Override
@@ -96,6 +108,19 @@ public class ResourceManagerOptions
   @Override
   protected ResourceManagerRpcFactory getDefaultRpcFactory() {
     return DefaultResourceManagerRpcFactory.INSTANCE;
+  }
+
+  @Override
+  public TransportOptions getDefaultTransportOptions() {
+    return getDefaultHttpTransportOptions();
+  }
+
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
+  }
+
+  public HttpTransportOptions getHttpTransportOptions() {
+    return (HttpTransportOptions) getTransportOptions();
   }
 
   @Override

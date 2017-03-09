@@ -175,6 +175,11 @@ public class ServiceOptionsTest {
     }
 
     @Override
+    protected TransportOptions getDefaultTransportOptions() {
+      return HttpTransportOptions.newBuilder().build();
+    }
+
+    @Override
     protected Set<String> getScopes() {
       return null;
     }

@@ -18,24 +18,23 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
-import com.google.api.client.http.HttpRequest;
-import com.google.api.client.http.HttpRequestInitializer;
-import com.google.cloud.HttpServiceOptions;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.spi.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.DefaultDatastoreRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
-
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.Set;
 
 public class DatastoreOptions
-    extends HttpServiceOptions<Datastore, DatastoreRpc, DatastoreOptions> {
+    extends ServiceOptions<Datastore, DatastoreRpc, DatastoreOptions> {
 
   private static final long serialVersionUID = -1018382430058137336L;
+  private static final String API_SHORT_NAME = "Datastore";
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE);
 
@@ -62,7 +61,7 @@ public class DatastoreOptions
   }
 
   public static class Builder extends
-      HttpServiceOptions.Builder<Datastore, DatastoreRpc, DatastoreOptions, Builder> {
+      ServiceOptions.Builder<Datastore, DatastoreRpc, DatastoreOptions, Builder> {
 
     private String namespace;
 
@@ -75,10 +74,18 @@ public class DatastoreOptions
     }
 
     @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
+    }
+
+    @Override
     public DatastoreOptions build() {
       return new DatastoreOptions(this);
     }
-
 
     /**
      * Sets the default namespace to be used by the datastore service.
@@ -92,18 +99,6 @@ public class DatastoreOptions
   private DatastoreOptions(Builder builder) {
     super(DatastoreFactory.class, DatastoreRpcFactory.class, builder);
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
-  }
-
-  @Override
-  public HttpRequestInitializer getHttpRequestInitializer() {
-    final HttpRequestInitializer delegate = super.getHttpRequestInitializer();
-    return new HttpRequestInitializer() {
-      @Override
-      public void initialize(HttpRequest httpRequest) throws IOException {
-        delegate.initialize(httpRequest);
-        httpRequest.getHeaders().setUserAgent(getApplicationName());
-      }
-    };
   }
 
   @Override
@@ -130,6 +125,19 @@ public class DatastoreOptions
   @Override
   protected DatastoreRpcFactory getDefaultRpcFactory() {
     return DefaultDatastoreRpcFactory.INSTANCE;
+  }
+
+  @Override
+  public TransportOptions getDefaultTransportOptions() {
+    return getDefaultHttpTransportOptions();
+  }
+
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
+  }
+
+  public HttpTransportOptions getHttpTransportOptions() {
+    return (HttpTransportOptions) getTransportOptions();
   }
 
 
