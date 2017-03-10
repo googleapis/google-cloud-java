@@ -156,9 +156,9 @@ public class LoggingHandlerTest {
     StringBuilder str = new StringBuilder();
     for (Map.Entry<String, String> entry : config.entrySet()) {
       str.append(CONFIG_NAMESPACE)
-          .append(".")
+          .append('.')
           .append(entry.getKey())
-          .append("=")
+          .append('=')
           .append(entry.getValue())
           .append(System.lineSeparator());
     }
