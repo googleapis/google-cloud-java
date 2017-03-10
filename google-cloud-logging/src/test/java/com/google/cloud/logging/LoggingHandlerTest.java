@@ -30,6 +30,7 @@ import com.google.common.collect.ImmutableMap;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Map;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
 import java.util.logging.Formatter;
@@ -135,32 +136,34 @@ public class LoggingHandlerTest {
       .addLabel("levelValue", String.valueOf(LoggingLevel.EMERGENCY.intValue()))
       .setTimestamp(123456789L)
       .build();
-  private static final String CONFIG_FILE_STRING =
-      (new StringBuilder())
-          .append("com.google.cloud.logging.LoggingHandler.log=testLogName")
-          .append(System.lineSeparator())
-          .append("com.google.cloud.logging.LoggingHandler.level=ALL")
-          .append(System.lineSeparator())
-          .append(
-              "com.google.cloud.logging.LoggingHandler.filter=com.google.cloud.logging.LoggingHandlerTest$TestFilter")
-          .append(System.lineSeparator())
-          .append(
-              "com.google.cloud.logging.LoggingHandler.formatter=com.google.cloud.logging.LoggingHandlerTest$TestFormatter")
-          .append(System.lineSeparator())
-          .append("com.google.cloud.logging.LoggingHandler.flushSize=2")
-          .append(System.lineSeparator())
-          .append("com.google.cloud.logging.LoggingHandler.flushLevel=CRITICAL")
-          .append(System.lineSeparator())
-          .append(
-              "com.google.cloud.logging.LoggingHandler.enhancers=com.google.cloud.logging.LoggingHandlerTest$TestEnhancer")
-          .append(System.lineSeparator())
-          .append("com.google.cloud.logging.LoggingHandler.resourceType=testResourceType")
-          .append(System.lineSeparator())
-          .append("com.google.cloud.logging.LoggingHandler.synchronicity=SYNC")
-          .append(System.lineSeparator())
-          .toString();
+  private static final String CONFIG_NAMESPACE = "com.google.cloud.logging.LoggingHandler";
+  private static final ImmutableMap<String, String> CONFIG_MAP =
+      ImmutableMap.<String, String>builder()
+          .put("log", "testLogName")
+          .put("level", "ALL")
+          .put("filter", "com.google.cloud.logging.LoggingHandlerTest$TestFilter")
+          .put("formatter", "com.google.cloud.logging.LoggingHandlerTest$TestFormatter")
+          .put("flushSize", "2")
+          .put("flushLevel", "CRITICAL")
+          .put("enhancers", "com.google.cloud.logging.LoggingHandlerTest$TestEnhancer")
+          .put("resourceType", "testResourceType")
+          .put("synchronicity", "SYNC")
+          .build();
   private static final WriteOption[] DEFAULT_OPTIONS =
       new WriteOption[] {WriteOption.logName(LOG_NAME), WriteOption.resource(DEFAULT_RESOURCE)};
+
+  private static byte[] renderConfig(Map<String, String> config) {
+    StringBuilder str = new StringBuilder();
+    for (Map.Entry<String, String> entry : config.entrySet()) {
+      str.append(CONFIG_NAMESPACE)
+          .append(".")
+          .append(entry.getKey())
+          .append("=")
+          .append(entry.getValue())
+          .append(System.lineSeparator());
+    }
+    return str.toString().getBytes();
+  }
 
   private Logging logging;
   private LoggingOptions options;
@@ -454,7 +457,7 @@ public class LoggingHandlerTest {
                 "testResourceType", ImmutableMap.of("project_id", PROJECT, "enhanced", "true"))));
     EasyMock.replay(options, logging);
     LogManager.getLogManager()
-        .readConfiguration(new ByteArrayInputStream(CONFIG_FILE_STRING.getBytes()));
+        .readConfiguration(new ByteArrayInputStream(renderConfig(CONFIG_MAP)));
     LoggingHandler handler = new LoggingHandler(null, options);
     LogRecord record = new LogRecord(Level.FINEST, MESSAGE);
     record.setMillis(123456789L);
