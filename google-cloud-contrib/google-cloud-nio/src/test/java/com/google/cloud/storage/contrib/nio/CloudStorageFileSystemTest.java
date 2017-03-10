@@ -253,9 +253,9 @@ public class CloudStorageFileSystemTest {
       // delete folder (trailing slash is required)
       Path dir2 = fs.getPath("dir/dir2/");
       Files.deleteIfExists(dir2);
-      // We can't check Files.exists on a folder (since GCS fakes folders),
       Path dir = fs.getPath("dir/");
       Files.deleteIfExists(dir);
+      // We can't check Files.exists on a folder (since GCS fakes folders)
     }
   }
 
