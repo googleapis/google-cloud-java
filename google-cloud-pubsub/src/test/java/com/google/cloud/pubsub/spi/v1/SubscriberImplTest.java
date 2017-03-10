@@ -53,8 +53,6 @@ import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 
 /** Tests for {@link Subscriber}. */
 @RunWith(Parameterized.class)
@@ -162,10 +160,8 @@ public class SubscriberImplTest {
 
   @Before
   public void setUp() throws Exception {
-    MockitoAnnotations.initMocks(this);
-
     InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName(testName.getMethodName());
-    fakeSubscriberServiceImpl = Mockito.spy(new FakeSubscriberServiceImpl());
+    fakeSubscriberServiceImpl = new FakeSubscriberServiceImpl();
     fakeExecutor = new FakeScheduledExecutorService();
     testChannelBuilder = InProcessChannelBuilder.forName(testName.getMethodName());
     serverBuilder.addService(fakeSubscriberServiceImpl);
