@@ -373,6 +373,7 @@ public class ITGcsNio {
       assertThat(Files.exists(fs.getPath("playwrights/French/Corneille"))).isFalse();
       assertThat(Files.exists(fs.getPath("Racine"))).isTrue();
       Files.deleteIfExists(fs.getPath("Racine"));
+      assertThat(Files.exists(fs.getPath("Racine"))).isFalse();
     }
   }
 
@@ -381,7 +382,7 @@ public class ITGcsNio {
    * @param directory the directory to delete
    * @throws IOException
    */
-  static private void deleteRecursive(Path directory) throws IOException {
+  private static void deleteRecursive(Path directory) throws IOException {
     Files.walkFileTree(directory, new SimpleFileVisitor<Path>() {
       @Override
       public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
