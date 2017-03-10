@@ -394,8 +394,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       String serviceAccountName = (String) method.invoke(appIdentityService);
       int indexOfAtSign = serviceAccountName.indexOf('@');
       return serviceAccountName.substring(0, indexOfAtSign);
-    } catch (Exception ignore) {
-      // return null if can't determine
+    } catch (Exception exception) {
+      if (System.getProperty("com.google.appengine.runtime.version") != null) {
+        // Could not resolve appengine classes under GAE environment.
+        throw new RuntimeException("Unable to resolve appengine classes. Missing dependency.");
+      }
       return null;
     }
   }
