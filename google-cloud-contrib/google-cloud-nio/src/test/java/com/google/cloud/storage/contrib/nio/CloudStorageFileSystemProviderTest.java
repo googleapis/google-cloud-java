@@ -37,10 +37,8 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
@@ -96,19 +94,19 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testSize() throws IOException {
+  public void testSize() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wat"));
     Files.write(path, SINGULARITY.getBytes(UTF_8));
     assertThat(Files.size(path)).isEqualTo(SINGULARITY.getBytes(UTF_8).length);
   }
 
   @Test
-  public void testSize_trailingSlash_returnsFakePseudoDirectorySize() throws IOException {
+  public void testSize_trailingSlash_returnsFakePseudoDirectorySize() throws Exception {
     assertThat(Files.size(Paths.get(URI.create("gs://bucket/wat/")))).isEqualTo(1);
   }
 
   @Test
-  public void testSize_trailingSlash_disablePseudoDirectories() throws IOException {
+  public void testSize_trailingSlash_disablePseudoDirectories() throws Exception {
     try (CloudStorageFileSystem fs = forBucket("doodle", usePseudoDirectories(false))) {
       Path path = fs.getPath("wat/");
       byte[] rapture = SINGULARITY.getBytes(UTF_8);
@@ -118,20 +116,20 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testReadAllBytes() throws IOException {
+  public void testReadAllBytes() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wat"));
     Files.write(path, SINGULARITY.getBytes(UTF_8));
     assertThat(new String(Files.readAllBytes(path), UTF_8)).isEqualTo(SINGULARITY);
   }
 
   @Test
-  public void testReadAllBytes_trailingSlash() throws IOException {
+  public void testReadAllBytes_trailingSlash() throws Exception {
     thrown.expect(CloudStoragePseudoDirectoryException.class);
     Files.readAllBytes(Paths.get(URI.create("gs://bucket/wat/")));
   }
 
   @Test
-  public void testNewByteChannelRead() throws IOException {
+  public void testNewByteChannelRead() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wat"));
     byte[] data = SINGULARITY.getBytes(UTF_8);
     Files.write(path, data);
@@ -145,7 +143,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNewByteChannelRead_seeking() throws IOException {
+  public void testNewByteChannelRead_seeking() throws Exception {
     Path path = Paths.get(URI.create("gs://lol/cat"));
     Files.write(path, "helloworld".getBytes(UTF_8));
     try (SeekableByteChannel input = Files.newByteChannel(path)) {
@@ -166,7 +164,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNewByteChannelRead_seekBeyondSize_reportsEofOnNextRead() throws IOException {
+  public void testNewByteChannelRead_seekBeyondSize_reportsEofOnNextRead() throws Exception {
     Path path = Paths.get(URI.create("gs://lol/cat"));
     Files.write(path, "hellocat".getBytes(UTF_8));
     try (SeekableByteChannel input = Files.newByteChannel(path)) {
@@ -180,21 +178,21 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNewByteChannelRead_trailingSlash() throws IOException {
+  public void testNewByteChannelRead_trailingSlash() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wat/"));
     thrown.expect(CloudStoragePseudoDirectoryException.class);
     Files.newByteChannel(path);
   }
 
   @Test
-  public void testNewByteChannelRead_notFound() throws IOException {
+  public void testNewByteChannelRead_notFound() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wednesday"));
     thrown.expect(NoSuchFileException.class);
     Files.newByteChannel(path);
   }
 
   @Test
-  public void testNewByteChannelWrite() throws IOException {
+  public void testNewByteChannelWrite() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/tests"));
     try (SeekableByteChannel output = Files.newByteChannel(path, WRITE)) {
       assertThat(output.position()).isEqualTo(0);
@@ -212,7 +210,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNewInputStream() throws IOException {
+  public void testNewInputStream() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wat"));
     Files.write(path, SINGULARITY.getBytes(UTF_8));
     try (InputStream input = Files.newInputStream(path)) {
@@ -223,7 +221,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNewInputStream_trailingSlash() throws IOException {
+  public void testNewInputStream_trailingSlash() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wat/"));
     thrown.expect(CloudStoragePseudoDirectoryException.class);
     try (InputStream input = Files.newInputStream(path)) {
@@ -232,7 +230,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNewInputStream_notFound() throws IOException {
+  public void testNewInputStream_notFound() throws Exception {
     Path path = Paths.get(URI.create("gs://cry/wednesday"));
     thrown.expect(NoSuchFileException.class);
     try (InputStream input = Files.newInputStream(path)) {
@@ -241,7 +239,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNewOutputStream() throws IOException {
+  public void testNewOutputStream() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wat"));
     Files.write(path, SINGULARITY.getBytes(UTF_8));
     try (OutputStream output = Files.newOutputStream(path)) {
@@ -251,7 +249,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNewOutputStream_truncateByDefault() throws IOException {
+  public void testNewOutputStream_truncateByDefault() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wat"));
     Files.write(path, SINGULARITY.getBytes(UTF_8));
     Files.write(path, "hello".getBytes(UTF_8));
@@ -262,7 +260,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNewOutputStream_truncateExplicitly() throws IOException {
+  public void testNewOutputStream_truncateExplicitly() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wat"));
     Files.write(path, SINGULARITY.getBytes(UTF_8));
     Files.write(path, "hello".getBytes(UTF_8));
@@ -273,20 +271,20 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNewOutputStream_trailingSlash() throws IOException {
+  public void testNewOutputStream_trailingSlash() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wat/"));
     thrown.expect(CloudStoragePseudoDirectoryException.class);
     Files.newOutputStream(path);
   }
 
   @Test
-  public void testNewOutputStream_createNew() throws IOException {
+  public void testNewOutputStream_createNew() throws Exception {
     Path path = Paths.get(URI.create("gs://cry/wednesday"));
     Files.newOutputStream(path, CREATE_NEW);
   }
 
   @Test
-  public void testNewOutputStream_createNew_alreadyExists() throws IOException {
+  public void testNewOutputStream_createNew_alreadyExists() throws Exception {
     Path path = Paths.get(URI.create("gs://cry/wednesday"));
     Files.write(path, SINGULARITY.getBytes(UTF_8));
     thrown.expect(FileAlreadyExistsException.class);
@@ -294,14 +292,14 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testWrite_objectNameWithExtraSlashes_throwsIae() throws IOException {
+  public void testWrite_objectNameWithExtraSlashes_throwsIae() throws Exception {
     Path path = Paths.get(URI.create("gs://double/slash//yep"));
     thrown.expect(IllegalArgumentException.class);
     Files.write(path, FILE_CONTENTS, UTF_8);
   }
 
   @Test
-  public void testWrite_objectNameWithExtraSlashes_canBeNormalized() throws IOException {
+  public void testWrite_objectNameWithExtraSlashes_canBeNormalized() throws Exception {
     try (CloudStorageFileSystem fs = forBucket("greenbean", permitEmptyPathComponents(false))) {
       Path path = fs.getPath("adipose//yep").normalize();
       Files.write(path, FILE_CONTENTS, UTF_8);
@@ -311,7 +309,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testWrite_objectNameWithExtraSlashes_permitEmptyPathComponents() throws IOException {
+  public void testWrite_objectNameWithExtraSlashes_permitEmptyPathComponents() throws Exception {
     try (CloudStorageFileSystem fs = forBucket("greenbean", permitEmptyPathComponents(true))) {
       Path path = fs.getPath("adipose//yep");
       Files.write(path, FILE_CONTENTS, UTF_8);
@@ -321,7 +319,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testWrite_absoluteObjectName_prefixSlashGetsRemoved() throws IOException {
+  public void testWrite_absoluteObjectName_prefixSlashGetsRemoved() throws Exception {
     Path path = Paths.get(URI.create("gs://greenbean/adipose/yep"));
     Files.write(path, FILE_CONTENTS, UTF_8);
     assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);
@@ -329,7 +327,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testWrite_absoluteObjectName_disableStrip_slashGetsPreserved() throws IOException {
+  public void testWrite_absoluteObjectName_disableStrip_slashGetsPreserved() throws Exception {
     try (CloudStorageFileSystem fs =
             forBucket(
                 "greenbean", CloudStorageConfiguration.builder().stripPrefixSlash(false).build())) {
@@ -341,14 +339,14 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testWrite() throws IOException {
+  public void testWrite() throws Exception {
     Path path = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(path, FILE_CONTENTS, UTF_8);
     assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);
   }
 
   @Test
-  public void testWriteOnClose() throws IOException {
+  public void testWriteOnClose() throws Exception {
     Path path = Paths.get(URI.create("gs://greenbean/adipose"));
     try (SeekableByteChannel chan = Files.newByteChannel(path, WRITE)) {
       // writing lots of contents to defeat channel-internal buffering.
@@ -372,13 +370,13 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testWrite_trailingSlash() throws IOException {
+  public void testWrite_trailingSlash() throws Exception {
     thrown.expect(CloudStoragePseudoDirectoryException.class);
     Files.write(Paths.get(URI.create("gs://greenbean/adipose/")), FILE_CONTENTS, UTF_8);
   }
 
   @Test
-  public void testExists() throws IOException {
+  public void testExists() throws Exception {
     assertThat(Files.exists(Paths.get(URI.create("gs://military/fashion")))).isFalse();
     Files.write(Paths.get(URI.create("gs://military/fashion")), "(✿◕ ‿◕ )ノ".getBytes(UTF_8));
     assertThat(Files.exists(Paths.get(URI.create("gs://military/fashion")))).isTrue();
@@ -392,14 +390,14 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testExists_trailingSlash_disablePseudoDirectories() throws IOException  {
+  public void testExists_trailingSlash_disablePseudoDirectories() throws Exception  {
     try (CloudStorageFileSystem fs = forBucket("military", usePseudoDirectories(false))) {
       assertThat(Files.exists(fs.getPath("fashion/"))).isFalse();
     }
   }
 
   @Test
-  public void testDelete() throws IOException {
+  public void testDelete() throws Exception {
     Files.write(Paths.get(URI.create("gs://love/fashion")), "(✿◕ ‿◕ )ノ".getBytes(UTF_8));
     assertThat(Files.exists(Paths.get(URI.create("gs://love/fashion")))).isTrue();
     Files.delete(Paths.get(URI.create("gs://love/fashion")));
@@ -407,18 +405,19 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testDelete_dotDirNotNormalized_throwsIae() throws IOException {
+  public void testDelete_dotDirNotNormalized_throwsIae() throws Exception {
     thrown.expect(IllegalArgumentException.class);
     Files.delete(Paths.get(URI.create("gs://love/fly/../passion")));
   }
 
   @Test
-  public void testDelete_trailingSlash() throws IOException {
+  public void testDelete_trailingSlash() throws Exception {
+    thrown.expect(CloudStoragePseudoDirectoryException.class);
     Files.delete(Paths.get(URI.create("gs://love/passion/")));
   }
 
   @Test
-  public void testDelete_trailingSlash_disablePseudoDirectories() throws IOException {
+  public void testDelete_trailingSlash_disablePseudoDirectories() throws Exception {
     try (CloudStorageFileSystem fs = forBucket("pumpkin", usePseudoDirectories(false))) {
       Path path = fs.getPath("wat/");
       Files.write(path, FILE_CONTENTS, UTF_8);
@@ -429,24 +428,24 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testDelete_notFound() throws IOException {
+  public void testDelete_notFound() throws Exception {
     thrown.expect(NoSuchFileException.class);
     Files.delete(Paths.get(URI.create("gs://loveh/passionehu")));
   }
 
   @Test
-  public void testDeleteIfExists() throws IOException {
+  public void testDeleteIfExists() throws Exception {
     Files.write(Paths.get(URI.create("gs://love/passionz")), "(✿◕ ‿◕ )ノ".getBytes(UTF_8));
     assertThat(Files.deleteIfExists(Paths.get(URI.create("gs://love/passionz")))).isTrue();
   }
 
-  @Test
-  public void testDeleteIfExists_trailingSlash() throws IOException {
+  public void testDeleteIfExists_trailingSlash() throws Exception {
+    thrown.expect(CloudStoragePseudoDirectoryException.class);
     Files.deleteIfExists(Paths.get(URI.create("gs://love/passion/")));
   }
 
   @Test
-  public void testCopy() throws IOException {
+  public void testCopy() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8));
@@ -457,7 +456,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testCopy_sourceMissing_throwsNoSuchFileException() throws IOException {
+  public void testCopy_sourceMissing_throwsNoSuchFileException() throws Exception {
     thrown.expect(NoSuchFileException.class);
     Files.copy(
         Paths.get(URI.create("gs://military/fashion.show")),
@@ -465,7 +464,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testCopy_targetExists_throwsFileAlreadyExistsException() throws IOException {
+  public void testCopy_targetExists_throwsFileAlreadyExistsException() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8));
@@ -475,7 +474,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testCopyReplace_targetExists_works() throws IOException {
+  public void testCopyReplace_targetExists_works() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8));
@@ -484,14 +483,14 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testCopy_directory_doesNothing() throws IOException {
+  public void testCopy_directory_doesNothing() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fundir/"));
     Path target = Paths.get(URI.create("gs://greenbean/loldir/"));
     Files.copy(source, target);
   }
 
   @Test
-  public void testCopy_atomic_throwsUnsupported() throws IOException {
+  public void testCopy_atomic_throwsUnsupported() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8));
@@ -500,7 +499,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testMove() throws IOException {
+  public void testMove() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8));
@@ -511,14 +510,14 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testCreateDirectory() throws IOException {
+  public void testCreateDirectory() throws Exception {
     Path path = Paths.get(URI.create("gs://greenbean/dir/"));
     Files.createDirectory(path);
     assertThat(Files.exists(path)).isTrue();
   }
 
   @Test
-  public void testMove_atomicMove_notSupported() throws IOException {
+  public void testMove_atomicMove_notSupported() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8));
@@ -527,7 +526,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testIsDirectory() throws IOException {
+  public void testIsDirectory() throws Exception {
     try (FileSystem fs = FileSystems.getFileSystem(URI.create("gs://doodle"))) {
       assertThat(Files.isDirectory(fs.getPath(""))).isTrue();
       assertThat(Files.isDirectory(fs.getPath("/"))).isTrue();
@@ -546,14 +545,14 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testIsDirectory_trailingSlash_pseudoDirectoriesDisabled_false() throws IOException  {
+  public void testIsDirectory_trailingSlash_pseudoDirectoriesDisabled_false() throws Exception  {
     try (CloudStorageFileSystem fs = forBucket("doodle", usePseudoDirectories(false))) {
       assertThat(Files.isDirectory(fs.getPath("fundir/"))).isFalse();
     }
   }
 
   @Test
-  public void testCopy_withCopyAttributes_preservesAttributes() throws IOException {
+  public void testCopy_withCopyAttributes_preservesAttributes() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(
@@ -577,7 +576,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testCopy_withoutOptions_doesntPreservesAttributes() throws IOException {
+  public void testCopy_withoutOptions_doesntPreservesAttributes() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(
@@ -598,7 +597,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testCopy_overwriteAttributes() throws IOException {
+  public void testCopy_overwriteAttributes() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target1 = Paths.get(URI.create("gs://greenbean/adipose"));
     Path target2 = Paths.get(URI.create("gs://greenbean/round"));
@@ -621,7 +620,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNullness() throws IOException, NoSuchMethodException, SecurityException {
+  public void testNullness() throws Exception {
     try (FileSystem fs = FileSystems.getFileSystem(URI.create("gs://blood"))) {
       NullPointerTester tester = new NullPointerTester();
       tester.ignore(CloudStorageFileSystemProvider.class.getMethod("equals", Object.class));
@@ -646,18 +645,18 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testNewFileSystem() throws IOException {
+  public void testNewFileSystem() throws Exception {
     Map<String,String> env = new HashMap<>();
     FileSystems.newFileSystem(URI.create("gs://bucket/path/to/file"), env);
   }
 
   @Test
-  public void testFromSpace() throws UnsupportedEncodingException, IOException {
+  public void testFromSpace() throws Exception {
     // User should be able to create paths to files whose name contains a space.
     // Traditional way 1: manually escape the spaces
     Path path1 = Paths.get(URI.create("gs://bucket/with/a%20space"));
     CloudStorageFileSystemProvider provider =
-        (CloudStorageFileSystemProvider)path1.getFileSystem().provider();
+        (CloudStorageFileSystemProvider) path1.getFileSystem().provider();
     // Traditional way 2: use UrlEscapers.urlFragmentEscaper().escape
     // to escape the string for you.
     // (Not tested because UrlEscapers isn't the unit under test).
