@@ -60,6 +60,12 @@ public abstract class CloudStorageConfiguration {
   public abstract int blockSize();
 
   /**
+   * Returns the number of times we try re-opening a channel if it's closed unexpectedly
+   * while reading.
+   */
+  public abstract int channelReopen();
+
+  /**
    * Creates a new builder, initialized with the following settings:
    *
    * <ul>
@@ -82,6 +88,7 @@ public abstract class CloudStorageConfiguration {
     private boolean stripPrefixSlash = true;
     private boolean usePseudoDirectories = true;
     private int blockSize = CloudStorageFileSystem.BLOCK_SIZE_DEFAULT;
+    private int channelReopen = 0;
 
     /**
      * Changes current working directory for new filesystem. This defaults to the root directory.
@@ -134,6 +141,11 @@ public abstract class CloudStorageConfiguration {
       return this;
     }
 
+    public Builder channelReopen(int value) {
+      channelReopen = value;
+      return this;
+    }
+
     /**
      * Creates new instance without destroying builder.
      */
@@ -143,7 +155,8 @@ public abstract class CloudStorageConfiguration {
           permitEmptyPathComponents,
           stripPrefixSlash,
           usePseudoDirectories,
-          blockSize);
+          blockSize,
+          channelReopen);
     }
 
     Builder() {}
@@ -167,6 +180,9 @@ public abstract class CloudStorageConfiguration {
           break;
         case "blockSize":
           builder.blockSize((Integer) entry.getValue());
+          break;
+        case "channelReopen":
+          builder.channelReopen((Integer) entry.getValue());
           break;
         default:
           throw new IllegalArgumentException(entry.getKey());

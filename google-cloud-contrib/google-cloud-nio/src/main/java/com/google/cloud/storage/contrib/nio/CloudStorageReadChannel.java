@@ -44,13 +44,13 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
 
   private final Storage gcsStorage;
   private final BlobId file;
-  private ReadChannel channel;
-  private long position;
-  private long size;
   // max # of times we may reopen the file
   private final int maxReopen;
   // how many times we re-opened the file
   private int reopens;
+  private ReadChannel channel;
+  private long position;
+  private long size;
 
   /**
    * @param maxReopen max. number of times to try re-opening the channel if it closes on us unexpectedly.
@@ -66,6 +66,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     this.gcsStorage = gcsStorage;
     this.file = file;
     this.position = position;
+    this.reopens = 0;
     this.maxReopen = maxReopen;
     // XXX: Reading size and opening file should be atomic.
     this.size = fetchSize(gcsStorage, file);
@@ -107,9 +108,9 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
           amt = channel.read(dst);
           break;
         } catch (StorageException exs) {
-          // this error isn't marked as retryable since the channel is closed;
-          // but here at this higher level we can retry it.
           if (exs.getMessage().contains("Connection closed prematurely") && reopens < maxReopen) {
+            // this error isn't marked as retryable since the channel is closed;
+            // but here at this higher level we can retry it.
             reopens++;
             retryDelay(reopens);
             innerOpen();

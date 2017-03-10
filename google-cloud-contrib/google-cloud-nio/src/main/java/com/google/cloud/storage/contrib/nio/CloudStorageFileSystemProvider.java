@@ -139,7 +139,6 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   CloudStorageFileSystemProvider(@Nullable StorageOptions gcsStorageOptions) {
     this.storageOptions = gcsStorageOptions;
-
   }
 
   // Initialize this.storage, once. This may throw an exception if default authentication
@@ -226,7 +225,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   private SeekableByteChannel newReadChannel(Path path, Set<? extends OpenOption> options)
       throws IOException {
     initStorage();
-    int channelReopen = 0;
+    int channelReopen = ((CloudStorageFileSystem)path.getFileSystem()).config().channelReopen();
     for (OpenOption option : options) {
       if (option instanceof StandardOpenOption) {
         switch ((StandardOpenOption) option) {
