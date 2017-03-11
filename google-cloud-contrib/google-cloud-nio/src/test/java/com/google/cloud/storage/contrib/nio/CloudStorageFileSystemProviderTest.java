@@ -412,7 +412,6 @@ public class CloudStorageFileSystemProviderTest {
 
   @Test
   public void testDelete_trailingSlash() throws Exception {
-    thrown.expect(CloudStoragePseudoDirectoryException.class);
     Files.delete(Paths.get(URI.create("gs://love/passion/")));
   }
 
@@ -437,14 +436,19 @@ public class CloudStorageFileSystemProviderTest {
   public void testDeleteIfExists() throws Exception {
     Files.write(Paths.get(URI.create("gs://love/passionz")), "(✿◕ ‿◕ )ノ".getBytes(UTF_8));
     assertThat(Files.deleteIfExists(Paths.get(URI.create("gs://love/passionz")))).isTrue();
-  }
-
-  public void testDeleteIfExists_trailingSlash() throws Exception {
-    thrown.expect(CloudStoragePseudoDirectoryException.class);
+    // call does not fail, the folder just doesn't exist
     Files.deleteIfExists(Paths.get(URI.create("gs://love/passion/")));
   }
 
   @Test
+  public void testDeleteIfExists_trailingSlash_disablePseudoDirectories() throws Exception {
+    try (CloudStorageFileSystem fs = forBucket("doodle", usePseudoDirectories(false))) {
+      // Doesn't exist, no error
+      Files.deleteIfExists(Paths.get(URI.create("gs://love/passion/")));
+    }
+  }
+
+    @Test
   public void testCopy() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
