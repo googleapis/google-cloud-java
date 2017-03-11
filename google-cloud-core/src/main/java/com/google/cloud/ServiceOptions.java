@@ -21,12 +21,16 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.core.SystemClock;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
 
+import org.joda.time.Duration;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -78,17 +82,22 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private static final String LIBRARY_VERSION = defaultLibraryVersion();
   private static final String APPLICATION_NAME =
       LIBRARY_VERSION == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + LIBRARY_VERSION;
-  private static final long serialVersionUID = -5714029257168617973L;
 
   private static final String META_FILE_ROOT = "/META-INF/maven/";
   private static final String META_VERSION_KEY = "version";
+  private static final RetrySettings DEFAULT_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
+      .build();
+  private static final RetrySettings NO_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
+      .setMaxAttempts(1).build();
+
+  private static final long serialVersionUID = 9198896031667942014L;
 
   private final String projectId;
   private final String host;
-  private final RetryParams retryParams;
+  private final RetrySettings retrySettings;
   private final String serviceRpcFactoryClassName;
   private final String serviceFactoryClassName;
-  private final Clock clock;
+  private final NanoClock clock;
   private final Credentials credentials;
 
   private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
@@ -111,18 +120,19 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     private String projectId;
     private String host;
     private Credentials credentials;
-    private RetryParams retryParams;
+    private RetrySettings retrySettings;
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
-    private Clock clock;
+    private NanoClock clock;
 
-    protected Builder() {}
+    protected Builder() {
+    }
 
     protected Builder(ServiceOptions<ServiceT, ServiceRpcT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
       credentials = options.credentials;
-      retryParams = options.retryParams;
+      retrySettings = options.retrySettings;
       serviceFactory = options.serviceFactory;
       serviceRpcFactory = options.serviceRpcFactory;
       clock = options.clock;
@@ -146,13 +156,13 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
 
     /**
-     * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
-     * replaced by Java8's {@code java.time.Clock}.
+     * Sets the service's clock. The clock is mainly used for testing purpose. {@link NanoClock}
+     * will be replaced by Java8's {@code java.time.Clock}.
      *
      * @param clock the clock to set
      * @return the builder
      */
-    public B setClock(Clock clock) {
+    public B setClock(NanoClock clock) {
       this.clock = clock;
       return self();
     }
@@ -189,7 +199,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      * @param credentials authentication credentials, should not be {@code null}
      * @return the builder
      * @throws NullPointerException if {@code credentials} is {@code null}. To disable
-     *     authentication use {@link NoCredentials#getInstance()}
+     * authentication use {@link NoCredentials#getInstance()}
      */
     public B setCredentials(Credentials credentials) {
       this.credentials = checkNotNull(credentials);
@@ -198,14 +208,12 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
 
     /**
-     * Sets configuration parameters for request retries. If no configuration is set
-     * {@link RetryParams#getDefaultInstance()} is used. To disable retries, supply
-     * {@link RetryParams#noRetries()} here.
+     * Sets configuration parameters for request retries.
      *
      * @return the builder
      */
-    public B setRetryParams(RetryParams retryParams) {
-      this.retryParams = retryParams;
+    public B setRetrySettings(RetrySettings retrySettings) {
+      this.retrySettings = retrySettings;
       return self();
     }
 
@@ -229,18 +237,18 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       checkArgument(
           projectId != null,
           "A project ID is required for this service but could not be determined from the builder "
-          + "or the environment.  Please set a project ID using the builder.");
+              + "or the environment.  Please set a project ID using the builder.");
     }
     host = firstNonNull(builder.host, getDefaultHost());
     credentials = builder.credentials != null ? builder.credentials : defaultCredentials();
-    retryParams = firstNonNull(builder.retryParams, defaultRetryParams());
+    retrySettings = firstNonNull(builder.retrySettings, getDefaultRetrySettings());
     serviceFactory = firstNonNull(builder.serviceFactory,
         getFromServiceLoader(serviceFactoryClass, getDefaultServiceFactory()));
     serviceFactoryClassName = serviceFactory.getClass().getName();
     serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
         getFromServiceLoader(rpcFactoryClass, getDefaultRpcFactory()));
     serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
-    clock = firstNonNull(builder.clock, Clock.defaultClock());
+    clock = firstNonNull(builder.clock, SystemClock.getDefaultClock());
   }
 
   /**
@@ -275,12 +283,12 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * Returns the default project ID, or {@code null} if no default project ID could be found. This
    * method returns the first available project ID among the following sources:
    * <ol>
-   *   <li>The project ID specified by the GOOGLE_CLOUD_PROJECT environment variable
-   *   <li>The App Engine project ID
-   *   <li>The project ID specified in the JSON credentials file pointed by the
-   *   {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable
-   *   <li>The Google Cloud SDK project ID
-   *   <li>The Compute Engine project ID
+   * <li>The project ID specified by the GOOGLE_CLOUD_PROJECT environment variable
+   * <li>The App Engine project ID
+   * <li>The project ID specified in the JSON credentials file pointed by the
+   * {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable
+   * <li>The Google Cloud SDK project ID
+   * <li>The Compute Engine project ID
    * </ol>
    */
   public static String getDefaultProjectId() {
@@ -470,11 +478,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
 
   /**
-   * Returns configuration parameters for request retries. By default requests are retried:
-   * {@link RetryParams#getDefaultInstance()} is used.
+   * Returns configuration parameters for request retries.
    */
-  public RetryParams getRetryParams() {
-    return retryParams;
+  public RetrySettings getRetrySettings() {
+    return retrySettings;
   }
 
 
@@ -482,7 +489,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
    * current time.
    */
-  public Clock getClock() {
+  public NanoClock getClock() {
     return clock;
   }
 
@@ -524,7 +531,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   protected int baseHashCode() {
-    return Objects.hash(projectId, host, credentials, retryParams, serviceFactoryClassName,
+    return Objects.hash(projectId, host, credentials, retrySettings, serviceFactoryClassName,
         serviceRpcFactoryClassName, clock);
   }
 
@@ -532,7 +539,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return Objects.equals(projectId, other.projectId)
         && Objects.equals(host, other.host)
         && Objects.equals(credentials, other.credentials)
-        && Objects.equals(retryParams, other.retryParams)
+        && Objects.equals(retrySettings, other.retrySettings)
         && Objects.equals(serviceFactoryClassName, other.serviceFactoryClassName)
         && Objects.equals(serviceRpcFactoryClassName, other.serviceRpcFactoryClassName)
         && Objects.equals(clock, clock);
@@ -553,6 +560,25 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
+  public static RetrySettings getDefaultRetrySettings() {
+    return DEFAULT_RETRY_SETTINGS;
+  }
+
+  public static RetrySettings getNoRetrySettings() {
+    return NO_RETRY_SETTINGS;
+  }
+
+  private static RetrySettings.Builder getDefaultRetrySettingsBuilder() {
+    return RetrySettings.newBuilder()
+        .setMaxAttempts(6)
+        .setInitialRetryDelay(Duration.millis(1000L))
+        .setMaxRetryDelay(Duration.millis(32_000L))
+        .setRetryDelayMultiplier(2.0)
+        .setTotalTimeout(Duration.millis(50_000L))
+        .setInitialRpcTimeout(Duration.millis(50_000L))
+        .setRpcTimeoutMultiplier(1.0)
+        .setMaxRpcTimeout(Duration.millis(50_000L));
+  }
 
   protected abstract ServiceFactory<ServiceT, OptionsT> getDefaultServiceFactory();
 
@@ -567,10 +593,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   /**
    * Some services may have different backoff requirements listed in their SLAs. Be sure to override
    * this method in options subclasses when the service's backoff requirement differs from the
-   * default parameters listed in {@link RetryParams}.
+   * default parameters listed in {@link RetrySettings}.
    */
-  protected RetryParams defaultRetryParams() {
-    return RetryParams.getDefaultInstance();
+  protected RetrySettings defaultRetrySettings() {
+    return getDefaultRetrySettings();
   }
 
   static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {

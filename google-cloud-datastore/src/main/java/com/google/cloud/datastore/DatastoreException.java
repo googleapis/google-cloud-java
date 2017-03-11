@@ -18,7 +18,6 @@ package com.google.cloud.datastore;
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.RetryHelper.RetryInterruptedException;
 import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
@@ -66,10 +65,9 @@ public final class DatastoreException extends BaseServiceException {
    * will always throw an exception.
    *
    * @throws DatastoreException when {@code ex} was caused by a {@code DatastoreException}
-   * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
   static DatastoreException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndPropagateIfPossible(ex);
+    BaseServiceException.translate(ex);
     throw new DatastoreException(UNKNOWN_CODE, ex.getMessage(), null, ex.getCause());
   }
 

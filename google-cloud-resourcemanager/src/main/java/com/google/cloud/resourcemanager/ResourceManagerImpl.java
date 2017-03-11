@@ -56,7 +56,7 @@ final class ResourceManagerImpl
             public com.google.api.services.cloudresourcemanager.model.Project call() {
               return resourceManagerRpc.create(project.toPb());
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -71,7 +71,7 @@ final class ResourceManagerImpl
           resourceManagerRpc.delete(projectId);
           return null;
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -87,7 +87,7 @@ final class ResourceManagerImpl
             public com.google.api.services.cloudresourcemanager.model.Project call() {
               return resourceManagerRpc.get(projectId, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Project.fromPb(this, answer);
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
@@ -131,7 +131,7 @@ final class ResourceManagerImpl
                   return serviceOptions.getRpc().list(optionsMap);
                 }
               },
-              serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+              serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Project> projects =
           result.y() == null
@@ -163,7 +163,7 @@ final class ResourceManagerImpl
             public com.google.api.services.cloudresourcemanager.model.Project call() {
               return resourceManagerRpc.replace(newProject.toPb());
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -178,7 +178,7 @@ final class ResourceManagerImpl
           resourceManagerRpc.undelete(projectId);
           return null;
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -194,7 +194,7 @@ final class ResourceManagerImpl
                 public com.google.api.services.cloudresourcemanager.model.Policy call() {
                   return resourceManagerRpc.getPolicy(projectId);
                 }
-              }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+              }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : PolicyMarshaller.INSTANCE.fromPb(answer);
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
@@ -211,7 +211,7 @@ final class ResourceManagerImpl
               return resourceManagerRpc.replacePolicy(projectId,
                   PolicyMarshaller.INSTANCE.toPb(newPolicy));
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -226,7 +226,7 @@ final class ResourceManagerImpl
             public List<Boolean> call() {
               return resourceManagerRpc.testPermissions(projectId, permissions);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }

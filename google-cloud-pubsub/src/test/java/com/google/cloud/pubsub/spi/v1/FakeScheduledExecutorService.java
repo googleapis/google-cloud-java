@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.cloud.Clock;
+import com.google.api.gax.core.NanoClock;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.SettableFuture;
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   private final PriorityQueue<PendingCallable<?>> pendingCallables = new PriorityQueue<>();
   private final FakeClock clock = new FakeClock();
 
-  public Clock getClock() {
+  public NanoClock getClock() {
     return clock;
   }
 
@@ -89,7 +89,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   }
 
   private void work() {
-    DateTime cmpTime = new DateTime(clock.millis());
+    DateTime cmpTime = new DateTime(clock.millisTime());
 
     for (;;) {
       PendingCallable<?> callable = null;
@@ -193,7 +193,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
 
   /** Class that saves the state of an scheduled pending callable. */
   class PendingCallable<T> implements Comparable<PendingCallable<T>> {
-    DateTime creationTime = new DateTime(clock.millis());
+    DateTime creationTime = new DateTime(clock.millisTime());
     Duration delay;
     Callable<T> pendingCallable;
     SettableFuture<T> future = SettableFuture.create();
@@ -228,7 +228,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       return new ScheduledFuture<T>() {
         @Override
         public long getDelay(TimeUnit unit) {
-          return unit.convert(getScheduledTime().getMillis() - clock.millis(), TimeUnit.MILLISECONDS);
+          return unit.convert(getScheduledTime().getMillis() - clock.millisTime(), TimeUnit.MILLISECONDS);
         }
 
         @Override
@@ -285,7 +285,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
               done.set(true);
               break;
             case FIXED_DELAY:
-              this.creationTime = new DateTime(clock.millis());
+              this.creationTime = new DateTime(clock.millisTime());
               schedulePendingCallable(this);
               break;
             case FIXED_RATE:

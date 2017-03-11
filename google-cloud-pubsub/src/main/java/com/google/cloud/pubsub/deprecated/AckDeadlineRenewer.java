@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub.deprecated;
 
-import com.google.cloud.Clock;
+import com.google.api.gax.core.NanoClock;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.LinkedListMultimap;
@@ -49,7 +49,7 @@ class AckDeadlineRenewer implements AutoCloseable {
   private final PubSub pubsub;
   private final ScheduledExecutorService executor;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
-  private final Clock clock;
+  private final NanoClock clock;
   private final Queue<Message> messageQueue;
   private final Map<MessageId, Long> messageDeadlines;
   private final Object lock = new Object();
@@ -188,7 +188,7 @@ class AckDeadlineRenewer implements AutoCloseable {
     synchronized (futureLock) {
       if (renewerFuture == null && nextMessage != null) {
         long delay =
-            (nextMessage.expectedDeadline() - clock.millis()) - NEXT_RENEWAL_THRESHOLD_MILLIS;
+            (nextMessage.expectedDeadline() - clock.millisTime()) - NEXT_RENEWAL_THRESHOLD_MILLIS;
         renewerFuture = executor.schedule(new Runnable() {
           @Override
           public void run() {
@@ -203,7 +203,7 @@ class AckDeadlineRenewer implements AutoCloseable {
     ListMultimap<String, String> messagesToRenewNext = LinkedListMultimap.create();
     // At every activation we renew all ack deadlines that will expire in the following
     // RENEW_THRESHOLD_MILLIS
-    long threshold = clock.millis() + RENEW_THRESHOLD_MILLIS;
+    long threshold = clock.millisTime() + RENEW_THRESHOLD_MILLIS;
     Message message;
     while ((message = nextMessageToRenew(threshold)) != null) {
       // If the expected deadline is null the message was removed and we must ignore it, otherwise
@@ -254,7 +254,7 @@ class AckDeadlineRenewer implements AutoCloseable {
    */
   void add(String subscription, String ackId) {
     synchronized (lock) {
-      long deadline = clock.millis() + MIN_DEADLINE_MILLIS - DEADLINE_SLACK_MILLIS;
+      long deadline = clock.millisTime() + MIN_DEADLINE_MILLIS - DEADLINE_SLACK_MILLIS;
       Message message = new Message(new MessageId(subscription, ackId), deadline);
       messageQueue.add(message);
       messageDeadlines.put(message.messageId(), deadline);
@@ -273,7 +273,7 @@ class AckDeadlineRenewer implements AutoCloseable {
    */
   void add(String subscription, Iterable<String> ackIds) {
     synchronized (lock) {
-      long deadline = clock.millis() + MIN_DEADLINE_MILLIS - DEADLINE_SLACK_MILLIS;
+      long deadline = clock.millisTime() + MIN_DEADLINE_MILLIS - DEADLINE_SLACK_MILLIS;
       for (String ackId : ackIds) {
         Message message = new Message(new MessageId(subscription, ackId), deadline);
         messageQueue.add(message);

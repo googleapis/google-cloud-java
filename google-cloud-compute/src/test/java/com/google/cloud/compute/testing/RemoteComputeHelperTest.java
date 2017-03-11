@@ -24,6 +24,7 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.compute.ComputeOptions;
 import com.google.cloud.compute.testing.RemoteComputeHelper.ComputeHelperException;
 
+import org.joda.time.Duration;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -79,11 +80,10 @@ public class RemoteComputeHelperTest {
     assertEquals(PROJECT_ID, options.getProjectId());
     assertEquals(60000, options.getConnectTimeout());
     assertEquals(60000, options.getReadTimeout());
-    assertEquals(10, options.getRetryParams().getRetryMaxAttempts());
-    assertEquals(6, options.getRetryParams().getRetryMinAttempts());
-    assertEquals(30000, options.getRetryParams().getMaxRetryDelayMillis());
-    assertEquals(120000, options.getRetryParams().getTotalRetryPeriodMillis());
-    assertEquals(250, options.getRetryParams().getInitialRetryDelayMillis());
+    assertEquals(10, options.getRetrySettings().getMaxAttempts());
+    assertEquals(Duration.millis(30000), options.getRetrySettings().getMaxRetryDelay());
+    assertEquals(Duration.millis(120000), options.getRetrySettings().getTotalTimeout());
+    assertEquals(Duration.millis(250), options.getRetrySettings().getInitialRetryDelay());
   }
 
   @Test

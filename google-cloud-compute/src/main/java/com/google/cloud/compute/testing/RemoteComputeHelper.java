@@ -17,7 +17,7 @@
 package com.google.cloud.compute.testing;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.RetryParams;
+import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.compute.ComputeOptions;
 
 import java.io.IOException;
@@ -25,15 +25,16 @@ import java.io.InputStream;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.joda.time.Duration;
 
 /**
  * Utility to create a remote Compute configuration for testing. Compute options can be obtained
  * via the {@link #options()} method. Returned options have custom
- * {@link ComputeOptions#getRetryParams()}: {@link RetryParams#getRetryMaxAttempts()} is {@code 10},
- * {@link RetryParams#getRetryMinAttempts()} is {@code 6},
- * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
- * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
- * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
+ * {@link ComputeOptions#getRetrySettings()}: {@link RetrySettings#getMaxAttempts()} is {@code 10},
+ * {@link RetrySettings#getRetryAttempts()} is {@code 6},
+ * {@link RetrySettings#getMaxRetryDelay()} is {@code 30000},
+ * {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
+ * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
  * {@link ComputeOptions#getConnectTimeout()} and {@link ComputeOptions#getReadTimeout()} are both
  * set to {@code 60000}.
  */
@@ -85,7 +86,7 @@ public class RemoteComputeHelper {
       ComputeOptions computeOptions = ComputeOptions.newBuilder()
           .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
-          .setRetryParams(retryParams())
+          .setRetrySettings(retryParams())
           .setConnectTimeout(60000)
           .setReadTimeout(60000)
           .build();
@@ -104,20 +105,22 @@ public class RemoteComputeHelper {
    */
   public static RemoteComputeHelper create() {
     ComputeOptions computeOptions = ComputeOptions.newBuilder()
-        .setRetryParams(retryParams())
+        .setRetrySettings(retryParams())
         .setConnectTimeout(60000)
         .setReadTimeout(60000)
         .build();
     return new RemoteComputeHelper(computeOptions);
   }
 
-  private static RetryParams retryParams() {
-    return RetryParams.newBuilder()
-        .setRetryMaxAttempts(10)
-        .setRetryMinAttempts(6)
-        .setMaxRetryDelayMillis(30000)
-        .setTotalRetryPeriodMillis(120000)
-        .setInitialRetryDelayMillis(250)
+  private static RetrySettings retryParams() {
+    return RetrySettings.newBuilder().setMaxAttempts(10)
+        .setMaxRetryDelay(Duration.millis(30000L))
+        .setTotalTimeout(Duration.millis(120000L))
+        .setInitialRetryDelay(Duration.millis(250L))
+        .setRetryDelayMultiplier(1.0)
+        .setInitialRpcTimeout(Duration.millis(120000L))
+        .setRpcTimeoutMultiplier(1.0)
+        .setMaxRpcTimeout(Duration.millis(120000L))
         .build();
   }
 

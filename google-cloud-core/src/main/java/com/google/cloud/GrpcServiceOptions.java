@@ -229,17 +229,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
    * Returns a builder for API call settings.
    */
   protected UnaryCallSettings.Builder getApiCallSettings() {
-    // todo(mziccard): specify timeout these settings:
-    // retryParams().retryMaxAttempts(), retryParams().retryMinAttempts()
-    final RetrySettings.Builder builder = RetrySettings.newBuilder()
-        .setTotalTimeout(Duration.millis(getRetryParams().getTotalRetryPeriodMillis()))
-        .setInitialRpcTimeout(Duration.millis(getInitialTimeout()))
-        .setRpcTimeoutMultiplier(getTimeoutMultiplier())
-        .setMaxRpcTimeout(Duration.millis(getMaxTimeout()))
-        .setInitialRetryDelay(Duration.millis(getRetryParams().getInitialRetryDelayMillis()))
-        .setRetryDelayMultiplier(getRetryParams().getRetryDelayBackoffFactor())
-        .setMaxRetryDelay(Duration.millis(getRetryParams().getMaxRetryDelayMillis()));
-    return UnaryCallSettings.newBuilder().setRetrySettingsBuilder(builder);
+    return UnaryCallSettings.newBuilder().setRetrySettingsBuilder(getRetrySettings().toBuilder());
   }
 
   /**

@@ -17,7 +17,7 @@
 package com.google.cloud.datastore.testing;
 
 import com.google.cloud.NoCredentials;
-import com.google.cloud.RetryParams;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.testing.BaseEmulatorHelper;
 import com.google.common.collect.ImmutableList;
@@ -124,7 +124,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
         .setProjectId(getProjectId())
         .setHost(DEFAULT_HOST + ":" + Integer.toString(getPort()))
         .setCredentials(NoCredentials.getInstance())
-        .setRetryParams(RetryParams.noRetries());
+        .setRetrySettings(ServiceOptions.getNoRetrySettings());
   }
 
 

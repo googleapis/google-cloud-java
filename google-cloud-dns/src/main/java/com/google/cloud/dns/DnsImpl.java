@@ -138,7 +138,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public DnsRpc.ListResult<ManagedZone> call() {
               return rpc.listZones(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.pageToken();
       // transform that list into zone objects
       Iterable<Zone> zones = result.results() == null ? ImmutableList.<Zone>of()
@@ -166,7 +166,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
         public DnsRpc.ListResult<Change> call() {
           return rpc.listChangeRequests(zoneName, optionsMap);
         }
-      }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+      }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.pageToken();
       // transform that list into change request objects
       Iterable<ChangeRequest> changes = result.results() == null
@@ -196,7 +196,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public DnsRpc.ListResult<ResourceRecordSet> call() {
               return rpc.listRecordSets(zoneName, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.pageToken();
       // transform that list into record sets
       Iterable<RecordSet> recordSets = result.results() == null
@@ -219,7 +219,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public ManagedZone call() {
               return dnsRpc.create(zoneInfo.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Zone.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
@@ -236,7 +236,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public ManagedZone call() {
               return dnsRpc.getZone(zoneName, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Zone.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
@@ -251,7 +251,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
         public Boolean call() {
           return dnsRpc.deleteZone(zoneName);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
     }
@@ -267,7 +267,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public Project call() {
               return dnsRpc.getProject(optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : ProjectInfo.fromPb(answer); // should never be null
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
@@ -285,7 +285,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public Change call() {
               return dnsRpc.applyChangeRequest(zoneName, changeRequest.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : ChangeRequest.fromPb(this, zoneName, answer); // not null
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
@@ -303,7 +303,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public Change call() {
               return dnsRpc.getChangeRequest(zoneName, changeRequestId, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : ChangeRequest.fromPb(this, zoneName, answer);
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);

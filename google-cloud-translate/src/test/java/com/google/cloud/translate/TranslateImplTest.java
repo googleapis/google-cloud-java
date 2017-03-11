@@ -22,7 +22,8 @@ import static org.junit.Assert.assertSame;
 import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.LanguagesResource;
 import com.google.api.services.translate.model.TranslationsResource;
-import com.google.cloud.RetryParams;
+import com.google.api.gax.core.RetrySettings;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.translate.Translate.LanguageListOption;
 import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.spi.TranslateRpc;
@@ -78,8 +79,8 @@ public class TranslateImplTest {
   // Language list options
   private static final LanguageListOption LANGUAGE_LIST_OPTION =
       LanguageListOption.targetLanguage(TARGET_LANGUAGE);
-  private static final Map<TranslateRpc.Option, ?> LANGUAGE_LIST_OPTIONS = ImmutableMap.of(
-      TranslateRpc.Option.TARGET_LANGUAGE, LANGUAGE_LIST_OPTION.getValue());
+  private static final Map<TranslateRpc.Option, ?> LANGUAGE_LIST_OPTIONS =
+      ImmutableMap.of(TranslateRpc.Option.TARGET_LANGUAGE, LANGUAGE_LIST_OPTION.getValue());
 
   // Translate options
   private static final TranslateOption TARGET_LANGUAGE_OPTION =
@@ -87,18 +88,19 @@ public class TranslateImplTest {
   private static final TranslateOption SOURCE_LANGUAGE_OPTION =
       TranslateOption.sourceLanguage("de");
   private static final TranslateOption MODEL_OPTION = TranslateOption.model("nmt");
-  private static final Map<TranslateRpc.Option, ?> TRANSLATE_OPTIONS = ImmutableMap.of(
-      TranslateRpc.Option.TARGET_LANGUAGE, TARGET_LANGUAGE_OPTION.getValue(),
-      TranslateRpc.Option.SOURCE_LANGUAGE, SOURCE_LANGUAGE_OPTION.getValue(),
-      TranslateRpc.Option.MODEL, "nmt");
+  private static final Map<TranslateRpc.Option, ?> TRANSLATE_OPTIONS =
+      ImmutableMap.of(
+          TranslateRpc.Option.TARGET_LANGUAGE, TARGET_LANGUAGE_OPTION.getValue(),
+          TranslateRpc.Option.SOURCE_LANGUAGE, SOURCE_LANGUAGE_OPTION.getValue(),
+          TranslateRpc.Option.MODEL, "nmt");
+  private static final RetrySettings NO_RETRY_SETTINGS = ServiceOptions.getNoRetrySettings();
 
   private TranslateOptions options;
   private TranslateRpcFactory rpcFactoryMock;
   private TranslateRpc translateRpcMock;
   private Translate translate;
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -107,11 +109,12 @@ public class TranslateImplTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(TranslateOptions.class)))
         .andReturn(translateRpcMock);
     EasyMock.replay(rpcFactoryMock);
-    options = TranslateOptions.newBuilder()
-        .setApiKey(API_KEY)
-        .setServiceRpcFactory(rpcFactoryMock)
-        .setRetryParams(RetryParams.noRetries())
-        .build();
+    options =
+        TranslateOptions.newBuilder()
+            .setApiKey(API_KEY)
+            .setServiceRpcFactory(rpcFactoryMock)
+            .setRetrySettings(NO_RETRY_SETTINGS)
+            .build();
   }
 
   @After
@@ -145,8 +148,9 @@ public class TranslateImplTest {
         .andReturn(ImmutableList.of(LANGUAGE3_PB, LANGUAGE4_PB));
     EasyMock.replay(translateRpcMock);
     initializeService();
-    assertEquals(LANGUAGES2, translate.listSupportedLanguages(
-        LanguageListOption.targetLanguage(TARGET_LANGUAGE)));
+    assertEquals(
+        LANGUAGES2,
+        translate.listSupportedLanguages(LanguageListOption.targetLanguage(TARGET_LANGUAGE)));
   }
 
   @Test
@@ -164,8 +168,9 @@ public class TranslateImplTest {
   public void testDetectMultipleDetections() {
     String text = "text";
     EasyMock.expect(translateRpcMock.detect(ImmutableList.of(text)))
-        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
-            ImmutableList.of(DETECTION1_PB, DETECTION2_PB)));
+        .andReturn(
+            ImmutableList.<List<DetectionsResourceItems>>of(
+                ImmutableList.of(DETECTION1_PB, DETECTION2_PB)));
     EasyMock.replay(translateRpcMock);
     initializeService();
     thrown.expect(IllegalStateException.class);
@@ -177,8 +182,9 @@ public class TranslateImplTest {
   public void testDetectNoDetection() {
     String text = "text";
     EasyMock.expect(translateRpcMock.detect(ImmutableList.of(text)))
-        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
-            ImmutableList.<DetectionsResourceItems>of()));
+        .andReturn(
+            ImmutableList.<List<DetectionsResourceItems>>of(
+                ImmutableList.<DetectionsResourceItems>of()));
     EasyMock.replay(translateRpcMock);
     initializeService();
     thrown.expect(IllegalStateException.class);
@@ -192,8 +198,9 @@ public class TranslateImplTest {
     String text2 = "other text";
     List<String> texts = ImmutableList.of(text1, text2);
     EasyMock.expect(translateRpcMock.detect(texts))
-        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
-            ImmutableList.of(DETECTION1_PB), ImmutableList.of(DETECTION2_PB)));
+        .andReturn(
+            ImmutableList.<List<DetectionsResourceItems>>of(
+                ImmutableList.of(DETECTION1_PB), ImmutableList.of(DETECTION2_PB)));
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(ImmutableList.of(DETECTION1, DETECTION2), translate.detect(texts));
@@ -205,8 +212,9 @@ public class TranslateImplTest {
     String text2 = "other text";
     List<String> texts = ImmutableList.of(text1, text2);
     EasyMock.expect(translateRpcMock.detect(texts))
-        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
-            ImmutableList.of(DETECTION1_PB, DETECTION2_PB), ImmutableList.of(DETECTION1_PB)));
+        .andReturn(
+            ImmutableList.<List<DetectionsResourceItems>>of(
+                ImmutableList.of(DETECTION1_PB, DETECTION2_PB), ImmutableList.of(DETECTION1_PB)));
     EasyMock.replay(translateRpcMock);
     initializeService();
     thrown.expect(IllegalStateException.class);
@@ -220,8 +228,9 @@ public class TranslateImplTest {
     String text2 = "other text";
     List<String> texts = ImmutableList.of(text1, text2);
     EasyMock.expect(translateRpcMock.detect(texts))
-        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
-            ImmutableList.of(DETECTION1_PB), ImmutableList.<DetectionsResourceItems>of()));
+        .andReturn(
+            ImmutableList.<List<DetectionsResourceItems>>of(
+                ImmutableList.of(DETECTION1_PB), ImmutableList.<DetectionsResourceItems>of()));
     EasyMock.replay(translateRpcMock);
     initializeService();
     thrown.expect(IllegalStateException.class);
@@ -234,8 +243,9 @@ public class TranslateImplTest {
     String text1 = "text";
     String text2 = "other text";
     EasyMock.expect(translateRpcMock.detect(ImmutableList.of(text1, text2)))
-        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
-            ImmutableList.of(DETECTION1_PB), ImmutableList.of(DETECTION2_PB)));
+        .andReturn(
+            ImmutableList.<List<DetectionsResourceItems>>of(
+                ImmutableList.of(DETECTION1_PB), ImmutableList.of(DETECTION2_PB)));
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(ImmutableList.of(DETECTION1, DETECTION2), translate.detect(text1, text2));
@@ -246,8 +256,9 @@ public class TranslateImplTest {
     String text1 = "text";
     String text2 = "other text";
     EasyMock.expect(translateRpcMock.detect(ImmutableList.of(text1, text2)))
-        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
-            ImmutableList.of(DETECTION1_PB, DETECTION2_PB), ImmutableList.of(DETECTION1_PB)));
+        .andReturn(
+            ImmutableList.<List<DetectionsResourceItems>>of(
+                ImmutableList.of(DETECTION1_PB, DETECTION2_PB), ImmutableList.of(DETECTION1_PB)));
     EasyMock.replay(translateRpcMock);
     initializeService();
     thrown.expect(IllegalStateException.class);
@@ -260,8 +271,9 @@ public class TranslateImplTest {
     String text1 = "text";
     String text2 = "other text";
     EasyMock.expect(translateRpcMock.detect(ImmutableList.of(text1, text2)))
-        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
-            ImmutableList.of(DETECTION1_PB), ImmutableList.<DetectionsResourceItems>of()));
+        .andReturn(
+            ImmutableList.<List<DetectionsResourceItems>>of(
+                ImmutableList.of(DETECTION1_PB), ImmutableList.<DetectionsResourceItems>of()));
     EasyMock.replay(translateRpcMock);
     initializeService();
     thrown.expect(IllegalStateException.class);
@@ -286,7 +298,8 @@ public class TranslateImplTest {
         .andReturn(ImmutableList.of(TRANSLATION2_PB));
     EasyMock.replay(translateRpcMock);
     initializeService();
-    assertEquals(TRANSLATION2,
+    assertEquals(
+        TRANSLATION2,
         translate.translate(text, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION));
   }
 
@@ -310,7 +323,8 @@ public class TranslateImplTest {
         .andReturn(ImmutableList.of(TRANSLATION2_PB));
     EasyMock.replay(translateRpcMock);
     initializeService();
-    assertEquals(ImmutableList.of(TRANSLATION2),
+    assertEquals(
+        ImmutableList.of(TRANSLATION2),
         translate.translate(texts, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION));
   }
 
@@ -321,7 +335,11 @@ public class TranslateImplTest {
         .andReturn(ImmutableList.of(LANGUAGE1_PB, LANGUAGE2_PB));
     EasyMock.replay(translateRpcMock);
     translate =
-        options.toBuilder().setRetryParams(RetryParams.getDefaultInstance()).build().getService();
+        options
+            .toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
+            .getService();
     assertEquals(LANGUAGES1, translate.listSupportedLanguages());
   }
 
@@ -332,7 +350,11 @@ public class TranslateImplTest {
         .andThrow(new TranslateException(501, exceptionMessage));
     EasyMock.replay(translateRpcMock);
     translate =
-        options.toBuilder().setRetryParams(RetryParams.getDefaultInstance()).build().getService();
+        options
+            .toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
+            .getService();
     thrown.expect(TranslateException.class);
     thrown.expectMessage(exceptionMessage);
     translate.listSupportedLanguages();
@@ -345,7 +367,11 @@ public class TranslateImplTest {
         .andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(translateRpcMock);
     translate =
-        options.toBuilder().setRetryParams(RetryParams.getDefaultInstance()).build().getService();
+        options
+            .toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
+            .getService();
     thrown.expect(TranslateException.class);
     thrown.expectMessage(exceptionMessage);
     translate.listSupportedLanguages();

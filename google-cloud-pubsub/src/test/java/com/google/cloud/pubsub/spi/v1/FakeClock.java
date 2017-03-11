@@ -16,12 +16,12 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.cloud.Clock;
+import com.google.api.gax.core.NanoClock;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 /** A Clock to help with testing time-based logic. */
-public class FakeClock extends Clock {
+public class FakeClock implements NanoClock {
 
   private final AtomicLong millis = new AtomicLong();
 
@@ -31,7 +31,12 @@ public class FakeClock extends Clock {
   }
 
   @Override
-  public long millis() {
+  public long nanoTime() {
+    return millisTime() * 1000_000L;
+  }
+
+  @Override
+  public long millisTime() {
     return millis.get();
   }
 }

@@ -28,7 +28,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Clock;
+import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.SystemClock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.compute.Operation.OperationError;
 import com.google.cloud.compute.Operation.OperationWarning;
@@ -440,7 +441,7 @@ public class OperationTest {
     Operation successOperation =
         Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb().setError(null));
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(Clock.defaultClock());
+    expect(mockOptions.getClock()).andReturn(SystemClock.getDefaultClock());
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(successOperation);
     expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(successOperation);
     replay(compute, mockOptions);
@@ -455,7 +456,7 @@ public class OperationTest {
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(Clock.defaultClock());
+    expect(mockOptions.getClock()).andReturn(SystemClock.getDefaultClock());
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
     expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(null);
     replay(compute, mockOptions);
@@ -477,7 +478,7 @@ public class OperationTest {
     Operation completedOperation =
         Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb().setError(null));
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(Clock.defaultClock());
+    expect(mockOptions.getClock()).andReturn(SystemClock.getDefaultClock());
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(runningOperation);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions))
         .andReturn(completedOperation);
@@ -499,7 +500,7 @@ public class OperationTest {
     Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
         globalOperation.toPb().setError(null).setStatus("RUNNING"));
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(Clock.defaultClock());
+    expect(mockOptions.getClock()).andReturn(SystemClock.getDefaultClock());
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(runningOperation);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
     expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(null);
@@ -517,10 +518,10 @@ public class OperationTest {
     TimeUnit timeUnit = createStrictMock(TimeUnit.class);
     timeUnit.sleep(1);
     EasyMock.expectLastCall();
-    Clock clock = createStrictMock(Clock.class);
-    expect(clock.millis()).andReturn(0L);
-    expect(clock.millis()).andReturn(1L);
-    expect(clock.millis()).andReturn(3L);
+    NanoClock clock = createStrictMock(NanoClock.class);
+    expect(clock.millisTime()).andReturn(0L);
+    expect(clock.millisTime()).andReturn(1L);
+    expect(clock.millisTime()).andReturn(3L);
     Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
         globalOperation.toPb().setError(null).setStatus("RUNNING"));
     expect(compute.getOptions()).andReturn(mockOptions);

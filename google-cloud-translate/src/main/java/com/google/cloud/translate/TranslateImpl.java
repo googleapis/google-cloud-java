@@ -62,7 +62,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
         public List<LanguagesResource> call() {
           return translateRpc.listSupportedLanguages(optionMap(options));
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()),
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()),
           Language.FROM_PB_FUNCTION);
     } catch (RetryHelperException e) {
       throw TranslateException.translateAndThrow(e);
@@ -78,7 +78,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
             public List<List<DetectionsResourceItems>> call() {
               return translateRpc.detect(texts);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       Iterator<List<DetectionsResourceItems>> detectionIterator = detectionsPb.iterator();
       Iterator<String> textIterator = texts.iterator();
       while (detectionIterator.hasNext() && textIterator.hasNext()) {
@@ -112,7 +112,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
         public List<TranslationsResource> call() {
           return translateRpc.translate(texts, optionMap(options));
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()),
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()),
           Translation.FROM_PB_FUNCTION);
     } catch (RetryHelperException e) {
       throw TranslateException.translateAndThrow(e);

@@ -16,7 +16,7 @@
 
 package com.google.cloud.datastore.testing;
 
-import com.google.cloud.RetryParams;
+import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Key;
@@ -25,18 +25,19 @@ import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
 
 import java.util.UUID;
+import org.joda.time.Duration;
 
 /**
  * Utility to create a remote datastore configuration for testing. Datastore options can be obtained
  * via the {@link #getOptions()} method. Returned options use a randomly generated namespace
  * ({@link DatastoreOptions#getNamespace()}) that can be used to run the tests. Once the tests are
  * run, all entities in the namespace can be deleted using {@link #deleteNamespace()}. Returned
- * options also have custom {@link DatastoreOptions#getRetryParams()}:
- * {@link RetryParams#getRetryMaxAttempts()} is {@code 10},
- * {@link RetryParams#getRetryMinAttempts()} is {@code 6},
- * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
- * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
- * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
+ * options also have custom {@link DatastoreOptions#getRetrySettings()}:
+ * {@link RetrySettings#getMaxAttempts()} is {@code 10},
+ * {@link RetrySettings#getRetryAttempts()} is {@code 6},
+ * {@link RetrySettings#getMaxRetryDelay()} is {@code 30000},
+ * {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
+ * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
  * {@link DatastoreOptions#getConnectTimeout()} and {@link DatastoreOptions#getReadTimeout()} are
  * both set to {@code 60000}.
  */
@@ -78,20 +79,22 @@ public class RemoteDatastoreHelper {
   public static RemoteDatastoreHelper create() {
     DatastoreOptions datastoreOption = DatastoreOptions.newBuilder()
         .setNamespace(UUID.randomUUID().toString())
-        .setRetryParams(retryParams())
+        .setRetrySettings(retryParams())
         .setConnectTimeout(60000)
         .setReadTimeout(60000)
         .build();
     return new RemoteDatastoreHelper(datastoreOption);
   }
 
-  private static RetryParams retryParams() {
-    return RetryParams.newBuilder()
-        .setRetryMaxAttempts(10)
-        .setRetryMinAttempts(6)
-        .setMaxRetryDelayMillis(30000)
-        .setTotalRetryPeriodMillis(120000)
-        .setInitialRetryDelayMillis(250)
+  private static RetrySettings retryParams() {
+    return RetrySettings.newBuilder().setMaxAttempts(10)
+        .setMaxRetryDelay(Duration.millis(30000L))
+        .setTotalTimeout(Duration.millis(120000L))
+        .setInitialRetryDelay(Duration.millis(250L))
+        .setRetryDelayMultiplier(1.0)
+        .setInitialRpcTimeout(Duration.millis(120000L))
+        .setRpcTimeoutMultiplier(1.0)
+        .setMaxRpcTimeout(Duration.millis(120000L))
         .build();
   }
 }

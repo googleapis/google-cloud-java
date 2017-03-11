@@ -24,6 +24,7 @@ import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 
 import org.easymock.EasyMock;
+import org.joda.time.Duration;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -84,10 +85,9 @@ public class RemoteBigQueryHelperTest {
     assertEquals(PROJECT_ID, options.getProjectId());
     assertEquals(60000, options.getConnectTimeout());
     assertEquals(60000, options.getReadTimeout());
-    assertEquals(10, options.getRetryParams().getRetryMaxAttempts());
-    assertEquals(6, options.getRetryParams().getRetryMinAttempts());
-    assertEquals(30000, options.getRetryParams().getMaxRetryDelayMillis());
-    assertEquals(120000, options.getRetryParams().getTotalRetryPeriodMillis());
-    assertEquals(250, options.getRetryParams().getInitialRetryDelayMillis());
+    assertEquals(10, options.getRetrySettings().getMaxAttempts());
+    assertEquals(Duration.millis(30000), options.getRetrySettings().getMaxRetryDelay());
+    assertEquals(Duration.millis(120000), options.getRetrySettings().getTotalTimeout());
+    assertEquals(Duration.millis(250), options.getRetrySettings().getInitialRetryDelay());
   }
 }

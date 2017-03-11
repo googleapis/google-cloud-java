@@ -31,8 +31,8 @@ import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.Identity;
 import com.google.cloud.Page;
 import com.google.cloud.Policy;
-import com.google.cloud.RetryParams;
 import com.google.cloud.Role;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.deprecated.PubSub.ListOption;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageProcessor;
@@ -166,7 +166,8 @@ public class PubSubImplTest {
     options = EasyMock.createMock(PubSubOptions.class);
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getRpc()).andReturn(pubsubRpcMock).anyTimes();
-    EasyMock.expect(options.getRetryParams()).andReturn(RetryParams.noRetries()).anyTimes();
+    EasyMock.expect(options.getRetrySettings()).andReturn(ServiceOptions.getNoRetrySettings())
+        .anyTimes();
     EasyMock.replay(rpcFactoryMock, pubsubRpcMock, renewerMock, options);
     EasyMock.reset(pubsubRpcMock, renewerMock);
   }
