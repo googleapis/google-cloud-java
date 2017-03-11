@@ -19,18 +19,15 @@ package com.google.cloud.bigquery;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
 import java.util.List;
 import java.util.Map;
+import org.junit.Test;
 
 public class QueryJobConfigurationTest {
 
@@ -132,6 +129,11 @@ public class QueryJobConfigurationTest {
     QueryJobConfiguration configuration = QUERY_JOB_CONFIGURATION.setProjectId("p");
     assertEquals("p", configuration.getDefaultDataset().getProject());
     assertEquals("p", configuration.getDestinationTable().getProject());
+  }
+
+  @Test
+  public void testGetType() {
+    assertEquals(JobConfiguration.Type.QUERY, QUERY_JOB_CONFIGURATION.getType());
   }
 
   private void compareQueryJobConfiguration(QueryJobConfiguration expected,
