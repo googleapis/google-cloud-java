@@ -33,6 +33,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Throwables;
 import com.google.common.collect.AbstractIterator;
+import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
 
 import java.io.BufferedInputStream;
@@ -208,6 +209,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     initStorage();
     return CloudStoragePath.getPath(
         getFileSystem(CloudStorageUtil.stripPathFromUri(uri)), uri.getPath());
+  }
+
+  /** Convenience method: replaces spaces with "%20", builds a URI, and calls getPath(uri). */
+  public CloudStoragePath getPath(String uriInStringForm) {
+    String escaped = UrlEscapers.urlFragmentEscaper().escape(uriInStringForm);
+    return getPath(URI.create(escaped));
   }
 
   @Override
