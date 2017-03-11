@@ -7,8 +7,6 @@ This file provides extra instructions to setup Google Cloud Java client with Goo
 See [Quickstart](./README.md#quickstart) for Google Cloud Java common instructions.
 See [Quickstart](https://cloud.google.com/appengine/docs/standard/java/quickstart) for extra GAE instructions.
 
-git clone https://github.com/GoogleCloudPlatform/java-docs-samples.git
-
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
