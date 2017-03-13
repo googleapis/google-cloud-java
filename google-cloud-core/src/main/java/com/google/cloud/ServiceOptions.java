@@ -26,7 +26,6 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
-import org.easymock.internal.RuntimeExceptionWrapper;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
