@@ -118,6 +118,12 @@ public class CopyJobConfigurationTest {
     }
   }
 
+  @Test
+  public void testGetType() {
+    assertEquals(JobConfiguration.Type.COPY, COPY_JOB_CONFIGURATION.getType());
+    assertEquals(JobConfiguration.Type.COPY, COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.getType());
+  }
+
   private void compareCopyJobConfiguration(CopyJobConfiguration expected,
       CopyJobConfiguration value) {
     assertEquals(expected, value);

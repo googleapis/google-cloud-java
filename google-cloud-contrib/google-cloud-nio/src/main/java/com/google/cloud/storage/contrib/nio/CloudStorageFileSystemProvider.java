@@ -33,6 +33,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Throwables;
 import com.google.common.collect.AbstractIterator;
+import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
 
 import java.io.BufferedInputStream;
@@ -48,6 +49,7 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.DirectoryStream.Filter;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.FileStore;
+import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.OpenOption;
@@ -209,6 +211,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         getFileSystem(CloudStorageUtil.stripPathFromUri(uri)), uri.getPath());
   }
 
+  /** Convenience method: replaces spaces with "%20", builds a URI, and calls getPath(uri). */
+  public CloudStoragePath getPath(String uriInStringForm) {
+    String escaped = UrlEscapers.urlFragmentEscaper().escape(uriInStringForm);
+    return getPath(URI.create(escaped));
+  }
+
   @Override
   public SeekableByteChannel newByteChannel(
       Path path, Set<? extends OpenOption> options, FileAttribute<?>... attrs) throws IOException {
@@ -351,6 +359,15 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+      // if the "folder" is empty then we're fine, otherwise complain
+      // that we cannot act on folders.
+      try (DirectoryStream<Path> paths = Files.newDirectoryStream(path)) {
+        if (!paths.iterator().hasNext()) {
+          // "folder" isn't actually there in the first place, so: success!
+          // (we must return true so delete doesn't freak out)
+          return true;
+        }
+      }
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
     return storage.delete(cloudPath.getBlobId());
