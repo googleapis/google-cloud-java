@@ -56,7 +56,6 @@ import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.management.RuntimeErrorException;
 
 /**
  * Abstract class representing service options.
