@@ -134,14 +134,6 @@ public class LoggingHandlerTest {
       .addLabel("levelValue", String.valueOf(LoggingLevel.EMERGENCY.intValue()))
       .setTimestamp(123456789L)
       .build();
-  private static final ImmutableMap<String, String> NATIVE_SEVERITY_MAP =
-      ImmutableMap.of("levelName", Level.INFO.getName(), "levelValue", Level.INFO.intValue() + "");
-  private static final WriteOption[] DEFAULT_OPTION =
-      new WriteOption[] {
-        WriteOption.logName(LOG_NAME),
-        WriteOption.resource(DEFAULT_RESOURCE),
-        WriteOption.labels(NATIVE_SEVERITY_MAP)
-      };
   private static final String CONFIG_NAMESPACE = "com.google.cloud.logging.LoggingHandler";
   private static final ImmutableMap<String, String> CONFIG_MAP =
       ImmutableMap.<String, String>builder()
@@ -155,8 +147,15 @@ public class LoggingHandlerTest {
           .put("resourceType", "testResourceType")
           .put("synchronicity", "SYNC")
           .build();
+  private static final ImmutableMap<String, String> NATIVE_SEVERITY_MAP =
+      ImmutableMap.of(
+          "levelName", Level.INFO.getName(), "levelValue", String.valueOf(Level.INFO.intValue()));
   private static final WriteOption[] DEFAULT_OPTIONS =
-      new WriteOption[] {WriteOption.logName(LOG_NAME), WriteOption.resource(DEFAULT_RESOURCE)};
+      new WriteOption[] {
+        WriteOption.logName(LOG_NAME),
+        WriteOption.resource(DEFAULT_RESOURCE),
+        WriteOption.labels(NATIVE_SEVERITY_MAP)
+      };
 
   private static byte[] renderConfig(Map<String, String> config) {
     StringBuilder str = new StringBuilder();
@@ -220,6 +219,8 @@ public class LoggingHandlerTest {
 
   @Test
   public void testPublishLevels() {
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
     logging.writeAsync(ImmutableList.of(FINEST_ENTRY), DEFAULT_OPTIONS);
     EasyMock.expectLastCall().andReturn(ApiFutures.immediateFuture(null));
     logging.writeAsync(ImmutableList.of(FINER_ENTRY), DEFAULT_OPTIONS);
@@ -411,9 +412,7 @@ public class LoggingHandlerTest {
             .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
             .setTimestamp(123456789L)
             .build();
-    logging.write(
-        ImmutableList.of(entry),
-        DEFAULT_OPTIONS);
+    logging.write(ImmutableList.of(entry), DEFAULT_OPTIONS);
     EasyMock.replay(options, logging);
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
@@ -452,8 +451,6 @@ public class LoggingHandlerTest {
     LogEntry entry =
         LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
             .setSeverity(Severity.DEBUG)
-            .addLabel("levelName", "FINEST")
-            .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
             .addLabel("enhanced", "true")
             .setTimestamp(123456789L)
             .build();
@@ -462,7 +459,13 @@ public class LoggingHandlerTest {
         WriteOption.logName("testLogName"),
         WriteOption.resource(
             MonitoredResource.of(
-                "testResourceType", ImmutableMap.of("project_id", PROJECT, "enhanced", "true"))));
+                "testResourceType", ImmutableMap.of("project_id", PROJECT, "enhanced", "true"))),
+        WriteOption.labels(
+            ImmutableMap.of(
+                "levelName",
+                Level.FINEST.getName(),
+                "levelValue",
+                String.valueOf(Level.FINEST.intValue()))));
     EasyMock.replay(options, logging);
     LogManager.getLogManager()
         .readConfiguration(new ByteArrayInputStream(renderConfig(CONFIG_MAP)));

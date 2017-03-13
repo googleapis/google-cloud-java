@@ -68,6 +68,12 @@ import java.util.logging.SimpleFormatter;
  *     {@code java.log}).
  * <li>{@code com.google.cloud.logging.LoggingHandler.level} specifies the default level for the
  *     handler (defaults to {@code Level.INFO}).
+ *     <p> This configuration also sets the "base severity level".
+ *     Logs with the same severity with the base could be more efficiently sent to Stackdriver.
+ *     The base severity defaults to the level of of handler or {@code Level.FINEST}
+ *     if the handler is set to {@code Level.ALL}.
+ *     There is currently no way to modify the base level, see
+ *     <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740">tracking issue</a>.
  * <li>{@code com.google.cloud.logging.LoggingHandler.filter} specifies the name of a {@link Filter}
  *     class to use (defaults to no filter).
  * <li>{@code com.google.cloud.logging.LoggingHandler.formatter} specifies the name of a
@@ -110,7 +116,7 @@ public class LoggingHandler extends Handler {
   private volatile Logging logging;
   private Level flushLevel;
   private long flushSize;
-  private final Level nativeLevel;
+  private final Level baseLevel;
   private Synchronicity synchronicity;
   private final List<Enhancer> enhancers;
 
@@ -178,7 +184,7 @@ public class LoggingHandler extends Handler {
 
       Level level = helper.getLevelProperty(className + ".level", Level.INFO);
       setLevel(level);
-      nativeLevel = level;
+      baseLevel = level.equals(Level.ALL) ? Level.FINEST : level;
 
       this.synchronicity =
           helper.getSynchronicityProperty(className + ".synchronicity", Synchronicity.ASYNC);
@@ -196,9 +202,9 @@ public class LoggingHandler extends Handler {
             WriteOption.labels(
                 ImmutableMap.of(
                     LEVEL_NAME_KEY,
-                    nativeLevel.getName(),
+                    baseLevel.getName(),
                     LEVEL_VALUE_KEY,
-                    nativeLevel.intValue() + ""))
+                    String.valueOf(baseLevel.intValue())))
           };
     } catch (Exception ex) {
       reportError(null, ex, ErrorManager.OPEN_FAILURE);
@@ -396,7 +402,7 @@ public class LoggingHandler extends Handler {
           .setTimestamp(record.getMillis())
           .setSeverity(severityFor(level));
 
-      if (!nativeLevel.equals(level)) {
+      if (!baseLevel.equals(level)) {
         builder
             .addLabel("levelName", level.getName())
             .addLabel("levelValue", String.valueOf(level.intValue()));
