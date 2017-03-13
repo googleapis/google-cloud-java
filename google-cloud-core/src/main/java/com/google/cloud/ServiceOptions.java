@@ -397,7 +397,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     } catch (Exception exception) {
       if (System.getProperty("com.google.appengine.runtime.version") != null) {
         // Could not resolve appengine classes under GAE environment.
-        throw new UnsupportedOperationException("Unable to resolve appengine-sdk classes."
+        throw new UnsupportedOperationException("Unable to resolve appengine-sdk classes. "
             + "For more details see "
             + "https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/APPENGINE.md");
       }
