@@ -98,7 +98,7 @@ public final class CloudStorageOptions {
    * <p>The default is 0.
    */
   public static CloudStorageOption.OpenCopy withChannelReopen(int count) {
-    return OptionChannelReopen.create(count);
+    return OptionMaxChannelReopen.create(count);
   }
 
   private CloudStorageOptions() {}

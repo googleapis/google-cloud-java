@@ -45,7 +45,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   private final Storage gcsStorage;
   private final BlobId file;
   // max # of times we may reopen the file
-  private final int maxReopen;
+  private final int maxChannelReopens;
   // how many times we re-opened the file
   private int reopens;
   private ReadChannel channel;
@@ -53,21 +53,21 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   private long size;
 
   /**
-   * @param maxReopen max. number of times to try re-opening the channel if it closes on us unexpectedly.
+   * @param maxChannelReopens max number of times to try re-opening the channel if it closes on us unexpectedly.
    */
   @CheckReturnValue
   @SuppressWarnings("resource")
-  static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position, int maxReopen)
+  static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position, int maxChannelReopens)
       throws IOException {
-    return new CloudStorageReadChannel(gcsStorage, file, position, maxReopen);
+    return new CloudStorageReadChannel(gcsStorage, file, position, maxChannelReopens);
   }
 
-  private CloudStorageReadChannel(Storage gcsStorage, BlobId file, long position, int maxReopen) throws IOException {
+  private CloudStorageReadChannel(Storage gcsStorage, BlobId file, long position, int maxChannelReopens) throws IOException {
     this.gcsStorage = gcsStorage;
     this.file = file;
     this.position = position;
     this.reopens = 0;
-    this.maxReopen = maxReopen;
+    this.maxChannelReopens = maxChannelReopens;
     // XXX: Reading size and opening file should be atomic.
     this.size = fetchSize(gcsStorage, file);
     innerOpen();
@@ -94,6 +94,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     }
   }
 
+
   @Override
   public int read(ByteBuffer dst) throws IOException {
     synchronized (this) {
@@ -108,24 +109,17 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
           amt = channel.read(dst);
           break;
         } catch (StorageException exs) {
-          if (exs.getMessage().contains("Connection closed prematurely") && reopens < maxReopen) {
+          if (exs.getMessage().contains("Connection closed prematurely") && reopens < maxChannelReopens) {
             // this error isn't marked as retryable since the channel is closed;
             // but here at this higher level we can retry it.
             reopens++;
-            retryDelay(reopens);
+            sleepForAttempt(reopens);
             innerOpen();
             continue;
-          } else if (exs.getCode() == 500 && retries < maxRetries) {
-            // server error. Not retryable yet retrying works in my experience.
+          } else if ((exs.getCode() == 500 || exs.getCode() == 503)  && retries < maxRetries) {
+            // Retrying works in practice.
             retries++;
-            retryDelay(retries);
-            continue;
-          } else if (exs.getCode() == 503 && retries < maxRetries) {
-            // server temporarily unavailable. Marked not retriable,
-            // yet retrying works in my experience.
-            retries++;
-            // wait a bit more since this error suggests the server's busy
-            retryDelay(retries + 1);
+            sleepForAttempt(retries);
             continue;
           }
           throw exs;
@@ -142,7 +136,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     }
   }
 
-  private void retryDelay(int attempt) {
+  private void sleepForAttempt(int attempt) {
     try {
       Thread.sleep((attempt - 1) * 500);
     } catch (InterruptedException iex) {

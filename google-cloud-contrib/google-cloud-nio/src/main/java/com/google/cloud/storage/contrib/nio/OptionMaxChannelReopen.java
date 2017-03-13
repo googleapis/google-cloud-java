@@ -19,14 +19,14 @@ package com.google.cloud.storage.contrib.nio;
 import com.google.auto.value.AutoValue;
 
 @AutoValue
-abstract class OptionChannelReopen implements CloudStorageOption.OpenCopy {
+abstract class OptionMaxChannelReopen implements CloudStorageOption.OpenCopy {
 
   /**
    * Re-open the channel if it's closed unexpectedly while we're reading it.
    */
-  static OptionChannelReopen create(int retryCount) {
-    return new AutoValue_OptionChannelReopen(retryCount);
+  static OptionMaxChannelReopen create(int retryCount) {
+    return new AutoValue_OptionMaxChannelReopen(retryCount);
   }
 
-  abstract int retry();
+  abstract int maxChannelReopen();
 }
