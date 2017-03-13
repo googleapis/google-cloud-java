@@ -26,7 +26,7 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
-
+import org.easymock.internal.RuntimeExceptionWrapper;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -56,6 +56,7 @@ import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.management.RuntimeErrorException;
 
 /**
  * Abstract class representing service options.
@@ -394,13 +395,15 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       String serviceAccountName = (String) method.invoke(appIdentityService);
       int indexOfAtSign = serviceAccountName.indexOf('@');
       return serviceAccountName.substring(0, indexOfAtSign);
-    } catch (Exception exception) {
+    } catch (ClassNotFoundException exception) {
       if (System.getProperty("com.google.appengine.runtime.version") != null) {
         // Could not resolve appengine classes under GAE environment.
-        throw new UnsupportedOperationException("Unable to resolve appengine-sdk classes. "
+        throw new RuntimeException("Unable to resolve appengine-sdk classes. "
             + "For more details see "
             + "https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/APPENGINE.md");
       }
+      return null;
+    } catch (Exception ignore) {
       return null;
     }
   }
