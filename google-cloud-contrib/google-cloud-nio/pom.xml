@@ -103,7 +103,7 @@
           <relocations>
             <relocation>
               <pattern>com</pattern>
-              <shadedPattern>shaded.cloud-nio.com</shadedPattern>
+              <shadedPattern>shaded.cloud_nio.com</shadedPattern>
               <excludes>
                 <exclude>com.google.cloud.**</exclude>
                 <exclude>com.google.auto.**</exclude>
@@ -111,19 +111,19 @@
             </relocation>
             <relocation>
               <pattern>org</pattern>
-              <shadedPattern>shaded.cloud-nio.org</shadedPattern>
+              <shadedPattern>shaded.cloud_nio.org</shadedPattern>
             </relocation>
             <relocation>
               <pattern>io</pattern>
-              <shadedPattern>shaded.cloud-nio.io</shadedPattern>
+              <shadedPattern>shaded.cloud_nio.io</shadedPattern>
             </relocation>
             <relocation>
               <pattern>okio</pattern>
-              <shadedPattern>shaded.cloud-nio.okio</shadedPattern>
+              <shadedPattern>shaded.cloud_nio.okio</shadedPattern>
             </relocation>
             <relocation>
               <pattern>google</pattern>
-              <shadedPattern>shaded.cloud-nio.google</shadedPattern>
+              <shadedPattern>shaded.cloud_nio.google</shadedPattern>
             </relocation>
           </relocations>
         </configuration>
