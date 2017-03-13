@@ -57,7 +57,7 @@ If you are using SBT, add this to your dependencies
 libraryDependencies += "com.google.cloud" % "google-cloud" % "0.9.4-alpha"
 ```
 
-For GoogleAppEngine use case, see [more instructions here](./APPENGINE.md).
+For running on Google App Engine, see [more instructions here](./APPENGINE.md).
 
 Example Applications
 --------------------

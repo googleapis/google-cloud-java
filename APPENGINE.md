@@ -1,11 +1,11 @@
-Use Google Cloud Java Client with GoogleAppEngine
+Use Google Cloud Java Client with Google App Engine
 =================================================
 
 Quickstart
 ----------
-This file provides extra instructions to setup Google Cloud Java client with GoogleAppEngine.
-See [Quickstart](./README.md#quickstart) for Google Cloud Java common instructions.
-See [Quickstart](https://cloud.google.com/appengine/docs/standard/java/quickstart) for extra GAE instructions.
+This file provides extra instructions to set up Google Cloud Java Client with Google App Engine.
+See [Quickstart](./README.md#quickstart) for general instructions on using Google Cloud Java.
+See [Instructions](https://cloud.google.com/appengine/docs/standard/java/quickstart) for extra Google App Engine instructions.
 
 If you are using Maven, add this to your pom.xml file
 ```xml
