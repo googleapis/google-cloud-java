@@ -32,8 +32,6 @@ import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.Service;
 import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
 import io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
@@ -366,9 +364,7 @@ public class Subscriber {
                 // If a connection failed is because of a fatal error, we should fail the
                 // whole subscriber.
                 stopAllStreamingConnections();
-                if (failure instanceof StatusRuntimeException
-                    && ((StatusRuntimeException) failure).getStatus().getCode()
-                        == Status.Code.UNIMPLEMENTED) {
+                if (StatusUtil.fallbackToPolling(failure)) {
                   logger.info("Unable to open streaming connections, falling back to polling.");
                   startPollingConnections();
                   return;
