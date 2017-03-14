@@ -50,20 +50,8 @@ public final class GlobalForwardingRuleId extends ForwardingRuleId {
   }
 
   @Override
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
-
-  @Override
   public Type getType() {
     return Type.GLOBAL;
-  }
-
-  @Override
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
   }
 
   @Override

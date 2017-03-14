@@ -48,17 +48,6 @@ public class ZoneIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    ZoneId zoneId = ZoneId.of(PROJECT, ZONE);
-    assertEquals(PROJECT, zoneId.project());
-    assertEquals(ZONE, zoneId.zone());
-    assertEquals(URL, zoneId.selfLink());
-    zoneId = ZoneId.of(ZONE);
-    assertNull(zoneId.project());
-    assertEquals(ZONE, zoneId.zone());
-  }
-
-  @Test
   public void testToAndFromUrl() {
     ZoneId zoneId = ZoneId.of(PROJECT, ZONE);
     compareZoneId(zoneId, ZoneId.fromUrl(zoneId.getSelfLink()));

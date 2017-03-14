@@ -55,23 +55,6 @@ public class DiskIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    DiskId diskId = DiskId.of(PROJECT, ZONE, NAME);
-    assertEquals(PROJECT, diskId.project());
-    assertEquals(ZONE, diskId.zone());
-    assertEquals(NAME, diskId.disk());
-    assertEquals(URL, diskId.selfLink());
-    diskId = DiskId.of(ZONE, NAME);
-    assertNull(diskId.project());
-    assertEquals(ZONE, diskId.zone());
-    assertEquals(NAME, diskId.disk());
-    diskId = DiskId.of(ZoneId.of(ZONE), NAME);
-    assertNull(diskId.project());
-    assertEquals(ZONE, diskId.zone());
-    assertEquals(NAME, diskId.disk());
-  }
-
-  @Test
   public void testToAndFromUrl() {
     DiskId diskId = DiskId.of(PROJECT, ZONE, NAME);
     compareDiskId(diskId, DiskId.fromUrl(diskId.getSelfLink()));

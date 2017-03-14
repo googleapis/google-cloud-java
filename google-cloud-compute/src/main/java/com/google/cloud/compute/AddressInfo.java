@@ -106,12 +106,6 @@ public class AddressInfo implements Serializable {
     /**
      * Returns the identities of resources currently using this address.
      */
-    @Deprecated
-    public abstract List<? extends ResourceId> users();
-
-    /**
-     * Returns the identities of resources currently using this address.
-     */
     public abstract List<? extends ResourceId> getUsers();
 
     final boolean baseEquals(Usage usage) {
@@ -159,22 +153,8 @@ public class AddressInfo implements Serializable {
     /**
      * Returns the identity of the instance using the address.
      */
-    @Deprecated
-    public InstanceId instance() {
-      return getInstance();
-    }
-
-    /**
-     * Returns the identity of the instance using the address.
-     */
     public InstanceId getInstance() {
       return instance;
-    }
-
-    @Override
-    @Deprecated
-    public List<InstanceId> users() {
-      return getUsers();
     }
 
     @Override
@@ -220,22 +200,8 @@ public class AddressInfo implements Serializable {
     /**
      * Returns a list of identities of region forwarding rules that are currently using the address.
      */
-    @Deprecated
-    public List<RegionForwardingRuleId> forwardingRules() {
-      return getForwardingRules();
-    }
-
-    /**
-     * Returns a list of identities of region forwarding rules that are currently using the address.
-     */
     public List<RegionForwardingRuleId> getForwardingRules() {
       return forwardingRules;
-    }
-
-    @Override
-    @Deprecated
-    public List<RegionForwardingRuleId> users() {
-      return getUsers();
     }
 
     @Override
@@ -282,22 +248,8 @@ public class AddressInfo implements Serializable {
     /**
      * Returns a list of identities of global forwarding rules that are currently using the address.
      */
-    @Deprecated
-    public List<GlobalForwardingRuleId> forwardingRules() {
-      return getForwardingRules();
-    }
-
-    /**
-     * Returns a list of identities of global forwarding rules that are currently using the address.
-     */
     public List<GlobalForwardingRuleId> getForwardingRules() {
       return forwardingRules;
-    }
-
-    @Override
-    @Deprecated
-    public List<GlobalForwardingRuleId> users() {
-      return getUsers();
     }
 
     @Override
@@ -335,12 +287,6 @@ public class AddressInfo implements Serializable {
     /**
      * Sets the actual IP address.
      */
-    @Deprecated
-    public abstract Builder address(String address);
-
-    /**
-     * Sets the actual IP address.
-     */
     public abstract Builder setAddress(String address);
 
     abstract Builder setCreationTimestamp(Long creationTimestamp);
@@ -348,18 +294,9 @@ public class AddressInfo implements Serializable {
     /**
      * Sets an optional textual description of the address.
      */
-    @Deprecated
-    public abstract Builder description(String description);
-
-    /**
-     * Sets an optional textual description of the address.
-     */
     public abstract Builder setDescription(String description);
 
     abstract Builder setGeneratedId(String generatedId);
-
-    @Deprecated
-    public abstract Builder addressId(AddressId addressId);
 
     public abstract Builder setAddressId(AddressId addressId);
 
@@ -418,12 +355,6 @@ public class AddressInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public BuilderImpl address(String address) {
-      return setAddress(address);
-    }
-
-    @Override
     public BuilderImpl setAddress(String address) {
       this.address = address;
       return this;
@@ -436,12 +367,6 @@ public class AddressInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public BuilderImpl description(String description) {
-      return setDescription(description);
-    }
-
-    @Override
     public BuilderImpl setDescription(String description) {
       this.description = description;
       return this;
@@ -451,12 +376,6 @@ public class AddressInfo implements Serializable {
     BuilderImpl setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public BuilderImpl addressId(AddressId addressId) {
-      return setAddressId(addressId);
     }
 
     @Override
@@ -496,24 +415,8 @@ public class AddressInfo implements Serializable {
   /**
    * Returns the static external IP address represented by this object.
    */
-  @Deprecated
-  public String address() {
-    return getAddress();
-  }
-
-  /**
-   * Returns the static external IP address represented by this object.
-   */
   public String getAddress() {
     return address;
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
-  @Deprecated
-  public Long creationTimestamp() {
-    return getCreationTimestamp();
   }
 
   /**
@@ -526,24 +429,8 @@ public class AddressInfo implements Serializable {
   /**
    * Returns an optional textual description of the address.
    */
-  @Deprecated
-  public String description() {
-    return getDescription();
-  }
-
-  /**
-   * Returns an optional textual description of the address.
-   */
   public String getDescription() {
     return description;
-  }
-
-  /**
-   * Returns the service-generated unique identifier for the address.
-   */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
   }
 
   /**
@@ -558,16 +445,6 @@ public class AddressInfo implements Serializable {
    * {@link RegionAddressId} for a region address.
    */
   @SuppressWarnings("unchecked")
-  @Deprecated
-  public <T extends AddressId> T addressId() {
-    return getAddressId();
-  }
-
-  /**
-   * Returns the address identity. Returns {@link GlobalAddressId} for a global address, returns
-   * {@link RegionAddressId} for a region address.
-   */
-  @SuppressWarnings("unchecked")
   public <T extends AddressId> T getAddressId() {
     return (T) addressId;
   }
@@ -575,29 +452,8 @@ public class AddressInfo implements Serializable {
   /**
    * Returns the status of the address.
    */
-  @Deprecated
-  public Status status() {
-    return getStatus();
-  }
-
-  /**
-   * Returns the status of the address.
-   */
   public Status getStatus() {
     return status;
-  }
-
-  /**
-   * Returns the usage information of the address. Returns an {@link InstanceUsage} object for
-   * region addresses that are assigned to VM instances. Returns a {@link RegionForwardingUsage}
-   * object for region addresses assigned to region forwarding rules. Returns a
-   * {@link GlobalForwardingUsage} object for global addresses assigned to global forwarding rules.
-   * Returns {@code null} if the address is not in use.
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public <T extends Usage> T usage() {
-    return getUsage();
   }
 
   /**
@@ -672,14 +528,6 @@ public class AddressInfo implements Serializable {
     }
     addressPb.setSelfLink(addressId.getSelfLink());
     return addressPb;
-  }
-
-  /**
-   * Returns a builder for the {@code AddressInfo} object given it's identity.
-   */
-  @Deprecated
-  public static Builder builder(AddressId addressId) {
-    return newBuilder(addressId);
   }
 
   /**

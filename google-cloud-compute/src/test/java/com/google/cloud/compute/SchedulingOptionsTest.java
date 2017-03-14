@@ -39,18 +39,6 @@ public class SchedulingOptionsTest {
   }
 
   @Test
-  public void testFactoryMethodsDeprecated() {
-    assertTrue(SCHEDULING_OPTIONS.isPreemptible());
-    assertFalse(SCHEDULING_OPTIONS.automaticRestart());
-    assertEquals(SchedulingOptions.Maintenance.TERMINATE, SCHEDULING_OPTIONS.maintenance());
-    SchedulingOptions schedulingOptions =
-        SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
-    assertFalse(schedulingOptions.isPreemptible());
-    assertTrue(schedulingOptions.automaticRestart());
-    assertEquals(SchedulingOptions.Maintenance.MIGRATE, schedulingOptions.maintenance());
-  }
-
-  @Test
   public void testToAndFromPb() {
     compareSchedulingOptions(SCHEDULING_OPTIONS,
         SchedulingOptions.fromPb(SCHEDULING_OPTIONS.toPb()));

@@ -52,17 +52,6 @@ public class DiskTypeTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    assertEquals(GENERATED_ID, DISK_TYPE.generatedId());
-    assertEquals(DISK_TYPE_ID, DISK_TYPE.diskTypeId());
-    assertEquals(CREATION_TIMESTAMP, DISK_TYPE.creationTimestamp());
-    assertEquals(DESCRIPTION, DISK_TYPE.description());
-    assertEquals(VALID_DISK_SIZE, DISK_TYPE.validDiskSize());
-    assertEquals(DEFAULT_DISK_SIZE_GB, DISK_TYPE.defaultDiskSizeGb());
-    assertEquals(DEPRECATION_STATUS, DISK_TYPE.deprecationStatus());
-  }
-
-  @Test
   public void testToPbAndFromPb() {
     compareDiskTypes(DISK_TYPE, DiskType.fromPb(DISK_TYPE.toPb()));
     DiskType diskType = DiskType.newBuilder().setDiskTypeId(DISK_TYPE_ID).build();

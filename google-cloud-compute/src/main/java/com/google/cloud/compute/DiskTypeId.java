@@ -59,24 +59,8 @@ public final class DiskTypeId extends ResourceId {
   /**
    * Returns the name of the disk type.
    */
-  @Deprecated
-  public String type() {
-    return getType();
-  }
-
-  /**
-   * Returns the name of the disk type.
-   */
   public String getType() {
     return type;
-  }
-
-  /**
-   * Returns the name of the zone this disk type belongs to.
-   */
-  @Deprecated
-  public String zone() {
-    return getZone();
   }
 
   /**
@@ -89,22 +73,8 @@ public final class DiskTypeId extends ResourceId {
   /**
    * Returns the identity of the zone this disk type belongs to.
    */
-  @Deprecated
-  public ZoneId zoneId() {
-    return getZoneId();
-  }
-
-  /**
-   * Returns the identity of the zone this disk type belongs to.
-   */
   public ZoneId getZoneId() {
     return ZoneId.of(getProject(), zone);
-  }
-
-  @Override
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
   }
 
   @Override

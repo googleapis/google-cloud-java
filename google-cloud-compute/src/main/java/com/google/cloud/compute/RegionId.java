@@ -62,22 +62,8 @@ public final class RegionId extends ResourceId {
   /**
    * Returns the name of the region.
    */
-  @Deprecated
-  public final String region() {
-    return getRegion();
-  }
-
-  /**
-   * Returns the name of the region.
-   */
   public String getRegion() {
     return region;
-  }
-
-  @Override
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
   }
 
   @Override

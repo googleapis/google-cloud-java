@@ -51,19 +51,6 @@ public class DiskTypeIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    DiskTypeId diskTypeId = DiskTypeId.of(PROJECT, ZONE, DISK_TYPE);
-    assertEquals(PROJECT, diskTypeId.project());
-    assertEquals(ZONE, diskTypeId.zone());
-    assertEquals(DISK_TYPE, diskTypeId.type());
-    assertEquals(URL, diskTypeId.selfLink());
-    diskTypeId = DiskTypeId.of(ZONE, DISK_TYPE);
-    assertNull(diskTypeId.project());
-    assertEquals(ZONE, diskTypeId.zone());
-    assertEquals(DISK_TYPE, diskTypeId.type());
-  }
-
-  @Test
   public void testToAndFromUrl() {
     DiskTypeId diskTypeId = DiskTypeId.of(PROJECT, ZONE, DISK_TYPE);
     assertSame(diskTypeId, diskTypeId.setProjectId(PROJECT));

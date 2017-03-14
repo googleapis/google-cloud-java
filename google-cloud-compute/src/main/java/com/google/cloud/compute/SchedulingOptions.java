@@ -72,14 +72,6 @@ public final class SchedulingOptions implements Serializable {
   /**
    * Returns the maintenance behavior for the instance.
    */
-  @Deprecated
-  public Maintenance maintenance() {
-    return maintenance;
-  }
-
-  /**
-   * Returns the maintenance behavior for the instance.
-   */
   public Maintenance getMaintenance() {
     return maintenance;
   }

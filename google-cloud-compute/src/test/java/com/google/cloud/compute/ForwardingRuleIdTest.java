@@ -71,37 +71,6 @@ public class ForwardingRuleIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    GlobalForwardingRuleId forwardingRuleId = GlobalForwardingRuleId.of(PROJECT, NAME);
-    assertEquals(PROJECT, forwardingRuleId.project());
-    assertEquals(NAME, forwardingRuleId.rule());
-    assertEquals(GLOBAL_URL, forwardingRuleId.selfLink());
-    assertEquals(ForwardingRuleId.Type.GLOBAL, forwardingRuleId.type());
-    forwardingRuleId = GlobalForwardingRuleId.of(NAME);
-    assertNull(forwardingRuleId.project());
-    assertEquals(NAME, forwardingRuleId.rule());
-    assertEquals(ForwardingRuleId.Type.GLOBAL, forwardingRuleId.type());
-    RegionForwardingRuleId regionForwardingRuleId =
-        RegionForwardingRuleId.of(PROJECT, REGION, NAME);
-    assertEquals(PROJECT, regionForwardingRuleId.project());
-    assertEquals(REGION, regionForwardingRuleId.region());
-    assertEquals(NAME, regionForwardingRuleId.rule());
-    assertEquals(REGION_URL, regionForwardingRuleId.selfLink());
-    assertEquals(ForwardingRuleId.Type.REGION, regionForwardingRuleId.type());
-    regionForwardingRuleId = RegionForwardingRuleId.of(RegionId.of(PROJECT, REGION), NAME);
-    assertEquals(PROJECT, regionForwardingRuleId.project());
-    assertEquals(REGION, regionForwardingRuleId.region());
-    assertEquals(NAME, regionForwardingRuleId.rule());
-    assertEquals(REGION_URL, regionForwardingRuleId.selfLink());
-    assertEquals(ForwardingRuleId.Type.REGION, regionForwardingRuleId.type());
-    regionForwardingRuleId = RegionForwardingRuleId.of(REGION, NAME);
-    assertNull(regionForwardingRuleId.project());
-    assertEquals(REGION, regionForwardingRuleId.region());
-    assertEquals(NAME, regionForwardingRuleId.rule());
-    assertEquals(ForwardingRuleId.Type.REGION, regionForwardingRuleId.type());
-  }
-
-  @Test
   public void testToAndFromUrlGlobal() {
     GlobalForwardingRuleId forwardingRuleId = GlobalForwardingRuleId.of(PROJECT, NAME);
     compareGlobalForwardingRuleId(forwardingRuleId,

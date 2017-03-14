@@ -77,15 +77,6 @@ public class StorageImageConfiguration extends ImageConfiguration {
      * Sets the format used to encode and transmit the block device. The only supported value is
      * {@code TAR}. This is just a container and transmission format, not a runtime format.
      */
-    @Deprecated
-    public Builder containerType(ContainerType containerType) {
-      return setContainerType(containerType);
-    }
-
-    /**
-     * Sets the format used to encode and transmit the block device. The only supported value is
-     * {@code TAR}. This is just a container and transmission format, not a runtime format.
-     */
     public Builder setContainerType(ContainerType containerType) {
       this.containerType = containerType;
       return this;
@@ -94,26 +85,9 @@ public class StorageImageConfiguration extends ImageConfiguration {
     /**
      * Sets the SHA1 checksum of the disk image before unpackaging.
      */
-    @Deprecated
-    public Builder sha1(String sha1) {
-      return setSha1(sha1);
-    }
-
-    /**
-     * Sets the SHA1 checksum of the disk image before unpackaging.
-     */
     public Builder setSha1(String sha1) {
       this.sha1 = sha1;
       return this;
-    }
-
-    /**
-     * Sets the full Google Cloud Storage URL where the disk image is stored (e.g.
-     * {@code gs://bucket/file}).
-     */
-    @Deprecated
-    public Builder source(String source) {
-      return setSource(source);
     }
 
     /**
@@ -145,15 +119,6 @@ public class StorageImageConfiguration extends ImageConfiguration {
    * Returns the format used to encode and transmit the block device. This is just a container and
    * transmission format, not a runtime format.
    */
-  @Deprecated
-  public ContainerType containerType() {
-    return getContainerType();
-  }
-
-  /**
-   * Returns the format used to encode and transmit the block device. This is just a container and
-   * transmission format, not a runtime format.
-   */
   public ContainerType getContainerType() {
     return containerType;
   }
@@ -161,25 +126,8 @@ public class StorageImageConfiguration extends ImageConfiguration {
   /**
    * Returns the SHA1 checksum of the disk image before unpackaging.
    */
-  @Deprecated
-  public String sha1() {
-    return getSha1();
-  }
-
-  /**
-   * Returns the SHA1 checksum of the disk image before unpackaging.
-   */
   public String getSha1() {
     return sha1;
-  }
-
-  /**
-   * Returns the full Google Cloud Storage URL where the disk image is stored (e.g.
-   * {@code gs://bucket/file}).
-   */
-  @Deprecated
-  public String source() {
-    return getSource();
   }
 
   /**
@@ -231,15 +179,6 @@ public class StorageImageConfiguration extends ImageConfiguration {
     }
     Image imagePb = super.toPb();
     return imagePb.setRawDisk(rawDiskPb);
-  }
-
-  /**
-   * Creates a {@code StorageImageConfiguration} builder given the full Google Cloud Storage URL
-   * where the disk image is stored.
-   */
-  @Deprecated
-  public static Builder builder(String source) {
-    return newBuilder(source);
   }
 
   /**

@@ -41,22 +41,8 @@ public final class ZoneOperationId extends OperationId  {
   }
 
   @Override
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
-
-  @Override
   public Type getType() {
     return Type.ZONE;
-  }
-
-  /**
-   * Returns the name of the zone this operation belongs to.
-   */
-  @Deprecated
-  public String zone() {
-    return getZone();
   }
 
   /**
@@ -69,22 +55,8 @@ public final class ZoneOperationId extends OperationId  {
   /**
    * Returns the identity of the zone this address belongs to.
    */
-  @Deprecated
-  public ZoneId zoneId() {
-    return getZoneId();
-  }
-
-  /**
-   * Returns the identity of the zone this address belongs to.
-   */
   public ZoneId getZoneId() {
     return ZoneId.of(getProject(), zone);
-  }
-
-  @Override
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
   }
 
   @Override

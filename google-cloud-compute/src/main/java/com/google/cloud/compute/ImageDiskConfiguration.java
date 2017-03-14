@@ -67,28 +67,9 @@ public class ImageDiskConfiguration extends DiskConfiguration {
      * the image's size then disk creation will fail.
      */
     @Override
-    @Deprecated
-    public Builder sizeGb(Long sizeGb) {
-      return setSizeGb(sizeGb);
-    }
-
-    /**
-     * Sets the size of the persistent disk, in GB. If not set the disk will have the size of the
-     * image. This value can be larger than the image's size. If the provided size is smaller than
-     * the image's size then disk creation will fail.
-     */
-    @Override
     public Builder setSizeGb(Long sizeGb) {
       super.setSizeGb(sizeGb);
       return this;
-    }
-
-    /**
-     * Sets the identity of the source image used to create the disk.
-     */
-    @Deprecated
-    public Builder sourceImage(ImageId sourceImage) {
-      return setSourceImage(sourceImage);
     }
 
     /**
@@ -122,28 +103,8 @@ public class ImageDiskConfiguration extends DiskConfiguration {
   /**
    * Returns the identity of the source image used to create the disk.
    */
-  @Deprecated
-  public ImageId sourceImage() {
-    return getSourceImage();
-  }
-
-  /**
-   * Returns the identity of the source image used to create the disk.
-   */
   public ImageId getSourceImage() {
     return sourceImage;
-  }
-
-  /**
-   * Returns the service-generated unique id of the image used to create this disk. This value
-   * identifies the exact image that was used to create this persistent disk. For example, if you
-   * created the persistent disk from an image that was later deleted and recreated under the same
-   * name, the source image service-generated id would identify the exact version of the image that
-   * was used.
-   */
-  @Deprecated
-  public String sourceImageId() {
-    return getSourceImageId();
   }
 
   /**
@@ -194,14 +155,6 @@ public class ImageDiskConfiguration extends DiskConfiguration {
   @Override
   Disk toPb() {
     return super.toPb().setSourceImage(sourceImage.getSelfLink()).setSourceImageId(sourceImageId);
-  }
-
-  /**
-   * Returns a builder for an {@code ImageDiskConfiguration} object given the image identity.
-   */
-  @Deprecated
-  public static Builder builder(ImageId imageId) {
-    return newBuilder(imageId);
   }
 
   /**
