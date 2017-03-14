@@ -80,7 +80,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   private final Bigquery bigquery;
 
   public DefaultBigQueryRpc(BigQueryOptions options) {
-    HttpTransportOptions transportOptions = options.getHttpTransportOptions();
+    HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;

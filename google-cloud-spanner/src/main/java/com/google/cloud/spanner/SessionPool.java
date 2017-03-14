@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
+import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
@@ -568,7 +569,9 @@ final class SessionPool {
   static SessionPool createPool(SpannerOptions spannerOptions, DatabaseId db, SpannerImpl spanner) {
     return createPool(
         spannerOptions.getSessionPoolOptions(),
-        spannerOptions.getGrpcTransportOptions().getExecutorFactory(), db, spanner);
+        ((GrpcTransportOptions) spannerOptions.getTransportOptions()).getExecutorFactory(),
+        db,
+        spanner);
   }
 
   static SessionPool createPool(

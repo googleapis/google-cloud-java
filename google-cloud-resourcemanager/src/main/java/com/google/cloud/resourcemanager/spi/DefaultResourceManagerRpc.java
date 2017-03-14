@@ -50,7 +50,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   private final Cloudresourcemanager resourceManager;
 
   public DefaultResourceManagerRpc(ResourceManagerOptions options) {
-    HttpTransportOptions transportOptions = options.getHttpTransportOptions();
+    HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     resourceManager =

@@ -81,7 +81,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   private final Compute compute;
 
   public DefaultComputeRpc(ComputeOptions options) {
-    HttpTransportOptions transportOptions = options.getHttpTransportOptions();
+    HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;

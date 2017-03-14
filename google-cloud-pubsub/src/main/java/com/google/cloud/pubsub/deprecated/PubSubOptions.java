@@ -132,10 +132,6 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptio
     return GrpcTransportOptions.newBuilder().build();
   }
 
-  public GrpcTransportOptions getGrpcTransportOptions() {
-    return (GrpcTransportOptions) getTransportOptions();
-  }
-
   @Override
   protected Set<String> getScopes() {
     return SCOPES;

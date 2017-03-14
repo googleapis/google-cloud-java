@@ -50,7 +50,7 @@ public class DefaultTranslateRpc implements TranslateRpc {
   private final Translate translate;
 
   public DefaultTranslateRpc(TranslateOptions options) {
-    HttpTransportOptions transportOptions = options.getHttpTransportOptions();
+    HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;

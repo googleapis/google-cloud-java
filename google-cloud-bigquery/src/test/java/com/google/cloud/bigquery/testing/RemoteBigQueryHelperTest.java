@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.testing;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -80,8 +81,10 @@ public class RemoteBigQueryHelperTest {
     RemoteBigQueryHelper helper = RemoteBigQueryHelper.create(PROJECT_ID, JSON_KEY_STREAM);
     BigQueryOptions options = helper.getOptions();
     assertEquals(PROJECT_ID, options.getProjectId());
-    assertEquals(60000, options.getHttpTransportOptions().getConnectTimeout());
-    assertEquals(60000, options.getHttpTransportOptions().getReadTimeout());
+    assertEquals(60000,
+        ((HttpTransportOptions) options.getTransportOptions()).getConnectTimeout());
+    assertEquals(60000,
+        ((HttpTransportOptions) options.getTransportOptions()).getReadTimeout());
     assertEquals(10, options.getRetryParams().getRetryMaxAttempts());
     assertEquals(6, options.getRetryParams().getRetryMinAttempts());
     assertEquals(30000, options.getRetryParams().getMaxRetryDelayMillis());

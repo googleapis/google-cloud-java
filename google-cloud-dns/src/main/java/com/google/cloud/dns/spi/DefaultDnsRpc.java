@@ -187,7 +187,7 @@ public class DefaultDnsRpc implements DnsRpc {
    * Constructs an instance of this rpc client with provided {@link DnsOptions}.
    */
   public DefaultDnsRpc(DnsOptions options) {
-    HttpTransportOptions transportOptions = options.getHttpTransportOptions();
+    HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.dns = new Dns.Builder(transport, new JacksonFactory(), initializer)

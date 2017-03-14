@@ -105,10 +105,6 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
     return HttpTransportOptions.newBuilder().build();
   }
 
-  public HttpTransportOptions getHttpTransportOptions() {
-    return (HttpTransportOptions) getTransportOptions();
-  }
-
   @Override
   protected Set<String> getScopes() {
     return SCOPES;

@@ -81,7 +81,7 @@ public class DefaultLoggingRpc implements LoggingRpc {
   private boolean closed;
 
   public DefaultLoggingRpc(LoggingOptions options) throws IOException {
-    GrpcTransportOptions transportOptions = options.getGrpcTransportOptions();
+    GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
     executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();
     try {

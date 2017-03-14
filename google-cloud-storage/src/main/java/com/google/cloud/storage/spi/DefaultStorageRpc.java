@@ -99,7 +99,7 @@ public class DefaultStorageRpc implements StorageRpc {
   private static final long MEGABYTE = 1024L * 1024L;
 
   public DefaultStorageRpc(StorageOptions options) {
-    HttpTransportOptions transportOptions = options.getHttpTransportOptions();
+    HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;

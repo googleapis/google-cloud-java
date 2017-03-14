@@ -104,10 +104,6 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
     return HttpTransportOptions.newBuilder().build();
   }
 
-  public HttpTransportOptions getHttpTransportOptions() {
-    return (HttpTransportOptions) getTransportOptions();
-  }
-
   @Override
   protected Set<String> getScopes() {
     return SCOPES;

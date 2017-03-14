@@ -43,7 +43,8 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   private final com.google.datastore.v1.client.Datastore client;
 
   public DefaultDatastoreRpc(DatastoreOptions options) {
-    HttpTransportOptions httpTransportOptions = options.getHttpTransportOptions();
+    HttpTransportOptions httpTransportOptions = (HttpTransportOptions) options
+        .getTransportOptions();
     HttpTransport transport = httpTransportOptions.getHttpTransportFactory().create();
     com.google.datastore.v1.client.DatastoreOptions.Builder clientBuilder =
         new com.google.datastore.v1.client.DatastoreOptions.Builder()

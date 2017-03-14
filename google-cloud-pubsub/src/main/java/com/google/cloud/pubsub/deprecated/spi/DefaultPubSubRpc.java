@@ -82,7 +82,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
   private boolean closed;
 
   public DefaultPubSubRpc(PubSubOptions options) throws IOException {
-    GrpcTransportOptions transportOptions = options.getGrpcTransportOptions();
+    GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
     executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();
     try {

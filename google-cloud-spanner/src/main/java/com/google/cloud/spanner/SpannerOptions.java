@@ -214,10 +214,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
     return GrpcTransportOptions.newBuilder().build();
   }
 
-  public GrpcTransportOptions getGrpcTransportOptions() {
-    return (GrpcTransportOptions) getTransportOptions();
-  }
-
   /**
    * Returns the default RPC channel factory used when none is specified. This may be useful for
    * callers that wish to add interceptors to gRPC channels used by the Cloud Spanner client

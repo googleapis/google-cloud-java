@@ -123,10 +123,6 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingO
     return GrpcTransportOptions.newBuilder().build();
   }
 
-  public GrpcTransportOptions getGrpcTransportOptions() {
-    return (GrpcTransportOptions) getTransportOptions();
-  }
-
   @Override
   protected Set<String> getScopes() {
     return SCOPES;

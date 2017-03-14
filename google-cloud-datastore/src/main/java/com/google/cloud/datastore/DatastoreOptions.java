@@ -141,10 +141,6 @@ public class DatastoreOptions
     return HttpTransportOptions.newBuilder().build();
   }
 
-  public HttpTransportOptions getHttpTransportOptions() {
-    return (HttpTransportOptions) getTransportOptions();
-  }
-
 
   /**
    * Returns the default namespace to be used by the datastore service.

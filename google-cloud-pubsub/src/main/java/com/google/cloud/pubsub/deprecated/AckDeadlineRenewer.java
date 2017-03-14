@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.deprecated;
 
 import com.google.cloud.Clock;
+import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.LinkedListMultimap;
@@ -156,7 +157,8 @@ class AckDeadlineRenewer implements AutoCloseable {
   AckDeadlineRenewer(PubSub pubsub) {
     PubSubOptions options = pubsub.getOptions();
     this.pubsub = pubsub;
-    this.executorFactory = options.getGrpcTransportOptions().getExecutorFactory();
+    this.executorFactory = ((GrpcTransportOptions) options.getTransportOptions())
+        .getExecutorFactory();
     this.executor = executorFactory.get();
     this.clock = options.getClock();
     this.messageQueue = new LinkedList<>();

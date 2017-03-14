@@ -108,10 +108,6 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeO
     return HttpTransportOptions.newBuilder().build();
   }
 
-  public HttpTransportOptions getHttpTransportOptions() {
-    return (HttpTransportOptions) getTransportOptions();
-  }
-
   @Override
   protected Set<String> getScopes() {
     return SCOPES;

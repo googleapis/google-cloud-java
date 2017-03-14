@@ -162,10 +162,6 @@ public class TranslateOptions extends
     return HttpTransportOptions.newBuilder().build();
   }
 
-  public HttpTransportOptions getHttpTransportOptions() {
-    return (HttpTransportOptions) getTransportOptions();
-  }
-
   @Override
   protected boolean projectIdRequired() {
     return false;
