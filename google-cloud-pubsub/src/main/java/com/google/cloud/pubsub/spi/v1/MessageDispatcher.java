@@ -273,7 +273,8 @@ class MessageDispatcher {
       ackHandlers.add(new AckHandler(pubsubMessage.getAckId(), messageSize));
     }
     Instant expiration = now.plus(messageDeadlineSeconds * 1000);
-    logger.log(Level.INFO, "Received " + responseMessages.size() + " messages at " + now);
+    logger.log(
+        Level.FINER, "Received {0} messages at {1}", new Object[] {responseMessages.size(), now});
 
     messagesWaiter.incrementPendingMessages(responseMessages.size());
     Iterator<AckHandler> acksIterator = ackHandlers.iterator();
@@ -364,13 +365,9 @@ class MessageDispatcher {
               ((long) Math.ceil(now.plus(ackExpirationPadding).plus(500).getMillis() / 1000.0))
                   * 1000L);
       logger.log(
-          Level.INFO,
-          "Running alarm sent outstanding acks, at now time: "
-              + now
-              + ", with cutover time: "
-              + cutOverTime
-              + ", padding: "
-              + ackExpirationPadding);
+          Level.FINER,
+          "Running alarm sent outstanding acks, at time: {0}, with cutover time: {1}, padding {2}",
+          new Object[] {now, cutOverTime, ackExpirationPadding});
       Instant nextScheduleExpiration = null;
       List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
 
@@ -421,12 +418,9 @@ class MessageDispatcher {
 
       if (nextScheduleExpiration != null) {
         logger.log(
-            Level.INFO,
-            "Scheduling based on outstanding, now time: "
-                + now
-                + ", "
-                + "next schedule time: "
-                + nextScheduleExpiration);
+            Level.FINER,
+            "Scheduling based on outstanding, at time: {0}, next scheduled time: {1}",
+            new Object[] {now, nextScheduleExpiration});
         setupNextAckDeadlineExtensionAlarm(nextScheduleExpiration);
       }
     }
@@ -438,13 +432,11 @@ class MessageDispatcher {
     try {
       if (nextAckDeadlineExtensionAlarmTime.isAfter(possibleNextAlarmTime)) {
         logger.log(
-            Level.INFO,
-            "Scheduling next alarm time: "
-                + possibleNextAlarmTime
-                + ", last alarm set to time: "
-                + nextAckDeadlineExtensionAlarmTime);
+            Level.FINER,
+            "Scheduling next alarm time: {0}, previous alarm time: {1}",
+            new Object[] {possibleNextAlarmTime, nextAckDeadlineExtensionAlarmTime});
         if (ackDeadlineExtensionAlarm != null) {
-          logger.log(Level.INFO, "Canceling previous alarm");
+          logger.log(Level.FINER, "Canceling previous alarm");
           ackDeadlineExtensionAlarm.cancel(false);
         }
 
@@ -475,7 +467,7 @@ class MessageDispatcher {
       if (!pendingAcks.isEmpty()) {
         try {
           acksToSend = new ArrayList<>(pendingAcks);
-          logger.log(Level.INFO, "Sending {0} acks", acksToSend.size());
+          logger.log(Level.FINER, "Sending {0} acks", acksToSend.size());
         } finally {
           pendingAcks.clear();
         }
@@ -488,7 +480,7 @@ class MessageDispatcher {
           for (String ackId : pendingNacks) {
             nacksToSend.addAckId(ackId);
           }
-          logger.log(Level.INFO, "Sending {0} nacks", pendingNacks.size());
+          logger.log(Level.FINER, "Sending {0} nacks", pendingNacks.size());
         } finally {
           pendingNacks.clear();
         }

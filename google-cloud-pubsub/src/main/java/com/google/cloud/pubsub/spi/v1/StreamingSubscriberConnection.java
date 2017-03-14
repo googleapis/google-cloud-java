@@ -96,7 +96,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
   @Override
   protected void doStart() {
-    logger.log(Level.INFO, "Starting subscriber.");
+    logger.log(Level.FINE, "Starting subscriber.");
     initialize();
     notifyStarted();
   }
@@ -134,13 +134,13 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
     @Override
     public void onError(Throwable t) {
-      logger.log(Level.INFO, "Terminated streaming with exception", t);
+      logger.log(Level.WARNING, "Terminated streaming with exception", t);
       errorFuture.setException(t);
     }
 
     @Override
     public void onCompleted() {
-      logger.log(Level.INFO, "Streaming pull terminated successfully!");
+      logger.log(Level.FINE, "Streaming pull terminated successfully!");
       errorFuture.set(null);
     }
   }
@@ -157,11 +157,9 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
                     CallOptions.DEFAULT.withCallCredentials(MoreCallCredentials.from(credentials))),
                 responseObserver));
     logger.log(
-        Level.INFO,
-        "Initializing stream to subscription "
-            + subscription
-            + " with deadline "
-            + messageDispatcher.getMessageDeadlineSeconds());
+        Level.FINER,
+        "Initializing stream to subscription {0} with deadline {1}",
+        new Object[] {subscription, messageDispatcher.getMessageDeadlineSeconds()});
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
