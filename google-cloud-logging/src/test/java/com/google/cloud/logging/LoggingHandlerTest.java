@@ -147,14 +147,14 @@ public class LoggingHandlerTest {
           .put("resourceType", "testResourceType")
           .put("synchronicity", "SYNC")
           .build();
-  private static final ImmutableMap<String, String> NATIVE_SEVERITY_MAP =
+  private static final ImmutableMap<String, String> BASE_SEVERITY_MAP =
       ImmutableMap.of(
           "levelName", Level.INFO.getName(), "levelValue", String.valueOf(Level.INFO.intValue()));
   private static final WriteOption[] DEFAULT_OPTIONS =
       new WriteOption[] {
         WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE),
-        WriteOption.labels(NATIVE_SEVERITY_MAP)
+        WriteOption.labels(BASE_SEVERITY_MAP)
       };
 
   private static byte[] renderConfig(Map<String, String> config) {
@@ -277,7 +277,7 @@ public class LoggingHandlerTest {
         ImmutableList.of(FINEST_ENTRY),
         WriteOption.logName(LOG_NAME),
         WriteOption.resource(resource),
-        WriteOption.labels(NATIVE_SEVERITY_MAP));
+        WriteOption.labels(BASE_SEVERITY_MAP));
     EasyMock.expectLastCall().andReturn(ApiFutures.immediateFuture(null));
     EasyMock.replay(options, logging);
     Handler handler = new LoggingHandler(LOG_NAME, options, resource);
@@ -295,7 +295,7 @@ public class LoggingHandlerTest {
         ImmutableList.of(FINEST_ENHANCED_ENTRY),
         WriteOption.logName(LOG_NAME),
         WriteOption.resource(resource),
-        WriteOption.labels(NATIVE_SEVERITY_MAP));
+        WriteOption.labels(BASE_SEVERITY_MAP));
     EasyMock.expectLastCall().andReturn(ApiFutures.immediateFuture(null));
     EasyMock.replay(options, logging);
     LoggingHandler.Enhancer enhancer = new LoggingHandler.Enhancer() {
