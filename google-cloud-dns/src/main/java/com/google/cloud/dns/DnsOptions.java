@@ -17,6 +17,7 @@
 package com.google.cloud.dns;
 
 import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.dns.spi.DefaultDnsRpc;
@@ -78,22 +79,26 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
   }
 
   private DnsOptions(Builder builder) {
-    super(DnsFactory.class, DnsRpcFactory.class, builder);
+    super(DnsFactory.class, DnsRpcFactory.class, builder, new DnsDefaults());
   }
 
-  @Override
-  protected DnsFactory getDefaultServiceFactory() {
-    return DefaultDnsFactory.INSTANCE;
-  }
+  private static class DnsDefaults implements
+      ServiceDefaults<Dns, DnsRpc, DnsOptions> {
 
-  @Override
-  protected DnsRpcFactory getDefaultRpcFactory() {
-    return DefaultDnsRpcFactory.INSTANCE;
-  }
+    @Override
+    public DnsFactory getDefaultServiceFactory() {
+      return DefaultDnsFactory.INSTANCE;
+    }
 
-  @Override
-  public TransportOptions getDefaultTransportOptions() {
-    return getDefaultHttpTransportOptions();
+    @Override
+    public DnsRpcFactory getDefaultRpcFactory() {
+      return DefaultDnsRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
   public static HttpTransportOptions getDefaultHttpTransportOptions() {

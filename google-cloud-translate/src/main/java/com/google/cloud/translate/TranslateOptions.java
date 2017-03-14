@@ -20,6 +20,7 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.translate.Translate.TranslateOption;
@@ -133,24 +134,28 @@ public class TranslateOptions extends
   }
 
   private TranslateOptions(Builder builder) {
-    super(TranslateFactory.class, TranslateRpcFactory.class, builder);
+    super(TranslateFactory.class, TranslateRpcFactory.class, builder, new TranslateDefaults());
     this.apiKey = builder.apiKey != null ? builder.apiKey : getDefaultApiKey();
     this.targetLanguage = firstNonNull(builder.targetLanguage, Locale.ENGLISH.getLanguage());
   }
 
-  @Override
-  protected TranslateFactory getDefaultServiceFactory() {
-    return DefaultTranslateFactory.INSTANCE;
-  }
+  private static class TranslateDefaults implements
+      ServiceDefaults<Translate, TranslateRpc, TranslateOptions> {
 
-  @Override
-  protected TranslateRpcFactory getDefaultRpcFactory() {
-    return DefaultTranslateRpcFactory.INSTANCE;
-  }
+    @Override
+    public TranslateFactory getDefaultServiceFactory() {
+      return DefaultTranslateFactory.INSTANCE;
+    }
 
-  @Override
-  public TransportOptions getDefaultTransportOptions() {
-    return getDefaultHttpTransportOptions();
+    @Override
+    public TranslateRpcFactory getDefaultRpcFactory() {
+      return DefaultTranslateRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
   public static HttpTransportOptions getDefaultHttpTransportOptions() {

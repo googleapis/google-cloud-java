@@ -17,11 +17,14 @@
 package com.google.cloud.bigquery;
 
 import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceFactory;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.bigquery.spi.BigQueryRpc;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.DefaultBigQueryRpc;
+import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
@@ -79,22 +82,26 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
   }
 
   private BigQueryOptions(Builder builder) {
-    super(BigQueryFactory.class, BigQueryRpcFactory.class, builder);
+    super(BigQueryFactory.class, BigQueryRpcFactory.class, builder, new BigQueryDefaults());
   }
 
-  @Override
-  protected BigQueryFactory getDefaultServiceFactory() {
-    return DefaultBigqueryFactory.INSTANCE;
-  }
+  private static class BigQueryDefaults implements
+      ServiceDefaults<BigQuery, BigQueryRpc, BigQueryOptions> {
 
-  @Override
-  protected BigQueryRpcFactory getDefaultRpcFactory() {
-    return DefaultBigQueryRpcFactory.INSTANCE;
-  }
+    @Override
+    public BigQueryFactory getDefaultServiceFactory() {
+      return DefaultBigqueryFactory.INSTANCE;
+    }
 
-  @Override
-  public TransportOptions getDefaultTransportOptions() {
-    return getDefaultHttpTransportOptions();
+    @Override
+    public BigQueryRpcFactory getDefaultRpcFactory() {
+      return DefaultBigQueryRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
   public static HttpTransportOptions getDefaultHttpTransportOptions() {

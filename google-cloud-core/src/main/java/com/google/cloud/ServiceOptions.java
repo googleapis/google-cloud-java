@@ -236,7 +236,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
-      Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
+      Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder,
+      ServiceDefaults<ServiceT, ServiceRpcT, OptionsT> serviceDefaults) {
     projectId = builder.projectId != null ? builder.projectId : getDefaultProject();
     if (projectIdRequired()) {
       checkArgument(
@@ -248,13 +249,14 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     credentials = builder.credentials != null ? builder.credentials : defaultCredentials();
     retryParams = firstNonNull(builder.retryParams, defaultRetryParams());
     serviceFactory = firstNonNull(builder.serviceFactory,
-        getFromServiceLoader(serviceFactoryClass, getDefaultServiceFactory()));
+        getFromServiceLoader(serviceFactoryClass, serviceDefaults.getDefaultServiceFactory()));
     serviceFactoryClassName = serviceFactory.getClass().getName();
     serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
-        getFromServiceLoader(rpcFactoryClass, getDefaultRpcFactory()));
+        getFromServiceLoader(rpcFactoryClass, serviceDefaults.getDefaultRpcFactory()));
     serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
     clock = firstNonNull(builder.clock, Clock.defaultClock());
-    transportOptions = firstNonNull(builder.transportOptions, getDefaultTransportOptions());
+    transportOptions = firstNonNull(builder.transportOptions,
+        serviceDefaults.getDefaultTransportOptions());
   }
 
   /**
@@ -565,12 +567,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       throw new IOException(e);
     }
   }
-
-  protected abstract ServiceFactory<ServiceT, OptionsT> getDefaultServiceFactory();
-
-  protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> getDefaultRpcFactory();
-
-  protected abstract TransportOptions getDefaultTransportOptions();
 
   protected abstract Set<String> getScopes();
 

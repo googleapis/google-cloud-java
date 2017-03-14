@@ -17,11 +17,14 @@
 package com.google.cloud.compute;
 
 import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceFactory;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.compute.spi.ComputeRpc;
 import com.google.cloud.compute.spi.ComputeRpcFactory;
 import com.google.cloud.compute.spi.DefaultComputeRpc;
+import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
@@ -79,22 +82,26 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeO
   }
 
   private ComputeOptions(Builder builder) {
-    super(ComputeFactory.class, ComputeRpcFactory.class, builder);
+    super(ComputeFactory.class, ComputeRpcFactory.class, builder, new ComputeDefaults());
   }
 
-  @Override
-  protected ComputeFactory getDefaultServiceFactory() {
-    return DefaultComputeFactory.INSTANCE;
-  }
+  private static class ComputeDefaults implements
+      ServiceDefaults<Compute, ComputeRpc, ComputeOptions> {
 
-  @Override
-  protected ComputeRpcFactory getDefaultRpcFactory() {
-    return DefaultComputeRpcFactory.INSTANCE;
-  }
+    @Override
+    public ComputeFactory getDefaultServiceFactory() {
+      return DefaultComputeFactory.INSTANCE;
+    }
 
-  @Override
-  public TransportOptions getDefaultTransportOptions() {
-    return getDefaultHttpTransportOptions();
+    @Override
+    public ComputeRpcFactory getDefaultRpcFactory() {
+      return DefaultComputeRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
   public static HttpTransportOptions getDefaultHttpTransportOptions() {

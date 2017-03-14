@@ -17,6 +17,7 @@
 package com.google.cloud.resourcemanager;
 
 import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.resourcemanager.spi.DefaultResourceManagerRpc;
@@ -92,7 +93,8 @@ public class ResourceManagerOptions
   }
 
   private ResourceManagerOptions(Builder builder) {
-    super(ResourceManagerFactory.class, ResourceManagerRpcFactory.class, builder);
+    super(ResourceManagerFactory.class, ResourceManagerRpcFactory.class, builder,
+        new ResourceManagerDefaults());
   }
 
   @Override
@@ -100,19 +102,23 @@ public class ResourceManagerOptions
     return false;
   }
 
-  @Override
-  protected ResourceManagerFactory getDefaultServiceFactory() {
-    return DefaultResourceManagerFactory.INSTANCE;
-  }
+  private static class ResourceManagerDefaults implements
+      ServiceDefaults<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
 
-  @Override
-  protected ResourceManagerRpcFactory getDefaultRpcFactory() {
-    return DefaultResourceManagerRpcFactory.INSTANCE;
-  }
+    @Override
+    public ResourceManagerFactory getDefaultServiceFactory() {
+      return DefaultResourceManagerFactory.INSTANCE;
+    }
 
-  @Override
-  public TransportOptions getDefaultTransportOptions() {
-    return getDefaultHttpTransportOptions();
+    @Override
+    public ResourceManagerRpcFactory getDefaultRpcFactory() {
+      return DefaultResourceManagerRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
   public static HttpTransportOptions getDefaultHttpTransportOptions() {

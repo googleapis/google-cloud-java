@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.spanner.spi.DefaultSpannerRpc;
@@ -77,7 +78,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
   private final String userAgent;
 
   private SpannerOptions(Builder builder) {
-    super(SpannerFactory.class, SpannerRpcFactory.class, builder);
+    super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
     numChannels = builder.numChannels;
     userAgent = builder.userAgentPrefix;
     RpcChannelFactory defaultRpcChannelFactory =
@@ -209,11 +210,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
     return prefetchChunks;
   }
 
-  @Override
-  public TransportOptions getDefaultTransportOptions() {
-    return getDefaultGrpcTransportOptions();
-  }
-
   public static GrpcTransportOptions getDefaultGrpcTransportOptions() {
     return GrpcTransportOptions.newBuilder().build();
   }
@@ -295,14 +291,23 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
     }
   }
 
-  @Override
-  protected SpannerFactory getDefaultServiceFactory() {
-    return DefaultSpannerFactory.INSTANCE;
-  }
+  private static class SpannerDefaults implements
+      ServiceDefaults<Spanner, SpannerRpc, SpannerOptions> {
 
-  @Override
-  protected SpannerRpcFactory getDefaultRpcFactory() {
-    return DefaultSpannerRpcFactory.INSTANCE;
+    @Override
+    public SpannerFactory getDefaultServiceFactory() {
+      return DefaultSpannerFactory.INSTANCE;
+    }
+
+    @Override
+    public SpannerRpcFactory getDefaultRpcFactory() {
+      return DefaultSpannerRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultGrpcTransportOptions();
+    }
   }
 
   @Override

@@ -19,6 +19,7 @@ package com.google.cloud.datastore;
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
 import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.spi.DatastoreRpc;
@@ -97,7 +98,7 @@ public class DatastoreOptions
   }
 
   private DatastoreOptions(Builder builder) {
-    super(DatastoreFactory.class, DatastoreRpcFactory.class, builder);
+    super(DatastoreFactory.class, DatastoreRpcFactory.class, builder, new DatastoreDefaults());
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
   }
 
@@ -117,19 +118,23 @@ public class DatastoreOptions
     return projectId != null ? projectId : super.getDefaultProject();
   }
 
-  @Override
-  protected DatastoreFactory getDefaultServiceFactory() {
-    return DefaultDatastoreFactory.INSTANCE;
-  }
+  private static class DatastoreDefaults implements
+      ServiceDefaults<Datastore, DatastoreRpc, DatastoreOptions> {
 
-  @Override
-  protected DatastoreRpcFactory getDefaultRpcFactory() {
-    return DefaultDatastoreRpcFactory.INSTANCE;
-  }
+    @Override
+    public DatastoreFactory getDefaultServiceFactory() {
+      return DefaultDatastoreFactory.INSTANCE;
+    }
 
-  @Override
-  public TransportOptions getDefaultTransportOptions() {
-    return getDefaultHttpTransportOptions();
+    @Override
+    public DatastoreRpcFactory getDefaultRpcFactory() {
+      return DefaultDatastoreRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
   public static HttpTransportOptions getDefaultHttpTransportOptions() {

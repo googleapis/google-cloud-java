@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.logging.spi.DefaultLoggingRpc;
@@ -96,22 +97,26 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingO
   }
 
   protected LoggingOptions(Builder builder) {
-    super(LoggingFactory.class, LoggingRpcFactory.class, builder);
+    super(LoggingFactory.class, LoggingRpcFactory.class, builder, new LoggingDefaults());
   }
 
-  @Override
-  protected LoggingFactory getDefaultServiceFactory() {
-    return DefaultLoggingFactory.INSTANCE;
-  }
+  private static class LoggingDefaults implements
+      ServiceDefaults<Logging, LoggingRpc, LoggingOptions> {
 
-  @Override
-  protected LoggingRpcFactory getDefaultRpcFactory() {
-    return DefaultLoggingRpcFactory.INSTANCE;
-  }
+    @Override
+    public LoggingFactory getDefaultServiceFactory() {
+      return DefaultLoggingFactory.INSTANCE;
+    }
 
-  @Override
-  public TransportOptions getDefaultTransportOptions() {
-    return getDefaultGrpcTransportOptions();
+    @Override
+    public LoggingRpcFactory getDefaultRpcFactory() {
+      return DefaultLoggingRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultGrpcTransportOptions();
+    }
   }
 
   public static GrpcTransportOptions getDefaultGrpcTransportOptions() {
