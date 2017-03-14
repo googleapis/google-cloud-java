@@ -692,6 +692,11 @@ Java Versions
 
 Java 7 or above is required for using this client.
 
+Android
+-------
+
+Android is not currently supported.
+
 Testing
 -------
 
