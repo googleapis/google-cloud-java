@@ -18,13 +18,12 @@ package com.google.cloud.bigquery;
 
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
-import com.google.cloud.ServiceFactory;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.bigquery.spi.BigQueryRpc;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
-import com.google.cloud.bigquery.spi.DefaultBigQueryRpc;
-import com.google.cloud.spi.ServiceRpcFactory;
+import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
@@ -51,8 +50,8 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     private static final BigQueryRpcFactory INSTANCE = new DefaultBigQueryRpcFactory();
 
     @Override
-    public BigQueryRpc create(BigQueryOptions options) {
-      return new DefaultBigQueryRpc(options);
+    public ServiceRpc create(BigQueryOptions options) {
+      return new HttpBigQueryRpc(options);
     }
   }
 
