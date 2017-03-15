@@ -20,8 +20,8 @@ import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.pubsub.deprecated.spi.DefaultPubSubRpc;
-import com.google.cloud.pubsub.deprecated.spi.PubSubRpc;
+import com.google.cloud.pubsub.deprecated.spi.v1.GrpcPubSubRpc;
+import com.google.cloud.pubsub.deprecated.spi.v1.PubSubRpc;
 import com.google.cloud.pubsub.deprecated.spi.PubSubRpcFactory;
 import com.google.cloud.pubsub.spi.v1.PublisherSettings;
 import com.google.common.collect.ImmutableSet;
@@ -68,7 +68,7 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubOptions> {
     @Override
     public PubSubRpc create(PubSubOptions options) {
       try {
-        return new DefaultPubSubRpc(options);
+        return new GrpcPubSubRpc(options);
       } catch (IOException e) {
         throw new PubSubException(e, true);
       }

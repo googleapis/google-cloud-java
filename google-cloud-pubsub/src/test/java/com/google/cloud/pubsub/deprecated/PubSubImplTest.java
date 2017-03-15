@@ -37,7 +37,7 @@ import com.google.cloud.pubsub.deprecated.PubSub.ListOption;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.deprecated.PubSub.PullOption;
-import com.google.cloud.pubsub.deprecated.spi.PubSubRpc;
+import com.google.cloud.pubsub.deprecated.spi.v1.PubSubRpc;
 import com.google.cloud.pubsub.deprecated.spi.PubSubRpcFactory;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
