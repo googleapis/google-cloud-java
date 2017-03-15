@@ -18,13 +18,11 @@ package com.google.cloud.compute;
 
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
-import com.google.cloud.ServiceFactory;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.compute.spi.ComputeRpc;
+import com.google.cloud.compute.spi.v1.ComputeRpc;
 import com.google.cloud.compute.spi.ComputeRpcFactory;
-import com.google.cloud.compute.spi.DefaultComputeRpc;
-import com.google.cloud.spi.ServiceRpcFactory;
+import com.google.cloud.compute.spi.v1.HttpComputeRpc;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
@@ -52,7 +50,7 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeOptions> {
 
     @Override
     public ComputeRpc create(ComputeOptions options) {
-      return new DefaultComputeRpc(options);
+      return new HttpComputeRpc(options);
     }
   }
 

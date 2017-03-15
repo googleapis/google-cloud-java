@@ -26,7 +26,7 @@ import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.compute.AttachedDisk.PersistentDiskConfiguration;
 import com.google.cloud.compute.NetworkInterface.AccessConfig;
-import com.google.cloud.compute.spi.ComputeRpc;
+import com.google.cloud.compute.spi.v1.ComputeRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.compute.spi;
+package com.google.cloud.compute.spi.v1;
 
 import com.google.api.services.compute.model.AccessConfig;
 import com.google.api.services.compute.model.Address;
