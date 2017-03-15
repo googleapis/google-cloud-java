@@ -27,7 +27,7 @@ import com.google.cloud.BaseService;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.RetryHelper;
-import com.google.cloud.dns.spi.DnsRpc;
+import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;

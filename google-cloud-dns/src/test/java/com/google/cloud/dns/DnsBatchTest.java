@@ -33,8 +33,8 @@ import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
 import com.google.cloud.Page;
-import com.google.cloud.dns.spi.DnsRpc;
-import com.google.cloud.dns.spi.RpcBatch;
+import com.google.cloud.dns.spi.v1.DnsRpc;
+import com.google.cloud.dns.spi.v1.RpcBatch;
 import com.google.common.collect.ImmutableList;
 
 import org.easymock.Capture;

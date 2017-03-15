@@ -20,8 +20,8 @@ import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.dns.spi.DefaultDnsRpc;
-import com.google.cloud.dns.spi.DnsRpc;
+import com.google.cloud.dns.spi.v1.HttpDnsRpc;
+import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
@@ -49,7 +49,7 @@ public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
 
     @Override
     public DnsRpc create(DnsOptions options) {
-      return new DefaultDnsRpc(options);
+      return new HttpDnsRpc(options);
     }
   }
 
