@@ -18,7 +18,7 @@ package com.google.cloud.pubsub.spi.v1;
 
 import static com.google.cloud.pubsub.spi.v1.StatusUtil.isRetryable;
 
-import com.google.api.gax.grpc.FlowController;
+import com.google.api.gax.core.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.cloud.Clock;
@@ -48,7 +48,7 @@ import java.util.logging.Logger;
 import org.joda.time.Duration;
 
 /**
- * Implementation of {@link AbstractSubscriberConnection} based on Cloud Pub/Sub pull and
+ * Implementation of {@link AckProcessor} based on Cloud Pub/Sub pull and
  * acknowledge operations.
  */
 final class PollingSubscriberConnection extends AbstractService implements AckProcessor {
@@ -95,7 +95,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
 
   @Override
   protected void doStart() {
-    logger.log(Level.INFO, "Starting subscriber.");
+    logger.config("Starting subscriber.");
     initialize();
     notifyStarted();
   }
@@ -185,6 +185,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
                   TimeUnit.MILLISECONDS);
               return;
             }
+            messageDispatcher.stop();
             notifyFailed(cause);
           }
         });
@@ -195,15 +196,14 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
     // Send the modify ack deadlines in bundles as not to exceed the max request
     // size.
-    List<List<PendingModifyAckDeadline>> modifyAckDeadlineChunks =
-        Lists.partition(ackDeadlineExtensions, MAX_PER_REQUEST_CHANGES);
-    for (List<PendingModifyAckDeadline> modAckChunk : modifyAckDeadlineChunks) {
-      for (PendingModifyAckDeadline modifyAckDeadline : modAckChunk) {
+    for (PendingModifyAckDeadline modifyAckDeadline : ackDeadlineExtensions) {
+      for (List<String> ackIdChunk :
+          Lists.partition(modifyAckDeadline.ackIds, MAX_PER_REQUEST_CHANGES)) {
         stub.withDeadlineAfter(DEFAULT_TIMEOUT.getMillis(), TimeUnit.MILLISECONDS)
             .modifyAckDeadline(
                 ModifyAckDeadlineRequest.newBuilder()
                     .setSubscription(subscription)
-                    .addAllAckIds(modifyAckDeadline.ackIds)
+                    .addAllAckIds(ackIdChunk)
                     .setAckDeadlineSeconds(modifyAckDeadline.deadlineExtensionSeconds)
                     .build());
       }

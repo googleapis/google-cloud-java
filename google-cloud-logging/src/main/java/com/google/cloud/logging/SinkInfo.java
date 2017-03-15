@@ -92,13 +92,6 @@ public class SinkInfo implements Serializable {
         this.bucket = checkNotNull(bucket);
       }
 
-      /**
-       * Returns the name of the Google Cloud Storage bucket this destination represents.
-       */
-      @Deprecated
-      public String bucket() {
-        return getBucket();
-      }
 
       /**
        * Returns the name of the Google Cloud Storage bucket this destination represents.
@@ -175,14 +168,6 @@ public class SinkInfo implements Serializable {
         this.dataset = checkNotNull(dataset);
       }
 
-      /**
-       * Returns the name of the project where the Google Cloud BigQuery dataset resides. If
-       * {@code null}, the default project is used.
-       */
-      @Deprecated
-      public String project() {
-        return getProject();
-      }
 
       /**
        * Returns the name of the project where the Google Cloud BigQuery dataset resides. If
@@ -192,13 +177,6 @@ public class SinkInfo implements Serializable {
         return project;
       }
 
-      /**
-       * Returns the name of the Google Cloud BigQuery dataset this destination represents.
-       */
-      @Deprecated
-      public String dataset() {
-        return getDataset();
-      }
 
       /**
        * Returns the name of the Google Cloud BigQuery dataset this destination represents.
@@ -288,14 +266,6 @@ public class SinkInfo implements Serializable {
         this.topic = checkNotNull(topic);
       }
 
-      /**
-       * Returns the name of the project where the Google Cloud Pub/Sub topic resides. If
-       * {@code null}, the default project is used.
-       */
-      @Deprecated
-      public String project() {
-        return getProject();
-      }
 
       /**
        * Returns the name of the project where the Google Cloud Pub/Sub topic resides. If
@@ -305,13 +275,6 @@ public class SinkInfo implements Serializable {
         return project;
       }
 
-      /**
-       * Returns the name of the Google Cloud Pub/Sub topic this destination represents.
-       */
-      @Deprecated
-      public String topic() {
-        return getTopic();
-      }
 
       /**
        * Returns the name of the Google Cloud Pub/Sub topic this destination represents.
@@ -386,13 +349,6 @@ public class SinkInfo implements Serializable {
       this.type = checkNotNull(type);
     }
 
-    /**
-     * Returns the type of this destination.
-     */
-    @Deprecated
-    public Type type() {
-      return getType();
-    }
 
     /**
      * Returns the type of this destination.
@@ -461,13 +417,6 @@ public class SinkInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    /**
-     * Sets the name of the sink. Example: {@code my-severe-errors-to-pubsub}. Sink identifiers are
-     * limited to 1000 characters and can include only the following characters: {@code A-Z},
-     * {@code a-z}, {@code 0-9}, and the special characters {@code _-.}.
-     */
-    @Deprecated
-    public abstract Builder name(String name);
 
     /**
      * Sets the name of the sink. Example: {@code my-severe-errors-to-pubsub}. Sink identifiers are
@@ -476,18 +425,6 @@ public class SinkInfo implements Serializable {
      */
     public abstract Builder setName(String name);
 
-    /**
-     * Sets the export destination. Use a {@link Destination.BucketDestination} object to create a
-     * sink that exports logs to a Google Cloud Storage bucket. Use a
-     * {@link Destination.DatasetDestination} object to create a sink that exports logs to a Google
-     * Cloud BigQuery dataset. Use a {@link Destination.TopicDestination} object to create a sink
-     * that exports logs to a Google Cloud Pub/Sub topic.
-     *
-     * @see <a href="https://cloud.google.com/logging/docs/api/tasks/exporting-logs#about_sinks">
-     *     Exporting Logs</a>
-     */
-    @Deprecated
-    public abstract Builder destination(Destination destination);
 
     /**
      * Sets the export destination. Use a {@link Destination.BucketDestination} object to create a
@@ -501,23 +438,11 @@ public class SinkInfo implements Serializable {
      */
     public abstract Builder setDestination(Destination destination);
 
-    /**
-     * Sets an advanced logs filter. Only log entries matching that filter are exported. The filter
-     * must be consistent with the log entry format specified with
-     * {@link #versionFormat(VersionFormat)}, regardless of the format of the log entry that was
-     * originally written to Stackdriver Logging. Example (V2 format):
-     * {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
-     *
-     * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Log
-     *     Filters</a>
-     */
-    @Deprecated
-    public abstract Builder filter(String filter);
 
     /**
      * Sets an advanced logs filter. Only log entries matching that filter are exported. The filter
      * must be consistent with the log entry format specified with
-     * {@link #versionFormat(VersionFormat)}, regardless of the format of the log entry that was
+     * {@link #setVersionFormat(VersionFormat)}, regardless of the format of the log entry that was
      * originally written to Stackdriver Logging. Example (V2 format):
      * {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
      *
@@ -526,13 +451,6 @@ public class SinkInfo implements Serializable {
      */
     public abstract Builder setFilter(String filter);
 
-    /**
-     * Sets the log entry version to use for this sink's exported log entries. This version does
-     * not have to correspond to the version of the log entry when it was written to Google Cloud
-     * Logging.
-     */
-    @Deprecated
-    public abstract Builder versionFormat(VersionFormat versionFormat);
 
     /**
      * Sets the log entry version to use for this sink's exported log entries. This version does
@@ -566,11 +484,6 @@ public class SinkInfo implements Serializable {
       this.versionFormat = sink.versionFormat;
     }
 
-    @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     @Override
     public Builder setName(String name) {
@@ -578,11 +491,6 @@ public class SinkInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder destination(Destination destination) {
-      return setDestination(destination);
-    }
 
     @Override
     public Builder setDestination(Destination destination) {
@@ -590,11 +498,6 @@ public class SinkInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder filter(String filter) {
-      return setFilter(filter);
-    }
 
     @Override
     public Builder setFilter(String filter) {
@@ -602,11 +505,6 @@ public class SinkInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder versionFormat(VersionFormat versionFormat) {
-      return setVersionFormat(versionFormat);
-    }
 
     @Override
     public Builder setVersionFormat(VersionFormat versionFormat) {
@@ -627,15 +525,6 @@ public class SinkInfo implements Serializable {
     this.versionFormat = builder.versionFormat;
   }
 
-  /**
-   * Returns the name of the sink. Example: {@code my-severe-errors-to-pubsub}. Sink identifiers are
-   * limited to 1000 characters and can include only the following characters: {@code A-Z},
-   * {@code a-z}, {@code 0-9}, and the special characters {@code _-.}.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Returns the name of the sink. Example: {@code my-severe-errors-to-pubsub}. Sink identifiers are
@@ -646,21 +535,6 @@ public class SinkInfo implements Serializable {
     return name;
   }
 
-  /**
-   * Returns the export destination. This method returns a {@link Destination.BucketDestination} for
-   * sinks that export logs to Google Cloud Storage buckets. Returns
-   * {@link Destination.DatasetDestination} for sinks that export logs to Google Cloud BigQuery
-   * datasets. Returns {@link Destination.TopicDestination} for sinks that export logs to Google
-   * Cloud Pub/Sub topics.
-   *
-   * @see <a href="https://cloud.google.com/logging/docs/api/tasks/exporting-logs#about_sinks">
-   *     Exporting Logs</a>
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public <T extends Destination> T destination() {
-    return getDestination();
-  }
 
   /**
    * Returns the export destination. This method returns a {@link Destination.BucketDestination} for
@@ -677,25 +551,12 @@ public class SinkInfo implements Serializable {
     return (T) destination;
   }
 
-  /**
-   * Returns an advanced logs filter. Only log entries matching that filter are exported. The filter
-   * must be consistent with the log entry format specified in {@link #versionFormat()}, regardless
-   * of the format of the log entry that wa originally written to Stackdriver Logging. Example (V2
-   * format): {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
-   *
-   * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Log
-   *     Filters</a>
-   */
-  @Deprecated
-  public String filter() {
-    return getFilter();
-  }
 
   /**
    * Returns an advanced logs filter. Only log entries matching that filter are exported. The filter
-   * must be consistent with the log entry format specified in {@link #versionFormat()}, regardless
-   * of the format of the log entry that wa originally written to Stackdriver Logging. Example (V2
-   * format): {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
+   * must be consistent with the log entry format specified in {@link #getVersionFormat()},
+   * regardless of the format of the log entry that wa originally written to Stackdriver Logging.
+   * Example (V2 format): {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
    *
    * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Log
    *     Filters</a>
@@ -704,15 +565,6 @@ public class SinkInfo implements Serializable {
     return filter;
   }
 
-  /**
-   * Returns the log entry version to use for this sink's exported log entries. This version does
-   * not have to correspond to the version of the log entry when it was written to Google Cloud
-   * Logging.
-   */
-  @Deprecated
-  public VersionFormat versionFormat() {
-    return getVersionFormat();
-  }
 
   /**
    * Returns the log entry version to use for this sink's exported log entries. This version does
@@ -763,13 +615,6 @@ public class SinkInfo implements Serializable {
     return new BuilderImpl(this);
   }
 
-  /**
-   * Returns a builder for {@code SinkInfo} objects given the name of the sink and its destination.
-   */
-  @Deprecated
-  public static Builder builder(String name, Destination destination) {
-    return newBuilder(name, destination);
-  }
 
   /**
    * Returns a builder for {@code SinkInfo} objects given the name of the sink and its destination.

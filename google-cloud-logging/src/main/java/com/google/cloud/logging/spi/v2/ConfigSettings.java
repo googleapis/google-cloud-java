@@ -1,5 +1,5 @@
 /*
- * Copyright 2016, Google Inc. All rights reserved.
+ * Copyright 2017, Google Inc. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,7 @@ import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link ConfigServiceV2Client}.
+ * Settings class to configure an instance of {@link ConfigClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -69,17 +69,17 @@ import org.joda.time.Duration;
  *
  * <pre>
  * <code>
- * ConfigServiceV2Settings.Builder configServiceV2SettingsBuilder =
- *     ConfigServiceV2Settings.defaultBuilder();
- * configServiceV2SettingsBuilder.getSinkSettings().getRetrySettingsBuilder()
+ * ConfigSettings.Builder configSettingsBuilder =
+ *     ConfigSettings.defaultBuilder();
+ * configSettingsBuilder.getSinkSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.standardSeconds(30));
- * ConfigServiceV2Settings configServiceV2Settings = configServiceV2SettingsBuilder.build();
+ * ConfigSettings configSettings = configSettingsBuilder.build();
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
+@Generated("by GAPIC v0.0.5")
 @ExperimentalApi
-public class ConfigServiceV2Settings extends ClientSettings {
+public class ConfigSettings extends ClientSettings {
   /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
 
@@ -95,6 +95,9 @@ public class ConfigServiceV2Settings extends ClientSettings {
           .add("https://www.googleapis.com/auth/logging.read")
           .add("https://www.googleapis.com/auth/logging.write")
           .build();
+
+  private static final String DEFAULT_GAPIC_NAME = "gapic";
+  private static final String DEFAULT_GAPIC_VERSION = "";
 
   private final PagedCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
       listSinksSettings;
@@ -159,7 +162,13 @@ public class ConfigServiceV2Settings extends ClientSettings {
     return InstantiatingChannelProvider.newBuilder()
         .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
         .setPort(DEFAULT_SERVICE_PORT)
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+  }
+
+  private static String getGapicVersion() {
+    String packageVersion = ConfigSettings.class.getPackage().getImplementationVersion();
+    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -177,7 +186,7 @@ public class ConfigServiceV2Settings extends ClientSettings {
     return new Builder(this);
   }
 
-  private ConfigServiceV2Settings(Builder settingsBuilder) throws IOException {
+  private ConfigSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder.getExecutorProvider(), settingsBuilder.getChannelProvider());
 
     listSinksSettings = settingsBuilder.listSinksSettings().build();
@@ -236,7 +245,7 @@ public class ConfigServiceV2Settings extends ClientSettings {
             }
           };
 
-  /** Builder for ConfigServiceV2Settings. */
+  /** Builder for ConfigSettings. */
   public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
@@ -257,7 +266,9 @@ public class ConfigServiceV2Settings extends ClientSettings {
           Sets.immutableEnumSet(
               Lists.<Status.Code>newArrayList(
                   Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
+      definitions.put(
+          "non_idempotent",
+          Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -334,7 +345,7 @@ public class ConfigServiceV2Settings extends ClientSettings {
       return builder;
     }
 
-    private Builder(ConfigServiceV2Settings settings) {
+    private Builder(ConfigSettings settings) {
       super(settings);
 
       listSinksSettings = settings.listSinksSettings.toBuilder();
@@ -403,8 +414,8 @@ public class ConfigServiceV2Settings extends ClientSettings {
     }
 
     @Override
-    public ConfigServiceV2Settings build() throws IOException {
-      return new ConfigServiceV2Settings(this);
+    public ConfigSettings build() throws IOException {
+      return new ConfigSettings(this);
     }
   }
 }

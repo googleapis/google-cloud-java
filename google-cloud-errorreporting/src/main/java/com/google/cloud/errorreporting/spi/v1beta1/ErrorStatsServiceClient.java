@@ -1,5 +1,5 @@
 /*
- * Copyright 2016, Google Inc. All rights reserved.
+ * Copyright 2017, Google Inc. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -251,7 +251,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     .setProjectNameWithProjectName(projectName)
    *     .setTimeRange(timeRange)
    *     .build();
-   *   RpcFuture&lt;ListGroupStatsPagedResponse&gt; future = errorStatsServiceClient.listGroupStatsPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListGroupStatsPagedResponse&gt; future = errorStatsServiceClient.listGroupStatsPagedCallable().futureCall(request);
    *   // Do something
    *   for (ErrorGroupStats element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -370,7 +370,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     .setProjectNameWithProjectName(projectName)
    *     .setGroupId(groupId)
    *     .build();
-   *   RpcFuture&lt;ListEventsPagedResponse&gt; future = errorStatsServiceClient.listEventsPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListEventsPagedResponse&gt; future = errorStatsServiceClient.listEventsPagedCallable().futureCall(request);
    *   // Do something
    *   for (ErrorEvent element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -475,7 +475,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
    *     .build();
-   *   RpcFuture&lt;DeleteEventsResponse&gt; future = errorStatsServiceClient.deleteEventsCallable().futureCall(request);
+   *   ApiFuture&lt;DeleteEventsResponse&gt; future = errorStatsServiceClient.deleteEventsCallable().futureCall(request);
    *   // Do something
    *   DeleteEventsResponse response = future.get();
    * }

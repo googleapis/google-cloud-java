@@ -17,28 +17,29 @@
 /*
  * EDITING INSTRUCTIONS
  * This file is referenced in Subscriber's javadoc. Any change to this file should be reflected in
- * PubSub's javadoc.
+ * Subscriber's javadoc.
  */
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.api.gax.core.RpcFuture;
+import com.google.api.gax.core.ApiFuture;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
 import com.google.pubsub.v1.SubscriptionName;
 import java.util.concurrent.Executor;
 
+/** This class contains snippets for the {@link Subscriber} interface. */
 public class SubscriberSnippets {
 
   private final SubscriptionName subscription;
   private final MessageReceiver receiver;
-  private final RpcFuture<Void> done;
+  private final ApiFuture<Void> done;
   private final Executor executor;
 
   public SubscriberSnippets(
       SubscriptionName subscription,
       MessageReceiver receiver,
-      RpcFuture<Void> done,
+      ApiFuture<Void> done,
       Executor executor) {
     this.subscription = subscription;
     this.receiver = receiver;
@@ -50,7 +51,7 @@ public class SubscriberSnippets {
    * Example of receiving a specific number of messages.
    */
   // [TARGET startAsync()]
-  public void startAsync() throws Exception {
+  public void startAndWait() throws Exception {
     // [START startAsync]
     Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
     subscriber.addListener(new Subscriber.SubscriberListener() {

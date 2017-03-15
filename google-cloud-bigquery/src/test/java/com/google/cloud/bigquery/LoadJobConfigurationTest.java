@@ -57,16 +57,6 @@ public class LoadJobConfigurationTest {
           .setProjectionFields(PROJECTION_FIELDS)
           .setSchema(TABLE_SCHEMA)
           .build();
-  private static final LoadJobConfiguration DEPRECATED_LOAD_CONFIGURATION =
-      LoadJobConfiguration.builder(TABLE_ID, SOURCE_URIS)
-          .createDisposition(CREATE_DISPOSITION)
-          .writeDisposition(WRITE_DISPOSITION)
-          .formatOptions(CSV_OPTIONS)
-          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-          .maxBadRecords(MAX_BAD_RECORDS)
-          .projectionFields(PROJECTION_FIELDS)
-          .schema(TABLE_SCHEMA)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -106,32 +96,6 @@ public class LoadJobConfigurationTest {
   }
 
   @Test
-  public void testBuilder() {
-    assertEquals(TABLE_ID, DEPRECATED_LOAD_CONFIGURATION.destinationTable());
-    assertEquals(CREATE_DISPOSITION, DEPRECATED_LOAD_CONFIGURATION.createDisposition());
-    assertEquals(WRITE_DISPOSITION, DEPRECATED_LOAD_CONFIGURATION.writeDisposition());
-    assertEquals(CSV_OPTIONS, DEPRECATED_LOAD_CONFIGURATION.csvOptions());
-    assertEquals(FORMAT, DEPRECATED_LOAD_CONFIGURATION.format());
-    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_LOAD_CONFIGURATION.ignoreUnknownValues());
-    assertEquals(MAX_BAD_RECORDS, DEPRECATED_LOAD_CONFIGURATION.maxBadRecords());
-    assertEquals(PROJECTION_FIELDS, DEPRECATED_LOAD_CONFIGURATION.projectionFields());
-    assertEquals(TABLE_SCHEMA, DEPRECATED_LOAD_CONFIGURATION.schema());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(TABLE_ID, LOAD_CONFIGURATION.getDestinationTable());
-    assertEquals(CREATE_DISPOSITION, LOAD_CONFIGURATION.getCreateDisposition());
-    assertEquals(WRITE_DISPOSITION, LOAD_CONFIGURATION.getWriteDisposition());
-    assertEquals(CSV_OPTIONS, LOAD_CONFIGURATION.getCsvOptions());
-    assertEquals(FORMAT, LOAD_CONFIGURATION.getFormat());
-    assertEquals(IGNORE_UNKNOWN_VALUES, LOAD_CONFIGURATION.ignoreUnknownValues());
-    assertEquals(MAX_BAD_RECORDS, LOAD_CONFIGURATION.getMaxBadRecords());
-    assertEquals(PROJECTION_FIELDS, LOAD_CONFIGURATION.getProjectionFields());
-    assertEquals(TABLE_SCHEMA, LOAD_CONFIGURATION.getSchema());
-  }
-
-  @Test
   public void testToPbAndFromPb() {
     compareLoadJobConfiguration(LOAD_CONFIGURATION,
         LoadJobConfiguration.fromPb(LOAD_CONFIGURATION.toPb()));
@@ -143,6 +107,11 @@ public class LoadJobConfigurationTest {
   public void testSetProjectId() {
     LoadConfiguration configuration = LOAD_CONFIGURATION.setProjectId("p");
     assertEquals("p", configuration.getDestinationTable().getProject());
+  }
+
+  @Test
+  public void testGetType() {
+    assertEquals(JobConfiguration.Type.LOAD, LOAD_CONFIGURATION.getType());
   }
 
   private void compareLoadJobConfiguration(LoadJobConfiguration expected,

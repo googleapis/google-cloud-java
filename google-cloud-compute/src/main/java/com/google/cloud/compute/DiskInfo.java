@@ -104,19 +104,7 @@ public class DiskInfo implements Serializable {
     /**
      * Sets the disk configuration.
      */
-    @Deprecated
-    public abstract Builder configuration(DiskConfiguration configuration);
-
-    /**
-     * Sets the disk configuration.
-     */
     public abstract Builder setConfiguration(DiskConfiguration configuration);
-
-    /**
-     * Sets the disk identity.
-     */
-    @Deprecated
-    public abstract Builder diskId(DiskId diskId);
 
     /**
      * Sets the disk identity.
@@ -126,12 +114,6 @@ public class DiskInfo implements Serializable {
     abstract Builder setCreationTimestamp(Long creationTimestamp);
 
     abstract Builder setCreationStatus(CreationStatus creationStatus);
-
-    /**
-     * Sets an optional textual description of the resource.
-     */
-    @Deprecated
-    public abstract Builder description(String description);
 
     /**
      * Sets an optional textual description of the resource.
@@ -217,21 +199,9 @@ public class DiskInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public BuilderImpl configuration(DiskConfiguration configuration) {
-      return setConfiguration(configuration);
-    }
-
-    @Override
     public BuilderImpl setConfiguration(DiskConfiguration configuration) {
       this.configuration = checkNotNull(configuration);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public BuilderImpl diskId(DiskId diskId) {
-      return setDiskId(diskId);
     }
 
     @Override
@@ -250,12 +220,6 @@ public class DiskInfo implements Serializable {
     BuilderImpl setCreationStatus(CreationStatus creationStatus) {
       this.creationStatus = creationStatus;
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public BuilderImpl description(String description) {
-      return setDescription(description);
     }
 
     @Override
@@ -311,24 +275,8 @@ public class DiskInfo implements Serializable {
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
-  @Deprecated
-  public Long creationTimestamp() {
-    return getCreationTimestamp();
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
   public Long getCreationTimestamp() {
     return creationTimestamp;
-  }
-
-  /**
-   * Returns the service-generated unique identifier for the disk.
-   */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
   }
 
   /**
@@ -342,25 +290,8 @@ public class DiskInfo implements Serializable {
    * Returns the disk configuration.
    */
   @SuppressWarnings("unchecked")
-  @Deprecated
-  public <T extends DiskConfiguration> T configuration() {
-    return getConfiguration();
-  }
-
-  /**
-   * Returns the disk configuration.
-   */
-  @SuppressWarnings("unchecked")
   public <T extends DiskConfiguration> T getConfiguration() {
     return (T) configuration;
-  }
-
-  /**
-   * Returns the disk identity.
-   */
-  @Deprecated
-  public DiskId diskId() {
-    return getDiskId();
   }
 
   /**
@@ -373,24 +304,8 @@ public class DiskInfo implements Serializable {
   /**
    * Returns the creation status of the disk.
    */
-  @Deprecated
-  public CreationStatus creationStatus() {
-    return getCreationStatus();
-  }
-
-  /**
-   * Returns the creation status of the disk.
-   */
   public CreationStatus getCreationStatus() {
     return creationStatus;
-  }
-
-  /**
-   * Returns a textual description of the disk.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
   }
 
   /**
@@ -403,24 +318,8 @@ public class DiskInfo implements Serializable {
   /**
    * Returns all applicable publicly visible licenses for the disk.
    */
-  @Deprecated
-  public List<LicenseId> licenses() {
-    return getLicenses();
-  }
-
-  /**
-   * Returns all applicable publicly visible licenses for the disk.
-   */
   public List<LicenseId> getLicenses() {
     return licenses;
-  }
-
-  /**
-   * Returns all the identities of the instances this disk is attached to.
-   */
-  @Deprecated
-  public List<InstanceId> attachedInstances() {
-    return getAttachedInstances();
   }
 
   /**
@@ -433,24 +332,8 @@ public class DiskInfo implements Serializable {
   /**
    * Returns the last attach timestamp in milliseconds since epoch.
    */
-  @Deprecated
-  public Long lastAttachTimestamp() {
-    return getLastAttachTimestamp();
-  }
-
-  /**
-   * Returns the last attach timestamp in milliseconds since epoch.
-   */
   public Long getLastAttachTimestamp() {
     return lastAttachTimestamp;
-  }
-
-  /**
-   * Returns the last detach timestamp in milliseconds since epoch.
-   */
-  @Deprecated
-  public Long lastDetachTimestamp() {
-    return getLastDetachTimestamp();
   }
 
   /**
@@ -495,17 +378,6 @@ public class DiskInfo implements Serializable {
         || obj != null
         && obj.getClass().equals(DiskInfo.class)
         && Objects.equals(toPb(), ((DiskInfo) obj).toPb());
-  }
-
-  /**
-   * Returns a builder for a {@code DiskInfo} object given its identity and configuration. Use
-   * {@link StandardDiskConfiguration} to create a simple disk given its type and size. Use
-   * {@link SnapshotDiskConfiguration} to create a disk from a snapshot. Use
-   * {@link ImageDiskConfiguration} to create a disk from a disk image.
-   */
-  @Deprecated
-  public static Builder builder(DiskId diskId, DiskConfiguration configuration) {
-    return newBuilder(diskId, configuration);
   }
 
   /**

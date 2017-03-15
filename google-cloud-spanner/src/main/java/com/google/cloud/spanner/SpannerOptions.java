@@ -16,7 +16,10 @@
 
 package com.google.cloud.spanner;
 
-import com.google.cloud.GrpcServiceOptions;
+import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.spanner.spi.DefaultSpannerRpc;
 import com.google.cloud.spanner.spi.SpannerRpc;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
@@ -37,7 +40,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import javax.net.ssl.SSLException;
 
 /** Options for the Cloud Spanner service. */
-public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, SpannerOptions> {
+public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerOptions> {
+  private static final String API_SHORT_NAME = "Spanner";
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
   private static final Set<String> SCOPES =
       ImmutableSet.of(
@@ -74,7 +78,7 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
   private final String userAgent;
 
   private SpannerOptions(Builder builder) {
-    super(SpannerFactory.class, SpannerRpcFactory.class, builder);
+    super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
     numChannels = builder.numChannels;
     userAgent = builder.userAgentPrefix;
     RpcChannelFactory defaultRpcChannelFactory =
@@ -95,8 +99,8 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
 
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
-      extends GrpcServiceOptions.Builder<
-          Spanner, SpannerRpc, SpannerOptions, SpannerOptions.Builder> {
+      extends ServiceOptions.Builder<
+      Spanner, SpannerRpc, SpannerOptions, SpannerOptions.Builder> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
     private RpcChannelFactory rpcChannelFactory;
     /** By default, we create 4 channels per {@link SpannerOptions} */
@@ -114,6 +118,15 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
       this.sessionPoolOptions = options.sessionPoolOptions;
       this.prefetchChunks = options.prefetchChunks;
       this.userAgentPrefix = options.userAgent;
+    }
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof GrpcTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only grpc transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
     /** Sets the factory for creating gRPC channels. If not set, a default will be used. */
@@ -197,9 +210,8 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
     return prefetchChunks;
   }
 
-  @Override
-  protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
-    return super.getExecutorFactory();
+  public static GrpcTransportOptions getDefaultGrpcTransportOptions() {
+    return GrpcTransportOptions.newBuilder().build();
   }
 
   /**
@@ -275,14 +287,23 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
     }
   }
 
-  @Override
-  protected SpannerFactory getDefaultServiceFactory() {
-    return DefaultSpannerFactory.INSTANCE;
-  }
+  private static class SpannerDefaults implements
+      ServiceDefaults<Spanner, SpannerRpc, SpannerOptions> {
 
-  @Override
-  protected SpannerRpcFactory getDefaultRpcFactory() {
-    return DefaultSpannerRpcFactory.INSTANCE;
+    @Override
+    public SpannerFactory getDefaultServiceFactory() {
+      return DefaultSpannerFactory.INSTANCE;
+    }
+
+    @Override
+    public SpannerRpcFactory getDefaultRpcFactory() {
+      return DefaultSpannerRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultGrpcTransportOptions();
+    }
   }
 
   @Override

@@ -81,31 +81,9 @@ public final class Tags implements Serializable {
      *
      * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
      */
-    @Deprecated
-    public Builder values(Iterable<String> values) {
-      return setValues(values);
-    }
-
-    /**
-     * Sets a list of tags to apply to an instance. Tags are used to identify valid sources or
-     * targets for network firewalls. Each tag within the list must comply with RFC1035.
-     *
-     * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
-     */
     public Builder setValues(Iterable<String> values) {
       this.values = Lists.newArrayList(values);
       return this;
-    }
-
-    /**
-     * Sets a list of tags to apply to an instance. Tags are used to identify valid sources or
-     * targets for network firewalls. Each tag within the list must comply with RFC1035.
-     *
-     * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
-     */
-    @Deprecated
-    public Builder values(String... values) {
-      return setValues(values);
     }
 
     /**
@@ -128,14 +106,6 @@ public final class Tags implements Serializable {
     public Builder add(String tag) {
       this.values.add(tag);
       return this;
-    }
-
-    /**
-     * Sets the fingerprint for the tags. This value is needed to update instance's tags.
-     */
-    @Deprecated
-    public Builder fingerprint(String fingerprint) {
-      return setFingerprint(fingerprint);
     }
 
     /**
@@ -165,27 +135,8 @@ public final class Tags implements Serializable {
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
-  @Deprecated
-  public List<String> values() {
-    return getValues();
-  }
-
-  /**
-   * Returns a list of tags to apply to an instance. Tags are used to identify valid sources or
-   * targets for network firewalls. Each tag within the list must comply with RFC1035.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
-   */
   public List<String> getValues() {
     return values;
-  }
-
-  /**
-   * Returns the fingerprint for the tags. This value is needed to update instance's tags.
-   */
-  @Deprecated
-  public String fingerprint() {
-    return getFingerprint();
   }
 
   /**
@@ -234,30 +185,8 @@ public final class Tags implements Serializable {
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
-  @Deprecated
-  public static Builder builder(Iterable<String> values) {
-    return newBuilder(values);
-  }
-
-  /**
-   * Returns a builder for a {@code Tags} object given the tags to apply to the instance. Each tag
-   * within the list must comply with RFC1035.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
-   */
   public static Builder newBuilder(Iterable<String> values) {
     return new Builder().setValues(values);
-  }
-
-  /**
-   * Returns a builder for a {@code Tags} object given the tags to apply to the instance. Each tag
-   * within the list must comply with RFC1035.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
-   */
-  @Deprecated
-  public static Builder builder(String... values) {
-    return newBuilder(values);
   }
 
   /**

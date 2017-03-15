@@ -72,13 +72,6 @@ public final class Key extends IncompleteKey {
       }
     }
 
-    /**
-     * Sets the name of this key.
-     */
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     /**
      * Sets the name of this key.
@@ -89,13 +82,6 @@ public final class Key extends IncompleteKey {
       return this;
     }
 
-    /**
-     * Sets the ID of this key.
-     */
-    @Deprecated
-    public Builder id(long id) {
-      return setId(id);
-    }
 
     /**
      * Sets the ID of this key.
@@ -128,13 +114,6 @@ public final class Key extends IncompleteKey {
     return getLeaf().hasId();
   }
 
-  /**
-   * Returns the key's id or {@code null} if it has a name instead.
-   */
-  @Deprecated
-  public Long id() {
-    return getId();
-  }
 
   /**
    * Returns the key's id or {@code null} if it has a name instead.
@@ -147,13 +126,6 @@ public final class Key extends IncompleteKey {
     return getLeaf().hasName();
   }
 
-  /**
-   * Returns the key's name or {@code null} if it has an id instead.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Returns the key's name or {@code null} if it has an id instead.
@@ -162,13 +134,6 @@ public final class Key extends IncompleteKey {
     return getLeaf().getName();
   }
 
-  /**
-   * Returns the key's ID (as {@link Long}) or name (as {@link String}). Never {@code null}.
-   */
-  @Deprecated
-  public Object nameOrId() {
-    return getLeaf().getNameOrId();
-  }
 
   /**
    * Returns the key's ID (as {@link Long}) or name (as {@link String}). Never {@code null}.
@@ -212,55 +177,31 @@ public final class Key extends IncompleteKey {
     return (Key) key;
   }
 
-  @Deprecated
-  public static Builder builder(String projectId, String kind, String name) {
-    return newBuilder(projectId, kind, name);
-  }
 
   public static Builder newBuilder(String projectId, String kind, String name) {
     return new Builder(projectId, kind, name);
   }
 
-  @Deprecated
-  public static Builder builder(String projectId, String kind, long id) {
-    return newBuilder(projectId, kind, id);
-  }
 
   public static Builder newBuilder(String projectId, String kind, long id) {
     return new Builder(projectId, kind, id);
   }
 
-  @Deprecated
-  public static Builder builder(Key copyFrom) {
-    return newBuilder(copyFrom);
-  }
 
   public static Builder newBuilder(Key copyFrom) {
     return new Builder(copyFrom);
   }
 
-  @Deprecated
-  public static Builder builder(IncompleteKey copyFrom, String name) {
-    return newBuilder(copyFrom, name);
-  }
 
   public static Builder newBuilder(IncompleteKey copyFrom, String name) {
     return new Builder(copyFrom, name);
   }
 
-  @Deprecated
-  public static Builder builder(IncompleteKey copyFrom, long id) {
-    return newBuilder(copyFrom, id);
-  }
 
   public static Builder newBuilder(IncompleteKey copyFrom, long id) {
     return new Builder(copyFrom, id);
   }
 
-  @Deprecated
-  public static Builder builder(Key parent, String kind, String name) {
-    return newBuilder(parent, kind, name);
-  }
 
   public static Builder newBuilder(Key parent, String kind, String name) {
     Builder builder = newBuilder(parent.getProjectId(), kind, name);
@@ -268,10 +209,6 @@ public final class Key extends IncompleteKey {
     return builder;
   }
 
-  @Deprecated
-  public static Builder builder(Key parent, String kind, long id) {
-    return newBuilder(parent, kind, id);
-  }
 
   public static Builder newBuilder(Key parent, String kind, long id) {
     Builder builder = newBuilder(parent.getProjectId(), kind, id);

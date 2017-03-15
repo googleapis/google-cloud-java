@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
@@ -28,19 +29,17 @@ import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.collect.ImmutableList;
-
-import org.easymock.EasyMock;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import org.easymock.EasyMock;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class RemoteStorageHelperTest {
 
@@ -83,6 +82,8 @@ public class RemoteStorageHelperTest {
   private List<Blob> blobList;
   private Page<Blob> blobPage;
 
+
+
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
@@ -92,33 +93,18 @@ public class RemoteStorageHelperTest {
     blob2 = EasyMock.createMock(Blob.class);
     blobList = ImmutableList.of(blob1, blob2);
     blobPage = new Page<Blob>() {
-      @Override
-      @Deprecated
-      public String nextPageCursor() {
-        return "nextPageCursor";
-      }
 
       @Override
       public String getNextPageCursor() {
         return "nextPageCursor";
       }
 
-      @Override
-      @Deprecated
-      public Page<Blob> nextPage() {
-        return null;
-      }
 
       @Override
       public Page<Blob> getNextPage() {
         return null;
       }
 
-      @Override
-      @Deprecated
-      public Iterable<Blob> values() {
-        return blobList;
-      }
 
       @Override
       public Iterable<Blob> getValues() {
@@ -220,10 +206,11 @@ public class RemoteStorageHelperTest {
   public void testCreateFromStream() {
     RemoteStorageHelper helper = RemoteStorageHelper.create(PROJECT_ID, JSON_KEY_STREAM);
     StorageOptions options = helper.getOptions();
-    assertEquals(options, helper.options());
     assertEquals(PROJECT_ID, options.getProjectId());
-    assertEquals(60000, options.getConnectTimeout());
-    assertEquals(60000, options.getReadTimeout());
+    assertEquals(60000,
+        ((HttpTransportOptions) options.getTransportOptions()).getConnectTimeout());
+    assertEquals(60000,
+        ((HttpTransportOptions) options.getTransportOptions()).getReadTimeout());
     assertEquals(10, options.getRetryParams().getRetryMaxAttempts());
     assertEquals(6, options.getRetryParams().getRetryMinAttempts());
     assertEquals(30000, options.getRetryParams().getMaxRetryDelayMillis());

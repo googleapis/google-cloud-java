@@ -42,7 +42,8 @@ public interface Translate extends Service<TranslateOptions> {
     /**
      * Returns an option for setting the target language. If this option is not provided, the value
      * returned by {@link TranslateOptions#getTargetLanguage()} is used. When provided, the returned
-     * {@link Language#name()} will be in the language specified by the {@code targetLanguage} code.
+     * {@link Language#getName()} will be in the language specified by the {@code targetLanguage}
+     * code.
      *
      * @param targetLanguage the target language code
      */

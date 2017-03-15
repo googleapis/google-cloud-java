@@ -32,9 +32,6 @@ public class MetricInfoTest {
   private static final MetricInfo METRIC_INFO = MetricInfo.newBuilder(NAME, FILTER)
       .setDescription(DESCRIPTION)
       .build();
-  private static final MetricInfo DEPRECATED_METRIC_INFO = MetricInfo.builder(NAME, FILTER)
-      .description(DESCRIPTION)
-      .build();
 
   @Test
   public void testOf() {
@@ -51,20 +48,6 @@ public class MetricInfoTest {
     assertEquals(DESCRIPTION, METRIC_INFO.getDescription());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(NAME, DEPRECATED_METRIC_INFO.getName());
-    assertEquals(FILTER, DEPRECATED_METRIC_INFO.getFilter());
-    assertEquals(DESCRIPTION, DEPRECATED_METRIC_INFO.getDescription());
-    MetricInfo metricInfo = DEPRECATED_METRIC_INFO.toBuilder()
-        .name(NEW_NAME)
-        .description(NEW_DESCRIPTION)
-        .filter(NEW_FILTER)
-        .build();
-    assertEquals(NEW_NAME, metricInfo.name());
-    assertEquals(NEW_FILTER, metricInfo.filter());
-    assertEquals(NEW_DESCRIPTION, metricInfo.description());
-  }
 
   @Test
   public void testToBuilder() {

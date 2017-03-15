@@ -44,18 +44,6 @@ public class StandardNetworkConfigurationTest {
   }
 
   @Test
-  public void testConstructorDeprecated() {
-    assertEquals(Type.STANDARD, NETWORK_CONFIGURATION.type());
-    assertEquals(IP_RANGE, NETWORK_CONFIGURATION.ipRange());
-    assertEquals(GATEWAY_ADDRESS, NETWORK_CONFIGURATION.gatewayAddress());
-    StandardNetworkConfiguration networkConfiguration =
-        new StandardNetworkConfiguration(IP_RANGE, null);
-    assertEquals(Type.STANDARD, networkConfiguration.type());
-    assertEquals(IP_RANGE, networkConfiguration.ipRange());
-    assertNull(networkConfiguration.gatewayAddress());
-  }
-
-  @Test
   public void testToAndFromPb() {
     assertTrue(NetworkConfiguration.fromPb(NETWORK_CONFIGURATION.toPb())
         instanceof StandardNetworkConfiguration);

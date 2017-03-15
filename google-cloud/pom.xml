@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.9.4-alpha-SNAPSHOT</version>
+    <version>0.9.5-alpha-SNAPSHOT</version>
   </parent>
   <dependencies>
     <dependency>
@@ -92,7 +92,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-vision</artifactId>
-      <version>${project.version}</version>
+      <version>${beta.version}</version>
     </dependency>
   </dependencies>
 </project>

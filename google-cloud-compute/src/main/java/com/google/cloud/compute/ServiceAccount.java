@@ -64,24 +64,8 @@ public final class ServiceAccount implements Serializable {
   /**
    * Returns the email address of the service account.
    */
-  @Deprecated
-  public String email() {
-    return email;
-  }
-
-  /**
-   * Returns the email address of the service account.
-   */
   public String getEmail() {
     return email;
-  }
-
-  /**
-   * Returns the list of scopes to be made available for this service account.
-   */
-  @Deprecated
-  public List<String> scopes() {
-    return scopes;
   }
 
   /**

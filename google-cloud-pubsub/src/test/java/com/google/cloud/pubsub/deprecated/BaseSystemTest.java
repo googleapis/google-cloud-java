@@ -22,6 +22,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.core.ApiFuture;
 import com.google.cloud.AsyncPage;
 import com.google.cloud.Page;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageConsumer;
@@ -43,7 +44,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -93,7 +93,7 @@ public abstract class BaseSystemTest {
   @Test
   public void testCreateGetAndDeleteTopicAsync() throws ExecutionException, InterruptedException {
     String name = formatForTest("test-create-get-delete-async-topic");
-    Future<Topic> topicFuture = pubsub().createAsync(TopicInfo.of(name));
+    ApiFuture<Topic> topicFuture = pubsub().createAsync(TopicInfo.of(name));
     Topic createdTopic = topicFuture.get();
     assertEquals(name, createdTopic.getName());
     topicFuture = pubsub().getTopicAsync(name);
@@ -127,7 +127,7 @@ public abstract class BaseSystemTest {
     Topic topic2 = pubsub().create(TopicInfo.of(formatForTest("test-list-async-topic2")));
     Topic topic3 = pubsub().create(TopicInfo.of(formatForTest("test-list-async-topic3")));
     Set<String> topicNames = Sets.newHashSet();
-    Future<AsyncPage<Topic>> pageFuture = pubsub().listTopicsAsync(PubSub.ListOption.pageSize(1));
+    ApiFuture<AsyncPage<Topic>> pageFuture = pubsub().listTopicsAsync(PubSub.ListOption.pageSize(1));
     Iterator<Topic> iterator = pageFuture.get().iterateAll();
     while (iterator.hasNext()) {
       topicNames.add(iterator.next().getName());
@@ -162,7 +162,7 @@ public abstract class BaseSystemTest {
     String topic = formatForTest("test-publish-one-message-async-topic");
     pubsub().create(TopicInfo.of(topic));
     Message message = Message.of("payload");
-    Future<String> publishFuture = pubsub().publishAsync(topic, message);
+    ApiFuture<String> publishFuture = pubsub().publishAsync(topic, message);
     assertNotNull(publishFuture.get());
     assertTrue(pubsub().deleteTopic(topic));
   }
@@ -184,7 +184,7 @@ public abstract class BaseSystemTest {
     pubsub().create(TopicInfo.of(topic));
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
-    Future<List<String>> publishFuture = pubsub().publishAsync(topic, message1, message2);
+    ApiFuture<List<String>> publishFuture = pubsub().publishAsync(topic, message1, message2);
     assertEquals(2, publishFuture.get().size());
     assertTrue(pubsub().deleteTopic(topic));
   }
@@ -206,7 +206,7 @@ public abstract class BaseSystemTest {
     pubsub().create(TopicInfo.of(topic));
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
-    Future<List<String>> publishFuture =
+    ApiFuture<List<String>> publishFuture =
         pubsub().publishAsync(topic, ImmutableList.of(message1, message2));
     assertEquals(2, publishFuture.get().size());
     assertTrue(pubsub().deleteTopic(topic));
@@ -248,7 +248,7 @@ public abstract class BaseSystemTest {
     String name = formatForTest("test-create-get-delete-async-subscription");
     String endpoint = "https://" + pubsub().getOptions().getProjectId() + ".appspot.com/push";
     PushConfig pushConfig = PushConfig.of(endpoint);
-    Future<Subscription> subscriptionFuture = pubsub().createAsync(
+    ApiFuture<Subscription> subscriptionFuture = pubsub().createAsync(
         SubscriptionInfo.newBuilder(topic, name).setPushConfig(pushConfig).build());
     Subscription subscription = subscriptionFuture.get();
     assertEquals(TopicId.of(pubsub().getOptions().getProjectId(), topic), subscription.getTopic());
@@ -323,7 +323,7 @@ public abstract class BaseSystemTest {
     String topic = formatForTest("test-replace-push-config-async-topic");
     pubsub().create(TopicInfo.of(topic));
     String name = formatForTest("test-replace-push-config-async-subscription");
-    Future<Subscription> subscriptionFuture =
+    ApiFuture<Subscription> subscriptionFuture =
         pubsub().createAsync(SubscriptionInfo.of(topic, name));
     Subscription subscription = subscriptionFuture.get();
     assertEquals(TopicId.of(pubsub().getOptions().getProjectId(), topic), subscription.getTopic());
@@ -409,7 +409,7 @@ public abstract class BaseSystemTest {
         pubsub().create(SubscriptionInfo.of(topicName2, subscriptionName3));
     // We use 1 as page size to force pagination
     Set<String> subscriptionNames = Sets.newHashSet();
-    Future<AsyncPage<Subscription>> pageFuture =
+    ApiFuture<AsyncPage<Subscription>> pageFuture =
         pubsub().listSubscriptionsAsync(PubSub.ListOption.pageSize(1));
     Iterator<Subscription> iterator = pageFuture.get().iterateAll();
     while (iterator.hasNext()) {
@@ -555,7 +555,7 @@ public abstract class BaseSystemTest {
     pubsub().create(TopicInfo.of(topic));
     String subscription = formatForTest("test-pull-messages-async-subscription");
     pubsub().create(SubscriptionInfo.of(topic, subscription));
-    Future<Iterator<ReceivedMessage>> future = pubsub().pullAsync(subscription, 2);
+    ApiFuture<Iterator<ReceivedMessage>> future = pubsub().pullAsync(subscription, 2);
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
     List<String> messageIds = pubsub().publish(topic, ImmutableList.of(message1, message2));

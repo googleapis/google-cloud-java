@@ -231,18 +231,6 @@ public class BaseEntityTest {
     assertEquals(names, entity.getNames());
   }
 
-  @Test
-  public void testNamesDeprecated() throws Exception {
-    Set<String> names =
-        ImmutableSet.<String>builder()
-            .add("string", "stringValue", "boolean", "double", "long", "list1", "list2", "list3")
-            .add("entity", "partialEntity", "null", "dateTime", "blob", "key", "blobList")
-            .add("booleanList", "dateTimeList", "doubleList", "keyList", "entityList", "stringList")
-            .add("longList", "latLng", "latLngList")
-            .build();
-    BaseEntity<Key> entity = builder.build();
-    assertEquals(names, entity.names());
-  }
 
   @Test
   public void testKey() throws Exception {
@@ -250,11 +238,5 @@ public class BaseEntityTest {
     BaseEntity<Key> entity = builder.build();
     assertEquals(KEY, entity.getKey());
   }
-
-  @Test
-  public void testKeyDeprecated() throws Exception {
-    builder.key(KEY);
-    BaseEntity<Key> entity = builder.build();
-    assertEquals(KEY, entity.key());
-  }
 }
+

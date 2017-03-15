@@ -19,6 +19,7 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Google Cloud Datastore] (#google-cloud-datastore-beta) (Beta)
 -  [Google Cloud Storage] (#google-cloud-storage-beta) (Beta)
 -  [Cloud Spanner] (#cloud-spanner-beta) (Beta)
+-  Cloud Vision (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
@@ -44,17 +45,19 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.9.3-alpha</version>
+  <version>0.9.4-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.9.3-alpha'
+compile 'com.google.cloud:google-cloud:0.9.4-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.9.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.9.4-alpha"
 ```
+
+For running on Google App Engine, see [more instructions here](./APPENGINE.md).
 
 Example Applications
 --------------------
@@ -688,6 +691,11 @@ Java Versions
 -------------
 
 Java 7 or above is required for using this client.
+
+Android
+-------
+
+Android is not currently supported.
 
 Testing
 -------

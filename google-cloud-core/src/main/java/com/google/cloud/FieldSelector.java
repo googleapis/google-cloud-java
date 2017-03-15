@@ -31,12 +31,6 @@ import java.util.Set;
  */
 public interface FieldSelector {
 
-  /**
-   * Returns a string selector. This selector is passed to a Google Cloud service (possibly with
-   * other field selectors) to specify which resource fields should be returned by an API call.
-   */
-  @Deprecated
-  String selector();
 
   /**
    * Returns a string selector. This selector is passed to a Google Cloud service (possibly with

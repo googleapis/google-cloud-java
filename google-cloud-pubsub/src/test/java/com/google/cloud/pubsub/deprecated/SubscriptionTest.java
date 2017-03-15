@@ -27,6 +27,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
@@ -35,7 +36,6 @@ import com.google.cloud.pubsub.deprecated.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.deprecated.PubSub.PullOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-import com.google.common.util.concurrent.Futures;
 
 import org.easymock.EasyMock;
 import org.junit.After;
@@ -176,7 +176,7 @@ public class SubscriptionTest {
         new Subscription(serviceMockReturnsOptions, new SubscriptionInfo.BuilderImpl(updatedInfo));
     expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getSubscriptionAsync(NAME))
-        .andReturn(Futures.immediateFuture(expectedSubscription));
+        .andReturn(ApiFutures.immediateFuture(expectedSubscription));
     replay(pubsub);
     initializeSubscription();
     Subscription updatedSubscription = subscription.reloadAsync().get();
@@ -188,7 +188,7 @@ public class SubscriptionTest {
     initializeExpectedSubscription(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getSubscriptionAsync(NAME))
-        .andReturn(Futures.<Subscription>immediateFuture(null));
+        .andReturn(ApiFutures.<Subscription>immediateFuture(null));
     replay(pubsub);
     initializeSubscription();
     assertNull(subscription.reloadAsync().get());
@@ -219,7 +219,7 @@ public class SubscriptionTest {
     initializeExpectedSubscription(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.deleteSubscriptionAsync(NAME))
-        .andReturn(Futures.immediateFuture(true));
+        .andReturn(ApiFutures.immediateFuture(true));
     replay(pubsub);
     initializeSubscription();
     assertTrue(subscription.deleteAsync().get());
@@ -230,7 +230,7 @@ public class SubscriptionTest {
     initializeExpectedSubscription(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.deleteSubscriptionAsync(NAME))
-        .andReturn(Futures.immediateFuture(false));
+        .andReturn(ApiFutures.immediateFuture(false));
     replay(pubsub);
     initializeSubscription();
     assertFalse(subscription.deleteAsync().get());
@@ -265,7 +265,7 @@ public class SubscriptionTest {
     expect(pubsub.getOptions()).andReturn(mockOptions);
     PushConfig pushConfig = PushConfig.of("https://example.com/newPush");
     expect(pubsub.replacePushConfigAsync(NAME, pushConfig))
-        .andReturn(Futures.<Void>immediateFuture(null));
+        .andReturn(ApiFutures.<Void>immediateFuture(null));
     EasyMock.expectLastCall();
     replay(pubsub);
     initializeSubscription();
@@ -277,7 +277,7 @@ public class SubscriptionTest {
     initializeExpectedSubscription(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.replacePushConfigAsync(NAME, null))
-        .andReturn(Futures.<Void>immediateFuture(null));
+        .andReturn(ApiFutures.<Void>immediateFuture(null));
     replay(pubsub);
     initializeSubscription();
     assertNull(subscription.replacePushConfigAsync(null).get());
@@ -309,7 +309,7 @@ public class SubscriptionTest {
     reset(pubsub);
     expect(pubsub.getOptions()).andReturn(mockOptions);
     List<ReceivedMessage> messages = ImmutableList.of(message1, message2);
-    expect(pubsub.pullAsync(NAME, 42)).andReturn(Futures.immediateFuture(messages.iterator()));
+    expect(pubsub.pullAsync(NAME, 42)).andReturn(ApiFutures.immediateFuture(messages.iterator()));
     replay(pubsub);
     initializeSubscription();
     assertEquals(messages, Lists.newArrayList(subscription.pullAsync(42).get()));
@@ -370,7 +370,7 @@ public class SubscriptionTest {
   public void testGetPolicyAsync() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
-    expect(pubsub.getSubscriptionPolicyAsync(NAME)).andReturn(Futures.immediateFuture(POLICY));
+    expect(pubsub.getSubscriptionPolicyAsync(NAME)).andReturn(ApiFutures.immediateFuture(POLICY));
     replay(pubsub);
     initializeSubscription();
     Policy policy = subscription.getPolicyAsync().get();
@@ -393,7 +393,7 @@ public class SubscriptionTest {
     initializeExpectedSubscription(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.replaceSubscriptionPolicyAsync(NAME, POLICY))
-        .andReturn(Futures.immediateFuture(POLICY));
+        .andReturn(ApiFutures.immediateFuture(POLICY));
     replay(pubsub);
     initializeSubscription();
     Policy policy = subscription.replacePolicyAsync(POLICY).get();
@@ -419,7 +419,7 @@ public class SubscriptionTest {
     initializeExpectedSubscription(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.testSubscriptionPermissionsAsync(NAME, permissions))
-        .andReturn(Futures.immediateFuture(permissionsResult));
+        .andReturn(ApiFutures.immediateFuture(permissionsResult));
     replay(pubsub);
     initializeSubscription();
     assertEquals(permissionsResult, subscription.testPermissionsAsync(permissions).get());

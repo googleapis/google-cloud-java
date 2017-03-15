@@ -123,11 +123,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       }
     }
 
-    @Override
-    @Deprecated
-    public Builder destinationTable(TableId destinationTable) {
-      return setDestinationTable(destinationTable);
-    }
 
     @Override
     public Builder setDestinationTable(TableId destinationTable) {
@@ -135,11 +130,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder createDisposition(JobInfo.CreateDisposition createDisposition) {
-      return setCreateDisposition(createDisposition);
-    }
 
     @Override
     public Builder setCreateDisposition(JobInfo.CreateDisposition createDisposition) {
@@ -147,11 +137,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder writeDisposition(JobInfo.WriteDisposition writeDisposition) {
-      return setWriteDisposition(writeDisposition);
-    }
 
     @Override
     public Builder setWriteDisposition(JobInfo.WriteDisposition writeDisposition) {
@@ -159,11 +144,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder formatOptions(FormatOptions formatOptions) {
-      return setFormatOptions(formatOptions);
-    }
 
     @Override
     public Builder setFormatOptions(FormatOptions formatOptions) {
@@ -171,11 +151,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder maxBadRecords(Integer maxBadRecords) {
-      return setMaxBadRecords(maxBadRecords);
-    }
 
     @Override
     public Builder setMaxBadRecords(Integer maxBadRecords) {
@@ -183,11 +158,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder schema(Schema schema) {
-      return setSchema(schema);
-    }
 
     @Override
     public Builder setSchema(Schema schema) {
@@ -195,11 +165,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder ignoreUnknownValues(Boolean ignoreUnknownValues) {
-      return setIgnoreUnknownValues(ignoreUnknownValues);
-    }
 
     @Override
     public Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues) {
@@ -207,11 +172,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder projectionFields(List<String> projectionFields) {
-      return setProjectionFields(projectionFields);
-    }
 
     @Override
     public Builder setProjectionFields(List<String> projectionFields) {
@@ -220,15 +180,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    /**
-     * Sets the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
-     * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
-     * 'bucket' name.
-     */
-    @Deprecated
-    public Builder sourceUris(List<String> sourceUris) {
-      return setSourceUris(sourceUris);
-    }
 
     /**
      * Sets the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
@@ -259,77 +210,42 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.projectionFields = builder.projectionFields;
   }
 
-  @Override
-  @Deprecated
-  public TableId destinationTable() {
-    return getDestinationTable();
-  }
 
   @Override
   public TableId getDestinationTable() {
     return destinationTable;
   }
 
-  @Override
-  @Deprecated
-  public JobInfo.CreateDisposition createDisposition() {
-    return this.getCreateDisposition();
-  }
 
   @Override
   public JobInfo.CreateDisposition getCreateDisposition() {
     return this.createDisposition;
   }
 
-  @Override
-  @Deprecated
-  public JobInfo.WriteDisposition writeDisposition() {
-    return getWriteDisposition();
-  }
 
   @Override
   public JobInfo.WriteDisposition getWriteDisposition() {
     return writeDisposition;
   }
 
-  @Override
-  @Deprecated
-  public CsvOptions csvOptions() {
-    return getCsvOptions();
-  }
 
   @Override
   public CsvOptions getCsvOptions() {
     return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
   }
 
-  @Override
-  @Deprecated
-  public String format() {
-    return getFormat();
-  }
 
   @Override
   public String getFormat() {
     return formatOptions != null ? formatOptions.getType() : null;
   }
 
-  @Override
-  @Deprecated
-  public Integer maxBadRecords() {
-    return getMaxBadRecords();
-  }
 
   @Override
   public Integer getMaxBadRecords() {
     return maxBadRecords;
   }
 
-  @Override
-  @Deprecated
-  public Schema schema() {
-    return getSchema();
-  }
 
   @Override
   public Schema getSchema() {
@@ -341,26 +257,12 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return ignoreUnknownValues;
   }
 
-  @Override
-  @Deprecated
-  public List<String> projectionFields() {
-    return getProjectionFields();
-  }
 
   @Override
   public List<String> getProjectionFields() {
     return projectionFields;
   }
 
-  /**
-   * Returns the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
-   * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
-   * 'bucket' name.
-   */
-  @Deprecated
-  public List<String> sourceUris() {
-    return getSourceUris();
-  }
 
   /**
    * Returns the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
@@ -445,14 +347,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .setLoad(loadConfigurationPb);
   }
 
-  /**
-   * Creates a builder for a BigQuery Load Job configuration given the destination table and source
-   * URIs.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable, List<String> sourceUris) {
-    return newBuilder(destinationTable, sourceUris);
-  }
 
   /**
    * Creates a builder for a BigQuery Load Job configuration given the destination table and source
@@ -478,15 +372,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return newBuilder(destinationTable, ImmutableList.of(sourceUri));
   }
 
-  /**
-   * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
-   * source URIs.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable, List<String> sourceUris,
-      FormatOptions format) {
-    return newBuilder(destinationTable, sourceUris, format);
-  }
 
   /**
    * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
@@ -497,14 +382,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return newBuilder(destinationTable, sourceUris).setFormatOptions(format);
   }
 
-  /**
-   * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
-   * source URI.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable, String sourceUri, FormatOptions format) {
-    return newBuilder(destinationTable, sourceUri, format);
-  }
 
   /**
    * Creates a builder for a BigQuery Load Job configuration given the destination table, format and

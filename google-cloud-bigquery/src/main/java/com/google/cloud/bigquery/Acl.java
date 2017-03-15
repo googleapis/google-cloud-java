@@ -80,10 +80,6 @@ public final class Acl implements Serializable {
       this.type = type;
     }
 
-    @Deprecated
-    public Type type() {
-      return getType();
-    }
 
     public Type getType() {
       return type;
@@ -131,13 +127,6 @@ public final class Acl implements Serializable {
       this.domain = domain;
     }
 
-    /**
-     * Returns the domain name.
-     */
-    @Deprecated
-    public String domain() {
-      return getDomain();
-    }
 
     /**
      * Returns the domain name.
@@ -201,15 +190,6 @@ public final class Acl implements Serializable {
       this.identifier = identifier;
     }
 
-    /**
-     * Returns group's identifier, can be either a
-     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
-     *     special group identifier</a> or a group email.
-     */
-    @Deprecated
-    public String identifier() {
-      return getIdentifier();
-    }
 
     /**
      * Returns group's identifier, can be either a
@@ -306,13 +286,6 @@ public final class Acl implements Serializable {
       this.email = email;
     }
 
-    /**
-     * Returns user's email.
-     */
-    @Deprecated
-    public String email() {
-      return getEmail();
-    }
 
     /**
      * Returns user's email.
@@ -369,13 +342,6 @@ public final class Acl implements Serializable {
       this.id = id;
     }
 
-    /**
-     * Returns table's identity.
-     */
-    @Deprecated
-    public TableId id() {
-      return getId();
-    }
 
     /**
      * Returns table's identity.
@@ -417,13 +383,6 @@ public final class Acl implements Serializable {
     this.role = role;
   }
 
-  /**
-   * Returns the entity for this ACL.
-   */
-  @Deprecated
-  public Entity entity() {
-    return getEntity();
-  }
 
   /**
    * Returns the entity for this ACL.
@@ -432,13 +391,6 @@ public final class Acl implements Serializable {
     return entity;
   }
 
-  /**
-   * Returns the role specified by this ACL.
-   */
-  @Deprecated
-  public Role role() {
-    return getRole();
-  }
 
   /**
    * Returns the role specified by this ACL.

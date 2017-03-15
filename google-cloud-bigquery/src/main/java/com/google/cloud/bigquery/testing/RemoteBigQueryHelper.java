@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.testing;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.RetryParams;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
@@ -36,7 +37,8 @@ import java.util.logging.Logger;
  * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
  * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
  * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
- * {@link BigQueryOptions#getConnectTimeout()} and {@link BigQueryOptions#getReadTimeout()} are both
+ * {@link HttpTransportOptions#getConnectTimeout()} and
+ * {@link HttpTransportOptions#getReadTimeout()} are both
  * set to {@code 60000}.
  */
 public class RemoteBigQueryHelper {
@@ -49,13 +51,6 @@ public class RemoteBigQueryHelper {
     this.options = options;
   }
 
-  /**
-   * Returns a {@link BigQueryOptions} object to be used for testing.
-   */
-  @Deprecated
-  public BigQueryOptions options() {
-    return options;
-  }
 
   /**
    * Returns a {@link BigQueryOptions} object to be used for testing.
@@ -95,12 +90,14 @@ public class RemoteBigQueryHelper {
   public static RemoteBigQueryHelper create(String projectId, InputStream keyStream)
       throws BigQueryHelperException {
     try {
+      HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
+      transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+          .build();
       BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
           .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
           .setRetryParams(retryParams())
-          .setConnectTimeout(60000)
-          .setReadTimeout(60000)
+          .setTransportOptions(transportOptions)
           .build();
       return new RemoteBigQueryHelper(bigqueryOptions);
     } catch (IOException ex) {
@@ -116,10 +113,12 @@ public class RemoteBigQueryHelper {
    * credentials.
    */
   public static RemoteBigQueryHelper create() {
+    HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+        .build();
     BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
         .setRetryParams(retryParams())
-        .setConnectTimeout(60000)
-        .setReadTimeout(60000)
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteBigQueryHelper(bigqueryOptions);
   }

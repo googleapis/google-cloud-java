@@ -16,9 +16,9 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.core.FlowControlSettings;
+import com.google.api.gax.core.FlowController;
 import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.FlowControlSettings;
-import com.google.api.gax.grpc.FlowController;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
@@ -189,7 +189,7 @@ public class Subscriber {
    *   }
    * }, executor);
    * subscriber.startAsync();
-   * 
+   *
    * // Wait for a stop signal.
    * done.get();
    * subscriber.stopAsync().awaitTerminated();
@@ -283,7 +283,7 @@ public class Subscriber {
               Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
       clock = builder.clock.isPresent() ? builder.clock.get() : Clock.defaultClock();
 
-      flowController = new FlowController(builder.flowControlSettings, false);
+      flowController = new FlowController(builder.flowControlSettings);
 
       executor = builder.executorProvider.getExecutor();
       if (builder.executorProvider.shouldAutoClose()) {
@@ -321,7 +321,7 @@ public class Subscriber {
 
     @Override
     protected void doStart() {
-      logger.log(Level.INFO, "Starting subscriber group.");
+      logger.log(Level.FINE, "Starting subscriber group.");
       // Streaming pull is not enabled on the service yet.
       // startStreamingConnections();
       startPollingConnections();
@@ -395,8 +395,8 @@ public class Subscriber {
                     if (streamAckDeadlineSeconds != possibleStreamAckDeadlineSeconds) {
                       streamAckDeadlineSeconds = possibleStreamAckDeadlineSeconds;
                       logger.log(
-                          Level.INFO,
-                          "Updating stream deadline to {} seconds.",
+                          Level.FINER,
+                          "Updating stream deadline to {0} seconds.",
                           streamAckDeadlineSeconds);
                       for (StreamingSubscriberConnection subscriberConnection :
                           streamingSubscriberConnections) {
@@ -466,9 +466,12 @@ public class Subscriber {
             new Runnable() {
               @Override
               public void run() {
-                subscriber.startAsync().awaitRunning();
-                subscribersStarting.countDown();
                 subscriber.addListener(connectionsListener, executor);
+                try {
+                  subscriber.startAsync().awaitRunning();
+                } finally {
+                  subscribersStarting.countDown();
+                }
               }
             });
       }

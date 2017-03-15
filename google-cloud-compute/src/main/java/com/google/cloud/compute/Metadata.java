@@ -83,18 +83,6 @@ public final class Metadata implements Serializable {
      * a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with
      * any other metadata keys for the project. Values must be less than or equal to 32768 bytes.
      */
-    @Deprecated
-    public Builder values(Map<String, String> values) {
-      return setValues(values);
-    }
-
-    /**
-     * Sets the metadata for the instance as key/value pairs. The total size of all keys and
-     * values must be less than 512 KB. Keys must conform to the following regexp:
-     * {@code [a-zA-Z0-9-_]+}, and be less than 128 bytes in length. This is reflected as part of
-     * a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with
-     * any other metadata keys for the project. Values must be less than or equal to 32768 bytes.
-     */
     public Builder setValues(Map<String, String> values) {
       this.values = Maps.newHashMap(checkNotNull(values));
       return this;
@@ -110,15 +98,6 @@ public final class Metadata implements Serializable {
     public Builder add(String key, String value) {
       this.values.put(key, value);
       return this;
-    }
-
-    /**
-     * Sets the fingerprint for the metadata. This value can be used to update instance's
-     * metadata.
-     */
-    @Deprecated
-    public Builder fingerprint(String fingerprint) {
-      return setFingerprint(fingerprint);
     }
 
     /**
@@ -146,25 +125,8 @@ public final class Metadata implements Serializable {
   /**
    * Returns instance's metadata as key/value pairs.
    */
-  @Deprecated
-  public Map<String, String> values() {
-    return values;
-  }
-
-  /**
-   * Returns instance's metadata as key/value pairs.
-   */
   public Map<String, String> getValues() {
     return values;
-  }
-
-  /**
-   * Returns the fingerprint for the metadata. This value can be used to update instance's
-   * metadata.
-   */
-  @Deprecated
-  public String fingerprint() {
-    return fingerprint;
   }
 
   /**
@@ -215,14 +177,6 @@ public final class Metadata implements Serializable {
     metadataPb.setItems(itemsPb);
     metadataPb.setFingerprint(fingerprint);
     return metadataPb;
-  }
-
-  /**
-   * Returns a builder for a {@code Metadata} object.
-   */
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
   }
 
   /**

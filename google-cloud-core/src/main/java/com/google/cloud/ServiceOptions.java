@@ -90,6 +90,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private final String serviceFactoryClassName;
   private final Clock clock;
   private final Credentials credentials;
+  private final TransportOptions transportOptions;
 
   private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
@@ -104,7 +105,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
    * @param <B> the {@code ServiceOptions} builder
    */
-  protected abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
+  public abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
       OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
       B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {
 
@@ -115,6 +116,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
     private Clock clock;
+    private TransportOptions transportOptions;
 
     protected Builder() {}
 
@@ -126,6 +128,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       serviceFactory = options.serviceFactory;
       serviceRpcFactory = options.serviceRpcFactory;
       clock = options.clock;
+      transportOptions = options.transportOptions;
     }
 
     protected abstract ServiceOptions<ServiceT, ServiceRpcT, OptionsT> build();
@@ -135,13 +138,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return (B) this;
     }
 
-    /**
-     * Sets the service factory.
-     */
-    @Deprecated
-    public B serviceFactory(ServiceFactory<ServiceT, OptionsT> serviceFactory) {
-      return setServiceFactory(serviceFactory);
-    }
 
     /**
      * Sets the service factory.
@@ -151,17 +147,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
-     * replaced by Java8's {@code java.time.Clock}.
-     *
-     * @param clock the clock to set
-     * @return the builder
-     */
-    @Deprecated
-    public B clock(Clock clock) {
-      return setClock(clock);
-    }
 
     /**
      * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
@@ -175,16 +160,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets the project ID. If no project ID is set, {@link #getDefaultProjectId()} will be used to
-     * attempt getting the project ID from the environment.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B projectId(String projectId) {
-      return setProjectId(projectId);
-    }
 
     /**
      * Sets the project ID. If no project ID is set, {@link #getDefaultProjectId()} will be used to
@@ -197,15 +172,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets service host.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B host(String host) {
-      return setHost(host);
-    }
 
     /**
      * Sets service host.
@@ -233,17 +199,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets configuration parameters for request retries. If no configuration is set
-     * {@link RetryParams#getDefaultInstance()} is used. To disable retries, supply
-     * {@link RetryParams#noRetries()} here.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B retryParams(RetryParams retryParams) {
-      return setRetryParams(retryParams);
-    }
 
     /**
      * Sets configuration parameters for request retries. If no configuration is set
@@ -257,15 +212,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets the factory for rpc services.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B serviceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
-      return setServiceRpcFactory(serviceRpcFactory);
-    }
 
     /**
      * Sets the factory for rpc services.
@@ -276,11 +222,22 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       this.serviceRpcFactory = serviceRpcFactory;
       return self();
     }
+
+    /**
+     * Sets the transport options.
+     *
+     * @return the builder
+     */
+    public B setTransportOptions(TransportOptions transportOptions) {
+      this.transportOptions = transportOptions;
+      return self();
+    }
   }
 
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
-      Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
+      Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder,
+      ServiceDefaults<ServiceT, ServiceRpcT, OptionsT> serviceDefaults) {
     projectId = builder.projectId != null ? builder.projectId : getDefaultProject();
     if (projectIdRequired()) {
       checkArgument(
@@ -292,12 +249,14 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     credentials = builder.credentials != null ? builder.credentials : defaultCredentials();
     retryParams = firstNonNull(builder.retryParams, defaultRetryParams());
     serviceFactory = firstNonNull(builder.serviceFactory,
-        getFromServiceLoader(serviceFactoryClass, getDefaultServiceFactory()));
+        getFromServiceLoader(serviceFactoryClass, serviceDefaults.getDefaultServiceFactory()));
     serviceFactoryClassName = serviceFactory.getClass().getName();
     serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
-        getFromServiceLoader(rpcFactoryClass, getDefaultRpcFactory()));
+        getFromServiceLoader(rpcFactoryClass, serviceDefaults.getDefaultRpcFactory()));
     serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
     clock = firstNonNull(builder.clock, Clock.defaultClock());
+    transportOptions = firstNonNull(builder.transportOptions,
+        serviceDefaults.getDefaultTransportOptions());
   }
 
   /**
@@ -318,19 +277,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  @Deprecated
-  protected String defaultHost() {
-    return getDefaultHost();
-  }
 
   protected String getDefaultHost() {
     return DEFAULT_HOST;
   }
 
-  @Deprecated
-  protected String defaultProject() {
-    return getDefaultProject();
-  }
 
   protected String getDefaultProject() {
     return getDefaultProjectId();
@@ -459,8 +410,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       String serviceAccountName = (String) method.invoke(appIdentityService);
       int indexOfAtSign = serviceAccountName.indexOf('@');
       return serviceAccountName.substring(0, indexOfAtSign);
+    } catch (ClassNotFoundException exception) {
+      if (System.getProperty("com.google.appengine.runtime.version") != null) {
+        // Could not resolve appengine classes under GAE environment.
+        throw new RuntimeException("Google App Engine runtime detected "
+            + "(the environment variable \"com.google.appengine.runtime.version\" is set), "
+            + "but unable to resolve appengine-sdk classes. "
+            + "For more details see "
+            + "https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/APPENGINE.md");
+      }
+      return null;
     } catch (Exception ignore) {
-      // return null if can't determine
       return null;
     }
   }
@@ -479,10 +439,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return project;
   }
 
-  @Deprecated
-  public ServiceT service() {
-    return getService();
-  }
 
   @SuppressWarnings("unchecked")
   public ServiceT getService() {
@@ -492,10 +448,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return service;
   }
 
-  @Deprecated
-  public ServiceRpcT rpc() {
-    return getRpc();
-  }
 
   @SuppressWarnings("unchecked")
   public ServiceRpcT getRpc() {
@@ -505,14 +457,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return rpc;
   }
 
-  /**
-   * Returns the project ID. Return value can be null (for services that don't require a project
-   * ID).
-   */
-  @Deprecated
-  public String projectId() {
-    return getProjectId();
-  }
 
   /**
    * Returns the project ID. Return value can be null (for services that don't require a project
@@ -522,13 +466,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return projectId;
   }
 
-  /**
-   * Returns the service host.
-   */
-  @Deprecated
-  public String host() {
-    return getHost();
-  }
 
   /**
    * Returns the service host.
@@ -556,14 +493,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return credentialsToReturn;
   }
 
-  /**
-   * Returns configuration parameters for request retries. By default requests are retried:
-   * {@link RetryParams#getDefaultInstance()} is used.
-   */
-  @Deprecated
-  public RetryParams retryParams() {
-    return getRetryParams();
-  }
 
   /**
    * Returns configuration parameters for request retries. By default requests are retried:
@@ -573,14 +502,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return retryParams;
   }
 
-  /**
-   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
-   * current time.
-   */
-  @Deprecated
-  public Clock clock() {
-    return getClock();
-  }
 
   /**
    * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
@@ -591,11 +512,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
+   * Returns the transport-specific options for this service.
    */
-  @Deprecated
-  public String applicationName() {
-    return getApplicationName();
+  public TransportOptions getTransportOptions() {
+    return transportOptions;
   }
 
   /**
@@ -605,13 +525,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return APPLICATION_NAME;
   }
 
-  /**
-   * Returns the library's name, {@code gcloud-java}, as a string.
-   */
-  @Deprecated
-  public String libraryName() {
-    return getLibraryName();
-  }
 
   /**
    * Returns the library's name, {@code gcloud-java}, as a string.
@@ -625,13 +538,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    */
   public String getGoogApiClientLibName() {
     return X_GOOGLE_CLIENT_HEADER_NAME;
-  }
-
-  /**
-   * Returns the library's version as a string.
-   */
-  public String libraryVersion() {
-    return getLibraryVersion();
   }
 
   /**
@@ -669,25 +575,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     } catch (InstantiationException | IllegalAccessException e) {
       throw new IOException(e);
     }
-  }
-
-  @Deprecated
-  protected ServiceFactory<ServiceT, OptionsT> defaultServiceFactory() {
-    return getDefaultServiceFactory();
-  }
-
-  protected abstract ServiceFactory<ServiceT, OptionsT> getDefaultServiceFactory();
-
-  @Deprecated
-  protected ServiceRpcFactory<ServiceRpcT, OptionsT> defaultRpcFactory() {
-    return getDefaultRpcFactory();
-  }
-
-  protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> getDefaultRpcFactory();
-
-  @Deprecated
-  protected Set<String> scopes() {
-    return getScopes();
   }
 
   protected abstract Set<String> getScopes();

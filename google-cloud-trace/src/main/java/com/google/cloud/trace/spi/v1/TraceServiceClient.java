@@ -1,5 +1,5 @@
 /*
- * Copyright 2016, Google Inc. All rights reserved.
+ * Copyright 2017, Google Inc. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -237,7 +237,7 @@ public class TraceServiceClient implements AutoCloseable {
    *     .setProjectId(projectId)
    *     .setTraces(traces)
    *     .build();
-   *   RpcFuture&lt;Void&gt; future = traceServiceClient.patchTracesCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = traceServiceClient.patchTracesCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -311,7 +311,7 @@ public class TraceServiceClient implements AutoCloseable {
    *     .setProjectId(projectId)
    *     .setTraceId(traceId)
    *     .build();
-   *   RpcFuture&lt;Trace&gt; future = traceServiceClient.getTraceCallable().futureCall(request);
+   *   ApiFuture&lt;Trace&gt; future = traceServiceClient.getTraceCallable().futureCall(request);
    *   // Do something
    *   Trace response = future.get();
    * }
@@ -381,7 +381,7 @@ public class TraceServiceClient implements AutoCloseable {
    *   ListTracesRequest request = ListTracesRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .build();
-   *   RpcFuture&lt;ListTracesPagedResponse&gt; future = traceServiceClient.listTracesPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListTracesPagedResponse&gt; future = traceServiceClient.listTracesPagedCallable().futureCall(request);
    *   // Do something
    *   for (Trace element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);

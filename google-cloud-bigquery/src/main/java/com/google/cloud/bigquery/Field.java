@@ -86,16 +86,6 @@ public final class Field implements Serializable {
       this.fields = fields;
     }
 
-    /**
-     * Returns the value identifier.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
-     *     Data Types</a>
-     */
-    @Deprecated
-    public LegacySQLTypeName value() {
-      return getValue();
-    }
 
     /**
      * Returns the value identifier.
@@ -107,17 +97,9 @@ public final class Field implements Serializable {
       return value;
     }
 
-    /**
-     * Returns the list of sub-fields if {@link #value()} is set to {@link
-     * LegacySQLTypeName#RECORD}. Returns {@code null} otherwise.
-     */
-    @Deprecated
-    public List<Field> fields() {
-      return getFields();
-    }
 
     /**
-     * Returns the list of sub-fields if {@link #value()} is set to {@link
+     * Returns the list of sub-fields if {@link #getValue()} is set to {@link
      * LegacySQLTypeName#RECORD}. Returns {@code null} otherwise.
      */
     public List<Field> getFields() {
@@ -165,7 +147,28 @@ public final class Field implements Serializable {
     public static Type timestamp() {
       return new Type(LegacySQLTypeName.TIMESTAMP);
     }
+    
+    /**
+     * Returns a {@link LegacySQLTypeName#DATE} field value.
+     */
+    public static Type date() {
+      return new Type(LegacySQLTypeName.DATE);
+    }
+    
+    /**
+     * Returns a {@link LegacySQLTypeName#TIME} field value.
+     */
+    public static Type time() {
+      return new Type(LegacySQLTypeName.TIME);
+    }
 
+    /**
+     * Returns a {@link LegacySQLTypeName#DATETIME} field value.
+     */
+    public static Type datetime() {
+      return new Type(LegacySQLTypeName.DATETIME);
+    }
+    
     /**
      * Returns a {@link LegacySQLTypeName#RECORD} field value with associated list of sub-fields.
      */
@@ -229,15 +232,6 @@ public final class Field implements Serializable {
       this.description = field.description;
     }
 
-    /**
-     * Sets the field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or
-     * underscores (_), and must start with a letter or underscore. The maximum length is 128
-     * characters.
-     */
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     /**
      * Sets the field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or
@@ -249,16 +243,6 @@ public final class Field implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the value of the field.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
-     *     Data Types</a>
-     */
-    @Deprecated
-    public Builder type(Type type) {
-      return setType(type);
-    }
 
     /**
      * Sets the value of the field.
@@ -271,13 +255,6 @@ public final class Field implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the mode of the field. When not specified {@link Mode#NULLABLE} is used.
-     */
-    @Deprecated
-    public Builder mode(Mode mode) {
-      return setMode(mode);
-    }
 
     /**
      * Sets the mode of the field. When not specified {@link Mode#NULLABLE} is used.
@@ -287,13 +264,6 @@ public final class Field implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the field description. The maximum length is 16K characters.
-     */
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
 
     /**
      * Sets the field description. The maximum length is 16K characters.
@@ -318,13 +288,6 @@ public final class Field implements Serializable {
     this.description = builder.description;
   }
 
-  /**
-   * Returns the field name.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Returns the field name.
@@ -333,16 +296,6 @@ public final class Field implements Serializable {
     return name;
   }
 
-  /**
-   * Returns the field value.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
-   *     Data Types</a>
-   */
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
 
   /**
    * Returns the field value.
@@ -354,13 +307,6 @@ public final class Field implements Serializable {
     return type;
   }
 
-  /**
-   * Returns the field mode. By default {@link Mode#NULLABLE} is used.
-   */
-  @Deprecated
-  public Mode mode() {
-    return getMode();
-  }
 
   /**
    * Returns the field mode. By default {@link Mode#NULLABLE} is used.
@@ -369,13 +315,6 @@ public final class Field implements Serializable {
     return mode != null ? Mode.valueOf(mode) : null;
   }
 
-  /**
-   * Returns the field description.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
-  }
 
   /**
    * Returns the field description.
@@ -384,17 +323,9 @@ public final class Field implements Serializable {
     return Data.isNull(description) ? null : description;
   }
 
-  /**
-   * Returns the list of sub-fields if {@link #type()} is a {@link LegacySQLTypeName#RECORD}.
-   * Returns {@code null} otherwise.
-   */
-  @Deprecated
-  public List<Field> fields() {
-    return getFields();
-  }
 
   /**
-   * Returns the list of sub-fields if {@link #type()} is a {@link LegacySQLTypeName#RECORD}.
+   * Returns the list of sub-fields if {@link #getType()} is a {@link LegacySQLTypeName#RECORD}.
    * Returns {@code null} otherwise.
    */
   public List<Field> getFields() {
@@ -452,13 +383,6 @@ public final class Field implements Serializable {
     return newBuilder(name, type).build();
   }
 
-  /**
-   * Returns a builder for a Field object with given name and value.
-   */
-  @Deprecated
-  public static Builder builder(String name, Type type) {
-    return newBuilder(name, type);
-  }
 
   /**
    * Returns a builder for a Field object with given name and value.

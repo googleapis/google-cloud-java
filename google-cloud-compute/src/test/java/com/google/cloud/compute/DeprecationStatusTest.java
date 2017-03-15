@@ -57,13 +57,6 @@ public class DeprecationStatusTest {
           .setObsolete(OBSOLETE)
           .setDeleted(DELETED)
           .build();
-  private static final DeprecationStatus<DiskTypeId> DEPRECATED_STATUS =
-      DeprecationStatus.<DiskTypeId>builder(STATUS)
-          .replacement(DISK_TYPE_ID)
-          .deprecated(DEPRECATED_MILLIS)
-          .obsolete(OBSOLETE_MILLIS)
-          .deleted(DELETED_MILLIS)
-          .build();
 
   @Test
   public void testBuilder() {
@@ -92,35 +85,6 @@ public class DeprecationStatusTest {
     assertEquals(OBSOLETE_MILLIS, MACHINE_TYPE_STATUS.getObsoleteMillis());
     assertEquals(MACHINE_TYPE_ID, MACHINE_TYPE_STATUS.getReplacement());
     assertEquals(STATUS, MACHINE_TYPE_STATUS.getStatus());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    compareDeprecationStatus(DISK_TYPE_STATUS, DISK_TYPE_STATUS_MILLIS);
-    assertEquals(DELETED, DEPRECATED_STATUS.deleted());
-    assertEquals(DEPRECATED, DEPRECATED_STATUS.deprecated());
-    assertEquals(OBSOLETE, DEPRECATED_STATUS.obsolete());
-    assertEquals(DISK_TYPE_ID, DEPRECATED_STATUS.replacement());
-    assertEquals(DEPRECATED_MILLIS, DEPRECATED_STATUS.deprecatedMillis());
-    assertEquals(DELETED_MILLIS, DEPRECATED_STATUS.deletedMillis());
-    assertEquals(OBSOLETE_MILLIS, DEPRECATED_STATUS.obsoleteMillis());
-    assertEquals(STATUS, DEPRECATED_STATUS.status());
-    assertEquals(DELETED, DISK_TYPE_STATUS_MILLIS.deleted());
-    assertEquals(DEPRECATED, DISK_TYPE_STATUS_MILLIS.deprecated());
-    assertEquals(OBSOLETE, DISK_TYPE_STATUS_MILLIS.obsolete());
-    assertEquals(DISK_TYPE_ID, DISK_TYPE_STATUS_MILLIS.replacement());
-    assertEquals(DEPRECATED_MILLIS, DISK_TYPE_STATUS_MILLIS.deprecatedMillis());
-    assertEquals(DELETED_MILLIS, DISK_TYPE_STATUS_MILLIS.deletedMillis());
-    assertEquals(OBSOLETE_MILLIS, DISK_TYPE_STATUS_MILLIS.obsoleteMillis());
-    assertEquals(STATUS, DISK_TYPE_STATUS.status());
-    assertEquals(DELETED, MACHINE_TYPE_STATUS.deleted());
-    assertEquals(DEPRECATED, MACHINE_TYPE_STATUS.deprecated());
-    assertEquals(OBSOLETE, MACHINE_TYPE_STATUS.obsolete());
-    assertEquals(DEPRECATED_MILLIS, MACHINE_TYPE_STATUS.deprecatedMillis());
-    assertEquals(DELETED_MILLIS, MACHINE_TYPE_STATUS.deletedMillis());
-    assertEquals(OBSOLETE_MILLIS, MACHINE_TYPE_STATUS.obsoleteMillis());
-    assertEquals(MACHINE_TYPE_ID, MACHINE_TYPE_STATUS.replacement());
-    assertEquals(STATUS, MACHINE_TYPE_STATUS.status());
   }
 
   @Test

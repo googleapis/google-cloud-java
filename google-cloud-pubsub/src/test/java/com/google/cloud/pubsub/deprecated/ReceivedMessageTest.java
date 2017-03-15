@@ -27,9 +27,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 
 import com.google.api.client.util.Charsets;
+import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.ByteArray;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.util.concurrent.Futures;
 
 import org.easymock.EasyMock;
 import org.junit.After;
@@ -179,7 +179,7 @@ public class ReceivedMessageTest {
   public void testAckAsync() throws ExecutionException, InterruptedException {
     initializeExpectedMessage(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
-    expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID)).andReturn(Futures.<Void>immediateFuture(null));
+    expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID)).andReturn(ApiFutures.<Void>immediateFuture(null));
     EasyMock.expectLastCall();
     replay(pubsub);
     initializeMessage();
@@ -202,7 +202,7 @@ public class ReceivedMessageTest {
     initializeExpectedMessage(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION, 10, TimeUnit.SECONDS, ACK_ID))
-        .andReturn(Futures.<Void>immediateFuture(null));
+        .andReturn(ApiFutures.<Void>immediateFuture(null));
     EasyMock.expectLastCall();
     replay(pubsub);
     initializeMessage();

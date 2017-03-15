@@ -40,12 +40,6 @@ public interface ReadChannel extends ReadableByteChannel, Closeable, Restorable<
 
   void seek(long position) throws IOException;
 
-  /**
-   * Sets the minimum size that will be read by a single RPC.
-   * Read data will be locally buffered until consumed.
-   */
-  @Deprecated
-  void chunkSize(int chunkSize);
 
   /**
    * Sets the minimum size that will be read by a single RPC.

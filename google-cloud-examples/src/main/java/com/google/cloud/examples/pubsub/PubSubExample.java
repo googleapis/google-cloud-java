@@ -41,7 +41,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * An example of using Google BigQuery.
+ * An example of using Google Pub/Sub.
  *
  * <p>This example demonstrates a simple/typical Pub/Sub usage.
  *

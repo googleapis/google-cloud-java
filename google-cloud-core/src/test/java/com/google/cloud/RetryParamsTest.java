@@ -53,19 +53,6 @@ public class RetryParamsTest {
     }
   }
 
-  @Test
-  public void testDefaultsDeprecated() {
-    RetryParams params1 = RetryParams.defaultInstance();
-    RetryParams params2 = RetryParams.builder().build();
-    for (RetryParams params : Arrays.asList(params1, params2)) {
-      assertEquals(DEFAULT_INITIAL_RETRY_DELAY_MILLIS, params.initialRetryDelayMillis());
-      assertEquals(DEFAULT_MAX_RETRY_DELAY_MILLIS, params.maxRetryDelayMillis());
-      assertEquals(DEFAULT_RETRY_DELAY_BACKOFF_FACTOR, params.retryDelayBackoffFactor(), 0);
-      assertEquals(DEFAULT_RETRY_MAX_ATTEMPTS, params.retryMaxAttempts());
-      assertEquals(DEFAULT_RETRY_MIN_ATTEMPTS, params.retryMinAttempts());
-      assertEquals(DEFAULT_TOTAL_RETRY_PERIOD_MILLIS, params.totalRetryPeriodMillis());
-    }
-  }
 
   @Test
   public void testSetAndCopy() {
@@ -88,26 +75,6 @@ public class RetryParamsTest {
     }
   }
 
-  @Test
-  public void testSetAndCopyDeprecated() {
-    RetryParams.Builder builder = RetryParams.builder();
-    builder.initialRetryDelayMillis(101);
-    builder.maxRetryDelayMillis(102);
-    builder.retryDelayBackoffFactor(103);
-    builder.retryMinAttempts(107);
-    builder.retryMaxAttempts(108);
-    builder.totalRetryPeriodMillis(109);
-    RetryParams params1 = builder.build();
-    RetryParams params2 = new RetryParams.Builder(params1).build();
-    for (RetryParams params : Arrays.asList(params1, params2)) {
-      assertEquals(101, params.initialRetryDelayMillis());
-      assertEquals(102, params.maxRetryDelayMillis());
-      assertEquals(103, params.retryDelayBackoffFactor(), 0);
-      assertEquals(107, params.retryMinAttempts());
-      assertEquals(108, params.retryMaxAttempts());
-      assertEquals(109, params.totalRetryPeriodMillis());
-    }
-  }
 
   @Test
   public void testBadSettings() {

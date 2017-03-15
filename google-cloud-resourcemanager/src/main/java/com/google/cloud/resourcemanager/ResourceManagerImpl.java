@@ -107,11 +107,6 @@ final class ResourceManagerImpl
       this.serviceOptions = serviceOptions;
     }
 
-    @Override
-    @Deprecated
-    public Page<Project> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<Project> getNextPage() {

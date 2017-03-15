@@ -57,16 +57,6 @@ public class WriteChannelConfigurationTest {
           .setProjectionFields(PROJECTION_FIELDS)
           .setSchema(TABLE_SCHEMA)
           .build();
-  private static final WriteChannelConfiguration DEPRECATED_LOAD_CONFIGURATION =
-      WriteChannelConfiguration.builder(TABLE_ID)
-          .createDisposition(CREATE_DISPOSITION)
-          .writeDisposition(WRITE_DISPOSITION)
-          .formatOptions(CSV_OPTIONS)
-          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-          .maxBadRecords(MAX_BAD_RECORDS)
-          .projectionFields(PROJECTION_FIELDS)
-          .schema(TABLE_SCHEMA)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -126,36 +116,6 @@ public class WriteChannelConfigurationTest {
     assertEquals(TABLE_SCHEMA, loadConfiguration.getSchema());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(TABLE_ID, DEPRECATED_LOAD_CONFIGURATION.destinationTable());
-    assertEquals(CREATE_DISPOSITION, DEPRECATED_LOAD_CONFIGURATION.createDisposition());
-    assertEquals(WRITE_DISPOSITION, DEPRECATED_LOAD_CONFIGURATION.writeDisposition());
-    assertEquals(CSV_OPTIONS, DEPRECATED_LOAD_CONFIGURATION.csvOptions());
-    assertEquals(FORMAT, DEPRECATED_LOAD_CONFIGURATION.format());
-    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_LOAD_CONFIGURATION.ignoreUnknownValues());
-    assertEquals(MAX_BAD_RECORDS, DEPRECATED_LOAD_CONFIGURATION.maxBadRecords());
-    assertEquals(PROJECTION_FIELDS, DEPRECATED_LOAD_CONFIGURATION.projectionFields());
-    assertEquals(TABLE_SCHEMA, DEPRECATED_LOAD_CONFIGURATION.schema());
-    WriteChannelConfiguration loadConfiguration =
-        WriteChannelConfiguration.builder(TABLE_ID, CSV_OPTIONS)
-            .createDisposition(CREATE_DISPOSITION)
-            .writeDisposition(WRITE_DISPOSITION)
-            .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-            .maxBadRecords(MAX_BAD_RECORDS)
-            .projectionFields(PROJECTION_FIELDS)
-            .schema(TABLE_SCHEMA)
-            .build();
-    assertEquals(TABLE_ID, loadConfiguration.destinationTable());
-    assertEquals(CREATE_DISPOSITION, loadConfiguration.createDisposition());
-    assertEquals(WRITE_DISPOSITION, loadConfiguration.writeDisposition());
-    assertEquals(CSV_OPTIONS, loadConfiguration.csvOptions());
-    assertEquals(FORMAT, loadConfiguration.format());
-    assertEquals(IGNORE_UNKNOWN_VALUES, loadConfiguration.ignoreUnknownValues());
-    assertEquals(MAX_BAD_RECORDS, loadConfiguration.maxBadRecords());
-    assertEquals(PROJECTION_FIELDS, loadConfiguration.projectionFields());
-    assertEquals(TABLE_SCHEMA, loadConfiguration.schema());
-  }
 
   @Test
   public void testToPbAndFromPb() {

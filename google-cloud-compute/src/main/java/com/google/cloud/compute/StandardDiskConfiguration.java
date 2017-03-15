@@ -52,15 +52,6 @@ public class StandardDiskConfiguration extends DiskConfiguration {
      * Sets the size of the persistent disk, in GB. If not set, 500GB is used.
      */
     @Override
-    @Deprecated
-    public Builder sizeGb(Long sizeGb) {
-      return setSizeGb(sizeGb);
-    }
-
-    /**
-     * Sets the size of the persistent disk, in GB. If not set, 500GB is used.
-     */
-    @Override
     public Builder setSizeGb(Long sizeGb) {
       super.setSizeGb(sizeGb);
       return this;
@@ -103,14 +94,6 @@ public class StandardDiskConfiguration extends DiskConfiguration {
       return this;
     }
     return toBuilder().setDiskType(getDiskType().setProjectId(projectId)).build();
-  }
-
-  /**
-   * Returns a builder for a {@code StandardDiskConfiguration} object.
-   */
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
   }
 
   /**

@@ -21,7 +21,6 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -56,8 +55,8 @@ import java.util.logging.SimpleFormatter;
  *
  * <p>Original Java logging levels are added as labels (with {@code levelName} and
  * {@code levelValue} keys, respectively) to the corresponding Stackdriver Logging {@link LogEntry}.
- * You can read entry labels using {@link LogEntry#labels()}. To use logging levels that correspond
- * to Stackdriver Logging severities you can use {@link LoggingLevel}.
+ * You can read entry labels using {@link LogEntry#getLabels()}. To use logging levels that
+ * correspond to Stackdriver Logging severities you can use {@link LoggingLevel}.
  *
  * <p><b>Configuration</b>: By default each {@code LoggingHandler} is initialized using the
  * following {@code LogManager} configuration properties (that you can set in the
@@ -81,8 +80,10 @@ import java.util.logging.SimpleFormatter;
  * <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
  *     of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds
  *     a {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
- * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when 
+ * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
  *     creating the default {@link MonitoredResource} (defaults to "global").
+ * <li>{@code com.google.cloud.logging.Synchronicity} the synchronicity of the write method to use
+ *     to write logs to the Stackdriver Logging service (defaults to {@link Synchronicity#ASYNC}).
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
@@ -106,6 +107,7 @@ public class LoggingHandler extends Handler {
   private volatile Logging logging;
   private Level flushLevel;
   private long flushSize;
+  private Synchronicity synchronicity;
   private final List<Enhancer> enhancers;
 
   /**
@@ -139,7 +141,7 @@ public class LoggingHandler extends Handler {
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
-   * @param monitoredResource the monitored resource to which log entries refer. If it is null 
+   * @param monitoredResource the monitored resource to which log entries refer. If it is null
    * then a default resource is created based on the project ID. When creating a default resource, if
    * any {@link Enhancer} instances are configured and then each
    * {@link Enhancer#enhanceMonitoredResource(com.google.cloud.MonitoredResource.Builder)} method
@@ -148,13 +150,13 @@ public class LoggingHandler extends Handler {
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource) {
     this(log, options, monitoredResource,null);
   }
-  
+
   /**
    * Creates a handler that publishes messages to Stackdriver Logging.
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
-   * @param monitoredResource the monitored resource to which log entries refer. If it is null 
+   * @param monitoredResource the monitored resource to which log entries refer. If it is null
    * then a default resource is created based on the project ID. When creating a default resource, if
    * any {@link Enhancer} instances are configured and then each
    * {@link Enhancer#enhanceMonitoredResource(com.google.cloud.MonitoredResource.Builder)} method
@@ -169,6 +171,8 @@ public class LoggingHandler extends Handler {
       this.options = options != null ? options : LoggingOptions.getDefaultInstance();
       this.flushLevel = helper.getLevelProperty(className + ".flushLevel", LoggingLevel.ERROR);
       this.flushSize = helper.getLongProperty(className + ".flushSize", 1L);
+      this.synchronicity =
+          helper.getSynchronicityProperty(className + ".synchronicity", Synchronicity.ASYNC);
       setLevel(helper.getLevelProperty(className + ".level", Level.INFO));
       setFilter(helper.getFilterProperty(className + ".filter", null));
       setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
@@ -220,7 +224,7 @@ public class LoggingHandler extends Handler {
     for (Enhancer enhancer : enhancers) {
       enhancer.enhanceMonitoredResource(builder);
     }
-    return builder.build();    
+    return builder.build();
   }
 
   private static class LogConfigHelper {
@@ -278,16 +282,16 @@ public class LoggingHandler extends Handler {
       }
       return defaultValue;
     }
-    
+
     List<Enhancer> getEnhancerProperty(String name) {
       String list = manager.getProperty(name);
       try {
         List<Enhancer> enhancers = new ArrayList<>();
         if (list != null) {
           String[] items = list.split(",");
-          for (String e_name : items) { 
+          for (String e_name : items) {
             Class<? extends Enhancer> clz = (Class<? extends Enhancer>) ClassLoader.getSystemClassLoader().loadClass(e_name);
-            enhancers.add((Enhancer) clz.newInstance());
+            enhancers.add(clz.newInstance());
           }
         }
         return enhancers;
@@ -295,6 +299,16 @@ public class LoggingHandler extends Handler {
         // If we cannot create the enhancers we fall back to the default
       }
       return Collections.emptyList();
+    }
+
+    Synchronicity getSynchronicityProperty(String name, Synchronicity defaultValue) {
+      String synchronicity = manager.getProperty(name);
+      try {
+        return Synchronicity.valueOf(synchronicity);
+      } catch (Exception ex) {
+        // If we cannot create the Synchronicity we fall back to default value
+      }
+      return defaultValue;
     }
   }
 
@@ -372,17 +386,17 @@ public class LoggingHandler extends Handler {
       enhanceLogEntry(builder, record);
       return builder.build();
     } catch (Exception ex) {
-      // Formatting or enhancing can fail but we should not throw an exception, 
+      // Formatting or enhancing can fail but we should not throw an exception,
       // we report the error instead
       reportError(null, ex, ErrorManager.FORMAT_FAILURE);
       return null;
     }
   }
-  
+
   @Deprecated
   protected void enhanceLogEntry(LogEntry.Builder builder, LogRecord record) {
   }
-  
+
   private static Severity severityFor(Level level) {
     if (level instanceof LoggingLevel) {
       return ((LoggingLevel) level).getSeverity();
@@ -419,7 +433,15 @@ public class LoggingHandler extends Handler {
    * how entries should be written.
    */
   void write(List<LogEntry> entries, WriteOption... options) {
-    getLogging().writeAsync(entries, options);
+    switch (this.synchronicity) {
+      case SYNC:
+        getLogging().write(entries, options);
+        break;
+      case ASYNC:
+      default:
+        getLogging().writeAsync(entries, options);
+        break;
+    }
   }
 
   @Override
@@ -476,6 +498,11 @@ public class LoggingHandler extends Handler {
     return flushLevel;
   }
 
+  /** Get the flush log level. */
+  public Level getFlushLevel() {
+    return this.flushLevel;
+  }
+
   /**
    * Sets the maximum size of the log buffer. Once the maximum size of the buffer is reached, logs
    * are transmitted to the Stackdriver Logging service. If not set, a log is sent to the service as
@@ -486,6 +513,28 @@ public class LoggingHandler extends Handler {
     return flushSize;
   }
 
+  /** Get the maximum size of the log buffer. */
+  public long getFlushSize() {
+    return this.flushSize;
+  }
+
+  /**
+   * Sets the synchronicity of the write method used to write logs to the Stackdriver Logging
+   * service. Defaults to {@link Synchronicity#ASYNC}.
+   */
+  public synchronized Synchronicity setSynchronicity(Synchronicity synchronicity) {
+    this.synchronicity = synchronicity;
+    return synchronicity;
+  }
+
+  /**
+   * Get the synchronicity of the write method used to write logs to the Stackdriver Logging
+   * service.
+   */
+  public Synchronicity getSynchronicity() {
+    return this.synchronicity;
+  }
+
   /**
    * Adds the provided {@code LoggingHandler} to {@code logger}. Use this method to register Cloud
    * Logging handlers instead of {@link Logger#addHandler(Handler)} to avoid infinite recursion
@@ -494,7 +543,7 @@ public class LoggingHandler extends Handler {
   public static void addHandler(Logger logger, LoggingHandler handler) {
     logger.addHandler(handler);
   }
-  
+
   /**
    * A Log Enhancer.
    * May be used to enhance the {@link MonitoredResource} and/or the {@link LogEntry}

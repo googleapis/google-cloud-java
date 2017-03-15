@@ -53,14 +53,6 @@ public class QueryRequestTest {
       .setUseLegacySql(USE_LEGACY_SQL)
       .setPositionalParameters(POSITIONAL_PARAMETERS)
       .build();
-  private static final QueryRequest DEPRECATED_QUERY_REQUEST = QueryRequest.builder(QUERY)
-      .useQueryCache(USE_QUERY_CACHE)
-      .defaultDataset(DATASET_ID)
-      .dryRun(DRY_RUN)
-      .pageSize(PAGE_SIZE)
-      .maxWaitTime(MAX_WAIT_TIME)
-      .useLegacySql(USE_LEGACY_SQL)
-      .build();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -98,20 +90,6 @@ public class QueryRequestTest {
     QueryRequest.newBuilder(null);
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(QUERY, DEPRECATED_QUERY_REQUEST.query());
-    assertEquals(USE_QUERY_CACHE, DEPRECATED_QUERY_REQUEST.useQueryCache());
-    assertEquals(DATASET_ID, DEPRECATED_QUERY_REQUEST.defaultDataset());
-    assertEquals(DRY_RUN, DEPRECATED_QUERY_REQUEST.dryRun());
-    assertEquals(PAGE_SIZE, DEPRECATED_QUERY_REQUEST.pageSize());
-    assertEquals(MAX_WAIT_TIME, DEPRECATED_QUERY_REQUEST.maxWaitTime());
-    assertTrue(DEPRECATED_QUERY_REQUEST.getNamedParameters().isEmpty());
-    assertTrue(DEPRECATED_QUERY_REQUEST.getPositionalParameters().isEmpty());
-    assertFalse(DEPRECATED_QUERY_REQUEST.useLegacySql());
-    thrown.expect(NullPointerException.class);
-    QueryRequest.builder(null);
-  }
 
   @Test
   public void testNamedParameters() {

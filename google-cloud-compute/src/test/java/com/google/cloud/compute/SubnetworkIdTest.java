@@ -55,23 +55,6 @@ public class SubnetworkIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    SubnetworkId subnetworkId = SubnetworkId.of(PROJECT, REGION, NAME);
-    assertEquals(PROJECT, subnetworkId.project());
-    assertEquals(REGION, subnetworkId.region());
-    assertEquals(NAME, subnetworkId.subnetwork());
-    assertEquals(URL, subnetworkId.selfLink());
-    subnetworkId = SubnetworkId.of(REGION, NAME);
-    assertNull(subnetworkId.project());
-    assertEquals(REGION, subnetworkId.region());
-    assertEquals(NAME, subnetworkId.subnetwork());
-    subnetworkId = SubnetworkId.of(RegionId.of(PROJECT, REGION), NAME);
-    assertEquals(PROJECT, subnetworkId.project());
-    assertEquals(REGION, subnetworkId.region());
-    assertEquals(NAME, subnetworkId.subnetwork());
-  }
-
-  @Test
   public void testToAndFromUrl() {
     SubnetworkId subnetworkId = SubnetworkId.of(PROJECT, REGION, NAME);
     compareSubnetworkId(subnetworkId, SubnetworkId.fromUrl(subnetworkId.getSelfLink()));

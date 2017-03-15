@@ -51,12 +51,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<Operation> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Operation> getNextPage() {
       return listGlobalOperations(serviceOptions, requestOptions);
     }
@@ -78,12 +72,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<DiskType> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<DiskType> getNextPage() {
       return listDiskTypes(zone, serviceOptions, requestOptions);
     }
@@ -100,12 +88,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       this.requestOptions =
           PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
-    }
-
-    @Override
-    @Deprecated
-    public Page<DiskType> nextPage() {
-      return getNextPage();
     }
 
     @Override
@@ -130,12 +112,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<MachineType> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<MachineType> getNextPage() {
       return listMachineTypes(zone, serviceOptions, requestOptions);
     }
@@ -152,12 +128,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       this.requestOptions =
           PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
-    }
-
-    @Override
-    @Deprecated
-    public Page<MachineType> nextPage() {
-      return getNextPage();
     }
 
     @Override
@@ -180,12 +150,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<Region> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Region> getNextPage() {
       return listRegions(serviceOptions, requestOptions);
     }
@@ -202,12 +166,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       this.requestOptions =
           PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
-    }
-
-    @Override
-    @Deprecated
-    public Page<Zone> nextPage() {
-      return getNextPage();
     }
 
     @Override
@@ -232,12 +190,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<Operation> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Operation> getNextPage() {
       return listRegionOperations(region, serviceOptions, requestOptions);
     }
@@ -259,12 +211,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<Operation> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Operation> getNextPage() {
       return listZoneOperations(zone, serviceOptions, requestOptions);
     }
@@ -281,12 +227,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       this.requestOptions =
           PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
-    }
-
-    @Override
-    @Deprecated
-    public Page<Address> nextPage() {
-      return getNextPage();
     }
 
     @Override
@@ -311,12 +251,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<Address> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Address> getNextPage() {
       return listRegionAddresses(region, serviceOptions, requestOptions);
     }
@@ -336,12 +270,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<Address> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Address> getNextPage() {
       return listAddresses(serviceOptions, requestOptions);
     }
@@ -358,12 +286,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       this.requestOptions =
           PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
-    }
-
-    @Override
-    @Deprecated
-    public Page<Snapshot> nextPage() {
-      return getNextPage();
     }
 
     @Override
@@ -388,12 +310,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<Image> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Image> getNextPage() {
       return listImages(project, serviceOptions, requestOptions);
     }
@@ -415,12 +331,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<Disk> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Disk> getNextPage() {
       return listDisks(zone, serviceOptions, requestOptions);
     }
@@ -437,12 +347,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       this.requestOptions =
           PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
-    }
-
-    @Override
-    @Deprecated
-    public Page<Disk> nextPage() {
-      return getNextPage();
     }
 
     @Override
@@ -467,12 +371,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<Subnetwork> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Subnetwork> getNextPage() {
       return listSubnetworks(region, serviceOptions, requestOptions);
     }
@@ -492,12 +390,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<Subnetwork> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Subnetwork> getNextPage() {
       return listSubnetworks(serviceOptions, requestOptions);
     }
@@ -514,12 +406,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       this.requestOptions =
           PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
-    }
-
-    @Override
-    @Deprecated
-    public Page<Network> nextPage() {
-      return getNextPage();
     }
 
     @Override
@@ -544,12 +430,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
 
     @Override
-    @Deprecated
-    public Page<Instance> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Instance> getNextPage() {
       return listInstances(zone, serviceOptions, requestOptions);
     }
@@ -566,12 +446,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       this.requestOptions =
           PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
-    }
-
-    @Override
-    @Deprecated
-    public Page<Instance> nextPage() {
-      return getNextPage();
     }
 
     @Override
@@ -1566,6 +1440,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
   }
 
+  @Override
   public Operation create(SubnetworkInfo subnetwork, OperationOption... options) {
     final SubnetworkInfo completeSubnetwork = subnetwork.setProjectId(getOptions().getProjectId());
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);

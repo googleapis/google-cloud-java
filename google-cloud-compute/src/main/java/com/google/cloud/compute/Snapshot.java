@@ -77,21 +77,9 @@ public class Snapshot extends SnapshotInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder snapshotId(SnapshotId snapshotId) {
-      return setSnapshotId(snapshotId);
-    }
-
-    @Override
     public Builder setSnapshotId(SnapshotId snapshotId) {
       infoBuilder.setSnapshotId(snapshotId);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
     }
 
     @Override
@@ -116,12 +104,6 @@ public class Snapshot extends SnapshotInfo {
     Builder setLicenses(List<LicenseId> licenses) {
       infoBuilder.setLicenses(licenses);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder sourceDisk(DiskId sourceDisk) {
-      return setSourceDisk(sourceDisk);
     }
 
     @Override
@@ -191,14 +173,6 @@ public class Snapshot extends SnapshotInfo {
    */
   public Operation delete(OperationOption... options) {
     return compute.deleteSnapshot(getSnapshotId(), options);
-  }
-
-  /**
-   * Returns the snapshot's {@code Compute} object used to issue requests.
-   */
-  @Deprecated
-  public Compute compute() {
-    return getCompute();
   }
 
   /**

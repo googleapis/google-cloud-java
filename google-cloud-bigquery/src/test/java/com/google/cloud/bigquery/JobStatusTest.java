@@ -52,21 +52,6 @@ public class JobStatusTest {
   }
 
   @Test
-  public void testConstructorDeprecated() {
-    assertEquals(STATE, JOB_STATUS.state());
-    assertEquals(ERROR, JOB_STATUS.error());
-    assertEquals(ALL_ERRORS, JOB_STATUS.executionErrors());
-
-    assertEquals(STATE, JOB_STATUS_INCOMPLETE1.state());
-    assertEquals(ERROR, JOB_STATUS_INCOMPLETE1.error());
-    assertEquals(null, JOB_STATUS_INCOMPLETE1.executionErrors());
-
-    assertEquals(STATE, JOB_STATUS_INCOMPLETE2.state());
-    assertEquals(null, JOB_STATUS_INCOMPLETE2.error());
-    assertEquals(null, JOB_STATUS_INCOMPLETE2.executionErrors());
-  }
-
-  @Test
   public void testToPbAndFromPb() {
     compareStatus(JOB_STATUS, JobStatus.fromPb(JOB_STATUS.toPb()));
     compareStatus(JOB_STATUS_INCOMPLETE1, JobStatus.fromPb(JOB_STATUS_INCOMPLETE1.toPb()));

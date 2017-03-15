@@ -56,24 +56,6 @@ public class InstanceIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    InstanceId instanceId = InstanceId.of(PROJECT, ZONE, NAME);
-    assertEquals(PROJECT, instanceId.project());
-    assertEquals(ZONE, instanceId.zone());
-    assertEquals(NAME, instanceId.instance());
-    assertEquals(URL, instanceId.selfLink());
-    instanceId = InstanceId.of(ZoneId.of(PROJECT, ZONE), NAME);
-    assertEquals(PROJECT, instanceId.project());
-    assertEquals(ZONE, instanceId.zone());
-    assertEquals(NAME, instanceId.instance());
-    assertEquals(URL, instanceId.selfLink());
-    instanceId = InstanceId.of(ZONE, NAME);
-    assertNull(instanceId.project());
-    assertEquals(ZONE, instanceId.zone());
-    assertEquals(NAME, instanceId.instance());
-  }
-
-  @Test
   public void testToAndFromUrl() {
     InstanceId instanceId = InstanceId.of(PROJECT, ZONE, NAME);
     compareInstanceId(instanceId, InstanceId.fromUrl(instanceId.getSelfLink()));

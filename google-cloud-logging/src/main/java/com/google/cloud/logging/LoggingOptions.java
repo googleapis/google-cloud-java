@@ -16,24 +16,26 @@
 
 package com.google.cloud.logging;
 
-import com.google.cloud.GrpcServiceOptions;
+import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.logging.spi.DefaultLoggingRpc;
 import com.google.cloud.logging.spi.LoggingRpc;
 import com.google.cloud.logging.spi.LoggingRpcFactory;
-import com.google.cloud.logging.spi.v2.LoggingServiceV2Settings;
+import com.google.cloud.logging.spi.v2.LoggingSettings;
 import com.google.common.collect.ImmutableSet;
-
 import java.io.IOException;
 import java.util.Set;
-import java.util.concurrent.ScheduledExecutorService;
 
-public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, LoggingOptions> {
+public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingOptions> {
 
-  private static final long serialVersionUID = -5117984564582881668L;
+  private static final String API_SHORT_NAME = "Logging";
   private static final String LOGGING_SCOPE = "https://www.googleapis.com/auth/logging.admin";
   private static final Set<String> SCOPES = ImmutableSet.of(LOGGING_SCOPE);
-  private static final String DEFAULT_HOST = LoggingServiceV2Settings.getDefaultServiceAddress()
-      + ':' + LoggingServiceV2Settings.getDefaultServicePort();
+  private static final String DEFAULT_HOST = LoggingSettings.getDefaultServiceAddress()
+      + ':' + LoggingSettings.getDefaultServicePort();
+  private static final long serialVersionUID = 5753499510627426717L;
 
   public static class DefaultLoggingFactory implements LoggingFactory {
     private static final LoggingFactory INSTANCE = new DefaultLoggingFactory();
@@ -44,13 +46,6 @@ public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, Logg
     }
   }
 
-  /**
-   * Returns a default {@code LoggingOptions} instance.
-   */
-  @Deprecated
-  public static LoggingOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns a default {@code LoggingOptions} instance.
@@ -78,12 +73,21 @@ public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, Logg
   }
 
   public static class Builder extends
-      GrpcServiceOptions.Builder<Logging, LoggingRpc, LoggingOptions, Builder> {
+      ServiceOptions.Builder<Logging, LoggingRpc, LoggingOptions, Builder> {
 
     private Builder() {}
 
     private Builder(LoggingOptions options) {
       super(options);
+    }
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof GrpcTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only grpc transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
     @Override
@@ -93,22 +97,30 @@ public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, Logg
   }
 
   protected LoggingOptions(Builder builder) {
-    super(LoggingFactory.class, LoggingRpcFactory.class, builder);
+    super(LoggingFactory.class, LoggingRpcFactory.class, builder, new LoggingDefaults());
   }
 
-  @Override
-  protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
-    return super.getExecutorFactory();
+  private static class LoggingDefaults implements
+      ServiceDefaults<Logging, LoggingRpc, LoggingOptions> {
+
+    @Override
+    public LoggingFactory getDefaultServiceFactory() {
+      return DefaultLoggingFactory.INSTANCE;
+    }
+
+    @Override
+    public LoggingRpcFactory getDefaultRpcFactory() {
+      return DefaultLoggingRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultGrpcTransportOptions();
+    }
   }
 
-  @Override
-  protected LoggingFactory getDefaultServiceFactory() {
-    return DefaultLoggingFactory.INSTANCE;
-  }
-
-  @Override
-  protected LoggingRpcFactory getDefaultRpcFactory() {
-    return DefaultLoggingRpcFactory.INSTANCE;
+  public static GrpcTransportOptions getDefaultGrpcTransportOptions() {
+    return GrpcTransportOptions.newBuilder().build();
   }
 
   @Override
@@ -132,10 +144,6 @@ public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, Logg
     return new Builder(this);
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();

@@ -161,13 +161,6 @@ public final class GqlQuery<V> extends Query<V> {
       queryString = checkNotNull(query);
     }
 
-    /**
-     * Sets the GQL query string.
-     */
-    @Deprecated
-    public Builder<V> query(String query) {
-      return setQuery(query);
-    }
 
     /**
      * Sets the GQL query.
@@ -177,13 +170,6 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
-    /**
-     * Sets the namespace for the GQL query.
-     */
-    @Deprecated
-    public Builder<V> namespace(String namespace) {
-      return setNamespace(namespace);
-    }
 
     /**
      * Sets the namespace for the GQL query.
@@ -193,14 +179,6 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
-    /**
-     * Sets whether the query string can contain literals.  When {@code false}, the query string
-     * must not contain any literals and instead must bind all values.
-     */
-    @Deprecated
-    public Builder<V> allowLiteral(boolean allowLiteral) {
-      return setAllowLiteral(allowLiteral);
-    }
 
     /**
      * Sets whether the query string can contain literals.  When {@code false}, the query string
@@ -339,13 +317,6 @@ public final class GqlQuery<V> extends Query<V> {
     positionalBindings = ImmutableList.copyOf(builder.positionalBindings);
   }
 
-  /**
-   * Returns the query string for this query.
-   */
-  @Deprecated
-  public String queryString() {
-    return getQueryString();
-  }
 
   /**
    * Returns the query string for this query.
@@ -362,13 +333,6 @@ public final class GqlQuery<V> extends Query<V> {
     return allowLiteral;
   }
 
-  /**
-   * Returns an immutable map of named bindings.
-   */
-  @Deprecated
-  public Map<String, Object> namedBindings() {
-    return getNamedBindings();
-  }
 
   /**
    * Returns an immutable map of named bindings.
@@ -381,13 +345,6 @@ public final class GqlQuery<V> extends Query<V> {
     return builder.build();
   }
 
-  /**
-   * Returns an immutable list of positional bindings (using original order).
-   */
-  @Deprecated
-  public List<Object> numberArgs() {
-    return getNumberArgs();
-  }
 
   /**
    * Returns an immutable list of positional bindings (using original order).

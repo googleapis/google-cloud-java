@@ -16,10 +16,9 @@
 
 package com.google.cloud.pubsub.deprecated.spi;
 
-import com.google.api.gax.core.ForwardingRpcFuture;
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutures;
 import com.google.api.gax.core.Function;
-import com.google.api.gax.core.RpcFuture;
-import com.google.api.gax.core.RpcFutureCallback;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
@@ -27,7 +26,8 @@ import com.google.api.gax.grpc.FixedChannelProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.ProviderManager;
 import com.google.api.gax.grpc.UnaryCallSettings;
-import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.pubsub.deprecated.PubSubException;
 import com.google.cloud.pubsub.deprecated.PubSubOptions;
@@ -67,7 +67,6 @@ import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
 import java.io.IOException;
 import java.util.Set;
-import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import org.joda.time.Duration;
 
@@ -82,56 +81,9 @@ public class DefaultPubSubRpc implements PubSubRpc {
 
   private boolean closed;
 
-  private static final class InternalPubSubOptions extends PubSubOptions {
-
-    private static final long serialVersionUID = -7997372049256706185L;
-
-    private InternalPubSubOptions(PubSubOptions options) {
-      super(options.toBuilder());
-    }
-
-    @Override
-    protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
-      return super.getExecutorFactory();
-    }
-
-    @Override
-    protected UnaryCallSettings.Builder getApiCallSettings() {
-      return super.getApiCallSettings();
-    }
-
-    @Override
-    protected ChannelProvider getChannelProvider() {
-      return super.getChannelProvider();
-    }
-  }
-
-  private static final class PullFutureImpl extends ForwardingRpcFuture<PullResponse>
-      implements PullFuture {
-    PullFutureImpl(RpcFuture<PullResponse> delegate) {
-      super(delegate);
-    }
-
-    @Override
-    public void addCallback(final PullCallback callback) {
-      addCallback(
-          new RpcFutureCallback<PullResponse>() {
-            @Override
-            public void onSuccess(PullResponse response) {
-              callback.success(response);
-            }
-
-            @Override
-            public void onFailure(Throwable error) {
-              callback.failure(error);
-            }
-          });
-    }
-  }
-
   public DefaultPubSubRpc(PubSubOptions options) throws IOException {
-    InternalPubSubOptions internalOptions = new InternalPubSubOptions(options);
-    executorFactory = internalOptions.getExecutorFactory();
+    GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
+    executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();
     try {
       ExecutorProvider executorProvider = FixedExecutorProvider.create(executor);
@@ -145,13 +97,14 @@ public class DefaultPubSubRpc implements PubSubRpc {
             .build();
         channelProvider = FixedChannelProvider.create(managedChannel);
       } else {
-        channelProvider = internalOptions.getChannelProvider();
+        channelProvider = transportOptions.getChannelProvider(options);
       }
       providerManager = ProviderManager.newBuilder()
           .setChannelProvider(channelProvider)
           .setExecutorProvider(executorProvider)
           .build();
-      UnaryCallSettings.Builder callSettingsBuilder = internalOptions.getApiCallSettings();
+      UnaryCallSettings.Builder callSettingsBuilder = transportOptions
+          .getApiCallSettings(options.getRetryParams());
       PublisherSettings.Builder pubBuilder = PublisherSettings.defaultBuilder()
           .setExecutorProvider(providerManager)
           .setChannelProvider(providerManager)
@@ -173,13 +126,14 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
   }
 
-  private static <V> RpcFuture<V> translate(
-      RpcFuture<V> from, final boolean idempotent, int... returnNullOn) {
+  private static <V> ApiFuture<V> translate(
+      ApiFuture<V> from, final boolean idempotent, int... returnNullOn) {
     final Set<Integer> returnNullOnSet = Sets.newHashSetWithExpectedSize(returnNullOn.length);
     for (int value : returnNullOn) {
       returnNullOnSet.add(value);
     }
-    return from.catching(
+    return ApiFutures.<V, ApiException>catching(
+        from,
         ApiException.class,
         new Function<ApiException, V>() {
           @Override
@@ -193,25 +147,25 @@ public class DefaultPubSubRpc implements PubSubRpc {
   }
 
   @Override
-  public Future<Topic> create(Topic topic) {
+  public ApiFuture<Topic> create(Topic topic) {
     // TODO: it would be nice if we can get the idempotent information from the UnaryCallSettings
     // or from the exception
     return translate(publisherClient.createTopicCallable().futureCall(topic), true);
   }
 
   @Override
-  public Future<PublishResponse> publish(PublishRequest request) {
+  public ApiFuture<PublishResponse> publish(PublishRequest request) {
     return translate(publisherClient.publishCallable().futureCall(request), false);
   }
 
   @Override
-  public Future<Topic> get(GetTopicRequest request) {
+  public ApiFuture<Topic> get(GetTopicRequest request) {
     return translate(publisherClient.getTopicCallable().futureCall(request), true,
         Code.NOT_FOUND.value());
   }
 
   @Override
-  public Future<ListTopicsResponse> list(ListTopicsRequest request) {
+  public ApiFuture<ListTopicsResponse> list(ListTopicsRequest request) {
     // we should consider using gax PageAccessor once
     // https://github.com/googleapis/gax-java/issues/74 is fixed
     // Though it is a cleaner SPI without it, but PageAccessor is an interface
@@ -220,77 +174,77 @@ public class DefaultPubSubRpc implements PubSubRpc {
   }
 
   @Override
-  public Future<ListTopicSubscriptionsResponse> list(ListTopicSubscriptionsRequest request) {
+  public ApiFuture<ListTopicSubscriptionsResponse> list(ListTopicSubscriptionsRequest request) {
     return translate(publisherClient.listTopicSubscriptionsCallable().futureCall(request), true);
   }
 
   @Override
-  public Future<Empty> delete(DeleteTopicRequest request) {
+  public ApiFuture<Empty> delete(DeleteTopicRequest request) {
     return translate(publisherClient.deleteTopicCallable().futureCall(request), true,
         Code.NOT_FOUND.value());
   }
 
   @Override
-  public Future<Subscription> create(Subscription subscription) {
+  public ApiFuture<Subscription> create(Subscription subscription) {
     return translate(subscriberClient.createSubscriptionCallable().futureCall(subscription), false);
   }
 
   @Override
-  public Future<Subscription> get(GetSubscriptionRequest request) {
+  public ApiFuture<Subscription> get(GetSubscriptionRequest request) {
     return translate(subscriberClient.getSubscriptionCallable().futureCall(request), true,
         Code.NOT_FOUND.value());
   }
 
   @Override
-  public Future<ListSubscriptionsResponse> list(ListSubscriptionsRequest request) {
+  public ApiFuture<ListSubscriptionsResponse> list(ListSubscriptionsRequest request) {
     return translate(subscriberClient.listSubscriptionsCallable().futureCall(request), true);
   }
 
   @Override
-  public Future<Empty> delete(DeleteSubscriptionRequest request) {
+  public ApiFuture<Empty> delete(DeleteSubscriptionRequest request) {
     return translate(subscriberClient.deleteSubscriptionCallable().futureCall(request), true,
         Code.NOT_FOUND.value());
   }
 
   @Override
-  public Future<Empty> modify(ModifyAckDeadlineRequest request) {
+  public ApiFuture<Empty> modify(ModifyAckDeadlineRequest request) {
     return translate(subscriberClient.modifyAckDeadlineCallable().futureCall(request), false);
   }
 
   @Override
-  public Future<Empty> acknowledge(AcknowledgeRequest request) {
+  public ApiFuture<Empty> acknowledge(AcknowledgeRequest request) {
     return translate(subscriberClient.acknowledgeCallable().futureCall(request), false);
   }
 
-  private static PullFuture pull(SubscriberClient subscriberClient, PullRequest request) {
-    return new PullFutureImpl(translate(subscriberClient.pullCallable().futureCall(request), false));
+  private static ApiFuture<PullResponse> pull(SubscriberClient subscriberClient, PullRequest request) {
+    return translate(subscriberClient.pullCallable().futureCall(request), false);
   }
 
   @Override
-  public PullFuture pull(PullRequest request) {
+  public ApiFuture<PullResponse> pull(PullRequest request) {
     return request.getReturnImmediately()
         ? pull(subscriberClient, request) : pull(noTimeoutSubscriberClient, request);
   }
 
   @Override
-  public Future<Empty> modify(ModifyPushConfigRequest request) {
+  public ApiFuture<Empty> modify(ModifyPushConfigRequest request) {
     return translate(subscriberClient.modifyPushConfigCallable().futureCall(request), false);
   }
 
   @Override
-  public Future<Policy> getIamPolicy(String resource) {
+  public ApiFuture<Policy> getIamPolicy(String resource) {
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return translate(subscriberClient.getIamPolicyCallable().futureCall(request), true,
         Code.NOT_FOUND.value());
   }
 
   @Override
-  public Future<Policy> setIamPolicy(SetIamPolicyRequest request) {
+  public ApiFuture<Policy> setIamPolicy(SetIamPolicyRequest request) {
     return translate(subscriberClient.setIamPolicyCallable().futureCall(request), false);
   }
 
   @Override
-  public Future<TestIamPermissionsResponse> testIamPermissions(TestIamPermissionsRequest request) {
+  public ApiFuture<TestIamPermissionsResponse> testIamPermissions(TestIamPermissionsRequest request) {
     return translate(subscriberClient.testIamPermissionsCallable().futureCall(request), true);
   }
 

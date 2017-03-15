@@ -102,51 +102,6 @@ public class RetryHelperTest {
   }
 
   @Test
-  public void testTriesWithExceptionHandlingDeprecated() {
-    assertNull(RetryHelper.getContext());
-    RetryParams params =
-        RetryParams.builder().initialRetryDelayMillis(0).retryMaxAttempts(3).build();
-    ExceptionHandler handler = ExceptionHandler.builder()
-        .retryOn(IOException.class).abortOn(RuntimeException.class).build();
-    final AtomicInteger count = new AtomicInteger(3);
-    try {
-      RetryHelper.runWithRetries(new Callable<Void>() {
-        @Override public Void call() throws IOException, NullPointerException {
-          if (count.decrementAndGet() == 2) {
-            assertEquals(1, RetryHelper.getContext().getAttemptNumber());
-            throw new IOException("should be retried");
-          }
-          assertEquals(2, RetryHelper.getContext().getAttemptNumber());
-          throw new NullPointerException("Boo!");
-        }
-      }, params, handler);
-      fail("Exception should have been thrown");
-    } catch (NonRetriableException ex) {
-      assertEquals("Boo!", ex.getCause().getMessage());
-      assertEquals(1, count.intValue());
-    }
-    assertNull(RetryHelper.getContext());
-
-    params = RetryParams.builder().initialRetryDelayMillis(0).retryMaxAttempts(5).build();
-    handler = ExceptionHandler.builder()
-        .retryOn(E1Exception.class, E4Exception.class)
-        .abortOn(E3Exception.class).build();
-    final Iterator<? extends E1Exception> exceptions = Arrays.asList(
-        new E1Exception(), new E2Exception(), new E4Exception(), new E3Exception()).iterator();
-    try {
-      RetryHelper.runWithRetries(new Callable<Void>() {
-        @Override public Void call() throws E1Exception {
-          throw exceptions.next();
-        }
-      }, params, handler);
-      fail("Exception should have been thrown");
-    } catch (NonRetriableException ex) {
-      assertTrue(ex.getCause() instanceof E3Exception);
-    }
-    assertNull(RetryHelper.getContext());
-  }
-
-  @Test
   public void testTriesAtLeastMinTimes() {
     // Total retry period set to 60 seconds so as to not factor into test
     RetryParams params = RetryParams.newBuilder().setInitialRetryDelayMillis(0)
@@ -172,31 +127,6 @@ public class RetryHelperTest {
     assertNull(RetryHelper.getContext());
   }
 
-  @Test
-  public void testTriesAtLeastMinTimesDeprecated() {
-    // Total retry period set to 60 seconds so as to not factor into test
-    RetryParams params = RetryParams.builder().initialRetryDelayMillis(0)
-        .totalRetryPeriodMillis(60000)
-        .retryMinAttempts(5)
-        .retryMaxAttempts(10)
-        .build();
-    final int timesToFail = 7;
-    assertNull(RetryHelper.getContext());
-    int attempted = RetryHelper.runWithRetries(new Callable<Integer>() {
-      int timesCalled;
-      @Override public Integer call() throws IOException {
-        timesCalled++;
-        assertEquals(timesCalled, RetryHelper.getContext().getAttemptNumber());
-        assertEquals(10, RetryHelper.getContext().getRetryParams().retryMaxAttempts());
-        if (timesCalled <= timesToFail) {
-          throw new IOException();
-        }
-        return timesCalled;
-      }
-    }, params, ExceptionHandler.defaultInstance());
-    assertEquals(timesToFail + 1, attempted);
-    assertNull(RetryHelper.getContext());
-  }
 
   @Test
   public void testTriesNoMoreThanMaxTimes() {
@@ -226,33 +156,6 @@ public class RetryHelperTest {
     }
   }
 
-  @Test
-  public void testTriesNoMoreThanMaxTimesDeprecated() {
-    // Total retry period set to 60 seconds so as to not factor into test
-    final int maxAttempts = 10;
-    RetryParams params = RetryParams.builder().initialRetryDelayMillis(0)
-        .totalRetryPeriodMillis(60000)
-        .retryMinAttempts(0)
-        .retryMaxAttempts(maxAttempts)
-        .build();
-    final AtomicInteger timesCalled = new AtomicInteger(0);
-    try {
-      RetryHelper.runWithRetries(callable(new Runnable() {
-        @Override public void run() {
-          // Throw an exception up to maxAttempts times, should never be called beyond that
-          if (timesCalled.incrementAndGet() <= maxAttempts) {
-            throw new RuntimeException();
-          }
-          fail("Body was executed too many times: " + timesCalled.get());
-        }
-      }), params, ExceptionHandler.builder().retryOn(RuntimeException.class).build());
-      // Unnecessary as this line should not be possible reach even if RetryHandler is broken
-      fail("Should not have succeeded, expected all attempts to fail and give up.");
-    } catch (RetriesExhaustedException expected) {
-      // Expect the body to run exactly maxAttempts times
-      assertEquals(maxAttempts, timesCalled.get());
-    }
-  }
 
   private static class FakeClock extends Clock {
 

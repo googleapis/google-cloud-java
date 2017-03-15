@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.9.4-alpha-SNAPSHOT</version>
+    <version>0.9.5-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-pubsub</site.installationModule>
@@ -73,10 +73,10 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-all</artifactId>
-        <version>1.9.5</version>
-        <scope>test</scope>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <version>0.30</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <profiles>
