@@ -147,7 +147,28 @@ public final class Field implements Serializable {
     public static Type timestamp() {
       return new Type(LegacySQLTypeName.TIMESTAMP);
     }
+    
+    /**
+     * Returns a {@link LegacySQLTypeName#DATE} field value.
+     */
+    public static Type date() {
+      return new Type(LegacySQLTypeName.DATE);
+    }
+    
+    /**
+     * Returns a {@link LegacySQLTypeName#TIME} field value.
+     */
+    public static Type time() {
+      return new Type(LegacySQLTypeName.TIME);
+    }
 
+    /**
+     * Returns a {@link LegacySQLTypeName#DATETIME} field value.
+     */
+    public static Type datetime() {
+      return new Type(LegacySQLTypeName.DATETIME);
+    }
+    
     /**
      * Returns a {@link LegacySQLTypeName#RECORD} field value with associated list of sub-fields.
      */
