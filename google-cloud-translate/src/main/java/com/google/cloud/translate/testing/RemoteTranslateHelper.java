@@ -16,6 +16,7 @@
 
 package com.google.cloud.translate.testing;
 
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.RetryParams;
 import com.google.cloud.translate.TranslateOptions;
 
@@ -27,7 +28,8 @@ import com.google.cloud.translate.TranslateOptions;
  * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
  * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
  * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
- * {@link TranslateOptions#getConnectTimeout()} and {@link TranslateOptions#getReadTimeout()} are
+ * {@link HttpTransportOptions#getConnectTimeout()} and
+ * {@link HttpTransportOptions#getReadTimeout()} are both
  * both set to {@code 60000}.
  */
 public class RemoteTranslateHelper {
@@ -52,11 +54,13 @@ public class RemoteTranslateHelper {
    * @param apiKey API key used to issue requests to Google Translate.
    */
   public static RemoteTranslateHelper create(String apiKey) {
+    HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+        .build();
     TranslateOptions translateOptions = TranslateOptions.newBuilder()
         .setApiKey(apiKey)
         .setRetryParams(retryParams())
-        .setConnectTimeout(60000)
-        .setReadTimeout(60000)
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteTranslateHelper(translateOptions);
   }
@@ -65,10 +69,12 @@ public class RemoteTranslateHelper {
    * Creates a {@code RemoteStorageHelper} object.
    */
   public static RemoteTranslateHelper create() {
+    HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+        .build();
     TranslateOptions translateOption = TranslateOptions.newBuilder()
         .setRetryParams(retryParams())
-        .setConnectTimeout(60000)
-        .setReadTimeout(60000)
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteTranslateHelper(translateOption);
   }

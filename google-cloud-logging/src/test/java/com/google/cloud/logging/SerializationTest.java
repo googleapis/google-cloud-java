@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
@@ -80,9 +81,14 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
+    GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
+    transportOptions =
+        transportOptions.toBuilder()
+            .setInitialTimeout(1234)
+            .build();
     LoggingOptions options = LoggingOptions.newBuilder()
         .setProjectId("p1")
-        .setInitialTimeout(1234)
+        .setTransportOptions(transportOptions)
         .build();
     return new Serializable[]{options, HTTP_REQUEST, OPERATION, STRING_PAYLOAD, JSON_PAYLOAD,
         PROTO_PAYLOAD, ENTRY, METRIC_INFO, METRIC, BUCKET_DESTINATION, DATASET_DESTINATION,

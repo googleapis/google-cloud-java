@@ -16,17 +16,20 @@
 
 package com.google.cloud.storage;
 
-import com.google.cloud.HttpServiceOptions;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.storage.spi.DefaultStorageRpc;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.common.collect.ImmutableSet;
-
 import java.util.Set;
 
-public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, StorageOptions> {
+public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageOptions> {
 
   private static final long serialVersionUID = -2907268477247502947L;
+  private static final String API_SHORT_NAME = "Storage";
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
 
@@ -51,12 +54,21 @@ public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, Stor
   }
 
   public static class Builder extends
-      HttpServiceOptions.Builder<Storage, StorageRpc, StorageOptions, Builder> {
+      ServiceOptions.Builder<Storage, StorageRpc, StorageOptions, Builder> {
 
     private Builder() {}
 
     private Builder(StorageOptions options) {
       super(options);
+    }
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
     @Override
@@ -66,17 +78,30 @@ public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, Stor
   }
 
   private StorageOptions(Builder builder) {
-    super(StorageFactory.class, StorageRpcFactory.class, builder);
+    super(StorageFactory.class, StorageRpcFactory.class, builder, new StorageDefaults());
   }
 
-  @Override
-  protected StorageFactory getDefaultServiceFactory() {
-    return DefaultStorageFactory.INSTANCE;
+  private static class StorageDefaults implements
+      ServiceDefaults<Storage, StorageRpc, StorageOptions> {
+
+    @Override
+    public StorageFactory getDefaultServiceFactory() {
+      return DefaultStorageFactory.INSTANCE;
+    }
+
+    @Override
+    public StorageRpcFactory getDefaultRpcFactory() {
+      return DefaultStorageRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
-  @Override
-  protected StorageRpcFactory getDefaultRpcFactory() {
-    return DefaultStorageRpcFactory.INSTANCE;
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
   }
 
   @Override

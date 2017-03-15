@@ -16,7 +16,10 @@
 
 package com.google.cloud.pubsub.deprecated;
 
-import com.google.cloud.GrpcServiceOptions;
+import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.pubsub.deprecated.spi.DefaultPubSubRpc;
 import com.google.cloud.pubsub.deprecated.spi.PubSubRpc;
 import com.google.cloud.pubsub.deprecated.spi.PubSubRpcFactory;
@@ -24,11 +27,11 @@ import com.google.cloud.pubsub.spi.v1.PublisherSettings;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.Set;
-import java.util.concurrent.ScheduledExecutorService;
 
-public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubOptions> {
+public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptions> {
 
   private static final long serialVersionUID = 5598666986447361352L;
+  private static final String API_SHORT_NAME = "PubSub";
   private static final String PUBSUB_SCOPE = "https://www.googleapis.com/auth/pubsub";
   private static final Set<String> SCOPES = ImmutableSet.of(PUBSUB_SCOPE);
   private static final String EMULATOR_HOST_ENV_VAR = "PUBSUB_EMULATOR_HOST";
@@ -79,12 +82,21 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
   }
 
   public static class Builder extends
-      GrpcServiceOptions.Builder<PubSub, PubSubRpc, PubSubOptions, Builder> {
+      ServiceOptions.Builder<PubSub, PubSubRpc, PubSubOptions, Builder> {
 
     private Builder() {}
 
     private Builder(PubSubOptions options) {
       super(options);
+    }
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof GrpcTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only grpc transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
     @Override
@@ -94,22 +106,30 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
   }
 
   protected PubSubOptions(Builder builder) {
-    super(PubSubFactory.class, PubSubRpcFactory.class, builder);
+    super(PubSubFactory.class, PubSubRpcFactory.class, builder, new PubSubDefaults());
   }
 
-  @Override
-  protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
-    return super.getExecutorFactory();
+  private static class PubSubDefaults implements
+      ServiceDefaults<PubSub, PubSubRpc, PubSubOptions> {
+
+    @Override
+    public PubSubFactory getDefaultServiceFactory() {
+      return DefaultPubSubFactory.INSTANCE;
+    }
+
+    @Override
+    public PubSubRpcFactory getDefaultRpcFactory() {
+      return DefaultPubSubRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultGrpcTransportOptions();
+    }
   }
 
-  @Override
-  protected PubSubFactory getDefaultServiceFactory() {
-    return DefaultPubSubFactory.INSTANCE;
-  }
-
-  @Override
-  protected PubSubRpcFactory getDefaultRpcFactory() {
-    return DefaultPubSubRpcFactory.INSTANCE;
+  public static GrpcTransportOptions getDefaultGrpcTransportOptions() {
+    return GrpcTransportOptions.newBuilder().build();
   }
 
   @Override

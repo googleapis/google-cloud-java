@@ -18,7 +18,7 @@ package com.google.cloud.pubsub.deprecated;
 
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
-import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.deprecated.spi.PubSubRpc;

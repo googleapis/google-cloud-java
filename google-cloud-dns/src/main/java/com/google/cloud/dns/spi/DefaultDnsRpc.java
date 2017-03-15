@@ -41,9 +41,9 @@ import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.dns.DnsException;
 import com.google.cloud.dns.DnsOptions;
-
 import java.io.IOException;
 import java.util.Map;
 
@@ -187,8 +187,9 @@ public class DefaultDnsRpc implements DnsRpc {
    * Constructs an instance of this rpc client with provided {@link DnsOptions}.
    */
   public DefaultDnsRpc(DnsOptions options) {
-    HttpTransport transport = options.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer = options.getHttpRequestInitializer();
+    HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
+    HttpTransport transport = transportOptions.getHttpTransportFactory().create();
+    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.dns = new Dns.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())
         .setApplicationName(options.getApplicationName())

@@ -26,7 +26,8 @@ import com.google.api.gax.grpc.FixedChannelProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.ProviderManager;
 import com.google.api.gax.grpc.UnaryCallSettings;
-import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.LoggingOptions;
@@ -79,33 +80,9 @@ public class DefaultLoggingRpc implements LoggingRpc {
 
   private boolean closed;
 
-  private static final class InternalLoggingOptions extends LoggingOptions {
-
-    private static final long serialVersionUID = -2107638980310672033L;
-
-    private InternalLoggingOptions(LoggingOptions options) {
-      super(options.toBuilder());
-    }
-
-    @Override
-    protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
-      return super.getExecutorFactory();
-    }
-
-    @Override
-    protected UnaryCallSettings.Builder getApiCallSettings() {
-      return super.getApiCallSettings();
-    }
-
-    @Override
-    protected ChannelProvider getChannelProvider() {
-      return super.getChannelProvider();
-    }
-  }
-
   public DefaultLoggingRpc(LoggingOptions options) throws IOException {
-    InternalLoggingOptions internalOptions = new InternalLoggingOptions(options);
-    executorFactory = internalOptions.getExecutorFactory();
+    GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
+    executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();
     try {
       ExecutorProvider executorProvider = FixedExecutorProvider.create(executor);
@@ -119,13 +96,14 @@ public class DefaultLoggingRpc implements LoggingRpc {
             .build();
         channelProvider = FixedChannelProvider.create(managedChannel);
       } else {
-        channelProvider = internalOptions.getChannelProvider();
+        channelProvider = transportOptions.getChannelProvider(options);
       }
       providerManager = ProviderManager.newBuilder()
           .setChannelProvider(channelProvider)
           .setExecutorProvider(executorProvider)
           .build();
-      UnaryCallSettings.Builder callSettingsBuilder = internalOptions.getApiCallSettings();
+      UnaryCallSettings.Builder callSettingsBuilder = transportOptions
+          .getApiCallSettings(options.getRetryParams());
       ConfigSettings.Builder confBuilder =
           ConfigSettings.defaultBuilder()
               .setExecutorProvider(providerManager)
