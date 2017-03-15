@@ -45,7 +45,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   private final Integer maxBadRecords;
   private final Schema schema;
   private final Boolean ignoreUnknownValues;
-  private final List<String> projectionFields;
 
   public static final class Builder implements LoadConfiguration.Builder {
 
@@ -68,7 +67,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       this.maxBadRecords = writeChannelConfiguration.maxBadRecords;
       this.schema = writeChannelConfiguration.schema;
       this.ignoreUnknownValues = writeChannelConfiguration.ignoreUnknownValues;
-      this.projectionFields = writeChannelConfiguration.projectionFields;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -162,14 +160,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
-
-    @Override
-    public Builder setProjectionFields(List<String> projectionFields) {
-      this.projectionFields =
-          projectionFields != null ? ImmutableList.copyOf(projectionFields) : null;
-      return this;
-    }
-
     @Override
     public WriteChannelConfiguration build() {
       return new WriteChannelConfiguration(this);
@@ -184,7 +174,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     this.maxBadRecords = builder.maxBadRecords;
     this.schema = builder.schema;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
-    this.projectionFields = builder.projectionFields;
   }
 
 
@@ -236,8 +225,9 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
 
 
   @Override
-  public List<String> getProjectionFields() {
-    return projectionFields;
+  public DatastoreBackupOptions getDatastoreBackupOptions() {
+    return formatOptions instanceof DatastoreBackupOptions ?
+        (DatastoreBackupOptions) formatOptions : null;
   }
 
   @Override
@@ -253,8 +243,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         .add("formatOptions", formatOptions)
         .add("maxBadRecords", maxBadRecords)
         .add("schema", schema)
-        .add("ignoreUnknownValue", ignoreUnknownValues)
-        .add("projectionFields", projectionFields);
+        .add("ignoreUnknownValue", ignoreUnknownValues);
   }
 
   @Override
@@ -272,7 +261,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   public int hashCode() {
     return Objects.hash(destinationTable, createDisposition, writeDisposition, formatOptions,
-        maxBadRecords, schema, ignoreUnknownValues, projectionFields);
+        maxBadRecords, schema, ignoreUnknownValues);
   }
 
   WriteChannelConfiguration setProjectId(String projectId) {
@@ -308,7 +297,10 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     }
     loadConfigurationPb.setMaxBadRecords(maxBadRecords);
     loadConfigurationPb.setIgnoreUnknownValues(ignoreUnknownValues);
-    loadConfigurationPb.setProjectionFields(projectionFields);
+    if (getDatastoreBackupOptions() != null) {
+      DatastoreBackupOptions backupOptions = getDatastoreBackupOptions();
+      loadConfigurationPb.setProjectionFields(backupOptions.getProjectionFields());
+    }
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);
   }

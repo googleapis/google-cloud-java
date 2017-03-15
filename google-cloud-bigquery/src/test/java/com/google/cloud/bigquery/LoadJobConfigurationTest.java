@@ -40,7 +40,6 @@ public class LoadJobConfigurationTest {
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final String FORMAT = "CSV";
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
-  private static final List<String> PROJECTION_FIELDS = ImmutableList.of("field1", "field2");
   private static final Field FIELD_SCHEMA = Field.newBuilder("IntegerField", Field.Type.integer())
       .setMode(Field.Mode.REQUIRED)
       .setDescription("FieldDescription")
@@ -54,7 +53,6 @@ public class LoadJobConfigurationTest {
           .setFormatOptions(CSV_OPTIONS)
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .setMaxBadRecords(MAX_BAD_RECORDS)
-          .setProjectionFields(PROJECTION_FIELDS)
           .setSchema(TABLE_SCHEMA)
           .build();
 
@@ -126,7 +124,7 @@ public class LoadJobConfigurationTest {
     assertEquals(expected.getFormat(), value.getFormat());
     assertEquals(expected.ignoreUnknownValues(), value.ignoreUnknownValues());
     assertEquals(expected.getMaxBadRecords(), value.getMaxBadRecords());
-    assertEquals(expected.getProjectionFields(), value.getProjectionFields());
     assertEquals(expected.getSchema(), value.getSchema());
+    assertEquals(expected.getDatastoreBackupOptions(), value.getDatastoreBackupOptions());
   }
 }
