@@ -20,8 +20,8 @@ import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.storage.spi.DefaultStorageRpc;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.storage.spi.v1.HttpStorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
@@ -49,7 +49,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
 
     @Override
     public StorageRpc create(StorageOptions options) {
-      return new DefaultStorageRpc(options);
+      return new HttpStorageRpc(options);
     }
   }
 

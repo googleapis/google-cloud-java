@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.storage.spi;
+package com.google.cloud.storage.spi.v1;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;

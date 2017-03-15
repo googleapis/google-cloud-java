@@ -17,7 +17,7 @@
 package com.google.cloud.storage.contrib.nio;
 
 import com.google.cloud.spi.ServiceRpcFactory;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.StorageOptions;
 
 /**

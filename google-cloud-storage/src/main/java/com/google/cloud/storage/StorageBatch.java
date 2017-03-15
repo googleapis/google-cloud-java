@@ -23,8 +23,8 @@ import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
-import com.google.cloud.storage.spi.RpcBatch;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.storage.spi.v1.RpcBatch;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.annotations.VisibleForTesting;
 
 import java.util.Map;

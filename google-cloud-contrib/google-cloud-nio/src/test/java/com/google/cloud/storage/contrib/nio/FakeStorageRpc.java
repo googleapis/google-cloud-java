@@ -22,8 +22,8 @@ import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
-import com.google.cloud.storage.spi.RpcBatch;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.storage.spi.v1.RpcBatch;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 
 import java.io.IOException;
 import java.io.InputStream;
