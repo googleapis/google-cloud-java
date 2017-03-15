@@ -321,7 +321,7 @@ public class Subscriber {
 
     @Override
     protected void doStart() {
-      logger.log(Level.INFO, "Starting subscriber group.");
+      logger.log(Level.FINE, "Starting subscriber group.");
       // Streaming pull is not enabled on the service yet.
       // startStreamingConnections();
       startPollingConnections();
@@ -395,8 +395,8 @@ public class Subscriber {
                     if (streamAckDeadlineSeconds != possibleStreamAckDeadlineSeconds) {
                       streamAckDeadlineSeconds = possibleStreamAckDeadlineSeconds;
                       logger.log(
-                          Level.INFO,
-                          "Updating stream deadline to {} seconds.",
+                          Level.FINER,
+                          "Updating stream deadline to {0} seconds.",
                           streamAckDeadlineSeconds);
                       for (StreamingSubscriberConnection subscriberConnection :
                           streamingSubscriberConnections) {
