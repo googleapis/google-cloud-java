@@ -34,7 +34,7 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
-import com.google.cloud.logging.spi.LoggingRpc;
+import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;

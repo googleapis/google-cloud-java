@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.logging.spi;
+package com.google.cloud.logging.spi.v2;
 
 import com.google.api.gax.core.ApiFuture;
 import com.google.cloud.ServiceRpc;

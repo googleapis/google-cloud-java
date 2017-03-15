@@ -20,8 +20,8 @@ import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.logging.spi.DefaultLoggingRpc;
-import com.google.cloud.logging.spi.LoggingRpc;
+import com.google.cloud.logging.spi.v2.GrpcLoggingRpc;
+import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.cloud.logging.spi.LoggingRpcFactory;
 import com.google.cloud.logging.spi.v2.LoggingSettings;
 import com.google.common.collect.ImmutableSet;
@@ -60,7 +60,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
     @Override
     public LoggingRpc create(LoggingOptions options) {
       try {
-        return new DefaultLoggingRpc(options);
+        return new GrpcLoggingRpc(options);
       } catch (IOException e) {
         throw new LoggingException(e, true);
       }
