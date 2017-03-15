@@ -24,16 +24,11 @@ import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.auth.Credentials;
-import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.net.HostAndPort;
-
 import io.grpc.internal.SharedResourceHolder;
 import io.grpc.internal.SharedResourceHolder.Resource;
-
-import org.joda.time.Duration;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
@@ -41,20 +36,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import org.joda.time.Duration;
 
 /**
- * Abstract class representing service options for those services that use gRPC as the transport
+ * Class representing service options for those services that use gRPC as the transport
  * layer.
- *
- * @param <ServiceT> the service subclass
- * @param <ServiceRpcT> the spi-layer class corresponding to the service
- * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
  */
-public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, ServiceRpcT,
-    OptionsT extends GrpcServiceOptions<ServiceT, ServiceRpcT, OptionsT>>
-    extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT> {
+public class GrpcTransportOptions implements TransportOptions {
 
-  private static final long serialVersionUID = -3093986242928037007L;
+  private static final long serialVersionUID = -9049538465533951165L;
   private final String executorFactoryClassName;
   private final int initialTimeout;
   private final double timeoutMultiplier;
@@ -124,35 +114,27 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
   }
 
   /**
-   * Builder for {@code GrpcServiceOptions}.
-   *
-   * @param <ServiceT> the service subclass
-   * @param <ServiceRpcT> the spi-layer class corresponding to the service
-   * @param <OptionsT> the {@code GrpcServiceOptions} subclass corresponding to the service
-   * @param <B> the {@code ServiceOptions} builder
+   * Builder for {@code GrpcTransportOptions}.
    */
-  protected abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
-      OptionsT extends GrpcServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
-      B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>>
-      extends ServiceOptions.Builder<ServiceT, ServiceRpcT, OptionsT, B> {
+  public static class Builder {
 
     private ExecutorFactory executorFactory;
     private int initialTimeout = 20_000;
     private double timeoutMultiplier = 1.5;
     private int maxTimeout = 100_000;
 
-    protected Builder() {}
+    private Builder() {}
 
-    protected Builder(GrpcServiceOptions<ServiceT, ServiceRpcT, OptionsT> options) {
-      super(options);
+    private Builder(GrpcTransportOptions options) {
       executorFactory = options.executorFactory;
       initialTimeout = options.initialTimeout;
       timeoutMultiplier = options.timeoutMultiplier;
       maxTimeout = options.maxTimeout;
     }
 
-    @Override
-    protected abstract GrpcServiceOptions<ServiceT, ServiceRpcT, OptionsT> build();
+    public GrpcTransportOptions build() {
+      return new GrpcTransportOptions(this);
+    }
 
     /**
      * Sets the scheduled executor factory. This method can be used to provide an user-defined
@@ -160,9 +142,9 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
      *
      * @return the builder
      */
-    public B setExecutorFactory(ExecutorFactory<ScheduledExecutorService> executorFactory) {
+    public Builder setExecutorFactory(ExecutorFactory<ScheduledExecutorService> executorFactory) {
       this.executorFactory = executorFactory;
-      return self();
+      return this;
     }
 
     /**
@@ -172,10 +154,10 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
      * @return the builder
      * @throws IllegalArgumentException if the provided timeout is &lt; 0
      */
-    public B setInitialTimeout(int initialTimeout) {
+    public Builder setInitialTimeout(int initialTimeout) {
       Preconditions.checkArgument(initialTimeout > 0, "Initial timeout must be > 0");
       this.initialTimeout = initialTimeout;
-      return self();
+      return this;
     }
 
     /**
@@ -185,10 +167,10 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
      * @return the builder
      * @throws IllegalArgumentException if the provided timeout multiplier is &lt; 0
      */
-    public B setTimeoutMultiplier(double timeoutMultiplier) {
+    public Builder setTimeoutMultiplier(double timeoutMultiplier) {
       Preconditions.checkArgument(timeoutMultiplier >= 1.0, "Timeout multiplier must be >= 1");
       this.timeoutMultiplier = timeoutMultiplier;
-      return self();
+      return this;
     }
 
     /**
@@ -198,20 +180,16 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
      *
      * @return the builder
      */
-    public B setMaxTimeout(int maxTimeout) {
+    public Builder setMaxTimeout(int maxTimeout) {
       this.maxTimeout = maxTimeout;
-      return self();
+      return this;
     }
   }
 
   @SuppressWarnings("unchecked")
-  protected GrpcServiceOptions(
-      Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
-      Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass, Builder<ServiceT,
-      ServiceRpcT, OptionsT, ?> builder) {
-    super(serviceFactoryClass, rpcFactoryClass, builder);
+  private GrpcTransportOptions(Builder builder) {
     executorFactory = firstNonNull(builder.executorFactory,
-        getFromServiceLoader(ExecutorFactory.class, DefaultExecutorFactory.INSTANCE));
+        ServiceOptions.getFromServiceLoader(ExecutorFactory.class, DefaultExecutorFactory.INSTANCE));
     executorFactoryClassName = executorFactory.getClass().getName();
     initialTimeout = builder.initialTimeout;
     timeoutMultiplier = builder.timeoutMultiplier;
@@ -221,37 +199,39 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
   /**
    * Returns a scheduled executor service provider.
    */
-  protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
+  public ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
     return executorFactory;
   }
 
   /**
    * Returns a builder for API call settings.
    */
-  protected UnaryCallSettings.Builder getApiCallSettings() {
+  public UnaryCallSettings.Builder getApiCallSettings(RetryParams retryParams) {
     // todo(mziccard): specify timeout these settings:
     // retryParams().retryMaxAttempts(), retryParams().retryMinAttempts()
     final RetrySettings.Builder builder = RetrySettings.newBuilder()
-        .setTotalTimeout(Duration.millis(getRetryParams().getTotalRetryPeriodMillis()))
+        .setTotalTimeout(Duration.millis(retryParams.getTotalRetryPeriodMillis()))
         .setInitialRpcTimeout(Duration.millis(getInitialTimeout()))
         .setRpcTimeoutMultiplier(getTimeoutMultiplier())
         .setMaxRpcTimeout(Duration.millis(getMaxTimeout()))
-        .setInitialRetryDelay(Duration.millis(getRetryParams().getInitialRetryDelayMillis()))
-        .setRetryDelayMultiplier(getRetryParams().getRetryDelayBackoffFactor())
-        .setMaxRetryDelay(Duration.millis(getRetryParams().getMaxRetryDelayMillis()));
+        .setInitialRetryDelay(Duration.millis(retryParams.getInitialRetryDelayMillis()))
+        .setRetryDelayMultiplier(retryParams.getRetryDelayBackoffFactor())
+        .setMaxRetryDelay(Duration.millis(retryParams.getMaxRetryDelayMillis()));
     return UnaryCallSettings.newBuilder().setRetrySettingsBuilder(builder);
   }
 
   /**
    * Returns a channel provider.
    */
-  protected ChannelProvider getChannelProvider() {
-    HostAndPort hostAndPort = HostAndPort.fromString(getHost());
+  public static ChannelProvider getChannelProvider(
+      ServiceOptions<?, ?, ?> serviceOptions) {
+    HostAndPort hostAndPort = HostAndPort.fromString(serviceOptions.getHost());
     InstantiatingChannelProvider.Builder builder = InstantiatingChannelProvider.newBuilder()
         .setServiceAddress(hostAndPort.getHostText())
         .setPort(hostAndPort.getPort())
-        .setClientLibHeader(getGoogApiClientLibName(), firstNonNull(getLibraryVersion(), ""));
-    Credentials scopedCredentials = getScopedCredentials();
+        .setClientLibHeader(serviceOptions.getGoogApiClientLibName(),
+            firstNonNull(serviceOptions.getLibraryVersion(), ""));
+    Credentials scopedCredentials = serviceOptions.getScopedCredentials();
     if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
       builder.setCredentialsProvider(FixedCredentialsProvider.create(scopedCredentials));
     }
@@ -281,15 +261,26 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
     return maxTimeout;
   }
 
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
   @Override
-  protected int baseHashCode() {
-    return Objects.hash(super.baseHashCode(), executorFactoryClassName, initialTimeout,
+  public int hashCode() {
+    return Objects.hash(executorFactoryClassName, initialTimeout,
         timeoutMultiplier, maxTimeout);
   }
 
-  protected boolean baseEquals(GrpcServiceOptions<?, ?, ?> other) {
-    return super.baseEquals(other)
-        && Objects.equals(executorFactoryClassName, other.executorFactoryClassName)
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    GrpcTransportOptions other = (GrpcTransportOptions) obj;
+    return Objects.equals(executorFactoryClassName, other.executorFactoryClassName)
         && Objects.equals(initialTimeout, other.initialTimeout)
         && Objects.equals(timeoutMultiplier, other.timeoutMultiplier)
         && Objects.equals(maxTimeout, other.maxTimeout);
@@ -297,6 +288,10 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    executorFactory = newInstance(executorFactoryClassName);
+    executorFactory = ServiceOptions.newInstance(executorFactoryClassName);
+  }
+
+  public static Builder newBuilder() {
+    return new Builder();
   }
 }

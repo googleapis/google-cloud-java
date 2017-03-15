@@ -161,17 +161,27 @@ public class ServiceOptionsTest {
     }
 
     private TestServiceOptions(Builder builder) {
-      super(TestServiceFactory.class, TestServiceRpcFactory.class, builder);
+      super(TestServiceFactory.class, TestServiceRpcFactory.class, builder,
+          new TestServiceDefaults());
     }
 
-    @Override
-    protected TestServiceFactory getDefaultServiceFactory() {
-      return DefaultTestServiceFactory.INSTANCE;
-    }
+    private static class TestServiceDefaults implements
+        ServiceDefaults<TestService, TestServiceRpc, TestServiceOptions> {
 
-    @Override
-    protected TestServiceRpcFactory getDefaultRpcFactory() {
-      return DefaultTestServiceRpcFactory.INSTANCE;
+      @Override
+      public TestServiceFactory getDefaultServiceFactory() {
+        return DefaultTestServiceFactory.INSTANCE;
+      }
+
+      @Override
+      public TestServiceRpcFactory getDefaultRpcFactory() {
+        return DefaultTestServiceRpcFactory.INSTANCE;
+      }
+
+      @Override
+      public TransportOptions getDefaultTransportOptions() {
+        return HttpTransportOptions.newBuilder().build();
+      }
     }
 
     @Override

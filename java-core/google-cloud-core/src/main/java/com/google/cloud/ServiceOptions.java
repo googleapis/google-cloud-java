@@ -90,6 +90,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private final String serviceFactoryClassName;
   private final Clock clock;
   private final Credentials credentials;
+  private final TransportOptions transportOptions;
 
   private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
@@ -115,6 +116,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
     private Clock clock;
+    private TransportOptions transportOptions;
 
     protected Builder() {}
 
@@ -126,6 +128,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       serviceFactory = options.serviceFactory;
       serviceRpcFactory = options.serviceRpcFactory;
       clock = options.clock;
+      transportOptions = options.transportOptions;
     }
 
     protected abstract ServiceOptions<ServiceT, ServiceRpcT, OptionsT> build();
@@ -219,11 +222,22 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       this.serviceRpcFactory = serviceRpcFactory;
       return self();
     }
+
+    /**
+     * Sets the transport options.
+     *
+     * @return the builder
+     */
+    public B setTransportOptions(TransportOptions transportOptions) {
+      this.transportOptions = transportOptions;
+      return self();
+    }
   }
 
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
-      Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
+      Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder,
+      ServiceDefaults<ServiceT, ServiceRpcT, OptionsT> serviceDefaults) {
     projectId = builder.projectId != null ? builder.projectId : getDefaultProject();
     if (projectIdRequired()) {
       checkArgument(
@@ -235,12 +249,14 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     credentials = builder.credentials != null ? builder.credentials : defaultCredentials();
     retryParams = firstNonNull(builder.retryParams, defaultRetryParams());
     serviceFactory = firstNonNull(builder.serviceFactory,
-        getFromServiceLoader(serviceFactoryClass, getDefaultServiceFactory()));
+        getFromServiceLoader(serviceFactoryClass, serviceDefaults.getDefaultServiceFactory()));
     serviceFactoryClassName = serviceFactory.getClass().getName();
     serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
-        getFromServiceLoader(rpcFactoryClass, getDefaultRpcFactory()));
+        getFromServiceLoader(rpcFactoryClass, serviceDefaults.getDefaultRpcFactory()));
     serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
     clock = firstNonNull(builder.clock, Clock.defaultClock());
+    transportOptions = firstNonNull(builder.transportOptions,
+        serviceDefaults.getDefaultTransportOptions());
   }
 
   /**
@@ -495,6 +511,12 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return clock;
   }
 
+  /**
+   * Returns the transport-specific options for this service.
+   */
+  public TransportOptions getTransportOptions() {
+    return transportOptions;
+  }
 
   /**
    * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
@@ -516,13 +538,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    */
   public String getGoogApiClientLibName() {
     return X_GOOGLE_CLIENT_HEADER_NAME;
-  }
-
-  /**
-   * Returns the library's version as a string.
-   */
-  public String libraryVersion() {
-    return getLibraryVersion();
   }
 
   /**
@@ -561,13 +576,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       throw new IOException(e);
     }
   }
-
-
-  protected abstract ServiceFactory<ServiceT, OptionsT> getDefaultServiceFactory();
-
-
-  protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> getDefaultRpcFactory();
-
 
   protected abstract Set<String> getScopes();
 

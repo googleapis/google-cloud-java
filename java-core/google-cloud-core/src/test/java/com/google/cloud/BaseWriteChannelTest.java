@@ -48,7 +48,7 @@ public class BaseWriteChannelTest {
         Class<? extends ServiceFactory<CustomService, CustomServiceOptions>> serviceFactoryClass,
         Class<? extends ServiceRpcFactory<Object, CustomServiceOptions>> rpcFactoryClass,
         Builder<CustomService, Object, CustomServiceOptions, ?> builder) {
-      super(serviceFactoryClass, rpcFactoryClass, builder);
+      super(serviceFactoryClass, rpcFactoryClass, builder, null);
     }
   }
 
