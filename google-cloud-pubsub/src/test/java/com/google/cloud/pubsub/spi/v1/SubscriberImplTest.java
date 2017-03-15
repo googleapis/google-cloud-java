@@ -84,14 +84,14 @@ public class SubscriberImplTest {
         new LinkedBlockingQueue<>();
     private AckReply ackReply = AckReply.ACK;
     private Optional<CountDownLatch> messageCountLatch = Optional.absent();
-    private Optional<Throwable> error = Optional.absent();
+    private Optional<RuntimeException> error = Optional.absent();
     private boolean explicitAckReplies;
 
     void setReply(AckReply ackReply) {
       this.ackReply = ackReply;
     }
 
-    void setErrorReply(Throwable error) {
+    void setErrorReply(RuntimeException error) {
       this.error = Optional.of(error);
     }
 
@@ -111,18 +111,20 @@ public class SubscriberImplTest {
 
     @Override
     public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
-      if (explicitAckReplies) {
-        try {
-          outstandingMessageReplies.put(consumer);
-        } catch (InterruptedException e) {
-          throw new IllegalStateException(e);
+      try {
+        if (explicitAckReplies) {
+          try {
+            outstandingMessageReplies.put(consumer);
+          } catch (InterruptedException e) {
+            throw new IllegalStateException(e);
+          }
+        } else {
+          replyTo(consumer);
         }
-      } else {
-        replyTo(consumer);
-      }
-
-      if (messageCountLatch.isPresent()) {
-        messageCountLatch.get().countDown();
+      } finally {
+        if (messageCountLatch.isPresent()) {
+          messageCountLatch.get().countDown();
+        }
       }
     }
 
@@ -145,9 +147,9 @@ public class SubscriberImplTest {
 
     private void replyTo(AckReplyConsumer reply) {
       if (error.isPresent()) {
-        reply.accept(null, error.get());
+        throw error.get();
       } else {
-        reply.accept(ackReply, null);
+        reply.accept(ackReply);
       }
     }
   }
@@ -207,7 +209,7 @@ public class SubscriberImplTest {
 
   @Test
   public void testReceiverError_NacksMessage() throws Exception {
-    testReceiver.setErrorReply(new Exception("Can't process message"));
+    testReceiver.setErrorReply(new RuntimeException("Can't process message"));
 
     Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
