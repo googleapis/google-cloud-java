@@ -95,7 +95,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
 
   @Override
   protected void doStart() {
-    logger.log(Level.FINE, "Starting subscriber.");
+    logger.config("Starting subscriber.");
     initialize();
     notifyStarted();
   }

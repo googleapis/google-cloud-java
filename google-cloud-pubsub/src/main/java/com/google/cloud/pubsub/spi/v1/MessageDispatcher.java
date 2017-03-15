@@ -366,7 +366,7 @@ class MessageDispatcher {
                   * 1000L);
       logger.log(
           Level.FINER,
-          "Running alarm sent outstanding acks, at time: {0}, with cutover time: {1}, padding {2}",
+          "Running alarm sent outstanding acks, at time: {0}, with cutover time: {1}, padding: {2}",
           new Object[] {now, cutOverTime, ackExpirationPadding});
       Instant nextScheduleExpiration = null;
       List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();

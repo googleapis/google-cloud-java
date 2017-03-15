@@ -96,7 +96,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
   @Override
   protected void doStart() {
-    logger.log(Level.FINE, "Starting subscriber.");
+    logger.config("Starting subscriber.");
     initialize();
     notifyStarted();
   }
@@ -140,7 +140,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
     @Override
     public void onCompleted() {
-      logger.log(Level.FINE, "Streaming pull terminated successfully!");
+      logger.fine("Streaming pull terminated successfully!");
       errorFuture.set(null);
     }
   }
