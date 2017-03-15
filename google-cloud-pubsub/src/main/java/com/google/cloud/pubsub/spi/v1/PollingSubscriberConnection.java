@@ -167,8 +167,12 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
 
           @Override
           public void onFailure(Throwable cause) {
-            if (!(cause instanceof StatusRuntimeException)
-                || isRetryable(((StatusRuntimeException) cause).getStatus())) {
+            if (!isAlive()) {
+              // we don't care about subscription failures when we're no longer running.
+              logger.log(Level.FINE, "pull failure after service no longer running", cause);
+              return;
+            }
+            if (StatusUtil.isRetryable(cause)) {
               logger.log(Level.SEVERE, "Failed to pull messages (recoverable): ", cause);
               executor.schedule(
                   new Runnable() {
@@ -183,12 +187,16 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
                   },
                   backoff.getMillis(),
                   TimeUnit.MILLISECONDS);
-              return;
+            } else {
+              messageDispatcher.stop();
+              notifyFailed(cause);
             }
-            messageDispatcher.stop();
-            notifyFailed(cause);
           }
         });
+  }
+
+  private boolean isAlive() {
+    return state() == State.RUNNING || state() == State.STARTING;
   }
 
   @Override
