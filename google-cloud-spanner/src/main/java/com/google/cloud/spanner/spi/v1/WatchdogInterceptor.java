@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.spi;
+package com.google.cloud.spanner.spi.v1;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;

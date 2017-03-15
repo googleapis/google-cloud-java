@@ -19,7 +19,7 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.spanner.spi.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.io.Resources;
 import com.google.protobuf.util.JsonFormat;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryMode;

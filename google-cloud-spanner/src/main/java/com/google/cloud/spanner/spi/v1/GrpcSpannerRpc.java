@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.spi;
+package com.google.cloud.spanner.spi.v1;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
@@ -91,14 +91,14 @@ import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
 /** Implementation of Cloud Spanner remote calls using gRPC. */
-public class DefaultSpannerRpc implements SpannerRpc {
-  private static final Logger logger = Logger.getLogger(DefaultSpannerRpc.class.getName());
+public class GrpcSpannerRpc implements SpannerRpc {
+  private static final Logger logger = Logger.getLogger(GrpcSpannerRpc.class.getName());
 
   public static final String API_CLIENT =
       String.format(
           "google-cloud-java/%s",
           MoreObjects.firstNonNull(
-              DefaultSpannerRpc.class.getPackage().getImplementationVersion(), ""));
+              GrpcSpannerRpc.class.getPackage().getImplementationVersion(), ""));
   private static final Metadata.Key<String> API_CLIENT_KEY =
       Metadata.Key.of("x-goog-api-client", Metadata.ASCII_STRING_MARSHALLER);
   private static final Metadata.Key<String> RESOURCE_PREFIX_KEY =
@@ -115,7 +115,7 @@ public class DefaultSpannerRpc implements SpannerRpc {
   private final String projectId;
   private final CallCredentials credentials;
 
-  public DefaultSpannerRpc(SpannerOptions options) {
+  public GrpcSpannerRpc(SpannerOptions options) {
     this.projectId = options.getProjectId();
     this.credentials = callCredentials(options);
     ImmutableList.Builder<Channel> channelsBuilder = ImmutableList.builder();

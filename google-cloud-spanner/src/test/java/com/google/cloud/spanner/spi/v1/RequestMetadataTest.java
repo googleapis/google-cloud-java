@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.spi;
+package com.google.cloud.spanner.spi.v1;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -22,7 +22,8 @@ import static org.mockito.Mockito.doNothing;
 
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.SpannerOptions;
-import com.google.cloud.spanner.spi.DefaultSpannerRpc.MetadataClientCall;
+import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc;
+import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc.MetadataClientCall;
 import io.grpc.ClientCall;
 import io.grpc.ClientCall.Listener;
 import io.grpc.ManagedChannel;
@@ -37,7 +38,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-/** Unit tests for {@link com.google.cloud.spanner.spi.DefaultSpannerRpc.MetadataClientCall}. */
+/** Unit tests for {@link GrpcSpannerRpc.MetadataClientCall}. */
 @RunWith(JUnit4.class)
 public class RequestMetadataTest {
   static final Metadata.Key<String> HEADER_KEY =
@@ -52,7 +53,7 @@ public class RequestMetadataTest {
   }
 
   SpannerOptions options;
-  DefaultSpannerRpc rpc;
+  GrpcSpannerRpc rpc;
   Metadata metadata;
 
   @Mock ManagedChannel channel;
@@ -70,7 +71,7 @@ public class RequestMetadataTest {
             .setProjectId("p")
             .setCredentials(NoCredentials.getInstance())
             .build();
-    rpc = new DefaultSpannerRpc(options);
+    rpc = new GrpcSpannerRpc(options);
     metadata = new Metadata();
   }
 

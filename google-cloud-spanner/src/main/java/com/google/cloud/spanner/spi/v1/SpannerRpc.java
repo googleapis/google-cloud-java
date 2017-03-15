@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.spi;
+package com.google.cloud.spanner.spi.v1;
 
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.spanner.SpannerException;
