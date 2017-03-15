@@ -24,8 +24,8 @@ import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.spi.DefaultTranslateRpc;
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.HttpTranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
@@ -63,7 +63,7 @@ public class TranslateOptions extends
 
     @Override
     public TranslateRpc create(TranslateOptions options) {
-      return new DefaultTranslateRpc(options);
+      return new HttpTranslateRpc(options);
     }
   }
 

@@ -14,11 +14,8 @@
  * limitations under the License.
  */
 
-package com.google.cloud.translate.spi;
+package com.google.cloud.translate.spi.v2;
 
-import static com.google.cloud.translate.spi.TranslateRpc.Option.MODEL;
-import static com.google.cloud.translate.spi.TranslateRpc.Option.SOURCE_LANGUAGE;
-import static com.google.cloud.translate.spi.TranslateRpc.Option.TARGET_LANGUAGE;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.client.http.GenericUrl;
@@ -44,12 +41,12 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class DefaultTranslateRpc implements TranslateRpc {
+public class HttpTranslateRpc implements TranslateRpc {
 
   private final TranslateOptions options;
   private final Translate translate;
 
-  public DefaultTranslateRpc(TranslateOptions options) {
+  public HttpTranslateRpc(TranslateOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
@@ -95,7 +92,7 @@ public class DefaultTranslateRpc implements TranslateRpc {
   public List<LanguagesResource> listSupportedLanguages(Map<Option, ?> optionMap) {
     try {
       Map<String, ?> content = ImmutableMap.of("target",
-          firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()));
+          firstNonNull(Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()));
       HttpRequest httpRequest = translate.getRequestFactory()
           .buildPostRequest(buildTargetUrl("languages"),
               new JsonHttpContent(translate.getJsonFactory(), content))
@@ -121,14 +118,14 @@ public class DefaultTranslateRpc implements TranslateRpc {
       // TODO use POST as soon as usage of "model" correctly reports an error in non-whitelisted
       // projects
       String targetLanguage =
-          firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage());
-      final String sourceLanguage = SOURCE_LANGUAGE.getString(optionMap);
+          firstNonNull(Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage());
+      final String sourceLanguage = Option.SOURCE_LANGUAGE.getString(optionMap);
       List<TranslationsResource> translations =
           translate.translations()
               .list(texts, targetLanguage)
               .setSource(sourceLanguage)
               .setKey(options.getApiKey())
-              .set("model", MODEL.getString(optionMap))
+              .set("model", Option.MODEL.getString(optionMap))
               .execute()
               .getTranslations();
       return Lists.transform(

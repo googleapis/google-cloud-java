@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.translate.spi;
+package com.google.cloud.translate.spi.v2;
 
 import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.LanguagesResource;
