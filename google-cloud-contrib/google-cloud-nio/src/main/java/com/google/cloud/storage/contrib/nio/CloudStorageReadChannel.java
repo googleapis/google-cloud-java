@@ -117,7 +117,6 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
             innerOpen();
             continue;
           } else if ((exs.getCode() == 500 || exs.getCode() == 503)  && retries < maxRetries) {
-            // Retrying works in practice.
             retries++;
             sleepForAttempt(retries);
             continue;

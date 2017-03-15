@@ -225,7 +225,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   private SeekableByteChannel newReadChannel(Path path, Set<? extends OpenOption> options)
       throws IOException {
     initStorage();
-    int maxChannelReopens = ((CloudStorageFileSystem)path.getFileSystem()).config().maxChannelReopens();
+    int maxChannelReopens = ((CloudStorageFileSystem) path.getFileSystem()).config().maxChannelReopens();
     for (OpenOption option : options) {
       if (option instanceof StandardOpenOption) {
         switch ((StandardOpenOption) option) {
@@ -247,8 +247,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           default:
             throw new UnsupportedOperationException(option.toString());
         }
-      } else if (option instanceof OptionMaxChannelReopen) {
-        maxChannelReopens = ((OptionMaxChannelReopen)option).maxChannelReopen();
+      } else if (option instanceof OptionMaxChannelReopens) {
+        maxChannelReopens = ((OptionMaxChannelReopens) option).maxChannelReopens();
       } else {
         throw new UnsupportedOperationException(option.toString());
       }
