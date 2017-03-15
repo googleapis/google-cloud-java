@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.resourcemanager.spi;
+package com.google.cloud.resourcemanager.spi.v1beta1;
 
 import com.google.api.services.cloudresourcemanager.model.Policy;
 import com.google.api.services.cloudresourcemanager.model.Project;

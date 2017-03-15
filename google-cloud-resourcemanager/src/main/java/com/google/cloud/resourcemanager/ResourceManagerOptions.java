@@ -20,8 +20,8 @@ import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.resourcemanager.spi.DefaultResourceManagerRpc;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.HttpResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
@@ -59,7 +59,7 @@ public class ResourceManagerOptions
 
     @Override
     public ResourceManagerRpc create(ResourceManagerOptions options) {
-      return new DefaultResourceManagerRpc(options);
+      return new HttpResourceManagerRpc(options);
     }
   }
 
