@@ -68,12 +68,6 @@ import java.util.logging.SimpleFormatter;
  *     {@code java.log}).
  * <li>{@code com.google.cloud.logging.LoggingHandler.level} specifies the default level for the
  *     handler (defaults to {@code Level.INFO}).
- *     <p> This configuration also sets the "base severity level".
- *     Logs with the same severity with the base could be more efficiently sent to Stackdriver.
- *     The base severity defaults to the level of the handler or {@code Level.FINEST}
- *     if the handler is set to {@code Level.ALL}.
- *     There is currently no way to modify the base level, see
- *     <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740">tracking issue</a>.
  * <li>{@code com.google.cloud.logging.LoggingHandler.filter} specifies the name of a {@link Filter}
  *     class to use (defaults to no filter).
  * <li>{@code com.google.cloud.logging.LoggingHandler.formatter} specifies the name of a
@@ -252,7 +246,7 @@ public class LoggingHandler extends Handler {
     return builder.build();
   }
 
-  static class LogConfigHelper {
+  private static class LogConfigHelper {
 
     private final LogManager manager = LogManager.getLogManager();
 
