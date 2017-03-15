@@ -29,7 +29,7 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeOptions> {
+public class ComputeOptions extends ServiceOptions<Compute, ComputeOptions> {
 
   private static final String API_SHORT_NAME = "Compute";
   private static final String COMPUTE_SCOPE = "https://www.googleapis.com/auth/compute";
@@ -57,7 +57,7 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeO
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<Compute, ComputeRpc, ComputeOptions, Builder> {
+      ServiceOptions.Builder<Compute, ComputeOptions, Builder> {
 
     private Builder() {
     }
@@ -86,7 +86,7 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeO
   }
 
   private static class ComputeDefaults implements
-      ServiceDefaults<Compute, ComputeRpc, ComputeOptions> {
+      ServiceDefaults<Compute, ComputeOptions> {
 
     @Override
     public ComputeFactory getDefaultServiceFactory() {
@@ -111,6 +111,10 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeO
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected ComputeRpc getComputeRpc() {
+    return (ComputeRpc) getRpc();
   }
 
   @Override

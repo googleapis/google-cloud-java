@@ -224,7 +224,7 @@ public class GrpcTransportOptions implements TransportOptions {
    * Returns a channel provider.
    */
   public static ChannelProvider getChannelProvider(
-      ServiceOptions<?, ?, ?> serviceOptions) {
+      ServiceOptions<?, ?> serviceOptions) {
     HostAndPort hostAndPort = HostAndPort.fromString(serviceOptions.getHost());
     InstantiatingChannelProvider.Builder builder = InstantiatingChannelProvider.newBuilder()
         .setServiceAddress(hostAndPort.getHostText())

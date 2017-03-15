@@ -51,7 +51,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
 
   TranslateImpl(TranslateOptions options) {
     super(options);
-    translateRpc = options.getRpc();
+    translateRpc = options.getTranslateRpc();
   }
 
   @Override

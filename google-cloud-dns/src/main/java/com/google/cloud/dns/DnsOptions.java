@@ -27,7 +27,7 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
+public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
 
   private static final long serialVersionUID = -2501790264435912627L;
   private static final String API_SHORT_NAME = "Dns";
@@ -53,7 +53,7 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
     }
   }
 
-  public static class Builder extends ServiceOptions.Builder<Dns, DnsRpc,
+  public static class Builder extends ServiceOptions.Builder<Dns,
       DnsOptions, Builder> {
 
     private Builder() {
@@ -83,7 +83,7 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
   }
 
   private static class DnsDefaults implements
-      ServiceDefaults<Dns, DnsRpc, DnsOptions> {
+      ServiceDefaults<Dns, DnsOptions> {
 
     @Override
     public DnsFactory getDefaultServiceFactory() {
@@ -108,6 +108,10 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected DnsRpc getDnsRpc() {
+    return (DnsRpc) getRpc();
   }
 
   @SuppressWarnings("unchecked")

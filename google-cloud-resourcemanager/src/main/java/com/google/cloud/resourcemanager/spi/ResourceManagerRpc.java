@@ -18,12 +18,13 @@ package com.google.cloud.resourcemanager.spi;
 
 import com.google.api.services.cloudresourcemanager.model.Policy;
 import com.google.api.services.cloudresourcemanager.model.Project;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.resourcemanager.ResourceManagerException;
 
 import java.util.List;
 import java.util.Map;
 
-public interface ResourceManagerRpc {
+public interface ResourceManagerRpc extends ServiceRpc {
 
   enum Option {
     FILTER("filter"),

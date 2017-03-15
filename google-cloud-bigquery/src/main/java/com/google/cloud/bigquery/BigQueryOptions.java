@@ -29,7 +29,7 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQueryOptions> {
+public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   private static final String API_SHORT_NAME = "BigQuery";
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
@@ -57,7 +57,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<BigQuery, BigQueryRpc, BigQueryOptions, Builder> {
+      ServiceOptions.Builder<BigQuery, BigQueryOptions, Builder> {
 
     private Builder() {
     }
@@ -86,7 +86,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
   }
 
   private static class BigQueryDefaults implements
-      ServiceDefaults<BigQuery, BigQueryRpc, BigQueryOptions> {
+      ServiceDefaults<BigQuery, BigQueryOptions> {
 
     @Override
     public BigQueryFactory getDefaultServiceFactory() {
@@ -111,6 +111,10 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected BigQueryRpc getBigQueryRpc() {
+    return (BigQueryRpc) getRpc();
   }
 
   @SuppressWarnings("unchecked")

@@ -184,7 +184,7 @@ final class MessageConsumerImpl implements MessageConsumer {
     this.pubsubOptions = builder.pubsubOptions;
     this.subscription = builder.subscription;
     this.messageProcessor = builder.messageProcessor;
-    this.pubsubRpc = pubsubOptions.getRpc();
+    this.pubsubRpc = pubsubOptions.getPubSubRpc();
     this.pubsub = pubsubOptions.getService();
     this.deadlineRenewer = builder.deadlineRenewer;
     this.queuedCallbacks = new AtomicInteger();

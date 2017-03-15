@@ -28,7 +28,7 @@ import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.Set;
 
-public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptions> {
+public class PubSubOptions extends ServiceOptions<PubSub, PubSubOptions> {
 
   private static final long serialVersionUID = 5598666986447361352L;
   private static final String API_SHORT_NAME = "PubSub";
@@ -82,7 +82,7 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptio
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<PubSub, PubSubRpc, PubSubOptions, Builder> {
+      ServiceOptions.Builder<PubSub, PubSubOptions, Builder> {
 
     private Builder() {}
 
@@ -110,7 +110,7 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptio
   }
 
   private static class PubSubDefaults implements
-      ServiceDefaults<PubSub, PubSubRpc, PubSubOptions> {
+      ServiceDefaults<PubSub, PubSubOptions> {
 
     @Override
     public PubSubFactory getDefaultServiceFactory() {
@@ -135,6 +135,10 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptio
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected PubSubRpc getPubSubRpc() {
+    return (PubSubRpc) getRpc();
   }
 
   @Override

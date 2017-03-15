@@ -595,7 +595,7 @@ public class DatastoreTest {
     Entity entity4 = Entity.newBuilder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.newBuilder(KEY5).set("value", "value").build();
     datastore.add(ENTITY3, entity4, entity5);
-    DatastoreRpc datastoreRpc = datastore.getOptions().getRpc();
+    DatastoreRpc datastoreRpc = datastore.getOptions().getDatastoreRpc();
     List<RunQueryResponse> responses = new ArrayList<>();
     Query<Entity> query = Query.newEntityQueryBuilder().build();
     RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();

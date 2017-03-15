@@ -61,11 +61,10 @@ import java.util.regex.Pattern;
  * Abstract class representing service options.
  *
  * @param <ServiceT> the service subclass
- * @param <ServiceRpcT> the spi-layer class corresponding to the service
  * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
  */
-public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, ServiceRpcT,
-    OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>> implements Serializable {
+public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
+    OptionsT extends ServiceOptions<ServiceT, OptionsT>> implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
@@ -92,35 +91,34 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private final Credentials credentials;
   private final TransportOptions transportOptions;
 
-  private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+  private transient ServiceRpcFactory<OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
   private transient ServiceT service;
-  private transient ServiceRpcT rpc;
+  private transient ServiceRpc rpc;
 
   /**
    * Builder for {@code ServiceOptions}.
    *
    * @param <ServiceT> the service subclass
-   * @param <ServiceRpcT> the spi-layer class corresponding to the service
    * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
    * @param <B> the {@code ServiceOptions} builder
    */
-  public abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
-      OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
-      B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {
+  public abstract static class Builder<ServiceT extends Service<OptionsT>,
+      OptionsT extends ServiceOptions<ServiceT, OptionsT>,
+      B extends Builder<ServiceT, OptionsT, B>> {
 
     private String projectId;
     private String host;
     private Credentials credentials;
     private RetryParams retryParams;
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
-    private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+    private ServiceRpcFactory<OptionsT> serviceRpcFactory;
     private Clock clock;
     private TransportOptions transportOptions;
 
     protected Builder() {}
 
-    protected Builder(ServiceOptions<ServiceT, ServiceRpcT, OptionsT> options) {
+    protected Builder(ServiceOptions<ServiceT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
       credentials = options.credentials;
@@ -131,7 +129,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       transportOptions = options.transportOptions;
     }
 
-    protected abstract ServiceOptions<ServiceT, ServiceRpcT, OptionsT> build();
+    protected abstract ServiceOptions<ServiceT, OptionsT> build();
 
     @SuppressWarnings("unchecked")
     protected B self() {
@@ -218,7 +216,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      *
      * @return the builder
      */
-    public B setServiceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
+    public B setServiceRpcFactory(ServiceRpcFactory<OptionsT> serviceRpcFactory) {
       this.serviceRpcFactory = serviceRpcFactory;
       return self();
     }
@@ -235,9 +233,9 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
-      Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
-      Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder,
-      ServiceDefaults<ServiceT, ServiceRpcT, OptionsT> serviceDefaults) {
+      Class<? extends ServiceRpcFactory<OptionsT>> rpcFactoryClass,
+      Builder<ServiceT, OptionsT, ?> builder,
+      ServiceDefaults<ServiceT, OptionsT> serviceDefaults) {
     projectId = builder.projectId != null ? builder.projectId : getDefaultProject();
     if (projectIdRequired()) {
       checkArgument(
@@ -450,7 +448,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
 
   @SuppressWarnings("unchecked")
-  public ServiceRpcT getRpc() {
+  public ServiceRpc getRpc() {
     if (rpc == null) {
       rpc = serviceRpcFactory.create((OptionsT) this);
     }
@@ -552,7 +550,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
         serviceRpcFactoryClassName, clock);
   }
 
-  protected boolean baseEquals(ServiceOptions<?, ?, ?> other) {
+  protected boolean baseEquals(ServiceOptions<?, ?> other) {
     return Objects.equals(projectId, other.projectId)
         && Objects.equals(host, other.host)
         && Objects.equals(credentials, other.credentials)
@@ -579,7 +577,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
   protected abstract Set<String> getScopes();
 
-  public abstract <B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> B toBuilder();
+  public abstract <B extends Builder<ServiceT, OptionsT, B>> B toBuilder();
 
   /**
    * Some services may have different backoff requirements listed in their SLAs. Be sure to override

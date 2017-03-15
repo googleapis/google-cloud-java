@@ -60,7 +60,7 @@ public class StorageBatch {
 
   StorageBatch(StorageOptions options) {
     this.options = options;
-    this.storageRpc = options.getRpc();
+    this.storageRpc = options.getStorageRpc();
     this.batch = storageRpc.createBatch();
   }
 

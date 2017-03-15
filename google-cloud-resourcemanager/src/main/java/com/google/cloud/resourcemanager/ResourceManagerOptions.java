@@ -28,7 +28,7 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 
 public class ResourceManagerOptions
-    extends ServiceOptions<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
+    extends ServiceOptions<ResourceManager, ResourceManagerOptions> {
 
   private static final long serialVersionUID = 624147474447836183L;
   private static final String API_SHORT_NAME = "ResourceManager";
@@ -69,7 +69,7 @@ public class ResourceManagerOptions
   }
 
   public static class Builder extends ServiceOptions.Builder<ResourceManager,
-      ResourceManagerRpc, ResourceManagerOptions, Builder> {
+      ResourceManagerOptions, Builder> {
 
     private Builder() {}
 
@@ -103,7 +103,7 @@ public class ResourceManagerOptions
   }
 
   private static class ResourceManagerDefaults implements
-      ServiceDefaults<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
+      ServiceDefaults<ResourceManager, ResourceManagerOptions> {
 
     @Override
     public ResourceManagerFactory getDefaultServiceFactory() {
@@ -128,6 +128,10 @@ public class ResourceManagerOptions
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected ResourceManagerRpc getResourceManagerRpc() {
+    return (ResourceManagerRpc) getRpc();
   }
 
   @Override

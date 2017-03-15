@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.spi;
 
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.spanner.SpannerException;
 import com.google.common.collect.ImmutableList;
 import com.google.longrunning.Operation;
@@ -48,7 +49,7 @@ import javax.annotation.Nullable;
  * is purely for expedience; a future version of this interface is likely to be independent of
  * transport to allow switching between gRPC and HTTP.
  */
-public interface SpannerRpc {
+public interface SpannerRpc extends ServiceRpc {
   /** Options passed in {@link SpannerRpc} methods to control how an RPC is issued. */
   enum Option {
     CHANNEL_HINT("Channel Hint");

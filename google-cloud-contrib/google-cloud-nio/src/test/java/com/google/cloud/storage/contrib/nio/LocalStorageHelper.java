@@ -38,7 +38,7 @@ class LocalStorageHelper {
     return StorageOptions.newBuilder()
       .setProjectId("dummy-project-for-testing")
       .setServiceRpcFactory(
-        new ServiceRpcFactory<StorageRpc, StorageOptions>() {
+        new ServiceRpcFactory<StorageOptions>() {
           @Override
           public StorageRpc create(StorageOptions options) {
             return instance;
@@ -55,7 +55,7 @@ class LocalStorageHelper {
     return StorageOptions.newBuilder()
       .setProjectId("dummy-project-for-testing")
       .setServiceRpcFactory(
-         new ServiceRpcFactory<StorageRpc, StorageOptions>() {
+         new ServiceRpcFactory<StorageOptions>() {
            @Override
            public StorageRpc create(StorageOptions options) {
              return new FakeStorageRpc(throwIfOptions);

@@ -20,12 +20,13 @@ import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.dns.DnsException;
 import com.google.common.collect.ImmutableList;
 
 import java.util.Map;
 
-public interface DnsRpc {
+public interface DnsRpc extends ServiceRpc {
 
   enum Option {
     FIELDS("fields"),

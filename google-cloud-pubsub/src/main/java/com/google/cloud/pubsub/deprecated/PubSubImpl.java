@@ -111,14 +111,14 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   PubSubImpl(PubSubOptions options) {
     super(options);
-    rpc = options.getRpc();
+    rpc = options.getPubSubRpc();
     ackDeadlineRenewer = new AckDeadlineRenewer(this);
   }
 
   @VisibleForTesting
   PubSubImpl(PubSubOptions options, AckDeadlineRenewer ackDeadlineRenewer) {
     super(options);
-    rpc = options.getRpc();
+    rpc = options.getPubSubRpc();
     this.ackDeadlineRenewer = ackDeadlineRenewer;
   }
 
@@ -266,7 +266,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   private static ApiFuture<AsyncPage<Topic>> listTopicsAsync(final PubSubOptions serviceOptions,
       final Map<Option.OptionType, ?> options) {
     final ListTopicsRequest request = listTopicsRequest(serviceOptions, options);
-    ApiFuture<ListTopicsResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListTopicsResponse> list = serviceOptions.getPubSubRpc().list(request);
     return transform(list,  new Function<ListTopicsResponse, AsyncPage<Topic>>() {
       @Override
       public AsyncPage<Topic> apply(ListTopicsResponse listTopicsResponse) {
@@ -415,7 +415,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   private static ApiFuture<AsyncPage<Subscription>> listSubscriptionsAsync(
       final PubSubOptions serviceOptions, final Map<Option.OptionType, ?> options) {
     final ListSubscriptionsRequest request = listSubscriptionsRequest(serviceOptions, options);
-    ApiFuture<ListSubscriptionsResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListSubscriptionsResponse> list = serviceOptions.getPubSubRpc().list(request);
     return transform(list, new Function<ListSubscriptionsResponse, AsyncPage<Subscription>>() {
       @Override
       public AsyncPage<Subscription> apply(ListSubscriptionsResponse listSubscriptionsResponse) {
@@ -460,7 +460,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
       final PubSubOptions serviceOptions, final Map<Option.OptionType, ?> options) {
     final ListTopicSubscriptionsRequest request =
         listSubscriptionsRequest(topic, serviceOptions, options);
-    ApiFuture<ListTopicSubscriptionsResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListTopicSubscriptionsResponse> list = serviceOptions.getPubSubRpc().list(request);
     return transform(list,
         new Function<ListTopicSubscriptionsResponse, AsyncPage<SubscriptionId>>() {
           @Override

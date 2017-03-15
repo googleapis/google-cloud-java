@@ -40,7 +40,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import javax.net.ssl.SSLException;
 
 /** Options for the Cloud Spanner service. */
-public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerOptions> {
+public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final String API_SHORT_NAME = "Spanner";
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
   private static final Set<String> SCOPES =
@@ -100,7 +100,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
       extends ServiceOptions.Builder<
-      Spanner, SpannerRpc, SpannerOptions, SpannerOptions.Builder> {
+      Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
     private RpcChannelFactory rpcChannelFactory;
     /** By default, we create 4 channels per {@link SpannerOptions} */
@@ -288,7 +288,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
   }
 
   private static class SpannerDefaults implements
-      ServiceDefaults<Spanner, SpannerRpc, SpannerOptions> {
+      ServiceDefaults<Spanner, SpannerOptions> {
 
     @Override
     public SpannerFactory getDefaultServiceFactory() {
@@ -309,6 +309,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
   @Override
   public Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected SpannerRpc getSpannerRpc() {
+    return (SpannerRpc) getRpc();
   }
 
   @SuppressWarnings("unchecked")

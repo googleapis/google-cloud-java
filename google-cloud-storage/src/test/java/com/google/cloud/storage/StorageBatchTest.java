@@ -56,32 +56,32 @@ public class StorageBatchTest {
   private static final GoogleJsonError GOOGLE_JSON_ERROR = new GoogleJsonError();
 
   private StorageOptions optionsMock;
-  private StorageRpc dnsRpcMock;
+  private StorageRpc storageRpcMock;
   private RpcBatch batchMock;
-  private StorageBatch dnsBatch;
+  private StorageBatch storageBatch;
   private final Storage storage = EasyMock.createStrictMock(Storage.class);
 
   @Before
   public void setUp() {
     optionsMock = EasyMock.createMock(StorageOptions.class);
-    dnsRpcMock = EasyMock.createMock(StorageRpc.class);
+    storageRpcMock = EasyMock.createMock(StorageRpc.class);
     batchMock = EasyMock.createMock(RpcBatch.class);
-    EasyMock.expect(optionsMock.getRpc()).andReturn(dnsRpcMock);
-    EasyMock.expect(dnsRpcMock.createBatch()).andReturn(batchMock);
-    EasyMock.replay(optionsMock, dnsRpcMock, batchMock, storage);
-    dnsBatch = new StorageBatch(optionsMock);
+    EasyMock.expect(optionsMock.getStorageRpc()).andReturn(storageRpcMock);
+    EasyMock.expect(storageRpcMock.createBatch()).andReturn(batchMock);
+    EasyMock.replay(optionsMock, storageRpcMock, batchMock, storage);
+    storageBatch = new StorageBatch(optionsMock);
   }
 
   @After
   public void tearDown() {
-    EasyMock.verify(batchMock, dnsRpcMock, optionsMock, storage);
+    EasyMock.verify(batchMock, storageRpcMock, optionsMock, storage);
   }
 
   @Test
   public void testConstructor() {
-    assertSame(batchMock, dnsBatch.getBatch());
-    assertSame(optionsMock, dnsBatch.getOptions());
-    assertSame(dnsRpcMock, dnsBatch.getStorageRpc());
+    assertSame(batchMock, storageBatch.getBatch());
+    assertSame(optionsMock, storageBatch.getOptions());
+    assertSame(storageRpcMock, storageBatch.getStorageRpc());
   }
 
   @Test
@@ -92,7 +92,7 @@ public class StorageBatchTest {
         EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
     EasyMock.replay(batchMock);
     StorageBatchResult<Boolean> batchResult =
-        dnsBatch.delete(BLOB_ID.getBucket(), BLOB_ID.getName());
+        storageBatch.delete(BLOB_ID.getBucket(), BLOB_ID.getName());
     assertNotNull(callback.getValue());
     try {
       batchResult.get();
@@ -119,7 +119,7 @@ public class StorageBatchTest {
     batchMock.addDelete(EasyMock.eq(BLOB_INFO.toPb()), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
     EasyMock.replay(batchMock);
-    StorageBatchResult<Boolean> batchResult = dnsBatch.delete(BLOB_ID, BLOB_SOURCE_OPTIONS);
+    StorageBatchResult<Boolean> batchResult = storageBatch.delete(BLOB_ID, BLOB_SOURCE_OPTIONS);
     assertNotNull(callback.getValue());
     assertEquals(2, capturedOptions.getValue().size());
     for (BlobSourceOption option : BLOB_SOURCE_OPTIONS) {
@@ -137,7 +137,7 @@ public class StorageBatchTest {
     batchMock.addPatch(EasyMock.eq(BLOB_INFO.toPb()), EasyMock.capture(callback),
         EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
     EasyMock.replay(batchMock);
-    StorageBatchResult<Blob> batchResult = dnsBatch.update(BLOB_INFO);
+    StorageBatchResult<Blob> batchResult = storageBatch.update(BLOB_INFO);
     assertNotNull(callback.getValue());
     try {
       batchResult.get();
@@ -166,7 +166,7 @@ public class StorageBatchTest {
     batchMock.addPatch(EasyMock.eq(BLOB_INFO_COMPLETE.toPb()), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
     EasyMock.replay(batchMock, storage, optionsMock);
-    StorageBatchResult<Blob> batchResult = dnsBatch.update(BLOB_INFO_COMPLETE, BLOB_TARGET_OPTIONS);
+    StorageBatchResult<Blob> batchResult = storageBatch.update(BLOB_INFO_COMPLETE, BLOB_TARGET_OPTIONS);
     assertNotNull(callback.getValue());
     assertEquals(2, capturedOptions.getValue().size());
     assertEquals(42L, capturedOptions.getValue().get(BLOB_TARGET_OPTIONS[0].getRpcOption()));
@@ -183,7 +183,7 @@ public class StorageBatchTest {
     batchMock.addGet(EasyMock.eq(BLOB_INFO.toPb()), EasyMock.capture(callback),
         EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
     EasyMock.replay(batchMock);
-    StorageBatchResult<Blob> batchResult = dnsBatch.get(BLOB_ID.getBucket(), BLOB_ID.getName());
+    StorageBatchResult<Blob> batchResult = storageBatch.get(BLOB_ID.getBucket(), BLOB_ID.getName());
     assertNotNull(callback.getValue());
     try {
       batchResult.get();
@@ -212,7 +212,7 @@ public class StorageBatchTest {
     batchMock.addGet(EasyMock.eq(BLOB_INFO.toPb()), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
     EasyMock.replay(storage, batchMock, optionsMock);
-    StorageBatchResult<Blob> batchResult = dnsBatch.get(BLOB_ID, BLOB_GET_OPTIONS);
+    StorageBatchResult<Blob> batchResult = storageBatch.get(BLOB_ID, BLOB_GET_OPTIONS);
     assertNotNull(callback.getValue());
     assertEquals(2, capturedOptions.getValue().size());
     for (BlobGetOption option : BLOB_GET_OPTIONS) {

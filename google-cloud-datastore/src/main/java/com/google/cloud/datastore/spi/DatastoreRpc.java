@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore.spi;
 
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.datastore.v1.AllocateIdsRequest;
 import com.google.datastore.v1.AllocateIdsResponse;
@@ -33,7 +34,7 @@ import com.google.datastore.v1.RunQueryResponse;
 /**
  * Provides access to the remote Datastore service.
  */
-public interface DatastoreRpc {
+public interface DatastoreRpc extends ServiceRpc {
 
   /**
    * Sends an allocate IDs request.

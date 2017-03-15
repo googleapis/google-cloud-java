@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,8 @@
  * limitations under the License.
  */
 
-package com.google.cloud.compute.spi;
+package com.google.cloud;
 
-import com.google.cloud.compute.ComputeOptions;
-import com.google.cloud.spi.ServiceRpcFactory;
+public interface ServiceRpc {
 
-/**
- * An interface for Compute RPC factory.
- * Implementation will be loaded via {@link java.util.ServiceLoader}.
- */
-public interface ComputeRpcFactory extends ServiceRpcFactory<ComputeOptions> {
 }

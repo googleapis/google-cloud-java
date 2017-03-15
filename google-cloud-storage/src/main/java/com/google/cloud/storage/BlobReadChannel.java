@@ -61,7 +61,7 @@ class BlobReadChannel implements ReadChannel {
     this.blob = blob;
     this.requestOptions = requestOptions;
     isOpen = true;
-    storageRpc = serviceOptions.getRpc();
+    storageRpc = serviceOptions.getStorageRpc();
     storageObject = blob.toPb();
   }
 

@@ -32,7 +32,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public class DatastoreOptions
-    extends ServiceOptions<Datastore, DatastoreRpc, DatastoreOptions> {
+    extends ServiceOptions<Datastore, DatastoreOptions> {
 
   private static final long serialVersionUID = -1018382430058137336L;
   private static final String API_SHORT_NAME = "Datastore";
@@ -62,7 +62,7 @@ public class DatastoreOptions
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<Datastore, DatastoreRpc, DatastoreOptions, Builder> {
+      ServiceOptions.Builder<Datastore, DatastoreOptions, Builder> {
 
     private String namespace;
 
@@ -119,7 +119,7 @@ public class DatastoreOptions
   }
 
   private static class DatastoreDefaults implements
-      ServiceDefaults<Datastore, DatastoreRpc, DatastoreOptions> {
+      ServiceDefaults<Datastore, DatastoreOptions> {
 
     @Override
     public DatastoreFactory getDefaultServiceFactory() {
@@ -172,6 +172,10 @@ public class DatastoreOptions
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected DatastoreRpc getDatastoreRpc() {
+    return (DatastoreRpc) getRpc();
   }
 
   @SuppressWarnings("unchecked")

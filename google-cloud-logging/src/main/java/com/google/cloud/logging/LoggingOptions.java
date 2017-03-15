@@ -28,7 +28,7 @@ import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.Set;
 
-public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingOptions> {
+public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
 
   private static final String API_SHORT_NAME = "Logging";
   private static final String LOGGING_SCOPE = "https://www.googleapis.com/auth/logging.admin";
@@ -73,7 +73,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingO
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<Logging, LoggingRpc, LoggingOptions, Builder> {
+      ServiceOptions.Builder<Logging, LoggingOptions, Builder> {
 
     private Builder() {}
 
@@ -101,7 +101,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingO
   }
 
   private static class LoggingDefaults implements
-      ServiceDefaults<Logging, LoggingRpc, LoggingOptions> {
+      ServiceDefaults<Logging, LoggingOptions> {
 
     @Override
     public LoggingFactory getDefaultServiceFactory() {
@@ -126,6 +126,10 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingO
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected LoggingRpc getLoggingRpc() {
+    return (LoggingRpc) getRpc();
   }
 
   @Override

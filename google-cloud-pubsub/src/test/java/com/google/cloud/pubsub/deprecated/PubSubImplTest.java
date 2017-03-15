@@ -165,7 +165,7 @@ public class PubSubImplTest {
     renewerMock = EasyMock.createStrictMock(AckDeadlineRenewer.class);
     options = EasyMock.createMock(PubSubOptions.class);
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
-    EasyMock.expect(options.getRpc()).andReturn(pubsubRpcMock).anyTimes();
+    EasyMock.expect(options.getPubSubRpc()).andReturn(pubsubRpcMock).anyTimes();
     EasyMock.expect(options.getRetryParams()).andReturn(RetryParams.noRetries()).anyTimes();
     EasyMock.replay(rpcFactoryMock, pubsubRpcMock, renewerMock, options);
     EasyMock.reset(pubsubRpcMock, renewerMock);
@@ -179,7 +179,7 @@ public class PubSubImplTest {
   private void resetOptionsForList(int pageCount) {
     EasyMock.reset(options);
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).times(pageCount);
-    EasyMock.expect(options.getRpc()).andReturn(pubsubRpcMock).times(pageCount);
+    EasyMock.expect(options.getPubSubRpc()).andReturn(pubsubRpcMock).times(pageCount);
     EasyMock.expect(options.getService()).andReturn(pubsub).times(pageCount);
     EasyMock.replay(options);
   }
@@ -1358,7 +1358,7 @@ public class PubSubImplTest {
     pubsub = new PubSubImpl(options, renewerMock);
     EasyMock.reset(options);
     EasyMock.expect(options.getService()).andReturn(pubsub);
-    EasyMock.expect(options.getRpc()).andReturn(pubsubRpcMock);
+    EasyMock.expect(options.getPubSubRpc()).andReturn(pubsubRpcMock);
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT);
     EasyMock.replay(options);
     PullRequest request = PullRequest.newBuilder()
@@ -1386,7 +1386,7 @@ public class PubSubImplTest {
     pubsub = new PubSubImpl(options, renewerMock);
     EasyMock.reset(options);
     EasyMock.expect(options.getService()).andReturn(pubsub);
-    EasyMock.expect(options.getRpc()).andReturn(pubsubRpcMock);
+    EasyMock.expect(options.getPubSubRpc()).andReturn(pubsubRpcMock);
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT);
     EasyMock.replay(options);
     ExecutorFactory executorFactoryMock = EasyMock.createStrictMock(ExecutorFactory.class);

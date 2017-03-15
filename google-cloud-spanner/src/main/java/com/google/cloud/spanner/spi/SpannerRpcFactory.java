@@ -20,4 +20,4 @@ import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spi.ServiceRpcFactory;
 
 /** Factory to create instances of {@code SpannerRpc}. */
-public interface SpannerRpcFactory extends ServiceRpcFactory<SpannerRpc, SpannerOptions> {}
+public interface SpannerRpcFactory extends ServiceRpcFactory<SpannerOptions> {}

@@ -90,7 +90,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   StorageImpl(StorageOptions options) {
     super(options);
-    storageRpc = options.getRpc();
+    storageRpc = options.getStorageRpc();
   }
 
   @Override
@@ -257,7 +257,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           new Callable<Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>>>() {
             @Override
             public Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> call() {
-              return serviceOptions.getRpc().list(optionsMap);
+              return serviceOptions.getStorageRpc().list(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -284,7 +284,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           new Callable<Tuple<String, Iterable<StorageObject>>>() {
             @Override
             public Tuple<String, Iterable<StorageObject>> call() {
-              return serviceOptions.getRpc().list(bucket, optionsMap);
+              return serviceOptions.getStorageRpc().list(bucket, optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();

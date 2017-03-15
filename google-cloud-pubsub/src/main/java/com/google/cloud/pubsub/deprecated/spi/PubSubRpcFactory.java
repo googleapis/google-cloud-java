@@ -23,5 +23,5 @@ import com.google.cloud.spi.ServiceRpcFactory;
  * An interface for Pub/Sub RPC factory.
  * Implementation will be loaded via {@link java.util.ServiceLoader}.
  */
-public interface PubSubRpcFactory extends ServiceRpcFactory<PubSubRpc, PubSubOptions> {
+public interface PubSubRpcFactory extends ServiceRpcFactory<PubSubOptions> {
 }

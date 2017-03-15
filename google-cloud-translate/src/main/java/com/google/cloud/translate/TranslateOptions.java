@@ -35,7 +35,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public class TranslateOptions extends
-    ServiceOptions<Translate, TranslateRpc, TranslateOptions> {
+    ServiceOptions<Translate, TranslateOptions> {
 
   private static final long serialVersionUID = -572597134540398216L;
   private static final String API_SHORT_NAME = "Translate";
@@ -68,7 +68,7 @@ public class TranslateOptions extends
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<Translate, TranslateRpc, TranslateOptions, Builder> {
+      ServiceOptions.Builder<Translate, TranslateOptions, Builder> {
 
     private String apiKey;
     private String targetLanguage;
@@ -140,7 +140,7 @@ public class TranslateOptions extends
   }
 
   private static class TranslateDefaults implements
-      ServiceDefaults<Translate, TranslateRpc, TranslateOptions> {
+      ServiceDefaults<Translate, TranslateOptions> {
 
     @Override
     public TranslateFactory getDefaultServiceFactory() {
@@ -170,6 +170,10 @@ public class TranslateOptions extends
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected TranslateRpc getTranslateRpc() {
+    return (TranslateRpc) getRpc();
   }
 
   @Override
