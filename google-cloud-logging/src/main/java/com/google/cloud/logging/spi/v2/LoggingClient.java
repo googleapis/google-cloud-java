@@ -148,9 +148,6 @@ public class LoggingClient implements AutoCloseable {
         UnaryCallable.create(settings.deleteLogSettings(), this.channel, this.executor);
     this.writeLogEntriesCallable =
         UnaryCallable.create(settings.writeLogEntriesSettings(), this.channel, this.executor);
-    if (settings.writeLogEntriesSettings().getBundlerFactory() != null) {
-      closeables.add(settings.writeLogEntriesSettings().getBundlerFactory());
-    }
     this.listLogEntriesCallable =
         UnaryCallable.create(settings.listLogEntriesSettings(), this.channel, this.executor);
     this.listLogEntriesPagedCallable =
