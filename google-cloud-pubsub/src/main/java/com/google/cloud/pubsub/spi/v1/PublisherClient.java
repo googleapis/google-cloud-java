@@ -155,9 +155,6 @@ public class PublisherClient implements AutoCloseable {
         UnaryCallable.create(settings.createTopicSettings(), this.channel, this.executor);
     this.publishCallable =
         UnaryCallable.create(settings.publishSettings(), this.channel, this.executor);
-    if (settings.publishSettings().getBundlerFactory() != null) {
-      closeables.add(settings.publishSettings().getBundlerFactory());
-    }
     this.getTopicCallable =
         UnaryCallable.create(settings.getTopicSettings(), this.channel, this.executor);
     this.listTopicsCallable =
