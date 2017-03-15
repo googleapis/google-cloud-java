@@ -114,25 +114,8 @@ public class AttachedDisk implements Serializable {
     /**
      * Returns the type of the attached disk.
      */
-    @Deprecated
-    public Type type() {
-      return getType();
-    }
-
-    /**
-     * Returns the type of the attached disk.
-     */
     public Type getType() {
       return type;
-    }
-
-    /**
-     * Returns the interface to use to attach the disk. If not specified, {@link InterfaceType#SCSI}
-     * is used.
-     */
-    @Deprecated
-    public InterfaceType interfaceType() {
-      return getInterfaceType();
     }
 
     /**
@@ -263,26 +246,9 @@ public class AttachedDisk implements Serializable {
       /**
        * Sets the identity of the persistent disk to be attached.
        */
-      @Deprecated
-      public Builder sourceDisk(DiskId sourceDisk) {
-        return setSourceDisk(sourceDisk);
-      }
-
-      /**
-       * Sets the identity of the persistent disk to be attached.
-       */
       public Builder setSourceDisk(DiskId sourceDisk) {
         this.sourceDisk = checkNotNull(sourceDisk);
         return this;
-      }
-
-      /**
-       * Sets the mode in which to attach this disk. If not specified, the disk is attached in
-       * {@link Mode#READ_WRITE} mode.
-       */
-      @Deprecated
-      public Builder mode(Mode mode) {
-        return setMode(mode);
       }
 
       /**
@@ -299,28 +265,9 @@ public class AttachedDisk implements Serializable {
        * instance will use the first partition of the disk for its root filesystem. If not
        * specified, the isk is not used as a boot disk.
        */
-      @Deprecated
-      public Builder boot(boolean boot) {
-        return setBoot(boot);
-      }
-
-      /**
-       * Sets whether to use the attached disk as a boot disk. If {@code true} the virtual machine
-       * instance will use the first partition of the disk for its root filesystem. If not
-       * specified, the isk is not used as a boot disk.
-       */
       public Builder setBoot(boolean boot) {
         this.boot = boot;
         return this;
-      }
-
-      /**
-       * Sets whether the disk should auto-delete when the instance to which it's attached is
-       * deleted. If not specified, the disk is not deleted automatically.
-       */
-      @Deprecated
-      public Builder autoDelete(boolean autoDelete) {
-        return setAutoDelete(autoDelete);
       }
 
       /**
@@ -349,25 +296,8 @@ public class AttachedDisk implements Serializable {
     /**
      * Returns the identity of the persistent disk to be attached.
      */
-    @Deprecated
-    public DiskId sourceDisk() {
-      return getSourceDisk();
-    }
-
-    /**
-     * Returns the identity of the persistent disk to be attached.
-     */
     public DiskId getSourceDisk() {
       return sourceDisk;
-    }
-
-    /**
-     * Returns the mode in which to attach this disk. If not specified, the disk is attached in
-     * {@link Mode#READ_WRITE} mode.
-     */
-    @Deprecated
-    public Mode mode() {
-      return getMode();
     }
 
     /**
@@ -417,15 +347,6 @@ public class AttachedDisk implements Serializable {
       attachedDiskPb.setSource(sourceDisk.getSelfLink());
       attachedDiskPb.setMode(mode != null ? mode.toString() : null);
       return attachedDiskPb;
-    }
-
-    /**
-     * Returns a builder for a {@code PersistentDiskConfiguration} object given the identity of the
-     * persistent disk to attach.
-     */
-    @Deprecated
-    public static Builder builder(DiskId sourceDisk) {
-      return newBuilder(sourceDisk);
     }
 
     /**
@@ -504,26 +425,9 @@ public class AttachedDisk implements Serializable {
        * Sets the name to be assigned to the disk. If not specified, the disk is given the
        * instance's name.
        */
-      @Deprecated
-      public Builder diskName(String diskName) {
-        return setDiskName(diskName);
-      }
-
-      /**
-       * Sets the name to be assigned to the disk. If not specified, the disk is given the
-       * instance's name.
-       */
       public Builder setDiskName(String diskName) {
         this.diskName = diskName;
         return this;
-      }
-
-      /**
-       * Sets the identity of the disk type. If not specified, {@code pd-standard} is used.
-       */
-      @Deprecated
-      public Builder diskType(DiskTypeId diskType) {
-        return setDiskType(diskType);
       }
 
       /**
@@ -539,16 +443,6 @@ public class AttachedDisk implements Serializable {
        * source image. This value can be larger than the image's size. If the provided size is
        * smaller than the image's size, then instance creation will fail.
        */
-      @Deprecated
-      public Builder diskSizeGb(Long diskSizeGb) {
-        return setDiskSizeGb(diskSizeGb);
-      }
-
-      /**
-       * Sets the size of the persistent disk, in GB. If not set the disk will have the size of the
-       * source image. This value can be larger than the image's size. If the provided size is
-       * smaller than the image's size, then instance creation will fail.
-       */
       public Builder setDiskSizeGb(Long diskSizeGb) {
         this.diskSizeGb = diskSizeGb;
         return this;
@@ -557,26 +451,9 @@ public class AttachedDisk implements Serializable {
       /**
        * Sets the identity of the source image used to create the disk.
        */
-      @Deprecated
-      public Builder sourceImage(ImageId sourceImage) {
-        return setSourceImage(sourceImage);
-      }
-
-      /**
-       * Sets the identity of the source image used to create the disk.
-       */
       public Builder setSourceImage(ImageId sourceImage) {
         this.sourceImage = checkNotNull(sourceImage);
         return this;
-      }
-
-      /**
-       * Sets whether the disk should auto-delete when the instance to which it's attached is
-       * deleted. If not specified, the disk is not deleted automatically.
-       */
-      @Deprecated
-      public Builder autoDelete(Boolean autoDelete) {
-        return setAutoDelete(autoDelete);
       }
 
       /**
@@ -608,25 +485,8 @@ public class AttachedDisk implements Serializable {
      * Returns the name to be assigned to the disk. If not specified, the disk is given the
      * instance's name.
      */
-    @Deprecated
-    public String diskName() {
-      return getDiskName();
-    }
-
-    /**
-     * Returns the name to be assigned to the disk. If not specified, the disk is given the
-     * instance's name.
-     */
     public String getDiskName() {
       return diskName;
-    }
-
-    /**
-     * Returns the identity of the disk type. If not specified, {@code pd-standard} is used.
-     */
-    @Deprecated
-    public DiskTypeId diskType() {
-      return getDiskType();
     }
 
     /**
@@ -641,26 +501,8 @@ public class AttachedDisk implements Serializable {
      * source image. This value can be larger than the image's size. If the provided size is smaller
      * than the image's size then instance creation will fail.
      */
-    @Deprecated
-    public Long diskSizeGb() {
-      return getDiskSizeGb();
-    }
-
-    /**
-     * Returns the size of the persistent disk, in GB. If not set the disk will have the size of the
-     * source image. This value can be larger than the image's size. If the provided size is smaller
-     * than the image's size then instance creation will fail.
-     */
     public Long getDiskSizeGb() {
       return diskSizeGb;
-    }
-
-    /**
-     * Returns the identity of the source image used to create the disk.
-     */
-    @Deprecated
-    public ImageId sourceImage() {
-      return getSourceImage();
     }
 
     /**
@@ -729,15 +571,6 @@ public class AttachedDisk implements Serializable {
      * Returns a builder for a {@code CreateDiskConfiguration} object given the source image that
      * will be used to create the disk.
      */
-    @Deprecated
-    public static Builder builder(ImageId sourceImage) {
-      return newBuilder(sourceImage);
-    }
-
-    /**
-     * Returns a builder for a {@code CreateDiskConfiguration} object given the source image that
-     * will be used to create the disk.
-     */
     public static Builder newBuilder(ImageId sourceImage) {
       return new Builder(sourceImage);
     }
@@ -796,25 +629,9 @@ public class AttachedDisk implements Serializable {
       /**
        * Sets the identity of the disk type for the scratch disk to attach.
        */
-      @Deprecated
-      public Builder diskType(DiskTypeId diskType) {
-        return setDiskType(diskType);
-      }
-
-      /**
-       * Sets the identity of the disk type for the scratch disk to attach.
-       */
       public Builder setDiskType(DiskTypeId diskType) {
         this.diskType = diskType;
         return this;
-      }
-
-      /**
-       * Sets the interface type. If not specified, {@code SCSI} is used.
-       */
-      @Deprecated
-      public Builder interfaceType(InterfaceType interfaceType) {
-        return setInterfaceType(interfaceType);
       }
 
       /**
@@ -836,14 +653,6 @@ public class AttachedDisk implements Serializable {
     private ScratchDiskConfiguration(Builder builder) {
       super(Type.SCRATCH, builder.interfaceType, false, true);
       this.diskType = builder.diskType;
-    }
-
-    /**
-     * Returns the identity of the disk type for the scratch disk to attach.
-     */
-    @Deprecated
-    public DiskTypeId diskType() {
-      return diskType;
     }
 
     /**
@@ -895,14 +704,6 @@ public class AttachedDisk implements Serializable {
         attachedDiskPb.setInitializeParams(initializeParamsPb);
       }
       return attachedDiskPb;
-    }
-
-    /**
-     * Returns a builder for {@code ScratchDiskConfiguration} objects given the disk type identity.
-     */
-    @Deprecated
-    public static Builder builder(DiskTypeId diskType) {
-      return newBuilder(diskType);
     }
 
     /**
@@ -964,19 +765,6 @@ public class AttachedDisk implements Serializable {
      * apply to this disk, in the form {@code persistent-disks-x}, where x is a number assigned by
      * Google Compute Engine.
      */
-    @Deprecated
-    public Builder deviceName(String deviceName) {
-      return setDeviceName(deviceName);
-    }
-
-    /**
-     * Sets the unique device name of your choice that is reflected into the
-     * {@code /dev/disk/by-id/google-*} tree of a Linux operating system running within the
-     * instance. This name can be used to reference the device for mounting, resizing, and so on,
-     * from within the instance. If not specified, the service chooses a default device name to
-     * apply to this disk, in the form {@code persistent-disks-x}, where x is a number assigned by
-     * Google Compute Engine.
-     */
     public Builder setDeviceName(String deviceName) {
       this.deviceName = deviceName;
       return this;
@@ -987,30 +775,9 @@ public class AttachedDisk implements Serializable {
      * if you have many disks attached to an instance, each disk would have an unique index number.
      * If not specified, the service will choose an appropriate value.
      */
-    @Deprecated
-    public Builder index(Integer index) {
-      return setIndex(index);
-    }
-
-    /**
-     * Sets a zero-based index to this disk, where 0 is reserved for the boot disk. For example,
-     * if you have many disks attached to an instance, each disk would have an unique index number.
-     * If not specified, the service will choose an appropriate value.
-     */
     public Builder setIndex(Integer index) {
       this.index = index;
       return this;
-    }
-
-    /**
-     * Sets the attached disk configuration. Use {@link ScratchDiskConfiguration} to attach a
-     * scratch disk to the instance. Use {@link PersistentDiskConfiguration} to attach a
-     * persistent disk to the instance. Use {@link CreateDiskConfiguration} to create and attach
-     * a new persistent disk.
-     */
-    @Deprecated
-    public Builder configuration(AttachedDiskConfiguration configuration) {
-      return setConfiguration(configuration);
     }
 
     /**
@@ -1052,29 +819,8 @@ public class AttachedDisk implements Serializable {
    * apply to this disk, in the form {@code persistent-disks-x}, where x is a number assigned by
    * Google Compute Engine.
    */
-  @Deprecated
-  public String deviceName() {
-    return getDeviceName();
-  }
-
-  /**
-   * Returns the unique device name of your choice that is reflected into the
-   * {@code /dev/disk/by-id/google-*} tree of a Linux operating system running within the
-   * instance. This name can be used to reference the device for mounting, resizing, and so on,
-   * from within the instance. If not specified, the service chooses a default device name to
-   * apply to this disk, in the form {@code persistent-disks-x}, where x is a number assigned by
-   * Google Compute Engine.
-   */
   public String getDeviceName() {
     return deviceName;
-  }
-
-  /**
-   * Returns a zero-based index to this disk, where 0 is reserved for the boot disk.
-   */
-  @Deprecated
-  public Integer index() {
-    return getIndex();
   }
 
   /**
@@ -1091,28 +837,8 @@ public class AttachedDisk implements Serializable {
    * a new persistent disk.
    */
   @SuppressWarnings("unchecked")
-  @Deprecated
-  public <T extends AttachedDiskConfiguration> T configuration() {
-    return getConfiguration();
-  }
-
-  /**
-   * Returns the attached disk configuration. Returns {@link ScratchDiskConfiguration} to attach a
-   * scratch disk to the instance. Returns {@link PersistentDiskConfiguration} to attach a
-   * persistent disk to the instance. Returns {@link CreateDiskConfiguration} to create and attach
-   * a new persistent disk.
-   */
-  @SuppressWarnings("unchecked")
   public <T extends AttachedDiskConfiguration> T getConfiguration() {
     return (T) configuration;
-  }
-
-  /**
-   * Returns a list of publicly accessible licenses for the attached disk.
-   */
-  @Deprecated
-  public List<LicenseId> licenses() {
-    return getLicenses();
   }
 
   /**
@@ -1164,14 +890,6 @@ public class AttachedDisk implements Serializable {
       attachedDiskPb.setLicenses(Lists.transform(licenses, LicenseId.TO_URL_FUNCTION));
     }
     return attachedDiskPb;
-  }
-
-  /**
-   * Returns a builder for an {@code AttachedDisk} object given its configuration.
-   */
-  @Deprecated
-  public static Builder builder(AttachedDiskConfiguration configuration) {
-    return newBuilder(configuration);
   }
 
   /**

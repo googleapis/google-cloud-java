@@ -57,22 +57,8 @@ public final class RegionForwardingRuleId extends ForwardingRuleId {
   }
 
   @Override
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
-
-  @Override
   public Type getType() {
     return Type.REGION;
-  }
-
-  /**
-   * Returns the name of the region this forwarding rule belongs to.
-   */
-  @Deprecated
-  public String region() {
-    return region;
   }
 
   /**
@@ -85,22 +71,8 @@ public final class RegionForwardingRuleId extends ForwardingRuleId {
   /**
    * Returns the identity of the region this forwarding rule belongs to.
    */
-  @Deprecated
-  public RegionId regionId() {
-    return RegionId.of(getProject(), region);
-  }
-
-  /**
-   * Returns the identity of the region this forwarding rule belongs to.
-   */
   public RegionId getRegionId() {
     return RegionId.of(getProject(), region);
-  }
-
-  @Override
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
   }
 
   @Override

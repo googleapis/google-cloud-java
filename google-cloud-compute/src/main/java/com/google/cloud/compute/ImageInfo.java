@@ -106,32 +106,12 @@ public class ImageInfo implements Serializable {
     /**
      * Sets the image identity.
      */
-    @Deprecated
-    public abstract Builder imageId(ImageId imageId);
-
-    /**
-     * Sets the image identity.
-     */
     public abstract Builder setImageId(ImageId imageId);
 
     /**
      * Sets an optional textual description of the image.
      */
-    @Deprecated
-    public abstract Builder description(String description);
-
-    /**
-     * Sets an optional textual description of the image.
-     */
     public abstract Builder setDescription(String description);
-
-    /**
-     * Sets the image configuration. Use {@link DiskImageConfiguration} to create an image from an
-     * existing disk. Use {@link StorageImageConfiguration} to create an image from a file stored in
-     * Google Cloud Storage.
-     */
-    @Deprecated
-    public abstract  Builder configuration(ImageConfiguration configuration);
 
     /**
      * Sets the image configuration. Use {@link DiskImageConfiguration} to create an image from an
@@ -216,33 +196,15 @@ public class ImageInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public BuilderImpl imageId(ImageId imageId) {
-      return setImageId(imageId);
-    }
-
-    @Override
     public BuilderImpl setImageId(ImageId imageId) {
       this.imageId = checkNotNull(imageId);
       return this;
     }
 
     @Override
-    @Deprecated
-    public BuilderImpl description(String description) {
-      return setDescription(description);
-    }
-
-    @Override
     public BuilderImpl setDescription(String description) {
       this.description = description;
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public BuilderImpl configuration(ImageConfiguration configuration) {
-      return setConfiguration(configuration);
     }
 
     @Override
@@ -296,24 +258,8 @@ public class ImageInfo implements Serializable {
   /**
    * Returns the service-generated unique identifier for the image.
    */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
-  }
-
-  /**
-   * Returns the service-generated unique identifier for the image.
-   */
   public String getGeneratedId() {
     return generatedId;
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
-  @Deprecated
-  public Long creationTimestamp() {
-    return getCreationTimestamp();
   }
 
   /**
@@ -326,24 +272,8 @@ public class ImageInfo implements Serializable {
   /**
    * Returns the image identity.
    */
-  @Deprecated
-  public ImageId imageId() {
-    return getImageId();
-  }
-
-  /**
-   * Returns the image identity.
-   */
   public ImageId getImageId() {
     return imageId;
-  }
-
-  /**
-   * Returns a textual description of the image.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
   }
 
   /**
@@ -360,28 +290,8 @@ public class ImageInfo implements Serializable {
    * from a file stored in Google Cloud Storage.
    */
   @SuppressWarnings("unchecked")
-  @Deprecated
-  public <T extends ImageConfiguration> T configuration() {
-    return getConfiguration();
-  }
-
-  /**
-   * Returns the image configuration. This method returns an instance of
-   * {@link DiskImageConfiguration} if the the image was created from a Google Compute Engine disk.
-   * This method returns an instance of {@link StorageImageConfiguration} if the image was created
-   * from a file stored in Google Cloud Storage.
-   */
-  @SuppressWarnings("unchecked")
   public <T extends ImageConfiguration> T getConfiguration() {
     return (T) configuration;
-  }
-
-  /**
-   * Returns all applicable publicly visible licenses.
-   */
-  @Deprecated
-  public List<LicenseId> licenses() {
-    return getLicenses();
   }
 
   /**
@@ -395,25 +305,8 @@ public class ImageInfo implements Serializable {
    * Returns the status of the image. An image can be used to create other disks only after it has
    * been successfully created and its status is set to {@link Status#READY}.
    */
-  @Deprecated
-  public Status status() {
-    return getStatus();
-  }
-
-  /**
-   * Returns the status of the image. An image can be used to create other disks only after it has
-   * been successfully created and its status is set to {@link Status#READY}.
-   */
   public Status getStatus() {
     return status;
-  }
-
-  /**
-   * Returns the size of the image when restored onto a persistent disk (in GB).
-   */
-  @Deprecated
-  public Long diskSizeGb() {
-    return getDiskSizeGb();
   }
 
   /**
@@ -424,17 +317,7 @@ public class ImageInfo implements Serializable {
   }
 
   /**
-   * Returns the deprecation status of the image. If {@link DeprecationStatus#status()} is either
-   * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the
-   * image must not be used. Returns {@code null} if the image is not deprecated.
-   */
-  @Deprecated
-  public DeprecationStatus<ImageId> deprecationStatus() {
-    return getDeprecationStatus();
-  }
-
-  /**
-   * Returns the deprecation status of the image. If {@link DeprecationStatus#status()} is either
+   * Returns the deprecation status of the image. If {@link DeprecationStatus#getStatus()} is either
    * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the
    * image must not be used. Returns {@code null} if the image is not deprecated.
    */
@@ -506,17 +389,6 @@ public class ImageInfo implements Serializable {
       imagePb.setDeprecated(deprecationStatus.toPb());
     }
     return imagePb;
-  }
-
-  /**
-   * Returns a builder for an {@code ImageInfo} object given the image identity and an image
-   * configuration. Use {@link DiskImageConfiguration} to create an image from an existing disk. Use
-   * {@link StorageImageConfiguration} to create an image from a file stored in Google Cloud
-   * Storage.
-   */
-  @Deprecated
-  public static Builder builder(ImageId imageId, ImageConfiguration configuration) {
-    return newBuilder(imageId, configuration);
   }
 
   /**

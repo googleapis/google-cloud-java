@@ -82,41 +82,7 @@ public class AttachedDiskTest {
           .setIndex(INDEX)
           .setLicenses(LICENSES)
           .build();
-  private static final PersistentDiskConfiguration DEPRECATED_PERSISTENT_DISK_CONFIGURATION =
-      PersistentDiskConfiguration.builder(DISK_ID)
-          .boot(BOOT)
-          .autoDelete(AUTO_DELETE)
-          .mode(MODE)
-          .build();
-  private static final ScratchDiskConfiguration DEPRECATED_SCRATCH_DISK_CONFIGURATION =
-      ScratchDiskConfiguration.builder(DISK_TYPE_ID).interfaceType(INTERFACE_TYPE).build();
-  private static final CreateDiskConfiguration DEPRECATED_CREATE_DISK_CONFIGURATION =
-      CreateDiskConfiguration.builder(IMAGE_ID)
-          .autoDelete(AUTO_DELETE)
-          .diskName(DISK_NAME)
-          .diskType(DISK_TYPE_ID)
-          .diskSizeGb(DISK_SIZE_GB)
-          .sourceImage(IMAGE_ID)
-          .build();
-  private static final AttachedDisk DEPRECATED_PERSISTENT_DISK =
-      AttachedDisk.builder(PERSISTENT_DISK_CONFIGURATION)
-          .deviceName(DEVICE_NAME)
-          .index(INDEX)
-          .setLicenses(LICENSES)
-          .build();
-  private static final AttachedDisk DEPRECATED_SCRATCH_DISK  =
-      AttachedDisk.builder(SCRATCH_DISK_CONFIGURATION)
-          .deviceName(DEVICE_NAME)
-          .index(INDEX)
-          .setLicenses(LICENSES)
-          .build();
-  private static final AttachedDisk DEPRECATED_CREATED_DISK  =
-      AttachedDisk.builder(CREATE_DISK_CONFIGURATION)
-          .deviceName(DEVICE_NAME)
-          .index(INDEX)
-          .setLicenses(LICENSES)
-          .build();
-
+  
   @Test
   public void testConfigurationToBuilder() {
     comparePersistentDiskConfiguration(PERSISTENT_DISK_CONFIGURATION,
@@ -209,32 +175,6 @@ public class AttachedDiskTest {
   }
 
   @Test
-  public void testConfigurationBuilderDeprecated() {
-    assertTrue(DEPRECATED_CREATE_DISK_CONFIGURATION.boot());
-    assertEquals(AUTO_DELETE, DEPRECATED_CREATE_DISK_CONFIGURATION.autoDelete());
-    assertNull(DEPRECATED_CREATE_DISK_CONFIGURATION.interfaceType());
-    assertEquals(Type.PERSISTENT, DEPRECATED_CREATE_DISK_CONFIGURATION.type());
-    assertEquals(IMAGE_ID, DEPRECATED_CREATE_DISK_CONFIGURATION.sourceImage());
-    assertEquals(DISK_NAME, DEPRECATED_CREATE_DISK_CONFIGURATION.diskName());
-    assertEquals(DISK_TYPE_ID, DEPRECATED_CREATE_DISK_CONFIGURATION.diskType());
-    assertEquals(DISK_SIZE_GB, DEPRECATED_CREATE_DISK_CONFIGURATION.diskSizeGb());
-    assertEquals(IMAGE_ID, DEPRECATED_CREATE_DISK_CONFIGURATION.sourceImage());
-
-    assertEquals(BOOT, DEPRECATED_PERSISTENT_DISK_CONFIGURATION.boot());
-    assertEquals(AUTO_DELETE, DEPRECATED_PERSISTENT_DISK_CONFIGURATION.autoDelete());
-    assertNull(DEPRECATED_PERSISTENT_DISK_CONFIGURATION.interfaceType());
-    assertEquals(Type.PERSISTENT, DEPRECATED_PERSISTENT_DISK_CONFIGURATION.type());
-    assertEquals(MODE, DEPRECATED_PERSISTENT_DISK_CONFIGURATION.mode());
-    assertEquals(DISK_ID, DEPRECATED_PERSISTENT_DISK_CONFIGURATION.sourceDisk());
-
-    assertFalse(DEPRECATED_SCRATCH_DISK_CONFIGURATION.boot());
-    assertTrue(DEPRECATED_SCRATCH_DISK_CONFIGURATION.autoDelete());
-    assertEquals(INTERFACE_TYPE, DEPRECATED_SCRATCH_DISK_CONFIGURATION.interfaceType());
-    assertEquals(Type.SCRATCH, DEPRECATED_SCRATCH_DISK_CONFIGURATION.type());
-    assertEquals(DISK_TYPE_ID, DEPRECATED_SCRATCH_DISK_CONFIGURATION.diskType());
-  }
-
-  @Test
   public void testBuilder() {
     assertEquals(PERSISTENT_DISK_CONFIGURATION, PERSISTENT_DISK.getConfiguration());
     assertEquals(DEVICE_NAME, PERSISTENT_DISK.getDeviceName());
@@ -248,22 +188,6 @@ public class AttachedDiskTest {
     assertEquals(DEVICE_NAME, CREATED_DISK.getDeviceName());
     assertEquals(INDEX, CREATED_DISK.getIndex());
     assertEquals(LICENSES, CREATED_DISK.getLicenses());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(PERSISTENT_DISK_CONFIGURATION, DEPRECATED_PERSISTENT_DISK.configuration());
-    assertEquals(DEVICE_NAME, DEPRECATED_PERSISTENT_DISK.deviceName());
-    assertEquals(INDEX, DEPRECATED_PERSISTENT_DISK.index());
-    assertEquals(LICENSES, DEPRECATED_PERSISTENT_DISK.licenses());
-    assertEquals(SCRATCH_DISK_CONFIGURATION, DEPRECATED_SCRATCH_DISK.configuration());
-    assertEquals(DEVICE_NAME, DEPRECATED_SCRATCH_DISK.deviceName());
-    assertEquals(INDEX, DEPRECATED_SCRATCH_DISK.index());
-    assertEquals(LICENSES, DEPRECATED_SCRATCH_DISK.licenses());
-    assertEquals(CREATE_DISK_CONFIGURATION, DEPRECATED_CREATED_DISK.configuration());
-    assertEquals(DEVICE_NAME, DEPRECATED_CREATED_DISK.deviceName());
-    assertEquals(INDEX, DEPRECATED_CREATED_DISK.index());
-    assertEquals(LICENSES, DEPRECATED_CREATED_DISK.licenses());
   }
 
   @Test

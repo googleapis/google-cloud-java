@@ -49,28 +49,8 @@ public final class SnapshotId extends ResourceId {
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
-  @Deprecated
-  public String snapshot() {
-    return getSnapshot();
-  }
-
-  /**
-   * Returns the name of the snapshot. The name must be 1-63 characters long and comply with
-   * RFC1035. Specifically, the name must match the regular expression
-   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
-   * and all following characters must be a dash, lowercase letter, or digit, except the last
-   * character, which cannot be a dash.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
-   */
   public String getSnapshot() {
     return snapshot;
-  }
-
-  @Override
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
   }
 
   @Override

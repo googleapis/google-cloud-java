@@ -74,7 +74,6 @@ public class RemoteComputeHelperTest {
   public void testCreateFromStream() {
     RemoteComputeHelper helper = RemoteComputeHelper.create(PROJECT_ID, JSON_KEY_STREAM);
     ComputeOptions options = helper.getOptions();
-    assertEquals(options, helper.options());
     assertEquals(PROJECT_ID, options.getProjectId());
     assertEquals(60000,
         ((HttpTransportOptions) options.getTransportOptions()).getConnectTimeout());

@@ -29,7 +29,7 @@ import java.util.logging.Logger;
 
 /**
  * Utility to create a remote Compute configuration for testing. Compute options can be obtained
- * via the {@link #options()} method. Returned options have custom
+ * via the {@link #getOptions()} method. Returned options have custom
  * {@link ComputeOptions#getRetryParams()}: {@link RetryParams#getRetryMaxAttempts()} is {@code 10},
  * {@link RetryParams#getRetryMinAttempts()} is {@code 6},
  * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
@@ -46,14 +46,6 @@ public class RemoteComputeHelper {
 
   private RemoteComputeHelper(ComputeOptions options) {
     this.options = options;
-  }
-
-  /**
-   * Returns a {@link ComputeOptions} object to be used for testing.
-   */
-  @Deprecated
-  public ComputeOptions options() {
-    return getOptions();
   }
 
   /**

@@ -48,17 +48,6 @@ public class SnapshotIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    SnapshotId snapshotId = SnapshotId.of(PROJECT, NAME);
-    assertEquals(PROJECT, snapshotId.project());
-    assertEquals(NAME, snapshotId.snapshot());
-    assertEquals(URL, snapshotId.selfLink());
-    snapshotId = SnapshotId.of(NAME);
-    assertNull(snapshotId.project());
-    assertEquals(NAME, snapshotId.snapshot());
-  }
-
-  @Test
   public void testToAndFromUrl() {
     SnapshotId snapshotId = SnapshotId.of(PROJECT, NAME);
     compareSnapshotId(snapshotId, SnapshotId.fromUrl(snapshotId.getSelfLink()));

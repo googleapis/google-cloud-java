@@ -132,18 +132,8 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeO
     return baseEquals(other);
   }
 
-  @Deprecated
-  public static ComputeOptions defaultInstance() {
-    return getDefaultInstance();
-  }
-
   public static ComputeOptions getDefaultInstance() {
     return newBuilder().build();
-  }
-
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
   }
 
   public static Builder newBuilder() {

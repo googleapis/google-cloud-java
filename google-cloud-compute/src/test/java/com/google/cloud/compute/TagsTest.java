@@ -48,19 +48,6 @@ public class TagsTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    Tags tags = Tags.builder().values(ImmutableList.of("tag1", "tag2")).build();
-    assertEquals(ImmutableList.of("tag1", "tag2"), tags.values());
-    assertNull(tags.fingerprint());
-    tags = Tags.builder().add("tag1").add("tag2").build();
-    assertEquals(ImmutableList.of("tag1", "tag2"), tags.values());
-    assertNull(tags.fingerprint());
-    tags = Tags.builder().add("tag1").add("tag2").fingerprint("fingerprint").build();
-    assertEquals(ImmutableList.of("tag1", "tag2"), tags.values());
-    assertEquals("fingerprint", tags.fingerprint());
-  }
-
-  @Test
   public void testOf() {
     compareTags(TAGS, Tags.of("tag1", "tag2"));
     compareTags(TAGS, Tags.of(ImmutableList.of("tag1", "tag2")));

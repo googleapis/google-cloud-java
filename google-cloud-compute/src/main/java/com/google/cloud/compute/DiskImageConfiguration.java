@@ -62,14 +62,6 @@ public class DiskImageConfiguration extends ImageConfiguration {
     /**
      * Sets the identity of the source disk used to create the image.
      */
-    @Deprecated
-    public Builder sourceDisk(DiskId sourceDisk) {
-      return setSourceDisk(sourceDisk);
-    }
-
-    /**
-     * Sets the identity of the source disk used to create the image.
-     */
     public Builder setSourceDisk(DiskId sourceDisk) {
       this.sourceDisk = checkNotNull(sourceDisk);
       return this;
@@ -98,26 +90,8 @@ public class DiskImageConfiguration extends ImageConfiguration {
   /**
    * Returns the identity of the source disk used to create this image.
    */
-  @Deprecated
-  public DiskId sourceDisk() {
-    return getSourceDisk();
-  }
-
-  /**
-   * Returns the identity of the source disk used to create this image.
-   */
   public DiskId getSourceDisk() {
     return sourceDisk;
-  }
-
-  /**
-   * Returns the service-generated unique id of the disk used to create this image. This value may
-   * be used to determine whether the image was taken from the current or a previous instance of a
-   * given disk name.
-   */
-  @Deprecated
-  public String sourceDiskId() {
-    return getSourceDiskId();
   }
 
   /**
@@ -168,14 +142,6 @@ public class DiskImageConfiguration extends ImageConfiguration {
     imagePb.setSourceDisk(sourceDisk.getSelfLink());
     imagePb.setSourceDiskId(sourceDiskId);
     return imagePb;
-  }
-
-  /**
-   * Creates a builder for a {@code DiskImageConfiguration} given the source disk identity.
-   */
-  @Deprecated
-  public static Builder builder(DiskId sourceDisk) {
-    return newBuilder(sourceDisk);
   }
 
   /**

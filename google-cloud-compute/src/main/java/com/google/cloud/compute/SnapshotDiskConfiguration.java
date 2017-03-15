@@ -72,32 +72,9 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
      *     Restoring a snapshot to a larger size</a>
      */
     @Override
-    @Deprecated
-    public Builder sizeGb(Long sizeGb) {
-      return setSizeGb(sizeGb);
-    }
-
-    /**
-     * Sets the size of the persistent disk, in GB. If not set the disk will have the size of the
-     * snapshot. This value can be larger than the snapshot's size. If the provided size is smaller
-     * than the snapshot's size then disk creation will fail.
-     *
-     * @see <a href=
-     *     "https://cloud.google.com/compute/docs/disks/persistent-disks#restoresnapshotlargersize">
-     *     Restoring a snapshot to a larger size</a>
-     */
-    @Override
     public Builder setSizeGb(Long sizeGb) {
       super.setSizeGb(sizeGb);
       return this;
-    }
-
-    /**
-     * Sets the identity of the source snapshot used to create the disk.
-     */
-    @Deprecated
-    public Builder sourceSnapshot(SnapshotId sourceSnapshot) {
-      return setSourceSnapshot(sourceSnapshot);
     }
 
     /**
@@ -131,27 +108,8 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
   /**
    * Returns the identity of the source snapshot used to create the disk.
    */
-  @Deprecated
-  public SnapshotId sourceSnapshot() {
-    return sourceSnapshot;
-  }
-
-  /**
-   * Returns the identity of the source snapshot used to create the disk.
-   */
   public SnapshotId getSourceSnapshot() {
     return sourceSnapshot;
-  }
-
-  /**
-   * Returns the service-generated unique id of the snapshot used to create this disk. This value
-   * identifies the exact snapshot that was used to create the persistent disk. For example, if you
-   * created the persistent disk from a snapshot that was later deleted and recreated under the same
-   * name, the source snapshot ID would identify the exact version of the snapshot that was used.
-   */
-  @Deprecated
-  public String sourceSnapshotId() {
-    return sourceSnapshotId;
   }
 
   /**
@@ -203,14 +161,6 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
     return super.toPb()
         .setSourceSnapshot(sourceSnapshot.getSelfLink())
         .setSourceSnapshotId(sourceSnapshotId);
-  }
-
-  /**
-   * Returns a builder for a {@code SnapshotDiskConfiguration} object given the snapshot identity.
-   */
-  @Deprecated
-  public static Builder builder(SnapshotId sourceSnapshot) {
-    return newBuilder(sourceSnapshot);
   }
 
   /**

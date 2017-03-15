@@ -170,46 +170,6 @@ public class ImageTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedImage(3);
-    assertEquals(GENERATED_ID, diskImage.generatedId());
-    assertEquals(IMAGE_ID, diskImage.imageId());
-    assertEquals(CREATION_TIMESTAMP, diskImage.creationTimestamp());
-    assertEquals(DESCRIPTION, diskImage.description());
-    assertEquals(DISK_CONFIGURATION, diskImage.configuration());
-    assertEquals(STATUS, diskImage.status());
-    assertEquals(DISK_SIZE_GB, diskImage.diskSizeGb());
-    assertEquals(LICENSES, diskImage.licenses());
-    assertEquals(DEPRECATION_STATUS, diskImage.deprecationStatus());
-    assertSame(serviceMockReturnsOptions, diskImage.compute());
-    assertEquals(GENERATED_ID, storageImage.generatedId());
-    assertEquals(IMAGE_ID, storageImage.imageId());
-    assertEquals(CREATION_TIMESTAMP, storageImage.creationTimestamp());
-    assertEquals(DESCRIPTION, storageImage.description());
-    assertEquals(STORAGE_CONFIGURATION, storageImage.configuration());
-    assertEquals(STATUS, storageImage.status());
-    assertEquals(DISK_SIZE_GB, storageImage.diskSizeGb());
-    assertEquals(LICENSES, storageImage.licenses());
-    assertEquals(DEPRECATION_STATUS, storageImage.deprecationStatus());
-    assertSame(serviceMockReturnsOptions, storageImage.compute());
-    ImageId imageId = ImageId.of("otherImage");
-    Image image = new Image.Builder(serviceMockReturnsOptions, IMAGE_ID, STORAGE_CONFIGURATION)
-        .imageId(imageId)
-        .configuration(DISK_CONFIGURATION)
-        .build();
-    assertNull(image.generatedId());
-    assertEquals(imageId, image.imageId());
-    assertNull(image.creationTimestamp());
-    assertNull(image.description());
-    assertEquals(DISK_CONFIGURATION, image.configuration());
-    assertNull(image.status());
-    assertNull(image.diskSizeGb());
-    assertNull(image.licenses());
-    assertNull(image.deprecationStatus());
-    assertSame(serviceMockReturnsOptions, image.compute());
-  }
-
-  @Test
   public void testToAndFromPb() {
     initializeExpectedImage(12);
     compareImage(diskImage,

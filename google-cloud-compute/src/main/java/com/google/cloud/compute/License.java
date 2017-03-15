@@ -44,14 +44,6 @@ public class License implements Serializable {
   /**
    * Returns the identity of the license.
    */
-  @Deprecated
-  public LicenseId licenseId() {
-    return licenseId;
-  }
-
-  /**
-   * Returns the identity of the license.
-   */
   public LicenseId getLicenseId() {
     return licenseId;
   }

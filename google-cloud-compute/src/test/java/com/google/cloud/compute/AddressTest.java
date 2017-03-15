@@ -170,64 +170,6 @@ public class AddressTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedAddress(6);
-    assertEquals(ADDRESS, instanceAddress.address());
-    assertEquals(CREATION_TIMESTAMP, instanceAddress.creationTimestamp());
-    assertEquals(DESCRIPTION, instanceAddress.description());
-    assertEquals(GENERATED_ID, instanceAddress.generatedId());
-    assertEquals(REGION_ADDRESS_ID, instanceAddress.addressId());
-    assertEquals(STATUS, instanceAddress.status());
-    assertEquals(INSTANCE_USAGE, instanceAddress.usage());
-    assertSame(serviceMockReturnsOptions, instanceAddress.compute());
-    assertEquals(ADDRESS, regionForwardingAddress.address());
-    assertEquals(CREATION_TIMESTAMP, regionForwardingAddress.creationTimestamp());
-    assertEquals(DESCRIPTION, regionForwardingAddress.description());
-    assertEquals(GENERATED_ID, regionForwardingAddress.generatedId());
-    assertEquals(REGION_ADDRESS_ID, regionForwardingAddress.addressId());
-    assertEquals(STATUS, regionForwardingAddress.status());
-    assertEquals(REGION_FORWARDING_USAGE, regionForwardingAddress.usage());
-    assertSame(serviceMockReturnsOptions, regionForwardingAddress.compute());
-    assertEquals(ADDRESS, globalForwardingAddress.address());
-    assertEquals(CREATION_TIMESTAMP, globalForwardingAddress.creationTimestamp());
-    assertEquals(DESCRIPTION, globalForwardingAddress.description());
-    assertEquals(GENERATED_ID, globalForwardingAddress.generatedId());
-    assertEquals(GLOBAL_ADDRESS_ID, globalForwardingAddress.addressId());
-    assertEquals(STATUS, globalForwardingAddress.status());
-    assertEquals(GLOBAL_FORWARDING_USAGE, globalForwardingAddress.usage());
-    assertSame(serviceMockReturnsOptions, globalForwardingAddress.compute());
-    Address address = new Address.Builder(serviceMockReturnsOptions, GLOBAL_ADDRESS_ID).build();
-    assertEquals(GLOBAL_ADDRESS_ID, address.addressId());
-    assertSame(serviceMockReturnsOptions, address.compute());
-    assertNull(address.address());
-    assertNull(address.creationTimestamp());
-    assertNull(address.description());
-    assertNull(address.generatedId());
-    assertNull(address.status());
-    assertNull(address.usage());
-    address = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID).build();
-    assertEquals(REGION_ADDRESS_ID, address.addressId());
-    assertSame(serviceMockReturnsOptions, address.compute());
-    assertNull(address.address());
-    assertNull(address.creationTimestamp());
-    assertNull(address.description());
-    assertNull(address.generatedId());
-    assertNull(address.status());
-    assertNull(address.usage());
-    address = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
-        .addressId(GLOBAL_ADDRESS_ID)
-        .build();
-    assertEquals(GLOBAL_ADDRESS_ID, address.addressId());
-    assertSame(serviceMockReturnsOptions, address.compute());
-    assertNull(address.address());
-    assertNull(address.creationTimestamp());
-    assertNull(address.description());
-    assertNull(address.generatedId());
-    assertNull(address.status());
-    assertNull(address.usage());
-  }
-
-  @Test
   public void testToBuilder() {
     initializeExpectedAddress(16);
     compareAddress(instanceAddress, instanceAddress.toBuilder().build());

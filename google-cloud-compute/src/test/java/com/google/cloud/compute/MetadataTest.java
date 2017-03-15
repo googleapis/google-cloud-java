@@ -31,11 +31,7 @@ public class MetadataTest {
       .add("key1", "value1")
       .add("key2", "value2")
       .build();
-  private static final Metadata DEPRECATED_METADATA = Metadata.builder()
-      .add("key1", "value1")
-      .add("key2", "value2")
-      .build();
-
+  
   @Test
   public void testToBuilder() {
     Metadata metadata = METADATA.toBuilder().setFingerprint("newFingerprint").build();
@@ -58,23 +54,6 @@ public class MetadataTest {
         .build();
     assertEquals(ImmutableMap.of("key1", "value1", "key2", "value2"), metadata.getValues());
     assertEquals("fingerprint", metadata.getFingerprint());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(ImmutableMap.of("key1", "value1", "key2", "value2"), DEPRECATED_METADATA.values());
-    assertNull(DEPRECATED_METADATA.fingerprint());
-    Metadata metadata = Metadata.builder()
-        .values(ImmutableMap.of("key1", "value1", "key2", "value2"))
-        .build();
-    assertEquals(ImmutableMap.of("key1", "value1", "key2", "value2"), metadata.values());
-    assertNull(metadata.fingerprint());
-    metadata = Metadata.builder()
-        .values(ImmutableMap.of("key1", "value1", "key2", "value2"))
-        .fingerprint("fingerprint")
-        .build();
-    assertEquals(ImmutableMap.of("key1", "value1", "key2", "value2"), metadata.values());
-    assertEquals("fingerprint", metadata.fingerprint());
   }
 
   @Test

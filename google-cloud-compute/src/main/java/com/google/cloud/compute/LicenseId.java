@@ -57,22 +57,8 @@ public final class LicenseId extends ResourceId {
   /**
    * Returns the name of the license.
    */
-  @Deprecated
-  public String license() {
-    return license;
-  }
-
-  /**
-   * Returns the name of the license.
-   */
   public String getLicense() {
     return license;
-  }
-
-  @Override
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
   }
 
   @Override

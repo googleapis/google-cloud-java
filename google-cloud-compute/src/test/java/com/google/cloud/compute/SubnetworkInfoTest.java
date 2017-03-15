@@ -38,13 +38,6 @@ public class SubnetworkInfoTest {
           .setDescription(DESCRIPTION)
           .setGatewayAddress(GATEWAY_ADDRESS)
           .build();
-  private static final SubnetworkInfo DEPRECATED_SUBNETWORK_INFO =
-      SubnetworkInfo.builder(SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
-          .setGeneratedId(GENERATED_ID)
-          .setCreationTimestamp(CREATION_TIMESTAMP)
-          .description(DESCRIPTION)
-          .setGatewayAddress(GATEWAY_ADDRESS)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -71,17 +64,6 @@ public class SubnetworkInfoTest {
     assertEquals(GATEWAY_ADDRESS, SUBNETWORK_INFO.getGatewayAddress());
     assertEquals(NETWORK_ID, SUBNETWORK_INFO.getNetwork());
     assertEquals(IP_RANGE, SUBNETWORK_INFO.getIpRange());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(GENERATED_ID, DEPRECATED_SUBNETWORK_INFO.generatedId());
-    assertEquals(SUBNETWORK_ID, DEPRECATED_SUBNETWORK_INFO.subnetworkId());
-    assertEquals(CREATION_TIMESTAMP, DEPRECATED_SUBNETWORK_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, DEPRECATED_SUBNETWORK_INFO.description());
-    assertEquals(GATEWAY_ADDRESS, DEPRECATED_SUBNETWORK_INFO.gatewayAddress());
-    assertEquals(NETWORK_ID, DEPRECATED_SUBNETWORK_INFO.network());
-    assertEquals(IP_RANGE, DEPRECATED_SUBNETWORK_INFO.ipRange());
   }
 
   @Test
