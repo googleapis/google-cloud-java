@@ -22,9 +22,9 @@ import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.datastore.spi.DatastoreRpc;
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
-import com.google.cloud.datastore.spi.DefaultDatastoreRpc;
+import com.google.cloud.datastore.spi.v1.HttpDatastoreRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import java.lang.reflect.Method;
@@ -57,7 +57,7 @@ public class DatastoreOptions
 
     @Override
     public DatastoreRpc create(DatastoreOptions options) {
-      return new DefaultDatastoreRpc(options);
+      return new HttpDatastoreRpc(options);
     }
   }
 

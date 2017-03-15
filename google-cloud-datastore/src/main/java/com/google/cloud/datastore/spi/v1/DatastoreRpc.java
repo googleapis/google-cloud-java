@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.datastore.spi;
+package com.google.cloud.datastore.spi.v1;
 
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.datastore.DatastoreException;
