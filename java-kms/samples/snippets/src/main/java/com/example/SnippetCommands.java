@@ -119,7 +119,7 @@ class SnippetCommands {
   public static class AddMemberToKeyRingPolicyCommand extends KeyRingArgs implements Command {
     @Argument(metaVar = "member", required = true, index = 1,
         usage = "The member to add.\n"
-        + "See https://g.co/cloud/kms/docs/reference/rest/v1beta1/Policy#binding "
+        + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
         + "for valid values.")
     String member;
     @Argument(metaVar = "role", required = true, index = 2,
@@ -135,7 +135,7 @@ class SnippetCommands {
   public static class AddMemberToCryptoKeyPolicyCommand extends KeyArgs implements Command {
     @Argument(metaVar = "member", required = true, index = 2,
         usage = "The member to add.\n"
-        + "See https://g.co/cloud/kms/docs/reference/rest/v1beta1/Policy#binding "
+        + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
         + "for valid values.")
     String member;
     @Argument(metaVar = "role", required = true, index = 3,
@@ -151,7 +151,7 @@ class SnippetCommands {
   public static class RemoveMemberFromKeyRingPolicyCommand extends KeyRingArgs implements Command {
     @Argument(metaVar = "member", required = true, index = 1,
         usage = "The member to add.\n"
-        + "See https://g.co/cloud/kms/docs/reference/rest/v1beta1/Policy#binding "
+        + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
         + "for valid values.")
     String member;
     @Argument(metaVar = "role", required = true, index = 2,
@@ -167,7 +167,7 @@ class SnippetCommands {
   public static class RemoveMemberFromCryptoKeyPolicyCommand extends KeyArgs implements Command {
     @Argument(metaVar = "member", required = true, index = 2,
         usage = "The member to add.\n"
-        + "See https://g.co/cloud/kms/docs/reference/rest/v1beta1/Policy#binding "
+        + "See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding "
         + "for valid values.")
     String member;
     @Argument(metaVar = "role", required = true, index = 3,

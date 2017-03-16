@@ -19,12 +19,12 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.services.cloudkms.v1beta1.CloudKMS;
-import com.google.api.services.cloudkms.v1beta1.CloudKMSScopes;
-import com.google.api.services.cloudkms.v1beta1.model.DecryptRequest;
-import com.google.api.services.cloudkms.v1beta1.model.DecryptResponse;
-import com.google.api.services.cloudkms.v1beta1.model.EncryptRequest;
-import com.google.api.services.cloudkms.v1beta1.model.EncryptResponse;
+import com.google.api.services.cloudkms.v1.CloudKMS;
+import com.google.api.services.cloudkms.v1.CloudKMSScopes;
+import com.google.api.services.cloudkms.v1.model.DecryptRequest;
+import com.google.api.services.cloudkms.v1.model.DecryptResponse;
+import com.google.api.services.cloudkms.v1.model.EncryptRequest;
+import com.google.api.services.cloudkms.v1.model.EncryptResponse;
 
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
@@ -63,7 +63,7 @@ public class CryptFile {
    * Encrypts the given bytes, using the primary version of the specified crypto key.
    *
    * The primary version can be updated via the <a
-   * href="https://g.co/cloud/kms/docs/reference/rest/v1beta1/projects.locations.keyRings.cryptoKeys/updatePrimaryVersion">updatePrimaryVersion</a>
+   * href="https://g.co/cloud/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys/updatePrimaryVersion">updatePrimaryVersion</a>
    * method.
    */
   public static byte[] encrypt(String projectId, String ringId, String keyId, byte[] plaintext)

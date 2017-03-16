@@ -19,18 +19,18 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.services.cloudkms.v1beta1.CloudKMS;
-import com.google.api.services.cloudkms.v1beta1.CloudKMSScopes;
-import com.google.api.services.cloudkms.v1beta1.model.Binding;
-import com.google.api.services.cloudkms.v1beta1.model.CryptoKey;
-import com.google.api.services.cloudkms.v1beta1.model.CryptoKeyVersion;
-import com.google.api.services.cloudkms.v1beta1.model.DestroyCryptoKeyVersionRequest;
-import com.google.api.services.cloudkms.v1beta1.model.KeyRing;
-import com.google.api.services.cloudkms.v1beta1.model.ListCryptoKeyVersionsResponse;
-import com.google.api.services.cloudkms.v1beta1.model.ListCryptoKeysResponse;
-import com.google.api.services.cloudkms.v1beta1.model.ListKeyRingsResponse;
-import com.google.api.services.cloudkms.v1beta1.model.Policy;
-import com.google.api.services.cloudkms.v1beta1.model.SetIamPolicyRequest;
+import com.google.api.services.cloudkms.v1.CloudKMS;
+import com.google.api.services.cloudkms.v1.CloudKMSScopes;
+import com.google.api.services.cloudkms.v1.model.Binding;
+import com.google.api.services.cloudkms.v1.model.CryptoKey;
+import com.google.api.services.cloudkms.v1.model.CryptoKeyVersion;
+import com.google.api.services.cloudkms.v1.model.DestroyCryptoKeyVersionRequest;
+import com.google.api.services.cloudkms.v1.model.KeyRing;
+import com.google.api.services.cloudkms.v1.model.ListCryptoKeyVersionsResponse;
+import com.google.api.services.cloudkms.v1.model.ListCryptoKeysResponse;
+import com.google.api.services.cloudkms.v1.model.ListKeyRingsResponse;
+import com.google.api.services.cloudkms.v1.model.Policy;
+import com.google.api.services.cloudkms.v1.model.SetIamPolicyRequest;
 
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
@@ -264,7 +264,7 @@ public class Snippets {
    *        user:$userEmail
    *        serviceAccount:$serviceAccountEmail
    *
-   *        See https://g.co/cloud/kms/docs/reference/rest/v1beta1/Policy#binding
+   *        See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding
    *        for more details.
    *
    * @param role Must be in one of the following formats:
@@ -324,7 +324,7 @@ public class Snippets {
    *        user:$userEmail
    *        serviceAccount:$serviceAccountEmail
    *
-   *        See https://g.co/cloud/kms/docs/reference/rest/v1beta1/Policy#binding
+   *        See https://g.co/cloud/kms/docs/reference/rest/v1/Policy#binding
    *        for more details.
    *
    * @param role Must be in one of the following formats:
