@@ -55,7 +55,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     private Integer maxBadRecords;
     private Schema schema;
     private Boolean ignoreUnknownValues;
-    private List<String> projectionFields;
 
     private Builder() {}
 
@@ -108,7 +107,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         this.schema = Schema.fromPb(loadConfigurationPb.getSchema());
       }
       this.ignoreUnknownValues = loadConfigurationPb.getIgnoreUnknownValues();
-      this.projectionFields = loadConfigurationPb.getProjectionFields();
+      if (loadConfigurationPb.getProjectionFields() != null) {
+        this.formatOptions = DatastoreBackupOptions.newBuilder()
+            .setProjectionFields(loadConfigurationPb.getProjectionFields())
+            .build();
+      }
     }
 
 

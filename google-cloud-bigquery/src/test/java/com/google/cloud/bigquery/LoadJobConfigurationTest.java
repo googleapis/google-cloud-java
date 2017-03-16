@@ -46,7 +46,7 @@ public class LoadJobConfigurationTest {
       .build();
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
-  private static final LoadJobConfiguration LOAD_CONFIGURATION =
+  private static final LoadJobConfiguration LOAD_CONFIGURATION_CSV =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
           .setCreateDisposition(CREATE_DISPOSITION)
           .setWriteDisposition(WRITE_DISPOSITION)
@@ -55,16 +55,38 @@ public class LoadJobConfigurationTest {
           .setMaxBadRecords(MAX_BAD_RECORDS)
           .setSchema(TABLE_SCHEMA)
           .build();
+  private static final DatastoreBackupOptions BACKUP_OPTIONS = DatastoreBackupOptions.newBuilder()
+      .setProjectionFields(ImmutableList.of("field_1", "field_2"))
+      .build();
+  private static final LoadJobConfiguration LOAD_CONFIGURATION_BACKUP =
+      LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
+          .setCreateDisposition(CREATE_DISPOSITION)
+          .setWriteDisposition(WRITE_DISPOSITION)
+          .setFormatOptions(BACKUP_OPTIONS)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setMaxBadRecords(MAX_BAD_RECORDS)
+          .setSchema(TABLE_SCHEMA)
+          .build();
 
   @Test
   public void testToBuilder() {
-    compareLoadJobConfiguration(LOAD_CONFIGURATION, LOAD_CONFIGURATION.toBuilder().build());
-    LoadJobConfiguration configuration = LOAD_CONFIGURATION.toBuilder()
+    compareLoadJobConfiguration(
+        LOAD_CONFIGURATION_CSV, LOAD_CONFIGURATION_CSV.toBuilder().build());
+    LoadJobConfiguration configurationCSV = LOAD_CONFIGURATION_CSV.toBuilder()
         .setDestinationTable(TableId.of("dataset", "newTable"))
         .build();
-    assertEquals("newTable", configuration.getDestinationTable().getTable());
-    configuration = configuration.toBuilder().setDestinationTable(TABLE_ID).build();
-    compareLoadJobConfiguration(LOAD_CONFIGURATION, configuration);
+    assertEquals("newTable", configurationCSV.getDestinationTable().getTable());
+    configurationCSV = configurationCSV.toBuilder().setDestinationTable(TABLE_ID).build();
+    compareLoadJobConfiguration(LOAD_CONFIGURATION_CSV, configurationCSV);
+
+    compareLoadJobConfiguration(
+        LOAD_CONFIGURATION_BACKUP, LOAD_CONFIGURATION_BACKUP.toBuilder().build());
+    LoadJobConfiguration configurationBackup = LOAD_CONFIGURATION_BACKUP.toBuilder()
+        .setDestinationTable(TableId.of("dataset", "newTable"))
+        .build();
+    assertEquals("newTable", configurationBackup.getDestinationTable().getTable());
+    configurationBackup = configurationBackup.toBuilder().setDestinationTable(TABLE_ID).build();
+    compareLoadJobConfiguration(LOAD_CONFIGURATION_BACKUP, configurationBackup);
   }
 
   @Test
@@ -95,21 +117,21 @@ public class LoadJobConfigurationTest {
 
   @Test
   public void testToPbAndFromPb() {
-    compareLoadJobConfiguration(LOAD_CONFIGURATION,
-        LoadJobConfiguration.fromPb(LOAD_CONFIGURATION.toPb()));
+    compareLoadJobConfiguration(LOAD_CONFIGURATION_CSV,
+        LoadJobConfiguration.fromPb(LOAD_CONFIGURATION_CSV.toPb()));
     LoadJobConfiguration configuration = LoadJobConfiguration.of(TABLE_ID, SOURCE_URIS);
     compareLoadJobConfiguration(configuration, LoadJobConfiguration.fromPb(configuration.toPb()));
   }
 
   @Test
   public void testSetProjectId() {
-    LoadConfiguration configuration = LOAD_CONFIGURATION.setProjectId("p");
+    LoadConfiguration configuration = LOAD_CONFIGURATION_CSV.setProjectId("p");
     assertEquals("p", configuration.getDestinationTable().getProject());
   }
 
   @Test
   public void testGetType() {
-    assertEquals(JobConfiguration.Type.LOAD, LOAD_CONFIGURATION.getType());
+    assertEquals(JobConfiguration.Type.LOAD, LOAD_CONFIGURATION_CSV.getType());
   }
 
   private void compareLoadJobConfiguration(LoadJobConfiguration expected,

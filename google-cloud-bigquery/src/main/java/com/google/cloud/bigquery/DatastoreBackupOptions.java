@@ -24,7 +24,7 @@ import java.util.Objects;
  * Google BigQuery options for Cloud Datastore backup.
  */
 public final class DatastoreBackupOptions extends FormatOptions {
-  private List<String> projectionFields;
+  private final List<String> projectionFields;
   
   public static final class Builder {
     private List<String> projectionFields;
