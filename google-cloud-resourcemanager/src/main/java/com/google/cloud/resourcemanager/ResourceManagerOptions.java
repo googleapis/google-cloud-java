@@ -19,6 +19,7 @@ package com.google.cloud.resourcemanager;
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.resourcemanager.spi.v1beta1.HttpResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
@@ -58,7 +59,7 @@ public class ResourceManagerOptions
         new DefaultResourceManagerRpcFactory();
 
     @Override
-    public ResourceManagerRpc create(ResourceManagerOptions options) {
+    public ServiceRpc create(ResourceManagerOptions options) {
       return new HttpResourceManagerRpc(options);
     }
   }

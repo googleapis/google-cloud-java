@@ -19,6 +19,7 @@ package com.google.cloud.logging;
 import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.logging.spi.v2.GrpcLoggingRpc;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
@@ -58,7 +59,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
     private static final LoggingRpcFactory INSTANCE = new DefaultLoggingRpcFactory();
 
     @Override
-    public LoggingRpc create(LoggingOptions options) {
+    public ServiceRpc create(LoggingOptions options) {
       try {
         return new GrpcLoggingRpc(options);
       } catch (IOException e) {

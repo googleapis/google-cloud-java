@@ -19,6 +19,7 @@ package com.google.cloud.compute;
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.compute.spi.v1.ComputeRpc;
 import com.google.cloud.compute.spi.ComputeRpcFactory;
@@ -49,7 +50,7 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeOptions> {
     private static final ComputeRpcFactory INSTANCE = new DefaultComputeRpcFactory();
 
     @Override
-    public ComputeRpc create(ComputeOptions options) {
+    public ServiceRpc create(ComputeOptions options) {
       return new HttpComputeRpc(options);
     }
   }

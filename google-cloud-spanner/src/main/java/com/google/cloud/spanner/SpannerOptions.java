@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
@@ -65,7 +66,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private static final DefaultSpannerRpcFactory INSTANCE = new DefaultSpannerRpcFactory();
 
     @Override
-    public SpannerRpc create(SpannerOptions options) {
+    public ServiceRpc create(SpannerOptions options) {
       return new GrpcSpannerRpc(options);
     }
   }

@@ -19,6 +19,7 @@ package com.google.cloud.pubsub.deprecated;
 import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.pubsub.deprecated.spi.v1.GrpcPubSubRpc;
 import com.google.cloud.pubsub.deprecated.spi.v1.PubSubRpc;
@@ -66,7 +67,7 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubOptions> {
     private static final PubSubRpcFactory INSTANCE = new DefaultPubSubRpcFactory();
 
     @Override
-    public PubSubRpc create(PubSubOptions options) {
+    public ServiceRpc create(PubSubOptions options) {
       try {
         return new GrpcPubSubRpc(options);
       } catch (IOException e) {

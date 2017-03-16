@@ -19,6 +19,7 @@ package com.google.cloud.storage;
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.storage.spi.v1.HttpStorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc;
@@ -48,7 +49,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
     private static final StorageRpcFactory INSTANCE = new DefaultStorageRpcFactory();
 
     @Override
-    public StorageRpc create(StorageOptions options) {
+    public ServiceRpc create(StorageOptions options) {
       return new HttpStorageRpc(options);
     }
   }

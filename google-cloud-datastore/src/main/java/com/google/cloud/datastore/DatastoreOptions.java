@@ -21,6 +21,7 @@ import static com.google.cloud.datastore.Validator.validateNamespace;
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
@@ -56,7 +57,7 @@ public class DatastoreOptions
     private static final DatastoreRpcFactory INSTANCE = new DefaultDatastoreRpcFactory();
 
     @Override
-    public DatastoreRpc create(DatastoreOptions options) {
+    public ServiceRpc create(DatastoreOptions options) {
       return new HttpDatastoreRpc(options);
     }
   }

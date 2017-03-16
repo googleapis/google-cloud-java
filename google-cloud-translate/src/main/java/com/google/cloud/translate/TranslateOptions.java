@@ -22,6 +22,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.spi.v2.HttpTranslateRpc;
@@ -62,7 +63,7 @@ public class TranslateOptions extends
     private static final TranslateRpcFactory INSTANCE = new DefaultTranslateRpcFactory();
 
     @Override
-    public TranslateRpc create(TranslateOptions options) {
+    public ServiceRpc create(TranslateOptions options) {
       return new HttpTranslateRpc(options);
     }
   }
