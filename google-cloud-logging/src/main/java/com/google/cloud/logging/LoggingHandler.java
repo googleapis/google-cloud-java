@@ -110,9 +110,14 @@ public class LoggingHandler extends Handler {
   private volatile Logging logging;
   private Level flushLevel;
   private long flushSize;
-  private final Level baseLevel;
   private Synchronicity synchronicity;
   private final List<Enhancer> enhancers;
+
+  // Logs with the same severity with the base could be more efficiently sent to Stackdriver.
+  // Defaults to level of the handler or Level.FINEST if the handler is set to Level.ALL.
+  // Currently there is no way to modify the base level, see
+  // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740 .
+  private final Level baseLevel;
 
   /**
    * Creates an handler that publishes messages to Stackdriver Logging.
