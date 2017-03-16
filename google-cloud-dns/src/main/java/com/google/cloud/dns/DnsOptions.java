@@ -111,7 +111,7 @@ public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
     return SCOPES;
   }
 
-  protected DnsRpc getDnsRpc() {
+  protected DnsRpc getDnsRpcV1() {
     return (DnsRpc) getRpc();
   }
 

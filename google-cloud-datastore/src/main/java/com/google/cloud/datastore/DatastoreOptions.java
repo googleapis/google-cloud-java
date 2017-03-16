@@ -175,7 +175,7 @@ public class DatastoreOptions
     return SCOPES;
   }
 
-  protected DatastoreRpc getDatastoreRpc() {
+  protected DatastoreRpc getDatastoreRpcV1() {
     return (DatastoreRpc) getRpc();
   }
 

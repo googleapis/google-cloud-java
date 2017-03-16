@@ -112,7 +112,7 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeOptions> {
     return SCOPES;
   }
 
-  protected ComputeRpc getComputeRpc() {
+  protected ComputeRpc getComputeRpcV1() {
     return (ComputeRpc) getRpc();
   }
 

@@ -133,7 +133,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   SpannerImpl(SpannerOptions options) {
-    this(options.getSpannerRpc(), options.getPrefetchChunks(), options);
+    this(options.getSpannerRpcV1(), options.getPrefetchChunks(), options);
   }
 
   private static ExponentialBackOff newBackOff() {

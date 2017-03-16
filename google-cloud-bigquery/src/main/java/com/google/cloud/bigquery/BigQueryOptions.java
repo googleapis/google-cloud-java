@@ -112,7 +112,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     return SCOPES;
   }
 
-  protected BigQueryRpc getBigQueryRpc() {
+  protected BigQueryRpc getBigQueryRpcV2() {
     return (BigQueryRpc) getRpc();
   }
 

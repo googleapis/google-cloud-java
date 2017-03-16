@@ -110,7 +110,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
 
   DnsImpl(DnsOptions options) {
     super(options);
-    dnsRpc = options.getDnsRpc();
+    dnsRpc = options.getDnsRpcV1();
   }
 
   static Function<ManagedZone, Zone> zoneFromPb(final DnsOptions options) {
@@ -131,7 +131,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       final Map<DnsRpc.Option, ?> optionsMap) {
     try {
       // get a list of managed zones
-      final DnsRpc rpc = serviceOptions.getDnsRpc();
+      final DnsRpc rpc = serviceOptions.getDnsRpcV1();
       DnsRpc.ListResult<ManagedZone> result =
           runWithRetries(new Callable<DnsRpc.ListResult<ManagedZone>>() {
             @Override
@@ -160,7 +160,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       final DnsOptions serviceOptions, final Map<DnsRpc.Option, ?> optionsMap) {
     try {
       // get a list of changes
-      final DnsRpc rpc = serviceOptions.getDnsRpc();
+      final DnsRpc rpc = serviceOptions.getDnsRpcV1();
       DnsRpc.ListResult<Change> result = runWithRetries(new Callable<DnsRpc.ListResult<Change>>() {
         @Override
         public DnsRpc.ListResult<Change> call() {
@@ -189,7 +189,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       final DnsOptions serviceOptions, final Map<DnsRpc.Option, ?> optionsMap) {
     try {
       // get a list of record sets
-      final DnsRpc rpc = serviceOptions.getDnsRpc();
+      final DnsRpc rpc = serviceOptions.getDnsRpcV1();
       DnsRpc.ListResult<ResourceRecordSet> result = runWithRetries(
           new Callable<DnsRpc.ListResult<ResourceRecordSet>>() {
             @Override

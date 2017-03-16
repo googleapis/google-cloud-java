@@ -118,7 +118,7 @@ public class MessageConsumerImplTest {
   @Test
   public void testMessageConsumerAck() throws Exception {
     PullRequest request = pullRequest(MAX_QUEUED_CALLBACKS);
-    EasyMock.expect(options.getPubSubRpc()).andReturn(pubsubRpc);
+    EasyMock.expect(options.getPubSubRpcV1()).andReturn(pubsubRpc);
     EasyMock.expect(options.getService()).andReturn(pubsub);
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(pubsub.getOptions()).andReturn(options).times(2);
@@ -149,7 +149,7 @@ public class MessageConsumerImplTest {
   @Test
   public void testMessageConsumerNack() throws Exception {
     PullRequest request = pullRequest(MAX_QUEUED_CALLBACKS);
-    EasyMock.expect(options.getPubSubRpc()).andReturn(pubsubRpc);
+    EasyMock.expect(options.getPubSubRpcV1()).andReturn(pubsubRpc);
     EasyMock.expect(options.getService()).andReturn(pubsub);
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(pubsub.getOptions()).andReturn(options).times(2);
@@ -187,7 +187,7 @@ public class MessageConsumerImplTest {
     final PullResponse response2 = PullResponse.newBuilder()
         .addReceivedMessages(MESSAGE2_PB)
         .build();
-    EasyMock.expect(options.getPubSubRpc()).andReturn(pubsubRpc);
+    EasyMock.expect(options.getPubSubRpcV1()).andReturn(pubsubRpc);
     EasyMock.expect(options.getService()).andReturn(pubsub);
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     final CountDownLatch nextPullLatch = new CountDownLatch(1);
@@ -240,7 +240,7 @@ public class MessageConsumerImplTest {
     final PullResponse response2 = PullResponse.newBuilder()
         .addReceivedMessages(MESSAGE2_PB)
         .build();
-    EasyMock.expect(options.getPubSubRpc()).andReturn(pubsubRpc);
+    EasyMock.expect(options.getPubSubRpcV1()).andReturn(pubsubRpc);
     EasyMock.expect(options.getService()).andReturn(pubsub);
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     final CountDownLatch nextPullLatch = new CountDownLatch(1);
@@ -290,7 +290,7 @@ public class MessageConsumerImplTest {
     final PullResponse otherPullResponse = PullResponse.newBuilder()
         .addReceivedMessages(MESSAGE1_PB)
         .build();
-    EasyMock.expect(options.getPubSubRpc()).andReturn(pubsubRpc);
+    EasyMock.expect(options.getPubSubRpcV1()).andReturn(pubsubRpc);
     EasyMock.expect(options.getService()).andReturn(pubsub);
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(pubsub.getOptions()).andReturn(options).times(2);
@@ -345,7 +345,7 @@ public class MessageConsumerImplTest {
     final PullResponse otherPullResponse = PullResponse.newBuilder()
         .addReceivedMessages(MESSAGE1_PB)
         .build();
-    EasyMock.expect(options.getPubSubRpc()).andReturn(pubsubRpc);
+    EasyMock.expect(options.getPubSubRpcV1()).andReturn(pubsubRpc);
     EasyMock.expect(options.getService()).andReturn(pubsub);
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(pubsub.getOptions()).andReturn(options).times(2);
@@ -395,7 +395,7 @@ public class MessageConsumerImplTest {
 
   @Test
   public void testClose() throws Exception {
-    EasyMock.expect(options.getPubSubRpc()).andReturn(pubsubRpc);
+    EasyMock.expect(options.getPubSubRpcV1()).andReturn(pubsubRpc);
     EasyMock.expect(options.getService()).andReturn(pubsub);
     final ExecutorService executor = EasyMock.createStrictMock(ExecutorService.class);
     executor.shutdown();

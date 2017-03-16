@@ -109,7 +109,7 @@ public class DnsBatchTest {
     optionsMock = EasyMock.createMock(DnsOptions.class);
     dnsRpcMock = EasyMock.createMock(DnsRpc.class);
     batchMock = EasyMock.createMock(RpcBatch.class);
-    EasyMock.expect(optionsMock.getDnsRpc()).andReturn(dnsRpcMock);
+    EasyMock.expect(optionsMock.getDnsRpcV1()).andReturn(dnsRpcMock);
     EasyMock.expect(dnsRpcMock.createBatch()).andReturn(batchMock);
     EasyMock.replay(optionsMock, dnsRpcMock, batchMock, dns);
     dnsBatch = new DnsBatch(optionsMock);

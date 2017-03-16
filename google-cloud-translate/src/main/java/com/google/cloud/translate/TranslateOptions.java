@@ -173,7 +173,7 @@ public class TranslateOptions extends
     return SCOPES;
   }
 
-  protected TranslateRpc getTranslateRpc() {
+  protected TranslateRpc getTranslateRpcV2() {
     return (TranslateRpc) getRpc();
   }
 

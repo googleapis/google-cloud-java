@@ -55,7 +55,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
   CopyWriter(StorageOptions serviceOptions, RewriteResponse rewriteResponse) {
     this.serviceOptions = serviceOptions;
     this.rewriteResponse = rewriteResponse;
-    this.storageRpc = serviceOptions.getStorageRpc();
+    this.storageRpc = serviceOptions.getStorageRpcV1();
   }
 
   /**

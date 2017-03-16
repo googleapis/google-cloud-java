@@ -138,7 +138,7 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubOptions> {
     return SCOPES;
   }
 
-  protected PubSubRpc getPubSubRpc() {
+  protected PubSubRpc getPubSubRpcV1() {
     return (PubSubRpc) getRpc();
   }
 

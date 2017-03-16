@@ -49,7 +49,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
-    this.datastoreRpc = options.getDatastoreRpc();
+    this.datastoreRpc = options.getDatastoreRpcV1();
     retryParams = MoreObjects.firstNonNull(options.getRetryParams(), RetryParams.noRetries());
   }
 

@@ -48,7 +48,7 @@ public class DnsBatch {
 
   DnsBatch(DnsOptions options) {
     this.options = options;
-    this.dnsRpc = options.getDnsRpc();
+    this.dnsRpc = options.getDnsRpcV1();
     this.batch = dnsRpc.createBatch();
   }
 

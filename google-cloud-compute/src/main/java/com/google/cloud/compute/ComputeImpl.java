@@ -458,7 +458,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
 
   ComputeImpl(ComputeOptions options) {
     super(options);
-    computeRpc = options.getComputeRpc();
+    computeRpc = options.getComputeRpcV1();
   }
 
   @Override
@@ -497,7 +497,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.DiskType>> call() {
-              return serviceOptions.getComputeRpc().listDiskTypes(zone, optionsMap);
+              return serviceOptions.getComputeRpcV1().listDiskTypes(zone, optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -531,7 +531,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.DiskType>> call() {
-              return serviceOptions.getComputeRpc().listDiskTypes(optionsMap);
+              return serviceOptions.getComputeRpcV1().listDiskTypes(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -586,7 +586,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.MachineType>> call() {
-              return serviceOptions.getComputeRpc().listMachineTypes(zone, optionsMap);
+              return serviceOptions.getComputeRpcV1().listMachineTypes(zone, optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -621,7 +621,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.MachineType>> call() {
-              return serviceOptions.getComputeRpc().listMachineTypes(optionsMap);
+              return serviceOptions.getComputeRpcV1().listMachineTypes(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -672,7 +672,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Region>> call() {
-              return serviceOptions.getComputeRpc().listRegions(optionsMap);
+              return serviceOptions.getComputeRpcV1().listRegions(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -723,7 +723,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Zone>> call() {
-              return serviceOptions.getComputeRpc().listZones(optionsMap);
+              return serviceOptions.getComputeRpcV1().listZones(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -820,7 +820,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Operation>> call() {
-              return serviceOptions.getComputeRpc().listGlobalOperations(optionsMap);
+              return serviceOptions.getComputeRpcV1().listGlobalOperations(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -848,7 +848,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Operation>> call() {
-              return serviceOptions.getComputeRpc().listRegionOperations(region, optionsMap);
+              return serviceOptions.getComputeRpcV1().listRegionOperations(region, optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -876,7 +876,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Operation>> call() {
-              return serviceOptions.getComputeRpc().listZoneOperations(zone, optionsMap);
+              return serviceOptions.getComputeRpcV1().listZoneOperations(zone, optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -994,7 +994,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Address>> call() {
-              return serviceOptions.getComputeRpc().listGlobalAddresses(optionsMap);
+              return serviceOptions.getComputeRpcV1().listGlobalAddresses(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -1022,7 +1022,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Address>> call() {
-              return serviceOptions.getComputeRpc().listRegionAddresses(region, optionsMap);
+              return serviceOptions.getComputeRpcV1().listRegionAddresses(region, optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -1050,7 +1050,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Address>> call() {
-              return serviceOptions.getComputeRpc().listAddresses(optionsMap);
+              return serviceOptions.getComputeRpcV1().listAddresses(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -1148,7 +1148,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Snapshot>> call() {
-              return serviceOptions.getComputeRpc().listSnapshots(optionsMap);
+              return serviceOptions.getComputeRpcV1().listSnapshots(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -1246,7 +1246,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Image>> call() {
-              return serviceOptions.getComputeRpc().listImages(project, optionsMap);
+              return serviceOptions.getComputeRpcV1().listImages(project, optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -1364,7 +1364,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Disk>> call() {
-              return serviceOptions.getComputeRpc().listDisks(zone, optionsMap);
+              return serviceOptions.getComputeRpcV1().listDisks(zone, optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -1392,7 +1392,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Disk>> call() {
-              return serviceOptions.getComputeRpc().listDisks(optionsMap);
+              return serviceOptions.getComputeRpcV1().listDisks(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -1501,7 +1501,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Subnetwork>> call() {
-              return serviceOptions.getComputeRpc().listSubnetworks(region, optionsMap);
+              return serviceOptions.getComputeRpcV1().listSubnetworks(region, optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -1529,7 +1529,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Subnetwork>> call() {
-              return serviceOptions.getComputeRpc().listSubnetworks(optionsMap);
+              return serviceOptions.getComputeRpcV1().listSubnetworks(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -1610,7 +1610,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Network>> call() {
-              return serviceOptions.getComputeRpc().listNetworks(optionsMap);
+              return serviceOptions.getComputeRpcV1().listNetworks(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -1712,7 +1712,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Instance>> call() {
-              return serviceOptions.getComputeRpc().listInstances(zone, optionsMap);
+              return serviceOptions.getComputeRpcV1().listInstances(zone, optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -1740,7 +1740,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public ComputeRpc.Tuple<String,
                 Iterable<com.google.api.services.compute.model.Instance>> call() {
-              return serviceOptions.getComputeRpc().listInstances(optionsMap);
+              return serviceOptions.getComputeRpcV1().listInstances(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();

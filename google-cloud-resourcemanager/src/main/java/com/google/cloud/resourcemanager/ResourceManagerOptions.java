@@ -131,7 +131,7 @@ public class ResourceManagerOptions
     return SCOPES;
   }
 
-  protected ResourceManagerRpc getResourceManagerRpc() {
+  protected ResourceManagerRpc getResourceManagerRpcV1Beta1() {
     return (ResourceManagerRpc) getRpc();
   }
 

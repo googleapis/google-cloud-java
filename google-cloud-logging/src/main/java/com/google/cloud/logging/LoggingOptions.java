@@ -129,7 +129,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
     return SCOPES;
   }
 
-  protected LoggingRpc getLoggingRpc() {
+  protected LoggingRpc getLoggingRpcV2() {
     return (LoggingRpc) getRpc();
   }
 

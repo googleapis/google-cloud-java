@@ -66,7 +66,7 @@ public class StorageBatchTest {
     optionsMock = EasyMock.createMock(StorageOptions.class);
     storageRpcMock = EasyMock.createMock(StorageRpc.class);
     batchMock = EasyMock.createMock(RpcBatch.class);
-    EasyMock.expect(optionsMock.getStorageRpc()).andReturn(storageRpcMock);
+    EasyMock.expect(optionsMock.getStorageRpcV1()).andReturn(storageRpcMock);
     EasyMock.expect(storageRpcMock.createBatch()).andReturn(batchMock);
     EasyMock.replay(optionsMock, storageRpcMock, batchMock, storage);
     storageBatch = new StorageBatch(optionsMock);

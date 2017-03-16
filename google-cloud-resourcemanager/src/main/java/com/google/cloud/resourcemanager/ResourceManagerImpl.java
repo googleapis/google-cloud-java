@@ -44,7 +44,7 @@ final class ResourceManagerImpl
 
   ResourceManagerImpl(ResourceManagerOptions options) {
     super(options);
-    resourceManagerRpc = options.getResourceManagerRpc();
+    resourceManagerRpc = options.getResourceManagerRpcV1Beta1();
   }
 
   @Override
@@ -128,7 +128,7 @@ final class ResourceManagerImpl
                 @Override
                 public Tuple<String,
                     Iterable<com.google.api.services.cloudresourcemanager.model.Project>> call() {
-                  return serviceOptions.getResourceManagerRpc().list(optionsMap);
+                  return serviceOptions.getResourceManagerRpcV1Beta1().list(optionsMap);
                 }
               },
               serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());

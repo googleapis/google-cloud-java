@@ -311,7 +311,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return SCOPES;
   }
 
-  protected SpannerRpc getSpannerRpc() {
+  protected SpannerRpc getSpannerRpcV1() {
     return (SpannerRpc) getRpc();
   }
 
