@@ -22,7 +22,6 @@ import static org.mockito.Mockito.doNothing;
 
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.SpannerOptions;
-import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc;
 import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc.MetadataClientCall;
 import io.grpc.ClientCall;
 import io.grpc.ClientCall.Listener;

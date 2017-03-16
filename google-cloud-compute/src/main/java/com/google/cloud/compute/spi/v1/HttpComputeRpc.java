@@ -71,7 +71,6 @@ import com.google.api.services.compute.model.ZoneList;
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.compute.ComputeException;
 import com.google.cloud.compute.ComputeOptions;
-import com.google.cloud.compute.spi.v1.ComputeRpc;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.Map;

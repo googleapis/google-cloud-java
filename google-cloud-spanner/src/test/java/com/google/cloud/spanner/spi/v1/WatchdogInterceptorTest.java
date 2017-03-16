@@ -25,7 +25,6 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.google.cloud.spanner.spi.v1.WatchdogInterceptor;
 import com.google.common.testing.FakeTicker;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
