@@ -21,6 +21,7 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -98,6 +99,8 @@ public class LoggingHandler extends Handler {
   private static final String HANDLERS_PROPERTY = "handlers";
   private static final String ROOT_LOGGER_NAME = "";
   private static final String[] NO_HANDLERS = new String[0];
+  private static final String LEVEL_NAME_KEY = "levelName";
+  private static final String LEVEL_VALUE_KEY = "levelValue";
 
   private static final ThreadLocal<Boolean> inPublishCall = new ThreadLocal<>();
 
@@ -109,6 +112,12 @@ public class LoggingHandler extends Handler {
   private long flushSize;
   private Synchronicity synchronicity;
   private final List<Enhancer> enhancers;
+
+  // Logs with the same severity with the base could be more efficiently sent to Stackdriver.
+  // Defaults to level of the handler or Level.FINEST if the handler is set to Level.ALL.
+  // Currently there is no way to modify the base level, see
+  // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740 .
+  private final Level baseLevel;
 
   /**
    * Creates an handler that publishes messages to Stackdriver Logging.
@@ -171,16 +180,31 @@ public class LoggingHandler extends Handler {
       this.options = options != null ? options : LoggingOptions.getDefaultInstance();
       this.flushLevel = helper.getLevelProperty(className + ".flushLevel", LoggingLevel.ERROR);
       this.flushSize = helper.getLongProperty(className + ".flushSize", 1L);
+
+      Level level = helper.getLevelProperty(className + ".level", Level.INFO);
+      setLevel(level);
+      baseLevel = level.equals(Level.ALL) ? Level.FINEST : level;
+
       this.synchronicity =
           helper.getSynchronicityProperty(className + ".synchronicity", Synchronicity.ASYNC);
-      setLevel(helper.getLevelProperty(className + ".level", Level.INFO));
       setFilter(helper.getFilterProperty(className + ".filter", null));
       setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
       String logName = firstNonNull(log, helper.getProperty(className + ".log", "java.log"));
       this.enhancers = enhancers != null ? enhancers : helper.getEnhancerProperty(className + ".enhancers");
       String resourceType = helper.getProperty(className + ".resourceType", "global");
       MonitoredResource resource = monitoredResource != null ? monitoredResource : getDefaultResource(resourceType);
-      writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
+
+      writeOptions =
+          new WriteOption[] {
+            WriteOption.logName(logName),
+            WriteOption.resource(resource),
+            WriteOption.labels(
+                ImmutableMap.of(
+                    LEVEL_NAME_KEY,
+                    baseLevel.getName(),
+                    LEVEL_VALUE_KEY,
+                    String.valueOf(baseLevel.intValue())))
+          };
     } catch (Exception ex) {
       reportError(null, ex, ErrorManager.OPEN_FAILURE);
       throw ex;
@@ -370,15 +394,18 @@ public class LoggingHandler extends Handler {
   }
 
   private LogEntry entryFor(LogRecord record) {
-    String payload;
     try {
-      payload = getFormatter().format(record);
+      String payload = getFormatter().format(record);
       Level level = record.getLevel();
       LogEntry.Builder builder = LogEntry.newBuilder(Payload.StringPayload.of(payload))
-          .addLabel("levelName", level.getName())
-          .addLabel("levelValue", String.valueOf(level.intValue()))
           .setTimestamp(record.getMillis())
           .setSeverity(severityFor(level));
+
+      if (!baseLevel.equals(level)) {
+        builder
+            .addLabel("levelName", level.getName())
+            .addLabel("levelValue", String.valueOf(level.intValue()));
+      }
 
       for (Enhancer enhancer : enhancers) {
         enhancer.enhanceLogEntry(builder, record);
