@@ -85,7 +85,7 @@ public class FormatOptions implements Serializable {
    * Default options for DATASTORE_BACKUP format.
    */
   public static FormatOptions datastoreBackup() {
-    return new FormatOptions(DATASTORE_BACKUP);
+    return DatastoreBackupOptions.newBuilder().build();
   }
 
   /**
@@ -101,6 +101,8 @@ public class FormatOptions implements Serializable {
   public static FormatOptions of(String format) {
     if (checkNotNull(format).equals(CSV)) {
       return csv();
+    } else if (format.equals(DATASTORE_BACKUP)) {
+      return datastoreBackup();
     }
     return new FormatOptions(format);
   }
