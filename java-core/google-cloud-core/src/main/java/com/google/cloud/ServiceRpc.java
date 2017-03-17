@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,6 @@
 
 package com.google.cloud;
 
-/**
- * Interface for service objects.
- *
- * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
- */
-public interface Service<OptionsT extends ServiceOptions<?, OptionsT>> {
+public interface ServiceRpc {
 
-  OptionsT getOptions();
 }

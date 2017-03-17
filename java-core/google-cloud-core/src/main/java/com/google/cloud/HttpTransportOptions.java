@@ -137,7 +137,7 @@ public class HttpTransportOptions implements TransportOptions {
    * Returns a request initializer responsible for initializing requests according to service
    * options.
    */
-  public HttpRequestInitializer getHttpRequestInitializer(ServiceOptions<?, ?, ?> serviceOptions) {
+  public HttpRequestInitializer getHttpRequestInitializer(ServiceOptions<?, ?> serviceOptions) {
     Credentials scopedCredentials = serviceOptions.getScopedCredentials();
     final HttpRequestInitializer delegate =
         scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()
