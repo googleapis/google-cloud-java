@@ -19,7 +19,6 @@ package com.google.cloud.storage.spi.v1;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
-import static javax.servlet.http.HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE;
 
 import com.google.api.client.googleapis.batch.BatchRequest;
 import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
@@ -70,6 +69,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import org.apache.http.HttpStatus;
 
 public class HttpStorageRpc implements StorageRpc {
 
@@ -510,7 +510,7 @@ public class HttpStorageRpc implements StorageRpc {
       return Tuple.of(etag, output.toByteArray());
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.getCode() == SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
+      if (serviceException.getCode() == HttpStatus.SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
         return Tuple.of(null, new byte[0]);
       }
       throw serviceException;
