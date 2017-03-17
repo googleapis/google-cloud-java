@@ -77,7 +77,7 @@ public class SnippetsIT {
     System.setProperty("projectId", SnippetsIT.getProjectId());
     Snippets snippets = new Snippets();
 
-    snippets.listTimeSeries("metric.type=\"custom.googleapis.com/my_metric\"");
+    snippets.listTimeSeries("metric.type=\"compute.googleapis.com/instance/cpu/utilization\"");
 
     // Assert
     String got = bout.toString();
