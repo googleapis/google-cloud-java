@@ -108,7 +108,7 @@ public class SnippetsIT {
     // Assert
     String got = bout.toString();
     assertThat(got).contains("Got timeseries:");
-    assertThat(got).contains("compute.googleapis.com/instance/cpu/utilizatio");
+    assertThat(got).contains("compute.googleapis.com/instance/cpu/utilization");
   }
 
   @Test
@@ -122,7 +122,7 @@ public class SnippetsIT {
     // Assert
     String got = bout.toString();
     assertThat(got).contains("Got timeseries:");
-    assertThat(got).contains("compute.googleapis.com/instance/cpu/utilizatio");
+    assertThat(got).contains("compute.googleapis.com/instance/cpu/utilization");
   }
 
   @Test
