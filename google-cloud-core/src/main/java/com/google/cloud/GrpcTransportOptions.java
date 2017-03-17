@@ -36,7 +36,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.joda.time.Duration;
 
 /**
  * Class representing service options for those services that use gRPC as the transport
@@ -206,8 +205,8 @@ public class GrpcTransportOptions implements TransportOptions {
   /**
    * Returns a builder for API call settings.
    */
-  public UnaryCallSettings.Builder getApiCallSettings() {
-    return UnaryCallSettings.newBuilder().setRetrySettingsBuilder(getRetrySettings().toBuilder());
+  public UnaryCallSettings.Builder getApiCallSettings(RetrySettings retrySettings) {
+    return UnaryCallSettings.newBuilder().setRetrySettingsBuilder(retrySettings.toBuilder());
   }
 
   /**

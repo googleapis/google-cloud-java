@@ -104,7 +104,7 @@ public class GrpcPubSubRpc implements PubSubRpc {
           .setExecutorProvider(executorProvider)
           .build();
       UnaryCallSettings.Builder callSettingsBuilder = transportOptions
-          .getApiCallSettings(options.getRetryParams());
+          .getApiCallSettings(options.getRetrySettings());
       PublisherSettings.Builder pubBuilder = PublisherSettings.defaultBuilder()
           .setExecutorProvider(providerManager)
           .setChannelProvider(providerManager)

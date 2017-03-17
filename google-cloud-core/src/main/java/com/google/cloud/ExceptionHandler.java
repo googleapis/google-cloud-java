@@ -233,16 +233,6 @@ public final class ExceptionHandler implements Serializable {
     }
   }
 
-
-//  public Set<Class<? extends Exception>> getRetriableExceptions() {
-//    return retriableExceptions;
-//  }
-//
-//
-//  public Set<Class<? extends Exception>> getNonRetriableExceptions() {
-//    return nonRetriableExceptions;
-//  }
-
   boolean shouldRetry(Exception ex) {
     for (Interceptor interceptor : interceptors) {
       Interceptor.RetryResult retryResult = checkNotNull(interceptor.beforeEval(ex));
