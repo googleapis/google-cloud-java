@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<rss version="0.91">
+  <channel>
+    <title>Google Cloud Examples - Checkstyle report</title>
+    <link>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples</link>
+    <description>Google Cloud Examples - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2017 Google</copyright>
+    <item>
+      <title>File: 64,
+             Errors: 0,
+             Warnings: 154,
+             Infos: 0
+      </title>
+            <link>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html</link>
+      <description>
+        <p>Click <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.bigquery.snippets.InsertDataAndQueryTable.java">com/google/cloud/examples/bigquery/snippets/InsertDataAndQueryTable.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.pubsub.snippets.PublisherSnippets.java">com/google/cloud/examples/pubsub/snippets/PublisherSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.resourcemanager.snippets.ModifyPolicy.java">com/google/cloud/examples/resourcemanager/snippets/ModifyPolicy.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.logging.snippets.MetricSnippets.java">com/google/cloud/examples/logging/snippets/MetricSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.storage.snippets.BucketSnippets.java">com/google/cloud/examples/storage/snippets/BucketSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.translate.TranslateExample.java">com/google/cloud/examples/translate/TranslateExample.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.bigquery.snippets.TableSnippets.java">com/google/cloud/examples/bigquery/snippets/TableSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.dns.snippets.CreateZone.java">com/google/cloud/examples/dns/snippets/CreateZone.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.compute.snippets.CreateSnapshot.java">com/google/cloud/examples/compute/snippets/CreateSnapshot.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.compute.snippets.CreateAddressDiskAndInstance.java">com/google/cloud/examples/compute/snippets/CreateAddressDiskAndInstance.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.pubsub.snippets.PubSubSnippets.java">com/google/cloud/examples/pubsub/snippets/PubSubSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.logging.snippets.SinkSnippets.java">com/google/cloud/examples/logging/snippets/SinkSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.pubsub.snippets.SubscriberSnippets.java">com/google/cloud/examples/pubsub/snippets/SubscriberSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.logging.snippets.CreateAndListMetrics.java">com/google/cloud/examples/logging/snippets/CreateAndListMetrics.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.resourcemanager.snippets.UpdateAndListProjects.java">com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.storage.snippets.BlobSnippets.java">com/google/cloud/examples/storage/snippets/BlobSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.resourcemanager.snippets.GetOrCreateProject.java">com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.logging.snippets.CreateAndListSinks.java">com/google/cloud/examples/logging/snippets/CreateAndListSinks.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.datastore.snippets.CreateEntity.java">com/google/cloud/examples/datastore/snippets/CreateEntity.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.nio.snippets.CreateCloudStorageFileSystem.java">com/google/cloud/examples/nio/snippets/CreateCloudStorageFileSystem.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.nio.Stat.java">com/google/cloud/examples/nio/Stat.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.pubsub.PubSubExample.java">com/google/cloud/examples/pubsub/PubSubExample.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.datastore.snippets.TransactionSnippets.java">com/google/cloud/examples/datastore/snippets/TransactionSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.storage.snippets.StorageSnippets.java">com/google/cloud/examples/storage/snippets/StorageSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.storage.snippets.CreateBlob.java">com/google/cloud/examples/storage/snippets/CreateBlob.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.resourcemanager.ResourceManagerExample.java">com/google/cloud/examples/resourcemanager/ResourceManagerExample.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.pubsub.snippets.TopicSnippets.java">com/google/cloud/examples/pubsub/snippets/TopicSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.nio.snippets.CreateInputStream.java">com/google/cloud/examples/nio/snippets/CreateInputStream.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.bigquery.snippets.JobSnippets.java">com/google/cloud/examples/bigquery/snippets/JobSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.pubsub.snippets.CreateSubscriptionAndPullMessages.java">com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.logging.snippets.WriteAndListLogEntries.java">com/google/cloud/examples/logging/snippets/WriteAndListLogEntries.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.storage.snippets.UpdateBlob.java">com/google/cloud/examples/storage/snippets/UpdateBlob.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.dns.snippets.DeleteZone.java">com/google/cloud/examples/dns/snippets/DeleteZone.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.logging.LoggingExample.java">com/google/cloud/examples/logging/LoggingExample.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  9
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.datastore.snippets.AddEntitiesAndRunQuery.java">com/google/cloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.dns.snippets.ManipulateZonesAndRecordSets.java">com/google/cloud/examples/dns/snippets/ManipulateZonesAndRecordSets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.bigquery.snippets.DatasetSnippets.java">com/google/cloud/examples/bigquery/snippets/DatasetSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.bigquery.BigQueryExample.java">com/google/cloud/examples/bigquery/BigQueryExample.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.logging.snippets.LoggingSnippets.java">com/google/cloud/examples/logging/snippets/LoggingSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.nio.CountBytes.java">com/google/cloud/examples/nio/CountBytes.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.datastore.snippets.UpdateEntity.java">com/google/cloud/examples/datastore/snippets/UpdateEntity.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.nio.snippets.ReadAllLines.java">com/google/cloud/examples/nio/snippets/ReadAllLines.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.datastore.DatastoreExample.java">com/google/cloud/examples/datastore/DatastoreExample.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.translate.snippets.DetectLanguageAndTranslate.java">com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.compute.snippets.CreateInstance.java">com/google/cloud/examples/compute/snippets/CreateInstance.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.storage.StorageExample.java">com/google/cloud/examples/storage/StorageExample.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.bigquery.snippets.BigQuerySnippets.java">com/google/cloud/examples/bigquery/snippets/BigQuerySnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  14
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.pubsub.snippets.SubscriptionSnippets.java">com/google/cloud/examples/pubsub/snippets/SubscriptionSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.datastore.snippets.DatastoreSnippets.java">com/google/cloud/examples/datastore/snippets/DatastoreSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.translate.snippets.TranslateSnippets.java">com/google/cloud/examples/translate/snippets/TranslateSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.pubsub.snippets.CreateTopicAndPublishMessages.java">com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.dns.DnsExample.java">com/google/cloud/examples/dns/DnsExample.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.dns.snippets.CreateOrUpdateRecordSets.java">com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.storage.snippets.CreateAndListBucketsAndBlobs.java">com/google/cloud/examples/storage/snippets/CreateAndListBucketsAndBlobs.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.logging.snippets.AddLoggingHandler.java">com/google/cloud/examples/logging/snippets/AddLoggingHandler.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.pubsub.snippets.SubscriberClientSnippets.java">com/google/cloud/examples/pubsub/snippets/SubscriberClientSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.datastore.snippets.QuerySnippets.java">com/google/cloud/examples/datastore/snippets/QuerySnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.nio.snippets.WriteFileWithAttributes.java">com/google/cloud/examples/nio/snippets/WriteFileWithAttributes.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.nio.snippets.GetFileSystem.java">com/google/cloud/examples/nio/snippets/GetFileSystem.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.pubsub.snippets.MessageReceiverSnippets.java">com/google/cloud/examples/pubsub/snippets/MessageReceiverSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.pubsub.snippets.PublisherClientSnippets.java">com/google/cloud/examples/pubsub/snippets/PublisherClientSnippets.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.nio.ParallelCountBytes.java">com/google/cloud/examples/nio/ParallelCountBytes.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  46
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.bigquery.snippets.CreateTableAndLoadData.java">com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.compute.ComputeExample.java">com/google/cloud/examples/compute/ComputeExample.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  13
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+
