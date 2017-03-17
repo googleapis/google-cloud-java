@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
+import com.google.cloud.Timestamp;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Durations;
 import com.google.spanner.v1.TransactionOptions;
@@ -263,9 +264,9 @@ public final class TimestampBound {
       case STRONG:
         return b.append("strong");
       case READ_TIMESTAMP:
-        return timestamp.toString(b.append("exact_timestamp: "));
+        return b.append("exact_timestamp: ").append(timestamp.toString());
       case MIN_READ_TIMESTAMP:
-        return timestamp.toString(b.append("min_read_timestamp: "));
+        return b.append("min_read_timestamp: ").append(timestamp.toString());
       case EXACT_STALENESS:
         return b.append("exact_staleness: ").append(Durations.toString(staleness));
       case MAX_STALENESS:

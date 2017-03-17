@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner;
+package com.google.cloud;
 
 import static com.google.common.truth.Truth.assertThat;
 

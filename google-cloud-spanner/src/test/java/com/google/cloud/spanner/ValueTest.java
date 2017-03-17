@@ -19,6 +19,8 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
 import com.google.common.collect.Lists;
 import com.google.common.testing.EqualsTester;
 import java.util.Arrays;
@@ -206,7 +208,7 @@ public class ValueTest {
     assertThat(v.getType()).isEqualTo(Type.bytes());
     assertThat(v.isNull()).isFalse();
     assertThat(v.getBytes()).isSameAs(bytes);
-    assertThat(v.toString()).isEqualTo("abc");
+    assertThat(v.toString()).isEqualTo(bytes.toString());
   }
 
   @Test
@@ -214,7 +216,7 @@ public class ValueTest {
     ByteArray bytes = ByteArray.copyFrom(new byte[] {'a', 0, 15, -1, 'e'});
     Value v = Value.bytes(bytes);
     assertThat(v.getBytes()).isSameAs(bytes);
-    assertThat(v.toString()).isEqualTo("a\\0\\17\\377e");
+    assertThat(v.toString()).isEqualTo(bytes.toString());
   }
 
   @Test
@@ -227,17 +229,6 @@ public class ValueTest {
     expectedException.expect(IllegalStateException.class);
     expectedException.expectMessage("null value");
     v.getBytes();
-  }
-
-  @Test
-  public void bytesLong() {
-    String str = "aaaaaaaaaabbbbbbbbbbccccccccccdddddddddd";
-    ByteArray bytes = newByteArray(str);
-    Value v = Value.bytes(bytes);
-    assertThat(v.getBytes()).isEqualTo(bytes);
-    assertThat(v.toString()).hasLength(32);
-    assertThat(v.toString()).startsWith(str.substring(0, 32 - 3));
-    assertThat(v.toString()).endsWith("...");
   }
 
   @Test
@@ -507,12 +498,14 @@ public class ValueTest {
 
   @Test
   public void bytesArray() {
-    Value v = Value.bytesArray(Arrays.asList(newByteArray("a"), null, newByteArray("c")));
+    ByteArray a = newByteArray("a");
+    ByteArray c = newByteArray("c");
+    Value v = Value.bytesArray(Arrays.asList(a, null, c));
     assertThat(v.isNull()).isFalse();
     assertThat(v.getBytesArray())
-        .containsExactly(newByteArray("a"), null, newByteArray("c"))
+        .containsExactly(a, null, c)
         .inOrder();
-    assertThat(v.toString()).isEqualTo("[a,NULL,c]");
+    assertThat(v.toString()).isEqualTo(String.format("[%s,NULL,%s]", a, c));
   }
 
   @Test

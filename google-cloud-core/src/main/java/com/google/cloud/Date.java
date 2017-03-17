@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner;
+package com.google.cloud;
 
 import com.google.common.base.Preconditions;
 import java.util.Objects;
@@ -22,9 +22,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Represents a Cloud Spanner Date. Date is timezone independent. The range [1678-01-01, 2262-01-01)
- * is the legal interval for dates. A write to a date column is rejected if the value is outside of
- * that interval.
+ * Represents a Date without time, such as 2017-03-17. Date is timezone independent.
  */
 public final class Date implements Comparable<Date> {
 
@@ -44,8 +42,7 @@ public final class Date implements Comparable<Date> {
   }
 
   /**
-   * Constructs a new Date instance. This does minimal checks for valid dates but it might allow
-   * instances to be created which are outside the valid cloud spanner date range.
+   * Constructs a new Date instance.
    *
    * @param year must be greater than 0
    * @param month must be between [1,12]

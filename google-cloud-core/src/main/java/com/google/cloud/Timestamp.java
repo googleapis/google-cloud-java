@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner;
+package com.google.cloud;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
@@ -29,7 +29,7 @@ import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
 /**
- * Represents a Cloud Spanner timestamp. Timestamps have nanosecond precision and cover the range
+ * Represents a timestamp with nanosecond precision. Timestamps cover the range
  * [0001-01-01, 9999-12-31].
  *
  * <p>{@code Timestamp} instances are immutable.
@@ -111,11 +111,18 @@ public final class Timestamp implements Comparable<Timestamp> {
     return r;
   }
 
-  static Timestamp fromProto(com.google.protobuf.Timestamp proto) {
+  /**
+   * Creates an instance of Timestamp from {@code com.google.protobuf.Timestamp}.
+   */
+  public static Timestamp fromProto(com.google.protobuf.Timestamp proto) {
     return new Timestamp(proto.getSeconds(), proto.getNanos());
   }
 
-  com.google.protobuf.Timestamp toProto() {
+  /**
+   * Returns a {@code com.google.protobuf.Timestamp} initialized to the same point in time as {@code
+   * this}.
+   */
+  public com.google.protobuf.Timestamp toProto() {
     return com.google.protobuf.Timestamp.newBuilder().setSeconds(seconds).setNanos(nanos).build();
   }
 
