@@ -52,7 +52,19 @@
     </dependency>
     <dependency>
       <groupId>com.google.api-client</groupId>
-      <artifactId>google-api-client-appengine</artifactId>
+      <artifactId>google-api-client</artifactId>
+      <version>1.21.0</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>guava-jdk5</artifactId>
+          <groupId>com.google.guava</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client-appengine</artifactId>
       <version>1.21.0</version>
       <scope>compile</scope>
       <exclusions>
