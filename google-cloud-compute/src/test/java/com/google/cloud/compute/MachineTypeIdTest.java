@@ -51,19 +51,6 @@ public class MachineTypeIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    MachineTypeId machineTypeId = MachineTypeId.of(PROJECT, ZONE, TYPE);
-    assertEquals(PROJECT, machineTypeId.project());
-    assertEquals(ZONE, machineTypeId.zone());
-    assertEquals(TYPE, machineTypeId.type());
-    assertEquals(URL, machineTypeId.selfLink());
-    machineTypeId = MachineTypeId.of(ZONE, TYPE);
-    assertNull(machineTypeId.project());
-    assertEquals(ZONE, machineTypeId.zone());
-    assertEquals(TYPE, machineTypeId.type());
-  }
-
-  @Test
   public void testToAndFromUrl() {
     MachineTypeId machineTypeId = MachineTypeId.of(PROJECT, ZONE, TYPE);
     compareMachineTypeId(machineTypeId, MachineTypeId.fromUrl(machineTypeId.getSelfLink()));

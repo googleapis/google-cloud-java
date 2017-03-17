@@ -75,15 +75,6 @@ public class AddressInfoTest {
           .setStatus(STATUS)
           .setUsage(REGION_FORWARDING_USAGE)
           .build();
-  private static final AddressInfo DEPRECATED_ADDRESS_INFO =
-      AddressInfo.newBuilder(REGION_ADDRESS_ID)
-          .address(ADDRESS)
-          .setCreationTimestamp(CREATION_TIMESTAMP)
-          .description(DESCRIPTION)
-          .setGeneratedId(GENERATED_ID)
-          .setStatus(STATUS)
-          .setUsage(INSTANCE_USAGE)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -138,37 +129,6 @@ public class AddressInfoTest {
     assertEquals(GLOBAL_FORWARDING_USAGE, GLOBAL_FORWARDING_ADDRESS_INFO.getUsage());
     assertEquals(GLOBAL_FORWARDING_RULES,
         GLOBAL_FORWARDING_ADDRESS_INFO.<GlobalForwardingUsage>getUsage().getForwardingRules());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(ADDRESS, DEPRECATED_ADDRESS_INFO.address());
-    assertEquals(CREATION_TIMESTAMP, DEPRECATED_ADDRESS_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, DEPRECATED_ADDRESS_INFO.description());
-    assertEquals(GENERATED_ID, DEPRECATED_ADDRESS_INFO.generatedId());
-    assertEquals(REGION_ADDRESS_ID, DEPRECATED_ADDRESS_INFO.addressId());
-    assertEquals(STATUS, DEPRECATED_ADDRESS_INFO.status());
-    assertEquals(INSTANCE_USAGE, DEPRECATED_ADDRESS_INFO.usage());
-    assertEquals(INSTANCE_USAGE.instance(),
-        DEPRECATED_ADDRESS_INFO.<AddressInfo.InstanceUsage>usage().instance());
-    assertEquals(ADDRESS, REGION_FORWARDING_ADDRESS_INFO.address());
-    assertEquals(CREATION_TIMESTAMP, REGION_FORWARDING_ADDRESS_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, REGION_FORWARDING_ADDRESS_INFO.description());
-    assertEquals(GENERATED_ID, REGION_FORWARDING_ADDRESS_INFO.generatedId());
-    assertEquals(REGION_ADDRESS_ID, REGION_FORWARDING_ADDRESS_INFO.addressId());
-    assertEquals(STATUS, REGION_FORWARDING_ADDRESS_INFO.status());
-    assertEquals(REGION_FORWARDING_USAGE, REGION_FORWARDING_ADDRESS_INFO.usage());
-    assertEquals(REGION_FORWARDING_RULES,
-        REGION_FORWARDING_ADDRESS_INFO.<RegionForwardingUsage>usage().forwardingRules());
-    assertEquals(ADDRESS, GLOBAL_FORWARDING_ADDRESS_INFO.address());
-    assertEquals(CREATION_TIMESTAMP, GLOBAL_FORWARDING_ADDRESS_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, GLOBAL_FORWARDING_ADDRESS_INFO.description());
-    assertEquals(GENERATED_ID, GLOBAL_FORWARDING_ADDRESS_INFO.generatedId());
-    assertEquals(GLOBAL_ADDRESS_ID, GLOBAL_FORWARDING_ADDRESS_INFO.addressId());
-    assertEquals(STATUS, GLOBAL_FORWARDING_ADDRESS_INFO.status());
-    assertEquals(GLOBAL_FORWARDING_USAGE, GLOBAL_FORWARDING_ADDRESS_INFO.usage());
-    assertEquals(GLOBAL_FORWARDING_RULES,
-        GLOBAL_FORWARDING_ADDRESS_INFO.<GlobalForwardingUsage>usage().forwardingRules());
   }
 
   @Test

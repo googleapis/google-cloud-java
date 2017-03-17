@@ -127,14 +127,6 @@ public class NetworkInterface implements Serializable {
       /**
        * Sets the name of the access configuration.
        */
-      @Deprecated
-      public Builder name(String name) {
-        return setName(name);
-      }
-
-      /**
-       * Sets the name of the access configuration.
-       */
       public Builder setName(String name) {
         this.name = name;
         return this;
@@ -152,35 +144,9 @@ public class NetworkInterface implements Serializable {
        *     href="https://cloud.google.com/compute/docs/instances-and-network#ephemeraladdress">
        *     Ephemeral external IP addresses</a>
        */
-      @Deprecated
-      public Builder natIp(String natIp) {
-        return setNatIp(natIp);
-      }
-
-      /**
-       * Sets an external IP address associated with this instance. Specify an unused static
-       * external IP address available to the project or leave this field undefined to use an IP
-       * from a shared ephemeral IP address pool. If you specify a static external IP address, it
-       * must live in the same region as the zone of the instance.
-       *
-       * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#reservedaddress">
-       *     Ephemeral external IP addresses</a>
-       * @see <a
-       *     href="https://cloud.google.com/compute/docs/instances-and-network#ephemeraladdress">
-       *     Ephemeral external IP addresses</a>
-       */
       public Builder setNatIp(String natIp) {
         this.natIp = natIp;
         return this;
-      }
-
-      /**
-       * Sets the type of the access configuration. The only supported value is
-       * {@link Type#ONE_TO_ONE_NAT}.
-       */
-      @Deprecated
-      public Builder type(Type type) {
-        return setType(type);
       }
 
       /**
@@ -209,14 +175,6 @@ public class NetworkInterface implements Serializable {
     /**
      * Returns the name of the access configuration.
      */
-    @Deprecated
-    public String name() {
-      return getName();
-    }
-
-    /**
-     * Returns the name of the access configuration.
-     */
     public String getName() {
       return name;
     }
@@ -224,25 +182,8 @@ public class NetworkInterface implements Serializable {
     /**
      * Returns an external IP address associated with this instance.
      */
-    @Deprecated
-    public String natIp() {
-      return getNatIp();
-    }
-
-    /**
-     * Returns an external IP address associated with this instance.
-     */
     public String getNatIp() {
       return natIp;
-    }
-
-    /**
-     * Returns the type of network access configuration. The only supported value is
-     * {@link Type#ONE_TO_ONE_NAT}.
-     */
-    @Deprecated
-    public Type type() {
-      return getType();
     }
 
     /**
@@ -290,14 +231,6 @@ public class NetworkInterface implements Serializable {
         accessConfigPb.setType(type.name());
       }
       return accessConfigPb;
-    }
-
-    /**
-     * Returns a builder for an {@code AccessConfig} object.
-     */
-    @Deprecated
-    public static Builder builder() {
-      return newBuilder();
     }
 
     /**
@@ -369,14 +302,6 @@ public class NetworkInterface implements Serializable {
     /**
      * Sets the identity of the network this interface applies to.
      */
-    @Deprecated
-    public Builder network(NetworkId network) {
-      return setNetwork(network);
-    }
-
-    /**
-     * Sets the identity of the network this interface applies to.
-     */
     public Builder setNetwork(NetworkId network) {
       this.network = checkNotNull(network);
       return this;
@@ -385,15 +310,6 @@ public class NetworkInterface implements Serializable {
     Builder setNetworkIp(String networkIp) {
       this.networkIp = networkIp;
       return this;
-    }
-
-    /**
-     * Sets the identity of the subnetwork this interface applies to. Setting the subnetwork is
-     * not necessary when the network is in "automatic subnet mode".
-     */
-    @Deprecated
-    public Builder subnetwork(SubnetworkId subnetwork) {
-      return setSubnetwork(subnetwork);
     }
 
     /**
@@ -415,39 +331,9 @@ public class NetworkInterface implements Serializable {
      * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#ephemeraladdress">
      *     Ephemeral external IP addresses</a>
      */
-    @Deprecated
-    public Builder accessConfigurations(List<AccessConfig> accessConfigurations) {
-      return setAccessConfigurations(accessConfigurations);
-    }
-
-    /**
-     * Sets a list of access configurations for the network interface. Access configurations can be
-     * used to assign either a static or an ephemeral external IP address to Google Compute Engine
-     * instances. At the moment, network interfaces only support one access configuration.
-     *
-     * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#reservedaddress">
-     *     Static external IP addresses</a>
-     * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#ephemeraladdress">
-     *     Ephemeral external IP addresses</a>
-     */
     public Builder setAccessConfigurations(List<AccessConfig> accessConfigurations) {
       this.accessConfigurations = ImmutableList.copyOf(accessConfigurations);
       return this;
-    }
-
-    /**
-     * Sets a list of access configurations for the network interface. Access configurations can be
-     * used to assign either a static or an ephemeral external IP address to Google Compute Engine
-     * instances. At the moment, network interfaces only support one access configuration.
-     *
-     * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#reservedaddress">
-     *     Static external IP addresses</a>
-     * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#ephemeraladdress">
-     *     Ephemeral external IP addresses</a>
-     */
-    @Deprecated
-    public Builder accessConfigurations(AccessConfig... accessConfigurations) {
-      return setAccessConfigurations(accessConfigurations);
     }
 
     /**
@@ -486,25 +372,8 @@ public class NetworkInterface implements Serializable {
    * Returns the name of the network interface, generated by the service. For network devices,
    * these are {@code eth0}, {@code eth1}, etc.
    */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
-
-  /**
-   * Returns the name of the network interface, generated by the service. For network devices,
-   * these are {@code eth0}, {@code eth1}, etc.
-   */
   public String getName() {
     return name;
-  }
-
-  /**
-   * Returns the identity of the network this interface applies to.
-   */
-  @Deprecated
-  public NetworkId network() {
-    return getNetwork();
   }
 
   /**
@@ -518,15 +387,6 @@ public class NetworkInterface implements Serializable {
    * An optional IPv4 internal network address assigned by the service to the instance for this
    * network interface.
    */
-  @Deprecated
-  public String networkIp() {
-    return getNetworkIp();
-  }
-
-  /**
-   * An optional IPv4 internal network address assigned by the service to the instance for this
-   * network interface.
-   */
   public String getNetworkIp() {
     return networkIp;
   }
@@ -534,24 +394,8 @@ public class NetworkInterface implements Serializable {
   /**
    * Returns the identity of the subnetwork this interface applies to.
    */
-  @Deprecated
-  public SubnetworkId subnetwork() {
-    return getSubnetwork();
-  }
-
-  /**
-   * Returns the identity of the subnetwork this interface applies to.
-   */
   public SubnetworkId getSubnetwork() {
     return subnetwork;
-  }
-
-  /**
-   * Returns a list of access configurations for the network interface.
-   */
-  @Deprecated
-  public List<AccessConfig> accessConfigurations() {
-    return getAccessConfigurations();
   }
 
   /**
@@ -620,24 +464,8 @@ public class NetworkInterface implements Serializable {
   /**
    * Returns a builder for a {@code NetworkInterface} object given the network's identity.
    */
-  @Deprecated
-  public static Builder builder(NetworkId networkId) {
-    return newBuilder(networkId);
-  }
-
-  /**
-   * Returns a builder for a {@code NetworkInterface} object given the network's identity.
-   */
   public static Builder newBuilder(NetworkId networkId) {
     return new Builder(networkId);
-  }
-
-  /**
-   * Returns a builder for a {@code NetworkInterface} object given the network's name.
-   */
-  @Deprecated
-  public static Builder builder(String network) {
-    return newBuilder(network);
   }
 
   /**

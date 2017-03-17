@@ -88,51 +88,6 @@ public class OperationIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    GlobalOperationId operationId = GlobalOperationId.of(PROJECT, NAME);
-    assertEquals(OperationId.Type.GLOBAL, operationId.type());
-    assertEquals(PROJECT, operationId.project());
-    assertEquals(NAME, operationId.operation());
-    assertEquals(GLOBAL_URL, operationId.selfLink());
-    operationId = GlobalOperationId.of(NAME);
-    assertEquals(OperationId.Type.GLOBAL, operationId.type());
-    assertNull(operationId.project());
-    assertEquals(NAME, operationId.operation());
-    ZoneOperationId zoneOperationId = ZoneOperationId.of(PROJECT, ZONE, NAME);
-    assertEquals(OperationId.Type.ZONE, zoneOperationId.type());
-    assertEquals(PROJECT, zoneOperationId.project());
-    assertEquals(ZONE, zoneOperationId.zone());
-    assertEquals(NAME, zoneOperationId.operation());
-    assertEquals(ZONE_URL, zoneOperationId.selfLink());
-    zoneOperationId = ZoneOperationId.of(ZONE, NAME);
-    assertEquals(OperationId.Type.ZONE, zoneOperationId.type());
-    assertNull(zoneOperationId.project());
-    assertEquals(ZONE, zoneOperationId.zone());
-    assertEquals(NAME, zoneOperationId.operation());
-    zoneOperationId = ZoneOperationId.of(ZoneId.of(PROJECT, ZONE), NAME);
-    assertEquals(OperationId.Type.ZONE, zoneOperationId.type());
-    assertEquals(PROJECT, zoneOperationId.project());
-    assertEquals(ZONE, zoneOperationId.zone());
-    assertEquals(NAME, zoneOperationId.operation());
-    RegionOperationId regionOperationId = RegionOperationId.of(PROJECT, REGION, NAME);
-    assertEquals(OperationId.Type.REGION, regionOperationId.type());
-    assertEquals(PROJECT, regionOperationId.project());
-    assertEquals(REGION, regionOperationId.region());
-    assertEquals(NAME, regionOperationId.operation());
-    assertEquals(REGION_URL, regionOperationId.selfLink());
-    regionOperationId = RegionOperationId.of(REGION, NAME);
-    assertEquals(OperationId.Type.REGION, regionOperationId.type());
-    assertNull(regionOperationId.project());
-    assertEquals(REGION, regionOperationId.region());
-    assertEquals(NAME, regionOperationId.operation());
-    regionOperationId = RegionOperationId.of(RegionId.of(PROJECT, REGION), NAME);
-    assertEquals(OperationId.Type.REGION, regionOperationId.type());
-    assertEquals(PROJECT, regionOperationId.project());
-    assertEquals(REGION, regionOperationId.region());
-    assertEquals(NAME, regionOperationId.operation());
-  }
-
-  @Test
   public void testToAndFromUrlGlobal() {
     GlobalOperationId operationId = GlobalOperationId.of(PROJECT, NAME);
     compareOperationId(operationId, GlobalOperationId.fromUrl(operationId.getSelfLink()));

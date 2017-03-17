@@ -16,16 +16,21 @@
 
 package com.google.cloud.compute;
 
-import com.google.cloud.HttpServiceOptions;
-import com.google.cloud.compute.spi.ComputeRpc;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
+import com.google.cloud.TransportOptions;
+import com.google.cloud.compute.spi.v1.ComputeRpc;
 import com.google.cloud.compute.spi.ComputeRpcFactory;
-import com.google.cloud.compute.spi.DefaultComputeRpc;
+import com.google.cloud.compute.spi.v1.HttpComputeRpc;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class ComputeOptions extends HttpServiceOptions<Compute, ComputeRpc, ComputeOptions> {
+public class ComputeOptions extends ServiceOptions<Compute, ComputeOptions> {
 
+  private static final String API_SHORT_NAME = "Compute";
   private static final String COMPUTE_SCOPE = "https://www.googleapis.com/auth/compute";
   private static final Set<String> SCOPES = ImmutableSet.of(COMPUTE_SCOPE);
   private static final long serialVersionUID = 6983703596543425691L;
@@ -45,13 +50,13 @@ public class ComputeOptions extends HttpServiceOptions<Compute, ComputeRpc, Comp
     private static final ComputeRpcFactory INSTANCE = new DefaultComputeRpcFactory();
 
     @Override
-    public ComputeRpc create(ComputeOptions options) {
-      return new DefaultComputeRpc(options);
+    public ServiceRpc create(ComputeOptions options) {
+      return new HttpComputeRpc(options);
     }
   }
 
   public static class Builder extends
-      HttpServiceOptions.Builder<Compute, ComputeRpc, ComputeOptions, Builder> {
+      ServiceOptions.Builder<Compute, ComputeOptions, Builder> {
 
     private Builder() {
     }
@@ -61,28 +66,54 @@ public class ComputeOptions extends HttpServiceOptions<Compute, ComputeRpc, Comp
     }
 
     @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
+    }
+
+    @Override
     public ComputeOptions build() {
       return new ComputeOptions(this);
     }
   }
 
   private ComputeOptions(Builder builder) {
-    super(ComputeFactory.class, ComputeRpcFactory.class, builder);
+    super(ComputeFactory.class, ComputeRpcFactory.class, builder, new ComputeDefaults());
   }
 
-  @Override
-  protected ComputeFactory getDefaultServiceFactory() {
-    return DefaultComputeFactory.INSTANCE;
+  private static class ComputeDefaults implements
+      ServiceDefaults<Compute, ComputeOptions> {
+
+    @Override
+    public ComputeFactory getDefaultServiceFactory() {
+      return DefaultComputeFactory.INSTANCE;
+    }
+
+    @Override
+    public ComputeRpcFactory getDefaultRpcFactory() {
+      return DefaultComputeRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
-  @Override
-  protected ComputeRpcFactory getDefaultRpcFactory() {
-    return DefaultComputeRpcFactory.INSTANCE;
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
   }
 
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected ComputeRpc getComputeRpcV1() {
+    return (ComputeRpc) getRpc();
   }
 
   @Override
@@ -104,18 +135,8 @@ public class ComputeOptions extends HttpServiceOptions<Compute, ComputeRpc, Comp
     return baseEquals(other);
   }
 
-  @Deprecated
-  public static ComputeOptions defaultInstance() {
-    return getDefaultInstance();
-  }
-
   public static ComputeOptions getDefaultInstance() {
     return newBuilder().build();
-  }
-
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
   }
 
   public static Builder newBuilder() {

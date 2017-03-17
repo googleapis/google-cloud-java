@@ -17,21 +17,31 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 
 /** Utilities for handling gRPC {@link Status}. */
 final class StatusUtil {
   private StatusUtil() {
-    // Static class, not instatiable.
+    // Static class, not instantiable.
   }
 
-  public static boolean isRetryable(Status status) {
-    switch (status.getCode()) {
+  public static boolean isRetryable(Throwable error) {
+    if (!(error instanceof StatusRuntimeException)) {
+      return true;
+    }
+    StatusRuntimeException statusRuntimeException = (StatusRuntimeException) error;
+    switch (statusRuntimeException.getStatus().getCode()) {
       case DEADLINE_EXCEEDED:
       case INTERNAL:
       case CANCELLED:
       case RESOURCE_EXHAUSTED:
-      case UNAVAILABLE:
         return true;
+      case UNAVAILABLE:
+        if (statusRuntimeException.getMessage().contains("Server shutdownNow invoked")) {
+          return false;
+        } else {
+          return true;
+        }
       default:
         return false;
     }

@@ -21,7 +21,7 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
-
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -83,6 +83,8 @@ import java.util.logging.SimpleFormatter;
  *     a {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
  * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
  *     creating the default {@link MonitoredResource} (defaults to "global").
+ * <li>{@code com.google.cloud.logging.Synchronicity} the synchronicity of the write method to use
+ *     to write logs to the Stackdriver Logging service (defaults to {@link Synchronicity#ASYNC}).
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
@@ -97,6 +99,8 @@ public class LoggingHandler extends Handler {
   private static final String HANDLERS_PROPERTY = "handlers";
   private static final String ROOT_LOGGER_NAME = "";
   private static final String[] NO_HANDLERS = new String[0];
+  private static final String LEVEL_NAME_KEY = "levelName";
+  private static final String LEVEL_VALUE_KEY = "levelValue";
 
   private static final ThreadLocal<Boolean> inPublishCall = new ThreadLocal<>();
 
@@ -106,7 +110,14 @@ public class LoggingHandler extends Handler {
   private volatile Logging logging;
   private Level flushLevel;
   private long flushSize;
+  private Synchronicity synchronicity;
   private final List<Enhancer> enhancers;
+
+  // Logs with the same severity with the base could be more efficiently sent to Stackdriver.
+  // Defaults to level of the handler or Level.FINEST if the handler is set to Level.ALL.
+  // Currently there is no way to modify the base level, see
+  // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740 .
+  private final Level baseLevel;
 
   /**
    * Creates an handler that publishes messages to Stackdriver Logging.
@@ -169,14 +180,31 @@ public class LoggingHandler extends Handler {
       this.options = options != null ? options : LoggingOptions.getDefaultInstance();
       this.flushLevel = helper.getLevelProperty(className + ".flushLevel", LoggingLevel.ERROR);
       this.flushSize = helper.getLongProperty(className + ".flushSize", 1L);
-      setLevel(helper.getLevelProperty(className + ".level", Level.INFO));
+
+      Level level = helper.getLevelProperty(className + ".level", Level.INFO);
+      setLevel(level);
+      baseLevel = level.equals(Level.ALL) ? Level.FINEST : level;
+
+      this.synchronicity =
+          helper.getSynchronicityProperty(className + ".synchronicity", Synchronicity.ASYNC);
       setFilter(helper.getFilterProperty(className + ".filter", null));
       setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
       String logName = firstNonNull(log, helper.getProperty(className + ".log", "java.log"));
       this.enhancers = enhancers != null ? enhancers : helper.getEnhancerProperty(className + ".enhancers");
       String resourceType = helper.getProperty(className + ".resourceType", "global");
       MonitoredResource resource = monitoredResource != null ? monitoredResource : getDefaultResource(resourceType);
-      writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
+
+      writeOptions =
+          new WriteOption[] {
+            WriteOption.logName(logName),
+            WriteOption.resource(resource),
+            WriteOption.labels(
+                ImmutableMap.of(
+                    LEVEL_NAME_KEY,
+                    baseLevel.getName(),
+                    LEVEL_VALUE_KEY,
+                    String.valueOf(baseLevel.intValue())))
+          };
     } catch (Exception ex) {
       reportError(null, ex, ErrorManager.OPEN_FAILURE);
       throw ex;
@@ -296,6 +324,16 @@ public class LoggingHandler extends Handler {
       }
       return Collections.emptyList();
     }
+
+    Synchronicity getSynchronicityProperty(String name, Synchronicity defaultValue) {
+      String synchronicity = manager.getProperty(name);
+      try {
+        return Synchronicity.valueOf(synchronicity);
+      } catch (Exception ex) {
+        // If we cannot create the Synchronicity we fall back to default value
+      }
+      return defaultValue;
+    }
   }
 
   /**
@@ -356,15 +394,18 @@ public class LoggingHandler extends Handler {
   }
 
   private LogEntry entryFor(LogRecord record) {
-    String payload;
     try {
-      payload = getFormatter().format(record);
+      String payload = getFormatter().format(record);
       Level level = record.getLevel();
       LogEntry.Builder builder = LogEntry.newBuilder(Payload.StringPayload.of(payload))
-          .addLabel("levelName", level.getName())
-          .addLabel("levelValue", String.valueOf(level.intValue()))
           .setTimestamp(record.getMillis())
           .setSeverity(severityFor(level));
+
+      if (!baseLevel.equals(level)) {
+        builder
+            .addLabel("levelName", level.getName())
+            .addLabel("levelValue", String.valueOf(level.intValue()));
+      }
 
       for (Enhancer enhancer : enhancers) {
         enhancer.enhanceLogEntry(builder, record);
@@ -419,7 +460,15 @@ public class LoggingHandler extends Handler {
    * how entries should be written.
    */
   void write(List<LogEntry> entries, WriteOption... options) {
-    getLogging().writeAsync(entries, options);
+    switch (this.synchronicity) {
+      case SYNC:
+        getLogging().write(entries, options);
+        break;
+      case ASYNC:
+      default:
+        getLogging().writeAsync(entries, options);
+        break;
+    }
   }
 
   @Override
@@ -476,6 +525,11 @@ public class LoggingHandler extends Handler {
     return flushLevel;
   }
 
+  /** Get the flush log level. */
+  public Level getFlushLevel() {
+    return this.flushLevel;
+  }
+
   /**
    * Sets the maximum size of the log buffer. Once the maximum size of the buffer is reached, logs
    * are transmitted to the Stackdriver Logging service. If not set, a log is sent to the service as
@@ -484,6 +538,28 @@ public class LoggingHandler extends Handler {
   public synchronized long setFlushSize(long flushSize) {
     this.flushSize = flushSize;
     return flushSize;
+  }
+
+  /** Get the maximum size of the log buffer. */
+  public long getFlushSize() {
+    return this.flushSize;
+  }
+
+  /**
+   * Sets the synchronicity of the write method used to write logs to the Stackdriver Logging
+   * service. Defaults to {@link Synchronicity#ASYNC}.
+   */
+  public synchronized Synchronicity setSynchronicity(Synchronicity synchronicity) {
+    this.synchronicity = synchronicity;
+    return synchronicity;
+  }
+
+  /**
+   * Get the synchronicity of the write method used to write logs to the Stackdriver Logging
+   * service.
+   */
+  public Synchronicity getSynchronicity() {
+    return this.synchronicity;
   }
 
   /**

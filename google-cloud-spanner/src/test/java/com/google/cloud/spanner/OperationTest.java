@@ -24,7 +24,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.cloud.Clock;
 import com.google.cloud.WaitForOption;
-import com.google.cloud.spanner.spi.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.rpc.Code;

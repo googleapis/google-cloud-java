@@ -33,20 +33,8 @@ public final class GlobalAddressId extends AddressId {
   }
 
   @Override
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
-
-  @Override
   public Type getType() {
     return Type.GLOBAL;
-  }
-
-  @Override
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
   }
 
   @Override

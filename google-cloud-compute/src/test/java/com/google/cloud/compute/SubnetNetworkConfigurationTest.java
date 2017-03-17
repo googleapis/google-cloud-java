@@ -49,19 +49,6 @@ public class SubnetNetworkConfigurationTest {
   }
 
   @Test
-  public void testConstructorDeprecated() {
-    assertEquals(AUTO_CREATE_SUBNETWORKS, NETWORK_CONFIGURATION.autoCreateSubnetworks());
-    assertEquals(NetworkConfiguration.Type.SUBNET, NETWORK_CONFIGURATION.type());
-    assertEquals(SUBNETWORKS, NETWORK_CONFIGURATION.subnetworks());
-    assertEquals(NetworkConfiguration.Type.SUBNET, NETWORK_CONFIGURATION.type());
-    SubnetNetworkConfiguration networkConfiguration =
-        new SubnetNetworkConfiguration(AUTO_CREATE_SUBNETWORKS, null);
-    assertEquals(NetworkConfiguration.Type.SUBNET, networkConfiguration.type());
-    assertEquals(AUTO_CREATE_SUBNETWORKS, networkConfiguration.autoCreateSubnetworks());
-    assertNull(networkConfiguration.subnetworks());
-  }
-
-  @Test
   public void testToAndFromPb() {
     assertTrue(NetworkConfiguration.fromPb(NETWORK_CONFIGURATION.toPb())
         instanceof SubnetNetworkConfiguration);

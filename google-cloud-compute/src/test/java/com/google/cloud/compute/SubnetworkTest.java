@@ -52,7 +52,7 @@ public class SubnetworkTest {
         new Subnetwork.Builder(serviceMockReturnsOptions, SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
             .setGeneratedId(GENERATED_ID)
             .setCreationTimestamp(CREATION_TIMESTAMP)
-            .description(DESCRIPTION)
+            .setDescription(DESCRIPTION)
             .setGatewayAddress(GATEWAY_ADDRESS)
             .build();
     compute = createStrictMock(Compute.class);
@@ -63,7 +63,7 @@ public class SubnetworkTest {
         new Subnetwork.Builder(compute, SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
             .setGeneratedId(GENERATED_ID)
             .setCreationTimestamp(CREATION_TIMESTAMP)
-            .description(DESCRIPTION)
+            .setDescription(DESCRIPTION)
             .setGatewayAddress(GATEWAY_ADDRESS)
             .build();
   }
@@ -72,9 +72,9 @@ public class SubnetworkTest {
   public void testToBuilder() {
     initializeExpectedSubnetwork(8);
     compareSubnetwork(expectedSubnetwork, expectedSubnetwork.toBuilder().build());
-    Subnetwork newSubnetwork = expectedSubnetwork.toBuilder().description("newDescription").build();
+    Subnetwork newSubnetwork = expectedSubnetwork.toBuilder().setDescription("newDescription").build();
     assertEquals("newDescription", newSubnetwork.getDescription());
-    newSubnetwork = newSubnetwork.toBuilder().description("description").build();
+    newSubnetwork = newSubnetwork.toBuilder().setDescription("description").build();
     compareSubnetwork(expectedSubnetwork, newSubnetwork);
   }
 
@@ -98,19 +98,6 @@ public class SubnetworkTest {
     assertEquals(NETWORK_ID, expectedSubnetwork.getNetwork());
     assertEquals(IP_RANGE, expectedSubnetwork.getIpRange());
     assertSame(serviceMockReturnsOptions, expectedSubnetwork.getCompute());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedSubnetwork(1);
-    assertEquals(GENERATED_ID, expectedSubnetwork.generatedId());
-    assertEquals(SUBNETWORK_ID, expectedSubnetwork.subnetworkId());
-    assertEquals(CREATION_TIMESTAMP, expectedSubnetwork.creationTimestamp());
-    assertEquals(DESCRIPTION, expectedSubnetwork.description());
-    assertEquals(GATEWAY_ADDRESS, expectedSubnetwork.gatewayAddress());
-    assertEquals(NETWORK_ID, expectedSubnetwork.network());
-    assertEquals(IP_RANGE, expectedSubnetwork.ipRange());
-    assertSame(serviceMockReturnsOptions, expectedSubnetwork.compute());
   }
 
   @Test

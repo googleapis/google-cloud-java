@@ -91,5 +91,15 @@ public final class CloudStorageOptions {
     return OptionBlockSize.create(size);
   }
 
+  /**
+   * Sets the max number of times that the channel can be reopen if reading
+   * fails because the channel unexpectedly closes.
+   *
+   * <p>The default is 0.
+   */
+  public static CloudStorageOption.OpenCopy withChannelReopen(int count) {
+    return OptionMaxChannelReopens.create(count);
+  }
+
   private CloudStorageOptions() {}
 }

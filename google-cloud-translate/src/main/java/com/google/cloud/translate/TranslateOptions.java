@@ -19,12 +19,14 @@ package com.google.cloud.translate;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.auth.Credentials;
-import com.google.cloud.HttpServiceOptions;
-import com.google.cloud.NoCredentials;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.spi.DefaultTranslateRpc;
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.HttpTranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
@@ -34,9 +36,10 @@ import java.util.Objects;
 import java.util.Set;
 
 public class TranslateOptions extends
-    HttpServiceOptions<Translate, TranslateRpc, TranslateOptions> {
+    ServiceOptions<Translate, TranslateOptions> {
 
   private static final long serialVersionUID = -572597134540398216L;
+  private static final String API_SHORT_NAME = "Translate";
   private static final String DEFAULT_HOST = "https://translation.googleapis.com";
   private static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
   private static final Set<String> SCOPES =
@@ -60,13 +63,13 @@ public class TranslateOptions extends
     private static final TranslateRpcFactory INSTANCE = new DefaultTranslateRpcFactory();
 
     @Override
-    public TranslateRpc create(TranslateOptions options) {
-      return new DefaultTranslateRpc(options);
+    public ServiceRpc create(TranslateOptions options) {
+      return new HttpTranslateRpc(options);
     }
   }
 
   public static class Builder extends
-      HttpServiceOptions.Builder<Translate, TranslateRpc, TranslateOptions, Builder> {
+      ServiceOptions.Builder<Translate, TranslateOptions, Builder> {
 
     private String apiKey;
     private String targetLanguage;
@@ -78,6 +81,15 @@ public class TranslateOptions extends
       this.apiKey = options.apiKey;
     }
 
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
+    }
 
     /**
      * Sets project id. Setting a project id has no impact on the {@link Translate} service.
@@ -123,19 +135,32 @@ public class TranslateOptions extends
   }
 
   private TranslateOptions(Builder builder) {
-    super(TranslateFactory.class, TranslateRpcFactory.class, builder);
+    super(TranslateFactory.class, TranslateRpcFactory.class, builder, new TranslateDefaults());
     this.apiKey = builder.apiKey != null ? builder.apiKey : getDefaultApiKey();
     this.targetLanguage = firstNonNull(builder.targetLanguage, Locale.ENGLISH.getLanguage());
   }
 
-  @Override
-  protected TranslateFactory getDefaultServiceFactory() {
-    return DefaultTranslateFactory.INSTANCE;
+  private static class TranslateDefaults implements
+      ServiceDefaults<Translate, TranslateOptions> {
+
+    @Override
+    public TranslateFactory getDefaultServiceFactory() {
+      return DefaultTranslateFactory.INSTANCE;
+    }
+
+    @Override
+    public TranslateRpcFactory getDefaultRpcFactory() {
+      return DefaultTranslateRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
-  @Override
-  protected TranslateRpcFactory getDefaultRpcFactory() {
-    return DefaultTranslateRpcFactory.INSTANCE;
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
   }
 
   @Override
@@ -146,6 +171,10 @@ public class TranslateOptions extends
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected TranslateRpc getTranslateRpcV2() {
+    return (TranslateRpc) getRpc();
   }
 
   @Override

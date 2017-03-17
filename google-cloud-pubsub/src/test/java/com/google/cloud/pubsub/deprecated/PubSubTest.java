@@ -19,7 +19,7 @@ package com.google.cloud.pubsub.deprecated;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 
-import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.pubsub.deprecated.PubSub.ListOption;
 import com.google.cloud.pubsub.deprecated.PubSub.PullOption;
 

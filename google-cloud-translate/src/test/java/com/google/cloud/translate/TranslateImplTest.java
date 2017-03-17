@@ -25,7 +25,7 @@ import com.google.api.services.translate.model.TranslationsResource;
 import com.google.cloud.RetryParams;
 import com.google.cloud.translate.Translate.LanguageListOption;
 import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;

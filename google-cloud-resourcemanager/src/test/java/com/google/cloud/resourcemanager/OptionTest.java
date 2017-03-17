@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 
 import org.junit.Rule;
 import org.junit.Test;

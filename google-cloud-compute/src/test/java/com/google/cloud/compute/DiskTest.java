@@ -206,59 +206,6 @@ public class DiskTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedDisk(4);
-    assertEquals(DISK_ID, standardDisk.diskId());
-    assertEquals(GENERATED_ID, standardDisk.generatedId());
-    assertEquals(DISK_CONFIGURATION, standardDisk.configuration());
-    assertEquals(CREATION_TIMESTAMP, standardDisk.creationTimestamp());
-    assertEquals(CREATION_STATUS, standardDisk.creationStatus());
-    assertEquals(DESCRIPTION, standardDisk.description());
-    assertEquals(LICENSES, standardDisk.licenses());
-    assertEquals(ATTACHED_INSTANCES, standardDisk.attachedInstances());
-    assertEquals(LAST_ATTACH_TIMESTAMP, standardDisk.lastAttachTimestamp());
-    assertEquals(LAST_DETACH_TIMESTAMP, standardDisk.lastDetachTimestamp());
-    assertSame(serviceMockReturnsOptions, standardDisk.compute());
-    assertEquals(DISK_ID, imageDisk.diskId());
-    assertEquals(GENERATED_ID, imageDisk.generatedId());
-    assertEquals(IMAGE_DISK_CONFIGURATION, imageDisk.configuration());
-    assertEquals(CREATION_TIMESTAMP, imageDisk.creationTimestamp());
-    assertEquals(CREATION_STATUS, imageDisk.creationStatus());
-    assertEquals(DESCRIPTION, imageDisk.description());
-    assertEquals(LICENSES, imageDisk.licenses());
-    assertEquals(ATTACHED_INSTANCES, imageDisk.attachedInstances());
-    assertEquals(LAST_ATTACH_TIMESTAMP, imageDisk.lastAttachTimestamp());
-    assertEquals(LAST_DETACH_TIMESTAMP, imageDisk.lastDetachTimestamp());
-    assertSame(serviceMockReturnsOptions, imageDisk.compute());
-    assertEquals(DISK_ID, snapshotDisk.diskId());
-    assertEquals(GENERATED_ID, snapshotDisk.generatedId());
-    assertEquals(SNAPSHOT_DISK_CONFIGURATION, snapshotDisk.configuration());
-    assertEquals(CREATION_TIMESTAMP, snapshotDisk.creationTimestamp());
-    assertEquals(CREATION_STATUS, snapshotDisk.creationStatus());
-    assertEquals(DESCRIPTION, snapshotDisk.description());
-    assertEquals(LICENSES, snapshotDisk.licenses());
-    assertEquals(ATTACHED_INSTANCES, snapshotDisk.attachedInstances());
-    assertEquals(LAST_ATTACH_TIMESTAMP, snapshotDisk.lastAttachTimestamp());
-    assertEquals(LAST_DETACH_TIMESTAMP, snapshotDisk.lastDetachTimestamp());
-    assertSame(serviceMockReturnsOptions, snapshotDisk.compute());
-    Disk disk = new Disk.Builder(serviceMockReturnsOptions, DISK_ID, DISK_CONFIGURATION)
-        .diskId(DiskId.of("newProject", "newZone"))
-        .configuration(SNAPSHOT_DISK_CONFIGURATION)
-        .build();
-    assertEquals(DiskId.of("newProject", "newZone"), disk.diskId());
-    assertNull(disk.generatedId());
-    assertEquals(SNAPSHOT_DISK_CONFIGURATION, disk.configuration());
-    assertNull(disk.creationTimestamp());
-    assertNull(disk.creationStatus());
-    assertNull(disk.description());
-    assertNull(disk.licenses());
-    assertNull(disk.attachedInstances());
-    assertNull(disk.lastAttachTimestamp());
-    assertNull(disk.lastDetachTimestamp());
-    assertSame(serviceMockReturnsOptions, disk.compute());
-  }
-
-  @Test
   public void testToAndFromPb() {
     initializeExpectedDisk(24);
     compareDisk(standardDisk, Disk.fromPb(serviceMockReturnsOptions, standardDisk.toPb()));

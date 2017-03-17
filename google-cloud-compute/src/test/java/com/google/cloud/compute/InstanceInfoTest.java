@@ -69,22 +69,6 @@ public class InstanceInfoTest {
           .setSchedulingOptions(SCHEDULING_OPTIONS)
           .setCpuPlatform(CPU_PLATFORM)
           .build();
-  private static final InstanceInfo DEPRECATED_INSTANCE_INFO =
-      InstanceInfo.newBuilder(INSTANCE_ID, MACHINE_TYPE)
-          .setGeneratedId(GENERATED_ID)
-          .setCreationTimestamp(CREATION_TIMESTAMP)
-          .description(DESCRIPTION)
-          .setStatus(STATUS)
-          .setStatusMessage(STATUS_MESSAGE)
-          .tags(TAGS)
-          .canIpForward(CAN_IP_FORWARD)
-          .networkInterfaces(NETWORK_INTERFACES)
-          .attachedDisks(ATTACHED_DISKS)
-          .metadata(METADATA)
-          .serviceAccounts(SERVICE_ACCOUNTS)
-          .schedulingOptions(SCHEDULING_OPTIONS)
-          .setCpuPlatform(CPU_PLATFORM)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -132,41 +116,6 @@ public class InstanceInfoTest {
         .setMetadata(METADATA)
         .setServiceAccounts(SERVICE_ACCOUNTS)
         .setSchedulingOptions(SCHEDULING_OPTIONS)
-        .setCpuPlatform(CPU_PLATFORM)
-        .build();
-    compareInstanceInfo(INSTANCE_INFO, instanceInfo);
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(GENERATED_ID, DEPRECATED_INSTANCE_INFO.generatedId());
-    assertEquals(INSTANCE_ID, DEPRECATED_INSTANCE_INFO.instanceId());
-    assertEquals(CREATION_TIMESTAMP, DEPRECATED_INSTANCE_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, DEPRECATED_INSTANCE_INFO.description());
-    assertEquals(STATUS, DEPRECATED_INSTANCE_INFO.status());
-    assertEquals(STATUS_MESSAGE, DEPRECATED_INSTANCE_INFO.statusMessage());
-    assertEquals(TAGS, DEPRECATED_INSTANCE_INFO.tags());
-    assertEquals(MACHINE_TYPE, DEPRECATED_INSTANCE_INFO.machineType());
-    assertEquals(CAN_IP_FORWARD, DEPRECATED_INSTANCE_INFO.canIpForward());
-    assertEquals(NETWORK_INTERFACES, DEPRECATED_INSTANCE_INFO.networkInterfaces());
-    assertEquals(ATTACHED_DISKS, DEPRECATED_INSTANCE_INFO.attachedDisks());
-    assertEquals(METADATA, DEPRECATED_INSTANCE_INFO.metadata());
-    assertEquals(SERVICE_ACCOUNTS, DEPRECATED_INSTANCE_INFO.serviceAccounts());
-    assertEquals(SCHEDULING_OPTIONS, DEPRECATED_INSTANCE_INFO.schedulingOptions());
-    assertEquals(CPU_PLATFORM, DEPRECATED_INSTANCE_INFO.cpuPlatform());
-    InstanceInfo instanceInfo = InstanceInfo.builder(INSTANCE_ID, MACHINE_TYPE)
-        .setGeneratedId(GENERATED_ID)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .description(DESCRIPTION)
-        .setStatus(STATUS)
-        .setStatusMessage(STATUS_MESSAGE)
-        .tags(TAGS)
-        .canIpForward(CAN_IP_FORWARD)
-        .networkInterfaces(NETWORK_INTERFACE)
-        .attachedDisks(ATTACHED_DISK)
-        .metadata(METADATA)
-        .serviceAccounts(SERVICE_ACCOUNTS)
-        .schedulingOptions(SCHEDULING_OPTIONS)
         .setCpuPlatform(CPU_PLATFORM)
         .build();
     compareInstanceInfo(INSTANCE_INFO, instanceInfo);

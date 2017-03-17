@@ -18,7 +18,8 @@ package com.google.cloud.pubsub.deprecated;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.GrpcServiceOptions;
+import com.google.api.gax.core.ApiFuture;
+import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.Policy;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageProcessor;
@@ -30,7 +31,6 @@ import java.io.ObjectInputStream;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.Future;
 
 /**
  * A Google Cloud Pub/Sub subscription. A subscription represents the stream of messages from a
@@ -221,13 +221,13 @@ public class Subscription extends SubscriptionInfo {
   }
 
   /**
-   * Sends a request for deleting this subscription. This method returns a {@code Future} object to
-   * consume the result. {@link Future#get()} returns {@code true} if the subscription was deleted,
+   * Sends a request for deleting this subscription. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns {@code true} if the subscription was deleted,
    * {@code false} if it was not found.
    *
    * <p>Example of asynchronously deleting the subscription.
    * <pre> {@code
-   * Future<Boolean> future = subscription.deleteAsync();
+   * ApiFuture<Boolean> future = subscription.deleteAsync();
    * // ...
    * boolean deleted = future.get();
    * if (deleted) {
@@ -238,7 +238,7 @@ public class Subscription extends SubscriptionInfo {
    * }</pre>
    *
    */
-  public Future<Boolean> deleteAsync() {
+  public ApiFuture<Boolean> deleteAsync() {
     return pubsub.deleteSubscriptionAsync(getName());
   }
 
@@ -263,12 +263,12 @@ public class Subscription extends SubscriptionInfo {
 
   /**
    * Sends a request for fetching current subscription's latest information. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns the requested
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the requested
    * subscription or {@code null} if not found.
    *
    * <p>Example of asynchronously getting the subscription's latest information.
    * <pre> {@code
-   * Future<Subscription> future = subscription.reloadAsync();
+   * ApiFuture<Subscription> future = subscription.reloadAsync();
    * // ...
    * Subscription latestSubscription = future.get();
    * if (latestSubscription == null) {
@@ -279,7 +279,7 @@ public class Subscription extends SubscriptionInfo {
    * @return a {@code Subscription} object with latest information or {@code null} if not found
    * @throws PubSubException upon failure
    */
-  public Future<Subscription> reloadAsync() {
+  public ApiFuture<Subscription> reloadAsync() {
     return pubsub.getSubscriptionAsync(getName());
   }
 
@@ -315,7 +315,7 @@ public class Subscription extends SubscriptionInfo {
    * used to change a push subscription to a pull one (passing a {@code null} {@code pushConfig}
    * parameter) or vice versa. This methods can also be used to change the endpoint URL and other
    * attributes of a push subscription. Messages will accumulate for delivery regardless of changes
-   * to the push configuration. The method returns a {@code Future} object that can be used to wait
+   * to the push configuration. The method returns a {@code ApiFuture} object that can be used to wait
    * for the replace operation to be completed.
    *
    * <p>Example of asynchronously replacing the push configuration of the subscription, setting the
@@ -323,7 +323,7 @@ public class Subscription extends SubscriptionInfo {
    * <pre> {@code
    * String endpoint = "https://www.example.com/push";
    * PushConfig pushConfig = PushConfig.of(endpoint);
-   * Future<Void> future = subscription.replacePushConfigAsync(pushConfig);
+   * ApiFuture<Void> future = subscription.replacePushConfigAsync(pushConfig);
    * // ...
    * future.get();
    * }</pre>
@@ -331,15 +331,15 @@ public class Subscription extends SubscriptionInfo {
    * <p>Example of asynchronously replacing the push configuration of the subscription, making it a
    * pull subscription.
    * <pre> {@code
-   * Future<Void> future = subscription.replacePushConfigAsync(null);
+   * ApiFuture<Void> future = subscription.replacePushConfigAsync(null);
    * // ...
    * future.get();
    * }</pre>
    *
    * @param pushConfig the new push configuration. Use {@code null} to unset it
-   * @return a {@code Future} to wait for the replace operation to be completed.
+   * @return a {@code ApiFuture} to wait for the replace operation to be completed.
    */
-  public Future<Void> replacePushConfigAsync(PushConfig pushConfig) {
+  public ApiFuture<Void> replacePushConfigAsync(PushConfig pushConfig) {
     return pubsub.replacePushConfigAsync(getName(), pushConfig);
   }
 
@@ -371,14 +371,14 @@ public class Subscription extends SubscriptionInfo {
 
   /**
    * Sends a request for pulling messages from this subscription. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a message iterator.
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a message iterator.
    * This method possibly returns no messages if no message was available at the time the request
    * was processed by the Pub/Sub service (i.e. the system is not allowed to wait until at least one
    * message is available).
    *
    * <p>Example of asynchronously pulling a maximum number of messages from the subscription.
    * <pre> {@code
-   * Future<Iterator<ReceivedMessage>> future = subscription.pullAsync(100);
+   * ApiFuture<Iterator<ReceivedMessage>> future = subscription.pullAsync(100);
    * // ...
    * Iterator<ReceivedMessage> messages = future.get();
    * // Ack deadline is renewed until the message is consumed
@@ -393,7 +393,7 @@ public class Subscription extends SubscriptionInfo {
    *     possibly return fewer messages.
    * @throws PubSubException upon failure
    */
-  public Future<Iterator<ReceivedMessage>> pullAsync(int maxMessages) {
+  public ApiFuture<Iterator<ReceivedMessage>> pullAsync(int maxMessages) {
     return pubsub.pullAsync(getName(), maxMessages);
   }
 
@@ -408,7 +408,7 @@ public class Subscription extends SubscriptionInfo {
    *
    * <p>The {@link PullOption#maxQueuedCallbacks(int)} option can be used to control the maximum
    * number of queued messages (messages either being processed or waiting to be processed). The
-   * {@link PullOption#executorFactory(GrpcServiceOptions.ExecutorFactory)} can be used to provide
+   * {@link PullOption#executorFactory(GrpcTransportOptions.ExecutorFactory)} can be used to provide
    * an executor to run message processor callbacks.
    *
    * <p>Example of continuously pulling messages from the subscription.
@@ -455,12 +455,12 @@ public class Subscription extends SubscriptionInfo {
 
   /**
    * Sends a request for getting the IAM access control policy for this subscription. This method
-   * returns a {@code Future} object to consume the result. {@link Future#get()} returns the
+   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
    * requested policy or {@code null} if the subscription was not found.
    *
    * <p>Example of asynchronously getting the subscription's policy.
    * <pre> {@code
-   * Future<Policy> future = subscription.getPolicyAsync();
+   * ApiFuture<Policy> future = subscription.getPolicyAsync();
    * // ...
    * Policy policy = future.get();
    * if (policy == null) {
@@ -470,7 +470,7 @@ public class Subscription extends SubscriptionInfo {
    *
    * @throws PubSubException upon failure
    */
-  public Future<Policy> getPolicyAsync() {
+  public ApiFuture<Policy> getPolicyAsync() {
     return pubsub.getSubscriptionPolicyAsync(this.getName());
   }
 
@@ -505,8 +505,8 @@ public class Subscription extends SubscriptionInfo {
 
   /**
    * Sends a request to set the IAM access control policy for this subscription. Replaces any
-   * existing policy. This method returns a {@code Future} object to consume the result.
-   * {@link Future#get()} returns the new policy.
+   * existing policy. This method returns a {@code ApiFuture} object to consume the result.
+   * {@link ApiFuture#get()} returns the new policy.
    *
    * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
    * the project's current policy, updating it locally, and then sending the modified policy for
@@ -515,7 +515,7 @@ public class Subscription extends SubscriptionInfo {
    * verify whether the policy has changed since the last request. When you make a request with an
    * etag value, the value in the request is compared with the existing etag value associated with
    * the policy. The policy is written only if the etag values match. If the etags don't match,
-   * {@link Future#get()} will throw a {@link java.util.concurrent.ExecutionException} caused by a
+   * {@link ApiFuture#get()} will throw a {@link java.util.concurrent.ExecutionException} caused by a
    * {@code PubSubException}, denoting that the server aborted update. If an etag is not provided,
    * the policy is overwritten blindly.
    *
@@ -525,14 +525,14 @@ public class Subscription extends SubscriptionInfo {
    * Policy updatedPolicy = policy.toBuilder()
    *     .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
    *     .build();
-   * Future<Policy> future = subscription.replacePolicyAsync(updatedPolicy);
+   * ApiFuture<Policy> future = subscription.replacePolicyAsync(updatedPolicy);
    * // ...
    * updatedPolicy = future.get();
    * }</pre>
    *
    * @throws PubSubException upon failure
    */
-  public Future<Policy> replacePolicyAsync(Policy newPolicy) {
+  public ApiFuture<Policy> replacePolicyAsync(Policy newPolicy) {
     return pubsub.replaceSubscriptionPolicyAsync(this.getName(), newPolicy);
   }
 
@@ -573,19 +573,19 @@ public class Subscription extends SubscriptionInfo {
    * <pre> {@code
    * List<String> permissions = new LinkedList<>();
    * permissions.add("pubsub.subscriptions.get");
-   * Future<List<Boolean>> future = subscription.testPermissionsAsync(permissions);
+   * ApiFuture<List<Boolean>> future = subscription.testPermissionsAsync(permissions);
    * // ...
    * List<Boolean> testedPermissions = future.get();
    * }</pre>
    *
-   * @return A {@code Future} object to consume the result. {@link Future#get()} returns a list of
+   * @return A {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a list of
    *     booleans representing whether the caller has the permissions specified (in the order of the
    *     given permissions)
    * @throws PubSubException upon failure
    * @see <a href="https://cloud.google.com/pubsub/docs/access_control#permissions">
    *     Permissions and Roles</a>
    */
-  public Future<List<Boolean>> testPermissionsAsync(List<String> permissions) {
+  public ApiFuture<List<Boolean>> testPermissionsAsync(List<String> permissions) {
     return pubsub.testSubscriptionPermissionsAsync(this.getName(), permissions);
   }
 

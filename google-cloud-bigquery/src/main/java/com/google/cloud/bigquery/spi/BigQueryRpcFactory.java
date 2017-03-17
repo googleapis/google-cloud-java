@@ -23,5 +23,5 @@ import com.google.cloud.spi.ServiceRpcFactory;
  * An interface for BigQuery RPC factory.
  * Implementation will be loaded via {@link java.util.ServiceLoader}.
  */
-public interface BigQueryRpcFactory extends ServiceRpcFactory<BigQueryRpc, BigQueryOptions> {
+public interface BigQueryRpcFactory extends ServiceRpcFactory<BigQueryOptions> {
 }

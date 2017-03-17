@@ -25,7 +25,7 @@ import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.cloud.Clock;
 import com.google.cloud.Page;
 import com.google.cloud.RetryParams;
-import com.google.cloud.dns.spi.DnsRpc;
+import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;

@@ -26,16 +26,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>0.9.4-alpha</version>
+  <version>0.10.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:0.9.4-alpha'
+compile 'com.google.cloud:google-cloud-pubsub:0.10.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.9.4-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.10.0-alpha"
 ```
 
 Example Application
@@ -249,6 +249,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-pubsub
 
-[cloud-pubsub]: https://cloud.google.com/storage/
+[cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-quickstart]: https://cloud.google.com/pubsub/quickstart-console#before-you-begin
 [pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/package-summary.html

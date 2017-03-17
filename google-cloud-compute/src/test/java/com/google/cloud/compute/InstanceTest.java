@@ -174,47 +174,6 @@ public class InstanceTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedInstance(2);
-    assertEquals(GENERATED_ID, expectedInstance.generatedId());
-    assertEquals(INSTANCE_ID, expectedInstance.instanceId());
-    assertEquals(CREATION_TIMESTAMP, expectedInstance.creationTimestamp());
-    assertEquals(DESCRIPTION, expectedInstance.description());
-    assertEquals(STATUS, expectedInstance.status());
-    assertEquals(STATUS_MESSAGE, expectedInstance.statusMessage());
-    assertEquals(TAGS, expectedInstance.tags());
-    assertEquals(MACHINE_TYPE, expectedInstance.machineType());
-    assertEquals(CAN_IP_FORWARD, expectedInstance.canIpForward());
-    assertEquals(NETWORK_INTERFACES, expectedInstance.networkInterfaces());
-    assertEquals(ATTACHED_DISKS, expectedInstance.attachedDisks());
-    assertEquals(METADATA, expectedInstance.metadata());
-    assertEquals(SERVICE_ACCOUNTS, expectedInstance.serviceAccounts());
-    assertEquals(SCHEDULING_OPTIONS, expectedInstance.schedulingOptions());
-    assertEquals(CPU_PLATFORM, expectedInstance.cpuPlatform());
-    assertSame(serviceMockReturnsOptions, expectedInstance.compute());
-    InstanceInfo instanceInfo =
-        InstanceInfo.of(INSTANCE_ID, MACHINE_TYPE, ATTACHED_DISK, NETWORK_INTERFACE);
-    Instance instance =
-        new Instance(serviceMockReturnsOptions, new InstanceInfo.BuilderImpl(instanceInfo));
-    assertNull(instance.generatedId());
-    assertEquals(INSTANCE_ID, instance.instanceId());
-    assertNull(instance.creationTimestamp());
-    assertNull(instance.description());
-    assertNull(instance.status());
-    assertNull(instance.statusMessage());
-    assertNull(instance.tags());
-    assertEquals(MACHINE_TYPE, instance.machineType());
-    assertNull(instance.canIpForward());
-    assertEquals(NETWORK_INTERFACES, instance.networkInterfaces());
-    assertEquals(ATTACHED_DISKS, instance.attachedDisks());
-    assertNull(instance.metadata());
-    assertNull(instance.serviceAccounts());
-    assertNull(instance.schedulingOptions());
-    assertNull(instance.cpuPlatform());
-    assertSame(serviceMockReturnsOptions, instance.compute());
-  }
-
-  @Test
   public void testToAndFromPb() {
     initializeExpectedInstance(8);
     compareInstance(expectedInstance,

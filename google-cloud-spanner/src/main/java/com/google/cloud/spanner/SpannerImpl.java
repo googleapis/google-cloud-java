@@ -36,8 +36,8 @@ import com.google.cloud.spanner.Operation.Parser;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
-import com.google.cloud.spanner.spi.SpannerRpc;
-import com.google.cloud.spanner.spi.SpannerRpc.Paginated;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
@@ -133,7 +133,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   SpannerImpl(SpannerOptions options) {
-    this(options.getRpc(), options.getPrefetchChunks(), options);
+    this(options.getSpannerRpcV1(), options.getPrefetchChunks(), options);
   }
 
   private static ExponentialBackOff newBackOff() {

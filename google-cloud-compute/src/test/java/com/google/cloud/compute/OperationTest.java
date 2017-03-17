@@ -207,27 +207,6 @@ public class OperationTest {
     assertSame(serviceMockReturnsOptions, globalOperation.getCompute());
   }
 
-  private void assertEqualsCommonFieldsDeprecated(Operation operation) {
-    assertEquals(GENERATED_ID, operation.generatedId());
-    assertEquals(CLIENT_OPERATION_ID, operation.getClientOperationId());
-    assertEquals(OPERATION_TYPE, operation.operationType());
-    assertEquals(TARGET_LINK, operation.targetLink());
-    assertEquals(TARGET_ID, operation.targetId());
-    assertEquals(STATUS, operation.status());
-    assertEquals(STATUS_MESSAGE, operation.statusMessage());
-    assertEquals(USER, operation.user());
-    assertEquals(PROGRESS, operation.progress());
-    assertEquals(INSERT_TIME, operation.insertTime());
-    assertEquals(START_TIME, operation.startTime());
-    assertEquals(END_TIME, operation.endTime());
-    assertEquals(ERRORS, operation.errors());
-    assertEquals(WARNINGS, operation.warnings());
-    assertEquals(HTTP_ERROR_STATUS_CODE, globalOperation.httpErrorStatusCode());
-    assertEquals(HTTP_ERROR_MESSAGE, globalOperation.httpErrorMessage());
-    assertEquals(DESCRIPTION, globalOperation.description());
-    assertSame(serviceMockReturnsOptions, globalOperation.compute());
-  }
-
   private void assertNullCommonFields(Operation operation) {
     assertNull(operation.getGeneratedId());
     assertNull(operation.getClientOperationId());
@@ -247,27 +226,6 @@ public class OperationTest {
     assertNull(operation.getHttpErrorMessage());
     assertNull(operation.getDescription());
     assertSame(serviceMockReturnsOptions, operation.getCompute());
-  }
-
-  private void assertNullCommonFieldsDeprecated(Operation operation) {
-    assertNull(operation.generatedId());
-    assertNull(operation.getClientOperationId());
-    assertNull(operation.operationType());
-    assertNull(operation.targetLink());
-    assertNull(operation.targetId());
-    assertNull(operation.status());
-    assertNull(operation.statusMessage());
-    assertNull(operation.user());
-    assertNull(operation.progress());
-    assertNull(operation.insertTime());
-    assertNull(operation.startTime());
-    assertNull(operation.endTime());
-    assertNull(operation.errors());
-    assertNull(operation.warnings());
-    assertNull(operation.httpErrorStatusCode());
-    assertNull(operation.httpErrorMessage());
-    assertNull(operation.description());
-    assertSame(serviceMockReturnsOptions, operation.compute());
   }
 
   @Test
@@ -294,32 +252,6 @@ public class OperationTest {
         .build();
     assertNullCommonFields(operation);
     assertEquals(REGION_OPERATION_ID, operation.getOperationId());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedOperation(6);
-    assertEqualsCommonFieldsDeprecated(globalOperation);
-    assertEquals(GLOBAL_OPERATION_ID, globalOperation.operationId());
-    assertEqualsCommonFieldsDeprecated(regionOperation);
-    assertEquals(REGION_OPERATION_ID, regionOperation.operationId());
-    assertEqualsCommonFieldsDeprecated(zoneOperation);
-    assertEquals(ZONE_OPERATION_ID, zoneOperation.operationId());
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GLOBAL_OPERATION_ID)
-        .build();
-    assertNullCommonFieldsDeprecated(operation);
-    assertEquals(GLOBAL_OPERATION_ID, operation.operationId());
-    operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(ZONE_OPERATION_ID)
-        .build();
-    assertNullCommonFieldsDeprecated(operation);
-    assertEquals(ZONE_OPERATION_ID, operation.operationId());
-    operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(REGION_OPERATION_ID)
-        .build();
-    assertNullCommonFieldsDeprecated(operation);
-    assertEquals(REGION_OPERATION_ID, operation.operationId());
   }
 
   @Test

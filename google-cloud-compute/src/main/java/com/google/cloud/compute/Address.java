@@ -65,12 +65,6 @@ public class Address extends AddressInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder address(String address) {
-      return setAddress(address);
-    }
-
-    @Override
     public Builder setAddress(String address) {
       infoBuilder.setAddress(address);
       return this;
@@ -83,12 +77,6 @@ public class Address extends AddressInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
-
-    @Override
     public Builder setDescription(String description) {
       infoBuilder.setDescription(description);
       return this;
@@ -98,12 +86,6 @@ public class Address extends AddressInfo {
     Builder setGeneratedId(String generatedId) {
       infoBuilder.setGeneratedId(generatedId);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder addressId(AddressId addressId) {
-      return setAddressId(addressId);
     }
 
     @Override
@@ -167,14 +149,6 @@ public class Address extends AddressInfo {
    */
   public Operation delete(OperationOption... options) {
     return compute.deleteAddress(getAddressId(), options);
-  }
-
-  /**
-   * Returns the address's {@code Compute} object used to issue requests.
-   */
-  @Deprecated
-  public Compute compute() {
-    return getCompute();
   }
 
   /**

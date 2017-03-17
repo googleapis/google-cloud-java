@@ -65,20 +65,6 @@ public class MachineTypeTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    assertEquals(GENERATED_ID, MACHINE_TYPE.generatedId());
-    assertEquals(MACHINE_TYPE_ID, MACHINE_TYPE.machineTypeId());
-    assertEquals(CREATION_TIMESTAMP, MACHINE_TYPE.creationTimestamp());
-    assertEquals(DESCRIPTION, MACHINE_TYPE.description());
-    assertEquals(CPUS, MACHINE_TYPE.cpus());
-    assertEquals(MEMORY_MB, MACHINE_TYPE.memoryMb());
-    assertEquals(SCRATCH_DISKS, MACHINE_TYPE.scratchDisksSizeGb());
-    assertEquals(MAXIMUM_PERSISTENT_DISKS, MACHINE_TYPE.maximumPersistentDisks());
-    assertEquals(MAXIMUM_PERSISTENT_DISKS_SIZE_GB, MACHINE_TYPE.maximumPersistentDisksSizeGb());
-    assertEquals(DEPRECATION_STATUS, MACHINE_TYPE.deprecationStatus());
-  }
-
-  @Test
   public void testToPbAndFromPb() {
     compareMachineTypes(MACHINE_TYPE, MachineType.fromPb(MACHINE_TYPE.toPb()));
     MachineType machineType = MachineType.newBuilder().setMachineTypeId(MACHINE_TYPE_ID).build();

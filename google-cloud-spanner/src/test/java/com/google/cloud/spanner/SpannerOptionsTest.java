@@ -18,15 +18,22 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.TransportOptions;
 import io.grpc.ManagedChannel;
 import io.grpc.netty.NettyChannelBuilder;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /** Unit tests for {@link com.google.cloud.spanner.SpannerOptions}. */
 @RunWith(JUnit4.class)
 public class SpannerOptionsTest {
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
   private static class TestChannelFactory implements SpannerOptions.RpcChannelFactory {
     @Override
     public ManagedChannel newChannel(String host, int port) {
@@ -62,5 +69,14 @@ public class SpannerOptionsTest {
     assertThat(options.getHost()).isEqualTo(host);
     assertThat(options.getProjectId()).isEqualTo(projectId);
     assertThat(options.getPrefetchChunks()).isEqualTo(2);
+  }
+
+  class DummyTransportOptions implements TransportOptions {
+  }
+
+  @Test
+  public void testInvalidTransport() {
+    thrown.expect(IllegalArgumentException.class);
+    SpannerOptions.newBuilder().setTransportOptions(new DummyTransportOptions());
   }
 }

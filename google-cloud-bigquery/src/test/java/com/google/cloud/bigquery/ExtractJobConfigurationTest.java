@@ -125,6 +125,12 @@ public class ExtractJobConfigurationTest {
     assertEquals("p", configuration.getSourceTable().getProject());
   }
 
+  @Test
+  public void testGetType() {
+    assertEquals(JobConfiguration.Type.EXTRACT, EXTRACT_CONFIGURATION.getType());
+    assertEquals(JobConfiguration.Type.EXTRACT, EXTRACT_CONFIGURATION_ONE_URI.getType());
+  }
+
   private void compareExtractJobConfiguration(ExtractJobConfiguration expected,
       ExtractJobConfiguration value) {
     assertEquals(expected, value);
