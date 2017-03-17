@@ -53,18 +53,6 @@ public class SnapshotInfoTest {
           .setStorageBytes(STORAGE_BYTES)
           .setStorageBytesStatus(STORAGE_BYTES_STATUS)
           .build();
-  private static final SnapshotInfo DEPRECATED_SNAPSHOT_INFO =
-      SnapshotInfo.builder(SNAPSHOT_ID, SOURCE_DISK)
-          .setGeneratedId(GENERATED_ID)
-          .setCreationTimestamp(CREATION_TIMESTAMP)
-          .description(DESCRIPTION)
-          .setStatus(STATUS)
-          .setDiskSizeGb(DISK_SIZE_GB)
-          .setLicenses(LICENSES)
-          .setSourceDiskId(SOURCE_DISK_ID)
-          .setStorageBytes(STORAGE_BYTES)
-          .setStorageBytesStatus(STORAGE_BYTES_STATUS)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -94,21 +82,6 @@ public class SnapshotInfoTest {
     assertEquals(SOURCE_DISK_ID, SNAPSHOT_INFO.getSourceDiskId());
     assertEquals(STORAGE_BYTES, SNAPSHOT_INFO.getStorageBytes());
     assertEquals(STORAGE_BYTES_STATUS, SNAPSHOT_INFO.getStorageBytesStatus());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(GENERATED_ID, DEPRECATED_SNAPSHOT_INFO.generatedId());
-    assertEquals(SNAPSHOT_ID, DEPRECATED_SNAPSHOT_INFO.snapshotId());
-    assertEquals(CREATION_TIMESTAMP, DEPRECATED_SNAPSHOT_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, DEPRECATED_SNAPSHOT_INFO.description());
-    assertEquals(STATUS, DEPRECATED_SNAPSHOT_INFO.status());
-    assertEquals(DISK_SIZE_GB, DEPRECATED_SNAPSHOT_INFO.diskSizeGb());
-    assertEquals(LICENSES, DEPRECATED_SNAPSHOT_INFO.licenses());
-    assertEquals(SOURCE_DISK, DEPRECATED_SNAPSHOT_INFO.sourceDisk());
-    assertEquals(SOURCE_DISK_ID, DEPRECATED_SNAPSHOT_INFO.sourceDiskId());
-    assertEquals(STORAGE_BYTES, DEPRECATED_SNAPSHOT_INFO.storageBytes());
-    assertEquals(STORAGE_BYTES_STATUS, DEPRECATED_SNAPSHOT_INFO.storageBytesStatus());
   }
 
   @Test

@@ -39,13 +39,6 @@ public class StorageImageConfigurationTest {
           .setArchiveSizeBytes(ARCHIVE_SIZE_BYTES)
           .setSha1(SHA1)
           .build();
-  private static final StorageImageConfiguration DEPRECATED_CONFIGURATION =
-      StorageImageConfiguration.builder(SOURCE)
-          .setSourceType(SOURCE_TYPE)
-          .containerType(CONTAINER_TYPE)
-          .setArchiveSizeBytes(ARCHIVE_SIZE_BYTES)
-          .sha1(SHA1)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -71,16 +64,6 @@ public class StorageImageConfigurationTest {
     assertEquals(ARCHIVE_SIZE_BYTES, CONFIGURATION.getArchiveSizeBytes());
     assertEquals(SHA1, CONFIGURATION.getSha1());
     assertEquals(ImageConfiguration.Type.STORAGE, CONFIGURATION.getType());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(SOURCE_TYPE, DEPRECATED_CONFIGURATION.sourceType());
-    assertEquals(SOURCE, DEPRECATED_CONFIGURATION.source());
-    assertEquals(CONTAINER_TYPE, DEPRECATED_CONFIGURATION.containerType());
-    assertEquals(ARCHIVE_SIZE_BYTES, DEPRECATED_CONFIGURATION.archiveSizeBytes());
-    assertEquals(SHA1, DEPRECATED_CONFIGURATION.sha1());
-    assertEquals(ImageConfiguration.Type.STORAGE, DEPRECATED_CONFIGURATION.type());
   }
 
   @Test

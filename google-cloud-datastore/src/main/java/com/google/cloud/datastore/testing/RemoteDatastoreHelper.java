@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore.testing;
 
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.RetryParams;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -37,7 +38,8 @@ import java.util.UUID;
  * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
  * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
  * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
- * {@link DatastoreOptions#getConnectTimeout()} and {@link DatastoreOptions#getReadTimeout()} are
+ * {@link HttpTransportOptions#getConnectTimeout()} and
+ * {@link HttpTransportOptions#getReadTimeout()} are both
  * both set to {@code 60000}.
  */
 public class RemoteDatastoreHelper {
@@ -76,11 +78,13 @@ public class RemoteDatastoreHelper {
    * Creates a {@code RemoteStorageHelper} object.
    */
   public static RemoteDatastoreHelper create() {
+    HttpTransportOptions transportOptions = DatastoreOptions.getDefaultHttpTransportOptions();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+        .build();
     DatastoreOptions datastoreOption = DatastoreOptions.newBuilder()
         .setNamespace(UUID.randomUUID().toString())
         .setRetryParams(retryParams())
-        .setConnectTimeout(60000)
-        .setReadTimeout(60000)
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteDatastoreHelper(datastoreOption);
   }

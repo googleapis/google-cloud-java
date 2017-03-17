@@ -27,6 +27,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.AsyncPage;
 import com.google.cloud.AsyncPageImpl;
 import com.google.cloud.Identity;
@@ -36,7 +37,6 @@ import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.pubsub.deprecated.PubSub.ListOption;
 import com.google.common.collect.ImmutableList;
-import com.google.common.util.concurrent.Futures;
 
 import org.junit.After;
 import org.junit.Test;
@@ -131,7 +131,7 @@ public class TopicTest {
         new Topic(serviceMockReturnsOptions, new TopicInfo.BuilderImpl(updatedInfo));
     expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getTopicAsync(NAME))
-        .andReturn(Futures.immediateFuture(expectedTopic));
+        .andReturn(ApiFutures.immediateFuture(expectedTopic));
     replay(pubsub);
     initializeTopic();
     Topic updatedTopic = topic.reloadAsync().get();
@@ -142,7 +142,7 @@ public class TopicTest {
   public void testReloadAsyncNull() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
-    expect(pubsub.getTopicAsync(NAME)).andReturn(Futures.<Topic>immediateFuture(null));
+    expect(pubsub.getTopicAsync(NAME)).andReturn(ApiFutures.<Topic>immediateFuture(null));
     replay(pubsub);
     initializeTopic();
     assertNull(topic.reloadAsync().get());
@@ -172,7 +172,7 @@ public class TopicTest {
   public void testDeleteAsyncTrue() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
-    expect(pubsub.deleteTopicAsync(NAME)).andReturn(Futures.immediateFuture(true));
+    expect(pubsub.deleteTopicAsync(NAME)).andReturn(ApiFutures.immediateFuture(true));
     replay(pubsub);
     initializeTopic();
     assertTrue(topic.deleteAsync().get());
@@ -182,7 +182,7 @@ public class TopicTest {
   public void testDeleteAsyncFalse() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
-    expect(pubsub.deleteTopicAsync(NAME)).andReturn(Futures.immediateFuture(false));
+    expect(pubsub.deleteTopicAsync(NAME)).andReturn(ApiFutures.immediateFuture(false));
     replay(pubsub);
     initializeTopic();
     assertFalse(topic.deleteAsync().get());
@@ -207,7 +207,7 @@ public class TopicTest {
     Message message = Message.of("payload1");
     String messageId = "messageId";
     expect(pubsub.publishAsync(NAME, message))
-        .andReturn(Futures.immediateFuture(messageId));
+        .andReturn(ApiFutures.immediateFuture(messageId));
     replay(pubsub);
     initializeTopic();
     assertEquals(messageId, topic.publishAsync(message).get());
@@ -234,7 +234,7 @@ public class TopicTest {
     Message message2 = Message.of("payload2");
     List<String> messageIds = ImmutableList.of("messageId1", "messageId2");
     expect(pubsub.publishAsync(NAME, message1, message2))
-        .andReturn(Futures.immediateFuture(messageIds));
+        .andReturn(ApiFutures.immediateFuture(messageIds));
     replay(pubsub);
     initializeTopic();
     assertEquals(messageIds, topic.publishAsync(message1, message2).get());
@@ -263,7 +263,7 @@ public class TopicTest {
     List<Message> messages = ImmutableList.of(message1, message2);
     List<String> messageIds = ImmutableList.of("messageId1", "messageId2");
     expect(pubsub.publishAsync(NAME, messages))
-        .andReturn(Futures.immediateFuture(messageIds));
+        .andReturn(ApiFutures.immediateFuture(messageIds));
     replay(pubsub);
     initializeTopic();
     assertEquals(messageIds, topic.publishAsync(messages).get());
@@ -306,7 +306,7 @@ public class TopicTest {
         new SubscriptionId("project", "subscription2"));
     AsyncPage<SubscriptionId> result = new AsyncPageImpl<>(null, null, subscriptions);
     expect(pubsub.listSubscriptionsAsync(NAME))
-        .andReturn(Futures.immediateFuture(result));
+        .andReturn(ApiFutures.immediateFuture(result));
     replay(pubsub);
     initializeTopic();
     assertEquals(subscriptions, topic.listSubscriptionsAsync().get().getValues());
@@ -322,7 +322,7 @@ public class TopicTest {
         new SubscriptionId("project", "subscription2"));
     AsyncPage<SubscriptionId> result = new AsyncPageImpl<>(null, null, subscriptions);
     expect(pubsub.listSubscriptionsAsync(NAME, ListOption.pageSize(42)))
-        .andReturn(Futures.immediateFuture(result));
+        .andReturn(ApiFutures.immediateFuture(result));
     replay(pubsub);
     initializeTopic();
     assertEquals(subscriptions,
@@ -354,7 +354,7 @@ public class TopicTest {
   public void testGetPolicyAsync() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
-    expect(pubsub.getTopicPolicyAsync(NAME)).andReturn(Futures.immediateFuture(POLICY));
+    expect(pubsub.getTopicPolicyAsync(NAME)).andReturn(ApiFutures.immediateFuture(POLICY));
     replay(pubsub);
     initializeTopic();
     Policy policy = topic.getPolicyAsync().get();
@@ -376,7 +376,7 @@ public class TopicTest {
   public void testReplacePolicyAsync() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
-    expect(pubsub.replaceTopicPolicyAsync(NAME, POLICY)).andReturn(Futures.immediateFuture(POLICY));
+    expect(pubsub.replaceTopicPolicyAsync(NAME, POLICY)).andReturn(ApiFutures.immediateFuture(POLICY));
     replay(pubsub);
     initializeTopic();
     Policy policy = topic.replacePolicyAsync(POLICY).get();
@@ -402,7 +402,7 @@ public class TopicTest {
     initializeExpectedTopic(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.testTopicPermissionsAsync(NAME, permissions))
-        .andReturn(Futures.immediateFuture(permissionsResult));
+        .andReturn(ApiFutures.immediateFuture(permissionsResult));
     replay(pubsub);
     initializeTopic();
     assertEquals(permissionsResult, topic.testPermissionsAsync(permissions).get());

@@ -76,22 +76,13 @@ public class Subnetwork extends SubnetworkInfo {
 
     @Override
     public Builder setSubnetworkId(SubnetworkId subnetworkId) {
-      return setSubnetworkId(subnetworkId);
-    }
-
-    @Override
-    public Builder subnetworkId(SubnetworkId subnetworkId) {
       infoBuilder.setSubnetworkId(subnetworkId);
       return this;
     }
 
-    @Override
-    public Builder setDescription(String description) {
-      return setDescription(description);
-    }
 
     @Override
-    public Builder description(String description) {
+    public Builder setDescription(String description) {
       infoBuilder.setDescription(description);
       return this;
     }
@@ -104,22 +95,12 @@ public class Subnetwork extends SubnetworkInfo {
 
     @Override
     public Builder setNetwork(NetworkId network) {
-      return setNetwork(network);
-    }
-
-    @Override
-    public Builder network(NetworkId network) {
       infoBuilder.setNetwork(network);
       return this;
     }
 
     @Override
     public Builder setIpRange(String ipRange) {
-      return setIpRange(ipRange);
-    }
-
-    @Override
-    public Builder ipRange(String ipRange) {
       infoBuilder.setIpRange(ipRange);
       return this;
     }
@@ -167,14 +148,6 @@ public class Subnetwork extends SubnetworkInfo {
    */
   public Operation delete(OperationOption... options) {
     return compute.deleteSubnetwork(getSubnetworkId(), options);
-  }
-
-  /**
-   * Returns the subnetwork's {@code Compute} object used to issue requests.
-   */
-  @Deprecated
-  public Compute compute() {
-    return getCompute();
   }
 
   /**

@@ -17,7 +17,7 @@
 package com.google.cloud.translate;
 
 import com.google.cloud.Service;
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 
 import java.util.List;
 

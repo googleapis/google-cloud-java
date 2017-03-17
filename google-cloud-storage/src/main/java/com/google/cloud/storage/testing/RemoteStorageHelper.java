@@ -17,6 +17,7 @@
 package com.google.cloud.storage.testing;
 
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.RetryParams;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
@@ -45,7 +46,8 @@ import java.util.logging.Logger;
  * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
  * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
  * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
- * {@link StorageOptions#getConnectTimeout()} and {@link StorageOptions#getReadTimeout()} are both
+ * {@link HttpTransportOptions#getConnectTimeout()} and
+ * {@link HttpTransportOptions#getReadTimeout()} are both
  * set to {@code 60000}.
  */
 public class RemoteStorageHelper {
@@ -124,12 +126,14 @@ public class RemoteStorageHelper {
   public static RemoteStorageHelper create(String projectId, InputStream keyStream)
       throws StorageHelperException {
     try {
+      HttpTransportOptions transportOptions = StorageOptions.getDefaultHttpTransportOptions();
+      transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+          .build();
       StorageOptions storageOptions = StorageOptions.newBuilder()
           .setCredentials(GoogleCredentials.fromStream(keyStream))
           .setProjectId(projectId)
           .setRetryParams(retryParams())
-          .setConnectTimeout(60000)
-          .setReadTimeout(60000)
+          .setTransportOptions(transportOptions)
           .build();
       return new RemoteStorageHelper(storageOptions);
     } catch (IOException ex) {
@@ -145,10 +149,12 @@ public class RemoteStorageHelper {
    * credentials.
    */
   public static RemoteStorageHelper create() throws StorageHelperException {
+    HttpTransportOptions transportOptions = StorageOptions.getDefaultHttpTransportOptions();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+        .build();
     StorageOptions storageOptions = StorageOptions.newBuilder()
         .setRetryParams(retryParams())
-        .setConnectTimeout(60000)
-        .setReadTimeout(60000)
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteStorageHelper(storageOptions);
   }

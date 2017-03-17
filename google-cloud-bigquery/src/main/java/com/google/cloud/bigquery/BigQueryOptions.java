@@ -16,16 +16,21 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.cloud.HttpServiceOptions;
-import com.google.cloud.bigquery.spi.BigQueryRpc;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
+import com.google.cloud.TransportOptions;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
-import com.google.cloud.bigquery.spi.DefaultBigQueryRpc;
+import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, BigQueryOptions> {
+public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
+  private static final String API_SHORT_NAME = "BigQuery";
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
   private static final long serialVersionUID = -2437598817433266049L;
@@ -45,13 +50,13 @@ public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, B
     private static final BigQueryRpcFactory INSTANCE = new DefaultBigQueryRpcFactory();
 
     @Override
-    public BigQueryRpc create(BigQueryOptions options) {
-      return new DefaultBigQueryRpc(options);
+    public ServiceRpc create(BigQueryOptions options) {
+      return new HttpBigQueryRpc(options);
     }
   }
 
   public static class Builder extends
-      HttpServiceOptions.Builder<BigQuery, BigQueryRpc, BigQueryOptions, Builder> {
+      ServiceOptions.Builder<BigQuery, BigQueryOptions, Builder> {
 
     private Builder() {
     }
@@ -61,28 +66,54 @@ public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, B
     }
 
     @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
+    }
+
+    @Override
     public BigQueryOptions build() {
       return new BigQueryOptions(this);
     }
   }
 
   private BigQueryOptions(Builder builder) {
-    super(BigQueryFactory.class, BigQueryRpcFactory.class, builder);
+    super(BigQueryFactory.class, BigQueryRpcFactory.class, builder, new BigQueryDefaults());
   }
 
-  @Override
-  protected BigQueryFactory getDefaultServiceFactory() {
-    return DefaultBigqueryFactory.INSTANCE;
+  private static class BigQueryDefaults implements
+      ServiceDefaults<BigQuery, BigQueryOptions> {
+
+    @Override
+    public BigQueryFactory getDefaultServiceFactory() {
+      return DefaultBigqueryFactory.INSTANCE;
+    }
+
+    @Override
+    public BigQueryRpcFactory getDefaultRpcFactory() {
+      return DefaultBigQueryRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
-  @Override
-  protected BigQueryRpcFactory getDefaultRpcFactory() {
-    return DefaultBigQueryRpcFactory.INSTANCE;
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
   }
 
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected BigQueryRpc getBigQueryRpcV2() {
+    return (BigQueryRpc) getRpc();
   }
 
   @SuppressWarnings("unchecked")

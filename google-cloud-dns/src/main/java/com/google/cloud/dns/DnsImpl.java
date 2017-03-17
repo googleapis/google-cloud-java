@@ -27,7 +27,7 @@ import com.google.cloud.BaseService;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.RetryHelper;
-import com.google.cloud.dns.spi.DnsRpc;
+import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -110,7 +110,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
 
   DnsImpl(DnsOptions options) {
     super(options);
-    dnsRpc = options.getRpc();
+    dnsRpc = options.getDnsRpcV1();
   }
 
   static Function<ManagedZone, Zone> zoneFromPb(final DnsOptions options) {
@@ -131,7 +131,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       final Map<DnsRpc.Option, ?> optionsMap) {
     try {
       // get a list of managed zones
-      final DnsRpc rpc = serviceOptions.getRpc();
+      final DnsRpc rpc = serviceOptions.getDnsRpcV1();
       DnsRpc.ListResult<ManagedZone> result =
           runWithRetries(new Callable<DnsRpc.ListResult<ManagedZone>>() {
             @Override
@@ -160,7 +160,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       final DnsOptions serviceOptions, final Map<DnsRpc.Option, ?> optionsMap) {
     try {
       // get a list of changes
-      final DnsRpc rpc = serviceOptions.getRpc();
+      final DnsRpc rpc = serviceOptions.getDnsRpcV1();
       DnsRpc.ListResult<Change> result = runWithRetries(new Callable<DnsRpc.ListResult<Change>>() {
         @Override
         public DnsRpc.ListResult<Change> call() {
@@ -189,7 +189,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       final DnsOptions serviceOptions, final Map<DnsRpc.Option, ?> optionsMap) {
     try {
       // get a list of record sets
-      final DnsRpc rpc = serviceOptions.getRpc();
+      final DnsRpc rpc = serviceOptions.getDnsRpcV1();
       DnsRpc.ListResult<ResourceRecordSet> result = runWithRetries(
           new Callable<DnsRpc.ListResult<ResourceRecordSet>>() {
             @Override

@@ -17,7 +17,8 @@
 package com.google.cloud.pubsub.deprecated;
 
 import com.google.cloud.BaseSerializationTest;
-import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.pubsub.deprecated.PubSub.ListOption;
@@ -82,13 +83,19 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
+    GrpcTransportOptions transportOptions = PubSubOptions.getDefaultGrpcTransportOptions();
+    transportOptions = transportOptions.toBuilder().setInitialTimeout(1234).build();
     PubSubOptions options = PubSubOptions.newBuilder()
         .setProjectId("p1")
-        .setInitialTimeout(1234)
+        .setTransportOptions(transportOptions)
         .build();
+
+    GrpcTransportOptions otherTransportOptions = PubSubOptions.getDefaultGrpcTransportOptions();
+    otherTransportOptions = otherTransportOptions.toBuilder()
+        .setExecutorFactory(new TestExecutorFactory()).build();
     PubSubOptions otherOptions = options.toBuilder()
         .setProjectId("p2")
-        .setExecutorFactory(new TestExecutorFactory())
+        .setTransportOptions(otherTransportOptions)
         .build();
     return new Serializable[]{options, otherOptions, MESSAGE, RECEIVED_MESSAGE, SUBSCRIPTION_INFO,
         SUBSCRIPTION, SUBSCRIPTION_ID, TOPIC_INFO, TOPIC, PAGE_TOKEN_OPTION, PAGE_SIZE_OPTION,

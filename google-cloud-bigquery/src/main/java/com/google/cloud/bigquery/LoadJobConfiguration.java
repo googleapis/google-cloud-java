@@ -43,7 +43,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final Integer maxBadRecords;
   private final Schema schema;
   private final Boolean ignoreUnknownValues;
-  private final List<String> projectionFields;
 
   public static final class Builder
       extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
@@ -72,7 +71,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.maxBadRecords = loadConfiguration.maxBadRecords;
       this.schema = loadConfiguration.schema;
       this.ignoreUnknownValues = loadConfiguration.ignoreUnknownValues;
-      this.projectionFields = loadConfiguration.projectionFields;
       this.sourceUris = loadConfiguration.sourceUris;
     }
 
@@ -172,15 +170,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-
-    @Override
-    public Builder setProjectionFields(List<String> projectionFields) {
-      this.projectionFields =
-          projectionFields != null ? ImmutableList.copyOf(projectionFields) : null;
-      return this;
-    }
-
-
     /**
      * Sets the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
      * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
@@ -207,7 +196,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.maxBadRecords = builder.maxBadRecords;
     this.schema = builder.schema;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
-    this.projectionFields = builder.projectionFields;
   }
 
 
@@ -234,6 +222,12 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
   }
 
+  @Override
+  public DatastoreBackupOptions getDatastoreBackupOptions() {
+    return formatOptions instanceof DatastoreBackupOptions ?
+        (DatastoreBackupOptions) formatOptions : null;
+  }
+
 
   @Override
   public String getFormat() {
@@ -256,13 +250,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   public Boolean ignoreUnknownValues() {
     return ignoreUnknownValues;
   }
-
-
-  @Override
-  public List<String> getProjectionFields() {
-    return projectionFields;
-  }
-
 
   /**
    * Returns the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
@@ -288,7 +275,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("maxBadRecords", maxBadRecords)
         .add("schema", schema)
         .add("ignoreUnknownValue", ignoreUnknownValues)
-        .add("projectionFields", projectionFields)
         .add("sourceUris", sourceUris);
   }
 
@@ -339,7 +325,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     loadConfigurationPb.setMaxBadRecords(maxBadRecords);
     loadConfigurationPb.setIgnoreUnknownValues(ignoreUnknownValues);
-    loadConfigurationPb.setProjectionFields(projectionFields);
+    if (getDatastoreBackupOptions() != null) {
+      DatastoreBackupOptions backOptions = getDatastoreBackupOptions();
+      loadConfigurationPb.setProjectionFields(backOptions.getProjectionFields());
+    }
     if (sourceUris != null) {
       loadConfigurationPb.setSourceUris(ImmutableList.copyOf(sourceUris));
     }

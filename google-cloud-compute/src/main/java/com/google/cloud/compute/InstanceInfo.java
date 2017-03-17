@@ -130,21 +130,9 @@ public class InstanceInfo implements Serializable {
     /**
      * Sets the identity of the virtual machine instance.
      */
-    @Deprecated
-    public abstract Builder instanceId(InstanceId instanceId);
-
-    /**
-     * Sets the identity of the virtual machine instance.
-     */
     public abstract Builder setInstanceId(InstanceId instanceId);
 
     abstract Builder setCreationTimestamp(Long creationTimestamp);
-
-    /**
-     * Sets an optional description of this Google Compute Engine instance.
-     */
-    @Deprecated
-    public abstract Builder description(String description);
 
     /**
      * Sets an optional description of this Google Compute Engine instance.
@@ -159,35 +147,12 @@ public class InstanceInfo implements Serializable {
      * Sets the tags to apply to this instance. Tags are used to identify valid sources or targets
      * for network firewalls.
      */
-    @Deprecated
-    public abstract Builder tags(Tags tags);
-
-    /**
-     * Sets the tags to apply to this instance. Tags are used to identify valid sources or targets
-     * for network firewalls.
-     */
     public abstract Builder setTags(Tags tags);
 
     /**
      * Sets the machine type identity.
      */
-    @Deprecated
-    public abstract Builder machineType(MachineTypeId machineType);
-
-    /**
-     * Sets the machine type identity.
-     */
     public abstract Builder setMachineType(MachineTypeId machineType);
-
-    /**
-     * Sets whether to allow this instance to send and receive packets with non-matching destination
-     * or source IPs. This is required if you plan to use this instance to forward routes.
-     *
-     * @see <a href="https://cloud.google.com/compute/docs/networking#canipforward">Enabling IP
-     *     Forwarding</a>
-     */
-    @Deprecated
-    public abstract Builder canIpForward(Boolean canIpForward);
 
     /**
      * Sets whether to allow this instance to send and receive packets with non-matching destination
@@ -203,23 +168,7 @@ public class InstanceInfo implements Serializable {
      * with other network services, such as connecting to the internet. At the moment, instances
      * only support one network interface.
      */
-    @Deprecated
-    public abstract Builder networkInterfaces(List<NetworkInterface> networkInterfaces);
-
-    /**
-     * Sets a list of network interfaces. This specifies how this instance is configured to interact
-     * with other network services, such as connecting to the internet. At the moment, instances
-     * only support one network interface.
-     */
     public abstract Builder setNetworkInterfaces(List<NetworkInterface> networkInterfaces);
-
-    /**
-     * Sets a list of network interfaces. This specifies how this instance is configured to interact
-     * with other network services, such as connecting to the internet. At the moment, instances
-     * only support one network interface.
-     */
-    @Deprecated
-    public abstract Builder networkInterfaces(NetworkInterface... networkInterfaces);
 
     /**
      * Sets a list of network interfaces. This specifies how this instance is configured to interact
@@ -233,32 +182,12 @@ public class InstanceInfo implements Serializable {
      * attached disk such that {@link AttachedDisk.AttachedDiskConfiguration#boot()} returns
      * {@code true}).
      */
-    @Deprecated
-    public abstract Builder attachedDisks(List<AttachedDisk> attachedDisks);
-
-    /**
-     * Sets a list of disks to attach to the instance. One boot disk must be provided (i.e. an
-     * attached disk such that {@link AttachedDisk.AttachedDiskConfiguration#boot()} returns
-     * {@code true}).
-     */
     public abstract Builder setAttachedDisks(List<AttachedDisk> attachedDisks);
 
     /**
      * Sets a list of disks to attach to the instance. One boot disk must be provided.
      */
-    @Deprecated
-    public abstract Builder attachedDisks(AttachedDisk... attachedDisks);
-
-    /**
-     * Sets a list of disks to attach to the instance. One boot disk must be provided.
-     */
     public abstract Builder setAttachedDisks(AttachedDisk... attachedDisks);
-
-    /**
-     * Sets the instance metadata.
-     */
-    @Deprecated
-    public abstract Builder metadata(Metadata metadata);
 
     /**
      * Sets the instance metadata.
@@ -273,24 +202,7 @@ public class InstanceInfo implements Serializable {
      * @see <a href="https://cloud.google.com/compute/docs/authentication">Authenticating from
      *     Google Compute Engine</a>
      */
-    @Deprecated
-    public abstract Builder serviceAccounts(List<ServiceAccount> serviceAccounts);
-
-    /**
-     * Sets a list of service accounts, with their specified scopes, authorized for this instance.
-     * Service accounts generate access tokens that can be accessed through the metadata server and
-     * used to authenticate applications on the instance.
-     *
-     * @see <a href="https://cloud.google.com/compute/docs/authentication">Authenticating from
-     *     Google Compute Engine</a>
-     */
     public abstract Builder setServiceAccounts(List<ServiceAccount> serviceAccounts);
-
-    /**
-     * Sets the scheduling options for the instance.
-     */
-    @Deprecated
-    public abstract Builder schedulingOptions(SchedulingOptions schedulingOptions);
 
     /**
      * Sets the scheduling options for the instance.
@@ -392,12 +304,6 @@ public class InstanceInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public Builder instanceId(InstanceId instanceId) {
-      return setInstanceId(instanceId);
-    }
-
-    @Override
     public Builder setInstanceId(InstanceId instanceId) {
       this.instanceId = checkNotNull(instanceId);
       return this;
@@ -407,12 +313,6 @@ public class InstanceInfo implements Serializable {
     Builder setCreationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
     }
 
     @Override
@@ -434,21 +334,9 @@ public class InstanceInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public Builder tags(Tags tags) {
-      return setTags(tags);
-    }
-
-    @Override
     public Builder setTags(Tags tags) {
       this.tags = tags;
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder machineType(MachineTypeId machineType) {
-      return setMachineType(machineType);
     }
 
     @Override
@@ -458,21 +346,9 @@ public class InstanceInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public Builder canIpForward(Boolean canIpForward) {
-      return setCanIpForward(canIpForward);
-    }
-
-    @Override
     public Builder setCanIpForward(Boolean canIpForward) {
       this.canIpForward = canIpForward;
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder networkInterfaces(List<NetworkInterface> networkInterfaces) {
-      return setNetworkInterfaces(networkInterfaces);
     }
 
     @Override
@@ -482,21 +358,9 @@ public class InstanceInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public Builder networkInterfaces(NetworkInterface... networkInterfaces) {
-      return setNetworkInterfaces(networkInterfaces);
-    }
-
-    @Override
     public Builder setNetworkInterfaces(NetworkInterface... networkInterfaces) {
       this.networkInterfaces = Arrays.asList(networkInterfaces);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder attachedDisks(List<AttachedDisk> attachedDisks) {
-      return setAttachedDisks(attachedDisks);
     }
 
     @Override
@@ -506,21 +370,9 @@ public class InstanceInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public Builder attachedDisks(AttachedDisk... attachedDisks) {
-      return setAttachedDisks(attachedDisks);
-    }
-
-    @Override
     public Builder setAttachedDisks(AttachedDisk... attachedDisks) {
       this.attachedDisks = Arrays.asList(attachedDisks);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder metadata(Metadata metadata) {
-      return setMetadata(metadata);
     }
 
     @Override
@@ -530,21 +382,9 @@ public class InstanceInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public Builder serviceAccounts(List<ServiceAccount> serviceAccounts) {
-      return setServiceAccounts(serviceAccounts);
-    }
-
-    @Override
     public Builder setServiceAccounts(List<ServiceAccount> serviceAccounts) {
       this.serviceAccounts = ImmutableList.copyOf(checkNotNull(serviceAccounts));
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder schedulingOptions(SchedulingOptions schedulingOptions) {
-      return setSchedulingOptions(schedulingOptions);
     }
 
     @Override
@@ -588,24 +428,8 @@ public class InstanceInfo implements Serializable {
   /**
    * Returns the service-generated unique identifier for the instance.
    */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
-  }
-
-  /**
-   * Returns the service-generated unique identifier for the instance.
-   */
   public String getGeneratedId() {
     return generatedId;
-  }
-
-  /**
-   * Returns the instance identity.
-   */
-  @Deprecated
-  public InstanceId instanceId() {
-    return getInstanceId();
   }
 
   /**
@@ -618,24 +442,8 @@ public class InstanceInfo implements Serializable {
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
-  @Deprecated
-  public Long creationTimestamp() {
-    return getCreationTimestamp();
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
   public Long getCreationTimestamp() {
     return creationTimestamp;
-  }
-
-  /**
-   * Returns a textual description of the instance.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
   }
 
   /**
@@ -648,24 +456,8 @@ public class InstanceInfo implements Serializable {
   /**
    * Returns the status of the instance.
    */
-  @Deprecated
-  public Status status() {
-    return getStatus();
-  }
-
-  /**
-   * Returns the status of the instance.
-   */
   public Status getStatus() {
     return status;
-  }
-
-  /**
-   * Returns an optional, human-readable explanation of the status.
-   */
-  @Deprecated
-  public String statusMessage() {
-    return getStatusMessage();
   }
 
   /**
@@ -679,25 +471,8 @@ public class InstanceInfo implements Serializable {
    * Returns the tags of this instance. Tags are used to identify valid sources or targets for
    * network firewalls.
    */
-  @Deprecated
-  public Tags tags() {
-    return getTags();
-  }
-
-  /**
-   * Returns the tags of this instance. Tags are used to identify valid sources or targets for
-   * network firewalls.
-   */
   public Tags getTags() {
     return tags;
-  }
-
-  /**
-   * Returns the machine type identity.
-   */
-  @Deprecated
-  public MachineTypeId machineType() {
-    return getMachineType();
   }
 
   /**
@@ -722,15 +497,6 @@ public class InstanceInfo implements Serializable {
    * Returns a list of network interfaces. This specifies how this instance is configured to
    * interact with other network services, such as connecting to the internet.
    */
-  @Deprecated
-  public List<NetworkInterface> networkInterfaces() {
-    return getNetworkInterfaces();
-  }
-
-  /**
-   * Returns a list of network interfaces. This specifies how this instance is configured to
-   * interact with other network services, such as connecting to the internet.
-   */
   public List<NetworkInterface> getNetworkInterfaces() {
     return networkInterfaces;
   }
@@ -738,24 +504,8 @@ public class InstanceInfo implements Serializable {
   /**
    * Returns a list of disks attached to the instance.
    */
-  @Deprecated
-  public List<AttachedDisk> attachedDisks() {
-    return getAttachedDisks();
-  }
-
-  /**
-   * Returns a list of disks attached to the instance.
-   */
   public List<AttachedDisk> getAttachedDisks() {
     return attachedDisks;
-  }
-
-  /**
-   * Returns the instance metadata.
-   */
-  @Deprecated
-  public Metadata metadata() {
-    return getMetadata();
   }
 
   /**
@@ -773,19 +523,6 @@ public class InstanceInfo implements Serializable {
    * @see <a href="https://cloud.google.com/compute/docs/authentication">Authenticating from
    *     Google Compute Engine</a>
    */
-  @Deprecated
-  public List<ServiceAccount> serviceAccounts() {
-    return getServiceAccounts();
-  }
-
-  /**
-   * Returns a list of service accounts, with their specified scopes, authorized for this instance.
-   * Service accounts generate access tokens that can be accessed through the metadata server and
-   * used to authenticate applications on the instance.
-   *
-   * @see <a href="https://cloud.google.com/compute/docs/authentication">Authenticating from
-   *     Google Compute Engine</a>
-   */
   public List<ServiceAccount> getServiceAccounts() {
     return serviceAccounts;
   }
@@ -793,24 +530,8 @@ public class InstanceInfo implements Serializable {
   /**
    * Returns the scheduling options for the instance.
    */
-  @Deprecated
-  public SchedulingOptions schedulingOptions() {
-    return getSchedulingOptions();
-  }
-
-  /**
-   * Returns the scheduling options for the instance.
-   */
   public SchedulingOptions getSchedulingOptions() {
     return schedulingOptions;
-  }
-
-  /**
-   * Returns the CPU platform used by this instance.
-   */
-  @Deprecated
-  public String cpuPlatform() {
-    return getCpuPlatform();
   }
 
   /**
@@ -926,15 +647,6 @@ public class InstanceInfo implements Serializable {
     }
     instancePb.setCpuPlatform(cpuPlatform);
     return instancePb;
-  }
-
-  /**
-   * Returns a builder for an {@code InstanceInfo} object given the instance identity and the
-   * machine type.
-   */
-  @Deprecated
-  public static Builder builder(InstanceId instanceId, MachineTypeId machineType) {
-    return newBuilder(instanceId, machineType);
   }
 
   /**

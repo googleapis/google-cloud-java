@@ -34,7 +34,7 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
-import com.google.cloud.logging.spi.LoggingRpc;
+import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
@@ -92,7 +92,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   LoggingImpl(LoggingOptions options) {
     super(options);
-    rpc = options.getRpc();
+    rpc = options.getLoggingRpcV2();
   }
 
   private static <V> V get(ApiFuture<V> future) {
@@ -260,7 +260,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private static ApiFuture<AsyncPage<Sink>> listSinksAsync(final LoggingOptions serviceOptions,
       final Map<Option.OptionType, ?> options) {
     final ListSinksRequest request = listSinksRequest(serviceOptions, options);
-    ApiFuture<ListSinksResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListSinksResponse> list = serviceOptions.getLoggingRpcV2().list(request);
     return transform(list, new Function<ListSinksResponse, AsyncPage<Sink>>() {
       @Override
       public AsyncPage<Sink> apply(ListSinksResponse listSinksResponse) {
@@ -329,7 +329,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           final Map<Option.OptionType, ?> options) {
     final ListMonitoredResourceDescriptorsRequest request =
         listMonitoredResourceDescriptorsRequest(options);
-    ApiFuture<ListMonitoredResourceDescriptorsResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> list = serviceOptions.getLoggingRpcV2()
+        .list(request);
     return transform(list, new Function<ListMonitoredResourceDescriptorsResponse,
         AsyncPage<MonitoredResourceDescriptor>>() {
           @Override
@@ -417,7 +418,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private static ApiFuture<AsyncPage<Metric>> listMetricsAsync(final LoggingOptions serviceOptions,
       final Map<Option.OptionType, ?> options) {
     final ListLogMetricsRequest request = listMetricsRequest(serviceOptions, options);
-    ApiFuture<ListLogMetricsResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListLogMetricsResponse> list = serviceOptions.getLoggingRpcV2().list(request);
     return transform(list, new Function<ListLogMetricsResponse, AsyncPage<Metric>>() {
       @Override
       public AsyncPage<Metric> apply(ListLogMetricsResponse listMetricsResponse) {
@@ -511,7 +512,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private static ApiFuture<AsyncPage<LogEntry>> listLogEntriesAsync(
       final LoggingOptions serviceOptions, final Map<Option.OptionType, ?> options) {
     final ListLogEntriesRequest request = listLogEntriesRequest(serviceOptions, options);
-    ApiFuture<ListLogEntriesResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListLogEntriesResponse> list = serviceOptions.getLoggingRpcV2().list(request);
     return transform(list, new Function<ListLogEntriesResponse, AsyncPage<LogEntry>>() {
       @Override
       public AsyncPage<LogEntry> apply(ListLogEntriesResponse listLogEntrysResponse) {

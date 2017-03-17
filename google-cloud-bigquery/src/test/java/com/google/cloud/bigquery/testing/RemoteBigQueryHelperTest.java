@@ -19,18 +19,17 @@ package com.google.cloud.bigquery.testing;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQueryOptions;
-
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.concurrent.ExecutionException;
 import org.easymock.EasyMock;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.concurrent.ExecutionException;
 
 public class RemoteBigQueryHelperTest {
 
@@ -82,8 +81,10 @@ public class RemoteBigQueryHelperTest {
     RemoteBigQueryHelper helper = RemoteBigQueryHelper.create(PROJECT_ID, JSON_KEY_STREAM);
     BigQueryOptions options = helper.getOptions();
     assertEquals(PROJECT_ID, options.getProjectId());
-    assertEquals(60000, options.getConnectTimeout());
-    assertEquals(60000, options.getReadTimeout());
+    assertEquals(60000,
+        ((HttpTransportOptions) options.getTransportOptions()).getConnectTimeout());
+    assertEquals(60000,
+        ((HttpTransportOptions) options.getTransportOptions()).getReadTimeout());
     assertEquals(10, options.getRetryParams().getRetryMaxAttempts());
     assertEquals(6, options.getRetryParams().getRetryMinAttempts());
     assertEquals(30000, options.getRetryParams().getMaxRetryDelayMillis());

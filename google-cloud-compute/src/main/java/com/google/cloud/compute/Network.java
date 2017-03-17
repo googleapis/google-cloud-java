@@ -75,33 +75,15 @@ public class Network extends NetworkInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder networkId(NetworkId networkId) {
-      return setNetworkId(networkId);
-    }
-
-    @Override
     public Builder setNetworkId(NetworkId networkId) {
       infoBuilder.setNetworkId(networkId);
       return this;
     }
 
     @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
-
-    @Override
     public Builder setDescription(String description) {
       infoBuilder.setDescription(description);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder configuration(NetworkConfiguration configuration) {
-      return setConfiguration(configuration);
     }
 
     @Override
@@ -158,8 +140,8 @@ public class Network extends NetworkInfo {
   /**
    * Creates a subnetwork for this network given its identity and the range of IPv4 addresses in
    * CIDR format. Subnetwork creation is only supported for networks in "custom subnet mode" (i.e.
-   * {@link #configuration()} returns a {@link SubnetNetworkConfiguration}) with automatic creation
-   * of subnetworks disabled (i.e. {@link SubnetNetworkConfiguration#autoCreateSubnetworks()}
+   * {@link #getConfiguration()} returns a {@link SubnetNetworkConfiguration}) with automatic
+   * creation of subnetworks disabled (i.e. {@link SubnetNetworkConfiguration#autoCreateSubnetworks()}
    * returns {@code false}).
    *
    * @return an operation object if creation request was successfully sent
@@ -169,14 +151,6 @@ public class Network extends NetworkInfo {
   public Operation createSubnetwork(SubnetworkId subnetworkId, String ipRange,
       OperationOption... options) {
     return compute.create(SubnetworkInfo.of(subnetworkId, getNetworkId(), ipRange), options);
-  }
-
-  /**
-   * Returns the network's {@code Compute} object used to issue requests.
-   */
-  @Deprecated
-  public Compute compute() {
-    return getCompute();
   }
 
   /**

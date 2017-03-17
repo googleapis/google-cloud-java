@@ -32,7 +32,7 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.RestorableState;
 import com.google.cloud.WriteChannel;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.common.collect.ImmutableMap;
 

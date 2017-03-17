@@ -19,48 +19,48 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>====================== LoggingServiceV2Client ======================
+ * <p>============= LoggingClient =============
  *
  * <p>Service Description: Service for ingesting and querying logs.
  *
- * <p>Sample for LoggingServiceV2Client:
+ * <p>Sample for LoggingClient:
  *
  * <pre>
  * <code>
- * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+ * try (LoggingClient loggingClient = LoggingClient.create()) {
  *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
- *   loggingServiceV2Client.deleteLog(logName);
+ *   loggingClient.deleteLog(logName);
  * }
  * </code>
  * </pre>
  *
- * ===================== ConfigServiceV2Client =====================
+ * ============ ConfigClient ============
  *
  * <p>Service Description: Service for configuring sinks used to export log entries outside of
  * Stackdriver Logging.
  *
- * <p>Sample for ConfigServiceV2Client:
+ * <p>Sample for ConfigClient:
  *
  * <pre>
  * <code>
- * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+ * try (ConfigClient configClient = ConfigClient.create()) {
  *   SinkNameOneof sinkName = SinkNameOneof.from(SinkName.create("[PROJECT]", "[SINK]"));
- *   LogSink response = configServiceV2Client.getSink(sinkName);
+ *   LogSink response = configClient.getSink(sinkName);
  * }
  * </code>
  * </pre>
  *
- * ====================== MetricsServiceV2Client ======================
+ * ============= MetricsClient =============
  *
  * <p>Service Description: Service for configuring logs-based metrics.
  *
- * <p>Sample for MetricsServiceV2Client:
+ * <p>Sample for MetricsClient:
  *
  * <pre>
  * <code>
- * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+ * try (MetricsClient metricsClient = MetricsClient.create()) {
  *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
- *   LogMetric response = metricsServiceV2Client.getLogMetric(metricName);
+ *   LogMetric response = metricsClient.getLogMetric(metricName);
  * }
  * </code>
  * </pre>

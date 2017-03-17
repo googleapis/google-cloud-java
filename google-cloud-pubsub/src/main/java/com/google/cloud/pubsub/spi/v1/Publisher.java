@@ -18,12 +18,11 @@ package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.bundling.BundlingSettings;
 import com.google.api.gax.core.ApiFuture;
-import com.google.api.gax.core.ApiFutureCallback;
 import com.google.api.gax.core.ApiFutures;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController;
-import com.google.api.gax.core.Function;
 import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.core.SettableApiFuture;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
@@ -31,11 +30,8 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.common.util.concurrent.ForwardingListenableFuture.SimpleForwardingListenableFuture;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
@@ -209,7 +205,7 @@ public class Publisher {
       return ApiFutures.immediateFailedFuture(e);
     }
     OutstandingBundle bundleToSend = null;
-    SettableFuture<String> publishResult = SettableFuture.create();
+    SettableApiFuture<String> publishResult = SettableApiFuture.<String>create();
     final OutstandingPublish outstandingPublish = new OutstandingPublish(publishResult, message);
     messagesBundleLock.lock();
     try {
@@ -240,7 +236,7 @@ public class Publisher {
       if (!messagesBundle.isEmpty()) {
         setupDurationBasedPublishAlarm();
       } else if (currentAlarmFuture != null) {
-        logger.log(Level.INFO, "Cancelling alarm");
+        logger.log(Level.FINER, "Cancelling alarm, no more messages");
         if (activeAlarm.getAndSet(false)) {
           currentAlarmFuture.cancel(false);
         }
@@ -252,7 +248,7 @@ public class Publisher {
     messagesWaiter.incrementPendingMessages(1);
 
     if (bundleToSend != null) {
-      logger.log(Level.INFO, "Scheduling a bundle for immediate sending.");
+      logger.log(Level.FINER, "Scheduling a bundle for immediate sending.");
       final OutstandingBundle finalBundleToSend = bundleToSend;
       executor.execute(
           new Runnable() {
@@ -267,7 +263,7 @@ public class Publisher {
     // be sent in its own bundle immediately.
     if (hasBundlingBytes() && messageSize >= getMaxBundleBytes()) {
       logger.log(
-          Level.INFO, "Message exceeds the max bundle bytes, scheduling it for immediate send.");
+          Level.FINER, "Message exceeds the max bundle bytes, scheduling it for immediate send.");
       executor.execute(
           new Runnable() {
             @Override
@@ -278,56 +274,19 @@ public class Publisher {
           });
     }
 
-    return new ListenableFutureDelegate<String>(publishResult);
-  }
-
-  private static class ListenableFutureDelegate<V> extends SimpleForwardingListenableFuture<V>
-      implements ApiFuture<V> {
-    ListenableFutureDelegate(ListenableFuture<V> delegate) {
-      super(delegate);
-    }
-
-    public void addCallback(final ApiFutureCallback<? super V> callback) {
-      Futures.addCallback(
-          this,
-          new FutureCallback<V>() {
-            @Override
-            public void onFailure(Throwable t) {
-              callback.onFailure(t);
-            }
-
-            @Override
-            public void onSuccess(V v) {
-              callback.onSuccess(v);
-            }
-          });
-    }
-
-    public <X extends Throwable> ApiFuture catching(
-        Class<X> exceptionType, final Function<? super X, ? extends V> callback) {
-      return new ListenableFutureDelegate<V>(
-          Futures.catching(
-              this,
-              exceptionType,
-              new com.google.common.base.Function<X, V>() {
-                @Override
-                public V apply(X input) {
-                  return callback.apply(input);
-                }
-              }));
-    }
+    return publishResult;
   }
 
   private void setupDurationBasedPublishAlarm() {
     if (!activeAlarm.getAndSet(true)) {
       long delayThresholdMs = getBundlingSettings().getDelayThreshold().getMillis();
-      logger.log(Level.INFO, "Setting up alarm for the next {0} ms.", delayThresholdMs);
+      logger.log(Level.FINER, "Setting up alarm for the next {0} ms.", delayThresholdMs);
       currentAlarmFuture =
           executor.schedule(
               new Runnable() {
                 @Override
                 public void run() {
-                  logger.log(Level.INFO, "Sending messages based on schedule.");
+                  logger.log(Level.FINER, "Sending messages based on schedule.");
                   activeAlarm.getAndSet(false);
                   publishAllOutstanding();
                 }
@@ -454,10 +413,10 @@ public class Publisher {
   }
 
   private static final class OutstandingPublish {
-    SettableFuture<String> publishResult;
+    SettableApiFuture<String> publishResult;
     PubsubMessage message;
 
-    OutstandingPublish(SettableFuture<String> publishResult, PubsubMessage message) {
+    OutstandingPublish(SettableApiFuture<String> publishResult, PubsubMessage message) {
       this.publishResult = publishResult;
       this.message = message;
     }

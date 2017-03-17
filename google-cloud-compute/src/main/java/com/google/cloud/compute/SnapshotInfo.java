@@ -105,8 +105,8 @@ public class SnapshotInfo implements Serializable {
   }
 
   /**
-   * An indicator of whether {@link SnapshotInfo#storageBytes()} is in a stable state or it is being
-   * adjusted as a result of shared storage reallocation.
+   * An indicator of whether {@link SnapshotInfo#getStorageBytes()} is in a stable state or it is
+   * being adjusted as a result of shared storage reallocation.
    */
   public enum StorageBytesStatus {
     /**
@@ -132,19 +132,7 @@ public class SnapshotInfo implements Serializable {
     /**
      * Sets the snapshot identity.
      */
-    @Deprecated
-    public abstract Builder snapshotId(SnapshotId snapshotId);
-
-    /**
-     * Sets the snapshot identity.
-     */
     public abstract Builder setSnapshotId(SnapshotId snapshotId);
-
-    /**
-     * Sets an optional textual description of the snapshot.
-     */
-    @Deprecated
-    public abstract Builder description(String description);
 
     /**
      * Sets an optional textual description of the snapshot.
@@ -156,12 +144,6 @@ public class SnapshotInfo implements Serializable {
     abstract Builder setDiskSizeGb(Long diskSizeGb);
 
     abstract Builder setLicenses(List<LicenseId> licenses);
-
-    /**
-     * Sets the identity of the source disk used to create the snapshot.
-     */
-    @Deprecated
-    public abstract Builder sourceDisk(DiskId sourceDisk);
 
     /**
      * Sets the identity of the source disk used to create the snapshot.
@@ -249,21 +231,9 @@ public class SnapshotInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public BuilderImpl snapshotId(SnapshotId snapshotId) {
-      return setSnapshotId(snapshotId);
-    }
-
-    @Override
     public BuilderImpl setSnapshotId(SnapshotId snapshotId) {
       this.snapshotId = checkNotNull(snapshotId);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public BuilderImpl description(String description) {
-      return setDescription(description);
     }
 
     @Override
@@ -288,12 +258,6 @@ public class SnapshotInfo implements Serializable {
     BuilderImpl setLicenses(List<LicenseId> licenses) {
       this.licenses = licenses != null ? ImmutableList.copyOf(licenses) : null;
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public BuilderImpl sourceDisk(DiskId sourceDisk) {
-      return setSourceDisk(sourceDisk);
     }
 
     @Override
@@ -343,24 +307,8 @@ public class SnapshotInfo implements Serializable {
   /**
    * Returns the service-generated unique identifier for the snapshot.
    */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
-  }
-
-  /**
-   * Returns the service-generated unique identifier for the snapshot.
-   */
   public String getGeneratedId() {
     return generatedId;
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
-  @Deprecated
-  public Long creationTimestamp() {
-    return getCreationTimestamp();
   }
 
   /**
@@ -373,14 +321,6 @@ public class SnapshotInfo implements Serializable {
   /**
    * Returns the snapshot identity.
    */
-  @Deprecated
-  public SnapshotId snapshotId() {
-    return getSnapshotId();
-  }
-
-  /**
-   * Returns the snapshot identity.
-   */
   public SnapshotId getSnapshotId() {
     return snapshotId;
   }
@@ -388,24 +328,8 @@ public class SnapshotInfo implements Serializable {
   /**
    * Returns a textual description of the snapshot.
    */
-  @Deprecated
-  public String description() {
-    return getDescription();
-  }
-
-  /**
-   * Returns a textual description of the snapshot.
-   */
   public String getDescription() {
     return description;
-  }
-
-  /**
-   * Returns all applicable publicly visible licenses.
-   */
-  @Deprecated
-  public List<LicenseId> licenses() {
-    return getLicenses();
   }
 
   /**
@@ -420,26 +344,8 @@ public class SnapshotInfo implements Serializable {
    * disks, only after the snapshot has been successfully created and the status is set to
    * {@code READY}.
    */
-  @Deprecated
-  public Status status() {
-    return getStatus();
-  }
-
-  /**
-   * Returns the status of the snapshot. A snapshot can be used to create other resources, such as
-   * disks, only after the snapshot has been successfully created and the status is set to
-   * {@code READY}.
-   */
   public Status getStatus() {
     return status;
-  }
-
-  /**
-   * Returns the size of the snapshot (in GB).
-   */
-  @Deprecated
-  public Long diskSizeGb() {
-    return getDiskSizeGb();
   }
 
   /**
@@ -452,26 +358,8 @@ public class SnapshotInfo implements Serializable {
   /**
    * Returns the identity of the source disk used to create this snapshot.
    */
-  @Deprecated
-  public DiskId sourceDisk() {
-    return getSourceDisk();
-  }
-
-  /**
-   * Returns the identity of the source disk used to create this snapshot.
-   */
   public DiskId getSourceDisk() {
     return sourceDisk;
-  }
-
-  /**
-   * Returns the service-generated unique id of the disk used to create this snapshot. This value
-   * may be used to determine whether the snapshot was taken from the current or a previous instance
-   * of a given disk name.
-   */
-  @Deprecated
-  public String sourceDiskId() {
-    return getSourceDiskId();
   }
 
   /**
@@ -487,32 +375,12 @@ public class SnapshotInfo implements Serializable {
    * Returns the size of the the storage used by the snapshot. As snapshots share storage, this
    * number is expected to change with snapshot creation/deletion.
    */
-  @Deprecated
-  public Long storageBytes() {
-    return getStorageBytes();
-  }
-
-  /**
-   * Returns the size of the the storage used by the snapshot. As snapshots share storage, this
-   * number is expected to change with snapshot creation/deletion.
-   */
   public Long getStorageBytes() {
     return storageBytes;
   }
 
   /**
-   * Indicates whether {@link SnapshotInfo#storageBytes()} is in a stable state or it is being
-   * adjusted as a result of shared storage reallocation. {@link StorageBytesStatus#UPDATING}
-   * indicates that the size of the snapshot is being updated. {@link StorageBytesStatus#UP_TO_DATE}
-   * indicates that the size of the snapshot is up-to-date.
-   */
-  @Deprecated
-  public StorageBytesStatus storageBytesStatus() {
-    return getStorageBytesStatus();
-  }
-
-  /**
-   * Indicates whether {@link SnapshotInfo#storageBytes()} is in a stable state or it is being
+   * Indicates whether {@link SnapshotInfo#getStorageBytes()} is in a stable state or it is being
    * adjusted as a result of shared storage reallocation. {@link StorageBytesStatus#UPDATING}
    * indicates that the size of the snapshot is being updated. {@link StorageBytesStatus#UP_TO_DATE}
    * indicates that the size of the snapshot is up-to-date.
@@ -593,15 +461,6 @@ public class SnapshotInfo implements Serializable {
       snapshotPb.setStorageBytesStatus(storageBytesStatus.name());
     }
     return snapshotPb;
-  }
-
-  /**
-   * Returns a builder for a {@code SnapshotInfo} object given the snapshot identity and a source
-   * disk identity.
-   */
-  @Deprecated
-  public static Builder builder(SnapshotId snapshotId, DiskId source) {
-    return newBuilder(snapshotId, source);
   }
 
   /**

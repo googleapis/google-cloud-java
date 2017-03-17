@@ -125,24 +125,8 @@ public class DiskType implements Serializable {
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
-  @Deprecated
-  public Long creationTimestamp() {
-    return getCreationTimestamp();
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
   public Long getCreationTimestamp() {
     return creationTimestamp;
-  }
-
-  /**
-   * Returns the disk type's identity.
-   */
-  @Deprecated
-  public DiskTypeId diskTypeId() {
-    return getDiskTypeId();
   }
 
   /**
@@ -155,24 +139,8 @@ public class DiskType implements Serializable {
   /**
    * Returns the service-generated unique identifier for the disk type.
    */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
-  }
-
-  /**
-   * Returns the service-generated unique identifier for the disk type.
-   */
   public String getGeneratedId() {
     return generatedId;
-  }
-
-  /**
-   * Returns a textual description of the disk type.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
   }
 
   /**
@@ -185,24 +153,8 @@ public class DiskType implements Serializable {
   /**
    * Returns an optional textual description of the valid disk size, such as "10GB-10TB".
    */
-  @Deprecated
-  public String validDiskSize() {
-    return getValidDiskSize();
-  }
-
-  /**
-   * Returns an optional textual description of the valid disk size, such as "10GB-10TB".
-   */
   public String getValidDiskSize() {
     return validDiskSize;
-  }
-
-  /**
-   * Returns the service-defined default disk size in GB.
-   */
-  @Deprecated
-  public Long defaultDiskSizeGb() {
-    return getDefaultDiskSizeGb();
   }
 
   /**
@@ -213,17 +165,7 @@ public class DiskType implements Serializable {
   }
 
   /**
-   * Returns the deprecation status of the disk type. If {@link DeprecationStatus#status()} is
-   * either {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE}
-   * the disk type should not be used. Returns {@code null} if the disk type is not deprecated.
-   */
-  @Deprecated
-  public DeprecationStatus<DiskTypeId> deprecationStatus() {
-    return getDeprecationStatus();
-  }
-
-  /**
-   * Returns the deprecation status of the disk type. If {@link DeprecationStatus#status()} is
+   * Returns the deprecation status of the disk type. If {@link DeprecationStatus#getStatus()} is
    * either {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE}
    * the disk type should not be used. Returns {@code null} if the disk type is not deprecated.
    */

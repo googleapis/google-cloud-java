@@ -133,24 +133,8 @@ public class Zone implements Serializable {
   /**
    * Returns the zone's identity.
    */
-  @Deprecated
-  public ZoneId zoneId() {
-    return getZoneId();
-  }
-
-  /**
-   * Returns the zone's identity.
-   */
   public ZoneId getZoneId() {
     return zoneId;
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
-  @Deprecated
-  public Long creationTimestamp() {
-    return getCreationTimestamp();
   }
 
   /**
@@ -163,24 +147,8 @@ public class Zone implements Serializable {
   /**
    * Returns an optional textual description of the zone.
    */
-  @Deprecated
-  public String description() {
-    return getDescription();
-  }
-
-  /**
-   * Returns an optional textual description of the zone.
-   */
   public String getDescription() {
     return description;
-  }
-
-  /**
-   * Returns the service-generated unique identifier for the zone.
-   */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
   }
 
   /**
@@ -193,14 +161,6 @@ public class Zone implements Serializable {
   /**
    * Returns the status of the zone.
    */
-  @Deprecated
-  public Status status() {
-    return getStatus();
-  }
-
-  /**
-   * Returns the status of the zone.
-   */
   public Status getStatus() {
     return status;
   }
@@ -208,26 +168,8 @@ public class Zone implements Serializable {
   /**
    * Returns the identity of the region that hosts the zone.
    */
-  @Deprecated
-  public RegionId region() {
-    return getRegion();
-  }
-
-  /**
-   * Returns the identity of the region that hosts the zone.
-   */
   public RegionId getRegion() {
     return region;
-  }
-
-  /**
-   * Returns the deprecation status of the zone. If {@link DeprecationStatus#status()} is either
-   * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the zone
-   * should not be used. Returns {@code null} if the zone is not deprecated.
-   */
-  @Deprecated
-  public DeprecationStatus<ZoneId> deprecationStatus() {
-    return getDeprecationStatus();
   }
 
   /**

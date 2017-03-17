@@ -17,6 +17,7 @@
 package com.google.cloud.logging.testing;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.RetryParams;
 import com.google.cloud.logging.LoggingOptions;
 
@@ -32,9 +33,9 @@ import java.util.logging.Logger;
  * {@link LoggingOptions#getRetryParams()}: {@link RetryParams#getMaxRetryDelayMillis()} is
  * {@code 30000}, {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
  * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
- * {@link LoggingOptions#getInitialTimeout()} is set to 60000,
- * {@link LoggingOptions#getMaxTimeout()} is set to {@code 240000} and
- * {@link LoggingOptions#getTimeoutMultiplier()} is set to {@code 1.5}.
+ * {@link GrpcTransportOptions#getInitialTimeout()} is set to 60000,
+ * {@link GrpcTransportOptions#getMaxTimeout()} is set to {@code 240000} and
+ * {@link GrpcTransportOptions#getTimeoutMultiplier()} is set to {@code 1.5}.
  */
 public class RemoteLoggingHelper {
 
@@ -66,13 +67,18 @@ public class RemoteLoggingHelper {
   public static RemoteLoggingHelper create(String projectId, InputStream keyStream)
       throws LoggingHelperException {
     try {
+      GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
+      transportOptions =
+          transportOptions.toBuilder()
+              .setInitialTimeout(60000)
+              .setMaxTimeout(120000)
+              .setTimeoutMultiplier(1.5)
+              .build();
       LoggingOptions storageOptions = LoggingOptions.newBuilder()
           .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
           .setRetryParams(retryParams())
-          .setInitialTimeout(60000)
-          .setMaxTimeout(120000)
-          .setTimeoutMultiplier(1.5)
+          .setTransportOptions(transportOptions)
           .build();
       return new RemoteLoggingHelper(storageOptions);
     } catch (IOException ex) {
@@ -88,11 +94,16 @@ public class RemoteLoggingHelper {
    * credentials.
    */
   public static RemoteLoggingHelper create() throws LoggingHelperException {
+    GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
+    transportOptions =
+        transportOptions.toBuilder()
+            .setInitialTimeout(60000)
+            .setMaxTimeout(120000)
+            .setTimeoutMultiplier(1.5)
+            .build();
     LoggingOptions loggingOptions = LoggingOptions.newBuilder()
         .setRetryParams(retryParams())
-        .setInitialTimeout(60000)
-        .setMaxTimeout(240000)
-        .setTimeoutMultiplier(1.5)
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteLoggingHelper(loggingOptions);
   }

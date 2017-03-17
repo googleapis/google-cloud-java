@@ -24,7 +24,9 @@ import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -38,6 +40,9 @@ import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.FileVisitResult;
+import java.nio.file.attribute.BasicFileAttributes;
 
 /**
  * Unit tests for {@link CloudStorageFileSystem}.
@@ -54,6 +59,9 @@ public class CloudStorageFileSystemTest {
           + "No more; and by a sleep, to say we end\n"
           + "The Heart-ache, and the thousand Natural shocks\n"
           + "That Flesh is heir to? 'Tis a consummation\n";
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void before() {
@@ -185,6 +193,117 @@ public class CloudStorageFileSystemTest {
       assertMatches(fs, javaAndTextFileMatcher, "folder/c.java", true);
       assertMatches(fs, javaAndTextFileMatcher, "d", false);
     }
+  }
+
+  @Test
+  public void testDeleteEmptyFolder() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/dir2/another_angel"));
+      paths.add(fs.getPath("atroot"));
+      for (Path path : paths) {
+        Files.write(path, ALONE.getBytes(UTF_8));
+      }
+      // we can delete non-existent folders, because they are not represented on disk anyways.
+      Files.delete(fs.getPath("ghost/"));
+      Files.delete(fs.getPath("dir/ghost/"));
+      Files.delete(fs.getPath("dir/dir2/ghost/"));
+      // likewise, deleteIfExists works.
+      Files.deleteIfExists(fs.getPath("ghost/"));
+      Files.deleteIfExists(fs.getPath("dir/ghost/"));
+      Files.deleteIfExists(fs.getPath("dir/dir2/ghost/"));
+    }
+  }
+
+  @Test
+  public void testDeleteFullFolder() throws IOException {
+    thrown.expect(CloudStoragePseudoDirectoryException.class);
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      Files.write(fs.getPath("dir/angel"), ALONE.getBytes(UTF_8));
+      // we cannot delete existing folders if they contain something
+      Files.delete(fs.getPath("dir/"));
+    }
+  }
+
+  @Test
+  public void testDelete() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/dir2/another_angel"));
+      paths.add(fs.getPath("atroot"));
+      for (Path path : paths) {
+        Files.write(path, ALONE.getBytes(UTF_8));
+      }
+      Files.delete(fs.getPath("atroot"));
+      Files.delete(fs.getPath("dir/angel"));
+      Files.deleteIfExists(fs.getPath("dir/dir2/another_angel"));
+
+      for (Path path : paths) {
+        assertThat(Files.exists(path)).isFalse();
+      }
+    }
+  }
+
+  @Test
+  public void testDeleteEmptiedFolder() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/dir2/another_angel"));
+      for (Path path : paths) {
+        Files.write(path, ALONE.getBytes(UTF_8));
+      }
+      Files.delete(fs.getPath("dir/angel"));
+      Files.deleteIfExists(fs.getPath("dir/dir2/another_angel"));
+      // delete folder (trailing slash is required)
+      Path dir2 = fs.getPath("dir/dir2/");
+      Files.deleteIfExists(dir2);
+      Path dir = fs.getPath("dir/");
+      Files.deleteIfExists(dir);
+      // We can't check Files.exists on a folder (since GCS fakes folders)
+    }
+  }
+
+  @Test
+  public void testDeleteRecursive() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("atroot"));
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/dir2/another_angel"));
+      paths.add(fs.getPath("dir/dir2/angel3"));
+      paths.add(fs.getPath("dir/dir3/cloud"));
+      for (Path path : paths) {
+        Files.write(path, ALONE.getBytes(UTF_8));
+      }
+
+      deleteRecursive(fs.getPath("dir/"));
+      assertThat(Files.exists(fs.getPath("dir/angel"))).isFalse();
+      assertThat(Files.exists(fs.getPath("dir/dir3/cloud"))).isFalse();
+      assertThat(Files.exists(fs.getPath("atroot"))).isTrue();
+    }
+  }
+
+  /**
+   * Delete the given directory and all of its contents if non-empty.
+   * @param directory the directory to delete
+   * @throws IOException
+   */
+  private static void deleteRecursive(Path directory) throws IOException {
+    Files.walkFileTree(directory, new SimpleFileVisitor<Path>() {
+      @Override
+      public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+        Files.delete(file);
+        return FileVisitResult.CONTINUE;
+      }
+      @Override
+      public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+        Files.delete(dir);
+        return FileVisitResult.CONTINUE;
+      }
+    });
   }
 
   private void assertMatches(FileSystem fs, PathMatcher matcher, String toMatch, boolean expected) {

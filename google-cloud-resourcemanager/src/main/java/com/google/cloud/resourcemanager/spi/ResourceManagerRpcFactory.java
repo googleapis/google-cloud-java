@@ -24,5 +24,5 @@ import com.google.cloud.spi.ServiceRpcFactory;
  * Implementation will be loaded via {@link java.util.ServiceLoader}.
  */
 public interface ResourceManagerRpcFactory
-    extends ServiceRpcFactory<ResourceManagerRpc, ResourceManagerOptions> {
+    extends ServiceRpcFactory<ResourceManagerOptions> {
 }
