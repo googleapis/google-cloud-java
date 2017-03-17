@@ -95,39 +95,6 @@ public class DiskInfoTest {
           .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
           .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
           .build();
-  private static final DiskInfo DEPRECATED_DISK_INFO =
-      DiskInfo.builder(DISK_ID, DISK_CONFIGURATION)
-          .setGeneratedId(GENERATED_ID)
-          .setCreationTimestamp(CREATION_TIMESTAMP)
-          .setCreationStatus(CREATION_STATUS)
-          .description(DESCRIPTION)
-          .setLicenses(LICENSES)
-          .setAttachedInstances(ATTACHED_INSTANCES)
-          .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
-          .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
-          .build();
-  private static final DiskInfo DEPRECATED_SNAPSHOT_DISK_INFO =
-      DiskInfo.builder(DISK_ID, SNAPSHOT_DISK_CONFIGURATION)
-          .setGeneratedId(GENERATED_ID)
-          .setCreationTimestamp(CREATION_TIMESTAMP)
-          .setCreationStatus(CREATION_STATUS)
-          .description(DESCRIPTION)
-          .setLicenses(LICENSES)
-          .setAttachedInstances(ATTACHED_INSTANCES)
-          .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
-          .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
-          .build();
-  private static final DiskInfo DEPRECATED_IMAGE_DISK_INFO =
-      DiskInfo.builder(DISK_ID, IMAGE_DISK_CONFIGURATION)
-          .setGeneratedId(GENERATED_ID)
-          .setCreationTimestamp(CREATION_TIMESTAMP)
-          .setCreationStatus(CREATION_STATUS)
-          .description(DESCRIPTION)
-          .setLicenses(LICENSES)
-          .setAttachedInstances(ATTACHED_INSTANCES)
-          .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
-          .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -182,40 +149,6 @@ public class DiskInfoTest {
     assertEquals(ATTACHED_INSTANCES, SNAPSHOT_DISK_INFO.getAttachedInstances());
     assertEquals(LAST_ATTACH_TIMESTAMP, SNAPSHOT_DISK_INFO.getLastAttachTimestamp());
     assertEquals(LAST_DETACH_TIMESTAMP, SNAPSHOT_DISK_INFO.getLastDetachTimestamp());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(GENERATED_ID, DEPRECATED_DISK_INFO.generatedId());
-    assertEquals(DISK_ID, DEPRECATED_DISK_INFO.diskId());
-    assertEquals(DISK_CONFIGURATION, DEPRECATED_DISK_INFO.configuration());
-    assertEquals(CREATION_TIMESTAMP, DEPRECATED_DISK_INFO.creationTimestamp());
-    assertEquals(CREATION_STATUS, DEPRECATED_DISK_INFO.creationStatus());
-    assertEquals(DESCRIPTION, DEPRECATED_DISK_INFO.description());
-    assertEquals(LICENSES, DEPRECATED_DISK_INFO.licenses());
-    assertEquals(ATTACHED_INSTANCES, DEPRECATED_DISK_INFO.attachedInstances());
-    assertEquals(LAST_ATTACH_TIMESTAMP, DEPRECATED_DISK_INFO.lastAttachTimestamp());
-    assertEquals(LAST_DETACH_TIMESTAMP, DEPRECATED_DISK_INFO.lastDetachTimestamp());
-    assertEquals(GENERATED_ID, DEPRECATED_IMAGE_DISK_INFO.generatedId());
-    assertEquals(DISK_ID, DEPRECATED_IMAGE_DISK_INFO.diskId());
-    assertEquals(IMAGE_DISK_CONFIGURATION, DEPRECATED_IMAGE_DISK_INFO.configuration());
-    assertEquals(CREATION_TIMESTAMP, DEPRECATED_IMAGE_DISK_INFO.creationTimestamp());
-    assertEquals(CREATION_STATUS, DEPRECATED_IMAGE_DISK_INFO.creationStatus());
-    assertEquals(DESCRIPTION, DEPRECATED_IMAGE_DISK_INFO.description());
-    assertEquals(LICENSES, DEPRECATED_IMAGE_DISK_INFO.licenses());
-    assertEquals(ATTACHED_INSTANCES, DEPRECATED_IMAGE_DISK_INFO.attachedInstances());
-    assertEquals(LAST_ATTACH_TIMESTAMP, DEPRECATED_IMAGE_DISK_INFO.lastAttachTimestamp());
-    assertEquals(LAST_DETACH_TIMESTAMP, DEPRECATED_IMAGE_DISK_INFO.lastDetachTimestamp());
-    assertEquals(GENERATED_ID, DEPRECATED_SNAPSHOT_DISK_INFO.generatedId());
-    assertEquals(DISK_ID, DEPRECATED_SNAPSHOT_DISK_INFO.diskId());
-    assertEquals(SNAPSHOT_DISK_CONFIGURATION, DEPRECATED_SNAPSHOT_DISK_INFO.configuration());
-    assertEquals(CREATION_TIMESTAMP, DEPRECATED_SNAPSHOT_DISK_INFO.creationTimestamp());
-    assertEquals(CREATION_STATUS, DEPRECATED_SNAPSHOT_DISK_INFO.creationStatus());
-    assertEquals(DESCRIPTION, DEPRECATED_SNAPSHOT_DISK_INFO.description());
-    assertEquals(LICENSES, DEPRECATED_SNAPSHOT_DISK_INFO.licenses());
-    assertEquals(ATTACHED_INSTANCES, DEPRECATED_SNAPSHOT_DISK_INFO.attachedInstances());
-    assertEquals(LAST_ATTACH_TIMESTAMP, DEPRECATED_SNAPSHOT_DISK_INFO.lastAttachTimestamp());
-    assertEquals(LAST_DETACH_TIMESTAMP, DEPRECATED_SNAPSHOT_DISK_INFO.lastDetachTimestamp());
   }
 
   @Test

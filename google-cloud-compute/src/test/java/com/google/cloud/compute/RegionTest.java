@@ -65,18 +65,6 @@ public class RegionTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    assertEquals(REGION_ID, REGION.regionId());
-    assertEquals(GENERATED_ID, REGION.generatedId());
-    assertEquals(CREATION_TIMESTAMP, REGION.creationTimestamp());
-    assertEquals(DESCRIPTION, REGION.description());
-    assertEquals(STATUS, REGION.status());
-    assertEquals(ZONES, REGION.zones());
-    assertEquals(QUOTAS, REGION.quotas());
-    assertEquals(DEPRECATION_STATUS, REGION.deprecationStatus());
-  }
-
-  @Test
   public void testToAndFromPb() {
     Region region = Region.fromPb(REGION.toPb());
     compareRegions(REGION, region);

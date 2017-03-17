@@ -20,7 +20,7 @@ import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
 import com.google.cloud.Page;
 import com.google.cloud.Service;
-import com.google.cloud.dns.spi.DnsRpc;
+import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.common.collect.ImmutableList;
 
 import java.util.List;

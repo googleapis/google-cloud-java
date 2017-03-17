@@ -76,12 +76,6 @@ public class Instance extends InstanceInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder instanceId(InstanceId instanceId) {
-      return setInstanceId(instanceId);
-    }
-
-    @Override
     public Builder setInstanceId(InstanceId instanceId) {
       this.infoBuilder.setInstanceId(instanceId);
       return this;
@@ -91,12 +85,6 @@ public class Instance extends InstanceInfo {
     Builder setCreationTimestamp(Long creationTimestamp) {
       this.infoBuilder.setCreationTimestamp(creationTimestamp);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
     }
 
     @Override
@@ -118,21 +106,9 @@ public class Instance extends InstanceInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder tags(Tags tags) {
-      return setTags(tags);
-    }
-
-    @Override
     public Builder setTags(Tags tags) {
       this.infoBuilder.setTags(tags);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder machineType(MachineTypeId machineType) {
-      return setMachineType(machineType);
     }
 
     @Override
@@ -142,21 +118,9 @@ public class Instance extends InstanceInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder canIpForward(Boolean canIpForward) {
-      return setCanIpForward(canIpForward);
-    }
-
-    @Override
     public Builder setCanIpForward(Boolean canIpForward) {
       this.infoBuilder.setCanIpForward(canIpForward);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder networkInterfaces(List<NetworkInterface> networkInterfaces) {
-      return setNetworkInterfaces(networkInterfaces);
     }
 
     @Override
@@ -166,21 +130,9 @@ public class Instance extends InstanceInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder networkInterfaces(NetworkInterface... networkInterfaces) {
-      return setNetworkInterfaces(networkInterfaces);
-    }
-
-    @Override
     public Builder setNetworkInterfaces(NetworkInterface... networkInterfaces) {
       this.infoBuilder.setNetworkInterfaces(networkInterfaces);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder attachedDisks(List<AttachedDisk> attachedDisks) {
-      return setAttachedDisks(attachedDisks);
     }
 
     @Override
@@ -190,21 +142,9 @@ public class Instance extends InstanceInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder attachedDisks(AttachedDisk... attachedDisks) {
-      return setAttachedDisks(attachedDisks);
-    }
-
-    @Override
     public Builder setAttachedDisks(AttachedDisk... attachedDisks) {
       this.infoBuilder.setAttachedDisks(attachedDisks);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder metadata(Metadata metadata) {
-      return setMetadata(metadata);
     }
 
     @Override
@@ -214,21 +154,9 @@ public class Instance extends InstanceInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder serviceAccounts(List<ServiceAccount> serviceAccounts) {
-      return setServiceAccounts(serviceAccounts);
-    }
-
-    @Override
     public Builder setServiceAccounts(List<ServiceAccount> serviceAccounts) {
       this.infoBuilder.setServiceAccounts(serviceAccounts);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder schedulingOptions(SchedulingOptions schedulingOptions) {
-      return setSchedulingOptions(schedulingOptions);
     }
 
     @Override
@@ -494,14 +422,6 @@ public class Instance extends InstanceInfo {
    */
   public Operation stop(OperationOption... options) {
     return compute.stop(getInstanceId(), options);
-  }
-
-  /**
-   * Returns the snapshot's {@code Compute} object used to issue requests.
-   */
-  @Deprecated
-  public Compute compute() {
-    return getCompute();
   }
 
   /**

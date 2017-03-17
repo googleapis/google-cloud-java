@@ -26,9 +26,9 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.RestorableState;
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.storage.spi.StorageRpc;
-import com.google.cloud.storage.spi.StorageRpc.RewriteRequest;
-import com.google.cloud.storage.spi.StorageRpc.RewriteResponse;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc.RewriteRequest;
+import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.common.collect.ImmutableMap;
 

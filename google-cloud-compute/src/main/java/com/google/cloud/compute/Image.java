@@ -77,33 +77,15 @@ public class Image extends ImageInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder imageId(ImageId imageId) {
-      return setImageId(imageId);
-    }
-
-    @Override
     public Builder setImageId(ImageId imageId) {
       infoBuilder.setImageId(imageId);
       return this;
     }
 
     @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
-
-    @Override
     public Builder setDescription(String description) {
       infoBuilder.setDescription(description);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder configuration(ImageConfiguration configuration) {
-      return setConfiguration(configuration);
     }
 
     @Override
@@ -190,14 +172,6 @@ public class Image extends ImageInfo {
   public Operation deprecate(DeprecationStatus<ImageId> deprecationStatus,
       OperationOption... options) {
     return compute.deprecate(getImageId(), deprecationStatus, options);
-  }
-
-  /**
-   * Returns the image's {@code Compute} object used to issue requests.
-   */
-  @Deprecated
-  public Compute compute() {
-    return getCompute();
   }
 
   /**

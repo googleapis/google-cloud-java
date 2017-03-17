@@ -17,6 +17,7 @@
 package com.google.cloud.logging.testing;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.GrpcTransportOptions;
 import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.logging.LoggingOptions;
 
@@ -33,9 +34,9 @@ import org.joda.time.Duration;
  * {@link LoggingOptions#getRetrySettings()}: {@link RetrySettings#getMaxRetryDelay()} is
  * {@code 30000}, {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
  * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
- * {@link LoggingOptions#getInitialTimeout()} is set to 60000,
- * {@link LoggingOptions#getMaxTimeout()} is set to {@code 240000} and
- * {@link LoggingOptions#getTimeoutMultiplier()} is set to {@code 1.5}.
+ * {@link GrpcTransportOptions#getInitialTimeout()} is set to 60000,
+ * {@link GrpcTransportOptions#getMaxTimeout()} is set to {@code 240000} and
+ * {@link GrpcTransportOptions#getTimeoutMultiplier()} is set to {@code 1.5}.
  */
 public class RemoteLoggingHelper {
 
@@ -67,13 +68,18 @@ public class RemoteLoggingHelper {
   public static RemoteLoggingHelper create(String projectId, InputStream keyStream)
       throws LoggingHelperException {
     try {
+      GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
+      transportOptions =
+          transportOptions.toBuilder()
+              .setInitialTimeout(60000)
+              .setMaxTimeout(120000)
+              .setTimeoutMultiplier(1.5)
+              .build();
       LoggingOptions storageOptions = LoggingOptions.newBuilder()
           .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
-          .setRetrySettings(retryParams())
-          .setInitialTimeout(60000)
-          .setMaxTimeout(120000)
-          .setTimeoutMultiplier(1.5)
+          .setRetrySettings(retrySettings())
+          .setTransportOptions(transportOptions)
           .build();
       return new RemoteLoggingHelper(storageOptions);
     } catch (IOException ex) {
@@ -89,11 +95,16 @@ public class RemoteLoggingHelper {
    * credentials.
    */
   public static RemoteLoggingHelper create() throws LoggingHelperException {
+    GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
+    transportOptions =
+        transportOptions.toBuilder()
+            .setInitialTimeout(60000)
+            .setMaxTimeout(120000)
+            .setTimeoutMultiplier(1.5)
+            .build();
     LoggingOptions loggingOptions = LoggingOptions.newBuilder()
-        .setRetrySettings(retryParams())
-        .setInitialTimeout(60000)
-        .setMaxTimeout(240000)
-        .setTimeoutMultiplier(1.5)
+        .setRetrySettings(retrySettings())
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteLoggingHelper(loggingOptions);
   }
@@ -106,7 +117,7 @@ public class RemoteLoggingHelper {
     return name + "-" + UUID.randomUUID().toString();
   }
 
-  private static RetrySettings retryParams() {
+  private static RetrySettings retrySettings() {
     return RetrySettings.newBuilder()
         .setMaxRetryDelay(Duration.millis(30000L))
         .setTotalTimeout(Duration.millis(120000L))

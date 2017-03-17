@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
@@ -42,6 +43,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import org.easymock.EasyMock;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class RemoteStorageHelperTest {
 
@@ -209,8 +215,10 @@ public class RemoteStorageHelperTest {
     RemoteStorageHelper helper = RemoteStorageHelper.create(PROJECT_ID, JSON_KEY_STREAM);
     StorageOptions options = helper.getOptions();
     assertEquals(PROJECT_ID, options.getProjectId());
-    assertEquals(60000, options.getConnectTimeout());
-    assertEquals(60000, options.getReadTimeout());
+    assertEquals(60000,
+        ((HttpTransportOptions) options.getTransportOptions()).getConnectTimeout());
+    assertEquals(60000,
+        ((HttpTransportOptions) options.getTransportOptions()).getReadTimeout());
     assertEquals(10, options.getRetrySettings().getMaxAttempts());
     assertEquals(Duration.millis(30000), options.getRetrySettings().getMaxRetryDelay());
     assertEquals(Duration.millis(120000), options.getRetrySettings().getTotalTimeout());

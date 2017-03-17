@@ -28,7 +28,7 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.Page;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.compute.NetworkInterface.AccessConfig;
-import com.google.cloud.compute.spi.ComputeRpc;
+import com.google.cloud.compute.spi.v1.ComputeRpc;
 import com.google.cloud.compute.spi.ComputeRpcFactory;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;

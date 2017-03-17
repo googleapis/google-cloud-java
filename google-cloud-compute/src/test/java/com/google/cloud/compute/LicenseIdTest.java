@@ -48,17 +48,6 @@ public class LicenseIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    LicenseId licenseId = LicenseId.of(PROJECT, LICENSE);
-    assertEquals(PROJECT, licenseId.project());
-    assertEquals(LICENSE, licenseId.license());
-    assertEquals(URL, licenseId.selfLink());
-    licenseId = LicenseId.of(LICENSE);
-    assertNull(licenseId.project());
-    assertEquals(LICENSE, licenseId.license());
-  }
-
-  @Test
   public void testToAndFromUrl() {
     LicenseId licenseId = LicenseId.of(PROJECT, LICENSE);
     compareLicenseId(licenseId, LicenseId.fromUrl(licenseId.getSelfLink()));

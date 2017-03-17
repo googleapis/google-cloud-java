@@ -65,11 +65,10 @@ import java.util.regex.Pattern;
  * Abstract class representing service options.
  *
  * @param <ServiceT> the service subclass
- * @param <ServiceRpcT> the spi-layer class corresponding to the service
  * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
  */
-public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, ServiceRpcT,
-    OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>> implements Serializable {
+public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
+    OptionsT extends ServiceOptions<ServiceT, OptionsT>> implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
@@ -99,36 +98,36 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private final String serviceFactoryClassName;
   private final NanoClock clock;
   private final Credentials credentials;
+  private final TransportOptions transportOptions;
 
-  private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+  private transient ServiceRpcFactory<OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
   private transient ServiceT service;
-  private transient ServiceRpcT rpc;
+  private transient ServiceRpc rpc;
 
   /**
    * Builder for {@code ServiceOptions}.
    *
    * @param <ServiceT> the service subclass
-   * @param <ServiceRpcT> the spi-layer class corresponding to the service
    * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
    * @param <B> the {@code ServiceOptions} builder
    */
-  public abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
-      OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
-      B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {
+  public abstract static class Builder<ServiceT extends Service<OptionsT>,
+      OptionsT extends ServiceOptions<ServiceT, OptionsT>,
+      B extends Builder<ServiceT, OptionsT, B>> {
 
     private String projectId;
     private String host;
     private Credentials credentials;
     private RetrySettings retrySettings;
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
-    private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+    private ServiceRpcFactory<OptionsT> serviceRpcFactory;
     private NanoClock clock;
+    private TransportOptions transportOptions;
 
-    protected Builder() {
-    }
+    protected Builder() {}
 
-    protected Builder(ServiceOptions<ServiceT, ServiceRpcT, OptionsT> options) {
+    protected Builder(ServiceOptions<ServiceT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
       credentials = options.credentials;
@@ -136,9 +135,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       serviceFactory = options.serviceFactory;
       serviceRpcFactory = options.serviceRpcFactory;
       clock = options.clock;
+      transportOptions = options.transportOptions;
     }
 
-    protected abstract ServiceOptions<ServiceT, ServiceRpcT, OptionsT> build();
+    protected abstract ServiceOptions<ServiceT, OptionsT> build();
 
     @SuppressWarnings("unchecked")
     protected B self() {
@@ -223,15 +223,26 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      *
      * @return the builder
      */
-    public B setServiceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
+    public B setServiceRpcFactory(ServiceRpcFactory<OptionsT> serviceRpcFactory) {
       this.serviceRpcFactory = serviceRpcFactory;
+      return self();
+    }
+
+    /**
+     * Sets the transport options.
+     *
+     * @return the builder
+     */
+    public B setTransportOptions(TransportOptions transportOptions) {
+      this.transportOptions = transportOptions;
       return self();
     }
   }
 
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
-      Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
-      Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
+      Class<? extends ServiceRpcFactory<OptionsT>> rpcFactoryClass,
+      Builder<ServiceT, OptionsT, ?> builder,
+      ServiceDefaults<ServiceT, OptionsT> serviceDefaults) {
     projectId = builder.projectId != null ? builder.projectId : getDefaultProject();
     if (projectIdRequired()) {
       checkArgument(
@@ -243,12 +254,14 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     credentials = builder.credentials != null ? builder.credentials : defaultCredentials();
     retrySettings = firstNonNull(builder.retrySettings, getDefaultRetrySettings());
     serviceFactory = firstNonNull(builder.serviceFactory,
-        getFromServiceLoader(serviceFactoryClass, getDefaultServiceFactory()));
+        getFromServiceLoader(serviceFactoryClass, serviceDefaults.getDefaultServiceFactory()));
     serviceFactoryClassName = serviceFactory.getClass().getName();
     serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
-        getFromServiceLoader(rpcFactoryClass, getDefaultRpcFactory()));
+        getFromServiceLoader(rpcFactoryClass, serviceDefaults.getDefaultRpcFactory()));
     serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
     clock = firstNonNull(builder.clock, SystemClock.getDefaultClock());
+    transportOptions = firstNonNull(builder.transportOptions,
+        serviceDefaults.getDefaultTransportOptions());
   }
 
   /**
@@ -283,12 +296,12 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * Returns the default project ID, or {@code null} if no default project ID could be found. This
    * method returns the first available project ID among the following sources:
    * <ol>
-   * <li>The project ID specified by the GOOGLE_CLOUD_PROJECT environment variable
-   * <li>The App Engine project ID
-   * <li>The project ID specified in the JSON credentials file pointed by the
-   * {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable
-   * <li>The Google Cloud SDK project ID
-   * <li>The Compute Engine project ID
+   *   <li>The project ID specified by the GOOGLE_CLOUD_PROJECT environment variable
+   *   <li>The App Engine project ID
+   *   <li>The project ID specified in the JSON credentials file pointed by the
+   *   {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable
+   *   <li>The Google Cloud SDK project ID
+   *   <li>The Compute Engine project ID
    * </ol>
    */
   public static String getDefaultProjectId() {
@@ -402,8 +415,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       String serviceAccountName = (String) method.invoke(appIdentityService);
       int indexOfAtSign = serviceAccountName.indexOf('@');
       return serviceAccountName.substring(0, indexOfAtSign);
+    } catch (ClassNotFoundException exception) {
+      if (System.getProperty("com.google.appengine.runtime.version") != null) {
+        // Could not resolve appengine classes under GAE environment.
+        throw new RuntimeException("Google App Engine runtime detected "
+            + "(the environment variable \"com.google.appengine.runtime.version\" is set), "
+            + "but unable to resolve appengine-sdk classes. "
+            + "For more details see "
+            + "https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/APPENGINE.md");
+      }
+      return null;
     } catch (Exception ignore) {
-      // return null if can't determine
       return null;
     }
   }
@@ -433,7 +455,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
 
   @SuppressWarnings("unchecked")
-  public ServiceRpcT getRpc() {
+  public ServiceRpc getRpc() {
     if (rpc == null) {
       rpc = serviceRpcFactory.create((OptionsT) this);
     }
@@ -493,6 +515,12 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return clock;
   }
 
+  /**
+   * Returns the transport-specific options for this service.
+   */
+  public TransportOptions getTransportOptions() {
+    return transportOptions;
+  }
 
   /**
    * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
@@ -519,13 +547,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   /**
    * Returns the library's version as a string.
    */
-  public String libraryVersion() {
-    return getLibraryVersion();
-  }
-
-  /**
-   * Returns the library's version as a string.
-   */
   public String getLibraryVersion() {
     return LIBRARY_VERSION;
   }
@@ -535,7 +556,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
         serviceRpcFactoryClassName, clock);
   }
 
-  protected boolean baseEquals(ServiceOptions<?, ?, ?> other) {
+  protected boolean baseEquals(ServiceOptions<?, ?> other) {
     return Objects.equals(projectId, other.projectId)
         && Objects.equals(host, other.host)
         && Objects.equals(credentials, other.credentials)
@@ -580,15 +601,9 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
         .setMaxRpcTimeout(Duration.millis(50_000L));
   }
 
-  protected abstract ServiceFactory<ServiceT, OptionsT> getDefaultServiceFactory();
-
-
-  protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> getDefaultRpcFactory();
-
-
   protected abstract Set<String> getScopes();
 
-  public abstract <B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> B toBuilder();
+  public abstract <B extends Builder<ServiceT, OptionsT, B>> B toBuilder();
 
   /**
    * Some services may have different backoff requirements listed in their SLAs. Be sure to override

@@ -16,8 +16,6 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import static com.google.cloud.pubsub.spi.v1.StatusUtil.isRetryable;
-
 import com.google.api.gax.core.FlowController;
 import com.google.api.gax.core.NanoClock;
 import com.google.api.stats.Distribution;
@@ -96,7 +94,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
   @Override
   protected void doStart() {
-    logger.log(Level.INFO, "Starting subscriber.");
+    logger.config("Starting subscriber.");
     initialize();
     notifyStarted();
   }
@@ -134,13 +132,13 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
     @Override
     public void onError(Throwable t) {
-      logger.log(Level.INFO, "Terminated streaming with exception", t);
+      logger.log(Level.WARNING, "Terminated streaming with exception", t);
       errorFuture.setException(t);
     }
 
     @Override
     public void onCompleted() {
-      logger.log(Level.INFO, "Streaming pull terminated successfully!");
+      logger.fine("Streaming pull terminated successfully!");
       errorFuture.set(null);
     }
   }
@@ -157,11 +155,9 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
                     CallOptions.DEFAULT.withCallCredentials(MoreCallCredentials.from(credentials))),
                 responseObserver));
     logger.log(
-        Level.INFO,
-        "Initializing stream to subscription "
-            + subscription
-            + " with deadline "
-            + messageDispatcher.getMessageDeadlineSeconds());
+        Level.FINER,
+        "Initializing stream to subscription {0} with deadline {1}",
+        new Object[] {subscription, messageDispatcher.getMessageDeadlineSeconds()});
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
@@ -181,9 +177,13 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
           }
 
           @Override
-          public void onFailure(Throwable t) {
-            Status errorStatus = Status.fromThrowable(t);
-            if (isRetryable(errorStatus) && isAlive()) {
+          public void onFailure(Throwable cause) {
+            if (!isAlive()) {
+              // we don't care about subscription failures when we're no longer running.
+              logger.log(Level.FINE, "pull failure after service no longer running", cause);
+              return;
+            }
+            if (StatusUtil.isRetryable(cause)) {
               long backoffMillis = channelReconnectBackoff.getMillis();
               channelReconnectBackoff = channelReconnectBackoff.plus(backoffMillis);
               executor.schedule(
@@ -196,9 +196,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
                   backoffMillis,
                   TimeUnit.MILLISECONDS);
             } else {
-              if (isAlive()) {
-                notifyFailed(t);
-              }
+              notifyFailed(cause);
             }
           }
         },

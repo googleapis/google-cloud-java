@@ -236,7 +236,7 @@ public class Publisher {
       if (!messagesBundle.isEmpty()) {
         setupDurationBasedPublishAlarm();
       } else if (currentAlarmFuture != null) {
-        logger.log(Level.INFO, "Cancelling alarm");
+        logger.log(Level.FINER, "Cancelling alarm, no more messages");
         if (activeAlarm.getAndSet(false)) {
           currentAlarmFuture.cancel(false);
         }
@@ -248,7 +248,7 @@ public class Publisher {
     messagesWaiter.incrementPendingMessages(1);
 
     if (bundleToSend != null) {
-      logger.log(Level.INFO, "Scheduling a bundle for immediate sending.");
+      logger.log(Level.FINER, "Scheduling a bundle for immediate sending.");
       final OutstandingBundle finalBundleToSend = bundleToSend;
       executor.execute(
           new Runnable() {
@@ -263,7 +263,7 @@ public class Publisher {
     // be sent in its own bundle immediately.
     if (hasBundlingBytes() && messageSize >= getMaxBundleBytes()) {
       logger.log(
-          Level.INFO, "Message exceeds the max bundle bytes, scheduling it for immediate send.");
+          Level.FINER, "Message exceeds the max bundle bytes, scheduling it for immediate send.");
       executor.execute(
           new Runnable() {
             @Override
@@ -280,13 +280,13 @@ public class Publisher {
   private void setupDurationBasedPublishAlarm() {
     if (!activeAlarm.getAndSet(true)) {
       long delayThresholdMs = getBundlingSettings().getDelayThreshold().getMillis();
-      logger.log(Level.INFO, "Setting up alarm for the next {0} ms.", delayThresholdMs);
+      logger.log(Level.FINER, "Setting up alarm for the next {0} ms.", delayThresholdMs);
       currentAlarmFuture =
           executor.schedule(
               new Runnable() {
                 @Override
                 public void run() {
-                  logger.log(Level.INFO, "Sending messages based on schedule.");
+                  logger.log(Level.FINER, "Sending messages based on schedule.");
                   activeAlarm.getAndSet(false);
                   publishAllOutstanding();
                 }

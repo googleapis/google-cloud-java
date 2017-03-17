@@ -45,17 +45,19 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.9.4-alpha</version>
+  <version>0.10.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.9.4-alpha'
+compile 'com.google.cloud:google-cloud:0.10.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.9.4-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.10.0-alpha"
 ```
+
+For running on Google App Engine, see [more instructions here](./APPENGINE.md).
 
 Example Applications
 --------------------
@@ -689,6 +691,11 @@ Java Versions
 -------------
 
 Java 7 or above is required for using this client.
+
+Android
+-------
+
+Android is not currently supported.
 
 Testing
 -------

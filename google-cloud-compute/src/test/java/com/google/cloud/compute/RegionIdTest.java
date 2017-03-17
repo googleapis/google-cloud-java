@@ -48,17 +48,6 @@ public class RegionIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    RegionId regionId = RegionId.of(PROJECT, REGION);
-    assertEquals(PROJECT, regionId.project());
-    assertEquals(REGION, regionId.region());
-    assertEquals(URL, regionId.selfLink());
-    regionId = RegionId.of(REGION);
-    assertNull(regionId.project());
-    assertEquals(REGION, regionId.region());
-  }
-
-  @Test
   public void testToAndFromUrl() {
     RegionId regionId = RegionId.of(PROJECT, REGION);
     compareRegionId(regionId, RegionId.fromUrl(regionId.getSelfLink()));

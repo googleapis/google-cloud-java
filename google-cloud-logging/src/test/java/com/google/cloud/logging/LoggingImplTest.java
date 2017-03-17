@@ -36,7 +36,7 @@ import com.google.cloud.logging.Logging.SortingField;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.SinkInfo.Destination;
-import com.google.cloud.logging.spi.LoggingRpc;
+import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.cloud.logging.spi.LoggingRpcFactory;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;

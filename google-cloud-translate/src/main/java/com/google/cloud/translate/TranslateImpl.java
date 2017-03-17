@@ -25,7 +25,7 @@ import com.google.api.services.translate.model.LanguagesResource;
 import com.google.api.services.translate.model.TranslationsResource;
 import com.google.cloud.BaseService;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -51,7 +51,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
 
   TranslateImpl(TranslateOptions options) {
     super(options);
-    translateRpc = options.getRpc();
+    translateRpc = options.getTranslateRpcV2();
   }
 
   @Override

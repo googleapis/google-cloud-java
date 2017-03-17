@@ -29,7 +29,7 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.Query.ResultType;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
-import com.google.cloud.datastore.spi.DatastoreRpc;
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.testing.LocalDatastoreHelper;
 import com.google.common.collect.ImmutableList;
@@ -595,7 +595,7 @@ public class DatastoreTest {
     Entity entity4 = Entity.newBuilder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.newBuilder(KEY5).set("value", "value").build();
     datastore.add(ENTITY3, entity4, entity5);
-    DatastoreRpc datastoreRpc = datastore.getOptions().getRpc();
+    DatastoreRpc datastoreRpc = datastore.getOptions().getDatastoreRpcV1();
     List<RunQueryResponse> responses = new ArrayList<>();
     Query<Entity> query = Query.newEntityQueryBuilder().build();
     RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();

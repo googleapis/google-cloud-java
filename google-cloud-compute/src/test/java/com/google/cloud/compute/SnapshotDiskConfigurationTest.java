@@ -36,12 +36,6 @@ public class SnapshotDiskConfigurationTest {
           .setDiskType(DISK_TYPE)
           .setSourceSnapshotId(SNAPSHOT_ID)
           .build();
-  private static final SnapshotDiskConfiguration DEPRECATED_DISK_CONFIGURATION =
-      SnapshotDiskConfiguration.builder(SNAPSHOT)
-          .sizeGb(SIZE)
-          .diskType(DISK_TYPE)
-          .setSourceSnapshotId(SNAPSHOT_ID)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -76,15 +70,6 @@ public class SnapshotDiskConfigurationTest {
     assertEquals(SNAPSHOT, DISK_CONFIGURATION.getSourceSnapshot());
     assertEquals(SNAPSHOT_ID, DISK_CONFIGURATION.getSourceSnapshotId());
     assertEquals(Type.SNAPSHOT, DISK_CONFIGURATION.getType());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(DISK_TYPE, DEPRECATED_DISK_CONFIGURATION.diskType());
-    assertEquals(SIZE, DEPRECATED_DISK_CONFIGURATION.sizeGb());
-    assertEquals(SNAPSHOT, DEPRECATED_DISK_CONFIGURATION.sourceSnapshot());
-    assertEquals(SNAPSHOT_ID, DEPRECATED_DISK_CONFIGURATION.sourceSnapshotId());
-    assertEquals(Type.SNAPSHOT, DEPRECATED_DISK_CONFIGURATION.type());
   }
 
   @Test

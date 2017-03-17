@@ -155,24 +155,8 @@ public class MachineType implements Serializable {
   /**
    * Returns the machine type's identity.
    */
-  @Deprecated
-  public MachineTypeId machineTypeId() {
-    return getMachineTypeId();
-  }
-
-  /**
-   * Returns the machine type's identity.
-   */
   public MachineTypeId getMachineTypeId() {
     return machineTypeId;
-  }
-
-  /**
-   * Returns the service-generated unique identifier for the machine type.
-   */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
   }
 
   /**
@@ -185,24 +169,8 @@ public class MachineType implements Serializable {
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
-  @Deprecated
-  public Long creationTimestamp() {
-    return getCreationTimestamp();
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
   public Long getCreationTimestamp() {
     return creationTimestamp;
-  }
-
-  /**
-   * Returns an optional textual description of the machine type.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
   }
 
   /**
@@ -215,24 +183,8 @@ public class MachineType implements Serializable {
   /**
    * Returns the number of virtual CPUs that are available to the instance.
    */
-  @Deprecated
-  public Integer cpus() {
-    return getCpus();
-  }
-
-  /**
-   * Returns the number of virtual CPUs that are available to the instance.
-   */
   public Integer getCpus() {
     return cpus;
-  }
-
-  /**
-   * Returns the amount of physical memory available to the instance, defined in MB.
-   */
-  @Deprecated
-  public Integer memoryMb() {
-    return getMemoryMb();
   }
 
   /**
@@ -245,24 +197,8 @@ public class MachineType implements Serializable {
   /**
    * Returns the size of all extended scratch disks assigned to the instance, defined in GB.
    */
-  @Deprecated
-  public List<Integer> scratchDisksSizeGb() {
-    return getScratchDisksSizeGb();
-  }
-
-  /**
-   * Returns the size of all extended scratch disks assigned to the instance, defined in GB.
-   */
   public List<Integer> getScratchDisksSizeGb() {
     return scratchDisksSizeGb;
-  }
-
-  /**
-   * Returns the maximum number of persistent disks allowed by this instance type.
-   */
-  @Deprecated
-  public Integer maximumPersistentDisks() {
-    return getMaximumPersistentDisks();
   }
 
   /**
@@ -275,31 +211,12 @@ public class MachineType implements Serializable {
   /**
    * Returns the maximum total persistent disks size allowed, defined in GB.
    */
-  @Deprecated
-  public Long maximumPersistentDisksSizeGb() {
-    return getMaximumPersistentDisksSizeGb();
-  }
-
-  /**
-   * Returns the maximum total persistent disks size allowed, defined in GB.
-   */
   public Long getMaximumPersistentDisksSizeGb() {
     return maximumPersistentDisksSizeGb;
   }
 
   /**
-   * Returns the deprecation status of the machine type. If {@link DeprecationStatus#status()} is
-   * either {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE}
-   * the machine type should not be used. Returns {@code null} if the machine type is not
-   * deprecated.
-   */
-  @Deprecated
-  public DeprecationStatus<MachineTypeId> deprecationStatus() {
-    return getDeprecationStatus();
-  }
-
-  /**
-   * Returns the deprecation status of the machine type. If {@link DeprecationStatus#status()} is
+   * Returns the deprecation status of the machine type. If {@link DeprecationStatus#getStatus()} is
    * either {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE}
    * the machine type should not be used. Returns {@code null} if the machine type is not
    * deprecated.

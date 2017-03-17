@@ -29,7 +29,7 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
-import com.google.cloud.bigquery.spi.BigQueryRpc;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -156,7 +156,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   BigQueryImpl(BigQueryOptions options) {
     super(options);
-    bigQueryRpc = options.getRpc();
+    bigQueryRpc = options.getBigQueryRpcV2();
   }
 
   @Override
@@ -256,7 +256,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 @Override
                 public BigQueryRpc.Tuple<String,
                     Iterable<com.google.api.services.bigquery.model.Dataset>> call() {
-                  return serviceOptions.getRpc().listDatasets(projectId, optionsMap);
+                  return serviceOptions.getBigQueryRpcV2().listDatasets(projectId, optionsMap);
                 }
               }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -397,7 +397,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             @Override
             public BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>>
                 call() {
-                  return serviceOptions.getRpc().listTables(
+                  return serviceOptions.getBigQueryRpcV2().listTables(
                       datasetId.getProject(), datasetId.getDataset(), optionsMap);
                 }
           }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
@@ -454,7 +454,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           runWithRetries(new Callable<BigQueryRpc.Tuple<String, Iterable<TableRow>>>() {
             @Override
             public BigQueryRpc.Tuple<String, Iterable<TableRow>> call() {
-              return serviceOptions.getRpc()
+              return serviceOptions.getBigQueryRpcV2()
                   .listTableData(completeTableId.getProject(), completeTableId.getDataset(),
                       completeTableId.getTable(), optionsMap);
             }
@@ -515,7 +515,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           @Override
           public BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Job>>
               call() {
-            return serviceOptions.getRpc().listJobs(serviceOptions.getProjectId(), optionsMap);
+            return serviceOptions.getBigQueryRpcV2().listJobs(serviceOptions.getProjectId(), optionsMap);
           }
         }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
     String cursor = result.x();
@@ -602,7 +602,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           runWithRetries(new Callable<GetQueryResultsResponse>() {
             @Override
             public GetQueryResultsResponse call() {
-              return serviceOptions.getRpc().getQueryResults(
+              return serviceOptions.getBigQueryRpcV2().getQueryResults(
                   completeJobId.getProject(), completeJobId.getJob(), optionsMap);
             }
           }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());

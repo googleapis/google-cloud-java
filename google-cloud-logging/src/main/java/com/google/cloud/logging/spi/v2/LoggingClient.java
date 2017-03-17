@@ -148,9 +148,6 @@ public class LoggingClient implements AutoCloseable {
         UnaryCallable.create(settings.deleteLogSettings(), this.channel, this.executor);
     this.writeLogEntriesCallable =
         UnaryCallable.create(settings.writeLogEntriesSettings(), this.channel, this.executor);
-    if (settings.writeLogEntriesSettings().getBundlerFactory() != null) {
-      closeables.add(settings.writeLogEntriesSettings().getBundlerFactory());
-    }
     this.listLogEntriesCallable =
         UnaryCallable.create(settings.listLogEntriesSettings(), this.channel, this.executor);
     this.listLogEntriesPagedCallable =
@@ -193,7 +190,8 @@ public class LoggingClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes all the log entries in a log. The log reappears if it receives new entries.
+   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
+   * written shortly before the delete operation might not be deleted.
    *
    * <p>Sample code:
    *
@@ -206,6 +204,7 @@ public class LoggingClient implements AutoCloseable {
    *
    * @param logName Required. The resource name of the log to delete:
    *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
    *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"`,
    *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
    *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
@@ -220,7 +219,8 @@ public class LoggingClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes all the log entries in a log. The log reappears if it receives new entries.
+   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
+   * written shortly before the delete operation might not be deleted.
    *
    * <p>Sample code:
    *
@@ -243,7 +243,8 @@ public class LoggingClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes all the log entries in a log. The log reappears if it receives new entries.
+   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
+   * written shortly before the delete operation might not be deleted.
    *
    * <p>Sample code:
    *
@@ -265,7 +266,7 @@ public class LoggingClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Writes log entries to Stackdriver Logging. All log entries are written by this method.
+   * Writes log entries to Stackdriver Logging.
    *
    * <p>Sample code:
    *
@@ -282,6 +283,7 @@ public class LoggingClient implements AutoCloseable {
    * @param logName Optional. A default log resource name that is assigned to all log entries in
    *     `entries` that do not specify a value for `log_name`:
    *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
    *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"` or
    *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
    *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
@@ -295,8 +297,12 @@ public class LoggingClient implements AutoCloseable {
    *     parameter, then the log entry's label is not changed. See
    *     [LogEntry][google.logging.v2.LogEntry].
    * @param entries Required. The log entries to write. Values supplied for the fields `log_name`,
-   *     `resource`, and `labels` in this `entries.write` request are added to those log entries
-   *     that do not provide their own values for the fields.
+   *     `resource`, and `labels` in this `entries.write` request are inserted into those log
+   *     entries in this list that do not provide their own values.
+   *     <p>Stackdriver Logging also creates and inserts values for `timestamp` and `insert_id` if
+   *     the entries do not provide them. The created `insert_id` for the N'th entry in this list
+   *     will be greater than earlier entries and less than later entries. Otherwise, the order of
+   *     log entries in this list does not matter.
    *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
    *     for calls to `entries.write`, you should write multiple log entries at once rather than
    *     calling this method for each individual log entry.
@@ -320,7 +326,7 @@ public class LoggingClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Writes log entries to Stackdriver Logging. All log entries are written by this method.
+   * Writes log entries to Stackdriver Logging.
    *
    * <p>Sample code:
    *
@@ -343,7 +349,7 @@ public class LoggingClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Writes log entries to Stackdriver Logging. All log entries are written by this method.
+   * Writes log entries to Stackdriver Logging.
    *
    * <p>Sample code:
    *
@@ -382,9 +388,10 @@ public class LoggingClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param resourceNames Required. Names of one or more resources from which to retrieve log
+   * @param resourceNames Required. Names of one or more parent resources from which to retrieve log
    *     entries:
    *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    *     <p>Projects listed in the `project_ids` field are added to this list.
    * @param filter Optional. A filter that chooses which log entries to return. See [Advanced Logs
    *     Filters](/logging/docs/view/advanced_filters). Only log entries that match the filter are
@@ -396,7 +403,7 @@ public class LoggingClient implements AutoCloseable {
    *     are `"timestamp asc"` (default) and `"timestamp desc"`. The first option returns entries in
    *     order of increasing values of `LogEntry.timestamp` (oldest first), and the second option
    *     returns entries in order of decreasing timestamps (newest first). Entries with equal
-   *     timestamps are returned in order of `LogEntry.insertId`.
+   *     timestamps are returned in order of their `insert_id` values.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListLogEntriesPagedResponse listLogEntries(
@@ -573,7 +580,8 @@ public class LoggingClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the logs in projects or organizations. Only logs that have entries are listed.
+   * Lists the logs in projects, organizations, folders, or billing accounts. Only logs that have
+   * entries are listed.
    *
    * <p>Sample code:
    *
@@ -588,6 +596,7 @@ public class LoggingClient implements AutoCloseable {
    *
    * @param parent Required. The resource name that owns the logs:
    *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListLogsPagedResponse listLogs(ParentNameOneof parent) {
@@ -598,7 +607,8 @@ public class LoggingClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the logs in projects or organizations. Only logs that have entries are listed.
+   * Lists the logs in projects, organizations, folders, or billing accounts. Only logs that have
+   * entries are listed.
    *
    * <p>Sample code:
    *
@@ -623,7 +633,8 @@ public class LoggingClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the logs in projects or organizations. Only logs that have entries are listed.
+   * Lists the logs in projects, organizations, folders, or billing accounts. Only logs that have
+   * entries are listed.
    *
    * <p>Sample code:
    *
@@ -647,7 +658,8 @@ public class LoggingClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the logs in projects or organizations. Only logs that have entries are listed.
+   * Lists the logs in projects, organizations, folders, or billing accounts. Only logs that have
+   * entries are listed.
    *
    * <p>Sample code:
    *

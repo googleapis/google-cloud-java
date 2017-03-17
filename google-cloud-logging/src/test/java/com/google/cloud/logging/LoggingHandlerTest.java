@@ -30,6 +30,7 @@ import com.google.common.collect.ImmutableMap;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Map;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
 import java.util.logging.Formatter;
@@ -83,8 +84,6 @@ public class LoggingHandlerTest {
       .build();
   private static final LogEntry INFO_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.INFO)
-      .addLabel("levelName", "INFO")
-      .addLabel("levelValue", String.valueOf(Level.INFO.intValue()))
       .setTimestamp(123456789L)
       .build();
   private static final LogEntry WARNING_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
@@ -135,32 +134,41 @@ public class LoggingHandlerTest {
       .addLabel("levelValue", String.valueOf(LoggingLevel.EMERGENCY.intValue()))
       .setTimestamp(123456789L)
       .build();
-  private static final String CONFIG_FILE_STRING =
-      (new StringBuilder())
-          .append("com.google.cloud.logging.LoggingHandler.log=testLogName")
-          .append(System.lineSeparator())
-          .append("com.google.cloud.logging.LoggingHandler.level=ALL")
-          .append(System.lineSeparator())
-          .append(
-              "com.google.cloud.logging.LoggingHandler.filter=com.google.cloud.logging.LoggingHandlerTest$TestFilter")
-          .append(System.lineSeparator())
-          .append(
-              "com.google.cloud.logging.LoggingHandler.formatter=com.google.cloud.logging.LoggingHandlerTest$TestFormatter")
-          .append(System.lineSeparator())
-          .append("com.google.cloud.logging.LoggingHandler.flushSize=2")
-          .append(System.lineSeparator())
-          .append("com.google.cloud.logging.LoggingHandler.flushLevel=CRITICAL")
-          .append(System.lineSeparator())
-          .append(
-              "com.google.cloud.logging.LoggingHandler.enhancers=com.google.cloud.logging.LoggingHandlerTest$TestEnhancer")
-          .append(System.lineSeparator())
-          .append("com.google.cloud.logging.LoggingHandler.resourceType=testResourceType")
-          .append(System.lineSeparator())
-          .append("com.google.cloud.logging.LoggingHandler.synchronicity=SYNC")
-          .append(System.lineSeparator())
-          .toString();
+  private static final String CONFIG_NAMESPACE = "com.google.cloud.logging.LoggingHandler";
+  private static final ImmutableMap<String, String> CONFIG_MAP =
+      ImmutableMap.<String, String>builder()
+          .put("log", "testLogName")
+          .put("level", "ALL")
+          .put("filter", "com.google.cloud.logging.LoggingHandlerTest$TestFilter")
+          .put("formatter", "com.google.cloud.logging.LoggingHandlerTest$TestFormatter")
+          .put("flushSize", "2")
+          .put("flushLevel", "CRITICAL")
+          .put("enhancers", "com.google.cloud.logging.LoggingHandlerTest$TestEnhancer")
+          .put("resourceType", "testResourceType")
+          .put("synchronicity", "SYNC")
+          .build();
+  private static final ImmutableMap<String, String> BASE_SEVERITY_MAP =
+      ImmutableMap.of(
+          "levelName", Level.INFO.getName(), "levelValue", String.valueOf(Level.INFO.intValue()));
   private static final WriteOption[] DEFAULT_OPTIONS =
-      new WriteOption[] {WriteOption.logName(LOG_NAME), WriteOption.resource(DEFAULT_RESOURCE)};
+      new WriteOption[] {
+        WriteOption.logName(LOG_NAME),
+        WriteOption.resource(DEFAULT_RESOURCE),
+        WriteOption.labels(BASE_SEVERITY_MAP)
+      };
+
+  private static byte[] renderConfig(Map<String, String> config) {
+    StringBuilder str = new StringBuilder();
+    for (Map.Entry<String, String> entry : config.entrySet()) {
+      str.append(CONFIG_NAMESPACE)
+          .append('.')
+          .append(entry.getKey())
+          .append('=')
+          .append(entry.getValue())
+          .append(System.lineSeparator());
+    }
+    return str.toString().getBytes();
+  }
 
   private Logging logging;
   private LoggingOptions options;
@@ -199,10 +207,9 @@ public class LoggingHandlerTest {
   }
 
   @After
-  public void afterClass() {
+  public void after() {
     EasyMock.verify(logging, options);
   }
-
 
   private static LogRecord newLogRecord(Level level, String message) {
     LogRecord record = new LogRecord(level, message);
@@ -266,8 +273,11 @@ public class LoggingHandlerTest {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
     MonitoredResource resource = MonitoredResource.of("custom", ImmutableMap.<String, String>of());
-    logging.writeAsync(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
-        WriteOption.resource(resource));
+    logging.writeAsync(
+        ImmutableList.of(FINEST_ENTRY),
+        WriteOption.logName(LOG_NAME),
+        WriteOption.resource(resource),
+        WriteOption.labels(BASE_SEVERITY_MAP));
     EasyMock.expectLastCall().andReturn(ApiFutures.immediateFuture(null));
     EasyMock.replay(options, logging);
     Handler handler = new LoggingHandler(LOG_NAME, options, resource);
@@ -281,8 +291,11 @@ public class LoggingHandlerTest {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
     MonitoredResource resource = MonitoredResource.of("custom", ImmutableMap.<String, String>of());
-    logging.writeAsync(ImmutableList.of(FINEST_ENHANCED_ENTRY), WriteOption.logName(LOG_NAME),
-        WriteOption.resource(resource));
+    logging.writeAsync(
+        ImmutableList.of(FINEST_ENHANCED_ENTRY),
+        WriteOption.logName(LOG_NAME),
+        WriteOption.resource(resource),
+        WriteOption.labels(BASE_SEVERITY_MAP));
     EasyMock.expectLastCall().andReturn(ApiFutures.immediateFuture(null));
     EasyMock.replay(options, logging);
     LoggingHandler.Enhancer enhancer = new LoggingHandler.Enhancer() {
@@ -399,10 +412,7 @@ public class LoggingHandlerTest {
             .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
             .setTimestamp(123456789L)
             .build();
-    logging.write(
-        ImmutableList.of(entry),
-        WriteOption.logName(LOG_NAME),
-        WriteOption.resource(DEFAULT_RESOURCE));
+    logging.write(ImmutableList.of(entry), DEFAULT_OPTIONS);
     EasyMock.replay(options, logging);
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
@@ -441,8 +451,6 @@ public class LoggingHandlerTest {
     LogEntry entry =
         LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
             .setSeverity(Severity.DEBUG)
-            .addLabel("levelName", "FINEST")
-            .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
             .addLabel("enhanced", "true")
             .setTimestamp(123456789L)
             .build();
@@ -451,10 +459,16 @@ public class LoggingHandlerTest {
         WriteOption.logName("testLogName"),
         WriteOption.resource(
             MonitoredResource.of(
-                "testResourceType", ImmutableMap.of("project_id", PROJECT, "enhanced", "true"))));
+                "testResourceType", ImmutableMap.of("project_id", PROJECT, "enhanced", "true"))),
+        WriteOption.labels(
+            ImmutableMap.of(
+                "levelName",
+                Level.FINEST.getName(),
+                "levelValue",
+                String.valueOf(Level.FINEST.intValue()))));
     EasyMock.replay(options, logging);
     LogManager.getLogManager()
-        .readConfiguration(new ByteArrayInputStream(CONFIG_FILE_STRING.getBytes()));
+        .readConfiguration(new ByteArrayInputStream(renderConfig(CONFIG_MAP)));
     LoggingHandler handler = new LoggingHandler(null, options);
     LogRecord record = new LogRecord(Level.FINEST, MESSAGE);
     record.setMillis(123456789L);

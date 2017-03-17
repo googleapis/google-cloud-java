@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore.testing;
 
+import com.google.cloud.HttpTransportOptions;
 import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -34,11 +35,11 @@ import org.joda.time.Duration;
  * run, all entities in the namespace can be deleted using {@link #deleteNamespace()}. Returned
  * options also have custom {@link DatastoreOptions#getRetrySettings()}:
  * {@link RetrySettings#getMaxAttempts()} is {@code 10},
- * {@link RetrySettings#getRetryAttempts()} is {@code 6},
  * {@link RetrySettings#getMaxRetryDelay()} is {@code 30000},
  * {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
  * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
- * {@link DatastoreOptions#getConnectTimeout()} and {@link DatastoreOptions#getReadTimeout()} are
+ * {@link HttpTransportOptions#getConnectTimeout()} and
+ * {@link HttpTransportOptions#getReadTimeout()} are both
  * both set to {@code 60000}.
  */
 public class RemoteDatastoreHelper {
@@ -77,16 +78,18 @@ public class RemoteDatastoreHelper {
    * Creates a {@code RemoteStorageHelper} object.
    */
   public static RemoteDatastoreHelper create() {
+    HttpTransportOptions transportOptions = DatastoreOptions.getDefaultHttpTransportOptions();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+        .build();
     DatastoreOptions datastoreOption = DatastoreOptions.newBuilder()
         .setNamespace(UUID.randomUUID().toString())
-        .setRetrySettings(retryParams())
-        .setConnectTimeout(60000)
-        .setReadTimeout(60000)
+        .setRetrySettings(retrySettings())
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteDatastoreHelper(datastoreOption);
   }
 
-  private static RetrySettings retryParams() {
+  private static RetrySettings retrySettings() {
     return RetrySettings.newBuilder().setMaxAttempts(10)
         .setMaxRetryDelay(Duration.millis(30000L))
         .setTotalTimeout(Duration.millis(120000L))

@@ -37,15 +37,17 @@ import com.google.cloud.Page;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
-import com.google.cloud.bigquery.spi.BigQueryRpc;
-import com.google.cloud.bigquery.spi.BigQueryRpc.Tuple;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc.Tuple;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-
+import java.math.BigInteger;
+import java.util.List;
+import java.util.Map;
 import org.easymock.Capture;
 import org.easymock.EasyMock;
 import org.junit.After;
@@ -53,10 +55,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import java.math.BigInteger;
-import java.util.List;
-import java.util.Map;
 
 public class BigQueryImplTest {
 

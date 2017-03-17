@@ -109,6 +109,11 @@ public class LoadJobConfigurationTest {
     assertEquals("p", configuration.getDestinationTable().getProject());
   }
 
+  @Test
+  public void testGetType() {
+    assertEquals(JobConfiguration.Type.LOAD, LOAD_CONFIGURATION.getType());
+  }
+
   private void compareLoadJobConfiguration(LoadJobConfiguration expected,
       LoadJobConfiguration value) {
     assertEquals(expected, value);

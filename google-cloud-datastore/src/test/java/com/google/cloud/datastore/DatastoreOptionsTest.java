@@ -20,12 +20,15 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.datastore.spi.DatastoreRpc;
+import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 
 import org.easymock.EasyMock;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class DatastoreOptionsTest {
 
@@ -34,6 +37,9 @@ public class DatastoreOptionsTest {
   private DatastoreRpcFactory datastoreRpcFactory;
   private DatastoreRpc datastoreRpc;
   private DatastoreOptions.Builder options;
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -79,5 +85,11 @@ public class DatastoreOptionsTest {
     assertEquals(original.getHost(), copy.getHost());
     assertEquals(original.getRetrySettings(), copy.getRetrySettings());
     assertEquals(original.getCredentials(), copy.getCredentials());
+  }
+
+  @Test
+  public void testInvalidTransport() {
+    thrown.expect(IllegalArgumentException.class);
+    DatastoreOptions.newBuilder().setTransportOptions(GrpcTransportOptions.newBuilder().build());
   }
 }

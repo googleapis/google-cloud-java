@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.translate.Translate.LanguageListOption;
 import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 
 import org.junit.Test;
 

@@ -48,17 +48,6 @@ public class ImageIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    ImageId imageId = ImageId.of(PROJECT, NAME);
-    assertEquals(PROJECT, imageId.project());
-    assertEquals(NAME, imageId.image());
-    assertEquals(URL, imageId.selfLink());
-    imageId = ImageId.of(NAME);
-    assertNull(imageId.project());
-    assertEquals(NAME, imageId.image());
-  }
-
-  @Test
   public void testToAndFromUrl() {
     ImageId imageId = ImageId.of(PROJECT, NAME);
     compareImageId(imageId, ImageId.fromUrl(imageId.getSelfLink()));

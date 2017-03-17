@@ -182,8 +182,9 @@ public class ConfigClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource whose sinks are to be listed. Examples:
-   *     `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * @param parent Required. The parent resource whose sinks are to be listed:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListSinksPagedResponse listSinks(ParentNameOneof parent) {
@@ -285,9 +286,11 @@ public class ConfigClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param sinkName Required. The parent resource name of the sink:
+   * @param sinkName Required. The resource name of the sink:
    *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
    *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
@@ -362,6 +365,7 @@ public class ConfigClient implements AutoCloseable {
    *
    * @param parent Required. The resource in which to create the sink:
    *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
    * @param sink Required. The new sink, whose `name` parameter is a sink identifier that is not
    *     already in use.
@@ -452,6 +456,8 @@ public class ConfigClient implements AutoCloseable {
    *     resource and the sink identifier:
    *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
    *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * @param sink Required. The updated sink, whose name is the same identifier that appears as part
    *     of `sink_name`. If `sink_name` does not exist, then this method creates a new sink.
@@ -541,8 +547,9 @@ public class ConfigClient implements AutoCloseable {
    *     resource and the sink identifier:
    *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-   *     <p>It is an error if the sink does not exist. Example:
-   *     `"projects/my-project-id/sinks/my-sink-id"`. It is an error if the sink does not exist.
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteSink(SinkNameOneof sinkName) {

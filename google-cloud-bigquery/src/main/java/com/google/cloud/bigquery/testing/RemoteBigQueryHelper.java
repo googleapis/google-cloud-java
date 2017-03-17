@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.testing;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.HttpTransportOptions;
 import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
@@ -37,7 +38,8 @@ import org.joda.time.Duration;
  * {@link RetrySettings#getMaxRetryDelay()} is {@code 30000},
  * {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
  * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
- * {@link BigQueryOptions#getConnectTimeout()} and {@link BigQueryOptions#getReadTimeout()} are both
+ * {@link HttpTransportOptions#getConnectTimeout()} and
+ * {@link HttpTransportOptions#getReadTimeout()} are both
  * set to {@code 60000}.
  */
 public class RemoteBigQueryHelper {
@@ -89,12 +91,14 @@ public class RemoteBigQueryHelper {
   public static RemoteBigQueryHelper create(String projectId, InputStream keyStream)
       throws BigQueryHelperException {
     try {
+      HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
+      transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+          .build();
       BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
           .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
-          .setRetrySettings(retryParams())
-          .setConnectTimeout(60000)
-          .setReadTimeout(60000)
+          .setRetrySettings(retrySettings())
+          .setTransportOptions(transportOptions)
           .build();
       return new RemoteBigQueryHelper(bigqueryOptions);
     } catch (IOException ex) {
@@ -110,15 +114,17 @@ public class RemoteBigQueryHelper {
    * credentials.
    */
   public static RemoteBigQueryHelper create() {
+    HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+        .build();
     BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
-        .setRetrySettings(retryParams())
-        .setConnectTimeout(60000)
-        .setReadTimeout(60000)
+        .setRetrySettings(retrySettings())
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteBigQueryHelper(bigqueryOptions);
   }
 
-  private static RetrySettings retryParams() {
+  private static RetrySettings retrySettings() {
     return RetrySettings.newBuilder().setMaxAttempts(10)
         .setMaxRetryDelay(Duration.millis(30000L))
         .setTotalTimeout(Duration.millis(120000L))

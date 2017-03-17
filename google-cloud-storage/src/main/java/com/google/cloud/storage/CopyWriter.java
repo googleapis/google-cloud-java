@@ -21,9 +21,9 @@ import static com.google.cloud.RetryHelper.runWithRetries;
 import com.google.cloud.Restorable;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
-import com.google.cloud.storage.spi.StorageRpc;
-import com.google.cloud.storage.spi.StorageRpc.RewriteRequest;
-import com.google.cloud.storage.spi.StorageRpc.RewriteResponse;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc.RewriteRequest;
+import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
@@ -55,7 +55,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
   CopyWriter(StorageOptions serviceOptions, RewriteResponse rewriteResponse) {
     this.serviceOptions = serviceOptions;
     this.rewriteResponse = rewriteResponse;
-    this.storageRpc = serviceOptions.getRpc();
+    this.storageRpc = serviceOptions.getStorageRpcV1();
   }
 
   /**

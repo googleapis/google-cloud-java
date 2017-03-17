@@ -135,7 +135,7 @@ public class ServiceOptionsTest {
   }
 
   private interface TestServiceRpcFactory
-      extends ServiceRpcFactory<TestServiceRpc, TestServiceOptions> {}
+      extends ServiceRpcFactory<TestServiceOptions> {}
 
   private static class DefaultTestServiceRpcFactory implements TestServiceRpcFactory {
     private static final TestServiceRpcFactory INSTANCE = new DefaultTestServiceRpcFactory();
@@ -146,16 +146,16 @@ public class ServiceOptionsTest {
     }
   }
 
-  private interface TestServiceRpc {}
+  private interface TestServiceRpc extends ServiceRpc {}
 
   private static class DefaultTestServiceRpc implements TestServiceRpc {
     DefaultTestServiceRpc(TestServiceOptions options) {}
   }
 
   private static class TestServiceOptions
-      extends ServiceOptions<TestService, TestServiceRpc, TestServiceOptions> {
+      extends ServiceOptions<TestService, TestServiceOptions> {
     private static class Builder
-        extends ServiceOptions.Builder<TestService, TestServiceRpc, TestServiceOptions, Builder> {
+        extends ServiceOptions.Builder<TestService, TestServiceOptions, Builder> {
       private Builder() {}
 
       private Builder(TestServiceOptions options) {
@@ -169,17 +169,27 @@ public class ServiceOptionsTest {
     }
 
     private TestServiceOptions(Builder builder) {
-      super(TestServiceFactory.class, TestServiceRpcFactory.class, builder);
+      super(TestServiceFactory.class, TestServiceRpcFactory.class, builder,
+          new TestServiceDefaults());
     }
 
-    @Override
-    protected TestServiceFactory getDefaultServiceFactory() {
-      return DefaultTestServiceFactory.INSTANCE;
-    }
+    private static class TestServiceDefaults implements
+        ServiceDefaults<TestService, TestServiceOptions> {
 
-    @Override
-    protected TestServiceRpcFactory getDefaultRpcFactory() {
-      return DefaultTestServiceRpcFactory.INSTANCE;
+      @Override
+      public TestServiceFactory getDefaultServiceFactory() {
+        return DefaultTestServiceFactory.INSTANCE;
+      }
+
+      @Override
+      public TestServiceRpcFactory getDefaultRpcFactory() {
+        return DefaultTestServiceRpcFactory.INSTANCE;
+      }
+
+      @Override
+      public TransportOptions getDefaultTransportOptions() {
+        return HttpTransportOptions.newBuilder().build();
+      }
     }
 
     @Override
