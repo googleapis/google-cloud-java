@@ -14,16 +14,8 @@
  * limitations under the License.
  */
 
-package com.google.cloud.dns.spi;
+package com.google.cloud.dns.spi.v1;
 
-import static com.google.cloud.dns.spi.DnsRpc.ListResult.of;
-import static com.google.cloud.dns.spi.DnsRpc.Option.DNS_NAME;
-import static com.google.cloud.dns.spi.DnsRpc.Option.DNS_TYPE;
-import static com.google.cloud.dns.spi.DnsRpc.Option.FIELDS;
-import static com.google.cloud.dns.spi.DnsRpc.Option.NAME;
-import static com.google.cloud.dns.spi.DnsRpc.Option.PAGE_SIZE;
-import static com.google.cloud.dns.spi.DnsRpc.Option.PAGE_TOKEN;
-import static com.google.cloud.dns.spi.DnsRpc.Option.SORTING_ORDER;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.googleapis.batch.BatchRequest;
@@ -50,7 +42,7 @@ import java.util.Map;
 /**
  * A default implementation of the DnsRpc interface.
  */
-public class DefaultDnsRpc implements DnsRpc {
+public class HttpDnsRpc implements DnsRpc {
 
   private static final String SORT_BY = "changeSequence";
   private final Dns dns;
@@ -186,7 +178,7 @@ public class DefaultDnsRpc implements DnsRpc {
   /**
    * Constructs an instance of this rpc client with provided {@link DnsOptions}.
    */
-  public DefaultDnsRpc(DnsOptions options) {
+  public HttpDnsRpc(DnsOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
@@ -211,7 +203,7 @@ public class DefaultDnsRpc implements DnsRpc {
       throws IOException {
     return dns.managedZones()
         .create(this.options.getProjectId(), zone)
-        .setFields(FIELDS.getString(options));
+        .setFields(Option.FIELDS.getString(options));
   }
 
   @Override
@@ -232,7 +224,7 @@ public class DefaultDnsRpc implements DnsRpc {
       throws IOException {
     return dns.managedZones()
         .get(this.options.getProjectId(), zoneName)
-        .setFields(FIELDS.getString(options));
+        .setFields(Option.FIELDS.getString(options));
   }
 
   @Override
@@ -240,7 +232,7 @@ public class DefaultDnsRpc implements DnsRpc {
     // fields, page token, page size
     try {
       ManagedZonesListResponse zoneList = listZonesCall(options).execute();
-      return of(zoneList.getNextPageToken(), zoneList.getManagedZones());
+      return ListResult.of(zoneList.getNextPageToken(), zoneList.getManagedZones());
     } catch (IOException ex) {
       throw translate(ex, true);
     }
@@ -248,10 +240,10 @@ public class DefaultDnsRpc implements DnsRpc {
 
   private Dns.ManagedZones.List listZonesCall(Map<DnsRpc.Option, ?> options) throws IOException {
     return dns.managedZones().list(this.options.getProjectId())
-        .setFields(FIELDS.getString(options))
-        .setMaxResults(PAGE_SIZE.getInt(options))
-        .setDnsName(DNS_NAME.getString(options))
-        .setPageToken(PAGE_TOKEN.getString(options));
+        .setFields(Option.FIELDS.getString(options))
+        .setMaxResults(Option.PAGE_SIZE.getInt(options))
+        .setDnsName(Option.DNS_NAME.getString(options))
+        .setPageToken(Option.PAGE_TOKEN.getString(options));
   }
 
   @Override
@@ -277,7 +269,7 @@ public class DefaultDnsRpc implements DnsRpc {
       throws DnsException {
     try {
       ResourceRecordSetsListResponse response = listRecordSetsCall(zoneName, options).execute();
-      return of(response.getNextPageToken(), response.getRrsets());
+      return ListResult.of(response.getNextPageToken(), response.getRrsets());
     } catch (IOException ex) {
       throw translate(ex, true);
     }
@@ -288,11 +280,11 @@ public class DefaultDnsRpc implements DnsRpc {
     // options are fields, page token, dns name, type
     return dns.resourceRecordSets()
         .list(this.options.getProjectId(), zoneName)
-        .setFields(FIELDS.getString(options))
-        .setPageToken(PAGE_TOKEN.getString(options))
-        .setMaxResults(PAGE_SIZE.getInt(options))
-        .setName(NAME.getString(options))
-        .setType(DNS_TYPE.getString(options));
+        .setFields(Option.FIELDS.getString(options))
+        .setPageToken(Option.PAGE_TOKEN.getString(options))
+        .setMaxResults(Option.PAGE_SIZE.getInt(options))
+        .setName(Option.NAME.getString(options))
+        .setType(Option.DNS_TYPE.getString(options));
   }
 
   @Override
@@ -305,7 +297,7 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   private Dns.Projects.Get getProjectCall(Map<Option, ?> options) throws IOException {
-    return dns.projects().get(this.options.getProjectId()).setFields(FIELDS.getString(options));
+    return dns.projects().get(this.options.getProjectId()).setFields(Option.FIELDS.getString(options));
   }
 
   @Override
@@ -322,7 +314,7 @@ public class DefaultDnsRpc implements DnsRpc {
       Map<Option, ?> options) throws IOException {
     return dns.changes()
         .create(this.options.getProjectId(), zoneName, changeRequest)
-        .setFields(FIELDS.getString(options));
+        .setFields(Option.FIELDS.getString(options));
   }
 
   @Override
@@ -349,7 +341,7 @@ public class DefaultDnsRpc implements DnsRpc {
       Map<Option, ?> options) throws IOException {
     return dns.changes()
         .get(this.options.getProjectId(), zoneName, changeRequestId)
-        .setFields(FIELDS.getString(options));
+        .setFields(Option.FIELDS.getString(options));
   }
 
   @Override
@@ -357,7 +349,7 @@ public class DefaultDnsRpc implements DnsRpc {
       throws DnsException {
     try {
       ChangesListResponse response = listChangeRequestsCall(zoneName, options).execute();
-      return of(response.getNextPageToken(), response.getChanges());
+      return ListResult.of(response.getNextPageToken(), response.getChanges());
     } catch (IOException ex) {
       throw translate(ex, true);
     }
@@ -367,12 +359,12 @@ public class DefaultDnsRpc implements DnsRpc {
       throws IOException {
     // options are fields, page token, page size, sort order
     Dns.Changes.List request = dns.changes().list(this.options.getProjectId(), zoneName)
-        .setFields(FIELDS.getString(options))
-        .setMaxResults(PAGE_SIZE.getInt(options))
-        .setPageToken(PAGE_TOKEN.getString(options));
-    if (SORTING_ORDER.getString(options) != null) {
+        .setFields(Option.FIELDS.getString(options))
+        .setMaxResults(Option.PAGE_SIZE.getInt(options))
+        .setPageToken(Option.PAGE_TOKEN.getString(options));
+    if (Option.SORTING_ORDER.getString(options) != null) {
       // todo check and change if more sorting options are implemented, issue #604
-      request = request.setSortBy(SORT_BY).setSortOrder(SORTING_ORDER.getString(options));
+      request = request.setSortBy(SORT_BY).setSortOrder(Option.SORTING_ORDER.getString(options));
     }
     return request;
   }

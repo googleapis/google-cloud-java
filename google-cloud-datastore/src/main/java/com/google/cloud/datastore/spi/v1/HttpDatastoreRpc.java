@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.datastore.spi;
+package com.google.cloud.datastore.spi.v1;
 
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -38,11 +38,11 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URL;
 
-public class DefaultDatastoreRpc implements DatastoreRpc {
+public class HttpDatastoreRpc implements DatastoreRpc {
 
   private final com.google.datastore.v1.client.Datastore client;
 
-  public DefaultDatastoreRpc(DatastoreOptions options) {
+  public HttpDatastoreRpc(DatastoreOptions options) {
     HttpTransportOptions httpTransportOptions = (HttpTransportOptions) options
         .getTransportOptions();
     HttpTransport transport = httpTransportOptions.getHttpTransportFactory().create();

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.compute.spi;
+package com.google.cloud.compute.spi.v1;
 
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
@@ -75,12 +75,12 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.Map;
 
-public class DefaultComputeRpc implements ComputeRpc {
+public class HttpComputeRpc implements ComputeRpc {
 
   private final ComputeOptions options;
   private final Compute compute;
 
-  public DefaultComputeRpc(ComputeOptions options) {
+  public HttpComputeRpc(ComputeOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);

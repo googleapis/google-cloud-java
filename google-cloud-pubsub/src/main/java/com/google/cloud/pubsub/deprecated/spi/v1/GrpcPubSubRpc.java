@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub.deprecated.spi;
+package com.google.cloud.pubsub.deprecated.spi.v1;
 
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
@@ -70,7 +70,7 @@ import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import org.joda.time.Duration;
 
-public class DefaultPubSubRpc implements PubSubRpc {
+public class GrpcPubSubRpc implements PubSubRpc {
 
   private final PublisherClient publisherClient;
   private final SubscriberClient subscriberClient;
@@ -81,7 +81,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
 
   private boolean closed;
 
-  public DefaultPubSubRpc(PubSubOptions options) throws IOException {
+  public GrpcPubSubRpc(PubSubOptions options) throws IOException {
     GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
     executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();

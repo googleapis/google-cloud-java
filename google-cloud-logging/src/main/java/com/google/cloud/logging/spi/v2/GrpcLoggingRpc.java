@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.logging.spi;
+package com.google.cloud.logging.spi.v2;
 
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
@@ -31,12 +31,6 @@ import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.LoggingOptions;
-import com.google.cloud.logging.spi.v2.ConfigClient;
-import com.google.cloud.logging.spi.v2.ConfigSettings;
-import com.google.cloud.logging.spi.v2.LoggingClient;
-import com.google.cloud.logging.spi.v2.LoggingSettings;
-import com.google.cloud.logging.spi.v2.MetricsClient;
-import com.google.cloud.logging.spi.v2.MetricsSettings;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
@@ -69,7 +63,7 @@ import java.util.EnumSet;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 
-public class DefaultLoggingRpc implements LoggingRpc {
+public class GrpcLoggingRpc implements LoggingRpc {
 
   private final ConfigClient configClient;
   private final LoggingClient loggingClient;
@@ -80,7 +74,7 @@ public class DefaultLoggingRpc implements LoggingRpc {
 
   private boolean closed;
 
-  public DefaultLoggingRpc(LoggingOptions options) throws IOException {
+  public GrpcLoggingRpc(LoggingOptions options) throws IOException {
     GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
     executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();

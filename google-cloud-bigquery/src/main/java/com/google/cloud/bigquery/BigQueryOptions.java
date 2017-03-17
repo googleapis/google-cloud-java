@@ -18,18 +18,17 @@ package com.google.cloud.bigquery;
 
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
-import com.google.cloud.ServiceFactory;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.bigquery.spi.BigQueryRpc;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
-import com.google.cloud.bigquery.spi.DefaultBigQueryRpc;
-import com.google.cloud.spi.ServiceRpcFactory;
+import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQueryOptions> {
+public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   private static final String API_SHORT_NAME = "BigQuery";
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
@@ -51,13 +50,13 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
     private static final BigQueryRpcFactory INSTANCE = new DefaultBigQueryRpcFactory();
 
     @Override
-    public BigQueryRpc create(BigQueryOptions options) {
-      return new DefaultBigQueryRpc(options);
+    public ServiceRpc create(BigQueryOptions options) {
+      return new HttpBigQueryRpc(options);
     }
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<BigQuery, BigQueryRpc, BigQueryOptions, Builder> {
+      ServiceOptions.Builder<BigQuery, BigQueryOptions, Builder> {
 
     private Builder() {
     }
@@ -86,7 +85,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
   }
 
   private static class BigQueryDefaults implements
-      ServiceDefaults<BigQuery, BigQueryRpc, BigQueryOptions> {
+      ServiceDefaults<BigQuery, BigQueryOptions> {
 
     @Override
     public BigQueryFactory getDefaultServiceFactory() {
@@ -111,6 +110,10 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected BigQueryRpc getBigQueryRpcV2() {
+    return (BigQueryRpc) getRpc();
   }
 
   @SuppressWarnings("unchecked")

@@ -23,5 +23,5 @@ import com.google.cloud.spi.ServiceRpcFactory;
  * An interface for Compute RPC factory.
  * Implementation will be loaded via {@link java.util.ServiceLoader}.
  */
-public interface ComputeRpcFactory extends ServiceRpcFactory<ComputeRpc, ComputeOptions> {
+public interface ComputeRpcFactory extends ServiceRpcFactory<ComputeOptions> {
 }

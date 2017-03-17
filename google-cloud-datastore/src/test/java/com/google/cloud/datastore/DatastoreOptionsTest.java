@@ -21,7 +21,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.GrpcTransportOptions;
-import com.google.cloud.datastore.spi.DatastoreRpc;
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 
 import org.easymock.EasyMock;

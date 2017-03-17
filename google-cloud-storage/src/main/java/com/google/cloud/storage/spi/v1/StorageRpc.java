@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.cloud.storage.spi;
+package com.google.cloud.storage.spi.v1;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.storage.StorageException;
 
 import java.io.InputStream;
@@ -27,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public interface StorageRpc {
+public interface StorageRpc extends ServiceRpc {
 
   // These options are part of the Google Cloud storage header options
   enum Option {

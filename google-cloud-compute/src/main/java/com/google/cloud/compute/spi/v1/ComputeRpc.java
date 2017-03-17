@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.compute.spi;
+package com.google.cloud.compute.spi.v1;
 
 import com.google.api.services.compute.model.AccessConfig;
 import com.google.api.services.compute.model.Address;
@@ -35,11 +35,12 @@ import com.google.api.services.compute.model.Snapshot;
 import com.google.api.services.compute.model.Subnetwork;
 import com.google.api.services.compute.model.Tags;
 import com.google.api.services.compute.model.Zone;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.compute.ComputeException;
 
 import java.util.Map;
 
-public interface ComputeRpc {
+public interface ComputeRpc extends ServiceRpc {
 
   // These options are part of the Google Compute Engine query parameters
   enum Option {

@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-package com.google.cloud.translate.spi;
+package com.google.cloud.translate.spi.v2;
 
 import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.LanguagesResource;
 import com.google.api.services.translate.model.TranslationsResource;
 
+import com.google.cloud.ServiceRpc;
 import java.util.List;
 import java.util.Map;
 
-public interface TranslateRpc {
+public interface TranslateRpc extends ServiceRpc {
 
   enum Option {
     SOURCE_LANGUAGE("source"),

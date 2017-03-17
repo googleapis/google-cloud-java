@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.storage.spi;
+package com.google.cloud.storage.spi.v1;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.services.storage.model.StorageObject;

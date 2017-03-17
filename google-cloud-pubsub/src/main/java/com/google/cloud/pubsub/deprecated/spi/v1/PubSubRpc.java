@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub.deprecated.spi;
+package com.google.cloud.pubsub.deprecated.spi.v1;
 
 import com.google.api.gax.core.ApiFuture;
+import com.google.cloud.ServiceRpc;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
@@ -42,7 +43,7 @@ import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.Topic;
 
-public interface PubSubRpc extends AutoCloseable {
+public interface PubSubRpc extends AutoCloseable, ServiceRpc {
 
   /**
    * Sends a request to create a topic. This method returns a {@code ApiFuture} object to consume the

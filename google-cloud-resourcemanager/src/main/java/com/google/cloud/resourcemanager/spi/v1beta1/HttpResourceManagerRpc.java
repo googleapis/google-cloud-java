@@ -14,12 +14,8 @@
  * limitations under the License.
  */
 
-package com.google.cloud.resourcemanager.spi;
+package com.google.cloud.resourcemanager.spi.v1beta1;
 
-import static com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Option.FIELDS;
-import static com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Option.FILTER;
-import static com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Option.PAGE_SIZE;
-import static com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Option.PAGE_TOKEN;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static java.net.HttpURLConnection.HTTP_FORBIDDEN;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
@@ -45,11 +41,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class DefaultResourceManagerRpc implements ResourceManagerRpc {
+public class HttpResourceManagerRpc implements ResourceManagerRpc {
 
   private final Cloudresourcemanager resourceManager;
 
-  public DefaultResourceManagerRpc(ResourceManagerOptions options) {
+  public HttpResourceManagerRpc(ResourceManagerOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
@@ -87,7 +83,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
     try {
       return resourceManager.projects()
           .get(projectId)
-          .setFields(FIELDS.getString(options))
+          .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
       ResourceManagerException translated = translate(ex);
@@ -105,10 +101,10 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
     try {
       ListProjectsResponse response = resourceManager.projects()
           .list()
-          .setFields(FIELDS.getString(options))
-          .setFilter(FILTER.getString(options))
-          .setPageSize(PAGE_SIZE.getInt(options))
-          .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(Option.FIELDS.getString(options))
+          .setFilter(Option.FILTER.getString(options))
+          .setPageSize(Option.PAGE_SIZE.getInt(options))
+          .setPageToken(Option.PAGE_TOKEN.getString(options))
           .execute();
       return Tuple.<String, Iterable<Project>>of(
           response.getNextPageToken(), response.getProjects());

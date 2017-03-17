@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.bigquery.spi;
+package com.google.cloud.bigquery.spi.v2;
 
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
@@ -26,11 +26,12 @@ import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableRow;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.bigquery.BigQueryException;
 
 import java.util.Map;
 
-public interface BigQueryRpc {
+public interface BigQueryRpc extends ServiceRpc {
 
   // These options are part of the Google Cloud BigQuery query parameters
   enum Option {

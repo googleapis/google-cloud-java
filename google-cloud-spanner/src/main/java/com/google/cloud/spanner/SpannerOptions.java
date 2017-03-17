@@ -19,9 +19,10 @@ package com.google.cloud.spanner;
 import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.spanner.spi.DefaultSpannerRpc;
-import com.google.cloud.spanner.spi.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
@@ -36,11 +37,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.ScheduledExecutorService;
 import javax.net.ssl.SSLException;
 
 /** Options for the Cloud Spanner service. */
-public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerOptions> {
+public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final String API_SHORT_NAME = "Spanner";
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
   private static final Set<String> SCOPES =
@@ -49,7 +49,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
           "https://www.googleapis.com/auth/spanner.data");
   private static final int MAX_CHANNELS = 256;
   private static final RpcChannelFactory DEFAULT_RPC_CHANNEL_FACTORY =
-      new NettyRpcChannelFactory(DefaultSpannerRpc.API_CLIENT);
+      new NettyRpcChannelFactory(GrpcSpannerRpc.API_CLIENT);
 
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {
@@ -66,8 +66,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
     private static final DefaultSpannerRpcFactory INSTANCE = new DefaultSpannerRpcFactory();
 
     @Override
-    public SpannerRpc create(SpannerOptions options) {
-      return new DefaultSpannerRpc(options);
+    public ServiceRpc create(SpannerOptions options) {
+      return new GrpcSpannerRpc(options);
     }
   }
 
@@ -84,7 +84,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
     RpcChannelFactory defaultRpcChannelFactory =
         userAgent == null
             ? DEFAULT_RPC_CHANNEL_FACTORY
-            : new NettyRpcChannelFactory(userAgent + " " + DefaultSpannerRpc.API_CLIENT);
+            : new NettyRpcChannelFactory(userAgent + " " + GrpcSpannerRpc.API_CLIENT);
     rpcChannels =
         createChannels(
             getHost(),
@@ -100,7 +100,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
       extends ServiceOptions.Builder<
-      Spanner, SpannerRpc, SpannerOptions, SpannerOptions.Builder> {
+      Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
     private RpcChannelFactory rpcChannelFactory;
     /** By default, we create 4 channels per {@link SpannerOptions} */
@@ -288,7 +288,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
   }
 
   private static class SpannerDefaults implements
-      ServiceDefaults<Spanner, SpannerRpc, SpannerOptions> {
+      ServiceDefaults<Spanner, SpannerOptions> {
 
     @Override
     public SpannerFactory getDefaultServiceFactory() {
@@ -309,6 +309,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerRpc, SpannerO
   @Override
   public Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected SpannerRpc getSpannerRpcV1() {
+    return (SpannerRpc) getRpc();
   }
 
   @SuppressWarnings("unchecked")

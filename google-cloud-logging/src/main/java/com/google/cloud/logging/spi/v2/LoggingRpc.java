@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.cloud.logging.spi;
+package com.google.cloud.logging.spi.v2;
 
 import com.google.api.gax.core.ApiFuture;
+import com.google.cloud.ServiceRpc;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
@@ -40,7 +41,7 @@ import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
 
-public interface LoggingRpc extends AutoCloseable {
+public interface LoggingRpc extends AutoCloseable, ServiceRpc {
 
   /**
    * Sends a request to create a sink. This method returns a {@code ApiFuture} object to consume the

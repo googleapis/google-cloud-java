@@ -42,7 +42,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.ViewDefinition;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
-import com.google.cloud.bigquery.spi.BigQueryRpc.Tuple;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc.Tuple;
 import com.google.common.collect.ImmutableMap;
 
 import java.nio.channels.FileChannel;

@@ -17,13 +17,14 @@
 package com.google.cloud.spi;
 
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 
 /**
  * A base interface for all service RPC factories. Implementation must provide a public no-arg
  * constructor. Loading of a factory implementation is done via {@link java.util.ServiceLoader}.
  */
 @SuppressWarnings("rawtypes")
-public interface ServiceRpcFactory<ServiceRpcT, OptionsT extends ServiceOptions> {
+public interface ServiceRpcFactory<OptionsT extends ServiceOptions> {
 
-  ServiceRpcT create(OptionsT options);
+  ServiceRpc create(OptionsT options);
 }
