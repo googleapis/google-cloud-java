@@ -92,16 +92,6 @@ public interface LoadConfiguration {
      */
     Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues);
 
-
-    /**
-     * Sets which entity properties to load into BigQuery from a Cloud Datastore backup. This field
-     * is only used if the source format is set to {@code DATASTORE_BACKUP}. Property names are case
-     * sensitive and must be top-level properties. If no properties are specified, BigQuery loads
-     * all properties. If any named property isn't found in the Cloud Datastore backup, an invalid
-     * error is returned in the job result.
-     */
-    Builder setProjectionFields(List<String> projectionFields);
-
     LoadConfiguration build();
   }
 
@@ -166,13 +156,9 @@ public interface LoadConfiguration {
 
 
   /**
-   * Returns which entity properties to load into BigQuery from a Cloud Datastore backup. This field
-   * is only used if the source format is set to {@code DATASTORE_BACKUP}. Property names are case
-   * sensitive and must be top-level properties. If no properties are specified, BigQuery loads
-   * all properties. If any named property isn't found in the Cloud Datastore backup, an invalid
-   * error is returned in the job result.
+   * Returns additional options used to load from a Cloud datastore backup.
    */
-  List<String> getProjectionFields();
+  DatastoreBackupOptions getDatastoreBackupOptions();
 
   /**
    * Returns a builder for the load configuration object.
