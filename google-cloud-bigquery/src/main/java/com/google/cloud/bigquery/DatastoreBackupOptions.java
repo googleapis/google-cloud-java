@@ -24,28 +24,31 @@ import java.util.Objects;
  * Google BigQuery options for Cloud Datastore backup.
  */
 public final class DatastoreBackupOptions extends FormatOptions {
+
   private final List<String> projectionFields;
-  
+
+  private static final long serialVersionUID = -5302774763661451947L;
+
   public static final class Builder {
     private List<String> projectionFields;
-    
+
     private Builder() {}
 
     private Builder(DatastoreBackupOptions options) {
       projectionFields = options.projectionFields;
     }
-    
+
     /**
      * Sets which entity properties to load into BigQuery from a Cloud Datastore backup. Property
      * names are case sensitive and must be top-level properties.
      * If no properties are specified, BigQuery loads all properties. If any named property isn't
      * found in the Cloud Datastore backup, an invalid error is returned in the job result.
      */
-    Builder setProjectionFields(List<String> projectionFields) {
+    public Builder setProjectionFields(List<String> projectionFields) {
       this.projectionFields = projectionFields;
       return this;
     }
-    
+
     /**
      * Creates a {@code DatastoreBackupOptions} object.
      */
@@ -58,7 +61,7 @@ public final class DatastoreBackupOptions extends FormatOptions {
     super(FormatOptions.DATASTORE_BACKUP);
     this.projectionFields = builder.projectionFields;
   }
-  
+
   /**
    * Returns the value of which entity properties to load into BigQuery from a Cloud Datastore
    * backup.
@@ -80,7 +83,7 @@ public final class DatastoreBackupOptions extends FormatOptions {
   public static Builder newBuilder() {
     return new Builder();
   }
-  
+
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
