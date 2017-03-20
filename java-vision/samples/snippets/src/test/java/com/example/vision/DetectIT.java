@@ -18,7 +18,6 @@ package com.example.vision;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.vision.spi.v1.ImageAnnotatorClient;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,7 +41,7 @@ public class DetectIT {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
-    app = new Detect(ImageAnnotatorClient.create());
+    app = new Detect();
   }
 
   @After

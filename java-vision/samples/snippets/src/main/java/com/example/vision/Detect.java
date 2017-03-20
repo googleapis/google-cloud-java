@@ -71,7 +71,7 @@ public class Detect {
       out.printf(
           "\tjava %s \"<command>\" \"<path-to-image>\"\n"
               + "Commands:\n"
-              + "\tall-local | faces | labels | landmarks | logos | text | safe-search | properties"
+              + "\tfaces | labels | landmarks | logos | text | safe-search | properties"
               + "| web | crop \n"
               + "Path:\n\tA file path (ex: ./resources/wakeupcat.jpg) or a URI for a Cloud Storage "
               + "resource (gs://...)\n",
@@ -81,16 +81,8 @@ public class Detect {
     String command = args[0];
     String path = args.length > 1 ? args[1] : "";
 
-    Detect app = new Detect(ImageAnnotatorClient.create());
-    if (command.equals("all-local")) {
-      detectFaces("resources/face_no_surprise.jpg", out);
-      detectLabels("resources/wakeupcat.jpg", out);
-      detectLandmarks("resources/landmark.jpg", out);
-      detectLogos("resources/logos.png", out);
-      detectText("resources/text.jpg", out);
-      detectProperties("resources/landmark.jpg", out);
-      detectSafeSearch("resources/wakeupcat.jpg", out);
-    } else if (command.equals("faces")) {
+    Detect app = new Detect();
+    if (command.equals("faces")) {
       if (path.startsWith("gs://")) {
         detectFacesGcs(path, out);
       } else {
@@ -155,15 +147,12 @@ public class Detect {
     }
   }
 
-  private static ImageAnnotatorClient visionApi;
-
   /**
    * Constructs a {@link Detect} which connects to the Cloud Vision API.
    *
    * @param client The Vision API client.
    */
-  public Detect(ImageAnnotatorClient client) {
-    visionApi = client;
+  public Detect() {
   }
 
   /**
@@ -184,7 +173,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -271,7 +261,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -304,7 +295,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -315,7 +307,8 @@ public class Detect {
 
       // For full list of available annotations, see http://g.co/cloud/vision/docs
       for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
-        annotation.getAllFields().forEach((k, v) -> out.printf("%s : %s\n", k, v.toString()));
+        annotation.getAllFields().forEach((k, v) ->
+            out.printf("%s : %s\n", k, v.toString()));
       }
     }
   }
@@ -337,7 +330,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -371,7 +365,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -405,7 +400,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -440,7 +436,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -473,7 +470,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -507,7 +505,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -541,7 +540,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -576,7 +576,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -615,7 +616,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -655,7 +657,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -692,7 +695,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -730,7 +734,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -781,7 +786,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -833,7 +839,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -867,7 +874,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -902,7 +910,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
@@ -955,7 +964,8 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response = visionApi.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse response =
+        ImageAnnotatorClient.create().batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
 
     for (AnnotateImageResponse res : responses) {
