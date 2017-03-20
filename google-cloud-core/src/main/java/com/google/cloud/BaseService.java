@@ -16,7 +16,7 @@
 
 package com.google.cloud;
 
-import com.google.cloud.ExceptionHandler.Interceptor;
+import com.google.cloud.HttpExceptionRetryAlgorithm.Interceptor;
 
 /**
  * Base class for service objects.
@@ -26,35 +26,36 @@ import com.google.cloud.ExceptionHandler.Interceptor;
 public abstract class BaseService<OptionsT extends ServiceOptions<?, OptionsT>>
     implements Service<OptionsT> {
 
-  public static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
+  public static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR =
+      new Interceptor() {
 
-    private static final long serialVersionUID = -8429573486870467828L;
+        private static final long serialVersionUID = -8429573486870467828L;
 
-    @Override
-    public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-      return Interceptor.RetryResult.CONTINUE_EVALUATION;
-    }
+        @Override
+        public RetryResult afterEval(Exception exception, RetryResult retryResult) {
+          return Interceptor.RetryResult.CONTINUE_EVALUATION;
+        }
 
-    @Override
-    public RetryResult beforeEval(Exception exception) {
-      if (exception instanceof BaseServiceException) {
-        boolean retriable = ((BaseServiceException) exception).isRetryable();
-        return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
-      }
-      return Interceptor.RetryResult.CONTINUE_EVALUATION;
-    }
-  };
-  public static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.newBuilder()
-      .abortOn(RuntimeException.class)
-      .addInterceptors(EXCEPTION_HANDLER_INTERCEPTOR)
-      .build();
+        @Override
+        public RetryResult beforeEval(Exception exception) {
+          if (exception instanceof BaseServiceException) {
+            boolean retriable = ((BaseServiceException) exception).isRetryable();
+            return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
+          }
+          return Interceptor.RetryResult.CONTINUE_EVALUATION;
+        }
+      };
+  public static final HttpExceptionRetryAlgorithm EXCEPTION_HANDLER =
+      HttpExceptionRetryAlgorithm.newBuilder()
+          .abortOn(RuntimeException.class)
+          .addInterceptors(EXCEPTION_HANDLER_INTERCEPTOR)
+          .build();
 
   private final OptionsT options;
 
   protected BaseService(OptionsT options) {
     this.options = options;
   }
-
 
   @Override
   public OptionsT getOptions() {

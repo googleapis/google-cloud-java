@@ -33,13 +33,13 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 
 /**
- * Exception handling used by {@link RetryHelper}.
+ * Exception retry algorithm implementation used by {@link RetryHelper}.
  */
-public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializable {
+public final class HttpExceptionRetryAlgorithm implements ExceptionRetryAlgorithm, Serializable {
 
   private static final long serialVersionUID = -2460707015779532919L;
 
-  private static final ExceptionHandler DEFAULT_INSTANCE =
+  private static final HttpExceptionRetryAlgorithm DEFAULT_INSTANCE =
       newBuilder().retryOn(Exception.class).abortOn(RuntimeException.class).build();
 
   private final ImmutableList<Interceptor> interceptors;
@@ -76,7 +76,7 @@ public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializ
   }
 
   /**
-   * ExceptionHandler builder.
+   * HttpExceptionRetryAlgorithm builder.
    */
   public static class Builder {
 
@@ -132,10 +132,10 @@ public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializ
     }
 
     /**
-     * Returns a new ExceptionHandler instance.
+     * Returns a new HttpExceptionRetryAlgorithm instance.
      */
-    public ExceptionHandler build() {
-      return new ExceptionHandler(this);
+    public HttpExceptionRetryAlgorithm build() {
+      return new HttpExceptionRetryAlgorithm(this);
     }
   }
 
@@ -170,7 +170,7 @@ public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializ
     }
   }
 
-  private ExceptionHandler(Builder builder) {
+  private HttpExceptionRetryAlgorithm(Builder builder) {
     interceptors = builder.interceptors.build();
     retriableExceptions = builder.retriableExceptions.build();
     nonRetriableExceptions = builder.nonRetriableExceptions.build();
@@ -263,6 +263,8 @@ public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializ
   @Override
   public TimedAttemptSettings createNextAttempt(Throwable prevThrowable,
       TimedAttemptSettings prevSettings) {
+    // Return null to indicate that this implementaiton does not provide any specific attempt
+    // settings, so by default the TimedRetryAlgorithm options can be used instead.
     return null;
   }
 
@@ -276,10 +278,10 @@ public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializ
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof ExceptionHandler)) {
+    if (!(obj instanceof HttpExceptionRetryAlgorithm)) {
       return false;
     }
-    ExceptionHandler other = (ExceptionHandler) obj;
+    HttpExceptionRetryAlgorithm other = (HttpExceptionRetryAlgorithm) obj;
     return Objects.equals(interceptors, other.interceptors)
         && Objects.equals(retriableExceptions, other.retriableExceptions)
         && Objects.equals(nonRetriableExceptions, other.nonRetriableExceptions)
@@ -290,7 +292,7 @@ public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializ
   /**
    * Returns an instance which retry any checked exception and abort on any runtime exception.
    */
-  public static ExceptionHandler getDefaultInstance() {
+  public static HttpExceptionRetryAlgorithm getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 

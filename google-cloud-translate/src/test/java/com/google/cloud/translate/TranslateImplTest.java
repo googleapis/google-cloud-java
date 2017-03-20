@@ -100,7 +100,8 @@ public class TranslateImplTest {
   private TranslateRpc translateRpcMock;
   private Translate translate;
 
-  @Rule public ExpectedException thrown = ExpectedException.none();
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {

@@ -28,18 +28,19 @@ import java.util.concurrent.Callable;
 
 /**
  * Utility class for retrying operations. For more details about the parameters, see {@link
- * RetrySettings}.
+ * RetrySettings}. In case if retrying is unsuccessful, {@link RetryHelperException} will be
+ * thrown.
  */
 public class RetryHelper {
   public static <V> V runWithRetries(
       Callable<V> callable,
       RetrySettings retrySettings,
-      ExceptionHandler exceptionHandler,
+      HttpExceptionRetryAlgorithm exceptionRetryAlgorithm,
       ApiClock clock)
       throws RetryHelperException {
     try {
       RetryAlgorithm retryAlgorithm =
-          new RetryAlgorithm(exceptionHandler, new ExponentialRetryAlgorithm(retrySettings, clock));
+          new RetryAlgorithm(exceptionRetryAlgorithm, new ExponentialRetryAlgorithm(retrySettings, clock));
       RetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
 
       RetryingFuture<V> retryingFuture = executor.createFuture(callable);

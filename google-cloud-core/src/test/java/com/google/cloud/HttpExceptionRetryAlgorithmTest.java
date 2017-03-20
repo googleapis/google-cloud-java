@@ -20,8 +20,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.ExceptionHandler.Interceptor;
-import com.google.cloud.ExceptionHandler.Interceptor.RetryResult;
+import com.google.cloud.HttpExceptionRetryAlgorithm.Interceptor;
+import com.google.cloud.HttpExceptionRetryAlgorithm.Interceptor.RetryResult;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -34,9 +34,9 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Tests for {@link ExceptionHandler}.
+ * Tests for {@link HttpExceptionRetryAlgorithm}.
  */
-public class ExceptionHandlerTest {
+public class HttpExceptionRetryAlgorithmTest {
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -82,7 +82,7 @@ public class ExceptionHandlerTest {
     }
 
     // using default exception handler (retry upon any non-runtime exceptions)
-    ExceptionHandler handler = ExceptionHandler.getDefaultInstance();
+    HttpExceptionRetryAlgorithm handler = HttpExceptionRetryAlgorithm.getDefaultInstance();
     assertValidCallable(new A(), handler);
     assertValidCallable(new B(), handler);
     assertValidCallable(new C(), handler);
@@ -90,7 +90,7 @@ public class ExceptionHandlerTest {
     assertValidCallable(new E(), handler);
     assertInvalidCallable(new F(), handler);
 
-    handler = ExceptionHandler.newBuilder()
+    handler = HttpExceptionRetryAlgorithm.newBuilder()
         .retryOn(FileNotFoundException.class, NullPointerException.class)
         .build();
     assertInvalidCallable(new A(), handler);
@@ -101,11 +101,11 @@ public class ExceptionHandlerTest {
     assertInvalidCallable(new F(), handler);
   }
 
-  private static <T> void assertValidCallable(Callable<T> callable, ExceptionHandler handler) {
+  private static <T> void assertValidCallable(Callable<T> callable, HttpExceptionRetryAlgorithm handler) {
     handler.verifyCaller(callable);
   }
 
-  private static <T> void assertInvalidCallable(Callable<T> callable, ExceptionHandler handler) {
+  private static <T> void assertInvalidCallable(Callable<T> callable, HttpExceptionRetryAlgorithm handler) {
     try {
       handler.verifyCaller(callable);
       fail("Expected RetryHelper constructor to fail");
@@ -116,12 +116,12 @@ public class ExceptionHandlerTest {
 
   @Test
   public void testShouldTry() {
-    ExceptionHandler handler = ExceptionHandler.newBuilder().retryOn(IOException.class).build();
+    HttpExceptionRetryAlgorithm handler = HttpExceptionRetryAlgorithm.newBuilder().retryOn(IOException.class).build();
     assertTrue(handler.accept(new IOException()));
     assertTrue(handler.accept(new ClosedByInterruptException()));
     assertFalse(handler.accept(new RuntimeException()));
 
-    ExceptionHandler.Builder builder = ExceptionHandler.newBuilder()
+    HttpExceptionRetryAlgorithm.Builder builder = HttpExceptionRetryAlgorithm.newBuilder()
         .retryOn(IOException.class, NullPointerException.class)
         .abortOn(RuntimeException.class, ClosedByInterruptException.class,
             InterruptedException.class);
@@ -188,7 +188,7 @@ public class ExceptionHandlerTest {
 
     };
 
-    ExceptionHandler handler = ExceptionHandler.newBuilder().addInterceptors(interceptor).build();
+    HttpExceptionRetryAlgorithm handler = HttpExceptionRetryAlgorithm.newBuilder().addInterceptors(interceptor).build();
     thrown.expect(NullPointerException.class);
     handler.accept(new Exception());
   }
@@ -210,7 +210,7 @@ public class ExceptionHandlerTest {
 
     };
 
-    ExceptionHandler handler = ExceptionHandler.newBuilder().addInterceptors(interceptor).build();
+    HttpExceptionRetryAlgorithm handler = HttpExceptionRetryAlgorithm.newBuilder().addInterceptors(interceptor).build();
     thrown.expect(NullPointerException.class);
     handler.accept(new Exception());
   }
