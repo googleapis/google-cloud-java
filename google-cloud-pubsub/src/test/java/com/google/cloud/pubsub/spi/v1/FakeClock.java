@@ -16,12 +16,12 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.ApiClock;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 /** A Clock to help with testing time-based logic. */
-public class FakeClock implements NanoClock {
+public class FakeClock implements ApiClock {
 
   private final AtomicLong millis = new AtomicLong();
 

@@ -26,7 +26,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.ApiClock;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.Page;
@@ -261,8 +261,8 @@ public class StorageImplTest {
           + "EkPPhszldvQTY486uPxyD/D7HdfnGW/Nbw5JUhfvecAdudDEhNAQ3PNabyDMI+TpiHy4NTWOrgdcWrzj6VXcdc"
           + "+uuABnPwRCdcyJ1xl2kOrPksRnp1auNGMLOe4IpEBjGY7baX9UG8+A45MbG0aHmkR59Op/aR9XowIDAQAB";
 
-  private static final NanoClock TIME_SOURCE =
-      new NanoClock() {
+  private static final ApiClock TIME_SOURCE =
+      new ApiClock() {
         @Override
         public long nanoTime() {
           return 42_000_000_000L;

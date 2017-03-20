@@ -17,7 +17,7 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.FlowController;
-import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.ApiClock;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
@@ -75,7 +75,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
       Channel channel,
       FlowController flowController,
       ScheduledExecutorService executor,
-      NanoClock clock) {
+      ApiClock clock) {
     this.subscription = subscription;
     this.executor = executor;
     this.credentials = credentials;

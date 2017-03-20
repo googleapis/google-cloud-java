@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub.deprecated;
 
-import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.ApiClock;
 import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.common.base.MoreObjects;
@@ -50,7 +50,7 @@ class AckDeadlineRenewer implements AutoCloseable {
   private final PubSub pubsub;
   private final ScheduledExecutorService executor;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
-  private final NanoClock clock;
+  private final ApiClock clock;
   private final Queue<Message> messageQueue;
   private final Map<MessageId, Long> messageDeadlines;
   private final Object lock = new Object();

@@ -16,10 +16,10 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.core.CurrentMillisClock;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController;
-import com.google.api.gax.core.NanoClock;
-import com.google.api.gax.core.DefaultNanoClock;
+import com.google.api.gax.core.ApiClock;;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
@@ -267,7 +267,7 @@ public class Subscriber {
     private final MessageReceiver receiver;
     private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
     private final List<PollingSubscriberConnection> pollingSubscriberConnections;
-    private final NanoClock clock;
+    private final ApiClock clock;
     private final List<AutoCloseable> closeables = new ArrayList<>();
     private ScheduledFuture<?> ackDeadlineUpdater;
     private int streamAckDeadlineSeconds;
@@ -282,7 +282,7 @@ public class Subscriber {
           Math.max(
               INITIAL_ACK_DEADLINE_SECONDS,
               Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
-      clock = builder.clock.isPresent() ? builder.clock.get() : DefaultNanoClock.getDefaultClock();
+      clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
       flowController = new FlowController(builder.flowControlSettings);
 
@@ -537,7 +537,7 @@ public class Subscriber {
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
         Optional.absent();
-    Optional<NanoClock> clock = Optional.absent();
+    Optional<ApiClock> clock = Optional.absent();
 
     Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
@@ -598,7 +598,7 @@ public class Subscriber {
     }
 
     /** Gives the ability to set a custom clock. */
-    Builder setClock(NanoClock clock) {
+    Builder setClock(ApiClock clock) {
       this.clock = Optional.of(clock);
       return this;
     }

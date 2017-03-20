@@ -21,9 +21,9 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.CurrentMillisClock;
+import com.google.api.gax.core.ApiClock;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.core.SystemClock;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
@@ -96,7 +96,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private final RetrySettings retrySettings;
   private final String serviceRpcFactoryClassName;
   private final String serviceFactoryClassName;
-  private final NanoClock clock;
+  private final ApiClock clock;
   private final Credentials credentials;
   private final TransportOptions transportOptions;
 
@@ -122,7 +122,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     private RetrySettings retrySettings;
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<OptionsT> serviceRpcFactory;
-    private NanoClock clock;
+    private ApiClock clock;
     private TransportOptions transportOptions;
 
     protected Builder() {}
@@ -156,13 +156,13 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
 
 
     /**
-     * Sets the service's clock. The clock is mainly used for testing purpose. {@link NanoClock}
+     * Sets the service's clock. The clock is mainly used for testing purpose. {@link ApiClock}
      * will be replaced by Java8's {@code java.time.Clock}.
      *
      * @param clock the clock to set
      * @return the builder
      */
-    public B setClock(NanoClock clock) {
+    public B setClock(ApiClock clock) {
       this.clock = clock;
       return self();
     }
@@ -259,7 +259,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
         getFromServiceLoader(rpcFactoryClass, serviceDefaults.getDefaultRpcFactory()));
     serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
-    clock = firstNonNull(builder.clock, SystemClock.getDefaultClock());
+    clock = firstNonNull(builder.clock, CurrentMillisClock.getDefaultClock());
     transportOptions = firstNonNull(builder.transportOptions,
         serviceDefaults.getDefaultTransportOptions());
   }
@@ -511,7 +511,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
    * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
    * current time.
    */
-  public NanoClock getClock() {
+  public ApiClock getClock() {
     return clock;
   }
 

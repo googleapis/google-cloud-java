@@ -19,7 +19,7 @@ package com.google.cloud.dns;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.ApiClock;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ResourceRecordSet;
@@ -100,7 +100,7 @@ public class DnsImplTest {
 
   // Other
   private static final Map<DnsRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
-  private static final NanoClock TIME_SOURCE = new NanoClock() {
+  private static final ApiClock TIME_SOURCE = new ApiClock() {
     @Override
     public long nanoTime() {
       return 42_000_000_000L;

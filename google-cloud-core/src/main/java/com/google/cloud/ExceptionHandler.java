@@ -18,6 +18,8 @@ package com.google.cloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.gax.retrying.ExceptionRetryAlgorithm;
+import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -33,7 +35,7 @@ import java.util.concurrent.Callable;
 /**
  * Exception handling used by {@link RetryHelper}.
  */
-public final class ExceptionHandler implements Serializable {
+public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializable {
 
   private static final long serialVersionUID = -2460707015779532919L;
 
@@ -233,7 +235,12 @@ public final class ExceptionHandler implements Serializable {
     }
   }
 
-  boolean shouldRetry(Exception ex) {
+  @Override
+  public boolean accept(Throwable prevThrowable) {
+    if(!(prevThrowable instanceof Exception)) {
+      return false;
+    }
+    Exception ex = (Exception) prevThrowable;
     for (Interceptor interceptor : interceptors) {
       Interceptor.RetryResult retryResult = checkNotNull(interceptor.beforeEval(ex));
       if (retryResult != Interceptor.RetryResult.CONTINUE_EVALUATION) {
@@ -251,6 +258,12 @@ public final class ExceptionHandler implements Serializable {
       }
     }
     return retryResult == Interceptor.RetryResult.RETRY;
+  }
+
+  @Override
+  public TimedAttemptSettings createNextAttempt(Throwable prevThrowable,
+      TimedAttemptSettings prevSettings) {
+    return null;
   }
 
   @Override

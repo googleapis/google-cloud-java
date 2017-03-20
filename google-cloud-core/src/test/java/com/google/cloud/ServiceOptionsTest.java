@@ -22,8 +22,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.api.gax.core.NanoClock;
-import com.google.api.gax.core.SystemClock;
+import com.google.api.gax.core.ApiClock;
+import com.google.api.gax.core.CurrentMillisClock;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 
@@ -76,7 +76,7 @@ public class ServiceOptionsTest {
     }
   }
 
-  private static final NanoClock TEST_CLOCK = new TestClock();
+  private static final ApiClock TEST_CLOCK = new TestClock();
   private static final TestServiceOptions OPTIONS =
       TestServiceOptions.newBuilder()
           .setCredentials(credentials)
@@ -102,7 +102,7 @@ public class ServiceOptionsTest {
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
-  private static class TestClock implements NanoClock {
+  private static class TestClock implements ApiClock {
     @Override
     public long nanoTime() {
       return 123_456_789_000_000L;
@@ -225,7 +225,7 @@ public class ServiceOptionsTest {
     assertEquals("project-id", OPTIONS.getProjectId());
     assertSame(ServiceOptions.getNoRetrySettings(),
         OPTIONS.getRetrySettings());
-    assertSame(SystemClock.getDefaultClock(), DEFAULT_OPTIONS.getClock());
+    assertSame(CurrentMillisClock.getDefaultClock(), DEFAULT_OPTIONS.getClock());
     assertEquals("https://www.googleapis.com", DEFAULT_OPTIONS.getHost());
     assertSame(ServiceOptions.getDefaultRetrySettings(), DEFAULT_OPTIONS.getRetrySettings());
   }

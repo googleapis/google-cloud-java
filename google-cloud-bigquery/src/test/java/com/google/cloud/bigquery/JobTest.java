@@ -27,8 +27,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.core.NanoClock;
-import com.google.api.gax.core.SystemClock;
+import com.google.api.gax.core.ApiClock;
+import com.google.api.gax.core.CurrentMillisClock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 
@@ -197,7 +197,7 @@ public class JobTest {
     JobStatus status = createStrictMock(JobStatus.class);
     expect(status.getState()).andReturn(JobStatus.State.DONE);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(SystemClock.getDefaultClock());
+    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     Job completedJob = expectedJob.toBuilder().setStatus(status).build();
     expect(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).andReturn(completedJob);
     expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(completedJob);
@@ -212,7 +212,7 @@ public class JobTest {
     initializeExpectedJob(1);
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(SystemClock.getDefaultClock());
+    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     expect(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).andReturn(null);
     expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(null);
     replay(bigquery, mockOptions);
@@ -232,7 +232,7 @@ public class JobTest {
     expect(status.getState()).andReturn(JobStatus.State.RUNNING);
     expect(status.getState()).andReturn(JobStatus.State.DONE);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(SystemClock.getDefaultClock());
+    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     Job runningJob = expectedJob.toBuilder().setStatus(status).build();
     Job completedJob = expectedJob.toBuilder().setStatus(status).build();
     expect(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).andReturn(runningJob);
@@ -252,7 +252,7 @@ public class JobTest {
     timeUnit.sleep(42);
     EasyMock.expectLastCall();
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(SystemClock.getDefaultClock());
+    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     Job runningJob =
         expectedJob.toBuilder().setStatus(new JobStatus(JobStatus.State.RUNNING)).build();
     expect(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).andReturn(runningJob);
@@ -271,7 +271,7 @@ public class JobTest {
     TimeUnit timeUnit = createStrictMock(TimeUnit.class);
     timeUnit.sleep(1);
     EasyMock.expectLastCall();
-    NanoClock clock = createStrictMock(NanoClock.class);
+    ApiClock clock = createStrictMock(ApiClock.class);
     expect(clock.millisTime()).andReturn(0L);
     expect(clock.millisTime()).andReturn(1L);
     expect(clock.millisTime()).andReturn(3L);

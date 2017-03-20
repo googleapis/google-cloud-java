@@ -16,54 +16,43 @@
 
 package com.google.cloud;
 
-import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.ApiClock;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.retrying.DirectRetryHandler;
-import com.google.api.gax.retrying.RetryAttemptSettings;
-import com.google.api.gax.retrying.RetryFuture;
 
+import com.google.api.gax.retrying.DirectRetryingExecutor;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
+import com.google.api.gax.retrying.RetryAlgorithm;
+import com.google.api.gax.retrying.RetryingExecutor;
+import com.google.api.gax.retrying.RetryingFuture;
 import java.util.concurrent.Callable;
 
 /**
  * Utility class for retrying operations. For more details about the parameters, see {@link
  * RetrySettings}.
- *
  */
 public class RetryHelper {
   public static <V> V runWithRetries(
       Callable<V> callable,
       RetrySettings retrySettings,
       ExceptionHandler exceptionHandler,
-      NanoClock clock)
+      ApiClock clock)
       throws RetryHelperException {
     try {
-      RetryHandler<V> retryHandler = new RetryHandler<>(clock, exceptionHandler);
-      RetryFuture<V> retryFuture = retryHandler.createFirstAttempt(callable, retrySettings);
-      retryFuture.setAttemptFuture(
-          retryHandler.executeAttempt(callable, retryFuture.getAttemptSettings()));
-      return retryFuture.get();
+      RetryAlgorithm retryAlgorithm =
+          new RetryAlgorithm(exceptionHandler, new ExponentialRetryAlgorithm(retrySettings, clock));
+      RetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
+
+      RetryingFuture<V> retryingFuture = executor.createFuture(callable);
+      executor.submit(retryingFuture);
+
+      return retryingFuture.get();
     } catch (Exception e) {
       throw new RetryHelperException(e.getCause());
     }
   }
 
-  private static class RetryHandler<V> extends DirectRetryHandler<V> {
-    private final ExceptionHandler exceptionHandler;
-
-    private RetryHandler(NanoClock clock, ExceptionHandler exceptionHandler) {
-      super(clock);
-      this.exceptionHandler = exceptionHandler;
-    }
-
-    @Override
-    public boolean accept(Throwable e, RetryAttemptSettings nextAttemptSettings) {
-      return super.accept(e, nextAttemptSettings)
-          && (e instanceof Exception)
-          && exceptionHandler.shouldRetry((Exception) e);
-    }
-  }
-
   public static class RetryHelperException extends RuntimeException {
+
     private static final long serialVersionUID = -8519852520090965314L;
 
     RetryHelperException(Throwable cause) {

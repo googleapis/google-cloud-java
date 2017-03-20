@@ -17,7 +17,7 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.FlowController;
-import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.ApiClock;
 import com.google.api.stats.Distribution;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
@@ -58,7 +58,7 @@ class MessageDispatcher {
   private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
   private final ScheduledExecutorService executor;
-  private final NanoClock clock;
+  private final ApiClock clock;
 
   private final Duration ackExpirationPadding;
   private final MessageReceiver receiver;
@@ -220,7 +220,7 @@ class MessageDispatcher {
       Distribution ackLatencyDistribution,
       FlowController flowController,
       ScheduledExecutorService executor,
-      NanoClock clock) {
+      ApiClock clock) {
     this.executor = executor;
     this.ackExpirationPadding = ackExpirationPadding;
     this.receiver = receiver;

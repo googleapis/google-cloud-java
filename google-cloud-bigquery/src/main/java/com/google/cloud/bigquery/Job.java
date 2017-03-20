@@ -18,7 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.ApiClock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.WaitForOption.CheckingPeriod;
 import com.google.cloud.WaitForOption.Timeout;
@@ -209,7 +209,7 @@ public class Job extends JobInfo {
     Timeout timeout = Timeout.getOrDefault(waitOptions);
     CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
     long timeoutMillis = timeout.getTimeoutMillis();
-    NanoClock clock = options.getClock();
+    ApiClock clock = options.getClock();
     long startTime = clock.millisTime();
     while (!isDone()) {
       if (timeoutMillis  != -1 && (clock.millisTime() - startTime)  >= timeoutMillis) {

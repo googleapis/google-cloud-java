@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.NanoClock;
+import com.google.api.gax.core.ApiClock;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.SettableFuture;
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   private final PriorityQueue<PendingCallable<?>> pendingCallables = new PriorityQueue<>();
   private final FakeClock clock = new FakeClock();
 
-  public NanoClock getClock() {
+  public ApiClock getClock() {
     return clock;
   }
 
