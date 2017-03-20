@@ -19,16 +19,17 @@ package com.google.cloud.resourcemanager;
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.resourcemanager.spi.DefaultResourceManagerRpc;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.HttpResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
 public class ResourceManagerOptions
-    extends ServiceOptions<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
+    extends ServiceOptions<ResourceManager, ResourceManagerOptions> {
 
   private static final long serialVersionUID = 624147474447836183L;
   private static final String API_SHORT_NAME = "ResourceManager";
@@ -58,8 +59,8 @@ public class ResourceManagerOptions
         new DefaultResourceManagerRpcFactory();
 
     @Override
-    public ResourceManagerRpc create(ResourceManagerOptions options) {
-      return new DefaultResourceManagerRpc(options);
+    public ServiceRpc create(ResourceManagerOptions options) {
+      return new HttpResourceManagerRpc(options);
     }
   }
 
@@ -69,7 +70,7 @@ public class ResourceManagerOptions
   }
 
   public static class Builder extends ServiceOptions.Builder<ResourceManager,
-      ResourceManagerRpc, ResourceManagerOptions, Builder> {
+      ResourceManagerOptions, Builder> {
 
     private Builder() {}
 
@@ -103,7 +104,7 @@ public class ResourceManagerOptions
   }
 
   private static class ResourceManagerDefaults implements
-      ServiceDefaults<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
+      ServiceDefaults<ResourceManager, ResourceManagerOptions> {
 
     @Override
     public ResourceManagerFactory getDefaultServiceFactory() {
@@ -128,6 +129,10 @@ public class ResourceManagerOptions
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected ResourceManagerRpc getResourceManagerRpcV1Beta1() {
+    return (ResourceManagerRpc) getRpc();
   }
 
   @Override

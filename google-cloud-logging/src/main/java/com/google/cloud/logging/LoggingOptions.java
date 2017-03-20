@@ -19,16 +19,17 @@ package com.google.cloud.logging;
 import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.logging.spi.DefaultLoggingRpc;
-import com.google.cloud.logging.spi.LoggingRpc;
+import com.google.cloud.logging.spi.v2.GrpcLoggingRpc;
+import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.cloud.logging.spi.LoggingRpcFactory;
 import com.google.cloud.logging.spi.v2.LoggingSettings;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.Set;
 
-public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingOptions> {
+public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
 
   private static final String API_SHORT_NAME = "Logging";
   private static final String LOGGING_SCOPE = "https://www.googleapis.com/auth/logging.admin";
@@ -58,9 +59,9 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingO
     private static final LoggingRpcFactory INSTANCE = new DefaultLoggingRpcFactory();
 
     @Override
-    public LoggingRpc create(LoggingOptions options) {
+    public ServiceRpc create(LoggingOptions options) {
       try {
-        return new DefaultLoggingRpc(options);
+        return new GrpcLoggingRpc(options);
       } catch (IOException e) {
         throw new LoggingException(e, true);
       }
@@ -73,7 +74,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingO
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<Logging, LoggingRpc, LoggingOptions, Builder> {
+      ServiceOptions.Builder<Logging, LoggingOptions, Builder> {
 
     private Builder() {}
 
@@ -101,7 +102,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingO
   }
 
   private static class LoggingDefaults implements
-      ServiceDefaults<Logging, LoggingRpc, LoggingOptions> {
+      ServiceDefaults<Logging, LoggingOptions> {
 
     @Override
     public LoggingFactory getDefaultServiceFactory() {
@@ -126,6 +127,10 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingRpc, LoggingO
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected LoggingRpc getLoggingRpcV2() {
+    return (LoggingRpc) getRpc();
   }
 
   @Override

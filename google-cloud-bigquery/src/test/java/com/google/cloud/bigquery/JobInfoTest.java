@@ -132,7 +132,6 @@ public class JobInfoTest {
           .setFormatOptions(CSV_OPTIONS)
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .setMaxBadRecords(MAX_BAD_RECORDS)
-          .setProjectionFields(PROJECTION_FIELDS)
           .setSchema(TABLE_SCHEMA)
           .build();
   private static final String QUERY = "BigQuery SQL";

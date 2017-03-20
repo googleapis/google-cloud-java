@@ -22,10 +22,11 @@ import static com.google.common.base.Preconditions.checkArgument;
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.spi.DefaultTranslateRpc;
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.HttpTranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
@@ -35,7 +36,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public class TranslateOptions extends
-    ServiceOptions<Translate, TranslateRpc, TranslateOptions> {
+    ServiceOptions<Translate, TranslateOptions> {
 
   private static final long serialVersionUID = -572597134540398216L;
   private static final String API_SHORT_NAME = "Translate";
@@ -62,13 +63,13 @@ public class TranslateOptions extends
     private static final TranslateRpcFactory INSTANCE = new DefaultTranslateRpcFactory();
 
     @Override
-    public TranslateRpc create(TranslateOptions options) {
-      return new DefaultTranslateRpc(options);
+    public ServiceRpc create(TranslateOptions options) {
+      return new HttpTranslateRpc(options);
     }
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<Translate, TranslateRpc, TranslateOptions, Builder> {
+      ServiceOptions.Builder<Translate, TranslateOptions, Builder> {
 
     private String apiKey;
     private String targetLanguage;
@@ -140,7 +141,7 @@ public class TranslateOptions extends
   }
 
   private static class TranslateDefaults implements
-      ServiceDefaults<Translate, TranslateRpc, TranslateOptions> {
+      ServiceDefaults<Translate, TranslateOptions> {
 
     @Override
     public TranslateFactory getDefaultServiceFactory() {
@@ -170,6 +171,10 @@ public class TranslateOptions extends
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected TranslateRpc getTranslateRpcV2() {
+    return (TranslateRpc) getRpc();
   }
 
   @Override

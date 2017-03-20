@@ -22,7 +22,7 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.Restorable;
 import com.google.cloud.storage.Acl.Project.ProjectRole;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableMap;
 
 import java.io.Serializable;

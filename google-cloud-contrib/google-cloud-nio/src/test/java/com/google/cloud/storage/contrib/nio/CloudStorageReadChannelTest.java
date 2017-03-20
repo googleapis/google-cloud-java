@@ -30,6 +30,7 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 
+import com.google.cloud.storage.StorageException;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -63,7 +64,7 @@ public class CloudStorageReadChannelTest {
     when(gcsStorage.get(file)).thenReturn(metadata);
     when(gcsStorage.reader(eq(file))).thenReturn(gcsChannel);
     when(gcsChannel.isOpen()).thenReturn(true);
-    chan = CloudStorageReadChannel.create(gcsStorage, file, 0);
+    chan = CloudStorageReadChannel.create(gcsStorage, file, 0, 1);
     verify(gcsStorage).get(eq(file));
     verify(gcsStorage).reader(eq(file));
   }
@@ -77,6 +78,30 @@ public class CloudStorageReadChannelTest {
     assertThat(chan.position()).isEqualTo(1L);
     verify(gcsChannel).read(any(ByteBuffer.class));
     verify(gcsChannel, times(3)).isOpen();
+  }
+
+  @Test
+  public void testReadRetry() throws IOException {
+    ByteBuffer buffer = ByteBuffer.allocate(1);
+    when(gcsChannel.read(eq(buffer)))
+        .thenThrow(new StorageException(new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040")))
+        .thenReturn(1);
+    assertThat(chan.position()).isEqualTo(0L);
+    assertThat(chan.read(buffer)).isEqualTo(1);
+    assertThat(chan.position()).isEqualTo(1L);
+    verify(gcsChannel, times(2)).read(any(ByteBuffer.class));
+  }
+
+  @Test
+  public void testReadRetryEventuallyGivesUp() throws IOException {
+    ByteBuffer buffer = ByteBuffer.allocate(1);
+    when(gcsChannel.read(eq(buffer)))
+        .thenThrow(new StorageException(new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040")))
+        .thenThrow(new StorageException(new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040")))
+        .thenReturn(1);
+    assertThat(chan.position()).isEqualTo(0L);
+    thrown.expect(StorageException.class);
+    chan.read(buffer);
   }
 
   @Test

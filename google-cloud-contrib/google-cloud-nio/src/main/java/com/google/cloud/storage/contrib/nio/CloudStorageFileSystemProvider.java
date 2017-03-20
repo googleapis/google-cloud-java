@@ -141,7 +141,6 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   CloudStorageFileSystemProvider(@Nullable StorageOptions gcsStorageOptions) {
     this.storageOptions = gcsStorageOptions;
-
   }
 
   // Initialize this.storage, once. This may throw an exception if default authentication
@@ -234,6 +233,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   private SeekableByteChannel newReadChannel(Path path, Set<? extends OpenOption> options)
       throws IOException {
     initStorage();
+    int maxChannelReopens = ((CloudStorageFileSystem) path.getFileSystem()).config().maxChannelReopens();
     for (OpenOption option : options) {
       if (option instanceof StandardOpenOption) {
         switch ((StandardOpenOption) option) {
@@ -255,6 +255,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           default:
             throw new UnsupportedOperationException(option.toString());
         }
+      } else if (option instanceof OptionMaxChannelReopens) {
+        maxChannelReopens = ((OptionMaxChannelReopens) option).maxChannelReopens();
       } else {
         throw new UnsupportedOperationException(option.toString());
       }
@@ -263,7 +265,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
-    return CloudStorageReadChannel.create(storage, cloudPath.getBlobId(), 0);
+    return CloudStorageReadChannel.create(storage, cloudPath.getBlobId(), 0, maxChannelReopens);
   }
 
   private SeekableByteChannel newWriteChannel(Path path, Set<? extends OpenOption> options)

@@ -127,7 +127,7 @@ public class ServiceOptionsTest {
   }
 
   private interface TestServiceRpcFactory
-      extends ServiceRpcFactory<TestServiceRpc, TestServiceOptions> {}
+      extends ServiceRpcFactory<TestServiceOptions> {}
 
   private static class DefaultTestServiceRpcFactory implements TestServiceRpcFactory {
     private static final TestServiceRpcFactory INSTANCE = new DefaultTestServiceRpcFactory();
@@ -138,16 +138,16 @@ public class ServiceOptionsTest {
     }
   }
 
-  private interface TestServiceRpc {}
+  private interface TestServiceRpc extends ServiceRpc {}
 
   private static class DefaultTestServiceRpc implements TestServiceRpc {
     DefaultTestServiceRpc(TestServiceOptions options) {}
   }
 
   private static class TestServiceOptions
-      extends ServiceOptions<TestService, TestServiceRpc, TestServiceOptions> {
+      extends ServiceOptions<TestService, TestServiceOptions> {
     private static class Builder
-        extends ServiceOptions.Builder<TestService, TestServiceRpc, TestServiceOptions, Builder> {
+        extends ServiceOptions.Builder<TestService, TestServiceOptions, Builder> {
       private Builder() {}
 
       private Builder(TestServiceOptions options) {
@@ -166,7 +166,7 @@ public class ServiceOptionsTest {
     }
 
     private static class TestServiceDefaults implements
-        ServiceDefaults<TestService, TestServiceRpc, TestServiceOptions> {
+        ServiceDefaults<TestService, TestServiceOptions> {
 
       @Override
       public TestServiceFactory getDefaultServiceFactory() {

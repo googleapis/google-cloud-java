@@ -21,7 +21,7 @@ import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.RetryParams;
 import com.google.cloud.datastore.ReadOption.EventualConsistency;
-import com.google.cloud.datastore.spi.DatastoreRpc;
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
@@ -49,7 +49,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
-    this.datastoreRpc = options.getRpc();
+    this.datastoreRpc = options.getDatastoreRpcV1();
     retryParams = MoreObjects.firstNonNull(options.getRetryParams(), RetryParams.noRetries());
   }
 

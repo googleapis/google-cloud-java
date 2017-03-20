@@ -20,7 +20,7 @@ import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.spanner.spi.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;

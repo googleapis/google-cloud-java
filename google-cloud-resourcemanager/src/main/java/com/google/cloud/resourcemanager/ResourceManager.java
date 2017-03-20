@@ -21,7 +21,7 @@ import com.google.cloud.FieldSelector.Helper;
 import com.google.cloud.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.Service;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.common.collect.ImmutableList;
 
 import java.util.List;
