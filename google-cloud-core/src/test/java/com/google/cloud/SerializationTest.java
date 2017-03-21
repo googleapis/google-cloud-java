@@ -29,8 +29,7 @@ public class SerializationTest extends BaseSerializationTest {
 
   private static final BaseServiceException BASE_SERVICE_EXCEPTION =
       new BaseServiceException(42, "message", "reason", true);
-  private static final HttpExceptionRetryAlgorithm EXCEPTION_HANDLER =
-      HttpExceptionRetryAlgorithm.getDefaultInstance();
+  private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.getDefaultInstance();
   private static final Identity IDENTITY = Identity.allAuthenticatedUsers();
   private static final PageImpl<String> PAGE =
       new PageImpl<>(null, "cursor", ImmutableList.of("string1", "string2"));

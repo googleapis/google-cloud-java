@@ -35,7 +35,7 @@ public class RetryHelper {
   public static <V> V runWithRetries(
       Callable<V> callable,
       RetrySettings retrySettings,
-      HttpExceptionRetryAlgorithm exceptionRetryAlgorithm,
+      ExceptionHandler exceptionRetryAlgorithm,
       ApiClock clock)
       throws RetryHelperException {
     try {

@@ -35,11 +35,11 @@ import java.util.concurrent.Callable;
 /**
  * Exception retry algorithm implementation used by {@link RetryHelper}.
  */
-public final class HttpExceptionRetryAlgorithm implements ExceptionRetryAlgorithm, Serializable {
+public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializable {
 
   private static final long serialVersionUID = -2460707015779532919L;
 
-  private static final HttpExceptionRetryAlgorithm DEFAULT_INSTANCE =
+  private static final ExceptionHandler DEFAULT_INSTANCE =
       newBuilder().retryOn(Exception.class).abortOn(RuntimeException.class).build();
 
   private final ImmutableList<Interceptor> interceptors;
@@ -76,7 +76,7 @@ public final class HttpExceptionRetryAlgorithm implements ExceptionRetryAlgorith
   }
 
   /**
-   * HttpExceptionRetryAlgorithm builder.
+   * ExceptionHandler builder.
    */
   public static class Builder {
 
@@ -132,10 +132,10 @@ public final class HttpExceptionRetryAlgorithm implements ExceptionRetryAlgorith
     }
 
     /**
-     * Returns a new HttpExceptionRetryAlgorithm instance.
+     * Returns a new ExceptionHandler instance.
      */
-    public HttpExceptionRetryAlgorithm build() {
-      return new HttpExceptionRetryAlgorithm(this);
+    public ExceptionHandler build() {
+      return new ExceptionHandler(this);
     }
   }
 
@@ -170,7 +170,7 @@ public final class HttpExceptionRetryAlgorithm implements ExceptionRetryAlgorith
     }
   }
 
-  private HttpExceptionRetryAlgorithm(Builder builder) {
+  private ExceptionHandler(Builder builder) {
     interceptors = builder.interceptors.build();
     retriableExceptions = builder.retriableExceptions.build();
     nonRetriableExceptions = builder.nonRetriableExceptions.build();
@@ -278,10 +278,10 @@ public final class HttpExceptionRetryAlgorithm implements ExceptionRetryAlgorith
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof HttpExceptionRetryAlgorithm)) {
+    if (!(obj instanceof ExceptionHandler)) {
       return false;
     }
-    HttpExceptionRetryAlgorithm other = (HttpExceptionRetryAlgorithm) obj;
+    ExceptionHandler other = (ExceptionHandler) obj;
     return Objects.equals(interceptors, other.interceptors)
         && Objects.equals(retriableExceptions, other.retriableExceptions)
         && Objects.equals(nonRetriableExceptions, other.nonRetriableExceptions)
@@ -292,7 +292,7 @@ public final class HttpExceptionRetryAlgorithm implements ExceptionRetryAlgorith
   /**
    * Returns an instance which retry any checked exception and abort on any runtime exception.
    */
-  public static HttpExceptionRetryAlgorithm getDefaultInstance() {
+  public static ExceptionHandler getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
