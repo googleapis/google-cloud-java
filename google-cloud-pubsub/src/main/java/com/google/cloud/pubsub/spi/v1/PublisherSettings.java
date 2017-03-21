@@ -18,15 +18,15 @@ package com.google.cloud.pubsub.spi.v1;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
-import com.google.api.gax.bundling.BundlingSettings;
-import com.google.api.gax.bundling.RequestBuilder;
+import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.BundledRequestIssuer;
-import com.google.api.gax.grpc.BundlingCallSettings;
-import com.google.api.gax.grpc.BundlingDescriptor;
+import com.google.api.gax.grpc.BatchedRequestIssuer;
+import com.google.api.gax.grpc.BatchingCallSettings;
+import com.google.api.gax.grpc.BatchingDescriptor;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ClientSettings;
@@ -116,7 +116,7 @@ public class PublisherSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_VERSION = "";
 
   private final SimpleCallSettings<Topic, Topic> createTopicSettings;
-  private final BundlingCallSettings<PublishRequest, PublishResponse> publishSettings;
+  private final BatchingCallSettings<PublishRequest, PublishResponse> publishSettings;
   private final SimpleCallSettings<GetTopicRequest, Topic> getTopicSettings;
   private final PagedCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
       listTopicsSettings;
@@ -136,7 +136,7 @@ public class PublisherSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to publish. */
-  public BundlingCallSettings<PublishRequest, PublishResponse> publishSettings() {
+  public BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
     return publishSettings;
   }
 
@@ -357,10 +357,10 @@ public class PublisherSettings extends ClientSettings {
             }
           };
 
-  private static final BundlingDescriptor<PublishRequest, PublishResponse> PUBLISH_BUNDLING_DESC =
-      new BundlingDescriptor<PublishRequest, PublishResponse>() {
+  private static final BatchingDescriptor<PublishRequest, PublishResponse> PUBLISH_BATCHING_DESC =
+      new BatchingDescriptor<PublishRequest, PublishResponse>() {
         @Override
-        public String getBundlePartitionKey(PublishRequest request) {
+        public String getBatchPartitionKey(PublishRequest request) {
           return request.getTopic() + "|";
         }
 
@@ -387,15 +387,15 @@ public class PublisherSettings extends ClientSettings {
 
         @Override
         public void splitResponse(
-            PublishResponse bundleResponse,
-            Collection<? extends BundledRequestIssuer<PublishResponse>> bundle) {
-          int bundleMessageIndex = 0;
-          for (BundledRequestIssuer<PublishResponse> responder : bundle) {
+            PublishResponse batchResponse,
+            Collection<? extends BatchedRequestIssuer<PublishResponse>> batch) {
+          int batchMessageIndex = 0;
+          for (BatchedRequestIssuer<PublishResponse> responder : batch) {
             List<String> subresponseElements = new ArrayList<>();
             long subresponseCount = responder.getMessageCount();
             for (int i = 0; i < subresponseCount; i++) {
-              subresponseElements.add(bundleResponse.getMessageIds(bundleMessageIndex));
-              bundleMessageIndex += 1;
+              subresponseElements.add(batchResponse.getMessageIds(batchMessageIndex));
+              batchMessageIndex += 1;
             }
             PublishResponse response =
                 PublishResponse.newBuilder().addAllMessageIds(subresponseElements).build();
@@ -406,8 +406,8 @@ public class PublisherSettings extends ClientSettings {
         @Override
         public void splitException(
             Throwable throwable,
-            Collection<? extends BundledRequestIssuer<PublishResponse>> bundle) {
-          for (BundledRequestIssuer<PublishResponse> responder : bundle) {
+            Collection<? extends BatchedRequestIssuer<PublishResponse>> batch) {
+          for (BatchedRequestIssuer<PublishResponse> responder : batch) {
             responder.setException(throwable);
           }
         }
@@ -428,7 +428,7 @@ public class PublisherSettings extends ClientSettings {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<Topic, Topic> createTopicSettings;
-    private final BundlingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
+    private final BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
     private final SimpleCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings;
     private final PagedCallSettings.Builder<
             ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
@@ -497,8 +497,8 @@ public class PublisherSettings extends ClientSettings {
       createTopicSettings = SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_CREATE_TOPIC);
 
       publishSettings =
-          BundlingCallSettings.newBuilder(PublisherGrpc.METHOD_PUBLISH, PUBLISH_BUNDLING_DESC)
-              .setBundlingSettingsBuilder(BundlingSettings.newBuilder());
+          BatchingCallSettings.newBuilder(PublisherGrpc.METHOD_PUBLISH, PUBLISH_BATCHING_DESC)
+              .setBatchingSettingsBuilder(BatchingSettings.newBuilder());
 
       getTopicSettings = SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_GET_TOPIC);
 
@@ -542,7 +542,7 @@ public class PublisherSettings extends ClientSettings {
 
       builder
           .publishSettings()
-          .getBundlingSettingsBuilder()
+          .getBatchingSettingsBuilder()
           .setElementCountThreshold(10)
           .setRequestByteThreshold(1024)
           .setDelayThreshold(Duration.millis(10))
@@ -649,7 +649,7 @@ public class PublisherSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to publish. */
-    public BundlingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
+    public BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
       return publishSettings;
     }
 

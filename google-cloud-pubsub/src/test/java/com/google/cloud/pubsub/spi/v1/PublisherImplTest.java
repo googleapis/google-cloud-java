@@ -21,7 +21,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.api.gax.bundling.BundlingSettings;
+import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
@@ -112,8 +112,8 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             // To demonstrate that reaching duration will trigger publish
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setDelayThreshold(Duration.standardSeconds(5))
                     .setElementCountThreshold(10)
@@ -139,11 +139,11 @@ public class PublisherImplTest {
   }
 
   @Test
-  public void testPublishByNumBundledMessages() throws Exception {
+  public void testPublishByNumBatchedMessages() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2)
                     .setDelayThreshold(Duration.standardSeconds(100))
@@ -180,8 +180,8 @@ public class PublisherImplTest {
   public void testSinglePublishByNumBytes() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2)
                     .setDelayThreshold(Duration.standardSeconds(100))
@@ -215,8 +215,8 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             // To demonstrate that reaching duration will trigger publish
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -234,7 +234,7 @@ public class PublisherImplTest {
 
     ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
 
-    // Publishing triggered by bundle size
+    // Publishing triggered by batch size
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
 
@@ -262,8 +262,8 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -290,8 +290,8 @@ public class PublisherImplTest {
                     .toBuilder()
                     .setTotalTimeout(Duration.standardSeconds(10))
                     .build())
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -326,8 +326,8 @@ public class PublisherImplTest {
                     .toBuilder()
                     .setTotalTimeout(Duration.standardSeconds(10))
                     .build())
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -350,8 +350,8 @@ public class PublisherImplTest {
     Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
     builder.setChannelProvider(TEST_CHANNEL_PROVIDER);
     builder.setExecutorProvider(SINGLE_THREAD_EXECUTOR);
-    builder.setBundlingSettings(
-        BundlingSettings.newBuilder()
+    builder.setBatchingSettings(
+        BatchingSettings.newBuilder()
             .setRequestByteThreshold(10)
             .setDelayThreshold(new Duration(11))
             .setElementCountThreshold(12)
@@ -365,9 +365,9 @@ public class PublisherImplTest {
     Publisher publisher = builder.build();
 
     assertEquals(TEST_TOPIC, publisher.getTopicName());
-    assertEquals(10, (long) publisher.getBundlingSettings().getRequestByteThreshold());
-    assertEquals(new Duration(11), publisher.getBundlingSettings().getDelayThreshold());
-    assertEquals(12, (long) publisher.getBundlingSettings().getElementCountThreshold());
+    assertEquals(10, (long) publisher.getBatchingSettings().getRequestByteThreshold());
+    assertEquals(new Duration(11), publisher.getBatchingSettings().getDelayThreshold());
+    assertEquals(12, (long) publisher.getBatchingSettings().getElementCountThreshold());
     assertEquals(13, (long) publisher.getFlowControlSettings().getMaxOutstandingRequestBytes());
     assertEquals(14, (long) publisher.getFlowControlSettings().getMaxOutstandingElementCount());
     assertEquals(
@@ -385,12 +385,12 @@ public class PublisherImplTest {
         LimitExceededBehavior.Block, builder.flowControlSettings.getLimitExceededBehavior());
     assertEquals(
         Publisher.Builder.DEFAULT_REQUEST_BYTES_THRESHOLD,
-        builder.bundlingSettings.getRequestByteThreshold().longValue());
+        builder.batchingSettings.getRequestByteThreshold().longValue());
     assertEquals(
-        Publisher.Builder.DEFAULT_DELAY_THRESHOLD, builder.bundlingSettings.getDelayThreshold());
+        Publisher.Builder.DEFAULT_DELAY_THRESHOLD, builder.batchingSettings.getDelayThreshold());
     assertEquals(
         Publisher.Builder.DEFAULT_ELEMENT_COUNT_THRESHOLD,
-        builder.bundlingSettings.getElementCountThreshold().longValue());
+        builder.batchingSettings.getElementCountThreshold().longValue());
     assertEquals(FlowControlSettings.getDefaultInstance(), builder.flowControlSettings);
     assertEquals(Publisher.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings);
   }
@@ -413,8 +413,8 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setRequestByteThreshold((Long) null)
               .build());
@@ -423,8 +423,8 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setRequestByteThreshold(0)
               .build());
@@ -433,8 +433,8 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setRequestByteThreshold(-1)
               .build());
@@ -443,21 +443,21 @@ public class PublisherImplTest {
       // Expected
     }
 
-    builder.setBundlingSettings(
-        Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+    builder.setBatchingSettings(
+        Publisher.Builder.DEFAULT_BATCHING_SETTINGS
             .toBuilder()
             .setDelayThreshold(new Duration(1))
             .build());
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS.toBuilder().setDelayThreshold(null).build());
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder().setDelayThreshold(null).build());
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setDelayThreshold(new Duration(-1))
               .build());
@@ -466,14 +466,14 @@ public class PublisherImplTest {
       // Expected
     }
 
-    builder.setBundlingSettings(
-        Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+    builder.setBatchingSettings(
+        Publisher.Builder.DEFAULT_BATCHING_SETTINGS
             .toBuilder()
             .setElementCountThreshold(1)
             .build());
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setElementCountThreshold((Long) null)
               .build());
@@ -482,8 +482,8 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setElementCountThreshold(0)
               .build());
@@ -492,8 +492,8 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setElementCountThreshold(-1)
               .build());
