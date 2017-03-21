@@ -105,8 +105,18 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.allocateId(this, key);
   }
 
+  private boolean verifyIncompleteKeyType(IncompleteKey... keys) {
+    for (IncompleteKey key : keys) {
+      if (key instanceof Key) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   @Override
   public List<Key> allocateId(IncompleteKey... keys) {
+    Preconditions.checkArgument(verifyIncompleteKeyType(keys), "keys must be IncompleteKey instances");
     if (keys.length == 0) {
       return Collections.emptyList();
     }
@@ -123,7 +133,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return keyList.build();
   }
 
-  com.google.datastore.v1.AllocateIdsResponse allocateIds(
+  private com.google.datastore.v1.AllocateIdsResponse allocateIds(
       final com.google.datastore.v1.AllocateIdsRequest requestPb) {
     try {
       return RetryHelper.runWithRetries(
