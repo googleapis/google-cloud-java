@@ -19,7 +19,8 @@ package com.google.cloud.datastore;
 import com.google.cloud.BaseService;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.RetryParams;
+import com.google.api.gax.core.RetrySettings;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.ReadOption.EventualConsistency;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.common.base.MoreObjects;
@@ -45,12 +46,13 @@ import java.util.concurrent.Callable;
 final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datastore {
 
   private final DatastoreRpc datastoreRpc;
-  private final RetryParams retryParams;
+  private final RetrySettings retrySettings;
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
     this.datastoreRpc = options.getDatastoreRpcV1();
-    retryParams = MoreObjects.firstNonNull(options.getRetryParams(), RetryParams.noRetries());
+    retrySettings = MoreObjects
+        .firstNonNull(options.getRetrySettings(), ServiceOptions.getNoRetrySettings());
   }
 
   @Override
@@ -92,7 +94,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
                 throws DatastoreException {
               return datastoreRpc.runQuery(requestPb);
             }
-          }, retryParams, EXCEPTION_HANDLER, getOptions().getClock());
+          }, retrySettings, EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -131,7 +133,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
                 throws DatastoreException {
               return datastoreRpc.allocateIds(requestPb);
             }
-          }, retryParams, EXCEPTION_HANDLER, getOptions().getClock());
+          }, retrySettings, EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -165,7 +167,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       if (completeEntity != null) {
         if (completeEntities.put(completeEntity.getKey(), completeEntity) != null) {
           throw DatastoreException.throwInvalidRequest(
-            "Duplicate entity with the key %s", entity.getKey());
+              "Duplicate entity with the key %s", entity.getKey());
         }
       } else {
         Preconditions.checkArgument(entity.hasKey(), "Entity %s is missing a key", entity);
@@ -288,7 +290,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
                 throws DatastoreException {
               return datastoreRpc.lookup(requestPb);
             }
-          }, retryParams, EXCEPTION_HANDLER, getOptions().getClock());
+          }, retrySettings, EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -390,7 +392,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
               return datastoreRpc.commit(requestPb);
             }
           },
-          retryParams,
+          retrySettings,
           EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
@@ -413,7 +415,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
               return datastoreRpc.beginTransaction(requestPb);
             }
           },
-          retryParams,
+          retrySettings,
           EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
@@ -430,11 +432,12 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   void rollback(final com.google.datastore.v1.RollbackRequest requestPb) {
     try {
       RetryHelper.runWithRetries(new Callable<Void>() {
-        @Override public Void call() throws DatastoreException {
+        @Override
+        public Void call() throws DatastoreException {
           datastoreRpc.rollback(requestPb);
           return null;
         }
-      }, retryParams, EXCEPTION_HANDLER, getOptions().getClock());
+      }, retrySettings, EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }

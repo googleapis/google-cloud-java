@@ -97,7 +97,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
           .setExecutorProvider(executorProvider)
           .build();
       UnaryCallSettings.Builder callSettingsBuilder = transportOptions
-          .getApiCallSettings(options.getRetryParams());
+          .getApiCallSettings(options.getRetrySettings());
       ConfigSettings.Builder confBuilder =
           ConfigSettings.defaultBuilder()
               .setExecutorProvider(providerManager)

@@ -19,7 +19,6 @@ package com.google.cloud.storage;
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.RetryHelper.RetryInterruptedException;
 import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
@@ -71,10 +70,9 @@ public final class StorageException extends BaseServiceException {
    * always throw an exception.
    *
    * @throws StorageException when {@code ex} was caused by a {@code StorageException}
-   * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
   static StorageException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndPropagateIfPossible(ex);
+    BaseServiceException.translate(ex);
     throw new StorageException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }

@@ -29,7 +29,7 @@ import com.google.cloud.AsyncPage;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.Page;
-import com.google.cloud.RetryParams;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.logging.Logging.EntryListOption;
 import com.google.cloud.logging.Logging.ListOption;
 import com.google.cloud.logging.Logging.SortingField;
@@ -147,7 +147,7 @@ public class LoggingImplTest {
     options = LoggingOptions.newBuilder()
         .setProjectId(PROJECT)
         .setServiceRpcFactory(rpcFactoryMock)
-        .setRetryParams(RetryParams.noRetries())
+        .setRetrySettings(ServiceOptions.getNoRetrySettings())
         .build();
   }
 

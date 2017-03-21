@@ -50,7 +50,7 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
           getOptions().getStorageRpcV1()
               .write(getUploadId(), getBuffer(), 0, getPosition(), length, last);
         }
-      }), getOptions().getRetryParams(), StorageImpl.EXCEPTION_HANDLER, getOptions().getClock());
+      }), getOptions().getRetrySettings(), StorageImpl.EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -68,7 +68,7 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
         public String call() {
           return options.getStorageRpcV1().open(blob.toPb(), optionsMap);
         }
-      }, options.getRetryParams(), StorageImpl.EXCEPTION_HANDLER, options.getClock());
+      }, options.getRetrySettings(), StorageImpl.EXCEPTION_HANDLER, options.getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
