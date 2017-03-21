@@ -37,7 +37,7 @@ public class ListResourcesTest {
   /**
    * The project ID of the project created for the integration tests.
    */
-  public static final String TEST_PROJECT_ID = "cloud-samples-tests";
+  public static final String TEST_PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
 
   /**
    * Google Cloud Monitoring client to integration test.
