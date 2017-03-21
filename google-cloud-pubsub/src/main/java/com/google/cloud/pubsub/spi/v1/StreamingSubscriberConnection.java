@@ -124,7 +124,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
     @Override
     public void onNext(StreamingPullResponse response) {
       messageDispatcher.processReceivedMessages(response.getReceivedMessagesList());
-      // Only if not shutdown we will request one more bundles of messages to be delivered.
+      // Only if not shutdown we will request one more batches of messages to be delivered.
       if (isAlive()) {
         requestObserver.request(1);
       }

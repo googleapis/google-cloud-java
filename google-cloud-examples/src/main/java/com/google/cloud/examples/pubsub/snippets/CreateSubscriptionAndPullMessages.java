@@ -46,7 +46,7 @@ public class CreateSubscriptionAndPullMessages {
           @Override
           public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
             System.out.println("got message: " + message.getData().toStringUtf8());
-            consumer.accept(AckReply.ACK, null);
+            consumer.accept(AckReply.ACK);
           }
         };
     Subscriber subscriber = null;

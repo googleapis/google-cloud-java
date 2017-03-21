@@ -199,7 +199,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
   @Override
   public void sendAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
-    // Send the modify ack deadlines in bundles as not to exceed the max request
+    // Send the modify ack deadlines in batches as not to exceed the max request
     // size.
     for (PendingModifyAckDeadline modifyAckDeadline : ackDeadlineExtensions) {
       for (List<String> ackIdChunk :

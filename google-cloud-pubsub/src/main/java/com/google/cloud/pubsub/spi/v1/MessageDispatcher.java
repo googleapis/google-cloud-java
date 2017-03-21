@@ -285,12 +285,8 @@ class MessageDispatcher {
       final AckReplyConsumer consumer =
           new AckReplyConsumer() {
             @Override
-            public void accept(AckReply reply, Throwable t) {
-              if (reply != null) {
-                response.set(reply);
-              } else {
-                response.setException(t);
-              }
+            public void accept(AckReply reply) {
+              response.set(reply);
             }
           };
       Futures.addCallback(response, ackHandler);
@@ -298,7 +294,11 @@ class MessageDispatcher {
           new Runnable() {
             @Override
             public void run() {
-              receiver.receiveMessage(message, consumer);
+              try {
+                receiver.receiveMessage(message, consumer);
+              } catch (Exception e) {
+                response.setException(e);
+              }
             }
           });
     }
