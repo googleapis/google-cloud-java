@@ -49,7 +49,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 class FakeSubscriberServiceImpl extends SubscriberImplBase {
   private final AtomicBoolean subscriptionInitialized = new AtomicBoolean(false);
   private String subscription = "";
-  private final AtomicInteger messageAckDeadline = new AtomicInteger(Subscriber.MIN_ACK_DEADLINE_SECONDS);
+  private final AtomicInteger messageAckDeadline =
+      new AtomicInteger(Subscriber.MIN_ACK_DEADLINE_SECONDS);
   private final List<Stream> openedStreams = new ArrayList<>();
   private final List<Stream> closedStreams = new ArrayList<>();
   private final List<String> acks = new ArrayList<>();
@@ -235,7 +236,9 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
 
   @Override
   public void pull(PullRequest request, StreamObserver<PullResponse> responseObserver) {
-    receivedPullRequest.add(request);
+    synchronized (receivedPullRequest) {
+      receivedPullRequest.add(request);
+    }
     try {
       responseObserver.onNext(pullResponses.take());
       responseObserver.onCompleted();

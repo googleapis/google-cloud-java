@@ -19,9 +19,9 @@ package com.google.cloud.pubsub.spi.v1;
 /**
  * Accepts a reply, sending it to the service.
  *
- * <p>Both the interface and its method is named after the Java 8's {@code BiConsumer} interface
+ * <p>Both the interface and its method is named after the Java 8's {@code Consumer} interface
  * to make migration to Java 8 and adopting its patterns easier.
  */
 public interface AckReplyConsumer {
-  void accept(AckReply ackReply, Throwable t);
+  void accept(AckReply ackReply);
 }
