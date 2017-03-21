@@ -16,234 +16,48 @@
 
 package com.google.cloud;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-import static java.lang.StrictMath.max;
-import static java.lang.StrictMath.min;
-import static java.lang.StrictMath.pow;
-import static java.lang.StrictMath.random;
+import com.google.api.gax.core.ApiClock;
+import com.google.api.gax.core.RetrySettings;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.MoreObjects;
-import com.google.common.base.MoreObjects.ToStringHelper;
-
-import java.io.InterruptedIOException;
-import java.nio.channels.ClosedByInterruptException;
+import com.google.api.gax.retrying.DirectRetryingExecutor;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
+import com.google.api.gax.retrying.RetryAlgorithm;
+import com.google.api.gax.retrying.RetryingExecutor;
+import com.google.api.gax.retrying.RetryingFuture;
 import java.util.concurrent.Callable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- * Utility class for retrying operations. For more details about the parameters, see
- * {@link RetryParams}. If the request is never successful, a {@link RetriesExhaustedException} will
- * be thrown.
- *
- * @param <V> return value of the closure that is being run with retries
+ * Utility class for retrying operations. For more details about the parameters, see {@link
+ * RetrySettings}. In case if retrying is unsuccessful, {@link RetryHelperException} will be
+ * thrown.
  */
-public class RetryHelper<V> {
+public class RetryHelper {
+  public static <V> V runWithRetries(
+      Callable<V> callable,
+      RetrySettings retrySettings,
+      ExceptionHandler exceptionRetryAlgorithm,
+      ApiClock clock)
+      throws RetryHelperException {
+    try {
+      RetryAlgorithm retryAlgorithm =
+          new RetryAlgorithm(exceptionRetryAlgorithm, new ExponentialRetryAlgorithm(retrySettings, clock));
+      RetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
 
-  private static final Logger log = Logger.getLogger(RetryHelper.class.getName());
+      RetryingFuture<V> retryingFuture = executor.createFuture(callable);
+      executor.submit(retryingFuture);
 
-  private final Clock clock;
-  private final Callable<V> callable;
-  private final RetryParams params;
-  private final ExceptionHandler exceptionHandler;
-  private int attemptNumber;
-
-
-  private static final ThreadLocal<Context> context = new ThreadLocal<>();
+      return retryingFuture.get();
+    } catch (Exception e) {
+      throw new RetryHelperException(e.getCause());
+    }
+  }
 
   public static class RetryHelperException extends RuntimeException {
 
-    private static final long serialVersionUID = -2907061015610448235L;
-
-    RetryHelperException() {}
-
-    RetryHelperException(String message) {
-      super(message);
-    }
+    private static final long serialVersionUID = -8519852520090965314L;
 
     RetryHelperException(Throwable cause) {
       super(cause);
-    }
-
-    RetryHelperException(String message, Throwable cause) {
-      super(message, cause);
-    }
-  }
-
-  /**
-   * Thrown when a RetryHelper failed to complete its work due to interruption. Throwing this
-   * exception also sets the thread interrupt flag.
-   */
-  public static final class RetryInterruptedException extends RetryHelperException {
-
-    private static final long serialVersionUID = 1678966737697204885L;
-
-    RetryInterruptedException() {}
-
-    /**
-     * Sets the caller thread interrupt flag and throws {@code RetryInterruptedException}.
-     */
-    public static void propagate() throws RetryInterruptedException {
-      Thread.currentThread().interrupt();
-      throw new RetryInterruptedException();
-    }
-  }
-
-  /**
-   * Thrown when a RetryHelper has attempted the maximum number of attempts allowed by RetryParams
-   * and was not successful.
-   */
-  public static final class RetriesExhaustedException extends RetryHelperException {
-
-    private static final long serialVersionUID = 780199686075408083L;
-
-    RetriesExhaustedException(String message) {
-      super(message);
-    }
-
-    RetriesExhaustedException(String message, Throwable cause) {
-      super(message, cause);
-    }
-  }
-
-  /**
-   * Thrown when RetryHelper callable has indicate it should not be retried.
-   */
-  public static final class NonRetriableException extends RetryHelperException {
-
-    private static final long serialVersionUID = -2331878521983499652L;
-
-    NonRetriableException(Throwable throwable) {
-      super(throwable);
-    }
-  }
-
-  static class Context {
-
-    private final RetryHelper<?> helper;
-
-    Context(RetryHelper<?> helper) {
-      this.helper = helper;
-    }
-
-    public RetryParams getRetryParams() {
-      return helper.params;
-    }
-
-    public int getAttemptNumber() {
-      return helper.attemptNumber;
-    }
-  }
-
-  @VisibleForTesting
-  static void setContext(Context ctx) {
-    if (ctx == null) {
-      context.remove();
-    } else {
-      context.set(ctx);
-    }
-  }
-
-  static Context getContext() {
-    return context.get();
-  }
-
-  @VisibleForTesting
-  RetryHelper(Callable<V> callable, RetryParams params, ExceptionHandler exceptionHandler,
-      Clock clock) {
-    this.callable = checkNotNull(callable);
-    this.params = checkNotNull(params);
-    this.clock = checkNotNull(clock);
-    this.exceptionHandler = checkNotNull(exceptionHandler);
-    exceptionHandler.verifyCaller(callable);
-  }
-
-  @Override
-  public String toString() {
-    ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
-    toStringHelper.add("params", params);
-    toStringHelper.add("clock", clock);
-    toStringHelper.add("attemptNumber", attemptNumber);
-    toStringHelper.add("callable", callable);
-    toStringHelper.add("exceptionHandler", exceptionHandler);
-    return toStringHelper.toString();
-  }
-
-  private V doRetry() throws RetryHelperException {
-    long start = clock.millis();
-    while (true) {
-      attemptNumber++;
-      Exception exception;
-      try {
-        V value = callable.call();
-        if (attemptNumber > 1 && log.isLoggable(Level.FINE)) {
-          log.fine(this + ": attempt #" + attemptNumber + " succeeded");
-        }
-        return value;
-      } catch (InterruptedException | InterruptedIOException | ClosedByInterruptException e) {
-        if (!exceptionHandler.shouldRetry(e)) {
-          RetryInterruptedException.propagate();
-        }
-        exception = e;
-      } catch (Exception e) {
-        if (!exceptionHandler.shouldRetry(e)) {
-          throw new NonRetriableException(e);
-        }
-        exception = e;
-      }
-      if (attemptNumber >= params.getRetryMaxAttempts()
-          || attemptNumber >= params.getRetryMinAttempts()
-          && clock.millis() - start >= params.getTotalRetryPeriodMillis()) {
-        throw new RetriesExhaustedException(this + ": Too many failures, giving up", exception);
-      }
-      long sleepDurationMillis = getSleepDuration(params, attemptNumber);
-      if (log.isLoggable(Level.FINE)) {
-        log.fine(this + ": Attempt #" + attemptNumber + " failed [" + exception
-            + "], sleeping for " + sleepDurationMillis + " ms");
-      }
-      try {
-        Thread.sleep(sleepDurationMillis);
-      } catch (InterruptedException e) {
-        // propagate as RetryInterruptedException
-        RetryInterruptedException.propagate();
-      }
-    }
-  }
-
-  @VisibleForTesting
-  static long getSleepDuration(RetryParams retryParams, int attemptsSoFar) {
-    long initialDelay = retryParams.getInitialRetryDelayMillis();
-    double backoffFactor = retryParams.getRetryDelayBackoffFactor();
-    long maxDelay = retryParams.getMaxRetryDelayMillis();
-    long retryDelay = getExponentialValue(initialDelay, backoffFactor, maxDelay, attemptsSoFar);
-    return (long) ((random() / 2.0 + .75) * retryDelay);
-  }
-
-  private static long getExponentialValue(long initialDelay, double backoffFactor, long maxDelay,
-      int attemptsSoFar) {
-    return (long) min(maxDelay, pow(backoffFactor, max(1, attemptsSoFar) - 1) * initialDelay);
-  }
-
-  public static <V> V runWithRetries(Callable<V> callable) throws RetryHelperException {
-    return runWithRetries(callable, RetryParams.getDefaultInstance(),
-        ExceptionHandler.getDefaultInstance());
-  }
-
-  public static <V> V runWithRetries(Callable<V> callable, RetryParams params,
-      ExceptionHandler exceptionHandler) throws RetryHelperException {
-    return runWithRetries(callable, params, exceptionHandler, Clock.defaultClock());
-  }
-
-  public static <V> V runWithRetries(Callable<V> callable, RetryParams params,
-      ExceptionHandler exceptionHandler, Clock clock) throws RetryHelperException {
-    RetryHelper<V> retryHelper = new RetryHelper<>(callable, params, exceptionHandler, clock);
-    Context previousContext = getContext();
-    setContext(new Context(retryHelper));
-    try {
-      return retryHelper.doRetry();
-    } finally {
-      setContext(previousContext);
     }
   }
 }
