@@ -40,7 +40,7 @@ import java.util.regex.Pattern;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class SnippetsIT {
 
-  static final String PROJECT_ID = "java-docs-samples-tests";
+  static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   static final String KEY_RING_ID = "test-snippets-key-ring";
   static final String CRYPTO_KEY_ID = "test-snippets-crypto-key";
   static final String TEST_USER = "serviceAccount:"
