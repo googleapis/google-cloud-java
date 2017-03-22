@@ -19,12 +19,12 @@ package com.google.cloud;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
-import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.gax.utils.PropertiesProvider;
+import com.google.api.gax.core.GaxPropertiesProvider;
 import com.google.auth.Credentials;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
@@ -159,20 +159,20 @@ public class HttpTransportOptions implements TransportOptions {
         }
 
         HttpHeaders headers = httpRequest.getHeaders();
-        headers.set("x-goog-api-client", xApiClientHeader());
+        headers.set("x-goog-api-client", getXGoogApiClientHeader());
       }
     };
   }
 
   @VisibleForTesting
-  String xApiClientHeader() {
+  String getXGoogApiClientHeader() {
     return String.format(
         "gl-java/%s %s/%s gax/%s grpc/%s",
         getJavaVersion(),
         ServiceOptions.getGoogApiClientLibName(),
         ServiceOptions.getLibraryVersion(),
-        PropertiesProvider.getGaxVersion(),
-        PropertiesProvider.getGrpcVersion());
+        GaxPropertiesProvider.getGaxVersion(),
+        GaxPropertiesProvider.getGrpcVersion());
   }
 
   private static String getJavaVersion() {

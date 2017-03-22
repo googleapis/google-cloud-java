@@ -65,7 +65,8 @@ public class HttpTransportOptionsTest {
   @Test
   public void testHeader() {
     String expectedHeaderPattern = "^gl-java/.* gapic/.* gax/.* grpc/.*$";
-    assertTrue(
-        Pattern.compile(expectedHeaderPattern).matcher(DEFAULT_OPTIONS.xApiClientHeader()).find());
+    assertTrue(Pattern.compile(expectedHeaderPattern)
+        .matcher(DEFAULT_OPTIONS.getXGoogApiClientHeader())
+        .find());
   }
 }
