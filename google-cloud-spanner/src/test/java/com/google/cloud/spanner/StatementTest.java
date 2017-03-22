@@ -56,8 +56,11 @@ public class StatementTest {
     assertThat(stmt.hasBinding("id")).isTrue();
     assertThat(stmt.hasBinding("status")).isTrue();
     assertThat(stmt.getParameters())
-        .isEqualTo(ImmutableMap.of("id", Value.int64(1234), "status", Value.string("ACTIVE")));
-    assertThat(stmt.toString()).isEqualTo(expectedSql + " {id: 1234, status: ACTIVE}");
+        .containsExactlyEntriesIn(
+            ImmutableMap.of("id", Value.int64(1234), "status", Value.string("ACTIVE")));
+    assertThat(stmt.toString()).startsWith(expectedSql);
+    assertThat(stmt.toString()).contains("id: 1234");
+    assertThat(stmt.toString()).contains("status: ACTIVE");
   }
 
   @Test
