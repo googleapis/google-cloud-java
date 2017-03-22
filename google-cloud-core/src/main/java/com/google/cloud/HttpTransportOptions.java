@@ -165,12 +165,11 @@ public class HttpTransportOptions implements TransportOptions {
 
   String getXGoogApiClientHeader() {
     return String.format(
-        "gl-java/%s %s/%s gax/%s grpc/%s",
+        "gl-java/%s %s/%s gax/%s",
         getJavaVersion(),
         ServiceOptions.getGoogApiClientLibName(),
         ServiceOptions.getLibraryVersion(),
-        GaxPropertiesProvider.getGaxVersion(),
-        GaxPropertiesProvider.getGrpcVersion());
+        GaxPropertiesProvider.getGaxVersion());
   }
 
   private static String getJavaVersion() {
