@@ -25,7 +25,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.RetryParams;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.Query.ResultType;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
@@ -141,7 +141,7 @@ public class DatastoreTest {
     rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
     rpcMockOptions = options
         .toBuilder()
-        .setRetryParams(RetryParams.getDefaultInstance())
+        .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
         .setServiceRpcFactory(rpcFactoryMock)
         .build();
     EasyMock.expect(rpcFactoryMock.create(rpcMockOptions)).andReturn(rpcMock);

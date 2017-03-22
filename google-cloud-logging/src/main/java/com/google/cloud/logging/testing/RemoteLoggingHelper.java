@@ -18,7 +18,7 @@ package com.google.cloud.logging.testing;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.GrpcTransportOptions;
-import com.google.cloud.RetryParams;
+import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.logging.LoggingOptions;
 
 import java.io.IOException;
@@ -26,13 +26,14 @@ import java.io.InputStream;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.joda.time.Duration;
 
 /**
  * Utility to create a remote logging configuration for testing. Logging options can be obtained via
  * the {@link #getOptions()} method. Returned options have custom
- * {@link LoggingOptions#getRetryParams()}: {@link RetryParams#getMaxRetryDelayMillis()} is
- * {@code 30000}, {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
- * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
+ * {@link LoggingOptions#getRetrySettings()}: {@link RetrySettings#getMaxRetryDelay()} is
+ * {@code 30000}, {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
+ * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
  * {@link GrpcTransportOptions#getInitialTimeout()} is set to 60000,
  * {@link GrpcTransportOptions#getMaxTimeout()} is set to {@code 240000} and
  * {@link GrpcTransportOptions#getTimeoutMultiplier()} is set to {@code 1.5}.
@@ -77,7 +78,7 @@ public class RemoteLoggingHelper {
       LoggingOptions storageOptions = LoggingOptions.newBuilder()
           .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
-          .setRetryParams(retryParams())
+          .setRetrySettings(retrySettings())
           .setTransportOptions(transportOptions)
           .build();
       return new RemoteLoggingHelper(storageOptions);
@@ -102,7 +103,7 @@ public class RemoteLoggingHelper {
             .setTimeoutMultiplier(1.5)
             .build();
     LoggingOptions loggingOptions = LoggingOptions.newBuilder()
-        .setRetryParams(retryParams())
+        .setRetrySettings(retrySettings())
         .setTransportOptions(transportOptions)
         .build();
     return new RemoteLoggingHelper(loggingOptions);
@@ -116,11 +117,15 @@ public class RemoteLoggingHelper {
     return name + "-" + UUID.randomUUID().toString();
   }
 
-  private static RetryParams retryParams() {
-    return RetryParams.newBuilder()
-        .setMaxRetryDelayMillis(30000)
-        .setTotalRetryPeriodMillis(120000)
-        .setInitialRetryDelayMillis(250)
+  private static RetrySettings retrySettings() {
+    return RetrySettings.newBuilder()
+        .setMaxRetryDelay(Duration.millis(30000L))
+        .setTotalTimeout(Duration.millis(120000L))
+        .setInitialRetryDelay(Duration.millis(250L))
+        .setRetryDelayMultiplier(1.0)
+        .setInitialRpcTimeout(Duration.millis(120000L))
+        .setRpcTimeoutMultiplier(1.0)
+        .setMaxRpcTimeout(Duration.millis(120000L))
         .build();
   }
 

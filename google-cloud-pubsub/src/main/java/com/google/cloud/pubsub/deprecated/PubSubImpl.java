@@ -23,6 +23,7 @@ import static com.google.cloud.pubsub.deprecated.PubSub.PullOption.OptionType.MA
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.gax.core.ApiFunction;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutureCallback;
 import com.google.api.gax.core.ApiFutures;
@@ -203,7 +204,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   private static <I, O> ApiFuture<O> transform(ApiFuture<I> future,
       final Function<? super I, ? extends O> function) {
-    return ApiFutures.transform(future, new com.google.api.gax.core.Function<I, O>() {
+    return ApiFutures.transform(future, new ApiFunction<I, O>() {
       @Override
       public O apply(I i) {
         return function.apply(i);

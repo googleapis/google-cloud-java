@@ -21,6 +21,7 @@ import static com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.AbortedException;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
@@ -34,7 +35,6 @@ import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Struct;
-import com.google.cloud.spanner.Timestamp;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.TransactionContext;
 import com.google.cloud.spanner.TransactionRunner;

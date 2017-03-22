@@ -162,7 +162,7 @@ public class ReadFormatTestRunner extends ParentRunner<JSONObject> {
             break;
           case BYTES:
             assertThat(actualRow.getBytes(i))
-                .isEqualTo(ByteArrays.fromBase64(expectedRow.getString(i)));
+                .isEqualTo(ByteArray.fromBase64(expectedRow.getString(i)));
             break;
           case ARRAY:
             Type elementType = actualRow.getColumnType(i).getArrayElementType();
@@ -218,7 +218,7 @@ public class ReadFormatTestRunner extends ParentRunner<JSONObject> {
             assertThat((Double) actualValue).isEqualTo(expectedList.getDouble(i));
           } else if (actualValue instanceof ByteArray) {
             assertThat((ByteArray) actualValue)
-                .isEqualTo(ByteArrays.fromBase64(expectedList.getString(i)));
+                .isEqualTo(ByteArray.fromBase64(expectedList.getString(i)));
           } else if (actualValue instanceof Struct) {
             Struct actualStruct = (Struct) actualValue;
             JSONArray expectedFields = expectedList.getJSONArray(i);

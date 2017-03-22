@@ -17,9 +17,9 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.FlowController;
+import com.google.api.gax.core.ApiClock;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
-import com.google.cloud.Clock;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.annotations.VisibleForTesting;
@@ -75,7 +75,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
       Channel channel,
       FlowController flowController,
       ScheduledExecutorService executor,
-      Clock clock) {
+      ApiClock clock) {
     this.subscription = subscription;
     this.executor = executor;
     this.credentials = credentials;
@@ -124,7 +124,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
     @Override
     public void onNext(StreamingPullResponse response) {
       messageDispatcher.processReceivedMessages(response.getReceivedMessagesList());
-      // Only if not shutdown we will request one more bundles of messages to be delivered.
+      // Only if not shutdown we will request one more batches of messages to be delivered.
       if (isAlive()) {
         requestObserver.request(1);
       }

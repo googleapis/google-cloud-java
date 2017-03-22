@@ -95,7 +95,7 @@ public class AckDeadlineRenewerTest {
       @Override
       public ApiFuture<Void> answer() throws Throwable {
         latch.countDown();
-        renewal.set(executorService.getClock().millis());
+        renewal.set(executorService.getClock().millisTime());
         return null;
       }
     };
@@ -115,7 +115,7 @@ public class AckDeadlineRenewerTest {
         TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
             .andAnswer(createAnswer(secondLatch, secondRenewal));
     EasyMock.replay(pubsub);
-    long addTime = executorService.getClock().millis();
+    long addTime = executorService.getClock().millisTime();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ACK_ID1);
     executorService.advanceTime(TIME_ADVANCE);
     firstLatch.await();
@@ -147,7 +147,7 @@ public class AckDeadlineRenewerTest {
         TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID3)))
             .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
     EasyMock.replay(pubsub);
-    long addTime1 = executorService.getClock().millis();
+    long addTime1 = executorService.getClock().millisTime();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
     executorService.advanceTime(TIME_ADVANCE);
@@ -183,7 +183,7 @@ public class AckDeadlineRenewerTest {
         TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
         .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
     EasyMock.replay(pubsub);
-    long addTime1 = executorService.getClock().millis();
+    long addTime1 = executorService.getClock().millisTime();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
     executorService.advanceTime(TIME_ADVANCE);
@@ -219,7 +219,7 @@ public class AckDeadlineRenewerTest {
         TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
         .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
     EasyMock.replay(pubsub);
-    long addTime1 = executorService.getClock().millis();
+    long addTime1 = executorService.getClock().millisTime();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
     executorService.advanceTime(TIME_ADVANCE);
@@ -255,7 +255,7 @@ public class AckDeadlineRenewerTest {
         TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
         .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
     EasyMock.replay(pubsub);
-    long addTime1 = executorService.getClock().millis();
+    long addTime1 = executorService.getClock().millisTime();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
     executorService.advanceTime(TIME_ADVANCE);
