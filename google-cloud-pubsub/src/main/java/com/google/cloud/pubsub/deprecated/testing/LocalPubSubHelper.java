@@ -17,7 +17,7 @@
 package com.google.cloud.pubsub.deprecated.testing;
 
 import com.google.cloud.NoCredentials;
-import com.google.cloud.RetryParams;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.deprecated.PubSubOptions;
 import com.google.cloud.testing.BaseEmulatorHelper;
 import com.google.common.collect.ImmutableList;
@@ -111,7 +111,7 @@ public class LocalPubSubHelper extends BaseEmulatorHelper<PubSubOptions> {
         .setProjectId(getProjectId())
         .setHost(DEFAULT_HOST + ":" + getPort())
         .setCredentials(NoCredentials.getInstance())
-        .setRetryParams(RetryParams.noRetries())
+        .setRetrySettings(ServiceOptions.getNoRetrySettings())
         .build();
   }
 

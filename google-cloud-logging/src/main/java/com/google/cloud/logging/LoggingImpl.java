@@ -25,6 +25,7 @@ import static com.google.cloud.logging.Logging.WriteOption.OptionType.LABELS;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LOG_NAME;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.RESOURCE;
 
+import com.google.api.gax.core.ApiFunction;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.AsyncPage;
@@ -105,7 +106,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   private static <I, O> ApiFuture<O> transform(ApiFuture<I> future,
       final Function<? super I, ? extends O> function) {
-    return ApiFutures.transform(future, new com.google.api.gax.core.Function<I, O>() {
+    return ApiFutures.transform(future, new ApiFunction<I, O>() {
       @Override
       public O apply(I i) {
         return function.apply(i);

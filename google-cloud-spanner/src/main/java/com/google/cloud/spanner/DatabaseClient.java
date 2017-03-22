@@ -16,6 +16,8 @@
 
 package com.google.cloud.spanner;
 
+import com.google.cloud.Timestamp;
+
 /**
  * Interface for all the APIs that are used to read/write data into a Cloud Spanner database. An
  * instance of this is tied to a specific database.

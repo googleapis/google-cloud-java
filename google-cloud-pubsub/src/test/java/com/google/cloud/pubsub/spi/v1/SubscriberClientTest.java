@@ -17,7 +17,7 @@ package com.google.cloud.pubsub.spi.v1;
 
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
-import com.google.api.gax.core.RpcStreamObserver;
+import com.google.api.gax.core.ApiStreamObserver;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.StreamingCallable;
 import com.google.api.gax.testing.MockGrpcService;
@@ -406,7 +406,7 @@ public class SubscriberClientTest {
 
     StreamingCallable<StreamingPullRequest, StreamingPullResponse> callable =
         client.streamingPullCallable();
-    RpcStreamObserver<StreamingPullRequest> requestObserver =
+    ApiStreamObserver<StreamingPullRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);
 
     requestObserver.onNext(request);
@@ -434,7 +434,7 @@ public class SubscriberClientTest {
 
     StreamingCallable<StreamingPullRequest, StreamingPullResponse> callable =
         client.streamingPullCallable();
-    RpcStreamObserver<StreamingPullRequest> requestObserver =
+    ApiStreamObserver<StreamingPullRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);
 
     requestObserver.onNext(request);

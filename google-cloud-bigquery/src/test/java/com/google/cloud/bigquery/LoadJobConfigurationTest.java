@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
@@ -45,6 +46,8 @@ public class LoadJobConfigurationTest {
       .setDescription("FieldDescription")
       .build();
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
+  private static final List<SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =
+          ImmutableList.of(SchemaUpdateOption.ALLOW_FIELD_ADDITION);
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
   private static final LoadJobConfiguration LOAD_CONFIGURATION_CSV =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
@@ -54,6 +57,7 @@ public class LoadJobConfigurationTest {
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .setMaxBadRecords(MAX_BAD_RECORDS)
           .setSchema(TABLE_SCHEMA)
+          .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .build();
   private static final DatastoreBackupOptions BACKUP_OPTIONS = DatastoreBackupOptions.newBuilder()
       .setProjectionFields(ImmutableList.of("field_1", "field_2"))
@@ -66,6 +70,7 @@ public class LoadJobConfigurationTest {
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .setMaxBadRecords(MAX_BAD_RECORDS)
           .setSchema(TABLE_SCHEMA)
+          .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .build();
 
   @Test
@@ -148,5 +153,6 @@ public class LoadJobConfigurationTest {
     assertEquals(expected.getMaxBadRecords(), value.getMaxBadRecords());
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(expected.getDatastoreBackupOptions(), value.getDatastoreBackupOptions());
+    assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
   }
 }

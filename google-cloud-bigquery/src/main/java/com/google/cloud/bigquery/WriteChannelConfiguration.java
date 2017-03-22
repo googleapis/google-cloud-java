@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.bigquery.model.JobConfigurationLoad;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
@@ -45,6 +46,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   private final Integer maxBadRecords;
   private final Schema schema;
   private final Boolean ignoreUnknownValues;
+  private final List<SchemaUpdateOption> schemaUpdateOptions;
 
   public static final class Builder implements LoadConfiguration.Builder {
 
@@ -55,6 +57,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     private Integer maxBadRecords;
     private Schema schema;
     private Boolean ignoreUnknownValues;
+    private List<SchemaUpdateOption> schemaUpdateOptions;
 
     private Builder() {}
 
@@ -66,6 +69,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       this.maxBadRecords = writeChannelConfiguration.maxBadRecords;
       this.schema = writeChannelConfiguration.schema;
       this.ignoreUnknownValues = writeChannelConfiguration.ignoreUnknownValues;
+      this.schemaUpdateOptions = writeChannelConfiguration.schemaUpdateOptions;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -111,6 +115,13 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         this.formatOptions = DatastoreBackupOptions.newBuilder()
             .setProjectionFields(loadConfigurationPb.getProjectionFields())
             .build();
+      }
+      if (loadConfigurationPb.getSchemaUpdateOptions() != null) {
+        ImmutableList.Builder<JobInfo.SchemaUpdateOption> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+        for (String rawSchemaUpdateOption : loadConfigurationPb.getSchemaUpdateOptions()) {
+          schemaUpdateOptionsBuilder.add(JobInfo.SchemaUpdateOption.valueOf(rawSchemaUpdateOption));
+        }
+        this.schemaUpdateOptions = schemaUpdateOptionsBuilder.build();
       }
     }
 
@@ -164,6 +175,13 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     }
 
     @Override
+    public Builder setSchemaUpdateOptions(List<SchemaUpdateOption> schemaUpdateOptions) {
+      this.schemaUpdateOptions =
+              schemaUpdateOptions != null ? ImmutableList.copyOf(schemaUpdateOptions) : null;
+      return this;
+    }
+
+    @Override
     public WriteChannelConfiguration build() {
       return new WriteChannelConfiguration(this);
     }
@@ -177,6 +195,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     this.maxBadRecords = builder.maxBadRecords;
     this.schema = builder.schema;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
+    this.schemaUpdateOptions = builder.schemaUpdateOptions;
   }
 
 
@@ -234,6 +253,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   }
 
   @Override
+  public List<SchemaUpdateOption> getSchemaUpdateOptions() {
+    return schemaUpdateOptions;
+  }
+
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -246,7 +270,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         .add("formatOptions", formatOptions)
         .add("maxBadRecords", maxBadRecords)
         .add("schema", schema)
-        .add("ignoreUnknownValue", ignoreUnknownValues);
+        .add("ignoreUnknownValue", ignoreUnknownValues)
+        .add("schemaUpdateOptions", schemaUpdateOptions);
   }
 
   @Override
@@ -264,7 +289,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   public int hashCode() {
     return Objects.hash(destinationTable, createDisposition, writeDisposition, formatOptions,
-        maxBadRecords, schema, ignoreUnknownValues);
+        maxBadRecords, schema, ignoreUnknownValues, schemaUpdateOptions);
   }
 
   WriteChannelConfiguration setProjectId(String projectId) {
@@ -303,6 +328,13 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     if (getDatastoreBackupOptions() != null) {
       DatastoreBackupOptions backupOptions = getDatastoreBackupOptions();
       loadConfigurationPb.setProjectionFields(backupOptions.getProjectionFields());
+    }
+    if (schemaUpdateOptions != null) {
+      ImmutableList.Builder<String> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+      for (JobInfo.SchemaUpdateOption schemaUpdateOption : schemaUpdateOptions) {
+        schemaUpdateOptionsBuilder.add(schemaUpdateOption.name());
+      }
+      loadConfigurationPb.setSchemaUpdateOptions(schemaUpdateOptionsBuilder.build());
     }
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);

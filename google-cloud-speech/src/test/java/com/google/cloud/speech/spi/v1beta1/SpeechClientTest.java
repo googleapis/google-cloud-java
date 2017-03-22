@@ -15,7 +15,7 @@
  */
 package com.google.cloud.speech.spi.v1beta1;
 
-import com.google.api.gax.core.RpcStreamObserver;
+import com.google.api.gax.core.ApiStreamObserver;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.StreamingCallable;
 import com.google.api.gax.testing.MockGrpcService;
@@ -191,7 +191,7 @@ public class SpeechClientTest {
 
     StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
         client.streamingRecognizeCallable();
-    RpcStreamObserver<StreamingRecognizeRequest> requestObserver =
+    ApiStreamObserver<StreamingRecognizeRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);
 
     requestObserver.onNext(request);
@@ -213,7 +213,7 @@ public class SpeechClientTest {
 
     StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
         client.streamingRecognizeCallable();
-    RpcStreamObserver<StreamingRecognizeRequest> requestObserver =
+    ApiStreamObserver<StreamingRecognizeRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);
 
     requestObserver.onNext(request);

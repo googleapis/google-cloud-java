@@ -89,6 +89,22 @@ public class JobInfo implements Serializable {
   }
 
   /**
+   *  Specifies options relating to allowing the schema of the destination table to be updated as a side effect of the
+   *  load or query job.
+   */
+  public enum SchemaUpdateOption {
+    /**
+     * Allow adding a nullable field to the schema.
+     */
+    ALLOW_FIELD_ADDITION,
+
+    /**
+     * Allow relaxing a required field in the original schema to nullable.
+     */
+    ALLOW_FIELD_RELAXATION
+  }
+
+  /**
    * A builder for {@code JobInfo} objects.
    */
   public abstract static class Builder {

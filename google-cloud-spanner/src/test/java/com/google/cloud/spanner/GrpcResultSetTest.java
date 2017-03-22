@@ -225,7 +225,7 @@ public class GrpcResultSetTest {
   @Test
   public void multiResponseChunkingBytes() {
     ByteArray expectedBytes = ByteArray.copyFrom("abcdefghijklmnopqrstuvwxyz");
-    String base64 = ByteArrays.toBase64(expectedBytes);
+    String base64 = expectedBytes.toBase64();
     String chunk1 = base64.substring(0, 10);
     String chunk2 = base64.substring(10, 20);
     String chunk3 = base64.substring(20);

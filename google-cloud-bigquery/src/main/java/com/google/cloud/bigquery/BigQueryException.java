@@ -18,7 +18,6 @@ package com.google.cloud.bigquery;
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.RetryHelper.RetryInterruptedException;
 import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
@@ -102,10 +101,9 @@ public final class BigQueryException extends BaseServiceException {
    * always throw an exception.
    *
    * @throws BigQueryException when {@code ex} was caused by a {@code BigQueryException}
-   * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
   static BaseServiceException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndPropagateIfPossible(ex);
+    BaseServiceException.translate(ex);
     throw new BigQueryException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }

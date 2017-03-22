@@ -16,6 +16,8 @@
 
 package com.google.cloud.spanner;
 
+import com.google.cloud.Timestamp;
+
 /**
  * A transaction type that provides guaranteed consistency across several reads, but does not allow
  * writes. Snapshot read-only transactions can be configured to read at timestamps in the past.
