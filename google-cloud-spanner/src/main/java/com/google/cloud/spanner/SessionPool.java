@@ -20,6 +20,7 @@ import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExcepti
 
 import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
+import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
 import com.google.common.annotations.VisibleForTesting;
