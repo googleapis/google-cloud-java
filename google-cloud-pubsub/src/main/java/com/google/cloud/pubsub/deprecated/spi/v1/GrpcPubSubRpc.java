@@ -16,9 +16,9 @@
 
 package com.google.cloud.pubsub.deprecated.spi.v1;
 
+import com.google.api.gax.core.ApiFunction;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
-import com.google.api.gax.core.Function;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
@@ -135,7 +135,7 @@ public class GrpcPubSubRpc implements PubSubRpc {
     return ApiFutures.<V, ApiException>catching(
         from,
         ApiException.class,
-        new Function<ApiException, V>() {
+        new ApiFunction<ApiException, V>() {
           @Override
           public V apply(ApiException exception) {
             if (returnNullOnSet.contains(exception.getStatusCode().value())) {
