@@ -525,7 +525,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   /**
    * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
    */
-  public String getApplicationName() {
+  public static String getApplicationName() {
     return APPLICATION_NAME;
   }
 
@@ -533,21 +533,21 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   /**
    * Returns the library's name, {@code gcloud-java}, as a string.
    */
-  public String getLibraryName() {
+  public static String getLibraryName() {
     return LIBRARY_NAME;
   }
 
   /**
    * Returns the library's name used by x-goog-api-client header as a string.
    */
-  public String getGoogApiClientLibName() {
+  public static String getGoogApiClientLibName() {
     return X_GOOGLE_CLIENT_HEADER_NAME;
   }
 
   /**
    * Returns the library's version as a string.
    */
-  public String getLibraryVersion() {
+  public static String getLibraryVersion() {
     return LIBRARY_VERSION;
   }
 
