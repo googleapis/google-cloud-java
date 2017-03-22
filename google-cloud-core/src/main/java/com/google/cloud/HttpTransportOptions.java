@@ -28,7 +28,6 @@ import com.google.api.gax.core.GaxPropertiesProvider;
 import com.google.auth.Credentials;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
-import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
@@ -164,7 +163,6 @@ public class HttpTransportOptions implements TransportOptions {
     };
   }
 
-  @VisibleForTesting
   String getXGoogApiClientHeader() {
     return String.format(
         "gl-java/%s %s/%s gax/%s grpc/%s",
