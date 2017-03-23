@@ -24,7 +24,6 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.gax.core.GaxPropertiesProvider;
 import com.google.auth.Credentials;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
@@ -165,11 +164,10 @@ public class HttpTransportOptions implements TransportOptions {
 
   String getXGoogApiClientHeader() {
     return String.format(
-        "gl-java/%s %s/%s gax/%s",
+        "gl-java/%s %s/%s",
         getJavaVersion(),
         ServiceOptions.getGoogApiClientLibName(),
-        ServiceOptions.getLibraryVersion(),
-        GaxPropertiesProvider.getGaxVersion());
+        ServiceOptions.getLibraryVersion());
   }
 
   private static String getJavaVersion() {
