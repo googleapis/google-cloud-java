@@ -20,6 +20,8 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
+import com.google.api.gax.core.ApiFutures;
+import com.google.api.gax.core.ApiFutureCallback;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
@@ -106,7 +108,6 @@ public class LoggingHandler extends Handler {
 
   private final LoggingOptions options;
   private final WriteOption[] writeOptions;
-  private List<LogEntry> buffer = new LinkedList<>();
   private volatile Logging logging;
   private Level flushLevel;
   private long flushSize;
@@ -372,22 +373,9 @@ public class LoggingHandler extends Handler {
 
     try {
       LogEntry entry = entryFor(record);
-
-      List<LogEntry> flushBuffer = null;
-      WriteOption[] flushWriteOptions = null;
-
-      synchronized (this) {
-        if (entry != null) {
-          buffer.add(entry);
-        }
-        if (buffer.size() >= flushSize || record.getLevel().intValue() >= flushLevel.intValue()) {
-          flushBuffer = buffer;
-          flushWriteOptions = writeOptions;
-          buffer = new LinkedList<>();
-        }
+      if (entry != null) {
+        write(entry, writeOptions);
       }
-
-      flush(flushBuffer, flushWriteOptions);
     } finally {
       inPublishCall.remove();
     }
@@ -459,45 +447,38 @@ public class LoggingHandler extends Handler {
    * Writes the provided list of log entries to Stackdriver Logging. Override this method to change
    * how entries should be written.
    */
-  void write(List<LogEntry> entries, WriteOption... options) {
+  void write(LogEntry entry, WriteOption... options) {
+    List<LogEntry> entryList = Collections.singletonList(entry);
     switch (this.synchronicity) {
       case SYNC:
-        getLogging().write(entries, options);
+        try {
+          getLogging().write(entryList, options);
+        } catch (Exception ex) {
+          reportError(null, ex, ErrorManager.FLUSH_FAILURE);
+        }
         break;
       case ASYNC:
       default:
-        getLogging().writeAsync(entries, options);
+        ApiFutures.addCallback(getLogging().writeAsync(entryList, options), new ApiFutureCallback<Void>() {
+          @Override
+          public void onSuccess(Void v) {}
+
+          @Override
+          public void onFailure(Throwable t) {
+            if (t instanceof Exception) {
+              reportError(null, (Exception) t, ErrorManager.FLUSH_FAILURE);
+            } else {
+              reportError(null, new Exception(t), ErrorManager.FLUSH_FAILURE);
+            }
+          }
+        });
         break;
     }
   }
 
   @Override
   public void flush() {
-    List<LogEntry> flushBuffer;
-    WriteOption[] flushWriteOptions;
-
-    synchronized (this) {
-      if (buffer.isEmpty()) {
-        return;
-      }
-      flushBuffer = buffer;
-      flushWriteOptions = writeOptions;
-      buffer = new LinkedList<>();
-    }
-
-    flush(flushBuffer, flushWriteOptions);
-  }
-
-  private void flush(List<LogEntry> flushBuffer, WriteOption[] flushWriteOptions) {
-    if (flushBuffer == null) {
-      return;
-    }
-    try {
-      write(flushBuffer, flushWriteOptions);
-    } catch (Exception ex) {
-      // writing can fail but we should not throw an exception, we report the error instead
-      reportError(null, ex, ErrorManager.FLUSH_FAILURE);
-    }
+    // BUG(1795): flush is broken, need support from batching implementation.
   }
 
   /**
