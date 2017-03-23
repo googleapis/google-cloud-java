@@ -688,9 +688,12 @@ public class DatastoreTest {
     assertNotEquals(key1, key2);
     assertEquals(Key.newBuilder(pk1, key2.getId()).build(), key2);
 
-    Key key3 = datastore.allocateId(key1);
-    assertNotEquals(key1, key3);
-    assertEquals(Key.newBuilder(pk1, key3.getId()).build(), key3);
+    try {
+      datastore.allocateId(key1);
+      fail("Expecting a failure");
+    } catch (IllegalArgumentException expected) {
+      assertEquals(expected.getMessage(), "keys must be IncompleteKey instances");
+    }
   }
 
   @Test
@@ -700,16 +703,20 @@ public class DatastoreTest {
     IncompleteKey incompleteKey2 =
         keyFactory.setKind(KIND2).addAncestor(PathElement.of(KIND1, 10)).newKey();
     Key key3 = keyFactory.newKey("name");
-    Key key4 = keyFactory.newKey(1);
-    List<Key> result =
-        datastore.allocateId(incompleteKey1, incompleteKey2, key3, key4, incompleteKey1, key3);
-    assertEquals(6, result.size());
-    assertEquals(Key.newBuilder(incompleteKey1, result.get(0).getId()).build(), result.get(0));
-    assertEquals(Key.newBuilder(incompleteKey1, result.get(4).getId()).build(), result.get(4));
-    assertEquals(Key.newBuilder(incompleteKey2, result.get(1).getId()).build(), result.get(1));
-    assertEquals(Key.newBuilder(key3).setId(result.get(2).getId()).build(), result.get(2));
-    assertEquals(Key.newBuilder(key3).setId(result.get(5).getId()).build(), result.get(5));
-    assertEquals(Key.newBuilder(key4).setId(result.get(3).getId()).build(), result.get(3));
+    List<Key> result1 =
+            datastore.allocateId(incompleteKey1, incompleteKey2, incompleteKey1);
+    assertEquals(3, result1.size());
+    assertEquals(Key.newBuilder(incompleteKey1, result1.get(0).getId()).build(), result1.get(0));
+    assertEquals(Key.newBuilder(incompleteKey1, result1.get(2).getId()).build(), result1.get(2));
+    assertEquals(Key.newBuilder(incompleteKey2, result1.get(1).getId()).build(), result1.get(1));
+
+    try {
+      datastore.allocateId(incompleteKey1, incompleteKey2, key3);
+      fail("expecting a failure");
+    } catch(IllegalArgumentException expected) {
+        assertEquals(expected.getMessage(), "keys must be IncompleteKey instances");
+
+    }
   }
 
   @Test
