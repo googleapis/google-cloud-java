@@ -471,7 +471,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.DiskType call() {
               return computeRpc.getDiskType(diskTypeId.getZone(), diskTypeId.getType(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : DiskType.fromPb(answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -499,7 +499,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.DiskType>> call() {
               return serviceOptions.getComputeRpcV1().listDiskTypes(zone, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<DiskType> diskTypes = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.DiskType>of()
@@ -533,7 +533,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.DiskType>> call() {
               return serviceOptions.getComputeRpcV1().listDiskTypes(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<DiskType> diskTypes = Iterables.transform(result.y(),
           new Function<com.google.api.services.compute.model.DiskType, DiskType>() {
@@ -560,7 +560,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.getMachineType(machineType.getZone(), machineType.getType(),
                   optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : MachineType.fromPb(answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -588,7 +588,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.MachineType>> call() {
               return serviceOptions.getComputeRpcV1().listMachineTypes(zone, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<MachineType> machineTypes = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.MachineType>of()
@@ -623,7 +623,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.MachineType>> call() {
               return serviceOptions.getComputeRpcV1().listMachineTypes(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<MachineType> machineTypes = Iterables.transform(result.y(),
           new Function<com.google.api.services.compute.model.MachineType, MachineType>() {
@@ -651,7 +651,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Region call() {
               return computeRpc.getRegion(region, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Region.fromPb(answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -674,7 +674,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Region>> call() {
               return serviceOptions.getComputeRpcV1().listRegions(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Region> regions = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Region>of()
@@ -702,7 +702,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Zone call() {
               return computeRpc.getZone(zone, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Zone.fromPb(answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -725,7 +725,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Zone>> call() {
               return serviceOptions.getComputeRpcV1().listZones(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Zone> zones = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Zone>of()
@@ -759,7 +759,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.getLicense(completeId.getProject(), completeId.getLicense(),
                   optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : License.fromPb(answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -789,7 +789,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                   throw new IllegalArgumentException("Unexpected operation identity type");
               }
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -822,7 +822,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Operation>> call() {
               return serviceOptions.getComputeRpcV1().listGlobalOperations(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Operation> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
@@ -850,7 +850,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Operation>> call() {
               return serviceOptions.getComputeRpcV1().listRegionOperations(region, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Operation> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
@@ -878,7 +878,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Operation>> call() {
               return serviceOptions.getComputeRpcV1().listZoneOperations(zone, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Operation> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
@@ -911,7 +911,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               throw new IllegalArgumentException("Unexpected operation identity type");
           }
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
     }
@@ -936,7 +936,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                   throw new IllegalArgumentException("Unexpected address identity type");
               }
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Address.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -964,7 +964,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                   throw new IllegalArgumentException("Unexpected address identity type");
               }
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
     }
@@ -996,7 +996,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Address>> call() {
               return serviceOptions.getComputeRpcV1().listGlobalAddresses(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Address> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Address>of()
@@ -1024,7 +1024,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Address>> call() {
               return serviceOptions.getComputeRpcV1().listRegionAddresses(region, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Address> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Address>of()
@@ -1052,7 +1052,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Address>> call() {
               return serviceOptions.getComputeRpcV1().listAddresses(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Address> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Address>of()
@@ -1089,7 +1089,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                   throw new IllegalArgumentException("Unexpected address identity type");
               }
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1110,7 +1110,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                   completeSnapshot.getSnapshotId().getSnapshot(), completeSnapshot.getDescription(),
                   optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1127,7 +1127,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Snapshot call() {
               return computeRpc.getSnapshot(snapshot, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Snapshot.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1150,7 +1150,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Snapshot>> call() {
               return serviceOptions.getComputeRpcV1().listSnapshots(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Snapshot> snapshots = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Snapshot>of()
@@ -1183,7 +1183,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.deleteSnapshot(snapshot, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1201,7 +1201,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.createImage(completeImage.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1220,7 +1220,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.getImage(completeImageId.getProject(), completeImageId.getImage(),
                   optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Image.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1248,7 +1248,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Image>> call() {
               return serviceOptions.getComputeRpcV1().listImages(project, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Image> images = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Image>of()
@@ -1278,7 +1278,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.deleteImage(completeId.getProject(), completeId.getImage(),
                   optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1298,7 +1298,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.deprecateImage(completeId.getProject(), completeId.getImage(),
                   deprecationStatus.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1315,7 +1315,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Disk call() {
               return computeRpc.getDisk(diskId.getZone(), diskId.getDisk(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Disk.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1334,7 +1334,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.createDisk(disk.getDiskId().getZone(), diskPb, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
     }
@@ -1366,7 +1366,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Disk>> call() {
               return serviceOptions.getComputeRpcV1().listDisks(zone, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Disk> disks = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Disk>of()
@@ -1394,7 +1394,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Disk>> call() {
               return serviceOptions.getComputeRpcV1().listDisks(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Disk> disks = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Disk>of()
@@ -1416,7 +1416,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.deleteDisk(disk.getZone(), disk.getDisk(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1433,7 +1433,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.resizeDisk(disk.getZone(), disk.getDisk(), sizeGb, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1452,7 +1452,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.createSubnetwork(completeSubnetwork.getSubnetworkId().getRegion(),
                   completeSubnetwork.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1470,7 +1470,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.getSubnetwork(subnetworkId.getRegion(),
                   subnetworkId.getSubnetwork(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Subnetwork.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1503,7 +1503,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Subnetwork>> call() {
               return serviceOptions.getComputeRpcV1().listSubnetworks(region, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Subnetwork> subnetworks = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Subnetwork>of()
@@ -1531,7 +1531,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Subnetwork>> call() {
               return serviceOptions.getComputeRpcV1().listSubnetworks(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Subnetwork> subnetworks = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Subnetwork>of()
@@ -1554,7 +1554,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.deleteSubnetwork(subnetwork.getRegion(), subnetwork.getSubnetwork(),
                   optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1572,7 +1572,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.createNetwork(completeNetwork.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1589,7 +1589,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Network call() {
               return computeRpc.getNetwork(network, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Network.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1612,7 +1612,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Network>> call() {
               return serviceOptions.getComputeRpcV1().listNetworks(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Network> networks = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Network>of()
@@ -1640,7 +1640,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.deleteNetwork(network.getNetwork(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1664,7 +1664,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.createInstance(completeInstance.getInstanceId().getZone(),
                   completeInstance.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1681,7 +1681,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Instance call() {
               return computeRpc.getInstance(instance.getZone(), instance.getInstance(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Instance.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1714,7 +1714,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Instance>> call() {
               return serviceOptions.getComputeRpcV1().listInstances(zone, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Instance> instances = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Instance>of()
@@ -1742,7 +1742,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                 Iterable<com.google.api.services.compute.model.Instance>> call() {
               return serviceOptions.getComputeRpcV1().listInstances(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Instance> instances = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Instance>of()
@@ -1765,7 +1765,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.deleteInstance(instance.getZone(), instance.getInstance(),
                   optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1784,7 +1784,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.addAccessConfig(instance.getZone(), instance.getInstance(),
                   networkInterface, accessConfig.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1803,7 +1803,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.attachDisk(instance.getZone(), instance.getInstance(),
                   completeDisk.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1844,7 +1844,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.deleteAccessConfig(instance.getZone(), instance.getInstance(),
                   networkInterface, accessConfig, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1863,7 +1863,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.detachDisk(instance.getZone(), instance.getInstance(), deviceName,
                   optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1879,7 +1879,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           return computeRpc.getSerialPortOutput(instance.getZone(), instance.getInstance(), port,
               optionMap());
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
     }
@@ -1894,7 +1894,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           return computeRpc.getSerialPortOutput(instance.getZone(), instance.getInstance(), null,
               optionMap());
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
     }
@@ -1910,7 +1910,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.reset(instance.getZone(), instance.getInstance(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1929,7 +1929,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.setDiskAutoDelete(instance.getZone(), instance.getInstance(),
                   deviceName, autoDelete, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1950,7 +1950,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.setMachineType(instance.getZone(), instance.getInstance(),
                   machineTypeUrl, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1969,7 +1969,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.setMetadata(instance.getZone(), instance.getInstance(),
                   metadata.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -1988,7 +1988,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.setScheduling(instance.getZone(), instance.getInstance(),
                   schedulingOptions.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -2006,7 +2006,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return computeRpc.setTags(instance.getZone(), instance.getInstance(), tags.toPb(),
                   optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -2023,7 +2023,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.start(instance.getZone(), instance.getInstance(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
@@ -2040,7 +2040,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.stop(instance.getZone(), instance.getInstance(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);

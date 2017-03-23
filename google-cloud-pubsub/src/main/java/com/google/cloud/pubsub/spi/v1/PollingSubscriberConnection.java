@@ -17,9 +17,9 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.FlowController;
+import com.google.api.gax.core.ApiClock;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
-import com.google.cloud.Clock;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.collect.Lists;
@@ -72,7 +72,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
       Channel channel,
       FlowController flowController,
       ScheduledExecutorService executor,
-      Clock clock) {
+      ApiClock clock) {
     this.subscription = subscription;
     this.executor = executor;
     stub =
@@ -199,7 +199,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
   @Override
   public void sendAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
-    // Send the modify ack deadlines in bundles as not to exceed the max request
+    // Send the modify ack deadlines in batches as not to exceed the max request
     // size.
     for (PendingModifyAckDeadline modifyAckDeadline : ackDeadlineExtensions) {
       for (List<String> ackIdChunk :

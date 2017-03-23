@@ -43,6 +43,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final Integer maxBadRecords;
   private final Schema schema;
   private final Boolean ignoreUnknownValues;
+  private final List<JobInfo.SchemaUpdateOption> schemaUpdateOptions;
 
   public static final class Builder
       extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
@@ -57,6 +58,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private Schema schema;
     private Boolean ignoreUnknownValues;
     private List<String> projectionFields;
+    private List<JobInfo.SchemaUpdateOption> schemaUpdateOptions;
 
     private Builder() {
       super(Type.LOAD);
@@ -72,6 +74,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.schema = loadConfiguration.schema;
       this.ignoreUnknownValues = loadConfiguration.ignoreUnknownValues;
       this.sourceUris = loadConfiguration.sourceUris;
+      this.schemaUpdateOptions = loadConfiguration.schemaUpdateOptions;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -118,6 +121,13 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.projectionFields = loadConfigurationPb.getProjectionFields();
       if (loadConfigurationPb.getSourceUris() != null) {
         this.sourceUris = ImmutableList.copyOf(configurationPb.getLoad().getSourceUris());
+      }
+      if (loadConfigurationPb.getSchemaUpdateOptions() != null) {
+        ImmutableList.Builder<JobInfo.SchemaUpdateOption> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+        for (String rawSchemaUpdateOption : loadConfigurationPb.getSchemaUpdateOptions()) {
+          schemaUpdateOptionsBuilder.add(JobInfo.SchemaUpdateOption.valueOf(rawSchemaUpdateOption));
+        }
+        this.schemaUpdateOptions = schemaUpdateOptionsBuilder.build();
       }
     }
 
@@ -181,6 +191,13 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
 
     @Override
+    public Builder setSchemaUpdateOptions(List<JobInfo.SchemaUpdateOption> schemaUpdateOptions) {
+      this.schemaUpdateOptions =
+              schemaUpdateOptions != null ? ImmutableList.copyOf(schemaUpdateOptions) : null;
+      return this;
+    }
+
+    @Override
     public LoadJobConfiguration build() {
       return new LoadJobConfiguration(this);
     }
@@ -196,6 +213,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.maxBadRecords = builder.maxBadRecords;
     this.schema = builder.schema;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
+    this.schemaUpdateOptions = builder.schemaUpdateOptions;
   }
 
 
@@ -261,6 +279,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   }
 
   @Override
+  public List<JobInfo.SchemaUpdateOption> getSchemaUpdateOptions() {
+    return schemaUpdateOptions;
+  }
+
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -275,7 +298,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("maxBadRecords", maxBadRecords)
         .add("schema", schema)
         .add("ignoreUnknownValue", ignoreUnknownValues)
-        .add("sourceUris", sourceUris);
+        .add("sourceUris", sourceUris)
+        .add("schemaUpdateOptions", schemaUpdateOptions);
   }
 
   @Override
@@ -331,6 +355,13 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     if (sourceUris != null) {
       loadConfigurationPb.setSourceUris(ImmutableList.copyOf(sourceUris));
+    }
+    if (schemaUpdateOptions != null) {
+      ImmutableList.Builder<String> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+      for (JobInfo.SchemaUpdateOption schemaUpdateOption : schemaUpdateOptions) {
+        schemaUpdateOptionsBuilder.add(schemaUpdateOption.name());
+      }
+      loadConfigurationPb.setSchemaUpdateOptions(schemaUpdateOptionsBuilder.build());
     }
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);

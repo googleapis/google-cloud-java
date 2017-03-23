@@ -19,7 +19,6 @@ package com.google.cloud.dns;
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.RetryHelper.RetryInterruptedException;
 import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
@@ -62,10 +61,9 @@ public final class DnsException extends BaseServiceException {
    * always throw an exception.
    *
    * @throws DnsException when {@code ex} was caused by a {@code DnsException}
-   * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
   static DnsException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndPropagateIfPossible(ex);
+    BaseServiceException.translate(ex);
     throw new DnsException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }

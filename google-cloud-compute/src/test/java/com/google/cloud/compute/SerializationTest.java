@@ -19,7 +19,7 @@ package com.google.cloud.compute;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
-import com.google.cloud.RetryParams;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.compute.AttachedDisk.CreateDiskConfiguration;
 import com.google.cloud.compute.AttachedDisk.PersistentDiskConfiguration;
 import com.google.cloud.compute.AttachedDisk.ScratchDiskConfiguration;
@@ -269,7 +269,7 @@ public class SerializationTest extends BaseSerializationTest {
         .build();
     ComputeOptions otherOptions = options.toBuilder()
         .setProjectId("p2")
-        .setRetryParams(RetryParams.getDefaultInstance())
+        .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
         .build();
     return new Serializable[]{DISK_TYPE_ID, DISK_TYPE, MACHINE_TYPE_ID, MACHINE_TYPE, REGION_ID,
         REGION, ZONE_ID, ZONE, LICENSE_ID, LICENSE, DEPRECATION_STATUS, GLOBAL_OPERATION_ID,

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner;
+package com.google.cloud;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -28,7 +28,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Unit tests for {@link com.google.cloud.spanner.Timestamp}. */
+/** Unit tests for {@link com.google.cloud.Timestamp}. */
 @RunWith(JUnit4.class)
 public class TimestampTest {
   private static final String TEST_TIME_ISO = "2015-10-12T15:14:54Z";

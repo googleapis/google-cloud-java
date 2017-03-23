@@ -127,7 +127,7 @@ class BlobReadChannel implements ReadChannel {
           public Tuple<String, byte[]> call() {
             return storageRpc.read(storageObject, requestOptions, position, toRead);
           }
-        }, serviceOptions.getRetryParams(), StorageImpl.EXCEPTION_HANDLER,
+        }, serviceOptions.getRetrySettings(), StorageImpl.EXCEPTION_HANDLER,
             serviceOptions.getClock());
         if (result.y().length > 0 && lastEtag != null && !Objects.equals(result.x(), lastEtag)) {
           StringBuilder messageBuilder = new StringBuilder();

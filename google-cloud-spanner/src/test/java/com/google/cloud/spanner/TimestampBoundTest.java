@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import static com.google.cloud.spanner.TimestampBound.Mode;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.Timestamp;
 import com.google.common.testing.EqualsTester;
 import com.google.spanner.v1.TransactionOptions;
 import java.util.concurrent.TimeUnit;
