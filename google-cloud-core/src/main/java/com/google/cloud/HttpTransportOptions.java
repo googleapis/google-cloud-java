@@ -19,6 +19,7 @@ package com.google.cloud;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
+import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
@@ -154,8 +155,24 @@ public class HttpTransportOptions implements TransportOptions {
         if (readTimeout >= 0) {
           httpRequest.setReadTimeout(readTimeout);
         }
+
+        HttpHeaders headers = httpRequest.getHeaders();
+        headers.set("x-goog-api-client", getXGoogApiClientHeader());
       }
     };
+  }
+
+  String getXGoogApiClientHeader() {
+    return String.format(
+        "gl-java/%s %s/%s",
+        getJavaVersion(),
+        ServiceOptions.getGoogApiClientLibName(),
+        ServiceOptions.getLibraryVersion());
+  }
+
+  private static String getJavaVersion() {
+    String javaVersion = Runtime.class.getPackage().getImplementationVersion();
+    return javaVersion != null ? javaVersion : "";
   }
 
   /**
