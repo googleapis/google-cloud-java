@@ -144,6 +144,7 @@ public class ITDatastoreTest {
     List<T> scResultsCopy = makeResultsCopy(scResults);
     Set<T> scResultsSet = new HashSet<>(scResultsCopy);
 
+    infiniteloop:
     while(true) {
       QueryResults<T> results = DATASTORE.run(query);
       List<T> resultsCopy = makeResultsCopy(results);
@@ -152,7 +153,7 @@ public class ITDatastoreTest {
       }
       for (T res: resultsCopy)  {
         if (! scResultsSet.contains(res)) {
-          continue;
+          continue infiniteloop;
         }
       }
       return resultsCopy.iterator();
