@@ -88,7 +88,7 @@ To run examples from your command line:
   * Here's an example run of `DnsExample`.
 
     Note that you have to enable the Google Cloud DNS API on the [Google Developers Console][developers-console] before running the following commands.
-    You will need to replace the domain name `elaborateexample.com` with your own domain name with [verified ownership] (https://www.google.com/webmasters/verification/home).
+    You will need to replace the domain name `elaborateexample.com` with your own domain name with [verified ownership](https://www.google.com/webmasters/verification/home).
     Also, note that the example creates and deletes record sets of type A only. Operations with other record types are not implemented in the example.
     ```
     target/appassembler/bin/DnsExample create some-sample-zone elaborateexample.com. description

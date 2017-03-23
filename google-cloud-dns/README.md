@@ -1,7 +1,7 @@
 Google Cloud Java Client for DNS
 ================================
 
-Java idiomatic client for [Google Cloud DNS] (https://cloud.google.com/dns/).
+Java idiomatic client for [Google Cloud DNS](https://cloud.google.com/dns/).
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,8 +9,8 @@ Java idiomatic client for [Google Cloud DNS] (https://cloud.google.com/dns/).
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html)
+-  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
+-  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -148,7 +148,7 @@ for(String nameServer : nameServers) {
 }
 ```
 
-You can now instruct your domain registrar to [update your domain name servers] (https://cloud.google.com/dns/update-name-servers).
+You can now instruct your domain registrar to [update your domain name servers](https://cloud.google.com/dns/update-name-servers).
 As soon as this happens and the change propagates through cached values in DNS resolvers,
 all the DNS queries will be directed to and answered by the Google Cloud DNS service.
 
@@ -215,7 +215,7 @@ while (recordSetIterator.hasNext()) {
 ChangeRequestInfo changeRequest = changeBuilder.build();
 ChangeRequest pendingRequest = zone.applyChangeRequest(changeRequest);
 ```
-You can find more information about changes in the [Cloud DNS documentation] (https://cloud.google.com/dns/what-is-cloud-dns#cloud_dns_api_concepts).
+You can find more information about changes in the [Cloud DNS documentation](https://cloud.google.com/dns/what-is-cloud-dns#cloud_dns_api_concepts).
 
 When the change request is applied, it is registered with the Cloud DNS service for processing. We
 can wait for its completion as follows:
@@ -357,7 +357,7 @@ See [TESTING] to read more about testing.
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/).
 
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered

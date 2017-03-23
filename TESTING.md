@@ -2,15 +2,15 @@
 
 This library provides tools to help write tests for code that uses the following google-cloud services:
 
--  [BigQuery] (#testing-code-that-uses-bigquery)
--  [Compute] (#testing-code-that-uses-compute)
--  [Datastore] (#testing-code-that-uses-datastore)
--  [DNS] (#testing-code-that-uses-dns)
--  [Logging] (#testing-code-that-uses-logging)
--  [PubSub] (#testing-code-that-uses-pubsub)
--  [Resource Manager] (#testing-code-that-uses-resource-manager)
--  [Storage] (#testing-code-that-uses-storage)
--  [Spanner] (#testing-code-that-uses-cloud-spanner)
+-  [BigQuery](#testing-code-that-uses-bigquery)
+-  [Compute](#testing-code-that-uses-compute)
+-  [Datastore](#testing-code-that-uses-datastore)
+-  [DNS](#testing-code-that-uses-dns)
+-  [Logging](#testing-code-that-uses-logging)
+-  [PubSub](#testing-code-that-uses-pubsub)
+-  [Resource Manager](#testing-code-that-uses-resource-manager)
+-  [Storage](#testing-code-that-uses-storage)
+-  [Spanner](#testing-code-that-uses-cloud-spanner)
 
 ### Testing code that uses BigQuery
 
