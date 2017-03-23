@@ -61,6 +61,7 @@ public class ExternalTableDefinition extends TableDefinition {
   private final Integer maxBadRecords;
   private final Boolean ignoreUnknownValues;
   private final String compression;
+  private final Boolean autodetect;
 
   public static final class Builder
       extends TableDefinition.Builder<ExternalTableDefinition, Builder> {
@@ -70,6 +71,7 @@ public class ExternalTableDefinition extends TableDefinition {
     private Integer maxBadRecords;
     private Boolean ignoreUnknownValues;
     private String compression;
+    private Boolean autodetect;
 
     private Builder() {
       super(Type.EXTERNAL);
@@ -82,6 +84,7 @@ public class ExternalTableDefinition extends TableDefinition {
       this.maxBadRecords = tableDefinition.maxBadRecords;
       this.ignoreUnknownValues = tableDefinition.ignoreUnknownValues;
       this.compression = tableDefinition.compression;
+      this.autodetect = tableDefinition.autodetect;
     }
 
     private Builder(Table tablePb) {
@@ -101,6 +104,7 @@ public class ExternalTableDefinition extends TableDefinition {
           this.formatOptions = CsvOptions.fromPb(externalDataConfiguration.getCsvOptions());
         }
         this.maxBadRecords = externalDataConfiguration.getMaxBadRecords();
+        this.autodetect = externalDataConfiguration.getAutodetect();
       }
     }
 
@@ -171,6 +175,15 @@ public class ExternalTableDefinition extends TableDefinition {
     }
 
     /**
+     * [Experimental] Sets detection of schema and format options automatically. Any option specified explicitly will
+     * be honored.
+     */
+    public Builder setAutodetect(Boolean autodetect) {
+      this.autodetect = autodetect;
+      return this;
+    }
+
+    /**
      * Creates an {@code ExternalTableDefinition} object.
      */
     @Override
@@ -186,6 +199,7 @@ public class ExternalTableDefinition extends TableDefinition {
     this.maxBadRecords = builder.maxBadRecords;
     this.formatOptions = builder.formatOptions;
     this.sourceUris = builder.sourceUris;
+    this.autodetect = builder.autodetect;
   }
 
 
@@ -246,6 +260,13 @@ public class ExternalTableDefinition extends TableDefinition {
   }
 
   /**
+   * [Experimental] Returns whether automatic detection of schema and format options should be performed.
+   */
+  public Boolean getAutodetect() {
+    return autodetect;
+  }
+
+  /**
    * Returns a builder for the {@code ExternalTableDefinition} object.
    */
   @Override
@@ -260,7 +281,8 @@ public class ExternalTableDefinition extends TableDefinition {
         .add("formatOptions", formatOptions)
         .add("compression", compression)
         .add("ignoreUnknownValues", ignoreUnknownValues)
-        .add("maxBadRecords", maxBadRecords);
+        .add("maxBadRecords", maxBadRecords)
+        .add("autodetect", autodetect);
   }
 
   @Override
@@ -274,7 +296,7 @@ public class ExternalTableDefinition extends TableDefinition {
   @Override
   public final int hashCode() {
     return Objects.hash(baseHashCode(), compression, ignoreUnknownValues, maxBadRecords,
-        formatOptions, sourceUris);
+        formatOptions, sourceUris, autodetect);
   }
 
   @Override
@@ -307,6 +329,9 @@ public class ExternalTableDefinition extends TableDefinition {
     }
     if (formatOptions != null && FormatOptions.CSV.equals(formatOptions.getType())) {
       externalConfigurationPb.setCsvOptions(((CsvOptions) formatOptions).toPb());
+    }
+    if (autodetect != null) {
+      externalConfigurationPb.setAutodetect(autodetect);
     }
     return externalConfigurationPb;
   }
@@ -416,6 +441,9 @@ public class ExternalTableDefinition extends TableDefinition {
     }
     if (externalDataConfiguration.getMaxBadRecords() != null) {
       builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());
+    }
+    if (externalDataConfiguration.getAutodetect() != null) {
+      builder.setAutodetect(externalDataConfiguration.getAutodetect());
     }
     return builder.build();
   }

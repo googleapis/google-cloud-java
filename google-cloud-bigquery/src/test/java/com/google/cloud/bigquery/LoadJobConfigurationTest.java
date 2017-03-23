@@ -49,6 +49,7 @@ public class LoadJobConfigurationTest {
   private static final List<SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =
           ImmutableList.of(SchemaUpdateOption.ALLOW_FIELD_ADDITION);
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
+  private static final Boolean AUTODETECT = true;
   private static final LoadJobConfiguration LOAD_CONFIGURATION_CSV =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -58,6 +59,7 @@ public class LoadJobConfigurationTest {
           .setMaxBadRecords(MAX_BAD_RECORDS)
           .setSchema(TABLE_SCHEMA)
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
+          .setAutodetect(AUTODETECT)
           .build();
   private static final DatastoreBackupOptions BACKUP_OPTIONS = DatastoreBackupOptions.newBuilder()
       .setProjectionFields(ImmutableList.of("field_1", "field_2"))
@@ -71,6 +73,7 @@ public class LoadJobConfigurationTest {
           .setMaxBadRecords(MAX_BAD_RECORDS)
           .setSchema(TABLE_SCHEMA)
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
+          .setAutodetect(AUTODETECT)
           .build();
 
   @Test
@@ -153,6 +156,7 @@ public class LoadJobConfigurationTest {
     assertEquals(expected.getMaxBadRecords(), value.getMaxBadRecords());
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(expected.getDatastoreBackupOptions(), value.getDatastoreBackupOptions());
+    assertEquals(expected.getAutodetect(), value.getAutodetect());
     assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
   }
 }

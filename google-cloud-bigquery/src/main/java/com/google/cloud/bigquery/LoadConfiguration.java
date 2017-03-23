@@ -101,6 +101,11 @@ public interface LoadConfiguration {
      */
     Builder setSchemaUpdateOptions(List<SchemaUpdateOption> schemaUpdateOptions);
 
+    /**
+     * [Experimental] Sets automatic inference of the options and schema for CSV and JSON sources.
+     */
+    Builder setAutodetect(Boolean autodetect);
+
     LoadConfiguration build();
   }
 
@@ -176,6 +181,11 @@ public interface LoadConfiguration {
    * decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema.
    */
   List<SchemaUpdateOption> getSchemaUpdateOptions();
+
+  /**
+   * [Experimental] Returns whether automatic inference of the options and schema for CSV and JSON sources is set.
+   */
+  Boolean getAutodetect();
 
   /**
    * Returns a builder for the load configuration object.

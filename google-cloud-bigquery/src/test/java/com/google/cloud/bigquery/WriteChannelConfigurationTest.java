@@ -46,6 +46,7 @@ public class WriteChannelConfigurationTest {
       .setDescription("FieldDescription")
       .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
+  private static final Boolean AUTODETECT = true;
   private static final List<JobInfo.SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =
       ImmutableList.of(JobInfo.SchemaUpdateOption.ALLOW_FIELD_ADDITION);
   private static final WriteChannelConfiguration LOAD_CONFIGURATION_CSV =
@@ -57,6 +58,7 @@ public class WriteChannelConfigurationTest {
           .setMaxBadRecords(MAX_BAD_RECORDS)
           .setSchema(TABLE_SCHEMA)
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
+          .setAutodetect(AUTODETECT)
           .build();
 
   private static final DatastoreBackupOptions BACKUP_OPTIONS = DatastoreBackupOptions.newBuilder()
@@ -71,6 +73,7 @@ public class WriteChannelConfigurationTest {
           .setMaxBadRecords(MAX_BAD_RECORDS)
           .setSchema(TABLE_SCHEMA)
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
+          .setAutodetect(AUTODETECT)
           .build();
 
   @Test
@@ -120,7 +123,8 @@ public class WriteChannelConfigurationTest {
             .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
             .setMaxBadRecords(MAX_BAD_RECORDS)
             .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
-            .setSchema(TABLE_SCHEMA);
+            .setSchema(TABLE_SCHEMA)
+            .setAutodetect(AUTODETECT);
     WriteChannelConfiguration loadConfigurationCSV = builder.build();
     assertEquals(TABLE_ID, loadConfigurationCSV.getDestinationTable());
     assertEquals(CREATE_DISPOSITION, loadConfigurationCSV.getCreateDisposition());
@@ -131,6 +135,7 @@ public class WriteChannelConfigurationTest {
     assertEquals(MAX_BAD_RECORDS, loadConfigurationCSV.getMaxBadRecords());
     assertEquals(TABLE_SCHEMA, loadConfigurationCSV.getSchema());
     assertEquals(SCHEMA_UPDATE_OPTIONS, loadConfigurationCSV.getSchemaUpdateOptions());
+    assertEquals(AUTODETECT, loadConfigurationCSV.getAutodetect());
     builder.setFormatOptions(BACKUP_OPTIONS);
     WriteChannelConfiguration loadConfigurationBackup = builder.build();
     assertEquals(BACKUP_OPTIONS, loadConfigurationBackup.getDatastoreBackupOptions());
@@ -160,5 +165,6 @@ public class WriteChannelConfigurationTest {
     assertEquals(expected.getDatastoreBackupOptions(), value.getDatastoreBackupOptions());
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
+    assertEquals(expected.getAutodetect(), value.getAutodetect());
   }
 }
