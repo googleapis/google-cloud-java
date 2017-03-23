@@ -703,7 +703,6 @@ public class DatastoreTest {
     IncompleteKey incompleteKey2 =
         keyFactory.setKind(KIND2).addAncestor(PathElement.of(KIND1, 10)).newKey();
     Key key3 = keyFactory.newKey("name");
-    Key key4 = keyFactory.newKey(1);
     List<Key> result1 =
             datastore.allocateId(incompleteKey1, incompleteKey2, incompleteKey1);
     assertEquals(3, result1.size());

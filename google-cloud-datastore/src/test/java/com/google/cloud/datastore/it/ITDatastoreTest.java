@@ -525,8 +525,6 @@ public class ITDatastoreTest {
     IncompleteKey incompleteKey1 = keyFactory.newKey();
     IncompleteKey incompleteKey2 =
         keyFactory.setKind(KIND2).addAncestors(PathElement.of(KIND1, 10)).newKey();
-    Key key3 = keyFactory.newKey("name");
-    Key key4 = keyFactory.newKey(1);
     List<Key> result =
         DATASTORE.allocateId(incompleteKey1, incompleteKey2, incompleteKey1);
     assertEquals(3, result.size());
