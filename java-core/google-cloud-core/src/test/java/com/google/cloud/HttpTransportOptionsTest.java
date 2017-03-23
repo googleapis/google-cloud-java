@@ -23,6 +23,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.HttpTransportOptions.DefaultHttpTransportFactory;
+import java.util.regex.Pattern;
 import org.easymock.EasyMock;
 import org.junit.Test;
 
@@ -59,5 +60,13 @@ public class HttpTransportOptionsTest {
   public void testBaseHashCode() {
     assertEquals(OPTIONS.hashCode(), OPTIONS_COPY.hashCode());
     assertNotEquals(DEFAULT_OPTIONS.hashCode(), OPTIONS.hashCode());
+  }
+
+  @Test
+  public void testHeader() {
+    String expectedHeaderPattern = "^gl-java/.* gccl/.*";
+    assertTrue(Pattern.compile(expectedHeaderPattern)
+        .matcher(DEFAULT_OPTIONS.getXGoogApiClientHeader())
+        .find());
   }
 }
