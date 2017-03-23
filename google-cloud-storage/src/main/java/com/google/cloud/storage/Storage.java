@@ -19,22 +19,6 @@ package com.google.cloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.auth.ServiceAccountSigner;
-import com.google.auth.ServiceAccountSigner.SigningException;
-import com.google.cloud.FieldSelector;
-import com.google.cloud.FieldSelector.Helper;
-import com.google.cloud.Page;
-import com.google.cloud.ReadChannel;
-import com.google.cloud.Service;
-import com.google.cloud.WriteChannel;
-import com.google.cloud.storage.Acl.Entity;
-import com.google.cloud.storage.spi.v1.StorageRpc;
-import com.google.cloud.storage.spi.v1.StorageRpc.Tuple;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
-import com.google.common.io.BaseEncoding;
-
 import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
@@ -47,6 +31,23 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.ServiceAccountSigner.SigningException;
+import com.google.cloud.FieldSelector;
+import com.google.cloud.FieldSelector.Helper;
+import com.google.cloud.Page;
+import com.google.cloud.Policy;
+import com.google.cloud.ReadChannel;
+import com.google.cloud.Service;
+import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl.Entity;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc.Tuple;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
+import com.google.common.io.BaseEncoding;
 
 /**
  * An interface for Google Cloud Storage.
@@ -1298,7 +1299,7 @@ public interface Storage extends Service<StorageOptions> {
       return new Builder();
     }
   }
-
+  
   /**
    * Creates a new bucket.
    *
@@ -2369,4 +2370,57 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   List<Acl> listAcls(BlobId blob);
+  
+  /**
+   * Gets the IAM policy for the provided bucket.
+   * 
+   * <p>Example of getting the IAM policy for a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Policy policy = storage.getPolicy(bucketName);
+   * }</pre>
+   * 
+   * @throws StorageException upon failure
+   */
+  Policy getPolicy(String bucket);
+  
+  /**
+   * Updates the IAM policy on the specified bucket.
+   * 
+   * <p>Example of updating the IAM policy on a bucket.
+   * <pre>{@code
+   * // We want to make all objects in our bucket publicly readable.
+   * String bucketName = "my_unique_bucket";
+   * Policy currentPolicy = storage.getPolicy(bucketName);
+   * Policy updatedPolicy =
+   *     storage.updatePolicy(
+   *         bucketName,
+   *         currentPolicy.toBuilder()
+   *             .addIdentity(StorageRoles.objectViewer(), Identity.allUsers())
+   *             .build());
+   * }</pre>
+   * 
+   * @throws StorageException upon failure
+   */
+  Policy updatePolicy(String bucket, Policy policy);
+  
+  /**
+   * Tests whether the caller holds the permissions on the specified bucket. Returns a list of
+   * booleans in the same placement and order in which the permissions were specified.
+   * 
+   * <p>Example of testing permissions on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * List<Boolean> response =
+   *     storage.testPermissions(
+   *         bucket,
+   *         ImmutableList.of("storage.buckets.get", "storage.buckets.getIamPolicy"));
+   * for (boolean hasPermission : response) {
+   *   // Do something with permission test response
+   * }
+   * }</pre>
+   * 
+   * @throws StorageException upon failure
+   */
+  List<Boolean> testPermissions(String bucket, List<String> permissions);
 }

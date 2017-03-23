@@ -16,6 +16,8 @@
 
 package com.google.cloud.storage;
 
+import static org.easymock.EasyMock.cmp;
+import static org.easymock.EasyMock.eq;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -24,43 +26,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
-
-import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.gax.core.ApiClock;
-import com.google.api.services.storage.model.StorageObject;
-import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.Page;
-import com.google.cloud.ReadChannel;
-import com.google.api.gax.core.RetrySettings;
-import com.google.cloud.ServiceOptions;
-import com.google.cloud.WriteChannel;
-import com.google.cloud.storage.Acl.Project;
-import com.google.cloud.storage.Acl.Project.ProjectRole;
-import com.google.cloud.storage.Acl.Role;
-import com.google.cloud.storage.Acl.User;
-import com.google.cloud.storage.Storage.BlobSourceOption;
-import com.google.cloud.storage.Storage.BlobTargetOption;
-import com.google.cloud.storage.Storage.BlobWriteOption;
-import com.google.cloud.storage.Storage.BucketSourceOption;
-import com.google.cloud.storage.Storage.CopyRequest;
-import com.google.cloud.storage.spi.v1.RpcBatch;
-import com.google.cloud.storage.spi.v1.StorageRpc;
-import com.google.cloud.storage.spi.v1.StorageRpc.Tuple;
-import com.google.cloud.storage.spi.StorageRpcFactory;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterables;
-import com.google.common.io.BaseEncoding;
-import com.google.common.net.UrlEscapers;
-
-import org.easymock.Capture;
-import org.easymock.EasyMock;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -85,6 +50,49 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import javax.crypto.spec.SecretKeySpec;
+
+import org.easymock.Capture;
+import org.easymock.EasyMock;
+import org.easymock.LogicalOperator;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.gax.core.ApiClock;
+import com.google.api.services.storage.model.Policy.Bindings;
+import com.google.api.services.storage.model.StorageObject;
+import com.google.api.services.storage.model.TestIamPermissionsResponse;
+import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.Identity;
+import com.google.cloud.Page;
+import com.google.cloud.Policy;
+import com.google.cloud.ReadChannel;
+import com.google.api.gax.core.RetrySettings;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl.Project;
+import com.google.cloud.storage.Acl.Project.ProjectRole;
+import com.google.cloud.storage.Acl.Role;
+import com.google.cloud.storage.Acl.User;
+import com.google.cloud.storage.Storage.BlobSourceOption;
+import com.google.cloud.storage.Storage.BlobTargetOption;
+import com.google.cloud.storage.Storage.BlobWriteOption;
+import com.google.cloud.storage.Storage.BucketSourceOption;
+import com.google.cloud.storage.Storage.CopyRequest;
+import com.google.cloud.storage.spi.v1.RpcBatch;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc.Tuple;
+import com.google.cloud.storage.spi.StorageRpcFactory;
+import com.google.cloud.storage.testing.ApiPolicyComparator;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
+import com.google.common.io.BaseEncoding;
+import com.google.common.net.UrlEscapers;
 
 public class StorageImplTest {
 
@@ -242,6 +250,33 @@ public class StorageImplTest {
   // Customer supplied encryption key options
   private static final Map<StorageRpc.Option, ?> ENCRYPTION_KEY_OPTIONS =
       ImmutableMap.of(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, BASE64_KEY);
+
+  // IAM policies
+  private static final String POLICY_ETAG1 = "CAE=";
+  private static final String POLICY_ETAG2 = "CAI=";
+  private static final Policy LIB_POLICY1 =
+      Policy.newBuilder()
+          .addIdentity(StorageRoles.objectViewer(), Identity.allUsers())
+          .addIdentity(
+              StorageRoles.objectAdmin(),
+              Identity.user("test1@gmail.com"),
+              Identity.user("test2@gmail.com"))
+          .setEtag(POLICY_ETAG1)
+          .build();
+
+  private static final com.google.api.services.storage.model.Policy API_POLICY1 =
+      new com.google.api.services.storage.model.Policy()
+          .setBindings(ImmutableList.of(
+              new Bindings()
+                  .setMembers(ImmutableList.of("allUsers"))
+                  .setRole("roles/storage.objectViewer"),
+              new Bindings()
+                  .setMembers(
+                      ImmutableList.of(
+                          "user:test1@gmail.com",
+                          "user:test2@gmail.com"))
+                  .setRole("roles/storage.objectAdmin")))
+          .setEtag(POLICY_ETAG1);
 
   private static final String PRIVATE_KEY_STRING =
       "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoG"
@@ -1945,6 +1980,106 @@ public class StorageImplTest {
     initializeService();
     List<Acl> acls = storage.listAcls(blobId);
     assertEquals(ImmutableList.of(ACL, OTHER_ACL), acls);
+  }
+
+  @Test
+  public void testGetPolicy() {
+    EasyMock.expect(storageRpcMock.getPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    assertEquals(LIB_POLICY1, storage.getPolicy(BUCKET_NAME1));
+  }
+
+  @Test
+  public void testUpdatePolicy() {
+    com.google.api.services.storage.model.Policy preCommitApiPolicy =
+        new com.google.api.services.storage.model.Policy()
+            .setBindings(ImmutableList.of(
+                new Bindings()
+                    .setMembers(ImmutableList.of("allUsers"))
+                    .setRole("roles/storage.objectViewer"),
+                new Bindings()
+                    .setMembers(
+                        ImmutableList.of(
+                            "user:test1@gmail.com",
+                            "user:test2@gmail.com"))
+                    .setRole("roles/storage.objectAdmin"),
+                new Bindings()
+                    .setMembers(ImmutableList.of("group:test-group@gmail.com"))
+                    .setRole("roles/storage.admin")))
+            .setEtag(POLICY_ETAG1);
+    // postCommitApiPolicy is identical but for the etag, which has been updated.
+    com.google.api.services.storage.model.Policy postCommitApiPolicy =
+        new com.google.api.services.storage.model.Policy()
+            .setBindings(ImmutableList.of(
+                new Bindings()
+                    .setMembers(ImmutableList.of("allUsers"))
+                    .setRole("roles/storage.objectViewer"),
+                new Bindings()
+                    .setMembers(
+                        ImmutableList.of(
+                            "user:test1@gmail.com",
+                            "user:test2@gmail.com"))
+                    .setRole("roles/storage.objectAdmin"),
+                new Bindings()
+                    .setMembers(ImmutableList.of("group:test-group@gmail.com"))
+                    .setRole("roles/storage.admin")))
+            .setEtag(POLICY_ETAG2);
+    Policy postCommitLibPolicy =
+        Policy.newBuilder()
+            .addIdentity(StorageRoles.objectViewer(), Identity.allUsers())
+            .addIdentity(
+                StorageRoles.objectAdmin(),
+                Identity.user("test1@gmail.com"),
+                Identity.user("test2@gmail.com"))
+            .addIdentity(StorageRoles.admin(), Identity.group("test-group@gmail.com"))
+            .setEtag(POLICY_ETAG2)
+            .build();
+
+    EasyMock.expect(storageRpcMock.getPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
+    EasyMock.expect(
+          storageRpcMock.updatePolicy(
+              eq(BUCKET_NAME1),
+              cmp(preCommitApiPolicy, ApiPolicyComparator.INSTANCE, LogicalOperator.EQUAL)))
+        .andReturn(postCommitApiPolicy);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+
+    Policy currentPolicy = storage.getPolicy(BUCKET_NAME1);
+    Policy updatedPolicy =
+        storage.updatePolicy(
+            BUCKET_NAME1,
+            currentPolicy.toBuilder()
+                .addIdentity(StorageRoles.admin(), Identity.group("test-group@gmail.com"))
+                .build());
+    assertEquals(updatedPolicy, postCommitLibPolicy);
+  }
+
+  @Test
+  public void testTestPermissionsNull() {
+    ImmutableList<Boolean> expectedPermissions = ImmutableList.of(false, false, false);
+    ImmutableList<String> checkedPermissions =
+        ImmutableList.of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
+
+    EasyMock.expect(storageRpcMock.testPermissions(BUCKET_NAME1, checkedPermissions))
+        .andReturn(new TestIamPermissionsResponse());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    assertEquals(expectedPermissions, storage.testPermissions(BUCKET_NAME1, checkedPermissions));
+  }
+
+  @Test
+  public void testTestPermissionsNonNull() {
+    ImmutableList<Boolean> expectedPermissions = ImmutableList.of(true, false, true);
+    ImmutableList<String> checkedPermissions =
+        ImmutableList.of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
+
+    EasyMock.expect(storageRpcMock.testPermissions(BUCKET_NAME1, checkedPermissions))
+        .andReturn(new TestIamPermissionsResponse()
+            .setPermissions(ImmutableList.of("storage.objects.list", "storage.buckets.get")));
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    assertEquals(expectedPermissions, storage.testPermissions(BUCKET_NAME1, checkedPermissions));
   }
 
   @Test
