@@ -9,25 +9,25 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs)
+-  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
+-  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
 
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
--  [Google Cloud BigQuery] (#google-cloud-bigquery-beta) (Beta)
--  [Stackdriver Logging] (#stackdriver-logging-beta) (Beta - Not working on App Engine Standard)
--  [Google Cloud Datastore] (#google-cloud-datastore-beta) (Beta)
--  [Google Cloud Storage] (#google-cloud-storage-beta) (Beta)
--  [Cloud Spanner] (#cloud-spanner-beta) (Beta)
+-  [Google Cloud BigQuery](#google-cloud-bigquery-beta) (Beta)
+-  [Stackdriver Logging](#stackdriver-logging-beta) (Beta - Not working on App Engine Standard)
+-  [Google Cloud Datastore](#google-cloud-datastore-beta) (Beta)
+-  [Google Cloud Storage](#google-cloud-storage-beta) (Beta)
+-  [Cloud Spanner](#cloud-spanner-beta) (Beta)
 -  Cloud Vision (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
--  [Google Cloud Compute] (#google-cloud-compute-alpha) (Alpha)
--  [Google Cloud DNS] (#google-cloud-dns-alpha) (Alpha)
--  [Google Cloud Pub/Sub] (#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
--  [Google Cloud Resource Manager] (#google-cloud-resource-manager-alpha) (Alpha)
--  [Google Cloud Translate] (#google-translate-alpha) (Alpha)
+-  [Google Cloud Compute](#google-cloud-compute-alpha) (Alpha)
+-  [Google Cloud DNS](#google-cloud-dns-alpha) (Alpha)
+-  [Google Cloud Pub/Sub](#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
+-  [Google Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
+-  [Google Cloud Translate](#google-translate-alpha) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -707,7 +707,7 @@ See [TESTING] to read more about using our testing helpers.
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/).
 
 Please note it is currently under active development. Any release versioned 0.x.y is
 subject to backwards incompatible changes at any time.
