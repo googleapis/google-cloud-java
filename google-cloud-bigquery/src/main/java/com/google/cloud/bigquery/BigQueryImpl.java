@@ -24,6 +24,7 @@ import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.cloud.BaseService;
+import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
@@ -645,7 +646,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration) {
+  public BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writer(
+      WriteChannelConfiguration writeChannelConfiguration) {
     return new TableDataWriteChannel(getOptions(),
         writeChannelConfiguration.setProjectId(getOptions().getProjectId()));
   }

@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
 import com.google.cloud.Page;
@@ -1065,5 +1066,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration);
+  BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writer(
+      WriteChannelConfiguration writeChannelConfiguration);
 }
