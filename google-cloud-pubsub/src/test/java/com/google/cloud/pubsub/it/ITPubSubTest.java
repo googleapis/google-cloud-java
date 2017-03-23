@@ -116,9 +116,9 @@ public class ITPubSubTest {
                   public void receiveMessage(
                       final PubsubMessage message, final AckReplyConsumer consumer) {
                     if (received.set(message)) {
-                      consumer.accept(AckReply.ACK, null);
+                      consumer.accept(AckReply.ACK);
                     } else {
-                      consumer.accept(AckReply.NACK, null);
+                      consumer.accept(AckReply.NACK);
                     }
                   }
                 })
