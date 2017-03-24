@@ -495,43 +495,4 @@ public abstract class BaseSystemTest {
     logger.removeHandler(handler);
     logging().deleteLog(logName);
   }
-
-  @Test
-  public void testAsyncLoggingHandler() throws InterruptedException {
-    String logName = formatForTest("test-async-logging-handler");
-    LoggingOptions options = logging().getOptions();
-    MonitoredResource resource = MonitoredResource.of("gce_instance",
-        ImmutableMap.of("project_id", options.getProjectId(),
-            "instance_id", "instance",
-            "zone", "us-central1-a"));
-    LoggingHandler handler = new AsyncLoggingHandler(logName, options, resource);
-    handler.setLevel(Level.WARNING);
-    Logger logger = Logger.getLogger(getClass().getName());
-    logger.addHandler(handler);
-    logger.setLevel(Level.WARNING);
-    logger.warning("Message");
-    Iterator<LogEntry> iterator =
-        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
-    while (!iterator.hasNext()) {
-      Thread.sleep(500L);
-      iterator =
-          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
-    }
-    assertTrue(iterator.hasNext());
-    LogEntry entry = iterator.next();
-    assertTrue(entry.getPayload() instanceof StringPayload);
-    assertTrue(entry.<StringPayload>getPayload().getData().contains("Message"));
-    assertEquals(logName, entry.getLogName());
-    assertEquals(ImmutableMap.of("levelName", "WARNING",
-        "levelValue", String.valueOf(Level.WARNING.intValue())), entry.getLabels());
-    assertEquals(resource, entry.getResource());
-    assertNull(entry.getHttpRequest());
-    assertEquals(Severity.WARNING, entry.getSeverity());
-    assertNull(entry.getOperation());
-    assertNotNull(entry.getInsertId());
-    assertNotNull(entry.getTimestamp());
-    assertFalse(iterator.hasNext());
-    logger.removeHandler(handler);
-    logging().deleteLog(logName);
-  }
 }

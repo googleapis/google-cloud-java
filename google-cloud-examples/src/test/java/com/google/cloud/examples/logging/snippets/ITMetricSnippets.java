@@ -24,7 +24,7 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Metric;
 import com.google.cloud.logging.MetricInfo;
-import com.google.cloud.logging.testing.RemoteLoggingHelper;
+import com.google.cloud.logging.RemoteLoggingHelper;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

@@ -26,11 +26,6 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -56,6 +51,9 @@ import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
 /**
  * Abstract class representing service options.
@@ -424,23 +422,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
         // ignore
       }
     }
-    try {
-      URL url = new URL("http://metadata/computeMetadata/v1/project/project-id");
-      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-      // TODO replace X-Google-Metadata-Request with:
-      // connection.setRequestProperty("Metadata-Flavor", "Google");
-      connection.setRequestProperty("X-Google-Metadata-Request", "True");
-      InputStream input = connection.getInputStream();
-      if (connection.getResponseCode() == 200) {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(input, UTF_8))) {
-          return reader.readLine();
-        }
-      }
-    } catch (IOException ignore) {
-      // ignore
-    }
-    // return null if can't determine
-    return null;
+    // return project id from metadata config
+     return MetadataConfig.getProjectId();
   }
 
   private static boolean isWindows() {

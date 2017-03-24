@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.cloud.logging.testing;
+package com.google.cloud.logging;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.RetryParams;
-import com.google.cloud.logging.LoggingOptions;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -67,7 +66,7 @@ public class RemoteLoggingHelper {
    * @param projectId id of the project to be used for running the tests
    * @param keyStream input stream for a JSON key
    * @return A {@code RemoteLoggingHelper} object for the provided options
-   * @throws com.google.cloud.logging.testing.RemoteLoggingHelper.LoggingHelperException if
+   * @throws RemoteLoggingHelper.LoggingHelperException if
    *     {@code keyStream} is not a valid JSON key stream
    */
   public static RemoteLoggingHelper create(String projectId, InputStream keyStream)

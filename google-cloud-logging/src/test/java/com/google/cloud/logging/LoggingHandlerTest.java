@@ -246,14 +246,9 @@ public class LoggingHandlerTest {
         WriteOption.resource(resource));
     EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
     EasyMock.replay(options, logging);
-    LoggingHandler.Enhancer enhancer = new LoggingHandler.Enhancer() {
+    Enhancer enhancer = new Enhancer() {
       @Override
-      public void enhanceMonitoredResource(MonitoredResource.Builder builder) {
-        throw new IllegalStateException();
-      }
-
-      @Override
-      public void enhanceLogEntry(Builder builder, LogRecord record) {
+      public void enhanceLogEntry(Builder builder) {
         builder.addLabel("enhanced", "true");
       }
     };

@@ -18,7 +18,7 @@ package com.google.cloud.logging.it;
 
 import com.google.cloud.logging.BaseSystemTest;
 import com.google.cloud.logging.Logging;
-import com.google.cloud.logging.testing.RemoteLoggingHelper;
+import com.google.cloud.logging.RemoteLoggingHelper;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
