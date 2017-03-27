@@ -115,11 +115,13 @@ public class Snippets {
    * @param name Name of metric descriptor to delete
    */
   void deleteMetricDescriptor(String name) throws IOException {
+    // [START monitoring_delete_metric]
     String projectId = System.getProperty("projectId");
     final MetricServiceClient client = MetricServiceClient.create();
     MetricDescriptorName metricName = MetricDescriptorName.create(projectId, name);
     client.deleteMetricDescriptor(metricName);
     System.out.println("Deleted descriptor " + name);
+    // [END monitoring_delete_metric]
   }
 
   /**
@@ -447,7 +449,7 @@ public class Snippets {
     for (MonitoredResourceDescriptor d : descriptors) {
       System.out.println(d.getType());
     }
-    // [START monitoring_list_resources]
+    // [END monitoring_list_resources]
   }
 
   /**
@@ -455,7 +457,7 @@ public class Snippets {
    * @param The resource type
    */
   void describeMonitoredResources(String type) throws IOException {
-    // [START monitoring_list_resources]
+    // [START monitoring_get_descriptor]
     // Your Google Cloud Platform project ID
     String projectId = System.getProperty("projectId");
 
@@ -465,8 +467,7 @@ public class Snippets {
 
     System.out.println("Printing monitored resource descriptor: ");
     System.out.println(response);
-
-    // [END monitoring_list_resources]
+    // [END monitoring_get_descriptor]
   }
 
 
