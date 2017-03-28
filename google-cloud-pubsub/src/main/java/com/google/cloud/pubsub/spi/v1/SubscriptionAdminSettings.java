@@ -19,6 +19,7 @@ import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSnapshots
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
@@ -116,6 +117,11 @@ public class SubscriptionAdminSettings extends ClientSettings {
 
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
+
+  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String META_VERSION_KEY = "artifact.version";
+
+  private static String gapicVersion;
 
   private final SimpleCallSettings<Subscription, Subscription> createSubscriptionSettings;
   private final SimpleCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings;
@@ -267,8 +273,13 @@ public class SubscriptionAdminSettings extends ClientSettings {
   }
 
   private static String getGapicVersion() {
-    String packageVersion = SubscriptionAdminSettings.class.getPackage().getImplementationVersion();
-    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
+    if (gapicVersion == null) {
+      gapicVersion =
+          PropertiesProvider.loadProperty(
+              SubscriptionAdminSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
+    }
+    return gapicVersion;
   }
 
   /** Returns a builder for this class with recommended defaults. */
