@@ -18,15 +18,15 @@ package com.google.cloud.logging;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
+import com.google.api.gax.core.ApiFutureCallback;
+import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
-import com.google.api.gax.core.ApiFutures;
-import com.google.api.gax.core.ApiFutureCallback;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.Monitor;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
@@ -119,6 +119,46 @@ public class LoggingHandler extends Handler {
   // Currently there is no way to modify the base level, see
   // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740 .
   private final Level baseLevel;
+
+  private final Monitor flushMonitor = new Monitor(true);
+  private int numPendingWrites = 0;
+  private int numFlushers = 0;
+  private final Monitor.Guard noFlushers =
+      new Monitor.Guard(flushMonitor) {
+        @Override
+        public boolean isSatisfied() {
+          return numFlushers == 0;
+        }
+      };
+  private final Monitor.Guard writesCompleted =
+      new Monitor.Guard(flushMonitor) {
+        @Override
+        public boolean isSatisfied() {
+          return numPendingWrites == 0;
+        }
+      };
+  private final ApiFutureCallback<Void> writeCallback =
+      new ApiFutureCallback<Void>() {
+        @Override
+        public void onSuccess(Void v) {
+          flushMonitor.enter();
+          try {
+            numPendingWrites--;
+          } finally {
+            flushMonitor.leave();
+          }
+        }
+
+        @Override
+        public void onFailure(Throwable t) {
+          if (t instanceof Exception) {
+            reportError(null, (Exception) t, ErrorManager.FLUSH_FAILURE);
+          } else {
+            reportError(null, new Exception(t), ErrorManager.FLUSH_FAILURE);
+          }
+          onSuccess(null);
+        }
+      };
 
   /**
    * Creates an handler that publishes messages to Stackdriver Logging.
@@ -376,6 +416,9 @@ public class LoggingHandler extends Handler {
       if (entry != null) {
         write(entry, writeOptions);
       }
+      if (record.getLevel().intValue() >= flushLevel.intValue()) {
+        flush();
+      }
     } finally {
       inPublishCall.remove();
     }
@@ -457,21 +500,16 @@ public class LoggingHandler extends Handler {
           reportError(null, ex, ErrorManager.FLUSH_FAILURE);
         }
         break;
+
       case ASYNC:
       default:
-        ApiFutures.addCallback(getLogging().writeAsync(entryList, options), new ApiFutureCallback<Void>() {
-          @Override
-          public void onSuccess(Void v) {}
-
-          @Override
-          public void onFailure(Throwable t) {
-            if (t instanceof Exception) {
-              reportError(null, (Exception) t, ErrorManager.FLUSH_FAILURE);
-            } else {
-              reportError(null, new Exception(t), ErrorManager.FLUSH_FAILURE);
-            }
-          }
-        });
+        flushMonitor.enterWhenUninterruptibly(noFlushers);
+        try {
+          numPendingWrites++;
+          ApiFutures.addCallback(getLogging().writeAsync(entryList, options), writeCallback);
+        } finally {
+          flushMonitor.leave();
+        }
         break;
     }
   }
@@ -479,6 +517,14 @@ public class LoggingHandler extends Handler {
   @Override
   public void flush() {
     // BUG(1795): flush is broken, need support from batching implementation.
+    flushMonitor.enter();
+    try {
+      numFlushers++;
+      flushMonitor.waitForUninterruptibly(writesCompleted);
+      numFlushers--;
+    } finally {
+      flushMonitor.leave();
+    }
   }
 
   /**
