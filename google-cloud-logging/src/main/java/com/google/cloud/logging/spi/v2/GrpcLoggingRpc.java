@@ -90,7 +90,8 @@ public class GrpcLoggingRpc implements LoggingRpc {
             .build();
         channelProvider = FixedChannelProvider.create(managedChannel);
       } else {
-        channelProvider = transportOptions.getChannelProvider(options);
+        channelProvider = GrpcTransportOptions.setupChannelProvider(
+            LoggingSettings.defaultChannelProviderBuilder(), options);
       }
       providerManager = ProviderManager.newBuilder()
           .setChannelProvider(channelProvider)
