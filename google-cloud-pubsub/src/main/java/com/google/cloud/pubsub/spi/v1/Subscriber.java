@@ -301,8 +301,8 @@ public class Subscriber {
           builder.channelBuilder.isPresent()
               ? builder.channelBuilder.get()
               : NettyChannelBuilder.forAddress(
-                      SubscriberSettings.getDefaultServiceAddress(),
-                      SubscriberSettings.getDefaultServicePort())
+                      SubscriptionAdminSettings.getDefaultServiceAddress(),
+                  SubscriptionAdminSettings.getDefaultServicePort())
                   .maxMessageSize(MAX_INBOUND_MESSAGE_SIZE)
                   .flowControlWindow(5000000) // 2.5 MB
                   .negotiationType(NegotiationType.TLS)
@@ -313,7 +313,7 @@ public class Subscriber {
           builder.credentials.isPresent()
               ? builder.credentials.get()
               : GoogleCredentials.getApplicationDefault()
-                  .createScoped(SubscriberSettings.getDefaultServiceScopes());
+                  .createScoped(SubscriptionAdminSettings.getDefaultServiceScopes());
 
       numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
       streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);

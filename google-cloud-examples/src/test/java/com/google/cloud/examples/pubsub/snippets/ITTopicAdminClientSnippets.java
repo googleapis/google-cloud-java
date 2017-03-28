@@ -25,7 +25,7 @@ import com.google.cloud.Identity;
 import com.google.cloud.Role;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
-import com.google.cloud.pubsub.spi.v1.SubscriberClient;
+import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
 import com.google.common.collect.Iterables;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -44,13 +44,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
-public class ITPublisherClientSnippets {
+public class ITTopicAdminClientSnippets {
 
   private static final String NAME_SUFFIX = UUID.randomUUID().toString();
 
   private static String projectId;
 
-  private static PublisherClientSnippets publisherClientSnippets;
+  private static TopicAdminClientSnippets topicAdminClientSnippets;
 
   private static String[] topics = {
       formatForTest("topic-1"),
@@ -70,8 +70,8 @@ public class ITPublisherClientSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    publisherClientSnippets = new PublisherClientSnippets();
-    projectId = publisherClientSnippets.getProjectId();
+    topicAdminClientSnippets = new TopicAdminClientSnippets();
+    projectId = topicAdminClientSnippets.getProjectId();
   }
 
   @Before
@@ -82,9 +82,9 @@ public class ITPublisherClientSnippets {
   @Test
   public void topicAddedIsSameAsRetrieved() throws Exception {
     String topicName = topics[0];
-    Topic topicAdded = publisherClientSnippets.createTopic(topicName);
+    Topic topicAdded = topicAdminClientSnippets.createTopic(topicName);
     assertNotNull(topicAdded);
-    Topic topicRetrieved = publisherClientSnippets.getTopic(topicName);
+    Topic topicRetrieved = topicAdminClientSnippets.getTopic(topicName);
     assertEquals(topicAdded, topicRetrieved);
   }
 
@@ -92,12 +92,12 @@ public class ITPublisherClientSnippets {
   public void listTopicsRetreivesAddedTopics() throws Exception {
     List<Topic> addedTopics = new ArrayList<>();
     String topicName1 = topics[0];
-    addedTopics.add(publisherClientSnippets.createTopic(topicName1));
+    addedTopics.add(topicAdminClientSnippets.createTopic(topicName1));
     String topicName2 = topics[1];
-    addedTopics.add(publisherClientSnippets.createTopic(topicName2));
+    addedTopics.add(topicAdminClientSnippets.createTopic(topicName2));
 
     boolean[] topicFound = {false, false};
-    ListTopicsPagedResponse response = publisherClientSnippets.listTopics();
+    ListTopicsPagedResponse response = topicAdminClientSnippets.listTopics();
 
     assertNotNull(response);
     Iterable<Topic> topics = response.iterateAllElements();
@@ -114,7 +114,7 @@ public class ITPublisherClientSnippets {
   public void listTopicSubscriptionsRetrievesAddedSubscriptions() throws Exception {
     List<String> addedSubscriptions = new ArrayList<>();
     String topicName1 = topics[0];
-    publisherClientSnippets.createTopic(topicName1);
+    topicAdminClientSnippets.createTopic(topicName1);
     String subscriptionName1 = subscriptions[0];
     String subscriptionName2 = subscriptions[1];
     addedSubscriptions.add(createSubscription(topicName1, subscriptionName1));
@@ -123,7 +123,7 @@ public class ITPublisherClientSnippets {
     boolean[] subFound = {false, false};
 
     ListTopicSubscriptionsPagedResponse response =
-        publisherClientSnippets.listTopicSubscriptions(topicName1);
+        topicAdminClientSnippets.listTopicSubscriptions(topicName1);
 
 
     assertNotNull(response);
@@ -139,37 +139,37 @@ public class ITPublisherClientSnippets {
   @Test(expected = ApiException.class)
   public void deletedTopicIsNotRetrievableAndThrowsException() throws Exception {
     String topicName = topics[0];
-    Topic topicAdded = publisherClientSnippets.createTopic(topicName);
+    Topic topicAdded = topicAdminClientSnippets.createTopic(topicName);
     assertNotNull(topicAdded);
-    TopicName formattedName = publisherClientSnippets.deleteTopic(topicName);
+    TopicName formattedName = topicAdminClientSnippets.deleteTopic(topicName);
     assertNotNull(formattedName);
-    publisherClientSnippets.getTopic(topicName);
+    topicAdminClientSnippets.getTopic(topicName);
   }
 
   @Test
   public void topicPolicyIsCorrectlyRetrieved() throws Exception {
     String topicName = topics[0];
-    publisherClientSnippets.createTopic(topicName);
-    Policy policy = publisherClientSnippets.getTopicPolicy(topicName);
+    topicAdminClientSnippets.createTopic(topicName);
+    Policy policy = topicAdminClientSnippets.getTopicPolicy(topicName);
     assertNotNull(policy);
   }
 
   @Test
   public void replaceTopicPolicyAndTestPermissionsIsSuccessful() throws Exception {
     String topicName = topics[0];
-    publisherClientSnippets.createTopic(topicName);
-    Policy policy = publisherClientSnippets.replaceTopicPolicy(topicName);
+    topicAdminClientSnippets.createTopic(topicName);
+    Policy policy = topicAdminClientSnippets.replaceTopicPolicy(topicName);
     assertNotNull(policy.getBindingsCount());
     assertTrue(policy.getBindings(0).getRole().equalsIgnoreCase(Role.viewer().toString()));
     assertTrue(policy.getBindings(0).getMembers(0)
         .equalsIgnoreCase(Identity.allAuthenticatedUsers().toString()));
-    TestIamPermissionsResponse response = publisherClientSnippets.testTopicPermissions(topicName);
+    TestIamPermissionsResponse response = topicAdminClientSnippets.testTopicPermissions(topicName);
     assertTrue(response.getPermissionsList().contains("pubsub.topics.get"));
   }
 
   private String createSubscription(String topic, String subscriptionName) throws Exception {
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      Subscription subscription = subscriberClient.createSubscription(
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+      Subscription subscription = subscriptionAdminClient.createSubscription(
           SubscriptionName.create(projectId, subscriptionName),
           TopicName.create(projectId, topic), PushConfig.getDefaultInstance(), 0);
       return subscription.getName();

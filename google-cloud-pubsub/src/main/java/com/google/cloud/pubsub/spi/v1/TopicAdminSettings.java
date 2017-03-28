@@ -72,7 +72,7 @@ import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link PublisherClient}.
+ * Settings class to configure an instance of {@link TopicAdminClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -88,17 +88,17 @@ import org.joda.time.Duration;
  *
  * <pre>
  * <code>
- * PublisherSettings.Builder publisherSettingsBuilder =
- *     PublisherSettings.defaultBuilder();
- * publisherSettingsBuilder.createTopicSettings().getRetrySettingsBuilder()
+ * TopicAdminSettings.Builder topicAdminSettingsBuilder =
+ *     TopicAdminSettings.defaultBuilder();
+ * topicAdminSettingsBuilder.createTopicSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.standardSeconds(30));
- * PublisherSettings publisherSettings = publisherSettingsBuilder.build();
+ * TopicAdminSettings topicAdminSettings = topicAdminSettingsBuilder.build();
  * </code>
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
-public class PublisherSettings extends ClientSettings {
+public class TopicAdminSettings extends ClientSettings {
   /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "pubsub.googleapis.com";
 
@@ -215,7 +215,7 @@ public class PublisherSettings extends ClientSettings {
   }
 
   private static String getGapicVersion() {
-    String packageVersion = PublisherSettings.class.getPackage().getImplementationVersion();
+    String packageVersion = TopicAdminSettings.class.getPackage().getImplementationVersion();
     return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
   }
 
@@ -234,7 +234,7 @@ public class PublisherSettings extends ClientSettings {
     return new Builder(this);
   }
 
-  private PublisherSettings(Builder settingsBuilder) throws IOException {
+  private TopicAdminSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder.getExecutorProvider(), settingsBuilder.getChannelProvider());
 
     createTopicSettings = settingsBuilder.createTopicSettings().build();
@@ -423,7 +423,7 @@ public class PublisherSettings extends ClientSettings {
         }
       };
 
-  /** Builder for PublisherSettings. */
+  /** Builder for TopicAdminSettings. */
   public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
@@ -456,7 +456,13 @@ public class PublisherSettings extends ClientSettings {
           "one_plus_delivery",
           Sets.immutableEnumSet(
               Lists.<Status.Code>newArrayList(
-                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
+                  Status.Code.CANCELLED,
+                  Status.Code.UNKNOWN,
+                  Status.Code.DEADLINE_EXCEEDED,
+                  Status.Code.RESOURCE_EXHAUSTED,
+                  Status.Code.ABORTED,
+                  Status.Code.INTERNAL,
+                  Status.Code.UNAVAILABLE)));
       definitions.put(
           "non_idempotent",
           Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
@@ -593,7 +599,7 @@ public class PublisherSettings extends ClientSettings {
       return builder;
     }
 
-    private Builder(PublisherSettings settings) {
+    private Builder(TopicAdminSettings settings) {
       super(settings);
 
       createTopicSettings = settings.createTopicSettings.toBuilder();
@@ -694,8 +700,8 @@ public class PublisherSettings extends ClientSettings {
     }
 
     @Override
-    public PublisherSettings build() throws IOException {
-      return new PublisherSettings(this);
+    public TopicAdminSettings build() throws IOException {
+      return new TopicAdminSettings(this);
     }
   }
 }

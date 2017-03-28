@@ -18,7 +18,7 @@ package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.gax.core.ApiFuture;
 import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
@@ -33,8 +33,8 @@ import java.util.List;
 public class CreateTopicAndPublishMessages {
   public static void main(String... args) throws Exception {
     TopicName topic = TopicName.create("test-project", "test-topic");
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      publisherClient.createTopic(topic);
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+      topicAdminClient.createTopic(topic);
     }
 
     Publisher publisher = null;

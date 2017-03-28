@@ -15,6 +15,7 @@
  */
 package com.google.cloud.pubsub.spi.v1;
 
+import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSnapshotsPagedResponse;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.grpc.ChannelAndExecutor;
@@ -28,8 +29,12 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.protobuf.ExperimentalApi;
 import com.google.pubsub.v1.AcknowledgeRequest;
+import com.google.pubsub.v1.CreateSnapshotRequest;
+import com.google.pubsub.v1.DeleteSnapshotRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
+import com.google.pubsub.v1.ListSnapshotsRequest;
+import com.google.pubsub.v1.ListSnapshotsResponse;
 import com.google.pubsub.v1.ListSubscriptionsRequest;
 import com.google.pubsub.v1.ListSubscriptionsResponse;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
@@ -38,12 +43,17 @@ import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
+import com.google.pubsub.v1.SeekRequest;
+import com.google.pubsub.v1.SeekResponse;
+import com.google.pubsub.v1.Snapshot;
+import com.google.pubsub.v1.SnapshotName;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.TopicNameOneof;
+import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -64,18 +74,19 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+ * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
  *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
  *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
- *   Subscription response = subscriberClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+ *   Subscription response = subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the subscriberClient object to clean up resources such as
- * threads. In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Note: close() needs to be called on the subscriptionAdminClient object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
+ * close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -97,32 +108,33 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of SubscriberSettings to
+ * <p>This class can be customized by passing in a custom instance of SubscriptionAdminSettings to
  * create(). For example:
  *
  * <pre>
  * <code>
  * InstantiatingChannelProvider channelProvider =
- *     SubscriberSettings.defaultChannelProviderBuilder()
+ *     SubscriptionAdminSettings.defaultChannelProviderBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * SubscriberSettings subscriberSettings =
- *     SubscriberSettings.defaultBuilder().setChannelProvider(channelProvider).build();
- * SubscriberClient subscriberClient =
- *     SubscriberClient.create(subscriberSettings);
+ * SubscriptionAdminSettings subscriptionAdminSettings =
+ *     SubscriptionAdminSettings.defaultBuilder().setChannelProvider(channelProvider).build();
+ * SubscriptionAdminClient subscriptionAdminClient =
+ *     SubscriptionAdminClient.create(subscriptionAdminSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC")
 @ExperimentalApi
-public class SubscriberClient implements AutoCloseable {
-  private final SubscriberSettings settings;
+public class SubscriptionAdminClient implements AutoCloseable {
+  private final SubscriptionAdminSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final UnaryCallable<Subscription, Subscription> createSubscriptionCallable;
   private final UnaryCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable;
+  private final UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable;
   private final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
       listSubscriptionsCallable;
   private final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
@@ -134,29 +146,37 @@ public class SubscriberClient implements AutoCloseable {
   private final StreamingCallable<StreamingPullRequest, StreamingPullResponse>
       streamingPullCallable;
   private final UnaryCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable;
+  private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable;
+  private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable;
+  private final UnaryCallable<CreateSnapshotRequest, Snapshot> createSnapshotCallable;
+  private final UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable;
+  private final UnaryCallable<SeekRequest, SeekResponse> seekCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
-  /** Constructs an instance of SubscriberClient with default settings. */
-  public static final SubscriberClient create() throws IOException {
-    return create(SubscriberSettings.defaultBuilder().build());
+  /** Constructs an instance of SubscriptionAdminClient with default settings. */
+  public static final SubscriptionAdminClient create() throws IOException {
+    return create(SubscriptionAdminSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of SubscriberClient, using the given settings. The channels are created
-   * based on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of SubscriptionAdminClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final SubscriberClient create(SubscriberSettings settings) throws IOException {
-    return new SubscriberClient(settings);
+  public static final SubscriptionAdminClient create(SubscriptionAdminSettings settings)
+      throws IOException {
+    return new SubscriptionAdminClient(settings);
   }
 
   /**
-   * Constructs an instance of SubscriberClient, using the given settings. This is protected so that
-   * it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of SubscriptionAdminClient, using the given settings. This is protected
+   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
-  protected SubscriberClient(SubscriberSettings settings) throws IOException {
+  protected SubscriptionAdminClient(SubscriptionAdminSettings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -166,6 +186,8 @@ public class SubscriberClient implements AutoCloseable {
         UnaryCallable.create(settings.createSubscriptionSettings(), this.channel, this.executor);
     this.getSubscriptionCallable =
         UnaryCallable.create(settings.getSubscriptionSettings(), this.channel, this.executor);
+    this.updateSubscriptionCallable =
+        UnaryCallable.create(settings.updateSubscriptionSettings(), this.channel, this.executor);
     this.listSubscriptionsCallable =
         UnaryCallable.create(settings.listSubscriptionsSettings(), this.channel, this.executor);
     this.listSubscriptionsPagedCallable =
@@ -182,6 +204,16 @@ public class SubscriberClient implements AutoCloseable {
         StreamingCallable.create(settings.streamingPullSettings(), this.channel);
     this.modifyPushConfigCallable =
         UnaryCallable.create(settings.modifyPushConfigSettings(), this.channel, this.executor);
+    this.listSnapshotsCallable =
+        UnaryCallable.create(settings.listSnapshotsSettings(), this.channel, this.executor);
+    this.listSnapshotsPagedCallable =
+        UnaryCallable.createPagedVariant(
+            settings.listSnapshotsSettings(), this.channel, this.executor);
+    this.createSnapshotCallable =
+        UnaryCallable.create(settings.createSnapshotSettings(), this.channel, this.executor);
+    this.deleteSnapshotCallable =
+        UnaryCallable.create(settings.deleteSnapshotSettings(), this.channel, this.executor);
+    this.seekCallable = UnaryCallable.create(settings.seekSettings(), this.channel, this.executor);
     this.setIamPolicyCallable =
         UnaryCallable.create(settings.setIamPolicySettings(), this.channel, this.executor);
     this.getIamPolicyCallable =
@@ -209,7 +241,7 @@ public class SubscriberClient implements AutoCloseable {
     }
   }
 
-  public final SubscriberSettings getSettings() {
+  public final SubscriptionAdminSettings getSettings() {
     return settings;
   }
 
@@ -227,12 +259,12 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   PushConfig pushConfig = PushConfig.newBuilder().build();
    *   int ackDeadlineSeconds = 0;
-   *   Subscription response = subscriberClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+   *   Subscription response = subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
    * }
    * </code></pre>
    *
@@ -289,14 +321,14 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   TopicNameOneof topic = TopicNameOneof.from(TopicName.create("[PROJECT]", "[TOPIC]"));
    *   Subscription request = Subscription.newBuilder()
    *     .setNameWithSubscriptionName(name)
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   Subscription response = subscriberClient.createSubscription(request);
+   *   Subscription response = subscriptionAdminClient.createSubscription(request);
    * }
    * </code></pre>
    *
@@ -321,14 +353,14 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   TopicNameOneof topic = TopicNameOneof.from(TopicName.create("[PROJECT]", "[TOPIC]"));
    *   Subscription request = Subscription.newBuilder()
    *     .setNameWithSubscriptionName(name)
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   ApiFuture&lt;Subscription&gt; future = subscriberClient.createSubscriptionCallable().futureCall(request);
+   *   ApiFuture&lt;Subscription&gt; future = subscriptionAdminClient.createSubscriptionCallable().futureCall(request);
    *   // Do something
    *   Subscription response = future.get();
    * }
@@ -345,9 +377,9 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
-   *   Subscription response = subscriberClient.getSubscription(subscription);
+   *   Subscription response = subscriptionAdminClient.getSubscription(subscription);
    * }
    * </code></pre>
    *
@@ -371,12 +403,12 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   GetSubscriptionRequest request = GetSubscriptionRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .build();
-   *   Subscription response = subscriberClient.getSubscription(request);
+   *   Subscription response = subscriptionAdminClient.getSubscription(request);
    * }
    * </code></pre>
    *
@@ -394,12 +426,12 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   GetSubscriptionRequest request = GetSubscriptionRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .build();
-   *   ApiFuture&lt;Subscription&gt; future = subscriberClient.getSubscriptionCallable().futureCall(request);
+   *   ApiFuture&lt;Subscription&gt; future = subscriptionAdminClient.getSubscriptionCallable().futureCall(request);
    *   // Do something
    *   Subscription response = future.get();
    * }
@@ -411,14 +443,65 @@ public class SubscriberClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Updates an existing subscription. Note that certain properties of a subscription, such as its
+   * topic, are not modifiable.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   Subscription subscription = Subscription.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateSubscriptionRequest request = UpdateSubscriptionRequest.newBuilder()
+   *     .setSubscription(subscription)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   Subscription response = subscriptionAdminClient.updateSubscription(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final Subscription updateSubscription(UpdateSubscriptionRequest request) {
+    return updateSubscriptionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an existing subscription. Note that certain properties of a subscription, such as its
+   * topic, are not modifiable.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   Subscription subscription = Subscription.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateSubscriptionRequest request = UpdateSubscriptionRequest.newBuilder()
+   *     .setSubscription(subscription)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;Subscription&gt; future = subscriptionAdminClient.updateSubscriptionCallable().futureCall(request);
+   *   // Do something
+   *   Subscription response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable() {
+    return updateSubscriptionCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Lists matching subscriptions.
    *
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
-   *   for (Subscription element : subscriberClient.listSubscriptions(project).iterateAllElements()) {
+   *   for (Subscription element : subscriptionAdminClient.listSubscriptions(project).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -441,12 +524,12 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
-   *   for (Subscription element : subscriberClient.listSubscriptions(request).iterateAllElements()) {
+   *   for (Subscription element : subscriptionAdminClient.listSubscriptions(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -466,12 +549,12 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
-   *   ApiFuture&lt;ListSubscriptionsPagedResponse&gt; future = subscriberClient.listSubscriptionsPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListSubscriptionsPagedResponse&gt; future = subscriptionAdminClient.listSubscriptionsPagedCallable().futureCall(request);
    *   // Do something
    *   for (Subscription element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -491,13 +574,13 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
    *   while (true) {
-   *     ListSubscriptionsResponse response = subscriberClient.listSubscriptionsCallable().call(request);
+   *     ListSubscriptionsResponse response = subscriptionAdminClient.listSubscriptionsCallable().call(request);
    *     for (Subscription element : response.getSubscriptionsList()) {
    *       // doThingsWith(element);
    *     }
@@ -526,9 +609,9 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
-   *   subscriberClient.deleteSubscription(subscription);
+   *   subscriptionAdminClient.deleteSubscription(subscription);
    * }
    * </code></pre>
    *
@@ -555,12 +638,12 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   DeleteSubscriptionRequest request = DeleteSubscriptionRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .build();
-   *   subscriberClient.deleteSubscription(request);
+   *   subscriptionAdminClient.deleteSubscription(request);
    * }
    * </code></pre>
    *
@@ -581,12 +664,12 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   DeleteSubscriptionRequest request = DeleteSubscriptionRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .build();
-   *   ApiFuture&lt;Void&gt; future = subscriberClient.deleteSubscriptionCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = subscriptionAdminClient.deleteSubscriptionCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -606,11 +689,11 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
    *   int ackDeadlineSeconds = 0;
-   *   subscriberClient.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
+   *   subscriptionAdminClient.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
    * }
    * </code></pre>
    *
@@ -624,6 +707,7 @@ public class SubscriberClient implements AutoCloseable {
    *     seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
+  @Deprecated
   public final void modifyAckDeadline(
       SubscriptionName subscription, List<String> ackIds, int ackDeadlineSeconds) {
 
@@ -646,7 +730,7 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
    *   int ackDeadlineSeconds = 0;
@@ -655,13 +739,14 @@ public class SubscriberClient implements AutoCloseable {
    *     .addAllAckIds(ackIds)
    *     .setAckDeadlineSeconds(ackDeadlineSeconds)
    *     .build();
-   *   subscriberClient.modifyAckDeadline(request);
+   *   subscriptionAdminClient.modifyAckDeadline(request);
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
+  @Deprecated
   public final void modifyAckDeadline(ModifyAckDeadlineRequest request) {
     modifyAckDeadlineCallable().call(request);
   }
@@ -676,7 +761,7 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
    *   int ackDeadlineSeconds = 0;
@@ -685,12 +770,13 @@ public class SubscriberClient implements AutoCloseable {
    *     .addAllAckIds(ackIds)
    *     .setAckDeadlineSeconds(ackDeadlineSeconds)
    *     .build();
-   *   ApiFuture&lt;Void&gt; future = subscriberClient.modifyAckDeadlineCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = subscriptionAdminClient.modifyAckDeadlineCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
    * </code></pre>
    */
+  @Deprecated
   public final UnaryCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {
     return modifyAckDeadlineCallable;
   }
@@ -706,10 +792,10 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
-   *   subscriberClient.acknowledge(subscription, ackIds);
+   *   subscriptionAdminClient.acknowledge(subscription, ackIds);
    * }
    * </code></pre>
    *
@@ -719,6 +805,7 @@ public class SubscriberClient implements AutoCloseable {
    *     the Pub/Sub system in the `Pull` response. Must not be empty.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
+  @Deprecated
   public final void acknowledge(SubscriptionName subscription, List<String> ackIds) {
 
     AcknowledgeRequest request =
@@ -740,20 +827,21 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
    *   AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .addAllAckIds(ackIds)
    *     .build();
-   *   subscriberClient.acknowledge(request);
+   *   subscriptionAdminClient.acknowledge(request);
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
+  @Deprecated
   public final void acknowledge(AcknowledgeRequest request) {
     acknowledgeCallable().call(request);
   }
@@ -769,19 +857,20 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
    *   AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .addAllAckIds(ackIds)
    *     .build();
-   *   ApiFuture&lt;Void&gt; future = subscriberClient.acknowledgeCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = subscriptionAdminClient.acknowledgeCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
    * </code></pre>
    */
+  @Deprecated
   public final UnaryCallable<AcknowledgeRequest, Empty> acknowledgeCallable() {
     return acknowledgeCallable;
   }
@@ -795,11 +884,11 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   boolean returnImmediately = false;
    *   int maxMessages = 0;
-   *   PullResponse response = subscriberClient.pull(subscription, returnImmediately, maxMessages);
+   *   PullResponse response = subscriptionAdminClient.pull(subscription, returnImmediately, maxMessages);
    * }
    * </code></pre>
    *
@@ -814,6 +903,7 @@ public class SubscriberClient implements AutoCloseable {
    *     may return fewer than the number specified.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
+  @Deprecated
   public final PullResponse pull(
       SubscriptionName subscription, boolean returnImmediately, int maxMessages) {
 
@@ -835,20 +925,21 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   int maxMessages = 0;
    *   PullRequest request = PullRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .setMaxMessages(maxMessages)
    *     .build();
-   *   PullResponse response = subscriberClient.pull(request);
+   *   PullResponse response = subscriptionAdminClient.pull(request);
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
+  @Deprecated
   public final PullResponse pull(PullRequest request) {
     return pullCallable().call(request);
   }
@@ -862,19 +953,20 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   int maxMessages = 0;
    *   PullRequest request = PullRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .setMaxMessages(maxMessages)
    *     .build();
-   *   ApiFuture&lt;PullResponse&gt; future = subscriberClient.pullCallable().futureCall(request);
+   *   ApiFuture&lt;PullResponse&gt; future = subscriptionAdminClient.pullCallable().futureCall(request);
    *   // Do something
    *   PullResponse response = future.get();
    * }
    * </code></pre>
    */
+  @Deprecated
   public final UnaryCallable<PullRequest, PullResponse> pullCallable() {
     return pullCallable;
   }
@@ -896,7 +988,7 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   ApiStreamObserver&lt;StreamingPullResponse&gt; responseObserver =
    *       new ApiStreamObserver&lt;StreamingPullResponse&gt;() {
    *         {@literal @}Override
@@ -915,7 +1007,7 @@ public class SubscriberClient implements AutoCloseable {
    *         }
    *       };
    *   ApiStreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
-   *       subscriberClient.streamingPullCallable().bidiStreamingCall(responseObserver)});
+   *       subscriptionAdminClient.streamingPullCallable().bidiStreamingCall(responseObserver)});
    *
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   int streamAckDeadlineSeconds = 0;
@@ -944,10 +1036,10 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   PushConfig pushConfig = PushConfig.newBuilder().build();
-   *   subscriberClient.modifyPushConfig(subscription, pushConfig);
+   *   subscriptionAdminClient.modifyPushConfig(subscription, pushConfig);
    * }
    * </code></pre>
    *
@@ -981,14 +1073,14 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   PushConfig pushConfig = PushConfig.newBuilder().build();
    *   ModifyPushConfigRequest request = ModifyPushConfigRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .setPushConfig(pushConfig)
    *     .build();
-   *   subscriberClient.modifyPushConfig(request);
+   *   subscriptionAdminClient.modifyPushConfig(request);
    * }
    * </code></pre>
    *
@@ -1011,14 +1103,14 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   PushConfig pushConfig = PushConfig.newBuilder().build();
    *   ModifyPushConfigRequest request = ModifyPushConfigRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .setPushConfig(pushConfig)
    *     .build();
-   *   ApiFuture&lt;Void&gt; future = subscriberClient.modifyPushConfigCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = subscriptionAdminClient.modifyPushConfigCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -1030,15 +1122,352 @@ public class SubscriberClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Lists the existing snapshots.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   ProjectName project = ProjectName.create("[PROJECT]");
+   *   for (Snapshot element : subscriptionAdminClient.listSnapshots(project).iterateAllElements()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param project The name of the cloud project that snapshots belong to. Format is
+   *     `projects/{project}`.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final ListSnapshotsPagedResponse listSnapshots(ProjectName project) {
+    ListSnapshotsRequest request =
+        ListSnapshotsRequest.newBuilder().setProjectWithProjectName(project).build();
+    return listSnapshots(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the existing snapshots.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   ProjectName project = ProjectName.create("[PROJECT]");
+   *   ListSnapshotsRequest request = ListSnapshotsRequest.newBuilder()
+   *     .setProjectWithProjectName(project)
+   *     .build();
+   *   for (Snapshot element : subscriptionAdminClient.listSnapshots(request).iterateAllElements()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final ListSnapshotsPagedResponse listSnapshots(ListSnapshotsRequest request) {
+    return listSnapshotsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the existing snapshots.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   ProjectName project = ProjectName.create("[PROJECT]");
+   *   ListSnapshotsRequest request = ListSnapshotsRequest.newBuilder()
+   *     .setProjectWithProjectName(project)
+   *     .build();
+   *   ApiFuture&lt;ListSnapshotsPagedResponse&gt; future = subscriptionAdminClient.listSnapshotsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Snapshot element : future.get().iterateAllElements()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable() {
+    return listSnapshotsPagedCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the existing snapshots.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   ProjectName project = ProjectName.create("[PROJECT]");
+   *   ListSnapshotsRequest request = ListSnapshotsRequest.newBuilder()
+   *     .setProjectWithProjectName(project)
+   *     .build();
+   *   while (true) {
+   *     ListSnapshotsResponse response = subscriptionAdminClient.listSnapshotsCallable().call(request);
+   *     for (Snapshot element : response.getSnapshotsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable() {
+    return listSnapshotsCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a snapshot from the requested subscription. If the snapshot already exists, returns
+   * `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns `NOT_FOUND`.
+   *
+   * <p>If the name is not provided in the request, the server will assign a random name for this
+   * snapshot on the same project as the subscription, conforming to the [resource name
+   * format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated
+   * in the returned Snapshot object. Note that for REST API requests, you must specify a name in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   SnapshotName name = SnapshotName.create("[PROJECT]", "[SNAPSHOT]");
+   *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+   *   Snapshot response = subscriptionAdminClient.createSnapshot(name, subscription);
+   * }
+   * </code></pre>
+   *
+   * @param name Optional user-provided name for this snapshot. If the name is not provided in the
+   *     request, the server will assign a random name for this snapshot on the same project as the
+   *     subscription. Note that for REST API requests, you must specify a name. Format is
+   *     `projects/{project}/snapshots/{snap}`.
+   * @param subscription The subscription whose backlog the snapshot retains. Specifically, the
+   *     created snapshot is guaranteed to retain: (a) The existing backlog on the subscription.
+   *     More precisely, this is defined as the messages in the subscription's backlog that are
+   *     unacknowledged upon the successful completion of the `CreateSnapshot` request; as well as:
+   *     (b) Any messages published to the subscription's topic following the successful completion
+   *     of the CreateSnapshot request. Format is `projects/{project}/subscriptions/{sub}`.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final Snapshot createSnapshot(SnapshotName name, SubscriptionName subscription) {
+
+    CreateSnapshotRequest request =
+        CreateSnapshotRequest.newBuilder()
+            .setNameWithSnapshotName(name)
+            .setSubscriptionWithSubscriptionName(subscription)
+            .build();
+    return createSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a snapshot from the requested subscription. If the snapshot already exists, returns
+   * `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns `NOT_FOUND`.
+   *
+   * <p>If the name is not provided in the request, the server will assign a random name for this
+   * snapshot on the same project as the subscription, conforming to the [resource name
+   * format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated
+   * in the returned Snapshot object. Note that for REST API requests, you must specify a name in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   SnapshotName name = SnapshotName.create("[PROJECT]", "[SNAPSHOT]");
+   *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+   *   CreateSnapshotRequest request = CreateSnapshotRequest.newBuilder()
+   *     .setNameWithSnapshotName(name)
+   *     .setSubscriptionWithSubscriptionName(subscription)
+   *     .build();
+   *   Snapshot response = subscriptionAdminClient.createSnapshot(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final Snapshot createSnapshot(CreateSnapshotRequest request) {
+    return createSnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a snapshot from the requested subscription. If the snapshot already exists, returns
+   * `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns `NOT_FOUND`.
+   *
+   * <p>If the name is not provided in the request, the server will assign a random name for this
+   * snapshot on the same project as the subscription, conforming to the [resource name
+   * format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated
+   * in the returned Snapshot object. Note that for REST API requests, you must specify a name in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   SnapshotName name = SnapshotName.create("[PROJECT]", "[SNAPSHOT]");
+   *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+   *   CreateSnapshotRequest request = CreateSnapshotRequest.newBuilder()
+   *     .setNameWithSnapshotName(name)
+   *     .setSubscriptionWithSubscriptionName(subscription)
+   *     .build();
+   *   ApiFuture&lt;Snapshot&gt; future = subscriptionAdminClient.createSnapshotCallable().futureCall(request);
+   *   // Do something
+   *   Snapshot response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateSnapshotRequest, Snapshot> createSnapshotCallable() {
+    return createSnapshotCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes an existing snapshot. All messages retained in the snapshot are immediately dropped.
+   * After a snapshot is deleted, a new one may be created with the same name, but the new one has
+   * no association with the old snapshot or its subscription, unless the same subscription is
+   * specified.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   SnapshotName snapshot = SnapshotName.create("[PROJECT]", "[SNAPSHOT]");
+   *   subscriptionAdminClient.deleteSnapshot(snapshot);
+   * }
+   * </code></pre>
+   *
+   * @param snapshot The name of the snapshot to delete. Format is
+   *     `projects/{project}/snapshots/{snap}`.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final void deleteSnapshot(SnapshotName snapshot) {
+
+    DeleteSnapshotRequest request =
+        DeleteSnapshotRequest.newBuilder().setSnapshotWithSnapshotName(snapshot).build();
+    deleteSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes an existing snapshot. All messages retained in the snapshot are immediately dropped.
+   * After a snapshot is deleted, a new one may be created with the same name, but the new one has
+   * no association with the old snapshot or its subscription, unless the same subscription is
+   * specified.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   SnapshotName snapshot = SnapshotName.create("[PROJECT]", "[SNAPSHOT]");
+   *   DeleteSnapshotRequest request = DeleteSnapshotRequest.newBuilder()
+   *     .setSnapshotWithSnapshotName(snapshot)
+   *     .build();
+   *   subscriptionAdminClient.deleteSnapshot(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  private final void deleteSnapshot(DeleteSnapshotRequest request) {
+    deleteSnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes an existing snapshot. All messages retained in the snapshot are immediately dropped.
+   * After a snapshot is deleted, a new one may be created with the same name, but the new one has
+   * no association with the old snapshot or its subscription, unless the same subscription is
+   * specified.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   SnapshotName snapshot = SnapshotName.create("[PROJECT]", "[SNAPSHOT]");
+   *   DeleteSnapshotRequest request = DeleteSnapshotRequest.newBuilder()
+   *     .setSnapshotWithSnapshotName(snapshot)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = subscriptionAdminClient.deleteSnapshotCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable() {
+    return deleteSnapshotCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Seeks an existing subscription to a point in time or to a given snapshot, whichever is provided
+   * in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+   *   SeekRequest request = SeekRequest.newBuilder()
+   *     .setSubscriptionWithSubscriptionName(subscription)
+   *     .build();
+   *   SeekResponse response = subscriptionAdminClient.seek(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final SeekResponse seek(SeekRequest request) {
+    return seekCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Seeks an existing subscription to a point in time or to a given snapshot, whichever is provided
+   * in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+   *   SeekRequest request = SeekRequest.newBuilder()
+   *     .setSubscriptionWithSubscriptionName(subscription)
+   *     .build();
+   *   ApiFuture&lt;SeekResponse&gt; future = subscriptionAdminClient.seekCallable().futureCall(request);
+   *   // Do something
+   *   SeekResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SeekRequest, SeekResponse> seekCallable() {
+    return seekCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = subscriberClient.setIamPolicy(formattedResource, policy);
+   *   Policy response = subscriptionAdminClient.setIamPolicy(formattedResource, policy);
    * }
    * </code></pre>
    *
@@ -1064,14 +1493,14 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .setPolicy(policy)
    *     .build();
-   *   Policy response = subscriberClient.setIamPolicy(request);
+   *   Policy response = subscriptionAdminClient.setIamPolicy(request);
    * }
    * </code></pre>
    *
@@ -1089,14 +1518,14 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .setPolicy(policy)
    *     .build();
-   *   ApiFuture&lt;Policy&gt; future = subscriberClient.setIamPolicyCallable().futureCall(request);
+   *   ApiFuture&lt;Policy&gt; future = subscriptionAdminClient.setIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -1114,9 +1543,9 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
-   *   Policy response = subscriberClient.getIamPolicy(formattedResource);
+   *   Policy response = subscriptionAdminClient.getIamPolicy(formattedResource);
    * }
    * </code></pre>
    *
@@ -1139,12 +1568,12 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
-   *   Policy response = subscriberClient.getIamPolicy(request);
+   *   Policy response = subscriptionAdminClient.getIamPolicy(request);
    * }
    * </code></pre>
    *
@@ -1163,12 +1592,12 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
-   *   ApiFuture&lt;Policy&gt; future = subscriberClient.getIamPolicyCallable().futureCall(request);
+   *   ApiFuture&lt;Policy&gt; future = subscriptionAdminClient.getIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -1186,10 +1615,10 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = subscriberClient.testIamPermissions(formattedResource, permissions);
+   *   TestIamPermissionsResponse response = subscriptionAdminClient.testIamPermissions(formattedResource, permissions);
    * }
    * </code></pre>
    *
@@ -1220,14 +1649,14 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .addAllPermissions(permissions)
    *     .build();
-   *   TestIamPermissionsResponse response = subscriberClient.testIamPermissions(request);
+   *   TestIamPermissionsResponse response = subscriptionAdminClient.testIamPermissions(request);
    * }
    * </code></pre>
    *
@@ -1246,14 +1675,14 @@ public class SubscriberClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .addAllPermissions(permissions)
    *     .build();
-   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = subscriberClient.testIamPermissionsCallable().futureCall(request);
+   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = subscriptionAdminClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something
    *   TestIamPermissionsResponse response = future.get();
    * }
