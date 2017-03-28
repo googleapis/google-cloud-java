@@ -118,7 +118,7 @@ public class MetricsClientTest {
   @Test
   @SuppressWarnings("all")
   public void listLogMetricsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricsServiceV2.addException(exception);
 
     try {
@@ -127,7 +127,7 @@ public class MetricsClientTest {
       client.listLogMetrics(parent);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -156,7 +156,7 @@ public class MetricsClientTest {
   @Test
   @SuppressWarnings("all")
   public void getLogMetricExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricsServiceV2.addException(exception);
 
     try {
@@ -165,7 +165,7 @@ public class MetricsClientTest {
       client.getLogMetric(metricName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -196,7 +196,7 @@ public class MetricsClientTest {
   @Test
   @SuppressWarnings("all")
   public void createLogMetricExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricsServiceV2.addException(exception);
 
     try {
@@ -206,7 +206,7 @@ public class MetricsClientTest {
       client.createLogMetric(parent, metric);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -237,7 +237,7 @@ public class MetricsClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateLogMetricExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricsServiceV2.addException(exception);
 
     try {
@@ -247,7 +247,7 @@ public class MetricsClientTest {
       client.updateLogMetric(metricName, metric);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -271,7 +271,7 @@ public class MetricsClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteLogMetricExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricsServiceV2.addException(exception);
 
     try {
@@ -280,7 +280,7 @@ public class MetricsClientTest {
       client.deleteLogMetric(metricName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }

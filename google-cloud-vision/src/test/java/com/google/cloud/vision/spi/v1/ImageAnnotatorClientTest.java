@@ -90,7 +90,7 @@ public class ImageAnnotatorClientTest {
   @Test
   @SuppressWarnings("all")
   public void batchAnnotateImagesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockImageAnnotator.addException(exception);
 
     try {
@@ -99,7 +99,7 @@ public class ImageAnnotatorClientTest {
       client.batchAnnotateImages(requests);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }

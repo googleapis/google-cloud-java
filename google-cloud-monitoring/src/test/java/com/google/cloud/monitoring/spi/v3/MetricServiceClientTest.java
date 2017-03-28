@@ -130,7 +130,7 @@ public class MetricServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listMonitoredResourceDescriptorsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricService.addException(exception);
 
     try {
@@ -139,7 +139,7 @@ public class MetricServiceClientTest {
       client.listMonitoredResourceDescriptors(name);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -176,7 +176,7 @@ public class MetricServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getMonitoredResourceDescriptorExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricService.addException(exception);
 
     try {
@@ -186,7 +186,7 @@ public class MetricServiceClientTest {
       client.getMonitoredResourceDescriptor(name);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -222,7 +222,7 @@ public class MetricServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listMetricDescriptorsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricService.addException(exception);
 
     try {
@@ -231,7 +231,7 @@ public class MetricServiceClientTest {
       client.listMetricDescriptors(name);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -268,7 +268,7 @@ public class MetricServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getMetricDescriptorExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricService.addException(exception);
 
     try {
@@ -277,7 +277,7 @@ public class MetricServiceClientTest {
       client.getMetricDescriptor(name);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -317,7 +317,7 @@ public class MetricServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createMetricDescriptorExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricService.addException(exception);
 
     try {
@@ -327,7 +327,7 @@ public class MetricServiceClientTest {
       client.createMetricDescriptor(name, metricDescriptor);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -352,7 +352,7 @@ public class MetricServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteMetricDescriptorExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricService.addException(exception);
 
     try {
@@ -361,7 +361,7 @@ public class MetricServiceClientTest {
       client.deleteMetricDescriptor(name);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -403,7 +403,7 @@ public class MetricServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listTimeSeriesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricService.addException(exception);
 
     try {
@@ -415,7 +415,7 @@ public class MetricServiceClientTest {
       client.listTimeSeries(name, filter, interval, view);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -441,7 +441,7 @@ public class MetricServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createTimeSeriesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockMetricService.addException(exception);
 
     try {
@@ -451,7 +451,7 @@ public class MetricServiceClientTest {
       client.createTimeSeries(name, timeSeries);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }
