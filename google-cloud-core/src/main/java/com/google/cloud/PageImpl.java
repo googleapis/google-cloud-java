@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import com.google.api.gax.core.Page;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableMap;
 
@@ -54,7 +55,7 @@ public class PageImpl<T> implements Page<T>, Serializable {
     private Page<T> currentPage;
 
     PageIterator(Page<T> currentPage) {
-      this.currentPageIterator = currentPage.getValues().iterator();
+      this.currentPageIterator = currentPage.iterator();
       this.currentPage = currentPage;
     }
 
@@ -65,7 +66,7 @@ public class PageImpl<T> implements Page<T>, Serializable {
         if (currentPage == null) {
           return endOfData();
         }
-        currentPageIterator = currentPage.getValues().iterator();
+        currentPageIterator = currentPage.iterator();
       }
       return currentPageIterator.next();
     }
@@ -83,8 +84,8 @@ public class PageImpl<T> implements Page<T>, Serializable {
 
 
   @Override
-  public Iterable<T> getValues() {
-    return results == null ? Collections.<T>emptyList() : results;
+  public Iterator<T> iterator() {
+    return results == null ? Collections.<T>emptyList().iterator() : results.iterator();
   }
 
   @Override
@@ -92,9 +93,13 @@ public class PageImpl<T> implements Page<T>, Serializable {
     return new PageIterator<>(this);
   }
 
+  @Override
+  public boolean hasNextPage() {
+    return getNextPageToken() != null && !getNextPageToken().equals("");
+  }
 
   @Override
-  public String getNextPageCursor() {
+  public String getNextPageToken() {
     return cursor;
   }
 
