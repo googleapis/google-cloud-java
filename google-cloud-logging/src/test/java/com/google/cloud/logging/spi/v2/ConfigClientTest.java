@@ -116,7 +116,7 @@ public class ConfigClientTest {
   @Test
   @SuppressWarnings("all")
   public void listSinksExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockConfigServiceV2.addException(exception);
 
     try {
@@ -125,7 +125,7 @@ public class ConfigClientTest {
       client.listSinks(parent);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -160,7 +160,7 @@ public class ConfigClientTest {
   @Test
   @SuppressWarnings("all")
   public void getSinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockConfigServiceV2.addException(exception);
 
     try {
@@ -169,7 +169,7 @@ public class ConfigClientTest {
       client.getSink(sinkName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -206,7 +206,7 @@ public class ConfigClientTest {
   @Test
   @SuppressWarnings("all")
   public void createSinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockConfigServiceV2.addException(exception);
 
     try {
@@ -216,7 +216,7 @@ public class ConfigClientTest {
       client.createSink(parent, sink);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -253,7 +253,7 @@ public class ConfigClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateSinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockConfigServiceV2.addException(exception);
 
     try {
@@ -263,7 +263,7 @@ public class ConfigClientTest {
       client.updateSink(sinkName, sink);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -287,7 +287,7 @@ public class ConfigClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteSinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockConfigServiceV2.addException(exception);
 
     try {
@@ -296,7 +296,7 @@ public class ConfigClientTest {
       client.deleteSink(sinkName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }

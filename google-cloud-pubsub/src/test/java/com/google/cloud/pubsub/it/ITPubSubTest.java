@@ -25,9 +25,9 @@ import com.google.cloud.pubsub.spi.v1.AckReply;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
-import com.google.cloud.pubsub.spi.v1.SubscriberClient;
+import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
@@ -48,23 +48,23 @@ import org.junit.rules.Timeout;
 public class ITPubSubTest {
 
   private static final String NAME_SUFFIX = UUID.randomUUID().toString();
-  private static PublisherClient publisherClient;
-  private static SubscriberClient subscriberClient;
+  private static TopicAdminClient topicAdminClient;
+  private static SubscriptionAdminClient subscriptionAdminClient;
   private static String projectId;
 
   @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void setupClass() throws Exception {
-    publisherClient = PublisherClient.create();
-    subscriberClient = SubscriberClient.create();
+    topicAdminClient = TopicAdminClient.create();
+    subscriptionAdminClient = SubscriptionAdminClient.create();
     projectId = ServiceOptions.getDefaultProjectId();
   }
 
   @AfterClass
   public static void tearDownClass() throws Exception {
-    publisherClient.close();
-    subscriberClient.close();
+    topicAdminClient.close();
+    subscriptionAdminClient.close();
   }
 
   private String formatForTest(String resourceName) {
@@ -74,24 +74,24 @@ public class ITPubSubTest {
   @Test
   public void testTopicPolicy() {
     TopicName topicName = TopicName.create(projectId, formatForTest("testing-topic-policy"));
-    publisherClient.createTopic(topicName);
+    topicAdminClient.createTopic(topicName);
 
-    Policy policy = publisherClient.getIamPolicy(topicName.toString());
+    Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
     Binding binding =
         Binding.newBuilder().setRole("roles/viewer").addMembers("allAuthenticatedUsers").build();
     Policy newPolicy =
-        publisherClient.setIamPolicy(
+        topicAdminClient.setIamPolicy(
             topicName.toString(), policy.toBuilder().addBindings(binding).build());
     assertTrue(newPolicy.getBindingsList().contains(binding));
 
     String permissionName = "pubsub.topics.get";
     List<String> permissions =
-        publisherClient
+        topicAdminClient
             .testIamPermissions(topicName.toString(), Collections.singletonList(permissionName))
             .getPermissionsList();
     assertTrue(permissions.contains(permissionName));
 
-    publisherClient.deleteTopic(topicName);
+    topicAdminClient.deleteTopic(topicName);
   }
 
   @Test
@@ -101,8 +101,8 @@ public class ITPubSubTest {
     SubscriptionName subscriptionName =
         SubscriptionName.create(projectId, formatForTest("testing-publish-subscribe-subscription"));
 
-    publisherClient.createTopic(topicName);
-    subscriberClient.createSubscription(
+    topicAdminClient.createTopic(topicName);
+    subscriptionAdminClient.createSubscription(
         subscriptionName, topicName, PushConfig.newBuilder().build(), 10);
     PubsubMessage message =
         PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("my message")).build();
@@ -138,7 +138,7 @@ public class ITPubSubTest {
 
     assertEquals(received.get().getData(), message.getData());
     subscriber.stopAsync().awaitTerminated();
-    subscriberClient.deleteSubscription(subscriptionName);
-    publisherClient.deleteTopic(topicName);
+    subscriptionAdminClient.deleteSubscription(subscriptionName);
+    topicAdminClient.deleteTopic(topicName);
   }
 }

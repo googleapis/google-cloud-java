@@ -575,7 +575,7 @@ public class Publisher {
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
     LongRandom longRandom = DEFAULT_LONG_RANDOM;
 
-    ChannelProvider channelProvider = PublisherSettings.defaultChannelProviderBuilder().build();
+    ChannelProvider channelProvider = TopicAdminSettings.defaultChannelProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
 
     private Builder(TopicName topic) {

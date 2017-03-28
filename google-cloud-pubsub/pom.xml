@@ -30,7 +30,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.6</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>

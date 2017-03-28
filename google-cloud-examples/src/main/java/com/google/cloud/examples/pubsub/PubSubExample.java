@@ -180,12 +180,12 @@ public class PubSubExample {
     private static class ListTopicsAction extends NoArgsAction {
         @Override
         public void run(Void arg) throws Exception {
-            try (PublisherClient publisherClient = PublisherClient.create()) {
+            try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
                 ListTopicsRequest listTopicsRequest =
                         ListTopicsRequest.newBuilder()
                                 .setProjectWithProjectName(ProjectName.create(projectId))
                                 .build();
-                PagedResponseWrappers.ListTopicsPagedResponse response = publisherClient.listTopics(listTopicsRequest);
+                PagedResponseWrappers.ListTopicsPagedResponse response = topicAdminClient.listTopics(listTopicsRequest);
                 Iterable<Topic> topics = response.iterateAllElements();
                 for (Topic topic : topics) {
                     System.out.println(topic.getName());
@@ -220,8 +220,8 @@ public class PubSubExample {
     private static class TopicRetrievalAction extends TopicAction {
         @Override
         public void run(String topicId) throws Exception {
-            try (PublisherClient publisherClient = PublisherClient.create()) {
-                Topic topic = publisherClient.getTopic(TopicName.create(projectId, topicId));
+            try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+                Topic topic = topicAdminClient.getTopic(TopicName.create(projectId, topicId));
                 System.out.printf("Topic : %s%n", topic);
             }
         }
@@ -235,9 +235,9 @@ public class PubSubExample {
     private static class CreateTopicAction extends TopicAction {
         @Override
         public void run(String topicId) throws Exception {
-            try (PublisherClient publisherClient = PublisherClient.create()) {
+            try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
                 TopicName topicName = TopicName.create(projectId, topicId);
-                Topic topic = publisherClient.createTopic(topicName);
+                Topic topic = topicAdminClient.createTopic(topicName);
                 System.out.printf("Created topic %s%n", topic.getName());
             }
         }
@@ -251,8 +251,8 @@ public class PubSubExample {
     private static class DeleteTopicAction extends TopicAction {
         @Override
         public void run(String topicId) throws Exception {
-            try (PublisherClient publisherClient = PublisherClient.create()) {
-                publisherClient.deleteTopic(TopicName.create(projectId, topicId));
+            try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+                topicAdminClient.deleteTopic(TopicName.create(projectId, topicId));
                 System.out.printf("Deleted topic %s%n", topicId);
             }
         }
@@ -267,18 +267,18 @@ public class PubSubExample {
         @Override
         public void run(String topic) throws Exception {
             if (topic == null) {
-                try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+                try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
                     PagedResponseWrappers.ListSubscriptionsPagedResponse response =
-                            subscriberClient.listSubscriptions(ProjectName.create(projectId));
+                            subscriptionAdminClient.listSubscriptions(ProjectName.create(projectId));
                     Iterable<Subscription> subscriptions = response.iterateAllElements();
                     for (Subscription subscription : subscriptions) {
                         System.out.println(subscription.getName());
                     }
                 }
             } else {
-                try (PublisherClient publisherClient = PublisherClient.create()) {
+                try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
                     PagedResponseWrappers.ListTopicSubscriptionsPagedResponse response =
-                            publisherClient.listTopicSubscriptions(TopicName.create(projectId, topic));
+                            topicAdminClient.listTopicSubscriptions(TopicName.create(projectId, topic));
                     Iterable<String> subscriptionNames = response.iterateAllElements();
                     for (String subscriptionName : subscriptionNames) {
                         System.out.println(subscriptionName);
@@ -379,8 +379,8 @@ public class PubSubExample {
     private static class SubscriptionInfoAction extends SubscriptionAction {
         @Override
         public void run(String subscriptionId) throws Exception {
-            try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-                Subscription subscription = subscriberClient.getSubscription(
+            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+                Subscription subscription = subscriptionAdminClient.getSubscription(
                         SubscriptionName.create(projectId, subscriptionId));
                 System.out.printf("Subscription info: %s%n", subscription.getName());
             }
@@ -400,8 +400,8 @@ public class PubSubExample {
             TopicName topicName = nameTuple.x();
             SubscriptionName subscriptionName = nameTuple.y();
             PushConfig pushConfig = subscriptionParams.y();
-            try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-                Subscription subscription = subscriberClient.createSubscription(
+            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+                Subscription subscription = subscriptionAdminClient.createSubscription(
                         subscriptionName, topicName, pushConfig, 60);
                 System.out.printf("Created subscription %s%n", subscription.getName());
             }
@@ -438,8 +438,8 @@ public class PubSubExample {
     private static class DeleteSubscriptionAction extends SubscriptionAction {
         @Override
         public void run(String subscriptionId) throws Exception {
-            try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-                subscriberClient.deleteSubscription(SubscriptionName.create(projectId, subscriptionId));
+            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+                subscriptionAdminClient.deleteSubscription(SubscriptionName.create(projectId, subscriptionId));
                 System.out.printf("Deleted subscription %s%n", subscriptionId);
             }
         }
@@ -458,8 +458,8 @@ public class PubSubExample {
         public void run(Tuple<SubscriptionName, PushConfig> params) throws Exception {
             SubscriptionName subscriptionName = params.x();
             PushConfig pushConfig = params.y();
-            try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-                subscriberClient.modifyPushConfig(subscriptionName, pushConfig);
+            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+                subscriptionAdminClient.modifyPushConfig(subscriptionName, pushConfig);
             }
             System.out.printf("Set push config %s for subscription %s%n", pushConfig, subscriptionName);
         }
@@ -515,8 +515,8 @@ public class PubSubExample {
         public void run(Tuple<SubscriptionName, List<String>> params) throws Exception {
             SubscriptionName subscriptionName = params.x();
             List<String> ackIds = params.y();
-            try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-                subscriberClient.acknowledge(subscriptionName, ackIds);
+            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+                subscriptionAdminClient.acknowledge(subscriptionName, ackIds);
             }
             System.out.printf("Acked %d messages for subscription %s%n", ackIds.size(), subscriptionName);
         }
@@ -534,8 +534,8 @@ public class PubSubExample {
         public void run(Tuple<SubscriptionName, List<String>> params) throws Exception {
             SubscriptionName subscriptionName = params.x();
             List<String> ackIds = params.y();
-            try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-                subscriberClient.modifyAckDeadline(subscriptionName, ackIds, 0);
+            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+                subscriptionAdminClient.modifyAckDeadline(subscriptionName, ackIds, 0);
             }
             System.out.printf("Nacked %d messages for subscription %s%n", ackIds.size(), subscriptionName);
         }
@@ -576,8 +576,8 @@ public class PubSubExample {
             SubscriptionName subscriptionName = params.x().subscriptionName();
             int deadline = params.x().deadlineMillis();
             List<String> ackIds = params.y();
-            try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-                subscriberClient.modifyAckDeadline(subscriptionName, ackIds, deadline);
+            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+                subscriptionAdminClient.modifyAckDeadline(subscriptionName, ackIds, deadline);
             }
             System.out.printf("Ack deadline set to %d seconds for %d messages in subscription %s%n", deadline,
                     ackIds.size(), subscriptionName);
@@ -680,12 +680,12 @@ public class PubSubExample {
             SubscriptionName subscriptionName = params.x();
             Integer maxMessages = params.y();
             AtomicInteger messageCount = new AtomicInteger();
-            try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-                PullResponse response = subscriberClient.pull(subscriptionName, true, maxMessages);
+            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+                PullResponse response = subscriptionAdminClient.pull(subscriptionName, true, maxMessages);
                 for (ReceivedMessage message : response.getReceivedMessagesList()) {
                     // do something with message, then ack or nack
                     System.out.printf("Received message \"%s\"%n", message);
-                    subscriberClient.acknowledge(
+                    subscriptionAdminClient.acknowledge(
                             subscriptionName, Collections.singletonList(message.getAckId()));
                     messageCount.incrementAndGet();
                 }
@@ -743,8 +743,8 @@ public class PubSubExample {
         @Override
         public void run(String topicId) throws Exception {
             TopicName topicName = TopicName.create(projectId, topicId);
-            try (PublisherClient publisherClient = PublisherClient.create()) {
-                Policy policy = publisherClient.getIamPolicy(topicName.toString());
+            try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+                Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
                 System.out.printf("Policy for topic %s%n", topicId);
                 System.out.println(policy);
             }
@@ -760,8 +760,8 @@ public class PubSubExample {
         @Override
         public void run(String subscription) throws Exception {
             SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscription);
-            try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-                Policy policy = subscriberClient.getIamPolicy(subscriptionName.toString());
+            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+                Policy policy = subscriptionAdminClient.getIamPolicy(subscriptionName.toString());
                 System.out.printf("Policy for subscription %s%n", subscription);
                 System.out.println(policy);
             }
@@ -810,11 +810,11 @@ public class PubSubExample {
                             .addMembers(identity.toString())
                             .build();
             //Update policy
-            try (PublisherClient publisherClient = PublisherClient.create()) {
-                Policy policy = publisherClient.getIamPolicy(topicName.toString());
+            try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+                Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
                 //Update policy
                 Policy updatedPolicy = policy.toBuilder().addBindings(binding).build();
-                updatedPolicy = publisherClient.setIamPolicy(topicName.toString(), updatedPolicy);
+                updatedPolicy = topicAdminClient.setIamPolicy(topicName.toString(), updatedPolicy);
                 System.out.printf("Added role %s to identity %s for topic %s%n", role, identity, topicName);
                 System.out.println(updatedPolicy);
             }
@@ -840,12 +840,12 @@ public class PubSubExample {
                             .addMembers(identity.toString())
                             .build();
 
-            try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-                Policy policy = subscriberClient.getIamPolicy(subscriptionName.toString());
+            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+                Policy policy = subscriptionAdminClient.getIamPolicy(subscriptionName.toString());
                 //Update policy
                 Policy updatedPolicy = policy.toBuilder().addBindings(binding).build();
 
-                updatedPolicy = subscriberClient.setIamPolicy(subscriptionName.toString(), updatedPolicy);
+                updatedPolicy = subscriptionAdminClient.setIamPolicy(subscriptionName.toString(), updatedPolicy);
                 System.out.printf("Added role %s to identity %s for subscription %s%n", role, identity,
                         subscriptionName);
                 System.out.println(updatedPolicy);
@@ -879,9 +879,9 @@ public class PubSubExample {
         public void run(Tuple<String, List<String>> param) throws Exception {
             TopicName topicName = TopicName.create(projectId, param.x());
             List<String> permissions = param.y();
-            try (PublisherClient publisherClient = PublisherClient.create()) {
+            try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
                 TestIamPermissionsResponse response =
-                        publisherClient.testIamPermissions(topicName.toString(), permissions);
+                        topicAdminClient.testIamPermissions(topicName.toString(), permissions);
                 System.out.println("Topic permissions test : ");
                 Set<String> actualPermissions = new HashSet<>();
                 actualPermissions.addAll(response.getPermissionsList());
@@ -903,9 +903,9 @@ public class PubSubExample {
         public void run(Tuple<String, List<String>> param) throws Exception {
             SubscriptionName subscriptionName = SubscriptionName.create(projectId, param.x());
             List<String> permissions = param.y();
-            try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
                 TestIamPermissionsResponse response =
-                        subscriberClient.testIamPermissions(subscriptionName.toString(),
+                        subscriptionAdminClient.testIamPermissions(subscriptionName.toString(),
                                 permissions);
                 System.out.println("Subscription permissions test : ");
                 Set<String> actualPermissions = new HashSet<>();

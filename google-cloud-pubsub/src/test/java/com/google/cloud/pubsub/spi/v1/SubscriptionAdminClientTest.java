@@ -15,6 +15,7 @@
  */
 package com.google.cloud.pubsub.spi.v1;
 
+import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSnapshotsPagedResponse;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.ApiStreamObserver;
@@ -33,8 +34,12 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
 import com.google.pubsub.v1.AcknowledgeRequest;
+import com.google.pubsub.v1.CreateSnapshotRequest;
+import com.google.pubsub.v1.DeleteSnapshotRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
+import com.google.pubsub.v1.ListSnapshotsRequest;
+import com.google.pubsub.v1.ListSnapshotsResponse;
 import com.google.pubsub.v1.ListSubscriptionsRequest;
 import com.google.pubsub.v1.ListSubscriptionsResponse;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
@@ -43,6 +48,8 @@ import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
+import com.google.pubsub.v1.Snapshot;
+import com.google.pubsub.v1.SnapshotName;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.Subscription;
@@ -64,12 +71,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class SubscriberClientTest {
+public class SubscriptionAdminClientTest {
   private static MockPublisher mockPublisher;
   private static MockIAMPolicy mockIAMPolicy;
   private static MockSubscriber mockSubscriber;
   private static MockServiceHelper serviceHelper;
-  private SubscriberClient client;
+  private SubscriptionAdminClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -91,11 +98,11 @@ public class SubscriberClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
-    SubscriberSettings settings =
-        SubscriberSettings.defaultBuilder()
+    SubscriptionAdminSettings settings =
+        SubscriptionAdminSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    client = SubscriberClient.create(settings);
+    client = SubscriptionAdminClient.create(settings);
   }
 
   @After
@@ -109,11 +116,13 @@ public class SubscriberClientTest {
     SubscriptionName name2 = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
     TopicNameOneof topic2 = TopicNameOneof.from(TopicName.create("[PROJECT]", "[TOPIC]"));
     int ackDeadlineSeconds2 = -921632575;
+    boolean retainAckedMessages = false;
     Subscription expectedResponse =
         Subscription.newBuilder()
             .setNameWithSubscriptionName(name2)
             .setTopicWithTopicNameOneof(topic2)
             .setAckDeadlineSeconds(ackDeadlineSeconds2)
+            .setRetainAckedMessages(retainAckedMessages)
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -139,7 +148,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void createSubscriptionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSubscriber.addException(exception);
 
     try {
@@ -151,7 +160,7 @@ public class SubscriberClientTest {
       client.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -161,11 +170,13 @@ public class SubscriberClientTest {
     SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
     TopicNameOneof topic = TopicNameOneof.from(TopicName.create("[PROJECT]", "[TOPIC]"));
     int ackDeadlineSeconds = 2135351438;
+    boolean retainAckedMessages = false;
     Subscription expectedResponse =
         Subscription.newBuilder()
             .setNameWithSubscriptionName(name)
             .setTopicWithTopicNameOneof(topic)
             .setAckDeadlineSeconds(ackDeadlineSeconds)
+            .setRetainAckedMessages(retainAckedMessages)
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -184,7 +195,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void getSubscriptionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSubscriber.addException(exception);
 
     try {
@@ -193,7 +204,7 @@ public class SubscriberClientTest {
       client.getSubscription(subscription);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -228,7 +239,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void listSubscriptionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSubscriber.addException(exception);
 
     try {
@@ -237,7 +248,7 @@ public class SubscriberClientTest {
       client.listSubscriptions(project);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -261,7 +272,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteSubscriptionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSubscriber.addException(exception);
 
     try {
@@ -270,7 +281,7 @@ public class SubscriberClientTest {
       client.deleteSubscription(subscription);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -298,7 +309,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void modifyAckDeadlineExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSubscriber.addException(exception);
 
     try {
@@ -309,7 +320,7 @@ public class SubscriberClientTest {
       client.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -335,7 +346,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void acknowledgeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSubscriber.addException(exception);
 
     try {
@@ -345,7 +356,7 @@ public class SubscriberClientTest {
       client.acknowledge(subscription, ackIds);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -374,7 +385,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void pullExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSubscriber.addException(exception);
 
     try {
@@ -385,7 +396,7 @@ public class SubscriberClientTest {
       client.pull(subscription, returnImmediately, maxMessages);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -420,7 +431,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void streamingPullExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSubscriber.addException(exception);
     SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
     int streamAckDeadlineSeconds = 1875467245;
@@ -445,7 +456,7 @@ public class SubscriberClientTest {
     } catch (ExecutionException e) {
       Assert.assertTrue(e.getCause() instanceof StatusRuntimeException);
       StatusRuntimeException statusException = (StatusRuntimeException) e.getCause();
-      Assert.assertEquals(Status.INTERNAL, statusException.getStatus());
+      Assert.assertEquals(Status.INVALID_ARGUMENT, statusException.getStatus());
     }
   }
 
@@ -471,7 +482,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void modifyPushConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSubscriber.addException(exception);
 
     try {
@@ -481,7 +492,124 @@ public class SubscriberClientTest {
       client.modifyPushConfig(subscription, pushConfig);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listSnapshotsTest() {
+    String nextPageToken = "";
+    Snapshot snapshotsElement = Snapshot.newBuilder().build();
+    List<Snapshot> snapshots = Arrays.asList(snapshotsElement);
+    ListSnapshotsResponse expectedResponse =
+        ListSnapshotsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllSnapshots(snapshots)
+            .build();
+    mockSubscriber.addResponse(expectedResponse);
+
+    ProjectName project = ProjectName.create("[PROJECT]");
+
+    ListSnapshotsPagedResponse pagedListResponse = client.listSnapshots(project);
+
+    List<Snapshot> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSnapshotsList().get(0), resources.get(0));
+
+    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSnapshotsRequest actualRequest = (ListSnapshotsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(project, actualRequest.getProjectAsProjectName());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listSnapshotsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSubscriber.addException(exception);
+
+    try {
+      ProjectName project = ProjectName.create("[PROJECT]");
+
+      client.listSnapshots(project);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createSnapshotTest() {
+    SnapshotName name2 = SnapshotName.create("[PROJECT]", "[SNAPSHOT]");
+    TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+    Snapshot expectedResponse =
+        Snapshot.newBuilder().setNameWithSnapshotName(name2).setTopicWithTopicName(topic).build();
+    mockSubscriber.addResponse(expectedResponse);
+
+    SnapshotName name = SnapshotName.create("[PROJECT]", "[SNAPSHOT]");
+    SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+
+    Snapshot actualResponse = client.createSnapshot(name, subscription);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSnapshotRequest actualRequest = (CreateSnapshotRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, actualRequest.getNameAsSnapshotName());
+    Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createSnapshotExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSubscriber.addException(exception);
+
+    try {
+      SnapshotName name = SnapshotName.create("[PROJECT]", "[SNAPSHOT]");
+      SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+
+      client.createSnapshot(name, subscription);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSnapshotTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSubscriber.addResponse(expectedResponse);
+
+    SnapshotName snapshot = SnapshotName.create("[PROJECT]", "[SNAPSHOT]");
+
+    client.deleteSnapshot(snapshot);
+
+    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSnapshotRequest actualRequest = (DeleteSnapshotRequest) actualRequests.get(0);
+
+    Assert.assertEquals(snapshot, actualRequest.getSnapshotAsSnapshotName());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSnapshotExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSubscriber.addException(exception);
+
+    try {
+      SnapshotName snapshot = SnapshotName.create("[PROJECT]", "[SNAPSHOT]");
+
+      client.deleteSnapshot(snapshot);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -510,7 +638,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void setIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockIAMPolicy.addException(exception);
 
     try {
@@ -520,7 +648,7 @@ public class SubscriberClientTest {
       client.setIamPolicy(formattedResource, policy);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -547,7 +675,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void getIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockIAMPolicy.addException(exception);
 
     try {
@@ -556,7 +684,7 @@ public class SubscriberClientTest {
       client.getIamPolicy(formattedResource);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -584,7 +712,7 @@ public class SubscriberClientTest {
   @Test
   @SuppressWarnings("all")
   public void testIamPermissionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockIAMPolicy.addException(exception);
 
     try {
@@ -594,7 +722,7 @@ public class SubscriberClientTest {
       client.testIamPermissions(formattedResource, permissions);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }
