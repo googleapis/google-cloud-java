@@ -24,7 +24,7 @@ import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseContext;
 import com.google.api.gax.grpc.UnaryCallable;
 import com.google.common.base.Function;
-import com.google.common.collect.Iterators;
+import com.google.common.collect.Iterables;
 import com.google.protobuf.ExperimentalApi;
 import com.google.pubsub.v1.ListSnapshotsRequest;
 import com.google.pubsub.v1.ListSnapshotsResponse;
@@ -201,8 +201,8 @@ public class PagedResponseWrappers {
       return context.iterateFixedSizeCollections(collectionSize);
     }
 
-    public Iterator<SubscriptionName> iterateAllAsSubscriptionName() {
-      return Iterators.transform(
+    public Iterable<SubscriptionName> iterateAllAsSubscriptionName() {
+      return Iterables.transform(
           iterateAll(),
           new Function<String, SubscriptionName>() {
             @Override
@@ -260,8 +260,8 @@ public class PagedResponseWrappers {
       return context.getRequest();
     }
 
-    public Iterator<SubscriptionName> iterateAllAsSubscriptionName() {
-      return Iterators.transform(
+    public Iterable<SubscriptionName> iterateAllAsSubscriptionName() {
+      return Iterables.transform(
           iterateAll(),
           new Function<String, SubscriptionName>() {
             @Override
