@@ -22,6 +22,7 @@ import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListTimeS
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
@@ -106,6 +107,11 @@ public class MetricServiceSettings extends ClientSettings {
 
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
+
+  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String META_VERSION_KEY = "artifact.version";
+
+  private static String gapicVersion;
 
   private final PagedCallSettings<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
@@ -215,8 +221,13 @@ public class MetricServiceSettings extends ClientSettings {
   }
 
   private static String getGapicVersion() {
-    String packageVersion = MetricServiceSettings.class.getPackage().getImplementationVersion();
-    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
+    if (gapicVersion == null) {
+      gapicVersion =
+          PropertiesProvider.loadProperty(
+              MetricServiceSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
+    }
+    return gapicVersion;
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -257,15 +268,15 @@ public class MetricServiceSettings extends ClientSettings {
               ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               MonitoredResourceDescriptor>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListMonitoredResourceDescriptorsRequest injectToken(
-                ListMonitoredResourceDescriptorsRequest payload, Object token) {
+                ListMonitoredResourceDescriptorsRequest payload, String token) {
               return ListMonitoredResourceDescriptorsRequest.newBuilder(payload)
-                  .setPageToken((String) token)
+                  .setPageToken(token)
                   .build();
             }
 
@@ -283,7 +294,7 @@ public class MetricServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListMonitoredResourceDescriptorsResponse payload) {
+            public String extractNextToken(ListMonitoredResourceDescriptorsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -300,16 +311,14 @@ public class MetricServiceSettings extends ClientSettings {
           new PagedListDescriptor<
               ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListMetricDescriptorsRequest injectToken(
-                ListMetricDescriptorsRequest payload, Object token) {
-              return ListMetricDescriptorsRequest.newBuilder(payload)
-                  .setPageToken((String) token)
-                  .build();
+                ListMetricDescriptorsRequest payload, String token) {
+              return ListMetricDescriptorsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -324,7 +333,7 @@ public class MetricServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListMetricDescriptorsResponse payload) {
+            public String extractNextToken(ListMetricDescriptorsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -340,13 +349,13 @@ public class MetricServiceSettings extends ClientSettings {
       LIST_TIME_SERIES_PAGE_STR_DESC =
           new PagedListDescriptor<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListTimeSeriesRequest injectToken(ListTimeSeriesRequest payload, Object token) {
-              return ListTimeSeriesRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListTimeSeriesRequest injectToken(ListTimeSeriesRequest payload, String token) {
+              return ListTimeSeriesRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -361,7 +370,7 @@ public class MetricServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListTimeSeriesResponse payload) {
+            public String extractNextToken(ListTimeSeriesResponse payload) {
               return payload.getNextPageToken();
             }
 

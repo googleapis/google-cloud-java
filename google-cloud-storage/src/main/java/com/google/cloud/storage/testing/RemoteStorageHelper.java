@@ -184,7 +184,7 @@ public class RemoteStorageHelper {
     @Override
     public Boolean call() {
       while (true) {
-        for (BlobInfo info : storage.list(bucket, BlobListOption.versions(true)).getValues()) {
+        for (BlobInfo info : storage.list(bucket, BlobListOption.versions(true))) {
           storage.delete(info.getBlobId());
         }
         try {

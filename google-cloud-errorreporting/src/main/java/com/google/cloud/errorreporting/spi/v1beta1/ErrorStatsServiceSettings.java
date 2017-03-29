@@ -19,6 +19,7 @@ import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.
 import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
 
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
@@ -95,6 +96,11 @@ public class ErrorStatsServiceSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
+  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String META_VERSION_KEY = "artifact.version";
+
+  private static String gapicVersion;
+
   private final PagedCallSettings<
           ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
       listGroupStatsSettings;
@@ -155,8 +161,13 @@ public class ErrorStatsServiceSettings extends ClientSettings {
   }
 
   private static String getGapicVersion() {
-    String packageVersion = ErrorStatsServiceSettings.class.getPackage().getImplementationVersion();
-    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
+    if (gapicVersion == null) {
+      gapicVersion =
+          PropertiesProvider.loadProperty(
+              ErrorStatsServiceSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
+    }
+    return gapicVersion;
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -188,13 +199,13 @@ public class ErrorStatsServiceSettings extends ClientSettings {
           new PagedListDescriptor<
               ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListGroupStatsRequest injectToken(ListGroupStatsRequest payload, Object token) {
-              return ListGroupStatsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListGroupStatsRequest injectToken(ListGroupStatsRequest payload, String token) {
+              return ListGroupStatsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -209,7 +220,7 @@ public class ErrorStatsServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListGroupStatsResponse payload) {
+            public String extractNextToken(ListGroupStatsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -223,13 +234,13 @@ public class ErrorStatsServiceSettings extends ClientSettings {
       LIST_EVENTS_PAGE_STR_DESC =
           new PagedListDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListEventsRequest injectToken(ListEventsRequest payload, Object token) {
-              return ListEventsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListEventsRequest injectToken(ListEventsRequest payload, String token) {
+              return ListEventsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -243,7 +254,7 @@ public class ErrorStatsServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListEventsResponse payload) {
+            public String extractNextToken(ListEventsResponse payload) {
               return payload.getNextPageToken();
             }
 

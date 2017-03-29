@@ -97,7 +97,7 @@ public class TraceServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void patchTracesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockTraceService.addException(exception);
 
     try {
@@ -107,7 +107,7 @@ public class TraceServiceClientTest {
       client.patchTraces(projectId, traces);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -137,7 +137,7 @@ public class TraceServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTraceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockTraceService.addException(exception);
 
     try {
@@ -147,7 +147,7 @@ public class TraceServiceClientTest {
       client.getTrace(projectId, traceId);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -168,7 +168,7 @@ public class TraceServiceClientTest {
 
     ListTracesPagedResponse pagedListResponse = client.listTraces(projectId);
 
-    List<Trace> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<Trace> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTracesList().get(0), resources.get(0));
 
@@ -182,7 +182,7 @@ public class TraceServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listTracesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockTraceService.addException(exception);
 
     try {
@@ -191,7 +191,7 @@ public class TraceServiceClientTest {
       client.listTraces(projectId);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }

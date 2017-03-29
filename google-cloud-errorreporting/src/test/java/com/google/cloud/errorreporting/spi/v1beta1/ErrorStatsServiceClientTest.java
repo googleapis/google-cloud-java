@@ -104,7 +104,7 @@ public class ErrorStatsServiceClientTest {
 
     ListGroupStatsPagedResponse pagedListResponse = client.listGroupStats(projectName, timeRange);
 
-    List<ErrorGroupStats> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<ErrorGroupStats> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getErrorGroupStatsList().get(0), resources.get(0));
 
@@ -119,7 +119,7 @@ public class ErrorStatsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listGroupStatsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockErrorStatsService.addException(exception);
 
     try {
@@ -129,7 +129,7 @@ public class ErrorStatsServiceClientTest {
       client.listGroupStats(projectName, timeRange);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -151,7 +151,7 @@ public class ErrorStatsServiceClientTest {
 
     ListEventsPagedResponse pagedListResponse = client.listEvents(projectName, groupId);
 
-    List<ErrorEvent> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<ErrorEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getErrorEventsList().get(0), resources.get(0));
 
@@ -166,7 +166,7 @@ public class ErrorStatsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listEventsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockErrorStatsService.addException(exception);
 
     try {
@@ -176,7 +176,7 @@ public class ErrorStatsServiceClientTest {
       client.listEvents(projectName, groupId);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -201,7 +201,7 @@ public class ErrorStatsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteEventsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockErrorStatsService.addException(exception);
 
     try {
@@ -210,7 +210,7 @@ public class ErrorStatsServiceClientTest {
       client.deleteEvents(projectName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }

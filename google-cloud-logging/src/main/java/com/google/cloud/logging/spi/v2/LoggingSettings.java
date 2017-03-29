@@ -25,6 +25,7 @@ import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.BatchedRequestIssuer;
 import com.google.api.gax.grpc.BatchingCallSettings;
@@ -113,6 +114,11 @@ public class LoggingSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
+  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String META_VERSION_KEY = "artifact.version";
+
+  private static String gapicVersion;
+
   private final SimpleCallSettings<DeleteLogRequest, Empty> deleteLogSettings;
   private final BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesSettings;
@@ -193,8 +199,12 @@ public class LoggingSettings extends ClientSettings {
   }
 
   private static String getGapicVersion() {
-    String packageVersion = LoggingSettings.class.getPackage().getImplementationVersion();
-    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
+    if (gapicVersion == null) {
+      gapicVersion =
+          PropertiesProvider.loadProperty(LoggingSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
+    }
+    return gapicVersion;
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -227,13 +237,13 @@ public class LoggingSettings extends ClientSettings {
       LIST_LOG_ENTRIES_PAGE_STR_DESC =
           new PagedListDescriptor<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListLogEntriesRequest injectToken(ListLogEntriesRequest payload, Object token) {
-              return ListLogEntriesRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListLogEntriesRequest injectToken(ListLogEntriesRequest payload, String token) {
+              return ListLogEntriesRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -248,7 +258,7 @@ public class LoggingSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListLogEntriesResponse payload) {
+            public String extractNextToken(ListLogEntriesResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -266,15 +276,15 @@ public class LoggingSettings extends ClientSettings {
               ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               MonitoredResourceDescriptor>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListMonitoredResourceDescriptorsRequest injectToken(
-                ListMonitoredResourceDescriptorsRequest payload, Object token) {
+                ListMonitoredResourceDescriptorsRequest payload, String token) {
               return ListMonitoredResourceDescriptorsRequest.newBuilder(payload)
-                  .setPageToken((String) token)
+                  .setPageToken(token)
                   .build();
             }
 
@@ -292,7 +302,7 @@ public class LoggingSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListMonitoredResourceDescriptorsResponse payload) {
+            public String extractNextToken(ListMonitoredResourceDescriptorsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -307,13 +317,13 @@ public class LoggingSettings extends ClientSettings {
       LIST_LOGS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLogsRequest, ListLogsResponse, String>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListLogsRequest injectToken(ListLogsRequest payload, Object token) {
-              return ListLogsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListLogsRequest injectToken(ListLogsRequest payload, String token) {
+              return ListLogsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -327,7 +337,7 @@ public class LoggingSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListLogsResponse payload) {
+            public String extractNextToken(ListLogsResponse payload) {
               return payload.getNextPageToken();
             }
 

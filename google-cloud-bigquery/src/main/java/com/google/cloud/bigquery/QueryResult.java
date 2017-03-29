@@ -128,8 +128,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
 
   /**
    * Returns the total number of rows in the complete query result set, which can be more than the
-   * number of rows in the first page of results returned by {@link #getValues()}. Returns {@code 0}
-   * if the query was a dry run.
+   * number of rows in the first page of results. Returns {@code 0} if the query was a dry run.
    */
   public long getTotalRows() {
     return totalRows;
@@ -144,12 +143,12 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("rows", getValues())
+        .add("rows", this)
         .add("cacheHit", cacheHit)
         .add("schema", schema)
         .add("totalBytesProcessed", totalBytesProcessed)
         .add("totalRows", totalRows)
-        .add("cursor", getNextPageCursor())
+        .add("cursor", getNextPageToken())
         .toString();
   }
 
@@ -167,8 +166,8 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
       return false;
     }
     QueryResult response = (QueryResult) obj;
-    return Objects.equals(getNextPageCursor(), response.getNextPageCursor())
-        && Objects.equals(getValues(), response.getValues())
+    return Objects.equals(getNextPageToken(), response.getNextPageToken())
+        && Objects.equals(this.iterator(), response.iterator())
         && Objects.equals(schema, response.schema)
         && totalRows == response.totalRows
         && totalBytesProcessed == response.totalBytesProcessed

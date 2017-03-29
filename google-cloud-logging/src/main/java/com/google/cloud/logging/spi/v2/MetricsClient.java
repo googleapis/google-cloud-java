@@ -177,7 +177,7 @@ public class MetricsClient implements AutoCloseable {
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
-   *   for (LogMetric element : metricsClient.listLogMetrics(parent).iterateAllElements()) {
+   *   for (LogMetric element : metricsClient.listLogMetrics(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -205,7 +205,7 @@ public class MetricsClient implements AutoCloseable {
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();
-   *   for (LogMetric element : metricsClient.listLogMetrics(request).iterateAllElements()) {
+   *   for (LogMetric element : metricsClient.listLogMetrics(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -232,7 +232,7 @@ public class MetricsClient implements AutoCloseable {
    *     .build();
    *   ApiFuture&lt;ListLogMetricsPagedResponse&gt; future = metricsClient.listLogMetricsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (LogMetric element : future.get().iterateAllElements()) {
+   *   for (LogMetric element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }

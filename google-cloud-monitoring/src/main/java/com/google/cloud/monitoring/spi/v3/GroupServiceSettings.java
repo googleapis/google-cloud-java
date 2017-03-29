@@ -20,6 +20,7 @@ import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroup
 
 import com.google.api.MonitoredResource;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
@@ -102,6 +103,11 @@ public class GroupServiceSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
+  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String META_VERSION_KEY = "artifact.version";
+
+  private static String gapicVersion;
+
   private final PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
       listGroupsSettings;
   private final SimpleCallSettings<GetGroupRequest, Group> getGroupSettings;
@@ -180,8 +186,13 @@ public class GroupServiceSettings extends ClientSettings {
   }
 
   private static String getGapicVersion() {
-    String packageVersion = GroupServiceSettings.class.getPackage().getImplementationVersion();
-    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
+    if (gapicVersion == null) {
+      gapicVersion =
+          PropertiesProvider.loadProperty(
+              GroupServiceSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
+    }
+    return gapicVersion;
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -214,13 +225,13 @@ public class GroupServiceSettings extends ClientSettings {
       LIST_GROUPS_PAGE_STR_DESC =
           new PagedListDescriptor<ListGroupsRequest, ListGroupsResponse, Group>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListGroupsRequest injectToken(ListGroupsRequest payload, Object token) {
-              return ListGroupsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListGroupsRequest injectToken(ListGroupsRequest payload, String token) {
+              return ListGroupsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -234,7 +245,7 @@ public class GroupServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListGroupsResponse payload) {
+            public String extractNextToken(ListGroupsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -250,16 +261,14 @@ public class GroupServiceSettings extends ClientSettings {
           new PagedListDescriptor<
               ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListGroupMembersRequest injectToken(
-                ListGroupMembersRequest payload, Object token) {
-              return ListGroupMembersRequest.newBuilder(payload)
-                  .setPageToken((String) token)
-                  .build();
+                ListGroupMembersRequest payload, String token) {
+              return ListGroupMembersRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -274,7 +283,7 @@ public class GroupServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListGroupMembersResponse payload) {
+            public String extractNextToken(ListGroupMembersResponse payload) {
               return payload.getNextPageToken();
             }
 

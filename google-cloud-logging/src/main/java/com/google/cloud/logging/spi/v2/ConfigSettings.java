@@ -18,6 +18,7 @@ package com.google.cloud.logging.spi.v2;
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
@@ -99,6 +100,11 @@ public class ConfigSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
+  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String META_VERSION_KEY = "artifact.version";
+
+  private static String gapicVersion;
+
   private final PagedCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
       listSinksSettings;
   private final SimpleCallSettings<GetSinkRequest, LogSink> getSinkSettings;
@@ -167,8 +173,12 @@ public class ConfigSettings extends ClientSettings {
   }
 
   private static String getGapicVersion() {
-    String packageVersion = ConfigSettings.class.getPackage().getImplementationVersion();
-    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
+    if (gapicVersion == null) {
+      gapicVersion =
+          PropertiesProvider.loadProperty(ConfigSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
+    }
+    return gapicVersion;
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -200,13 +210,13 @@ public class ConfigSettings extends ClientSettings {
       LIST_SINKS_PAGE_STR_DESC =
           new PagedListDescriptor<ListSinksRequest, ListSinksResponse, LogSink>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListSinksRequest injectToken(ListSinksRequest payload, Object token) {
-              return ListSinksRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListSinksRequest injectToken(ListSinksRequest payload, String token) {
+              return ListSinksRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -220,7 +230,7 @@ public class ConfigSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListSinksResponse payload) {
+            public String extractNextToken(ListSinksResponse payload) {
               return payload.getNextPageToken();
             }
 
