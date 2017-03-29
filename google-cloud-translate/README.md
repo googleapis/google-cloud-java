@@ -97,7 +97,7 @@ methods on the Translate service created via `TranslateOptions.getDefaultInstanc
 
 You can also explicitly set the API key as follows:
 ```java
-Translate translate = TranslateOptions.newBuilder().setApiKey("myKey").getService();
+Translate translate = TranslateOptions.newBuilder().setApiKey("myKey").build().getService();
 ```
 
 #### Detecting language
