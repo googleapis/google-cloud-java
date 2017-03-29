@@ -76,7 +76,7 @@ import java.util.logging.SimpleFormatter;
  *     of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds
  *     a {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
  * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when 
- *     creating the default {@link MonitoredResource} (defaults to "global").
+ *     creating the default {@link MonitoredResource} (defaults to "a).
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
@@ -143,16 +143,18 @@ public class LoggingHandler extends Handler {
    * @param enhancers List of {@link Enhancer} instances used to enhance any{@link LogEntry}
    * instances built by this handler.
    */
-  public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource, List<Enhancer> enhancers) {
+  public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource,
+                        List<Enhancer> enhancers) {
     try {
       LoggingConfigHelper config = new LoggingConfigHelper();
       String className = getClass().getName();
       Level flushLevel = config.getFlushLevel(className);
       long flushSize = config.getFlushSize(className);
-      MonitoredResource resource = monitoredResource != null ? monitoredResource : config.getMonitoredResource(options, className);
+      MonitoredResource resource =
+              monitoredResource != null ? monitoredResource : config.getMonitoredResource(options, className);
       String logName = config.getLogName(log, className);
 
-      bufferedLogging = new BufferedLogging(logName, options, resource, flushLevel, flushSize);
+      bufferedLogging = new BufferedLogging(logName, options, resource, severityFor(flushLevel), flushSize);
       setLevel(config.getLogLevel(className));
       setFilter(config.getFilter(className));
       setFormatter(config.getFormatter(className));
@@ -231,8 +233,8 @@ public class LoggingHandler extends Handler {
             .addLabel("levelName", level.getName())
             .addLabel("levelValue", String.valueOf(level.intValue()))
             .setTimestamp(record.getMillis())
-            .setSeverity(LoggingUtil.severityFor(level));
-      return builder;
+            .setSeverity(severityFor(level));
+    return builder;
   }
 
   @Override
@@ -267,7 +269,7 @@ public class LoggingHandler extends Handler {
   }
 
   public synchronized void setFlushLevel(Level level) {
-    bufferedLogging.setFlushSeverity(LoggingUtil.severityFor(level));
+    bufferedLogging.setFlushSeverity(severityFor(level));
   }
 
   public synchronized void setFlushSize(long size) {
@@ -281,5 +283,41 @@ public class LoggingHandler extends Handler {
    */
   public static void addHandler(Logger logger, LoggingHandler handler) {
     logger.addHandler(handler);
+  }
+
+  /**
+   * Mapping java.util.logging.Level to com.google.cloud.logging.Severity
+   * @param level
+   * @return
+   */
+  private static Severity severityFor(Level level) {
+    if (level instanceof LoggingLevel) {
+      return ((LoggingLevel) level).getSeverity();
+    }
+    switch (level.intValue()) {
+      // FINEST
+      case 300:
+        return Severity.DEBUG;
+      // FINER
+      case 400:
+        return Severity.DEBUG;
+      // FINE
+      case 500:
+        return Severity.DEBUG;
+      // CONFIG
+      case 700:
+        return Severity.INFO;
+      // INFO
+      case 800:
+        return Severity.INFO;
+      // WARNING
+      case 900:
+        return Severity.WARNING;
+      // SEVERE
+      case 1000:
+        return Severity.ERROR;
+      default:
+        return Severity.DEFAULT;
+    }
   }
 }

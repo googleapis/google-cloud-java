@@ -4,7 +4,7 @@ import com.google.cloud.MonitoredResource;
 
 /**
  * A Log Enhancer.
- * May be used to enhance the {@link MonitoredResource} and/or the {@link LogEntry}
+ * Used to enhance the {@link LogEntry}
  */
 public interface Enhancer {
   void enhanceLogEntry(LogEntry.Builder builder);

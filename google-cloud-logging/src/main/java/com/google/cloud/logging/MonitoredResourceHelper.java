@@ -94,6 +94,8 @@ public class MonitoredResourceHelper {
       case "instance_id":
         value = MetadataConfig.getInstanceId();
         break;
+      case "cluster_name":
+        value = MetadataConfig.getClusterName();
       default: value = null;
     }
     if (value != null) {
@@ -106,12 +108,7 @@ public class MonitoredResourceHelper {
   }
 
   private static String getAppEngineVersionId() {
-    String versionId = System.getenv("GAE_VERSION");
-    // for app engine standard, check system property
-    if (versionId == null) {
-      versionId = System.getProperty("com.google.appengine.application.version");
-    }
-    return versionId;
+    return System.getenv("GAE_VERSION");
   }
 
   private static String getAppEngineInstanceName() {

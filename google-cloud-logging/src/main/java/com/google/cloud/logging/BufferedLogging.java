@@ -18,10 +18,10 @@ public class BufferedLogging {
   private List<Enhancer> resourceEnhancers;
 
   public BufferedLogging(String logName, LoggingOptions options, MonitoredResource resource,
-                         Level flushLevel, long flushSize) {
+                         Severity flushSeverity, long flushSize) {
     this.options = (options != null) ? options : LoggingOptions.getDefaultInstance();
     writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
-    this.flushSeverity = LoggingUtil.severityFor(flushLevel);
+    this.flushSeverity = flushSeverity;
     this.flushSize = flushSize;
     this.resourceEnhancers = MonitoredResourceHelper.getResourceEnhancers();
   }
@@ -77,7 +77,6 @@ public class BufferedLogging {
     inPublishCall.set(true);
 
     try {
-
       List<LogEntry> flushBuffer = null;
       WriteOption[] flushWriteOptions = null;
 
@@ -90,7 +89,6 @@ public class BufferedLogging {
             buffer = new LinkedList<>();
           }
         }
-
         flush(flushBuffer, flushWriteOptions);
       }
     } finally {
@@ -116,7 +114,6 @@ public class BufferedLogging {
    * Closes the handler and the associated {@link Logging} object.
    */
   public synchronized void close() throws SecurityException {
-
     if (logging != null) {
       try {
         logging.close();
