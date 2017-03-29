@@ -18,16 +18,19 @@ package com.google.cloud.logging;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
+import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutureCallback;
 import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.util.concurrent.Monitor;
+import com.google.common.collect.MapMaker;
+import com.google.common.util.concurrent.Uninterruptibles;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ConcurrentMap;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
 import java.util.logging.Formatter;
@@ -120,45 +123,12 @@ public class LoggingHandler extends Handler {
   // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740 .
   private final Level baseLevel;
 
-  private final Monitor flushMonitor = new Monitor(true);
-  private int numPendingWrites = 0;
-  private int numFlushers = 0;
-  private final Monitor.Guard noFlushers =
-      new Monitor.Guard(flushMonitor) {
-        @Override
-        public boolean isSatisfied() {
-          return numFlushers == 0;
-        }
-      };
-  private final Monitor.Guard writesCompleted =
-      new Monitor.Guard(flushMonitor) {
-        @Override
-        public boolean isSatisfied() {
-          return numPendingWrites == 0;
-        }
-      };
-  private final ApiFutureCallback<Void> writeCallback =
-      new ApiFutureCallback<Void>() {
-        @Override
-        public void onSuccess(Void v) {
-          flushMonitor.enter();
-          try {
-            numPendingWrites--;
-          } finally {
-            flushMonitor.leave();
-          }
-        }
-
-        @Override
-        public void onFailure(Throwable t) {
-          if (t instanceof Exception) {
-            reportError(null, (Exception) t, ErrorManager.FLUSH_FAILURE);
-          } else {
-            reportError(null, new Exception(t), ErrorManager.FLUSH_FAILURE);
-          }
-          onSuccess(null);
-        }
-      };
+  // A map whose keys are pending write operations. The values of the map are meaningless, but the type is Boolean
+  // and not Void since the map implementation does not allow null values.
+  // Since the map has weak keys and we do not hold on to completed futures,
+  // completed futures are automatically GCed and removed from the map.
+  private final ConcurrentMap<ApiFuture<Void>, Boolean> pendingWrites =
+      new MapMaker().weakKeys().makeMap();
 
   /**
    * Creates an handler that publishes messages to Stackdriver Logging.
@@ -503,13 +473,25 @@ public class LoggingHandler extends Handler {
 
       case ASYNC:
       default:
-        flushMonitor.enterWhenUninterruptibly(noFlushers);
-        try {
-          numPendingWrites++;
-          ApiFutures.addCallback(getLogging().writeAsync(entryList, options), writeCallback);
-        } finally {
-          flushMonitor.leave();
-        }
+        ApiFuture<Void> writeFuture = getLogging().writeAsync(entryList, options);
+        pendingWrites.put(writeFuture, Boolean.TRUE);
+        ApiFutures.addCallback(
+            writeFuture,
+            new ApiFutureCallback<Void>() {
+              @Override
+              public void onSuccess(Void v) {
+                // Nothing to do.
+              }
+
+              @Override
+              public void onFailure(Throwable t) {
+                if (t instanceof Exception) {
+                  reportError(null, (Exception) t, ErrorManager.FLUSH_FAILURE);
+                } else {
+                  reportError(null, new Exception(t), ErrorManager.FLUSH_FAILURE);
+                }
+              }
+            });
         break;
     }
   }
@@ -517,13 +499,23 @@ public class LoggingHandler extends Handler {
   @Override
   public void flush() {
     // BUG(1795): flush is broken, need support from batching implementation.
-    flushMonitor.enter();
-    try {
-      numFlushers++;
-      flushMonitor.waitForUninterruptibly(writesCompleted);
-      numFlushers--;
-    } finally {
-      flushMonitor.leave();
+
+    // Make a copy of currently-pending writes.
+    // As new writes are made, they might be reflected in the keySet iterator.
+    // If we naively iterate through keySet, waiting for each future,
+    // we might never finish.
+    ArrayList<ApiFuture<Void>> writes = new ArrayList<>(pendingWrites.size());
+    for (ApiFuture<Void> write : pendingWrites.keySet()) {
+      writes.add(write);
+    }
+    for (int i = 0; i < writes.size(); i++) {
+      ApiFuture<Void> write = writes.get(i);
+      try {
+        Uninterruptibles.getUninterruptibly(write);
+      } catch (Exception e) {
+        // Ignore exceptions, they are propagated to the error manager.
+      }
+      writes.set(i, null);
     }
   }
 
