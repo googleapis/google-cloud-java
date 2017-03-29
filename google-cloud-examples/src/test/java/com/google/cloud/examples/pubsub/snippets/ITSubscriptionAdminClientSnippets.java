@@ -25,7 +25,7 @@ import com.google.cloud.Identity;
 import com.google.cloud.Role;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.common.collect.Iterables;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -47,13 +47,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
-public class ITSubscriberClientSnippets {
+public class ITSubscriptionAdminClientSnippets {
 
   private static final String NAME_SUFFIX = UUID.randomUUID().toString();
 
   private static String projectId;
 
-  private static SubscriberClientSnippets subscriberClientSnippets;
+  private static SubscriptionAdminClientSnippets subscriptionAdminClientSnippets;
 
   private static String[] topics = {
       formatForTest("topic-1"),
@@ -73,8 +73,8 @@ public class ITSubscriberClientSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    subscriberClientSnippets = new SubscriberClientSnippets();
-    projectId = subscriberClientSnippets.getProjectId();
+    subscriptionAdminClientSnippets = new SubscriptionAdminClientSnippets();
+    projectId = subscriptionAdminClientSnippets.getProjectId();
   }
 
   @Before
@@ -86,9 +86,9 @@ public class ITSubscriberClientSnippets {
       throws Exception {
     createTopic(topicName);
     Subscription subscription =
-        subscriberClientSnippets.createSubscription(topicName, subscriptionName);
+        subscriptionAdminClientSnippets.createSubscription(topicName, subscriptionName);
     assertNotNull(subscription);
-    Subscription retrievedSubscription = subscriberClientSnippets.getSubscription(subscriptionName);
+    Subscription retrievedSubscription = subscriptionAdminClientSnippets.getSubscription(subscriptionName);
     assertNotNull(retrievedSubscription);
     assertEquals(subscription.getName(), retrievedSubscription.getName());
     return subscription;
@@ -101,7 +101,7 @@ public class ITSubscriberClientSnippets {
     createSubscription(topicName, subscriptionName);
     Set<String> messages = publishMessages(topicName, 5);
     //pulls max 100 messages
-    PullResponse response = subscriberClientSnippets.pull(subscriptionName);
+    PullResponse response = subscriptionAdminClientSnippets.pull(subscriptionName);
     assertNotNull(response);
     //remove messages that match sent
     for (ReceivedMessage receivedMessage : response.getReceivedMessagesList()) {
@@ -120,8 +120,8 @@ public class ITSubscriberClientSnippets {
     String subscriptionName = subscriptions[0];
     createSubscription(topicName, subscriptionName);
     String endpoint = "https://" + projectId + ".appspot.com/push";
-    subscriberClientSnippets.replacePushConfig(subscriptionName, endpoint);
-    Subscription subscription = subscriberClientSnippets.getSubscription(subscriptionName);
+    subscriptionAdminClientSnippets.replacePushConfig(subscriptionName, endpoint);
+    Subscription subscription = subscriptionAdminClientSnippets.getSubscription(subscriptionName);
     assertNotNull(subscription.getPushConfig());
     assertEquals(subscription.getPushConfig().getPushEndpoint(), endpoint);
   }
@@ -137,7 +137,7 @@ public class ITSubscriberClientSnippets {
     addedSubscriptions.add(createSubscription(topicName2, subscriptionName2));
 
     boolean[] subFound = {false, false};
-    ListSubscriptionsPagedResponse response = subscriberClientSnippets.listSubscriptions();
+    ListSubscriptionsPagedResponse response = subscriptionAdminClientSnippets.listSubscriptions();
     assertNotNull(response);
     Iterable<Subscription> subscriptions = response.iterateAllElements();
     for (int i = 0; i < 2; i++) {
@@ -153,9 +153,9 @@ public class ITSubscriberClientSnippets {
     String topicName = topics[0];
     String subscriptionName = subscriptions[0];
     createSubscription(topicName, subscriptionName);
-    subscriberClientSnippets.deleteSubscription(subscriptionName);
+    subscriptionAdminClientSnippets.deleteSubscription(subscriptionName);
     //expected to throw exception on retrieval
-    subscriberClientSnippets.getSubscription(subscriptionName);
+    subscriptionAdminClientSnippets.getSubscription(subscriptionName);
   }
 
   @Test
@@ -163,7 +163,7 @@ public class ITSubscriberClientSnippets {
     String topicName = topics[0];
     String subscriptionName = subscriptions[0];
     createSubscription(topicName, subscriptionName);
-    Policy policy = subscriberClientSnippets.getSubscriptionPolicy(subscriptionName);
+    Policy policy = subscriptionAdminClientSnippets.getSubscriptionPolicy(subscriptionName);
     assertNotNull(policy);
   }
 
@@ -172,19 +172,19 @@ public class ITSubscriberClientSnippets {
     String topicName = topics[0];
     String subscriptionName = subscriptions[0];
     createSubscription(topicName, subscriptionName);
-    Policy policy = subscriberClientSnippets.replaceSubscriptionPolicy(subscriptionName);
+    Policy policy = subscriptionAdminClientSnippets.replaceSubscriptionPolicy(subscriptionName);
     assertNotNull(policy.getBindingsCount());
     assertTrue(policy.getBindings(0).getRole().equalsIgnoreCase(Role.viewer().toString()));
     assertTrue(policy.getBindings(0).getMembers(0)
         .equalsIgnoreCase(Identity.allAuthenticatedUsers().toString()));
     TestIamPermissionsResponse response =
-        subscriberClientSnippets.testSubscriptionPermissions(subscriptionName);
+        subscriptionAdminClientSnippets.testSubscriptionPermissions(subscriptionName);
     assertTrue(response.getPermissionsList().contains("pubsub.subscriptions.get"));
   }
 
   private void createTopic(String name) throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      publisherClient.createTopic(TopicName.create(projectId, name));
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+      topicAdminClient.createTopic(TopicName.create(projectId, name));
     }
   }
 

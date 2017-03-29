@@ -23,6 +23,7 @@ import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.BatchedRequestIssuer;
 import com.google.api.gax.grpc.BatchingCallSettings;
@@ -72,7 +73,7 @@ import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link PublisherClient}.
+ * Settings class to configure an instance of {@link TopicAdminClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -88,17 +89,17 @@ import org.joda.time.Duration;
  *
  * <pre>
  * <code>
- * PublisherSettings.Builder publisherSettingsBuilder =
- *     PublisherSettings.defaultBuilder();
- * publisherSettingsBuilder.createTopicSettings().getRetrySettingsBuilder()
+ * TopicAdminSettings.Builder topicAdminSettingsBuilder =
+ *     TopicAdminSettings.defaultBuilder();
+ * topicAdminSettingsBuilder.createTopicSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.standardSeconds(30));
- * PublisherSettings publisherSettings = publisherSettingsBuilder.build();
+ * TopicAdminSettings topicAdminSettings = topicAdminSettingsBuilder.build();
  * </code>
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
-public class PublisherSettings extends ClientSettings {
+public class TopicAdminSettings extends ClientSettings {
   /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "pubsub.googleapis.com";
 
@@ -114,6 +115,11 @@ public class PublisherSettings extends ClientSettings {
 
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
+
+  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String META_VERSION_KEY = "artifact.version";
+
+  private static String gapicVersion;
 
   private final SimpleCallSettings<Topic, Topic> createTopicSettings;
   private final BatchingCallSettings<PublishRequest, PublishResponse> publishSettings;
@@ -215,8 +221,13 @@ public class PublisherSettings extends ClientSettings {
   }
 
   private static String getGapicVersion() {
-    String packageVersion = PublisherSettings.class.getPackage().getImplementationVersion();
-    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
+    if (gapicVersion == null) {
+      gapicVersion =
+          PropertiesProvider.loadProperty(
+              TopicAdminSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
+    }
+    return gapicVersion;
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -234,7 +245,7 @@ public class PublisherSettings extends ClientSettings {
     return new Builder(this);
   }
 
-  private PublisherSettings(Builder settingsBuilder) throws IOException {
+  private TopicAdminSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder.getExecutorProvider(), settingsBuilder.getChannelProvider());
 
     createTopicSettings = settingsBuilder.createTopicSettings().build();
@@ -252,13 +263,13 @@ public class PublisherSettings extends ClientSettings {
       LIST_TOPICS_PAGE_STR_DESC =
           new PagedListDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListTopicsRequest injectToken(ListTopicsRequest payload, Object token) {
-              return ListTopicsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListTopicsRequest injectToken(ListTopicsRequest payload, String token) {
+              return ListTopicsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -272,7 +283,7 @@ public class PublisherSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListTopicsResponse payload) {
+            public String extractNextToken(ListTopicsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -288,16 +299,14 @@ public class PublisherSettings extends ClientSettings {
           new PagedListDescriptor<
               ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListTopicSubscriptionsRequest injectToken(
-                ListTopicSubscriptionsRequest payload, Object token) {
-              return ListTopicSubscriptionsRequest.newBuilder(payload)
-                  .setPageToken((String) token)
-                  .build();
+                ListTopicSubscriptionsRequest payload, String token) {
+              return ListTopicSubscriptionsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -314,7 +323,7 @@ public class PublisherSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListTopicSubscriptionsResponse payload) {
+            public String extractNextToken(ListTopicSubscriptionsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -423,7 +432,7 @@ public class PublisherSettings extends ClientSettings {
         }
       };
 
-  /** Builder for PublisherSettings. */
+  /** Builder for TopicAdminSettings. */
   public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
@@ -456,7 +465,13 @@ public class PublisherSettings extends ClientSettings {
           "one_plus_delivery",
           Sets.immutableEnumSet(
               Lists.<Status.Code>newArrayList(
-                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
+                  Status.Code.CANCELLED,
+                  Status.Code.UNKNOWN,
+                  Status.Code.DEADLINE_EXCEEDED,
+                  Status.Code.RESOURCE_EXHAUSTED,
+                  Status.Code.ABORTED,
+                  Status.Code.INTERNAL,
+                  Status.Code.UNAVAILABLE)));
       definitions.put(
           "non_idempotent",
           Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
@@ -593,7 +608,7 @@ public class PublisherSettings extends ClientSettings {
       return builder;
     }
 
-    private Builder(PublisherSettings settings) {
+    private Builder(TopicAdminSettings settings) {
       super(settings);
 
       createTopicSettings = settings.createTopicSettings.toBuilder();
@@ -694,8 +709,8 @@ public class PublisherSettings extends ClientSettings {
     }
 
     @Override
-    public PublisherSettings build() throws IOException {
-      return new PublisherSettings(this);
+    public TopicAdminSettings build() throws IOException {
+      return new TopicAdminSettings(this);
     }
   }
 }

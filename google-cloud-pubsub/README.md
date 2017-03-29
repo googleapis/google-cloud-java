@@ -95,15 +95,15 @@ With Pub/Sub you can create topics. A topic is a named resource to which message
 publishers. Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.pubsub.v1.TopicName;
 ```
 Then, to create the topic, use the following code:
 
 ```java
 TopicName topic = TopicName.create("test-project", "test-topic");
-try (PublisherClient publisherClient = PublisherClient.create()) {
-  publisherClient.createTopic(topic);
+try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+  topicAdminClient.createTopic(topic);
 }
 ```
 
@@ -137,7 +137,7 @@ With Pub/Sub you can create subscriptions. A subscription represents the stream 
 single, specific topic. Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.SubscriberClient;
+import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
@@ -148,8 +148,8 @@ Then, to create the subscription, use the following code:
 TopicName topic = TopicName.create("test-project", "test-topic");
 SubscriptionName subscription = SubscriptionName.create("test-project", "test-subscription");
 
-try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-  subscriberClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
+try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+  subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
 }
 ```
 
