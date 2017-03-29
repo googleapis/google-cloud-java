@@ -82,15 +82,19 @@ public class PageImpl<T> implements Page<T>, Serializable {
     this.results = results;
   }
 
-
   @Override
   public Iterator<T> iterator() {
     return results == null ? Collections.<T>emptyList().iterator() : results.iterator();
   }
 
   @Override
-  public Iterator<T> iterateAll() {
-    return new PageIterator<>(this);
+  public Iterable<T> iterateAll() {
+    return new Iterable<T>() {
+      @Override
+      public Iterator<T> iterator() {
+        return new PageIterator<>(PageImpl.this);
+      }
+    };
   }
 
   @Override
