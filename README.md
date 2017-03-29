@@ -585,29 +585,31 @@ Google Cloud Pub/Sub (Alpha)
 Here is a code snippet showing a simple usage example from within Compute Engine/App Engine
 Flexible. Note that you must [supply credentials](#authentication) and a project ID if running this
 snippet elsewhere. Complete source code can be found at
-[CreateSubscriptionAndPullMessages.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java).
+[CreateTopicAndPublishMessages.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java).
 
 ```java
-import com.google.cloud.pubsub.Message;
-import com.google.cloud.pubsub.PubSub;
-import com.google.cloud.pubsub.PubSub.MessageConsumer;
-import com.google.cloud.pubsub.PubSub.MessageProcessor;
-import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.Subscription;
-import com.google.cloud.pubsub.SubscriptionInfo;
+import com.google.api.gax.core.ApiFuture;
+import com.google.cloud.pubsub.spi.v1.Publisher;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
+import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.TopicName;
 
-try (PubSub pubsub = PubSubOptions.getDefaultInstance().getService()) {
-  Subscription subscription =
-      pubsub.create(SubscriptionInfo.of("test-topic", "test-subscription"));
-  MessageProcessor callback = new MessageProcessor() {
-    @Override
-    public void process(Message message) throws Exception {
-      System.out.printf("Received message \"%s\"%n", message.getPayloadAsString());
-    }
-  };
-  // Create a message consumer and pull messages (for 60 seconds)
-  try (MessageConsumer consumer = subscription.pullAsync(callback)) {
-    Thread.sleep(60_000);
+TopicName topic = TopicName.create("test-project", "test-topic");
+try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+  topicAdminClient.createTopic(topic);
+}
+
+Publisher publisher = null;
+try {
+  publisher = Publisher.newBuilder(topic).build();
+  ByteString data = ByteString.copyFromUtf8("my message");
+  PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+  ApiFuture<String> messageId = publisher.publish(pubsubMessage);
+  System.out.println("published with message ID: " + messageId.get());
+} finally {
+  if (publisher != null) {
+    publisher.shutdown();
   }
 }
 ```
