@@ -25,12 +25,14 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.MapMaker;
 import com.google.common.util.concurrent.Uninterruptibles;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.IdentityHashMap;
 import java.util.List;
-import java.util.concurrent.ConcurrentMap;
+import java.util.Set;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
 import java.util.logging.Formatter;
@@ -123,12 +125,9 @@ public class LoggingHandler extends Handler {
   // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740 .
   private final Level baseLevel;
 
-  // A map whose keys are pending write operations. The values of the map are meaningless, but the type is Boolean
-  // and not Void since the map implementation does not allow null values.
-  // Since the map has weak keys and we do not hold on to completed futures,
-  // completed futures are automatically GCed and removed from the map.
-  private final ConcurrentMap<ApiFuture<Void>, Boolean> pendingWrites =
-      new MapMaker().weakKeys().makeMap();
+  private final Lock writeLock = new ReentrantLock();
+  private final Set<ApiFuture<Void>> pendingWrites =
+      Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
 
   /**
    * Creates an handler that publishes messages to Stackdriver Logging.
@@ -473,22 +472,36 @@ public class LoggingHandler extends Handler {
 
       case ASYNC:
       default:
-        ApiFuture<Void> writeFuture = getLogging().writeAsync(entryList, options);
-        pendingWrites.put(writeFuture, Boolean.TRUE);
+        final ApiFuture<Void> writeFuture = getLogging().writeAsync(entryList, options);
+        writeLock.lock();
+        try {
+          pendingWrites.add(writeFuture);
+        } finally {
+          writeLock.unlock();
+        }
         ApiFutures.addCallback(
             writeFuture,
             new ApiFutureCallback<Void>() {
               @Override
               public void onSuccess(Void v) {
-                // Nothing to do.
+                writeLock.lock();
+                try {
+                  pendingWrites.remove(writeFuture);
+                } finally {
+                  writeLock.unlock();
+                }
               }
 
               @Override
               public void onFailure(Throwable t) {
-                if (t instanceof Exception) {
-                  reportError(null, (Exception) t, ErrorManager.FLUSH_FAILURE);
-                } else {
-                  reportError(null, new Exception(t), ErrorManager.FLUSH_FAILURE);
+                try {
+                  if (t instanceof Exception) {
+                    reportError(null, (Exception) t, ErrorManager.FLUSH_FAILURE);
+                  } else {
+                    reportError(null, new Exception(t), ErrorManager.FLUSH_FAILURE);
+                  }
+                } finally {
+                  onSuccess(null);
                 }
               }
             });
@@ -500,22 +513,19 @@ public class LoggingHandler extends Handler {
   public void flush() {
     // BUG(1795): flush is broken, need support from batching implementation.
 
-    // Make a copy of currently-pending writes.
-    // As new writes are made, they might be reflected in the keySet iterator.
-    // If we naively iterate through keySet, waiting for each future,
-    // we might never finish.
-    ArrayList<ApiFuture<Void>> writes = new ArrayList<>(pendingWrites.size());
-    for (ApiFuture<Void> write : pendingWrites.keySet()) {
-      writes.add(write);
+    ArrayList<ApiFuture<Void>> writes = new ArrayList<>();
+    writeLock.lock();
+    try {
+      writes.addAll(pendingWrites);
+    } finally {
+      writeLock.unlock();
     }
-    for (int i = 0; i < writes.size(); i++) {
-      ApiFuture<Void> write = writes.get(i);
+    for (ApiFuture<Void> write : writes) {
       try {
         Uninterruptibles.getUninterruptibly(write);
       } catch (Exception e) {
         // Ignore exceptions, they are propagated to the error manager.
       }
-      writes.set(i, null);
     }
   }
 
