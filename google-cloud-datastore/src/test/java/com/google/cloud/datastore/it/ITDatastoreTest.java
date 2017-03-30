@@ -139,25 +139,27 @@ public class ITDatastoreTest {
   private static final Entity ENTITY3 = Entity.newBuilder(ENTITY1).setKey(KEY3).remove("str")
       .set("null", NULL_VALUE).set("partial1", PARTIAL_ENTITY2).set("partial2", ENTITY2).build();
 
-  private <T> Iterator<T> getStronglyConsistentResults (Query scQuery, Query query) {
+  private <T> Iterator<T> getStronglyConsistentResults (Query scQuery, Query query) throws InterruptedException {
+    //scQuery is equivalent to query, but with an ancestor filter in it
+    //This makes scQuery strongly consistent
     QueryResults<T> scResults = DATASTORE.run(scQuery);
     List<T> scResultsCopy = makeResultsCopy(scResults);
     Set<T> scResultsSet = new HashSet<>(scResultsCopy);
+    int maxAttempts = 20;
 
-    infiniteloop:
-    while(true) {
+    while(maxAttempts > 0) {
+      --maxAttempts;
       QueryResults<T> results = DATASTORE.run(query);
       List<T> resultsCopy = makeResultsCopy(results);
-      if (!haveSameSize(scResultsCopy.iterator(), resultsCopy.iterator())) {
-        continue;
+      Set<T> resultsSet = new HashSet<>(resultsCopy);
+      if (scResultsSet.size() == resultsSet.size()
+              && scResultsSet.containsAll(resultsSet)) {
+        return resultsCopy.iterator();
       }
-      for (T res: resultsCopy)  {
-        if (! scResultsSet.contains(res)) {
-          continue infiniteloop;
-        }
-      }
-      return resultsCopy.iterator();
+      Thread.sleep(500);
     }
+
+    throw new RuntimeException("reached max number of attempts to get strongly consistent results.");
   }
 
   private <T> List<T> makeResultsCopy(QueryResults<T> scResults) {
@@ -167,16 +169,6 @@ public class ITDatastoreTest {
       results.add(scResults.next());
     }
     return results;
-  }
-
-  private <T, S> boolean haveSameSize(Iterator<T> it1, Iterator<S> it2) {
-    Preconditions.checkNotNull(it1);
-    Preconditions.checkNotNull(it2);
-    while(it1.hasNext() && it2.hasNext()) {
-      it1.next();
-      it2.next();
-    }
-    return !it1.hasNext() && !it2.hasNext();
   }
 
   @Rule
@@ -438,6 +430,7 @@ public class ITDatastoreTest {
             .build();
     Query<ProjectionEntity> scKeyProjectionQuery =
         Query.newProjectionEntityQueryBuilder()
+            .addProjection("__key__")
             .setNamespace(NAMESPACE)
             .setKind(KIND1)
             .setFilter(PropertyFilter.hasAncestor(ROOT_KEY))
