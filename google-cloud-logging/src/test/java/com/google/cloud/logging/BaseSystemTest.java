@@ -40,17 +40,15 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.protobuf.Any;
 import com.google.protobuf.StringValue;
-
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.rules.Timeout;
-
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.rules.Timeout;
 
 /**
  * A base class for system tests. This class can be extended to run system tests in different
@@ -488,6 +486,46 @@ public abstract class BaseSystemTest {
         entry.getResource().getLabels());
     assertNull(entry.getHttpRequest());
     assertEquals(Severity.INFO, entry.getSeverity());
+    assertNull(entry.getOperation());
+    assertNotNull(entry.getInsertId());
+    assertNotNull(entry.getTimestamp());
+    assertFalse(iterator.hasNext());
+    logger.removeHandler(handler);
+    logging().deleteLog(logName);
+  }
+
+  @Test
+  public void testSyncLoggingHandler() throws InterruptedException {
+    String logName = formatForTest("test-sync-logging-handler");
+    LoggingOptions options = logging().getOptions();
+    MonitoredResource resource = MonitoredResource.of("gce_instance",
+        ImmutableMap.of("project_id", options.getProjectId(),
+            "instance_id", "instance",
+            "zone", "us-central1-a"));
+    LoggingHandler handler = new LoggingHandler(logName, options, resource);
+    handler.setLevel(Level.WARNING);
+    handler.setSynchronicity(Synchronicity.SYNC);
+    Logger logger = Logger.getLogger(getClass().getName());
+    logger.addHandler(handler);
+    logger.setLevel(Level.WARNING);
+    logger.warning("Message");
+    Iterator<LogEntry> iterator =
+        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
+    while (!iterator.hasNext()) {
+      Thread.sleep(500L);
+      iterator =
+          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
+    }
+    assertTrue(iterator.hasNext());
+    LogEntry entry = iterator.next();
+    assertTrue(entry.getPayload() instanceof StringPayload);
+    assertTrue(entry.<StringPayload>getPayload().getData().contains("Message"));
+    assertEquals(logName, entry.getLogName());
+    assertEquals(ImmutableMap.of("levelName", "WARNING",
+        "levelValue", String.valueOf(Level.WARNING.intValue())), entry.getLabels());
+    assertEquals(resource, entry.getResource());
+    assertNull(entry.getHttpRequest());
+    assertEquals(Severity.WARNING, entry.getSeverity());
     assertNull(entry.getOperation());
     assertNotNull(entry.getInsertId());
     assertNotNull(entry.getTimestamp());

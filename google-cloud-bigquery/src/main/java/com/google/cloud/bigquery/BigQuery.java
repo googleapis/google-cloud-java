@@ -22,7 +22,7 @@ import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
 import com.google.cloud.Page;
 import com.google.cloud.Service;
-import com.google.cloud.bigquery.spi.BigQueryRpc;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -64,11 +64,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -111,11 +106,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -148,11 +138,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -207,7 +192,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the dataset's fields to be returned by the RPC call. If this
      * option is not provided all dataset's fields are returned. {@code DatasetOption.fields} can
-     * be used to specify only the fields of interest. {@link Dataset#datasetId()} is always
+     * be used to specify only the fields of interest. {@link Dataset#getDatasetId()} is always
      * returned, even if not specified.
      */
     public static DatasetOption fields(DatasetField... fields) {
@@ -277,8 +262,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the table's fields to be returned by the RPC call. If this
      * option is not provided all table's fields are returned. {@code TableOption.fields} can be
-     * used to specify only the fields of interest. {@link Table#tableId()} and type (which is part
-     * of {@link Table#definition()}) are always returned, even if not specified.
+     * used to specify only the fields of interest. {@link Table#getTableId()} and type (which is part
+     * of {@link Table#getDefinition()}) are always returned, even if not specified.
      */
     public static TableOption fields(TableField... fields) {
       return new TableOption(BigQueryRpc.Option.FIELDS,
@@ -372,9 +357,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the job's fields to be returned by the RPC call. If this option
      * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to
-     * specify only the fields of interest. {@link Job#jobId()}, {@link JobStatus#state()},
-     * {@link JobStatus#error()} as well as type-specific configuration (e.g.
-     * {@link QueryJobConfiguration#query()} for Query Jobs) are always returned, even if not
+     * specify only the fields of interest. {@link Job#getJobId()}, {@link JobStatus#getState()},
+     * {@link JobStatus#getError()} as well as type-specific configuration (e.g.
+     * {@link QueryJobConfiguration#getQuery()} for Query Jobs) are always returned, even if not
      * specified. {@link JobField#SELF_LINK} and {@link JobField#ETAG} can not be selected when
      * listing jobs.
      */
@@ -398,8 +383,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the job's fields to be returned by the RPC call. If this option
      * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to
-     * specify only the fields of interest. {@link Job#jobId()} as well as type-specific
-     * configuration (e.g. {@link QueryJobConfiguration#query()} for Query Jobs) are always
+     * specify only the fields of interest. {@link Job#getJobId()} as well as type-specific
+     * configuration (e.g. {@link QueryJobConfiguration#getQuery()} for Query Jobs) are always
      * returned, even if not specified.
      */
     public static JobOption fields(JobField... fields) {
@@ -468,7 +453,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * } catch (BigQueryException e) {
    *   // the dataset was not created
    * }
-   * }</pre>
+   * } </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -546,8 +531,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Lists the project's datasets. This method returns partial information on each dataset:
-   * ({@link Dataset#datasetId()}, {@link Dataset#friendlyName()} and
-   * {@link Dataset#generatedId()}). To get complete information use either
+   * ({@link Dataset#getDatasetId()}, {@link Dataset#getFriendlyName()} and
+   * {@link Dataset#getGeneratedId()}). To get complete information use either
    * {@link #getDataset(String, DatasetOption...)} or
    * {@link #getDataset(DatasetId, DatasetOption...)}.
    *
@@ -567,8 +552,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Lists the datasets in the provided project. This method returns partial information on each
-   * dataset: ({@link Dataset#datasetId()}, {@link Dataset#friendlyName()} and
-   * {@link Dataset#generatedId()}). To get complete information use either
+   * dataset: ({@link Dataset#getDatasetId()}, {@link Dataset#getFriendlyName()} and
+   * {@link Dataset#getGeneratedId()}). To get complete information use either
    * {@link #getDataset(String, DatasetOption...)} or
    * {@link #getDataset(DatasetId, DatasetOption...)}.
    *
@@ -734,8 +719,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table:
-   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#generatedId()} and type,
-   * which is part of {@link Table#definition()}). To get complete information use either
+   * ({@link Table#getTableId()}, {@link Table#getFriendlyName()}, {@link Table#getGeneratedId()} and type,
+   * which is part of {@link Table#getDefinition()}). To get complete information use either
    * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *
@@ -756,8 +741,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table:
-   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#generatedId()} and type,
-   * which is part of {@link Table#definition()}). To get complete information use either
+   * ({@link Table#getTableId()}, {@link Table#getFriendlyName()}, {@link Table#getGeneratedId()}
+   * and type, which is part of {@link Table#getDefinition()}). To get complete information use either
    * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *

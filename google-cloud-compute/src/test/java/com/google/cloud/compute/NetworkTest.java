@@ -120,23 +120,6 @@ public class NetworkTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedNetwork(2);
-    assertEquals(GENERATED_ID, standardNetwork.generatedId());
-    assertEquals(NETWORK_ID, standardNetwork.networkId());
-    assertEquals(CREATION_TIMESTAMP, standardNetwork.creationTimestamp());
-    assertEquals(DESCRIPTION, standardNetwork.description());
-    assertEquals(NETWORK_CONFIGURATION, standardNetwork.configuration());
-    assertSame(serviceMockReturnsOptions, standardNetwork.compute());
-    assertEquals(GENERATED_ID, subnetNetwork.generatedId());
-    assertEquals(NETWORK_ID, subnetNetwork.networkId());
-    assertEquals(CREATION_TIMESTAMP, subnetNetwork.creationTimestamp());
-    assertEquals(DESCRIPTION, subnetNetwork.description());
-    assertEquals(SUBNET_NETWORK_CONFIGURATION, subnetNetwork.configuration());
-    assertSame(serviceMockReturnsOptions, subnetNetwork.compute());
-  }
-
-  @Test
   public void testToAndFromPb() {
     initializeExpectedNetwork(12);
     compareNetwork(standardNetwork,

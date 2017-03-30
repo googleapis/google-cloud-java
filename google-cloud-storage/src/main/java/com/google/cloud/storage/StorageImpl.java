@@ -17,15 +17,15 @@
 package com.google.cloud.storage;
 
 import static com.google.cloud.RetryHelper.runWithRetries;
-import static com.google.cloud.storage.spi.StorageRpc.Option.DELIMITER;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_GENERATION_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_METAGENERATION_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_METAGENERATION_NOT_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.DELIMITER;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_METAGENERATION_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_METAGENERATION_NOT_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
@@ -43,9 +43,9 @@ import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.storage.Acl.Entity;
-import com.google.cloud.storage.spi.StorageRpc;
-import com.google.cloud.storage.spi.StorageRpc.RewriteResponse;
-import com.google.cloud.storage.spi.StorageRpc.Tuple;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
+import com.google.cloud.storage.spi.v1.StorageRpc.Tuple;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -90,7 +90,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   StorageImpl(StorageOptions options) {
     super(options);
-    storageRpc = options.getRpc();
+    storageRpc = options.getStorageRpcV1();
   }
 
   @Override
@@ -104,7 +104,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           public com.google.api.services.storage.model.Bucket call() {
             return storageRpc.create(bucketPb, optionsMap);
           }
-        }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+        }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -146,7 +146,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           return storageRpc.create(blobPb,
               firstNonNull(content, new ByteArrayInputStream(EMPTY_BYTE_ARRAY)), optionsMap);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -163,7 +163,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
             public com.google.api.services.storage.model.Bucket call() {
               return storageRpc.get(bucketPb, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Bucket.fromPb(this, answer);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
@@ -185,7 +185,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public StorageObject call() {
           return storageRpc.get(storedObject, optionsMap);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return storageObject == null ? null : Blob.fromPb(this, storageObject);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
@@ -212,16 +212,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
 
     @Override
-    @Deprecated
-    public Page<Bucket> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Bucket> getNextPage() {
       return listBuckets(serviceOptions, requestOptions);
     }
   }
+
 
   private static class BlobPageFetcher implements NextPageFetcher<Blob> {
 
@@ -239,16 +234,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
 
     @Override
-    @Deprecated
-    public Page<Blob> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<Blob> getNextPage() {
       return listBlobs(bucket, serviceOptions, requestOptions);
     }
   }
+
 
   @Override
   public Page<Bucket> list(BucketListOption... options) {
@@ -267,9 +257,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           new Callable<Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>>>() {
             @Override
             public Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> call() {
-              return serviceOptions.getRpc().list(optionsMap);
+              return serviceOptions.getStorageRpcV1().list(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Bucket> buckets =
           result.y() == null ? ImmutableList.<Bucket>of() : Iterables.transform(result.y(),
@@ -294,9 +284,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           new Callable<Tuple<String, Iterable<StorageObject>>>() {
             @Override
             public Tuple<String, Iterable<StorageObject>> call() {
-              return serviceOptions.getRpc().list(bucket, optionsMap);
+              return serviceOptions.getStorageRpcV1().list(bucket, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Blob> blobs =
           result.y() == null
@@ -327,7 +317,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
             public com.google.api.services.storage.model.Bucket call() {
               return storageRpc.patch(bucketPb, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -343,7 +333,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public StorageObject call() {
           return storageRpc.patch(storageObject, optionsMap);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -364,7 +354,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public Boolean call() {
           return storageRpc.delete(bucketPb, optionsMap);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -385,7 +375,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public Boolean call() {
           return storageRpc.delete(storageObject, optionsMap);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -416,7 +406,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public StorageObject call() {
           return storageRpc.compose(sources, target, targetOptions);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -439,7 +429,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
               copyRequest.overrideInfo(), targetObject, targetOptions,
               copyRequest.getMegabytesCopiedPerChunk()));
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return new CopyWriter(getOptions(), rewriteResponse);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
@@ -461,7 +451,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public byte[] call() {
           return storageRpc.load(storageObject, optionsMap);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -527,7 +517,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
     stBuilder.append('\n');
     long expiration = TimeUnit.SECONDS.convert(
-        getOptions().getClock().millis() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
+        getOptions().getClock().millisTime() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
     stBuilder.append(expiration).append('\n');
     StringBuilder path = new StringBuilder();
     if (!blobInfo.getBucket().startsWith("/")) {
@@ -643,7 +633,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public BucketAccessControl call() {
           return storageRpc.getAcl(bucket, entity.toPb());
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Acl.fromPb(answer);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
@@ -658,7 +648,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public Boolean call() {
           return storageRpc.deleteAcl(bucket, entity.toPb());
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -673,7 +663,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public BucketAccessControl call() {
           return storageRpc.createAcl(aclPb);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -688,7 +678,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public BucketAccessControl call() {
           return storageRpc.patchAcl(aclPb);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -702,7 +692,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public List<BucketAccessControl> call() {
           return storageRpc.listAcls(bucket);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return Lists.transform(answer, Acl.FROM_BUCKET_PB_FUNCTION);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
@@ -717,7 +707,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public ObjectAccessControl call() {
           return storageRpc.getDefaultAcl(bucket, entity.toPb());
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Acl.fromPb(answer);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
@@ -732,7 +722,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public Boolean call() {
           return storageRpc.deleteDefaultAcl(bucket, entity.toPb());
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -747,7 +737,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public ObjectAccessControl call() {
           return storageRpc.createDefaultAcl(aclPb);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -762,7 +752,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public ObjectAccessControl call() {
           return storageRpc.patchDefaultAcl(aclPb);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -776,7 +766,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public List<ObjectAccessControl> call() {
           return storageRpc.listDefaultAcls(bucket);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return Lists.transform(answer, Acl.FROM_OBJECT_PB_FUNCTION);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
@@ -792,7 +782,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           return storageRpc.getAcl(
               blob.getBucket(), blob.getName(), blob.getGeneration(), entity.toPb());
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Acl.fromPb(answer);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
@@ -808,7 +798,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           return storageRpc.deleteAcl(
               blob.getBucket(), blob.getName(), blob.getGeneration(), entity.toPb());
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -826,7 +816,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public ObjectAccessControl call() {
           return storageRpc.createAcl(aclPb);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -844,7 +834,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public ObjectAccessControl call() {
           return storageRpc.patchAcl(aclPb);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -858,7 +848,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         public List<ObjectAccessControl> call() {
           return storageRpc.listAcls(blob.getBucket(), blob.getName(), blob.getGeneration());
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return Lists.transform(answer, Acl.FROM_OBJECT_PB_FUNCTION);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);

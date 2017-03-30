@@ -117,9 +117,9 @@ public class ExceptionHandlerTest {
   @Test
   public void testShouldTry() {
     ExceptionHandler handler = ExceptionHandler.newBuilder().retryOn(IOException.class).build();
-    assertTrue(handler.shouldRetry(new IOException()));
-    assertTrue(handler.shouldRetry(new ClosedByInterruptException()));
-    assertFalse(handler.shouldRetry(new RuntimeException()));
+    assertTrue(handler.accept(new IOException()));
+    assertTrue(handler.accept(new ClosedByInterruptException()));
+    assertFalse(handler.accept(new RuntimeException()));
 
     ExceptionHandler.Builder builder = ExceptionHandler.newBuilder()
         .retryOn(IOException.class, NullPointerException.class)
@@ -127,11 +127,11 @@ public class ExceptionHandlerTest {
             InterruptedException.class);
 
     handler = builder.build();
-    assertTrue(handler.shouldRetry(new IOException()));
-    assertFalse(handler.shouldRetry(new ClosedByInterruptException()));
-    assertFalse(handler.shouldRetry(new InterruptedException()));
-    assertFalse(handler.shouldRetry(new RuntimeException()));
-    assertTrue(handler.shouldRetry(new NullPointerException()));
+    assertTrue(handler.accept(new IOException()));
+    assertFalse(handler.accept(new ClosedByInterruptException()));
+    assertFalse(handler.accept(new InterruptedException()));
+    assertFalse(handler.accept(new RuntimeException()));
+    assertTrue(handler.accept(new NullPointerException()));
 
     final AtomicReference<RetryResult> before = new AtomicReference<>(RetryResult.NO_RETRY);
     @SuppressWarnings("serial")
@@ -150,25 +150,25 @@ public class ExceptionHandlerTest {
 
     builder.addInterceptors(interceptor);
     handler = builder.build();
-    assertFalse(handler.shouldRetry(new IOException()));
-    assertFalse(handler.shouldRetry(new ClosedByInterruptException()));
-    assertFalse(handler.shouldRetry(new InterruptedException()));
-    assertFalse(handler.shouldRetry(new RuntimeException()));
-    assertFalse(handler.shouldRetry(new NullPointerException()));
+    assertFalse(handler.accept(new IOException()));
+    assertFalse(handler.accept(new ClosedByInterruptException()));
+    assertFalse(handler.accept(new InterruptedException()));
+    assertFalse(handler.accept(new RuntimeException()));
+    assertFalse(handler.accept(new NullPointerException()));
 
     before.set(RetryResult.RETRY);
-    assertTrue(handler.shouldRetry(new IOException()));
-    assertTrue(handler.shouldRetry(new ClosedByInterruptException()));
-    assertTrue(handler.shouldRetry(new InterruptedException()));
-    assertTrue(handler.shouldRetry(new RuntimeException()));
-    assertTrue(handler.shouldRetry(new NullPointerException()));
+    assertTrue(handler.accept(new IOException()));
+    assertTrue(handler.accept(new ClosedByInterruptException()));
+    assertTrue(handler.accept(new InterruptedException()));
+    assertTrue(handler.accept(new RuntimeException()));
+    assertTrue(handler.accept(new NullPointerException()));
 
     before.set(RetryResult.CONTINUE_EVALUATION);
-    assertFalse(handler.shouldRetry(new IOException()));
-    assertTrue(handler.shouldRetry(new ClosedByInterruptException()));
-    assertTrue(handler.shouldRetry(new InterruptedException()));
-    assertTrue(handler.shouldRetry(new RuntimeException()));
-    assertFalse(handler.shouldRetry(new NullPointerException()));
+    assertFalse(handler.accept(new IOException()));
+    assertTrue(handler.accept(new ClosedByInterruptException()));
+    assertTrue(handler.accept(new InterruptedException()));
+    assertTrue(handler.accept(new RuntimeException()));
+    assertFalse(handler.accept(new NullPointerException()));
   }
 
   @Test
@@ -190,7 +190,7 @@ public class ExceptionHandlerTest {
 
     ExceptionHandler handler = ExceptionHandler.newBuilder().addInterceptors(interceptor).build();
     thrown.expect(NullPointerException.class);
-    handler.shouldRetry(new Exception());
+    handler.accept(new Exception());
   }
 
   @Test
@@ -212,6 +212,6 @@ public class ExceptionHandlerTest {
 
     ExceptionHandler handler = ExceptionHandler.newBuilder().addInterceptors(interceptor).build();
     thrown.expect(NullPointerException.class);
-    handler.shouldRetry(new Exception());
+    handler.accept(new Exception());
   }
 }

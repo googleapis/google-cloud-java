@@ -1,5 +1,5 @@
 /*
- * Copyright 2016, Google Inc. All rights reserved.
+ * Copyright 2017, Google Inc. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package com.google.cloud.speech.spi.v1beta1;
 
-import com.google.api.gax.core.RpcStreamObserver;
+import com.google.api.gax.core.ApiStreamObserver;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.StreamingCallable;
 import com.google.api.gax.testing.MockGrpcService;
@@ -107,7 +107,7 @@ public class SpeechClientTest {
   @Test
   @SuppressWarnings("all")
   public void syncRecognizeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSpeech.addException(exception);
 
     try {
@@ -121,7 +121,7 @@ public class SpeechClientTest {
       client.syncRecognize(config, audio);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -158,7 +158,7 @@ public class SpeechClientTest {
   @Test
   @SuppressWarnings("all")
   public void asyncRecognizeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSpeech.addException(exception);
 
     try {
@@ -174,7 +174,7 @@ public class SpeechClientTest {
     } catch (ExecutionException e) {
       Assert.assertEquals(ApiException.class, e.getCause().getClass());
       ApiException apiException = (ApiException) e.getCause();
-      Assert.assertEquals(Status.INTERNAL.getCode(), apiException.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), apiException.getStatusCode());
     }
   }
 
@@ -191,7 +191,7 @@ public class SpeechClientTest {
 
     StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
         client.streamingRecognizeCallable();
-    RpcStreamObserver<StreamingRecognizeRequest> requestObserver =
+    ApiStreamObserver<StreamingRecognizeRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);
 
     requestObserver.onNext(request);
@@ -205,7 +205,7 @@ public class SpeechClientTest {
   @Test
   @SuppressWarnings("all")
   public void streamingRecognizeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSpeech.addException(exception);
     StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
 
@@ -213,7 +213,7 @@ public class SpeechClientTest {
 
     StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
         client.streamingRecognizeCallable();
-    RpcStreamObserver<StreamingRecognizeRequest> requestObserver =
+    ApiStreamObserver<StreamingRecognizeRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);
 
     requestObserver.onNext(request);
@@ -224,7 +224,7 @@ public class SpeechClientTest {
     } catch (ExecutionException e) {
       Assert.assertTrue(e.getCause() instanceof StatusRuntimeException);
       StatusRuntimeException statusException = (StatusRuntimeException) e.getCause();
-      Assert.assertEquals(Status.INTERNAL, statusException.getStatus());
+      Assert.assertEquals(Status.INVALID_ARGUMENT, statusException.getStatus());
     }
   }
 }

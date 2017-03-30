@@ -65,31 +65,6 @@ public class AddressIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    GlobalAddressId addressId = GlobalAddressId.of(PROJECT, NAME);
-    assertEquals(PROJECT, addressId.project());
-    assertEquals(NAME, addressId.address());
-    assertEquals(GLOBAL_URL, addressId.selfLink());
-    addressId = GlobalAddressId.of(NAME);
-    assertNull(addressId.project());
-    assertEquals(NAME, addressId.address());
-    RegionAddressId regionAddressId = RegionAddressId.of(PROJECT, REGION, NAME);
-    assertEquals(PROJECT, regionAddressId.project());
-    assertEquals(REGION, regionAddressId.region());
-    assertEquals(NAME, regionAddressId.address());
-    assertEquals(REGION_URL, regionAddressId.selfLink());
-    regionAddressId = RegionAddressId.of(RegionId.of(PROJECT, REGION), NAME);
-    assertEquals(PROJECT, regionAddressId.project());
-    assertEquals(REGION, regionAddressId.region());
-    assertEquals(NAME, regionAddressId.address());
-    assertEquals(REGION_URL, regionAddressId.selfLink());
-    regionAddressId = RegionAddressId.of(REGION, NAME);
-    assertNull(regionAddressId.project());
-    assertEquals(REGION, regionAddressId.region());
-    assertEquals(NAME, regionAddressId.address());
-  }
-
-  @Test
   public void testToAndFromUrlGlobal() {
     GlobalAddressId addressId = GlobalAddressId.of(PROJECT, NAME);
     compareAddressId(addressId, GlobalAddressId.fromUrl(addressId.getSelfLink()));

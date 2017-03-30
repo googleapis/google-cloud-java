@@ -36,12 +36,6 @@ public class ImageDiskConfigurationTest {
           .setDiskType(DISK_TYPE)
           .setSourceImageId(IMAGE_ID)
           .build();
-  private static final ImageDiskConfiguration DEPRECATED_DISK_CONFIGURATION =
-      ImageDiskConfiguration.builder(IMAGE)
-          .sizeGb(SIZE)
-          .diskType(DISK_TYPE)
-          .setSourceImageId(IMAGE_ID)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -76,15 +70,6 @@ public class ImageDiskConfigurationTest {
     assertEquals(IMAGE, DISK_CONFIGURATION.getSourceImage());
     assertEquals(IMAGE_ID, DISK_CONFIGURATION.getSourceImageId());
     assertEquals(Type.IMAGE, DISK_CONFIGURATION.getType());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(DISK_TYPE, DEPRECATED_DISK_CONFIGURATION.diskType());
-    assertEquals(SIZE, DEPRECATED_DISK_CONFIGURATION.sizeGb());
-    assertEquals(IMAGE, DEPRECATED_DISK_CONFIGURATION.sourceImage());
-    assertEquals(IMAGE_ID, DEPRECATED_DISK_CONFIGURATION.sourceImageId());
-    assertEquals(Type.IMAGE, DEPRECATED_DISK_CONFIGURATION.type());
   }
 
   @Test

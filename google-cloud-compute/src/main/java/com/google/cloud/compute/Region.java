@@ -108,14 +108,6 @@ public class Region implements Serializable {
     /**
      * Returns the name of the quota metric.
      */
-    @Deprecated
-    public String metric() {
-      return getMetric();
-    }
-
-    /**
-     * Returns the name of the quota metric.
-     */
     public String getMetric() {
       return metric;
     }
@@ -123,24 +115,8 @@ public class Region implements Serializable {
     /**
      * Returns the quota limit for this metric.
      */
-    @Deprecated
-    public double limit() {
-      return getLimit();
-    }
-
-    /**
-     * Returns the quota limit for this metric.
-     */
     public double getLimit() {
       return limit;
-    }
-
-    /**
-     * Returns the current usage for this quota.
-     */
-    @Deprecated
-    public double usage() {
-      return getUsage();
     }
 
     /**
@@ -260,24 +236,8 @@ public class Region implements Serializable {
   /**
    * Returns the region's identity.
    */
-  @Deprecated
-  public RegionId regionId() {
-    return getRegionId();
-  }
-
-  /**
-   * Returns the region's identity.
-   */
   public RegionId getRegionId() {
     return regionId;
-  }
-
-  /**
-   * Returns the service-generated unique identifier for the region.
-   */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
   }
 
   /**
@@ -290,24 +250,8 @@ public class Region implements Serializable {
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
-  @Deprecated
-  public Long creationTimestamp() {
-    return getCreationTimestamp();
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
   public Long getCreationTimestamp() {
     return creationTimestamp;
-  }
-
-  /**
-   * Returns an optional textual description of the region.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
   }
 
   /**
@@ -320,24 +264,8 @@ public class Region implements Serializable {
   /**
    * Returns the status of the status.
    */
-  @Deprecated
-  public Status status() {
-    return getStatus();
-  }
-
-  /**
-   * Returns the status of the status.
-   */
   public Status getStatus() {
     return status;
-  }
-
-  /**
-   * Returns a list of identities of zones available in this region.
-   */
-  @Deprecated
-  public List<ZoneId> zones() {
-    return getZones();
   }
 
   /**
@@ -350,30 +278,12 @@ public class Region implements Serializable {
   /**
    * Returns quotas assigned to this region.
    */
-  @Deprecated
-  public List<Quota> quotas() {
-    return getQuotas();
-  }
-
-  /**
-   * Returns quotas assigned to this region.
-   */
   public List<Quota> getQuotas() {
     return quotas;
   }
 
   /**
-   * Returns the deprecation status of the region. If {@link DeprecationStatus#status()} is either
-   * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the
-   * region should not be used. Returns {@code null} if the region is not deprecated.
-   */
-  @Deprecated
-  public DeprecationStatus<RegionId> deprecationStatus() {
-    return getDeprecationStatus();
-  }
-
-  /**
-   * Returns the deprecation status of the region. If {@link DeprecationStatus#status()} is either
+   * Returns the deprecation status of the region. If {@link DeprecationStatus#getStatus()} is either
    * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the
    * region should not be used. Returns {@code null} if the region is not deprecated.
    */

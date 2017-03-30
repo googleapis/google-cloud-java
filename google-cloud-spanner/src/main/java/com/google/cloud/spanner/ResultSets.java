@@ -17,6 +17,8 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.spanner.v1.ResultSetStats;

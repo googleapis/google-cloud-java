@@ -19,6 +19,8 @@ package com.google.cloud.logging;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+
 import java.util.List;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
@@ -29,6 +31,8 @@ import java.util.logging.LogManager;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+
+import static com.google.api.client.repackaged.com.google.common.base.Objects.firstNonNull;
 
 /**
  * A logging handler that synchronously outputs logs generated with {@link java.util.logging.Logger}
@@ -50,8 +54,8 @@ import java.util.logging.SimpleFormatter;
  *
  * <p>Original Java logging levels are added as labels (with {@code levelName} and
  * {@code levelValue} keys, respectively) to the corresponding Stackdriver Logging {@link LogEntry}.
- * You can read entry labels using {@link LogEntry#labels()}. To use logging levels that correspond
- * to Stackdriver Logging severities you can use {@link LoggingLevel}.
+ * You can read entry labels using {@link LogEntry#getLabels()}. To use logging levels that
+ * correspond to Stackdriver Logging severities you can use {@link LoggingLevel}.
  *
  * <p><b>Configuration</b>: By default each {@code LoggingHandler} is initialized using the
  * following {@code LogManager} configuration properties (that you can set in the
@@ -74,9 +78,12 @@ import java.util.logging.SimpleFormatter;
  *     service (defaults to {@link LoggingLevel#ERROR}).
  * <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
  *     of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds
- *     a {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
- * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when 
- *     creating the default {@link MonitoredResource} (defaults to "a).
+ *     a {@link LogEntry} instance (defaults to empty list).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
+ *     creating the default {@link MonitoredResource}
+ *     (defaults to auto-detected resource type, else "global").
+ * <li>{@code com.google.cloud.logging.Synchronicity} the synchronicity of the write method to use
+ *     to write logs to the Stackdriver Logging service (defaults to {@link Synchronicity#ASYNC}).
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
@@ -91,9 +98,20 @@ public class LoggingHandler extends Handler {
   private static final String HANDLERS_PROPERTY = "handlers";
   private static final String ROOT_LOGGER_NAME = "";
   private static final String[] NO_HANDLERS = new String[0];
+  private static final String LEVEL_NAME_KEY = "levelName";
+  private static final String LEVEL_VALUE_KEY = "levelValue";
 
-  private final List<Enhancer> enhancers;
-  private BufferedLogging bufferedLogging;
+  private LoggingHelper loggingHelper;
+  private List<Enhancer> enhancers;
+  private  ErrorHandler errorHandler;
+
+  // Logs with the same severity with the base could be more efficiently sent to Stackdriver.
+  // Defaults to level of the handler or Level.FINEST if the handler is set to Level.ALL.
+  // Currently there is no way to modify the base level, see
+  // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740 .
+  private final Level baseLevel;
+
+  private Level flushLevel;
 
   /**
    * Creates an handler that publishes messages to Stackdriver Logging.
@@ -126,19 +144,19 @@ public class LoggingHandler extends Handler {
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
-   * @param monitoredResource the monitored resource to which log entries refer. If it is null 
+   * @param monitoredResource the monitored resource to which log entries refer. If it is null
    * then a default resource is created based on the project ID and deployment environment.
    */
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource) {
     this(log, options, monitoredResource,null);
   }
-  
+
   /**
    * Creates a handler that publishes messages to Stackdriver Logging.
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
-   * @param monitoredResource the monitored resource to which log entries refer. If it is null 
+   * @param monitoredResource the monitored resource to which log entries refer. If it is null
    * then a default resource is created based on the project ID and deployment environment.
    * @param enhancers List of {@link Enhancer} instances used to enhance any{@link LogEntry}
    * instances built by this handler.
@@ -146,19 +164,35 @@ public class LoggingHandler extends Handler {
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource,
                         List<Enhancer> enhancers) {
     try {
-      LoggingConfigHelper config = new LoggingConfigHelper();
-      String className = getClass().getName();
-      Level flushLevel = config.getFlushLevel(className);
-      long flushSize = config.getFlushSize(className);
-      MonitoredResource resource =
-              monitoredResource != null ? monitoredResource : config.getMonitoredResource(options, className);
-      String logName = config.getLogName(log, className);
+      LoggingConfig config = new LoggingConfig(getClass().getName());
+      errorHandler = new ErrorHandler();
+      setFilter(config.getFilter());
+      setFormatter(config.getFormatter());
+      Level level = config.getLogLevel();
+      setLevel(level);
+      baseLevel = level.equals(Level.ALL) ? Level.FINEST : level;
+      this.flushLevel = config.getFlushLevel();
+      String logName = firstNonNull(log, config.getLogName());
+      MonitoredResource resource = firstNonNull(monitoredResource, config.getMonitoredResource(options.getProjectId()));
+      WriteOption[] labelOptions = new WriteOption[] {
+                      WriteOption.labels(
+                              ImmutableMap.of(
+                                      LEVEL_NAME_KEY,
+                                      baseLevel.getName(),
+                                      LEVEL_VALUE_KEY,
+                                      String.valueOf(baseLevel.intValue())))
+              };
 
-      bufferedLogging = new BufferedLogging(logName, options, resource, severityFor(flushLevel), flushSize);
-      setLevel(config.getLogLevel(className));
-      setFilter(config.getFilter(className));
-      setFormatter(config.getFormatter(className));
-      this.enhancers = enhancers != null ? enhancers : config.getEnhancers(className);
+      loggingHelper = LoggingHelper.newBuilder(options)
+              .setFlushSeverity(severityFor(flushLevel))
+              .setFlushSize(config.getFlushSize())
+              .setSynchronicity(config.getSynchronicity())
+              .setWriteOptions(logName, resource, labelOptions)
+              .setErrorHandler(errorHandler)
+              .build();
+
+      this.enhancers = enhancers != null ? enhancers : config.getEnhancers();
+
     } catch (Exception ex) {
       reportError(null, ex, ErrorManager.OPEN_FAILURE);
       throw ex;
@@ -196,6 +230,7 @@ public class LoggingHandler extends Handler {
     return false;
   }
 
+
   @Override
   public void publish(LogRecord record) {
     // check that the log record should be logged
@@ -212,68 +247,82 @@ public class LoggingHandler extends Handler {
     try {
       logEntryBuilder = logEntryBuilderFor(record);
     } catch (Exception ex) {
-      // Formatting or enhancing can fail but we should not throw an exception,
-      // we report the error instead
-      reportError(null, ex, ErrorManager.FORMAT_FAILURE);
+      errorHandler.handleFormatError(ex);
       return;
     }
-    try {
-      bufferedLogging.publish(logEntryBuilder, enhancers);
-    } catch (Exception ex) {
-    // writing can fail but we should not throw an exception, we report the error instead
-    reportError(null, ex, ErrorManager.FLUSH_FAILURE);
+    if (logEntryBuilder != null) {
+      loggingHelper.publish(logEntryBuilder);
     }
   }
 
   private LogEntry.Builder logEntryBuilderFor(LogRecord record) throws Exception {
-    String payload;
-    payload = getFormatter().format(record);
-    Level level = record.getLevel();
-    LogEntry.Builder builder = LogEntry.newBuilder(Payload.StringPayload.of(payload))
-            .addLabel("levelName", level.getName())
-            .addLabel("levelValue", String.valueOf(level.intValue()))
-            .setTimestamp(record.getMillis())
-            .setSeverity(severityFor(level));
-    return builder;
+    try {
+      String payload = getFormatter().format(record);
+      Level level = record.getLevel();
+      LogEntry.Builder builder = LogEntry.newBuilder(Payload.StringPayload.of(payload))
+              .setTimestamp(record.getMillis())
+              .setSeverity(severityFor(level));
+
+      if (!baseLevel.equals(level)) {
+        builder.addLabel("levelName", level.getName())
+                .addLabel("levelValue", String.valueOf(level.intValue()));
+      }
+
+      for (Enhancer enhancer : enhancers) {
+        enhancer.enhanceLogEntry(builder);
+      }
+      return builder;
+    } catch (Exception ex) {
+      // Formatting or enhancing can fail but we should not throw an exception,
+      // we report the error instead
+      errorHandler.handleFormatError(ex);
+      return null;
+    }
   }
 
   @Override
   public void flush() {
-    try {
-    bufferedLogging.flush();
-    } catch (Exception ex) {
-      // Formatting or enhancing can fail but we should not throw an exception,
-      // we report the error instead
-      reportError(null, ex, ErrorManager.FLUSH_FAILURE);
-    }
+    loggingHelper.flush();
   }
 
   private void flush(List<LogEntry> flushBuffer, WriteOption[] flushWriteOptions) {
     if (flushBuffer == null) {
       return;
     }
-    try {
-      bufferedLogging.write(flushBuffer, flushWriteOptions);
-    } catch (Exception ex) {
-      // writing can fail but we should not throw an exception, we report the error instead
-      reportError(null, ex, ErrorManager.FLUSH_FAILURE);
-    }
+    loggingHelper.flush(flushBuffer, flushWriteOptions);
   }
 
   /**
-   * Closes the handler and the associated {@link BufferedLogging} object.
+   * Closes the handler and the associated {@link LoggingHelper} object.
    */
   @Override
   public synchronized void close() throws SecurityException {
-      bufferedLogging.close();
+      loggingHelper.close();
   }
 
   public synchronized void setFlushLevel(Level level) {
-    bufferedLogging.setFlushSeverity(severityFor(level));
+    flushLevel = level;
+    loggingHelper.setFlushSeverity(severityFor(flushLevel));
   }
 
   public synchronized void setFlushSize(long size) {
-    bufferedLogging.setFlushSize(size);
+    loggingHelper.setFlushSize(size);
+  }
+
+  public synchronized void setSynchronicity(Synchronicity synchronicity) {
+    loggingHelper.setSynchronicity(synchronicity);
+  }
+
+  public long getFlushSize() {
+    return loggingHelper.getFlushSize();
+  }
+
+  public Synchronicity getSynchronicity() {
+    return loggingHelper.getSynchronicity();
+  }
+
+  public Level getFlushLevel() {
+    return flushLevel;
   }
 
   /**
@@ -285,12 +334,7 @@ public class LoggingHandler extends Handler {
     logger.addHandler(handler);
   }
 
-  /**
-   * Mapping java.util.logging.Level to com.google.cloud.logging.Severity
-   * @param level
-   * @return
-   */
-  private static Severity severityFor(Level level) {
+  public static Severity severityFor(Level level) {
     if (level instanceof LoggingLevel) {
       return ((LoggingLevel) level).getSeverity();
     }
@@ -320,4 +364,17 @@ public class LoggingHandler extends Handler {
         return Severity.DEFAULT;
     }
   }
+
+  private class ErrorHandler implements LoggingErrorHandler {
+    public void handleFormatError(Exception ex) {
+      getErrorManager().error(null, ex, ErrorManager.FORMAT_FAILURE);
+    }
+    public void handleWriteError(Exception ex) {
+      getErrorManager().error(null, ex, ErrorManager.WRITE_FAILURE);
+    }
+    public void handleFlushError(Exception ex) {
+      getErrorManager().error(null, ex, ErrorManager.FLUSH_FAILURE);
+    }
+  }
+
 }

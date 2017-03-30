@@ -120,12 +120,6 @@ public class ValueTest {
     }
   }
 
-  @Test
-  public void testTypeDeprecated() throws Exception {
-    for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
-      assertEquals(entry.getKey(), entry.getValue().type());
-    }
-  }
 
   @Test
   public void testExcludeFromIndexes() throws Exception {
@@ -138,16 +132,6 @@ public class ValueTest {
     assertFalse(builder.setExcludeFromIndexes(false).build().excludeFromIndexes());
   }
 
-  @Test
-  public void testExcludeFromIndexesDeprecated() throws Exception {
-    for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
-      assertFalse(entry.getValue().excludeFromIndexes());
-    }
-    TestBuilder builder = new TestBuilder();
-    assertFalse(builder.build().excludeFromIndexes());
-    assertTrue(builder.excludeFromIndexes(true).build().excludeFromIndexes());
-    assertFalse(builder.excludeFromIndexes(false).build().excludeFromIndexes());
-  }
 
   @SuppressWarnings("deprecation")
   @Test
@@ -156,11 +140,6 @@ public class ValueTest {
     assertEquals(10, builder.setMeaning(10).build().getMeaning());
   }
 
-  @Test
-  public void testMeaningDeprecated() throws Exception {
-    TestBuilder builder = new TestBuilder();
-    assertEquals(10, builder.meaning(10).build().meaning());
-  }
 
   @Test
   public void testGet() throws Exception {

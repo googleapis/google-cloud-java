@@ -120,34 +120,6 @@ public class DatasetTest {
     assertEquals(SELF_LINK, builtDataset.getSelfLink());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedDataset(2);
-    replay(bigquery);
-    Dataset builtDataset = new Dataset.Builder(serviceMockReturnsOptions, DATASET_ID)
-        .acl(ACCESS_RULES)
-        .setCreationTime(CREATION_TIME)
-        .defaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
-        .description(DESCRIPTION)
-        .setEtag(ETAG)
-        .friendlyName(FRIENDLY_NAME)
-        .setGeneratedId(GENERATED_ID)
-        .setLastModified(LAST_MODIFIED)
-        .location(LOCATION)
-        .setSelfLink(SELF_LINK)
-        .build();
-    assertEquals(DATASET_ID, builtDataset.datasetId());
-    assertEquals(ACCESS_RULES, builtDataset.acl());
-    assertEquals(CREATION_TIME, builtDataset.creationTime());
-    assertEquals(DEFAULT_TABLE_EXPIRATION, builtDataset.defaultTableLifetime());
-    assertEquals(DESCRIPTION, builtDataset.description());
-    assertEquals(ETAG, builtDataset.etag());
-    assertEquals(FRIENDLY_NAME, builtDataset.friendlyName());
-    assertEquals(GENERATED_ID, builtDataset.generatedId());
-    assertEquals(LAST_MODIFIED, builtDataset.lastModified());
-    assertEquals(LOCATION, builtDataset.location());
-    assertEquals(SELF_LINK, builtDataset.selfLink());
-  }
 
   @Test
   public void testToBuilder() {
@@ -376,12 +348,6 @@ public class DatasetTest {
     assertSame(serviceMockReturnsOptions, expectedDataset.getBigquery());
   }
 
-  @Test
-  public void testBigqueryDeprecated() {
-    initializeExpectedDataset(1);
-    replay(bigquery);
-    assertSame(serviceMockReturnsOptions, expectedDataset.bigquery());
-  }
 
   @Test
   public void testToAndFromPb() {

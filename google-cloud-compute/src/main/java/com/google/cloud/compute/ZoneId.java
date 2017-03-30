@@ -57,22 +57,8 @@ public final class ZoneId extends ResourceId {
   /**
    * Returns the name of the zone.
    */
-  @Deprecated
-  public final String zone() {
-    return getZone();
-  }
-
-  /**
-   * Returns the name of the zone.
-   */
   public String getZone() {
     return zone;
-  }
-
-  @Override
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
   }
 
   @Override

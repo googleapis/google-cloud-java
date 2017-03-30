@@ -16,14 +16,15 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.core.CurrentMillisClock;
+import com.google.api.gax.core.FlowControlSettings;
+import com.google.api.gax.core.FlowController;
+import com.google.api.gax.core.ApiClock;;
 import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.FlowControlSettings;
-import com.google.api.gax.grpc.FlowController;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.Clock;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
@@ -189,7 +190,7 @@ public class Subscriber {
    *   }
    * }, executor);
    * subscriber.startAsync();
-   * 
+   *
    * // Wait for a stop signal.
    * done.get();
    * subscriber.stopAsync().awaitTerminated();
@@ -266,7 +267,7 @@ public class Subscriber {
     private final MessageReceiver receiver;
     private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
     private final List<PollingSubscriberConnection> pollingSubscriberConnections;
-    private final Clock clock;
+    private final ApiClock clock;
     private final List<AutoCloseable> closeables = new ArrayList<>();
     private ScheduledFuture<?> ackDeadlineUpdater;
     private int streamAckDeadlineSeconds;
@@ -281,9 +282,9 @@ public class Subscriber {
           Math.max(
               INITIAL_ACK_DEADLINE_SECONDS,
               Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
-      clock = builder.clock.isPresent() ? builder.clock.get() : Clock.defaultClock();
+      clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
-      flowController = new FlowController(builder.flowControlSettings, false);
+      flowController = new FlowController(builder.flowControlSettings);
 
       executor = builder.executorProvider.getExecutor();
       if (builder.executorProvider.shouldAutoClose()) {
@@ -300,8 +301,8 @@ public class Subscriber {
           builder.channelBuilder.isPresent()
               ? builder.channelBuilder.get()
               : NettyChannelBuilder.forAddress(
-                      SubscriberSettings.getDefaultServiceAddress(),
-                      SubscriberSettings.getDefaultServicePort())
+                      SubscriptionAdminSettings.getDefaultServiceAddress(),
+                  SubscriptionAdminSettings.getDefaultServicePort())
                   .maxMessageSize(MAX_INBOUND_MESSAGE_SIZE)
                   .flowControlWindow(5000000) // 2.5 MB
                   .negotiationType(NegotiationType.TLS)
@@ -312,7 +313,7 @@ public class Subscriber {
           builder.credentials.isPresent()
               ? builder.credentials.get()
               : GoogleCredentials.getApplicationDefault()
-                  .createScoped(SubscriberSettings.getDefaultServiceScopes());
+                  .createScoped(SubscriptionAdminSettings.getDefaultServiceScopes());
 
       numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
       streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
@@ -321,7 +322,7 @@ public class Subscriber {
 
     @Override
     protected void doStart() {
-      logger.log(Level.INFO, "Starting subscriber group.");
+      logger.log(Level.FINE, "Starting subscriber group.");
       // Streaming pull is not enabled on the service yet.
       // startStreamingConnections();
       startPollingConnections();
@@ -395,8 +396,8 @@ public class Subscriber {
                     if (streamAckDeadlineSeconds != possibleStreamAckDeadlineSeconds) {
                       streamAckDeadlineSeconds = possibleStreamAckDeadlineSeconds;
                       logger.log(
-                          Level.INFO,
-                          "Updating stream deadline to {} seconds.",
+                          Level.FINER,
+                          "Updating stream deadline to {0} seconds.",
                           streamAckDeadlineSeconds);
                       for (StreamingSubscriberConnection subscriberConnection :
                           streamingSubscriberConnections) {
@@ -466,9 +467,12 @@ public class Subscriber {
             new Runnable() {
               @Override
               public void run() {
-                subscriber.startAsync().awaitRunning();
-                subscribersStarting.countDown();
                 subscriber.addListener(connectionsListener, executor);
+                try {
+                  subscriber.startAsync().awaitRunning();
+                } finally {
+                  subscribersStarting.countDown();
+                }
               }
             });
       }
@@ -533,7 +537,7 @@ public class Subscriber {
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
         Optional.absent();
-    Optional<Clock> clock = Optional.absent();
+    Optional<ApiClock> clock = Optional.absent();
 
     Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
@@ -594,7 +598,7 @@ public class Subscriber {
     }
 
     /** Gives the ability to set a custom clock. */
-    Builder setClock(Clock clock) {
+    Builder setClock(ApiClock clock) {
       this.clock = Optional.of(clock);
       return this;
     }

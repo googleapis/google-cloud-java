@@ -1,12 +1,27 @@
+/*
+ * Copyright 2017 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.google.cloud.logging;
 
 import com.google.cloud.MetadataConfig;
 import com.google.common.base.Strings;
 import com.google.cloud.MonitoredResource;
-import com.google.cloud.ServiceOptions;
 import java.util.List;
 
-public class MonitoredResourceHelper {
+class MonitoredResourceHelper {
 
   private static final String defaultResourceType = "global";
 
@@ -21,7 +36,7 @@ public class MonitoredResourceHelper {
         labels = new String[]{"module_id", "version_id"};
         break;
       case "container":
-        labels = new String[]{"cluster_name", "namespace_id", "pod_id", "container_name", "zone"};
+        labels = new String[]{"cluster_name", "zone"};
         break;
       case "gce_instance":
         labels = new String[]{"instance_id", "zone"};
@@ -37,7 +52,7 @@ public class MonitoredResourceHelper {
 
   /* Return a self-configured monitored resource.
    */
-  protected static MonitoredResource getResource(ServiceOptions options, String resourceType) {
+  static MonitoredResource getResource(String projectId, String resourceType) {
     if (Strings.isNullOrEmpty(resourceType)) {
       resourceType = getAutoDetectedResourceType();
     }
@@ -48,7 +63,7 @@ public class MonitoredResourceHelper {
 
     MonitoredResource.Builder builder = com.google.cloud.MonitoredResource
         .newBuilder(resourceName)
-        .addLabel("project_id", options.getProjectId());
+        .addLabel("project_id", projectId);
     addResourceLabels(resourceType, builder);
     return builder.build();
   }

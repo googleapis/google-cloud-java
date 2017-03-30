@@ -45,12 +45,6 @@ public class WaitForOptionTest {
     assertEquals(TimeUnit.MILLISECONDS, CHECKING_PERIOD_OPTION.getUnit());
   }
 
-  @Test
-  public void testCheckEveryDeprecated() {
-    assertEquals(OptionType.CHECKING_PERIOD, CHECKING_PERIOD_OPTION.getOptionType());
-    assertEquals(42, CHECKING_PERIOD_OPTION.period());
-    assertEquals(TimeUnit.MILLISECONDS, CHECKING_PERIOD_OPTION.unit());
-  }
 
   @Test
   public void testCheckEvery_InvalidPeriod() {
@@ -59,13 +53,6 @@ public class WaitForOptionTest {
     WaitForOption.checkEvery(-1, TimeUnit.MILLISECONDS);
   }
 
-  @Test
-  public void testTimeoutDeprecated() {
-    assertEquals(OptionType.TIMEOUT, TIMEOUT_OPTION.getOptionType());
-    assertEquals(43, TIMEOUT_OPTION.timeoutMillis());
-    Timeout timeoutOption = WaitForOption.timeout(43, TimeUnit.SECONDS);
-    assertEquals(43_000, timeoutOption.timeoutMillis());
-  }
 
   @Test
   public void testTimeout_InvalidTimeout() {

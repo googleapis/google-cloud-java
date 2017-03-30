@@ -21,6 +21,8 @@ import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc.PublisherImplBase;
 import io.grpc.stub.StreamObserver;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
@@ -29,6 +31,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 class FakePublisherServiceImpl extends PublisherImplBase {
 
+  private final LinkedBlockingQueue<PublishRequest> requests = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<Response> publishResponses = new LinkedBlockingQueue<>();
 
   /** Class used to save the state of a possible response. */
@@ -69,6 +72,7 @@ class FakePublisherServiceImpl extends PublisherImplBase {
 
   @Override
   public void publish(PublishRequest request, StreamObserver<PublishResponse> responseObserver) {
+    requests.add(request);
     Response response;
     try {
       response = publishResponses.take();
@@ -98,7 +102,7 @@ class FakePublisherServiceImpl extends PublisherImplBase {
     return this;
   }
 
-  public void reset() {
-    publishResponses.clear();
+  public List<PublishRequest> getCapturedRequests() {
+    return new ArrayList<PublishRequest>(requests);
   }
 }

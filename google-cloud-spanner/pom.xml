@@ -30,7 +30,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.9.4-alpha-SNAPSHOT</version>
+    <version>0.10.1-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
@@ -129,18 +129,13 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <version>0.0.25</version>
+      <version>${gax.version}</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
           <artifactId>grpc-all</artifactId>
         </exclusion>
       </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java-util</artifactId>
-      <version>3.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>

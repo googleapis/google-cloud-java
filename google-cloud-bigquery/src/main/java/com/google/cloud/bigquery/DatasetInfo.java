@@ -74,24 +74,12 @@ public class DatasetInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    /**
-     * Sets the dataset identity.
-     */
-    @Deprecated
-    public abstract Builder datasetId(DatasetId datasetId);
 
     /**
      * Sets the dataset identity.
      */
     public abstract Builder setDatasetId(DatasetId datasetId);
 
-    /**
-     * Sets the dataset's access control configuration.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/access-control">Access Control</a>
-     */
-    @Deprecated
-    public abstract Builder acl(List<Acl> acl);
 
     /**
      * Sets the dataset's access control configuration.
@@ -102,19 +90,6 @@ public class DatasetInfo implements Serializable {
 
     abstract Builder setCreationTime(Long creationTime);
 
-    /**
-     * Sets the default lifetime of all tables in the dataset, in milliseconds. The minimum value is
-     * 3600000 milliseconds (one hour). Once this property is set, all newly-created tables in the
-     * dataset will have an expirationTime property set to the creation time plus the value in this
-     * property, and changing the value will only affect new tables, not existing ones. When the
-     * expirationTime for a given table is reached, that table will be deleted automatically. If a
-     * table's expirationTime is modified or removed before the table expires, or if you provide an
-     * explicit expirationTime when creating a table, that value takes precedence over the default
-     * expiration time indicated by this property. This property is experimental and might be
-     * subject to change or removed.
-     */
-    @Deprecated
-    public abstract Builder defaultTableLifetime(Long defaultTableLifetime);
 
     /**
      * Sets the default lifetime of all tables in the dataset, in milliseconds. The minimum value is
@@ -129,11 +104,6 @@ public class DatasetInfo implements Serializable {
      */
     public abstract Builder setDefaultTableLifetime(Long defaultTableLifetime);
 
-    /**
-     * Sets a user-friendly description for the dataset.
-     */
-    @Deprecated
-    public abstract Builder description(String description);
 
     /**
      * Sets a user-friendly description for the dataset.
@@ -142,11 +112,6 @@ public class DatasetInfo implements Serializable {
 
     abstract Builder setEtag(String etag);
 
-    /**
-     * Sets a user-friendly name for the dataset.
-     */
-    @Deprecated
-    public abstract Builder friendlyName(String friendlyName);
 
     /**
      * Sets a user-friendly name for the dataset.
@@ -157,15 +122,6 @@ public class DatasetInfo implements Serializable {
 
     abstract Builder setLastModified(Long lastModified);
 
-    /**
-     * Sets the geographic location where the dataset should reside. This property is experimental
-     * and might be subject to change or removed.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#location">Dataset
-     *     Location</a>
-     */
-    @Deprecated
-    public abstract Builder location(String location);
 
     /**
      * Sets the geographic location where the dataset should reside. This property is experimental
@@ -237,11 +193,6 @@ public class DatasetInfo implements Serializable {
       this.selfLink = datasetPb.getSelfLink();
     }
 
-    @Override
-    @Deprecated
-    public Builder datasetId(DatasetId datasetId) {
-      return setDatasetId(datasetId);
-    }
 
     @Override
     public Builder setDatasetId(DatasetId datasetId) {
@@ -249,11 +200,6 @@ public class DatasetInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder acl(List<Acl> acl) {
-      return setAcl(acl);
-    }
 
     @Override
     public Builder setAcl(List<Acl> acl) {
@@ -267,11 +213,6 @@ public class DatasetInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder defaultTableLifetime(Long defaultTableLifetime) {
-      return setDefaultTableLifetime(defaultTableLifetime);
-    }
 
     @Override
     public Builder setDefaultTableLifetime(Long defaultTableLifetime) {
@@ -280,11 +221,6 @@ public class DatasetInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
 
     @Override
     public Builder setDescription(String description) {
@@ -298,11 +234,6 @@ public class DatasetInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder friendlyName(String friendlyName) {
-      return setFriendlyName(friendlyName);
-    }
 
     @Override
     public Builder setFriendlyName(String friendlyName) {
@@ -322,11 +253,6 @@ public class DatasetInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder location(String location) {
-      return setLocation(location);
-    }
 
     @Override
     public Builder setLocation(String location) {
@@ -360,13 +286,6 @@ public class DatasetInfo implements Serializable {
     selfLink = builder.selfLink;
   }
 
-  /**
-   * Returns the dataset identity.
-   */
-  @Deprecated
-  public DatasetId datasetId() {
-    return getDatasetId();
-  }
 
   /**
    * Returns the dataset identity.
@@ -375,15 +294,6 @@ public class DatasetInfo implements Serializable {
     return datasetId;
   }
 
-  /**
-   * Returns the dataset's access control configuration.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/access-control">Access Control</a>
-   */
-  @Deprecated
-  public List<Acl> acl() {
-    return getAcl();
-  }
 
   /**
    * Returns the dataset's access control configuration.
@@ -394,13 +304,6 @@ public class DatasetInfo implements Serializable {
     return acl;
   }
 
-  /**
-   * Returns the time when this dataset was created, in milliseconds since the epoch.
-   */
-  @Deprecated
-  public Long creationTime() {
-    return getCreationTime();
-  }
 
   /**
    * Returns the time when this dataset was created, in milliseconds since the epoch.
@@ -409,19 +312,6 @@ public class DatasetInfo implements Serializable {
     return creationTime;
   }
 
-  /**
-   * Returns the default lifetime of all tables in the dataset, in milliseconds. Once this property
-   * is set, all newly-created tables in the dataset will have an expirationTime property set to the
-   * creation time plus the value in this property, and changing the value will only affect new
-   * tables, not existing ones. When the expirationTime for a given table is reached, that table
-   * will be deleted automatically. If a table's expirationTime is modified or removed before the
-   * table expires, or if you provide an explicit expirationTime when creating a table, that value
-   * takes precedence over the default expiration time indicated by this property.
-   */
-  @Deprecated
-  public Long defaultTableLifetime() {
-    return getDefaultTableLifetime();
-  }
 
   /**
    * Returns the default lifetime of all tables in the dataset, in milliseconds. Once this property
@@ -436,13 +326,6 @@ public class DatasetInfo implements Serializable {
     return defaultTableLifetime;
   }
 
-  /**
-   * Returns a user-friendly description for the dataset.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
-  }
 
   /**
    * Returns a user-friendly description for the dataset.
@@ -451,13 +334,6 @@ public class DatasetInfo implements Serializable {
     return description;
   }
 
-  /**
-   * Returns the hash of the dataset resource.
-   */
-  @Deprecated
-  public String etag() {
-    return getEtag();
-  }
 
   /**
    * Returns the hash of the dataset resource.
@@ -466,13 +342,6 @@ public class DatasetInfo implements Serializable {
     return etag;
   }
 
-  /**
-   * Returns a user-friendly name for the dataset.
-   */
-  @Deprecated
-  public String friendlyName() {
-    return getFriendlyName();
-  }
 
   /**
    * Returns a user-friendly name for the dataset.
@@ -481,13 +350,6 @@ public class DatasetInfo implements Serializable {
     return friendlyName;
   }
 
-  /**
-   * Returns the service-generated id for the dataset.
-   */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
-  }
 
   /**
    * Returns the service-generated id for the dataset.
@@ -496,14 +358,6 @@ public class DatasetInfo implements Serializable {
     return generatedId;
   }
 
-  /**
-   * Returns the time when this dataset or any of its tables was last modified, in milliseconds
-   * since the epoch.
-   */
-  @Deprecated
-  public Long lastModified() {
-    return getLastModified();
-  }
 
   /**
    * Returns the time when this dataset or any of its tables was last modified, in milliseconds
@@ -513,16 +367,6 @@ public class DatasetInfo implements Serializable {
     return lastModified;
   }
 
-  /**
-   * Returns the geographic location where the dataset should reside.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
-   *     Dataset Location</a>
-   */
-  @Deprecated
-  public String location() {
-    return getLocation();
-  }
 
   /**
    * Returns the geographic location where the dataset should reside.
@@ -534,14 +378,6 @@ public class DatasetInfo implements Serializable {
     return location;
   }
 
-  /**
-   * Returns an URL that can be used to access the resource again. The returned URL can be used for
-   * get or update requests.
-   */
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
-  }
 
   /**
    * Returns an URL that can be used to access the resource again. The returned URL can be used for
@@ -633,13 +469,6 @@ public class DatasetInfo implements Serializable {
     return datasetPb;
   }
 
-  /**
-   * Returns a builder for a {@code DatasetInfo} object given it's identity.
-   */
-  @Deprecated
-  public static Builder builder(DatasetId datasetId) {
-    return newBuilder(datasetId);
-  }
 
   /**
    * Returns a builder for a {@code DatasetInfo} object given it's identity.
@@ -648,13 +477,6 @@ public class DatasetInfo implements Serializable {
     return new BuilderImpl().setDatasetId(datasetId);
   }
 
-  /**
-   * Returns a builder for a {@code DatasetInfo} object given it's user-defined id.
-   */
-  @Deprecated
-  public static Builder builder(String datasetId) {
-    return newBuilder(datasetId);
-  }
 
   /**
    * Returns a builder for a {@code DatasetInfo} object given it's user-defined id.
@@ -663,13 +485,6 @@ public class DatasetInfo implements Serializable {
     return newBuilder(DatasetId.of(datasetId));
   }
 
-  /**
-   * Returns a builder for the DatasetInfo object given it's user-defined project and dataset ids.
-   */
-  @Deprecated
-  public static Builder builder(String projectId, String datasetId) {
-    return newBuilder(projectId, datasetId);
-  }
 
   /**
    * Returns a builder for the DatasetInfo object given it's user-defined project and dataset ids.

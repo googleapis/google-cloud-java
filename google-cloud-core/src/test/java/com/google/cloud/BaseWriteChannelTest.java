@@ -40,15 +40,15 @@ public class BaseWriteChannelTest {
 
   private abstract static class CustomService implements Service<CustomServiceOptions> {}
   private abstract static class CustomServiceOptions
-      extends ServiceOptions<CustomService, Object, CustomServiceOptions> {
+      extends ServiceOptions<CustomService, CustomServiceOptions> {
 
     private static final long serialVersionUID = 3302358029307467197L;
 
     protected CustomServiceOptions(
         Class<? extends ServiceFactory<CustomService, CustomServiceOptions>> serviceFactoryClass,
-        Class<? extends ServiceRpcFactory<Object, CustomServiceOptions>> rpcFactoryClass,
-        Builder<CustomService, Object, CustomServiceOptions, ?> builder) {
-      super(serviceFactoryClass, rpcFactoryClass, builder);
+        Class<? extends ServiceRpcFactory<CustomServiceOptions>> rpcFactoryClass,
+        Builder<CustomService, CustomServiceOptions, ?> builder) {
+      super(serviceFactoryClass, rpcFactoryClass, builder, null);
     }
   }
 
@@ -93,17 +93,6 @@ public class BaseWriteChannelTest {
     assertEquals(DEFAULT_CHUNK_SIZE, channel.getChunkSize());
   }
 
-  @Test
-  public void testConstructorDeprecated() {
-    assertEquals(null, channel.options());
-    assertEquals(ENTITY, channel.entity());
-    assertEquals(0, channel.position());
-    assertEquals(UPLOAD_ID, channel.uploadId());
-    assertEquals(0, channel.limit());
-    assertTrue(channel.isOpen());
-    assertArrayEquals(new byte[0], channel.buffer());
-    assertEquals(DEFAULT_CHUNK_SIZE, channel.chunkSize());
-  }
 
   @Test
   public void testClose() throws IOException {

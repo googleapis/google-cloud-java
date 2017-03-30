@@ -52,17 +52,6 @@ public class ZoneTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    assertEquals(REGION_ID, ZONE.region());
-    assertEquals(GENERATED_ID, ZONE.generatedId());
-    assertEquals(CREATION_TIMESTAMP, ZONE.creationTimestamp());
-    assertEquals(DESCRIPTION, ZONE.description());
-    assertEquals(STATUS, ZONE.status());
-    assertEquals(REGION_ID, ZONE.region());
-    assertEquals(DEPRECATION_STATUS, ZONE.deprecationStatus());
-  }
-
-  @Test
   public void testToAndFromPb() {
     com.google.api.services.compute.model.Zone zonePb = ZONE.toPb();
     assertEquals(REGION_ID.getSelfLink(), zonePb.getRegion());

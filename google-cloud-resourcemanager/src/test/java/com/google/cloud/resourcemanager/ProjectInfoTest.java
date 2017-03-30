@@ -48,14 +48,6 @@ public class ProjectInfoTest {
       ProjectInfo.newBuilder(PROJECT_ID).build();
   private static final ProjectInfo UNNAMED_PROJECT_FROM_LIST =
       PARTIAL_PROJECT_INFO.toBuilder().setName("Unnamed").build();
-  private static final ProjectInfo DEPRECATED_PROJECT_INFO = ProjectInfo.builder(PROJECT_ID)
-      .name(NAME)
-      .labels(LABELS)
-      .setProjectNumber(PROJECT_NUMBER)
-      .setCreateTimeMillis(CREATE_TIME_MILLIS)
-      .setState(STATE)
-      .setParent(PARENT)
-      .build();
 
   @Test
   public void testBuilder() {
@@ -72,23 +64,6 @@ public class ProjectInfoTest {
     assertEquals(null, PARTIAL_PROJECT_INFO.getProjectNumber());
     assertEquals(null, PARTIAL_PROJECT_INFO.getCreateTimeMillis());
     assertEquals(null, PARTIAL_PROJECT_INFO.getState());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(PROJECT_ID, DEPRECATED_PROJECT_INFO.projectId());
-    assertEquals(NAME, DEPRECATED_PROJECT_INFO.name());
-    assertEquals(LABELS, DEPRECATED_PROJECT_INFO.labels());
-    assertEquals(PROJECT_NUMBER, DEPRECATED_PROJECT_INFO.projectNumber());
-    assertEquals(CREATE_TIME_MILLIS, DEPRECATED_PROJECT_INFO.createTimeMillis());
-    assertEquals(STATE, DEPRECATED_PROJECT_INFO.state());
-
-    assertEquals(PROJECT_ID, PARTIAL_PROJECT_INFO.projectId());
-    assertEquals(null, PARTIAL_PROJECT_INFO.name());
-    assertTrue(PARTIAL_PROJECT_INFO.labels().isEmpty());
-    assertEquals(null, PARTIAL_PROJECT_INFO.projectNumber());
-    assertEquals(null, PARTIAL_PROJECT_INFO.createTimeMillis());
-    assertEquals(null, PARTIAL_PROJECT_INFO.state());
   }
 
   @Test

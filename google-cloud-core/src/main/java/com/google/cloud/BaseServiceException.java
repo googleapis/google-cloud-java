@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.grpc.ApiException;
 import com.google.common.base.MoreObjects;
 
@@ -62,13 +63,6 @@ public class BaseServiceException extends RuntimeException {
       this.rejected = rejected;
     }
 
-    /**
-     * Returns the code associated with this exception.
-     */
-    @Deprecated
-    public Integer code() {
-      return getCode();
-    }
 
     /**
      * Returns the code associated with this exception.
@@ -77,15 +71,6 @@ public class BaseServiceException extends RuntimeException {
       return code;
     }
 
-    /**
-     * Returns true if the error indicates that the API call was certainly not accepted by the
-     * server. For instance, if the server returns a rate limit exceeded error, it certainly did not
-     * process the request and this method will return {@code true}.
-     */
-    @Deprecated
-    public boolean rejected() {
-      return isRejected();
-    }
 
     /**
      * Returns true if the error indicates that the API call was certainly not accepted by the
@@ -96,13 +81,6 @@ public class BaseServiceException extends RuntimeException {
       return rejected;
     }
 
-    /**
-     * Returns the reason that caused the exception.
-     */
-    @Deprecated
-    public String reason() {
-      return getReason();
-    }
 
     /**
      * Returns the reason that caused the exception.
@@ -140,20 +118,27 @@ public class BaseServiceException extends RuntimeException {
     String location = null;
     String debugInfo = null;
     Boolean retryable = null;
-    if (exception instanceof GoogleJsonResponseException) {
-      GoogleJsonError jsonError = ((GoogleJsonResponseException) exception).getDetails();
-      if (jsonError != null) {
-        Error error = new Error(jsonError.getCode(), reason(jsonError));
-        code = error.code;
-        reason = error.reason;
-        retryable = isRetryable(idempotent, error);
-        if (reason != null) {
-          GoogleJsonError.ErrorInfo errorInfo = jsonError.getErrors().get(0);
-          location = errorInfo.getLocation();
-          debugInfo = (String) errorInfo.get("debugInfo");
+    if (exception instanceof HttpResponseException) {
+      if (exception instanceof GoogleJsonResponseException) {
+        GoogleJsonError jsonError = ((GoogleJsonResponseException) exception).getDetails();
+        if (jsonError != null) {
+          Error error = new Error(jsonError.getCode(), reason(jsonError));
+          code = error.code;
+          reason = error.reason;
+          retryable = isRetryable(idempotent, error);
+          if (reason != null) {
+            GoogleJsonError.ErrorInfo errorInfo = jsonError.getErrors().get(0);
+            location = errorInfo.getLocation();
+            debugInfo = (String) errorInfo.get("debugInfo");
+          }
+        } else {
+          code = ((GoogleJsonResponseException) exception).getStatusCode();
         }
       } else {
-        code = ((GoogleJsonResponseException) exception).getStatusCode();
+        // In cases where an exception is an instance of HttpResponseException but not
+        // an instance of GoogleJsonResponseException, check the status code to determine whether it's retryable
+        code = ((HttpResponseException) exception).getStatusCode();
+        retryable = isRetryable(idempotent, new Error(code, null));
       }
     }
     this.retryable = MoreObjects.firstNonNull(retryable, isRetryable(idempotent, exception));
@@ -206,10 +191,6 @@ public class BaseServiceException extends RuntimeException {
     this.debugInfo = null;
   }
 
-  @Deprecated
-  protected Set<Error> retryableErrors() {
-    return getRetryableErrors();
-  }
 
   protected Set<Error> getRetryableErrors() {
     return Collections.emptySet();
@@ -226,13 +207,6 @@ public class BaseServiceException extends RuntimeException {
     return idempotent && exceptionIsRetryable;
   }
 
-  /**
-   * Returns the code associated with this exception.
-   */
-  @Deprecated
-  public int code() {
-    return getCode();
-  }
 
   /**
    * Returns the code associated with this exception.
@@ -241,13 +215,6 @@ public class BaseServiceException extends RuntimeException {
     return code;
   }
 
-  /**
-   * Returns the reason that caused the exception.
-   */
-  @Deprecated
-  public String reason() {
-    return getReason();
-  }
 
   /**
    * Returns the reason that caused the exception.
@@ -256,13 +223,6 @@ public class BaseServiceException extends RuntimeException {
     return reason;
   }
 
-  /**
-   * Returns {@code true} when it is safe to retry the operation that caused this exception.
-   */
-  @Deprecated
-  public boolean retryable() {
-    return isRetryable();
-  }
 
   /**
    * Returns {@code true} when it is safe to retry the operation that caused this exception.
@@ -271,13 +231,6 @@ public class BaseServiceException extends RuntimeException {
     return retryable;
   }
 
-  /**
-   * Returns {@code true} when the operation that caused this exception had no side effects.
-   */
-  @Deprecated
-  public boolean idempotent() {
-    return isIdempotent();
-  }
 
   /**
    * Returns {@code true} when the operation that caused this exception had no side effects.
@@ -286,14 +239,6 @@ public class BaseServiceException extends RuntimeException {
     return idempotent;
   }
 
-  /**
-   * Returns the service location where the error causing the exception occurred. Returns {@code
-   * null} if not available.
-   */
-  @Deprecated
-  public String location() {
-    return getLocation();
-  }
 
   /**
    * Returns the service location where the error causing the exception occurred. Returns {@code
@@ -303,10 +248,6 @@ public class BaseServiceException extends RuntimeException {
     return location;
   }
 
-  @Deprecated
-  protected String debugInfo() {
-    return getDebugInfo();
-  }
 
   protected String getDebugInfo() {
     return debugInfo;
@@ -354,12 +295,9 @@ public class BaseServiceException extends RuntimeException {
     return exception.getMessage();
   }
 
-  protected static void translateAndPropagateIfPossible(RetryHelper.RetryHelperException ex) {
+  protected static void translate(RetryHelper.RetryHelperException ex) {
     if (ex.getCause() instanceof BaseServiceException) {
       throw (BaseServiceException) ex.getCause();
-    }
-    if (ex instanceof RetryHelper.RetryInterruptedException) {
-      RetryHelper.RetryInterruptedException.propagate();
     }
   }
 }

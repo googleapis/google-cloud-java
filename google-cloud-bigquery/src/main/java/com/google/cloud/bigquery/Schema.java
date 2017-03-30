@@ -71,13 +71,6 @@ public final class Schema implements Serializable {
       return this;
     }
 
-    /**
-     * Sets table's schema fields.
-     */
-    @Deprecated
-    public Builder fields(Iterable<Field> fields) {
-      return setFields(fields);
-    }
 
     /**
      * Sets table's schema fields.
@@ -87,13 +80,6 @@ public final class Schema implements Serializable {
       return this;
     }
 
-    /**
-     * Sets table's schema fields.
-     */
-    @Deprecated
-    public Builder fields(Field... fields) {
-      return setFields(fields);
-    }
 
     /**
      * Sets table's schema fields.
@@ -116,13 +102,6 @@ public final class Schema implements Serializable {
         : ImmutableList.<Field>of();
   }
 
-  /**
-   * Returns the fields in the current table schema.
-   */
-  @Deprecated
-  public List<Field> fields() {
-    return getFields();
-  }
 
   /**
    * Returns the fields in the current table schema.
@@ -167,13 +146,6 @@ public final class Schema implements Serializable {
     return tableSchemaPb;
   }
 
-  /**
-   * Creates a builder for a {@code Schema} object.
-   */
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   /**
    * Creates a builder for a {@code Schema} object.

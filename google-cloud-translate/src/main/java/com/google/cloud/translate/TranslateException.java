@@ -18,7 +18,6 @@ package com.google.cloud.translate;
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.RetryHelper.RetryInterruptedException;
 import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
@@ -54,10 +53,9 @@ public class TranslateException extends BaseServiceException {
    * will always throw an exception.
    *
    * @throws TranslateException when {@code ex} was caused by a {@code TranslateException}
-   * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
   static BaseServiceException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndPropagateIfPossible(ex);
+    BaseServiceException.translate(ex);
     throw new TranslateException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }

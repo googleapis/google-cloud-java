@@ -16,13 +16,12 @@
 
 package com.google.cloud;
 
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutures;
 import com.google.common.base.Throwables;
-import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.Uninterruptibles;
-
 import java.io.Serializable;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 /**
  * Base implementation for asynchronously consuming Google Cloud paginated results.
@@ -41,10 +40,8 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
    * @param <T> the value type that the page holds
    */
   public interface NextPageFetcher<T> extends Serializable {
-    @Deprecated
-    Future<AsyncPage<T>> nextPage();
 
-    Future<AsyncPage<T>> getNextPage();
+    ApiFuture<AsyncPage<T>> getNextPage();
   }
 
   private static class SyncNextPageFetcher<T> implements PageImpl.NextPageFetcher<T> {
@@ -55,11 +52,6 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
 
     private SyncNextPageFetcher(NextPageFetcher<T> asyncPageFetcher) {
       this.asyncPageFetcher = asyncPageFetcher;
-    }
-
-    @Override
-    public Page<T> nextPage() {
-      return getNextPage();
     }
 
     @Override
@@ -81,16 +73,11 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
     this.asyncPageFetcher = asyncPageFetcher;
   }
 
-  @Override
-  @Deprecated
-  public Future<AsyncPage<T>> nextPageAsync() {
-    return getNextPageAsync();
-  }
 
   @Override
-  public Future<AsyncPage<T>> getNextPageAsync() {
+  public ApiFuture<AsyncPage<T>> getNextPageAsync() {
     if (getNextPageCursor() == null || asyncPageFetcher == null) {
-      return Futures.immediateCheckedFuture(null);
+      return ApiFutures.immediateFuture(null);
     }
     return asyncPageFetcher.getNextPage();
   }

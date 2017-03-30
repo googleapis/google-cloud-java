@@ -109,13 +109,6 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
       return self();
     }
 
-    /**
-     * Sets the key for the entity.
-     */
-    @Deprecated
-    public B key(K key) {
-      return setKey(key);
-    }
 
     /**
      * Sets the key for the entity.
@@ -502,13 +495,6 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     return key != null;
   }
 
-  /**
-   * Returns the associated key or null if it does not have one.
-   */
-  @Deprecated
-  public K key() {
-    return getKey();
-  }
 
   /**
    * Returns the associated key or null if it does not have one.
@@ -658,13 +644,6 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     return ((Value<Blob>) getValue(name)).get();
   }
 
-  /**
-   * Returns the properties name.
-   */
-  @Deprecated
-  public Set<String> names() {
-    return getNames();
-  }
 
   /**
    * Returns the properties name.

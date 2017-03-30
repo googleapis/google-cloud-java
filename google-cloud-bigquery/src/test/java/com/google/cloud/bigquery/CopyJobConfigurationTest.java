@@ -47,16 +47,6 @@ public class CopyJobConfigurationTest {
           .setCreateDisposition(CREATE_DISPOSITION)
           .setWriteDisposition(WRITE_DISPOSITION)
           .build();
-  private static final CopyJobConfiguration DEPRECATED_COPY_JOB_CONFIGURATION =
-      CopyJobConfiguration.builder(DESTINATION_TABLE, SOURCE_TABLE)
-          .createDisposition(CREATE_DISPOSITION)
-          .writeDisposition(WRITE_DISPOSITION)
-          .build();
-  private static final CopyJobConfiguration DEPRECATED_COPY_JOB_CONFIGURATION_MULTIPLE_TABLES =
-      CopyJobConfiguration.builder(DESTINATION_TABLE, SOURCE_TABLES)
-          .createDisposition(CREATE_DISPOSITION)
-          .writeDisposition(WRITE_DISPOSITION)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -100,21 +90,6 @@ public class CopyJobConfigurationTest {
     assertEquals(WRITE_DISPOSITION, COPY_JOB_CONFIGURATION.getWriteDisposition());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(DESTINATION_TABLE,
-        DEPRECATED_COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.destinationTable());
-    assertEquals(SOURCE_TABLES,
-        DEPRECATED_COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.sourceTables());
-    assertEquals(CREATE_DISPOSITION,
-        DEPRECATED_COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.createDisposition());
-    assertEquals(WRITE_DISPOSITION,
-        DEPRECATED_COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.writeDisposition());
-    assertEquals(DESTINATION_TABLE, DEPRECATED_COPY_JOB_CONFIGURATION.destinationTable());
-    assertEquals(ImmutableList.of(SOURCE_TABLE), DEPRECATED_COPY_JOB_CONFIGURATION.sourceTables());
-    assertEquals(CREATE_DISPOSITION, DEPRECATED_COPY_JOB_CONFIGURATION.createDisposition());
-    assertEquals(WRITE_DISPOSITION, DEPRECATED_COPY_JOB_CONFIGURATION.writeDisposition());
-  }
 
   @Test
   public void testToPbAndFromPb() {
@@ -141,6 +116,12 @@ public class CopyJobConfigurationTest {
     for (TableId sourceTable : configuration.getSourceTables()) {
       assertEquals("p", sourceTable.getProject());
     }
+  }
+
+  @Test
+  public void testGetType() {
+    assertEquals(JobConfiguration.Type.COPY, COPY_JOB_CONFIGURATION.getType());
+    assertEquals(JobConfiguration.Type.COPY, COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.getType());
   }
 
   private void compareCopyJobConfiguration(CopyJobConfiguration expected,

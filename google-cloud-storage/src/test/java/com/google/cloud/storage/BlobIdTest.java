@@ -32,13 +32,6 @@ public class BlobIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    BlobId blobId = BlobId.of("b", "n");
-    assertEquals("b", blobId.bucket());
-    assertEquals("n", blobId.name());
-  }
-
-  @Test
   public void testEquals() {
     compareBlobIds(BLOB, BlobId.of("b", "n"));
   }

@@ -18,7 +18,7 @@ package com.google.cloud.translate;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;

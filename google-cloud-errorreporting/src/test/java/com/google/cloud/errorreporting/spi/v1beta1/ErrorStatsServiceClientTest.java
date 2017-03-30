@@ -1,5 +1,5 @@
 /*
- * Copyright 2016, Google Inc. All rights reserved.
+ * Copyright 2017, Google Inc. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,7 +119,7 @@ public class ErrorStatsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listGroupStatsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockErrorStatsService.addException(exception);
 
     try {
@@ -129,7 +129,7 @@ public class ErrorStatsServiceClientTest {
       client.listGroupStats(projectName, timeRange);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -166,7 +166,7 @@ public class ErrorStatsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listEventsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockErrorStatsService.addException(exception);
 
     try {
@@ -176,7 +176,7 @@ public class ErrorStatsServiceClientTest {
       client.listEvents(projectName, groupId);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -201,7 +201,7 @@ public class ErrorStatsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteEventsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockErrorStatsService.addException(exception);
 
     try {
@@ -210,7 +210,7 @@ public class ErrorStatsServiceClientTest {
       client.deleteEvents(projectName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }

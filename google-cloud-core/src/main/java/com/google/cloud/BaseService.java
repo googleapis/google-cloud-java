@@ -23,7 +23,7 @@ import com.google.cloud.ExceptionHandler.Interceptor;
  *
  * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
  */
-public abstract class BaseService<OptionsT extends ServiceOptions<?, ?, OptionsT>>
+public abstract class BaseService<OptionsT extends ServiceOptions<?, OptionsT>>
     implements Service<OptionsT> {
 
   public static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
@@ -55,11 +55,6 @@ public abstract class BaseService<OptionsT extends ServiceOptions<?, ?, OptionsT
     this.options = options;
   }
 
-  @Override
-  @Deprecated
-  public OptionsT options() {
-    return options;
-  }
 
   @Override
   public OptionsT getOptions() {

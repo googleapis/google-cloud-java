@@ -19,12 +19,14 @@ package com.google.cloud.translate;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.auth.Credentials;
-import com.google.cloud.HttpServiceOptions;
-import com.google.cloud.NoCredentials;
+import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.spi.DefaultTranslateRpc;
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.HttpTranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
@@ -34,9 +36,10 @@ import java.util.Objects;
 import java.util.Set;
 
 public class TranslateOptions extends
-    HttpServiceOptions<Translate, TranslateRpc, TranslateOptions> {
+    ServiceOptions<Translate, TranslateOptions> {
 
   private static final long serialVersionUID = -572597134540398216L;
+  private static final String API_SHORT_NAME = "Translate";
   private static final String DEFAULT_HOST = "https://translation.googleapis.com";
   private static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
   private static final Set<String> SCOPES =
@@ -60,13 +63,13 @@ public class TranslateOptions extends
     private static final TranslateRpcFactory INSTANCE = new DefaultTranslateRpcFactory();
 
     @Override
-    public TranslateRpc create(TranslateOptions options) {
-      return new DefaultTranslateRpc(options);
+    public ServiceRpc create(TranslateOptions options) {
+      return new HttpTranslateRpc(options);
     }
   }
 
   public static class Builder extends
-      HttpServiceOptions.Builder<Translate, TranslateRpc, TranslateOptions, Builder> {
+      ServiceOptions.Builder<Translate, TranslateOptions, Builder> {
 
     private String apiKey;
     private String targetLanguage;
@@ -78,15 +81,14 @@ public class TranslateOptions extends
       this.apiKey = options.apiKey;
     }
 
-    /**
-     * Sets project id. Setting a project id has no impact on the {@link Translate} service.
-     *
-     * @return the builder
-     */
+
     @Override
-    @Deprecated
-    public Builder projectId(String projectId) {
-      return setProjectId(projectId);
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
     /**
@@ -100,15 +102,6 @@ public class TranslateOptions extends
       return self();
     }
 
-    /**
-     * Sets the API key used to issue requets. If not set, the API key is looked for in the
-     * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key see
-     * <a href="https://cloud.google.com/translate/v2/quickstart">Translate quickstart</a>.
-     */
-    @Deprecated
-    public Builder apiKey(String apiKey) {
-      return setApiKey(apiKey);
-    }
 
     /**
      * Sets the API key used to issue requets. If not set, the API key is looked for in the
@@ -120,19 +113,6 @@ public class TranslateOptions extends
       return this;
     }
 
-    /**
-     * Sets the code for the default target language. If not set, english ({@code en}) is used.
-     * {@link Translate#translate(List, TranslateOption...)} and
-     * {@link Translate#translate(String, TranslateOption...)} calls will use this
-     * value unless a {@link TranslateOption#targetLanguage(String)} option is explicitly
-     * provided.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public Builder targetLanguage(String targetLanguage) {
-      return setTargetLanguage(targetLanguage);
-    }
 
     /**
      * Sets the code for the default target language. If not set, english ({@code en}) is used.
@@ -155,19 +135,32 @@ public class TranslateOptions extends
   }
 
   private TranslateOptions(Builder builder) {
-    super(TranslateFactory.class, TranslateRpcFactory.class, builder);
+    super(TranslateFactory.class, TranslateRpcFactory.class, builder, new TranslateDefaults());
     this.apiKey = builder.apiKey != null ? builder.apiKey : getDefaultApiKey();
     this.targetLanguage = firstNonNull(builder.targetLanguage, Locale.ENGLISH.getLanguage());
   }
 
-  @Override
-  protected TranslateFactory getDefaultServiceFactory() {
-    return DefaultTranslateFactory.INSTANCE;
+  private static class TranslateDefaults implements
+      ServiceDefaults<Translate, TranslateOptions> {
+
+    @Override
+    public TranslateFactory getDefaultServiceFactory() {
+      return DefaultTranslateFactory.INSTANCE;
+    }
+
+    @Override
+    public TranslateRpcFactory getDefaultRpcFactory() {
+      return DefaultTranslateRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
-  @Override
-  protected TranslateRpcFactory getDefaultRpcFactory() {
-    return DefaultTranslateRpcFactory.INSTANCE;
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
   }
 
   @Override
@@ -180,27 +173,20 @@ public class TranslateOptions extends
     return SCOPES;
   }
 
+  protected TranslateRpc getTranslateRpcV2() {
+    return (TranslateRpc) getRpc();
+  }
+
   @Override
   protected String getDefaultHost() {
     return DEFAULT_HOST;
   }
 
-  @Deprecated
-  protected String defaultApiKey() {
-    return getDefaultApiKey();
-  }
 
   protected String getDefaultApiKey() {
     return System.getProperty(API_KEY_ENV_NAME, System.getenv(API_KEY_ENV_NAME));
   }
 
-  /**
-   * Returns the API key, to be used used to send requests.
-   */
-  @Deprecated
-  public String apiKey() {
-    return getApiKey();
-  }
 
   /**
    * Returns the API key, to be used used to send requests.
@@ -209,13 +195,6 @@ public class TranslateOptions extends
     return apiKey;
   }
 
-  /**
-   * Returns the code for the default target language.
-   */
-  @Deprecated
-  public String targetLanguage() {
-    return getTargetLanguage();
-  }
 
   /**
    * Returns the code for the default target language.
@@ -246,13 +225,6 @@ public class TranslateOptions extends
         && Objects.equals(targetLanguage, options.targetLanguage);
   }
 
-  /**
-   * Returns a default {@code TranslateOptions} instance.
-   */
-  @Deprecated
-  public static TranslateOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns a default {@code TranslateOptions} instance.
@@ -261,13 +233,6 @@ public class TranslateOptions extends
     return newBuilder().build();
   }
 
-  /**
-   * Returns a builder for {@code TranslateOptions} objects.
-   */
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   /**
    * Returns a builder for {@code TranslateOptions} objects.

@@ -36,7 +36,7 @@ public abstract class JobConfiguration implements Serializable {
   /**
    * Type of a BigQuery Job.
    */
-  enum Type {
+  public enum Type {
     /**
      * A Copy Job copies an existing table to another new or existing table. Instances of
      * {@code JobConfiguration} for this type are implemented by {@link CopyJobConfiguration}.
@@ -93,13 +93,6 @@ public abstract class JobConfiguration implements Serializable {
     this.type = builder.type;
   }
 
-  /**
-   * Returns the type of the job configuration.
-   */
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
 
   /**
    * Returns the type of the job configuration.

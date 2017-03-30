@@ -44,6 +44,7 @@ import com.google.cloud.storage.Storage.BlobField;
 import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.StorageBatch;
 import com.google.cloud.storage.StorageBatchResult;
+import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
@@ -784,6 +785,29 @@ public class ITStorageTest {
     assertEquals(targetBlobName, copyWriter.getResult().getName());
     assertEquals(CONTENT_TYPE, copyWriter.getResult().getContentType());
     assertEquals(metadata, copyWriter.getResult().getMetadata());
+    assertTrue(copyWriter.isDone());
+    assertTrue(remoteSourceBlob.delete());
+    assertTrue(storage.delete(BUCKET, targetBlobName));
+  }
+
+  @Test
+  public void testCopyBlobUpdateStorageClass() {
+    String sourceBlobName = "test-copy-blob-update-storage-class-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    BlobInfo sourceInfo =
+        BlobInfo.newBuilder(source).setStorageClass(StorageClass.STANDARD).build();
+    Blob remoteSourceBlob = storage.create(sourceInfo, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteSourceBlob);
+    assertEquals(StorageClass.STANDARD, remoteSourceBlob.getStorageClass());
+
+    String targetBlobName = "test-copy-blob-update-storage-class-target";
+    BlobInfo targetInfo = BlobInfo
+        .newBuilder(BUCKET, targetBlobName).setStorageClass(StorageClass.COLDLINE).build();
+    Storage.CopyRequest req = Storage.CopyRequest.of(source, targetInfo);
+    CopyWriter copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.getResult().getBucket());
+    assertEquals(targetBlobName, copyWriter.getResult().getName());
+    assertEquals(StorageClass.COLDLINE, copyWriter.getResult().getStorageClass());
     assertTrue(copyWriter.isDone());
     assertTrue(remoteSourceBlob.delete());
     assertTrue(storage.delete(BUCKET, targetBlobName));

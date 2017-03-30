@@ -19,7 +19,7 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
-import com.google.cloud.spanner.spi.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.io.Resources;
 import com.google.protobuf.util.JsonFormat;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryMode;
@@ -162,7 +162,7 @@ public class ReadFormatTestRunner extends ParentRunner<JSONObject> {
             break;
           case BYTES:
             assertThat(actualRow.getBytes(i))
-                .isEqualTo(ByteArrays.fromBase64(expectedRow.getString(i)));
+                .isEqualTo(ByteArray.fromBase64(expectedRow.getString(i)));
             break;
           case ARRAY:
             Type elementType = actualRow.getColumnType(i).getArrayElementType();
@@ -218,7 +218,7 @@ public class ReadFormatTestRunner extends ParentRunner<JSONObject> {
             assertThat((Double) actualValue).isEqualTo(expectedList.getDouble(i));
           } else if (actualValue instanceof ByteArray) {
             assertThat((ByteArray) actualValue)
-                .isEqualTo(ByteArrays.fromBase64(expectedList.getString(i)));
+                .isEqualTo(ByteArray.fromBase64(expectedList.getString(i)));
           } else if (actualValue instanceof Struct) {
             Struct actualStruct = (Struct) actualValue;
             JSONArray expectedFields = expectedList.getJSONArray(i);

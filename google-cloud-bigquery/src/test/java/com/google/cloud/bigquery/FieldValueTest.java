@@ -80,37 +80,6 @@ public class FieldValueTest {
     assertEquals(FieldValue.fromPb(TIMESTAMP_FIELD), value.getRepeatedValue().get(1));
   }
 
-  @Test
-  public void testFromPbDeprecated() {
-    FieldValue value = FieldValue.fromPb(BOOLEAN_FIELD);
-    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
-    assertFalse(value.booleanValue());
-    value = FieldValue.fromPb(INTEGER_FIELD);
-    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
-    assertEquals(1, value.longValue());
-    value = FieldValue.fromPb(FLOAT_FIELD);
-    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
-    assertEquals(1.5, value.doubleValue(), 0);
-    value = FieldValue.fromPb(STRING_FIELD);
-    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
-    assertEquals("string", value.stringValue());
-    value = FieldValue.fromPb(TIMESTAMP_FIELD);
-    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
-    assertEquals(42000000, value.timestampValue());
-    value = FieldValue.fromPb(BYTES_FIELD);
-    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
-    assertArrayEquals(BYTES, value.bytesValue());
-    value = FieldValue.fromPb(NULL_FIELD);
-    assertNull(value.value());
-    value = FieldValue.fromPb(REPEATED_FIELD);
-    assertEquals(FieldValue.Attribute.REPEATED, value.attribute());
-    assertEquals(FieldValue.fromPb(INTEGER_FIELD), value.repeatedValue().get(0));
-    assertEquals(FieldValue.fromPb(INTEGER_FIELD), value.repeatedValue().get(1));
-    value = FieldValue.fromPb(RECORD_FIELD);
-    assertEquals(FieldValue.Attribute.RECORD, value.attribute());
-    assertEquals(FieldValue.fromPb(FLOAT_FIELD), value.repeatedValue().get(0));
-    assertEquals(FieldValue.fromPb(TIMESTAMP_FIELD), value.repeatedValue().get(1));
-  }
 
   @Test
   public void testEquals() {

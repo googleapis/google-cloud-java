@@ -42,11 +42,6 @@ public class LatLngTest {
     assertEquals(-122.084124, gp1.getLongitude(), 0);
   }
 
-  @Test
-  public void testLatLngDeprecated() {
-    assertEquals(37.422035, gp1.latitude(), 0);
-    assertEquals(-122.084124, gp1.longitude(), 0);
-  }
 
   @Test
   public void testEquals() {

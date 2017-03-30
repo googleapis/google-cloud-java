@@ -16,18 +16,21 @@
 
 package com.google.cloud.translate.testing;
 
-import com.google.cloud.RetryParams;
+import com.google.cloud.HttpTransportOptions;
+import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.translate.TranslateOptions;
+import org.joda.time.Duration;
 
 /**
  * Utility to create a remote translate configuration for testing. Translate options can be obtained
  * via the {@link #getOptions()} ()} method. Returned options have custom
- * {@link TranslateOptions#getRetryParams()}: {@link RetryParams#getRetryMaxAttempts()} is
- * {@code 10}, {@link RetryParams#getRetryMinAttempts()} is {@code 6},
- * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
- * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
- * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
- * {@link TranslateOptions#getConnectTimeout()} and {@link TranslateOptions#getReadTimeout()} are
+ * {@link TranslateOptions#getRetrySettings()}: {@link RetrySettings#getMaxAttempts()} is
+ * {@code 10},
+ * {@link RetrySettings#getMaxRetryDelay()} is {@code 30000},
+ * {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
+ * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
+ * {@link HttpTransportOptions#getConnectTimeout()} and
+ * {@link HttpTransportOptions#getReadTimeout()} are both
  * both set to {@code 60000}.
  */
 public class RemoteTranslateHelper {
@@ -38,13 +41,6 @@ public class RemoteTranslateHelper {
     this.options = options;
   }
 
-  /**
-   * Returns a {@link TranslateOptions} object to be used for testing.
-   */
-  @Deprecated
-  public TranslateOptions options() {
-    return getOptions();
-  }
 
   /**
    * Returns a {@link TranslateOptions} object to be used for testing.
@@ -59,11 +55,13 @@ public class RemoteTranslateHelper {
    * @param apiKey API key used to issue requests to Google Translate.
    */
   public static RemoteTranslateHelper create(String apiKey) {
+    HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+        .build();
     TranslateOptions translateOptions = TranslateOptions.newBuilder()
         .setApiKey(apiKey)
-        .setRetryParams(retryParams())
-        .setConnectTimeout(60000)
-        .setReadTimeout(60000)
+        .setRetrySettings(retryParams())
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteTranslateHelper(translateOptions);
   }
@@ -72,21 +70,25 @@ public class RemoteTranslateHelper {
    * Creates a {@code RemoteStorageHelper} object.
    */
   public static RemoteTranslateHelper create() {
+    HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+        .build();
     TranslateOptions translateOption = TranslateOptions.newBuilder()
-        .setRetryParams(retryParams())
-        .setConnectTimeout(60000)
-        .setReadTimeout(60000)
+        .setRetrySettings(retryParams())
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteTranslateHelper(translateOption);
   }
 
-  private static RetryParams retryParams() {
-    return RetryParams.newBuilder()
-        .setRetryMaxAttempts(10)
-        .setRetryMinAttempts(6)
-        .setMaxRetryDelayMillis(30000)
-        .setTotalRetryPeriodMillis(120000)
-        .setInitialRetryDelayMillis(250)
+  private static RetrySettings retryParams() {
+    return RetrySettings.newBuilder().setMaxAttempts(10)
+        .setMaxRetryDelay(Duration.millis(30000L))
+        .setTotalTimeout(Duration.millis(120000L))
+        .setInitialRetryDelay(Duration.millis(250L))
+        .setRetryDelayMultiplier(1.0)
+        .setInitialRpcTimeout(Duration.millis(120000L))
+        .setRpcTimeoutMultiplier(1.0)
+        .setMaxRpcTimeout(Duration.millis(120000L))
         .build();
   }
 }

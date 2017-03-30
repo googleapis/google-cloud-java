@@ -46,11 +46,6 @@ public final class Entity extends FullEntity<Key> {
       setKey(key);
     }
 
-    @Override
-    @Deprecated
-    public Builder key(Key key) {
-      return setKey(key);
-    }
 
     @Override
     public Builder setKey(Key key) {
@@ -81,28 +76,16 @@ public final class Entity extends FullEntity<Key> {
     return new Entity(from);
   }
 
-  @Deprecated
-  public static Builder builder(Key key) {
-    return newBuilder(key);
-  }
 
   public static Builder newBuilder(Key key) {
     return new Builder(key);
   }
 
-  @Deprecated
-  public static Builder builder(Entity copyFrom) {
-    return newBuilder(copyFrom);
-  }
 
   public static Builder newBuilder(Entity copyFrom) {
     return new Builder(copyFrom);
   }
 
-  @Deprecated
-  public static Builder builder(Key key, FullEntity<?> copyFrom) {
-    return newBuilder(key, copyFrom);
-  }
 
   public static Builder newBuilder(Key key, FullEntity<?> copyFrom) {
     return new Builder(key, copyFrom);

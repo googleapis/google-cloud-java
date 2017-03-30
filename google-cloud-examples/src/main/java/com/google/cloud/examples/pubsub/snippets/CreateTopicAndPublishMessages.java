@@ -16,9 +16,9 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.api.gax.core.RpcFuture;
+import com.google.api.gax.core.ApiFuture;
 import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
@@ -33,22 +33,22 @@ import java.util.List;
 public class CreateTopicAndPublishMessages {
   public static void main(String... args) throws Exception {
     TopicName topic = TopicName.create("test-project", "test-topic");
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      publisherClient.createTopic(topic);
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+      topicAdminClient.createTopic(topic);
     }
 
     Publisher publisher = null;
     try {
       publisher = Publisher.newBuilder(topic).build();
       List<String> messages = Arrays.asList("first message", "second message");
-      List<RpcFuture<String>> messageIds = new ArrayList<>();
+      List<ApiFuture<String>> messageIds = new ArrayList<>();
       for (String message : messages) {
         ByteString data = ByteString.copyFromUtf8(message);
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-        RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+        ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
         messageIds.add(messageIdFuture);
       }
-      for (RpcFuture<String> messageId : messageIds) {
+      for (ApiFuture<String> messageId : messageIds) {
         System.out.println("published with message ID: " + messageId.get());
       }
     } finally {

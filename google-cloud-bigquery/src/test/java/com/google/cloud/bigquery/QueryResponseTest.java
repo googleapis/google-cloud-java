@@ -32,19 +32,15 @@ public class QueryResponseTest {
   private static final String ETAG = "etag";
   private static final Field FIELD_SCHEMA1 =
       Field.newBuilder("StringField", Field.Type.string())
-          .setMode(Field.Mode.NULLABLE)
-          .setDescription("FieldDescription1")
-          .build();
+      .setMode(Field.Mode.NULLABLE)
+      .setDescription("FieldDescription1")
+      .build();
+
   private static final Schema SCHEMA = Schema.of(FIELD_SCHEMA1);
   private static final JobId JOB_ID = JobId.of("project", "job");
   private static final Long TOTAL_ROWS = 42L;
   private static final QueryResult.QueryResultsPageFetcher FETCHER =
       new QueryResult.QueryResultsPageFetcher() {
-        @Override
-        @Deprecated
-        public QueryResult nextPage() {
-          return getNextPage();
-        }
 
         @Override
         public QueryResult getNextPage() {
@@ -85,15 +81,6 @@ public class QueryResponseTest {
     assertTrue(QUERY_RESPONSE.hasErrors());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(ETAG, QUERY_RESPONSE.etag());
-    assertEquals(QUERY_RESULT, QUERY_RESPONSE.result());
-    assertEquals(JOB_ID, QUERY_RESPONSE.jobId());
-    assertEquals(JOB_COMPLETE, QUERY_RESPONSE.jobCompleted());
-    assertEquals(ERRORS, QUERY_RESPONSE.executionErrors());
-    assertTrue(QUERY_RESPONSE.hasErrors());
-  }
 
   @Test
   public void testBuilderIncomplete() {

@@ -20,7 +20,7 @@ import com.google.cloud.pubsub.spi.v1.AckReply;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
-import com.google.cloud.pubsub.spi.v1.SubscriberClient;
+import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PushConfig;
@@ -37,8 +37,8 @@ public class CreateSubscriptionAndPullMessages {
     TopicName topic = TopicName.create("test-project", "test-topic");
     SubscriptionName subscription = SubscriptionName.create("test-project", "test-subscription");
 
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      subscriberClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+      subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
     }
 
     MessageReceiver receiver =
@@ -46,7 +46,7 @@ public class CreateSubscriptionAndPullMessages {
           @Override
           public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
             System.out.println("got message: " + message.getData().toStringUtf8());
-            consumer.accept(AckReply.ACK, null);
+            consumer.accept(AckReply.ACK);
           }
         };
     Subscriber subscriber = null;
@@ -56,6 +56,7 @@ public class CreateSubscriptionAndPullMessages {
           new Subscriber.SubscriberListener() {
             @Override
             public void failed(Subscriber.State from, Throwable failure) {
+              // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.
               System.err.println(failure);
             }
           },

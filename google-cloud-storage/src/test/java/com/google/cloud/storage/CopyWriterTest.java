@@ -25,10 +25,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.RestorableState;
-import com.google.cloud.RetryParams;
-import com.google.cloud.storage.spi.StorageRpc;
-import com.google.cloud.storage.spi.StorageRpc.RewriteRequest;
-import com.google.cloud.storage.spi.StorageRpc.RewriteResponse;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc.RewriteRequest;
+import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.common.collect.ImmutableMap;
 
@@ -83,7 +83,7 @@ public class CopyWriterTest {
     options = StorageOptions.newBuilder()
         .setProjectId("projectid")
         .setServiceRpcFactory(rpcFactoryMock)
-        .setRetryParams(RetryParams.noRetries())
+        .setRetrySettings(ServiceOptions.getNoRetrySettings())
         .build();
     result = new Blob(options.getService(), new BlobInfo.BuilderImpl(RESULT_INFO));
   }
@@ -91,18 +91,6 @@ public class CopyWriterTest {
   @After
   public void tearDown() throws Exception {
     verify(rpcFactoryMock, storageRpcMock);
-  }
-
-  @Test
-  public void testRewriteDeprecated() {
-    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
-        .andReturn(RESPONSE_WITH_OBJECT_DONE);
-    EasyMock.replay(storageRpcMock);
-    copyWriter = new CopyWriter(options, RESPONSE_WITH_OBJECT);
-    assertEquals(result, copyWriter.result());
-    assertTrue(copyWriter.isDone());
-    assertEquals(42L, copyWriter.totalBytesCopied());
-    assertEquals(42L, copyWriter.blobSize());
   }
 
   @Test

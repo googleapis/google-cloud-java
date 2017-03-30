@@ -28,7 +28,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Clock;
+import com.google.api.gax.core.ApiClock;
+import com.google.api.gax.core.CurrentMillisClock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.compute.Operation.OperationError;
 import com.google.cloud.compute.Operation.OperationWarning;
@@ -207,27 +208,6 @@ public class OperationTest {
     assertSame(serviceMockReturnsOptions, globalOperation.getCompute());
   }
 
-  private void assertEqualsCommonFieldsDeprecated(Operation operation) {
-    assertEquals(GENERATED_ID, operation.generatedId());
-    assertEquals(CLIENT_OPERATION_ID, operation.getClientOperationId());
-    assertEquals(OPERATION_TYPE, operation.operationType());
-    assertEquals(TARGET_LINK, operation.targetLink());
-    assertEquals(TARGET_ID, operation.targetId());
-    assertEquals(STATUS, operation.status());
-    assertEquals(STATUS_MESSAGE, operation.statusMessage());
-    assertEquals(USER, operation.user());
-    assertEquals(PROGRESS, operation.progress());
-    assertEquals(INSERT_TIME, operation.insertTime());
-    assertEquals(START_TIME, operation.startTime());
-    assertEquals(END_TIME, operation.endTime());
-    assertEquals(ERRORS, operation.errors());
-    assertEquals(WARNINGS, operation.warnings());
-    assertEquals(HTTP_ERROR_STATUS_CODE, globalOperation.httpErrorStatusCode());
-    assertEquals(HTTP_ERROR_MESSAGE, globalOperation.httpErrorMessage());
-    assertEquals(DESCRIPTION, globalOperation.description());
-    assertSame(serviceMockReturnsOptions, globalOperation.compute());
-  }
-
   private void assertNullCommonFields(Operation operation) {
     assertNull(operation.getGeneratedId());
     assertNull(operation.getClientOperationId());
@@ -247,27 +227,6 @@ public class OperationTest {
     assertNull(operation.getHttpErrorMessage());
     assertNull(operation.getDescription());
     assertSame(serviceMockReturnsOptions, operation.getCompute());
-  }
-
-  private void assertNullCommonFieldsDeprecated(Operation operation) {
-    assertNull(operation.generatedId());
-    assertNull(operation.getClientOperationId());
-    assertNull(operation.operationType());
-    assertNull(operation.targetLink());
-    assertNull(operation.targetId());
-    assertNull(operation.status());
-    assertNull(operation.statusMessage());
-    assertNull(operation.user());
-    assertNull(operation.progress());
-    assertNull(operation.insertTime());
-    assertNull(operation.startTime());
-    assertNull(operation.endTime());
-    assertNull(operation.errors());
-    assertNull(operation.warnings());
-    assertNull(operation.httpErrorStatusCode());
-    assertNull(operation.httpErrorMessage());
-    assertNull(operation.description());
-    assertSame(serviceMockReturnsOptions, operation.compute());
   }
 
   @Test
@@ -294,32 +253,6 @@ public class OperationTest {
         .build();
     assertNullCommonFields(operation);
     assertEquals(REGION_OPERATION_ID, operation.getOperationId());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedOperation(6);
-    assertEqualsCommonFieldsDeprecated(globalOperation);
-    assertEquals(GLOBAL_OPERATION_ID, globalOperation.operationId());
-    assertEqualsCommonFieldsDeprecated(regionOperation);
-    assertEquals(REGION_OPERATION_ID, regionOperation.operationId());
-    assertEqualsCommonFieldsDeprecated(zoneOperation);
-    assertEquals(ZONE_OPERATION_ID, zoneOperation.operationId());
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GLOBAL_OPERATION_ID)
-        .build();
-    assertNullCommonFieldsDeprecated(operation);
-    assertEquals(GLOBAL_OPERATION_ID, operation.operationId());
-    operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(ZONE_OPERATION_ID)
-        .build();
-    assertNullCommonFieldsDeprecated(operation);
-    assertEquals(ZONE_OPERATION_ID, operation.operationId());
-    operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(REGION_OPERATION_ID)
-        .build();
-    assertNullCommonFieldsDeprecated(operation);
-    assertEquals(REGION_OPERATION_ID, operation.operationId());
   }
 
   @Test
@@ -440,7 +373,7 @@ public class OperationTest {
     Operation successOperation =
         Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb().setError(null));
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(Clock.defaultClock());
+    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(successOperation);
     expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(successOperation);
     replay(compute, mockOptions);
@@ -455,7 +388,7 @@ public class OperationTest {
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(Clock.defaultClock());
+    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
     expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(null);
     replay(compute, mockOptions);
@@ -477,7 +410,7 @@ public class OperationTest {
     Operation completedOperation =
         Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb().setError(null));
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(Clock.defaultClock());
+    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(runningOperation);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions))
         .andReturn(completedOperation);
@@ -499,7 +432,7 @@ public class OperationTest {
     Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
         globalOperation.toPb().setError(null).setStatus("RUNNING"));
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(Clock.defaultClock());
+    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(runningOperation);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
     expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(null);
@@ -517,10 +450,10 @@ public class OperationTest {
     TimeUnit timeUnit = createStrictMock(TimeUnit.class);
     timeUnit.sleep(1);
     EasyMock.expectLastCall();
-    Clock clock = createStrictMock(Clock.class);
-    expect(clock.millis()).andReturn(0L);
-    expect(clock.millis()).andReturn(1L);
-    expect(clock.millis()).andReturn(3L);
+    ApiClock clock = createStrictMock(ApiClock.class);
+    expect(clock.millisTime()).andReturn(0L);
+    expect(clock.millisTime()).andReturn(1L);
+    expect(clock.millisTime()).andReturn(3L);
     Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
         globalOperation.toPb().setError(null).setStatus("RUNNING"));
     expect(compute.getOptions()).andReturn(mockOptions);

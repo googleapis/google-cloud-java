@@ -26,7 +26,7 @@ import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BucketTargetOption;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -470,12 +470,6 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
-
-    @Override
     public Builder setName(String name) {
       infoBuilder.setName(name);
       return this;
@@ -500,21 +494,9 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder versioningEnabled(Boolean enable) {
-      return setVersioningEnabled(enable);
-    }
-
-    @Override
     public Builder setVersioningEnabled(Boolean enable) {
       infoBuilder.setVersioningEnabled(enable);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder indexPage(String indexPage) {
-      return setIndexPage(indexPage);
     }
 
     @Override
@@ -524,21 +506,9 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder notFoundPage(String notFoundPage) {
-      return setNotFoundPage(notFoundPage);
-    }
-
-    @Override
     public Builder setNotFoundPage(String notFoundPage) {
       infoBuilder.setNotFoundPage(notFoundPage);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder deleteRules(Iterable<? extends DeleteRule> rules) {
-      return setDeleteRules(rules);
     }
 
     @Override
@@ -548,21 +518,9 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder storageClass(String storageClass) {
-      return setStorageClass(storageClass);
-    }
-
-    @Override
-    public Builder setStorageClass(String storageClass) {
+    public Builder setStorageClass(StorageClass storageClass) {
       infoBuilder.setStorageClass(storageClass);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder location(String location) {
-      return setLocation(location);
     }
 
     @Override
@@ -590,33 +548,15 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder cors(Iterable<Cors> cors) {
-      return setCors(cors);
-    }
-
-    @Override
     public Builder setCors(Iterable<Cors> cors) {
       infoBuilder.setCors(cors);
       return this;
     }
 
     @Override
-    @Deprecated
-    public Builder acl(Iterable<Acl> acl) {
-      return setAcl(acl);
-    }
-
-    @Override
     public Builder setAcl(Iterable<Acl> acl) {
       infoBuilder.setAcl(acl);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder defaultAcl(Iterable<Acl> acl) {
-      return setDefaultAcl(acl);
     }
 
     @Override
@@ -664,7 +604,7 @@ public class Bucket extends BucketInfo {
    * Fetches current bucket's latest information. Returns {@code null} if the bucket does not exist.
    *
    * <p>Example of getting the bucket's latest information, if its generation does not match the
-   * {@link Bucket#metageneration()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * Bucket latestBucket = bucket.reload(BucketSourceOption.metagenerationMatch());
    * if (latestBucket == null) {
@@ -704,7 +644,7 @@ public class Bucket extends BucketInfo {
    * Deletes this bucket.
    *
    * <p>Example of deleting the bucket, if its metageneration matches the
-   * {@link Bucket#metageneration()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * boolean deleted = bucket.delete(BucketSourceOption.metagenerationMatch());
    * if (deleted) {
@@ -1099,14 +1039,6 @@ public class Bucket extends BucketInfo {
    */
   public List<Acl> listDefaultAcls() {
     return storage.listDefaultAcls(getName());
-  }
-
-  /**
-   * Returns the bucket's {@code Storage} object used to issue requests.
-   */
-  @Deprecated
-  public Storage storage() {
-    return getStorage();
   }
 
   /**

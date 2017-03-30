@@ -33,12 +33,6 @@ public class LicenseTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    assertEquals(LICENSE_ID, LICENSE.licenseId());
-    assertEquals(CHARGES_USE_FEE, LICENSE.chargesUseFee());
-  }
-
-  @Test
   public void testToAndFromPb() {
     License license = License.fromPb(LICENSE.toPb());
     compareLicenses(LICENSE, license);

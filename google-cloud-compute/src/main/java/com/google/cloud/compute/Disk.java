@@ -66,21 +66,9 @@ public class Disk extends DiskInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder configuration(DiskConfiguration configuration) {
-      return setConfiguration(configuration);
-    }
-
-    @Override
     public Builder setConfiguration(DiskConfiguration configuration) {
       infoBuilder.setConfiguration(configuration);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder diskId(DiskId diskId) {
-      return setDiskId(diskId);
     }
 
     @Override
@@ -99,12 +87,6 @@ public class Disk extends DiskInfo {
     Builder setCreationStatus(CreationStatus creationStatus) {
       infoBuilder.setCreationStatus(creationStatus);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
     }
 
     @Override
@@ -238,14 +220,6 @@ public class Disk extends DiskInfo {
    */
   public Operation resize(long sizeGb, OperationOption... options) {
     return compute.resize(getDiskId(), sizeGb, options);
-  }
-
-  /**
-   * Returns the disk's {@code Compute} object used to issue requests.
-   */
-  @Deprecated
-  public Compute compute() {
-    return getCompute();
   }
 
   /**

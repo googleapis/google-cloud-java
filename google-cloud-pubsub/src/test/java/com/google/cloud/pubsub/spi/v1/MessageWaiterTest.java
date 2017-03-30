@@ -24,7 +24,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- * Tests for {@link PublisherImpl}.
+ * Tests for {@link MessageWaiter}.
  */
 @RunWith(JUnit4.class)
 public class MessageWaiterTest {
@@ -33,9 +33,9 @@ public class MessageWaiterTest {
   public void test() throws Exception {
     final MessageWaiter waiter = new MessageWaiter();
     waiter.incrementPendingMessages(1);
-    
+
     final AtomicBoolean waitReached = new AtomicBoolean();
-    
+
     Thread t = new Thread(new Runnable(){
       @Override
       public void run() {
@@ -46,10 +46,10 @@ public class MessageWaiterTest {
       }
     });
     t.start();
-    
+
     waiter.waitNoMessages(waitReached);
     t.join();
-     
+
     assertEquals(0, waiter.pendingMessages());
   }
 }

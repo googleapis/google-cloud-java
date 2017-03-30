@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-translate</artifactId>
-  <version>0.9.3-alpha</version>
+  <version>0.10.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-translate:0.9.3-alpha'
+compile 'com.google.cloud:google-cloud-translate:0.10.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "0.9.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "0.10.0-alpha"
 ```
 
 Example Application
@@ -97,7 +97,7 @@ methods on the Translate service created via `TranslateOptions.getDefaultInstanc
 
 You can also explicitly set the API key as follows:
 ```java
-Translate translate = TranslateOptions.newBuilder().setApiKey("myKey").getService();
+Translate translate = TranslateOptions.newBuilder().setApiKey("myKey").build().getService();
 ```
 
 #### Detecting language

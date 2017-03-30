@@ -22,9 +22,9 @@ import static com.google.longrunning.Operation.newBuilder;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-import com.google.cloud.Clock;
+import com.google.api.gax.core.ApiClock;
 import com.google.cloud.WaitForOption;
-import com.google.cloud.spanner.spi.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.rpc.Code;
@@ -47,7 +47,7 @@ public class OperationTest {
 
   @Mock SpannerRpc rpc;
   @Mock DatabaseAdminClient dbClient;
-  @Mock Clock clock;
+  @Mock ApiClock clock;
 
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
@@ -174,7 +174,7 @@ public class OperationTest {
     com.google.longrunning.Operation proto = newBuilder().setName("op1").setDone(false).build();
     Operation<Database, String> op = Operation.create(rpc, proto, new ParserImpl(), clock);
     when(rpc.getOperation("op1")).thenReturn(proto);
-    when(clock.millis()).thenReturn(0L, 50L, 100L, 150L);
+    when(clock.millisTime()).thenReturn(0L, 50L, 100L, 150L);
 
     expectedException.expect(isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     op.waitFor(

@@ -17,7 +17,7 @@
 package com.google.cloud.datastore.testing;
 
 import com.google.cloud.NoCredentials;
-import com.google.cloud.RetryParams;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.testing.BaseEmulatorHelper;
 import com.google.common.collect.ImmutableList;
@@ -124,17 +124,9 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
         .setProjectId(getProjectId())
         .setHost(DEFAULT_HOST + ":" + Integer.toString(getPort()))
         .setCredentials(NoCredentials.getInstance())
-        .setRetryParams(RetryParams.noRetries());
+        .setRetrySettings(ServiceOptions.getNoRetrySettings());
   }
 
-  /**
-   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
-   * localhost.
-   */
-  @Deprecated
-  public DatastoreOptions options() {
-    return getOptions();
-  }
 
   /**
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
@@ -145,14 +137,6 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     return optionsBuilder().build();
   }
 
-  /**
-   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
-   * localhost. The default namespace is set to {@code namespace}.
-   */
-  @Deprecated
-  public DatastoreOptions options(String namespace) {
-    return optionsBuilder().setNamespace(namespace).build();
-  }
 
   /**
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
@@ -162,21 +146,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     return optionsBuilder().setNamespace(namespace).build();
   }
 
-  /**
-   * Returns the project ID associated with this local Datastore emulator.
-   */
-  @Deprecated
-  public String projectId() {
-    return getProjectId();
-  }
 
-  /**
-   * Returns the consistency setting for the local Datastore emulator.
-   */
-  @Deprecated
-  public double consistency() {
-    return consistency;
-  }
 
   /**
    * Returns the consistency setting for the local Datastore emulator.

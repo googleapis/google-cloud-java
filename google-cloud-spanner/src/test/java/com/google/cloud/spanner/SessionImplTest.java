@@ -20,7 +20,8 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.spanner.v1.Mutation.Write;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.spanner.spi.SpannerRpc;
+import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.util.Timestamps;

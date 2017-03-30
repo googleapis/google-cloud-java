@@ -18,7 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.Clock;
+import com.google.api.gax.core.ApiClock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.WaitForOption.CheckingPeriod;
 import com.google.cloud.WaitForOption.Timeout;
@@ -76,11 +76,6 @@ public class Job extends JobInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder jobId(JobId jobId) {
-      return setJobId(jobId);
-    }
 
     @Override
     public Builder setJobId(JobId jobId) {
@@ -112,11 +107,6 @@ public class Job extends JobInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder configuration(JobConfiguration configuration) {
-      return setConfiguration(configuration);
-    }
 
     @Override
     public Builder setConfiguration(JobConfiguration configuration) {
@@ -219,10 +209,10 @@ public class Job extends JobInfo {
     Timeout timeout = Timeout.getOrDefault(waitOptions);
     CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
     long timeoutMillis = timeout.getTimeoutMillis();
-    Clock clock = options.getClock();
-    long startTime = clock.millis();
+    ApiClock clock = options.getClock();
+    long startTime = clock.millisTime();
     while (!isDone()) {
-      if (timeoutMillis  != -1 && (clock.millis() - startTime)  >= timeoutMillis) {
+      if (timeoutMillis  != -1 && (clock.millisTime() - startTime)  >= timeoutMillis) {
         throw new TimeoutException();
       }
       checkingPeriod.sleep();
@@ -277,13 +267,6 @@ public class Job extends JobInfo {
     return bigquery.cancel(getJobId());
   }
 
-  /**
-   * Returns the job's {@code BigQuery} object used to issue requests.
-   */
-  @Deprecated
-  public BigQuery bigquery() {
-    return getBigquery();
-  }
 
   /**
    * Returns the job's {@code BigQuery} object used to issue requests.

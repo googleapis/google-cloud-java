@@ -16,127 +16,129 @@
 
 package com.google.cloud.pubsub.it;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Identity;
-import com.google.cloud.Policy;
-import com.google.cloud.Role;
-import com.google.cloud.pubsub.deprecated.BaseSystemTest;
-import com.google.cloud.pubsub.deprecated.PubSub;
-import com.google.cloud.pubsub.deprecated.PubSubOptions;
-import com.google.cloud.pubsub.deprecated.Subscription;
-import com.google.cloud.pubsub.deprecated.SubscriptionInfo;
-import com.google.cloud.pubsub.deprecated.Topic;
-import com.google.cloud.pubsub.deprecated.TopicInfo;
-import com.google.common.collect.ImmutableList;
+import com.google.api.gax.core.SettableApiFuture;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.pubsub.spi.v1.AckReply;
+import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
+import com.google.cloud.pubsub.spi.v1.MessageReceiver;
+import com.google.cloud.pubsub.spi.v1.Publisher;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
+import com.google.cloud.pubsub.spi.v1.Subscriber;
+import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.Policy;
+import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.PushConfig;
+import com.google.pubsub.v1.SubscriptionName;
+import com.google.pubsub.v1.TopicName;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.ExecutionException;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
-public class ITPubSubTest extends BaseSystemTest {
+public class ITPubSubTest {
 
-  private static final PubSub PUB_SUB = PubSubOptions.getDefaultInstance().getService();
   private static final String NAME_SUFFIX = UUID.randomUUID().toString();
+  private static TopicAdminClient topicAdminClient;
+  private static SubscriptionAdminClient subscriptionAdminClient;
+  private static String projectId;
 
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
-  @Override
-  protected PubSub pubsub() {
-    return PUB_SUB;
+  @BeforeClass
+  public static void setupClass() throws Exception {
+    topicAdminClient = TopicAdminClient.create();
+    subscriptionAdminClient = SubscriptionAdminClient.create();
+    projectId = ServiceOptions.getDefaultProjectId();
   }
 
-  @Override
-  protected String formatForTest(String resourceName) {
+  @AfterClass
+  public static void tearDownClass() throws Exception {
+    topicAdminClient.close();
+    subscriptionAdminClient.close();
+  }
+
+  private String formatForTest(String resourceName) {
     return resourceName + "-" + NAME_SUFFIX;
   }
 
-  // Policy tests are defined here and not in BaseSystemTest because Pub/Sub emulator does not
-  // support IAM yet
-
   @Test
   public void testTopicPolicy() {
-    String topicName = formatForTest("test-topic-policy");
-    Topic topic = pubsub().create(TopicInfo.of(topicName));
-    Policy policy = pubsub().getTopicPolicy(topicName);
-    policy = pubsub().replaceTopicPolicy(topicName, policy.toBuilder()
-        .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
-        .build());
-    assertTrue(policy.getBindings().containsKey(Role.viewer()));
-    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
-    List<Boolean> permissions =
-        pubsub().testTopicPermissions(topicName, ImmutableList.of("pubsub.topics.get"));
-    assertTrue(permissions.get(0));
-    topic.delete();
+    TopicName topicName = TopicName.create(projectId, formatForTest("testing-topic-policy"));
+    topicAdminClient.createTopic(topicName);
+
+    Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
+    Binding binding =
+        Binding.newBuilder().setRole("roles/viewer").addMembers("allAuthenticatedUsers").build();
+    Policy newPolicy =
+        topicAdminClient.setIamPolicy(
+            topicName.toString(), policy.toBuilder().addBindings(binding).build());
+    assertTrue(newPolicy.getBindingsList().contains(binding));
+
+    String permissionName = "pubsub.topics.get";
+    List<String> permissions =
+        topicAdminClient
+            .testIamPermissions(topicName.toString(), Collections.singletonList(permissionName))
+            .getPermissionsList();
+    assertTrue(permissions.contains(permissionName));
+
+    topicAdminClient.deleteTopic(topicName);
   }
 
   @Test
-  public void testNonExistingTopicPolicy() {
-    String topicName = formatForTest("test-non-existing-topic-policy");
-    assertNull(pubsub().getTopicPolicy(topicName));
-  }
+  public void testPublishSubscribe() throws Exception {
+    TopicName topicName =
+        TopicName.create(projectId, formatForTest("testing-publish-subscribe-topic"));
+    SubscriptionName subscriptionName =
+        SubscriptionName.create(projectId, formatForTest("testing-publish-subscribe-subscription"));
 
-  @Test
-  public void testTopicPolicyAsync() throws ExecutionException, InterruptedException {
-    String topicName = formatForTest("test-topic-policy-async");
-    Topic topic = pubsub().create(TopicInfo.of(topicName));
-    Policy policy = pubsub().getTopicPolicyAsync(topicName).get();
-    policy = pubsub().replaceTopicPolicyAsync(topicName, policy.toBuilder()
-        .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
-        .build()).get();
-    assertTrue(policy.getBindings().containsKey(Role.viewer()));
-    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
-    List<Boolean> permissions =
-        pubsub().testTopicPermissionsAsync(topicName, ImmutableList.of("pubsub.topics.get")).get();
-    assertTrue(permissions.get(0));
-    topic.delete();
-  }
+    topicAdminClient.createTopic(topicName);
+    subscriptionAdminClient.createSubscription(
+        subscriptionName, topicName, PushConfig.newBuilder().build(), 10);
+    PubsubMessage message =
+        PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("my message")).build();
 
-  @Test
-  public void testSubscriptionPolicy() {
-    String topicName = formatForTest("test-subscription-policy");
-    Topic topic = pubsub().create(TopicInfo.of(topicName));
-    String subscriptionName = formatForTest("test-subscription-policy");
-    Subscription subscription = pubsub().create(SubscriptionInfo.of(topicName, subscriptionName));
-    Policy policy = pubsub().getSubscriptionPolicy(subscriptionName);
-    policy = pubsub().replaceSubscriptionPolicy(subscriptionName, policy.toBuilder()
-        .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
-        .build());
-    assertTrue(policy.getBindings().containsKey(Role.viewer()));
-    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
-    List<Boolean> permissions = pubsub().testSubscriptionPermissions(subscriptionName,
-        ImmutableList.of("pubsub.subscriptions.get"));
-    assertTrue(permissions.get(0));
-    topic.delete();
-    subscription.delete();
-  }
+    final SettableApiFuture<PubsubMessage> received = SettableApiFuture.create();
+    Subscriber subscriber =
+        Subscriber.newBuilder(
+                subscriptionName,
+                new MessageReceiver() {
+                  @Override
+                  public void receiveMessage(
+                      final PubsubMessage message, final AckReplyConsumer consumer) {
+                    if (received.set(message)) {
+                      consumer.accept(AckReply.ACK);
+                    } else {
+                      consumer.accept(AckReply.NACK);
+                    }
+                  }
+                })
+            .build();
+    subscriber.addListener(
+        new Subscriber.SubscriberListener() {
+          public void failed(Subscriber.State from, Throwable failure) {
+            received.setException(failure);
+          }
+        },
+        MoreExecutors.directExecutor());
+    subscriber.startAsync();
 
-  @Test
-  public void testSubscriptionPolicyAsync() throws ExecutionException, InterruptedException {
-    String topicName = formatForTest("test-subscription-policy-async");
-    Topic topic = pubsub().create(TopicInfo.of(topicName));
-    String subscriptionName = formatForTest("test-subscription-policy-async");
-    Subscription subscription = pubsub().create(SubscriptionInfo.of(topicName, subscriptionName));
-    Policy policy = pubsub().getSubscriptionPolicyAsync(subscriptionName).get();
-    policy = pubsub().replaceSubscriptionPolicyAsync(subscriptionName, policy.toBuilder()
-        .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
-        .build()).get();
-    assertTrue(policy.getBindings().containsKey(Role.viewer()));
-    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
-    List<Boolean> permissions = pubsub().testSubscriptionPermissionsAsync(subscriptionName,
-        ImmutableList.of("pubsub.subscriptions.get")).get();
-    assertTrue(permissions.get(0));
-    topic.delete();
-    subscription.delete();
-  }
+    Publisher publisher = Publisher.newBuilder(topicName).build();
+    publisher.publish(message).get();
+    publisher.shutdown();
 
-  @Test
-  public void testNonExistingSubscriptionPolicy() {
-    String subscriptionName = formatForTest("test-non-existing-subscription-policy");
-    assertNull(pubsub().getSubscriptionPolicy(subscriptionName));
+    assertEquals(received.get().getData(), message.getData());
+    subscriber.stopAsync().awaitTerminated();
+    subscriptionAdminClient.deleteSubscription(subscriptionName);
+    topicAdminClient.deleteTopic(topicName);
   }
 }

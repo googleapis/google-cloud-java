@@ -20,19 +20,17 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.mockito.Mockito.atLeast;
-import static org.mockito.Mockito.times;
 
-import com.google.api.gax.core.RpcFuture;
-import com.google.api.gax.grpc.BundlingSettings;
+import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.FlowControlSettings;
+import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
-import com.google.api.gax.grpc.FlowControlSettings;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.cloud.pubsub.spi.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
-import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
@@ -42,7 +40,6 @@ import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
 import io.grpc.internal.ServerImpl;
-import io.grpc.stub.StreamObserver;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import org.joda.time.Duration;
@@ -51,12 +48,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 
-/** Tests for {@link PublisherImpl}. */
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
 
@@ -88,8 +80,6 @@ public class PublisherImplTest {
         }
       };
 
-  @Captor private ArgumentCaptor<PublishRequest> requestCaptor;
-
   private FakeScheduledExecutorService fakeExecutor;
 
   private FakeCredentials testCredentials;
@@ -102,16 +92,13 @@ public class PublisherImplTest {
 
   @Before
   public void setUp() throws Exception {
-    testPublisherServiceImpl = Mockito.spy(new FakePublisherServiceImpl());
+    testPublisherServiceImpl = new FakePublisherServiceImpl();
 
     InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName("test-server");
     serverBuilder.addService(testPublisherServiceImpl);
     testServer = serverBuilder.build();
     testServer.start();
 
-    MockitoAnnotations.initMocks(this);
-    testPublisherServiceImpl.reset();
-    Mockito.reset(testPublisherServiceImpl);
     fakeExecutor = new FakeScheduledExecutorService();
   }
 
@@ -125,8 +112,8 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             // To demonstrate that reaching duration will trigger publish
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setDelayThreshold(Duration.standardSeconds(5))
                     .setElementCountThreshold(10)
@@ -136,8 +123,8 @@ public class PublisherImplTest {
     testPublisherServiceImpl.addPublishResponse(
         PublishResponse.newBuilder().addMessageIds("1").addMessageIds("2"));
 
-    RpcFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
-    RpcFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
 
     assertFalse(publishFuture1.isDone());
     assertFalse(publishFuture2.isDone());
@@ -147,18 +134,16 @@ public class PublisherImplTest {
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
 
-    Mockito.verify(testPublisherServiceImpl)
-        .publish(requestCaptor.capture(), Mockito.<StreamObserver<PublishResponse>>any());
-    assertEquals(2, requestCaptor.getValue().getMessagesCount());
+    assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
     publisher.shutdown();
   }
 
   @Test
-  public void testPublishByNumBundledMessages() throws Exception {
+  public void testPublishByNumBatchedMessages() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2)
                     .setDelayThreshold(Duration.standardSeconds(100))
@@ -169,9 +154,9 @@ public class PublisherImplTest {
         .addPublishResponse(PublishResponse.newBuilder().addMessageIds("1").addMessageIds("2"))
         .addPublishResponse(PublishResponse.newBuilder().addMessageIds("3").addMessageIds("4"));
 
-    RpcFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
-    RpcFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
-    RpcFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
+    ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
 
     // Note we are not advancing time but message should still get published
 
@@ -180,16 +165,14 @@ public class PublisherImplTest {
 
     assertFalse(publishFuture3.isDone());
 
-    RpcFuture<String> publishFuture4 =
+    ApiFuture<String> publishFuture4 =
         publisher.publish(PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("D")).build());
 
     assertEquals("3", publishFuture3.get());
     assertEquals("4", publishFuture4.get());
 
-    Mockito.verify(testPublisherServiceImpl, times(2))
-        .publish(requestCaptor.capture(), Mockito.<StreamObserver<PublishResponse>>any());
-    assertEquals(2, requestCaptor.getAllValues().get(0).getMessagesCount());
-    assertEquals(2, requestCaptor.getAllValues().get(1).getMessagesCount());
+    assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
+    assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(1).getMessagesCount());
     publisher.shutdown();
   }
 
@@ -197,8 +180,8 @@ public class PublisherImplTest {
   public void testSinglePublishByNumBytes() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2)
                     .setDelayThreshold(Duration.standardSeconds(100))
@@ -209,9 +192,9 @@ public class PublisherImplTest {
         .addPublishResponse(PublishResponse.newBuilder().addMessageIds("1").addMessageIds("2"))
         .addPublishResponse(PublishResponse.newBuilder().addMessageIds("3").addMessageIds("4"));
 
-    RpcFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
-    RpcFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
-    RpcFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
+    ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
 
     // Note we are not advancing time but message should still get published
 
@@ -219,12 +202,11 @@ public class PublisherImplTest {
     assertEquals("2", publishFuture2.get());
     assertFalse(publishFuture3.isDone());
 
-    RpcFuture<String> publishFuture4 = sendTestMessage(publisher, "D");
+    ApiFuture<String> publishFuture4 = sendTestMessage(publisher, "D");
     assertEquals("3", publishFuture3.get());
     assertEquals("4", publishFuture4.get());
 
-    Mockito.verify(testPublisherServiceImpl, times(2))
-        .publish(requestCaptor.capture(), Mockito.<StreamObserver<PublishResponse>>any());
+    assertEquals(2, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
   }
 
@@ -233,8 +215,8 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             // To demonstrate that reaching duration will trigger publish
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -245,18 +227,18 @@ public class PublisherImplTest {
         PublishResponse.newBuilder().addMessageIds("1").addMessageIds("2"));
     testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("3"));
 
-    RpcFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     fakeExecutor.advanceTime(Duration.standardSeconds(2));
     assertFalse(publishFuture1.isDone());
 
-    RpcFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
+    ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
 
-    // Publishing triggered by bundle size
+    // Publishing triggered by batch size
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
 
-    RpcFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
+    ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
 
     assertFalse(publishFuture3.isDone());
 
@@ -265,14 +247,12 @@ public class PublisherImplTest {
 
     assertEquals("3", publishFuture3.get());
 
-    Mockito.verify(testPublisherServiceImpl, times(2))
-        .publish(requestCaptor.capture(), Mockito.<StreamObserver<PublishResponse>>any());
-    assertEquals(2, requestCaptor.getAllValues().get(0).getMessagesCount());
-    assertEquals(1, requestCaptor.getAllValues().get(1).getMessagesCount());
+    assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
+    assertEquals(1, testPublisherServiceImpl.getCapturedRequests().get(1).getMessagesCount());
     publisher.shutdown();
   }
 
-  private RpcFuture<String> sendTestMessage(Publisher publisher, String data) {
+  private ApiFuture<String> sendTestMessage(Publisher publisher, String data) {
     return publisher.publish(
         PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8(data)).build());
   }
@@ -282,8 +262,8 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -293,12 +273,11 @@ public class PublisherImplTest {
     testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
     testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
 
-    RpcFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     assertEquals("1", publishFuture1.get());
 
-    Mockito.verify(testPublisherServiceImpl, times(2))
-        .publish(Mockito.<PublishRequest>any(), Mockito.<StreamObserver<PublishResponse>>any());
+    assertEquals(2, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
   }
 
@@ -311,8 +290,8 @@ public class PublisherImplTest {
                     .toBuilder()
                     .setTotalTimeout(Duration.standardSeconds(10))
                     .build())
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -323,7 +302,7 @@ public class PublisherImplTest {
     for (int i = 0; i < 11; ++i) {
       testPublisherServiceImpl.addPublishError(new FakeException());
     }
-    RpcFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     try {
       publishFuture1.get();
@@ -332,8 +311,7 @@ public class PublisherImplTest {
         throw new IllegalStateException("unexpected exception", e);
       }
     } finally {
-      Mockito.verify(testPublisherServiceImpl, atLeast(10))
-          .publish(Mockito.<PublishRequest>any(), Mockito.<StreamObserver<PublishResponse>>any());
+      assertTrue(testPublisherServiceImpl.getCapturedRequests().size() >= 10);
       publisher.shutdown();
     }
   }
@@ -348,8 +326,8 @@ public class PublisherImplTest {
                     .toBuilder()
                     .setTotalTimeout(Duration.standardSeconds(10))
                     .build())
-            .setBundlingSettings(
-                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -357,13 +335,12 @@ public class PublisherImplTest {
             .build(); // To demonstrate that reaching duration will trigger publish
 
     testPublisherServiceImpl.addPublishError(new StatusException(Status.INVALID_ARGUMENT));
-    RpcFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     try {
       publishFuture1.get();
     } finally {
-      Mockito.verify(testPublisherServiceImpl)
-          .publish(Mockito.<PublishRequest>any(), Mockito.<StreamObserver<PublishResponse>>any());
+      assertTrue(testPublisherServiceImpl.getCapturedRequests().size() >= 1);
       publisher.shutdown();
     }
   }
@@ -373,9 +350,8 @@ public class PublisherImplTest {
     Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
     builder.setChannelProvider(TEST_CHANNEL_PROVIDER);
     builder.setExecutorProvider(SINGLE_THREAD_EXECUTOR);
-    builder.setFailOnFlowControlLimits(true);
-    builder.setBundlingSettings(
-        BundlingSettings.newBuilder()
+    builder.setBatchingSettings(
+        BatchingSettings.newBuilder()
             .setRequestByteThreshold(10)
             .setDelayThreshold(new Duration(11))
             .setElementCountThreshold(12)
@@ -384,16 +360,19 @@ public class PublisherImplTest {
         FlowControlSettings.newBuilder()
             .setMaxOutstandingRequestBytes(13)
             .setMaxOutstandingElementCount(14)
+            .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
             .build());
     Publisher publisher = builder.build();
 
     assertEquals(TEST_TOPIC, publisher.getTopicName());
-    assertEquals(10, (long) publisher.getBundlingSettings().getRequestByteThreshold());
-    assertEquals(new Duration(11), publisher.getBundlingSettings().getDelayThreshold());
-    assertEquals(12, (long) publisher.getBundlingSettings().getElementCountThreshold());
+    assertEquals(10, (long) publisher.getBatchingSettings().getRequestByteThreshold());
+    assertEquals(new Duration(11), publisher.getBatchingSettings().getDelayThreshold());
+    assertEquals(12, (long) publisher.getBatchingSettings().getElementCountThreshold());
     assertEquals(13, (long) publisher.getFlowControlSettings().getMaxOutstandingRequestBytes());
     assertEquals(14, (long) publisher.getFlowControlSettings().getMaxOutstandingElementCount());
-    assertTrue(publisher.failOnFlowControlLimits());
+    assertEquals(
+        LimitExceededBehavior.ThrowException,
+        publisher.getFlowControlSettings().getLimitExceededBehavior());
     publisher.shutdown();
   }
 
@@ -402,15 +381,16 @@ public class PublisherImplTest {
     Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
     assertEquals(TEST_TOPIC, builder.topicName);
     assertEquals(Publisher.Builder.DEFAULT_EXECUTOR_PROVIDER, builder.executorProvider);
-    assertFalse(builder.failOnFlowControlLimits);
+    assertEquals(
+        LimitExceededBehavior.Block, builder.flowControlSettings.getLimitExceededBehavior());
     assertEquals(
         Publisher.Builder.DEFAULT_REQUEST_BYTES_THRESHOLD,
-        builder.bundlingSettings.getRequestByteThreshold().longValue());
+        builder.batchingSettings.getRequestByteThreshold().longValue());
     assertEquals(
-        Publisher.Builder.DEFAULT_DELAY_THRESHOLD, builder.bundlingSettings.getDelayThreshold());
+        Publisher.Builder.DEFAULT_DELAY_THRESHOLD, builder.batchingSettings.getDelayThreshold());
     assertEquals(
         Publisher.Builder.DEFAULT_ELEMENT_COUNT_THRESHOLD,
-        builder.bundlingSettings.getElementCountThreshold().longValue());
+        builder.batchingSettings.getElementCountThreshold().longValue());
     assertEquals(FlowControlSettings.getDefaultInstance(), builder.flowControlSettings);
     assertEquals(Publisher.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings);
   }
@@ -433,8 +413,8 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setRequestByteThreshold((Long) null)
               .build());
@@ -443,8 +423,8 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setRequestByteThreshold(0)
               .build());
@@ -453,8 +433,8 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setRequestByteThreshold(-1)
               .build());
@@ -463,21 +443,21 @@ public class PublisherImplTest {
       // Expected
     }
 
-    builder.setBundlingSettings(
-        Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+    builder.setBatchingSettings(
+        Publisher.Builder.DEFAULT_BATCHING_SETTINGS
             .toBuilder()
             .setDelayThreshold(new Duration(1))
             .build());
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS.toBuilder().setDelayThreshold(null).build());
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder().setDelayThreshold(null).build());
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setDelayThreshold(new Duration(-1))
               .build());
@@ -486,14 +466,14 @@ public class PublisherImplTest {
       // Expected
     }
 
-    builder.setBundlingSettings(
-        Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+    builder.setBatchingSettings(
+        Publisher.Builder.DEFAULT_BATCHING_SETTINGS
             .toBuilder()
             .setElementCountThreshold(1)
             .build());
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setElementCountThreshold((Long) null)
               .build());
@@ -502,8 +482,8 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setElementCountThreshold(0)
               .build());
@@ -512,8 +492,8 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      builder.setBundlingSettings(
-          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setElementCountThreshold(-1)
               .build());
