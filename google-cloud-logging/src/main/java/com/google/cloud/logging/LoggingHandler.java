@@ -125,7 +125,7 @@ public class LoggingHandler extends Handler {
   // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740 .
   private final Level baseLevel;
 
-  private final Lock writeLock = new ReentrantLock();
+  private final Object writeLock = new Object();
   private final Set<ApiFuture<Void>> pendingWrites =
       Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
 
@@ -473,23 +473,21 @@ public class LoggingHandler extends Handler {
       case ASYNC:
       default:
         final ApiFuture<Void> writeFuture = getLogging().writeAsync(entryList, options);
-        writeLock.lock();
-        try {
+        synchronized(writeLock) {
           pendingWrites.add(writeFuture);
-        } finally {
-          writeLock.unlock();
         }
         ApiFutures.addCallback(
             writeFuture,
             new ApiFutureCallback<Void>() {
+              private void removeFromPending() {
+                synchronized(writeLock) {
+                  pendingWrites.remove(writeFuture);
+                }
+              }
+
               @Override
               public void onSuccess(Void v) {
-                writeLock.lock();
-                try {
-                  pendingWrites.remove(writeFuture);
-                } finally {
-                  writeLock.unlock();
-                }
+                removeFromPending();
               }
 
               @Override
@@ -501,7 +499,7 @@ public class LoggingHandler extends Handler {
                     reportError(null, new Exception(t), ErrorManager.FLUSH_FAILURE);
                   }
                 } finally {
-                  onSuccess(null);
+                  removeFromPending();
                 }
               }
             });
@@ -511,16 +509,14 @@ public class LoggingHandler extends Handler {
 
   @Override
   public void flush() {
-    // BUG(1795): flush is broken, need support from batching implementation.
+    // BUG(1795): We should force batcher to issue RPC call for buffered messages,
+    // so the code below doesn't wait uselessly.
 
-    ArrayList<ApiFuture<Void>> writes = new ArrayList<>();
-    writeLock.lock();
-    try {
-      writes.addAll(pendingWrites);
-    } finally {
-      writeLock.unlock();
+    ArrayList<ApiFuture<Void>> writesToFlush = new ArrayList<>();
+    synchronized(writeLock) {
+      writesToFlush.addAll(pendingWrites);
     }
-    for (ApiFuture<Void> write : writes) {
+    for (ApiFuture<Void> write : writesToFlush) {
       try {
         Uninterruptibles.getUninterruptibly(write);
       } catch (Exception e) {
