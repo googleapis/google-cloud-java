@@ -338,6 +338,7 @@ public class LoggingHandler extends Handler {
     if (level instanceof LoggingLevel) {
       return ((LoggingLevel) level).getSeverity();
     }
+
     switch (level.intValue()) {
       // FINEST
       case 300:
@@ -364,7 +365,7 @@ public class LoggingHandler extends Handler {
         return Severity.DEFAULT;
     }
   }
-  
+
   private class ErrorHandler implements LoggingErrorHandler {
     public void handleFormatError(Exception ex) {
       getErrorManager().error(null, ex, ErrorManager.FORMAT_FAILURE);
