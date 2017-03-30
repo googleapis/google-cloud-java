@@ -260,8 +260,7 @@ class MessageDispatcher {
   }
 
   public void processReceivedMessages(List<com.google.pubsub.v1.ReceivedMessage> responseMessages) {
-    int receivedMessagesCount = responseMessages.size();
-    if (receivedMessagesCount == 0) {
+    if (responseMessages.size() == 0) {
       return;
     }
     Instant now = new Instant(clock.millisTime());
@@ -276,7 +275,13 @@ class MessageDispatcher {
     logger.log(
         Level.FINER, "Received {0} messages at {1}", new Object[] {responseMessages.size(), now});
 
+    try {
+      flowController.reserve(responseMessages.size(), totalByteCount);
+    } catch (FlowController.FlowControlException unexpectedException) {
+      throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
+    }
     messagesWaiter.incrementPendingMessages(responseMessages.size());
+
     Iterator<AckHandler> acksIterator = ackHandlers.iterator();
     for (ReceivedMessage userMessage : responseMessages) {
       final PubsubMessage message = userMessage.getMessage();
@@ -308,12 +313,6 @@ class MessageDispatcher {
           new ExtensionJob(expiration, INITIAL_ACK_DEADLINE_EXTENSION_SECONDS, ackHandlers));
     }
     setupNextAckDeadlineExtensionAlarm(expiration);
-
-    try {
-      flowController.reserve(receivedMessagesCount, totalByteCount);
-    } catch (FlowController.FlowControlException unexpectedException) {
-      throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
-    }
   }
 
   private void setupPendingAcksAlarm() {
