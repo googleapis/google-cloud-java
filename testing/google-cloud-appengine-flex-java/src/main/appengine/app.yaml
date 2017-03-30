@@ -1,0 +1,15 @@
+runtime: java
+env: flex
+
+runtime_config:  # Optional
+  jdk: openjdk8
+  server: jetty9
+
+handlers:
+- url: /.*
+  script: this field is required, but ignored
+
+service: appengine-flex
+
+manual_scaling:
+  instances: 1

@@ -120,6 +120,7 @@
     <module>google-cloud-trace</module>
     <module>google-cloud-translate</module>
     <module>google-cloud-vision</module>
+    <module>testing/google-cloud-appengine-flex-java</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>
@@ -209,7 +210,7 @@
         <executions>
           <execution>
             <goals>
-              <goal>integration-test</goal>
+              <!--<goal>integration-test</goal>-->
               <goal>verify</goal>
             </goals>
           </execution>
