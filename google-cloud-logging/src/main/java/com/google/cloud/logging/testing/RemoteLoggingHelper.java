@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.logging;
+package com.google.cloud.logging.testing;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.GrpcTransportOptions;

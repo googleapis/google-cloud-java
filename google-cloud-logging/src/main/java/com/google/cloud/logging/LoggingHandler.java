@@ -32,7 +32,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-import static com.google.api.client.repackaged.com.google.common.base.Objects.firstNonNull;
+import static com.google.common.base.MoreObjects.firstNonNull;
 
 /**
  * A logging handler that synchronously outputs logs generated with {@link java.util.logging.Logger}
@@ -364,7 +364,7 @@ public class LoggingHandler extends Handler {
         return Severity.DEFAULT;
     }
   }
-
+  
   private class ErrorHandler implements LoggingErrorHandler {
     public void handleFormatError(Exception ex) {
       getErrorManager().error(null, ex, ErrorManager.FORMAT_FAILURE);

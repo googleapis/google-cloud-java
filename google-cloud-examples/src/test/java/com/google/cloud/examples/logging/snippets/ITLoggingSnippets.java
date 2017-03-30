@@ -24,7 +24,7 @@ import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Metric;
 import com.google.cloud.logging.Sink;
-import com.google.cloud.logging.RemoteLoggingHelper;
+import com.google.cloud.logging.testing.RemoteLoggingHelper;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 
