@@ -18,8 +18,10 @@ package com.google.cloud.logging;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.core.ApiFutures;
+import com.google.api.gax.core.SettableApiFuture;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.LogEntry.Builder;
 import com.google.cloud.logging.Logging.WriteOption;
@@ -378,6 +380,40 @@ public class LoggingHandlerTest {
     handler.publish(newLogRecord(Level.CONFIG, MESSAGE));
     handler.publish(newLogRecord(Level.INFO, MESSAGE));
     handler.publish(newLogRecord(Level.WARNING, MESSAGE));
+  }
+
+  @Test
+  public void testFlush() throws InterruptedException {
+    final SettableApiFuture<Void> mockRpc = SettableApiFuture.create();
+
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
+    logging.writeAsync(ImmutableList.of(INFO_ENTRY), DEFAULT_OPTIONS);
+    EasyMock.expectLastCall().andReturn(mockRpc);
+    EasyMock.replay(options, logging);
+    final LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
+    handler.setFormatter(new TestFormatter());
+
+    // no messages, nothing to flush.
+    handler.flush();
+
+    // send a message
+    handler.publish(newLogRecord(Level.INFO, MESSAGE));
+    Thread flushWaiter = new Thread(new Runnable() {
+      @Override
+      public void run() {
+        handler.flush();
+      }
+    });
+    flushWaiter.start();
+
+    // flushWaiter should be waiting for mockRpc to complete.
+    flushWaiter.join(100);
+    assertTrue(flushWaiter.isAlive());
+
+    // With the RPC completed, flush should return, and the thread should terminate.
+    mockRpc.set(null);
+    flushWaiter.join();
   }
 
   @Test
