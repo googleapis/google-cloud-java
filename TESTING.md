@@ -154,6 +154,13 @@ You can test against a Pub/Sub emulator:
 $ gcloud beta emulators pubsub start
 ```
 
+To determine which host/port the emulator is running on:
+```shell
+$ gcloud beta emulators pubsub env-init
+# Sample output:
+#   export PUBSUB_EMULATOR_HOST=localhost:8759
+```
+
 3. Point your client to the emulator.
 The code below assumes that you have set the `host` and `port`
 to the host and port the emulator is on.
@@ -168,8 +175,6 @@ ChannelProvider channelProvider =
         .build();
 TopicAdminClient topicClient = TopicAdminClient.create(
     TopicAdminSettings.defaultBuilder().setChannelProvider(channelProvider).build());
-SubscriptionAdminClient subscriptionClient = SubscriptionAdminClient.create(
-    SubscriptionAdminSettings.defaultBuilder().setChannelProvider(channelProvider).build());
 Publisher publisher =
     Publisher.newBuilder(topicName).setChannelProvider(channelProvider).build();
 ```
