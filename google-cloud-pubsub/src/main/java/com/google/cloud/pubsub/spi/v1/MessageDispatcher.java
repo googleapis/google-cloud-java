@@ -88,7 +88,7 @@ class MessageDispatcher {
   // it is not modified while inside the queue.
   // The hashcode and equals methods are explicitly not implemented to discourage
   // the use of this class as keys in maps or similar containers.
-  private static class ExtensionJob implements Comparable<ExtensionJob> {
+  private class ExtensionJob implements Comparable<ExtensionJob> {
     Instant creation;
     Instant expiration;
     int nextExtensionSeconds;
@@ -106,7 +106,9 @@ class MessageDispatcher {
     }
 
     void extendExpiration(Instant now) {
-      expiration = now.plus(Duration.standardSeconds(nextExtensionSeconds));
+      Instant possibleExtension = now.plus(Duration.standardSeconds(nextExtensionSeconds));
+      Instant maxExtension = creation.plus(maxAckExtensionPeriod);
+      expiration = possibleExtension.isBefore(maxExtension) ? possibleExtension : maxExtension;
       nextExtensionSeconds = Math.min(2 * nextExtensionSeconds, MAX_ACK_DEADLINE_EXTENSION_SECS);
     }
 

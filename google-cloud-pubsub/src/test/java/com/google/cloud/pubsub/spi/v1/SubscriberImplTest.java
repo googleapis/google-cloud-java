@@ -278,7 +278,7 @@ public class SubscriberImplTest {
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
                 .setAckExpirationPadding(Duration.standardSeconds(1))
-                .setMaxAckExtensionPeriod(Duration.standardSeconds(12)));
+                .setMaxAckExtensionPeriod(Duration.standardSeconds(13)));
     // Send messages to be acked
     List<String> testAckIdsBundle = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
@@ -306,7 +306,9 @@ public class SubscriberImplTest {
         new Function<String, ModifyAckDeadline>() {
           @Override
           public ModifyAckDeadline apply(String ack) {
-            return new ModifyAckDeadline(ack, 4);
+            return new ModifyAckDeadline(ack, 2); // It is expected that the deadline is renewed
+                                                  // only two more seconds to not pass the max
+                                                  // ack deadline ext.
           }
         });
 
