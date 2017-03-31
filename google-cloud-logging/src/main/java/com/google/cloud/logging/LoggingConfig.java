@@ -19,6 +19,7 @@ package com.google.cloud.logging;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.cloud.MonitoredResource;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

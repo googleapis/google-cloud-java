@@ -173,6 +173,11 @@ public class LoggingHandler extends Handler {
       baseLevel = level.equals(Level.ALL) ? Level.FINEST : level;
       this.flushLevel = config.getFlushLevel();
       String logName = firstNonNull(log, config.getLogName());
+
+      if (options == null) {
+        options = LoggingOptions.getDefaultInstance();
+      }
+
       MonitoredResource resource = firstNonNull(monitoredResource, config.getMonitoredResource(options.getProjectId()));
       WriteOption[] labelOptions = new WriteOption[] {
                       WriteOption.labels(
