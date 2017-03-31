@@ -19,6 +19,7 @@ package com.google.cloud.logging;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 import com.google.api.gax.core.ApiFutures;
 import com.google.api.gax.core.SettableApiFuture;
@@ -408,12 +409,13 @@ public class LoggingHandlerTest {
     flushWaiter.start();
 
     // flushWaiter should be waiting for mockRpc to complete.
-    flushWaiter.join(100);
+    flushWaiter.join(1000);
     assertTrue(flushWaiter.isAlive());
 
     // With the RPC completed, flush should return, and the thread should terminate.
     mockRpc.set(null);
-    flushWaiter.join();
+    flushWaiter.join(1000);
+    assertFalse(flushWaiter.isAlive());
   }
 
   @Test
