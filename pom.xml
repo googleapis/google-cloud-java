@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.10.1-alpha-SNAPSHOT</version>
+  <version>0.11.1-alpha-SNAPSHOT</version>
   <name>Google Cloud</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java</url>
   <description>
@@ -92,10 +92,10 @@
     <github.global.server>github</github.global.server>
     <google.auth.version>0.6.0</google.auth.version>
     <grpc.version>1.0.3</grpc.version>
-    <gax.version>0.7.0</gax.version>
+    <gax.version>0.8.0</gax.version>
     <generatedProto.version>0.1.5</generatedProto.version>
-    <core.version>0.10.1-alpha-SNAPSHOT</core.version>
-    <beta.version>0.10.1-beta-SNAPSHOT</beta.version>
+    <core.version>0.11.1-alpha-SNAPSHOT</core.version>
+    <beta.version>0.11.1-beta-SNAPSHOT</beta.version>
     <storage.version>${beta.version}</storage.version>
     <site.installationModule>google-cloud</site.installationModule>
   </properties>

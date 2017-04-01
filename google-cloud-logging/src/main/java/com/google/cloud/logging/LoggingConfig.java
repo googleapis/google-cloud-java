@@ -51,8 +51,9 @@ public class LoggingConfig {
     return getLevelProperty(flushLevelTag, LoggingLevel.ERROR);
   }
 
-  Long getFlushSize() {
-    return getLongProperty(flushSizeTag, 1L);
+  Integer getFlushSize() {
+    int defaultValue = 1;
+    return Math.max(getIntegerProperty(flushSizeTag, defaultValue), defaultValue);
   }
 
   String getLogName() {
@@ -122,9 +123,9 @@ public class LoggingConfig {
     return defaultValue;
   }
 
-  private long getLongProperty(String name, long defaultValue) {
+  private int getIntegerProperty(String name, int defaultValue) {
     try {
-      return Long.parseLong(getProperty(name));
+      return Integer.parseInt(getProperty(name));
     } catch (NumberFormatException ex) {
       // If the level does not exist we fall back to default value
     }

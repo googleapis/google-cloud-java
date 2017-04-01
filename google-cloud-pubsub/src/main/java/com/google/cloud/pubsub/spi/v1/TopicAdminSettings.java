@@ -19,6 +19,7 @@ import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubs
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
 import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
@@ -371,8 +372,8 @@ public class TopicAdminSettings extends ClientSettings {
   private static final BatchingDescriptor<PublishRequest, PublishResponse> PUBLISH_BATCHING_DESC =
       new BatchingDescriptor<PublishRequest, PublishResponse>() {
         @Override
-        public String getBatchPartitionKey(PublishRequest request) {
-          return request.getTopic() + "|";
+        public PartitionKey getBatchPartitionKey(PublishRequest request) {
+          return new PartitionKey(request.getTopic());
         }
 
         @Override

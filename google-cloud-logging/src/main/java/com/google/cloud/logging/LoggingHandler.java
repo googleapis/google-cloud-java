@@ -16,6 +16,8 @@
 
 package com.google.cloud.logging;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
+
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
@@ -31,8 +33,6 @@ import java.util.logging.LogManager;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
-
-import static com.google.common.base.MoreObjects.firstNonNull;
 
 /**
  * A logging handler that synchronously outputs logs generated with {@link java.util.logging.Logger}
@@ -101,7 +101,7 @@ public class LoggingHandler extends Handler {
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
 
-  private LoggingHelper loggingHelper;
+  private BufferedLogging bufferedLogging;
   private List<Enhancer> enhancers;
   private  ErrorHandler errorHandler;
 
@@ -188,7 +188,7 @@ public class LoggingHandler extends Handler {
                                       String.valueOf(baseLevel.intValue())))
               };
 
-      loggingHelper = LoggingHelper.newBuilder(options)
+      bufferedLogging = BufferedLogging.newBuilder(options)
               .setFlushSeverity(severityFor(flushLevel))
               .setFlushSize(config.getFlushSize())
               .setSynchronicity(config.getSynchronicity())
@@ -256,7 +256,7 @@ public class LoggingHandler extends Handler {
       return;
     }
     if (logEntryBuilder != null) {
-      loggingHelper.publish(logEntryBuilder);
+      bufferedLogging.publish(logEntryBuilder);
     }
   }
 
@@ -287,43 +287,36 @@ public class LoggingHandler extends Handler {
 
   @Override
   public void flush() {
-    loggingHelper.flush();
-  }
-
-  private void flush(List<LogEntry> flushBuffer, WriteOption[] flushWriteOptions) {
-    if (flushBuffer == null) {
-      return;
-    }
-    loggingHelper.flush(flushBuffer, flushWriteOptions);
+    bufferedLogging.flush();
   }
 
   /**
-   * Closes the handler and the associated {@link LoggingHelper} object.
+   * Closes the handler and the associated {@link BufferedLogging} object.
    */
   @Override
   public synchronized void close() throws SecurityException {
-      loggingHelper.close();
+      bufferedLogging.close();
   }
 
   public synchronized void setFlushLevel(Level level) {
     flushLevel = level;
-    loggingHelper.setFlushSeverity(severityFor(flushLevel));
+    bufferedLogging.setFlushSeverity(severityFor(flushLevel));
   }
 
-  public synchronized void setFlushSize(long size) {
-    loggingHelper.setFlushSize(size);
+  public synchronized void setFlushSize(int size) {
+    bufferedLogging.setFlushSize(size);
   }
 
   public synchronized void setSynchronicity(Synchronicity synchronicity) {
-    loggingHelper.setSynchronicity(synchronicity);
+    bufferedLogging.setSynchronicity(synchronicity);
   }
 
   public long getFlushSize() {
-    return loggingHelper.getFlushSize();
+    return bufferedLogging.getFlushSize();
   }
 
   public Synchronicity getSynchronicity() {
-    return loggingHelper.getSynchronicity();
+    return bufferedLogging.getSynchronicity();
   }
 
   public Level getFlushLevel() {
@@ -375,12 +368,13 @@ public class LoggingHandler extends Handler {
     public void handleFormatError(Exception ex) {
       getErrorManager().error(null, ex, ErrorManager.FORMAT_FAILURE);
     }
+
     public void handleWriteError(Exception ex) {
       getErrorManager().error(null, ex, ErrorManager.WRITE_FAILURE);
     }
+
     public void handleFlushError(Exception ex) {
       getErrorManager().error(null, ex, ErrorManager.FLUSH_FAILURE);
     }
   }
-
 }
