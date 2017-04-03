@@ -111,6 +111,7 @@ class MonitoredResourceHelper {
         break;
       case "cluster_name":
         value = MetadataConfig.getClusterName();
+        break;
       default: value = null;
     }
     if (value != null) {
