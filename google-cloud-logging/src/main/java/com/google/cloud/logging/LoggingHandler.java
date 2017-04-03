@@ -18,16 +18,19 @@ package com.google.cloud.logging;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutureCallback;
+import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
-import com.google.api.gax.core.ApiFutures;
-import com.google.api.gax.core.ApiFutureCallback;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.Uninterruptibles;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
+import java.util.IdentityHashMap;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
 import java.util.logging.Formatter;
@@ -119,6 +122,10 @@ public class LoggingHandler extends Handler {
   // Currently there is no way to modify the base level, see
   // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740 .
   private final Level baseLevel;
+
+  private final Object writeLock = new Object();
+  private final Set<ApiFuture<Void>> pendingWrites =
+      Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
 
   /**
    * Creates an handler that publishes messages to Stackdriver Logging.
@@ -376,6 +383,9 @@ public class LoggingHandler extends Handler {
       if (entry != null) {
         write(entry, writeOptions);
       }
+      if (record.getLevel().intValue() >= flushLevel.intValue()) {
+        flush();
+      }
     } finally {
       inPublishCall.remove();
     }
@@ -457,28 +467,60 @@ public class LoggingHandler extends Handler {
           reportError(null, ex, ErrorManager.FLUSH_FAILURE);
         }
         break;
+
       case ASYNC:
       default:
-        ApiFutures.addCallback(getLogging().writeAsync(entryList, options), new ApiFutureCallback<Void>() {
-          @Override
-          public void onSuccess(Void v) {}
+        final ApiFuture<Void> writeFuture = getLogging().writeAsync(entryList, options);
+        synchronized(writeLock) {
+          pendingWrites.add(writeFuture);
+        }
+        ApiFutures.addCallback(
+            writeFuture,
+            new ApiFutureCallback<Void>() {
+              private void removeFromPending() {
+                synchronized(writeLock) {
+                  pendingWrites.remove(writeFuture);
+                }
+              }
 
-          @Override
-          public void onFailure(Throwable t) {
-            if (t instanceof Exception) {
-              reportError(null, (Exception) t, ErrorManager.FLUSH_FAILURE);
-            } else {
-              reportError(null, new Exception(t), ErrorManager.FLUSH_FAILURE);
-            }
-          }
-        });
+              @Override
+              public void onSuccess(Void v) {
+                removeFromPending();
+              }
+
+              @Override
+              public void onFailure(Throwable t) {
+                try {
+                  if (t instanceof Exception) {
+                    reportError(null, (Exception) t, ErrorManager.FLUSH_FAILURE);
+                  } else {
+                    reportError(null, new Exception(t), ErrorManager.FLUSH_FAILURE);
+                  }
+                } finally {
+                  removeFromPending();
+                }
+              }
+            });
         break;
     }
   }
 
   @Override
   public void flush() {
-    // BUG(1795): flush is broken, need support from batching implementation.
+    // BUG(1795): We should force batcher to issue RPC call for buffered messages,
+    // so the code below doesn't wait uselessly.
+
+    ArrayList<ApiFuture<Void>> writesToFlush = new ArrayList<>();
+    synchronized(writeLock) {
+      writesToFlush.addAll(pendingWrites);
+    }
+    for (ApiFuture<Void> write : writesToFlush) {
+      try {
+        Uninterruptibles.getUninterruptibly(write);
+      } catch (Exception e) {
+        // Ignore exceptions, they are propagated to the error manager.
+      }
+    }
   }
 
   /**
