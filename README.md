@@ -19,7 +19,9 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Google Cloud Datastore](#google-cloud-datastore-beta) (Beta)
 -  [Google Cloud Storage](#google-cloud-storage-beta) (Beta)
 -  [Cloud Spanner](#cloud-spanner-beta) (Beta)
+-  [Google Cloud Translate](#google-translate-beta) (Beta)
 -  Cloud Vision (Beta)
+-  Cloud Natural Language (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
@@ -27,7 +29,6 @@ This client supports the following Google Cloud Platform services at an [Alpha](
 -  [Google Cloud DNS](#google-cloud-dns-alpha) (Alpha)
 -  [Google Cloud Pub/Sub](#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
 -  [Google Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
--  [Google Cloud Translate](#google-translate-alpha) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -647,7 +648,7 @@ while (projectIterator.hasNext()) {
 }
 ```
 
-Google Translate (Alpha)
+Google Translate (Beta)
 ----------------
 
 - [API Documentation][translate-api]
