@@ -27,7 +27,7 @@ import com.google.cloud.compute.SubnetworkId;
 import com.google.common.base.Function;
 import java.util.HashMap;
 import java.util.Map;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import java.util.NoSuchElementException;
 
 public class ResourceCleaner {
   private final Compute compute;
@@ -46,13 +46,9 @@ public class ResourceCleaner {
     final T res;
     Function<T, Void> func;
 
-    private ManagedResource(T res) {
+    private ManagedResource(T res, Function<T, Void> func) {
       this.res = res;
-
-      @SuppressWarnings("unchecked")
-      Function<T, Void> localFunc = (Function<T, Void>) getDeleteMethod(res);
-
-      this.func = localFunc;
+      this.func = func;
     }
 
     public void delete() {
@@ -69,142 +65,115 @@ public class ResourceCleaner {
   }
 
   public ResourceCleaner add(AddressId addressId) {
-    ManagedResource<AddressId> r = new ManagedResource<>(addressId);
+    ManagedResource<AddressId> r =
+        new ManagedResource<>(
+            addressId,
+            new Function<AddressId, Void>() {
+              @Override
+              public Void apply(AddressId addressId) {
+                compute.deleteAddress(addressId);
+                return null;
+              }
+            });
     resources.put(addressId, r);
     return this;
   }
 
-  public ResourceCleaner remove(AddressId addressId) {
-    resources.remove(addressId);
-    return this;
-  }
-
   public ResourceCleaner add(DiskId diskId) {
-    ManagedResource<DiskId> r = new ManagedResource<>(diskId);
+    ManagedResource<DiskId> r =
+        new ManagedResource<>(
+            diskId,
+            new Function<DiskId, Void>() {
+              @Override
+              public Void apply(DiskId diskId) {
+                compute.deleteDisk(diskId);
+                return null;
+              }
+            });
     resources.put(diskId, r);
     return this;
   }
 
-  public ResourceCleaner remove(DiskId diskId) {
-    resources.remove(diskId);
-    return this;
-  }
-
   public ResourceCleaner add(SnapshotId snapshotId) {
-    ManagedResource<SnapshotId> r = new ManagedResource<>(snapshotId);
+    ManagedResource<SnapshotId> r =
+        new ManagedResource<>(
+            snapshotId,
+            new Function<SnapshotId, Void>() {
+              @Override
+              public Void apply(SnapshotId snapshotId) {
+                compute.deleteSnapshot(snapshotId);
+                return null;
+              }
+            });
     resources.put(snapshotId, r);
     return this;
   }
 
-  public ResourceCleaner remove(SnapshotId snapshotId) {
-    resources.remove(snapshotId);
-    return this;
-  }
-
   public ResourceCleaner add(NetworkId networkId) {
-    ManagedResource<NetworkId> r = new ManagedResource<>(networkId);
+    ManagedResource<NetworkId> r =
+        new ManagedResource<>(
+            networkId,
+            new Function<NetworkId, Void>() {
+              @Override
+              public Void apply(NetworkId networkId) {
+                compute.deleteNetwork(networkId);
+                return null;
+              }
+            });
     resources.put(networkId, r);
     return this;
   }
 
-  public ResourceCleaner remove(NetworkId networkId) {
-    resources.remove(networkId);
-    return this;
-  }
-
   public ResourceCleaner add(SubnetworkId subnetworkId) {
-    ManagedResource<SubnetworkId> r = new ManagedResource<>(subnetworkId);
+    ManagedResource<SubnetworkId> r =
+        new ManagedResource<>(
+            subnetworkId,
+            new Function<SubnetworkId, Void>() {
+              @Override
+              public Void apply(SubnetworkId subnetworkId) {
+                compute.deleteSubnetwork(subnetworkId);
+                return null;
+              }
+            });
     resources.put(subnetworkId, r);
     return this;
   }
 
-  public ResourceCleaner remove(SubnetworkId subnetworkId) {
-    resources.remove(subnetworkId);
-    return this;
-  }
-
   public ResourceCleaner add(ImageId imageId) {
-    ManagedResource<ImageId> r = new ManagedResource<>(imageId);
+    ManagedResource<ImageId> r =
+        new ManagedResource<>(
+            imageId,
+            new Function<ImageId, Void>() {
+              @Override
+              public Void apply(ImageId imageId) {
+                compute.deleteImage(imageId);
+                return null;
+              }
+            });
     resources.put(imageId, r);
     return this;
   }
 
-  public ResourceCleaner remove(ImageId imageId) {
-    resources.remove(imageId);
-    return this;
-  }
-
   public ResourceCleaner add(InstanceId instanceId) {
-    ManagedResource<InstanceId> r = new ManagedResource<>(instanceId);
+    ManagedResource<InstanceId> r =
+        new ManagedResource<>(
+            instanceId,
+            new Function<InstanceId, Void>() {
+              @Override
+              public Void apply(InstanceId instanceId) {
+                compute.deleteInstance(instanceId);
+                return null;
+              }
+            });
     resources.put(instanceId, r);
     return this;
   }
 
-  public ResourceCleaner remove(InstanceId instanceId) {
-    resources.remove(instanceId);
-    return this;
-  }
-
-  private <T> Function<?, Void> getDeleteMethod(T res) {
-
-    if (res instanceof AddressId) {
-      return new Function<AddressId, Void>() {
-        @Override
-        public Void apply(AddressId addressId) {
-          compute.deleteAddress(addressId);
-          return null;
-        }
-      };
-    } else if (res instanceof DiskId) {
-      return new Function<DiskId, Void>() {
-        @Override
-        public Void apply(DiskId diskId) {
-          compute.deleteDisk(diskId);
-          return null;
-        }
-      };
-    } else if (res instanceof SnapshotId) {
-      return new Function<SnapshotId, Void>() {
-        @Override
-        public Void apply(SnapshotId snapshotId) {
-          compute.deleteSnapshot(snapshotId);
-          return null;
-        }
-      };
-    } else if (res instanceof NetworkId) {
-      return new Function<NetworkId, Void>() {
-        @Override
-        public Void apply(NetworkId networkId) {
-          compute.deleteNetwork(networkId);
-          return null;
-        }
-      };
-    } else if (res instanceof SubnetworkId) {
-      return new Function<SubnetworkId, Void>() {
-        @Override
-        public Void apply(SubnetworkId subnetworkId) {
-          compute.deleteSubnetwork(subnetworkId);
-          return null;
-        }
-      };
-    } else if (res instanceof ImageId) {
-      return new Function<ImageId, Void>() {
-        @Override
-        public Void apply(ImageId imageId) {
-          compute.deleteImage(imageId);
-          return null;
-        }
-      };
-    } else if (res instanceof InstanceId) {
-      return new Function<InstanceId, Void>() {
-        @Override
-        public Void apply(InstanceId instanceId) {
-          compute.deleteInstance(instanceId);
-          return null;
-        }
-      };
-    } else {
-      throw new NotImplementedException();
+  public <T> ResourceCleaner remove(T resourceId) {
+    if (!resources.containsKey(resourceId)) {
+        throw new NoSuchElementException(resourceId + " has not been added to managed resources");
     }
+    resources.remove(resourceId);
+    return this;
   }
 }

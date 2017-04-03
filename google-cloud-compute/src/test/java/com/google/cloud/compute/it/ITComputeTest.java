@@ -771,10 +771,6 @@ public class ITComputeTest {
       count++;
     }
     assertEquals(2, count);
-    compute.deleteAddress(firstAddressId);
-    resourceCleaner.remove(firstAddressId);
-    compute.deleteAddress(secondAddressId);
-    resourceCleaner.remove(secondAddressId);
   }
 
   @Test
@@ -806,10 +802,6 @@ public class ITComputeTest {
       count++;
     }
     assertEquals(2, count);
-    compute.deleteAddress(firstAddressId);
-    resourceCleaner.remove(firstAddressId);
-    compute.deleteAddress(secondAddressId);
-    resourceCleaner.remove(secondAddressId);
   }
 
   @Test
@@ -891,10 +883,6 @@ public class ITComputeTest {
       count++;
     }
     assertEquals(2, count);
-    compute.deleteAddress(firstAddressId);
-    resourceCleaner.remove(firstAddressId);
-    compute.deleteAddress(secondAddressId);
-    resourceCleaner.remove(secondAddressId);
   }
 
   @Test
@@ -1192,14 +1180,6 @@ public class ITComputeTest {
       count++;
     }
     assertEquals(2, count);
-    compute.deleteDisk(firstDiskId);
-    resourceCleaner.remove(firstDiskId);
-    compute.deleteDisk(secondDiskId);
-    resourceCleaner.remove(secondDiskId);
-    compute.deleteSnapshot(firstSnapshotId);
-    resourceCleaner.remove(firstSnapshotId);
-    compute.deleteSnapshot(secondSnapshotId);
-    resourceCleaner.remove(secondSnapshotId);
   }
 
   @Test
@@ -1239,10 +1219,6 @@ public class ITComputeTest {
       count++;
     }
     assertEquals(2, count);
-    compute.deleteDisk(firstDiskId);
-    resourceCleaner.remove(firstDiskId);
-    compute.deleteDisk(secondDiskId);
-    resourceCleaner.remove(secondDiskId);
   }
 
   @Test
@@ -1679,8 +1655,6 @@ operation.waitFor();
     operation.waitFor();
     resourceCleaner.remove(instanceId);
     assertNull(compute.getInstance(instanceId));
-    address.delete();
-    resourceCleaner.remove(addressId);
   }
 
   @Test
@@ -1717,8 +1691,6 @@ operation.waitFor();
     remoteInstance = compute.getInstance(instanceId,
         Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.getStatus());
-    remoteInstance.delete();
-    resourceCleaner.remove(instanceId);
   }
 
   @Test
@@ -1765,8 +1737,6 @@ operation.waitFor();
     operation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(options, remoteInstance.getSchedulingOptions());
-    remoteInstance.delete();
-    resourceCleaner.remove(instanceId);
   }
 
   @Test
@@ -1817,10 +1787,6 @@ operation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(1, remoteInstance.getAttachedDisks().size());
     assertEquals("dev0", remoteInstance.getAttachedDisks().get(0).getDeviceName());
-    remoteInstance.delete();
-    compute.deleteDisk(diskId);
-    resourceCleaner.remove(instanceId);
-    resourceCleaner.remove(diskId);
   }
 
   @Test
@@ -1865,9 +1831,5 @@ operation.waitFor();
     instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertTrue(remoteInstance.getNetworkInterfaces().get(0).getAccessConfigurations().isEmpty());
-    remoteInstance.delete();
-    remoteAddress.delete();
-    resourceCleaner.remove(instanceId);
-    resourceCleaner.remove(addressId);
   }
 }
