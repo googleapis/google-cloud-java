@@ -162,14 +162,11 @@ $ gcloud beta emulators pubsub env-init
 ```
 
 3. Point your client to the emulator.
-The code below assumes that you have set the `host` and `port`
-to the host and port the emulator is on.
 ```java
 ChannelProvider channelProvider =
     // SubscriptionAdminSettings works too.
     TopicAdminSettings.defaultChannelProviderBuilder()
-        .setServiceAddress(host)
-        .setPort(port)
+        .setEndpoint(System.getenv("PUBSUB_EMULATOR_HOST"))
         .setCredentialsProvider(
             FixedCredentialsProvider.create(NoCredentials.getInstance()))
         .build();
