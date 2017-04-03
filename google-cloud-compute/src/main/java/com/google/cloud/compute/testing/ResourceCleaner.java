@@ -29,17 +29,17 @@ import java.util.HashMap;
 import java.util.Map;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-public class ManagedResourceCleaner {
+public class ResourceCleaner {
   private final Compute compute;
   private final Map<Object, ManagedResource<?>> resources;
 
-  private ManagedResourceCleaner(Compute compute) {
+  private ResourceCleaner(Compute compute) {
     this.compute = compute;
     this.resources = new HashMap<>();
   }
 
-  public static ManagedResourceCleaner create(Compute compute) {
-    return new ManagedResourceCleaner(compute);
+  public static ResourceCleaner create(Compute compute) {
+    return new ResourceCleaner(compute);
   }
 
   private class ManagedResource<T> {
@@ -68,79 +68,79 @@ public class ManagedResourceCleaner {
     resources.clear();
   }
 
-  public ManagedResourceCleaner add(AddressId addressId) {
+  public ResourceCleaner add(AddressId addressId) {
     ManagedResource<AddressId> r = new ManagedResource<>(addressId);
     resources.put(addressId, r);
     return this;
   }
 
-  public ManagedResourceCleaner remove(AddressId addressId) {
+  public ResourceCleaner remove(AddressId addressId) {
     resources.remove(addressId);
     return this;
   }
 
-  public ManagedResourceCleaner add(DiskId diskId) {
+  public ResourceCleaner add(DiskId diskId) {
     ManagedResource<DiskId> r = new ManagedResource<>(diskId);
     resources.put(diskId, r);
     return this;
   }
 
-  public ManagedResourceCleaner remove(DiskId diskId) {
+  public ResourceCleaner remove(DiskId diskId) {
     resources.remove(diskId);
     return this;
   }
 
-  public ManagedResourceCleaner add(SnapshotId snapshotId) {
+  public ResourceCleaner add(SnapshotId snapshotId) {
     ManagedResource<SnapshotId> r = new ManagedResource<>(snapshotId);
     resources.put(snapshotId, r);
     return this;
   }
 
-  public ManagedResourceCleaner remove(SnapshotId snapshotId) {
+  public ResourceCleaner remove(SnapshotId snapshotId) {
     resources.remove(snapshotId);
     return this;
   }
 
-  public ManagedResourceCleaner add(NetworkId networkId) {
+  public ResourceCleaner add(NetworkId networkId) {
     ManagedResource<NetworkId> r = new ManagedResource<>(networkId);
     resources.put(networkId, r);
     return this;
   }
 
-  public ManagedResourceCleaner remove(NetworkId networkId) {
+  public ResourceCleaner remove(NetworkId networkId) {
     resources.remove(networkId);
     return this;
   }
 
-  public ManagedResourceCleaner add(SubnetworkId subnetworkId) {
+  public ResourceCleaner add(SubnetworkId subnetworkId) {
     ManagedResource<SubnetworkId> r = new ManagedResource<>(subnetworkId);
     resources.put(subnetworkId, r);
     return this;
   }
 
-  public ManagedResourceCleaner remove(SubnetworkId subnetworkId) {
+  public ResourceCleaner remove(SubnetworkId subnetworkId) {
     resources.remove(subnetworkId);
     return this;
   }
 
-  public ManagedResourceCleaner add(ImageId imageId) {
+  public ResourceCleaner add(ImageId imageId) {
     ManagedResource<ImageId> r = new ManagedResource<>(imageId);
     resources.put(imageId, r);
     return this;
   }
 
-  public ManagedResourceCleaner remove(ImageId imageId) {
+  public ResourceCleaner remove(ImageId imageId) {
     resources.remove(imageId);
     return this;
   }
 
-  public ManagedResourceCleaner add(InstanceId instanceId) {
+  public ResourceCleaner add(InstanceId instanceId) {
     ManagedResource<InstanceId> r = new ManagedResource<>(instanceId);
     resources.put(instanceId, r);
     return this;
   }
 
-  public ManagedResourceCleaner remove(InstanceId instanceId) {
+  public ResourceCleaner remove(InstanceId instanceId) {
     resources.remove(instanceId);
     return this;
   }
