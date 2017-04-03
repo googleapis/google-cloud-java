@@ -454,6 +454,8 @@ public class LoggingHandlerTest {
   public void testPropertiesFile() throws IOException, InterruptedException {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
+    MonitoredResource monitoredResource = MonitoredResource.of(
+            "testResourceType", ImmutableMap.of("project_id", PROJECT, "enhanced", "true"));
     LogEntry entry =
         LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
             .setSeverity(Severity.DEBUG)
@@ -463,9 +465,7 @@ public class LoggingHandlerTest {
     logging.write(
         ImmutableList.of(entry),
         WriteOption.logName("testLogName"),
-        WriteOption.resource(
-            MonitoredResource.of(
-                "testResourceType", ImmutableMap.of("project_id", PROJECT, "enhanced", "true"))),
+        WriteOption.resource(monitoredResource),
         WriteOption.labels(
             ImmutableMap.of(
                 "levelName",
@@ -475,7 +475,7 @@ public class LoggingHandlerTest {
     EasyMock.replay(options, logging);
     LogManager.getLogManager()
         .readConfiguration(new ByteArrayInputStream(renderConfig(CONFIG_MAP)));
-    LoggingHandler handler = new LoggingHandler(null, options);
+    LoggingHandler handler = new LoggingHandler(null, options, monitoredResource);
     LogRecord record = new LogRecord(Level.FINEST, MESSAGE);
     record.setMillis(123456789L);
     handler.publish(record);

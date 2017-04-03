@@ -84,7 +84,7 @@ public class BufferedLogging {
     try {
       synchronized (this) {
         buffer.add(entry);
-        if (buffer.size() > flushSize || entry.getSeverity().compareTo(flushSeverity) >= 0) {
+        if (buffer.size() >= flushSize || entry.getSeverity().compareTo(flushSeverity) >= 0) {
           flushBuffer();
         }
       }
@@ -129,6 +129,9 @@ public class BufferedLogging {
   }
 
   private synchronized void flushBuffer() {
+    if (buffer.isEmpty()) {
+      return;
+    }
     List<LogEntry> logEntries = buffer;
     write(logEntries);
     buffer = new LinkedList<>();
