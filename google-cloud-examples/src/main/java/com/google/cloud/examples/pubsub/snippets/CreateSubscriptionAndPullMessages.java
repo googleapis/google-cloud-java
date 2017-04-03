@@ -53,7 +53,7 @@ public class CreateSubscriptionAndPullMessages {
     try {
       subscriber = Subscriber.newBuilder(subscription, receiver).build();
       subscriber.addListener(
-          new Subscriber.SubscriberListener() {
+          new Subscriber.Listener() {
             @Override
             public void failed(Subscriber.State from, Throwable failure) {
               // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.

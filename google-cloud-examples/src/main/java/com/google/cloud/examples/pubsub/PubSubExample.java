@@ -624,7 +624,7 @@ public class PubSubExample {
             try {
                 subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
                 subscriber.addListener(
-                        new Subscriber.SubscriberListener() {
+                        new Subscriber.Listener() {
                             @Override
                             public void failed(Subscriber.State from, Throwable failure) {
                                 // Handle failure.
