@@ -1299,7 +1299,7 @@ public interface Storage extends Service<StorageOptions> {
       return new Builder();
     }
   }
-  
+
   /**
    * Creates a new bucket.
    *
