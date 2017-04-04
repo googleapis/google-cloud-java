@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage;
 
+import static com.google.cloud.storage.testing.ApiPolicyMatcher.eqApiPolicy;
 import static org.easymock.EasyMock.cmp;
 import static org.easymock.EasyMock.eq;
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -87,7 +88,6 @@ import com.google.cloud.storage.spi.v1.RpcBatch;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.Tuple;
 import com.google.cloud.storage.spi.StorageRpcFactory;
-import com.google.cloud.storage.testing.ApiPolicyComparator;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
@@ -2040,7 +2040,7 @@ public class StorageImplTest {
     EasyMock.expect(
           storageRpcMock.updatePolicy(
               eq(BUCKET_NAME1),
-              cmp(preCommitApiPolicy, ApiPolicyComparator.INSTANCE, LogicalOperator.EQUAL)))
+              eqApiPolicy(preCommitApiPolicy)))
         .andReturn(postCommitApiPolicy);
     EasyMock.replay(storageRpcMock);
     initializeService();
