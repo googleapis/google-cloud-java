@@ -145,44 +145,36 @@ uses the `RemoteLoggingHelper` to create a metric.
 
 ### Testing code that uses Pub/Sub
 
-#### On your machine
+You can test against a Pub/Sub emulator:
 
-You can test against a temporary local Pub/Sub by following these steps:
+1. [Install Cloud SDK](https://cloud.google.com/sdk/downloads)
 
-1. Start the local Pub/Sub emulator before running your tests using `LocalPubSubHelper`'s `create`
-and `start` methods. This will bind a port for communication with the local Pub/Sub emulator.
-  ```java
-  LocalPubSubHelper helper = LocalPubSubHelper.create();
+2. Start the emulator:
+```shell
+$ gcloud beta emulators pubsub start
+```
 
-  helper.start(); // Starts the local Pub/Sub emulator in a separate process
-  ```
+To determine which host/port the emulator is running on:
+```shell
+$ gcloud beta emulators pubsub env-init
+# Sample output:
+#   export PUBSUB_EMULATOR_HOST=localhost:8759
+```
 
-2. Create and use a `PubSub` object with the options given by the `LocalPubSubHelper` instance. For
-example:
-  ```java
-  PubSub localPubsub = helper.getOptions().getService();
-  ```
-
-3. Run your tests.
-
-4. Stop the local Pub/Sub emulator by calling the `stop()` method, like so:
-  ```java
-  helper.stop();
-  ```
-
-#### On a remote machine
-
-You can test against a remote Pub/Sub emulator as well. To do this, set the `PubSubOptions` project
-endpoint to the hostname of the remote machine, like the example below.
-
-  ```java
-  PubSubOptions options = PubSubOptions.newBuilder()
-      .setProjectId("my-project-id") // must match project ID specified on remote machine
-      .setHost("<hostname of machine>:<port>")
-      .setCredentials(NoCredentials.getInstance())
-      .build();
-  PubSub localPubsub = options.getService();
-  ```
+3. Point your client to the emulator.
+```java
+ChannelProvider channelProvider =
+    // SubscriptionAdminSettings works too.
+    TopicAdminSettings.defaultChannelProviderBuilder()
+        .setEndpoint(System.getenv("PUBSUB_EMULATOR_HOST"))
+        .setCredentialsProvider(
+            FixedCredentialsProvider.create(NoCredentials.getInstance()))
+        .build();
+TopicAdminClient topicClient = TopicAdminClient.create(
+    TopicAdminSettings.defaultBuilder().setChannelProvider(channelProvider).build());
+Publisher publisher =
+    Publisher.newBuilder(topicName).setChannelProvider(channelProvider).build();
+```
 
 ### Testing code that uses Resource Manager
 
