@@ -20,7 +20,6 @@ import com.google.api.gax.core.AbstractApiService;
 import com.google.api.gax.core.ApiClock;
 import com.google.api.gax.core.FlowController;
 import com.google.api.stats.Distribution;
-import com.google.auth.Credentials;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.annotations.VisibleForTesting;
@@ -34,7 +33,6 @@ import com.google.pubsub.v1.SubscriberGrpc;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.Status;
-import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.ClientCallStreamObserver;
 import io.grpc.stub.ClientCalls;
 import io.grpc.stub.ClientResponseObserver;
@@ -58,7 +56,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private Duration channelReconnectBackoff = INITIAL_CHANNEL_RECONNECT_BACKOFF;
 
   private final Channel channel;
-  private final Credentials credentials;
 
   private final String subscription;
   private final ScheduledExecutorService executor;
@@ -67,7 +64,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   public StreamingSubscriberConnection(
       String subscription,
-      Credentials credentials,
       MessageReceiver receiver,
       Duration ackExpirationPadding,
       Duration maxAckExtensionPeriod,
@@ -79,7 +75,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       ApiClock clock) {
     this.subscription = subscription;
     this.executor = executor;
-    this.credentials = credentials;
     this.channel = channel;
     this.messageDispatcher =
         new MessageDispatcher(
@@ -152,9 +147,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     final ClientCallStreamObserver<StreamingPullRequest> requestObserver =
         (ClientCallStreamObserver<StreamingPullRequest>)
             (ClientCalls.asyncBidiStreamingCall(
-                channel.newCall(
-                    SubscriberGrpc.METHOD_STREAMING_PULL,
-                    CallOptions.DEFAULT.withCallCredentials(MoreCallCredentials.from(credentials))),
+                channel.newCall(SubscriberGrpc.METHOD_STREAMING_PULL, CallOptions.DEFAULT),
                 responseObserver));
     logger.log(
         Level.FINER,

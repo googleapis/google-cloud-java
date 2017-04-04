@@ -22,6 +22,7 @@ import com.google.api.gax.core.ApiService;
 import com.google.api.gax.core.CurrentMillisClock;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController;
+import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
@@ -32,12 +33,9 @@ import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
 import com.google.pubsub.v1.SubscriptionName;
-import io.grpc.ManagedChannelBuilder;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
-import io.grpc.netty.GrpcSslContexts;
-import io.grpc.netty.NegotiationType;
-import io.grpc.netty.NettyChannelBuilder;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -98,8 +96,8 @@ public class Subscriber extends AbstractApiService {
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
   private final int numChannels;
   private final FlowController flowController;
-  private final ManagedChannelBuilder<? extends ManagedChannelBuilder<?>> channelBuilder;
-  private final Credentials credentials;
+  private final ChannelProvider channelProvider;
+  private final List<ManagedChannel> channels;
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
   private final List<PollingSubscriberConnection> pollingSubscriberConnections;
@@ -134,29 +132,10 @@ public class Subscriber extends AbstractApiService {
           });
     }
 
-    // TODO(pongad): remove this when we move to ManagedChannelBuilder
-    String defaultEndpoint = SubscriptionAdminSettings.getDefaultEndpoint();
-    int colonPos = defaultEndpoint.indexOf(':');
-
-    channelBuilder =
-        builder.channelBuilder.isPresent()
-            ? builder.channelBuilder.get()
-            : NettyChannelBuilder.forAddress(
-                    defaultEndpoint.substring(0, colonPos),
-                    Integer.parseInt(defaultEndpoint.substring(colonPos+1)))
-                .maxMessageSize(MAX_INBOUND_MESSAGE_SIZE)
-                .flowControlWindow(5000000) // 2.5 MB
-                .negotiationType(NegotiationType.TLS)
-                .sslContext(GrpcSslContexts.forClient().ciphers(null).build())
-                .executor(executor);
-
-    credentials =
-        builder.credentials.isPresent()
-            ? builder.credentials.get()
-            : GoogleCredentials.getApplicationDefault()
-                .createScoped(SubscriptionAdminSettings.getDefaultServiceScopes());
+    channelProvider = builder.channelProvider;
 
     numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
+    channels = new ArrayList<ManagedChannel>(numChannels);
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
     pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
   }
@@ -218,6 +197,29 @@ public class Subscriber extends AbstractApiService {
   @Override
   protected void doStart() {
     logger.log(Level.FINE, "Starting subscriber group.");
+
+    try {
+      for (int i = 0; i < numChannels; i++) {
+        final ManagedChannel channel =
+            channelProvider.needsExecutor()
+                ? channelProvider.getChannel(executor)
+                : channelProvider.getChannel();
+        channels.add(channel);
+        if (channelProvider.shouldAutoClose()) {
+          closeables.add(
+              new AutoCloseable() {
+                @Override
+                public void close() {
+                  channel.shutdown();
+                }
+              });
+        }
+      }
+    } catch (IOException e) {
+      // doesn't matter what we throw, the Service will just catch it and fail to start.
+      throw new IllegalStateException(e);
+    }
+
     // Streaming pull is not enabled on the service yet.
     // startStreamingConnections();
     startPollingConnections();
@@ -244,13 +246,12 @@ public class Subscriber extends AbstractApiService {
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
                 cachedSubscriptionNameString,
-                credentials,
                 receiver,
                 ackExpirationPadding,
                 maxAckExtensionPeriod,
                 streamAckDeadlineSeconds,
                 ackLatencyDistribution,
-                channelBuilder.build(),
+                channels.get(i),
                 flowController,
                 executor,
                 clock));
@@ -321,12 +322,11 @@ public class Subscriber extends AbstractApiService {
         pollingSubscriberConnections.add(
             new PollingSubscriberConnection(
                 cachedSubscriptionNameString,
-                credentials,
                 receiver,
                 ackExpirationPadding,
                 maxAckExtensionPeriod,
                 ackLatencyDistribution,
-                channelBuilder.build(),
+                channels.get(i),
                 flowController,
                 executor,
                 clock));
@@ -433,8 +433,10 @@ public class Subscriber extends AbstractApiService {
     FlowControlSettings flowControlSettings = FlowControlSettings.getDefaultInstance();
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
-    Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
-        Optional.absent();
+    ChannelProvider channelProvider =
+        SubscriptionAdminSettings.defaultChannelProviderBuilder()
+            .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
+            .build();
     Optional<ApiClock> clock = Optional.absent();
 
     Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
@@ -453,15 +455,15 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * ManagedChannelBuilder to use to create Channels.
+     * {@code ChannelProvider} to use to create Channels, which must point at Cloud Pub/Sub
+     * endpoint.
      *
-     * <p>Must point at Cloud Pub/Sub endpoint.
+     * <p>For performance, this client benefits from having multiple channels open at once. Users
+     * are encouraged to provide instances of {@code ChannelProvider} that creates new channels
+     * instead of returning pre-initialized ones.
      */
-    public Builder setChannelBuilder(
-        ManagedChannelBuilder<? extends ManagedChannelBuilder<?>> channelBuilder) {
-      this.channelBuilder =
-          Optional.<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>>of(
-              Preconditions.checkNotNull(channelBuilder));
+    public Builder setChannelProvider(ChannelProvider channelProvider) {
+      this.channelProvider = Preconditions.checkNotNull(channelProvider);
       return this;
     }
 
@@ -521,4 +523,3 @@ public class Subscriber extends AbstractApiService {
     }
   }
 }
-

@@ -20,6 +20,7 @@ import static com.google.cloud.pubsub.spi.v1.MessageDispatcher.PENDING_ACKS_SEND
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.grpc.FixedChannelProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.cloud.pubsub.spi.v1.FakeSubscriberServiceImpl.ModifyAckDeadline;
@@ -33,6 +34,7 @@ import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.SubscriptionName;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
@@ -74,12 +76,11 @@ public class SubscriberImplTest {
 
   private final boolean isStreamingTest;
 
-  private InProcessChannelBuilder testChannelBuilder;
+  private ManagedChannel testChannel;
   private FakeScheduledExecutorService fakeExecutor;
   private FakeSubscriberServiceImpl fakeSubscriberServiceImpl;
   private ServerImpl testServer;
 
-  private FakeCredentials testCredentials;
   private TestReceiver testReceiver;
 
   static class TestReceiver implements MessageReceiver {
@@ -176,13 +177,12 @@ public class SubscriberImplTest {
     InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName(testName.getMethodName());
     fakeSubscriberServiceImpl = new FakeSubscriberServiceImpl();
     fakeExecutor = new FakeScheduledExecutorService();
-    testChannelBuilder = InProcessChannelBuilder.forName(testName.getMethodName());
+    testChannel = InProcessChannelBuilder.forName(testName.getMethodName()).build();
     serverBuilder.addService(fakeSubscriberServiceImpl);
     testServer = serverBuilder.build();
     testServer.start();
 
     testReceiver = new TestReceiver();
-    testCredentials = new FakeCredentials();
   }
 
   @After
@@ -536,8 +536,7 @@ public class SubscriberImplTest {
   private Builder getTestSubscriberBuilder(MessageReceiver receiver) {
     return Subscriber.defaultBuilder(TEST_SUBSCRIPTION, receiver)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
-        .setCredentials(testCredentials)
-        .setChannelBuilder(testChannelBuilder)
+        .setChannelProvider(FixedChannelProvider.create(testChannel))
         .setClock(fakeExecutor.getClock());
   }
 
