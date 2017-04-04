@@ -115,7 +115,7 @@ public class ITComputeTest {
   }
 
   @AfterClass
-  public static void teardown() {
+  public static void tearDown() {
     resourceCleaner.cleanUp();
   }
 

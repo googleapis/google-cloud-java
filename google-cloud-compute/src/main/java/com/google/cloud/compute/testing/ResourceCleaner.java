@@ -43,28 +43,27 @@ public class ResourceCleaner {
   }
 
   private class ManagedResource<T> {
-    final T res;
-    Function<T, Void> func;
+    final T resourceId;
+    Function<T, Void> deleteFunc;
 
-    private ManagedResource(T res, Function<T, Void> func) {
-      this.res = res;
-      this.func = func;
+    private ManagedResource(T resourceId, Function<T, Void> deleteFunc) {
+      this.resourceId = resourceId;
+      this.deleteFunc = deleteFunc;
     }
 
     public void delete() {
-      func.apply(res);
+      deleteFunc.apply(resourceId);
     }
   }
 
   public void cleanUp() {
     for (Map.Entry<Object, ManagedResource<?>> r : resources.entrySet()) {
-      System.out.println("Clean up compute engine resource: " + r.getKey().toString());
       r.getValue().delete();
     }
     resources.clear();
   }
 
-  public ResourceCleaner add(AddressId addressId) {
+  public void add(AddressId addressId) {
     ManagedResource<AddressId> r =
         new ManagedResource<>(
             addressId,
@@ -76,10 +75,9 @@ public class ResourceCleaner {
               }
             });
     resources.put(addressId, r);
-    return this;
   }
 
-  public ResourceCleaner add(DiskId diskId) {
+  public void add(DiskId diskId) {
     ManagedResource<DiskId> r =
         new ManagedResource<>(
             diskId,
@@ -91,10 +89,9 @@ public class ResourceCleaner {
               }
             });
     resources.put(diskId, r);
-    return this;
   }
 
-  public ResourceCleaner add(SnapshotId snapshotId) {
+  public void add(SnapshotId snapshotId) {
     ManagedResource<SnapshotId> r =
         new ManagedResource<>(
             snapshotId,
@@ -106,10 +103,9 @@ public class ResourceCleaner {
               }
             });
     resources.put(snapshotId, r);
-    return this;
   }
 
-  public ResourceCleaner add(NetworkId networkId) {
+  public void add(NetworkId networkId) {
     ManagedResource<NetworkId> r =
         new ManagedResource<>(
             networkId,
@@ -121,10 +117,9 @@ public class ResourceCleaner {
               }
             });
     resources.put(networkId, r);
-    return this;
   }
 
-  public ResourceCleaner add(SubnetworkId subnetworkId) {
+  public void add(SubnetworkId subnetworkId) {
     ManagedResource<SubnetworkId> r =
         new ManagedResource<>(
             subnetworkId,
@@ -136,10 +131,9 @@ public class ResourceCleaner {
               }
             });
     resources.put(subnetworkId, r);
-    return this;
   }
 
-  public ResourceCleaner add(ImageId imageId) {
+  public void add(ImageId imageId) {
     ManagedResource<ImageId> r =
         new ManagedResource<>(
             imageId,
@@ -151,10 +145,9 @@ public class ResourceCleaner {
               }
             });
     resources.put(imageId, r);
-    return this;
   }
 
-  public ResourceCleaner add(InstanceId instanceId) {
+  public void add(InstanceId instanceId) {
     ManagedResource<InstanceId> r =
         new ManagedResource<>(
             instanceId,
@@ -166,10 +159,9 @@ public class ResourceCleaner {
               }
             });
     resources.put(instanceId, r);
-    return this;
   }
 
-  public <T> ResourceCleaner remove(T resourceId) {
+  public ResourceCleaner remove(Object resourceId) {
     if (!resources.containsKey(resourceId)) {
         throw new NoSuchElementException(resourceId + " has not been added to managed resources");
     }
