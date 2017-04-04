@@ -54,7 +54,7 @@ public class SubscriberSnippets {
   public void startAndWait() throws Exception {
     // [START startAsync]
     Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
-    subscriber.addListener(new Subscriber.SubscriberListener() {
+    subscriber.addListener(new Subscriber.Listener() {
       public void failed(Subscriber.State from, Throwable failure) {
         // Handle error.
       }

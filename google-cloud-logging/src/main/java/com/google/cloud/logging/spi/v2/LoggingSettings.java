@@ -21,6 +21,7 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitore
 
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
@@ -399,13 +400,9 @@ public class LoggingSettings extends ClientSettings {
       WRITE_LOG_ENTRIES_BATCHING_DESC =
           new BatchingDescriptor<WriteLogEntriesRequest, WriteLogEntriesResponse>() {
             @Override
-            public String getBatchPartitionKey(WriteLogEntriesRequest request) {
-              return request.getLogName()
-                  + "|"
-                  + request.getResource()
-                  + "|"
-                  + request.getLabels()
-                  + "|";
+            public PartitionKey getBatchPartitionKey(WriteLogEntriesRequest request) {
+              return new PartitionKey(
+                  request.getLogName(), request.getResource(), request.getLabels());
             }
 
             @Override
