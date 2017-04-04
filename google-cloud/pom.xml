@@ -71,12 +71,7 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-speech-v1beta1</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-speech-v1</artifactId>
+      <artifactId>google-cloud-speech</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
