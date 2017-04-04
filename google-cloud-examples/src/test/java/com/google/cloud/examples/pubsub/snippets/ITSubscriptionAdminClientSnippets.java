@@ -95,26 +95,6 @@ public class ITSubscriptionAdminClientSnippets {
   }
 
   @Test
-  public void publishAndPullMessagesIsSuccessful() throws Exception {
-    String topicName = topics[0];
-    String subscriptionName = subscriptions[0];
-    createSubscription(topicName, subscriptionName);
-    Set<String> messages = publishMessages(topicName, 5);
-    //pulls max 100 messages
-    PullResponse response = subscriptionAdminClientSnippets.pull(subscriptionName);
-    assertNotNull(response);
-    //remove messages that match sent
-    for (ReceivedMessage receivedMessage : response.getReceivedMessagesList()) {
-      String message = receivedMessage.getMessage().getData().toStringUtf8();
-      if (messages.contains(message)) {
-        messages.remove(message);
-      }
-    }
-    //all messages published were received
-    assertTrue(messages.isEmpty());
-  }
-
-  @Test
   public void replacePushConfigIsSuccessful() throws Exception {
     String topicName = topics[0];
     String subscriptionName = subscriptions[0];
