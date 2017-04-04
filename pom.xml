@@ -115,7 +115,8 @@
     <module>google-cloud-pubsub</module>
     <module>google-cloud-resourcemanager</module>
     <module>google-cloud-spanner</module>
-    <module>google-cloud-speech</module>
+    <module>google-cloud-speech-v1</module>
+    <module>google-cloud-speech-v1beta1</module>
     <module>google-cloud-storage</module>
     <module>google-cloud-trace</module>
     <module>google-cloud-translate</module>

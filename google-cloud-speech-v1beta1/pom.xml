@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>google-cloud-speech</artifactId>
+  <artifactId>google-cloud-speech-v1beta1</artifactId>
   <packaging>jar</packaging>
   <name>Google Cloud Speech</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-speech</url>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-speech-v1beta1</url>
   <description>
     Java idiomatic client for Google Cloud Speech.
   </description>
@@ -14,7 +14,7 @@
     <version>0.11.2-alpha-SNAPSHOT</version>
   </parent>
   <properties>
-    <site.installationModule>google-cloud-speech</site.installationModule>
+    <site.installationModule>google-cloud-speech-v1beta1</site.installationModule>
     <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
