@@ -16,8 +16,8 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.FlowController;
 import com.google.api.gax.core.ApiClock;
+import com.google.api.gax.core.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
@@ -28,6 +28,7 @@ import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -260,27 +261,45 @@ class MessageDispatcher {
   }
 
   public void processReceivedMessages(List<com.google.pubsub.v1.ReceivedMessage> responseMessages) {
-    if (responseMessages.size() == 0) {
+    if (responseMessages.isEmpty()) {
       return;
     }
-    Instant now = new Instant(clock.millisTime());
-    int totalByteCount = 0;
+
     final ArrayList<AckHandler> ackHandlers = new ArrayList<>(responseMessages.size());
     for (ReceivedMessage pubsubMessage : responseMessages) {
-      int messageSize = pubsubMessage.getMessage().getSerializedSize();
-      totalByteCount += messageSize;
-      ackHandlers.add(new AckHandler(pubsubMessage.getAckId(), messageSize));
+      ackHandlers.add(new AckHandler(pubsubMessage.getAckId(), pubsubMessage.getMessage().getSerializedSize()));
     }
+
+    Instant now = new Instant(clock.millisTime());
     Instant expiration = now.plus(messageDeadlineSeconds * 1000);
     logger.log(
         Level.FINER, "Received {0} messages at {1}", new Object[] {responseMessages.size(), now});
 
+    synchronized (outstandingAckHandlers) {
+      // AckDeadlineAlarm modifies lists in outstandingAckHandlers in-place and might run at any time.
+      // We will also later iterate over ackHandlers when we give messages to user code.
+      // We must create a new list to pass to outstandingAckHandlers,
+      // so that we can't iterate and modify the list concurrently.
+      outstandingAckHandlers.add(
+          new ExtensionJob(
+              expiration,
+              INITIAL_ACK_DEADLINE_EXTENSION_SECONDS,
+              new ArrayList<AckHandler>(ackHandlers)));
+    }
+    setupNextAckDeadlineExtensionAlarm(expiration);
+
+    // Deadline extension must be set up before we reserve flow control.
+    // Flow control might block for a while, and extension will keep messages from expiring.
+
     try {
-      flowController.reserve(responseMessages.size(), totalByteCount);
-    } catch (FlowController.FlowControlException unexpectedException) {
-      throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
+      flowController.reserve(responseMessages.size(), totalMessageSize(responseMessages));
+    } catch (FlowController.FlowControlException e) {
+      throw new IllegalStateException("Flow control unexpected exception", e);
     }
     messagesWaiter.incrementPendingMessages(responseMessages.size());
+
+    // Reserving flow control must happen before we give the messages to the user,
+    // otherwise the user code might be given too many messages to process at once.
 
     Iterator<AckHandler> acksIterator = ackHandlers.iterator();
     for (ReceivedMessage userMessage : responseMessages) {
@@ -307,12 +326,14 @@ class MessageDispatcher {
             }
           });
     }
+  }
 
-    synchronized (outstandingAckHandlers) {
-      outstandingAckHandlers.add(
-          new ExtensionJob(expiration, INITIAL_ACK_DEADLINE_EXTENSION_SECONDS, ackHandlers));
+  private static int totalMessageSize(Collection<ReceivedMessage> messages)  {
+    int total = 0;
+    for (ReceivedMessage message : messages) {
+      total += message.getMessage().getSerializedSize();
     }
-    setupNextAckDeadlineExtensionAlarm(expiration);
+    return total;
   }
 
   private void setupPendingAcksAlarm() {
