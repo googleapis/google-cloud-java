@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.appengine;
+package com.google.cloud.managed.test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -33,9 +32,10 @@ import javax.servlet.http.HttpServletResponse;
 public class GcjFlexTestServlet extends HttpServlet {
 
   private static final long serialVersionUID = 523885428311420041L;
-  private static final ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 0L,
+
+  private final ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 0L,
       TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
-  private static volatile GcjTestRunner testRunner = null;
+  private volatile GcjTestRunner testRunner = null;
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -43,7 +43,7 @@ public class GcjFlexTestServlet extends HttpServlet {
     try {
       String classNames = req.getParameter("classes");
       PrintWriter out = resp.getWriter();
-      out.append(startTest(loadClasses(classNames.split("\\s")), req, resp));
+      out.append(startTest(loadClasses(classNames.split("[\\r\\n]+")), req, resp));
       out.close();
     } catch (Exception e) {
       throw new RuntimeException(e);
@@ -100,9 +100,9 @@ public class GcjFlexTestServlet extends HttpServlet {
     }
   }
 
-//  @Override
-//  public void destroy() {
-//    executor.shutdownNow();
-//    super.destroy();
-//  }
+  @Override
+  public void destroy() {
+    executor.shutdownNow();
+    super.destroy();
+  }
 }
