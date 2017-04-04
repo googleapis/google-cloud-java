@@ -34,7 +34,6 @@ public class LoggingConfig {
   private final LogManager manager = LogManager.getLogManager();
   private String className;
   private final String flushLevelTag = "flushLevel";
-  private final String flushSizeTag = "flushSize";
   private final String logFileNameTag = "log";
   private final String logLevelTag = "level";
   private final String filterTag = "filter";
@@ -49,11 +48,6 @@ public class LoggingConfig {
 
   Level getFlushLevel() {
     return getLevelProperty(flushLevelTag, LoggingLevel.ERROR);
-  }
-
-  Integer getFlushSize() {
-    int defaultValue = 1;
-    return Math.max(getIntegerProperty(flushSizeTag, defaultValue), defaultValue);
   }
 
   String getLogName() {
@@ -84,7 +78,7 @@ public class LoggingConfig {
 
   MonitoredResource getMonitoredResource(String projectId) {
     String resourceType = getProperty(resourceTypeTag, "");
-    return MonitoredResourceHelper.getResource(projectId, resourceType);
+    return MonitoredResourceUtil.getResource(projectId, resourceType);
   }
 
   List<Enhancer> getEnhancers() {

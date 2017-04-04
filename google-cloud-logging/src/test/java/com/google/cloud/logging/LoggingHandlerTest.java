@@ -143,7 +143,6 @@ public class LoggingHandlerTest {
           .put("level", "ALL")
           .put("filter", "com.google.cloud.logging.LoggingHandlerTest$TestFilter")
           .put("formatter", "com.google.cloud.logging.LoggingHandlerTest$TestFormatter")
-          .put("flushSize", "2")
           .put("flushLevel", "CRITICAL")
           .put("enhancers", "com.google.cloud.logging.LoggingHandlerTest$TestEnhancer")
           .put("resourceType", "testResourceType")
@@ -361,7 +360,6 @@ public class LoggingHandlerTest {
     EasyMock.replay(options, logging);
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
-    handler.setFlushSize(100);
     handler.setFlushLevel(Level.WARNING);
     handler.setFormatter(new TestFormatter());
     handler.publish(newLogRecord(Level.FINEST, MESSAGE));
@@ -489,7 +487,6 @@ public class LoggingHandlerTest {
     assertEquals(
         "com.google.cloud.logging.LoggingHandlerTest$TestFormatter",
         handler.getFormatter().getClass().getName());
-    assertEquals(2, handler.getFlushSize());
     assertEquals(LoggingLevel.CRITICAL, handler.getFlushLevel());
     assertEquals(Synchronicity.SYNC, handler.getSynchronicity());
 

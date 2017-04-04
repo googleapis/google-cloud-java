@@ -101,7 +101,7 @@ public class LoggingHandler extends Handler {
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
 
-  private BufferedLogging bufferedLogging;
+  private LoggingHelper loggingHelper;
   private List<Enhancer> enhancers;
   private  ErrorHandler errorHandler;
 
@@ -174,6 +174,7 @@ public class LoggingHandler extends Handler {
       this.flushLevel = config.getFlushLevel();
       String logName = firstNonNull(log, config.getLogName());
 
+      LoggingOptions loggingOptions = (options != null) ? options : LoggingOptions.getDefaultInstance();
       if (options == null) {
         options = LoggingOptions.getDefaultInstance();
       }
@@ -188,9 +189,8 @@ public class LoggingHandler extends Handler {
                                       String.valueOf(baseLevel.intValue())))
               };
 
-      bufferedLogging = BufferedLogging.newBuilder(options)
+      loggingHelper = LoggingHelper.newBuilder(options)
               .setFlushSeverity(severityFor(flushLevel))
-              .setFlushSize(config.getFlushSize())
               .setSynchronicity(config.getSynchronicity())
               .setWriteOptions(logName, resource, labelOptions)
               .setErrorHandler(errorHandler)
@@ -256,7 +256,7 @@ public class LoggingHandler extends Handler {
       return;
     }
     if (logEntryBuilder != null) {
-      bufferedLogging.publish(logEntryBuilder);
+      loggingHelper.publish(logEntryBuilder);
     }
   }
 
@@ -287,36 +287,28 @@ public class LoggingHandler extends Handler {
 
   @Override
   public void flush() {
-    bufferedLogging.flush();
+    loggingHelper.flush();
   }
 
   /**
-   * Closes the handler and the associated {@link BufferedLogging} object.
+   * Closes the handler and the associated {@link LoggingHelper} object.
    */
   @Override
   public synchronized void close() throws SecurityException {
-      bufferedLogging.close();
+      loggingHelper.close();
   }
 
   public synchronized void setFlushLevel(Level level) {
     flushLevel = level;
-    bufferedLogging.setFlushSeverity(severityFor(flushLevel));
-  }
-
-  public synchronized void setFlushSize(int size) {
-    bufferedLogging.setFlushSize(size);
+    loggingHelper.setFlushSeverity(severityFor(flushLevel));
   }
 
   public synchronized void setSynchronicity(Synchronicity synchronicity) {
-    bufferedLogging.setSynchronicity(synchronicity);
-  }
-
-  public long getFlushSize() {
-    return bufferedLogging.getFlushSize();
+    loggingHelper.setSynchronicity(synchronicity);
   }
 
   public Synchronicity getSynchronicity() {
-    return bufferedLogging.getSynchronicity();
+    return loggingHelper.getSynchronicity();
   }
 
   public Level getFlushLevel() {

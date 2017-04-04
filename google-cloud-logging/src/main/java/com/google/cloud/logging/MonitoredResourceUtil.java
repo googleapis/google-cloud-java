@@ -21,7 +21,10 @@ import com.google.common.base.Strings;
 import com.google.cloud.MonitoredResource;
 import java.util.List;
 
-class MonitoredResourceHelper {
+class MonitoredResourceUtil {
+
+  private MonitoredResourceUtil() {
+  }
 
   private static final String defaultResourceType = "global";
 

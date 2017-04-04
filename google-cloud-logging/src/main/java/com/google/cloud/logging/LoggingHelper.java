@@ -16,11 +16,13 @@
 
 package com.google.cloud.logging;
 
+import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutureCallback;
 import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
+import com.google.cloud.logging.spi.v2.LoggingSettings;
 import com.google.common.util.concurrent.Uninterruptibles;
 
 import java.util.*;
@@ -28,28 +30,24 @@ import java.util.*;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-public class BufferedLogging {
+public class LoggingHelper {
 
   private static final ThreadLocal<Boolean> inPublishCall = new ThreadLocal<>();
   private volatile Logging logging;
   private LoggingOptions loggingOptions;
   private WriteOption[] writeOptions;
   private Severity flushSeverity;
-  private Integer flushSize;
   private Synchronicity synchronicity;
   private LoggingErrorHandler errorHandler;
   private List<Enhancer> resourceEnhancers;
-  private LinkedList<LogEntry> buffer;
 
   private final Object writeLock = new Object();
   private final Set<ApiFuture<Void>> pendingWrites =
           Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
 
-  private BufferedLogging() {}
+  private LoggingHelper() {}
 
   public void flush() {
-
-    flushBuffer();
     // BUG(1795): We should force batcher to issue RPC call for buffered messages,
     // so the code below doesn't wait uselessly.
     ArrayList<ApiFuture<Void>> writesToFlush = new ArrayList<>();
@@ -82,14 +80,11 @@ public class BufferedLogging {
     inPublishCall.set(true);
 
     try {
-      synchronized (this) {
-        buffer.add(entry);
-        if (buffer.size() >= flushSize || entry.getSeverity().compareTo(flushSeverity) >= 0) {
-          flushBuffer();
+        write(entry);
+        if (entry.getSeverity().compareTo(flushSeverity) >= 0) {
+          flush();
         }
-      }
-    }
-    finally{
+    } finally{
       inPublishCall.remove();
     }
   }
@@ -112,36 +107,20 @@ public class BufferedLogging {
     flushSeverity = severity;
   }
 
-  public synchronized void setFlushSize(int size) {
-    flushSize = size;
-  }
-
   public synchronized void setSynchronicity(Synchronicity syncType) {
     synchronicity = syncType;
-  }
-
-  public Integer getFlushSize() {
-    return flushSize;
   }
 
   public Synchronicity getSynchronicity() {
     return synchronicity;
   }
 
-  private synchronized void flushBuffer() {
-    if (buffer.isEmpty()) {
-      return;
-    }
-    List<LogEntry> logEntries = buffer;
-    write(logEntries);
-    buffer = new LinkedList<>();
-  }
-
-  private void write(List<LogEntry> entryList) {
+  private void write(LogEntry entry) {
+    List<LogEntry> logEntryList = Collections.singletonList(entry);
     switch (this.synchronicity) {
       case SYNC:
         try {
-          getLogging().write(entryList, writeOptions);
+          getLogging().write(logEntryList, writeOptions);
         } catch (Exception ex) {
           errorHandler.handleWriteError(ex);
         }
@@ -149,7 +128,7 @@ public class BufferedLogging {
 
       case ASYNC:
       default:
-        final ApiFuture<Void> writeFuture = getLogging().writeAsync(entryList, writeOptions);
+        final ApiFuture<Void> writeFuture = getLogging().writeAsync(logEntryList, writeOptions);
         ApiFutures.addCallback(
                 writeFuture,
                 new ApiFutureCallback<Void>() {
@@ -194,64 +173,57 @@ public class BufferedLogging {
   }
 
   /**
-   * Returns a builder for this {@code BufferedLogging} object.
+   * Returns a builder for this {@code LoggingHelper} object.
    */
-  public BufferedLogging.Builder toBuilder() {
-    return new BufferedLogging.BuilderImpl(this);
+  public LoggingHelper.Builder toBuilder() {
+    return new LoggingHelper.BuilderImpl(this);
   }
 
   /**
-   * Returns a builder for {@code BufferedLogging} objects given the name of the sink and its destination.
+   * Returns a builder for {@code LoggingHelper} objects given the name of the sink and its destination.
    */
-  public static BufferedLogging.Builder newBuilder(LoggingOptions loggingOptions) {
-    return new BufferedLogging.BuilderImpl(loggingOptions);
+  public static LoggingHelper.Builder newBuilder(LoggingOptions loggingOptions) {
+    return new LoggingHelper.BuilderImpl(loggingOptions);
   }
 
   public abstract static class Builder {
     /**
      * Service configuration of the cloud logging service
      */
-    public abstract BufferedLogging.Builder setLoggingOptions(LoggingOptions loggingOptions);
+    public abstract LoggingHelper.Builder setLoggingOptions(LoggingOptions loggingOptions);
 
     /**
      * Set the synchronicity of logging : {@link Synchronicity}, defaults to async
      */
-    public abstract BufferedLogging.Builder setSynchronicity(Synchronicity synchronicity);
-
-    /**
-     * Allow for logs to be buffered in memory till a certain size is reached, default = 1, ie, logs immediately
-     */
-    public abstract BufferedLogging.Builder setFlushSize(int flushSize);
-
+    public abstract LoggingHelper.Builder setSynchronicity(Synchronicity synchronicity);
 
     /**
      * Minimum severity of log message to not buffer but immediately write out to cloud logging.
      * Default : Error
      * @param flushSeverity : minimum logging severity
      */
-    public abstract BufferedLogging.Builder setFlushSeverity(Severity flushSeverity);
+    public abstract LoggingHelper.Builder setFlushSeverity(Severity flushSeverity);
 
     /**
      * Sets the default write options for log entries
      */
-    public abstract BufferedLogging.Builder  setWriteOptions(String logName, MonitoredResource resource,
-                                                             WriteOption[] labelOptions);
+    public abstract LoggingHelper.Builder  setWriteOptions(String logName, MonitoredResource resource,
+                                                           WriteOption[] labelOptions);
 
     /**
      * Sets the error log handler
      */
-    public abstract BufferedLogging.Builder setErrorHandler(LoggingErrorHandler errorHandler);
+    public abstract LoggingHelper.Builder setErrorHandler(LoggingErrorHandler errorHandler);
     /**
-     * Creates a {@code BufferedLogging} object for this builder.
+     * Creates a {@code LoggingHelper} object for this builder.
      */
-    public abstract BufferedLogging build();
+    public abstract LoggingHelper build();
   }
 
-  static final class BuilderImpl extends BufferedLogging.Builder {
+  static final class BuilderImpl extends LoggingHelper.Builder {
 
     private LoggingOptions loggingOptions;
     private Severity flushSeverity;
-    private Integer flushSize;
     private Synchronicity synchronicity;
     private WriteOption[] writeOptions;
     private LoggingErrorHandler errorHandler;
@@ -260,42 +232,35 @@ public class BufferedLogging {
       this.loggingOptions = loggingOptions;
     }
 
-    BuilderImpl(BufferedLogging bufferedLogging) {
-      this.loggingOptions = bufferedLogging.loggingOptions;
-      this.flushSeverity = bufferedLogging.flushSeverity;
-      this.flushSize = bufferedLogging.flushSize;
-      this.synchronicity = bufferedLogging.synchronicity;
-      this.writeOptions = bufferedLogging.writeOptions;
-      this.errorHandler = bufferedLogging.errorHandler;
+    BuilderImpl(LoggingHelper loggingHelper) {
+      this.loggingOptions = loggingHelper.loggingOptions;
+      this.flushSeverity = loggingHelper.flushSeverity;
+      this.synchronicity = loggingHelper.synchronicity;
+      this.writeOptions = loggingHelper.writeOptions;
+      this.errorHandler = loggingHelper.errorHandler;
     }
 
     @Override
-    public BufferedLogging.Builder setLoggingOptions(LoggingOptions loggingOptions) {
+    public LoggingHelper.Builder setLoggingOptions(LoggingOptions loggingOptions) {
       this.loggingOptions = loggingOptions;
       return this;
     }
 
     @Override
-    public BufferedLogging.Builder setFlushSeverity(Severity flushSeverity) {
+    public LoggingHelper.Builder setFlushSeverity(Severity flushSeverity) {
       this.flushSeverity = flushSeverity;
       return this;
     }
 
     @Override
-    public BufferedLogging.Builder setFlushSize(int flushSize) {
-      this.flushSize = flushSize;
-      return this;
-    }
-
-    @Override
-    public BufferedLogging.Builder setSynchronicity(Synchronicity synchronicity) {
+    public LoggingHelper.Builder setSynchronicity(Synchronicity synchronicity) {
       this.synchronicity = synchronicity;
       return this;
     }
 
     @Override
-    public BufferedLogging.Builder setWriteOptions(String logName, MonitoredResource resource,
-                                                   WriteOption[] labelOptions) {
+    public LoggingHelper.Builder setWriteOptions(String logName, MonitoredResource resource,
+                                                 WriteOption[] labelOptions) {
       List<WriteOption> writeOptionsList = new ArrayList<>();
       writeOptionsList.add(WriteOption.logName(logName));
       writeOptionsList.add(WriteOption.resource(resource));
@@ -308,26 +273,24 @@ public class BufferedLogging {
     }
 
     @Override
-    public BufferedLogging.Builder setErrorHandler(LoggingErrorHandler errorHandler) {
+    public LoggingHelper.Builder setErrorHandler(LoggingErrorHandler errorHandler) {
       this.errorHandler = errorHandler;
       return this;
     }
 
     @Override
-    public BufferedLogging build() {
-      return new BufferedLogging(this);
+    public LoggingHelper build() {
+      return new LoggingHelper(this);
     }
   }
 
-  BufferedLogging(BufferedLogging.BuilderImpl builder) {
+  LoggingHelper(LoggingHelper.BuilderImpl builder) {
     this.loggingOptions = checkNotNull(firstNonNull(builder.loggingOptions, LoggingOptions.getDefaultInstance()));
-    this.flushSize = firstNonNull(builder.flushSize, 1);
-    this.buffer = new LinkedList<>();
     this.flushSeverity = firstNonNull(builder.flushSeverity, Severity.ERROR);
     this.synchronicity = firstNonNull(builder.synchronicity, Synchronicity.ASYNC);
     this.writeOptions = checkNotNull(builder.writeOptions);
     this.errorHandler = checkNotNull(builder.errorHandler);
-    this.resourceEnhancers = MonitoredResourceHelper.getResourceEnhancers();
+    this.resourceEnhancers = MonitoredResourceUtil.getResourceEnhancers();
   }
 
 }
