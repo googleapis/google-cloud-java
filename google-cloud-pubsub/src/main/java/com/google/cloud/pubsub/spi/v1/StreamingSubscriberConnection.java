@@ -16,8 +16,6 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import static com.google.cloud.pubsub.spi.v1.StatusUtil.isRetryable;
-
 import com.google.api.gax.core.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
@@ -181,9 +179,13 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
           }
 
           @Override
-          public void onFailure(Throwable t) {
-            Status errorStatus = Status.fromThrowable(t);
-            if (isRetryable(errorStatus) && isAlive()) {
+          public void onFailure(Throwable cause) {
+            if (!isAlive()) {
+              // we don't care about subscription failures when we're no longer running.
+              logger.log(Level.FINE, "pull failure after service no longer running", cause);
+              return;
+            }
+            if (StatusUtil.isRetryable(cause)) {
               long backoffMillis = channelReconnectBackoff.getMillis();
               channelReconnectBackoff = channelReconnectBackoff.plus(backoffMillis);
               executor.schedule(
@@ -196,9 +198,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
                   backoffMillis,
                   TimeUnit.MILLISECONDS);
             } else {
-              if (isAlive()) {
-                notifyFailed(t);
-              }
+              notifyFailed(cause);
             }
           }
         },

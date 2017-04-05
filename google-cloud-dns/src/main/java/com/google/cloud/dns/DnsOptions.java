@@ -19,15 +19,16 @@ package com.google.cloud.dns;
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.dns.spi.DefaultDnsRpc;
-import com.google.cloud.dns.spi.DnsRpc;
+import com.google.cloud.dns.spi.v1.HttpDnsRpc;
+import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
+public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
 
   private static final long serialVersionUID = -2501790264435912627L;
   private static final String API_SHORT_NAME = "Dns";
@@ -48,12 +49,12 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
     private static final DnsRpcFactory INSTANCE = new DefaultDnsRpcFactory();
 
     @Override
-    public DnsRpc create(DnsOptions options) {
-      return new DefaultDnsRpc(options);
+    public ServiceRpc create(DnsOptions options) {
+      return new HttpDnsRpc(options);
     }
   }
 
-  public static class Builder extends ServiceOptions.Builder<Dns, DnsRpc,
+  public static class Builder extends ServiceOptions.Builder<Dns,
       DnsOptions, Builder> {
 
     private Builder() {
@@ -83,7 +84,7 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
   }
 
   private static class DnsDefaults implements
-      ServiceDefaults<Dns, DnsRpc, DnsOptions> {
+      ServiceDefaults<Dns, DnsOptions> {
 
     @Override
     public DnsFactory getDefaultServiceFactory() {
@@ -108,6 +109,10 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected DnsRpc getDnsRpcV1() {
+    return (DnsRpc) getRpc();
   }
 
   @SuppressWarnings("unchecked")

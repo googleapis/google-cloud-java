@@ -18,18 +18,17 @@ package com.google.cloud.compute;
 
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
-import com.google.cloud.ServiceFactory;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.compute.spi.ComputeRpc;
+import com.google.cloud.compute.spi.v1.ComputeRpc;
 import com.google.cloud.compute.spi.ComputeRpcFactory;
-import com.google.cloud.compute.spi.DefaultComputeRpc;
-import com.google.cloud.spi.ServiceRpcFactory;
+import com.google.cloud.compute.spi.v1.HttpComputeRpc;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeOptions> {
+public class ComputeOptions extends ServiceOptions<Compute, ComputeOptions> {
 
   private static final String API_SHORT_NAME = "Compute";
   private static final String COMPUTE_SCOPE = "https://www.googleapis.com/auth/compute";
@@ -51,13 +50,13 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeO
     private static final ComputeRpcFactory INSTANCE = new DefaultComputeRpcFactory();
 
     @Override
-    public ComputeRpc create(ComputeOptions options) {
-      return new DefaultComputeRpc(options);
+    public ServiceRpc create(ComputeOptions options) {
+      return new HttpComputeRpc(options);
     }
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<Compute, ComputeRpc, ComputeOptions, Builder> {
+      ServiceOptions.Builder<Compute, ComputeOptions, Builder> {
 
     private Builder() {
     }
@@ -86,7 +85,7 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeO
   }
 
   private static class ComputeDefaults implements
-      ServiceDefaults<Compute, ComputeRpc, ComputeOptions> {
+      ServiceDefaults<Compute, ComputeOptions> {
 
     @Override
     public ComputeFactory getDefaultServiceFactory() {
@@ -111,6 +110,10 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeO
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected ComputeRpc getComputeRpcV1() {
+    return (ComputeRpc) getRpc();
   }
 
   @Override

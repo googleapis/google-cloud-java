@@ -17,15 +17,15 @@
 package com.google.cloud.storage;
 
 import static com.google.cloud.RetryHelper.runWithRetries;
-import static com.google.cloud.storage.spi.StorageRpc.Option.DELIMITER;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_GENERATION_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_METAGENERATION_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_METAGENERATION_NOT_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
-import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.DELIMITER;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_METAGENERATION_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_METAGENERATION_NOT_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
@@ -43,9 +43,9 @@ import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.storage.Acl.Entity;
-import com.google.cloud.storage.spi.StorageRpc;
-import com.google.cloud.storage.spi.StorageRpc.RewriteResponse;
-import com.google.cloud.storage.spi.StorageRpc.Tuple;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
+import com.google.cloud.storage.spi.v1.StorageRpc.Tuple;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -90,7 +90,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   StorageImpl(StorageOptions options) {
     super(options);
-    storageRpc = options.getRpc();
+    storageRpc = options.getStorageRpcV1();
   }
 
   @Override
@@ -257,7 +257,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           new Callable<Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>>>() {
             @Override
             public Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> call() {
-              return serviceOptions.getRpc().list(optionsMap);
+              return serviceOptions.getStorageRpcV1().list(optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
@@ -284,7 +284,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           new Callable<Tuple<String, Iterable<StorageObject>>>() {
             @Override
             public Tuple<String, Iterable<StorageObject>> call() {
-              return serviceOptions.getRpc().list(bucket, optionsMap);
+              return serviceOptions.getStorageRpcV1().list(bucket, optionsMap);
             }
           }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();

@@ -19,16 +19,17 @@ package com.google.cloud.pubsub.deprecated;
 import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.pubsub.deprecated.spi.DefaultPubSubRpc;
-import com.google.cloud.pubsub.deprecated.spi.PubSubRpc;
+import com.google.cloud.pubsub.deprecated.spi.v1.GrpcPubSubRpc;
+import com.google.cloud.pubsub.deprecated.spi.v1.PubSubRpc;
 import com.google.cloud.pubsub.deprecated.spi.PubSubRpcFactory;
 import com.google.cloud.pubsub.spi.v1.PublisherSettings;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.Set;
 
-public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptions> {
+public class PubSubOptions extends ServiceOptions<PubSub, PubSubOptions> {
 
   private static final long serialVersionUID = 5598666986447361352L;
   private static final String API_SHORT_NAME = "PubSub";
@@ -66,9 +67,9 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptio
     private static final PubSubRpcFactory INSTANCE = new DefaultPubSubRpcFactory();
 
     @Override
-    public PubSubRpc create(PubSubOptions options) {
+    public ServiceRpc create(PubSubOptions options) {
       try {
-        return new DefaultPubSubRpc(options);
+        return new GrpcPubSubRpc(options);
       } catch (IOException e) {
         throw new PubSubException(e, true);
       }
@@ -82,7 +83,7 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptio
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<PubSub, PubSubRpc, PubSubOptions, Builder> {
+      ServiceOptions.Builder<PubSub, PubSubOptions, Builder> {
 
     private Builder() {}
 
@@ -110,7 +111,7 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptio
   }
 
   private static class PubSubDefaults implements
-      ServiceDefaults<PubSub, PubSubRpc, PubSubOptions> {
+      ServiceDefaults<PubSub, PubSubOptions> {
 
     @Override
     public PubSubFactory getDefaultServiceFactory() {
@@ -135,6 +136,10 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptio
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected PubSubRpc getPubSubRpcV1() {
+    return (PubSubRpc) getRpc();
   }
 
   @Override

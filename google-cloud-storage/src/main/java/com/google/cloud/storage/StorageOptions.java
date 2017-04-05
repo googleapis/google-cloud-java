@@ -19,14 +19,15 @@ package com.google.cloud.storage;
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.storage.spi.DefaultStorageRpc;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.storage.spi.v1.HttpStorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 
-public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageOptions> {
+public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
 
   private static final long serialVersionUID = -2907268477247502947L;
   private static final String API_SHORT_NAME = "Storage";
@@ -48,13 +49,13 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
     private static final StorageRpcFactory INSTANCE = new DefaultStorageRpcFactory();
 
     @Override
-    public StorageRpc create(StorageOptions options) {
-      return new DefaultStorageRpc(options);
+    public ServiceRpc create(StorageOptions options) {
+      return new HttpStorageRpc(options);
     }
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<Storage, StorageRpc, StorageOptions, Builder> {
+      ServiceOptions.Builder<Storage, StorageOptions, Builder> {
 
     private Builder() {}
 
@@ -82,7 +83,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
   }
 
   private static class StorageDefaults implements
-      ServiceDefaults<Storage, StorageRpc, StorageOptions> {
+      ServiceDefaults<Storage, StorageOptions> {
 
     @Override
     public StorageFactory getDefaultServiceFactory() {
@@ -109,6 +110,9 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
     return SCOPES;
   }
 
+  protected StorageRpc getStorageRpcV1() {
+    return (StorageRpc) getRpc();
+  }
 
   /**
    * Returns a default {@code StorageOptions} instance.

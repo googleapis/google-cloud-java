@@ -28,8 +28,8 @@ import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
-import com.google.cloud.dns.spi.DnsRpc;
-import com.google.cloud.dns.spi.RpcBatch;
+import com.google.cloud.dns.spi.v1.DnsRpc;
+import com.google.cloud.dns.spi.v1.RpcBatch;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
@@ -48,7 +48,7 @@ public class DnsBatch {
 
   DnsBatch(DnsOptions options) {
     this.options = options;
-    this.dnsRpc = options.getRpc();
+    this.dnsRpc = options.getDnsRpcV1();
     this.batch = dnsRpc.createBatch();
   }
 

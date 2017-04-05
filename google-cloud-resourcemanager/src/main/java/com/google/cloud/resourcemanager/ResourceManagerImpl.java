@@ -25,8 +25,8 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.Policy;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Tuple;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc.Tuple;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -44,7 +44,7 @@ final class ResourceManagerImpl
 
   ResourceManagerImpl(ResourceManagerOptions options) {
     super(options);
-    resourceManagerRpc = options.getRpc();
+    resourceManagerRpc = options.getResourceManagerRpcV1Beta1();
   }
 
   @Override
@@ -128,7 +128,7 @@ final class ResourceManagerImpl
                 @Override
                 public Tuple<String,
                     Iterable<com.google.api.services.cloudresourcemanager.model.Project>> call() {
-                  return serviceOptions.getRpc().list(optionsMap);
+                  return serviceOptions.getResourceManagerRpcV1Beta1().list(optionsMap);
                 }
               },
               serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
