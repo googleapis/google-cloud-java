@@ -33,9 +33,9 @@ public class GcjFlexTestServlet extends HttpServlet {
 
   private static final long serialVersionUID = 523885428311420041L;
 
-  private final ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 0L,
-      TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
-  private volatile GcjTestRunner testRunner = null;
+  private final ThreadPoolExecutor executor =
+      new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
+  private volatile GcjTestRunner testRunner;
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -43,7 +43,9 @@ public class GcjFlexTestServlet extends HttpServlet {
     try {
       String classNames = req.getParameter("classes");
       PrintWriter out = resp.getWriter();
-      out.append(startTest(loadClasses(classNames.split("[\\r\\n]+")), req, resp));
+      List<Class<?>> testClasses = loadClasses(classNames.split("[\\r\\n]+"));
+      String output = runTests(testClasses, req, resp);
+      out.append(output);
       out.close();
     } catch (Exception e) {
       throw new RuntimeException(e);
@@ -51,14 +53,13 @@ public class GcjFlexTestServlet extends HttpServlet {
   }
 
   @Override
-  public void doGet(HttpServletRequest req, HttpServletResponse resp)
-      throws IOException {
+  public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
     PrintWriter out = resp.getWriter();
     out.append(getTestOutput(req, resp));
     out.close();
   }
 
-  private List<Class<?>> loadClasses(String[] classNames) throws ClassNotFoundException {
+  private List<Class<?>> loadClasses(String... classNames) throws ClassNotFoundException {
     List<Class<?>> classes = new ArrayList<>();
     for (String className : classNames) {
       String cn = className.trim();
@@ -69,34 +70,44 @@ public class GcjFlexTestServlet extends HttpServlet {
     return classes;
   }
 
-  private String startTest(List<Class<?>> classes, HttpServletRequest req,
-      HttpServletResponse resp) {
+  private String runTests(
+      List<Class<?>> classes, HttpServletRequest req, HttpServletResponse resp) {
     synchronized (executor) {
       resp.setContentType("text/html");
       if (executor.getActiveCount() > 0) {
         return "Cannot start new test: the previous test hasn't completed yet.<p/>"
-            + "The active test progress is at <a href='" + req.getRequestURL()
-            + "'>" + req.getRequestURL() + "</a>.";
+            + "The active test progress is at <a href='"
+            + req.getRequestURL()
+            + "'>"
+            + req.getRequestURL()
+            + "</a>.";
       }
 
       testRunner = new GcjTestRunner(classes);
       executor.execute(testRunner);
       return "Test started. Check progress at <a href='"
-          + req.getRequestURL() + "'>" + req.getRequestURL() + "</a>";
+          + req.getRequestURL()
+          + "'>"
+          + req.getRequestURL()
+          + "</a>";
     }
   }
 
   private String getTestOutput(HttpServletRequest req, HttpServletResponse resp) {
     synchronized (executor) {
-      if (testRunner == null) {
-        resp.setContentType("text/html");
-        String link = req.getRequestURL()
-            .substring(0, req.getRequestURL().length() - req.getRequestURI().length());
-        return "Test hasn't been started yet. Go to <a href='" + link + "'>" + link
-            + "</a> to start a new test";
+      if (testRunner != null) {
+        resp.setContentType("text");
+        return testRunner.getOutput();
       }
-      resp.setContentType("text");
-      return testRunner.getOutput();
+      resp.setContentType("text/html");
+      int urlUriLenDiff = req.getRequestURL().length() - req.getRequestURI().length();
+      String link = req.getRequestURL().substring(0, urlUriLenDiff);
+      return "Test hasn't been started yet. Go to <a href='"
+          + link
+          + "'>"
+          + link
+          + "</a> to start a new test";
+
     }
   }
 

@@ -15,7 +15,7 @@ CURRENT_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate 
 CURRENT_VERSION_BASE=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|\w+:)' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+')
 
 # Get list of directories for which pom.xml must be updated
-module_folders=($(find . -maxdepth 2 -type d | sed -E -n "/^\.\/(google-cloud-contrib\/)?google-cloud(-[a-z]+)+$/p") . ./google-cloud)
+module_folders=($(find . -maxdepth 2 -type d | sed -E -n "/^\.\/(google-cloud-contrib\/|testing\/)?google-cloud(-[a-z0-9]+)+$/p") . ./google-cloud)
 
 CURRENT_SNAPSHOT=""
 if [ "${CURRENT_VERSION##*-}" == "SNAPSHOT" ]; then

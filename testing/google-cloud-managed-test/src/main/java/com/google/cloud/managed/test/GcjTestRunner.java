@@ -15,12 +15,10 @@
  */
 package com.google.cloud.managed.test;
 
-import com.google.cloud.storage.BlobIdTest;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import org.junit.internal.TextListener;
 import org.junit.runner.JUnitCore;
@@ -44,7 +42,7 @@ public class GcjTestRunner implements Runnable {
     synchronized (resultStream) {
       resultBytes.reset();
     }
-    for(Class<?> clazz : classes) {
+    for (Class<?> clazz : classes) {
       resultStream.append("\n").append("Running ").append(clazz.getName()).append("\n\n");
       unit.run(clazz);
     }

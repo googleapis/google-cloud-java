@@ -15,6 +15,7 @@
 
   <properties>
     <appengine.sdk.version>1.9.51</appengine.sdk.version>
+    <appengine.maven.plugin>1.2.1</appengine.maven.plugin>
     <jetty.maven.plugin>9.3.8.v20160314</jetty.maven.plugin>
     <java.source.version>1.7</java.source.version>
   </properties>
@@ -54,9 +55,12 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>com.google.appengine</groupId>
+        <groupId>com.google.cloud.tools</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
-        <version>${appengine.sdk.version}</version>
+        <version>${appengine.maven.plugin}</version>
+        <configuration>
+          <deploy.version>1</deploy.version>
+        </configuration>
       </plugin>
     </plugins>
   </build>
