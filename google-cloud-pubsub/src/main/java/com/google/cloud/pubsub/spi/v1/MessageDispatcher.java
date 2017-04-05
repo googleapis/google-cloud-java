@@ -17,8 +17,8 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.FlowController;
+import com.google.api.gax.core.ApiClock;
 import com.google.api.stats.Distribution;
-import com.google.cloud.Clock;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
@@ -58,7 +58,7 @@ class MessageDispatcher {
   private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
   private final ScheduledExecutorService executor;
-  private final Clock clock;
+  private final ApiClock clock;
 
   private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
@@ -168,7 +168,7 @@ class MessageDispatcher {
       this.ackId = ackId;
       this.outstandingBytes = outstandingBytes;
       acked = new AtomicBoolean(false);
-      receivedTime = new Instant(clock.millis());
+      receivedTime = new Instant(clock.millisTime());
     }
 
     @Override
@@ -199,7 +199,7 @@ class MessageDispatcher {
           // Record the latency rounded to the next closest integer.
           ackLatencyDistribution.record(
               Ints.saturatedCast(
-                  (long) Math.ceil((clock.millis() - receivedTime.getMillis()) / 1000D)));
+                  (long) Math.ceil((clock.millisTime() - receivedTime.getMillis()) / 1000D)));
           messagesWaiter.incrementPendingMessages(-1);
           return;
         case NACK:
@@ -229,7 +229,7 @@ class MessageDispatcher {
       Distribution ackLatencyDistribution,
       FlowController flowController,
       ScheduledExecutorService executor,
-      Clock clock) {
+      ApiClock clock) {
     this.executor = executor;
     this.ackExpirationPadding = ackExpirationPadding;
     this.maxAckExtensionPeriod = maxAckExtensionPeriod;
@@ -274,7 +274,7 @@ class MessageDispatcher {
     if (receivedMessagesCount == 0) {
       return;
     }
-    Instant now = new Instant(clock.millis());
+    Instant now = new Instant(clock.millisTime());
     int totalByteCount = 0;
     final ArrayList<AckHandler> ackHandlers = new ArrayList<>(responseMessages.size());
     for (ReceivedMessage pubsubMessage : responseMessages) {
@@ -371,7 +371,7 @@ class MessageDispatcher {
         alarmsLock.unlock();
       }
 
-      Instant now = new Instant(clock.millis());
+      Instant now = new Instant(clock.millisTime());
       // Rounded to the next second, so we only schedule future alarms at the second
       // resolution.
       Instant cutOverTime =
@@ -466,7 +466,7 @@ class MessageDispatcher {
         ackDeadlineExtensionAlarm =
             executor.schedule(
                 new AckDeadlineAlarm(),
-                nextAckDeadlineExtensionAlarmTime.getMillis() - clock.millis(),
+                nextAckDeadlineExtensionAlarmTime.getMillis() - clock.millisTime(),
                 TimeUnit.MILLISECONDS);
       }
 

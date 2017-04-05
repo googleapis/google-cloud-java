@@ -20,15 +20,17 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogsPage
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
 
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.gax.bundling.BundlingSettings;
-import com.google.api.gax.bundling.RequestBuilder;
+import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.PartitionKey;
+import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.BundledRequestIssuer;
-import com.google.api.gax.grpc.BundlingCallSettings;
-import com.google.api.gax.grpc.BundlingDescriptor;
+import com.google.api.gax.grpc.BatchedRequestIssuer;
+import com.google.api.gax.grpc.BatchingCallSettings;
+import com.google.api.gax.grpc.BatchingDescriptor;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ClientSettings;
@@ -113,8 +115,13 @@ public class LoggingSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
+  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String META_VERSION_KEY = "artifact.version";
+
+  private static String gapicVersion;
+
   private final SimpleCallSettings<DeleteLogRequest, Empty> deleteLogSettings;
-  private final BundlingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
+  private final BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesSettings;
   private final PagedCallSettings<
           ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
@@ -132,7 +139,7 @@ public class LoggingSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to writeLogEntries. */
-  public BundlingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
+  public BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesSettings() {
     return writeLogEntriesSettings;
   }
@@ -193,8 +200,12 @@ public class LoggingSettings extends ClientSettings {
   }
 
   private static String getGapicVersion() {
-    String packageVersion = LoggingSettings.class.getPackage().getImplementationVersion();
-    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
+    if (gapicVersion == null) {
+      gapicVersion =
+          PropertiesProvider.loadProperty(LoggingSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
+    }
+    return gapicVersion;
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -385,17 +396,13 @@ public class LoggingSettings extends ClientSettings {
             }
           };
 
-  private static final BundlingDescriptor<WriteLogEntriesRequest, WriteLogEntriesResponse>
-      WRITE_LOG_ENTRIES_BUNDLING_DESC =
-          new BundlingDescriptor<WriteLogEntriesRequest, WriteLogEntriesResponse>() {
+  private static final BatchingDescriptor<WriteLogEntriesRequest, WriteLogEntriesResponse>
+      WRITE_LOG_ENTRIES_BATCHING_DESC =
+          new BatchingDescriptor<WriteLogEntriesRequest, WriteLogEntriesResponse>() {
             @Override
-            public String getBundlePartitionKey(WriteLogEntriesRequest request) {
-              return request.getLogName()
-                  + "|"
-                  + request.getResource()
-                  + "|"
-                  + request.getLabels()
-                  + "|";
+            public PartitionKey getBatchPartitionKey(WriteLogEntriesRequest request) {
+              return new PartitionKey(
+                  request.getLogName(), request.getResource(), request.getLabels());
             }
 
             @Override
@@ -421,10 +428,10 @@ public class LoggingSettings extends ClientSettings {
 
             @Override
             public void splitResponse(
-                WriteLogEntriesResponse bundleResponse,
-                Collection<? extends BundledRequestIssuer<WriteLogEntriesResponse>> bundle) {
-              int bundleMessageIndex = 0;
-              for (BundledRequestIssuer<WriteLogEntriesResponse> responder : bundle) {
+                WriteLogEntriesResponse batchResponse,
+                Collection<? extends BatchedRequestIssuer<WriteLogEntriesResponse>> batch) {
+              int batchMessageIndex = 0;
+              for (BatchedRequestIssuer<WriteLogEntriesResponse> responder : batch) {
                 WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
                 responder.setResponse(response);
               }
@@ -433,8 +440,8 @@ public class LoggingSettings extends ClientSettings {
             @Override
             public void splitException(
                 Throwable throwable,
-                Collection<? extends BundledRequestIssuer<WriteLogEntriesResponse>> bundle) {
-              for (BundledRequestIssuer<WriteLogEntriesResponse> responder : bundle) {
+                Collection<? extends BatchedRequestIssuer<WriteLogEntriesResponse>> batch) {
+              for (BatchedRequestIssuer<WriteLogEntriesResponse> responder : batch) {
                 responder.setException(throwable);
               }
             }
@@ -455,7 +462,7 @@ public class LoggingSettings extends ClientSettings {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<DeleteLogRequest, Empty> deleteLogSettings;
-    private final BundlingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
+    private final BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
         writeLogEntriesSettings;
     private final PagedCallSettings.Builder<
             ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
@@ -517,9 +524,9 @@ public class LoggingSettings extends ClientSettings {
       deleteLogSettings = SimpleCallSettings.newBuilder(LoggingServiceV2Grpc.METHOD_DELETE_LOG);
 
       writeLogEntriesSettings =
-          BundlingCallSettings.newBuilder(
-                  LoggingServiceV2Grpc.METHOD_WRITE_LOG_ENTRIES, WRITE_LOG_ENTRIES_BUNDLING_DESC)
-              .setBundlingSettingsBuilder(BundlingSettings.newBuilder());
+          BatchingCallSettings.newBuilder(
+                  LoggingServiceV2Grpc.METHOD_WRITE_LOG_ENTRIES, WRITE_LOG_ENTRIES_BATCHING_DESC)
+              .setBatchingSettingsBuilder(BatchingSettings.newBuilder());
 
       listLogEntriesSettings =
           PagedCallSettings.newBuilder(
@@ -553,7 +560,7 @@ public class LoggingSettings extends ClientSettings {
 
       builder
           .writeLogEntriesSettings()
-          .getBundlingSettingsBuilder()
+          .getBatchingSettingsBuilder()
           .setElementCountThreshold(1000)
           .setRequestByteThreshold(1048576)
           .setDelayThreshold(Duration.millis(50))
@@ -635,7 +642,7 @@ public class LoggingSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to writeLogEntries. */
-    public BundlingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
+    public BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
         writeLogEntriesSettings() {
       return writeLogEntriesSettings;
     }

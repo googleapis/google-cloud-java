@@ -158,7 +158,7 @@ public class BaseServiceExceptionTest {
     expect(exceptionMock.getCause()).andReturn(cause).times(2);
     replay(exceptionMock);
     try {
-      BaseServiceException.translateAndPropagateIfPossible(exceptionMock);
+      BaseServiceException.translate(exceptionMock);
     } catch (BaseServiceException ex) {
       assertEquals(CODE, ex.getCode());
       assertEquals(MESSAGE, ex.getMessage());

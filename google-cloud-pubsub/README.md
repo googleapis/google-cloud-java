@@ -1,7 +1,7 @@
 Google Cloud Java Client for Pub/Sub
 ====================================
 
-Java idiomatic client for [Google Cloud Pub/Sub] (https://cloud.google.com/pubsub/).
+Java idiomatic client for [Google Cloud Pub/Sub](https://cloud.google.com/pubsub/).
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,8 +9,8 @@ Java idiomatic client for [Google Cloud Pub/Sub] (https://cloud.google.com/pubsu
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs)
+-  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
+-  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -26,16 +26,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>0.10.0-alpha</version>
+  <version>0.11.1-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:0.10.0-alpha'
+compile 'com.google.cloud:google-cloud-pubsub:0.11.1-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.10.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.11.1-alpha"
 ```
 
 Example Application
@@ -95,15 +95,15 @@ With Pub/Sub you can create topics. A topic is a named resource to which message
 publishers. Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.pubsub.v1.TopicName;
 ```
 Then, to create the topic, use the following code:
 
 ```java
 TopicName topic = TopicName.create("test-project", "test-topic");
-try (PublisherClient publisherClient = PublisherClient.create()) {
-  publisherClient.createTopic(topic);
+try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+  topicAdminClient.createTopic(topic);
 }
 ```
 
@@ -137,7 +137,7 @@ With Pub/Sub you can create subscriptions. A subscription represents the stream 
 single, specific topic. Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.SubscriberClient;
+import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
@@ -148,8 +148,8 @@ Then, to create the subscription, use the following code:
 TopicName topic = TopicName.create("test-project", "test-topic");
 SubscriptionName subscription = SubscriptionName.create("test-project", "test-subscription");
 
-try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-  subscriberClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
+try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+  subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
 }
 ```
 
@@ -223,7 +223,7 @@ See [TESTING] to read more about testing.
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/).
 
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered

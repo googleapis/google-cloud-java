@@ -22,6 +22,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.gax.core.ApiClock;
+import com.google.api.gax.core.CurrentMillisClock;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 
@@ -38,33 +40,34 @@ import java.util.regex.Pattern;
 public class ServiceOptionsTest {
   private static final String JSON_KEY =
       "{\n"
-      + "  \"private_key_id\": \"somekeyid\",\n"
-      + "  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggS"
-      + "kAgEAAoIBAQC+K2hSuFpAdrJI\\nnCgcDz2M7t7bjdlsadsasad+fvRSW6TjNQZ3p5LLQY1kSZRqBqylRkzteMOyHg"
-      + "aR\\n0Pmxh3ILCND5men43j3h4eDbrhQBuxfEMalkG92sL+PNQSETY2tnvXryOvmBRwa/\\nQP/9dJfIkIDJ9Fw9N4"
-      + "Bhhhp6mCcRpdQjV38H7JsyJ7lih/oNjECgYAt\\nknddadwkwewcVxHFhcZJO+XWf6ofLUXpRwiTZakGMn8EE1uVa2"
-      + "LgczOjwWHGi99MFjxSer5m9\\n1tCa3/KEGKiS/YL71JvjwX3mb+cewlkcmweBKZHM2JPTk0ZednFSpVZMtycjkbLa"
-      + "\\ndYOS8V85AgMBewECggEBAKksaldajfDZDV6nGqbFjMiizAKJolr/M3OQw16K6o3/\\n0S31xIe3sSlgW0+UbYlF"
-      + "4U8KifhManD1apVSC3csafaspP4RZUHFhtBywLO9pR5c\\nr6S5aLp+gPWFyIp1pfXbWGvc5VY/v9x7ya1VEa6rXvL"
-      + "sKupSeWAW4tMj3eo/64ge\\nsdaceaLYw52KeBYiT6+vpsnYrEkAHO1fF/LavbLLOFJmFTMxmsNaG0tuiJHgjshB\\"
-      + "n82DpMCbXG9YcCgI/DbzuIjsdj2JC1cascSP//3PmefWysucBQe7Jryb6NQtASmnv\\nCdDw/0jmZTEjpe4S1lxfHp"
-      + "lAhHFtdgYTvyYtaLZiVVkCgYEA8eVpof2rceecw/I6\\n5ng1q3Hl2usdWV/4mZMvR0fOemacLLfocX6IYxT1zA1FF"
-      + "JlbXSRsJMf/Qq39mOR2\\nSpW+hr4jCoHeRVYLgsbggtrevGmILAlNoqCMpGZ6vDmJpq6ECV9olliDvpPgWOP+\\nm"
-      + "YPDreFBGxWvQrADNbRt2dmGsrsCgYEAyUHqB2wvJHFqdmeBsaacewzV8x9WgmeX\\ngUIi9REwXlGDW0Mz50dxpxcK"
-      + "CAYn65+7TCnY5O/jmL0VRxU1J2mSWyWTo1C+17L0\\n3fUqjxL1pkefwecxwecvC+gFFYdJ4CQ/MHHXU81Lwl1iWdF"
-      + "Cd2UoGddYaOF+KNeM\\nHC7cmqra+JsCgYEAlUNywzq8nUg7282E+uICfCB0LfwejuymR93CtsFgb7cRd6ak\\nECR"
-      + "8FGfCpH8ruWJINllbQfcHVCX47ndLZwqv3oVFKh6pAS/vVI4dpOepP8++7y1u\\ncoOvtreXCX6XqfrWDtKIvv0vjl"
-      + "HBhhhp6mCcRpdQjV38H7JsyJ7lih/oNjECgYAt\\nkndj5uNl5SiuVxHFhcZJO+XWf6ofLUregtevZakGMn8EE1uVa"
-      + "2AY7eafmoU/nZPT\\n00YB0TBATdCbn/nBSuKDESkhSg9s2GEKQZG5hBmL5uCMfo09z3SfxZIhJdlerreP\\nJ7gSi"
-      + "dI12N+EZxYd4xIJh/HFDgp7RRO87f+WJkofMQKBgGTnClK1VMaCRbJZPriw\\nEfeFCoOX75MxKwXs6xgrw4W//AYG"
-      + "GUjDt83lD6AZP6tws7gJ2IwY/qP7+lyhjEqN\\nHtfPZRGFkGZsdaksdlaksd323423d+15/UvrlRSFPNj1tWQmNKk"
-      + "XyRDW4IG1Oa2p\\nrALStNBx5Y9t0/LQnFI4w3aG\\n-----END PRIVATE KEY-----\\n\",\n"
-      + "  \"client_email\": \"someclientid@developer.gserviceaccount.com\",\n"
-      + "  \"client_id\": \"someclientid.apps.googleusercontent.com\",\n"
-      + "  \"type\": \"service_account\"\n"
-      + "}";
+          + "  \"private_key_id\": \"somekeyid\",\n"
+          + "  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggS"
+          + "kAgEAAoIBAQC+K2hSuFpAdrJI\\nnCgcDz2M7t7bjdlsadsasad+fvRSW6TjNQZ3p5LLQY1kSZRqBqylRkzteMOyHg"
+          + "aR\\n0Pmxh3ILCND5men43j3h4eDbrhQBuxfEMalkG92sL+PNQSETY2tnvXryOvmBRwa/\\nQP/9dJfIkIDJ9Fw9N4"
+          + "Bhhhp6mCcRpdQjV38H7JsyJ7lih/oNjECgYAt\\nknddadwkwewcVxHFhcZJO+XWf6ofLUXpRwiTZakGMn8EE1uVa2"
+          + "LgczOjwWHGi99MFjxSer5m9\\n1tCa3/KEGKiS/YL71JvjwX3mb+cewlkcmweBKZHM2JPTk0ZednFSpVZMtycjkbLa"
+          + "\\ndYOS8V85AgMBewECggEBAKksaldajfDZDV6nGqbFjMiizAKJolr/M3OQw16K6o3/\\n0S31xIe3sSlgW0+UbYlF"
+          + "4U8KifhManD1apVSC3csafaspP4RZUHFhtBywLO9pR5c\\nr6S5aLp+gPWFyIp1pfXbWGvc5VY/v9x7ya1VEa6rXvL"
+          + "sKupSeWAW4tMj3eo/64ge\\nsdaceaLYw52KeBYiT6+vpsnYrEkAHO1fF/LavbLLOFJmFTMxmsNaG0tuiJHgjshB\\"
+          + "n82DpMCbXG9YcCgI/DbzuIjsdj2JC1cascSP//3PmefWysucBQe7Jryb6NQtASmnv\\nCdDw/0jmZTEjpe4S1lxfHp"
+          + "lAhHFtdgYTvyYtaLZiVVkCgYEA8eVpof2rceecw/I6\\n5ng1q3Hl2usdWV/4mZMvR0fOemacLLfocX6IYxT1zA1FF"
+          + "JlbXSRsJMf/Qq39mOR2\\nSpW+hr4jCoHeRVYLgsbggtrevGmILAlNoqCMpGZ6vDmJpq6ECV9olliDvpPgWOP+\\nm"
+          + "YPDreFBGxWvQrADNbRt2dmGsrsCgYEAyUHqB2wvJHFqdmeBsaacewzV8x9WgmeX\\ngUIi9REwXlGDW0Mz50dxpxcK"
+          + "CAYn65+7TCnY5O/jmL0VRxU1J2mSWyWTo1C+17L0\\n3fUqjxL1pkefwecxwecvC+gFFYdJ4CQ/MHHXU81Lwl1iWdF"
+          + "Cd2UoGddYaOF+KNeM\\nHC7cmqra+JsCgYEAlUNywzq8nUg7282E+uICfCB0LfwejuymR93CtsFgb7cRd6ak\\nECR"
+          + "8FGfCpH8ruWJINllbQfcHVCX47ndLZwqv3oVFKh6pAS/vVI4dpOepP8++7y1u\\ncoOvtreXCX6XqfrWDtKIvv0vjl"
+          + "HBhhhp6mCcRpdQjV38H7JsyJ7lih/oNjECgYAt\\nkndj5uNl5SiuVxHFhcZJO+XWf6ofLUregtevZakGMn8EE1uVa"
+          + "2AY7eafmoU/nZPT\\n00YB0TBATdCbn/nBSuKDESkhSg9s2GEKQZG5hBmL5uCMfo09z3SfxZIhJdlerreP\\nJ7gSi"
+          + "dI12N+EZxYd4xIJh/HFDgp7RRO87f+WJkofMQKBgGTnClK1VMaCRbJZPriw\\nEfeFCoOX75MxKwXs6xgrw4W//AYG"
+          + "GUjDt83lD6AZP6tws7gJ2IwY/qP7+lyhjEqN\\nHtfPZRGFkGZsdaksdlaksd323423d+15/UvrlRSFPNj1tWQmNKk"
+          + "XyRDW4IG1Oa2p\\nrALStNBx5Y9t0/LQnFI4w3aG\\n-----END PRIVATE KEY-----\\n\",\n"
+          + "  \"client_email\": \"someclientid@developer.gserviceaccount.com\",\n"
+          + "  \"client_id\": \"someclientid.apps.googleusercontent.com\",\n"
+          + "  \"type\": \"service_account\"\n"
+          + "}";
   private static final InputStream JSON_KEY_STREAM = new ByteArrayInputStream(JSON_KEY.getBytes());
   private static GoogleCredentials credentials;
+
   static {
     try {
       credentials = GoogleCredentials.fromStream(JSON_KEY_STREAM);
@@ -72,14 +75,15 @@ public class ServiceOptionsTest {
       fail("Couldn't create fake JSON credentials.");
     }
   }
-  private static final Clock TEST_CLOCK = new TestClock();
+
+  private static final ApiClock TEST_CLOCK = new TestClock();
   private static final TestServiceOptions OPTIONS =
       TestServiceOptions.newBuilder()
           .setCredentials(credentials)
           .setClock(TEST_CLOCK)
           .setHost("host")
           .setProjectId("project-id")
-          .setRetryParams(RetryParams.noRetries())
+          .setRetrySettings(ServiceOptions.getNoRetrySettings())
           .build();
   private static final TestServiceOptions OPTIONS_NO_CREDENTIALS =
       TestServiceOptions.newBuilder()
@@ -87,7 +91,7 @@ public class ServiceOptionsTest {
           .setClock(TEST_CLOCK)
           .setHost("host")
           .setProjectId("project-id")
-          .setRetryParams(RetryParams.noRetries())
+          .setRetrySettings(ServiceOptions.getNoRetrySettings())
           .build();
   private static final TestServiceOptions DEFAULT_OPTIONS =
       TestServiceOptions.newBuilder().setProjectId("project-id").build();
@@ -96,20 +100,24 @@ public class ServiceOptionsTest {
   private static final Pattern APPLICATION_NAME_PATTERN =
       Pattern.compile(LIBRARY_NAME + "(/[0-9]+.[0-9]+.[0-9]+)?");
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
-  private static class TestClock extends Clock {
+  private static class TestClock implements ApiClock {
     @Override
-    public long millis() {
-      return 123456789L;
+    public long nanoTime() {
+      return 123_456_789_000_000L;
+    }
+
+    @Override
+    public long millisTime() {
+      return 123_456_789L;
     }
   }
 
   private interface TestService extends Service<TestServiceOptions> {}
 
-  private static class TestServiceImpl
-      extends BaseService<TestServiceOptions> implements TestService {
+  private static class TestServiceImpl extends BaseService<TestServiceOptions>
+      implements TestService {
     private TestServiceImpl(TestServiceOptions options) {
       super(options);
     }
@@ -215,10 +223,11 @@ public class ServiceOptionsTest {
     assertSame(TEST_CLOCK, OPTIONS.getClock());
     assertEquals("host", OPTIONS.getHost());
     assertEquals("project-id", OPTIONS.getProjectId());
-    assertSame(RetryParams.noRetries(), OPTIONS.getRetryParams());
-    assertSame(Clock.defaultClock(), DEFAULT_OPTIONS.getClock());
+    assertSame(ServiceOptions.getNoRetrySettings(),
+        OPTIONS.getRetrySettings());
+    assertSame(CurrentMillisClock.getDefaultClock(), DEFAULT_OPTIONS.getClock());
     assertEquals("https://www.googleapis.com", DEFAULT_OPTIONS.getHost());
-    assertSame(RetryParams.getDefaultInstance(), DEFAULT_OPTIONS.getRetryParams());
+    assertSame(ServiceOptions.getDefaultRetrySettings(), DEFAULT_OPTIONS.getRetrySettings());
   }
 
   @Test
@@ -227,7 +236,7 @@ public class ServiceOptionsTest {
     assertSame(TEST_CLOCK, OPTIONS_NO_CREDENTIALS.getClock());
     assertEquals("host", OPTIONS_NO_CREDENTIALS.getHost());
     assertEquals("project-id", OPTIONS_NO_CREDENTIALS.getProjectId());
-    assertSame(RetryParams.noRetries(), OPTIONS_NO_CREDENTIALS.getRetryParams());
+    assertSame(ServiceOptions.getNoRetrySettings(), OPTIONS_NO_CREDENTIALS.getRetrySettings());
   }
 
   @Test

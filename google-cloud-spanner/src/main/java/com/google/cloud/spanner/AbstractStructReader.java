@@ -19,6 +19,8 @@ package com.google.cloud.spanner;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
 import java.util.List;
 
 /**

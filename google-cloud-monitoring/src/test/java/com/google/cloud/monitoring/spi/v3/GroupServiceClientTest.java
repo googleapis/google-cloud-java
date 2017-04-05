@@ -115,7 +115,7 @@ public class GroupServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getGroupExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockGroupService.addException(exception);
 
     try {
@@ -124,7 +124,7 @@ public class GroupServiceClientTest {
       client.getGroup(name);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -163,7 +163,7 @@ public class GroupServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createGroupExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockGroupService.addException(exception);
 
     try {
@@ -173,7 +173,7 @@ public class GroupServiceClientTest {
       client.createGroup(name, group);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -210,7 +210,7 @@ public class GroupServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateGroupExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockGroupService.addException(exception);
 
     try {
@@ -219,7 +219,7 @@ public class GroupServiceClientTest {
       client.updateGroup(group);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -243,7 +243,7 @@ public class GroupServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteGroupExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockGroupService.addException(exception);
 
     try {
@@ -252,7 +252,7 @@ public class GroupServiceClientTest {
       client.deleteGroup(name);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -289,7 +289,7 @@ public class GroupServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void listGroupMembersExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockGroupService.addException(exception);
 
     try {
@@ -298,7 +298,7 @@ public class GroupServiceClientTest {
       client.listGroupMembers(name);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }
