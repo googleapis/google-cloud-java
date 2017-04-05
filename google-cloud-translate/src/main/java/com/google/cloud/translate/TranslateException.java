@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.util.Set;
 
 /**
- * Google Translate service exception.
+ * Google Translation service exception.
  */
 public class TranslateException extends BaseServiceException {
 

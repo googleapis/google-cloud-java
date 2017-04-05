@@ -29,7 +29,7 @@ import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
 
 /**
- * A snippet for Google Translate showing how to detect the language of some text and translate
+ * A snippet for Google Translation showing how to detect the language of some text and translate
  * some other text.
  */
 public class DetectLanguageAndTranslate {

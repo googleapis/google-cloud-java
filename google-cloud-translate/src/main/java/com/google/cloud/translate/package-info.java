@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Translate.
+ * A client to Google Translation.
  *
  * <p>Here's a simple usage example for using google-cloud. This example shows how to detect the
  * language of some text and how to translate some text. The example assumes that the
