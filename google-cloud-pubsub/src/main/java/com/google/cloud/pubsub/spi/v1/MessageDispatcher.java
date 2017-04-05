@@ -267,7 +267,9 @@ class MessageDispatcher {
 
     final ArrayList<AckHandler> ackHandlers = new ArrayList<>(responseMessages.size());
     for (ReceivedMessage pubsubMessage : responseMessages) {
-      ackHandlers.add(new AckHandler(pubsubMessage.getAckId(), pubsubMessage.getMessage().getSerializedSize()));
+      int size = pubsubMessage.getMessage().getSerializedSize();
+      AckHandler handler = new AckHandler(pubsubMessage.getAckId(), size);
+      ackHandlers.add(handler);
     }
 
     Instant now = new Instant(clock.millisTime());
@@ -275,31 +277,30 @@ class MessageDispatcher {
     logger.log(
         Level.FINER, "Received {0} messages at {1}", new Object[] {responseMessages.size(), now});
 
+    // We must add the ackHandlers to outstandingAckHandlers before setting up the deadline extension alarm.
+    // Otherwise, the alarm might go off before we can add the handlers.
     synchronized (outstandingAckHandlers) {
       // AckDeadlineAlarm modifies lists in outstandingAckHandlers in-place and might run at any time.
       // We will also later iterate over ackHandlers when we give messages to user code.
       // We must create a new list to pass to outstandingAckHandlers,
       // so that we can't iterate and modify the list concurrently.
+      ArrayList<AckHandler> ackHandlersCopy = new ArrayList<>(ackHandlers);
       outstandingAckHandlers.add(
-          new ExtensionJob(
-              expiration,
-              INITIAL_ACK_DEADLINE_EXTENSION_SECONDS,
-              new ArrayList<AckHandler>(ackHandlers)));
+          new ExtensionJob(expiration, INITIAL_ACK_DEADLINE_EXTENSION_SECONDS, ackHandlersCopy));
     }
-    setupNextAckDeadlineExtensionAlarm(expiration);
 
     // Deadline extension must be set up before we reserve flow control.
     // Flow control might block for a while, and extension will keep messages from expiring.
+    setupNextAckDeadlineExtensionAlarm(expiration);
 
+    // Reserving flow control must happen before we give the messages to the user,
+    // otherwise the user code might be given too many messages to process at once.
     try {
-      flowController.reserve(responseMessages.size(), totalMessageSize(responseMessages));
+      flowController.reserve(responseMessages.size(), getTotalMessageSize(responseMessages));
     } catch (FlowController.FlowControlException e) {
       throw new IllegalStateException("Flow control unexpected exception", e);
     }
     messagesWaiter.incrementPendingMessages(responseMessages.size());
-
-    // Reserving flow control must happen before we give the messages to the user,
-    // otherwise the user code might be given too many messages to process at once.
 
     Iterator<AckHandler> acksIterator = ackHandlers.iterator();
     for (ReceivedMessage userMessage : responseMessages) {
@@ -328,7 +329,7 @@ class MessageDispatcher {
     }
   }
 
-  private static int totalMessageSize(Collection<ReceivedMessage> messages)  {
+  private static int getTotalMessageSize(Collection<ReceivedMessage> messages) {
     int total = 0;
     for (ReceivedMessage message : messages) {
       total += message.getMessage().getSerializedSize();
