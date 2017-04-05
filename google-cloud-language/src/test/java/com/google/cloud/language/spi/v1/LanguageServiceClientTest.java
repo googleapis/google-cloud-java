@@ -99,7 +99,7 @@ public class LanguageServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void analyzeSentimentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockLanguageService.addException(exception);
 
     try {
@@ -108,7 +108,7 @@ public class LanguageServiceClientTest {
       client.analyzeSentiment(document);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -137,7 +137,7 @@ public class LanguageServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void analyzeEntitiesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockLanguageService.addException(exception);
 
     try {
@@ -147,7 +147,7 @@ public class LanguageServiceClientTest {
       client.analyzeEntities(document, encodingType);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -176,7 +176,7 @@ public class LanguageServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void analyzeSyntaxExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockLanguageService.addException(exception);
 
     try {
@@ -186,7 +186,7 @@ public class LanguageServiceClientTest {
       client.analyzeSyntax(document, encodingType);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -217,7 +217,7 @@ public class LanguageServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void annotateTextExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockLanguageService.addException(exception);
 
     try {
@@ -228,7 +228,7 @@ public class LanguageServiceClientTest {
       client.annotateText(document, features, encodingType);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }

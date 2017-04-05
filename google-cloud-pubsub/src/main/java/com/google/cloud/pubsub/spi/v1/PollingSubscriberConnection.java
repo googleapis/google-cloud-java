@@ -16,14 +16,14 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.core.AbstractApiService;
+import com.google.api.gax.core.ApiClock;
 import com.google.api.gax.core.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
-import com.google.cloud.Clock;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.collect.Lists;
-import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -45,10 +45,9 @@ import java.util.logging.Logger;
 import org.joda.time.Duration;
 
 /**
- * Implementation of {@link AckProcessor} based on Cloud Pub/Sub pull and
- * acknowledge operations.
+ * Implementation of {@link AckProcessor} based on Cloud Pub/Sub pull and acknowledge operations.
  */
-final class PollingSubscriberConnection extends AbstractService implements AckProcessor {
+final class PollingSubscriberConnection extends AbstractApiService implements AckProcessor {
   private static final int MAX_PER_REQUEST_CHANGES = 1000;
   private static final Duration DEFAULT_TIMEOUT = Duration.standardSeconds(10);
   private static final int DEFAULT_MAX_MESSAGES = 1000;
@@ -72,7 +71,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
       Channel channel,
       FlowController flowController,
       ScheduledExecutorService executor,
-      Clock clock) {
+      ApiClock clock) {
     this.subscription = subscription;
     this.executor = executor;
     stub =
@@ -199,7 +198,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
   @Override
   public void sendAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
-    // Send the modify ack deadlines in bundles as not to exceed the max request
+    // Send the modify ack deadlines in batches as not to exceed the max request
     // size.
     for (PendingModifyAckDeadline modifyAckDeadline : ackDeadlineExtensions) {
       for (List<String> ackIdChunk :

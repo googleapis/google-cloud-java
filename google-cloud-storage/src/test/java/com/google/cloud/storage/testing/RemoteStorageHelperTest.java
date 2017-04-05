@@ -29,6 +29,14 @@ import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.collect.ImmutableList;
+
+import org.easymock.EasyMock;
+import org.joda.time.Duration;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Iterator;
@@ -211,10 +219,9 @@ public class RemoteStorageHelperTest {
         ((HttpTransportOptions) options.getTransportOptions()).getConnectTimeout());
     assertEquals(60000,
         ((HttpTransportOptions) options.getTransportOptions()).getReadTimeout());
-    assertEquals(10, options.getRetryParams().getRetryMaxAttempts());
-    assertEquals(6, options.getRetryParams().getRetryMinAttempts());
-    assertEquals(30000, options.getRetryParams().getMaxRetryDelayMillis());
-    assertEquals(120000, options.getRetryParams().getTotalRetryPeriodMillis());
-    assertEquals(250, options.getRetryParams().getInitialRetryDelayMillis());
+    assertEquals(10, options.getRetrySettings().getMaxAttempts());
+    assertEquals(Duration.millis(30000), options.getRetrySettings().getMaxRetryDelay());
+    assertEquals(Duration.millis(120000), options.getRetrySettings().getTotalTimeout());
+    assertEquals(Duration.millis(250), options.getRetrySettings().getInitialRetryDelay());
   }
 }

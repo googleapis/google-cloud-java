@@ -99,7 +99,7 @@ public class ReportErrorsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void reportErrorEventExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockReportErrorsService.addException(exception);
 
     try {
@@ -109,7 +109,7 @@ public class ReportErrorsServiceClientTest {
       client.reportErrorEvent(projectName, event);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }

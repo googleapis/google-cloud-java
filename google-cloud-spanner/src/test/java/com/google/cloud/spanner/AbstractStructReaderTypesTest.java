@@ -22,6 +22,8 @@ import static org.junit.Assert.fail;
 import static org.junit.runners.Parameterized.Parameter;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
 import com.google.common.base.Throwables;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

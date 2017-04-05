@@ -16,9 +16,9 @@
 
 package com.google.cloud.logging.spi.v2;
 
+import com.google.api.gax.core.ApiFunction;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
-import com.google.api.gax.core.Function;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
@@ -90,14 +90,15 @@ public class GrpcLoggingRpc implements LoggingRpc {
             .build();
         channelProvider = FixedChannelProvider.create(managedChannel);
       } else {
-        channelProvider = transportOptions.getChannelProvider(options);
+        channelProvider = GrpcTransportOptions.setUpChannelProvider(
+            LoggingSettings.defaultChannelProviderBuilder(), options);
       }
       providerManager = ProviderManager.newBuilder()
           .setChannelProvider(channelProvider)
           .setExecutorProvider(executorProvider)
           .build();
       UnaryCallSettings.Builder callSettingsBuilder = transportOptions
-          .getApiCallSettings(options.getRetryParams());
+          .getApiCallSettings(options.getRetrySettings());
       ConfigSettings.Builder confBuilder =
           ConfigSettings.defaultBuilder()
               .setExecutorProvider(providerManager)
@@ -132,7 +133,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
     return ApiFutures.catching(
         from,
         ApiException.class,
-        new Function<ApiException, V>() {
+        new ApiFunction<ApiException, V>() {
           @Override
           public V apply(ApiException exception) {
             if (returnNullOnSet.contains(exception.getStatusCode())) {

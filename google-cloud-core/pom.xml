@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.10.1-alpha-SNAPSHOT</version>
+    <version>0.11.2-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-core</site.installationModule>
@@ -116,6 +116,11 @@
       <version>3.0.0</version>
     </dependency>
     <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+    <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
       <version>${grpc.version}</version>
@@ -152,6 +157,18 @@
           <artifactId>grpc-all</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <version>0.30</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava-testlib</artifactId>
+      <version>19.0</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

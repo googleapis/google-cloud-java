@@ -17,6 +17,8 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Iterables;
@@ -121,7 +123,11 @@ public abstract class Value {
     return new TimestampImpl(v == null, v);
   }
 
-  /** Returns a {@code DATE} value. */
+  /**
+   * Returns a {@code DATE} value. The range [1678-01-01, 2262-01-01) is the legal interval for
+   * cloud spanner dates. A write to a date column is rejected if the value is outside of that
+   * interval.
+   */
   public static Value date(@Nullable Date v) {
     return new DateImpl(v == null, v);
   }
@@ -262,7 +268,9 @@ public abstract class Value {
   }
 
   /**
-   * Returns an {@code ARRAY<DATE>} value.
+   * Returns an {@code ARRAY<DATE>} value. The range [1678-01-01, 2262-01-01) is the legal interval
+   * for cloud spanner dates. A write to a date column is rejected if the value is outside of that
+   * interval.
    *
    * @param v the source of element values. This may be {@code null} to produce a value for which
    *     {@code isNull()} is {@code true}. Individual elements may also be {@code null}.
@@ -905,13 +913,13 @@ public abstract class Value {
     @Override
     com.google.protobuf.Value valueToProto() {
       return com.google.protobuf.Value.newBuilder()
-          .setStringValue(ByteArrays.toBase64(value))
+          .setStringValue(value.toBase64())
           .build();
     }
 
     @Override
     void valueToString(StringBuilder b) {
-      ByteArrays.appendToString(value, b, MAX_DEBUG_STRING_LENGTH);
+      b.append(value.toString());
     }
   }
 
@@ -930,7 +938,7 @@ public abstract class Value {
 
     @Override
     void valueToString(StringBuilder b) {
-      value.toString(b);
+      b.append(value);
     }
   }
 
@@ -949,7 +957,7 @@ public abstract class Value {
 
     @Override
     void valueToString(StringBuilder b) {
-      value.toString(b);
+      b.append(value);
     }
   }
 
@@ -1216,12 +1224,12 @@ public abstract class Value {
 
     @Override
     String elementToString(ByteArray element) {
-      return ByteArrays.toBase64(element);
+      return element.toBase64();
     }
 
     @Override
     void appendElement(StringBuilder b, ByteArray element) {
-      ByteArrays.appendToString(element, b, MAX_DEBUG_STRING_LENGTH);
+      b.append(element.toString());
     }
   }
 
@@ -1240,7 +1248,7 @@ public abstract class Value {
 
     @Override
     void appendElement(StringBuilder b, Timestamp element) {
-      element.toString(b);
+      b.append(element);
     }
   }
 
@@ -1259,7 +1267,7 @@ public abstract class Value {
 
     @Override
     void appendElement(StringBuilder b, Date element) {
-      element.toString(b);
+      b.append(element);
     }
   }
 

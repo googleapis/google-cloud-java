@@ -36,7 +36,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.joda.time.Duration;
 
 /**
  * Class representing service options for those services that use gRPC as the transport
@@ -206,37 +205,27 @@ public class GrpcTransportOptions implements TransportOptions {
   /**
    * Returns a builder for API call settings.
    */
-  public UnaryCallSettings.Builder getApiCallSettings(RetryParams retryParams) {
-    // todo(mziccard): specify timeout these settings:
-    // retryParams().retryMaxAttempts(), retryParams().retryMinAttempts()
-    final RetrySettings.Builder builder = RetrySettings.newBuilder()
-        .setTotalTimeout(Duration.millis(retryParams.getTotalRetryPeriodMillis()))
-        .setInitialRpcTimeout(Duration.millis(getInitialTimeout()))
-        .setRpcTimeoutMultiplier(getTimeoutMultiplier())
-        .setMaxRpcTimeout(Duration.millis(getMaxTimeout()))
-        .setInitialRetryDelay(Duration.millis(retryParams.getInitialRetryDelayMillis()))
-        .setRetryDelayMultiplier(retryParams.getRetryDelayBackoffFactor())
-        .setMaxRetryDelay(Duration.millis(retryParams.getMaxRetryDelayMillis()));
-    return UnaryCallSettings.newBuilder().setRetrySettingsBuilder(builder);
+  public UnaryCallSettings.Builder getApiCallSettings(RetrySettings retrySettings) {
+    return UnaryCallSettings.newBuilder().setRetrySettingsBuilder(retrySettings.toBuilder());
   }
 
   /**
-   * Returns a channel provider.
+   * Returns a channel provider from the given default provider.
    */
-  public static ChannelProvider getChannelProvider(
-      ServiceOptions<?, ?> serviceOptions) {
+  public static ChannelProvider setUpChannelProvider(
+      InstantiatingChannelProvider.Builder providerBuilder, ServiceOptions<?, ?> serviceOptions) {
     HostAndPort hostAndPort = HostAndPort.fromString(serviceOptions.getHost());
-    InstantiatingChannelProvider.Builder builder = InstantiatingChannelProvider.newBuilder()
-        .setServiceAddress(hostAndPort.getHostText())
+    providerBuilder.setServiceAddress(hostAndPort.getHostText())
         .setPort(hostAndPort.getPort())
-        .setClientLibHeader(serviceOptions.getGoogApiClientLibName(),
-            firstNonNull(serviceOptions.getLibraryVersion(), ""));
+        .setClientLibHeader(ServiceOptions.getGoogApiClientLibName(),
+            firstNonNull(ServiceOptions.getLibraryVersion(), ""));
     Credentials scopedCredentials = serviceOptions.getScopedCredentials();
     if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
-      builder.setCredentialsProvider(FixedCredentialsProvider.create(scopedCredentials));
+      providerBuilder.setCredentialsProvider(FixedCredentialsProvider.create(scopedCredentials));
     }
-    return builder.build();
+    return providerBuilder.build();
   }
+
 
   /**
    * Returns the timeout for the initial RPC, in milliseconds. Subsequent calls will use this value

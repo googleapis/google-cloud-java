@@ -224,46 +224,46 @@ public class SubscriberImplTest {
   }
 
   @Test
-  public void testBundleAcks() throws Exception {
+  public void testBatchAcks() throws Exception {
     Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
-    List<String> testAckIdsBundle1 = ImmutableList.of("A", "B", "C");
-    sendMessages(testAckIdsBundle1);
+    List<String> testAckIdsBatch1 = ImmutableList.of("A", "B", "C");
+    sendMessages(testAckIdsBatch1);
 
     // Trigger ack sending
     fakeExecutor.advanceTime(PENDING_ACKS_SEND_DELAY);
 
-    assertEquivalent(testAckIdsBundle1, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(3));
+    assertEquivalent(testAckIdsBatch1, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(3));
 
     // Ensures the next ack sending alarm gets properly setup
-    List<String> testAckIdsBundle2 = ImmutableList.of("D", "E");
-    sendMessages(testAckIdsBundle2);
+    List<String> testAckIdsBatch2 = ImmutableList.of("D", "E");
+    sendMessages(testAckIdsBatch2);
 
     fakeExecutor.advanceTime(PENDING_ACKS_SEND_DELAY);
 
-    assertEquivalent(testAckIdsBundle2, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(2));
+    assertEquivalent(testAckIdsBatch2, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(2));
 
     subscriber.stopAsync().awaitTerminated();
   }
 
   @Test
-  public void testBundleAcksAndNacks() throws Exception {
+  public void testBatchAcksAndNacks() throws Exception {
     Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
     // Send messages to be acked
-    List<String> testAckIdsBundle1 = ImmutableList.of("A", "B", "C");
-    sendMessages(testAckIdsBundle1);
+    List<String> testAckIdsBatch1 = ImmutableList.of("A", "B", "C");
+    sendMessages(testAckIdsBatch1);
 
     // Send messages to be nacked
-    List<String> testAckIdsBundle2 = ImmutableList.of("D", "E");
+    List<String> testAckIdsBatch2 = ImmutableList.of("D", "E");
     // Nack messages
     testReceiver.setReply(AckReply.NACK);
-    sendMessages(testAckIdsBundle2);
+    sendMessages(testAckIdsBatch2);
 
     // Trigger ack sending
     fakeExecutor.advanceTime(PENDING_ACKS_SEND_DELAY);
 
-    assertEquivalent(testAckIdsBundle1, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(3));
+    assertEquivalent(testAckIdsBatch1, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(3));
     assertEquivalent(
         ImmutableList.of(new ModifyAckDeadline("D", 0), new ModifyAckDeadline("E", 0)),
         fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(2));
@@ -279,15 +279,15 @@ public class SubscriberImplTest {
                 .setAckExpirationPadding(Duration.standardSeconds(1)));
 
     // Send messages to be acked
-    List<String> testAckIdsBundle = ImmutableList.of("A", "B", "C");
+    List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
-    sendMessages(testAckIdsBundle);
+    sendMessages(testAckIdsBatch);
 
     // Trigger modify ack deadline sending - 10s initial stream ack deadline - 1 padding
     fakeExecutor.advanceTime(Duration.standardSeconds(9));
 
     assertEquivalentWithTransformation(
-        testAckIdsBundle,
+        testAckIdsBatch,
         fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(3),
         new Function<String, ModifyAckDeadline>() {
           @Override
@@ -300,7 +300,7 @@ public class SubscriberImplTest {
     fakeExecutor.advanceTime(Duration.standardSeconds(2));
 
     assertEquivalentWithTransformation(
-        testAckIdsBundle,
+        testAckIdsBatch,
         fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(3),
         new Function<String, ModifyAckDeadline>() {
           @Override
