@@ -51,6 +51,7 @@ import com.google.api.services.storage.model.Objects;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.base.Function;
@@ -74,6 +75,8 @@ import org.apache.http.HttpStatus;
 public class HttpStorageRpc implements StorageRpc {
 
   public static final String DEFAULT_PROJECTION = "full";
+
+  private static final String ARTIFACT_ID = "google-cloud-storage";
   private static final String ENCRYPTION_KEY_PREFIX = "x-goog-encryption-";
   private static final String SOURCE_ENCRYPTION_KEY_PREFIX = "x-goog-copy-source-encryption-";
   private final StorageOptions options;
@@ -84,11 +87,12 @@ public class HttpStorageRpc implements StorageRpc {
   public HttpStorageRpc(StorageOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
+    HttpRequestInitializer initializer =
+        transportOptions.getHttpRequestInitializer(options, ARTIFACT_ID);
     this.options = options;
     storage = new Storage.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())
-        .setApplicationName(options.getApplicationName())
+        .setApplicationName(ServiceOptions.getApplicationName(ARTIFACT_ID))
         .build();
   }
 

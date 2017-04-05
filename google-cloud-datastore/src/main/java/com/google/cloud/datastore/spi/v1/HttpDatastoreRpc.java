@@ -20,6 +20,7 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.datastore.v1.AllocateIdsRequest;
@@ -40,6 +41,7 @@ import java.net.URL;
 
 public class HttpDatastoreRpc implements DatastoreRpc {
 
+  private static final String ARTIFACT_ID = "google-cloud-datastore";
   private final com.google.datastore.v1.client.Datastore client;
 
   public HttpDatastoreRpc(DatastoreOptions options) {
@@ -74,12 +76,12 @@ public class HttpDatastoreRpc implements DatastoreRpc {
   private HttpRequestInitializer getHttpRequestInitializer(final DatastoreOptions options,
       HttpTransportOptions httpTransportOptions) {
     final HttpRequestInitializer delegate = httpTransportOptions
-        .getHttpRequestInitializer(options);
+        .getHttpRequestInitializer(options, ARTIFACT_ID);
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
         delegate.initialize(httpRequest);
-        httpRequest.getHeaders().setUserAgent(options.getApplicationName());
+        httpRequest.getHeaders().setUserAgent(ServiceOptions.getApplicationName(ARTIFACT_ID));
       }
     };
   }

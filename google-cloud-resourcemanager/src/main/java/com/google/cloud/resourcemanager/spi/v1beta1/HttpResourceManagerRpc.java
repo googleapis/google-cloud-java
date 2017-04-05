@@ -32,6 +32,7 @@ import com.google.api.services.cloudresourcemanager.model.SetIamPolicyRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsResponse;
 import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.resourcemanager.ResourceManagerException;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
 import com.google.common.collect.ImmutableList;
@@ -43,16 +44,19 @@ import java.util.Set;
 
 public class HttpResourceManagerRpc implements ResourceManagerRpc {
 
+  private static final String ARTIFACT_ID = "google-cloud-resourcemanager";
+
   private final Cloudresourcemanager resourceManager;
 
   public HttpResourceManagerRpc(ResourceManagerOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
+    HttpRequestInitializer initializer =
+        transportOptions.getHttpRequestInitializer(options, ARTIFACT_ID);
     resourceManager =
         new Cloudresourcemanager.Builder(transport, new JacksonFactory(), initializer)
             .setRootUrl(options.getHost())
-            .setApplicationName(options.getApplicationName())
+            .setApplicationName(ServiceOptions.getApplicationName(ARTIFACT_ID))
             .build();
   }
 

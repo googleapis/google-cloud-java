@@ -69,6 +69,7 @@ import com.google.api.services.compute.model.Tags;
 import com.google.api.services.compute.model.Zone;
 import com.google.api.services.compute.model.ZoneList;
 import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.compute.ComputeException;
 import com.google.cloud.compute.ComputeOptions;
 import com.google.common.collect.ImmutableList;
@@ -77,17 +78,19 @@ import java.util.Map;
 
 public class HttpComputeRpc implements ComputeRpc {
 
+  private static final String ARTIFACT_ID = "google-cloud-compute";
   private final ComputeOptions options;
   private final Compute compute;
 
   public HttpComputeRpc(ComputeOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
+    HttpRequestInitializer initializer =
+        transportOptions.getHttpRequestInitializer(options, ARTIFACT_ID);
     this.options = options;
     compute = new Compute.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())
-        .setApplicationName(options.getApplicationName())
+        .setApplicationName(ServiceOptions.getApplicationName(ARTIFACT_ID))
         .build();
   }
 
@@ -744,6 +747,7 @@ public class HttpComputeRpc implements ComputeRpc {
     }
   }
 
+  @Override
   public Operation createSubnetwork(String region, Subnetwork subnetwork, Map<Option, ?> options) {
     try {
       return compute.subnetworks()

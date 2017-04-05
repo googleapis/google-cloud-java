@@ -66,7 +66,7 @@ public class HttpTransportOptionsTest {
   public void testHeader() {
     String expectedHeaderPattern = "^gl-java/.* gccl/.*";
     assertTrue(Pattern.compile(expectedHeaderPattern)
-        .matcher(DEFAULT_OPTIONS.getXGoogApiClientHeader())
+        .matcher(HttpTransportOptions.getXGoogApiClientHeader("google-cloud-core"))
         .find());
   }
 }
