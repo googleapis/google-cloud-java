@@ -26,9 +26,9 @@ import static org.junit.Assert.fail;
 
 import com.google.api.services.cloudresourcemanager.model.Binding;
 import com.google.cloud.resourcemanager.ResourceManagerException;
-import com.google.cloud.resourcemanager.spi.DefaultResourceManagerRpc;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Tuple;
+import com.google.cloud.resourcemanager.spi.v1beta1.HttpResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc.Tuple;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
@@ -55,7 +55,7 @@ public class LocalResourceManagerHelperTest {
   private static final LocalResourceManagerHelper RESOURCE_MANAGER_HELPER =
       LocalResourceManagerHelper.create();
   private static final ResourceManagerRpc rpc =
-      new DefaultResourceManagerRpc(RESOURCE_MANAGER_HELPER.getOptions());
+      new HttpResourceManagerRpc(RESOURCE_MANAGER_HELPER.getOptions());
   private static final com.google.api.services.cloudresourcemanager.model.Project PARTIAL_PROJECT =
       new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
           "partial-project");

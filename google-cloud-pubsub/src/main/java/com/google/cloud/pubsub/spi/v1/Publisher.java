@@ -16,14 +16,13 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.bundling.BundlingSettings;
+import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.ApiFuture;
-import com.google.api.gax.core.ApiFutureCallback;
 import com.google.api.gax.core.ApiFutures;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController;
-import com.google.api.gax.core.Function;
 import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.core.SettableApiFuture;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
@@ -31,11 +30,8 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.common.util.concurrent.ForwardingListenableFuture.SimpleForwardingListenableFuture;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
@@ -63,15 +59,15 @@ import org.joda.time.Duration;
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
  * associated with a specific topic at creation.
  *
- * <p>A {@link Publisher} provides built-in capabilities to automatically handle bundling of
+ * <p>A {@link Publisher} provides built-in capabilities to automatically handle batching of
  * messages, controlling memory utilization, and retrying API calls on transient errors.
  *
  * <p>With customizable options that control:
  *
  * <ul>
- *   <li>Message bundling: such as number of messages or max bundle byte size.
+ *   <li>Message batching: such as number of messages or max batch byte size.
  *   <li>Flow control: such as max outstanding messages and maximum outstanding bytes.
- *   <li>Retries: such as the maximum duration of retries for a failing bundle of messages.
+ *   <li>Retries: such as the maximum duration of retries for a failing batch of messages.
  * </ul>
  *
  * <p>If no credentials are provided, the {@link Publisher} will use application default credentials
@@ -83,15 +79,15 @@ public class Publisher {
   private final TopicName topicName;
   private final String cachedTopicNameString;
 
-  private final BundlingSettings bundlingSettings;
+  private final BatchingSettings batchingSettings;
   private final RetrySettings retrySettings;
   private final LongRandom longRandom;
 
   private final FlowControlSettings flowControlSettings;
 
-  private final Lock messagesBundleLock;
-  private List<OutstandingPublish> messagesBundle;
-  private int bundledBytes;
+  private final Lock messagesBatchLock;
+  private List<OutstandingPublish> messagesBatch;
+  private int batchedBytes;
 
   private final AtomicBoolean activeAlarm;
 
@@ -119,15 +115,15 @@ public class Publisher {
     topicName = builder.topicName;
     cachedTopicNameString = topicName.toString();
 
-    this.bundlingSettings = builder.bundlingSettings;
+    this.batchingSettings = builder.batchingSettings;
     this.retrySettings = builder.retrySettings;
     this.longRandom = builder.longRandom;
 
     flowControlSettings = builder.flowControlSettings;
     this.flowController = new FlowController(flowControlSettings);
 
-    messagesBundle = new LinkedList<>();
-    messagesBundleLock = new ReentrantLock();
+    messagesBatch = new LinkedList<>();
+    messagesBatchLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     executor = builder.executorProvider.getExecutor();
     if (builder.executorProvider.shouldAutoClose()) {
@@ -169,7 +165,7 @@ public class Publisher {
 
   /**
    * Schedules the publishing of a message. The publishing of the message may occur immediately or
-   * be delayed based on the publisher bundling options.
+   * be delayed based on the publisher batching options.
    *
    * <p>Depending on chosen flow control {@link FlowControlSettings#getLimitExceededBehavior
    * option}, the returned future might immediately fail with a {@link
@@ -208,126 +204,89 @@ public class Publisher {
     } catch (FlowController.FlowControlException e) {
       return ApiFutures.immediateFailedFuture(e);
     }
-    OutstandingBundle bundleToSend = null;
-    SettableFuture<String> publishResult = SettableFuture.create();
+    OutstandingBatch batchToSend = null;
+    SettableApiFuture<String> publishResult = SettableApiFuture.<String>create();
     final OutstandingPublish outstandingPublish = new OutstandingPublish(publishResult, message);
-    messagesBundleLock.lock();
+    messagesBatchLock.lock();
     try {
-      // Check if the next message makes the bundle exceed the current bundle byte size.
-      if (!messagesBundle.isEmpty()
-          && hasBundlingBytes()
-          && bundledBytes + messageSize >= getMaxBundleBytes()) {
-        bundleToSend = new OutstandingBundle(messagesBundle, bundledBytes);
-        messagesBundle = new LinkedList<>();
-        bundledBytes = 0;
+      // Check if the next message makes the batch exceed the current batch byte size.
+      if (!messagesBatch.isEmpty()
+          && hasBatchingBytes()
+          && batchedBytes + messageSize >= getMaxBatchBytes()) {
+        batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
+        messagesBatch = new LinkedList<>();
+        batchedBytes = 0;
       }
 
-      // Border case if the message to send is greater equals to the max bundle size then can't be
-      // included in the current bundle and instead sent immediately.
-      if (!hasBundlingBytes() || messageSize < getMaxBundleBytes()) {
-        bundledBytes += messageSize;
-        messagesBundle.add(outstandingPublish);
+      // Border case if the message to send is greater equals to the max batch size then can't be
+      // included in the current batch and instead sent immediately.
+      if (!hasBatchingBytes() || messageSize < getMaxBatchBytes()) {
+        batchedBytes += messageSize;
+        messagesBatch.add(outstandingPublish);
 
-        // If after adding the message we have reached the bundle max messages then we have a bundle
+        // If after adding the message we have reached the batch max messages then we have a batch
         // to send.
-        if (messagesBundle.size() == getBundlingSettings().getElementCountThreshold()) {
-          bundleToSend = new OutstandingBundle(messagesBundle, bundledBytes);
-          messagesBundle = new LinkedList<>();
-          bundledBytes = 0;
+        if (messagesBatch.size() == getBatchingSettings().getElementCountThreshold()) {
+          batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
+          messagesBatch = new LinkedList<>();
+          batchedBytes = 0;
         }
       }
-      // Setup the next duration based delivery alarm if there are messages bundled.
-      if (!messagesBundle.isEmpty()) {
+      // Setup the next duration based delivery alarm if there are messages batched.
+      if (!messagesBatch.isEmpty()) {
         setupDurationBasedPublishAlarm();
       } else if (currentAlarmFuture != null) {
-        logger.log(Level.INFO, "Cancelling alarm");
+        logger.log(Level.FINER, "Cancelling alarm, no more messages");
         if (activeAlarm.getAndSet(false)) {
           currentAlarmFuture.cancel(false);
         }
       }
     } finally {
-      messagesBundleLock.unlock();
+      messagesBatchLock.unlock();
     }
 
     messagesWaiter.incrementPendingMessages(1);
 
-    if (bundleToSend != null) {
-      logger.log(Level.INFO, "Scheduling a bundle for immediate sending.");
-      final OutstandingBundle finalBundleToSend = bundleToSend;
+    if (batchToSend != null) {
+      logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
+      final OutstandingBatch finalBatchToSend = batchToSend;
       executor.execute(
           new Runnable() {
             @Override
             public void run() {
-              publishOutstandingBundle(finalBundleToSend);
+              publishOutstandingBatch(finalBatchToSend);
             }
           });
     }
 
     // If the message is over the size limit, it was not added to the pending messages and it will
-    // be sent in its own bundle immediately.
-    if (hasBundlingBytes() && messageSize >= getMaxBundleBytes()) {
+    // be sent in its own batch immediately.
+    if (hasBatchingBytes() && messageSize >= getMaxBatchBytes()) {
       logger.log(
-          Level.INFO, "Message exceeds the max bundle bytes, scheduling it for immediate send.");
+          Level.FINER, "Message exceeds the max batch bytes, scheduling it for immediate send.");
       executor.execute(
           new Runnable() {
             @Override
             public void run() {
-              publishOutstandingBundle(
-                  new OutstandingBundle(ImmutableList.of(outstandingPublish), messageSize));
+              publishOutstandingBatch(
+                  new OutstandingBatch(ImmutableList.of(outstandingPublish), messageSize));
             }
           });
     }
 
-    return new ListenableFutureDelegate<String>(publishResult);
-  }
-
-  private static class ListenableFutureDelegate<V> extends SimpleForwardingListenableFuture<V>
-      implements ApiFuture<V> {
-    ListenableFutureDelegate(ListenableFuture<V> delegate) {
-      super(delegate);
-    }
-
-    public void addCallback(final ApiFutureCallback<? super V> callback) {
-      Futures.addCallback(
-          this,
-          new FutureCallback<V>() {
-            @Override
-            public void onFailure(Throwable t) {
-              callback.onFailure(t);
-            }
-
-            @Override
-            public void onSuccess(V v) {
-              callback.onSuccess(v);
-            }
-          });
-    }
-
-    public <X extends Throwable> ApiFuture catching(
-        Class<X> exceptionType, final Function<? super X, ? extends V> callback) {
-      return new ListenableFutureDelegate<V>(
-          Futures.catching(
-              this,
-              exceptionType,
-              new com.google.common.base.Function<X, V>() {
-                @Override
-                public V apply(X input) {
-                  return callback.apply(input);
-                }
-              }));
-    }
+    return publishResult;
   }
 
   private void setupDurationBasedPublishAlarm() {
     if (!activeAlarm.getAndSet(true)) {
-      long delayThresholdMs = getBundlingSettings().getDelayThreshold().getMillis();
-      logger.log(Level.INFO, "Setting up alarm for the next {0} ms.", delayThresholdMs);
+      long delayThresholdMs = getBatchingSettings().getDelayThreshold().getMillis();
+      logger.log(Level.FINER, "Setting up alarm for the next {0} ms.", delayThresholdMs);
       currentAlarmFuture =
           executor.schedule(
               new Runnable() {
                 @Override
                 public void run() {
-                  logger.log(Level.INFO, "Sending messages based on schedule.");
+                  logger.log(Level.FINER, "Sending messages based on schedule.");
                   activeAlarm.getAndSet(false);
                   publishAllOutstanding();
                 }
@@ -338,25 +297,25 @@ public class Publisher {
   }
 
   private void publishAllOutstanding() {
-    messagesBundleLock.lock();
-    OutstandingBundle bundleToSend;
+    messagesBatchLock.lock();
+    OutstandingBatch batchToSend;
     try {
-      if (messagesBundle.isEmpty()) {
+      if (messagesBatch.isEmpty()) {
         return;
       }
-      bundleToSend = new OutstandingBundle(messagesBundle, bundledBytes);
-      messagesBundle = new LinkedList<>();
-      bundledBytes = 0;
+      batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
+      messagesBatch = new LinkedList<>();
+      batchedBytes = 0;
     } finally {
-      messagesBundleLock.unlock();
+      messagesBatchLock.unlock();
     }
-    publishOutstandingBundle(bundleToSend);
+    publishOutstandingBatch(batchToSend);
   }
 
-  private void publishOutstandingBundle(final OutstandingBundle outstandingBundle) {
+  private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
     PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
     publishRequest.setTopic(cachedTopicNameString);
-    for (OutstandingPublish outstandingPublish : outstandingBundle.outstandingPublishes) {
+    for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
       publishRequest.addMessages(outstandingPublish.message);
     }
 
@@ -365,7 +324,7 @@ public class Publisher {
     long rpcTimeoutMs =
         Math.round(
             retrySettings.getInitialRpcTimeout().getMillis()
-                * Math.pow(retrySettings.getRpcTimeoutMultiplier(), outstandingBundle.attempt - 1));
+                * Math.pow(retrySettings.getRpcTimeoutMultiplier(), outstandingBatch.attempt - 1));
     rpcTimeoutMs = Math.min(rpcTimeoutMs, retrySettings.getMaxRpcTimeout().getMillis());
 
     Futures.addCallback(
@@ -376,48 +335,48 @@ public class Publisher {
           @Override
           public void onSuccess(PublishResponse result) {
             try {
-              if (result.getMessageIdsCount() != outstandingBundle.size()) {
+              if (result.getMessageIdsCount() != outstandingBatch.size()) {
                 Throwable t =
                     new IllegalStateException(
                         String.format(
                             "The publish result count %s does not match "
                                 + "the expected %s results. Please contact Cloud Pub/Sub support "
                                 + "if this frequently occurs",
-                            result.getMessageIdsCount(), outstandingBundle.size()));
+                            result.getMessageIdsCount(), outstandingBatch.size()));
                 for (OutstandingPublish oustandingMessage :
-                    outstandingBundle.outstandingPublishes) {
+                    outstandingBatch.outstandingPublishes) {
                   oustandingMessage.publishResult.setException(t);
                 }
                 return;
               }
 
               Iterator<OutstandingPublish> messagesResultsIt =
-                  outstandingBundle.outstandingPublishes.iterator();
+                  outstandingBatch.outstandingPublishes.iterator();
               for (String messageId : result.getMessageIdsList()) {
                 messagesResultsIt.next().publishResult.set(messageId);
               }
             } finally {
-              flowController.release(outstandingBundle.size(), outstandingBundle.bundleSizeBytes);
-              messagesWaiter.incrementPendingMessages(-outstandingBundle.size());
+              flowController.release(outstandingBatch.size(), outstandingBatch.batchSizeBytes);
+              messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
           }
 
           @Override
           public void onFailure(Throwable t) {
             long nextBackoffDelay =
-                computeNextBackoffDelayMs(outstandingBundle, retrySettings, longRandom);
+                computeNextBackoffDelayMs(outstandingBatch, retrySettings, longRandom);
 
             if (!isRetryable(t)
                 || System.currentTimeMillis() + nextBackoffDelay
-                    > outstandingBundle.creationTime
+                    > outstandingBatch.creationTime
                         + retrySettings.getTotalTimeout().getMillis()) {
               try {
                 for (OutstandingPublish outstandingPublish :
-                    outstandingBundle.outstandingPublishes) {
+                    outstandingBatch.outstandingPublishes) {
                   outstandingPublish.publishResult.setException(t);
                 }
               } finally {
-                messagesWaiter.incrementPendingMessages(-outstandingBundle.size());
+                messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
               }
               return;
             }
@@ -426,7 +385,7 @@ public class Publisher {
                 new Runnable() {
                   @Override
                   public void run() {
-                    publishOutstandingBundle(outstandingBundle);
+                    publishOutstandingBatch(outstandingBatch);
                   }
                 },
                 nextBackoffDelay,
@@ -435,17 +394,17 @@ public class Publisher {
         });
   }
 
-  private static final class OutstandingBundle {
+  private static final class OutstandingBatch {
     final List<OutstandingPublish> outstandingPublishes;
     final long creationTime;
     int attempt;
-    int bundleSizeBytes;
+    int batchSizeBytes;
 
-    OutstandingBundle(List<OutstandingPublish> outstandingPublishes, int bundleSizeBytes) {
+    OutstandingBatch(List<OutstandingPublish> outstandingPublishes, int batchSizeBytes) {
       this.outstandingPublishes = outstandingPublishes;
       attempt = 1;
       creationTime = System.currentTimeMillis();
-      this.bundleSizeBytes = bundleSizeBytes;
+      this.batchSizeBytes = batchSizeBytes;
     }
 
     public int size() {
@@ -454,26 +413,26 @@ public class Publisher {
   }
 
   private static final class OutstandingPublish {
-    SettableFuture<String> publishResult;
+    SettableApiFuture<String> publishResult;
     PubsubMessage message;
 
-    OutstandingPublish(SettableFuture<String> publishResult, PubsubMessage message) {
+    OutstandingPublish(SettableApiFuture<String> publishResult, PubsubMessage message) {
       this.publishResult = publishResult;
       this.message = message;
     }
   }
 
-  /** The bundling settings configured on this {@code Publisher}. */
-  public BundlingSettings getBundlingSettings() {
-    return bundlingSettings;
+  /** The batching settings configured on this {@code Publisher}. */
+  public BatchingSettings getBatchingSettings() {
+    return batchingSettings;
   }
 
-  private long getMaxBundleBytes() {
-    return getBundlingSettings().getRequestByteThreshold();
+  private long getMaxBatchBytes() {
+    return getBatchingSettings().getRequestByteThreshold();
   }
 
   /**
-   * The bundling settings configured on this {@code Publisher}, including whether to block publish
+   * The batching settings configured on this {@code Publisher}, including whether to block publish
    * calls when reaching flow control limits.
    *
    * <p>If {@link FlowControlSettings#getLimitExceededBehavior()} is set to {@link
@@ -507,18 +466,18 @@ public class Publisher {
     }
   }
 
-  private boolean hasBundlingBytes() {
-    return getMaxBundleBytes() > 0;
+  private boolean hasBatchingBytes() {
+    return getMaxBatchBytes() > 0;
   }
 
   private static long computeNextBackoffDelayMs(
-      OutstandingBundle outstandingBundle, RetrySettings retrySettings, LongRandom longRandom) {
+      OutstandingBatch outstandingBatch, RetrySettings retrySettings, LongRandom longRandom) {
     long delayMillis =
         Math.round(
             retrySettings.getInitialRetryDelay().getMillis()
-                * Math.pow(retrySettings.getRetryDelayMultiplier(), outstandingBundle.attempt - 1));
+                * Math.pow(retrySettings.getRetryDelayMultiplier(), outstandingBatch.attempt - 1));
     delayMillis = Math.min(retrySettings.getMaxRetryDelay().getMillis(), delayMillis);
-    outstandingBundle.attempt++;
+    outstandingBatch.attempt++;
     return longRandom.nextLong(0, delayMillis);
   }
 
@@ -575,8 +534,8 @@ public class Publisher {
     static final Duration DEFAULT_DELAY_THRESHOLD = new Duration(1); // 1ms
     static final Duration DEFAULT_RPC_TIMEOUT = new Duration(10 * 1000); // 10 seconds
     static final Duration DEFAULT_TOTAL_TIMEOUT = MIN_TOTAL_TIMEOUT;
-    static final BundlingSettings DEFAULT_BUNDLING_SETTINGS =
-        BundlingSettings.newBuilder()
+    static final BatchingSettings DEFAULT_BATCHING_SETTINGS =
+        BatchingSettings.newBuilder()
             .setDelayThreshold(DEFAULT_DELAY_THRESHOLD)
             .setRequestByteThreshold(DEFAULT_REQUEST_BYTES_THRESHOLD)
             .setElementCountThreshold(DEFAULT_ELEMENT_COUNT_THRESHOLD)
@@ -607,8 +566,8 @@ public class Publisher {
 
     TopicName topicName;
 
-    // Bundling options
-    BundlingSettings bundlingSettings = DEFAULT_BUNDLING_SETTINGS;
+    // Batching options
+    BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
 
     // Client-side flow control options
     FlowControlSettings flowControlSettings = FlowControlSettings.getDefaultInstance();
@@ -616,7 +575,7 @@ public class Publisher {
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
     LongRandom longRandom = DEFAULT_LONG_RANDOM;
 
-    ChannelProvider channelProvider = PublisherSettings.defaultChannelProviderBuilder().build();
+    ChannelProvider channelProvider = TopicAdminSettings.defaultChannelProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
 
     private Builder(TopicName topic) {
@@ -636,16 +595,16 @@ public class Publisher {
       return this;
     }
 
-    // Bundling options
-    public Builder setBundlingSettings(BundlingSettings bundlingSettings) {
-      Preconditions.checkNotNull(bundlingSettings);
-      Preconditions.checkNotNull(bundlingSettings.getElementCountThreshold());
-      Preconditions.checkArgument(bundlingSettings.getElementCountThreshold() > 0);
-      Preconditions.checkNotNull(bundlingSettings.getRequestByteThreshold());
-      Preconditions.checkArgument(bundlingSettings.getRequestByteThreshold() > 0);
-      Preconditions.checkNotNull(bundlingSettings.getDelayThreshold());
-      Preconditions.checkArgument(bundlingSettings.getDelayThreshold().getMillis() > 0);
-      this.bundlingSettings = bundlingSettings;
+    // Batching options
+    public Builder setBatchingSettings(BatchingSettings batchingSettings) {
+      Preconditions.checkNotNull(batchingSettings);
+      Preconditions.checkNotNull(batchingSettings.getElementCountThreshold());
+      Preconditions.checkArgument(batchingSettings.getElementCountThreshold() > 0);
+      Preconditions.checkNotNull(batchingSettings.getRequestByteThreshold());
+      Preconditions.checkArgument(batchingSettings.getRequestByteThreshold() > 0);
+      Preconditions.checkNotNull(batchingSettings.getDelayThreshold());
+      Preconditions.checkArgument(batchingSettings.getDelayThreshold().getMillis() > 0);
+      this.batchingSettings = batchingSettings;
       return this;
     }
 

@@ -29,14 +29,14 @@ import com.google.cloud.AsyncPage;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.Page;
-import com.google.cloud.RetryParams;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.logging.Logging.EntryListOption;
 import com.google.cloud.logging.Logging.ListOption;
 import com.google.cloud.logging.Logging.SortingField;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.SinkInfo.Destination;
-import com.google.cloud.logging.spi.LoggingRpc;
+import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.cloud.logging.spi.LoggingRpcFactory;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
@@ -147,7 +147,7 @@ public class LoggingImplTest {
     options = LoggingOptions.newBuilder()
         .setProjectId(PROJECT)
         .setServiceRpcFactory(rpcFactoryMock)
-        .setRetryParams(RetryParams.noRetries())
+        .setRetrySettings(ServiceOptions.getNoRetrySettings())
         .build();
   }
 

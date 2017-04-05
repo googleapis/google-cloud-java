@@ -18,7 +18,7 @@ package com.google.cloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.compute.spi.ComputeRpc;
+import com.google.cloud.compute.spi.v1.ComputeRpc;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;

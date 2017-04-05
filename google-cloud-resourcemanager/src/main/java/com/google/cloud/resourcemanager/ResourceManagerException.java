@@ -18,7 +18,6 @@ package com.google.cloud.resourcemanager;
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.RetryHelper.RetryInterruptedException;
 import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
@@ -70,10 +69,9 @@ public final class ResourceManagerException extends BaseServiceException {
    *
    * @throws ResourceManagerException when {@code ex} was caused by a {@code
    * ResourceManagerException}
-   * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
   static ResourceManagerException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndPropagateIfPossible(ex);
+    BaseServiceException.translate(ex);
     throw new ResourceManagerException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }

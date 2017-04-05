@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 
 import java.util.List;
 
@@ -92,15 +93,18 @@ public interface LoadConfiguration {
      */
     Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues);
 
+    /**
+     * [Experimental] Sets options allowing the schema of the destination table to be updated as a side effect of the
+     * load job. Schema update options are supported in two cases: when writeDisposition is WRITE_APPEND; when
+     * writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition
+     * decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema.
+     */
+    Builder setSchemaUpdateOptions(List<SchemaUpdateOption> schemaUpdateOptions);
 
     /**
-     * Sets which entity properties to load into BigQuery from a Cloud Datastore backup. This field
-     * is only used if the source format is set to {@code DATASTORE_BACKUP}. Property names are case
-     * sensitive and must be top-level properties. If no properties are specified, BigQuery loads
-     * all properties. If any named property isn't found in the Cloud Datastore backup, an invalid
-     * error is returned in the job result.
+     * [Experimental] Sets automatic inference of the options and schema for CSV and JSON sources.
      */
-    Builder setProjectionFields(List<String> projectionFields);
+    Builder setAutodetect(Boolean autodetect);
 
     LoadConfiguration build();
   }
@@ -166,13 +170,22 @@ public interface LoadConfiguration {
 
 
   /**
-   * Returns which entity properties to load into BigQuery from a Cloud Datastore backup. This field
-   * is only used if the source format is set to {@code DATASTORE_BACKUP}. Property names are case
-   * sensitive and must be top-level properties. If no properties are specified, BigQuery loads
-   * all properties. If any named property isn't found in the Cloud Datastore backup, an invalid
-   * error is returned in the job result.
+   * Returns additional options used to load from a Cloud datastore backup.
    */
-  List<String> getProjectionFields();
+  DatastoreBackupOptions getDatastoreBackupOptions();
+
+  /**
+   * [Experimental] Returns options allowing the schema of the destination table to be updated as a side effect of the
+   * load job. Schema update options are supported in two cases: when writeDisposition is WRITE_APPEND; when
+   * writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition
+   * decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema.
+   */
+  List<SchemaUpdateOption> getSchemaUpdateOptions();
+
+  /**
+   * [Experimental] Returns whether automatic inference of the options and schema for CSV and JSON sources is set.
+   */
+  Boolean getAutodetect();
 
   /**
    * Returns a builder for the load configuration object.

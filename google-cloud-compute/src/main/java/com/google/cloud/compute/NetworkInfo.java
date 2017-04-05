@@ -78,33 +78,12 @@ public class NetworkInfo implements Serializable {
     /**
      * Sets the identity of the network.
      */
-    @Deprecated
-    public abstract Builder networkId(NetworkId networkId);
-
-    /**
-     * Sets the identity of the network.
-     */
     public abstract Builder setNetworkId(NetworkId networkId);
 
     /**
      * Sets an optional textual description of the network.
      */
-    @Deprecated
-    public abstract Builder description(String description);
-
-    /**
-     * Sets an optional textual description of the network.
-     */
     public abstract Builder setDescription(String description);
-
-    /**
-     * Sets the network configuration. Use {@link StandardNetworkConfiguration} to create a standard
-     * network with associated IPv4 range. Use {@link SubnetNetworkConfiguration} to create a
-     * network that could be divided into subnetworks, up to one per region, each with its own
-     * address range.
-     */
-    @Deprecated
-    public abstract Builder configuration(NetworkConfiguration configuration);
 
     /**
      * Sets the network configuration. Use {@link StandardNetworkConfiguration} to create a standard
@@ -166,33 +145,15 @@ public class NetworkInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public BuilderImpl networkId(NetworkId networkId) {
-      return setNetworkId(networkId);
-    }
-
-    @Override
     public BuilderImpl setNetworkId(NetworkId networkId) {
       this.networkId = checkNotNull(networkId);
       return this;
     }
 
     @Override
-    @Deprecated
-    public BuilderImpl description(String description) {
-      return setDescription(description);
-    }
-
-    @Override
     public BuilderImpl setDescription(String description) {
       this.description = description;
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public BuilderImpl configuration(NetworkConfiguration configuration) {
-      return setConfiguration(configuration);
     }
 
     @Override
@@ -218,24 +179,8 @@ public class NetworkInfo implements Serializable {
   /**
    * Returns the service-generated unique identifier for the network.
    */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
-  }
-
-  /**
-   * Returns the service-generated unique identifier for the network.
-   */
   public String getGeneratedId() {
     return generatedId;
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
-  @Deprecated
-  public Long creationTimestamp() {
-    return getCreationTimestamp();
   }
 
   /**
@@ -248,14 +193,6 @@ public class NetworkInfo implements Serializable {
   /**
    * Returns the network identity.
    */
-  @Deprecated
-  public NetworkId networkId() {
-    return getNetworkId();
-  }
-
-  /**
-   * Returns the network identity.
-   */
   public NetworkId getNetworkId() {
     return networkId;
   }
@@ -263,27 +200,8 @@ public class NetworkInfo implements Serializable {
   /**
    * Returns a textual description of the network.
    */
-  @Deprecated
-  public String description() {
-    return getDescription();
-  }
-
-  /**
-   * Returns a textual description of the network.
-   */
   public String getDescription() {
     return description;
-  }
-
-  /**
-   * Returns the network configuration. Returns a {@link StandardNetworkConfiguration} for standard
-   * networks with associated IPv4 range. Returns {@link SubnetNetworkConfiguration} for networks
-   * that could be divided into subnetworks, up to one per region, each with its own address range.
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public <T extends NetworkConfiguration> T configuration() {
-    return getConfiguration();
   }
 
   /**
@@ -345,17 +263,6 @@ public class NetworkInfo implements Serializable {
     networkPb.setDescription(description);
     networkPb.setSelfLink(networkId.getSelfLink());
     return networkPb;
-  }
-
-  /**
-   * Returns a builder for a {@code NetworkInfo} object given the network identity and its
-   * configuration. Use {@link StandardNetworkConfiguration} to create a standard network with
-   * associated address range. Use {@link SubnetNetworkConfiguration} to create a network that
-   * supports subnetworks, up to one per region, each with its own address range.
-   */
-  @Deprecated
-  public static Builder builder(NetworkId networkId, NetworkConfiguration configuration) {
-    return newBuilder(networkId, configuration);
   }
 
   /**

@@ -54,10 +54,10 @@ public class TableDataWriteChannel extends
           new Callable<com.google.api.services.bigquery.model.Job>() {
             @Override
             public com.google.api.services.bigquery.model.Job call() {
-              return getOptions().getRpc().write(
+              return getOptions().getBigQueryRpcV2().write(
                   getUploadId(), getBuffer(), 0, getPosition(), length, last);
             }
-      }, getOptions().getRetryParams(), BigQueryImpl.EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), BigQueryImpl.EXCEPTION_HANDLER, getOptions().getClock());
       job = jobPb != null ? Job.fromPb(getOptions().getService(), jobPb) : null;
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -75,9 +75,9 @@ public class TableDataWriteChannel extends
       return runWithRetries(new Callable<String>() {
         @Override
         public String call() {
-          return options.getRpc().open(writeChannelConfiguration.toPb());
+          return options.getBigQueryRpcV2().open(writeChannelConfiguration.toPb());
         }
-      }, options.getRetryParams(), BigQueryImpl.EXCEPTION_HANDLER, options.getClock());
+      }, options.getRetrySettings(), BigQueryImpl.EXCEPTION_HANDLER, options.getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }

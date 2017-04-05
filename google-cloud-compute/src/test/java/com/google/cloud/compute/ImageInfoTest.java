@@ -77,26 +77,6 @@ public class ImageInfoTest {
           .setLicenses(LICENSES)
           .setDeprecationStatus(DEPRECATION_STATUS)
           .build();
-  private static final ImageInfo DEPRECATED_STORAGE_IMAGE =
-      ImageInfo.builder(IMAGE_ID, STORAGE_CONFIGURATION)
-          .setGeneratedId(GENERATED_ID)
-          .getCreationTimestamp(CREATION_TIMESTAMP)
-          .description(DESCRIPTION)
-          .setStatus(STATUS)
-          .setDiskSizeGb(DISK_SIZE_GB)
-          .setLicenses(LICENSES)
-          .setDeprecationStatus(DEPRECATION_STATUS)
-          .build();
-  private static final ImageInfo DEPRECATED_DISK_IMAGE =
-      ImageInfo.builder(IMAGE_ID, DISK_CONFIGURATION)
-          .setGeneratedId(GENERATED_ID)
-          .getCreationTimestamp(CREATION_TIMESTAMP)
-          .description(DESCRIPTION)
-          .setStatus(STATUS)
-          .setDiskSizeGb(DISK_SIZE_GB)
-          .setLicenses(LICENSES)
-          .setDeprecationStatus(DEPRECATION_STATUS)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -136,28 +116,6 @@ public class ImageInfoTest {
     assertEquals(DISK_SIZE_GB, DISK_IMAGE.getDiskSizeGb());
     assertEquals(LICENSES, DISK_IMAGE.getLicenses());
     assertEquals(DEPRECATION_STATUS, DISK_IMAGE.getDeprecationStatus());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(GENERATED_ID, DEPRECATED_STORAGE_IMAGE.generatedId());
-    assertEquals(IMAGE_ID, DEPRECATED_STORAGE_IMAGE.imageId());
-    assertEquals(CREATION_TIMESTAMP, DEPRECATED_STORAGE_IMAGE.creationTimestamp());
-    assertEquals(DESCRIPTION, DEPRECATED_STORAGE_IMAGE.description());
-    assertEquals(STORAGE_CONFIGURATION, DEPRECATED_STORAGE_IMAGE.configuration());
-    assertEquals(STATUS, DEPRECATED_STORAGE_IMAGE.status());
-    assertEquals(DISK_SIZE_GB, DEPRECATED_STORAGE_IMAGE.diskSizeGb());
-    assertEquals(LICENSES, DEPRECATED_STORAGE_IMAGE.licenses());
-    assertEquals(DEPRECATION_STATUS, DEPRECATED_STORAGE_IMAGE.deprecationStatus());
-    assertEquals(GENERATED_ID, DEPRECATED_DISK_IMAGE.generatedId());
-    assertEquals(IMAGE_ID, DEPRECATED_DISK_IMAGE.imageId());
-    assertEquals(CREATION_TIMESTAMP, DEPRECATED_DISK_IMAGE.creationTimestamp());
-    assertEquals(DESCRIPTION, DEPRECATED_DISK_IMAGE.description());
-    assertEquals(DISK_CONFIGURATION, DEPRECATED_DISK_IMAGE.configuration());
-    assertEquals(STATUS, DEPRECATED_DISK_IMAGE.status());
-    assertEquals(DISK_SIZE_GB, DEPRECATED_DISK_IMAGE.diskSizeGb());
-    assertEquals(LICENSES, DEPRECATED_DISK_IMAGE.licenses());
-    assertEquals(DEPRECATION_STATUS, DEPRECATED_DISK_IMAGE.deprecationStatus());
   }
 
   @Test

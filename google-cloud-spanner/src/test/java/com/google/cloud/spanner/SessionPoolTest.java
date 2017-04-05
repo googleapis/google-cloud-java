@@ -29,7 +29,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.SessionPool.Clock;
 import com.google.cloud.spanner.SessionPool.PooledSession;
 import com.google.common.util.concurrent.ListenableFuture;

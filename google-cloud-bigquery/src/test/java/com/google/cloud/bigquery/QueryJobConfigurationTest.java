@@ -19,18 +19,16 @@ package com.google.cloud.bigquery;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
 import java.util.List;
 import java.util.Map;
+import org.junit.Test;
 
 public class QueryJobConfigurationTest {
 
@@ -73,6 +71,8 @@ public class QueryJobConfigurationTest {
   private static final boolean USE_QUERY_CACHE = false;
   private static final boolean FLATTEN_RESULTS = true;
   private static final boolean USE_LEGACY_SQL = true;
+  private static final List<SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =
+      ImmutableList.of(SchemaUpdateOption.ALLOW_FIELD_RELAXATION);
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
       UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
@@ -89,6 +89,7 @@ public class QueryJobConfigurationTest {
           .setUserDefinedFunctions(USER_DEFINED_FUNCTIONS)
           .setDryRun(true)
           .setUseLegacySql(USE_LEGACY_SQL)
+          .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .build();
 
   @Test
@@ -134,6 +135,11 @@ public class QueryJobConfigurationTest {
     assertEquals("p", configuration.getDestinationTable().getProject());
   }
 
+  @Test
+  public void testGetType() {
+    assertEquals(JobConfiguration.Type.QUERY, QUERY_JOB_CONFIGURATION.getType());
+  }
+
   private void compareQueryJobConfiguration(QueryJobConfiguration expected,
       QueryJobConfiguration value) {
     assertEquals(expected, value);
@@ -152,5 +158,6 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.getUserDefinedFunctions(), value.getUserDefinedFunctions());
     assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
     assertEquals(expected.useLegacySql(), value.useLegacySql());
+    assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
   }
 }

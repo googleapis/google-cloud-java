@@ -103,25 +103,9 @@ public abstract class DiskConfiguration implements Serializable {
     /**
      * Sets the size of the persistent disk, in GB.
      */
-    @Deprecated
-    public B sizeGb(Long sizeGb) {
-      return setSizeGb(sizeGb);
-    }
-
-    /**
-     * Sets the size of the persistent disk, in GB.
-     */
     public B setSizeGb(Long sizeGb) {
       this.sizeGb = sizeGb;
       return self();
-    }
-
-    /**
-     * Sets the identity of the disk type. If not set {@code pd-standard} will be used.
-     */
-    @Deprecated
-    public B diskType(DiskTypeId diskType) {
-      return setDiskType(diskType);
     }
 
     /**
@@ -151,18 +135,6 @@ public abstract class DiskConfiguration implements Serializable {
    * snapshot. This method returns {@link Type#IMAGE} for a configuration that creates a disk
    * from a Google Compute Engine image.
    */
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
-
-  /**
-   * Returns the disk configuration's type. This method returns {@link Type#STANDARD} for a standard
-   * configuration that creates a disk given its type and size. This method returns
-   * {@link Type#SNAPSHOT} for a configuration that creates a disk from a Google Compute Engine
-   * snapshot. This method returns {@link Type#IMAGE} for a configuration that creates a disk
-   * from a Google Compute Engine image.
-   */
   public Type getType() {
     return type;
   }
@@ -170,24 +142,8 @@ public abstract class DiskConfiguration implements Serializable {
   /**
    * Returns the size of the persistent disk, in GB.
    */
-  @Deprecated
-  public Long sizeGb() {
-    return getSizeGb();
-  }
-
-  /**
-   * Returns the size of the persistent disk, in GB.
-   */
   public Long getSizeGb() {
     return sizeGb;
-  }
-
-  /**
-   * Returns the identity of the disk type.
-   */
-  @Deprecated
-  public DiskTypeId diskType() {
-    return getDiskType();
   }
 
   /**

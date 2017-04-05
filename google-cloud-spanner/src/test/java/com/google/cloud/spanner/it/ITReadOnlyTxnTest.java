@@ -18,6 +18,7 @@ package com.google.cloud.spanner.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.IntegrationTest;
@@ -29,7 +30,6 @@ import com.google.cloud.spanner.ReadOnlyTransaction;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Struct;
-import com.google.cloud.spanner.Timestamp;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.common.collect.ImmutableList;
 import java.util.Arrays;

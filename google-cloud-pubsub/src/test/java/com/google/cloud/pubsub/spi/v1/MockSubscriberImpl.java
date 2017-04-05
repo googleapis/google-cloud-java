@@ -18,18 +18,26 @@ package com.google.cloud.pubsub.spi.v1;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
 import com.google.pubsub.v1.AcknowledgeRequest;
+import com.google.pubsub.v1.CreateSnapshotRequest;
+import com.google.pubsub.v1.DeleteSnapshotRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
+import com.google.pubsub.v1.ListSnapshotsRequest;
+import com.google.pubsub.v1.ListSnapshotsResponse;
 import com.google.pubsub.v1.ListSubscriptionsRequest;
 import com.google.pubsub.v1.ListSubscriptionsResponse;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
+import com.google.pubsub.v1.SeekRequest;
+import com.google.pubsub.v1.SeekResponse;
+import com.google.pubsub.v1.Snapshot;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberImplBase;
 import com.google.pubsub.v1.Subscription;
+import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -85,6 +93,21 @@ public class MockSubscriberImpl extends SubscriberImplBase {
   @Override
   public void getSubscription(
       GetSubscriptionRequest request, StreamObserver<Subscription> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Subscription) {
+      requests.add(request);
+      responseObserver.onNext((Subscription) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateSubscription(
+      UpdateSubscriptionRequest request, StreamObserver<Subscription> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Subscription) {
       requests.add(request);
@@ -208,6 +231,65 @@ public class MockSubscriberImpl extends SubscriberImplBase {
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listSnapshots(
+      ListSnapshotsRequest request, StreamObserver<ListSnapshotsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListSnapshotsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListSnapshotsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void createSnapshot(
+      CreateSnapshotRequest request, StreamObserver<Snapshot> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Snapshot) {
+      requests.add(request);
+      responseObserver.onNext((Snapshot) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void deleteSnapshot(
+      DeleteSnapshotRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void seek(SeekRequest request, StreamObserver<SeekResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof SeekResponse) {
+      requests.add(request);
+      responseObserver.onNext((SeekResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

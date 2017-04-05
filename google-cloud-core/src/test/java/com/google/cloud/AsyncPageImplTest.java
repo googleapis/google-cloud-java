@@ -18,13 +18,13 @@ package com.google.cloud;
 
 import static org.junit.Assert.assertEquals;
 
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutures;
 import com.google.common.collect.ImmutableList;
-import com.google.common.util.concurrent.Futures;
 
 import org.junit.Test;
 
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 public class AsyncPageImplTest {
 
@@ -51,8 +51,8 @@ public class AsyncPageImplTest {
     }
 
     @Override
-    public Future<AsyncPage<String>> getNextPage() {
-      return Futures.<AsyncPage<String>>immediateFuture(nextResult);
+    public ApiFuture<AsyncPage<String>> getNextPage() {
+      return ApiFutures.<AsyncPage<String>>immediateFuture(nextResult);
     }
   }
 

@@ -48,17 +48,6 @@ public class NetworkIdTest {
   }
 
   @Test
-  public void testOfDeprecated() {
-    NetworkId networkId = NetworkId.of(PROJECT, NETWORK);
-    assertEquals(PROJECT, networkId.project());
-    assertEquals(NETWORK, networkId.network());
-    assertEquals(URL, networkId.selfLink());
-    networkId = NetworkId.of(NETWORK);
-    assertNull(networkId.project());
-    assertEquals(NETWORK, networkId.network());
-  }
-
-  @Test
   public void testToAndFromUrl() {
     NetworkId networkId = NetworkId.of(PROJECT, NETWORK);
     compareNetworkId(networkId, NetworkId.fromUrl(networkId.getSelfLink()));

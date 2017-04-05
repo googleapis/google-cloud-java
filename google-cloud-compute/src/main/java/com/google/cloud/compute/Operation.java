@@ -18,7 +18,7 @@ package com.google.cloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.Clock;
+import com.google.api.gax.core.ApiClock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.WaitForOption.CheckingPeriod;
 import com.google.cloud.compute.Compute.OperationOption;
@@ -43,8 +43,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 /**
- * Google Compute Engine operations. Operation identity can be obtained via {@link #operationId()}.
- * {@link #operationId()} returns {@link GlobalOperationId} for global operations,
+ * Google Compute Engine operations. Operation identity can be obtained via {@link #getOperationId()}.
+ * {@link #getOperationId()} returns {@link GlobalOperationId} for global operations,
  * {@link RegionOperationId} for region operations, and {@link ZoneOperationId} for zone operations.
  * To get an {@code Operation} object with the most recent information, use
  * {@link #reload(Compute.OperationOption...)}.
@@ -124,14 +124,6 @@ public class Operation implements Serializable {
     /**
      * Returns an error type identifier for this error.
      */
-    @Deprecated
-    public String code() {
-      return getCode();
-    }
-
-    /**
-     * Returns an error type identifier for this error.
-     */
     public String getCode() {
       return code;
     }
@@ -139,24 +131,8 @@ public class Operation implements Serializable {
     /**
      * Returns the field in the request which caused the error. This value is optional.
      */
-    @Deprecated
-    public String location() {
-      return getLocation();
-    }
-
-    /**
-     * Returns the field in the request which caused the error. This value is optional.
-     */
     public String getLocation() {
       return location;
-    }
-
-    /**
-     * Returns an optional, human-readable error message.
-     */
-    @Deprecated
-    public String message() {
-      return getMessage();
     }
 
     /**
@@ -245,15 +221,6 @@ public class Operation implements Serializable {
      * Returns a warning identifier for this warning. For example, {@code NO_RESULTS_ON_PAGE} if
      * there are no results in the response.
      */
-    @Deprecated
-    public String code() {
-      return getCode();
-    }
-
-    /**
-     * Returns a warning identifier for this warning. For example, {@code NO_RESULTS_ON_PAGE} if
-     * there are no results in the response.
-     */
     public String getCode() {
       return code;
     }
@@ -261,29 +228,8 @@ public class Operation implements Serializable {
     /**
      * Returns a human-readable error message.
      */
-    @Deprecated
-    public String message() {
-      return getMessage();
-    }
-
-    /**
-     * Returns a human-readable error message.
-     */
     public String getMessage() {
       return message;
-    }
-
-    /**
-     * Returns metadata about this warning. Each key provides more detail on the warning being
-     * returned. For example, for warnings where there are no results in a list request for a
-     * particular zone, this key might be {@code scope} and the key's value might be the zone name.
-     * Other examples might be a key indicating a deprecated resource, and a suggested replacement,
-     * or a warning about invalid network settings (for example, if an instance attempts to perform
-     * IP forwarding but is not enabled for IP forwarding).
-     */
-    @Deprecated
-    public Map<String, String> metadata() {
-      return getMetadata();
     }
 
     /**
@@ -543,14 +489,6 @@ public class Operation implements Serializable {
   /**
    * Returns the operation's {@code Compute} object used to issue requests.
    */
-  @Deprecated
-  public Compute compute() {
-    return getCompute();
-  }
-
-  /**
-   * Returns the operation's {@code Compute} object used to issue requests.
-   */
   public Compute getCompute() {
     return compute;
   }
@@ -558,29 +496,8 @@ public class Operation implements Serializable {
   /**
    * Returns the service-generated unique identifier for the operation.
    */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
-  }
-
-  /**
-   * Returns the service-generated unique identifier for the operation.
-   */
   public String getGeneratedId() {
     return generatedId;
-  }
-
-  /**
-   * Returns the operation's identity. This method returns an {@link GlobalOperationId} for global
-   * operations, a {@link RegionOperationId} for region operations and a {@link ZoneOperationId} for
-   * zone operations.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public <T extends OperationId> T operationId() {
-    return getOperationId();
   }
 
   /**
@@ -605,24 +522,8 @@ public class Operation implements Serializable {
   /**
    * Returns the type of operation.
    */
-  @Deprecated
-  public String operationType() {
-    return getOperationType();
-  }
-
-  /**
-   * Returns the type of operation.
-   */
   public String getOperationType() {
     return operationType;
-  }
-
-  /**
-   * Returns the URL of the resource that the operation is modifying.
-   */
-  @Deprecated
-  public String targetLink() {
-    return getTargetLink();
   }
 
   /**
@@ -636,25 +537,8 @@ public class Operation implements Serializable {
    * Returns the unique service-defined target ID, which identifies the resource that the operation
    * is modifying.
    */
-  @Deprecated
-  public String targetId() {
-    return getTargetId();
-  }
-
-  /**
-   * Returns the unique service-defined target ID, which identifies the resource that the operation
-   * is modifying.
-   */
   public String getTargetId() {
     return targetId;
-  }
-
-  /**
-   * Returns the status of the operation.
-   */
-  @Deprecated
-  public Status status() {
-    return getStatus();
   }
 
   /**
@@ -667,24 +551,8 @@ public class Operation implements Serializable {
   /**
    * Returns an optional textual description of the current status of the operation.
    */
-  @Deprecated
-  public String statusMessage() {
-    return getStatusMessage();
-  }
-
-  /**
-   * Returns an optional textual description of the current status of the operation.
-   */
   public String getStatusMessage() {
     return statusMessage;
-  }
-
-  /**
-   * Returns the user who requested the operation, for example: {@code user@example.com}.
-   */
-  @Deprecated
-  public String user() {
-    return getUser();
   }
 
   /**
@@ -700,17 +568,6 @@ public class Operation implements Serializable {
    * the operation will be complete. This number should monotonically increase as the operation
    * progresses.
    */
-  @Deprecated
-  public Integer progress() {
-    return getProgress();
-  }
-
-  /**
-   * Returns an optional progress indicator that ranges from 0 to 100. There is no requirement that
-   * this be linear or support any granularity of operations. This should not be used to guess when
-   * the operation will be complete. This number should monotonically increase as the operation
-   * progresses.
-   */
   public Integer getProgress() {
     return progress;
   }
@@ -718,25 +575,8 @@ public class Operation implements Serializable {
   /**
    * Returns the time that this operation was requested. In milliseconds since epoch.
    */
-  @Deprecated
-  public Long insertTime() {
-    return getInsertTime();
-  }
-
-  /**
-   * Returns the time that this operation was requested. In milliseconds since epoch.
-   */
   public Long getInsertTime() {
     return insertTime;
-  }
-
-  /**
-   * Returns the time that this operation was started by the service. In milliseconds since epoch.
-   * This value will be {@code null} if the operation has not started yet.
-   */
-  @Deprecated
-  public Long startTime() {
-    return getStartTime();
   }
 
   /**
@@ -751,26 +591,8 @@ public class Operation implements Serializable {
    * Returns the time that this operation was completed. In milliseconds since epoch. This value
    * will be {@code null} if the operation has not finished yet.
    */
-  @Deprecated
-  public Long endTime() {
-    return getEndTime();
-  }
-
-  /**
-   * Returns the time that this operation was completed. In milliseconds since epoch. This value
-   * will be {@code null} if the operation has not finished yet.
-   */
   public Long getEndTime() {
     return endTime;
-  }
-
-  /**
-   * Returns the errors encountered while processing this operation, if any. Returns {@code null} if
-   * no error occurred.
-   */
-  @Deprecated
-  public List<OperationError> errors() {
-    return getErrors();
   }
 
   /**
@@ -785,26 +607,8 @@ public class Operation implements Serializable {
    * Returns the warnings encountered while processing this operation, if any. Returns {@code null}
    * if no warning occurred.
    */
-  @Deprecated
-  public List<OperationWarning> warnings() {
-    return getWarnings();
-  }
-
-  /**
-   * Returns the warnings encountered while processing this operation, if any. Returns {@code null}
-   * if no warning occurred.
-   */
   public List<OperationWarning> getWarnings() {
     return warnings;
-  }
-
-  /**
-   * Returns the HTTP error status code that was returned, if the operation failed. For example, a
-   * {@code 404} means the resource was not found.
-   */
-  @Deprecated
-  public Integer httpErrorStatusCode() {
-    return getHttpErrorStatusCode();
   }
 
   /**
@@ -819,25 +623,8 @@ public class Operation implements Serializable {
    * Returns the the HTTP error message that was returned, if the operation failed. For example, a
    * {@code NOT FOUND} message is returned if the resource was not found.
    */
-  @Deprecated
-  public String httpErrorMessage() {
-    return getHttpErrorMessage();
-  }
-
-  /**
-   * Returns the the HTTP error message that was returned, if the operation failed. For example, a
-   * {@code NOT FOUND} message is returned if the resource was not found.
-   */
   public String getHttpErrorMessage() {
     return httpErrorMessage;
-  }
-
-  /**
-   * Returns an optional textual description of the operation.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
   }
 
   /**
@@ -920,10 +707,10 @@ public class Operation implements Serializable {
     WaitForOption.Timeout timeout = WaitForOption.Timeout.getOrDefault(waitOptions);
     CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
     long timeoutMillis = timeout.getTimeoutMillis();
-    Clock clock = options.getClock();
-    long startTime = clock.millis();
+    ApiClock clock = options.getClock();
+    long startTime = clock.millisTime();
     while (!isDone()) {
-      if (timeoutMillis  != -1 && (clock.millis() - startTime)  >= timeoutMillis) {
+      if (timeoutMillis  != -1 && (clock.millisTime() - startTime)  >= timeoutMillis) {
         throw new TimeoutException();
       }
       checkingPeriod.sleep();

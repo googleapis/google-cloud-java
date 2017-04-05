@@ -29,15 +29,17 @@ import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.cloud.BaseService;
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
+import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Operation.Parser;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
-import com.google.cloud.spanner.spi.SpannerRpc;
-import com.google.cloud.spanner.spi.SpannerRpc.Paginated;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
@@ -133,7 +135,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   SpannerImpl(SpannerOptions options) {
-    this(options.getRpc(), options.getPrefetchChunks(), options);
+    this(options.getSpannerRpcV1(), options.getPrefetchChunks(), options);
   }
 
   private static ExponentialBackOff newBackOff() {
@@ -1197,14 +1199,14 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             Level.FINER,
             "Started transaction {0}",
             txnLogger.isLoggable(Level.FINER)
-                ? ByteArrays.toString(transactionId.asReadOnlyByteBuffer())
+                ? transactionId.asReadOnlyByteBuffer()
                 : null);
       } else {
         txnLogger.log(
             Level.FINER,
             "Using prepared transaction {0}",
             txnLogger.isLoggable(Level.FINER)
-                ? ByteArrays.toString(transactionId.asReadOnlyByteBuffer())
+                ? transactionId.asReadOnlyByteBuffer()
                 : null);
       }
     }
@@ -1873,7 +1875,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           return proto.getStringValue();
         case BYTES:
           checkType(fieldType, proto, KindCase.STRING_VALUE);
-          return ByteArrays.fromBase64(proto.getStringValue());
+          return ByteArray.fromBase64(proto.getStringValue());
         case TIMESTAMP:
           checkType(fieldType, proto, KindCase.STRING_VALUE);
           return Timestamp.parseTimestamp(proto.getStringValue());
@@ -1925,7 +1927,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               list.add(
                   value.getKindCase() == KindCase.NULL_VALUE
                       ? null
-                      : ByteArrays.fromBase64(value.getStringValue()));
+                      : ByteArray.fromBase64(value.getStringValue()));
             }
             return list;
           }

@@ -30,6 +30,9 @@ public class IdentityTest {
       Identity.serviceAccount("service-account@gmail.com");
   private static final Identity GROUP = Identity.group("group@gmail.com");
   private static final Identity DOMAIN = Identity.domain("google.com");
+  private static final Identity PROJECT_OWNER = Identity.projectOwner("my-sample-project");
+  private static final Identity PROJECT_EDITOR = Identity.projectEditor("my-sample-project");
+  private static final Identity PROJECT_VIEWER = Identity.projectViewer("my-sample-project");
 
   @Test
   public void testAllUsers() {
@@ -94,6 +97,39 @@ public class IdentityTest {
   }
 
   @Test
+  public void testProjectOwner() {
+    assertEquals(Identity.Type.PROJECT_OWNER, PROJECT_OWNER.getType());
+    assertEquals("my-sample-project", PROJECT_OWNER.getValue());
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testProjectOwnerNullId() {
+    Identity.projectOwner(null);
+  }
+
+  @Test
+  public void testProjectEditor() {
+    assertEquals(Identity.Type.PROJECT_EDITOR, PROJECT_EDITOR.getType());
+    assertEquals("my-sample-project", PROJECT_EDITOR.getValue());
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testProjectEditorNullId() {
+    Identity.projectEditor(null);
+  }
+
+  @Test
+  public void testProjectViewer() {
+    assertEquals(Identity.Type.PROJECT_VIEWER, PROJECT_VIEWER.getType());
+    assertEquals("my-sample-project", PROJECT_VIEWER.getValue());
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testProjectViewerNullId() {
+    Identity.projectViewer(null);
+  }
+
+  @Test
   public void testIdentityToAndFromPb() {
     compareIdentities(ALL_USERS, Identity.valueOf(ALL_USERS.strValue()));
     compareIdentities(ALL_AUTH_USERS, Identity.valueOf(ALL_AUTH_USERS.strValue()));
@@ -101,6 +137,9 @@ public class IdentityTest {
     compareIdentities(SERVICE_ACCOUNT, Identity.valueOf(SERVICE_ACCOUNT.strValue()));
     compareIdentities(GROUP, Identity.valueOf(GROUP.strValue()));
     compareIdentities(DOMAIN, Identity.valueOf(DOMAIN.strValue()));
+    compareIdentities(PROJECT_OWNER, Identity.valueOf(PROJECT_OWNER.strValue()));
+    compareIdentities(PROJECT_EDITOR, Identity.valueOf(PROJECT_EDITOR.strValue()));
+    compareIdentities(PROJECT_VIEWER, Identity.valueOf(PROJECT_VIEWER.strValue()));
   }
 
   private void compareIdentities(Identity expected, Identity actual) {

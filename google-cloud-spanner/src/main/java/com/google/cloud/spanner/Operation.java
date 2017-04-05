@@ -16,11 +16,12 @@
 
 package com.google.cloud.spanner;
 
-import com.google.cloud.Clock;
+import com.google.api.gax.core.ApiClock;
+import com.google.api.gax.core.CurrentMillisClock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.WaitForOption.CheckingPeriod;
 import com.google.cloud.WaitForOption.Timeout;
-import com.google.cloud.spanner.spi.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.longrunning.Operation.ResultCase;
 import com.google.protobuf.Any;
@@ -44,7 +45,7 @@ public class Operation<R, M> {
   private final SpannerRpc rpc;
   private final String name;
   private final Parser<R, M> parser;
-  private final Clock clock;
+  private final ApiClock clock;
 
   @VisibleForTesting
   Operation(
@@ -55,7 +56,7 @@ public class Operation<R, M> {
       @Nullable SpannerException exception,
       boolean isDone,
       Parser<R, M> parser,
-      Clock clock) {
+      ApiClock clock) {
     this.rpc = rpc;
     this.name = name;
     this.metadata = metadata;
@@ -67,7 +68,7 @@ public class Operation<R, M> {
   }
 
   private static <R, M> Operation<R, M> failed(
-      SpannerRpc rpc, String name, Status status, M metadata, Parser<R, M> parser, Clock clock) {
+      SpannerRpc rpc, String name, Status status, M metadata, Parser<R, M> parser, ApiClock clock) {
     SpannerException e =
         SpannerExceptionFactory.newSpannerException(
             ErrorCode.fromRpcStatus(status), status.getMessage(), null);
@@ -75,22 +76,22 @@ public class Operation<R, M> {
   }
 
   private static <R, M> Operation<R, M> successful(
-      SpannerRpc rpc, String name, M metadata, R result, Parser<R, M> parser, Clock clock) {
+      SpannerRpc rpc, String name, M metadata, R result, Parser<R, M> parser, ApiClock clock) {
     return new Operation<>(rpc, name, metadata, result, null, true, parser, clock);
   }
 
   private static <R, M> Operation<R, M> pending(
-      SpannerRpc rpc, String name, M metadata, Parser<R, M> parser, Clock clock) {
+      SpannerRpc rpc, String name, M metadata, Parser<R, M> parser, ApiClock clock) {
     return new Operation<>(rpc, name, metadata, null, null, false, parser, clock);
   }
 
   static <R, M> Operation<R, M> create(
       SpannerRpc rpc, com.google.longrunning.Operation proto, Parser<R, M> parser) {
-    return Operation.<R, M>create(rpc, proto, parser, Clock.defaultClock());
+    return Operation.<R, M>create(rpc, proto, parser, CurrentMillisClock.getDefaultClock());
   }
 
   static <R, M> Operation<R, M> create(
-      SpannerRpc rpc, com.google.longrunning.Operation proto, Parser<R, M> parser, Clock clock) {
+      SpannerRpc rpc, com.google.longrunning.Operation proto, Parser<R, M> parser, ApiClock clock) {
     M metadata = proto.hasMetadata() ? parser.parseMetadata(proto.getMetadata()) : null;
     String name = proto.getName();
     if (proto.getDone()) {
@@ -126,14 +127,14 @@ public class Operation<R, M> {
     long timeoutMillis = Timeout.getOrDefault(options).getTimeoutMillis();
     boolean hasTimeout = timeoutMillis != -1;
     CheckingPeriod period = CheckingPeriod.getOrDefault(options);
-    long startMillis = clock.millis();
+    long startMillis = clock.millisTime();
     while (true) {
       try {
         com.google.longrunning.Operation proto = rpc.getOperation(name);
         if (proto.getDone()) {
           return Operation.<R, M>create(rpc, proto, parser);
         }
-        long elapsed = clock.millis() - startMillis;
+        long elapsed = clock.millisTime() - startMillis;
         if (hasTimeout && elapsed >= timeoutMillis) {
           throw SpannerExceptionFactory.newSpannerException(
               ErrorCode.DEADLINE_EXCEEDED, "Operation did not complete in the given time");

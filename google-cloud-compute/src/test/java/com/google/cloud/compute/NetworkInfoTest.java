@@ -53,18 +53,6 @@ public class NetworkInfoTest {
           .setCreationTimestamp(CREATION_TIMESTAMP)
           .setDescription(DESCRIPTION)
           .build();
-  private static final NetworkInfo DEPRECATED_NETWORK_INFO =
-      NetworkInfo.builder(NETWORK_ID, NETWORK_CONFIGURATION)
-          .setGeneratedId(GENERATED_ID)
-          .setCreationTimestamp(CREATION_TIMESTAMP)
-          .description(DESCRIPTION)
-          .build();
-  private static final NetworkInfo DEPRECATED_SUBNET_NETWORK_INFO =
-      NetworkInfo.builder(NETWORK_ID, SUBNET_NETWORK_CONFIGURATION)
-          .setGeneratedId(GENERATED_ID)
-          .setCreationTimestamp(CREATION_TIMESTAMP)
-          .description(DESCRIPTION)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -98,20 +86,6 @@ public class NetworkInfoTest {
     assertEquals(CREATION_TIMESTAMP, SUBNET_NETWORK_INFO.getCreationTimestamp());
     assertEquals(DESCRIPTION, SUBNET_NETWORK_INFO.getDescription());
     assertEquals(SUBNET_NETWORK_CONFIGURATION, SUBNET_NETWORK_INFO.getConfiguration());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(GENERATED_ID, DEPRECATED_NETWORK_INFO.generatedId());
-    assertEquals(NETWORK_ID, DEPRECATED_NETWORK_INFO.networkId());
-    assertEquals(CREATION_TIMESTAMP, DEPRECATED_NETWORK_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, DEPRECATED_NETWORK_INFO.description());
-    assertEquals(NETWORK_CONFIGURATION, DEPRECATED_NETWORK_INFO.configuration());
-    assertEquals(GENERATED_ID, DEPRECATED_SUBNET_NETWORK_INFO.generatedId());
-    assertEquals(NETWORK_ID, DEPRECATED_SUBNET_NETWORK_INFO.networkId());
-    assertEquals(CREATION_TIMESTAMP, DEPRECATED_SUBNET_NETWORK_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, DEPRECATED_SUBNET_NETWORK_INFO.description());
-    assertEquals(SUBNET_NETWORK_CONFIGURATION, DEPRECATED_SUBNET_NETWORK_INFO.configuration());
   }
 
   @Test

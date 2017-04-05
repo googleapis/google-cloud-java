@@ -17,8 +17,8 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.FlowController;
+import com.google.api.gax.core.ApiClock;
 import com.google.api.stats.Distribution;
-import com.google.cloud.Clock;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
@@ -58,7 +58,7 @@ class MessageDispatcher {
   private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
   private final ScheduledExecutorService executor;
-  private final Clock clock;
+  private final ApiClock clock;
 
   private final Duration ackExpirationPadding;
   private final MessageReceiver receiver;
@@ -160,7 +160,7 @@ class MessageDispatcher {
       this.ackId = ackId;
       this.outstandingBytes = outstandingBytes;
       acked = new AtomicBoolean(false);
-      receivedTime = new Instant(clock.millis());
+      receivedTime = new Instant(clock.millisTime());
     }
 
     @Override
@@ -191,7 +191,7 @@ class MessageDispatcher {
           // Record the latency rounded to the next closest integer.
           ackLatencyDistribution.record(
               Ints.saturatedCast(
-                  (long) Math.ceil((clock.millis() - receivedTime.getMillis()) / 1000D)));
+                  (long) Math.ceil((clock.millisTime() - receivedTime.getMillis()) / 1000D)));
           messagesWaiter.incrementPendingMessages(-1);
           return;
         case NACK:
@@ -220,7 +220,7 @@ class MessageDispatcher {
       Distribution ackLatencyDistribution,
       FlowController flowController,
       ScheduledExecutorService executor,
-      Clock clock) {
+      ApiClock clock) {
     this.executor = executor;
     this.ackExpirationPadding = ackExpirationPadding;
     this.receiver = receiver;
@@ -264,7 +264,7 @@ class MessageDispatcher {
     if (receivedMessagesCount == 0) {
       return;
     }
-    Instant now = new Instant(clock.millis());
+    Instant now = new Instant(clock.millisTime());
     int totalByteCount = 0;
     final ArrayList<AckHandler> ackHandlers = new ArrayList<>(responseMessages.size());
     for (ReceivedMessage pubsubMessage : responseMessages) {
@@ -273,7 +273,8 @@ class MessageDispatcher {
       ackHandlers.add(new AckHandler(pubsubMessage.getAckId(), messageSize));
     }
     Instant expiration = now.plus(messageDeadlineSeconds * 1000);
-    logger.log(Level.INFO, "Received " + responseMessages.size() + " messages at " + now);
+    logger.log(
+        Level.FINER, "Received {0} messages at {1}", new Object[] {responseMessages.size(), now});
 
     messagesWaiter.incrementPendingMessages(responseMessages.size());
     Iterator<AckHandler> acksIterator = ackHandlers.iterator();
@@ -284,12 +285,8 @@ class MessageDispatcher {
       final AckReplyConsumer consumer =
           new AckReplyConsumer() {
             @Override
-            public void accept(AckReply reply, Throwable t) {
-              if (reply != null) {
-                response.set(reply);
-              } else {
-                response.setException(t);
-              }
+            public void accept(AckReply reply) {
+              response.set(reply);
             }
           };
       Futures.addCallback(response, ackHandler);
@@ -297,7 +294,11 @@ class MessageDispatcher {
           new Runnable() {
             @Override
             public void run() {
-              receiver.receiveMessage(message, consumer);
+              try {
+                receiver.receiveMessage(message, consumer);
+              } catch (Exception e) {
+                response.setException(e);
+              }
             }
           });
     }
@@ -356,7 +357,7 @@ class MessageDispatcher {
         alarmsLock.unlock();
       }
 
-      Instant now = new Instant(clock.millis());
+      Instant now = new Instant(clock.millisTime());
       // Rounded to the next second, so we only schedule future alarms at the second
       // resolution.
       Instant cutOverTime =
@@ -364,13 +365,9 @@ class MessageDispatcher {
               ((long) Math.ceil(now.plus(ackExpirationPadding).plus(500).getMillis() / 1000.0))
                   * 1000L);
       logger.log(
-          Level.INFO,
-          "Running alarm sent outstanding acks, at now time: "
-              + now
-              + ", with cutover time: "
-              + cutOverTime
-              + ", padding: "
-              + ackExpirationPadding);
+          Level.FINER,
+          "Running alarm sent outstanding acks, at time: {0}, with cutover time: {1}, padding: {2}",
+          new Object[] {now, cutOverTime, ackExpirationPadding});
       Instant nextScheduleExpiration = null;
       List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
 
@@ -421,12 +418,9 @@ class MessageDispatcher {
 
       if (nextScheduleExpiration != null) {
         logger.log(
-            Level.INFO,
-            "Scheduling based on outstanding, now time: "
-                + now
-                + ", "
-                + "next schedule time: "
-                + nextScheduleExpiration);
+            Level.FINER,
+            "Scheduling based on outstanding, at time: {0}, next scheduled time: {1}",
+            new Object[] {now, nextScheduleExpiration});
         setupNextAckDeadlineExtensionAlarm(nextScheduleExpiration);
       }
     }
@@ -438,13 +432,11 @@ class MessageDispatcher {
     try {
       if (nextAckDeadlineExtensionAlarmTime.isAfter(possibleNextAlarmTime)) {
         logger.log(
-            Level.INFO,
-            "Scheduling next alarm time: "
-                + possibleNextAlarmTime
-                + ", last alarm set to time: "
-                + nextAckDeadlineExtensionAlarmTime);
+            Level.FINER,
+            "Scheduling next alarm time: {0}, previous alarm time: {1}",
+            new Object[] {possibleNextAlarmTime, nextAckDeadlineExtensionAlarmTime});
         if (ackDeadlineExtensionAlarm != null) {
-          logger.log(Level.INFO, "Canceling previous alarm");
+          logger.log(Level.FINER, "Canceling previous alarm");
           ackDeadlineExtensionAlarm.cancel(false);
         }
 
@@ -453,7 +445,7 @@ class MessageDispatcher {
         ackDeadlineExtensionAlarm =
             executor.schedule(
                 new AckDeadlineAlarm(),
-                nextAckDeadlineExtensionAlarmTime.getMillis() - clock.millis(),
+                nextAckDeadlineExtensionAlarmTime.getMillis() - clock.millisTime(),
                 TimeUnit.MILLISECONDS);
       }
 
@@ -475,7 +467,7 @@ class MessageDispatcher {
       if (!pendingAcks.isEmpty()) {
         try {
           acksToSend = new ArrayList<>(pendingAcks);
-          logger.log(Level.INFO, "Sending {0} acks", acksToSend.size());
+          logger.log(Level.FINER, "Sending {0} acks", acksToSend.size());
         } finally {
           pendingAcks.clear();
         }
@@ -488,7 +480,7 @@ class MessageDispatcher {
           for (String ackId : pendingNacks) {
             nacksToSend.addAckId(ackId);
           }
-          logger.log(Level.INFO, "Sending {0} nacks", pendingNacks.size());
+          logger.log(Level.FINER, "Sending {0} nacks", pendingNacks.size());
         } finally {
           pendingNacks.clear();
         }

@@ -19,7 +19,7 @@ package com.google.cloud.dns;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
-import com.google.cloud.RetryParams;
+import com.google.cloud.ServiceOptions;
 import com.google.common.collect.ImmutableList;
 
 import java.io.Serializable;
@@ -58,7 +58,7 @@ public class SerializationTest extends BaseSerializationTest {
       Dns.ProjectOption.fields(Dns.ProjectField.QUOTA);
   private static final DnsOptions OPTIONS = DnsOptions.newBuilder()
       .setProjectId("some-unnecessary-project-ID")
-      .setRetryParams(RetryParams.getDefaultInstance())
+      .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
       .build();
   private static final Dns DNS = OPTIONS.getService();
   private static final Zone FULL_ZONE = new Zone(DNS, new ZoneInfo.BuilderImpl(FULL_ZONE_INFO));

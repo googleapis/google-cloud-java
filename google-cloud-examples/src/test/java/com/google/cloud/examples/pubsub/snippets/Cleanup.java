@@ -16,8 +16,8 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
-import com.google.cloud.pubsub.spi.v1.SubscriberClient;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
+import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
 
@@ -30,10 +30,10 @@ class Cleanup {
   }
 
   private static void deleteTestTopics(String projectId, String[] testTopics) throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       for (String topicId : testTopics) {
         try {
-          publisherClient.deleteTopic(TopicName.create(projectId, topicId));
+          topicAdminClient.deleteTopic(TopicName.create(projectId, topicId));
           System.out.println("Topic deleted : " + topicId);
         } catch (Exception e) {
           //do nothing catch clause
@@ -44,10 +44,10 @@ class Cleanup {
 
   private static void deleteTestSubscriptions(String projectId, String[] subscriptions)
       throws Exception {
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       for (String subscriptionId : subscriptions) {
         try {
-          subscriberClient.deleteSubscription(
+          subscriptionAdminClient.deleteSubscription(
               SubscriptionName.create(projectId, subscriptionId));
           System.out.println("Subscription deleted : " + subscriptionId);
         } catch (Exception e) {

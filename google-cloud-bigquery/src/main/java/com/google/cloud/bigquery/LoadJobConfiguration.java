@@ -43,7 +43,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final Integer maxBadRecords;
   private final Schema schema;
   private final Boolean ignoreUnknownValues;
-  private final List<String> projectionFields;
+  private final List<JobInfo.SchemaUpdateOption> schemaUpdateOptions;
+  private final Boolean autodetect;
 
   public static final class Builder
       extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
@@ -58,6 +59,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private Schema schema;
     private Boolean ignoreUnknownValues;
     private List<String> projectionFields;
+    private List<JobInfo.SchemaUpdateOption> schemaUpdateOptions;
+    private Boolean autodetect;
 
     private Builder() {
       super(Type.LOAD);
@@ -72,8 +75,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.maxBadRecords = loadConfiguration.maxBadRecords;
       this.schema = loadConfiguration.schema;
       this.ignoreUnknownValues = loadConfiguration.ignoreUnknownValues;
-      this.projectionFields = loadConfiguration.projectionFields;
       this.sourceUris = loadConfiguration.sourceUris;
+      this.schemaUpdateOptions = loadConfiguration.schemaUpdateOptions;
+      this.autodetect = loadConfiguration.autodetect;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -121,6 +125,14 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       if (loadConfigurationPb.getSourceUris() != null) {
         this.sourceUris = ImmutableList.copyOf(configurationPb.getLoad().getSourceUris());
       }
+      if (loadConfigurationPb.getSchemaUpdateOptions() != null) {
+        ImmutableList.Builder<JobInfo.SchemaUpdateOption> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+        for (String rawSchemaUpdateOption : loadConfigurationPb.getSchemaUpdateOptions()) {
+          schemaUpdateOptionsBuilder.add(JobInfo.SchemaUpdateOption.valueOf(rawSchemaUpdateOption));
+        }
+        this.schemaUpdateOptions = schemaUpdateOptionsBuilder.build();
+      }
+      this.autodetect = loadConfigurationPb.getAutodetect();
     }
 
 
@@ -172,15 +184,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-
-    @Override
-    public Builder setProjectionFields(List<String> projectionFields) {
-      this.projectionFields =
-          projectionFields != null ? ImmutableList.copyOf(projectionFields) : null;
-      return this;
-    }
-
-
     /**
      * Sets the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
      * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
@@ -188,6 +191,18 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
      */
     public Builder setSourceUris(List<String> sourceUris) {
       this.sourceUris = ImmutableList.copyOf(checkNotNull(sourceUris));
+      return this;
+    }
+
+    public Builder setAutodetect(Boolean autodetect) {
+      this.autodetect = autodetect;
+      return this;
+    }
+
+    @Override
+    public Builder setSchemaUpdateOptions(List<JobInfo.SchemaUpdateOption> schemaUpdateOptions) {
+      this.schemaUpdateOptions =
+              schemaUpdateOptions != null ? ImmutableList.copyOf(schemaUpdateOptions) : null;
       return this;
     }
 
@@ -207,7 +222,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.maxBadRecords = builder.maxBadRecords;
     this.schema = builder.schema;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
-    this.projectionFields = builder.projectionFields;
+    this.schemaUpdateOptions = builder.schemaUpdateOptions;
+    this.autodetect = builder.autodetect;
   }
 
 
@@ -234,6 +250,12 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
   }
 
+  @Override
+  public DatastoreBackupOptions getDatastoreBackupOptions() {
+    return formatOptions instanceof DatastoreBackupOptions ?
+        (DatastoreBackupOptions) formatOptions : null;
+  }
+
 
   @Override
   public String getFormat() {
@@ -257,13 +279,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return ignoreUnknownValues;
   }
 
-
-  @Override
-  public List<String> getProjectionFields() {
-    return projectionFields;
-  }
-
-
   /**
    * Returns the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
    * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
@@ -271,6 +286,15 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    */
   public List<String> getSourceUris() {
     return sourceUris;
+  }
+
+  public Boolean getAutodetect() {
+    return autodetect;
+  }
+
+  @Override
+  public List<JobInfo.SchemaUpdateOption> getSchemaUpdateOptions() {
+    return schemaUpdateOptions;
   }
 
   @Override
@@ -288,8 +312,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("maxBadRecords", maxBadRecords)
         .add("schema", schema)
         .add("ignoreUnknownValue", ignoreUnknownValues)
-        .add("projectionFields", projectionFields)
-        .add("sourceUris", sourceUris);
+        .add("sourceUris", sourceUris)
+        .add("schemaUpdateOptions", schemaUpdateOptions)
+        .add("autodetect", autodetect);
   }
 
   @Override
@@ -339,10 +364,21 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     loadConfigurationPb.setMaxBadRecords(maxBadRecords);
     loadConfigurationPb.setIgnoreUnknownValues(ignoreUnknownValues);
-    loadConfigurationPb.setProjectionFields(projectionFields);
+    if (getDatastoreBackupOptions() != null) {
+      DatastoreBackupOptions backOptions = getDatastoreBackupOptions();
+      loadConfigurationPb.setProjectionFields(backOptions.getProjectionFields());
+    }
     if (sourceUris != null) {
       loadConfigurationPb.setSourceUris(ImmutableList.copyOf(sourceUris));
     }
+    if (schemaUpdateOptions != null) {
+      ImmutableList.Builder<String> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+      for (JobInfo.SchemaUpdateOption schemaUpdateOption : schemaUpdateOptions) {
+        schemaUpdateOptionsBuilder.add(schemaUpdateOption.name());
+      }
+      loadConfigurationPb.setSchemaUpdateOptions(schemaUpdateOptionsBuilder.build());
+    }
+    loadConfigurationPb.setAutodetect(autodetect);
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);
   }

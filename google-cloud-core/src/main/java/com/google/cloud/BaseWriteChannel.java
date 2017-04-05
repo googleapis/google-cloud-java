@@ -32,7 +32,7 @@ import java.util.Objects;
  * @param <EntityT> the entity this channel writes data to. Possibly with additional configuration
  */
 public abstract class BaseWriteChannel<
-    ServiceOptionsT extends ServiceOptions<?, ?, ServiceOptionsT>,
+    ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>,
     EntityT extends Serializable> implements WriteChannel {
 
   private static final int MIN_CHUNK_SIZE = 256 * 1024;
@@ -196,7 +196,7 @@ public abstract class BaseWriteChannel<
   }
 
   protected abstract static class BaseState<
-      ServiceOptionsT extends ServiceOptions<?, ?, ServiceOptionsT>, EntityT extends Serializable>
+      ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>, EntityT extends Serializable>
       implements RestorableState<WriteChannel>, Serializable {
 
     private static final long serialVersionUID = 8541062465055125619L;
@@ -228,7 +228,7 @@ public abstract class BaseWriteChannel<
      *     configuration
      */
     public abstract static class Builder<
-        ServiceOptionsT extends ServiceOptions<?, ?, ServiceOptionsT>,
+        ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>,
         EntityT extends Serializable> {
       private final ServiceOptionsT serviceOptions;
       private final EntityT entity;

@@ -39,12 +39,6 @@ public class NetworkInterfaceTest {
           .setNatIp("192.168.1.1")
           .setType(AccessConfig.Type.ONE_TO_ONE_NAT)
           .build();
-  private static final AccessConfig DEPRECATED_ACCESS_CONFIG =
-      AccessConfig.builder()
-          .name("accessConfig")
-          .natIp("192.168.1.1")
-          .type(AccessConfig.Type.ONE_TO_ONE_NAT)
-          .build();
   private static final List<AccessConfig> ACCESS_CONFIGURATIONS =
       ImmutableList.of(ACCESS_CONFIG);
   private static final NetworkInterface NETWORK_INTERFACE = NetworkInterface.newBuilder(NETWORK)
@@ -53,13 +47,6 @@ public class NetworkInterfaceTest {
           .setSubnetwork(SUBNETWORK)
           .setAccessConfigurations(ACCESS_CONFIGURATIONS)
           .build();
-  private static final NetworkInterface DEPRECATED_NETWORK_INTERFACE =
-      NetworkInterface.builder(NETWORK)
-          .setName(NAME)
-          .setNetworkIp(NETWORK_IP)
-          .subnetwork(SUBNETWORK)
-          .accessConfigurations(ACCESS_CONFIGURATIONS)
-          .build();
 
   @Test
   public void testAccessConfigToBuilder() {
@@ -67,15 +54,6 @@ public class NetworkInterfaceTest {
         ACCESS_CONFIG.toBuilder().setName("newName").build();
     assertEquals("newName", accessConfig.getName());
     compareAccessConfig(ACCESS_CONFIG, accessConfig.toBuilder().setName("accessConfig").build());
-  }
-
-  @Test
-  public void testAccessConfigToBuilderDeprecated() {
-    AccessConfig accessConfig =
-        DEPRECATED_ACCESS_CONFIG.toBuilder().name("newName").build();
-    assertEquals("newName", accessConfig.name());
-    compareAccessConfig(DEPRECATED_ACCESS_CONFIG,
-        accessConfig.toBuilder().name("accessConfig").build());
   }
 
   @Test
@@ -127,26 +105,6 @@ public class NetworkInterfaceTest {
     assertEquals(NETWORK_IP, networkInterface.getNetworkIp());
     assertEquals(SUBNETWORK, networkInterface.getSubnetwork());
     assertEquals(ACCESS_CONFIGURATIONS, networkInterface.getAccessConfigurations());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(NAME, DEPRECATED_NETWORK_INTERFACE.name());
-    assertEquals(NETWORK, DEPRECATED_NETWORK_INTERFACE.network());
-    assertEquals(NETWORK_IP, DEPRECATED_NETWORK_INTERFACE.networkIp());
-    assertEquals(SUBNETWORK, DEPRECATED_NETWORK_INTERFACE.subnetwork());
-    assertEquals(ACCESS_CONFIGURATIONS, DEPRECATED_NETWORK_INTERFACE.accessConfigurations());
-    NetworkInterface networkInterface = NetworkInterface.builder("network")
-        .setName(NAME)
-        .setNetworkIp(NETWORK_IP)
-        .subnetwork(SUBNETWORK)
-        .accessConfigurations(ACCESS_CONFIG)
-        .build();
-    assertEquals(NAME, networkInterface.name());
-    assertEquals(NetworkId.of("network"), networkInterface.network());
-    assertEquals(NETWORK_IP, networkInterface.networkIp());
-    assertEquals(SUBNETWORK, networkInterface.subnetwork());
-    assertEquals(ACCESS_CONFIGURATIONS, networkInterface.accessConfigurations());
   }
 
   @Test

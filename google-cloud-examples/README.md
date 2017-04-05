@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-examples</artifactId>
-  <version>0.9.4-alpha</version>
+  <version>0.11.1-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-examples:0.9.4-alpha'
+compile 'com.google.cloud:google-cloud-examples:0.11.1-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-examples" % "0.9.4-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-examples" % "0.11.1-alpha"
 ```
 
 To run examples from your command line:
@@ -88,7 +88,7 @@ To run examples from your command line:
   * Here's an example run of `DnsExample`.
 
     Note that you have to enable the Google Cloud DNS API on the [Google Developers Console][developers-console] before running the following commands.
-    You will need to replace the domain name `elaborateexample.com` with your own domain name with [verified ownership] (https://www.google.com/webmasters/verification/home).
+    You will need to replace the domain name `elaborateexample.com` with your own domain name with [verified ownership](https://www.google.com/webmasters/verification/home).
     Also, note that the example creates and deletes record sets of type A only. Operations with other record types are not implemented in the example.
     ```
     target/appassembler/bin/DnsExample create some-sample-zone elaborateexample.com. description

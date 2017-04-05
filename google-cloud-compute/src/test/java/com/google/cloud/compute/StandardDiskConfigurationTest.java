@@ -33,11 +33,6 @@ public class StandardDiskConfigurationTest {
           .setSizeGb(SIZE)
           .setDiskType(DISK_TYPE)
           .build();
-  private static final StandardDiskConfiguration DEPRECATED_DISK_CONFIGURATION =
-      StandardDiskConfiguration.builder()
-          .sizeGb(SIZE)
-          .diskType(DISK_TYPE)
-          .build();
 
   @Test
   public void testToBuilder() {
@@ -63,13 +58,6 @@ public class StandardDiskConfigurationTest {
     assertEquals(DISK_TYPE, DISK_CONFIGURATION.getDiskType());
     assertEquals(SIZE, DISK_CONFIGURATION.getSizeGb());
     assertEquals(Type.STANDARD, DISK_CONFIGURATION.getType());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(DISK_TYPE, DEPRECATED_DISK_CONFIGURATION.diskType());
-    assertEquals(SIZE, DEPRECATED_DISK_CONFIGURATION.sizeGb());
-    assertEquals(Type.STANDARD, DEPRECATED_DISK_CONFIGURATION.type());
   }
 
   @Test
