@@ -27,7 +27,7 @@ import java.util.Objects;
 /**
  * Information about a translation. Objects of this class contain the translated text and the source
  * language's code. Source language's code can be the one provided by the user (if any) or the one
- * detected by the Google Translate service.
+ * detected by the Google Translation service.
  *
  * <a href="https://cloud.google.com/translate/v2/translating-text-with-rest">Translating Text</a>
  */
@@ -63,7 +63,7 @@ public class Translation implements Serializable {
 
   /**
    * Returns the language code of the source text. If no source language was provided this value is
-   * the source language as detected by the Google Translate service.
+   * the source language as detected by the Google Translation service.
    */
   public String getSourceLanguage() {
     return sourceLanguage;
