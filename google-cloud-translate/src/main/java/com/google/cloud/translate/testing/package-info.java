@@ -15,7 +15,7 @@
  */
 
 /**
- * A testing helper for Google Translate.
+ * A testing helper for Google Translation.
  *
  * <p>A simple usage example:
  * <p>Before the test:

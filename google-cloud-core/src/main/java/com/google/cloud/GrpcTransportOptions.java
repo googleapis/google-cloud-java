@@ -210,22 +210,22 @@ public class GrpcTransportOptions implements TransportOptions {
   }
 
   /**
-   * Returns a channel provider.
+   * Returns a channel provider from the given default provider.
    */
-  public static ChannelProvider getChannelProvider(
-      ServiceOptions<?, ?> serviceOptions) {
+  public static ChannelProvider setUpChannelProvider(
+      InstantiatingChannelProvider.Builder providerBuilder, ServiceOptions<?, ?> serviceOptions) {
     HostAndPort hostAndPort = HostAndPort.fromString(serviceOptions.getHost());
-    InstantiatingChannelProvider.Builder builder = InstantiatingChannelProvider.newBuilder()
-        .setServiceAddress(hostAndPort.getHostText())
+    providerBuilder.setServiceAddress(hostAndPort.getHostText())
         .setPort(hostAndPort.getPort())
-        .setClientLibHeader(serviceOptions.getGoogApiClientLibName(),
-            firstNonNull(serviceOptions.getLibraryVersion(), ""));
+        .setClientLibHeader(ServiceOptions.getGoogApiClientLibName(),
+            firstNonNull(ServiceOptions.getLibraryVersion(), ""));
     Credentials scopedCredentials = serviceOptions.getScopedCredentials();
     if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
-      builder.setCredentialsProvider(FixedCredentialsProvider.create(scopedCredentials));
+      providerBuilder.setCredentialsProvider(FixedCredentialsProvider.create(scopedCredentials));
     }
-    return builder.build();
+    return providerBuilder.build();
   }
+
 
   /**
    * Returns the timeout for the initial RPC, in milliseconds. Subsequent calls will use this value
