@@ -381,7 +381,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       }
     }
     // return project id from metadata config
-     return MetadataConfig.getProjectId();
+    return MetadataConfig.getProjectId();
   }
 
   private static boolean isWindows() {
