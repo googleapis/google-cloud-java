@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.spi.v1;
 
 import static com.google.cloud.pubsub.spi.v1.MessageDispatcher.PENDING_ACKS_SEND_DELAY;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
@@ -276,8 +277,8 @@ public class SubscriberImplTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setAckExpirationPadding(Duration.standardSeconds(1)));
-
+                .setAckExpirationPadding(Duration.standardSeconds(1))
+                .setMaxAckExtensionPeriod(Duration.standardSeconds(13)));
     // Send messages to be acked
     List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
@@ -305,9 +306,16 @@ public class SubscriberImplTest {
         new Function<String, ModifyAckDeadline>() {
           @Override
           public ModifyAckDeadline apply(String ack) {
-            return new ModifyAckDeadline(ack, 4);
+            return new ModifyAckDeadline(ack, 2); // It is expected that the deadline is renewed
+                                                  // only two more seconds to not pass the max
+                                                  // ack deadline ext.
           }
         });
+
+    // No more modify ack deadline extension should be triggered at this point
+    fakeExecutor.advanceTime(Duration.standardSeconds(20));
+
+    assertTrue(fakeSubscriberServiceImpl.getModifyAckDeadlines().isEmpty());
 
     testReceiver.replyAllOutstandingMessage();
     subscriber.stopAsync().awaitTerminated();
