@@ -31,12 +31,6 @@ public class GcjTestRunner implements Runnable {
   private final PrintStream resultStream;
   private final List<Class<?>> classes;
 
-  public static void main(String[] args) {
-    GcjTestRunner runner = new GcjTestRunner(Collections.<Class<?>>singletonList(BlobIdTest.class));
-    runner.run();
-    System.out.println(runner.getOutput());
-  }
-
   public GcjTestRunner(List<Class<?>> classes) {
     this.unit = new JUnitCore();
     this.resultBytes = new ByteArrayOutputStream();

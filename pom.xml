@@ -124,6 +124,7 @@
     <module>testing/google-cloud-appengine-flex-java</module>
     <module>testing/google-cloud-appengine-flex-custom</module>
     <module>testing/google-cloud-appengine-java8</module>
+    <module>testing/google-cloud-appengine-flex-compat</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>
@@ -213,7 +214,7 @@
         <executions>
           <execution>
             <goals>
-              <goal>integration-test</goal>
+              <!--<goal>integration-test</goal>-->
               <goal>verify</goal>
             </goals>
           </execution>

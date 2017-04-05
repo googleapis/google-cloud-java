@@ -2,7 +2,7 @@
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
   <application>vam-veneer</application>
   <service>std-java8</service>
-  <version>5</version>
+  <version>1</version>
   <runtime>java8</runtime>
   <threadsafe>true</threadsafe>
   <instance-class>B8</instance-class>

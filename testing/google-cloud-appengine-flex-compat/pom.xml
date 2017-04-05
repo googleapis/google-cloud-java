@@ -11,12 +11,12 @@
 
   <modelVersion>4.0.0</modelVersion>
   <packaging>war</packaging>
-  <artifactId>google-cloud-appengine-java8</artifactId>
+  <artifactId>google-cloud-appengine-flex-compat</artifactId>
 
   <properties>
     <appengine.sdk.version>1.9.51</appengine.sdk.version>
     <jetty.maven.plugin>9.3.8.v20160314</jetty.maven.plugin>
-    <java.source.version>1.8</java.source.version>
+    <java.source.version>1.7</java.source.version>
   </properties>
 
   <dependencies>
@@ -24,6 +24,11 @@
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-managed-test</artifactId>
       <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-api-1.0-sdk</artifactId>
+      <version>${appengine.sdk.version}</version>
     </dependency>
   </dependencies>
 
