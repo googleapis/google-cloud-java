@@ -28,7 +28,6 @@ import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
-
 import java.util.AbstractMap;
 import java.util.AbstractSet;
 import java.util.Iterator;
@@ -41,18 +40,20 @@ import java.util.Set;
  */
 final class Structs {
 
-  private static final Function<Value, Object> VALUE_TO_OBJECT = new Function<Value, Object>() {
-    @Override
-    public Object apply(Value value) {
-      return valueToObject(value);
-    }
-  };
-  private static final Function<Object, Value> OBJECT_TO_VALUE = new Function<Object, Value>() {
-    @Override
-    public Value apply(Object obj) {
-      return objectToValue(obj);
-    }
-  };
+  private static final Function<Value, Object> VALUE_TO_OBJECT =
+      new Function<Value, Object>() {
+        @Override
+        public Object apply(Value value) {
+          return valueToObject(value);
+        }
+      };
+  private static final Function<Object, Value> OBJECT_TO_VALUE =
+      new Function<Object, Value>() {
+        @Override
+        public Value apply(Object obj) {
+          return objectToValue(obj);
+        }
+      };
 
   private Structs() {}
 
@@ -71,12 +72,14 @@ final class Structs {
     private static final class StructSet extends AbstractSet<Entry<String, Object>> {
 
       private static final Function<Map.Entry<String, Value>, Map.Entry<String, Object>>
-          VALUE_TO_OBJECT = new Function<Map.Entry<String, Value>, Map.Entry<String, Object>>() {
-            @Override
-            public Map.Entry<String, Object> apply(Map.Entry<String, Value> entry) {
-              return new AbstractMap.SimpleEntry<>(entry.getKey(), valueToObject(entry.getValue()));
-            }
-          };
+          VALUE_TO_OBJECT =
+              new Function<Map.Entry<String, Value>, Map.Entry<String, Object>>() {
+                @Override
+                public Map.Entry<String, Object> apply(Map.Entry<String, Value> entry) {
+                  return new AbstractMap.SimpleEntry<>(
+                      entry.getKey(), valueToObject(entry.getValue()));
+                }
+              };
 
       private final Struct struct;
 
@@ -101,9 +104,7 @@ final class Structs {
     }
   }
 
-  /**
-   * Returns an unmodifiable map view of the {@link Struct} parameter.
-   */
+  /** Returns an unmodifiable map view of the {@link Struct} parameter. */
   static Map<String, Object> asMap(Struct struct) {
     return new StructMap(checkNotNull(struct));
   }
@@ -111,8 +112,8 @@ final class Structs {
   /**
    * Creates a new {@link Struct} object given the content of the provided {@code map} parameter.
    *
-   * <p>Notice that all numbers (int, long, float and double) are serialized as double values.
-   * Enums are serialized as strings.
+   * <p>Notice that all numbers (int, long, float and double) are serialized as double values. Enums
+   * are serialized as strings.
    */
   static Struct newStruct(Map<String, ?> map) {
     Map<String, Value> valueMap = Maps.transformValues(checkNotNull(map), OBJECT_TO_VALUE);
@@ -153,8 +154,9 @@ final class Structs {
     } else if (obj instanceof Boolean) {
       builder.setBoolValue((Boolean) obj);
     } else if (obj instanceof Iterable<?> || objClass.isArray()) {
-      builder.setListValue(ListValue.newBuilder()
-          .addAllValues(Iterables.transform(Types.iterableOf(obj), OBJECT_TO_VALUE)));
+      builder.setListValue(
+          ListValue.newBuilder()
+              .addAllValues(Iterables.transform(Types.iterableOf(obj), OBJECT_TO_VALUE)));
     } else if (objClass.isEnum()) {
       builder.setStringValue(((Enum<?>) obj).name());
     } else if (obj instanceof Map) {

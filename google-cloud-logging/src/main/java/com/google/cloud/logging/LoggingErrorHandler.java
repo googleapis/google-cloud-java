@@ -18,9 +18,9 @@ package com.google.cloud.logging;
 
 public interface LoggingErrorHandler {
 
-    void handleWriteError(Exception e);
+  void handleWriteError(Exception e);
 
-    void handleFormatError(Exception e);
+  void handleFormatError(Exception e);
 
-    void handleFlushError(Exception e);
+  void handleFlushError(Exception e);
 }

@@ -19,7 +19,6 @@ package com.google.cloud.logging;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.cloud.MonitoredResource;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -32,15 +31,15 @@ import java.util.logging.SimpleFormatter;
 public class LoggingConfig {
 
   private final LogManager manager = LogManager.getLogManager();
-  private String className;
-  private final String flushLevelTag = "flushLevel";
-  private final String logFileNameTag = "log";
-  private final String logLevelTag = "level";
-  private final String filterTag = "filter";
-  private final String formatterTag = "formatter";
-  private final String synchronicityTag = "synchronicity";
-  private final String resourceTypeTag = "resourceType";
-  private final String enchancersTag = "enhancers";
+  private final String className;
+  private static final String flushLevelTag = "flushLevel";
+  private static final String logFileNameTag = "log";
+  private static final String logLevelTag = "level";
+  private static final String filterTag = "filter";
+  private static final String formatterTag = "formatter";
+  private static final String synchronicityTag = "synchronicity";
+  private static final String resourceTypeTag = "resourceType";
+  private static final String enchancersTag = "enhancers";
 
   public LoggingConfig(String className) {
     this.className = className;
@@ -51,7 +50,7 @@ public class LoggingConfig {
   }
 
   String getLogName() {
-    return getProperty( logFileNameTag, "java.log");
+    return getProperty(logFileNameTag, "java.log");
   }
 
   Level getLogLevel() {
@@ -73,7 +72,7 @@ public class LoggingConfig {
   }
 
   Formatter getFormatter() {
-    return getFormatterProperty( formatterTag, new SimpleFormatter());
+    return getFormatterProperty(formatterTag, new SimpleFormatter());
   }
 
   MonitoredResource getMonitoredResource(String projectId) {
@@ -88,8 +87,8 @@ public class LoggingConfig {
       if (list != null) {
         String[] items = list.split(",");
         for (String e_name : items) {
-          Class<? extends Enhancer> clz = (Class<? extends Enhancer>) ClassLoader
-                  .getSystemClassLoader().loadClass(e_name);
+          Class<? extends Enhancer> clz =
+              (Class<? extends Enhancer>) ClassLoader.getSystemClassLoader().loadClass(e_name);
           enhancers.add(clz.newInstance());
         }
       }
@@ -112,15 +111,6 @@ public class LoggingConfig {
     try {
       return Level.parse(stringLevel);
     } catch (IllegalArgumentException ex) {
-      // If the level does not exist we fall back to default value
-    }
-    return defaultValue;
-  }
-
-  private int getIntegerProperty(String name, int defaultValue) {
-    try {
-      return Integer.parseInt(getProperty(name));
-    } catch (NumberFormatException ex) {
       // If the level does not exist we fall back to default value
     }
     return defaultValue;
@@ -156,5 +146,3 @@ public class LoggingConfig {
     return manager.getProperty(className + "." + propertyName);
   }
 }
-
-

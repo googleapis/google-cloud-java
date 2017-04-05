@@ -23,7 +23,7 @@ public class TraceEnhancer implements Enhancer {
   private static final ThreadLocal<String> traceId = new ThreadLocal<>();
   /**
    * Set the Trace ID associated with any logging done by the current thread.
-   * 
+   *
    * @param id The traceID
    */
   public static void setCurrentTraceId(String id) {
@@ -32,14 +32,11 @@ public class TraceEnhancer implements Enhancer {
 
   /**
    * Get the Trace ID associated with any logging done by the current thread.
-   * 
+   *
    * @return id The traceID
    */
   public static String getCurrentTraceId() {
     return traceId.get();
-  }
-
-  public TraceEnhancer() {
   }
 
   @Override

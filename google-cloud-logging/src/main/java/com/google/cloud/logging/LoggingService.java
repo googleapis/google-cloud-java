@@ -16,21 +16,18 @@
 
 package com.google.cloud.logging;
 
-import com.google.api.gax.batching.BatchingSettings;
+import static com.google.common.base.MoreObjects.firstNonNull;
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutureCallback;
 import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
-import com.google.cloud.logging.spi.v2.LoggingSettings;
 import com.google.common.util.concurrent.Uninterruptibles;
-
 import java.util.*;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
-import static com.google.common.base.Preconditions.checkNotNull;
-
-public class LoggingHelper {
+public class LoggingService {
 
   private static final ThreadLocal<Boolean> inPublishCall = new ThreadLocal<>();
   private volatile Logging logging;
@@ -43,15 +40,15 @@ public class LoggingHelper {
 
   private final Object writeLock = new Object();
   private final Set<ApiFuture<Void>> pendingWrites =
-          Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
+      Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
 
-  private LoggingHelper() {}
+  private LoggingService() {}
 
   public void flush() {
     // BUG(1795): We should force batcher to issue RPC call for buffered messages,
     // so the code below doesn't wait uselessly.
     ArrayList<ApiFuture<Void>> writesToFlush = new ArrayList<>();
-    synchronized(writeLock) {
+    synchronized (writeLock) {
       writesToFlush.addAll(pendingWrites);
     }
     for (ApiFuture<Void> write : writesToFlush) {
@@ -80,18 +77,16 @@ public class LoggingHelper {
     inPublishCall.set(true);
 
     try {
-        write(entry);
-        if (entry.getSeverity().compareTo(flushSeverity) >= 0) {
-          flush();
-        }
-    } finally{
+      write(entry);
+      if (entry.getSeverity().compareTo(flushSeverity) >= 0) {
+        flush();
+      }
+    } finally {
       inPublishCall.remove();
     }
   }
 
-  /**
-   * Closes the handler and the associated {@link Logging} object.
-   */
+  /** Closes the handler and the associated {@link Logging} object. */
   public synchronized void close() throws SecurityException {
     if (logging != null) {
       try {
@@ -130,37 +125,35 @@ public class LoggingHelper {
       default:
         final ApiFuture<Void> writeFuture = getLogging().writeAsync(logEntryList, writeOptions);
         ApiFutures.addCallback(
-                writeFuture,
-                new ApiFutureCallback<Void>() {
-                  private void removeFromPending() {
-                    synchronized(writeLock) {
-                      pendingWrites.remove(writeFuture);
-                    }
-                  }
-                  @Override
-                  public void onSuccess(Void v) {
-                    removeFromPending();
-                  }
-
-                  @Override
-                  public void onFailure(Throwable t) {
-                    try {
-                      Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
-                      errorHandler.handleFlushError(ex);
-                    }
-                    finally {
-                      removeFromPending();
-                    }
+            writeFuture,
+            new ApiFutureCallback<Void>() {
+              private void removeFromPending() {
+                synchronized (writeLock) {
+                  pendingWrites.remove(writeFuture);
                 }
-                });
+              }
+
+              @Override
+              public void onSuccess(Void v) {
+                removeFromPending();
+              }
+
+              @Override
+              public void onFailure(Throwable t) {
+                try {
+                  Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
+                  errorHandler.handleFlushError(ex);
+                } finally {
+                  removeFromPending();
+                }
+              }
+            });
         pendingWrites.add(writeFuture);
         break;
     }
   }
 
-  /**
-   * Returns an instance of the logging service.
-   */
+  /** Returns an instance of the logging service. */
   private Logging getLogging() {
     if (logging == null) {
       synchronized (this) {
@@ -172,55 +165,45 @@ public class LoggingHelper {
     return logging;
   }
 
-  /**
-   * Returns a builder for this {@code LoggingHelper} object.
-   */
-  public LoggingHelper.Builder toBuilder() {
-    return new LoggingHelper.BuilderImpl(this);
+  /** Returns a builder for this {@code LoggingService} object. */
+  public LoggingService.Builder toBuilder() {
+    return new LoggingService.BuilderImpl(this);
   }
 
   /**
-   * Returns a builder for {@code LoggingHelper} objects given the name of the sink and its destination.
+   * Returns a builder for {@code LoggingService} objects given the name of the sink and its
+   * destination.
    */
-  public static LoggingHelper.Builder newBuilder(LoggingOptions loggingOptions) {
-    return new LoggingHelper.BuilderImpl(loggingOptions);
+  public static LoggingService.Builder newBuilder(LoggingOptions loggingOptions) {
+    return new LoggingService.BuilderImpl(loggingOptions);
   }
 
   public abstract static class Builder {
-    /**
-     * Service configuration of the cloud logging service
-     */
-    public abstract LoggingHelper.Builder setLoggingOptions(LoggingOptions loggingOptions);
+    /** Service configuration of the cloud logging service */
+    public abstract LoggingService.Builder setLoggingOptions(LoggingOptions loggingOptions);
 
-    /**
-     * Set the synchronicity of logging : {@link Synchronicity}, defaults to async
-     */
-    public abstract LoggingHelper.Builder setSynchronicity(Synchronicity synchronicity);
+    /** Set the synchronicity of logging : {@link Synchronicity}, defaults to async */
+    public abstract LoggingService.Builder setSynchronicity(Synchronicity synchronicity);
 
     /**
      * Minimum severity of log message to not buffer but immediately write out to cloud logging.
      * Default : Error
+     *
      * @param flushSeverity : minimum logging severity
      */
-    public abstract LoggingHelper.Builder setFlushSeverity(Severity flushSeverity);
+    public abstract LoggingService.Builder setFlushSeverity(Severity flushSeverity);
 
-    /**
-     * Sets the default write options for log entries
-     */
-    public abstract LoggingHelper.Builder  setWriteOptions(String logName, MonitoredResource resource,
-                                                           WriteOption[] labelOptions);
+    /** Sets the default write options for log entries */
+    public abstract LoggingService.Builder setWriteOptions(
+        String logName, MonitoredResource resource, WriteOption... labelOptions);
 
-    /**
-     * Sets the error log handler
-     */
-    public abstract LoggingHelper.Builder setErrorHandler(LoggingErrorHandler errorHandler);
-    /**
-     * Creates a {@code LoggingHelper} object for this builder.
-     */
-    public abstract LoggingHelper build();
+    /** Sets the error log handler */
+    public abstract LoggingService.Builder setErrorHandler(LoggingErrorHandler errorHandler);
+    /** Creates a {@code LoggingService} object for this builder. */
+    public abstract LoggingService build();
   }
 
-  static final class BuilderImpl extends LoggingHelper.Builder {
+  static final class BuilderImpl extends LoggingService.Builder {
 
     private LoggingOptions loggingOptions;
     private Severity flushSeverity;
@@ -232,35 +215,35 @@ public class LoggingHelper {
       this.loggingOptions = loggingOptions;
     }
 
-    BuilderImpl(LoggingHelper loggingHelper) {
-      this.loggingOptions = loggingHelper.loggingOptions;
-      this.flushSeverity = loggingHelper.flushSeverity;
-      this.synchronicity = loggingHelper.synchronicity;
-      this.writeOptions = loggingHelper.writeOptions;
-      this.errorHandler = loggingHelper.errorHandler;
+    BuilderImpl(LoggingService loggingService) {
+      this.loggingOptions = loggingService.loggingOptions;
+      this.flushSeverity = loggingService.flushSeverity;
+      this.synchronicity = loggingService.synchronicity;
+      this.writeOptions = loggingService.writeOptions;
+      this.errorHandler = loggingService.errorHandler;
     }
 
     @Override
-    public LoggingHelper.Builder setLoggingOptions(LoggingOptions loggingOptions) {
+    public LoggingService.Builder setLoggingOptions(LoggingOptions loggingOptions) {
       this.loggingOptions = loggingOptions;
       return this;
     }
 
     @Override
-    public LoggingHelper.Builder setFlushSeverity(Severity flushSeverity) {
+    public LoggingService.Builder setFlushSeverity(Severity flushSeverity) {
       this.flushSeverity = flushSeverity;
       return this;
     }
 
     @Override
-    public LoggingHelper.Builder setSynchronicity(Synchronicity synchronicity) {
+    public LoggingService.Builder setSynchronicity(Synchronicity synchronicity) {
       this.synchronicity = synchronicity;
       return this;
     }
 
     @Override
-    public LoggingHelper.Builder setWriteOptions(String logName, MonitoredResource resource,
-                                                 WriteOption[] labelOptions) {
+    public LoggingService.Builder setWriteOptions(
+        String logName, MonitoredResource resource, WriteOption... labelOptions) {
       List<WriteOption> writeOptionsList = new ArrayList<>();
       writeOptionsList.add(WriteOption.logName(logName));
       writeOptionsList.add(WriteOption.resource(resource));
@@ -273,24 +256,25 @@ public class LoggingHelper {
     }
 
     @Override
-    public LoggingHelper.Builder setErrorHandler(LoggingErrorHandler errorHandler) {
+    public LoggingService.Builder setErrorHandler(LoggingErrorHandler errorHandler) {
       this.errorHandler = errorHandler;
       return this;
     }
 
     @Override
-    public LoggingHelper build() {
-      return new LoggingHelper(this);
+    public LoggingService build() {
+      return new LoggingService(this);
     }
   }
 
-  LoggingHelper(LoggingHelper.BuilderImpl builder) {
-    this.loggingOptions = checkNotNull(firstNonNull(builder.loggingOptions, LoggingOptions.getDefaultInstance()));
+  LoggingService(LoggingService.BuilderImpl builder) {
+    this.loggingOptions =
+        checkNotNull(firstNonNull(builder.loggingOptions, LoggingOptions.getDefaultInstance()));
     this.flushSeverity = firstNonNull(builder.flushSeverity, Severity.ERROR);
+
     this.synchronicity = firstNonNull(builder.synchronicity, Synchronicity.ASYNC);
     this.writeOptions = checkNotNull(builder.writeOptions);
     this.errorHandler = checkNotNull(builder.errorHandler);
     this.resourceEnhancers = MonitoredResourceUtil.getResourceEnhancers();
   }
-
 }

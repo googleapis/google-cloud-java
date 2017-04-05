@@ -26,49 +26,31 @@ import com.google.logging.type.LogSeverity;
  */
 public enum Severity {
 
-  /**
-   * The log entry has no assigned severity level.
-   */
+  /** The log entry has no assigned severity level. */
   DEFAULT(LogSeverity.DEFAULT),
 
-  /**
-   * Debug or trace information.
-   */
+  /** Debug or trace information. */
   DEBUG(LogSeverity.DEBUG),
 
-  /**
-   * Routine information, such as ongoing status or performance.
-   */
+  /** Routine information, such as ongoing status or performance. */
   INFO(LogSeverity.INFO),
 
-  /**
-   * Normal but significant events, such as start up, shut down, or configuration.
-   */
+  /** Normal but significant events, such as start up, shut down, or configuration. */
   NOTICE(LogSeverity.NOTICE),
 
-  /**
-   * Warning events might cause problems.
-   */
+  /** Warning events might cause problems. */
   WARNING(LogSeverity.WARNING),
 
-  /**
-   * Error events are likely to cause problems.
-   */
+  /** Error events are likely to cause problems. */
   ERROR(LogSeverity.ERROR),
 
-  /**
-   * Critical events cause more severe problems or brief outages.
-   */
+  /** Critical events cause more severe problems or brief outages. */
   CRITICAL(LogSeverity.CRITICAL),
 
-  /**
-   * A person must take an action immediately.
-   */
+  /** A person must take an action immediately. */
   ALERT(LogSeverity.ALERT),
 
-  /**
-   * One or more systems are unusable.
-   */
+  /** One or more systems are unusable. */
   EMERGENCY(LogSeverity.EMERGENCY);
 
   private final LogSeverity versionPb;

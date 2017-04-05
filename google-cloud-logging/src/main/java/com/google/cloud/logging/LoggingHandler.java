@@ -22,7 +22,6 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
 import java.util.List;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
@@ -52,43 +51,45 @@ import java.util.logging.SimpleFormatter;
  * <tr><td>FINEST</td><td>DEBUG</td></tr>
  * </table>
  *
- * <p>Original Java logging levels are added as labels (with {@code levelName} and
- * {@code levelValue} keys, respectively) to the corresponding Stackdriver Logging {@link LogEntry}.
- * You can read entry labels using {@link LogEntry#getLabels()}. To use logging levels that
- * correspond to Stackdriver Logging severities you can use {@link LoggingLevel}.
+ * <p>Original Java logging levels are added as labels (with {@code levelName} and {@code
+ * levelValue} keys, respectively) to the corresponding Stackdriver Logging {@link LogEntry}. You
+ * can read entry labels using {@link LogEntry#getLabels()}. To use logging levels that correspond
+ * to Stackdriver Logging severities you can use {@link LoggingLevel}.
  *
  * <p><b>Configuration</b>: By default each {@code LoggingHandler} is initialized using the
- * following {@code LogManager} configuration properties (that you can set in the
- * {@code logging.properties} file). If properties are not defined (or have invalid values) then the
+ * following {@code LogManager} configuration properties (that you can set in the {@code
+ * logging.properties} file). If properties are not defined (or have invalid values) then the
  * specified default values are used.
+ *
  * <ul>
- * <li>{@code com.google.cloud.logging.LoggingHandler.log} the log name (defaults to
- *     {@code java.log}).
- * <li>{@code com.google.cloud.logging.LoggingHandler.level} specifies the default level for the
- *     handler (defaults to {@code Level.INFO}).
- * <li>{@code com.google.cloud.logging.LoggingHandler.filter} specifies the name of a {@link Filter}
- *     class to use (defaults to no filter).
- * <li>{@code com.google.cloud.logging.LoggingHandler.formatter} specifies the name of a
- *     {@link Formatter} class to use (defaults to {@link SimpleFormatter}).
- * <li>{@code com.google.cloud.logging.LoggingHandler.flushSize} specifies the maximum size of the
- *     log buffer. Once reached, logs are transmitted to the Stackdriver Logging service (defaults
- *     to 1).
- * <li>{@code com.google.cloud.logging.LoggingHandler.flushLevel} specifies the flush log level.
- *     When a log with this level is published, logs are transmitted to the Stackdriver Logging
- *     service (defaults to {@link LoggingLevel#ERROR}).
- * <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
- *     of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds
- *     a {@link LogEntry} instance (defaults to empty list).
- * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
- *     creating the default {@link MonitoredResource}
- *     (defaults to auto-detected resource type, else "global").
- * <li>{@code com.google.cloud.logging.Synchronicity} the synchronicity of the write method to use
- *     to write logs to the Stackdriver Logging service (defaults to {@link Synchronicity#ASYNC}).
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.log} the log name (defaults to {@code
+ *       java.log}).
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.level} specifies the default level for the
+ *       handler (defaults to {@code Level.INFO}).
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.filter} specifies the name of a {@link
+ *       Filter} class to use (defaults to no filter).
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.formatter} specifies the name of a {@link
+ *       Formatter} class to use (defaults to {@link SimpleFormatter}).
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.flushSize} specifies the maximum size of the
+ *       log buffer. Once reached, logs are transmitted to the Stackdriver Logging service (defaults
+ *       to 1).
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.flushLevel} specifies the flush log level.
+ *       When a log with this level is published, logs are transmitted to the Stackdriver Logging
+ *       service (defaults to {@link LoggingLevel#ERROR}).
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
+ *       of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds a
+ *       {@link LogEntry} instance (defaults to empty list).
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
+ *       creating the default {@link MonitoredResource} (defaults to auto-detected resource type,
+ *       else "global").
+ *   <li>{@code com.google.cloud.logging.Synchronicity} the synchronicity of the write method to use
+ *       to write logs to the Stackdriver Logging service (defaults to {@link Synchronicity#ASYNC}).
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
  * recursion when logging, use the {@link #addHandler(Logger, LoggingHandler)} method. Alternatively
  * you can add the handler via {@code logging.properties}. For example using the following line:
+ *
  * <pre>
  * {@code com.example.mypackage.handlers=com.google.cloud.logging.LoggingHandler}
  * </pre>
@@ -101,9 +102,9 @@ public class LoggingHandler extends Handler {
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
 
-  private LoggingHelper loggingHelper;
+  private LoggingService loggingService;
   private List<Enhancer> enhancers;
-  private  ErrorHandler errorHandler;
+  private ErrorHandler errorHandler;
 
   // Logs with the same severity with the base could be more efficiently sent to Stackdriver.
   // Defaults to level of the handler or Level.FINEST if the handler is set to Level.ALL.
@@ -113,9 +114,7 @@ public class LoggingHandler extends Handler {
 
   private Level flushLevel;
 
-  /**
-   * Creates an handler that publishes messages to Stackdriver Logging.
-   */
+  /** Creates an handler that publishes messages to Stackdriver Logging. */
   public LoggingHandler() {
     this(null, null, null);
   }
@@ -144,11 +143,11 @@ public class LoggingHandler extends Handler {
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
-   * @param monitoredResource the monitored resource to which log entries refer. If it is null
-   * then a default resource is created based on the project ID and deployment environment.
+   * @param monitoredResource the monitored resource to which log entries refer. If it is null then
+   *     a default resource is created based on the project ID and deployment environment.
    */
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource) {
-    this(log, options, monitoredResource,null);
+    this(log, options, monitoredResource, null);
   }
 
   /**
@@ -156,13 +155,16 @@ public class LoggingHandler extends Handler {
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
-   * @param monitoredResource the monitored resource to which log entries refer. If it is null
-   * then a default resource is created based on the project ID and deployment environment.
+   * @param monitoredResource the monitored resource to which log entries refer. If it is null then
+   *     a default resource is created based on the project ID and deployment environment.
    * @param enhancers List of {@link Enhancer} instances used to enhance any{@link LogEntry}
-   * instances built by this handler.
+   *     instances built by this handler.
    */
-  public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource,
-                        List<Enhancer> enhancers) {
+  public LoggingHandler(
+      String log,
+      LoggingOptions options,
+      MonitoredResource monitoredResource,
+      List<Enhancer> enhancers) {
     try {
       LoggingConfig config = new LoggingConfig(getClass().getName());
       errorHandler = new ErrorHandler();
@@ -174,22 +176,23 @@ public class LoggingHandler extends Handler {
       this.flushLevel = config.getFlushLevel();
       String logName = firstNonNull(log, config.getLogName());
 
-      LoggingOptions loggingOptions = (options != null) ? options : LoggingOptions.getDefaultInstance();
-      if (options == null) {
-        options = LoggingOptions.getDefaultInstance();
-      }
+      LoggingOptions loggingOptions = firstNonNull(options, LoggingOptions.getDefaultInstance());
 
-      MonitoredResource resource = firstNonNull(monitoredResource, config.getMonitoredResource(options.getProjectId()));
-      WriteOption[] labelOptions = new WriteOption[] {
-                      WriteOption.labels(
-                              ImmutableMap.of(
-                                      LEVEL_NAME_KEY,
-                                      baseLevel.getName(),
-                                      LEVEL_VALUE_KEY,
-                                      String.valueOf(baseLevel.intValue())))
-              };
+      MonitoredResource resource =
+          firstNonNull(
+              monitoredResource, config.getMonitoredResource(loggingOptions.getProjectId()));
+      WriteOption[] labelOptions =
+          new WriteOption[] {
+            WriteOption.labels(
+                ImmutableMap.of(
+                    LEVEL_NAME_KEY,
+                    baseLevel.getName(),
+                    LEVEL_VALUE_KEY,
+                    String.valueOf(baseLevel.intValue())))
+          };
 
-      loggingHelper = LoggingHelper.newBuilder(options)
+      loggingService =
+          LoggingService.newBuilder(loggingOptions)
               .setFlushSeverity(severityFor(flushLevel))
               .setSynchronicity(config.getSynchronicity())
               .setWriteOptions(logName, resource, labelOptions)
@@ -223,8 +226,10 @@ public class LoggingHandler extends Handler {
     }
     // look for Stackdriver Logging handler registered via logging.properties
     String loggerName = logger.getName();
-    String propertyName = loggerName.equals(ROOT_LOGGER_NAME)
-        ? HANDLERS_PROPERTY : loggerName + "." + HANDLERS_PROPERTY;
+    String propertyName =
+        loggerName.equals(ROOT_LOGGER_NAME)
+            ? HANDLERS_PROPERTY
+            : loggerName + "." + HANDLERS_PROPERTY;
     String handlersProperty = LogManager.getLogManager().getProperty(propertyName);
     String[] handlers = handlersProperty != null ? handlersProperty.split(",") : NO_HANDLERS;
     for (String handlerName : handlers) {
@@ -234,7 +239,6 @@ public class LoggingHandler extends Handler {
     }
     return false;
   }
-
 
   @Override
   public void publish(LogRecord record) {
@@ -256,99 +260,106 @@ public class LoggingHandler extends Handler {
       return;
     }
     if (logEntryBuilder != null) {
-      loggingHelper.publish(logEntryBuilder);
+      loggingService.publish(logEntryBuilder);
     }
   }
 
   private LogEntry.Builder logEntryBuilderFor(LogRecord record) throws Exception {
-    try {
-      String payload = getFormatter().format(record);
-      Level level = record.getLevel();
-      LogEntry.Builder builder = LogEntry.newBuilder(Payload.StringPayload.of(payload))
-              .setTimestamp(record.getMillis())
-              .setSeverity(severityFor(level));
+    String payload = getFormatter().format(record);
+    Level level = record.getLevel();
+    LogEntry.Builder builder =
+        LogEntry.newBuilder(Payload.StringPayload.of(payload))
+            .setTimestamp(record.getMillis())
+            .setSeverity(severityFor(level));
 
-      if (!baseLevel.equals(level)) {
-        builder.addLabel("levelName", level.getName())
-                .addLabel("levelValue", String.valueOf(level.intValue()));
-      }
-
-      for (Enhancer enhancer : enhancers) {
-        enhancer.enhanceLogEntry(builder);
-      }
-      return builder;
-    } catch (Exception ex) {
-      // Formatting or enhancing can fail but we should not throw an exception,
-      // we report the error instead
-      errorHandler.handleFormatError(ex);
-      return null;
+    if (!baseLevel.equals(level)) {
+      builder
+          .addLabel("levelName", level.getName())
+          .addLabel("levelValue", String.valueOf(level.intValue()));
     }
+
+    for (Enhancer enhancer : enhancers) {
+      enhancer.enhanceLogEntry(builder);
+    }
+    return builder;
   }
 
   @Override
   public void flush() {
-    loggingHelper.flush();
+    loggingService.flush();
+  }
+
+  /** Closes the handler and the associated {@link LoggingService} object. */
+  @Override
+  public synchronized void close() throws SecurityException {
+    loggingService.close();
   }
 
   /**
-   * Closes the handler and the associated {@link LoggingHelper} object.
+   * Sets the flush log level. When a log with this level is published, the log buffer is
+   * transmitted to the Stackdriver Logging service, regardless of its size. If not set, {@link
+   * LoggingLevel#ERROR} is used.
    */
-  @Override
-  public synchronized void close() throws SecurityException {
-      loggingHelper.close();
-  }
-
   public synchronized void setFlushLevel(Level level) {
     flushLevel = level;
-    loggingHelper.setFlushSeverity(severityFor(flushLevel));
+    loggingService.setFlushSeverity(severityFor(flushLevel));
   }
 
-  public synchronized void setSynchronicity(Synchronicity synchronicity) {
-    loggingHelper.setSynchronicity(synchronicity);
-  }
-
-  public Synchronicity getSynchronicity() {
-    return loggingHelper.getSynchronicity();
-  }
-
+  /** Get the flush log level. */
   public Level getFlushLevel() {
     return flushLevel;
   }
 
   /**
+   * Sets the synchronicity of the write method used to write logs to the Stackdriver Logging
+   * service. Defaults to {@link Synchronicity#ASYNC}.
+   */
+  public synchronized void setSynchronicity(Synchronicity synchronicity) {
+    loggingService.setSynchronicity(synchronicity);
+  }
+
+  /**
+   * Get the synchronicity of the write method used to write logs to the Stackdriver Logging
+   * service.
+   */
+  public Synchronicity getSynchronicity() {
+    return loggingService.getSynchronicity();
+  }
+
+  /**
    * Adds the provided {@code LoggingHandler} to {@code logger}. Use this method to register Cloud
-   * Logging handlers instead of {@link Logger#addHandler(Handler)} to avoid infinite recursion
-   * when logging.
+   * Logging handlers instead of {@link Logger#addHandler(Handler)} to avoid infinite recursion when
+   * logging.
    */
   public static void addHandler(Logger logger, LoggingHandler handler) {
     logger.addHandler(handler);
   }
 
-  public static Severity severityFor(Level level) {
+  private static Severity severityFor(Level level) {
     if (level instanceof LoggingLevel) {
       return ((LoggingLevel) level).getSeverity();
     }
 
     switch (level.intValue()) {
-      // FINEST
+        // FINEST
       case 300:
         return Severity.DEBUG;
-      // FINER
+        // FINER
       case 400:
         return Severity.DEBUG;
-      // FINE
+        // FINE
       case 500:
         return Severity.DEBUG;
-      // CONFIG
+        // CONFIG
       case 700:
         return Severity.INFO;
-      // INFO
+        // INFO
       case 800:
         return Severity.INFO;
-      // WARNING
+        // WARNING
       case 900:
         return Severity.WARNING;
-      // SEVERE
+        // SEVERE
       case 1000:
         return Severity.ERROR;
       default:

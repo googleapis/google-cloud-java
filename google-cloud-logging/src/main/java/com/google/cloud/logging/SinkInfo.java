@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 import com.google.logging.v2.LogSink;
-
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -29,13 +28,12 @@ import java.util.regex.Pattern;
 /**
  * Stackdriver Logging sinks can be used to control the export of your logs. Each sink specifies the
  * export of a set of log entries to a certain destination. A sink consists of a name, unique to the
- * project, a filter for choosing the log entries to export and a destination for the log
- * entries.
+ * project, a filter for choosing the log entries to export and a destination for the log entries.
  *
- * <p>Sink destination can either be a Google Cloud Storage bucket (see
- * {@link Destination.BucketDestination}, a Google Cloud BigQuery dataset (see
- * {@link Destination.DatasetDestination}) or a Google Cloud Pub/Sub topic (see
- * {@link Destination.TopicDestination}).
+ * <p>Sink destination can either be a Google Cloud Storage bucket (see {@link
+ * Destination.BucketDestination}, a Google Cloud BigQuery dataset (see {@link
+ * Destination.DatasetDestination}) or a Google Cloud Pub/Sub topic (see {@link
+ * Destination.TopicDestination}).
  *
  * @see <a href="https://cloud.google.com/logging/docs/api/tasks/exporting-logs#about_sinks">About
  *     Sinks</a>
@@ -55,29 +53,19 @@ public class SinkInfo implements Serializable {
 
     private final Type type;
 
-    /**
-     * Type of destination for Stackdriver Logging sink.
-     */
+    /** Type of destination for Stackdriver Logging sink. */
     public enum Type {
-      /**
-       * Specifies a Google Cloud Storage bucket as destination for the sink.
-       */
+      /** Specifies a Google Cloud Storage bucket as destination for the sink. */
       BUCKET,
 
-      /**
-       * Specifies a Google Cloud BigQuery dataset as destination for the sink.
-       */
+      /** Specifies a Google Cloud BigQuery dataset as destination for the sink. */
       DATASET,
 
-      /**
-       * Specifies a Google Cloud Pub/Sub topic as destination for the sink.
-       */
+      /** Specifies a Google Cloud Pub/Sub topic as destination for the sink. */
       TOPIC;
     }
 
-    /**
-     * Class for specifying a Google Cloud Storage bucket as destination for the sink.
-     */
+    /** Class for specifying a Google Cloud Storage bucket as destination for the sink. */
     public static final class BucketDestination extends Destination {
 
       private static final long serialVersionUID = -7614931032119779091L;
@@ -92,10 +80,7 @@ public class SinkInfo implements Serializable {
         this.bucket = checkNotNull(bucket);
       }
 
-
-      /**
-       * Returns the name of the Google Cloud Storage bucket this destination represents.
-       */
+      /** Returns the name of the Google Cloud Storage bucket this destination represents. */
       public String getBucket() {
         return bucket;
       }
@@ -120,7 +105,6 @@ public class SinkInfo implements Serializable {
       static boolean matchesDestination(String destinationPb) {
         return PATTERN.matcher(destinationPb).matches();
       }
-
 
       @Override
       public String toString() {
@@ -149,9 +133,7 @@ public class SinkInfo implements Serializable {
       }
     }
 
-    /**
-     * Class for specifying a Google Cloud BigQuery dataset as destination for the sink.
-     */
+    /** Class for specifying a Google Cloud BigQuery dataset as destination for the sink. */
     public static final class DatasetDestination extends Destination {
 
       private static final long serialVersionUID = 6952354643801154411L;
@@ -168,19 +150,15 @@ public class SinkInfo implements Serializable {
         this.dataset = checkNotNull(dataset);
       }
 
-
       /**
-       * Returns the name of the project where the Google Cloud BigQuery dataset resides. If
-       * {@code null}, the default project is used.
+       * Returns the name of the project where the Google Cloud BigQuery dataset resides. If {@code
+       * null}, the default project is used.
        */
       public String getProject() {
         return project;
       }
 
-
-      /**
-       * Returns the name of the Google Cloud BigQuery dataset this destination represents.
-       */
+      /** Returns the name of the Google Cloud BigQuery dataset this destination represents. */
       public String getDataset() {
         return dataset;
       }
@@ -247,9 +225,7 @@ public class SinkInfo implements Serializable {
       }
     }
 
-    /**
-     * Class for specifying a Google Cloud BigQuery dataset as destination for the sink.
-     */
+    /** Class for specifying a Google Cloud BigQuery dataset as destination for the sink. */
     public static final class TopicDestination extends Destination {
 
       private static final long serialVersionUID = -8252473597084887048L;
@@ -266,19 +242,15 @@ public class SinkInfo implements Serializable {
         this.topic = checkNotNull(topic);
       }
 
-
       /**
-       * Returns the name of the project where the Google Cloud Pub/Sub topic resides. If
-       * {@code null}, the default project is used.
+       * Returns the name of the project where the Google Cloud Pub/Sub topic resides. If {@code
+       * null}, the default project is used.
        */
       public String getProject() {
         return project;
       }
 
-
-      /**
-       * Returns the name of the Google Cloud Pub/Sub topic this destination represents.
-       */
+      /** Returns the name of the Google Cloud Pub/Sub topic this destination represents. */
       public String getTopic() {
         return topic;
       }
@@ -325,8 +297,8 @@ public class SinkInfo implements Serializable {
       }
 
       /**
-       * Creates a {@code DatasetDestination} object given the name of the topic to be used as
-       * sink destination. Topic is assumed to reside in the default project.
+       * Creates a {@code DatasetDestination} object given the name of the topic to be used as sink
+       * destination. Topic is assumed to reside in the default project.
        */
       public static TopicDestination of(String topic) {
         return new TopicDestination(null, topic);
@@ -349,10 +321,7 @@ public class SinkInfo implements Serializable {
       this.type = checkNotNull(type);
     }
 
-
-    /**
-     * Returns the type of this destination.
-     */
+    /** Returns the type of this destination. */
     public Type getType() {
       return type;
     }
@@ -412,56 +381,48 @@ public class SinkInfo implements Serializable {
     }
   }
 
-  /**
-   * A builder for {@code SinkInfo} objects.
-   */
+  /** A builder for {@code SinkInfo} objects. */
   public abstract static class Builder {
-
 
     /**
      * Sets the name of the sink. Example: {@code my-severe-errors-to-pubsub}. Sink identifiers are
-     * limited to 1000 characters and can include only the following characters: {@code A-Z},
-     * {@code a-z}, {@code 0-9}, and the special characters {@code _-.}.
+     * limited to 1000 characters and can include only the following characters: {@code A-Z}, {@code
+     * a-z}, {@code 0-9}, and the special characters {@code _-.}.
      */
     public abstract Builder setName(String name);
 
-
     /**
      * Sets the export destination. Use a {@link Destination.BucketDestination} object to create a
-     * sink that exports logs to a Google Cloud Storage bucket. Use a
-     * {@link Destination.DatasetDestination} object to create a sink that exports logs to a Google
-     * Cloud BigQuery dataset. Use a {@link Destination.TopicDestination} object to create a sink
-     * that exports logs to a Google Cloud Pub/Sub topic.
+     * sink that exports logs to a Google Cloud Storage bucket. Use a {@link
+     * Destination.DatasetDestination} object to create a sink that exports logs to a Google Cloud
+     * BigQuery dataset. Use a {@link Destination.TopicDestination} object to create a sink that
+     * exports logs to a Google Cloud Pub/Sub topic.
      *
      * @see <a href="https://cloud.google.com/logging/docs/api/tasks/exporting-logs#about_sinks">
      *     Exporting Logs</a>
      */
     public abstract Builder setDestination(Destination destination);
 
-
     /**
      * Sets an advanced logs filter. Only log entries matching that filter are exported. The filter
-     * must be consistent with the log entry format specified with
-     * {@link #setVersionFormat(VersionFormat)}, regardless of the format of the log entry that was
-     * originally written to Stackdriver Logging. Example (V2 format):
-     * {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
+     * must be consistent with the log entry format specified with {@link
+     * #setVersionFormat(VersionFormat)}, regardless of the format of the log entry that was
+     * originally written to Stackdriver Logging. Example (V2 format): {@code
+     * logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
      *
      * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Log
      *     Filters</a>
      */
     public abstract Builder setFilter(String filter);
 
-
     /**
-     * Sets the log entry version to use for this sink's exported log entries. This version does
-     * not have to correspond to the version of the log entry when it was written to Google Cloud
+     * Sets the log entry version to use for this sink's exported log entries. This version does not
+     * have to correspond to the version of the log entry when it was written to Google Cloud
      * Logging.
      */
     public abstract Builder setVersionFormat(VersionFormat versionFormat);
 
-    /**
-     * Creates a {@code SinkInfo} object for this builder.
-     */
+    /** Creates a {@code SinkInfo} object for this builder. */
     public abstract SinkInfo build();
   }
 
@@ -484,13 +445,11 @@ public class SinkInfo implements Serializable {
       this.versionFormat = sink.versionFormat;
     }
 
-
     @Override
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
-
 
     @Override
     public Builder setDestination(Destination destination) {
@@ -498,13 +457,11 @@ public class SinkInfo implements Serializable {
       return this;
     }
 
-
     @Override
     public Builder setFilter(String filter) {
       this.filter = filter;
       return this;
     }
-
 
     @Override
     public Builder setVersionFormat(VersionFormat versionFormat) {
@@ -525,23 +482,21 @@ public class SinkInfo implements Serializable {
     this.versionFormat = builder.versionFormat;
   }
 
-
   /**
    * Returns the name of the sink. Example: {@code my-severe-errors-to-pubsub}. Sink identifiers are
-   * limited to 1000 characters and can include only the following characters: {@code A-Z},
-   * {@code a-z}, {@code 0-9}, and the special characters {@code _-.}.
+   * limited to 1000 characters and can include only the following characters: {@code A-Z}, {@code
+   * a-z}, {@code 0-9}, and the special characters {@code _-.}.
    */
   public String getName() {
     return name;
   }
 
-
   /**
    * Returns the export destination. This method returns a {@link Destination.BucketDestination} for
-   * sinks that export logs to Google Cloud Storage buckets. Returns
-   * {@link Destination.DatasetDestination} for sinks that export logs to Google Cloud BigQuery
-   * datasets. Returns {@link Destination.TopicDestination} for sinks that export logs to Google
-   * Cloud Pub/Sub topics.
+   * sinks that export logs to Google Cloud Storage buckets. Returns {@link
+   * Destination.DatasetDestination} for sinks that export logs to Google Cloud BigQuery datasets.
+   * Returns {@link Destination.TopicDestination} for sinks that export logs to Google Cloud Pub/Sub
+   * topics.
    *
    * @see <a href="https://cloud.google.com/logging/docs/api/tasks/exporting-logs#about_sinks">
    *     Exporting Logs</a>
@@ -550,7 +505,6 @@ public class SinkInfo implements Serializable {
   public <T extends Destination> T getDestination() {
     return (T) destination;
   }
-
 
   /**
    * Returns an advanced logs filter. Only log entries matching that filter are exported. The filter
@@ -564,7 +518,6 @@ public class SinkInfo implements Serializable {
   public String getFilter() {
     return filter;
   }
-
 
   /**
    * Returns the log entry version to use for this sink's exported log entries. This version does
@@ -608,13 +561,10 @@ public class SinkInfo implements Serializable {
     return Objects.hash(name, destination, filter, versionFormat);
   }
 
-  /**
-   * Returns a builder for this {@code SinkInfo} object.
-   */
+  /** Returns a builder for this {@code SinkInfo} object. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
-
 
   /**
    * Returns a builder for {@code SinkInfo} objects given the name of the sink and its destination.
@@ -623,19 +573,20 @@ public class SinkInfo implements Serializable {
     return new BuilderImpl(name, destination);
   }
 
-  /**
-   * Creates a {@code SinkInfo} object given the name of the sink and its destination.
-   */
+  /** Creates a {@code SinkInfo} object given the name of the sink and its destination. */
   public static SinkInfo of(String name, Destination destination) {
     return new BuilderImpl(name, destination).build();
   }
 
   LogSink toPb(String projectId) {
-    LogSink.Builder builder = LogSink.newBuilder()
-        .setName(name)
-        .setDestination(destination.toPb(projectId))
-        .setOutputVersionFormat(versionFormat == null
-            ? LogSink.VersionFormat.VERSION_FORMAT_UNSPECIFIED : versionFormat.toPb());
+    LogSink.Builder builder =
+        LogSink.newBuilder()
+            .setName(name)
+            .setDestination(destination.toPb(projectId))
+            .setOutputVersionFormat(
+                versionFormat == null
+                    ? LogSink.VersionFormat.VERSION_FORMAT_UNSPECIFIED
+                    : versionFormat.toPb());
     if (filter != null) {
       builder.setFilter(filter);
     }
@@ -643,9 +594,9 @@ public class SinkInfo implements Serializable {
   }
 
   static SinkInfo fromPb(LogSink sinkPb) {
-    Builder builder = newBuilder(sinkPb.getName(),
-        Destination.fromPb(sinkPb.getDestination()))
-        .setVersionFormat(VersionFormat.fromPb(sinkPb.getOutputVersionFormat()));
+    Builder builder =
+        newBuilder(sinkPb.getName(), Destination.fromPb(sinkPb.getDestination()))
+            .setVersionFormat(VersionFormat.fromPb(sinkPb.getOutputVersionFormat()));
     if (!sinkPb.getFilter().equals("")) {
       builder.setFilter(sinkPb.getFilter());
     }

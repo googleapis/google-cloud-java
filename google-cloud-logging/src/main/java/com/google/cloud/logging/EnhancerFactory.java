@@ -20,11 +20,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class EnhancerFactory {
+public abstract class EnhancerFactory {
 
   public static List<Enhancer> getEnhancers(String resourceType) {
     List<Enhancer> enhancers;
-    switch(resourceType) {
+    switch (resourceType) {
       case "gae_app_flex":
         enhancers = new ArrayList<>();
         enhancers.add(new TraceEnhancer());

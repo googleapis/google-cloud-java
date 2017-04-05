@@ -17,41 +17,37 @@
 package com.google.cloud.logging;
 
 import com.google.cloud.MetadataConfig;
-import com.google.common.base.Strings;
 import com.google.cloud.MonitoredResource;
+import com.google.common.base.Strings;
 import java.util.List;
 
-class MonitoredResourceUtil {
-
-  private MonitoredResourceUtil() {
-  }
+abstract class MonitoredResourceUtil {
 
   private static final String defaultResourceType = "global";
 
-  private static void addResourceLabels(String resourceType,
-      MonitoredResource.Builder resourceBuilder) {
+  private static void addResourceLabels(
+      String resourceType, MonitoredResource.Builder resourceBuilder) {
     String[] labels;
     switch (resourceType) {
       case "gae_app_flex":
-        labels = new String[]{"module_id", "version_id", "zone", "instance_id"};
+        labels = new String[] {"module_id", "version_id", "zone", "instance_id"};
         break;
       case "gae_app_standard":
-        labels = new String[]{"module_id", "version_id"};
+        labels = new String[] {"module_id", "version_id"};
         break;
       case "container":
-        labels = new String[]{"cluster_name", "zone"};
+        labels = new String[] {"cluster_name", "zone"};
         break;
       case "gce_instance":
-        labels = new String[]{"instance_id", "zone"};
+        labels = new String[] {"instance_id", "zone"};
         break;
       default:
-        labels = new String[]{};
+        labels = new String[] {};
     }
     for (String label : labels) {
       addLabel(resourceBuilder, label);
     }
   }
-
 
   /* Return a self-configured monitored resource.
    */
@@ -64,9 +60,8 @@ class MonitoredResourceUtil {
     // This method trims "gae_app_flex", "gae_app_standard" to "gae_app"
     String resourceName = (resourceType.startsWith("gae_app")) ? "gae_app" : resourceType;
 
-    MonitoredResource.Builder builder = com.google.cloud.MonitoredResource
-        .newBuilder(resourceName)
-        .addLabel("project_id", projectId);
+    MonitoredResource.Builder builder =
+        MonitoredResource.newBuilder(resourceName).addLabel("project_id", projectId);
     addResourceLabels(resourceType, builder);
     return builder.build();
   }
@@ -115,7 +110,8 @@ class MonitoredResourceUtil {
       case "cluster_name":
         value = MetadataConfig.getClusterName();
         break;
-      default: value = null;
+      default:
+        value = null;
     }
     if (value != null) {
       resourceBuilder.addLabel(name, value);
