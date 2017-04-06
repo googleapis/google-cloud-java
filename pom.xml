@@ -120,6 +120,15 @@
     <module>google-cloud-trace</module>
     <module>google-cloud-translate</module>
     <module>google-cloud-vision</module>
+    <!--
+      Uncomment the following lines to include google app engine (GAE) testing apps in the build.
+      Each GAE app packages all its dependencies in a fat war (>20MB each).
+    -->
+    <!--<module>testing/google-cloud-managed-test</module>-->
+    <!--<module>testing/google-cloud-appengine-flex-java</module>-->
+    <!--<module>testing/google-cloud-appengine-flex-custom</module>-->
+    <!--<module>testing/google-cloud-appengine-java8</module>-->
+    <!--<module>testing/google-cloud-appengine-flex-compat</module>-->
   </modules>
   <pluginRepositories>
     <pluginRepository>
