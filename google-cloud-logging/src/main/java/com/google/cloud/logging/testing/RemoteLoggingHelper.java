@@ -47,6 +47,7 @@ public class RemoteLoggingHelper {
     this.options = options;
   }
 
+
   /**
    * Returns a {@link LoggingOptions} object to be used for testing.
    */
@@ -61,7 +62,7 @@ public class RemoteLoggingHelper {
    * @param projectId id of the project to be used for running the tests
    * @param keyStream input stream for a JSON key
    * @return A {@code RemoteLoggingHelper} object for the provided options
-   * @throws RemoteLoggingHelper.LoggingHelperException if
+   * @throws com.google.cloud.logging.testing.RemoteLoggingHelper.LoggingHelperException if
    *     {@code keyStream} is not a valid JSON key stream
    */
   public static RemoteLoggingHelper create(String projectId, InputStream keyStream)

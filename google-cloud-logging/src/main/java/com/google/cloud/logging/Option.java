@@ -19,10 +19,13 @@ package com.google.cloud.logging;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
+
 import java.io.Serializable;
 import java.util.Objects;
 
-/** Base class for Logging operation options. */
+/**
+ * Base class for Logging operation options.
+ */
 abstract class Option implements Serializable {
 
   private static final long serialVersionUID = -2326245820305140225L;
@@ -54,7 +57,8 @@ abstract class Option implements Serializable {
       return false;
     }
     Option other = (Option) obj;
-    return Objects.equals(optionType, other.optionType) && Objects.equals(value, other.value);
+    return Objects.equals(optionType, other.optionType)
+        && Objects.equals(value, other.value);
   }
 
   @Override

@@ -21,9 +21,9 @@ import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.logging.spi.LoggingRpcFactory;
 import com.google.cloud.logging.spi.v2.GrpcLoggingRpc;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
+import com.google.cloud.logging.spi.LoggingRpcFactory;
 import com.google.cloud.logging.spi.v2.LoggingSettings;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
@@ -34,8 +34,8 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
   private static final String API_SHORT_NAME = "Logging";
   private static final String LOGGING_SCOPE = "https://www.googleapis.com/auth/logging.admin";
   private static final Set<String> SCOPES = ImmutableSet.of(LOGGING_SCOPE);
-  private static final String DEFAULT_HOST =
-      LoggingSettings.getDefaultServiceAddress() + ':' + LoggingSettings.getDefaultServicePort();
+  private static final String DEFAULT_HOST = LoggingSettings.getDefaultServiceAddress()
+      + ':' + LoggingSettings.getDefaultServicePort();
   private static final long serialVersionUID = 5753499510627426717L;
 
   public static class DefaultLoggingFactory implements LoggingFactory {
@@ -47,7 +47,10 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
     }
   }
 
-  /** Returns a default {@code LoggingOptions} instance. */
+
+  /**
+   * Returns a default {@code LoggingOptions} instance.
+   */
   public static LoggingOptions getDefaultInstance() {
     return newBuilder().build();
   }
@@ -70,7 +73,8 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
     return DEFAULT_HOST;
   }
 
-  public static class Builder extends ServiceOptions.Builder<Logging, LoggingOptions, Builder> {
+  public static class Builder extends
+      ServiceOptions.Builder<Logging, LoggingOptions, Builder> {
 
     private Builder() {}
 
@@ -97,7 +101,8 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
     super(LoggingFactory.class, LoggingRpcFactory.class, builder, new LoggingDefaults());
   }
 
-  private static class LoggingDefaults implements ServiceDefaults<Logging, LoggingOptions> {
+  private static class LoggingDefaults implements
+      ServiceDefaults<Logging, LoggingOptions> {
 
     @Override
     public LoggingFactory getDefaultServiceFactory() {
@@ -143,6 +148,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
   public Builder toBuilder() {
     return new Builder(this);
   }
+
 
   public static Builder newBuilder() {
     return new Builder();

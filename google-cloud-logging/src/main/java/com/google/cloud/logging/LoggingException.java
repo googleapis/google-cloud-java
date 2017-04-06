@@ -18,10 +18,13 @@ package com.google.cloud.logging;
 
 import com.google.api.gax.grpc.ApiException;
 import com.google.cloud.BaseServiceException;
+
 import java.io.IOException;
 import java.util.Set;
 
-/** Logging service exception. */
+/**
+ * Logging service exception.
+ */
 public final class LoggingException extends BaseServiceException {
 
   private static final long serialVersionUID = 449689219311927047L;
