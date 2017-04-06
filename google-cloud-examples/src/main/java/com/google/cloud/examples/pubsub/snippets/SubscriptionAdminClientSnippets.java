@@ -53,16 +53,42 @@ public class SubscriptionAdminClientSnippets {
   }
 
   /** Example of creating a pull subscription for a topic. */
-  public Subscription createSubscription(String topic, String subscriptionId) throws Exception {
+  public Subscription createSubscription(String topicId, String subscriptionId) throws Exception {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       // [START createSubscription]
-      TopicName topicName = TopicName.create(projectId, topic);
+      // eg. projectId = "my-test-project", topicId = "my-test-topic"
+      TopicName topicName = TopicName.create(projectId, topicId);
+      // eg. subscriptionId = "my-test-subscription"
       SubscriptionName subscriptionName =
           SubscriptionName.create(projectId, subscriptionId);
+      // create a pull subscription with default acknowledgement deadline
       Subscription subscription =
           subscriptionAdminClient.createSubscription(
               subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
       // [END createSubscription]
+      return subscription;
+    }
+  }
+
+  /** Example of creating a subscription with a push endpoint. */
+  public Subscription createSubscriptionWithPushEndpoint(String topicId, String subscriptionId, String endpoint)
+          throws Exception {
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+      // [START createSubscriptionWithPushEndpoint]
+      TopicName topicName = TopicName.create(projectId, topicId);
+      SubscriptionName subscriptionName =
+              SubscriptionName.create(projectId, subscriptionId);
+
+      // eg. endpoint = "https://my-test-project.appspot.com/push"
+      PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
+
+      // acknowledgement deadline in seconds for the message received over the push endpoint
+      int ackDeadlineInSeconds = 10;
+
+      Subscription subscription =
+              subscriptionAdminClient.createSubscription(
+                      subscriptionName, topicName, pushConfig, ackDeadlineInSeconds);
+      // [END createSubscriptionWithPushEndpoint]
       return subscription;
     }
   }
