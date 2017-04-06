@@ -52,14 +52,11 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-    <!--
-        This dependency is not test-only becase we create an EasyMock argument
-        matcher in the main testing helper package.
-    -->
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
       <version>3.4</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

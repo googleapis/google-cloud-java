@@ -60,8 +60,7 @@ public class ApiPolicyMatcher implements IArgumentMatcher {
         return false;
       }
     }
-    
-    
+
     if (expectedBindings.size() != actualBindings.size()) {
       return false;
     }
