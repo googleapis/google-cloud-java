@@ -315,7 +315,11 @@ class MessageDispatcher {
 
     synchronized (outstandingAckHandlers) {
       outstandingAckHandlers.add(
-          new ExtensionJob(new Instant(clock.millis()), expiration, INITIAL_ACK_DEADLINE_EXTENSION_SECONDS, ackHandlers));
+          new ExtensionJob(
+              new Instant(clock.millisTime()),
+              expiration,
+              INITIAL_ACK_DEADLINE_EXTENSION_SECONDS,
+              ackHandlers));
     }
     setupNextAckDeadlineExtensionAlarm(expiration);
 
