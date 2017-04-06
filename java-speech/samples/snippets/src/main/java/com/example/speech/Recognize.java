@@ -22,9 +22,9 @@ import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognitionAudio;
 import com.google.cloud.speech.v1.RecognitionConfig;
 import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;
+import com.google.cloud.speech.v1.RecognizeResponse;
 import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1.SpeechRecognitionResult;
-import com.google.cloud.speech.v1.RecognizeResponse;
 import com.google.protobuf.ByteString;
 
 import java.io.IOException;
@@ -158,7 +158,8 @@ public class Recognize {
         .build();
 
     // Use non-blocking call for getting file transcription
-    OperationFuture<LongRunningRecognizeResponse> response = speech.longRunningRecognizeAsync(config, audio);
+    OperationFuture<LongRunningRecognizeResponse> response =
+        speech.longRunningRecognizeAsync(config, audio);
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
       Thread.sleep(200);
@@ -196,7 +197,8 @@ public class Recognize {
         .build();
 
     // Use non-blocking call for getting file transcription
-    OperationFuture<LongRunningRecognizeResponse> response = speech.longRunningRecognizeAsync(config, audio);
+    OperationFuture<LongRunningRecognizeResponse> response =
+        speech.longRunningRecognizeAsync(config, audio);
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
       Thread.sleep(200);
