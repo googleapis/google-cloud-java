@@ -18,13 +18,13 @@ package com.example.speech;
 
 // [START speech_quickstart]
 // Imports the Google Cloud client library
-import com.google.cloud.speech.spi.v1beta1.SpeechClient;
-import com.google.cloud.speech.v1beta1.RecognitionAudio;
-import com.google.cloud.speech.v1beta1.RecognitionConfig;
-import com.google.cloud.speech.v1beta1.RecognitionConfig.AudioEncoding;
-import com.google.cloud.speech.v1beta1.SpeechRecognitionAlternative;
-import com.google.cloud.speech.v1beta1.SpeechRecognitionResult;
-import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
+import com.google.cloud.speech.spi.v1.SpeechClient;
+import com.google.cloud.speech.v1.RecognitionAudio;
+import com.google.cloud.speech.v1.RecognitionConfig;
+import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;
+import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
+import com.google.cloud.speech.v1.SpeechRecognitionResult;
+import com.google.cloud.speech.v1.RecognizeResponse;
 import com.google.protobuf.ByteString;
 
 import java.nio.file.Files;
@@ -48,14 +48,15 @@ public class QuickstartSample {
     // Builds the sync recognize request
     RecognitionConfig config = RecognitionConfig.newBuilder()
         .setEncoding(AudioEncoding.LINEAR16)
-        .setSampleRate(16000)
+        .setSampleRateHertz(16000)
+        .setLanguageCode("en-US")
         .build();
     RecognitionAudio audio = RecognitionAudio.newBuilder()
         .setContent(audioBytes)
         .build();
 
     // Performs speech recognition on the audio file
-    SyncRecognizeResponse response = speech.syncRecognize(config, audio);
+    RecognizeResponse response = speech.recognize(config, audio);
     List<SpeechRecognitionResult> results = response.getResultsList();
 
     for (SpeechRecognitionResult result: results) {

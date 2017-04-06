@@ -17,14 +17,14 @@
 package com.example.speech;
 
 import com.google.api.gax.grpc.OperationFuture;
-import com.google.cloud.speech.spi.v1beta1.SpeechClient;
-import com.google.cloud.speech.v1beta1.AsyncRecognizeResponse;
-import com.google.cloud.speech.v1beta1.RecognitionAudio;
-import com.google.cloud.speech.v1beta1.RecognitionConfig;
-import com.google.cloud.speech.v1beta1.RecognitionConfig.AudioEncoding;
-import com.google.cloud.speech.v1beta1.SpeechRecognitionAlternative;
-import com.google.cloud.speech.v1beta1.SpeechRecognitionResult;
-import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
+import com.google.cloud.speech.spi.v1.SpeechClient;
+import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
+import com.google.cloud.speech.v1.RecognitionAudio;
+import com.google.cloud.speech.v1.RecognitionConfig;
+import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;
+import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
+import com.google.cloud.speech.v1.SpeechRecognitionResult;
+import com.google.cloud.speech.v1.RecognizeResponse;
 import com.google.protobuf.ByteString;
 
 import java.io.IOException;
@@ -80,14 +80,15 @@ public class Recognize {
     // Configure request with local raw PCM audio
     RecognitionConfig config = RecognitionConfig.newBuilder()
         .setEncoding(AudioEncoding.LINEAR16)
-        .setSampleRate(16000)
+        .setLanguageCode("en-US")
+        .setSampleRateHertz(16000)
         .build();
     RecognitionAudio audio = RecognitionAudio.newBuilder()
         .setContent(audioBytes)
         .build();
 
     // Use blocking call to get audio transcript
-    SyncRecognizeResponse response = speech.syncRecognize(config, audio);
+    RecognizeResponse response = speech.recognize(config, audio);
     List<SpeechRecognitionResult> results = response.getResultsList();
 
     for (SpeechRecognitionResult result: results) {
@@ -111,14 +112,15 @@ public class Recognize {
     // Builds the request for remote FLAC file
     RecognitionConfig config = RecognitionConfig.newBuilder()
         .setEncoding(AudioEncoding.FLAC)
-        .setSampleRate(16000)
+        .setLanguageCode("en-US")
+        .setSampleRateHertz(16000)
         .build();
     RecognitionAudio audio = RecognitionAudio.newBuilder()
         .setUri(gcsUri)
         .build();
 
     // Use blocking call for getting audio transcript
-    SyncRecognizeResponse response = speech.syncRecognize(config, audio);
+    RecognizeResponse response = speech.recognize(config, audio);
     List<SpeechRecognitionResult> results = response.getResultsList();
 
     for (SpeechRecognitionResult result: results) {
@@ -130,6 +132,7 @@ public class Recognize {
     speech.close();
   }
 
+  /*
   /**
    * Performs non-blocking speech recognition on raw PCM audio and prints
    * the transcription.
@@ -147,14 +150,15 @@ public class Recognize {
     // Configure request with local raw PCM audio
     RecognitionConfig config = RecognitionConfig.newBuilder()
         .setEncoding(AudioEncoding.LINEAR16)
-        .setSampleRate(16000)
+        .setLanguageCode("en-US")
+        .setSampleRateHertz(16000)
         .build();
     RecognitionAudio audio = RecognitionAudio.newBuilder()
         .setContent(audioBytes)
         .build();
 
     // Use non-blocking call for getting file transcription
-    OperationFuture<AsyncRecognizeResponse> response = speech.asyncRecognizeAsync(config, audio);
+    OperationFuture<LongRunningRecognizeResponse> response = speech.longRunningRecognizeAsync(config, audio);
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
       Thread.sleep(200);
@@ -184,14 +188,15 @@ public class Recognize {
     // Configure remote file request for FLAC file
     RecognitionConfig config = RecognitionConfig.newBuilder()
         .setEncoding(AudioEncoding.FLAC)
-        .setSampleRate(16000)
+        .setLanguageCode("en-US")
+        .setSampleRateHertz(16000)
         .build();
     RecognitionAudio audio = RecognitionAudio.newBuilder()
         .setUri(gcsUri)
         .build();
 
     // Use non-blocking call for getting file transcription
-    OperationFuture<AsyncRecognizeResponse> response = speech.asyncRecognizeAsync(config, audio);
+    OperationFuture<LongRunningRecognizeResponse> response = speech.longRunningRecognizeAsync(config, audio);
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
       Thread.sleep(200);
