@@ -95,26 +95,6 @@ public class ITSubscriptionAdminClientSnippets {
   }
 
   @Test
-  public void publishAndPullMessagesIsSuccessful() throws Exception {
-    String topicName = topics[0];
-    String subscriptionName = subscriptions[0];
-    createSubscription(topicName, subscriptionName);
-    Set<String> messages = publishMessages(topicName, 5);
-    //pulls max 100 messages
-    PullResponse response = subscriptionAdminClientSnippets.pull(subscriptionName);
-    assertNotNull(response);
-    //remove messages that match sent
-    for (ReceivedMessage receivedMessage : response.getReceivedMessagesList()) {
-      String message = receivedMessage.getMessage().getData().toStringUtf8();
-      if (messages.contains(message)) {
-        messages.remove(message);
-      }
-    }
-    //all messages published were received
-    assertTrue(messages.isEmpty());
-  }
-
-  @Test
   public void replacePushConfigIsSuccessful() throws Exception {
     String topicName = topics[0];
     String subscriptionName = subscriptions[0];
@@ -190,7 +170,7 @@ public class ITSubscriptionAdminClientSnippets {
 
   private Set<String> publishMessages(String topicName, int numMessages) throws Exception {
     Set<String> messages = new HashSet<>();
-    Publisher publisher = Publisher.newBuilder(TopicName.create(projectId, topicName)).build();
+    Publisher publisher = Publisher.defaultBuilder(TopicName.create(projectId, topicName)).build();
     for (int i = 1; i<= numMessages; i++) {
       String message = formatForTest("message-" + i);
       PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(

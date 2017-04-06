@@ -51,7 +51,7 @@ public class CreateSubscriptionAndPullMessages {
         };
     Subscriber subscriber = null;
     try {
-      subscriber = Subscriber.newBuilder(subscription, receiver).build();
+      subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
       subscriber.addListener(
           new Subscriber.Listener() {
             @Override
