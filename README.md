@@ -19,7 +19,7 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Google Cloud Datastore](#google-cloud-datastore-beta) (Beta)
 -  [Google Cloud Storage](#google-cloud-storage-beta) (Beta)
 -  [Cloud Spanner](#cloud-spanner-beta) (Beta)
--  [Google Cloud Translate](#google-translate-beta) (Beta)
+-  [Google Cloud Translation](#google-translation-beta) (Beta)
 -  Cloud Vision (Beta)
 -  Cloud Natural Language (Beta)
 
@@ -46,16 +46,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.11.1-alpha</version>
+  <version>0.11.2-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.11.1-alpha'
+compile 'com.google.cloud:google-cloud:0.11.2-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.11.1-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.11.2-alpha"
 ```
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
@@ -89,7 +89,7 @@ Example Applications
   - Read more about using this application on the [`StorageExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/storage/StorageExample.html).
 - [`TaskList`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/datastore/src/main/java/com/google/datastore/snippets/TaskList.java) - A command line application that uses Cloud Datastore to manage a to-do list.
   - Read about how to run the application on its [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/datastore).
-- [`TranslateExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) - A simple command line interface providing some of Google Translate's functionality
+- [`TranslateExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) - A simple command line interface providing some of Google Translation's functionality
   - Read more about using this application on the [`TranslateExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/translate/TranslateExample.html).
 
 Specifying a Project ID
@@ -650,7 +650,7 @@ while (projectIterator.hasNext()) {
 }
 ```
 
-Google Translate (Beta)
+Google Translation (Beta)
 ----------------
 
 - [API Documentation][translate-api]
