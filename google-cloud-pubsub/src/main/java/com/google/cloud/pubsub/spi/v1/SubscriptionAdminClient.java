@@ -463,7 +463,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Subscription updateSubscription(UpdateSubscriptionRequest request) {
+  /* package-private */ final Subscription updateSubscription(UpdateSubscriptionRequest request) {
     return updateSubscriptionCallable().call(request);
   }
 
@@ -488,7 +488,8 @@ public class SubscriptionAdminClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable() {
+  /* package-private */ final UnaryCallable<UpdateSubscriptionRequest, Subscription>
+      updateSubscriptionCallable() {
     return updateSubscriptionCallable;
   }
 
@@ -707,8 +708,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    *     seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  @Deprecated
-  public final void modifyAckDeadline(
+  /* package-private */ final void modifyAckDeadline(
       SubscriptionName subscription, List<String> ackIds, int ackDeadlineSeconds) {
 
     ModifyAckDeadlineRequest request =
@@ -746,8 +746,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  @Deprecated
-  public final void modifyAckDeadline(ModifyAckDeadlineRequest request) {
+  /* package-private */ final void modifyAckDeadline(ModifyAckDeadlineRequest request) {
     modifyAckDeadlineCallable().call(request);
   }
 
@@ -776,8 +775,8 @@ public class SubscriptionAdminClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  @Deprecated
-  public final UnaryCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {
+  /* package-private */ final UnaryCallable<ModifyAckDeadlineRequest, Empty>
+      modifyAckDeadlineCallable() {
     return modifyAckDeadlineCallable;
   }
 
@@ -805,8 +804,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    *     the Pub/Sub system in the `Pull` response. Must not be empty.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  @Deprecated
-  public final void acknowledge(SubscriptionName subscription, List<String> ackIds) {
+  /* package-private */ final void acknowledge(SubscriptionName subscription, List<String> ackIds) {
 
     AcknowledgeRequest request =
         AcknowledgeRequest.newBuilder()
@@ -841,8 +839,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  @Deprecated
-  public final void acknowledge(AcknowledgeRequest request) {
+  /* package-private */ final void acknowledge(AcknowledgeRequest request) {
     acknowledgeCallable().call(request);
   }
 
@@ -870,8 +867,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  @Deprecated
-  public final UnaryCallable<AcknowledgeRequest, Empty> acknowledgeCallable() {
+  /* package-private */ final UnaryCallable<AcknowledgeRequest, Empty> acknowledgeCallable() {
     return acknowledgeCallable;
   }
 
@@ -903,8 +899,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    *     may return fewer than the number specified.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  @Deprecated
-  public final PullResponse pull(
+  /* package-private */ final PullResponse pull(
       SubscriptionName subscription, boolean returnImmediately, int maxMessages) {
 
     PullRequest request =
@@ -939,8 +934,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  @Deprecated
-  public final PullResponse pull(PullRequest request) {
+  /* package-private */ final PullResponse pull(PullRequest request) {
     return pullCallable().call(request);
   }
 
@@ -966,8 +960,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  @Deprecated
-  public final UnaryCallable<PullRequest, PullResponse> pullCallable() {
+  /* package-private */ final UnaryCallable<PullRequest, PullResponse> pullCallable() {
     return pullCallable;
   }
 

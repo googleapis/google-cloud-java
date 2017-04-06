@@ -167,7 +167,7 @@ public class Subscriber extends AbstractApiService {
    * @param receiver an implementation of {@link MessageReceiver} used to process the received
    *     messages
    */
-  public static Builder newBuilder(SubscriptionName subscription, MessageReceiver receiver) {
+  public static Builder defaultBuilder(SubscriptionName subscription, MessageReceiver receiver) {
     return new Builder(subscription, receiver);
   }
 
@@ -191,7 +191,7 @@ public class Subscriber extends AbstractApiService {
    *
    * <p>Example of receiving a specific number of messages.
    * <pre> {@code
-   * Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
+   * Subscriber subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
    * subscriber.addListener(new Subscriber.Listener() {
    *   public void failed(Subscriber.State from, Throwable failure) {
    *     // Handle error.

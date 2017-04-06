@@ -67,22 +67,6 @@ public class SubscriptionAdminClientSnippets {
     }
   }
 
-  /** Example of pulling a maximum number of messages from a subscription. */
-  public PullResponse pull(String subscriptionId) throws Exception {
-    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      // [START pull]
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
-      PullResponse response = subscriptionAdminClient.pull(subscriptionName, true, 100);
-      for (ReceivedMessage message : response.getReceivedMessagesList()) {
-        // do something with message, then ack or nack
-        subscriptionAdminClient.acknowledge(
-            subscriptionName, Collections.singletonList(message.getAckId()));
-      }
-      // [END pull]
-      return response;
-    }
-  }
-
   /** Example of replacing the push configuration of a subscription, setting the push endpoint. */
   public void replacePushConfig(String subscriptionId, String endpoint) throws Exception {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
