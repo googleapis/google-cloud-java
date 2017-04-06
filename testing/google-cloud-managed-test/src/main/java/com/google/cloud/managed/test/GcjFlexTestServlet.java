@@ -48,7 +48,7 @@ public class GcjFlexTestServlet extends HttpServlet {
       out.append(output);
       out.close();
     } catch (Exception e) {
-      throw new RuntimeException(e);
+      throw new ServletException(e);
     }
   }
 
