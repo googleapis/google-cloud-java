@@ -315,7 +315,7 @@ public class PubSubExample {
         public void run(Tuple<String, List<PubsubMessage>> params) throws Exception {
             String topic = params.x();
             TopicName topicName = TopicName.create(projectId, topic);
-            Publisher publisher = Publisher.newBuilder(topicName).build();
+            Publisher publisher = Publisher.defaultBuilder(topicName).build();
             List<PubsubMessage> messages = params.y();
             for (PubsubMessage message : messages) {
                 ApiFuture<String> messageIdFuture = publisher.publish(message);
@@ -526,7 +526,7 @@ public class PubSubExample {
             SubscriptionName subscriptionName = params.x();
             Subscriber subscriber = null;
             try {
-                subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
+                subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
                 subscriber.addListener(
                         new Subscriber.Listener() {
                             @Override

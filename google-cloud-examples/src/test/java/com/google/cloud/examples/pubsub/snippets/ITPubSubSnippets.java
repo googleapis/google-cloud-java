@@ -75,7 +75,7 @@ public class ITPubSubSnippets {
 
     Publisher publisher = null;
     try {
-      publisher = Publisher.newBuilder(topicName).build();
+      publisher = Publisher.defaultBuilder(topicName).build();
       PublisherSnippets snippets = new PublisherSnippets(publisher);
       final SettableApiFuture<Void> done = SettableApiFuture.create();
       ApiFutures.addCallback(

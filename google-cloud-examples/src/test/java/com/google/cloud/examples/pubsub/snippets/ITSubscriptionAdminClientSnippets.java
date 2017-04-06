@@ -170,7 +170,7 @@ public class ITSubscriptionAdminClientSnippets {
 
   private Set<String> publishMessages(String topicName, int numMessages) throws Exception {
     Set<String> messages = new HashSet<>();
-    Publisher publisher = Publisher.newBuilder(TopicName.create(projectId, topicName)).build();
+    Publisher publisher = Publisher.defaultBuilder(TopicName.create(projectId, topicName)).build();
     for (int i = 1; i<= numMessages; i++) {
       String message = formatForTest("message-" + i);
       PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(
