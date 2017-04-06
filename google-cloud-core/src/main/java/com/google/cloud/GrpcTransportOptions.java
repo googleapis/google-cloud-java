@@ -213,8 +213,7 @@ public class GrpcTransportOptions implements TransportOptions {
    * Returns a channel provider from the given default provider.
    */
   public static ChannelProvider setUpChannelProvider(
-      InstantiatingChannelProvider.Builder providerBuilder,
-      ServiceOptions<?, ?> serviceOptions) {
+      InstantiatingChannelProvider.Builder providerBuilder, ServiceOptions<?, ?> serviceOptions) {
     HostAndPort hostAndPort = HostAndPort.fromString(serviceOptions.getHost());
     providerBuilder.setServiceAddress(hostAndPort.getHostText())
         .setPort(hostAndPort.getPort())

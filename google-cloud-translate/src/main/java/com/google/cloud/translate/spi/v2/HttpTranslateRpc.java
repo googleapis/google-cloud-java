@@ -49,8 +49,7 @@ public class HttpTranslateRpc implements TranslateRpc {
   public HttpTranslateRpc(TranslateOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer =
-        transportOptions.getHttpRequestInitializer(options);
+    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
     translate = new Translate.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())

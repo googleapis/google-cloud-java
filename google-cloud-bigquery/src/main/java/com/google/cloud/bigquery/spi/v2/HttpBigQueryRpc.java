@@ -63,7 +63,6 @@ import java.util.Map;
 public class HttpBigQueryRpc implements BigQueryRpc {
 
   public static final String DEFAULT_PROJECTION = "full";
-
   private static final String BASE_RESUMABLE_URI =
       "https://www.googleapis.com/upload/bigquery/v2/projects/";
   // see: https://cloud.google.com/bigquery/loading-data-post-request#resume-upload
@@ -74,8 +73,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public HttpBigQueryRpc(BigQueryOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer =
-        transportOptions.getHttpRequestInitializer(options);
+    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
     bigquery = new Bigquery.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())

@@ -649,8 +649,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       while (resources.hasMoreElements() && version == null) {
         Manifest manifest = new Manifest(resources.nextElement().openStream());
         Attributes manifestAttributes = manifest.getMainAttributes();
-        String currentArtifactId = manifestAttributes.getValue(MANIFEST_ARTIFACT_ID_KEY);
-        if (currentArtifactId != null && currentArtifactId.equals(artifactId)) {
+        String value = manifestAttributes.getValue(MANIFEST_ARTIFACT_ID_KEY);
+        if (value != null && value.equals(artifactId)) {
           version = manifestAttributes.getValue(MANIFEST_VERSION_KEY);
         }
       }

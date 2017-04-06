@@ -181,8 +181,7 @@ public class HttpDnsRpc implements DnsRpc {
   public HttpDnsRpc(DnsOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer =
-        transportOptions.getHttpRequestInitializer(options);
+    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.dns = new Dns.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())
         .setApplicationName(options.getApplicationName())

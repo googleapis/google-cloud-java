@@ -48,8 +48,7 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   public HttpResourceManagerRpc(ResourceManagerOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer =
-        transportOptions.getHttpRequestInitializer(options);
+    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     resourceManager =
         new Cloudresourcemanager.Builder(transport, new JacksonFactory(), initializer)
             .setRootUrl(options.getHost())

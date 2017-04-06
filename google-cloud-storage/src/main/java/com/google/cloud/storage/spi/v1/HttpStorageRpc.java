@@ -74,7 +74,6 @@ import org.apache.http.HttpStatus;
 public class HttpStorageRpc implements StorageRpc {
 
   public static final String DEFAULT_PROJECTION = "full";
-
   private static final String ENCRYPTION_KEY_PREFIX = "x-goog-encryption-";
   private static final String SOURCE_ENCRYPTION_KEY_PREFIX = "x-goog-copy-source-encryption-";
   private final StorageOptions options;
@@ -85,8 +84,7 @@ public class HttpStorageRpc implements StorageRpc {
   public HttpStorageRpc(StorageOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer =
-        transportOptions.getHttpRequestInitializer(options);
+    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
     storage = new Storage.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())
