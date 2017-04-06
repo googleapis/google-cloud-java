@@ -21,15 +21,16 @@ import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
+import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.cloud.storage.spi.v1.HttpStorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc;
-import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 
 public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
 
   private static final long serialVersionUID = -2907268477247502947L;
+  private static final String ARTIFACT_ID = "google-cloud-storage";
   private static final String API_SHORT_NAME = "Storage";
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
@@ -57,7 +58,10 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
   public static class Builder extends
       ServiceOptions.Builder<Storage, StorageOptions, Builder> {
 
-    private Builder() {}
+    private Builder() {
+      super();
+      setArtifactId(ARTIFACT_ID);
+    }
 
     private Builder(StorageOptions options) {
       super(options);

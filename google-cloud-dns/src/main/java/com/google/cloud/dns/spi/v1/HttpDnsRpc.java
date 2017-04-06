@@ -34,7 +34,6 @@ import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
 import com.google.cloud.HttpTransportOptions;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.dns.DnsException;
 import com.google.cloud.dns.DnsOptions;
 import java.io.IOException;
@@ -46,7 +45,6 @@ import java.util.Map;
 public class HttpDnsRpc implements DnsRpc {
 
   private static final String SORT_BY = "changeSequence";
-  private static final String ARTIFACT_ID = "google-cloud-dns";
   private final Dns dns;
   private final DnsOptions options;
 
@@ -184,10 +182,10 @@ public class HttpDnsRpc implements DnsRpc {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer =
-        transportOptions.getHttpRequestInitializer(options, ARTIFACT_ID);
+        transportOptions.getHttpRequestInitializer(options);
     this.dns = new Dns.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())
-        .setApplicationName(ServiceOptions.getApplicationName(ARTIFACT_ID))
+        .setApplicationName(options.getApplicationName())
         .build();
     this.options = options;
   }

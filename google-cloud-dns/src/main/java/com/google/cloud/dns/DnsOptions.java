@@ -21,16 +21,16 @@ import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.dns.spi.v1.HttpDnsRpc;
-import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
+import com.google.cloud.dns.spi.v1.DnsRpc;
+import com.google.cloud.dns.spi.v1.HttpDnsRpc;
 import com.google.common.collect.ImmutableSet;
-
 import java.util.Set;
 
 public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
 
   private static final long serialVersionUID = -2501790264435912627L;
+  private static final String ARTIFACT_ID = "google-cloud-dns";
   private static final String API_SHORT_NAME = "Dns";
   private static final String GC_DNS_RW = "https://www.googleapis.com/auth/ndev.clouddns.readwrite";
   private static final Set<String> SCOPES = ImmutableSet.of(GC_DNS_RW);
@@ -58,6 +58,8 @@ public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
       DnsOptions, Builder> {
 
     private Builder() {
+      super();
+      setArtifactId(ARTIFACT_ID);
     }
 
     private Builder(DnsOptions options) {

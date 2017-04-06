@@ -31,7 +31,6 @@ import com.google.api.services.translate.model.LanguagesListResponse;
 import com.google.api.services.translate.model.LanguagesResource;
 import com.google.api.services.translate.model.TranslationsResource;
 import com.google.cloud.HttpTransportOptions;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.translate.TranslateException;
 import com.google.cloud.translate.TranslateOptions;
 import com.google.common.base.Function;
@@ -44,8 +43,6 @@ import java.util.Map;
 
 public class HttpTranslateRpc implements TranslateRpc {
 
-  private static final String ARTIFACT_ID = "google-cloud-translate";
-
   private final TranslateOptions options;
   private final Translate translate;
 
@@ -53,11 +50,11 @@ public class HttpTranslateRpc implements TranslateRpc {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer =
-        transportOptions.getHttpRequestInitializer(options, ARTIFACT_ID);
+        transportOptions.getHttpRequestInitializer(options);
     this.options = options;
     translate = new Translate.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())
-        .setApplicationName(ServiceOptions.getApplicationName(ARTIFACT_ID))
+        .setApplicationName(options.getApplicationName())
         .build();
   }
 

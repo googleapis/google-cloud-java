@@ -23,8 +23,8 @@ import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.v1.HttpDatastoreRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
@@ -35,6 +35,7 @@ import java.util.Set;
 public class DatastoreOptions
     extends ServiceOptions<Datastore, DatastoreOptions> {
 
+  private static final String ARTIFACT_ID = "google-cloud-datastore";
   private static final long serialVersionUID = -1018382430058137336L;
   private static final String API_SHORT_NAME = "Datastore";
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
@@ -68,6 +69,8 @@ public class DatastoreOptions
     private String namespace;
 
     private Builder() {
+      super();
+      setArtifactId(ARTIFACT_ID);
     }
 
     private Builder(DatastoreOptions options) {

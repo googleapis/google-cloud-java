@@ -78,7 +78,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private static final String X_GOOGLE_CLIENT_HEADER_NAME = "gccl";
 
   private static final String PROPERTIES_VERSION_KEY = "artifact.version";
-  private static final String PROPERTIES_ROOT = "/properties/";
+  private static final String PROPERTIES_ROOT = "/properties";
   private static final String PROPERTIES_FILE = "project.properties";
 
   private static final RetrySettings DEFAULT_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
@@ -96,6 +96,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private final ApiClock clock;
   private final Credentials credentials;
   private final TransportOptions transportOptions;
+  private final String artifactId;
 
   private transient ServiceRpcFactory<OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
@@ -121,6 +122,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     private ServiceRpcFactory<OptionsT> serviceRpcFactory;
     private ApiClock clock;
     private TransportOptions transportOptions;
+    private String artifactId;
 
     protected Builder() {}
 
@@ -133,6 +135,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       serviceRpcFactory = options.serviceRpcFactory;
       clock = options.clock;
       transportOptions = options.transportOptions;
+      artifactId = options.artifactId;
     }
 
     protected abstract ServiceOptions<ServiceT, OptionsT> build();
@@ -234,6 +237,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       this.transportOptions = transportOptions;
       return self();
     }
+
+    public B setArtifactId(String artifactId) {
+      this.artifactId = artifactId;
+      return self();
+    }
   }
 
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
@@ -259,6 +267,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     clock = firstNonNull(builder.clock, CurrentMillisClock.getDefaultClock());
     transportOptions = firstNonNull(builder.transportOptions,
         serviceDefaults.getDefaultTransportOptions());
+    artifactId = firstNonNull(builder.artifactId, ARTIFACT_ID);
   }
 
   /**
@@ -522,8 +531,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   /**
    * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
    */
-  public static String getApplicationName(String artifactId) {
-    String libraryVersion = getLibraryVersion(artifactId);
+  public String getApplicationName() {
+    String libraryVersion = getLibraryVersion();
     return libraryVersion == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + libraryVersion;
   }
 
@@ -545,8 +554,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   /**
    * Returns the library's version as a string.
    */
-  public static String getLibraryVersion(String artifactId) {
-    String version = getPomVersion(artifactId);
+  public String getLibraryVersion() {
+    String version = getPomVersion();
     if (version == null) {
       version = getManifestVersion();
     }
@@ -620,11 +629,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
   }
 
-  private static String getPomVersion(String artifactId) {
+  private String getPomVersion() {
     try {
-      String projectPropertiesPath = PROPERTIES_ROOT
-          + artifactId + "/"
-          + PROPERTIES_FILE;
+      String projectPropertiesPath = PROPERTIES_ROOT + "/"
+          + artifactId + "/" + PROPERTIES_FILE;
       return PropertiesProvider.loadProperty(
           ServiceOptions.class, projectPropertiesPath, PROPERTIES_VERSION_KEY);
     } catch (Exception e) {
@@ -633,7 +641,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return null;
   }
 
-  private static String getManifestVersion() {
+  private String getManifestVersion() {
     String version = null;
     try {
       Enumeration<URL> resources =
@@ -641,8 +649,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       while (resources.hasMoreElements() && version == null) {
         Manifest manifest = new Manifest(resources.nextElement().openStream());
         Attributes manifestAttributes = manifest.getMainAttributes();
-        String artifactId = manifestAttributes.getValue(MANIFEST_ARTIFACT_ID_KEY);
-        if (artifactId != null && artifactId.equals(ARTIFACT_ID)) {
+        String currentArtifactId = manifestAttributes.getValue(MANIFEST_ARTIFACT_ID_KEY);
+        if (currentArtifactId != null && currentArtifactId.equals(artifactId)) {
           version = manifestAttributes.getValue(MANIFEST_VERSION_KEY);
         }
       }

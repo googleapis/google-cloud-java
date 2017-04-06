@@ -78,7 +78,6 @@ import java.util.Map;
 
 public class HttpComputeRpc implements ComputeRpc {
 
-  private static final String ARTIFACT_ID = "google-cloud-compute";
   private final ComputeOptions options;
   private final Compute compute;
 
@@ -86,11 +85,11 @@ public class HttpComputeRpc implements ComputeRpc {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer =
-        transportOptions.getHttpRequestInitializer(options, ARTIFACT_ID);
+        transportOptions.getHttpRequestInitializer(options);
     this.options = options;
     compute = new Compute.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.getHost())
-        .setApplicationName(ServiceOptions.getApplicationName(ARTIFACT_ID))
+        .setApplicationName(ServiceOptions.getApplicationName())
         .build();
   }
 

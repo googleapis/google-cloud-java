@@ -139,7 +139,7 @@ public class HttpTransportOptions implements TransportOptions {
    * options.
    */
   public HttpRequestInitializer getHttpRequestInitializer(
-      ServiceOptions<?, ?> serviceOptions, final String artifactId) {
+      final ServiceOptions<?, ?> serviceOptions) {
     Credentials scopedCredentials = serviceOptions.getScopedCredentials();
     final HttpRequestInitializer delegate =
         scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()
@@ -158,17 +158,17 @@ public class HttpTransportOptions implements TransportOptions {
         }
 
         HttpHeaders headers = httpRequest.getHeaders();
-        headers.set("x-goog-api-client", getXGoogApiClientHeader(artifactId));
+        headers.set("x-goog-api-client", getXGoogApiClientHeader(serviceOptions));
       }
     };
   }
 
-  static String getXGoogApiClientHeader(String artifactId) {
+  static String getXGoogApiClientHeader(ServiceOptions<?, ?> serviceOptions) {
     return String.format(
         "gl-java/%s %s/%s",
         getJavaVersion(),
         ServiceOptions.getGoogApiClientLibName(),
-        ServiceOptions.getLibraryVersion(artifactId));
+        serviceOptions.getLibraryVersion());
   }
 
   private static String getJavaVersion() {

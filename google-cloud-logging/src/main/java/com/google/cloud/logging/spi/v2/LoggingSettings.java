@@ -15,10 +15,6 @@
  */
 package com.google.cloud.logging.spi.v2;
 
-import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogEntriesPagedResponse;
-import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogsPagedResponse;
-import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
-
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.PartitionKey;
@@ -43,6 +39,9 @@ import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.grpc.UnaryCallable;
+import com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogEntriesPagedResponse;
+import com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogsPagedResponse;
+import com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;

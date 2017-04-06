@@ -65,8 +65,6 @@ import java.util.concurrent.ScheduledExecutorService;
 
 public class GrpcLoggingRpc implements LoggingRpc {
 
-  private static final String ARTIFACT_ID = "google-cloud-logging";
-
   private final ConfigClient configClient;
   private final LoggingClient loggingClient;
   private final MetricsClient metricsClient;
@@ -93,7 +91,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
         channelProvider = FixedChannelProvider.create(managedChannel);
       } else {
         channelProvider = GrpcTransportOptions.setUpChannelProvider(
-            LoggingSettings.defaultChannelProviderBuilder(), options, ARTIFACT_ID);
+            LoggingSettings.defaultChannelProviderBuilder(), options);
       }
       providerManager = ProviderManager.newBuilder()
           .setChannelProvider(channelProvider)
