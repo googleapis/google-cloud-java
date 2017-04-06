@@ -266,13 +266,12 @@ public class ServiceOptionsTest {
 
   @Test
   public void testLibraryName() {
-    assertEquals(LIBRARY_NAME, OPTIONS.getLibraryName());
+    assertEquals(LIBRARY_NAME, ServiceOptions.getLibraryName());
   }
 
   @Test
   public void testApplicationName() {
-    assertTrue(APPLICATION_NAME_PATTERN.matcher(
-        OPTIONS.getApplicationName("google-cloud-core")).matches());
+    assertTrue(APPLICATION_NAME_PATTERN.matcher(OPTIONS.getApplicationName()).matches());
   }
 
   @Test
