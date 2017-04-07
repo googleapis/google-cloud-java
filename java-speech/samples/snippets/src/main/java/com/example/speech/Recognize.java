@@ -226,6 +226,11 @@ public class Recognize {
     speech.close();
   }
 
+  /**
+   * Performs streaming speech recognition on raw PCM audio data.
+   *
+   * @param fileName the path to a PCM audio file to transcribe.
+   */
   public static void streamingRecognizeFile(String fileName) throws Exception, IOException {
     Path path = Paths.get(fileName);
     byte[] data = Files.readAllBytes(path);
