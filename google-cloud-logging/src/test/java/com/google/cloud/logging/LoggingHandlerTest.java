@@ -144,7 +144,7 @@ public class LoggingHandlerTest {
           .put("filter", "com.google.cloud.logging.LoggingHandlerTest$TestFilter")
           .put("formatter", "com.google.cloud.logging.LoggingHandlerTest$TestFormatter")
           .put("flushLevel", "CRITICAL")
-          .put("enhancers", "com.google.cloud.logging.LoggingHandlerTest$TestEnhancer")
+          .put("enhancers", "com.google.cloud.logging.LoggingHandlerTest$TestLoggingEnhancer")
           .put("resourceType", "testResourceType")
           .put("synchronicity", "SYNC")
           .build();
@@ -189,7 +189,7 @@ public class LoggingHandlerTest {
     }
   }
 
-  static final class TestEnhancer implements Enhancer {
+  static final class TestLoggingEnhancer implements LoggingEnhancer {
     @Override
     public void enhanceLogEntry(LogEntry.Builder builder) {
       builder.addLabel("enhanced", "true");
@@ -294,7 +294,7 @@ public class LoggingHandlerTest {
         WriteOption.labels(BASE_SEVERITY_MAP));
     EasyMock.expectLastCall().andReturn(ApiFutures.immediateFuture(null));
     EasyMock.replay(options, logging);
-    Enhancer enhancer = new Enhancer() {
+    LoggingEnhancer enhancer = new LoggingEnhancer() {
       @Override
       public void enhanceLogEntry(Builder builder) {
         builder.addLabel("enhanced", "true");

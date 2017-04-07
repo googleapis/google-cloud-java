@@ -25,7 +25,12 @@ import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.util.concurrent.Uninterruptibles;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.IdentityHashMap;
+import java.util.List;
+import java.util.Set;
 
 public class LoggingService {
 
@@ -36,7 +41,7 @@ public class LoggingService {
   private Severity flushSeverity;
   private Synchronicity synchronicity;
   private LoggingErrorHandler errorHandler;
-  private List<Enhancer> resourceEnhancers;
+  private List<LoggingEnhancer> resourceEnhancers;
 
   private final Object writeLock = new Object();
   private final Set<ApiFuture<Void>> pendingWrites =
@@ -61,7 +66,7 @@ public class LoggingService {
   }
 
   private void enhanceLogEntry(LogEntry.Builder entryBuilder) {
-    for (Enhancer enhancer : resourceEnhancers) {
+    for (LoggingEnhancer enhancer : resourceEnhancers) {
       enhancer.enhanceLogEntry(entryBuilder);
     }
   }
@@ -141,7 +146,7 @@ public class LoggingService {
               @Override
               public void onFailure(Throwable t) {
                 try {
-                  Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
+                  Exception ex = t instanceof Exception ? (Exception) t : new Exception(t);
                   errorHandler.handleFlushError(ex);
                 } finally {
                   removeFromPending();
@@ -271,7 +276,6 @@ public class LoggingService {
     this.loggingOptions =
         checkNotNull(firstNonNull(builder.loggingOptions, LoggingOptions.getDefaultInstance()));
     this.flushSeverity = firstNonNull(builder.flushSeverity, Severity.ERROR);
-
     this.synchronicity = firstNonNull(builder.synchronicity, Synchronicity.ASYNC);
     this.writeOptions = checkNotNull(builder.writeOptions);
     this.errorHandler = checkNotNull(builder.errorHandler);

@@ -77,7 +77,7 @@ import java.util.logging.SimpleFormatter;
  *       When a log with this level is published, logs are transmitted to the Stackdriver Logging
  *       service (defaults to {@link LoggingLevel#ERROR}).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
- *       of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds a
+ *       of {@link LoggingEnhancer} classes. This handler will call each enhancer list whenever it builds a
  *       {@link LogEntry} instance (defaults to empty list).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
  *       creating the default {@link MonitoredResource} (defaults to auto-detected resource type,
@@ -103,7 +103,7 @@ public class LoggingHandler extends Handler {
   private static final String LEVEL_VALUE_KEY = "levelValue";
 
   private LoggingService loggingService;
-  private List<Enhancer> enhancers;
+  private List<LoggingEnhancer> enhancers;
   private ErrorHandler errorHandler;
 
   // Logs with the same severity with the base could be more efficiently sent to Stackdriver.
@@ -157,14 +157,14 @@ public class LoggingHandler extends Handler {
    * @param options options for the Stackdriver Logging service
    * @param monitoredResource the monitored resource to which log entries refer. If it is null then
    *     a default resource is created based on the project ID and deployment environment.
-   * @param enhancers List of {@link Enhancer} instances used to enhance any{@link LogEntry}
+   * @param enhancers List of {@link LoggingEnhancer} instances used to enhance any{@link LogEntry}
    *     instances built by this handler.
    */
   public LoggingHandler(
       String log,
       LoggingOptions options,
       MonitoredResource monitoredResource,
-      List<Enhancer> enhancers) {
+      List<LoggingEnhancer> enhancers) {
     try {
       LoggingConfig config = new LoggingConfig(getClass().getName());
       errorHandler = new ErrorHandler();
@@ -278,7 +278,7 @@ public class LoggingHandler extends Handler {
           .addLabel("levelValue", String.valueOf(level.intValue()));
     }
 
-    for (Enhancer enhancer : enhancers) {
+    for (LoggingEnhancer enhancer : enhancers) {
       enhancer.enhanceLogEntry(builder);
     }
     return builder;

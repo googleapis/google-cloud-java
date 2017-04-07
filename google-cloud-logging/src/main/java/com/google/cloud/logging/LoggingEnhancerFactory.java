@@ -20,17 +20,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class EnhancerFactory {
+public abstract class LoggingEnhancerFactory {
 
-  public static List<Enhancer> getEnhancers(String resourceType) {
-    List<Enhancer> enhancers;
+  public static List<LoggingEnhancer> getEnhancers(String resourceType) {
+    List<LoggingEnhancer> enhancers;
     switch (resourceType) {
       case "gae_app_flex":
         enhancers = new ArrayList<>();
-        enhancers.add(new TraceEnhancer());
+        enhancers.add(new TraceLoggingEnhancer());
         break;
       default:
         enhancers = Collections.emptyList();
+        break;
     }
     return enhancers;
   }

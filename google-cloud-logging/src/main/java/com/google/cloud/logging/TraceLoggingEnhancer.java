@@ -18,9 +18,10 @@ package com.google.cloud.logging;
 
 /*
  */
-public class TraceEnhancer implements Enhancer {
+public class TraceLoggingEnhancer implements LoggingEnhancer {
 
   private static final ThreadLocal<String> traceId = new ThreadLocal<>();
+
   /**
    * Set the Trace ID associated with any logging done by the current thread.
    *

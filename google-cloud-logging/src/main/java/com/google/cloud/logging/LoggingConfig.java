@@ -28,7 +28,7 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.SimpleFormatter;
 
-public class LoggingConfig {
+class LoggingConfig {
 
   private final LogManager manager = LogManager.getLogManager();
   private final String className;
@@ -80,15 +80,15 @@ public class LoggingConfig {
     return MonitoredResourceUtil.getResource(projectId, resourceType);
   }
 
-  List<Enhancer> getEnhancers() {
+  List<LoggingEnhancer> getEnhancers() {
     String list = getProperty(enchancersTag);
     try {
-      List<Enhancer> enhancers = new ArrayList<>();
+      List<LoggingEnhancer> enhancers = new ArrayList<>();
       if (list != null) {
         String[] items = list.split(",");
         for (String e_name : items) {
-          Class<? extends Enhancer> clz =
-              (Class<? extends Enhancer>) ClassLoader.getSystemClassLoader().loadClass(e_name);
+          Class<? extends LoggingEnhancer> clz =
+              (Class<? extends LoggingEnhancer>) ClassLoader.getSystemClassLoader().loadClass(e_name);
           enhancers.add(clz.newInstance());
         }
       }

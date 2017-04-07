@@ -319,7 +319,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return projectId != null ? projectId : getGoogleCloudProjectId();
   }
 
-  protected static String getAppEngineAppId() {
+  public static String getAppEngineAppId() {
     return System.getProperty("com.google.appengine.application.id");
   }
 

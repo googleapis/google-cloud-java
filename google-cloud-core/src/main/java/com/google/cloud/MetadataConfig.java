@@ -27,6 +27,9 @@ import java.net.URL;
 
 public class MetadataConfig {
 
+  private MetadataConfig() {
+  }
+
   private static final String metadataUrl = "http://metadata/computeMetadata/v1/";
 
   public static String getProjectId() {
