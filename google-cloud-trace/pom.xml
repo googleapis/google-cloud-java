@@ -99,7 +99,7 @@
               <goal>write-project-properties</goal>
             </goals>
             <configuration>
-              <outputFile>${project.build.outputDirectory}/properties/${project.artifactId}/project.properties</outputFile>
+              <outputFile>${project.build.outputDirectory}/com/google/cloud/trace/project.properties</outputFile>
             </configuration>
           </execution>
          </executions>
