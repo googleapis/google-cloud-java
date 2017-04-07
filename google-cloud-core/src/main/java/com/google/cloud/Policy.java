@@ -202,7 +202,6 @@ public final class Policy implements Serializable {
       return this;
     }
 
-
     /**
      * Sets the policy's etag.
      *
@@ -214,7 +213,7 @@ public final class Policy implements Serializable {
      * applied to the same version of the policy.  If no etag is provided in the call to
      * setIamPolicy, then the existing policy is overwritten blindly.
      */
-    protected final Builder setEtag(String etag) {
+    public final Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }

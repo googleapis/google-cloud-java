@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage.it;
 
+import static com.google.common.collect.Sets.newHashSet;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -24,41 +25,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-
-import com.google.cloud.Page;
-import com.google.cloud.ReadChannel;
-import com.google.cloud.RestorableState;
-import com.google.cloud.WriteChannel;
-import com.google.cloud.storage.Acl;
-import com.google.cloud.storage.Acl.Role;
-import com.google.cloud.storage.Acl.User;
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.BucketInfo;
-import com.google.cloud.storage.CopyWriter;
-import com.google.cloud.storage.HttpMethod;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.Storage.BlobField;
-import com.google.cloud.storage.Storage.BucketField;
-import com.google.cloud.storage.StorageBatch;
-import com.google.cloud.storage.StorageBatchResult;
-import com.google.cloud.storage.StorageClass;
-import com.google.cloud.storage.StorageException;
-import com.google.cloud.storage.testing.RemoteStorageHelper;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Iterators;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
-import com.google.common.io.BaseEncoding;
-import com.google.common.io.ByteStreams;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -85,8 +51,47 @@ import java.util.zip.GZIPInputStream;
 
 import javax.crypto.spec.SecretKeySpec;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.google.cloud.Identity;
+import com.google.cloud.Page;
+import com.google.cloud.Policy;
+import com.google.cloud.ReadChannel;
+import com.google.cloud.RestorableState;
+import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl;
+import com.google.cloud.storage.Acl.Role;
+import com.google.cloud.storage.Acl.User;
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.BlobInfo;
+import com.google.cloud.storage.Bucket;
+import com.google.cloud.storage.BucketInfo;
+import com.google.cloud.storage.CopyWriter;
+import com.google.cloud.storage.HttpMethod;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.Storage.BlobField;
+import com.google.cloud.storage.Storage.BucketField;
+import com.google.cloud.storage.StorageBatch;
+import com.google.cloud.storage.StorageBatchResult;
+import com.google.cloud.storage.StorageClass;
+import com.google.cloud.storage.StorageException;
+import com.google.cloud.storage.StorageRoles;
+import com.google.cloud.storage.testing.RemoteStorageHelper;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterators;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
+import com.google.common.io.BaseEncoding;
+import com.google.common.io.ByteStreams;
+
 public class ITStorageTest {
 
+  private static RemoteStorageHelper remoteStorageHelper;
   private static Storage storage;
 
   private static final Logger log = Logger.getLogger(ITStorageTest.class.getName());
@@ -104,8 +109,8 @@ public class ITStorageTest {
 
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
-    RemoteStorageHelper helper = RemoteStorageHelper.create();
-    storage = helper.getOptions().getService();
+    remoteStorageHelper = RemoteStorageHelper.create();
+    storage = remoteStorageHelper.getOptions().getService();
     storage.create(BucketInfo.of(BUCKET));
   }
 
@@ -1439,5 +1444,50 @@ public class ITStorageTest {
       }
     }
     blob.delete();
+  }
+  
+  @Test
+  public void testBucketPolicy() {
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    Identity projectOwner = Identity.projectOwner(projectId);
+    Identity projectEditor = Identity.projectEditor(projectId);
+    Identity projectViewer = Identity.projectViewer(projectId);
+    Map<com.google.cloud.Role, Set<Identity>> bindingsWithoutPublicRead =
+    	ImmutableMap.of(
+    	    StorageRoles.legacyBucketOwner(), (Set<Identity>) newHashSet(projectOwner, projectEditor),
+    	    StorageRoles.legacyBucketReader(), newHashSet(projectViewer));
+    Map<com.google.cloud.Role, Set<Identity>> bindingsWithPublicRead =
+        ImmutableMap.of(
+    	    StorageRoles.legacyBucketOwner(), (Set<Identity>) newHashSet(projectOwner, projectEditor),
+    	    StorageRoles.legacyBucketReader(), newHashSet(projectViewer),
+          StorageRoles.legacyObjectReader(), newHashSet(Identity.allUsers()));
+
+    // Validate getting policy.
+    Policy currentPolicy = storage.getPolicy(BUCKET);
+    assertEquals(bindingsWithoutPublicRead, currentPolicy.getBindings());
+    
+    // Validate updating policy.
+    Policy updatedPolicy =
+        storage.updatePolicy(
+            BUCKET,
+            currentPolicy.toBuilder()
+                .addIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
+                .build());
+    assertEquals(bindingsWithPublicRead, updatedPolicy.getBindings());
+    Policy revertedPolicy =
+        storage.updatePolicy(
+            BUCKET,
+            updatedPolicy.toBuilder()
+                .removeIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
+                .build());
+    assertEquals(bindingsWithoutPublicRead, revertedPolicy.getBindings());   
+    
+    // Validate testing permissions.
+    List<Boolean> expectedPermissions = ImmutableList.of(true, true);
+    assertEquals(
+        expectedPermissions,
+        storage.testPermissions(
+            BUCKET,
+            ImmutableList.of("storage.buckets.getIamPolicy", "storage.buckets.setIamPolicy")));
   }
 }

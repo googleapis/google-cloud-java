@@ -48,7 +48,9 @@ import com.google.api.services.storage.model.ComposeRequest;
 import com.google.api.services.storage.model.ComposeRequest.SourceObjects.ObjectPreconditions;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Objects;
+import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.storage.StorageException;
@@ -830,6 +832,33 @@ public class HttpStorageRpc implements StorageRpc {
       return storage.objectAccessControls().list(bucket, object)
           .setGeneration(generation)
           .execute().getItems();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Policy getPolicy(String bucket) {
+    try {
+      return storage.buckets().getIamPolicy(bucket).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Policy updatePolicy(String bucket, Policy policy) {
+    try {
+      return storage.buckets().setIamPolicy(bucket, policy).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public TestIamPermissionsResponse testPermissions(String bucket, List<String> permissions) {
+    try {
+      return storage.buckets().testIamPermissions(bucket, permissions).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }

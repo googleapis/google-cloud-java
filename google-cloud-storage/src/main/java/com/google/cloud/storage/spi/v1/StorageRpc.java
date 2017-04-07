@@ -19,7 +19,9 @@ package com.google.cloud.storage.spi.v1;
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
+import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.storage.StorageException;
 
@@ -427,4 +429,25 @@ public interface StorageRpc extends ServiceRpc {
    * @throws StorageException upon failure
    */
   List<ObjectAccessControl> listAcls(String bucket, String object, Long generation);
+  
+  /**
+   * Returns the IAM policy for the specified bucket.
+   * 
+   * @throws StorageException upon failure
+   */
+  Policy getPolicy(String bucket);
+  
+  /**
+   * Updates the IAM policy for the specified bucket.
+   * 
+   * @throws StorageException upon failure
+   */
+  Policy updatePolicy(String bucket, Policy policy);
+  
+  /**
+   * Tests whether the caller holds the specified permissions for the specified bucket.
+   * 
+   * @throws StorageException upon failure
+   */
+  TestIamPermissionsResponse testPermissions(String bucket, List<String> permissions);
 }
