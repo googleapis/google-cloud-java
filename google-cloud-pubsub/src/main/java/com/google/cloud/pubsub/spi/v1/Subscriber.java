@@ -22,6 +22,7 @@ import com.google.api.gax.core.ApiService;
 import com.google.api.gax.core.CurrentMillisClock;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController;
+import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
@@ -121,7 +122,13 @@ public class Subscriber extends AbstractApiService {
             Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
-    flowController = new FlowController(builder.flowControlSettings);
+    flowController =
+        new FlowController(
+            builder
+                .flowControlSettings
+                .toBuilder()
+                .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
+                .build());
 
     executor = builder.executorProvider.getExecutor();
     if (builder.executorProvider.shouldAutoClose()) {
@@ -324,6 +331,7 @@ public class Subscriber extends AbstractApiService {
                 ackLatencyDistribution,
                 channelBuilder.build(),
                 flowController,
+                flowControlSettings.getMaxOutstandingElementCount(),
                 executor,
                 clock));
       }
