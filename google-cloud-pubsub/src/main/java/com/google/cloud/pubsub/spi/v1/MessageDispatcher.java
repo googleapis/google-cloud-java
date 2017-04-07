@@ -60,7 +60,7 @@ class MessageDispatcher {
   private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECONDS = 2;
   @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.millis(100);
   private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
-  
+
   private static final ScheduledExecutorService alarmsExecutor =
       Executors.newScheduledThreadPool(2);
 
@@ -84,6 +84,8 @@ class MessageDispatcher {
   private ScheduledFuture<?> ackDeadlineExtensionAlarm;
   private Instant nextAckDeadlineExtensionAlarmTime;
   private ScheduledFuture<?> pendingAcksAlarm;
+
+  private Deque<OutstandingMessagesBatch> outstandingMessageBatches;
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
@@ -248,6 +250,7 @@ class MessageDispatcher {
     this.receiver = receiver;
     this.ackProcessor = ackProcessor;
     this.flowController = flowController;
+    outstandingMessageBatches = new LinkedList<>();
     outstandingAckHandlers = new PriorityQueue<>();
     pendingAcks = new HashSet<>();
     pendingNacks = new HashSet<>();
@@ -282,8 +285,11 @@ class MessageDispatcher {
   }
 
   static class OutstandingMessagesBatch {
+    private final Deque<OutstandingMessage> messages;
+    private final Runnable doneCallback;
+
     static class OutstandingMessage {
-      private final com.google.pubsub.v1.ReceivedMessage receivedMessage;
+      private final ReceivedMessage receivedMessage;
       private final AckHandler ackHandler;
 
       public OutstandingMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
@@ -291,7 +297,7 @@ class MessageDispatcher {
         this.ackHandler = ackHandler;
       }
 
-      public com.google.pubsub.v1.ReceivedMessage receivedMessage() {
+      public ReceivedMessage receivedMessage() {
         return receivedMessage;
       }
 
@@ -300,16 +306,12 @@ class MessageDispatcher {
       }
     }
 
-    private final Deque<OutstandingMessage> messages;
-    private final Runnable doneCallback;
-
     public OutstandingMessagesBatch(Runnable doneCallback) {
       this.messages = new LinkedList<>();
       this.doneCallback = doneCallback;
     }
 
-    public void addMessage(
-        com.google.pubsub.v1.ReceivedMessage receivedMessage, AckHandler ackHandler) {
+    public void addMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
       this.messages.add(new OutstandingMessage(receivedMessage, ackHandler));
     }
 
@@ -322,11 +324,8 @@ class MessageDispatcher {
     }
   }
 
-  Deque<OutstandingMessagesBatch> outstandingMessageBatches = new LinkedList<>();
-
-  public void processReceivedMessages(
-      List<com.google.pubsub.v1.ReceivedMessage> messages, Runnable doneCallback) {
-    if (messages.size() == 0) {
+  public void processReceivedMessages(List<ReceivedMessage> messages, Runnable doneCallback) {
+    if (messages.isEmpty()) {
       doneCallback.run();
       return;
     }
