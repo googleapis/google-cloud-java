@@ -13,21 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.language.spi.v1;
+package com.google.cloud.language.spi.v1beta2;
 
 import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
-import com.google.cloud.language.v1.AnalyzeEntitiesRequest;
-import com.google.cloud.language.v1.AnalyzeEntitiesResponse;
-import com.google.cloud.language.v1.AnalyzeSentimentRequest;
-import com.google.cloud.language.v1.AnalyzeSentimentResponse;
-import com.google.cloud.language.v1.AnalyzeSyntaxRequest;
-import com.google.cloud.language.v1.AnalyzeSyntaxResponse;
-import com.google.cloud.language.v1.AnnotateTextRequest;
-import com.google.cloud.language.v1.AnnotateTextRequest.Features;
-import com.google.cloud.language.v1.AnnotateTextResponse;
-import com.google.cloud.language.v1.Document;
-import com.google.cloud.language.v1.EncodingType;
+import com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest;
+import com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse;
+import com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest;
+import com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse;
+import com.google.cloud.language.v1beta2.AnalyzeSentimentRequest;
+import com.google.cloud.language.v1beta2.AnalyzeSentimentResponse;
+import com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest;
+import com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse;
+import com.google.cloud.language.v1beta2.AnnotateTextRequest;
+import com.google.cloud.language.v1beta2.AnnotateTextRequest.Features;
+import com.google.cloud.language.v1beta2.AnnotateTextResponse;
+import com.google.cloud.language.v1beta2.Document;
+import com.google.cloud.language.v1beta2.EncodingType;
 import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
@@ -106,6 +108,8 @@ public class LanguageServiceClient implements AutoCloseable {
       analyzeSentimentCallable;
   private final UnaryCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesCallable;
+  private final UnaryCallable<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+      analyzeEntitySentimentCallable;
   private final UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable;
   private final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
@@ -137,6 +141,9 @@ public class LanguageServiceClient implements AutoCloseable {
         UnaryCallable.create(settings.analyzeSentimentSettings(), this.channel, this.executor);
     this.analyzeEntitiesCallable =
         UnaryCallable.create(settings.analyzeEntitiesSettings(), this.channel, this.executor);
+    this.analyzeEntitySentimentCallable =
+        UnaryCallable.create(
+            settings.analyzeEntitySentimentSettings(), this.channel, this.executor);
     this.analyzeSyntaxCallable =
         UnaryCallable.create(settings.analyzeSyntaxSettings(), this.channel, this.executor);
     this.annotateTextCallable =
@@ -180,7 +187,7 @@ public class LanguageServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param document Input document. Currently, `analyzeSentiment` only supports English text
-   *     ([Document.language][google.cloud.language.v1.Document.language]="EN").
+   *     ([Document.language][google.cloud.language.v1beta2.Document.language]="EN").
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final AnalyzeSentimentResponse analyzeSentiment(Document document) {
@@ -320,6 +327,92 @@ public class LanguageServiceClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Finds entities, similar to
+   * [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text
+   * and analyzes sentiment associated with each entity and its mentions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   EncodingType encodingType = EncodingType.NONE;
+   *   AnalyzeEntitySentimentResponse response = languageServiceClient.analyzeEntitySentiment(document, encodingType);
+   * }
+   * </code></pre>
+   *
+   * @param document Input document.
+   * @param encodingType The encoding type used by the API to calculate offsets.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final AnalyzeEntitySentimentResponse analyzeEntitySentiment(
+      Document document, EncodingType encodingType) {
+
+    AnalyzeEntitySentimentRequest request =
+        AnalyzeEntitySentimentRequest.newBuilder()
+            .setDocument(document)
+            .setEncodingType(encodingType)
+            .build();
+    return analyzeEntitySentiment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finds entities, similar to
+   * [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text
+   * and analyzes sentiment associated with each entity and its mentions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   EncodingType encodingType = EncodingType.NONE;
+   *   AnalyzeEntitySentimentRequest request = AnalyzeEntitySentimentRequest.newBuilder()
+   *     .setDocument(document)
+   *     .setEncodingType(encodingType)
+   *     .build();
+   *   AnalyzeEntitySentimentResponse response = languageServiceClient.analyzeEntitySentiment(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final AnalyzeEntitySentimentResponse analyzeEntitySentiment(
+      AnalyzeEntitySentimentRequest request) {
+    return analyzeEntitySentimentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finds entities, similar to
+   * [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text
+   * and analyzes sentiment associated with each entity and its mentions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   EncodingType encodingType = EncodingType.NONE;
+   *   AnalyzeEntitySentimentRequest request = AnalyzeEntitySentimentRequest.newBuilder()
+   *     .setDocument(document)
+   *     .setEncodingType(encodingType)
+   *     .build();
+   *   ApiFuture&lt;AnalyzeEntitySentimentResponse&gt; future = languageServiceClient.analyzeEntitySentimentCallable().futureCall(request);
+   *   // Do something
+   *   AnalyzeEntitySentimentResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+      analyzeEntitySentimentCallable() {
+    return analyzeEntitySentimentCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
    * part of speech tags, dependency trees, and other properties.
    *
@@ -400,8 +493,7 @@ public class LanguageServiceClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and
-   * analyzeSyntax provide in one call.
+   * A convenience method that provides all syntax, sentiment, and entity features in one call.
    *
    * <p>Sample code:
    *
@@ -433,8 +525,7 @@ public class LanguageServiceClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and
-   * analyzeSyntax provide in one call.
+   * A convenience method that provides all syntax, sentiment, and entity features in one call.
    *
    * <p>Sample code:
    *
@@ -461,8 +552,7 @@ public class LanguageServiceClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and
-   * analyzeSyntax provide in one call.
+   * A convenience method that provides all syntax, sentiment, and entity features in one call.
    *
    * <p>Sample code:
    *
