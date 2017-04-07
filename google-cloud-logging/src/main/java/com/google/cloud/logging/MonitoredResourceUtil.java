@@ -26,36 +26,53 @@ import java.util.*;
 abstract class MonitoredResourceUtil {
 
   private enum Label {
-    app_id, cluster_name, instance_id, instance_name, module_id, project_id, version_id, zone
+    app_id,
+    cluster_name,
+    instance_id,
+    instance_name,
+    module_id,
+    project_id,
+    version_id,
+    zone
   }
 
   private enum Resource {
-    container, gae_app_flex, gae_app_standard, gce_instance, global
+    container,
+    gae_app_flex,
+    gae_app_standard,
+    gce_instance,
+    global
   }
 
   private static Map<String, Label[]> resourceTypeWithLabels;
+
   static {
-      Map<String, Label[]> map = new HashMap<>();
-      addToMap(map, Resource.gae_app_flex,
-              new Label[] {
-              Label.instance_name, Label.module_id, Label.version_id, Label.instance_id, Label.zone
-      });
-      addToMap(map, Resource.gae_app_standard,
-              new Label[] {
-                      Label.app_id, Label.module_id, Label.version_id
-      });
-      addToMap(map, Resource.container,
-              new Label[] {
-              Label.cluster_name, Label.zone
-      });
-      addToMap(map, Resource.gce_instance,
-              new Label[] {
-              Label.instance_id, Label.zone
-      });
-      resourceTypeWithLabels = Collections.unmodifiableMap(map);
+    Map<String, Label[]> map = new HashMap<>();
+
+    addToMap(
+        map,
+        Resource.gae_app_flex,
+        Label.instance_name,
+        Label.module_id,
+        Label.version_id,
+        Label.instance_id,
+        Label.zone);
+
+    addToMap(map, Resource.gae_app_standard, Label.app_id, Label.module_id, Label.version_id);
+
+    addToMap(map, Resource.container, Label.cluster_name, Label.zone);
+
+    addToMap(map, Resource.gce_instance, Label.instance_id, Label.zone);
+
+    resourceTypeWithLabels = Collections.unmodifiableMap(map);
   }
 
-  private static void addResourceLabels(String resourceType, MonitoredResource.Builder resourceBuilder) {
+  private static void addToMap(Map<String, Label[]> map, Resource Resource, Label... labels) {
+    map.put(Resource.name(), labels);
+  }
+
+  private static void addResourceLabels(
+      String resourceType, MonitoredResource.Builder resourceBuilder) {
     Label[] resourceLabels = resourceTypeWithLabels.get(resourceType);
     if (resourceLabels != null) {
       for (Label Label : resourceLabels) {
@@ -66,7 +83,8 @@ abstract class MonitoredResourceUtil {
 
   /* Return a self-configured monitored Resource.
    */
-  static MonitoredResource getResource(String projectId, String resourceType) {
+  static MonitoredResource getResource(String projectId, String resourceTypeParam) {
+    String resourceType = resourceTypeParam;
     if (Strings.isNullOrEmpty(resourceType)) {
       Resource detectedResourceType = getAutoDetectedResourceType();
       resourceType = detectedResourceType.name();
@@ -76,8 +94,7 @@ abstract class MonitoredResourceUtil {
     // This method trims "gae_app_flex", "gae_app_standard" to "gae_app"
     String resourceName = resourceType.startsWith("gae_app") ? "gae_app" : resourceType;
     MonitoredResource.Builder builder =
-        MonitoredResource.newBuilder(resourceName).addLabel(
-                Label.project_id.name(), projectId);
+        MonitoredResource.newBuilder(resourceName).addLabel(Label.project_id.name(), projectId);
     addResourceLabels(resourceType, builder);
     return builder.build();
   }
@@ -103,7 +120,7 @@ abstract class MonitoredResourceUtil {
 
   protected static List<LoggingEnhancer> getResourceEnhancers() {
     Resource resourceType = getAutoDetectedResourceType();
-    return LoggingEnhancerFactory.getEnhancers(resourceType.name());
+    return getEnhancers(resourceType);
   }
 
   private static void addLabel(MonitoredResource.Builder resourceBuilder, Label label) {
@@ -151,7 +168,17 @@ abstract class MonitoredResourceUtil {
     return System.getenv("GAE_INSTANCE");
   }
 
-  private static void addToMap(Map<String, Label[]> map, Resource Resource, Label[] labels) {
-    map.put(Resource.name(), labels);
+  private static List<LoggingEnhancer> getEnhancers(Resource resourceType) {
+    List<LoggingEnhancer> enhancers;
+    switch (resourceType) {
+      case gae_app_flex:
+        enhancers = new ArrayList<>();
+        enhancers.add(new TraceLoggingEnhancer());
+        break;
+      default:
+        enhancers = Collections.emptyList();
+        break;
+    }
+    return enhancers;
   }
 }
