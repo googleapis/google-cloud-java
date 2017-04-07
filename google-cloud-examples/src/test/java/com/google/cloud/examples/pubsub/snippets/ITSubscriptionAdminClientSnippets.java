@@ -82,16 +82,19 @@ public class ITSubscriptionAdminClientSnippets {
     Cleanup.deleteTestTopicsAndSubscriptions(projectId, topics, subscriptions);
   }
 
-  private Subscription createSubscription(String topicName, String subscriptionName)
-      throws Exception {
+  @Test
+  public void createSubscriptionWithPushIsSuccessful() throws Exception {
+    String topicName = topics[0];
+    String subscriptionName = subscriptions[0];
     createTopic(topicName);
+    String endpoint = "https://" + projectId + ".appspot.com/push";
     Subscription subscription =
-        subscriptionAdminClientSnippets.createSubscription(topicName, subscriptionName);
+        subscriptionAdminClientSnippets.createSubscriptionWithPushEndpoint(topicName, subscriptionName, endpoint);
     assertNotNull(subscription);
     Subscription retrievedSubscription = subscriptionAdminClientSnippets.getSubscription(subscriptionName);
     assertNotNull(retrievedSubscription);
     assertEquals(subscription.getName(), retrievedSubscription.getName());
-    return subscription;
+    assertEquals(subscription.getPushConfig().getPushEndpoint(), endpoint);
   }
 
   @Test
@@ -168,17 +171,16 @@ public class ITSubscriptionAdminClientSnippets {
     }
   }
 
-  private Set<String> publishMessages(String topicName, int numMessages) throws Exception {
-    Set<String> messages = new HashSet<>();
-    Publisher publisher = Publisher.defaultBuilder(TopicName.create(projectId, topicName)).build();
-    for (int i = 1; i<= numMessages; i++) {
-      String message = formatForTest("message-" + i);
-      PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(
-          ByteString.copyFromUtf8(message)).build();
-      publisher.publish(pubsubMessage);
-      messages.add(message);
-    }
-    return messages;
+  private Subscription createSubscription(String topicName, String subscriptionName)
+          throws Exception {
+    createTopic(topicName);
+    Subscription subscription =
+        subscriptionAdminClientSnippets.createSubscription(topicName, subscriptionName);
+    assertNotNull(subscription);
+    Subscription retrievedSubscription = subscriptionAdminClientSnippets.getSubscription(subscriptionName);
+    assertNotNull(retrievedSubscription);
+    assertEquals(subscription.getName(), retrievedSubscription.getName());
+    return subscription;
   }
 
   @After

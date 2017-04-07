@@ -34,6 +34,7 @@ import com.google.pubsub.v1.TopicName;
 public class CreateSubscriptionAndPullMessages {
 
   public static void main(String... args) throws Exception {
+    // [START async_pull_subscription]
     TopicName topic = TopicName.create("test-project", "test-topic");
     SubscriptionName subscription = SubscriptionName.create("test-project", "test-subscription");
 
@@ -62,11 +63,13 @@ public class CreateSubscriptionAndPullMessages {
           },
           MoreExecutors.directExecutor());
       subscriber.startAsync().awaitRunning();
+
       Thread.sleep(60000);
     } finally {
       if (subscriber != null) {
         subscriber.stopAsync();
       }
     }
+    // [END async_pull_subscription]
   }
 }

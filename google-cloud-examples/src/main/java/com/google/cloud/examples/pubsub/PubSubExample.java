@@ -48,8 +48,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  *  pull sync <subscription> <maxMessages>
  *  publish <topic> <message>+
  *  replace-push-config <subscription> <endpoint>?
- *  ack <subscription> <ackId>+
- *  nack <subscription> <ackId>+
  *  create topic <topic>
  *  create subscription <topic> <subscription> <endpoint>?
  *  list subscriptions <topic>?
@@ -485,22 +483,6 @@ public class PubSubExample {
         @Override
         public String params() {
             return "<subscription> <endpoint>?";
-        }
-    }
-
-    private abstract static class MessagesAction extends PubSubAction<Tuple<SubscriptionName, List<String>>> {
-        @Override
-        Tuple<SubscriptionName, List<String>> parse(String... args) throws Exception {
-            if (args.length < 2) {
-                throw new IllegalArgumentException("Missing required subscription and ack IDs");
-            }
-            SubscriptionName subscriptionName = SubscriptionName.create(projectId, args[0]);
-            return Tuple.of(subscriptionName, Arrays.asList(Arrays.copyOfRange(args, 1, args.length)));
-        }
-
-        @Override
-        public String params() {
-            return "<subscription> <ackId>+";
         }
     }
 
