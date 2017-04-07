@@ -27,10 +27,10 @@ import java.net.URL;
 
 public class MetadataConfig {
 
+  private static final String metadataUrl = "http://metadata/computeMetadata/v1/";
+
   private MetadataConfig() {
   }
-
-  private static final String metadataUrl = "http://metadata/computeMetadata/v1/";
 
   public static String getProjectId() {
     return getProjectAttribute("project-id");
