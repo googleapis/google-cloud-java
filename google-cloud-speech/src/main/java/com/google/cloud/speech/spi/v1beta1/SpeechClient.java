@@ -201,7 +201,7 @@ public class SpeechClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform synchronous speech-recognition: receive results after all audio has been sent and
+   * Performs synchronous speech recognition: receive results after all audio has been sent and
    * processed.
    *
    * <p>Sample code:
@@ -222,9 +222,9 @@ public class SpeechClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param config [Required] The `config` message provides information to the recognizer that
-   *     specifies how to process the request.
-   * @param audio [Required] The audio data to be recognized.
+   * @param config &#42;Required&#42; Provides information to the recognizer that specifies how to
+   *     process the request.
+   * @param audio &#42;Required&#42; The audio data to be recognized.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final SyncRecognizeResponse syncRecognize(
@@ -237,7 +237,7 @@ public class SpeechClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform synchronous speech-recognition: receive results after all audio has been sent and
+   * Performs synchronous speech recognition: receive results after all audio has been sent and
    * processed.
    *
    * <p>Sample code:
@@ -271,7 +271,7 @@ public class SpeechClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform synchronous speech-recognition: receive results after all audio has been sent and
+   * Performs synchronous speech recognition: receive results after all audio has been sent and
    * processed.
    *
    * <p>Sample code:
@@ -304,7 +304,8 @@ public class SpeechClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform asynchronous speech-recognition: receive results via the google.longrunning.Operations
+   * Performs asynchronous speech recognition: receive results via the
+   * [google.longrunning.Operations] (/speech/reference/rest/v1beta1/operations#Operation)
    * interface. Returns either an `Operation.error` or an `Operation.response` which contains an
    * `AsyncRecognizeResponse` message.
    *
@@ -326,9 +327,9 @@ public class SpeechClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param config [Required] The `config` message provides information to the recognizer that
-   *     specifies how to process the request.
-   * @param audio [Required] The audio data to be recognized.
+   * @param config &#42;Required&#42; Provides information to the recognizer that specifies how to
+   *     process the request.
+   * @param audio &#42;Required&#42; The audio data to be recognized.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final OperationFuture<AsyncRecognizeResponse> asyncRecognizeAsync(
@@ -341,7 +342,8 @@ public class SpeechClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform asynchronous speech-recognition: receive results via the google.longrunning.Operations
+   * Performs asynchronous speech recognition: receive results via the
+   * [google.longrunning.Operations] (/speech/reference/rest/v1beta1/operations#Operation)
    * interface. Returns either an `Operation.error` or an `Operation.response` which contains an
    * `AsyncRecognizeResponse` message.
    *
@@ -377,7 +379,8 @@ public class SpeechClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform asynchronous speech-recognition: receive results via the google.longrunning.Operations
+   * Performs asynchronous speech recognition: receive results via the
+   * [google.longrunning.Operations] (/speech/reference/rest/v1beta1/operations#Operation)
    * interface. Returns either an `Operation.error` or an `Operation.response` which contains an
    * `AsyncRecognizeResponse` message.
    *
@@ -412,7 +415,8 @@ public class SpeechClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform asynchronous speech-recognition: receive results via the google.longrunning.Operations
+   * Performs asynchronous speech recognition: receive results via the
+   * [google.longrunning.Operations] (/speech/reference/rest/v1beta1/operations#Operation)
    * interface. Returns either an `Operation.error` or an `Operation.response` which contains an
    * `AsyncRecognizeResponse` message.
    *
@@ -446,7 +450,7 @@ public class SpeechClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform bidirectional streaming speech-recognition: receive results while sending audio. This
+   * Performs bidirectional streaming speech recognition: receive results while sending audio. This
    * method is only available via the gRPC API (not REST).
    *
    * <p>Sample code:

@@ -132,12 +132,16 @@ public class Subscriber extends AbstractApiService {
           });
     }
 
+    // TODO(pongad): remove this when we move to ManagedChannelBuilder
+    String defaultEndpoint = SubscriptionAdminSettings.getDefaultEndpoint();
+    int colonPos = defaultEndpoint.indexOf(':');
+
     channelBuilder =
         builder.channelBuilder.isPresent()
             ? builder.channelBuilder.get()
             : NettyChannelBuilder.forAddress(
-                    SubscriptionAdminSettings.getDefaultServiceAddress(),
-                    SubscriptionAdminSettings.getDefaultServicePort())
+                    defaultEndpoint.substring(0, colonPos),
+                    Integer.parseInt(defaultEndpoint.substring(colonPos+1)))
                 .maxMessageSize(MAX_INBOUND_MESSAGE_SIZE)
                 .flowControlWindow(5000000) // 2.5 MB
                 .negotiationType(NegotiationType.TLS)
