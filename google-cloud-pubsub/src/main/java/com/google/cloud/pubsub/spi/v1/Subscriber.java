@@ -23,6 +23,7 @@ import com.google.api.gax.core.CurrentMillisClock;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController;
 import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
@@ -106,7 +107,7 @@ public class Subscriber extends AbstractApiService {
   private ScheduledFuture<?> ackDeadlineUpdater;
   private int streamAckDeadlineSeconds;
 
-  private Subscriber(Builder builder) throws IOException {
+  private Subscriber(Builder builder) {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
     subscriptionName = builder.subscriptionName;
@@ -119,7 +120,13 @@ public class Subscriber extends AbstractApiService {
             Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
-    flowController = new FlowController(builder.flowControlSettings);
+    flowController =
+        new FlowController(
+            builder
+                .flowControlSettings
+                .toBuilder()
+                .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
+                .build());
 
     executor = builder.executorProvider.getExecutor();
     if (builder.executorProvider.shouldAutoClose()) {
@@ -328,6 +335,7 @@ public class Subscriber extends AbstractApiService {
                 ackLatencyDistribution,
                 channels.get(i),
                 flowController,
+                flowControlSettings.getMaxOutstandingElementCount(),
                 executor,
                 clock));
       }
@@ -496,7 +504,7 @@ public class Subscriber extends AbstractApiService {
      *
      * <p>It is recommended to set this value to a reasonable upper bound of the subscriber time to
      * process any message. This maximum period avoids messages to be <i>locked</i> by a subscriber
-     * in cases when the {@link AckReply} is lost.
+     * in cases when the {@link AckReplyConsumer} is never called.
      *
      * <p>A zero duration effectively disables auto deadline extensions.
      */
@@ -518,7 +526,7 @@ public class Subscriber extends AbstractApiService {
       return this;
     }
 
-    public Subscriber build() throws IOException {
+    public Subscriber build() {
       return new Subscriber(this);
     }
   }
