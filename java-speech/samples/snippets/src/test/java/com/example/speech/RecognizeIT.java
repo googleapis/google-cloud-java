@@ -61,24 +61,31 @@ public class RecognizeIT {
     String got = bout.toString();
     assertThat(got).contains("how old is the Brooklyn Bridge");
   }
-  
+
   @Test
   public void testRecognizeGcs() throws Exception {
     Recognize.syncRecognizeGcs(gcsPath);
     String got = bout.toString();
     assertThat(got).contains("how old is the Brooklyn Bridge");
   }
-  
+
   @Test
   public void testAsyncRecognizeFile() throws Exception {
     Recognize.asyncRecognizeFile(fileName);
     String got = bout.toString();
     assertThat(got).contains("how old is the Brooklyn Bridge");
   }
-  
+
   @Test
   public void testAsyncRecognizeGcs() throws Exception {
     Recognize.asyncRecognizeGcs(gcsPath);
+    String got = bout.toString();
+    assertThat(got).contains("how old is the Brooklyn Bridge");
+  }
+
+  @Test
+  public void testStreamRecognize() throws Exception {
+    Recognize.streamingRecognizeFile(fileName);
     String got = bout.toString();
     assertThat(got).contains("how old is the Brooklyn Bridge");
   }
