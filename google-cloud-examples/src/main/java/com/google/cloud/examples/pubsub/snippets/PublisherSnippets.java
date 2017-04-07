@@ -65,7 +65,7 @@ public class PublisherSnippets {
   public static void newBuilder(String projectName, String topicName) throws Exception {
     // [START newBuilder]
     TopicName topic = TopicName.create(projectName, topicName);
-    Publisher publisher = Publisher.newBuilder(topic).build();
+    Publisher publisher = Publisher.defaultBuilder(topic).build();
     try {
       // ...
     } finally {

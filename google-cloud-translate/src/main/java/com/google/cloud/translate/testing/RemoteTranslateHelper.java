@@ -52,7 +52,7 @@ public class RemoteTranslateHelper {
   /**
    * Creates a {@code RemoteTranslateHelper} object for the given API key.
    *
-   * @param apiKey API key used to issue requests to Google Translate.
+   * @param apiKey API key used to issue requests to Google Translation.
    */
   public static RemoteTranslateHelper create(String apiKey) {
     HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();

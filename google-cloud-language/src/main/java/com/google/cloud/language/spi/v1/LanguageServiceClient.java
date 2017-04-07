@@ -238,8 +238,8 @@ public class LanguageServiceClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Finds named entities (currently finds proper names) in the text, entity types, salience,
-   * mentions for each entity, and other properties.
+   * Finds named entities (currently proper names and common nouns) in the text along with entity
+   * types, salience, mentions for each entity, and other properties.
    *
    * <p>Sample code:
    *
@@ -268,8 +268,8 @@ public class LanguageServiceClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Finds named entities (currently finds proper names) in the text, entity types, salience,
-   * mentions for each entity, and other properties.
+   * Finds named entities (currently proper names and common nouns) in the text along with entity
+   * types, salience, mentions for each entity, and other properties.
    *
    * <p>Sample code:
    *
@@ -294,8 +294,8 @@ public class LanguageServiceClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Finds named entities (currently finds proper names) in the text, entity types, salience,
-   * mentions for each entity, and other properties.
+   * Finds named entities (currently proper names and common nouns) in the text along with entity
+   * types, salience, mentions for each entity, and other properties.
    *
    * <p>Sample code:
    *

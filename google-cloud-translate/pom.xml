@@ -4,15 +4,15 @@
   <artifactId>google-cloud-translate</artifactId>
   <version>${beta.version}</version>
   <packaging>jar</packaging>
-  <name>Google Cloud Translate</name>
+  <name>Google Cloud Translation</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-translate</url>
   <description>
-    Java idiomatic client for Google Translate.
+    Java idiomatic client for Google Translation.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.11.2-alpha-SNAPSHOT</version>
+    <version>0.12.1-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-translate</site.installationModule>

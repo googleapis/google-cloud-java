@@ -297,8 +297,8 @@ public class TopicAdminClient implements AutoCloseable {
    * @param messages The messages to publish.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  @Deprecated
-  public final PublishResponse publish(TopicName topic, List<PubsubMessage> messages) {
+  /* package-private */ final PublishResponse publish(
+      TopicName topic, List<PubsubMessage> messages) {
 
     PublishRequest request =
         PublishRequest.newBuilder().setTopicWithTopicName(topic).addAllMessages(messages).build();
@@ -332,8 +332,7 @@ public class TopicAdminClient implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  @Deprecated
-  public final PublishResponse publish(PublishRequest request) {
+  /* package-private */ final PublishResponse publish(PublishRequest request) {
     return publishCallable().call(request);
   }
 
@@ -363,8 +362,7 @@ public class TopicAdminClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  @Deprecated
-  public final UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
+  /* package-private */ final UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
     return publishCallable;
   }
 
