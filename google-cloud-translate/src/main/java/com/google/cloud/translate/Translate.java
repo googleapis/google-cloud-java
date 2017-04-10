@@ -22,9 +22,9 @@ import com.google.cloud.translate.spi.v2.TranslateRpc;
 import java.util.List;
 
 /**
- * An interface for Google Translate.
+ * An interface for Google Translation.
  *
- * @see <a href="https://cloud.google.com/translate/docs">Google Translate</a>
+ * @see <a href="https://cloud.google.com/translate/docs">Google Translation</a>
  */
 public interface Translate extends Service<TranslateOptions> {
 
@@ -64,7 +64,7 @@ public interface Translate extends Service<TranslateOptions> {
     }
 
     /**
-     * Returns an option for setting the source language. If not provided, Google Translate will try
+     * Returns an option for setting the source language. If not provided, Google Translation will try
      * to detect the language of the text to translate.
      *
      * @param sourceLanguage the source language code
@@ -85,7 +85,7 @@ public interface Translate extends Service<TranslateOptions> {
 
     /**
      * Sets the language translation model. You can use this parameter to take advantage of Neural
-     * Machine Translation. Possible values are {@code base} and {@code nmt}. Google Translate could
+     * Machine Translation. Possible values are {@code base} and {@code nmt}. Google Translation could
      * use a different model to translate your text, use {@link Translation#getModel()} to know
      * which model was used for translation. Please notice that you must be whitelisted to use this
      * option, otherwise translation will fail.
@@ -98,7 +98,7 @@ public interface Translate extends Service<TranslateOptions> {
   }
 
   /**
-   * Returns the list of languages supported by Google Translate. If
+   * Returns the list of languages supported by Google Translation. If
    * {@link LanguageListOption#targetLanguage(String)} is provided, {@link Language#getName()}
    * values are localized according to the provided target language. If no such option is passed,
    * {@link Language#getName()} values are localized according to

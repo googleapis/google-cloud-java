@@ -347,7 +347,7 @@ public class PublisherImplTest {
 
   @Test
   public void testPublisherGetters() throws Exception {
-    Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
+    Publisher.Builder builder = Publisher.defaultBuilder(TEST_TOPIC);
     builder.setChannelProvider(TEST_CHANNEL_PROVIDER);
     builder.setExecutorProvider(SINGLE_THREAD_EXECUTOR);
     builder.setBatchingSettings(
@@ -378,7 +378,7 @@ public class PublisherImplTest {
 
   @Test
   public void testBuilderParametersAndDefaults() {
-    Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
+    Publisher.Builder builder = Publisher.defaultBuilder(TEST_TOPIC);
     assertEquals(TEST_TOPIC, builder.topicName);
     assertEquals(Publisher.Builder.DEFAULT_EXECUTOR_PROVIDER, builder.executorProvider);
     assertEquals(
@@ -397,7 +397,7 @@ public class PublisherImplTest {
 
   @Test
   public void testBuilderInvalidArguments() {
-    Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
+    Publisher.Builder builder = Publisher.defaultBuilder(TEST_TOPIC);
 
     try {
       builder.setChannelProvider(null);
@@ -587,7 +587,7 @@ public class PublisherImplTest {
   }
 
   private Builder getTestPublisherBuilder() {
-    return Publisher.newBuilder(TEST_TOPIC)
+    return Publisher.defaultBuilder(TEST_TOPIC)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setChannelProvider(TEST_CHANNEL_PROVIDER)
         .setLongRandom(

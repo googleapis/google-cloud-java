@@ -233,10 +233,10 @@ Here is an example that clears the bucket created in Step 3 with a timeout of 5 
   RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
   ```
 
-### Testing code that uses Translate
+### Testing code that uses Translation
 
 `RemoteTranslateHelper` contains convenience methods to make is easier to run tests against the
-Google Translate service.
+Google Translation service.
 
 1. Create a test Google Cloud project.
 
