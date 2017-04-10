@@ -55,7 +55,7 @@ public class PageImpl<T> implements Page<T>, Serializable {
     private Page<T> currentPage;
 
     PageIterator(Page<T> currentPage) {
-      this.currentPageIterator = currentPage.iterator();
+      this.currentPageIterator = currentPage.getValues().iterator();
       this.currentPage = currentPage;
     }
 
@@ -66,7 +66,7 @@ public class PageImpl<T> implements Page<T>, Serializable {
         if (currentPage == null) {
           return endOfData();
         }
-        currentPageIterator = currentPage.iterator();
+        currentPageIterator = currentPage.getValues().iterator();
       }
       return currentPageIterator.next();
     }
@@ -83,8 +83,8 @@ public class PageImpl<T> implements Page<T>, Serializable {
   }
 
   @Override
-  public Iterator<T> iterator() {
-    return results == null ? Collections.<T>emptyList().iterator() : results.iterator();
+  public Iterable<T> getValues() {
+    return results == null ? Collections.<T>emptyList() : results;
   }
 
   @Override
