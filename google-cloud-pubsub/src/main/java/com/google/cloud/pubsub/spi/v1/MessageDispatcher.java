@@ -316,7 +316,7 @@ class MessageDispatcher {
     synchronized (outstandingAckHandlers) {
       outstandingAckHandlers.add(
           new ExtensionJob(
-              new Instant(clock.millis()),
+              new Instant(clock.millisTime()),
               expiration,
               INITIAL_ACK_DEADLINE_EXTENSION_SECONDS,
               ackHandlers));
