@@ -9,4 +9,5 @@
   <manual-scaling>
     <instances>1</instances>
   </manual-scaling>
+  <url-stream-handler>native</url-stream-handler>
 </appengine-web-app>
