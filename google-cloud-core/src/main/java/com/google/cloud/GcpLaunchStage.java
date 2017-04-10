@@ -34,7 +34,7 @@ public class GcpLaunchStage {
    * provisions). These features may be unstable, changed in backward-incompatible ways, and are not
    * guaranteed to be released.
    */
-  @Retention(RetentionPolicy.SOURCE)
+  @Retention(RetentionPolicy.RUNTIME)
   public @interface EarlyAccess {}
 
   /**
@@ -46,7 +46,7 @@ public class GcpLaunchStage {
    * that customers can actually use them in test environments or for limited-use tests -- just like
    * they would in normal production cases.
    */
-  @Retention(RetentionPolicy.SOURCE)
+  @Retention(RetentionPolicy.RUNTIME)
   public @interface Alpha {}
 
   /**
@@ -55,7 +55,7 @@ public class GcpLaunchStage {
    * cases. Products will be complete from a feature perspective, but may have some open outstanding
    * issues. Beta releases are suitable for limited production use cases.
    */
-  @Retention(RetentionPolicy.SOURCE)
+  @Retention(RetentionPolicy.RUNTIME)
   public @interface Beta {}
 
   /**
@@ -64,7 +64,7 @@ public class GcpLaunchStage {
    * and the <a href="https://cloud.google.com/terms/deprecation">Google Cloud Platform Subject to the Deprecation Policy</a>
    * documentation.
    */
-  @Retention(RetentionPolicy.SOURCE)
+  @Retention(RetentionPolicy.RUNTIME)
   public @interface Deprecated {}
 
   private GcpLaunchStage() {
