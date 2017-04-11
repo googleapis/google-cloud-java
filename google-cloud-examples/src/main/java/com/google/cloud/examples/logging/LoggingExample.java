@@ -39,9 +39,7 @@ import com.google.common.collect.Maps;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import sun.rmi.runtime.Log;
 
 /**
  * An example of using Stackdriver Logging.

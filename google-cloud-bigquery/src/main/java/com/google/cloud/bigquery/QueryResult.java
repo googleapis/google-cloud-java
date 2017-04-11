@@ -143,7 +143,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("rows", this)
+        .add("rows", getValues())
         .add("cacheHit", cacheHit)
         .add("schema", schema)
         .add("totalBytesProcessed", totalBytesProcessed)

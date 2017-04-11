@@ -22,7 +22,7 @@
 
 package com.google.cloud.examples.logging.snippets;
 
-import com.google.cloud.AsyncPage;
+import com.google.api.gax.core.AsyncPage;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.api.gax.core.Page;
@@ -42,12 +42,10 @@ import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import sun.rmi.runtime.Log;
 
 public class LoggingSnippets {
 

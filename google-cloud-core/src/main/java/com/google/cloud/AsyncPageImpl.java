@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
+import com.google.api.gax.core.AsyncPage;
 import com.google.api.gax.core.Page;
 import com.google.common.base.Throwables;
 import com.google.common.util.concurrent.Uninterruptibles;
