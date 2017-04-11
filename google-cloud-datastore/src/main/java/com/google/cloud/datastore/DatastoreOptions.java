@@ -23,8 +23,8 @@ import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
+import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.HttpDatastoreRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
@@ -67,7 +67,8 @@ public class DatastoreOptions
 
     private String namespace;
 
-    private Builder() {}
+    private Builder() {
+    }
 
     private Builder(DatastoreOptions options) {
       super(options);
