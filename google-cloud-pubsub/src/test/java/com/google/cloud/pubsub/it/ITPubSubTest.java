@@ -21,7 +21,6 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.core.SettableApiFuture;
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.pubsub.spi.v1.AckReply;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Publisher;
@@ -116,9 +115,9 @@ public class ITPubSubTest {
                   public void receiveMessage(
                       final PubsubMessage message, final AckReplyConsumer consumer) {
                     if (received.set(message)) {
-                      consumer.accept(AckReply.ACK);
+                      consumer.ack();
                     } else {
-                      consumer.accept(AckReply.NACK);
+                      consumer.nack();
                     }
                   }
                 })

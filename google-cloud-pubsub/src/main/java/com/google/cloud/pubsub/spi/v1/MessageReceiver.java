@@ -22,7 +22,8 @@ import com.google.pubsub.v1.PubsubMessage;
 public interface MessageReceiver {
   /**
    * Called when a message is received by the subscriber. The implementation must arrange for {@link
-   * AckReplyConsumer#accept} to be called after processing the {@code message}.
+   * AckReplyConsumer#ack()} or {@link
+   * AckReplyConsumer#nack()} to be called after processing the {@code message}.
    *
    * <p>This {@code MessageReceiver} passes all messages to a {@code BlockingQueue}.
    * This method can be called concurrently from multiple threads,
@@ -34,9 +35,9 @@ public interface MessageReceiver {
    * MessageReceiver receiver = new MessageReceiver() {
    *   public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
    *     if (blockingQueue.offer(message)) {
-   *       consumer.accept(AckReply.ACK, null);
+   *       consumer.ack();
    *     } else {
-   *       consumer.accept(AckReply.NACK, null);
+   *       consumer.nack();
    *     }
    *   }
    * };
