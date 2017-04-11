@@ -22,10 +22,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.AsyncPage;
+import com.google.api.gax.core.AsyncPage;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.logging.Logging.EntryListOption;
 import com.google.cloud.logging.Logging.SortingField;
 import com.google.cloud.logging.Logging.SortingOrder;
@@ -202,7 +202,7 @@ public abstract class BaseSystemTest {
   @Test
   public void testListMonitoredResourceDescriptors() {
     Iterator<MonitoredResourceDescriptor> iterator =
-        logging().listMonitoredResourceDescriptors(Logging.ListOption.pageSize(1)).iterateAll();
+        logging().listMonitoredResourceDescriptors(Logging.ListOption.pageSize(1)).iterateAll().iterator();
     int count = 0;
     while (iterator.hasNext()) {
       assertNotNull(iterator.next().getType());
@@ -215,7 +215,7 @@ public abstract class BaseSystemTest {
   public void testListMonitoredResourceDescriptorsAsync()
       throws ExecutionException, InterruptedException {
     Iterator<MonitoredResourceDescriptor> iterator = logging()
-        .listMonitoredResourceDescriptorsAsync(Logging.ListOption.pageSize(1)).get().iterateAll();
+        .listMonitoredResourceDescriptorsAsync(Logging.ListOption.pageSize(1)).get().iterateAll().iterator();
     int count = 0;
     while (iterator.hasNext()) {
       assertNotNull(iterator.next().getType());
@@ -357,11 +357,11 @@ public abstract class BaseSystemTest {
     logging().write(ImmutableList.of(secondEntry));
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     Page<LogEntry> page = logging().listLogEntries(options);
-    while (Iterators.size(page.iterateAll()) < 2) {
+    while (Iterators.size(page.iterateAll().iterator()) < 2) {
       Thread.sleep(500);
       page = logging().listLogEntries(options);
     }
-    Iterator<LogEntry> iterator = page.iterateAll();
+    Iterator<LogEntry> iterator = page.iterateAll().iterator();
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
     assertEquals(firstPayload, entry.getPayload());
@@ -387,11 +387,11 @@ public abstract class BaseSystemTest {
     options = new EntryListOption[]{EntryListOption.filter(filter),
         EntryListOption.sortOrder(SortingField.TIMESTAMP, SortingOrder.DESCENDING)};
     page = logging().listLogEntries(options);
-    while (Iterators.size(page.iterateAll()) < 2) {
+    while (Iterators.size(page.iterateAll().iterator()) < 2) {
       Thread.sleep(500);
       page = logging().listLogEntries(options);
     }
-    iterator = page.iterateAll();
+    iterator = page.iterateAll().iterator();
     Long lastTimestamp = iterator.next().getTimestamp();
     while (iterator.hasNext()) {
       assertTrue(iterator.next().getTimestamp() <= lastTimestamp);
@@ -415,11 +415,11 @@ public abstract class BaseSystemTest {
         WriteOption.logName(logName)).get();
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     AsyncPage<LogEntry> page = logging().listLogEntriesAsync(options).get();
-    while (Iterators.size(page.iterateAll()) < 2) {
+    while (Iterators.size(page.iterateAll().iterator()) < 2) {
       Thread.sleep(500);
       page = logging().listLogEntriesAsync(options).get();
     }
-    Iterator<LogEntry> iterator = page.iterateAll();
+    Iterator<LogEntry> iterator = page.iterateAll().iterator();
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
     assertEquals(firstPayload, entry.getPayload());
@@ -468,11 +468,11 @@ public abstract class BaseSystemTest {
     logger.setLevel(Level.INFO);
     logger.info("Message");
     Iterator<LogEntry> iterator =
-        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
+        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
     while (!iterator.hasNext()) {
       Thread.sleep(500L);
       iterator =
-          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
+          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
     }
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
@@ -510,11 +510,11 @@ public abstract class BaseSystemTest {
     logger.setLevel(Level.WARNING);
     logger.warning("Message");
     Iterator<LogEntry> iterator =
-        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
+        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
     while (!iterator.hasNext()) {
       Thread.sleep(500L);
       iterator =
-          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
+          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
     }
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
