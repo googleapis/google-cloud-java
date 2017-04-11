@@ -65,6 +65,8 @@ public class SubscriberImplTest {
   private static final PubsubMessage TEST_MESSAGE =
       PubsubMessage.newBuilder().setMessageId("1").build();
 
+  private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECS = 2;
+
   @Parameters
   public static Collection<Object[]> data() {
     return Arrays.asList(new Object[][] {{false}});
@@ -293,7 +295,7 @@ public class SubscriberImplTest {
         new Function<String, ModifyAckDeadline>() {
           @Override
           public ModifyAckDeadline apply(String ack) {
-            return new ModifyAckDeadline(ack, 2); // 2 seconds is the initial mod ack deadline
+            return new ModifyAckDeadline(ack, INITIAL_ACK_DEADLINE_EXTENSION_SECS);
           }
         });
 
@@ -341,26 +343,27 @@ public class SubscriberImplTest {
         new Function<String, ModifyAckDeadline>() {
           @Override
           public ModifyAckDeadline apply(String ack) {
-            return new ModifyAckDeadline(ack, 2); // 2 seconds is the initial mod ack deadline
+            return new ModifyAckDeadline(ack, INITIAL_ACK_DEADLINE_EXTENSION_SECS);
           }
         });
 
-    int timeIncrement = 4; // Second time increment
+    int timeIncrementSecs = INITIAL_ACK_DEADLINE_EXTENSION_SECS * 2; // Second time increment
 
-    while (fakeExecutor.getClock().millisTime() + (timeIncrement * 1000) < 1000 * 60 * 60) {
-      fakeExecutor.advanceTime(Duration.standardSeconds(timeIncrement));
+    // Check ack deadline extensions while the current time has not reached 60 minutes
+    while (fakeExecutor.getClock().millisTime() + (timeIncrementSecs * 1000) < 1000 * 60 * 60) {
+      fakeExecutor.advanceTime(Duration.standardSeconds(timeIncrementSecs));
 
-      final int expectedIncrement = Math.min(600, timeIncrement);
+      final int expectedIncrementSecs = Math.min(600, timeIncrementSecs);
       assertEquivalentWithTransformation(
           testAckIdsBatch,
           fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(3),
           new Function<String, ModifyAckDeadline>() {
             @Override
             public ModifyAckDeadline apply(String ack) {
-              return new ModifyAckDeadline(ack, expectedIncrement);
+              return new ModifyAckDeadline(ack, expectedIncrementSecs);
             }
           });
-      timeIncrement *= 2;
+      timeIncrementSecs *= 2; 
     }
 
     // No more modify ack deadline extension should be triggered at this point
