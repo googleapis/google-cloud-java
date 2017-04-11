@@ -20,9 +20,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * A qualifier indicating what level of access and support can be expected of a particualr Google
+ * A qualifier indicating what level of access and support can be expected of a particular Google
  * Cloud Platform feature. The "GeneralAvailability" qualifier is not provided since the vast
- * majority of features are in this category.
+ * majority of features are in this category. Note that features may be in a later launch stage
+ * than the client library annotation indicates.
  *
  * <p>See more at the <a href="https://cloud.google.com/terms/launch-stages">Launch Stages Documentation</a>.
  */
