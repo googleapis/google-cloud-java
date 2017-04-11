@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-/** This class contains snippets for the {@link SubscriberClient} interface. */
+/** This class contains snippets for the {@link SubscriptionAdminClient} interface. */
 
 package com.google.cloud.examples.pubsub.snippets;
 
@@ -22,8 +22,8 @@ import com.google.cloud.Identity;
 import com.google.cloud.Role;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
-import com.google.cloud.pubsub.spi.v1.SubscriberClient;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
+import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -39,12 +39,12 @@ import edu.emory.mathcs.backport.java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-/** This class contains a number of snippets for the {@link SubscriberClient} interface. */
-public class SubscriberClientSnippets {
+/** This class contains a number of snippets for the {@link SubscriptionAdminClient} interface. */
+public class SubscriptionAdminClientSnippets {
 
   private final String projectId;
 
-  public SubscriberClientSnippets() {
+  public SubscriptionAdminClientSnippets() {
     this.projectId = ServiceOptions.getDefaultProjectId();
   }
 
@@ -53,97 +53,107 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of creating a pull subscription for a topic. */
-  public Subscription createSubscription(String topic, String subscriptionId) throws Exception {
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      // [START createSubscription]
-      TopicName topicName = TopicName.create(projectId, topic);
+  public Subscription createSubscription(String topicId, String subscriptionId) throws Exception {
+    // [START createSubscription]
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+      // eg. projectId = "my-test-project", topicId = "my-test-topic"
+      TopicName topicName = TopicName.create(projectId, topicId);
+      // eg. subscriptionId = "my-test-subscription"
       SubscriptionName subscriptionName =
           SubscriptionName.create(projectId, subscriptionId);
+      // create a pull subscription with default acknowledgement deadline
       Subscription subscription =
-          subscriberClient.createSubscription(
+          subscriptionAdminClient.createSubscription(
               subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
-      // [END createSubscription]
       return subscription;
     }
+    // [END createSubscription]
   }
 
-  /** Example of pulling a maximum number of messages from a subscription. */
-  public PullResponse pull(String subscriptionId) throws Exception {
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      // [START pull]
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
-      PullResponse response = subscriberClient.pull(subscriptionName, true, 100);
-      for (ReceivedMessage message : response.getReceivedMessagesList()) {
-        // do something with message, then ack or nack
-        subscriberClient.acknowledge(
-            subscriptionName, Collections.singletonList(message.getAckId()));
-      }
-      // [END pull]
-      return response;
+  /** Example of creating a subscription with a push endpoint. */
+  public Subscription createSubscriptionWithPushEndpoint(String topicId, String subscriptionId, String endpoint)
+          throws Exception {
+    // [START createSubscriptionWithPushEndpoint]
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+      TopicName topicName = TopicName.create(projectId, topicId);
+      SubscriptionName subscriptionName =
+              SubscriptionName.create(projectId, subscriptionId);
+
+      // eg. endpoint = "https://my-test-project.appspot.com/push"
+      PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
+
+      // acknowledgement deadline in seconds for the message received over the push endpoint
+      int ackDeadlineInSeconds = 10;
+
+      Subscription subscription =
+              subscriptionAdminClient.createSubscription(
+                      subscriptionName, topicName, pushConfig, ackDeadlineInSeconds);
+      return subscription;
     }
+    // [END createSubscriptionWithPushEndpoint]
   }
 
   /** Example of replacing the push configuration of a subscription, setting the push endpoint. */
   public void replacePushConfig(String subscriptionId, String endpoint) throws Exception {
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      // [START replacePushConfig]
+    // [START replacePushConfig]
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
       PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
-      subscriberClient.modifyPushConfig(subscriptionName, pushConfig);
-      // [END replacePushConfig]
+      subscriptionAdminClient.modifyPushConfig(subscriptionName, pushConfig);
     }
+    // [END replacePushConfig]
   }
 
   /** Example of listing subscriptions. */
   public ListSubscriptionsPagedResponse listSubscriptions() throws Exception {
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      // [START listSubscriptions]
+    // [START listSubscriptions]
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       ListSubscriptionsRequest listSubscriptionsRequest =
           ListSubscriptionsRequest.newBuilder()
               .setProjectWithProjectName(ProjectName.create(projectId))
               .build();
       ListSubscriptionsPagedResponse response =
-          subscriberClient.listSubscriptions(listSubscriptionsRequest);
+          subscriptionAdminClient.listSubscriptions(listSubscriptionsRequest);
       Iterable<Subscription> subscriptions = response.iterateAllElements();
       for (Subscription subscription : subscriptions) {
         // do something with the subscription
       }
-      // [END listSubscriptions]
       return response;
     }
+    // [END listSubscriptions]
   }
 
   /** Example of deleting a subscription. */
   public SubscriptionName deleteSubscription(String subscriptionId) throws Exception {
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      // [START deleteSubscription]
+    // [START deleteSubscription]
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
-      subscriberClient.deleteSubscription(subscriptionName);
-      // [END deleteSubscription]
+      subscriptionAdminClient.deleteSubscription(subscriptionName);
       return subscriptionName;
     }
+    // [END deleteSubscription]
   }
 
   /** Example of getting a subscription policy. */
   public Policy getSubscriptionPolicy(String subscriptionId) throws Exception {
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      // [START getSubscriptionPolicy]
+    // [START getSubscriptionPolicy]
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
-      Policy policy = subscriberClient.getIamPolicy(subscriptionName.toString());
+      Policy policy = subscriptionAdminClient.getIamPolicy(subscriptionName.toString());
       if (policy == null) {
         // subscription was not found
       }
-      // [END getSubscriptionPolicy]
       return policy;
     }
+    // [END getSubscriptionPolicy]
   }
 
   /** Example of replacing a subscription policy. */
   public Policy replaceSubscriptionPolicy(String subscriptionId) throws Exception {
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      // [START replaceSubscriptionPolicy]
+    // [START replaceSubscriptionPolicy]
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
-      Policy policy = subscriberClient.getIamPolicy(subscriptionName.toString());
+      Policy policy = subscriptionAdminClient.getIamPolicy(subscriptionName.toString());
       // Create a role => members binding
       Binding binding =
           Binding.newBuilder()
@@ -153,35 +163,35 @@ public class SubscriberClientSnippets {
       //Update policy
       Policy updatedPolicy = policy.toBuilder().addBindings(binding).build();
 
-      updatedPolicy = subscriberClient.setIamPolicy(subscriptionName.toString(), updatedPolicy);
-      // [END replaceSubscriptionPolicy]
+      updatedPolicy = subscriptionAdminClient.setIamPolicy(subscriptionName.toString(), updatedPolicy);
       return updatedPolicy;
     }
+    // [END replaceSubscriptionPolicy]
   }
 
   /** Example of testing whether the caller has the provided permissions on a subscription. */
   public TestIamPermissionsResponse testSubscriptionPermissions(String subscriptionId)
       throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      // [START testSubscriptionPermissions]
+    // [START testSubscriptionPermissions]
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       List<String> permissions = new LinkedList<>();
       permissions.add("pubsub.subscriptions.get");
       SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
       TestIamPermissionsResponse testedPermissions =
-          publisherClient.testIamPermissions(subscriptionName.toString(), permissions);
-      // [END testSubscriptionPermissions]
+          topicAdminClient.testIamPermissions(subscriptionName.toString(), permissions);
       return testedPermissions;
     }
+    // [END testSubscriptionPermissions]
   }
 
   /** Example of getting a subscription. */
   public Subscription getSubscription(String subscriptionId) throws Exception {
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      // [START getSubscription]
+    // [START getSubscription]
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
-      Subscription subscription = subscriberClient.getSubscription(subscriptionName);
-      // [END getSubscription]
+      Subscription subscription = subscriptionAdminClient.getSubscription(subscriptionName);
       return subscription;
     }
+    // [END getSubscription]
   }
 }

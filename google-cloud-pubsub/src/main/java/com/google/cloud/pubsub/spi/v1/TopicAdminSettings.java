@@ -19,10 +19,12 @@ import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubs
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
 import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.BatchedRequestIssuer;
 import com.google.api.gax.grpc.BatchingCallSettings;
@@ -72,7 +74,7 @@ import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link PublisherClient}.
+ * Settings class to configure an instance of {@link TopicAdminClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -88,23 +90,17 @@ import org.joda.time.Duration;
  *
  * <pre>
  * <code>
- * PublisherSettings.Builder publisherSettingsBuilder =
- *     PublisherSettings.defaultBuilder();
- * publisherSettingsBuilder.createTopicSettings().getRetrySettingsBuilder()
+ * TopicAdminSettings.Builder topicAdminSettingsBuilder =
+ *     TopicAdminSettings.defaultBuilder();
+ * topicAdminSettingsBuilder.createTopicSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.standardSeconds(30));
- * PublisherSettings publisherSettings = publisherSettingsBuilder.build();
+ * TopicAdminSettings topicAdminSettings = topicAdminSettingsBuilder.build();
  * </code>
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
-public class PublisherSettings extends ClientSettings {
-  /** The default address of the service. */
-  private static final String DEFAULT_SERVICE_ADDRESS = "pubsub.googleapis.com";
-
-  /** The default port of the service. */
-  private static final int DEFAULT_SERVICE_PORT = 443;
-
+public class TopicAdminSettings extends ClientSettings {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -114,6 +110,11 @@ public class PublisherSettings extends ClientSettings {
 
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
+
+  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String META_VERSION_KEY = "artifact.version";
+
+  private static String gapicVersion;
 
   private final SimpleCallSettings<Topic, Topic> createTopicSettings;
   private final BatchingCallSettings<PublishRequest, PublishResponse> publishSettings;
@@ -185,14 +186,9 @@ public class PublisherSettings extends ClientSettings {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /** Returns the default service address. */
-  public static String getDefaultServiceAddress() {
-    return DEFAULT_SERVICE_ADDRESS;
-  }
-
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return DEFAULT_SERVICE_PORT;
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "pubsub.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -208,15 +204,19 @@ public class PublisherSettings extends ClientSettings {
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
-        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-        .setPort(DEFAULT_SERVICE_PORT)
+        .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
 
   private static String getGapicVersion() {
-    String packageVersion = PublisherSettings.class.getPackage().getImplementationVersion();
-    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
+    if (gapicVersion == null) {
+      gapicVersion =
+          PropertiesProvider.loadProperty(
+              TopicAdminSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
+    }
+    return gapicVersion;
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -234,7 +234,7 @@ public class PublisherSettings extends ClientSettings {
     return new Builder(this);
   }
 
-  private PublisherSettings(Builder settingsBuilder) throws IOException {
+  private TopicAdminSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder.getExecutorProvider(), settingsBuilder.getChannelProvider());
 
     createTopicSettings = settingsBuilder.createTopicSettings().build();
@@ -360,8 +360,8 @@ public class PublisherSettings extends ClientSettings {
   private static final BatchingDescriptor<PublishRequest, PublishResponse> PUBLISH_BATCHING_DESC =
       new BatchingDescriptor<PublishRequest, PublishResponse>() {
         @Override
-        public String getBatchPartitionKey(PublishRequest request) {
-          return request.getTopic() + "|";
+        public PartitionKey getBatchPartitionKey(PublishRequest request) {
+          return new PartitionKey(request.getTopic());
         }
 
         @Override
@@ -423,7 +423,7 @@ public class PublisherSettings extends ClientSettings {
         }
       };
 
-  /** Builder for PublisherSettings. */
+  /** Builder for TopicAdminSettings. */
   public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
@@ -456,7 +456,13 @@ public class PublisherSettings extends ClientSettings {
           "one_plus_delivery",
           Sets.immutableEnumSet(
               Lists.<Status.Code>newArrayList(
-                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
+                  Status.Code.CANCELLED,
+                  Status.Code.UNKNOWN,
+                  Status.Code.DEADLINE_EXCEEDED,
+                  Status.Code.RESOURCE_EXHAUSTED,
+                  Status.Code.ABORTED,
+                  Status.Code.INTERNAL,
+                  Status.Code.UNAVAILABLE)));
       definitions.put(
           "non_idempotent",
           Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
@@ -593,7 +599,7 @@ public class PublisherSettings extends ClientSettings {
       return builder;
     }
 
-    private Builder(PublisherSettings settings) {
+    private Builder(TopicAdminSettings settings) {
       super(settings);
 
       createTopicSettings = settings.createTopicSettings.toBuilder();
@@ -694,8 +700,8 @@ public class PublisherSettings extends ClientSettings {
     }
 
     @Override
-    public PublisherSettings build() throws IOException {
-      return new PublisherSettings(this);
+    public TopicAdminSettings build() throws IOException {
+      return new TopicAdminSettings(this);
     }
   }
 }

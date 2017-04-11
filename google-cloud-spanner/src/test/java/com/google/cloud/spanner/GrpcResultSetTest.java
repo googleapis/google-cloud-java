@@ -462,6 +462,7 @@ public class GrpcResultSetTest {
     resultSet.close();
   }
 
+  @Test
   public void profileResultInExtraFinalResultSet() {
     Map<String, com.google.protobuf.Value> statsMap =
         ImmutableMap.of(

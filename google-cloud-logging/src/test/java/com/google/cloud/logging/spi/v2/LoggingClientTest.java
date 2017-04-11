@@ -113,7 +113,7 @@ public class LoggingClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteLogExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockLoggingServiceV2.addException(exception);
 
     try {
@@ -122,7 +122,7 @@ public class LoggingClientTest {
       client.deleteLog(logName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -154,7 +154,7 @@ public class LoggingClientTest {
   @Test
   @SuppressWarnings("all")
   public void writeLogEntriesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockLoggingServiceV2.addException(exception);
 
     try {
@@ -166,7 +166,7 @@ public class LoggingClientTest {
       client.writeLogEntries(logName, resource, labels, entries);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -206,7 +206,7 @@ public class LoggingClientTest {
   @Test
   @SuppressWarnings("all")
   public void listLogEntriesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockLoggingServiceV2.addException(exception);
 
     try {
@@ -217,7 +217,7 @@ public class LoggingClientTest {
       client.listLogEntries(resourceNames, filter, orderBy);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -252,7 +252,7 @@ public class LoggingClientTest {
   @Test
   @SuppressWarnings("all")
   public void listLogsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockLoggingServiceV2.addException(exception);
 
     try {
@@ -261,7 +261,7 @@ public class LoggingClientTest {
       client.listLogs(parent);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }

@@ -28,9 +28,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * An example of using Google Translate.
+ * An example of using Google Translation.
  *
- * <p>This example demonstrates a simple/typical Translate usage.
+ * <p>This example demonstrates a simple/typical Translation usage.
  *
  * <p>See the
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">

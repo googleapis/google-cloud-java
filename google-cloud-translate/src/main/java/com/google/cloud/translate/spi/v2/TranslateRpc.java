@@ -52,7 +52,7 @@ public interface TranslateRpc extends ServiceRpc {
   }
 
   /**
-   * Returns a list of the languages supported by Google Translate.
+   * Returns a list of the languages supported by Google Translation.
    *
    * @param optionMap options to listing language translations
    */

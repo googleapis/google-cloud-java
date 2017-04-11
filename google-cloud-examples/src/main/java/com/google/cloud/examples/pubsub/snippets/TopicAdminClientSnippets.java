@@ -21,7 +21,7 @@ import com.google.cloud.Role;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -33,12 +33,12 @@ import com.google.pubsub.v1.TopicName;
 import java.util.LinkedList;
 import java.util.List;
 
-/** This class contains a number of snippets for the {@link PublisherClient} interface. */
-public class PublisherClientSnippets {
+/** This class contains a number of snippets for the {@link TopicAdminClient} interface. */
+public class TopicAdminClientSnippets {
 
   private final String projectId;
 
-  public PublisherClientSnippets() {
+  public TopicAdminClientSnippets() {
     this.projectId = ServiceOptions.getDefaultProjectId();
   }
 
@@ -48,85 +48,85 @@ public class PublisherClientSnippets {
 
   /** Example of creating a topic. */
   public Topic createTopic(String topicId) throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      // [START createTopic]
+    // [START createTopic]
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
-      Topic topic = publisherClient.createTopic(topicName);
-      // [END createTopic]
+      Topic topic = topicAdminClient.createTopic(topicName);
       return topic;
     }
+    // [END createTopic]
   }
 
   /** Example of listing topics.  */
   public ListTopicsPagedResponse listTopics() throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      // [START listTopics]
+    // [START listTopics]
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       ListTopicsRequest listTopicsRequest =
           ListTopicsRequest.newBuilder()
               .setProjectWithProjectName(ProjectName.create(projectId))
               .build();
-      ListTopicsPagedResponse response = publisherClient.listTopics(listTopicsRequest);
+      ListTopicsPagedResponse response = topicAdminClient.listTopics(listTopicsRequest);
       Iterable<Topic> topics = response.iterateAllElements();
       for (Topic topic : topics) {
         // do something with the topic
       }
-      // [END listTopics]
       return response;
     }
+    // [END listTopics]
   }
 
   /** Example of listing topics for a subscription. */
   public ListTopicSubscriptionsPagedResponse listTopicSubscriptions(String topicId)
       throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      // [START listTopicSubscriptions]
+    // [START listTopicSubscriptions]
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
       ListTopicSubscriptionsRequest request =
           ListTopicSubscriptionsRequest.newBuilder()
               .setTopicWithTopicName(topicName)
               .build();
       ListTopicSubscriptionsPagedResponse response =
-          publisherClient.listTopicSubscriptions(request);
+          topicAdminClient.listTopicSubscriptions(request);
       Iterable<String> subscriptionNames = response.iterateAllElements();
       for (String subscriptionName : subscriptionNames) {
         // do something with the subscription name
       }
-      // [END listTopicSubscriptions]
       return response;
     }
+    // [END listTopicSubscriptions]
   }
 
   /** Example of deleting a topic. */
   public TopicName deleteTopic(String topicId) throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      // [START deleteTopic]
+    // [START deleteTopic]
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
-      publisherClient.deleteTopic(topicName);
-      // [END deleteTopic]
+      topicAdminClient.deleteTopic(topicName);
       return topicName;
     }
+    // [END deleteTopic]
   }
 
   /** Example of getting a topic policy. */
   public Policy getTopicPolicy(String topicId) throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      // [START getTopicPolicy]
+    // [START getTopicPolicy]
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
-      Policy policy = publisherClient.getIamPolicy(topicName.toString());
+      Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
       if (policy == null) {
         // topic iam policy was not found
       }
-      // [END getTopicPolicy]
       return policy;
     }
+    // [END getTopicPolicy]
   }
 
   /** Example of replacing a topic policy. */
   public Policy replaceTopicPolicy(String topicId) throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      // [START replaceTopicPolicy]
+    // [START replaceTopicPolicy]
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       String topicName = TopicName.create(projectId, topicId).toString();
-      Policy policy = publisherClient.getIamPolicy(topicName);
+      Policy policy = topicAdminClient.getIamPolicy(topicName);
       // add role -> members binding
       Binding binding =
           Binding.newBuilder()
@@ -135,35 +135,35 @@ public class PublisherClientSnippets {
               .build();
       // create updated policy
       Policy updatedPolicy = Policy.newBuilder(policy).addBindings(binding).build();
-      updatedPolicy = publisherClient.setIamPolicy(topicName, updatedPolicy);
-      // [END replaceTopicPolicy]
+      updatedPolicy = topicAdminClient.setIamPolicy(topicName, updatedPolicy);
       return updatedPolicy;
     }
+    // [END replaceTopicPolicy]
   }
 
   /** Example of testing whether the caller has the provided permissions on a topic.
    * Only viewer, editor or admin/owner can view results of pubsub.topics.get  */
   public TestIamPermissionsResponse testTopicPermissions(String topicId) throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      // [START testTopicPermissions]
+    // [START testTopicPermissions]
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       List<String> permissions = new LinkedList<>();
       permissions.add("pubsub.topics.get");
       TopicName topicName = TopicName.create(projectId, topicId);
       TestIamPermissionsResponse testedPermissions =
-          publisherClient.testIamPermissions(topicName.toString(), permissions);
-      // [END testTopicPermissions]
+          topicAdminClient.testIamPermissions(topicName.toString(), permissions);
       return testedPermissions;
     }
+    // [END testTopicPermissions]
   }
 
   /** Example of getting a topic. */
   public Topic getTopic(String topicId) throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      // [START getTopic]
+    // [START getTopic]
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
-      Topic topic = publisherClient.getTopic(topicName);
-      // [END createTopic]
+      Topic topic = topicAdminClient.getTopic(topicName);
       return topic;
     }
+    // [END getTopic]
   }
 }

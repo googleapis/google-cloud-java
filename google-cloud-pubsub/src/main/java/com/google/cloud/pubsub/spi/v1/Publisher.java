@@ -509,7 +509,7 @@ public class Publisher {
    * String projectName = "my_project";
    * String topicName = "my_topic";
    * TopicName topic = TopicName.create(projectName, topicName);
-   * Publisher publisher = Publisher.newBuilder(topic).build();
+   * Publisher publisher = Publisher.defaultBuilder(topic).build();
    * try {
    *   // ...
    * } finally {
@@ -519,7 +519,7 @@ public class Publisher {
    * }</pre>
    *
    */
-  public static Builder newBuilder(TopicName topicName) {
+  public static Builder defaultBuilder(TopicName topicName) {
     return new Builder(topicName);
   }
 
@@ -575,7 +575,7 @@ public class Publisher {
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
     LongRandom longRandom = DEFAULT_LONG_RANDOM;
 
-    ChannelProvider channelProvider = PublisherSettings.defaultChannelProviderBuilder().build();
+    ChannelProvider channelProvider = TopicAdminSettings.defaultChannelProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
 
     private Builder(TopicName topic) {

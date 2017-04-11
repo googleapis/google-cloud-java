@@ -57,12 +57,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class PublisherClientTest {
+public class TopicAdminClientTest {
   private static MockPublisher mockPublisher;
   private static MockIAMPolicy mockIAMPolicy;
   private static MockSubscriber mockSubscriber;
   private static MockServiceHelper serviceHelper;
-  private PublisherClient client;
+  private TopicAdminClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -84,11 +84,11 @@ public class PublisherClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
-    PublisherSettings settings =
-        PublisherSettings.defaultBuilder()
+    TopicAdminSettings settings =
+        TopicAdminSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    client = PublisherClient.create(settings);
+    client = TopicAdminClient.create(settings);
   }
 
   @After
@@ -118,7 +118,7 @@ public class PublisherClientTest {
   @Test
   @SuppressWarnings("all")
   public void createTopicExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockPublisher.addException(exception);
 
     try {
@@ -127,7 +127,7 @@ public class PublisherClientTest {
       client.createTopic(name);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -159,7 +159,7 @@ public class PublisherClientTest {
   @Test
   @SuppressWarnings("all")
   public void publishExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockPublisher.addException(exception);
 
     try {
@@ -171,7 +171,7 @@ public class PublisherClientTest {
       client.publish(topic, messages);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -197,7 +197,7 @@ public class PublisherClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTopicExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockPublisher.addException(exception);
 
     try {
@@ -206,7 +206,7 @@ public class PublisherClientTest {
       client.getTopic(topic);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -241,7 +241,7 @@ public class PublisherClientTest {
   @Test
   @SuppressWarnings("all")
   public void listTopicsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockPublisher.addException(exception);
 
     try {
@@ -250,7 +250,7 @@ public class PublisherClientTest {
       client.listTopics(project);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -291,7 +291,7 @@ public class PublisherClientTest {
   @Test
   @SuppressWarnings("all")
   public void listTopicSubscriptionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockPublisher.addException(exception);
 
     try {
@@ -300,7 +300,7 @@ public class PublisherClientTest {
       client.listTopicSubscriptions(topic);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -324,7 +324,7 @@ public class PublisherClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteTopicExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockPublisher.addException(exception);
 
     try {
@@ -333,7 +333,7 @@ public class PublisherClientTest {
       client.deleteTopic(topic);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -362,7 +362,7 @@ public class PublisherClientTest {
   @Test
   @SuppressWarnings("all")
   public void setIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockIAMPolicy.addException(exception);
 
     try {
@@ -372,7 +372,7 @@ public class PublisherClientTest {
       client.setIamPolicy(formattedResource, policy);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -399,7 +399,7 @@ public class PublisherClientTest {
   @Test
   @SuppressWarnings("all")
   public void getIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockIAMPolicy.addException(exception);
 
     try {
@@ -408,7 +408,7 @@ public class PublisherClientTest {
       client.getIamPolicy(formattedResource);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 
@@ -436,7 +436,7 @@ public class PublisherClientTest {
   @Test
   @SuppressWarnings("all")
   public void testIamPermissionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockIAMPolicy.addException(exception);
 
     try {
@@ -446,7 +446,7 @@ public class PublisherClientTest {
       client.testIamPermissions(formattedResource, permissions);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
     }
   }
 }

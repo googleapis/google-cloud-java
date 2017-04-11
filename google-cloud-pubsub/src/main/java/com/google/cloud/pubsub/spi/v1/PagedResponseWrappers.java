@@ -22,12 +22,15 @@ import com.google.api.gax.grpc.UnaryCallable;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.protobuf.ExperimentalApi;
+import com.google.pubsub.v1.ListSnapshotsRequest;
+import com.google.pubsub.v1.ListSnapshotsResponse;
 import com.google.pubsub.v1.ListSubscriptionsRequest;
 import com.google.pubsub.v1.ListSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
+import com.google.pubsub.v1.Snapshot;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.Topic;
@@ -89,6 +92,18 @@ public class PagedResponseWrappers {
         PagedListDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
             pageDescriptor,
         ListSubscriptionsRequest request,
+        CallContext context) {
+      super(callable, pageDescriptor, request, context);
+    }
+  }
+
+  public static class ListSnapshotsPagedResponse
+      extends PagedListResponseImpl<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> {
+
+    public ListSnapshotsPagedResponse(
+        UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> callable,
+        PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> pageDescriptor,
+        ListSnapshotsRequest request,
         CallContext context) {
       super(callable, pageDescriptor, request, context);
     }

@@ -458,7 +458,7 @@ public class SubscriberImplTest {
   }
 
   private Builder getTestSubscriberBuilder(MessageReceiver receiver) {
-    return Subscriber.newBuilder(TEST_SUBSCRIPTION, receiver)
+    return Subscriber.defaultBuilder(TEST_SUBSCRIPTION, receiver)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setCredentials(testCredentials)
         .setChannelBuilder(testChannelBuilder)

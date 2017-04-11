@@ -25,7 +25,7 @@ import com.google.cloud.Identity;
 import com.google.cloud.Role;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.common.collect.Iterables;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -47,13 +47,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
-public class ITSubscriberClientSnippets {
+public class ITSubscriptionAdminClientSnippets {
 
   private static final String NAME_SUFFIX = UUID.randomUUID().toString();
 
   private static String projectId;
 
-  private static SubscriberClientSnippets subscriberClientSnippets;
+  private static SubscriptionAdminClientSnippets subscriptionAdminClientSnippets;
 
   private static String[] topics = {
       formatForTest("topic-1"),
@@ -73,8 +73,8 @@ public class ITSubscriberClientSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    subscriberClientSnippets = new SubscriberClientSnippets();
-    projectId = subscriberClientSnippets.getProjectId();
+    subscriptionAdminClientSnippets = new SubscriptionAdminClientSnippets();
+    projectId = subscriptionAdminClientSnippets.getProjectId();
   }
 
   @Before
@@ -82,36 +82,19 @@ public class ITSubscriberClientSnippets {
     Cleanup.deleteTestTopicsAndSubscriptions(projectId, topics, subscriptions);
   }
 
-  private Subscription createSubscription(String topicName, String subscriptionName)
-      throws Exception {
-    createTopic(topicName);
-    Subscription subscription =
-        subscriberClientSnippets.createSubscription(topicName, subscriptionName);
-    assertNotNull(subscription);
-    Subscription retrievedSubscription = subscriberClientSnippets.getSubscription(subscriptionName);
-    assertNotNull(retrievedSubscription);
-    assertEquals(subscription.getName(), retrievedSubscription.getName());
-    return subscription;
-  }
-
   @Test
-  public void publishAndPullMessagesIsSuccessful() throws Exception {
+  public void createSubscriptionWithPushIsSuccessful() throws Exception {
     String topicName = topics[0];
     String subscriptionName = subscriptions[0];
-    createSubscription(topicName, subscriptionName);
-    Set<String> messages = publishMessages(topicName, 5);
-    //pulls max 100 messages
-    PullResponse response = subscriberClientSnippets.pull(subscriptionName);
-    assertNotNull(response);
-    //remove messages that match sent
-    for (ReceivedMessage receivedMessage : response.getReceivedMessagesList()) {
-      String message = receivedMessage.getMessage().getData().toStringUtf8();
-      if (messages.contains(message)) {
-        messages.remove(message);
-      }
-    }
-    //all messages published were received
-    assertTrue(messages.isEmpty());
+    createTopic(topicName);
+    String endpoint = "https://" + projectId + ".appspot.com/push";
+    Subscription subscription =
+        subscriptionAdminClientSnippets.createSubscriptionWithPushEndpoint(topicName, subscriptionName, endpoint);
+    assertNotNull(subscription);
+    Subscription retrievedSubscription = subscriptionAdminClientSnippets.getSubscription(subscriptionName);
+    assertNotNull(retrievedSubscription);
+    assertEquals(subscription.getName(), retrievedSubscription.getName());
+    assertEquals(subscription.getPushConfig().getPushEndpoint(), endpoint);
   }
 
   @Test
@@ -120,8 +103,8 @@ public class ITSubscriberClientSnippets {
     String subscriptionName = subscriptions[0];
     createSubscription(topicName, subscriptionName);
     String endpoint = "https://" + projectId + ".appspot.com/push";
-    subscriberClientSnippets.replacePushConfig(subscriptionName, endpoint);
-    Subscription subscription = subscriberClientSnippets.getSubscription(subscriptionName);
+    subscriptionAdminClientSnippets.replacePushConfig(subscriptionName, endpoint);
+    Subscription subscription = subscriptionAdminClientSnippets.getSubscription(subscriptionName);
     assertNotNull(subscription.getPushConfig());
     assertEquals(subscription.getPushConfig().getPushEndpoint(), endpoint);
   }
@@ -137,7 +120,7 @@ public class ITSubscriberClientSnippets {
     addedSubscriptions.add(createSubscription(topicName2, subscriptionName2));
 
     boolean[] subFound = {false, false};
-    ListSubscriptionsPagedResponse response = subscriberClientSnippets.listSubscriptions();
+    ListSubscriptionsPagedResponse response = subscriptionAdminClientSnippets.listSubscriptions();
     assertNotNull(response);
     Iterable<Subscription> subscriptions = response.iterateAllElements();
     for (int i = 0; i < 2; i++) {
@@ -153,9 +136,9 @@ public class ITSubscriberClientSnippets {
     String topicName = topics[0];
     String subscriptionName = subscriptions[0];
     createSubscription(topicName, subscriptionName);
-    subscriberClientSnippets.deleteSubscription(subscriptionName);
+    subscriptionAdminClientSnippets.deleteSubscription(subscriptionName);
     //expected to throw exception on retrieval
-    subscriberClientSnippets.getSubscription(subscriptionName);
+    subscriptionAdminClientSnippets.getSubscription(subscriptionName);
   }
 
   @Test
@@ -163,7 +146,7 @@ public class ITSubscriberClientSnippets {
     String topicName = topics[0];
     String subscriptionName = subscriptions[0];
     createSubscription(topicName, subscriptionName);
-    Policy policy = subscriberClientSnippets.getSubscriptionPolicy(subscriptionName);
+    Policy policy = subscriptionAdminClientSnippets.getSubscriptionPolicy(subscriptionName);
     assertNotNull(policy);
   }
 
@@ -172,33 +155,32 @@ public class ITSubscriberClientSnippets {
     String topicName = topics[0];
     String subscriptionName = subscriptions[0];
     createSubscription(topicName, subscriptionName);
-    Policy policy = subscriberClientSnippets.replaceSubscriptionPolicy(subscriptionName);
+    Policy policy = subscriptionAdminClientSnippets.replaceSubscriptionPolicy(subscriptionName);
     assertNotNull(policy.getBindingsCount());
     assertTrue(policy.getBindings(0).getRole().equalsIgnoreCase(Role.viewer().toString()));
     assertTrue(policy.getBindings(0).getMembers(0)
         .equalsIgnoreCase(Identity.allAuthenticatedUsers().toString()));
     TestIamPermissionsResponse response =
-        subscriberClientSnippets.testSubscriptionPermissions(subscriptionName);
+        subscriptionAdminClientSnippets.testSubscriptionPermissions(subscriptionName);
     assertTrue(response.getPermissionsList().contains("pubsub.subscriptions.get"));
   }
 
   private void createTopic(String name) throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      publisherClient.createTopic(TopicName.create(projectId, name));
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+      topicAdminClient.createTopic(TopicName.create(projectId, name));
     }
   }
 
-  private Set<String> publishMessages(String topicName, int numMessages) throws Exception {
-    Set<String> messages = new HashSet<>();
-    Publisher publisher = Publisher.newBuilder(TopicName.create(projectId, topicName)).build();
-    for (int i = 1; i<= numMessages; i++) {
-      String message = formatForTest("message-" + i);
-      PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(
-          ByteString.copyFromUtf8(message)).build();
-      publisher.publish(pubsubMessage);
-      messages.add(message);
-    }
-    return messages;
+  private Subscription createSubscription(String topicName, String subscriptionName)
+          throws Exception {
+    createTopic(topicName);
+    Subscription subscription =
+        subscriptionAdminClientSnippets.createSubscription(topicName, subscriptionName);
+    assertNotNull(subscription);
+    Subscription retrievedSubscription = subscriptionAdminClientSnippets.getSubscription(subscriptionName);
+    assertNotNull(retrievedSubscription);
+    assertEquals(subscription.getName(), retrievedSubscription.getName());
+    return subscription;
   }
 
   @After

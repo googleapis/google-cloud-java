@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.10.1-alpha-SNAPSHOT</version>
+  <version>0.12.1-alpha-SNAPSHOT</version>
   <name>Google Cloud</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java</url>
   <description>
@@ -90,12 +90,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
-    <google.auth.version>0.6.0</google.auth.version>
+    <google.auth.version>0.6.1</google.auth.version>
     <grpc.version>1.0.3</grpc.version>
-    <gax.version>0.6.1</gax.version>
+    <gax.version>0.8.1</gax.version>
     <generatedProto.version>0.1.5</generatedProto.version>
-    <core.version>0.10.1-alpha-SNAPSHOT</core.version>
-    <beta.version>0.10.1-beta-SNAPSHOT</beta.version>
+    <core.version>0.12.1-alpha-SNAPSHOT</core.version>
+    <beta.version>0.12.1-beta-SNAPSHOT</beta.version>
     <storage.version>${beta.version}</storage.version>
     <site.installationModule>google-cloud</site.installationModule>
   </properties>
@@ -120,6 +120,15 @@
     <module>google-cloud-trace</module>
     <module>google-cloud-translate</module>
     <module>google-cloud-vision</module>
+    <!--
+      Uncomment the following lines to include google app engine (GAE) testing apps in the build.
+      Each GAE app packages all its dependencies in a fat war (>20MB each).
+    -->
+    <!--<module>testing/google-cloud-managed-test</module>-->
+    <!--<module>testing/google-cloud-appengine-flex-java</module>-->
+    <!--<module>testing/google-cloud-appengine-flex-custom</module>-->
+    <!--<module>testing/google-cloud-appengine-java8</module>-->
+    <!--<module>testing/google-cloud-appengine-flex-compat</module>-->
   </modules>
   <pluginRepositories>
     <pluginRepository>
@@ -433,7 +442,9 @@
                   <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-iam-v1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-error-reporting-v1beta1/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-language-v1/${generatedProto.version}/apidocs/</link>
+                  <!-- TODO: Language version is hardcoded for now, please remove the hardcoded version once it is possible -->
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-language-v1/0.1.6/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-language-v1beta2/0.1.6/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-logging-v2/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-monitoring-v3/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-pubsub-v1/${generatedProto.version}/apidocs/</link>

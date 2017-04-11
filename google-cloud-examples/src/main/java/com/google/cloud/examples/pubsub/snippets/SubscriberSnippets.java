@@ -53,8 +53,8 @@ public class SubscriberSnippets {
   // [TARGET startAsync()]
   public void startAndWait() throws Exception {
     // [START startAsync]
-    Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
-    subscriber.addListener(new Subscriber.SubscriberListener() {
+    Subscriber subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
+    subscriber.addListener(new Subscriber.Listener() {
       public void failed(Subscriber.State from, Throwable failure) {
         // Handle error.
       }
