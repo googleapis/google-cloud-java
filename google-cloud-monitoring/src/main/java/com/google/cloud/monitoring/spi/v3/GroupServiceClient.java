@@ -201,7 +201,7 @@ public class GroupServiceClient implements AutoCloseable {
    *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
    *     .setNameWithProjectName(name)
    *     .build();
-   *   for (Group element : groupServiceClient.listGroups(request).iterateAllElements()) {
+   *   for (Group element : groupServiceClient.listGroups(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -228,7 +228,7 @@ public class GroupServiceClient implements AutoCloseable {
    *     .build();
    *   ApiFuture&lt;ListGroupsPagedResponse&gt; future = groupServiceClient.listGroupsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (Group element : future.get().iterateAllElements()) {
+   *   for (Group element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -558,7 +558,7 @@ public class GroupServiceClient implements AutoCloseable {
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
-   *   for (MonitoredResource element : groupServiceClient.listGroupMembers(name).iterateAllElements()) {
+   *   for (MonitoredResource element : groupServiceClient.listGroupMembers(name).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -586,7 +586,7 @@ public class GroupServiceClient implements AutoCloseable {
    *   ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder()
    *     .setNameWithGroupName(name)
    *     .build();
-   *   for (MonitoredResource element : groupServiceClient.listGroupMembers(request).iterateAllElements()) {
+   *   for (MonitoredResource element : groupServiceClient.listGroupMembers(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -613,7 +613,7 @@ public class GroupServiceClient implements AutoCloseable {
    *     .build();
    *   ApiFuture&lt;ListGroupMembersPagedResponse&gt; future = groupServiceClient.listGroupMembersPagedCallable().futureCall(request);
    *   // Do something
-   *   for (MonitoredResource element : future.get().iterateAllElements()) {
+   *   for (MonitoredResource element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }

@@ -181,7 +181,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
-   *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(projectName, timeRange).iterateAllElements()) {
+   *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(projectName, timeRange).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -224,7 +224,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     .setProjectNameWithProjectName(projectName)
    *     .setTimeRange(timeRange)
    *     .build();
-   *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(request).iterateAllElements()) {
+   *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -253,7 +253,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     .build();
    *   ApiFuture&lt;ListGroupStatsPagedResponse&gt; future = errorStatsServiceClient.listGroupStatsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (ErrorGroupStats element : future.get().iterateAllElements()) {
+   *   for (ErrorGroupStats element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -308,7 +308,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   String groupId = "";
-   *   for (ErrorEvent element : errorStatsServiceClient.listEvents(projectName, groupId).iterateAllElements()) {
+   *   for (ErrorEvent element : errorStatsServiceClient.listEvents(projectName, groupId).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -343,7 +343,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     .setProjectNameWithProjectName(projectName)
    *     .setGroupId(groupId)
    *     .build();
-   *   for (ErrorEvent element : errorStatsServiceClient.listEvents(request).iterateAllElements()) {
+   *   for (ErrorEvent element : errorStatsServiceClient.listEvents(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -372,7 +372,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     .build();
    *   ApiFuture&lt;ListEventsPagedResponse&gt; future = errorStatsServiceClient.listEventsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (ErrorEvent element : future.get().iterateAllElements()) {
+   *   for (ErrorEvent element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }

@@ -33,7 +33,7 @@ import com.google.cloud.AsyncPageImpl;
 import com.google.cloud.BaseService;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.common.base.Function;

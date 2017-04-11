@@ -19,6 +19,7 @@ import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroup
 import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroupsPagedResponse;
 
 import com.google.api.MonitoredResource;
+import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
@@ -28,6 +29,7 @@ import com.google.api.gax.grpc.ClientSettings;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.PageContext;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
@@ -225,13 +227,13 @@ public class GroupServiceSettings extends ClientSettings {
       LIST_GROUPS_PAGE_STR_DESC =
           new PagedListDescriptor<ListGroupsRequest, ListGroupsResponse, Group>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListGroupsRequest injectToken(ListGroupsRequest payload, Object token) {
-              return ListGroupsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListGroupsRequest injectToken(ListGroupsRequest payload, String token) {
+              return ListGroupsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -245,7 +247,7 @@ public class GroupServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListGroupsResponse payload) {
+            public String extractNextToken(ListGroupsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -261,16 +263,14 @@ public class GroupServiceSettings extends ClientSettings {
           new PagedListDescriptor<
               ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListGroupMembersRequest injectToken(
-                ListGroupMembersRequest payload, Object token) {
-              return ListGroupMembersRequest.newBuilder(payload)
-                  .setPageToken((String) token)
-                  .build();
+                ListGroupMembersRequest payload, String token) {
+              return ListGroupMembersRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -285,7 +285,7 @@ public class GroupServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListGroupMembersResponse payload) {
+            public String extractNextToken(ListGroupMembersResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -301,12 +301,14 @@ public class GroupServiceSettings extends ClientSettings {
           new PagedListResponseFactory<
               ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>() {
             @Override
-            public ListGroupsPagedResponse createPagedListResponse(
+            public ApiFuture<ListGroupsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListGroupsRequest, ListGroupsResponse> callable,
                 ListGroupsRequest request,
-                CallContext context) {
-              return new ListGroupsPagedResponse(
-                  callable, LIST_GROUPS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListGroupsResponse> futureResponse) {
+              PageContext<ListGroupsRequest, ListGroupsResponse, Group> pageContext =
+                  PageContext.create(callable, LIST_GROUPS_PAGE_STR_DESC, request, context);
+              return ListGroupsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -316,12 +318,16 @@ public class GroupServiceSettings extends ClientSettings {
           new PagedListResponseFactory<
               ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>() {
             @Override
-            public ListGroupMembersPagedResponse createPagedListResponse(
+            public ApiFuture<ListGroupMembersPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse> callable,
                 ListGroupMembersRequest request,
-                CallContext context) {
-              return new ListGroupMembersPagedResponse(
-                  callable, LIST_GROUP_MEMBERS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListGroupMembersResponse> futureResponse) {
+              PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_GROUP_MEMBERS_PAGE_STR_DESC, request, context);
+              return ListGroupMembersPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
