@@ -128,7 +128,8 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
 
   /**
    * Returns the total number of rows in the complete query result set, which can be more than the
-   * number of rows in the first page of results. Returns {@code 0} if the query was a dry run.
+   * number of rows in the first page of results returned by {@link #getValues()}. Returns {@code 0}
+   * if the query was a dry run.
    */
   public long getTotalRows() {
     return totalRows;
@@ -167,7 +168,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
     }
     QueryResult response = (QueryResult) obj;
     return Objects.equals(getNextPageToken(), response.getNextPageToken())
-        && Objects.equals(this.getValues(), response.getValues())
+        && Objects.equals(getValues(), response.getValues())
         && Objects.equals(schema, response.schema)
         && totalRows == response.totalRows
         && totalBytesProcessed == response.totalBytesProcessed
