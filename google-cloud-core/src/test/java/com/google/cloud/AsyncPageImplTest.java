@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
+import com.google.api.gax.core.AsyncPage;
 import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
@@ -62,7 +63,7 @@ public class AsyncPageImplTest {
     AsyncPageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
     AsyncPageImpl<String> result = new AsyncPageImpl<>(fetcher, "c", VALUES1);
     assertEquals(nextResult, result.getNextPage());
-    assertEquals("c", result.getNextPageCursor());
+    assertEquals("c", result.getNextPageToken());
     assertEquals(VALUES1, result.getValues());
   }
 
@@ -73,7 +74,7 @@ public class AsyncPageImplTest {
     AsyncPageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
     AsyncPageImpl<String> result = new AsyncPageImpl<>(fetcher, "c", VALUES1);
     assertEquals(nextResult, result.getNextPageAsync().get());
-    assertEquals("c", result.getNextPageCursor());
+    assertEquals("c", result.getNextPageToken());
     assertEquals(VALUES1, result.getValues());
   }
 
@@ -96,7 +97,7 @@ public class AsyncPageImplTest {
     AsyncPageImpl.NextPageFetcher<String> fetcher1 = new TestPageFetcher(nextResult1);
     AsyncPageImpl<String> result = new AsyncPageImpl<>(fetcher1, "c1", VALUES1);
     assertEquals(nextResult1, result.getNextPageAsync().get());
-    assertEquals("c1", result.getNextPageCursor());
+    assertEquals("c1", result.getNextPageToken());
     assertEquals(VALUES1, result.getValues());
     assertEquals(SOME_VALUES, ImmutableList.copyOf(result.getNextPageAsync().get().iterateAll()));
   }
