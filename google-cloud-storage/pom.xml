@@ -73,7 +73,7 @@
               <goal>write-project-properties</goal>
             </goals>
             <configuration>
-              <outputFile>${project.build.outputDirectory}/com/google/cloud/storage/${project.artifactId}/project.properties</outputFile>
+              <outputFile>${project.build.outputDirectory}/com/google/cloud/storage/project.properties</outputFile>
             </configuration>
           </execution>
          </executions>

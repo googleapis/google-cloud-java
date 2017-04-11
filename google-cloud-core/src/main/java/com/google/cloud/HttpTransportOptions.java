@@ -163,7 +163,7 @@ public class HttpTransportOptions implements TransportOptions {
     };
   }
 
-  static String getXGoogApiClientHeader(ServiceOptions<?, ?> serviceOptions) {
+  String getXGoogApiClientHeader(ServiceOptions<?, ?> serviceOptions) {
     return String.format(
         "gl-java/%s %s/%s",
         getJavaVersion(),

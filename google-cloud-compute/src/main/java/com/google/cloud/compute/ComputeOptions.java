@@ -21,15 +21,15 @@ import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.compute.spi.ComputeRpcFactory;
 import com.google.cloud.compute.spi.v1.ComputeRpc;
+import com.google.cloud.compute.spi.ComputeRpcFactory;
 import com.google.cloud.compute.spi.v1.HttpComputeRpc;
 import com.google.common.collect.ImmutableSet;
+
 import java.util.Set;
 
 public class ComputeOptions extends ServiceOptions<Compute, ComputeOptions> {
 
-  private static final String ARTIFACT_ID = "google-cloud-compute";
   private static final String API_SHORT_NAME = "Compute";
   private static final String COMPUTE_SCOPE = "https://www.googleapis.com/auth/compute";
   private static final Set<String> SCOPES = ImmutableSet.of(COMPUTE_SCOPE);
@@ -63,7 +63,6 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeOptions> {
 
     private Builder(ComputeOptions options) {
       super(options);
-      setArtifactId(ARTIFACT_ID);
     }
 
     @Override

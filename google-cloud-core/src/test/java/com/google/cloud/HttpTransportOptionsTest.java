@@ -69,7 +69,7 @@ public class HttpTransportOptionsTest {
     EasyMock.expect(mockOptions.getLibraryVersion()).andReturn("0.0.0");
     EasyMock.replay(mockOptions);
     assertTrue(Pattern.compile(expectedHeaderPattern)
-        .matcher(HttpTransportOptions.getXGoogApiClientHeader(mockOptions))
+        .matcher(OPTIONS.getXGoogApiClientHeader(mockOptions))
         .find());
   }
 }

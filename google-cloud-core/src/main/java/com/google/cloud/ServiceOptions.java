@@ -28,6 +28,7 @@ import com.google.api.gax.core.RetrySettings;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
+import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
 import java.io.BufferedReader;
@@ -44,14 +45,11 @@ import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.util.Enumeration;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.ServiceLoader;
 import java.util.Set;
-import java.util.jar.Attributes;
-import java.util.jar.JarFile;
-import java.util.jar.Manifest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.joda.time.Duration;
@@ -71,14 +69,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
-  private static final String MANIFEST_ARTIFACT_ID_KEY = "artifactId";
-  private static final String MANIFEST_VERSION_KEY = "Implementation-Version";
-  private static final String ARTIFACT_ID = "google-cloud-core";
   private static final String LIBRARY_NAME = "gcloud-java";
   private static final String X_GOOGLE_CLIENT_HEADER_NAME = "gccl";
 
   private static final String PROPERTIES_VERSION_KEY = "artifact.version";
-  private static final String PROPERTIES_ROOT = "/properties";
+  private static final String DEFAULT_PACKAGE_PATH = "com/google/cloud";
   private static final String PROPERTIES_FILE = "project.properties";
 
   private static final RetrySettings DEFAULT_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
@@ -96,7 +91,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private final ApiClock clock;
   private final Credentials credentials;
   private final TransportOptions transportOptions;
-  private final String artifactId;
 
   private transient ServiceRpcFactory<OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
@@ -122,7 +116,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     private ServiceRpcFactory<OptionsT> serviceRpcFactory;
     private ApiClock clock;
     private TransportOptions transportOptions;
-    private String artifactId;
 
     protected Builder() {}
 
@@ -135,7 +128,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       serviceRpcFactory = options.serviceRpcFactory;
       clock = options.clock;
       transportOptions = options.transportOptions;
-      artifactId = options.artifactId;
     }
 
     protected abstract ServiceOptions<ServiceT, OptionsT> build();
@@ -237,11 +229,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       this.transportOptions = transportOptions;
       return self();
     }
-
-    public B setArtifactId(String artifactId) {
-      this.artifactId = artifactId;
-      return self();
-    }
   }
 
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
@@ -267,7 +254,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     clock = firstNonNull(builder.clock, CurrentMillisClock.getDefaultClock());
     transportOptions = firstNonNull(builder.transportOptions,
         serviceDefaults.getDefaultTransportOptions());
-    artifactId = firstNonNull(builder.artifactId, ARTIFACT_ID);
   }
 
   /**
@@ -555,11 +541,16 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
    * Returns the library's version as a string.
    */
   public String getLibraryVersion() {
-    String version = getPomVersion();
-    if (version == null) {
-      version = getManifestVersion();
+    try {
+      String version = getVersionProperty(getPackagePath());
+      if (version == null) {
+        version = getVersionProperty(DEFAULT_PACKAGE_PATH);
+      }
+      return version;
+    } catch (Exception e) {
+      // ignore
     }
-    return version;
+    return null;
   }
 
   protected int baseHashCode() {
@@ -629,34 +620,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
   }
 
-  private String getPomVersion() {
-    try {
-      String projectPropertiesPath = PROPERTIES_ROOT + "/"
-          + artifactId + "/" + PROPERTIES_FILE;
-      return PropertiesProvider.loadProperty(
-          ServiceOptions.class, projectPropertiesPath, PROPERTIES_VERSION_KEY);
-    } catch (Exception e) {
-      // ignore
-    }
-    return null;
+  private String getVersionProperty(String packagePath) {
+    String projectPropertiesPath = "/" + packagePath + "/" + PROPERTIES_FILE;
+    return PropertiesProvider.loadProperty(
+        ServiceOptions.class, projectPropertiesPath, PROPERTIES_VERSION_KEY);
   }
 
-  private String getManifestVersion() {
-    String version = null;
-    try {
-      Enumeration<URL> resources =
-          ServiceOptions.class.getClassLoader().getResources(JarFile.MANIFEST_NAME);
-      while (resources.hasMoreElements() && version == null) {
-        Manifest manifest = new Manifest(resources.nextElement().openStream());
-        Attributes manifestAttributes = manifest.getMainAttributes();
-        String value = manifestAttributes.getValue(MANIFEST_ARTIFACT_ID_KEY);
-        if (value != null && value.equals(artifactId)) {
-          version = manifestAttributes.getValue(MANIFEST_VERSION_KEY);
-        }
-      }
-    } catch (IOException e) {
-      // ignore
+  private String getPackagePath() {
+    List<String> fullClassName = Splitter.on(".").splitToList(this.getClass().getCanonicalName());
+    if (fullClassName.size() > 2) {
+      return String.join("/", fullClassName.subList(0, fullClassName.size() - 1));
     }
-    return version;
+    return DEFAULT_PACKAGE_PATH;
   }
 }

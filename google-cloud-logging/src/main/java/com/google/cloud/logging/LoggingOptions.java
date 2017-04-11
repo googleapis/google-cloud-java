@@ -31,7 +31,6 @@ import java.util.Set;
 
 public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
 
-  private static final String ARTIFACT_ID = "google-cloud-logging";
   private static final String API_SHORT_NAME = "Logging";
   private static final String LOGGING_SCOPE = "https://www.googleapis.com/auth/logging.admin";
   private static final Set<String> SCOPES = ImmutableSet.of(LOGGING_SCOPE);
@@ -76,10 +75,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
   public static class Builder extends
       ServiceOptions.Builder<Logging, LoggingOptions, Builder> {
 
-    private Builder() {
-      super();
-      setArtifactId(ARTIFACT_ID);
-    }
+    private Builder() {}
 
     private Builder(LoggingOptions options) {
       super(options);

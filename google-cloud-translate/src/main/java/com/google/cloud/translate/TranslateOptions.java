@@ -17,6 +17,7 @@
 package com.google.cloud.translate;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
+import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
@@ -24,10 +25,11 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.cloud.translate.spi.v2.HttpTranslateRpc;
 import com.google.cloud.translate.spi.v2.TranslateRpc;
+import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.common.collect.ImmutableSet;
+
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -37,7 +39,6 @@ public class TranslateOptions extends
     ServiceOptions<Translate, TranslateOptions> {
 
   private static final long serialVersionUID = -572597134540398216L;
-  private static final String ARTIFACT_ID = "google-cloud-translate";
   private static final String API_SHORT_NAME = "Translate";
   private static final String DEFAULT_HOST = "https://translation.googleapis.com";
   private static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
@@ -73,15 +74,11 @@ public class TranslateOptions extends
     private String apiKey;
     private String targetLanguage;
 
-    private Builder() {
-      super();
-      setArtifactId(ARTIFACT_ID);
-    }
+    private Builder() {}
 
     private Builder(TranslateOptions options) {
       super(options);
       this.apiKey = options.apiKey;
-      setArtifactId(ARTIFACT_ID);
     }
 
 

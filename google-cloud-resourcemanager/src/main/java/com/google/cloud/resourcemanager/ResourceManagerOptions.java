@@ -21,17 +21,17 @@ import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import com.google.cloud.resourcemanager.spi.v1beta1.HttpResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import com.google.common.collect.ImmutableSet;
+
 import java.util.Set;
 
 public class ResourceManagerOptions
     extends ServiceOptions<ResourceManager, ResourceManagerOptions> {
 
   private static final long serialVersionUID = 624147474447836183L;
-  private static final String ARTIFACT_ID = "google-cloud-resourcemanager";
   private static final String API_SHORT_NAME = "ResourceManager";
   private static final String GCRM_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
   private static final Set<String> SCOPES = ImmutableSet.of(GCRM_SCOPE);
@@ -72,10 +72,7 @@ public class ResourceManagerOptions
   public static class Builder extends ServiceOptions.Builder<ResourceManager,
       ResourceManagerOptions, Builder> {
 
-    private Builder() {
-      super();
-      setArtifactId(ARTIFACT_ID);
-    }
+    private Builder() {}
 
     private Builder(ResourceManagerOptions options) {
       super(options);

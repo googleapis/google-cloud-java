@@ -35,7 +35,6 @@ import java.util.Set;
 public class DatastoreOptions
     extends ServiceOptions<Datastore, DatastoreOptions> {
 
-  private static final String ARTIFACT_ID = "google-cloud-datastore";
   private static final long serialVersionUID = -1018382430058137336L;
   private static final String API_SHORT_NAME = "Datastore";
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
@@ -68,10 +67,7 @@ public class DatastoreOptions
 
     private String namespace;
 
-    private Builder() {
-      super();
-      setArtifactId(ARTIFACT_ID);
-    }
+    private Builder() {}
 
     private Builder(DatastoreOptions options) {
       super(options);

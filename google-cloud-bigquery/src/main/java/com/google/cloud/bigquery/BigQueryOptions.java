@@ -21,15 +21,15 @@ import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
+import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import com.google.common.collect.ImmutableSet;
+
 import java.util.Set;
 
 public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
-  private static final String ARTIFACT_ID = "google-cloud-bigquery";
   private static final String API_SHORT_NAME = "BigQuery";
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
@@ -59,8 +59,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
       ServiceOptions.Builder<BigQuery, BigQueryOptions, Builder> {
 
     private Builder() {
-      super();
-      setArtifactId(ARTIFACT_ID);
     }
 
     private Builder(BigQueryOptions options) {
