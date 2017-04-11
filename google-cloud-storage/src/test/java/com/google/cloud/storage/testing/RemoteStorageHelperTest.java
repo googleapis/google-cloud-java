@@ -21,7 +21,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.HttpTransportOptions;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
@@ -103,10 +103,14 @@ public class RemoteStorageHelperTest {
     blobPage = new Page<Blob>() {
 
       @Override
-      public String getNextPageCursor() {
-        return "nextPageCursor";
+      public boolean hasNextPage() {
+        return true;
       }
 
+      @Override
+      public String getNextPageToken() {
+        return "nextPageCursor";
+      }
 
       @Override
       public Page<Blob> getNextPage() {
@@ -120,8 +124,8 @@ public class RemoteStorageHelperTest {
       }
 
       @Override
-      public Iterator<Blob> iterateAll() {
-        return blobList.iterator();
+      public Iterable<Blob> iterateAll() {
+        return blobList;
       }
     };
   }
