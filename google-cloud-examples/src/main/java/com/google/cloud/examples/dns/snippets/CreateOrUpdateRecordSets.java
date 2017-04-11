@@ -28,7 +28,6 @@ import com.google.cloud.dns.DnsOptions;
 import com.google.cloud.dns.RecordSet;
 import com.google.cloud.dns.Zone;
 
-import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
 /**

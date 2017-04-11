@@ -26,7 +26,6 @@ import com.google.cloud.resourcemanager.Project;
 import com.google.cloud.resourcemanager.ResourceManager;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
 
-import java.util.Iterator;
 
 /**
  * A snippet for Google Cloud Resource Manager showing how to update a project and list all projects

@@ -25,7 +25,6 @@ import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Payload.StringPayload;
 
 import java.util.Collections;
-import java.util.Iterator;
 
 /**
  * A snippet for Stackdriver Logging showing how to write a log entry. The snippet also shows how to

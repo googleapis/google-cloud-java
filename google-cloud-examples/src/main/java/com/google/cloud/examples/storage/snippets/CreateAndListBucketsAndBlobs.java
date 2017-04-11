@@ -30,7 +30,6 @@ import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-import java.util.Iterator;
 
 /**
  * A snippet for Google Cloud Storage showing how to create a bucket and a blob in it. The snippet

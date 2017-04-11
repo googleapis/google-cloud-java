@@ -28,7 +28,6 @@ import com.google.cloud.dns.Dns;
 import com.google.cloud.dns.DnsOptions;
 import com.google.cloud.dns.RecordSet;
 
-import java.util.Iterator;
 
 /**
  * A snippet for Google Cloud DNS showing how to delete a zone. It also shows how to list and delete

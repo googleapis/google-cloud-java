@@ -22,7 +22,6 @@ import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Metric;
 import com.google.cloud.logging.MetricInfo;
 
-import java.util.Iterator;
 
 /**
  * A snippet for Stackdriver Logging showing how to create a metric. The snippet also shows how to

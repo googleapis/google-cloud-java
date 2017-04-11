@@ -23,7 +23,6 @@ import com.google.cloud.logging.Sink;
 import com.google.cloud.logging.SinkInfo;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 
-import java.util.Iterator;
 
 /**
  * A snippet for Stackdriver Logging showing how to create a sink to backs log entries to BigQuery.

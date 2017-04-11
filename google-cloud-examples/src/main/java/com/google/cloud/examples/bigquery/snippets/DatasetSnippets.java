@@ -32,7 +32,6 @@ import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TimePartitioning;
 
-import java.util.Iterator;
 
 /**
  * This class contains a number of snippets for the {@link Dataset} interface.

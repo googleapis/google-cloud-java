@@ -31,7 +31,6 @@ import com.google.api.services.storage.model.StorageObject;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
-import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Project;
