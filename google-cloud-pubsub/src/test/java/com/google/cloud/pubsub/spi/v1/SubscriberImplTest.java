@@ -322,6 +322,57 @@ public class SubscriberImplTest {
   }
 
   @Test
+  public void testModifyAckDeadline_defaultMaxExtensionPeriod() throws Exception {
+    Subscriber subscriber =
+        startSubscriber(
+            getTestSubscriberBuilder(testReceiver)
+                .setAckExpirationPadding(Duration.standardSeconds(1)));
+    // Send messages to be acked
+    List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
+    testReceiver.setExplicitAck(true);
+    sendMessages(testAckIdsBatch);
+
+    // Trigger modify ack deadline sending - 10s initial stream ack deadline - 1 padding
+    fakeExecutor.advanceTime(Duration.standardSeconds(9));
+
+    assertEquivalentWithTransformation(
+        testAckIdsBatch,
+        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(3),
+        new Function<String, ModifyAckDeadline>() {
+          @Override
+          public ModifyAckDeadline apply(String ack) {
+            return new ModifyAckDeadline(ack, 2); // 2 seconds is the initial mod ack deadline
+          }
+        });
+
+    int timeIncrement = 4; // Second time increment
+
+    while (fakeExecutor.getClock().millisTime() + (timeIncrement * 1000) < 1000 * 60 * 60) {
+      fakeExecutor.advanceTime(Duration.standardSeconds(timeIncrement));
+
+      final int expectedIncrement = Math.min(600, timeIncrement);
+      assertEquivalentWithTransformation(
+          testAckIdsBatch,
+          fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(3),
+          new Function<String, ModifyAckDeadline>() {
+            @Override
+            public ModifyAckDeadline apply(String ack) {
+              return new ModifyAckDeadline(ack, expectedIncrement);
+            }
+          });
+      timeIncrement *= 2;
+    }
+
+    // No more modify ack deadline extension should be triggered at this point
+    fakeExecutor.advanceTime(Duration.standardSeconds(20));
+
+    assertTrue(fakeSubscriberServiceImpl.getModifyAckDeadlines().isEmpty());
+
+    testReceiver.replyAllOutstandingMessage();
+    subscriber.stopAsync().awaitTerminated();
+  }
+
+  @Test
   public void testStreamAckDeadlineUpdate() throws Exception {
     if (!isStreamingTest) {
       // This test is not applicable to polling.
@@ -494,9 +545,10 @@ public class SubscriberImplTest {
     remaining.addAll(target);
 
     for (E expectedElem : expectedElems) {
-      if (!remaining.contains(transform.apply(expectedElem))) {
+      T expected = transform.apply(expectedElem);
+      if (!remaining.contains(expected)) {
         throw new AssertionError(
-            String.format("Expected element %s is not contained in %s", expectedElem, target));
+            String.format("Expected element %s is not contained in %s", expected, target));
       }
       remaining.remove(expectedElem);
     }
