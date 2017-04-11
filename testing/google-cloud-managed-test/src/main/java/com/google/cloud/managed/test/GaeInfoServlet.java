@@ -40,10 +40,10 @@ public class GaeInfoServlet extends HttpServlet {
     ClassLoader cl = getClass().getClassLoader();
     out.append("CLASS LOADER:\n\n");
     out.append("Name: ").append(cl != null ? cl.getClass().getName() : null).append('\n');
-    if(cl instanceof URLClassLoader) {
+    if (cl instanceof URLClassLoader) {
       URLClassLoader urlCl = (URLClassLoader) cl;
       out.append("Urls: ").append('\n');
-      for(URL url : urlCl.getURLs()) {
+      for (URL url : urlCl.getURLs()) {
         out.append(url.toString()).append('\n');
       }
     }

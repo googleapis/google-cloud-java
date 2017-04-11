@@ -107,7 +107,6 @@ public class GaeGcjTestServlet extends HttpServlet {
           + "'>"
           + link
           + "</a> to start a new test";
-
     }
   }
 
