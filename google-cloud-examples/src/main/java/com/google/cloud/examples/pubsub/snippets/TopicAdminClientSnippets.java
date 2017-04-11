@@ -66,7 +66,7 @@ public class TopicAdminClientSnippets {
               .setProjectWithProjectName(ProjectName.create(projectId))
               .build();
       ListTopicsPagedResponse response = topicAdminClient.listTopics(listTopicsRequest);
-      Iterable<Topic> topics = response.iterateAllElements();
+      Iterable<Topic> topics = response.iterateAll();
       for (Topic topic : topics) {
         // do something with the topic
       }
@@ -87,7 +87,7 @@ public class TopicAdminClientSnippets {
               .build();
       ListTopicSubscriptionsPagedResponse response =
           topicAdminClient.listTopicSubscriptions(request);
-      Iterable<String> subscriptionNames = response.iterateAllElements();
+      Iterable<String> subscriptionNames = response.iterateAll();
       for (String subscriptionName : subscriptionNames) {
         // do something with the subscription name
       }

@@ -16,7 +16,7 @@
 
 package com.google.cloud.examples.logging.snippets;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Sink;
@@ -46,9 +46,8 @@ public class CreateAndListSinks {
 
       // List sinks
       Page<Sink> sinks = logging.listSinks();
-      Iterator<Sink> sinkIterator = sinks.iterateAll();
-      while (sinkIterator.hasNext()) {
-        System.out.println(sinkIterator.next());
+      for(Sink sink : sinks.iterateAll()) {
+        System.out.println(sink);
       }
     }
   }

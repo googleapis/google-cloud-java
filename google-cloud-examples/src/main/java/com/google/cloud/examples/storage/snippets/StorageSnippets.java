@@ -27,7 +27,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.BatchResult;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
@@ -247,9 +247,7 @@ public class StorageSnippets {
     // [START listBucketsWithSizeAndPrefix]
     Page<Bucket> buckets = storage.list(BucketListOption.pageSize(100),
         BucketListOption.prefix(prefix));
-    Iterator<Bucket> bucketIterator = buckets.iterateAll();
-    while (bucketIterator.hasNext()) {
-      Bucket bucket = bucketIterator.next();
+    for(Bucket bucket : buckets.iterateAll()) {
       // do something with the bucket
     }
     // [END listBucketsWithSizeAndPrefix]
@@ -266,9 +264,7 @@ public class StorageSnippets {
     // [START listBlobsWithDirectoryAndPrefix]
     Page<Blob> blobs = storage.list(bucketName, BlobListOption.currentDirectory(),
         BlobListOption.prefix(directory));
-    Iterator<Blob> blobIterator = blobs.iterateAll();
-    while (blobIterator.hasNext()) {
-      Blob blob = blobIterator.next();
+    for(Blob blob : blobs.iterateAll()) {
       // do something with the blob
     }
     // [END listBlobsWithDirectoryAndPrefix]

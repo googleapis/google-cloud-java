@@ -22,7 +22,7 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobOption;
@@ -171,9 +171,7 @@ public class TableSnippets {
   public Page<List<FieldValue>> list() {
     // [START list]
     Page<List<FieldValue>> page = table.list(TableDataListOption.pageSize(100));
-    Iterator<List<FieldValue>> rowIterator = page.iterateAll();
-    while (rowIterator.hasNext()) {
-      List<FieldValue> row = rowIterator.next();
+    for(List<FieldValue> row : page.iterateAll()) {
       // do something with the row
     }
     // [END list]

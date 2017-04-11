@@ -54,17 +54,15 @@ public class CreateAndListBucketsAndBlobs {
     String blobContent = new String(blob.getContent(), UTF_8);
 
     // List all your buckets
-    Iterator<Bucket> bucketIterator = storage.list().iterateAll();
     System.out.println("My buckets:");
-    while (bucketIterator.hasNext()) {
-      System.out.println(bucketIterator.next());
+    for(Bucket currentBucket : storage.list().iterateAll()) {
+      System.out.println(currentBucket);
     }
 
     // List the blobs in a particular bucket
-    Iterator<Blob> blobIterator = bucket.list().iterateAll();
     System.out.println("My blobs:");
-    while (blobIterator.hasNext()) {
-      System.out.println(blobIterator.next());
+    for(Blob currentBlob : bucket.list().iterateAll()) {
+      System.out.println(currentBlob);
     }
   }
 }

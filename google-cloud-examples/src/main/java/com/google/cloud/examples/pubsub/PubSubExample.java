@@ -186,7 +186,7 @@ public class PubSubExample {
                                 .setProjectWithProjectName(ProjectName.create(projectId))
                                 .build();
                 PagedResponseWrappers.ListTopicsPagedResponse response = topicAdminClient.listTopics(listTopicsRequest);
-                Iterable<Topic> topics = response.iterateAllElements();
+                Iterable<Topic> topics = response.iterateAll();
                 for (Topic topic : topics) {
                     System.out.println(topic.getName());
                 }
@@ -270,7 +270,7 @@ public class PubSubExample {
                 try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
                     PagedResponseWrappers.ListSubscriptionsPagedResponse response =
                             subscriptionAdminClient.listSubscriptions(ProjectName.create(projectId));
-                    Iterable<Subscription> subscriptions = response.iterateAllElements();
+                    Iterable<Subscription> subscriptions = response.iterateAll();
                     for (Subscription subscription : subscriptions) {
                         System.out.println(subscription.getName());
                     }
@@ -279,7 +279,7 @@ public class PubSubExample {
                 try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
                     PagedResponseWrappers.ListTopicSubscriptionsPagedResponse response =
                             topicAdminClient.listTopicSubscriptions(TopicName.create(projectId, topic));
-                    Iterable<String> subscriptionNames = response.iterateAllElements();
+                    Iterable<String> subscriptionNames = response.iterateAll();
                     for (String subscriptionName : subscriptionNames) {
                         System.out.println(subscriptionName);
                     }

@@ -22,6 +22,7 @@
 
 package com.google.cloud.examples.dns.snippets;
 
+import com.google.api.gax.core.Page;
 import com.google.cloud.dns.ChangeRequest;
 import com.google.cloud.dns.ChangeRequestInfo;
 import com.google.cloud.dns.Dns;
@@ -71,9 +72,8 @@ public class ManipulateZonesAndRecordSets {
 
     // Verify the type A record does not exist yet.
     // If it does exist, we will overwrite it with our prepared record.
-    Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
-    while (recordSetIterator.hasNext()) {
-      RecordSet current = recordSetIterator.next();
+    Page<RecordSet> recordSetPage = zone.listRecordSets();
+    for(RecordSet current : recordSetPage.iterateAll()) {
       if (toCreate.getName().equals(current.getName())
           && toCreate.getType().equals(current.getType())) {
         changeBuilder.delete(current);
@@ -95,31 +95,27 @@ public class ManipulateZonesAndRecordSets {
     System.out.println("The change request has been applied.");
 
     // List all your zones
-    Iterator<Zone> zoneIterator = dns.listZones().iterateAll();
     int counter = 1;
-    while (zoneIterator.hasNext()) {
-      System.out.printf("#%d.: %s%n%n", counter, zoneIterator.next());
+    for(Zone currentZone : dns.listZones().iterateAll()) {
+      System.out.printf("#%d.: %s%n%n", counter, currentZone);
       counter++;
     }
 
     // List the record sets in a particular zone
-    recordSetIterator = zone.listRecordSets().iterateAll();
     System.out.println(String.format("Record sets inside %s:", zone.getName()));
-    while (recordSetIterator.hasNext()) {
-      System.out.println(recordSetIterator.next());
+    for(RecordSet recordSet : recordSetPage.iterateAll()) {
+      System.out.println(recordSet);
     }
 
     // List the change requests applied to a particular zone
-    Iterator<ChangeRequest> changeIterator = zone.listChangeRequests().iterateAll();
     System.out.println(String.format("The history of changes in %s:", zone.getName()));
-    while (changeIterator.hasNext()) {
-      System.out.println(changeIterator.next());
+    for(ChangeRequest currentChangeRequest : zone.listChangeRequests().iterateAll()) {
+      System.out.println(currentChangeRequest);
     }
 
     // Make a change for deleting the record sets
     changeBuilder = ChangeRequestInfo.newBuilder();
-    while (recordSetIterator.hasNext()) {
-      RecordSet current = recordSetIterator.next();
+    for(RecordSet current : recordSetPage.iterateAll()) {
       // SOA and NS records cannot be deleted
       if (!RecordSet.Type.SOA.equals(current.getType())
           && !RecordSet.Type.NS.equals(current.getType())) {

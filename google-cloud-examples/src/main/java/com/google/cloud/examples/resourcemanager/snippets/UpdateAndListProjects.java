@@ -53,10 +53,9 @@ public class UpdateAndListProjects {
     }
 
     // List all the projects you have permission to view.
-    Iterator<Project> projectIterator = resourceManager.list().iterateAll();
     System.out.println("Projects I can view:");
-    while (projectIterator.hasNext()) {
-      System.out.println(projectIterator.next().getProjectId());
+    for(Project currentProject : resourceManager.list().iterateAll()) {
+      System.out.println(currentProject.getProjectId());
     }
   }
 }

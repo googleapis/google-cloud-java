@@ -92,10 +92,9 @@ public class InsertDataAndQueryTable {
       queryResponse = bigquery.getQueryResults(queryResponse.getJobId());
     }
     // Read rows
-    Iterator<List<FieldValue>> rowIterator = queryResponse.getResult().iterateAll();
     System.out.println("Table rows:");
-    while (rowIterator.hasNext()) {
-      System.out.println(rowIterator.next());
+    for(List<FieldValue> row : queryResponse.getResult().iterateAll()) {
+      System.out.println(row);
     }
   }
 }

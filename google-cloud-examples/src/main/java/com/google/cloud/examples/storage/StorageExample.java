@@ -268,9 +268,8 @@ public class StorageExample {
     public void run(Storage storage, String bucketName) {
       if (bucketName == null) {
         // list buckets
-        Iterator<Bucket> bucketIterator = storage.list().iterateAll();
-        while (bucketIterator.hasNext()) {
-          System.out.println(bucketIterator.next());
+        for(Bucket bucket : storage.list().iterateAll()) {
+          System.out.println(bucket);
         }
       } else {
         // list a bucket's blobs
@@ -279,9 +278,8 @@ public class StorageExample {
           System.out.println("No such bucket");
           return;
         }
-        Iterator<Blob> blobIterator = bucket.list().iterateAll();
-        while (blobIterator.hasNext()) {
-          System.out.println(blobIterator.next());
+        for(Blob blob : bucket.list().iterateAll()) {
+          System.out.println(blob);
         }
       }
     }
