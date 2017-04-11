@@ -23,9 +23,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.core.AsyncPage;
+import com.google.api.gax.core.Page;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
-import com.google.api.gax.core.Page;
 import com.google.cloud.logging.Logging.EntryListOption;
 import com.google.cloud.logging.Logging.SortingField;
 import com.google.cloud.logging.Logging.SortingOrder;
