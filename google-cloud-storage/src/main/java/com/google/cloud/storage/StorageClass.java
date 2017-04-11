@@ -44,5 +44,10 @@ public enum StorageClass {
   /**
    * Standard storage class.
    */
-  STANDARD
+  STANDARD,
+
+  /**
+   * Durable Reduced Availability (deprecated)
+   */
+  DURABLE_REDUCED_AVAILABILITY,
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+  <application>GCLOUD_PROJECT_ID_HERE</application>
+  <service>std-java8</service>
+  <version>1</version>
+  <runtime>java8</runtime>
+  <threadsafe>true</threadsafe>
+  <instance-class>B8</instance-class>
+  <manual-scaling>
+    <instances>1</instances>
+  </manual-scaling>
+</appengine-web-app>

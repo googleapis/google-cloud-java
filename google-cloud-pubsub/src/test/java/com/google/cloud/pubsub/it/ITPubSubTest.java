@@ -25,9 +25,9 @@ import com.google.cloud.pubsub.spi.v1.AckReply;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
 import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
@@ -109,7 +109,7 @@ public class ITPubSubTest {
 
     final SettableApiFuture<PubsubMessage> received = SettableApiFuture.create();
     Subscriber subscriber =
-        Subscriber.newBuilder(
+        Subscriber.defaultBuilder(
                 subscriptionName,
                 new MessageReceiver() {
                   @Override
@@ -124,7 +124,7 @@ public class ITPubSubTest {
                 })
             .build();
     subscriber.addListener(
-        new Subscriber.SubscriberListener() {
+        new Subscriber.Listener() {
           public void failed(Subscriber.State from, Throwable failure) {
             received.setException(failure);
           }
@@ -132,7 +132,7 @@ public class ITPubSubTest {
         MoreExecutors.directExecutor());
     subscriber.startAsync();
 
-    Publisher publisher = Publisher.newBuilder(topicName).build();
+    Publisher publisher = Publisher.defaultBuilder(topicName).build();
     publisher.publish(message).get();
     publisher.shutdown();
 

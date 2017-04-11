@@ -24,7 +24,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Information about a language supported by Google Translate. Objects of this class contain
+ * Information about a language supported by Google Translation. Objects of this class contain
  * language's code and the language name.
  *
  * @see <a href="https://cloud.google.com/translate/v2/discovering-supported-languages-with-rest">

@@ -34,8 +34,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
   private static final String API_SHORT_NAME = "Logging";
   private static final String LOGGING_SCOPE = "https://www.googleapis.com/auth/logging.admin";
   private static final Set<String> SCOPES = ImmutableSet.of(LOGGING_SCOPE);
-  private static final String DEFAULT_HOST = LoggingSettings.getDefaultServiceAddress()
-      + ':' + LoggingSettings.getDefaultServicePort();
+  private static final String DEFAULT_HOST = LoggingSettings.getDefaultEndpoint();
   private static final long serialVersionUID = 5753499510627426717L;
 
   public static class DefaultLoggingFactory implements LoggingFactory {

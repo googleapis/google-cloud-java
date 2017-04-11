@@ -21,6 +21,7 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitore
 
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.FlowControlSettings;
@@ -97,12 +98,6 @@ import org.joda.time.Duration;
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
 public class LoggingSettings extends ClientSettings {
-  /** The default address of the service. */
-  private static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
-
-  /** The default port of the service. */
-  private static final int DEFAULT_SERVICE_PORT = 443;
-
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -171,14 +166,9 @@ public class LoggingSettings extends ClientSettings {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /** Returns the default service address. */
-  public static String getDefaultServiceAddress() {
-    return DEFAULT_SERVICE_ADDRESS;
-  }
-
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return DEFAULT_SERVICE_PORT;
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "logging.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -194,8 +184,7 @@ public class LoggingSettings extends ClientSettings {
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
-        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-        .setPort(DEFAULT_SERVICE_PORT)
+        .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
@@ -416,13 +405,9 @@ public class LoggingSettings extends ClientSettings {
       WRITE_LOG_ENTRIES_BATCHING_DESC =
           new BatchingDescriptor<WriteLogEntriesRequest, WriteLogEntriesResponse>() {
             @Override
-            public String getBatchPartitionKey(WriteLogEntriesRequest request) {
-              return request.getLogName()
-                  + "|"
-                  + request.getResource()
-                  + "|"
-                  + request.getLabels()
-                  + "|";
+            public PartitionKey getBatchPartitionKey(WriteLogEntriesRequest request) {
+              return new PartitionKey(
+                  request.getLogName(), request.getResource(), request.getLabels());
             }
 
             @Override

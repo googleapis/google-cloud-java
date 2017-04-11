@@ -29,6 +29,7 @@ import com.google.logging.v2.MetricNameOneof;
 import com.google.logging.v2.ParentNameOneof;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -93,6 +94,7 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by GAPIC")
+@ExperimentalApi
 public class MetricsClient implements AutoCloseable {
   private final MetricsSettings settings;
   private final ScheduledExecutorService executor;

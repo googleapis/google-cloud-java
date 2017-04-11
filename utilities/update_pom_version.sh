@@ -15,7 +15,7 @@ CURRENT_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate 
 CURRENT_VERSION_BASE=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|\w+:)' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+')
 
 # Get list of directories for which pom.xml must be updated
-module_folders=($(find . -maxdepth 2 -type d | sed -E -n "/^\.\/(google-cloud-contrib\/)?google-cloud(-[a-z]+)+$/p") . ./google-cloud)
+module_folders=($(find . -maxdepth 2 -type d | sed -E -n "/^\.\/(google-cloud-contrib\/|testing\/)?google-cloud(-[a-z0-9]+)+$/p") . ./google-cloud)
 
 CURRENT_SNAPSHOT=""
 if [ "${CURRENT_VERSION##*-}" == "SNAPSHOT" ]; then
@@ -39,6 +39,10 @@ echo "Changing version from ${CURRENT_VERSION_BASE}-*${CURRENT_SNAPSHOT} to ${NE
 for item in ${module_folders[*]}
 do
     sed -ri "0,/<version>$CURRENT_VERSION_BASE/s/<version>${CURRENT_VERSION_BASE}(-[a-z]+)?[^<]*/<version>${NEW_VERSION_BASE}\1${NEW_SNAPSHOT}/" ${item}/pom.xml
+    if [ -w ${item}/src/main/docker/Dockerfile ]
+    then
+      sed -ri "s/${CURRENT_VERSION_BASE}(-[a-z]+)?(-SNAPSHOT)?/${NEW_VERSION_BASE}\1${NEW_SNAPSHOT}/" ${item}/src/main/docker/Dockerfile
+    fi
 done
 sed -ri "0,/<core.version>$CURRENT_VERSION_BASE/s/<core.version>${CURRENT_VERSION_BASE}(-[a-z]+)?[^<]*/<core.version>${NEW_VERSION_BASE}\1${NEW_SNAPSHOT}/" pom.xml
 sed -ri "0,/<beta.version>$CURRENT_VERSION_BASE/s/<beta.version>${CURRENT_VERSION_BASE}(-[a-z]+)?[^<]*/<beta.version>${NEW_VERSION_BASE}\1${NEW_SNAPSHOT}/" pom.xml

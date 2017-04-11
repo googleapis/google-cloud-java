@@ -39,7 +39,7 @@ public class CreateTopicAndPublishMessages {
 
     Publisher publisher = null;
     try {
-      publisher = Publisher.newBuilder(topic).build();
+      publisher = Publisher.defaultBuilder(topic).build();
       List<String> messages = Arrays.asList("first message", "second message");
       List<ApiFuture<String>> messageIds = new ArrayList<>();
       for (String message : messages) {

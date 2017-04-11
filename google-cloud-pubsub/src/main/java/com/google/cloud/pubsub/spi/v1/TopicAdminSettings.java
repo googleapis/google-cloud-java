@@ -19,6 +19,7 @@ import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubs
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
 import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.FlowControlSettings;
@@ -102,12 +103,6 @@ import org.joda.time.Duration;
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
 public class TopicAdminSettings extends ClientSettings {
-  /** The default address of the service. */
-  private static final String DEFAULT_SERVICE_ADDRESS = "pubsub.googleapis.com";
-
-  /** The default port of the service. */
-  private static final int DEFAULT_SERVICE_PORT = 443;
-
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -193,14 +188,9 @@ public class TopicAdminSettings extends ClientSettings {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /** Returns the default service address. */
-  public static String getDefaultServiceAddress() {
-    return DEFAULT_SERVICE_ADDRESS;
-  }
-
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return DEFAULT_SERVICE_PORT;
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "pubsub.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -216,8 +206,7 @@ public class TopicAdminSettings extends ClientSettings {
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
-        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-        .setPort(DEFAULT_SERVICE_PORT)
+        .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
@@ -377,8 +366,8 @@ public class TopicAdminSettings extends ClientSettings {
   private static final BatchingDescriptor<PublishRequest, PublishResponse> PUBLISH_BATCHING_DESC =
       new BatchingDescriptor<PublishRequest, PublishResponse>() {
         @Override
-        public String getBatchPartitionKey(PublishRequest request) {
-          return request.getTopic() + "|";
+        public PartitionKey getBatchPartitionKey(PublishRequest request) {
+          return new PartitionKey(request.getTopic());
         }
 
         @Override
