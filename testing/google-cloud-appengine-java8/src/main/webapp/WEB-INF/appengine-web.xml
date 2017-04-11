@@ -9,4 +9,8 @@
   <manual-scaling>
     <instances>1</instances>
   </manual-scaling>
+  <url-stream-handler>native</url-stream-handler>
+  <system-properties>
+    <property name="GOOGLE_CLOUD_PROJECT" value="GCLOUD_PROJECT_ID_HERE"/>
+  </system-properties>
 </appengine-web-app>

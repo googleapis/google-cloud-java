@@ -28,8 +28,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "flex", value = "/test")
-public class GcjFlexTestServlet extends HttpServlet {
+@WebServlet(value = "/test")
+public class GaeGcjTestServlet extends HttpServlet {
 
   private static final long serialVersionUID = 523885428311420041L;
 
@@ -107,7 +107,6 @@ public class GcjFlexTestServlet extends HttpServlet {
           + "'>"
           + link
           + "</a> to start a new test";
-
     }
   }
 
