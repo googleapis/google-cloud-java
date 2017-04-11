@@ -20,6 +20,8 @@ import com.google.api.gax.core.ApiClock;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.SettableFuture;
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.concurrent.AbstractExecutorService;
@@ -79,6 +81,26 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
             Duration.millis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
   }
 
+  private Deque<Duration> expectedWorkQueue = new LinkedList<>();
+
+  public void setupScheduleExpectation(Duration delay) {
+    synchronized (expectedWorkQueue) {
+      expectedWorkQueue.add(delay);
+    }
+  }
+  
+  public void waitForExpectedWork() {
+    synchronized (expectedWorkQueue) {
+      while (!expectedWorkQueue.isEmpty()) {
+        try {
+          expectedWorkQueue.wait();
+        } catch (InterruptedException e) {
+          // Wait uninterruptibly
+        }
+      }
+    }
+  }
+
   /**
    * This will advance the reference time of the executor and execute (in the same thread) any
    * outstanding callable which execution time has passed.
@@ -100,7 +122,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
         callable = pendingCallables.poll();
       }
       if (callable != null) {
-        try{
+        try {
           callable.call();
         } catch (Exception e) {
           // We ignore any callable exception, which should be set to the future but not relevant to
@@ -182,6 +204,13 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       pendingCallables.add(callable);
     }
     work();
+    synchronized (expectedWorkQueue) {
+      if (!expectedWorkQueue.isEmpty() && expectedWorkQueue.peek().equals(callable.delay)) {
+        expectedWorkQueue.poll();
+      }
+      expectedWorkQueue.notifyAll();
+    }
+    
     return callable.getScheduledFuture();
   }
 

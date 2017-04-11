@@ -284,9 +284,12 @@ public class SubscriberImplTest {
     // Send messages to be acked
     List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
+    // A modify ack deadline should be schedule for the next 9s
+    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9)); 
     sendMessages(testAckIdsBatch);
+    // To ensure first modify ack deadline got scheduled
+    fakeExecutor.waitForExpectedWork(); 
 
-    // Trigger modify ack deadline sending - 10s initial stream ack deadline - 1 padding
     fakeExecutor.advanceTime(Duration.standardSeconds(9));
 
     assertEquivalentWithTransformation(
@@ -299,8 +302,7 @@ public class SubscriberImplTest {
           }
         });
 
-    // Trigger modify ack deadline sending - 2s of the renewed deadlines
-    fakeExecutor.advanceTime(Duration.standardSeconds(2));
+    fakeExecutor.advanceTime(Duration.standardSeconds(1));
 
     assertEquivalentWithTransformation(
         testAckIdsBatch,
@@ -308,8 +310,8 @@ public class SubscriberImplTest {
         new Function<String, ModifyAckDeadline>() {
           @Override
           public ModifyAckDeadline apply(String ack) {
-            return new ModifyAckDeadline(ack, 2); // It is expected that the deadline is renewed
-                                                  // only two more seconds to not pass the max
+            return new ModifyAckDeadline(ack, 3); // It is expected that the deadline is renewed
+                                                  // only three more seconds to not pass the max
                                                   // ack deadline ext.
           }
         });
@@ -332,9 +334,13 @@ public class SubscriberImplTest {
     // Send messages to be acked
     List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
+    // A modify ack deadline should be schedule for the next 9s
+    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9)); 
     sendMessages(testAckIdsBatch);
+    // To ensure the first modify ack deadlines got scheduled
+    fakeExecutor.waitForExpectedWork(); 
 
-    // Trigger modify ack deadline sending - 10s initial stream ack deadline - 1 padding
+    // Next modify ack deadline should be schedule in the next 1s
     fakeExecutor.advanceTime(Duration.standardSeconds(9));
 
     assertEquivalentWithTransformation(
@@ -347,12 +353,12 @@ public class SubscriberImplTest {
           }
         });
 
-    int timeIncrementSecs = INITIAL_ACK_DEADLINE_EXTENSION_SECS * 2; // Second time increment
+    fakeExecutor.advanceTime(Duration.standardSeconds(1));
+    int timeIncrementSecs = INITIAL_ACK_DEADLINE_EXTENSION_SECS; // Second time increment
 
     // Check ack deadline extensions while the current time has not reached 60 minutes
-    while (fakeExecutor.getClock().millisTime() + (timeIncrementSecs * 1000) < 1000 * 60 * 60) {
-      fakeExecutor.advanceTime(Duration.standardSeconds(timeIncrementSecs));
-
+    while (fakeExecutor.getClock().millisTime() + timeIncrementSecs - 1 < 1000 * 60 * 60) {
+      timeIncrementSecs *= 2;
       final int expectedIncrementSecs = Math.min(600, timeIncrementSecs);
       assertEquivalentWithTransformation(
           testAckIdsBatch,
@@ -363,7 +369,7 @@ public class SubscriberImplTest {
               return new ModifyAckDeadline(ack, expectedIncrementSecs);
             }
           });
-      timeIncrementSecs *= 2; 
+      fakeExecutor.advanceTime(Duration.standardSeconds(timeIncrementSecs - 1));
     }
 
     // No more modify ack deadline extension should be triggered at this point
