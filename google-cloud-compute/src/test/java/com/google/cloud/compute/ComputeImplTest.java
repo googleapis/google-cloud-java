@@ -25,7 +25,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.compute.NetworkInterface.AccessConfig;
 import com.google.cloud.compute.spi.v1.ComputeRpc;
@@ -622,7 +622,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_ID.getZone());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
   }
 
@@ -645,10 +645,10 @@ public class ComputeImplTest {
         .andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_ID.getZone());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextDiskTypeList.toArray(),
         Iterables.toArray(page.getValues(), DiskType.class));
   }
@@ -664,7 +664,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_ID.getZone());
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(diskTypes.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
   }
 
@@ -680,7 +680,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_ID.getZone(), DISK_TYPE_LIST_PAGE_SIZE,
         DISK_TYPE_LIST_PAGE_TOKEN, DISK_TYPE_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
   }
 
@@ -694,7 +694,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listDiskTypes(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<DiskType> page = compute.listDiskTypes();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
   }
 
@@ -715,10 +715,10 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listDiskTypes(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<DiskType> page = compute.listDiskTypes();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextDiskTypeList.toArray(),
         Iterables.toArray(page.getValues(), DiskType.class));
   }
@@ -733,7 +733,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<DiskType> page = compute.listDiskTypes();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(diskTypes.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
   }
 
@@ -748,7 +748,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_AGGREGATED_LIST_PAGE_SIZE,
         DISK_TYPE_AGGREGATED_LIST_PAGE_TOKEN, DISK_TYPE_AGGREGATED_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
   }
 
@@ -819,7 +819,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_ID.getZone());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(machineTypeList.toArray(), Iterables.toArray(page.getValues(),
         MachineType.class));
   }
@@ -845,11 +845,11 @@ public class ComputeImplTest {
         .andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_ID.getZone());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(machineTypeList.toArray(),
         Iterables.toArray(page.getValues(), MachineType.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextMachineTypeList.toArray(),
         Iterables.toArray(page.getValues(), MachineType.class));
   }
@@ -867,7 +867,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_ID.getZone());
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(machineTypes.toArray(),
         Iterables.toArray(page.getValues(), MachineType.class));
   }
@@ -886,7 +886,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_ID.getZone(),
         MACHINE_TYPE_LIST_PAGE_SIZE, MACHINE_TYPE_LIST_PAGE_TOKEN, MACHINE_TYPE_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(machineTypeList.toArray(),
         Iterables.toArray(page.getValues(), MachineType.class));
   }
@@ -902,7 +902,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listMachineTypes(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<MachineType> page = compute.listMachineTypes();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(machineTypeList.toArray(), Iterables.toArray(page.getValues(),
         MachineType.class));
   }
@@ -926,11 +926,11 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listMachineTypes(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<MachineType> page = compute.listMachineTypes();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(machineTypeList.toArray(),
         Iterables.toArray(page.getValues(), MachineType.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextMachineTypeList.toArray(),
         Iterables.toArray(page.getValues(), MachineType.class));
   }
@@ -947,7 +947,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<MachineType> page = compute.listMachineTypes();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(machineTypes.toArray(),
         Iterables.toArray(page.getValues(), MachineType.class));
   }
@@ -965,7 +965,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_AGGREGATED_LIST_PAGE_SIZE,
         MACHINE_TYPE_AGGREGATED_LIST_PAGE_TOKEN, MACHINE_TYPE_AGGREGATED_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(machineTypeList.toArray(),
         Iterables.toArray(page.getValues(), MachineType.class));
   }
@@ -1015,7 +1015,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listRegions(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Region> page = compute.listRegions();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(regionList.toArray(), Iterables.toArray(page.getValues(), Region.class));
   }
 
@@ -1035,10 +1035,10 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listRegions(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Region> page = compute.listRegions();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(regionList.toArray(), Iterables.toArray(page.getValues(), Region.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextRegionList.toArray(), Iterables.toArray(page.getValues(), Region.class));
   }
 
@@ -1052,7 +1052,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<Region> page = compute.listRegions();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(regions.toArray(), Iterables.toArray(page.getValues(), Region.class));
   }
 
@@ -1067,7 +1067,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Region> page = compute.listRegions(REGION_LIST_PAGE_SIZE, REGION_LIST_PAGE_TOKEN,
         REGION_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(regionList.toArray(), Iterables.toArray(page.getValues(), Region.class));
   }
 
@@ -1115,7 +1115,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listZones(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Zone> page = compute.listZones();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(zoneList.toArray(), Iterables.toArray(page.getValues(), Zone.class));
   }
 
@@ -1135,10 +1135,10 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listZones(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Zone> page = compute.listZones();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(zoneList.toArray(), Iterables.toArray(page.getValues(), Zone.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextZoneList.toArray(), Iterables.toArray(page.getValues(), Zone.class));
   }
 
@@ -1152,7 +1152,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<Zone> page = compute.listZones();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(zones.toArray(), Iterables.toArray(page.getValues(), Zone.class));
   }
 
@@ -1167,7 +1167,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Zone> page =
         compute.listZones(ZONE_LIST_PAGE_SIZE, ZONE_LIST_PAGE_TOKEN, ZONE_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(zoneList.toArray(), Iterables.toArray(page.getValues(), Zone.class));
   }
 
@@ -1295,7 +1295,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listGlobalOperations(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listGlobalOperations();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(operationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
   }
@@ -1317,11 +1317,11 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listGlobalOperations(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listGlobalOperations();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(operationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextOperationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
   }
@@ -1336,7 +1336,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<Operation> page = compute.listGlobalOperations();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(operations.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
@@ -1351,7 +1351,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listGlobalOperations(OPERATION_LIST_PAGE_SIZE,
         OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(operationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
   }
@@ -1426,7 +1426,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listRegionOperations(REGION_OPERATION_ID.getRegion());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(operationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
   }
@@ -1450,11 +1450,11 @@ public class ComputeImplTest {
         nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listRegionOperations(REGION_OPERATION_ID.getRegion());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(operationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextOperationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
   }
@@ -1471,7 +1471,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<Operation> page = compute.listRegionOperations(REGION_OPERATION_ID.getRegion());
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(operations.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
@@ -1488,7 +1488,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listRegionOperations(REGION_OPERATION_ID.getRegion(),
         OPERATION_LIST_PAGE_SIZE, OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(operationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
   }
@@ -1560,7 +1560,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listZoneOperations(ZONE_OPERATION_ID.getZone());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(operationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
   }
@@ -1585,11 +1585,11 @@ public class ComputeImplTest {
         .andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listZoneOperations(ZONE_OPERATION_ID.getZone());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(operationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextOperationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
   }
@@ -1606,7 +1606,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<Operation> page = compute.listZoneOperations(ZONE_OPERATION_ID.getZone());
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(operations.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
@@ -1623,7 +1623,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listZoneOperations(ZONE_OPERATION_ID.getZone(),
         OPERATION_LIST_PAGE_SIZE, OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(operationList.toArray(),
         Iterables.toArray(page.getValues(), Operation.class));
   }
@@ -1806,7 +1806,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listGlobalAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Address> page = compute.listGlobalAddresses();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
@@ -1830,10 +1830,10 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listGlobalAddresses(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Address> page = compute.listGlobalAddresses();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextAddressList.toArray(),
         Iterables.toArray(page.getValues(), Address.class));
   }
@@ -1848,7 +1848,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<Address> page = compute.listGlobalAddresses();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(addresses.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
@@ -1865,7 +1865,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Address> page = compute.listGlobalAddresses(ADDRESS_LIST_PAGE_SIZE,
         ADDRESS_LIST_PAGE_TOKEN, ADDRESS_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
@@ -1883,7 +1883,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Address> page = compute.listRegionAddresses(REGION_ADDRESS_ID.getRegion());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
@@ -1911,10 +1911,10 @@ public class ComputeImplTest {
         .andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Address> page = compute.listRegionAddresses(REGION_ADDRESS_ID.getRegion());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextAddressList.toArray(),
         Iterables.toArray(page.getValues(), Address.class));
   }
@@ -1931,7 +1931,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<Address> page = compute.listRegionAddresses(REGION_ADDRESS_ID.getRegion());
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(addresses.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
@@ -1950,7 +1950,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Address> page = compute.listRegionAddresses(REGION_ADDRESS_ID.getRegion(),
         ADDRESS_LIST_PAGE_SIZE, ADDRESS_LIST_PAGE_TOKEN, ADDRESS_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
@@ -1966,7 +1966,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Address> page = compute.listAddresses();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
@@ -1990,10 +1990,10 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listAddresses(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Address> page = compute.listAddresses();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextAddressList.toArray(),
         Iterables.toArray(page.getValues(), Address.class));
   }
@@ -2008,7 +2008,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<Address> page = compute.listAddresses();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(addresses.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
@@ -2025,7 +2025,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Address> page = compute.listAddresses(ADDRESS_AGGREGATED_LIST_PAGE_SIZE,
         ADDRESS_AGGREGATED_LIST_PAGE_TOKEN, ADDRESS_AGGREGATED_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
@@ -2199,7 +2199,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listSnapshots(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Snapshot> page = compute.listSnapshots();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(snapshotList.toArray(), Iterables.toArray(page.getValues(), Snapshot.class));
   }
 
@@ -2223,10 +2223,10 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listSnapshots(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Snapshot> page = compute.listSnapshots();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(snapshotList.toArray(), Iterables.toArray(page.getValues(), Snapshot.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextSnapshotList.toArray(),
         Iterables.toArray(page.getValues(), Snapshot.class));
   }
@@ -2241,7 +2241,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listSnapshots(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Snapshot> page = compute.listSnapshots();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(snapshots.toArray(), Iterables.toArray(page.getValues(), Snapshot.class));
   }
 
@@ -2258,7 +2258,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Snapshot> page = compute.listSnapshots(SNAPSHOT_LIST_PAGE_SIZE, SNAPSHOT_LIST_PAGE_TOKEN,
         SNAPSHOT_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(snapshotList.toArray(), Iterables.toArray(page.getValues(), Snapshot.class));
   }
 
@@ -2411,7 +2411,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listImages(PROJECT, EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Image> page = compute.listImages();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(imageList.toArray(), Iterables.toArray(page.getValues(), Image.class));
   }
 
@@ -2435,10 +2435,10 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listImages(PROJECT, nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Image> page = compute.listImages();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(imageList.toArray(), Iterables.toArray(page.getValues(), Image.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextImageList.toArray(), Iterables.toArray(page.getValues(), Image.class));
   }
 
@@ -2454,7 +2454,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listImages("otherProject", EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Image> page = compute.listImages("otherProject");
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(imageList.toArray(), Iterables.toArray(page.getValues(), Image.class));
   }
 
@@ -2468,7 +2468,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listImages(PROJECT, EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Image> page = compute.listImages();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(images.toArray(), Iterables.toArray(page.getValues(), Image.class));
   }
 
@@ -2482,7 +2482,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listImages("otherProject", EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Image> page = compute.listImages("otherProject");
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(images.toArray(), Iterables.toArray(page.getValues(), Image.class));
   }
 
@@ -2499,7 +2499,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Image> page = compute.listImages(IMAGE_LIST_PAGE_SIZE, IMAGE_LIST_PAGE_TOKEN,
         IMAGE_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(imageList.toArray(), Iterables.toArray(page.getValues(), Image.class));
   }
 
@@ -2516,7 +2516,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Image> page = compute.listImages("other", IMAGE_LIST_PAGE_SIZE, IMAGE_LIST_PAGE_TOKEN,
         IMAGE_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(imageList.toArray(), Iterables.toArray(page.getValues(), Image.class));
   }
 
@@ -2608,7 +2608,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Disk> page = compute.listDisks(DISK_ID.getZone());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskList.toArray(), Iterables.toArray(page.getValues(), Disk.class));
   }
 
@@ -2632,10 +2632,10 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listDisks(DISK_ID.getZone(), nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Disk> page = compute.listDisks(DISK_ID.getZone());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskList.toArray(), Iterables.toArray(page.getValues(), Disk.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextDiskList.toArray(), Iterables.toArray(page.getValues(), Disk.class));
   }
 
@@ -2650,7 +2650,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Disk> page = compute.listDisks(DISK_ID.getZone());
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(disks.toArray(), Iterables.toArray(page.getValues(), Disk.class));
   }
 
@@ -2668,7 +2668,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Disk> page = compute.listDisks(
         DISK_ID.getZone(), DISK_LIST_PAGE_SIZE, DISK_LIST_PAGE_TOKEN, DISK_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskList.toArray(), Iterables.toArray(page.getValues(), Disk.class));
   }
 
@@ -2684,7 +2684,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listDisks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Disk> page = compute.listDisks();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskList.toArray(), Iterables.toArray(page.getValues(), Disk.class));
   }
 
@@ -2707,10 +2707,10 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listDisks(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Disk> page = compute.listDisks();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskList.toArray(), Iterables.toArray(page.getValues(), Disk.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextDiskList.toArray(), Iterables.toArray(page.getValues(), Disk.class));
   }
 
@@ -2724,7 +2724,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listDisks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Disk> page = compute.listDisks();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(diskList.toArray(), Iterables.toArray(page.getValues(), Disk.class));
   }
 
@@ -2741,7 +2741,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Disk> page = compute.listDisks(DISK_AGGREGATED_LIST_PAGE_SIZE,
         DISK_AGGREGATED_LIST_PAGE_TOKEN, DISK_AGGREGATED_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskList.toArray(), Iterables.toArray(page.getValues(), Disk.class));
   }
 
@@ -2901,7 +2901,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_ID.getRegion());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(subnetworkList.toArray(),
         Iterables.toArray(page.getValues(), Subnetwork.class));
   }
@@ -2929,11 +2929,11 @@ public class ComputeImplTest {
         .andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_ID.getRegion());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(subnetworkList.toArray(),
         Iterables.toArray(page.getValues(), Subnetwork.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextSubnetworkList.toArray(),
         Iterables.toArray(page.getValues(), Subnetwork.class));
   }
@@ -2951,7 +2951,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_ID.getRegion());
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(subnetworks.toArray(), Iterables.toArray(page.getValues(), Subnetwork.class));
   }
 
@@ -2971,7 +2971,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_ID.getRegion(),
         SUBNETWORK_LIST_PAGE_SIZE, SUBNETWORK_LIST_PAGE_TOKEN, SUBNETWORK_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(subnetworkList.toArray(),
         Iterables.toArray(page.getValues(), Subnetwork.class));
   }
@@ -2989,7 +2989,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listSubnetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(subnetworkList.toArray(),
         Iterables.toArray(page.getValues(), Subnetwork.class));
   }
@@ -3015,11 +3015,11 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listSubnetworks(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(subnetworkList.toArray(),
         Iterables.toArray(page.getValues(), Subnetwork.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextSubnetworkList.toArray(),
         Iterables.toArray(page.getValues(), Subnetwork.class));
   }
@@ -3036,7 +3036,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listSubnetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(subnetworks.toArray(), Iterables.toArray(page.getValues(), Subnetwork.class));
   }
 
@@ -3054,7 +3054,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_AGGREGATED_LIST_PAGE_SIZE,
         SUBNETWORK_AGGREGATED_LIST_PAGE_TOKEN, SUBNETWORK_AGGREGATED_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(subnetworkList.toArray(),
         Iterables.toArray(page.getValues(), Subnetwork.class));
   }
@@ -3174,7 +3174,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listNetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Network> page = compute.listNetworks();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(networkList.toArray(), Iterables.toArray(page.getValues(), Network.class));
   }
 
@@ -3198,10 +3198,10 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listNetworks(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Network> page = compute.listNetworks();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(networkList.toArray(), Iterables.toArray(page.getValues(), Network.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextNetworkList.toArray(),
         Iterables.toArray(page.getValues(), Network.class));
   }
@@ -3216,7 +3216,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listNetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Network> page = compute.listNetworks();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(networks.toArray(), Iterables.toArray(page.getValues(), Network.class));
   }
 
@@ -3233,7 +3233,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Network> page = compute.listNetworks(NETWORK_LIST_PAGE_SIZE, NETWORK_LIST_PAGE_TOKEN,
         NETWORK_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(networkList.toArray(), Iterables.toArray(page.getValues(), Network.class));
   }
 
@@ -3351,7 +3351,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Instance> page = compute.listInstances(INSTANCE_ID.getZone());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(instanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
   }
 
@@ -3377,10 +3377,10 @@ public class ComputeImplTest {
         .andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Instance> page = compute.listInstances(INSTANCE_ID.getZone());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(instanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextInstanceList.toArray(),
         Iterables.toArray(page.getValues(), Instance.class));
   }
@@ -3396,7 +3396,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Instance> page = compute.listInstances(INSTANCE_ID.getZone());
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(instances.toArray(), Iterables.toArray(page.getValues(), Instance.class));
   }
 
@@ -3414,7 +3414,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Instance> page = compute.listInstances(INSTANCE_ID.getZone(), INSTANCE_LIST_PAGE_SIZE,
         INSTANCE_LIST_PAGE_TOKEN, INSTANCE_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(instanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
   }
 
@@ -3430,7 +3430,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listInstances(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Instance> page = compute.listInstances();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(instanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
   }
 
@@ -3454,10 +3454,10 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listInstances(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Instance> page = compute.listInstances();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(instanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
     page = page.getNextPage();
-    assertEquals(nextCursor, page.getNextPageCursor());
+    assertEquals(nextCursor, page.getNextPageToken());
     assertArrayEquals(nextInstanceList.toArray(),
         Iterables.toArray(page.getValues(), Instance.class));
   }
@@ -3472,7 +3472,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listInstances(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Instance> page = compute.listInstances();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(instanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
   }
 
@@ -3489,7 +3489,7 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Instance> page = compute.listInstances(INSTANCE_AGGREGATED_LIST_PAGE_SIZE,
         INSTANCE_AGGREGATED_LIST_PAGE_TOKEN, INSTANCE_AGGREGATED_LIST_FILTER);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(instanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
   }
 

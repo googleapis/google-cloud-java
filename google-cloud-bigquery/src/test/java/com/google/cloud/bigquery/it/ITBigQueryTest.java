@@ -24,7 +24,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
@@ -249,7 +249,7 @@ public class ITBigQueryTest {
   @Test
   public void testListDatasets() {
     Page<Dataset> datasets = bigquery.listDatasets("bigquery-public-data");
-    Iterator<Dataset> iterator = datasets.iterateAll();
+    Iterator<Dataset> iterator = datasets.iterateAll().iterator();
     Set<String> datasetNames = new HashSet<>();
     while (iterator.hasNext()) {
       datasetNames.add(iterator.next().getDatasetId().getDataset());
