@@ -170,7 +170,7 @@ public class TableSnippets {
   public Page<List<FieldValue>> list() {
     // [START list]
     Page<List<FieldValue>> page = table.list(TableDataListOption.pageSize(100));
-    for(List<FieldValue> row : page.iterateAll()) {
+    for (List<FieldValue> row : page.iterateAll()) {
       // do something with the row
     }
     // [END list]

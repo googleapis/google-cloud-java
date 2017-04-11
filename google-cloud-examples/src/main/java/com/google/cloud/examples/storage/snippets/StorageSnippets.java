@@ -246,7 +246,7 @@ public class StorageSnippets {
     // [START listBucketsWithSizeAndPrefix]
     Page<Bucket> buckets = storage.list(BucketListOption.pageSize(100),
         BucketListOption.prefix(prefix));
-    for(Bucket bucket : buckets.iterateAll()) {
+    for (Bucket bucket : buckets.iterateAll()) {
       // do something with the bucket
     }
     // [END listBucketsWithSizeAndPrefix]
@@ -263,7 +263,7 @@ public class StorageSnippets {
     // [START listBlobsWithDirectoryAndPrefix]
     Page<Blob> blobs = storage.list(bucketName, BlobListOption.currentDirectory(),
         BlobListOption.prefix(directory));
-    for(Blob blob : blobs.iterateAll()) {
+    for (Blob blob : blobs.iterateAll()) {
       // do something with the blob
     }
     // [END listBlobsWithDirectoryAndPrefix]

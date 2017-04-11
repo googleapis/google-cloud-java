@@ -312,7 +312,7 @@ public class ComputeExample {
       } else {
         diskTypePage = compute.listDiskTypes();
       }
-      for(DiskType diskType : diskTypePage.iterateAll()) {
+      for (DiskType diskType : diskTypePage.iterateAll()) {
         System.out.println(diskType);
       }
     }
@@ -367,7 +367,7 @@ public class ComputeExample {
       } else {
         machineTypePage = compute.listMachineTypes();
       }
-      for(MachineType diskType : machineTypePage.iterateAll()) {
+      for (MachineType diskType : machineTypePage.iterateAll()) {
         System.out.println(diskType);
       }
     }
@@ -413,7 +413,7 @@ public class ComputeExample {
   private static class ListRegionsAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      for(Region region : compute.listRegions().iterateAll()) {
+      for (Region region : compute.listRegions().iterateAll()) {
         System.out.println(region);
       }
     }
@@ -459,7 +459,7 @@ public class ComputeExample {
   private static class ListZonesAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      for(Zone zone : compute.listZones().iterateAll()) {
+      for (Zone zone : compute.listZones().iterateAll()) {
         System.out.println(zone);
       }
     }
@@ -535,7 +535,7 @@ public class ComputeExample {
   private static class ListGlobalOperationsAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      for(Operation operation : compute.listGlobalOperations().iterateAll()) {
+      for (Operation operation : compute.listGlobalOperations().iterateAll()) {
         System.out.println(operation);
       }
     }
@@ -550,7 +550,7 @@ public class ComputeExample {
   private static class ListZoneOperationsAction extends ComputeAction<ZoneId> {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      for(Operation operation : compute.listZoneOperations(zone.getZone()).iterateAll()) {
+      for (Operation operation : compute.listZoneOperations(zone.getZone()).iterateAll()) {
         System.out.println(operation);
       }
     }
@@ -583,7 +583,7 @@ public class ComputeExample {
   private static class ListRegionOperationsAction extends ComputeAction<RegionId> {
     @Override
     public void run(Compute compute, RegionId region) {
-      for(Operation operation : compute.listRegionOperations(region.getRegion()).iterateAll()) {
+      for (Operation operation : compute.listRegionOperations(region.getRegion()).iterateAll()) {
         System.out.println(operation);
       }
     }
@@ -774,7 +774,7 @@ public class ComputeExample {
       } else {
         addressPage = compute.listAddresses();
       }
-      for(Address address : addressPage.iterateAll()) {
+      for (Address address : addressPage.iterateAll()) {
         System.out.println(address);
       }
     }
@@ -884,7 +884,7 @@ public class ComputeExample {
   private static class ListSnapshotsAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      for(Snapshot snapshot : compute.listSnapshots().iterateAll()) {
+      for (Snapshot snapshot : compute.listSnapshots().iterateAll()) {
         System.out.println(snapshot);
       }
     }
@@ -1007,7 +1007,7 @@ public class ComputeExample {
   private static class ListImagesAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      for(Image image : compute.listImages().iterateAll()) {
+      for (Image image : compute.listImages().iterateAll()) {
         System.out.println(image);
       }
     }
@@ -1192,7 +1192,7 @@ public class ComputeExample {
   private static class ListDisksAction extends OptionalZoneAction {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      for(Disk disk : compute.listDisks().iterateAll()) {
+      for (Disk disk : compute.listDisks().iterateAll()) {
         System.out.println(disk);
       }
     }
@@ -1320,7 +1320,7 @@ public class ComputeExample {
   private static class ListNetworksAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      for(Network network : compute.listNetworks().iterateAll()) {
+      for (Network network : compute.listNetworks().iterateAll()) {
         System.out.println(network);
       }
     }
@@ -1485,7 +1485,7 @@ public class ComputeExample {
       } else {
         subnetworkPage = compute.listSubnetworks();
       }
-      for(Subnetwork subnetwork : subnetworkPage.iterateAll()) {
+      for (Subnetwork subnetwork : subnetworkPage.iterateAll()) {
         System.out.println(subnetwork);
       }
     }
@@ -1612,7 +1612,7 @@ public class ComputeExample {
       } else {
         instancePage = compute.listInstances();
       }
-      for(Instance instance : instancePage.iterateAll()) {
+      for (Instance instance : instancePage.iterateAll()) {
         System.out.println(instance);
       }
     }

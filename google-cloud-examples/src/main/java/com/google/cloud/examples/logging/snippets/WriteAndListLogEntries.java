@@ -52,7 +52,7 @@ public class WriteAndListLogEntries {
       // List log entries
       Page<LogEntry> entries = logging.listLogEntries(
           EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
-      for(LogEntry logEntry : entries.iterateAll()) {
+      for (LogEntry logEntry : entries.iterateAll()) {
         System.out.println(logEntry);
       }
     }

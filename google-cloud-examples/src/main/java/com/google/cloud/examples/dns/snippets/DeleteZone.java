@@ -48,7 +48,7 @@ public class DeleteZone {
 
     // Make a change for deleting the records
     ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder();
-    for(RecordSet current : recordIterable) {
+    for (RecordSet current : recordIterable) {
       // SOA and NS records cannot be deleted
       if (!RecordSet.Type.SOA.equals(current.getType())
           && !RecordSet.Type.NS.equals(current.getType())) {

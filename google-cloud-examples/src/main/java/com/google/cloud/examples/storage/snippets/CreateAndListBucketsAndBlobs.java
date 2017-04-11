@@ -54,13 +54,13 @@ public class CreateAndListBucketsAndBlobs {
 
     // List all your buckets
     System.out.println("My buckets:");
-    for(Bucket currentBucket : storage.list().iterateAll()) {
+    for (Bucket currentBucket : storage.list().iterateAll()) {
       System.out.println(currentBucket);
     }
 
     // List the blobs in a particular bucket
     System.out.println("My blobs:");
-    for(Blob currentBlob : bucket.list().iterateAll()) {
+    for (Blob currentBlob : bucket.list().iterateAll()) {
       System.out.println(currentBlob);
     }
   }

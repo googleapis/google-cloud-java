@@ -72,7 +72,7 @@ public class ManipulateZonesAndRecordSets {
     // Verify the type A record does not exist yet.
     // If it does exist, we will overwrite it with our prepared record.
     Page<RecordSet> recordSetPage = zone.listRecordSets();
-    for(RecordSet current : recordSetPage.iterateAll()) {
+    for (RecordSet current : recordSetPage.iterateAll()) {
       if (toCreate.getName().equals(current.getName())
           && toCreate.getType().equals(current.getType())) {
         changeBuilder.delete(current);
@@ -95,26 +95,26 @@ public class ManipulateZonesAndRecordSets {
 
     // List all your zones
     int counter = 1;
-    for(Zone currentZone : dns.listZones().iterateAll()) {
+    for (Zone currentZone : dns.listZones().iterateAll()) {
       System.out.printf("#%d.: %s%n%n", counter, currentZone);
       counter++;
     }
 
     // List the record sets in a particular zone
     System.out.println(String.format("Record sets inside %s:", zone.getName()));
-    for(RecordSet recordSet : recordSetPage.iterateAll()) {
+    for (RecordSet recordSet : recordSetPage.iterateAll()) {
       System.out.println(recordSet);
     }
 
     // List the change requests applied to a particular zone
     System.out.println(String.format("The history of changes in %s:", zone.getName()));
-    for(ChangeRequest currentChangeRequest : zone.listChangeRequests().iterateAll()) {
+    for (ChangeRequest currentChangeRequest : zone.listChangeRequests().iterateAll()) {
       System.out.println(currentChangeRequest);
     }
 
     // Make a change for deleting the record sets
     changeBuilder = ChangeRequestInfo.newBuilder();
-    for(RecordSet current : recordSetPage.iterateAll()) {
+    for (RecordSet current : recordSetPage.iterateAll()) {
       // SOA and NS records cannot be deleted
       if (!RecordSet.Type.SOA.equals(current.getType())
           && !RecordSet.Type.NS.equals(current.getType())) {

@@ -172,7 +172,7 @@ public class BigQueryExample {
   private static class ListDatasetsAction extends NoArgsAction {
     @Override
     public void run(BigQuery bigquery, Void arg) {
-      for(Dataset dataset : bigquery.listDatasets().iterateAll()) {
+      for (Dataset dataset : bigquery.listDatasets().iterateAll()) {
         System.out.println(dataset);
       }
     }
@@ -206,7 +206,7 @@ public class BigQueryExample {
   private static class ListTablesAction extends DatasetAction {
     @Override
     public void run(BigQuery bigquery, DatasetId datasetId) {
-      for(Table table : bigquery.listTables(datasetId).iterateAll()) {
+      for (Table table : bigquery.listTables(datasetId).iterateAll()) {
         System.out.println(table);
       }
     }
@@ -314,7 +314,7 @@ public class BigQueryExample {
   private static class ListTableDataAction extends TableAction {
     @Override
     public void run(BigQuery bigquery, TableId tableId) {
-      for(List<FieldValue> row : bigquery.listTableData(tableId).iterateAll()) {
+      for (List<FieldValue> row : bigquery.listTableData(tableId).iterateAll()) {
         System.out.println(row);
       }
     }
@@ -348,7 +348,7 @@ public class BigQueryExample {
   private static class ListJobsAction extends NoArgsAction {
     @Override
     public void run(BigQuery bigquery, Void arg) {
-      for(Job job : bigquery.listJobs().iterateAll()) {
+      for (Job job : bigquery.listJobs().iterateAll()) {
         System.out.println(job);
       }
     }
@@ -628,7 +628,7 @@ public class BigQueryExample {
       }
       if (!queryResponse.hasErrors()) {
         System.out.println("Query succeeded. Results:");
-        for(List<FieldValue> row : queryResponse.getResult().iterateAll()) {
+        for (List<FieldValue> row : queryResponse.getResult().iterateAll()) {
           System.out.println(row);
         }
       } else {

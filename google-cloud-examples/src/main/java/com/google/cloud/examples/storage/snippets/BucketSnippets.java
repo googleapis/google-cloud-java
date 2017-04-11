@@ -115,7 +115,7 @@ public class BucketSnippets {
   public Page<Blob> listBlobs() {
     // [START listBlobs]
     Page<Blob> blobs = bucket.list();
-    for(Blob blob : blobs.iterateAll()) {
+    for (Blob blob : blobs.iterateAll()) {
       // do something with the blob
     }
     // [END listBlobs]

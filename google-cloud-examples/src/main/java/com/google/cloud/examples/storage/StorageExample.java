@@ -267,7 +267,7 @@ public class StorageExample {
     public void run(Storage storage, String bucketName) {
       if (bucketName == null) {
         // list buckets
-        for(Bucket bucket : storage.list().iterateAll()) {
+        for (Bucket bucket : storage.list().iterateAll()) {
           System.out.println(bucket);
         }
       } else {
@@ -277,7 +277,7 @@ public class StorageExample {
           System.out.println("No such bucket");
           return;
         }
-        for(Blob blob : bucket.list().iterateAll()) {
+        for (Blob blob : bucket.list().iterateAll()) {
           System.out.println(blob);
         }
       }

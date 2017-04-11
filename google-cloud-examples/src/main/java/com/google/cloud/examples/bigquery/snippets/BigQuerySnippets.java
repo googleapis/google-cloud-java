@@ -139,7 +139,7 @@ public class BigQuerySnippets {
   public Page<Dataset> listDatasets() {
     // [START listDatasets]
     Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.pageSize(100));
-    for(Dataset dataset : datasets.iterateAll()) {
+    for (Dataset dataset : datasets.iterateAll()) {
       // do something with the dataset
     }
     // [END listDatasets]
@@ -154,7 +154,7 @@ public class BigQuerySnippets {
   public Page<Dataset> listDatasets(String projectId) {
     // [START listDatasets]
     Page<Dataset> datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
-    for(Dataset dataset : datasets.iterateAll()) {
+    for (Dataset dataset : datasets.iterateAll()) {
       // do something with the dataset
     }
     // [END listDatasets]
@@ -243,7 +243,7 @@ public class BigQuerySnippets {
   public Page<Table> listTables(String datasetName) {
     // [START listTables]
     Page<Table> tables = bigquery.listTables(datasetName, TableListOption.pageSize(100));
-    for(Table table : tables.iterateAll()) {
+    for (Table table : tables.iterateAll()) {
       // do something with the table
     }
     // [END listTables]
@@ -261,7 +261,7 @@ public class BigQuerySnippets {
     // [START listTablesFromId]
     DatasetId datasetId = DatasetId.of(projectId, datasetName);
     Page<Table> tables = bigquery.listTables(datasetId, TableListOption.pageSize(100));
-    for(Table table : tables.iterateAll()) {
+    for (Table table : tables.iterateAll()) {
       // do something with the table
     }
     // [END listTablesFromId]
@@ -443,7 +443,7 @@ public class BigQuerySnippets {
     // [START listTableData]
     Page<List<FieldValue>> tableData =
         bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
-    for(List<FieldValue> row : tableData.iterateAll()) {
+    for (List<FieldValue> row : tableData.iterateAll()) {
       // do something with the row
     }
     // [END listTableData]
@@ -461,7 +461,7 @@ public class BigQuerySnippets {
     TableId tableIdObject = TableId.of(datasetName, tableName);
     Page<List<FieldValue>> tableData =
         bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
-    for(List<FieldValue> row : tableData.iterateAll()) {
+    for (List<FieldValue> row : tableData.iterateAll()) {
       // do something with the row
     }
     // [END listTableDataFromId]
@@ -494,7 +494,7 @@ public class BigQuerySnippets {
   public Page<Job> listJobs() {
     // [START listJobs]
     Page<Job> jobs = bigquery.listJobs(JobListOption.pageSize(100));
-    for(Job job : jobs.iterateAll()) {
+    for (Job job : jobs.iterateAll()) {
       // do something with the job
     }
     // [END listJobs]
@@ -586,7 +586,7 @@ public class BigQuerySnippets {
       // handle errors
     }
     QueryResult result = response.getResult();
-    for(List<FieldValue> row : result.iterateAll()) {
+    for (List<FieldValue> row : result.iterateAll()) {
       // do something with the data
     }
     // [END runQuery]
@@ -614,7 +614,7 @@ public class BigQuerySnippets {
       // handle errors
     }
     QueryResult result = response.getResult();
-    for(List<FieldValue> row : result.iterateAll()) {
+    for (List<FieldValue> row : result.iterateAll()) {
       // do something with the data
     }
     // [END runQueryWithParameters]
@@ -639,7 +639,7 @@ public class BigQuerySnippets {
       // handle errors
     }
     QueryResult result = response.getResult();
-    for(List<FieldValue> row : result.iterateAll()) {
+    for (List<FieldValue> row : result.iterateAll()) {
       // do something with the data
     }
     // [END queryResults]

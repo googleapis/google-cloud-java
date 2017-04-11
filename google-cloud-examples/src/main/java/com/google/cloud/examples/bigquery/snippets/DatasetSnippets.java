@@ -111,7 +111,7 @@ public class DatasetSnippets {
   public Page<Table> list() {
      // [START list]
     Page<Table> tables = dataset.list();
-    for(Table table : tables.iterateAll()) {
+    for (Table table : tables.iterateAll()) {
       // do something with the table
     }
     // [END list]

@@ -45,7 +45,7 @@ public class CreateAndListMetrics {
 
       // List metrics
       Page<Metric> metrics = logging.listMetrics();
-      for(Metric metric : metrics.iterateAll()) {
+      for (Metric metric : metrics.iterateAll()) {
         System.out.println(metric);
       }
     }

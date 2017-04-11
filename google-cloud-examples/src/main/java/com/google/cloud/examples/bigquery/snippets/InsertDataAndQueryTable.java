@@ -92,7 +92,7 @@ public class InsertDataAndQueryTable {
     }
     // Read rows
     System.out.println("Table rows:");
-    for(List<FieldValue> row : queryResponse.getResult().iterateAll()) {
+    for (List<FieldValue> row : queryResponse.getResult().iterateAll()) {
       System.out.println(row);
     }
   }

@@ -53,7 +53,7 @@ public class UpdateAndListProjects {
 
     // List all the projects you have permission to view.
     System.out.println("Projects I can view:");
-    for(Project currentProject : resourceManager.list().iterateAll()) {
+    for (Project currentProject : resourceManager.list().iterateAll()) {
       System.out.println(currentProject.getProjectId());
     }
   }

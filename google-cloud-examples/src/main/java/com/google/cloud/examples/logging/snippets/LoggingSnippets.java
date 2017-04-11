@@ -164,7 +164,7 @@ public class LoggingSnippets {
   public Page<Sink> listSinks() {
     // [START listSinks]
     Page<Sink> sinks = logging.listSinks(ListOption.pageSize(100));
-    for(Sink sink : sinks.iterateAll()) {
+    for (Sink sink : sinks.iterateAll()) {
       // do something with the sink
     }
     // [END listSinks]
@@ -180,7 +180,7 @@ public class LoggingSnippets {
     Future<AsyncPage<Sink>> future = logging.listSinksAsync(ListOption.pageSize(100));
     // ...
     AsyncPage<Sink> sinks = future.get();
-    for(Sink sink : sinks.iterateAll()) {
+    for (Sink sink : sinks.iterateAll()) {
       // do something with the sink
     }
     // [END listSinksAsync]
@@ -267,7 +267,7 @@ public class LoggingSnippets {
     // [START listMonitoredResourceDescriptors]
     Page<MonitoredResourceDescriptor> descriptors =
         logging.listMonitoredResourceDescriptors(ListOption.pageSize(100));
-    for(MonitoredResourceDescriptor descriptor : descriptors.iterateAll()) {
+    for (MonitoredResourceDescriptor descriptor : descriptors.iterateAll()) {
       // do something with the descriptor
     }
     // [END listMonitoredResourceDescriptors]
@@ -285,7 +285,7 @@ public class LoggingSnippets {
         logging.listMonitoredResourceDescriptorsAsync(ListOption.pageSize(100));
     // ...
     AsyncPage<MonitoredResourceDescriptor> descriptors = future.get();
-    for(MonitoredResourceDescriptor descriptor : descriptors.iterateAll()) {
+    for (MonitoredResourceDescriptor descriptor : descriptors.iterateAll()) {
       // do something with the descriptor
     }
     // [END listMonitoredResourceDescriptorsAsync]
@@ -393,7 +393,7 @@ public class LoggingSnippets {
   public Page<Metric> listMetrics() {
     // [START listMetrics]
     Page<Metric> metrics = logging.listMetrics(ListOption.pageSize(100));
-    for(Metric metric : metrics.iterateAll()) {
+    for (Metric metric : metrics.iterateAll()) {
       // do something with the metric
     }
     // [END listMetrics]
@@ -409,7 +409,7 @@ public class LoggingSnippets {
     Future<AsyncPage<Metric>> future = logging.listMetricsAsync(ListOption.pageSize(100));
     // ...
     AsyncPage<Metric> metrics = future.get();
-    for(Metric metric : metrics.iterateAll()) {
+    for (Metric metric : metrics.iterateAll()) {
       // do something with the metric
     }
     // [END listMetricsAsync]
@@ -500,7 +500,7 @@ public class LoggingSnippets {
   public Page<LogEntry> listLogEntries(String filter) {
     // [START listLogEntries]
     Page<LogEntry> entries = logging.listLogEntries(EntryListOption.filter(filter));
-    for(LogEntry entry : entries.iterateAll()) {
+    for (LogEntry entry : entries.iterateAll()) {
       // do something with the entry
     }
     // [END listLogEntries]
@@ -519,7 +519,7 @@ public class LoggingSnippets {
         logging.listLogEntriesAsync(EntryListOption.filter(filter));
     // ...
     AsyncPage<LogEntry> entries = future.get();
-    for(LogEntry entry : entries.iterateAll()) {
+    for (LogEntry entry : entries.iterateAll()) {
       // do something with the entry
     }
     // [END listLogEntriesAsync]

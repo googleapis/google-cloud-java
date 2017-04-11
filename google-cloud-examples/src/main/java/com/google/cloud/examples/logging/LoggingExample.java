@@ -172,7 +172,7 @@ public class LoggingExample {
   private static class ListMetricsAction extends NoArgsAction {
     @Override
     public void run(Logging logging, Void arg) {
-      for(Metric metric : logging.listMetrics().iterateAll()) {
+      for (Metric metric : logging.listMetrics().iterateAll()) {
         System.out.println(metric);
       }
     }
@@ -265,7 +265,7 @@ public class LoggingExample {
   private static class ListSinksAction extends NoArgsAction {
     @Override
     public void run(Logging logging, Void arg) {
-      for(Sink sink : logging.listSinks().iterateAll()) {
+      for (Sink sink : logging.listSinks().iterateAll()) {
         System.out.println(sink);
       }
     }
@@ -375,7 +375,7 @@ public class LoggingExample {
   private static class ListResourceDescriptorsAction extends NoArgsAction {
     @Override
     public void run(Logging logging, Void arg) {
-      for(MonitoredResourceDescriptor descriptor : logging.listMonitoredResourceDescriptors().iterateAll()) {
+      for (MonitoredResourceDescriptor descriptor : logging.listMonitoredResourceDescriptors().iterateAll()) {
         System.out.println(descriptor);
       }
     }
@@ -443,7 +443,7 @@ public class LoggingExample {
       } else {
         entryPage = logging.listLogEntries(EntryListOption.filter(filter));
       }
-      for(LogEntry entry : entryPage.iterateAll()) {
+      for (LogEntry entry : entryPage.iterateAll()) {
         System.out.println(entry);
       }
     }

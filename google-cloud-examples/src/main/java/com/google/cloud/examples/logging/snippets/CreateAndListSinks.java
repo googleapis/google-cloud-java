@@ -45,7 +45,7 @@ public class CreateAndListSinks {
 
       // List sinks
       Page<Sink> sinks = logging.listSinks();
-      for(Sink sink : sinks.iterateAll()) {
+      for (Sink sink : sinks.iterateAll()) {
         System.out.println(sink);
       }
     }
