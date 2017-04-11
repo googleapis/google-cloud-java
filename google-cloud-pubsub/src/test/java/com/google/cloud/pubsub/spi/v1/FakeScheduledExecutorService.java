@@ -46,6 +46,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   private final AtomicBoolean shutdown = new AtomicBoolean(false);
   private final PriorityQueue<PendingCallable<?>> pendingCallables = new PriorityQueue<>();
   private final FakeClock clock = new FakeClock();
+  private final Deque<Duration> expectedWorkQueue = new LinkedList<>();
 
   public ApiClock getClock() {
     return clock;
@@ -80,8 +81,6 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
         new PendingCallable<>(
             Duration.millis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
   }
-
-  private Deque<Duration> expectedWorkQueue = new LinkedList<>();
 
   public void setupScheduleExpectation(Duration delay) {
     synchronized (expectedWorkQueue) {
