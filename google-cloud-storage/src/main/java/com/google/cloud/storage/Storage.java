@@ -36,6 +36,7 @@ import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
+import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
@@ -2382,6 +2383,7 @@ public interface Storage extends Service<StorageOptions> {
    * 
    * @throws StorageException upon failure
    */
+  @GcpLaunchStage.Alpha
   Policy getPolicy(String bucket);
   
   /**
@@ -2402,6 +2404,7 @@ public interface Storage extends Service<StorageOptions> {
    * 
    * @throws StorageException upon failure
    */
+  @GcpLaunchStage.Alpha
   Policy updatePolicy(String bucket, Policy policy);
   
   /**
@@ -2422,5 +2425,6 @@ public interface Storage extends Service<StorageOptions> {
    * 
    * @throws StorageException upon failure
    */
+  @GcpLaunchStage.Alpha
   List<Boolean> testPermissions(String bucket, List<String> permissions);
 }
