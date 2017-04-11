@@ -502,7 +502,7 @@ public class PubSubExample {
                         @Override
                         public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
                             messageCount.incrementAndGet();
-                            consumer.accept(AckReply.ACK);
+                            consumer.ack();
                         }
                     };
             SubscriptionName subscriptionName = params.x();

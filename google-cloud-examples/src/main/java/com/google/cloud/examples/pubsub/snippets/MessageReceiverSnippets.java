@@ -51,9 +51,9 @@ public class MessageReceiverSnippets {
     MessageReceiver receiver = new MessageReceiver() {
       public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
         if (blockingQueue.offer(message)) {
-          consumer.accept(AckReply.ACK);
+          consumer.ack();
         } else {
-          consumer.accept(AckReply.NACK);
+          consumer.nack();
         }
       }
     };
