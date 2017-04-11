@@ -43,7 +43,9 @@ public class GcjTestRunner implements Runnable {
       resultBytes.reset();
     }
     for (Class<?> clazz : classes) {
-      resultStream.append("\n").append("Running ").append(clazz.getName()).append("\n\n");
+      resultStream.append("\n").append("Running ").append(clazz.getName());
+      ClassLoader classLoader = clazz.getClassLoader();
+      resultStream.append(" (loaded by ").append(classLoader.getClass().getName()).append(")\n\n");
       unit.run(clazz);
     }
 

@@ -17,6 +17,8 @@ package com.google.cloud.managed.test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,7 +26,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "hex", value = "/info")
+@WebServlet(value = "/info")
 public class GaeInfoServlet extends HttpServlet {
 
   private static final long serialVersionUID = -3598229312089602597L;
@@ -33,10 +35,20 @@ public class GaeInfoServlet extends HttpServlet {
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
     resp.setContentType("text");
-
     PrintWriter out = resp.getWriter();
-    out.append("\nENVIRONMENT VARIABLES:\n\n");
 
+    ClassLoader cl = getClass().getClassLoader();
+    out.append("CLASS LOADER:\n\n");
+    out.append("Name: ").append(cl != null ? cl.getClass().getName() : null).append('\n');
+    if(cl instanceof URLClassLoader) {
+      URLClassLoader urlCl = (URLClassLoader) cl;
+      out.append("Urls: ").append('\n');
+      for(URL url : urlCl.getURLs()) {
+        out.append(url.toString()).append('\n');
+      }
+    }
+
+    out.append("\nENVIRONMENT VARIABLES:\n\n");
     Map<String, String> envVars = System.getenv();
     for (Map.Entry<String, String> entry : envVars.entrySet()) {
       out.append(entry.getKey()).append("=").append(entry.getValue()).append('\n');
