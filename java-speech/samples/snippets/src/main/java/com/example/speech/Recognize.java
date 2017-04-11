@@ -71,7 +71,6 @@ public class Recognize {
       }
     } else if (command.equals("streamrecognize")) {
       streamingRecognizeFile(path);
-      //streamingRecognizeEasy(path);
     }
 
   }
@@ -146,7 +145,7 @@ public class Recognize {
   /*
   /**
    * Performs non-blocking speech recognition on raw PCM audio and prints
-   * the transcription.
+   * the transcription. Note that transcription is limited to 60 seconds audio.
    *
    * @param fileName the path to a PCM audio file to transcribe.
    */
