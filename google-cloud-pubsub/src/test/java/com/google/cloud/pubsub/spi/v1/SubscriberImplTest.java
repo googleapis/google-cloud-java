@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.spi.v1;
 
 import static com.google.cloud.pubsub.spi.v1.MessageDispatcher.PENDING_ACKS_SEND_DELAY;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
@@ -63,6 +64,8 @@ public class SubscriberImplTest {
 
   private static final PubsubMessage TEST_MESSAGE =
       PubsubMessage.newBuilder().setMessageId("1").build();
+
+  private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECS = 2;
 
   @Parameters
   public static Collection<Object[]> data() {
@@ -276,14 +279,17 @@ public class SubscriberImplTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setAckExpirationPadding(Duration.standardSeconds(1)));
-
+                .setAckExpirationPadding(Duration.standardSeconds(1))
+                .setMaxAckExtensionPeriod(Duration.standardSeconds(13)));
     // Send messages to be acked
     List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
+    // A modify ack deadline should be scheduled for the next 9s
+    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9)); 
     sendMessages(testAckIdsBatch);
+    // To ensure first modify ack deadline got scheduled
+    fakeExecutor.waitForExpectedWork(); 
 
-    // Trigger modify ack deadline sending - 10s initial stream ack deadline - 1 padding
     fakeExecutor.advanceTime(Duration.standardSeconds(9));
 
     assertEquivalentWithTransformation(
@@ -292,12 +298,11 @@ public class SubscriberImplTest {
         new Function<String, ModifyAckDeadline>() {
           @Override
           public ModifyAckDeadline apply(String ack) {
-            return new ModifyAckDeadline(ack, 2); // 2 seconds is the initial mod ack deadline
+            return new ModifyAckDeadline(ack, INITIAL_ACK_DEADLINE_EXTENSION_SECS);
           }
         });
 
-    // Trigger modify ack deadline sending - 2s of the renewed deadlines
-    fakeExecutor.advanceTime(Duration.standardSeconds(2));
+    fakeExecutor.advanceTime(Duration.standardSeconds(1));
 
     assertEquivalentWithTransformation(
         testAckIdsBatch,
@@ -305,9 +310,72 @@ public class SubscriberImplTest {
         new Function<String, ModifyAckDeadline>() {
           @Override
           public ModifyAckDeadline apply(String ack) {
-            return new ModifyAckDeadline(ack, 4);
+            return new ModifyAckDeadline(ack, 3); // It is expected that the deadline is renewed
+                                                  // only three more seconds to not pass the max
+                                                  // ack deadline ext.
           }
         });
+
+    // No more modify ack deadline extension should be triggered at this point
+    fakeExecutor.advanceTime(Duration.standardSeconds(20));
+
+    assertTrue(fakeSubscriberServiceImpl.getModifyAckDeadlines().isEmpty());
+
+    testReceiver.replyAllOutstandingMessage();
+    subscriber.stopAsync().awaitTerminated();
+  }
+
+  @Test
+  public void testModifyAckDeadline_defaultMaxExtensionPeriod() throws Exception {
+    Subscriber subscriber =
+        startSubscriber(
+            getTestSubscriberBuilder(testReceiver)
+                .setAckExpirationPadding(Duration.standardSeconds(1)));
+    // Send messages to be acked
+    List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
+    testReceiver.setExplicitAck(true);
+    // A modify ack deadline should be schedule for the next 9s
+    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9)); 
+    sendMessages(testAckIdsBatch);
+    // To ensure the first modify ack deadlines got scheduled
+    fakeExecutor.waitForExpectedWork(); 
+
+    // Next modify ack deadline should be schedule in the next 1s
+    fakeExecutor.advanceTime(Duration.standardSeconds(9));
+
+    assertEquivalentWithTransformation(
+        testAckIdsBatch,
+        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(3),
+        new Function<String, ModifyAckDeadline>() {
+          @Override
+          public ModifyAckDeadline apply(String ack) {
+            return new ModifyAckDeadline(ack, INITIAL_ACK_DEADLINE_EXTENSION_SECS);
+          }
+        });
+
+    fakeExecutor.advanceTime(Duration.standardSeconds(1));
+    int timeIncrementSecs = INITIAL_ACK_DEADLINE_EXTENSION_SECS; // Second time increment
+
+    // Check ack deadline extensions while the current time has not reached 60 minutes
+    while (fakeExecutor.getClock().millisTime() + timeIncrementSecs - 1 < 1000 * 60 * 60) {
+      timeIncrementSecs *= 2;
+      final int expectedIncrementSecs = Math.min(600, timeIncrementSecs);
+      assertEquivalentWithTransformation(
+          testAckIdsBatch,
+          fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(3),
+          new Function<String, ModifyAckDeadline>() {
+            @Override
+            public ModifyAckDeadline apply(String ack) {
+              return new ModifyAckDeadline(ack, expectedIncrementSecs);
+            }
+          });
+      fakeExecutor.advanceTime(Duration.standardSeconds(timeIncrementSecs - 1));
+    }
+
+    // No more modify ack deadline extension should be triggered at this point
+    fakeExecutor.advanceTime(Duration.standardSeconds(20));
+
+    assertTrue(fakeSubscriberServiceImpl.getModifyAckDeadlines().isEmpty());
 
     testReceiver.replyAllOutstandingMessage();
     subscriber.stopAsync().awaitTerminated();
@@ -486,9 +554,10 @@ public class SubscriberImplTest {
     remaining.addAll(target);
 
     for (E expectedElem : expectedElems) {
-      if (!remaining.contains(transform.apply(expectedElem))) {
+      T expected = transform.apply(expectedElem);
+      if (!remaining.contains(expected)) {
         throw new AssertionError(
-            String.format("Expected element %s is not contained in %s", expectedElem, target));
+            String.format("Expected element %s is not contained in %s", expected, target));
       }
       remaining.remove(expectedElem);
     }
