@@ -17,7 +17,6 @@
 package com.google.cloud.translate;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
-import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.cloud.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;

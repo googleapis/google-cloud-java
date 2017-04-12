@@ -24,6 +24,7 @@ nosetests.xml
 .idea
 .settings
 .DS_Store
+.classpath
 
 # Built documentation
 docs/

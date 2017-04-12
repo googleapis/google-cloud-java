@@ -16,6 +16,7 @@
 
 package com.google.cloud.examples.logging;
 
+import com.google.api.gax.core.Page;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.logging.LogEntry;
@@ -38,7 +39,6 @@ import com.google.common.collect.Maps;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -172,9 +172,8 @@ public class LoggingExample {
   private static class ListMetricsAction extends NoArgsAction {
     @Override
     public void run(Logging logging, Void arg) {
-      Iterator<Metric> metricIterator = logging.listMetrics().iterateAll();
-      while (metricIterator.hasNext()) {
-        System.out.println(metricIterator.next());
+      for (Metric metric : logging.listMetrics().iterateAll()) {
+        System.out.println(metric);
       }
     }
   }
@@ -266,9 +265,8 @@ public class LoggingExample {
   private static class ListSinksAction extends NoArgsAction {
     @Override
     public void run(Logging logging, Void arg) {
-      Iterator<Sink> sinkIterator = logging.listSinks().iterateAll();
-      while (sinkIterator.hasNext()) {
-        System.out.println(sinkIterator.next());
+      for (Sink sink : logging.listSinks().iterateAll()) {
+        System.out.println(sink);
       }
     }
   }
@@ -377,10 +375,8 @@ public class LoggingExample {
   private static class ListResourceDescriptorsAction extends NoArgsAction {
     @Override
     public void run(Logging logging, Void arg) {
-      Iterator<MonitoredResourceDescriptor> monitoredResourceIterator =
-          logging.listMonitoredResourceDescriptors().iterateAll();
-      while (monitoredResourceIterator.hasNext()) {
-        System.out.println(monitoredResourceIterator.next());
+      for (MonitoredResourceDescriptor descriptor : logging.listMonitoredResourceDescriptors().iterateAll()) {
+        System.out.println(descriptor);
       }
     }
   }
@@ -441,14 +437,14 @@ public class LoggingExample {
   private static class ListEntriesAction extends LoggingAction<String> {
     @Override
     public void run(Logging logging, String filter) {
-      Iterator<LogEntry> entryIterator;
+      Page<LogEntry> entryPage;
       if (filter == null) {
-        entryIterator = logging.listLogEntries().iterateAll();
+        entryPage = logging.listLogEntries();
       } else {
-        entryIterator = logging.listLogEntries(EntryListOption.filter(filter)).iterateAll();
+        entryPage = logging.listLogEntries(EntryListOption.filter(filter));
       }
-      while (entryIterator.hasNext()) {
-        System.out.println(entryIterator.next());
+      for (LogEntry entry : entryPage.iterateAll()) {
+        System.out.println(entry);
       }
     }
 

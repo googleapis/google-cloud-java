@@ -23,7 +23,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.compute.Address;
 import com.google.cloud.compute.AddressId;
 import com.google.cloud.compute.AddressInfo;
@@ -147,7 +147,7 @@ public class ITComputeTest {
   @Test
   public void testListDiskTypes() {
     Page<DiskType> diskPage = compute.listDiskTypes(ZONE);
-    Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
+    Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
@@ -165,7 +165,7 @@ public class ITComputeTest {
   public void testListDiskTypesWithSelectedFields() {
     Page<DiskType> diskPage = compute.listDiskTypes(ZONE,
         Compute.DiskTypeListOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
-    Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
+    Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
@@ -183,7 +183,7 @@ public class ITComputeTest {
   public void testListDiskTypesWithFilter() {
     Page<DiskType> diskPage = compute.listDiskTypes(ZONE, Compute.DiskTypeListOption.filter(
         Compute.DiskTypeFilter.equals(Compute.DiskTypeField.DEFAULT_DISK_SIZE_GB, 375)));
-    Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
+    Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
@@ -201,7 +201,7 @@ public class ITComputeTest {
   @Test
   public void testAggregatedListDiskTypes() {
     Page<DiskType> diskPage = compute.listDiskTypes();
-    Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
+    Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
@@ -218,7 +218,7 @@ public class ITComputeTest {
   public void testAggregatedListDiskTypesWithFilter() {
     Page<DiskType> diskPage = compute.listDiskTypes(Compute.DiskTypeAggregatedListOption.filter(
         Compute.DiskTypeFilter.notEquals(Compute.DiskTypeField.DEFAULT_DISK_SIZE_GB, 375)));
-    Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
+    Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
@@ -264,7 +264,7 @@ public class ITComputeTest {
   @Test
   public void testListMachineTypes() {
     Page<MachineType> machinePage = compute.listMachineTypes(ZONE);
-    Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
+    Iterator<MachineType> machineTypeIterator = machinePage.iterateAll().iterator();
     assertTrue(machineTypeIterator.hasNext());
     while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
@@ -284,7 +284,7 @@ public class ITComputeTest {
   public void testListMachineTypesWithSelectedFields() {
     Page<MachineType> machinePage = compute.listMachineTypes(ZONE,
         Compute.MachineTypeListOption.fields(Compute.MachineTypeField.CREATION_TIMESTAMP));
-    Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
+    Iterator<MachineType> machineTypeIterator = machinePage.iterateAll().iterator();
     assertTrue(machineTypeIterator.hasNext());
     while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
@@ -305,7 +305,7 @@ public class ITComputeTest {
     Page<MachineType> machinePage = compute.listMachineTypes(ZONE,
         Compute.MachineTypeListOption.filter(
             Compute.MachineTypeFilter.equals(Compute.MachineTypeField.GUEST_CPUS, 2)));
-    Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
+    Iterator<MachineType> machineTypeIterator = machinePage.iterateAll().iterator();
     assertTrue(machineTypeIterator.hasNext());
     while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
@@ -325,7 +325,7 @@ public class ITComputeTest {
   @Test
   public void testAggregatedListMachineTypes() {
     Page<MachineType> machinePage = compute.listMachineTypes();
-    Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
+    Iterator<MachineType> machineTypeIterator = machinePage.iterateAll().iterator();
     assertTrue(machineTypeIterator.hasNext());
     while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
@@ -345,7 +345,7 @@ public class ITComputeTest {
     Page<MachineType> machinePage =
         compute.listMachineTypes(Compute.MachineTypeAggregatedListOption.filter(
             Compute.MachineTypeFilter.notEquals(Compute.MachineTypeField.GUEST_CPUS, 2)));
-    Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
+    Iterator<MachineType> machineTypeIterator = machinePage.iterateAll().iterator();
     assertTrue(machineTypeIterator.hasNext());
     while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
@@ -402,7 +402,7 @@ public class ITComputeTest {
   @Test
   public void testListRegions() {
     Page<Region> regionPage = compute.listRegions();
-    Iterator<Region> regionIterator = regionPage.iterateAll();
+    Iterator<Region> regionIterator = regionPage.iterateAll().iterator();
     while (regionIterator.hasNext()) {
       Region region = regionIterator.next();
       assertNotNull(region.getRegionId());
@@ -419,7 +419,7 @@ public class ITComputeTest {
   public void testListRegionsWithSelectedFields() {
     Page<Region> regionPage =
         compute.listRegions(Compute.RegionListOption.fields(Compute.RegionField.ID));
-    Iterator<Region> regionIterator = regionPage.iterateAll();
+    Iterator<Region> regionIterator = regionPage.iterateAll().iterator();
     while (regionIterator.hasNext()) {
       Region region = regionIterator.next();
       assertNotNull(region.getRegionId());
@@ -436,7 +436,7 @@ public class ITComputeTest {
   public void testListRegionsWithFilter() {
     Page<Region> regionPage = compute.listRegions(Compute.RegionListOption.filter(
         Compute.RegionFilter.equals(Compute.RegionField.NAME, REGION)));
-    Iterator<Region> regionIterator = regionPage.iterateAll();
+    Iterator<Region> regionIterator = regionPage.iterateAll().iterator();
     assertEquals(REGION, regionIterator.next().getRegionId().getRegion());
     assertFalse(regionIterator.hasNext());
   }
@@ -466,7 +466,7 @@ public class ITComputeTest {
   @Test
   public void testListZones() {
     Page<Zone> zonePage = compute.listZones();
-    Iterator<Zone> zoneIterator = zonePage.iterateAll();
+    Iterator<Zone> zoneIterator = zonePage.iterateAll().iterator();
     while (zoneIterator.hasNext()) {
       Zone zone = zoneIterator.next();
       assertNotNull(zone.getZoneId());
@@ -482,7 +482,7 @@ public class ITComputeTest {
   public void testListZonesWithSelectedFields() {
     Page<Zone> zonePage = compute.listZones(
         Compute.ZoneListOption.fields(Compute.ZoneField.CREATION_TIMESTAMP));
-    Iterator<Zone> zoneIterator = zonePage.iterateAll();
+    Iterator<Zone> zoneIterator = zonePage.iterateAll().iterator();
     while (zoneIterator.hasNext()) {
       Zone zone = zoneIterator.next();
       assertNotNull(zone.getZoneId());
@@ -498,7 +498,7 @@ public class ITComputeTest {
   public void testListZonesWithFilter() {
     Page<Zone> zonePage = compute.listZones(
         Compute.ZoneListOption.filter(Compute.ZoneFilter.equals(Compute.ZoneField.NAME, ZONE)));
-    Iterator<Zone> zoneIterator = zonePage.iterateAll();
+    Iterator<Zone> zoneIterator = zonePage.iterateAll().iterator();
     assertEquals(ZONE, zoneIterator.next().getZoneId().getZone());
     assertFalse(zoneIterator.hasNext());
   }
@@ -506,7 +506,7 @@ public class ITComputeTest {
   @Test
   public void testListGlobalOperations() {
     Page<Operation> operationPage = compute.listGlobalOperations();
-    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.getGeneratedId());
@@ -523,7 +523,7 @@ public class ITComputeTest {
   public void testListGlobalOperationsWithSelectedFields() {
     Page<Operation> operationPage =
         compute.listGlobalOperations(Compute.OperationListOption.fields(Compute.OperationField.ID));
-    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.getGeneratedId());
@@ -549,7 +549,7 @@ public class ITComputeTest {
   public void testListGlobalOperationsWithFilter() {
     Page<Operation> operationPage = compute.listGlobalOperations(Compute.OperationListOption.filter(
         Compute.OperationFilter.equals(Compute.OperationField.STATUS, "DONE")));
-    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.getGeneratedId());
@@ -565,7 +565,7 @@ public class ITComputeTest {
   @Test
   public void testListRegionOperations() {
     Page<Operation> operationPage = compute.listRegionOperations(REGION);
-    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.getGeneratedId());
@@ -583,7 +583,7 @@ public class ITComputeTest {
   public void testListRegionOperationsWithSelectedFields() {
     Page<Operation> operationPage = compute.listRegionOperations(REGION,
         Compute.OperationListOption.fields(Compute.OperationField.ID));
-    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.getGeneratedId());
@@ -611,7 +611,7 @@ public class ITComputeTest {
     Page<Operation> operationPage = compute.listRegionOperations(REGION,
         Compute.OperationListOption.filter(Compute.OperationFilter.equals(
             Compute.OperationField.STATUS, "DONE")));
-    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.getGeneratedId());
@@ -628,7 +628,7 @@ public class ITComputeTest {
   @Test
   public void testListZoneOperations() {
     Page<Operation> operationPage = compute.listZoneOperations(ZONE);
-    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.getGeneratedId());
@@ -646,7 +646,7 @@ public class ITComputeTest {
   public void testListZoneOperationsWithSelectedFields() {
     Page<Operation> operationPage = compute.listZoneOperations(ZONE,
         Compute.OperationListOption.fields(Compute.OperationField.ID));
-    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.getGeneratedId());
@@ -674,7 +674,7 @@ public class ITComputeTest {
     Page<Operation> operationPage = compute.listZoneOperations(ZONE,
         Compute.OperationListOption.filter(Compute.OperationFilter.equals(
             Compute.OperationField.STATUS, "DONE")));
-    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.getGeneratedId());
@@ -739,7 +739,7 @@ public class ITComputeTest {
         Compute.AddressFilter.equals(Compute.AddressField.NAME, prefix + "\\d");
     Page<Address> addressPage =
         compute.listRegionAddresses(REGION, Compute.AddressListOption.filter(filter));
-    Iterator<Address> addressIterator = addressPage.iterateAll();
+    Iterator<Address> addressIterator = addressPage.iterateAll().iterator();
     int count = 0;
     while (addressIterator.hasNext()) {
       Address address = addressIterator.next();
@@ -757,7 +757,7 @@ public class ITComputeTest {
     count = 0;
     addressPage = compute.listRegionAddresses(REGION, Compute.AddressListOption.filter(filter),
         Compute.AddressListOption.fields(Compute.AddressField.ADDRESS));
-    addressIterator = addressPage.iterateAll();
+    addressIterator = addressPage.iterateAll().iterator();
     while (addressIterator.hasNext()) {
       Address address = addressIterator.next();
       assertTrue(address.getAddressId() instanceof RegionAddressId);
@@ -790,7 +790,7 @@ public class ITComputeTest {
         Compute.AddressFilter.equals(Compute.AddressField.NAME, prefix + "\\d");
     Page<Address> addressPage =
         compute.listAddresses(Compute.AddressAggregatedListOption.filter(filter));
-    Iterator<Address> addressIterator = addressPage.iterateAll();
+    Iterator<Address> addressIterator = addressPage.iterateAll().iterator();
     int count = 0;
     while (addressIterator.hasNext()) {
       Address address = addressIterator.next();
@@ -853,7 +853,7 @@ public class ITComputeTest {
         Compute.AddressFilter.equals(Compute.AddressField.NAME, prefix + "\\d");
     Page<Address> addressPage =
         compute.listGlobalAddresses(Compute.AddressListOption.filter(filter));
-    Iterator<Address> addressIterator = addressPage.iterateAll();
+    Iterator<Address> addressIterator = addressPage.iterateAll().iterator();
     int count = 0;
     while (addressIterator.hasNext()) {
       Address address = addressIterator.next();
@@ -870,7 +870,7 @@ public class ITComputeTest {
     count = 0;
     addressPage = compute.listGlobalAddresses(Compute.AddressListOption.filter(filter),
         Compute.AddressListOption.fields(Compute.AddressField.ADDRESS));
-    addressIterator = addressPage.iterateAll();
+    addressIterator = addressPage.iterateAll().iterator();
     while (addressIterator.hasNext()) {
       Address address = addressIterator.next();
       assertTrue(address.getAddressId() instanceof GlobalAddressId);
@@ -1090,7 +1090,7 @@ public class ITComputeTest {
     Compute.DiskFilter diskFilter =
         Compute.DiskFilter.equals(Compute.DiskField.NAME, prefix + "\\d");
     Page<Disk> diskPage = compute.listDisks(ZONE, Compute.DiskListOption.filter(diskFilter));
-    Iterator<Disk> diskIterator = diskPage.iterateAll();
+    Iterator<Disk> diskIterator = diskPage.iterateAll().iterator();
     int count = 0;
     while (diskIterator.hasNext()) {
       Disk remoteDisk = diskIterator.next();
@@ -1113,7 +1113,7 @@ public class ITComputeTest {
     count = 0;
     diskPage = compute.listDisks(ZONE, Compute.DiskListOption.filter(diskFilter),
         Compute.DiskListOption.fields(Compute.DiskField.STATUS));
-    diskIterator = diskPage.iterateAll();
+    diskIterator = diskPage.iterateAll().iterator();
     while (diskIterator.hasNext()) {
       Disk remoteDisk = diskIterator.next();
       assertEquals(ZONE, remoteDisk.getDiskId().getZone());
@@ -1145,7 +1145,7 @@ public class ITComputeTest {
         Compute.SnapshotFilter.equals(Compute.SnapshotField.NAME, prefix + "\\d");
     Page<Snapshot> snapshotPage =
         compute.listSnapshots(Compute.SnapshotListOption.filter(snapshotFilter));
-    Iterator<Snapshot> snapshotIterator = snapshotPage.iterateAll();
+    Iterator<Snapshot> snapshotIterator = snapshotPage.iterateAll().iterator();
     count = 0;
     while (snapshotIterator.hasNext()) {
       Snapshot remoteSnapshot = snapshotIterator.next();
@@ -1164,7 +1164,7 @@ public class ITComputeTest {
     // test list snapshots with selected fields
     snapshotPage = compute.listSnapshots(Compute.SnapshotListOption.filter(snapshotFilter),
         Compute.SnapshotListOption.fields(Compute.SnapshotField.CREATION_TIMESTAMP));
-    snapshotIterator = snapshotPage.iterateAll();
+    snapshotIterator = snapshotPage.iterateAll().iterator();
     count = 0;
     while (snapshotIterator.hasNext()) {
       Snapshot remoteSnapshot = snapshotIterator.next();
@@ -1202,7 +1202,7 @@ public class ITComputeTest {
     Compute.DiskFilter diskFilter =
         Compute.DiskFilter.equals(Compute.DiskField.NAME, prefix + "\\d");
     Page<Disk> diskPage = compute.listDisks(Compute.DiskAggregatedListOption.filter(diskFilter));
-    Iterator<Disk> diskIterator = diskPage.iterateAll();
+    Iterator<Disk> diskIterator = diskPage.iterateAll().iterator();
     int count = 0;
     while (diskIterator.hasNext()) {
       Disk remoteDisk = diskIterator.next();
@@ -1286,7 +1286,7 @@ operation.waitFor();
   @Test
   public void testListImages() {
     Page<Image> imagePage = compute.listImages(IMAGE_PROJECT);
-    Iterator<Image> imageIterator = imagePage.iterateAll();
+    Iterator<Image> imageIterator = imagePage.iterateAll().iterator();
     int count = 0;
     while (imageIterator.hasNext()) {
       count++;
@@ -1305,7 +1305,7 @@ operation.waitFor();
   public void testListImagesWithSelectedFields() {
     Page<Image> imagePage =
         compute.listImages(IMAGE_PROJECT, Compute.ImageListOption.fields(Compute.ImageField.ID));
-    Iterator<Image> imageIterator = imagePage.iterateAll();
+    Iterator<Image> imageIterator = imagePage.iterateAll().iterator();
     int count = 0;
     while (imageIterator.hasNext()) {
       count++;
@@ -1326,7 +1326,7 @@ operation.waitFor();
   public void testListImagesWithFilter() {
     Page<Image> imagePage = compute.listImages(IMAGE_PROJECT, Compute.ImageListOption.filter(
         Compute.ImageFilter.equals(Compute.ImageField.ARCHIVE_SIZE_BYTES, 365056004L)));
-    Iterator<Image> imageIterator = imagePage.iterateAll();
+    Iterator<Image> imageIterator = imagePage.iterateAll().iterator();
     int count = 0;
     while (imageIterator.hasNext()) {
       count++;
@@ -1388,7 +1388,7 @@ operation.waitFor();
     // test list
     Compute.NetworkFilter filter = Compute.NetworkFilter.equals(Compute.NetworkField.NAME, name);
     Page<Network> networkPage = compute.listNetworks(Compute.NetworkListOption.filter(filter));
-    Iterator<Network> networkIterator = networkPage.iterateAll();
+    Iterator<Network> networkIterator = networkPage.iterateAll().iterator();
     int count = 0;
     while (networkIterator.hasNext()) {
       Network network = networkIterator.next();
@@ -1405,7 +1405,7 @@ operation.waitFor();
     count = 0;
     networkPage = compute.listNetworks(Compute.NetworkListOption.filter(filter),
         Compute.NetworkListOption.fields(Compute.NetworkField.CREATION_TIMESTAMP));
-    networkIterator = networkPage.iterateAll();
+    networkIterator = networkPage.iterateAll().iterator();
     while (networkIterator.hasNext()) {
       Network network = networkIterator.next();
       assertEquals(networkId.getNetwork(), network.getNetworkId().getNetwork());
@@ -1469,7 +1469,7 @@ operation.waitFor();
         Compute.SubnetworkFilter.equals(Compute.SubnetworkField.NAME, subnetworkName);
     Page<Subnetwork> subnetworkPage =
         compute.listSubnetworks(REGION, Compute.SubnetworkListOption.filter(filter));
-    Iterator<Subnetwork> subnetworkIterator = subnetworkPage.iterateAll();
+    Iterator<Subnetwork> subnetworkIterator = subnetworkPage.iterateAll().iterator();
     int count = 0;
     while (subnetworkIterator.hasNext()) {
       Subnetwork remoteSubnetwork = subnetworkIterator.next();
@@ -1486,7 +1486,7 @@ operation.waitFor();
     // test list subnetworks with selected fields
     subnetworkPage = compute.listSubnetworks(REGION, Compute.SubnetworkListOption.filter(filter),
         Compute.SubnetworkListOption.fields(Compute.SubnetworkField.CREATION_TIMESTAMP));
-    subnetworkIterator = subnetworkPage.iterateAll();
+    subnetworkIterator = subnetworkPage.iterateAll().iterator();
     count = 0;
     while (subnetworkIterator.hasNext()) {
       Subnetwork remoteSubnetwork = subnetworkIterator.next();
@@ -1542,7 +1542,7 @@ operation.waitFor();
         Compute.SubnetworkFilter.equals(Compute.SubnetworkField.NAME, prefix + "\\d");
     Page<Subnetwork> subnetworkPage =
         compute.listSubnetworks(Compute.SubnetworkAggregatedListOption.filter(subnetworkFilter));
-    Iterator<Subnetwork> subnetworkIterator = subnetworkPage.iterateAll();
+    Iterator<Subnetwork> subnetworkIterator = subnetworkPage.iterateAll().iterator();
     int count = 0;
     while (subnetworkIterator.hasNext()) {
       Subnetwork remoteSubnetwork = subnetworkIterator.next();

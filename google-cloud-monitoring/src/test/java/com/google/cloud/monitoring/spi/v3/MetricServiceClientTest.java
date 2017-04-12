@@ -35,7 +35,6 @@ import com.google.monitoring.v3.ListMetricDescriptorsResponse;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
-import com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
 import com.google.monitoring.v3.MetricDescriptorName;
 import com.google.monitoring.v3.MonitoredResourceDescriptorName;
@@ -115,7 +114,7 @@ public class MetricServiceClientTest {
         client.listMonitoredResourceDescriptors(name);
 
     List<MonitoredResourceDescriptor> resources =
-        Lists.newArrayList(pagedListResponse.iterateAllElements());
+        Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getResourceDescriptorsList().get(0), resources.get(0));
 
@@ -207,7 +206,7 @@ public class MetricServiceClientTest {
 
     ListMetricDescriptorsPagedResponse pagedListResponse = client.listMetricDescriptors(name);
 
-    List<MetricDescriptor> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<MetricDescriptor> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getMetricDescriptorsList().get(0), resources.get(0));
 
@@ -386,7 +385,7 @@ public class MetricServiceClientTest {
     ListTimeSeriesPagedResponse pagedListResponse =
         client.listTimeSeries(name, filter, interval, view);
 
-    List<TimeSeries> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<TimeSeries> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTimeSeriesList().get(0), resources.get(0));
 

@@ -104,7 +104,7 @@ public class ErrorStatsServiceClientTest {
 
     ListGroupStatsPagedResponse pagedListResponse = client.listGroupStats(projectName, timeRange);
 
-    List<ErrorGroupStats> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<ErrorGroupStats> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getErrorGroupStatsList().get(0), resources.get(0));
 
@@ -151,7 +151,7 @@ public class ErrorStatsServiceClientTest {
 
     ListEventsPagedResponse pagedListResponse = client.listEvents(projectName, groupId);
 
-    List<ErrorEvent> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<ErrorEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getErrorEventsList().get(0), resources.get(0));
 

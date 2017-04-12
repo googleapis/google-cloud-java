@@ -16,13 +16,12 @@
 
 package com.google.cloud.examples.logging.snippets;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Metric;
 import com.google.cloud.logging.MetricInfo;
 
-import java.util.Iterator;
 
 /**
  * A snippet for Stackdriver Logging showing how to create a metric. The snippet also shows how to
@@ -46,9 +45,8 @@ public class CreateAndListMetrics {
 
       // List metrics
       Page<Metric> metrics = logging.listMetrics();
-      Iterator<Metric> metricIterator = metrics.iterateAll();
-      while (metricIterator.hasNext()) {
-        System.out.println(metricIterator.next());
+      for (Metric metric : metrics.iterateAll()) {
+        System.out.println(metric);
       }
     }
   }

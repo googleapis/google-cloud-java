@@ -125,14 +125,14 @@ public class ITLoggingSnippets {
   @Test
   public void testMonitoredResourceDescriptor() throws ExecutionException, InterruptedException {
     Iterator<MonitoredResourceDescriptor> iterator =
-        loggingSnippets.listMonitoredResourceDescriptors().iterateAll();
+        loggingSnippets.listMonitoredResourceDescriptors().iterateAll().iterator();
     int count = 0;
     while (iterator.hasNext()) {
       assertNotNull(iterator.next().getType());
       count += 1;
     }
     assertTrue(count > 0);
-    iterator = loggingSnippets.listMonitoredResourceDescriptorsAsync().iterateAll();
+    iterator = loggingSnippets.listMonitoredResourceDescriptorsAsync().iterateAll().iterator();
     count = 0;
     while (iterator.hasNext()) {
       assertNotNull(iterator.next().getType());
@@ -146,10 +146,10 @@ public class ITLoggingSnippets {
     String logName = RemoteLoggingHelper.formatForTest("log_name");
     String filter = "logName=projects/" + logging.getOptions().getProjectId() + "/logs/" + logName;
     loggingSnippets.write(logName);
-    Iterator<LogEntry> iterator = loggingSnippets.listLogEntries(filter).iterateAll();
+    Iterator<LogEntry> iterator = loggingSnippets.listLogEntries(filter).iterateAll().iterator();
     while (Iterators.size(iterator) < 2) {
       Thread.sleep(500);
-      iterator = loggingSnippets.listLogEntries(filter).iterateAll();
+      iterator = loggingSnippets.listLogEntries(filter).iterateAll().iterator();
     }
     assertTrue(loggingSnippets.deleteLog(logName));
   }
@@ -159,10 +159,10 @@ public class ITLoggingSnippets {
     String logName = RemoteLoggingHelper.formatForTest("log_name");
     String filter = "logName=projects/" + logging.getOptions().getProjectId() + "/logs/" + logName;
     loggingSnippets.writeAsync(logName).get();
-    Iterator<LogEntry> iterator = loggingSnippets.listLogEntriesAsync(filter).iterateAll();
+    Iterator<LogEntry> iterator = loggingSnippets.listLogEntriesAsync(filter).iterateAll().iterator();
     while (Iterators.size(iterator) < 2) {
       Thread.sleep(500);
-      iterator = loggingSnippets.listLogEntriesAsync(filter).iterateAll();
+      iterator = loggingSnippets.listLogEntriesAsync(filter).iterateAll().iterator();
     }
     assertTrue(loggingSnippets.deleteLogAsync(logName));
   }

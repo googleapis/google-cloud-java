@@ -25,7 +25,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
@@ -124,12 +124,12 @@ public class ITStorageSnippets {
     Blob copiedBlob = storageSnippets.copyBlob(BUCKET, blobName, "directory/copy-blob");
     assertNotNull(copiedBlob);
     Page<Blob> blobs = storageSnippets.listBlobsWithDirectoryAndPrefix(BUCKET, "directory/");
-    while (Iterators.size(blobs.iterateAll()) < 2) {
+    while (Iterators.size(blobs.iterateAll().iterator()) < 2) {
       Thread.sleep(500);
       blobs = storageSnippets.listBlobsWithDirectoryAndPrefix(BUCKET, "directory/");
     }
     Set<String> blobNames = new HashSet<>();
-    Iterator<Blob> blobIterator = blobs.iterateAll();
+    Iterator<Blob> blobIterator = blobs.iterateAll().iterator();
     while (blobIterator.hasNext()) {
       blobNames.add(blobIterator.next().getName());
     }
@@ -209,11 +209,11 @@ public class ITStorageSnippets {
   @Test
   public void testListBucketsWithSizeAndPrefix() throws InterruptedException {
     Page<Bucket> buckets = storageSnippets.listBucketsWithSizeAndPrefix(BUCKET);
-    while (Iterators.size(buckets.iterateAll()) < 1) {
+    while (Iterators.size(buckets.iterateAll().iterator()) < 1) {
       Thread.sleep(500);
       buckets = storageSnippets.listBucketsWithSizeAndPrefix(BUCKET);
     }
-    Iterator<Bucket> bucketIterator = buckets.iterateAll();
+    Iterator<Bucket> bucketIterator = buckets.iterateAll().iterator();
     while (bucketIterator.hasNext()) {
       assertTrue(bucketIterator.next().getName().startsWith(BUCKET));
     }

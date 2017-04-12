@@ -64,13 +64,13 @@ public class QueryResultTest {
     assertEquals(TOTAL_ROWS, QUERY_RESULT.getTotalRows());
     assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESULT.getTotalBytesProcessed());
     assertEquals(CACHE_HIT, QUERY_RESULT.cacheHit());
-    assertEquals(CURSOR, QUERY_RESULT.getNextPageCursor());
+    assertEquals(CURSOR, QUERY_RESULT.getNextPageToken());
     assertEquals(null, QUERY_RESULT.getNextPage());
     assertEquals(null, QUERY_RESULT_INCOMPLETE.getSchema());
     assertEquals(0L, QUERY_RESULT_INCOMPLETE.getTotalRows());
     assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESULT_INCOMPLETE.getTotalBytesProcessed());
     assertEquals(false, QUERY_RESULT_INCOMPLETE.cacheHit());
-    assertEquals(null, QUERY_RESULT_INCOMPLETE.getNextPageCursor());
+    assertEquals(null, QUERY_RESULT_INCOMPLETE.getNextPageToken());
     assertEquals(null, QUERY_RESULT_INCOMPLETE.getNextPage());
   }
 
@@ -84,7 +84,7 @@ public class QueryResultTest {
   private void compareQueryResult(QueryResult expected, QueryResult value) {
     assertEquals(expected, value);
     assertEquals(expected.getNextPage(), value.getNextPage());
-    assertEquals(expected.getNextPageCursor(), value.getNextPageCursor());
+    assertEquals(expected.getNextPageToken(), value.getNextPageToken());
     assertEquals(expected.getValues(), value.getValues());
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(expected.getTotalRows(), value.getTotalRows());

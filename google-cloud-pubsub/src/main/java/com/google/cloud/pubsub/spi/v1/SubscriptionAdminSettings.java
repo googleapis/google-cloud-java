@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.spi.v1;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSnapshotsPagedResponse;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
+import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
@@ -27,6 +28,7 @@ import com.google.api.gax.grpc.ClientSettings;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.PageContext;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
@@ -313,16 +315,14 @@ public class SubscriptionAdminSettings extends ClientSettings {
           new PagedListDescriptor<
               ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListSubscriptionsRequest injectToken(
-                ListSubscriptionsRequest payload, Object token) {
-              return ListSubscriptionsRequest.newBuilder(payload)
-                  .setPageToken((String) token)
-                  .build();
+                ListSubscriptionsRequest payload, String token) {
+              return ListSubscriptionsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -337,7 +337,7 @@ public class SubscriptionAdminSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListSubscriptionsResponse payload) {
+            public String extractNextToken(ListSubscriptionsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -351,13 +351,13 @@ public class SubscriptionAdminSettings extends ClientSettings {
       LIST_SNAPSHOTS_PAGE_STR_DESC =
           new PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListSnapshotsRequest injectToken(ListSnapshotsRequest payload, Object token) {
-              return ListSnapshotsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListSnapshotsRequest injectToken(ListSnapshotsRequest payload, String token) {
+              return ListSnapshotsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -371,7 +371,7 @@ public class SubscriptionAdminSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListSnapshotsResponse payload) {
+            public String extractNextToken(ListSnapshotsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -388,12 +388,16 @@ public class SubscriptionAdminSettings extends ClientSettings {
               ListSubscriptionsRequest, ListSubscriptionsResponse,
               ListSubscriptionsPagedResponse>() {
             @Override
-            public ListSubscriptionsPagedResponse createPagedListResponse(
+            public ApiFuture<ListSubscriptionsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse> callable,
                 ListSubscriptionsRequest request,
-                CallContext context) {
-              return new ListSubscriptionsPagedResponse(
-                  callable, LIST_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListSubscriptionsResponse> futureResponse) {
+              PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+              return ListSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -403,12 +407,14 @@ public class SubscriptionAdminSettings extends ClientSettings {
           new PagedListResponseFactory<
               ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>() {
             @Override
-            public ListSnapshotsPagedResponse createPagedListResponse(
+            public ApiFuture<ListSnapshotsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> callable,
                 ListSnapshotsRequest request,
-                CallContext context) {
-              return new ListSnapshotsPagedResponse(
-                  callable, LIST_SNAPSHOTS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListSnapshotsResponse> futureResponse) {
+              PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> pageContext =
+                  PageContext.create(callable, LIST_SNAPSHOTS_PAGE_STR_DESC, request, context);
+              return ListSnapshotsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 

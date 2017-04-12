@@ -114,7 +114,7 @@ public class SubscriptionAdminClientSnippets {
               .build();
       ListSubscriptionsPagedResponse response =
           subscriptionAdminClient.listSubscriptions(listSubscriptionsRequest);
-      Iterable<Subscription> subscriptions = response.iterateAllElements();
+      Iterable<Subscription> subscriptions = response.iterateAll();
       for (Subscription subscription : subscriptions) {
         // do something with the subscription
       }

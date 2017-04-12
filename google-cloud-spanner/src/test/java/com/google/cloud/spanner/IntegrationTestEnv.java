@@ -102,7 +102,7 @@ public class IntegrationTestEnv extends ExternalResource {
 
   private void initializeInstance(InstanceId instanceId) {
     InstanceConfig instanceConfig =
-        Iterators.get(instanceAdminClient.listInstanceConfigs().iterateAll(), 0, null);
+        Iterators.get(instanceAdminClient.listInstanceConfigs().iterateAll().iterator(), 0, null);
     checkState(instanceConfig != null, "No instance configs found");
 
     InstanceConfigId configId = instanceConfig.getId();

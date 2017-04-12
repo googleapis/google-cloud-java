@@ -22,7 +22,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.Dataset;
@@ -53,12 +53,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URISyntaxException;
-import java.nio.channels.Channels;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Iterator;
@@ -128,21 +124,21 @@ public class ITBigQuerySnippets {
     assertEquals("new friendly name", bigquerySnippets.getTableFromId(
         tableId.getProject(), tableId.getDataset(), tableId.getTable()).getFriendlyName());
     Set<TableId> tables = Sets.newHashSet(
-        Iterators.transform(bigquerySnippets.listTables(DATASET).iterateAll(),
+        Iterators.transform(bigquerySnippets.listTables(DATASET).iterateAll().iterator(),
         TO_TABLE_ID_FUNCTION));
     while (!tables.contains(tableId)) {
       Thread.sleep(500);
       tables = Sets.newHashSet(
-          Iterators.transform(bigquerySnippets.listTables(DATASET).iterateAll(),
+          Iterators.transform(bigquerySnippets.listTables(DATASET).iterateAll().iterator(),
               TO_TABLE_ID_FUNCTION));
     }
     tables = Sets.newHashSet(Iterators.transform(
-        bigquerySnippets.listTablesFromId(tableId.getProject(), DATASET).iterateAll(),
+        bigquerySnippets.listTablesFromId(tableId.getProject(), DATASET).iterateAll().iterator(),
         TO_TABLE_ID_FUNCTION));
     while (!tables.contains(tableId)) {
       Thread.sleep(500);
       tables = Sets.newHashSet(Iterators.transform(
-          bigquerySnippets.listTablesFromId(tableId.getProject(), DATASET).iterateAll(),
+          bigquerySnippets.listTablesFromId(tableId.getProject(), DATASET).iterateAll().iterator(),
           TO_TABLE_ID_FUNCTION));
     }
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
@@ -159,21 +155,21 @@ public class ITBigQuerySnippets {
     assertEquals("new friendly name",
         bigquerySnippets.getDatasetFromId(datasetId.getProject(), OTHER_DATASET).getFriendlyName());
     Set<DatasetId> datasets = Sets.newHashSet(
-        Iterators.transform(bigquerySnippets.listDatasets().iterateAll(),
+        Iterators.transform(bigquerySnippets.listDatasets().iterateAll().iterator(),
             TO_DATASET_ID_FUNCTION));
     while (!datasets.contains(datasetId)) {
       Thread.sleep(500);
       datasets = Sets.newHashSet(
-          Iterators.transform(bigquerySnippets.listDatasets().iterateAll(),
+          Iterators.transform(bigquerySnippets.listDatasets().iterateAll().iterator(),
               TO_DATASET_ID_FUNCTION));
     }
     datasets = Sets.newHashSet(
-        Iterators.transform(bigquerySnippets.listDatasets(datasetId.getProject()).iterateAll(),
+        Iterators.transform(bigquerySnippets.listDatasets(datasetId.getProject()).iterateAll().iterator(),
             TO_DATASET_ID_FUNCTION));
     while (!datasets.contains(datasetId)) {
       Thread.sleep(500);
       datasets = Sets.newHashSet(
-          Iterators.transform(bigquerySnippets.listDatasets(datasetId.getProject()).iterateAll(),
+          Iterators.transform(bigquerySnippets.listDatasets(datasetId.getProject()).iterateAll().iterator(),
               TO_DATASET_ID_FUNCTION));
     }
     assertTrue(bigquerySnippets.deleteDataset(OTHER_DATASET));
@@ -225,7 +221,7 @@ public class ITBigQuerySnippets {
     assertFalse(response.hasErrors());
     assertTrue(response.getInsertErrors().isEmpty());
     Page<List<FieldValue>> listPage = bigquerySnippets.listTableDataFromId(DATASET, tableName);
-    while (Iterators.size(listPage.iterateAll()) < 1) {
+    while (Iterators.size(listPage.iterateAll().iterator()) < 1) {
       Thread.sleep(500);
       listPage = bigquerySnippets.listTableDataFromId(DATASET, tableName);
     }
@@ -245,11 +241,11 @@ public class ITBigQuerySnippets {
     assertEquals(job1.getJobId(), bigquerySnippets.getJob(job1.getJobId().getJob()).getJobId());
     assertEquals(job2.getJobId(),
         bigquerySnippets.getJobFromId(job2.getJobId().getJob()).getJobId());
-    Set<JobId> jobs = Sets.newHashSet(Iterators.transform(bigquerySnippets.listJobs().iterateAll(),
+    Set<JobId> jobs = Sets.newHashSet(Iterators.transform(bigquerySnippets.listJobs().iterateAll().iterator(),
         TO_JOB_ID_FUNCTION));
     while (!jobs.contains(job1.getJobId()) || !jobs.contains(job2.getJobId())) {
       Thread.sleep(500);
-      jobs = Sets.newHashSet(Iterators.transform(bigquerySnippets.listJobs().iterateAll(),
+      jobs = Sets.newHashSet(Iterators.transform(bigquerySnippets.listJobs().iterateAll().iterator(),
           TO_JOB_ID_FUNCTION));
     }
     assertTrue(bigquerySnippets.cancelJob(job1.getJobId().getJob()));

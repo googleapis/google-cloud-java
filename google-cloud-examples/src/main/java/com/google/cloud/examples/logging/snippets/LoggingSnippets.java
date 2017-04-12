@@ -22,10 +22,10 @@
 
 package com.google.cloud.examples.logging.snippets;
 
-import com.google.cloud.AsyncPage;
+import com.google.api.gax.core.AsyncPage;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.EntryListOption;
@@ -42,7 +42,6 @@ import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -165,9 +164,7 @@ public class LoggingSnippets {
   public Page<Sink> listSinks() {
     // [START listSinks]
     Page<Sink> sinks = logging.listSinks(ListOption.pageSize(100));
-    Iterator<Sink> sinkIterator = sinks.iterateAll();
-    while (sinkIterator.hasNext()) {
-      Sink sink = sinkIterator.next();
+    for (Sink sink : sinks.iterateAll()) {
       // do something with the sink
     }
     // [END listSinks]
@@ -183,9 +180,7 @@ public class LoggingSnippets {
     Future<AsyncPage<Sink>> future = logging.listSinksAsync(ListOption.pageSize(100));
     // ...
     AsyncPage<Sink> sinks = future.get();
-    Iterator<Sink> sinkIterator = sinks.iterateAll();
-    while (sinkIterator.hasNext()) {
-      Sink sink = sinkIterator.next();
+    for (Sink sink : sinks.iterateAll()) {
       // do something with the sink
     }
     // [END listSinksAsync]
@@ -272,9 +267,7 @@ public class LoggingSnippets {
     // [START listMonitoredResourceDescriptors]
     Page<MonitoredResourceDescriptor> descriptors =
         logging.listMonitoredResourceDescriptors(ListOption.pageSize(100));
-    Iterator<MonitoredResourceDescriptor> descriptorIterator = descriptors.iterateAll();
-    while (descriptorIterator.hasNext()) {
-      MonitoredResourceDescriptor descriptor = descriptorIterator.next();
+    for (MonitoredResourceDescriptor descriptor : descriptors.iterateAll()) {
       // do something with the descriptor
     }
     // [END listMonitoredResourceDescriptors]
@@ -292,9 +285,7 @@ public class LoggingSnippets {
         logging.listMonitoredResourceDescriptorsAsync(ListOption.pageSize(100));
     // ...
     AsyncPage<MonitoredResourceDescriptor> descriptors = future.get();
-    Iterator<MonitoredResourceDescriptor> descriptorIterator = descriptors.iterateAll();
-    while (descriptorIterator.hasNext()) {
-      MonitoredResourceDescriptor descriptor = descriptorIterator.next();
+    for (MonitoredResourceDescriptor descriptor : descriptors.iterateAll()) {
       // do something with the descriptor
     }
     // [END listMonitoredResourceDescriptorsAsync]
@@ -402,9 +393,7 @@ public class LoggingSnippets {
   public Page<Metric> listMetrics() {
     // [START listMetrics]
     Page<Metric> metrics = logging.listMetrics(ListOption.pageSize(100));
-    Iterator<Metric> metricIterator = metrics.iterateAll();
-    while (metricIterator.hasNext()) {
-      Metric metric = metricIterator.next();
+    for (Metric metric : metrics.iterateAll()) {
       // do something with the metric
     }
     // [END listMetrics]
@@ -420,9 +409,7 @@ public class LoggingSnippets {
     Future<AsyncPage<Metric>> future = logging.listMetricsAsync(ListOption.pageSize(100));
     // ...
     AsyncPage<Metric> metrics = future.get();
-    Iterator<Metric> metricIterator = metrics.iterateAll();
-    while (metricIterator.hasNext()) {
-      Metric metric = metricIterator.next();
+    for (Metric metric : metrics.iterateAll()) {
       // do something with the metric
     }
     // [END listMetricsAsync]
@@ -513,9 +500,7 @@ public class LoggingSnippets {
   public Page<LogEntry> listLogEntries(String filter) {
     // [START listLogEntries]
     Page<LogEntry> entries = logging.listLogEntries(EntryListOption.filter(filter));
-    Iterator<LogEntry> entryIterator = entries.iterateAll();
-    while (entryIterator.hasNext()) {
-      LogEntry entry = entryIterator.next();
+    for (LogEntry entry : entries.iterateAll()) {
       // do something with the entry
     }
     // [END listLogEntries]
@@ -534,9 +519,7 @@ public class LoggingSnippets {
         logging.listLogEntriesAsync(EntryListOption.filter(filter));
     // ...
     AsyncPage<LogEntry> entries = future.get();
-    Iterator<LogEntry> entryIterator = entries.iterateAll();
-    while (entryIterator.hasNext()) {
-      LogEntry entry = entryIterator.next();
+    for (LogEntry entry : entries.iterateAll()) {
       // do something with the entry
     }
     // [END listLogEntriesAsync]
