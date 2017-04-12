@@ -107,10 +107,10 @@
           <execution>
             <phase>generate-resources</phase>
             <goals>
-                <goal>write-project-properties</goal>
+              <goal>write-project-properties</goal>
             </goals>
             <configuration>
-                <outputFile>${project.build.outputDirectory}/project.properties</outputFile>
+              <outputFile>${project.build.outputDirectory}/com/google/cloud/speech/project.properties</outputFile>
             </configuration>
           </execution>
          </executions>
