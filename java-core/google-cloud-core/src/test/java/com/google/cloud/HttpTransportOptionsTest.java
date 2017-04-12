@@ -64,9 +64,12 @@ public class HttpTransportOptionsTest {
 
   @Test
   public void testHeader() {
-    String expectedHeaderPattern = "^gl-java/.* gccl/.*";
+    String expectedHeaderPattern = "^gl-java/.* gccl/0.0.0";
+    final ServiceOptions mockOptions = EasyMock.createMock(ServiceOptions.class);
+    EasyMock.expect(mockOptions.getLibraryVersion()).andReturn("0.0.0");
+    EasyMock.replay(mockOptions);
     assertTrue(Pattern.compile(expectedHeaderPattern)
-        .matcher(DEFAULT_OPTIONS.getXGoogApiClientHeader())
+        .matcher(OPTIONS.getXGoogApiClientHeader(mockOptions))
         .find());
   }
 }

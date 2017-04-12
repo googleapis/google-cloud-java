@@ -216,7 +216,7 @@ public class GrpcTransportOptions implements TransportOptions {
       InstantiatingChannelProvider.Builder providerBuilder, ServiceOptions<?, ?> serviceOptions) {
     providerBuilder.setEndpoint(serviceOptions.getHost())
         .setClientLibHeader(ServiceOptions.getGoogApiClientLibName(),
-            firstNonNull(ServiceOptions.getLibraryVersion(), ""));
+            firstNonNull(serviceOptions.getLibraryVersion(), ""));
     Credentials scopedCredentials = serviceOptions.getScopedCredentials();
     if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
       providerBuilder.setCredentialsProvider(FixedCredentialsProvider.create(scopedCredentials));
