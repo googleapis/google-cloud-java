@@ -198,13 +198,13 @@ public class ConfigSettings extends ClientSettings {
       LIST_SINKS_PAGE_STR_DESC =
           new PagedListDescriptor<ListSinksRequest, ListSinksResponse, LogSink>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListSinksRequest injectToken(ListSinksRequest payload, Object token) {
-              return ListSinksRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListSinksRequest injectToken(ListSinksRequest payload, String token) {
+              return ListSinksRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -218,7 +218,7 @@ public class ConfigSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListSinksResponse payload) {
+            public String extractNextToken(ListSinksResponse payload) {
               return payload.getNextPageToken();
             }
 

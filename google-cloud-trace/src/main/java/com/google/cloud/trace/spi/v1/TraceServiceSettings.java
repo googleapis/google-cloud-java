@@ -181,13 +181,13 @@ public class TraceServiceSettings extends ClientSettings {
       LIST_TRACES_PAGE_STR_DESC =
           new PagedListDescriptor<ListTracesRequest, ListTracesResponse, Trace>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListTracesRequest injectToken(ListTracesRequest payload, Object token) {
-              return ListTracesRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListTracesRequest injectToken(ListTracesRequest payload, String token) {
+              return ListTracesRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -203,7 +203,7 @@ public class TraceServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListTracesResponse payload) {
+            public String extractNextToken(ListTracesResponse payload) {
               return payload.getNextPageToken();
             }
 

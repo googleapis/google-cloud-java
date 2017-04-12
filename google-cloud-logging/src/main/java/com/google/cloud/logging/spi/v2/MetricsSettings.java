@@ -200,13 +200,13 @@ public class MetricsSettings extends ClientSettings {
       LIST_LOG_METRICS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListLogMetricsRequest injectToken(ListLogMetricsRequest payload, Object token) {
-              return ListLogMetricsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListLogMetricsRequest injectToken(ListLogMetricsRequest payload, String token) {
+              return ListLogMetricsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -221,7 +221,7 @@ public class MetricsSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListLogMetricsResponse payload) {
+            public String extractNextToken(ListLogMetricsResponse payload) {
               return payload.getNextPageToken();
             }
 

@@ -187,13 +187,13 @@ public class ErrorStatsServiceSettings extends ClientSettings {
           new PagedListDescriptor<
               ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListGroupStatsRequest injectToken(ListGroupStatsRequest payload, Object token) {
-              return ListGroupStatsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListGroupStatsRequest injectToken(ListGroupStatsRequest payload, String token) {
+              return ListGroupStatsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -208,7 +208,7 @@ public class ErrorStatsServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListGroupStatsResponse payload) {
+            public String extractNextToken(ListGroupStatsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -222,13 +222,13 @@ public class ErrorStatsServiceSettings extends ClientSettings {
       LIST_EVENTS_PAGE_STR_DESC =
           new PagedListDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListEventsRequest injectToken(ListEventsRequest payload, Object token) {
-              return ListEventsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListEventsRequest injectToken(ListEventsRequest payload, String token) {
+              return ListEventsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -242,7 +242,7 @@ public class ErrorStatsServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListEventsResponse payload) {
+            public String extractNextToken(ListEventsResponse payload) {
               return payload.getNextPageToken();
             }
 

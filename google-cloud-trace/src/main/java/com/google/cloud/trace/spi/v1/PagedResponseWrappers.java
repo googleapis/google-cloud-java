@@ -15,14 +15,19 @@
  */
 package com.google.cloud.trace.spi.v1;
 
+import com.google.api.gax.core.FixedSizeCollection;
+import com.google.api.gax.core.Page;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.CallContext;
+import com.google.api.gax.grpc.PageContext;
 import com.google.api.gax.grpc.PagedListDescriptor;
-import com.google.api.gax.grpc.PagedListResponseImpl;
+import com.google.api.gax.grpc.PagedListResponseContext;
 import com.google.api.gax.grpc.UnaryCallable;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.protobuf.ExperimentalApi;
+import java.util.Iterator;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -35,15 +40,99 @@ import javax.annotation.Generated;
 @ExperimentalApi
 public class PagedResponseWrappers {
 
-  public static class ListTracesPagedResponse
-      extends PagedListResponseImpl<ListTracesRequest, ListTracesResponse, Trace> {
+  public static class ListTracesPagedResponse implements PagedListResponse<Trace> {
+
+    private final PagedListResponseContext<ListTracesRequest, ListTracesResponse, Trace> context;
+    private final ListTracesPage page;
 
     public ListTracesPagedResponse(
         UnaryCallable<ListTracesRequest, ListTracesResponse> callable,
         PagedListDescriptor<ListTracesRequest, ListTracesResponse, Trace> pageDescriptor,
         ListTracesRequest request,
-        CallContext context) {
-      super(callable, pageDescriptor, request, context);
+        CallContext callContext) {
+      this.context = new PagedListResponseContext<>(callable, pageDescriptor, request, callContext);
+      this.page = new ListTracesPage(this.context);
+    }
+
+    public Iterable<Trace> iterateAll() {
+      return context.iterateAll();
+    }
+
+    public Page<Trace> getPage() {
+      return page;
+    }
+
+    public Iterable<ListTracesPage> iteratePages() {
+      return new Iterable<ListTracesPage>() {
+        @Override
+        public Iterator<ListTracesPage> iterator() {
+          return new PageContext.PageIterator<ListTracesPage>(
+              new PageContext.PageFetcher<ListTracesPage>() {
+                @Override
+                public ListTracesPage getNextPage(ListTracesPage currentPage) {
+                  return currentPage.getNextPage();
+                }
+              },
+              page);
+        }
+      };
+    }
+
+    public String getNextPageToken() {
+      return context.getNextPageToken();
+    }
+
+    public FixedSizeCollection<Trace> expandToFixedSizeCollection(int collectionSize) {
+      return context.expandToFixedSizeCollection(collectionSize);
+    }
+
+    public Iterable<FixedSizeCollection<Trace>> iterateFixedSizeCollections(int collectionSize) {
+      return context.iterateFixedSizeCollections(collectionSize);
+    }
+  }
+
+  public static class ListTracesPage implements Page<Trace> {
+    private final PageContext<ListTracesRequest, ListTracesResponse, Trace> context;
+
+    public ListTracesPage(PageContext<ListTracesRequest, ListTracesResponse, Trace> context) {
+      this.context = context;
+    }
+
+    @Override
+    public Iterator<Trace> iterator() {
+      return context.getResourceIterable().iterator();
+    }
+
+    @Override
+    public boolean hasNextPage() {
+      return context.hasNextPage();
+    }
+
+    @Override
+    public String getNextPageToken() {
+      return context.getNextPageToken();
+    }
+
+    @Override
+    public ListTracesPage getNextPage() {
+      return new ListTracesPage(context.getNextPageContext());
+    }
+
+    public ListTracesPage getNextPage(int pageSize) {
+      return new ListTracesPage(context.getNextPageContext(pageSize));
+    }
+
+    @Override
+    public Iterable<Trace> iterateAll() {
+      return context.iterateAll();
+    }
+
+    public ListTracesResponse getResponse() {
+      return context.getResponse();
+    }
+
+    public ListTracesRequest getRequest() {
+      return context.getRequest();
     }
   }
 }

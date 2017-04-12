@@ -17,6 +17,7 @@
 package com.google.cloud;
 
 import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.Page;
 
 /**
  * Interface for asynchronously consuming Google Cloud paginated results.

@@ -102,7 +102,7 @@ public class ConfigClientTest {
 
     ListSinksPagedResponse pagedListResponse = client.listSinks(parent);
 
-    List<LogSink> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<LogSink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSinksList().get(0), resources.get(0));
 

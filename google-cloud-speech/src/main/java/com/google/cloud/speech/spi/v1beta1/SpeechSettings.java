@@ -207,9 +207,9 @@ public class SpeechSettings extends ClientSettings {
               .setInitialRetryDelay(Duration.millis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.millis(60000L))
-              .setInitialRpcTimeout(Duration.millis(190000L))
+              .setInitialRpcTimeout(Duration.millis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.millis(190000L))
+              .setMaxRpcTimeout(Duration.millis(60000L))
               .setTotalTimeout(Duration.millis(600000L));
       definitions.put("default", settingsBuilder);
       RETRY_PARAM_DEFINITIONS = definitions.build();

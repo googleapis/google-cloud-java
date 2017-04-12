@@ -213,13 +213,13 @@ public class GroupServiceSettings extends ClientSettings {
       LIST_GROUPS_PAGE_STR_DESC =
           new PagedListDescriptor<ListGroupsRequest, ListGroupsResponse, Group>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListGroupsRequest injectToken(ListGroupsRequest payload, Object token) {
-              return ListGroupsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListGroupsRequest injectToken(ListGroupsRequest payload, String token) {
+              return ListGroupsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -233,7 +233,7 @@ public class GroupServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListGroupsResponse payload) {
+            public String extractNextToken(ListGroupsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -249,16 +249,14 @@ public class GroupServiceSettings extends ClientSettings {
           new PagedListDescriptor<
               ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListGroupMembersRequest injectToken(
-                ListGroupMembersRequest payload, Object token) {
-              return ListGroupMembersRequest.newBuilder(payload)
-                  .setPageToken((String) token)
-                  .build();
+                ListGroupMembersRequest payload, String token) {
+              return ListGroupMembersRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -273,7 +271,7 @@ public class GroupServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListGroupMembersResponse payload) {
+            public String extractNextToken(ListGroupMembersResponse payload) {
               return payload.getNextPageToken();
             }
 
