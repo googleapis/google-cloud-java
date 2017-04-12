@@ -38,11 +38,6 @@ If you are using SBT, add this to your dependencies
 libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.12.0-alpha"
 ```
 
-Example Application
--------------------
-
-[`PubSubExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/PubSubExample.java) is a simple command line interface that provides some of Cloud Pub/Sub's functionality.  Read more about using the application on the [`PubSubExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/pubsub/PubSubExample.html).
-
 Authentication
 --------------
 
@@ -180,7 +175,7 @@ MessageReceiver receiver =
     };
 Subscriber subscriber = null;
 try {
-  subscriber = Subscriber.newBuilder(subscription, receiver).build();
+  subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
   subscriber.addListener(
       new Subscriber.SubscriberListener() {
         @Override
@@ -191,8 +186,7 @@ try {
       },
       MoreExecutors.directExecutor());
   subscriber.startAsync().awaitRunning();
-  // Pull messages for 60 seconds.
-  Thread.sleep(60000);
+  //...
 } finally {
   if (subscriber != null) {
     subscriber.stopAsync();
