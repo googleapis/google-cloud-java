@@ -26,16 +26,14 @@ import com.google.api.gax.core.ApiClock;
 import com.google.api.gax.core.CurrentMillisClock;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
-
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Set;
 import java.util.regex.Pattern;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class ServiceOptionsTest {
   private static final String JSON_KEY =
@@ -98,7 +96,7 @@ public class ServiceOptionsTest {
   private static final TestServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
   private static final String LIBRARY_NAME = "gcloud-java";
   private static final Pattern APPLICATION_NAME_PATTERN =
-      Pattern.compile(LIBRARY_NAME + "(/[0-9]+.[0-9]+.[0-9]+)?");
+      Pattern.compile(LIBRARY_NAME + "/.*");
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
@@ -268,7 +266,7 @@ public class ServiceOptionsTest {
 
   @Test
   public void testLibraryName() {
-    assertEquals(LIBRARY_NAME, OPTIONS.getLibraryName());
+    assertEquals(LIBRARY_NAME, ServiceOptions.getLibraryName());
   }
 
   @Test

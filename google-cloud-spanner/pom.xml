@@ -34,9 +34,26 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
+    <artifact.version>${project.version}</artifact.version>
   </properties>
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>properties-maven-plugin</artifactId>
+        <version>1.0-alpha-2</version>
+        <executions>
+          <execution>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>write-project-properties</goal>
+            </goals>
+            <configuration>
+              <outputFile>${project.build.outputDirectory}/com/google/cloud/spanner/project.properties</outputFile>
+            </configuration>
+          </execution>
+         </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -144,7 +161,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
-<artifactId>guava</artifactId>
+      <artifactId>guava</artifactId>
       <version>19.0</version>
     </dependency>
     <dependency>
@@ -193,5 +210,5 @@
       <version>20151123</version>
       <scope>test</scope>
     </dependency>
-</dependencies>
+  </dependencies>
 </project>
