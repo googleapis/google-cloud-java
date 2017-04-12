@@ -158,7 +158,6 @@ With Pub/Sub you can pull messages from a subscription. Add the following import
 file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.AckReply;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
@@ -175,7 +174,7 @@ MessageReceiver receiver =
       @Override
       public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
         System.out.println("got message: " + message.getData().toStringUtf8());
-        consumer.accept(AckReply.ACK, null);
+        consumer.ack();
       }
     };
 Subscriber subscriber = null;
@@ -204,7 +203,7 @@ try {
 In
 [CreateTopicAndPublishMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java)
 and
-[CreateSubscriptionAndPullMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java)
+[CreateSubscriptionAndConsumeMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndConsumeMessages.java)
 we put together all the code shown above into two programs. The programs assume that you are
 running on Compute Engine, App Engine Flexible or from your own desktop.
 

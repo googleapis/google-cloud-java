@@ -154,6 +154,12 @@ class MessageDispatcher {
     }
   }
 
+  /** Internal representation of a reply to a Pubsub message, to be sent back to the service. */
+  public enum AckReply {
+    ACK,
+    NACK
+  }
+
   /**
    * Handles callbacks for acking/nacking messages from the {@link
    * com.google.cloud.pubsub.spi.v1.MessageReceiver}.
@@ -295,8 +301,13 @@ class MessageDispatcher {
       final AckReplyConsumer consumer =
           new AckReplyConsumer() {
             @Override
-            public void accept(AckReply reply) {
-              response.set(reply);
+            public void ack() {
+              response.set(AckReply.ACK);
+            }
+
+            @Override
+            public void nack() {
+              response.set(AckReply.NACK);
             }
           };
       Futures.addCallback(response, ackHandler);

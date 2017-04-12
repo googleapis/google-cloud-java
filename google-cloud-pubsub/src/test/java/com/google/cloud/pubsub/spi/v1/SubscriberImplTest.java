@@ -85,13 +85,17 @@ public class SubscriberImplTest {
   static class TestReceiver implements MessageReceiver {
     private final LinkedBlockingQueue<AckReplyConsumer> outstandingMessageReplies =
         new LinkedBlockingQueue<>();
-    private AckReply ackReply = AckReply.ACK;
+    private boolean shouldAck = true; // If false, the receiver will <b>nack</b> the messages  
     private Optional<CountDownLatch> messageCountLatch = Optional.absent();
     private Optional<RuntimeException> error = Optional.absent();
     private boolean explicitAckReplies;
 
-    void setReply(AckReply ackReply) {
-      this.ackReply = ackReply;
+    void setAckReply() {
+      this.shouldAck = true;
+    }
+    
+    void setNackReply() {
+      this.shouldAck = false;
     }
 
     void setErrorReply(RuntimeException error) {
@@ -152,7 +156,11 @@ public class SubscriberImplTest {
       if (error.isPresent()) {
         throw error.get();
       } else {
-        reply.accept(ackReply);
+        if (shouldAck) {
+          reply.ack();
+        } else {
+          reply.nack();
+        }
       }
     }
   }
@@ -199,7 +207,7 @@ public class SubscriberImplTest {
   public void testNackSingleMessage() throws Exception {
     Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
-    testReceiver.setReply(AckReply.NACK);
+    testReceiver.setNackReply();
     sendMessages(ImmutableList.of("A"));
 
     // Trigger ack sending
@@ -260,7 +268,7 @@ public class SubscriberImplTest {
     // Send messages to be nacked
     List<String> testAckIdsBatch2 = ImmutableList.of("D", "E");
     // Nack messages
-    testReceiver.setReply(AckReply.NACK);
+    testReceiver.setNackReply();
     sendMessages(testAckIdsBatch2);
 
     // Trigger ack sending

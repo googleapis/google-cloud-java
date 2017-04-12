@@ -55,9 +55,9 @@ import org.joda.time.Duration;
  *
  * <p>A {@link Subscriber} allows you to provide an implementation of a {@link MessageReceiver
  * receiver} to which messages are going to be delivered as soon as they are received by the
- * subscriber. The delivered messages then can be {@link AckReply#ACK acked} or {@link AckReply#NACK
- * nacked} at will as they get processed by the receiver. Nacking a messages implies a later
- * redelivery of such message.
+ * subscriber. The delivered messages then can be {@link AckReplyConsumer#ack() acked} or {@link
+ * AckReplyConsumer#nack() nacked} at will as they get processed by the receiver. Nacking a messages
+ * implies a later redelivery of such message.
  *
  * <p>The subscriber handles the ack management, by automatically extending the ack deadline while
  * the message is being processed, to then issue the ack or nack of such message when the processing

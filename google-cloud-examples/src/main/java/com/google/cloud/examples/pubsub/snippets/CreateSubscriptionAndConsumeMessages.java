@@ -16,7 +16,6 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.cloud.pubsub.spi.v1.AckReply;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
@@ -31,7 +30,7 @@ import com.google.pubsub.v1.TopicName;
  * A snippet for Google Cloud Pub/Sub showing how to create a Pub/Sub pull subscription and
  * asynchronously pull messages from it.
  */
-public class CreateSubscriptionAndPullMessages {
+public class CreateSubscriptionAndConsumeMessages {
 
   public static void main(String... args) throws Exception {
     // [START async_pull_subscription]
@@ -47,7 +46,7 @@ public class CreateSubscriptionAndPullMessages {
           @Override
           public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
             System.out.println("got message: " + message.getData().toStringUtf8());
-            consumer.accept(AckReply.ACK);
+            consumer.ack();
           }
         };
     Subscriber subscriber = null;
