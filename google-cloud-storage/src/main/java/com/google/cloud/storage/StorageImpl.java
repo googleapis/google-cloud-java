@@ -862,12 +862,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
   
   @Override
-  public Policy getPolicy(final String bucket) {
+  public Policy getIamPolicy(final String bucket) {
     try {
       return convertFromApiPolicy(runWithRetries(new Callable<com.google.api.services.storage.model.Policy>() {
         @Override
         public com.google.api.services.storage.model.Policy call() {
-          return storageRpc.getPolicy(bucket);
+          return storageRpc.getIamPolicy(bucket);
         }
       }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e){
@@ -876,12 +876,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
   
   @Override
-  public Policy updatePolicy(final String bucket, final Policy policy) {
+  public Policy setIamPolicy(final String bucket, final Policy policy) {
     try {
       return convertFromApiPolicy(runWithRetries(new Callable<com.google.api.services.storage.model.Policy>() {
         @Override
         public com.google.api.services.storage.model.Policy call() {
-          return storageRpc.updatePolicy(bucket, convertToApiPolicy(policy));
+          return storageRpc.setIamPolicy(bucket, convertToApiPolicy(policy));
         }
       }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
@@ -890,12 +890,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
   
   @Override
-  public List<Boolean> testPermissions(final String bucket, final List<String> permissions) {
+  public List<Boolean> testIamPermissions(final String bucket, final List<String> permissions) {
     try {
       TestIamPermissionsResponse response = runWithRetries(new Callable<TestIamPermissionsResponse>() {
         @Override
         public TestIamPermissionsResponse call() {
-          return storageRpc.testPermissions(bucket, permissions);
+          return storageRpc.testIamPermissions(bucket, permissions);
         }
       }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       final Set<String> heldPermissions =

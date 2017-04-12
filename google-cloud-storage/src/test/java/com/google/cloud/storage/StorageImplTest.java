@@ -1983,15 +1983,15 @@ public class StorageImplTest {
   }
 
   @Test
-  public void testGetPolicy() {
-    EasyMock.expect(storageRpcMock.getPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
+  public void testGetIamPolicy() {
+    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
     EasyMock.replay(storageRpcMock);
     initializeService();
-    assertEquals(LIB_POLICY1, storage.getPolicy(BUCKET_NAME1));
+    assertEquals(LIB_POLICY1, storage.getIamPolicy(BUCKET_NAME1));
   }
 
   @Test
-  public void testUpdatePolicy() {
+  public void testSetIamPolicy() {
     com.google.api.services.storage.model.Policy preCommitApiPolicy =
         new com.google.api.services.storage.model.Policy()
             .setBindings(ImmutableList.of(
@@ -2036,18 +2036,18 @@ public class StorageImplTest {
             .setEtag(POLICY_ETAG2)
             .build();
 
-    EasyMock.expect(storageRpcMock.getPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
+    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
     EasyMock.expect(
-          storageRpcMock.updatePolicy(
+          storageRpcMock.setIamPolicy(
               eq(BUCKET_NAME1),
               eqApiPolicy(preCommitApiPolicy)))
         .andReturn(postCommitApiPolicy);
     EasyMock.replay(storageRpcMock);
     initializeService();
 
-    Policy currentPolicy = storage.getPolicy(BUCKET_NAME1);
+    Policy currentPolicy = storage.getIamPolicy(BUCKET_NAME1);
     Policy updatedPolicy =
-        storage.updatePolicy(
+        storage.setIamPolicy(
             BUCKET_NAME1,
             currentPolicy.toBuilder()
                 .addIdentity(StorageRoles.admin(), Identity.group("test-group@gmail.com"))
@@ -2056,30 +2056,30 @@ public class StorageImplTest {
   }
 
   @Test
-  public void testTestPermissionsNull() {
+  public void testTestIamPermissionsNull() {
     ImmutableList<Boolean> expectedPermissions = ImmutableList.of(false, false, false);
     ImmutableList<String> checkedPermissions =
         ImmutableList.of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
 
-    EasyMock.expect(storageRpcMock.testPermissions(BUCKET_NAME1, checkedPermissions))
+    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions))
         .andReturn(new TestIamPermissionsResponse());
     EasyMock.replay(storageRpcMock);
     initializeService();
-    assertEquals(expectedPermissions, storage.testPermissions(BUCKET_NAME1, checkedPermissions));
+    assertEquals(expectedPermissions, storage.testIamPermissions(BUCKET_NAME1, checkedPermissions));
   }
 
   @Test
-  public void testTestPermissionsNonNull() {
+  public void testTestIamPermissionsNonNull() {
     ImmutableList<Boolean> expectedPermissions = ImmutableList.of(true, false, true);
     ImmutableList<String> checkedPermissions =
         ImmutableList.of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
 
-    EasyMock.expect(storageRpcMock.testPermissions(BUCKET_NAME1, checkedPermissions))
+    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions))
         .andReturn(new TestIamPermissionsResponse()
             .setPermissions(ImmutableList.of("storage.objects.list", "storage.buckets.get")));
     EasyMock.replay(storageRpcMock);
     initializeService();
-    assertEquals(expectedPermissions, storage.testPermissions(BUCKET_NAME1, checkedPermissions));
+    assertEquals(expectedPermissions, storage.testIamPermissions(BUCKET_NAME1, checkedPermissions));
   }
 
   @Test

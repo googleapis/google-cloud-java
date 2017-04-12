@@ -2378,13 +2378,13 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of getting the IAM policy for a bucket.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
-   * Policy policy = storage.getPolicy(bucketName);
+   * Policy policy = storage.getIamPolicy(bucketName);
    * }</pre>
    * 
    * @throws StorageException upon failure
    */
   @GcpLaunchStage.Alpha
-  Policy getPolicy(String bucket);
+  Policy getIamPolicy(String bucket);
   
   /**
    * Updates the IAM policy on the specified bucket.
@@ -2393,9 +2393,9 @@ public interface Storage extends Service<StorageOptions> {
    * <pre>{@code
    * // We want to make all objects in our bucket publicly readable.
    * String bucketName = "my_unique_bucket";
-   * Policy currentPolicy = storage.getPolicy(bucketName);
+   * Policy currentPolicy = storage.getIamPolicy(bucketName);
    * Policy updatedPolicy =
-   *     storage.updatePolicy(
+   *     storage.setIamPolicy(
    *         bucketName,
    *         currentPolicy.toBuilder()
    *             .addIdentity(StorageRoles.objectViewer(), Identity.allUsers())
@@ -2405,7 +2405,7 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   @GcpLaunchStage.Alpha
-  Policy updatePolicy(String bucket, Policy policy);
+  Policy setIamPolicy(String bucket, Policy policy);
   
   /**
    * Tests whether the caller holds the permissions on the specified bucket. Returns a list of
@@ -2415,7 +2415,7 @@ public interface Storage extends Service<StorageOptions> {
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * List<Boolean> response =
-   *     storage.testPermissions(
+   *     storage.testIamPermissions(
    *         bucket,
    *         ImmutableList.of("storage.buckets.get", "storage.buckets.getIamPolicy"));
    * for (boolean hasPermission : response) {
@@ -2426,5 +2426,5 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   @GcpLaunchStage.Alpha
-  List<Boolean> testPermissions(String bucket, List<String> permissions);
+  List<Boolean> testIamPermissions(String bucket, List<String> permissions);
 }
