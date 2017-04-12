@@ -330,7 +330,7 @@ public class TraceServiceClient implements AutoCloseable {
    * <pre><code>
    * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    *   String projectId = "";
-   *   for (Trace element : traceServiceClient.listTraces(projectId).iterateAllElements()) {
+   *   for (Trace element : traceServiceClient.listTraces(projectId).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -356,7 +356,7 @@ public class TraceServiceClient implements AutoCloseable {
    *   ListTracesRequest request = ListTracesRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .build();
-   *   for (Trace element : traceServiceClient.listTraces(request).iterateAllElements()) {
+   *   for (Trace element : traceServiceClient.listTraces(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -383,7 +383,7 @@ public class TraceServiceClient implements AutoCloseable {
    *     .build();
    *   ApiFuture&lt;ListTracesPagedResponse&gt; future = traceServiceClient.listTracesPagedCallable().futureCall(request);
    *   // Do something
-   *   for (Trace element : future.get().iterateAllElements()) {
+   *   for (Trace element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
