@@ -18,6 +18,8 @@ package com.google.cloud;
 
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
+import com.google.api.gax.core.AsyncPage;
+import com.google.api.gax.core.Page;
 import com.google.common.base.Throwables;
 import com.google.common.util.concurrent.Uninterruptibles;
 import java.io.Serializable;
@@ -76,7 +78,7 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
 
   @Override
   public ApiFuture<AsyncPage<T>> getNextPageAsync() {
-    if (getNextPageCursor() == null || asyncPageFetcher == null) {
+    if (getNextPageToken() == null || asyncPageFetcher == null) {
       return ApiFutures.immediateFuture(null);
     }
     return asyncPageFetcher.getNextPage();
