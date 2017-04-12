@@ -82,7 +82,7 @@ public class SubscriberImplTest {
   static class TestReceiver implements MessageReceiver {
     private final LinkedBlockingQueue<AckReplyConsumer> outstandingMessageReplies =
         new LinkedBlockingQueue<>();
-    private boolean shouldAck = true;
+    private boolean shouldAck = true; // If false, the receiver will <b>nack</b> the messages  
     private Optional<CountDownLatch> messageCountLatch = Optional.absent();
     private Optional<RuntimeException> error = Optional.absent();
     private boolean explicitAckReplies;
