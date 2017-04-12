@@ -139,7 +139,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
@@ -150,7 +150,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>

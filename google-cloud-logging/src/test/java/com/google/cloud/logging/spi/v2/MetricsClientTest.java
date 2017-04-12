@@ -104,7 +104,7 @@ public class MetricsClientTest {
 
     ListLogMetricsPagedResponse pagedListResponse = client.listLogMetrics(parent);
 
-    List<LogMetric> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<LogMetric> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getMetricsList().get(0), resources.get(0));
 

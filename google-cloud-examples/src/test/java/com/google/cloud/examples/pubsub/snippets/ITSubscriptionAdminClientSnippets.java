@@ -122,7 +122,7 @@ public class ITSubscriptionAdminClientSnippets {
     boolean[] subFound = {false, false};
     ListSubscriptionsPagedResponse response = subscriptionAdminClientSnippets.listSubscriptions();
     assertNotNull(response);
-    Iterable<Subscription> subscriptions = response.iterateAllElements();
+    Iterable<Subscription> subscriptions = response.iterateAll();
     for (int i = 0; i < 2; i++) {
         if (!subFound[i]) {
           subFound[i] = Iterables.contains(subscriptions, addedSubscriptions.get(i));

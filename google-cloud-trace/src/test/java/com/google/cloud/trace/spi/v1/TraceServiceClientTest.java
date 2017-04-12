@@ -168,7 +168,7 @@ public class TraceServiceClientTest {
 
     ListTracesPagedResponse pagedListResponse = client.listTraces(projectId);
 
-    List<Trace> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<Trace> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTracesList().get(0), resources.get(0));
 

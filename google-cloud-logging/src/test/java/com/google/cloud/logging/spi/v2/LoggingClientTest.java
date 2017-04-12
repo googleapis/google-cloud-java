@@ -190,7 +190,7 @@ public class LoggingClientTest {
     ListLogEntriesPagedResponse pagedListResponse =
         client.listLogEntries(resourceNames, filter, orderBy);
 
-    List<LogEntry> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<LogEntry> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
 
@@ -238,7 +238,7 @@ public class LoggingClientTest {
 
     ListLogsPagedResponse pagedListResponse = client.listLogs(parent);
 
-    List<String> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<String> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getLogNamesList().get(0), resources.get(0));
 

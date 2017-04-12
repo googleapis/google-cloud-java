@@ -502,7 +502,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    * <pre><code>
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
-   *   for (Subscription element : subscriptionAdminClient.listSubscriptions(project).iterateAllElements()) {
+   *   for (Subscription element : subscriptionAdminClient.listSubscriptions(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -530,7 +530,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    *   ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
-   *   for (Subscription element : subscriptionAdminClient.listSubscriptions(request).iterateAllElements()) {
+   *   for (Subscription element : subscriptionAdminClient.listSubscriptions(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -557,7 +557,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    *     .build();
    *   ApiFuture&lt;ListSubscriptionsPagedResponse&gt; future = subscriptionAdminClient.listSubscriptionsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (Subscription element : future.get().iterateAllElements()) {
+   *   for (Subscription element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -1122,7 +1122,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    * <pre><code>
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
-   *   for (Snapshot element : subscriptionAdminClient.listSnapshots(project).iterateAllElements()) {
+   *   for (Snapshot element : subscriptionAdminClient.listSnapshots(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -1150,7 +1150,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    *   ListSnapshotsRequest request = ListSnapshotsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
-   *   for (Snapshot element : subscriptionAdminClient.listSnapshots(request).iterateAllElements()) {
+   *   for (Snapshot element : subscriptionAdminClient.listSnapshots(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -1177,7 +1177,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    *     .build();
    *   ApiFuture&lt;ListSnapshotsPagedResponse&gt; future = subscriptionAdminClient.listSnapshotsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (Snapshot element : future.get().iterateAllElements()) {
+   *   for (Snapshot element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
