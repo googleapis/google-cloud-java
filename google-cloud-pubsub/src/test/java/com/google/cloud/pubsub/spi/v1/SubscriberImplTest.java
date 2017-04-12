@@ -284,7 +284,7 @@ public class SubscriberImplTest {
     // Send messages to be acked
     List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
-    // A modify ack deadline should be schedule for the next 9s
+    // A modify ack deadline should be scheduled for the next 9s
     fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9)); 
     sendMessages(testAckIdsBatch);
     // To ensure first modify ack deadline got scheduled

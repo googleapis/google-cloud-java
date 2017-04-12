@@ -82,12 +82,23 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
             Duration.millis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
   }
 
+  /**
+   * This allows for adding expectations on future work to be scheduled (
+   * {@link FakeScheduledExecutorService#schedule}
+   * or {@link FakeScheduledExecutorService#scheduleAtFixedRate}
+   * or {@link FakeScheduledExecutorService#scheduleWithFixedDelay}) based on its delay.
+   */
   public void setupScheduleExpectation(Duration delay) {
     synchronized (expectedWorkQueue) {
       expectedWorkQueue.add(delay);
     }
   }
   
+  /**
+   * Blocks the current thread until all the work 
+   * {@link FakeScheduledExecutorService#setupScheduleExpectation(Duration) expected} has been
+   * scheduled in the executor. 
+   */
   public void waitForExpectedWork() {
     synchronized (expectedWorkQueue) {
       while (!expectedWorkQueue.isEmpty()) {
@@ -115,7 +126,8 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
     for (;;) {
       PendingCallable<?> callable = null;
       synchronized (pendingCallables) {
-        if (pendingCallables.isEmpty() || pendingCallables.peek().getScheduledTime().isAfter(cmpTime)) {
+        if (pendingCallables.isEmpty()
+            || pendingCallables.peek().getScheduledTime().isAfter(cmpTime)) {
           break;
         }
         callable = pendingCallables.poll();
@@ -204,6 +216,9 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
     }
     work();
     synchronized (expectedWorkQueue) {
+      // We compare by the callable delay in order decide when to remove expectations from the
+      // expected work queue, i.e. only the expected work that matches the delay of the scheduled
+      // callable is removed from the queue.
       if (!expectedWorkQueue.isEmpty() && expectedWorkQueue.peek().equals(callable.delay)) {
         expectedWorkQueue.poll();
       }
