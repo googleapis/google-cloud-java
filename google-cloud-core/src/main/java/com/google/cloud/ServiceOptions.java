@@ -28,7 +28,6 @@ import com.google.api.gax.core.RetrySettings;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
-import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
 import java.io.BufferedReader;
@@ -45,7 +44,6 @@ import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.ServiceLoader;
@@ -627,10 +625,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   private String getPackagePath() {
-    List<String> fullClassName = Splitter.on(".").splitToList(this.getClass().getCanonicalName());
-    if (fullClassName.size() > 2) {
-      return String.join("/", fullClassName.subList(0, fullClassName.size() - 1));
-    }
-    return DEFAULT_PACKAGE_PATH;
+    return this.getClass().getPackage().getName().replaceAll("\\.", "/");
   }
 }
