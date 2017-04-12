@@ -22,6 +22,7 @@ import com.google.api.gax.core.ApiService;
 import com.google.api.gax.core.CurrentMillisClock;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController;
+import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
@@ -92,6 +93,7 @@ public class Subscriber extends AbstractApiService {
   private final String cachedSubscriptionNameString;
   private final FlowControlSettings flowControlSettings;
   private final Duration ackExpirationPadding;
+  private final Duration maxAckExtensionPeriod;
   private final ScheduledExecutorService executor;
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
@@ -113,13 +115,20 @@ public class Subscriber extends AbstractApiService {
     subscriptionName = builder.subscriptionName;
     cachedSubscriptionNameString = subscriptionName.toString();
     ackExpirationPadding = builder.ackExpirationPadding;
+    maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
     streamAckDeadlineSeconds =
         Math.max(
             INITIAL_ACK_DEADLINE_SECONDS,
             Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
-    flowController = new FlowController(builder.flowControlSettings);
+    flowController =
+        new FlowController(
+            builder
+                .flowControlSettings
+                .toBuilder()
+                .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
+                .build());
 
     executor = builder.executorProvider.getExecutor();
     if (builder.executorProvider.shouldAutoClose()) {
@@ -245,6 +254,7 @@ public class Subscriber extends AbstractApiService {
                 credentials,
                 receiver,
                 ackExpirationPadding,
+                maxAckExtensionPeriod,
                 streamAckDeadlineSeconds,
                 ackLatencyDistribution,
                 channelBuilder.build(),
@@ -321,9 +331,11 @@ public class Subscriber extends AbstractApiService {
                 credentials,
                 receiver,
                 ackExpirationPadding,
+                maxAckExtensionPeriod,
                 ackLatencyDistribution,
                 channelBuilder.build(),
                 flowController,
+                flowControlSettings.getMaxOutstandingElementCount(),
                 executor,
                 clock));
       }
@@ -409,6 +421,7 @@ public class Subscriber extends AbstractApiService {
   public static final class Builder {
     private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.millis(100);
     private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
+    private static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.standardMinutes(60);
 
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
         InstantiatingExecutorProvider.newBuilder()
@@ -423,6 +436,7 @@ public class Subscriber extends AbstractApiService {
     MessageReceiver receiver;
 
     Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
+    Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
 
     FlowControlSettings flowControlSettings = FlowControlSettings.getDefaultInstance();
 
@@ -483,6 +497,21 @@ public class Subscriber extends AbstractApiService {
       return this;
     }
 
+    /**
+     * Set the maximum period a message ack deadline will be extended.
+     *
+     * <p>It is recommended to set this value to a reasonable upper bound of the subscriber time to
+     * process any message. This maximum period avoids messages to be <i>locked</i> by a subscriber
+     * in cases when the {@link AckReply} is lost.
+     *
+     * <p>A zero duration effectively disables auto deadline extensions.
+     */
+    public Builder setMaxAckExtensionPeriod(Duration maxAckExtensionPeriod) {
+      Preconditions.checkArgument(maxAckExtensionPeriod.getMillis() >= 0);
+      this.maxAckExtensionPeriod = maxAckExtensionPeriod;
+      return this;
+    }
+
     /** Gives the ability to set a custom executor. */
     public Builder setExecutorProvider(ExecutorProvider executorProvider) {
       this.executorProvider = Preconditions.checkNotNull(executorProvider);
@@ -500,3 +529,4 @@ public class Subscriber extends AbstractApiService {
     }
   }
 }
+

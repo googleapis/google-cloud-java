@@ -70,6 +70,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       Credentials credentials,
       MessageReceiver receiver,
       Duration ackExpirationPadding,
+      Duration maxAckExtensionPeriod,
       int streamAckDeadlineSeconds,
       Distribution ackLatencyDistribution,
       Channel channel,
@@ -85,6 +86,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             receiver,
             this,
             ackExpirationPadding,
+            maxAckExtensionPeriod,
             ackLatencyDistribution,
             flowController,
             executor,
@@ -123,11 +125,17 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     @Override
     public void onNext(StreamingPullResponse response) {
-      messageDispatcher.processReceivedMessages(response.getReceivedMessagesList());
-      // Only if not shutdown we will request one more batches of messages to be delivered.
-      if (isAlive()) {
-        requestObserver.request(1);
-      }
+      messageDispatcher.processReceivedMessages(
+          response.getReceivedMessagesList(),
+          new Runnable() {
+            @Override
+            public void run() {
+              // Only if not shutdown we will request one more batches of messages to be delivered.
+              if (isAlive()) {
+                requestObserver.request(1);
+              }
+            }
+          });
     }
 
     @Override
