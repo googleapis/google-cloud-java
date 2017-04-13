@@ -31,7 +31,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
@@ -42,7 +42,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-speech-v1</artifactId>
-      <version>0.1.6</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
