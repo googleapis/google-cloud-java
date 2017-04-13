@@ -172,7 +172,7 @@ public class Recognize {
         speech.longRunningRecognizeAsync(config, audio);
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
-      Thread.sleep(200);
+      Thread.sleep(10000);
     }
 
     List<SpeechRecognitionResult> results = response.get().getResultsList();
@@ -211,7 +211,7 @@ public class Recognize {
         speech.longRunningRecognizeAsync(config, audio);
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
-      Thread.sleep(200);
+      Thread.sleep(10000);
     }
 
     List<SpeechRecognitionResult> results = response.get().getResultsList();
