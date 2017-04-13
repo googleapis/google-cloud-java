@@ -1463,19 +1463,19 @@ public class ITStorageTest {
           StorageRoles.legacyObjectReader(), newHashSet(Identity.allUsers()));
 
     // Validate getting policy.
-    Policy currentPolicy = storage.getPolicy(BUCKET);
+    Policy currentPolicy = storage.getIamPolicy(BUCKET);
     assertEquals(bindingsWithoutPublicRead, currentPolicy.getBindings());
     
     // Validate updating policy.
     Policy updatedPolicy =
-        storage.updatePolicy(
+        storage.setIamPolicy(
             BUCKET,
             currentPolicy.toBuilder()
                 .addIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
                 .build());
     assertEquals(bindingsWithPublicRead, updatedPolicy.getBindings());
     Policy revertedPolicy =
-        storage.updatePolicy(
+        storage.setIamPolicy(
             BUCKET,
             updatedPolicy.toBuilder()
                 .removeIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
@@ -1486,7 +1486,7 @@ public class ITStorageTest {
     List<Boolean> expectedPermissions = ImmutableList.of(true, true);
     assertEquals(
         expectedPermissions,
-        storage.testPermissions(
+        storage.testIamPermissions(
             BUCKET,
             ImmutableList.of("storage.buckets.getIamPolicy", "storage.buckets.setIamPolicy")));
   }

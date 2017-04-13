@@ -435,19 +435,19 @@ public interface StorageRpc extends ServiceRpc {
    * 
    * @throws StorageException upon failure
    */
-  Policy getPolicy(String bucket);
+  Policy getIamPolicy(String bucket);
   
   /**
    * Updates the IAM policy for the specified bucket.
    * 
    * @throws StorageException upon failure
    */
-  Policy updatePolicy(String bucket, Policy policy);
+  Policy setIamPolicy(String bucket, Policy policy);
   
   /**
    * Tests whether the caller holds the specified permissions for the specified bucket.
    * 
    * @throws StorageException upon failure
    */
-  TestIamPermissionsResponse testPermissions(String bucket, List<String> permissions);
+  TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions);
 }

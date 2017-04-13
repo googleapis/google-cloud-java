@@ -838,7 +838,7 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Policy getPolicy(String bucket) {
+  public Policy getIamPolicy(String bucket) {
     try {
       return storage.buckets().getIamPolicy(bucket).execute();
     } catch (IOException ex) {
@@ -847,7 +847,7 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Policy updatePolicy(String bucket, Policy policy) {
+  public Policy setIamPolicy(String bucket, Policy policy) {
     try {
       return storage.buckets().setIamPolicy(bucket, policy).execute();
     } catch (IOException ex) {
@@ -856,7 +856,7 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public TestIamPermissionsResponse testPermissions(String bucket, List<String> permissions) {
+  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions) {
     try {
       return storage.buckets().testIamPermissions(bucket, permissions).execute();
     } catch (IOException ex) {

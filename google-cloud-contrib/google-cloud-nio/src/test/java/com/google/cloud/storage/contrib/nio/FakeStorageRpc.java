@@ -448,17 +448,17 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Policy getPolicy(String bucket) {
+  public Policy getIamPolicy(String bucket) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public Policy updatePolicy(String bucket, Policy policy) {
+  public Policy setIamPolicy(String bucket, Policy policy) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public TestIamPermissionsResponse testPermissions(String bucket, List<String> permissions) {
+  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions) {
     throw new UnsupportedOperationException();
   }
 }
