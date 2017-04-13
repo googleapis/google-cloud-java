@@ -69,11 +69,6 @@ public class SubscriberImplTest {
 
   private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECS = 2;
 
-  @Parameters
-  public static Collection<Object[]> data() {
-    return Arrays.asList(new Object[][] {{false}});
-  }
-
   private final boolean isStreamingTest;
 
   private ManagedChannel testChannel;
@@ -83,10 +78,15 @@ public class SubscriberImplTest {
 
   private TestReceiver testReceiver;
 
+  @Parameters
+  public static Collection<Object[]> data() {
+    return Arrays.asList(new Object[][] {{false}});
+  }
+
   static class TestReceiver implements MessageReceiver {
     private final LinkedBlockingQueue<AckReplyConsumer> outstandingMessageReplies =
         new LinkedBlockingQueue<>();
-    private boolean shouldAck = true; // If false, the receiver will <b>nack</b> the messages  
+    private boolean shouldAck = true; // If false, the receiver will <b>nack</b> the messages
     private Optional<CountDownLatch> messageCountLatch = Optional.absent();
     private Optional<RuntimeException> error = Optional.absent();
     private boolean explicitAckReplies;
@@ -94,7 +94,7 @@ public class SubscriberImplTest {
     void setAckReply() {
       this.shouldAck = true;
     }
-    
+
     void setNackReply() {
       this.shouldAck = false;
     }
@@ -293,10 +293,10 @@ public class SubscriberImplTest {
     List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
     // A modify ack deadline should be scheduled for the next 9s
-    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9)); 
+    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9));
     sendMessages(testAckIdsBatch);
     // To ensure first modify ack deadline got scheduled
-    fakeExecutor.waitForExpectedWork(); 
+    fakeExecutor.waitForExpectedWork();
 
     fakeExecutor.advanceTime(Duration.standardSeconds(9));
 
@@ -343,10 +343,10 @@ public class SubscriberImplTest {
     List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
     // A modify ack deadline should be schedule for the next 9s
-    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9)); 
+    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9));
     sendMessages(testAckIdsBatch);
     // To ensure the first modify ack deadlines got scheduled
-    fakeExecutor.waitForExpectedWork(); 
+    fakeExecutor.waitForExpectedWork();
 
     // Next modify ack deadline should be schedule in the next 1s
     fakeExecutor.advanceTime(Duration.standardSeconds(9));
