@@ -33,11 +33,11 @@ public class LoggingService {
 
   private static final ThreadLocal<Boolean> inPublishCall = new ThreadLocal<>();
   private volatile Logging logging;
-  private LoggingOptions loggingOptions;
+  private final LoggingOptions loggingOptions;
+  private final ErrorHandler errorHandler;
   private WriteOption[] writeOptions;
   private Severity flushSeverity;
   private Synchronicity synchronicity;
-  private ErrorHandler errorHandler;
 
   private final Object writeLock = new Object();
   private final Set<ApiFuture<Void>> pendingWrites =
