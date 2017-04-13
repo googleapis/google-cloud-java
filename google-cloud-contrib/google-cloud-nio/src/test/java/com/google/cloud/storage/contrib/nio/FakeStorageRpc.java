@@ -19,7 +19,9 @@ package com.google.cloud.storage.contrib.nio;
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
+import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.spi.v1.RpcBatch;
@@ -61,6 +63,7 @@ import javax.annotation.concurrent.NotThreadSafe;
  *   <li>continueRewrite
  *   <li>createBatch
  *   <li>checksums, etags
+ *   <li>IAM operations</li>
  *   </ul>
  * </ul>
  */
@@ -442,5 +445,20 @@ class FakeStorageRpc implements StorageRpc {
     fakeFolder.setGeneration(so.getGeneration());
     folders.put(folderName, fakeFolder);
     return true;
+  }
+
+  @Override
+  public Policy getIamPolicy(String bucket) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Policy setIamPolicy(String bucket, Policy policy) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions) {
+    throw new UnsupportedOperationException();
   }
 }
