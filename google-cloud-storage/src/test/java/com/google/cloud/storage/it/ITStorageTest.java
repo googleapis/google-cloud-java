@@ -26,35 +26,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
-import java.nio.ByteBuffer;
-import java.security.Key;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.zip.GZIPInputStream;
-
-import javax.crypto.spec.SecretKeySpec;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import com.google.api.gax.core.Page;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
@@ -88,6 +59,32 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.ByteBuffer;
+import java.security.Key;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.zip.GZIPInputStream;
+import javax.crypto.spec.SecretKeySpec;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ITStorageTest {
 
@@ -1445,7 +1442,7 @@ public class ITStorageTest {
     }
     blob.delete();
   }
-  
+
   @Test
   public void testBucketPolicy() {
     String projectId = remoteStorageHelper.getOptions().getProjectId();
@@ -1453,19 +1450,21 @@ public class ITStorageTest {
     Identity projectEditor = Identity.projectEditor(projectId);
     Identity projectViewer = Identity.projectViewer(projectId);
     Map<com.google.cloud.Role, Set<Identity>> bindingsWithoutPublicRead =
-    	ImmutableMap.of(
-    	    StorageRoles.legacyBucketOwner(), (Set<Identity>) newHashSet(projectOwner, projectEditor),
-    	    StorageRoles.legacyBucketReader(), newHashSet(projectViewer));
+        ImmutableMap.of(
+            StorageRoles.legacyBucketOwner(),
+            (Set<Identity>) newHashSet(projectOwner, projectEditor),
+            StorageRoles.legacyBucketReader(), newHashSet(projectViewer));
     Map<com.google.cloud.Role, Set<Identity>> bindingsWithPublicRead =
         ImmutableMap.of(
-    	    StorageRoles.legacyBucketOwner(), (Set<Identity>) newHashSet(projectOwner, projectEditor),
-    	    StorageRoles.legacyBucketReader(), newHashSet(projectViewer),
-          StorageRoles.legacyObjectReader(), newHashSet(Identity.allUsers()));
+            StorageRoles.legacyBucketOwner(),
+            (Set<Identity>) newHashSet(projectOwner, projectEditor),
+            StorageRoles.legacyBucketReader(), newHashSet(projectViewer),
+            StorageRoles.legacyObjectReader(), newHashSet(Identity.allUsers()));
 
     // Validate getting policy.
     Policy currentPolicy = storage.getIamPolicy(BUCKET);
     assertEquals(bindingsWithoutPublicRead, currentPolicy.getBindings());
-    
+
     // Validate updating policy.
     Policy updatedPolicy =
         storage.setIamPolicy(
@@ -1480,8 +1479,8 @@ public class ITStorageTest {
             updatedPolicy.toBuilder()
                 .removeIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
                 .build());
-    assertEquals(bindingsWithoutPublicRead, revertedPolicy.getBindings());   
-    
+    assertEquals(bindingsWithoutPublicRead, revertedPolicy.getBindings());
+
     // Validate testing permissions.
     List<Boolean> expectedPermissions = ImmutableList.of(true, true);
     assertEquals(

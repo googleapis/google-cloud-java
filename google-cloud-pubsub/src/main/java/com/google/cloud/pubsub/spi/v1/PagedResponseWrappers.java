@@ -392,16 +392,4 @@ public class PagedResponseWrappers {
       return new ListSnapshotsFixedSizeCollection(pages, collectionSize);
     }
   }
-
-  public static class ListSnapshotsPagedResponse
-      extends PagedListResponseImpl<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> {
-
-    public ListSnapshotsPagedResponse(
-        UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> callable,
-        PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> pageDescriptor,
-        ListSnapshotsRequest request,
-        CallContext context) {
-      super(callable, pageDescriptor, request, context);
-    }
-  }
 }

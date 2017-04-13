@@ -17,9 +17,8 @@
 package com.google.cloud.storage;
 
 import static com.google.cloud.storage.testing.ApiPolicyMatcher.eqApiPolicy;
-import static org.easymock.EasyMock.cmp;
-import static org.easymock.EasyMock.eq;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.easymock.EasyMock.eq;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -28,6 +27,36 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.gax.core.ApiClock;
+import com.google.api.gax.core.Page;
+import com.google.api.services.storage.model.Policy.Bindings;
+import com.google.api.services.storage.model.StorageObject;
+import com.google.api.services.storage.model.TestIamPermissionsResponse;
+import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
+import com.google.cloud.ReadChannel;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl.Project;
+import com.google.cloud.storage.Acl.Project.ProjectRole;
+import com.google.cloud.storage.Acl.Role;
+import com.google.cloud.storage.Acl.User;
+import com.google.cloud.storage.Storage.BlobSourceOption;
+import com.google.cloud.storage.Storage.BlobTargetOption;
+import com.google.cloud.storage.Storage.BlobWriteOption;
+import com.google.cloud.storage.Storage.BucketSourceOption;
+import com.google.cloud.storage.Storage.CopyRequest;
+import com.google.cloud.storage.spi.StorageRpcFactory;
+import com.google.cloud.storage.spi.v1.RpcBatch;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc.Tuple;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
+import com.google.common.io.BaseEncoding;
+import com.google.common.net.UrlEscapers;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -49,48 +78,15 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
 import javax.crypto.spec.SecretKeySpec;
-
 import org.easymock.Capture;
 import org.easymock.EasyMock;
-import org.easymock.LogicalOperator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.gax.core.ApiClock;
-import com.google.api.services.storage.model.Policy.Bindings;
-import com.google.api.services.storage.model.StorageObject;
-import com.google.api.services.storage.model.TestIamPermissionsResponse;
-import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.Identity;
-import com.google.cloud.Policy;
-import com.google.cloud.ReadChannel;
-import com.google.cloud.ServiceOptions;
-import com.google.cloud.WriteChannel;
-import com.google.cloud.storage.Acl.Project;
-import com.google.cloud.storage.Acl.Project.ProjectRole;
-import com.google.cloud.storage.Acl.Role;
-import com.google.cloud.storage.Acl.User;
-import com.google.cloud.storage.Storage.BlobSourceOption;
-import com.google.cloud.storage.Storage.BlobTargetOption;
-import com.google.cloud.storage.Storage.BlobWriteOption;
-import com.google.cloud.storage.Storage.BucketSourceOption;
-import com.google.cloud.storage.Storage.CopyRequest;
-import com.google.cloud.storage.spi.v1.RpcBatch;
-import com.google.cloud.storage.spi.v1.StorageRpc;
-import com.google.cloud.storage.spi.v1.StorageRpc.Tuple;
-import com.google.cloud.storage.spi.StorageRpcFactory;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterables;
-import com.google.common.io.BaseEncoding;
-import com.google.common.net.UrlEscapers;
 
 public class StorageImplTest {
 
@@ -2036,9 +2032,9 @@ public class StorageImplTest {
 
     EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
     EasyMock.expect(
-          storageRpcMock.setIamPolicy(
-              eq(BUCKET_NAME1),
-              eqApiPolicy(preCommitApiPolicy)))
+        storageRpcMock.setIamPolicy(
+            eq(BUCKET_NAME1),
+            eqApiPolicy(preCommitApiPolicy)))
         .andReturn(postCommitApiPolicy);
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -2057,7 +2053,8 @@ public class StorageImplTest {
   public void testTestIamPermissionsNull() {
     ImmutableList<Boolean> expectedPermissions = ImmutableList.of(false, false, false);
     ImmutableList<String> checkedPermissions =
-        ImmutableList.of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
+        ImmutableList
+            .of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
 
     EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions))
         .andReturn(new TestIamPermissionsResponse());
@@ -2070,7 +2067,8 @@ public class StorageImplTest {
   public void testTestIamPermissionsNonNull() {
     ImmutableList<Boolean> expectedPermissions = ImmutableList.of(true, false, true);
     ImmutableList<String> checkedPermissions =
-        ImmutableList.of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
+        ImmutableList
+            .of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
 
     EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions))
         .andReturn(new TestIamPermissionsResponse()

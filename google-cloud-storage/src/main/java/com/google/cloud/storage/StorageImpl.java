@@ -33,21 +33,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.EnumMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
-
 import com.google.api.gax.core.Page;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
@@ -76,6 +61,20 @@ import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
@@ -860,44 +859,47 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       throw StorageException.translateAndThrow(e);
     }
   }
-  
+
   @Override
   public Policy getIamPolicy(final String bucket) {
     try {
-      return convertFromApiPolicy(runWithRetries(new Callable<com.google.api.services.storage.model.Policy>() {
-        @Override
-        public com.google.api.services.storage.model.Policy call() {
-          return storageRpc.getIamPolicy(bucket);
-        }
-      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
-    } catch (RetryHelperException e){
-      throw StorageException.translateAndThrow(e);
-    }
-  }
-  
-  @Override
-  public Policy setIamPolicy(final String bucket, final Policy policy) {
-    try {
-      return convertFromApiPolicy(runWithRetries(new Callable<com.google.api.services.storage.model.Policy>() {
-        @Override
-        public com.google.api.services.storage.model.Policy call() {
-          return storageRpc.setIamPolicy(bucket, convertToApiPolicy(policy));
-        }
-      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
+      return convertFromApiPolicy(
+          runWithRetries(new Callable<com.google.api.services.storage.model.Policy>() {
+            @Override
+            public com.google.api.services.storage.model.Policy call() {
+              return storageRpc.getIamPolicy(bucket);
+            }
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
   }
-  
+
+  @Override
+  public Policy setIamPolicy(final String bucket, final Policy policy) {
+    try {
+      return convertFromApiPolicy(
+          runWithRetries(new Callable<com.google.api.services.storage.model.Policy>() {
+            @Override
+            public com.google.api.services.storage.model.Policy call() {
+              return storageRpc.setIamPolicy(bucket, convertToApiPolicy(policy));
+            }
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
   @Override
   public List<Boolean> testIamPermissions(final String bucket, final List<String> permissions) {
     try {
-      TestIamPermissionsResponse response = runWithRetries(new Callable<TestIamPermissionsResponse>() {
-        @Override
-        public TestIamPermissionsResponse call() {
-          return storageRpc.testIamPermissions(bucket, permissions);
-        }
-      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+      TestIamPermissionsResponse response = runWithRetries(
+          new Callable<TestIamPermissionsResponse>() {
+            @Override
+            public TestIamPermissionsResponse call() {
+              return storageRpc.testIamPermissions(bucket, permissions);
+            }
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       final Set<String> heldPermissions =
           response.getPermissions() != null
               ? ImmutableSet.copyOf(response.getPermissions())

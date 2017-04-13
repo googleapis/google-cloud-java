@@ -20,16 +20,16 @@ import static com.google.cloud.storage.testing.ApiPolicyMatcher.eqApiPolicy;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import org.easymock.EasyMock;
-import org.junit.Test;
-
 import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.Policy.Bindings;
 import com.google.common.collect.ImmutableList;
+import org.easymock.EasyMock;
+import org.junit.Test;
 
 public class ApiPolicyMatcherTest {
 
   private static interface PolicyAcceptor {
+
     int accept(Policy policy);
   }
 

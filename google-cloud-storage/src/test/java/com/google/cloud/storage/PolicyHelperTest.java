@@ -19,13 +19,12 @@ package com.google.cloud.storage;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
-
 import com.google.api.services.storage.model.Policy.Bindings;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.storage.testing.ApiPolicyMatcher;
 import com.google.common.collect.ImmutableList;
+import org.junit.Test;
 
 public class PolicyHelperTest {
 

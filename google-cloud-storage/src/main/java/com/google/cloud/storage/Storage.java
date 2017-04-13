@@ -20,19 +20,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.gax.core.Page;
-import java.io.InputStream;
-import java.io.Serializable;
-import java.net.URL;
-import java.security.Key;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.cloud.FieldSelector;
@@ -49,6 +36,18 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
+import java.io.InputStream;
+import java.io.Serializable;
+import java.net.URL;
+import java.security.Key;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * An interface for Google Cloud Storage.
@@ -2371,24 +2370,24 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   List<Acl> listAcls(BlobId blob);
-  
+
   /**
    * Gets the IAM policy for the provided bucket.
-   * 
+   *
    * <p>Example of getting the IAM policy for a bucket.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * Policy policy = storage.getIamPolicy(bucketName);
    * }</pre>
-   * 
+   *
    * @throws StorageException upon failure
    */
   @GcpLaunchStage.Alpha
   Policy getIamPolicy(String bucket);
-  
+
   /**
    * Updates the IAM policy on the specified bucket.
-   * 
+   *
    * <p>Example of updating the IAM policy on a bucket.
    * <pre>{@code
    * // We want to make all objects in our bucket publicly readable.
@@ -2401,16 +2400,16 @@ public interface Storage extends Service<StorageOptions> {
    *             .addIdentity(StorageRoles.objectViewer(), Identity.allUsers())
    *             .build());
    * }</pre>
-   * 
+   *
    * @throws StorageException upon failure
    */
   @GcpLaunchStage.Alpha
   Policy setIamPolicy(String bucket, Policy policy);
-  
+
   /**
    * Tests whether the caller holds the permissions on the specified bucket. Returns a list of
    * booleans in the same placement and order in which the permissions were specified.
-   * 
+   *
    * <p>Example of testing permissions on a bucket.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
@@ -2422,7 +2421,7 @@ public interface Storage extends Service<StorageOptions> {
    *   // Do something with permission test response
    * }
    * }</pre>
-   * 
+   *
    * @throws StorageException upon failure
    */
   @GcpLaunchStage.Alpha

@@ -16,17 +16,15 @@
 
 package com.google.cloud.storage.testing;
 
+import com.google.api.services.storage.model.Policy;
+import com.google.api.services.storage.model.Policy.Bindings;
+import com.google.common.collect.ImmutableSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.easymock.EasyMock;
 import org.easymock.IArgumentMatcher;
-
-import com.google.api.services.storage.model.Policy;
-import com.google.api.services.storage.model.Policy.Bindings;
-import com.google.common.collect.ImmutableSet;
 
 /**
  * Matches two {@link Policy} instances, which may have lists of {@link Bindings} that are not in
@@ -64,7 +62,7 @@ public class ApiPolicyMatcher implements IArgumentMatcher {
     if (expectedBindings.size() != actualBindings.size()) {
       return false;
     }
-    
+
     for (Map.Entry<String, Set<String>> entry : expectedBindings.entrySet()) {
       String role = entry.getKey();
       Set<String> expectedMembers = entry.getValue();
@@ -73,7 +71,7 @@ public class ApiPolicyMatcher implements IArgumentMatcher {
         return false;
       }
     }
-    
+
     return true;
   }
 

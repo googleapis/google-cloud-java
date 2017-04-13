@@ -16,15 +16,14 @@
 
 package com.google.cloud.storage;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import com.google.api.services.storage.model.Policy.Bindings;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Helper for converting between the Policy model provided by the API and the Policy model provided
