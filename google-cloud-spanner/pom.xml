@@ -98,7 +98,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-v1</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
@@ -109,7 +109,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-admin-database-v1</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
@@ -120,7 +120,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-admin-instance-v1</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
