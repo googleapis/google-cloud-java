@@ -121,15 +121,6 @@ To run examples from your command line:
     target/appassembler/bin/ParallelCountBytes gs://mybucket/myfile.txt
     ```
 
-  * Here's an example run of `PubSubExample`.
-
-    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Pub/Sub" is enabled.
-    ```
-    target/appassembler/bin/PubSubExample create topic test-topic
-    target/appassembler/bin/PubSubExample create subscription test-topic test-subscription
-    target/appassembler/bin/PubSubExample publish test-topic message1 message2
-    ```
-
   * Here's an example run of `ResourceManagerExample`.
 
     Be sure to change the placeholder project ID "your-project-id" with your own globally unique project ID.
