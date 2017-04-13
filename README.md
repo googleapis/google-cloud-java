@@ -19,7 +19,9 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Google Cloud Datastore](#google-cloud-datastore-beta) (Beta)
 -  [Google Cloud Storage](#google-cloud-storage-beta) (Beta)
 -  [Cloud Spanner](#cloud-spanner-beta) (Beta)
+-  [Google Cloud Translation](#google-translation-beta) (Beta)
 -  Cloud Vision (Beta)
+-  Cloud Natural Language (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
@@ -27,7 +29,6 @@ This client supports the following Google Cloud Platform services at an [Alpha](
 -  [Google Cloud DNS](#google-cloud-dns-alpha) (Alpha)
 -  [Google Cloud Pub/Sub](#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
 -  [Google Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
--  [Google Cloud Translate](#google-translate-alpha) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -45,16 +46,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.11.0-alpha</version>
+  <version>0.12.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.11.0-alpha'
+compile 'com.google.cloud:google-cloud:0.12.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.11.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.12.0-alpha"
 ```
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
@@ -88,7 +89,7 @@ Example Applications
   - Read more about using this application on the [`StorageExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/storage/StorageExample.html).
 - [`TaskList`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/datastore/src/main/java/com/google/datastore/snippets/TaskList.java) - A command line application that uses Cloud Datastore to manage a to-do list.
   - Read about how to run the application on its [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/datastore).
-- [`TranslateExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) - A simple command line interface providing some of Google Translate's functionality
+- [`TranslateExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) - A simple command line interface providing some of Google Translation's functionality
   - Read more about using this application on the [`TranslateExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/translate/TranslateExample.html).
 
 Specifying a Project ID
@@ -585,29 +586,31 @@ Google Cloud Pub/Sub (Alpha)
 Here is a code snippet showing a simple usage example from within Compute Engine/App Engine
 Flexible. Note that you must [supply credentials](#authentication) and a project ID if running this
 snippet elsewhere. Complete source code can be found at
-[CreateSubscriptionAndPullMessages.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java).
+[CreateTopicAndPublishMessages.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java).
 
 ```java
-import com.google.cloud.pubsub.Message;
-import com.google.cloud.pubsub.PubSub;
-import com.google.cloud.pubsub.PubSub.MessageConsumer;
-import com.google.cloud.pubsub.PubSub.MessageProcessor;
-import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.Subscription;
-import com.google.cloud.pubsub.SubscriptionInfo;
+import com.google.api.gax.core.ApiFuture;
+import com.google.cloud.pubsub.spi.v1.Publisher;
+import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
+import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.TopicName;
 
-try (PubSub pubsub = PubSubOptions.getDefaultInstance().getService()) {
-  Subscription subscription =
-      pubsub.create(SubscriptionInfo.of("test-topic", "test-subscription"));
-  MessageProcessor callback = new MessageProcessor() {
-    @Override
-    public void process(Message message) throws Exception {
-      System.out.printf("Received message \"%s\"%n", message.getPayloadAsString());
-    }
-  };
-  // Create a message consumer and pull messages (for 60 seconds)
-  try (MessageConsumer consumer = subscription.pullAsync(callback)) {
-    Thread.sleep(60_000);
+TopicName topic = TopicName.create("test-project", "test-topic");
+try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+  topicAdminClient.createTopic(topic);
+}
+
+Publisher publisher = null;
+try {
+  publisher = Publisher.newBuilder(topic).build();
+  ByteString data = ByteString.copyFromUtf8("my message");
+  PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+  ApiFuture<String> messageId = publisher.publish(pubsubMessage);
+  System.out.println("published with message ID: " + messageId.get());
+} finally {
+  if (publisher != null) {
+    publisher.shutdown();
   }
 }
 ```
@@ -647,7 +650,7 @@ while (projectIterator.hasNext()) {
 }
 ```
 
-Google Translate (Alpha)
+Google Translation (Beta)
 ----------------
 
 - [API Documentation][translate-api]

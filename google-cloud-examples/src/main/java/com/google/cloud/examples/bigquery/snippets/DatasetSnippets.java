@@ -22,7 +22,7 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.Dataset.Builder;
 import com.google.cloud.bigquery.Field;
@@ -32,7 +32,6 @@ import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TimePartitioning;
 
-import java.util.Iterator;
 
 /**
  * This class contains a number of snippets for the {@link Dataset} interface.
@@ -112,9 +111,7 @@ public class DatasetSnippets {
   public Page<Table> list() {
      // [START list]
     Page<Table> tables = dataset.list();
-    Iterator<Table> tableIterator = tables.iterateAll();
-    while (tableIterator.hasNext()) {
-      Table table = tableIterator.next();
+    for (Table table : tables.iterateAll()) {
       // do something with the table
     }
     // [END list]

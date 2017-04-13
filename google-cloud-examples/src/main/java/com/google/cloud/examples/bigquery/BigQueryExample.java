@@ -49,7 +49,6 @@ import java.nio.channels.FileChannel;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -173,9 +172,8 @@ public class BigQueryExample {
   private static class ListDatasetsAction extends NoArgsAction {
     @Override
     public void run(BigQuery bigquery, Void arg) {
-      Iterator<Dataset> datasetInfoIterator = bigquery.listDatasets().iterateAll();
-      while (datasetInfoIterator.hasNext()) {
-        System.out.println(datasetInfoIterator.next());
+      for (Dataset dataset : bigquery.listDatasets().iterateAll()) {
+        System.out.println(dataset);
       }
     }
   }
@@ -208,9 +206,8 @@ public class BigQueryExample {
   private static class ListTablesAction extends DatasetAction {
     @Override
     public void run(BigQuery bigquery, DatasetId datasetId) {
-      Iterator<Table> tableInfoIterator = bigquery.listTables(datasetId).iterateAll();
-      while (tableInfoIterator.hasNext()) {
-        System.out.println(tableInfoIterator.next());
+      for (Table table : bigquery.listTables(datasetId).iterateAll()) {
+        System.out.println(table);
       }
     }
   }
@@ -317,9 +314,8 @@ public class BigQueryExample {
   private static class ListTableDataAction extends TableAction {
     @Override
     public void run(BigQuery bigquery, TableId tableId) {
-      Iterator<List<FieldValue>> iterator = bigquery.listTableData(tableId).iterateAll();
-      while (iterator.hasNext()) {
-        System.out.println(iterator.next());
+      for (List<FieldValue> row : bigquery.listTableData(tableId).iterateAll()) {
+        System.out.println(row);
       }
     }
   }
@@ -352,9 +348,8 @@ public class BigQueryExample {
   private static class ListJobsAction extends NoArgsAction {
     @Override
     public void run(BigQuery bigquery, Void arg) {
-      Iterator<Job> datasetInfoIterator = bigquery.listJobs().iterateAll();
-      while (datasetInfoIterator.hasNext()) {
-        System.out.println(datasetInfoIterator.next());
+      for (Job job : bigquery.listJobs().iterateAll()) {
+        System.out.println(job);
       }
     }
   }
@@ -633,9 +628,8 @@ public class BigQueryExample {
       }
       if (!queryResponse.hasErrors()) {
         System.out.println("Query succeeded. Results:");
-        Iterator<List<FieldValue>> iterator = queryResponse.getResult().iterateAll();
-        while (iterator.hasNext()) {
-          System.out.println(iterator.next());
+        for (List<FieldValue> row : queryResponse.getResult().iterateAll()) {
+          System.out.println(row);
         }
       } else {
         System.out.println("Query completed with errors. Errors:");

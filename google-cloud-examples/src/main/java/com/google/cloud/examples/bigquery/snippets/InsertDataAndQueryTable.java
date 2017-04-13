@@ -37,7 +37,6 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -92,10 +91,9 @@ public class InsertDataAndQueryTable {
       queryResponse = bigquery.getQueryResults(queryResponse.getJobId());
     }
     // Read rows
-    Iterator<List<FieldValue>> rowIterator = queryResponse.getResult().iterateAll();
     System.out.println("Table rows:");
-    while (rowIterator.hasNext()) {
-      System.out.println(rowIterator.next());
+    for (List<FieldValue> row : queryResponse.getResult().iterateAll()) {
+      System.out.println(row);
     }
   }
 }

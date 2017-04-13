@@ -28,7 +28,6 @@ import com.google.cloud.dns.Dns;
 import com.google.cloud.dns.DnsOptions;
 import com.google.cloud.dns.RecordSet;
 
-import java.util.Iterator;
 
 /**
  * A snippet for Google Cloud DNS showing how to delete a zone. It also shows how to list and delete
@@ -44,13 +43,12 @@ public class DeleteZone {
     // Change this to a zone name that exists within your project and that you want to delete.
     String zoneName = "my-unique-zone";
 
-    // Get iterator for the existing record sets which have to be deleted before deleting the zone
-    Iterator<RecordSet> recordIterator = dns.listRecordSets(zoneName).iterateAll();
+    // Get iterable for the existing record sets which have to be deleted before deleting the zone
+    Iterable<RecordSet> recordIterable = dns.listRecordSets(zoneName).iterateAll();
 
     // Make a change for deleting the records
     ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder();
-    while (recordIterator.hasNext()) {
-      RecordSet current = recordIterator.next();
+    for (RecordSet current : recordIterable) {
       // SOA and NS records cannot be deleted
       if (!RecordSet.Type.SOA.equals(current.getType())
           && !RecordSet.Type.NS.equals(current.getType())) {

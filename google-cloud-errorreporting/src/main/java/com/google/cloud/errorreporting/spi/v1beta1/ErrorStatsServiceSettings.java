@@ -18,6 +18,7 @@ package com.google.cloud.errorreporting.spi.v1beta1;
 import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
 import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
 
+import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
@@ -27,6 +28,7 @@ import com.google.api.gax.grpc.ClientSettings;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.PageContext;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
@@ -83,12 +85,6 @@ import org.joda.time.Duration;
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
 public class ErrorStatsServiceSettings extends ClientSettings {
-  /** The default address of the service. */
-  private static final String DEFAULT_SERVICE_ADDRESS = "clouderrorreporting.googleapis.com";
-
-  /** The default port of the service. */
-  private static final int DEFAULT_SERVICE_PORT = 443;
-
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
@@ -131,14 +127,9 @@ public class ErrorStatsServiceSettings extends ClientSettings {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /** Returns the default service address. */
-  public static String getDefaultServiceAddress() {
-    return DEFAULT_SERVICE_ADDRESS;
-  }
-
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return DEFAULT_SERVICE_PORT;
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "clouderrorreporting.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -154,8 +145,7 @@ public class ErrorStatsServiceSettings extends ClientSettings {
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
-        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-        .setPort(DEFAULT_SERVICE_PORT)
+        .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
@@ -199,13 +189,13 @@ public class ErrorStatsServiceSettings extends ClientSettings {
           new PagedListDescriptor<
               ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListGroupStatsRequest injectToken(ListGroupStatsRequest payload, Object token) {
-              return ListGroupStatsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListGroupStatsRequest injectToken(ListGroupStatsRequest payload, String token) {
+              return ListGroupStatsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -220,7 +210,7 @@ public class ErrorStatsServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListGroupStatsResponse payload) {
+            public String extractNextToken(ListGroupStatsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -234,13 +224,13 @@ public class ErrorStatsServiceSettings extends ClientSettings {
       LIST_EVENTS_PAGE_STR_DESC =
           new PagedListDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListEventsRequest injectToken(ListEventsRequest payload, Object token) {
-              return ListEventsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListEventsRequest injectToken(ListEventsRequest payload, String token) {
+              return ListEventsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -254,7 +244,7 @@ public class ErrorStatsServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListEventsResponse payload) {
+            public String extractNextToken(ListEventsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -270,12 +260,16 @@ public class ErrorStatsServiceSettings extends ClientSettings {
           new PagedListResponseFactory<
               ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>() {
             @Override
-            public ListGroupStatsPagedResponse createPagedListResponse(
+            public ApiFuture<ListGroupStatsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> callable,
                 ListGroupStatsRequest request,
-                CallContext context) {
-              return new ListGroupStatsPagedResponse(
-                  callable, LIST_GROUP_STATS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListGroupStatsResponse> futureResponse) {
+              PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_GROUP_STATS_PAGE_STR_DESC, request, context);
+              return ListGroupStatsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -285,12 +279,14 @@ public class ErrorStatsServiceSettings extends ClientSettings {
           new PagedListResponseFactory<
               ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>() {
             @Override
-            public ListEventsPagedResponse createPagedListResponse(
+            public ApiFuture<ListEventsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListEventsRequest, ListEventsResponse> callable,
                 ListEventsRequest request,
-                CallContext context) {
-              return new ListEventsPagedResponse(
-                  callable, LIST_EVENTS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListEventsResponse> futureResponse) {
+              PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> pageContext =
+                  PageContext.create(callable, LIST_EVENTS_PAGE_STR_DESC, request, context);
+              return ListEventsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 

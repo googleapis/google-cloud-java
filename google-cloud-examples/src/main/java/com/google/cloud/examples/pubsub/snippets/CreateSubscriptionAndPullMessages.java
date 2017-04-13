@@ -34,6 +34,7 @@ import com.google.pubsub.v1.TopicName;
 public class CreateSubscriptionAndPullMessages {
 
   public static void main(String... args) throws Exception {
+    // [START async_pull_subscription]
     TopicName topic = TopicName.create("test-project", "test-topic");
     SubscriptionName subscription = SubscriptionName.create("test-project", "test-subscription");
 
@@ -51,9 +52,9 @@ public class CreateSubscriptionAndPullMessages {
         };
     Subscriber subscriber = null;
     try {
-      subscriber = Subscriber.newBuilder(subscription, receiver).build();
+      subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
       subscriber.addListener(
-          new Subscriber.SubscriberListener() {
+          new Subscriber.Listener() {
             @Override
             public void failed(Subscriber.State from, Throwable failure) {
               // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.
@@ -62,11 +63,13 @@ public class CreateSubscriptionAndPullMessages {
           },
           MoreExecutors.directExecutor());
       subscriber.startAsync().awaitRunning();
+
       Thread.sleep(60000);
     } finally {
       if (subscriber != null) {
         subscriber.stopAsync();
       }
     }
+    // [END async_pull_subscription]
   }
 }

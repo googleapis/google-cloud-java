@@ -30,7 +30,7 @@ import com.google.api.gax.protobuf.PathTemplate;
 import com.google.cloud.BaseService;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.Timestamp;

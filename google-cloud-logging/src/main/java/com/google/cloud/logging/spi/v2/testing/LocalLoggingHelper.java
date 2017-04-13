@@ -14,7 +14,6 @@
 
 package com.google.cloud.logging.spi.v2.testing;
 
-import com.google.logging.v2.LoggingServiceV2Grpc;
 
 import io.grpc.ManagedChannel;
 import io.grpc.Server;

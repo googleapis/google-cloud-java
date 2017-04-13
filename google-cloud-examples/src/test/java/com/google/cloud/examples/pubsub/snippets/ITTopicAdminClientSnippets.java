@@ -100,7 +100,7 @@ public class ITTopicAdminClientSnippets {
     ListTopicsPagedResponse response = topicAdminClientSnippets.listTopics();
 
     assertNotNull(response);
-    Iterable<Topic> topics = response.iterateAllElements();
+    Iterable<Topic> topics = response.iterateAll();
     for (int i = 0; i < 2; i++) {
       if (!topicFound[i]) {
         topicFound[i] = Iterables.contains(topics, addedTopics.get(i));
@@ -127,7 +127,7 @@ public class ITTopicAdminClientSnippets {
 
 
     assertNotNull(response);
-    Iterable<String> subscriptions = response.iterateAllElements();
+    Iterable<String> subscriptions = response.iterateAll();
     for (int i = 0; i < 2; i++) {
       if (!subFound[i]) {
         subFound[i] = Iterables.contains(subscriptions, addedSubscriptions.get(i));

@@ -17,6 +17,7 @@ package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogMetricsPagedResponse;
 
+import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
@@ -26,6 +27,7 @@ import com.google.api.gax.grpc.ClientSettings;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.PageContext;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
@@ -81,12 +83,6 @@ import org.joda.time.Duration;
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
 public class MetricsSettings extends ClientSettings {
-  /** The default address of the service. */
-  private static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
-
-  /** The default port of the service. */
-  private static final int DEFAULT_SERVICE_PORT = 443;
-
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -145,14 +141,9 @@ public class MetricsSettings extends ClientSettings {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /** Returns the default service address. */
-  public static String getDefaultServiceAddress() {
-    return DEFAULT_SERVICE_ADDRESS;
-  }
-
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return DEFAULT_SERVICE_PORT;
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "logging.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -168,8 +159,7 @@ public class MetricsSettings extends ClientSettings {
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
-        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-        .setPort(DEFAULT_SERVICE_PORT)
+        .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
@@ -212,13 +202,13 @@ public class MetricsSettings extends ClientSettings {
       LIST_LOG_METRICS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListLogMetricsRequest injectToken(ListLogMetricsRequest payload, Object token) {
-              return ListLogMetricsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListLogMetricsRequest injectToken(ListLogMetricsRequest payload, String token) {
+              return ListLogMetricsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -233,7 +223,7 @@ public class MetricsSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListLogMetricsResponse payload) {
+            public String extractNextToken(ListLogMetricsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -249,12 +239,14 @@ public class MetricsSettings extends ClientSettings {
           new PagedListResponseFactory<
               ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>() {
             @Override
-            public ListLogMetricsPagedResponse createPagedListResponse(
+            public ApiFuture<ListLogMetricsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse> callable,
                 ListLogMetricsRequest request,
-                CallContext context) {
-              return new ListLogMetricsPagedResponse(
-                  callable, LIST_LOG_METRICS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListLogMetricsResponse> futureResponse) {
+              PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> pageContext =
+                  PageContext.create(callable, LIST_LOG_METRICS_PAGE_STR_DESC, request, context);
+              return ListLogMetricsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 

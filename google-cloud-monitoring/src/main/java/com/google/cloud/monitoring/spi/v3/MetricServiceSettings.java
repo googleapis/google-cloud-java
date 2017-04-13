@@ -21,6 +21,7 @@ import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListTimeS
 
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
+import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
@@ -30,6 +31,7 @@ import com.google.api.gax.grpc.ClientSettings;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.PageContext;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
@@ -90,12 +92,6 @@ import org.joda.time.Duration;
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
 public class MetricServiceSettings extends ClientSettings {
-  /** The default address of the service. */
-  private static final String DEFAULT_SERVICE_ADDRESS = "monitoring.googleapis.com";
-
-  /** The default port of the service. */
-  private static final int DEFAULT_SERVICE_PORT = 443;
-
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -191,14 +187,9 @@ public class MetricServiceSettings extends ClientSettings {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /** Returns the default service address. */
-  public static String getDefaultServiceAddress() {
-    return DEFAULT_SERVICE_ADDRESS;
-  }
-
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return DEFAULT_SERVICE_PORT;
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "monitoring.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -214,8 +205,7 @@ public class MetricServiceSettings extends ClientSettings {
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
-        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-        .setPort(DEFAULT_SERVICE_PORT)
+        .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
@@ -268,15 +258,15 @@ public class MetricServiceSettings extends ClientSettings {
               ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               MonitoredResourceDescriptor>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListMonitoredResourceDescriptorsRequest injectToken(
-                ListMonitoredResourceDescriptorsRequest payload, Object token) {
+                ListMonitoredResourceDescriptorsRequest payload, String token) {
               return ListMonitoredResourceDescriptorsRequest.newBuilder(payload)
-                  .setPageToken((String) token)
+                  .setPageToken(token)
                   .build();
             }
 
@@ -294,7 +284,7 @@ public class MetricServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListMonitoredResourceDescriptorsResponse payload) {
+            public String extractNextToken(ListMonitoredResourceDescriptorsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -311,16 +301,14 @@ public class MetricServiceSettings extends ClientSettings {
           new PagedListDescriptor<
               ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListMetricDescriptorsRequest injectToken(
-                ListMetricDescriptorsRequest payload, Object token) {
-              return ListMetricDescriptorsRequest.newBuilder(payload)
-                  .setPageToken((String) token)
-                  .build();
+                ListMetricDescriptorsRequest payload, String token) {
+              return ListMetricDescriptorsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -335,7 +323,7 @@ public class MetricServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListMetricDescriptorsResponse payload) {
+            public String extractNextToken(ListMetricDescriptorsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -351,13 +339,13 @@ public class MetricServiceSettings extends ClientSettings {
       LIST_TIME_SERIES_PAGE_STR_DESC =
           new PagedListDescriptor<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListTimeSeriesRequest injectToken(ListTimeSeriesRequest payload, Object token) {
-              return ListTimeSeriesRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListTimeSeriesRequest injectToken(ListTimeSeriesRequest payload, String token) {
+              return ListTimeSeriesRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -372,7 +360,7 @@ public class MetricServiceSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListTimeSeriesResponse payload) {
+            public String extractNextToken(ListTimeSeriesResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -390,15 +378,25 @@ public class MetricServiceSettings extends ClientSettings {
               ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               ListMonitoredResourceDescriptorsPagedResponse>() {
             @Override
-            public ListMonitoredResourceDescriptorsPagedResponse createPagedListResponse(
+            public ApiFuture<ListMonitoredResourceDescriptorsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<
                         ListMonitoredResourceDescriptorsRequest,
                         ListMonitoredResourceDescriptorsResponse>
                     callable,
                 ListMonitoredResourceDescriptorsRequest request,
-                CallContext context) {
-              return new ListMonitoredResourceDescriptorsPagedResponse(
-                  callable, LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse) {
+              PageContext<
+                      ListMonitoredResourceDescriptorsRequest,
+                      ListMonitoredResourceDescriptorsResponse, MonitoredResourceDescriptor>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListMonitoredResourceDescriptorsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -410,12 +408,17 @@ public class MetricServiceSettings extends ClientSettings {
               ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
               ListMetricDescriptorsPagedResponse>() {
             @Override
-            public ListMetricDescriptorsPagedResponse createPagedListResponse(
+            public ApiFuture<ListMetricDescriptorsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse> callable,
                 ListMetricDescriptorsRequest request,
-                CallContext context) {
-              return new ListMetricDescriptorsPagedResponse(
-                  callable, LIST_METRIC_DESCRIPTORS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListMetricDescriptorsResponse> futureResponse) {
+              PageContext<
+                      ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_METRIC_DESCRIPTORS_PAGE_STR_DESC, request, context);
+              return ListMetricDescriptorsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -425,12 +428,14 @@ public class MetricServiceSettings extends ClientSettings {
           new PagedListResponseFactory<
               ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>() {
             @Override
-            public ListTimeSeriesPagedResponse createPagedListResponse(
+            public ApiFuture<ListTimeSeriesPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesResponse> callable,
                 ListTimeSeriesRequest request,
-                CallContext context) {
-              return new ListTimeSeriesPagedResponse(
-                  callable, LIST_TIME_SERIES_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListTimeSeriesResponse> futureResponse) {
+              PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> pageContext =
+                  PageContext.create(callable, LIST_TIME_SERIES_PAGE_STR_DESC, request, context);
+              return ListTimeSeriesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 

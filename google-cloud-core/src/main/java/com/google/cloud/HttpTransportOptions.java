@@ -50,8 +50,9 @@ public class HttpTransportOptions implements TransportOptions {
 
     @Override
     public HttpTransport create() {
-      // Consider App Engine
-      if (ServiceOptions.getAppEngineAppId() != null) {
+      // Consider App Engine Standard
+      if (System.getProperty("com.google.appengine.runtime.version") != null
+          && System.getenv("GAE_SERVICE") == null) {
         try {
           return new UrlFetchTransport();
         } catch (Exception ignore) {

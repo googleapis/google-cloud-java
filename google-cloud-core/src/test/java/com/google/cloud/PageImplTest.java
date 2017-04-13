@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import static org.junit.Assert.assertEquals;
 
+import com.google.api.gax.core.Page;
 import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
@@ -52,7 +53,7 @@ public class PageImplTest {
     PageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
     PageImpl<String> result = new PageImpl<>(fetcher, "c", VALUES);
     assertEquals(nextResult, result.getNextPage());
-    assertEquals("c", result.getNextPageCursor());
+    assertEquals("c", result.getNextPageToken());
     assertEquals(VALUES, result.getValues());
   }
 

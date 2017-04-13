@@ -23,7 +23,7 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.api.client.util.Charsets;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
@@ -66,7 +66,6 @@ import java.nio.channels.Channels;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -140,9 +139,7 @@ public class BigQuerySnippets {
   public Page<Dataset> listDatasets() {
     // [START listDatasets]
     Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.pageSize(100));
-    Iterator<Dataset> datasetIterator = datasets.iterateAll();
-    while (datasetIterator.hasNext()) {
-      Dataset dataset = datasetIterator.next();
+    for (Dataset dataset : datasets.iterateAll()) {
       // do something with the dataset
     }
     // [END listDatasets]
@@ -157,9 +154,7 @@ public class BigQuerySnippets {
   public Page<Dataset> listDatasets(String projectId) {
     // [START listDatasets]
     Page<Dataset> datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
-    Iterator<Dataset> datasetIterator = datasets.iterateAll();
-    while (datasetIterator.hasNext()) {
-      Dataset dataset = datasetIterator.next();
+    for (Dataset dataset : datasets.iterateAll()) {
       // do something with the dataset
     }
     // [END listDatasets]
@@ -248,9 +243,7 @@ public class BigQuerySnippets {
   public Page<Table> listTables(String datasetName) {
     // [START listTables]
     Page<Table> tables = bigquery.listTables(datasetName, TableListOption.pageSize(100));
-    Iterator<Table> tableIterator = tables.iterateAll();
-    while (tableIterator.hasNext()) {
-      Table table = tableIterator.next();
+    for (Table table : tables.iterateAll()) {
       // do something with the table
     }
     // [END listTables]
@@ -268,9 +261,7 @@ public class BigQuerySnippets {
     // [START listTablesFromId]
     DatasetId datasetId = DatasetId.of(projectId, datasetName);
     Page<Table> tables = bigquery.listTables(datasetId, TableListOption.pageSize(100));
-    Iterator<Table> tableIterator = tables.iterateAll();
-    while (tableIterator.hasNext()) {
-      Table table = tableIterator.next();
+    for (Table table : tables.iterateAll()) {
       // do something with the table
     }
     // [END listTablesFromId]
@@ -452,9 +443,7 @@ public class BigQuerySnippets {
     // [START listTableData]
     Page<List<FieldValue>> tableData =
         bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
-    Iterator<List<FieldValue>> rowIterator = tableData.iterateAll();
-    while (rowIterator.hasNext()) {
-      List<FieldValue> row = rowIterator.next();
+    for (List<FieldValue> row : tableData.iterateAll()) {
       // do something with the row
     }
     // [END listTableData]
@@ -472,9 +461,7 @@ public class BigQuerySnippets {
     TableId tableIdObject = TableId.of(datasetName, tableName);
     Page<List<FieldValue>> tableData =
         bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
-    Iterator<List<FieldValue>> rowIterator = tableData.iterateAll();
-    while (rowIterator.hasNext()) {
-      List<FieldValue> row = rowIterator.next();
+    for (List<FieldValue> row : tableData.iterateAll()) {
       // do something with the row
     }
     // [END listTableDataFromId]
@@ -507,9 +494,7 @@ public class BigQuerySnippets {
   public Page<Job> listJobs() {
     // [START listJobs]
     Page<Job> jobs = bigquery.listJobs(JobListOption.pageSize(100));
-    Iterator<Job> jobIterator = jobs.iterateAll();
-    while (jobIterator.hasNext()) {
-      Job job = jobIterator.next();
+    for (Job job : jobs.iterateAll()) {
       // do something with the job
     }
     // [END listJobs]
@@ -601,9 +586,7 @@ public class BigQuerySnippets {
       // handle errors
     }
     QueryResult result = response.getResult();
-    Iterator<List<FieldValue>> rowIterator = result.iterateAll();
-    while (rowIterator.hasNext()) {
-      List<FieldValue> row = rowIterator.next();
+    for (List<FieldValue> row : result.iterateAll()) {
       // do something with the data
     }
     // [END runQuery]
@@ -631,9 +614,7 @@ public class BigQuerySnippets {
       // handle errors
     }
     QueryResult result = response.getResult();
-    Iterator<List<FieldValue>> rowIterator = result.iterateAll();
-    while (rowIterator.hasNext()) {
-      List<FieldValue> row = rowIterator.next();
+    for (List<FieldValue> row : result.iterateAll()) {
       // do something with the data
     }
     // [END runQueryWithParameters]
@@ -658,9 +639,7 @@ public class BigQuerySnippets {
       // handle errors
     }
     QueryResult result = response.getResult();
-    Iterator<List<FieldValue>> rowIterator = result.iterateAll();
-    while (rowIterator.hasNext()) {
-      List<FieldValue> row = rowIterator.next();
+    for (List<FieldValue> row : result.iterateAll()) {
       // do something with the data
     }
     // [END queryResults]

@@ -108,7 +108,7 @@ public class DnsExample {
      */
     @Override
     public void run(Dns dns, String... args) {
-      Iterator<Zone> zoneIterator = dns.listZones().iterateAll();
+      Iterator<Zone> zoneIterator = dns.listZones().iterateAll().iterator();
       if (zoneIterator.hasNext()) {
         System.out.println("The project contains the following zones:");
         while (zoneIterator.hasNext()) {
@@ -288,7 +288,7 @@ public class DnsExample {
     @Override
     public void run(Dns dns, String... args) {
       String zoneName = args[0];
-      Iterator<RecordSet> iterator = dns.listRecordSets(zoneName).iterateAll();
+      Iterator<RecordSet> iterator = dns.listRecordSets(zoneName).iterateAll().iterator();
       if (iterator.hasNext()) {
         System.out.printf("Record sets for zone %s:%n", zoneName);
         while (iterator.hasNext()) {
@@ -325,9 +325,9 @@ public class DnsExample {
       if (args.length > 2) {
         Dns.SortingOrder sortOrder = Dns.SortingOrder.valueOf(args[2].toUpperCase());
         iterator = dns.listChangeRequests(zoneName,
-            Dns.ChangeRequestListOption.sortOrder(sortOrder)).iterateAll();
+            Dns.ChangeRequestListOption.sortOrder(sortOrder)).iterateAll().iterator();
       } else {
-        iterator = dns.listChangeRequests(zoneName).iterateAll();
+        iterator = dns.listChangeRequests(zoneName).iterateAll().iterator();
       }
       if (iterator.hasNext()) {
         System.out.printf("Change requests for zone %s:%n", zoneName);

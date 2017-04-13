@@ -20,7 +20,7 @@ import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.cloud.translate.TranslateOptions;
 
 /**
- * An interface for Translate RPC factory.
+ * An interface for Translation RPC factory.
  * Implementation will be loaded via {@link java.util.ServiceLoader}.
  */
 public interface TranslateRpcFactory extends ServiceRpcFactory<TranslateOptions> {

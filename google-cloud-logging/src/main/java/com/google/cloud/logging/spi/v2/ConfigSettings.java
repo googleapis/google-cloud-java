@@ -17,6 +17,7 @@ package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
+import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
@@ -26,6 +27,7 @@ import com.google.api.gax.grpc.ClientSettings;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.PageContext;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
@@ -81,12 +83,6 @@ import org.joda.time.Duration;
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
 public class ConfigSettings extends ClientSettings {
-  /** The default address of the service. */
-  private static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
-
-  /** The default port of the service. */
-  private static final int DEFAULT_SERVICE_PORT = 443;
-
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -143,14 +139,9 @@ public class ConfigSettings extends ClientSettings {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /** Returns the default service address. */
-  public static String getDefaultServiceAddress() {
-    return DEFAULT_SERVICE_ADDRESS;
-  }
-
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return DEFAULT_SERVICE_PORT;
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "logging.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -166,8 +157,7 @@ public class ConfigSettings extends ClientSettings {
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
-        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-        .setPort(DEFAULT_SERVICE_PORT)
+        .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
@@ -210,13 +200,13 @@ public class ConfigSettings extends ClientSettings {
       LIST_SINKS_PAGE_STR_DESC =
           new PagedListDescriptor<ListSinksRequest, ListSinksResponse, LogSink>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListSinksRequest injectToken(ListSinksRequest payload, Object token) {
-              return ListSinksRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListSinksRequest injectToken(ListSinksRequest payload, String token) {
+              return ListSinksRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -230,7 +220,7 @@ public class ConfigSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListSinksResponse payload) {
+            public String extractNextToken(ListSinksResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -246,12 +236,14 @@ public class ConfigSettings extends ClientSettings {
           new PagedListResponseFactory<
               ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>() {
             @Override
-            public ListSinksPagedResponse createPagedListResponse(
+            public ApiFuture<ListSinksPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListSinksRequest, ListSinksResponse> callable,
                 ListSinksRequest request,
-                CallContext context) {
-              return new ListSinksPagedResponse(
-                  callable, LIST_SINKS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListSinksResponse> futureResponse) {
+              PageContext<ListSinksRequest, ListSinksResponse, LogSink> pageContext =
+                  PageContext.create(callable, LIST_SINKS_PAGE_STR_DESC, request, context);
+              return ListSinksPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 

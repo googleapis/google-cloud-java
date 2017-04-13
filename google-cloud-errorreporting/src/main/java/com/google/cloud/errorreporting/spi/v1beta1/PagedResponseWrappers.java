@@ -15,10 +15,13 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.grpc.CallContext;
-import com.google.api.gax.grpc.PagedListDescriptor;
-import com.google.api.gax.grpc.PagedListResponseImpl;
-import com.google.api.gax.grpc.UnaryCallable;
+import com.google.api.gax.core.ApiFunction;
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutures;
+import com.google.api.gax.grpc.AbstractFixedSizeCollection;
+import com.google.api.gax.grpc.AbstractPage;
+import com.google.api.gax.grpc.AbstractPagedListResponse;
+import com.google.api.gax.grpc.PageContext;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
@@ -26,6 +29,7 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
 import com.google.protobuf.ExperimentalApi;
+import java.util.List;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -39,28 +43,149 @@ import javax.annotation.Generated;
 public class PagedResponseWrappers {
 
   public static class ListGroupStatsPagedResponse
-      extends PagedListResponseImpl<
-          ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> {
+      extends AbstractPagedListResponse<
+          ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats, ListGroupStatsPage,
+          ListGroupStatsFixedSizeCollection> {
 
-    public ListGroupStatsPagedResponse(
-        UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> callable,
-        PagedListDescriptor<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
-            pageDescriptor,
-        ListGroupStatsRequest request,
-        CallContext context) {
-      super(callable, pageDescriptor, request, context);
+    public static ApiFuture<ListGroupStatsPagedResponse> createAsync(
+        PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
+        ApiFuture<ListGroupStatsResponse> futureResponse) {
+      ApiFuture<ListGroupStatsPage> futurePage =
+          ListGroupStatsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListGroupStatsPage, ListGroupStatsPagedResponse>() {
+            @Override
+            public ListGroupStatsPagedResponse apply(ListGroupStatsPage input) {
+              return new ListGroupStatsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListGroupStatsPagedResponse(ListGroupStatsPage page) {
+      super(page, ListGroupStatsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListGroupStatsPage
+      extends AbstractPage<
+          ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats, ListGroupStatsPage> {
+
+    private ListGroupStatsPage(
+        PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
+        ListGroupStatsResponse response) {
+      super(context, response);
+    }
+
+    private static ListGroupStatsPage createEmptyPage() {
+      return new ListGroupStatsPage(null, null);
+    }
+
+    @Override
+    protected ListGroupStatsPage createPage(
+        PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
+        ListGroupStatsResponse response) {
+      return new ListGroupStatsPage(context, response);
+    }
+
+    @Override
+    protected ApiFuture<ListGroupStatsPage> createPageAsync(
+        PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
+        ApiFuture<ListGroupStatsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListGroupStatsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats, ListGroupStatsPage,
+          ListGroupStatsFixedSizeCollection> {
+
+    private ListGroupStatsFixedSizeCollection(List<ListGroupStatsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListGroupStatsFixedSizeCollection createEmptyCollection() {
+      return new ListGroupStatsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListGroupStatsFixedSizeCollection createCollection(
+        List<ListGroupStatsPage> pages, int collectionSize) {
+      return new ListGroupStatsFixedSizeCollection(pages, collectionSize);
     }
   }
 
   public static class ListEventsPagedResponse
-      extends PagedListResponseImpl<ListEventsRequest, ListEventsResponse, ErrorEvent> {
+      extends AbstractPagedListResponse<
+          ListEventsRequest, ListEventsResponse, ErrorEvent, ListEventsPage,
+          ListEventsFixedSizeCollection> {
 
-    public ListEventsPagedResponse(
-        UnaryCallable<ListEventsRequest, ListEventsResponse> callable,
-        PagedListDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent> pageDescriptor,
-        ListEventsRequest request,
-        CallContext context) {
-      super(callable, pageDescriptor, request, context);
+    public static ApiFuture<ListEventsPagedResponse> createAsync(
+        PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
+        ApiFuture<ListEventsResponse> futureResponse) {
+      ApiFuture<ListEventsPage> futurePage =
+          ListEventsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListEventsPage, ListEventsPagedResponse>() {
+            @Override
+            public ListEventsPagedResponse apply(ListEventsPage input) {
+              return new ListEventsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListEventsPagedResponse(ListEventsPage page) {
+      super(page, ListEventsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListEventsPage
+      extends AbstractPage<ListEventsRequest, ListEventsResponse, ErrorEvent, ListEventsPage> {
+
+    private ListEventsPage(
+        PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
+        ListEventsResponse response) {
+      super(context, response);
+    }
+
+    private static ListEventsPage createEmptyPage() {
+      return new ListEventsPage(null, null);
+    }
+
+    @Override
+    protected ListEventsPage createPage(
+        PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
+        ListEventsResponse response) {
+      return new ListEventsPage(context, response);
+    }
+
+    @Override
+    protected ApiFuture<ListEventsPage> createPageAsync(
+        PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
+        ApiFuture<ListEventsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListEventsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListEventsRequest, ListEventsResponse, ErrorEvent, ListEventsPage,
+          ListEventsFixedSizeCollection> {
+
+    private ListEventsFixedSizeCollection(List<ListEventsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListEventsFixedSizeCollection createEmptyCollection() {
+      return new ListEventsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListEventsFixedSizeCollection createCollection(
+        List<ListEventsPage> pages, int collectionSize) {
+      return new ListEventsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

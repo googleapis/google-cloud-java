@@ -48,8 +48,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  *  pull sync <subscription> <maxMessages>
  *  publish <topic> <message>+
  *  replace-push-config <subscription> <endpoint>?
- *  ack <subscription> <ackId>+
- *  nack <subscription> <ackId>+
  *  create topic <topic>
  *  create subscription <topic> <subscription> <endpoint>?
  *  list subscriptions <topic>?
@@ -186,7 +184,7 @@ public class PubSubExample {
                                 .setProjectWithProjectName(ProjectName.create(projectId))
                                 .build();
                 PagedResponseWrappers.ListTopicsPagedResponse response = topicAdminClient.listTopics(listTopicsRequest);
-                Iterable<Topic> topics = response.iterateAllElements();
+                Iterable<Topic> topics = response.iterateAll();
                 for (Topic topic : topics) {
                     System.out.println(topic.getName());
                 }
@@ -270,7 +268,7 @@ public class PubSubExample {
                 try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
                     PagedResponseWrappers.ListSubscriptionsPagedResponse response =
                             subscriptionAdminClient.listSubscriptions(ProjectName.create(projectId));
-                    Iterable<Subscription> subscriptions = response.iterateAllElements();
+                    Iterable<Subscription> subscriptions = response.iterateAll();
                     for (Subscription subscription : subscriptions) {
                         System.out.println(subscription.getName());
                     }
@@ -279,7 +277,7 @@ public class PubSubExample {
                 try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
                     PagedResponseWrappers.ListTopicSubscriptionsPagedResponse response =
                             topicAdminClient.listTopicSubscriptions(TopicName.create(projectId, topic));
-                    Iterable<String> subscriptionNames = response.iterateAllElements();
+                    Iterable<String> subscriptionNames = response.iterateAll();
                     for (String subscriptionName : subscriptionNames) {
                         System.out.println(subscriptionName);
                     }
@@ -315,7 +313,7 @@ public class PubSubExample {
         public void run(Tuple<String, List<PubsubMessage>> params) throws Exception {
             String topic = params.x();
             TopicName topicName = TopicName.create(projectId, topic);
-            Publisher publisher = Publisher.newBuilder(topicName).build();
+            Publisher publisher = Publisher.defaultBuilder(topicName).build();
             List<PubsubMessage> messages = params.y();
             for (PubsubMessage message : messages) {
                 ApiFuture<String> messageIdFuture = publisher.publish(message);
@@ -488,118 +486,6 @@ public class PubSubExample {
         }
     }
 
-    private abstract static class MessagesAction extends PubSubAction<Tuple<SubscriptionName, List<String>>> {
-        @Override
-        Tuple<SubscriptionName, List<String>> parse(String... args) throws Exception {
-            if (args.length < 2) {
-                throw new IllegalArgumentException("Missing required subscription and ack IDs");
-            }
-            SubscriptionName subscriptionName = SubscriptionName.create(projectId, args[0]);
-            return Tuple.of(subscriptionName, Arrays.asList(Arrays.copyOfRange(args, 1, args.length)));
-        }
-
-        @Override
-        public String params() {
-            return "<subscription> <ackId>+";
-        }
-    }
-
-    /**
-     * This class demonstrates how to acknowledge Pub/Sub messages for a subscription.
-     *
-     * @see <a href="https://cloud.google.com/pubsub/subscriber#receiving-pull-messages">Receiving
-     * pull messages</a>
-     */
-    private static class AckMessagesAction extends MessagesAction {
-        @Override
-        public void run(Tuple<SubscriptionName, List<String>> params) throws Exception {
-            SubscriptionName subscriptionName = params.x();
-            List<String> ackIds = params.y();
-            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-                subscriptionAdminClient.acknowledge(subscriptionName, ackIds);
-            }
-            System.out.printf("Acked %d messages for subscription %s%n", ackIds.size(), subscriptionName);
-        }
-    }
-
-    /**
-     * This class demonstrates how to "nack" Pub/Sub messages for a subscription. This action
-     * corresponds to setting the acknowledge deadline to 0.
-     *
-     * @see <a href="https://cloud.google.com/pubsub/subscriber#receiving-pull-messages">Message
-     * acknowledgement deadline</a>
-     */
-    private static class NackMessagesAction extends MessagesAction {
-        @Override
-        public void run(Tuple<SubscriptionName, List<String>> params) throws Exception {
-            SubscriptionName subscriptionName = params.x();
-            List<String> ackIds = params.y();
-            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-                subscriptionAdminClient.modifyAckDeadline(subscriptionName, ackIds, 0);
-            }
-            System.out.printf("Nacked %d messages for subscription %s%n", ackIds.size(), subscriptionName);
-        }
-    }
-
-    /**
-     * This class demonstrates how modify the acknowledge deadline for messages in a Pub/Sub
-     * subscription.
-     *
-     * @see <a href="https://cloud.google.com/pubsub/subscriber#receiving-pull-messages">Message
-     * acknowledgement deadline</a>
-     */
-    private static class ModifyAckDeadlineAction
-            extends PubSubAction<Tuple<ModifyAckDeadlineAction.SubscriptionAndDeadline, List<String>>> {
-
-        static class SubscriptionAndDeadline {
-
-            private final SubscriptionName subscription;
-            private final int deadlineMillis;
-
-            private SubscriptionAndDeadline(String subscription, int deadlineMillis) {
-                this.subscription = SubscriptionName.create(projectId, subscription);
-                this.deadlineMillis = deadlineMillis;
-            }
-
-            SubscriptionName subscriptionName() {
-                return subscription;
-            }
-
-            int deadlineMillis() {
-                return deadlineMillis;
-            }
-        }
-
-        @Override
-        public void run(Tuple<SubscriptionAndDeadline, List<String>> params)
-                throws Exception {
-            SubscriptionName subscriptionName = params.x().subscriptionName();
-            int deadline = params.x().deadlineMillis();
-            List<String> ackIds = params.y();
-            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-                subscriptionAdminClient.modifyAckDeadline(subscriptionName, ackIds, deadline);
-            }
-            System.out.printf("Ack deadline set to %d seconds for %d messages in subscription %s%n", deadline,
-                    ackIds.size(), subscriptionName);
-        }
-
-        @Override
-        Tuple<SubscriptionAndDeadline, List<String>> parse(String... args) throws Exception {
-            if (args.length < 3) {
-                throw new IllegalArgumentException("Missing required subscription, deadline and ack IDs");
-            }
-            String subscription = args[0];
-            int deadline = Integer.parseInt(args[1]);
-            return Tuple.of(new SubscriptionAndDeadline(subscription, deadline),
-                    Arrays.asList(Arrays.copyOfRange(args, 2, args.length)));
-        }
-
-        @Override
-        public String params() {
-            return "<subscription> <deadlineMillis> <ackId>+";
-        }
-    }
-
     /**
      * This class demonstrates how to asynchronously pull messages from a Pub/Sub pull subscription.
      * Messages are pulled until a timeout is reached.
@@ -622,9 +508,9 @@ public class PubSubExample {
             SubscriptionName subscriptionName = params.x();
             Subscriber subscriber = null;
             try {
-                subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
+                subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
                 subscriber.addListener(
-                        new Subscriber.SubscriberListener() {
+                        new Subscriber.Listener() {
                             @Override
                             public void failed(Subscriber.State from, Throwable failure) {
                                 // Handle failure.
@@ -664,53 +550,6 @@ public class PubSubExample {
         @Override
         public String params() {
             return "<subscription> <timeoutMillis>?";
-        }
-    }
-
-    /**
-     * This class demonstrates how to synchronously pull messages from a Pub/Sub pull subscription.
-     * No more than the requested number of messages are pulled. Possibly less messages are pulled.
-     *
-     * @see <a href="https://cloud.google.com/pubsub/subscriber#receiving-pull-messages">Receiving
-     * pull messages</a>
-     */
-    private static class PullSyncAction extends PubSubAction<Tuple<SubscriptionName, Integer>> {
-        @Override
-        public void run(Tuple<SubscriptionName, Integer> params) throws Exception {
-            SubscriptionName subscriptionName = params.x();
-            Integer maxMessages = params.y();
-            AtomicInteger messageCount = new AtomicInteger();
-            try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-                PullResponse response = subscriptionAdminClient.pull(subscriptionName, true, maxMessages);
-                for (ReceivedMessage message : response.getReceivedMessagesList()) {
-                    // do something with message, then ack or nack
-                    System.out.printf("Received message \"%s\"%n", message);
-                    subscriptionAdminClient.acknowledge(
-                            subscriptionName, Collections.singletonList(message.getAckId()));
-                    messageCount.incrementAndGet();
-                }
-            }
-            System.out.printf("Pulled %d messages from subscription %s%n", messageCount, subscriptionName);
-        }
-
-        @Override
-        Tuple<SubscriptionName, Integer> parse(String... args) throws Exception {
-            String message;
-            if (args.length == 2) {
-                SubscriptionName subscription = SubscriptionName.create(projectId, args[0]);
-                int maxMessages = Integer.parseInt(args[1]);
-                return Tuple.of(subscription, maxMessages);
-            } else if (args.length > 2) {
-                message = "Too many arguments.";
-            } else {
-                message = "Missing required subscription name";
-            }
-            throw new IllegalArgumentException(message);
-        }
-
-        @Override
-        public String params() {
-            return "<subscription> <maxMessages>";
         }
     }
 
@@ -927,7 +766,6 @@ public class PubSubExample {
         DELETE_ACTIONS.put("topic", new DeleteTopicAction());
         DELETE_ACTIONS.put("subscription", new DeleteSubscriptionAction());
         PULL_ACTIONS.put("async", new PullAsyncAction());
-        PULL_ACTIONS.put("sync", new PullSyncAction());
         GET_IAM_ACTIONS.put("topic", new GetTopicPolicyAction());
         GET_IAM_ACTIONS.put("subscription", new GetSubscriptionPolicyAction());
         REPLACE_IAM_ACTIONS.put("topic", new AddIdentityTopicAction());
@@ -944,9 +782,6 @@ public class PubSubExample {
         ACTIONS.put("test-permissions", new ParentAction(TEST_IAM_ACTIONS));
         ACTIONS.put("publish", new PublishMessagesAction());
         ACTIONS.put("replace-push-config", new ReplacePushConfigAction());
-        ACTIONS.put("ack", new AckMessagesAction());
-        ACTIONS.put("nack", new NackMessagesAction());
-        ACTIONS.put("modify-ack-deadline", new ModifyAckDeadlineAction());
     }
 
     private static void printUsage() {

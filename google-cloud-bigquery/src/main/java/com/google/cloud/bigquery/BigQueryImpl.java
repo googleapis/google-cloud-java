@@ -24,7 +24,7 @@ import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.cloud.BaseService;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.RetryHelper;

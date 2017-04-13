@@ -24,7 +24,7 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;
@@ -35,7 +35,6 @@ import com.google.cloud.storage.StorageException;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -116,9 +115,7 @@ public class BucketSnippets {
   public Page<Blob> listBlobs() {
     // [START listBlobs]
     Page<Blob> blobs = bucket.list();
-    Iterator<Blob> blobIterator = blobs.iterateAll();
-    while (blobIterator.hasNext()) {
-      Blob blob = blobIterator.next();
+    for (Blob blob : blobs.iterateAll()) {
       // do something with the blob
     }
     // [END listBlobs]

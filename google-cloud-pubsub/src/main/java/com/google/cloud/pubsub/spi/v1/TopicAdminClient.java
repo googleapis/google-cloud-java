@@ -297,8 +297,8 @@ public class TopicAdminClient implements AutoCloseable {
    * @param messages The messages to publish.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  @Deprecated
-  public final PublishResponse publish(TopicName topic, List<PubsubMessage> messages) {
+  /* package-private */ final PublishResponse publish(
+      TopicName topic, List<PubsubMessage> messages) {
 
     PublishRequest request =
         PublishRequest.newBuilder().setTopicWithTopicName(topic).addAllMessages(messages).build();
@@ -332,8 +332,7 @@ public class TopicAdminClient implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  @Deprecated
-  public final PublishResponse publish(PublishRequest request) {
+  /* package-private */ final PublishResponse publish(PublishRequest request) {
     return publishCallable().call(request);
   }
 
@@ -363,8 +362,7 @@ public class TopicAdminClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  @Deprecated
-  public final UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
+  /* package-private */ final UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
     return publishCallable;
   }
 
@@ -444,7 +442,7 @@ public class TopicAdminClient implements AutoCloseable {
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
-   *   for (Topic element : topicAdminClient.listTopics(project).iterateAllElements()) {
+   *   for (Topic element : topicAdminClient.listTopics(project).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -472,7 +470,7 @@ public class TopicAdminClient implements AutoCloseable {
    *   ListTopicsRequest request = ListTopicsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
-   *   for (Topic element : topicAdminClient.listTopics(request).iterateAllElements()) {
+   *   for (Topic element : topicAdminClient.listTopics(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -499,7 +497,7 @@ public class TopicAdminClient implements AutoCloseable {
    *     .build();
    *   ApiFuture&lt;ListTopicsPagedResponse&gt; future = topicAdminClient.listTopicsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (Topic element : future.get().iterateAllElements()) {
+   *   for (Topic element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }

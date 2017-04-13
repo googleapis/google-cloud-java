@@ -275,7 +275,7 @@ public class GroupServiceClientTest {
 
     ListGroupMembersPagedResponse pagedListResponse = client.listGroupMembers(name);
 
-    List<MonitoredResource> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    List<MonitoredResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getMembersList().get(0), resources.get(0));
 

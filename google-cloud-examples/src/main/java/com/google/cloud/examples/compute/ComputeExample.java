@@ -16,6 +16,7 @@
 
 package com.google.cloud.examples.compute;
 
+import com.google.api.gax.core.Page;
 import com.google.cloud.compute.Address;
 import com.google.cloud.compute.AddressId;
 import com.google.cloud.compute.AddressInfo;
@@ -74,7 +75,6 @@ import com.google.common.collect.Maps;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -306,14 +306,14 @@ public class ComputeExample {
   private static class ListDiskTypesAction extends OptionalZoneAction {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      Iterator<DiskType> diskTypeIterator;
+      Page<DiskType> diskTypePage;
       if (zone != null) {
-        diskTypeIterator = compute.listDiskTypes(zone.getZone()).iterateAll();
+        diskTypePage = compute.listDiskTypes(zone.getZone());
       } else {
-        diskTypeIterator = compute.listDiskTypes().iterateAll();
+        diskTypePage = compute.listDiskTypes();
       }
-      while (diskTypeIterator.hasNext()) {
-        System.out.println(diskTypeIterator.next());
+      for (DiskType diskType : diskTypePage.iterateAll()) {
+        System.out.println(diskType);
       }
     }
   }
@@ -361,14 +361,14 @@ public class ComputeExample {
   private static class ListMachineTypesAction extends OptionalZoneAction {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      Iterator<MachineType> machineTypeIterator;
+      Page<MachineType> machineTypePage;
       if (zone != null) {
-        machineTypeIterator = compute.listMachineTypes(zone.getZone()).iterateAll();
+        machineTypePage = compute.listMachineTypes(zone.getZone());
       } else {
-        machineTypeIterator = compute.listMachineTypes().iterateAll();
+        machineTypePage = compute.listMachineTypes();
       }
-      while (machineTypeIterator.hasNext()) {
-        System.out.println(machineTypeIterator.next());
+      for (MachineType diskType : machineTypePage.iterateAll()) {
+        System.out.println(diskType);
       }
     }
   }
@@ -413,9 +413,8 @@ public class ComputeExample {
   private static class ListRegionsAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Region> regionIterator = compute.listRegions().iterateAll();
-      while (regionIterator.hasNext()) {
-        System.out.println(regionIterator.next());
+      for (Region region : compute.listRegions().iterateAll()) {
+        System.out.println(region);
       }
     }
   }
@@ -460,9 +459,8 @@ public class ComputeExample {
   private static class ListZonesAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Zone> zoneIterator = compute.listZones().iterateAll();
-      while (zoneIterator.hasNext()) {
-        System.out.println(zoneIterator.next());
+      for (Zone zone : compute.listZones().iterateAll()) {
+        System.out.println(zone);
       }
     }
   }
@@ -537,9 +535,8 @@ public class ComputeExample {
   private static class ListGlobalOperationsAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Operation> operationIterator = compute.listGlobalOperations().iterateAll();
-      while (operationIterator.hasNext()) {
-        System.out.println(operationIterator.next());
+      for (Operation operation : compute.listGlobalOperations().iterateAll()) {
+        System.out.println(operation);
       }
     }
   }
@@ -553,10 +550,8 @@ public class ComputeExample {
   private static class ListZoneOperationsAction extends ComputeAction<ZoneId> {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      Iterator<Operation> operationIterator =
-          compute.listZoneOperations(zone.getZone()).iterateAll();
-      while (operationIterator.hasNext()) {
-        System.out.println(operationIterator.next());
+      for (Operation operation : compute.listZoneOperations(zone.getZone()).iterateAll()) {
+        System.out.println(operation);
       }
     }
 
@@ -588,10 +583,8 @@ public class ComputeExample {
   private static class ListRegionOperationsAction extends ComputeAction<RegionId> {
     @Override
     public void run(Compute compute, RegionId region) {
-      Iterator<Operation> operationIterator =
-          compute.listRegionOperations(region.getRegion()).iterateAll();
-      while (operationIterator.hasNext()) {
-        System.out.println(operationIterator.next());
+      for (Operation operation : compute.listRegionOperations(region.getRegion()).iterateAll()) {
+        System.out.println(operation);
       }
     }
 
@@ -775,14 +768,14 @@ public class ComputeExample {
   private static class ListAddressesAction extends OptionalRegionAction {
     @Override
     public void run(Compute compute, RegionId region) {
-      Iterator<Address> addressIterator;
+      Page<Address> addressPage;
       if (region != null) {
-        addressIterator = compute.listRegionAddresses(region.getRegion()).iterateAll();
+        addressPage = compute.listRegionAddresses(region.getRegion());
       } else {
-        addressIterator = compute.listAddresses().iterateAll();
+        addressPage = compute.listAddresses();
       }
-      while (addressIterator.hasNext()) {
-        System.out.println(addressIterator.next());
+      for (Address address : addressPage.iterateAll()) {
+        System.out.println(address);
       }
     }
   }
@@ -891,9 +884,8 @@ public class ComputeExample {
   private static class ListSnapshotsAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Snapshot> snapshotIterator = compute.listSnapshots().iterateAll();
-      while (snapshotIterator.hasNext()) {
-        System.out.println(snapshotIterator.next());
+      for (Snapshot snapshot : compute.listSnapshots().iterateAll()) {
+        System.out.println(snapshot);
       }
     }
   }
@@ -1015,9 +1007,8 @@ public class ComputeExample {
   private static class ListImagesAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Image> imageIterator = compute.listImages().iterateAll();
-      while (imageIterator.hasNext()) {
-        System.out.println(imageIterator.next());
+      for (Image image : compute.listImages().iterateAll()) {
+        System.out.println(image);
       }
     }
   }
@@ -1201,9 +1192,8 @@ public class ComputeExample {
   private static class ListDisksAction extends OptionalZoneAction {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      Iterator<Disk> diskIterator = compute.listDisks().iterateAll();
-      while (diskIterator.hasNext()) {
-        System.out.println(diskIterator.next());
+      for (Disk disk : compute.listDisks().iterateAll()) {
+        System.out.println(disk);
       }
     }
   }
@@ -1330,9 +1320,8 @@ public class ComputeExample {
   private static class ListNetworksAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Network> networkIterator = compute.listNetworks().iterateAll();
-      while (networkIterator.hasNext()) {
-        System.out.println(networkIterator.next());
+      for (Network network : compute.listNetworks().iterateAll()) {
+        System.out.println(network);
       }
     }
   }
@@ -1490,14 +1479,14 @@ public class ComputeExample {
 
     @Override
     public void run(Compute compute, RegionId region) {
-      Iterator<Subnetwork> subnetworkIterator;
+      Page<Subnetwork> subnetworkPage;
       if (region != null) {
-        subnetworkIterator = compute.listSubnetworks(region.getRegion()).iterateAll();
+        subnetworkPage = compute.listSubnetworks(region.getRegion());
       } else {
-        subnetworkIterator = compute.listSubnetworks().iterateAll();
+        subnetworkPage = compute.listSubnetworks();
       }
-      while (subnetworkIterator.hasNext()) {
-        System.out.println(subnetworkIterator.next());
+      for (Subnetwork subnetwork : subnetworkPage.iterateAll()) {
+        System.out.println(subnetwork);
       }
     }
   }
@@ -1617,14 +1606,14 @@ public class ComputeExample {
   private static class ListInstancesAction extends OptionalZoneAction {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      Iterator<Instance> instanceIterator;
+      Page<Instance> instancePage;
       if (zone != null) {
-        instanceIterator = compute.listInstances(zone.getZone()).iterateAll();
+        instancePage = compute.listInstances(zone.getZone());
       } else {
-        instanceIterator = compute.listInstances().iterateAll();
+        instancePage = compute.listInstances();
       }
-      while (instanceIterator.hasNext()) {
-        System.out.println(instanceIterator.next());
+      for (Instance instance : instancePage.iterateAll()) {
+        System.out.println(instance);
       }
     }
   }

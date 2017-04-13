@@ -30,7 +30,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.11.1-alpha-SNAPSHOT</version>
+    <version>0.12.1-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
@@ -151,16 +151,6 @@
       <groupId>joda-time</groupId>
       <artifactId>joda-time</artifactId>
       <version>2.9.2</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.auth</groupId>
-      <artifactId>google-auth-library-credentials</artifactId>
-      <version>0.4.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.auth</groupId>
-      <artifactId>google-auth-library-oauth2-http</artifactId>
-      <version>0.4.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-client</groupId>

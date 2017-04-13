@@ -23,6 +23,7 @@ import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
+import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -37,6 +38,7 @@ import com.google.api.gax.grpc.ClientSettings;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.PageContext;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
@@ -96,12 +98,6 @@ import org.joda.time.Duration;
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
 public class LoggingSettings extends ClientSettings {
-  /** The default address of the service. */
-  private static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
-
-  /** The default port of the service. */
-  private static final int DEFAULT_SERVICE_PORT = 443;
-
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -170,14 +166,9 @@ public class LoggingSettings extends ClientSettings {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /** Returns the default service address. */
-  public static String getDefaultServiceAddress() {
-    return DEFAULT_SERVICE_ADDRESS;
-  }
-
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return DEFAULT_SERVICE_PORT;
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "logging.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -193,8 +184,7 @@ public class LoggingSettings extends ClientSettings {
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
-        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-        .setPort(DEFAULT_SERVICE_PORT)
+        .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
@@ -238,13 +228,13 @@ public class LoggingSettings extends ClientSettings {
       LIST_LOG_ENTRIES_PAGE_STR_DESC =
           new PagedListDescriptor<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListLogEntriesRequest injectToken(ListLogEntriesRequest payload, Object token) {
-              return ListLogEntriesRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListLogEntriesRequest injectToken(ListLogEntriesRequest payload, String token) {
+              return ListLogEntriesRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -259,7 +249,7 @@ public class LoggingSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListLogEntriesResponse payload) {
+            public String extractNextToken(ListLogEntriesResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -277,15 +267,15 @@ public class LoggingSettings extends ClientSettings {
               ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               MonitoredResourceDescriptor>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListMonitoredResourceDescriptorsRequest injectToken(
-                ListMonitoredResourceDescriptorsRequest payload, Object token) {
+                ListMonitoredResourceDescriptorsRequest payload, String token) {
               return ListMonitoredResourceDescriptorsRequest.newBuilder(payload)
-                  .setPageToken((String) token)
+                  .setPageToken(token)
                   .build();
             }
 
@@ -303,7 +293,7 @@ public class LoggingSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListMonitoredResourceDescriptorsResponse payload) {
+            public String extractNextToken(ListMonitoredResourceDescriptorsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -318,13 +308,13 @@ public class LoggingSettings extends ClientSettings {
       LIST_LOGS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLogsRequest, ListLogsResponse, String>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListLogsRequest injectToken(ListLogsRequest payload, Object token) {
-              return ListLogsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListLogsRequest injectToken(ListLogsRequest payload, String token) {
+              return ListLogsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -338,7 +328,7 @@ public class LoggingSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListLogsResponse payload) {
+            public String extractNextToken(ListLogsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -354,12 +344,14 @@ public class LoggingSettings extends ClientSettings {
           new PagedListResponseFactory<
               ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>() {
             @Override
-            public ListLogEntriesPagedResponse createPagedListResponse(
+            public ApiFuture<ListLogEntriesPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListLogEntriesRequest, ListLogEntriesResponse> callable,
                 ListLogEntriesRequest request,
-                CallContext context) {
-              return new ListLogEntriesPagedResponse(
-                  callable, LIST_LOG_ENTRIES_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListLogEntriesResponse> futureResponse) {
+              PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> pageContext =
+                  PageContext.create(callable, LIST_LOG_ENTRIES_PAGE_STR_DESC, request, context);
+              return ListLogEntriesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -371,15 +363,25 @@ public class LoggingSettings extends ClientSettings {
               ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               ListMonitoredResourceDescriptorsPagedResponse>() {
             @Override
-            public ListMonitoredResourceDescriptorsPagedResponse createPagedListResponse(
+            public ApiFuture<ListMonitoredResourceDescriptorsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<
                         ListMonitoredResourceDescriptorsRequest,
                         ListMonitoredResourceDescriptorsResponse>
                     callable,
                 ListMonitoredResourceDescriptorsRequest request,
-                CallContext context) {
-              return new ListMonitoredResourceDescriptorsPagedResponse(
-                  callable, LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse) {
+              PageContext<
+                      ListMonitoredResourceDescriptorsRequest,
+                      ListMonitoredResourceDescriptorsResponse, MonitoredResourceDescriptor>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListMonitoredResourceDescriptorsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -388,11 +390,14 @@ public class LoggingSettings extends ClientSettings {
       LIST_LOGS_PAGE_STR_FACT =
           new PagedListResponseFactory<ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>() {
             @Override
-            public ListLogsPagedResponse createPagedListResponse(
+            public ApiFuture<ListLogsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListLogsRequest, ListLogsResponse> callable,
                 ListLogsRequest request,
-                CallContext context) {
-              return new ListLogsPagedResponse(callable, LIST_LOGS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListLogsResponse> futureResponse) {
+              PageContext<ListLogsRequest, ListLogsResponse, String> pageContext =
+                  PageContext.create(callable, LIST_LOGS_PAGE_STR_DESC, request, context);
+              return ListLogsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 

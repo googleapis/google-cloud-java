@@ -16,15 +16,15 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.FlowController;
+import com.google.api.gax.core.AbstractApiService;
 import com.google.api.gax.core.ApiClock;
+import com.google.api.gax.core.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
-import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.SettableFuture;
@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
 import org.joda.time.Duration;
 
 /** Implementation of {@link AckProcessor} based on Cloud Pub/Sub streaming pull. */
-final class StreamingSubscriberConnection extends AbstractService implements AckProcessor {
+final class StreamingSubscriberConnection extends AbstractApiService implements AckProcessor {
   private static final Logger logger =
       Logger.getLogger(StreamingSubscriberConnection.class.getName());
 

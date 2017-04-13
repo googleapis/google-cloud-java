@@ -21,6 +21,7 @@ import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPag
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
+import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -35,6 +36,7 @@ import com.google.api.gax.grpc.ClientSettings;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.PageContext;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
@@ -101,12 +103,6 @@ import org.joda.time.Duration;
 @Generated("by GAPIC v0.0.5")
 @ExperimentalApi
 public class TopicAdminSettings extends ClientSettings {
-  /** The default address of the service. */
-  private static final String DEFAULT_SERVICE_ADDRESS = "pubsub.googleapis.com";
-
-  /** The default port of the service. */
-  private static final int DEFAULT_SERVICE_PORT = 443;
-
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -192,14 +188,9 @@ public class TopicAdminSettings extends ClientSettings {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /** Returns the default service address. */
-  public static String getDefaultServiceAddress() {
-    return DEFAULT_SERVICE_ADDRESS;
-  }
-
-  /** Returns the default service port. */
-  public static int getDefaultServicePort() {
-    return DEFAULT_SERVICE_PORT;
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "pubsub.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -215,8 +206,7 @@ public class TopicAdminSettings extends ClientSettings {
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
-        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-        .setPort(DEFAULT_SERVICE_PORT)
+        .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
@@ -264,13 +254,13 @@ public class TopicAdminSettings extends ClientSettings {
       LIST_TOPICS_PAGE_STR_DESC =
           new PagedListDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
-            public ListTopicsRequest injectToken(ListTopicsRequest payload, Object token) {
-              return ListTopicsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListTopicsRequest injectToken(ListTopicsRequest payload, String token) {
+              return ListTopicsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -284,7 +274,7 @@ public class TopicAdminSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListTopicsResponse payload) {
+            public String extractNextToken(ListTopicsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -300,16 +290,14 @@ public class TopicAdminSettings extends ClientSettings {
           new PagedListDescriptor<
               ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>() {
             @Override
-            public Object emptyToken() {
+            public String emptyToken() {
               return "";
             }
 
             @Override
             public ListTopicSubscriptionsRequest injectToken(
-                ListTopicSubscriptionsRequest payload, Object token) {
-              return ListTopicSubscriptionsRequest.newBuilder(payload)
-                  .setPageToken((String) token)
-                  .build();
+                ListTopicSubscriptionsRequest payload, String token) {
+              return ListTopicSubscriptionsRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
@@ -326,7 +314,7 @@ public class TopicAdminSettings extends ClientSettings {
             }
 
             @Override
-            public Object extractNextToken(ListTopicSubscriptionsResponse payload) {
+            public String extractNextToken(ListTopicSubscriptionsResponse payload) {
               return payload.getNextPageToken();
             }
 
@@ -342,12 +330,14 @@ public class TopicAdminSettings extends ClientSettings {
           new PagedListResponseFactory<
               ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>() {
             @Override
-            public ListTopicsPagedResponse createPagedListResponse(
+            public ApiFuture<ListTopicsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListTopicsRequest, ListTopicsResponse> callable,
                 ListTopicsRequest request,
-                CallContext context) {
-              return new ListTopicsPagedResponse(
-                  callable, LIST_TOPICS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListTopicsResponse> futureResponse) {
+              PageContext<ListTopicsRequest, ListTopicsResponse, Topic> pageContext =
+                  PageContext.create(callable, LIST_TOPICS_PAGE_STR_DESC, request, context);
+              return ListTopicsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -359,13 +349,17 @@ public class TopicAdminSettings extends ClientSettings {
               ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
               ListTopicSubscriptionsPagedResponse>() {
             @Override
-            public ListTopicSubscriptionsPagedResponse createPagedListResponse(
+            public ApiFuture<ListTopicSubscriptionsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
                     callable,
                 ListTopicSubscriptionsRequest request,
-                CallContext context) {
-              return new ListTopicSubscriptionsPagedResponse(
-                  callable, LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+                CallContext context,
+                ApiFuture<ListTopicSubscriptionsResponse> futureResponse) {
+              PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+              return ListTopicSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 

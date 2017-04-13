@@ -22,7 +22,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.Dataset;
@@ -122,7 +122,7 @@ public class ITDatasetSnippets {
   @Test
   public void testListTablesEmpty() {
     Page<Table> tables = datasetSnippets.list();
-    assertFalse(tables.iterateAll().hasNext());
+    assertFalse(tables.iterateAll().iterator().hasNext());
   }
 
   @Test
@@ -131,7 +131,7 @@ public class ITDatasetSnippets {
 
     dataset.create(expectedTableName, StandardTableDefinition.newBuilder().build());
     Page<Table> tables = datasetSnippets.list();
-    Iterator<Table> iterator = tables.iterateAll();
+    Iterator<Table> iterator = tables.iterateAll().iterator();
     assertTrue(iterator.hasNext());
 
     Table actualTable = iterator.next();

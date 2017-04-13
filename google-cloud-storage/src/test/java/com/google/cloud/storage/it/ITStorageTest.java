@@ -25,7 +25,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.WriteChannel;
@@ -122,11 +122,11 @@ public class ITStorageTest {
   @Test(timeout = 5000)
   public void testListBuckets() throws InterruptedException {
     Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-        Storage.BucketListOption.fields()).iterateAll();
+        Storage.BucketListOption.fields()).iterateAll().iterator();
     while (!bucketIterator.hasNext()) {
       Thread.sleep(500);
       bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-          Storage.BucketListOption.fields()).iterateAll();
+          Storage.BucketListOption.fields()).iterateAll().iterator();
     }
     while (bucketIterator.hasNext()) {
       Bucket remoteBucket = bucketIterator.next();
@@ -344,14 +344,14 @@ public class ITStorageTest {
         Storage.BlobListOption.fields(BlobField.METADATA));
     // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
     // test fails if timeout is reached.
-    while (Iterators.size(page.iterateAll()) != 2) {
+    while (Iterators.size(page.iterateAll().iterator()) != 2) {
       Thread.sleep(500);
       page = storage.list(BUCKET,
           Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
           Storage.BlobListOption.fields(BlobField.METADATA));
     }
     Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
-    Iterator<Blob> iterator = page.iterateAll();
+    Iterator<Blob> iterator = page.iterateAll().iterator();
     while (iterator.hasNext()) {
       Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.getBucket());
@@ -382,14 +382,14 @@ public class ITStorageTest {
         Storage.BlobListOption.fields());
     // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
     // test fails if timeout is reached.
-    while (Iterators.size(page.iterateAll()) != 2) {
+    while (Iterators.size(page.iterateAll().iterator()) != 2) {
       Thread.sleep(500);
       page = storage.list(BUCKET,
           Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
           Storage.BlobListOption.fields());
     }
     Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
-    Iterator<Blob> iterator = page.iterateAll();
+    Iterator<Blob> iterator = page.iterateAll().iterator();
     while (iterator.hasNext()) {
       Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.getBucket());
@@ -424,14 +424,14 @@ public class ITStorageTest {
           Storage.BlobListOption.versions(true));
       // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
       // test fails if timeout is reached.
-      while (Iterators.size(page.iterateAll()) != 3) {
+      while (Iterators.size(page.iterateAll().iterator()) != 3) {
         Thread.sleep(500);
         page = storage.list(bucketName,
             Storage.BlobListOption.prefix("test-list-blobs-versioned-blob"),
             Storage.BlobListOption.versions(true));
       }
       Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
-      Iterator<Blob> iterator = page.iterateAll();
+      Iterator<Blob> iterator = page.iterateAll().iterator();
       while (iterator.hasNext()) {
         Blob remoteBlob = iterator.next();
         assertEquals(bucketName, remoteBlob.getBucket());
@@ -467,13 +467,13 @@ public class ITStorageTest {
         Storage.BlobListOption.currentDirectory());
     // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
     // test fails if timeout is reached.
-    while (Iterators.size(page.iterateAll()) != 2) {
+    while (Iterators.size(page.iterateAll().iterator()) != 2) {
       Thread.sleep(500);
       page = storage.list(BUCKET,
           Storage.BlobListOption.prefix("test-list-blobs-current-directory/"),
           Storage.BlobListOption.currentDirectory());
     }
-    Iterator<Blob> iterator = page.iterateAll();
+    Iterator<Blob> iterator = page.iterateAll().iterator();
     while (iterator.hasNext()) {
       Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.getBucket());

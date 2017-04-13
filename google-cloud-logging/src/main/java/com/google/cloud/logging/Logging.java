@@ -17,10 +17,10 @@
 package com.google.cloud.logging;
 
 import com.google.api.gax.core.ApiFuture;
-import com.google.cloud.AsyncPage;
+import com.google.api.gax.core.AsyncPage;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.Service;
 import com.google.common.collect.ImmutableMap;
 
