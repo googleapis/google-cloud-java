@@ -91,9 +91,9 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <google.auth.version>0.6.1</google.auth.version>
-    <grpc.version>1.0.3</grpc.version>
-    <gax.version>0.9.0</gax.version>
-    <generatedProto.version>0.1.5</generatedProto.version>
+    <grpc.version>1.2.0</grpc.version>
+    <gax.version>0.10.0</gax.version>
+    <generatedProto.version>0.1.7</generatedProto.version>
     <core.version>0.12.1-alpha-SNAPSHOT</core.version>
     <beta.version>0.12.1-beta-SNAPSHOT</beta.version>
     <storage.version>${beta.version}</storage.version>
@@ -442,16 +442,14 @@
                   <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-iam-v1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-error-reporting-v1beta1/${generatedProto.version}/apidocs/</link>
-                  <!-- TODO: Language version is hardcoded for now, please remove the hardcoded version once it is possible -->
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-language-v1/0.1.6/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-language-v1beta2/0.1.6/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-language-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-language-v1beta2/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-logging-v2/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-monitoring-v3/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-pubsub-v1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-speech-v1beta1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-trace-v1/${generatedProto.version}/apidocs/</link>
-                  <!-- TODO: Vision version is hardcoded for now, please remove the hardcoded version once it is possible -->
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-vision-v1/0.1.6/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-vision-v1/${generatedProto.version}/apidocs/</link>
                 </links>
               </configuration>
             </plugin>

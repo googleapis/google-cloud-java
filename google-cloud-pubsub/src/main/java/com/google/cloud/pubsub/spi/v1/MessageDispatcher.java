@@ -61,6 +61,7 @@ class MessageDispatcher {
   private final ApiClock clock;
 
   private final Duration ackExpirationPadding;
+  private final Duration maxAckExtensionPeriod;
   private final MessageReceiver receiver;
   private final AckProcessor ackProcessor;
 
@@ -87,20 +88,27 @@ class MessageDispatcher {
   // it is not modified while inside the queue.
   // The hashcode and equals methods are explicitly not implemented to discourage
   // the use of this class as keys in maps or similar containers.
-  private static class ExtensionJob implements Comparable<ExtensionJob> {
+  private class ExtensionJob implements Comparable<ExtensionJob> {
+    Instant creation;
     Instant expiration;
     int nextExtensionSeconds;
     ArrayList<AckHandler> ackHandlers;
 
     ExtensionJob(
-        Instant expiration, int initialAckDeadlineExtension, ArrayList<AckHandler> ackHandlers) {
+        Instant creation,
+        Instant expiration,
+        int initialAckDeadlineExtension,
+        ArrayList<AckHandler> ackHandlers) {
+      this.creation = creation;
       this.expiration = expiration;
       nextExtensionSeconds = initialAckDeadlineExtension;
       this.ackHandlers = ackHandlers;
     }
 
     void extendExpiration(Instant now) {
-      expiration = now.plus(Duration.standardSeconds(nextExtensionSeconds));
+      Instant possibleExtension = now.plus(Duration.standardSeconds(nextExtensionSeconds));
+      Instant maxExtension = creation.plus(maxAckExtensionPeriod);
+      expiration = possibleExtension.isBefore(maxExtension) ? possibleExtension : maxExtension;
       nextExtensionSeconds = Math.min(2 * nextExtensionSeconds, MAX_ACK_DEADLINE_EXTENSION_SECS);
     }
 
@@ -144,6 +152,12 @@ class MessageDispatcher {
           "PendingModifyAckDeadline{extension: %d sec, ackIds: %s}",
           deadlineExtensionSeconds, ackIds);
     }
+  }
+
+  /** Internal representation of a reply to a Pubsub message, to be sent back to the service. */
+  public enum AckReply {
+    ACK,
+    NACK
   }
 
   /**
@@ -217,12 +231,14 @@ class MessageDispatcher {
       MessageReceiver receiver,
       AckProcessor ackProcessor,
       Duration ackExpirationPadding,
+      Duration maxAckExtensionPeriod,
       Distribution ackLatencyDistribution,
       FlowController flowController,
       ScheduledExecutorService executor,
       ApiClock clock) {
     this.executor = executor;
     this.ackExpirationPadding = ackExpirationPadding;
+    this.maxAckExtensionPeriod = maxAckExtensionPeriod;
     this.receiver = receiver;
     this.ackProcessor = ackProcessor;
     this.flowController = flowController;
@@ -285,8 +301,13 @@ class MessageDispatcher {
       final AckReplyConsumer consumer =
           new AckReplyConsumer() {
             @Override
-            public void accept(AckReply reply) {
-              response.set(reply);
+            public void ack() {
+              response.set(AckReply.ACK);
+            }
+
+            @Override
+            public void nack() {
+              response.set(AckReply.NACK);
             }
           };
       Futures.addCallback(response, ackHandler);
@@ -305,7 +326,11 @@ class MessageDispatcher {
 
     synchronized (outstandingAckHandlers) {
       outstandingAckHandlers.add(
-          new ExtensionJob(expiration, INITIAL_ACK_DEADLINE_EXTENSION_SECONDS, ackHandlers));
+          new ExtensionJob(
+              new Instant(clock.millisTime()),
+              expiration,
+              INITIAL_ACK_DEADLINE_EXTENSION_SECONDS,
+              ackHandlers));
     }
     setupNextAckDeadlineExtensionAlarm(expiration);
 
@@ -380,6 +405,13 @@ class MessageDispatcher {
             && outstandingAckHandlers.peek().expiration.compareTo(cutOverTime) <= 0) {
           ExtensionJob job = outstandingAckHandlers.poll();
 
+          if (maxAckExtensionPeriod.getMillis() > 0
+              && job.creation.plus(maxAckExtensionPeriod).compareTo(now) <= 0) {
+            // The job has expired, according to the maxAckExtensionPeriod, we are just going to
+            // drop it.
+            continue;
+          }
+          
           // If a message has already been acked, remove it, nothing to do.
           for (int i = 0; i < job.ackHandlers.size(); ) {
             if (job.ackHandlers.get(i).acked.get()) {

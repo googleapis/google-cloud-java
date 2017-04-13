@@ -34,9 +34,26 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
+    <artifact.version>${project.version}</artifact.version>
   </properties>
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>properties-maven-plugin</artifactId>
+        <version>1.0-alpha-2</version>
+        <executions>
+          <execution>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>write-project-properties</goal>
+            </goals>
+            <configuration>
+              <outputFile>${project.build.outputDirectory}/com/google/cloud/spanner/project.properties</outputFile>
+            </configuration>
+          </execution>
+         </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -71,7 +88,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-tcnative-boringssl-static</artifactId>
-      <version>1.1.33.Fork19</version>
+      <version>1.1.33.Fork26</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -81,7 +98,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-v1</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
@@ -92,7 +109,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-admin-database-v1</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
@@ -103,7 +120,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-admin-instance-v1</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
@@ -144,7 +161,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
-<artifactId>guava</artifactId>
+      <artifactId>guava</artifactId>
       <version>19.0</version>
     </dependency>
     <dependency>
@@ -193,5 +210,5 @@
       <version>20151123</version>
       <scope>test</scope>
     </dependency>
-</dependencies>
+  </dependencies>
 </project>

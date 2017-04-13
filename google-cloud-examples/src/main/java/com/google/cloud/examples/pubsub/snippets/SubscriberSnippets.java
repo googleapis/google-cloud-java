@@ -23,7 +23,6 @@
 package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.gax.core.ApiFuture;
-import com.google.cloud.pubsub.spi.v1.AckReply;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
@@ -83,7 +82,7 @@ public class SubscriberSnippets {
           public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
             // handle incoming message, then ack or nack the received message
             // ...
-            consumer.accept(AckReply.ACK);
+            consumer.ack();
           }
         };
 

@@ -21,20 +21,15 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.api.gax.core.CurrentMillisClock;
 import com.google.api.gax.core.ApiClock;
+import com.google.api.gax.core.CurrentMillisClock;
+import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
-
-import org.joda.time.Duration;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -49,17 +44,16 @@ import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Objects;
-import java.util.Properties;
 import java.util.ServiceLoader;
 import java.util.Set;
-import java.util.jar.Attributes;
-import java.util.jar.JarFile;
-import java.util.jar.Manifest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.joda.time.Duration;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
 /**
  * Abstract class representing service options.
@@ -73,17 +67,13 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
-  private static final String MANIFEST_ARTIFACT_ID_KEY = "artifactId";
-  private static final String MANIFEST_VERSION_KEY = "Implementation-Version";
-  private static final String ARTIFACT_ID = "google-cloud-core";
   private static final String LIBRARY_NAME = "gcloud-java";
   private static final String X_GOOGLE_CLIENT_HEADER_NAME = "gccl";
-  private static final String LIBRARY_VERSION = defaultLibraryVersion();
-  private static final String APPLICATION_NAME =
-      LIBRARY_VERSION == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + LIBRARY_VERSION;
 
-  private static final String META_FILE_ROOT = "/META-INF/maven/";
-  private static final String META_VERSION_KEY = "version";
+  private static final String PROPERTIES_VERSION_KEY = "artifact.version";
+  private static final String DEFAULT_PACKAGE_PATH = "com/google/cloud";
+  private static final String PROPERTIES_FILE = "project.properties";
+
   private static final RetrySettings DEFAULT_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
       .build();
   private static final RetrySettings NO_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
@@ -525,8 +515,9 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   /**
    * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
    */
-  public static String getApplicationName() {
-    return APPLICATION_NAME;
+  public String getApplicationName() {
+    String libraryVersion = getLibraryVersion();
+    return libraryVersion == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + libraryVersion;
   }
 
 
@@ -547,8 +538,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   /**
    * Returns the library's version as a string.
    */
-  public static String getLibraryVersion() {
-    return LIBRARY_VERSION;
+  public String getLibraryVersion() {
+    try {
+      String version = getVersionProperty(getPackagePath());
+      if (version == null) {
+        version = getVersionProperty(DEFAULT_PACKAGE_PATH);
+      }
+      return version;
+    } catch (Exception e) {
+      // ignore
+    }
+    return null;
   }
 
   protected int baseHashCode() {
@@ -618,47 +618,13 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
   }
 
-  private static String defaultLibraryVersion() {
-    String version = getPomVersion();
-    if (version == null) {
-      version = getManifestVersion();
-    }
-    return version;
+  private String getVersionProperty(String packagePath) {
+    String projectPropertiesPath = "/" + packagePath + "/" + PROPERTIES_FILE;
+    return PropertiesProvider.loadProperty(
+        ServiceOptions.class, projectPropertiesPath, PROPERTIES_VERSION_KEY);
   }
 
-  private static String getPomVersion() {
-    try {
-      Properties properties = new Properties();
-      String mavenPropertiesPath = META_FILE_ROOT
-          + ServiceOptions.class.getPackage().getName() + "/"
-          + ARTIFACT_ID + "/pom.properties";
-      InputStream inputStream = ServiceOptions.class.getResourceAsStream(mavenPropertiesPath);
-      if (inputStream != null) {
-        properties.load(inputStream);
-        return properties.getProperty(META_VERSION_KEY, "");
-      }
-    } catch (Exception e) {
-      // ignore
-    }
-    return null;
-  }
-
-  private static String getManifestVersion() {
-    String version = null;
-    try {
-      Enumeration<URL> resources =
-          ServiceOptions.class.getClassLoader().getResources(JarFile.MANIFEST_NAME);
-      while (resources.hasMoreElements() && version == null) {
-        Manifest manifest = new Manifest(resources.nextElement().openStream());
-        Attributes manifestAttributes = manifest.getMainAttributes();
-        String artifactId = manifestAttributes.getValue(MANIFEST_ARTIFACT_ID_KEY);
-        if (artifactId != null && artifactId.equals(ARTIFACT_ID)) {
-          version = manifestAttributes.getValue(MANIFEST_VERSION_KEY);
-        }
-      }
-    } catch (IOException e) {
-      // ignore
-    }
-    return version;
+  private String getPackagePath() {
+    return this.getClass().getPackage().getName().replaceAll("\\.", "/");
   }
 }
