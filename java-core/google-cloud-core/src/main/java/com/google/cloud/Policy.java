@@ -124,7 +124,8 @@ public final class Policy implements Serializable {
     private String etag;
     private int version;
 
-    protected Builder() {}
+    protected Builder() {
+    }
 
     protected Builder(Policy policy) {
       setBindings(policy.bindings);
