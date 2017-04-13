@@ -82,8 +82,6 @@ public class PublisherImplTest {
 
   private FakeScheduledExecutorService fakeExecutor;
 
-  private FakeCredentials testCredentials;
-
   private FakePublisherServiceImpl testPublisherServiceImpl;
 
   private ServerImpl testServer;
