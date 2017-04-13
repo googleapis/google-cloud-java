@@ -16,15 +16,11 @@
 
 package com.google.cloud.logging;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutureCallback;
 import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
-import com.google.common.util.concurrent.Uninterruptibles;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,6 +28,7 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
 
+/** Configurable logging service with level-based flush and error handling */
 public class LoggingService {
 
   private static final ThreadLocal<Boolean> inPublishCall = new ThreadLocal<>();
@@ -40,14 +37,50 @@ public class LoggingService {
   private WriteOption[] writeOptions;
   private Severity flushSeverity;
   private Synchronicity synchronicity;
-  private LoggingErrorHandler errorHandler;
-  private List<LoggingEnhancer> resourceEnhancers;
+  private ErrorHandler errorHandler;
 
   private final Object writeLock = new Object();
   private final Set<ApiFuture<Void>> pendingWrites =
       Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
 
-  private LoggingService() {}
+  public LoggingService(LoggingOptions options, ErrorHandler errorHandler,
+      String logName, MonitoredResource resource, WriteOption... writeOptions) {
+    this.loggingOptions = options;
+    this.errorHandler = errorHandler;
+    setWriteOptions(logName, resource, writeOptions);
+  }
+
+  /**
+   * Sets the default write options for log entries.
+   */
+  private void setWriteOptions(
+      String logName, MonitoredResource resource, WriteOption... writeOptions) {
+    List<WriteOption> writeOptionsList = new ArrayList<>();
+    writeOptionsList.add(WriteOption.logName(logName));
+    writeOptionsList.add(WriteOption.resource(resource));
+    if (writeOptions != null) {
+      Collections.addAll(writeOptionsList, writeOptions);
+    }
+    this.writeOptions = new WriteOption[writeOptionsList.size()];
+    writeOptionsList.toArray(this.writeOptions);
+  }
+
+  /**
+   * Set the synchronicity of logging : {@link Synchronicity}, defaults to async
+   */
+  public synchronized void setSynchronicity(Synchronicity synchronicity) {
+    this.synchronicity = synchronicity;
+  }
+
+  /**
+   * Minimum severity of log message to not buffer but immediately write out to cloud logging.
+   * Default : Error
+   *
+   * @param flushSeverity : minimum logging severity
+   */
+  public synchronized void setFlushSeverity(Severity flushSeverity) {
+    this.flushSeverity = flushSeverity;
+  }
 
   public void flush() {
     // BUG(1795): We should force batcher to issue RPC call for buffered messages,
@@ -56,25 +89,15 @@ public class LoggingService {
     synchronized (writeLock) {
       writesToFlush.addAll(pendingWrites);
     }
-    for (ApiFuture<Void> write : writesToFlush) {
-      try {
-        Uninterruptibles.getUninterruptibly(write);
-      } catch (Exception e) {
-        // Ignore exceptions, they are propagated to the error manager.
-      }
+
+    try {
+      ApiFutures.allAsList(writesToFlush).get();
+    } catch (Exception e) {
+      // Ignore exceptions, they are propagated to the error manager.
     }
   }
 
-  private void enhanceLogEntry(LogEntry.Builder entryBuilder) {
-    for (LoggingEnhancer enhancer : resourceEnhancers) {
-      enhancer.enhanceLogEntry(entryBuilder);
-    }
-  }
-
-  public void publish(LogEntry.Builder entryBuilder) {
-    enhanceLogEntry(entryBuilder);
-    LogEntry entry = entryBuilder.build();
-
+  public void publish(LogEntry entry) {
     if (inPublishCall.get() != null) {
       // ignore all logs generated in the course of logging through this handler
       return;
@@ -91,7 +114,9 @@ public class LoggingService {
     }
   }
 
-  /** Closes the handler and the associated {@link Logging} object. */
+  /**
+   * Closes the handler and the associated {@link Logging} object.
+   */
   public synchronized void close() throws SecurityException {
     if (logging != null) {
       try {
@@ -101,14 +126,6 @@ public class LoggingService {
       }
     }
     logging = null;
-  }
-
-  public synchronized void setFlushSeverity(Severity severity) {
-    flushSeverity = severity;
-  }
-
-  public synchronized void setSynchronicity(Synchronicity syncType) {
-    synchronicity = syncType;
   }
 
   public Synchronicity getSynchronicity() {
@@ -158,7 +175,9 @@ public class LoggingService {
     }
   }
 
-  /** Returns an instance of the logging service. */
+  /**
+   * Returns an instance of the logging service.
+   */
   private Logging getLogging() {
     if (logging == null) {
       synchronized (this) {
@@ -170,115 +189,12 @@ public class LoggingService {
     return logging;
   }
 
-  /** Returns a builder for this {@code LoggingService} object. */
-  public LoggingService.Builder toBuilder() {
-    return new LoggingService.BuilderImpl(this);
-  }
+  interface ErrorHandler {
 
-  /**
-   * Returns a builder for {@code LoggingService} objects given the name of the sink and its
-   * destination.
-   */
-  public static LoggingService.Builder newBuilder(LoggingOptions loggingOptions) {
-    return new LoggingService.BuilderImpl(loggingOptions);
-  }
+    void handleWriteError(Exception e);
 
-  public abstract static class Builder {
-    /** Service configuration of the cloud logging service */
-    public abstract LoggingService.Builder setLoggingOptions(LoggingOptions loggingOptions);
+    void handleFormatError(Exception e);
 
-    /** Set the synchronicity of logging : {@link Synchronicity}, defaults to async */
-    public abstract LoggingService.Builder setSynchronicity(Synchronicity synchronicity);
-
-    /**
-     * Minimum severity of log message to not buffer but immediately write out to cloud logging.
-     * Default : Error
-     *
-     * @param flushSeverity : minimum logging severity
-     */
-    public abstract LoggingService.Builder setFlushSeverity(Severity flushSeverity);
-
-    /** Sets the default write options for log entries */
-    public abstract LoggingService.Builder setWriteOptions(
-        String logName, MonitoredResource resource, WriteOption... labelOptions);
-
-    /** Sets the error log handler */
-    public abstract LoggingService.Builder setErrorHandler(LoggingErrorHandler errorHandler);
-    /** Creates a {@code LoggingService} object for this builder. */
-    public abstract LoggingService build();
-  }
-
-  static final class BuilderImpl extends LoggingService.Builder {
-
-    private LoggingOptions loggingOptions;
-    private Severity flushSeverity;
-    private Synchronicity synchronicity;
-    private WriteOption[] writeOptions;
-    private LoggingErrorHandler errorHandler;
-
-    BuilderImpl(LoggingOptions loggingOptions) {
-      this.loggingOptions = loggingOptions;
-    }
-
-    BuilderImpl(LoggingService loggingService) {
-      this.loggingOptions = loggingService.loggingOptions;
-      this.flushSeverity = loggingService.flushSeverity;
-      this.synchronicity = loggingService.synchronicity;
-      this.writeOptions = loggingService.writeOptions;
-      this.errorHandler = loggingService.errorHandler;
-    }
-
-    @Override
-    public LoggingService.Builder setLoggingOptions(LoggingOptions loggingOptions) {
-      this.loggingOptions = loggingOptions;
-      return this;
-    }
-
-    @Override
-    public LoggingService.Builder setFlushSeverity(Severity flushSeverity) {
-      this.flushSeverity = flushSeverity;
-      return this;
-    }
-
-    @Override
-    public LoggingService.Builder setSynchronicity(Synchronicity synchronicity) {
-      this.synchronicity = synchronicity;
-      return this;
-    }
-
-    @Override
-    public LoggingService.Builder setWriteOptions(
-        String logName, MonitoredResource resource, WriteOption... labelOptions) {
-      List<WriteOption> writeOptionsList = new ArrayList<>();
-      writeOptionsList.add(WriteOption.logName(logName));
-      writeOptionsList.add(WriteOption.resource(resource));
-      if (labelOptions != null) {
-        Collections.addAll(writeOptionsList, labelOptions);
-      }
-      this.writeOptions = new WriteOption[writeOptionsList.size()];
-      writeOptionsList.toArray(this.writeOptions);
-      return this;
-    }
-
-    @Override
-    public LoggingService.Builder setErrorHandler(LoggingErrorHandler errorHandler) {
-      this.errorHandler = errorHandler;
-      return this;
-    }
-
-    @Override
-    public LoggingService build() {
-      return new LoggingService(this);
-    }
-  }
-
-  LoggingService(LoggingService.BuilderImpl builder) {
-    this.loggingOptions =
-        checkNotNull(firstNonNull(builder.loggingOptions, LoggingOptions.getDefaultInstance()));
-    this.flushSeverity = firstNonNull(builder.flushSeverity, Severity.ERROR);
-    this.synchronicity = firstNonNull(builder.synchronicity, Synchronicity.ASYNC);
-    this.writeOptions = checkNotNull(builder.writeOptions);
-    this.errorHandler = checkNotNull(builder.errorHandler);
-    this.resourceEnhancers = MonitoredResourceUtil.getResourceEnhancers();
+    void handleFlushError(Exception e);
   }
 }

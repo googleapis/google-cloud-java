@@ -20,99 +20,116 @@ import com.google.cloud.MetadataConfig;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.ServiceOptions;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
-import java.util.*;
-
+/**
+ * Monitored resource construction utilities to detect resource type and add labels.
+ */
 abstract class MonitoredResourceUtil {
 
   private enum Label {
-    app_id,
-    cluster_name,
-    instance_id,
-    instance_name,
-    module_id,
-    project_id,
-    version_id,
-    zone
+    appId("app_id"),
+    clusterName("cluster_name"),
+    instanceId("instance_id"),
+    instanceName("instance_name"),
+    moduleId("module_id"),
+    projectId("project_id"),
+    versionId("version_id"),
+    zone("zone");
+
+    private final String key;
+
+    Label(String key) {
+      this.key = key;
+    }
+
+    String getKey() {
+      return key;
+    }
   }
 
   private enum Resource {
-    container,
-    gae_app_flex,
-    gae_app_standard,
-    gce_instance,
-    global
+    container("container"),
+    gaeAppFlex("gae_app_flex"),
+    gaeAppStandard("gae_app_standard"),
+    gceInstance("gce_instance"),
+    global("global");
+
+    private final String key;
+
+    Resource(String key) {
+      this.key = key;
+    }
+
+    String getKey() {
+      return key;
+    }
   }
 
   private static Map<String, Label[]> resourceTypeWithLabels;
 
   static {
-    Map<String, Label[]> map = new HashMap<>();
-
-    addToMap(
-        map,
-        Resource.gae_app_flex,
-        Label.instance_name,
-        Label.module_id,
-        Label.version_id,
-        Label.instance_id,
-        Label.zone);
-
-    addToMap(map, Resource.gae_app_standard, Label.app_id, Label.module_id, Label.version_id);
-
-    addToMap(map, Resource.container, Label.cluster_name, Label.zone);
-
-    addToMap(map, Resource.gce_instance, Label.instance_id, Label.zone);
-
-    resourceTypeWithLabels = Collections.unmodifiableMap(map);
+    resourceTypeWithLabels =
+        new ImmutableMap.Builder<String, Label[]>()
+            .put(
+                Resource.gaeAppFlex.getKey(),
+                new Label[] {
+                  Label.instanceName,
+                  Label.moduleId,
+                  Label.versionId,
+                  Label.instanceName,
+                  Label.zone
+                })
+            .put(
+                Resource.gaeAppStandard.getKey(),
+                new Label[] {Label.appId, Label.moduleId, Label.versionId})
+            .put(Resource.container.getKey(), new Label[] {Label.clusterName, Label.zone})
+            .put(Resource.gceInstance.getKey(), new Label[] {Label.instanceId, Label.zone})
+            .build();
   }
 
-  private static void addToMap(Map<String, Label[]> map, Resource Resource, Label... labels) {
-    map.put(Resource.name(), labels);
-  }
-
-  private static void addResourceLabels(
-      String resourceType, MonitoredResource.Builder resourceBuilder) {
-    Label[] resourceLabels = resourceTypeWithLabels.get(resourceType);
-    if (resourceLabels != null) {
-      for (Label Label : resourceLabels) {
-        addLabel(resourceBuilder, Label);
-      }
-    }
-  }
-
-  /* Return a self-configured monitored Resource.
-   */
+  /* Return a self-configured monitored Resource. */
   static MonitoredResource getResource(String projectId, String resourceTypeParam) {
     String resourceType = resourceTypeParam;
     if (Strings.isNullOrEmpty(resourceType)) {
       Resource detectedResourceType = getAutoDetectedResourceType();
-      resourceType = detectedResourceType.name();
+      resourceType = detectedResourceType.getKey();
     }
     // Currently, "gae_app" is the supported logging Resource type, but we distinguish
-    // between "gae_app_flex", "gae_app_standard" to support zone id, instance id logging on flex VMs.
-    // This method trims "gae_app_flex", "gae_app_standard" to "gae_app"
+    // between "gae_app_flex", "gae_app_standard" to support zone id, instance name logging on flex VMs.
+    // Hence, "gae_app_flex", "gae_app_standard" are trimmed to "gae_app"
     String resourceName = resourceType.startsWith("gae_app") ? "gae_app" : resourceType;
     MonitoredResource.Builder builder =
-        MonitoredResource.newBuilder(resourceName).addLabel(Label.project_id.name(), projectId);
-    addResourceLabels(resourceType, builder);
+        MonitoredResource.newBuilder(resourceName).addLabel(Label.projectId.getKey(), projectId);
+    Label[] resourceLabels = resourceTypeWithLabels.get(resourceType);
+    if (resourceLabels != null) {
+      for (Label label : resourceLabels) {
+        String value = getValue(label);
+        if (value != null) {
+          builder.addLabel(label.getKey(), value);
+        }
+      }
+    }
     return builder.build();
   }
 
-  /* Detect monitored Resource type using environment variables, else return global as default
-   */
+  /* Detect monitored Resource type using environment variables, else return global as default. */
   private static Resource getAutoDetectedResourceType() {
     if (System.getenv("GAE_INSTANCE") != null) {
-      return Resource.gae_app_flex;
+      return Resource.gaeAppFlex;
     }
     if (System.getenv("KUBERNETES_SERVICE_HOST") != null) {
       return Resource.container;
     }
     if (ServiceOptions.getAppEngineAppId() != null) {
-      return Resource.gae_app_standard;
+      return Resource.gaeAppStandard;
     }
     if (MetadataConfig.getInstanceId() != null) {
-      return Resource.gce_instance;
+      return Resource.gceInstance;
     }
     // default Resource type
     return Resource.global;
@@ -123,25 +140,25 @@ abstract class MonitoredResourceUtil {
     return getEnhancers(resourceType);
   }
 
-  private static void addLabel(MonitoredResource.Builder resourceBuilder, Label label) {
+  private static String getValue(Label label) {
     String value;
     switch (label) {
-      case app_id:
+      case appId:
         value = ServiceOptions.getAppEngineAppId();
         break;
-      case cluster_name:
+      case clusterName:
         value = MetadataConfig.getClusterName();
         break;
-      case instance_id:
+      case instanceId:
         value = MetadataConfig.getInstanceId();
         break;
-      case instance_name:
+      case instanceName:
         value = getAppEngineInstanceName();
         break;
-      case module_id:
+      case moduleId:
         value = getAppEngineModuleId();
         break;
-      case version_id:
+      case versionId:
         value = getAppEngineVersionId();
         break;
       case zone:
@@ -151,9 +168,7 @@ abstract class MonitoredResourceUtil {
         value = null;
         break;
     }
-    if (value != null) {
-      resourceBuilder.addLabel(label.name(), value);
-    }
+    return value;
   }
 
   private static String getAppEngineModuleId() {
@@ -171,7 +186,7 @@ abstract class MonitoredResourceUtil {
   private static List<LoggingEnhancer> getEnhancers(Resource resourceType) {
     List<LoggingEnhancer> enhancers;
     switch (resourceType) {
-      case gae_app_flex:
+      case gaeAppFlex:
         enhancers = new ArrayList<>();
         enhancers.add(new TraceLoggingEnhancer());
         break;

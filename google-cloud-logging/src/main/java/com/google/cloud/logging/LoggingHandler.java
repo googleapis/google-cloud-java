@@ -22,6 +22,7 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
@@ -102,9 +103,9 @@ public class LoggingHandler extends Handler {
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
 
-  private LoggingService loggingService;
-  private List<LoggingEnhancer> enhancers;
-  private ErrorHandler errorHandler;
+  private final LoggingService loggingService;
+  private final List<LoggingEnhancer> enhancers;
+  private final LoggingService.ErrorHandler errorHandler;
 
   // Logs with the same severity with the base could be more efficiently sent to Stackdriver.
   // Defaults to level of the handler or Level.FINEST if the handler is set to Level.ALL.
@@ -167,7 +168,7 @@ public class LoggingHandler extends Handler {
       List<LoggingEnhancer> enhancers) {
     try {
       LoggingConfig config = new LoggingConfig(getClass().getName());
-      errorHandler = new ErrorHandler();
+      errorHandler = new LoggingErrorHandler();
       setFilter(config.getFilter());
       setFormatter(config.getFormatter());
       Level level = config.getLogLevel();
@@ -181,7 +182,7 @@ public class LoggingHandler extends Handler {
       MonitoredResource resource =
           firstNonNull(
               monitoredResource, config.getMonitoredResource(loggingOptions.getProjectId()));
-      WriteOption[] labelOptions =
+      WriteOption[] writeOptions =
           new WriteOption[] {
             WriteOption.labels(
                 ImmutableMap.of(
@@ -191,16 +192,17 @@ public class LoggingHandler extends Handler {
                     String.valueOf(baseLevel.intValue())))
           };
 
-      loggingService =
-          LoggingService.newBuilder(loggingOptions)
-              .setFlushSeverity(severityFor(flushLevel))
-              .setSynchronicity(config.getSynchronicity())
-              .setWriteOptions(logName, resource, labelOptions)
-              .setErrorHandler(errorHandler)
-              .build();
+      loggingService = new LoggingService(
+          loggingOptions, errorHandler, logName, resource, writeOptions);
+      loggingService.setFlushSeverity(severityFor(flushLevel));
+      loggingService.setSynchronicity(config.getSynchronicity());
 
-      this.enhancers = enhancers != null ? enhancers : config.getEnhancers();
+      this.enhancers = firstNonNull(enhancers, config.getEnhancers());
 
+      List<LoggingEnhancer> loggingEnhancers = MonitoredResourceUtil.getResourceEnhancers();
+      if (loggingEnhancers != null) {
+        this.enhancers.addAll(loggingEnhancers);
+      }
     } catch (Exception ex) {
       reportError(null, ex, ErrorManager.OPEN_FAILURE);
       throw ex;
@@ -252,19 +254,19 @@ public class LoggingHandler extends Handler {
     if ("io.netty.handler.codec.http2.Http2FrameLogger".equals(record.getSourceClassName())) {
       return;
     }
-    LogEntry.Builder logEntryBuilder;
+    LogEntry logEntry;
     try {
-      logEntryBuilder = logEntryBuilderFor(record);
+      logEntry = logEntryFor(record);
     } catch (Exception ex) {
       errorHandler.handleFormatError(ex);
       return;
     }
-    if (logEntryBuilder != null) {
-      loggingService.publish(logEntryBuilder);
+    if (logEntry != null) {
+      loggingService.publish(logEntry);
     }
   }
 
-  private LogEntry.Builder logEntryBuilderFor(LogRecord record) throws Exception {
+  private LogEntry logEntryFor(LogRecord record) throws Exception {
     String payload = getFormatter().format(record);
     Level level = record.getLevel();
     LogEntry.Builder builder =
@@ -281,7 +283,7 @@ public class LoggingHandler extends Handler {
     for (LoggingEnhancer enhancer : enhancers) {
       enhancer.enhanceLogEntry(builder);
     }
-    return builder;
+    return builder.build();
   }
 
   @Override
@@ -295,27 +297,9 @@ public class LoggingHandler extends Handler {
     loggingService.close();
   }
 
-  /**
-   * Sets the flush log level. When a log with this level is published, the log buffer is
-   * transmitted to the Stackdriver Logging service, regardless of its size. If not set, {@link
-   * LoggingLevel#ERROR} is used.
-   */
-  public synchronized void setFlushLevel(Level level) {
-    flushLevel = level;
-    loggingService.setFlushSeverity(severityFor(flushLevel));
-  }
-
   /** Get the flush log level. */
   public Level getFlushLevel() {
     return flushLevel;
-  }
-
-  /**
-   * Sets the synchronicity of the write method used to write logs to the Stackdriver Logging
-   * service. Defaults to {@link Synchronicity#ASYNC}.
-   */
-  public synchronized void setSynchronicity(Synchronicity synchronicity) {
-    loggingService.setSynchronicity(synchronicity);
   }
 
   /**
@@ -324,6 +308,16 @@ public class LoggingHandler extends Handler {
    */
   public Synchronicity getSynchronicity() {
     return loggingService.getSynchronicity();
+  }
+
+
+  public synchronized void setFlushLevel(Level flushLevel) {
+    this.flushLevel = flushLevel;
+    loggingService.setFlushSeverity(severityFor(flushLevel));
+  }
+
+  public synchronized void setSynchronicity(Synchronicity synchronicity) {
+    loggingService.setSynchronicity(synchronicity);
   }
 
   /**
@@ -367,7 +361,7 @@ public class LoggingHandler extends Handler {
     }
   }
 
-  private class ErrorHandler implements LoggingErrorHandler {
+  private class LoggingErrorHandler implements LoggingService.ErrorHandler {
     public void handleFormatError(Exception ex) {
       getErrorManager().error(null, ex, ErrorManager.FORMAT_FAILURE);
     }

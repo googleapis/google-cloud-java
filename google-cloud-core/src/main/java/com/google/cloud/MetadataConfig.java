@@ -27,17 +27,17 @@ import java.net.URL;
 
 public class MetadataConfig {
 
-  private static final String metadataUrl = "http://metadata/computeMetadata/v1/";
+  private static final String METADATA_URL = "http://metadata/computeMetadata/v1/";
 
   private MetadataConfig() {
   }
 
   public static String getProjectId() {
-    return getProjectAttribute("project-id");
+    return getAttribute("project/project-id");
   }
 
   public static String getZone() {
-    String zoneId = getInstanceAttribute("zone");
+    String zoneId = getAttribute("instance/zone");
     if (zoneId.contains("/")) {
       return zoneId.substring(zoneId.lastIndexOf('/') + 1);
     }
@@ -45,24 +45,16 @@ public class MetadataConfig {
   }
 
   public static String getInstanceId() {
-    return getInstanceAttribute("id");
+    return getAttribute("instance/id");
   }
 
   public static String getClusterName() {
-    return getInstanceAttribute("cluster-name");
+    return getAttribute("instance/cluster-name");
   }
 
-  private static String getProjectAttribute(String attributeName) {
-    return getAttribute("project/", attributeName);
-  }
-
-  private static String getInstanceAttribute(String attributeName) {
-    return getAttribute("instance/", attributeName);
-  }
-
-  private static String getAttribute(String prefix, String attributeName) {
+  private static String getAttribute(String attributeName) {
     try {
-      URL url = new URL(metadataUrl + prefix + attributeName);
+      URL url = new URL(METADATA_URL + attributeName);
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
       connection.setRequestProperty("Metadata-Flavor", "Google");
       InputStream input = connection.getInputStream();

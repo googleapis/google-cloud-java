@@ -32,37 +32,37 @@ class LoggingConfig {
 
   private final LogManager manager = LogManager.getLogManager();
   private final String className;
-  private static final String flushLevelTag = "flushLevel";
-  private static final String logFileNameTag = "log";
-  private static final String logLevelTag = "level";
-  private static final String filterTag = "filter";
-  private static final String formatterTag = "formatter";
-  private static final String synchronicityTag = "synchronicity";
-  private static final String resourceTypeTag = "resourceType";
-  private static final String enchancersTag = "enhancers";
+  private static final String FLUSH_LEVEL_TAG = "flushLevel";
+  private static final String LOG_FILENAME_TAG = "log";
+  private static final String LOG_LEVEL_TAG = "level";
+  private static final String FILTER_TAG = "filter";
+  private static final String FORMATTER_TAG = "formatter";
+  private static final String SYNCHRONICITY_TAG = "synchronicity";
+  private static final String RESOURCE_TYPE_TAG = "resourceType";
+  private static final String ENHANCERS_TAG = "enhancers";
 
   public LoggingConfig(String className) {
     this.className = className;
   }
 
   Level getFlushLevel() {
-    return getLevelProperty(flushLevelTag, LoggingLevel.ERROR);
+    return getLevelProperty(FLUSH_LEVEL_TAG, LoggingLevel.ERROR);
   }
 
   String getLogName() {
-    return getProperty(logFileNameTag, "java.log");
+    return getProperty(LOG_FILENAME_TAG, "java.log");
   }
 
   Level getLogLevel() {
-    return getLevelProperty(logLevelTag, LoggingLevel.INFO);
+    return getLevelProperty(LOG_LEVEL_TAG, LoggingLevel.INFO);
   }
 
   Filter getFilter() {
-    return getFilterProperty(filterTag, null);
+    return getFilterProperty(FILTER_TAG, null);
   }
 
   Synchronicity getSynchronicity() {
-    String synchronicityStr = getProperty(synchronicityTag);
+    String synchronicityStr = getProperty(SYNCHRONICITY_TAG);
     try {
       return Synchronicity.valueOf(synchronicityStr);
     } catch (Exception ex) {
@@ -72,16 +72,16 @@ class LoggingConfig {
   }
 
   Formatter getFormatter() {
-    return getFormatterProperty(formatterTag, new SimpleFormatter());
+    return getFormatterProperty(FORMATTER_TAG, new SimpleFormatter());
   }
 
   MonitoredResource getMonitoredResource(String projectId) {
-    String resourceType = getProperty(resourceTypeTag, "");
+    String resourceType = getProperty(RESOURCE_TYPE_TAG, "");
     return MonitoredResourceUtil.getResource(projectId, resourceType);
   }
 
   List<LoggingEnhancer> getEnhancers() {
-    String list = getProperty(enchancersTag);
+    String list = getProperty(ENHANCERS_TAG);
     try {
       List<LoggingEnhancer> enhancers = new ArrayList<>();
       if (list != null) {
