@@ -25,7 +25,6 @@ import com.google.cloud.language.v1.AnalyzeSentimentResponse;
 import com.google.cloud.language.v1.AnalyzeSyntaxRequest;
 import com.google.cloud.language.v1.AnalyzeSyntaxResponse;
 import com.google.cloud.language.v1.AnnotateTextRequest;
-import com.google.cloud.language.v1.AnnotateTextRequest.Features;
 import com.google.cloud.language.v1.AnnotateTextResponse;
 import com.google.cloud.language.v1.Document;
 import com.google.cloud.language.v1.EncodingType;

@@ -25,10 +25,10 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
-import com.google.cloud.AsyncPage;
+import com.google.api.gax.core.AsyncPage;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.logging.Logging.EntryListOption;
 import com.google.cloud.logging.Logging.ListOption;
@@ -323,7 +323,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Sink> page = logging.listSinks();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Sink.class));
   }
 
@@ -357,10 +357,10 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
     Page<Sink> page = logging.listSinks();
-    assertEquals(cursor1, page.getNextPageCursor());
+    assertEquals(cursor1, page.getNextPageToken());
     assertArrayEquals(sinkList1.toArray(), Iterables.toArray(page.getValues(), Sink.class));
     page = page.getNextPage();
-    assertEquals(cursor2, page.getNextPageCursor());
+    assertEquals(cursor2, page.getNextPageToken());
     assertArrayEquals(sinkList2.toArray(), Iterables.toArray(page.getValues(), Sink.class));
   }
 
@@ -378,7 +378,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Sink> page = logging.listSinks();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertNull(page.getNextPage());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Sink.class));
   }
@@ -404,7 +404,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Sink> page = logging.listSinks(ListOption.pageSize(42), ListOption.pageToken(cursor));
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Sink.class));
   }
 
@@ -425,7 +425,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Sink> page = logging.listSinksAsync().get();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Sink.class));
   }
 
@@ -459,10 +459,10 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Sink> page = logging.listSinksAsync().get();
-    assertEquals(cursor1, page.getNextPageCursor());
+    assertEquals(cursor1, page.getNextPageToken());
     assertArrayEquals(sinkList1.toArray(), Iterables.toArray(page.getValues(), Sink.class));
     page = page.getNextPageAsync().get();
-    assertEquals(cursor2, page.getNextPageCursor());
+    assertEquals(cursor2, page.getNextPageToken());
     assertArrayEquals(sinkList2.toArray(), Iterables.toArray(page.getValues(), Sink.class));
   }
 
@@ -480,7 +480,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Sink> page = logging.listSinksAsync().get();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertNull(page.getNextPage());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Sink.class));
   }
@@ -507,7 +507,7 @@ public class LoggingImplTest {
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Sink> page =
         logging.listSinksAsync(ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Sink.class));
   }
 
@@ -681,7 +681,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Metric> page = logging.listMetrics();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Metric.class));
   }
 
@@ -716,10 +716,10 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
     Page<Metric> page = logging.listMetrics();
-    assertEquals(cursor1, page.getNextPageCursor());
+    assertEquals(cursor1, page.getNextPageToken());
     assertArrayEquals(sinkList1.toArray(), Iterables.toArray(page.getValues(), Metric.class));
     page = page.getNextPage();
-    assertEquals(cursor2, page.getNextPageCursor());
+    assertEquals(cursor2, page.getNextPageToken());
     assertArrayEquals(sinkList2.toArray(), Iterables.toArray(page.getValues(), Metric.class));
   }
 
@@ -738,7 +738,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Metric> page = logging.listMetrics();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertNull(page.getNextPage());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Metric.class));
   }
@@ -764,7 +764,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<Metric> page = logging.listMetrics(ListOption.pageSize(42), ListOption.pageToken(cursor));
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Metric.class));
   }
 
@@ -786,7 +786,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Metric> page = logging.listMetricsAsync().get();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Metric.class));
   }
 
@@ -821,10 +821,10 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Metric> page = logging.listMetricsAsync().get();
-    assertEquals(cursor1, page.getNextPageCursor());
+    assertEquals(cursor1, page.getNextPageToken());
     assertArrayEquals(sinkList1.toArray(), Iterables.toArray(page.getValues(), Metric.class));
     page = page.getNextPageAsync().get();
-    assertEquals(cursor2, page.getNextPageCursor());
+    assertEquals(cursor2, page.getNextPageToken());
     assertArrayEquals(sinkList2.toArray(), Iterables.toArray(page.getValues(), Metric.class));
   }
 
@@ -843,7 +843,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Metric> page = logging.listMetricsAsync().get();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertNull(page.getNextPage());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Metric.class));
   }
@@ -870,7 +870,7 @@ public class LoggingImplTest {
     EasyMock.replay(loggingRpcMock);
     AsyncPage<Metric> page =
         logging.listMetricsAsync(ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Metric.class));
   }
 
@@ -892,7 +892,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptors();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(descriptorList.toArray(),
         Iterables.toArray(page.getValues(), MonitoredResourceDescriptor.class));
   }
@@ -927,11 +927,11 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
     Page<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptors();
-    assertEquals(cursor1, page.getNextPageCursor());
+    assertEquals(cursor1, page.getNextPageToken());
     assertArrayEquals(descriptorList1.toArray(), Iterables.toArray(page.getValues(),
         MonitoredResourceDescriptor.class));
     page = page.getNextPage();
-    assertEquals(cursor2, page.getNextPageCursor());
+    assertEquals(cursor2, page.getNextPageToken());
     assertArrayEquals(descriptorList2.toArray(),
         Iterables.toArray(page.getValues(), MonitoredResourceDescriptor.class));
   }
@@ -953,7 +953,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptors();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertNull(page.getNextPage());
     assertArrayEquals(descriptorList.toArray(),
         Iterables.toArray(page.getValues(), MonitoredResourceDescriptor.class));
@@ -981,7 +981,7 @@ public class LoggingImplTest {
     EasyMock.replay(loggingRpcMock);
     Page<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptors(
         ListOption.pageSize(42), ListOption.pageToken(cursor));
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(descriptorList.toArray(),
         Iterables.toArray(page.getValues(), MonitoredResourceDescriptor.class));
   }
@@ -1005,7 +1005,7 @@ public class LoggingImplTest {
     EasyMock.replay(loggingRpcMock);
     AsyncPage<MonitoredResourceDescriptor> page =
         logging.listMonitoredResourceDescriptorsAsync().get();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(descriptorList.toArray(),
         Iterables.toArray(page.getValues(), MonitoredResourceDescriptor.class));
   }
@@ -1041,11 +1041,11 @@ public class LoggingImplTest {
     EasyMock.replay(loggingRpcMock);
     AsyncPage<MonitoredResourceDescriptor> page =
         logging.listMonitoredResourceDescriptorsAsync().get();
-    assertEquals(cursor1, page.getNextPageCursor());
+    assertEquals(cursor1, page.getNextPageToken());
     assertArrayEquals(descriptorList1.toArray(), Iterables.toArray(page.getValues(),
         MonitoredResourceDescriptor.class));
     page = page.getNextPageAsync().get();
-    assertEquals(cursor2, page.getNextPageCursor());
+    assertEquals(cursor2, page.getNextPageToken());
     assertArrayEquals(descriptorList2.toArray(),
         Iterables.toArray(page.getValues(), MonitoredResourceDescriptor.class));
   }
@@ -1069,7 +1069,7 @@ public class LoggingImplTest {
     EasyMock.replay(loggingRpcMock);
     AsyncPage<MonitoredResourceDescriptor> page =
         logging.listMonitoredResourceDescriptorsAsync().get();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertNull(page.getNextPage());
     assertArrayEquals(descriptorList.toArray(),
         Iterables.toArray(page.getValues(), MonitoredResourceDescriptor.class));
@@ -1098,7 +1098,7 @@ public class LoggingImplTest {
     EasyMock.replay(loggingRpcMock);
     AsyncPage<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptorsAsync(
         ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(descriptorList.toArray(),
         Iterables.toArray(page.getValues(), MonitoredResourceDescriptor.class));
   }
@@ -1220,7 +1220,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<LogEntry> page = logging.listLogEntries();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(entriesList.toArray(), Iterables.toArray(page.getValues(), LogEntry.class));
   }
 
@@ -1253,11 +1253,11 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<LogEntry> page = logging.listLogEntriesAsync().get();
-    assertEquals(cursor1, page.getNextPageCursor());
+    assertEquals(cursor1, page.getNextPageToken());
     assertArrayEquals(descriptorList1.toArray(),
         Iterables.toArray(page.getValues(), LogEntry.class));
     page = page.getNextPageAsync().get();
-    assertEquals(cursor2, page.getNextPageCursor());
+    assertEquals(cursor2, page.getNextPageToken());
     assertArrayEquals(descriptorList2.toArray(),
         Iterables.toArray(page.getValues(), LogEntry.class));
   }
@@ -1279,7 +1279,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<LogEntry> page = logging.listLogEntries();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(entriesList.toArray(), Iterables.toArray(page.getValues(), LogEntry.class));
   }
 
@@ -1303,7 +1303,7 @@ public class LoggingImplTest {
     EasyMock.replay(loggingRpcMock);
     Page<LogEntry> page = logging.listLogEntries(EntryListOption.filter("logName:syslog"),
         EntryListOption.sortOrder(SortingField.TIMESTAMP, Logging.SortingOrder.DESCENDING));
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(entriesList.toArray(), Iterables.toArray(page.getValues(), LogEntry.class));
   }
 
@@ -1324,7 +1324,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<LogEntry> page = logging.listLogEntriesAsync().get();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(entriesList.toArray(), Iterables.toArray(page.getValues(), LogEntry.class));
   }
 
@@ -1357,11 +1357,11 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(loggingRpcMock);
     Page<LogEntry> page = logging.listLogEntries();
-    assertEquals(cursor1, page.getNextPageCursor());
+    assertEquals(cursor1, page.getNextPageToken());
     assertArrayEquals(descriptorList1.toArray(),
         Iterables.toArray(page.getValues(), LogEntry.class));
     page = page.getNextPage();
-    assertEquals(cursor2, page.getNextPageCursor());
+    assertEquals(cursor2, page.getNextPageToken());
     assertArrayEquals(descriptorList2.toArray(),
         Iterables.toArray(page.getValues(), LogEntry.class));
   }
@@ -1383,7 +1383,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     AsyncPage<LogEntry> page = logging.listLogEntriesAsync().get();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(entriesList.toArray(), Iterables.toArray(page.getValues(), LogEntry.class));
   }
 
@@ -1407,7 +1407,7 @@ public class LoggingImplTest {
     EasyMock.replay(loggingRpcMock);
     AsyncPage<LogEntry> page = logging.listLogEntriesAsync(EntryListOption.filter("logName:syslog"),
         EntryListOption.sortOrder(SortingField.TIMESTAMP, Logging.SortingOrder.DESCENDING)).get();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(entriesList.toArray(), Iterables.toArray(page.getValues(), LogEntry.class));
   }
 }

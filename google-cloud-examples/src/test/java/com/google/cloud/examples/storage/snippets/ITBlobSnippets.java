@@ -161,7 +161,7 @@ public class ITBlobSnippets {
     assertNotNull(movedBlob);
 
     // Assert that the destination blob exists
-    Iterator<Blob> blobs = storage.list(BUCKET).iterateAll();
+    Iterator<Blob> blobs = storage.list(BUCKET).iterateAll().iterator();
     Blob moveBlob = blobs.next();
     assertEquals(BUCKET, moveBlob.getBucket());
     assertEquals("moveBlob", moveBlob.getName());

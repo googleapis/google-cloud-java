@@ -32,7 +32,7 @@ import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.cloud.dns.spi.v1.RpcBatch;
 import com.google.common.collect.ImmutableList;
@@ -183,7 +183,7 @@ public class DnsBatchTest {
     EasyMock.replay(optionsMock);
     capturedCallback.onSuccess(response);
     Page<Zone> page = batchResult.get();
-    assertEquals(PAGE_TOKEN, page.getNextPageCursor());
+    assertEquals(PAGE_TOKEN, page.getNextPageToken());
     Iterator<Zone> iterator = page.getValues().iterator();
     int resultSize = 0;
     EasyMock.verify(dns);
@@ -463,7 +463,7 @@ public class DnsBatchTest {
         .setNextPageToken(PAGE_TOKEN);
     capturedCallback.onSuccess(response);
     Page<RecordSet> page = batchResult.get();
-    assertEquals(PAGE_TOKEN, page.getNextPageCursor());
+    assertEquals(PAGE_TOKEN, page.getNextPageToken());
     Iterator<RecordSet> iterator = page.getValues().iterator();
     int resultSize = 0;
     while (iterator.hasNext()) {
@@ -533,7 +533,7 @@ public class DnsBatchTest {
     EasyMock.replay(optionsMock);
     capturedCallback.onSuccess(response);
     Page<ChangeRequest> page = batchResult.get();
-    assertEquals(PAGE_TOKEN, page.getNextPageCursor());
+    assertEquals(PAGE_TOKEN, page.getNextPageToken());
     Iterator<ChangeRequest> iterator = page.getValues().iterator();
     int resultSize = 0;
     EasyMock.verify(dns);

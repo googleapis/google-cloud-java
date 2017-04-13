@@ -27,11 +27,10 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.gax.core.ApiClock;
+import com.google.api.gax.core.Page;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
-import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Project;
@@ -677,7 +676,7 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Bucket> bucketList = ImmutableList.of(expectedBucket1, expectedBucket2);
     Page<Bucket> page = storage.list();
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.getValues(), Bucket.class));
   }
 
@@ -689,7 +688,7 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     Page<Bucket> page = storage.list();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(
         ImmutableList.of().toArray(), Iterables.toArray(page.getValues(), Bucket.class));
   }
@@ -705,7 +704,7 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Bucket> bucketList = ImmutableList.of(expectedBucket1, expectedBucket2);
     Page<Bucket> page = storage.list(BUCKET_LIST_PAGE_SIZE, BUCKET_LIST_PREFIX);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.getValues(), Bucket.class));
   }
 
@@ -729,7 +728,7 @@ public class StorageImplTest {
     assertTrue(selector.contains("nextPageToken"));
     assertTrue(selector.endsWith(")"));
     assertEquals(38, selector.length());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.getValues(), Bucket.class));
   }
 
@@ -752,7 +751,7 @@ public class StorageImplTest {
     assertTrue(selector.contains("nextPageToken"));
     assertTrue(selector.endsWith(")"));
     assertEquals(25, selector.length());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.getValues(), Bucket.class));
   }
 
@@ -767,7 +766,7 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page = storage.list(BUCKET_NAME1);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.getValues(), Blob.class));
   }
 
@@ -780,7 +779,7 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     Page<Blob> page = storage.list(BUCKET_NAME1);
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(
         ImmutableList.of().toArray(), Iterables.toArray(page.getValues(), Blob.class));
   }
@@ -797,7 +796,7 @@ public class StorageImplTest {
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page =
         storage.list(BUCKET_NAME1, BLOB_LIST_PAGE_SIZE, BLOB_LIST_PREFIX, BLOB_LIST_VERSIONS);
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.getValues(), Blob.class));
   }
 
@@ -832,7 +831,7 @@ public class StorageImplTest {
     assertTrue(selector.contains("nextPageToken"));
     assertTrue(selector.endsWith(")"));
     assertEquals(61, selector.length());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.getValues(), Blob.class));
   }
 
@@ -866,7 +865,7 @@ public class StorageImplTest {
     assertTrue(selector.contains("nextPageToken"));
     assertTrue(selector.endsWith(")"));
     assertEquals(41, selector.length());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.getValues(), Blob.class));
   }
 
@@ -882,7 +881,7 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page = storage.list(BUCKET_NAME1, Storage.BlobListOption.currentDirectory());
-    assertEquals(cursor, page.getNextPageCursor());
+    assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.getValues(), Blob.class));
   }
 

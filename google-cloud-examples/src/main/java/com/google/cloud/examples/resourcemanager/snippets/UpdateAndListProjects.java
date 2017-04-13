@@ -26,7 +26,6 @@ import com.google.cloud.resourcemanager.Project;
 import com.google.cloud.resourcemanager.ResourceManager;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
 
-import java.util.Iterator;
 
 /**
  * A snippet for Google Cloud Resource Manager showing how to update a project and list all projects
@@ -53,10 +52,9 @@ public class UpdateAndListProjects {
     }
 
     // List all the projects you have permission to view.
-    Iterator<Project> projectIterator = resourceManager.list().iterateAll();
     System.out.println("Projects I can view:");
-    while (projectIterator.hasNext()) {
-      System.out.println(projectIterator.next().getProjectId());
+    for (Project currentProject : resourceManager.list().iterateAll()) {
+      System.out.println(currentProject.getProjectId());
     }
   }
 }

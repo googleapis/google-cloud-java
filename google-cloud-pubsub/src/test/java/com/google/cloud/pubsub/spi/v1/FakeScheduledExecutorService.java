@@ -20,6 +20,8 @@ import com.google.api.gax.core.ApiClock;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.SettableFuture;
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.concurrent.AbstractExecutorService;
@@ -44,6 +46,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   private final AtomicBoolean shutdown = new AtomicBoolean(false);
   private final PriorityQueue<PendingCallable<?>> pendingCallables = new PriorityQueue<>();
   private final FakeClock clock = new FakeClock();
+  private final Deque<Duration> expectedWorkQueue = new LinkedList<>();
 
   public ApiClock getClock() {
     return clock;
@@ -80,6 +83,35 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   }
 
   /**
+   * This allows for adding expectations on future work to be scheduled (
+   * {@link FakeScheduledExecutorService#schedule}
+   * or {@link FakeScheduledExecutorService#scheduleAtFixedRate}
+   * or {@link FakeScheduledExecutorService#scheduleWithFixedDelay}) based on its delay.
+   */
+  public void setupScheduleExpectation(Duration delay) {
+    synchronized (expectedWorkQueue) {
+      expectedWorkQueue.add(delay);
+    }
+  }
+  
+  /**
+   * Blocks the current thread until all the work 
+   * {@link FakeScheduledExecutorService#setupScheduleExpectation(Duration) expected} has been
+   * scheduled in the executor. 
+   */
+  public void waitForExpectedWork() {
+    synchronized (expectedWorkQueue) {
+      while (!expectedWorkQueue.isEmpty()) {
+        try {
+          expectedWorkQueue.wait();
+        } catch (InterruptedException e) {
+          // Wait uninterruptibly
+        }
+      }
+    }
+  }
+
+  /**
    * This will advance the reference time of the executor and execute (in the same thread) any
    * outstanding callable which execution time has passed.
    */
@@ -94,13 +126,14 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
     for (;;) {
       PendingCallable<?> callable = null;
       synchronized (pendingCallables) {
-        if (pendingCallables.isEmpty() || pendingCallables.peek().getScheduledTime().isAfter(cmpTime)) {
+        if (pendingCallables.isEmpty()
+            || pendingCallables.peek().getScheduledTime().isAfter(cmpTime)) {
           break;
         }
         callable = pendingCallables.poll();
       }
       if (callable != null) {
-        try{
+        try {
           callable.call();
         } catch (Exception e) {
           // We ignore any callable exception, which should be set to the future but not relevant to
@@ -182,6 +215,16 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       pendingCallables.add(callable);
     }
     work();
+    synchronized (expectedWorkQueue) {
+      // We compare by the callable delay in order decide when to remove expectations from the
+      // expected work queue, i.e. only the expected work that matches the delay of the scheduled
+      // callable is removed from the queue.
+      if (!expectedWorkQueue.isEmpty() && expectedWorkQueue.peek().equals(callable.delay)) {
+        expectedWorkQueue.poll();
+      }
+      expectedWorkQueue.notifyAll();
+    }
+    
     return callable.getScheduledFuture();
   }
 

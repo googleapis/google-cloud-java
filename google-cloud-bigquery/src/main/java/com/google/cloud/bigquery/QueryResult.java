@@ -149,7 +149,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
         .add("schema", schema)
         .add("totalBytesProcessed", totalBytesProcessed)
         .add("totalRows", totalRows)
-        .add("cursor", getNextPageCursor())
+        .add("cursor", getNextPageToken())
         .toString();
   }
 
@@ -167,7 +167,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
       return false;
     }
     QueryResult response = (QueryResult) obj;
-    return Objects.equals(getNextPageCursor(), response.getNextPageCursor())
+    return Objects.equals(getNextPageToken(), response.getNextPageToken())
         && Objects.equals(getValues(), response.getValues())
         && Objects.equals(schema, response.schema)
         && totalRows == response.totalRows

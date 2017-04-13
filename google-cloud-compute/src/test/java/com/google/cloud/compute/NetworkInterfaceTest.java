@@ -22,7 +22,6 @@ import static org.junit.Assert.assertNull;
 import com.google.cloud.compute.NetworkInterface.AccessConfig;
 import com.google.common.collect.ImmutableList;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;

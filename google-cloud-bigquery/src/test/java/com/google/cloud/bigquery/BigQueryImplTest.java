@@ -26,14 +26,13 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.core.RetrySettings;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.TableCell;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableRow;
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
@@ -397,7 +396,7 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.listDatasets(PROJECT, EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     Page<Dataset> page = bigquery.listDatasets();
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(
         datasetList.toArray(), Iterables.toArray(page.getValues(), DatasetInfo.class));
   }
@@ -415,7 +414,7 @@ public class BigQueryImplTest {
         .andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     Page<Dataset> page = bigquery.listDatasets(OTHER_PROJECT);
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(
         datasetList.toArray(), Iterables.toArray(page.getValues(), DatasetInfo.class));
   }
@@ -429,7 +428,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     Page<Dataset> page = bigquery.listDatasets();
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
     assertArrayEquals(
         ImmutableList.of().toArray(), Iterables.toArray(page.getValues(), Dataset.class));
   }
@@ -447,7 +446,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     Page<Dataset> page =
         bigquery.listDatasets(DATASET_LIST_ALL, DATASET_LIST_PAGE_TOKEN, DATASET_LIST_PAGE_SIZE);
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(
         datasetList.toArray(), Iterables.toArray(page.getValues(), DatasetInfo.class));
   }
@@ -618,7 +617,7 @@ public class BigQueryImplTest {
         .andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     Page<Table> page = bigquery.listTables(DATASET);
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
   }
 
@@ -635,7 +634,7 @@ public class BigQueryImplTest {
         .andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     Page<Table> page = bigquery.listTables(DatasetId.of(DATASET));
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
   }
 
@@ -651,7 +650,7 @@ public class BigQueryImplTest {
         .andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     Page<Table> page = bigquery.listTables(DatasetId.of(OTHER_PROJECT, DATASET));
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
   }
 
@@ -668,7 +667,7 @@ public class BigQueryImplTest {
         .andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     Page<Table> page = bigquery.listTables(DATASET, TABLE_LIST_PAGE_SIZE, TABLE_LIST_PAGE_TOKEN);
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
   }
 
@@ -832,7 +831,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     Page<List<FieldValue>> page = bigquery.listTableData(DATASET, TABLE);
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(TABLE_DATA.toArray(), Iterables.toArray(page.getValues(), List.class));
   }
 
@@ -843,7 +842,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     Page<List<FieldValue>> page = bigquery.listTableData(TableId.of(DATASET, TABLE));
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(TABLE_DATA.toArray(), Iterables.toArray(page.getValues(), List.class));
   }
 
@@ -855,7 +854,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     Page<List<FieldValue>> page = bigquery.listTableData(tableId);
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(TABLE_DATA.toArray(), Iterables.toArray(page.getValues(), List.class));
   }
 
@@ -872,7 +871,7 @@ public class BigQueryImplTest {
             TABLE_DATA_LIST_PAGE_SIZE,
             TABLE_DATA_LIST_PAGE_TOKEN,
             TABLE_DATA_LIST_START_INDEX);
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(TABLE_DATA.toArray(), Iterables.toArray(page.getValues(), List.class));
   }
 
@@ -1016,7 +1015,7 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.listJobs(PROJECT, EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     Page<Job> page = bigquery.listJobs();
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(jobList.toArray(), Iterables.toArray(page.getValues(), Job.class));
   }
 
@@ -1043,7 +1042,7 @@ public class BigQueryImplTest {
     Page<Job> page =
         bigquery.listJobs(
             JOB_LIST_ALL_USERS, JOB_LIST_STATE_FILTER, JOB_LIST_PAGE_TOKEN, JOB_LIST_PAGE_SIZE);
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(jobList.toArray(), Iterables.toArray(page.getValues(), Job.class));
   }
 
@@ -1070,7 +1069,7 @@ public class BigQueryImplTest {
         .andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     Page<Job> page = bigquery.listJobs(JOB_LIST_OPTION_FIELD);
-    assertEquals(CURSOR, page.getNextPageCursor());
+    assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(jobList.toArray(), Iterables.toArray(page.getValues(), Job.class));
     String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("nextPageToken,jobs("));
@@ -1157,7 +1156,7 @@ public class BigQueryImplTest {
       assertEquals(false, row.get(0).getBooleanValue());
       assertEquals(1L, row.get(1).getLongValue());
     }
-    assertEquals(CURSOR, response.getResult().getNextPageCursor());
+    assertEquals(CURSOR, response.getResult().getNextPageToken());
   }
 
   @Test
@@ -1191,7 +1190,7 @@ public class BigQueryImplTest {
       assertEquals(false, row.get(0).getBooleanValue());
       assertEquals(1L, row.get(1).getLongValue());
     }
-    assertEquals(CURSOR, response.getResult().getNextPageCursor());
+    assertEquals(CURSOR, response.getResult().getNextPageToken());
   }
 
   @Test
@@ -1225,7 +1224,7 @@ public class BigQueryImplTest {
       assertEquals(false, row.get(0).getBooleanValue());
       assertEquals(1L, row.get(1).getLongValue());
     }
-    assertEquals(CURSOR, response.getResult().getNextPageCursor());
+    assertEquals(CURSOR, response.getResult().getNextPageToken());
   }
 
   @Test
@@ -1263,7 +1262,7 @@ public class BigQueryImplTest {
       assertEquals(false, row.get(0).getBooleanValue());
       assertEquals(1L, row.get(1).getLongValue());
     }
-    assertEquals(CURSOR, response.getResult().getNextPageCursor());
+    assertEquals(CURSOR, response.getResult().getNextPageToken());
   }
 
   @Test

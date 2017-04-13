@@ -30,7 +30,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.PageImpl;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
@@ -253,7 +253,7 @@ public class DatasetTest {
     Page<Table> tablePage = dataset.list();
     assertArrayEquals(tableResults.toArray(),
         Iterables.toArray(tablePage.getValues(), Table.class));
-    assertEquals(expectedPage.getNextPageCursor(), tablePage.getNextPageCursor());
+    assertEquals(expectedPage.getNextPageToken(), tablePage.getNextPageToken());
   }
 
   @Test
@@ -272,7 +272,7 @@ public class DatasetTest {
     Page<Table> tablePage = dataset.list(BigQuery.TableListOption.pageSize(10L));
     assertArrayEquals(tableResults.toArray(),
         Iterables.toArray(tablePage.getValues(), Table.class));
-    assertEquals(expectedPage.getNextPageCursor(), tablePage.getNextPageCursor());
+    assertEquals(expectedPage.getNextPageToken(), tablePage.getNextPageToken());
   }
 
   @Test

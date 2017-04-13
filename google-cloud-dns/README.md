@@ -143,7 +143,7 @@ and then add
 ```java
 // Print assigned name servers
 List<String> nameServers = zone.getNameServers();
-for(String nameServer : nameServers) {
+for (String nameServer : nameServers) {
   System.out.println(nameServer);
 }
 ```

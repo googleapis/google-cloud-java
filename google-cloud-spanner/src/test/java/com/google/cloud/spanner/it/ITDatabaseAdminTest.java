@@ -19,7 +19,7 @@ package com.google.cloud.spanner.it;
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.Page;
+import com.google.api.gax.core.Page;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.ErrorCode;
@@ -86,7 +86,7 @@ public class ITDatabaseAdminTest {
 
     boolean foundDb = false;
     for (Database dbInList :
-        Iterators.toArray(dbAdminClient.listDatabases(instanceId).iterateAll(), Database.class)) {
+        Iterators.toArray(dbAdminClient.listDatabases(instanceId).iterateAll().iterator(), Database.class)) {
       if (dbInList.getId().getDatabase().equals(dbId)) {
         foundDb = true;
         break;
