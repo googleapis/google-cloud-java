@@ -56,7 +56,7 @@ public abstract class Value<V> implements Serializable {
     public final B fromProto(com.google.datastore.v1.Value proto) {
       B builder = newBuilder(getValue(proto));
       builder.setExcludeFromIndexes(proto.getExcludeFromIndexes());
-      builder.meaning(proto.getMeaning());
+      builder.setMeaning(proto.getMeaning());
       return builder;
     }
 
@@ -65,7 +65,7 @@ public abstract class Value<V> implements Serializable {
     public final com.google.datastore.v1.Value toProto(P value) {
       com.google.datastore.v1.Value.Builder builder = com.google.datastore.v1.Value.newBuilder();
       builder.setExcludeFromIndexes(value.excludeFromIndexes());
-      builder.setMeaning(value.meaning());
+      builder.setMeaning(value.getMeaning());
       setValue(value, builder);
       return builder.build();
     }
@@ -119,12 +119,6 @@ public abstract class Value<V> implements Serializable {
 
     @Deprecated
     @Override
-    public B meaning(int meaning) {
-      return setMeaning(meaning);
-    }
-
-    @Deprecated
-    @Override
     public B setMeaning(int meaning) {
       this.meaning = meaning;
       return self();
@@ -161,14 +155,6 @@ public abstract class Value<V> implements Serializable {
   /**
    * Returns the type of this value.
    */
-  @Deprecated
-  public final ValueType type() {
-    return getType();
-  }
-
-  /**
-   * Returns the type of this value.
-   */
   public final ValueType getType() {
     return valueType;
   }
@@ -178,11 +164,6 @@ public abstract class Value<V> implements Serializable {
    */
   public final boolean excludeFromIndexes() {
     return excludeFromIndexes;
-  }
-
-  @Deprecated
-  final int meaning() {
-    return getMeaning();
   }
 
   @Deprecated
