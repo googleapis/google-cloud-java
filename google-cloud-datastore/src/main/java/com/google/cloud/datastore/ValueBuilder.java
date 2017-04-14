@@ -16,6 +16,8 @@
 
 package com.google.cloud.datastore;
 
+import com.google.cloud.GcpLaunchStage;
+
 /**
  * A common interface for Value builders.
  *
@@ -36,13 +38,13 @@ public interface ValueBuilder<V, P extends Value<V>, B extends ValueBuilder<V, P
   /**
    * Deprecated. This library preserves the field for backwards compatibility.
    */
-  @Deprecated
+  @GcpLaunchStage.Deprecated
   int getMeaning();
 
   /**
    * Deprecated. This library preserves the field for backwards compatibility.
    */
-  @Deprecated
+  @GcpLaunchStage.Deprecated
   B setMeaning(int meaning);
 
   V get();

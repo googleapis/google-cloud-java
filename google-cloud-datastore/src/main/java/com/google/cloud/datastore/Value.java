@@ -18,6 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.GcpLaunchStage;
 import com.google.common.base.MoreObjects;
 import com.google.datastore.v1.Value.ValueTypeCase;
 
@@ -111,13 +112,13 @@ public abstract class Value<V> implements Serializable {
       return self();
     }
 
-    @Deprecated
+    @GcpLaunchStage.Deprecated
     @Override
     public int getMeaning() {
       return meaning;
     }
 
-    @Deprecated
+    @GcpLaunchStage.Deprecated
     @Override
     public B setMeaning(int meaning) {
       this.meaning = meaning;
@@ -166,7 +167,7 @@ public abstract class Value<V> implements Serializable {
     return excludeFromIndexes;
   }
 
-  @Deprecated
+  @GcpLaunchStage.Deprecated
   final int getMeaning() {
     return meaning;
   }
