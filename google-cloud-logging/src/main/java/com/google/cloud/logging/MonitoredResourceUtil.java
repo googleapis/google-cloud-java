@@ -33,9 +33,6 @@ import java.util.Map;
  */
 public class MonitoredResourceUtil {
 
-  private MonitoredResourceUtil() {
-  }
-
   private enum Label {
     AppId("app_id"),
     ClusterName("cluster_name"),
@@ -95,6 +92,9 @@ public class MonitoredResourceUtil {
             .put(Resource.Container.getKey(), new Label[] {Label.ClusterName, Label.Zone})
             .put(Resource.GceInstance.getKey(), new Label[] {Label.InstanceId, Label.Zone})
             .build();
+  }
+
+  private MonitoredResourceUtil() {
   }
 
   /* Return a self-configured monitored Resource. */
