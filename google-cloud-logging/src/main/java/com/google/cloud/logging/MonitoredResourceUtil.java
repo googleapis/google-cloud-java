@@ -28,18 +28,23 @@ import java.util.Map;
 
 /**
  * Monitored resource construction utilities to detect resource type and add labels.
+ * Used by logging framework adapters to configure default resource.
+ * See usage in {@link LoggingHandler}.
  */
-abstract class MonitoredResourceUtil {
+public class MonitoredResourceUtil {
+
+  private MonitoredResourceUtil() {
+  }
 
   private enum Label {
-    appId("app_id"),
-    clusterName("cluster_name"),
-    instanceId("instance_id"),
-    instanceName("instance_name"),
-    moduleId("module_id"),
-    projectId("project_id"),
-    versionId("version_id"),
-    zone("zone");
+    AppId("app_id"),
+    ClusterName("cluster_name"),
+    InstanceId("instance_id"),
+    InstanceName("instance_name"),
+    ModuleId("module_id"),
+    ProjectId("project_id"),
+    VersionId("version_id"),
+    Zone("zone");
 
     private final String key;
 
@@ -53,11 +58,11 @@ abstract class MonitoredResourceUtil {
   }
 
   private enum Resource {
-    container("container"),
-    gaeAppFlex("gae_app_flex"),
-    gaeAppStandard("gae_app_standard"),
-    gceInstance("gce_instance"),
-    global("global");
+    Container("container"),
+    GaeAppFlex("gae_app_flex"),
+    GaeAppStandard("gae_app_standard"),
+    GceInstance("gce_instance"),
+    Global("global");
 
     private final String key;
 
@@ -76,24 +81,24 @@ abstract class MonitoredResourceUtil {
     resourceTypeWithLabels =
         new ImmutableMap.Builder<String, Label[]>()
             .put(
-                Resource.gaeAppFlex.getKey(),
+                Resource.GaeAppFlex.getKey(),
                 new Label[] {
-                  Label.instanceName,
-                  Label.moduleId,
-                  Label.versionId,
-                  Label.instanceName,
-                  Label.zone
+                  Label.InstanceName,
+                  Label.ModuleId,
+                  Label.VersionId,
+                  Label.InstanceName,
+                  Label.Zone
                 })
             .put(
-                Resource.gaeAppStandard.getKey(),
-                new Label[] {Label.appId, Label.moduleId, Label.versionId})
-            .put(Resource.container.getKey(), new Label[] {Label.clusterName, Label.zone})
-            .put(Resource.gceInstance.getKey(), new Label[] {Label.instanceId, Label.zone})
+                Resource.GaeAppStandard.getKey(),
+                new Label[] {Label.AppId, Label.ModuleId, Label.VersionId})
+            .put(Resource.Container.getKey(), new Label[] {Label.ClusterName, Label.Zone})
+            .put(Resource.GceInstance.getKey(), new Label[] {Label.InstanceId, Label.Zone})
             .build();
   }
 
   /* Return a self-configured monitored Resource. */
-  static MonitoredResource getResource(String projectId, String resourceTypeParam) {
+  public static MonitoredResource getResource(String projectId, String resourceTypeParam) {
     String resourceType = resourceTypeParam;
     if (Strings.isNullOrEmpty(resourceType)) {
       Resource detectedResourceType = getAutoDetectedResourceType();
@@ -104,7 +109,7 @@ abstract class MonitoredResourceUtil {
     // Hence, "gae_app_flex", "gae_app_standard" are trimmed to "gae_app"
     String resourceName = resourceType.startsWith("gae_app") ? "gae_app" : resourceType;
     MonitoredResource.Builder builder =
-        MonitoredResource.newBuilder(resourceName).addLabel(Label.projectId.getKey(), projectId);
+        MonitoredResource.newBuilder(resourceName).addLabel(Label.ProjectId.getKey(), projectId);
     Label[] resourceLabels = resourceTypeWithLabels.get(resourceType);
     if (resourceLabels != null) {
       for (Label label : resourceLabels) {
@@ -117,25 +122,11 @@ abstract class MonitoredResourceUtil {
     return builder.build();
   }
 
-  /* Detect monitored Resource type using environment variables, else return global as default. */
-  private static Resource getAutoDetectedResourceType() {
-    if (System.getenv("GAE_INSTANCE") != null) {
-      return Resource.gaeAppFlex;
-    }
-    if (System.getenv("KUBERNETES_SERVICE_HOST") != null) {
-      return Resource.container;
-    }
-    if (ServiceOptions.getAppEngineAppId() != null) {
-      return Resource.gaeAppStandard;
-    }
-    if (MetadataConfig.getInstanceId() != null) {
-      return Resource.gceInstance;
-    }
-    // default Resource type
-    return Resource.global;
-  }
-
-  protected static List<LoggingEnhancer> getResourceEnhancers() {
+  /**
+   * Returns custom log entry enhancers (if available) for resource type.
+   * @return custom long entry enhancers
+   */
+  public static List<LoggingEnhancer> getResourceEnhancers() {
     Resource resourceType = getAutoDetectedResourceType();
     return getEnhancers(resourceType);
   }
@@ -143,25 +134,25 @@ abstract class MonitoredResourceUtil {
   private static String getValue(Label label) {
     String value;
     switch (label) {
-      case appId:
+      case AppId:
         value = ServiceOptions.getAppEngineAppId();
         break;
-      case clusterName:
+      case ClusterName:
         value = MetadataConfig.getClusterName();
         break;
-      case instanceId:
+      case InstanceId:
         value = MetadataConfig.getInstanceId();
         break;
-      case instanceName:
+      case InstanceName:
         value = getAppEngineInstanceName();
         break;
-      case moduleId:
+      case ModuleId:
         value = getAppEngineModuleId();
         break;
-      case versionId:
+      case VersionId:
         value = getAppEngineVersionId();
         break;
-      case zone:
+      case Zone:
         value = MetadataConfig.getZone();
         break;
       default:
@@ -169,6 +160,24 @@ abstract class MonitoredResourceUtil {
         break;
     }
     return value;
+  }
+
+  /* Detect monitored Resource type using environment variables, else return global as default. */
+  private static Resource getAutoDetectedResourceType() {
+    if (System.getenv("GAE_INSTANCE") != null) {
+      return Resource.GaeAppFlex;
+    }
+    if (System.getenv("KUBERNETES_SERVICE_HOST") != null) {
+      return Resource.Container;
+    }
+    if (ServiceOptions.getAppEngineAppId() != null) {
+      return Resource.GaeAppStandard;
+    }
+    if (MetadataConfig.getInstanceId() != null) {
+      return Resource.GceInstance;
+    }
+    // default Resource type
+    return Resource.Global;
   }
 
   private static String getAppEngineModuleId() {
@@ -186,7 +195,7 @@ abstract class MonitoredResourceUtil {
   private static List<LoggingEnhancer> getEnhancers(Resource resourceType) {
     List<LoggingEnhancer> enhancers;
     switch (resourceType) {
-      case gaeAppFlex:
+      case GaeAppFlex:
         enhancers = new ArrayList<>();
         enhancers.add(new TraceLoggingEnhancer());
         break;
