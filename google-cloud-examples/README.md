@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-examples</artifactId>
-  <version>0.12.0-alpha</version>
+  <version>0.13.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-examples:0.12.0-alpha'
+compile 'com.google.cloud:google-cloud-examples:0.13.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-examples" % "0.12.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-examples" % "0.13.0-alpha"
 ```
 
 To run examples from your command line:
@@ -119,15 +119,6 @@ To run examples from your command line:
     Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket with a file in it.
     ```
     target/appassembler/bin/ParallelCountBytes gs://mybucket/myfile.txt
-    ```
-
-  * Here's an example run of `PubSubExample`.
-
-    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Pub/Sub" is enabled.
-    ```
-    target/appassembler/bin/PubSubExample create topic test-topic
-    target/appassembler/bin/PubSubExample create subscription test-topic test-subscription
-    target/appassembler/bin/PubSubExample publish test-topic message1 message2
     ```
 
   * Here's an example run of `ResourceManagerExample`.

@@ -504,7 +504,7 @@ public class Subscriber extends AbstractApiService {
      *
      * <p>It is recommended to set this value to a reasonable upper bound of the subscriber time to
      * process any message. This maximum period avoids messages to be <i>locked</i> by a subscriber
-     * in cases when the {@link AckReplyConsumer} is never called.
+     * in cases when the ack reply is lost.
      *
      * <p>A zero duration effectively disables auto deadline extensions.
      */

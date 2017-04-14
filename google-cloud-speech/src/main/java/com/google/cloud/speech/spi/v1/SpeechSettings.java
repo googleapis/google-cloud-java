@@ -81,7 +81,7 @@ public class SpeechSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
-  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String PROPERTIES_FILE = "/com/google/cloud/speech/project.properties";
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
@@ -222,7 +222,7 @@ public class SpeechSettings extends ClientSettings {
       longRunningRecognizeSettings =
           OperationCallSettings.newBuilder(
               SpeechGrpc.METHOD_LONG_RUNNING_RECOGNIZE, LongRunningRecognizeResponse.class);
-      longRunningRecognizeSettings.setPollingInterval(Duration.millis(60000));
+      longRunningRecognizeSettings.setPollingInterval(Duration.millis(20000));
 
       streamingRecognizeSettings =
           StreamingCallSettings.newBuilder(SpeechGrpc.METHOD_STREAMING_RECOGNIZE);
