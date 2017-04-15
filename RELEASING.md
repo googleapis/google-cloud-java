@@ -7,7 +7,7 @@ The release process for SNAPSHOT versions is handled by the `after_success.sh` s
 1. Make sure the team agrees that it is time to release. Verify that all unit and integration tests for the last commit have passed.
 
 2. Run `utilities/update_versions.sh` from the repository's base directory.
-This script takes an optional arguments denoting the new versions for each qualifier (alpha, beta and/or GA). By default, if the current version is X.Y.Z-SNAPSHOT, the script will update the version in all the pom.xml and other relevant files to X.Y.Z. Please refer to the documentation in `utilities/update_versions.sh` for more details. Commit this version locally:
+This script takes optional arguments denoting the new versions for each qualifier (alpha, beta and/or GA). By default, if the current version is X.Y.Z-SNAPSHOT, the script will update the version in all the pom.xml and other relevant files to X.Y.Z. Please refer to the documentation in `utilities/update_versions.sh` for more details. Commit this version locally:
 
   ```
   git commit -m "Release [VERSION HERE]"
