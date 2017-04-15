@@ -18,6 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.GcpLaunchStage;
 import com.google.common.base.MoreObjects;
 import com.google.datastore.v1.Value.ValueTypeCase;
 
@@ -56,7 +57,7 @@ public abstract class Value<V> implements Serializable {
     public final B fromProto(com.google.datastore.v1.Value proto) {
       B builder = newBuilder(getValue(proto));
       builder.setExcludeFromIndexes(proto.getExcludeFromIndexes());
-      builder.meaning(proto.getMeaning());
+      builder.setMeaning(proto.getMeaning());
       return builder;
     }
 
@@ -65,7 +66,7 @@ public abstract class Value<V> implements Serializable {
     public final com.google.datastore.v1.Value toProto(P value) {
       com.google.datastore.v1.Value.Builder builder = com.google.datastore.v1.Value.newBuilder();
       builder.setExcludeFromIndexes(value.excludeFromIndexes());
-      builder.setMeaning(value.meaning());
+      builder.setMeaning(value.getMeaning());
       setValue(value, builder);
       return builder.build();
     }
@@ -111,19 +112,13 @@ public abstract class Value<V> implements Serializable {
       return self();
     }
 
-    @Deprecated
+    @GcpLaunchStage.Deprecated
     @Override
     public int getMeaning() {
       return meaning;
     }
 
-    @Deprecated
-    @Override
-    public B meaning(int meaning) {
-      return setMeaning(meaning);
-    }
-
-    @Deprecated
+    @GcpLaunchStage.Deprecated
     @Override
     public B setMeaning(int meaning) {
       this.meaning = meaning;
@@ -161,14 +156,6 @@ public abstract class Value<V> implements Serializable {
   /**
    * Returns the type of this value.
    */
-  @Deprecated
-  public final ValueType type() {
-    return getType();
-  }
-
-  /**
-   * Returns the type of this value.
-   */
   public final ValueType getType() {
     return valueType;
   }
@@ -180,12 +167,7 @@ public abstract class Value<V> implements Serializable {
     return excludeFromIndexes;
   }
 
-  @Deprecated
-  final int meaning() {
-    return getMeaning();
-  }
-
-  @Deprecated
+  @GcpLaunchStage.Deprecated
   final int getMeaning() {
     return meaning;
   }
