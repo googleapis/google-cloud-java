@@ -21,8 +21,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-import com.google.api.gax.core.ApiFutures;
-import com.google.api.gax.core.SettableApiFuture;
+import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.LogEntry.Builder;
 import com.google.cloud.logging.Logging.WriteOption;

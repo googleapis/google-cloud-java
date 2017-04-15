@@ -25,9 +25,9 @@ import static com.google.cloud.logging.Logging.WriteOption.OptionType.LABELS;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LOG_NAME;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.RESOURCE;
 
-import com.google.api.gax.core.ApiFunction;
-import com.google.api.gax.core.ApiFuture;
-import com.google.api.gax.core.ApiFutures;
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.AsyncPage;
 import com.google.cloud.AsyncPageImpl;
 import com.google.cloud.BaseService;

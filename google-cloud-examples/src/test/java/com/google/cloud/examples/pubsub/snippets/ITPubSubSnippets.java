@@ -19,9 +19,9 @@ package com.google.cloud.examples.pubsub.snippets;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import com.google.api.gax.core.ApiFutureCallback;
-import com.google.api.gax.core.ApiFutures;
-import com.google.api.gax.core.SettableApiFuture;
+import com.google.api.core.ApiFutureCallback;
+import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;

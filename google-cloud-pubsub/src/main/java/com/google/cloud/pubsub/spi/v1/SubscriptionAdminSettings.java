@@ -18,7 +18,7 @@ package com.google.cloud.pubsub.spi.v1;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSnapshotsPagedResponse;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
-import com.google.api.gax.core.ApiFuture;
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;

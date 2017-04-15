@@ -22,7 +22,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.batching.BatchingSettings;
-import com.google.api.gax.core.ApiFuture;
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.grpc.ChannelProvider;

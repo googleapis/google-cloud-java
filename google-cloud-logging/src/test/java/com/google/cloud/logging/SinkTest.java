@@ -26,7 +26,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.core.ApiFutures;
+import com.google.api.core.ApiFutures;
 import com.google.cloud.logging.SinkInfo.Destination.BucketDestination;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 import com.google.cloud.logging.SinkInfo.VersionFormat;

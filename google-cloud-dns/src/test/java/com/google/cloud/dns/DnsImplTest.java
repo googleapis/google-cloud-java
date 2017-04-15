@@ -19,7 +19,7 @@ package com.google.cloud.dns;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.core.ApiClock;
+import com.google.api.core.ApiClock;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ResourceRecordSet;
