@@ -90,14 +90,34 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
+    <site.installationModule>google-cloud</site.installationModule>
+
     <google.auth.version>0.6.1</google.auth.version>
     <grpc.version>1.2.0</grpc.version>
     <gax.version>0.10.0</gax.version>
     <generatedProto.version>0.1.7</generatedProto.version>
+
+    <cloud.version>0.13.1-alpha-SNAPSHOT</cloud.version>
+    <bigquery.version>0.13.1-beta-SNAPSHOT</bigquery.version>
+    <compute.version>0.13.1-alpha-SNAPSHOT</compute.version>
+    <contrib.version>0.13.1-alpha-SNAPSHOT</contrib.version>
     <core.version>0.13.1-alpha-SNAPSHOT</core.version>
-    <beta.version>0.13.1-beta-SNAPSHOT</beta.version>
-    <storage.version>${beta.version}</storage.version>
-    <site.installationModule>google-cloud</site.installationModule>
+    <datastore.version>0.13.1-beta-SNAPSHOT</datastore.version>
+    <dns.version>0.13.1-alpha-SNAPSHOT</dns.version>
+    <errorreporting.version>0.13.1-alpha-SNAPSHOT</errorreporting.version>
+    <examples.version>0.13.1-alpha-SNAPSHOT</examples.version>
+    <language.version>0.13.1-beta-SNAPSHOT</language.version>
+    <logging.version>0.13.1-beta-SNAPSHOT</logging.version>
+    <monitoring.version>0.13.1-alpha-SNAPSHOT</monitoring.version>
+    <pubsub.version>0.13.1-alpha-SNAPSHOT</pubsub.version>
+    <resourcemanager.version>0.13.1-alpha-SNAPSHOT</resourcemanager.version>
+    <spanner.version>0.13.1-beta-SNAPSHOT</spanner.version>
+    <speech.version>0.13.1-alpha-SNAPSHOT</speech.version>
+    <storage.version>0.13.1-beta-SNAPSHOT</storage.version>
+    <trace.version>0.13.1-alpha-SNAPSHOT</trace.version>
+    <translate.version>0.13.1-beta-SNAPSHOT</translate.version>
+    <vision.version>0.13.1-beta-SNAPSHOT</vision.version>
+    <testing.version>0.13.1-alpha-SNAPSHOT</testing.version>
   </properties>
   <modules>
     <module>google-cloud</module>
@@ -124,11 +144,7 @@
       Uncomment the following lines to include google app engine (GAE) testing apps in the build.
       Each GAE app packages all its dependencies in a fat war (>20MB each).
     -->
-    <!--<module>testing/google-cloud-managed-test</module>-->
-    <!--<module>testing/google-cloud-appengine-flex-java</module>-->
-    <!--<module>testing/google-cloud-appengine-flex-custom</module>-->
-    <!--<module>testing/google-cloud-appengine-java8</module>-->
-    <!--<module>testing/google-cloud-appengine-flex-compat</module>-->
+    <!--<module>google-cloud-testing</module>-->
   </modules>
   <pluginRepositories>
     <pluginRepository>

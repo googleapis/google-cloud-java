@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>google-cloud-testing</artifactId>
+  <version>0.13.1-alpha-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Google Cloud Testing</name>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-testing</url>
+  <description>
+    Contains packages used for testing google-cloud libraries on various platforms.
+  </description>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-pom</artifactId>
+    <version>0.13.1-alpha-SNAPSHOT</version>
+  </parent>
+  <properties>
+    <site.installationModule>google-cloud-testing</site.installationModule>
+  </properties>
+  <modules>
+    <module>google-cloud-appengineflexcompat</module>
+    <module>google-cloud-appengineflexcustom</module>
+    <module>google-cloud-appengineflexjava</module>
+    <module>google-cloud-appenginejava8</module>
+    <module>google-cloud-managedtest</module>
+  </modules>
+  <dependencies>
+  </dependencies>
+</project>
