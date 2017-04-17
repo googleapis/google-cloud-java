@@ -115,7 +115,7 @@ public class LoggingHandler extends Handler {
   // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740 .
   private final Level baseLevel;
 
-  private Level flushLevel;
+  private volatile Level flushLevel;
 
   private WriteOption[] defaultWriteOptions;
 
@@ -328,7 +328,7 @@ public class LoggingHandler extends Handler {
    * Sets minimum logging level to log immediately and flush any pending writes.
    * @param flushLevel minimum log level to trigger flush
    */
-  public synchronized void setFlushLevel(Level flushLevel) {
+  public void setFlushLevel(Level flushLevel) {
     this.flushLevel = flushLevel;
     getLogging().setFlushSeverity(severityFor(flushLevel));
   }
@@ -337,7 +337,7 @@ public class LoggingHandler extends Handler {
    * Sets synchronicity of logging writes. By default, writes are asynchronous.
    * @param synchronicity {@link Synchronicity}
    */
-  public synchronized void setSynchronicity(Synchronicity synchronicity) {
+  public void setSynchronicity(Synchronicity synchronicity) {
     getLogging().setWriteSynchronicity(synchronicity);
   }
 

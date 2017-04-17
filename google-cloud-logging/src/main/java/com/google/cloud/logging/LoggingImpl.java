@@ -83,8 +83,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private final Set<ApiFuture<Void>> pendingWrites =
       Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
 
-  private Synchronicity writeSynchronicity = Synchronicity.ASYNC;
-  private Severity flushSeverity = Severity.ERROR;
+  private volatile Synchronicity writeSynchronicity = Synchronicity.ASYNC;
+  private volatile Severity flushSeverity = Severity.ERROR;
   private boolean closed;
 
   private static final Function<Empty, Boolean> EMPTY_TO_BOOLEAN_FUNCTION =
@@ -108,11 +108,11 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     rpc = options.getLoggingRpcV2();
   }
 
-  public synchronized void setWriteSynchronicity(Synchronicity writeSynchronicity) {
+  public void setWriteSynchronicity(Synchronicity writeSynchronicity) {
     this.writeSynchronicity = writeSynchronicity;
   }
 
-  public synchronized void setFlushSeverity(Severity flushSeverity) {
+  public void setFlushSeverity(Severity flushSeverity) {
     this.flushSeverity = flushSeverity;
   }
 
