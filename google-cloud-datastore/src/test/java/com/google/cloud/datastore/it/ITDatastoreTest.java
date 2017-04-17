@@ -30,6 +30,7 @@ import com.google.cloud.datastore.BooleanValue;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.DatastoreReaderWriter;
 import com.google.cloud.datastore.DateTime;
 import com.google.cloud.datastore.DateTimeValue;
 import com.google.cloud.datastore.Entity;
@@ -728,5 +729,23 @@ public class ITDatastoreTest {
     assertNull(keys.next());
     assertNull(keys.next());
     assertFalse(keys.hasNext());
+  }
+
+  @Test
+  public void testRunInTransaction() {
+    Datastore.TransactionCallable<Integer> callable = new Datastore.TransactionCallable<Integer>() {
+      private Integer attempts = 0;
+      public Integer run(DatastoreReaderWriter transaction) {
+        transaction.get(KEY1);
+        if (attempts < 1) {
+          ++attempts;
+          throw new DatastoreException(10,"","ABORTED",false,null);
+        }
+
+        return attempts;
+      }
+    };
+    int result = DATASTORE.runInTransaction(callable);
+    assertTrue(result == 1);
   }
 }

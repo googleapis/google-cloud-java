@@ -16,10 +16,11 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.BaseService;
+import com.google.cloud.ExceptionHandler;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.ReadOption.EventualConsistency;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
@@ -31,7 +32,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import com.google.datastore.v1.ReadOptions.ReadConsistency;
 import com.google.protobuf.ByteString;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -66,8 +66,23 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   @Override
-  public <T> T runInTransaction(TransactionCallable<T> callable) {
-    return DatastoreHelper.runInTransaction(this, callable);
+  public <T> T runInTransaction(final TransactionCallable<T> callable) {
+    ExceptionHandler TRANSACTION_EXCEPTION_HANDLER = TransactionExceptionHandler.build();
+    final DatastoreImpl self = this;
+    try {
+      return RetryHelper.runWithRetries(
+          new Callable<T>() {
+            @Override
+            public T call() throws DatastoreException {
+              return DatastoreHelper.runInTransaction(self, callable);
+            }
+          },
+          retrySettings,
+          TRANSACTION_EXCEPTION_HANDLER,
+          getOptions().getClock());
+    } catch (RetryHelperException e) {
+      throw DatastoreException.translateAndThrow(e);
+    }
   }
 
   @Override
