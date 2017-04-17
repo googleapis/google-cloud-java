@@ -18,7 +18,6 @@ package com.google.cloud;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ChannelProvider;
@@ -41,7 +40,6 @@ import java.util.concurrent.TimeUnit;
  * Class representing service options for those services that use gRPC as the transport
  * layer.
  */
-@BetaApi
 public class GrpcTransportOptions implements TransportOptions {
 
   private static final long serialVersionUID = -9049538465533951165L;
