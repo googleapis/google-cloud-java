@@ -2,7 +2,7 @@
 
 # Requires bash version >= 4.
 
-# This script updates pom.xml and other relevant files to the next version number.
+# This script updates pom.xml, README.md and other relevant files to the next version number.
 # This script is meant to be run manually (not by Travis)
 
 # Arguments (optional):
@@ -148,15 +148,38 @@ for item in ${modules[*]}; do
   fi
 
   echo -e "Updating module ${BOLD}${module}${NC} in folder ${folder} from version ${RED}${old_version}${NC} to ${GREEN}${new_version}${NC}"
+  module_suffix=${module##*-}
 
   # Where the actual version changing happens (the only mutative operations in the script).
-  module_suffix=${module##*-}
+
+  # 1) Update version properties (used to define dependencies between google-cloud modules).
+  echo -e "    Updating ${module_suffix}.version property in root pom.xml"
   sed -ri "s/(<${module_suffix}.version>\s*)((\w|-|\.)+)(\s*<\/${module_suffix}.version>)/\1${new_version}\4/" pom.xml
+
+  # 2) Update version of the module. If the module is a parent of other modules
+  # (like the root module or the google-cloud-contrib), then the parent secion of its child modules
+  # will be updated too.
+  echo -e "    Updating version in ${folder}\pom.xml and the parent version in the corresponding children modules if exist"
   mvn -q versions:set -DartifactId=${module} -DnewVersion=${new_version} -DprocessPlugins=false -DgenerateBackupPoms=false
 
+  # 3) Update Google App Engine application dockerfile, if it exists.
   if [ -w ${folder}/src/main/docker/Dockerfile ]; then
     old_version="${module_version_map[${module}]}"
-    echo "Updating ${folder}/src/main/docker/Dockerfile"
+    echo -e "    Updating ${folder}/src/main/docker/Dockerfile"
     sed -ri "s/${old_version}/${new_version}/" ${folder}/src/main/docker/Dockerfile
+  fi
+
+  # 4) Update README.md
+  if [ "${new_snapshot}" == "" ] && [ -f ${folder}/README.md ]; then
+    echo -e "    Updating ${folder}/README.md"
+    if [ "${module}" != "google-cloud-nio-examples" ]; then
+      sed -ri "s/<version>[0-9]+\.[0-9]+\.[0-9]+(-[a-z]+)?<\/version>/<version>${new_version}<\/version>/g" ${folder}/README.md
+      sed -ri "s/:[0-9]+\.[0-9]+\.[0-9]+(-[a-z]+)?'/:${new_version}'/g" ${folder}/README.md
+      sed -ri "s/\"[0-9]+\.[0-9]+\.[0-9]+(-[a-z]+)?\"/\"${new_version}\"/g" ${folder}/README.md
+    else
+      examples_version=${new_base_version%.*}.$((${new_base_version##*.}+1))-alpha-SNAPSHOT
+      sed -ri "s/google-cloud-nio-[0-9]+\.[0-9]+\.[0-9]+(-[a-z]+)?-SNAPSHOT/google-cloud-nio-${examples_version}/g" ${folder}/README.md
+      sed -ri "s/google-cloud-nio-examples-[0-9]+\.[0-9]+\.[0-9]+(-[a-z]+)?-SNAPSHOT/google-cloud-nio-examples-${examples_version}/g" ${folder}/README.md
+    fi
   fi
 done

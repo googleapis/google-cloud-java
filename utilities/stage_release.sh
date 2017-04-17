@@ -13,11 +13,6 @@ fi
 ./utilities/deploy.sh "$SITE_VERSION"
 
 if [ "${SITE_VERSION##*-}" != "SNAPSHOT" ]; then
-    # Update the versions on the docs
-    ./utilities/update_readme_version.sh
-
-    git commit --quiet -m "Updating version in README files. [ci skip]"
-
     # Create website
     ./utilities/create_site.sh "$SITE_VERSION"
 
