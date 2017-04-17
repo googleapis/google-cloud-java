@@ -23,6 +23,7 @@ import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
@@ -103,9 +104,10 @@ public class LoggingHandler extends Handler {
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
 
-  private final LoggingService loggingService;
   private final List<LoggingEnhancer> enhancers;
-  private final LoggingService.ErrorHandler errorHandler;
+  private final LoggingOptions loggingOptions;
+
+  private volatile Logging logging;
 
   // Logs with the same severity with the base could be more efficiently sent to Stackdriver.
   // Defaults to level of the handler or Level.FINEST if the handler is set to Level.ALL.
@@ -114,6 +116,8 @@ public class LoggingHandler extends Handler {
   private final Level baseLevel;
 
   private Level flushLevel;
+
+  private WriteOption[] defaultWriteOptions;
 
   /** Creates an handler that publishes messages to Stackdriver Logging. */
   public LoggingHandler() {
@@ -167,8 +171,8 @@ public class LoggingHandler extends Handler {
       MonitoredResource monitoredResource,
       List<LoggingEnhancer> enhancers) {
     try {
+      loggingOptions = firstNonNull(options, LoggingOptions.getDefaultInstance());
       LoggingConfig config = new LoggingConfig(getClass().getName());
-      errorHandler = new LoggingErrorHandler();
       setFilter(config.getFilter());
       setFormatter(config.getFormatter());
       Level level = config.getLogLevel();
@@ -177,13 +181,13 @@ public class LoggingHandler extends Handler {
       this.flushLevel = config.getFlushLevel();
       String logName = firstNonNull(log, config.getLogName());
 
-      LoggingOptions loggingOptions = firstNonNull(options, LoggingOptions.getDefaultInstance());
-
       MonitoredResource resource =
           firstNonNull(
               monitoredResource, config.getMonitoredResource(loggingOptions.getProjectId()));
-      WriteOption[] writeOptions =
+      defaultWriteOptions =
           new WriteOption[] {
+          WriteOption.logName(logName),
+          WriteOption.resource(resource),
             WriteOption.labels(
                 ImmutableMap.of(
                     LEVEL_NAME_KEY,
@@ -192,12 +196,15 @@ public class LoggingHandler extends Handler {
                     String.valueOf(baseLevel.intValue())))
           };
 
-      loggingService = new LoggingService(
-          loggingOptions, errorHandler, logName, resource, writeOptions);
-      loggingService.setFlushSeverity(severityFor(flushLevel));
-      loggingService.setSynchronicity(config.getSynchronicity());
+      getLogging().setFlushSeverity(severityFor(flushLevel));
+      getLogging().setWriteSynchronicity(config.getSynchronicity());
 
-      this.enhancers = firstNonNull(enhancers, config.getEnhancers());
+      this.enhancers = new LinkedList<>();
+
+      List<LoggingEnhancer> enhancersParam = firstNonNull(enhancers,
+          firstNonNull(config.getEnhancers(), Collections.<LoggingEnhancer>emptyList()));
+
+      this.enhancers.addAll(enhancersParam);
 
       List<LoggingEnhancer> loggingEnhancers = MonitoredResourceUtil.getResourceEnhancers();
       if (loggingEnhancers != null) {
@@ -258,11 +265,15 @@ public class LoggingHandler extends Handler {
     try {
       logEntry = logEntryFor(record);
     } catch (Exception ex) {
-      errorHandler.handleFormatError(ex);
+      getErrorManager().error(null, ex, ErrorManager.FORMAT_FAILURE);
       return;
     }
     if (logEntry != null) {
-      loggingService.publish(logEntry);
+      try {
+        getLogging().write(ImmutableList.of(logEntry), defaultWriteOptions);
+      } catch (Exception ex) {
+        getErrorManager().error(null, ex, ErrorManager.WRITE_FAILURE);
+      }
     }
   }
 
@@ -288,13 +299,24 @@ public class LoggingHandler extends Handler {
 
   @Override
   public void flush() {
-    loggingService.flush();
+    try {
+      getLogging().flush();
+    } catch (Exception ex) {
+      getErrorManager().error(null, ex, ErrorManager.FLUSH_FAILURE);
+    }
   }
 
-  /** Closes the handler and the associated {@link LoggingService} object. */
+  /** Closes the handler and the associated {@link Logging} object. */
   @Override
   public synchronized void close() throws SecurityException {
-    loggingService.close();
+    if (logging != null) {
+      try {
+        logging.close();
+      } catch (Exception ex) {
+        // ignore
+      }
+    }
+    logging = null;
   }
 
   /** Get the flush log level. */
@@ -303,21 +325,25 @@ public class LoggingHandler extends Handler {
   }
 
   /**
-   * Get the synchronicity of the write method used to write logs to the Stackdriver Logging
-   * service.
+   * Sets minimum logging level to log immediately and flush any pending writes.
+   * @param flushLevel minimum log level to trigger flush
    */
-  public Synchronicity getSynchronicity() {
-    return loggingService.getSynchronicity();
-  }
-
-
   public synchronized void setFlushLevel(Level flushLevel) {
     this.flushLevel = flushLevel;
-    loggingService.setFlushSeverity(severityFor(flushLevel));
+    getLogging().setFlushSeverity(severityFor(flushLevel));
   }
 
+  /**
+   * Sets synchronicity of logging writes. By default, writes are asynchronous.
+   * @param synchronicity {@link Synchronicity}
+   */
   public synchronized void setSynchronicity(Synchronicity synchronicity) {
-    loggingService.setSynchronicity(synchronicity);
+    getLogging().setWriteSynchronicity(synchronicity);
+  }
+
+  /** Get the flush log level. */
+  public Synchronicity getSynchronicity() {
+    return getLogging().getWriteSynchronicity();
   }
 
   /**
@@ -361,17 +387,17 @@ public class LoggingHandler extends Handler {
     }
   }
 
-  private class LoggingErrorHandler implements LoggingService.ErrorHandler {
-    public void handleFormatError(Exception ex) {
-      getErrorManager().error(null, ex, ErrorManager.FORMAT_FAILURE);
+  /**
+   * Returns an instance of the logging service.
+   */
+  private Logging getLogging() {
+    if (logging == null) {
+      synchronized (this) {
+        if (logging == null) {
+          logging = loggingOptions.getService();
+        }
+      }
     }
-
-    public void handleWriteError(Exception ex) {
-      getErrorManager().error(null, ex, ErrorManager.WRITE_FAILURE);
-    }
-
-    public void handleFlushError(Exception ex) {
-      getErrorManager().error(null, ex, ErrorManager.FLUSH_FAILURE);
-    }
+    return logging;
   }
 }

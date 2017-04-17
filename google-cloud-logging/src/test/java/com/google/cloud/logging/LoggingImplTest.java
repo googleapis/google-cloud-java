@@ -16,6 +16,7 @@
 
 package com.google.cloud.logging;
 
+import static org.easymock.EasyMock.replay;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -26,6 +27,7 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutures;
 import com.google.api.gax.core.AsyncPage;
+import com.google.api.gax.core.SettableApiFuture;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.api.gax.core.Page;
@@ -1182,7 +1184,8 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
-    logging.writeAsync(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2)).get();
+    logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2));
+    logging.flush();
   }
 
   @Test
@@ -1199,8 +1202,9 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
-    logging.writeAsync(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), WriteOption.logName(LOG_NAME),
+    logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), WriteOption.logName(LOG_NAME),
         WriteOption.resource(MONITORED_RESOURCE), WriteOption.labels(labels));
+    logging.flush();
   }
 
   @Test
@@ -1410,4 +1414,40 @@ public class LoggingImplTest {
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(entriesList.toArray(), Iterables.toArray(page.getValues(), LogEntry.class));
   }
+
+  @Test
+  public void testFlush() throws InterruptedException {
+    SettableApiFuture<WriteLogEntriesResponse> mockRpcResponse = SettableApiFuture.create();
+    replay(rpcFactoryMock);
+    logging = options.getService();
+    WriteLogEntriesRequest request = WriteLogEntriesRequest.newBuilder()
+        .addAllEntries(Iterables.transform(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2),
+            LogEntry.toPbFunction(PROJECT)))
+        .build();
+    WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
+    EasyMock.expect(loggingRpcMock.write(request)).andReturn(mockRpcResponse);
+    EasyMock.replay(loggingRpcMock);
+    // no messages, nothing to flush.
+    logging.flush();
+
+    // send a message
+    logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2));
+    Thread flushWaiter = new Thread(new Runnable() {
+      @Override
+      public void run() {
+        logging.flush();
+      }
+    });
+    flushWaiter.start();
+
+    // flushWaiter should be waiting for mockRpc to complete.
+    flushWaiter.join(1000);
+    assertTrue(flushWaiter.isAlive());
+
+    // With the RPC completed, flush should return, and the thread should terminate.
+    mockRpcResponse.set(null);
+    flushWaiter.join(1000);
+    assertFalse(flushWaiter.isAlive());
+  }
 }
+

@@ -195,6 +195,8 @@ public class MonitoredResourceUtil {
   private static List<LoggingEnhancer> getEnhancers(Resource resourceType) {
     List<LoggingEnhancer> enhancers;
     switch (resourceType) {
+      // Trace logging enhancer is supported on GAE Flex and Standard.
+      case GaeAppStandard:
       case GaeAppFlex:
         enhancers = new ArrayList<>();
         enhancers.add(new TraceLoggingEnhancer());

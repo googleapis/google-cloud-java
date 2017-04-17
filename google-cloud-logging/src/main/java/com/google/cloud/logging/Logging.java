@@ -192,6 +192,21 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
     }
   }
 
+  /* Sets synchronicity {@link Synchronicity} of logging writes, defaults to asynchronous. */
+  void setWriteSynchronicity(Synchronicity synchronicity);
+
+  /* Retrieves current set synchronicity {@link Synchronicity} of logging writes. */
+  Synchronicity getWriteSynchronicity();
+
+  /**
+   * Sets flush severity for asynchronous logging writes. Default is ERROR.
+   * Logs will be immediately written out for entries at or higher than flush severity.
+   */
+  void setFlushSeverity(Severity flushSeverity);
+
+  /* Retrieves flush severity for asynchronous logging writes. */
+  Severity getFlushSeverity();
+
   /**
    * Creates a new sink.
    *
@@ -646,37 +661,23 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   ApiFuture<Boolean> deleteMetricAsync(String metric);
 
   /**
-   * Writes log entries to Stackdriver Logging. Use {@link WriteOption#logName(String)} to provide a
-   * log name for those entries that do not specify one. Use
-   * {@link WriteOption#resource(MonitoredResource)} to provide a monitored resource for those
-   * entries that do not specify one. Use {@link WriteOption#labels(Map)} to provide some labels
-   * to be added to every entry in {@code logEntries}.
-   *
-   * <p>Example of writing log entries and providing a default log name and monitored resource.
-   * <pre> {@code
-   * String logName = "my_log_name";
-   * List<LogEntry> entries = new ArrayList<>();
-   * entries.add(LogEntry.of(StringPayload.of("Entry payload")));
-   * Map<String, Object> jsonMap = new HashMap<>();
-   * jsonMap.put("key", "value");
-   * entries.add(LogEntry.of(JsonPayload.of(jsonMap)));
-   * logging.write(entries,
-   *     WriteOption.logName(logName),
-   *     WriteOption.resource(MonitoredResource.newBuilder("global").build()));
-   * }</pre>
-   *
+   * Flushes any pending asynchronous logging writes.
+   * Logs are automatically flushed based on time and message count that be configured via
+   * {@link com.google.api.gax.batching.BatchingSettings},
+   * Logs are also flushed if at or above flush severity, see {@link #setFlushSeverity}.
+   * Logging frameworks require support for an explicit flush.
+   * See usage in the java.util.logging handler{@link LoggingHandler}.
    */
-  void write(Iterable<LogEntry> logEntries, WriteOption... options);
+  void flush();
 
   /**
    * Sends a request to log entries to Stackdriver Logging. Use {@link WriteOption#logName(String)}
    * to provide a log name for those entries that do not specify one. Use
    * {@link WriteOption#resource(MonitoredResource)} to provide a monitored resource for those
    * entries that do not specify one. Use {@link WriteOption#labels(Map)} to provide some labels
-   * to be added to every entry in {@code logEntries}. The method returns a {@code ApiFuture} object
-   * that can be used to wait for the write operation to be completed.
+   * to be added to every entry in {@code logEntries}.
    *
-   * <p>Example of asynchronously writing log entries and providing a default log name and monitored
+   * <p>Example of writing log entries and providing a default log name and monitored
    * resource.
    * <pre> {@code
    * String logName = "my_log_name";
@@ -685,14 +686,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Map<String, Object> jsonMap = new HashMap<>();
    * jsonMap.put("key", "value");
    * entries.add(LogEntry.of(JsonPayload.of(jsonMap)));
-   * ApiFuture<Void> future = logging.writeAsync(
+   * logging.write(
    *     entries,
    *     WriteOption.logName(logName),
    *     WriteOption.resource(MonitoredResource.newBuilder("global").build()));
    * }</pre>
    *
    */
-  ApiFuture<Void> writeAsync(Iterable<LogEntry> logEntries, WriteOption... options);
+  void write(Iterable<LogEntry> logEntries, WriteOption... options);
 
   /**
    * Lists log entries. This method returns a {@link Page} object that can be used to consume

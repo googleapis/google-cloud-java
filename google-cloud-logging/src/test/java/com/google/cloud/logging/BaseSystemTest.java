@@ -409,10 +409,11 @@ public abstract class BaseSystemTest {
     ProtoPayload secondPayload =
         ProtoPayload.of(Any.pack(StringValue.newBuilder().setValue("protoPayload").build()));
     LogEntry secondEntry = LogEntry.newBuilder(secondPayload).setSeverity(Severity.DEBUG).build();
-    logging().writeAsync(ImmutableList.of(firstEntry, secondEntry),
+    logging().write(ImmutableList.of(firstEntry, secondEntry),
         WriteOption.labels(ImmutableMap.of("key1", "value1")),
         WriteOption.resource(MonitoredResource.newBuilder("global").build()),
-        WriteOption.logName(logName)).get();
+        WriteOption.logName(logName));
+    logging().flush();
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     AsyncPage<LogEntry> page = logging().listLogEntriesAsync(options).get();
     while (Iterators.size(page.iterateAll().iterator()) < 2) {
