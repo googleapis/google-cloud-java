@@ -2,7 +2,7 @@
 
 # Requires bash version >= 4.
 
-# This script updates pom.xml, readme.md and other relevant files to the next version number.
+# This script updates pom.xml, README.md and other relevant files to the next version number.
 # This script is meant to be run manually (not by Travis)
 
 # Arguments (optional):
