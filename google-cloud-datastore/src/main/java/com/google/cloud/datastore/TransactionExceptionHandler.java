@@ -22,13 +22,13 @@ import com.google.cloud.ExceptionHandler.Interceptor;
 public class TransactionExceptionHandler {
   public static final Interceptor TRANSACTION_EXCEPTION_HANDLER_INTERCEPTOR =
       new Interceptor() {
-        private final int ABORTED_CODE = 10;
+        private static final int ABORTED_CODE = 10;
 
         @Override
         public RetryResult beforeEval(Exception exception) {
           if (exception instanceof DatastoreException) {
             DatastoreException e = getInnerException((DatastoreException) exception);
-            if (e.getCode() == ABORTED_CODE || e.getReason() == "ABORTED") {
+            if (e.getCode() == ABORTED_CODE || e.getReason().equals("ABORTED")) {
               return Interceptor.RetryResult.RETRY;
             }
           }
@@ -55,4 +55,7 @@ public class TransactionExceptionHandler {
             DatastoreImpl.EXCEPTION_HANDLER_INTERCEPTOR, TRANSACTION_EXCEPTION_HANDLER_INTERCEPTOR)
         .build();
   }
+
+  /** Intentionally private empty constructor to disable instantiation of this class. */
+  private TransactionExceptionHandler() {}
 }
