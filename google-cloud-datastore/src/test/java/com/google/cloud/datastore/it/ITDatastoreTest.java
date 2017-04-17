@@ -733,19 +733,43 @@ public class ITDatastoreTest {
 
   @Test
   public void testRunInTransaction() {
-    Datastore.TransactionCallable<Integer> callable = new Datastore.TransactionCallable<Integer>() {
-      private Integer attempts = 0;
-      public Integer run(DatastoreReaderWriter transaction) {
-        transaction.get(KEY1);
-        if (attempts < 1) {
-          ++attempts;
-          throw new DatastoreException(10,"","ABORTED",false,null);
-        }
+    Datastore.TransactionCallable<Integer> callable1 =
+        new Datastore.TransactionCallable<Integer>() {
+          private Integer attempts = 0;
 
-        return attempts;
-      }
-    };
-    int result = DATASTORE.runInTransaction(callable);
-    assertTrue(result == 1);
+          public Integer run(DatastoreReaderWriter transaction) {
+            transaction.get(KEY1);
+            if (attempts < 1) {
+              ++attempts;
+              throw new DatastoreException(10, "", "ABORTED", false, null);
+            }
+
+            return attempts;
+          }
+        };
+
+    int result = DATASTORE.runInTransaction(callable1);
+    assertEquals(result, 1);
+
+    Datastore.TransactionCallable<Integer> callable2 =
+        new Datastore.TransactionCallable<Integer>() {
+          private Integer attempts = 0;
+
+          public Integer run(DatastoreReaderWriter transaction) {
+            transaction.get(KEY1);
+            if (attempts < 1) {
+              ++attempts;
+              throw new DatastoreException(4, "", "DEADLINE_EXCEEDED", false, null);
+            }
+            return attempts;
+          }
+        };
+
+    try {
+      DATASTORE.runInTransaction(callable2);
+      fail("Expecting a failure");
+    } catch (DatastoreException expected) {
+      assertEquals(((DatastoreException) expected.getCause()).getCode(), 4);
+    }
   }
 }

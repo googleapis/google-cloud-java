@@ -22,12 +22,14 @@ import com.google.cloud.ExceptionHandler.Interceptor;
 public class TransactionExceptionHandler {
   public static final Interceptor TRANSACTION_EXCEPTION_HANDLER_INTERCEPTOR =
       new Interceptor() {
+        private final int ABORTED_CODE = 10;
+
         @Override
         public RetryResult beforeEval(Exception exception) {
           if (exception instanceof DatastoreException) {
             DatastoreException e = getInnerException((DatastoreException) exception);
-            if (e.getCode() == 10 || e.getReason() == "ABORTED") {
-              return RetryResult.RETRY;
+            if (e.getCode() == ABORTED_CODE || e.getReason() == "ABORTED") {
+              return Interceptor.RetryResult.RETRY;
             }
           }
           return Interceptor.RetryResult.CONTINUE_EVALUATION;
