@@ -1424,7 +1424,6 @@ public class LoggingImplTest {
         .addAllEntries(Iterables.transform(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2),
             LogEntry.toPbFunction(PROJECT)))
         .build();
-    WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(mockRpcResponse);
     EasyMock.replay(loggingRpcMock);
     // no messages, nothing to flush.
