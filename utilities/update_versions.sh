@@ -162,7 +162,7 @@ for item in ${modules[*]}; do
   echo -e "    Updating version in ${folder}\pom.xml and the parent version in the corresponding children modules if exist"
   mvn -q versions:set -DartifactId=${module} -DnewVersion=${new_version} -DprocessPlugins=false -DgenerateBackupPoms=false
 
-  # 3) Update Google App Engine application dockerfile, if exist.
+  # 3) Update Google App Engine application dockerfile, if it exists.
   if [ -w ${folder}/src/main/docker/Dockerfile ]; then
     old_version="${module_version_map[${module}]}"
     echo -e "    Updating ${folder}/src/main/docker/Dockerfile"
