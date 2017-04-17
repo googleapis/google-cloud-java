@@ -806,7 +806,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * The HTTP method to be used with the signed URL.
+     * The HTTP method to be used with the signed URL. Defaults to GET.
      */
     public static SignUrlOption httpMethod(HttpMethod httpMethod) {
       return new SignUrlOption(Option.HTTP_METHOD, httpMethod.name());
@@ -815,6 +815,7 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Use it if signature should include the blob's content-type.
      * When used, users of the signed URL should include the blob's content-type with their request.
+     * If using this URL from a browser, you must include a content type that matches what the browser will send.
      */
     public static SignUrlOption withContentType() {
       return new SignUrlOption(Option.CONTENT_TYPE, true);
