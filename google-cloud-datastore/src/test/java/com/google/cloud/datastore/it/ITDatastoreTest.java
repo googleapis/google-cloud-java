@@ -141,7 +141,7 @@ public class ITDatastoreTest {
 
   private <T> Iterator<T> getStronglyConsistentResults (Query scQuery, Query query) throws InterruptedException {
     //scQuery is equivalent to query, but with an ancestor filter in it
-    //This makes scQuery strongly consistent
+    //this makes scQuery strongly consistent
     QueryResults<T> scResults = DATASTORE.run(scQuery);
     List<T> scResultsCopy = makeResultsCopy(scResults);
     Set<T> scResultsSet = new HashSet<>(scResultsCopy);
