@@ -47,6 +47,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   private final DatastoreRpc datastoreRpc;
   private final RetrySettings retrySettings;
+  private static final ExceptionHandler TRANSACTION_EXCEPTION_HANDLER =
+      TransactionExceptionHandler.build();
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
@@ -67,7 +69,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public <T> T runInTransaction(final TransactionCallable<T> callable) {
-    ExceptionHandler TRANSACTION_EXCEPTION_HANDLER = TransactionExceptionHandler.build();
     final DatastoreImpl self = this;
     try {
       return RetryHelper.runWithRetries(

@@ -22,6 +22,9 @@ import com.google.cloud.ExceptionHandler.Interceptor;
 public class TransactionExceptionHandler {
   public static final Interceptor TRANSACTION_EXCEPTION_HANDLER_INTERCEPTOR =
       new Interceptor() {
+
+        private static final long serialVersionUID = -1240723093072535978L;
+
         private static final int ABORTED_CODE = 10;
 
         @Override

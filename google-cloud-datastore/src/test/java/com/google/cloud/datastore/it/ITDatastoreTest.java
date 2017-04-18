@@ -735,11 +735,11 @@ public class ITDatastoreTest {
   public void testRunInTransaction() {
     Datastore.TransactionCallable<Integer> callable1 =
         new Datastore.TransactionCallable<Integer>() {
-          private Integer attempts = 0;
+          private Integer attempts = 1;
 
           public Integer run(DatastoreReaderWriter transaction) {
             transaction.get(KEY1);
-            if (attempts < 1) {
+            if (attempts < 2) {
               ++attempts;
               throw new DatastoreException(10, "", "ABORTED", false, null);
             }
@@ -749,15 +749,15 @@ public class ITDatastoreTest {
         };
 
     int result = DATASTORE.runInTransaction(callable1);
-    assertEquals(result, 1);
+    assertEquals(result, 2);
 
     Datastore.TransactionCallable<Integer> callable2 =
         new Datastore.TransactionCallable<Integer>() {
-          private Integer attempts = 0;
+          private Integer attempts = 1;
 
           public Integer run(DatastoreReaderWriter transaction) {
             transaction.get(KEY1);
-            if (attempts < 1) {
+            if (attempts < 2) {
               ++attempts;
               throw new DatastoreException(4, "", "DEADLINE_EXCEEDED", false, null);
             }
