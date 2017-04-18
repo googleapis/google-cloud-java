@@ -17,7 +17,10 @@ package com.google.cloud;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.InternalApi;
-import java.util.HashMap;
+import com.google.common.base.Preconditions;
+import java.lang.reflect.Array;
+import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -27,13 +30,13 @@ import java.util.Map;
 @InternalApi
 public class StringEnumType<EnumT> {
 
-  private final String enumName;
+  private final Class<EnumT> clazz;
   private final ApiFunction<String, EnumT> constructor;
-  private Map<String, EnumT> knownValues = new HashMap<>();
+  private final Map<String, EnumT> knownValues = new LinkedHashMap<>();
 
-  public StringEnumType(String enumName, ApiFunction<String, EnumT> constructor) {
-    this.enumName = enumName;
-    this.constructor = constructor;
+  public StringEnumType(Class<EnumT> clazz, ApiFunction<String, EnumT> constructor) {
+    this.clazz = Preconditions.checkNotNull(clazz);
+    this.constructor = Preconditions.checkNotNull(constructor);
   }
 
   /**
@@ -55,7 +58,7 @@ public class StringEnumType<EnumT> {
       return value;
     } else {
       throw new IllegalArgumentException(
-          "Constant \"" + constant + "\" not found for enum \"" + enumName + "\"");
+          "Constant \"" + constant + "\" not found for enum \"" + clazz.getName() + "\"");
     }
   }
 
@@ -75,6 +78,16 @@ public class StringEnumType<EnumT> {
    * Return the known values of this enum type.
    */
   public EnumT[] values() {
-    return (EnumT[]) knownValues.values().toArray();
+    Collection<EnumT> valueCollection = knownValues.values();
+
+    @SuppressWarnings("unchecked")
+    final EnumT[] valueArray = (EnumT[]) Array.newInstance(clazz, valueCollection.size());
+    int i = 0;
+    for (EnumT enumV : valueCollection) {
+      valueArray[i] = enumV;
+      i++;
+    }
+
+    return valueArray;
   }
 }

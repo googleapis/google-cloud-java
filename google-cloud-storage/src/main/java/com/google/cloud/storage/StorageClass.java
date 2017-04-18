@@ -38,7 +38,7 @@ public class StorageClass extends StringEnumValue {
       };
 
   private static StringEnumType<StorageClass> type = new StringEnumType(
-      StorageClass.class.getName(),
+      StorageClass.class,
       CONSTRUCTOR);
 
   /**
