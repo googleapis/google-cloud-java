@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-core</artifactId>
+  <version>0.13.1-alpha-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Google Cloud Core</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-core</url>
@@ -11,10 +12,11 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.12.1-alpha-SNAPSHOT</version>
+    <version>0.13.1-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-core</site.installationModule>
+    <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
     <dependency>
@@ -101,7 +103,7 @@
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
-      <version>20151123</version>
+      <version>20160810</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -113,12 +115,12 @@
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java</artifactId>
-      <version>3.0.0</version>
+      <version>3.2.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java-util</artifactId>
-      <version>3.0.0</version>
+      <version>3.2.0</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -137,9 +139,14 @@
       </exclusions>
     </dependency>
     <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+      <version>${api-common.version}</version>
+    </dependency>
+    <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
@@ -150,7 +157,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.7</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
@@ -171,4 +178,24 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>properties-maven-plugin</artifactId>
+        <version>1.0-alpha-2</version>
+        <executions>
+          <execution>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>write-project-properties</goal>
+            </goals>
+            <configuration>
+              <outputFile>${project.build.outputDirectory}/com/google/cloud/project.properties</outputFile>
+            </configuration>
+          </execution>
+         </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

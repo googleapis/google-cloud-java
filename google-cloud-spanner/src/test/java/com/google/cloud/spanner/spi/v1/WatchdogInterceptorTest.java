@@ -25,6 +25,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.gax.grpc.testing.FakeMethodDescriptor;
 import com.google.common.testing.FakeTicker;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -56,9 +57,9 @@ public class WatchdogInterceptorTest {
 
   CallOptions options;
   Metadata metadata;
+  MethodDescriptor<Void, Void> descriptor = FakeMethodDescriptor.create();
 
   @Mock Channel channel;
-  @Mock MethodDescriptor<Void, Void> descriptor;
   @Mock ClientCall<Void, Void> innerCall;
   @Mock ClientCall.Listener<Void> listener;
 

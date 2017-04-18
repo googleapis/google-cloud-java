@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-trace</artifactId>
+  <version>0.13.1-alpha-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Google Cloud Trace</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace</url>
@@ -11,7 +12,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.12.1-alpha-SNAPSHOT</version>
+    <version>0.13.1-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-trace</site.installationModule>
@@ -21,7 +22,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-tcnative-boringssl-static</artifactId>
-      <version>1.1.33.Fork19</version>
+      <version>1.1.33.Fork26</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -31,7 +32,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-trace-v1</artifactId>
-      <version>0.1.5</version>
+      <version>0.1.8</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>
@@ -96,10 +97,10 @@
           <execution>
             <phase>generate-resources</phase>
             <goals>
-                <goal>write-project-properties</goal>
+              <goal>write-project-properties</goal>
             </goals>
             <configuration>
-                <outputFile>${project.build.outputDirectory}/project.properties</outputFile>
+              <outputFile>${project.build.outputDirectory}/com/google/cloud/trace/project.properties</outputFile>
             </configuration>
           </execution>
          </executions>

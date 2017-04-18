@@ -18,7 +18,9 @@ package com.google.cloud.pubsub.spi.v1;
 
 import static com.google.cloud.pubsub.spi.v1.MessageDispatcher.PENDING_ACKS_SEND_DELAY;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.grpc.FixedChannelProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.cloud.pubsub.spi.v1.FakeSubscriberServiceImpl.ModifyAckDeadline;
@@ -32,6 +34,7 @@ import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.SubscriptionName;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
@@ -64,31 +67,36 @@ public class SubscriberImplTest {
   private static final PubsubMessage TEST_MESSAGE =
       PubsubMessage.newBuilder().setMessageId("1").build();
 
+  private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECS = 2;
+
+  private final boolean isStreamingTest;
+
+  private ManagedChannel testChannel;
+  private FakeScheduledExecutorService fakeExecutor;
+  private FakeSubscriberServiceImpl fakeSubscriberServiceImpl;
+  private ServerImpl testServer;
+
+  private TestReceiver testReceiver;
+
   @Parameters
   public static Collection<Object[]> data() {
     return Arrays.asList(new Object[][] {{false}});
   }
 
-  private final boolean isStreamingTest;
-
-  private InProcessChannelBuilder testChannelBuilder;
-  private FakeScheduledExecutorService fakeExecutor;
-  private FakeSubscriberServiceImpl fakeSubscriberServiceImpl;
-  private ServerImpl testServer;
-
-  private FakeCredentials testCredentials;
-  private TestReceiver testReceiver;
-
   static class TestReceiver implements MessageReceiver {
     private final LinkedBlockingQueue<AckReplyConsumer> outstandingMessageReplies =
         new LinkedBlockingQueue<>();
-    private AckReply ackReply = AckReply.ACK;
+    private boolean shouldAck = true; // If false, the receiver will <b>nack</b> the messages
     private Optional<CountDownLatch> messageCountLatch = Optional.absent();
     private Optional<RuntimeException> error = Optional.absent();
     private boolean explicitAckReplies;
 
-    void setReply(AckReply ackReply) {
-      this.ackReply = ackReply;
+    void setAckReply() {
+      this.shouldAck = true;
+    }
+
+    void setNackReply() {
+      this.shouldAck = false;
     }
 
     void setErrorReply(RuntimeException error) {
@@ -149,7 +157,11 @@ public class SubscriberImplTest {
       if (error.isPresent()) {
         throw error.get();
       } else {
-        reply.accept(ackReply);
+        if (shouldAck) {
+          reply.ack();
+        } else {
+          reply.nack();
+        }
       }
     }
   }
@@ -165,13 +177,12 @@ public class SubscriberImplTest {
     InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName(testName.getMethodName());
     fakeSubscriberServiceImpl = new FakeSubscriberServiceImpl();
     fakeExecutor = new FakeScheduledExecutorService();
-    testChannelBuilder = InProcessChannelBuilder.forName(testName.getMethodName());
+    testChannel = InProcessChannelBuilder.forName(testName.getMethodName()).build();
     serverBuilder.addService(fakeSubscriberServiceImpl);
     testServer = serverBuilder.build();
     testServer.start();
 
     testReceiver = new TestReceiver();
-    testCredentials = new FakeCredentials();
   }
 
   @After
@@ -196,7 +207,7 @@ public class SubscriberImplTest {
   public void testNackSingleMessage() throws Exception {
     Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
-    testReceiver.setReply(AckReply.NACK);
+    testReceiver.setNackReply();
     sendMessages(ImmutableList.of("A"));
 
     // Trigger ack sending
@@ -257,7 +268,7 @@ public class SubscriberImplTest {
     // Send messages to be nacked
     List<String> testAckIdsBatch2 = ImmutableList.of("D", "E");
     // Nack messages
-    testReceiver.setReply(AckReply.NACK);
+    testReceiver.setNackReply();
     sendMessages(testAckIdsBatch2);
 
     // Trigger ack sending
@@ -276,14 +287,17 @@ public class SubscriberImplTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setAckExpirationPadding(Duration.standardSeconds(1)));
-
+                .setAckExpirationPadding(Duration.standardSeconds(1))
+                .setMaxAckExtensionPeriod(Duration.standardSeconds(13)));
     // Send messages to be acked
     List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
+    // A modify ack deadline should be scheduled for the next 9s
+    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9));
     sendMessages(testAckIdsBatch);
+    // To ensure first modify ack deadline got scheduled
+    fakeExecutor.waitForExpectedWork();
 
-    // Trigger modify ack deadline sending - 10s initial stream ack deadline - 1 padding
     fakeExecutor.advanceTime(Duration.standardSeconds(9));
 
     assertEquivalentWithTransformation(
@@ -292,12 +306,11 @@ public class SubscriberImplTest {
         new Function<String, ModifyAckDeadline>() {
           @Override
           public ModifyAckDeadline apply(String ack) {
-            return new ModifyAckDeadline(ack, 2); // 2 seconds is the initial mod ack deadline
+            return new ModifyAckDeadline(ack, INITIAL_ACK_DEADLINE_EXTENSION_SECS);
           }
         });
 
-    // Trigger modify ack deadline sending - 2s of the renewed deadlines
-    fakeExecutor.advanceTime(Duration.standardSeconds(2));
+    fakeExecutor.advanceTime(Duration.standardSeconds(1));
 
     assertEquivalentWithTransformation(
         testAckIdsBatch,
@@ -305,9 +318,72 @@ public class SubscriberImplTest {
         new Function<String, ModifyAckDeadline>() {
           @Override
           public ModifyAckDeadline apply(String ack) {
-            return new ModifyAckDeadline(ack, 4);
+            return new ModifyAckDeadline(ack, 3); // It is expected that the deadline is renewed
+                                                  // only three more seconds to not pass the max
+                                                  // ack deadline ext.
           }
         });
+
+    // No more modify ack deadline extension should be triggered at this point
+    fakeExecutor.advanceTime(Duration.standardSeconds(20));
+
+    assertTrue(fakeSubscriberServiceImpl.getModifyAckDeadlines().isEmpty());
+
+    testReceiver.replyAllOutstandingMessage();
+    subscriber.stopAsync().awaitTerminated();
+  }
+
+  @Test
+  public void testModifyAckDeadline_defaultMaxExtensionPeriod() throws Exception {
+    Subscriber subscriber =
+        startSubscriber(
+            getTestSubscriberBuilder(testReceiver)
+                .setAckExpirationPadding(Duration.standardSeconds(1)));
+    // Send messages to be acked
+    List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
+    testReceiver.setExplicitAck(true);
+    // A modify ack deadline should be schedule for the next 9s
+    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9));
+    sendMessages(testAckIdsBatch);
+    // To ensure the first modify ack deadlines got scheduled
+    fakeExecutor.waitForExpectedWork();
+
+    // Next modify ack deadline should be schedule in the next 1s
+    fakeExecutor.advanceTime(Duration.standardSeconds(9));
+
+    assertEquivalentWithTransformation(
+        testAckIdsBatch,
+        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(3),
+        new Function<String, ModifyAckDeadline>() {
+          @Override
+          public ModifyAckDeadline apply(String ack) {
+            return new ModifyAckDeadline(ack, INITIAL_ACK_DEADLINE_EXTENSION_SECS);
+          }
+        });
+
+    fakeExecutor.advanceTime(Duration.standardSeconds(1));
+    int timeIncrementSecs = INITIAL_ACK_DEADLINE_EXTENSION_SECS; // Second time increment
+
+    // Check ack deadline extensions while the current time has not reached 60 minutes
+    while (fakeExecutor.getClock().millisTime() + timeIncrementSecs - 1 < 1000 * 60 * 60) {
+      timeIncrementSecs *= 2;
+      final int expectedIncrementSecs = Math.min(600, timeIncrementSecs);
+      assertEquivalentWithTransformation(
+          testAckIdsBatch,
+          fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(3),
+          new Function<String, ModifyAckDeadline>() {
+            @Override
+            public ModifyAckDeadline apply(String ack) {
+              return new ModifyAckDeadline(ack, expectedIncrementSecs);
+            }
+          });
+      fakeExecutor.advanceTime(Duration.standardSeconds(timeIncrementSecs - 1));
+    }
+
+    // No more modify ack deadline extension should be triggered at this point
+    fakeExecutor.advanceTime(Duration.standardSeconds(20));
+
+    assertTrue(fakeSubscriberServiceImpl.getModifyAckDeadlines().isEmpty());
 
     testReceiver.replyAllOutstandingMessage();
     subscriber.stopAsync().awaitTerminated();
@@ -460,8 +536,7 @@ public class SubscriberImplTest {
   private Builder getTestSubscriberBuilder(MessageReceiver receiver) {
     return Subscriber.defaultBuilder(TEST_SUBSCRIPTION, receiver)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
-        .setCredentials(testCredentials)
-        .setChannelBuilder(testChannelBuilder)
+        .setChannelProvider(FixedChannelProvider.create(testChannel))
         .setClock(fakeExecutor.getClock());
   }
 
@@ -486,9 +561,10 @@ public class SubscriberImplTest {
     remaining.addAll(target);
 
     for (E expectedElem : expectedElems) {
-      if (!remaining.contains(transform.apply(expectedElem))) {
+      T expected = transform.apply(expectedElem);
+      if (!remaining.contains(expected)) {
         throw new AssertionError(
-            String.format("Expected element %s is not contained in %s", expectedElem, target));
+            String.format("Expected element %s is not contained in %s", expected, target));
       }
       remaining.remove(expectedElem);
     }

@@ -26,22 +26,17 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>0.12.0-alpha</version>
+  <version>0.13.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:0.12.0-alpha'
+compile 'com.google.cloud:google-cloud-pubsub:0.13.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.12.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.13.0-alpha"
 ```
-
-Example Application
--------------------
-
-[`PubSubExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/PubSubExample.java) is a simple command line interface that provides some of Cloud Pub/Sub's functionality.  Read more about using the application on the [`PubSubExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/pubsub/PubSubExample.html).
 
 Authentication
 --------------
@@ -158,7 +153,6 @@ With Pub/Sub you can pull messages from a subscription. Add the following import
 file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.AckReply;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
@@ -175,12 +169,12 @@ MessageReceiver receiver =
       @Override
       public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
         System.out.println("got message: " + message.getData().toStringUtf8());
-        consumer.accept(AckReply.ACK, null);
+        consumer.ack();
       }
     };
 Subscriber subscriber = null;
 try {
-  subscriber = Subscriber.newBuilder(subscription, receiver).build();
+  subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
   subscriber.addListener(
       new Subscriber.SubscriberListener() {
         @Override
@@ -191,8 +185,7 @@ try {
       },
       MoreExecutors.directExecutor());
   subscriber.startAsync().awaitRunning();
-  // Pull messages for 60 seconds.
-  Thread.sleep(60000);
+  //...
 } finally {
   if (subscriber != null) {
     subscriber.stopAsync();
@@ -204,7 +197,7 @@ try {
 In
 [CreateTopicAndPublishMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java)
 and
-[CreateSubscriptionAndPullMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java)
+[CreateSubscriptionAndConsumeMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndConsumeMessages.java)
 we put together all the code shown above into two programs. The programs assume that you are
 running on Compute Engine, App Engine Flexible or from your own desktop.
 

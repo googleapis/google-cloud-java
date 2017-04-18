@@ -16,11 +16,10 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.AbstractApiService;
-import com.google.api.gax.core.ApiClock;
+import com.google.api.core.AbstractApiService;
+import com.google.api.core.ApiClock;
 import com.google.api.gax.core.FlowController;
 import com.google.api.stats.Distribution;
-import com.google.auth.Credentials;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.collect.Lists;
@@ -36,7 +35,6 @@ import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberFutureStub;
 import com.google.pubsub.v1.Subscription;
 import io.grpc.Channel;
-import io.grpc.auth.MoreCallCredentials;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -64,9 +62,9 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
 
   public PollingSubscriberConnection(
       String subscription,
-      Credentials credentials,
       MessageReceiver receiver,
       Duration ackExpirationPadding,
+      Duration maxAckExtensionPeriod,
       Distribution ackLatencyDistribution,
       Channel channel,
       FlowController flowController,
@@ -74,14 +72,13 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
       ApiClock clock) {
     this.subscription = subscription;
     this.executor = executor;
-    stub =
-        SubscriberGrpc.newFutureStub(channel)
-            .withCallCredentials(MoreCallCredentials.from(credentials));
+    stub = SubscriberGrpc.newFutureStub(channel);
     messageDispatcher =
         new MessageDispatcher(
             receiver,
             this,
             ackExpirationPadding,
+            maxAckExtensionPeriod,
             ackLatencyDistribution,
             flowController,
             executor,

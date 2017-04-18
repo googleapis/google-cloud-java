@@ -16,12 +16,13 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.AbstractApiService;
-import com.google.api.gax.core.ApiClock;
-import com.google.api.gax.core.ApiService;
-import com.google.api.gax.core.CurrentMillisClock;
+import com.google.api.core.AbstractApiService;
+import com.google.api.core.ApiClock;
+import com.google.api.core.ApiService;
+import com.google.api.core.CurrentMillisClock;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController;
+import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
@@ -32,12 +33,9 @@ import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
 import com.google.pubsub.v1.SubscriptionName;
-import io.grpc.ManagedChannelBuilder;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
-import io.grpc.netty.GrpcSslContexts;
-import io.grpc.netty.NegotiationType;
-import io.grpc.netty.NettyChannelBuilder;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,9 +53,9 @@ import org.joda.time.Duration;
  *
  * <p>A {@link Subscriber} allows you to provide an implementation of a {@link MessageReceiver
  * receiver} to which messages are going to be delivered as soon as they are received by the
- * subscriber. The delivered messages then can be {@link AckReply#ACK acked} or {@link AckReply#NACK
- * nacked} at will as they get processed by the receiver. Nacking a messages implies a later
- * redelivery of such message.
+ * subscriber. The delivered messages then can be {@link AckReplyConsumer#ack() acked} or {@link
+ * AckReplyConsumer#nack() nacked} at will as they get processed by the receiver. Nacking a messages
+ * implies a later redelivery of such message.
  *
  * <p>The subscriber handles the ack management, by automatically extending the ack deadline while
  * the message is being processed, to then issue the ack or nack of such message when the processing
@@ -92,13 +90,14 @@ public class Subscriber extends AbstractApiService {
   private final String cachedSubscriptionNameString;
   private final FlowControlSettings flowControlSettings;
   private final Duration ackExpirationPadding;
+  private final Duration maxAckExtensionPeriod;
   private final ScheduledExecutorService executor;
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
   private final int numChannels;
   private final FlowController flowController;
-  private final ManagedChannelBuilder<? extends ManagedChannelBuilder<?>> channelBuilder;
-  private final Credentials credentials;
+  private final ChannelProvider channelProvider;
+  private final List<ManagedChannel> channels;
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
   private final List<PollingSubscriberConnection> pollingSubscriberConnections;
@@ -113,6 +112,7 @@ public class Subscriber extends AbstractApiService {
     subscriptionName = builder.subscriptionName;
     cachedSubscriptionNameString = subscriptionName.toString();
     ackExpirationPadding = builder.ackExpirationPadding;
+    maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
     streamAckDeadlineSeconds =
         Math.max(
             INITIAL_ACK_DEADLINE_SECONDS,
@@ -132,29 +132,10 @@ public class Subscriber extends AbstractApiService {
           });
     }
 
-    // TODO(pongad): remove this when we move to ManagedChannelBuilder
-    String defaultEndpoint = SubscriptionAdminSettings.getDefaultEndpoint();
-    int colonPos = defaultEndpoint.indexOf(':');
-
-    channelBuilder =
-        builder.channelBuilder.isPresent()
-            ? builder.channelBuilder.get()
-            : NettyChannelBuilder.forAddress(
-                    defaultEndpoint.substring(0, colonPos),
-                    Integer.parseInt(defaultEndpoint.substring(colonPos+1)))
-                .maxMessageSize(MAX_INBOUND_MESSAGE_SIZE)
-                .flowControlWindow(5000000) // 2.5 MB
-                .negotiationType(NegotiationType.TLS)
-                .sslContext(GrpcSslContexts.forClient().ciphers(null).build())
-                .executor(executor);
-
-    credentials =
-        builder.credentials.isPresent()
-            ? builder.credentials.get()
-            : GoogleCredentials.getApplicationDefault()
-                .createScoped(SubscriptionAdminSettings.getDefaultServiceScopes());
+    channelProvider = builder.channelProvider;
 
     numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
+    channels = new ArrayList<ManagedChannel>(numChannels);
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
     pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
   }
@@ -216,6 +197,29 @@ public class Subscriber extends AbstractApiService {
   @Override
   protected void doStart() {
     logger.log(Level.FINE, "Starting subscriber group.");
+
+    try {
+      for (int i = 0; i < numChannels; i++) {
+        final ManagedChannel channel =
+            channelProvider.needsExecutor()
+                ? channelProvider.getChannel(executor)
+                : channelProvider.getChannel();
+        channels.add(channel);
+        if (channelProvider.shouldAutoClose()) {
+          closeables.add(
+              new AutoCloseable() {
+                @Override
+                public void close() {
+                  channel.shutdown();
+                }
+              });
+        }
+      }
+    } catch (IOException e) {
+      // doesn't matter what we throw, the Service will just catch it and fail to start.
+      throw new IllegalStateException(e);
+    }
+
     // Streaming pull is not enabled on the service yet.
     // startStreamingConnections();
     startPollingConnections();
@@ -242,12 +246,12 @@ public class Subscriber extends AbstractApiService {
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
                 cachedSubscriptionNameString,
-                credentials,
                 receiver,
                 ackExpirationPadding,
+                maxAckExtensionPeriod,
                 streamAckDeadlineSeconds,
                 ackLatencyDistribution,
-                channelBuilder.build(),
+                channels.get(i),
                 flowController,
                 executor,
                 clock));
@@ -318,11 +322,11 @@ public class Subscriber extends AbstractApiService {
         pollingSubscriberConnections.add(
             new PollingSubscriberConnection(
                 cachedSubscriptionNameString,
-                credentials,
                 receiver,
                 ackExpirationPadding,
+                maxAckExtensionPeriod,
                 ackLatencyDistribution,
-                channelBuilder.build(),
+                channels.get(i),
                 flowController,
                 executor,
                 clock));
@@ -409,6 +413,7 @@ public class Subscriber extends AbstractApiService {
   public static final class Builder {
     private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.millis(100);
     private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
+    private static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.standardMinutes(60);
 
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
         InstantiatingExecutorProvider.newBuilder()
@@ -423,12 +428,15 @@ public class Subscriber extends AbstractApiService {
     MessageReceiver receiver;
 
     Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
+    Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
 
     FlowControlSettings flowControlSettings = FlowControlSettings.getDefaultInstance();
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
-    Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
-        Optional.absent();
+    ChannelProvider channelProvider =
+        SubscriptionAdminSettings.defaultChannelProviderBuilder()
+            .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
+            .build();
     Optional<ApiClock> clock = Optional.absent();
 
     Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
@@ -447,15 +455,15 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * ManagedChannelBuilder to use to create Channels.
+     * {@code ChannelProvider} to use to create Channels, which must point at Cloud Pub/Sub
+     * endpoint.
      *
-     * <p>Must point at Cloud Pub/Sub endpoint.
+     * <p>For performance, this client benefits from having multiple channels open at once. Users
+     * are encouraged to provide instances of {@code ChannelProvider} that creates new channels
+     * instead of returning pre-initialized ones.
      */
-    public Builder setChannelBuilder(
-        ManagedChannelBuilder<? extends ManagedChannelBuilder<?>> channelBuilder) {
-      this.channelBuilder =
-          Optional.<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>>of(
-              Preconditions.checkNotNull(channelBuilder));
+    public Builder setChannelProvider(ChannelProvider channelProvider) {
+      this.channelProvider = Preconditions.checkNotNull(channelProvider);
       return this;
     }
 
@@ -480,6 +488,21 @@ public class Subscriber extends AbstractApiService {
     public Builder setAckExpirationPadding(Duration ackExpirationPadding) {
       Preconditions.checkArgument(ackExpirationPadding.compareTo(MIN_ACK_EXPIRATION_PADDING) >= 0);
       this.ackExpirationPadding = ackExpirationPadding;
+      return this;
+    }
+
+    /**
+     * Set the maximum period a message ack deadline will be extended.
+     *
+     * <p>It is recommended to set this value to a reasonable upper bound of the subscriber time to
+     * process any message. This maximum period avoids messages to be <i>locked</i> by a subscriber
+     * in cases when the ack reply is lost.
+     *
+     * <p>A zero duration effectively disables auto deadline extensions.
+     */
+    public Builder setMaxAckExtensionPeriod(Duration maxAckExtensionPeriod) {
+      Preconditions.checkArgument(maxAckExtensionPeriod.getMillis() >= 0);
+      this.maxAckExtensionPeriod = maxAckExtensionPeriod;
       return this;
     }
 

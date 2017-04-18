@@ -18,10 +18,17 @@ package com.google.cloud.pubsub.spi.v1;
 
 /**
  * Accepts a reply, sending it to the service.
- *
- * <p>Both the interface and its method is named after the Java 8's {@code Consumer} interface
- * to make migration to Java 8 and adopting its patterns easier.
  */
 public interface AckReplyConsumer {
-  void accept(AckReply ackReply);
+  /**
+   * Acknowledges that the message has been successfully processed. The service will not send the
+   * message again.
+   */
+  void ack();
+  
+  /**
+   * Signals that the message has not been successfully processed. The service should resend the
+   * message.
+   */
+  void nack();
 }

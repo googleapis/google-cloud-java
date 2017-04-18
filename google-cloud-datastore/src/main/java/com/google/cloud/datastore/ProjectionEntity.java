@@ -65,7 +65,7 @@ public final class ProjectionEntity extends BaseEntity<Key> {
   @Override
   public Blob getBlob(String name) {
     Value<?> value = getValue(name);
-    if (value.meaning() == 18 && value instanceof StringValue) {
+    if (value.getMeaning() == 18 && value instanceof StringValue) {
       return new Blob(ByteString.copyFromUtf8(getString(name)));
     }
     return ((Value<Blob>) value).get();

@@ -16,7 +16,7 @@
 
 package com.google.cloud.logging.spi.v2;
 
-import com.google.api.gax.core.ApiFuture;
+import com.google.api.core.ApiFuture;
 import com.google.cloud.ServiceRpc;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;

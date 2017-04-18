@@ -22,9 +22,11 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.api.gax.core.ApiFuture;
+import com.google.api.core.ApiFuture;
+import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
+import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.SubscriptionName;
 import java.util.concurrent.Executor;
 
@@ -66,4 +68,37 @@ public class SubscriberSnippets {
     subscriber.stopAsync().awaitTerminated();
     // [END startAsync]
   }
+
+  private void createSubscriber() throws Exception {
+    // [START async_pull_subscription]
+    String projectId = "my-project-id";
+    String subscriptionId = "my-subscription-id";
+    SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
+
+    // Instantiate an asynchronous message receiver
+    MessageReceiver receiver =
+        new MessageReceiver() {
+          @Override
+          public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
+            // handle incoming message, then ack or nack the received message
+            // ...
+            consumer.ack();
+          }
+        };
+
+    Subscriber subscriber = null;
+    try {
+      // Create a subscriber for "my-subscription-id" bound to the message receiver
+      subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
+      subscriber.startAsync();
+      // ...
+    } finally {
+      // stop receiving messages
+      if (subscriber != null) {
+        subscriber.stopAsync();
+      }
+    }
+    // [END async_pull_subscription]
+  }
+
 }
