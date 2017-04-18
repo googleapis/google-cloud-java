@@ -171,15 +171,15 @@ public class LoggingHandler extends Handler {
       MonitoredResource monitoredResource,
       List<LoggingEnhancer> enhancers) {
     try {
-      loggingOptions = firstNonNull(options, LoggingOptions.getDefaultInstance());
+      loggingOptions = options != null ? options : LoggingOptions.getDefaultInstance();
       LoggingConfig config = new LoggingConfig(getClass().getName());
       setFilter(config.getFilter());
       setFormatter(config.getFormatter());
       Level level = config.getLogLevel();
       setLevel(level);
       baseLevel = level.equals(Level.ALL) ? Level.FINEST : level;
-      this.flushLevel = config.getFlushLevel();
-      String logName = firstNonNull(log, config.getLogName());
+      flushLevel = config.getFlushLevel();
+      String logName = log != null ? log : config.getLogName();
 
       MonitoredResource resource =
           firstNonNull(
