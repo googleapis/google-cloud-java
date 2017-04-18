@@ -45,9 +45,6 @@ public class GrpcTransportOptions implements TransportOptions {
 
   private static final long serialVersionUID = -9049538465533951165L;
   private final String executorFactoryClassName;
-  private final int initialTimeout;
-  private final double timeoutMultiplier;
-  private final int maxTimeout;
 
   private transient ExecutorFactory<ScheduledExecutorService> executorFactory;
 
@@ -118,17 +115,11 @@ public class GrpcTransportOptions implements TransportOptions {
   public static class Builder {
 
     private ExecutorFactory executorFactory;
-    private int initialTimeout = 20_000;
-    private double timeoutMultiplier = 1.5;
-    private int maxTimeout = 100_000;
 
     private Builder() {}
 
     private Builder(GrpcTransportOptions options) {
       executorFactory = options.executorFactory;
-      initialTimeout = options.initialTimeout;
-      timeoutMultiplier = options.timeoutMultiplier;
-      maxTimeout = options.maxTimeout;
     }
 
     public GrpcTransportOptions build() {
@@ -145,44 +136,6 @@ public class GrpcTransportOptions implements TransportOptions {
       this.executorFactory = executorFactory;
       return this;
     }
-
-    /**
-     * Sets the timeout for the initial RPC, in milliseconds. Subsequent calls will use this value
-     * adjusted according to {@link #setTimeoutMultiplier(double)}. Default value is 20000.
-     *
-     * @return the builder
-     * @throws IllegalArgumentException if the provided timeout is &lt; 0
-     */
-    public Builder setInitialTimeout(int initialTimeout) {
-      Preconditions.checkArgument(initialTimeout > 0, "Initial timeout must be > 0");
-      this.initialTimeout = initialTimeout;
-      return this;
-    }
-
-    /**
-     * Sets the timeout multiplier. This value is used to compute the timeout for a retried RPC.
-     * Timeout is computed as {@code timeoutMultiplier * previousTimeout}. Default value is 1.5.
-     *
-     * @return the builder
-     * @throws IllegalArgumentException if the provided timeout multiplier is &lt; 0
-     */
-    public Builder setTimeoutMultiplier(double timeoutMultiplier) {
-      Preconditions.checkArgument(timeoutMultiplier >= 1.0, "Timeout multiplier must be >= 1");
-      this.timeoutMultiplier = timeoutMultiplier;
-      return this;
-    }
-
-    /**
-     * Sets the maximum timeout for a RPC call, in milliseconds. Default value is 100000. If
-     * {@code maxTimeout} is lower than the initial timeout the {@link #setInitialTimeout(int)}
-     * value is used instead.
-     *
-     * @return the builder
-     */
-    public Builder setMaxTimeout(int maxTimeout) {
-      this.maxTimeout = maxTimeout;
-      return this;
-    }
   }
 
   @SuppressWarnings("unchecked")
@@ -190,9 +143,6 @@ public class GrpcTransportOptions implements TransportOptions {
     executorFactory = firstNonNull(builder.executorFactory,
         ServiceOptions.getFromServiceLoader(ExecutorFactory.class, DefaultExecutorFactory.INSTANCE));
     executorFactoryClassName = executorFactory.getClass().getName();
-    initialTimeout = builder.initialTimeout;
-    timeoutMultiplier = builder.timeoutMultiplier;
-    maxTimeout = builder.maxTimeout <= initialTimeout ? initialTimeout : builder.maxTimeout;
   }
 
   /**
@@ -225,37 +175,13 @@ public class GrpcTransportOptions implements TransportOptions {
   }
 
 
-  /**
-   * Returns the timeout for the initial RPC, in milliseconds. Subsequent calls will use this value
-   * adjusted according to {@link #getTimeoutMultiplier()}. Default value is 20000.
-   */
-  public int getInitialTimeout() {
-    return initialTimeout;
-  }
-
-  /**
-   * Returns the timeout multiplier. This values is used to compute the timeout for a RPC. Timeout
-   * is computed as {@code timeoutMultiplier * previousTimeout}. Default value is 1.5.
-   */
-  public double getTimeoutMultiplier() {
-    return timeoutMultiplier;
-  }
-
-  /**
-   * Returns the maximum timeout for a RPC call, in milliseconds. Default value is 100000.
-   */
-  public int getMaxTimeout() {
-    return maxTimeout;
-  }
-
   public Builder toBuilder() {
     return new Builder(this);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(executorFactoryClassName, initialTimeout,
-        timeoutMultiplier, maxTimeout);
+    return Objects.hash(executorFactoryClassName);
   }
 
   @Override
@@ -267,10 +193,7 @@ public class GrpcTransportOptions implements TransportOptions {
       return false;
     }
     GrpcTransportOptions other = (GrpcTransportOptions) obj;
-    return Objects.equals(executorFactoryClassName, other.executorFactoryClassName)
-        && Objects.equals(initialTimeout, other.initialTimeout)
-        && Objects.equals(timeoutMultiplier, other.timeoutMultiplier)
-        && Objects.equals(maxTimeout, other.maxTimeout);
+    return Objects.equals(executorFactoryClassName, other.executorFactoryClassName);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
