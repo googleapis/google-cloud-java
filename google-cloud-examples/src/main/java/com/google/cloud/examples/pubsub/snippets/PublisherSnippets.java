@@ -21,9 +21,9 @@
  */
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.api.gax.core.ApiFuture;
-import com.google.api.gax.core.ApiFutureCallback;
-import com.google.api.gax.core.ApiFutures;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
+import com.google.api.core.ApiFutures;
 import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;

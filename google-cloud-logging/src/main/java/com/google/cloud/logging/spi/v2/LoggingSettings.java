@@ -20,10 +20,10 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogsPage
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
 
 import com.google.api.MonitoredResourceDescriptor;
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
-import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;

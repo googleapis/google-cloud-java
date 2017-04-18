@@ -21,7 +21,7 @@ import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListTimeS
 
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.gax.core.ApiFuture;
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;

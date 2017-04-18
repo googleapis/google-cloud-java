@@ -16,8 +16,8 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.AbstractApiService;
-import com.google.api.gax.core.ApiClock;
+import com.google.api.core.AbstractApiService;
+import com.google.api.core.ApiClock;
 import com.google.api.gax.core.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;

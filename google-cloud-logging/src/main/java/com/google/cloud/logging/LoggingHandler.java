@@ -18,9 +18,9 @@ package com.google.cloud.logging;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
-import com.google.api.gax.core.ApiFuture;
-import com.google.api.gax.core.ApiFutureCallback;
-import com.google.api.gax.core.ApiFutures;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
+import com.google.api.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;

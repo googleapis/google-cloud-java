@@ -19,7 +19,7 @@ import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroup
 import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroupsPagedResponse;
 
 import com.google.api.MonitoredResource;
-import com.google.api.gax.core.ApiFuture;
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;

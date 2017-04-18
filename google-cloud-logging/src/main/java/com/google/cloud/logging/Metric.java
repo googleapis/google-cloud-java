@@ -18,7 +18,7 @@ package com.google.cloud.logging;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.gax.core.ApiFuture;
+import com.google.api.core.ApiFuture;
 import com.google.common.base.Function;
 import com.google.logging.v2.LogMetric;
 

@@ -21,8 +21,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.api.gax.core.ApiClock;
-import com.google.api.gax.core.CurrentMillisClock;
+import com.google.api.core.ApiClock;
+import com.google.api.core.CurrentMillisClock;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.auth.Credentials;

@@ -16,10 +16,10 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.AbstractApiService;
-import com.google.api.gax.core.ApiClock;
-import com.google.api.gax.core.ApiService;
-import com.google.api.gax.core.CurrentMillisClock;
+import com.google.api.core.AbstractApiService;
+import com.google.api.core.ApiClock;
+import com.google.api.core.ApiService;
+import com.google.api.core.CurrentMillisClock;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController;
 import com.google.api.gax.grpc.ChannelProvider;
