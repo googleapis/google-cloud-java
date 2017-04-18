@@ -33,9 +33,6 @@ public class GrpcTransportOptionsTest {
   private static final ExecutorFactory MOCK_EXECUTOR_FACTORY =
       EasyMock.createMock(ExecutorFactory.class);
   private static final GrpcTransportOptions OPTIONS = GrpcTransportOptions.newBuilder()
-      .setInitialTimeout(1234)
-      .setTimeoutMultiplier(1.6)
-      .setMaxTimeout(5678)
       .setExecutorFactory(MOCK_EXECUTOR_FACTORY)
       .build();
   private static final GrpcTransportOptions DEFAULT_OPTIONS =
@@ -44,48 +41,8 @@ public class GrpcTransportOptionsTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(1234, OPTIONS.getInitialTimeout());
-    assertEquals(1.6, OPTIONS.getTimeoutMultiplier(), 0.0);
-    assertEquals(5678, OPTIONS.getMaxTimeout());
     assertSame(MOCK_EXECUTOR_FACTORY, OPTIONS.getExecutorFactory());
-    assertEquals(20000, DEFAULT_OPTIONS.getInitialTimeout());
-    assertEquals(1.5, DEFAULT_OPTIONS.getTimeoutMultiplier(), 0.0);
-    assertEquals(100000, DEFAULT_OPTIONS.getMaxTimeout());
     assertTrue(DEFAULT_OPTIONS.getExecutorFactory() instanceof DefaultExecutorFactory);
-  }
-
-  @Test
-  public void testBuilderError() {
-    try {
-      GrpcTransportOptions.newBuilder().setInitialTimeout(0);
-      fail("IllegalArgumentException expected");
-    } catch (IllegalArgumentException ex) {
-      assertEquals("Initial timeout must be > 0", ex.getMessage());
-    }
-    try {
-      GrpcTransportOptions.newBuilder().setInitialTimeout(-1);
-      fail("IllegalArgumentException expected");
-    } catch (IllegalArgumentException ex) {
-      assertEquals("Initial timeout must be > 0", ex.getMessage());
-    }
-    try {
-      GrpcTransportOptions.newBuilder().setTimeoutMultiplier(0.9);
-      fail("IllegalArgumentException expected");
-    } catch (IllegalArgumentException ex) {
-      assertEquals("Timeout multiplier must be >= 1", ex.getMessage());
-    }
-  }
-
-  @Test
-  public void testBuilderInvalidMaxTimeout() {
-    GrpcTransportOptions options = GrpcTransportOptions.newBuilder()
-        .setInitialTimeout(1234)
-        .setTimeoutMultiplier(1.6)
-        .setMaxTimeout(123)
-        .build();
-    assertEquals(1234, options.getInitialTimeout());
-    assertEquals(1.6, options.getTimeoutMultiplier(), 0.0);
-    assertEquals(1234, options.getMaxTimeout());
   }
 
   @Test
