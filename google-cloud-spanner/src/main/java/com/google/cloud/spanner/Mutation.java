@@ -16,22 +16,18 @@
 
 package com.google.cloud.spanner;
 
-import com.google.cloud.ByteArray;
+import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
-import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.common.collect.Iterables;
 import com.google.protobuf.ListValue;
 
 import javax.annotation.Nullable;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
-import java.io.StreamCorruptedException;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
-import static com.google.cloud.spanner.GrpcStruct.decodeValue;
+import static com.google.cloud.spanner.GrpcStruct.fromTypedProto;
+import static com.google.cloud.spanner.GrpcStruct.valueFromTypedProto;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
@@ -413,6 +409,33 @@ public final class Mutation implements Serializable {
 
     private SerializationProxy(Mutation mutation) {
       com.google.spanner.v1.Mutation.Builder builder = com.google.spanner.v1.Mutation.newBuilder();
+      if (mutation.operation == Op.DELETE) {
+        com.google.spanner.v1.Mutation.Delete.Builder delete = builder.getDeleteBuilder();
+        delete.setTable(mutation.getTable());
+        com.google.spanner.v1.KeySet.Builder keySetBuilder = delete.getKeySetBuilder();
+        if (mutation.getKeySet().isAll()) {
+          keySetBuilder.setAll(true);
+        } else {
+          for (KeyRange range : mutation.getKeySet().getRanges()) {
+            com.google.spanner.v1.KeyRange.Builder rangesBuilder = keySetBuilder.addRangesBuilder();
+            if (range.getStartType() == KeyRange.Endpoint.OPEN) {
+              rangesBuilder.setStartOpen(keyToListValues(range.getStart()));
+            } else if (range.getStartType() == KeyRange.Endpoint.CLOSED) {
+              rangesBuilder.setStartClosed(keyToListValues(range.getStart()));
+            }
+            if (range.geEndType() == KeyRange.Endpoint.OPEN) {
+              rangesBuilder.setEndOpen(keyToListValues(range.getEnd()));
+            } else if (range.geEndType() == KeyRange.Endpoint.CLOSED) {
+              rangesBuilder.setEndClosed(keyToListValues(range.getEnd()));
+            }
+          }
+          for (Key key : mutation.getKeySet().getKeys()) {
+            keySetBuilder.addKeys(keyToListValues(key));
+          }
+        }
+        proto = builder.build();
+        return;
+      }
       com.google.spanner.v1.Mutation.Write.Builder write;
       switch (mutation.operation) {
         case INSERT:
@@ -427,26 +450,56 @@ public final class Mutation implements Serializable {
         case REPLACE:
           write = builder.getReplaceBuilder();
           break;
-        case DELETE:
         default:
           throw new AssertionError("Impossible: " + mutation.operation);
       }
-      ListValue.Builder types = ListValue.newBuilder();
       ListValue.Builder values = ListValue.newBuilder();
       for (Value value : mutation.getValues()) {
-        com.google.protobuf.Value typeValue =
-                com.google.protobuf.Value.newBuilder()
-                        .setStringValueBytes(value.getType().toProto().toByteString())
-                        .build();
-        types.addValues(typeValue);
-        values.addValues(value.toProto());
+        values.addValues(value.toTypedProto());
       }
       write
               .setTable(mutation.table)
               .addAllColumns(mutation.columns)
-              .addValues(types)
               .addValues(values);
       proto = builder.build();
+    }
+
+    private static ListValue keyToListValues(Key key) {
+      return ListValue.newBuilder().addAllValues(Iterables
+              .transform(key.toValues(), new Function<Value, com.google.protobuf.Value>() {
+                @Override
+                public com.google.protobuf.Value apply(Value input) {
+                  return input.toTypedProto();
+                }
+              })).build();
+    }
+
+    private static Key keyFromListValues(ListValue value) {
+      Key.Builder builder = Key.newBuilder();
+      for(com.google.protobuf.Value part :value.getValuesList()){
+        builder.appendObject(fromTypedProto(part));
+      }
+      return builder.build();
+    }
+
+    private static KeyRange keyRangeFromProto(com.google.spanner.v1.KeyRange proto) {
+      KeyRange.Builder builder = KeyRange.newBuilder();
+      if (proto.getEndKeyTypeCase() == com.google.spanner.v1.KeyRange.EndKeyTypeCase.END_OPEN) {
+        builder.setEnd(keyFromListValues(proto.getEndOpen()));
+        builder.setEndType(KeyRange.Endpoint.OPEN);
+      } else if (proto.getEndKeyTypeCase() == com.google.spanner.v1.KeyRange.EndKeyTypeCase
+              .END_CLOSED) {
+        builder.setEnd(keyFromListValues(proto.getEndClosed()));
+        builder.setEndType(KeyRange.Endpoint.CLOSED);
+      }
+      if (proto.getStartKeyTypeCase() == com.google.spanner.v1.KeyRange.StartKeyTypeCase.START_OPEN) {
+        builder.setStart(keyFromListValues(proto.getStartOpen()));
+        builder.setStartType(KeyRange.Endpoint.OPEN);
+      } else if (proto.getStartKeyTypeCase() == com.google.spanner.v1.KeyRange.StartKeyTypeCase.START_CLOSED) {
+        builder.setStart(keyFromListValues(proto.getStartClosed()));
+        builder.setStartType(KeyRange.Endpoint.CLOSED);
+      }
+      return builder.build();
     }
 
     private Object readResolve() throws ObjectStreamException {
@@ -470,81 +523,31 @@ public final class Mutation implements Serializable {
           write = proto.getReplace();
           break;
         case DELETE:
+          KeySet.Builder keySetBuilder = KeySet.newBuilder();
+          com.google.spanner.v1.KeySet keySetProto = proto.getDelete().getKeySet();
+          if (keySetProto.getAll()) {
+            keySetBuilder.setAll();
+          } else {
+            for(ListValue key : keySetProto.getKeysList()) {
+              keySetBuilder.addKey(keyFromListValues(key));
+            }
+            for(com.google.spanner.v1.KeyRange range : keySetProto.getRangesList()) {
+              keySetBuilder.addRange(keyRangeFromProto(range));
+            }
+          }
+          return Mutation.delete(proto.getDelete().getTable(), keySetBuilder.build());
         default:
           throw new AssertionError("Impossible: " + proto.getOperationCase());
       }
 
       for (int i = 0; i < write.getColumnsCount(); i++) {
-        Type type;
-        try {
-          type =
-                  Type.fromProto(
-                          com.google.spanner.v1.Type.parseFrom(
-                                  write.getValues(0).getValues(i).getStringValueBytes()));
-        } catch (InvalidProtocolBufferException e) {
-          throw new StreamCorruptedException("Cannot read value type.");
-        }
-        com.google.protobuf.Value value = write.getValues(1).getValues(i);
-        builder.set(write.getColumns(i)).handle(asSpannerValue(type, value));
+        com.google.protobuf.Value value = write.getValues(0).getValues(i);
+        builder.set(write.getColumns(i)).handle(valueFromTypedProto(value));
       }
 
       return builder.build();
     }
 
-    private static com.google.cloud.spanner.Value asSpannerValue(
-            Type fieldType, com.google.protobuf.Value proto) {
-      Object value = decodeValue(fieldType, proto);
-      switch (fieldType.getCode()) {
-        case BOOL:
-          return com.google.cloud.spanner.Value.bool((Boolean) value);
-        case INT64:
-          return com.google.cloud.spanner.Value.int64((Long) value);
-        case FLOAT64:
-          return com.google.cloud.spanner.Value.float64((Double) value);
-        case STRING:
-          return com.google.cloud.spanner.Value.string((String) value);
-        case BYTES:
-          return com.google.cloud.spanner.Value.bytes((ByteArray) value);
-        case TIMESTAMP:
-          return com.google.cloud.spanner.Value.timestamp(
-                  (com.google.cloud.Timestamp) value);
-        case DATE:
-          return com.google.cloud.spanner.Value.date(
-                  (com.google.cloud.Date) value);
-        case ARRAY:
-          Type elementType = fieldType.getArrayElementType();
-          switch (elementType.getCode()) {
-            case BOOL:
-              return com.google.cloud.spanner.Value.boolArray((Iterable<Boolean>) value);
-            case INT64:
-              return com.google.cloud.spanner.Value.int64Array((Iterable<Long>) value);
-            case FLOAT64:
-              return com.google.cloud.spanner.Value.float64Array((Iterable<Double>) value);
-            case STRING:
-              return com.google.cloud.spanner.Value.stringArray((Iterable<String>) value);
-            case BYTES:
-              return com.google.cloud.spanner.Value.bytesArray((Iterable<ByteArray>) value);
-            case TIMESTAMP:
-              return com.google.cloud.spanner.Value.timestampArray(
-                  (Iterable<com.google.cloud.Timestamp>) value);
-            case DATE:
-              return com.google.cloud.spanner.Value.dateArray(
-                  (Iterable<com.google.cloud.Date>) value);
-
-            case STRUCT:
-              // struct arrays are not supported in mutation.
-              List<Type.StructField> fields = elementType.getStructFields();
-              return com.google.cloud.spanner.Value.structArray(
-                  fields, (Iterable<Struct>) value);
-            default:
-              throw new AssertionError(
-                  "Unhandled type code: " + elementType.getCode());
-          }
-        case STRUCT: // Not a legal top-level field type.
-        default:
-          throw new AssertionError("Unhandled type code: " + fieldType.getCode());
-      }
-    }
   }
 
 

@@ -19,6 +19,7 @@ import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.Value;
 
@@ -34,6 +35,92 @@ class GrpcStruct extends Struct {
   GrpcStruct(Type type, List<Object> rowData) {
     this.type = type;
     this.rowData = rowData;
+  }
+
+  static com.google.cloud.spanner.Value valueFromTypedProto(com.google.protobuf.Value proto) {
+    if (proto.getKindCase() != Value.KindCase.LIST_VALUE && proto.getListValue().getValuesCount()
+            != 2) {
+      throw new AssertionError("Expected a list of two elements: type and value");
+    }
+    Type type;
+    try {
+      type = Type.fromProto(
+              com.google.spanner.v1.Type.parseFrom(
+                      proto.getListValue().getValues(0).getStringValueBytes()));
+    } catch (InvalidProtocolBufferException e) {
+      throw new AssertionError("Expected serialized type.");
+    }
+    return asSpannerValue(type, proto.getListValue().getValues(1));
+  }
+
+  static Object fromTypedProto(com.google.protobuf.Value proto) {
+    if (proto.getKindCase() != Value.KindCase.LIST_VALUE && proto.getListValue().getValuesCount()
+            != 2) {
+      throw new AssertionError("Expected a list of two elements: type and value");
+    }
+    Type type;
+    try {
+      type = Type.fromProto(
+              com.google.spanner.v1.Type.parseFrom(
+                      proto.getListValue().getValues(0).getStringValueBytes()));
+    } catch (InvalidProtocolBufferException e) {
+      throw new AssertionError("Expected serialized type.");
+    }
+    return decodeValue(type, proto.getListValue().getValues(1));
+  }
+
+  static com.google.cloud.spanner.Value asSpannerValue(
+          Type fieldType, com.google.protobuf.Value proto) {
+    Object value = decodeValue(fieldType, proto);
+    switch (fieldType.getCode()) {
+      case BOOL:
+        return com.google.cloud.spanner.Value.bool((Boolean) value);
+      case INT64:
+        return com.google.cloud.spanner.Value.int64((Long) value);
+      case FLOAT64:
+        return com.google.cloud.spanner.Value.float64((Double) value);
+      case STRING:
+        return com.google.cloud.spanner.Value.string((String) value);
+      case BYTES:
+        return com.google.cloud.spanner.Value.bytes((ByteArray) value);
+      case TIMESTAMP:
+        return com.google.cloud.spanner.Value.timestamp(
+                (com.google.cloud.Timestamp) value);
+      case DATE:
+        return com.google.cloud.spanner.Value.date(
+                (com.google.cloud.Date) value);
+      case ARRAY:
+        Type elementType = fieldType.getArrayElementType();
+        switch (elementType.getCode()) {
+          case BOOL:
+            return com.google.cloud.spanner.Value.boolArray((Iterable<Boolean>) value);
+          case INT64:
+            return com.google.cloud.spanner.Value.int64Array((Iterable<Long>) value);
+          case FLOAT64:
+            return com.google.cloud.spanner.Value.float64Array((Iterable<Double>) value);
+          case STRING:
+            return com.google.cloud.spanner.Value.stringArray((Iterable<String>) value);
+          case BYTES:
+            return com.google.cloud.spanner.Value.bytesArray((Iterable<ByteArray>) value);
+          case TIMESTAMP:
+            return com.google.cloud.spanner.Value.timestampArray(
+                    (Iterable<com.google.cloud.Timestamp>) value);
+          case DATE:
+            return com.google.cloud.spanner.Value.dateArray(
+                    (Iterable<com.google.cloud.Date>) value);
+
+          case STRUCT:
+            List<Type.StructField> fields = elementType.getStructFields();
+            return com.google.cloud.spanner.Value.structArray(
+                    fields, (Iterable<Struct>) value);
+          default:
+            throw new AssertionError(
+                    "Unhandled type code: " + elementType.getCode());
+        }
+      case STRUCT: // Not a legal top-level field type.
+      default:
+        throw new AssertionError("Unhandled type code: " + fieldType.getCode());
+    }
   }
 
   static Object decodeValue(Type fieldType, com.google.protobuf.Value proto) {

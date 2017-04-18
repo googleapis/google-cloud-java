@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
@@ -406,14 +407,28 @@ public class MutationTest {
 
   @Test
   public void javaSerialization() throws Exception {
-    appendAllTypesAndReserializeAndAssert(Mutation.newInsertBuilder("test"));
-    appendAllTypesAndReserializeAndAssert(Mutation.newUpdateBuilder("test"));
-    appendAllTypesAndReserializeAndAssert(Mutation.newReplaceBuilder("test"));
-    appendAllTypesAndReserializeAndAssert(Mutation.newInsertOrUpdateBuilder("test"));
+    reserializeAndAssert(appendAllTypes(Mutation.newInsertBuilder("test")).build());
+    reserializeAndAssert(appendAllTypes(Mutation.newUpdateBuilder("test")).build());
+    reserializeAndAssert(appendAllTypes(Mutation.newReplaceBuilder("test")).build());
+    reserializeAndAssert(appendAllTypes(Mutation.newInsertOrUpdateBuilder("test")).build());
+
+    reserializeAndAssert(Mutation.delete("test", Key.of("one", 2, null, true, 2.3, ByteArray
+            .fromBase64("abcd"), Timestamp.ofTimeSecondsAndNanos(1, 2), Date.fromYearMonthDay
+            (2017, 04, 17)
+    )));
+    reserializeAndAssert(Mutation.delete("test", KeySet.all()));
+    reserializeAndAssert(Mutation.delete("test", KeySet.newBuilder().addRange(KeyRange
+            .closedClosed(Key.of("one", 2, null), Key.of("two", 3, null))).build()));
+    reserializeAndAssert(Mutation.delete("test", KeySet.newBuilder().addRange(KeyRange
+            .closedOpen(Key.of("one", 2, null), Key.of("two", 3, null))).build()));
+    reserializeAndAssert(Mutation.delete("test", KeySet.newBuilder().addRange(KeyRange
+            .openClosed(Key.of("one", 2, null), Key.of("two", 3, null))).build()));
+    reserializeAndAssert(Mutation.delete("test", KeySet.newBuilder().addRange(KeyRange
+            .openOpen(Key.of("one", 2, null), Key.of("two", 3, null))).build()));
   }
 
-  private void appendAllTypesAndReserializeAndAssert(Mutation.WriteBuilder builder) {
-    builder
+  private Mutation.WriteBuilder appendAllTypes(Mutation.WriteBuilder builder) {
+    return builder
         .set("bool")
         .to(true)
         .set("boolNull")
@@ -466,7 +481,6 @@ public class MutationTest {
                 Date.fromYearMonthDay(2017, 04, 17), Date.fromYearMonthDay(2017, 04, 18)))
         .set("dateArrNull")
         .toDateArray(null);
-    reserializeAndAssert(builder.build());
   }
 
 

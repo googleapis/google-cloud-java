@@ -16,19 +16,23 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
+import com.google.common.base.Function;
 import com.google.common.base.Joiner;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Value;
+
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import javax.annotation.Nullable;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Represents a row key in a Cloud Spanner table or index. A key is a tuple of values constrained to
@@ -225,6 +229,17 @@ public final class Key {
     return parts;
   }
 
+
+  public Iterable<com.google.cloud.spanner.Value> getPartsAsValues() {
+    return Iterables.transform(parts, new Function<Object, com.google.cloud.spanner.Value>() {
+      @Nullable
+      @Override
+      public com.google.cloud.spanner.Value apply(@Nullable Object part) {
+        return null;
+      }
+    });
+  }
+
   /** Returns a builder initialized with the value of this key. */
   public Builder toBuilder() {
     return new Builder(this);
@@ -261,6 +276,43 @@ public final class Key {
   @Override
   public int hashCode() {
     return parts.hashCode();
+  }
+
+  Iterable<com.google.cloud.spanner.Value> toValues() {
+    return Lists.transform(parts, new Function<Object, com.google.cloud.spanner.Value>() {
+      @Nullable
+      @Override
+      public com.google.cloud.spanner.Value apply(@Nullable Object value) {
+        if (value == null) {
+          return com.google.cloud.spanner.Value.bool((Boolean) null);
+        } else if (value instanceof Boolean) {
+          return com.google.cloud.spanner.Value.bool((Boolean) value);
+        } else if (value instanceof Integer) {
+          return com.google.cloud.spanner.Value.int64((Integer) value);
+        } else if (value instanceof Long) {
+          return com.google.cloud.spanner.Value.int64((Long) value);
+        } else if (value instanceof Float) {
+          return com.google.cloud.spanner.Value.float64((Float) value);
+        } else if (value instanceof Double) {
+          return com.google.cloud.spanner.Value.float64((Double) value);
+        } else if (value instanceof String) {
+          return com.google.cloud.spanner.Value.string((String) value);
+        } else if (value instanceof ByteArray) {
+          return com.google.cloud.spanner.Value.bytes((ByteArray) value);
+        } else if (value instanceof Timestamp) {
+          return com.google.cloud.spanner.Value.timestamp((Timestamp) value);
+        } else if (value instanceof Date) {
+          return com.google.cloud.spanner.Value.date((Date) value);
+        } else {
+          throw new IllegalArgumentException(
+                  "Unsupported type ["
+                          + value.getClass().getCanonicalName()
+                          + "] for argument: "
+                          + value);
+        }
+
+      }
+    });
   }
 
   ListValue toProto() {
