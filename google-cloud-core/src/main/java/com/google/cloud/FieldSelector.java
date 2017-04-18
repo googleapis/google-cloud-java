@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import com.google.api.core.InternalApi;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
@@ -42,6 +43,7 @@ public interface FieldSelector {
    * A helper class used to build composite selectors given a number of fields. This class is not
    * supposed to be used directly by users.
    */
+  @InternalApi
   class Helper {
 
     private static final String[] EMPTY_FIELDS = {};

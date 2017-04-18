@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.auth.Credentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import com.google.common.net.HostAndPort;
 import io.grpc.internal.SharedResourceHolder;
 import io.grpc.internal.SharedResourceHolder.Resource;
 import java.io.IOException;
