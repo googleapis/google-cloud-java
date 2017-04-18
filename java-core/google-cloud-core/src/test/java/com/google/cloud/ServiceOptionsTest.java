@@ -22,8 +22,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.api.gax.core.ApiClock;
-import com.google.api.gax.core.CurrentMillisClock;
+import com.google.api.core.ApiClock;
+import com.google.api.core.CurrentMillisClock;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import java.io.ByteArrayInputStream;
