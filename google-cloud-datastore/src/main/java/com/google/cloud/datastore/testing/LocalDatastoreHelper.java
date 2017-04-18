@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore.testing;
 
+import com.google.api.core.InternalApi;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -42,7 +43,10 @@ import java.util.logging.Logger;
 
 /**
  * Utility to start and stop local Google Cloud Datastore process.
+ * 
+ * Internal testing use only
  */
+@InternalApi
 public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
 
   private final List<EmulatorRunner> emulatorRunners;
