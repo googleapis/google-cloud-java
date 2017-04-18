@@ -16,13 +16,11 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.common.truth.Truth.assertThat;
-
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.testing.EqualsTester;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
 import org.junit.Rule;
@@ -30,6 +28,13 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
+import static com.google.common.truth.Truth.assertThat;
 
 /** Unit tests for {@link com.google.cloud.spanner.Mutation}. */
 @RunWith(JUnit4.class)
@@ -398,6 +403,72 @@ public class MutationTest {
         matchesProto(
             "insert { table: 'T2', columns: 'C', values { values { string_value: 'V1' } } }"));
   }
+
+  @Test
+  public void javaSerialization() throws Exception {
+    appendAllTypesAndReserializeAndAssert(Mutation.newInsertBuilder("test"));
+    appendAllTypesAndReserializeAndAssert(Mutation.newUpdateBuilder("test"));
+    appendAllTypesAndReserializeAndAssert(Mutation.newReplaceBuilder("test"));
+    appendAllTypesAndReserializeAndAssert(Mutation.newInsertOrUpdateBuilder("test"));
+  }
+
+  private void appendAllTypesAndReserializeAndAssert(Mutation.WriteBuilder builder) {
+    builder
+        .set("bool")
+        .to(true)
+        .set("boolNull")
+        .to((Boolean) null)
+        .set("int")
+        .to(42)
+        .set("intNull")
+        .to((Long) null)
+        .set("float")
+        .to(42.1)
+        .set("floatNull")
+        .to((Double) null)
+        .set("string")
+        .to("str")
+        .set("stringNull")
+        .to((String) null)
+        .set("boolArr")
+        .toBoolArray(new boolean[] {true, false})
+        .set("boolArrNull")
+        .toBoolArray((boolean[]) null)
+        .set("intArr")
+        .toInt64Array(new long[] {1, 2, 3})
+        .set("intArrNull")
+        .toInt64Array((long[]) null)
+        .set("floatArr")
+        .toFloat64Array(new double[] {1.1, 2.2, 3.3})
+        .set("floatArrNull")
+        .toFloat64Array((double[]) null)
+        .set("nullStr")
+        .to((String) null)
+        .set("timestamp")
+        .to(Timestamp.MAX_VALUE)
+        .set("timestampNull")
+        .to((Timestamp) null)
+        .set("date")
+        .to(Date.fromYearMonthDay(2017, 04, 17))
+        .set("dateNull")
+        .to((Date) null)
+        .set("stringArr")
+        .toStringArray(ImmutableList.of("one", "two"))
+        .set("stringArrNull")
+        .toStringArray(null)
+        .set("timestampArr")
+        .toTimestampArray(ImmutableList.of(Timestamp.MAX_VALUE, Timestamp.MAX_VALUE))
+        .set("timestampArrNull")
+        .toTimestampArray(null)
+        .set("dateArr")
+        .toDateArray(
+            ImmutableList.of(
+                Date.fromYearMonthDay(2017, 04, 17), Date.fromYearMonthDay(2017, 04, 18)))
+        .set("dateArrNull")
+        .toDateArray(null);
+    reserializeAndAssert(builder.build());
+  }
+
 
   static Matcher<com.google.spanner.v1.Mutation> matchesProto(String expected) {
     return SpannerMatchers.matchesProto(com.google.spanner.v1.Mutation.class, expected);

@@ -16,17 +16,24 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.common.base.Preconditions.checkState;
-
+import com.google.cloud.ByteArray;
 import com.google.common.collect.ImmutableList;
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.ListValue;
+
+import javax.annotation.Nullable;
+import java.io.ObjectStreamException;
+import java.io.Serializable;
+import java.io.StreamCorruptedException;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import javax.annotation.Nullable;
+
+import static com.google.cloud.spanner.GrpcStruct.decodeValue;
+import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkState;
 
 /**
  * Represents an individual table modification to be applied to Cloud Spanner.
@@ -47,7 +54,7 @@ import javax.annotation.Nullable;
  *
  * <p>{@code Mutation} instances are immutable.
  */
-public final class Mutation {
+public final class Mutation implements Serializable {
   /** Enumerates the types of mutation that can be applied. */
   public enum Op {
     /**
@@ -399,4 +406,150 @@ public final class Mutation {
       out.add(proto.build());
     }
   }
+
+  private static class SerializationProxy implements Serializable {
+    // TODO(mairbek): custom reading bytes instead...
+    private com.google.spanner.v1.Mutation proto;
+
+    private SerializationProxy(Mutation mutation) {
+      com.google.spanner.v1.Mutation.Builder builder = com.google.spanner.v1.Mutation.newBuilder();
+      com.google.spanner.v1.Mutation.Write.Builder write;
+      switch (mutation.operation) {
+        case INSERT:
+          write = builder.getInsertBuilder();
+          break;
+        case UPDATE:
+          write = builder.getUpdateBuilder();
+          break;
+        case INSERT_OR_UPDATE:
+          write = builder.getInsertOrUpdateBuilder();
+          break;
+        case REPLACE:
+          write = builder.getReplaceBuilder();
+          break;
+        case DELETE:
+        default:
+          throw new AssertionError("Impossible: " + mutation.operation);
+      }
+      ListValue.Builder types = ListValue.newBuilder();
+      ListValue.Builder values = ListValue.newBuilder();
+      for (Value value : mutation.getValues()) {
+        com.google.protobuf.Value typeValue =
+                com.google.protobuf.Value.newBuilder()
+                        .setStringValueBytes(value.getType().toProto().toByteString())
+                        .build();
+        types.addValues(typeValue);
+        values.addValues(value.toProto());
+      }
+      write
+              .setTable(mutation.table)
+              .addAllColumns(mutation.columns)
+              .addValues(types)
+              .addValues(values);
+      proto = builder.build();
+    }
+
+    private Object readResolve() throws ObjectStreamException {
+      com.google.spanner.v1.Mutation.Write write;
+      Mutation.WriteBuilder builder;
+      switch (proto.getOperationCase()) {
+        case INSERT:
+          builder = Mutation.newInsertBuilder(proto.getInsert().getTable());
+          write = proto.getInsert();
+          break;
+        case UPDATE:
+          builder = Mutation.newUpdateBuilder(proto.getUpdate().getTable());
+          write = proto.getUpdate();
+          break;
+        case INSERT_OR_UPDATE:
+          builder = Mutation.newInsertOrUpdateBuilder(proto.getInsertOrUpdate().getTable());
+          write = proto.getInsertOrUpdate();
+          break;
+        case REPLACE:
+          builder = Mutation.newReplaceBuilder(proto.getReplace().getTable());
+          write = proto.getReplace();
+          break;
+        case DELETE:
+        default:
+          throw new AssertionError("Impossible: " + proto.getOperationCase());
+      }
+
+      for (int i = 0; i < write.getColumnsCount(); i++) {
+        Type type;
+        try {
+          type =
+                  Type.fromProto(
+                          com.google.spanner.v1.Type.parseFrom(
+                                  write.getValues(0).getValues(i).getStringValueBytes()));
+        } catch (InvalidProtocolBufferException e) {
+          throw new StreamCorruptedException("Cannot read value type.");
+        }
+        com.google.protobuf.Value value = write.getValues(1).getValues(i);
+        builder.set(write.getColumns(i)).handle(asSpannerValue(type, value));
+      }
+
+      return builder.build();
+    }
+
+    private static com.google.cloud.spanner.Value asSpannerValue(
+            Type fieldType, com.google.protobuf.Value proto) {
+      Object value = decodeValue(fieldType, proto);
+      switch (fieldType.getCode()) {
+        case BOOL:
+          return com.google.cloud.spanner.Value.bool((Boolean) value);
+        case INT64:
+          return com.google.cloud.spanner.Value.int64((Long) value);
+        case FLOAT64:
+          return com.google.cloud.spanner.Value.float64((Double) value);
+        case STRING:
+          return com.google.cloud.spanner.Value.string((String) value);
+        case BYTES:
+          return com.google.cloud.spanner.Value.bytes((ByteArray) value);
+        case TIMESTAMP:
+          return com.google.cloud.spanner.Value.timestamp(
+                  (com.google.cloud.Timestamp) value);
+        case DATE:
+          return com.google.cloud.spanner.Value.date(
+                  (com.google.cloud.Date) value);
+        case ARRAY:
+          Type elementType = fieldType.getArrayElementType();
+          switch (elementType.getCode()) {
+            case BOOL:
+              return com.google.cloud.spanner.Value.boolArray((Iterable<Boolean>) value);
+            case INT64:
+              return com.google.cloud.spanner.Value.int64Array((Iterable<Long>) value);
+            case FLOAT64:
+              return com.google.cloud.spanner.Value.float64Array((Iterable<Double>) value);
+            case STRING:
+              return com.google.cloud.spanner.Value.stringArray((Iterable<String>) value);
+            case BYTES:
+              return com.google.cloud.spanner.Value.bytesArray((Iterable<ByteArray>) value);
+            case TIMESTAMP:
+              return com.google.cloud.spanner.Value.timestampArray(
+                  (Iterable<com.google.cloud.Timestamp>) value);
+            case DATE:
+              return com.google.cloud.spanner.Value.dateArray(
+                  (Iterable<com.google.cloud.Date>) value);
+
+            case STRUCT:
+              // struct arrays are not supported in mutation.
+              List<Type.StructField> fields = elementType.getStructFields();
+              return com.google.cloud.spanner.Value.structArray(
+                  fields, (Iterable<Struct>) value);
+            default:
+              throw new AssertionError(
+                  "Unhandled type code: " + elementType.getCode());
+          }
+        case STRUCT: // Not a legal top-level field type.
+        default:
+          throw new AssertionError("Unhandled type code: " + fieldType.getCode());
+      }
+    }
+  }
+
+
+  private Object writeReplace() {
+    return new SerializationProxy(this);
+  }
+
 }
