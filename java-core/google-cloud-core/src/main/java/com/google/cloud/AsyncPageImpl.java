@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.AsyncPage;
 import com.google.api.gax.core.Page;
 import com.google.common.base.Throwables;
@@ -30,6 +31,7 @@ import java.util.concurrent.ExecutionException;
  *
  * @param <T> the value type that the page holds
  */
+@InternalApi
 public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
 
   private static final long serialVersionUID = -6009473188630364906L;

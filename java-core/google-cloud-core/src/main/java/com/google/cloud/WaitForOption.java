@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
@@ -27,6 +28,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * This class represents options for methods that wait for changes in the status of a resource.
  */
+@BetaApi
 public abstract class WaitForOption implements Serializable {
 
   private static final long serialVersionUID = 8443451708032349243L;
