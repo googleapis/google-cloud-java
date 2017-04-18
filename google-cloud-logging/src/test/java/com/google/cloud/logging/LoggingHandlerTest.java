@@ -519,6 +519,7 @@ public class LoggingHandlerTest {
     handler.publish(record);
     assertEquals(Level.ALL, handler.getLevel());
     assertNotNull(handler.getFilter());
+
     assertEquals(
         "com.google.cloud.logging.LoggingHandlerTest$TestFilter",
         handler.getFilter().getClass().getName());

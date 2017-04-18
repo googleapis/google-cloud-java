@@ -196,7 +196,7 @@ public class LoggingHandler extends Handler {
                     String.valueOf(baseLevel.intValue())))
           };
 
-      getLogging().setFlushSeverity(severityFor(flushLevel));
+      getLogging().setFlushSeverity(severityFor(flushLevel, Severity.ERROR));
       getLogging().setWriteSynchronicity(config.getSynchronicity());
 
       this.enhancers = new LinkedList<>();
@@ -283,7 +283,7 @@ public class LoggingHandler extends Handler {
     LogEntry.Builder builder =
         LogEntry.newBuilder(Payload.StringPayload.of(payload))
             .setTimestamp(record.getMillis())
-            .setSeverity(severityFor(level));
+            .setSeverity(severityFor(level, Severity.DEFAULT));
 
     if (!baseLevel.equals(level)) {
       builder
@@ -330,7 +330,7 @@ public class LoggingHandler extends Handler {
    */
   public void setFlushLevel(Level flushLevel) {
     this.flushLevel = flushLevel;
-    getLogging().setFlushSeverity(severityFor(flushLevel));
+    getLogging().setFlushSeverity(severityFor(flushLevel, Severity.ERROR));
   }
 
   /**
@@ -355,7 +355,7 @@ public class LoggingHandler extends Handler {
     logger.addHandler(handler);
   }
 
-  private static Severity severityFor(Level level) {
+  private static Severity severityFor(Level level, Severity defaultSeverity) {
     if (level instanceof LoggingLevel) {
       return ((LoggingLevel) level).getSeverity();
     }
@@ -383,7 +383,7 @@ public class LoggingHandler extends Handler {
       case 1000:
         return Severity.ERROR;
       default:
-        return Severity.DEFAULT;
+        return defaultSeverity;
     }
   }
 
