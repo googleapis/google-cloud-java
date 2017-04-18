@@ -16,8 +16,7 @@
 
 package com.google.cloud.logging;
 
-/*
- */
+/* Adds tracing support for logging with thread-local trace ID tracking. */
 public class TraceLoggingEnhancer implements LoggingEnhancer {
 
   private static final ThreadLocal<String> traceId = new ThreadLocal<>();
