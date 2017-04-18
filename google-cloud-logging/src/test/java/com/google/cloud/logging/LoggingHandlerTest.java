@@ -21,17 +21,12 @@ import static org.easymock.EasyMock.expectLastCall;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.LogEntry.Builder;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
 import java.util.logging.ErrorManager;
@@ -39,7 +34,6 @@ import java.util.logging.Filter;
 import java.util.logging.Formatter;
 import java.util.logging.Handler;
 import java.util.logging.Level;
-import java.util.logging.LogManager;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import org.easymock.EasyMock;
@@ -199,7 +193,7 @@ public class LoggingHandlerTest {
 
   @Before
   public void setUp() {
-    logging = EasyMock.createStrictMock(Logging.class);
+    logging = EasyMock.createMock(Logging.class);
     options = EasyMock.createStrictMock(LoggingOptions.class);
   }
 
@@ -479,58 +473,6 @@ public class LoggingHandlerTest {
     logger.setLevel(Level.ALL);
     LoggingHandler.addHandler(logger, handler);
     logger.log(newLogRecord(Level.FINEST, MESSAGE));
-  }
-
-  @Test
-  public void testPropertiesFile() throws IOException, InterruptedException {
-    expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
-    expect(options.getService()).andReturn(logging);
-    MonitoredResource monitoredResource = MonitoredResource.of(
-            "testResourceType", ImmutableMap.of("project_id", PROJECT, "enhanced", "true"));
-    LogEntry entry =
-        LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
-            .setSeverity(Severity.DEBUG)
-            .addLabel("enhanced", "true")
-            .setTimestamp(123456789L)
-            .build();
-
-    logging.setFlushSeverity(Severity.CRITICAL);
-    expectLastCall().once();
-    logging.setWriteSynchronicity(Synchronicity.SYNC);
-    expectLastCall().once();
-    logging.write(
-        ImmutableList.of(entry),
-        WriteOption.logName("testLogName"),
-        WriteOption.resource(monitoredResource),
-        WriteOption.labels(
-            ImmutableMap.of(
-                "levelName",
-                Level.FINEST.getName(),
-                "levelValue",
-                String.valueOf(Level.FINEST.intValue()))));
-    logging.getWriteSynchronicity();
-    expectLastCall().andReturn(Synchronicity.SYNC).once();
-    replay(options, logging);
-    LogManager.getLogManager()
-        .readConfiguration(new ByteArrayInputStream(renderConfig(CONFIG_MAP)));
-    LoggingHandler handler = new LoggingHandler(null, options, monitoredResource);
-    LogRecord record = new LogRecord(Level.FINEST, MESSAGE);
-    record.setMillis(123456789L);
-    handler.publish(record);
-    assertEquals(Level.ALL, handler.getLevel());
-    assertNotNull(handler.getFilter());
-
-    assertEquals(
-        "com.google.cloud.logging.LoggingHandlerTest$TestFilter",
-        handler.getFilter().getClass().getName());
-    assertNotNull(handler.getFormatter());
-    assertEquals(
-        "com.google.cloud.logging.LoggingHandlerTest$TestFormatter",
-        handler.getFormatter().getClass().getName());
-    assertEquals(LoggingLevel.CRITICAL, handler.getFlushLevel());
-    assertEquals(Synchronicity.SYNC, handler.getSynchronicity());
-
-    LogManager.getLogManager().reset();
   }
 
   @Test
