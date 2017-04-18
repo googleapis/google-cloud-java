@@ -22,7 +22,6 @@ import com.google.cloud.Timestamp;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Value;
@@ -230,16 +229,6 @@ public final class Key {
   }
 
 
-  public Iterable<com.google.cloud.spanner.Value> getPartsAsValues() {
-    return Iterables.transform(parts, new Function<Object, com.google.cloud.spanner.Value>() {
-      @Nullable
-      @Override
-      public com.google.cloud.spanner.Value apply(@Nullable Object part) {
-        return null;
-      }
-    });
-  }
-
   /** Returns a builder initialized with the value of this key. */
   public Builder toBuilder() {
     return new Builder(this);
@@ -278,13 +267,17 @@ public final class Key {
     return parts.hashCode();
   }
 
-  Iterable<com.google.cloud.spanner.Value> toValues() {
-    return Lists.transform(parts, new Function<Object, com.google.cloud.spanner.Value>() {
+/**
+ * Returns the parts in this key represented as Cloud Spanner
+ * {@link com.google.cloud.spanner.Value}.
+ */
+ Iterable<com.google.cloud.spanner.Value> toValues() {
+    return Iterables.transform(parts, new Function<Object, com.google.cloud.spanner.Value>() {
       @Nullable
       @Override
       public com.google.cloud.spanner.Value apply(@Nullable Object value) {
         if (value == null) {
-          return com.google.cloud.spanner.Value.bool((Boolean) null);
+          return com.google.cloud.spanner.Value.bool(null);
         } else if (value instanceof Boolean) {
           return com.google.cloud.spanner.Value.bool((Boolean) value);
         } else if (value instanceof Integer) {

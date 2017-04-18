@@ -28,6 +28,9 @@ import java.util.*;
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 import static com.google.common.base.Preconditions.checkArgument;
 
+/**
+ * A gRPC/proto-based struct.
+ */
 class GrpcStruct extends Struct {
   private final Type type;
   private final List<Object> rowData;
@@ -37,7 +40,7 @@ class GrpcStruct extends Struct {
     this.rowData = rowData;
   }
 
-  static com.google.cloud.spanner.Value valueFromTypedProto(com.google.protobuf.Value proto) {
+  static com.google.cloud.spanner.Value valueFromTypedProto(Value proto) {
     if (proto.getKindCase() != Value.KindCase.LIST_VALUE && proto.getListValue().getValuesCount()
             != 2) {
       throw new AssertionError("Expected a list of two elements: type and value");
@@ -50,29 +53,8 @@ class GrpcStruct extends Struct {
     } catch (InvalidProtocolBufferException e) {
       throw new AssertionError("Expected serialized type.");
     }
-    return asSpannerValue(type, proto.getListValue().getValues(1));
-  }
-
-  static Object fromTypedProto(com.google.protobuf.Value proto) {
-    if (proto.getKindCase() != Value.KindCase.LIST_VALUE && proto.getListValue().getValuesCount()
-            != 2) {
-      throw new AssertionError("Expected a list of two elements: type and value");
-    }
-    Type type;
-    try {
-      type = Type.fromProto(
-              com.google.spanner.v1.Type.parseFrom(
-                      proto.getListValue().getValues(0).getStringValueBytes()));
-    } catch (InvalidProtocolBufferException e) {
-      throw new AssertionError("Expected serialized type.");
-    }
-    return decodeValue(type, proto.getListValue().getValues(1));
-  }
-
-  static com.google.cloud.spanner.Value asSpannerValue(
-          Type fieldType, com.google.protobuf.Value proto) {
-    Object value = decodeValue(fieldType, proto);
-    switch (fieldType.getCode()) {
+    Object value = decodeValue(type, proto.getListValue().getValues(1));
+    switch (type.getCode()) {
       case BOOL:
         return com.google.cloud.spanner.Value.bool((Boolean) value);
       case INT64:
@@ -88,9 +70,9 @@ class GrpcStruct extends Struct {
                 (com.google.cloud.Timestamp) value);
       case DATE:
         return com.google.cloud.spanner.Value.date(
-                (com.google.cloud.Date) value);
+                (Date) value);
       case ARRAY:
-        Type elementType = fieldType.getArrayElementType();
+        Type elementType = type.getArrayElementType();
         switch (elementType.getCode()) {
           case BOOL:
             return com.google.cloud.spanner.Value.boolArray((Iterable<Boolean>) value);
@@ -107,7 +89,7 @@ class GrpcStruct extends Struct {
                     (Iterable<com.google.cloud.Timestamp>) value);
           case DATE:
             return com.google.cloud.spanner.Value.dateArray(
-                    (Iterable<com.google.cloud.Date>) value);
+                    (Iterable<Date>) value);
 
           case STRUCT:
             List<Type.StructField> fields = elementType.getStructFields();
@@ -119,11 +101,27 @@ class GrpcStruct extends Struct {
         }
       case STRUCT: // Not a legal top-level field type.
       default:
-        throw new AssertionError("Unhandled type code: " + fieldType.getCode());
+        throw new AssertionError("Unhandled type code: " + type.getCode());
     }
   }
 
-  static Object decodeValue(Type fieldType, com.google.protobuf.Value proto) {
+  static Object fromTypedProto(Value proto) {
+    if (proto.getKindCase() != Value.KindCase.LIST_VALUE && proto.getListValue().getValuesCount()
+            != 2) {
+      throw new AssertionError("Expected a list of two elements: type and value");
+    }
+    Type type;
+    try {
+      type = Type.fromProto(
+              com.google.spanner.v1.Type.parseFrom(
+                      proto.getListValue().getValues(0).getStringValueBytes()));
+    } catch (InvalidProtocolBufferException e) {
+      throw new AssertionError("Expected serialized type.");
+    }
+    return decodeValue(type, proto.getListValue().getValues(1));
+  }
+
+  private static Object decodeValue(Type fieldType, com.google.protobuf.Value proto) {
     if (proto.getKindCase() == Value.KindCase.NULL_VALUE) {
       return null;
     }

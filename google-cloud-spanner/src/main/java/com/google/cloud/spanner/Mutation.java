@@ -403,8 +403,10 @@ public final class Mutation implements Serializable {
     }
   }
 
+  /**
+   * A proxy class that handles {@link Mutation} serialization.
+   */
   private static class SerializationProxy implements Serializable {
-    // TODO(mairbek): custom reading bytes instead...
     private com.google.spanner.v1.Mutation proto;
 
     private SerializationProxy(Mutation mutation) {
@@ -476,7 +478,7 @@ public final class Mutation implements Serializable {
 
     private static Key keyFromListValues(ListValue value) {
       Key.Builder builder = Key.newBuilder();
-      for(com.google.protobuf.Value part :value.getValuesList()){
+      for (com.google.protobuf.Value part : value.getValuesList()) {
         builder.appendObject(fromTypedProto(part));
       }
       return builder.build();
@@ -502,6 +504,12 @@ public final class Mutation implements Serializable {
       return builder.build();
     }
 
+    /**
+     * Is called right after the serialization, and substitutes itself with the {@link Mutation}
+     * object.
+     *
+     * @return an instance of {@link Mutation}.
+     */
     private Object readResolve() throws ObjectStreamException {
       com.google.spanner.v1.Mutation.Write write;
       Mutation.WriteBuilder builder;
@@ -551,6 +559,11 @@ public final class Mutation implements Serializable {
   }
 
 
+  /**
+   * Delegates serialization to the {@link SerializationProxy} class.
+   *
+   * @return an instance of {@link SerializationProxy} that is safe to serialize.
+   */
   private Object writeReplace() {
     return new SerializationProxy(this);
   }

@@ -437,6 +437,12 @@ public abstract class Value {
 
   abstract com.google.protobuf.Value toProto();
 
+  /**
+   * Returns a com.google.protobuf.Value that preserves type information, so it is possible ot
+   * recover all the original value from it.
+   *
+   * @return com.google.protobuf.Value of a list [serialized type proto value, value]
+   */
   com.google.protobuf.Value toTypedProto() {
     com.google.protobuf.Value.Builder valueBuilder = com.google.protobuf.Value.newBuilder();
     com.google.protobuf.ListValue.Builder listBuilder = valueBuilder.getListValueBuilder();
