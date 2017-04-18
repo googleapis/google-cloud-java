@@ -24,8 +24,11 @@ import com.google.common.base.Preconditions;
  * a context.
  */
 public abstract class StringEnumValue {
-  private String constant;
+  private final String constant;
 
+  /**
+   * Don't create subclasses outside of google-cloud-java.
+   */
   @InternalApi
   protected StringEnumValue(String constant) {
     this.constant = Preconditions.checkNotNull(constant);

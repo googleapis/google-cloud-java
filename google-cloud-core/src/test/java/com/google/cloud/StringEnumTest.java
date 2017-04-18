@@ -34,7 +34,7 @@ public class StringEnumTest {
       super(constant);
     }
 
-    private static ApiFunction<String, Letter> CONSTRUCTOR =
+    private static final ApiFunction<String, Letter> CONSTRUCTOR =
         new ApiFunction<String, Letter>() {
           @Override
           public Letter apply(String constant) {
@@ -42,13 +42,13 @@ public class StringEnumTest {
           }
         };
 
-    private static StringEnumType<Letter> type = new StringEnumType(
+    private static final StringEnumType<Letter> type = new StringEnumType(
         Letter.class,
         CONSTRUCTOR);
 
-    public static Letter A = type.createAndRegister("A");
-    public static Letter B = type.createAndRegister("B");
-    public static Letter C = type.createAndRegister("C");
+    public static final Letter A = type.createAndRegister("A");
+    public static final Letter B = type.createAndRegister("B");
+    public static final Letter C = type.createAndRegister("C");
 
     public static Letter valueOfStrict(String constant) {
       return type.valueOfStrict(constant);

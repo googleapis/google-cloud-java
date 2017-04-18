@@ -29,7 +29,7 @@ public class StorageClass extends StringEnumValue {
     super(constant);
   }
 
-  private static ApiFunction<String, StorageClass> CONSTRUCTOR =
+  private static final ApiFunction<String, StorageClass> CONSTRUCTOR =
       new ApiFunction<String, StorageClass>() {
         @Override
         public StorageClass apply(String constant) {
@@ -37,39 +37,39 @@ public class StorageClass extends StringEnumValue {
         }
       };
 
-  private static StringEnumType<StorageClass> type = new StringEnumType(
+  private static final StringEnumType<StorageClass> type = new StringEnumType(
       StorageClass.class,
       CONSTRUCTOR);
 
   /**
    * Regional storage class.
    */
-  public static StorageClass REGIONAL = type.createAndRegister("REGIONAL");
+  public static final StorageClass REGIONAL = type.createAndRegister("REGIONAL");
 
   /**
    * Multi-regional storage class.
    */
-  public static StorageClass MULTI_REGIONAL = type.createAndRegister("MULTI_REGIONAL");
+  public static final StorageClass MULTI_REGIONAL = type.createAndRegister("MULTI_REGIONAL");
 
   /**
    * Nearline storage class.
    */
-  public static StorageClass NEARLINE = type.createAndRegister("NEARLINE");
+  public static final StorageClass NEARLINE = type.createAndRegister("NEARLINE");
 
   /**
    * Coldline storage class.
    */
-  public static StorageClass COLDLINE = type.createAndRegister("COLDLINE");
+  public static final StorageClass COLDLINE = type.createAndRegister("COLDLINE");
 
   /**
    * Standard storage class.
    */
-  public static StorageClass STANDARD = type.createAndRegister("STANDARD");
+  public static final StorageClass STANDARD = type.createAndRegister("STANDARD");
 
   /**
    * Durable Reduced Availability (deprecated)
    */
-  public static StorageClass DURABLE_REDUCED_AVAILABILITY = type.createAndRegister(
+  public static final StorageClass DURABLE_REDUCED_AVAILABILITY = type.createAndRegister(
       "DURABLE_REDUCED_AVAILABILITY");
 
   /**
