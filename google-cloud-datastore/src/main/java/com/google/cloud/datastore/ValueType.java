@@ -66,7 +66,7 @@ public enum ValueType {
   BOOLEAN(BooleanValue.MARSHALLER),
 
   /**
-   * Represents a {@link Timestamp} value.
+   * Represents a {@link com.google.cloud.Timestamp} value.
    */
   TIMESTAMP(TimestampValue.MARSHALLER),
 
