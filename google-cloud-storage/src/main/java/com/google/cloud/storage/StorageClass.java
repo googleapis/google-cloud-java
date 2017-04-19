@@ -23,7 +23,8 @@ import com.google.cloud.StringEnumValue;
  * Enums for the storage classes.
  * See https://cloud.google.com/storage/docs/storage-classes for details.
  */
-public class StorageClass extends StringEnumValue {
+public final class StorageClass extends StringEnumValue {
+  private static final long serialVersionUID = -6938125060419556331L;
 
   private StorageClass(String constant) {
     super(constant);

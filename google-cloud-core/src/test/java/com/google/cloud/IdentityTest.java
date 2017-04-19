@@ -142,6 +142,21 @@ public class IdentityTest {
     compareIdentities(PROJECT_VIEWER, Identity.valueOf(PROJECT_VIEWER.strValue()));
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void testValueOfEmpty() {
+    Identity.valueOf("");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testValueOfThreePart() {
+    Identity.valueOf("a:b:c");
+  }
+
+  @Test
+  public void testUnrecognizedToString() {
+    assertEquals("a:b", Identity.valueOf("a:b").strValue());
+  }
+
   private void compareIdentities(Identity expected, Identity actual) {
     assertEquals(expected, actual);
     assertEquals(expected.getType(), actual.getType());

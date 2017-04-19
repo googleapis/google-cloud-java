@@ -30,6 +30,8 @@ public class StringEnumTest {
   public ExpectedException expectedException = ExpectedException.none();
 
   public static class Letter extends StringEnumValue {
+    private static final long serialVersionUID = -1717976087182628526L;
+
     private Letter(String constant) {
       super(constant);
     }
