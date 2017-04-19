@@ -82,6 +82,8 @@ public final class Mutation implements Serializable {
     DELETE,
   }
 
+  private static final long serialVersionUID = 1L;
+
   private final String table;
   private final Op operation;
   private final ImmutableList<String> columns;
@@ -407,6 +409,8 @@ public final class Mutation implements Serializable {
    * A proxy class that handles {@link Mutation} serialization.
    */
   private static class SerializationProxy implements Serializable {
+    private static final long serialVersionUID = 2L;
+
     private com.google.spanner.v1.Mutation proto;
 
     private SerializationProxy(Mutation mutation) {

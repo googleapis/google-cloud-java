@@ -121,7 +121,7 @@ class GrpcStruct extends Struct {
     return decodeValue(type, proto.getListValue().getValues(1));
   }
 
-  private static Object decodeValue(Type fieldType, com.google.protobuf.Value proto) {
+  private static Object decodeValue(Type fieldType, Value proto) {
     if (proto.getKindCase() == Value.KindCase.NULL_VALUE) {
       return null;
     }
@@ -263,7 +263,7 @@ class GrpcStruct extends Struct {
     }
   }
 
-  private static double valueProtoToFloat64(com.google.protobuf.Value proto) {
+  private static double valueProtoToFloat64(Value proto) {
     if (proto.getKindCase() == Value.KindCase.STRING_VALUE) {
       switch (proto.getStringValue()) {
         case "-Infinity":
@@ -296,7 +296,7 @@ class GrpcStruct extends Struct {
         "Cannot call array getter for column " + columnIndex + " with null elements");
   }
 
-  boolean consumeRow(Iterator<com.google.protobuf.Value> iterator) {
+  boolean consumeRow(Iterator<Value> iterator) {
     rowData.clear();
     if (!iterator.hasNext()) {
       return false;
@@ -307,7 +307,7 @@ class GrpcStruct extends Struct {
             ErrorCode.INTERNAL,
             "Invalid value stream: end of stream reached before row is complete");
       }
-      com.google.protobuf.Value value = iterator.next();
+      Value value = iterator.next();
       rowData.add(decodeValue(fieldType.getType(), value));
     }
     return true;
@@ -469,7 +469,7 @@ class GrpcStruct extends Struct {
 
     abstract A newArray(int size);
 
-    abstract void setProto(A array, int i, com.google.protobuf.Value protoValue);
+    abstract void setProto(A array, int i, Value protoValue);
 
     abstract T get(A array, int i);
 
@@ -511,7 +511,7 @@ class GrpcStruct extends Struct {
     }
 
     @Override
-    void setProto(long[] array, int i, com.google.protobuf.Value protoValue) {
+    void setProto(long[] array, int i, Value protoValue) {
       array[i] = Long.parseLong(protoValue.getStringValue());
     }
 
@@ -536,7 +536,7 @@ class GrpcStruct extends Struct {
     }
 
     @Override
-    void setProto(double[] array, int i, com.google.protobuf.Value protoValue) {
+    void setProto(double[] array, int i, Value protoValue) {
       array[i] = valueProtoToFloat64(protoValue);
     }
 

@@ -445,7 +445,7 @@ public abstract class Value {
    */
   com.google.protobuf.Value toTypedProto() {
     com.google.protobuf.Value.Builder valueBuilder = com.google.protobuf.Value.newBuilder();
-    com.google.protobuf.ListValue.Builder listBuilder = valueBuilder.getListValueBuilder();
+    ListValue.Builder listBuilder = valueBuilder.getListValueBuilder();
     listBuilder.addValuesBuilder().setStringValueBytes(getType().toProto().toByteString()).build();
     listBuilder.addValues(toProto());
     return valueBuilder.build();
