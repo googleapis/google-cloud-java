@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.primitives.Primitives;
@@ -36,7 +37,7 @@ public class ValueTest {
 
   private static final Key KEY = Key.newBuilder("ds", "kind", 1).build();
   private static final Blob BLOB = Blob.copyFrom(new byte[]{});
-  private static final DateTime DATE_TIME = DateTime.now();
+  private static final Timestamp TIMESTAMP = Timestamp.now();
   private static final Entity ENTITY = Entity.newBuilder(KEY).set("FOO", "BAR").build();
   private static final NullValue NULL_VALUE = NullValue.of();
   private static final StringValue STRING_VALUE = StringValue.of("hello");
@@ -49,7 +50,7 @@ public class ValueTest {
           .put(ValueType.KEY, new Object[] {KeyValue.class, KEY})
           .put(ValueType.BLOB, new Object[] {BlobValue.class, BLOB})
           .put(ValueType.BOOLEAN, new Object[] {BooleanValue.class, Boolean.TRUE})
-          .put(ValueType.DATE_TIME, new Object[] {DateTimeValue.class, DATE_TIME})
+          .put(ValueType.TIMESTAMP, new Object[] {TimestampValue.class, TIMESTAMP})
           .put(ValueType.DOUBLE, new Object[] {DoubleValue.class, 1.25D})
           .put(ValueType.ENTITY, new Object[] {EntityValue.class, ENTITY})
           .put(ValueType.LIST, new Object[] {

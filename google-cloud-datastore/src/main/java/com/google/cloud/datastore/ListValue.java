@@ -18,6 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.datastore.v1.Value.ARRAY_VALUE_FIELD_NUMBER;
 
+import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 
@@ -137,12 +138,12 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
     }
 
     /**
-     * Adds the provided {@code DateTime} values to the {@code ListValue} builder.
+     * Adds the provided {@code Timestamp} values to the {@code ListValue} builder.
      */
-    public Builder addValue(DateTime first, DateTime... other) {
-      listBuilder.add(DateTimeValue.of(first));
-      for (DateTime value : other) {
-        listBuilder.add(DateTimeValue.of(value));
+    public Builder addValue(Timestamp first, Timestamp... other) {
+      listBuilder.add(TimestampValue.of(first));
+      for (Timestamp value : other) {
+        listBuilder.add(TimestampValue.of(value));
       }
       return this;
     }
@@ -283,9 +284,9 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
   }
 
   /**
-   * Creates a {@code ListValue} object given a number of {@code DateTime} values.
+   * Creates a {@code ListValue} object given a number of {@code Timestamp} values.
    */
-  public static ListValue of(DateTime first, DateTime... other) {
+  public static ListValue of(Timestamp first, Timestamp... other) {
     return newBuilder().addValue(first, other).build();
   }
 

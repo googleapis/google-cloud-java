@@ -33,6 +33,8 @@ import org.junit.runners.JUnit4;
 public class TimestampTest {
   private static final String TEST_TIME_ISO = "2015-10-12T15:14:54Z";
   private static final long TEST_TIME_SECONDS = 1444662894L;
+  private static final long TEST_TIME_MICROSECONDS = 10000100L;
+
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
   @Test
@@ -52,6 +54,13 @@ public class TimestampTest {
 
     assertThat(Timestamp.MAX_VALUE.getSeconds()).isEqualTo(calendar.getTimeInMillis() / 1000L);
     assertThat(Timestamp.MAX_VALUE.getNanos()).isEqualTo(999999999);
+  }
+
+  @Test
+  public void ofMicroseconds() {
+    Timestamp timestamp = Timestamp.ofTimeMicroseconds(TEST_TIME_MICROSECONDS);
+    assertThat(timestamp.getSeconds()).isEqualTo(TEST_TIME_MICROSECONDS / 1000000L);
+    assertThat(timestamp.getNanos()).isEqualTo(TEST_TIME_MICROSECONDS % 1000000L * 1000);
   }
 
   @Test

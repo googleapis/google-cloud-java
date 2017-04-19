@@ -18,7 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.BlobValue.of;
 import static com.google.cloud.datastore.BooleanValue.of;
-import static com.google.cloud.datastore.DateTimeValue.of;
+import static com.google.cloud.datastore.TimestampValue.of;
 import static com.google.cloud.datastore.DoubleValue.of;
 import static com.google.cloud.datastore.EntityValue.of;
 import static com.google.cloud.datastore.KeyValue.of;
@@ -28,6 +28,7 @@ import static com.google.cloud.datastore.LongValue.of;
 import static com.google.cloud.datastore.NullValue.of;
 import static com.google.cloud.datastore.StringValue.of;
 
+import com.google.cloud.Timestamp;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Maps;
@@ -266,29 +267,29 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     }
 
     /**
-     * Sets a property of type {@link DateTimeValue}.
+     * Sets a property of type {@link TimestampValue}.
      *
      * @param name name of the property
      * @param value value associated with the property
      */
-    public B set(String name, DateTime value) {
+    public B set(String name, Timestamp value) {
       properties.put(name, of(value));
       return self();
     }
 
     /**
-     * Sets a list property containing elements of type {@link DateTimeValue}.
+     * Sets a list property containing elements of type {@link TimestampValue}.
      *
      * @param name name of the property
-     * @param first the first {@link DateTime} in the list
-     * @param second the second {@link DateTime} in the list
-     * @param others other {@link DateTime}s in the list
+     * @param first the first {@link Timestamp} in the list
+     * @param second the second {@link Timestamp} in the list
+     * @param others other {@link Timestamp}s in the list
      */
-    public B set(String name, DateTime first, DateTime second, DateTime... others) {
-      List<DateTimeValue> values = new LinkedList<>();
+    public B set(String name, Timestamp first, Timestamp second, Timestamp... others) {
+      List<TimestampValue> values = new LinkedList<>();
       values.add(of(first));
       values.add(of(second));
-      for (DateTime other : others) {
+      for (Timestamp other : others) {
         values.add(of(other));
       }
       properties.put(name, of(values));
@@ -579,14 +580,14 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   }
 
   /**
-   * Returns the property value as a DateTime.
+   * Returns the property value as a Timestamp.
    *
    * @throws DatastoreException if not such property
-   * @throws ClassCastException if value is not a DateTime
+   * @throws ClassCastException if value is not a Timestamp
    */
   @SuppressWarnings("unchecked")
-  public DateTime getDateTime(String name) {
-    return ((Value<DateTime>) getValue(name)).get();
+  public Timestamp getTimestamp(String name) {
+    return ((Value<Timestamp>) getValue(name)).get();
   }
 
   /**

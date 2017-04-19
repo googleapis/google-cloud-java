@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
@@ -39,8 +40,8 @@ public class ListValueTest {
   private static final double DOUBLE2 = 2.0;
   private static final boolean BOOLEAN1 = true;
   private static final boolean BOOLEAN2 = false;
-  private static final DateTime DATETIME1 = new DateTime(1);
-  private static final DateTime DATETIME2 = new DateTime(2);
+  private static final Timestamp TIMESTAMP1 = Timestamp.ofTimeMicroseconds(1);
+  private static final Timestamp TIMESTAMP2 = Timestamp.ofTimeMicroseconds(2);
   private static final LatLng LATLNG1 = LatLng.of(DOUBLE1, DOUBLE2);
   private static final LatLng LATLNG2 = LatLng.of(DOUBLE2, DOUBLE1);
   private static final Key KEY1 = Key.newBuilder("project", "kind", "name1").build();
@@ -81,10 +82,10 @@ public class ListValueTest {
     value = ListValue.of(BOOLEAN1, BOOLEAN2);
     assertEquals(ImmutableList.of(BooleanValue.of(BOOLEAN1), BooleanValue.of(BOOLEAN2)),
         value.get());
-    value = ListValue.of(DATETIME1);
-    assertEquals(ImmutableList.of(DateTimeValue.of(DATETIME1)), value.get());
-    value = ListValue.of(DATETIME1, DATETIME2);
-    assertEquals(ImmutableList.of(DateTimeValue.of(DATETIME1), DateTimeValue.of(DATETIME2)),
+    value = ListValue.of(TIMESTAMP1);
+    assertEquals(ImmutableList.of(TimestampValue.of(TIMESTAMP1)), value.get());
+    value = ListValue.of(TIMESTAMP1, TIMESTAMP2);
+    assertEquals(ImmutableList.of(TimestampValue.of(TIMESTAMP1), TimestampValue.of(TIMESTAMP2)),
         value.get());
     value = ListValue.of(LATLNG1);
     assertEquals(ImmutableList.of(LatLngValue.of(LATLNG1)), value.get());
@@ -157,12 +158,12 @@ public class ListValueTest {
         builder.build().get());
     builder = builder.set(Collections.<Value<?>>emptyList());
 
-    builder = builder.addValue(DATETIME1);
-    assertEquals(ImmutableList.of(DateTimeValue.of(DATETIME1)), builder.build().get());
+    builder = builder.addValue(TIMESTAMP1);
+    assertEquals(ImmutableList.of(TimestampValue.of(TIMESTAMP1)), builder.build().get());
     builder = builder.set(Collections.<Value<?>>emptyList());
 
-    builder = builder.addValue(DATETIME1, DATETIME2);
-    assertEquals(ImmutableList.of(DateTimeValue.of(DATETIME1), DateTimeValue.of(DATETIME2)),
+    builder = builder.addValue(TIMESTAMP1, TIMESTAMP2);
+    assertEquals(ImmutableList.of(TimestampValue.of(TIMESTAMP1), TimestampValue.of(TIMESTAMP2)),
         builder.build().get());
     builder = builder.set(Collections.<Value<?>>emptyList());
 
