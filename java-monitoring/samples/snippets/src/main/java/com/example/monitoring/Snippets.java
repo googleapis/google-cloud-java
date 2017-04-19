@@ -53,7 +53,7 @@ public class Snippets {
 
   /**
    * Exercises the methods defined in this class.
-   *
+   * <p>
    * <p>Assumes that you are authenticated using the Google Cloud SDK (using
    * {@code gcloud auth application-default-login}).
    */
@@ -81,8 +81,9 @@ public class Snippets {
 
   /**
    * Creates a metric descriptor.
-   *
+   * <p>
    * See: https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors/create
+   *
    * @param type The metric type
    */
   void createMetricDescriptor(String type) throws IOException {
@@ -112,6 +113,7 @@ public class Snippets {
 
   /**
    * Delete a metric descriptor.
+   *
    * @param name Name of metric descriptor to delete
    */
   void deleteMetricDescriptor(String name) throws IOException {
@@ -127,11 +129,10 @@ public class Snippets {
   /**
    * Demonstrates writing a time series value for the metric type
    * 'custom.google.apis.com/my_metric'.
-   *
+   * <p>
    * This method assumes `my_metric` descriptor has already been created as a
    * DOUBLE value_type and GAUGE metric kind. If the metric descriptor
    * doesn't exist, it will be auto-created.
-   *
    */
   void writeTimeSeries() throws IOException {
     // [START monitoring_write_timeseries]
@@ -203,7 +204,6 @@ public class Snippets {
     String projectId = System.getProperty("projectId");
     ProjectName name = ProjectName.create(projectId);
 
-
     // Restrict time to last 20 minutes
     long startMillis = System.currentTimeMillis() - ((60 * 20) * 1000);
     TimeInterval interval = TimeInterval.newBuilder()
@@ -217,40 +217,26 @@ public class Snippets {
         .setInterval(interval)
         .setView(ListTimeSeriesRequest.TimeSeriesView.HEADERS);
 
-    String nextToken = "";
+    ListTimeSeriesRequest request = requestBuilder.build();
 
-    do {
-      if (nextToken != null) {
-        requestBuilder.setPageToken(nextToken);
-      }
-      ListTimeSeriesRequest request = requestBuilder.build();
+    PagedResponseWrappers.ListTimeSeriesPagedResponse response = metricServiceClient
+        .listTimeSeries(request);
 
-      PagedResponseWrappers.ListTimeSeriesPagedResponse response = metricServiceClient
-          .listTimeSeries(request);
-      List<TimeSeries> timeseries = response.getPage()
-          .getResponseObject()
-          .getTimeSeriesList();
-
-      System.out.println("Got timeseries headers: ");
-      for (TimeSeries ts : timeseries) {
-        System.out.println(ts);
-      }
-      Object nextObjectToken = response.getNextPageToken();
-      nextToken = (String)nextObjectToken;
-    } while (nextToken != "");
+    System.out.println("Got timeseries headers: ");
+    for (TimeSeries ts : response.iterateAll()) {
+      System.out.println(ts);
+    }
     // [END monitoring_read_timeseries_fields]
   }
 
   /**
    * Demonstrates listing time series using a filter.
-   *
    */
   void listTimeSeries(String filter) throws IOException {
     // [START monitoring_read_timeseries_simple]
     MetricServiceClient metricServiceClient = MetricServiceClient.create();
     String projectId = System.getProperty("projectId");
     ProjectName name = ProjectName.create(projectId);
-
 
     // Restrict time to last 20 minutes
     long startMillis = System.currentTimeMillis() - ((60 * 20) * 1000);
@@ -264,40 +250,26 @@ public class Snippets {
         .setFilter(filter)
         .setInterval(interval);
 
-    String nextToken = "";
+    ListTimeSeriesRequest request = requestBuilder.build();
 
-    do {
-      if (nextToken != null) {
-        requestBuilder.setPageToken(nextToken);
-      }
-      ListTimeSeriesRequest request = requestBuilder.build();
+    PagedResponseWrappers.ListTimeSeriesPagedResponse response = metricServiceClient
+        .listTimeSeries(request);
 
-      PagedResponseWrappers.ListTimeSeriesPagedResponse response = metricServiceClient
-          .listTimeSeries(request);
-      List<TimeSeries> timeseries = response.getPage()
-          .getResponseObject()
-          .getTimeSeriesList();
-
-      System.out.println("Got timeseries: ");
-      for (TimeSeries ts : timeseries) {
-        System.out.println(ts);
-      }
-      Object nextObjectToken = response.getNextPageToken();
-      nextToken = (String)nextObjectToken;
-    } while (nextToken != "");
+    System.out.println("Got timeseries: ");
+    for (TimeSeries ts : response.iterateAll()) {
+      System.out.println(ts);
+    }
     // [END monitoring_read_timeseries_simple]
   }
 
   /**
    * Demonstrates listing time series and aggregating them.
-   *
    */
   void listTimeSeriesAggregrate() throws IOException {
     // [START monitoring_read_timeseries_align]
     MetricServiceClient metricServiceClient = MetricServiceClient.create();
     String projectId = System.getProperty("projectId");
     ProjectName name = ProjectName.create(projectId);
-
 
     // Restrict time to last 20 minutes
     long startMillis = System.currentTimeMillis() - ((60 * 20) * 1000);
@@ -317,39 +289,26 @@ public class Snippets {
         .setInterval(interval)
         .setAggregation(aggregation);
 
-    String nextToken = "";
-    do {
-      if (nextToken != null) {
-        requestBuilder.setPageToken(nextToken);
-      }
-      ListTimeSeriesRequest request = requestBuilder.build();
+    ListTimeSeriesRequest request = requestBuilder.build();
 
-      PagedResponseWrappers.ListTimeSeriesPagedResponse response = metricServiceClient
-          .listTimeSeries(request);
-      List<TimeSeries> timeseries = response.getPage()
-          .getResponseObject()
-          .getTimeSeriesList();
+    PagedResponseWrappers.ListTimeSeriesPagedResponse response = metricServiceClient
+        .listTimeSeries(request);
 
-      System.out.println("Got timeseries: ");
-      for (TimeSeries ts : timeseries) {
-        System.out.println(ts);
-      }
-      Object nextObjectToken = response.getNextPageToken();
-      nextToken = (String)nextObjectToken;
-    } while (nextToken != "");
+    System.out.println("Got timeseries: ");
+    for (TimeSeries ts : response.iterateAll()) {
+      System.out.println(ts);
+    }
     // [END monitoring_read_timeseries_align]
   }
 
   /**
    * Demonstrates listing time series and aggregating and reducing them.
-   *
    */
   void listTimeSeriesReduce() throws IOException {
     // [START monitoring_read_timeseries_reduce]
     MetricServiceClient metricServiceClient = MetricServiceClient.create();
     String projectId = System.getProperty("projectId");
     ProjectName name = ProjectName.create(projectId);
-
 
     // Restrict time to last 20 minutes
     long startMillis = System.currentTimeMillis() - ((60 * 20) * 1000);
@@ -370,27 +329,15 @@ public class Snippets {
         .setInterval(interval)
         .setAggregation(aggregation);
 
-    String nextToken = "";
+    ListTimeSeriesRequest request = requestBuilder.build();
 
-    do {
-      if (nextToken != null) {
-        requestBuilder.setPageToken(nextToken);
-      }
-      ListTimeSeriesRequest request = requestBuilder.build();
+    PagedResponseWrappers.ListTimeSeriesPagedResponse response = metricServiceClient
+        .listTimeSeries(request);
 
-      PagedResponseWrappers.ListTimeSeriesPagedResponse response = metricServiceClient
-          .listTimeSeries(request);
-      List<TimeSeries> timeseries = response.getPage()
-          .getResponseObject()
-          .getTimeSeriesList();
-
-      System.out.println("Got timeseries: ");
-      for (TimeSeries ts : timeseries) {
-        System.out.println(ts);
-      }
-      Object nextObjectToken = response.getNextPageToken();
-      nextToken = (String)nextObjectToken;
-    } while (nextToken != "");
+    System.out.println("Got timeseries: ");
+    for (TimeSeries ts : response.iterateAll()) {
+      System.out.println(ts);
+    }
     // [END monitoring_read_timeseries_reduce]
   }
 
@@ -414,9 +361,7 @@ public class Snippets {
 
     System.out.println("Listing descriptors: ");
 
-    List<MetricDescriptor> descriptors = response.getPage()
-        .getResponseObject().getMetricDescriptorsList();
-    for (MetricDescriptor d : descriptors) {
+    for (MetricDescriptor d : response.iterateAll()) {
       System.out.println(d.getName() + " " + d.getDisplayName());
     }
     // [END monitoring_list_descriptors]
@@ -443,10 +388,7 @@ public class Snippets {
     PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse response = client
         .listMonitoredResourceDescriptors(request);
 
-    List<MonitoredResourceDescriptor> descriptors = response.getPage()
-        .getResponseObject().getResourceDescriptorsList();
-
-    for (MonitoredResourceDescriptor d : descriptors) {
+    for (MonitoredResourceDescriptor d : response.iterateAll()) {
       System.out.println(d.getType());
     }
     // [END monitoring_list_resources]
@@ -454,7 +396,8 @@ public class Snippets {
 
   /**
    * Gets full information for a monitored resource.
-   * @param The resource type
+   *
+   * @param type The resource type
    */
   void describeMonitoredResources(String type) throws IOException {
     // [START monitoring_get_descriptor]
