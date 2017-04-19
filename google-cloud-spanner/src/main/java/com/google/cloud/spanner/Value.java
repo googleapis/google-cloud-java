@@ -25,6 +25,8 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.BitSet;
@@ -50,7 +52,7 @@ import javax.annotation.concurrent.Immutable;
  * <p>{@code Value} instances are immutable.
  */
 @Immutable
-public abstract class Value {
+public abstract class Value implements Serializable {
   private static final int MAX_DEBUG_STRING_LENGTH = 32;
   private static final String ELLIPSIS = "...";
   private static final String NULL_STRING = "NULL";

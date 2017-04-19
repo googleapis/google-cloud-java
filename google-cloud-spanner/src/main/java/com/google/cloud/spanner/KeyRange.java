@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -123,7 +124,9 @@ import java.util.Objects;
  *
  * <p>{@code KeyRange} instances are immutable.
  */
-public final class KeyRange {
+public final class KeyRange implements Serializable {
+  private static final long serialVersionUID = 100894273141111331L;
+
   /** Defines whether a range includes or excludes its endpoint keys. */
   public enum Endpoint {
     /** Ranges include the endpoint key. */

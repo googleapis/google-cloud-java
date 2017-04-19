@@ -16,13 +16,12 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.common.truth.Truth.assertThat;
-
+import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.testing.EqualsTester;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
 import org.junit.Rule;
@@ -30,6 +29,13 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
+import static com.google.common.truth.Truth.assertThat;
 
 /** Unit tests for {@link com.google.cloud.spanner.Mutation}. */
 @RunWith(JUnit4.class)
@@ -134,7 +140,7 @@ public class MutationTest {
 
     m = Mutation.newInsertBuilder("T").set("C1").to(true).set("C2").to(1234).build();
     assertThat(m.asMap())
-        .isEqualTo(ImmutableMap.of("C1", Value.bool(true), "C2", Value.int64(1234)));
+            .isEqualTo(ImmutableMap.of("C1", Value.bool(true), "C2", Value.int64(1234)));
 
     m = Mutation.newInsertBuilder("T").set("C1").to(true).set("C1").to(false).build();
     expectedException.expect(IllegalStateException.class);
@@ -187,7 +193,7 @@ public class MutationTest {
 
     // Equality, not identity.
     tester.addEqualityGroup(
-        Mutation.newInsertBuilder("T1").build(), Mutation.newInsertBuilder("T1").build());
+            Mutation.newInsertBuilder("T1").build(), Mutation.newInsertBuilder("T1").build());
 
     // Operation types are distinguished.
     tester.addEqualityGroup(Mutation.newInsertOrUpdateBuilder("T1").build());
@@ -199,13 +205,13 @@ public class MutationTest {
 
     // Columns/values are distinguished (but by equality, not identity).
     tester.addEqualityGroup(
-        Mutation.newInsertBuilder("T1").set("C").to("V").build(),
-        Mutation.newInsertBuilder("T1").set("C").to("V").build());
+            Mutation.newInsertBuilder("T1").set("C").to("V").build(),
+            Mutation.newInsertBuilder("T1").set("C").to("V").build());
 
     // Deletes consider the key set.
     tester.addEqualityGroup(Mutation.delete("T1", KeySet.all()));
     tester.addEqualityGroup(
-        Mutation.delete("T1", KeySet.singleKey(Key.of("k"))), Mutation.delete("T1", Key.of("k")));
+            Mutation.delete("T1", KeySet.singleKey(Key.of("k"))), Mutation.delete("T1", Key.of("k")));
 
     tester.testEquals();
   }
@@ -213,18 +219,18 @@ public class MutationTest {
   @Test
   public void serializationBasic() {
     List<Mutation> mutations =
-        Arrays.asList(
-            Mutation.newInsertBuilder("T").set("C").to("V").build(),
-            Mutation.newUpdateBuilder("T").set("C").to("V").build(),
-            Mutation.newInsertOrUpdateBuilder("T").set("C").to("V").build(),
-            Mutation.newReplaceBuilder("T").set("C").to("V").build(),
-            Mutation.delete("T", KeySet.singleKey(Key.of("k"))));
+            Arrays.asList(
+                    Mutation.newInsertBuilder("T").set("C").to("V").build(),
+                    Mutation.newUpdateBuilder("T").set("C").to("V").build(),
+                    Mutation.newInsertOrUpdateBuilder("T").set("C").to("V").build(),
+                    Mutation.newReplaceBuilder("T").set("C").to("V").build(),
+                    Mutation.delete("T", KeySet.singleKey(Key.of("k"))));
 
     List<com.google.spanner.v1.Mutation> proto = new ArrayList<>();
 
     // Include an existing element so that we know toProto() do not clear the list.
     com.google.spanner.v1.Mutation existingProto =
-        com.google.spanner.v1.Mutation.getDefaultInstance();
+            com.google.spanner.v1.Mutation.getDefaultInstance();
     proto.add(existingProto);
 
     Mutation.toProto(mutations, proto);
@@ -235,169 +241,248 @@ public class MutationTest {
 
     assertThat(proto.size()).isEqualTo(5);
     MatcherAssert.assertThat(
-        proto.get(0),
-        matchesProto("insert { table: 'T' columns: 'C' values { values { string_value: 'V' } } }"));
+            proto.get(0),
+            matchesProto("insert { table: 'T' columns: 'C' values { values { string_value: 'V' } } }"));
     MatcherAssert.assertThat(
-        proto.get(1),
-        matchesProto("update { table: 'T' columns: 'C' values { values { string_value: 'V' } } }"));
+            proto.get(1),
+            matchesProto("update { table: 'T' columns: 'C' values { values { string_value: 'V' } } }"));
     MatcherAssert.assertThat(
-        proto.get(2),
-        matchesProto(
-            "insert_or_update { table: 'T' columns: 'C'"
-                + " values { values { string_value: 'V' } } }"));
+            proto.get(2),
+            matchesProto(
+                    "insert_or_update { table: 'T' columns: 'C'"
+                            + " values { values { string_value: 'V' } } }"));
     MatcherAssert.assertThat(
-        proto.get(3),
-        matchesProto(
-            "replace { table: 'T' columns: 'C' values { values { string_value: 'V' } } }"));
+            proto.get(3),
+            matchesProto(
+                    "replace { table: 'T' columns: 'C' values { values { string_value: 'V' } } }"));
     MatcherAssert.assertThat(
-        proto.get(4),
-        matchesProto("delete { table: 'T' key_set { keys { values { string_value: 'k' } } } }"));
+            proto.get(4),
+            matchesProto("delete { table: 'T' key_set { keys { values { string_value: 'k' } } } }"));
   }
 
   @Test
   public void toProtoCoalescingChangeOfTable() {
     List<Mutation> mutations =
-        Arrays.asList(
-            Mutation.newInsertBuilder("T1").set("C").to("V1").build(),
-            Mutation.newInsertBuilder("T1").set("C").to("V2").build(),
-            Mutation.newInsertBuilder("T1").set("C").to("V3").build(),
-            Mutation.newInsertBuilder("T2").set("C").to("V4").build(),
-            Mutation.newInsertBuilder("T2").set("C").to("V5").build());
+            Arrays.asList(
+                    Mutation.newInsertBuilder("T1").set("C").to("V1").build(),
+                    Mutation.newInsertBuilder("T1").set("C").to("V2").build(),
+                    Mutation.newInsertBuilder("T1").set("C").to("V3").build(),
+                    Mutation.newInsertBuilder("T2").set("C").to("V4").build(),
+                    Mutation.newInsertBuilder("T2").set("C").to("V5").build());
 
     List<com.google.spanner.v1.Mutation> proto = new ArrayList<>();
     Mutation.toProto(mutations, proto);
 
     assertThat(proto.size()).isEqualTo(2);
     MatcherAssert.assertThat(
-        proto.get(0),
-        matchesProto(
-            "insert { table: 'T1' columns: 'C' values { values { string_value: 'V1' } }"
-                + " values { values { string_value: 'V2' } }"
-                + " values { values { string_value: 'V3' } } }"));
+            proto.get(0),
+            matchesProto(
+                    "insert { table: 'T1' columns: 'C' values { values { string_value: 'V1' } }"
+                            + " values { values { string_value: 'V2' } }"
+                            + " values { values { string_value: 'V3' } } }"));
     MatcherAssert.assertThat(
-        proto.get(1),
-        matchesProto(
-            "insert { table: 'T2' columns: 'C' values { values { string_value: 'V4' } }"
-                + " values { values { string_value: 'V5' } } }"));
+            proto.get(1),
+            matchesProto(
+                    "insert { table: 'T2' columns: 'C' values { values { string_value: 'V4' } }"
+                            + " values { values { string_value: 'V5' } } }"));
   }
 
   @Test
   public void toProtoCoalescingChangeOfOperation() {
     List<Mutation> mutations =
-        Arrays.asList(
-            Mutation.newInsertBuilder("T").set("C").to("V1").build(),
-            Mutation.newInsertBuilder("T").set("C").to("V2").build(),
-            Mutation.newInsertBuilder("T").set("C").to("V3").build(),
-            Mutation.newUpdateBuilder("T").set("C").to("V4").build(),
-            Mutation.newUpdateBuilder("T").set("C").to("V5").build());
+            Arrays.asList(
+                    Mutation.newInsertBuilder("T").set("C").to("V1").build(),
+                    Mutation.newInsertBuilder("T").set("C").to("V2").build(),
+                    Mutation.newInsertBuilder("T").set("C").to("V3").build(),
+                    Mutation.newUpdateBuilder("T").set("C").to("V4").build(),
+                    Mutation.newUpdateBuilder("T").set("C").to("V5").build());
 
     List<com.google.spanner.v1.Mutation> proto = new ArrayList<>();
     Mutation.toProto(mutations, proto);
 
     assertThat(proto.size()).isEqualTo(2);
     MatcherAssert.assertThat(
-        proto.get(0),
-        matchesProto(
-            "insert { table: 'T' columns: 'C' values { values { string_value: 'V1' } }"
-                + " values { values { string_value: 'V2' } }"
-                + " values { values { string_value: 'V3' } } }"));
+            proto.get(0),
+            matchesProto(
+                    "insert { table: 'T' columns: 'C' values { values { string_value: 'V1' } }"
+                            + " values { values { string_value: 'V2' } }"
+                            + " values { values { string_value: 'V3' } } }"));
     MatcherAssert.assertThat(
-        proto.get(1),
-        matchesProto(
-            "update { table: 'T' columns: 'C' values { values { string_value: 'V4' } }"
-                + " values { values { string_value: 'V5' } } }"));
+            proto.get(1),
+            matchesProto(
+                    "update { table: 'T' columns: 'C' values { values { string_value: 'V4' } }"
+                            + " values { values { string_value: 'V5' } } }"));
   }
 
   @Test
   public void toProtoCoalescingChangeOfColumn() {
     List<Mutation> mutations =
-        Arrays.asList(
-            Mutation.newInsertBuilder("T").set("C1").to("V1").build(),
-            Mutation.newInsertBuilder("T").set("C1").to("V2").build(),
-            Mutation.newInsertBuilder("T").set("C1").to("V3").build(),
-            Mutation.newInsertBuilder("T").set("C2").to("V4").build(),
-            Mutation.newInsertBuilder("T").set("C2").to("V5").build());
+            Arrays.asList(
+                    Mutation.newInsertBuilder("T").set("C1").to("V1").build(),
+                    Mutation.newInsertBuilder("T").set("C1").to("V2").build(),
+                    Mutation.newInsertBuilder("T").set("C1").to("V3").build(),
+                    Mutation.newInsertBuilder("T").set("C2").to("V4").build(),
+                    Mutation.newInsertBuilder("T").set("C2").to("V5").build());
 
     List<com.google.spanner.v1.Mutation> proto = new ArrayList<>();
     Mutation.toProto(mutations, proto);
 
     assertThat(proto.size()).isEqualTo(2);
     MatcherAssert.assertThat(
-        proto.get(0),
-        matchesProto(
-            "insert { table: 'T' columns: 'C1' values { values { string_value: 'V1' } }"
-                + " values { values { string_value: 'V2' } }"
-                + " values { values { string_value: 'V3' } } }"));
+            proto.get(0),
+            matchesProto(
+                    "insert { table: 'T' columns: 'C1' values { values { string_value: 'V1' } }"
+                            + " values { values { string_value: 'V2' } }"
+                            + " values { values { string_value: 'V3' } } }"));
     MatcherAssert.assertThat(
-        proto.get(1),
-        matchesProto(
-            "insert { table: 'T' columns: 'C2' values { values { string_value: 'V4' } }"
-                + " values { values { string_value: 'V5' } } }"));
+            proto.get(1),
+            matchesProto(
+                    "insert { table: 'T' columns: 'C2' values { values { string_value: 'V4' } }"
+                            + " values { values { string_value: 'V5' } } }"));
   }
 
   @Test
   public void toProtoCoalescingDelete() {
     List<Mutation> mutations =
-        Arrays.asList(
-            Mutation.delete("T", Key.of("k1")),
-            Mutation.delete("T", Key.of("k2")),
-            Mutation.delete("T", KeySet.range(KeyRange.closedOpen(Key.of("ka"), Key.of("kb")))),
-            Mutation.delete("T", KeySet.range(KeyRange.closedClosed(Key.of("kc"), Key.of("kd")))));
+            Arrays.asList(
+                    Mutation.delete("T", Key.of("k1")),
+                    Mutation.delete("T", Key.of("k2")),
+                    Mutation.delete("T", KeySet.range(KeyRange.closedOpen(Key.of("ka"), Key.of("kb")))),
+                    Mutation.delete("T", KeySet.range(KeyRange.closedClosed(Key.of("kc"), Key.of("kd")))));
 
     List<com.google.spanner.v1.Mutation> proto = new ArrayList<>();
     Mutation.toProto(mutations, proto);
 
     assertThat(proto.size()).isEqualTo(1);
     MatcherAssert.assertThat(
-        proto.get(0),
-        matchesProto(
-            "delete {"
-                + "  table: 'T'"
-                + "  key_set {"
-                + "    keys { values { string_value: 'k1' } }"
-                + "    keys { values { string_value: 'k2' } }"
-                + "    ranges { start_closed { values { string_value: 'ka' } } "
-                + "             end_open { values { string_value: 'kb' } } }"
-                + "    ranges { start_closed { values { string_value: 'kc' } } "
-                + "             end_closed { values { string_value: 'kd' } } }"
-                + "  }"
-                + "} "));
+            proto.get(0),
+            matchesProto(
+                    "delete {"
+                            + "  table: 'T'"
+                            + "  key_set {"
+                            + "    keys { values { string_value: 'k1' } }"
+                            + "    keys { values { string_value: 'k2' } }"
+                            + "    ranges { start_closed { values { string_value: 'ka' } } "
+                            + "             end_open { values { string_value: 'kb' } } }"
+                            + "    ranges { start_closed { values { string_value: 'kc' } } "
+                            + "             end_closed { values { string_value: 'kd' } } }"
+                            + "  }"
+                            + "} "));
   }
 
   @Test
   public void toProtoCoalescingDeleteChanges() {
     List<Mutation> mutations =
-        Arrays.asList(
-            Mutation.newInsertBuilder("T1").set("C").to("V1").build(),
-            Mutation.delete("T1", Key.of("k1")),
-            Mutation.delete("T1", Key.of("k2")),
-            Mutation.delete("T2", Key.of("k3")),
-            Mutation.delete("T2", Key.of("k4")),
-            Mutation.newInsertBuilder("T2").set("C").to("V1").build());
+            Arrays.asList(
+                    Mutation.newInsertBuilder("T1").set("C").to("V1").build(),
+                    Mutation.delete("T1", Key.of("k1")),
+                    Mutation.delete("T1", Key.of("k2")),
+                    Mutation.delete("T2", Key.of("k3")),
+                    Mutation.delete("T2", Key.of("k4")),
+                    Mutation.newInsertBuilder("T2").set("C").to("V1").build());
 
     List<com.google.spanner.v1.Mutation> proto = new ArrayList<>();
     Mutation.toProto(mutations, proto);
 
     assertThat(proto.size()).isEqualTo(4);
     MatcherAssert.assertThat(
-        proto.get(0),
-        matchesProto(
-            "insert { table: 'T1' columns: 'C' values { values { string_value: 'V1' } } }"));
+            proto.get(0),
+            matchesProto(
+                    "insert { table: 'T1' columns: 'C' values { values { string_value: 'V1' } } }"));
     MatcherAssert.assertThat(
-        proto.get(1),
-        matchesProto(
-            "delete { table: 'T1' key_set { keys { values { string_value: 'k1' } } "
-                + "keys { values { string_value: 'k2' } } } }"));
+            proto.get(1),
+            matchesProto(
+                    "delete { table: 'T1' key_set { keys { values { string_value: 'k1' } } "
+                            + "keys { values { string_value: 'k2' } } } }"));
     MatcherAssert.assertThat(
-        proto.get(2),
-        matchesProto(
-            "delete { table: 'T2' key_set { keys { values { string_value: 'k3' } } "
-                + "keys { values { string_value: 'k4' } } } }"));
+            proto.get(2),
+            matchesProto(
+                    "delete { table: 'T2' key_set { keys { values { string_value: 'k3' } } "
+                            + "keys { values { string_value: 'k4' } } } }"));
     MatcherAssert.assertThat(
-        proto.get(3),
-        matchesProto(
-            "insert { table: 'T2', columns: 'C', values { values { string_value: 'V1' } } }"));
+            proto.get(3),
+            matchesProto(
+                    "insert { table: 'T2', columns: 'C', values { values { string_value: 'V1' } } }"));
   }
+
+  @Test
+  public void javaSerialization() throws Exception {
+    reserializeAndAssert(appendAllTypes(Mutation.newInsertBuilder("test")).build());
+    reserializeAndAssert(appendAllTypes(Mutation.newUpdateBuilder("test")).build());
+    reserializeAndAssert(appendAllTypes(Mutation.newReplaceBuilder("test")).build());
+    reserializeAndAssert(appendAllTypes(Mutation.newInsertOrUpdateBuilder("test")).build());
+
+    reserializeAndAssert(Mutation.delete("test", Key.of("one", 2, null, true, 2.3, ByteArray
+            .fromBase64("abcd"), Timestamp.ofTimeSecondsAndNanos(1, 2), Date.fromYearMonthDay
+            (2017, 04, 17)
+    )));
+    reserializeAndAssert(Mutation.delete("test", KeySet.all()));
+    reserializeAndAssert(Mutation.delete("test", KeySet.newBuilder().addRange(KeyRange
+            .closedClosed(Key.of("one", 2, null), Key.of("two", 3, null))).build()));
+    reserializeAndAssert(Mutation.delete("test", KeySet.newBuilder().addRange(KeyRange
+            .closedOpen(Key.of("one", 2, null), Key.of("two", 3, null))).build()));
+    reserializeAndAssert(Mutation.delete("test", KeySet.newBuilder().addRange(KeyRange
+            .openClosed(Key.of("one", 2, null), Key.of("two", 3, null))).build()));
+    reserializeAndAssert(Mutation.delete("test", KeySet.newBuilder().addRange(KeyRange
+            .openOpen(Key.of("one", 2, null), Key.of("two", 3, null))).build()));
+  }
+
+  private Mutation.WriteBuilder appendAllTypes(Mutation.WriteBuilder builder) {
+    return builder
+            .set("bool")
+            .to(true)
+            .set("boolNull")
+            .to((Boolean) null)
+            .set("int")
+            .to(42)
+            .set("intNull")
+            .to((Long) null)
+            .set("float")
+            .to(42.1)
+            .set("floatNull")
+            .to((Double) null)
+            .set("string")
+            .to("str")
+            .set("stringNull")
+            .to((String) null)
+            .set("boolArr")
+            .toBoolArray(new boolean[] {true, false})
+            .set("boolArrNull")
+            .toBoolArray((boolean[]) null)
+            .set("intArr")
+            .toInt64Array(new long[] {1, 2, 3})
+            .set("intArrNull")
+            .toInt64Array((long[]) null)
+            .set("floatArr")
+            .toFloat64Array(new double[] {1.1, 2.2, 3.3})
+            .set("floatArrNull")
+            .toFloat64Array((double[]) null)
+            .set("nullStr")
+            .to((String) null)
+            .set("timestamp")
+            .to(Timestamp.MAX_VALUE)
+            .set("timestampNull")
+            .to((Timestamp) null)
+            .set("date")
+            .to(Date.fromYearMonthDay(2017, 04, 17))
+            .set("dateNull")
+            .to((Date) null)
+            .set("stringArr")
+            .toStringArray(ImmutableList.of("one", "two"))
+            .set("stringArrNull")
+            .toStringArray(null)
+            .set("timestampArr")
+            .toTimestampArray(ImmutableList.of(Timestamp.MAX_VALUE, Timestamp.MAX_VALUE))
+            .set("timestampArrNull")
+            .toTimestampArray(null)
+            .set("dateArr")
+            .toDateArray(
+                    ImmutableList.of(
+                            Date.fromYearMonthDay(2017, 04, 17), Date.fromYearMonthDay(2017, 04, 18)))
+            .set("dateArrNull")
+            .toDateArray(null);
+  }
+
 
   static Matcher<com.google.spanner.v1.Mutation> matchesProto(String expected) {
     return SpannerMatchers.matchesProto(com.google.spanner.v1.Mutation.class, expected);

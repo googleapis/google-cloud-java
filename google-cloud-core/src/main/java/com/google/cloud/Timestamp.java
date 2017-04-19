@@ -20,6 +20,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.common.base.Strings;
 import com.google.protobuf.util.Timestamps;
+
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -34,7 +36,7 @@ import org.joda.time.format.ISODateTimeFormat;
  *
  * <p>{@code Timestamp} instances are immutable.
  */
-public final class Timestamp implements Comparable<Timestamp> {
+public final class Timestamp implements Comparable<Timestamp>, Serializable {
   /** The smallest legal timestamp ("0001-01-01T00:00:00Z"). */
   public static final Timestamp MIN_VALUE = new Timestamp(-62135596800L, 0);
 
@@ -49,6 +51,7 @@ public final class Timestamp implements Comparable<Timestamp> {
 
   private static final DateTimeFormatter format =
       ISODateTimeFormat.dateHourMinuteSecond().withChronology(GregorianChronology.getInstanceUTC());
+  private static final long serialVersionUID = -6339953051664920595L;
 
   private final long seconds;
   private final int nanos;
