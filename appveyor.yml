@@ -1,6 +1,6 @@
 # build version
 version: '{build}'
-
+ 
 # branches to build
 branches:
   # blacklist
