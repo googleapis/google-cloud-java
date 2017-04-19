@@ -59,6 +59,7 @@ public abstract class Value implements Serializable {
   private static final char LIST_SEPERATOR = ',';
   private static final char LIST_OPEN = '[';
   private static final char LIST_CLOSE = ']';
+  private static final long serialVersionUID = -5289864325087675338L;
 
   /**
    * Returns a {@code BOOL} value.
