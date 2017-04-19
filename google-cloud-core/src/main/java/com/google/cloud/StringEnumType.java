@@ -66,6 +66,9 @@ public class StringEnumType<EnumT> {
    * Get the enum object for the given String constant, and allow unrecognized values.
    */
   public EnumT valueOf(String constant) {
+    if (constant == null || constant.isEmpty()) {
+      throw new IllegalArgumentException("Empty enum constants not allowed.");
+    }
     EnumT value = knownValues.get(constant);
     if (value != null) {
       return value;

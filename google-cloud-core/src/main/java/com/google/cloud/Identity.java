@@ -280,10 +280,12 @@ public final class Identity implements Serializable {
   public static Identity valueOf(String identityStr) {
     String[] info = identityStr.split(":");
     Type type = Type.valueOf(CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_UNDERSCORE, info[0]));
-    if (type.equals(Type.ALL_AUTHENTICATED_USERS) || type.equals(Type.ALL_USERS)) {
+    if (info.length == 1) {
       return new Identity(type, null);
+    } else if (info.length == 2){
+      return new Identity(type, info[1]);
     } else {
-      return new Identity(type, checkNotNull(info[1]));
+      throw new IllegalArgumentException("Illegal identity string: \"" + identityStr + "\"");
     }
   }
 }
