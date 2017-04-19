@@ -27,6 +27,7 @@ import static com.google.cloud.logging.Logging.WriteOption.OptionType.RESOURCE;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.AsyncPage;
 import com.google.cloud.AsyncPageImpl;
@@ -67,13 +68,23 @@ import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
 class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   private final LoggingRpc rpc;
+  private final Object writeLock = new Object();
+  private final Set<ApiFuture<Void>> pendingWrites =
+      Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
+
+  private volatile Synchronicity writeSynchronicity = Synchronicity.ASYNC;
+  private volatile Severity flushSeverity = Severity.ERROR;
   private boolean closed;
 
   private static final Function<Empty, Boolean> EMPTY_TO_BOOLEAN_FUNCTION =
@@ -90,10 +101,27 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           return null;
         }
       };
+  private static final ThreadLocal<Boolean> inWriteCall = new ThreadLocal<>();
 
   LoggingImpl(LoggingOptions options) {
     super(options);
     rpc = options.getLoggingRpcV2();
+  }
+
+  public void setWriteSynchronicity(Synchronicity writeSynchronicity) {
+    this.writeSynchronicity = writeSynchronicity;
+  }
+
+  public void setFlushSeverity(Severity flushSeverity) {
+    this.flushSeverity = flushSeverity;
+  }
+
+  public Synchronicity getWriteSynchronicity() {
+    return writeSynchronicity;
+  }
+
+  public Severity getFlushSeverity() {
+    return flushSeverity;
   }
 
   private static <V> V get(ApiFuture<V> future) {
@@ -478,10 +506,80 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   public void write(Iterable<LogEntry> logEntries, WriteOption... options) {
-    get(writeAsync(logEntries, options));
+    if (inWriteCall.get() != null) {
+      return;
+    }
+    inWriteCall.set(true);
+
+    try {
+      writeLogEntries(logEntries, options);
+      for (LogEntry logEntry : logEntries) {
+        // flush pending writes if log severity at or above flush severity
+        if (logEntry.getSeverity().compareTo(flushSeverity) >= 0) {
+          flush();
+          break;
+        }
+      }
+    } finally {
+      inWriteCall.remove();
+    }
   }
 
-  public ApiFuture<Void> writeAsync(Iterable<LogEntry> logEntries, WriteOption... options) {
+  public void flush() {
+    // BUG(1795): We should force batcher to issue RPC call for buffered messages,
+    // so the code below doesn't wait uselessly.
+    ArrayList<ApiFuture<Void>> writesToFlush = new ArrayList<>();
+    synchronized (writeLock) {
+      writesToFlush.addAll(pendingWrites);
+    }
+
+   try {
+      ApiFutures.allAsList(writesToFlush).get();
+    } catch (InterruptedException|ExecutionException e) {
+       throw new RuntimeException(e);
+    }
+  }
+
+  /* Write logs synchronously or asynchronously based on writeSynchronicity setting. */
+  private void writeLogEntries(Iterable<LogEntry> logEntries, WriteOption... writeOptions) {
+    switch (this.writeSynchronicity) {
+      case SYNC:
+        get(writeAsync(logEntries, writeOptions));
+        break;
+
+      case ASYNC:
+      default:
+        final ApiFuture<Void> writeFuture = writeAsync(logEntries, writeOptions);
+        ApiFutures.addCallback(
+            writeFuture,
+            new ApiFutureCallback<Void>() {
+              private void removeFromPending() {
+                synchronized (writeLock) {
+                  pendingWrites.remove(writeFuture);
+                }
+              }
+
+              @Override
+              public void onSuccess(Void v) {
+                removeFromPending();
+              }
+
+              @Override
+              public void onFailure(Throwable t) {
+                try {
+                  Exception ex = t instanceof Exception ? (Exception) t : new Exception(t);
+                  throw new RuntimeException(ex);
+                } finally {
+                  removeFromPending();
+                }
+              }
+            });
+        pendingWrites.add(writeFuture);
+        break;
+    }
+  }
+
+  private ApiFuture<Void> writeAsync(Iterable<LogEntry> logEntries, WriteOption... options) {
     return transform(
         rpc.write(writeLogEntriesRequest(getOptions(), logEntries, optionMap(options))),
         WRITE_RESPONSE_TO_VOID_FUNCTION);
