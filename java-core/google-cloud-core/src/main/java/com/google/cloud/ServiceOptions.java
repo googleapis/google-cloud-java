@@ -309,7 +309,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return projectId != null ? projectId : getGoogleCloudProjectId();
   }
 
-  protected static String getAppEngineAppId() {
+  public static String getAppEngineAppId() {
     return System.getProperty("com.google.appengine.application.id");
   }
 
@@ -370,23 +370,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
         // ignore
       }
     }
-    try {
-      URL url = new URL("http://metadata/computeMetadata/v1/project/project-id");
-      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-      // TODO replace X-Google-Metadata-Request with:
-      // connection.setRequestProperty("Metadata-Flavor", "Google");
-      connection.setRequestProperty("X-Google-Metadata-Request", "True");
-      InputStream input = connection.getInputStream();
-      if (connection.getResponseCode() == 200) {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(input, UTF_8))) {
-          return reader.readLine();
-        }
-      }
-    } catch (IOException ignore) {
-      // ignore
-    }
-    // return null if can't determine
-    return null;
+    // return project id from metadata config
+    return MetadataConfig.getProjectId();
   }
 
   private static boolean isWindows() {
