@@ -26,9 +26,11 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
+import java.security.cert.CertificateException;
 import java.util.Collections;
 import java.util.Objects;
 import java.util.Set;
+import javax.net.ssl.SSLHandshakeException;
 
 /**
  * Base class for all service exceptions.
@@ -203,6 +205,8 @@ public class BaseServiceException extends RuntimeException {
   protected boolean isRetryable(boolean idempotent, IOException exception) {
     boolean exceptionIsRetryable = exception instanceof SocketTimeoutException
         || exception instanceof SocketException
+        || (exception instanceof SSLHandshakeException
+            && !(exception.getCause() instanceof CertificateException))
         || "insufficient data written".equals(exception.getMessage());
     return idempotent && exceptionIsRetryable;
   }
