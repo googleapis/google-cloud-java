@@ -18,16 +18,17 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.BlobValue.of;
 import static com.google.cloud.datastore.BooleanValue.of;
-import static com.google.cloud.datastore.DateTimeValue.of;
 import static com.google.cloud.datastore.DoubleValue.of;
 import static com.google.cloud.datastore.KeyValue.of;
 import static com.google.cloud.datastore.LongValue.of;
 import static com.google.cloud.datastore.StringValue.of;
+import static com.google.cloud.datastore.TimestampValue.of;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFunction;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
+import com.google.cloud.Timestamp;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.base.Preconditions;
@@ -376,7 +377,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.LESS_THAN, of(value));
     }
 
-    public static PropertyFilter lt(String property, DateTime value) {
+    public static PropertyFilter lt(String property, Timestamp value) {
       return new PropertyFilter(property, Operator.LESS_THAN, of(value));
     }
 
@@ -408,7 +409,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter le(String property, DateTime value) {
+    public static PropertyFilter le(String property, Timestamp value) {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
@@ -440,7 +441,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.GREATER_THAN, of(value));
     }
 
-    public static PropertyFilter gt(String property, DateTime value) {
+    public static PropertyFilter gt(String property, Timestamp value) {
       return new PropertyFilter(property, Operator.GREATER_THAN, of(value));
     }
 
@@ -472,7 +473,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter ge(String property, DateTime value) {
+    public static PropertyFilter ge(String property, Timestamp value) {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
@@ -504,7 +505,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.EQUAL, of(value));
     }
 
-    public static PropertyFilter eq(String property, DateTime value) {
+    public static PropertyFilter eq(String property, Timestamp value) {
       return new PropertyFilter(property, Operator.EQUAL, of(value));
     }
 

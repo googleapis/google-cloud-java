@@ -25,14 +25,12 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Batch;
 import com.google.cloud.datastore.BooleanValue;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.DatastoreReaderWriter;
-import com.google.cloud.datastore.DateTime;
-import com.google.cloud.datastore.DateTimeValue;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.EntityValue;
 import com.google.cloud.datastore.FullEntity;
@@ -54,6 +52,7 @@ import com.google.cloud.datastore.StringValue;
 import com.google.cloud.datastore.StructuredQuery;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
+import com.google.cloud.datastore.TimestampValue;
 import com.google.cloud.datastore.Transaction;
 import com.google.cloud.datastore.Value;
 import com.google.cloud.datastore.ValueType;
@@ -112,7 +111,7 @@ public class ITDatastoreTest {
       .build();
   private static final ListValue LIST_VALUE2 = ListValue.of(Collections.singletonList(KEY_VALUE));
   private static final ListValue EMPTY_LIST_VALUE = ListValue.of(Collections.<Value<?>>emptyList());
-  private static final DateTimeValue DATE_TIME_VALUE = new DateTimeValue(DateTime.now());
+  private static final TimestampValue TIMESTAMP_VALUE = new TimestampValue(Timestamp.now());
   private static final LatLngValue LAT_LNG_VALUE =
       new LatLngValue(LatLng.of(37.422035, -122.084124));
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY1 =
@@ -128,7 +127,7 @@ public class ITDatastoreTest {
           .build();
   private static final Entity ENTITY1 = Entity.newBuilder(KEY1)
       .set("str", STR_VALUE)
-      .set("date", DATE_TIME_VALUE)
+      .set("date", TIMESTAMP_VALUE)
       .set("latLng", LAT_LNG_VALUE)
       .set("bool", BOOL_VALUE)
       .set("partial1", EntityValue.of(PARTIAL_ENTITY1))
@@ -599,8 +598,8 @@ public class ITDatastoreTest {
     assertEquals(BOOL_VALUE, value2);
     ListValue value3 = entity.getValue("list");
     assertEquals(LIST_VALUE2, value3);
-    DateTimeValue value4 = entity.getValue("date");
-    assertEquals(DATE_TIME_VALUE, value4);
+    TimestampValue value4 = entity.getValue("date");
+    assertEquals(TIMESTAMP_VALUE, value4);
     LatLngValue value5 = entity.getValue("latLng");
     assertEquals(LAT_LNG_VALUE, value5);
     FullEntity<IncompleteKey> value6 = entity.getEntity("partial1");
@@ -729,47 +728,5 @@ public class ITDatastoreTest {
     assertNull(keys.next());
     assertNull(keys.next());
     assertFalse(keys.hasNext());
-  }
-
-  @Test
-  public void testRunInTransaction() {
-    Datastore.TransactionCallable<Integer> callable1 =
-        new Datastore.TransactionCallable<Integer>() {
-          private Integer attempts = 1;
-
-          public Integer run(DatastoreReaderWriter transaction) {
-            transaction.get(KEY1);
-            if (attempts < 2) {
-              ++attempts;
-              throw new DatastoreException(10, "", "ABORTED", false, null);
-            }
-
-            return attempts;
-          }
-        };
-
-    int result = DATASTORE.runInTransaction(callable1);
-    assertEquals(result, 2);
-
-    Datastore.TransactionCallable<Integer> callable2 =
-        new Datastore.TransactionCallable<Integer>() {
-          private Integer attempts = 1;
-
-          public Integer run(DatastoreReaderWriter transaction) {
-            transaction.get(KEY1);
-            if (attempts < 2) {
-              ++attempts;
-              throw new DatastoreException(4, "", "DEADLINE_EXCEEDED", false, null);
-            }
-            return attempts;
-          }
-        };
-
-    try {
-      DATASTORE.runInTransaction(callable2);
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertEquals(((DatastoreException) expected.getCause()).getCode(), 4);
-    }
   }
 }

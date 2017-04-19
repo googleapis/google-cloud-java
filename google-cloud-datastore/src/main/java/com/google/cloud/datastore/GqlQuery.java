@@ -19,6 +19,7 @@ package com.google.cloud.datastore;
 import static com.google.cloud.datastore.Validator.validateNamespace;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.Timestamp;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -220,8 +221,8 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
-    public Builder<V> setBinding(String name, DateTime... value) {
-      namedBindings.put(name, toBinding(DateTimeValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> setBinding(String name, Timestamp... value) {
+      namedBindings.put(name, toBinding(TimestampValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
@@ -265,8 +266,8 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
-    public Builder<V> addBinding(DateTime... value) {
-      positionalBindings.add(toBinding(DateTimeValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> addBinding(Timestamp... value) {
+      positionalBindings.add(toBinding(TimestampValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 

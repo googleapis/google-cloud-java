@@ -16,9 +16,9 @@
 
 package com.google.cloud.examples.datastore;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.DateTime;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.FullEntity;
 import com.google.cloud.datastore.IncompleteKey;
@@ -122,7 +122,7 @@ public class DatastoreExample {
       }
       System.out.printf("User '%s' has %d comment[s].%n", userKey.getName(), user.getLong("count"));
       int limit = 200;
-      Map<DateTime, String> sortedComments = new TreeMap<>();
+      Map<Timestamp, String> sortedComments = new TreeMap<>();
       StructuredQuery<Entity> query =
           Query.newEntityQueryBuilder()
               .setNamespace(NAMESPACE)
@@ -135,7 +135,7 @@ public class DatastoreExample {
         int resultCount = 0;
         while (results.hasNext()) {
           Entity result = results.next();
-          sortedComments.put(result.getDateTime("timestamp"), result.getString("content"));
+          sortedComments.put(result.getTimestamp("timestamp"), result.getString("content"));
           resultCount++;
         }
         if (resultCount < limit) {
@@ -146,7 +146,7 @@ public class DatastoreExample {
       // We could have added "ORDER BY timestamp" to the query to avoid sorting, but that would
       // require adding an ancestor index for timestamp.
       // See: https://cloud.google.com/datastore/docs/tools/indexconfig
-      for (Map.Entry<DateTime, String> entry : sortedComments.entrySet()) {
+      for (Map.Entry<Timestamp, String> entry : sortedComments.entrySet()) {
         System.out.printf("\t%s: %s%n", entry.getKey(), entry.getValue());
       }
     }
@@ -175,7 +175,7 @@ public class DatastoreExample {
       IncompleteKey commentKey = IncompleteKey.newBuilder(userKey, COMMENT_KIND).build();
       FullEntity<IncompleteKey> comment = FullEntity.newBuilder(commentKey)
           .set("content", content)
-          .set("timestamp", DateTime.now())
+          .set("timestamp", Timestamp.now())
           .build();
       tx.addWithDeferredIdAllocation(comment);
       System.out.printf("Adding a comment to user '%s'.%n", userKey.getName());
