@@ -31,6 +31,7 @@ import com.google.cloud.datastore.BooleanValue;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.DatastoreReaderWriter;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.EntityValue;
 import com.google.cloud.datastore.FullEntity;
@@ -728,5 +729,49 @@ public class ITDatastoreTest {
     assertNull(keys.next());
     assertNull(keys.next());
     assertFalse(keys.hasNext());
+  }
+
+  @Test
+  public void testRunInTransaction() {
+    Datastore.TransactionCallable<Integer> callable1 =
+        new Datastore.TransactionCallable<Integer>() {
+          private Integer attempts = 1;
+
+          @Override
+          public Integer run(DatastoreReaderWriter transaction) {
+            transaction.get(KEY1);
+            if (attempts < 2) {
+              ++attempts;
+              throw new DatastoreException(10, "", "ABORTED", false, null);
+            }
+
+            return attempts;
+          }
+        };
+
+    int result = DATASTORE.runInTransaction(callable1);
+    assertEquals(result, 2);
+
+    Datastore.TransactionCallable<Integer> callable2 =
+        new Datastore.TransactionCallable<Integer>() {
+          private Integer attempts = 1;
+
+          @Override
+          public Integer run(DatastoreReaderWriter transaction) {
+            transaction.get(KEY1);
+            if (attempts < 2) {
+              ++attempts;
+              throw new DatastoreException(4, "", "DEADLINE_EXCEEDED", false, null);
+            }
+            return attempts;
+          }
+        };
+
+    try {
+      DATASTORE.runInTransaction(callable2);
+      fail("Expecting a failure");
+    } catch (DatastoreException expected) {
+      assertEquals(((DatastoreException) expected.getCause()).getCode(), 4);
+    }
   }
 }

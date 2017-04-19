@@ -57,7 +57,7 @@ public class TimestampTest {
   }
 
   @Test
-  public void fromMicroseconds() {
+  public void ofMicroseconds() {
     Timestamp timestamp = Timestamp.ofTimeMicroseconds(TEST_TIME_MICROSECONDS);
     assertThat(timestamp.getSeconds()).isEqualTo(TEST_TIME_MICROSECONDS / 1000000L);
     assertThat(timestamp.getNanos()).isEqualTo(TEST_TIME_MICROSECONDS % 1000000L * 1000);

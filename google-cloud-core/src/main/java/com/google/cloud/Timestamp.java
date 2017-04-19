@@ -84,8 +84,9 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    * @throws IllegalArgumentException if the timestamp is outside the representable range
    */
   public static Timestamp ofTimeMicroseconds(long microseconds) {
-    long seconds = microseconds / 1000000L;
-    int nanos = (int) ((microseconds % 1000000L) * 1000L);
+    long seconds = TimeUnit.MICROSECONDS.toSeconds(microseconds);
+    int nanos = (int) TimeUnit.MICROSECONDS.toNanos
+        (microseconds - TimeUnit.SECONDS.toMicros(seconds));
     checkArgument(
         Timestamps.isValid(seconds, nanos), "timestamp out of range: %s, %s", seconds, nanos);
     return new Timestamp(seconds, nanos);
@@ -97,7 +98,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    * @throws IllegalArgumentException if the timestamp is outside the representable range
    */
   public static Timestamp of(Date date) {
-    return ofTimeMicroseconds(date.getTime() * 1000);
+    return ofTimeMicroseconds(TimeUnit.MILLISECONDS.toMicros(date.getTime()));
   }
 
 
