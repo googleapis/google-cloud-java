@@ -27,7 +27,6 @@ import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
-import com.google.cloud.vision.v1.ImageAnnotatorGrpc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -79,6 +78,17 @@ public class ImageAnnotatorSettings extends ClientSettings {
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
+
+  private static final io.grpc.MethodDescriptor<
+          BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+      METHOD_BATCH_ANNOTATE_IMAGES =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.cloud.vision.v1.ImageAnnotator/BatchAnnotateImages",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  BatchAnnotateImagesRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  BatchAnnotateImagesResponse.getDefaultInstance()));
 
   private final SimpleCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesSettings;
@@ -192,8 +202,7 @@ public class ImageAnnotatorSettings extends ClientSettings {
     private Builder() {
       super(defaultChannelProviderBuilder().build());
 
-      batchAnnotateImagesSettings =
-          SimpleCallSettings.newBuilder(ImageAnnotatorGrpc.METHOD_BATCH_ANNOTATE_IMAGES);
+      batchAnnotateImagesSettings = SimpleCallSettings.newBuilder(METHOD_BATCH_ANNOTATE_IMAGES);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(batchAnnotateImagesSettings);

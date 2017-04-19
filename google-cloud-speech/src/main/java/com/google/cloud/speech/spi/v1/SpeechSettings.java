@@ -31,7 +31,6 @@ import com.google.cloud.speech.v1.LongRunningRecognizeRequest;
 import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognizeRequest;
 import com.google.cloud.speech.v1.RecognizeResponse;
-import com.google.cloud.speech.v1.SpeechGrpc;
 import com.google.cloud.speech.v1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1.StreamingRecognizeResponse;
 import com.google.common.collect.ImmutableList;
@@ -39,6 +38,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.google.longrunning.Operation;
 import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
 import java.io.IOException;
@@ -85,6 +85,32 @@ public class SpeechSettings extends ClientSettings {
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
+
+  private static final io.grpc.MethodDescriptor<RecognizeRequest, RecognizeResponse>
+      METHOD_RECOGNIZE =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.cloud.speech.v1.Speech/Recognize",
+              io.grpc.protobuf.ProtoUtils.marshaller(RecognizeRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(RecognizeResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<LongRunningRecognizeRequest, Operation>
+      METHOD_LONG_RUNNING_RECOGNIZE =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.cloud.speech.v1.Speech/LongRunningRecognize",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  LongRunningRecognizeRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<
+          StreamingRecognizeRequest, StreamingRecognizeResponse>
+      METHOD_STREAMING_RECOGNIZE =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING,
+              "google.cloud.speech.v1.Speech/StreamingRecognize",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  StreamingRecognizeRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  StreamingRecognizeResponse.getDefaultInstance()));
 
   private final SimpleCallSettings<RecognizeRequest, RecognizeResponse> recognizeSettings;
   private final OperationCallSettings<LongRunningRecognizeRequest, LongRunningRecognizeResponse>
@@ -217,15 +243,14 @@ public class SpeechSettings extends ClientSettings {
     private Builder() {
       super(defaultChannelProviderBuilder().build());
 
-      recognizeSettings = SimpleCallSettings.newBuilder(SpeechGrpc.METHOD_RECOGNIZE);
+      recognizeSettings = SimpleCallSettings.newBuilder(METHOD_RECOGNIZE);
 
       longRunningRecognizeSettings =
           OperationCallSettings.newBuilder(
-              SpeechGrpc.METHOD_LONG_RUNNING_RECOGNIZE, LongRunningRecognizeResponse.class);
+              METHOD_LONG_RUNNING_RECOGNIZE, LongRunningRecognizeResponse.class);
       longRunningRecognizeSettings.setPollingInterval(Duration.millis(20000));
 
-      streamingRecognizeSettings =
-          StreamingCallSettings.newBuilder(SpeechGrpc.METHOD_STREAMING_RECOGNIZE);
+      streamingRecognizeSettings = StreamingCallSettings.newBuilder(METHOD_STREAMING_RECOGNIZE);
 
       unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder>of(recognizeSettings);
     }

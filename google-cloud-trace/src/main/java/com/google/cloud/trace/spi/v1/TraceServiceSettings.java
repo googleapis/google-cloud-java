@@ -44,7 +44,6 @@ import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
 import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
-import com.google.devtools.cloudtrace.v1.TraceServiceGrpc;
 import com.google.protobuf.Empty;
 import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
@@ -96,6 +95,26 @@ public class TraceServiceSettings extends ClientSettings {
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
+
+  private static final io.grpc.MethodDescriptor<PatchTracesRequest, Empty> METHOD_PATCH_TRACES =
+      io.grpc.MethodDescriptor.create(
+          io.grpc.MethodDescriptor.MethodType.UNARY,
+          "google.devtools.cloudtrace.v1.TraceService/PatchTraces",
+          io.grpc.protobuf.ProtoUtils.marshaller(PatchTracesRequest.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<GetTraceRequest, Trace> METHOD_GET_TRACE =
+      io.grpc.MethodDescriptor.create(
+          io.grpc.MethodDescriptor.MethodType.UNARY,
+          "google.devtools.cloudtrace.v1.TraceService/GetTrace",
+          io.grpc.protobuf.ProtoUtils.marshaller(GetTraceRequest.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(Trace.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<ListTracesRequest, ListTracesResponse>
+      METHOD_LIST_TRACES =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.devtools.cloudtrace.v1.TraceService/ListTraces",
+              io.grpc.protobuf.ProtoUtils.marshaller(ListTracesRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(ListTracesResponse.getDefaultInstance()));
 
   private final SimpleCallSettings<PatchTracesRequest, Empty> patchTracesSettings;
   private final SimpleCallSettings<GetTraceRequest, Trace> getTraceSettings;
@@ -278,13 +297,12 @@ public class TraceServiceSettings extends ClientSettings {
     private Builder() {
       super(defaultChannelProviderBuilder().build());
 
-      patchTracesSettings = SimpleCallSettings.newBuilder(TraceServiceGrpc.METHOD_PATCH_TRACES);
+      patchTracesSettings = SimpleCallSettings.newBuilder(METHOD_PATCH_TRACES);
 
-      getTraceSettings = SimpleCallSettings.newBuilder(TraceServiceGrpc.METHOD_GET_TRACE);
+      getTraceSettings = SimpleCallSettings.newBuilder(METHOD_GET_TRACE);
 
       listTracesSettings =
-          PagedCallSettings.newBuilder(
-              TraceServiceGrpc.METHOD_LIST_TRACES, LIST_TRACES_PAGE_STR_FACT);
+          PagedCallSettings.newBuilder(METHOD_LIST_TRACES, LIST_TRACES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
