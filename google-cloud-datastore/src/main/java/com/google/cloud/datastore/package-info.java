@@ -28,7 +28,7 @@
  * Entity entity = Entity.newBuilder(key)
  *     .set("name", "John Doe")
  *     .set("age", 30)
- *     .set("access_time", DateTime.now())
+ *     .set("access_time", Timestamp.now())
  *     .build();
  * datastore.put(entity);
  * } </pre>
@@ -45,7 +45,7 @@
  * if (entity != null) {
  *   System.out.println("Updating access_time for " + entity.getString("name"));
  *   entity = Entity.newBuilder(entity)
- *       .set("access_time", DateTime.now())
+ *       .set("access_time", Timestamp.now())
  *       .build();
  *   datastore.update(entity);
  * }} </pre>

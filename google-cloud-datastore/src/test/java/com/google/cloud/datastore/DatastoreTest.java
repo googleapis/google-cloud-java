@@ -26,6 +26,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Query.ResultType;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
@@ -96,7 +97,7 @@ public class DatastoreTest {
       .build();
   private static final ListValue LIST_VALUE2 = ListValue.of(Collections.singletonList(KEY_VALUE));
   private static final ListValue EMPTY_LIST_VALUE = ListValue.of(Collections.<Value<?>>emptyList());
-  private static final DateTimeValue DATE_TIME_VALUE = new DateTimeValue(DateTime.now());
+  private static final TimestampValue TIMESTAMP_VALUE = new TimestampValue(Timestamp.now());
   private static final LatLngValue LAT_LNG_VALUE =
       new LatLngValue(new LatLng(37.422035, -122.084124));
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY1 =
@@ -111,7 +112,7 @@ public class DatastoreTest {
           .build();
   private static final Entity ENTITY1 = Entity.newBuilder(KEY1)
       .set("str", STR_VALUE)
-      .set("date", DATE_TIME_VALUE)
+      .set("date", TIMESTAMP_VALUE)
       .set("latLng", LAT_LNG_VALUE)
       .set("bool", BOOL_VALUE)
       .set("partial1", EntityValue.of(PARTIAL_ENTITY1))
@@ -407,9 +408,7 @@ public class DatastoreTest {
     assertTrue(projectionResult.hasNext());
     projectionEntity = projectionResult.next();
     assertEquals("str", projectionEntity.getString("str"));
-    assertEquals(DATE_TIME_VALUE.get(), projectionEntity.getDateTime("date"));
-    assertEquals(DATE_TIME_VALUE.get().getTimestampMicroseconds(),
-        projectionEntity.getLong("date"));
+    assertEquals(TIMESTAMP_VALUE.get(), projectionEntity.getTimestamp("date"));
     assertEquals(2, projectionEntity.getNames().size());
     assertFalse(projectionResult.hasNext());
   }
@@ -732,8 +731,8 @@ public class DatastoreTest {
     assertEquals(BOOL_VALUE, value2);
     ListValue value3 = entity.getValue("list");
     assertEquals(LIST_VALUE2, value3);
-    DateTimeValue value4 = entity.getValue("date");
-    assertEquals(DATE_TIME_VALUE, value4);
+    TimestampValue value4 = entity.getValue("date");
+    assertEquals(TIMESTAMP_VALUE, value4);
     LatLngValue value5 = entity.getValue("latLng");
     assertEquals(LAT_LNG_VALUE, value5);
     FullEntity<IncompleteKey> value6 = entity.getEntity("partial1");

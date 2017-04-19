@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import com.google.cloud.Timestamp;
 import com.google.protobuf.ByteString;
 
 /**
@@ -53,12 +54,12 @@ public final class ProjectionEntity extends BaseEntity<Key> {
 
   @SuppressWarnings({"unchecked", "deprecation"})
   @Override
-  public DateTime getDateTime(String name) {
+  public Timestamp getTimestamp(String name) {
     Value<?> value = getValue(name);
     if (value.getMeaning() == 18 && value instanceof LongValue) {
-      return new DateTime(getLong(name));
+      return Timestamp.ofTimeMicroseconds(getLong(name));
     }
-    return ((Value<DateTime>) value).get();
+    return ((Value<Timestamp>) value).get();
   }
 
   @SuppressWarnings({"unchecked", "deprecation"})

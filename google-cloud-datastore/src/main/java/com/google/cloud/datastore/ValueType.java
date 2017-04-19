@@ -66,9 +66,9 @@ public enum ValueType {
   BOOLEAN(BooleanValue.MARSHALLER),
 
   /**
-   * Represents a {@link DateTime} value.
+   * Represents a {@link Timestamp} value.
    */
-  DATE_TIME(DateTimeValue.MARSHALLER),
+  TIMESTAMP(TimestampValue.MARSHALLER),
 
   /**
    * Represents a {@link Blob} value.
