@@ -23,12 +23,6 @@
       <artifactId>google-cloud-storage</artifactId>
       <version>${storage.version}</version>
     </dependency>
-
-    <dependency>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-assembly-plugin</artifactId>
-      <version>2.5.4</version>
-    </dependency>
   </dependencies>
   <build>
     <plugins>
