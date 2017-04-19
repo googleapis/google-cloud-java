@@ -79,7 +79,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
   }
 
   /**
-   * Creates an instance representing the value of {@code microseconds}
+   * Creates an instance representing the value of {@code microseconds}.
    *
    * @throws IllegalArgumentException if the timestamp is outside the representable range
    */
@@ -93,7 +93,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
   }
 
   /**
-   * Creates an instance representing the value of {@code Date}
+   * Creates an instance representing the value of {@code Date}.
    *
    * @throws IllegalArgumentException if the timestamp is outside the representable range
    */
