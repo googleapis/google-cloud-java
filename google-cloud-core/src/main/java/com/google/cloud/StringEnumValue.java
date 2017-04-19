@@ -53,7 +53,7 @@ public abstract class StringEnumValue implements Serializable {
     if (this == that) {
       return true;
     }
-    if (!(that instanceof StringEnumValue)) {
+    if (!(getClass().equals(that.getClass()))) {
       return false;
     }
     StringEnumValue thatEnumValue = (StringEnumValue) that;
