@@ -85,8 +85,8 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    */
   public static Timestamp ofTimeMicroseconds(long microseconds) {
     long seconds = TimeUnit.MICROSECONDS.toSeconds(microseconds);
-    int nanos = (int) TimeUnit.MICROSECONDS.toNanos
-        (microseconds - TimeUnit.SECONDS.toMicros(seconds));
+    int nanos = (int) TimeUnit.MICROSECONDS.toNanos(
+        microseconds - TimeUnit.SECONDS.toMicros(seconds));
     checkArgument(
         Timestamps.isValid(seconds, nanos), "timestamp out of range: %s, %s", seconds, nanos);
     return new Timestamp(seconds, nanos);
