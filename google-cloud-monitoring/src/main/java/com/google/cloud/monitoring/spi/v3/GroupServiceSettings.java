@@ -45,7 +45,6 @@ import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
 import com.google.monitoring.v3.GetGroupRequest;
 import com.google.monitoring.v3.Group;
-import com.google.monitoring.v3.GroupServiceGrpc;
 import com.google.monitoring.v3.ListGroupMembersRequest;
 import com.google.monitoring.v3.ListGroupMembersResponse;
 import com.google.monitoring.v3.ListGroupsRequest;
@@ -103,6 +102,46 @@ public class GroupServiceSettings extends ClientSettings {
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
+
+  private static final io.grpc.MethodDescriptor<ListGroupsRequest, ListGroupsResponse>
+      METHOD_LIST_GROUPS =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.monitoring.v3.GroupService/ListGroups",
+              io.grpc.protobuf.ProtoUtils.marshaller(ListGroupsRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(ListGroupsResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<GetGroupRequest, Group> METHOD_GET_GROUP =
+      io.grpc.MethodDescriptor.create(
+          io.grpc.MethodDescriptor.MethodType.UNARY,
+          "google.monitoring.v3.GroupService/GetGroup",
+          io.grpc.protobuf.ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(Group.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<CreateGroupRequest, Group> METHOD_CREATE_GROUP =
+      io.grpc.MethodDescriptor.create(
+          io.grpc.MethodDescriptor.MethodType.UNARY,
+          "google.monitoring.v3.GroupService/CreateGroup",
+          io.grpc.protobuf.ProtoUtils.marshaller(CreateGroupRequest.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(Group.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<UpdateGroupRequest, Group> METHOD_UPDATE_GROUP =
+      io.grpc.MethodDescriptor.create(
+          io.grpc.MethodDescriptor.MethodType.UNARY,
+          "google.monitoring.v3.GroupService/UpdateGroup",
+          io.grpc.protobuf.ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(Group.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<DeleteGroupRequest, Empty> METHOD_DELETE_GROUP =
+      io.grpc.MethodDescriptor.create(
+          io.grpc.MethodDescriptor.MethodType.UNARY,
+          "google.monitoring.v3.GroupService/DeleteGroup",
+          io.grpc.protobuf.ProtoUtils.marshaller(DeleteGroupRequest.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<ListGroupMembersRequest, ListGroupMembersResponse>
+      METHOD_LIST_GROUP_MEMBERS =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.monitoring.v3.GroupService/ListGroupMembers",
+              io.grpc.protobuf.ProtoUtils.marshaller(ListGroupMembersRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  ListGroupMembersResponse.getDefaultInstance()));
 
   private final PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
       listGroupsSettings;
@@ -371,20 +410,18 @@ public class GroupServiceSettings extends ClientSettings {
       super(defaultChannelProviderBuilder().build());
 
       listGroupsSettings =
-          PagedCallSettings.newBuilder(
-              GroupServiceGrpc.METHOD_LIST_GROUPS, LIST_GROUPS_PAGE_STR_FACT);
+          PagedCallSettings.newBuilder(METHOD_LIST_GROUPS, LIST_GROUPS_PAGE_STR_FACT);
 
-      getGroupSettings = SimpleCallSettings.newBuilder(GroupServiceGrpc.METHOD_GET_GROUP);
+      getGroupSettings = SimpleCallSettings.newBuilder(METHOD_GET_GROUP);
 
-      createGroupSettings = SimpleCallSettings.newBuilder(GroupServiceGrpc.METHOD_CREATE_GROUP);
+      createGroupSettings = SimpleCallSettings.newBuilder(METHOD_CREATE_GROUP);
 
-      updateGroupSettings = SimpleCallSettings.newBuilder(GroupServiceGrpc.METHOD_UPDATE_GROUP);
+      updateGroupSettings = SimpleCallSettings.newBuilder(METHOD_UPDATE_GROUP);
 
-      deleteGroupSettings = SimpleCallSettings.newBuilder(GroupServiceGrpc.METHOD_DELETE_GROUP);
+      deleteGroupSettings = SimpleCallSettings.newBuilder(METHOD_DELETE_GROUP);
 
       listGroupMembersSettings =
-          PagedCallSettings.newBuilder(
-              GroupServiceGrpc.METHOD_LIST_GROUP_MEMBERS, LIST_GROUP_MEMBERS_PAGE_STR_FACT);
+          PagedCallSettings.newBuilder(METHOD_LIST_GROUP_MEMBERS, LIST_GROUP_MEMBERS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(

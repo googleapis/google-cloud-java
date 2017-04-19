@@ -94,7 +94,7 @@
 
     <api-client.version>1.21.0</api-client.version>
     <api-common.version>0.2.0</api-common.version>
-    <gax.version>0.12.0</gax.version>
+    <gax.version>0.13.0</gax.version>
     <generatedProto.version>0.1.8</generatedProto.version>
     <google.auth.version>0.6.1</google.auth.version>
     <grpc.version>1.2.0</grpc.version>
@@ -396,6 +396,8 @@
           <target>1.7</target>
           <encoding>UTF-8</encoding>
           <compilerArgument>-Xlint:unchecked</compilerArgument>
+          <compilerArgument>-Xlint:deprecation</compilerArgument>
+	  <showDeprecation>true</showDeprecation>
         </configuration>
       </plugin>
       <plugin>

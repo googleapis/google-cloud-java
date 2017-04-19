@@ -114,7 +114,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setDelayThreshold(Duration.standardSeconds(5))
-                    .setElementCountThreshold(10)
+                    .setElementCountThreshold(10L)
                     .build())
             .build();
 
@@ -143,7 +143,7 @@ public class PublisherImplTest {
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
-                    .setElementCountThreshold(2)
+                    .setElementCountThreshold(2L)
                     .setDelayThreshold(Duration.standardSeconds(100))
                     .build())
             .build();
@@ -181,7 +181,7 @@ public class PublisherImplTest {
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
-                    .setElementCountThreshold(2)
+                    .setElementCountThreshold(2L)
                     .setDelayThreshold(Duration.standardSeconds(100))
                     .build())
             .build();
@@ -216,7 +216,7 @@ public class PublisherImplTest {
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
-                    .setElementCountThreshold(2)
+                    .setElementCountThreshold(2L)
                     .setDelayThreshold(Duration.standardSeconds(5))
                     .build())
             .build();
@@ -263,7 +263,7 @@ public class PublisherImplTest {
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
-                    .setElementCountThreshold(1)
+                    .setElementCountThreshold(1L)
                     .setDelayThreshold(Duration.standardSeconds(5))
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
@@ -291,7 +291,7 @@ public class PublisherImplTest {
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
-                    .setElementCountThreshold(1)
+                    .setElementCountThreshold(1L)
                     .setDelayThreshold(Duration.standardSeconds(5))
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
@@ -327,7 +327,7 @@ public class PublisherImplTest {
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
-                    .setElementCountThreshold(1)
+                    .setElementCountThreshold(1L)
                     .setDelayThreshold(Duration.standardSeconds(5))
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
@@ -350,9 +350,9 @@ public class PublisherImplTest {
     builder.setExecutorProvider(SINGLE_THREAD_EXECUTOR);
     builder.setBatchingSettings(
         BatchingSettings.newBuilder()
-            .setRequestByteThreshold(10)
+            .setRequestByteThreshold(10L)
             .setDelayThreshold(new Duration(11))
-            .setElementCountThreshold(12)
+            .setElementCountThreshold(12L)
             .build());
     builder.setFlowControlSettings(
         FlowControlSettings.newBuilder()
@@ -424,7 +424,7 @@ public class PublisherImplTest {
       builder.setBatchingSettings(
           Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
-              .setRequestByteThreshold(0)
+              .setRequestByteThreshold(0L)
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
@@ -434,7 +434,7 @@ public class PublisherImplTest {
       builder.setBatchingSettings(
           Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
-              .setRequestByteThreshold(-1)
+              .setRequestByteThreshold(-1L)
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
@@ -467,7 +467,7 @@ public class PublisherImplTest {
     builder.setBatchingSettings(
         Publisher.Builder.DEFAULT_BATCHING_SETTINGS
             .toBuilder()
-            .setElementCountThreshold(1)
+            .setElementCountThreshold(1L)
             .build());
     try {
       builder.setBatchingSettings(
@@ -483,7 +483,7 @@ public class PublisherImplTest {
       builder.setBatchingSettings(
           Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
-              .setElementCountThreshold(0)
+              .setElementCountThreshold(0L)
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
@@ -493,7 +493,7 @@ public class PublisherImplTest {
       builder.setBatchingSettings(
           Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
-              .setElementCountThreshold(-1)
+              .setElementCountThreshold(-1L)
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {

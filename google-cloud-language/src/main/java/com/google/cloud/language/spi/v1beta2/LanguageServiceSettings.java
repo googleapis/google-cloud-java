@@ -35,7 +35,6 @@ import com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest;
 import com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse;
 import com.google.cloud.language.v1beta2.AnnotateTextRequest;
 import com.google.cloud.language.v1beta2.AnnotateTextResponse;
-import com.google.cloud.language.v1beta2.LanguageServiceGrpc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -87,6 +86,46 @@ public class LanguageServiceSettings extends ClientSettings {
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
+
+  private static final io.grpc.MethodDescriptor<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+      METHOD_ANALYZE_SENTIMENT =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.cloud.language.v1beta2.LanguageService/AnalyzeSentiment",
+              io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeSentimentRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  AnalyzeSentimentResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+      METHOD_ANALYZE_ENTITIES =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.cloud.language.v1beta2.LanguageService/AnalyzeEntities",
+              io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeEntitiesRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeEntitiesResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<
+          AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+      METHOD_ANALYZE_ENTITY_SENTIMENT =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.cloud.language.v1beta2.LanguageService/AnalyzeEntitySentiment",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  AnalyzeEntitySentimentRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  AnalyzeEntitySentimentResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
+      METHOD_ANALYZE_SYNTAX =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.cloud.language.v1beta2.LanguageService/AnalyzeSyntax",
+              io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeSyntaxRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeSyntaxResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<AnnotateTextRequest, AnnotateTextResponse>
+      METHOD_ANNOTATE_TEXT =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.cloud.language.v1beta2.LanguageService/AnnotateText",
+              io.grpc.protobuf.ProtoUtils.marshaller(AnnotateTextRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(AnnotateTextResponse.getDefaultInstance()));
 
   private final SimpleCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentSettings;
@@ -241,20 +280,16 @@ public class LanguageServiceSettings extends ClientSettings {
     private Builder() {
       super(defaultChannelProviderBuilder().build());
 
-      analyzeSentimentSettings =
-          SimpleCallSettings.newBuilder(LanguageServiceGrpc.METHOD_ANALYZE_SENTIMENT);
+      analyzeSentimentSettings = SimpleCallSettings.newBuilder(METHOD_ANALYZE_SENTIMENT);
 
-      analyzeEntitiesSettings =
-          SimpleCallSettings.newBuilder(LanguageServiceGrpc.METHOD_ANALYZE_ENTITIES);
+      analyzeEntitiesSettings = SimpleCallSettings.newBuilder(METHOD_ANALYZE_ENTITIES);
 
       analyzeEntitySentimentSettings =
-          SimpleCallSettings.newBuilder(LanguageServiceGrpc.METHOD_ANALYZE_ENTITY_SENTIMENT);
+          SimpleCallSettings.newBuilder(METHOD_ANALYZE_ENTITY_SENTIMENT);
 
-      analyzeSyntaxSettings =
-          SimpleCallSettings.newBuilder(LanguageServiceGrpc.METHOD_ANALYZE_SYNTAX);
+      analyzeSyntaxSettings = SimpleCallSettings.newBuilder(METHOD_ANALYZE_SYNTAX);
 
-      annotateTextSettings =
-          SimpleCallSettings.newBuilder(LanguageServiceGrpc.METHOD_ANNOTATE_TEXT);
+      annotateTextSettings = SimpleCallSettings.newBuilder(METHOD_ANNOTATE_TEXT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(

@@ -32,7 +32,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
-import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceGrpc;
 import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
 import java.io.IOException;
@@ -81,6 +80,15 @@ public class ReportErrorsServiceSettings extends ClientSettings {
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
+
+  private static final io.grpc.MethodDescriptor<ReportErrorEventRequest, ReportErrorEventResponse>
+      METHOD_REPORT_ERROR_EVENT =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.devtools.clouderrorreporting.v1beta1.ReportErrorsService/ReportErrorEvent",
+              io.grpc.protobuf.ProtoUtils.marshaller(ReportErrorEventRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  ReportErrorEventResponse.getDefaultInstance()));
 
   private final SimpleCallSettings<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventSettings;
@@ -193,8 +201,7 @@ public class ReportErrorsServiceSettings extends ClientSettings {
     private Builder() {
       super(defaultChannelProviderBuilder().build());
 
-      reportErrorEventSettings =
-          SimpleCallSettings.newBuilder(ReportErrorsServiceGrpc.METHOD_REPORT_ERROR_EVENT);
+      reportErrorEventSettings = SimpleCallSettings.newBuilder(METHOD_REPORT_ERROR_EVENT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(reportErrorEventSettings);

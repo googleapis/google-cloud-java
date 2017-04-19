@@ -54,7 +54,6 @@ import com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
-import com.google.monitoring.v3.MetricServiceGrpc;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
 import com.google.protobuf.ExperimentalApi;
@@ -108,6 +107,75 @@ public class MetricServiceSettings extends ClientSettings {
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
+
+  private static final io.grpc.MethodDescriptor<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
+      METHOD_LIST_MONITORED_RESOURCE_DESCRIPTORS =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.monitoring.v3.MetricService/ListMonitoredResourceDescriptors",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  ListMonitoredResourceDescriptorsRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  ListMonitoredResourceDescriptorsResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<
+          GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
+      METHOD_GET_MONITORED_RESOURCE_DESCRIPTOR =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.monitoring.v3.MetricService/GetMonitoredResourceDescriptor",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  GetMonitoredResourceDescriptorRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  MonitoredResourceDescriptor.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
+      METHOD_LIST_METRIC_DESCRIPTORS =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.monitoring.v3.MetricService/ListMetricDescriptors",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  ListMetricDescriptorsRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  ListMetricDescriptorsResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<GetMetricDescriptorRequest, MetricDescriptor>
+      METHOD_GET_METRIC_DESCRIPTOR =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.monitoring.v3.MetricService/GetMetricDescriptor",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  GetMetricDescriptorRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<CreateMetricDescriptorRequest, MetricDescriptor>
+      METHOD_CREATE_METRIC_DESCRIPTOR =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.monitoring.v3.MetricService/CreateMetricDescriptor",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  CreateMetricDescriptorRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<DeleteMetricDescriptorRequest, Empty>
+      METHOD_DELETE_METRIC_DESCRIPTOR =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.monitoring.v3.MetricService/DeleteMetricDescriptor",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  DeleteMetricDescriptorRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<ListTimeSeriesRequest, ListTimeSeriesResponse>
+      METHOD_LIST_TIME_SERIES =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.monitoring.v3.MetricService/ListTimeSeries",
+              io.grpc.protobuf.ProtoUtils.marshaller(ListTimeSeriesRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(ListTimeSeriesResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<CreateTimeSeriesRequest, Empty>
+      METHOD_CREATE_TIME_SERIES =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.monitoring.v3.MetricService/CreateTimeSeries",
+              io.grpc.protobuf.ProtoUtils.marshaller(CreateTimeSeriesRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance()));
 
   private final PagedCallSettings<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
@@ -504,32 +572,28 @@ public class MetricServiceSettings extends ClientSettings {
 
       listMonitoredResourceDescriptorsSettings =
           PagedCallSettings.newBuilder(
-              MetricServiceGrpc.METHOD_LIST_MONITORED_RESOURCE_DESCRIPTORS,
+              METHOD_LIST_MONITORED_RESOURCE_DESCRIPTORS,
               LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT);
 
       getMonitoredResourceDescriptorSettings =
-          SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_GET_MONITORED_RESOURCE_DESCRIPTOR);
+          SimpleCallSettings.newBuilder(METHOD_GET_MONITORED_RESOURCE_DESCRIPTOR);
 
       listMetricDescriptorsSettings =
           PagedCallSettings.newBuilder(
-              MetricServiceGrpc.METHOD_LIST_METRIC_DESCRIPTORS,
-              LIST_METRIC_DESCRIPTORS_PAGE_STR_FACT);
+              METHOD_LIST_METRIC_DESCRIPTORS, LIST_METRIC_DESCRIPTORS_PAGE_STR_FACT);
 
-      getMetricDescriptorSettings =
-          SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_GET_METRIC_DESCRIPTOR);
+      getMetricDescriptorSettings = SimpleCallSettings.newBuilder(METHOD_GET_METRIC_DESCRIPTOR);
 
       createMetricDescriptorSettings =
-          SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_CREATE_METRIC_DESCRIPTOR);
+          SimpleCallSettings.newBuilder(METHOD_CREATE_METRIC_DESCRIPTOR);
 
       deleteMetricDescriptorSettings =
-          SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_DELETE_METRIC_DESCRIPTOR);
+          SimpleCallSettings.newBuilder(METHOD_DELETE_METRIC_DESCRIPTOR);
 
       listTimeSeriesSettings =
-          PagedCallSettings.newBuilder(
-              MetricServiceGrpc.METHOD_LIST_TIME_SERIES, LIST_TIME_SERIES_PAGE_STR_FACT);
+          PagedCallSettings.newBuilder(METHOD_LIST_TIME_SERIES, LIST_TIME_SERIES_PAGE_STR_FACT);
 
-      createTimeSeriesSettings =
-          SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_CREATE_TIME_SERIES);
+      createTimeSeriesSettings = SimpleCallSettings.newBuilder(METHOD_CREATE_TIME_SERIES);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(

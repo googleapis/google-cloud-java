@@ -58,7 +58,6 @@ import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LogEntry;
-import com.google.logging.v2.LoggingServiceV2Grpc;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
@@ -115,6 +114,44 @@ public class LoggingSettings extends ClientSettings {
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
+
+  private static final io.grpc.MethodDescriptor<DeleteLogRequest, Empty> METHOD_DELETE_LOG =
+      io.grpc.MethodDescriptor.create(
+          io.grpc.MethodDescriptor.MethodType.UNARY,
+          "google.logging.v2.LoggingServiceV2/DeleteLog",
+          io.grpc.protobuf.ProtoUtils.marshaller(DeleteLogRequest.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<WriteLogEntriesRequest, WriteLogEntriesResponse>
+      METHOD_WRITE_LOG_ENTRIES =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.logging.v2.LoggingServiceV2/WriteLogEntries",
+              io.grpc.protobuf.ProtoUtils.marshaller(WriteLogEntriesRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(WriteLogEntriesResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<ListLogEntriesRequest, ListLogEntriesResponse>
+      METHOD_LIST_LOG_ENTRIES =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.logging.v2.LoggingServiceV2/ListLogEntries",
+              io.grpc.protobuf.ProtoUtils.marshaller(ListLogEntriesRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(ListLogEntriesResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
+      METHOD_LIST_MONITORED_RESOURCE_DESCRIPTORS =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.logging.v2.LoggingServiceV2/ListMonitoredResourceDescriptors",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  ListMonitoredResourceDescriptorsRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  ListMonitoredResourceDescriptorsResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<ListLogsRequest, ListLogsResponse>
+      METHOD_LIST_LOGS =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.logging.v2.LoggingServiceV2/ListLogs",
+              io.grpc.protobuf.ProtoUtils.marshaller(ListLogsRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(ListLogsResponse.getDefaultInstance()));
 
   private final SimpleCallSettings<DeleteLogRequest, Empty> deleteLogSettings;
   private final BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
@@ -407,7 +444,7 @@ public class LoggingSettings extends ClientSettings {
             @Override
             public PartitionKey getBatchPartitionKey(WriteLogEntriesRequest request) {
               return new PartitionKey(
-                  request.getLogName(), request.getResource(), request.getLabels());
+                  request.getLogName(), request.getResource(), request.getLabelsMap());
             }
 
             @Override
@@ -526,25 +563,21 @@ public class LoggingSettings extends ClientSettings {
     private Builder() {
       super(defaultChannelProviderBuilder().build());
 
-      deleteLogSettings = SimpleCallSettings.newBuilder(LoggingServiceV2Grpc.METHOD_DELETE_LOG);
+      deleteLogSettings = SimpleCallSettings.newBuilder(METHOD_DELETE_LOG);
 
       writeLogEntriesSettings =
-          BatchingCallSettings.newBuilder(
-                  LoggingServiceV2Grpc.METHOD_WRITE_LOG_ENTRIES, WRITE_LOG_ENTRIES_BATCHING_DESC)
+          BatchingCallSettings.newBuilder(METHOD_WRITE_LOG_ENTRIES, WRITE_LOG_ENTRIES_BATCHING_DESC)
               .setBatchingSettingsBuilder(BatchingSettings.newBuilder());
 
       listLogEntriesSettings =
-          PagedCallSettings.newBuilder(
-              LoggingServiceV2Grpc.METHOD_LIST_LOG_ENTRIES, LIST_LOG_ENTRIES_PAGE_STR_FACT);
+          PagedCallSettings.newBuilder(METHOD_LIST_LOG_ENTRIES, LIST_LOG_ENTRIES_PAGE_STR_FACT);
 
       listMonitoredResourceDescriptorsSettings =
           PagedCallSettings.newBuilder(
-              LoggingServiceV2Grpc.METHOD_LIST_MONITORED_RESOURCE_DESCRIPTORS,
+              METHOD_LIST_MONITORED_RESOURCE_DESCRIPTORS,
               LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT);
 
-      listLogsSettings =
-          PagedCallSettings.newBuilder(
-              LoggingServiceV2Grpc.METHOD_LIST_LOGS, LIST_LOGS_PAGE_STR_FACT);
+      listLogsSettings = PagedCallSettings.newBuilder(METHOD_LIST_LOGS, LIST_LOGS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
@@ -566,8 +599,8 @@ public class LoggingSettings extends ClientSettings {
       builder
           .writeLogEntriesSettings()
           .getBatchingSettingsBuilder()
-          .setElementCountThreshold(1000)
-          .setRequestByteThreshold(1048576)
+          .setElementCountThreshold(1000L)
+          .setRequestByteThreshold(1048576L)
           .setDelayThreshold(Duration.millis(50))
           .setFlowControlSettings(
               FlowControlSettings.newBuilder()
