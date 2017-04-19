@@ -17,13 +17,15 @@ package com.google.cloud;
 
 import com.google.api.core.InternalApi;
 import com.google.common.base.Preconditions;
+import java.io.Serializable;
 
 /**
  * This represents a specific instance of a concept having a known set of acceptable String values,
  * which can expand later due to new API features. Standard Java enums can't be used in such
  * a context.
  */
-public abstract class StringEnumValue {
+public abstract class StringEnumValue implements Serializable {
+  private static final long serialVersionUID = 1501809419544297884L;
   private final String constant;
 
   /**
@@ -32,6 +34,10 @@ public abstract class StringEnumValue {
   @InternalApi
   protected StringEnumValue(String constant) {
     this.constant = Preconditions.checkNotNull(constant);
+  }
+
+  public String name() {
+    return constant;
   }
 
   @Override
