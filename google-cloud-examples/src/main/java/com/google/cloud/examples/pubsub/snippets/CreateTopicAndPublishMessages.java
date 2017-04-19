@@ -16,7 +16,7 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.api.gax.core.ApiFuture;
+import com.google.api.core.ApiFuture;
 import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.protobuf.ByteString;

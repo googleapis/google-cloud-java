@@ -16,9 +16,10 @@
 
 package com.google.cloud.spanner;
 
-import com.google.api.gax.protobuf.PathTemplate;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import java.util.Map;
 import java.util.Objects;
 
 /** Represents an id of a Cloud Spanner database resource. */
@@ -82,7 +83,7 @@ public final class DatabaseId {
    * @throws IllegalArgumentException if {@code name} does not conform to the expected pattern
    */
   static DatabaseId of(String name) {
-    ImmutableMap<String, String> parts = NAME_TEMPLATE.match(name);
+    Map<String, String> parts = NAME_TEMPLATE.match(name);
     Preconditions.checkArgument(
         parts != null, "Name should conform to pattern %s: %s", NAME_TEMPLATE, name);
     return of(parts.get("project"), parts.get("instance"), parts.get("database"));

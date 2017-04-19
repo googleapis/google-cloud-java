@@ -27,8 +27,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.core.ApiClock;
-import com.google.api.gax.core.CurrentMillisClock;
+import com.google.api.core.ApiClock;
+import com.google.api.core.CurrentMillisClock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 

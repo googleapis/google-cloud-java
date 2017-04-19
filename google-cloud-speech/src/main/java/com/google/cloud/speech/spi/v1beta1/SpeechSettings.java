@@ -29,7 +29,6 @@ import com.google.api.gax.grpc.StreamingCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeResponse;
-import com.google.cloud.speech.v1beta1.SpeechGrpc;
 import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
@@ -39,6 +38,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.google.longrunning.Operation;
 import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
 import java.io.IOException;
@@ -85,6 +85,31 @@ public class SpeechSettings extends ClientSettings {
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
+
+  private static final io.grpc.MethodDescriptor<SyncRecognizeRequest, SyncRecognizeResponse>
+      METHOD_SYNC_RECOGNIZE =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.cloud.speech.v1beta1.Speech/SyncRecognize",
+              io.grpc.protobuf.ProtoUtils.marshaller(SyncRecognizeRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(SyncRecognizeResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<AsyncRecognizeRequest, Operation>
+      METHOD_ASYNC_RECOGNIZE =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.cloud.speech.v1beta1.Speech/AsyncRecognize",
+              io.grpc.protobuf.ProtoUtils.marshaller(AsyncRecognizeRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<
+          StreamingRecognizeRequest, StreamingRecognizeResponse>
+      METHOD_STREAMING_RECOGNIZE =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING,
+              "google.cloud.speech.v1beta1.Speech/StreamingRecognize",
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  StreamingRecognizeRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(
+                  StreamingRecognizeResponse.getDefaultInstance()));
 
   private final SimpleCallSettings<SyncRecognizeRequest, SyncRecognizeResponse>
       syncRecognizeSettings;
@@ -218,14 +243,12 @@ public class SpeechSettings extends ClientSettings {
     private Builder() {
       super(defaultChannelProviderBuilder().build());
 
-      syncRecognizeSettings = SimpleCallSettings.newBuilder(SpeechGrpc.METHOD_SYNC_RECOGNIZE);
+      syncRecognizeSettings = SimpleCallSettings.newBuilder(METHOD_SYNC_RECOGNIZE);
 
       asyncRecognizeSettings =
-          OperationCallSettings.newBuilder(
-              SpeechGrpc.METHOD_ASYNC_RECOGNIZE, AsyncRecognizeResponse.class);
+          OperationCallSettings.newBuilder(METHOD_ASYNC_RECOGNIZE, AsyncRecognizeResponse.class);
 
-      streamingRecognizeSettings =
-          StreamingCallSettings.newBuilder(SpeechGrpc.METHOD_STREAMING_RECOGNIZE);
+      streamingRecognizeSettings = StreamingCallSettings.newBuilder(METHOD_STREAMING_RECOGNIZE);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(syncRecognizeSettings);

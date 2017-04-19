@@ -17,11 +17,9 @@ environment:
   matrix:
     - JAVA_HOME: C:\Program Files\Java\jdk1.7.0
   GOOGLE_CLOUD_PROJECT:
-    secure: uFZ/+vyRarW3Xot03J4h5w==
+    secure: hbX+cAXrU588+iTMKyzGOQ==
   SECRET:
-    secure: aiT7rDn1EzWK6imZcF/1q8NqPP5rLf7T9dUB+QFna8Zpa4k4ezMX/ZFYhFz02Aia3VLV8uD8M5esqBVB3NB9aozx7PTXmr/JKJNOTEVhTylGne5I7Sm2i1x/hcsKK5N0M5ptQzMHxjc7UtSKB+t0GPLWhWLqmdf+5qRpLjD2YsIXNofPeZlr+HoXSV3qW2ixCq76PGAq32qsb/DfIsaKwuL2k2n9gl4SEu2xPUa8ORU=
-  GOOGLE_API_KEY:
-    secure: v/wAbkBCQm25Yqk4n/+7II/Klsibax+kymVIJREJgGTjBYR5AlIkpTT2oECy0Z+B
+    secure: P4H6q90j3t0GC527rKUrpMzYs1z4aqzMh7pfNVqr2ZIJB8H07oeaD0zlosK8An15VQw7q5WTWImiU+yzX1aErct+k2uIah0iArGuEcrKOtQV/4JD10P7QHPsSMXdDXFzbDXsDi6Wf4UDQH7tFGPNU+VrCcXPMfkIlMkYg5tD10TktjdCEJ6YNw0J6SldFeDHDyBkVbmP6SAiQTpqjqO3NDI8i15mH84CWNT90khz4t8Wnhyvnv+J3u89w9Lp/AFoJfkrK2fjDUhR3K1flyG689Skyng2NCSF5wZcq5IPGMRqR+18js4MykeybPVNmEtBBZh+rzPey42oxtQPIX9I6KwPfkXlu2tXuPcbPCpHH5Y= 
 
 # install required tools (maven, secure-file, encrypted files)
 install:
@@ -39,10 +37,7 @@ build_script:
 
 # verify artifacts
 test_script:
-  - mvn verify -DskipITs
-  # TODO fix integration tests in AppVeyor:
-  # https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1429
-  #- IF DEFINED APPVEYOR_PULL_REQUEST_NUMBER (mvn verify -DskipITs) ELSE (mvn verify)
+  - IF DEFINED APPVEYOR_PULL_REQUEST_NUMBER (mvn verify -DskipITs) ELSE (mvn verify)
 
 # preserve dependencies between builds
 cache:

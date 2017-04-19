@@ -73,46 +73,30 @@ uses the `RemoteComputeHelper` to create an address.
 
 You can test against a temporary local Datastore by following these steps:
 
-1. Start the local Datastore emulator before running your tests using `LocalDatastoreHelper`'s `create` and `start` methods. This will create a temporary folder on your computer and bind a port for communication with the local Datastore. There is an optional argument for `create`: consistency. The consistency setting controls the fraction of Datastore writes that are immediately visible in global queries.
-  ```java
-  // Use the default consistency setting of 0.9
-  LocalDatastoreHelper helper = LocalDatastoreHelper.create();
-  // or explicitly set the consistency
-  helper = LocalDatastoreHelper.create(0.6);
+1. [Install Cloud SDK](https://cloud.google.com/sdk/downloads)
 
-  helper.start(); // Starts the local Datastore emulator in a separate process
-  ```
-
-2. Create and use a `Datastore` object with the options given by the `LocalDatastoreHelper` instance.  For example:
-  ```java
-  Datastore localDatastore = helper.getOptions().getService();
-  ```
-
-3. Run your tests.
-
-4. Stop the local datastore emulator by calling the `stop()` method, like so:
-  ```java
-  helper.stop();
-  ```
-
-#### On a remote machine
-
-You can test against a remote Datastore emulator as well.  To do this, set the `DatastoreOptions` project endpoint to the hostname of the remote machine, like the example below.
-
-  ```java
-  DatastoreOptions options = DatastoreOptions.newBuilder()
-      .setProjectId("my-project-id") // must match project ID specified on remote machine
-      .setHost("http://<hostname of machine>:<port>")
-      .setCredentials(NoCredentials.getInstance())
-      .build();
-  Datastore localDatastore = options.getService();
-  ```
-
-We recommend that you start the emulator on the remote machine using the [Google Cloud SDK](https://cloud.google.com/sdk/gcloud/reference/beta/emulators/datastore/) from command line, as shown below:
-
+2. Start the emulator
 ```
-gcloud beta emulators datastore start --host-port <hostname of machine>:<port>
+$ gcloud beta emulators datastore start
 ```
+To determine which host/port the emulator is running on:
+```
+$ gcloud beta emulators datastore env-init
+# Sample output:
+#   export DATASTORE_EMULATOR_HOST=localhost:8759
+```
+3. Point your client to the emulator
+
+```java
+DatastoreOptions options = DatastoreOptions.newBuilder()
+    .setProjectId(DatastoreOptions.getDefaultProjectId())
+    .setHost(System.getenv("DATASTORE_EMULATOR_HOST"))
+    .setCredentials(NoCredentials.getInstance())
+    .setRetrySettings(ServiceOptions.getNoRetrySettings())
+    .build();
+Datastore datastore = options.getService();
+```
+4. Run your tests
 
 ### Testing code that uses DNS
 

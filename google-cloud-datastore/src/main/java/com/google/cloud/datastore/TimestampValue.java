@@ -18,12 +18,14 @@ package com.google.cloud.datastore;
 
 import static com.google.datastore.v1.Value.TIMESTAMP_VALUE_FIELD_NUMBER;
 
-public final class DateTimeValue extends Value<DateTime> {
+import com.google.cloud.Timestamp;
+
+public final class TimestampValue extends Value<Timestamp> {
 
   private static final long serialVersionUID = -8502433575902990648L;
 
-  static final BaseMarshaller<DateTime, DateTimeValue, Builder> MARSHALLER =
-      new BaseMarshaller<DateTime, DateTimeValue, Builder>() {
+  static final BaseMarshaller<Timestamp, TimestampValue, Builder> MARSHALLER =
+      new BaseMarshaller<Timestamp, TimestampValue, Builder>() {
 
         private static final long serialVersionUID = -5789520029958113745L;
 
@@ -33,39 +35,38 @@ public final class DateTimeValue extends Value<DateTime> {
         }
 
         @Override
-        public Builder newBuilder(DateTime value) {
-          return DateTimeValue.newBuilder(value);
+        public Builder newBuilder(Timestamp value) {
+          return TimestampValue.newBuilder(value);
         }
 
         @Override
-        protected DateTime getValue(com.google.datastore.v1.Value from) {
-          return new DateTime(DateTime.timestampPbToMicroseconds(from.getTimestampValue()));
+        protected Timestamp getValue(com.google.datastore.v1.Value from) {
+          return Timestamp.fromProto(from.getTimestampValue());
         }
 
         @Override
-        protected void setValue(DateTimeValue from, com.google.datastore.v1.Value.Builder to) {
-          to.setTimestampValue(DateTime.microsecondsToTimestampPb(from.get()
-              .getTimestampMicroseconds()));
+        protected void setValue(TimestampValue from, com.google.datastore.v1.Value.Builder to) {
+          to.setTimestampValue(from.get().toProto());
         }
       };
 
-  public static final class Builder extends Value.BaseBuilder<DateTime, DateTimeValue, Builder> {
+  public static final class Builder extends Value.BaseBuilder<Timestamp, TimestampValue, Builder> {
 
     private Builder() {
-      super(ValueType.DATE_TIME);
+      super(ValueType.TIMESTAMP);
     }
 
     @Override
-    public DateTimeValue build() {
-      return new DateTimeValue(this);
+    public TimestampValue build() {
+      return new TimestampValue(this);
     }
   }
 
-  public DateTimeValue(DateTime dateTime) {
-    this(newBuilder(dateTime));
+  public TimestampValue(Timestamp timestamp) {
+    this(newBuilder(timestamp));
   }
 
-  private DateTimeValue(Builder builder) {
+  private TimestampValue(Builder builder) {
     super(builder);
   }
 
@@ -74,12 +75,12 @@ public final class DateTimeValue extends Value<DateTime> {
     return new Builder().mergeFrom(this);
   }
 
-  public static DateTimeValue of(DateTime dateTime) {
-    return new DateTimeValue(dateTime);
+  public static TimestampValue of(Timestamp timestamp) {
+    return new TimestampValue(timestamp);
   }
 
 
-  public static Builder newBuilder(DateTime dateTime) {
-    return new Builder().set(dateTime);
+  public static Builder newBuilder(Timestamp timestamp) {
+    return new Builder().set(timestamp);
   }
 }

@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.common.base.CaseFormat;
 
 import java.io.Serializable;
@@ -48,52 +49,91 @@ public final class Identity implements Serializable {
   /**
    * The types of IAM identities.
    */
-  public enum Type {
+  public static final class Type extends StringEnumValue {
+    private static final long serialVersionUID = 3809891273596003916L;
+
+    private Type(String constant) {
+      super(constant);
+    }
+
+    private static final ApiFunction<String, Type> CONSTRUCTOR =
+        new ApiFunction<String, Type>() {
+          @Override
+          public Type apply(String constant) {
+            return new Type(constant);
+          }
+        };
+
+    private static final StringEnumType<Type> type = new StringEnumType(
+        Type.class,
+        CONSTRUCTOR);
 
     /**
      * Represents anyone who is on the internet; with or without a Google account.
      */
-    ALL_USERS,
+    public static final Type ALL_USERS = type.createAndRegister("ALL_USERS");
 
     /**
      * Represents anyone who is authenticated with a Google account or a service account.
      */
-    ALL_AUTHENTICATED_USERS,
+    public static final Type ALL_AUTHENTICATED_USERS = type.createAndRegister("ALL_AUTHENTICATED_USERS");
 
     /**
      * Represents a specific Google account.
      */
-    USER,
+    public static final Type USER = type.createAndRegister("USER");
 
     /**
      * Represents a service account.
      */
-    SERVICE_ACCOUNT,
+    public static final Type SERVICE_ACCOUNT = type.createAndRegister("SERVICE_ACCOUNT");
 
     /**
      * Represents a Google group.
      */
-    GROUP,
+    public static final Type GROUP = type.createAndRegister("GROUP");
 
     /**
      * Represents all the users of a Google Apps domain name.
      */
-    DOMAIN,
-    
+    public static final Type DOMAIN = type.createAndRegister("DOMAIN");
+
     /**
      * Represents owners of a Google Cloud Platform project.
      */
-    PROJECT_OWNER,
-    
+    public static final Type PROJECT_OWNER = type.createAndRegister("PROJECT_OWNER");
+
     /**
      * Represents editors of a Google Cloud Platform project.
      */
-    PROJECT_EDITOR,
-    
+    public static final Type PROJECT_EDITOR = type.createAndRegister("PROJECT_EDITOR");
+
     /**
      * Represents viewers of a Google Cloud Platform project.
      */
-    PROJECT_VIEWER
+    public static final Type PROJECT_VIEWER = type.createAndRegister("PROJECT_VIEWER");
+
+    /**
+     * Get the Type for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static Type valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the Type for the given String constant, and allow unrecognized values.
+     */
+    public static Type valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for Type.
+     */
+    public static Type[] values() {
+      return type.values();
+    }
   }
 
   private Identity(Type type, String value) {
@@ -225,27 +265,11 @@ public final class Identity implements Serializable {
    * {@code Identity} objects to strings for protobuf-generated policies.
    */
   public String strValue() {
-    switch (type) {
-      case ALL_USERS:
-        return "allUsers";
-      case ALL_AUTHENTICATED_USERS:
-        return "allAuthenticatedUsers";
-      case USER:
-        return "user:" + value;
-      case SERVICE_ACCOUNT:
-        return "serviceAccount:" + value;
-      case GROUP:
-        return "group:" + value;
-      case DOMAIN:
-        return "domain:" + value;
-      case PROJECT_OWNER:
-        return "projectOwner:" + value;
-      case PROJECT_EDITOR:
-        return "projectEditor:" + value;
-      case PROJECT_VIEWER:
-        return "projectViewer:" + value;
-      default:
-        throw new IllegalStateException("Unexpected identity type: " + type);
+    String protobufString = CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, type.toString());
+    if (value == null) {
+      return protobufString;
+    } else {
+      return protobufString + ":" + value;
     }
   }
 
@@ -256,27 +280,12 @@ public final class Identity implements Serializable {
   public static Identity valueOf(String identityStr) {
     String[] info = identityStr.split(":");
     Type type = Type.valueOf(CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_UNDERSCORE, info[0]));
-    switch (type) {
-      case ALL_USERS:
-        return Identity.allUsers();
-      case ALL_AUTHENTICATED_USERS:
-        return Identity.allAuthenticatedUsers();
-      case USER:
-        return Identity.user(info[1]);
-      case SERVICE_ACCOUNT:
-        return Identity.serviceAccount(info[1]);
-      case GROUP:
-        return Identity.group(info[1]);
-      case DOMAIN:
-        return Identity.domain(info[1]);
-      case PROJECT_OWNER:
-        return Identity.projectOwner(info[1]);
-      case PROJECT_EDITOR:
-        return Identity.projectEditor(info[1]);
-      case PROJECT_VIEWER:
-        return Identity.projectViewer(info[1]);
-      default:
-        throw new IllegalStateException("Unexpected identity type " + type);
+    if (info.length == 1) {
+      return new Identity(type, null);
+    } else if (info.length == 2){
+      return new Identity(type, info[1]);
+    } else {
+      throw new IllegalArgumentException("Illegal identity string: \"" + identityStr + "\"");
     }
   }
 }

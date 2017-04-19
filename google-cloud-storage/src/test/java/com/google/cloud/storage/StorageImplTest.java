@@ -28,7 +28,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.gax.core.ApiClock;
+import com.google.api.core.ApiClock;
 import com.google.api.gax.core.Page;
 import com.google.api.services.storage.model.Policy.Bindings;
 import com.google.api.services.storage.model.StorageObject;

@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.io.BaseEncoding;
@@ -31,6 +32,7 @@ import java.util.Iterator;
 /**
  * An immutable byte array holder.
  */
+@BetaApi
 public class ByteArray implements Iterable<Byte>, Serializable {
 
   private static final long serialVersionUID = -1908809133893782840L;

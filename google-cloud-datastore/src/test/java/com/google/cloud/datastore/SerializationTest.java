@@ -21,6 +21,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
+import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
@@ -33,7 +34,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final IncompleteKey INCOMPLETE_KEY2 =
       IncompleteKey.newBuilder(KEY1, "v").addAncestor(PathElement.of("p", 1)).build();
   private static final Key KEY2 = Key.newBuilder(KEY1, "v", 2).build();
-  private static final DateTime DATE_TIME1 = DateTime.now();
+  private static final Timestamp TIMESTAMP = Timestamp.now();
   private static final LatLng LAT_LNG = new LatLng(37.422035, -122.084124);
   private static final Blob BLOB1 = Blob.copyFrom(UTF_8.encode("hello world"));
   private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1, 2});
@@ -77,7 +78,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final LongValue LONG_VALUE = LongValue.of(123);
   private static final DoubleValue DOUBLE_VALUE = DoubleValue.of(12.34);
   private static final BooleanValue BOOLEAN_VALUE = BooleanValue.of(true);
-  private static final DateTimeValue DATE_AND_TIME_VALUE = DateTimeValue.of(DateTime.now());
+  private static final TimestampValue TIMESTAMP_VALUE = TimestampValue.of(Timestamp.now());
   private static final BlobValue BLOB_VALUE = BlobValue.of(BLOB1);
   private static final RawValue RAW_VALUE = 
       RawValue.of(com.google.datastore.v1.Value.newBuilder().setMeaning(18).build());
@@ -116,10 +117,10 @@ public class SerializationTest extends BaseSerializationTest {
         .build();
     DatastoreOptions otherOptions = options.toBuilder().setNamespace("ns1").build();
     return new java.io.Serializable[]{KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1,
-        ENTITY2, ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, CURSOR1, GQL1,
+        ENTITY2, ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, TIMESTAMP, BLOB1, CURSOR1, GQL1,
         GQL2, QUERY1, QUERY2, QUERY3, NULL_VALUE, KEY_VALUE, STRING_VALUE, EMBEDDED_ENTITY_VALUE1,
         EMBEDDED_ENTITY_VALUE2, EMBEDDED_ENTITY_VALUE3, LIST_VALUE, LONG_VALUE, DOUBLE_VALUE,
-        BOOLEAN_VALUE, DATE_AND_TIME_VALUE, BLOB_VALUE, RAW_VALUE, LAT_LNG_VALUE,
+        BOOLEAN_VALUE, TIMESTAMP_VALUE, BLOB_VALUE, RAW_VALUE, LAT_LNG_VALUE,
         DATASTORE_EXCEPTION, options, otherOptions};
   }
 

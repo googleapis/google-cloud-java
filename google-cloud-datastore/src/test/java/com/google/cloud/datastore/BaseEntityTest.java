@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
@@ -34,7 +35,7 @@ import java.util.Set;
 public class BaseEntityTest {
 
   private static final Blob BLOB = Blob.copyFrom(new byte[]{1, 2});
-  private static final DateTime DATE_TIME = DateTime.now();
+  private static final Timestamp TIMESTAMP = Timestamp.now();
   private static final LatLng LAT_LNG = new LatLng(37.422035, -122.084124);
   private static final Key KEY = Key.newBuilder("ds1", "k1", "n1").build();
   private static final Entity ENTITY = Entity.newBuilder(KEY).set("name", "foo").build();
@@ -55,7 +56,7 @@ public class BaseEntityTest {
   @Before
   public void setUp() {
     builder = new Builder();
-    builder.set("blob", BLOB).set("boolean", true).set("dateTime", DATE_TIME);
+    builder.set("blob", BLOB).set("boolean", true).set("timestamp", TIMESTAMP);
     builder.set("double", 1.25).set("key", KEY).set("string", "hello world");
     builder.set("long", 125).setNull("null").set("entity", ENTITY).set("latLng", LAT_LNG);
     builder.set("partialEntity", PARTIAL_ENTITY).set("stringValue", StringValue.of("bla"));
@@ -65,7 +66,7 @@ public class BaseEntityTest {
     builder.set(
         "blobList", BLOB, Blob.copyFrom(new byte[] {3, 4}), Blob.copyFrom(new byte[] {5, 6}));
     builder.set("booleanList", true, false, true);
-    builder.set("dateTimeList", DateTime.now(), DateTime.now(), DateTime.now());
+    builder.set("timestampList", Timestamp.now(), Timestamp.now(), Timestamp.now());
     builder.set("doubleList", 12.3, 4.56, .789);
     builder.set("keyList", KEY, Key.newBuilder("ds2", "k2", "n2").build(),
         Key.newBuilder("ds3", "k3", "n3").build());
@@ -145,14 +146,14 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testGetDateTime() throws Exception {
+  public void testGetTimestamp() throws Exception {
     BaseEntity<Key> entity = builder.build();
-    assertEquals(DATE_TIME, entity.getDateTime("dateTime"));
+    assertEquals(TIMESTAMP, entity.getTimestamp("timestamp"));
     Calendar cal = Calendar.getInstance();
     cal.add(Calendar.DATE, -1);
-    DateTime dateTime = DateTime.copyFrom(cal);
-    entity = builder.set("dateTime", DateTimeValue.of(dateTime)).build();
-    assertEquals(dateTime, entity.getDateTime("dateTime"));
+    Timestamp timestamp = Timestamp.of(cal.getTime());
+    entity = builder.set("timestamp", TimestampValue.of(timestamp)).build();
+    assertEquals(timestamp, entity.getTimestamp("timestamp"));
   }
 
   @Test
@@ -223,8 +224,8 @@ public class BaseEntityTest {
     Set<String> names =
         ImmutableSet.<String>builder()
             .add("string", "stringValue", "boolean", "double", "long", "list1", "list2", "list3")
-            .add("entity", "partialEntity", "null", "dateTime", "blob", "key", "blobList")
-            .add("booleanList", "dateTimeList", "doubleList", "keyList", "entityList", "stringList")
+            .add("entity", "partialEntity", "null", "timestamp", "blob", "key", "blobList")
+            .add("booleanList", "timestampList", "doubleList", "keyList", "entityList", "stringList")
             .add("longList", "latLng", "latLngList")
             .build();
     BaseEntity<Key> entity = builder.build();
