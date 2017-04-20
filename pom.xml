@@ -12,36 +12,72 @@
   </description>
   <developers>
     <developer>
-      <id>derka</id>
-      <name>Martin Derka</name>
-      <email>derka@google.com</email>
+      <id>garrettjonesgoogle</id>
+      <name>Garrett Jones</name>
+      <email>garrettjones@google.com</email>
       <organization>Google</organization>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <id>ajaykannan</id>
-      <name>Ajay Kannan</name>
-      <email>ajaykannan@google.com</email>
+      <id>pongad</id>
+      <name>Michael Darakananda</name>
+      <email>pongad@google.com</email>
       <organization>Google</organization>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <id>ozarov</id>
-      <name>Arie Ozarov</name>
-      <email>ozarov@google.com</email>
+      <id>shinfan</id>
+      <name>Shin Fan</name>
+      <email>shinfan@google.com</email>
       <organization>Google</organization>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <id>mziccardi</id>
-      <name>Marco Ziccardi</name>
-      <email>mziccardi@google.com</email>
+      <id>michaelbausor</id>
+      <name>Micheal Bausor</name>
+      <email>michaelbausor@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>vam-google</id>
+      <name>Vadym Matsishevskyi</name>
+      <email>vam@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>tswast</id>
+      <name>Tim Swast</name>
+      <email>tswast@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>neozwu</id>
+      <name>Neo Wu</name>
+      <email>neowu@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>lesv</id>
+      <name>Les Vogel</name>
+      <email>lesv@google.com</email>
       <organization>Google</organization>
       <roles>
         <role>Developer</role>
