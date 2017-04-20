@@ -461,6 +461,13 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return credentials;
   }
 
+  public boolean credentialIsNoCredentialInstance() {
+    if (credentials != null) {
+      return credentials.equals(NoCredentials.getInstance());
+    }
+    return false;
+  }
+
   /**
    * Returns the authentication credentials. If required, credentials are scoped.
    */
