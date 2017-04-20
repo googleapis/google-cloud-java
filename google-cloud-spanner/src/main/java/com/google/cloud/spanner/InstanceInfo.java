@@ -186,7 +186,7 @@ public class InstanceInfo {
   }
 
   /** Returns the cloud labels attached to this instance. */
-  public ImmutableMap<String, String> getLabels() {
+  public Map<String, String> getLabels() {
     return labels;
   }
 
