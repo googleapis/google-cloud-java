@@ -16,6 +16,7 @@
 
 package com.google.cloud.testing;
 
+import com.google.api.core.InternalApi;
 import com.google.cloud.ServiceOptions;
 import com.google.common.io.CharStreams;
 import com.google.common.util.concurrent.SettableFuture;
@@ -57,6 +58,7 @@ import org.joda.time.Duration;
 /**
  * Utility class to start and stop a local service which is used by unit testing.
  */
+@InternalApi
 public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
 
   private final String emulator;

@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.ApiClock;
+import com.google.api.core.ApiClock;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 

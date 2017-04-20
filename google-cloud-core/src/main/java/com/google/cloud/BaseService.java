@@ -39,7 +39,7 @@ public abstract class BaseService<OptionsT extends ServiceOptions<?, OptionsT>>
     public RetryResult beforeEval(Exception exception) {
       if (exception instanceof BaseServiceException) {
         boolean retriable = ((BaseServiceException) exception).isRetryable();
-        return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
+        return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.CONTINUE_EVALUATION;
       }
       return Interceptor.RetryResult.CONTINUE_EVALUATION;
     }

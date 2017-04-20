@@ -16,6 +16,9 @@
 
 package com.google.cloud.logging;
 
+import com.google.api.core.ApiFunction;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
@@ -50,11 +53,51 @@ public final class HttpRequest implements Serializable {
   /**
    * The HTTP request method.
    */
-  public enum RequestMethod {
-    GET,
-    HEAD,
-    PUT,
-    POST
+  public static final class RequestMethod extends StringEnumValue {
+    private static final long serialVersionUID = 2403969065179486996L;
+
+    private RequestMethod(String constant) {
+      super(constant);
+    }
+
+    private static final ApiFunction<String, RequestMethod> CONSTRUCTOR =
+        new ApiFunction<String, RequestMethod>() {
+          @Override
+          public RequestMethod apply(String constant) {
+            return new RequestMethod(constant);
+          }
+        };
+
+    private static final StringEnumType<RequestMethod> type = new StringEnumType(
+        RequestMethod.class,
+        CONSTRUCTOR);
+
+    public static final RequestMethod GET = type.createAndRegister("GET");
+    public static final RequestMethod HEAD = type.createAndRegister("HEAD");
+    public static final RequestMethod PUT = type.createAndRegister("PUT");
+    public static final RequestMethod POST = type.createAndRegister("POST");
+
+    /**
+     * Get the RequestMethod for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static RequestMethod valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the RequestMethod for the given String constant, and allow unrecognized values.
+     */
+    public static RequestMethod valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for RequestMethod.
+     */
+    public static RequestMethod[] values() {
+      return type.values();
+    }
   }
 
   /**

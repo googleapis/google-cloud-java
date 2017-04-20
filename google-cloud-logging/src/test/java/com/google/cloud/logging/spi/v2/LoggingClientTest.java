@@ -147,7 +147,7 @@ public class LoggingClientTest {
 
     Assert.assertEquals(logName, actualRequest.getLogNameAsLogNameOneof());
     Assert.assertEquals(resource, actualRequest.getResource());
-    Assert.assertEquals(labels, actualRequest.getLabels());
+    Assert.assertEquals(labels, actualRequest.getLabelsMap());
     Assert.assertEquals(entries, actualRequest.getEntriesList());
   }
 

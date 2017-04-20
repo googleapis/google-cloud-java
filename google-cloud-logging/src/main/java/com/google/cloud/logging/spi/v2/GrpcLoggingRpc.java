@@ -16,9 +16,9 @@
 
 package com.google.cloud.logging.spi.v2;
 
-import com.google.api.gax.core.ApiFunction;
-import com.google.api.gax.core.ApiFuture;
-import com.google.api.gax.core.ApiFutures;
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
@@ -54,9 +54,8 @@ import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
 import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status.Code;
-import io.grpc.netty.NegotiationType;
-import io.grpc.netty.NettyChannelBuilder;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.EnumSet;
@@ -84,8 +83,8 @@ public class GrpcLoggingRpc implements LoggingRpc {
       // todo(mziccard): ChannelProvider should support null/absent credentials for testing
       if (options.getHost().contains("localhost")
           || options.getCredentials().equals(NoCredentials.getInstance())) {
-        ManagedChannel managedChannel = NettyChannelBuilder.forTarget(options.getHost())
-            .negotiationType(NegotiationType.PLAINTEXT)
+        ManagedChannel managedChannel = ManagedChannelBuilder.forTarget(options.getHost())
+            .usePlaintext(true)
             .executor(executor)
             .build();
         channelProvider = FixedChannelProvider.create(managedChannel);

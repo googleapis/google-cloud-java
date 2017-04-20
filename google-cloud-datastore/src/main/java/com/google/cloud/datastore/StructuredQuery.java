@@ -18,18 +18,21 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.BlobValue.of;
 import static com.google.cloud.datastore.BooleanValue.of;
-import static com.google.cloud.datastore.DateTimeValue.of;
 import static com.google.cloud.datastore.DoubleValue.of;
 import static com.google.cloud.datastore.KeyValue.of;
 import static com.google.cloud.datastore.LongValue.of;
 import static com.google.cloud.datastore.StringValue.of;
+import static com.google.cloud.datastore.TimestampValue.of;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
+import com.google.cloud.Timestamp;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Collections;
@@ -124,8 +127,26 @@ public abstract class StructuredQuery<V> extends Query<V> {
     private final Operator operator;
     private final ImmutableList<Filter> filters;
 
-    enum Operator {
-      AND;
+    static final class Operator extends StringEnumValue {
+      private static final long serialVersionUID = -4806600805752138487L;
+
+      private Operator(String constant) {
+        super(constant);
+      }
+
+      private static final ApiFunction<String, Operator> CONSTRUCTOR =
+          new ApiFunction<String, Operator>() {
+            @Override
+            public Operator apply(String constant) {
+              return new Operator(constant);
+            }
+          };
+
+      private static final StringEnumType<Operator> type = new StringEnumType(
+          Operator.class,
+          CONSTRUCTOR);
+
+      static final Operator AND = type.createAndRegister("AND");
 
       com.google.datastore.v1.CompositeFilter.Operator toPb() {
         return com.google.datastore.v1.CompositeFilter.Operator.valueOf(name());
@@ -133,6 +154,28 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
       static Operator fromPb(com.google.datastore.v1.CompositeFilter.Operator operatorPb) {
         return valueOf(operatorPb.name());
+      }
+
+      /**
+       * Get the Operator for the given String constant, and throw an exception if the constant is
+       * not recognized.
+       */
+      static Operator valueOfStrict(String constant) {
+        return type.valueOfStrict(constant);
+      }
+
+      /**
+       * Get the Operator for the given String constant, and allow unrecognized values.
+       */
+      static Operator valueOf(String constant) {
+        return type.valueOf(constant);
+      }
+
+      /**
+       * Return the known values for Operator.
+       */
+      static Operator[] values() {
+        return type.values();
       }
     }
 
@@ -170,7 +213,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
         return false;
       }
       CompositeFilter other = (CompositeFilter) obj;
-      return operator == other.operator
+      return operator.equals(other.operator)
           && filters.equals(other.filters);
     }
 
@@ -214,13 +257,33 @@ public abstract class StructuredQuery<V> extends Query<V> {
     private final Operator operator;
     private final Value<?> value;
 
-    enum Operator {
-      LESS_THAN,
-      LESS_THAN_OR_EQUAL,
-      GREATER_THAN,
-      GREATER_THAN_OR_EQUAL,
-      EQUAL,
-      HAS_ANCESTOR;
+    static final class Operator extends StringEnumValue {
+      private static final long serialVersionUID = 4105765859141068029L;
+
+      private Operator(String constant) {
+        super(constant);
+      }
+
+      private static final ApiFunction<String, Operator> CONSTRUCTOR =
+          new ApiFunction<String, Operator>() {
+            @Override
+            public Operator apply(String constant) {
+              return new Operator(constant);
+            }
+          };
+
+      private static final StringEnumType<Operator> type = new StringEnumType(
+          Operator.class,
+          CONSTRUCTOR);
+
+      static final Operator LESS_THAN = type.createAndRegister("LESS_THAN");
+      static final Operator LESS_THAN_OR_EQUAL = type
+          .createAndRegister("LESS_THAN_OR_EQUAL");
+      static final Operator GREATER_THAN = type.createAndRegister("GREATER_THAN");
+      static final Operator GREATER_THAN_OR_EQUAL = type
+          .createAndRegister("GREATER_THAN_OR_EQUAL");
+      static final Operator EQUAL = type.createAndRegister("EQUAL");
+      static final Operator HAS_ANCESTOR = type.createAndRegister("HAS_ANCESTOR");
 
       com.google.datastore.v1.PropertyFilter.Operator toPb() {
         return com.google.datastore.v1.PropertyFilter.Operator.valueOf(name());
@@ -228,6 +291,28 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
       static Operator fromPb(com.google.datastore.v1.PropertyFilter.Operator operatorPb) {
         return valueOf(operatorPb.name());
+      }
+
+      /**
+       * Get the Operator for the given String constant, and throw an exception if the constant is
+       * not recognized.
+       */
+      static Operator valueOfStrict(String constant) {
+        return type.valueOfStrict(constant);
+      }
+
+      /**
+       * Get the Operator for the given String constant, and allow unrecognized values.
+       */
+      static Operator valueOf(String constant) {
+        return type.valueOf(constant);
+      }
+
+      /**
+       * Return the known values for Operator.
+       */
+      static Operator[] values() {
+        return type.values();
       }
     }
 
@@ -268,7 +353,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       }
       PropertyFilter other = (PropertyFilter) obj;
       return property.equals(other.property)
-          && operator == other.operator
+          && operator.equals(other.operator)
           && Objects.equals(value, other.value);
     }
 
@@ -292,7 +377,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.LESS_THAN, of(value));
     }
 
-    public static PropertyFilter lt(String property, DateTime value) {
+    public static PropertyFilter lt(String property, Timestamp value) {
       return new PropertyFilter(property, Operator.LESS_THAN, of(value));
     }
 
@@ -324,7 +409,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter le(String property, DateTime value) {
+    public static PropertyFilter le(String property, Timestamp value) {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
@@ -356,7 +441,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.GREATER_THAN, of(value));
     }
 
-    public static PropertyFilter gt(String property, DateTime value) {
+    public static PropertyFilter gt(String property, Timestamp value) {
       return new PropertyFilter(property, Operator.GREATER_THAN, of(value));
     }
 
@@ -388,7 +473,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter ge(String property, DateTime value) {
+    public static PropertyFilter ge(String property, Timestamp value) {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
@@ -420,7 +505,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.EQUAL, of(value));
     }
 
-    public static PropertyFilter eq(String property, DateTime value) {
+    public static PropertyFilter eq(String property, Timestamp value) {
       return new PropertyFilter(property, Operator.EQUAL, of(value));
     }
 
@@ -461,9 +546,27 @@ public abstract class StructuredQuery<V> extends Query<V> {
     private final String property;
     private final Direction direction;
 
-    public enum Direction {
+    public static final class Direction extends StringEnumValue {
+      private static final long serialVersionUID = -6938125060419556331L;
 
-      ASCENDING, DESCENDING;
+      private Direction(String constant) {
+        super(constant);
+      }
+
+      private static final ApiFunction<String, Direction> CONSTRUCTOR =
+          new ApiFunction<String, Direction>() {
+            @Override
+            public Direction apply(String constant) {
+              return new Direction(constant);
+            }
+          };
+
+      private static final StringEnumType<Direction> type = new StringEnumType(
+          Direction.class,
+          CONSTRUCTOR);
+
+      public static final Direction ASCENDING = type.createAndRegister("ASCENDING");
+      public static final Direction DESCENDING = type.createAndRegister("DESCENDING");
 
       com.google.datastore.v1.PropertyOrder.Direction toPb() {
         return com.google.datastore.v1.PropertyOrder.Direction.valueOf(name());
@@ -471,6 +574,28 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
       static Direction fromPb(com.google.datastore.v1.PropertyOrder.Direction directionPb) {
         return valueOf(directionPb.name());
+      }
+
+      /**
+       * Get the Direction for the given String constant, and throw an exception if the constant is
+       * not recognized.
+       */
+      static Direction valueOfStrict(String constant) {
+        return type.valueOfStrict(constant);
+      }
+
+      /**
+       * Get the Direction for the given String constant, and allow unrecognized values.
+       */
+      static Direction valueOf(String constant) {
+        return type.valueOf(constant);
+      }
+
+      /**
+       * Return the known values for Direction.
+       */
+      static Direction[] values() {
+        return type.values();
       }
     }
 
@@ -494,7 +619,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       }
       OrderBy other = (OrderBy) obj;
       return property.equals(other.property)
-          && direction == other.direction;
+          && direction.equals(other.direction);
     }
 
 

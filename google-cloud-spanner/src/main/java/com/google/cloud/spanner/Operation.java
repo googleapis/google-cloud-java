@@ -16,8 +16,8 @@
 
 package com.google.cloud.spanner;
 
-import com.google.api.gax.core.ApiClock;
-import com.google.api.gax.core.CurrentMillisClock;
+import com.google.api.core.ApiClock;
+import com.google.api.core.CurrentMillisClock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.WaitForOption.CheckingPeriod;
 import com.google.cloud.WaitForOption.Timeout;

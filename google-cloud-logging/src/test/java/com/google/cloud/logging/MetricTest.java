@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.core.ApiFutures;
+import com.google.api.core.ApiFutures;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Test;

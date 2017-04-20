@@ -34,9 +34,6 @@ import org.joda.time.Duration;
  * {@link LoggingOptions#getRetrySettings()}: {@link RetrySettings#getMaxRetryDelay()} is
  * {@code 30000}, {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
  * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
- * {@link GrpcTransportOptions#getInitialTimeout()} is set to 60000,
- * {@link GrpcTransportOptions#getMaxTimeout()} is set to {@code 240000} and
- * {@link GrpcTransportOptions#getTimeoutMultiplier()} is set to {@code 1.5}.
  */
 public class RemoteLoggingHelper {
 
@@ -69,12 +66,6 @@ public class RemoteLoggingHelper {
       throws LoggingHelperException {
     try {
       GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
-      transportOptions =
-          transportOptions.toBuilder()
-              .setInitialTimeout(60000)
-              .setMaxTimeout(120000)
-              .setTimeoutMultiplier(1.5)
-              .build();
       LoggingOptions storageOptions = LoggingOptions.newBuilder()
           .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
@@ -96,12 +87,6 @@ public class RemoteLoggingHelper {
    */
   public static RemoteLoggingHelper create() throws LoggingHelperException {
     GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
-    transportOptions =
-        transportOptions.toBuilder()
-            .setInitialTimeout(60000)
-            .setMaxTimeout(120000)
-            .setTimeoutMultiplier(1.5)
-            .build();
     LoggingOptions loggingOptions = LoggingOptions.newBuilder()
         .setRetrySettings(retrySettings())
         .setTransportOptions(transportOptions)

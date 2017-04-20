@@ -20,6 +20,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.common.base.Strings;
 import com.google.protobuf.util.Timestamps;
+import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -34,7 +36,10 @@ import org.joda.time.format.ISODateTimeFormat;
  *
  * <p>{@code Timestamp} instances are immutable.
  */
-public final class Timestamp implements Comparable<Timestamp> {
+public final class Timestamp implements Comparable<Timestamp>, Serializable {
+
+  private static final long serialVersionUID = 5152143600571559844L;
+
   /** The smallest legal timestamp ("0001-01-01T00:00:00Z"). */
   public static final Timestamp MIN_VALUE = new Timestamp(-62135596800L, 0);
 
@@ -71,6 +76,38 @@ public final class Timestamp implements Comparable<Timestamp> {
     checkArgument(
         Timestamps.isValid(seconds, nanos), "timestamp out of range: %s, %s", seconds, nanos);
     return new Timestamp(seconds, nanos);
+  }
+
+  /**
+   * Creates an instance representing the value of {@code microseconds}.
+   *
+   * @throws IllegalArgumentException if the timestamp is outside the representable range
+   */
+  public static Timestamp ofTimeMicroseconds(long microseconds) {
+    long seconds = TimeUnit.MICROSECONDS.toSeconds(microseconds);
+    int nanos = (int) TimeUnit.MICROSECONDS.toNanos(
+        microseconds - TimeUnit.SECONDS.toMicros(seconds));
+    checkArgument(
+        Timestamps.isValid(seconds, nanos), "timestamp out of range: %s, %s", seconds, nanos);
+    return new Timestamp(seconds, nanos);
+  }
+
+  /**
+   * Creates an instance representing the value of {@code Date}.
+   *
+   * @throws IllegalArgumentException if the timestamp is outside the representable range
+   */
+  public static Timestamp of(Date date) {
+    return ofTimeMicroseconds(TimeUnit.MILLISECONDS.toMicros(date.getTime()));
+  }
+
+
+  /**
+   * Creates an instance with current time.
+   */
+  public static Timestamp now() {
+    java.sql.Timestamp date = new java.sql.Timestamp(System.currentTimeMillis());
+    return of(date);
   }
 
   /**

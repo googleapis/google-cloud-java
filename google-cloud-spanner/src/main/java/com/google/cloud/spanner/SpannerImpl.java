@@ -26,7 +26,7 @@ import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
-import com.google.api.gax.protobuf.PathTemplate;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.BaseService;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
