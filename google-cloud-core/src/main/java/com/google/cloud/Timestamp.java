@@ -16,19 +16,20 @@
 
 package com.google.cloud;
 
-import static com.google.common.base.Preconditions.checkArgument;
-
 import com.google.common.base.Strings;
 import com.google.protobuf.util.Timestamps;
+import org.joda.time.chrono.GregorianChronology;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.joda.time.chrono.GregorianChronology;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * Represents a timestamp with nanosecond precision. Timestamps cover the range
@@ -45,7 +46,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
 
   /** The largest legal timestamp ("9999-12-31T23:59:59Z"). */
   public static final Timestamp MAX_VALUE =
-          new Timestamp(253402300799L, (int) TimeUnit.SECONDS.toNanos(1) - 1);
+      new Timestamp(253402300799L, (int) TimeUnit.SECONDS.toNanos(1) - 1);
 
   /** Regexp to split timestamps into date-hour-minute-second and fractional second components. */
   private static final Pattern FORMAT_REGEXP = Pattern.compile("([^\\.]*)(\\.\\d{0,9})?Z");
@@ -53,7 +54,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
   private static final long NANOS_PER_SECOND = TimeUnit.SECONDS.toNanos(1);
 
   private static final DateTimeFormatter format =
-          ISODateTimeFormat.dateHourMinuteSecond().withChronology(GregorianChronology.getInstanceUTC());
+      ISODateTimeFormat.dateHourMinuteSecond().withChronology(GregorianChronology.getInstanceUTC());
 
   private final long seconds;
   private final int nanos;
@@ -85,10 +86,10 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    */
   public static Timestamp ofTimeMicroseconds(long microseconds) {
     long seconds = TimeUnit.MICROSECONDS.toSeconds(microseconds);
-    int nanos = (int) TimeUnit.MICROSECONDS.toNanos(
-            microseconds - TimeUnit.SECONDS.toMicros(seconds));
+    int nanos =
+        (int) TimeUnit.MICROSECONDS.toNanos(microseconds - TimeUnit.SECONDS.toMicros(seconds));
     checkArgument(
-            Timestamps.isValid(seconds, nanos), "timestamp out of range: %s, %s", seconds, nanos);
+        Timestamps.isValid(seconds, nanos), "timestamp out of range: %s, %s", seconds, nanos);
     return new Timestamp(seconds, nanos);
   }
 
@@ -182,7 +183,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
       nanos = Integer.parseInt(padded);
       if (nanos >= TimeUnit.SECONDS.toNanos(1)) {
         throw new IllegalArgumentException(
-                "Cannot parse input: " + timestamp + " (nanos out of range)");
+            "Cannot parse input: " + timestamp + " (nanos out of range)");
       }
     }
     return ofTimeSecondsAndNanos(seconds, nanos);
