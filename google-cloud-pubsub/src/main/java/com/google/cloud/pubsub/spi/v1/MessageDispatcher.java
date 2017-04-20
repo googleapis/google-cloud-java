@@ -19,6 +19,7 @@ package com.google.cloud.pubsub.spi.v1;
 import com.google.api.gax.core.ApiClock;
 import com.google.api.gax.core.FlowController;
 import com.google.api.gax.core.FlowController.FlowControlException;
+import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.OutstandingMessagesBatch.OutstandingMessage;
 import com.google.common.annotations.VisibleForTesting;
@@ -37,7 +38,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -62,7 +62,7 @@ class MessageDispatcher {
   private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
   private static final ScheduledExecutorService alarmsExecutor =
-      Executors.newScheduledThreadPool(2);
+      InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(2).build().getExecutor();
 
   private final ScheduledExecutorService executor;
   private final ApiClock clock;
@@ -85,7 +85,7 @@ class MessageDispatcher {
   private Instant nextAckDeadlineExtensionAlarmTime;
   private ScheduledFuture<?> pendingAcksAlarm;
 
-  private Deque<OutstandingMessagesBatch> outstandingMessageBatches;
+  private final Deque<OutstandingMessagesBatch> outstandingMessageBatches;
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
@@ -317,10 +317,6 @@ class MessageDispatcher {
 
     public Deque<OutstandingMessage> messages() {
       return messages;
-    }
-
-    public void done() {
-      doneCallback.run();
     }
   }
 
