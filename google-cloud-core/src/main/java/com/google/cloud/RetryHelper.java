@@ -16,7 +16,7 @@
 
 package com.google.cloud;
 
-import com.google.api.gax.core.ApiClock;
+import com.google.api.core.ApiClock;
 import com.google.api.gax.core.RetrySettings;
 
 import com.google.api.gax.retrying.DirectRetryingExecutor;

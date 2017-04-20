@@ -17,6 +17,7 @@
 package com.google.cloud.datastore.testing;
 
 import com.google.cloud.HttpTransportOptions;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -41,7 +42,10 @@ import org.joda.time.Duration;
  * {@link HttpTransportOptions#getConnectTimeout()} and
  * {@link HttpTransportOptions#getReadTimeout()} are both
  * both set to {@code 60000}.
+ * 
+ * Internal testing use only
  */
+@InternalApi
 public class RemoteDatastoreHelper {
 
   private final DatastoreOptions options;

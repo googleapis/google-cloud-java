@@ -22,7 +22,7 @@ import static com.google.longrunning.Operation.newBuilder;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-import com.google.api.gax.core.ApiClock;
+import com.google.api.core.ApiClock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.Any;

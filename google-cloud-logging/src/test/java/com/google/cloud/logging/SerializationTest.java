@@ -82,10 +82,6 @@ public class SerializationTest extends BaseSerializationTest {
   @Override
   protected Serializable[] serializableObjects() {
     GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
-    transportOptions =
-        transportOptions.toBuilder()
-            .setInitialTimeout(1234)
-            .build();
     LoggingOptions options = LoggingOptions.newBuilder()
         .setProjectId("p1")
         .setTransportOptions(transportOptions)

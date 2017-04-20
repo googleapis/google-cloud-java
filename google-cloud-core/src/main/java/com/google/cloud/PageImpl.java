@@ -16,10 +16,10 @@
 
 package com.google.cloud;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.Page;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableMap;
-
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Iterator;
@@ -31,6 +31,7 @@ import java.util.Objects;
  *
  * @param <T> the value type that the page holds
  */
+@InternalApi
 public class PageImpl<T> implements Page<T>, Serializable {
 
   private static final long serialVersionUID = 3914827379823557934L;

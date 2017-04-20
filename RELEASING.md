@@ -6,8 +6,8 @@ The release process for SNAPSHOT versions is handled by the `after_success.sh` s
 
 1. Make sure the team agrees that it is time to release. Verify that all unit and integration tests for the last commit have passed.
 
-2. Run `utilities/update_pom_version.sh` from the repository's base directory.
-This script takes an optional argument denoting the new version. By default, if the current version is X.Y.Z-SNAPSHOT, the script will update the version in all the pom.xml files to X.Y.Z. If desired, another version can be supplied via command line argument instead. Commit this version locally:
+2. Run `utilities/update_versions.sh` from the repository's base directory.
+This script takes optional arguments denoting the new versions for each qualifier (alpha, beta and/or GA). By default, if the current version is X.Y.Z-SNAPSHOT, the script will update the version in all the pom.xml and other relevant files to X.Y.Z. Please refer to the documentation in `utilities/update_versions.sh` for more details. Commit this version locally:
 
   ```
   git commit -m "Release [VERSION HERE]"
@@ -28,8 +28,7 @@ Go to the [releases page](https://github.com/GoogleCloudPlatform/google-cloud-ja
 
   Ensure that the format is consistent with previous releases (for an example, see the [0.1.0 release](https://github.com/GoogleCloudPlatform/google-cloud-java/releases/tag/v0.1.0)).  After adding any missing updates and reformatting as necessary, publish the draft.  Finally, create a new draft for the next release.
 
-6. Run `utilities/update_pom_version.sh` again (to include "-SNAPSHOT" in the project version).
-As mentioned before, there is an optional version argument.  By default, the script will update the version from "X.Y.Z" to "X.Y.Z+1-SNAPSHOT".  Suppose a different version is desired, for example X+1.0.0-SNAPSHOT.  Then the appropriate command to run would be `utilities/update_pom_version.sh X+1.0.0-SNAPSHOT`.
+6. Run `utilities/update_versions.sh` again (to include "-SNAPSHOT" in the project version). Please refer to documentation in `utilities/update_versions.sh` for more details. 
 
 7. Create and merge in another PR to reflect the updated project version.  For an example of what this PR should look like, see [#227](https://github.com/GoogleCloudPlatform/google-cloud-java/pull/227).
 

@@ -158,7 +158,9 @@ public class ITLoggingSnippets {
   public void testWriteAndListLogEntriesAsync() throws ExecutionException, InterruptedException {
     String logName = RemoteLoggingHelper.formatForTest("log_name");
     String filter = "logName=projects/" + logging.getOptions().getProjectId() + "/logs/" + logName;
-    loggingSnippets.writeAsync(logName).get();
+    loggingSnippets.write(logName);
+    // flush all pending asynchronous writes
+    logging.flush();
     Iterator<LogEntry> iterator = loggingSnippets.listLogEntriesAsync(filter).iterateAll().iterator();
     while (Iterators.size(iterator) < 2) {
       Thread.sleep(500);

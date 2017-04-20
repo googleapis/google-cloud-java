@@ -16,10 +16,10 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.AbstractApiService;
-import com.google.api.gax.core.ApiClock;
-import com.google.api.gax.core.ApiService;
-import com.google.api.gax.core.CurrentMillisClock;
+import com.google.api.core.AbstractApiService;
+import com.google.api.core.ApiClock;
+import com.google.api.core.ApiService;
+import com.google.api.core.CurrentMillisClock;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController;
 import com.google.api.gax.grpc.ChannelProvider;
@@ -504,7 +504,7 @@ public class Subscriber extends AbstractApiService {
      *
      * <p>It is recommended to set this value to a reasonable upper bound of the subscriber time to
      * process any message. This maximum period avoids messages to be <i>locked</i> by a subscriber
-     * in cases when the {@link AckReplyConsumer} is never called.
+     * in cases when the ack reply is lost.
      *
      * <p>A zero duration effectively disables auto deadline extensions.
      */

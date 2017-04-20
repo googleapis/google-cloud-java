@@ -35,7 +35,7 @@ import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
-import edu.emory.mathcs.backport.java.util.Collections;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 

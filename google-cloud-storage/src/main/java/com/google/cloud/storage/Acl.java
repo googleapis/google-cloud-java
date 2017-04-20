@@ -18,8 +18,11 @@ package com.google.cloud.storage;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
@@ -55,8 +58,50 @@ public final class Acl implements Serializable {
   private final String id;
   private final String etag;
 
-  public enum Role {
-    OWNER, READER, WRITER
+  public static final class Role extends StringEnumValue {
+    private static final long serialVersionUID = 123037132067643600L;
+
+    private Role(String constant) {
+      super(constant);
+    }
+
+    private static final ApiFunction<String, Role> CONSTRUCTOR =
+        new ApiFunction<String, Role>() {
+          @Override
+          public Role apply(String constant) {
+            return new Role(constant);
+          }
+        };
+
+    private static final StringEnumType<Role> type = new StringEnumType(
+        Role.class,
+        CONSTRUCTOR);
+
+    public static final Role OWNER = type.createAndRegister("OWNER");
+    public static final Role READER = type.createAndRegister("READER");
+    public static final Role WRITER = type.createAndRegister("WRITER");
+
+    /**
+     * Get the Role for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static Role valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the Role for the given String constant, and allow unrecognized values.
+     */
+    public static Role valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for Role.
+     */
+    public static Role[] values() {
+      return type.values();
+    }
   }
 
   /**
@@ -305,8 +350,50 @@ public final class Acl implements Serializable {
     private final ProjectRole projectRole;
     private final String projectId;
 
-    public enum ProjectRole {
-      OWNERS, EDITORS, VIEWERS
+    public static final class ProjectRole extends StringEnumValue {
+      private static final long serialVersionUID = -8360324311187914382L;
+
+      private ProjectRole(String constant) {
+        super(constant);
+      }
+
+      private static final ApiFunction<String, ProjectRole> CONSTRUCTOR =
+          new ApiFunction<String, ProjectRole>() {
+            @Override
+            public ProjectRole apply(String constant) {
+              return new ProjectRole(constant);
+            }
+          };
+
+      private static final StringEnumType<ProjectRole> type = new StringEnumType(
+          ProjectRole.class,
+          CONSTRUCTOR);
+
+      public static final ProjectRole OWNERS = type.createAndRegister("OWNERS");
+      public static final ProjectRole EDITORS = type.createAndRegister("EDITORS");
+      public static final ProjectRole VIEWERS = type.createAndRegister("VIEWERS");
+
+      /**
+       * Get the ProjectRole for the given String constant, and throw an exception if the constant is
+       * not recognized.
+       */
+      public static ProjectRole valueOfStrict(String constant) {
+        return type.valueOfStrict(constant);
+      }
+
+      /**
+       * Get the ProjectRole for the given String constant, and allow unrecognized values.
+       */
+      public static ProjectRole valueOf(String constant) {
+        return type.valueOf(constant);
+      }
+
+      /**
+       * Return the known values for ProjectRole.
+       */
+      public static ProjectRole[] values() {
+        return type.values();
+      }
     }
 
     /**

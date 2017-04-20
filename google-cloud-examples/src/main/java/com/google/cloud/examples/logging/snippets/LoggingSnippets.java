@@ -40,6 +40,7 @@ import com.google.cloud.logging.Sink;
 import com.google.cloud.logging.SinkInfo;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 
+import com.google.cloud.logging.Synchronicity;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -454,7 +455,10 @@ public class LoggingSnippets {
   }
 
   /**
-   * Example of writing log entries and providing a default log name and monitored resource.
+   * Example of writing log entries and providing a default log name and monitored
+   * resource.
+   * Logging writes are asynchronous by default.
+   * {@link Logging#setWriteSynchronicity(Synchronicity)} can be used to update the synchronicity.
    */
   // [TARGET write(Iterable, WriteOption...)]
   // [VARIABLE "my_log_name"]
@@ -465,31 +469,11 @@ public class LoggingSnippets {
     Map<String, Object> jsonMap = new HashMap<>();
     jsonMap.put("key", "value");
     entries.add(LogEntry.of(JsonPayload.of(jsonMap)));
-    logging.write(entries,
-        WriteOption.logName(logName),
-        WriteOption.resource(MonitoredResource.newBuilder("global").build()));
-    // [END write]
-  }
-
-  /**
-   * Example of asynchronously writing log entries and providing a default log name and monitored
-   * resource.
-   */
-  // [TARGET writeAsync(Iterable, WriteOption...)]
-  // [VARIABLE "my_log_name"]
-  public Future<Void> writeAsync(String logName) {
-    // [START writeAsync]
-    List<LogEntry> entries = new ArrayList<>();
-    entries.add(LogEntry.of(StringPayload.of("Entry payload")));
-    Map<String, Object> jsonMap = new HashMap<>();
-    jsonMap.put("key", "value");
-    entries.add(LogEntry.of(JsonPayload.of(jsonMap)));
-    Future<Void> future = logging.writeAsync(
+    logging.write(
         entries,
         WriteOption.logName(logName),
         WriteOption.resource(MonitoredResource.newBuilder("global").build()));
-    // [END writeAsync]
-    return future;
+    // [END write]
   }
 
   /**

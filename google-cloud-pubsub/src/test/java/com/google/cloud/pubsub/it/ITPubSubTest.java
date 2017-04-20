@@ -19,7 +19,7 @@ package com.google.cloud.pubsub.it;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.core.SettableApiFuture;
+import com.google.api.core.SettableApiFuture;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;

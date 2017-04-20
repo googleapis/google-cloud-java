@@ -31,7 +31,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
-import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupServiceGrpc;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
 import com.google.protobuf.ExperimentalApi;
@@ -77,10 +76,25 @@ public class ErrorGroupServiceSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
-  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String PROPERTIES_FILE =
+      "/com/google/cloud/errorreporting/project.properties";
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
+
+  private static final io.grpc.MethodDescriptor<GetGroupRequest, ErrorGroup> METHOD_GET_GROUP =
+      io.grpc.MethodDescriptor.create(
+          io.grpc.MethodDescriptor.MethodType.UNARY,
+          "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/GetGroup",
+          io.grpc.protobuf.ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()),
+          io.grpc.protobuf.ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<UpdateGroupRequest, ErrorGroup>
+      METHOD_UPDATE_GROUP =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/UpdateGroup",
+              io.grpc.protobuf.ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()));
 
   private final SimpleCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings;
   private final SimpleCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
@@ -198,10 +212,9 @@ public class ErrorGroupServiceSettings extends ClientSettings {
     private Builder() {
       super(defaultChannelProviderBuilder().build());
 
-      getGroupSettings = SimpleCallSettings.newBuilder(ErrorGroupServiceGrpc.METHOD_GET_GROUP);
+      getGroupSettings = SimpleCallSettings.newBuilder(METHOD_GET_GROUP);
 
-      updateGroupSettings =
-          SimpleCallSettings.newBuilder(ErrorGroupServiceGrpc.METHOD_UPDATE_GROUP);
+      updateGroupSettings = SimpleCallSettings.newBuilder(METHOD_UPDATE_GROUP);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(getGroupSettings, updateGroupSettings);

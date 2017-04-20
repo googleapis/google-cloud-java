@@ -18,7 +18,7 @@ package com.google.cloud.errorreporting.spi.v1beta1;
 import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
 import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
 
-import com.google.api.gax.core.ApiFuture;
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.core.RetrySettings;
@@ -44,7 +44,6 @@ import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats;
-import com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceGrpc;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
@@ -92,10 +91,33 @@ public class ErrorStatsServiceSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
-  private static final String PROPERTIES_FILE = "/project.properties";
+  private static final String PROPERTIES_FILE =
+      "/com/google/cloud/errorreporting/project.properties";
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
+
+  private static final io.grpc.MethodDescriptor<ListGroupStatsRequest, ListGroupStatsResponse>
+      METHOD_LIST_GROUP_STATS =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/ListGroupStats",
+              io.grpc.protobuf.ProtoUtils.marshaller(ListGroupStatsRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(ListGroupStatsResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<ListEventsRequest, ListEventsResponse>
+      METHOD_LIST_EVENTS =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/ListEvents",
+              io.grpc.protobuf.ProtoUtils.marshaller(ListEventsRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(ListEventsResponse.getDefaultInstance()));
+  private static final io.grpc.MethodDescriptor<DeleteEventsRequest, DeleteEventsResponse>
+      METHOD_DELETE_EVENTS =
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/DeleteEvents",
+              io.grpc.protobuf.ProtoUtils.marshaller(DeleteEventsRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(DeleteEventsResponse.getDefaultInstance()));
 
   private final PagedCallSettings<
           ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
@@ -340,15 +362,12 @@ public class ErrorStatsServiceSettings extends ClientSettings {
       super(defaultChannelProviderBuilder().build());
 
       listGroupStatsSettings =
-          PagedCallSettings.newBuilder(
-              ErrorStatsServiceGrpc.METHOD_LIST_GROUP_STATS, LIST_GROUP_STATS_PAGE_STR_FACT);
+          PagedCallSettings.newBuilder(METHOD_LIST_GROUP_STATS, LIST_GROUP_STATS_PAGE_STR_FACT);
 
       listEventsSettings =
-          PagedCallSettings.newBuilder(
-              ErrorStatsServiceGrpc.METHOD_LIST_EVENTS, LIST_EVENTS_PAGE_STR_FACT);
+          PagedCallSettings.newBuilder(METHOD_LIST_EVENTS, LIST_EVENTS_PAGE_STR_FACT);
 
-      deleteEventsSettings =
-          SimpleCallSettings.newBuilder(ErrorStatsServiceGrpc.METHOD_DELETE_EVENTS);
+      deleteEventsSettings = SimpleCallSettings.newBuilder(METHOD_DELETE_EVENTS);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(

@@ -20,21 +20,22 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.Timestamp;
 import org.junit.Test;
 
-public class DateTimeValueTest {
+public class TimestampValueTest {
 
-  private static final DateTime CONTENT = DateTime.now();
+  private static final Timestamp CONTENT = Timestamp.now();
 
   @Test
   public void testToBuilder() throws Exception {
-    DateTimeValue value = DateTimeValue.of(CONTENT);
+    TimestampValue value = TimestampValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
   public void testOf() throws Exception {
-    DateTimeValue value = DateTimeValue.of(CONTENT);
+    TimestampValue value = TimestampValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
   }
@@ -42,8 +43,8 @@ public class DateTimeValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
-    DateTimeValue.Builder builder = DateTimeValue.newBuilder(CONTENT);
-    DateTimeValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
+    TimestampValue.Builder builder = TimestampValue.newBuilder(CONTENT);
+    TimestampValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());
     assertEquals(1, value.getMeaning());
     assertTrue(value.excludeFromIndexes());
