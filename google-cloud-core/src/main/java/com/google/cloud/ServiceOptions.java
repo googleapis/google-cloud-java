@@ -19,7 +19,6 @@ package com.google.cloud;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
@@ -37,12 +36,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.lang.reflect.Method;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.Locale;
 import java.util.Objects;
@@ -459,6 +455,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
    */
   public Credentials getCredentials() {
     return credentials;
+  }
+
+  /**
+   * Returns whether the credential is {@code NoCredentials} instance
+   * @return true if credential is a {@code NoCredentials} instance, false if not
+   */
+  public boolean credentialIsNoCredentialInstance() {
+    if (credentials != null) {
+      return credentials.equals(NoCredentials.getInstance());
+    }
+    return false;
   }
 
   /**
