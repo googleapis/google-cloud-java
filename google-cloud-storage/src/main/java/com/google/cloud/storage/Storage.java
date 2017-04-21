@@ -19,7 +19,7 @@ package com.google.cloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.cloud.FieldSelector;

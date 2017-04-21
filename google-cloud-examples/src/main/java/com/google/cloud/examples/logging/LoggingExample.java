@@ -16,7 +16,7 @@
 
 package com.google.cloud.examples.logging;
 
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.logging.LogEntry;

@@ -130,7 +130,8 @@
 
     <api-client.version>1.21.0</api-client.version>
     <api-common.version>0.2.0</api-common.version>
-    <gax.version>0.13.0</gax.version>
+    <gax.version>0.14.0</gax.version>
+    <gax-grpc.version>0.14.0</gax-grpc.version>
     <generatedProto.version>0.1.8</generatedProto.version>
     <google.auth.version>0.6.1</google.auth.version>
     <grpc.version>1.2.0</grpc.version>
@@ -143,6 +144,8 @@
     <compute.version>0.14.0-alpha</compute.version>
     <contrib.version>0.14.0-alpha</contrib.version>
     <core.version>1.0.0-rc1</core.version>
+    <core-http.version>1.0.0-rc1</core-http.version>
+    <core-grpc.version>1.0.0-rc1</core-grpc.version>
     <datastore.version>1.0.0-rc1</datastore.version>
     <dns.version>0.14.0-alpha</dns.version>
     <errorreporting.version>0.14.0-alpha</errorreporting.version>
@@ -252,6 +255,11 @@
         <artifactId>gax</artifactId>
         <version>${gax.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-grpc</artifactId>
+        <version>${gax-grpc.version}</version>
+      </dependency>
       <!-- test deps -->
       <dependency>
         <groupId>junit</groupId>
@@ -281,6 +289,8 @@
     <module>google-cloud-compute</module>
     <module>google-cloud-contrib</module>
     <module>google-cloud-core</module>
+    <module>google-cloud-core-http</module>
+    <module>google-cloud-core-grpc</module>
     <module>google-cloud-datastore</module>
     <module>google-cloud-dns</module>
     <module>google-cloud-errorreporting</module>

@@ -18,7 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
 import com.google.cloud.Service;

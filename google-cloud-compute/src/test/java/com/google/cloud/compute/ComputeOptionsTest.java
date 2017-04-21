@@ -16,7 +16,7 @@
 
 package com.google.cloud.compute;
 
-import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.TransportOptions;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -29,7 +29,7 @@ public class ComputeOptionsTest {
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    ComputeOptions.newBuilder().setTransportOptions(GrpcTransportOptions.newBuilder().build());
+    ComputeOptions.newBuilder().setTransportOptions(new TransportOptions() {});
   }
 
 }

@@ -18,34 +18,29 @@ package com.google.cloud.translate;
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.http.BaseHttpServiceException;
 import com.google.common.collect.ImmutableSet;
-
 import java.io.IOException;
 import java.util.Set;
 
 /**
  * Google Translation service exception.
  */
-public class TranslateException extends BaseServiceException {
+public class TranslateException extends BaseHttpServiceException {
 
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(new Error(500, null));
-  private static final long serialVersionUID = 4747004866996469418L;
+  private static final long serialVersionUID = 6811792902595193267L;
 
   TranslateException(int code, String message) {
-    super(code, message, null, true, null);
+    super(code, message, null, true, RETRYABLE_ERRORS, null);
   }
 
   TranslateException(int code, String message, Throwable cause) {
-    super(code, message, null, true, cause);
+    super(code, message, null, true, RETRYABLE_ERRORS, cause);
   }
 
   public TranslateException(IOException exception) {
-    super(exception, true);
-  }
-
-  @Override
-  protected Set<Error> getRetryableErrors() {
-    return RETRYABLE_ERRORS;
+    super(exception, true, RETRYABLE_ERRORS);
   }
 
   /**

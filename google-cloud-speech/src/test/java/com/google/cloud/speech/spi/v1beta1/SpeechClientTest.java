@@ -15,12 +15,12 @@
  */
 package com.google.cloud.speech.spi.v1beta1;
 
-import com.google.api.gax.core.ApiStreamObserver;
+import com.google.api.gax.grpc.ApiStreamObserver;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.StreamingCallable;
-import com.google.api.gax.testing.MockGrpcService;
-import com.google.api.gax.testing.MockServiceHelper;
-import com.google.api.gax.testing.MockStreamObserver;
+import com.google.api.gax.grpc.testing.MockGrpcService;
+import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeResponse;
 import com.google.cloud.speech.v1beta1.RecognitionAudio;

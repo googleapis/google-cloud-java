@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.cloud;
+package com.google.cloud.grpc;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
-import com.google.cloud.GrpcTransportOptions.DefaultExecutorFactory;
-import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
+import com.google.cloud.grpc.GrpcTransportOptions.DefaultExecutorFactory;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import java.util.concurrent.ScheduledExecutorService;
 import org.easymock.EasyMock;
 import org.junit.Test;

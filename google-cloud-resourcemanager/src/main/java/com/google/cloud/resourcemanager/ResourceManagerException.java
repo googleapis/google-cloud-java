@@ -18,8 +18,8 @@ package com.google.cloud.resourcemanager;
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.http.BaseHttpServiceException;
 import com.google.common.collect.ImmutableSet;
-
 import java.io.IOException;
 import java.util.Set;
 
@@ -29,7 +29,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/resource-manager/v1/errors/core_errors">Google Cloud
  *      Resource Manager error codes</a>
  */
-public final class ResourceManagerException extends BaseServiceException {
+public final class ResourceManagerException extends BaseHttpServiceException {
 
   // see https://cloud.google.com/resource-manager/v1/errors/core_errors
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -51,16 +51,11 @@ public final class ResourceManagerException extends BaseServiceException {
   }
 
   public ResourceManagerException(int code, String message, Throwable cause) {
-    super(code, message, null, true, cause);
+    super(code, message, null, true, RETRYABLE_ERRORS, cause);
   }
 
   public ResourceManagerException(IOException exception) {
-    super(exception, true);
-  }
-
-  @Override
-  protected Set<Error> getRetryableErrors() {
-    return RETRYABLE_ERRORS;
+    super(exception, true, RETRYABLE_ERRORS);
   }
 
   /**

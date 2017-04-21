@@ -26,6 +26,11 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
+      <artifactId>google-cloud-core-http</artifactId>
+      <version>${core-http.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-storage</artifactId>
       <version>${storage.version}</version>
       <scope>test</scope>

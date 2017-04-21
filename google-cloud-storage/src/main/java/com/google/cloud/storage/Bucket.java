@@ -21,7 +21,7 @@ import static com.google.cloud.storage.Bucket.BucketSourceOption.toSourceOptions
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;

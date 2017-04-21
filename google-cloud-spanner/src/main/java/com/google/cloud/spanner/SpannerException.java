@@ -17,15 +17,15 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.BaseServiceException;
+import com.google.cloud.grpc.BaseGrpcServiceException;
 import com.google.common.base.Preconditions;
 import javax.annotation.Nullable;
 
 /** Base exception type for all exceptions produced by the Cloud Spanner service. */
-public class SpannerException extends BaseServiceException {
+public class SpannerException extends BaseGrpcServiceException {
   private static final long serialVersionUID = 20150916L;
 
   private final ErrorCode code;
-  private final boolean retryable;
 
   /** Private constructor. Use {@link SpannerExceptionFactory} to create instances. */
   SpannerException(
@@ -34,8 +34,7 @@ public class SpannerException extends BaseServiceException {
       boolean retryable,
       @Nullable String message,
       @Nullable Throwable cause) {
-    super(code.getCode(), message, null /* reason */, false /* idempotent */, cause);
-    this.retryable = retryable;
+    super(message, cause, code.getCode(), retryable);
     if (token != DoNotConstructDirectly.ALLOWED) {
       throw new AssertionError("Do not construct directly: use SpannerExceptionFactory");
     }
@@ -45,12 +44,6 @@ public class SpannerException extends BaseServiceException {
   /** Returns the error code associated with this exception. */
   public ErrorCode getErrorCode() {
     return code;
-  }
-
-  /** Returns {@code true} if this exception indicates that the operation may succeed if retried. */
-  @Override
-  public boolean isRetryable() {
-    return retryable;
   }
 
   enum DoNotConstructDirectly {

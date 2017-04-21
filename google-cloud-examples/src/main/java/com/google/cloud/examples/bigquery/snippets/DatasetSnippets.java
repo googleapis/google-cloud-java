@@ -22,7 +22,7 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.Dataset.Builder;
 import com.google.cloud.bigquery.Field;

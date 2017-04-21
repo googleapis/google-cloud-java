@@ -22,7 +22,7 @@
 
 package com.google.cloud.examples.dns.snippets;
 
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.dns.ChangeRequest;
 import com.google.cloud.dns.ChangeRequestInfo;
 import com.google.cloud.dns.Dns;

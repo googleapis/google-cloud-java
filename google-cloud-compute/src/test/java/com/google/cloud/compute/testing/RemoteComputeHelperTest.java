@@ -21,7 +21,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.compute.ComputeOptions;
 import com.google.cloud.compute.testing.RemoteComputeHelper.ComputeHelperException;
 

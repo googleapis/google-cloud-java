@@ -18,7 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;

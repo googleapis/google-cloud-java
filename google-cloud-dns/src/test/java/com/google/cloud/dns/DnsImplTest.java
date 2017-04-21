@@ -23,7 +23,7 @@ import com.google.api.core.ApiClock;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ResourceRecordSet;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;

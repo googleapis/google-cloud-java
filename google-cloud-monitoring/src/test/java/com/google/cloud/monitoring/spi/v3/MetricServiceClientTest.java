@@ -22,8 +22,8 @@ import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListTimeS
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.grpc.ApiException;
-import com.google.api.gax.testing.MockGrpcService;
-import com.google.api.gax.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockGrpcService;
+import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;

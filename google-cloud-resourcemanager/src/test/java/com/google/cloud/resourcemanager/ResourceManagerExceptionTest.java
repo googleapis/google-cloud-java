@@ -43,35 +43,30 @@ public class ResourceManagerExceptionTest {
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new ResourceManagerException(503, "message");
     assertEquals(503, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new ResourceManagerException(429, "message");
     assertEquals(429, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new ResourceManagerException(403, "message");
     assertEquals(403, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertFalse(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     IOException cause = new SocketTimeoutException();
     exception = new ResourceManagerException(cause);
     assertNull(exception.getReason());
     assertNull(exception.getMessage());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     exception = new ResourceManagerException(404, "message", cause);
@@ -79,7 +74,6 @@ public class ResourceManagerExceptionTest {
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertFalse(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
   }
 
@@ -95,7 +89,6 @@ public class ResourceManagerExceptionTest {
       assertEquals(503, ex.getCode());
       assertEquals("message", ex.getMessage());
       assertTrue(ex.isRetryable());
-      assertTrue(ex.isIdempotent());
     } finally {
       verify(exceptionMock);
     }
@@ -110,7 +103,6 @@ public class ResourceManagerExceptionTest {
       assertEquals(ResourceManagerException.UNKNOWN_CODE, ex.getCode());
       assertEquals("message", ex.getMessage());
       assertFalse(ex.isRetryable());
-      assertTrue(ex.isIdempotent());
       assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);

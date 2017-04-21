@@ -16,7 +16,8 @@
 
 package com.google.cloud;
 
-import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.BaseServiceException.ExceptionData;
 import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor;
 import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor.ValueType;
 import com.google.common.collect.ImmutableList;
@@ -28,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 public class SerializationTest extends BaseSerializationTest {
 
   private static final BaseServiceException BASE_SERVICE_EXCEPTION =
-      new BaseServiceException(42, "message", "reason", true);
+      new BaseServiceException(ExceptionData.from(42, "message", "reason", false));
   private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.getDefaultInstance();
   private static final Identity IDENTITY = Identity.allAuthenticatedUsers();
   private static final PageImpl<String> PAGE =

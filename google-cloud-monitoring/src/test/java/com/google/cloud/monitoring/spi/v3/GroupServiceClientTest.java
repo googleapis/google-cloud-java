@@ -19,8 +19,8 @@ import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroup
 
 import com.google.api.MonitoredResource;
 import com.google.api.gax.grpc.ApiException;
-import com.google.api.gax.testing.MockGrpcService;
-import com.google.api.gax.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockGrpcService;
+import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;

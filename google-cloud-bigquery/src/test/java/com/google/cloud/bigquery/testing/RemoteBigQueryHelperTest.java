@@ -19,7 +19,7 @@ package com.google.cloud.bigquery.testing;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQueryOptions;

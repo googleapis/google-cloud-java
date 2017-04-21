@@ -16,7 +16,7 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.TransportOptions;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -28,7 +28,7 @@ public class BigQueryOptionsTest {
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    BigQueryOptions.newBuilder().setTransportOptions(GrpcTransportOptions.newBuilder().build());
+    BigQueryOptions.newBuilder().setTransportOptions(new TransportOptions() {});
   }
 
 }

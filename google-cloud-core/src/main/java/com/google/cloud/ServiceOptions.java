@@ -23,8 +23,9 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
@@ -558,7 +559,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   @SuppressWarnings("unchecked")
-  static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
+  @InternalApi
+  public static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
     try {
       return (T) Class.forName(className).newInstance();
     } catch (InstantiationException | IllegalAccessException e) {
@@ -599,7 +601,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return getDefaultRetrySettings();
   }
 
-  static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
+  @InternalApi
+  public static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
   }
 

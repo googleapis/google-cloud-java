@@ -18,7 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
-import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;

@@ -22,7 +22,7 @@ import com.google.api.MonitoredResource;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ClientSettings;

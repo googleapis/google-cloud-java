@@ -19,8 +19,8 @@ import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubs
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
 import com.google.api.gax.grpc.ApiException;
-import com.google.api.gax.testing.MockGrpcService;
-import com.google.api.gax.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockGrpcService;
+import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
