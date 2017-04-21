@@ -82,11 +82,12 @@ public class GrpcLoggingRpc implements LoggingRpc {
       ChannelProvider channelProvider;
       // todo(mziccard): ChannelProvider should support null/absent credentials for testing
       if (options.getHost().contains("localhost")
-          || options.getCredentials().equals(NoCredentials.getInstance())) {
-        ManagedChannel managedChannel = ManagedChannelBuilder.forTarget(options.getHost())
-            .usePlaintext(true)
-            .executor(executor)
-            .build();
+          || NoCredentials.getInstance().equals(options.getCredentials())) {
+        ManagedChannel managedChannel =
+            ManagedChannelBuilder.forTarget(options.getHost())
+                .usePlaintext(true)
+                .executor(executor)
+                .build();
         channelProvider = FixedChannelProvider.create(managedChannel);
       } else {
         channelProvider = GrpcTransportOptions.setUpChannelProvider(
