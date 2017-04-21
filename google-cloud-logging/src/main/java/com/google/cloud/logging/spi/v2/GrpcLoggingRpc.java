@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.ProviderManager;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.cloud.GrpcTransportOptions;
 import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.logging.v2.CreateLogMetricRequest;
@@ -81,11 +82,12 @@ public class GrpcLoggingRpc implements LoggingRpc {
       ChannelProvider channelProvider;
       // todo(mziccard): ChannelProvider should support null/absent credentials for testing
       if (options.getHost().contains("localhost")
-          || options.credentialIsNoCredentialInstance()) {
-        ManagedChannel managedChannel = ManagedChannelBuilder.forTarget(options.getHost())
-            .usePlaintext(true)
-            .executor(executor)
-            .build();
+          || NoCredentials.getInstance().equals(options.getCredentials())) {
+        ManagedChannel managedChannel =
+            ManagedChannelBuilder.forTarget(options.getHost())
+                .usePlaintext(true)
+                .executor(executor)
+                .build();
         channelProvider = FixedChannelProvider.create(managedChannel);
       } else {
         channelProvider = GrpcTransportOptions.setUpChannelProvider(
