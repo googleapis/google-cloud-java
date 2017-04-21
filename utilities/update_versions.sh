@@ -194,7 +194,7 @@ for item in ${modules[*]}; do
   if [ "${GA_VERSION}" != "" ] && [ "${qualifier}" == "" ]; then
     new_version=${GA_VERSION}
   fi
-  echo -e "base_version=${base_version}, qualifier=${qualifier}, snapshot=${snapshot}"
+  # echo -e "base_version=${base_version}, qualifier=${qualifier}, snapshot=${snapshot}"
 
   if [ "${ALPHA_VERSION}" == "" ] && [ "${BETA_VERSION}" == "" ] && [ "${RC_VERSION}" == "" ] && [ "${GA_VERSION}" == "" ]; then
     if [ "${snapshot}" == "" ]; then
@@ -225,7 +225,7 @@ for item in ${modules[*]}; do
       new_qualifier="-${new_base_version##*-}"
       new_base_version="${new_base_version%-*}"
   fi
-  echo -e "new_base_version=${new_base_version}, new_qualifier=${new_qualifier}, new_snapshot=${new_snapshot}"
+  # echo -e "new_base_version=${new_base_version}, new_qualifier=${new_qualifier}, new_snapshot=${new_snapshot}"
 
   echo -e "Updating module ${BOLD}${module}${NC} in folder ${folder} from version ${RED}${old_version}${NC} to ${GREEN}${new_version}${NC}"
   module_suffix=${module##*-}
