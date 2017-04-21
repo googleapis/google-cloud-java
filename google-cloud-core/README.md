@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-core</artifactId>
-  <version>0.13.0-alpha</version>
+  <version>1.0.0-rc1</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-core:0.13.0-alpha'
+compile 'com.google.cloud:google-cloud-core:1.0.0-rc1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-core" % "0.13.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-core" % "1.0.0-rc1"
 ```
 
 Troubleshooting
