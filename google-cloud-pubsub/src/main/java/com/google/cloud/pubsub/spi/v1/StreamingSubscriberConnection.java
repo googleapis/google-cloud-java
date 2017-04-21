@@ -72,6 +72,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       Channel channel,
       FlowController flowController,
       ScheduledExecutorService executor,
+      @Nullable ScheduledExecutorService alarmsExecutor,
       ApiClock clock) {
     this.subscription = subscription;
     this.executor = executor;
@@ -85,6 +86,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             ackLatencyDistribution,
             flowController,
             executor,
+            alarmsExecutor,
             clock);
     messageDispatcher.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
   }

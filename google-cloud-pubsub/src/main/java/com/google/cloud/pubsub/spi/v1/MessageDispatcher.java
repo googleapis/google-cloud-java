@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.ApiClock;
+import com.google.api.core.ApiClock;
 import com.google.api.gax.core.FlowController;
 import com.google.api.gax.core.FlowController.FlowControlException;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
@@ -46,6 +46,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
 import org.joda.time.Duration;
 import org.joda.time.Instant;
 import org.joda.time.Interval;
@@ -61,10 +62,11 @@ class MessageDispatcher {
   @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.millis(100);
   private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
-  private static final ScheduledExecutorService alarmsExecutor =
+  private static final ScheduledExecutorService SHARED_ALARMS_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(2).build().getExecutor();
 
   private final ScheduledExecutorService executor;
+  private final ScheduledExecutorService alarmsExecutor;
   private final ApiClock clock;
 
   private final Duration ackExpirationPadding;
@@ -243,8 +245,10 @@ class MessageDispatcher {
       Distribution ackLatencyDistribution,
       FlowController flowController,
       ScheduledExecutorService executor,
+      @Nullable ScheduledExecutorService alarmsExecutor,
       ApiClock clock) {
     this.executor = executor;
+    this.alarmsExecutor = alarmsExecutor == null ? SHARED_ALARMS_EXECUTOR : alarmsExecutor;
     this.ackExpirationPadding = ackExpirationPadding;
     this.maxAckExtensionPeriod = maxAckExtensionPeriod;
     this.receiver = receiver;

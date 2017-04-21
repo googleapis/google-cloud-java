@@ -536,6 +536,7 @@ public class SubscriberTest {
   private Builder getTestSubscriberBuilder(MessageReceiver receiver) {
     return Subscriber.defaultBuilder(TEST_SUBSCRIPTION, receiver)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
+        .setLeaseAlarmsExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setChannelProvider(FixedChannelProvider.create(testChannel))
         .setClock(fakeExecutor.getClock());
   }
