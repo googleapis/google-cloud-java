@@ -506,8 +506,6 @@
               <goal>shade</goal>
             </goals>
             <configuration>
-              <shadedArtifactAttached>true</shadedArtifactAttached>
-              <shadedClassifierName>shadedNoGuava</shadedClassifierName>
               <artifactSet>
                 <includes>
                   <include>com.google.guava:guava</include>
