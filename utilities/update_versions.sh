@@ -35,6 +35,8 @@
 # <version>major.minor.incremental.qualifier[-SNAPSHOT]</version> element specified in each
 # (parent and children) module's pom.xml
 #
+# Note, README.md files are updated only in case if the new version is NOT a SNAPSHOT one.
+#
 # Examples:
 # ~$ ./utilities/update_versions.sh --modules=google-cloud-logging,google-cloud-speech
 #   will update only modules google-cloud-logging and google-cloud-speech, ignoring others, using
@@ -49,13 +51,13 @@
 #   0.12.3-rc2-SNAPSHOT respectively;
 #
 # ~$ ./utilities/update_versions.sh --modules=google-cloud-logging,google-cloud-speech --beta=0.12.3-beta --ga=1.1.0
-#   assuming on the moment of execution google-cloud-logging is in GA, and google-cloud-speech
+#   assuming on the moment of execution google-cloud-logging is in GA and google-cloud-speech
 #   is in beta, the above command will update google-cloud-logging to 1.1.0 and google-cloud-speech
 #   to 0.12.3-beta, ignoring all other modules.
 #
 # ~$ ./utilities/update_versions.sh --modules=google-cloud-speech --beta=1.0.0
 #   assuming google-cloud-speech is in beta, the above command can be executed to move it to
-#   ga stage.
+#   GA stage.
 
 set -e
 
