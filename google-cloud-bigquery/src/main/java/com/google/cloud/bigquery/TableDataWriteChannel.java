@@ -22,10 +22,8 @@ import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.WriteChannel;
-import com.google.common.base.MoreObjects;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 
