@@ -16,20 +16,19 @@
 
 package com.google.cloud;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 import com.google.common.base.Strings;
 import com.google.protobuf.util.Timestamps;
-import org.joda.time.chrono.GregorianChronology;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static com.google.common.base.Preconditions.checkArgument;
+import org.joda.time.chrono.GregorianChronology;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * Represents a timestamp with nanosecond precision. Timestamps cover the range
@@ -75,7 +74,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    */
   public static Timestamp ofTimeSecondsAndNanos(long seconds, int nanos) {
     checkArgument(
-            Timestamps.isValid(seconds, nanos), "timestamp out of range: %s, %s", seconds, nanos);
+        Timestamps.isValid(seconds, nanos), "timestamp out of range: %s, %s", seconds, nanos);
     return new Timestamp(seconds, nanos);
   }
 
@@ -86,8 +85,8 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    */
   public static Timestamp ofTimeMicroseconds(long microseconds) {
     long seconds = TimeUnit.MICROSECONDS.toSeconds(microseconds);
-    int nanos =
-        (int) TimeUnit.MICROSECONDS.toNanos(microseconds - TimeUnit.SECONDS.toMicros(seconds));
+    int nanos = (int) TimeUnit.MICROSECONDS.toNanos(
+        microseconds - TimeUnit.SECONDS.toMicros(seconds));
     checkArgument(
         Timestamps.isValid(seconds, nanos), "timestamp out of range: %s, %s", seconds, nanos);
     return new Timestamp(seconds, nanos);
