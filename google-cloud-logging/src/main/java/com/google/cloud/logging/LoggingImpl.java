@@ -75,7 +75,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
-import javax.annotation.Nullable;
 
 class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 

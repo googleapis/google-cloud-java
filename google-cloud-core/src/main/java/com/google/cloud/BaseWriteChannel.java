@@ -335,13 +335,13 @@ public abstract class BaseWriteChannel<
     public String toString() {
       StringBuilder builder = new StringBuilder();
       builder.append(getClass().getSimpleName())
-          .append("{");
+          .append('{');
       String nextSeparator = "";
-      for(ValueHolder valueHolder : toStringHelper()) {
+      for (ValueHolder valueHolder : toStringHelper()) {
         builder.append(nextSeparator).append(valueHolder);
         nextSeparator = ", ";
       }
-      builder.append("}");
+      builder.append('}');
       return builder.toString();
     }
   }
