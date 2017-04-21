@@ -19,6 +19,7 @@ package com.google.cloud;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
@@ -57,15 +58,15 @@ public final class Policy implements Serializable {
 
   public abstract static class Marshaller<T> {
 
-    protected static final Function<String, Identity> IDENTITY_VALUE_OF_FUNCTION =
-        new Function<String, Identity>() {
+    protected static final ApiFunction<String, Identity> IDENTITY_VALUE_OF_FUNCTION =
+        new ApiFunction<String, Identity>() {
           @Override
           public Identity apply(String identityPb) {
             return Identity.valueOf(identityPb);
           }
         };
-    protected static final Function<Identity, String> IDENTITY_STR_VALUE_FUNCTION =
-        new Function<Identity, String>() {
+    protected static final ApiFunction<Identity, String> IDENTITY_STR_VALUE_FUNCTION =
+        new ApiFunction<Identity, String>() {
           @Override
           public String apply(Identity identity) {
             return identity.strValue();
@@ -85,7 +86,12 @@ public final class Policy implements Serializable {
       for (com.google.iam.v1.Binding bindingPb : policyPb.getBindingsList()) {
         bindings.put(Role.of(bindingPb.getRole()),
             ImmutableSet.copyOf(
-                Lists.transform(bindingPb.getMembersList(), IDENTITY_VALUE_OF_FUNCTION)));
+                Lists.transform(bindingPb.getMembersList(), new Function<String, Identity>() {
+                  @Override
+                  public Identity apply(String s) {
+                    return IDENTITY_VALUE_OF_FUNCTION.apply(s);
+                  }
+                })));
       }
       return newBuilder()
           .setBindings(bindings)
@@ -103,7 +109,12 @@ public final class Policy implements Serializable {
         com.google.iam.v1.Binding.Builder bindingBuilder = com.google.iam.v1.Binding.newBuilder();
         bindingBuilder.setRole(binding.getKey().getValue());
         bindingBuilder.addAllMembers(
-            Lists.transform(new ArrayList<>(binding.getValue()), IDENTITY_STR_VALUE_FUNCTION));
+            Lists.transform(new ArrayList<>(binding.getValue()), new Function<Identity, String>() {
+              @Override
+              public String apply(Identity identity) {
+                return IDENTITY_STR_VALUE_FUNCTION.apply(identity);
+              }
+            }));
         bindingPbList.add(bindingBuilder.build());
       }
       policyBuilder.addAllBindings(bindingPbList);

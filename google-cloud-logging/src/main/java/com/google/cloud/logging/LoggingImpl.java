@@ -369,7 +369,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                 listDescriptorsResponse.getResourceDescriptorsList() == null
                     ? ImmutableList.<MonitoredResourceDescriptor>of()
                     : Lists.transform(listDescriptorsResponse.getResourceDescriptorsList(),
-                MonitoredResourceDescriptor.FROM_PB_FUNCTION);
+                        new Function<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
+                          @Override
+                          public MonitoredResourceDescriptor apply(
+                              com.google.api.MonitoredResourceDescriptor monitoredResourceDescriptor) {
+                            return MonitoredResourceDescriptor.FROM_PB_FUNCTION.apply(monitoredResourceDescriptor);
+                          }
+                        });
             String cursor = listDescriptorsResponse.getNextPageToken().equals("") ? null
                 : listDescriptorsResponse.getNextPageToken();
             return new AsyncPageImpl<>(

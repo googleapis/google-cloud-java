@@ -56,7 +56,7 @@ public final class CloudStorageFileSystem extends FileSystem {
   public static final String BASIC_VIEW = "basic";
   public static final int BLOCK_SIZE_DEFAULT = 2 * 1024 * 1024;
   public static final FileTime FILE_TIME_UNKNOWN = FileTime.fromMillis(0);
-  public static final ImmutableSet<String> SUPPORTED_VIEWS = ImmutableSet.of(BASIC_VIEW, GCS_VIEW);
+  public static final Set<String> SUPPORTED_VIEWS = ImmutableSet.of(BASIC_VIEW, GCS_VIEW);
 
   private final CloudStorageFileSystemProvider provider;
   private final String bucket;

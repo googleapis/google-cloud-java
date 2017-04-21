@@ -21,6 +21,7 @@ import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Policy.Marshaller;
 import com.google.cloud.Role;
+import com.google.common.base.Function;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 
@@ -55,7 +56,12 @@ final class PolicyMarshaller
     if (policyPb.getBindings() != null) {
       for (Binding bindingPb : policyPb.getBindings()) {
         bindings.put(Role.of(bindingPb.getRole()), ImmutableSet.copyOf(
-            Lists.transform(bindingPb.getMembers(), IDENTITY_VALUE_OF_FUNCTION)));
+            Lists.transform(bindingPb.getMembers(), new Function<String, Identity>() {
+              @Override
+              public Identity apply(String s) {
+                return IDENTITY_VALUE_OF_FUNCTION.apply(s);
+              }
+            })));
       }
     }
     return new Builder(bindings, policyPb.getEtag(), policyPb.getVersion()).build();
@@ -71,7 +77,12 @@ final class PolicyMarshaller
       Binding bindingPb = new Binding();
       bindingPb.setRole(binding.getKey().getValue());
       bindingPb.setMembers(
-          Lists.transform(new ArrayList<>(binding.getValue()), IDENTITY_STR_VALUE_FUNCTION));
+          Lists.transform(new ArrayList<>(binding.getValue()), new Function<Identity, String>() {
+            @Override
+            public String apply(Identity identity) {
+              return IDENTITY_STR_VALUE_FUNCTION.apply(identity);
+            }
+          }));
       bindingPbList.add(bindingPb);
     }
     policyPb.setBindings(bindingPbList);
