@@ -18,6 +18,8 @@ package com.google.cloud;
 
 import com.google.api.core.BetaApi;
 import com.google.common.base.Preconditions;
+
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,10 +28,11 @@ import java.util.regex.Pattern;
  * Represents a Date without time, such as 2017-03-17. Date is timezone independent.
  */
 @BetaApi
-public final class Date implements Comparable<Date> {
+public final class Date implements Comparable<Date>, Serializable {
 
   // Date format "yyyy-mm-dd"
   private static final Pattern FORMAT_REGEXP = Pattern.compile("(\\d\\d\\d\\d)-(\\d\\d)-(\\d\\d)");
+  private static final long serialVersionUID = 8067099123096783929L;
   private final int year;
   private final int month;
   private final int dayOfMonth;

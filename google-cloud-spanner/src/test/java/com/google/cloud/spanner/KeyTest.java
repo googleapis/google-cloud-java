@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
@@ -173,5 +174,19 @@ public class KeyTest {
     tester.addEqualityGroup(Key.of("a", 2, null));
 
     tester.testEquals();
+  }
+
+  @Test
+  public void serialization() throws Exception {
+    reserializeAndAssert(Key.of());
+    reserializeAndAssert(Key.of(new Object[] {null}));
+    reserializeAndAssert(Key.of(true));
+    reserializeAndAssert(Key.of(32));
+    reserializeAndAssert(Key.of(2.0));
+    reserializeAndAssert(Key.of("xyz"));
+    reserializeAndAssert(Key.of(ByteArray.copyFrom("xyz")));
+    reserializeAndAssert(Key.of(Timestamp.parseTimestamp("2015-09-15T00:00:00Z")));
+    reserializeAndAssert(Key.of(Date.parseDate("2015-09-15")));
+    reserializeAndAssert(Key.of(1, 2, 3));
   }
 }

@@ -25,6 +25,8 @@ import com.google.common.base.Joiner;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Value;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -41,10 +43,11 @@ import javax.annotation.Nullable;
  *
  * <p>{@code Key} instances are immutable.
  */
-public final class Key {
+public final class Key implements Serializable {
   private static final Joiner joiner = Joiner.on(',').useForNull("<null>");
   private static final com.google.protobuf.Value NULL_PROTO =
       Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
+  private static final long serialVersionUID = 4433485671785063530L;
 
   private final List<Object> parts;
 

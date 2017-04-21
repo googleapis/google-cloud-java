@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
@@ -260,6 +261,15 @@ public class KeySetTest {
             + " ranges { start_closed { values { string_value: 'm' } }"
             + "          end_open { values { string_value: 'p' } } }"
             + " all:true");
+  }
+
+  @Test
+  public void javaSerialization() throws Exception {
+    reserializeAndAssert(KeySet.all()
+                    .toBuilder()
+                    .addKey(Key.of("a", 1))
+                    .addRange(KeyRange.closedOpen(Key.of("m"), Key.of("p")))
+                    .build());
   }
 
   private static void checkProto(KeySet keySet, String proto) {

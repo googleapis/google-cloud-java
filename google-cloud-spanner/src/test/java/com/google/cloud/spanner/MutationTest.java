@@ -16,13 +16,12 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.common.truth.Truth.assertThat;
-
+import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.testing.EqualsTester;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
 import org.junit.Rule;
@@ -30,6 +29,13 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
+import static com.google.common.truth.Truth.assertThat;
 
 /** Unit tests for {@link com.google.cloud.spanner.Mutation}. */
 @RunWith(JUnit4.class)
@@ -397,6 +403,108 @@ public class MutationTest {
         proto.get(3),
         matchesProto(
             "insert { table: 'T2', columns: 'C', values { values { string_value: 'V1' } } }"));
+  }
+
+  @Test
+  public void javaSerialization() throws Exception {
+    reserializeAndAssert(appendAllTypes(Mutation.newInsertBuilder("test")).build());
+    reserializeAndAssert(appendAllTypes(Mutation.newUpdateBuilder("test")).build());
+    reserializeAndAssert(appendAllTypes(Mutation.newReplaceBuilder("test")).build());
+    reserializeAndAssert(appendAllTypes(Mutation.newInsertOrUpdateBuilder("test")).build());
+
+    reserializeAndAssert(
+        Mutation.delete(
+            "test",
+            Key.of(
+                "one",
+                2,
+                null,
+                true,
+                2.3,
+                ByteArray.fromBase64("abcd"),
+                Timestamp.ofTimeSecondsAndNanos(1, 2),
+                Date.fromYearMonthDay(2017, 04, 17))));
+    reserializeAndAssert(Mutation.delete("test", KeySet.all()));
+    reserializeAndAssert(
+        Mutation.delete(
+            "test",
+            KeySet.newBuilder()
+                .addRange(KeyRange.closedClosed(Key.of("one", 2, null), Key.of("two", 3, null)))
+                .build()));
+    reserializeAndAssert(
+        Mutation.delete(
+            "test",
+            KeySet.newBuilder()
+                .addRange(KeyRange.closedOpen(Key.of("one", 2, null), Key.of("two", 3, null)))
+                .build()));
+    reserializeAndAssert(
+        Mutation.delete(
+            "test",
+            KeySet.newBuilder()
+                .addRange(KeyRange.openClosed(Key.of("one", 2, null), Key.of("two", 3, null)))
+                .build()));
+    reserializeAndAssert(
+        Mutation.delete(
+            "test",
+            KeySet.newBuilder()
+                .addRange(KeyRange.openOpen(Key.of("one", 2, null), Key.of("two", 3, null)))
+                .build()));
+  }
+
+  private Mutation.WriteBuilder appendAllTypes(Mutation.WriteBuilder builder) {
+    return builder
+        .set("bool")
+        .to(true)
+        .set("boolNull")
+        .to((Boolean) null)
+        .set("int")
+        .to(42)
+        .set("intNull")
+        .to((Long) null)
+        .set("float")
+        .to(42.1)
+        .set("floatNull")
+        .to((Double) null)
+        .set("string")
+        .to("str")
+        .set("stringNull")
+        .to((String) null)
+        .set("boolArr")
+        .toBoolArray(new boolean[] {true, false})
+        .set("boolArrNull")
+        .toBoolArray((boolean[]) null)
+        .set("intArr")
+        .toInt64Array(new long[] {1, 2, 3})
+        .set("intArrNull")
+        .toInt64Array((long[]) null)
+        .set("floatArr")
+        .toFloat64Array(new double[] {1.1, 2.2, 3.3})
+        .set("floatArrNull")
+        .toFloat64Array((double[]) null)
+        .set("nullStr")
+        .to((String) null)
+        .set("timestamp")
+        .to(Timestamp.MAX_VALUE)
+        .set("timestampNull")
+        .to((Timestamp) null)
+        .set("date")
+        .to(Date.fromYearMonthDay(2017, 04, 17))
+        .set("dateNull")
+        .to((Date) null)
+        .set("stringArr")
+        .toStringArray(ImmutableList.of("one", "two"))
+        .set("stringArrNull")
+        .toStringArray(null)
+        .set("timestampArr")
+        .toTimestampArray(ImmutableList.of(Timestamp.MAX_VALUE, Timestamp.MAX_VALUE))
+        .set("timestampArrNull")
+        .toTimestampArray(null)
+        .set("dateArr")
+        .toDateArray(
+            ImmutableList.of(
+                Date.fromYearMonthDay(2017, 04, 17), Date.fromYearMonthDay(2017, 04, 18)))
+        .set("dateArrNull")
+        .toDateArray(null);
   }
 
   static Matcher<com.google.spanner.v1.Mutation> matchesProto(String expected) {
