@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.testing.EqualsTester;
@@ -174,5 +175,10 @@ public class TimestampTest {
         .isGreaterThan(Timestamp.ofTimeSecondsAndNanos(100, 1000));
     assertThat(Timestamp.ofTimeSecondsAndNanos(101, 0))
         .isAtLeast(Timestamp.ofTimeSecondsAndNanos(100, 1000));
+  }
+
+  @Test
+  public void serialization() throws Exception {
+    reserializeAndAssert(Timestamp.parseTimestamp("9999-12-31T23:59:59.999999999Z"));
   }
 }
