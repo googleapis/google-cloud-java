@@ -25,15 +25,10 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.BitSet;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
+import java.util.*;
 
 /**
  * Represents a value to be consumed by the Cloud Spanner API. A value can be {@code NULL} or
@@ -441,6 +436,20 @@ public abstract class Value {
   abstract void toString(StringBuilder b);
 
   abstract com.google.protobuf.Value toProto();
+
+  /**
+   * Returns a com.google.protobuf.Value that preserves type information, so it is possible ot
+   * recover all the original value from it.
+   *
+   * @return com.google.protobuf.Value of a list [serialized type proto value, value]
+   */
+  com.google.protobuf.Value toTypedProto() {
+    com.google.protobuf.Value.Builder valueBuilder = com.google.protobuf.Value.newBuilder();
+    ListValue.Builder listBuilder = valueBuilder.getListValueBuilder();
+    listBuilder.addValuesBuilder().setStringValueBytes(getType().toProto().toByteString()).build();
+    listBuilder.addValues(toProto());
+    return valueBuilder.build();
+  }
 
   private static <T> List<T> immutableCopyOf(Iterable<T> v) {
     ArrayList<T> copy = new ArrayList<>();

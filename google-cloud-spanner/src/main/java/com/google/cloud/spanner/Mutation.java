@@ -16,17 +16,20 @@
 
 package com.google.cloud.spanner;
 
+import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
+import com.google.protobuf.ListValue;
+
+import javax.annotation.Nullable;
+import java.io.ObjectStreamException;
+import java.io.Serializable;
+import java.util.*;
+
+import static com.google.cloud.spanner.GrpcStruct.fromTypedProto;
+import static com.google.cloud.spanner.GrpcStruct.valueFromTypedProto;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
-
-import com.google.common.collect.ImmutableList;
-import com.google.protobuf.ListValue;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import javax.annotation.Nullable;
 
 /**
  * Represents an individual table modification to be applied to Cloud Spanner.
@@ -47,7 +50,7 @@ import javax.annotation.Nullable;
  *
  * <p>{@code Mutation} instances are immutable.
  */
-public final class Mutation {
+public final class Mutation implements Serializable {
   /** Enumerates the types of mutation that can be applied. */
   public enum Op {
     /**
@@ -78,6 +81,8 @@ public final class Mutation {
     /** Deletes rows from a table. Succeeds whether or not the named rows were present. */
     DELETE,
   }
+
+  private static final long serialVersionUID = 1L;
 
   private final String table;
   private final Op operation;
@@ -399,4 +404,172 @@ public final class Mutation {
       out.add(proto.build());
     }
   }
+
+  /**
+   * A proxy class that handles {@link Mutation} serialization.
+   */
+  private static class SerializationProxy implements Serializable {
+    private static final long serialVersionUID = 2L;
+
+    private com.google.spanner.v1.Mutation proto;
+
+    private SerializationProxy(Mutation mutation) {
+      com.google.spanner.v1.Mutation.Builder builder = com.google.spanner.v1.Mutation.newBuilder();
+      if (mutation.operation == Op.DELETE) {
+        com.google.spanner.v1.Mutation.Delete.Builder delete = builder.getDeleteBuilder();
+        delete.setTable(mutation.getTable());
+        com.google.spanner.v1.KeySet.Builder keySetBuilder = delete.getKeySetBuilder();
+        if (mutation.getKeySet().isAll()) {
+          keySetBuilder.setAll(true);
+        } else {
+          for (KeyRange range : mutation.getKeySet().getRanges()) {
+            com.google.spanner.v1.KeyRange.Builder rangesBuilder = keySetBuilder.addRangesBuilder();
+            if (range.getStartType() == KeyRange.Endpoint.OPEN) {
+              rangesBuilder.setStartOpen(keyToListValues(range.getStart()));
+            } else if (range.getStartType() == KeyRange.Endpoint.CLOSED) {
+              rangesBuilder.setStartClosed(keyToListValues(range.getStart()));
+            }
+            if (range.geEndType() == KeyRange.Endpoint.OPEN) {
+              rangesBuilder.setEndOpen(keyToListValues(range.getEnd()));
+            } else if (range.geEndType() == KeyRange.Endpoint.CLOSED) {
+              rangesBuilder.setEndClosed(keyToListValues(range.getEnd()));
+            }
+          }
+          for (Key key : mutation.getKeySet().getKeys()) {
+            keySetBuilder.addKeys(keyToListValues(key));
+          }
+        }
+        proto = builder.build();
+        return;
+      }
+      com.google.spanner.v1.Mutation.Write.Builder write;
+      switch (mutation.operation) {
+        case INSERT:
+          write = builder.getInsertBuilder();
+          break;
+        case UPDATE:
+          write = builder.getUpdateBuilder();
+          break;
+        case INSERT_OR_UPDATE:
+          write = builder.getInsertOrUpdateBuilder();
+          break;
+        case REPLACE:
+          write = builder.getReplaceBuilder();
+          break;
+        default:
+          throw new AssertionError("Impossible: " + mutation.operation);
+      }
+      ListValue.Builder values = ListValue.newBuilder();
+      for (Value value : mutation.getValues()) {
+        values.addValues(value.toTypedProto());
+      }
+      write
+              .setTable(mutation.table)
+              .addAllColumns(mutation.columns)
+              .addValues(values);
+      proto = builder.build();
+    }
+
+    private static ListValue keyToListValues(Key key) {
+      return ListValue.newBuilder().addAllValues(Iterables
+              .transform(key.toValues(), new Function<Value, com.google.protobuf.Value>() {
+                @Override
+                public com.google.protobuf.Value apply(Value input) {
+                  return input.toTypedProto();
+                }
+              })).build();
+    }
+
+    private static Key keyFromListValues(ListValue value) {
+      Key.Builder builder = Key.newBuilder();
+      for (com.google.protobuf.Value part : value.getValuesList()) {
+        builder.appendObject(fromTypedProto(part));
+      }
+      return builder.build();
+    }
+
+    private static KeyRange keyRangeFromProto(com.google.spanner.v1.KeyRange proto) {
+      KeyRange.Builder builder = KeyRange.newBuilder();
+      if (proto.getEndKeyTypeCase() == com.google.spanner.v1.KeyRange.EndKeyTypeCase.END_OPEN) {
+        builder.setEnd(keyFromListValues(proto.getEndOpen()));
+        builder.setEndType(KeyRange.Endpoint.OPEN);
+      } else if (proto.getEndKeyTypeCase() == com.google.spanner.v1.KeyRange.EndKeyTypeCase
+              .END_CLOSED) {
+        builder.setEnd(keyFromListValues(proto.getEndClosed()));
+        builder.setEndType(KeyRange.Endpoint.CLOSED);
+      }
+      if (proto.getStartKeyTypeCase() == com.google.spanner.v1.KeyRange.StartKeyTypeCase.START_OPEN) {
+        builder.setStart(keyFromListValues(proto.getStartOpen()));
+        builder.setStartType(KeyRange.Endpoint.OPEN);
+      } else if (proto.getStartKeyTypeCase() == com.google.spanner.v1.KeyRange.StartKeyTypeCase.START_CLOSED) {
+        builder.setStart(keyFromListValues(proto.getStartClosed()));
+        builder.setStartType(KeyRange.Endpoint.CLOSED);
+      }
+      return builder.build();
+    }
+
+    /**
+     * Is called right after the serialization, and substitutes itself with the {@link Mutation}
+     * object.
+     *
+     * @return an instance of {@link Mutation}.
+     */
+    private Object readResolve() throws ObjectStreamException {
+      com.google.spanner.v1.Mutation.Write write;
+      Mutation.WriteBuilder builder;
+      switch (proto.getOperationCase()) {
+        case INSERT:
+          builder = Mutation.newInsertBuilder(proto.getInsert().getTable());
+          write = proto.getInsert();
+          break;
+        case UPDATE:
+          builder = Mutation.newUpdateBuilder(proto.getUpdate().getTable());
+          write = proto.getUpdate();
+          break;
+        case INSERT_OR_UPDATE:
+          builder = Mutation.newInsertOrUpdateBuilder(proto.getInsertOrUpdate().getTable());
+          write = proto.getInsertOrUpdate();
+          break;
+        case REPLACE:
+          builder = Mutation.newReplaceBuilder(proto.getReplace().getTable());
+          write = proto.getReplace();
+          break;
+        case DELETE:
+          KeySet.Builder keySetBuilder = KeySet.newBuilder();
+          com.google.spanner.v1.KeySet keySetProto = proto.getDelete().getKeySet();
+          if (keySetProto.getAll()) {
+            keySetBuilder.setAll();
+          } else {
+            for(ListValue key : keySetProto.getKeysList()) {
+              keySetBuilder.addKey(keyFromListValues(key));
+            }
+            for(com.google.spanner.v1.KeyRange range : keySetProto.getRangesList()) {
+              keySetBuilder.addRange(keyRangeFromProto(range));
+            }
+          }
+          return Mutation.delete(proto.getDelete().getTable(), keySetBuilder.build());
+        default:
+          throw new AssertionError("Impossible: " + proto.getOperationCase());
+      }
+
+      for (int i = 0; i < write.getColumnsCount(); i++) {
+        com.google.protobuf.Value value = write.getValues(0).getValues(i);
+        builder.set(write.getColumns(i)).handle(valueFromTypedProto(value));
+      }
+
+      return builder.build();
+    }
+
+  }
+
+
+  /**
+   * Delegates serialization to the {@link SerializationProxy} class.
+   *
+   * @return an instance of {@link SerializationProxy} that is safe to serialize.
+   */
+  private Object writeReplace() {
+    return new SerializationProxy(this);
+  }
+
 }
