@@ -59,7 +59,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 /** Tests for {@link Subscriber}. */
 @RunWith(Parameterized.class)
-public class SubscriberImplTest {
+public class SubscriberTest {
 
   private static final SubscriptionName TEST_SUBSCRIPTION =
       SubscriptionName.create("test-project", "test-subscription");
@@ -166,7 +166,7 @@ public class SubscriberImplTest {
     }
   }
 
-  public SubscriberImplTest(boolean streamingTest) {
+  public SubscriberTest(boolean streamingTest) {
     this.isStreamingTest = streamingTest;
   }
 
@@ -536,6 +536,7 @@ public class SubscriberImplTest {
   private Builder getTestSubscriberBuilder(MessageReceiver receiver) {
     return Subscriber.defaultBuilder(TEST_SUBSCRIPTION, receiver)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
+        .setLeaseAlarmsExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setChannelProvider(FixedChannelProvider.create(testChannel))
         .setClock(fakeExecutor.getClock());
   }

@@ -72,6 +72,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       Channel channel,
       FlowController flowController,
       ScheduledExecutorService executor,
+      @Nullable ScheduledExecutorService alarmsExecutor,
       ApiClock clock) {
     this.subscription = subscription;
     this.executor = executor;
@@ -85,6 +86,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             ackLatencyDistribution,
             flowController,
             executor,
+            alarmsExecutor,
             clock);
     messageDispatcher.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
   }
@@ -120,11 +122,17 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     @Override
     public void onNext(StreamingPullResponse response) {
-      messageDispatcher.processReceivedMessages(response.getReceivedMessagesList());
-      // Only if not shutdown we will request one more batches of messages to be delivered.
-      if (isAlive()) {
-        requestObserver.request(1);
-      }
+      messageDispatcher.processReceivedMessages(
+          response.getReceivedMessagesList(),
+          new Runnable() {
+            @Override
+            public void run() {
+              // Only if not shutdown we will request one more batches of messages to be delivered.
+              if (isAlive()) {
+                requestObserver.request(1);
+              }
+            }
+          });
     }
 
     @Override
