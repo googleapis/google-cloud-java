@@ -70,6 +70,7 @@ import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import io.grpc.Status;
 import java.io.IOException;
+import java.util.List;
 import javax.annotation.Generated;
 import org.joda.time.Duration;
 
@@ -364,7 +365,7 @@ public class SubscriptionAdminSettings extends ClientSettings {
   }
 
   /** Returns the default service scopes. */
-  public static ImmutableList<String> getDefaultServiceScopes() {
+  public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 

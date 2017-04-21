@@ -24,6 +24,8 @@ import com.google.cloud.RetryHelper;
 import com.google.cloud.WriteChannel;
 import com.google.common.base.MoreObjects;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 
@@ -149,8 +151,10 @@ public class TableDataWriteChannel extends
     }
 
     @Override
-    protected MoreObjects.ToStringHelper toStringHelper() {
-      return super.toStringHelper().add("job", job);
+    protected List<ValueHolder> toStringHelper() {
+      List<ValueHolder> valueList = super.toStringHelper();
+      valueList.add(ValueHolder.create("job", job));
+      return valueList;
     }
   }
 }
