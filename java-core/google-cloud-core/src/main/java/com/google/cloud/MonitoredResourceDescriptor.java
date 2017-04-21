@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
@@ -37,9 +38,9 @@ import java.util.Objects;
 public class MonitoredResourceDescriptor implements Serializable {
 
   private static final long serialVersionUID = -3702077512777687441L;
-  public static final Function<com.google.api.MonitoredResourceDescriptor,
+  public static final ApiFunction<com.google.api.MonitoredResourceDescriptor,
       MonitoredResourceDescriptor> FROM_PB_FUNCTION =
-      new Function<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
+      new ApiFunction<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
         @Override
         public MonitoredResourceDescriptor apply(
             com.google.api.MonitoredResourceDescriptor pb) {
