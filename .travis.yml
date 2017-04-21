@@ -16,8 +16,8 @@ before_install:
 - cp target/travis/settings.xml ~/.m2/settings.xml
 - cp target/travis/logging.properties logging.properties
 install: mvn install --quiet -Djava.util.logging.config.file=logging.properties -DskipTests=true -Dgpg.skip=true
-script: 
-- travis_wait 60 utilities/verify.sh
+script:
+- utilities/verify.sh
 after_success:
 - utilities/after_success.sh
 env:
