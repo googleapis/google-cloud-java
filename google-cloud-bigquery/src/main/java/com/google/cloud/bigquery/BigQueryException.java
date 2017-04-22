@@ -18,8 +18,8 @@ package com.google.cloud.bigquery;
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.http.BaseHttpServiceException;
 import com.google.common.collect.ImmutableSet;
-
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Set;
@@ -30,7 +30,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Google Cloud
  *      BigQuery error codes</a>
  */
-public final class BigQueryException extends BaseServiceException {
+public final class BigQueryException extends BaseHttpServiceException {
 
   // see: https://cloud.google.com/bigquery/troubleshooting-errors
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -47,17 +47,17 @@ public final class BigQueryException extends BaseServiceException {
   }
 
   public BigQueryException(int code, String message, Throwable cause) {
-    super(code, message, null, true, cause);
+    super(code, message, null, true, RETRYABLE_ERRORS, cause);
     this.error = null;
   }
 
   public BigQueryException(int code, String message, BigQueryError error) {
-    super(code, message, error != null ? error.getReason() : null, true);
+    super(code, message, error != null ? error.getReason() : null, true, RETRYABLE_ERRORS);
     this.error = error;
   }
 
   public BigQueryException(IOException exception) {
-    super(exception, true);
+    super(exception, true, RETRYABLE_ERRORS);
     BigQueryError error = null;
     if (getReason() != null) {
       error = new BigQueryError(getReason(), getLocation(), getMessage(), getDebugInfo());
@@ -72,11 +72,6 @@ public final class BigQueryException extends BaseServiceException {
    */
   public BigQueryError getError() {
     return error;
-  }
-
-  @Override
-  protected Set<Error> getRetryableErrors() {
-    return RETRYABLE_ERRORS;
   }
 
   @Override

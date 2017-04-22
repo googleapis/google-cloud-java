@@ -18,7 +18,7 @@ package com.google.cloud.translate;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
-import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;

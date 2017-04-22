@@ -17,8 +17,8 @@
 package com.google.cloud.compute.testing;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.HttpTransportOptions;
-import com.google.api.gax.core.RetrySettings;
+import com.google.cloud.http.HttpTransportOptions;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.compute.ComputeOptions;
 
 import java.io.IOException;

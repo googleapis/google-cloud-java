@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud;
+package com.google.cloud.http;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -22,7 +22,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.auth.http.HttpTransportFactory;
-import com.google.cloud.HttpTransportOptions.DefaultHttpTransportFactory;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.http.HttpTransportOptions.DefaultHttpTransportFactory;
 import java.util.regex.Pattern;
 import org.easymock.EasyMock;
 import org.junit.Test;

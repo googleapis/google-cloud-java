@@ -30,6 +30,11 @@
       <version>${core.version}</version>
     </dependency>
     <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>google-cloud-core-grpc</artifactId>
+      <version>${core-grpc.version}</version>
+    </dependency>
+    <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
       <version>0.1.8</version>

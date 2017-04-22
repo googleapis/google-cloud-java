@@ -18,8 +18,8 @@ package com.google.cloud.datastore;
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.http.BaseHttpServiceException;
 import com.google.common.collect.ImmutableSet;
-
 import java.io.IOException;
 import java.util.Set;
 
@@ -29,7 +29,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes">Google Cloud
  *      Datastore error codes</a>
  */
-public final class DatastoreException extends BaseServiceException {
+public final class DatastoreException extends BaseHttpServiceException {
 
   // see https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes"
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -43,21 +43,16 @@ public final class DatastoreException extends BaseServiceException {
   }
 
   public DatastoreException(int code, String message, String reason, Throwable cause) {
-    super(code, message, reason, true, cause);
+    super(code, message, reason, true, RETRYABLE_ERRORS, cause);
   }
 
   public DatastoreException(int code, String message, String reason, boolean idempotent,
       Throwable cause) {
-    super(code, message, reason, idempotent, cause);
+    super(code, message, reason, idempotent, RETRYABLE_ERRORS, cause);
   }
 
   public DatastoreException(IOException exception) {
-    super(exception, true);
-  }
-
-  @Override
-  protected Set<Error> getRetryableErrors() {
-    return RETRYABLE_ERRORS;
+    super(exception, true, RETRYABLE_ERRORS);
   }
 
   /**

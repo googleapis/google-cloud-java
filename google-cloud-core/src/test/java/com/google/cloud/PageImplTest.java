@@ -18,7 +18,7 @@ package com.google.cloud;
 
 import static org.junit.Assert.assertEquals;
 
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;

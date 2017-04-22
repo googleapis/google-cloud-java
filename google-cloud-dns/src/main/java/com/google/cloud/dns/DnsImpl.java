@@ -24,7 +24,7 @@ import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.cloud.BaseService;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.dns.spi.v1.DnsRpc;

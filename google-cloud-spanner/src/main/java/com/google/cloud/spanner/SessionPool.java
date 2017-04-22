@@ -18,8 +18,8 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
-import com.google.cloud.GrpcTransportOptions;
-import com.google.cloud.GrpcTransportOptions.ExecutorFactory;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;

@@ -17,15 +17,13 @@
 package com.google.cloud.logging;
 
 import com.google.api.gax.grpc.ApiException;
-import com.google.cloud.BaseServiceException;
-
+import com.google.cloud.grpc.BaseGrpcServiceException;
 import java.io.IOException;
-import java.util.Set;
 
 /**
  * Logging service exception.
  */
-public final class LoggingException extends BaseServiceException {
+public final class LoggingException extends BaseGrpcServiceException {
 
   private static final long serialVersionUID = 449689219311927047L;
 
@@ -33,12 +31,7 @@ public final class LoggingException extends BaseServiceException {
     super(ex, idempotent);
   }
 
-  public LoggingException(ApiException apiException, boolean idempotent) {
-    super(apiException, idempotent);
-  }
-
-  @Override
-  protected Set<Error> getRetryableErrors() {
-    return null;
+  public LoggingException(ApiException apiException) {
+    super(apiException);
   }
 }

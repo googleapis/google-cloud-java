@@ -27,6 +27,11 @@
       <version>${core.version}</version>
     </dependency>
     <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>google-cloud-core-http</artifactId>
+      <version>${core-http.version}</version>
+    </dependency>
+    <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-dns</artifactId>
       <version>v1-rev7-1.21.0</version>

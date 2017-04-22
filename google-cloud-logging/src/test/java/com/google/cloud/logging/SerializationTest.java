@@ -17,7 +17,7 @@
 package com.google.cloud.logging;
 
 import com.google.cloud.BaseSerializationTest;
-import com.google.cloud.GrpcTransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;

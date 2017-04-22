@@ -14,18 +14,20 @@
  * limitations under the License.
  */
 
-package com.google.cloud;
+package com.google.cloud.grpc;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.UnaryCallSettings;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.Credentials;
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Preconditions;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import io.grpc.internal.SharedResourceHolder;
 import io.grpc.internal.SharedResourceHolder.Resource;
 import java.io.IOException;
@@ -92,8 +94,8 @@ public class GrpcTransportOptions implements TransportOptions {
     void release(T executor);
   }
 
-  @VisibleForTesting
-  static class DefaultExecutorFactory implements ExecutorFactory<ScheduledExecutorService> {
+  @InternalApi
+  public static class DefaultExecutorFactory implements ExecutorFactory<ScheduledExecutorService> {
 
     private static final DefaultExecutorFactory INSTANCE = new DefaultExecutorFactory();
 

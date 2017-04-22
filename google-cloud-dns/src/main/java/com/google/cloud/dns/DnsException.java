@@ -19,15 +19,15 @@ package com.google.cloud.dns;
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.http.BaseHttpServiceException;
 import com.google.common.collect.ImmutableSet;
-
 import java.io.IOException;
 import java.util.Set;
 
 /**
  * DNS service exception.
  */
-public final class DnsException extends BaseServiceException {
+public final class DnsException extends BaseHttpServiceException {
 
   // see: https://cloud.google.com/dns/troubleshooting
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -40,20 +40,15 @@ public final class DnsException extends BaseServiceException {
   private static final long serialVersionUID = 490302380416260252L;
 
   public DnsException(IOException exception, boolean idempotent) {
-    super(exception, idempotent);
+    super(exception, idempotent, RETRYABLE_ERRORS);
   }
 
   public DnsException(GoogleJsonError error, boolean idempotent) {
-    super(error, idempotent);
+    super(error, idempotent, RETRYABLE_ERRORS);
   }
 
   public DnsException(int code, String message, Throwable cause) {
-    super(code, message, null, true, cause);
-  }
-
-  @Override
-  protected Set<Error> getRetryableErrors() {
-    return RETRYABLE_ERRORS;
+    super(code, message, null, true, RETRYABLE_ERRORS, cause);
   }
 
   /**

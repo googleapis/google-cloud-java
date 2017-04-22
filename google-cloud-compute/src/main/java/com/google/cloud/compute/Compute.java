@@ -20,7 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.Service;
 import com.google.cloud.compute.AttachedDisk.PersistentDiskConfiguration;
 import com.google.cloud.compute.NetworkInterface.AccessConfig;

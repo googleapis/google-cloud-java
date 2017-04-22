@@ -17,7 +17,7 @@
 package com.google.cloud;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableMap;
 import java.io.Serializable;
