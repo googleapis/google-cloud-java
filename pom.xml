@@ -142,19 +142,19 @@
     <bigquery.version>0.14.1-beta-SNAPSHOT</bigquery.version>
     <compute.version>0.14.1-alpha-SNAPSHOT</compute.version>
     <contrib.version>0.14.1-alpha-SNAPSHOT</contrib.version>
-    <core.version>1.0.1-rc1-SNAPSHOT</core.version>
-    <datastore.version>1.0.1-rc1-SNAPSHOT</datastore.version>
+    <core.version>1.0.0-rc2-SNAPSHOT</core.version>
+    <datastore.version>1.0.0-rc2-SNAPSHOT</datastore.version>
     <dns.version>0.14.1-alpha-SNAPSHOT</dns.version>
     <errorreporting.version>0.14.1-alpha-SNAPSHOT</errorreporting.version>
     <examples.version>0.14.1-alpha-SNAPSHOT</examples.version>
     <language.version>0.14.1-beta-SNAPSHOT</language.version>
-    <logging.version>1.0.1-rc1-SNAPSHOT</logging.version>
+    <logging.version>1.0.0-rc2-SNAPSHOT</logging.version>
     <monitoring.version>0.14.1-alpha-SNAPSHOT</monitoring.version>
     <pubsub.version>0.14.1-alpha-SNAPSHOT</pubsub.version>
     <resourcemanager.version>0.14.1-alpha-SNAPSHOT</resourcemanager.version>
     <spanner.version>0.14.1-beta-SNAPSHOT</spanner.version>
     <speech.version>0.14.1-alpha-SNAPSHOT</speech.version>
-    <storage.version>1.0.1-rc1-SNAPSHOT</storage.version>
+    <storage.version>1.0.0-rc2-SNAPSHOT</storage.version>
     <trace.version>0.14.1-alpha-SNAPSHOT</trace.version>
     <translate.version>0.14.1-beta-SNAPSHOT</translate.version>
     <vision.version>0.14.1-beta-SNAPSHOT</vision.version>
