@@ -143,8 +143,6 @@
     <bigquery.version>0.14.1-beta-SNAPSHOT</bigquery.version>
     <compute.version>0.14.1-alpha-SNAPSHOT</compute.version>
     <contrib.version>0.14.1-alpha-SNAPSHOT</contrib.version>
-    <core.version>1.0.1-rc1-SNAPSHOT</core.version>
-    <datastore.version>1.0.1-rc1-SNAPSHOT</datastore.version>
     <core.version>1.0.0-rc2-SNAPSHOT</core.version>
     <core-http.version>1.0.0-rc2-SNAPSHOT</core-http.version>
     <core-grpc.version>1.0.0-rc2-SNAPSHOT</core-grpc.version>
