@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud;
+package com.google.cloud.http;
 
 import static com.google.cloud.BaseServiceException.UNKNOWN_CODE;
 import static org.easymock.EasyMock.createMock;
@@ -26,45 +26,54 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.BaseServiceException.ExceptionData;
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.cloud.BaseServiceException;
+import com.google.cloud.RetryHelper;
 import com.google.common.collect.ImmutableSet;
+import java.io.IOException;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.util.Collections;
 import java.util.Set;
 import org.junit.Test;
 
-/**
- * Tests for {@link BaseServiceException}.
- */
-public class BaseServiceExceptionTest {
+public class BaseHttpServiceExceptionTest {
 
   private static final int CODE = 1;
   private static final int CODE_NO_REASON = 2;
   private static final String MESSAGE = "some message";
   private static final String REASON = "some reason";
-  private static final boolean NOT_RETRYABLE = false;
   private static final boolean RETRYABLE = true;
   private static final boolean IDEMPOTENT = true;
-  private static final String DEBUG_INFO = "debugInfo";
-  private static final String LOCATION = "location";
+  private static final boolean NOT_IDEMPOTENT = false;
+  private static final Set<BaseServiceException.Error> EMPTY_RETRYABLE_ERRORS =
+      Collections.emptySet();
 
-  private static class CustomServiceException extends BaseServiceException {
+  private static class CustomServiceException extends BaseHttpServiceException {
 
     private static final long serialVersionUID = -195251309124875103L;
 
     public CustomServiceException(int code, String message, String reason, boolean idempotent) {
-      super(ExceptionData.from(code, message, reason,
-          BaseServiceException.isRetryable(code, reason, idempotent, RETRYABLE_ERRORS)));
+      super(code, message, reason, idempotent, RETRYABLE_ERRORS);
     }
 
-    private static final Set RETRYABLE_ERRORS = ImmutableSet
-        .of(new Error(CODE, REASON),
-            new Error(null, REASON),
+    private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet
+        .of(new Error(CODE, REASON), new Error(null, REASON),
             new Error(CODE_NO_REASON, null));
   }
 
   @Test
   public void testBaseServiceException() {
-    BaseServiceException serviceException =
-        new BaseServiceException(ExceptionData.from(CODE, MESSAGE, REASON, NOT_RETRYABLE));
+    BaseServiceException serviceException = new BaseHttpServiceException(CODE, MESSAGE, REASON,
+        IDEMPOTENT, EMPTY_RETRYABLE_ERRORS);
+    assertEquals(CODE, serviceException.getCode());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(REASON, serviceException.getReason());
+    assertFalse(serviceException.isRetryable());
+    assertNull(serviceException.getCause());
+
+    serviceException = new BaseHttpServiceException(CODE, MESSAGE, REASON, IDEMPOTENT,
+        EMPTY_RETRYABLE_ERRORS);
     assertEquals(CODE, serviceException.getCode());
     assertEquals(MESSAGE, serviceException.getMessage());
     assertEquals(REASON, serviceException.getReason());
@@ -72,52 +81,71 @@ public class BaseServiceExceptionTest {
     assertNull(serviceException.getCause());
 
     Exception cause = new RuntimeException();
-    serviceException =
-        new BaseServiceException(ExceptionData.from(CODE, MESSAGE, REASON, NOT_RETRYABLE, cause));
+    serviceException = new BaseHttpServiceException(CODE, MESSAGE, REASON, IDEMPOTENT,
+        EMPTY_RETRYABLE_ERRORS, cause);
     assertEquals(CODE, serviceException.getCode());
     assertEquals(MESSAGE, serviceException.getMessage());
     assertEquals(REASON, serviceException.getReason());
     assertFalse(serviceException.isRetryable());
     assertEquals(cause, serviceException.getCause());
 
-    serviceException =
-        new BaseServiceException(
-            ExceptionData.newBuilder()
-                .setMessage(MESSAGE).setCause(cause).setCode(CODE)
-                .setReason(REASON).setRetryable(RETRYABLE).setDebugInfo(DEBUG_INFO)
-                .setLocation(LOCATION)
-                .build());
+    serviceException = new BaseHttpServiceException(CODE, MESSAGE, REASON, NOT_IDEMPOTENT,
+        EMPTY_RETRYABLE_ERRORS, cause);
     assertEquals(CODE, serviceException.getCode());
     assertEquals(MESSAGE, serviceException.getMessage());
     assertEquals(REASON, serviceException.getReason());
-    assertTrue(serviceException.isRetryable());
+    assertFalse(serviceException.isRetryable());
     assertEquals(cause, serviceException.getCause());
-    assertEquals(DEBUG_INFO, serviceException.getDebugInfo());
-    assertEquals(LOCATION, serviceException.getLocation());
+
+    IOException exception = new SocketTimeoutException();
+    serviceException = new BaseHttpServiceException(exception, IDEMPOTENT, EMPTY_RETRYABLE_ERRORS);
+    assertTrue(serviceException.isRetryable());
+    assertNull(serviceException.getMessage());
+    assertEquals(exception, serviceException.getCause());
+
+    exception = new SocketException();
+    serviceException = new BaseHttpServiceException(exception, IDEMPOTENT, EMPTY_RETRYABLE_ERRORS);
+    assertTrue(serviceException.isRetryable());
+    assertNull(serviceException.getMessage());
+    assertEquals(exception, serviceException.getCause());
+
+    exception = new IOException("insufficient data written");
+    serviceException = new BaseHttpServiceException(exception, IDEMPOTENT, EMPTY_RETRYABLE_ERRORS);
+    assertTrue(serviceException.isRetryable());
+    assertEquals("insufficient data written", serviceException.getMessage());
+    assertEquals(exception, serviceException.getCause());
+
+    GoogleJsonError error = new GoogleJsonError();
+    error.setCode(CODE);
+    error.setMessage(MESSAGE);
+    serviceException = new BaseHttpServiceException(error, IDEMPOTENT, EMPTY_RETRYABLE_ERRORS);
+    assertEquals(CODE, serviceException.getCode());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertFalse(serviceException.isRetryable());
 
     serviceException = new CustomServiceException(CODE, MESSAGE, REASON, IDEMPOTENT);
     assertEquals(CODE, serviceException.getCode());
     assertEquals(MESSAGE, serviceException.getMessage());
     assertEquals(REASON, serviceException.getReason());
-    assertTrue(serviceException.isRetryable());
+    assertEquals(RETRYABLE, serviceException.isRetryable());
 
     serviceException = new CustomServiceException(CODE_NO_REASON, MESSAGE, null, IDEMPOTENT);
     assertEquals(CODE_NO_REASON, serviceException.getCode());
     assertEquals(MESSAGE, serviceException.getMessage());
     assertNull(serviceException.getReason());
-    assertTrue(serviceException.isRetryable());
+    assertEquals(RETRYABLE, serviceException.isRetryable());
 
     serviceException = new CustomServiceException(UNKNOWN_CODE, MESSAGE, REASON, IDEMPOTENT);
     assertEquals(UNKNOWN_CODE, serviceException.getCode());
     assertEquals(MESSAGE, serviceException.getMessage());
     assertEquals(REASON, serviceException.getReason());
-    assertTrue(serviceException.isRetryable());
+    assertEquals(RETRYABLE, serviceException.isRetryable());
   }
 
   @Test
   public void testTranslateAndThrow() throws Exception {
     BaseServiceException cause =
-        new BaseServiceException(ExceptionData.from(CODE, MESSAGE, REASON, NOT_RETRYABLE));
+        new BaseHttpServiceException(CODE, MESSAGE, REASON, IDEMPOTENT, EMPTY_RETRYABLE_ERRORS);
     RetryHelper.RetryHelperException exceptionMock =
         createMock(RetryHelper.RetryHelperException.class);
     expect(exceptionMock.getCause()).andReturn(cause).times(2);
@@ -132,4 +160,6 @@ public class BaseServiceExceptionTest {
       verify(exceptionMock);
     }
   }
+
+
 }

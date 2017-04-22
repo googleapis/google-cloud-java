@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>google-cloud-core</artifactId>
+  <artifactId>google-cloud-core-grpc</artifactId>
   <version>1.0.0-rc2-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>Google Cloud Core</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-core</url>
+  <name>Google Cloud Core gRPC</name>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-core-grpc</url>
   <description>
-    Core module for the google-cloud.
+    Core gRPC module for the google-cloud.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -15,10 +15,15 @@
     <version>0.14.1-alpha-SNAPSHOT</version>
   </parent>
   <properties>
-    <site.installationModule>google-cloud-core</site.installationModule>
+    <site.installationModule>google-cloud-core-grpc</site.installationModule>
     <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+      <version>${core.version}</version>
+    </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -29,39 +34,27 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.json</groupId>
-      <artifactId>json</artifactId>
-      <version>20160810</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
       <version>3.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>api-common</artifactId>
-      <version>${api-common.version}</version>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
-      <artifactId>gax</artifactId>
-      <version>${gax.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-common-protos</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-iam-v1</artifactId>
+      <artifactId>gax-grpc</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.truth</groupId>

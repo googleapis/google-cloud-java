@@ -186,7 +186,7 @@ public class ServiceOptionsTest {
 
       @Override
       public TransportOptions getDefaultTransportOptions() {
-        return HttpTransportOptions.newBuilder().build();
+        return new TransportOptions() {};
       }
     }
 

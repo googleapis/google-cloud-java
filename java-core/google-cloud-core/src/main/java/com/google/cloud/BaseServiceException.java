@@ -16,18 +16,13 @@
 
 package com.google.cloud;
 
-import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.client.googleapis.json.GoogleJsonResponseException;
-import com.google.api.client.http.HttpResponseException;
-import com.google.api.gax.grpc.ApiException;
+import com.google.api.core.InternalApi;
 import com.google.common.base.MoreObjects;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.security.cert.CertificateException;
-import java.util.Collections;
 import java.util.Objects;
 import java.util.Set;
 import javax.net.ssl.SSLHandshakeException;
@@ -43,11 +38,131 @@ public class BaseServiceException extends RuntimeException {
   private final int code;
   private final boolean retryable;
   private final String reason;
-  private final boolean idempotent;
   private final String location;
   private final String debugInfo;
 
-  protected static final class Error implements Serializable {
+  @InternalApi
+  public static final class ExceptionData implements Serializable {
+    private static final long serialVersionUID = 2222230861338426753L;
+
+    private final String message;
+    private final Throwable cause;
+    private final int code;
+    private final boolean retryable;
+    private final String reason;
+    private final String location;
+    private final String debugInfo;
+
+    private ExceptionData(String message, Throwable cause, int code, boolean retryable,
+        String reason, String location, String debugInfo) {
+      this.message = message;
+      this.cause = cause;
+      this.code = code;
+      this.retryable = retryable;
+      this.reason = reason;
+      this.location = location;
+      this.debugInfo = debugInfo;
+    }
+
+    public String getMessage() {
+      return message;
+    }
+
+    public Throwable getCause() {
+      return cause;
+    }
+
+    public int getCode() {
+      return code;
+    }
+
+    public boolean isRetryable() {
+      return retryable;
+    }
+
+    public String getReason() {
+      return reason;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getDebugInfo() {
+      return debugInfo;
+    }
+
+    public static Builder newBuilder() {
+      return new Builder();
+    }
+
+    public static ExceptionData from(int code, String message, String reason, boolean retryable) {
+      return from(code, message, reason, retryable, null);
+    }
+
+    public static ExceptionData from(int code, String message, String reason, boolean retryable,
+        Throwable cause) {
+      return newBuilder().setCode(code).setMessage(message).setReason(reason)
+          .setRetryable(retryable).setCause(cause).build();
+    }
+
+    @InternalApi
+    public static final class Builder {
+
+      private String message;
+      private Throwable cause;
+      private int code;
+      private boolean retryable;
+      private String reason;
+      private String location;
+      private String debugInfo;
+
+      private Builder() {}
+
+      public Builder setMessage(String message) {
+        this.message = message;
+        return this;
+      }
+
+      public Builder setCause(Throwable cause) {
+        this.cause = cause;
+        return this;
+      }
+
+      public Builder setCode(int code) {
+        this.code = code;
+        return this;
+      }
+
+      public Builder setRetryable(boolean retryable) {
+        this.retryable = retryable;
+        return this;
+      }
+
+      public Builder setReason(String reason) {
+        this.reason = reason;
+        return this;
+      }
+
+      public Builder setLocation(String location) {
+        this.location = location;
+        return this;
+      }
+
+      public Builder setDebugInfo(String debugInfo) {
+        this.debugInfo = debugInfo;
+        return this;
+      }
+
+      public ExceptionData build() {
+        return new ExceptionData(message, cause, code, retryable, reason, location,
+            debugInfo);
+      }
+    }
+  }
+
+  @InternalApi
+  public static final class Error implements Serializable {
 
     private static final long serialVersionUID = -4019600198652965721L;
 
@@ -91,15 +206,9 @@ public class BaseServiceException extends RuntimeException {
       return reason;
     }
 
-    boolean isRetryable(boolean idempotent, Set<Error> retryableErrors) {
-      for (Error retryableError : retryableErrors) {
-        if ((retryableError.getCode() == null || retryableError.getCode().equals(this.getCode()))
-            && (retryableError.getReason() == null
-            || retryableError.getReason().equals(this.getReason()))) {
-          return idempotent || retryableError.isRejected();
-        }
-      }
-      return false;
+    @InternalApi
+    public boolean isRetryable(boolean idempotent, Set<Error> retryableErrors) {
+      return BaseServiceException.isRetryable(code, reason, idempotent, retryableErrors);
     }
 
     @Override
@@ -113,104 +222,45 @@ public class BaseServiceException extends RuntimeException {
     }
   }
 
-  public BaseServiceException(IOException exception, boolean idempotent) {
-    super(message(exception), exception);
-    int code = UNKNOWN_CODE;
-    String reason = null;
-    String location = null;
-    String debugInfo = null;
-    Boolean retryable = null;
-    if (exception instanceof HttpResponseException) {
-      if (exception instanceof GoogleJsonResponseException) {
-        GoogleJsonError jsonError = ((GoogleJsonResponseException) exception).getDetails();
-        if (jsonError != null) {
-          Error error = new Error(jsonError.getCode(), reason(jsonError));
-          code = error.code;
-          reason = error.reason;
-          retryable = isRetryable(idempotent, error);
-          if (reason != null) {
-            GoogleJsonError.ErrorInfo errorInfo = jsonError.getErrors().get(0);
-            location = errorInfo.getLocation();
-            debugInfo = (String) errorInfo.get("debugInfo");
-          }
-        } else {
-          code = ((GoogleJsonResponseException) exception).getStatusCode();
-        }
-      } else {
-        // In cases where an exception is an instance of HttpResponseException but not
-        // an instance of GoogleJsonResponseException, check the status code to determine whether it's retryable
-        code = ((HttpResponseException) exception).getStatusCode();
-        retryable = isRetryable(idempotent, new Error(code, null));
+
+  @InternalApi
+  public static boolean isRetryable(Integer code, String reason, boolean idempotent,
+      Set<Error> retryableErrors) {
+    for (Error retryableError : retryableErrors) {
+      if ((retryableError.getCode() == null || retryableError.getCode().equals(code))
+          && (retryableError.getReason() == null
+          || retryableError.getReason().equals(reason))) {
+        return idempotent || retryableError.isRejected();
       }
     }
-    this.retryable = MoreObjects.firstNonNull(retryable, isRetryable(idempotent, exception));
-    this.code = code;
-    this.reason = reason;
-    this.idempotent = idempotent;
-    this.location = location;
-    this.debugInfo = debugInfo;
+    return false;
   }
 
-  public BaseServiceException(GoogleJsonError googleJsonError, boolean idempotent) {
-    super(googleJsonError.getMessage());
-    Error error = new Error(googleJsonError.getCode(), reason(googleJsonError));
-    this.code = error.code;
-    this.reason = error.reason;
-    this.retryable = isRetryable(idempotent, error);
-    if (this.reason != null) {
-      GoogleJsonError.ErrorInfo errorInfo = googleJsonError.getErrors().get(0);
-      this.location = errorInfo.getLocation();
-      this.debugInfo = (String) errorInfo.get("debugInfo");
-    } else {
-      this.location = null;
-      this.debugInfo = null;
-    }
-    this.idempotent = idempotent;
-  }
-
-  public BaseServiceException(int code, String message, String reason, boolean idempotent) {
-    this(code, message, reason, idempotent, null);
-  }
-
-  public BaseServiceException(int code, String message, String reason, boolean idempotent,
-      Throwable cause) {
-    super(message, cause);
-    this.code = code;
-    this.reason = reason;
-    this.idempotent = idempotent;
-    this.retryable = isRetryable(idempotent, new Error(code, reason));
-    this.location = null;
-    this.debugInfo = null;
-  }
-
-  public BaseServiceException(ApiException apiException, boolean idempotent) {
-    super(apiException.getMessage(), apiException);
-    this.code = apiException.getStatusCode().value();
-    this.reason = apiException.getStatusCode().name();
-    this.idempotent = idempotent;
-    this.retryable = apiException.isRetryable();
-    this.location = null;
-    this.debugInfo = null;
-  }
-
-
-  protected Set<Error> getRetryableErrors() {
-    return Collections.emptySet();
-  }
-
-  protected boolean isRetryable(boolean idempotent, Error error) {
-    return error.isRetryable(idempotent, getRetryableErrors());
-  }
-
-  protected boolean isRetryable(boolean idempotent, IOException exception) {
+  @InternalApi
+  public static boolean isRetryable(boolean idempotent, IOException exception) {
     boolean exceptionIsRetryable = exception instanceof SocketTimeoutException
         || exception instanceof SocketException
         || (exception instanceof SSLHandshakeException
-            && !(exception.getCause() instanceof CertificateException))
+        && !(exception.getCause() instanceof CertificateException))
         || "insufficient data written".equals(exception.getMessage());
     return idempotent && exceptionIsRetryable;
   }
 
+  @InternalApi
+  public static void translate(RetryHelper.RetryHelperException ex) {
+    if (ex.getCause() instanceof BaseServiceException) {
+      throw (BaseServiceException) ex.getCause();
+    }
+  }
+
+  public BaseServiceException(ExceptionData exceptionData) {
+    super(exceptionData.getMessage(), exceptionData.getCause());
+    this.code = exceptionData.getCode();
+    this.reason = exceptionData.getReason();
+    this.retryable = exceptionData.isRetryable();
+    this.location = exceptionData.getLocation();
+    this.debugInfo = exceptionData.getDebugInfo();
+  }
 
   /**
    * Returns the code associated with this exception.
@@ -237,14 +287,6 @@ public class BaseServiceException extends RuntimeException {
 
 
   /**
-   * Returns {@code true} when the operation that caused this exception had no side effects.
-   */
-  public boolean isIdempotent() {
-    return idempotent;
-  }
-
-
-  /**
    * Returns the service location where the error causing the exception occurred. Returns {@code
    * null} if not available.
    */
@@ -252,8 +294,8 @@ public class BaseServiceException extends RuntimeException {
     return location;
   }
 
-
-  protected String getDebugInfo() {
+  @InternalApi
+  public String getDebugInfo() {
     return debugInfo;
   }
 
@@ -271,37 +313,12 @@ public class BaseServiceException extends RuntimeException {
         && code == other.code
         && retryable == other.retryable
         && Objects.equals(reason, other.reason)
-        && idempotent == other.idempotent
         && Objects.equals(location, other.location)
         && Objects.equals(debugInfo, other.debugInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getCause(), getMessage(), code, retryable, reason, idempotent, location,
-        debugInfo);
-  }
-
-  private static String reason(GoogleJsonError error) {
-    if (error.getErrors() != null && !error.getErrors().isEmpty()) {
-      return error.getErrors().get(0).getReason();
-    }
-    return null;
-  }
-
-  private static String message(IOException exception) {
-    if (exception instanceof GoogleJsonResponseException) {
-      GoogleJsonError details = ((GoogleJsonResponseException) exception).getDetails();
-      if (details != null) {
-        return details.getMessage();
-      }
-    }
-    return exception.getMessage();
-  }
-
-  protected static void translate(RetryHelper.RetryHelperException ex) {
-    if (ex.getCause() instanceof BaseServiceException) {
-      throw (BaseServiceException) ex.getCause();
-    }
+    return Objects.hash(getCause(), getMessage(), code, retryable, reason, location, debugInfo);
   }
 }
