@@ -43,7 +43,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   private final Set<Key> toDelete = new LinkedHashSet<>();
   private boolean active = true;
 
-  protected BaseDatastoreBatchWriter(String name) {
+  BaseDatastoreBatchWriter(String name) {
     this.name = name;
   }
 

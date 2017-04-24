@@ -17,6 +17,7 @@
 package com.google.cloud.grpc;
 
 import com.google.api.client.http.HttpResponseException;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.ApiException;
 import com.google.cloud.BaseServiceException;
 import com.google.common.base.MoreObjects;
@@ -30,12 +31,14 @@ public class BaseGrpcServiceException extends BaseServiceException {
 
   private static final long serialVersionUID = -2685197215731335549L;
 
-  public BaseGrpcServiceException(String message, Throwable cause, int code, boolean retryable) {
+  @InternalApi("This class should only be extended within google-cloud-java")
+  protected BaseGrpcServiceException(String message, Throwable cause, int code, boolean retryable) {
     super(ExceptionData.newBuilder().setMessage(message).setCause(cause).setCode(code)
         .setRetryable(retryable).build());
   }
 
-  public BaseGrpcServiceException(IOException exception, boolean idempotent) {
+  @InternalApi("This class should only be extended within google-cloud-java")
+  protected BaseGrpcServiceException(IOException exception, boolean idempotent) {
     super(makeExceptionData(exception, idempotent));
   }
 

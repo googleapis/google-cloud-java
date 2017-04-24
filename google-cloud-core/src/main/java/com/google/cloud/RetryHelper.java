@@ -17,6 +17,7 @@
 package com.google.cloud;
 
 import com.google.api.core.ApiClock;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.retrying.RetrySettings;
 
 import com.google.api.gax.retrying.DirectRetryingExecutor;
@@ -31,6 +32,7 @@ import java.util.concurrent.Callable;
  * RetrySettings}. In case if retrying is unsuccessful, {@link RetryHelperException} will be
  * thrown.
  */
+@BetaApi
 public class RetryHelper {
   public static <V> V runWithRetries(
       Callable<V> callable,

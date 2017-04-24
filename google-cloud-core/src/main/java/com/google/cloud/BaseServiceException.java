@@ -253,7 +253,8 @@ public class BaseServiceException extends RuntimeException {
     }
   }
 
-  public BaseServiceException(ExceptionData exceptionData) {
+  @InternalApi("This class should only be extended within google-cloud-java")
+  protected BaseServiceException(ExceptionData exceptionData) {
     super(exceptionData.getMessage(), exceptionData.getCause());
     this.code = exceptionData.getCode();
     this.reason = exceptionData.getReason();
