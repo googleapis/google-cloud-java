@@ -14,24 +14,30 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
--  [Google Cloud BigQuery](#google-cloud-bigquery-beta) (Beta)
+-  [BigQuery](#google-cloud-bigquery-beta) (Beta)
 -  [Stackdriver Logging](#stackdriver-logging-beta) (Beta - Not working on App Engine Standard)
--  [Google Cloud Datastore](#google-cloud-datastore-beta) (Beta)
--  [Google Cloud Storage](#google-cloud-storage-beta) (Beta)
--  [Cloud Spanner](#cloud-spanner-beta) (Beta)
--  [Google Cloud Translation](#google-translation-beta) (Beta)
--  Cloud Vision (Beta)
--  Cloud Natural Language (Beta)
+-  [Datastore](#google-cloud-datastore-beta) (Beta)
+-  [Storage](#google-cloud-storage-beta) (Beta)
+-  [Spanner](#cloud-spanner-beta) (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
--  [Google Cloud Compute](#google-cloud-compute-alpha) (Alpha)
--  [Google Cloud DNS](#google-cloud-dns-alpha) (Alpha)
--  [Google Cloud Pub/Sub](#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
--  [Google Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
+-  [Compute](#google-cloud-compute-alpha) (Alpha)
+-  [DNS](#google-cloud-dns-alpha) (Alpha)
+-  [Errorreporting](#google-cloud-errorreporting-alpha) (Alpha)
+-  [Language](#google-cloud-language-alpha) (Alpha)
+-  [Monitoring](#google-cloud-monitoring-alpha) (Alpha)
+-  [Pub/Sub](#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
+-  [Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
+-  [Speech](#google-cloud-speech-alpha) (Alpha)
+-  [Trace](#google-cloud-trace-alpha) (Alpha)
+-  [Translation](#google-translation-beta) (Alpha)
+-  [Vision](#google-cloud-vision-alpha) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
+
+> Note: GAE standard for Java 7 is not supported for gRPC-based clients.
 
 ## Where did `gcloud-java` go?
 
@@ -573,9 +579,57 @@ ChangeRequestInfo changeRequest = changeBuilder.build();
 zone.applyChangeRequest(changeRequest);
 ```
 
+Google Cloud Errorreporting (Alpha)
+----------------------
+- [API Documentation][errorreporting-api]
+- [Official Documentation][cloud-errorreporting-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of ErrorGroupServiceClient.
+Note that you must [supply credentials](#authentication) and a project ID if running this 
+```java
+ try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
+   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+ }
+```
+
+Google Cloud Language (Alpha)
+----------------------
+- [API Documentation][language-api]
+- [Official Documentation][cloud-language-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of LanguageServiceClient. The example assumes that either default application
+credentials or a valid api key are available. (See [Authentication section](#authentication) for more information)
+```java
+ try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   Document document = Document.newBuilder().build();
+   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
+ }
+```
+
+Google Cloud Monitoring (Alpha)
+----------------------
+- [API Documentation][monitoring-api]
+- [Official Documentation][cloud-monitoring-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of MetricServiceClient.
+Note that you must [supply credentials](#authentication) and a project ID if running this 
+```java
+ try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   MonitoredResourceDescriptorName name =
+       MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
+ }
+```
+
 Google Cloud Pub/Sub (Alpha)
 ----------------------
-
 - [API Documentation][pubsub-api]
 - [Official Documentation][cloud-pubsub-docs]
 
@@ -648,7 +702,7 @@ while (projectIterator.hasNext()) {
 }
 ```
 
-Google Translation (Beta)
+Google Translation (Alpha)
 ----------------
 
 - [API Documentation][translate-api]
@@ -683,6 +737,73 @@ Translation translation = translate.translate(
 System.out.printf("Hola %s%n", translation.getTranslatedText());
 ```
 
+Google Cloud Speech (Alpha)
+----------------
+
+- [API Documentation][speech-api]
+- [Official Documentation][cloud-speech-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of SpeechClient. The example assumes that either default application
+credentials or a valid api key are available. (See [Authentication section](#authentication) for more information)
+Note that you must provide a uri to a FLAC audio file to run this.
+
+```java
+ try (SpeechClient speechClient = SpeechClient.create()) {
+   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
+   int sampleRateHertz = 44100;
+   String languageCode = "en-US";
+   RecognitionConfig config = RecognitionConfig.newBuilder()
+     .setEncoding(encoding)
+     .setSampleRateHertz(sampleRateHertz)
+     .setLanguageCode(languageCode)
+     .build();
+   String uri = "gs://bucket_name/file_name.flac";
+   RecognitionAudio audio = RecognitionAudio.newBuilder()
+     .setUri(uri)
+     .build();
+   RecognizeResponse response = speechClient.recognize(config, audio);
+ }
+```
+
+Google Cloud Trace (Alpha)
+----------------
+
+- [API Documentation][trace-api]
+- [Official Documentation][cloud-trace-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either default application
+credentials or a valid api key are available.
+Note that you must [supply credentials](#authentication) and a project ID if running this 
+```java
+ try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   String projectId = "";
+   Traces traces = Traces.newBuilder().build();
+   traceServiceClient.patchTraces(projectId, traces);
+ }
+```
+
+Google Cloud Vision (Alpha)
+----------------
+
+- [API Documentation][vision-api]
+- [Official Documentation][cloud-vision-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of ImageAnnotatorClient.
+The example assumes that either default application credentials or a valid api key
+are available. (See [Authentication section](#authentication) for more information)
+```java
+ try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   List<AnnotateImageRequest> requests = new ArrayList<>();
+   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
+ }
+```
+
 Troubleshooting
 ---------------
 
@@ -692,6 +813,7 @@ Java Versions
 -------------
 
 Java 7 or above is required for using this client.
+> Note: GAE standard for Java 7 is not supported for gRPC-based clients.
 
 Android
 -------
@@ -748,6 +870,24 @@ Apache 2.0 - See [LICENSE] for more information.
 [dns-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
 [cloud-dns-docs]: https://cloud.google.com/dns/docs
 [cloud-dns-activation]: https://console.cloud.google.com/start/api?id=dns
+
+[errorreporting-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/errorreporting/spi/v1beta1/package-summary.html
+[cloud-errorreporting-docs]: https://cloud.google.com/error-reporting/docs
+
+[language-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/language/spi/v1/package-summary.html
+[cloud-language-docs]: https://cloud.google.com/language/docs
+
+[monitoring-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/monitoring/spi/v3/package-summary.html
+[cloud-monitoring-docs]: https://cloud.google.com/monitoring/docs
+
+[speech-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/speech/spi/v1/package-summary.html
+[cloud-speech-docs]: https://cloud.google.com/speech/docs
+
+[trace-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/trace/spi/v1/package-summary.html
+[cloud-trace-docs]: https://cloud.google.com/trace/docs
+
+[vision-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/vision/spi/v1/package-summary.html
+[cloud-vision-docs]: https://cloud.google.com/vision/docs
 
 [logging-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/package-summary.html
 [stackdriver-logging-docs]: https://cloud.google.com/logging/docs
