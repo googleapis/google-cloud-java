@@ -330,6 +330,11 @@
       <plugins>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
+          <artifactId>cobertura-maven-plugin</artifactId>
+          <version>2.7</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
           <version>1.4.0</version>
           <configuration>
@@ -485,25 +490,6 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>cobertura-maven-plugin</artifactId>
         <version>2.7</version>
-          <configuration>
-            <outputDirectory>${basedir}/target</outputDirectory>
-            <formats>
-              <format>xml</format>
-              <format>html</format>
-            </formats>
-            <aggregate>true</aggregate>
-            <instrumentation>
-              <ignoreTrivial>true</ignoreTrivial>
-              <includes>
-                <include>com/google/cloud/**/*.class</include>
-              </includes>
-              <excludes>
-                <exclude>com/google/cloud/examples/**/*.class</exclude>
-                <exclude>com/google/cloud/**/AutoValue_*.class</exclude>
-              </excludes>
-            </instrumentation>
-          <maxmem>256m</maxmem>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -536,7 +522,7 @@
           </execution>
         </executions>
       </plugin>
-     <plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <version>3.4</version>
@@ -710,4 +696,31 @@
       </build>
     </profile>
   </profiles>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.7</version>
+        <configuration>
+          <outputDirectory>${basedir}/target</outputDirectory>
+          <formats>
+            <format>xml</format>
+            <format>html</format>
+          </formats>
+          <aggregate>true</aggregate>
+          <instrumentation>
+            <ignoreTrivial>true</ignoreTrivial>
+            <includes>
+              <include>com/google/cloud/**/*.class</include>
+            </includes>
+           <excludes>
+              <exclude>com/google/cloud/examples/**/*.class</exclude>
+              <exclude>com/google/cloud/**/AutoValue_*.class</exclude>
+            </excludes>
+          </instrumentation>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
