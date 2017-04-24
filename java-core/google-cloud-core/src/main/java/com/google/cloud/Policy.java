@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.InternalApi;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
@@ -57,6 +58,10 @@ public final class Policy implements Serializable {
   private final int version;
 
   public abstract static class Marshaller<T> {
+
+    @InternalApi("This class should only be extended within google-cloud-java")
+    protected Marshaller() {
+    }
 
     protected static final ApiFunction<String, Identity> IDENTITY_VALUE_OF_FUNCTION =
         new ApiFunction<String, Identity>() {
@@ -135,9 +140,11 @@ public final class Policy implements Serializable {
     private String etag;
     private int version;
 
+    @InternalApi("This class should only be extended within google-cloud-java")
     protected Builder() {
     }
 
+    @InternalApi("This class should only be extended within google-cloud-java")
     protected Builder(Policy policy) {
       setBindings(policy.bindings);
       setEtag(policy.etag);

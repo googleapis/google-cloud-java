@@ -19,6 +19,7 @@ package com.google.cloud.http;
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpResponseException;
+import com.google.api.core.InternalApi;
 import com.google.cloud.BaseServiceException;
 import com.google.common.base.MoreObjects;
 import java.io.IOException;
@@ -32,7 +33,8 @@ public class BaseHttpServiceException extends BaseServiceException {
   private static final long serialVersionUID = -5793034110344127954L;
   public static final int UNKNOWN_CODE = 0;
 
-  public BaseHttpServiceException(IOException exception, boolean idempotent,
+  @InternalApi("This class should only be extended within google-cloud-java")
+  protected BaseHttpServiceException(IOException exception, boolean idempotent,
       Set<BaseServiceException.Error> retryableErrors) {
     super(makeExceptionData(exception, idempotent, retryableErrors));
   }
@@ -80,7 +82,8 @@ public class BaseHttpServiceException extends BaseServiceException {
         .build();
   }
 
-  public BaseHttpServiceException(GoogleJsonError googleJsonError, boolean idempotent,
+  @InternalApi("This class should only be extended within google-cloud-java")
+  protected BaseHttpServiceException(GoogleJsonError googleJsonError, boolean idempotent,
       Set<BaseServiceException.Error> retryableErrors) {
     super(makeExceptionData(googleJsonError, idempotent, retryableErrors));
   }
@@ -108,12 +111,14 @@ public class BaseHttpServiceException extends BaseServiceException {
     return exceptionData.build();
   }
 
-  public BaseHttpServiceException(int code, String message, String reason, boolean idempotent,
+  @InternalApi("This class should only be extended within google-cloud-java")
+  protected BaseHttpServiceException(int code, String message, String reason, boolean idempotent,
       Set<BaseServiceException.Error> retryableErrors) {
     this(code, message, reason, idempotent, retryableErrors, null);
   }
 
-  public BaseHttpServiceException(int code, String message, String reason, boolean idempotent,
+  @InternalApi("This class should only be extended within google-cloud-java")
+  protected BaseHttpServiceException(int code, String message, String reason, boolean idempotent,
       Set<BaseServiceException.Error> retryableErrors, Throwable cause) {
     super(ExceptionData.newBuilder()
         .setMessage(message)
