@@ -21,6 +21,8 @@ import static com.google.common.base.Preconditions.checkState;
 
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ListValue;
+
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -47,7 +49,9 @@ import javax.annotation.Nullable;
  *
  * <p>{@code Mutation} instances are immutable.
  */
-public final class Mutation {
+public final class Mutation implements Serializable {
+  private static final long serialVersionUID = 1784900828296918555L;
+
   /** Enumerates the types of mutation that can be applied. */
   public enum Op {
     /**

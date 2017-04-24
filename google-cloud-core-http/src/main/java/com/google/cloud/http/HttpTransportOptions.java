@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud;
+package com.google.cloud.http;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
@@ -27,6 +27,9 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.auth.Credentials;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;

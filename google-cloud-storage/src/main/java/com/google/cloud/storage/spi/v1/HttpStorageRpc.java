@@ -52,7 +52,7 @@ import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.BaseServiceException;
-import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.base.Function;

@@ -15,7 +15,7 @@
  */
 package com.google.cloud.monitoring.spi.v3;
 
-import com.google.api.gax.testing.MockGrpcService;
+import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;

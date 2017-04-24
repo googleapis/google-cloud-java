@@ -44,7 +44,6 @@ public class BigQueryExceptionTest {
     assertNull(exception.getReason());
     assertNull(exception.getError());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new BigQueryException(502, "message");
     assertEquals(502, exception.getCode());
@@ -52,7 +51,6 @@ public class BigQueryExceptionTest {
     assertNull(exception.getReason());
     assertNull(exception.getError());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new BigQueryException(503, "message");
     assertEquals(503, exception.getCode());
@@ -60,7 +58,6 @@ public class BigQueryExceptionTest {
     assertNull(exception.getReason());
     assertNull(exception.getError());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new BigQueryException(504, "message");
     assertEquals(504, exception.getCode());
@@ -68,7 +65,6 @@ public class BigQueryExceptionTest {
     assertNull(exception.getReason());
     assertNull(exception.getError());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new BigQueryException(400, "message");
     assertEquals(400, exception.getCode());
@@ -76,7 +72,6 @@ public class BigQueryExceptionTest {
     assertNull(exception.getReason());
     assertNull(exception.getError());
     assertFalse(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     BigQueryError error = new BigQueryError("reason", null, null);
     exception = new BigQueryException(504, "message", error);
@@ -85,7 +80,6 @@ public class BigQueryExceptionTest {
     assertEquals("reason", exception.getReason());
     assertEquals(error, exception.getError());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     IOException cause = new SocketTimeoutException("socketTimeoutMessage");
     exception = new BigQueryException(cause);
@@ -94,7 +88,6 @@ public class BigQueryExceptionTest {
     assertEquals("socketTimeoutMessage", exception.getMessage());
     assertEquals(cause, exception.getCause());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     exception = new BigQueryException(504, "message", cause);
@@ -103,7 +96,6 @@ public class BigQueryExceptionTest {
     assertNull(exception.getReason());
     assertNull(exception.getError());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
 
@@ -147,7 +139,6 @@ public class BigQueryExceptionTest {
       assertEquals(503, ex.getCode());
       assertEquals("message", ex.getMessage());
       assertTrue(ex.isRetryable());
-      assertTrue(ex.isIdempotent());
     } finally {
       verify(exceptionMock);
     }
@@ -162,7 +153,6 @@ public class BigQueryExceptionTest {
       assertEquals(BigQueryException.UNKNOWN_CODE, ex.getCode());
       assertEquals("message", ex.getMessage());
       assertFalse(ex.isRetryable());
-      assertTrue(ex.isIdempotent());
       assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);

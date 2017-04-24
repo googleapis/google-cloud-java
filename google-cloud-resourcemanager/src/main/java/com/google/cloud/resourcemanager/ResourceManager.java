@@ -18,7 +18,7 @@ package com.google.cloud.resourcemanager;
 
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.Service;
 import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;

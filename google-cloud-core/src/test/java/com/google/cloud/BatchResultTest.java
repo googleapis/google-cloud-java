@@ -21,6 +21,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.BaseServiceException.ExceptionData;
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
@@ -64,7 +65,8 @@ public class BatchResultTest {
     } catch (NullPointerException exc) {
       // expected
     }
-    BaseServiceException ex = new BaseServiceException(0, "message", "reason", false);
+    BaseServiceException ex =
+        new BaseServiceException(ExceptionData.from(0, "message", "reason", false));
     result.error(ex);
     try {
       result.get();
@@ -76,7 +78,8 @@ public class BatchResultTest {
 
   @Test
   public void testNotifyError() {
-    final BaseServiceException ex = new BaseServiceException(0, "message", "reason", false);
+    final BaseServiceException ex =
+        new BaseServiceException(ExceptionData.from(0, "message", "reason", false));
     assertFalse(result.completed());
     BatchResult.Callback<Boolean, BaseServiceException> callback =
         EasyMock.createStrictMock(BatchResult.Callback.class);

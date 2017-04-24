@@ -20,12 +20,13 @@ import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiService;
 import com.google.api.core.CurrentMillisClock;
-import com.google.api.gax.core.FlowControlSettings;
-import com.google.api.gax.core.FlowController;
+import com.google.api.gax.batching.FlowControlSettings;
+import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
+import com.google.api.gax.core.Distribution;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
-import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
@@ -45,6 +46,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
 import org.joda.time.Duration;
 
 /**
@@ -92,6 +94,7 @@ public class Subscriber extends AbstractApiService {
   private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
   private final ScheduledExecutorService executor;
+  @Nullable private final ScheduledExecutorService alarmsExecutor;
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
   private final int numChannels;
@@ -106,7 +109,7 @@ public class Subscriber extends AbstractApiService {
   private ScheduledFuture<?> ackDeadlineUpdater;
   private int streamAckDeadlineSeconds;
 
-  private Subscriber(Builder builder) throws IOException {
+  private Subscriber(Builder builder) {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
     subscriptionName = builder.subscriptionName;
@@ -119,7 +122,13 @@ public class Subscriber extends AbstractApiService {
             Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
-    flowController = new FlowController(builder.flowControlSettings);
+    flowController =
+        new FlowController(
+            builder
+                .flowControlSettings
+                .toBuilder()
+                .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
+                .build());
 
     executor = builder.executorProvider.getExecutor();
     if (builder.executorProvider.shouldAutoClose()) {
@@ -130,6 +139,20 @@ public class Subscriber extends AbstractApiService {
               executor.shutdown();
             }
           });
+    }
+    if (builder.alarmsExecutorProvider != null) {
+      alarmsExecutor = builder.alarmsExecutorProvider.getExecutor();
+      if (builder.alarmsExecutorProvider.shouldAutoClose()) {
+        closeables.add(
+            new AutoCloseable() {
+              @Override
+              public void close() throws IOException {
+                alarmsExecutor.shutdown();
+              }
+            });
+      }
+    } else {
+      alarmsExecutor = null;
     }
 
     channelProvider = builder.channelProvider;
@@ -254,6 +277,7 @@ public class Subscriber extends AbstractApiService {
                 channels.get(i),
                 flowController,
                 executor,
+                alarmsExecutor,
                 clock));
       }
       startConnections(
@@ -328,7 +352,9 @@ public class Subscriber extends AbstractApiService {
                 ackLatencyDistribution,
                 channels.get(i),
                 flowController,
+                flowControlSettings.getMaxOutstandingElementCount(),
                 executor,
+                alarmsExecutor,
                 clock));
       }
       startConnections(
@@ -433,6 +459,7 @@ public class Subscriber extends AbstractApiService {
     FlowControlSettings flowControlSettings = FlowControlSettings.getDefaultInstance();
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
+    @Nullable ExecutorProvider alarmsExecutorProvider;
     ChannelProvider channelProvider =
         SubscriptionAdminSettings.defaultChannelProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
@@ -512,13 +539,22 @@ public class Subscriber extends AbstractApiService {
       return this;
     }
 
+    /** 
+     * Gives the ability to set a custom executor for managing lease extensions. If none is
+     * provided a shared one will be used by all {@link Subscriber} instances.
+     */
+    public Builder setLeaseAlarmsExecutorProvider(ExecutorProvider executorProvider) {
+      this.alarmsExecutorProvider = Preconditions.checkNotNull(executorProvider);
+      return this;
+    }
+    
     /** Gives the ability to set a custom clock. */
     Builder setClock(ApiClock clock) {
       this.clock = Optional.of(clock);
       return this;
     }
 
-    public Subscriber build() throws IOException {
+    public Subscriber build() {
       return new Subscriber(this);
     }
   }

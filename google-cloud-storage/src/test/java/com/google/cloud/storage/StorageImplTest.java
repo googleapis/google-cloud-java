@@ -29,7 +29,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.core.ApiClock;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.api.services.storage.model.Policy.Bindings;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;

@@ -18,8 +18,8 @@ package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
-import com.google.api.gax.core.FlowController;
-import com.google.api.stats.Distribution;
+import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.core.Distribution;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.collect.Lists;
@@ -40,6 +40,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
 import org.joda.time.Duration;
 
 /**
@@ -59,6 +60,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
   private final ScheduledExecutorService executor;
   private final SubscriberFutureStub stub;
   private final MessageDispatcher messageDispatcher;
+  private final int maxDesiredPulledMessages;
 
   public PollingSubscriberConnection(
       String subscription,
@@ -68,7 +70,9 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
       Distribution ackLatencyDistribution,
       Channel channel,
       FlowController flowController,
+      @Nullable Integer maxDesiredPulledMessages,
       ScheduledExecutorService executor,
+      @Nullable ScheduledExecutorService alarmsExecutor,
       ApiClock clock) {
     this.subscription = subscription;
     this.executor = executor;
@@ -82,8 +86,11 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
             ackLatencyDistribution,
             flowController,
             executor,
+            alarmsExecutor,
             clock);
     messageDispatcher.setMessageDeadlineSeconds(Subscriber.MIN_ACK_DEADLINE_SECONDS);
+    this.maxDesiredPulledMessages =
+        maxDesiredPulledMessages != null ? maxDesiredPulledMessages : DEFAULT_MAX_MESSAGES;
   }
 
   @Override
@@ -112,7 +119,8 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
           public void onFailure(Throwable cause) {
             notifyFailed(cause);
           }
-        });
+        },
+        executor);
   }
 
   @Override
@@ -127,7 +135,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
             .pull(
                 PullRequest.newBuilder()
                     .setSubscription(subscription)
-                    .setMaxMessages(DEFAULT_MAX_MESSAGES)
+                    .setMaxMessages(maxDesiredPulledMessages)
                     .setReturnImmediately(true)
                     .build());
 
@@ -136,7 +144,6 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
         new FutureCallback<PullResponse>() {
           @Override
           public void onSuccess(PullResponse pullResponse) {
-            messageDispatcher.processReceivedMessages(pullResponse.getReceivedMessagesList());
             if (pullResponse.getReceivedMessagesCount() == 0) {
               // No messages in response, possibly caught up in backlog, we backoff to avoid
               // slamming the server.
@@ -155,7 +162,14 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
                   TimeUnit.MILLISECONDS);
               return;
             }
-            pullMessages(INITIAL_BACKOFF);
+            messageDispatcher.processReceivedMessages(
+                pullResponse.getReceivedMessagesList(),
+                new Runnable() {
+                  @Override
+                  public void run() {
+                    pullMessages(INITIAL_BACKOFF);
+                  }
+                });
           }
 
           @Override
@@ -185,7 +199,8 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
               notifyFailed(cause);
             }
           }
-        });
+        },
+        executor);
   }
 
   private boolean isAlive() {

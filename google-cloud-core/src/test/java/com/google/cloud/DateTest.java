@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.testing.EqualsTester;
@@ -63,6 +64,11 @@ public class DateTest {
     Date d4 = Date.fromYearMonthDay(2016, 10, 1);
     Date d5 = Date.fromYearMonthDay(2017, 1, 1);
     assertDescending(d5, d4, d3, d2, d1);
+  }
+
+  @Test
+  public void serialization() {
+    reserializeAndAssert(Date.fromYearMonthDay(2017, 4, 20));
   }
 
   private void assertDescending(Date... dates) {

@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
@@ -691,5 +692,49 @@ public class ValueTest {
     tester.addEqualityGroup(Value.bytesArray(null));
 
     tester.testEquals();
+  }
+
+  @Test
+  public void serialization() {
+
+    reserializeAndAssert(Value.bool(true));
+    reserializeAndAssert(Value.bool(false));
+    reserializeAndAssert(Value.bool(null));
+
+    reserializeAndAssert(Value.int64(123));
+    reserializeAndAssert(Value.int64(null));
+
+    reserializeAndAssert(Value.float64(1.23));
+    reserializeAndAssert(Value.float64(null));
+
+    reserializeAndAssert(Value.string("abc"));
+    reserializeAndAssert(Value.string(null));
+
+    reserializeAndAssert(Value.bytes(newByteArray("abc")));
+    reserializeAndAssert(Value.bytes(null));
+
+    reserializeAndAssert(
+        Value.boolArray(new boolean[] {false, true}));
+    reserializeAndAssert(Value.boolArray(Arrays.asList(true, false)));
+    reserializeAndAssert(Value.boolArray((Iterable<Boolean>) null));
+
+    reserializeAndAssert(
+        Value.int64Array(Arrays.asList(1L, 2L)));
+    reserializeAndAssert(
+        Value.int64Array(new long[] {1L, 2L}));
+    reserializeAndAssert(Value.int64Array((Iterable<Long>) null));
+
+    reserializeAndAssert(
+        Value.float64Array(new double[] {.1, .2}));
+    reserializeAndAssert(Value.float64Array(Arrays.asList(.1, .2, .3)));
+    reserializeAndAssert(Value.float64Array((Iterable<Double>) null));
+
+    reserializeAndAssert(
+        Value.stringArray(Arrays.asList("a", "b")));
+    reserializeAndAssert(Value.stringArray(null));
+
+    reserializeAndAssert(
+        Value.bytesArray(Arrays.asList(newByteArray("a"), newByteArray("b"))));
+    reserializeAndAssert(Value.bytesArray(null));
   }
 }

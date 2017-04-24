@@ -19,8 +19,8 @@ package com.google.cloud.storage;
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.http.BaseHttpServiceException;
 import com.google.common.collect.ImmutableSet;
-
 import java.io.IOException;
 import java.util.Set;
 
@@ -30,7 +30,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/status-codes">Google Cloud
  *      Storage error codes</a>
  */
-public final class StorageException extends BaseServiceException {
+public final class StorageException extends BaseHttpServiceException {
 
   // see: https://cloud.google.com/storage/docs/resumable-uploads-xml#practices
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -49,20 +49,15 @@ public final class StorageException extends BaseServiceException {
   }
 
   public StorageException(int code, String message, Throwable cause) {
-    super(code, message, null, true, cause);
+    super(code, message, null, true, RETRYABLE_ERRORS, cause);
   }
 
   public StorageException(IOException exception) {
-    super(exception, true);
+    super(exception, true, RETRYABLE_ERRORS);
   }
 
   public StorageException(GoogleJsonError error) {
-    super(error, true);
-  }
-
-  @Override
-  protected Set<Error> getRetryableErrors() {
-    return RETRYABLE_ERRORS;
+    super(error, true, RETRYABLE_ERRORS);
   }
 
   /**

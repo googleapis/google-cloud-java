@@ -16,13 +16,12 @@
 
 package com.google.cloud.bigquery.testing;
 
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.HttpTransportOptions;
-import com.google.api.gax.core.RetrySettings;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
-
+import com.google.cloud.http.HttpTransportOptions;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;

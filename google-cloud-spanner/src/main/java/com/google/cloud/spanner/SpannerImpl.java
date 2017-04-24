@@ -26,11 +26,13 @@ import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ListenableFutureToApiFuture;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.BaseService;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.Timestamp;
@@ -250,7 +252,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   @Override
-  public ListenableFuture<Void> closeAsync() {
+  public ApiFuture<Void> closeAsync() {
     List<ListenableFuture<Void>> closureFutures = null;
     synchronized (this) {
       Preconditions.checkState(!spannerIsClosed, "Cloud Spanner client has been closed");
@@ -261,7 +263,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
       dbClients.clear();
     }
-    return transform(
+    return new ListenableFutureToApiFuture<>(transform(
         Futures.successfulAsList(closureFutures),
         new Function<List<Void>, Void>() {
           @Override
@@ -272,7 +274,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             return null;
           }
         },
-        directExecutor());
+        directExecutor()));
   }
 
   /**

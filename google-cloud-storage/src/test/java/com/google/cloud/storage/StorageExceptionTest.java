@@ -44,56 +44,48 @@ public class StorageExceptionTest {
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new StorageException(502, "message");
     assertEquals(502, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new StorageException(503, "message");
     assertEquals(503, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new StorageException(504, "message");
     assertEquals(504, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new StorageException(429, "message");
     assertEquals(429, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new StorageException(408, "message");
     assertEquals(408, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new StorageException(400, "message");
     assertEquals(400, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertFalse(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     IOException cause = new SocketTimeoutException();
     exception = new StorageException(cause);
     assertNull(exception.getReason());
     assertNull(exception.getMessage());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     GoogleJsonError error = new GoogleJsonError();
@@ -103,14 +95,12 @@ public class StorageExceptionTest {
     assertEquals(503, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new StorageException(400, "message", cause);
     assertEquals(400, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertFalse(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     HttpResponseException httpResponseException =
@@ -157,7 +147,6 @@ public class StorageExceptionTest {
       assertEquals(503, ex.getCode());
       assertEquals("message", ex.getMessage());
       assertTrue(ex.isRetryable());
-      assertTrue(ex.isIdempotent());
     } finally {
       verify(exceptionMock);
     }
@@ -172,7 +161,6 @@ public class StorageExceptionTest {
       assertEquals(StorageException.UNKNOWN_CODE, ex.getCode());
       assertEquals("message", ex.getMessage());
       assertFalse(ex.isRetryable());
-      assertTrue(ex.isIdempotent());
       assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);

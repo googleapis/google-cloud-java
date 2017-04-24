@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>0.13.0-beta</version>
+  <version>1.0.0-rc2</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:0.13.0-beta'
+compile 'com.google.cloud:google-cloud-storage:1.0.0-rc2'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "0.13.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.0.0-rc2"
 ```
 
 Example Application

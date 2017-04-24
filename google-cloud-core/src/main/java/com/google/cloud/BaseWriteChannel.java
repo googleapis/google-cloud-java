@@ -16,13 +16,13 @@
 
 package com.google.cloud;
 
-import com.google.common.base.MoreObjects;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -295,17 +295,54 @@ public abstract class BaseWriteChannel<
           && this.chunkSize == other.chunkSize;
     }
 
-    protected MoreObjects.ToStringHelper toStringHelper() {
-      return MoreObjects.toStringHelper(this)
-          .add("entity", entity)
-          .add("uploadId", uploadId)
-          .add("position", position)
-          .add("isOpen", isOpen);
+    protected static final class ValueHolder {
+      final String name;
+      final Object value;
+
+      private ValueHolder(String name, Object value) {
+        this.name = name;
+        this.value = value;
+      }
+
+      public static ValueHolder create(String name, Object value) {
+        return new ValueHolder(name, value);
+      }
+
+      @Override
+      public String toString() {
+        String result = name + "=";
+        if (value != null && value.getClass().isArray()) {
+          Object[] objectArray = new Object[]{value};
+          String arrayString = Arrays.deepToString(objectArray);
+          result += arrayString.substring(1, arrayString.length() - 1);
+        } else {
+          result += value;
+        }
+        return result;
+      }
+    }
+
+    protected List<ValueHolder> toStringHelper() {
+      List<ValueHolder> valueList = new ArrayList<>();
+      valueList.add(ValueHolder.create("entity", entity));
+      valueList.add(ValueHolder.create("uploadId", uploadId));
+      valueList.add(ValueHolder.create("position", String.valueOf(position)));
+      valueList.add(ValueHolder.create("isOpen", String.valueOf(isOpen)));
+      return valueList;
     }
 
     @Override
     public String toString() {
-      return toStringHelper().toString();
+      StringBuilder builder = new StringBuilder();
+      builder.append(getClass().getSimpleName())
+          .append('{');
+      String nextSeparator = "";
+      for (ValueHolder valueHolder : toStringHelper()) {
+        builder.append(nextSeparator).append(valueHolder);
+        nextSeparator = ", ";
+      }
+      builder.append('}');
+      return builder.toString();
     }
   }
 }

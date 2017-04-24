@@ -16,7 +16,7 @@
 
 package com.google.cloud.spanner;
 
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import java.util.Map;

@@ -17,8 +17,8 @@
 package com.google.cloud.logging.testing;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.GrpcTransportOptions;
-import com.google.api.gax.core.RetrySettings;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.logging.LoggingOptions;
 
 import java.io.IOException;

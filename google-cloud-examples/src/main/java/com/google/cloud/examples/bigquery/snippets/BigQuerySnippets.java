@@ -23,7 +23,7 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.api.client.util.Charsets;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;

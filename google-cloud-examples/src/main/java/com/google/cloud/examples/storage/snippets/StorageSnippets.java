@@ -27,7 +27,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.BatchResult;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;

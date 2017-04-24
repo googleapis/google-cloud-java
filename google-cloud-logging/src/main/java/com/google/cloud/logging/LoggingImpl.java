@@ -29,12 +29,12 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
-import com.google.api.gax.core.AsyncPage;
+import com.google.api.gax.paging.AsyncPage;
 import com.google.cloud.AsyncPageImpl;
 import com.google.cloud.BaseService;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.common.base.Function;
@@ -369,7 +369,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                 listDescriptorsResponse.getResourceDescriptorsList() == null
                     ? ImmutableList.<MonitoredResourceDescriptor>of()
                     : Lists.transform(listDescriptorsResponse.getResourceDescriptorsList(),
-                MonitoredResourceDescriptor.FROM_PB_FUNCTION);
+                        new Function<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
+                          @Override
+                          public MonitoredResourceDescriptor apply(
+                              com.google.api.MonitoredResourceDescriptor monitoredResourceDescriptor) {
+                            return MonitoredResourceDescriptor.FROM_PB_FUNCTION.apply(monitoredResourceDescriptor);
+                          }
+                        });
             String cursor = listDescriptorsResponse.getNextPageToken().equals("") ? null
                 : listDescriptorsResponse.getNextPageToken();
             return new AsyncPageImpl<>(

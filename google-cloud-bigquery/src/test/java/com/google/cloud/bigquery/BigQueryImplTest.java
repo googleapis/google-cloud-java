@@ -32,7 +32,7 @@ import com.google.api.services.bigquery.model.TableCell;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableRow;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;

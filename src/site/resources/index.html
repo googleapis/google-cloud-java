@@ -172,7 +172,7 @@ Entity entity = datastore.get(key);
 </code></pre></div>
 
                     <div hljs="" language="java" ng-show="selected == 'elsewhere'" class=""><pre>
-<code class="hljs java">import com.google.cloud.AuthCredentials;
+<code class="hljs java">import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
@@ -181,7 +181,7 @@ import com.google.cloud.datastore.KeyFactory;
 
 DatastoreOptions options = DatastoreOptions.newBuilder()
   .setProjectId(<span class="hljs-string">PROJECT_ID</span>)
-  .setAuthCredentials(AuthCredentials.createForJson(
+  .setCredentials(GoogleCredentials.fromStream(
     new FileInputStream(<span class="hljs-string">PATH_TO_JSON_KEY</span>))).build();
 Datastore datastore = options.getService();
 KeyFactory keyFactory = datastore.newKeyFactory().setKind(<span class="hljs-string">KIND</span>);

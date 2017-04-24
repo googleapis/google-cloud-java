@@ -19,12 +19,12 @@ package com.google.cloud;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
@@ -37,12 +37,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.lang.reflect.Method;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.Locale;
 import java.util.Objects;
@@ -558,7 +555,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   @SuppressWarnings("unchecked")
-  static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
+  @InternalApi
+  public static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
     try {
       return (T) Class.forName(className).newInstance();
     } catch (InstantiationException | IllegalAccessException e) {
@@ -599,7 +597,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return getDefaultRetrySettings();
   }
 
-  static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
+  @InternalApi
+  public static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
   }
 

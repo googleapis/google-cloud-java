@@ -16,8 +16,8 @@
 
 package com.google.cloud.translate.testing;
 
-import com.google.cloud.HttpTransportOptions;
-import com.google.api.gax.core.RetrySettings;
+import com.google.cloud.http.HttpTransportOptions;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.translate.TranslateOptions;
 import org.joda.time.Duration;
 

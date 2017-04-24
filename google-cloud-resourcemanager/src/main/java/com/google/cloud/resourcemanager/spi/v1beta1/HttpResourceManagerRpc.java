@@ -31,7 +31,7 @@ import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.api.services.cloudresourcemanager.model.SetIamPolicyRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsResponse;
-import com.google.cloud.HttpTransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.resourcemanager.ResourceManagerException;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
 import com.google.common.collect.ImmutableList;

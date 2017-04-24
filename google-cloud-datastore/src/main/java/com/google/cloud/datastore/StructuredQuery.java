@@ -1006,7 +1006,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
   /**
    * Returns the order by clause for this query.
    */
-  public ImmutableList<OrderBy> getOrderBy() {
+  public List<OrderBy> getOrderBy() {
     return orderBy;
   }
 

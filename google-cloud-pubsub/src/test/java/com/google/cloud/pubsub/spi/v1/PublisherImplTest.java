@@ -23,8 +23,8 @@ import static org.junit.Assert.fail;
 
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.core.ApiFuture;
-import com.google.api.gax.core.FlowControlSettings;
-import com.google.api.gax.core.FlowController.LimitExceededBehavior;
+import com.google.api.gax.batching.FlowControlSettings;
+import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;

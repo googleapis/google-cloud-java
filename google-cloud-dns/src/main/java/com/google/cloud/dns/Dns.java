@@ -18,7 +18,7 @@ package com.google.cloud.dns;
 
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.Service;
 import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.common.collect.ImmutableList;

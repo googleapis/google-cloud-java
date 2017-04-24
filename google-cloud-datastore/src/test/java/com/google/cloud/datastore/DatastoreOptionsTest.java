@@ -20,10 +20,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.GrpcTransportOptions;
-import com.google.cloud.datastore.spi.v1.DatastoreRpc;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
-
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Rule;
@@ -90,6 +89,6 @@ public class DatastoreOptionsTest {
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    DatastoreOptions.newBuilder().setTransportOptions(GrpcTransportOptions.newBuilder().build());
+    DatastoreOptions.newBuilder().setTransportOptions(new TransportOptions() {});
   }
 }

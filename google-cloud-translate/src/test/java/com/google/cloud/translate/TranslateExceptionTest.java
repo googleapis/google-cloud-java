@@ -43,21 +43,18 @@ public class TranslateExceptionTest {
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new TranslateException(400, "message");
     assertEquals(400, exception.getCode());
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertFalse(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     IOException cause = new SocketTimeoutException();
     exception = new TranslateException(cause);
     assertNull(exception.getReason());
     assertNull(exception.getMessage());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     exception = new TranslateException(400, "message", cause);
@@ -65,7 +62,6 @@ public class TranslateExceptionTest {
     assertEquals("message", exception.getMessage());
     assertNull(exception.getReason());
     assertFalse(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
   }
 
@@ -81,7 +77,6 @@ public class TranslateExceptionTest {
       assertEquals(500, ex.getCode());
       assertEquals("message", ex.getMessage());
       assertTrue(ex.isRetryable());
-      assertTrue(ex.isIdempotent());
     } finally {
       verify(exceptionMock);
     }
@@ -96,7 +91,6 @@ public class TranslateExceptionTest {
       assertEquals(TranslateException.UNKNOWN_CODE, ex.getCode());
       assertEquals("message", ex.getMessage());
       assertFalse(ex.isRetryable());
-      assertTrue(ex.isIdempotent());
       assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);

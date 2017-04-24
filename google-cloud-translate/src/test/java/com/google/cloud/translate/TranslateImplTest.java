@@ -22,7 +22,7 @@ import static org.junit.Assert.assertSame;
 import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.LanguagesResource;
 import com.google.api.services.translate.model.TranslationsResource;
-import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.translate.Translate.LanguageListOption;
 import com.google.cloud.translate.Translate.TranslateOption;

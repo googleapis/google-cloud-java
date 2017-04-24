@@ -20,7 +20,7 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogMetri
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ClientSettings;
@@ -50,6 +50,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
 import java.io.IOException;
+import java.util.List;
 import javax.annotation.Generated;
 import org.joda.time.Duration;
 
@@ -182,7 +183,7 @@ public class MetricsSettings extends ClientSettings {
   }
 
   /** Returns the default service scopes. */
-  public static ImmutableList<String> getDefaultServiceScopes() {
+  public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 

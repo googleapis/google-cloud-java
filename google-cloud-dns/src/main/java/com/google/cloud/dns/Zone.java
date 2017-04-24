@@ -19,7 +19,7 @@ package com.google.cloud.dns;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.dns.model.ManagedZone;
-import com.google.api.gax.core.Page;
+import com.google.api.gax.paging.Page;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

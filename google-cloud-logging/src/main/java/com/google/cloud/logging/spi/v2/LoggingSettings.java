@@ -24,11 +24,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
-import com.google.api.gax.core.FlowControlSettings;
-import com.google.api.gax.core.FlowController.LimitExceededBehavior;
+import com.google.api.gax.batching.FlowControlSettings;
+import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.grpc.BatchedRequestIssuer;
 import com.google.api.gax.grpc.BatchingCallSettings;
 import com.google.api.gax.grpc.BatchingDescriptor;
@@ -65,6 +65,7 @@ import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.List;
 import javax.annotation.Generated;
 import org.joda.time.Duration;
 
@@ -209,7 +210,7 @@ public class LoggingSettings extends ClientSettings {
   }
 
   /** Returns the default service scopes. */
-  public static ImmutableList<String> getDefaultServiceScopes() {
+  public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 

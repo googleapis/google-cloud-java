@@ -44,28 +44,24 @@ public class DatastoreExceptionTest {
     assertEquals("ABORTED", exception.getReason());
     assertEquals("message", exception.getMessage());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new DatastoreException(4, "message", "DEADLINE_EXCEEDED");
     assertEquals(4, exception.getCode());
     assertEquals("DEADLINE_EXCEEDED", exception.getReason());
     assertEquals("message", exception.getMessage());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new DatastoreException(14, "message", "UNAVAILABLE");
     assertEquals(14, exception.getCode());
     assertEquals("UNAVAILABLE", exception.getReason());
     assertEquals("message", exception.getMessage());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     exception = new DatastoreException(2, "message", "INTERNAL");
     assertEquals(2, exception.getCode());
     assertEquals("INTERNAL", exception.getReason());
     assertEquals("message", exception.getMessage());
     assertFalse(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
 
     IOException cause = new SocketTimeoutException("socketTimeoutMessage");
     exception = new DatastoreException(cause);
@@ -74,7 +70,6 @@ public class DatastoreExceptionTest {
     assertEquals("socketTimeoutMessage", exception.getMessage());
     assertEquals(cause, exception.getCause());
     assertTrue(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     exception = new DatastoreException(2, "message", "INTERNAL", cause);
@@ -82,7 +77,6 @@ public class DatastoreExceptionTest {
     assertEquals("INTERNAL", exception.getReason());
     assertEquals("message", exception.getMessage());
     assertFalse(exception.isRetryable());
-    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
   }
 
@@ -99,7 +93,6 @@ public class DatastoreExceptionTest {
       assertEquals(14, ex.getCode());
       assertEquals("message", ex.getMessage());
       assertTrue(ex.isRetryable());
-      assertTrue(ex.isIdempotent());
     } finally {
       verify(exceptionMock);
     }
@@ -114,7 +107,6 @@ public class DatastoreExceptionTest {
       assertEquals(DatastoreException.UNKNOWN_CODE, ex.getCode());
       assertEquals("message", ex.getMessage());
       assertFalse(ex.isRetryable());
-      assertTrue(ex.isIdempotent());
       assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);

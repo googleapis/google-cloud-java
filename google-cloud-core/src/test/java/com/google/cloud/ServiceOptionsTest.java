@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
@@ -186,7 +187,7 @@ public class ServiceOptionsTest {
 
       @Override
       public TransportOptions getDefaultTransportOptions() {
-        return HttpTransportOptions.newBuilder().build();
+        return new TransportOptions() {};
       }
     }
 
@@ -231,6 +232,9 @@ public class ServiceOptionsTest {
   @Test
   public void testBuilderNoCredentials() {
     assertEquals(NoCredentials.getInstance(), OPTIONS_NO_CREDENTIALS.getCredentials());
+    assertTrue(NoCredentials.getInstance().equals(OPTIONS_NO_CREDENTIALS.getCredentials()));
+    assertFalse(NoCredentials.getInstance().equals(OPTIONS.getCredentials()));
+    assertFalse(NoCredentials.getInstance().equals(null));
     assertSame(TEST_CLOCK, OPTIONS_NO_CREDENTIALS.getClock());
     assertEquals("host", OPTIONS_NO_CREDENTIALS.getHost());
     assertEquals("project-id", OPTIONS_NO_CREDENTIALS.getProjectId());
