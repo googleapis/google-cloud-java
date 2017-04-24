@@ -50,6 +50,8 @@ public class TopicAdminClientSnippets {
   public Topic createTopic(String topicId) throws Exception {
     // [START createTopic]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+      // projectId <=  unique project identifier, eg. "my-project-id"
+      // topicId <= "my-topic-id"
       TopicName topicName = TopicName.create(projectId, topicId);
       Topic topic = topicAdminClient.createTopic(topicName);
       return topic;
