@@ -19,6 +19,7 @@ package com.google.cloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
@@ -2382,6 +2383,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
+  @BetaApi
   @GcpLaunchStage.Alpha
   Policy getIamPolicy(String bucket);
 
@@ -2403,6 +2405,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
+  @BetaApi
   @GcpLaunchStage.Alpha
   Policy setIamPolicy(String bucket, Policy policy);
 
@@ -2424,6 +2427,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
+  @BetaApi
   @GcpLaunchStage.Alpha
   List<Boolean> testIamPermissions(String bucket, List<String> permissions);
 }

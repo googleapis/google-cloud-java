@@ -31,7 +31,7 @@ public abstract class StringEnumValue implements Serializable {
   /**
    * Don't create subclasses outside of google-cloud-java.
    */
-  @InternalApi
+  @InternalApi("This class should only be extended within google-cloud-java")
   protected StringEnumValue(String constant) {
     this.constant = Preconditions.checkNotNull(constant);
   }

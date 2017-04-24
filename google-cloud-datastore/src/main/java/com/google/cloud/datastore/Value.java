@@ -71,6 +71,9 @@ public abstract class Value<V> implements Serializable {
       return builder.build();
     }
 
+    BaseMarshaller() {
+    }
+
     protected abstract V getValue(com.google.datastore.v1.Value from);
 
     protected abstract void setValue(P from, com.google.datastore.v1.Value.Builder to);

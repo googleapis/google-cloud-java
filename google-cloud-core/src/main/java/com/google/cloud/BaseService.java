@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import com.google.api.core.InternalApi;
 import com.google.cloud.ExceptionHandler.Interceptor;
 
 /**
@@ -51,6 +52,7 @@ public abstract class BaseService<OptionsT extends ServiceOptions<?, OptionsT>>
 
   private final OptionsT options;
 
+  @InternalApi("This class should only be extended within google-cloud-java")
   protected BaseService(OptionsT options) {
     this.options = options;
   }

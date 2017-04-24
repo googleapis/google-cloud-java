@@ -19,6 +19,7 @@ package com.google.cloud;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
+import com.google.api.core.InternalApi;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -35,6 +36,10 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
   private boolean completed = false;
   private E error;
   private final List<Callback<T, E>> toBeNotified = new LinkedList<>();
+
+  @InternalApi("This class should only be extended within google-cloud-java")
+  protected BatchResult() {
+  }
 
   /**
    * Returns {@code true} if the batch has been completed and the result is available; {@code false}

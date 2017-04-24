@@ -71,6 +71,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
   protected static final String DEFAULT_HOST = "localhost";
   protected static final int DEFAULT_PORT = 8080;
 
+  @InternalApi("This class should only be extended within google-cloud-java")
   protected BaseEmulatorHelper(String emulator, int port, String projectId) {
     this.emulator = emulator;
     this.port = port > 0 ? port : DEFAULT_PORT;
