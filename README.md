@@ -693,10 +693,11 @@ Java Versions
 
 Java 7 or above is required for using this client.
 
-Android
--------
+Supported Platforms
+-------------------
 
-Android is not currently supported.
+This client is supported on Mac OS X, Windows and Linux.
+All other platforms, including Android and Alpine, are unsupported.
 
 Testing
 -------
