@@ -696,8 +696,9 @@ Java 7 or above is required for using this client.
 Supported Platforms
 -------------------
 
-This client is supported on Mac OS X, Windows and Linux.
-All other platforms, including Android and Alpine, are unsupported.
+This client is supported on Mac OS X, Windows and Linux (excluding Android and Alpine). 
+Google Cloud Platform environments currently supported include GCE, GKE and GAE Flex.
+GAE Standard is not currently supported.
 
 Testing
 -------
