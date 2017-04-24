@@ -16,9 +16,11 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.ExceptionHandler;
 import com.google.cloud.ExceptionHandler.Interceptor;
 
+@BetaApi
 public class TransactionExceptionHandler {
   public static final Interceptor TRANSACTION_EXCEPTION_HANDLER_INTERCEPTOR =
       new Interceptor() {

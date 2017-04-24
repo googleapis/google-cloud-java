@@ -40,12 +40,8 @@ public class ByteArray implements Iterable<Byte>, Serializable {
 
   private final ByteString byteString;
 
-  protected ByteArray(ByteString byteString) {
+  ByteArray(ByteString byteString) {
     this.byteString = byteString;
-  }
-
-  protected ByteArray(ByteArray byteArray) {
-    this.byteString = byteArray.getByteString();
   }
 
   @Override
@@ -115,11 +111,6 @@ public class ByteArray implements Iterable<Byte>, Serializable {
    */
   public final InputStream asInputStream() {
     return byteString.newInput();
-  }
-
-
-  protected ByteString getByteString() {
-    return byteString;
   }
 
   /**

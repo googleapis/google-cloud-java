@@ -112,8 +112,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     private ApiClock clock;
     private TransportOptions transportOptions;
 
+    @InternalApi("This class should only be extended within google-cloud-java")
     protected Builder() {}
 
+    @InternalApi("This class should only be extended within google-cloud-java")
     protected Builder(ServiceOptions<ServiceT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
@@ -226,6 +228,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     }
   }
 
+  @InternalApi("This class should only be extended within google-cloud-java")
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<OptionsT>> rpcFactoryClass,
       Builder<ServiceT, OptionsT, ?> builder,

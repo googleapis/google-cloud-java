@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import com.google.api.core.InternalApi;
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.ByteBuffer;
@@ -107,6 +108,7 @@ public abstract class BaseWriteChannel<
     this.chunkSize = Math.max(getMinChunkSize(), chunkSize);
   }
 
+  @InternalApi("This class should only be extended within google-cloud-java")
   protected BaseWriteChannel(ServiceOptionsT options, EntityT entity, String uploadId) {
     this.options = options;
     this.entity = entity;
@@ -209,6 +211,7 @@ public abstract class BaseWriteChannel<
     protected final boolean isOpen;
     protected final int chunkSize;
 
+    @InternalApi("This class should only be extended within google-cloud-java")
     protected BaseState(Builder<ServiceOptionsT, EntityT> builder) {
       this.serviceOptions = builder.serviceOptions;
       this.entity = builder.entity;
@@ -238,6 +241,7 @@ public abstract class BaseWriteChannel<
       private boolean isOpen;
       private int chunkSize;
 
+      @InternalApi("This class should only be extended within google-cloud-java")
       protected Builder(ServiceOptionsT options, EntityT entity, String uploadId) {
         this.serviceOptions = options;
         this.entity = entity;

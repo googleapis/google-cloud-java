@@ -129,7 +129,7 @@
     <site.installationModule>google-cloud</site.installationModule>
 
     <api-client.version>1.21.0</api-client.version>
-    <api-common.version>0.2.0</api-common.version>
+    <api-common.version>1.0.0-rc1</api-common.version>
     <gax.version>0.14.0</gax.version>
     <gax-grpc.version>0.14.0</gax-grpc.version>
     <generatedProto.version>0.1.8</generatedProto.version>
@@ -259,6 +259,11 @@
         <groupId>com.google.api</groupId>
         <artifactId>gax-grpc</artifactId>
         <version>${gax-grpc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>api-common</artifactId>
+        <version>${api-common.version}</version>
       </dependency>
       <!-- test deps -->
       <dependency>
