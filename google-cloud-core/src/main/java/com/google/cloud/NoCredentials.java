@@ -17,7 +17,6 @@
 package com.google.cloud;
 
 import com.google.auth.oauth2.OAuth2Credentials;
-
 import java.io.ObjectStreamException;
 
 /**
@@ -37,5 +36,13 @@ public class NoCredentials extends OAuth2Credentials {
 
   public static NoCredentials getInstance() {
     return INSTANCE;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof NoCredentials)) {
+      return false;
+    }
+    return this == obj;
   }
 }
