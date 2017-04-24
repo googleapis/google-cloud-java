@@ -36,8 +36,13 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-pubsub-v1</artifactId>
+      <version>0.1.9</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
-      <version>0.1.8</version>
+      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -76,6 +81,11 @@
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
       <version>0.30</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-iam-v1</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
