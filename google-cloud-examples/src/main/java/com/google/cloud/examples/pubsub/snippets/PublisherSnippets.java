@@ -32,7 +32,6 @@ import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
-import com.sun.net.httpserver.Authenticator.Retry;
 import org.joda.time.Duration;
 
 /** This class contains snippets for the {@link Publisher} interface. */
@@ -92,7 +91,6 @@ public class PublisherSnippets {
     long requestBytesThreshold = 5000L; // default : 1kb
     long messageCountBatchSize = 10L; // default : 100
     Duration publishDelayThreshold = Duration.millis(100); // default : 1 ms
-
     // Order of precedence in batching thresholds : request size > message count > publish delay
     BatchingSettings batchingSettings = BatchingSettings.newBuilder()
         .setElementCountThreshold(messageCountBatchSize)
@@ -111,7 +109,7 @@ public class PublisherSnippets {
 
     RetrySettings retrySettings = RetrySettings.newBuilder()
         .setInitialRetryDelay(retryDelay)
-        .setRetryDelayMultiplier(2.0)
+        .setRetryDelayMultiplier(retryDelayMultiplier)
         .setMaxRetryDelay(maxRetryDelay)
         .build();
     // [END publisherRetrySettings]

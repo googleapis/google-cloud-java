@@ -23,27 +23,34 @@
 package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.batching.FlowControlSettings;
+import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.FixedExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.SubscriptionName;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ScheduledExecutorService;
+import org.joda.time.Duration;
 
 /** This class contains snippets for the {@link Subscriber} interface. */
 public class SubscriberSnippets {
 
-  private final SubscriptionName subscription;
+  private final SubscriptionName subscriptionName;
   private final MessageReceiver receiver;
   private final ApiFuture<Void> done;
   private final Executor executor;
 
   public SubscriberSnippets(
-      SubscriptionName subscription,
+      SubscriptionName subscriptionName,
       MessageReceiver receiver,
       ApiFuture<Void> done,
       Executor executor) {
-    this.subscription = subscription;
+    this.subscriptionName = subscriptionName;
     this.receiver = receiver;
     this.done = done;
     this.executor = executor;
@@ -55,7 +62,7 @@ public class SubscriberSnippets {
   // [TARGET startAsync()]
   public void startAndWait() throws Exception {
     // [START startAsync]
-    Subscriber subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
+    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
     subscriber.addListener(new Subscriber.Listener() {
       public void failed(Subscriber.State from, Throwable failure) {
         // Handle error.
@@ -70,7 +77,7 @@ public class SubscriberSnippets {
   }
 
   private void createSubscriber() throws Exception {
-    // [START async_pull_subscription]
+    // [START pollingSubscription]
     String projectId = "my-project-id";
     String subscriptionId = "my-subscription-id";
     SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
@@ -88,8 +95,15 @@ public class SubscriberSnippets {
 
     Subscriber subscriber = null;
     try {
+      // Configure max number of messages to be pulled
+      int maxMessageCount = 10;
+      FlowControlSettings flowControlSettings = FlowControlSettings.newBuilder()
+      .setMaxOutstandingElementCount(maxMessageCount).build();
+
       // Create a subscriber for "my-subscription-id" bound to the message receiver
-      subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
+      subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
+      .setFlowControlSettings(flowControlSettings)
+      . build();
       subscriber.startAsync();
       // ...
     } finally {
@@ -98,7 +112,45 @@ public class SubscriberSnippets {
         subscriber.stopAsync();
       }
     }
-    // [END async_pull_subscription]
+    // [END pollingSubscription]
   }
 
+  private Subscriber createSubscriberWithErrorListener() throws Exception {
+    // [START subscriberWithErrorListener]
+    // provide an executor service
+    ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
+        .setExecutorThreadCount(10).build();
+
+    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
+
+    //
+    subscriber.addListener(new Subscriber.Listener() {
+      public void failed(Subscriber.State from, Throwable failure) {
+        // Handle error.
+      }
+    }, executorProvider.getExecutor());
+    // ...
+    // [START subscriberWithErrorListener]
+    return subscriber;
+  }
+
+  private Subscriber createSubscriberWithCustomSettings()
+      throws Exception {
+    // [START subscriberWithCustomSettings]
+
+    // padding to account for network latency
+    Duration ackDeadlinePadding = Duration.millis(100);
+
+    // provide a separate executor service for polling
+    ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
+        .setExecutorThreadCount(10).build();
+
+    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
+        .setAckExpirationPadding(ackDeadlinePadding)
+        .setExecutorProvider(executorProvider)
+        .build();
+
+    // [START subscriberWithCustomSettings]
+    return subscriber;
+  }
 }
