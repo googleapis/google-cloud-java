@@ -31,7 +31,7 @@ This client supports the following Google Cloud Platform services at an [Alpha](
 -  [Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
 -  [Cloud Speech](#google-cloud-speech-alpha) (Alpha)
 -  [Cloud Trace](#google-cloud-trace-alpha) (Alpha)
--  [Cloud Translation](#google-translation-beta) (Alpha)
+-  [Cloud Translation](#google-translation-beta) (Beta)
 -  [Cloud Vision](#google-cloud-vision-alpha) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
@@ -700,7 +700,7 @@ while (projectIterator.hasNext()) {
 }
 ```
 
-Google Translation (Alpha)
+Google Translation (Beta)
 ----------------
 
 - [API Documentation][translate-api]
