@@ -47,7 +47,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.LinkedBlockingQueue;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -287,18 +287,18 @@ public class SubscriberTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setAckExpirationPadding(Duration.standardSeconds(1))
-                .setMaxAckExtensionPeriod(Duration.standardSeconds(13)));
+                .setAckExpirationPadding(Duration.ofSeconds(1))
+                .setMaxAckExtensionPeriod(Duration.ofSeconds(13)));
     // Send messages to be acked
     List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
     // A modify ack deadline should be scheduled for the next 9s
-    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9));
+    fakeExecutor.setupScheduleExpectation(Duration.ofSeconds(9));
     sendMessages(testAckIdsBatch);
     // To ensure first modify ack deadline got scheduled
     fakeExecutor.waitForExpectedWork();
 
-    fakeExecutor.advanceTime(Duration.standardSeconds(9));
+    fakeExecutor.advanceTime(Duration.ofSeconds(9));
 
     assertEquivalentWithTransformation(
         testAckIdsBatch,
@@ -310,7 +310,7 @@ public class SubscriberTest {
           }
         });
 
-    fakeExecutor.advanceTime(Duration.standardSeconds(1));
+    fakeExecutor.advanceTime(Duration.ofSeconds(1));
 
     assertEquivalentWithTransformation(
         testAckIdsBatch,
@@ -325,7 +325,7 @@ public class SubscriberTest {
         });
 
     // No more modify ack deadline extension should be triggered at this point
-    fakeExecutor.advanceTime(Duration.standardSeconds(20));
+    fakeExecutor.advanceTime(Duration.ofSeconds(20));
 
     assertTrue(fakeSubscriberServiceImpl.getModifyAckDeadlines().isEmpty());
 
@@ -338,18 +338,18 @@ public class SubscriberTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setAckExpirationPadding(Duration.standardSeconds(1)));
+                .setAckExpirationPadding(Duration.ofSeconds(1)));
     // Send messages to be acked
     List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
     testReceiver.setExplicitAck(true);
     // A modify ack deadline should be schedule for the next 9s
-    fakeExecutor.setupScheduleExpectation(Duration.standardSeconds(9));
+    fakeExecutor.setupScheduleExpectation(Duration.ofSeconds(9));
     sendMessages(testAckIdsBatch);
     // To ensure the first modify ack deadlines got scheduled
     fakeExecutor.waitForExpectedWork();
 
     // Next modify ack deadline should be schedule in the next 1s
-    fakeExecutor.advanceTime(Duration.standardSeconds(9));
+    fakeExecutor.advanceTime(Duration.ofSeconds(9));
 
     assertEquivalentWithTransformation(
         testAckIdsBatch,
@@ -361,7 +361,7 @@ public class SubscriberTest {
           }
         });
 
-    fakeExecutor.advanceTime(Duration.standardSeconds(1));
+    fakeExecutor.advanceTime(Duration.ofSeconds(1));
     int timeIncrementSecs = INITIAL_ACK_DEADLINE_EXTENSION_SECS; // Second time increment
 
     // Check ack deadline extensions while the current time has not reached 60 minutes
@@ -377,11 +377,11 @@ public class SubscriberTest {
               return new ModifyAckDeadline(ack, expectedIncrementSecs);
             }
           });
-      fakeExecutor.advanceTime(Duration.standardSeconds(timeIncrementSecs - 1));
+      fakeExecutor.advanceTime(Duration.ofSeconds(timeIncrementSecs - 1));
     }
 
     // No more modify ack deadline extension should be triggered at this point
-    fakeExecutor.advanceTime(Duration.standardSeconds(20));
+    fakeExecutor.advanceTime(Duration.ofSeconds(20));
 
     assertTrue(fakeSubscriberServiceImpl.getModifyAckDeadlines().isEmpty());
 
@@ -399,7 +399,7 @@ public class SubscriberTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setAckExpirationPadding(Duration.standardSeconds(1)));
+                .setAckExpirationPadding(Duration.ofSeconds(1)));
 
     fakeSubscriberServiceImpl.waitForStreamAckDeadline(10);
 
@@ -408,11 +408,11 @@ public class SubscriberTest {
     sendMessages(ImmutableList.of("A"));
 
     // Make the ack latency of the receiver equals 20 seconds
-    fakeExecutor.advanceTime(Duration.standardSeconds(20));
+    fakeExecutor.advanceTime(Duration.ofSeconds(20));
     testReceiver.replyNextOutstandingMessage();
 
     // Wait for an ack deadline update
-    fakeExecutor.advanceTime(Duration.standardSeconds(60));
+    fakeExecutor.advanceTime(Duration.ofSeconds(60));
 
     fakeSubscriberServiceImpl.waitForStreamAckDeadline(20);
 
@@ -423,13 +423,13 @@ public class SubscriberTest {
     }
 
     // Reduce the 99th% ack latency of the receiver to 10 seconds
-    fakeExecutor.advanceTime(Duration.standardSeconds(10));
+    fakeExecutor.advanceTime(Duration.ofSeconds(10));
     for (int i = 0; i < 999; i++) {
       testReceiver.replyNextOutstandingMessage();
     }
 
     // Wait for an ack deadline update
-    fakeExecutor.advanceTime(Duration.standardSeconds(60));
+    fakeExecutor.advanceTime(Duration.ofSeconds(60));
 
     fakeSubscriberServiceImpl.waitForStreamAckDeadline(10);
 
