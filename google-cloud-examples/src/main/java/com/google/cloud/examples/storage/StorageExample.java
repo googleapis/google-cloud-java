@@ -18,6 +18,7 @@ package com.google.cloud.examples.storage;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.ReadChannel;
+import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
@@ -30,10 +31,7 @@ import com.google.cloud.storage.Storage.ComposeRequest;
 import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageOptions;
-import com.google.cloud.storage.spi.v1.StorageRpc;
-import com.google.cloud.storage.spi.v1.StorageRpc.Tuple;
 import com.google.common.collect.ImmutableMap;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -120,7 +118,7 @@ public class StorageExample {
     }
   }
 
-  private static class ParentAction extends StorageAction<StorageRpc.Tuple<StorageAction, Object>> {
+  private static class ParentAction extends StorageAction<Tuple<StorageAction, Object>> {
 
     private final Map<String, StorageAction> subActions;
 
@@ -130,17 +128,17 @@ public class StorageExample {
 
     @Override
     @SuppressWarnings("unchecked")
-    void run(Storage storage, StorageRpc.Tuple<StorageAction, Object> subaction) throws Exception {
+    void run(Storage storage, Tuple<StorageAction, Object> subaction) throws Exception {
       subaction.x().run(storage, subaction.y());
     }
 
     @Override
-    StorageRpc.Tuple<StorageAction, Object> parse(String... args) throws Exception {
+    Tuple<StorageAction, Object> parse(String... args) throws Exception {
       if (args.length >= 1) {
         StorageAction action = subActions.get(args[0]);
         if (action != null) {
           Object actionArguments = action.parse(Arrays.copyOfRange(args, 1, args.length));
-          return StorageRpc.Tuple.of(action, actionArguments);
+          return Tuple.of(action, actionArguments);
         } else {
           throw new IllegalArgumentException("Unrecognized entity '" + args[0] + "'.");
         }

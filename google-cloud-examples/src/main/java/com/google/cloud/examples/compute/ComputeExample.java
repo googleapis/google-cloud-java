@@ -17,6 +17,7 @@
 package com.google.cloud.examples.compute;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Tuple;
 import com.google.cloud.compute.Address;
 import com.google.cloud.compute.AddressId;
 import com.google.cloud.compute.AddressInfo;
@@ -68,11 +69,9 @@ import com.google.cloud.compute.SubnetworkInfo;
 import com.google.cloud.compute.Zone;
 import com.google.cloud.compute.ZoneId;
 import com.google.cloud.compute.ZoneOperationId;
-import com.google.cloud.compute.spi.v1.ComputeRpc.Tuple;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;

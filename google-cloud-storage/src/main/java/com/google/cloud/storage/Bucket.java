@@ -22,6 +22,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Tuple;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;
@@ -32,7 +33,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -148,30 +148,30 @@ public class Bucket extends BucketInfo {
       super(rpcOption, value);
     }
 
-    private StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption> toTargetOption(BlobInfo blobInfo) {
+    private Tuple<BlobInfo, Storage.BlobTargetOption> toTargetOption(BlobInfo blobInfo) {
       BlobId blobId = blobInfo.getBlobId();
       switch (getRpcOption()) {
         case PREDEFINED_ACL:
-          return StorageRpc.Tuple.of(blobInfo,
+          return Tuple.of(blobInfo,
               Storage.BlobTargetOption.predefinedAcl((Storage.PredefinedAcl) getValue()));
         case IF_GENERATION_MATCH:
           blobId = BlobId.of(blobId.getBucket(), blobId.getName(), (Long) getValue());
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
+          return Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
               Storage.BlobTargetOption.generationMatch());
         case IF_GENERATION_NOT_MATCH:
           blobId = BlobId.of(blobId.getBucket(), blobId.getName(), (Long) getValue());
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
+          return Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
               Storage.BlobTargetOption.generationNotMatch());
         case IF_METAGENERATION_MATCH:
-          return StorageRpc.Tuple.of(
+          return Tuple.of(
               blobInfo.toBuilder().setMetageneration((Long) getValue()).build(),
               Storage.BlobTargetOption.metagenerationMatch());
         case IF_METAGENERATION_NOT_MATCH:
-          return StorageRpc.Tuple.of(
+          return Tuple.of(
               blobInfo.toBuilder().setMetageneration((Long) getValue()).build(),
               Storage.BlobTargetOption.metagenerationNotMatch());
         case CUSTOMER_SUPPLIED_KEY:
-          return StorageRpc.Tuple.of(blobInfo,
+          return Tuple.of(blobInfo,
               Storage.BlobTargetOption.encryptionKey((String) getValue()));
         default:
           throw new AssertionError("Unexpected enum value");
@@ -249,7 +249,7 @@ public class Bucket extends BucketInfo {
       return new BlobTargetOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
 
-    static StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption[]> toTargetOptions(
+    static Tuple<BlobInfo, Storage.BlobTargetOption[]> toTargetOptions(
         BlobInfo info, BlobTargetOption... options) {
       Set<StorageRpc.Option> optionSet =
           Sets.immutableEnumSet(Lists.transform(Arrays.asList(options), TO_ENUM));
@@ -263,12 +263,12 @@ public class Bucket extends BucketInfo {
       BlobInfo targetInfo = info;
       int index = 0;
       for (BlobTargetOption option : options) {
-        StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption> target =
+        Tuple<BlobInfo, Storage.BlobTargetOption> target =
             option.toTargetOption(targetInfo);
         targetInfo = target.x();
         convertedOptions[index++] = target.y();
       }
-      return StorageRpc.Tuple.of(targetInfo, convertedOptions);
+      return Tuple.of(targetInfo, convertedOptions);
     }
   }
 
@@ -289,34 +289,34 @@ public class Bucket extends BucketInfo {
     private final Storage.BlobWriteOption.Option option;
     private final Object value;
 
-    private StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption> toWriteOption(BlobInfo blobInfo) {
+    private Tuple<BlobInfo, Storage.BlobWriteOption> toWriteOption(BlobInfo blobInfo) {
       BlobId blobId = blobInfo.getBlobId();
       switch (option) {
         case PREDEFINED_ACL:
-          return StorageRpc.Tuple.of(blobInfo,
+          return Tuple.of(blobInfo,
               Storage.BlobWriteOption.predefinedAcl((Storage.PredefinedAcl) value));
         case IF_GENERATION_MATCH:
           blobId = BlobId.of(blobId.getBucket(), blobId.getName(), (Long) value);
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
+          return Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
               Storage.BlobWriteOption.generationMatch());
         case IF_GENERATION_NOT_MATCH:
           blobId = BlobId.of(blobId.getBucket(), blobId.getName(), (Long) value);
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
+          return Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
               Storage.BlobWriteOption.generationNotMatch());
         case IF_METAGENERATION_MATCH:
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().setMetageneration((Long) value).build(),
+          return Tuple.of(blobInfo.toBuilder().setMetageneration((Long) value).build(),
               Storage.BlobWriteOption.metagenerationMatch());
         case IF_METAGENERATION_NOT_MATCH:
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().setMetageneration((Long) value).build(),
+          return Tuple.of(blobInfo.toBuilder().setMetageneration((Long) value).build(),
               Storage.BlobWriteOption.metagenerationNotMatch());
         case IF_MD5_MATCH:
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().setMd5((String) value).build(),
+          return Tuple.of(blobInfo.toBuilder().setMd5((String) value).build(),
               Storage.BlobWriteOption.md5Match());
         case IF_CRC32C_MATCH:
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().setCrc32c((String) value).build(),
+          return Tuple.of(blobInfo.toBuilder().setCrc32c((String) value).build(),
               Storage.BlobWriteOption.crc32cMatch());
         case CUSTOMER_SUPPLIED_KEY:
-          return StorageRpc.Tuple.of(blobInfo,
+          return Tuple.of(blobInfo,
               Storage.BlobWriteOption.encryptionKey((String) value));
         default:
           throw new AssertionError("Unexpected enum value");
@@ -435,7 +435,7 @@ public class Bucket extends BucketInfo {
       return new BlobWriteOption(Storage.BlobWriteOption.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
 
-    static StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption[]> toWriteOptions(
+    static Tuple<BlobInfo, Storage.BlobWriteOption[]> toWriteOptions(
         BlobInfo info, BlobWriteOption... options) {
       Set<Storage.BlobWriteOption.Option> optionSet =
           Sets.immutableEnumSet(Lists.transform(Arrays.asList(options), TO_ENUM));
@@ -449,11 +449,11 @@ public class Bucket extends BucketInfo {
       BlobInfo writeInfo = info;
       int index = 0;
       for (BlobWriteOption option : options) {
-        StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption> write = option.toWriteOption(writeInfo);
+        Tuple<BlobInfo, Storage.BlobWriteOption> write = option.toWriteOption(writeInfo);
         writeInfo = write.x();
         convertedOptions[index++] = write.y();
       }
-      return StorageRpc.Tuple.of(writeInfo, convertedOptions);
+      return Tuple.of(writeInfo, convertedOptions);
     }
   }
 
@@ -784,7 +784,7 @@ public class Bucket extends BucketInfo {
   public Blob create(String blob, byte[] content, String contentType, BlobTargetOption... options) {
     BlobInfo blobInfo =
         BlobInfo.newBuilder(BlobId.of(getName(), blob)).setContentType(contentType).build();
-    StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption[]> target =
+    Tuple<BlobInfo, Storage.BlobTargetOption[]> target =
         BlobTargetOption.toTargetOptions(blobInfo, options);
     return storage.create(target.x(), content, target.y());
   }
@@ -812,7 +812,7 @@ public class Bucket extends BucketInfo {
       BlobWriteOption... options) {
     BlobInfo blobInfo =
         BlobInfo.newBuilder(BlobId.of(getName(), blob)).setContentType(contentType).build();
-    StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption[]> write =
+    Tuple<BlobInfo, Storage.BlobWriteOption[]> write =
         BlobWriteOption.toWriteOptions(blobInfo, options);
     return storage.create(write.x(), content, write.y());
   }
@@ -837,7 +837,7 @@ public class Bucket extends BucketInfo {
    */
   public Blob create(String blob, byte[] content, BlobTargetOption... options) {
     BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of(getName(), blob)).build();
-    StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption[]> target =
+    Tuple<BlobInfo, Storage.BlobTargetOption[]> target =
         BlobTargetOption.toTargetOptions(blobInfo, options);
     return storage.create(target.x(), content, target.y());
   }
@@ -862,7 +862,7 @@ public class Bucket extends BucketInfo {
    */
   public Blob create(String blob, InputStream content, BlobWriteOption... options) {
     BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of(getName(), blob)).build();
-    StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption[]> write =
+    Tuple<BlobInfo, Storage.BlobWriteOption[]> write =
         BlobWriteOption.toWriteOptions(blobInfo, options);
     return storage.create(write.x(), content, write.y());
   }
