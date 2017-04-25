@@ -83,6 +83,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -103,6 +104,9 @@ public class ITBigQueryTest {
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DESCRIPTION = "Test dataset";
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
+  private static final Map<String, String> LABELS = ImmutableMap.of(
+      "example-label1", "example-value1",
+      "example-label2", "example-value2");
   private static final Field TIMESTAMP_FIELD_SCHEMA =
       Field.newBuilder("TimestampField", Field.Type.timestamp())
           .setMode(Field.Mode.NULLABLE)
@@ -221,7 +225,10 @@ public class ITBigQueryTest {
             .setContentType("application/json")
             .build(),
         JSON_CONTENT.getBytes(StandardCharsets.UTF_8));
-    DatasetInfo info = DatasetInfo.newBuilder(DATASET).setDescription(DESCRIPTION).build();
+    DatasetInfo info = DatasetInfo.newBuilder(DATASET)
+        .setDescription(DESCRIPTION)
+        .setLabels(LABELS)
+        .build();
     bigquery.create(info);
     LoadJobConfiguration configuration = LoadJobConfiguration.newBuilder(
             TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
@@ -265,6 +272,7 @@ public class ITBigQueryTest {
     assertEquals(bigquery.getOptions().getProjectId(), dataset.getDatasetId().getProject());
     assertEquals(DATASET, dataset.getDatasetId().getDataset());
     assertEquals(DESCRIPTION, dataset.getDescription());
+    assertEquals(LABELS, dataset.getLabels());
     assertNotNull(dataset.getAcl());
     assertNotNull(dataset.getEtag());
     assertNotNull(dataset.getGeneratedId());
@@ -275,9 +283,10 @@ public class ITBigQueryTest {
   @Test
   public void testGetDatasetWithSelectedFields() {
     Dataset dataset = bigquery.getDataset(DATASET,
-        DatasetOption.fields(DatasetField.CREATION_TIME));
+        DatasetOption.fields(DatasetField.CREATION_TIME, DatasetField.LABELS));
     assertEquals(bigquery.getOptions().getProjectId(), dataset.getDatasetId().getProject());
     assertEquals(DATASET, dataset.getDatasetId().getDataset());
+    assertEquals(LABELS, dataset.getLabels());
     assertNotNull(dataset.getCreationTime());
     assertNull(dataset.getDescription());
     assertNull(dataset.getDefaultTableLifetime());
