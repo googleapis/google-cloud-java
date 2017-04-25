@@ -19,6 +19,7 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Cloud Datastore](#google-cloud-datastore-beta) (Beta)
 -  [Cloud Storage](#google-cloud-storage-beta) (Beta)
 -  [Cloud Spanner](#cloud-spanner-beta) (Beta)
+-  [Cloud Translation](#google-translation-beta) (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
@@ -31,7 +32,6 @@ This client supports the following Google Cloud Platform services at an [Alpha](
 -  [Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
 -  [Cloud Speech](#google-cloud-speech-alpha) (Alpha)
 -  [Cloud Trace](#google-cloud-trace-alpha) (Alpha)
--  [Cloud Translation](#google-translation-beta) (Beta)
 -  [Cloud Vision](#google-cloud-vision-alpha) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
