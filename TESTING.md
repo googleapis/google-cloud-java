@@ -197,7 +197,7 @@ You can test against an in-memory local Resource Manager by following these step
 
 You can test against an in-memory local Storage by following these steps:
 
-1. Follow the [Quickstart instructions][cloud-nio] to add the nio dependency to your project
+1. Follow the [Quickstart instructions][cloud-nio] to add the nio dependency to your project.
 2. In your program, create and use a fake Storage service object.  For example:
 
   ```java
