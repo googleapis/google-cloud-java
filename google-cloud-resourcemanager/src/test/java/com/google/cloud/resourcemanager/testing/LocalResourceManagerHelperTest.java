@@ -25,23 +25,21 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.services.cloudresourcemanager.model.Binding;
+import com.google.cloud.Tuple;
 import com.google.cloud.resourcemanager.ResourceManagerException;
 import com.google.cloud.resourcemanager.spi.v1beta1.HttpResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
-import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc.Tuple;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class LocalResourceManagerHelperTest {
 
