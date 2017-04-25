@@ -16,28 +16,26 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 
 -  [BigQuery](#google-cloud-bigquery-beta) (Beta)
 -  [Stackdriver Logging](#stackdriver-logging-beta) (Beta - Not working on App Engine Standard)
--  [Datastore](#google-cloud-datastore-beta) (Beta)
--  [Storage](#google-cloud-storage-beta) (Beta)
--  [Spanner](#cloud-spanner-beta) (Beta)
+-  [Cloud Datastore](#google-cloud-datastore-beta) (Beta)
+-  [Cloud Storage](#google-cloud-storage-beta) (Beta)
+-  [Cloud Spanner](#cloud-spanner-beta) (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
--  [Compute](#google-cloud-compute-alpha) (Alpha)
--  [DNS](#google-cloud-dns-alpha) (Alpha)
--  [Errorreporting](#google-cloud-errorreporting-alpha) (Alpha)
--  [Language](#google-cloud-language-alpha) (Alpha)
--  [Monitoring](#google-cloud-monitoring-alpha) (Alpha)
--  [Pub/Sub](#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
--  [Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
--  [Speech](#google-cloud-speech-alpha) (Alpha)
--  [Trace](#google-cloud-trace-alpha) (Alpha)
--  [Translation](#google-translation-beta) (Alpha)
--  [Vision](#google-cloud-vision-alpha) (Alpha)
+-  [Cloud Compute](#google-cloud-compute-alpha) (Alpha)
+-  [Cloud DNS](#google-cloud-dns-alpha) (Alpha)
+-  [Stackdriver Error Reporting](#google-cloud-errorreporting-alpha) (Alpha)
+-  [Cloud Natural Language](#google-cloud-language-alpha) (Alpha)
+-  [Stackdriver Monitoring](#google-cloud-monitoring-alpha) (Alpha)
+-  [Cloud Pub/Sub](#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
+-  [Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
+-  [Cloud Speech](#google-cloud-speech-alpha) (Alpha)
+-  [Cloud Trace](#google-cloud-trace-alpha) (Alpha)
+-  [Cloud Translation](#google-translation-beta) (Alpha)
+-  [Cloud Vision](#google-cloud-vision-alpha) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
-
-> Note: GAE standard for Java 7 is not supported for gRPC-based clients.
 
 ## Where did `gcloud-java` go?
 
@@ -587,7 +585,7 @@ Google Cloud Errorreporting (Alpha)
 ### Preview
 
 Here is a code snippet showing a simple usage example of ErrorGroupServiceClient.
-Note that you must [supply credentials](#authentication) and a project ID if running this 
+Note that you must [supply credentials](#authentication) and a project ID if running this snippet else where.
 ```java
  try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
    GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
@@ -619,7 +617,7 @@ Google Cloud Monitoring (Alpha)
 ### Preview
 
 Here is a code snippet showing a simple usage example of MetricServiceClient.
-Note that you must [supply credentials](#authentication) and a project ID if running this 
+Note that you must [supply credentials](#authentication) and a project ID if running this snippet else where.
 ```java
  try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    MonitoredResourceDescriptorName name =
@@ -777,7 +775,7 @@ Google Cloud Trace (Alpha)
 
 Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either default application
 credentials or a valid api key are available.
-Note that you must [supply credentials](#authentication) and a project ID if running this 
+Note that you must [supply credentials](#authentication) and a project ID if running this snippet else where.
 ```java
  try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    String projectId = "";
@@ -813,7 +811,6 @@ Java Versions
 -------------
 
 Java 7 or above is required for using this client.
-> Note: GAE standard for Java 7 is not supported for gRPC-based clients.
 
 Android
 -------
