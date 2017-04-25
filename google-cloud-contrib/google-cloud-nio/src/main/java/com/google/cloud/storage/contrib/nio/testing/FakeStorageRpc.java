@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.storage.contrib.nio;
+package com.google.cloud.storage.contrib.nio.testing;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
