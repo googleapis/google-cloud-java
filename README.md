@@ -25,9 +25,9 @@ This client supports the following Google Cloud Platform services at an [Alpha](
 
 -  [Cloud Compute](#google-cloud-compute-alpha) (Alpha)
 -  [Cloud DNS](#google-cloud-dns-alpha) (Alpha)
--  [Stackdriver Error Reporting](#google-cloud-errorreporting-alpha) (Alpha)
+-  [Stackdriver Error Reporting](#stackdriver-error-reporting-alpha) (Alpha)
+-  [Stackdriver Monitoring](#stackdriver-monitoring-alpha) (Alpha)
 -  [Cloud Natural Language](#google-cloud-language-alpha) (Alpha)
--  [Stackdriver Monitoring](#google-cloud-monitoring-alpha) (Alpha)
 -  [Cloud Pub/Sub](#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
 -  [Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
 -  [Cloud Speech](#google-cloud-speech-alpha) (Alpha)
@@ -577,7 +577,7 @@ ChangeRequestInfo changeRequest = changeBuilder.build();
 zone.applyChangeRequest(changeRequest);
 ```
 
-Google Cloud Errorreporting (Alpha)
+Stackdriver Error Reporting (Alpha)
 ----------------------
 - [API Documentation][errorreporting-api]
 - [Official Documentation][cloud-errorreporting-docs]
@@ -609,7 +609,7 @@ credentials or a valid api key are available. (See [Authentication section](#aut
  }
 ```
 
-Google Cloud Monitoring (Alpha)
+Stackdriver Monitoring (Alpha)
 ----------------------
 - [API Documentation][monitoring-api]
 - [Official Documentation][cloud-monitoring-docs]
