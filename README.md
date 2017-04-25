@@ -585,7 +585,7 @@ Google Cloud Errorreporting (Alpha)
 ### Preview
 
 Here is a code snippet showing a simple usage example of ErrorGroupServiceClient.
-Note that you must [supply credentials](#authentication) and a project ID if running this snippet else where.
+Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 ```java
  try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
    GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
@@ -617,7 +617,7 @@ Google Cloud Monitoring (Alpha)
 ### Preview
 
 Here is a code snippet showing a simple usage example of MetricServiceClient.
-Note that you must [supply credentials](#authentication) and a project ID if running this snippet else where.
+Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 ```java
  try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    MonitoredResourceDescriptorName name =
@@ -775,7 +775,7 @@ Google Cloud Trace (Alpha)
 
 Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either default application
 credentials or a valid api key are available.
-Note that you must [supply credentials](#authentication) and a project ID if running this snippet else where.
+Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 ```java
  try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    String projectId = "";
