@@ -83,7 +83,7 @@ public class MonitoredResourceUtil {
                   Label.InstanceName,
                   Label.ModuleId,
                   Label.VersionId,
-                  Label.InstanceName,
+                  Label.InstanceId,
                   Label.Zone
                 })
             .put(
