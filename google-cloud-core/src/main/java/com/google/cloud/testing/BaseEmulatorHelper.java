@@ -53,7 +53,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 /**
  * Utility class to start and stop a local service which is used by unit testing.
@@ -149,7 +149,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     waiter.start();
 
     try {
-      return exitValue.get(timeout.getMillis(), TimeUnit.MILLISECONDS);
+      return exitValue.get(timeout.toMillis(), TimeUnit.MILLISECONDS);
     } catch (ExecutionException e) {
       if (e.getCause() instanceof InterruptedException) {
         throw (InterruptedException) e.getCause();

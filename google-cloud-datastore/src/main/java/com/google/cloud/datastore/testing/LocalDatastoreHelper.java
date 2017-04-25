@@ -23,7 +23,7 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.testing.BaseEmulatorHelper;
 import com.google.common.collect.ImmutableList;
 
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

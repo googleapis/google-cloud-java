@@ -47,7 +47,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/subscriber">subscriber</a> that is
@@ -83,7 +83,7 @@ public class Subscriber extends AbstractApiService {
   private static final int INITIAL_ACK_DEADLINE_SECONDS = 10;
   private static final int MAX_ACK_DEADLINE_SECONDS = 600;
   static final int MIN_ACK_DEADLINE_SECONDS = 10;
-  private static final Duration ACK_DEADLINE_UPDATE_PERIOD = Duration.standardMinutes(1);
+  private static final Duration ACK_DEADLINE_UPDATE_PERIOD = Duration.ofMinutes(1);
   private static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
 
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
@@ -116,10 +116,11 @@ public class Subscriber extends AbstractApiService {
     cachedSubscriptionNameString = subscriptionName.toString();
     ackExpirationPadding = builder.ackExpirationPadding;
     maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
+    long streamAckDeadlineMillis = ackExpirationPadding.toMillis();
     streamAckDeadlineSeconds =
         Math.max(
             INITIAL_ACK_DEADLINE_SECONDS,
-            Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
+            Ints.saturatedCast(TimeUnit.MILLISECONDS.toSeconds(streamAckDeadlineMillis)));
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
     flowController =
@@ -309,11 +310,13 @@ public class Subscriber extends AbstractApiService {
                 long ackLatency =
                     ackLatencyDistribution.getNthPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
                 if (ackLatency > 0) {
+                  long ackExpirationPaddingMillis = ackExpirationPadding.toMillis();
                   int possibleStreamAckDeadlineSeconds =
                       Math.max(
                           MIN_ACK_DEADLINE_SECONDS,
                           Ints.saturatedCast(
-                              Math.max(ackLatency, ackExpirationPadding.getStandardSeconds())));
+                              Math.max(ackLatency,
+                                  TimeUnit.MILLISECONDS.toSeconds(ackExpirationPaddingMillis))));
                   if (streamAckDeadlineSeconds != possibleStreamAckDeadlineSeconds) {
                     streamAckDeadlineSeconds = possibleStreamAckDeadlineSeconds;
                     logger.log(
@@ -328,8 +331,8 @@ public class Subscriber extends AbstractApiService {
                 }
               }
             },
-            ACK_DEADLINE_UPDATE_PERIOD.getMillis(),
-            ACK_DEADLINE_UPDATE_PERIOD.getMillis(),
+            ACK_DEADLINE_UPDATE_PERIOD.toMillis(),
+            ACK_DEADLINE_UPDATE_PERIOD.toMillis(),
             TimeUnit.MILLISECONDS);
   }
 
@@ -437,9 +440,9 @@ public class Subscriber extends AbstractApiService {
 
   /** Builder of {@link Subscriber Subscribers}. */
   public static final class Builder {
-    private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.millis(100);
-    private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
-    private static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.standardMinutes(60);
+    private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.ofMillis(100);
+    private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.ofMillis(500);
+    private static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
 
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
         InstantiatingExecutorProvider.newBuilder()
@@ -528,7 +531,7 @@ public class Subscriber extends AbstractApiService {
      * <p>A zero duration effectively disables auto deadline extensions.
      */
     public Builder setMaxAckExtensionPeriod(Duration maxAckExtensionPeriod) {
-      Preconditions.checkArgument(maxAckExtensionPeriod.getMillis() >= 0);
+      Preconditions.checkArgument(maxAckExtensionPeriod.toMillis() >= 0);
       this.maxAckExtensionPeriod = maxAckExtensionPeriod;
       return this;
     }

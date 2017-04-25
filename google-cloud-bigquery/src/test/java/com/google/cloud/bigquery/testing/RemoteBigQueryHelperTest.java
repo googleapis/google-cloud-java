@@ -27,10 +27,10 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
 import org.easymock.EasyMock;
-import org.joda.time.Duration;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.threeten.bp.Duration;
 
 public class RemoteBigQueryHelperTest {
 
@@ -87,8 +87,8 @@ public class RemoteBigQueryHelperTest {
     assertEquals(60000,
         ((HttpTransportOptions) options.getTransportOptions()).getReadTimeout());
     assertEquals(10, options.getRetrySettings().getMaxAttempts());
-    assertEquals(Duration.millis(30000), options.getRetrySettings().getMaxRetryDelay());
-    assertEquals(Duration.millis(120000), options.getRetrySettings().getTotalTimeout());
-    assertEquals(Duration.millis(250), options.getRetrySettings().getInitialRetryDelay());
+    assertEquals(Duration.ofMillis(30000), options.getRetrySettings().getMaxRetryDelay());
+    assertEquals(Duration.ofMillis(120000), options.getRetrySettings().getTotalTimeout());
+    assertEquals(Duration.ofMillis(250), options.getRetrySettings().getInitialRetryDelay());
   }
 }
