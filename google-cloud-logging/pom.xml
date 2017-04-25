@@ -40,8 +40,8 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-logging-v2</artifactId>
-      <version>0.1.8</version>
+      <artifactId>proto-google-cloud-logging-v2</artifactId>
+      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -63,6 +63,12 @@
       <artifactId>google-cloud-core</artifactId>
       <version>${core.version}</version>
       <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-logging-v2</artifactId>
+      <version>0.1.9</version>
       <scope>test</scope>
     </dependency>
     <dependency>
