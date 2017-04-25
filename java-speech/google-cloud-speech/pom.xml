@@ -36,13 +36,13 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
-      <version>0.1.8</version>
+      <artifactId>proto-google-cloud-speech-v1beta1</artifactId>
+      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-speech-v1</artifactId>
-      <version>0.1.8</version>
+      <artifactId>proto-google-cloud-speech-v1</artifactId>
+      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -75,6 +75,18 @@
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
       <version>3.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
+      <version>0.1.9</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-speech-v1</artifactId>
+      <version>0.1.9</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
