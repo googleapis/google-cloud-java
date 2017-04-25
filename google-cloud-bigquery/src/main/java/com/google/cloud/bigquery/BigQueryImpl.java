@@ -19,15 +19,16 @@ package com.google.cloud.bigquery;
 import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.gax.paging.Page;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.cloud.BaseService;
-import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.RetryHelper;
+import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.base.Function;
@@ -36,7 +37,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -247,21 +247,30 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     return listDatasets(projectId, getOptions(), optionMap(options));
   }
 
-  private static Page<Dataset> listDatasets(final String projectId,
-      final BigQueryOptions serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
+  private static Page<Dataset> listDatasets(
+      final String projectId,
+      final BigQueryOptions serviceOptions,
+      final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
-      BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Dataset>> result =
-          runWithRetries(new Callable<BigQueryRpc.Tuple<String,
-              Iterable<com.google.api.services.bigquery.model.Dataset>>>() {
+      Tuple<String, Iterable<com.google.api.services.bigquery.model.Dataset>> result =
+          runWithRetries(
+              new Callable<
+                  Tuple<String, Iterable<com.google.api.services.bigquery.model.Dataset>>>() {
                 @Override
-                public BigQueryRpc.Tuple<String,
-                    Iterable<com.google.api.services.bigquery.model.Dataset>> call() {
+                public Tuple<String, Iterable<com.google.api.services.bigquery.model.Dataset>>
+                    call() {
                   return serviceOptions.getBigQueryRpcV2().listDatasets(projectId, optionsMap);
                 }
-              }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
+              },
+              serviceOptions.getRetrySettings(),
+              EXCEPTION_HANDLER,
+              serviceOptions.getClock());
       String cursor = result.x();
-      return new PageImpl<>(new DatasetPageFetcher(projectId, serviceOptions, cursor, optionsMap),
-          cursor, Iterables.transform(result.y(),
+      return new PageImpl<>(
+          new DatasetPageFetcher(projectId, serviceOptions, cursor, optionsMap),
+          cursor,
+          Iterables.transform(
+              result.y(),
               new Function<com.google.api.services.bigquery.model.Dataset, Dataset>() {
                 @Override
                 public Dataset apply(com.google.api.services.bigquery.model.Dataset dataset) {
@@ -391,11 +400,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   private static Page<Table> listTables(final DatasetId datasetId,
       final BigQueryOptions serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
-      BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>> result =
-          runWithRetries(new Callable<BigQueryRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.bigquery.model.Table>>>() {
             @Override
-            public BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>>
+            public Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>>
                 call() {
                   return serviceOptions.getBigQueryRpcV2().listTables(
                       datasetId.getProject(), datasetId.getDataset(), optionsMap);
@@ -450,10 +459,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       final BigQueryOptions serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
       final TableId completeTableId = tableId.setProjectId(serviceOptions.getProjectId());
-      BigQueryRpc.Tuple<String, Iterable<TableRow>> result =
-          runWithRetries(new Callable<BigQueryRpc.Tuple<String, Iterable<TableRow>>>() {
+      Tuple<String, Iterable<TableRow>> result =
+          runWithRetries(new Callable<Tuple<String, Iterable<TableRow>>>() {
             @Override
-            public BigQueryRpc.Tuple<String, Iterable<TableRow>> call() {
+            public Tuple<String, Iterable<TableRow>> call() {
               return serviceOptions.getBigQueryRpcV2()
                   .listTableData(completeTableId.getProject(), completeTableId.getDataset(),
                       completeTableId.getTable(), optionsMap);
@@ -509,11 +518,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   private static Page<Job> listJobs(final BigQueryOptions serviceOptions,
       final Map<BigQueryRpc.Option, ?> optionsMap) {
-    BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Job>> result =
-        runWithRetries(new Callable<BigQueryRpc.Tuple<String,
+    Tuple<String, Iterable<com.google.api.services.bigquery.model.Job>> result =
+        runWithRetries(new Callable<Tuple<String,
             Iterable<com.google.api.services.bigquery.model.Job>>>() {
           @Override
-          public BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Job>>
+          public Tuple<String, Iterable<com.google.api.services.bigquery.model.Job>>
               call() {
             return serviceOptions.getBigQueryRpcV2().listJobs(serviceOptions.getProjectId(), optionsMap);
           }
