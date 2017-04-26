@@ -12,12 +12,12 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
 -  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
 
-Tese clients support the following Google Cloud Platform services at a [GA](#versioning) quality level:
+This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
 -  [Stackdriver Logging](#stackdriver-logging-ga) (GA)
 -  [Cloud Datastore](#google-cloud-datastore-ga) (GA)
 -  [Cloud Storage](#google-cloud-storage-ga) (GA)
 
-These clients support the following Google Cloud Platform services at a [Beta](#versioning) quality level:
+This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
 -  [BigQuery](#google-cloud-bigquery-beta) (Beta)
 -  [Cloud Spanner](#cloud-spanner-beta) (Beta)
@@ -25,7 +25,7 @@ These clients support the following Google Cloud Platform services at a [Beta](#
 -  [Cloud Natural Language](#google-cloud-language-beta) (Beta)
 -  [Cloud Vision](#google-cloud-vision-beta) (Beta)
 
-These clients support the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
+This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
 -  [Cloud Compute](#google-cloud-compute-alpha) (Alpha)
 -  [Cloud DNS](#google-cloud-dns-alpha) (Alpha)
