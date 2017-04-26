@@ -12,12 +12,12 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
 -  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
 
-This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
+Tese clients support the following Google Cloud Platform services at a [GA](#versioning) quality level:
 -  [Stackdriver Logging](#stackdriver-logging-ga) (GA)
 -  [Cloud Datastore](#google-cloud-datastore-ga) (GA)
 -  [Cloud Storage](#google-cloud-storage-ga) (GA)
 
-This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
+These clients support the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
 -  [BigQuery](#google-cloud-bigquery-beta) (Beta)
 -  [Cloud Spanner](#cloud-spanner-beta) (Beta)
@@ -25,7 +25,7 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Cloud Natural Language](#google-cloud-language-beta) (Beta)
 -  [Cloud Vision](#google-cloud-vision-beta) (Beta)
 
-This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
+These clients support the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
 -  [Cloud Compute](#google-cloud-compute-alpha) (Alpha)
 -  [Cloud DNS](#google-cloud-dns-alpha) (Alpha)
@@ -858,7 +858,7 @@ subject to backwards incompatible changes at any time.
 
 **GA**: Libraries defined at a GA quality level are expected to be stable and all updates in the
 libraries are guaranteed to be backwards-compatible. Any backwards-incompatible changes will lead
-to major version increment (1.x.y -> 2.0.0).
+to the major version increment (1.x.y -> 2.0.0).
 
 we're working towards their release candidate. We will address issues and requests with
 a higher priority.
