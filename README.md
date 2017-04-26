@@ -12,14 +12,18 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
 -  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
 
+This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
+-  [Stackdriver Logging](#stackdriver-logging-ga) (GA)
+-  [Cloud Datastore](#google-cloud-datastore-ga) (GA)
+-  [Cloud Storage](#google-cloud-storage-ga) (GA)
+
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
 -  [BigQuery](#google-cloud-bigquery-beta) (Beta)
--  [Stackdriver Logging](#stackdriver-logging-beta) (Beta - Not working on App Engine Standard)
--  [Cloud Datastore](#google-cloud-datastore-beta) (Beta)
--  [Cloud Storage](#google-cloud-storage-beta) (Beta)
 -  [Cloud Spanner](#cloud-spanner-beta) (Beta)
 -  [Cloud Translation](#google-translation-beta) (Beta)
+-  [Cloud Natural Language](#google-cloud-language-beta) (Beta)
+-  [Cloud Vision](#google-cloud-vision-beta) (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
@@ -27,12 +31,10 @@ This client supports the following Google Cloud Platform services at an [Alpha](
 -  [Cloud DNS](#google-cloud-dns-alpha) (Alpha)
 -  [Stackdriver Error Reporting](#stackdriver-error-reporting-alpha) (Alpha)
 -  [Stackdriver Monitoring](#stackdriver-monitoring-alpha) (Alpha)
--  [Cloud Natural Language](#google-cloud-language-alpha) (Alpha)
--  [Cloud Pub/Sub](#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
+-  [Cloud Pub/Sub](#google-cloud-pubsub-alpha) (Alpha)
 -  [Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
 -  [Cloud Speech](#google-cloud-speech-alpha) (Alpha)
 -  [Cloud Trace](#google-cloud-trace-alpha) (Alpha)
--  [Cloud Vision](#google-cloud-vision-alpha) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -183,51 +185,7 @@ Credentials in the following locations (in order):
 4. Google Cloud Shell built-in credentials
 5. Google Compute Engine built-in credentials
 
-Google Cloud BigQuery (Beta)
-----------------------
-
-- [API Documentation][bigquery-api]
-- [Official Documentation][cloud-bigquery-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example from within Compute/App Engine. Note that you
-must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-Complete source code can be found at
-[CreateTableAndLoadData.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
-
-```java
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
-import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FormatOptions;
-import com.google.cloud.bigquery.Job;
-import com.google.cloud.bigquery.Schema;
-import com.google.cloud.bigquery.StandardTableDefinition;
-import com.google.cloud.bigquery.Table;
-import com.google.cloud.bigquery.TableId;
-import com.google.cloud.bigquery.TableInfo;
-
-BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-TableId tableId = TableId.of("dataset", "table");
-Table table = bigquery.getTable(tableId);
-if (table == null) {
-  System.out.println("Creating table " + tableId);
-  Field integerField = Field.of("fieldName", Field.Type.integer());
-  Schema schema = Schema.of(integerField);
-  table = bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
-}
-System.out.println("Loading data into table " + tableId);
-Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
-loadJob = loadJob.waitFor();
-if (loadJob.getStatus().getError() != null) {
-  System.out.println("Job completed with errors");
-} else {
-  System.out.println("Job succeeded");
-}
-```
-
-Stackdriver Logging (Beta)
+Stackdriver Logging (GA)
 ----------------------
 - [API Documentation][logging-api]
 - [Official Documentation][stackdriver-logging-docs]
@@ -296,7 +254,7 @@ LoggingHandler.addHandler(logger, new LoggingHandler());
 logger.warning("test warning");
 ```
 
-Google Cloud Datastore (Beta)
+Google Cloud Datastore (GA)
 ----------------------
 
 - [API Documentation][datastore-api]
@@ -353,7 +311,7 @@ if (entity != null) {
 }
 ```
 
-Google Cloud Storage (Beta)
+Google Cloud Storage (GA)
 ----------------------
 
 - [API Documentation][storage-api]
@@ -407,6 +365,51 @@ if (blob != null) {
   channel.close();
 }
 ```
+
+Google Cloud BigQuery (Beta)
+----------------------
+
+- [API Documentation][bigquery-api]
+- [Official Documentation][cloud-bigquery-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example from within Compute/App Engine. Note that you
+must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+Complete source code can be found at
+[CreateTableAndLoadData.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
+
+```java
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FormatOptions;
+import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardTableDefinition;
+import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.TableInfo;
+
+BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+TableId tableId = TableId.of("dataset", "table");
+Table table = bigquery.getTable(tableId);
+if (table == null) {
+  System.out.println("Creating table " + tableId);
+  Field integerField = Field.of("fieldName", Field.Type.integer());
+  Schema schema = Schema.of(integerField);
+  table = bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
+}
+System.out.println("Loading data into table " + tableId);
+Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
+loadJob = loadJob.waitFor();
+if (loadJob.getStatus().getError() != null) {
+  System.out.println("Job completed with errors");
+} else {
+  System.out.println("Job succeeded");
+}
+```
+
 Cloud Spanner (Beta)
 --------------------
 
@@ -445,6 +448,40 @@ try {
     // Closes the client which will free up the resources used
     spanner.closeAsync().get();
 }
+```
+
+Google Cloud Language (Beta)
+----------------------
+- [API Documentation][language-api]
+- [Official Documentation][cloud-language-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of LanguageServiceClient. The example assumes that either default application
+credentials or a valid api key are available. (See [Authentication section](#authentication) for more information)
+```java
+ try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   Document document = Document.newBuilder().build();
+   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
+ }
+```
+
+Google Cloud Vision (Beta)
+----------------
+
+- [API Documentation][vision-api]
+- [Official Documentation][cloud-vision-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of ImageAnnotatorClient.
+The example assumes that either default application credentials or a valid api key
+are available. (See [Authentication section](#authentication) for more information)
+```java
+ try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   List<AnnotateImageRequest> requests = new ArrayList<>();
+   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
+ }
 ```
 
 Google Cloud Compute (Alpha)
@@ -590,22 +627,6 @@ Note that you must [supply credentials](#authentication) and a project ID if run
  try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
    GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
    ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
- }
-```
-
-Google Cloud Language (Alpha)
-----------------------
-- [API Documentation][language-api]
-- [Official Documentation][cloud-language-docs]
-
-### Preview
-
-Here is a code snippet showing a simple usage example of LanguageServiceClient. The example assumes that either default application
-credentials or a valid api key are available. (See [Authentication section](#authentication) for more information)
-```java
- try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
-   Document document = Document.newBuilder().build();
-   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
  }
 ```
 
@@ -784,24 +805,6 @@ Note that you must [supply credentials](#authentication) and a project ID if run
  }
 ```
 
-Google Cloud Vision (Alpha)
-----------------
-
-- [API Documentation][vision-api]
-- [Official Documentation][cloud-vision-docs]
-
-### Preview
-
-Here is a code snippet showing a simple usage example of ImageAnnotatorClient.
-The example assumes that either default application credentials or a valid api key
-are available. (See [Authentication section](#authentication) for more information)
-```java
- try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-   List<AnnotateImageRequest> requests = new ArrayList<>();
-   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
- }
-```
-
 Troubleshooting
 ---------------
 
@@ -852,6 +855,10 @@ additional qualifications:
 
 Please note it is currently under active development. Any release versioned 0.x.y is
 subject to backwards incompatible changes at any time.
+
+**GA**: Libraries defined at a GA quality level are expected to be stable and all updates in the
+libraries are guaranteed to be backwards-compatible. Any backwards-incompatible changes will lead
+to the major version increment (1.x.y -> 2.0.0).
 
 **Beta**: Libraries defined at a Beta quality level are expected to be mostly stable and
 we're working towards their release candidate. We will address issues and requests with
