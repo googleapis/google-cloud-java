@@ -829,7 +829,26 @@ See [TESTING] to read more about using our testing helpers.
 Versioning
 ----------
 
-This library follows [Semantic Versioning](http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/), but with some
+additional qualifications:
+
+1. Components marked with `@BetaApi` are considered to be "0.x" features inside
+   a "1.x" library. This means they can change between minor and patch releases
+   in incompatible ways. These features should not be used by any library "B"
+   that itself has consumers, unless the components of library B that use
+   `@BetaApi` features are also marked with `@BetaApi`. Features marked as
+   `@BetaApi` are on a path to eventually become "1.x" features with the marker
+   removed.
+
+   **Special exception for google-cloud-java**: google-cloud-java is
+   allowed to depend on `@BetaApi` features in gax-java without declaring the consuming
+   code `@BetaApi`, because gax-java and google-cloud-java move in step
+   with each other. For this reason, gax-java should not be used
+   independently of google-cloud-java.
+
+1. Components marked with `@InternalApi` are technically public, but are only
+   public for technical reasons, because of the limitations of Java's access
+   modifiers. For the purposes of semver, they should be considered private.
 
 Please note it is currently under active development. Any release versioned 0.x.y is
 subject to backwards incompatible changes at any time.
