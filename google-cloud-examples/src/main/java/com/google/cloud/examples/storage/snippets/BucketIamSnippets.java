@@ -49,9 +49,9 @@ public class BucketIamSnippets {
    */
 
   public Policy listBucketIamMembers(String bucketName) {
-		// [START view_bucket_iam_members]
-		// Initialize a Cloud Storage client
-		Storage storage = StorageOptions.getDefaultInstance().getService();
+    // [START view_bucket_iam_members]
+    // Initialize a Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
 
     // Get IAM Policy for a bucket
     Policy policy = storage.getIamPolicy(bucketName);
@@ -71,7 +71,7 @@ public class BucketIamSnippets {
    */
 
   public void addBucketIamMember(String bucketName, Role role, Identity identity) {
-		// [START add_bucket_iam_member]
+    // [START add_bucket_iam_member]
     // Initialize a Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
@@ -85,7 +85,7 @@ public class BucketIamSnippets {
     storage.setIamPolicy(bucketName, updatedPolicy);
 
     System.out.printf("Added %s with role %s to %s\n", identity, role, bucketName);
-		// [END add_bucket_iam_member]
+    // [END add_bucket_iam_member]
   }
 
   /**
@@ -93,7 +93,7 @@ public class BucketIamSnippets {
    */
 
   public void removeBucketIamMember(String bucketName, Role role, Identity identity) {
-		// [START remove_bucket_iam_member]
+    // [START remove_bucket_iam_member]
     // Initialize a Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
@@ -107,6 +107,6 @@ public class BucketIamSnippets {
     storage.setIamPolicy(bucketName, updatedPolicy);
 
     System.out.printf("Removed %s with role %s from %s\n", identity, role, bucketName);
-		// [END remove_bucket_iam_member]
+    // [END remove_bucket_iam_member]
   }
 }

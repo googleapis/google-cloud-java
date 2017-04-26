@@ -146,11 +146,11 @@ public class ITBucketSnippets {
     Policy policy = storage.getIamPolicy(BUCKET);
     storage.setIamPolicy(BUCKET, policy.toBuilder().removeRole(StorageRoles.admin()).build());
     policy = storage.getIamPolicy(BUCKET);
-		assertNull(policy.getBindings().get(StorageRoles.admin()));
+    assertNull(policy.getBindings().get(StorageRoles.admin()));
     storage.setIamPolicy(BUCKET, policy.toBuilder().addIdentity(StorageRoles.admin(),
             Identity.user(USER_EMAIL)).build());
     policy = storage.getIamPolicy(BUCKET);
-		assertTrue(policy.getBindings().get(StorageRoles.admin()).contains(Identity.user(USER_EMAIL)));
+    assertTrue(policy.getBindings().get(StorageRoles.admin()).contains(Identity.user(USER_EMAIL)));
     Policy snippetPolicy = bucketIamSnippets.listBucketIamMembers(BUCKET);
     assertTrue(snippetPolicy.getBindings().get(StorageRoles.admin()).
         contains(Identity.user(USER_EMAIL))); 
@@ -165,7 +165,7 @@ public class ITBucketSnippets {
     assertNull(policy.getBindings().get(StorageRoles.admin()));
     bucketIamSnippets.addBucketIamMember(BUCKET, StorageRoles.admin(), Identity.user(USER_EMAIL));
     policy = storage.getIamPolicy(BUCKET);
-    assertTrue(policy.getBindings().get(StorageRoles.admin()).contains(Identity.user(USER_EMAIL)));	
+    assertTrue(policy.getBindings().get(StorageRoles.admin()).contains(Identity.user(USER_EMAIL)));
   }
 
   @Test
@@ -176,13 +176,13 @@ public class ITBucketSnippets {
     policy = storage.getIamPolicy(BUCKET);
     assertNull(policy.getBindings().get(StorageRoles.admin()));
     policy = policy.toBuilder().addIdentity(StorageRoles.admin(),
-				Identity.user(USER_EMAIL)).build();
+        Identity.user(USER_EMAIL)).build();
     storage.setIamPolicy(BUCKET, policy);
     policy = storage.getIamPolicy(BUCKET);
     assertTrue(policy.getBindings().get(StorageRoles.admin()).contains(Identity.user(USER_EMAIL)));
     bucketIamSnippets.removeBucketIamMember(BUCKET, StorageRoles.admin(),
         Identity.user(USER_EMAIL));
     policy = storage.getIamPolicy(BUCKET);
-    assertNull(policy.getBindings().get(StorageRoles.admin()));	
+    assertNull(policy.getBindings().get(StorageRoles.admin()));
   }
 }
