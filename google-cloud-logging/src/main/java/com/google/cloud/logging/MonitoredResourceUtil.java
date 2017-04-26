@@ -19,8 +19,10 @@ package com.google.cloud.logging;
 import com.google.cloud.MetadataConfig;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.logging.LogEntry.Builder;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -79,16 +81,14 @@ public class MonitoredResourceUtil {
         new ImmutableMap.Builder<String, Label[]>()
             .put(
                 Resource.GaeAppFlex.getKey(),
-                new Label[] {
-                  Label.InstanceName,
-                  Label.ModuleId,
-                  Label.VersionId,
-                  Label.InstanceId,
-                  Label.Zone
+                new Label[]{
+                    Label.ModuleId,
+                    Label.VersionId,
+                    Label.Zone
                 })
             .put(
                 Resource.GaeAppStandard.getKey(),
-                new Label[] {Label.AppId, Label.ModuleId, Label.VersionId})
+                new Label[] {Label.ModuleId, Label.VersionId})
             .put(Resource.Container.getKey(), new Label[] {Label.ClusterName, Label.Zone})
             .put(Resource.GceInstance.getKey(), new Label[] {Label.InstanceId, Label.Zone})
             .build();
@@ -193,12 +193,15 @@ public class MonitoredResourceUtil {
   }
 
   private static List<LoggingEnhancer> getEnhancers(Resource resourceType) {
-    List<LoggingEnhancer> enhancers;
+    List<LoggingEnhancer> enhancers = new ArrayList<>();
     switch (resourceType) {
       // Trace logging enhancer is supported on GAE Flex and Standard.
-      case GaeAppStandard:
       case GaeAppFlex:
         enhancers = new ArrayList<>();
+        enhancers.add(new LabelLoggingEnhancer(Collections.singletonList(Label.InstanceName)));
+        enhancers.add(new TraceLoggingEnhancer());
+        break;
+      case GaeAppStandard:
         enhancers.add(new TraceLoggingEnhancer());
         break;
       default:
@@ -206,5 +209,29 @@ public class MonitoredResourceUtil {
         break;
     }
     return enhancers;
+  }
+
+  /**
+   *  Adds additional resource-based labels to log entries.
+   *  Labels that can be provided with {@link MonitoredResource.Builder#addLabel(String, String)}
+   *  are restricted to a supported set per resource.
+   *  @see <a href="https://cloud.google.com/logging/docs/api/v2/resource-list">Logging Labels</a>
+   */
+  static class LabelLoggingEnhancer implements LoggingEnhancer {
+    List<Label> labels;
+
+    LabelLoggingEnhancer(List<Label> labels) {
+      this.labels = labels;
+    }
+
+    @Override
+    public void enhanceLogEntry(Builder logEntry) {
+      for (Label label : labels) {
+        String labelValue = MonitoredResourceUtil.getValue(label);
+        if (labelValue != null) {
+          logEntry.addLabel(label.getKey(), labelValue);
+        }
+      }
+    }
   }
 }
