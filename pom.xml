@@ -139,7 +139,7 @@
     <http-client.version>1.21.0</http-client.version>
     <protobuf.version>3.2.0</protobuf.version>
 
-    <cloud.version>0.17.1-alpha-SNAPSHOT</cloud.version>
+    <cloud.version>0.17.1-alpha</cloud.version>
     <bigquery.version>0.17.1-beta</bigquery.version>
     <compute.version>0.17.1-alpha</compute.version>
     <contrib.version>0.17.1-alpha</contrib.version>
