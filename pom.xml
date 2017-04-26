@@ -515,7 +515,6 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-iam-v1</artifactId>
         <version>${generatedProto.version}</version>
-        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.google.auto.value</groupId>
