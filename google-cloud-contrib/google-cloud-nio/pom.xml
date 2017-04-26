@@ -21,7 +21,6 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>${storage.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>

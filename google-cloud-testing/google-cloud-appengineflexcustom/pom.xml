@@ -22,7 +22,6 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-managedtest</artifactId>
-      <version>${project.version}</version>
     </dependency>
   </dependencies>
 
