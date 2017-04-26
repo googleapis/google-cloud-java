@@ -103,22 +103,34 @@
     </profile>
   </profiles>
   <build>
+    <resources>
+      <resource>
+        <directory>./..</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>project.properties</include>
+        </includes>
+      </resource>
+    </resources>
     <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>properties-maven-plugin</artifactId>
-        <version>1.0-alpha-2</version>
-        <executions>
+       <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+         <version>1.4</version>
+         <executions>
           <execution>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>write-project-properties</goal>
-            </goals>
+            <phase>process-resources</phase>
             <configuration>
-              <outputFile>${project.build.outputDirectory}/com/google/cloud/speech/project.properties</outputFile>
+               <tasks>
+                 <copy file="${project.build.outputDirectory}/project.properties"
+                   toFile="${project.build.outputDirectory}/com/google/cloud/speech/project.properties"
+                   overwrite="true" />
+              </tasks>
             </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
           </execution>
-         </executions>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
