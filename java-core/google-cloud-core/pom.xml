@@ -52,7 +52,6 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <version>${gax.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>

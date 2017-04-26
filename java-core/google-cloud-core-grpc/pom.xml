@@ -22,7 +22,6 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${core.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -50,7 +49,6 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
-      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
