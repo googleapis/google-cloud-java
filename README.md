@@ -860,9 +860,6 @@ subject to backwards incompatible changes at any time.
 libraries are guaranteed to be backwards-compatible. Any backwards-incompatible changes will lead
 to the major version increment (1.x.y -> 2.0.0).
 
-we're working towards their release candidate. We will address issues and requests with
-a higher priority.
-
 **Beta**: Libraries defined at a Beta quality level are expected to be mostly stable and
 we're working towards their release candidate. We will address issues and requests with
 a higher priority.
