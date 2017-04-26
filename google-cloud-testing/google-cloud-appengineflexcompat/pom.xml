@@ -14,7 +14,6 @@
   </parent>
 
   <properties>
-    <appengine.sdk.version>1.9.51</appengine.sdk.version>
     <appengine.maven.plugin>1.2.1</appengine.maven.plugin>
     <jetty.maven.plugin>9.3.8.v20160314</jetty.maven.plugin>
     <java.source.version>1.7</java.source.version>
@@ -24,12 +23,10 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-managedtest</artifactId>
-      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-api-1.0-sdk</artifactId>
-      <version>${appengine.sdk.version}</version>
     </dependency>
   </dependencies>
 

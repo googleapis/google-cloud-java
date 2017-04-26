@@ -22,7 +22,6 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${core.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.auth</groupId>

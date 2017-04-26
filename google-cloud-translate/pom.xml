@@ -22,12 +22,10 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${core.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core-http</artifactId>
-      <version>${core-http.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.apis</groupId>
@@ -48,7 +46,6 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${core.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
