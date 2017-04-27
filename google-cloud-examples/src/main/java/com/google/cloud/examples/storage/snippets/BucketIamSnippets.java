@@ -14,12 +14,6 @@
  * limitations under the License.
  */
 
-/*
- * EDITING INSTRUCTIONS
- * This file is referenced in Storage's javadoc. Any change to this file should be reflected in
- * Storage's javadoc.
- */
-
 package com.google.cloud.examples.storage.snippets;
 
 import com.google.cloud.Identity;
@@ -47,7 +41,6 @@ public class BucketIamSnippets {
   /**
    * Example of listing the Bucket-Level IAM Roles and Members
    */
-
   public Policy listBucketIamMembers(String bucketName) {
     // [START view_bucket_iam_members]
     // Initialize a Cloud Storage client
@@ -59,8 +52,7 @@ public class BucketIamSnippets {
     // Print Roles and its identities
     Map<Role, Set<Identity>> policyBindings = policy.getBindings();
     for(Map.Entry<Role, Set<Identity>> entry : policyBindings.entrySet()) {
-        System.out.printf("Role: %s", entry.getKey());
-        System.out.printf(" Identities: %s\n", entry.getValue());
+        System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
     }
     // [END view_bucket_iam_members]
     return policy;
@@ -69,7 +61,6 @@ public class BucketIamSnippets {
   /**
    * Example of adding a member to the Bucket-level IAM
    */
-
   public void addBucketIamMember(String bucketName, Role role, Identity identity) {
     // [START add_bucket_iam_member]
     // Initialize a Cloud Storage client
@@ -79,19 +70,18 @@ public class BucketIamSnippets {
     Policy policy = storage.getIamPolicy(bucketName);
 
     // Add identity to Bucket-level IAM role
-    Policy updatedPolicy = policy.toBuilder().addIdentity(role, identity).build();
+    Policy updatedPolicy = storage.setIamPolicy(bucketName,
+        policy.toBuilder().addIdentity(role, identity).build());
 
-    // Update the bucket IAM Policy
-    storage.setIamPolicy(bucketName, updatedPolicy);
-
-    System.out.printf("Added %s with role %s to %s\n", identity, role, bucketName);
+    if (updatedPolicy.getBindings().get(role).contains(identity)) {
+      System.out.printf("Added %s with role %s to %s\n", identity, role, bucketName);
+    }
     // [END add_bucket_iam_member]
   }
 
   /**
    * Example of removing a member from the Bucket-level IAM
    */
-
   public void removeBucketIamMember(String bucketName, Role role, Identity identity) {
     // [START remove_bucket_iam_member]
     // Initialize a Cloud Storage client
@@ -100,13 +90,14 @@ public class BucketIamSnippets {
     // Get IAM Policy for a bucket
     Policy policy = storage.getIamPolicy(bucketName);
 
-    // Remove identity from Bucket-level IAM role
-    Policy updatedPolicy = policy.toBuilder().removeIdentity(role, identity).build();
+    // Remove an identity from a Bucket-level IAM role
+    Policy updatedPolicy = storage.setIamPolicy(bucketName,
+        policy.toBuilder().removeIdentity(role, identity).build());
 
-    // Update the bucket IAM Policy
-    storage.setIamPolicy(bucketName, updatedPolicy);
-
-    System.out.printf("Removed %s with role %s from %s\n", identity, role, bucketName);
+    if (updatedPolicy.getBindings().get(role) == null ||
+        !updatedPolicy.getBindings().get(role).contains(identity)) {
+      System.out.printf("Removed %s with role %s from %s\n", identity, role, bucketName);
+    }
     // [END remove_bucket_iam_member]
   }
 }
