@@ -30,9 +30,6 @@ import java.util.Set;
  */
 public class BucketIamSnippets {
 
-  public BucketIamSnippets() {
-  }
-
   /**
    * Example of listing the Bucket-Level IAM Roles and Members
    */
