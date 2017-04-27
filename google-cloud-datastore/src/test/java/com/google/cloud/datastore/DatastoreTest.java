@@ -48,7 +48,7 @@ import com.google.datastore.v1.RunQueryResponse;
 import com.google.protobuf.ByteString;
 
 import org.easymock.EasyMock;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -154,7 +154,7 @@ public class DatastoreTest {
 
   @AfterClass
   public static void afterClass() throws IOException, InterruptedException, TimeoutException {
-    helper.stop(Duration.standardMinutes(1));
+    helper.stop(Duration.ofMinutes(1));
   }
 
   @Test

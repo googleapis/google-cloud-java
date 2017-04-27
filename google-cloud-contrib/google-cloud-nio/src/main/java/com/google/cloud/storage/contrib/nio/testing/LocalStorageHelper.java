@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.storage.contrib.nio;
+package com.google.cloud.storage.contrib.nio.testing;
 
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.cloud.storage.spi.v1.StorageRpc;
@@ -24,10 +24,12 @@ import com.google.cloud.storage.StorageOptions;
  * Utility to create an in-memory storage configuration for testing. Storage options can be
  * obtained via the {@link #getOptions()} method. Returned options will point to FakeStorageRpc.
  */
-class LocalStorageHelper {
+public final class LocalStorageHelper {
 
   // used for testing. Will throw if you pass it an option.
   private static final FakeStorageRpc instance = new FakeStorageRpc(true);
+
+  private LocalStorageHelper() {}
 
   /**
    * Returns a {@link StorageOptions} that use the static FakeStorageRpc instance, and resets it

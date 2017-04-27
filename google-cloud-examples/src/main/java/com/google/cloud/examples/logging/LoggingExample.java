@@ -19,6 +19,7 @@ package com.google.cloud.examples.logging;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
+import com.google.cloud.Tuple;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.EntryListOption;
@@ -35,7 +36,6 @@ import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 import com.google.cloud.logging.SinkInfo.Destination.TopicDestination;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -85,29 +85,6 @@ public class LoggingExample {
 
     protected String params() {
       return "";
-    }
-  }
-
-  private static class Tuple<X, Y> {
-
-    private final X x;
-    private final Y y;
-
-    private Tuple(X x, Y y) {
-      this.x = x;
-      this.y = y;
-    }
-
-    public static <X, Y> Tuple<X, Y> of(X x, Y y) {
-      return new Tuple<>(x, y);
-    }
-
-    X x() {
-      return x;
-    }
-
-    Y y() {
-      return y;
     }
   }
 

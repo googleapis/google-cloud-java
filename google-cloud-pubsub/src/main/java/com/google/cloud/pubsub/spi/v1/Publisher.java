@@ -53,7 +53,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
@@ -279,7 +279,7 @@ public class Publisher {
 
   private void setupDurationBasedPublishAlarm() {
     if (!activeAlarm.getAndSet(true)) {
-      long delayThresholdMs = getBatchingSettings().getDelayThreshold().getMillis();
+      long delayThresholdMs = getBatchingSettings().getDelayThreshold().toMillis();
       logger.log(Level.FINER, "Setting up alarm for the next {0} ms.", delayThresholdMs);
       currentAlarmFuture =
           executor.schedule(
@@ -323,9 +323,9 @@ public class Publisher {
 
     long rpcTimeoutMs =
         Math.round(
-            retrySettings.getInitialRpcTimeout().getMillis()
+            retrySettings.getInitialRpcTimeout().toMillis()
                 * Math.pow(retrySettings.getRpcTimeoutMultiplier(), outstandingBatch.attempt - 1));
-    rpcTimeoutMs = Math.min(rpcTimeoutMs, retrySettings.getMaxRpcTimeout().getMillis());
+    rpcTimeoutMs = Math.min(rpcTimeoutMs, retrySettings.getMaxRpcTimeout().toMillis());
 
     Futures.addCallback(
         PublisherGrpc.newFutureStub(channels[currentChannel])
@@ -369,7 +369,7 @@ public class Publisher {
             if (!isRetryable(t)
                 || System.currentTimeMillis() + nextBackoffDelay
                     > outstandingBatch.creationTime
-                        + retrySettings.getTotalTimeout().getMillis()) {
+                        + retrySettings.getTotalTimeout().toMillis()) {
               try {
                 for (OutstandingPublish outstandingPublish :
                     outstandingBatch.outstandingPublishes) {
@@ -474,9 +474,9 @@ public class Publisher {
       OutstandingBatch outstandingBatch, RetrySettings retrySettings, LongRandom longRandom) {
     long delayMillis =
         Math.round(
-            retrySettings.getInitialRetryDelay().getMillis()
+            retrySettings.getInitialRetryDelay().toMillis()
                 * Math.pow(retrySettings.getRetryDelayMultiplier(), outstandingBatch.attempt - 1));
-    delayMillis = Math.min(retrySettings.getMaxRetryDelay().getMillis(), delayMillis);
+    delayMillis = Math.min(retrySettings.getMaxRetryDelay().toMillis(), delayMillis);
     outstandingBatch.attempt++;
     return longRandom.nextLong(0, delayMillis);
   }
@@ -525,14 +525,14 @@ public class Publisher {
 
   /** A builder of {@link Publisher}s. */
   public static final class Builder {
-    static final Duration MIN_TOTAL_TIMEOUT = new Duration(10 * 1000); // 10 seconds
-    static final Duration MIN_RPC_TIMEOUT = new Duration(10); // 10 milliseconds
+    static final Duration MIN_TOTAL_TIMEOUT = Duration.ofSeconds(10);
+    static final Duration MIN_RPC_TIMEOUT = Duration.ofMillis(10);
 
     // Meaningful defaults.
     static final long DEFAULT_ELEMENT_COUNT_THRESHOLD = 100L;
     static final long DEFAULT_REQUEST_BYTES_THRESHOLD = 1000L; // 1 kB
-    static final Duration DEFAULT_DELAY_THRESHOLD = new Duration(1); // 1ms
-    static final Duration DEFAULT_RPC_TIMEOUT = new Duration(10 * 1000); // 10 seconds
+    static final Duration DEFAULT_DELAY_THRESHOLD = Duration.ofMillis(1);
+    static final Duration DEFAULT_RPC_TIMEOUT = Duration.ofSeconds(10);
     static final Duration DEFAULT_TOTAL_TIMEOUT = MIN_TOTAL_TIMEOUT;
     static final BatchingSettings DEFAULT_BATCHING_SETTINGS =
         BatchingSettings.newBuilder()
@@ -543,9 +543,9 @@ public class Publisher {
     static final RetrySettings DEFAULT_RETRY_SETTINGS =
         RetrySettings.newBuilder()
             .setTotalTimeout(DEFAULT_TOTAL_TIMEOUT)
-            .setInitialRetryDelay(Duration.millis(5))
+            .setInitialRetryDelay(Duration.ofMillis(5))
             .setRetryDelayMultiplier(2)
-            .setMaxRetryDelay(Duration.millis(Long.MAX_VALUE))
+            .setMaxRetryDelay(Duration.ofMillis(Long.MAX_VALUE))
             .setInitialRpcTimeout(DEFAULT_RPC_TIMEOUT)
             .setRpcTimeoutMultiplier(2)
             .setMaxRpcTimeout(DEFAULT_RPC_TIMEOUT)
@@ -603,7 +603,7 @@ public class Publisher {
       Preconditions.checkNotNull(batchingSettings.getRequestByteThreshold());
       Preconditions.checkArgument(batchingSettings.getRequestByteThreshold() > 0);
       Preconditions.checkNotNull(batchingSettings.getDelayThreshold());
-      Preconditions.checkArgument(batchingSettings.getDelayThreshold().getMillis() > 0);
+      Preconditions.checkArgument(batchingSettings.getDelayThreshold().toMillis() > 0);
       this.batchingSettings = batchingSettings;
       return this;
     }

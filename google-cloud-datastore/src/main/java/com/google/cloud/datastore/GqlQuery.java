@@ -196,91 +196,199 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
+    /**
+     * Sets a new named binding.
+     *
+     * @param name name of the binding
+     * @param cursor a {@link Cursor} object that binds to a given name
+     */
     public Builder<V> setBinding(String name, Cursor cursor) {
       namedBindings.put(name, new Binding(cursor));
       return this;
     }
 
+    /**
+     * Sets a new named binding.
+     *
+     * @param name name of the binding
+     * @param value a String object or a list of String objects that binds to a
+     *     given name
+     */
     public Builder<V> setBinding(String name, String... value) {
       namedBindings.put(name, toBinding(StringValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new named binding.
+     *
+     * @param name name of the binding
+     * @param value a long value or a list of long values that binds to a given name
+     */
     public Builder<V> setBinding(String name, long... value) {
       namedBindings.put(name, toBinding(LongValue.MARSHALLER, Longs.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new named binding.
+     *
+     * @param name name of the binding
+     * @param value a double value or a list of double values that binds to a given name
+     */
     public Builder<V> setBinding(String name, double... value) {
       namedBindings.put(name, toBinding(DoubleValue.MARSHALLER, Doubles.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new named binding.
+     *
+     * @param name name of the binding
+     * @param value a boolean value or a list of boolean values that binds to a given name
+     */
     public Builder<V> setBinding(String name, boolean... value) {
       namedBindings.put(name, toBinding(BooleanValue.MARSHALLER, Booleans.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new named binding.
+     *
+     * @param name name of the binding
+     * @param value a {@link Timestamp} object or a list of {@link Timestamp} objects that binds to
+     *     a given name
+     */
     public Builder<V> setBinding(String name, Timestamp... value) {
       namedBindings.put(name, toBinding(TimestampValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new named binding.
+     *
+     * @param name name of the binding
+     * @param value a {@link Key} object or a list of {@link Key} objects that binds to a given name
+     */
     public Builder<V> setBinding(String name, Key... value) {
       namedBindings.put(name, toBinding(KeyValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new named binding.
+     *
+     * @param name name of the binding
+     * @param value a {@link FullEntity} object or a list of {@link FullEntity} objects that binds
+     *     to a given name
+     */
     public Builder<V> setBinding(String name, FullEntity<?>... value) {
       namedBindings.put(name, toBinding(EntityValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new named binding.
+     *
+     * @param name name of the binding
+     * @param value a {@link Blob} object or list of {@link Blob} objects that binds to a given name
+     */
     public Builder<V> setBinding(String name, Blob... value) {
       namedBindings.put(name, toBinding(BlobValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new positional binding.
+     *
+     * @param cursor a {@link Cursor} object to be set as a new positional binding
+     */
     public Builder<V> addBinding(Cursor cursor) {
       positionalBindings.add(new Binding(cursor));
       return this;
     }
 
+    /**
+     * Sets a new positional binding.
+     *
+     * @param value a String object or a list of String objects to be set as a new
+     *     positional binding
+     */
     public Builder<V> addBinding(String... value) {
       positionalBindings.add(toBinding(StringValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new positional binding.
+     *
+     * @param value a long value or a list of long values to be set as a new positional binding
+     */
     public Builder<V> addBinding(long... value) {
       positionalBindings.add(toBinding(LongValue.MARSHALLER, Longs.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new positional binding.
+     *
+     * @param value a double value or a list of double values to be set as a new positional binding
+     */
     public Builder<V> addBinding(double... value) {
       positionalBindings.add(toBinding(DoubleValue.MARSHALLER, Doubles.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new positional binding.
+     *
+     * @param value a boolean value or a list of boolean values to be set as a new positional
+     *     binding
+     */
     public Builder<V> addBinding(boolean... value) {
       positionalBindings.add(toBinding(BooleanValue.MARSHALLER, Booleans.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new positional binding.
+     *
+     * @param value a {@link Timestamp} object or a list of {@link Timestamp} objects to be set as a
+     *     new positional binding
+     */
     public Builder<V> addBinding(Timestamp... value) {
       positionalBindings.add(toBinding(TimestampValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new positional binding.
+     *
+     * @param value a {@link Key} object or a list of {@link Key} objects to be set as a new
+     *     positional binding
+     */
     public Builder<V> addBinding(Key... value) {
       positionalBindings.add(toBinding(KeyValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new positional binding.
+     *
+     * @param value a {@link FullEntity} object or a list of {@link FullEntity} objects to be set as
+     *     a new positional binding
+     */
     public Builder<V> addBinding(FullEntity<?>... value) {
       positionalBindings.add(toBinding(EntityValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
+    /**
+     * Sets a new positional binding.
+     *
+     * @param value a {@link Blob} object or a list of {@link Blob} objects to be set as a new
+     *     positional binding
+     */
     public Builder<V> addBinding(Blob... value) {
       positionalBindings.add(toBinding(BlobValue.MARSHALLER, Arrays.asList(value)));
       return this;

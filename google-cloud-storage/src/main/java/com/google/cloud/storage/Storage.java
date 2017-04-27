@@ -19,6 +19,7 @@ package com.google.cloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
@@ -28,10 +29,10 @@ import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.Service;
+import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.v1.StorageRpc;
-import com.google.cloud.storage.spi.v1.StorageRpc.Tuple;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -2382,6 +2383,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
+  @BetaApi
   @GcpLaunchStage.Alpha
   Policy getIamPolicy(String bucket);
 
@@ -2403,6 +2405,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
+  @BetaApi
   @GcpLaunchStage.Alpha
   Policy setIamPolicy(String bucket, Policy policy);
 
@@ -2424,6 +2427,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
+  @BetaApi
   @GcpLaunchStage.Alpha
   List<Boolean> testIamPermissions(String bucket, List<String> permissions);
 }

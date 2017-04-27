@@ -47,10 +47,10 @@ import java.util.ServiceLoader;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.joda.time.Duration;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+import org.threeten.bp.Duration;
 
 /**
  * Abstract class representing service options.
@@ -112,8 +112,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     private ApiClock clock;
     private TransportOptions transportOptions;
 
+    @InternalApi("This class should only be extended within google-cloud-java")
     protected Builder() {}
 
+    @InternalApi("This class should only be extended within google-cloud-java")
     protected Builder(ServiceOptions<ServiceT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
@@ -226,6 +228,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     }
   }
 
+  @InternalApi("This class should only be extended within google-cloud-java")
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<OptionsT>> rpcFactoryClass,
       Builder<ServiceT, OptionsT, ?> builder,
@@ -575,13 +578,13 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private static RetrySettings.Builder getDefaultRetrySettingsBuilder() {
     return RetrySettings.newBuilder()
         .setMaxAttempts(6)
-        .setInitialRetryDelay(Duration.millis(1000L))
-        .setMaxRetryDelay(Duration.millis(32_000L))
+        .setInitialRetryDelay(Duration.ofMillis(1000L))
+        .setMaxRetryDelay(Duration.ofMillis(32_000L))
         .setRetryDelayMultiplier(2.0)
-        .setTotalTimeout(Duration.millis(50_000L))
-        .setInitialRpcTimeout(Duration.millis(50_000L))
+        .setTotalTimeout(Duration.ofMillis(50_000L))
+        .setInitialRpcTimeout(Duration.ofMillis(50_000L))
         .setRpcTimeoutMultiplier(1.0)
-        .setMaxRpcTimeout(Duration.millis(50_000L));
+        .setMaxRpcTimeout(Duration.ofMillis(50_000L));
   }
 
   protected abstract Set<String> getScopes();

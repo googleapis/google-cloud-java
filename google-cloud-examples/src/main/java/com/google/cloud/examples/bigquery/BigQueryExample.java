@@ -16,6 +16,7 @@
 
 package com.google.cloud.examples.bigquery;
 
+import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryError;
@@ -42,9 +43,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.ViewDefinition;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
-import com.google.cloud.bigquery.spi.v2.BigQueryRpc.Tuple;
 import com.google.common.collect.ImmutableMap;
-
 import java.nio.channels.FileChannel;
 import java.nio.file.Paths;
 import java.util.Arrays;

@@ -47,9 +47,8 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
-import org.joda.time.Duration;
-import org.joda.time.Instant;
-import org.joda.time.Interval;
+import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
 
 /**
  * Dispatches messages to a message receiver while handling the messages acking and lease
@@ -59,7 +58,7 @@ class MessageDispatcher {
   private static final Logger logger = Logger.getLogger(MessageDispatcher.class.getName());
 
   private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECONDS = 2;
-  @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.millis(100);
+  @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
   private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
   private static final ScheduledExecutorService SHARED_ALARMS_EXECUTOR =
@@ -117,7 +116,7 @@ class MessageDispatcher {
     }
 
     void extendExpiration(Instant now) {
-      Instant possibleExtension = now.plus(Duration.standardSeconds(nextExtensionSeconds));
+      Instant possibleExtension = now.plus(Duration.ofSeconds(nextExtensionSeconds));
       Instant maxExtension = creation.plus(maxAckExtensionPeriod);
       expiration = possibleExtension.isBefore(maxExtension) ? possibleExtension : maxExtension;
       nextExtensionSeconds = Math.min(2 * nextExtensionSeconds, MAX_ACK_DEADLINE_EXTENSION_SECS);
@@ -185,7 +184,7 @@ class MessageDispatcher {
       this.ackId = ackId;
       this.outstandingBytes = outstandingBytes;
       acked = new AtomicBoolean(false);
-      receivedTime = new Instant(clock.millisTime());
+      receivedTime = Instant.ofEpochMilli(clock.millisTime());
     }
 
     @Override
@@ -213,9 +212,10 @@ class MessageDispatcher {
             pendingAcks.add(ackId);
           }
           // Record the latency rounded to the next closest integer.
+          long receivedTimeMillis = TimeUnit.NANOSECONDS.toMillis(receivedTime.getNano());
           ackLatencyDistribution.record(
               Ints.saturatedCast(
-                  (long) Math.ceil((clock.millisTime() - receivedTime.getMillis()) / 1000D)));
+                  (long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D)));
           break;
         case NACK:
           synchronized (pendingNacks) {
@@ -261,7 +261,7 @@ class MessageDispatcher {
     // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
     this.ackLatencyDistribution = ackLatencyDistribution;
     alarmsLock = new ReentrantLock();
-    nextAckDeadlineExtensionAlarmTime = new Instant(Long.MAX_VALUE);
+    nextAckDeadlineExtensionAlarmTime = Instant.ofEpochMilli(Long.MAX_VALUE);
     messagesWaiter = new MessageWaiter();
     this.clock = clock;
   }
@@ -340,11 +340,12 @@ class MessageDispatcher {
       outstandingBatch.addMessage(message, ackHandler);
     }
 
-    Instant expiration = new Instant(clock.millisTime()).plus(messageDeadlineSeconds * 1000);
+    Instant expiration = Instant.ofEpochMilli(clock.millisTime())
+        .plusSeconds(messageDeadlineSeconds);
     synchronized (outstandingAckHandlers) {
       outstandingAckHandlers.add(
           new ExtensionJob(
-              new Instant(clock.millisTime()),
+              Instant.ofEpochMilli(clock.millisTime()),
               expiration,
               INITIAL_ACK_DEADLINE_EXTENSION_SECONDS,
               ackHandlers));
@@ -440,7 +441,7 @@ class MessageDispatcher {
                     processOutstandingAckOperations();
                   }
                 },
-                PENDING_ACKS_SEND_DELAY.getMillis(),
+                PENDING_ACKS_SEND_DELAY.toMillis(),
                 TimeUnit.MILLISECONDS);
       }
     } finally {
@@ -453,7 +454,7 @@ class MessageDispatcher {
     public void run() {
       alarmsLock.lock();
       try {
-        nextAckDeadlineExtensionAlarmTime = new Instant(Long.MAX_VALUE);
+        nextAckDeadlineExtensionAlarmTime = Instant.ofEpochMilli(Long.MAX_VALUE);
         ackDeadlineExtensionAlarm = null;
         if (pendingAcksAlarm != null) {
           pendingAcksAlarm.cancel(false);
@@ -463,12 +464,12 @@ class MessageDispatcher {
         alarmsLock.unlock();
       }
 
-      Instant now = new Instant(clock.millisTime());
+      Instant now = Instant.ofEpochMilli(clock.millisTime());
       // Rounded to the next second, so we only schedule future alarms at the second
       // resolution.
       Instant cutOverTime =
-          new Instant(
-              ((long) Math.ceil(now.plus(ackExpirationPadding).plus(500).getMillis() / 1000.0))
+          Instant.ofEpochMilli(
+              ((long) Math.ceil(now.plus(ackExpirationPadding).plusMillis(500).toEpochMilli() / 1000.0))
                   * 1000L);
       logger.log(
           Level.FINER,
@@ -486,7 +487,7 @@ class MessageDispatcher {
             && outstandingAckHandlers.peek().expiration.compareTo(cutOverTime) <= 0) {
           ExtensionJob job = outstandingAckHandlers.poll();
 
-          if (maxAckExtensionPeriod.getMillis() > 0
+          if (maxAckExtensionPeriod.toMillis() > 0
               && job.creation.plus(maxAckExtensionPeriod).compareTo(now) <= 0) {
             // The job has expired, according to the maxAckExtensionPeriod, we are just going to
             // drop it.
@@ -508,9 +509,9 @@ class MessageDispatcher {
           }
 
           job.extendExpiration(now);
-          int extensionSeconds =
-              Ints.saturatedCast(
-                  new Interval(now, job.expiration).toDuration().getStandardSeconds());
+          long extensionMillis = Duration.between(now, job.expiration).toMillis();
+          int extensionSeconds = Ints
+              .saturatedCast(TimeUnit.MILLISECONDS.toSeconds(extensionMillis));
           PendingModifyAckDeadline pendingModAckDeadline =
               new PendingModifyAckDeadline(extensionSeconds);
           for (AckHandler ackHandler : job.ackHandlers) {
@@ -558,7 +559,7 @@ class MessageDispatcher {
         ackDeadlineExtensionAlarm =
             alarmsExecutor.schedule(
                 new AckDeadlineAlarm(),
-                nextAckDeadlineExtensionAlarmTime.getMillis() - clock.millisTime(),
+                nextAckDeadlineExtensionAlarmTime.toEpochMilli() - clock.millisTime(),
                 TimeUnit.MILLISECONDS);
       }
 

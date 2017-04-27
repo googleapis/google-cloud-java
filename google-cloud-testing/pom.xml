@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-testing</artifactId>
-  <version>0.14.1-alpha-SNAPSHOT</version>
+  <version>0.17.1-alpha</version>
   <packaging>pom</packaging>
 
   <name>Google Cloud Testing</name>
@@ -13,11 +13,13 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.14.1-alpha-SNAPSHOT</version>
+    <version>0.17.1-alpha</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-testing</site.installationModule>
+    <appengine.sdk.version>1.9.51</appengine.sdk.version>
   </properties>
+
   <modules>
     <module>google-cloud-appengineflexcompat</module>
     <module>google-cloud-appengineflexcustom</module>
@@ -25,6 +27,18 @@
     <module>google-cloud-appenginejava8</module>
     <module>google-cloud-managedtest</module>
   </modules>
-  <dependencies>
-  </dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>google-cloud-managedtest</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.appengine</groupId>
+        <artifactId>appengine-api-1.0-sdk</artifactId>
+        <version>${appengine.sdk.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>

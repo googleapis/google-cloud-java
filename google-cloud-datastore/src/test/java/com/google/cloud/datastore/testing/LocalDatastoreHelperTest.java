@@ -29,7 +29,7 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -84,7 +84,7 @@ public class LocalDatastoreHelperTest {
     assertNotNull(datastore.get(key));
     helper.reset();
     assertNull(datastore.get(key));
-    helper.stop(Duration.standardMinutes(1));
+    helper.stop(Duration.ofMinutes(1));
     thrown.expect(DatastoreException.class);
     datastore.get(key);
   }

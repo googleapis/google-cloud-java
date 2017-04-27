@@ -19,11 +19,12 @@ package com.google.cloud.compute;
 import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.cloud.BaseService;
 import com.google.api.gax.paging.Page;
+import com.google.cloud.BaseService;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.RetryHelper;
+import com.google.cloud.Tuple;
 import com.google.cloud.compute.AttachedDisk.PersistentDiskConfiguration;
 import com.google.cloud.compute.NetworkInterface.AccessConfig;
 import com.google.cloud.compute.spi.v1.ComputeRpc;
@@ -31,7 +32,6 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
-
 import java.util.Map;
 import java.util.concurrent.Callable;
 
@@ -491,11 +491,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<DiskType> listDiskTypes(final String zone,
       final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.DiskType>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.DiskType>> call() {
               return serviceOptions.getComputeRpcV1().listDiskTypes(zone, optionsMap);
             }
@@ -525,11 +525,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<DiskType> listDiskTypes(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.DiskType>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.DiskType>> call() {
               return serviceOptions.getComputeRpcV1().listDiskTypes(optionsMap);
             }
@@ -580,11 +580,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<MachineType> listMachineTypes(final String zone,
       final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.MachineType>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.MachineType>> call() {
               return serviceOptions.getComputeRpcV1().listMachineTypes(zone, optionsMap);
             }
@@ -615,11 +615,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<MachineType> listMachineTypes(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.MachineType>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.MachineType>> call() {
               return serviceOptions.getComputeRpcV1().listMachineTypes(optionsMap);
             }
@@ -666,11 +666,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Region> listRegions(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Region>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Region>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Region>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Region>> call() {
               return serviceOptions.getComputeRpcV1().listRegions(optionsMap);
             }
@@ -717,11 +717,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Zone> listZones(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Zone>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Zone>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Zone>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Zone>> call() {
               return serviceOptions.getComputeRpcV1().listZones(optionsMap);
             }
@@ -814,11 +814,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Operation> listGlobalOperations(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Operation>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Operation>> call() {
               return serviceOptions.getComputeRpcV1().listGlobalOperations(optionsMap);
             }
@@ -842,11 +842,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Operation> listRegionOperations(final String region,
       final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Operation>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Operation>> call() {
               return serviceOptions.getComputeRpcV1().listRegionOperations(region, optionsMap);
             }
@@ -870,11 +870,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Operation> listZoneOperations(final String zone,
       final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Operation>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Operation>> call() {
               return serviceOptions.getComputeRpcV1().listZoneOperations(zone, optionsMap);
             }
@@ -988,11 +988,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Address> listGlobalAddresses(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Address>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Address>> call() {
               return serviceOptions.getComputeRpcV1().listGlobalAddresses(optionsMap);
             }
@@ -1016,11 +1016,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Address> listRegionAddresses(final String region,
       final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Address>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Address>> call() {
               return serviceOptions.getComputeRpcV1().listRegionAddresses(region, optionsMap);
             }
@@ -1044,11 +1044,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Address> listAddresses(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Address>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Address>> call() {
               return serviceOptions.getComputeRpcV1().listAddresses(optionsMap);
             }
@@ -1142,11 +1142,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Snapshot> listSnapshots(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Snapshot>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Snapshot>> call() {
               return serviceOptions.getComputeRpcV1().listSnapshots(optionsMap);
             }
@@ -1240,11 +1240,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Image> listImages(final String project, final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Image>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Image>> call() {
               return serviceOptions.getComputeRpcV1().listImages(project, optionsMap);
             }
@@ -1358,11 +1358,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Disk> listDisks(final String zone, final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Disk>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Disk>> call() {
               return serviceOptions.getComputeRpcV1().listDisks(zone, optionsMap);
             }
@@ -1386,11 +1386,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Disk> listDisks(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Disk>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Disk>> call() {
               return serviceOptions.getComputeRpcV1().listDisks(optionsMap);
             }
@@ -1495,11 +1495,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Subnetwork> listSubnetworks(final String region,
       final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Subnetwork>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Subnetwork>> call() {
               return serviceOptions.getComputeRpcV1().listSubnetworks(region, optionsMap);
             }
@@ -1523,11 +1523,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Subnetwork> listSubnetworks(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Subnetwork>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Subnetwork>> call() {
               return serviceOptions.getComputeRpcV1().listSubnetworks(optionsMap);
             }
@@ -1604,11 +1604,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Network> listNetworks(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Network>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Network>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Network>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Network>> call() {
               return serviceOptions.getComputeRpcV1().listNetworks(optionsMap);
             }
@@ -1706,11 +1706,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Instance> listInstances(final String zone,
       final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Instance>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Instance>> call() {
               return serviceOptions.getComputeRpcV1().listInstances(zone, optionsMap);
             }
@@ -1734,11 +1734,11 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private static Page<Instance> listInstances(final ComputeOptions serviceOptions,
       final Map<ComputeRpc.Option, ?> optionsMap) {
     try {
-      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
-          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+      Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
+          runWithRetries(new Callable<Tuple<String,
               Iterable<com.google.api.services.compute.model.Instance>>>() {
             @Override
-            public ComputeRpc.Tuple<String,
+            public Tuple<String,
                 Iterable<com.google.api.services.compute.model.Instance>> call() {
               return serviceOptions.getComputeRpcV1().listInstances(optionsMap);
             }

@@ -7,28 +7,34 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.google.cloud%22%20a%3A%22google-cloud%22)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
 -  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
 
+This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
+-  [Stackdriver Logging](#stackdriver-logging-ga) (GA)
+-  [Cloud Datastore](#google-cloud-datastore-ga) (GA)
+-  [Cloud Storage](#google-cloud-storage-ga) (GA)
+
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
--  [Google Cloud BigQuery](#google-cloud-bigquery-beta) (Beta)
--  [Stackdriver Logging](#stackdriver-logging-beta) (Beta - Not working on App Engine Standard)
--  [Google Cloud Datastore](#google-cloud-datastore-beta) (Beta)
--  [Google Cloud Storage](#google-cloud-storage-beta) (Beta)
+-  [BigQuery](#google-cloud-bigquery-beta) (Beta)
 -  [Cloud Spanner](#cloud-spanner-beta) (Beta)
--  [Google Cloud Translation](#google-translation-beta) (Beta)
--  Cloud Vision (Beta)
--  Cloud Natural Language (Beta)
+-  [Cloud Translation](#google-translation-beta) (Beta)
+-  [Cloud Natural Language](#google-cloud-language-beta) (Beta)
+-  [Cloud Vision](#google-cloud-vision-beta) (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
--  [Google Cloud Compute](#google-cloud-compute-alpha) (Alpha)
--  [Google Cloud DNS](#google-cloud-dns-alpha) (Alpha)
--  [Google Cloud Pub/Sub](#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
--  [Google Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
+-  [Cloud Compute](#google-cloud-compute-alpha) (Alpha)
+-  [Cloud DNS](#google-cloud-dns-alpha) (Alpha)
+-  [Stackdriver Error Reporting](#stackdriver-error-reporting-alpha) (Alpha)
+-  [Stackdriver Monitoring](#stackdriver-monitoring-alpha) (Alpha)
+-  [Cloud Pub/Sub](#google-cloud-pubsub-alpha) (Alpha)
+-  [Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
+-  [Cloud Speech](#google-cloud-speech-alpha) (Alpha)
+-  [Cloud Trace](#google-cloud-trace-alpha) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -46,16 +52,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.15.0-alpha</version>
+  <version>0.17.1-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.15.0-alpha'
+compile 'com.google.cloud:google-cloud:0.17.1-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.15.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.17.1-alpha"
 ```
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
@@ -179,51 +185,7 @@ Credentials in the following locations (in order):
 4. Google Cloud Shell built-in credentials
 5. Google Compute Engine built-in credentials
 
-Google Cloud BigQuery (Beta)
-----------------------
-
-- [API Documentation][bigquery-api]
-- [Official Documentation][cloud-bigquery-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example from within Compute/App Engine. Note that you
-must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-Complete source code can be found at
-[CreateTableAndLoadData.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
-
-```java
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
-import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FormatOptions;
-import com.google.cloud.bigquery.Job;
-import com.google.cloud.bigquery.Schema;
-import com.google.cloud.bigquery.StandardTableDefinition;
-import com.google.cloud.bigquery.Table;
-import com.google.cloud.bigquery.TableId;
-import com.google.cloud.bigquery.TableInfo;
-
-BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-TableId tableId = TableId.of("dataset", "table");
-Table table = bigquery.getTable(tableId);
-if (table == null) {
-  System.out.println("Creating table " + tableId);
-  Field integerField = Field.of("fieldName", Field.Type.integer());
-  Schema schema = Schema.of(integerField);
-  table = bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
-}
-System.out.println("Loading data into table " + tableId);
-Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
-loadJob = loadJob.waitFor();
-if (loadJob.getStatus().getError() != null) {
-  System.out.println("Job completed with errors");
-} else {
-  System.out.println("Job succeeded");
-}
-```
-
-Stackdriver Logging (Beta)
+Stackdriver Logging (GA)
 ----------------------
 - [API Documentation][logging-api]
 - [Official Documentation][stackdriver-logging-docs]
@@ -292,7 +254,7 @@ LoggingHandler.addHandler(logger, new LoggingHandler());
 logger.warning("test warning");
 ```
 
-Google Cloud Datastore (Beta)
+Google Cloud Datastore (GA)
 ----------------------
 
 - [API Documentation][datastore-api]
@@ -349,7 +311,7 @@ if (entity != null) {
 }
 ```
 
-Google Cloud Storage (Beta)
+Google Cloud Storage (GA)
 ----------------------
 
 - [API Documentation][storage-api]
@@ -403,6 +365,51 @@ if (blob != null) {
   channel.close();
 }
 ```
+
+Google Cloud BigQuery (Beta)
+----------------------
+
+- [API Documentation][bigquery-api]
+- [Official Documentation][cloud-bigquery-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example from within Compute/App Engine. Note that you
+must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+Complete source code can be found at
+[CreateTableAndLoadData.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
+
+```java
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FormatOptions;
+import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardTableDefinition;
+import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.TableInfo;
+
+BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+TableId tableId = TableId.of("dataset", "table");
+Table table = bigquery.getTable(tableId);
+if (table == null) {
+  System.out.println("Creating table " + tableId);
+  Field integerField = Field.of("fieldName", Field.Type.integer());
+  Schema schema = Schema.of(integerField);
+  table = bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
+}
+System.out.println("Loading data into table " + tableId);
+Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
+loadJob = loadJob.waitFor();
+if (loadJob.getStatus().getError() != null) {
+  System.out.println("Job completed with errors");
+} else {
+  System.out.println("Job succeeded");
+}
+```
+
 Cloud Spanner (Beta)
 --------------------
 
@@ -441,6 +448,40 @@ try {
     // Closes the client which will free up the resources used
     spanner.closeAsync().get();
 }
+```
+
+Google Cloud Language (Beta)
+----------------------
+- [API Documentation][language-api]
+- [Official Documentation][cloud-language-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of LanguageServiceClient. The example assumes that either default application
+credentials or a valid api key are available. (See [Authentication section](#authentication) for more information)
+```java
+ try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   Document document = Document.newBuilder().build();
+   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
+ }
+```
+
+Google Cloud Vision (Beta)
+----------------
+
+- [API Documentation][vision-api]
+- [Official Documentation][cloud-vision-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of ImageAnnotatorClient.
+The example assumes that either default application credentials or a valid api key
+are available. (See [Authentication section](#authentication) for more information)
+```java
+ try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   List<AnnotateImageRequest> requests = new ArrayList<>();
+   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
+ }
 ```
 
 Google Cloud Compute (Alpha)
@@ -573,9 +614,41 @@ ChangeRequestInfo changeRequest = changeBuilder.build();
 zone.applyChangeRequest(changeRequest);
 ```
 
+Stackdriver Error Reporting (Alpha)
+----------------------
+- [API Documentation][errorreporting-api]
+- [Official Documentation][cloud-errorreporting-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of ErrorGroupServiceClient.
+Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+```java
+ try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
+   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+ }
+```
+
+Stackdriver Monitoring (Alpha)
+----------------------
+- [API Documentation][monitoring-api]
+- [Official Documentation][cloud-monitoring-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of MetricServiceClient.
+Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+```java
+ try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   MonitoredResourceDescriptorName name =
+       MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
+ }
+```
+
 Google Cloud Pub/Sub (Alpha)
 ----------------------
-
 - [API Documentation][pubsub-api]
 - [Official Documentation][cloud-pubsub-docs]
 
@@ -683,6 +756,55 @@ Translation translation = translate.translate(
 System.out.printf("Hola %s%n", translation.getTranslatedText());
 ```
 
+Google Cloud Speech (Alpha)
+----------------
+
+- [API Documentation][speech-api]
+- [Official Documentation][cloud-speech-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of SpeechClient. The example assumes that either default application
+credentials or a valid api key are available. (See [Authentication section](#authentication) for more information)
+Note that you must provide a uri to a FLAC audio file to run this.
+
+```java
+ try (SpeechClient speechClient = SpeechClient.create()) {
+   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
+   int sampleRateHertz = 44100;
+   String languageCode = "en-US";
+   RecognitionConfig config = RecognitionConfig.newBuilder()
+     .setEncoding(encoding)
+     .setSampleRateHertz(sampleRateHertz)
+     .setLanguageCode(languageCode)
+     .build();
+   String uri = "gs://bucket_name/file_name.flac";
+   RecognitionAudio audio = RecognitionAudio.newBuilder()
+     .setUri(uri)
+     .build();
+   RecognizeResponse response = speechClient.recognize(config, audio);
+ }
+```
+
+Google Cloud Trace (Alpha)
+----------------
+
+- [API Documentation][trace-api]
+- [Official Documentation][cloud-trace-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either default application
+credentials or a valid api key are available.
+Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+```java
+ try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   String projectId = "";
+   Traces traces = Traces.newBuilder().build();
+   traceServiceClient.patchTraces(projectId, traces);
+ }
+```
+
 Troubleshooting
 ---------------
 
@@ -693,10 +815,12 @@ Java Versions
 
 Java 7 or above is required for using this client.
 
-Android
--------
+Supported Platforms
+-------------------
 
-Android is not currently supported.
+This client is supported on Mac OS X, Windows and Linux (excluding Android and Alpine). 
+Google Cloud Platform environments currently supported include GCE, GKE and GAE Flex.
+GAE Standard is not currently supported.
 
 Testing
 -------
@@ -708,10 +832,33 @@ See [TESTING] to read more about using our testing helpers.
 Versioning
 ----------
 
-This library follows [Semantic Versioning](http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/), but with some
+additional qualifications:
+
+1. Components marked with `@BetaApi` are considered to be "0.x" features inside
+   a "1.x" library. This means they can change between minor and patch releases
+   in incompatible ways. These features should not be used by any library "B"
+   that itself has consumers, unless the components of library B that use
+   `@BetaApi` features are also marked with `@BetaApi`. Features marked as
+   `@BetaApi` are on a path to eventually become "1.x" features with the marker
+   removed.
+
+   **Special exception for google-cloud-java**: google-cloud-java is
+   allowed to depend on `@BetaApi` features in gax-java without declaring the consuming
+   code `@BetaApi`, because gax-java and google-cloud-java move in step
+   with each other. For this reason, gax-java should not be used
+   independently of google-cloud-java.
+
+1. Components marked with `@InternalApi` are technically public, but are only
+   public for technical reasons, because of the limitations of Java's access
+   modifiers. For the purposes of semver, they should be considered private.
 
 Please note it is currently under active development. Any release versioned 0.x.y is
 subject to backwards incompatible changes at any time.
+
+**GA**: Libraries defined at a GA quality level are expected to be stable and all updates in the
+libraries are guaranteed to be backwards-compatible. Any backwards-incompatible changes will lead
+to the major version increment (1.x.y -> 2.0.0).
 
 **Beta**: Libraries defined at a Beta quality level are expected to be mostly stable and
 we're working towards their release candidate. We will address issues and requests with
@@ -748,6 +895,24 @@ Apache 2.0 - See [LICENSE] for more information.
 [dns-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
 [cloud-dns-docs]: https://cloud.google.com/dns/docs
 [cloud-dns-activation]: https://console.cloud.google.com/start/api?id=dns
+
+[errorreporting-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/errorreporting/spi/v1beta1/package-summary.html
+[cloud-errorreporting-docs]: https://cloud.google.com/error-reporting/docs
+
+[language-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/language/spi/v1/package-summary.html
+[cloud-language-docs]: https://cloud.google.com/language/docs
+
+[monitoring-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/monitoring/spi/v3/package-summary.html
+[cloud-monitoring-docs]: https://cloud.google.com/monitoring/docs
+
+[speech-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/speech/spi/v1/package-summary.html
+[cloud-speech-docs]: https://cloud.google.com/speech/docs
+
+[trace-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/trace/spi/v1/package-summary.html
+[cloud-trace-docs]: https://cloud.google.com/trace/docs
+
+[vision-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/vision/spi/v1/package-summary.html
+[cloud-vision-docs]: https://cloud.google.com/vision/docs
 
 [logging-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/package-summary.html
 [stackdriver-logging-docs]: https://cloud.google.com/logging/docs

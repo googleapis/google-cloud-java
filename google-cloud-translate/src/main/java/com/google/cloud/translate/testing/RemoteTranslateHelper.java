@@ -19,7 +19,7 @@ package com.google.cloud.translate.testing;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.translate.TranslateOptions;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 /**
  * Utility to create a remote translate configuration for testing. Translate options can be obtained
@@ -82,13 +82,13 @@ public class RemoteTranslateHelper {
 
   private static RetrySettings retryParams() {
     return RetrySettings.newBuilder().setMaxAttempts(10)
-        .setMaxRetryDelay(Duration.millis(30000L))
-        .setTotalTimeout(Duration.millis(120000L))
-        .setInitialRetryDelay(Duration.millis(250L))
+        .setMaxRetryDelay(Duration.ofMillis(30000L))
+        .setTotalTimeout(Duration.ofMillis(120000L))
+        .setInitialRetryDelay(Duration.ofMillis(250L))
         .setRetryDelayMultiplier(1.0)
-        .setInitialRpcTimeout(Duration.millis(120000L))
+        .setInitialRpcTimeout(Duration.ofMillis(120000L))
         .setRpcTimeoutMultiplier(1.0)
-        .setMaxRpcTimeout(Duration.millis(120000L))
+        .setMaxRpcTimeout(Duration.ofMillis(120000L))
         .build();
   }
 }

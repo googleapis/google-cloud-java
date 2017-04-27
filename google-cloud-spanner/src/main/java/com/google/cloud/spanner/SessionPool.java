@@ -40,8 +40,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
-import org.joda.time.Duration;
-import org.joda.time.Instant;
+import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
 
 /**
  * Maintains a pool of sessions some of which might be prepared for write by invoking
@@ -388,17 +388,17 @@ final class SessionPool {
   final class PoolMaintainer {
     // Length of the window in millis over which we keep track of maximum number of concurrent
     // sessions in use.
-    private final Duration windowLength = Duration.millis(TimeUnit.MINUTES.toMillis(10));
+    private final Duration windowLength = Duration.ofMillis(TimeUnit.MINUTES.toMillis(10));
     // Frequency of the timer loop.
     @VisibleForTesting static final long LOOP_FREQUENCY = 10 * 1000L;
     // Number of loop iterations in which we need to to close all the sessions waiting for closure.
-    @VisibleForTesting final long numClosureCycles = windowLength.getMillis() / LOOP_FREQUENCY;
+    @VisibleForTesting final long numClosureCycles = windowLength.toMillis() / LOOP_FREQUENCY;
     private final Duration keepAliveMilis =
-        Duration.millis(TimeUnit.MINUTES.toMillis(options.getKeepAliveIntervalMinutes()));
+        Duration.ofMillis(TimeUnit.MINUTES.toMillis(options.getKeepAliveIntervalMinutes()));
     // Number of loop iterations in which we need to keep alive all the sessions
-    @VisibleForTesting final long numKeepAliveCycles = keepAliveMilis.getMillis() / LOOP_FREQUENCY;
+    @VisibleForTesting final long numKeepAliveCycles = keepAliveMilis.toMillis() / LOOP_FREQUENCY;
 
-    Instant lastResetTime = new Instant(0);
+    Instant lastResetTime = Instant.ofEpochMilli(0);
     int numSessionsToClose = 0;
     int sessionsToClosePerLoop = 0;
 

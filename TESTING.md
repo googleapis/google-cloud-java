@@ -193,7 +193,22 @@ You can test against an in-memory local Resource Manager by following these step
 
 ### Testing code that uses Storage
 
-Currently, there isn't an emulator for Google Cloud Storage, so an alternative is to create a test project.  `RemoteStorageHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
+#### On your machine
+
+You can test against an in-memory local Storage by following these steps:
+
+1. Follow the [Quickstart instructions][cloud-nio] to add the nio dependency to your project.
+2. In your program, create and use a fake Storage service object.  For example:
+
+  ```java
+  Storage storage = LocalStorageHelper.getOptions().getService();
+  ```
+
+3. Run your tests.
+
+#### Remote
+
+The alternative way of testing is to create a test project.  `RemoteStorageHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
 
 1. Create a test Google Cloud project.
 
@@ -266,6 +281,8 @@ Here is an example that uses the `RemoteSpannerHelper` to create a database.
 6. Clean up the test project by using `cleanUp` to clear any databases created.
   ```java
   RemoteSpannerHelper.cleanUp();
+  ```
 
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
 [create-service-account]:https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount
+[cloud-nio]:https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio

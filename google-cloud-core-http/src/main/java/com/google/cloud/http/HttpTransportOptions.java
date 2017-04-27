@@ -24,6 +24,7 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.core.InternalApi;
 import com.google.auth.Credentials;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
@@ -122,7 +123,7 @@ public class HttpTransportOptions implements TransportOptions {
     }
   }
 
-  protected HttpTransportOptions(Builder builder) {
+  private HttpTransportOptions(Builder builder) {
     httpTransportFactory = firstNonNull(builder.httpTransportFactory,
         ServiceOptions.getFromServiceLoader(HttpTransportFactory.class,
             DefaultHttpTransportFactory.INSTANCE));

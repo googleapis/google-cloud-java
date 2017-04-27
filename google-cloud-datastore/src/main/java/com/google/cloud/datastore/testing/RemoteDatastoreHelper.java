@@ -27,7 +27,7 @@ import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
 
 import java.util.UUID;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 /**
  * Utility to create a remote datastore configuration for testing. Datastore options can be obtained
@@ -95,13 +95,13 @@ public class RemoteDatastoreHelper {
 
   private static RetrySettings retrySettings() {
     return RetrySettings.newBuilder().setMaxAttempts(10)
-        .setMaxRetryDelay(Duration.millis(30000L))
-        .setTotalTimeout(Duration.millis(120000L))
-        .setInitialRetryDelay(Duration.millis(250L))
+        .setMaxRetryDelay(Duration.ofMillis(30000L))
+        .setTotalTimeout(Duration.ofMillis(120000L))
+        .setInitialRetryDelay(Duration.ofMillis(250L))
         .setRetryDelayMultiplier(1.0)
-        .setInitialRpcTimeout(Duration.millis(120000L))
+        .setInitialRpcTimeout(Duration.ofMillis(120000L))
         .setRpcTimeoutMultiplier(1.0)
-        .setMaxRpcTimeout(Duration.millis(120000L))
+        .setMaxRpcTimeout(Duration.ofMillis(120000L))
         .build();
   }
 }

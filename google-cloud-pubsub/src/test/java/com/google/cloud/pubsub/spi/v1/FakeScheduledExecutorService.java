@@ -33,8 +33,8 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
 
 /**
  * Fake implementation of {@link ScheduledExecutorService} that allows tests control the reference
@@ -56,14 +56,14 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   public ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            Duration.millis(unit.toMillis(delay)), command, PendingCallableType.NORMAL));
+            Duration.ofMillis(unit.toMillis(delay)), command, PendingCallableType.NORMAL));
   }
 
   @Override
   public <V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            Duration.millis(unit.toMillis(delay)), callable, PendingCallableType.NORMAL));
+            Duration.ofMillis(unit.toMillis(delay)), callable, PendingCallableType.NORMAL));
   }
 
   @Override
@@ -71,7 +71,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       Runnable command, long initialDelay, long period, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            Duration.millis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_RATE));
+            Duration.ofMillis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_RATE));
   }
 
   @Override
@@ -79,7 +79,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       Runnable command, long initialDelay, long delay, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            Duration.millis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
+            Duration.ofMillis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
   }
 
   /**
@@ -116,12 +116,12 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
    * outstanding callable which execution time has passed.
    */
   public void advanceTime(Duration toAdvance) {
-    clock.advance(toAdvance.getMillis(), TimeUnit.MILLISECONDS);
+    clock.advance(toAdvance.toMillis(), TimeUnit.MILLISECONDS);
     work();
   }
 
   private void work() {
-    DateTime cmpTime = new DateTime(clock.millisTime());
+    Instant cmpTime = Instant.ofEpochMilli(clock.millisTime());
 
     for (;;) {
       PendingCallable<?> callable = null;
@@ -236,7 +236,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
 
   /** Class that saves the state of an scheduled pending callable. */
   class PendingCallable<T> implements Comparable<PendingCallable<T>> {
-    DateTime creationTime = new DateTime(clock.millisTime());
+    Instant creationTime = Instant.ofEpochMilli(clock.millisTime());
     Duration delay;
     Callable<T> pendingCallable;
     SettableFuture<T> future = SettableFuture.create();
@@ -263,7 +263,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       this.delay = delay;
     }
 
-    private DateTime getScheduledTime() {
+    private Instant getScheduledTime() {
       return creationTime.plus(delay);
     }
 
@@ -271,7 +271,8 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       return new ScheduledFuture<T>() {
         @Override
         public long getDelay(TimeUnit unit) {
-          return unit.convert(getScheduledTime().getMillis() - clock.millisTime(), TimeUnit.MILLISECONDS);
+          return unit.convert(getScheduledTime().toEpochMilli() - clock.millisTime(),
+              TimeUnit.MILLISECONDS);
         }
 
         @Override
@@ -328,7 +329,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
               done.set(true);
               break;
             case FIXED_DELAY:
-              this.creationTime = new DateTime(clock.millisTime());
+              this.creationTime = Instant.ofEpochMilli(clock.millisTime());
               schedulePendingCallable(this);
               break;
             case FIXED_RATE:

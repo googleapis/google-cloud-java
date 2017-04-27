@@ -44,6 +44,8 @@ public class MetricInfo implements Serializable {
    */
   public abstract static class Builder {
 
+    Builder() {
+    }
 
     /**
      * Sets the name of the metric. Example: {@code severe-errors}. Metric identifiers are

@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-language</artifactId>
-  <version>0.15.1-beta-SNAPSHOT</version>
+  <version>0.17.2-beta-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Google Cloud Natural Language</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-language</url>
@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.15.1-alpha-SNAPSHOT</version>
+    <version>0.17.2-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-language</site.installationModule>
@@ -27,42 +27,36 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${core.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
-      <version>${core-grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-language-v1</artifactId>
-      <version>0.1.8</version>
+      <artifactId>proto-google-cloud-language-v1</artifactId>
+      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-language-v1beta2</artifactId>
-      <version>0.1.8</version>
+      <artifactId>proto-google-cloud-language-v1beta2</artifactId>
+      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty</artifactId>
-      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
-      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-auth</artifactId>
-      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${core.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
@@ -75,6 +69,18 @@
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
       <version>3.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-language-v1</artifactId>
+      <version>0.1.9</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-language-v1beta2</artifactId>
+      <version>0.1.9</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -91,22 +97,34 @@
     </profile>
   </profiles>
   <build>
+    <resources>
+      <resource>
+        <directory>./..</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>project.properties</include>
+        </includes>
+      </resource>
+    </resources>
     <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>properties-maven-plugin</artifactId>
-        <version>1.0-alpha-2</version>
-        <executions>
+       <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+         <version>1.4</version>
+         <executions>
           <execution>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>write-project-properties</goal>
-            </goals>
+            <phase>process-resources</phase>
             <configuration>
-              <outputFile>${project.build.outputDirectory}/com/google/cloud/language/project.properties</outputFile>
+               <tasks>
+                 <copy file="${project.build.outputDirectory}/project.properties"
+                   toFile="${project.build.outputDirectory}/com/google/cloud/language/project.properties"
+                   overwrite="true" />
+              </tasks>
             </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
           </execution>
-         </executions>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
