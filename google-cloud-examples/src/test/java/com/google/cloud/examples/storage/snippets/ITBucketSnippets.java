@@ -73,7 +73,7 @@ public class ITBucketSnippets {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
     storage = helper.getOptions().getService();
     bucketSnippets = new BucketSnippets(storage.create(BucketInfo.of(BUCKET)));
-    bucketIamSnippets = new BucketIamSnippets(storage);
+    bucketIamSnippets = new BucketIamSnippets();
   }
 
   @AfterClass

@@ -20,9 +20,7 @@ import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
-import com.google.cloud.storage.StorageRoles;
 
 import java.util.Map;
 import java.util.Set;
@@ -32,10 +30,7 @@ import java.util.Set;
  */
 public class BucketIamSnippets {
 
-  private final Storage storage;
-
-  public BucketIamSnippets(Storage storage) {
-    this.storage = storage;
+  public BucketIamSnippets() {
   }
 
   /**
