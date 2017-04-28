@@ -41,15 +41,21 @@ public class CreateTopicAndPublishMessages {
 
   public static void publishMessages() throws Exception {
     // [START publish]
-    TopicName topic = TopicName.create("test-project", "test-topic");
+    TopicName topicName = TopicName.create("test-project", "test-topic");
     Publisher publisher = null;
+    List<String> messageIds = new ArrayList<>();
     try {
-      publisher = Publisher.defaultBuilder(topic).build();
+      // Create a publisher instance with default settings bound to the topic
+      publisher = Publisher.defaultBuilder(topicName).build();
+
       List<String> messages = Arrays.asList("first message", "second message");
-      List<ApiFuture<String>> messageIds = new ArrayList<>();
+      // publish messages one at a time, messages are automatically batched/retried.
       for (String message : messages) {
+
         ByteString data = ByteString.copyFromUtf8(message);
+        // message data is base64-encoded automatically
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+        // a unique message id is automatically added to track
         ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
         messageIds.add(messageIdFuture);
       }
@@ -57,6 +63,8 @@ public class CreateTopicAndPublishMessages {
         System.out.println("published with message ID: " + messageId.get());
       }
     } finally {
+      // wait on any pending publish
+
       if (publisher != null) {
         publisher.shutdown();
       }
