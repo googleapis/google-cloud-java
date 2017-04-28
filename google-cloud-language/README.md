@@ -56,7 +56,7 @@ You'll need to obtain the `google-cloud-language` library.  See the [Quickstart]
 
 #### Complete source code
 
-In [AnalyzeSentiment.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/language/snippets/AnalyzeSentiment.java) we put a quick start example, which shows how you can use Google Natural Language API to automatically analize a sentiment of a text message.
+In [AnalyzeSentiment.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/language/snippets/AnalyzeSentiment.java) we put a quick start example, which shows how you can use Google Natural Language API to automatically analyze a sentiment of a text message.
 
 Troubleshooting
 ---------------
