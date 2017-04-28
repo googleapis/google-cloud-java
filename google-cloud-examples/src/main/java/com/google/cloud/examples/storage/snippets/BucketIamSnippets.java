@@ -53,7 +53,7 @@ public class BucketIamSnippets {
   /**
    * Example of adding a member to the Bucket-level IAM
    */
-  public void addBucketIamMember(String bucketName, Role role, Identity identity) {
+  public Policy addBucketIamMember(String bucketName, Role role, Identity identity) {
     // [START add_bucket_iam_member]
     // Initialize a Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -69,12 +69,13 @@ public class BucketIamSnippets {
       System.out.printf("Added %s with role %s to %s\n", identity, role, bucketName);
     }
     // [END add_bucket_iam_member]
+    return updatedPolicy;
   }
 
   /**
    * Example of removing a member from the Bucket-level IAM
    */
-  public void removeBucketIamMember(String bucketName, Role role, Identity identity) {
+  public Policy removeBucketIamMember(String bucketName, Role role, Identity identity) {
     // [START remove_bucket_iam_member]
     // Initialize a Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -91,5 +92,6 @@ public class BucketIamSnippets {
       System.out.printf("Removed %s with role %s from %s\n", identity, role, bucketName);
     }
     // [END remove_bucket_iam_member]
+    return updatedPolicy;
   }
 }
