@@ -19,7 +19,8 @@ package com.google.cloud.logging;
 /* Adds tracing support for logging with thread-local trace ID tracking. */
 public class TraceLoggingEnhancer implements LoggingEnhancer {
 
-  String prefix;
+  private final String prefix;
+
   public TraceLoggingEnhancer(String prefix) {
     this.prefix = (prefix != null) ? prefix : "";
   }
