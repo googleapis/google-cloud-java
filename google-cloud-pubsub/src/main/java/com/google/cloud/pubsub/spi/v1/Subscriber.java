@@ -27,7 +27,6 @@ import com.google.api.gax.core.Distribution;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
-import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
@@ -197,7 +196,8 @@ public class Subscriber extends AbstractApiService {
    * Initiates service startup and returns immediately.
    *
    * <p>Example of receiving a specific number of messages.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Subscriber subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
    * subscriber.addListener(new Subscriber.Listener() {
    *   public void failed(Subscriber.State from, Throwable failure) {
@@ -210,7 +210,6 @@ public class Subscriber extends AbstractApiService {
    * done.get();
    * subscriber.stopAsync().awaitTerminated();
    * }</pre>
-   *
    */
   @Override
   public ApiService startAsync() {
@@ -453,7 +452,6 @@ public class Subscriber extends AbstractApiService {
             .build();
 
     SubscriptionName subscriptionName;
-    Optional<Credentials> credentials = Optional.absent();
     MessageReceiver receiver;
 
     Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
@@ -472,16 +470,6 @@ public class Subscriber extends AbstractApiService {
     Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
       this.receiver = receiver;
-    }
-
-    /**
-     * Credentials to authenticate with.
-     *
-     * <p>Must be properly scoped for accessing Cloud Pub/Sub APIs.
-     */
-    public Builder setCredentials(Credentials credentials) {
-      this.credentials = Optional.of(Preconditions.checkNotNull(credentials));
-      return this;
     }
 
     /**
@@ -542,15 +530,15 @@ public class Subscriber extends AbstractApiService {
       return this;
     }
 
-    /** 
-     * Gives the ability to set a custom executor for managing lease extensions. If none is
-     * provided a shared one will be used by all {@link Subscriber} instances.
+    /**
+     * Gives the ability to set a custom executor for managing lease extensions. If none is provided
+     * a shared one will be used by all {@link Subscriber} instances.
      */
     public Builder setLeaseAlarmsExecutorProvider(ExecutorProvider executorProvider) {
       this.alarmsExecutorProvider = Preconditions.checkNotNull(executorProvider);
       return this;
     }
-    
+
     /** Gives the ability to set a custom clock. */
     Builder setClock(ApiClock clock) {
       this.clock = Optional.of(clock);
