@@ -19,6 +19,11 @@ package com.google.cloud.logging;
 /* Adds tracing support for logging with thread-local trace ID tracking. */
 public class TraceLoggingEnhancer implements LoggingEnhancer {
 
+  String prefix;
+  public TraceLoggingEnhancer(String prefix) {
+    this.prefix = (prefix != null) ? prefix : "";
+  }
+
   private static final ThreadLocal<String> traceId = new ThreadLocal<>();
 
   /**
@@ -43,7 +48,7 @@ public class TraceLoggingEnhancer implements LoggingEnhancer {
   public void enhanceLogEntry(com.google.cloud.logging.LogEntry.Builder builder) {
     String traceId = getCurrentTraceId();
     if (traceId != null) {
-      builder.addLabel("trace_id", traceId);
+      builder.addLabel(prefix + "trace_id", traceId);
     }
   }
 }

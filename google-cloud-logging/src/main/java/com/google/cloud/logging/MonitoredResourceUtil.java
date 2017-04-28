@@ -74,6 +74,8 @@ public class MonitoredResourceUtil {
     }
   }
 
+  private static String appEngineLabelPrefix = "appengine.googleapis.com/";
+
   private static Map<String, Label[]> resourceTypeWithLabels;
 
   static {
@@ -198,11 +200,12 @@ public class MonitoredResourceUtil {
       // Trace logging enhancer is supported on GAE Flex and Standard.
       case GaeAppFlex:
         enhancers = new ArrayList<>();
-        enhancers.add(new LabelLoggingEnhancer(Collections.singletonList(Label.InstanceName)));
-        enhancers.add(new TraceLoggingEnhancer());
+        enhancers.add(new LabelLoggingEnhancer(
+            appEngineLabelPrefix, Collections.singletonList(Label.InstanceName)));
+        enhancers.add(new TraceLoggingEnhancer(appEngineLabelPrefix));
         break;
       case GaeAppStandard:
-        enhancers.add(new TraceLoggingEnhancer());
+        enhancers.add(new TraceLoggingEnhancer(appEngineLabelPrefix));
         break;
       default:
         enhancers = Collections.emptyList();
@@ -218,9 +221,11 @@ public class MonitoredResourceUtil {
    *  @see <a href="https://cloud.google.com/logging/docs/api/v2/resource-list">Logging Labels</a>
    */
   static class LabelLoggingEnhancer implements LoggingEnhancer {
+    String prefix;
     List<Label> labels;
 
-    LabelLoggingEnhancer(List<Label> labels) {
+    LabelLoggingEnhancer(String prefix, List<Label> labels) {
+      this.prefix = prefix != null ? prefix : "";
       this.labels = labels;
     }
 
@@ -229,7 +234,7 @@ public class MonitoredResourceUtil {
       for (Label label : labels) {
         String labelValue = MonitoredResourceUtil.getValue(label);
         if (labelValue != null) {
-          logEntry.addLabel(label.getKey(), labelValue);
+          logEntry.addLabel(prefix + label.getKey(), labelValue);
         }
       }
     }
