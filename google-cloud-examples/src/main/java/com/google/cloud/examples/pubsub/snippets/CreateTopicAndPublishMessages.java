@@ -31,12 +31,17 @@ import java.util.List;
  * publish messages to it.
  */
 public class CreateTopicAndPublishMessages {
-  public static void main(String... args) throws Exception {
+
+  public static void createTopic() throws Exception {
     TopicName topic = TopicName.create("test-project", "test-topic");
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.createTopic(topic);
     }
+  }
 
+  public static void publishMessages() throws Exception {
+    // [START publish]
+    TopicName topic = TopicName.create("test-project", "test-topic");
     Publisher publisher = null;
     try {
       publisher = Publisher.defaultBuilder(topic).build();
@@ -56,5 +61,12 @@ public class CreateTopicAndPublishMessages {
         publisher.shutdown();
       }
     }
+    // [END publish]
+  }
+
+  public static void main(String... args) throws Exception {
+
+    createTopic();
+    publishMessages();
   }
 }

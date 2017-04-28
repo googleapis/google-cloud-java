@@ -32,6 +32,7 @@ import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
+import java.io.IOException;
 import org.threeten.bp.Duration;
 
 /** This class contains snippets for the {@link Publisher} interface. */
@@ -46,7 +47,6 @@ public class PublisherSnippets {
   // [TARGET publish(PubsubMessage)]
   // [VARIABLE "my_message"]
   public ApiFuture<String> publish(String message) {
-    // [START publish]
     ByteString data = ByteString.copyFromUtf8(message);
     PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
 
@@ -62,7 +62,6 @@ public class PublisherSnippets {
         System.out.println("failed to publish: " + t);
       }
     });
-    // [END publish]
     return messageIdFuture;
   }
 
