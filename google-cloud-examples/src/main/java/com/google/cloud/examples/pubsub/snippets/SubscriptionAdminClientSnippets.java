@@ -71,7 +71,8 @@ public class SubscriptionAdminClientSnippets {
   }
 
   /** Example of creating a subscription with a push endpoint. */
-  public Subscription createSubscriptionWithPushEndpoint(String topicId, String subscriptionId, String endpoint)
+  public Subscription createSubscriptionWithPushEndpoint(String topicId, String subscriptionId,
+      String endpoint)
           throws Exception {
     // [START createPushSubscription]
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {

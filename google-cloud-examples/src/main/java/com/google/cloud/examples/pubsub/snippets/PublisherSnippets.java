@@ -32,7 +32,7 @@ import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 /** This class contains snippets for the {@link Publisher} interface. */
 public class PublisherSnippets {
@@ -83,28 +83,33 @@ public class PublisherSnippets {
     // [END createPublisher]
   }
 
-  public Publisher getPublisherWithCustomSettings(String projectId, String topicId)
-      throws Exception {
-    // batch publishing based on message count
+  public Publisher getPublisherWithCustomBatchSettings(TopicName topicName) throws Exception {
     // [START publisherBatchSettings]
     // Batch settings control how the publisher batches messages
     long requestBytesThreshold = 5000L; // default : 1kb
     long messageCountBatchSize = 10L; // default : 100
-    Duration publishDelayThreshold = Duration.millis(100); // default : 1 ms
-    // Order of precedence in batching thresholds : request size > message count > publish delay
+
+    Duration publishDelayThreshold = Duration.ofMillis(100); // default : 1 ms
+
+    // Batching thresholds have order precedence : request size  > message count > publish delay
     BatchingSettings batchingSettings = BatchingSettings.newBuilder()
         .setElementCountThreshold(messageCountBatchSize)
         .setRequestByteThreshold(requestBytesThreshold)
         .setDelayThreshold(publishDelayThreshold)
         .build();
-    // ...
-    // [END publisherBatchSettings]
 
+    Publisher publisher = Publisher.defaultBuilder(topicName)
+        .setBatchingSettings(batchingSettings).build();
+    // [END publisherBatchSettings]
+    return publisher;
+  }
+
+  public Publisher getPublisherWithCustomRetrySettings(TopicName topicName) throws Exception {
     // [START publisherRetrySettings]
     // Retry settings control how the publisher handles failures
-    // Retry delays have an in-built multiplier-based backoff, up to the max
-    Duration retryDelay = Duration.millis(100); // default : 1 ms
-    Duration maxRetryDelay = Duration.standardSeconds(5); // default : 10 seconds
+    // Retry delays have an in-built multiplier-based backoff, up to the max retry delay
+    Duration retryDelay = Duration.ofMillis(100); // default : 1 ms
+    Duration maxRetryDelay = Duration.ofSeconds(5); // default : 10 seconds
     double retryDelayMultiplier = 2.0; // default : ?
 
     RetrySettings retrySettings = RetrySettings.newBuilder()
@@ -112,13 +117,22 @@ public class PublisherSnippets {
         .setRetryDelayMultiplier(retryDelayMultiplier)
         .setMaxRetryDelay(maxRetryDelay)
         .build();
-    // [END publisherRetrySettings]
 
+    Publisher publisher = Publisher.defaultBuilder(topicName)
+        .setRetrySettings(retrySettings).build();
+    // [END publisherRetrySettings]
+    return publisher;
+  }
+
+  public Publisher getPublisherWithCustomFlowControlSettings(TopicName topicName) throws Exception {
     // [START publisherFlowControlSettings]
-    // Flow settings control how the publisher manages outstanding
-    int maxOutstandingBatches = 2; // default : disabled
-    int maxOutstandingRequestBytes = 5000; // default : disabled
-    // default behavior is to throw an exception
+    // Flow settings control how the publisher manages outstanding publish requests
+
+    // publisher flow control parameters
+    int maxOutstandingBatches = 20;
+    int maxOutstandingRequestBytes = 500000;
+
+    // define behavior on limits exceeded, default behavior is to throw an exception
     LimitExceededBehavior limitExceededBehavior = LimitExceededBehavior.Block;
 
     FlowControlSettings flowControlSettings = FlowControlSettings.newBuilder()
@@ -126,16 +140,10 @@ public class PublisherSnippets {
         .setMaxOutstandingRequestBytes(maxOutstandingRequestBytes)
         .setLimitExceededBehavior(limitExceededBehavior)
         .build();
-    // [END publisherFlowControlSettings]
 
-    // [START createPublisherWithCustomConfig]
-    TopicName topicName = TopicName.create(projectId, topicId);
     Publisher publisher = Publisher.defaultBuilder(topicName)
-        .setBatchingSettings(batchingSettings)
-        .setRetrySettings(retrySettings)
-        .setFlowControlSettings(flowControlSettings)
-        .build();
-    // [END createPublisherWithBatchConfig]
+        .setFlowControlSettings(flowControlSettings).build();
+    // [END publisherFlowControlSettings]
     return publisher;
   }
 }
