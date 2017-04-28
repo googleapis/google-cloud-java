@@ -71,8 +71,9 @@ import org.threeten.bp.Duration;
  *       in memory before the receiver either ack or nack them.
  * </ul>
  *
- * <p>If no credentials are provided, the {@link Subscriber} will use application default
- * credentials through {@link GoogleCredentials#getApplicationDefault}.
+ * <p>{@link Subscriber} will use the credentials set on the channel, which uses
+ *  application default credentials through {@link GoogleCredentials#getApplicationDefault}
+ *  by default.
  */
 public class Subscriber extends AbstractApiService {
   private static final int THREADS_PER_CHANNEL = 5;
