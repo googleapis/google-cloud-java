@@ -17,6 +17,7 @@
 package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.protobuf.ByteString;
@@ -43,27 +44,31 @@ public class CreateTopicAndPublishMessages {
     // [START publish]
     TopicName topicName = TopicName.create("test-project", "test-topic");
     Publisher publisher = null;
-    List<String> messageIds = new ArrayList<>();
+    List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
+
     try {
       // Create a publisher instance with default settings bound to the topic
       publisher = Publisher.defaultBuilder(topicName).build();
 
       List<String> messages = Arrays.asList("first message", "second message");
-      // publish messages one at a time, messages are automatically batched/retried.
-      for (String message : messages) {
 
+      // schedule publishing one message at a time : messages get automatically batched
+      for (String message : messages) {
         ByteString data = ByteString.copyFromUtf8(message);
-        // message data is base64-encoded automatically
+        // message data is converted to base64-encoding
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-        // a unique message id is automatically added to track
+
+        // Once published, returns a server-assigned message id (unique within the topic)
         ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-        messageIds.add(messageIdFuture);
-      }
-      for (ApiFuture<String> messageId : messageIds) {
-        System.out.println("published with message ID: " + messageId.get());
+        messageIdFutures.add(messageIdFuture);
       }
     } finally {
-      // wait on any pending publish
+      // wait on any pending publish requests.
+      List<String> messageIds = ApiFutures.allAsList(messageIdFutures).get();
+
+      for (String messageId : messageIds) {
+        System.out.println("published with message ID: " + messageId);
+      }
 
       if (publisher != null) {
         publisher.shutdown();
@@ -73,7 +78,6 @@ public class CreateTopicAndPublishMessages {
   }
 
   public static void main(String... args) throws Exception {
-
     createTopic();
     publishMessages();
   }

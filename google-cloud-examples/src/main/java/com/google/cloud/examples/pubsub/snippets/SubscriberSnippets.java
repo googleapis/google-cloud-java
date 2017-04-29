@@ -81,11 +81,10 @@ public class SubscriberSnippets {
     // [START pollingSubscriber]
     String projectId = "my-project-id";
     String subscriptionId = "my-subscription-id";
-    int maxMessageCount = 10;
+
     SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
     // Instantiate an asynchronous message receiver
-    MessageReceiver receiver =
-        new MessageReceiver() {
+    MessageReceiver receiver = new MessageReceiver() {
           @Override
           public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
             // handle incoming message, then ack or nack the received message
@@ -96,13 +95,8 @@ public class SubscriberSnippets {
 
     Subscriber subscriber = null;
     try {
-      // Configure max number of messages to be pulled
-      FlowControlSettings flowControlSettings = FlowControlSettings.newBuilder()
-      .setMaxOutstandingElementCount(maxMessageCount).build();
-
       // Create a subscriber for "my-subscription-id" bound to the message receiver
       subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
-          .setFlowControlSettings(flowControlSettings)
           .build();
       subscriber.startAsync();
       // ...
@@ -117,7 +111,6 @@ public class SubscriberSnippets {
 
   private Subscriber createSubscriberWithErrorListener() throws Exception {
     // [START subscriberWithErrorListener]
-
     Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
 
     subscriber.addListener(new Subscriber.Listener() {
@@ -125,42 +118,34 @@ public class SubscriberSnippets {
         // Handle error.
       }
     }, MoreExecutors.directExecutor());
-    // ...
-    // [START subscriberWithErrorListener]
+    // [END subscriberWithErrorListener]
     return subscriber;
   }
 
-  private Subscriber createSubscriberWithCustomSettings() throws Exception {
-    // [START subscriberWithCustomSettings]
-
-    String projectId = "my-project-id";
-    String subscriptionId = "my-subscription-id";
-    SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
-
-    // Instantiate an asynchronous message receiver
-    MessageReceiver receiver =
-        new MessageReceiver() {
-          @Override
-          public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
-            // handle incoming message, then ack or nack the received message
-            // ...
-            consumer.ack();
-          }
-        };
-
-    // acknowledgement time padding to account for network latency
-    Duration ackDeadlinePadding = Duration.ofMillis(100);
-
+  private Subscriber createSingleThreadedSubscriber() throws Exception {
+    // [START singleThreadedSubscriber]
     // provide a separate executor service for polling
     ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
-        .setExecutorThreadCount(10).build();
+        .setExecutorThreadCount(1).build();
 
     Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
-        .setAckExpirationPadding(ackDeadlinePadding)
         .setExecutorProvider(executorProvider)
         .build();
+    // [END singleThreadedSubscriber]
+    return subscriber;
+  }
 
-    // [START subscriberWithCustomSettings]
+  private Subscriber createSubscriberWithCustomFlowSettings() throws Exception {
+    // [START subscriberWithCustomFlow]
+    int maxMessageCount = 10;
+    // Configure max number of messages to be pulled
+    FlowControlSettings flowControlSettings = FlowControlSettings.newBuilder()
+        .setMaxOutstandingElementCount(maxMessageCount)
+        .build();
+    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
+        .setFlowControlSettings(flowControlSettings)
+        .build();
+    // [END subscriberWithCustomFlow]
     return subscriber;
   }
 
@@ -177,7 +162,6 @@ public class SubscriberSnippets {
     Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
         .setChannelProvider(channelProvider)
         .build();
-
     // [START subscriberWithCustomCredentials]
     return subscriber;
   }
