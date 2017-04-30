@@ -180,7 +180,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
               return;
             }
             if (StatusUtil.isRetryable(cause)) {
-              logger.log(Level.SEVERE, "Failed to pull messages (recoverable): ", cause);
+              logger.log(Level.WARNING, "Failed to pull messages (recoverable): ", cause);
               executor.schedule(
                   new Runnable() {
                     @Override
