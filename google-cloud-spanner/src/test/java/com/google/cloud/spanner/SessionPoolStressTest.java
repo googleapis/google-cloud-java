@@ -26,11 +26,9 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -62,7 +60,8 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
   FakeClock clock = new FakeClock();
 
   Map<String, Boolean> sessions = new HashMap<>();
-  Set<String> closedSessions = new HashSet<>();
+  // Exception keeps track of where the session was closed at.
+  Map<String, Exception> closedSessions = new HashMap<>();
   SpannerImpl mockSpanner;
   int maxAliveSessions = 0;
   int minSessionsWhenSessionClosed = Integer.MAX_VALUE;
@@ -113,9 +112,10 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
               public Void answer(InvocationOnMock invocation) throws Throwable {
                 synchronized (lock) {
                   if (sessions.remove(session.getName()) == null) {
-                    setFailed();
+                    setFailed(closedSessions.get(session.getName()));
                   }
-                  if (!closedSessions.add(session.getName())) {
+                  if (closedSessions.put(session.getName(), new Exception("Session closed at:"))
+                      != null) {
                     setFailed();
                   }
                   if (sessions.size() < minSessionsWhenSessionClosed) {
