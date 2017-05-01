@@ -108,18 +108,15 @@ public class PublisherSnippets {
 
   public Publisher getPublisherWithCustomRetrySettings(TopicName topicName) throws Exception {
     // [START publisherRetrySettings]
-    // Retry settings control how the publisher handles failures
-    int maxAttempts = 5; // default : 0
+    // Retry settings control how the publisher handles retryable failures
     Duration retryDelay = Duration.ofMillis(100); // default : 1 ms
     double retryDelayMultiplier = 2.0; // back off for repeated failures
     Duration maxRetryDelay = Duration.ofSeconds(5); // default : 10 seconds
-
 
     RetrySettings retrySettings = RetrySettings.newBuilder()
         .setInitialRetryDelay(retryDelay)
         .setRetryDelayMultiplier(retryDelayMultiplier)
         .setMaxRetryDelay(maxRetryDelay)
-        .setMaxAttempts(maxAttempts)
         .build();
 
     Publisher publisher = Publisher.defaultBuilder(topicName)
@@ -131,12 +128,11 @@ public class PublisherSnippets {
   public Publisher getPublisherWithCustomFlowControlSettings(TopicName topicName) throws Exception {
     // [START publisherFlowControlSettings]
 
-    // Flow control settings restrict outstanding publish requests
-    // Publish requests will fail if it exceeds the flow control settings.
+    // Flow control settings restrict the number of outstanding publish requests
     int maxOutstandingBatches = 20;
     int maxOutstandingRequestBytes = 500000;
 
-    // define behavior on limits exceeded, default behavior is to throw an exception
+    // override behavior on limits exceeded, default behavior is to throw an exception
     LimitExceededBehavior limitExceededBehavior = LimitExceededBehavior.Block;
 
     FlowControlSettings flowControlSettings = FlowControlSettings.newBuilder()
@@ -152,13 +148,13 @@ public class PublisherSnippets {
   }
 
   public Publisher getSingleThreadedPublisher(TopicName topicName) throws Exception {
-    // [START publisherSingleThreaded]
+    // [START singleThreadedPublisher]
     // create a publisher with a single threaded executor
     ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
         .setExecutorThreadCount(1).build();
     Publisher publisher = Publisher.defaultBuilder(topicName)
         .setExecutorProvider(executorProvider).build();
-    // [END publisherSingleThreaded]
+    // [END singleThreadedPublisher]
     return publisher;
   }
 
