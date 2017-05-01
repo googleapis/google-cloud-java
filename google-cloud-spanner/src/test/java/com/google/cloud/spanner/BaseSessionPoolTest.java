@@ -32,7 +32,7 @@ import org.threeten.bp.Instant;
 
 abstract class BaseSessionPoolTest {
   ScheduledExecutorService mockExecutor;
-  int sessionIndex = 0;
+  int sessionIndex;
 
   final class TestExecutorFactory implements ExecutorFactory<ScheduledExecutorService> {
 

@@ -268,7 +268,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     for (ManagedChannel channel : getOptions().getRpcChannels()) {
       channel.shutdown();
     }
-    return;
   }
 
   /**

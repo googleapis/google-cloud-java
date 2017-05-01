@@ -360,8 +360,8 @@ final class SessionPool {
   }
 
   private static final class SessionOrError {
-    private PooledSession session;
-    private SpannerException e;
+    private final PooledSession session;
+    private final SpannerException e;
 
     SessionOrError(PooledSession session) {
       this.session = session;
@@ -388,7 +388,7 @@ final class SessionPool {
     private PooledSession take() throws SpannerException {
       SessionOrError s = Uninterruptibles.takeUninterruptibly(waiter);
       if (s.e != null) {
-        throw SpannerExceptionFactory.newSpannerException(s.e);
+        throw newSpannerException(s.e);
       }
       return s.session;
     }
@@ -421,7 +421,7 @@ final class SessionPool {
     ScheduledFuture<?> scheduledFuture;
 
     @GuardedBy("lock")
-    boolean running = false;
+    boolean running;
 
     void init() {
       // Scheduled pool maintenance worker.
@@ -595,10 +595,7 @@ final class SessionPool {
   private int maxSessionsInUse = 0;
 
   @GuardedBy("lock")
-  private Map<String, PooledSession> allSessions = new HashMap<>();
-
-  // TODO(user): Maybe maintain a list/map of all sessions currently in the pool including those
-  // which have been handed out to client.
+  private final Map<String, PooledSession> allSessions = new HashMap<>();
 
   /**
    * Create a session pool with the given options and for the given database. It will also start
@@ -891,14 +888,14 @@ final class SessionPool {
       Waiter waiter = readWaiters.poll();
       while (waiter != null) {
         waiter.put(
-            SpannerExceptionFactory.newSpannerException(
+            newSpannerException(
                 ErrorCode.INTERNAL, "Client has been closed"));
         waiter = readWaiters.poll();
       }
       waiter = readWriteWaiters.poll();
       while (waiter != null) {
         waiter.put(
-            SpannerExceptionFactory.newSpannerException(
+            newSpannerException(
                 ErrorCode.INTERNAL, "Client has been closed"));
         waiter = readWriteWaiters.poll();
       }
@@ -941,10 +938,7 @@ final class SessionPool {
   private boolean shouldPrepareSession() {
     synchronized (lock) {
       int preparedSessions = writePreparedSessions.size() + numSessionsBeingPrepared;
-      if (preparedSessions < Math.floor(options.getWriteSessionsFraction() * totalSessions())) {
-        return true;
-      }
-      return false;
+      return preparedSessions < Math.floor(options.getWriteSessionsFraction() * totalSessions());
     }
   }
 
@@ -1011,7 +1005,7 @@ final class SessionPool {
               synchronized (lock) {
                 numSessionsBeingPrepared--;
                 if (!isClosed()) {
-                  handlePrepareSessionFailure(SpannerExceptionFactory.newSpannerException(t), sess);
+                  handlePrepareSessionFailure(newSpannerException(t), sess);
                 }
               }
             }
@@ -1044,7 +1038,7 @@ final class SessionPool {
                   if (isClosed()) {
                     decrementPendingClosures();
                   }
-                  handleCreateSessionFailure(SpannerExceptionFactory.newSpannerException(t));
+                  handleCreateSessionFailure(newSpannerException(t));
                 }
                 return;
               }

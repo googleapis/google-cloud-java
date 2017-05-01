@@ -44,12 +44,16 @@ import org.junit.runners.Parameterized.Parameters;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
+/**
+ * Stress test for {@code SessionPool} which does multiple operations on the pool, making some of
+ * them fail and asserts that all the invariants are maintained.
+ */
 @RunWith(Parameterized.class)
 public class SessionPoolStressTest extends BaseSessionPoolTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
   @Parameter(0)
-  public float writeSessionsFraction;
+  public double writeSessionsFraction;
 
   @Parameter(1)
   public boolean shouldBlock;
@@ -66,14 +70,14 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
   Map<String, Exception> closedSessions = new HashMap<>();
   Set<String> expiredSessions = new HashSet<>();
   SpannerImpl mockSpanner;
-  int maxAliveSessions = 0;
+  int maxAliveSessions;
   int minSessionsWhenSessionClosed = Integer.MAX_VALUE;
   Exception e;
 
   @Parameters(name = "write fraction = {0}, should block = {1}")
   public static Collection<Object[]> data() {
     List<Object[]> params = new ArrayList<>();
-    for (float writeFraction = 0; writeFraction <= 1; writeFraction += 0.2) {
+    for (double writeFraction = 0; writeFraction <= 1; writeFraction += 0.2) {
       params.add(new Object[] {writeFraction, true});
       params.add(new Object[] {writeFraction, false});
     }
@@ -142,7 +146,7 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
                       ErrorCode.NOT_FOUND, "Session not found");
                 }
                 synchronized (lock) {
-                  if (sessions.put(session.getName(), true) != false) {
+                  if (sessions.put(session.getName(), true)) {
                     setFailed();
                   }
                 }
@@ -218,7 +222,7 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
                 @Override
                 public void run() {
                   Uninterruptibles.awaitUninterruptibly(releaseThreads);
-                  for (int i = 0; i < numOperationsPerThread; i++) {
+                  for (int j = 0; j < numOperationsPerThread; j++) {
                     try {
                       Session session = null;
                       if (random.nextInt(10) < writeOperationFraction) {
