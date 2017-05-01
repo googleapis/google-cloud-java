@@ -29,6 +29,10 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.cloud.spanner.SessionPool.Clock;
+import com.google.cloud.spanner.SessionPool.PooledSession;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.Uninterruptibles;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -36,7 +40,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -49,18 +52,13 @@ import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-import com.google.cloud.spanner.SessionPool.Clock;
-import com.google.cloud.spanner.SessionPool.PooledSession;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.Uninterruptibles;
-
 /** Tests for SessionPool that mock out the underlying stub. */
 @RunWith(Parameterized.class)
 public class SessionPoolTest extends BaseSessionPoolTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
   @Parameter public int minSessions;
-  
+
   @Mock SpannerImpl client;
   DatabaseId db = DatabaseId.of("projects/p/instances/i/databases/unused");
   SessionPool pool;
@@ -82,22 +80,29 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   @Before
   public void setUp() throws Exception {
     initMocks(this);
-    options = SessionPoolOptions.newBuilder().setMinSessions(minSessions).setMaxSessions(2).setBlockIfPoolExhausted().build();
+    options =
+        SessionPoolOptions.newBuilder()
+            .setMinSessions(minSessions)
+            .setMaxSessions(2)
+            .setBlockIfPoolExhausted()
+            .build();
   }
 
   private void setupMockSessionCreation() {
-	  when(client.createSession(db)).thenAnswer(new Answer<Session>() {
+    when(client.createSession(db))
+        .thenAnswer(
+            new Answer<Session>() {
 
-		@Override
-		public Session answer(InvocationOnMock invocation) throws Throwable {
-			return mockSession();
-		}
-	});
+              @Override
+              public Session answer(InvocationOnMock invocation) throws Throwable {
+                return mockSession();
+              }
+            });
   }
-  
+
   @Test
   public void sessionCreation() {
-	setupMockSessionCreation();
+    setupMockSessionCreation();
     pool = createPool();
     try (Session session = pool.getReadSession()) {
       assertThat(session).isNotNull();
@@ -106,47 +111,47 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void poolClosure() throws Exception {
-	setupMockSessionCreation();
+    setupMockSessionCreation();
     pool = createPool();
     pool.closeAsync().get();
   }
 
   @Test
   public void poolClosureClosesLeakedSessions() throws Exception {
-	  Session mockSession1 = mockSession();
-	  Session mockSession2 = mockSession();
-	  when(client.createSession(db)).thenReturn(mockSession1).thenReturn(mockSession2);
-	  pool = createPool();
-	  Session session1 = pool.getReadSession();
-	  // Leaked sessions
-	  pool.getReadSession();
-	  session1.close();
-	  pool.closeAsync().get();
-	  verify(mockSession1).close();
-	  verify(mockSession2).close();
+    Session mockSession1 = mockSession();
+    Session mockSession2 = mockSession();
+    when(client.createSession(db)).thenReturn(mockSession1).thenReturn(mockSession2);
+    pool = createPool();
+    Session session1 = pool.getReadSession();
+    // Leaked sessions
+    pool.getReadSession();
+    session1.close();
+    pool.closeAsync().get();
+    verify(mockSession1).close();
+    verify(mockSession2).close();
   }
-  
+
   @Test
   public void poolClosesWhenMaintenanceLoopIsRunning() throws Exception {
     setupMockSessionCreation();
     final FakeClock clock = new FakeClock();
     pool = createPool(clock);
     final AtomicBoolean stop = new AtomicBoolean(false);
-    new Thread(new Runnable() {
-		
-		@Override
-		public void run() {
-	      // Run in a tight loop.
-	      while (!stop.get()) {
-	    	  runMaintainanceLoop(clock, pool, 1);
-	      }
-			
-		}
-	});
+    new Thread(
+        new Runnable() {
+
+          @Override
+          public void run() {
+            // Run in a tight loop.
+            while (!stop.get()) {
+              runMaintainanceLoop(clock, pool, 1);
+            }
+          }
+        });
     pool.closeAsync().get();
     stop.set(true);
   }
-  
+
   @Test
   public void poolClosureFailsPendingReadWaiters() throws Exception {
     final CountDownLatch insideCreation = new CountDownLatch(1);
@@ -260,7 +265,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void poolClosureFailsNewRequests() throws Exception {
-	Session session = mockSession();
+    Session session = mockSession();
     when(client.createSession(db)).thenReturn(session);
     pool = createPool();
     pool.getReadSession();
@@ -271,7 +276,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void atMostMaxSessionsCreated() {
-	setupMockSessionCreation();
+    setupMockSessionCreation();
     AtomicBoolean failed = new AtomicBoolean(false);
     pool = createPool();
     int numSessions = 10;
@@ -473,16 +478,18 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     Session session3 = mockSession();
     final AtomicInteger numSessionClosed = new AtomicInteger();
     when(client.createSession(db)).thenReturn(session1).thenReturn(session2).thenReturn(session3);
-    for (Session session : new Session[]{session1, session2, session3}) {
-      doAnswer(new Answer<Void>() {
+    for (Session session : new Session[] {session1, session2, session3}) {
+      doAnswer(
+              new Answer<Void>() {
 
-		@Override
-		public Void answer(InvocationOnMock invocation) throws Throwable {
-		  numSessionClosed.incrementAndGet();
-		  return null;
-		}
-    	  
-      }).when(session).close();
+                @Override
+                public Void answer(InvocationOnMock invocation) throws Throwable {
+                  numSessionClosed.incrementAndGet();
+                  return null;
+                }
+              })
+          .when(session)
+          .close();
     }
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();

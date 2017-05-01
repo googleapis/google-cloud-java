@@ -18,24 +18,6 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Queue;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
-
-import org.joda.time.Duration;
-import org.joda.time.Instant;
-
 import com.google.cloud.Timestamp;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
@@ -48,6 +30,21 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.GuardedBy;
+import org.joda.time.Duration;
+import org.joda.time.Instant;
 
 /**
  * Maintains a pool of sessions some of which might be prepared for write by invoking
@@ -195,18 +192,18 @@ final class SessionPool {
   // Exception class used just to track the stack trace at the point when a session was handed out
   // from the pool.
   private final class LeakedSessionException extends Exception {
-	private static final long serialVersionUID = 1451131180314064914L;
+    private static final long serialVersionUID = 1451131180314064914L;
 
-	private LeakedSessionException() {
-		  super("Session was checked out from the pool at:");
-	  }
+    private LeakedSessionException() {
+      super("Session was checked out from the pool at:");
+    }
   }
-  
+
   final class PooledSession implements Session {
     @VisibleForTesting final Session delegate;
     private volatile Instant lastUseTime;
     private volatile SpannerException lastException;
-    private volatile LeakedSessionException leakedException;  
+    private volatile LeakedSessionException leakedException;
 
     private PooledSession(Session delegate) {
       this.delegate = delegate;
@@ -419,50 +416,53 @@ final class SessionPool {
     Instant lastResetTime = new Instant(0);
     int numSessionsToClose = 0;
     int sessionsToClosePerLoop = 0;
+
     @GuardedBy("lock")
     ScheduledFuture<?> scheduledFuture;
+
     @GuardedBy("lock")
     boolean running = false;
-    
+
     void init() {
       // Scheduled pool maintenance worker.
-      scheduledFuture = executor.scheduleAtFixedRate(
-          new Runnable() {
-            @Override
-            public void run() {
-              maintainPool();
-            }
-          },
-          LOOP_FREQUENCY,
-          LOOP_FREQUENCY,
-          TimeUnit.MILLISECONDS);
+      scheduledFuture =
+          executor.scheduleAtFixedRate(
+              new Runnable() {
+                @Override
+                public void run() {
+                  maintainPool();
+                }
+              },
+              LOOP_FREQUENCY,
+              LOOP_FREQUENCY,
+              TimeUnit.MILLISECONDS);
     }
-    
+
     void close() {
-    	scheduledFuture.cancel(false);
-    	if (!running) {
-    		decrementPendingClosures();
-    	}
+      scheduledFuture.cancel(false);
+      if (!running) {
+        decrementPendingClosures();
+      }
     }
 
     // Does various pool maintenance activities.
     void maintainPool() {
-      synchronized(lock) {
-    	  if (isClosed()) {
-    		  return;
-    	  }
-    	  running = true;
+      synchronized (lock) {
+        if (isClosed()) {
+          return;
+        }
+        running = true;
       }
       Instant currTime = clock.instant();
       closeIdleSessions(currTime);
       // Now go over all the remaining sessions and see if they need to be kept alive explicitly.
       keepAliveSessions(currTime);
       replenishPool();
-      synchronized(lock) {
-    	  running = false;
-    	  if (isClosed()) {
-    		  decrementPendingClosures();
-    	  }
+      synchronized (lock) {
+        running = false;
+        if (isClosed()) {
+          decrementPendingClosures();
+        }
       }
     }
 
@@ -593,7 +593,7 @@ final class SessionPool {
 
   @GuardedBy("lock")
   private int maxSessionsInUse = 0;
-  
+
   @GuardedBy("lock")
   private Map<String, PooledSession> allSessions = new HashMap<>();
 
@@ -651,12 +651,12 @@ final class SessionPool {
   }
 
   private void initPool() {
-	synchronized(lock) {
-    poolMaintainer.init();
-    for (int i = 0; i < options.getMinSessions(); i++) {
-      createSession();
+    synchronized (lock) {
+      poolMaintainer.init();
+      for (int i = 0; i < options.getMinSessions(); i++) {
+        createSession();
+      }
     }
-	}
   }
 
   private boolean isClosed() {
@@ -710,10 +710,10 @@ final class SessionPool {
    * <p>Implementation strategy:
    *
    * <ol>
-   *   <li> If a read session is available, return that.
-   *   <li> Otherwise if a writePreparedSession is available, return that.
-   *   <li> Otherwise if a session can be created, fire a creation request.
-   *   <li> Wait for a session to become available. Note that this can be unblocked either by a
+   *   <li>If a read session is available, return that.
+   *   <li>Otherwise if a writePreparedSession is available, return that.
+   *   <li>Otherwise if a session can be created, fire a creation request.
+   *   <li>Wait for a session to become available. Note that this can be unblocked either by a
    *       session being returned to the pool or a new session being created.
    * </ol>
    */
@@ -751,12 +751,11 @@ final class SessionPool {
    * <p>Implementation strategy:
    *
    * <ol>
-   *   <li> If a writePreparedSession is available, return that.
-   *   <li> Otherwise if we have an extra session being prepared for write, wait for that.
-   *   <li> Otherwise, if there is a read session available, start preparing that for write and
-   *       wait.
-   *   <li> Otherwise start creating a new session and wait.
-   *   <li> Wait for write prepared session to become available. This can be unblocked either by the
+   *   <li>If a writePreparedSession is available, return that.
+   *   <li>Otherwise if we have an extra session being prepared for write, wait for that.
+   *   <li>Otherwise, if there is a read session available, start preparing that for write and wait.
+   *   <li>Otherwise start creating a new session and wait.
+   *   <li>Wait for write prepared session to become available. This can be unblocked either by the
    *       session create/prepare request we fired in above request or by a session being released
    *       to the pool which is then write prepared.
    * </ol>
@@ -770,16 +769,16 @@ final class SessionPool {
       }
       sess = writePreparedSessions.poll();
       if (sess == null) {
-      if (numSessionsBeingPrepared <= readWriteWaiters.size()) {
-        PooledSession readSession = readSessions.poll();
-        if (readSession != null) {
-          prepareSession(readSession);
-        } else {
-          maybeCreateSession();
+        if (numSessionsBeingPrepared <= readWriteWaiters.size()) {
+          PooledSession readSession = readSessions.poll();
+          if (readSession != null) {
+            prepareSession(readSession);
+          } else {
+            maybeCreateSession();
+          }
         }
-      }
-      waiter = new Waiter();
-      readWriteWaiters.add(waiter);
+        waiter = new Waiter();
+        readWriteWaiters.add(waiter);
       }
     }
     if (waiter != null) {
@@ -805,10 +804,11 @@ final class SessionPool {
           createSession();
         } else if (options.isFailIfPoolExhausted()) {
           // throw specific exception
-          throw newSpannerException(ErrorCode.RESOURCE_EXHAUSTED,
-        		  "No session available in the pool. Maximum number of sessions in the pool can be"
-        		  + " overridden by invoking SessionPoolOptions#Builder#setMaxSessions. Client can be made to block"
-        		  + " rather than fail by setting SessionPoolOptions#Builder#setBlockIfPoolExhausted.");
+          throw newSpannerException(
+              ErrorCode.RESOURCE_EXHAUSTED,
+              "No session available in the pool. Maximum number of sessions in the pool can be"
+                  + " overridden by invoking SessionPoolOptions#Builder#setMaxSessions. Client can be made to block"
+                  + " rather than fail by setting SessionPoolOptions#Builder#setBlockIfPoolExhausted.");
         }
       }
     }
@@ -819,10 +819,9 @@ final class SessionPool {
    * <p>Implementation note:
    *
    * <ol>
-   *   <li> If there are no pending waiters, either add to the read sessions queue or start
-   *       preparing for write depending on what fraction of sessions are already prepared for
-   *       writes.
-   *   <li> Otherwise either unblock a waiting reader or start preparing for a write. Exact strategy
+   *   <li>If there are no pending waiters, either add to the read sessions queue or start preparing
+   *       for write depending on what fraction of sessions are already prepared for writes.
+   *   <li>Otherwise either unblock a waiting reader or start preparing for a write. Exact strategy
    *       on which option we chose, in case there are both waiting readers and writers, is
    *       implemented in {@link #shouldUnblockReader}
    * </ol>
@@ -871,12 +870,12 @@ final class SessionPool {
   }
 
   private void decrementPendingClosures() {
-	  pendingClosure--;
-	  if (pendingClosure == 0) {
-		  closureFuture.set(null);
-	  }
+    pendingClosure--;
+    if (pendingClosure == 0) {
+      closureFuture.set(null);
+    }
   }
-  
+
   /**
    * Close all the sessions. Once this method is invoked {@link #getReadSession()} and {@link
    * #getReadWriteSession()} will start throwing {@code IllegalStateException}. This method blocks
@@ -905,27 +904,27 @@ final class SessionPool {
       }
       closureFuture = SettableFuture.create();
       retFuture = closureFuture;
-      pendingClosure = totalSessions() + numSessionsBeingCreated
-        + 1 /* For pool maintenance thread */ ;
+      pendingClosure =
+          totalSessions() + numSessionsBeingCreated + 1 /* For pool maintenance thread */;
       poolMaintainer.close();
       readSessions.clear();
       writePreparedSessions.clear();
       for (final PooledSession session : ImmutableList.copyOf(allSessions.values())) {
         if (session.leakedException != null) {
           logger.log(Level.WARNING, "Leaked session", session.leakedException);
-        }   	
+        }
         closeSessionAsync(session.delegate);
       }
     }
     retFuture.addListener(
-            new Runnable() {
-              @Override
-              public void run() {
-                executorFactory.release(executor);
-              }
-            },
-            MoreExecutors.directExecutor());
-    
+        new Runnable() {
+          @Override
+          public void run() {
+            executorFactory.release(executor);
+          }
+        },
+        MoreExecutors.directExecutor());
+
     return retFuture;
   }
 
@@ -954,7 +953,7 @@ final class SessionPool {
       return readWaiters.size() + readWriteWaiters.size();
     }
   }
-  
+
   private int totalSessions() {
     synchronized (lock) {
       return allSessions.size();
