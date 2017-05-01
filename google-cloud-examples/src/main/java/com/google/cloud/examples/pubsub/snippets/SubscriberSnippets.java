@@ -39,7 +39,6 @@ import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.SubscriptionName;
 import java.io.FileInputStream;
 import java.util.concurrent.Executor;
-import org.threeten.bp.Duration;
 
 /** This class contains snippets for the {@link Subscriber} interface. */
 public class SubscriberSnippets {
