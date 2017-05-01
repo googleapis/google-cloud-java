@@ -132,7 +132,7 @@ public class MonitoredResourceUtil {
    */
   public static List<LoggingEnhancer> createResourceEnhancers() {
     Resource resourceType = getAutoDetectedResourceType();
-    return getEnhancers(resourceType);
+    return createEnhancers(resourceType);
   }
 
   private static String getValue(Label label) {
@@ -196,7 +196,7 @@ public class MonitoredResourceUtil {
     return System.getenv("GAE_INSTANCE");
   }
 
-  private static List<LoggingEnhancer> getEnhancers(Resource resourceType) {
+  private static List<LoggingEnhancer> createEnhancers(Resource resourceType) {
     List<LoggingEnhancer> enhancers = new ArrayList<>(2);
     switch (resourceType) {
       // Trace logging enhancer is supported on GAE Flex and Standard.
