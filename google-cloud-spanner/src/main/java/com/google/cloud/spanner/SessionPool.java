@@ -875,8 +875,8 @@ final class SessionPool {
 
   /**
    * Close all the sessions. Once this method is invoked {@link #getReadSession()} and {@link
-   * #getReadWriteSession()} will start throwing {@code IllegalStateException}. This method blocks
-   * till all the sessions created in this pool have been closed.
+   * #getReadWriteSession()} will start throwing {@code IllegalStateException}. The returned future
+   * blocks till all the sessions created in this pool have been closed.
    */
   ListenableFuture<Void> closeAsync() {
     ListenableFuture<Void> retFuture = null;

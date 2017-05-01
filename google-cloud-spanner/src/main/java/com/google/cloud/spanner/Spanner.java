@@ -34,8 +34,8 @@ public interface Spanner extends Service<SpannerOptions> {
 
   /**
    * Closes all the clients associated with this instance and frees up all the resources. This
-   * method does not block. Return future will complete when cleanup is done. TODO(user): Add
-   * logging and tracking of leaked sessions.
+   * method will block till it can clean up all the resources. Specifically, it deletes all the
+   * underlying sessions (which involves rpcs) and closes all the gRPC channels.
    */
   void close();
 }
