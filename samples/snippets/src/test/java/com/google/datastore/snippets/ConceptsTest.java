@@ -23,10 +23,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Cursor;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
-import com.google.cloud.datastore.DateTime;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.EntityQuery;
 import com.google.cloud.datastore.FullEntity;
@@ -51,7 +51,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 
-import org.joda.time.Duration;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -60,6 +59,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -88,9 +88,9 @@ public class ConceptsTest {
   private KeyFactory keyFactory;
   private Key taskKey;
   private Entity testEntity;
-  private DateTime startDate;
-  private DateTime endDate;
-  private DateTime includedDate;
+  private Timestamp startDate;
+  private Timestamp endDate;
+  private Timestamp includedDate;
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -121,11 +121,11 @@ public class ConceptsTest {
     testEntity = Entity.newBuilder(taskKey, TEST_FULL_ENTITY).build();
     Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
     calendar.set(1990, JANUARY, 1);
-    startDate = DateTime.copyFrom(calendar);
+    startDate = Timestamp.of(calendar.getTime());
     calendar.set(2000, JANUARY, 1);
-    endDate = DateTime.copyFrom(calendar);
+    endDate = Timestamp.of(calendar.getTime());
     calendar.set(1999, DECEMBER, 31);
-    includedDate = DateTime.copyFrom(calendar);
+    includedDate = Timestamp.of(calendar.getTime());
   }
 
   /**
@@ -136,7 +136,7 @@ public class ConceptsTest {
    */
   @AfterClass
   public static void afterClass() throws IOException, InterruptedException, TimeoutException {
-    HELPER.stop(Duration.standardMinutes(1));
+    HELPER.stop(Duration.ofMinutes(1));
   }
 
   private void assertValidKey(Key taskKey) {
@@ -209,7 +209,7 @@ public class ConceptsTest {
     // [START properties]
     Entity task = Entity.newBuilder(taskKey)
         .set("category", "Personal")
-        .set("created", DateTime.now())
+        .set("created", Timestamp.now())
         .set("done", false)
         .set("priority", 4)
         .set("percent_complete", 10.0)
@@ -752,7 +752,7 @@ public class ConceptsTest {
     Entity task = Entity.newBuilder(taskKey)
         .set("tags", "fun", "programming", "learn")
         .set("collaborators", "alice", "bob", "charlie")
-        .set("created", DateTime.now())
+        .set("created", Timestamp.now())
         .build();
     // [END exploding_properties]
     assertValidEntity(task);

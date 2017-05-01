@@ -16,9 +16,9 @@
 
 package com.google.datastore.snippets;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.DateTime;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
@@ -57,7 +57,7 @@ public class TaskList {
     Key key = datastore.allocateId(keyFactory.newKey());
     Entity task = Entity.newBuilder(key)
         .set("description", StringValue.newBuilder(description).setExcludeFromIndexes(true).build())
-        .set("created", DateTime.now())
+        .set("created", Timestamp.now())
         .set("done", false)
         .build();
     datastore.put(task);
@@ -131,7 +131,7 @@ public class TaskList {
             String.format("%d : %s (done)", task.getKey().getId(), task.getString("description")));
       } else {
         strings.add(String.format("%d : %s (created %s)", task.getKey().getId(),
-            task.getString("description"), task.getDateTime("created")));
+            task.getString("description"), task.getTimestamp("created")));
       }
     }
     return strings;
