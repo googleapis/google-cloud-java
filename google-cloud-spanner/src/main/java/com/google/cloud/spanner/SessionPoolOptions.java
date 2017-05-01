@@ -20,6 +20,8 @@ import com.google.common.base.Preconditions;
 
 /** Options for the session pool used by {@code DatabaseClient}. */
 public class SessionPoolOptions {
+  private static final int DEFAULT_MAX_SESSIONS = 2000;
+  private static final ActionOnExhaustion DEFAULT_ACTION = ActionOnExhaustion.FAIL;
   private final int minSessions;
   private final int maxSessions;
   private final int maxIdleSessions;
@@ -76,10 +78,10 @@ public class SessionPoolOptions {
   /** Builder for creating SessionPoolOptions. */
   public static class Builder {
     private int minSessions;
-    private int maxSessions = Integer.MAX_VALUE;
+    private int maxSessions = DEFAULT_MAX_SESSIONS;
     private int maxIdleSessions;
     private float writeSessionsFraction = 0.2f;
-    private ActionOnExhaustion actionOnExhaustion = ActionOnExhaustion.BLOCK;
+    private ActionOnExhaustion actionOnExhaustion = DEFAULT_ACTION;
     private int keepAliveIntervalMinutes = 30;
 
     /**
@@ -97,7 +99,7 @@ public class SessionPoolOptions {
      * Maximum number of sessions that this pool will have. If current numbers of sessions in the
      * pool is less than this and they are all busy, then a new session will be created for any new
      * operation. If current number of in use sessions is same as this and a new request comes, pool
-     * can either block or fail. Defaults to unlimited.
+     * can either block or fail. Defaults to 2000.
      */
     public Builder setMaxSessions(int maxSessions) {
       Preconditions.checkArgument(
@@ -133,7 +135,7 @@ public class SessionPoolOptions {
     /**
      * If all sessions are in use and and {@code maxSessions} has been reached, fail the request by
      * throwing a {@link SpannerException} with the error code {@code RESOURCE_EXHAUSTED}. Default
-     * behavior is to block for a session to become available.
+     * behavior is same.
      */
     public Builder setFailIfPoolExhausted() {
       this.actionOnExhaustion = ActionOnExhaustion.FAIL;
@@ -142,7 +144,7 @@ public class SessionPoolOptions {
 
     /**
      * If all sessions are in use and there is no more room for creating new sessions, block for a
-     * session to become available. Default behavior is same.
+     * session to become available. Default behavior is to fail the request.
      */
     public Builder setBlockIfPoolExhausted() {
       this.actionOnExhaustion = ActionOnExhaustion.BLOCK;

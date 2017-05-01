@@ -16,7 +16,6 @@
 
 package com.google.cloud.spanner;
 
-import com.google.api.core.ApiFuture;
 import com.google.cloud.Service;
 
 /** An interface for Cloud Spanner. */
@@ -38,5 +37,5 @@ public interface Spanner extends Service<SpannerOptions> {
    * method does not block. Return future will complete when cleanup is done. TODO(user): Add
    * logging and tracking of leaked sessions.
    */
-  ApiFuture<Void> closeAsync();
+  void close();
 }

@@ -18,7 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Mockito.any;
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.atMost;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doThrow;
@@ -29,20 +29,14 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
-import com.google.cloud.spanner.SessionPool.Clock;
-import com.google.cloud.spanner.SessionPool.PooledSession;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.Uninterruptibles;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.joda.time.Instant;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -55,30 +49,22 @@ import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
+import com.google.cloud.spanner.SessionPool.Clock;
+import com.google.cloud.spanner.SessionPool.PooledSession;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.Uninterruptibles;
+
 /** Tests for SessionPool that mock out the underlying stub. */
 @RunWith(Parameterized.class)
-public class SessionPoolTest {
+public class SessionPoolTest extends BaseSessionPoolTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
   @Parameter public int minSessions;
-
+  
   @Mock SpannerImpl client;
   DatabaseId db = DatabaseId.of("projects/p/instances/i/databases/unused");
   SessionPool pool;
   SessionPoolOptions options;
-
-  static final class TestExecutorFactory implements ExecutorFactory<ScheduledExecutorService> {
-
-    @Override
-    public ScheduledExecutorService get() {
-      return new ScheduledThreadPoolExecutor(2);
-    }
-
-    @Override
-    public void release(ScheduledExecutorService executor) {
-      executor.shutdown();
-    }
-  }
 
   @Parameters(name = "min sessions = {0}")
   public static Collection<Object[]> data() {
@@ -96,12 +82,22 @@ public class SessionPoolTest {
   @Before
   public void setUp() throws Exception {
     initMocks(this);
-    options = SessionPoolOptions.newBuilder().setMinSessions(minSessions).setMaxSessions(2).build();
+    options = SessionPoolOptions.newBuilder().setMinSessions(minSessions).setMaxSessions(2).setBlockIfPoolExhausted().build();
   }
 
+  private void setupMockSessionCreation() {
+	  when(client.createSession(db)).thenAnswer(new Answer<Session>() {
+
+		@Override
+		public Session answer(InvocationOnMock invocation) throws Throwable {
+			return mockSession();
+		}
+	});
+  }
+  
   @Test
   public void sessionCreation() {
-    when(client.createSession(db)).thenReturn(mock(Session.class));
+	setupMockSessionCreation();
     pool = createPool();
     try (Session session = pool.getReadSession()) {
       assertThat(session).isNotNull();
@@ -110,24 +106,62 @@ public class SessionPoolTest {
 
   @Test
   public void poolClosure() throws Exception {
-    when(client.createSession(db)).thenReturn(mock(Session.class));
+	setupMockSessionCreation();
     pool = createPool();
     pool.closeAsync().get();
   }
 
   @Test
+  public void poolClosureClosesLeakedSessions() throws Exception {
+	  Session mockSession1 = mockSession();
+	  Session mockSession2 = mockSession();
+	  when(client.createSession(db)).thenReturn(mockSession1).thenReturn(mockSession2);
+	  pool = createPool();
+	  Session session1 = pool.getReadSession();
+	  // Leaked sessions
+	  pool.getReadSession();
+	  session1.close();
+	  pool.closeAsync().get();
+	  verify(mockSession1).close();
+	  verify(mockSession2).close();
+  }
+  
+  @Test
+  public void poolClosesWhenMaintenanceLoopIsRunning() throws Exception {
+    setupMockSessionCreation();
+    final FakeClock clock = new FakeClock();
+    pool = createPool(clock);
+    final AtomicBoolean stop = new AtomicBoolean(false);
+    new Thread(new Runnable() {
+		
+		@Override
+		public void run() {
+	      // Run in a tight loop.
+	      while (!stop.get()) {
+	    	  runMaintainanceLoop(clock, pool, 1);
+	      }
+			
+		}
+	});
+    pool.closeAsync().get();
+    stop.set(true);
+  }
+  
+  @Test
   public void poolClosureFailsPendingReadWaiters() throws Exception {
     final CountDownLatch insideCreation = new CountDownLatch(1);
     final CountDownLatch releaseCreation = new CountDownLatch(1);
+    Session session1 = mockSession();
+    final Session session2 = mockSession();
     when(client.createSession(db))
-        .thenReturn(mock(Session.class))
+        .thenReturn(session1)
         .thenAnswer(
             new Answer<Session>() {
               @Override
               public Session answer(InvocationOnMock invocation) throws Throwable {
                 insideCreation.countDown();
                 releaseCreation.await();
-                return mock(Session.class);
+                return session2;
               }
             });
     pool = createPool();
@@ -146,15 +180,17 @@ public class SessionPoolTest {
   public void poolClosureFailsPendingWriteWaiters() throws Exception {
     final CountDownLatch insideCreation = new CountDownLatch(1);
     final CountDownLatch releaseCreation = new CountDownLatch(1);
+    Session session1 = mockSession();
+    final Session session2 = mockSession();
     when(client.createSession(db))
-        .thenReturn(mock(Session.class))
+        .thenReturn(session1)
         .thenAnswer(
             new Answer<Session>() {
               @Override
               public Session answer(InvocationOnMock invocation) throws Throwable {
                 insideCreation.countDown();
                 releaseCreation.await();
-                return mock(Session.class);
+                return session2;
               }
             });
     pool = createPool();
@@ -196,7 +232,7 @@ public class SessionPoolTest {
 
   @Test
   public void poolClosesEvenIfPreparationFails() throws Exception {
-    Session session = mock(Session.class);
+    Session session = mockSession();
     when(client.createSession(db)).thenReturn(session);
     final CountDownLatch insidePrepare = new CountDownLatch(1);
     final CountDownLatch releasePrepare = new CountDownLatch(1);
@@ -224,7 +260,8 @@ public class SessionPoolTest {
 
   @Test
   public void poolClosureFailsNewRequests() throws Exception {
-    when(client.createSession(db)).thenReturn(mock(Session.class));
+	Session session = mockSession();
+    when(client.createSession(db)).thenReturn(session);
     pool = createPool();
     pool.getReadSession();
     pool.closeAsync();
@@ -234,8 +271,8 @@ public class SessionPoolTest {
 
   @Test
   public void atMostMaxSessionsCreated() {
+	setupMockSessionCreation();
     AtomicBoolean failed = new AtomicBoolean(false);
-    when(client.createSession(db)).thenReturn(mock(Session.class));
     pool = createPool();
     int numSessions = 10;
     final CountDownLatch latch = new CountDownLatch(numSessions);
@@ -267,7 +304,7 @@ public class SessionPoolTest {
 
   @Test
   public void prepareExceptionPropagatesToReadWriteSession() {
-    Session session = mock(Session.class);
+    Session session = mockSession();
     when(client.createSession(db)).thenReturn(session);
     doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.INTERNAL, ""))
         .when(session)
@@ -279,7 +316,7 @@ public class SessionPoolTest {
 
   @Test
   public void getReadWriteSession() {
-    Session mockSession = mock(Session.class);
+    Session mockSession = mockSession();
     when(client.createSession(db)).thenReturn(mockSession);
     pool = createPool();
     try (Session session = pool.getReadWriteSession()) {
@@ -290,8 +327,8 @@ public class SessionPoolTest {
 
   @Test
   public void getMultipleReadWriteSessions() {
-    Session mockSession1 = mock(Session.class);
-    Session mockSession2 = mock(Session.class);
+    Session mockSession1 = mockSession();
+    Session mockSession2 = mockSession();
     when(client.createSession(db)).thenReturn(mockSession1).thenReturn(mockSession2);
     pool = createPool();
     Session session1 = pool.getReadWriteSession();
@@ -305,7 +342,8 @@ public class SessionPoolTest {
   @Test
   public void getMultipleConcurrentReadWriteSessions() {
     AtomicBoolean failed = new AtomicBoolean(false);
-    when(client.createSession(db)).thenReturn(mock(Session.class));
+    Session session = mockSession();
+    when(client.createSession(db)).thenReturn(session);
     pool = createPool();
     int numSessions = 5;
     final CountDownLatch latch = new CountDownLatch(numSessions);
@@ -317,8 +355,8 @@ public class SessionPoolTest {
 
   @Test
   public void sessionIsPrePrepared() {
-    Session mockSession1 = mock(Session.class);
-    Session mockSession2 = mock(Session.class);
+    Session mockSession1 = mockSession();
+    Session mockSession2 = mockSession();
     final CountDownLatch prepareLatch = new CountDownLatch(1);
     doAnswer(
             new Answer<Void>() {
@@ -363,7 +401,7 @@ public class SessionPoolTest {
 
   @Test
   public void getReadSessionFallsBackToWritePreparedSession() throws Exception {
-    Session mockSession1 = mock(Session.class);
+    Session mockSession1 = mockSession();
     final CountDownLatch prepareLatch = new CountDownLatch(2);
     doAnswer(
             new Answer<Void>() {
@@ -398,7 +436,8 @@ public class SessionPoolTest {
             .setMaxSessions(1)
             .setFailIfPoolExhausted()
             .build();
-    when(client.createSession(db)).thenReturn(mock(Session.class));
+    Session mockSession = mockSession();
+    when(client.createSession(db)).thenReturn(mockSession);
     pool = createPool();
     Session session1 = pool.getReadSession();
     expectedException.expect(isSpannerException(ErrorCode.RESOURCE_EXHAUSTED));
@@ -411,8 +450,8 @@ public class SessionPoolTest {
 
   @Test
   public void poolWorksWhenSessionNotFound() {
-    Session mockSession1 = mock(Session.class);
-    Session mockSession2 = mock(Session.class);
+    Session mockSession1 = mockSession();
+    Session mockSession2 = mockSession();
     doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found"))
         .when(mockSession1)
         .prepareReadWriteTransaction();
@@ -429,27 +468,39 @@ public class SessionPoolTest {
             .setMaxSessions(3)
             .setMaxIdleSessions(0)
             .build();
-    Session session = mock(Session.class);
-    // This is cheating as we are returning the same session each but it makes the verification
-    // easier.
-    when(client.createSession(db)).thenReturn(session);
+    Session session1 = mockSession();
+    Session session2 = mockSession();
+    Session session3 = mockSession();
+    final AtomicInteger numSessionClosed = new AtomicInteger();
+    when(client.createSession(db)).thenReturn(session1).thenReturn(session2).thenReturn(session3);
+    for (Session session : new Session[]{session1, session2, session3}) {
+      doAnswer(new Answer<Void>() {
+
+		@Override
+		public Void answer(InvocationOnMock invocation) throws Throwable {
+		  numSessionClosed.incrementAndGet();
+		  return null;
+		}
+    	  
+      }).when(session).close();
+    }
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
     // Make sure pool has been initialized
     pool.getReadSession().close();
     runMaintainanceLoop(clock, pool, pool.poolMaintainer.numClosureCycles);
-    verify(session, never()).close();
-    Session session1 = pool.getReadSession();
-    Session session2 = pool.getReadSession();
-    Session session3 = pool.getReadSession();
-    session1.close();
-    session2.close();
-    session3.close();
+    assertThat(numSessionClosed.get()).isEqualTo(0);
+    Session readSession1 = pool.getReadSession();
+    Session readSession2 = pool.getReadSession();
+    Session readSession3 = pool.getReadSession();
+    readSession1.close();
+    readSession2.close();
+    readSession3.close();
     // Now there are 3 sessions in the pool but since all were used in parallel, we will not close
     // any.
     runMaintainanceLoop(clock, pool, pool.poolMaintainer.numClosureCycles);
-    verify(session, never()).close();
+    assertThat(numSessionClosed.get()).isEqualTo(0);
     // Counters have now been reset
     // Use all 3 sessions sequentially
     pool.getReadSession().close();
@@ -457,24 +508,8 @@ public class SessionPoolTest {
     pool.getReadSession().close();
     runMaintainanceLoop(clock, pool, pool.poolMaintainer.numClosureCycles);
     // We will still close 2 sessions since at any point in time only 1 session was in use.
-    verify(session, times(2)).close();
+    assertThat(numSessionClosed.get()).isEqualTo(2);
     pool.closeAsync().get();
-  }
-
-  private void runMaintainanceLoop(FakeClock clock, SessionPool pool, long numCycles) {
-    for (int i = 0; i < numCycles; i++) {
-      pool.poolMaintainer.maintainPool();
-      clock.currentTimeMillis += SessionPool.PoolMaintainer.LOOP_FREQUENCY;
-    }
-  }
-
-  private static class FakeClock extends Clock {
-    volatile long currentTimeMillis;
-
-    @Override
-    public Instant instant() {
-      return new Instant(currentTimeMillis);
-    }
   }
 
   @Test
@@ -485,7 +520,7 @@ public class SessionPoolTest {
             .setMaxSessions(3)
             .setMaxIdleSessions(1)
             .build();
-    Session session = mock(Session.class);
+    Session session = mockSession();
     mockKeepAlive(session);
     // This is cheating as we are returning the same session each but it makes the verification
     // easier.

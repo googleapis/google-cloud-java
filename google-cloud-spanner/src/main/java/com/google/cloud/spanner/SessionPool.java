@@ -18,30 +18,36 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
-import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
-import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.Options.QueryOption;
-import com.google.cloud.spanner.Options.ReadOption;
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Preconditions;
-import com.google.common.collect.Iterables;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.MoreExecutors;
-import com.google.common.util.concurrent.SettableFuture;
-import com.google.common.util.concurrent.Uninterruptibles;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
+
 import org.joda.time.Duration;
 import org.joda.time.Instant;
+
+import com.google.cloud.Timestamp;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
+import com.google.cloud.spanner.Options.QueryOption;
+import com.google.cloud.spanner.Options.ReadOption;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.common.util.concurrent.SettableFuture;
+import com.google.common.util.concurrent.Uninterruptibles;
 
 /**
  * Maintains a pool of sessions some of which might be prepared for write by invoking
@@ -186,10 +192,21 @@ final class SessionPool {
     }
   }
 
+  // Exception class used just to track the stack trace at the point when a session was handed out
+  // from the pool.
+  private final class LeakedSessionException extends Exception {
+	private static final long serialVersionUID = 1451131180314064914L;
+
+	private LeakedSessionException() {
+		  super("Session was checked out from the pool at:");
+	  }
+  }
+  
   final class PooledSession implements Session {
     @VisibleForTesting final Session delegate;
     private volatile Instant lastUseTime;
     private volatile SpannerException lastException;
+    private volatile LeakedSessionException leakedException;  
 
     private PooledSession(Session delegate) {
       this.delegate = delegate;
@@ -312,8 +329,9 @@ final class SessionPool {
       synchronized (lock) {
         numSessionsInUse--;
       }
+      leakedException = null;
       if (lastException != null && isSessionNotFound(lastException)) {
-        invalidateSession();
+        invalidateSession(this);
       } else {
         lastException = null;
         releaseSession(this);
@@ -345,10 +363,10 @@ final class SessionPool {
   }
 
   private static final class SessionOrError {
-    private Session session;
+    private PooledSession session;
     private SpannerException e;
 
-    SessionOrError(Session session) {
+    SessionOrError(PooledSession session) {
       this.session = session;
       this.e = null;
     }
@@ -362,7 +380,7 @@ final class SessionPool {
   private static final class Waiter {
     private final SynchronousQueue<SessionOrError> waiter = new SynchronousQueue<>();
 
-    private void put(Session session) {
+    private void put(PooledSession session) {
       Uninterruptibles.putUninterruptibly(waiter, new SessionOrError(session));
     }
 
@@ -370,7 +388,7 @@ final class SessionPool {
       Uninterruptibles.putUninterruptibly(waiter, new SessionOrError(e));
     }
 
-    private Session take() throws SpannerException {
+    private PooledSession take() throws SpannerException {
       SessionOrError s = Uninterruptibles.takeUninterruptibly(waiter);
       if (s.e != null) {
         throw SpannerExceptionFactory.newSpannerException(s.e);
@@ -401,10 +419,14 @@ final class SessionPool {
     Instant lastResetTime = new Instant(0);
     int numSessionsToClose = 0;
     int sessionsToClosePerLoop = 0;
-
+    @GuardedBy("lock")
+    ScheduledFuture<?> scheduledFuture;
+    @GuardedBy("lock")
+    boolean running = false;
+    
     void init() {
       // Scheduled pool maintenance worker.
-      executor.scheduleAtFixedRate(
+      scheduledFuture = executor.scheduleAtFixedRate(
           new Runnable() {
             @Override
             public void run() {
@@ -415,17 +437,33 @@ final class SessionPool {
           LOOP_FREQUENCY,
           TimeUnit.MILLISECONDS);
     }
+    
+    void close() {
+    	scheduledFuture.cancel(false);
+    	if (!running) {
+    		decrementPendingClosures();
+    	}
+    }
 
     // Does various pool maintenance activities.
     void maintainPool() {
-      if (isClosed()) {
-        return;
+      synchronized(lock) {
+    	  if (isClosed()) {
+    		  return;
+    	  }
+    	  running = true;
       }
       Instant currTime = clock.instant();
       closeIdleSessions(currTime);
       // Now go over all the remaining sessions and see if they need to be kept alive explicitly.
       keepAliveSessions(currTime);
       replenishPool();
+      synchronized(lock) {
+    	  running = false;
+    	  if (isClosed()) {
+    		  decrementPendingClosures();
+    	  }
+      }
     }
 
     private void closeIdleSessions(Instant currTime) {
@@ -434,7 +472,7 @@ final class SessionPool {
         // Every ten minutes figure out how many sessions need to be closed then close them over
         // next ten minutes.
         if (currTime.isAfter(lastResetTime.plus(windowLength))) {
-          numSessionsToClose = totalSessions - (maxSessionsInUse + options.getMaxIdleSessions());
+          numSessionsToClose = totalSessions() - (maxSessionsInUse + options.getMaxIdleSessions());
           if (numSessionsToClose <= options.getMinSessions()) {
             numSessionsToClose = 0;
           } else {
@@ -448,14 +486,15 @@ final class SessionPool {
           while (sessionsToClose.size() < Math.min(numSessionsToClose, sessionsToClosePerLoop)) {
             PooledSession sess = readSessions.poll();
             if (sess != null) {
+              allSessions.remove(sess.getName());
               sessionsToClose.add(sess);
             } else if ((sess = writePreparedSessions.poll()) != null) {
+              allSessions.remove(sess.getName());
               sessionsToClose.add(sess);
             } else {
               break;
             }
           }
-          totalSessions -= sessionsToClose.size();
           numSessionsToClose -= sessionsToClose.size();
         }
       }
@@ -476,7 +515,7 @@ final class SessionPool {
       long numSessionsToKeepAlive = 0;
       synchronized (lock) {
         // In each cycle only keep alive a subset of sessions to prevent burst of traffic.
-        numSessionsToKeepAlive = (long) Math.ceil((double) totalSessions / numKeepAliveCycles);
+        numSessionsToKeepAlive = (long) Math.ceil((double) totalSessions() / numKeepAliveCycles);
       }
       // Now go over all the remaining sessions and see if they need to be kept alive explicitly.
       Instant keepAliveThreshold = currTime.minus(keepAliveMilis);
@@ -508,7 +547,7 @@ final class SessionPool {
       synchronized (lock) {
         // If we have gone below min pool size, create that many sessions.
         for (int i = 0;
-            i < options.getMinSessions() - (totalSessions + numSessionsBeingCreated);
+            i < options.getMinSessions() - (totalSessions() + numSessionsBeingCreated);
             i++) {
           createSession();
         }
@@ -547,9 +586,6 @@ final class SessionPool {
   private int numSessionsBeingPrepared = 0;
 
   @GuardedBy("lock")
-  private int totalSessions = 0;
-
-  @GuardedBy("lock")
   private int numSessionsBeingCreated = 0;
 
   @GuardedBy("lock")
@@ -557,6 +593,9 @@ final class SessionPool {
 
   @GuardedBy("lock")
   private int maxSessionsInUse = 0;
+  
+  @GuardedBy("lock")
+  private Map<String, PooledSession> allSessions = new HashMap<>();
 
   // TODO(user): Maybe maintain a list/map of all sessions currently in the pool including those
   // which have been handed out to client.
@@ -612,10 +651,12 @@ final class SessionPool {
   }
 
   private void initPool() {
+	synchronized(lock) {
     poolMaintainer.init();
     for (int i = 0; i < options.getMinSessions(); i++) {
       createSession();
     }
+	}
   }
 
   private boolean isClosed() {
@@ -626,7 +667,7 @@ final class SessionPool {
 
   private void handleException(SpannerException e, PooledSession session) {
     if (isSessionNotFound(e)) {
-      invalidateSession();
+      invalidateSession(session);
     } else {
       releaseSession(session);
     }
@@ -636,9 +677,12 @@ final class SessionPool {
     return e.getErrorCode() == ErrorCode.NOT_FOUND && e.getMessage().contains("Session not found");
   }
 
-  private void invalidateSession() {
+  private void invalidateSession(PooledSession session) {
     synchronized (lock) {
-      totalSessions--;
+      if (isClosed()) {
+        return;
+      }
+      allSessions.remove(session.getName());
       // replenish the pool.
       createSession();
     }
@@ -675,28 +719,27 @@ final class SessionPool {
    */
   Session getReadSession() throws SpannerException {
     Waiter waiter = null;
+    PooledSession sess = null;
     synchronized (lock) {
       if (closureFuture != null) {
         throw new IllegalStateException("Pool has been closed");
       }
-      Session sess = readSessions.poll();
-      if (sess != null) {
-        incrementNumSessionsInUse();
-        return sess;
+      sess = readSessions.poll();
+      if (sess == null) {
+        sess = writePreparedSessions.poll();
+        if (sess == null) {
+          maybeCreateSession();
+          waiter = new Waiter();
+          readWaiters.add(waiter);
+        }
       }
-      sess = writePreparedSessions.poll();
-      if (sess != null) {
-        incrementNumSessionsInUse();
-
-        return sess;
-      }
-      maybeCreateSession();
-      waiter = new Waiter();
-      readWaiters.add(waiter);
     }
-    Session session = waiter.take();
+    if (waiter != null) {
+      sess = waiter.take();
+    }
+    sess.leakedException = new LeakedSessionException();
     incrementNumSessionsInUse();
-    return session;
+    return sess;
   }
 
   /**
@@ -720,29 +763,31 @@ final class SessionPool {
    */
   Session getReadWriteSession() {
     Waiter waiter = null;
+    PooledSession sess = null;
     synchronized (lock) {
       if (closureFuture != null) {
         throw new IllegalStateException("Pool has been closed");
       }
-      PooledSession sess = writePreparedSessions.poll();
-      if (sess != null) {
-        incrementNumSessionsInUse();
-        return sess;
-      }
+      sess = writePreparedSessions.poll();
+      if (sess == null) {
       if (numSessionsBeingPrepared <= readWriteWaiters.size()) {
-        sess = readSessions.poll();
-        if (sess != null) {
-          prepareSession(sess);
+        PooledSession readSession = readSessions.poll();
+        if (readSession != null) {
+          prepareSession(readSession);
         } else {
           maybeCreateSession();
         }
       }
       waiter = new Waiter();
       readWriteWaiters.add(waiter);
+      }
     }
-    Session session = waiter.take();
+    if (waiter != null) {
+      sess = waiter.take();
+    }
+    sess.leakedException = new LeakedSessionException();
     incrementNumSessionsInUse();
-    return session;
+    return sess;
   }
 
   private void incrementNumSessionsInUse() {
@@ -760,7 +805,10 @@ final class SessionPool {
           createSession();
         } else if (options.isFailIfPoolExhausted()) {
           // throw specific exception
-          throw newSpannerException(ErrorCode.RESOURCE_EXHAUSTED, "No session available");
+          throw newSpannerException(ErrorCode.RESOURCE_EXHAUSTED,
+        		  "No session available in the pool. Maximum number of sessions in the pool can be"
+        		  + " overridden by invoking SessionPoolOptions#Builder#setMaxSessions. Client can be made to block"
+        		  + " rather than fail by setting SessionPoolOptions#Builder#setBlockIfPoolExhausted.");
         }
       }
     }
@@ -783,7 +831,6 @@ final class SessionPool {
     Preconditions.checkNotNull(session);
     synchronized (lock) {
       if (closureFuture != null) {
-        closeSessionAsync(session.delegate);
         return;
       }
       if (readWaiters.size() == 0 && numSessionsBeingPrepared >= readWriteWaiters.size()) {
@@ -814,7 +861,7 @@ final class SessionPool {
   private void handlePrepareSessionFailure(SpannerException e, PooledSession session) {
     synchronized (lock) {
       if (isSessionNotFound(e)) {
-        invalidateSession();
+        invalidateSession(session);
       } else if (readWriteWaiters.size() > 0) {
         readWriteWaiters.poll().put(e);
       } else {
@@ -823,10 +870,17 @@ final class SessionPool {
     }
   }
 
+  private void decrementPendingClosures() {
+	  pendingClosure--;
+	  if (pendingClosure == 0) {
+		  closureFuture.set(null);
+	  }
+  }
+  
   /**
-   * Close all the idle sessions. Once this method is invoked {@link #getReadSession()} and {@link
-   * #getReadWriteSession()} will start throwing {@code IllegalStateException}. The returned {@code
-   * ListenableFuture} blocks till all the sessions created in this pool have been closed.
+   * Close all the sessions. Once this method is invoked {@link #getReadSession()} and {@link
+   * #getReadWriteSession()} will start throwing {@code IllegalStateException}. This method blocks
+   * till all the sessions created in this pool have been closed.
    */
   ListenableFuture<Void> closeAsync() {
     ListenableFuture<Void> retFuture = null;
@@ -851,24 +905,27 @@ final class SessionPool {
       }
       closureFuture = SettableFuture.create();
       retFuture = closureFuture;
-      pendingClosure = totalSessions + numSessionsBeingCreated;
-      if (pendingClosure == 0) {
-        closureFuture.set(null);
-      } else {
-        for (final PooledSession session :
-            Iterables.consumingIterable(Iterables.concat(readSessions, writePreparedSessions))) {
-          closeSessionAsync(session.delegate);
-        }
+      pendingClosure = totalSessions() + numSessionsBeingCreated
+        + 1 /* For pool maintenance thread */ ;
+      poolMaintainer.close();
+      readSessions.clear();
+      writePreparedSessions.clear();
+      for (final PooledSession session : ImmutableList.copyOf(allSessions.values())) {
+        if (session.leakedException != null) {
+          logger.log(Level.WARNING, "Leaked session", session.leakedException);
+        }   	
+        closeSessionAsync(session.delegate);
       }
     }
     retFuture.addListener(
-        new Runnable() {
-          @Override
-          public void run() {
-            executorFactory.release(executor);
-          }
-        },
-        MoreExecutors.directExecutor());
+            new Runnable() {
+              @Override
+              public void run() {
+                executorFactory.release(executor);
+              }
+            },
+            MoreExecutors.directExecutor());
+    
     return retFuture;
   }
 
@@ -885,7 +942,7 @@ final class SessionPool {
   private boolean shouldPrepareSession() {
     synchronized (lock) {
       int preparedSessions = writePreparedSessions.size() + numSessionsBeingPrepared;
-      if (preparedSessions < Math.floor(options.getWriteSessionsFraction() * totalSessions)) {
+      if (preparedSessions < Math.floor(options.getWriteSessionsFraction() * totalSessions())) {
         return true;
       }
       return false;
@@ -897,8 +954,15 @@ final class SessionPool {
       return readWaiters.size() + readWriteWaiters.size();
     }
   }
+  
+  private int totalSessions() {
+    synchronized (lock) {
+      return allSessions.size();
+    }
+  }
 
   private void closeSessionAsync(final Session sess) {
+    allSessions.remove(sess.getName());
     executor.submit(
         new Runnable() {
           @Override
@@ -915,10 +979,7 @@ final class SessionPool {
       logger.log(Level.INFO, "Error while closing session: " + sess.getName(), e);
     } finally {
       synchronized (lock) {
-        pendingClosure--;
-        if (pendingClosure == 0) {
-          closureFuture.set(null);
-        }
+        decrementPendingClosures();
       }
     }
   }
@@ -931,16 +992,13 @@ final class SessionPool {
         new Runnable() {
           @Override
           public void run() {
-            boolean closeSession = false;
             try {
               logger.log(Level.FINE, "Preparing session");
               sess.prepareReadWriteTransaction();
               logger.log(Level.FINE, "Session prepared");
               synchronized (lock) {
                 numSessionsBeingPrepared--;
-                if (closureFuture != null) {
-                  closeSession = true;
-                } else {
+                if (!isClosed()) {
                   if (readWriteWaiters.size() > 0) {
                     readWriteWaiters.poll().put(sess);
                   } else if (readWaiters.size() > 0) {
@@ -950,18 +1008,12 @@ final class SessionPool {
                   }
                 }
               }
-            } catch (SpannerException e) {
+            } catch (Throwable t) {
               synchronized (lock) {
                 numSessionsBeingPrepared--;
-                if (closureFuture != null) {
-                  closeSession = true;
-                } else {
-                  handlePrepareSessionFailure(e, sess);
+                if (!isClosed()) {
+                  handlePrepareSessionFailure(SpannerExceptionFactory.newSpannerException(t), sess);
                 }
-              }
-            } finally {
-              if (closeSession) {
-                closeSession(sess);
               }
             }
           }
@@ -970,7 +1022,7 @@ final class SessionPool {
 
   private boolean canCreateSession() {
     synchronized (lock) {
-      return totalSessions + numSessionsBeingCreated < options.getMaxSessions();
+      return totalSessions() + numSessionsBeingCreated < options.getMaxSessions();
     }
   }
 
@@ -986,17 +1038,14 @@ final class SessionPool {
               try {
                 session = spanner.createSession(db);
                 logger.log(Level.FINE, "Session created");
-              } catch (SpannerException e) {
+              } catch (Throwable t) {
                 // Expose this to customer via a metric.
                 synchronized (lock) {
                   numSessionsBeingCreated--;
-                  if (closureFuture != null) {
-                    pendingClosure--;
-                    if (pendingClosure == 0) {
-                      closureFuture.set(null);
-                    }
+                  if (isClosed()) {
+                    decrementPendingClosures();
                   }
-                  handleCreateSessionFailure(e);
+                  handleCreateSessionFailure(SpannerExceptionFactory.newSpannerException(t));
                 }
                 return;
               }
@@ -1006,9 +1055,10 @@ final class SessionPool {
                 if (closureFuture != null) {
                   closeSession = true;
                 } else {
-                  totalSessions++;
-                  Preconditions.checkState(totalSessions <= options.getMaxSessions());
-                  releaseSession(new PooledSession(session));
+                  Preconditions.checkState(totalSessions() <= options.getMaxSessions() - 1);
+                  PooledSession pooledSession = new PooledSession(session);
+                  allSessions.put(session.getName(), pooledSession);
+                  releaseSession(pooledSession);
                 }
               }
               if (closeSession) {
