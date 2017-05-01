@@ -60,7 +60,6 @@ public class PublisherSnippets {
 
     ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
 
-    // add an asynchronous callback
     ApiFutures.addCallback(messageIdFuture, new ApiFutureCallback<String>() {
       public void onSuccess(String messageId) {
         System.out.println("published with message id: " + messageId);
