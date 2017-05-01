@@ -20,17 +20,15 @@ import com.google.api.client.util.Charsets;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.testing.BaseEmulatorHelper.EmulatorRunner;
 import com.google.common.collect.ImmutableList;
-
-import org.easymock.EasyMock;
-import org.joda.time.Duration;
-import org.junit.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Logger;
+import org.easymock.EasyMock;
+import org.junit.Test;
+import org.threeten.bp.Duration;
 
 public class BaseEmulatorHelperTest {
 
@@ -88,13 +86,13 @@ public class BaseEmulatorHelperTest {
     emulatorRunner.start();
     EasyMock.expectLastCall();
     EasyMock.expect(emulatorRunner.getProcess()).andReturn(process);
-    emulatorRunner.waitFor(Duration.standardMinutes(1));
+    emulatorRunner.waitFor(Duration.ofMinutes(1));
     EasyMock.expectLastCall().andReturn(0);
     EasyMock.replay(process, emulatorRunner);
     TestEmulatorHelper helper =
         new TestEmulatorHelper(ImmutableList.of(emulatorRunner), BLOCK_UNTIL);
     helper.start();
-    helper.stop(Duration.standardMinutes(1));
+    helper.stop(Duration.ofMinutes(1));
     EasyMock.verify();
   }
 
@@ -110,13 +108,13 @@ public class BaseEmulatorHelperTest {
     secondRunner.start();
     EasyMock.expectLastCall();
     EasyMock.expect(secondRunner.getProcess()).andReturn(process);
-    secondRunner.waitFor(Duration.standardMinutes(1));
+    secondRunner.waitFor(Duration.ofMinutes(1));
     EasyMock.expectLastCall().andReturn(0);
     EasyMock.replay(process, secondRunner);
     TestEmulatorHelper helper =
         new TestEmulatorHelper(ImmutableList.of(firstRunner, secondRunner), BLOCK_UNTIL);
     helper.start();
-    helper.stop(Duration.standardMinutes(1));
+    helper.stop(Duration.ofMinutes(1));
     EasyMock.verify();
   }
 }

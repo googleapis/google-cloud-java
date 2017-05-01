@@ -27,8 +27,8 @@ import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.cloud.ServiceRpc;
+import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryException;
-
 import java.util.Map;
 
 public interface BigQueryRpc extends ServiceRpc {
@@ -70,29 +70,6 @@ public interface BigQueryRpc extends ServiceRpc {
 
     Boolean getBoolean(Map<Option, ?> options) {
       return get(options);
-    }
-  }
-
-  class Tuple<X, Y> {
-
-    private final X x;
-    private final Y y;
-
-    private Tuple(X x, Y y) {
-      this.x = x;
-      this.y = y;
-    }
-
-    public static <X, Y> Tuple<X, Y> of(X x, Y y) {
-      return new Tuple<>(x, y);
-    }
-
-    public X x() {
-      return x;
-    }
-
-    public Y y() {
-      return y;
     }
   }
 

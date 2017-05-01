@@ -44,7 +44,7 @@ import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -67,7 +67,7 @@ import org.joda.time.Duration;
  * SpeechSettings.Builder speechSettingsBuilder =
  *     SpeechSettings.defaultBuilder();
  * speechSettingsBuilder.recognizeSettings().getRetrySettingsBuilder()
- *     .setTotalTimeout(Duration.standardSeconds(30));
+ *     .setTotalTimeout(Duration.ofSeconds(30));
  * SpeechSettings speechSettings = speechSettingsBuilder.build();
  * </code>
  * </pre>
@@ -230,13 +230,13 @@ public class SpeechSettings extends ClientSettings {
       RetrySettings.Builder settingsBuilder = null;
       settingsBuilder =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.millis(100L))
+              .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.millis(60000L))
-              .setInitialRpcTimeout(Duration.millis(190000L))
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(190000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.millis(190000L))
-              .setTotalTimeout(Duration.millis(600000L));
+              .setMaxRpcTimeout(Duration.ofMillis(190000L))
+              .setTotalTimeout(Duration.ofMillis(600000L));
       definitions.put("default", settingsBuilder);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
@@ -249,7 +249,7 @@ public class SpeechSettings extends ClientSettings {
       longRunningRecognizeSettings =
           OperationCallSettings.newBuilder(
               METHOD_LONG_RUNNING_RECOGNIZE, LongRunningRecognizeResponse.class);
-      longRunningRecognizeSettings.setPollingInterval(Duration.millis(20000));
+      longRunningRecognizeSettings.setPollingInterval(Duration.ofMillis(20000));
 
       streamingRecognizeSettings = StreamingCallSettings.newBuilder(METHOD_STREAMING_RECOGNIZE);
 

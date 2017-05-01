@@ -11,7 +11,7 @@ Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.s
 [![Codacy
 Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency
-Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -   [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
 -   [API
@@ -27,16 +27,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>0.15.0-beta</version>
+  <version>0.17.1-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-spanner:0.15.0-beta'
+compile 'com.google.cloud:google-cloud-spanner:0.17.1-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.15.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.17.1-beta"
 ```
 
 ## Authentication

@@ -21,6 +21,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Blob;
@@ -28,6 +30,7 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
+import com.google.cloud.storage.StorageRoles;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.Sets;
 
@@ -49,6 +52,7 @@ public class ITBucketSnippets {
 
   private static final Logger log = Logger.getLogger(ITBucketSnippets.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
+  private static final String USER_EMAIL = "test@test.com";
   private static final String BLOB1 = "blob1";
   private static final String BLOB2 = "blob2";
   private static final String BLOB3 = "blob3";
@@ -56,6 +60,7 @@ public class ITBucketSnippets {
 
   private static Storage storage;
   private static BucketSnippets bucketSnippets;
+  private static BucketIamSnippets bucketIamSnippets;
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -68,6 +73,7 @@ public class ITBucketSnippets {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
     storage = helper.getOptions().getService();
     bucketSnippets = new BucketSnippets(storage.create(BucketInfo.of(BUCKET)));
+    bucketIamSnippets = new BucketIamSnippets();
   }
 
   @AfterClass
@@ -132,5 +138,48 @@ public class ITBucketSnippets {
     assertNull(bucketSnippets.getDefaultAcl());
     thrown.expect(StorageException.class);
     assertTrue(bucketSnippets.delete());
+  }
+
+  @Test
+  public void testListBucketIamMembers() {
+    // Test an added Bucket-level IAM member is listed 
+    Policy policy = storage.getIamPolicy(BUCKET);
+    policy = storage.setIamPolicy(BUCKET,
+        policy.toBuilder().removeRole(StorageRoles.admin()).build());
+    assertNull(policy.getBindings().get(StorageRoles.admin()));
+    policy = storage.setIamPolicy(BUCKET, policy.toBuilder().addIdentity(StorageRoles.admin(),
+        Identity.user(USER_EMAIL)).build());
+    assertTrue(policy.getBindings().get(StorageRoles.admin()).contains(Identity.user(USER_EMAIL)));
+    Policy snippetPolicy = bucketIamSnippets.listBucketIamMembers(BUCKET);
+    assertTrue(snippetPolicy.getBindings().get(StorageRoles.admin()).
+        contains(Identity.user(USER_EMAIL))); 
+  }
+
+  @Test
+  public void testAddBucketIamMemeber() {
+    // Test a member is added to Bucket-level IAM
+    Policy policy = storage.getIamPolicy(BUCKET);
+    policy = storage.setIamPolicy(BUCKET,
+        policy.toBuilder().removeRole(StorageRoles.admin()).build());
+    assertNull(policy.getBindings().get(StorageRoles.admin()));
+    Policy snippetPolicy = bucketIamSnippets.addBucketIamMember(BUCKET, StorageRoles.admin(),
+        Identity.user(USER_EMAIL));
+    assertTrue(snippetPolicy.getBindings().get(StorageRoles.admin()).
+        contains(Identity.user(USER_EMAIL)));
+  }
+
+  @Test
+  public void testRemoveBucketIamMember() {
+    // Test a member is removed from Bucket-level IAM
+    Policy policy = storage.getIamPolicy(BUCKET);
+    policy = storage.setIamPolicy(BUCKET,
+        policy.toBuilder().removeRole(StorageRoles.admin()).build());
+    assertNull(policy.getBindings().get(StorageRoles.admin()));
+    policy = storage.setIamPolicy(BUCKET, policy.toBuilder().addIdentity(StorageRoles.admin(),
+        Identity.user(USER_EMAIL)).build());
+    assertTrue(policy.getBindings().get(StorageRoles.admin()).contains(Identity.user(USER_EMAIL)));
+    Policy snippetPolicy = bucketIamSnippets.removeBucketIamMember(BUCKET, StorageRoles.admin(),
+        Identity.user(USER_EMAIL));
+    assertNull(snippetPolicy.getBindings().get(StorageRoles.admin()));
   }
 }

@@ -43,14 +43,14 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 /** Implementation of {@link AckProcessor} based on Cloud Pub/Sub streaming pull. */
 final class StreamingSubscriberConnection extends AbstractApiService implements AckProcessor {
   private static final Logger logger =
       Logger.getLogger(StreamingSubscriberConnection.class.getName());
 
-  private static final Duration INITIAL_CHANNEL_RECONNECT_BACKOFF = new Duration(100); // 100ms
+  private static final Duration INITIAL_CHANNEL_RECONNECT_BACKOFF = Duration.ofMillis(100);
   private static final int MAX_PER_REQUEST_CHANGES = 10000;
 
   private Duration channelReconnectBackoff = INITIAL_CHANNEL_RECONNECT_BACKOFF;
@@ -187,8 +187,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
               return;
             }
             if (StatusUtil.isRetryable(cause)) {
-              long backoffMillis = channelReconnectBackoff.getMillis();
-              channelReconnectBackoff = channelReconnectBackoff.plus(backoffMillis);
+              long backoffMillis = channelReconnectBackoff.toMillis();
+              channelReconnectBackoff = channelReconnectBackoff.plusMillis(backoffMillis);
               executor.schedule(
                   new Runnable() {
                     @Override

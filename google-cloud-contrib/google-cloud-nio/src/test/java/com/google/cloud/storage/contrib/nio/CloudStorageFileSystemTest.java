@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.storage.contrib.nio.testing.LocalStorageHelper;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
 
@@ -185,7 +186,7 @@ public class CloudStorageFileSystemTest {
       assertMatches(fs, javaFileMatcher, "a.text", false);
       assertMatches(fs, javaFileMatcher, "folder/c.java", true);
       assertMatches(fs, javaFileMatcher, "d", false);
-      
+
       String pattern2 = "glob:*.{java,text}";
       PathMatcher javaAndTextFileMatcher = fs.getPathMatcher(pattern2);
       assertMatches(fs, javaAndTextFileMatcher, "a.java", true);

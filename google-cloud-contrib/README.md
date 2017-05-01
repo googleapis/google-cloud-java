@@ -7,7 +7,7 @@ Packages that provide higher-level abstraction/functionality for common Google C
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-contrib.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-contrib.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 Contents
 --------
@@ -25,16 +25,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-contrib</artifactId>
-  <version>0.15.0-alpha</version>
+  <version>0.17.1-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-contrib:0.15.0-alpha'
+compile 'com.google.cloud:google-cloud-contrib:0.17.1-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-contrib" % "0.15.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-contrib" % "0.17.1-alpha"
 ```
 
 ### google-cloud-nio-examples

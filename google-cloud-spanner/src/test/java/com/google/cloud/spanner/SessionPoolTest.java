@@ -51,6 +51,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import org.threeten.bp.Instant;
 
 /** Tests for SessionPool that mock out the underlying stub. */
 @RunWith(Parameterized.class)

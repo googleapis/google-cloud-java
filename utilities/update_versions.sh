@@ -228,7 +228,11 @@ for item in ${modules[*]}; do
   # echo -e "new_base_version=${new_base_version}, new_qualifier=${new_qualifier}, new_snapshot=${new_snapshot}"
 
   echo -e "Updating module ${BOLD}${module}${NC} in folder ${folder} from version ${RED}${old_version}${NC} to ${GREEN}${new_version}${NC}"
-  module_suffix=${module##*-}
+  if [ "${module}" == "google-cloud" ]; then
+    module_suffix="cloud"
+  else
+    module_suffix="${module##google-cloud-}"
+  fi
 
   # Where the actual version changing happens (the only mutative operations in the script).
 

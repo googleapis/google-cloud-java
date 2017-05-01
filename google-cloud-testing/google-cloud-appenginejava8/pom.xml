@@ -4,17 +4,16 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-appenginejava8</artifactId>
-  <version>0.15.1-alpha-SNAPSHOT</version>
+  <version>0.17.1-alpha</version>
   <packaging>war</packaging>
 
   <parent>
     <artifactId>google-cloud-testing</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>0.15.1-alpha-SNAPSHOT</version>
+    <version>0.17.1-alpha</version>
   </parent>
 
   <properties>
-    <appengine.sdk.version>1.9.51</appengine.sdk.version>
     <jetty.maven.plugin>9.3.8.v20160314</jetty.maven.plugin>
     <java.source.version>1.8</java.source.version>
   </properties>
@@ -23,7 +22,6 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-managedtest</artifactId>
-      <version>${project.version}</version>
     </dependency>
   </dependencies>
 

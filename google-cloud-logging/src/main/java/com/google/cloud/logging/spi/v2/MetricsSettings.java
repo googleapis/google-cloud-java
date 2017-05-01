@@ -52,7 +52,7 @@ import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -75,7 +75,7 @@ import org.joda.time.Duration;
  * MetricsSettings.Builder metricsSettingsBuilder =
  *     MetricsSettings.defaultBuilder();
  * metricsSettingsBuilder.getLogMetricSettings().getRetrySettingsBuilder()
- *     .setTotalTimeout(Duration.standardSeconds(30));
+ *     .setTotalTimeout(Duration.ofSeconds(30));
  * MetricsSettings metricsSettings = metricsSettingsBuilder.build();
  * </code>
  * </pre>
@@ -322,13 +322,13 @@ public class MetricsSettings extends ClientSettings {
       RetrySettings.Builder settingsBuilder = null;
       settingsBuilder =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.millis(100L))
+              .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.2)
-              .setMaxRetryDelay(Duration.millis(1000L))
-              .setInitialRpcTimeout(Duration.millis(2000L))
+              .setMaxRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRpcTimeout(Duration.ofMillis(2000L))
               .setRpcTimeoutMultiplier(1.5)
-              .setMaxRpcTimeout(Duration.millis(30000L))
-              .setTotalTimeout(Duration.millis(45000L));
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(45000L));
       definitions.put("default", settingsBuilder);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }

@@ -4,7 +4,7 @@
                               http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>0.15.1-beta-SNAPSHOT</version>
+  <version>0.17.2-beta-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Google Cloud Spanner</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner</url>
@@ -14,29 +14,41 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.15.1-alpha-SNAPSHOT</version>
+    <version>0.17.2-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
     <artifact.version>${project.version}</artifact.version>
   </properties>
   <build>
+    <resources>
+      <resource>
+        <directory>./..</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>project.properties</include>
+        </includes>
+      </resource>
+    </resources>
     <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>properties-maven-plugin</artifactId>
-        <version>1.0-alpha-2</version>
-        <executions>
+       <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+         <version>1.4</version>
+         <executions>
           <execution>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>write-project-properties</goal>
-            </goals>
+            <phase>process-resources</phase>
             <configuration>
-              <outputFile>${project.build.outputDirectory}/com/google/cloud/spanner/project.properties</outputFile>
+               <tasks>
+                 <copy file="${project.build.outputDirectory}/project.properties"
+                   toFile="${project.build.outputDirectory}/com/google/cloud/spanner/project.properties"
+                   overwrite="true" />
+              </tasks>
             </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
           </execution>
-         </executions>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -77,12 +89,10 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${core.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
-      <version>${core-grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
@@ -126,17 +136,14 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty</artifactId>
-      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-auth</artifactId>
-      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
-      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>

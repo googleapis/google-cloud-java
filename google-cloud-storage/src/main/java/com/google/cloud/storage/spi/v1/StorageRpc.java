@@ -23,6 +23,7 @@ import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.ServiceRpc;
+import com.google.cloud.Tuple;
 import com.google.cloud.storage.StorageException;
 import java.io.InputStream;
 import java.util.List;
@@ -76,29 +77,6 @@ public interface StorageRpc extends ServiceRpc {
 
     Boolean getBoolean(Map<Option, ?> options) {
       return get(options);
-    }
-  }
-
-  class Tuple<X, Y> {
-
-    private final X x;
-    private final Y y;
-
-    private Tuple(X x, Y y) {
-      this.x = x;
-      this.y = y;
-    }
-
-    public static <X, Y> Tuple<X, Y> of(X x, Y y) {
-      return new Tuple<>(x, y);
-    }
-
-    public X x() {
-      return x;
-    }
-
-    public Y y() {
-      return y;
     }
   }
 
