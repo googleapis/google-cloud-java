@@ -26,9 +26,11 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -62,6 +64,7 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
   Map<String, Boolean> sessions = new HashMap<>();
   // Exception keeps track of where the session was closed at.
   Map<String, Exception> closedSessions = new HashMap<>();
+  Set<String> expiredSessions = new HashSet<>();
   SpannerImpl mockSpanner;
   int maxAliveSessions = 0;
   int minSessionsWhenSessionClosed = Integer.MAX_VALUE;
@@ -111,13 +114,14 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
               @Override
               public Void answer(InvocationOnMock invocation) throws Throwable {
                 synchronized (lock) {
+                  if (expiredSessions.contains(session.getName())) {
+                    throw SpannerExceptionFactory.newSpannerException(
+                        ErrorCode.NOT_FOUND, "Session not found");
+                  }
                   if (sessions.remove(session.getName()) == null) {
                     setFailed(closedSessions.get(session.getName()));
                   }
-                  if (closedSessions.put(session.getName(), new Exception("Session closed at:"))
-                      != null) {
-                    setFailed();
-                  }
+                  closedSessions.put(session.getName(), new Exception("Session closed at:"));
                   if (sessions.size() < minSessionsWhenSessionClosed) {
                     minSessionsWhenSessionClosed = sessions.size();
                   }
@@ -152,6 +156,7 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
   private void expireSession(Session session) {
     synchronized (lock) {
       sessions.remove(session.getName());
+      expiredSessions.add(session.getName());
     }
   }
 
