@@ -57,9 +57,7 @@ public class PublisherSnippets {
   public ApiFuture<String> publish(String message) {
     ByteString data = ByteString.copyFromUtf8(message);
     PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-
     ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-
     ApiFutures.addCallback(messageIdFuture, new ApiFutureCallback<String>() {
       public void onSuccess(String messageId) {
         System.out.println("published with message id: " + messageId);
