@@ -78,7 +78,7 @@ public class SubscriberSnippets {
   }
 
   private void createSubscriber() throws Exception {
-    // [START pollingSubscriber]
+    // [START pullSubscriber]
     String projectId = "my-project-id";
     String subscriptionId = "my-subscription-id";
 
@@ -96,8 +96,7 @@ public class SubscriberSnippets {
     Subscriber subscriber = null;
     try {
       // Create a subscriber for "my-subscription-id" bound to the message receiver
-      subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
-          .build();
+      subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
       subscriber.startAsync();
       // ...
     } finally {
@@ -106,7 +105,7 @@ public class SubscriberSnippets {
         subscriber.stopAsync();
       }
     }
-    // [END pollingSubscriber]
+    // [END pullSubscriber]
   }
 
   private Subscriber createSubscriberWithErrorListener() throws Exception {
