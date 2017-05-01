@@ -28,7 +28,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.joda.time.Instant;
+import org.threeten.bp.Instant;
 
 abstract class BaseSessionPoolTest {
   ScheduledExecutorService mockExecutor;
@@ -77,7 +77,7 @@ abstract class BaseSessionPoolTest {
 
     @Override
     public Instant instant() {
-      return new Instant(currentTimeMillis);
+      return Instant.ofEpochMilli(currentTimeMillis);
     }
   }
 }
