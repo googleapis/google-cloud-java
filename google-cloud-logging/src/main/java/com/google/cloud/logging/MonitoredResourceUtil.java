@@ -25,6 +25,7 @@ import com.google.common.collect.ImmutableMap;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -83,7 +84,7 @@ public class MonitoredResourceUtil {
         new ImmutableMap.Builder<String, Label[]>()
             .put(
                 Resource.GaeAppFlex.getKey(),
-                new Label[]{
+                new Label[] {
                     Label.ModuleId,
                     Label.VersionId,
                     Label.Zone
@@ -126,9 +127,10 @@ public class MonitoredResourceUtil {
 
   /**
    * Returns custom log entry enhancers (if available) for resource type.
+   *
    * @return custom long entry enhancers
    */
-  public static List<LoggingEnhancer> getResourceEnhancers() {
+  public static List<LoggingEnhancer> createResourceEnhancers() {
     Resource resourceType = getAutoDetectedResourceType();
     return getEnhancers(resourceType);
   }
@@ -195,7 +197,7 @@ public class MonitoredResourceUtil {
   }
 
   private static List<LoggingEnhancer> getEnhancers(Resource resourceType) {
-    List<LoggingEnhancer> enhancers = new ArrayList<>();
+    List<LoggingEnhancer> enhancers = new ArrayList<>(2);
     switch (resourceType) {
       // Trace logging enhancer is supported on GAE Flex and Standard.
       case GaeAppFlex:
@@ -207,34 +209,40 @@ public class MonitoredResourceUtil {
         enhancers.add(new TraceLoggingEnhancer(APPENGINE_LABEL_PREFIX));
         break;
       default:
-        enhancers = Collections.emptyList();
         break;
     }
     return enhancers;
   }
 
   /**
-   *  Adds additional resource-based labels to log entries.
-   *  Labels that can be provided with {@link MonitoredResource.Builder#addLabel(String, String)}
-   *  are restricted to a supported set per resource.
-   *  @see <a href="https://cloud.google.com/logging/docs/api/v2/resource-list">Logging Labels</a>
+   * Adds additional resource-based labels to log entries.
+   * Labels that can be provided with {@link MonitoredResource.Builder#addLabel(String, String)}
+   * are restricted to a supported set per resource.
+   *
+   * @see <a href="https://cloud.google.com/logging/docs/api/v2/resource-list">Logging Labels</a>
    */
   private static class LabelLoggingEnhancer implements LoggingEnhancer {
-    String prefix;
-    List<Label> labels;
 
-    LabelLoggingEnhancer(String prefix, List<Label> labels) {
-      this.prefix = prefix != null ? prefix : "";
-      this.labels = labels;
+    Map<String, String> labels;
+
+    LabelLoggingEnhancer(String prefix, List<Label> labelNames) {
+      labels = new HashMap<>();
+      if (labelNames != null) {
+        for (Label labelName : labelNames) {
+          String labelValue = MonitoredResourceUtil.getValue(labelName);
+          if (labelValue != null) {
+            String fullLabelName = (prefix != null) ?
+                prefix + labelName.getKey() : labelName.getKey();
+            labels.put(fullLabelName, labelValue);
+          }
+        }
+      }
     }
 
     @Override
     public void enhanceLogEntry(Builder logEntry) {
-      for (Label label : labels) {
-        String labelValue = MonitoredResourceUtil.getValue(label);
-        if (labelValue != null) {
-          logEntry.addLabel(prefix + label.getKey(), labelValue);
-        }
+      for (Map.Entry<String, String> label : labels.entrySet()) {
+        logEntry.addLabel(label.getKey(), label.getValue());
       }
     }
   }
