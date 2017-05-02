@@ -162,9 +162,8 @@ public class PublisherSnippets {
     // [START publisherWithCustomCredentials]
     // read service account credentials from file
     CredentialsProvider credentialsProvider =
-        FixedCredentialsProvider
-            .create(ServiceAccountCredentials.fromStream(
-                new FileInputStream("credentials.json")));
+        FixedCredentialsProvider.create(
+            ServiceAccountCredentials.fromStream(new FileInputStream("credentials.json")));
     ChannelProvider channelProvider =
         TopicAdminSettings.defaultChannelProviderBuilder()
             .setCredentialsProvider(credentialsProvider).build();
@@ -172,7 +171,7 @@ public class PublisherSnippets {
     Publisher publisher = Publisher.defaultBuilder(topicName)
         .setChannelProvider(channelProvider)
         .build();
-    // [START publisherWithCustomCredentials]
+    // [END publisherWithCustomCredentials]
     return publisher;
   }
 }
