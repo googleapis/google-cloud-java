@@ -23,39 +23,46 @@
 package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.batching.FlowControlSettings;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
+import com.google.cloud.pubsub.spi.v1.TopicAdminSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.SubscriptionName;
+import java.io.FileInputStream;
 import java.util.concurrent.Executor;
 
 /** This class contains snippets for the {@link Subscriber} interface. */
 public class SubscriberSnippets {
 
-  private final SubscriptionName subscription;
+  private final SubscriptionName subscriptionName;
   private final MessageReceiver receiver;
   private final ApiFuture<Void> done;
   private final Executor executor;
 
   public SubscriberSnippets(
-      SubscriptionName subscription,
+      SubscriptionName subscriptionName,
       MessageReceiver receiver,
       ApiFuture<Void> done,
       Executor executor) {
-    this.subscription = subscription;
+    this.subscriptionName = subscriptionName;
     this.receiver = receiver;
     this.done = done;
     this.executor = executor;
   }
 
-  /**
-   * Example of receiving a specific number of messages.
-   */
   // [TARGET startAsync()]
   public void startAndWait() throws Exception {
     // [START startAsync]
-    Subscriber subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
+    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
     subscriber.addListener(new Subscriber.Listener() {
       public void failed(Subscriber.State from, Throwable failure) {
         // Handle error.
@@ -70,14 +77,13 @@ public class SubscriberSnippets {
   }
 
   private void createSubscriber() throws Exception {
-    // [START async_pull_subscription]
+    // [START pullSubscriber]
     String projectId = "my-project-id";
     String subscriptionId = "my-subscription-id";
-    SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
 
+    SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
     // Instantiate an asynchronous message receiver
-    MessageReceiver receiver =
-        new MessageReceiver() {
+    MessageReceiver receiver = new MessageReceiver() {
           @Override
           public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
             // handle incoming message, then ack or nack the received message
@@ -98,7 +104,63 @@ public class SubscriberSnippets {
         subscriber.stopAsync();
       }
     }
-    // [END async_pull_subscription]
+    // [END pullSubscriber]
   }
 
+  private Subscriber createSubscriberWithErrorListener() throws Exception {
+    // [START subscriberWithErrorListener]
+    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
+
+    subscriber.addListener(new Subscriber.Listener() {
+      public void failed(Subscriber.State from, Throwable failure) {
+        // Handle error.
+      }
+    }, MoreExecutors.directExecutor());
+    // [END subscriberWithErrorListener]
+    return subscriber;
+  }
+
+  private Subscriber createSingleThreadedSubscriber() throws Exception {
+    // [START singleThreadedSubscriber]
+    // provide a separate executor service for polling
+    ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
+        .setExecutorThreadCount(1).build();
+
+    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
+        .setExecutorProvider(executorProvider)
+        .build();
+    // [END singleThreadedSubscriber]
+    return subscriber;
+  }
+
+  private Subscriber createSubscriberWithCustomFlowSettings() throws Exception {
+    // [START subscriberWithCustomFlow]
+    int maxMessageCount = 10;
+    // Configure max number of messages to be pulled
+    FlowControlSettings flowControlSettings = FlowControlSettings.newBuilder()
+        .setMaxOutstandingElementCount(maxMessageCount)
+        .build();
+    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
+        .setFlowControlSettings(flowControlSettings)
+        .build();
+    // [END subscriberWithCustomFlow]
+    return subscriber;
+  }
+
+  private Subscriber createSubscriberWithCustomCredentials() throws Exception {
+    // [START subscriberWithCustomCredentials]
+    CredentialsProvider credentialsProvider =
+        FixedCredentialsProvider
+            .create(ServiceAccountCredentials.fromStream(
+                new FileInputStream("credentials.json")));
+    ChannelProvider channelProvider =
+        TopicAdminSettings.defaultChannelProviderBuilder()
+            .setCredentialsProvider(credentialsProvider).build();
+
+    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
+        .setChannelProvider(channelProvider)
+        .build();
+    // [START subscriberWithCustomCredentials]
+    return subscriber;
+  }
 }

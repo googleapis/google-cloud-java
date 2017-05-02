@@ -17,6 +17,7 @@
 package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
 import com.google.protobuf.ByteString;
@@ -31,30 +32,54 @@ import java.util.List;
  * publish messages to it.
  */
 public class CreateTopicAndPublishMessages {
-  public static void main(String... args) throws Exception {
+
+  public static void createTopic() throws Exception {
     TopicName topic = TopicName.create("test-project", "test-topic");
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.createTopic(topic);
     }
+  }
 
+  public static void publishMessages() throws Exception {
+    // [START publish]
+    TopicName topicName = TopicName.create("test-project", "test-topic");
     Publisher publisher = null;
+    List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
+
     try {
-      publisher = Publisher.defaultBuilder(topic).build();
+      // Create a publisher instance with default settings bound to the topic
+      publisher = Publisher.defaultBuilder(topicName).build();
+
       List<String> messages = Arrays.asList("first message", "second message");
-      List<ApiFuture<String>> messageIds = new ArrayList<>();
+
+      // schedule publishing one message at a time : messages get automatically batched
       for (String message : messages) {
         ByteString data = ByteString.copyFromUtf8(message);
+        // message data is converted to base64-encoding
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+
+        // Once published, returns a server-assigned message id (unique within the topic)
         ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-        messageIds.add(messageIdFuture);
-      }
-      for (ApiFuture<String> messageId : messageIds) {
-        System.out.println("published with message ID: " + messageId.get());
+        messageIdFutures.add(messageIdFuture);
       }
     } finally {
+      // wait on any pending publish requests.
+      List<String> messageIds = ApiFutures.allAsList(messageIdFutures).get();
+
+      for (String messageId : messageIds) {
+        System.out.println("published with message ID: " + messageId);
+      }
+
       if (publisher != null) {
+        // When finished with the publisher, shutdown to free up resources.
         publisher.shutdown();
       }
     }
+    // [END publish]
+  }
+
+  public static void main(String... args) throws Exception {
+    createTopic();
+    publishMessages();
   }
 }
