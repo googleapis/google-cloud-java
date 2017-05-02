@@ -206,7 +206,7 @@ public class LoggingHandler extends Handler {
 
       this.enhancers.addAll(enhancersParam);
 
-      List<LoggingEnhancer> loggingEnhancers = MonitoredResourceUtil.getResourceEnhancers();
+      List<LoggingEnhancer> loggingEnhancers = MonitoredResourceUtil.createResourceEnhancers();
       if (loggingEnhancers != null) {
         this.enhancers.addAll(loggingEnhancers);
       }
