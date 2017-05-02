@@ -947,16 +947,16 @@
                   <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
                   <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
                   <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-iam-v1/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-error-reporting-v1beta1/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-language-v1/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-language-v1beta2/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-logging-v2/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-monitoring-v3/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-pubsub-v1/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-speech-v1beta1/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-trace-v1/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-vision-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-iam-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-error-reporting-v1beta1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-language-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-language-v1beta2/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-logging-v2/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-monitoring-v3/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-pubsub-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-speech-v1beta1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-trace-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-vision-v1/${generatedProto.version}/apidocs/</link>
                 </links>
               </configuration>
             </plugin>
