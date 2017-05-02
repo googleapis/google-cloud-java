@@ -223,7 +223,7 @@ public class MonitoredResourceUtil {
    */
   private static class LabelLoggingEnhancer implements LoggingEnhancer {
 
-    Map<String, String> labels;
+    private final Map<String, String> labels;
 
     LabelLoggingEnhancer(String prefix, List<Label> labelNames) {
       labels = new HashMap<>();
