@@ -93,7 +93,7 @@ public class PublisherSnippets {
 
     Duration publishDelayThreshold = Duration.ofMillis(100); // default : 1 ms
 
-    // Batching thresholds have order precedence : request size  > message count > publish delay
+    // Publish request get triggered based on request size, messages count & time since last publish
     BatchingSettings batchingSettings = BatchingSettings.newBuilder()
         .setElementCountThreshold(messageCountBatchSize)
         .setRequestByteThreshold(requestBytesThreshold)
@@ -132,8 +132,8 @@ public class PublisherSnippets {
     int maxOutstandingBatches = 20;
     int maxOutstandingRequestBytes = 500000;
 
-    // override behavior on limits exceeded, default behavior is to throw an exception
-    LimitExceededBehavior limitExceededBehavior = LimitExceededBehavior.Block;
+    // override behavior on limits exceeded if needed, default behavior is to block
+    LimitExceededBehavior limitExceededBehavior = LimitExceededBehavior.ThrowException;
 
     FlowControlSettings flowControlSettings = FlowControlSettings.newBuilder()
         .setMaxOutstandingElementCount(maxOutstandingBatches)
