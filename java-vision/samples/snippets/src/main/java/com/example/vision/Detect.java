@@ -41,7 +41,7 @@ import com.google.cloud.vision.v1.WebDetection.WebImage;
 import com.google.cloud.vision.v1.WebDetection.WebPage;
 import com.google.cloud.vision.v1.Word;
 import com.google.protobuf.ByteString;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -210,7 +210,7 @@ public class Detect {
     imageAnnotatorSettingsBuilder
         .batchAnnotateImagesSettings()
         .getRetrySettingsBuilder()
-        .setTotalTimeout(Duration.standardSeconds(30));
+        .setTotalTimeout(Duration.ofSeconds(30));
     ImageAnnotatorSettings settings = imageAnnotatorSettingsBuilder.build();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
