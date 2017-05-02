@@ -116,7 +116,7 @@ Then, to publish messages asynchronously, use the following code:
 ```java
 Publisher publisher = null;
 try {
-  publisher = Publisher.newBuilder(topic).build();
+  publisher = Publisher.defaultBuilder(topic).build();
   ByteString data = ByteString.copyFromUtf8("my-message");
   PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
   ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
@@ -174,7 +174,7 @@ MessageReceiver receiver =
     };
 Subscriber subscriber = null;
 try {
-  subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
+  subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
   subscriber.addListener(
       new Subscriber.SubscriberListener() {
         @Override
