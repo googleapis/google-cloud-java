@@ -16,7 +16,7 @@
 
 package com.example.speech;
 
-import com.google.api.gax.core.ApiStreamObserver;
+import com.google.api.gax.grpc.ApiStreamObserver;
 import com.google.api.gax.grpc.OperationFuture;
 import com.google.api.gax.grpc.StreamingCallable;
 import com.google.cloud.speech.spi.v1.SpeechClient;
