@@ -70,8 +70,9 @@ import org.threeten.bp.Duration;
  *   <li>Retries: such as the maximum duration of retries for a failing batch of messages.
  * </ul>
  *
- * <p>If no credentials are provided, the {@link Publisher} will use application default credentials
- * through {@link GoogleCredentials#getApplicationDefault}.
+ * <p>{@link Publisher} will use the credentials set on the channel, which uses
+ *  application default credentials through {@link GoogleCredentials#getApplicationDefault}
+ *  by default.
  */
 public class Publisher {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());

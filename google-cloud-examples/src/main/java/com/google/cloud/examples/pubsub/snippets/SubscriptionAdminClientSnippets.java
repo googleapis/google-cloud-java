@@ -54,7 +54,7 @@ public class SubscriptionAdminClientSnippets {
 
   /** Example of creating a pull subscription for a topic. */
   public Subscription createSubscription(String topicId, String subscriptionId) throws Exception {
-    // [START createSubscription]
+    // [START createPullSubscription]
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       // eg. projectId = "my-test-project", topicId = "my-test-topic"
       TopicName topicName = TopicName.create(projectId, topicId);
@@ -67,13 +67,14 @@ public class SubscriptionAdminClientSnippets {
               subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
       return subscription;
     }
-    // [END createSubscription]
+    // [END createPullSubscription]
   }
 
   /** Example of creating a subscription with a push endpoint. */
-  public Subscription createSubscriptionWithPushEndpoint(String topicId, String subscriptionId, String endpoint)
+  public Subscription createSubscriptionWithPushEndpoint(String topicId, String subscriptionId,
+      String endpoint)
           throws Exception {
-    // [START createSubscriptionWithPushEndpoint]
+    // [START createPushSubscription]
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
       SubscriptionName subscriptionName =
@@ -90,7 +91,7 @@ public class SubscriptionAdminClientSnippets {
                       subscriptionName, topicName, pushConfig, ackDeadlineInSeconds);
       return subscription;
     }
-    // [END createSubscriptionWithPushEndpoint]
+    // [END createPushSubscription]
   }
 
   /** Example of replacing the push configuration of a subscription, setting the push endpoint. */

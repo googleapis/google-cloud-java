@@ -12,9 +12,6 @@ Java idiomatic client for [Stackdriver Logging][stackdriver-logging].
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
 -  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 
@@ -184,9 +181,7 @@ Versioning
 
 This library follows [Semantic Versioning](http://semver.org/).
 
-It is currently in major version zero (``0.y.z``), which means that anything
-may change at any time and the public API should not be considered
-stable.
+It is currently in major version one (``1.y.z``), which means that the public API should be considered stable.
 
 Contributing
 ------------
