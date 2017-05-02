@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017 Google</copyright>
     <item>
-      <title>File: 114,
+      <title>File: 127,
              Errors: 0,
              Warnings: 49,
              Infos: 0
@@ -88,6 +88,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-examples.target.generated-classes.cobertura.cobertura.properties">google-cloud-examples/target/generated-classes/cobertura/cobertura.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-bigquery.target.maven-archiver.pom.properties">google-cloud-bigquery/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
@@ -117,6 +131,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-errorreporting.target.generated-classes.cobertura.com.google.cloud.errorreporting.project.properties">google-cloud-errorreporting/target/generated-classes/cobertura/com/google/cloud/errorreporting/project.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-translate.target.generated-classes.cobertura.com.google.cloud.translate.project.properties">google-cloud-translate/target/generated-classes/cobertura/com/google/cloud/translate/project.properties</a>
                 </td>
                 <td>
                   0
@@ -438,6 +466,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud.target.generated-classes.cobertura.cobertura.properties">google-cloud/target/generated-classes/cobertura/cobertura.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-speech.target.generated-classes.cobertura.project.properties">google-cloud-speech/target/generated-classes/cobertura/project.properties</a>
                 </td>
                 <td>
@@ -481,6 +523,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-resourcemanager.target.generated-classes.cobertura.cobertura.properties">google-cloud-resourcemanager/target/generated-classes/cobertura/cobertura.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-translate.target.generated-classes.cobertura.project.properties">google-cloud-translate/target/generated-classes/cobertura/project.properties</a>
                 </td>
                 <td>
                   0
@@ -593,6 +649,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-pubsub.target.maven-archiver.pom.properties">google-cloud-pubsub/target/maven-archiver/pom.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-spanner.target.generated-classes.cobertura.cobertura.properties">google-cloud-spanner/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -872,6 +942,34 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-vision.target.generated-classes.cobertura.cobertura.properties">google-cloud-vision/target/generated-classes/cobertura/cobertura.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-vision.target.generated-classes.cobertura.com.google.cloud.vision.project.properties">google-cloud-vision/target/generated-classes/cobertura/com/google/cloud/vision/project.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-storage.target.generated-classes.cobertura.cobertura.properties">google-cloud-storage/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
@@ -901,6 +999,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-vision.target.maven-archiver.pom.properties">google-cloud-vision/target/maven-archiver/pom.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-spanner.target.generated-classes.cobertura.com.google.cloud.spanner.project.properties">google-cloud-spanner/target/generated-classes/cobertura/com/google/cloud/spanner/project.properties</a>
                 </td>
                 <td>
                   0
@@ -1012,6 +1124,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-contrib.google-cloud-nio-examples.target.generated-classes.cobertura.cobertura.properties">google-cloud-contrib/google-cloud-nio-examples/target/generated-classes/cobertura/cobertura.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-spanner.target.maven-archiver.pom.properties">google-cloud-spanner/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
@@ -1027,6 +1153,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-bigquery.target.classes.project.properties">google-cloud-bigquery/target/classes/project.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-contrib.google-cloud-nio.target.generated-classes.cobertura.cobertura.properties">google-cloud-contrib/google-cloud-nio/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -1208,7 +1348,35 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-spanner.target.generated-classes.cobertura.project.properties">google-cloud-spanner/target/generated-classes/cobertura/project.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-core-http.target.maven-archiver.pom.properties">google-cloud-core-http/target/maven-archiver/pom.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-vision.target.generated-classes.cobertura.project.properties">google-cloud-vision/target/generated-classes/cobertura/project.properties</a>
                 </td>
                 <td>
                   0
@@ -1377,6 +1545,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-speech.target.generated-classes.cobertura.com.google.cloud.speech.project.properties">google-cloud-speech/target/generated-classes/cobertura/com/google/cloud/speech/project.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace/checkstyle.html#google-cloud-translate.target.generated-classes.cobertura.cobertura.properties">google-cloud-translate/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
