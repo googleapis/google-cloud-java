@@ -242,7 +242,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-speech.target.maven-archiver.pom.properties">google-cloud-speech/target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-monitoring.target.generated-classes.cobertura.project.properties">google-cloud-monitoring/target/generated-classes/cobertura/project.properties</a>
                 </td>
                 <td>
                   0
@@ -256,7 +256,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-monitoring.target.generated-classes.cobertura.project.properties">google-cloud-monitoring/target/generated-classes/cobertura/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-speech.target.maven-archiver.pom.properties">google-cloud-speech/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -396,7 +396,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-monitoring.target.generated-classes.cobertura.cobertura.properties">google-cloud-monitoring/target/generated-classes/cobertura/cobertura.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-core-http.target.generated-classes.cobertura.cobertura.properties">google-cloud-core-http/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -410,7 +410,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-core-http.target.generated-classes.cobertura.cobertura.properties">google-cloud-core-http/target/generated-classes/cobertura/cobertura.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-monitoring.target.generated-classes.cobertura.cobertura.properties">google-cloud-monitoring/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -592,7 +592,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-speech.target.generated-classes.cobertura.project.properties">google-cloud-speech/target/generated-classes/cobertura/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud.target.generated-classes.cobertura.cobertura.properties">google-cloud/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -606,7 +606,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud.target.generated-classes.cobertura.cobertura.properties">google-cloud/target/generated-classes/cobertura/cobertura.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-speech.target.generated-classes.cobertura.project.properties">google-cloud-speech/target/generated-classes/cobertura/project.properties</a>
                 </td>
                 <td>
                   0
@@ -690,20 +690,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.ForwardingStructReader.java">com/google/cloud/spanner/ForwardingStructReader.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  2
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.TimestampBound.java">com/google/cloud/spanner/TimestampBound.java</a>
                 </td>
                 <td>
@@ -711,6 +697,20 @@ under the License.
                 </td>
                 <td>
                   3
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.ForwardingStructReader.java">com/google/cloud/spanner/ForwardingStructReader.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
                 </td>
                 <td>
                   0
@@ -900,7 +900,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-spanner.target.generated-classes.cobertura.cobertura.properties">google-cloud-spanner/target/generated-classes/cobertura/cobertura.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-pubsub.target.maven-archiver.pom.properties">google-cloud-pubsub/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -914,7 +914,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-pubsub.target.maven-archiver.pom.properties">google-cloud-pubsub/target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-spanner.target.generated-classes.cobertura.cobertura.properties">google-cloud-spanner/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -971,6 +971,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.Spanner.java">com/google/cloud/spanner/Spanner.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-testing.target.maven-archiver.pom.properties">google-cloud-testing/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -1110,7 +1124,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-logging.target.generated-classes.cobertura.cobertura.properties">google-cloud-logging/target/generated-classes/cobertura/cobertura.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-vision.target.classes.project.properties">google-cloud-vision/target/classes/project.properties</a>
                 </td>
                 <td>
                   0
@@ -1124,7 +1138,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-vision.target.classes.project.properties">google-cloud-vision/target/classes/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-logging.target.generated-classes.cobertura.cobertura.properties">google-cloud-logging/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -1250,20 +1264,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.ForwardingResultSet.java">com/google/cloud/spanner/ForwardingResultSet.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.DatabaseInfo.java">com/google/cloud/spanner/DatabaseInfo.java</a>
                 </td>
                 <td>
@@ -1292,6 +1292,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.ForwardingResultSet.java">com/google/cloud/spanner/ForwardingResultSet.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-core.target.generated-classes.cobertura.cobertura.properties">google-cloud-core/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
@@ -1306,7 +1320,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-vision.target.generated-classes.cobertura.com.google.cloud.vision.project.properties">google-cloud-vision/target/generated-classes/cobertura/com/google/cloud/vision/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-vision.target.generated-classes.cobertura.cobertura.properties">google-cloud-vision/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -1320,7 +1334,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-vision.target.generated-classes.cobertura.cobertura.properties">google-cloud-vision/target/generated-classes/cobertura/cobertura.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-vision.target.generated-classes.cobertura.com.google.cloud.vision.project.properties">google-cloud-vision/target/generated-classes/cobertura/com/google/cloud/vision/project.properties</a>
                 </td>
                 <td>
                   0
@@ -1390,7 +1404,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-vision.target.maven-archiver.pom.properties">google-cloud-vision/target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-compute.target.generated-classes.cobertura.project.properties">google-cloud-compute/target/generated-classes/cobertura/project.properties</a>
                 </td>
                 <td>
                   0
@@ -1404,7 +1418,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-compute.target.generated-classes.cobertura.project.properties">google-cloud-compute/target/generated-classes/cobertura/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-vision.target.maven-archiver.pom.properties">google-cloud-vision/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -1460,7 +1474,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-language.target.classes.project.properties">google-cloud-language/target/classes/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-compute.target.maven-archiver.pom.properties">google-cloud-compute/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -1474,7 +1488,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-compute.target.maven-archiver.pom.properties">google-cloud-compute/target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-language.target.classes.project.properties">google-cloud-language/target/classes/project.properties</a>
                 </td>
                 <td>
                   0
@@ -1572,7 +1586,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-contrib.google-cloud-nio-examples.target.generated-classes.cobertura.cobertura.properties">google-cloud-contrib/google-cloud-nio-examples/target/generated-classes/cobertura/cobertura.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-core-grpc.target.generated-classes.cobertura.cobertura.properties">google-cloud-core-grpc/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -1586,7 +1600,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-core-grpc.target.generated-classes.cobertura.cobertura.properties">google-cloud-core-grpc/target/generated-classes/cobertura/cobertura.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-contrib.google-cloud-nio-examples.target.generated-classes.cobertura.cobertura.properties">google-cloud-contrib/google-cloud-nio-examples/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -1657,20 +1671,6 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.ResultSet.java">com/google/cloud/spanner/ResultSet.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#target.nexus-staging.staging.3187e4f20d328b.properties">target/nexus-staging/staging/3187e4f20d328b.properties</a>
                 </td>
                 <td>
                   0
@@ -1936,7 +1936,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.Mutation.java">com/google/cloud/spanner/Mutation.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.spi.v1.GrpcSpannerRpc.java">com/google/cloud/spanner/spi/v1/GrpcSpannerRpc.java</a>
                 </td>
                 <td>
                   0
@@ -1950,7 +1950,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.spi.v1.GrpcSpannerRpc.java">com/google/cloud/spanner/spi/v1/GrpcSpannerRpc.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.Mutation.java">com/google/cloud/spanner/Mutation.java</a>
                 </td>
                 <td>
                   0
@@ -1992,7 +1992,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-language.target.classes.com.google.cloud.language.project.properties">google-cloud-language/target/classes/com/google/cloud/language/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-compute.target.generated-classes.cobertura.cobertura.properties">google-cloud-compute/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -2006,7 +2006,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-compute.target.generated-classes.cobertura.cobertura.properties">google-cloud-compute/target/generated-classes/cobertura/cobertura.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-language.target.classes.com.google.cloud.language.project.properties">google-cloud-language/target/classes/com/google/cloud/language/project.properties</a>
                 </td>
                 <td>
                   0
@@ -2034,7 +2034,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#target.maven-archiver.pom.properties">target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-testing.google-cloud-appengineflexjava.target.maven-archiver.pom.properties">google-cloud-testing/google-cloud-appengineflexjava/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -2048,7 +2048,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-testing.google-cloud-appengineflexjava.target.maven-archiver.pom.properties">google-cloud-testing/google-cloud-appengineflexjava/target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#target.maven-archiver.pom.properties">target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -2216,7 +2216,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-language.target.generated-classes.cobertura.com.google.cloud.language.project.properties">google-cloud-language/target/generated-classes/cobertura/com/google/cloud/language/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-compute.target.classes.com.google.cloud.compute.project.properties">google-cloud-compute/target/classes/com/google/cloud/compute/project.properties</a>
                 </td>
                 <td>
                   0
@@ -2230,7 +2230,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-compute.target.classes.com.google.cloud.compute.project.properties">google-cloud-compute/target/classes/com/google/cloud/compute/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-language.target.generated-classes.cobertura.com.google.cloud.language.project.properties">google-cloud-language/target/generated-classes/cobertura/com/google/cloud/language/project.properties</a>
                 </td>
                 <td>
                   0
@@ -2286,7 +2286,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-bigquery.target.generated-classes.cobertura.cobertura.properties">google-cloud-bigquery/target/generated-classes/cobertura/cobertura.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-errorreporting.target.generated-classes.cobertura.cobertura.properties">google-cloud-errorreporting/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -2300,7 +2300,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-errorreporting.target.generated-classes.cobertura.cobertura.properties">google-cloud-errorreporting/target/generated-classes/cobertura/cobertura.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-bigquery.target.generated-classes.cobertura.cobertura.properties">google-cloud-bigquery/target/generated-classes/cobertura/cobertura.properties</a>
                 </td>
                 <td>
                   0
@@ -2328,20 +2328,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.DatabaseClientImpl.java">com/google/cloud/spanner/DatabaseClientImpl.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.ReadContext.java">com/google/cloud/spanner/ReadContext.java</a>
                 </td>
                 <td>
@@ -2349,6 +2335,20 @@ under the License.
                 </td>
                 <td>
                   2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#com.google.cloud.spanner.DatabaseClientImpl.java">com/google/cloud/spanner/DatabaseClientImpl.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
                 </td>
                 <td>
                   0
@@ -2370,7 +2370,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-pubsub.target.generated-classes.cobertura.com.google.cloud.pubsub.project.properties">google-cloud-pubsub/target/generated-classes/cobertura/com/google/cloud/pubsub/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-vision.target.classes.com.google.cloud.vision.project.properties">google-cloud-vision/target/classes/com/google/cloud/vision/project.properties</a>
                 </td>
                 <td>
                   0
@@ -2384,7 +2384,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-vision.target.classes.com.google.cloud.vision.project.properties">google-cloud-vision/target/classes/com/google/cloud/vision/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-pubsub.target.generated-classes.cobertura.com.google.cloud.pubsub.project.properties">google-cloud-pubsub/target/generated-classes/cobertura/com/google/cloud/pubsub/project.properties</a>
                 </td>
                 <td>
                   0
@@ -2440,7 +2440,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-contrib.target.maven-archiver.pom.properties">google-cloud-contrib/target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-testing.google-cloud-managedtest.target.maven-archiver.pom.properties">google-cloud-testing/google-cloud-managedtest/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -2454,7 +2454,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-testing.google-cloud-managedtest.target.maven-archiver.pom.properties">google-cloud-testing/google-cloud-managedtest/target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner/checkstyle.html#google-cloud-contrib.target.maven-archiver.pom.properties">google-cloud-contrib/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0

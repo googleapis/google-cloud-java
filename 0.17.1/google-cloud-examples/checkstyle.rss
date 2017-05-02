@@ -242,6 +242,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.resourcemanager.snippets.UpdateAndListProjects.java">com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.logging.snippets.CreateAndListMetrics.java">com/google/cloud/examples/logging/snippets/CreateAndListMetrics.java</a>
                 </td>
                 <td>
@@ -256,7 +270,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.resourcemanager.snippets.UpdateAndListProjects.java">com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.resourcemanager.snippets.GetOrCreateProject.java">com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java</a>
                 </td>
                 <td>
                   0
@@ -277,20 +291,6 @@ under the License.
                 </td>
                 <td>
                   0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.resourcemanager.snippets.GetOrCreateProject.java">com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
                 </td>
                 <td>
                   0
@@ -368,7 +368,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.storage.snippets.StorageSnippets.java">com/google/cloud/examples/storage/snippets/StorageSnippets.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.resourcemanager.ResourceManagerExample.java">com/google/cloud/examples/resourcemanager/ResourceManagerExample.java</a>
                 </td>
                 <td>
                   0
@@ -396,7 +396,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.resourcemanager.ResourceManagerExample.java">com/google/cloud/examples/resourcemanager/ResourceManagerExample.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/checkstyle.html#com.google.cloud.examples.storage.snippets.StorageSnippets.java">com/google/cloud/examples/storage/snippets/StorageSnippets.java</a>
                 </td>
                 <td>
                   0

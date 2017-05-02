@@ -606,20 +606,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#com.google.cloud.bigquery.BigQueryFactory.java">com/google/cloud/bigquery/BigQueryFactory.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#com.google.cloud.bigquery.QueryStage.java">com/google/cloud/bigquery/QueryStage.java</a>
                 </td>
                 <td>
@@ -648,6 +634,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#com.google.cloud.bigquery.BigQueryFactory.java">com/google/cloud/bigquery/BigQueryFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#com.google.cloud.bigquery.WriteChannelConfiguration.java">com/google/cloud/bigquery/WriteChannelConfiguration.java</a>
                 </td>
                 <td>
@@ -655,6 +655,20 @@ under the License.
                 </td>
                 <td>
                   3
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#google-cloud-testing.target.maven-archiver.pom.properties">google-cloud-testing/target/maven-archiver/pom.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
                 </td>
                 <td>
                   0
@@ -1012,7 +1026,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#google-cloud-language.target.classes.project.properties">google-cloud-language/target/classes/project.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#google-cloud-compute.target.maven-archiver.pom.properties">google-cloud-compute/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -1026,7 +1040,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#google-cloud-compute.target.maven-archiver.pom.properties">google-cloud-compute/target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#google-cloud-language.target.classes.project.properties">google-cloud-language/target/classes/project.properties</a>
                 </td>
                 <td>
                   0
@@ -1181,20 +1195,6 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#com.google.cloud.bigquery.TableId.java">com/google/cloud/bigquery/TableId.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#target.nexus-staging.staging.3187e4f20d328b.properties">target/nexus-staging/staging/3187e4f20d328b.properties</a>
                 </td>
                 <td>
                   0
@@ -1488,7 +1488,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#target.maven-archiver.pom.properties">target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#google-cloud-testing.google-cloud-appengineflexjava.target.maven-archiver.pom.properties">google-cloud-testing/google-cloud-appengineflexjava/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -1502,7 +1502,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#google-cloud-testing.google-cloud-appengineflexjava.target.maven-archiver.pom.properties">google-cloud-testing/google-cloud-appengineflexjava/target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#target.maven-archiver.pom.properties">target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -1810,7 +1810,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#google-cloud-contrib.target.maven-archiver.pom.properties">google-cloud-contrib/target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#google-cloud-testing.google-cloud-managedtest.target.maven-archiver.pom.properties">google-cloud-testing/google-cloud-managedtest/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -1824,7 +1824,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#google-cloud-testing.google-cloud-managedtest.target.maven-archiver.pom.properties">google-cloud-testing/google-cloud-managedtest/target/maven-archiver/pom.properties</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery/checkstyle.html#google-cloud-contrib.target.maven-archiver.pom.properties">google-cloud-contrib/target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0

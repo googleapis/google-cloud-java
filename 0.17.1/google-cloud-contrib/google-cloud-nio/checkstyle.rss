@@ -102,20 +102,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.OptionUserMetadata.java">com/google/cloud/storage/contrib/nio/OptionUserMetadata.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.CloudStorageReadChannel.java">com/google/cloud/storage/contrib/nio/CloudStorageReadChannel.java</a>
                 </td>
                 <td>
@@ -123,6 +109,20 @@ under the License.
                 </td>
                 <td>
                   4
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.OptionUserMetadata.java">com/google/cloud/storage/contrib/nio/OptionUserMetadata.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
                 </td>
                 <td>
                   0
@@ -298,7 +298,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.CloudStorageFileAttributes.java">com/google/cloud/storage/contrib/nio/CloudStorageFileAttributes.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.UnixPath.java">com/google/cloud/storage/contrib/nio/UnixPath.java</a>
                 </td>
                 <td>
                   0
@@ -312,7 +312,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.UnixPath.java">com/google/cloud/storage/contrib/nio/UnixPath.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.CloudStorageFileAttributes.java">com/google/cloud/storage/contrib/nio/CloudStorageFileAttributes.java</a>
                 </td>
                 <td>
                   0
@@ -354,20 +354,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.CloudStorageOptions.java">com/google/cloud/storage/contrib/nio/CloudStorageOptions.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.OptionBlockSize.java">com/google/cloud/storage/contrib/nio/OptionBlockSize.java</a>
                 </td>
                 <td>
@@ -382,7 +368,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.CloudStoragePath.java">com/google/cloud/storage/contrib/nio/CloudStoragePath.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.CloudStorageOptions.java">com/google/cloud/storage/contrib/nio/CloudStorageOptions.java</a>
                 </td>
                 <td>
                   0
@@ -403,6 +389,20 @@ under the License.
                 </td>
                 <td>
                   5
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio/checkstyle.html#com.google.cloud.storage.contrib.nio.CloudStoragePath.java">com/google/cloud/storage/contrib/nio/CloudStoragePath.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
                 </td>
                 <td>
                   0
