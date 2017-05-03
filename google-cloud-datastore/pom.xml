@@ -46,7 +46,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
-      <version>0.1.9</version>
+      <version>${generatedProto.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
