@@ -130,7 +130,7 @@ public class MonitoredResourceUtil {
    *
    * @return custom long entry enhancers
    */
-  public static List<LoggingEnhancer> createResourceEnhancers() {
+  public static List<LoggingEnhancer> getResourceEnhancers() {
     Resource resourceType = getAutoDetectedResourceType();
     return createEnhancers(resourceType);
   }
