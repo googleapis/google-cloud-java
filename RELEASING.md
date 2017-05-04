@@ -8,12 +8,15 @@ The release process for SNAPSHOT versions is handled by the `after_success.sh` s
 
 2. Look over all of the commits since the last release and make sure there are no breaking changes on the public surface. If there are any breaking changes, create and merge a new PR to revert the surface back.
 
+  Note - this should just be a scan of the public surface that would appear in Java doc. Implementation changes, README changes, and snippet changes can all be skipped for this check.
+
 3. Verify that all unit and integration tests for the last commit have passed.
 
 4. Run `utilities/update_versions.sh` from the repository's base directory.
 This script takes optional arguments denoting the new versions for each qualifier (alpha, beta and/or GA). By default, if the current version is X.Y.Z-SNAPSHOT, the script will update the version in all the pom.xml and other relevant files to X.Y.Z. Please refer to the documentation in `utilities/update_versions.sh` for more details. Commit this version locally:
   
   ```
+  git add .
   git commit -m "Release [VERSION HERE]"
   ```
   
