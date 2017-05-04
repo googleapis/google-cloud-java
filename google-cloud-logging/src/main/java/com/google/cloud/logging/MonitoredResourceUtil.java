@@ -128,7 +128,7 @@ public class MonitoredResourceUtil {
   /**
    * Returns custom log entry enhancers (if available) for resource type.
    *
-   * @return custom long entry enhancers
+   * @return custom log entry enhancers
    */
   public static List<LoggingEnhancer> getResourceEnhancers() {
     Resource resourceType = getAutoDetectedResourceType();
