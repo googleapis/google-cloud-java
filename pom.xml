@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.17.2-alpha-SNAPSHOT</version>
+  <version>0.17.3-alpha-SNAPSHOT</version>
   <name>Google Cloud</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java</url>
   <description>
@@ -139,29 +139,29 @@
     <http-client.version>1.21.0</http-client.version>
     <protobuf.version>3.2.0</protobuf.version>
 
-    <cloud.version>0.17.2-alpha-SNAPSHOT</cloud.version>
-    <bigquery.version>0.17.2-beta-SNAPSHOT</bigquery.version>
-    <compute.version>0.17.2-alpha-SNAPSHOT</compute.version>
-    <contrib.version>0.17.2-alpha-SNAPSHOT</contrib.version>
-    <core.version>1.0.1-SNAPSHOT</core.version>
-    <core-http.version>1.0.1-SNAPSHOT</core-http.version>
-    <core-grpc.version>1.0.1-SNAPSHOT</core-grpc.version>
-    <datastore.version>1.0.1-SNAPSHOT</datastore.version>
-    <dns.version>0.17.2-alpha-SNAPSHOT</dns.version>
-    <errorreporting.version>0.17.2-alpha-SNAPSHOT</errorreporting.version>
-    <examples.version>0.17.2-alpha-SNAPSHOT</examples.version>
-    <language.version>0.17.2-beta-SNAPSHOT</language.version>
-    <logging.version>1.0.1-SNAPSHOT</logging.version>
-    <monitoring.version>0.17.2-alpha-SNAPSHOT</monitoring.version>
-    <pubsub.version>0.17.2-alpha-SNAPSHOT</pubsub.version>
-    <resourcemanager.version>0.17.2-alpha-SNAPSHOT</resourcemanager.version>
-    <spanner.version>0.17.2-beta-SNAPSHOT</spanner.version>
-    <speech.version>0.17.2-alpha-SNAPSHOT</speech.version>
-    <storage.version>1.0.1-SNAPSHOT</storage.version>
-    <trace.version>0.17.2-alpha-SNAPSHOT</trace.version>
-    <translate.version>0.17.2-beta-SNAPSHOT</translate.version>
-    <vision.version>0.17.2-beta-SNAPSHOT</vision.version>
-    <testing.version>0.17.1-alpha</testing.version>
+    <cloud.version>0.17.3-alpha-SNAPSHOT</cloud.version>
+    <bigquery.version>0.17.3-beta-SNAPSHOT</bigquery.version>
+    <compute.version>0.17.3-alpha-SNAPSHOT</compute.version>
+    <contrib.version>0.17.3-alpha-SNAPSHOT</contrib.version>
+    <core.version>1.0.2-SNAPSHOT</core.version>
+    <core-http.version>1.0.2-SNAPSHOT</core-http.version>
+    <core-grpc.version>1.0.2-SNAPSHOT</core-grpc.version>
+    <datastore.version>1.0.2-SNAPSHOT</datastore.version>
+    <dns.version>0.17.3-alpha-SNAPSHOT</dns.version>
+    <errorreporting.version>0.17.3-alpha-SNAPSHOT</errorreporting.version>
+    <examples.version>0.17.3-alpha-SNAPSHOT</examples.version>
+    <language.version>0.17.3-beta-SNAPSHOT</language.version>
+    <logging.version>1.0.2-SNAPSHOT</logging.version>
+    <monitoring.version>0.17.3-alpha-SNAPSHOT</monitoring.version>
+    <pubsub.version>0.17.3-alpha-SNAPSHOT</pubsub.version>
+    <resourcemanager.version>0.17.3-alpha-SNAPSHOT</resourcemanager.version>
+    <spanner.version>0.17.3-beta-SNAPSHOT</spanner.version>
+    <speech.version>0.17.3-alpha-SNAPSHOT</speech.version>
+    <storage.version>1.0.2-SNAPSHOT</storage.version>
+    <trace.version>0.17.3-alpha-SNAPSHOT</trace.version>
+    <translate.version>0.17.3-beta-SNAPSHOT</translate.version>
+    <vision.version>0.17.3-beta-SNAPSHOT</vision.version>
+    <testing.version>0.17.3-alpha-SNAPSHOT</testing.version>
   </properties>
   <dependencyManagement>
     <dependencies>
