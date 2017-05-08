@@ -4,35 +4,38 @@ The release process for SNAPSHOT versions is handled by the `after_success.sh` s
 
 ### To push a release version
 
-1. Make sure the team agrees that it is time to release. Verify that all unit and integration tests for the last commit have passed.
+1. Make sure the team agrees that it is time to release. 
 
-2. Run `utilities/update_versions.sh` from the repository's base directory.
+2. Look over all of the commits since the last release and make sure there are no breaking changes on the public surface. If there are any breaking changes, create and merge a new PR to revert the surface back.
+
+  Note - this should just be a scan of the public surface that would appear in Java doc. Implementation changes, README changes, and snippet changes can all be skipped for this check.
+
+3. Verify that all unit and integration tests for the last commit have passed.
+
+4. Run `utilities/update_versions.sh` from the repository's base directory.
 This script takes optional arguments denoting the new versions for each qualifier (alpha, beta and/or GA). By default, if the current version is X.Y.Z-SNAPSHOT, the script will update the version in all the pom.xml and other relevant files to X.Y.Z. Please refer to the documentation in `utilities/update_versions.sh` for more details. Commit this version locally:
-
+  
   ```
+  git add .
   git commit -m "Release [VERSION HERE]"
   ```
-
-3. Run `utilities/stage_release.sh`.
+  
+5. Run `utilities/stage_release.sh`.
 This script builds and stages the release artifact on the Maven Central Repository, updates the README.md files with the release version + commits them locally, and finally generates a new site version for the gh-pages branch under a temporary directory named `tmp_gh-pages`. If you haven't run the release process before, it's worth verifying everything; check the staged release on the Sonatype website, and verify that the local commits have the right version updates.
 
-4. Run `utilities/finalize_release.sh`.
+6. Run `utilities/finalize_release.sh`.
 This script will release the staged artifact on the Maven Central Repository and push the README.md and gh-pages updates to github.
 
-5. Publish a release on Github manually.
-Go to the [releases page](https://github.com/GoogleCloudPlatform/google-cloud-java/releases) and open the appropriate release draft. Make sure the "Tag Version" is `vX.Y.Z` and the "Release Title" is `X.Y.Z`, where `X.Y.Z` is the release version as listed in the `pom.xml` files.  The draft should already have all changes that impact users since the previous release.  To double check this, you can use the `git log` command and look through the merged master branch pull requests.  Here is an example of the log command to get non-merge commits between v0.0.12 and v0.1.0:
-
-  ```
-  git --no-pager log v0.0.12..v0.1.0 --pretty=oneline --abbrev-commit --no-merges
-  ```
+7. Publish a release on Github manually.
+Go to the [releases page](https://github.com/GoogleCloudPlatform/google-cloud-java/releases) and open the appropriate release draft. Make sure the "Tag Version" is `vX.Y.Z` and the "Release Title" is `X.Y.Z`, where `X.Y.Z` is the release version as listed in the `pom.xml` files. 
+  
+  Add the commits since the last release into the release draft. Try to group them into sections with related changes. Anything that is a breaking change needs to be marked with `*breaking change*`. Such changes are only allowed for alpha/beta modules and `@BetaApi` features.
 
   Ensure that the format is consistent with previous releases (for an example, see the [0.1.0 release](https://github.com/GoogleCloudPlatform/google-cloud-java/releases/tag/v0.1.0)).  After adding any missing updates and reformatting as necessary, publish the draft.  Finally, create a new draft for the next release.
 
-6. Run `utilities/update_versions.sh` again (to include "-SNAPSHOT" in the project version). Please refer to documentation in `utilities/update_versions.sh` for more details. 
+8. Run `utilities/update_versions.sh` again (to include "-SNAPSHOT" in the project version). Please refer to documentation in `utilities/update_versions.sh` for more details. 
 
-7. Create and merge in another PR to reflect the updated project version.  For an example of what this PR should look like, see [#227](https://github.com/GoogleCloudPlatform/google-cloud-java/pull/227).
-
-8. Be sure to update Google Cloud Platform docs, [java-docs-samples](https://github.com/GoogleCloudPlatform/java-docs-samples) code/docs, and [getting-started-java](https://github.com/GoogleCloudPlatform/getting-started-java) code/docs.  See directions [here](https://docs.google.com/a/google.com/document/d/1SS3xNn2v0qW7EadGUPBUAPIQAH5VY6WSFmT17ZjjUVE/).
+9. Create and merge in another PR to reflect the updated project version.  For an example of what this PR should look like, see [#227](https://github.com/GoogleCloudPlatform/google-cloud-java/pull/227).
 
 ### To push a snapshot version
 

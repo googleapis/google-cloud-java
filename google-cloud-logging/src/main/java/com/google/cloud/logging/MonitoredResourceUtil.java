@@ -19,10 +19,13 @@ package com.google.cloud.logging;
 import com.google.cloud.MetadataConfig;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.logging.LogEntry.Builder;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -72,6 +75,8 @@ public class MonitoredResourceUtil {
     }
   }
 
+  private static final String APPENGINE_LABEL_PREFIX = "appengine.googleapis.com/";
+
   private static Map<String, Label[]> resourceTypeWithLabels;
 
   static {
@@ -80,15 +85,13 @@ public class MonitoredResourceUtil {
             .put(
                 Resource.GaeAppFlex.getKey(),
                 new Label[] {
-                  Label.InstanceName,
-                  Label.ModuleId,
-                  Label.VersionId,
-                  Label.InstanceId,
-                  Label.Zone
+                    Label.ModuleId,
+                    Label.VersionId,
+                    Label.Zone
                 })
             .put(
                 Resource.GaeAppStandard.getKey(),
-                new Label[] {Label.AppId, Label.ModuleId, Label.VersionId})
+                new Label[] {Label.ModuleId, Label.VersionId})
             .put(Resource.Container.getKey(), new Label[] {Label.ClusterName, Label.Zone})
             .put(Resource.GceInstance.getKey(), new Label[] {Label.InstanceId, Label.Zone})
             .build();
@@ -124,11 +127,12 @@ public class MonitoredResourceUtil {
 
   /**
    * Returns custom log entry enhancers (if available) for resource type.
-   * @return custom long entry enhancers
+   *
+   * @return custom log entry enhancers
    */
   public static List<LoggingEnhancer> getResourceEnhancers() {
     Resource resourceType = getAutoDetectedResourceType();
-    return getEnhancers(resourceType);
+    return createEnhancers(resourceType);
   }
 
   private static String getValue(Label label) {
@@ -192,19 +196,54 @@ public class MonitoredResourceUtil {
     return System.getenv("GAE_INSTANCE");
   }
 
-  private static List<LoggingEnhancer> getEnhancers(Resource resourceType) {
-    List<LoggingEnhancer> enhancers;
+  private static List<LoggingEnhancer> createEnhancers(Resource resourceType) {
+    List<LoggingEnhancer> enhancers = new ArrayList<>(2);
     switch (resourceType) {
       // Trace logging enhancer is supported on GAE Flex and Standard.
-      case GaeAppStandard:
       case GaeAppFlex:
-        enhancers = new ArrayList<>();
-        enhancers.add(new TraceLoggingEnhancer());
+        enhancers.add(new LabelLoggingEnhancer(
+            APPENGINE_LABEL_PREFIX, Collections.singletonList(Label.InstanceName)));
+        enhancers.add(new TraceLoggingEnhancer(APPENGINE_LABEL_PREFIX));
+        break;
+      case GaeAppStandard:
+        enhancers.add(new TraceLoggingEnhancer(APPENGINE_LABEL_PREFIX));
         break;
       default:
-        enhancers = Collections.emptyList();
         break;
     }
     return enhancers;
+  }
+
+  /**
+   * Adds additional resource-based labels to log entries.
+   * Labels that can be provided with {@link MonitoredResource.Builder#addLabel(String, String)}
+   * are restricted to a supported set per resource.
+   *
+   * @see <a href="https://cloud.google.com/logging/docs/api/v2/resource-list">Logging Labels</a>
+   */
+  private static class LabelLoggingEnhancer implements LoggingEnhancer {
+
+    private final Map<String, String> labels;
+
+    LabelLoggingEnhancer(String prefix, List<Label> labelNames) {
+      labels = new HashMap<>();
+      if (labelNames != null) {
+        for (Label labelName : labelNames) {
+          String labelValue = MonitoredResourceUtil.getValue(labelName);
+          if (labelValue != null) {
+            String fullLabelName = (prefix != null) ?
+                prefix + labelName.getKey() : labelName.getKey();
+            labels.put(fullLabelName, labelValue);
+          }
+        }
+      }
+    }
+
+    @Override
+    public void enhanceLogEntry(Builder logEntry) {
+      for (Map.Entry<String, String> label : labels.entrySet()) {
+        logEntry.addLabel(label.getKey(), label.getValue());
+      }
+    }
   }
 }

@@ -290,7 +290,9 @@ class FakeStorageRpc implements StorageRpc {
     if (futureContents.containsKey(uploadId)) {
       bytes = futureContents.get(uploadId);
       if (bytes.length < length + destOffset) {
-        bytes = new byte[(int) (length + destOffset)];
+        byte[] newBytes = new byte[(int) (length + destOffset)];
+        System.arraycopy(bytes, 0, newBytes, (int) 0, bytes.length);
+        bytes = newBytes;
       }
     } else {
       bytes = new byte[(int) (length + destOffset)];
