@@ -20,8 +20,9 @@ import com.google.common.base.Preconditions;
 
 /** Options for the session pool used by {@code DatabaseClient}. */
 public class SessionPoolOptions {
-  private static final int DEFAULT_MAX_SESSIONS = 2000;
-  private static final ActionOnExhaustion DEFAULT_ACTION = ActionOnExhaustion.FAIL;
+  // Default number of channels * 100.
+  private static final int DEFAULT_MAX_SESSIONS = 400;
+  private static final ActionOnExhaustion DEFAULT_ACTION = ActionOnExhaustion.BLOCK;
   private final int minSessions;
   private final int maxSessions;
   private final int maxIdleSessions;

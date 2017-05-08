@@ -266,7 +266,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
     for (ManagedChannel channel : getOptions().getRpcChannels()) {
-      channel.shutdown();
+      try {
+    	channel.shutdown();
+      } catch (RuntimeException e) {
+    	  logger.log(Level.WARNING, "Failed to close channel", e);
+      }
     }
   }
 

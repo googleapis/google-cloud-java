@@ -21,7 +21,7 @@ import com.google.cloud.Service;
 /**
  * An interface for Cloud Spanner. Typically, there would only be one instance of this for the
  * lifetime of the application which must be closed by invoking {@link #close()} when it is no
- * longer needed.
+ * longer needed. Failure to do so may result in leaking session resources and exhausting session quota.
  */
 public interface Spanner extends Service<SpannerOptions> {
   /** Returns a {@code DatabaseAdminClient} to do admin operations on Cloud Spanner databases. */
@@ -38,7 +38,7 @@ public interface Spanner extends Service<SpannerOptions> {
 
   /**
    * Closes all the clients associated with this instance and frees up all the resources. This
-   * method will block till it can clean up all the resources. Specifically, it deletes all the
+   * method will block until it can clean up all the resources. Specifically, it deletes all the
    * underlying sessions (which involves rpcs) and closes all the gRPC channels. Once this method
    * called, this object is no longer usable. It is strongly advised to call this method when you
    * are done with the {@code Spanner} object, typically when your application shuts down. There is

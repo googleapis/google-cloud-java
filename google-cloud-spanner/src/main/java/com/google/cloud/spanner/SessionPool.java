@@ -18,6 +18,24 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.GuardedBy;
+
+import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
+
 import com.google.cloud.Timestamp;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
@@ -30,21 +48,6 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Queue;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
-import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
 
 /**
  * Maintains a pool of sessions some of which might be prepared for write by invoking
@@ -191,11 +194,11 @@ final class SessionPool {
 
   // Exception class used just to track the stack trace at the point when a session was handed out
   // from the pool.
-  private final class LeakedSessionException extends Exception {
+  private final class LeakedSessionException extends RuntimeException {
     private static final long serialVersionUID = 1451131180314064914L;
 
     private LeakedSessionException() {
-      super("Session was checked out from the pool at:");
+      super("Session was checked out from the pool at " + clock.instant());
     }
   }
 
@@ -425,6 +428,7 @@ final class SessionPool {
 
     void init() {
       // Scheduled pool maintenance worker.
+    	synchronized(lock) {
       scheduledFuture =
           executor.scheduleAtFixedRate(
               new Runnable() {
@@ -436,13 +440,16 @@ final class SessionPool {
               LOOP_FREQUENCY,
               LOOP_FREQUENCY,
               TimeUnit.MILLISECONDS);
+    	}
     }
 
     void close() {
+    	synchronized(lock) {
       scheduledFuture.cancel(false);
       if (!running) {
         decrementPendingClosures();
       }
+    	}
     }
 
     // Does various pool maintenance activities.
@@ -595,7 +602,7 @@ final class SessionPool {
   private int maxSessionsInUse = 0;
 
   @GuardedBy("lock")
-  private final Map<String, PooledSession> allSessions = new HashMap<>();
+  private final Set<PooledSession> allSessions = new HashSet<>();
 
   /**
    * Create a session pool with the given options and for the given database. It will also start
@@ -732,6 +739,7 @@ final class SessionPool {
       }
     }
     if (waiter != null) {
+      logger.log(Level.WARNING, "No session available in the pool. Blocking for one to become available/created");
       sess = waiter.take();
     }
     sess.leakedException = new LeakedSessionException();
@@ -779,6 +787,7 @@ final class SessionPool {
       }
     }
     if (waiter != null) {
+    	logger.log(Level.WARNING, "No session available in the pool. Blocking for one to become available/created");
       sess = waiter.take();
     }
     sess.leakedException = new LeakedSessionException();
@@ -906,11 +915,11 @@ final class SessionPool {
       poolMaintainer.close();
       readSessions.clear();
       writePreparedSessions.clear();
-      for (final PooledSession session : ImmutableList.copyOf(allSessions.values())) {
+      for (final PooledSession session : ImmutableList.copyOf(allSessions)) {
         if (session.leakedException != null) {
           logger.log(Level.WARNING, "Leaked session", session.leakedException);
         }
-        closeSessionAsync(session.delegate);
+        closeSessionAsync(session);
       }
     }
     retFuture.addListener(
@@ -954,13 +963,13 @@ final class SessionPool {
     }
   }
 
-  private void closeSessionAsync(final Session sess) {
+  private void closeSessionAsync(final PooledSession sess) {
     allSessions.remove(sess.getName());
     executor.submit(
         new Runnable() {
           @Override
           public void run() {
-            closeSession(sess);
+            closeSession(sess.delegate);
           }
         });
   }
@@ -1050,7 +1059,7 @@ final class SessionPool {
                 } else {
                   Preconditions.checkState(totalSessions() <= options.getMaxSessions() - 1);
                   PooledSession pooledSession = new PooledSession(session);
-                  allSessions.put(session.getName(), pooledSession);
+                  allSessions.add(pooledSession);
                   releaseSession(pooledSession);
                 }
               }
