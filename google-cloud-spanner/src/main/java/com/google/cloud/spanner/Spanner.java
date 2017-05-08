@@ -21,7 +21,8 @@ import com.google.cloud.Service;
 /**
  * An interface for Cloud Spanner. Typically, there would only be one instance of this for the
  * lifetime of the application which must be closed by invoking {@link #close()} when it is no
- * longer needed. Failure to do so may result in leaking session resources and exhausting session quota.
+ * longer needed. Failure to do so may result in leaking session resources and exhausting session
+ * quota.
  */
 public interface Spanner extends Service<SpannerOptions> {
   /** Returns a {@code DatabaseAdminClient} to do admin operations on Cloud Spanner databases. */

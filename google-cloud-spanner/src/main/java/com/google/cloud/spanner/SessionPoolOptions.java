@@ -136,7 +136,7 @@ public class SessionPoolOptions {
     /**
      * If all sessions are in use and and {@code maxSessions} has been reached, fail the request by
      * throwing a {@link SpannerException} with the error code {@code RESOURCE_EXHAUSTED}. Default
-     * behavior is same.
+     * behavior is to block the request.
      */
     public Builder setFailIfPoolExhausted() {
       this.actionOnExhaustion = ActionOnExhaustion.FAIL;
@@ -145,7 +145,7 @@ public class SessionPoolOptions {
 
     /**
      * If all sessions are in use and there is no more room for creating new sessions, block for a
-     * session to become available. Default behavior is to fail the request.
+     * session to become available. Default behavior is same.
      */
     public Builder setBlockIfPoolExhausted() {
       this.actionOnExhaustion = ActionOnExhaustion.BLOCK;

@@ -29,6 +29,10 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.cloud.spanner.SessionPool.Clock;
+import com.google.cloud.spanner.SessionPool.PooledSession;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.Uninterruptibles;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -36,7 +40,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -48,11 +51,6 @@ import org.junit.runners.Parameterized.Parameters;
 import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-
-import com.google.cloud.spanner.SessionPool.Clock;
-import com.google.cloud.spanner.SessionPool.PooledSession;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.Uninterruptibles;
 
 /** Tests for SessionPool that mock out the underlying stub. */
 @RunWith(Parameterized.class)

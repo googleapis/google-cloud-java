@@ -18,24 +18,6 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
-
-import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
-
 import com.google.cloud.Timestamp;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
@@ -48,6 +30,21 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.GuardedBy;
+import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
 
 /**
  * Maintains a pool of sessions some of which might be prepared for write by invoking
@@ -428,28 +425,28 @@ final class SessionPool {
 
     void init() {
       // Scheduled pool maintenance worker.
-    	synchronized(lock) {
-      scheduledFuture =
-          executor.scheduleAtFixedRate(
-              new Runnable() {
-                @Override
-                public void run() {
-                  maintainPool();
-                }
-              },
-              LOOP_FREQUENCY,
-              LOOP_FREQUENCY,
-              TimeUnit.MILLISECONDS);
-    	}
+      synchronized (lock) {
+        scheduledFuture =
+            executor.scheduleAtFixedRate(
+                new Runnable() {
+                  @Override
+                  public void run() {
+                    maintainPool();
+                  }
+                },
+                LOOP_FREQUENCY,
+                LOOP_FREQUENCY,
+                TimeUnit.MILLISECONDS);
+      }
     }
 
     void close() {
-    	synchronized(lock) {
-      scheduledFuture.cancel(false);
-      if (!running) {
-        decrementPendingClosures();
+      synchronized (lock) {
+        scheduledFuture.cancel(false);
+        if (!running) {
+          decrementPendingClosures();
+        }
       }
-    	}
     }
 
     // Does various pool maintenance activities.
@@ -739,7 +736,9 @@ final class SessionPool {
       }
     }
     if (waiter != null) {
-      logger.log(Level.WARNING, "No session available in the pool. Blocking for one to become available/created");
+      logger.log(
+          Level.WARNING,
+          "No session available in the pool. Blocking for one to become available/created");
       sess = waiter.take();
     }
     sess.leakedException = new LeakedSessionException();
@@ -787,7 +786,9 @@ final class SessionPool {
       }
     }
     if (waiter != null) {
-    	logger.log(Level.WARNING, "No session available in the pool. Blocking for one to become available/created");
+      logger.log(
+          Level.WARNING,
+          "No session available in the pool. Blocking for one to become available/created");
       sess = waiter.take();
     }
     sess.leakedException = new LeakedSessionException();
@@ -896,16 +897,12 @@ final class SessionPool {
       // Fail all pending waiters.
       Waiter waiter = readWaiters.poll();
       while (waiter != null) {
-        waiter.put(
-            newSpannerException(
-                ErrorCode.INTERNAL, "Client has been closed"));
+        waiter.put(newSpannerException(ErrorCode.INTERNAL, "Client has been closed"));
         waiter = readWaiters.poll();
       }
       waiter = readWriteWaiters.poll();
       while (waiter != null) {
-        waiter.put(
-            newSpannerException(
-                ErrorCode.INTERNAL, "Client has been closed"));
+        waiter.put(newSpannerException(ErrorCode.INTERNAL, "Client has been closed"));
         waiter = readWriteWaiters.poll();
       }
       closureFuture = SettableFuture.create();
