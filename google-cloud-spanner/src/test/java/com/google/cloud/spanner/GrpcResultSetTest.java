@@ -16,12 +16,12 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
-import static com.google.common.truth.Truth.assertThat;
-
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.NullValue;
@@ -42,6 +42,16 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
+import static com.google.common.truth.Truth.assertThat;
 
 /** Unit tests for {@link com.google.cloud.spanner.SpannerImpl.GrpcResultSet}. */
 @RunWith(JUnit4.class)
@@ -587,5 +597,51 @@ public class GrpcResultSetTest {
   private static ResultSetMetadata makeMetadata(Type rowType) {
     com.google.spanner.v1.Type typeProto = rowType.toProto();
     return ResultSetMetadata.newBuilder().setRowType(typeProto.getStructType()).build();
+  }
+
+  @Test
+  public void serialization() throws Exception {
+    verifySerialization(Value.string("a"),
+            Value.string(null),
+            Value.bool(true),
+            Value.bool(null),
+            Value.int64(1),
+            Value.int64(null),
+            Value.float64(1.0),
+            Value.float64(null),
+            Value.bytes(ByteArray.fromBase64("abcd")),
+            Value.bytes(null),
+            Value.timestamp(Timestamp.ofTimeSecondsAndNanos(1, 2)),
+            Value.timestamp(null),
+            Value.date(Date.fromYearMonthDay(2017, 04, 17)),
+            Value.date(null),
+            Value.stringArray(ImmutableList.of("one", "two")),
+            Value.stringArray(null),
+            Value.boolArray(new boolean[]{true, false}),
+            Value.boolArray((boolean[]) null),
+            Value.int64Array(new long[]{1, 2, 3}),
+            Value.int64Array((long[]) null),
+            Value.timestampArray(ImmutableList.of(Timestamp.MAX_VALUE, Timestamp.MAX_VALUE)),
+            Value.timestampArray(null),
+            Value.dateArray(ImmutableList.of(
+                    Date.fromYearMonthDay(2017, 4, 17), Date.fromYearMonthDay(2017, 5, 18))),
+            Value.dateArray(null)
+    );
+  }
+
+  private void verifySerialization(Value... values) {
+    resultSet = new SpannerImpl.GrpcResultSet(stream, new NoOpListener(), QueryMode.NORMAL);
+    PartialResultSet.Builder builder = PartialResultSet.newBuilder();
+    List<Type.StructField> types = new ArrayList<>();
+    for (Value value : values) {
+      types.add(Type.StructField.of("f", value.getType()));
+      builder.addValues(value.toProto());
+    }
+    consumer.onPartialResultSet(
+            builder.setMetadata(makeMetadata(Type.struct(types)))
+                    .build());
+    consumer.onCompleted();
+    assertThat(resultSet.next()).isTrue();
+    reserializeAndAssert(resultSet.getCurrentRowAsStruct());
   }
 }

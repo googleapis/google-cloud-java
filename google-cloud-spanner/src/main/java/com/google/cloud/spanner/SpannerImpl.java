@@ -81,6 +81,7 @@ import com.google.spanner.v1.TypeCode;
 import io.grpc.Context;
 import io.grpc.ManagedChannel;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -1511,6 +1512,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
    * @param <R> the type of row data
    */
   private static class BaseStruct<R> extends Struct {
+    private static final long serialVersionUID = -1850257565078946587L;
+
     protected final Type type;
     protected final List<Object> rowData;
 
@@ -1838,6 +1841,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   private static class GrpcStruct extends BaseStruct<List<Object>> {
+    private static final long serialVersionUID = -2067943506736181881L;
+
     GrpcStruct(Type type, List<Object> rowData) {
       super(type, rowData);
     }
@@ -1898,14 +1903,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       switch (elementType.getCode()) {
         case BOOL:
           // Use a view: element conversion is virtually free.
-          return Lists.transform(
-              listValue.getValuesList(),
-              new Function<com.google.protobuf.Value, Boolean>() {
-                @Override
-                public Boolean apply(com.google.protobuf.Value input) {
-                  return input.getKindCase() == KindCase.NULL_VALUE ? null : input.getBoolValue();
-                }
-              });
+          return new BoolArray(listValue.getValuesList());
         case INT64:
           // For int64/float64 types, use custom containers.  These avoid wrapper object
           // creation for non-null arrays.
@@ -1913,14 +1911,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         case FLOAT64:
           return new Float64Array(listValue);
         case STRING:
-          return Lists.transform(
-              listValue.getValuesList(),
-              new Function<com.google.protobuf.Value, String>() {
-                @Override
-                public String apply(com.google.protobuf.Value input) {
-                  return input.getKindCase() == KindCase.NULL_VALUE ? null : input.getStringValue();
-                }
-              });
+          return new StringArray(listValue.getValuesList());
         case BYTES:
           {
             // Materialize list: element conversion is expensive and should happen only once.
@@ -2418,7 +2409,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
    * {@code BigDecimal} respectively. Rather than construct new wrapper objects for each array
    * element, we use primitive arrays and a {@code BitSet} to track nulls.
    */
-  private abstract static class PrimitiveArray<T, A> extends AbstractList<T> {
+  private abstract static class PrimitiveArray<T, A> extends AbstractList<T> implements Serializable {
+    private static final long serialVersionUID = -3635424493234309483L;
     private final A data;
     private final BitSet nulls;
     private final int size;
@@ -2474,6 +2466,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   private static class Int64Array extends PrimitiveArray<Long, long[]> {
+    private static final long serialVersionUID = -1119776393736089987L;
+
     Int64Array(ListValue protoList) {
       super(protoList);
     }
@@ -2499,6 +2493,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   private static class Float64Array extends PrimitiveArray<Double, double[]> {
+    private static final long serialVersionUID = 615840120676713454L;
+
     Float64Array(ListValue protoList) {
       super(protoList);
     }
@@ -2520,6 +2516,46 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     Double get(double[] array, int i) {
       return array[i];
+    }
+  }
+
+  private static class StringArray extends AbstractList<String> implements Serializable {
+    private static final long serialVersionUID = 695127243179520960L;
+    private final List<com.google.protobuf.Value> underlying;
+
+    private StringArray(List<com.google.protobuf.Value> underlying) {
+      this.underlying = underlying;
+    }
+
+    @Override
+    public String get(int index) {
+      com.google.protobuf.Value value = underlying.get(index);
+      return value.getKindCase() == KindCase.NULL_VALUE ? null : value.getStringValue();
+    }
+
+    @Override
+    public int size() {
+      return underlying.size();
+    }
+  }
+
+  private static class BoolArray extends AbstractList<Boolean> implements Serializable {
+    private static final long serialVersionUID = -2850504708084921083L;
+    private final List<com.google.protobuf.Value> underlying;
+
+    private BoolArray(List<com.google.protobuf.Value> underlying) {
+      this.underlying = underlying;
+    }
+
+    @Override
+    public Boolean get(int index) {
+      com.google.protobuf.Value value = underlying.get(index);
+      return value.getKindCase() == KindCase.NULL_VALUE ? null : value.getBoolValue();
+    }
+
+    @Override
+    public int size() {
+      return underlying.size();
     }
   }
 }
