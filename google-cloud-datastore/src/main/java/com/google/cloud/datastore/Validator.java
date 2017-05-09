@@ -31,7 +31,7 @@ final class Validator {
       "([a-z\\d\\-]{1,100}~)?([a-z\\d][a-z\\d\\-\\.]{0,99}:)?([a-z\\d][a-z\\d\\-]{0,99})");
   private static final int MAX_NAMESPACE_LENGTH = 100;
   private static final Pattern NAMESPACE_PATTERN =
-      Pattern.compile(String.format("[0-9A-Za-z\\._\\-]{0,%d}", MAX_NAMESPACE_LENGTH));
+      Pattern.compile("[0-9A-Za-z\\._\\-]{0," + MAX_NAMESPACE_LENGTH + "}");
 
   private Validator() {
     // utility class
