@@ -45,8 +45,8 @@ import java.util.List;
  * <li><flushLevel>WARNING</flushLevel> (Optional, defaults to "ERROR")</tr>
  * <li><resourceType></resourceType> (Optional, auto detects on App Engine Flex, Standard, GCE and
  * GKE, defaults to "global".
- * <li><a href="https://cloud.google.com/logging/docs/api/v2/resource-list">Supported resource
- * types</li>
+ * See <a href="https://cloud.google.com/logging/docs/api/v2/resource-list">supported resource
+ * types</a>
  * <li>enhancers>com.example.enhancer1, com.example.enhancer2</enhancers></li>
  * <li>(Optional) add custom labels to log entries using {@link LoggingEnhancer} classes.</li>
  * <li></appender></li>
@@ -169,7 +169,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
         };
     getLogging().setFlushSeverity(severityFor(getFlushLevel()));
     loggingEnhancers = new ArrayList<>();
-    List<LoggingEnhancer> resourceEnhancers = MonitoredResourceUtil.createResourceEnhancers();
+    List<LoggingEnhancer> resourceEnhancers = MonitoredResourceUtil.getResourceEnhancers();
     loggingEnhancers.addAll(resourceEnhancers);
     loggingEnhancers.addAll(getEnhancers());
     super.start();
