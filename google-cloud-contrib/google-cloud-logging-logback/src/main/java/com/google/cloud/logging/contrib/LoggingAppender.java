@@ -189,7 +189,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   private boolean isLoggable(ILoggingEvent e) {
-    return (e.getLevel().toInt() >= getLogLevel().toInt());
+    return e.getLevel().toInt() >= getLogLevel().toInt();
   }
 
   @Override

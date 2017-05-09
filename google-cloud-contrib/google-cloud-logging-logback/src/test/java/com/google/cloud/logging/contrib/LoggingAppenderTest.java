@@ -44,7 +44,7 @@ import java.util.Collections;
 @RunWith(JUnit4.class)
 public class LoggingAppenderTest {
 
-  private String projectId = "test-project";
+  private final String projectId = "test-project";
 
   private final LoggingAppender loggingAppender = spy(LoggingAppender.class);
   private final Logging logging = mock(Logging.class);
