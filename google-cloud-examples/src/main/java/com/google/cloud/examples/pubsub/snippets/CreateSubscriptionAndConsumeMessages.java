@@ -25,7 +25,6 @@ import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
-import javax.xml.bind.DatatypeConverter;
 
 /**
  * A snippet for Google Cloud Pub/Sub showing how to create a Pub/Sub pull subscription and
