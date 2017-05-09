@@ -39,7 +39,6 @@ import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.SubscriptionName;
 import java.io.FileInputStream;
 import java.util.concurrent.Executor;
-import javax.xml.bind.DatatypeConverter;
 
 /** This class contains snippets for the {@link Subscriber} interface. */
 public class SubscriberSnippets {
@@ -89,9 +88,7 @@ public class SubscriberSnippets {
           public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
             // handle incoming message, then ack/nack the received message
             System.out.println("Id : " + message.getMessageId());
-            // decode from base64 to view original data
-            System.out.println("Data : " +
-                new String(DatatypeConverter.parseBase64Binary(message.getData().toStringUtf8())));
+            System.out.println("Data : " + message.getData().toStringUtf8());
             consumer.ack();
           }
         };
