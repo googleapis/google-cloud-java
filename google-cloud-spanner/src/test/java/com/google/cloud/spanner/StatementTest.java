@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.collect.ImmutableMap;
@@ -38,6 +39,7 @@ public class StatementTest {
     assertThat(stmt.getSql()).isEqualTo(sql);
     assertThat(stmt.getParameters()).isEmpty();
     assertThat(stmt.toString()).isEqualTo(sql);
+    reserializeAndAssert(stmt);
   }
 
   @Test
