@@ -1903,7 +1903,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       switch (elementType.getCode()) {
         case BOOL:
           // Use a view: element conversion is virtually free.
-          return new BoolArray(listValue.getValuesList());
+          return new BoolArray(listValue);
         case INT64:
           // For int64/float64 types, use custom containers.  These avoid wrapper object
           // creation for non-null arrays.
@@ -1911,7 +1911,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         case FLOAT64:
           return new Float64Array(listValue);
         case STRING:
-          return new StringArray(listValue.getValuesList());
+          return new StringArray(listValue);
         case BYTES:
           {
             // Materialize list: element conversion is expensive and should happen only once.
@@ -2521,41 +2521,41 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   private static class StringArray extends AbstractList<String> implements Serializable {
     private static final long serialVersionUID = 695127243179520960L;
-    private final List<com.google.protobuf.Value> underlying;
+    private final ListValue listValue;
 
-    private StringArray(List<com.google.protobuf.Value> underlying) {
-      this.underlying = underlying;
+    private StringArray(ListValue listValue) {
+      this.listValue = listValue;
     }
 
     @Override
     public String get(int index) {
-      com.google.protobuf.Value value = underlying.get(index);
+      com.google.protobuf.Value value = listValue.getValues(index);
       return value.getKindCase() == KindCase.NULL_VALUE ? null : value.getStringValue();
     }
 
     @Override
     public int size() {
-      return underlying.size();
+      return listValue.getValuesCount();
     }
   }
 
   private static class BoolArray extends AbstractList<Boolean> implements Serializable {
     private static final long serialVersionUID = -2850504708084921083L;
-    private final List<com.google.protobuf.Value> underlying;
+    private final ListValue listValue;
 
-    private BoolArray(List<com.google.protobuf.Value> underlying) {
-      this.underlying = underlying;
+    private BoolArray(ListValue listValue) {
+      this.listValue = listValue;
     }
 
     @Override
     public Boolean get(int index) {
-      com.google.protobuf.Value value = underlying.get(index);
+      com.google.protobuf.Value value = listValue.getValues(index);
       return value.getKindCase() == KindCase.NULL_VALUE ? null : value.getBoolValue();
     }
 
     @Override
     public int size() {
-      return underlying.size();
+      return listValue.getValuesCount();
     }
   }
 }
