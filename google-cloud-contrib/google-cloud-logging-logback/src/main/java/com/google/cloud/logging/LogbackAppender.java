@@ -120,7 +120,7 @@ public class LogbackAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
         for (String enhancerName : items) {
           Class<? extends LoggingEnhancer> clz =
               (Class<? extends LoggingEnhancer>)
-                  ClassLoader.getSystemClassLoader().loadClass(enhancerName);
+                  ClassLoader.getSystemClassLoader().loadClass(enhancerName.trim());
           enhancers.add(clz.newInstance());
         }
       }
