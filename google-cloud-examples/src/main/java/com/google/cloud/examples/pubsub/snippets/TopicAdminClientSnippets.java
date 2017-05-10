@@ -125,7 +125,7 @@ public class TopicAdminClientSnippets {
 
   /** Example of replacing a topic policy. */
   public Policy replaceTopicPolicy(String topicId) throws Exception {
-    // [START pubsub_update_topic_policy]
+    // [START pubsub_set_topic_policy]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       String topicName = TopicName.create(projectId, topicId).toString();
       Policy policy = topicAdminClient.getIamPolicy(topicName);
@@ -140,7 +140,7 @@ public class TopicAdminClientSnippets {
       updatedPolicy = topicAdminClient.setIamPolicy(topicName, updatedPolicy);
       return updatedPolicy;
     }
-    // [END pubsub_update_topic_policy]
+    // [END pubsub_set_topic_policy]
   }
 
   /** Example of testing whether the caller has the provided permissions on a topic.

@@ -151,7 +151,7 @@ public class SubscriptionAdminClientSnippets {
 
   /** Example of replacing a subscription policy. */
   public Policy replaceSubscriptionPolicy(String subscriptionId) throws Exception {
-    // [START pubsub_update_subscription_policy]
+    // [START pubsub_set_subscription_policy]
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
       Policy policy = subscriptionAdminClient.getIamPolicy(subscriptionName.toString());
@@ -167,7 +167,7 @@ public class SubscriptionAdminClientSnippets {
       updatedPolicy = subscriptionAdminClient.setIamPolicy(subscriptionName.toString(), updatedPolicy);
       return updatedPolicy;
     }
-    // [END pubsub_update_subscription_policy]
+    // [END pubsub_set_subscription_policy]
   }
 
   /** Example of testing whether the caller has the provided permissions on a subscription. */
