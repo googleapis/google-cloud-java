@@ -559,6 +559,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("writeDisposition", writeDisposition)
         .add("dryRun", dryRun)
         .add("useLegacySql", useLegacySql)
+        .add("maximumBillingTier", maximumBillingTier)
         .add("schemaUpdateOptions", schemaUpdateOptions);
   }
 
