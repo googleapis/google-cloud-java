@@ -191,8 +191,8 @@ public class LogbackAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
             .setTimestamp(e.getTimeStamp())
             .setSeverity(severityFor(level));
 
-    builder.addLabel("levelName", level.toString())
-        .addLabel("levelValue", String.valueOf(level.toInt()));
+    builder.addLabel(LEVEL_NAME_KEY, level.toString())
+        .addLabel(LEVEL_VALUE_KEY, String.valueOf(level.toInt()));
 
     if (loggingEnhancers != null) {
       for (LoggingEnhancer enhancer : loggingEnhancers) {
