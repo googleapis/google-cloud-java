@@ -24,23 +24,18 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.filter.ThresholdFilter;
 import ch.qos.logback.classic.spi.LoggingEvent;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.Timestamp;
-import com.google.cloud.logging.LogEntry;
-import com.google.cloud.logging.LogbackAppender;
-import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.WriteOption;
-import com.google.cloud.logging.LoggingEnhancer;
-import com.google.cloud.logging.Payload;
-import com.google.cloud.logging.Severity;
 import com.google.common.collect.ImmutableMap;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.Collections;
-import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LogbackAppenderTest {
@@ -54,11 +49,8 @@ public class LogbackAppenderTest {
       WriteOption.resource(MonitoredResource.newBuilder("global")
           .setLabels(new ImmutableMap.Builder<String, String>()
               .put("project_id",projectId).build())
-          .build()),
-      WriteOption.labels(new ImmutableMap.Builder<String, String>()
-          .put("levelName", "INFO")
-          .put("levelValue", String.valueOf(Level.INFO_INT))
-          .build())};
+          .build())
+  };
 
   @Before
   public void setUp() {
@@ -76,6 +68,22 @@ public class LogbackAppenderTest {
     logbackAppender.start(); // reloading config
     logbackAppender.doAppend(loggingEvent);
     verify(logging, times(1)).setFlushSeverity(Severity.WARNING);
+  }
+
+  @Test
+  public void testFilterLogsOnlyLogsAtOrAboveLogLevel() {
+    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
+    // default level is info
+    LoggingEvent loggingEvent1 = createLoggingEvent(Level.INFO, timestamp.getSeconds());
+    ThresholdFilter thresholdFilter = new ThresholdFilter();
+    thresholdFilter.setLevel("ERROR");
+    thresholdFilter.start();
+    logbackAppender.addFilter(thresholdFilter);
+    logbackAppender.doAppend(loggingEvent1);
+    verify(logging, times(0)).write(any(Iterable.class), any(WriteOption.class));
+    LoggingEvent loggingEvent2 = createLoggingEvent(Level.ERROR, timestamp.getSeconds());
+    logbackAppender.doAppend(loggingEvent2);
+    verify(logging, times(1)).write(any(Iterable.class), any(WriteOption.class));
   }
 
   @Test

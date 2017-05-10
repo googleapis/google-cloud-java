@@ -34,11 +34,18 @@ libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.
 Usage 
 -----
 
-Add the appender to your [Logback configuration](https://logback.qos.ch/manual/configuration.html) `logback.xml`
+Add the appender to your [Logback configuration](https://logback.qos.ch/manual/configuration.html) `logback.xml`.
+See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter) on filtering log output and
+ [encoders](https://logback.qos.ch/manual/encoders.html) on formatting.
+
+
 ```xml
 <configuration>
   <appender name="CLOUD" class="com.google.cloud.logging.LogbackAppender">
-    <level>DEBUG</level> <!-- Optional : default INFO -->
+    <!-- Optional : filter logs at or above a level -->
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+          <level>INFO</level>
+     </filter>
     <log>application.log</log> <!-- Optional : default java.log -->
     <enhancers>com.example.enhancers.TestLoggingEnhancer</enhancers> <!-- Optional -->
     <flushLevel>WARN</flushLevel> <!-- Optional : default ERROR -->
