@@ -55,7 +55,6 @@ public class CreateTopicAndPublishMessages {
       // schedule publishing one message at a time : messages get automatically batched
       for (String message : messages) {
         ByteString data = ByteString.copyFromUtf8(message);
-        // message data is converted to base64-encoding
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
 
         // Once published, returns a server-assigned message id (unique within the topic)
