@@ -39,17 +39,18 @@ import java.util.List;
  *
  * <p>Appender configuration in logback.xml:
  * <ul>
- * <li><appender name="CLOUD" class="com.google.cloud.logging.contrib.LoggingAppender"></li>
- * <li><log>application.log</log> (Optional, defaults to "java.log" : Stackdriver log name)</li>
- * <li><level>ERROR</level> (Optional, defaults to "INFO" : logs at or above this level)</li>
- * <li><flushLevel>WARNING</flushLevel> (Optional, defaults to "ERROR")</tr>
- * <li><resourceType></resourceType> (Optional, auto detects on App Engine Flex, Standard, GCE and
+ * <li>&lt;appender name="CLOUD" class="com.google.cloud.logging.contrib.LoggingAppender"&gt;</li>
+ * <li>&lt;log&gt;application.log&lt;/log&gt; (Optional, defaults to "java.log" : Stackdriver log name)</li>
+ * <li>&lt;level&gt;ERROR&lt;/level&gt; (Optional, defaults to "INFO" : logs at or above this level)</li>
+ * <li>&lt;flushLevel&gt;WARNING&lt;/flushLevel&gt; (Optional, defaults to "ERROR")</li>
+ * <li>&lt;resourceType&gt;&lt;/resourceType&gt; (Optional, auto detects on App Engine Flex, Standard, GCE and
  * GKE, defaults to "global".
  * See <a href="https://cloud.google.com/logging/docs/api/v2/resource-list">supported resource
- * types</a>
- * <li>enhancers>com.example.enhancer1, com.example.enhancer2</enhancers></li>
+ * types</a></li>
+ * <li>&lt;enhancers&gt;com.example.enhancer1, com.example.enhancer2&lt;/enhancers&gt;</li>
  * <li>(Optional) add custom labels to log entries using {@link LoggingEnhancer} classes.</li>
- * <li></appender></li>
+ * <li>&lt;/appender&gt;</li>
+ * </ul>
  */
 public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
