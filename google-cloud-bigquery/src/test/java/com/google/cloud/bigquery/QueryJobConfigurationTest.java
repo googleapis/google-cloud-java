@@ -160,7 +160,7 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.getUserDefinedFunctions(), value.getUserDefinedFunctions());
     assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
     assertEquals(expected.useLegacySql(), value.useLegacySql());
-    assertEquals(expected.maximumBillingTier(), value.maximumBillingTier());
+    assertEquals(expected.getMaximumBillingTier(), value.getMaximumBillingTier());
     assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
   }
 }

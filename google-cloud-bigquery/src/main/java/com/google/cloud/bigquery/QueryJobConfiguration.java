@@ -524,7 +524,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   /**
    * Returns the optional billing tier limit for this job.
    */
-  public Integer maximumBillingTier() {
+  public Integer getMaximumBillingTier() {
     return maximumBillingTier;
   }
 
