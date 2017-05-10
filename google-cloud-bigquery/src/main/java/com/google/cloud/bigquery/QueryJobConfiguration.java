@@ -574,7 +574,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   public int hashCode() {
     return Objects.hash(baseHashCode(), allowLargeResults, createDisposition, destinationTable,
         defaultDataset, flattenResults, priority, query, tableDefinitions, useQueryCache,
-        userDefinedFunctions, writeDisposition, dryRun, useLegacySql, schemaUpdateOptions);
+        userDefinedFunctions, writeDisposition, dryRun, useLegacySql, maximumBillingTier,
+        schemaUpdateOptions);
   }
 
   @Override
