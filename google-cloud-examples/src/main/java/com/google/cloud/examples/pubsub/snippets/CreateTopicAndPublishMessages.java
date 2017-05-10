@@ -41,7 +41,7 @@ public class CreateTopicAndPublishMessages {
   }
 
   public static void publishMessages() throws Exception {
-    // [START publish]
+    // [START pubsub_publish]
     TopicName topicName = TopicName.create("my-project-id", "my-topic-id");
     Publisher publisher = null;
     List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
@@ -75,7 +75,7 @@ public class CreateTopicAndPublishMessages {
         publisher.shutdown();
       }
     }
-    // [END publish]
+    // [END pubsub_publish]
   }
 
   public static void main(String... args) throws Exception {

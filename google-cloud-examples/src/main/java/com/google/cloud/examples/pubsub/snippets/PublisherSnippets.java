@@ -86,7 +86,7 @@ public class PublisherSnippets {
   }
 
   public Publisher getPublisherWithCustomBatchSettings(TopicName topicName) throws Exception {
-    // [START publisherBatchSettings]
+    // [START pubsub_publisher_batch_settings]
     // Batch settings control how the publisher batches messages
     long requestBytesThreshold = 5000L; // default : 1kb
     long messageCountBatchSize = 10L; // default : 100
@@ -102,12 +102,12 @@ public class PublisherSnippets {
 
     Publisher publisher = Publisher.defaultBuilder(topicName)
         .setBatchingSettings(batchingSettings).build();
-    // [END publisherBatchSettings]
+    // [END pubsub_publisher_batch_settings]
     return publisher;
   }
 
   public Publisher getPublisherWithCustomRetrySettings(TopicName topicName) throws Exception {
-    // [START publisherRetrySettings]
+    // [START pubsub_publisher_retry_settings]
     // Retry settings control how the publisher handles retryable failures
     Duration retryDelay = Duration.ofMillis(100); // default : 1 ms
     double retryDelayMultiplier = 2.0; // back off for repeated failures
@@ -121,12 +121,12 @@ public class PublisherSnippets {
 
     Publisher publisher = Publisher.defaultBuilder(topicName)
         .setRetrySettings(retrySettings).build();
-    // [END publisherRetrySettings]
+    // [END pubsub_publisher_retry_settings]
     return publisher;
   }
 
   public Publisher getPublisherWithCustomFlowControlSettings(TopicName topicName) throws Exception {
-    // [START publisherFlowControlSettings]
+    // [START pubsub_publisher_flow_settings]
 
     // Flow control settings restrict the number of outstanding publish requests
     int maxOutstandingBatches = 20;
@@ -143,23 +143,23 @@ public class PublisherSnippets {
 
     Publisher publisher = Publisher.defaultBuilder(topicName)
         .setFlowControlSettings(flowControlSettings).build();
-    // [END publisherFlowControlSettings]
+    // [END pubsub_publisher_flow_settings]
     return publisher;
   }
 
   public Publisher getSingleThreadedPublisher(TopicName topicName) throws Exception {
-    // [START singleThreadedPublisher]
+    // [START pubsub_publisher_single_threaded]
     // create a publisher with a single threaded executor
     ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
         .setExecutorThreadCount(1).build();
     Publisher publisher = Publisher.defaultBuilder(topicName)
         .setExecutorProvider(executorProvider).build();
-    // [END singleThreadedPublisher]
+    // [END pubsub_publisher_single_threaded]
     return publisher;
   }
 
   private Publisher createPublisherWithCustomCredentials(TopicName topicName) throws Exception {
-    // [START publisherWithCustomCredentials]
+    // [START pubsub_publisher_custom_credentials]
     // read service account credentials from file
     CredentialsProvider credentialsProvider =
         FixedCredentialsProvider.create(
@@ -171,7 +171,7 @@ public class PublisherSnippets {
     Publisher publisher = Publisher.defaultBuilder(topicName)
         .setChannelProvider(channelProvider)
         .build();
-    // [END publisherWithCustomCredentials]
+    // [END pubsub_publisher_custom_credentials]
     return publisher;
   }
 }

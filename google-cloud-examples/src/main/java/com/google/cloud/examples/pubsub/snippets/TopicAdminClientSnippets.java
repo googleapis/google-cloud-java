@@ -48,7 +48,7 @@ public class TopicAdminClientSnippets {
 
   /** Example of creating a topic. */
   public Topic createTopic(String topicId) throws Exception {
-    // [START createTopic]
+    // [START pubsub_create_topic]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       // projectId <=  unique project identifier, eg. "my-project-id"
       // topicId <= "my-topic-id"
@@ -56,12 +56,12 @@ public class TopicAdminClientSnippets {
       Topic topic = topicAdminClient.createTopic(topicName);
       return topic;
     }
-    // [END createTopic]
+    // [END pubsub_create_topic]
   }
 
   /** Example of listing topics.  */
   public ListTopicsPagedResponse listTopics() throws Exception {
-    // [START listTopics]
+    // [START pubsub_list_topics]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       ListTopicsRequest listTopicsRequest =
           ListTopicsRequest.newBuilder()
@@ -74,13 +74,13 @@ public class TopicAdminClientSnippets {
       }
       return response;
     }
-    // [END listTopics]
+    // [END pubsub_list_topics]
   }
 
   /** Example of listing topics for a subscription. */
   public ListTopicSubscriptionsPagedResponse listTopicSubscriptions(String topicId)
       throws Exception {
-    // [START listTopicSubscriptions]
+    // [START pubsub_list_topic_subscriptions]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
       ListTopicSubscriptionsRequest request =
@@ -95,23 +95,23 @@ public class TopicAdminClientSnippets {
       }
       return response;
     }
-    // [END listTopicSubscriptions]
+    // [END pubsub_list_topic_subscriptions]
   }
 
   /** Example of deleting a topic. */
   public TopicName deleteTopic(String topicId) throws Exception {
-    // [START deleteTopic]
+    // [START pubsub_delete_topic]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
       topicAdminClient.deleteTopic(topicName);
       return topicName;
     }
-    // [END deleteTopic]
+    // [END pubsub_delete_topic]
   }
 
   /** Example of getting a topic policy. */
   public Policy getTopicPolicy(String topicId) throws Exception {
-    // [START getTopicPolicy]
+    // [START pubsub_get_topic_policy]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
       Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
@@ -120,12 +120,12 @@ public class TopicAdminClientSnippets {
       }
       return policy;
     }
-    // [END getTopicPolicy]
+    // [END pubsub_get_topic_policy]
   }
 
   /** Example of replacing a topic policy. */
   public Policy replaceTopicPolicy(String topicId) throws Exception {
-    // [START replaceTopicPolicy]
+    // [START pubsub_update_topic_policy]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       String topicName = TopicName.create(projectId, topicId).toString();
       Policy policy = topicAdminClient.getIamPolicy(topicName);
@@ -140,13 +140,13 @@ public class TopicAdminClientSnippets {
       updatedPolicy = topicAdminClient.setIamPolicy(topicName, updatedPolicy);
       return updatedPolicy;
     }
-    // [END replaceTopicPolicy]
+    // [END pubsub_update_topic_policy]
   }
 
   /** Example of testing whether the caller has the provided permissions on a topic.
    * Only viewer, editor or admin/owner can view results of pubsub.topics.get  */
   public TestIamPermissionsResponse testTopicPermissions(String topicId) throws Exception {
-    // [START testTopicPermissions]
+    // [START pubsub_test_topic_permissions]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       List<String> permissions = new LinkedList<>();
       permissions.add("pubsub.topics.get");
@@ -155,17 +155,17 @@ public class TopicAdminClientSnippets {
           topicAdminClient.testIamPermissions(topicName.toString(), permissions);
       return testedPermissions;
     }
-    // [END testTopicPermissions]
+    // [END pubsub_test_topic_permissions]
   }
 
   /** Example of getting a topic. */
   public Topic getTopic(String topicId) throws Exception {
-    // [START getTopic]
+    // [START pubsub_get_topic]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
       Topic topic = topicAdminClient.getTopic(topicName);
       return topic;
     }
-    // [END getTopic]
+    // [END pubsub_get_topic]
   }
 }
