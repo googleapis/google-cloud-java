@@ -343,7 +343,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
 
     /**
-     * Limit the billing tier for this job. Queries that have resource usage beyond this tier will fail
+     * Limits the billing tier for this job. Queries that have resource usage beyond this tier will fail
      * (without incurring a charge). If unspecified, this will be set to your project default.
 
      * @param maximumBillingTier maximum billing tier for this job
@@ -522,9 +522,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
   }
 
   /**
-   * Return the optional billing tier limit for this job.
+   * Returns the optional billing tier limit for this job.
    */
-  public Integer maximumBillingTier() { return maximumBillingTier; }
+  public Integer maximumBillingTier() {
+    return maximumBillingTier;
+  }
 
   /**
    * [Experimental] Returns options allowing the schema of the destination table to be updated as a side effect of the
