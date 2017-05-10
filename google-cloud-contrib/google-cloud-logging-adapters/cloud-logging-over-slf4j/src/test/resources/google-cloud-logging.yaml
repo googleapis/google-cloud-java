@@ -1,0 +1,25 @@
+destination: "fluentd"
+loggers:
+- name: "default"
+  enable: false
+- name: "com.example.db"
+  resource: "global"
+  log_name: "db"
+  labels:
+    project_id: "$GOOGLE_CLOUD_PROJECT"
+  level: "info"
+- name: "com.example.app"
+  resource: "global"
+  log_name: "app.log"
+  labels:
+    service_id: "$GOOGLE_CLOUD_PROJECT"
+  level: "debug"
+- name: "com.example.app.experimental"
+  resource: "global"
+  log_name: "app.experimental"
+  labels:
+    instance_id: "$GAE_INSTANCE"
+    version_id: "$GAE_VERSION"
+    service_id: "$GAE_SERVICE"
+    feature_x: "$FEATURE_X_ENABLED"
+  level: "debug"
