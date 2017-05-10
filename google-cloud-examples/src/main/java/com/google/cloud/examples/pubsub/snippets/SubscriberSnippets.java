@@ -86,8 +86,9 @@ public class SubscriberSnippets {
     MessageReceiver receiver = new MessageReceiver() {
           @Override
           public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
-            // handle incoming message, then ack or nack the received message
-            // ...
+            // handle incoming message, then ack/nack the received message
+            System.out.println("Id : " + message.getMessageId());
+            System.out.println("Data : " + message.getData().toStringUtf8());
             consumer.ack();
           }
         };
@@ -107,10 +108,8 @@ public class SubscriberSnippets {
     // [END pullSubscriber]
   }
 
-  private Subscriber createSubscriberWithErrorListener() throws Exception {
+  private Subscriber createSubscriberWithErrorListener(Subscriber subscriber) throws Exception {
     // [START subscriberWithErrorListener]
-    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
-
     subscriber.addListener(new Subscriber.Listener() {
       public void failed(Subscriber.State from, Throwable failure) {
         // Handle error.
