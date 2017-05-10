@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.logging.enhancers;
 
+package com.example.enhancers;
 
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.LoggingEnhancer;
 
-public class AnotherTestLoggingEnhancer implements LoggingEnhancer {
+public class TestLoggingEnhancer implements LoggingEnhancer {
 
   @Override
   public void enhanceLogEntry(LogEntry.Builder logEntry) {
-    logEntry.addLabel("test-label-2", "test-value-2");
+    logEntry.addLabel("test-label-1", "test-value-1");
   }
 }

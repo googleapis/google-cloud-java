@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.logging.contrib;
+package com.google.cloud.logging;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doReturn;
@@ -28,6 +28,7 @@ import ch.qos.logback.classic.spi.LoggingEvent;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.Timestamp;
 import com.google.cloud.logging.LogEntry;
+import com.google.cloud.logging.LogbackAppender;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.LoggingEnhancer;
@@ -42,11 +43,11 @@ import java.util.Collections;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-public class LoggingAppenderTest {
+public class LogbackAppenderTest {
 
   private final String projectId = "test-project";
 
-  private final LoggingAppender loggingAppender = spy(LoggingAppender.class);
+  private final LogbackAppender logbackAppender = spy(LogbackAppender.class);
   private final Logging logging = mock(Logging.class);
   private final WriteOption[] defaultWriteOptions = new WriteOption[] {
       WriteOption.logName("java.log"),
@@ -61,27 +62,9 @@ public class LoggingAppenderTest {
 
   @Before
   public void setUp() {
-    doReturn(logging).when(loggingAppender).getLogging();
-    doReturn("test-project").when(loggingAppender).getProjectId();
-    loggingAppender.start();
-  }
-
-  @Test
-  public void testLogsOnlyLogsAtOrAboveLogLevel() {
-    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
-    // default level is info
-    LoggingEvent loggingEvent1 = createLoggingEvent(Level.DEBUG, timestamp.getSeconds());
-    loggingAppender.doAppend(loggingEvent1);
-    verify(logging, times(0)).write(any(Iterable.class), any(WriteOption.class));
-    loggingAppender.setLevel(Level.WARN);
-    LoggingEvent loggingEvent2 = createLoggingEvent(Level.WARN, timestamp.getSeconds());
-    loggingAppender.doAppend(loggingEvent2);
-    verify(logging, times(1)).write(any(Iterable.class), any(WriteOption.class));
-    loggingAppender.setLevel(Level.ERROR);
-
-    loggingAppender.doAppend(loggingEvent2);
-    // does not log a warning event
-    verify(logging, times(1)).write(any(Iterable.class), any(WriteOption.class));
+    doReturn(logging).when(logbackAppender).getLogging();
+    doReturn("test-project").when(logbackAppender).getProjectId();
+    logbackAppender.start();
   }
 
   @Test
@@ -89,20 +72,20 @@ public class LoggingAppenderTest {
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent = createLoggingEvent(Level.WARN, timestamp.getSeconds());
     // error is the default, updating to debug for test
-    loggingAppender.setFlushLevel(Level.WARN);
-    loggingAppender.start(); // reloading config
-    loggingAppender.doAppend(loggingEvent);
+    logbackAppender.setFlushLevel(Level.WARN);
+    logbackAppender.start(); // reloading config
+    logbackAppender.doAppend(loggingEvent);
     verify(logging, times(1)).setFlushSeverity(Severity.WARNING);
   }
 
   @Test
   public void testEnhancersAddCorrectLabelsToLogEntries() {
-    loggingAppender.setEnhancers("com.google.cloud.logging.enhancers.TestLoggingEnhancer," +
-    "com.google.cloud.logging.enhancers.AnotherTestLoggingEnhancer");
-    loggingAppender.start();
+    logbackAppender.setEnhancers("com.example.enhancers.TestLoggingEnhancer," +
+    "com.example.enhancers.AnotherTestLoggingEnhancer");
+    logbackAppender.start();
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent = createLoggingEvent(Level.WARN, timestamp.getSeconds());
-    loggingAppender.doAppend(loggingEvent);
+    logbackAppender.doAppend(loggingEvent);
     verify(logging, times(1)).write(
         Collections.singleton(
             LogEntry.newBuilder(Payload.StringPayload.of("this is a test"))
@@ -121,7 +104,7 @@ public class LoggingAppenderTest {
   public void testLogEntryLevelAndLabelsAreAsExpected() {
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent = createLoggingEvent(Level.ERROR, timestamp.getSeconds());
-    loggingAppender.doAppend(loggingEvent);
+    logbackAppender.doAppend(loggingEvent);
     verify(logging).write(
         Collections.singleton(
             LogEntry.newBuilder(Payload.StringPayload.of("this is a test"))
@@ -140,12 +123,5 @@ public class LoggingAppenderTest {
     loggingEvent.setLevel(level);
     loggingEvent.setTimeStamp(timestamp);
     return loggingEvent;
-  }
-
-   public class AnotherTestLoggingEnhancer implements LoggingEnhancer {
-    @Override
-    public void enhanceLogEntry(LogEntry.Builder logEntry) {
-      logEntry.addLabel("test-label-2", "test-value-2");
-    }
   }
 }

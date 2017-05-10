@@ -37,14 +37,14 @@ Usage
 Add the appender to your [Logback configuration](https://logback.qos.ch/manual/configuration.html) `logback.xml`
 ```xml
 <configuration>
-  <appender name="CLOUD" class="com.google.cloud.logging.contrib.LoggingAppender">
+  <appender name="CLOUD" class="com.google.cloud.logging.LogbackAppender">
     <level>DEBUG</level> <!-- Optional : default INFO -->
     <log>application.log</log> <!-- Optional : default java.log -->
-    <enhancers>com.google.cloud.logging.TestLoggingEnhancer</enhancers> <!-- Optional -->
+    <enhancers>com.example.enhancers.TestLoggingEnhancer</enhancers> <!-- Optional -->
     <flushLevel>WARN</flushLevel> <!-- Optional : default ERROR -->
   </appender>
 
-  <root level="debug">
+  <root level="info">
     <appender-ref ref="CLOUD" />
   </root>
 </configuration>
