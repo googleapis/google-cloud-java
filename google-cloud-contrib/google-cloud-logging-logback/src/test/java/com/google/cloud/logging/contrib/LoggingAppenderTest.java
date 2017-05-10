@@ -37,11 +37,11 @@ import com.google.common.collect.ImmutableMap;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
 import java.util.Collections;
+import org.mockito.junit.MockitoJUnitRunner;
 
-@RunWith(JUnit4.class)
+@RunWith(MockitoJUnitRunner.class)
 public class LoggingAppenderTest {
 
   private final String projectId = "test-project";

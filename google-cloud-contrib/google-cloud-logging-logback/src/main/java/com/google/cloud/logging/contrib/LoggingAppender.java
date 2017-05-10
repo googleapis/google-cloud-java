@@ -56,7 +56,6 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
 
-  private LoggingOptions loggingOptions;
   private volatile Logging logging;
   private List<LoggingEnhancer> loggingEnhancers;
   private WriteOption[] defaultWriteOptions;
@@ -156,7 +155,6 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   /** Initialze and configure the cloud logging service. */
   @Override
   public synchronized void start() {
-    loggingOptions = LoggingOptions.getDefaultInstance();
     MonitoredResource resource = getMonitoredResource(getProjectId());
     Level level = getLogLevel();
     defaultWriteOptions =
@@ -176,7 +174,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   protected String getProjectId() {
-    return loggingOptions.getProjectId();
+    return LoggingOptions.getDefaultInstance().getProjectId();
   }
 
   @Override
@@ -209,7 +207,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     if (logging == null) {
       synchronized (this) {
         if (logging == null) {
-          logging = loggingOptions.getService();
+          logging = LoggingOptions.getDefaultInstance().getService();
         }
       }
     }
