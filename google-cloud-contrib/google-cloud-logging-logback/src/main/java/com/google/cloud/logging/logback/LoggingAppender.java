@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 
-package com.google.cloud.logging;
+package com.google.cloud.logging.logback;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.UnsynchronizedAppenderBase;
 import com.google.cloud.MonitoredResource;
+import com.google.cloud.logging.LogEntry;
+import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.WriteOption;
+import com.google.cloud.logging.LoggingEnhancer;
+import com.google.cloud.logging.LoggingOptions;
+import com.google.cloud.logging.MonitoredResourceUtil;
+import com.google.cloud.logging.Payload;
+import com.google.cloud.logging.Severity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,7 +38,7 @@ import java.util.List;
  *
  * <p>Appender configuration in logback.xml:
  * <ul>
- * <li>&lt;appender name="CLOUD" class="com.google.cloud.logging.LogbackAppender"&gt;</li>
+ * <li>&lt;appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender"&gt;</li>
  * <li>&lt;log&gt;application.log&lt;/log&gt; (Optional, defaults to "java.log" : Stackdriver log name)</li>
  * <li>&lt;level&gt;ERROR&lt;/level&gt; (Optional, defaults to "INFO" : logs at or above this level)</li>
  * <li>&lt;flushLevel&gt;WARNING&lt;/flushLevel&gt; (Optional, defaults to "ERROR")</li>
@@ -44,7 +51,7 @@ import java.util.List;
  * <li>&lt;/appender&gt;</li>
  * </ul>
  */
-public class LogbackAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
+public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";

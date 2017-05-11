@@ -1,7 +1,7 @@
 Logback Appender for Google Cloud Logging
 =========================================
 
-Logback appender `com.google.cloud.logging.CloudLoggingAppender` for
+Logback appender `com.google.cloud.logging.logback.LoggingAppender` for
 [Google Cloud Logging](https://cloud.google.com/logging/).
 
 This library allows you to use [Logback](https://logback.qos.ch/) configuration and the [Slf4j](https://www.slf4j.org/) interface to log via Google Cloud logging
@@ -41,7 +41,7 @@ See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter
 
 ```xml
 <configuration>
-  <appender name="CLOUD" class="com.google.cloud.logging.LogbackAppender">
+  <appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender">
     <!-- Optional : filter logs at or above a level -->
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
           <level>INFO</level>
