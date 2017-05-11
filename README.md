@@ -822,6 +822,9 @@ This client is supported on Mac OS X, Windows and Linux (excluding Android and A
 Google Cloud Platform environments currently supported include GCE, GKE and GAE Flex.
 GAE Standard is not currently supported.
 
+Spring Boot users : Native Tomcat is not currently supported. Please use [embedded Jetty](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-embedded-servlet-containers.html#howto-use-jetty-instead-of-tomcat)
+to get your application working with this client.
+
 Testing
 -------
 
