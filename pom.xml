@@ -129,7 +129,7 @@
     <site.installationModule>google-cloud</site.installationModule>
 
     <api-client.version>1.21.0</api-client.version>
-    <api-common.version>1.0.0</api-common.version>
+    <api-common.version>1.1.0</api-common.version>
     <gax.version>1.0.0</gax.version>
     <gax-grpc.version>0.16.0</gax-grpc.version>
     <generatedProto.version>0.1.9</generatedProto.version>
