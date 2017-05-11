@@ -23,6 +23,7 @@ import com.google.api.gax.core.Distribution;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.collect.Lists;
+import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -70,7 +71,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
       Distribution ackLatencyDistribution,
       Channel channel,
       FlowController flowController,
-      @Nullable Integer maxDesiredPulledMessages,
+      @Nullable Long maxDesiredPulledMessages,
       ScheduledExecutorService executor,
       @Nullable ScheduledExecutorService alarmsExecutor,
       ApiClock clock) {
@@ -90,7 +91,9 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
             clock);
     messageDispatcher.setMessageDeadlineSeconds(Subscriber.MIN_ACK_DEADLINE_SECONDS);
     this.maxDesiredPulledMessages =
-        maxDesiredPulledMessages != null ? maxDesiredPulledMessages : DEFAULT_MAX_MESSAGES;
+        maxDesiredPulledMessages != null
+            ? Ints.saturatedCast(maxDesiredPulledMessages)
+            : DEFAULT_MAX_MESSAGES;
   }
 
   @Override
