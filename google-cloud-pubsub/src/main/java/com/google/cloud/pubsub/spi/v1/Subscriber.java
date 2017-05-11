@@ -409,8 +409,9 @@ public class Subscriber extends AbstractApiService {
       try {
         subscriber.awaitTerminated();
       } catch (IllegalStateException e) {
-        // It is expected for some connections to be already in state failed so stop will
-        // throw this expection.
+        // If the service fails, awaitTerminated will throw an exception.
+        // However, we could be stopping services because at least one
+        // has already failed, so we just ignore this exception.
       }
     }
   }
