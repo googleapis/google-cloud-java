@@ -46,7 +46,6 @@ public class MessageReceiverSnippets {
    */
   // [TARGET receiveMessage(PubsubMessage, AckReplyConsumer)]
   public MessageReceiver messageReceiver() {
-    // [START receiveMessage]
     MessageReceiver receiver = new MessageReceiver() {
       public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
         if (blockingQueue.offer(message)) {
@@ -56,7 +55,6 @@ public class MessageReceiverSnippets {
         }
       }
     };
-    // [END receiveMessage]
     return receiver;
   }
 }
