@@ -16,7 +16,6 @@
 
 package com.google.cloud.spanner;
 
-import com.google.cloud.BaseServiceException;
 import com.google.cloud.grpc.BaseGrpcServiceException;
 import com.google.common.base.Preconditions;
 import javax.annotation.Nullable;
