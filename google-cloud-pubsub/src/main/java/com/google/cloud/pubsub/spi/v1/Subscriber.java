@@ -458,7 +458,10 @@ public class Subscriber extends AbstractApiService {
     Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
     Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
 
-    FlowControlSettings flowControlSettings = FlowControlSettings.getDefaultInstance();
+    FlowControlSettings flowControlSettings =
+        FlowControlSettings.newBuilder()
+            .setMaxOutstandingRequestBytes(Runtime.getRuntime().maxMemory() / 5)
+            .build();
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     @Nullable ExecutorProvider alarmsExecutorProvider;
