@@ -110,14 +110,16 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
     ReadContext mockContext = mock(ReadContext.class);
     final ResultSet mockResult = mock(ResultSet.class);
     when(session.singleUse(any(TimestampBound.class))).thenReturn(mockContext);
-    when(mockContext.executeQuery(any(Statement.class))).thenAnswer(new Answer<ResultSet>() {
+    when(mockContext.executeQuery(any(Statement.class)))
+        .thenAnswer(
+            new Answer<ResultSet>() {
 
-		@Override
-		public ResultSet answer(InvocationOnMock invocation) throws Throwable {
-			resetTransaction(session);
-			return mockResult;
-		}
-	});
+              @Override
+              public ResultSet answer(InvocationOnMock invocation) throws Throwable {
+                resetTransaction(session);
+                return mockResult;
+              }
+            });
     when(mockResult.next()).thenReturn(true);
     doAnswer(
             new Answer<Void>() {
@@ -258,15 +260,16 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
     // Start maintenance threads in tight loop
     final AtomicBoolean stopMaintenance = new AtomicBoolean(false);
     new Thread(
-        new Runnable() {
+            new Runnable() {
 
-          @Override
-          public void run() {
-            while (!stopMaintenance.get()) {
-              runMaintainanceLoop(clock, pool, 1);
-            }
-          }
-        }).start();
+              @Override
+              public void run() {
+                while (!stopMaintenance.get()) {
+                  runMaintainanceLoop(clock, pool, 1);
+                }
+              }
+            })
+        .start();
     releaseThreads.countDown();
     threadsDone.await();
     synchronized (lock) {

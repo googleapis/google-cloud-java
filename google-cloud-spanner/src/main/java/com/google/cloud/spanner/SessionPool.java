@@ -198,20 +198,22 @@ final class SessionPool {
       super("Session was checked out from the pool at " + clock.instant());
     }
   }
+
   private enum SessionState {
-	  AVAILABLE,
-	  BUSY,
-	  CLOSING,
+    AVAILABLE,
+    BUSY,
+    CLOSING,
   }
-  
+
   final class PooledSession implements Session {
     @VisibleForTesting final Session delegate;
     private volatile Instant lastUseTime;
     private volatile SpannerException lastException;
     private volatile LeakedSessionException leakedException;
+
     @GuardedBy("lock")
     private SessionState state;
-    
+
     private PooledSession(Session delegate) {
       this.delegate = delegate;
       this.state = SessionState.AVAILABLE;
@@ -219,14 +221,14 @@ final class SessionPool {
     }
 
     private void markBusy() {
-    	this.state = SessionState.BUSY;
-    	this.leakedException = new LeakedSessionException();
+      this.state = SessionState.BUSY;
+      this.leakedException = new LeakedSessionException();
     }
-    
+
     private void markClosing() {
-    	this.state = SessionState.CLOSING;
+      this.state = SessionState.CLOSING;
     }
-    
+
     @Override
     public Timestamp write(Iterable<Mutation> mutations) throws SpannerException {
       try {
@@ -349,7 +351,7 @@ final class SessionPool {
       } else {
         lastException = null;
         if (state != SessionState.CLOSING) {
-        	state = SessionState.AVAILABLE;
+          state = SessionState.AVAILABLE;
         }
         releaseSession(this);
       }
@@ -496,25 +498,24 @@ final class SessionPool {
         // Every ten minutes figure out how many sessions need to be closed then close them over
         // next ten minutes.
         if (currTime.isAfter(lastResetTime.plus(windowLength))) {
-          int sessionsToKeep = Math.max(options.getMinSessions(),
-            maxSessionsInUse + options.getMaxIdleSessions());
+          int sessionsToKeep =
+              Math.max(options.getMinSessions(), maxSessionsInUse + options.getMaxIdleSessions());
           numSessionsToClose = totalSessions() - sessionsToKeep;
-          sessionsToClosePerLoop =
-                (int) Math.ceil((double) numSessionsToClose / numClosureCycles);
+          sessionsToClosePerLoop = (int) Math.ceil((double) numSessionsToClose / numClosureCycles);
           maxSessionsInUse = 0;
           lastResetTime = currTime;
         }
         if (numSessionsToClose > 0) {
           while (sessionsToClose.size() < Math.min(numSessionsToClose, sessionsToClosePerLoop)) {
-            PooledSession sess = readSessions.size() > 0 ?
-            		readSessions.poll() : writePreparedSessions.poll();
+            PooledSession sess =
+                readSessions.size() > 0 ? readSessions.poll() : writePreparedSessions.poll();
             if (sess != null) {
-            	if (sess.state != SessionState.CLOSING) {
-            	  sess.markClosing();
-            	  sessionsToClose.add(sess);
-            	}
+              if (sess.state != SessionState.CLOSING) {
+                sess.markClosing();
+                sessionsToClose.add(sess);
+              }
             } else {
-            	break;
+              break;
             }
           }
           numSessionsToClose -= sessionsToClose.size();
@@ -752,7 +753,7 @@ final class SessionPool {
           "No session available in the pool. Blocking for one to become available/created");
       sess = waiter.take();
     }
-    sess.markBusy();   
+    sess.markBusy();
     incrementNumSessionsInUse();
     return sess;
   }
@@ -984,26 +985,26 @@ final class SessionPool {
   }
 
   private void closeSession(PooledSession sess) {
-	  try {
-          sess.delegate.close();
-        } catch (SpannerException e) {
-          // Backend will delete these sessions after a while even if we fail to close them.
-          if (logger.isLoggable(Level.FINE)) {
-            logger.log(Level.FINE, "Failed to close session: " + sess.getName(), e);
-          }
-        } finally {
-        	synchronized(lock) {
-        		allSessions.remove(sess);
-        		if (isClosed()) {
-        			decrementPendingClosures();
-        			return;
-        		}
-        		// Create a new session if needed to unblock some waiter.
-        		if (numWaiters() > numSessionsBeingCreated) {
-        			createSession();
-        		}
-        	}
+    try {
+      sess.delegate.close();
+    } catch (SpannerException e) {
+      // Backend will delete these sessions after a while even if we fail to close them.
+      if (logger.isLoggable(Level.FINE)) {
+        logger.log(Level.FINE, "Failed to close session: " + sess.getName(), e);
+      }
+    } finally {
+      synchronized (lock) {
+        allSessions.remove(sess);
+        if (isClosed()) {
+          decrementPendingClosures();
+          return;
         }
+        // Create a new session if needed to unblock some waiter.
+        if (numWaiters() > numSessionsBeingCreated) {
+          createSession();
+        }
+      }
+    }
   }
 
   private void prepareSession(final PooledSession sess) {
@@ -1074,7 +1075,7 @@ final class SessionPool {
               boolean closeSession = false;
               PooledSession pooledSession = null;
               synchronized (lock) {
-            	pooledSession = new PooledSession(session);
+                pooledSession = new PooledSession(session);
                 numSessionsBeingCreated--;
                 if (closureFuture != null) {
                   closeSession = true;

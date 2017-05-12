@@ -138,16 +138,17 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     pool = createPool(clock);
     final AtomicBoolean stop = new AtomicBoolean(false);
     new Thread(
-        new Runnable() {
+            new Runnable() {
 
-          @Override
-          public void run() {
-            // Run in a tight loop.
-            while (!stop.get()) {
-              runMaintainanceLoop(clock, pool, 1);
-            }
-          }
-        }).start();
+              @Override
+              public void run() {
+                // Run in a tight loop.
+                while (!stop.get()) {
+                  runMaintainanceLoop(clock, pool, 1);
+                }
+              }
+            })
+        .start();
     pool.closeAsync().get();
     stop.set(true);
   }
@@ -521,11 +522,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void keepAlive() throws Exception {
-    options =
-        SessionPoolOptions.newBuilder()
-            .setMinSessions(2)
-            .setMaxSessions(3)
-            .build();
+    options = SessionPoolOptions.newBuilder().setMinSessions(2).setMaxSessions(3).build();
     Session session = mockSession();
     mockKeepAlive(session);
     // This is cheating as we are returning the same session each but it makes the verification
