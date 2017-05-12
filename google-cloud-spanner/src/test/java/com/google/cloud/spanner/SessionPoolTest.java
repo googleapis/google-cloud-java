@@ -147,7 +147,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
               runMaintainanceLoop(clock, pool, 1);
             }
           }
-        });
+        }).start();
     pool.closeAsync().get();
     stop.set(true);
   }
@@ -523,9 +523,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   public void keepAlive() throws Exception {
     options =
         SessionPoolOptions.newBuilder()
-            .setMinSessions(1)
+            .setMinSessions(2)
             .setMaxSessions(3)
-            .setMaxIdleSessions(1)
             .build();
     Session session = mockSession();
     mockKeepAlive(session);

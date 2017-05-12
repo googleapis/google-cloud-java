@@ -198,18 +198,35 @@ final class SessionPool {
       super("Session was checked out from the pool at " + clock.instant());
     }
   }
-
+  private enum SessionState {
+	  AVAILABLE,
+	  BUSY,
+	  CLOSING,
+  }
+  
   final class PooledSession implements Session {
     @VisibleForTesting final Session delegate;
     private volatile Instant lastUseTime;
     private volatile SpannerException lastException;
     private volatile LeakedSessionException leakedException;
-
+    @GuardedBy("lock")
+    private SessionState state;
+    
     private PooledSession(Session delegate) {
       this.delegate = delegate;
+      this.state = SessionState.AVAILABLE;
       markUsed();
     }
 
+    private void markBusy() {
+    	this.state = SessionState.BUSY;
+    	this.leakedException = new LeakedSessionException();
+    }
+    
+    private void markClosing() {
+    	this.state = SessionState.CLOSING;
+    }
+    
     @Override
     public Timestamp write(Iterable<Mutation> mutations) throws SpannerException {
       try {
@@ -331,6 +348,9 @@ final class SessionPool {
         invalidateSession(this);
       } else {
         lastException = null;
+        if (state != SessionState.CLOSING) {
+        	state = SessionState.AVAILABLE;
+        }
         releaseSession(this);
       }
     }
@@ -476,27 +496,25 @@ final class SessionPool {
         // Every ten minutes figure out how many sessions need to be closed then close them over
         // next ten minutes.
         if (currTime.isAfter(lastResetTime.plus(windowLength))) {
-          numSessionsToClose = totalSessions() - (maxSessionsInUse + options.getMaxIdleSessions());
-          if (numSessionsToClose <= options.getMinSessions()) {
-            numSessionsToClose = 0;
-          } else {
-            sessionsToClosePerLoop =
+          int sessionsToKeep = Math.max(options.getMinSessions(),
+            maxSessionsInUse + options.getMaxIdleSessions());
+          numSessionsToClose = totalSessions() - sessionsToKeep;
+          sessionsToClosePerLoop =
                 (int) Math.ceil((double) numSessionsToClose / numClosureCycles);
-          }
           maxSessionsInUse = 0;
           lastResetTime = currTime;
         }
         if (numSessionsToClose > 0) {
           while (sessionsToClose.size() < Math.min(numSessionsToClose, sessionsToClosePerLoop)) {
-            PooledSession sess = readSessions.poll();
+            PooledSession sess = readSessions.size() > 0 ?
+            		readSessions.poll() : writePreparedSessions.poll();
             if (sess != null) {
-              allSessions.remove(sess.getName());
-              sessionsToClose.add(sess);
-            } else if ((sess = writePreparedSessions.poll()) != null) {
-              allSessions.remove(sess.getName());
-              sessionsToClose.add(sess);
+            	if (sess.state != SessionState.CLOSING) {
+            	  sess.markClosing();
+            	  sessionsToClose.add(sess);
+            	}
             } else {
-              break;
+            	break;
             }
           }
           numSessionsToClose -= sessionsToClose.size();
@@ -504,14 +522,7 @@ final class SessionPool {
       }
       for (PooledSession sess : sessionsToClose) {
         logger.log(Level.FINE, "Closing session %s", sess.getName());
-        try {
-          sess.delegate.close();
-        } catch (SpannerException e) {
-          // Backend will delete these sessions after a while even if we fail to close them.
-          if (logger.isLoggable(Level.FINE)) {
-            logger.log(Level.FINE, "Failed to close session: " + sess.getName(), e);
-          }
-        }
+        closeSession(sess);
       }
     }
 
@@ -683,7 +694,7 @@ final class SessionPool {
       if (isClosed()) {
         return;
       }
-      allSessions.remove(session.getName());
+      allSessions.remove(session);
       // replenish the pool.
       createSession();
     }
@@ -737,11 +748,11 @@ final class SessionPool {
     }
     if (waiter != null) {
       logger.log(
-          Level.WARNING,
+          Level.INFO,
           "No session available in the pool. Blocking for one to become available/created");
       sess = waiter.take();
     }
-    sess.leakedException = new LeakedSessionException();
+    sess.markBusy();   
     incrementNumSessionsInUse();
     return sess;
   }
@@ -787,11 +798,11 @@ final class SessionPool {
     }
     if (waiter != null) {
       logger.log(
-          Level.WARNING,
+          Level.INFO,
           "No session available in the pool. Blocking for one to become available/created");
       sess = waiter.take();
     }
-    sess.leakedException = new LeakedSessionException();
+    sess.markBusy();
     incrementNumSessionsInUse();
     return sess;
   }
@@ -916,7 +927,9 @@ final class SessionPool {
         if (session.leakedException != null) {
           logger.log(Level.WARNING, "Leaked session", session.leakedException);
         }
-        closeSessionAsync(session);
+        if (session.state != SessionState.CLOSING) {
+          closeSessionAsync(session);
+        }
       }
     }
     retFuture.addListener(
@@ -961,26 +974,36 @@ final class SessionPool {
   }
 
   private void closeSessionAsync(final PooledSession sess) {
-    allSessions.remove(sess.getName());
     executor.submit(
         new Runnable() {
           @Override
           public void run() {
-            closeSession(sess.delegate);
+            closeSession(sess);
           }
         });
   }
 
-  private void closeSession(Session sess) {
-    try {
-      sess.close();
-    } catch (SpannerException e) {
-      logger.log(Level.INFO, "Error while closing session: " + sess.getName(), e);
-    } finally {
-      synchronized (lock) {
-        decrementPendingClosures();
-      }
-    }
+  private void closeSession(PooledSession sess) {
+	  try {
+          sess.delegate.close();
+        } catch (SpannerException e) {
+          // Backend will delete these sessions after a while even if we fail to close them.
+          if (logger.isLoggable(Level.FINE)) {
+            logger.log(Level.FINE, "Failed to close session: " + sess.getName(), e);
+          }
+        } finally {
+        	synchronized(lock) {
+        		allSessions.remove(sess);
+        		if (isClosed()) {
+        			decrementPendingClosures();
+        			return;
+        		}
+        		// Create a new session if needed to unblock some waiter.
+        		if (numWaiters() > numSessionsBeingCreated) {
+        			createSession();
+        		}
+        	}
+        }
   }
 
   private void prepareSession(final PooledSession sess) {
@@ -1049,19 +1072,20 @@ final class SessionPool {
                 return;
               }
               boolean closeSession = false;
+              PooledSession pooledSession = null;
               synchronized (lock) {
+            	pooledSession = new PooledSession(session);
                 numSessionsBeingCreated--;
                 if (closureFuture != null) {
                   closeSession = true;
                 } else {
                   Preconditions.checkState(totalSessions() <= options.getMaxSessions() - 1);
-                  PooledSession pooledSession = new PooledSession(session);
                   allSessions.add(pooledSession);
                   releaseSession(pooledSession);
                 }
               }
               if (closeSession) {
-                closeSession(session);
+                closeSession(pooledSession);
               }
             }
           });
