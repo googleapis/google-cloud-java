@@ -749,7 +749,7 @@ final class SessionPool {
     }
     if (waiter != null) {
       logger.log(
-          Level.INFO,
+          Level.FINE,
           "No session available in the pool. Blocking for one to become available/created");
       sess = waiter.take();
     }
@@ -799,7 +799,7 @@ final class SessionPool {
     }
     if (waiter != null) {
       logger.log(
-          Level.INFO,
+          Level.FINE,
           "No session available in the pool. Blocking for one to become available/created");
       sess = waiter.take();
     }
