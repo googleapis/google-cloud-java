@@ -124,7 +124,7 @@ public class DetectIT {
   @Test
   public void testLandmarksUrl() throws Exception {
     // Act
-    String[] args = {"landmarks", "https://pbs.twimg.com/media/C4wfMOhVcAAUAgq.jpg"};
+    String[] args = {"landmarks", "http://wheresgus.com/landmark.jpg"};
     Detect.argsHelper(args, out);
 
     // Assert
