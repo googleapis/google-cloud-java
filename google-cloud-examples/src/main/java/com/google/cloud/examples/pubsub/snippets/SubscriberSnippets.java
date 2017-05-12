@@ -61,7 +61,6 @@ public class SubscriberSnippets {
 
   // [TARGET startAsync()]
   public void startAndWait() throws Exception {
-    // [START startAsync]
     Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
     subscriber.addListener(new Subscriber.Listener() {
       public void failed(Subscriber.State from, Throwable failure) {
@@ -73,11 +72,10 @@ public class SubscriberSnippets {
     // Wait for a stop signal.
     done.get();
     subscriber.stopAsync().awaitTerminated();
-    // [END startAsync]
   }
 
   private void createSubscriber() throws Exception {
-    // [START pullSubscriber]
+    // [START pubsub_pull]
     String projectId = "my-project-id";
     String subscriptionId = "my-subscription-id";
 
@@ -105,22 +103,22 @@ public class SubscriberSnippets {
         subscriber.stopAsync();
       }
     }
-    // [END pullSubscriber]
+    // [END pubsub_pull]
   }
 
   private Subscriber createSubscriberWithErrorListener(Subscriber subscriber) throws Exception {
-    // [START subscriberWithErrorListener]
+    // [START pubsub_subscriber_error_listener]
     subscriber.addListener(new Subscriber.Listener() {
       public void failed(Subscriber.State from, Throwable failure) {
         // Handle error.
       }
     }, MoreExecutors.directExecutor());
-    // [END subscriberWithErrorListener]
+    // [END pubsub_subscriber_error_listener]
     return subscriber;
   }
 
   private Subscriber createSingleThreadedSubscriber() throws Exception {
-    // [START singleThreadedSubscriber]
+    // [START pubsub_subscriber_single_threaded]
     // provide a separate executor service for polling
     ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
         .setExecutorThreadCount(1).build();
@@ -128,12 +126,12 @@ public class SubscriberSnippets {
     Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
         .setExecutorProvider(executorProvider)
         .build();
-    // [END singleThreadedSubscriber]
+    // [END pubsub_subscriber_single_threaded]
     return subscriber;
   }
 
   private Subscriber createSubscriberWithCustomFlowSettings() throws Exception {
-    // [START subscriberWithCustomFlow]
+    // [START pubsub_subscriber_flow_settings]
     int maxMessageCount = 10;
     // Configure max number of messages to be pulled
     FlowControlSettings flowControlSettings = FlowControlSettings.newBuilder()
@@ -142,12 +140,12 @@ public class SubscriberSnippets {
     Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
         .setFlowControlSettings(flowControlSettings)
         .build();
-    // [END subscriberWithCustomFlow]
+    // [END pubsub_subscriber_flow_settings]
     return subscriber;
   }
 
   private Subscriber createSubscriberWithCustomCredentials() throws Exception {
-    // [START subscriberWithCustomCredentials]
+    // [START pubsub_subscriber_custom_credentials]
     CredentialsProvider credentialsProvider =
         FixedCredentialsProvider
             .create(ServiceAccountCredentials.fromStream(
@@ -159,7 +157,7 @@ public class SubscriberSnippets {
     Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
         .setChannelProvider(channelProvider)
         .build();
-    // [START subscriberWithCustomCredentials]
+    // [START pubsub_subscriber_custom_credentials]
     return subscriber;
   }
 }
