@@ -124,9 +124,9 @@ public class DetectIT {
   @Test
   public void testLandmarksUrl() throws Exception {
     // Act
-    String URI = "https://storage-download.googleapis.com/" +
-        BUCKET + "/vision/landmark.jpg";
-    String[] args = {"landmarks", URI};
+    String uri = "https://storage-download.googleapis.com/"
+        + BUCKET + "/vision/landmark.jpg";
+    String[] args = {"landmarks", uri};
     Detect.argsHelper(args, out);
 
     // Assert
