@@ -298,10 +298,9 @@ public class PublisherImplTest {
       try {
           publishFuture1.get();
       } finally {
-          assertTrue(testPublisherServiceImpl.getCapturedRequests().size() == 1);
+          assertSame(testPublisherServiceImpl.getCapturedRequests().size(), 1);
           publisher.shutdown();
       }
-    publisher.shutdown();
   }
 
   @Test

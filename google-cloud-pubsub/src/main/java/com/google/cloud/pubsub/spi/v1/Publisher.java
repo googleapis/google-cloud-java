@@ -364,7 +364,7 @@ public class Publisher {
                 computeNextBackoffDelayMs(outstandingBatch, retrySettings, longRandom);
 
             if (!isRetryable(t)
-                || (retrySettings.getMaxAttempts() > 0 && outstandingBatch.getAttempt() > retrySettings.getMaxAttempts())
+                || retrySettings.getMaxAttempts() > 0 && outstandingBatch.getAttempt() > retrySettings.getMaxAttempts()
                 || System.currentTimeMillis() + nextBackoffDelay
                     > outstandingBatch.creationTime
                         + retrySettings.getTotalTimeout().toMillis()) {
