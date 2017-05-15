@@ -16,29 +16,27 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
-import com.google.pubsub.v1.PublishRequest;
-import com.google.pubsub.v1.PublishResponse;
-import com.google.pubsub.v1.PublisherGrpc;
-import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.*;
 import io.grpc.ManagedChannel;
 import io.grpc.Status;
+import org.threeten.bp.Duration;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -53,7 +51,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.threeten.bp.Duration;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
@@ -367,6 +364,7 @@ public class Publisher {
                 computeNextBackoffDelayMs(outstandingBatch, retrySettings, longRandom);
 
             if (!isRetryable(t)
+                || (retrySettings.getMaxAttempts() > 0 && outstandingBatch.getAttempt() > retrySettings.getMaxAttempts())
                 || System.currentTimeMillis() + nextBackoffDelay
                     > outstandingBatch.creationTime
                         + retrySettings.getTotalTimeout().toMillis()) {
@@ -407,6 +405,10 @@ public class Publisher {
       this.batchSizeBytes = batchSizeBytes;
     }
 
+
+    public int getAttempt() {
+      return attempt;
+    }
     public int size() {
       return outstandingPublishes.size();
     }
