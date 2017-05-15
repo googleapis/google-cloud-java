@@ -387,25 +387,12 @@ public class Subscriber extends AbstractApiService {
 
   private void startConnections(
       List<? extends ApiService> connections, final ApiService.Listener connectionsListener) {
-    final CountDownLatch subscribersStarting = new CountDownLatch(numChannels);
-    for (final ApiService subscriber : connections) {
-      executor.submit(
-          new Runnable() {
-            @Override
-            public void run() {
-              subscriber.addListener(connectionsListener, executor);
-              try {
-                subscriber.startAsync().awaitRunning();
-              } finally {
-                subscribersStarting.countDown();
-              }
-            }
-          });
+    for (ApiService subscriber : connections) {
+      subscriber.addListener(connectionsListener, executor);
+      subscriber.startAsync();
     }
-    try {
-      subscribersStarting.await();
-    } catch (InterruptedException e) {
-      throw new RuntimeException(e);
+    for (ApiService subscriber : connections) {
+      subscriber.awaitRunning();
     }
   }
 
@@ -415,26 +402,17 @@ public class Subscriber extends AbstractApiService {
       liveConnections = new ArrayList<ApiService>(connections);
       connections.clear();
     }
-    final CountDownLatch connectionsStopping = new CountDownLatch(liveConnections.size());
-    for (final ApiService subscriberConnection : liveConnections) {
-      executor.submit(
-          new Runnable() {
-            @Override
-            public void run() {
-              try {
-                subscriberConnection.stopAsync().awaitTerminated();
-              } catch (IllegalStateException ignored) {
-                // It is expected for some connections to be already in state failed so stop will
-                // throw this expection.
-              }
-              connectionsStopping.countDown();
-            }
-          });
+    for (ApiService subscriber : liveConnections) {
+      subscriber.stopAsync();
     }
-    try {
-      connectionsStopping.await();
-    } catch (InterruptedException e) {
-      throw new IllegalStateException(e);
+    for (ApiService subscriber : liveConnections) {
+      try {
+        subscriber.awaitTerminated();
+      } catch (IllegalStateException e) {
+        // If the service fails, awaitTerminated will throw an exception.
+        // However, we could be stopping services because at least one
+        // has already failed, so we just ignore this exception.
+      }
     }
   }
 
