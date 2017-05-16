@@ -243,6 +243,12 @@ public class Subscriber extends AbstractApiService {
       throw new IllegalStateException(e);
     }
 
+    // When started, connections submit tasks to the executor.
+    // These tasks must finish before the connections can declare themselves running.
+    // If we have a single-thread executor and call startPollingConnections from the
+    // same executor, it will deadlock: the thread will be stuck waiting for connections
+    // to start but cannot start the connections.
+    // For this reason, we spawn a dedicated thread. Starting subscriber should be rare.
     new Thread(new Runnable() {
       @Override
       public void run() {
@@ -395,6 +401,8 @@ public class Subscriber extends AbstractApiService {
       List<? extends ApiService> connections, final ApiService.Listener connectionsListener) {
     for (ApiService subscriber : connections) {
       subscriber.addListener(connectionsListener, executor);
+      // Starting each connection submits a blocking task to the executor.
+      // We start connections one at a time to avoid swamping executor with blocking tasks.
       subscriber.startAsync().awaitRunning();
     }
   }
