@@ -33,8 +33,8 @@ import com.google.pubsub.v1.TopicName;
 public class CreateSubscriptionAndConsumeMessages {
 
   public static void main(String... args) throws Exception {
-    TopicName topic = TopicName.create("test-project", "test-topic");
-    SubscriptionName subscription = SubscriptionName.create("test-project", "test-subscription");
+    TopicName topic = TopicName.create("my-project-id", "my-topic-id");
+    SubscriptionName subscription = SubscriptionName.create("my-project-id", "my-topic-id");
 
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
@@ -44,7 +44,7 @@ public class CreateSubscriptionAndConsumeMessages {
         new MessageReceiver() {
           @Override
           public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
-            System.out.println("got message: " + message.getData().toStringUtf8());
+            System.out.println("Received message: " + message.getData().toStringUtf8());
             consumer.ack();
           }
         };

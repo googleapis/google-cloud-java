@@ -18,10 +18,13 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.common.util.concurrent.ListenableFuture;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import junit.framework.Assert;
@@ -83,7 +86,18 @@ public class SessionPoolIntegrationTest {
     pool =
         SessionPool.createPool(
             options,
-            new SessionPoolTest.TestExecutorFactory(),
+            new ExecutorFactory<ScheduledExecutorService>() {
+
+              @Override
+              public void release(ScheduledExecutorService executor) {
+                executor.shutdown();
+              }
+
+              @Override
+              public ScheduledExecutorService get() {
+                return new ScheduledThreadPoolExecutor(2);
+              }
+            },
             db.getId(),
             (SpannerImpl) env.getTestHelper().getClient());
   }
