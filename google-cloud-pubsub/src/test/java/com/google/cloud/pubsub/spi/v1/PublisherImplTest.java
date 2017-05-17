@@ -287,20 +287,19 @@ public class PublisherImplTest {
                     .toBuilder()
                     .setTotalTimeout(Duration.ofSeconds(10))
                     .setMaxAttempts(1)
-                    .build()
-            )
+                    .build())
             .build();
 
     testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
 
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
-      try {
-          publishFuture1.get();
-      } finally {
-          assertSame(testPublisherServiceImpl.getCapturedRequests().size(), 1);
-          publisher.shutdown();
-      }
+    try {
+      publishFuture1.get();
+    } finally {
+      assertSame(testPublisherServiceImpl.getCapturedRequests().size(), 1);
+      publisher.shutdown();
+    }
   }
 
   @Test
@@ -313,8 +312,7 @@ public class PublisherImplTest {
                     .toBuilder()
                     .setTotalTimeout(Duration.ofSeconds(10))
                     .setMaxAttempts(3)
-                    .build()
-            )
+                    .build())
             .build();
 
     testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
@@ -339,8 +337,7 @@ public class PublisherImplTest {
                     .toBuilder()
                     .setTotalTimeout(Duration.ofSeconds(10))
                     .setMaxAttempts(0)
-                    .build()
-            )
+                    .build())
             .build();
 
     testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
@@ -354,7 +351,6 @@ public class PublisherImplTest {
     assertEquals(3, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
   }
-
 
   public void testPublishFailureRetries_exceededsRetryDuration() throws Exception {
     Publisher publisher =
@@ -419,8 +415,6 @@ public class PublisherImplTest {
       publisher.shutdown();
     }
   }
-
-
 
   @Test
   public void testPublisherGetters() throws Exception {
