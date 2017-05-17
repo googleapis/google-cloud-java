@@ -99,11 +99,6 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
   @Override
   protected void doStart() {
     logger.config("Starting subscriber.");
-    initialize();
-    notifyStarted();
-  }
-
-  private void initialize() {
     ListenableFuture<Subscription> subscriptionInfo =
         stub.withDeadlineAfter(DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS)
             .getSubscription(
@@ -116,6 +111,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
           public void onSuccess(Subscription result) {
             messageDispatcher.setMessageDeadlineSeconds(result.getAckDeadlineSeconds());
             pullMessages(INITIAL_BACKOFF);
+            notifyStarted();
           }
 
           @Override

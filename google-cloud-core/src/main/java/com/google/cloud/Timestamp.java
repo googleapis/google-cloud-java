@@ -18,21 +18,20 @@ package com.google.cloud;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.common.base.Strings;
 import com.google.protobuf.util.Timestamps;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.joda.time.chrono.GregorianChronology;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.chrono.IsoChronology;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
- * Represents a timestamp with nanosecond precision. Timestamps cover the range
- * [0001-01-01, 9999-12-31].
+ * Represents a timestamp with nanosecond precision. Timestamps cover the range [0001-01-01,
+ * 9999-12-31].
  *
  * <p>{@code Timestamp} instances are immutable.
  */
@@ -47,13 +46,8 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
   public static final Timestamp MAX_VALUE =
       new Timestamp(253402300799L, (int) TimeUnit.SECONDS.toNanos(1) - 1);
 
-  /** Regexp to split timestamps into date-hour-minute-second and fractional second components. */
-  private static final Pattern FORMAT_REGEXP = Pattern.compile("([^\\.]*)(\\.\\d{0,9})?Z");
-
-  private static final long NANOS_PER_SECOND = TimeUnit.SECONDS.toNanos(1);
-
   private static final DateTimeFormatter format =
-      ISODateTimeFormat.dateHourMinuteSecond().withChronology(GregorianChronology.getInstanceUTC());
+      DateTimeFormatter.ISO_LOCAL_DATE_TIME.withChronology(IsoChronology.INSTANCE);
 
   private final long seconds;
   private final int nanos;
@@ -85,8 +79,8 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    */
   public static Timestamp ofTimeMicroseconds(long microseconds) {
     long seconds = TimeUnit.MICROSECONDS.toSeconds(microseconds);
-    int nanos = (int) TimeUnit.MICROSECONDS.toNanos(
-        microseconds - TimeUnit.SECONDS.toMicros(seconds));
+    int nanos =
+        (int) TimeUnit.MICROSECONDS.toNanos(microseconds - TimeUnit.SECONDS.toMicros(seconds));
     checkArgument(
         Timestamps.isValid(seconds, nanos), "timestamp out of range: %s, %s", seconds, nanos);
     return new Timestamp(seconds, nanos);
@@ -101,10 +95,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
     return ofTimeMicroseconds(TimeUnit.MILLISECONDS.toMicros(date.getTime()));
   }
 
-
-  /**
-   * Creates an instance with current time.
-   */
+  /** Creates an instance with current time. */
   public static Timestamp now() {
     java.sql.Timestamp date = new java.sql.Timestamp(System.currentTimeMillis());
     return of(date);
@@ -148,9 +139,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
     return r;
   }
 
-  /**
-   * Creates an instance of Timestamp from {@code com.google.protobuf.Timestamp}.
-   */
+  /** Creates an instance of Timestamp from {@code com.google.protobuf.Timestamp}. */
   public static Timestamp fromProto(com.google.protobuf.Timestamp proto) {
     return new Timestamp(proto.getSeconds(), proto.getNanos());
   }
@@ -168,28 +157,12 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    * the timezone offset (always ends in "Z").
    */
   public static Timestamp parseTimestamp(String timestamp) {
-    Matcher matcher = FORMAT_REGEXP.matcher(timestamp);
-    if (!matcher.matches()) {
-      throw new IllegalArgumentException("Cannot parse input: " + timestamp);
-    }
-    String secondsPart = matcher.group(1);
-    String nanosPart = matcher.group(2);
-    long seconds;
-    seconds = format.parseMillis(secondsPart) / 1000;
-    int nanos = 0;
-    if (nanosPart != null) {
-      String padded = Strings.padEnd(nanosPart.substring(1), 9, '0');
-      nanos = Integer.parseInt(padded);
-      if (nanos >= TimeUnit.SECONDS.toNanos(1)) {
-        throw new IllegalArgumentException(
-            "Cannot parse input: " + timestamp + " (nanos out of range)");
-      }
-    }
-    return ofTimeSecondsAndNanos(seconds, nanos);
+    Instant instant = Instant.parse(timestamp);
+    return ofTimeSecondsAndNanos(instant.getEpochSecond(), instant.getNano());
   }
 
-  StringBuilder toString(StringBuilder b) {
-    format.printTo(b, seconds * 1000);
+  private StringBuilder toString(StringBuilder b) {
+    format.formatTo(LocalDateTime.ofEpochSecond(seconds, 0, ZoneOffset.UTC), b);
     if (nanos != 0) {
       b.append(String.format(".%09d", nanos));
     }
