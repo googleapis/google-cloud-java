@@ -509,7 +509,6 @@ public class Publisher {
    * Constructs a new {@link Builder} using the given topic.
    *
    * <p>Example of creating a {@code Publisher}.
-   *
    * <pre>{@code
    * String projectName = "my_project";
    * String topicName = "my_topic";
@@ -522,6 +521,7 @@ public class Publisher {
    *   publisher.shutdown();
    * }
    * }</pre>
+   *
    */
   public static Builder defaultBuilder(TopicName topicName) {
     return new Builder(topicName);
