@@ -31,24 +31,30 @@ import com.google.cloud.logging.Severity;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * <a href="https://logback.qos.ch/">Logback</a> appender for StackDriver Cloud Logging.
  *
  * <p>Appender configuration in logback.xml:
+ *
  * <ul>
- * <li>&lt;appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender"&gt;</li>
- * <li>&lt;log&gt;application.log&lt;/log&gt; (Optional, defaults to "java.log" : Stackdriver log name)</li>
- * <li>&lt;level&gt;ERROR&lt;/level&gt; (Optional, defaults to "INFO" : logs at or above this level)</li>
- * <li>&lt;flushLevel&gt;WARNING&lt;/flushLevel&gt; (Optional, defaults to "ERROR")</li>
- * <li>&lt;resourceType&gt;&lt;/resourceType&gt; (Optional, auto detects on App Engine Flex, Standard, GCE and
- * GKE, defaults to "global".
- * See <a href="https://cloud.google.com/logging/docs/api/v2/resource-list">supported resource
- * types</a></li>
- * <li>&lt;enhancers&gt;com.example.enhancer1, com.example.enhancer2&lt;/enhancers&gt;</li>
- * <li>(Optional) add custom labels to log entries using {@link LoggingEnhancer} classes.</li>
- * <li>&lt;/appender&gt;</li>
+ * <li>&lt;appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender"&gt;
+ * <li>&lt;log&gt;application.log&lt;/log&gt; (Optional, defaults to "java.log" : Stackdriver log
+ * name)
+ * <li>&lt;level&gt;ERROR&lt;/level&gt; (Optional, defaults to "INFO" : logs at or above this
+ * level)
+ * <li>&lt;flushLevel&gt;WARNING&lt;/flushLevel&gt; (Optional, defaults to "ERROR")
+ * <li>&lt;resourceType&gt;&lt;/resourceType&gt; (Optional, auto detects on App Engine Flex,
+ * Standard, GCE and GKE, defaults to "global". See <a
+ * href="https://cloud.google.com/logging/docs/api/v2/resource-list">supported resource
+ * types</a>
+ * <li>(Optional) add custom labels to log entries using {@link LoggingEnhancer} classes.
+ * <li>&lt;enhancer&gt;com.example.enhancer1&lt;/enhancer&gt;
+ * <li>&lt;enhancer&gt;com.example.enhancer2&lt;/enhancer&gt;
+ * <li>&lt;/appender&gt;
  * </ul>
  */
 public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
@@ -63,10 +69,10 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private Level flushLevel;
   private String log;
   private String resourceType;
-  private String enhancers;
+  private Set<String> enhancerClassNames = new HashSet<>();
 
   /**
-   * Batched logging requests get immediately flushed for logs at or above level.
+   * Batched logging requests get immediately flushed for logs at or above this level.
    *
    * <p>Defaults to Error if not set.
    *
@@ -77,7 +83,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   /**
-   * Sets the log filename, defaults to java.log.
+   * Sets the log filename.
    *
    * @param log filename
    */
@@ -89,9 +95,11 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
    * Sets the name of the monitored resource (Optional).
    *
    * <p>Must be a <a href="https://cloud.google.com/logging/docs/api/v2/resource-list">supported</a>
-   * resource type. gae_app, gce_instance and container are auto-detected, defaults to "global"
+   * resource type. gae_app, gce_instance and container are auto-detected.
    *
-   * @param resourceType name of monitored resource
+   * <p>Defaults to "global"
+   *
+   * @param resourceType name of the monitored resource
    */
   public void setResourceType(String resourceType) {
     this.resourceType = resourceType;
@@ -99,11 +107,9 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
   /**
    * Add extra labels using classes that implement {@link LoggingEnhancer}.
-   *
-   * @param enhancers list of enhancer classnames (comma separated)
    */
-  public void setEnhancers(String enhancers) {
-    this.enhancers = enhancers;
+  public void addEnhancer(String enhancerClassName) {
+    this.enhancerClassNames.add(enhancerClassName);
   }
 
   Level getFlushLevel() {
@@ -118,45 +124,53 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     return MonitoredResourceUtil.getResource(projectId, resourceType);
   }
 
-  List<LoggingEnhancer> getEnhancers() {
-    String list = enhancers;
-    try {
-      List<LoggingEnhancer> enhancers = new ArrayList<>();
-      if (list != null) {
-        String[] items = list.split(",");
-        for (String enhancerName : items) {
-          Class<? extends LoggingEnhancer> clz =
-              (Class<? extends LoggingEnhancer>)
-                  ClassLoader.getSystemClassLoader().loadClass(enhancerName.trim());
-          enhancers.add(clz.newInstance());
+  List<LoggingEnhancer> getLoggingEnhancers() {
+    List<LoggingEnhancer> loggingEnhancers = new ArrayList<>();
+    if (enhancerClassNames != null) {
+      for (String enhancerClassName : enhancerClassNames) {
+        if (enhancerClassName != null) {
+          LoggingEnhancer enhancer = getEnhancer(enhancerClassName);
+          if (enhancer != null) {
+            loggingEnhancers.add(enhancer);
+          }
         }
       }
-      return enhancers;
-    } catch (Exception ex) {
-      // If we cannot create the enhancers we fall back to the default
     }
-    return Collections.emptyList();
+    return loggingEnhancers;
   }
 
-  /** Initialze and configure the cloud logging service. */
+  private LoggingEnhancer getEnhancer(String enhancerClassName) {
+    try {
+      Class<? extends LoggingEnhancer> clz =
+          (Class<? extends LoggingEnhancer>)
+              ClassLoader.getSystemClassLoader().loadClass(enhancerClassName.trim());
+      return clz.newInstance();
+    } catch (Exception ex) {
+      // If we cannot create the enhancer we fallback to null
+    }
+    return null;
+  }
+
+  /**
+   * Initialize and configure the cloud logging service.
+   */
   @Override
   public synchronized void start() {
+    if (isStarted()) {
+      return;
+    }
     MonitoredResource resource = getMonitoredResource(getProjectId());
     defaultWriteOptions =
-        new WriteOption[] {
-          WriteOption.logName(getLogName()),
-          WriteOption.resource(resource)
-    };
-
+        new WriteOption[]{WriteOption.logName(getLogName()), WriteOption.resource(resource)};
     getLogging().setFlushSeverity(severityFor(getFlushLevel()));
     loggingEnhancers = new ArrayList<>();
     List<LoggingEnhancer> resourceEnhancers = MonitoredResourceUtil.getResourceEnhancers();
     loggingEnhancers.addAll(resourceEnhancers);
-    loggingEnhancers.addAll(getEnhancers());
+    loggingEnhancers.addAll(getLoggingEnhancers());
     super.start();
   }
 
-  protected String getProjectId() {
+  String getProjectId() {
     return LoggingOptions.getDefaultInstance().getProjectId();
   }
 
@@ -179,7 +193,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     super.stop();
   }
 
-  protected Logging getLogging() {
+  Logging getLogging() {
     if (logging == null) {
       synchronized (this) {
         if (logging == null) {
@@ -198,7 +212,8 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
             .setTimestamp(e.getTimeStamp())
             .setSeverity(severityFor(level));
 
-    builder.addLabel(LEVEL_NAME_KEY, level.toString())
+    builder
+        .addLabel(LEVEL_NAME_KEY, level.toString())
         .addLabel(LEVEL_VALUE_KEY, String.valueOf(level.toInt()));
 
     if (loggingEnhancers != null) {
@@ -218,19 +233,19 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
    */
   private static Severity severityFor(Level level) {
     switch (level.toInt()) {
-        // TRACE
+      // TRACE
       case 5000:
         return Severity.DEBUG;
-        // DEBUG
+      // DEBUG
       case 10000:
         return Severity.DEBUG;
-        // INFO
+      // INFO
       case 20000:
         return Severity.INFO;
-        // WARNING
+      // WARNING
       case 30000:
         return Severity.WARNING;
-        // ERROR
+      // ERROR
       case 40000:
         return Severity.ERROR;
       default:

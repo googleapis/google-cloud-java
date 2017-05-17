@@ -4,10 +4,10 @@ Logback Appender for Google Cloud Logging
 Logback appender `com.google.cloud.logging.logback.LoggingAppender` for
 [Google Cloud Logging](https://cloud.google.com/logging/).
 
-This library allows you to use [Logback](https://logback.qos.ch/) configuration and the [Slf4j](https://www.slf4j.org/) interface to log via Google Cloud logging
+This library allows you to use [Logback](https://logback.qos.ch/) configuration and the [Slf4j](https://www.slf4j.org/) interface to log via Google Cloud logging.
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/package-summary.html)
+-  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/logback/LoggingAppender.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -19,24 +19,24 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.17.1-alpha</version>
+  <version>0.17.2-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging-logback:0.17.1-alpha'
+compile 'com.google.cloud:google-cloud-logging-logback:0.17.2-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.17.1-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.17.2-alpha"
 ```
 
 Usage 
 -----
 
 Add the appender to your [Logback configuration](https://logback.qos.ch/manual/configuration.html) `logback.xml`.
-See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter) on filtering log output and
- [encoders](https://logback.qos.ch/manual/encoders.html) on formatting.
+See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter) for information on filtering log output and
+ [encoders](https://logback.qos.ch/manual/encoders.html) for information on formatting.
 
 
 ```xml
@@ -44,10 +44,11 @@ See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter
   <appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender">
     <!-- Optional : filter logs at or above a level -->
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-          <level>INFO</level>
-     </filter>
+      <level>INFO</level>
+    </filter>
     <log>application.log</log> <!-- Optional : default java.log -->
-    <enhancers>com.example.enhancers.TestLoggingEnhancer</enhancers> <!-- Optional -->
+    <enhancer>com.example.enhancers.TestLoggingEnhancer</enhancer> <!-- Optional -->
+    <enhancer>com.example.enhancers.AnotherEnhancer</enhancer> <!-- Optional -->
     <flushLevel>WARN</flushLevel> <!-- Optional : default ERROR -->
   </appender>
 
@@ -89,7 +90,7 @@ Limitations
 -----------
 
 This library is usable, but not yet complete.
- * Auto-reload of properties is not fully tested
+Open issues [here](https://github.com/GoogleCloudPlatform/google-cloud-java/issues?q=is%3Aissue+is%3Aopen+label%3A%22logging-logback%22).
 
 
 Java Versions
