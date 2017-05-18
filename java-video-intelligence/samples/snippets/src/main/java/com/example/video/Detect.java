@@ -105,11 +105,15 @@ public class Detect {
         VideoIntelligenceServiceSettings.defaultBuilder().build();
     VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create(settings);
 
+
     // Create an operation that will contain the response when the operation completes.
-    ArrayList<Feature> detectFeatures = new ArrayList<Feature>();
-    detectFeatures.add(Feature.FACE_DETECTION);
+    AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+            .setInputUri(gcsUri)
+            .addFeatures(Feature.FACE_DETECTION)
+            .build();
+
     OperationFuture<AnnotateVideoResponse> operation =
-        client.annotateVideoAsync(gcsUri, detectFeatures);
+            client.annotateVideoAsync(request);
 
     System.out.println("Waiting for operation to complete...");
     for (VideoAnnotationResults result : operation.get().getAnnotationResultsList()) {
@@ -143,10 +147,13 @@ public class Detect {
     VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create(settings);
 
     // Create an operation that will contain the response when the operation completes.
-    ArrayList<Feature> detectFeatures = new ArrayList<Feature>();
-    detectFeatures.add(Feature.LABEL_DETECTION);
+    AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+            .setInputUri(gcsUri)
+            .addFeatures(Feature.LABEL_DETECTION)
+            .build();
+
     OperationFuture<AnnotateVideoResponse> operation =
-        client.annotateVideoAsync(gcsUri, detectFeatures);
+            client.annotateVideoAsync(request);
 
     System.out.println("Waiting for operation to complete...");
     for (VideoAnnotationResults result : operation.get().getAnnotationResultsList()) {
@@ -233,10 +240,13 @@ public class Detect {
     VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create(settings);
 
     // Create an operation that will contain the response when the operation completes.
-    ArrayList<Feature> detectFeatures = new ArrayList<Feature>();
-    detectFeatures.add(Feature.SHOT_CHANGE_DETECTION);
+    AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+            .setInputUri(gcsUri)
+            .addFeatures(Feature.SHOT_CHANGE_DETECTION)
+            .build();
+
     OperationFuture<AnnotateVideoResponse> operation =
-        client.annotateVideoAsync(gcsUri, detectFeatures);
+            client.annotateVideoAsync(request);
 
     System.out.println("Waiting for operation to complete...");
 
@@ -270,10 +280,13 @@ public class Detect {
     VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create(settings);
 
     // Create an operation that will contain the response when the operation completes.
-    ArrayList<Feature> detectFeatures = new ArrayList<Feature>();
-    detectFeatures.add(Feature.SAFE_SEARCH_DETECTION);
+    AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+            .setInputUri(gcsUri)
+            .addFeatures(Feature.SAFE_SEARCH_DETECTION)
+            .build();
+
     OperationFuture<AnnotateVideoResponse> operation =
-            client.annotateVideoAsync(gcsUri, detectFeatures);
+            client.annotateVideoAsync(request);
 
     System.out.println("Waiting for operation to complete...");
 
