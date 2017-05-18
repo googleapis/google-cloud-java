@@ -133,7 +133,7 @@
     <api-common.version>1.1.0</api-common.version>
     <gax.version>1.1.0</gax.version>
     <gax-grpc.version>0.17.0</gax-grpc.version>
-    <generatedProto.version>0.1.9</generatedProto.version>
+    <generatedProto.version>0.1.11</generatedProto.version>
     <google.auth.version>0.6.1</google.auth.version>
     <grpc.version>1.2.0</grpc.version>
     <guava.version>19.0</guava.version>
@@ -162,6 +162,7 @@
     <trace.version>0.17.3-alpha-SNAPSHOT</trace.version>
     <translate.version>0.17.3-beta-SNAPSHOT</translate.version>
     <vision.version>0.17.3-beta-SNAPSHOT</vision.version>
+    <videointelligence.version>0.17.3-alpha-SNAPSHOT</videointelligence.version>
     <testing.version>0.17.3-alpha-SNAPSHOT</testing.version>
   </properties>
   <dependencyManagement>
@@ -443,6 +444,18 @@
       </dependency>
 
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-video-intelligence</artifactId>
+        <version>${videointelligence.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-video-intelligence</artifactId>
+        <version>${videointelligence.version}</version>
+        <type>test-jar</type>
+      </dependency>
+
+      <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>api-common</artifactId>
         <version>${api-common.version}</version>
@@ -619,6 +632,7 @@
     <module>google-cloud-trace</module>
     <module>google-cloud-translate</module>
     <module>google-cloud-vision</module>
+    <module>google-cloud-video-intelligence</module>
     <!--
       Uncomment the following lines to include google app engine (GAE) testing apps in the build.
       Each GAE app packages all its dependencies in a fat war (>20MB each).
@@ -936,7 +950,7 @@
                   </group>
                   <group>
                     <title>SPI packages</title>
-                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.errorreporting.spi:com.google.cloud.errorreporting.spi.*:com.google.cloud.language.spi:com.google.cloud.language.spi.*:com.google.cloud.logging.spi:com.google.cloud.monitoring.spi:com.google.cloud.monitoring.spi.*:com.google.cloud.logging.spi.*:com.google.cloud.pubsub.spi:com.google.cloud.pubsub.spi.*:com.google.cloud.resourcemanager.spi:com.google.cloud.speech.spi:com.google.cloud.speech.spi.*:com.google.cloud.storage.spi:com.google.cloud.trace.spi:com.google.cloud.trace.spi.*:com.google.cloud.translate.spi:com.google.cloud.vision.spi:com.google.cloud.vision.spi.*</packages>
+                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.errorreporting.spi:com.google.cloud.errorreporting.spi.*:com.google.cloud.language.spi:com.google.cloud.language.spi.*:com.google.cloud.logging.spi:com.google.cloud.monitoring.spi:com.google.cloud.monitoring.spi.*:com.google.cloud.logging.spi.*:com.google.cloud.pubsub.spi:com.google.cloud.pubsub.spi.*:com.google.cloud.resourcemanager.spi:com.google.cloud.speech.spi:com.google.cloud.speech.spi.*:com.google.cloud.storage.spi:com.google.cloud.trace.spi:com.google.cloud.trace.spi.*:com.google.cloud.translate.spi:com.google.cloud.vision.spi:com.google.cloud.vision.spi.*:com.google.cloud.videointelligence.spi.*</packages>
                   </group>
                 </groups>
                 <links>
@@ -953,6 +967,7 @@
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-speech-v1beta1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-trace-v1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-vision-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1beta1/${generatedProto.version}/apidocs/</link>
                 </links>
               </configuration>
             </plugin>

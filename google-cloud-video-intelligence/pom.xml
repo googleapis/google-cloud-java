@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>google-cloud-errorreporting</artifactId>
+  <artifactId>google-cloud-video-intelligence</artifactId>
   <version>0.17.3-alpha-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>Google Cloud Error Reporting</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-errorreporting</url>
+  <name>Google Cloud Video Intelligence</name>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-video-intelligence</url>
   <description>
-    Java idiomatic client for Google Cloud Error Reporting.
+    Java idiomatic client for Cloud Video Intelligence v1beta1.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -15,7 +15,7 @@
     <version>0.17.3-alpha-SNAPSHOT</version>
   </parent>
   <properties>
-    <site.installationModule>google-cloud-errorreporting</site.installationModule>
+    <site.installationModule>google-cloud-video-intelligence-v1beta1</site.installationModule>
     <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
@@ -34,7 +34,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
+      <artifactId>proto-google-cloud-video-intelligence-v1beta1</artifactId>
       <version>0.1.11</version>
     </dependency>
     <dependency>
@@ -68,7 +68,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-error-reporting-v1beta1</artifactId>
+      <artifactId>grpc-google-cloud-video-intelligence-v1beta1</artifactId>
       <version>0.1.11</version>
       <scope>test</scope>
     </dependency>
@@ -105,7 +105,7 @@
             <configuration>
                <tasks>
                  <copy file="${project.build.outputDirectory}/project.properties"
-                   toFile="${project.build.outputDirectory}/com/google/cloud/errorreporting/project.properties"
+                   toFile="${project.build.outputDirectory}/com/google/cloud/trace/project.properties"
                    overwrite="true" />
               </tasks>
             </configuration>
