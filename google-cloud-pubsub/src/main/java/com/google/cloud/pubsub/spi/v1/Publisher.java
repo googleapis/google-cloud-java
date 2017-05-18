@@ -344,8 +344,7 @@ public class Publisher {
                                 + "the expected %s results. Please contact Cloud Pub/Sub support "
                                 + "if this frequently occurs",
                             result.getMessageIdsCount(), outstandingBatch.size()));
-                for (OutstandingPublish oustandingMessage :
-                    outstandingBatch.outstandingPublishes) {
+                for (OutstandingPublish oustandingMessage : outstandingBatch.outstandingPublishes) {
                   oustandingMessage.publishResult.setException(t);
                 }
                 return;
@@ -368,9 +367,10 @@ public class Publisher {
                 computeNextBackoffDelayMs(outstandingBatch, retrySettings, longRandom);
 
             if (!isRetryable(t)
+                || retrySettings.getMaxAttempts() > 0
+                    && outstandingBatch.getAttempt() > retrySettings.getMaxAttempts()
                 || System.currentTimeMillis() + nextBackoffDelay
-                    > outstandingBatch.creationTime
-                        + retrySettings.getTotalTimeout().toMillis()) {
+                    > outstandingBatch.creationTime + retrySettings.getTotalTimeout().toMillis()) {
               try {
                 for (OutstandingPublish outstandingPublish :
                     outstandingBatch.outstandingPublishes) {
@@ -406,6 +406,10 @@ public class Publisher {
       attempt = 1;
       creationTime = System.currentTimeMillis();
       this.batchSizeBytes = batchSizeBytes;
+    }
+
+    public int getAttempt() {
+      return attempt;
     }
 
     public int size() {
@@ -506,7 +510,7 @@ public class Publisher {
    * Constructs a new {@link Builder} using the given topic.
    *
    * <p>Example of creating a {@code Publisher}.
-   * <pre> {@code
+   * <pre>{@code
    * String projectName = "my_project";
    * String topicName = "my_topic";
    * TopicName topic = TopicName.create(projectName, topicName);
