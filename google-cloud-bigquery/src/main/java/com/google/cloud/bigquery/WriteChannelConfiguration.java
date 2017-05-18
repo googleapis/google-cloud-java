@@ -43,6 +43,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   private final CreateDisposition createDisposition;
   private final WriteDisposition writeDisposition;
   private final FormatOptions formatOptions;
+  private final String nullMarker;
   private final Integer maxBadRecords;
   private final Schema schema;
   private final Boolean ignoreUnknownValues;
@@ -55,6 +56,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     private CreateDisposition createDisposition;
     private WriteDisposition writeDisposition;
     private FormatOptions formatOptions;
+    private String nullMarker;
     private Integer maxBadRecords;
     private Schema schema;
     private Boolean ignoreUnknownValues;
@@ -68,6 +70,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       this.createDisposition = writeChannelConfiguration.createDisposition;
       this.writeDisposition = writeChannelConfiguration.writeDisposition;
       this.formatOptions = writeChannelConfiguration.formatOptions;
+      this.nullMarker = writeChannelConfiguration.nullMarker;
       this.maxBadRecords = writeChannelConfiguration.maxBadRecords;
       this.schema = writeChannelConfiguration.schema;
       this.ignoreUnknownValues = writeChannelConfiguration.ignoreUnknownValues;
@@ -87,6 +90,9 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       }
       if (loadConfigurationPb.getSourceFormat() != null) {
         this.formatOptions = FormatOptions.of(loadConfigurationPb.getSourceFormat());
+      }
+      if (loadConfigurationPb.getNullMarker() != null) {
+        this.nullMarker = loadConfigurationPb.getNullMarker();
       }
       if (loadConfigurationPb.getAllowJaggedRows() != null
           || loadConfigurationPb.getAllowQuotedNewlines() != null
@@ -159,6 +165,13 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
 
 
     @Override
+    public Builder setNullMarker(String nullMarker) {
+      this.nullMarker = nullMarker;
+      return this;
+    }
+
+
+    @Override
     public Builder setMaxBadRecords(Integer maxBadRecords) {
       this.maxBadRecords = maxBadRecords;
       return this;
@@ -202,6 +215,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     this.createDisposition = builder.createDisposition;
     this.writeDisposition = builder.writeDisposition;
     this.formatOptions = builder.formatOptions;
+    this.nullMarker = builder.nullMarker;
     this.maxBadRecords = builder.maxBadRecords;
     this.schema = builder.schema;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
@@ -225,6 +239,12 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   public WriteDisposition getWriteDisposition() {
     return writeDisposition;
+  }
+
+
+  @Override
+  public String getNullMarker() {
+    return nullMarker;
   }
 
 
@@ -284,6 +304,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
         .add("formatOptions", formatOptions)
+        .add("nullMarker", nullMarker)
         .add("maxBadRecords", maxBadRecords)
         .add("schema", schema)
         .add("ignoreUnknownValue", ignoreUnknownValues)
@@ -306,7 +327,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   public int hashCode() {
     return Objects.hash(destinationTable, createDisposition, writeDisposition, formatOptions,
-        maxBadRecords, schema, ignoreUnknownValues, schemaUpdateOptions, autodetect);
+        nullMarker, maxBadRecords, schema, ignoreUnknownValues, schemaUpdateOptions, autodetect);
   }
 
   WriteChannelConfiguration setProjectId(String projectId) {
@@ -321,6 +342,9 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     }
     if (writeDisposition != null) {
       loadConfigurationPb.setWriteDisposition(writeDisposition.toString());
+    }
+    if (nullMarker != null) {
+      loadConfigurationPb.setNullMarker(nullMarker);
     }
     if (getCsvOptions() != null) {
       CsvOptions csvOptions = getCsvOptions();
