@@ -38,6 +38,7 @@ public class WriteChannelConfigurationTest {
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final CreateDisposition CREATE_DISPOSITION = CreateDisposition.CREATE_IF_NEEDED;
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;
+  private static final String NULL_MARKER = "\\N";
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final String FORMAT = "CSV";
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
@@ -53,6 +54,7 @@ public class WriteChannelConfigurationTest {
       WriteChannelConfiguration.newBuilder(TABLE_ID)
           .setCreateDisposition(CREATE_DISPOSITION)
           .setWriteDisposition(WRITE_DISPOSITION)
+          .setNullMarker(NULL_MARKER)
           .setFormatOptions(CSV_OPTIONS)
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .setMaxBadRecords(MAX_BAD_RECORDS)
@@ -108,6 +110,7 @@ public class WriteChannelConfigurationTest {
     assertEquals(TABLE_ID, LOAD_CONFIGURATION_CSV.getDestinationTable());
     assertEquals(CREATE_DISPOSITION, LOAD_CONFIGURATION_CSV.getCreateDisposition());
     assertEquals(WRITE_DISPOSITION, LOAD_CONFIGURATION_CSV.getWriteDisposition());
+    assertEquals(NULL_MARKER, LOAD_CONFIGURATION_CSV.getNullMarker());
     assertEquals(CSV_OPTIONS, LOAD_CONFIGURATION_CSV.getCsvOptions());
     assertEquals(FORMAT, LOAD_CONFIGURATION_CSV.getFormat());
     assertEquals(IGNORE_UNKNOWN_VALUES, LOAD_CONFIGURATION_CSV.ignoreUnknownValues());
@@ -120,6 +123,7 @@ public class WriteChannelConfigurationTest {
         WriteChannelConfiguration.newBuilder(TABLE_ID, CSV_OPTIONS)
             .setCreateDisposition(CREATE_DISPOSITION)
             .setWriteDisposition(WRITE_DISPOSITION)
+            .setNullMarker(NULL_MARKER)
             .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
             .setMaxBadRecords(MAX_BAD_RECORDS)
             .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
@@ -129,6 +133,7 @@ public class WriteChannelConfigurationTest {
     assertEquals(TABLE_ID, loadConfigurationCSV.getDestinationTable());
     assertEquals(CREATE_DISPOSITION, loadConfigurationCSV.getCreateDisposition());
     assertEquals(WRITE_DISPOSITION, loadConfigurationCSV.getWriteDisposition());
+    assertEquals(NULL_MARKER, loadConfigurationCSV.getNullMarker());
     assertEquals(CSV_OPTIONS, loadConfigurationCSV.getCsvOptions());
     assertEquals(FORMAT, loadConfigurationCSV.getFormat());
     assertEquals(IGNORE_UNKNOWN_VALUES, loadConfigurationCSV.ignoreUnknownValues());
@@ -158,6 +163,7 @@ public class WriteChannelConfigurationTest {
     assertEquals(expected.getDestinationTable(), value.getDestinationTable());
     assertEquals(expected.getCreateDisposition(), value.getCreateDisposition());
     assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
+    assertEquals(expected.getNullMarker(), value.getNullMarker());
     assertEquals(expected.getCsvOptions(), value.getCsvOptions());
     assertEquals(expected.getFormat(), value.getFormat());
     assertEquals(expected.ignoreUnknownValues(), value.ignoreUnknownValues());
