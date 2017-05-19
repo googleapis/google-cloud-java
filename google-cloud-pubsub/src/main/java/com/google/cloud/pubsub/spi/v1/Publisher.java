@@ -16,16 +16,16 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -180,7 +180,7 @@ public class Publisher {
    * ByteString data = ByteString.copyFromUtf8(message);
    * PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
    * ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-   * messageIdFuture.addCallback(new ApiFutureCallback<String>() {
+   * ApiFutures.addCallback(messageIdFuture, new ApiFutureCallback<String>() {
    *   public void onSuccess(String messageId) {
    *     System.out.println("published with message id: " + messageId);
    *   }
