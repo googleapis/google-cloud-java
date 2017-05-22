@@ -109,19 +109,24 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
           amt = channel.read(dst);
           break;
         } catch (StorageException exs) {
-          if (exs.getMessage().contains("Connection closed prematurely") && reopens < maxChannelReopens) {
-            // this error isn't marked as retryable since the channel is closed;
+          if (reopens < maxChannelReopens && (
+              exs.getMessage().contains("Connection closed prematurely")
+          || exs.getCause() instanceof javax.net.ssl.SSLHandshakeException
+          || exs.getCause() instanceof java.io.EOFException
+          || exs.getCause() instanceof java.net.SocketTimeoutException
+          )) {
+            // these errors aren't marked as retryable since the channel is closed;
             // but here at this higher level we can retry it.
             reopens++;
             sleepForAttempt(reopens);
             innerOpen();
             continue;
-          } else if ((exs.getCode() == 500 || exs.getCode() == 503)  && retries < maxRetries) {
+          } else if ((exs.isRetryable() || exs.getCode() == 500 || exs.getCode() == 503)  && retries < maxRetries) {
             retries++;
             sleepForAttempt(retries);
             continue;
           }
-          throw exs;
+          throw new StorageException(exs.getCode(), "Retry failed", exs);
         }
       }
       if (amt > 0) {
@@ -136,8 +141,13 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   }
 
   private void sleepForAttempt(int attempt) {
+    long delay = 500;
+    // exponential backoff
+    for (int i=0; i<attempt; i++) {
+      delay *= 2;
+    }
     try {
-      Thread.sleep((attempt - 1) * 500);
+      Thread.sleep(delay);
     } catch (InterruptedException iex) {
       // reset interrupt flag
       Thread.currentThread().interrupt();
