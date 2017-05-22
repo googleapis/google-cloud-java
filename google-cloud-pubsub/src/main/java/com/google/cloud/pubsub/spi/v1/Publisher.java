@@ -22,10 +22,12 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -35,10 +37,13 @@ import com.google.common.util.concurrent.Futures;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
+import com.google.pubsub.v1.PublisherGrpc.PublisherFutureStub;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
+import io.grpc.CallCredentials;
 import io.grpc.ManagedChannel;
 import io.grpc.Status;
+import io.grpc.auth.MoreCallCredentials;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -53,6 +58,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
 /**
@@ -95,6 +101,7 @@ public class Publisher {
   private final FlowController flowController;
   private final ManagedChannel[] channels;
   private final AtomicRoundRobin channelIndex;
+  @Nullable private final CallCredentials callCredentials;
 
   private final ScheduledExecutorService executor;
   private final AtomicBoolean shutdown;
@@ -155,6 +162,10 @@ public class Publisher {
           });
     }
     channelIndex = new AtomicRoundRobin(channels.length);
+
+    Credentials credentials = builder.credentialsProvider.getCredentials();
+    callCredentials = credentials == null ? null : MoreCallCredentials.from(credentials);
+
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new MessageWaiter();
   }
@@ -328,10 +339,15 @@ public class Publisher {
                 * Math.pow(retrySettings.getRpcTimeoutMultiplier(), outstandingBatch.attempt - 1));
     rpcTimeoutMs = Math.min(rpcTimeoutMs, retrySettings.getMaxRpcTimeout().toMillis());
 
-    Futures.addCallback(
+    PublisherFutureStub stub =
         PublisherGrpc.newFutureStub(channels[currentChannel])
-            .withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS)
-            .publish(publishRequest.build()),
+            .withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS);
+    if (callCredentials != null) {
+      stub = stub.withCallCredentials(callCredentials);
+    }
+
+    Futures.addCallback(
+        stub.publish(publishRequest.build()),
         new FutureCallback<PublishResponse>() {
           @Override
           public void onSuccess(PublishResponse result) {
@@ -582,6 +598,8 @@ public class Publisher {
 
     ChannelProvider channelProvider = TopicAdminSettings.defaultChannelProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
+    CredentialsProvider credentialsProvider =
+        TopicAdminSettings.defaultCredentialsProviderBuilder().build();
 
     private Builder(TopicName topic) {
       this.topicName = Preconditions.checkNotNull(topic);
@@ -597,6 +615,11 @@ public class Publisher {
      */
     public Builder setChannelProvider(ChannelProvider channelProvider) {
       this.channelProvider = Preconditions.checkNotNull(channelProvider);
+      return this;
+    }
+
+    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
+      this.credentialsProvider = Preconditions.checkNotNull(credentialsProvider);
       return this;
     }
 
