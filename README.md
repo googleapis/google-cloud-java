@@ -35,6 +35,7 @@ This client supports the following Google Cloud Platform services at an [Alpha](
 -  [Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
 -  [Cloud Speech](#google-cloud-speech-alpha) (Alpha)
 -  [Cloud Trace](#google-cloud-trace-alpha) (Alpha)
+-  [Cloud Video Intelligence](#google-cloud-video-intelligence-alpha) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -52,16 +53,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.17.2-alpha</version>
+  <version>0.18.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.17.2-alpha'
+compile 'com.google.cloud:google-cloud:0.18.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.17.2-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.18.0-alpha"
 ```
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
@@ -805,6 +806,30 @@ Note that you must [supply credentials](#authentication) and a project ID if run
  }
 ```
 
+Google Cloud Video Intelligence (Alpha)
+----------------
+
+- [Official Documentation][cloud-video-intelligence-docs]
+
+### Preview
+
+Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either default application
+credentials or a valid api key are available.
+Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+```java
+try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
+    VideoIntelligenceServiceClient.create()) {
+  String inputUri = "";
+   List<Feature> features = new ArrayList<>();
+   VideoContext videoContext = VideoContext.newBuilder().build();
+   String outputUri = "";
+   String locationId = "";
+   AnnotateVideoResponse response =
+       videoIntelligenceServiceClient.annotateVideoAsync(
+           inputUri, features, videoContext, outputUri, locationId).get();
+ }
+```
+
 Troubleshooting
 ---------------
 
@@ -917,11 +942,13 @@ Apache 2.0 - See [LICENSE] for more information.
 [vision-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/vision/spi/v1/package-summary.html
 [cloud-vision-docs]: https://cloud.google.com/vision/docs
 
+[cloud-video-intelligence-docs]: https://cloud.google.com/video-intelligence/docs
+
 [logging-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/package-summary.html
 [stackdriver-logging-docs]: https://cloud.google.com/logging/docs
 [stackdriver-logging-activation]: https://console.cloud.google.com/start/api?id=logging
 
-[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/package-summary.html
+[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/spi/v1/package-summary.html
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs
 

@@ -16,16 +16,16 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -180,7 +180,7 @@ public class Publisher {
    * ByteString data = ByteString.copyFromUtf8(message);
    * PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
    * ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-   * messageIdFuture.addCallback(new ApiFutureCallback<String>() {
+   * ApiFutures.addCallback(messageIdFuture, new ApiFutureCallback<String>() {
    *   public void onSuccess(String messageId) {
    *     System.out.println("published with message id: " + messageId);
    *   }
@@ -344,8 +344,7 @@ public class Publisher {
                                 + "the expected %s results. Please contact Cloud Pub/Sub support "
                                 + "if this frequently occurs",
                             result.getMessageIdsCount(), outstandingBatch.size()));
-                for (OutstandingPublish oustandingMessage :
-                    outstandingBatch.outstandingPublishes) {
+                for (OutstandingPublish oustandingMessage : outstandingBatch.outstandingPublishes) {
                   oustandingMessage.publishResult.setException(t);
                 }
                 return;
@@ -368,9 +367,10 @@ public class Publisher {
                 computeNextBackoffDelayMs(outstandingBatch, retrySettings, longRandom);
 
             if (!isRetryable(t)
+                || retrySettings.getMaxAttempts() > 0
+                    && outstandingBatch.getAttempt() > retrySettings.getMaxAttempts()
                 || System.currentTimeMillis() + nextBackoffDelay
-                    > outstandingBatch.creationTime
-                        + retrySettings.getTotalTimeout().toMillis()) {
+                    > outstandingBatch.creationTime + retrySettings.getTotalTimeout().toMillis()) {
               try {
                 for (OutstandingPublish outstandingPublish :
                     outstandingBatch.outstandingPublishes) {
@@ -406,6 +406,10 @@ public class Publisher {
       attempt = 1;
       creationTime = System.currentTimeMillis();
       this.batchSizeBytes = batchSizeBytes;
+    }
+
+    public int getAttempt() {
+      return attempt;
     }
 
     public int size() {
@@ -506,7 +510,7 @@ public class Publisher {
    * Constructs a new {@link Builder} using the given topic.
    *
    * <p>Example of creating a {@code Publisher}.
-   * <pre> {@code
+   * <pre>{@code
    * String projectName = "my_project";
    * String topicName = "my_topic";
    * TopicName topic = TopicName.create(projectName, topicName);
