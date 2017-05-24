@@ -113,6 +113,7 @@ import com.google.cloud.translate.Detection;
 Then add the following code to detect the text's language:
 
 ```java
+Detection detection = translate.detect("Hello, World!");
 String detectedLanguage = detection.getLanguage();
 ```
 #### Translating text
