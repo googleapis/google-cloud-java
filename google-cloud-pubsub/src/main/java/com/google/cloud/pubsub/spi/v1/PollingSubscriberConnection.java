@@ -58,7 +58,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
       Logger.getLogger(PollingSubscriberConnection.class.getName());
 
   private final String subscription;
-  private final ScheduledExecutorService executor;
+  private final ScheduledExecutorService pollingExecutor;
   private final SubscriberFutureStub stub;
   private final MessageDispatcher messageDispatcher;
   private final int maxDesiredPulledMessages;
@@ -76,7 +76,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
       ScheduledExecutorService alarmsExecutor,
       ApiClock clock) {
     this.subscription = subscription;
-    this.executor = alarmsExecutor;
+    this.pollingExecutor = alarmsExecutor;
     stub = SubscriberGrpc.newFutureStub(channel);
     messageDispatcher =
         new MessageDispatcher(
@@ -119,7 +119,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
             notifyFailed(cause);
           }
         },
-        executor);
+        pollingExecutor);
   }
 
   @Override
@@ -146,7 +146,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
             if (pullResponse.getReceivedMessagesCount() == 0) {
               // No messages in response, possibly caught up in backlog, we backoff to avoid
               // slamming the server.
-              executor.schedule(
+              pollingExecutor.schedule(
                   new Runnable() {
                     @Override
                     public void run() {
@@ -180,7 +180,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
             }
             if (StatusUtil.isRetryable(cause)) {
               logger.log(Level.WARNING, "Failed to pull messages (recoverable): ", cause);
-              executor.schedule(
+              pollingExecutor.schedule(
                   new Runnable() {
                     @Override
                     public void run() {
@@ -199,7 +199,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
             }
           }
         },
-        executor);
+        pollingExecutor);
   }
 
   private boolean isAlive() {
