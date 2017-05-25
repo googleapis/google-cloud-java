@@ -27,7 +27,6 @@ import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -43,9 +42,7 @@ import javax.annotation.concurrent.Immutable;
  * <p>{@code Struct} instances are immutable.
  */
 @Immutable
-public abstract class Struct extends AbstractStructReader implements Serializable {
-  private static final long serialVersionUID = 1698871272663044565L;
-
+public abstract class Struct extends AbstractStructReader {
   // Only implementations within the package are allowed.
   Struct() {}
 
@@ -125,8 +122,6 @@ public abstract class Struct extends AbstractStructReader implements Serializabl
 
   /** Default implementation for test value structs produced by {@link Builder}. */
   private static class ValueListStruct extends Struct {
-    private static final long serialVersionUID = 1712981659934867577L;
-
     private final Type type;
     private final List<Value> values;
 

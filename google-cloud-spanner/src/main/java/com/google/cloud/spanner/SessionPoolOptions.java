@@ -18,12 +18,8 @@ package com.google.cloud.spanner;
 
 import com.google.common.base.Preconditions;
 
-import java.io.Serializable;
-
 /** Options for the session pool used by {@code DatabaseClient}. */
-public class SessionPoolOptions implements Serializable {
-  private static final long serialVersionUID = -4362880062762314525L;
-
+public class SessionPoolOptions {
   private final int minSessions;
   private final int maxSessions;
   private final int maxIdleSessions;

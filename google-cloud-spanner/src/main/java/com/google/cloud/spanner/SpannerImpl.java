@@ -1512,8 +1512,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
    * @param <R> the type of row data
    */
   private static class BaseStruct<R> extends Struct {
-    private static final long serialVersionUID = -1850257565078946587L;
-
     protected final Type type;
     protected final List<Object> rowData;
 
@@ -1841,8 +1839,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   private static class GrpcStruct extends BaseStruct<List<Object>> {
-    private static final long serialVersionUID = -2067943506736181881L;
-
     GrpcStruct(Type type, List<Object> rowData) {
       super(type, rowData);
     }
