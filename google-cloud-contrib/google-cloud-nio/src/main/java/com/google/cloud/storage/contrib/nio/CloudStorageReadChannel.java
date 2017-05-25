@@ -101,7 +101,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
       checkOpen();
       int amt;
       int retries = 0;
-      int maxRetries = 3;
+      int maxRetries = Math.max(3, maxChannelReopens);
       dst.mark();
       while (true) {
         try {
@@ -109,24 +109,20 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
           amt = channel.read(dst);
           break;
         } catch (StorageException exs) {
-          if (reopens < maxChannelReopens && (
-              exs.getMessage().contains("Connection closed prematurely")
-          || exs.getCause() instanceof javax.net.ssl.SSLHandshakeException
-          || exs.getCause() instanceof java.io.EOFException
-          || exs.getCause() instanceof java.net.SocketTimeoutException
-          )) {
+          if (reopens < maxChannelReopens && (isReopenable(exs) || isReopenable(exs.getCause()))) {
             // these errors aren't marked as retryable since the channel is closed;
-            // but here at this higher level we can retry it.
+            // but here at this higher level we can retry them.
             reopens++;
             sleepForAttempt(reopens);
             innerOpen();
             continue;
-          } else if ((exs.isRetryable() || exs.getCode() == 500 || exs.getCode() == 503)  && retries < maxRetries) {
+          } else if (retries < maxRetries &&
+              (exs.isRetryable() || exs.getCode() == 500 || exs.getCode() == 503)) {
             retries++;
             sleepForAttempt(retries);
             continue;
           }
-          throw new StorageException(exs.getCode(), "Retry failed", exs);
+          throw new StorageException(exs.getCode(), "All retries failed", exs);
         }
       }
       if (amt > 0) {
@@ -140,11 +136,22 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     }
   }
 
+  private static boolean isReopenable(Throwable exs) {
+    return exs != null && (exs.getMessage().contains("Connection closed prematurely")
+            || exs.getCause() instanceof javax.net.ssl.SSLException
+            || exs.getCause() instanceof java.io.EOFException
+            || exs.getCause() instanceof java.net.SocketException);
+  }
+
   private void sleepForAttempt(int attempt) {
-    long delay = 500;
+    long delay = 1000;
+    long maxDelay = 120_000;
     // exponential backoff
     for (int i=0; i<attempt; i++) {
       delay *= 2;
+      if (delay > maxDelay) {
+        delay = maxDelay;
+      }
     }
     try {
       Thread.sleep(delay);
