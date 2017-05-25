@@ -60,7 +60,7 @@ class MessageDispatcher {
   private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
   private final ScheduledExecutorService executor;
-  private final ScheduledExecutorService alarmsExecutor;
+  private final ScheduledExecutorService systemExecutor;
   private final ApiClock clock;
 
   private final Duration ackExpirationPadding;
@@ -240,10 +240,10 @@ class MessageDispatcher {
       Distribution ackLatencyDistribution,
       FlowController flowController,
       ScheduledExecutorService executor,
-      ScheduledExecutorService alarmsExecutor,
+      ScheduledExecutorService systemExecutor,
       ApiClock clock) {
     this.executor = executor;
-    this.alarmsExecutor = alarmsExecutor;
+    this.systemExecutor = systemExecutor;
     this.ackExpirationPadding = ackExpirationPadding;
     this.maxAckExtensionPeriod = maxAckExtensionPeriod;
     this.receiver = receiver;
@@ -423,7 +423,7 @@ class MessageDispatcher {
     try {
       if (pendingAcksAlarm == null) {
         pendingAcksAlarm =
-            alarmsExecutor.schedule(
+            systemExecutor.schedule(
                 new Runnable() {
                   @Override
                   public void run() {
@@ -552,7 +552,7 @@ class MessageDispatcher {
         nextAckDeadlineExtensionAlarmTime = possibleNextAlarmTime;
 
         ackDeadlineExtensionAlarm =
-            alarmsExecutor.schedule(
+            systemExecutor.schedule(
                 new AckDeadlineAlarm(),
                 nextAckDeadlineExtensionAlarmTime.toEpochMilli() - clock.millisTime(),
                 TimeUnit.MILLISECONDS);

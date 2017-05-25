@@ -73,10 +73,10 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
       FlowController flowController,
       @Nullable Long maxDesiredPulledMessages,
       ScheduledExecutorService executor,
-      ScheduledExecutorService alarmsExecutor,
+      ScheduledExecutorService systemExecutor,
       ApiClock clock) {
     this.subscription = subscription;
-    this.pollingExecutor = alarmsExecutor;
+    this.pollingExecutor = systemExecutor;
     stub = SubscriberGrpc.newFutureStub(channel);
     messageDispatcher =
         new MessageDispatcher(
@@ -87,7 +87,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
             ackLatencyDistribution,
             flowController,
             executor,
-            alarmsExecutor,
+            systemExecutor,
             clock);
     messageDispatcher.setMessageDeadlineSeconds(Subscriber.MIN_ACK_DEADLINE_SECONDS);
     this.maxDesiredPulledMessages =
