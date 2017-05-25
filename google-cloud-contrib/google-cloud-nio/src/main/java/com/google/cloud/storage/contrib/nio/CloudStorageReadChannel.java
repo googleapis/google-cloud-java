@@ -16,14 +16,14 @@
 
 package com.google.cloud.storage.contrib.nio;
 
-import static com.google.common.base.Preconditions.checkArgument;
-
 import com.google.cloud.ReadChannel;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 
+import javax.annotation.CheckReturnValue;
+import javax.annotation.concurrent.ThreadSafe;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
@@ -31,8 +31,7 @@ import java.nio.channels.NonWritableChannelException;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.NoSuchFileException;
 
-import javax.annotation.CheckReturnValue;
-import javax.annotation.concurrent.ThreadSafe;
+import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * Cloud Storage read channel.
@@ -137,10 +136,15 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   }
 
   private static boolean isReopenable(Throwable exs) {
-    return exs != null && (exs.getMessage().contains("Connection closed prematurely")
-            || exs.getCause() instanceof javax.net.ssl.SSLException
-            || exs.getCause() instanceof java.io.EOFException
-            || exs.getCause() instanceof java.net.SocketException);
+    while (exs != null) {
+      if (exs.getMessage().contains("Connection closed prematurely")
+          || exs.getCause() instanceof javax.net.ssl.SSLException
+          || exs.getCause() instanceof java.io.EOFException
+          || exs.getCause() instanceof java.net.SocketException
+          || exs.getCause() instanceof java.net.SocketTimeoutException) return true;
+      exs = exs.getCause();
+    }
+    return false;
   }
 
   private void sleepForAttempt(int attempt) {
