@@ -108,7 +108,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
           amt = channel.read(dst);
           break;
         } catch (StorageException exs) {
-          if (reopens < maxChannelReopens && (isReopenable(exs) || isReopenable(exs.getCause()))) {
+          if (reopens < maxChannelReopens && isReopenable(exs)) {
             // these errors aren't marked as retryable since the channel is closed;
             // but here at this higher level we can retry them.
             reopens++;
@@ -136,13 +136,16 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   }
 
   private static boolean isReopenable(Throwable exs) {
-    while (exs != null) {
-      if (exs.getMessage().contains("Connection closed prematurely")
-          || exs.getCause() instanceof javax.net.ssl.SSLException
-          || exs.getCause() instanceof java.io.EOFException
-          || exs.getCause() instanceof java.net.SocketException
-          || exs.getCause() instanceof java.net.SocketTimeoutException) return true;
-      exs = exs.getCause();
+    Throwable throwable = exs;
+    while (throwable != null) {
+      if (throwable.getMessage().contains("Connection closed prematurely")
+          || throwable.getCause() instanceof javax.net.ssl.SSLException
+          || throwable.getCause() instanceof java.io.EOFException
+          || throwable.getCause() instanceof java.net.SocketException
+          || throwable.getCause() instanceof java.net.SocketTimeoutException) {
+        return true;
+      }
+      throwable = throwable.getCause();
     }
     return false;
   }
