@@ -70,6 +70,17 @@ public interface LoadConfiguration {
 
 
     /**
+     * Sets the string that represents a null value in a CSV file. For example, if you specify "\N",
+     * BigQuery interprets "\N" as a null value when loading a CSV file. The default value is the
+     * empty string. If you set this property to a custom value, BigQuery throws an error if an
+     * empty string is present for all data types except for {@code STRING} and {@code BYTE}. For
+     * {@code STRING} and {@code BYTE} columns, BigQuery interprets the empty string as an empty
+     * value.
+     */
+    Builder setNullMarker(String nullMarker);
+
+
+    /**
      * Sets the maximum number of bad records that BigQuery can ignore when running the job. If the
      * number of bad records exceeds this value, an invalid error is returned in the job result.
      * By default no bad record is ignored.
@@ -132,6 +143,15 @@ public interface LoadConfiguration {
    *     Write Disposition</a>
    */
   WriteDisposition getWriteDisposition();
+
+
+  /**
+   * Returns the string that represents a null value in a CSV file.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.nullMarker">
+   *     Null Marker</a>
+   */
+  String getNullMarker();
 
 
   /**

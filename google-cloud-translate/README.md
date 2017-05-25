@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-translate</artifactId>
-  <version>0.17.2-beta</version>
+  <version>0.18.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-translate:0.17.2-beta'
+compile 'com.google.cloud:google-cloud-translate:0.18.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "0.17.2-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "0.18.0-beta"
 ```
 
 Example Application
@@ -113,6 +113,7 @@ import com.google.cloud.translate.Detection;
 Then add the following code to detect the text's language:
 
 ```java
+Detection detection = translate.detect("Hello, World!");
 String detectedLanguage = detection.getLanguage();
 ```
 #### Translating text

@@ -105,6 +105,13 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
     return HttpTransportOptions.newBuilder().build();
   }
 
+  // Project ID is only required for creating buckets, so we don't require it for creating the
+  // service.
+  @Override
+  protected boolean projectIdRequired() {
+    return false;
+  }
+
   @Override
   protected Set<String> getScopes() {
     return SCOPES;

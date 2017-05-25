@@ -26,16 +26,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>0.17.2-alpha</version>
+  <version>0.18.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:0.17.2-alpha'
+compile 'com.google.cloud:google-cloud-pubsub:0.18.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.17.2-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.18.0-alpha"
 ```
 
 Authentication
@@ -176,7 +176,7 @@ Subscriber subscriber = null;
 try {
   subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
   subscriber.addListener(
-      new Subscriber.SubscriberListener() {
+      new Subscriber.Listener() {
         @Override
         public void failed(Subscriber.State from, Throwable failure) {
           // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.

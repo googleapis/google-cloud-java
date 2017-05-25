@@ -16,19 +16,18 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
-import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.auth.Credentials;
 import com.google.cloud.pubsub.spi.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PublishResponse;
@@ -42,12 +41,12 @@ import io.grpc.inprocess.InProcessServerBuilder;
 import io.grpc.internal.ServerImpl;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
-import org.threeten.bp.Duration;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
@@ -77,6 +76,16 @@ public class PublisherImplTest {
         @Override
         public ManagedChannel getChannel(Executor executor) {
           throw new IllegalArgumentException("testChannelprovider doesn't need an executor");
+        }
+      };
+
+  // Gax declares a similar type, which can be used after gax is upgraded.
+  @Deprecated
+  private static final CredentialsProvider NO_CREDENTIALS_PROVIDER =
+      new CredentialsProvider() {
+        @Override
+        public Credentials getCredentials() {
+          return null;
         }
       };
 
@@ -279,6 +288,81 @@ public class PublisherImplTest {
     publisher.shutdown();
   }
 
+  @Test(expected = ExecutionException.class)
+  public void testPublishFailureRetries_retriesDisabled() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setRetrySettings(
+                Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                    .toBuilder()
+                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setMaxAttempts(1)
+                    .build())
+            .build();
+
+    testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
+
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+
+    try {
+      publishFuture1.get();
+    } finally {
+      assertSame(testPublisherServiceImpl.getCapturedRequests().size(), 1);
+      publisher.shutdown();
+    }
+  }
+
+  @Test
+  public void testPublishFailureRetries_maxRetriesSetup() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setRetrySettings(
+                Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                    .toBuilder()
+                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setMaxAttempts(3)
+                    .build())
+            .build();
+
+    testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
+    testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+
+    assertEquals("1", publishFuture1.get());
+
+    assertEquals(3, testPublisherServiceImpl.getCapturedRequests().size());
+    publisher.shutdown();
+  }
+
+  @Test
+  public void testPublishFailureRetries_maxRetriesSetUnlimited() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setRetrySettings(
+                Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                    .toBuilder()
+                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setMaxAttempts(0)
+                    .build())
+            .build();
+
+    testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
+    testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+
+    assertEquals("1", publishFuture1.get());
+
+    assertEquals(3, testPublisherServiceImpl.getCapturedRequests().size());
+    publisher.shutdown();
+  }
+
   public void testPublishFailureRetries_exceededsRetryDuration() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
@@ -354,6 +438,7 @@ public class PublisherImplTest {
             .setDelayThreshold(Duration.ofMillis(11))
             .setElementCountThreshold(12L)
             .build());
+    builder.setCredentialsProvider(NO_CREDENTIALS_PROVIDER);
     builder.setFlowControlSettings(
         FlowControlSettings.newBuilder()
             .setMaxOutstandingRequestBytes(13)
@@ -588,6 +673,7 @@ public class PublisherImplTest {
     return Publisher.defaultBuilder(TEST_TOPIC)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setChannelProvider(TEST_CHANNEL_PROVIDER)
+        .setCredentialsProvider(NO_CREDENTIALS_PROVIDER)
         .setLongRandom(
             new Publisher.LongRandom() {
               @Override
