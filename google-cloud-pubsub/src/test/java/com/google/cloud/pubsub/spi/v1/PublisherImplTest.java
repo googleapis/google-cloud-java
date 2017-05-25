@@ -16,14 +16,18 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import static org.junit.Assert.*;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.auth.Credentials;
 import com.google.cloud.pubsub.spi.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PublishResponse;
@@ -35,17 +39,14 @@ import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
 import io.grpc.internal.ServerImpl;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
-
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-
-import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
@@ -75,6 +76,16 @@ public class PublisherImplTest {
         @Override
         public ManagedChannel getChannel(Executor executor) {
           throw new IllegalArgumentException("testChannelprovider doesn't need an executor");
+        }
+      };
+
+  // Gax declares a similar type, which can be used after gax is upgraded.
+  @Deprecated
+  private static final CredentialsProvider NO_CREDENTIALS_PROVIDER =
+      new CredentialsProvider() {
+        @Override
+        public Credentials getCredentials() {
+          return null;
         }
       };
 
@@ -427,6 +438,7 @@ public class PublisherImplTest {
             .setDelayThreshold(Duration.ofMillis(11))
             .setElementCountThreshold(12L)
             .build());
+    builder.setCredentialsProvider(NO_CREDENTIALS_PROVIDER);
     builder.setFlowControlSettings(
         FlowControlSettings.newBuilder()
             .setMaxOutstandingRequestBytes(13)
@@ -661,6 +673,7 @@ public class PublisherImplTest {
     return Publisher.defaultBuilder(TEST_TOPIC)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setChannelProvider(TEST_CHANNEL_PROVIDER)
+        .setCredentialsProvider(NO_CREDENTIALS_PROVIDER)
         .setLongRandom(
             new Publisher.LongRandom() {
               @Override
