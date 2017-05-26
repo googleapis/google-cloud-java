@@ -31,6 +31,11 @@ import java.nio.channels.NonWritableChannelException;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.NoSuchFileException;
 
+import javax.net.ssl.SSLException;
+import java.io.EOFException;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+
 import static com.google.common.base.Preconditions.checkArgument;
 
 /**
@@ -137,29 +142,27 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
 
   private static boolean isReopenable(Throwable exs) {
     Throwable throwable = exs;
-    while (throwable != null) {
+    // ensures finite iteration
+    int maxDepth = 10;
+    while (throwable != null && maxDepth-- > 0) {
+      Throwable cause = throwable.getCause();
       if (throwable.getMessage().contains("Connection closed prematurely")
-          || throwable.getCause() instanceof javax.net.ssl.SSLException
-          || throwable.getCause() instanceof java.io.EOFException
-          || throwable.getCause() instanceof java.net.SocketException
-          || throwable.getCause() instanceof java.net.SocketTimeoutException) {
+          || cause instanceof SSLException
+          || cause instanceof EOFException
+          || cause instanceof SocketException
+          || cause instanceof SocketTimeoutException) {
         return true;
       }
-      throwable = throwable.getCause();
+      throwable = cause;
     }
     return false;
   }
 
   private void sleepForAttempt(int attempt) {
-    long delay = 1000;
+    long firstdelay = 1000;
     long maxDelay = 120_000;
     // exponential backoff
-    for (int i=0; i<attempt; i++) {
-      delay *= 2;
-      if (delay > maxDelay) {
-        delay = maxDelay;
-      }
-    }
+    long delay = firstdelay * Math.min(1 << attempt, maxDelay);
     try {
       Thread.sleep(delay);
     } catch (InterruptedException iex) {
