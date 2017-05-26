@@ -159,10 +159,8 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   }
 
   private void sleepForAttempt(int attempt) {
-    long firstdelay = 1000;
-    long maxDelay = 120_000;
-    // exponential backoff
-    long delay = firstdelay * Math.min(1 << attempt, maxDelay);
+    // exponential backoff, but let's bound it around 2min.
+    long delay = 1000L * (1L << Math.min(attempt, 7));
     try {
       Thread.sleep(delay);
     } catch (InterruptedException iex) {
