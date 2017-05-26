@@ -538,6 +538,7 @@ public class SubscriberTest {
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setLeaseAlarmsExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setChannelProvider(FixedChannelProvider.create(testChannel))
+        .setCredentialsProvider(PublisherImplTest.NO_CREDENTIALS_PROVIDER)
         .setClock(fakeExecutor.getClock());
   }
 

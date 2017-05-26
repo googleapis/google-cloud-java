@@ -81,7 +81,7 @@ public class PublisherImplTest {
 
   // Gax declares a similar type, which can be used after gax is upgraded.
   @Deprecated
-  private static final CredentialsProvider NO_CREDENTIALS_PROVIDER =
+  static final CredentialsProvider NO_CREDENTIALS_PROVIDER =
       new CredentialsProvider() {
         @Override
         public Credentials getCredentials() {
