@@ -17,10 +17,9 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.core.ApiClock;
-import com.google.api.gax.core.Distribution;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.FlowControlException;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.core.Distribution;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.OutstandingMessagesBatch.OutstandingMessage;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
@@ -46,7 +45,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
 
@@ -61,11 +59,8 @@ class MessageDispatcher {
   @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
   private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
-  private static final ScheduledExecutorService SHARED_ALARMS_EXECUTOR =
-      InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(2).build().getExecutor();
-
   private final ScheduledExecutorService executor;
-  private final ScheduledExecutorService alarmsExecutor;
+  private final ScheduledExecutorService systemExecutor;
   private final ApiClock clock;
 
   private final Duration ackExpirationPadding;
@@ -245,10 +240,10 @@ class MessageDispatcher {
       Distribution ackLatencyDistribution,
       FlowController flowController,
       ScheduledExecutorService executor,
-      @Nullable ScheduledExecutorService alarmsExecutor,
+      ScheduledExecutorService systemExecutor,
       ApiClock clock) {
     this.executor = executor;
-    this.alarmsExecutor = alarmsExecutor == null ? SHARED_ALARMS_EXECUTOR : alarmsExecutor;
+    this.systemExecutor = systemExecutor;
     this.ackExpirationPadding = ackExpirationPadding;
     this.maxAckExtensionPeriod = maxAckExtensionPeriod;
     this.receiver = receiver;
@@ -428,7 +423,7 @@ class MessageDispatcher {
     try {
       if (pendingAcksAlarm == null) {
         pendingAcksAlarm =
-            alarmsExecutor.schedule(
+            systemExecutor.schedule(
                 new Runnable() {
                   @Override
                   public void run() {
@@ -557,7 +552,7 @@ class MessageDispatcher {
         nextAckDeadlineExtensionAlarmTime = possibleNextAlarmTime;
 
         ackDeadlineExtensionAlarm =
-            alarmsExecutor.schedule(
+            systemExecutor.schedule(
                 new AckDeadlineAlarm(),
                 nextAckDeadlineExtensionAlarmTime.toEpochMilli() - clock.millisTime(),
                 TimeUnit.MILLISECONDS);
