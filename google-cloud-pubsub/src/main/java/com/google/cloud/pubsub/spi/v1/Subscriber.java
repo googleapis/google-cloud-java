@@ -27,6 +27,7 @@ import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.Distribution;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -89,6 +90,9 @@ public class Subscriber extends AbstractApiService {
   private static final Duration ACK_DEADLINE_UPDATE_PERIOD = Duration.ofMinutes(1);
   private static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
 
+  private static final ScheduledExecutorService SHARED_SYSTEM_EXECUTOR =
+      InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(6).build().getExecutor();
+
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
 
   private final SubscriptionName subscriptionName;
@@ -145,9 +149,8 @@ public class Subscriber extends AbstractApiService {
             }
           });
     }
-    if (builder.alarmsExecutorProvider != null) {
-      alarmsExecutor = builder.alarmsExecutorProvider.getExecutor();
-      if (builder.alarmsExecutorProvider.shouldAutoClose()) {
+      alarmsExecutor = builder.systemExecutorProvider.getExecutor();
+      if (builder.systemExecutorProvider.shouldAutoClose()) {
         closeables.add(
             new AutoCloseable() {
               @Override
@@ -156,9 +159,6 @@ public class Subscriber extends AbstractApiService {
               }
             });
       }
-    } else {
-      alarmsExecutor = null;
-    }
 
     channelProvider = builder.channelProvider;
     credentialsProvider = builder.credentialsProvider;
@@ -389,7 +389,7 @@ public class Subscriber extends AbstractApiService {
             .build();
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
-    @Nullable ExecutorProvider alarmsExecutorProvider;
+    ExecutorProvider systemExecutorProvider = FixedExecutorProvider.create(SHARED_SYSTEM_EXECUTOR);
     ChannelProvider channelProvider =
         SubscriptionAdminSettings.defaultChannelProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
@@ -472,7 +472,7 @@ public class Subscriber extends AbstractApiService {
      * a shared one will be used by all {@link Subscriber} instances.
      */
     public Builder setLeaseAlarmsExecutorProvider(ExecutorProvider executorProvider) {
-      this.alarmsExecutorProvider = Preconditions.checkNotNull(executorProvider);
+      this.systemExecutorProvider = Preconditions.checkNotNull(executorProvider);
       return this;
     }
 
