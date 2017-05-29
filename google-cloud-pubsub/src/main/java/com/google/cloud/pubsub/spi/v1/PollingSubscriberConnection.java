@@ -32,10 +32,8 @@ import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
-import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberFutureStub;
 import com.google.pubsub.v1.Subscription;
-import io.grpc.Channel;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -69,7 +67,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
       Duration ackExpirationPadding,
       Duration maxAckExtensionPeriod,
       Distribution ackLatencyDistribution,
-      Channel channel,
+      SubscriberFutureStub stub,
       FlowController flowController,
       @Nullable Long maxDesiredPulledMessages,
       ScheduledExecutorService executor,
@@ -77,7 +75,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
       ApiClock clock) {
     this.subscription = subscription;
     this.pollingExecutor = systemExecutor;
-    stub = SubscriberGrpc.newFutureStub(channel);
+    this.stub = stub;
     messageDispatcher =
         new MessageDispatcher(
             receiver,

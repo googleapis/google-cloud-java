@@ -23,20 +23,24 @@ import com.google.api.core.CurrentMillisClock;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.Distribution;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
+import com.google.pubsub.v1.SubscriberGrpc;
+import com.google.pubsub.v1.SubscriberGrpc.SubscriberFutureStub;
 import com.google.pubsub.v1.SubscriptionName;
+import io.grpc.CallCredentials;
 import io.grpc.ManagedChannel;
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
+import io.grpc.auth.MoreCallCredentials;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -103,6 +107,7 @@ public class Subscriber extends AbstractApiService {
   private final int numChannels;
   private final FlowController flowController;
   private final ChannelProvider channelProvider;
+  private final CredentialsProvider credentialsProvider;
   private final List<ManagedChannel> channels;
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
@@ -156,6 +161,7 @@ public class Subscriber extends AbstractApiService {
       }
 
     channelProvider = builder.channelProvider;
+    credentialsProvider = builder.credentialsProvider;
 
     numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
     channels = new ArrayList<ManagedChannel>(numChannels);
@@ -264,7 +270,7 @@ public class Subscriber extends AbstractApiService {
 
   @Override
   protected void doStop() {
-    stopAllStreamingConnections();
+    // stopAllStreamingConnections();
     stopAllPollingConnections();
     try {
       for (AutoCloseable closeable : closeables) {
@@ -276,88 +282,16 @@ public class Subscriber extends AbstractApiService {
     }
   }
 
-  private void startStreamingConnections() {
-    synchronized (streamingSubscriberConnections) {
-      for (int i = 0; i < numChannels; i++) {
-        streamingSubscriberConnections.add(
-            new StreamingSubscriberConnection(
-                cachedSubscriptionNameString,
-                receiver,
-                ackExpirationPadding,
-                maxAckExtensionPeriod,
-                streamAckDeadlineSeconds,
-                ackLatencyDistribution,
-                channels.get(i),
-                flowController,
-                executor,
-                alarmsExecutor,
-                clock));
-      }
-      startConnections(
-          streamingSubscriberConnections,
-          new Listener() {
-            @Override
-            public void failed(State from, Throwable failure) {
-              // If a connection failed is because of a fatal error, we should fail the
-              // whole subscriber.
-              stopAllStreamingConnections();
-              if (failure instanceof StatusRuntimeException
-                  && ((StatusRuntimeException) failure).getStatus().getCode()
-                      == Status.Code.UNIMPLEMENTED) {
-                logger.info("Unable to open streaming connections, falling back to polling.");
-                startPollingConnections();
-                return;
-              }
-              notifyFailed(failure);
-            }
-          });
-    }
-
-    ackDeadlineUpdater =
-        executor.scheduleAtFixedRate(
-            new Runnable() {
-              @Override
-              public void run() {
-                // It is guaranteed this will be <= MAX_ACK_DEADLINE_SECONDS, the max of the API.
-                long ackLatency =
-                    ackLatencyDistribution.getNthPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
-                if (ackLatency > 0) {
-                  long ackExpirationPaddingMillis = ackExpirationPadding.toMillis();
-                  int possibleStreamAckDeadlineSeconds =
-                      Math.max(
-                          MIN_ACK_DEADLINE_SECONDS,
-                          Ints.saturatedCast(
-                              Math.max(ackLatency,
-                                  TimeUnit.MILLISECONDS.toSeconds(ackExpirationPaddingMillis))));
-                  if (streamAckDeadlineSeconds != possibleStreamAckDeadlineSeconds) {
-                    streamAckDeadlineSeconds = possibleStreamAckDeadlineSeconds;
-                    logger.log(
-                        Level.FINER,
-                        "Updating stream deadline to {0} seconds.",
-                        streamAckDeadlineSeconds);
-                    for (StreamingSubscriberConnection subscriberConnection :
-                        streamingSubscriberConnections) {
-                      subscriberConnection.updateStreamAckDeadline(streamAckDeadlineSeconds);
-                    }
-                  }
-                }
-              }
-            },
-            ACK_DEADLINE_UPDATE_PERIOD.toMillis(),
-            ACK_DEADLINE_UPDATE_PERIOD.toMillis(),
-            TimeUnit.MILLISECONDS);
-  }
-
-  private void stopAllStreamingConnections() {
-    stopConnections(streamingSubscriberConnections);
-    if (ackDeadlineUpdater != null) {
-      ackDeadlineUpdater.cancel(true);
-    }
-  }
-
-  private void startPollingConnections() {
+  private void startPollingConnections() throws IOException {
     synchronized (pollingSubscriberConnections) {
+      Credentials credentials = credentialsProvider.getCredentials();
+      CallCredentials callCredentials =
+          credentials == null ? null : MoreCallCredentials.from(credentials);
       for (int i = 0; i < numChannels; i++) {
+        SubscriberFutureStub stub = SubscriberGrpc.newFutureStub(channels.get(i));
+        if (callCredentials != null) {
+          stub = stub.withCallCredentials(callCredentials);
+        }
         pollingSubscriberConnections.add(
             new PollingSubscriberConnection(
                 cachedSubscriptionNameString,
@@ -365,7 +299,7 @@ public class Subscriber extends AbstractApiService {
                 ackExpirationPadding,
                 maxAckExtensionPeriod,
                 ackLatencyDistribution,
-                channels.get(i),
+                stub,
                 flowController,
                 flowControlSettings.getMaxOutstandingElementCount(),
                 executor,
@@ -460,6 +394,8 @@ public class Subscriber extends AbstractApiService {
         SubscriptionAdminSettings.defaultChannelProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
             .build();
+    CredentialsProvider credentialsProvider =
+        SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
 
     Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
@@ -522,6 +458,12 @@ public class Subscriber extends AbstractApiService {
     /** Gives the ability to set a custom executor. */
     public Builder setExecutorProvider(ExecutorProvider executorProvider) {
       this.executorProvider = Preconditions.checkNotNull(executorProvider);
+      return this;
+    }
+
+    /** {@code CredentialsProvider} to use to create Credentials to authenticate calls. */
+    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
+      this.credentialsProvider = Preconditions.checkNotNull(credentialsProvider);
       return this;
     }
 

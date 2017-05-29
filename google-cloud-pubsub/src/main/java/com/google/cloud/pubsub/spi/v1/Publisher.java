@@ -618,6 +618,7 @@ public class Publisher {
       return this;
     }
 
+    /** {@code CredentialsProvider} to use to create Credentials to authenticate calls. */
     public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
       this.credentialsProvider = Preconditions.checkNotNull(credentialsProvider);
       return this;
