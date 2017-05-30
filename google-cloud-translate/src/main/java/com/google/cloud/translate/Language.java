@@ -29,7 +29,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/translate/v2/discovering-supported-languages-with-rest">
  *     Discovering Supported Languages</a>
- * @see <a href="https://cloud.google.com/translate/v2/translate-reference#supported_languages">
+ * @see <a href="https://cloud.google.com/translate/docs/languages">
  *     Supported Languages</a>
  */
 public class Language implements Serializable {
