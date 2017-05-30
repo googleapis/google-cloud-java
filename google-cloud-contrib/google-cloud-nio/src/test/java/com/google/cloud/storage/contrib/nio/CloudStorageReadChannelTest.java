@@ -85,7 +85,7 @@ public class CloudStorageReadChannelTest {
   public void testReadRetry() throws IOException {
     ByteBuffer buffer = ByteBuffer.allocate(1);
     when(gcsChannel.read(eq(buffer)))
-        .thenThrow(new StorageException(new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040")))
+        .thenThrow(new StorageException(new IOException("outer", new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040"))))
         .thenReturn(1);
     assertThat(chan.position()).isEqualTo(0L);
     assertThat(chan.read(buffer)).isEqualTo(1);

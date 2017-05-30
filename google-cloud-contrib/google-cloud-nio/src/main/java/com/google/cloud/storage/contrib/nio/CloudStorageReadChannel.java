@@ -113,20 +113,26 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
           amt = channel.read(dst);
           break;
         } catch (StorageException exs) {
-          if (reopens < maxChannelReopens && isReopenable(exs)) {
+          if (isReopenable(exs)) {
             // these errors aren't marked as retryable since the channel is closed;
             // but here at this higher level we can retry them.
             reopens++;
+            if (reopens > maxChannelReopens) {
+              throw new StorageException(exs.getCode(), "All reopens failed", exs);
+            }
             sleepForAttempt(reopens);
             innerOpen();
             continue;
-          } else if (retries < maxRetries &&
-              (exs.isRetryable() || exs.getCode() == 500 || exs.getCode() == 503)) {
+          } else if (exs.isRetryable() || exs.getCode() == 500 || exs.getCode() == 503) {
             retries++;
+            if (retries > maxRetries) {
+              throw new StorageException(exs.getCode(), "All retries failed", exs);
+            }
             sleepForAttempt(retries);
             continue;
           }
-          throw new StorageException(exs.getCode(), "All retries failed", exs);
+          // exception is neither reopenable nor retryable
+          throw exs;
         }
       }
       if (amt > 0) {
@@ -145,21 +151,21 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     // ensures finite iteration
     int maxDepth = 10;
     while (throwable != null && maxDepth-- > 0) {
-      Throwable cause = throwable.getCause();
       if (throwable.getMessage().contains("Connection closed prematurely")
-          || cause instanceof SSLException
-          || cause instanceof EOFException
-          || cause instanceof SocketException
-          || cause instanceof SocketTimeoutException) {
+          || throwable instanceof SSLException
+          || throwable instanceof EOFException
+          || throwable instanceof SocketException
+          || throwable instanceof SocketTimeoutException) {
         return true;
       }
-      throwable = cause;
+      throwable = throwable.getCause();
     }
     return false;
   }
 
   private void sleepForAttempt(int attempt) {
     // exponential backoff, but let's bound it around 2min.
+    // aggressive backoff because we're dealing with unusual cases.
     long delay = 1000L * (1L << Math.min(attempt, 7));
     try {
       Thread.sleep(delay);
