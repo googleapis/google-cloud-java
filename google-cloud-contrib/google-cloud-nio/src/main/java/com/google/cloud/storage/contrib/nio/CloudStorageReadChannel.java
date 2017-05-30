@@ -126,6 +126,12 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
           } else if (exs.isRetryable() || exs.getCode() == 500 || exs.getCode() == 503) {
             retries++;
             if (retries > maxRetries) {
+              // this exception will be marked as retriable in most cases since
+              // it's based on the code. It may be confusing to see a retriable error
+              // that says "all retries failed" but understand this to mean:
+              // "While in principle you should be able to retry, we already did that
+              // for you a few times and it still didn't work so we wouldn't recommend
+              // further retries."
               throw new StorageException(exs.getCode(), "All retries failed", exs);
             }
             sleepForAttempt(retries);
