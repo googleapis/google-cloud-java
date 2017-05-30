@@ -60,7 +60,7 @@ public interface DatabaseClient {
   ReadContext singleUse();
 
   /**
-   * Returns a context in which a single read can be performed.
+   * Returns a context in which a single read can be performed at the given timestamp bound.
    *
    * @param bound the timestamp bound at which to perform the read
    */
@@ -75,9 +75,9 @@ public interface DatabaseClient {
   ReadOnlyTransaction singleUseReadOnlyTransaction();
 
   /**
-   * Returns a read-only transaction context in which a single read or query can be performed. This
-   * method differs from {@link #singleUse(TimestampBound)} in that the read timestamp used may be
-   * inspected after the read has returned data or finished successfully.
+   * Returns a read-only transaction context in which a single read or query can be performed at the
+   * given timestamp bound. This method differs from {@link #singleUse(TimestampBound)} in that the
+   * read timestamp used may be inspected after the read has returned data or finished successfully.
    *
    * @param bound the timestamp bound at which to perform the read
    */
@@ -93,8 +93,8 @@ public interface DatabaseClient {
 
   /**
    * Returns a read-only transaction context in which a multiple reads and/or queries can be
-   * performed. All reads/queries will use the same timestamp, and the timestamp can be inspected
-   * after any read/query has returned data or finished successfully.
+   * performed at the given timestamp bound. All reads/queries will use the same timestamp, and the
+   * timestamp can be inspected after any read/query has returned data or finished successfully.
    *
    * <p>Note that the bounded staleness modes, {@link TimestampBound.Mode#MIN_READ_TIMESTAMP} and
    * {@link TimestampBound.Mode#MAX_STALENESS}, are not supported for multi-use read-only
