@@ -151,7 +151,8 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     // ensures finite iteration
     int maxDepth = 10;
     while (throwable != null && maxDepth-- > 0) {
-      if (throwable.getMessage().contains("Connection closed prematurely")
+      if ((throwable.getMessage() != null
+          && throwable.getMessage().contains("Connection closed prematurely"))
           || throwable instanceof SSLException
           || throwable instanceof EOFException
           || throwable instanceof SocketException
