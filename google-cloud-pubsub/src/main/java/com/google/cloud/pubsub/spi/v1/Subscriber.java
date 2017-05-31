@@ -335,9 +335,10 @@ public class Subscriber extends AbstractApiService {
       List<? extends ApiService> connections, final ApiService.Listener connectionsListener) {
     for (ApiService subscriber : connections) {
       subscriber.addListener(connectionsListener, executor);
-      // Starting each connection submits a blocking task to the executor.
-      // We start connections one at a time to avoid swamping executor with blocking tasks.
-      subscriber.startAsync().awaitRunning();
+      subscriber.startAsync();
+    }
+    for (ApiService subscriber : connections) {
+      subscriber.awaitRunning();
     }
   }
 
@@ -468,10 +469,10 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * Gives the ability to set a custom executor for managing lease extensions. If none is provided
-     * a shared one will be used by all {@link Subscriber} instances.
+     * Gives the ability to set a custom executor for polling and managing lease extensions. If none
+     * is provided a shared one will be used by all {@link Subscriber} instances.
      */
-    public Builder setLeaseAlarmsExecutorProvider(ExecutorProvider executorProvider) {
+    public Builder setSystemExecutorProvider(ExecutorProvider executorProvider) {
       this.systemExecutorProvider = Preconditions.checkNotNull(executorProvider);
       return this;
     }
