@@ -730,12 +730,18 @@ public class ValueTest {
     reserializeAndAssert(Value.float64Array(BrokenSerializationList.of(.1, .2, .3)));
     reserializeAndAssert(Value.float64Array((Iterable<Double>) null));
 
-    reserializeAndAssert(Value.stringArray(BrokenSerializationList.of("a", "b")));
+    BrokenSerializationList<String> of = BrokenSerializationList.of("a", "b");
+    reserializeAndAssert(Value.stringArray(of));
     reserializeAndAssert(Value.stringArray(null));
 
     reserializeAndAssert(
         Value.bytesArray(BrokenSerializationList.of(newByteArray("a"), newByteArray("b"))));
     reserializeAndAssert(Value.bytesArray(null));
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void verifyBrokenSerialization() {
+    reserializeAndAssert(BrokenSerializationList.of(1, 2, 3));
   }
 
   private static class BrokenSerializationList<T> extends ForwardingList<T> implements
