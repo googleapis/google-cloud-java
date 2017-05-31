@@ -77,6 +77,7 @@ import com.google.spanner.v1.TypeCode;
 import io.grpc.Context;
 import io.grpc.ManagedChannel;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -1497,142 +1498,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  /**
-   * Base class for gRPC/proto-based structs.
-   *
-   * @param <R> the type of row data
-   */
-  private static class BaseStruct<R> extends Struct {
-    protected final Type type;
-    protected final List<Object> rowData;
-
-    private BaseStruct(Type type, List<Object> rowData) {
-      this.type = type;
-      this.rowData = rowData;
-    }
-
-    Struct immutableCopy() {
-      return new BaseStruct<R>(type, new ArrayList<>(rowData));
-    }
-
-    @Override
-    public Type getType() {
-      return type;
-    }
-
-    @Override
-    public boolean isNull(int columnIndex) {
-      return rowData.get(columnIndex) == null;
-    }
-
-    @Override
-    protected boolean getBooleanInternal(int columnIndex) {
-      return (Boolean) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected long getLongInternal(int columnIndex) {
-      return (Long) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected double getDoubleInternal(int columnIndex) {
-      return (Double) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected String getStringInternal(int columnIndex) {
-      return (String) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected ByteArray getBytesInternal(int columnIndex) {
-      return (ByteArray) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected Timestamp getTimestampInternal(int columnIndex) {
-      return (Timestamp) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected Date getDateInternal(int columnIndex) {
-      return (Date) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected boolean[] getBooleanArrayInternal(int columnIndex) {
-      @SuppressWarnings("unchecked") // We know ARRAY<BOOL> produces a List<Boolean>.
-      List<Boolean> values = (List<Boolean>) rowData.get(columnIndex);
-      boolean[] r = new boolean[values.size()];
-      for (int i = 0; i < values.size(); ++i) {
-        if (values.get(i) == null) {
-          throw throwNotNull(columnIndex);
-        }
-        r[i] = values.get(i);
-      }
-      return r;
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<BOOL> produces a List<Boolean>.
-    protected List<Boolean> getBooleanListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<Boolean>) rowData.get(columnIndex));
-    }
-
-    @Override
-    protected long[] getLongArrayInternal(int columnIndex) {
-      return getLongListInternal(columnIndex).toPrimitiveArray(columnIndex);
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<INT64> produces an Int64Array.
-    protected Int64Array getLongListInternal(int columnIndex) {
-      return (Int64Array) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected double[] getDoubleArrayInternal(int columnIndex) {
-      return getDoubleListInternal(columnIndex).toPrimitiveArray(columnIndex);
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<FLOAT64> produces a Float64Array.
-    protected Float64Array getDoubleListInternal(int columnIndex) {
-      return (Float64Array) rowData.get(columnIndex);
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<STRING> produces a List<String>.
-    protected List<String> getStringListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<String>) rowData.get(columnIndex));
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<BYTES> produces a List<ByteArray>.
-    protected List<ByteArray> getBytesListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<ByteArray>) rowData.get(columnIndex));
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<TIMESTAMP> produces a List<Timestamp>.
-    protected List<Timestamp> getTimestampListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<Timestamp>) rowData.get(columnIndex));
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<DATE> produces a List<Date>.
-    protected List<Date> getDateListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<Date>) rowData.get(columnIndex));
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<STRUCT<...>> produces a List<STRUCT>.
-    protected List<Struct> getStructListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<Struct>) rowData.get(columnIndex));
-    }
-  }
-
   @VisibleForTesting
   abstract static class AbstractResultSet<R> extends AbstractStructReader implements ResultSet {
     interface Listener {
@@ -1649,7 +1514,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       void onDone();
     }
 
-    protected abstract BaseStruct<R> currRow();
+    protected abstract GrpcStruct currRow();
 
     @Override
     public Struct getCurrentRowAsStruct() {
@@ -1770,7 +1635,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    protected BaseStruct<List<Object>> currRow() {
+    protected GrpcStruct currRow() {
       checkState(!closed, "ResultSet is closed");
       checkState(currRow != null, "next() call required");
       return currRow;
@@ -1829,9 +1694,85 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  private static class GrpcStruct extends BaseStruct<List<Object>> {
+  private static class GrpcStruct extends Struct implements Serializable {
+
+    protected final Type type;
+    protected final List<Object> rowData;
+
+    /**
+     * Builds an immutable version of this struct using {@link Struct#newBuilder()} which is used
+     * as a serialization proxy.
+     */
+    private Object writeReplace() {
+      Builder builder = Struct.newBuilder();
+      List<Type.StructField> structFields = getType().getStructFields();
+      for (int i = 0; i < structFields.size(); i++) {
+        Type.StructField field = structFields.get(i);
+        String fieldName = field.getName();
+        Object value = rowData.get(i);
+        Type fieldType = field.getType();
+        switch (fieldType.getCode()) {
+          case BOOL:
+            builder.set(fieldName).to((Boolean) value);
+            break;
+          case INT64:
+            builder.set(fieldName).to((Long) value);
+            break;
+          case FLOAT64:
+            builder.set(fieldName).to((Double) value);
+            break;
+          case STRING:
+            builder.set(fieldName).to((String) value);
+            break;
+          case BYTES:
+            builder.set(fieldName).to((ByteArray) value);
+            break;
+          case TIMESTAMP:
+            builder.set(fieldName).to((Timestamp) value);
+            break;
+          case DATE:
+            builder.set(fieldName).to((Date) value);
+            break;
+          case ARRAY:
+            switch(fieldType.getArrayElementType().getCode()) {
+              case BOOL:
+                builder.set(fieldName).toBoolArray((Iterable<Boolean>) value);
+                break;
+              case INT64:
+                builder.set(fieldName).toInt64Array((Iterable<Long>) value);
+                break;
+              case FLOAT64:
+                builder.set(fieldName).toFloat64Array((Iterable<Double>) value);
+                break;
+              case STRING:
+                builder.set(fieldName).toStringArray((Iterable<String>) value);
+                break;
+              case BYTES:
+                builder.set(fieldName).toBytesArray((Iterable<ByteArray>) value);
+                break;
+              case TIMESTAMP:
+                builder.set(fieldName).toTimestampArray((Iterable<Timestamp>) value);
+                break;
+              case DATE:
+                builder.set(fieldName).toDateArray((Iterable<Date>) value);
+                break;
+              case STRUCT:
+                builder.add(fieldName, fieldType.getStructFields(), (Iterable<Struct>) value);
+                break;
+            }
+            break;
+          case STRUCT: // Not a legal top-level field type.
+          default:
+            throw new AssertionError("Unhandled type code: " + fieldType.getCode());
+        }
+
+      }
+      return builder.build();
+    }
+
     GrpcStruct(Type type, List<Object> rowData) {
-      super(type, rowData);
+      this.type = type;
+      this.rowData = rowData;
     }
 
     boolean consumeRow(Iterator<com.google.protobuf.Value> iterator) {
@@ -1988,6 +1929,127 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 + " but was "
                 + proto.getKindCase());
       }
+    }
+
+    Struct immutableCopy() {
+      return new GrpcStruct(type, new ArrayList<>(rowData));
+    }
+
+    @Override
+    public Type getType() {
+      return type;
+    }
+
+    @Override
+    public boolean isNull(int columnIndex) {
+      return rowData.get(columnIndex) == null;
+    }
+
+    @Override
+    protected boolean getBooleanInternal(int columnIndex) {
+      return (Boolean) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected long getLongInternal(int columnIndex) {
+      return (Long) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected double getDoubleInternal(int columnIndex) {
+      return (Double) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected String getStringInternal(int columnIndex) {
+      return (String) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected ByteArray getBytesInternal(int columnIndex) {
+      return (ByteArray) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected Timestamp getTimestampInternal(int columnIndex) {
+      return (Timestamp) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected Date getDateInternal(int columnIndex) {
+      return (Date) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected boolean[] getBooleanArrayInternal(int columnIndex) {
+      @SuppressWarnings("unchecked") // We know ARRAY<BOOL> produces a List<Boolean>.
+      List<Boolean> values = (List<Boolean>) rowData.get(columnIndex);
+      boolean[] r = new boolean[values.size()];
+      for (int i = 0; i < values.size(); ++i) {
+        if (values.get(i) == null) {
+          throw throwNotNull(columnIndex);
+        }
+        r[i] = values.get(i);
+      }
+      return r;
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<BOOL> produces a List<Boolean>.
+    protected List<Boolean> getBooleanListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<Boolean>) rowData.get(columnIndex));
+    }
+
+    @Override
+    protected long[] getLongArrayInternal(int columnIndex) {
+      return getLongListInternal(columnIndex).toPrimitiveArray(columnIndex);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<INT64> produces an Int64Array.
+    protected Int64Array getLongListInternal(int columnIndex) {
+      return (Int64Array) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected double[] getDoubleArrayInternal(int columnIndex) {
+      return getDoubleListInternal(columnIndex).toPrimitiveArray(columnIndex);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<FLOAT64> produces a Float64Array.
+    protected Float64Array getDoubleListInternal(int columnIndex) {
+      return (Float64Array) rowData.get(columnIndex);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<STRING> produces a List<String>.
+    protected List<String> getStringListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<String>) rowData.get(columnIndex));
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<BYTES> produces a List<ByteArray>.
+    protected List<ByteArray> getBytesListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<ByteArray>) rowData.get(columnIndex));
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<TIMESTAMP> produces a List<Timestamp>.
+    protected List<Timestamp> getTimestampListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<Timestamp>) rowData.get(columnIndex));
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<DATE> produces a List<Date>.
+    protected List<Date> getDateListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<Date>) rowData.get(columnIndex));
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<STRUCT<...>> produces a List<STRUCT>.
+    protected List<Struct> getStructListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<Struct>) rowData.get(columnIndex));
     }
   }
 

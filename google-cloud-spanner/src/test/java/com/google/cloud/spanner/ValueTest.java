@@ -22,8 +22,13 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
+import com.google.common.collect.ForwardingList;
 import com.google.common.collect.Lists;
 import com.google.common.testing.EqualsTester;
+
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -713,28 +718,50 @@ public class ValueTest {
     reserializeAndAssert(Value.bytes(newByteArray("abc")));
     reserializeAndAssert(Value.bytes(null));
 
-    reserializeAndAssert(
-        Value.boolArray(new boolean[] {false, true}));
-    reserializeAndAssert(Value.boolArray(Arrays.asList(true, false)));
+    reserializeAndAssert(Value.boolArray(new boolean[] { false, true }));
+    reserializeAndAssert(Value.boolArray(BrokenSerializationList.of(true, false)));
     reserializeAndAssert(Value.boolArray((Iterable<Boolean>) null));
 
-    reserializeAndAssert(
-        Value.int64Array(Arrays.asList(1L, 2L)));
-    reserializeAndAssert(
-        Value.int64Array(new long[] {1L, 2L}));
+    reserializeAndAssert(Value.int64Array(BrokenSerializationList.of(1L, 2L)));
+    reserializeAndAssert(Value.int64Array(new long[] { 1L, 2L }));
     reserializeAndAssert(Value.int64Array((Iterable<Long>) null));
 
-    reserializeAndAssert(
-        Value.float64Array(new double[] {.1, .2}));
-    reserializeAndAssert(Value.float64Array(Arrays.asList(.1, .2, .3)));
+    reserializeAndAssert(Value.float64Array(new double[] { .1, .2 }));
+    reserializeAndAssert(Value.float64Array(BrokenSerializationList.of(.1, .2, .3)));
     reserializeAndAssert(Value.float64Array((Iterable<Double>) null));
 
-    reserializeAndAssert(
-        Value.stringArray(Arrays.asList("a", "b")));
+    reserializeAndAssert(Value.stringArray(BrokenSerializationList.of("a", "b")));
     reserializeAndAssert(Value.stringArray(null));
 
     reserializeAndAssert(
-        Value.bytesArray(Arrays.asList(newByteArray("a"), newByteArray("b"))));
+        Value.bytesArray(BrokenSerializationList.of(newByteArray("a"), newByteArray("b"))));
     reserializeAndAssert(Value.bytesArray(null));
+  }
+
+  private static class BrokenSerializationList<T> extends ForwardingList<T> implements
+      Serializable {
+    private final List<T> delegate;
+
+    public static <T> BrokenSerializationList<T> of(T... values) {
+      return new BrokenSerializationList<>(Arrays.asList(values));
+    }
+
+    private BrokenSerializationList(List<T> delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override protected List<T> delegate() {
+      return delegate;
+    }
+    private void readObject(java.io.ObjectInputStream stream)
+        throws IOException, ClassNotFoundException {
+      throw new IllegalStateException("Serialization disabled");
+    }
+    private void writeObject(java.io.ObjectOutputStream stream)
+        throws IOException {
+      throw new IllegalStateException("Serialization disabled");
+    }
+
+
   }
 }

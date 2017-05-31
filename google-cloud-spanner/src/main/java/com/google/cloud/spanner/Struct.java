@@ -27,6 +27,7 @@ import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -42,7 +43,7 @@ import javax.annotation.concurrent.Immutable;
  * <p>{@code Struct} instances are immutable.
  */
 @Immutable
-public abstract class Struct extends AbstractStructReader {
+public abstract class Struct extends AbstractStructReader implements Serializable {
   // Only implementations within the package are allowed.
   Struct() {}
 
