@@ -16,14 +16,14 @@
 
 package com.google.cloud.storage.contrib.nio;
 
-import static com.google.common.base.Preconditions.checkArgument;
-
 import com.google.cloud.ReadChannel;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 
+import javax.annotation.CheckReturnValue;
+import javax.annotation.concurrent.ThreadSafe;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
@@ -31,8 +31,12 @@ import java.nio.channels.NonWritableChannelException;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.NoSuchFileException;
 
-import javax.annotation.CheckReturnValue;
-import javax.annotation.concurrent.ThreadSafe;
+import javax.net.ssl.SSLException;
+import java.io.EOFException;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * Cloud Storage read channel.
@@ -101,7 +105,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
       checkOpen();
       int amt;
       int retries = 0;
-      int maxRetries = 3;
+      int maxRetries = Math.max(3, maxChannelReopens);
       dst.mark();
       while (true) {
         try {
@@ -109,18 +113,31 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
           amt = channel.read(dst);
           break;
         } catch (StorageException exs) {
-          if (exs.getMessage().contains("Connection closed prematurely") && reopens < maxChannelReopens) {
-            // this error isn't marked as retryable since the channel is closed;
-            // but here at this higher level we can retry it.
+          if (isReopenable(exs)) {
+            // these errors aren't marked as retryable since the channel is closed;
+            // but here at this higher level we can retry them.
             reopens++;
+            if (reopens > maxChannelReopens) {
+              throw new StorageException(exs.getCode(), "All reopens failed", exs);
+            }
             sleepForAttempt(reopens);
             innerOpen();
             continue;
-          } else if ((exs.getCode() == 500 || exs.getCode() == 503)  && retries < maxRetries) {
+          } else if (exs.isRetryable() || exs.getCode() == 500 || exs.getCode() == 503) {
             retries++;
+            if (retries > maxRetries) {
+              // this exception will be marked as retriable in most cases since
+              // it's based on the code. It may be confusing to see a retriable error
+              // that says "all retries failed" but understand this to mean:
+              // "While in principle you should be able to retry, we already did that
+              // for you a few times and it still didn't work so we wouldn't recommend
+              // further retries."
+              throw new StorageException(exs.getCode(), "All retries failed", exs);
+            }
             sleepForAttempt(retries);
             continue;
           }
+          // exception is neither reopenable nor retryable
           throw exs;
         }
       }
@@ -135,9 +152,30 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     }
   }
 
+  private static boolean isReopenable(Throwable exs) {
+    Throwable throwable = exs;
+    // ensures finite iteration
+    int maxDepth = 10;
+    while (throwable != null && maxDepth-- > 0) {
+      if ((throwable.getMessage() != null
+          && throwable.getMessage().contains("Connection closed prematurely"))
+          || throwable instanceof SSLException
+          || throwable instanceof EOFException
+          || throwable instanceof SocketException
+          || throwable instanceof SocketTimeoutException) {
+        return true;
+      }
+      throwable = throwable.getCause();
+    }
+    return false;
+  }
+
   private void sleepForAttempt(int attempt) {
+    // exponential backoff, but let's bound it around 2min.
+    // aggressive backoff because we're dealing with unusual cases.
+    long delay = 1000L * (1L << Math.min(attempt, 7));
     try {
-      Thread.sleep((attempt - 1) * 500);
+      Thread.sleep(delay);
     } catch (InterruptedException iex) {
       // reset interrupt flag
       Thread.currentThread().interrupt();

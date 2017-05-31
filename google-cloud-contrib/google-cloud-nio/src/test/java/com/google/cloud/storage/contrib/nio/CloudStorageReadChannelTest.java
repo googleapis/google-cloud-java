@@ -38,6 +38,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import javax.net.ssl.SSLHandshakeException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
@@ -84,7 +85,19 @@ public class CloudStorageReadChannelTest {
   public void testReadRetry() throws IOException {
     ByteBuffer buffer = ByteBuffer.allocate(1);
     when(gcsChannel.read(eq(buffer)))
-        .thenThrow(new StorageException(new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040")))
+        .thenThrow(new StorageException(new IOException("outer", new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040"))))
+        .thenReturn(1);
+    assertThat(chan.position()).isEqualTo(0L);
+    assertThat(chan.read(buffer)).isEqualTo(1);
+    assertThat(chan.position()).isEqualTo(1L);
+    verify(gcsChannel, times(2)).read(any(ByteBuffer.class));
+  }
+
+  @Test
+  public void testReadRetrySSLHandshake() throws IOException {
+    ByteBuffer buffer = ByteBuffer.allocate(1);
+    when(gcsChannel.read(eq(buffer)))
+        .thenThrow(new StorageException(new IOException("something", new IOException("thing", new SSLHandshakeException("connection closed due to throttling")))))
         .thenReturn(1);
     assertThat(chan.position()).isEqualTo(0L);
     assertThat(chan.read(buffer)).isEqualTo(1);
