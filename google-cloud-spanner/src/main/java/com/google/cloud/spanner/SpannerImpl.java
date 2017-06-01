@@ -250,6 +250,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
     }
   }
+  
+  @Override
+  public BatchClient getBatchClient(DatabaseId db) {
+    return new BatchClientImpl(db, SpannerImpl.this);
+  }
 
   @Override
   public ApiFuture<Void> closeAsync() {
@@ -835,7 +840,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     void invalidate();
   }
 
-  private abstract static class AbstractReadContext
+  abstract static class AbstractReadContext
       implements ReadContext, AbstractResultSet.Listener, SessionTransaction {
     final Object lock = new Object();
     final SessionImpl session;
@@ -1410,18 +1415,18 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  private class MultiUseReadOnlyTransaction extends AbstractReadContext
+  static class MultiUseReadOnlyTransaction extends AbstractReadContext
       implements ReadOnlyTransaction {
-    private final TimestampBound bound;
+    private TimestampBound bound;
     private final Object txnLock = new Object();
 
     @GuardedBy("txnLock")
-    private Timestamp timestamp;
+    Timestamp timestamp;
 
     @GuardedBy("txnLock")
-    private ByteString transactionId;
+    ByteString transactionId;
 
-    private MultiUseReadOnlyTransaction(
+    MultiUseReadOnlyTransaction(
         SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
       super(session, rpc, defaultPrefetchChunks);
       checkArgument(
@@ -1431,6 +1436,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               + " Create a single-use read or read-only transaction instead.",
           bound.getMode());
       this.bound = bound;
+    }
+    
+    MultiUseReadOnlyTransaction(
+        SessionImpl session,
+        ByteString transactionId,
+        Timestamp timestamp,
+        SpannerRpc rpc,
+        int defaultPrefetchChunks) {
+      super(session, rpc, defaultPrefetchChunks);
+      this.transactionId = transactionId;
+      this.timestamp = timestamp;
     }
 
     @Override

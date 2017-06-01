@@ -34,9 +34,16 @@ public interface Spanner extends Service<SpannerOptions> {
   DatabaseClient getDatabaseClient(DatabaseId db);
 
   /**
+   * Returns a {@code BatchClient} for the given database. It will create and use the same ReadOnly 
+   * transaction for all batch operations performed. 
+   */
+  BatchClient getBatchClient(DatabaseId db);
+
+  /**
    * Closes all the clients associated with this instance and frees up all the resources. This
    * method does not block. Return future will complete when cleanup is done. TODO(user): Add
    * logging and tracking of leaked sessions.
    */
   ApiFuture<Void> closeAsync();
+
 }
