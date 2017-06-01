@@ -25,8 +25,6 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.BatchingSettings;
-import com.google.api.gax.batching.FlowControlSettings;
-import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.ChannelProvider;
@@ -122,28 +120,6 @@ public class PublisherSnippets {
     Publisher publisher = Publisher.defaultBuilder(topicName)
         .setRetrySettings(retrySettings).build();
     // [END pubsub_publisher_retry_settings]
-    return publisher;
-  }
-
-  public Publisher getPublisherWithCustomFlowControlSettings(TopicName topicName) throws Exception {
-    // [START pubsub_publisher_flow_settings]
-
-    // Flow control settings restrict the number of outstanding publish requests
-    int maxOutstandingBatches = 20;
-    int maxOutstandingRequestBytes = 500000;
-
-    // override behavior on limits exceeded if needed, default behavior is to block
-    LimitExceededBehavior limitExceededBehavior = LimitExceededBehavior.ThrowException;
-
-    FlowControlSettings flowControlSettings = FlowControlSettings.newBuilder()
-        .setMaxOutstandingElementCount(maxOutstandingBatches)
-        .setMaxOutstandingRequestBytes(maxOutstandingRequestBytes)
-        .setLimitExceededBehavior(limitExceededBehavior)
-        .build();
-
-    Publisher publisher = Publisher.defaultBuilder(topicName)
-        .setFlowControlSettings(flowControlSettings).build();
-    // [END pubsub_publisher_flow_settings]
     return publisher;
   }
 
