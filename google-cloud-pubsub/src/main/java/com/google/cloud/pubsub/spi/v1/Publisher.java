@@ -17,11 +17,8 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
-import com.google.api.gax.batching.FlowControlSettings;
-import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
@@ -72,7 +69,6 @@ import org.threeten.bp.Duration;
  *
  * <ul>
  *   <li>Message batching: such as number of messages or max batch byte size.
- *   <li>Flow control: such as max outstanding messages and maximum outstanding bytes.
  *   <li>Retries: such as the maximum duration of retries for a failing batch of messages.
  * </ul>
  *
@@ -90,15 +86,12 @@ public class Publisher {
   private final RetrySettings retrySettings;
   private final LongRandom longRandom;
 
-  private final FlowControlSettings flowControlSettings;
-
   private final Lock messagesBatchLock;
   private List<OutstandingPublish> messagesBatch;
   private int batchedBytes;
 
   private final AtomicBoolean activeAlarm;
 
-  private final FlowController flowController;
   private final ManagedChannel[] channels;
   private final AtomicRoundRobin channelIndex;
   @Nullable private final CallCredentials callCredentials;
@@ -126,9 +119,6 @@ public class Publisher {
     this.batchingSettings = builder.batchingSettings;
     this.retrySettings = builder.retrySettings;
     this.longRandom = builder.longRandom;
-
-    flowControlSettings = builder.flowControlSettings;
-    this.flowController = new FlowController(flowControlSettings);
 
     messagesBatch = new LinkedList<>();
     messagesBatchLock = new ReentrantLock();
@@ -179,10 +169,7 @@ public class Publisher {
    * Schedules the publishing of a message. The publishing of the message may occur immediately or
    * be delayed based on the publisher batching options.
    *
-   * <p>Depending on chosen flow control {@link FlowControlSettings#getLimitExceededBehavior
-   * option}, the returned future might immediately fail with a {@link
-   * FlowController.FlowControlException} or block the current thread until there are more resources
-   * available to publish.
+   * <p>{@code publish} does not attempt to limit the number of pending messages.
    *
    * <p>Example of publishing a message.
    *
@@ -211,11 +198,6 @@ public class Publisher {
     }
 
     final int messageSize = message.getSerializedSize();
-    try {
-      flowController.reserve(1, messageSize);
-    } catch (FlowController.FlowControlException e) {
-      return ApiFutures.immediateFailedFuture(e);
-    }
     OutstandingBatch batchToSend = null;
     SettableApiFuture<String> publishResult = SettableApiFuture.<String>create();
     final OutstandingPublish outstandingPublish = new OutstandingPublish(publishResult, message);
@@ -372,7 +354,6 @@ public class Publisher {
                 messagesResultsIt.next().publishResult.set(messageId);
               }
             } finally {
-              flowController.release(outstandingBatch.size(), outstandingBatch.batchSizeBytes);
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
           }
@@ -450,20 +431,6 @@ public class Publisher {
 
   private long getMaxBatchBytes() {
     return getBatchingSettings().getRequestByteThreshold();
-  }
-
-  /**
-   * The batching settings configured on this {@code Publisher}, including whether to block publish
-   * calls when reaching flow control limits.
-   *
-   * <p>If {@link FlowControlSettings#getLimitExceededBehavior()} is set to {@link
-   * FlowController.LimitExceededBehavior#ThrowException}, a publish call will fail with either
-   * {@link FlowController.MaxOutstandingRequestBytesReachedException} or {@link
-   * FlowController.MaxOutstandingElementCountReachedException}, as appropriate, when flow control
-   * limits are reached.
-   */
-  public FlowControlSettings getFlowControlSettings() {
-    return flowControlSettings;
   }
 
   /**
@@ -590,9 +557,6 @@ public class Publisher {
     // Batching options
     BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
 
-    // Client-side flow control options
-    FlowControlSettings flowControlSettings = FlowControlSettings.getDefaultInstance();
-
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
     LongRandom longRandom = DEFAULT_LONG_RANDOM;
 
@@ -634,14 +598,6 @@ public class Publisher {
       Preconditions.checkNotNull(batchingSettings.getDelayThreshold());
       Preconditions.checkArgument(batchingSettings.getDelayThreshold().toMillis() > 0);
       this.batchingSettings = batchingSettings;
-      return this;
-    }
-
-    // Flow control options
-
-    /** Sets the flow control settings. */
-    public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
-      this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
       return this;
     }
 

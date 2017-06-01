@@ -20,8 +20,6 @@ import static org.junit.Assert.*;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
-import com.google.api.gax.batching.FlowControlSettings;
-import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
@@ -439,23 +437,12 @@ public class PublisherImplTest {
             .setElementCountThreshold(12L)
             .build());
     builder.setCredentialsProvider(NO_CREDENTIALS_PROVIDER);
-    builder.setFlowControlSettings(
-        FlowControlSettings.newBuilder()
-            .setMaxOutstandingRequestBytes(13)
-            .setMaxOutstandingElementCount(14)
-            .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
-            .build());
     Publisher publisher = builder.build();
 
     assertEquals(TEST_TOPIC, publisher.getTopicName());
     assertEquals(10, (long) publisher.getBatchingSettings().getRequestByteThreshold());
     assertEquals(Duration.ofMillis(11), publisher.getBatchingSettings().getDelayThreshold());
     assertEquals(12, (long) publisher.getBatchingSettings().getElementCountThreshold());
-    assertEquals(13, (long) publisher.getFlowControlSettings().getMaxOutstandingRequestBytes());
-    assertEquals(14, (long) publisher.getFlowControlSettings().getMaxOutstandingElementCount());
-    assertEquals(
-        LimitExceededBehavior.ThrowException,
-        publisher.getFlowControlSettings().getLimitExceededBehavior());
     publisher.shutdown();
   }
 
@@ -465,8 +452,6 @@ public class PublisherImplTest {
     assertEquals(TEST_TOPIC, builder.topicName);
     assertEquals(Publisher.Builder.DEFAULT_EXECUTOR_PROVIDER, builder.executorProvider);
     assertEquals(
-        LimitExceededBehavior.Block, builder.flowControlSettings.getLimitExceededBehavior());
-    assertEquals(
         Publisher.Builder.DEFAULT_REQUEST_BYTES_THRESHOLD,
         builder.batchingSettings.getRequestByteThreshold().longValue());
     assertEquals(
@@ -474,7 +459,6 @@ public class PublisherImplTest {
     assertEquals(
         Publisher.Builder.DEFAULT_ELEMENT_COUNT_THRESHOLD,
         builder.batchingSettings.getElementCountThreshold().longValue());
-    assertEquals(FlowControlSettings.getDefaultInstance(), builder.flowControlSettings);
     assertEquals(Publisher.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings);
   }
 
@@ -579,58 +563,6 @@ public class PublisherImplTest {
           Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
               .setElementCountThreshold(-1L)
-              .build());
-      fail("Should have thrown an IllegalArgumentException");
-    } catch (IllegalArgumentException expected) {
-      // Expected
-    }
-
-    builder.setFlowControlSettings(
-        FlowControlSettings.getDefaultInstance()
-            .toBuilder()
-            .setMaxOutstandingRequestBytes(1)
-            .build());
-    try {
-      builder.setFlowControlSettings(
-          FlowControlSettings.getDefaultInstance()
-              .toBuilder()
-              .setMaxOutstandingRequestBytes(0)
-              .build());
-      fail("Should have thrown an IllegalArgumentException");
-    } catch (IllegalArgumentException expected) {
-      // Expected
-    }
-    try {
-      builder.setFlowControlSettings(
-          FlowControlSettings.getDefaultInstance()
-              .toBuilder()
-              .setMaxOutstandingRequestBytes(-1)
-              .build());
-      fail("Should have thrown an IllegalArgumentException");
-    } catch (IllegalArgumentException expected) {
-      // Expected
-    }
-
-    builder.setFlowControlSettings(
-        FlowControlSettings.getDefaultInstance()
-            .toBuilder()
-            .setMaxOutstandingElementCount(1)
-            .build());
-    try {
-      builder.setFlowControlSettings(
-          FlowControlSettings.getDefaultInstance()
-              .toBuilder()
-              .setMaxOutstandingElementCount(0)
-              .build());
-      fail("Should have thrown an IllegalArgumentException");
-    } catch (IllegalArgumentException expected) {
-      // Expected
-    }
-    try {
-      builder.setFlowControlSettings(
-          FlowControlSettings.getDefaultInstance()
-              .toBuilder()
-              .setMaxOutstandingElementCount(-1)
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
