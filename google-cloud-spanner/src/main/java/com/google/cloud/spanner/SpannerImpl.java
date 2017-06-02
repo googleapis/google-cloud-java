@@ -1757,7 +1757,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 builder.set(fieldName).toDateArray((Iterable<Date>) value);
                 break;
               case STRUCT:
-                builder.add(fieldName, fieldType.getStructFields(), (Iterable<Struct>) value);
+                builder.add(fieldName, fieldType.getArrayElementType().getStructFields(), (Iterable<Struct>) value);
                 break;
             }
             break;
