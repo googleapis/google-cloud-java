@@ -51,6 +51,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     ETAG("etag"),
     FRIENDLY_NAME("friendlyName"),
     ID("id"),
+    LABELS("labels"),
     LAST_MODIFIED_TIME("lastModifiedTime"),
     LOCATION("location"),
     SELF_LINK("selfLink");

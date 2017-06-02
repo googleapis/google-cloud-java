@@ -20,10 +20,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
+import com.google.common.collect.ImmutableMap;
 import java.util.List;
+import java.util.Map;
+import org.junit.Test;
 
 public class DatasetInfoTest {
 
@@ -33,6 +33,9 @@ public class DatasetInfoTest {
   private static final List<Acl> ACCESS_RULES_COMPLETE = ImmutableList.of(
       Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
       Acl.of(new Acl.View(TableId.of("project", "dataset", "table"))));
+  private static final Map<String, String> LABELS = ImmutableMap.of(
+      "example-label1", "example-value1",
+      "example-label2", "example-value2");
   private static final Long CREATION_TIME = System.currentTimeMillis();
   private static final Long DEFAULT_TABLE_EXPIRATION = CREATION_TIME + 100;
   private static final String DESCRIPTION = "description";
@@ -55,6 +58,7 @@ public class DatasetInfoTest {
       .setLastModified(LAST_MODIFIED)
       .setLocation(LOCATION)
       .setSelfLink(SELF_LINK)
+      .setLabels(LABELS)
       .build();
   private static final DatasetInfo DATASET_INFO_COMPLETE = DATASET_INFO.toBuilder()
       .setDatasetId(DATASET_ID_COMPLETE)
@@ -106,6 +110,7 @@ public class DatasetInfoTest {
     assertEquals(LAST_MODIFIED, DATASET_INFO_COMPLETE.getLastModified());
     assertEquals(LOCATION, DATASET_INFO_COMPLETE.getLocation());
     assertEquals(SELF_LINK, DATASET_INFO_COMPLETE.getSelfLink());
+    assertEquals(LABELS, DATASET_INFO_COMPLETE.getLabels());
   }
 
 
@@ -123,6 +128,7 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getLastModified());
     assertNull(datasetInfo.getLocation());
     assertNull(datasetInfo.getSelfLink());
+    assertNull(datasetInfo.getLabels());
     datasetInfo = DatasetInfo.of(DATASET_ID);
     assertEquals(DATASET_ID, datasetInfo.getDatasetId());
     assertNull(datasetInfo.getAcl());
@@ -135,6 +141,7 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getLastModified());
     assertNull(datasetInfo.getLocation());
     assertNull(datasetInfo.getSelfLink());
+    assertNull(datasetInfo.getLabels());
   }
 
   @Test
@@ -162,5 +169,6 @@ public class DatasetInfoTest {
     assertEquals(expected.getCreationTime(), value.getCreationTime());
     assertEquals(expected.getDefaultTableLifetime(), value.getDefaultTableLifetime());
     assertEquals(expected.getLastModified(), value.getLastModified());
+    assertEquals(expected.getLabels(), value.getLabels());
   }
 }
