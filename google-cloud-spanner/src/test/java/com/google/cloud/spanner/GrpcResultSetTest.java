@@ -628,7 +628,8 @@ public class GrpcResultSetTest {
     );
   }
 
-  @Test public void nestedStructSerialization() throws Exception {
+  @Test
+  public void nestedStructSerialization() throws Exception {
     Type.StructField[] structFields = {
         Type.StructField.of("a", Type.string()),
         Type.StructField.of("b", Type.int64())
