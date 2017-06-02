@@ -53,6 +53,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Boolean flattenResults;
   private final Boolean dryRun;
   private final Boolean useLegacySql;
+  private final Integer maximumBillingTier;
   private final List<SchemaUpdateOption> schemaUpdateOptions;
 
   /**
@@ -91,6 +92,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Boolean flattenResults;
     private Boolean dryRun;
     private Boolean useLegacySql;
+    private Integer maximumBillingTier;
     private List<SchemaUpdateOption> schemaUpdateOptions;
 
     private Builder() {
@@ -112,6 +114,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.flattenResults = jobConfiguration.flattenResults;
       this.dryRun = jobConfiguration.dryRun;
       this.useLegacySql = jobConfiguration.useLegacySql;
+      this.maximumBillingTier = jobConfiguration.maximumBillingTier;
       this.schemaUpdateOptions = jobConfiguration.schemaUpdateOptions;
     }
 
@@ -123,6 +126,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
       useQueryCache = queryConfigurationPb.getUseQueryCache();
       flattenResults = queryConfigurationPb.getFlattenResults();
       useLegacySql = queryConfigurationPb.getUseLegacySql();
+      if (queryConfigurationPb.getMaximumBillingTier() != null) {
+        maximumBillingTier = queryConfigurationPb.getMaximumBillingTier();
+      }
       dryRun = configurationPb.getDryRun();
       if (queryConfigurationPb.getDestinationTable() != null) {
         destinationTable = TableId.fromPb(queryConfigurationPb.getDestinationTable());
@@ -336,6 +342,17 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * Limits the billing tier for this job. Queries that have resource usage beyond this tier will fail
+     * (without incurring a charge). If unspecified, this will be set to your project default.
+
+     * @param maximumBillingTier maximum billing tier for this job
+     */
+    public Builder setMaximumBillingTier(Integer maximumBillingTier) {
+      this.maximumBillingTier = maximumBillingTier;
+      return this;
+    }
+
 
     /**
      * [Experimental] Sets options allowing the schema of the destination table to be updated as a side effect of the
@@ -369,6 +386,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         builder.tableDefinitions != null ? ImmutableMap.copyOf(builder.tableDefinitions) : null;
     this.dryRun = builder.dryRun;
     this.useLegacySql = builder.useLegacySql;
+    this.maximumBillingTier = builder.maximumBillingTier;
     this.schemaUpdateOptions = builder.schemaUpdateOptions;
   }
 
@@ -504,6 +522,13 @@ public final class QueryJobConfiguration extends JobConfiguration {
   }
 
   /**
+   * Returns the optional billing tier limit for this job.
+   */
+  public Integer getMaximumBillingTier() {
+    return maximumBillingTier;
+  }
+
+  /**
    * [Experimental] Returns options allowing the schema of the destination table to be updated as a side effect of the
    * query job. Schema update options are supported in two cases: when writeDisposition is WRITE_APPEND; when
    * writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition
@@ -534,6 +559,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("writeDisposition", writeDisposition)
         .add("dryRun", dryRun)
         .add("useLegacySql", useLegacySql)
+        .add("maximumBillingTier", maximumBillingTier)
         .add("schemaUpdateOptions", schemaUpdateOptions);
   }
 
@@ -548,7 +574,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   public int hashCode() {
     return Objects.hash(baseHashCode(), allowLargeResults, createDisposition, destinationTable,
         defaultDataset, flattenResults, priority, query, tableDefinitions, useQueryCache,
-        userDefinedFunctions, writeDisposition, dryRun, useLegacySql, schemaUpdateOptions);
+        userDefinedFunctions, writeDisposition, dryRun, useLegacySql, maximumBillingTier,
+        schemaUpdateOptions);
   }
 
   @Override
@@ -604,6 +631,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
     if (useLegacySql != null) {
       queryConfigurationPb.setUseLegacySql(useLegacySql);
+    }
+    if (maximumBillingTier != null) {
+      queryConfigurationPb.setMaximumBillingTier(maximumBillingTier);
     }
     if (schemaUpdateOptions != null) {
       ImmutableList.Builder<String> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
