@@ -128,37 +128,17 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
 
   private void pullMessages(final Duration backoff) {
     ListenableFuture<PullResponse> pullResult =
-        stub.withDeadlineAfter(DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS)
-            .pull(
-                PullRequest.newBuilder()
-                    .setSubscription(subscription)
-                    .setMaxMessages(maxDesiredPulledMessages)
-                    .setReturnImmediately(true)
-                    .build());
+        stub.pull(
+            PullRequest.newBuilder()
+                .setSubscription(subscription)
+                .setMaxMessages(maxDesiredPulledMessages)
+                .build());
 
     Futures.addCallback(
         pullResult,
         new FutureCallback<PullResponse>() {
           @Override
           public void onSuccess(PullResponse pullResponse) {
-            if (pullResponse.getReceivedMessagesCount() == 0) {
-              // No messages in response, possibly caught up in backlog, we backoff to avoid
-              // slamming the server.
-              pollingExecutor.schedule(
-                  new Runnable() {
-                    @Override
-                    public void run() {
-                      Duration newBackoff = backoff.multipliedBy(2);
-                      if (newBackoff.compareTo(MAX_BACKOFF) > 0) {
-                        newBackoff = MAX_BACKOFF;
-                      }
-                      pullMessages(newBackoff);
-                    }
-                  },
-                  backoff.toMillis(),
-                  TimeUnit.MILLISECONDS);
-              return;
-            }
             messageDispatcher.processReceivedMessages(
                 pullResponse.getReceivedMessagesList(),
                 new Runnable() {
