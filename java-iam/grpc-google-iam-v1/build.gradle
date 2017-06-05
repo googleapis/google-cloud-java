@@ -27,6 +27,7 @@ dependencies {
 
 ext {
   packageName = 'grpc-google-iam-v1'
+  javaDocRoot = projectDir.getAbsolutePath() + '/tmp_gh-pages'
 }
 
 sourceSets {
@@ -109,8 +110,9 @@ if (project.hasProperty('ossrhUsername') && project.hasProperty('ossrhPassword')
 }
 
 task checkOutGhPages << {
-  if (!new File('tmp_gh-pages').exists()) {
+  if (!new File(javaDocRoot).exists()) {
     exec {
+      workingDir projectDir
       commandLine 'git', 'clone', '--branch', 'gh-pages',
           '--single-branch', 'git@github.com:googleapis/googleapis.git', 'tmp_gh-pages'
     }
@@ -121,7 +123,7 @@ task copyFilesToGhPages {
   dependsOn 'checkOutGhPages'
   dependsOn 'javadoc'
   doLast {
-    def newSiteDirPath = "tmp_gh-pages/java/${packageName}/${project.version}/apidocs/"
+    def newSiteDirPath = javaDocRoot + "/java/${packageName}/${project.version}/apidocs/"
     new File(newSiteDirPath).mkdirs()
     copy {
       from 'build/docs/javadoc'
@@ -130,20 +132,21 @@ task copyFilesToGhPages {
   }
 }
 
-task createApiDocsRedirect {
+// Regenerates the gh-pages branch under tmp_gh-pages
+task updateDocs {
   dependsOn 'copyFilesToGhPages'
   doLast {
-    def outputContent = new File('templates/apidocs_index.html.template').text
+    def outputContent = new File(projectDir.getAbsolutePath() + '/templates/apidocs_index.html.template').text
     outputContent = outputContent.replace('{{siteVersion}}', project.version)
     outputContent = outputContent.replace('{{packageName}}', packageName)
-    new File("tmp_gh-pages/java/${packageName}/apidocs").mkdirs()
-    new File("tmp_gh-pages/java/${packageName}/apidocs/index.html").write(outputContent)
+    new File(javaDocRoot + "/java/${packageName}/apidocs").mkdirs()
+    new File(javaDocRoot + "/java/${packageName}/apidocs/index.html").write(outputContent)
     exec {
-      workingDir 'tmp_gh-pages/'
+      workingDir javaDocRoot
       commandLine 'git', 'add', '.'
     }
     exec {
-      workingDir 'tmp_gh-pages/'
+      workingDir javaDocRoot
       commandLine 'git', 'commit', '-m', "Regenerating docs for ${packageName} ${project.version}"
     }
     println 'New docs have been generated under tmp_gh-pages and have been committed;'
@@ -151,7 +154,14 @@ task createApiDocsRedirect {
   }
 }
 
-// Regenerates the gh-pages branch under tmp_gh-pages, which must be committed separately
-task updateDocsWithCurrentVersion {
-  dependsOn 'createApiDocsRedirect'
+// Regenerates and push the gh-pages branch under tmp_gh-pages
+task updateAndPushDocs {
+  dependsOn 'updateDocs'
+  doLast {
+    exec {
+      workingDir javaDocRoot
+      commandLine 'git', 'push'
+      println "New docs have been pushed to Github for ${packageName} ${project.version}"
+    }
+  }
 }
