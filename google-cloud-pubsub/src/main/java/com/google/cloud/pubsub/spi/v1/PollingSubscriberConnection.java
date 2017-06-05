@@ -127,6 +127,9 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
   }
 
   private void pullMessages(final Duration backoff) {
+    if (!isAlive()) {
+      return;
+    }
     ListenableFuture<PullResponse> pullResult =
         stub.withDeadlineAfter(DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS)
             .pull(
@@ -201,7 +204,9 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
   }
 
   private boolean isAlive() {
-    return state() == State.RUNNING || state() == State.STARTING;
+    // Read state only once. Because of threading, different calss can give different results.
+    State state = state();
+    return state == State.RUNNING || state == State.STARTING;
   }
 
   @Override
