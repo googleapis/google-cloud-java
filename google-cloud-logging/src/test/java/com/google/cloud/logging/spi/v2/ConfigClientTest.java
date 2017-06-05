@@ -136,12 +136,14 @@ public class ConfigClientTest {
     ResourceName destination = ProjectName.create("[PROJECT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
+    boolean includeChildren = true;
     LogSink expectedResponse =
         LogSink.newBuilder()
             .setName(name)
             .setDestinationWithResourceName(destination)
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
+            .setIncludeChildren(includeChildren)
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
@@ -180,12 +182,14 @@ public class ConfigClientTest {
     ResourceName destination = ProjectName.create("[PROJECT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
+    boolean includeChildren = true;
     LogSink expectedResponse =
         LogSink.newBuilder()
             .setName(name)
             .setDestinationWithResourceName(destination)
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
+            .setIncludeChildren(includeChildren)
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
@@ -227,12 +231,14 @@ public class ConfigClientTest {
     ResourceName destination = ProjectName.create("[PROJECT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
+    boolean includeChildren = true;
     LogSink expectedResponse =
         LogSink.newBuilder()
             .setName(name)
             .setDestinationWithResourceName(destination)
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
+            .setIncludeChildren(includeChildren)
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 

@@ -15,8 +15,11 @@
  */
 package com.google.cloud.language.spi.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelAndExecutor;
+import com.google.api.gax.grpc.ClientContext;
 import com.google.api.gax.grpc.UnaryCallable;
+import com.google.auth.Credentials;
 import com.google.cloud.language.v1.AnalyzeEntitiesRequest;
 import com.google.cloud.language.v1.AnalyzeEntitiesResponse;
 import com.google.cloud.language.v1.AnalyzeSentimentRequest;
@@ -28,7 +31,6 @@ import com.google.cloud.language.v1.AnnotateTextRequest.Features;
 import com.google.cloud.language.v1.AnnotateTextResponse;
 import com.google.cloud.language.v1.Document;
 import com.google.cloud.language.v1.EncodingType;
-import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -83,19 +85,17 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * InstantiatingChannelProvider channelProvider =
- *     LanguageServiceSettings.defaultChannelProviderBuilder()
+ * LanguageServiceSettings languageServiceSettings =
+ *     LanguageServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * LanguageServiceSettings languageServiceSettings =
- *     LanguageServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
  * LanguageServiceClient languageServiceClient =
  *     LanguageServiceClient.create(languageServiceSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC")
-@ExperimentalApi
+@BetaApi
 public class LanguageServiceClient implements AutoCloseable {
   private final LanguageServiceSettings settings;
   private final ScheduledExecutorService executor;
@@ -132,15 +132,23 @@ public class LanguageServiceClient implements AutoCloseable {
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
     this.channel = channelAndExecutor.getChannel();
+    Credentials credentials = settings.getCredentialsProvider().getCredentials();
+
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setExecutor(this.executor)
+            .setChannel(this.channel)
+            .setCredentials(credentials)
+            .build();
 
     this.analyzeSentimentCallable =
-        UnaryCallable.create(settings.analyzeSentimentSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.analyzeSentimentSettings(), clientContext);
     this.analyzeEntitiesCallable =
-        UnaryCallable.create(settings.analyzeEntitiesSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.analyzeEntitiesSettings(), clientContext);
     this.analyzeSyntaxCallable =
-        UnaryCallable.create(settings.analyzeSyntaxSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.analyzeSyntaxSettings(), clientContext);
     this.annotateTextCallable =
-        UnaryCallable.create(settings.annotateTextSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.annotateTextSettings(), clientContext);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -179,8 +187,7 @@ public class LanguageServiceClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param document Input document. Currently, `analyzeSentiment` only supports English text
-   *     ([Document.language][google.cloud.language.v1.Document.language]="EN").
+   * @param document Input document.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final AnalyzeSentimentResponse analyzeSentiment(Document document) {

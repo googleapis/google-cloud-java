@@ -16,12 +16,15 @@
 package com.google.cloud.videointelligence.spi.v1beta1;
 
 import com.google.api.core.BetaApi;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.ChannelAndExecutor;
+import com.google.api.gax.grpc.ClientContext;
 import com.google.api.gax.grpc.FixedChannelProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.OperationCallable;
 import com.google.api.gax.grpc.OperationFuture;
 import com.google.api.gax.grpc.UnaryCallable;
+import com.google.auth.Credentials;
 import com.google.cloud.videointelligence.v1beta1.AnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1beta1.AnnotateVideoResponse;
 import com.google.cloud.videointelligence.v1beta1.Feature;
@@ -86,12 +89,10 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * InstantiatingChannelProvider channelProvider =
- *     VideoIntelligenceServiceSettings.defaultChannelProviderBuilder()
+ * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings =
+ *     VideoIntelligenceServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings =
- *     VideoIntelligenceServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
  * VideoIntelligenceServiceClient videoIntelligenceServiceClient =
  *     VideoIntelligenceServiceClient.create(videoIntelligenceServiceSettings);
  * </code>
@@ -136,22 +137,29 @@ public class VideoIntelligenceServiceClient implements AutoCloseable {
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
     this.channel = channelAndExecutor.getChannel();
+    Credentials credentials = settings.getCredentialsProvider().getCredentials();
 
-    FixedExecutorProvider executorProvider = FixedExecutorProvider.create(this.executor);
-    FixedChannelProvider channelProvider = FixedChannelProvider.create(this.channel);
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setExecutor(this.executor)
+            .setChannel(this.channel)
+            .setCredentials(credentials)
+            .build();
+
     OperationsSettings operationsSettings =
         OperationsSettings.defaultBuilder()
-            .setExecutorProvider(executorProvider)
-            .setChannelProvider(channelProvider)
+            .setExecutorProvider(FixedExecutorProvider.create(this.executor))
+            .setChannelProvider(FixedChannelProvider.create(this.channel))
+            .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
             .build();
     this.operationsClient = OperationsClient.create(operationsSettings);
 
     this.annotateVideoCallable =
         UnaryCallable.create(
-            settings.annotateVideoSettings().getInitialCallSettings(), this.channel, this.executor);
+            settings.annotateVideoSettings().getInitialCallSettings(), clientContext);
     this.annotateVideoOperationCallable =
         OperationCallable.create(
-            settings.annotateVideoSettings(), this.channel, this.executor, this.operationsClient);
+            settings.annotateVideoSettings(), clientContext, this.operationsClient);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(

@@ -21,8 +21,11 @@ import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListTimeS
 
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelAndExecutor;
+import com.google.api.gax.grpc.ClientContext;
 import com.google.api.gax.grpc.UnaryCallable;
+import com.google.auth.Credentials;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.DeleteMetricDescriptorRequest;
@@ -41,7 +44,6 @@ import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.TimeInterval;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
-import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -95,19 +97,17 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * InstantiatingChannelProvider channelProvider =
- *     MetricServiceSettings.defaultChannelProviderBuilder()
+ * MetricServiceSettings metricServiceSettings =
+ *     MetricServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * MetricServiceSettings metricServiceSettings =
- *     MetricServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
  * MetricServiceClient metricServiceClient =
  *     MetricServiceClient.create(metricServiceSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC")
-@ExperimentalApi
+@BetaApi
 public class MetricServiceClient implements AutoCloseable {
   private final MetricServiceSettings settings;
   private final ScheduledExecutorService executor;
@@ -159,36 +159,38 @@ public class MetricServiceClient implements AutoCloseable {
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
     this.channel = channelAndExecutor.getChannel();
+    Credentials credentials = settings.getCredentialsProvider().getCredentials();
+
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setExecutor(this.executor)
+            .setChannel(this.channel)
+            .setCredentials(credentials)
+            .build();
 
     this.listMonitoredResourceDescriptorsCallable =
-        UnaryCallable.create(
-            settings.listMonitoredResourceDescriptorsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listMonitoredResourceDescriptorsSettings(), clientContext);
     this.listMonitoredResourceDescriptorsPagedCallable =
         UnaryCallable.createPagedVariant(
-            settings.listMonitoredResourceDescriptorsSettings(), this.channel, this.executor);
+            settings.listMonitoredResourceDescriptorsSettings(), clientContext);
     this.getMonitoredResourceDescriptorCallable =
-        UnaryCallable.create(
-            settings.getMonitoredResourceDescriptorSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getMonitoredResourceDescriptorSettings(), clientContext);
     this.listMetricDescriptorsCallable =
-        UnaryCallable.create(settings.listMetricDescriptorsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listMetricDescriptorsSettings(), clientContext);
     this.listMetricDescriptorsPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listMetricDescriptorsSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listMetricDescriptorsSettings(), clientContext);
     this.getMetricDescriptorCallable =
-        UnaryCallable.create(settings.getMetricDescriptorSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getMetricDescriptorSettings(), clientContext);
     this.createMetricDescriptorCallable =
-        UnaryCallable.create(
-            settings.createMetricDescriptorSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.createMetricDescriptorSettings(), clientContext);
     this.deleteMetricDescriptorCallable =
-        UnaryCallable.create(
-            settings.deleteMetricDescriptorSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.deleteMetricDescriptorSettings(), clientContext);
     this.listTimeSeriesCallable =
-        UnaryCallable.create(settings.listTimeSeriesSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listTimeSeriesSettings(), clientContext);
     this.listTimeSeriesPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listTimeSeriesSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listTimeSeriesSettings(), clientContext);
     this.createTimeSeriesCallable =
-        UnaryCallable.create(settings.createTimeSeriesSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.createTimeSeriesSettings(), clientContext);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(

@@ -18,16 +18,18 @@ package com.google.cloud.pubsub.spi.v1;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSnapshotsPagedResponse;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelAndExecutor;
+import com.google.api.gax.grpc.ClientContext;
 import com.google.api.gax.grpc.StreamingCallable;
 import com.google.api.gax.grpc.UnaryCallable;
+import com.google.auth.Credentials;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
-import com.google.protobuf.ExperimentalApi;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
 import com.google.pubsub.v1.DeleteSnapshotRequest;
@@ -113,19 +115,17 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * InstantiatingChannelProvider channelProvider =
- *     SubscriptionAdminSettings.defaultChannelProviderBuilder()
+ * SubscriptionAdminSettings subscriptionAdminSettings =
+ *     SubscriptionAdminSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * SubscriptionAdminSettings subscriptionAdminSettings =
- *     SubscriptionAdminSettings.defaultBuilder().setChannelProvider(channelProvider).build();
  * SubscriptionAdminClient subscriptionAdminClient =
  *     SubscriptionAdminClient.create(subscriptionAdminSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC")
-@ExperimentalApi
+@BetaApi
 public class SubscriptionAdminClient implements AutoCloseable {
   private final SubscriptionAdminSettings settings;
   private final ScheduledExecutorService executor;
@@ -181,45 +181,50 @@ public class SubscriptionAdminClient implements AutoCloseable {
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
     this.channel = channelAndExecutor.getChannel();
+    Credentials credentials = settings.getCredentialsProvider().getCredentials();
+
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setExecutor(this.executor)
+            .setChannel(this.channel)
+            .setCredentials(credentials)
+            .build();
 
     this.createSubscriptionCallable =
-        UnaryCallable.create(settings.createSubscriptionSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.createSubscriptionSettings(), clientContext);
     this.getSubscriptionCallable =
-        UnaryCallable.create(settings.getSubscriptionSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getSubscriptionSettings(), clientContext);
     this.updateSubscriptionCallable =
-        UnaryCallable.create(settings.updateSubscriptionSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.updateSubscriptionSettings(), clientContext);
     this.listSubscriptionsCallable =
-        UnaryCallable.create(settings.listSubscriptionsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listSubscriptionsSettings(), clientContext);
     this.listSubscriptionsPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listSubscriptionsSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listSubscriptionsSettings(), clientContext);
     this.deleteSubscriptionCallable =
-        UnaryCallable.create(settings.deleteSubscriptionSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.deleteSubscriptionSettings(), clientContext);
     this.modifyAckDeadlineCallable =
-        UnaryCallable.create(settings.modifyAckDeadlineSettings(), this.channel, this.executor);
-    this.acknowledgeCallable =
-        UnaryCallable.create(settings.acknowledgeSettings(), this.channel, this.executor);
-    this.pullCallable = UnaryCallable.create(settings.pullSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.modifyAckDeadlineSettings(), clientContext);
+    this.acknowledgeCallable = UnaryCallable.create(settings.acknowledgeSettings(), clientContext);
+    this.pullCallable = UnaryCallable.create(settings.pullSettings(), clientContext);
     this.streamingPullCallable =
-        StreamingCallable.create(settings.streamingPullSettings(), this.channel);
+        StreamingCallable.create(settings.streamingPullSettings(), clientContext);
     this.modifyPushConfigCallable =
-        UnaryCallable.create(settings.modifyPushConfigSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.modifyPushConfigSettings(), clientContext);
     this.listSnapshotsCallable =
-        UnaryCallable.create(settings.listSnapshotsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listSnapshotsSettings(), clientContext);
     this.listSnapshotsPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listSnapshotsSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listSnapshotsSettings(), clientContext);
     this.createSnapshotCallable =
-        UnaryCallable.create(settings.createSnapshotSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.createSnapshotSettings(), clientContext);
     this.deleteSnapshotCallable =
-        UnaryCallable.create(settings.deleteSnapshotSettings(), this.channel, this.executor);
-    this.seekCallable = UnaryCallable.create(settings.seekSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.deleteSnapshotSettings(), clientContext);
+    this.seekCallable = UnaryCallable.create(settings.seekSettings(), clientContext);
     this.setIamPolicyCallable =
-        UnaryCallable.create(settings.setIamPolicySettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.setIamPolicySettings(), clientContext);
     this.getIamPolicyCallable =
-        UnaryCallable.create(settings.getIamPolicySettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getIamPolicySettings(), clientContext);
     this.testIamPermissionsCallable =
-        UnaryCallable.create(settings.testIamPermissionsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.testIamPermissionsSettings(), clientContext);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -1000,7 +1005,7 @@ public class SubscriptionAdminClient implements AutoCloseable {
    *         }
    *       };
    *   ApiStreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
-   *       subscriptionAdminClient.streamingPullCallable().bidiStreamingCall(responseObserver)});
+   *       subscriptionAdminClient.streamingPullCallable().bidiStreamingCall(responseObserver));
    *
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   int streamAckDeadlineSeconds = 0;

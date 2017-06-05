@@ -17,8 +17,11 @@ package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelAndExecutor;
+import com.google.api.gax.grpc.ClientContext;
 import com.google.api.gax.grpc.UnaryCallable;
+import com.google.auth.Credentials;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.GetSinkRequest;
@@ -29,7 +32,6 @@ import com.google.logging.v2.ParentNameOneof;
 import com.google.logging.v2.SinkNameOneof;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
-import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -83,19 +85,17 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * InstantiatingChannelProvider channelProvider =
- *     ConfigSettings.defaultChannelProviderBuilder()
+ * ConfigSettings configSettings =
+ *     ConfigSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * ConfigSettings configSettings =
- *     ConfigSettings.defaultBuilder().setChannelProvider(channelProvider).build();
  * ConfigClient configClient =
  *     ConfigClient.create(configSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC")
-@ExperimentalApi
+@BetaApi
 public class ConfigClient implements AutoCloseable {
   private final ConfigSettings settings;
   private final ScheduledExecutorService executor;
@@ -131,19 +131,22 @@ public class ConfigClient implements AutoCloseable {
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
     this.channel = channelAndExecutor.getChannel();
+    Credentials credentials = settings.getCredentialsProvider().getCredentials();
 
-    this.listSinksCallable =
-        UnaryCallable.create(settings.listSinksSettings(), this.channel, this.executor);
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setExecutor(this.executor)
+            .setChannel(this.channel)
+            .setCredentials(credentials)
+            .build();
+
+    this.listSinksCallable = UnaryCallable.create(settings.listSinksSettings(), clientContext);
     this.listSinksPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listSinksSettings(), this.channel, this.executor);
-    this.getSinkCallable =
-        UnaryCallable.create(settings.getSinkSettings(), this.channel, this.executor);
-    this.createSinkCallable =
-        UnaryCallable.create(settings.createSinkSettings(), this.channel, this.executor);
-    this.updateSinkCallable =
-        UnaryCallable.create(settings.updateSinkSettings(), this.channel, this.executor);
-    this.deleteSinkCallable =
-        UnaryCallable.create(settings.deleteSinkSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listSinksSettings(), clientContext);
+    this.getSinkCallable = UnaryCallable.create(settings.getSinkSettings(), clientContext);
+    this.createSinkCallable = UnaryCallable.create(settings.createSinkSettings(), clientContext);
+    this.updateSinkCallable = UnaryCallable.create(settings.updateSinkSettings(), clientContext);
+    this.deleteSinkCallable = UnaryCallable.create(settings.deleteSinkSettings(), clientContext);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
