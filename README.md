@@ -53,16 +53,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.18.0-alpha</version>
+  <version>0.19.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.18.0-alpha'
+compile 'com.google.cloud:google-cloud:0.19.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.18.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.19.0-alpha"
 ```
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
