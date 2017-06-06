@@ -17,8 +17,11 @@ package com.google.cloud.trace.spi.v1;
 
 import static com.google.cloud.trace.spi.v1.PagedResponseWrappers.ListTracesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelAndExecutor;
+import com.google.api.gax.grpc.ClientContext;
 import com.google.api.gax.grpc.UnaryCallable;
+import com.google.auth.Credentials;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
@@ -26,7 +29,6 @@ import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.Traces;
 import com.google.protobuf.Empty;
-import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -83,19 +85,17 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * InstantiatingChannelProvider channelProvider =
- *     TraceServiceSettings.defaultChannelProviderBuilder()
+ * TraceServiceSettings traceServiceSettings =
+ *     TraceServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * TraceServiceSettings traceServiceSettings =
- *     TraceServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
  * TraceServiceClient traceServiceClient =
  *     TraceServiceClient.create(traceServiceSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC")
-@ExperimentalApi
+@BetaApi
 public class TraceServiceClient implements AutoCloseable {
   private final TraceServiceSettings settings;
   private final ScheduledExecutorService executor;
@@ -129,16 +129,20 @@ public class TraceServiceClient implements AutoCloseable {
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
     this.channel = channelAndExecutor.getChannel();
+    Credentials credentials = settings.getCredentialsProvider().getCredentials();
 
-    this.patchTracesCallable =
-        UnaryCallable.create(settings.patchTracesSettings(), this.channel, this.executor);
-    this.getTraceCallable =
-        UnaryCallable.create(settings.getTraceSettings(), this.channel, this.executor);
-    this.listTracesCallable =
-        UnaryCallable.create(settings.listTracesSettings(), this.channel, this.executor);
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setExecutor(this.executor)
+            .setChannel(this.channel)
+            .setCredentials(credentials)
+            .build();
+
+    this.patchTracesCallable = UnaryCallable.create(settings.patchTracesSettings(), clientContext);
+    this.getTraceCallable = UnaryCallable.create(settings.getTraceSettings(), clientContext);
+    this.listTracesCallable = UnaryCallable.create(settings.listTracesSettings(), clientContext);
     this.listTracesPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listTracesSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listTracesSettings(), clientContext);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
