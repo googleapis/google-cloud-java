@@ -72,6 +72,9 @@ BETA_VERSION=""
 RC_VERSION=""
 GA_VERSION=""
 
+# uncomment module for GAE testing apps to enable detection (re-commented below)
+sed -i -e 's:<!--<module>google-cloud-testing</module>-->:<module>google-cloud-testing</module>:' pom.xml
+
 for i in "$@"
 do
 case $i in
@@ -269,3 +272,6 @@ for item in ${modules[*]}; do
     fi
   fi
 done
+
+# re-comment module for GAE testing apps
+sed -i -e 's:<module>google-cloud-testing</module>:<!--<module>google-cloud-testing</module>-->:' pom.xml
