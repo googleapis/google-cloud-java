@@ -19,9 +19,10 @@ import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSnapshots
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ClientSettings;
@@ -36,6 +37,7 @@ import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.StreamingCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.grpc.UnaryCallable;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -47,7 +49,6 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
-import com.google.protobuf.ExperimentalApi;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
 import com.google.pubsub.v1.DeleteSnapshotRequest;
@@ -101,7 +102,7 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
-@ExperimentalApi
+@BetaApi
 public class SubscriptionAdminSettings extends ClientSettings {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -378,8 +379,7 @@ public class SubscriptionAdminSettings extends ClientSettings {
   public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
         .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
-        .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
   }
 
   private static String getGapicVersion() {
@@ -408,7 +408,10 @@ public class SubscriptionAdminSettings extends ClientSettings {
   }
 
   private SubscriptionAdminSettings(Builder settingsBuilder) throws IOException {
-    super(settingsBuilder.getExecutorProvider(), settingsBuilder.getChannelProvider());
+    super(
+        settingsBuilder.getExecutorProvider(),
+        settingsBuilder.getChannelProvider(),
+        settingsBuilder.getCredentialsProvider());
 
     createSubscriptionSettings = settingsBuilder.createSubscriptionSettings().build();
     getSubscriptionSettings = settingsBuilder.getSubscriptionSettings().build();
@@ -626,6 +629,7 @@ public class SubscriptionAdminSettings extends ClientSettings {
 
     private Builder() {
       super(defaultChannelProviderBuilder().build());
+      setCredentialsProvider(defaultCredentialsProviderBuilder().build());
 
       createSubscriptionSettings = SimpleCallSettings.newBuilder(METHOD_CREATE_SUBSCRIPTION);
 
@@ -819,6 +823,12 @@ public class SubscriptionAdminSettings extends ClientSettings {
     @Override
     public Builder setChannelProvider(ChannelProvider channelProvider) {
       super.setChannelProvider(channelProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
+      super.setCredentialsProvider(credentialsProvider);
       return this;
     }
 

@@ -15,13 +15,17 @@
  */
 package com.google.cloud.speech.spi.v1;
 
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.ChannelAndExecutor;
+import com.google.api.gax.grpc.ClientContext;
 import com.google.api.gax.grpc.FixedChannelProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.OperationCallable;
 import com.google.api.gax.grpc.OperationFuture;
 import com.google.api.gax.grpc.StreamingCallable;
 import com.google.api.gax.grpc.UnaryCallable;
+import com.google.auth.Credentials;
 import com.google.cloud.speech.v1.LongRunningRecognizeRequest;
 import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognitionAudio;
@@ -33,7 +37,6 @@ import com.google.cloud.speech.v1.StreamingRecognizeResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.longrunning.OperationsSettings;
-import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -97,19 +100,17 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * InstantiatingChannelProvider channelProvider =
- *     SpeechSettings.defaultChannelProviderBuilder()
+ * SpeechSettings speechSettings =
+ *     SpeechSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * SpeechSettings speechSettings =
- *     SpeechSettings.defaultBuilder().setChannelProvider(channelProvider).build();
  * SpeechClient speechClient =
  *     SpeechClient.create(speechSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC")
-@ExperimentalApi
+@BetaApi
 public class SpeechClient implements AutoCloseable {
   private final SpeechSettings settings;
   private final ScheduledExecutorService executor;
@@ -146,31 +147,32 @@ public class SpeechClient implements AutoCloseable {
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
     this.channel = channelAndExecutor.getChannel();
+    Credentials credentials = settings.getCredentialsProvider().getCredentials();
 
-    FixedExecutorProvider executorProvider = FixedExecutorProvider.create(this.executor);
-    FixedChannelProvider channelProvider = FixedChannelProvider.create(this.channel);
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setExecutor(this.executor)
+            .setChannel(this.channel)
+            .setCredentials(credentials)
+            .build();
+
     OperationsSettings operationsSettings =
         OperationsSettings.defaultBuilder()
-            .setExecutorProvider(executorProvider)
-            .setChannelProvider(channelProvider)
+            .setExecutorProvider(FixedExecutorProvider.create(this.executor))
+            .setChannelProvider(FixedChannelProvider.create(this.channel))
+            .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
             .build();
     this.operationsClient = OperationsClient.create(operationsSettings);
 
-    this.recognizeCallable =
-        UnaryCallable.create(settings.recognizeSettings(), this.channel, this.executor);
+    this.recognizeCallable = UnaryCallable.create(settings.recognizeSettings(), clientContext);
     this.longRunningRecognizeCallable =
         UnaryCallable.create(
-            settings.longRunningRecognizeSettings().getInitialCallSettings(),
-            this.channel,
-            this.executor);
+            settings.longRunningRecognizeSettings().getInitialCallSettings(), clientContext);
     this.longRunningRecognizeOperationCallable =
         OperationCallable.create(
-            settings.longRunningRecognizeSettings(),
-            this.channel,
-            this.executor,
-            this.operationsClient);
+            settings.longRunningRecognizeSettings(), clientContext, this.operationsClient);
     this.streamingRecognizeCallable =
-        StreamingCallable.create(settings.streamingRecognizeSettings(), this.channel);
+        StreamingCallable.create(settings.streamingRecognizeSettings(), clientContext);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -490,7 +492,7 @@ public class SpeechClient implements AutoCloseable {
    *         }
    *       };
    *   ApiStreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
-   *       speechClient.streamingRecognizeCallable().bidiStreamingCall(responseObserver)});
+   *       speechClient.streamingRecognizeCallable().bidiStreamingCall(responseObserver));
    *
    *   StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
    *   requestObserver.onNext(request);

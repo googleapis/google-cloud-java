@@ -19,6 +19,8 @@ package com.google.cloud.logging.spi.v2;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
@@ -80,6 +82,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
     try {
       ExecutorProvider executorProvider = FixedExecutorProvider.create(executor);
       ChannelProvider channelProvider;
+      CredentialsProvider credentialsProvider;
       // todo(mziccard): ChannelProvider should support null/absent credentials for testing
       if (options.getHost().contains("localhost")
           || NoCredentials.getInstance().equals(options.getCredentials())) {
@@ -88,9 +91,11 @@ public class GrpcLoggingRpc implements LoggingRpc {
             .executor(executor)
             .build();
         channelProvider = FixedChannelProvider.create(managedChannel);
+        credentialsProvider = new NoCredentialsProvider();
       } else {
         channelProvider = GrpcTransportOptions.setUpChannelProvider(
             LoggingSettings.defaultChannelProviderBuilder(), options);
+        credentialsProvider = GrpcTransportOptions.setUpCredentialsProvider( options);
       }
       providerManager = ProviderManager.newBuilder()
           .setChannelProvider(channelProvider)
@@ -102,16 +107,19 @@ public class GrpcLoggingRpc implements LoggingRpc {
           ConfigSettings.defaultBuilder()
               .setExecutorProvider(providerManager)
               .setChannelProvider(providerManager)
+              .setCredentialsProvider(credentialsProvider)
               .applyToAllUnaryMethods(callSettingsBuilder);
       LoggingSettings.Builder logBuilder =
           LoggingSettings.defaultBuilder()
               .setExecutorProvider(providerManager)
               .setChannelProvider(providerManager)
+              .setCredentialsProvider(credentialsProvider)
               .applyToAllUnaryMethods(callSettingsBuilder);
       MetricsSettings.Builder metricsBuilder =
           MetricsSettings.defaultBuilder()
               .setExecutorProvider(providerManager)
               .setChannelProvider(providerManager)
+              .setCredentialsProvider(credentialsProvider)
               .applyToAllUnaryMethods(callSettingsBuilder);
       configClient = ConfigClient.create(confBuilder.build());
       loggingClient = LoggingClient.create(logBuilder.build());

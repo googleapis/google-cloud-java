@@ -19,6 +19,7 @@ import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.AbstractFixedSizeCollection;
 import com.google.api.gax.grpc.AbstractPage;
 import com.google.api.gax.grpc.AbstractPagedListResponse;
@@ -36,7 +37,6 @@ import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogEntry;
 import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.LogSink;
-import com.google.protobuf.ExperimentalApi;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -47,7 +47,7 @@ import javax.annotation.Generated;
  * page streaming pattern.
  */
 @Generated("by GAPIC")
-@ExperimentalApi
+@BetaApi
 public class PagedResponseWrappers {
 
   public static class ListLogEntriesPagedResponse

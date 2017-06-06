@@ -15,6 +15,7 @@
  */
 package com.google.cloud.vision.spi.v1;
 
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
@@ -60,6 +61,7 @@ public class ImageAnnotatorClientTest {
     ImageAnnotatorSettings settings =
         ImageAnnotatorSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = ImageAnnotatorClient.create(settings);
   }

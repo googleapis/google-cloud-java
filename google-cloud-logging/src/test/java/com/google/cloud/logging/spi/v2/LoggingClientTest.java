@@ -19,6 +19,7 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogEntri
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogsPagedResponse;
 
 import com.google.api.MonitoredResource;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
@@ -84,6 +85,7 @@ public class LoggingClientTest {
     LoggingSettings settings =
         LoggingSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = LoggingClient.create(settings);
   }

@@ -15,6 +15,7 @@
  */
 package com.google.cloud.videointelligence.spi.v1beta1;
 
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
@@ -65,6 +66,7 @@ public class VideoIntelligenceServiceClientTest {
     VideoIntelligenceServiceSettings settings =
         VideoIntelligenceServiceSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = VideoIntelligenceServiceClient.create(settings);
   }

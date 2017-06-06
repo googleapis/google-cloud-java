@@ -17,6 +17,7 @@ package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
@@ -79,6 +80,7 @@ public class ConfigClientTest {
     ConfigSettings settings =
         ConfigSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = ConfigClient.create(settings);
   }
@@ -136,12 +138,14 @@ public class ConfigClientTest {
     ResourceName destination = ProjectName.create("[PROJECT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
+    boolean includeChildren = true;
     LogSink expectedResponse =
         LogSink.newBuilder()
             .setName(name)
             .setDestinationWithResourceName(destination)
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
+            .setIncludeChildren(includeChildren)
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
@@ -180,12 +184,14 @@ public class ConfigClientTest {
     ResourceName destination = ProjectName.create("[PROJECT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
+    boolean includeChildren = true;
     LogSink expectedResponse =
         LogSink.newBuilder()
             .setName(name)
             .setDestinationWithResourceName(destination)
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
+            .setIncludeChildren(includeChildren)
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
@@ -227,12 +233,14 @@ public class ConfigClientTest {
     ResourceName destination = ProjectName.create("[PROJECT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
+    boolean includeChildren = true;
     LogSink expectedResponse =
         LogSink.newBuilder()
             .setName(name)
             .setDestinationWithResourceName(destination)
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
+            .setIncludeChildren(includeChildren)
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 

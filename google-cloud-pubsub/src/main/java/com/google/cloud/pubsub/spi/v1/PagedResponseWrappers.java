@@ -18,13 +18,13 @@ package com.google.cloud.pubsub.spi.v1;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.AbstractFixedSizeCollection;
 import com.google.api.gax.grpc.AbstractPage;
 import com.google.api.gax.grpc.AbstractPagedListResponse;
 import com.google.api.gax.grpc.PageContext;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
-import com.google.protobuf.ExperimentalApi;
 import com.google.pubsub.v1.ListSnapshotsRequest;
 import com.google.pubsub.v1.ListSnapshotsResponse;
 import com.google.pubsub.v1.ListSubscriptionsRequest;
@@ -47,7 +47,7 @@ import javax.annotation.Generated;
  * page streaming pattern.
  */
 @Generated("by GAPIC")
-@ExperimentalApi
+@BetaApi
 public class PagedResponseWrappers {
 
   public static class ListTopicsPagedResponse

@@ -20,8 +20,11 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogsPage
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
 
 import com.google.api.MonitoredResource;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelAndExecutor;
+import com.google.api.gax.grpc.ClientContext;
 import com.google.api.gax.grpc.UnaryCallable;
+import com.google.auth.Credentials;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
@@ -35,7 +38,6 @@ import com.google.logging.v2.ParentNameOneof;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
-import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -89,19 +91,17 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * InstantiatingChannelProvider channelProvider =
- *     LoggingSettings.defaultChannelProviderBuilder()
+ * LoggingSettings loggingSettings =
+ *     LoggingSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * LoggingSettings loggingSettings =
- *     LoggingSettings.defaultBuilder().setChannelProvider(channelProvider).build();
  * LoggingClient loggingClient =
  *     LoggingClient.create(loggingSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC")
-@ExperimentalApi
+@BetaApi
 public class LoggingClient implements AutoCloseable {
   private final LoggingSettings settings;
   private final ScheduledExecutorService executor;
@@ -145,26 +145,30 @@ public class LoggingClient implements AutoCloseable {
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
     this.channel = channelAndExecutor.getChannel();
+    Credentials credentials = settings.getCredentialsProvider().getCredentials();
 
-    this.deleteLogCallable =
-        UnaryCallable.create(settings.deleteLogSettings(), this.channel, this.executor);
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setExecutor(this.executor)
+            .setChannel(this.channel)
+            .setCredentials(credentials)
+            .build();
+
+    this.deleteLogCallable = UnaryCallable.create(settings.deleteLogSettings(), clientContext);
     this.writeLogEntriesCallable =
-        UnaryCallable.create(settings.writeLogEntriesSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.writeLogEntriesSettings(), clientContext);
     this.listLogEntriesCallable =
-        UnaryCallable.create(settings.listLogEntriesSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listLogEntriesSettings(), clientContext);
     this.listLogEntriesPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listLogEntriesSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listLogEntriesSettings(), clientContext);
     this.listMonitoredResourceDescriptorsCallable =
-        UnaryCallable.create(
-            settings.listMonitoredResourceDescriptorsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listMonitoredResourceDescriptorsSettings(), clientContext);
     this.listMonitoredResourceDescriptorsPagedCallable =
         UnaryCallable.createPagedVariant(
-            settings.listMonitoredResourceDescriptorsSettings(), this.channel, this.executor);
-    this.listLogsCallable =
-        UnaryCallable.create(settings.listLogsSettings(), this.channel, this.executor);
+            settings.listMonitoredResourceDescriptorsSettings(), clientContext);
+    this.listLogsCallable = UnaryCallable.create(settings.listLogsSettings(), clientContext);
     this.listLogsPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listLogsSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listLogsSettings(), clientContext);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(

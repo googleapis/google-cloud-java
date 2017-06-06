@@ -21,6 +21,7 @@ import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListTimeS
 
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
@@ -85,6 +86,7 @@ public class MetricServiceClientTest {
     MetricServiceSettings settings =
         MetricServiceSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = MetricServiceClient.create(settings);
   }

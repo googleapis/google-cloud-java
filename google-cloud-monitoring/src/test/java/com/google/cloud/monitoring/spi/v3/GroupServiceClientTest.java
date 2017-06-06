@@ -18,6 +18,7 @@ package com.google.cloud.monitoring.spi.v3;
 import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroupMembersPagedResponse;
 
 import com.google.api.MonitoredResource;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
@@ -73,6 +74,7 @@ public class GroupServiceClientTest {
     GroupServiceSettings settings =
         GroupServiceSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = GroupServiceClient.create(settings);
   }

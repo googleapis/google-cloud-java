@@ -16,6 +16,7 @@
 package com.google.cloud.videointelligence.spi.v1beta1;
 
 import com.google.api.core.BetaApi;
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.PropertiesProvider;
 import com.google.api.gax.grpc.ChannelProvider;
@@ -124,8 +125,7 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
   public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
         .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
-        .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
   }
 
   private static String getGapicVersion() {
@@ -154,7 +154,10 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
   }
 
   private VideoIntelligenceServiceSettings(Builder settingsBuilder) throws IOException {
-    super(settingsBuilder.getExecutorProvider(), settingsBuilder.getChannelProvider());
+    super(
+        settingsBuilder.getExecutorProvider(),
+        settingsBuilder.getChannelProvider(),
+        settingsBuilder.getCredentialsProvider());
 
     annotateVideoSettings = settingsBuilder.annotateVideoSettings().build();
   }
@@ -201,6 +204,7 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
 
     private Builder() {
       super(defaultChannelProviderBuilder().build());
+      setCredentialsProvider(defaultCredentialsProviderBuilder().build());
 
       annotateVideoSettings =
           OperationCallSettings.newBuilder(METHOD_ANNOTATE_VIDEO, AnnotateVideoResponse.class);
@@ -236,6 +240,12 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
     @Override
     public Builder setChannelProvider(ChannelProvider channelProvider) {
       super.setChannelProvider(channelProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
+      super.setCredentialsProvider(credentialsProvider);
       return this;
     }
 

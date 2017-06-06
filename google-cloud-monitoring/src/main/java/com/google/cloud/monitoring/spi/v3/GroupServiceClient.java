@@ -18,8 +18,11 @@ package com.google.cloud.monitoring.spi.v3;
 import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroupMembersPagedResponse;
 import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroupsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelAndExecutor;
+import com.google.api.gax.grpc.ClientContext;
 import com.google.api.gax.grpc.UnaryCallable;
+import com.google.auth.Credentials;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
 import com.google.monitoring.v3.GetGroupRequest;
@@ -32,7 +35,6 @@ import com.google.monitoring.v3.ListGroupsResponse;
 import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateGroupRequest;
 import com.google.protobuf.Empty;
-import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -93,19 +95,17 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * InstantiatingChannelProvider channelProvider =
- *     GroupServiceSettings.defaultChannelProviderBuilder()
+ * GroupServiceSettings groupServiceSettings =
+ *     GroupServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * GroupServiceSettings groupServiceSettings =
- *     GroupServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
  * GroupServiceClient groupServiceClient =
  *     GroupServiceClient.create(groupServiceSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC")
-@ExperimentalApi
+@BetaApi
 public class GroupServiceClient implements AutoCloseable {
   private final GroupServiceSettings settings;
   private final ScheduledExecutorService executor;
@@ -145,25 +145,26 @@ public class GroupServiceClient implements AutoCloseable {
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
     this.channel = channelAndExecutor.getChannel();
+    Credentials credentials = settings.getCredentialsProvider().getCredentials();
 
-    this.listGroupsCallable =
-        UnaryCallable.create(settings.listGroupsSettings(), this.channel, this.executor);
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setExecutor(this.executor)
+            .setChannel(this.channel)
+            .setCredentials(credentials)
+            .build();
+
+    this.listGroupsCallable = UnaryCallable.create(settings.listGroupsSettings(), clientContext);
     this.listGroupsPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listGroupsSettings(), this.channel, this.executor);
-    this.getGroupCallable =
-        UnaryCallable.create(settings.getGroupSettings(), this.channel, this.executor);
-    this.createGroupCallable =
-        UnaryCallable.create(settings.createGroupSettings(), this.channel, this.executor);
-    this.updateGroupCallable =
-        UnaryCallable.create(settings.updateGroupSettings(), this.channel, this.executor);
-    this.deleteGroupCallable =
-        UnaryCallable.create(settings.deleteGroupSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listGroupsSettings(), clientContext);
+    this.getGroupCallable = UnaryCallable.create(settings.getGroupSettings(), clientContext);
+    this.createGroupCallable = UnaryCallable.create(settings.createGroupSettings(), clientContext);
+    this.updateGroupCallable = UnaryCallable.create(settings.updateGroupSettings(), clientContext);
+    this.deleteGroupCallable = UnaryCallable.create(settings.deleteGroupSettings(), clientContext);
     this.listGroupMembersCallable =
-        UnaryCallable.create(settings.listGroupMembersSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listGroupMembersSettings(), clientContext);
     this.listGroupMembersPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listGroupMembersSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listGroupMembersSettings(), clientContext);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
