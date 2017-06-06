@@ -1,3 +1,6 @@
+One-time setup
+==============
+
 Set up Sonatype Account
 -----------------------
 * Sign up for a Sonatype JIRA account [here](https://issues.sonatype.org)
@@ -66,7 +69,7 @@ Create a Maven settings file
 ```
 
 To push a release version
--------------------------
+=========================
 
 1. Make sure the team agrees that it is time to release. 
 
@@ -94,7 +97,7 @@ This script builds and stages the release artifact on the Maven Central Reposito
 If you experience failures, you may need to:
 - repeat the clean step above
 - remove the temporary directory created to store docs by running `rm -rf tmp_gh-pages`
-- remove staged repositories from Sonatype: if a staged repository appears [here](https://oss.sonatype.org/#nexus-search;quick~com.google.cloud), remove it by running `mvn nexus-staging:drop`.
+- remove staged repositories from Sonatype (to prevent them from being released in subsequent steps): if a staged repository appears [here](https://oss.sonatype.org/#nexus-search;quick~com.google.cloud), remove it by running `mvn nexus-staging:drop`.
 
 6. Run `utilities/finalize_release.sh`.
 This script will release the staged artifact on the Maven Central Repository and push the README.md and gh-pages updates to github.
@@ -113,11 +116,11 @@ Go to the [releases page](https://github.com/GoogleCloudPlatform/google-cloud-ja
 9. Create and merge in another PR to reflect the updated project version.  For an example of what this PR should look like, see [#227](https://github.com/GoogleCloudPlatform/google-cloud-java/pull/227).
 
 To push a snapshot version
---------------------------
+==========================
 
 Pushing a snapshot is completely automated.  If "-SNAPSHOT" is included in the version denoted by the base directory's pom.xml, then an updated artifact will be pushed to the snapshot repository when Travis CI successfully completes a non-PR build. The build triggers the `after_success.sh` script, which handles the release process for SNAPSHOT versions.
 
 Improvements
-------------
+============
 
 Automatic tagging is not currently implemented, though it was discussed in [#119](https://github.com/GoogleCloudPlatform/google-cloud-java/pull/119).  If the version updates continue to be manual, a one-line git tag command can be added to `after_success.sh` to correctly tag releases.  However, automatically creating useful annotations for this tag will be difficult.  Also, if the release process becomes fully automated, tagging becomes a harder problem, as mentioned in that issue.
