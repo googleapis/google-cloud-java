@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.spi.v1;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSnapshotsPagedResponse;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.ApiStreamObserver;
 import com.google.api.gax.grpc.StreamingCallable;
@@ -101,6 +102,7 @@ public class SubscriptionAdminClientTest {
     SubscriptionAdminSettings settings =
         SubscriptionAdminSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = SubscriptionAdminClient.create(settings);
   }
