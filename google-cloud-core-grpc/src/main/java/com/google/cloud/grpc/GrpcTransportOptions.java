@@ -20,6 +20,8 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.UnaryCallSettings;
@@ -173,6 +175,14 @@ public class GrpcTransportOptions implements TransportOptions {
       providerBuilder.setCredentialsProvider(FixedCredentialsProvider.create(scopedCredentials));
     }
     return providerBuilder.build();
+  }
+
+  public static CredentialsProvider setUpCredentialsProvider(ServiceOptions<?, ?> serviceOptions) {
+    Credentials scopedCredentials = serviceOptions.getScopedCredentials();
+     if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
+       return FixedCredentialsProvider.create(scopedCredentials);
+     }
+     return new NoCredentialsProvider();
   }
 
 
