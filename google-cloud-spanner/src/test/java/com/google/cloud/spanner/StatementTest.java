@@ -16,8 +16,10 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.ByteArray;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.testing.EqualsTester;
 import org.junit.Rule;
@@ -38,6 +40,20 @@ public class StatementTest {
     assertThat(stmt.getSql()).isEqualTo(sql);
     assertThat(stmt.getParameters()).isEmpty();
     assertThat(stmt.toString()).isEqualTo(sql);
+    reserializeAndAssert(stmt);
+  }
+
+  @Test
+  public void serialization() throws Exception {
+    Statement stmt = Statement.newBuilder("SELECT * FROM table WHERE ")
+        .append("bool_field = @bool_field ").bind("bool_field").to(true)
+        .append("long_field = @long_field ").bind("long_field").to(1L)
+        .append("float_field = @float_field ").bind("float_field").to(1.)
+        .append("string_field = @string_field ").bind("string_field").to("abc")
+        .append("bytes_field = @bytes_field ").bind("bytes_field")
+        .to(ByteArray.fromBase64("abcd"))
+        .build();
+    reserializeAndAssert(stmt);
   }
 
   @Test

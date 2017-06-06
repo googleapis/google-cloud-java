@@ -207,7 +207,9 @@ public final class Type implements Serializable {
   }
 
   /** Describes an individual field in a {@code STRUCT type}. */
-  public static final class StructField {
+  public static final class StructField implements Serializable {
+    private static final long serialVersionUID = 8640511292704408210L;
+
     private final String name;
     private final Type type;
 

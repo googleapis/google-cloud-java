@@ -24,6 +24,8 @@ import com.google.cloud.Timestamp;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Durations;
 import com.google.spanner.v1.TransactionOptions;
+
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
@@ -115,10 +117,11 @@ import java.util.concurrent.TimeUnit;
  * @see Session#singleUseReadOnlyTransaction(TimestampBound)
  * @see Session#readOnlyTransaction(TimestampBound)
  */
-public final class TimestampBound {
+public final class TimestampBound implements Serializable {
   private static final TimestampBound STRONG_BOUND = new TimestampBound(Mode.STRONG, null, null);
   private static final TransactionOptions.ReadOnly STRONG_PROTO =
       TransactionOptions.ReadOnly.newBuilder().setStrong(true).build();
+  private static final long serialVersionUID = 9194565742651275731L;
 
   private final Mode mode;
   private final Timestamp timestamp;
