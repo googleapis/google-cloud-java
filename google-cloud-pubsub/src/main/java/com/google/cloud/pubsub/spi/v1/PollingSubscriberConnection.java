@@ -131,13 +131,12 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
       return;
     }
     ListenableFuture<PullResponse> pullResult =
-        stub.withDeadlineAfter(DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS)
-            .pull(
-                PullRequest.newBuilder()
-                    .setSubscription(subscription)
-                    .setMaxMessages(maxDesiredPulledMessages)
-                    .setReturnImmediately(true)
-                    .build());
+        stub.pull(
+            PullRequest.newBuilder()
+                .setSubscription(subscription)
+                .setMaxMessages(maxDesiredPulledMessages)
+                .setReturnImmediately(false)
+                .build());
 
     Futures.addCallback(
         pullResult,
