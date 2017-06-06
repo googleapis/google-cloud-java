@@ -204,7 +204,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
   }
 
   private boolean isAlive() {
-    // Read state only once. Because of threading, different calss can give different results.
+    // Read state only once. Because of threading, different calls can give different results.
     State state = state();
     return state == State.RUNNING || state == State.STARTING;
   }
