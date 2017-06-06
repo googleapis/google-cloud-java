@@ -20,7 +20,6 @@ Set up PGP keys
   * For other systems, see [GnuPG download page](https://www.gnupg.org/download/)
 
 * Generate the key ```gpg --gen-key```
-
   * Keep the defaults, but specify a passphrase
   * The passphrase can be random; you just need to remember it long enough to finish the next step
   * One way to make a random passphrase: ```base64 /dev/urandom | head -c20; echo;```
