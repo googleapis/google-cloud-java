@@ -4,7 +4,7 @@
                               http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>0.19.0-beta</version>
+  <version>0.19.1-beta-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Google Cloud Spanner</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner</url>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.19.0-alpha</version>
+    <version>0.19.1-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
