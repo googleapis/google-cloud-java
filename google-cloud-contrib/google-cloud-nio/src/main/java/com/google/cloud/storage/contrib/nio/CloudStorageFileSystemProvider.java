@@ -99,7 +99,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     private final CloudStorageFileSystem fileSystem;
     private final String prefix;
 
-    LazyPathIterator(CloudStorageFileSystem fileSystem, String prefix,
+    LazyPathIterator(CloudStorageFileSystem fileSystem,
+                     String prefix,
                      Iterator<Blob> blobIterator,
                      Filter<? super Path> filter) {
       this.prefix = prefix;
