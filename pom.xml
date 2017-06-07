@@ -154,7 +154,7 @@
     <language.version>0.19.1-beta-SNAPSHOT</language.version>
     <logging.version>1.1.1-SNAPSHOT</logging.version>
     <monitoring.version>0.19.1-alpha-SNAPSHOT</monitoring.version>
-    <pubsub.version>0.19.1-alpha-SNAPSHOT</pubsub.version>
+    <pubsub.version>0.19.1-beta-SNAPSHOT</pubsub.version>
     <resourcemanager.version>0.19.1-alpha-SNAPSHOT</resourcemanager.version>
     <spanner.version>0.19.1-beta-SNAPSHOT</spanner.version>
     <speech.version>0.19.1-alpha-SNAPSHOT</speech.version>
