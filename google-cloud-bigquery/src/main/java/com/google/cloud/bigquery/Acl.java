@@ -18,7 +18,10 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.services.bigquery.model.Dataset.Access;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -43,21 +46,61 @@ public final class Acl implements Serializable {
    *
    * @see <a href="https://cloud.google.com/bigquery/access-control#datasetroles">Dataset Roles</a>
    */
-  public enum Role {
+  public static final class Role extends StringEnumValue {
+    private static final long serialVersionUID = -1992679397135956912L;
+
+    private Role(String constant) {
+      super(constant);
+    }
+
+    private static final ApiFunction<String, Role> CONSTRUCTOR =
+        new ApiFunction<String, Role>() {
+          @Override
+          public Role apply(String constant) {
+            return new Role(constant);
+          }
+        };
+
+    private static final StringEnumType<Role> type = new StringEnumType(
+        Role.class,
+        CONSTRUCTOR);
+
     /**
      * Can read, query, copy or export tables in the dataset.
      */
-    READER,
+    public static final Role READER = type.createAndRegister("READER");
 
     /**
      * Same as {@link #READER} plus can edit or append data in the dataset.
      */
-    WRITER,
+    public static final Role WRITER = type.createAndRegister("WRITER");
 
     /**
      * Same as {@link #WRITER} plus can update and delete the dataset.
      */
-    OWNER
+    public static final Role OWNER = type.createAndRegister("OWNER");
+
+    /**
+     * Get the Role for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static Role valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the Role for the given String constant, and allow unrecognized values.
+     */
+    public static Role valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for Role.
+     */
+    public static Role[] values() {
+      return type.values();
+    }
   }
 
   /**
