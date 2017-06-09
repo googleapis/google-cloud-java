@@ -29,18 +29,20 @@
  * <code>
  * try (SpeechClient speechClient = SpeechClient.create()) {
  *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
- *   int sampleRate = 44100;
+ *   int sampleRateHertz = 44100;
+ *   String languageCode = "en-US";
  *   RecognitionConfig config = RecognitionConfig.newBuilder()
  *     .setEncoding(encoding)
- *     .setSampleRate(sampleRate)
+ *     .setSampleRateHertz(sampleRateHertz)
+ *     .setLanguageCode(languageCode)
  *     .build();
  *   String uri = "gs://bucket_name/file_name.flac";
  *   RecognitionAudio audio = RecognitionAudio.newBuilder()
  *     .setUri(uri)
  *     .build();
- *   SyncRecognizeResponse response = speechClient.syncRecognize(config, audio);
+ *   RecognizeResponse response = speechClient.recognize(config, audio);
  * }
  * </code>
  * </pre>
  */
-package com.google.cloud.speech.spi.v1beta1;
+package com.google.cloud.speech.v1;

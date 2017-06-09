@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.speech.spi.v1beta1;
+package com.google.cloud.speech.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.CredentialsProvider;
@@ -29,12 +29,6 @@ import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.StreamingCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
-import com.google.cloud.speech.v1beta1.AsyncRecognizeResponse;
-import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
-import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
-import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
-import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;

@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.speech.spi.v1beta1;
+package com.google.cloud.speech.v1;
 
-import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
-import com.google.cloud.speech.v1beta1.SpeechGrpc.SpeechImplBase;
-import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
-import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
-import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
-import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
+import com.google.cloud.speech.v1.LongRunningRecognizeRequest;
+import com.google.cloud.speech.v1.RecognizeRequest;
+import com.google.cloud.speech.v1.RecognizeResponse;
+import com.google.cloud.speech.v1.SpeechGrpc.SpeechImplBase;
+import com.google.cloud.speech.v1.StreamingRecognizeRequest;
+import com.google.cloud.speech.v1.StreamingRecognizeResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
@@ -61,12 +61,12 @@ public class MockSpeechImpl extends SpeechImplBase {
   }
 
   @Override
-  public void syncRecognize(
-      SyncRecognizeRequest request, StreamObserver<SyncRecognizeResponse> responseObserver) {
+  public void recognize(
+      RecognizeRequest request, StreamObserver<RecognizeResponse> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof SyncRecognizeResponse) {
+    if (response instanceof RecognizeResponse) {
       requests.add(request);
-      responseObserver.onNext((SyncRecognizeResponse) response);
+      responseObserver.onNext((RecognizeResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -76,8 +76,8 @@ public class MockSpeechImpl extends SpeechImplBase {
   }
 
   @Override
-  public void asyncRecognize(
-      AsyncRecognizeRequest request, StreamObserver<Operation> responseObserver) {
+  public void longRunningRecognize(
+      LongRunningRecognizeRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
