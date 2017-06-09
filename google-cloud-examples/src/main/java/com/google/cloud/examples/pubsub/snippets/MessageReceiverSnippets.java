@@ -22,8 +22,8 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
-import com.google.cloud.pubsub.spi.v1.MessageReceiver;
+import com.google.cloud.pubsub.v1.AckReplyConsumer;
+import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.pubsub.v1.PubsubMessage;
 import java.util.concurrent.BlockingQueue;
 
