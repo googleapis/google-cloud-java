@@ -16,6 +16,9 @@
 
 package com.google.cloud.compute;
 
+import com.google.api.core.ApiFunction;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
@@ -42,16 +45,56 @@ public final class SchedulingOptions implements Serializable {
   /**
    * Defines the maintenance behavior for this instance.
    */
-  public enum Maintenance {
+  public static final class Maintenance extends StringEnumValue {
+    private static final long serialVersionUID = 1041388027965833378L;
+
+    private static final ApiFunction<String, Maintenance> CONSTRUCTOR =
+        new ApiFunction<String, Maintenance>() {
+          @Override
+          public Maintenance apply(String constant) {
+            return new Maintenance(constant);
+          }
+        };
+
+    private static final StringEnumType<Maintenance> type = new StringEnumType(
+        Maintenance.class,
+        CONSTRUCTOR);
+
     /**
      * The default behavior for standard instances.
      */
-    MIGRATE,
+    public static final Maintenance MIGRATE = type.createAndRegister("MIGRATE");
 
     /**
      * The default and only possible behavior for preemptible instances.
      */
-    TERMINATE
+    public static final Maintenance TERMINATE = type.createAndRegister("TERMINATE");
+
+    private Maintenance(String constant) {
+      super(constant);
+    }
+
+    /**
+     * Get the Maintenance for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static Maintenance valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the Maintenance for the given String constant, and allow unrecognized values.
+     */
+    public static Maintenance valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for Maintenance.
+     */
+    public static Maintenance[] values() {
+      return type.values();
+    }
   }
 
   private SchedulingOptions(Boolean automaticRestart, Maintenance maintenance,
