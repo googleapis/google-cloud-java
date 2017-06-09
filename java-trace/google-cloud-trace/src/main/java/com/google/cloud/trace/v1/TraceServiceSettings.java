@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.trace.spi.v1;
+package com.google.cloud.trace.v1;
 
-import static com.google.cloud.trace.spi.v1.PagedResponseWrappers.ListTracesPagedResponse;
+import static com.google.cloud.trace.v1.PagedResponseWrappers.ListTracesPagedResponse;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;

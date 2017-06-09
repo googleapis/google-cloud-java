@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.trace.spi.v1;
-
-import static com.google.cloud.trace.spi.v1.PagedResponseWrappers.ListTracesPagedResponse;
+package com.google.cloud.trace.v1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.cloud.trace.v1.PagedResponseWrappers.ListTracesPagedResponse;
 import com.google.common.collect.Lists;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
