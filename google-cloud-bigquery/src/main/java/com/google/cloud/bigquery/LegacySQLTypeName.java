@@ -74,7 +74,7 @@ public class LegacySQLTypeName extends StringEnumValue {
 
   private StandardSQLTypeName equivalent;
 
-  LegacySQLTypeName setStandardType(StandardSQLTypeName equivalent) {
+  private LegacySQLTypeName setStandardType(StandardSQLTypeName equivalent) {
     this.equivalent = equivalent;
     return this;
   }
