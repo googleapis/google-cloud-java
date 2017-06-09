@@ -43,10 +43,6 @@ public abstract class TableDefinition implements Serializable {
   public static final class Type extends StringEnumValue {
     private static final long serialVersionUID = -551560816480511474L;
 
-    private Type(String constant) {
-      super(constant);
-    }
-
     private static final ApiFunction<String, Type> CONSTRUCTOR =
         new ApiFunction<String, Type>() {
           @Override
@@ -81,6 +77,10 @@ public abstract class TableDefinition implements Serializable {
      *     Sources</a>
      */
     public static final Type EXTERNAL = type.createAndRegister("EXTERNAL");
+
+    private Type(String constant) {
+      super(constant);
+    }
 
     /**
      * Get the Type for the given String constant, and throw an exception if the constant is

@@ -41,10 +41,6 @@ public class JobStatus implements Serializable {
   public static final class State extends StringEnumValue {
     private static final long serialVersionUID = 818920627219751204L;
 
-    private State(String constant) {
-      super(constant);
-    }
-
     private static final ApiFunction<String, State> CONSTRUCTOR =
         new ApiFunction<String, State>() {
           @Override
@@ -72,6 +68,10 @@ public class JobStatus implements Serializable {
      * will be non-null.
      */
     public static final State DONE = type.createAndRegister("DONE");
+
+    private State(String constant) {
+      super(constant);
+    }
 
     /**
      * Get the State for the given String constant, and throw an exception if the constant is

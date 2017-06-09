@@ -49,10 +49,6 @@ public final class Acl implements Serializable {
   public static final class Role extends StringEnumValue {
     private static final long serialVersionUID = -1992679397135956912L;
 
-    private Role(String constant) {
-      super(constant);
-    }
-
     private static final ApiFunction<String, Role> CONSTRUCTOR =
         new ApiFunction<String, Role>() {
           @Override
@@ -79,6 +75,10 @@ public final class Acl implements Serializable {
      * Same as {@link #WRITER} plus can update and delete the dataset.
      */
     public static final Role OWNER = type.createAndRegister("OWNER");
+
+    private Role(String constant) {
+      super(constant);
+    }
 
     /**
      * Get the Role for the given String constant, and throw an exception if the constant is
