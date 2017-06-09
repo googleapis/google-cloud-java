@@ -18,7 +18,10 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.services.bigquery.model.Table;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
@@ -37,12 +40,26 @@ public abstract class TableDefinition implements Serializable {
   /**
    * The table type.
    */
-  public enum Type {
+  public static final class Type extends StringEnumValue {
+    private static final long serialVersionUID = -551560816480511474L;
+
+    private static final ApiFunction<String, Type> CONSTRUCTOR =
+        new ApiFunction<String, Type>() {
+          @Override
+          public Type apply(String constant) {
+            return new Type(constant);
+          }
+        };
+
+    private static final StringEnumType<Type> type = new StringEnumType(
+        Type.class,
+        CONSTRUCTOR);
+
     /**
      * A normal BigQuery table. Instances of {@code TableDefinition} for this type are implemented
      * by {@link StandardTableDefinition}.
      */
-    TABLE,
+    public static final Type TABLE = type.createAndRegister("TABLE");
 
     /**
      * A virtual table defined by a SQL query. Instances of {@code TableDefinition} for this type
@@ -50,7 +67,7 @@ public abstract class TableDefinition implements Serializable {
      *
      * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
      */
-    VIEW,
+    public static final Type VIEW = type.createAndRegister("VIEW");
 
     /**
      * A BigQuery table backed by external data. Instances of {@code TableDefinition} for this type
@@ -59,7 +76,33 @@ public abstract class TableDefinition implements Serializable {
      * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data
      *     Sources</a>
      */
-    EXTERNAL
+    public static final Type EXTERNAL = type.createAndRegister("EXTERNAL");
+
+    private Type(String constant) {
+      super(constant);
+    }
+
+    /**
+     * Get the Type for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static Type valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the Type for the given String constant, and allow unrecognized values.
+     */
+    public static Type valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for Type.
+     */
+    public static Type[] values() {
+      return type.values();
+    }
   }
 
   /**
@@ -170,12 +213,12 @@ public abstract class TableDefinition implements Serializable {
 
   @SuppressWarnings("unchecked")
   static <T extends TableDefinition> T fromPb(Table tablePb) {
-    switch (Type.valueOf(tablePb.getType())) {
-      case TABLE:
+    switch (Type.valueOf(tablePb.getType()).toString()) {
+      case "TABLE":
         return (T) StandardTableDefinition.fromPb(tablePb);
-      case VIEW:
+      case "VIEW":
         return (T) ViewDefinition.fromPb(tablePb);
-      case EXTERNAL:
+      case "EXTERNAL":
         return (T) ExternalTableDefinition.fromPb(tablePb);
       default:
         // never reached
