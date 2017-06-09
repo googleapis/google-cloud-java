@@ -26,12 +26,8 @@ import com.google.cloud.StringEnumValue;
  *
  * @see <a href="https://cloud.google.com/bigquery/data-types">https://cloud.google.com/bigquery/data-types</a>
  */
-public class LegacySQLTypeName extends StringEnumValue {
+public final class LegacySQLTypeName extends StringEnumValue {
   private static final long serialVersionUID = 1421040468991161123L;
-
-  private LegacySQLTypeName(String constant) {
-    super(constant);
-  }
 
   private static final ApiFunction<String, LegacySQLTypeName> CONSTRUCTOR =
       new ApiFunction<String, LegacySQLTypeName>() {
@@ -84,6 +80,10 @@ public class LegacySQLTypeName extends StringEnumValue {
    */
   public StandardSQLTypeName getStandardType() {
     return equivalent;
+  }
+
+  private LegacySQLTypeName(String constant) {
+    super(constant);
   }
 
   /**
