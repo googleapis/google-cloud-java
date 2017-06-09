@@ -2,6 +2,8 @@
 # This script is used by Travis-CI to run tests.
 # This script is referenced in .travis.yml.
 
+mvn_opts="-DtrimStackTrace=false -fae --quiet -Djava.util.logging.config.file=logging.properties -P release"
+
 if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
     source ./utilities/integration_test_env.sh
     # Get signing tools and API keyfile
@@ -9,8 +11,10 @@ if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
     mkdir $TRAVIS_BUILD_DIR/signing-tools
     chmod 700 $TRAVIS_BUILD_DIR/signing-tools
     tar xvf $TRAVIS_BUILD_DIR/signing-tools.tar -C $TRAVIS_BUILD_DIR/signing-tools
-    # Run verify
-    mvn verify --quiet -Djava.util.logging.config.file=logging.properties -P release
 else
-    mvn verify --quiet -Djava.util.logging.config.file=logging.properties -DskipITs -P release
+    # Skip integration tests when testing pull requests.
+    mvn_opts+=" -DskipITs"
 fi
+
+# We don't quote expansion here, since we actually want space to separate the arguments.
+mvn verify $mvn_opts
