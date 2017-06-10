@@ -148,7 +148,7 @@ do
 done
 
 echo -e "\n${BOLD}Validating module folder mapping${NC}"
-for item in ${!module_folder_map[@]}
+for item in "${!module_folder_map[@]}"
 do
   if [ "${item}" != "." ] && [ "${module_version_map[${item}]}" == "" ]; then
     echo -e "${RED}WARNING:${NC} Ignoring \"${module_folder_map[${item}]}\" folder, as there is no corresponding module found in the root pom"
