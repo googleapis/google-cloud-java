@@ -19,7 +19,6 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" ]; then
         fi
 
         mvn clean deploy --quiet -Djava.util.logging.config.file=logging.properties -DskipTests=true -Dgpg.skip=true --settings ~/.m2/settings.xml -P release
-        fi
     else
         echo "Not deploying artifacts. This is only done with non-pull-request commits to master branch with Oracle Java 7 builds."
     fi
