@@ -468,12 +468,14 @@ public abstract class BaseSystemTest {
     logger.addHandler(handler);
     logger.setLevel(Level.INFO);
     logger.info("Message");
+    String filter =
+            "logName = projects/" + logging().getOptions().getProjectId() + "/logs/" + logName;
     Iterator<LogEntry> iterator =
-        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
+        logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     while (!iterator.hasNext()) {
       Thread.sleep(500L);
       iterator =
-          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
+          logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     }
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
@@ -510,12 +512,14 @@ public abstract class BaseSystemTest {
     logger.addHandler(handler);
     logger.setLevel(Level.WARNING);
     logger.warning("Message");
+    String filter =
+            "logName = projects/" + logging().getOptions().getProjectId() + "/logs/" + logName;
     Iterator<LogEntry> iterator =
-        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
+        logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     while (!iterator.hasNext()) {
       Thread.sleep(500L);
       iterator =
-          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
+          logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     }
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
