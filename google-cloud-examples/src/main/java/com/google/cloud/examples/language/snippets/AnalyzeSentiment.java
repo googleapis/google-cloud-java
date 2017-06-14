@@ -22,7 +22,7 @@
 
 package com.google.cloud.examples.language.snippets;
 
-import com.google.cloud.language.spi.v1.LanguageServiceClient;
+import com.google.cloud.language.v1.LanguageServiceClient;
 
 import com.google.cloud.language.v1.Document;
 import com.google.cloud.language.v1.Document.Type;

@@ -22,7 +22,7 @@
 
 package com.google.cloud.examples.speech.snippets;
 
-import com.google.cloud.speech.spi.v1.SpeechClient;
+import com.google.cloud.speech.v1.SpeechClient;
 import com.google.cloud.speech.v1.RecognitionAudio;
 import com.google.cloud.speech.v1.RecognitionConfig;
 import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;

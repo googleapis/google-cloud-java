@@ -422,7 +422,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
 
   /**
    * Returns a Service object for the current service. For instance, when using Google Cloud
-   * Storage, it returns a {@link com.google.cloud.storage.Storage} object.
+   * Storage, it returns a Storage object.
    */
   @SuppressWarnings("unchecked")
   public ServiceT getService() {
@@ -435,7 +435,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
 
   /**
    * Returns a Service RPC object for the current service. For instance, when using Google Cloud
-   * Storage, it returns a {@link com.google.cloud.storage.spi.StorageRpc} object.
+   * Storage, it returns a StorageRpc object.
    */
   @SuppressWarnings("unchecked")
   public ServiceRpc getRpc() {
