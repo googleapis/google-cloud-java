@@ -78,9 +78,14 @@ public abstract class BaseSystemTest {
   protected abstract String formatForTest(String resourceName);
 
   /**
-   * Creates a comparison expression for logging filter.
+   * Creates an equality expression for logging filter.
+   *
+   * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Logs
+   *     Filters Documentation</a>
    */
-  protected abstract <V> String createComparisonExpression(String name, String op, V value);
+  protected static <V> String createEqualityFilter(String name, V value) {
+    return name + " = " + "\"" + value.toString() + "\"";
+  }
 
   @Test
   public void testCreateGetUpdateAndDeleteSink() {
@@ -361,7 +366,7 @@ public abstract class BaseSystemTest {
         .build();
     logging().write(ImmutableList.of(firstEntry));
     logging().write(ImmutableList.of(secondEntry));
-    String filter = createComparisonExpression("logName", "=", logName);
+    String filter = createEqualityFilter("logName", logName);
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     Page<LogEntry> page = logging().listLogEntries(options);
     while (Iterators.size(page.iterateAll().iterator()) < 2) {
@@ -421,7 +426,7 @@ public abstract class BaseSystemTest {
         WriteOption.resource(MonitoredResource.newBuilder("global").build()),
         WriteOption.logName(logId));
     logging().flush();
-    String filter = createComparisonExpression("logName", "=", logName);
+    String filter = createEqualityFilter("logName", logName);
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     AsyncPage<LogEntry> page = logging().listLogEntriesAsync(options).get();
     while (Iterators.size(page.iterateAll().iterator()) < 2) {
@@ -477,7 +482,7 @@ public abstract class BaseSystemTest {
     logger.addHandler(handler);
     logger.setLevel(Level.INFO);
     logger.info("Message");
-    String filter = createComparisonExpression("logName", "=", logName);
+    String filter = createEqualityFilter("logName", logName);
     Iterator<LogEntry> iterator =
         logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     while (!iterator.hasNext()) {
@@ -521,7 +526,7 @@ public abstract class BaseSystemTest {
     logger.addHandler(handler);
     logger.setLevel(Level.WARNING);
     logger.warning("Message");
-    String filter = createComparisonExpression("logName", "=", logName);
+    String filter = createEqualityFilter("logName", logName);
     Iterator<LogEntry> iterator =
         logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     while (!iterator.hasNext()) {
