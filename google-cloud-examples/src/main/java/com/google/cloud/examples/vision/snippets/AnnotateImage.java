@@ -21,7 +21,7 @@
  */
 
 package com.google.cloud.examples.vision.snippets;
-import com.google.cloud.vision.spi.v1.ImageAnnotatorClient;
+import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
