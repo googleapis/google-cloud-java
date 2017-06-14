@@ -30,6 +30,8 @@ install:
   - cmd: IF DEFINED SECRET (secure-file\tools\secure-file -decrypt appveyor\key.json.enc -secret %SECRET% -out appveyor\key.json)
   - cmd: IF DEFINED SECRET (SET GOOGLE_APPLICATION_CREDENTIALS=%APPVEYOR_BUILD_FOLDER%\appveyor\key.json)
   - cmd: ECHO %GOOGLE_APPLICATION_CREDENTIALS%
+  - cmd: IF DEFINED SECRET (SET GOOGLE_API_KEY=apiKey)
+  - cmd: ECHO %GOOGLE_API_KEY%
 
 # build and install artifacts
 build_script:

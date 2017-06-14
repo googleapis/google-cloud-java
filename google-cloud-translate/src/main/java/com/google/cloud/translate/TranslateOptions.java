@@ -18,26 +18,27 @@ package com.google.cloud.translate;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.translate.Translate.TranslateOption;
+import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.cloud.translate.spi.v2.HttpTranslateRpc;
 import com.google.cloud.translate.spi.v2.TranslateRpc;
-import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.common.collect.ImmutableSet;
-
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class TranslateOptions extends
-    ServiceOptions<Translate, TranslateOptions> {
-
+public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions> {
   private static final long serialVersionUID = -572597134540398216L;
+  private static final Logger logger = Logger.getLogger(TranslateOptions.class.getName());
+
   private static final String API_SHORT_NAME = "Translate";
   private static final String DEFAULT_HOST = "https://translation.googleapis.com";
   private static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
@@ -135,7 +136,19 @@ public class TranslateOptions extends
 
   private TranslateOptions(Builder builder) {
     super(TranslateFactory.class, TranslateRpcFactory.class, builder, new TranslateDefaults());
-    this.apiKey = builder.apiKey != null ? builder.apiKey : getDefaultApiKey();
+    if (builder.apiKey != null) {
+      this.apiKey = builder.apiKey;
+    } else if (System.getenv(ServiceOptions.CREDENTIAL_ENV_NAME) == null) {
+      this.apiKey = getDefaultApiKey();
+    } else {
+      this.apiKey = null;
+      logger.log(
+          Level.WARNING,
+          String.format(
+              "API key in environment variable %s overridden by service account credentials " +
+              "specified in environment variable %s",
+              API_KEY_ENV_NAME, ServiceOptions.CREDENTIAL_ENV_NAME));
+    }
     this.targetLanguage = firstNonNull(builder.targetLanguage, Locale.ENGLISH.getLanguage());
   }
 
