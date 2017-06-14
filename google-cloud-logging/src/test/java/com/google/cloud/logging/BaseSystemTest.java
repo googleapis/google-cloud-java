@@ -83,7 +83,7 @@ public abstract class BaseSystemTest {
    * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Logs
    *     Filters Documentation</a>
    */
-  protected static <V> String createEqualityFilter(String name, V value) {
+  static <V> String createEqualityFilter(String name, V value) {
     return name + " = " + "\"" + value.toString() + "\"";
   }
 
