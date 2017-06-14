@@ -77,6 +77,11 @@ public abstract class BaseSystemTest {
    */
   protected abstract String formatForTest(String resourceName);
 
+  /**
+   * Creates a comparison expression for logging filter.
+   */
+  protected abstract <V> String createComparisonExpression(String name, String op, V value);
+
   @Test
   public void testCreateGetUpdateAndDeleteSink() {
     String name = formatForTest("test-create-get-update-sink");
@@ -356,7 +361,7 @@ public abstract class BaseSystemTest {
         .build();
     logging().write(ImmutableList.of(firstEntry));
     logging().write(ImmutableList.of(secondEntry));
-    String filter = "logName = " + logName.toString();
+    String filter = createComparisonExpression("logName", "=", logName);
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     Page<LogEntry> page = logging().listLogEntries(options);
     while (Iterators.size(page.iterateAll().iterator()) < 2) {
@@ -416,7 +421,7 @@ public abstract class BaseSystemTest {
         WriteOption.resource(MonitoredResource.newBuilder("global").build()),
         WriteOption.logName(logId));
     logging().flush();
-    String filter = "logName = " + logName.toString();
+    String filter = createComparisonExpression("logName", "=", logName);
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     AsyncPage<LogEntry> page = logging().listLogEntriesAsync(options).get();
     while (Iterators.size(page.iterateAll().iterator()) < 2) {
@@ -457,7 +462,7 @@ public abstract class BaseSystemTest {
 
   @Test
   public void testDeleteNonExistingLogAsync() throws ExecutionException, InterruptedException {
-    String logId= formatForTest("test-delete-non-existing-log-async");
+    String logId = formatForTest("test-delete-non-existing-log-async");
     assertFalse(logging().deleteLogAsync(logId).get());
   }
 
@@ -472,7 +477,7 @@ public abstract class BaseSystemTest {
     logger.addHandler(handler);
     logger.setLevel(Level.INFO);
     logger.info("Message");
-    String filter = "logName = " + logName.toString();
+    String filter = createComparisonExpression("logName", "=", logName);
     Iterator<LogEntry> iterator =
         logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     while (!iterator.hasNext()) {
@@ -516,7 +521,7 @@ public abstract class BaseSystemTest {
     logger.addHandler(handler);
     logger.setLevel(Level.WARNING);
     logger.warning("Message");
-    String filter = "logName = " + logName.toString();
+    String filter = createComparisonExpression("logName", "=", logName);
     Iterator<LogEntry> iterator =
         logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     while (!iterator.hasNext()) {

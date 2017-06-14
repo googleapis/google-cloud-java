@@ -52,4 +52,16 @@ public class ITLoggingTest extends BaseSystemTest {
   protected String formatForTest(String resourceName) {
     return RemoteLoggingHelper.formatForTest(resourceName);
   }
+
+  /**
+   * Creates a comparison expression for logging filter.
+   * comparison = name OP value OP = "<=" | "<" * | ">=" | ">" | "!=" | "=" | ":"
+   *
+   * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Logs
+   *     Filters Documentation</a>
+   */
+  @Override
+  protected <V> String createComparisonExpression(String name, String op, V value) {
+    return name + " "  + op + " " + "\"" + value.toString() + "\"";
+  }
 }
