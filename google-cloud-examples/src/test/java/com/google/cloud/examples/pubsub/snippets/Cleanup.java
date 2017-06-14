@@ -16,8 +16,8 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
-import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
 

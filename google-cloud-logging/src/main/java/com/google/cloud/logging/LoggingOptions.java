@@ -25,7 +25,7 @@ import com.google.cloud.TransportOptions;
 import com.google.cloud.logging.spi.v2.GrpcLoggingRpc;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.cloud.logging.spi.LoggingRpcFactory;
-import com.google.cloud.logging.spi.v2.LoggingSettings;
+import com.google.cloud.logging.v2.LoggingSettings;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.Set;
