@@ -77,7 +77,7 @@ public class CloudStorageFileSystemTest {
     CloudStorageFileSystem gcs = (CloudStorageFileSystem)path.getFileSystem();
     assertThat(gcs.config().maxChannelReopens()).isEqualTo(0);
 
-    // 2(a). Override the default, and see it reflected
+    // 2(a). Override the default, and see it reflected.
     CloudStorageFileSystemProvider.setDefaultCloudStorageConfiguration(
         CloudStorageConfiguration.builder()
         .maxChannelReopens(123).build());
@@ -87,6 +87,8 @@ public class CloudStorageFileSystemTest {
 
     // 2(b) ...even reflected if we try to open a file.
     try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      CloudStorageFileSystem csfs = (CloudStorageFileSystem)fs;
+      assertThat(csfs.config().maxChannelReopens()).isEqualTo(123);
       Files.write(fs.getPath("/angel"), ALONE.getBytes(UTF_8));
       path2 = Paths.get(URI.create("gs://bucket/angel"));
       try (SeekableByteChannel seekableByteChannel = Files.newByteChannel(path2)) {
@@ -95,11 +97,28 @@ public class CloudStorageFileSystemTest {
       }
     }
 
-    // 4. Clean up
+    // 4. Clean up.
     CloudStorageFileSystemProvider.setDefaultCloudStorageConfiguration(null);
     Path path3 = Paths.get(URI.create("gs://newbucket/file"));
     CloudStorageFileSystem gcs3 = (CloudStorageFileSystem)path3.getFileSystem();
     assertThat(gcs3.config().maxChannelReopens()).isEqualTo(0);
+  }
+
+  @Test
+  public void canOverrideDefaultOptions() throws IOException {
+    // Set a new default.
+    CloudStorageFileSystemProvider.setDefaultCloudStorageConfiguration(
+        CloudStorageConfiguration.builder()
+            .maxChannelReopens(123).build());
+
+    // This code wants its own value.
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket", CloudStorageConfiguration.builder().maxChannelReopens(7).build())) {
+      CloudStorageFileSystem csfs = (CloudStorageFileSystem)fs;
+      assertThat(csfs.config().maxChannelReopens()).isEqualTo(7);
+    }
+
+    // Clean up.
+    CloudStorageFileSystemProvider.setDefaultCloudStorageConfiguration(null);
   }
 
   @Test
