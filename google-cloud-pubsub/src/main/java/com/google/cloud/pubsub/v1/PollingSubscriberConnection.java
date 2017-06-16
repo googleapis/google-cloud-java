@@ -45,7 +45,7 @@ import org.threeten.bp.Duration;
  * Implementation of {@link AckProcessor} based on Cloud Pub/Sub pull and acknowledge operations.
  */
 final class PollingSubscriberConnection extends AbstractApiService implements AckProcessor {
-  static final Duration DEFAULT_TIMEOUT = Duration.ofSeconds(10);
+  static final Duration DEFAULT_TIMEOUT = Duration.ofSeconds(60);
 
   private static final int MAX_PER_REQUEST_CHANGES = 1000;
   private static final int DEFAULT_MAX_MESSAGES = 1000;

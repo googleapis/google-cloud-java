@@ -51,6 +51,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
   private String subscription = "";
   private final AtomicInteger messageAckDeadline =
       new AtomicInteger(Subscriber.MIN_ACK_DEADLINE_SECONDS);
+  private final AtomicInteger getSubscriptionCalled = new AtomicInteger();
   private final List<Stream> openedStreams = new ArrayList<>();
   private final List<Stream> closedStreams = new ArrayList<>();
   private final List<String> acks = new ArrayList<>();
@@ -225,6 +226,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
   @Override
   public void getSubscription(
       GetSubscriptionRequest request, StreamObserver<Subscription> responseObserver) {
+    getSubscriptionCalled.incrementAndGet();
     responseObserver.onNext(
         Subscription.newBuilder()
             .setName(request.getSubscription())
@@ -232,6 +234,10 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
             .setTopic("fake-topic")
             .build());
     responseObserver.onCompleted();
+  }
+
+  public int getSubscriptionCalledNum() {
+    return getSubscriptionCalled.get();
   }
 
   @Override

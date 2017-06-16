@@ -204,6 +204,18 @@ public class SubscriberTest {
   }
 
   @Test
+  public void testGetSubscriptionOnce() throws Exception {
+    Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
+
+    sendMessages(ImmutableList.of("A"));
+
+    // Trigger ack sending
+    subscriber.stopAsync().awaitTerminated();
+
+    assertEquals(1, fakeSubscriberServiceImpl.getSubscriptionCalledNum());
+  }
+
+  @Test
   public void testNackSingleMessage() throws Exception {
     Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
