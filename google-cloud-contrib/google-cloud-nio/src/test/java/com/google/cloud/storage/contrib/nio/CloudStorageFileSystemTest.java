@@ -70,6 +70,28 @@ public class CloudStorageFileSystemTest {
   }
 
   @Test
+  public void checkDefaultOptions() throws IOException {
+    // 1. We get the normal default if we don't do anything special.
+    Path path = Paths.get(URI.create("gs://bucket/file"));
+    CloudStorageFileSystem gcs = (CloudStorageFileSystem)path.getFileSystem();
+    assertThat(gcs.config().maxChannelReopens()).isEqualTo(0);
+
+    // 2. Override the default, and see it reflected
+    CloudStorageFileSystemProvider.setDefaultCloudStorageConfiguration(
+        CloudStorageConfiguration.builder()
+        .maxChannelReopens(123).build());
+    Path path2 = Paths.get(URI.create("gs://newbucket/file"));
+    CloudStorageFileSystem gcs2 = (CloudStorageFileSystem)path2.getFileSystem();
+    assertThat(gcs2.config().maxChannelReopens()).isEqualTo(123);
+
+    // 3. Clean up
+    CloudStorageFileSystemProvider.setDefaultCloudStorageConfiguration(null);
+    Path path3 = Paths.get(URI.create("gs://newbucket/file"));
+    CloudStorageFileSystem gcs3 = (CloudStorageFileSystem)path3.getFileSystem();
+    assertThat(gcs3.config().maxChannelReopens()).isEqualTo(0);
+  }
+
+  @Test
   public void testGetPath() throws IOException {
     try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
       assertThat(fs.getPath("/angel").toString()).isEqualTo("/angel");
