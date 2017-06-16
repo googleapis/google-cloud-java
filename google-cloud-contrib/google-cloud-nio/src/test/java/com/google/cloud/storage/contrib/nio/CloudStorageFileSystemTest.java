@@ -33,6 +33,7 @@ import org.junit.runners.JUnit4;
 
 import java.io.IOException;
 import java.net.URI;
+import java.nio.channels.SeekableByteChannel;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -76,7 +77,7 @@ public class CloudStorageFileSystemTest {
     CloudStorageFileSystem gcs = (CloudStorageFileSystem)path.getFileSystem();
     assertThat(gcs.config().maxChannelReopens()).isEqualTo(0);
 
-    // 2. Override the default, and see it reflected
+    // 2(a). Override the default, and see it reflected
     CloudStorageFileSystemProvider.setDefaultCloudStorageConfiguration(
         CloudStorageConfiguration.builder()
         .maxChannelReopens(123).build());
@@ -84,7 +85,17 @@ public class CloudStorageFileSystemTest {
     CloudStorageFileSystem gcs2 = (CloudStorageFileSystem)path2.getFileSystem();
     assertThat(gcs2.config().maxChannelReopens()).isEqualTo(123);
 
-    // 3. Clean up
+    // 2(b) ...even reflected if we try to open a file.
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      Files.write(fs.getPath("/angel"), ALONE.getBytes(UTF_8));
+      path2 = Paths.get(URI.create("gs://bucket/angel"));
+      try (SeekableByteChannel seekableByteChannel = Files.newByteChannel(path2)) {
+        CloudStorageReadChannel cloudChannel = (CloudStorageReadChannel) seekableByteChannel;
+        assertThat(cloudChannel.maxChannelReopens).isEqualTo(123);
+      }
+    }
+
+    // 4. Clean up
     CloudStorageFileSystemProvider.setDefaultCloudStorageConfiguration(null);
     Path path3 = Paths.get(URI.create("gs://newbucket/file"));
     CloudStorageFileSystem gcs3 = (CloudStorageFileSystem)path3.getFileSystem();
