@@ -18,6 +18,9 @@ package com.google.cloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
@@ -106,8 +109,48 @@ public class NetworkInterface implements Serializable {
     /**
      * The type of network access configuration. The only supported value is {@code ONE_TO_ONE_NAT}.
      */
-    public enum Type {
-      ONE_TO_ONE_NAT
+    public static final class Type extends StringEnumValue {
+      private static final long serialVersionUID = -1181560540824208967L;
+
+      private static final ApiFunction<String, Type> CONSTRUCTOR =
+          new ApiFunction<String, Type>() {
+            @Override
+            public Type apply(String constant) {
+              return new Type(constant);
+            }
+          };
+
+      private static final StringEnumType<Type> type = new StringEnumType(
+          Type.class,
+          CONSTRUCTOR);
+
+      public static final Type ONE_TO_ONE_NAT = type.createAndRegister("ONE_TO_ONE_NAT");
+
+      private Type(String constant) {
+        super(constant);
+      }
+
+      /**
+       * Get the Type for the given String constant, and throw an exception if the constant is
+       * not recognized.
+       */
+      public static Type valueOfStrict(String constant) {
+        return type.valueOfStrict(constant);
+      }
+
+      /**
+       * Get the Type for the given String constant, and allow unrecognized values.
+       */
+      public static Type valueOf(String constant) {
+        return type.valueOf(constant);
+      }
+
+      /**
+       * Return the known values for Type.
+       */
+      public static Type[] values() {
+        return type.values();
+      }
     }
 
     public static final class Builder {

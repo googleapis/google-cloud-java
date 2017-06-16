@@ -18,19 +18,22 @@ package com.google.cloud.dns;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.services.dns.model.Change;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
-import org.joda.time.DateTime;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+
+import org.joda.time.DateTime;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * A class representing an atomic update to a collection of {@link RecordSet}s within a {@code
@@ -60,9 +63,49 @@ public class ChangeRequestInfo implements Serializable {
    * @see <a href="https://cloud.google.com/dns/api/v1/changes#resource">Google Cloud DNS
    * documentation</a>
    */
-  public enum Status {
-    PENDING,
-    DONE
+  public static final class Status extends StringEnumValue {
+    private static final long serialVersionUID = -294992980062438246L;
+
+    private static final ApiFunction<String, Status> CONSTRUCTOR =
+        new ApiFunction<String, Status>() {
+          @Override
+          public Status apply(String constant) {
+            return new Status(constant);
+          }
+        };
+
+    private static final StringEnumType<Status> type = new StringEnumType(
+        Status.class,
+        CONSTRUCTOR);
+
+    public static final Status PENDING = type.createAndRegister("PENDING");
+    public static final Status DONE = type.createAndRegister("DONE");
+
+    private Status(String constant) {
+      super(constant);
+    }
+
+    /**
+     * Get the Status for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static Status valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the Status for the given String constant, and allow unrecognized values.
+     */
+    public static Status valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for Status.
+     */
+    public static Status[] values() {
+      return type.values();
+    }
   }
 
   /**

@@ -16,18 +16,21 @@
 
 package com.google.cloud.compute;
 
+import com.google.api.core.ApiFunction;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
+
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * A Google Compute Engine region.
@@ -66,9 +69,49 @@ public class Region implements Serializable {
   /**
    * Status of the region.
    */
-  public enum Status {
-    UP,
-    DOWN
+  public static final class Status extends StringEnumValue {
+    private static final long serialVersionUID = 658578478474360264L;
+
+    private static final ApiFunction<String, Status> CONSTRUCTOR =
+        new ApiFunction<String, Status>() {
+          @Override
+          public Status apply(String constant) {
+            return new Status(constant);
+          }
+        };
+
+    private static final StringEnumType<Status> type = new StringEnumType(
+        Status.class,
+        CONSTRUCTOR);
+
+    public static final Status UP = type.createAndRegister("UP");
+    public static final Status DOWN = type.createAndRegister("DOWN");
+
+    private Status(String constant) {
+      super(constant);
+    }
+
+    /**
+     * Get the Status for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static Status valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the Status for the given String constant, and allow unrecognized values.
+     */
+    public static Status valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for Status.
+     */
+    public static Status[] values() {
+      return type.values();
+    }
   }
 
   /**

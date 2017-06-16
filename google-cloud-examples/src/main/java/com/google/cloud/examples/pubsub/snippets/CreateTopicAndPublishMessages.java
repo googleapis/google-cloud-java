@@ -18,8 +18,8 @@ package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
+import com.google.cloud.pubsub.v1.Publisher;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;

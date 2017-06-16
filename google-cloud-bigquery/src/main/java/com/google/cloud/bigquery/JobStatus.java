@@ -16,6 +16,9 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.api.core.ApiFunction;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -35,22 +38,62 @@ public class JobStatus implements Serializable {
   /**
    * Possible states that a BigQuery Job can assume.
    */
-  public enum State {
+  public static final class State extends StringEnumValue {
+    private static final long serialVersionUID = 818920627219751204L;
+
+    private static final ApiFunction<String, State> CONSTRUCTOR =
+        new ApiFunction<String, State>() {
+          @Override
+          public State apply(String constant) {
+            return new State(constant);
+          }
+        };
+
+    private static final StringEnumType<State> type = new StringEnumType(
+        State.class,
+        CONSTRUCTOR);
+
     /**
      * The BigQuery Job is waiting to be executed.
      */
-    PENDING,
+    public static final State PENDING = type.createAndRegister("PENDING");
 
     /**
      * The BigQuery Job is being executed.
      */
-    RUNNING,
+    public static final State RUNNING = type.createAndRegister("RUNNING");
 
     /**
      * The BigQuery Job has completed either succeeding or failing. If failed {@link #getError()}
      * will be non-null.
      */
-    DONE
+    public static final State DONE = type.createAndRegister("DONE");
+
+    private State(String constant) {
+      super(constant);
+    }
+
+    /**
+     * Get the State for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static State valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the State for the given String constant, and allow unrecognized values.
+     */
+    public static State valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for State.
+     */
+    public static State[] values() {
+      return type.values();
+    }
   }
 
   private final State state;

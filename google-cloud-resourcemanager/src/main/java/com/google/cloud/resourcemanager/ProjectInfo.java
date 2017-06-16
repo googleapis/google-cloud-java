@@ -19,7 +19,10 @@ package com.google.cloud.resourcemanager;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.client.util.Data;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 
@@ -50,27 +53,67 @@ public class ProjectInfo implements Serializable {
   /**
    * The project lifecycle states.
    */
-  public enum State {
+  public static final class State extends StringEnumValue {
+    private static final long serialVersionUID = 869635563976629566L;
+
+    private static final ApiFunction<String, State> CONSTRUCTOR =
+        new ApiFunction<String, State>() {
+          @Override
+          public State apply(String constant) {
+            return new State(constant);
+          }
+        };
+
+    private static final StringEnumType<State> type = new StringEnumType(
+        State.class,
+        CONSTRUCTOR);
+
     /**
      * Only used/useful for distinguishing unset values.
      */
-    LIFECYCLE_STATE_UNSPECIFIED,
+    public static final State LIFECYCLE_STATE_UNSPECIFIED = type.createAndRegister("LIFECYCLE_STATE_UNSPECIFIED");
 
     /**
      * The normal and active state.
      */
-    ACTIVE,
+    public static final State ACTIVE = type.createAndRegister("ACTIVE");
 
     /**
      * The project has been marked for deletion by the user or by the system (Google Cloud
      * Platform). This can generally be reversed by calling {@link ResourceManager#undelete}.
      */
-    DELETE_REQUESTED,
+    public static final State DELETE_REQUESTED = type.createAndRegister("DELETE_REQUESTED");
 
     /**
      * The process of deleting the project has begun. Reversing the deletion is no longer possible.
      */
-    DELETE_IN_PROGRESS
+    public static final State DELETE_IN_PROGRESS = type.createAndRegister("DELETE_IN_PROGRESS");
+
+    private State(String constant) {
+      super(constant);
+    }
+
+    /**
+     * Get the State for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static State valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the State for the given String constant, and allow unrecognized values.
+     */
+    public static State valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for State.
+     */
+    public static State[] values() {
+      return type.values();
+    }
   }
 
   static class ResourceId implements Serializable {

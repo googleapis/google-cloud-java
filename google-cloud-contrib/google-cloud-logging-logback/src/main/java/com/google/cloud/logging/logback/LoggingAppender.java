@@ -19,6 +19,7 @@ package com.google.cloud.logging.logback;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.UnsynchronizedAppenderBase;
+import ch.qos.logback.core.util.Loader;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
@@ -143,7 +144,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     try {
       Class<? extends LoggingEnhancer> clz =
           (Class<? extends LoggingEnhancer>)
-              ClassLoader.getSystemClassLoader().loadClass(enhancerClassName.trim());
+              Loader.loadClass(enhancerClassName.trim());
       return clz.newInstance();
     } catch (Exception ex) {
       // If we cannot create the enhancer we fallback to null
