@@ -22,7 +22,8 @@ import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListTimeSerie
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -36,6 +37,7 @@ import com.google.monitoring.v3.ListMetricDescriptorsResponse;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
+import com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
 import com.google.monitoring.v3.MetricDescriptorName;
 import com.google.monitoring.v3.MonitoredResourceDescriptorName;
@@ -84,7 +86,10 @@ public class MetricServiceClientTest {
     serviceHelper.reset();
     MetricServiceSettings settings =
         MetricServiceSettings.defaultBuilder()
-            .setChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportProvider(
+                GrpcTransportProvider.newBuilder()
+                    .setChannelProvider(serviceHelper.createChannelProvider())
+                    .build())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = MetricServiceClient.create(settings);
@@ -139,8 +144,8 @@ public class MetricServiceClientTest {
 
       client.listMonitoredResourceDescriptors(name);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -186,8 +191,8 @@ public class MetricServiceClientTest {
 
       client.getMonitoredResourceDescriptor(name);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -231,8 +236,8 @@ public class MetricServiceClientTest {
 
       client.listMetricDescriptors(name);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -277,8 +282,8 @@ public class MetricServiceClientTest {
 
       client.getMetricDescriptor(name);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -327,8 +332,8 @@ public class MetricServiceClientTest {
 
       client.createMetricDescriptor(name, metricDescriptor);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -361,8 +366,8 @@ public class MetricServiceClientTest {
 
       client.deleteMetricDescriptor(name);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -415,8 +420,8 @@ public class MetricServiceClientTest {
 
       client.listTimeSeries(name, filter, interval, view);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -451,8 +456,8 @@ public class MetricServiceClientTest {
 
       client.createTimeSeries(name, timeSeries);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 }

@@ -15,16 +15,16 @@
  */
 package com.google.cloud.monitoring.v3;
 
+import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListMetricDescriptorsPagedResponse;
+import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
+import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListTimeSeriesPagedResponse;
+
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.grpc.ChannelAndExecutor;
-import com.google.api.gax.grpc.ClientContext;
-import com.google.api.gax.grpc.UnaryCallable;
-import com.google.auth.Credentials;
-import com.google.cloud.monitoring.v3.PagedResponseWrappers.ListMetricDescriptorsPagedResponse;
-import com.google.cloud.monitoring.v3.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
-import com.google.cloud.monitoring.v3.PagedResponseWrappers.ListTimeSeriesPagedResponse;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.monitoring.v3.stub.MetricServiceStub;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.DeleteMetricDescriptorRequest;
@@ -35,6 +35,7 @@ import com.google.monitoring.v3.ListMetricDescriptorsResponse;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
+import com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
 import com.google.monitoring.v3.MetricDescriptorName;
 import com.google.monitoring.v3.MonitoredResourceDescriptorName;
@@ -42,12 +43,9 @@ import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.TimeInterval;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
-import io.grpc.ManagedChannel;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
@@ -104,35 +102,11 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
+@Generated("by GAPIC v0.0.5")
 @BetaApi
-public class MetricServiceClient implements AutoCloseable {
+public class MetricServiceClient implements BackgroundResource {
   private final MetricServiceSettings settings;
-  private final ScheduledExecutorService executor;
-  private final ManagedChannel channel;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final UnaryCallable<
-          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
-      listMonitoredResourceDescriptorsCallable;
-  private final UnaryCallable<
-          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
-      listMonitoredResourceDescriptorsPagedCallable;
-  private final UnaryCallable<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
-      getMonitoredResourceDescriptorCallable;
-  private final UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
-      listMetricDescriptorsCallable;
-  private final UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsPagedResponse>
-      listMetricDescriptorsPagedCallable;
-  private final UnaryCallable<GetMetricDescriptorRequest, MetricDescriptor>
-      getMetricDescriptorCallable;
-  private final UnaryCallable<CreateMetricDescriptorRequest, MetricDescriptor>
-      createMetricDescriptorCallable;
-  private final UnaryCallable<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorCallable;
-  private final UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesResponse> listTimeSeriesCallable;
-  private final UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesPagedResponse>
-      listTimeSeriesPagedCallable;
-  private final UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable;
+  private final MetricServiceStub stub;
 
   /** Constructs an instance of MetricServiceClient with default settings. */
   public static final MetricServiceClient create() throws IOException {
@@ -149,69 +123,33 @@ public class MetricServiceClient implements AutoCloseable {
   }
 
   /**
+   * Constructs an instance of MetricServiceClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use MetricServiceSettings}.
+   */
+  public static final MetricServiceClient create(MetricServiceStub stub) {
+    return new MetricServiceClient(stub);
+  }
+
+  /**
    * Constructs an instance of MetricServiceClient, using the given settings. This is protected so
    * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected MetricServiceClient(MetricServiceSettings settings) throws IOException {
     this.settings = settings;
-    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
-    this.executor = channelAndExecutor.getExecutor();
-    this.channel = channelAndExecutor.getChannel();
-    Credentials credentials = settings.getCredentialsProvider().getCredentials();
+    this.stub = settings.createStub();
+  }
 
-    ClientContext clientContext =
-        ClientContext.newBuilder()
-            .setExecutor(this.executor)
-            .setChannel(this.channel)
-            .setCredentials(credentials)
-            .build();
-
-    this.listMonitoredResourceDescriptorsCallable =
-        UnaryCallable.create(settings.listMonitoredResourceDescriptorsSettings(), clientContext);
-    this.listMonitoredResourceDescriptorsPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listMonitoredResourceDescriptorsSettings(), clientContext);
-    this.getMonitoredResourceDescriptorCallable =
-        UnaryCallable.create(settings.getMonitoredResourceDescriptorSettings(), clientContext);
-    this.listMetricDescriptorsCallable =
-        UnaryCallable.create(settings.listMetricDescriptorsSettings(), clientContext);
-    this.listMetricDescriptorsPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listMetricDescriptorsSettings(), clientContext);
-    this.getMetricDescriptorCallable =
-        UnaryCallable.create(settings.getMetricDescriptorSettings(), clientContext);
-    this.createMetricDescriptorCallable =
-        UnaryCallable.create(settings.createMetricDescriptorSettings(), clientContext);
-    this.deleteMetricDescriptorCallable =
-        UnaryCallable.create(settings.deleteMetricDescriptorSettings(), clientContext);
-    this.listTimeSeriesCallable =
-        UnaryCallable.create(settings.listTimeSeriesSettings(), clientContext);
-    this.listTimeSeriesPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listTimeSeriesSettings(), clientContext);
-    this.createTimeSeriesCallable =
-        UnaryCallable.create(settings.createTimeSeriesSettings(), clientContext);
-
-    if (settings.getChannelProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              channel.shutdown();
-            }
-          });
-    }
-    if (settings.getExecutorProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              executor.shutdown();
-            }
-          });
-    }
+  protected MetricServiceClient(MetricServiceStub stub) {
+    this.settings = null;
+    this.stub = stub;
   }
 
   public final MetricServiceSettings getSettings() {
     return settings;
+  }
+
+  public MetricServiceStub getStub() {
+    return stub;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -232,7 +170,7 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * @param name The project on which to execute the request. The format is
    *     `"projects/{project_id_or_number}"`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
       ProjectName name) {
@@ -261,7 +199,7 @@ public class MetricServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
       ListMonitoredResourceDescriptorsRequest request) {
@@ -292,7 +230,7 @@ public class MetricServiceClient implements AutoCloseable {
   public final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsPagedCallable() {
-    return listMonitoredResourceDescriptorsPagedCallable;
+    return stub.listMonitoredResourceDescriptorsPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -326,7 +264,7 @@ public class MetricServiceClient implements AutoCloseable {
   public final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable() {
-    return listMonitoredResourceDescriptorsCallable;
+    return stub.listMonitoredResourceDescriptorsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -346,7 +284,7 @@ public class MetricServiceClient implements AutoCloseable {
    * @param name The monitored resource descriptor to get. The format is
    *     `"projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}"`. The
    *     `{resource_type}` is a predefined type, such as `cloudsql_database`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MonitoredResourceDescriptor getMonitoredResourceDescriptor(
       MonitoredResourceDescriptorName name) {
@@ -376,7 +314,7 @@ public class MetricServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final MonitoredResourceDescriptor getMonitoredResourceDescriptor(
       GetMonitoredResourceDescriptorRequest request) {
@@ -404,7 +342,7 @@ public class MetricServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorCallable() {
-    return getMonitoredResourceDescriptorCallable;
+    return stub.getMonitoredResourceDescriptorCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -425,7 +363,7 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * @param name The project on which to execute the request. The format is
    *     `"projects/{project_id_or_number}"`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMetricDescriptorsPagedResponse listMetricDescriptors(ProjectName name) {
     ListMetricDescriptorsRequest request =
@@ -453,7 +391,7 @@ public class MetricServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMetricDescriptorsPagedResponse listMetricDescriptors(
       ListMetricDescriptorsRequest request) {
@@ -483,7 +421,7 @@ public class MetricServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsPagedCallable() {
-    return listMetricDescriptorsPagedCallable;
+    return stub.listMetricDescriptorsPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -516,7 +454,7 @@ public class MetricServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
       listMetricDescriptorsCallable() {
-    return listMetricDescriptorsCallable;
+    return stub.listMetricDescriptorsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -535,7 +473,7 @@ public class MetricServiceClient implements AutoCloseable {
    * @param name The metric descriptor on which to execute the request. The format is
    *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example value of
    *     `{metric_id}` is `"compute.googleapis.com/instance/disk/read_bytes_count"`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor getMetricDescriptor(MetricDescriptorName name) {
 
@@ -561,7 +499,7 @@ public class MetricServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final MetricDescriptor getMetricDescriptor(GetMetricDescriptorRequest request) {
     return getMetricDescriptorCallable().call(request);
@@ -587,7 +525,7 @@ public class MetricServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<GetMetricDescriptorRequest, MetricDescriptor>
       getMetricDescriptorCallable() {
-    return getMetricDescriptorCallable;
+    return stub.getMetricDescriptorCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -608,7 +546,7 @@ public class MetricServiceClient implements AutoCloseable {
    * @param name The project on which to execute the request. The format is
    *     `"projects/{project_id_or_number}"`.
    * @param metricDescriptor The new [custom metric](/monitoring/custom-metrics) descriptor.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor createMetricDescriptor(
       ProjectName name, MetricDescriptor metricDescriptor) {
@@ -641,7 +579,7 @@ public class MetricServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor createMetricDescriptor(CreateMetricDescriptorRequest request) {
     return createMetricDescriptorCallable().call(request);
@@ -670,7 +608,7 @@ public class MetricServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<CreateMetricDescriptorRequest, MetricDescriptor>
       createMetricDescriptorCallable() {
-    return createMetricDescriptorCallable;
+    return stub.createMetricDescriptorCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -690,7 +628,7 @@ public class MetricServiceClient implements AutoCloseable {
    * @param name The metric descriptor on which to execute the request. The format is
    *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example of
    *     `{metric_id}` is: `"custom.googleapis.com/my_test_metric"`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteMetricDescriptor(MetricDescriptorName name) {
 
@@ -717,7 +655,7 @@ public class MetricServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final void deleteMetricDescriptor(DeleteMetricDescriptorRequest request) {
     deleteMetricDescriptorCallable().call(request);
@@ -744,7 +682,7 @@ public class MetricServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<DeleteMetricDescriptorRequest, Empty>
       deleteMetricDescriptorCallable() {
-    return deleteMetricDescriptorCallable;
+    return stub.deleteMetricDescriptorCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -775,7 +713,7 @@ public class MetricServiceClient implements AutoCloseable {
    * @param interval The time interval for which results should be returned. Only time series that
    *     contain data points in the specified interval are included in the response.
    * @param view Specifies which information is returned about the time series.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTimeSeriesPagedResponse listTimeSeries(
       ProjectName name,
@@ -817,7 +755,7 @@ public class MetricServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTimeSeriesPagedResponse listTimeSeries(ListTimeSeriesRequest request) {
     return listTimeSeriesPagedCallable().call(request);
@@ -851,7 +789,7 @@ public class MetricServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesPagedResponse>
       listTimeSeriesPagedCallable() {
-    return listTimeSeriesPagedCallable;
+    return stub.listTimeSeriesPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -889,7 +827,7 @@ public class MetricServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesResponse>
       listTimeSeriesCallable() {
-    return listTimeSeriesCallable;
+    return stub.listTimeSeriesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -914,7 +852,7 @@ public class MetricServiceClient implements AutoCloseable {
    *     point to each of several time series. The new data point must be more recent than any other
    *     point in its time series. Each `TimeSeries` value must fully specify a unique time series
    *     by supplying all label values for the metric and the monitored resource.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void createTimeSeries(ProjectName name, List<TimeSeries> timeSeries) {
 
@@ -947,7 +885,7 @@ public class MetricServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void createTimeSeries(CreateTimeSeriesRequest request) {
     createTimeSeriesCallable().call(request);
@@ -976,17 +914,36 @@ public class MetricServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable() {
-    return createTimeSeriesCallable;
+    return stub.createTimeSeriesCallable();
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
   }
 }

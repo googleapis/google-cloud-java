@@ -16,7 +16,8 @@
 package com.google.cloud.vision.v1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.protobuf.GeneratedMessageV3;
@@ -57,7 +58,10 @@ public class ImageAnnotatorClientTest {
     serviceHelper.reset();
     ImageAnnotatorSettings settings =
         ImageAnnotatorSettings.defaultBuilder()
-            .setChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportProvider(
+                GrpcTransportProvider.newBuilder()
+                    .setChannelProvider(serviceHelper.createChannelProvider())
+                    .build())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = ImageAnnotatorClient.create(settings);
@@ -97,8 +101,8 @@ public class ImageAnnotatorClientTest {
 
       client.batchAnnotateImages(requests);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 }

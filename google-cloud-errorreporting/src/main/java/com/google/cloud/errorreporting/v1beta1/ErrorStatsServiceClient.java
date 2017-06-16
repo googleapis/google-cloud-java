@@ -18,8 +18,10 @@ package com.google.cloud.errorreporting.v1beta1;
 import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
 import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
 
-import com.google.api.gax.grpc.ChannelAndExecutor;
-import com.google.api.gax.grpc.UnaryCallable;
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.errorreporting.v1beta1.stub.ErrorStatsServiceStub;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
@@ -28,13 +30,8 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange;
-import com.google.protobuf.ExperimentalApi;
-import io.grpc.ManagedChannel;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
@@ -83,31 +80,20 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * InstantiatingChannelProvider channelProvider =
- *     ErrorStatsServiceSettings.defaultChannelProviderBuilder()
+ * ErrorStatsServiceSettings errorStatsServiceSettings =
+ *     ErrorStatsServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * ErrorStatsServiceSettings errorStatsServiceSettings =
- *     ErrorStatsServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
  * ErrorStatsServiceClient errorStatsServiceClient =
  *     ErrorStatsServiceClient.create(errorStatsServiceSettings);
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
-@ExperimentalApi
-public class ErrorStatsServiceClient implements AutoCloseable {
+@Generated("by GAPIC v0.0.5")
+@BetaApi
+public class ErrorStatsServiceClient implements BackgroundResource {
   private final ErrorStatsServiceSettings settings;
-  private final ScheduledExecutorService executor;
-  private final ManagedChannel channel;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable;
-  private final UnaryCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
-      listGroupStatsPagedCallable;
-  private final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
-  private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
-  private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
+  private final ErrorStatsServiceStub stub;
 
   /** Constructs an instance of ErrorStatsServiceClient with default settings. */
   public static final ErrorStatsServiceClient create() throws IOException {
@@ -124,51 +110,34 @@ public class ErrorStatsServiceClient implements AutoCloseable {
   }
 
   /**
+   * Constructs an instance of ErrorStatsServiceClient, using the given stub for making calls. This
+   * is for advanced usage - prefer to use ErrorStatsServiceSettings}.
+   */
+  public static final ErrorStatsServiceClient create(ErrorStatsServiceStub stub) {
+    return new ErrorStatsServiceClient(stub);
+  }
+
+  /**
    * Constructs an instance of ErrorStatsServiceClient, using the given settings. This is protected
    * so that it easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
   protected ErrorStatsServiceClient(ErrorStatsServiceSettings settings) throws IOException {
     this.settings = settings;
-    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
-    this.executor = channelAndExecutor.getExecutor();
-    this.channel = channelAndExecutor.getChannel();
+    this.stub = settings.createStub();
+  }
 
-    this.listGroupStatsCallable =
-        UnaryCallable.create(settings.listGroupStatsSettings(), this.channel, this.executor);
-    this.listGroupStatsPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listGroupStatsSettings(), this.channel, this.executor);
-    this.listEventsCallable =
-        UnaryCallable.create(settings.listEventsSettings(), this.channel, this.executor);
-    this.listEventsPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listEventsSettings(), this.channel, this.executor);
-    this.deleteEventsCallable =
-        UnaryCallable.create(settings.deleteEventsSettings(), this.channel, this.executor);
-
-    if (settings.getChannelProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              channel.shutdown();
-            }
-          });
-    }
-    if (settings.getExecutorProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              executor.shutdown();
-            }
-          });
-    }
+  protected ErrorStatsServiceClient(ErrorStatsServiceStub stub) {
+    this.settings = null;
+    this.stub = stub;
   }
 
   public final ErrorStatsServiceSettings getSettings() {
     return settings;
+  }
+
+  public ErrorStatsServiceStub getStub() {
+    return stub;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -198,7 +167,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     time range are returned, unless the request contains an explicit group_id list. If a
    *     group_id list is given, also &lt;code&gt;ErrorGroupStats&lt;/code&gt; with zero occurrences
    *     are returned.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGroupStatsPagedResponse listGroupStats(
       ProjectName projectName, QueryTimeRange timeRange) {
@@ -231,7 +200,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGroupStatsPagedResponse listGroupStats(ListGroupStatsRequest request) {
     return listGroupStatsPagedCallable().call(request);
@@ -261,7 +230,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
       listGroupStatsPagedCallable() {
-    return listGroupStatsPagedCallable;
+    return stub.listGroupStatsPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -295,7 +264,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse>
       listGroupStatsCallable() {
-    return listGroupStatsCallable;
+    return stub.listGroupStatsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -318,7 +287,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     as `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @param groupId [Required] The group for which events shall be returned.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventsPagedResponse listEvents(ProjectName projectName, String groupId) {
     ListEventsRequest request =
@@ -350,7 +319,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventsPagedResponse listEvents(ListEventsRequest request) {
     return listEventsPagedCallable().call(request);
@@ -379,7 +348,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable() {
-    return listEventsPagedCallable;
+    return stub.listEventsPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -412,7 +381,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable() {
-    return listEventsCallable;
+    return stub.listEventsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -431,7 +400,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    * @param projectName [Required] The resource name of the Google Cloud Platform project. Written
    *     as `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeleteEventsResponse deleteEvents(ProjectName projectName) {
 
@@ -457,7 +426,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final DeleteEventsResponse deleteEvents(DeleteEventsRequest request) {
     return deleteEventsCallable().call(request);
@@ -482,17 +451,36 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
-    return deleteEventsCallable;
+    return stub.deleteEventsCallable();
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
   }
 }

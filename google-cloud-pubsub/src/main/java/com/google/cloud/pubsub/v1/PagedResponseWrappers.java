@@ -19,10 +19,10 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.grpc.AbstractFixedSizeCollection;
-import com.google.api.gax.grpc.AbstractPage;
-import com.google.api.gax.grpc.AbstractPagedListResponse;
-import com.google.api.gax.grpc.PageContext;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.pubsub.v1.ListSnapshotsRequest;
@@ -96,7 +96,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListTopicsPage> createPageAsync(
+    public ApiFuture<ListTopicsPage> createPageAsync(
         PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
         ApiFuture<ListTopicsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -182,7 +182,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListTopicSubscriptionsPage> createPageAsync(
+    public ApiFuture<ListTopicSubscriptionsPage> createPageAsync(
         PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String> context,
         ApiFuture<ListTopicSubscriptionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -291,7 +291,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListSubscriptionsPage> createPageAsync(
+    public ApiFuture<ListSubscriptionsPage> createPageAsync(
         PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
         ApiFuture<ListSubscriptionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -366,7 +366,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListSnapshotsPage> createPageAsync(
+    public ApiFuture<ListSnapshotsPage> createPageAsync(
         PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
         ApiFuture<ListSnapshotsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);

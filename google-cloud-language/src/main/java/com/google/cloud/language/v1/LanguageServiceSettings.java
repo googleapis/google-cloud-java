@@ -15,23 +15,30 @@
  */
 package com.google.cloud.language.v1;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ClientSettings;
-import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.grpc.GrpcTransport;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.SimpleCallSettings;
-import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.SimpleCallSettings;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.language.v1.stub.GrpcLanguageServiceStub;
+import com.google.cloud.language.v1.stub.LanguageServiceStub;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
@@ -79,36 +86,6 @@ public class LanguageServiceSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private static final io.grpc.MethodDescriptor<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
-      METHOD_ANALYZE_SENTIMENT =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.cloud.language.v1.LanguageService/AnalyzeSentiment",
-              io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeSentimentRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(
-                  AnalyzeSentimentResponse.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
-      METHOD_ANALYZE_ENTITIES =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.cloud.language.v1.LanguageService/AnalyzeEntities",
-              io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeEntitiesRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeEntitiesResponse.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
-      METHOD_ANALYZE_SYNTAX =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.cloud.language.v1.LanguageService/AnalyzeSyntax",
-              io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeSyntaxRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeSyntaxResponse.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<AnnotateTextRequest, AnnotateTextResponse>
-      METHOD_ANNOTATE_TEXT =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.cloud.language.v1.LanguageService/AnnotateText",
-              io.grpc.protobuf.ProtoUtils.marshaller(AnnotateTextRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(AnnotateTextResponse.getDefaultInstance()));
-
   private final SimpleCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentSettings;
   private final SimpleCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
@@ -139,6 +116,15 @@ public class LanguageServiceSettings extends ClientSettings {
     return annotateTextSettings;
   }
 
+  public LanguageServiceStub createStub() throws IOException {
+    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
+      return GrpcLanguageServiceStub.create(this);
+    } else {
+      throw new UnsupportedOperationException(
+          "Transport not supported: " + getTransportProvider().getTransportName());
+    }
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
@@ -160,10 +146,20 @@ public class LanguageServiceSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
+  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
         .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return GrpcTransportProvider.newBuilder()
+        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
+  }
+
+  public static TransportProvider defaultTransportProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
   }
 
   private static String getGapicVersion() {
@@ -181,9 +177,22 @@ public class LanguageServiceSettings extends ClientSettings {
     return Builder.createDefault();
   }
 
+  /**
+   * Returns a builder for this class with recommened defaults for API methods, and the given
+   * ClientContext used for executor/transport/credentials.
+   */
+  public static Builder defaultBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
   }
 
   /** Returns a builder containing all the values of this settings class. */
@@ -194,8 +203,9 @@ public class LanguageServiceSettings extends ClientSettings {
   private LanguageServiceSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getChannelProvider(),
-        settingsBuilder.getCredentialsProvider());
+        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getClock());
 
     analyzeSentimentSettings = settingsBuilder.analyzeSentimentSettings().build();
     analyzeEntitiesSettings = settingsBuilder.analyzeEntitiesSettings().build();
@@ -216,27 +226,26 @@ public class LanguageServiceSettings extends ClientSettings {
     private final SimpleCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
         annotateTextSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          Sets.immutableEnumSet(
-              Lists.<Status.Code>newArrayList(
-                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-      definitions.put(
-          "non_idempotent",
-          Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
+          ImmutableSet.copyOf(
+              Lists.<StatusCode>newArrayList(
+                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
+                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
-    private static final ImmutableMap<String, RetrySettings.Builder> RETRY_PARAM_DEFINITIONS;
+    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, RetrySettings.Builder> definitions = ImmutableMap.builder();
-      RetrySettings.Builder settingsBuilder = null;
-      settingsBuilder =
+      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
+      RetrySettings settings = null;
+      settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
@@ -244,22 +253,26 @@ public class LanguageServiceSettings extends ClientSettings {
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(600000L));
-      definitions.put("default", settingsBuilder);
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     private Builder() {
-      super(defaultChannelProviderBuilder().build());
-      setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      this((ClientContext) null);
+    }
 
-      analyzeSentimentSettings = SimpleCallSettings.newBuilder(METHOD_ANALYZE_SENTIMENT);
+    private Builder(ClientContext clientContext) {
+      super(clientContext);
 
-      analyzeEntitiesSettings = SimpleCallSettings.newBuilder(METHOD_ANALYZE_ENTITIES);
+      analyzeSentimentSettings = SimpleCallSettings.newBuilder();
 
-      analyzeSyntaxSettings = SimpleCallSettings.newBuilder(METHOD_ANALYZE_SYNTAX);
+      analyzeEntitiesSettings = SimpleCallSettings.newBuilder();
 
-      annotateTextSettings = SimpleCallSettings.newBuilder(METHOD_ANNOTATE_TEXT);
+      analyzeSyntaxSettings = SimpleCallSettings.newBuilder();
+
+      annotateTextSettings = SimpleCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
@@ -267,30 +280,38 @@ public class LanguageServiceSettings extends ClientSettings {
               analyzeEntitiesSettings,
               analyzeSyntaxSettings,
               annotateTextSettings);
+
+      initDefaults(this);
     }
 
     private static Builder createDefault() {
-      Builder builder = new Builder();
+      Builder builder = new Builder((ClientContext) null);
+      builder.setTransportProvider(defaultTransportProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
 
       builder
           .analyzeSentimentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .analyzeEntitiesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .analyzeSyntaxSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .annotateTextSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
     }
@@ -318,8 +339,8 @@ public class LanguageServiceSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setChannelProvider(ChannelProvider channelProvider) {
-      super.setChannelProvider(channelProvider);
+    public Builder setTransportProvider(TransportProvider transportProvider) {
+      super.setTransportProvider(transportProvider);
       return this;
     }
 
@@ -330,14 +351,13 @@ public class LanguageServiceSettings extends ClientSettings {
     }
 
     /**
-     * Applies the given settings to all of the unary API methods in this service. Only values that
-     * are non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllUnaryMethods(UnaryCallSettings.Builder unaryCallSettings)
-        throws Exception {
-      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, unaryCallSettings);
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
