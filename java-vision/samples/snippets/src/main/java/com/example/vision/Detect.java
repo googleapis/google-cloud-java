@@ -13,8 +13,6 @@
  */
 package com.example.vision;
 
-import com.google.cloud.vision.spi.v1.ImageAnnotatorClient;
-import com.google.cloud.vision.spi.v1.ImageAnnotatorSettings;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
@@ -28,6 +26,8 @@ import com.google.cloud.vision.v1.FaceAnnotation;
 import com.google.cloud.vision.v1.Feature;
 import com.google.cloud.vision.v1.Feature.Type;
 import com.google.cloud.vision.v1.Image;
+import com.google.cloud.vision.v1.ImageAnnotatorClient;
+import com.google.cloud.vision.v1.ImageAnnotatorSettings;
 import com.google.cloud.vision.v1.ImageSource;
 import com.google.cloud.vision.v1.LocationInfo;
 import com.google.cloud.vision.v1.Page;
