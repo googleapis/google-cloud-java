@@ -21,7 +21,7 @@ import com.google.api.Metric;
 import com.google.api.MonitoredResource;
 
 // Imports the Google Cloud client library
-import com.google.cloud.monitoring.spi.v3.MetricServiceClient;
+import com.google.cloud.monitoring.v3.MetricServiceClient;
 
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.Point;
