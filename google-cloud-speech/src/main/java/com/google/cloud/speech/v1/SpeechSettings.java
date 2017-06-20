@@ -78,7 +78,7 @@ public class SpeechSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
-  private static final String PROPERTIES_FILE = "/com/google/cloud/speech/v1/project.properties";
+  private static final String PROPERTIES_FILE = "/com/google/cloud/speech/project.properties";
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
@@ -271,7 +271,7 @@ public class SpeechSettings extends ClientSettings {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(1800L))
+                      .setInitialRetryDelay(Duration.ofMillis(20000L))
                       .setRetryDelayMultiplier(1.5)
                       .setMaxRetryDelay(Duration.ofMillis(45000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored

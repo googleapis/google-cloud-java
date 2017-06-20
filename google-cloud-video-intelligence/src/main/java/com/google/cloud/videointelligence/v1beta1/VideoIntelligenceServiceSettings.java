@@ -79,7 +79,7 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_VERSION = "";
 
   private static final String PROPERTIES_FILE =
-      "/com/google/cloud/videointelligence/v1beta1/project.properties";
+      "/com/google/cloud/videointelligence/project.properties";
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
@@ -225,7 +225,7 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(18000L))
+                      .setInitialRetryDelay(Duration.ofMillis(20000L))
                       .setRetryDelayMultiplier(1.5)
                       .setMaxRetryDelay(Duration.ofMillis(45000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored

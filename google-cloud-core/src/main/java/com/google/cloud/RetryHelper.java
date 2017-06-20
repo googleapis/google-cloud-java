@@ -43,7 +43,7 @@ public class RetryHelper {
       throws RetryHelperException {
     try {
       // Suppressing should be ok as a workaraund. Current and only ResultRetryAlgorithm
-      // implementation does not use response at all, so ignoring its typ is ok.
+      // implementation does not use response at all, so ignoring its type is ok.
       @SuppressWarnings("unchecked")
       RetryAlgorithm<V> retryAlgorithm =
           new RetryAlgorithm<>((ResultRetryAlgorithm<V>) resultRetryAlgorithm,
