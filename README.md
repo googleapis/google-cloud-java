@@ -835,6 +835,13 @@ Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
+### Proxy (Experimental)
+Many clients in this repository use gRPC, not HTTP.
+In these clients, the `http.proxyHost` property takes no effect.
+To use proxy in gRPC clients, set the `GRPC_PROXY_EXP` environment variable;
+more details are available in the gRPC [release note](https://github.com/grpc/grpc-java/releases/tag/v1.0.3).
+Please note that proxy support is currently experimental.
+
 Java Versions
 -------------
 
