@@ -97,9 +97,13 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     private final Iterator<Blob> blobIterator;
     private final Filter<? super Path> filter;
     private final CloudStorageFileSystem fileSystem;
+    private final String prefix;
 
-    LazyPathIterator(CloudStorageFileSystem fileSystem, Iterator<Blob> blobIterator,
+    LazyPathIterator(CloudStorageFileSystem fileSystem,
+                     String prefix,
+                     Iterator<Blob> blobIterator,
                      Filter<? super Path> filter) {
+      this.prefix = prefix;
       this.blobIterator = blobIterator;
       this.filter = filter;
       this.fileSystem = fileSystem;
@@ -110,6 +114,10 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       while (blobIterator.hasNext()) {
         Path path = fileSystem.getPath(blobIterator.next().getName());
         try {
+          if (path.toString().equals(prefix)) {
+            // do not return ourselves, because that confuses recursive descents.
+            continue;
+          }
           if (filter.accept(path)) {
             return path;
           }
@@ -617,14 +625,14 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(dir);
     checkNotNull(filter);
     initStorage();
-    String prefix = cloudPath.toRealPath().toString();
+    final String prefix = cloudPath.toRealPath().toString();
     final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(),
         Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
         Storage.BlobListOption.fields()).iterateAll().iterator();
     return new DirectoryStream<Path>() {
       @Override
       public Iterator<Path> iterator() {
-        return new LazyPathIterator(cloudPath.getFileSystem(), blobIterator, filter);
+        return new LazyPathIterator(cloudPath.getFileSystem(), prefix, blobIterator, filter);
       }
 
       @Override
