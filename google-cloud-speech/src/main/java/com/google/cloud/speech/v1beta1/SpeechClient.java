@@ -110,7 +110,8 @@ public class SpeechClient implements AutoCloseable {
 
   private final UnaryCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable;
   private final UnaryCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable;
-  private final OperationCallable<AsyncRecognizeRequest, AsyncRecognizeResponse>
+  private final OperationCallable<
+          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
       asyncRecognizeOperationCallable;
   private final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable;
@@ -330,7 +331,7 @@ public class SpeechClient implements AutoCloseable {
    * @param audio &#42;Required&#42; The audio data to be recognized.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final OperationFuture<AsyncRecognizeResponse> asyncRecognizeAsync(
+  public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata> asyncRecognizeAsync(
       RecognitionConfig config, RecognitionAudio audio) {
 
     AsyncRecognizeRequest request =
@@ -370,7 +371,7 @@ public class SpeechClient implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final OperationFuture<AsyncRecognizeResponse> asyncRecognizeAsync(
+  public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata> asyncRecognizeAsync(
       AsyncRecognizeRequest request) {
     return asyncRecognizeOperationCallable().futureCall(request);
   }
@@ -406,7 +407,8 @@ public class SpeechClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final OperationCallable<AsyncRecognizeRequest, AsyncRecognizeResponse>
+  public final OperationCallable<
+          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
       asyncRecognizeOperationCallable() {
     return asyncRecognizeOperationCallable;
   }

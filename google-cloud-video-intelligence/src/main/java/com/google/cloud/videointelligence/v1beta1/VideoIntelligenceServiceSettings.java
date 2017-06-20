@@ -25,6 +25,8 @@ import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.OperationCallSettings;
+import com.google.api.gax.grpc.OperationTimedPollAlgorithm;
+import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.common.collect.ImmutableList;
@@ -77,7 +79,7 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_VERSION = "";
 
   private static final String PROPERTIES_FILE =
-      "/com/google/cloud/videointelligence/project.properties";
+      "/com/google/cloud/videointelligence/v1beta1/project.properties";
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
@@ -90,11 +92,12 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
               io.grpc.protobuf.ProtoUtils.marshaller(AnnotateVideoRequest.getDefaultInstance()),
               io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance()));
 
-  private final OperationCallSettings<AnnotateVideoRequest, AnnotateVideoResponse>
+  private final OperationCallSettings<
+          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoSettings;
 
   /** Returns the object with the settings used for calls to annotateVideo. */
-  public OperationCallSettings<AnnotateVideoRequest, AnnotateVideoResponse>
+  public OperationCallSettings<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoSettings() {
     return annotateVideoSettings;
   }
@@ -164,7 +167,8 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
   public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
-    private final OperationCallSettings.Builder<AnnotateVideoRequest, AnnotateVideoResponse>
+    private final OperationCallSettings.Builder<
+            AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
         annotateVideoSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
@@ -176,9 +180,7 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
           Sets.immutableEnumSet(
               Lists.<Status.Code>newArrayList(
                   Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-      definitions.put(
-          "non_idempotent",
-          Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -204,8 +206,7 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
       super(defaultChannelProviderBuilder().build());
       setCredentialsProvider(defaultCredentialsProviderBuilder().build());
 
-      annotateVideoSettings =
-          OperationCallSettings.newBuilder(METHOD_ANNOTATE_VIDEO, AnnotateVideoResponse.class);
+      annotateVideoSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder>of();
     }
@@ -214,9 +215,24 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
       Builder builder = new Builder();
       builder
           .annotateVideoSettings()
-          .getInitialCallSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setInitialCallSettings(
+              SimpleCallSettings.newBuilder(METHOD_ANNOTATE_VIDEO)
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseClass(AnnotateVideoResponse.class)
+          .setMetadataClass(AnnotateVideoProgress.class)
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(18000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .build()));
 
       return builder;
     }
@@ -260,7 +276,8 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to annotateVideo. */
-    public OperationCallSettings.Builder<AnnotateVideoRequest, AnnotateVideoResponse>
+    public OperationCallSettings.Builder<
+            AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
         annotateVideoSettings() {
       return annotateVideoSettings;
     }

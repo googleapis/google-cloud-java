@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.OperationCallSettings;
+import com.google.api.gax.grpc.OperationTimedPollAlgorithm;
 import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.StreamingCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
@@ -77,7 +78,8 @@ public class SpeechSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
-  private static final String PROPERTIES_FILE = "/com/google/cloud/speech/project.properties";
+  private static final String PROPERTIES_FILE =
+      "/com/google/cloud/speech/v1beta1/project.properties";
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
@@ -109,7 +111,8 @@ public class SpeechSettings extends ClientSettings {
 
   private final SimpleCallSettings<SyncRecognizeRequest, SyncRecognizeResponse>
       syncRecognizeSettings;
-  private final OperationCallSettings<AsyncRecognizeRequest, AsyncRecognizeResponse>
+  private final OperationCallSettings<
+          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
       asyncRecognizeSettings;
   private final StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeSettings;
@@ -120,7 +123,8 @@ public class SpeechSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to asyncRecognize. */
-  public OperationCallSettings<AsyncRecognizeRequest, AsyncRecognizeResponse>
+  public OperationCallSettings<
+          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
       asyncRecognizeSettings() {
     return asyncRecognizeSettings;
   }
@@ -199,7 +203,8 @@ public class SpeechSettings extends ClientSettings {
 
     private final SimpleCallSettings.Builder<SyncRecognizeRequest, SyncRecognizeResponse>
         syncRecognizeSettings;
-    private final OperationCallSettings.Builder<AsyncRecognizeRequest, AsyncRecognizeResponse>
+    private final OperationCallSettings.Builder<
+            AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
         asyncRecognizeSettings;
     private final StreamingCallSettings.Builder<
             StreamingRecognizeRequest, StreamingRecognizeResponse>
@@ -214,9 +219,7 @@ public class SpeechSettings extends ClientSettings {
           Sets.immutableEnumSet(
               Lists.<Status.Code>newArrayList(
                   Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-      definitions.put(
-          "non_idempotent",
-          Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -244,8 +247,7 @@ public class SpeechSettings extends ClientSettings {
 
       syncRecognizeSettings = SimpleCallSettings.newBuilder(METHOD_SYNC_RECOGNIZE);
 
-      asyncRecognizeSettings =
-          OperationCallSettings.newBuilder(METHOD_ASYNC_RECOGNIZE, AsyncRecognizeResponse.class);
+      asyncRecognizeSettings = OperationCallSettings.newBuilder();
 
       streamingRecognizeSettings = StreamingCallSettings.newBuilder(METHOD_STREAMING_RECOGNIZE);
 
@@ -262,9 +264,24 @@ public class SpeechSettings extends ClientSettings {
           .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .asyncRecognizeSettings()
-          .getInitialCallSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setInitialCallSettings(
+              SimpleCallSettings.newBuilder(METHOD_ASYNC_RECOGNIZE)
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseClass(AsyncRecognizeResponse.class)
+          .setMetadataClass(AsyncRecognizeMetadata.class)
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(18000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .build()));
 
       return builder;
     }
@@ -317,7 +334,8 @@ public class SpeechSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to asyncRecognize. */
-    public OperationCallSettings.Builder<AsyncRecognizeRequest, AsyncRecognizeResponse>
+    public OperationCallSettings.Builder<
+            AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
         asyncRecognizeSettings() {
       return asyncRecognizeSettings;
     }
