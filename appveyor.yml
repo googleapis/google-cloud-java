@@ -31,10 +31,10 @@ install:
   - cmd: nuget install secure-file -ExcludeVersion
   - cmd: IF DEFINED CREDENTIALS_SECRET (secure-file\tools\secure-file -decrypt appveyor\key.json.enc -secret %CREDENTIALS_SECRET% -out appveyor\key.json)
   - cmd: IF DEFINED CREDENTIALS_SECRET (SET GOOGLE_APPLICATION_CREDENTIALS=%APPVEYOR_BUILD_FOLDER%\appveyor\key.json)
-  - cmd: ECHO %GOOGLE_APPLICATION_CREDENTIALS%
+  - cmd: ECHO GOOGLE_APPLICATION_CREDENTIALS=%GOOGLE_APPLICATION_CREDENTIALS%
   - cmd: IF DEFINED API_KEY_SECRET (secure-file\tools\secure-file -decrypt appveyor\api_key.enc -secret %API_KEY_SECRET% -out appveyor\api_key)
   - cmd: IF DEFINED API_KEY_SECRET (SET /P GOOGLE_API_KEY=<%APPVEYOR_BUILD_FOLDER%\appveyor\api_key)
-  - cmd: ECHO %GOOGLE_API_KEY%
+  - cmd: ECHO GOOGLE_API_KEY defined
 
 # build and install artifacts
 build_script:
