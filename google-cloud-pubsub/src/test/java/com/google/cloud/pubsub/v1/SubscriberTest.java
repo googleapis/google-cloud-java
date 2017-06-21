@@ -47,7 +47,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.LinkedBlockingQueue;
-import org.threeten.bp.Duration;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -56,6 +55,7 @@ import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+import org.threeten.bp.Duration;
 
 /** Tests for {@link Subscriber}. */
 @RunWith(Parameterized.class)
