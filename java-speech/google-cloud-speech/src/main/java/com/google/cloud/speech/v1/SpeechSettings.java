@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.OperationCallSettings;
+import com.google.api.gax.grpc.OperationTimedPollAlgorithm;
 import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.StreamingCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
@@ -109,7 +110,8 @@ public class SpeechSettings extends ClientSettings {
                   StreamingRecognizeResponse.getDefaultInstance()));
 
   private final SimpleCallSettings<RecognizeRequest, RecognizeResponse> recognizeSettings;
-  private final OperationCallSettings<LongRunningRecognizeRequest, LongRunningRecognizeResponse>
+  private final OperationCallSettings<
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeSettings;
   private final StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeSettings;
@@ -120,7 +122,8 @@ public class SpeechSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to longRunningRecognize. */
-  public OperationCallSettings<LongRunningRecognizeRequest, LongRunningRecognizeResponse>
+  public OperationCallSettings<
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeSettings() {
     return longRunningRecognizeSettings;
   }
@@ -199,7 +202,7 @@ public class SpeechSettings extends ClientSettings {
 
     private final SimpleCallSettings.Builder<RecognizeRequest, RecognizeResponse> recognizeSettings;
     private final OperationCallSettings.Builder<
-            LongRunningRecognizeRequest, LongRunningRecognizeResponse>
+            LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
         longRunningRecognizeSettings;
     private final StreamingCallSettings.Builder<
             StreamingRecognizeRequest, StreamingRecognizeResponse>
@@ -214,9 +217,7 @@ public class SpeechSettings extends ClientSettings {
           Sets.immutableEnumSet(
               Lists.<Status.Code>newArrayList(
                   Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-      definitions.put(
-          "non_idempotent",
-          Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -244,10 +245,7 @@ public class SpeechSettings extends ClientSettings {
 
       recognizeSettings = SimpleCallSettings.newBuilder(METHOD_RECOGNIZE);
 
-      longRunningRecognizeSettings =
-          OperationCallSettings.newBuilder(
-              METHOD_LONG_RUNNING_RECOGNIZE, LongRunningRecognizeResponse.class);
-      longRunningRecognizeSettings.setPollingInterval(Duration.ofMillis(20000));
+      longRunningRecognizeSettings = OperationCallSettings.newBuilder();
 
       streamingRecognizeSettings = StreamingCallSettings.newBuilder(METHOD_STREAMING_RECOGNIZE);
 
@@ -263,9 +261,24 @@ public class SpeechSettings extends ClientSettings {
           .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .longRunningRecognizeSettings()
-          .getInitialCallSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setInitialCallSettings(
+              SimpleCallSettings.newBuilder(METHOD_LONG_RUNNING_RECOGNIZE)
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseClass(LongRunningRecognizeResponse.class)
+          .setMetadataClass(LongRunningRecognizeMetadata.class)
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(20000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .build()));
 
       return builder;
     }
@@ -316,7 +329,8 @@ public class SpeechSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to longRunningRecognize. */
-    public OperationCallSettings.Builder<LongRunningRecognizeRequest, LongRunningRecognizeResponse>
+    public OperationCallSettings.Builder<
+            LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
         longRunningRecognizeSettings() {
       return longRunningRecognizeSettings;
     }

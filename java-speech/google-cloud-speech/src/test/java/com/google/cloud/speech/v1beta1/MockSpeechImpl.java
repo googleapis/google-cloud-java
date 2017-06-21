@@ -15,12 +15,7 @@
  */
 package com.google.cloud.speech.v1beta1;
 
-import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SpeechGrpc.SpeechImplBase;
-import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
-import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
-import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
-import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
