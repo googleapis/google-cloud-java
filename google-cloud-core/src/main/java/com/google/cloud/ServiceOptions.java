@@ -86,7 +86,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private final String serviceRpcFactoryClassName;
   private final String serviceFactoryClassName;
   private final ApiClock clock;
-  private final Credentials credentials;
+  protected Credentials credentials;
   private final TransportOptions transportOptions;
 
   private transient ServiceRpcFactory<OptionsT> serviceRpcFactory;
@@ -107,7 +107,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
 
     private String projectId;
     private String host;
-    private Credentials credentials;
+    protected Credentials credentials;
     private RetrySettings retrySettings;
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<OptionsT> serviceRpcFactory;
