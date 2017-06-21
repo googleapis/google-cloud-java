@@ -149,6 +149,10 @@ Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
+Transport
+---------
+Translate uses HTTP transport.
+
 Java Versions
 -------------
 

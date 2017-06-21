@@ -212,6 +212,10 @@ The third program modifies the IAM policy associated with a project using the re
 pattern.  Complete source code can be found at
 [ModifyPolicy.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/ModifyPolicy.java)
 
+Transport
+---------
+Resource Manager uses HTTP transport.
+
 Java Versions
 -------------
 
@@ -252,4 +256,3 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-resourcemanager]: https://cloud.google.com/resource-manager/docs
 [resourcemanager-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
-
