@@ -212,7 +212,7 @@ public class SubscriberTest {
     // Trigger ack sending
     subscriber.stopAsync().awaitTerminated();
 
-    assertEquals(1, fakeSubscriberServiceImpl.getSubscriptionCalledNum());
+    assertEquals(1, fakeSubscriberServiceImpl.getSubscriptionCalledCount());
   }
 
   @Test
