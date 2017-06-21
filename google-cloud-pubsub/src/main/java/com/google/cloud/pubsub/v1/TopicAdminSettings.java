@@ -15,6 +15,9 @@
  */
 package com.google.cloud.pubsub.v1;
 
+import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
+import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.batching.BatchingSettings;
@@ -42,8 +45,6 @@ import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
-import com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -187,7 +188,7 @@ public class TopicAdminSettings extends ClientSettings {
       listTopicsSettings;
   private final PagedCallSettings<
           ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
-      ListTopicSubscriptionsPagedResponse>
+          ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings;
   private final SimpleCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
   private final SimpleCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
@@ -533,9 +534,7 @@ public class TopicAdminSettings extends ClientSettings {
                   Status.Code.ABORTED,
                   Status.Code.INTERNAL,
                   Status.Code.UNAVAILABLE)));
-      definitions.put(
-          "non_idempotent",
-          Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 

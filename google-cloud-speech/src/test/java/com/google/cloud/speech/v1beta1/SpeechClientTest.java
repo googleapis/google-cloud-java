@@ -22,6 +22,7 @@ import com.google.api.gax.grpc.StreamingCallable;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
+import com.google.cloud.speech.v1beta1.RecognitionConfig.AudioEncoding;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.GeneratedMessageV3;

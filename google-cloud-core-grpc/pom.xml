@@ -51,6 +51,10 @@
       <artifactId>grpc-protobuf</artifactId>
     </dependency>
     <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-context</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
     </dependency>

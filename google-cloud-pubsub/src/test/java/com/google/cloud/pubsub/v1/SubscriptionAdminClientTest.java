@@ -49,6 +49,7 @@ import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
+import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.Snapshot;
 import com.google.pubsub.v1.SnapshotName;
 import com.google.pubsub.v1.StreamingPullRequest;
@@ -405,7 +406,10 @@ public class SubscriptionAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void streamingPullTest() throws Exception {
-    StreamingPullResponse expectedResponse = StreamingPullResponse.newBuilder().build();
+    ReceivedMessage receivedMessagesElement = ReceivedMessage.newBuilder().build();
+    List<ReceivedMessage> receivedMessages = Arrays.asList(receivedMessagesElement);
+    StreamingPullResponse expectedResponse =
+        StreamingPullResponse.newBuilder().addAllReceivedMessages(receivedMessages).build();
     mockSubscriber.addResponse(expectedResponse);
     SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
     int streamAckDeadlineSeconds = 1875467245;

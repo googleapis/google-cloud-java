@@ -35,7 +35,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-monitoring-v3</artifactId>
-      <version>0.1.11</version>
+      <version>0.1.12</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -69,7 +69,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
-      <version>0.1.11</version>
+      <version>0.1.12</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

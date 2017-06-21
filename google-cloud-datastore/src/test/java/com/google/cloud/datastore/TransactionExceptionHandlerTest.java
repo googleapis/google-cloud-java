@@ -39,13 +39,13 @@ public class TransactionExceptionHandlerTest {
             .build();
     ExceptionHandler transactionHandler = TransactionExceptionHandler.build();
 
-    assertFalse(handler.accept(new DatastoreException(10, "", "ABORTED", false, null)));
-    assertFalse(handler.accept(new DatastoreException(10, "", "", false, null)));
-    assertFalse(handler.accept(new DatastoreException(0, "", "", false, null)));
+    assertFalse(handler.shouldRetry(new DatastoreException(10, "", "ABORTED", false, null), new Object()));
+    assertFalse(handler.shouldRetry(new DatastoreException(10, "", "", false, null), new Object()));
+    assertFalse(handler.shouldRetry(new DatastoreException(0, "", "", false, null), new Object()));
 
-    assertTrue(transactionHandler.accept(new DatastoreException(10, "", "ABORTED", false, null)));
-    assertTrue(transactionHandler.accept(new DatastoreException(10, "", "", false, null)));
-    assertFalse(transactionHandler.accept(new DatastoreException(0, "", "", false, null)));
+    assertTrue(transactionHandler.shouldRetry(new DatastoreException(10, "", "ABORTED", false, null), new Object()));
+    assertTrue(transactionHandler.shouldRetry(new DatastoreException(10, "", "", false, null), new Object()));
+    assertFalse(transactionHandler.shouldRetry(new DatastoreException(0, "", "", false, null), new Object()));
 
     DatastoreException nestedDatastoreException =
         new DatastoreException(
@@ -54,7 +54,7 @@ public class TransactionExceptionHandlerTest {
             null,
             new DatastoreException(10, "", "ABORTED", false, null));
 
-    assertTrue(transactionHandler.accept(nestedDatastoreException));
-    assertFalse(handler.accept(nestedDatastoreException));
+    assertTrue(transactionHandler.shouldRetry(nestedDatastoreException, new Object()));
+    assertFalse(handler.shouldRetry(nestedDatastoreException, new Object()));
   }
 }
