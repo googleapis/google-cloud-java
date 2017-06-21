@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.BetaApi;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 
 import com.google.api.gax.retrying.DirectRetryingExecutor;
@@ -37,12 +38,16 @@ public class RetryHelper {
   public static <V> V runWithRetries(
       Callable<V> callable,
       RetrySettings retrySettings,
-      ExceptionHandler exceptionRetryAlgorithm,
+      ResultRetryAlgorithm<?> resultRetryAlgorithm,
       ApiClock clock)
       throws RetryHelperException {
     try {
-      RetryAlgorithm retryAlgorithm =
-          new RetryAlgorithm(exceptionRetryAlgorithm, new ExponentialRetryAlgorithm(retrySettings, clock));
+      // Suppressing should be ok as a workaraund. Current and only ResultRetryAlgorithm
+      // implementation does not use response at all, so ignoring its type is ok.
+      @SuppressWarnings("unchecked")
+      RetryAlgorithm<V> retryAlgorithm =
+          new RetryAlgorithm<>((ResultRetryAlgorithm<V>) resultRetryAlgorithm,
+              new ExponentialRetryAlgorithm(retrySettings, clock));
       RetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
 
       RetryingFuture<V> retryingFuture = executor.createFuture(callable);

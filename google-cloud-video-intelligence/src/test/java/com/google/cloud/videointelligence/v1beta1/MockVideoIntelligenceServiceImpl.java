@@ -15,7 +15,6 @@
  */
 package com.google.cloud.videointelligence.v1beta1;
 
-import com.google.cloud.videointelligence.v1beta1.AnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceGrpc.VideoIntelligenceServiceImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.GeneratedMessageV3;

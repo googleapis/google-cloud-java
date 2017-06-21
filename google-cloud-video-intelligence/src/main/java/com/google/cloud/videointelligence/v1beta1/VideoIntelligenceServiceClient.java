@@ -104,7 +104,8 @@ public class VideoIntelligenceServiceClient implements AutoCloseable {
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final UnaryCallable<AnnotateVideoRequest, Operation> annotateVideoCallable;
-  private final OperationCallable<AnnotateVideoRequest, AnnotateVideoResponse>
+  private final OperationCallable<
+          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable;
 
   /** Constructs an instance of VideoIntelligenceServiceClient with default settings. */
@@ -230,7 +231,7 @@ public class VideoIntelligenceServiceClient implements AutoCloseable {
    *     region will be determined based on video file location.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final OperationFuture<AnnotateVideoResponse> annotateVideoAsync(
+  public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> annotateVideoAsync(
       String inputUri,
       List<Feature> features,
       VideoContext videoContext,
@@ -272,7 +273,7 @@ public class VideoIntelligenceServiceClient implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final OperationFuture<AnnotateVideoResponse> annotateVideoAsync(
+  public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> annotateVideoAsync(
       AnnotateVideoRequest request) {
     return annotateVideoOperationCallable().futureCall(request);
   }
@@ -300,7 +301,7 @@ public class VideoIntelligenceServiceClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final OperationCallable<AnnotateVideoRequest, AnnotateVideoResponse>
+  public final OperationCallable<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable() {
     return annotateVideoOperationCallable;
   }
