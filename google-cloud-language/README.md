@@ -65,7 +65,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Language uses gRPC transport.
+Language uses gRPC for the transport layer.
 
 Java Versions
 -------------

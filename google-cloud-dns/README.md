@@ -344,7 +344,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-DNS uses HTTP transport.
+DNS uses HTTP for the transport layer.
 
 Java Versions
 -------------

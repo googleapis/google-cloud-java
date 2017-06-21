@@ -203,7 +203,7 @@ running on Compute Engine, App Engine Flexible or from your own desktop.
 
 Transport
 ---------
-Pub/Sub uses gRPC transport.
+Pub/Sub uses gRPC for the transport layer.
 
 Java Versions
 -------------

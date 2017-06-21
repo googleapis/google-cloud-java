@@ -152,7 +152,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Datastore uses HTTP transport.
+Datastore uses HTTP for the transport layer.
 
 Java Versions
 -------------

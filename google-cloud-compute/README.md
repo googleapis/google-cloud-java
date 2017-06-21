@@ -220,7 +220,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Compute uses HTTP transport.
+Compute uses HTTP for the transport layer.
 
 Java Versions
 -------------

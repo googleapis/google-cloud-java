@@ -216,7 +216,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-BigQuery uses HTTP transport.
+BigQuery uses HTTP for the transport layer.
 
 Java Versions
 -------------

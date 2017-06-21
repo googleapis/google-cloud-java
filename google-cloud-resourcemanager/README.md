@@ -214,7 +214,7 @@ pattern.  Complete source code can be found at
 
 Transport
 ---------
-Resource Manager uses HTTP transport.
+Resource Manager uses HTTP for the transport layer.
 
 Java Versions
 -------------

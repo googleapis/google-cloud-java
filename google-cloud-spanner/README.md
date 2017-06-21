@@ -72,7 +72,7 @@ document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troub
 
 Transport
 ---------
-Spanner uses gRPC transport.
+Spanner uses gRPC for the transport layer.
 
 ## Java Versions
 

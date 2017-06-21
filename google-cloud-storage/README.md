@@ -153,7 +153,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Storage uses HTTP transport.
+Storage uses HTTP for the transport layer.
 
 Java Versions
 -------------

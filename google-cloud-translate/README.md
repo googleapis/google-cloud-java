@@ -151,7 +151,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Translate uses HTTP transport.
+Translate uses HTTP for the transport layer.
 
 Java Versions
 -------------

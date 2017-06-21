@@ -166,7 +166,7 @@ running on Compute Engine or from your own desktop.
 
 Transport
 ---------
-Logging uses gRPC transport.
+Logging uses gRPC for the transport layer.
 
 Java Versions
 -------------

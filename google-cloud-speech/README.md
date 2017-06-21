@@ -68,7 +68,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Speech uses gRPC transport.
+Speech uses gRPC for the transport layer.
 
 Java Versions
 -------------

@@ -67,7 +67,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Vision uses gRPC transport.
+Vision uses gRPC for the transport layer.
 
 Java Versions
 -------------
