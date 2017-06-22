@@ -18,29 +18,32 @@ package com.google.cloud.translate;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
-import com.google.cloud.http.HttpTransportOptions;
+import com.google.auth.Credentials;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.translate.Translate.TranslateOption;
+import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.cloud.translate.spi.v2.HttpTranslateRpc;
 import com.google.cloud.translate.spi.v2.TranslateRpc;
-import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.common.collect.ImmutableSet;
-
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class TranslateOptions extends
-    ServiceOptions<Translate, TranslateOptions> {
-
+public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions> {
   private static final long serialVersionUID = -572597134540398216L;
+  private static final Logger logger = Logger.getLogger(TranslateOptions.class.getName());
+
+  public static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
+
   private static final String API_SHORT_NAME = "Translate";
   private static final String DEFAULT_HOST = "https://translation.googleapis.com";
-  private static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
   private static final Set<String> SCOPES =
       ImmutableSet.of("https://www.googleapis.com/auth/cloud-platform");
 
@@ -80,6 +83,12 @@ public class TranslateOptions extends
       this.apiKey = options.apiKey;
     }
 
+    /**
+     * Returns the authentication credentials.
+     */
+    public Credentials getCredentials() {
+      return credentials;
+    }
 
     @Override
     public Builder setTransportOptions(TransportOptions transportOptions) {
@@ -101,11 +110,12 @@ public class TranslateOptions extends
       return self();
     }
 
-
     /**
-     * Sets the API key used to issue requets. If not set, the API key is looked for in the
-     * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key see
-     * <a href="https://cloud.google.com/translate/v2/quickstart">Translate quickstart</a>.
+     * Sets the API key used to issue requests. This will be ignored if credentials are explicitly
+     * set with {@link ServiceOptions.Builder#setCredentials setCredentials}. If neither are set,
+     * and no Application Default Credentials are available, an API key is looked for in the
+     * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key see <a
+     * href="https://cloud.google.com/translate/v2/quickstart">Translate quickstart</a>.
      */
     public Builder setApiKey(String apiKey) {
       this.apiKey = apiKey;
@@ -114,7 +124,7 @@ public class TranslateOptions extends
 
 
     /**
-     * Sets the code for the default target language. If not set, english ({@code en}) is used.
+     * Sets the code for the default target language. If not set, English ({@code en}) is used.
      * {@link Translate#translate(List, TranslateOption...)} and
      * {@link Translate#translate(String, TranslateOption...)} calls will use this
      * value unless a {@link TranslateOption#targetLanguage(String)} option is explicitly
@@ -135,8 +145,45 @@ public class TranslateOptions extends
 
   private TranslateOptions(Builder builder) {
     super(TranslateFactory.class, TranslateRpcFactory.class, builder, new TranslateDefaults());
-    this.apiKey = builder.apiKey != null ? builder.apiKey : getDefaultApiKey();
-    this.targetLanguage = firstNonNull(builder.targetLanguage, Locale.ENGLISH.getLanguage());
+    // Use following order of precedence for authentication, avoiding backend conflicts (#1405):
+    // 1. explicitly set credentials
+    // 2. explicitly set API key
+    // 3. Application Default Credentials (e.g., through GOOGLE_APPLICATION_CREDENTIALS)
+    // 4. default API key (through GOOGLE_API_KEY)
+    if (builder.getCredentials() != null) {
+      // credentials assigned from builder in superclass constructor
+      apiKey = null;
+      if (builder.apiKey != null) {
+        logger.log(
+            Level.WARNING, "Ignoring API key: using explicit setting for credentials instead.");
+      } else if (getDefaultApiKey() != null) {
+        logger.log(
+            Level.WARNING,
+            String.format(
+                "Ignoring API key set in environment variable %s: using explicit setting for credentials instead.",
+                API_KEY_ENV_NAME));
+      }
+    } else if (builder.apiKey != null) {
+      credentials = null;
+      apiKey = builder.apiKey;
+      logger.log(
+          Level.WARNING,
+          String.format(
+              "Ignoring Application Default Credentials: using explicit setting for API key instead.",
+              ServiceOptions.CREDENTIAL_ENV_NAME));
+    } else if (credentials != null) { // credentials assigned from ADC in superclass constructor
+      apiKey = null;
+      if (getDefaultApiKey() != null) {
+        logger.log(
+            Level.WARNING,
+            String.format(
+                "Ignoring API key set in environment variable %s: using Application Default Credentials instead.",
+                API_KEY_ENV_NAME));
+      }
+    } else {
+      apiKey = getDefaultApiKey();
+    }
+    targetLanguage = firstNonNull(builder.targetLanguage, Locale.ENGLISH.getLanguage());
   }
 
   private static class TranslateDefaults implements
@@ -162,6 +209,10 @@ public class TranslateOptions extends
     return HttpTransportOptions.newBuilder().build();
   }
 
+  public static String getDefaultApiKey() {
+    return System.getProperty(API_KEY_ENV_NAME, System.getenv(API_KEY_ENV_NAME));
+  }
+
   @Override
   protected boolean projectIdRequired() {
     return false;
@@ -182,13 +233,8 @@ public class TranslateOptions extends
   }
 
 
-  protected String getDefaultApiKey() {
-    return System.getProperty(API_KEY_ENV_NAME, System.getenv(API_KEY_ENV_NAME));
-  }
-
-
   /**
-   * Returns the API key, to be used used to send requests.
+   * Returns the API key, to be used to send requests.
    */
   public String getApiKey() {
     return apiKey;

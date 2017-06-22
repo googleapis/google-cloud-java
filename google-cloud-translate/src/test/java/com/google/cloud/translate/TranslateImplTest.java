@@ -17,19 +17,25 @@
 package com.google.cloud.translate;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.LanguagesResource;
 import com.google.api.services.translate.model.TranslationsResource;
-import com.google.api.gax.retrying.RetrySettings;
+import com.google.auth.Credentials;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.translate.Translate.LanguageListOption;
 import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpcFactory;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+
+import java.util.List;
+import java.util.Map;
 
 import org.easymock.EasyMock;
 import org.junit.After;
@@ -37,9 +43,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import java.util.List;
-import java.util.Map;
 
 public class TranslateImplTest {
 
@@ -118,8 +121,7 @@ public class TranslateImplTest {
             .build();
   }
 
-  @After
-  public void tearDown() throws Exception {
+  private void verify() {
     EasyMock.verify(rpcFactoryMock, translateRpcMock);
   }
 
@@ -132,6 +134,7 @@ public class TranslateImplTest {
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertSame(options, translate.getOptions());
+    verify();
   }
 
   @Test
@@ -141,6 +144,7 @@ public class TranslateImplTest {
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(LANGUAGES1, translate.listSupportedLanguages());
+    verify();
   }
 
   @Test
@@ -152,6 +156,7 @@ public class TranslateImplTest {
     assertEquals(
         LANGUAGES2,
         translate.listSupportedLanguages(LanguageListOption.targetLanguage(TARGET_LANGUAGE)));
+    verify();
   }
 
   @Test
@@ -163,6 +168,7 @@ public class TranslateImplTest {
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(DETECTION1, translate.detect(text));
+    verify();
   }
 
   @Test
@@ -177,6 +183,7 @@ public class TranslateImplTest {
     thrown.expect(IllegalStateException.class);
     thrown.expectMessage("Multiple detections found for text: text");
     translate.detect(text);
+    verify();
   }
 
   @Test
@@ -191,6 +198,7 @@ public class TranslateImplTest {
     thrown.expect(IllegalStateException.class);
     thrown.expectMessage("No detection found for text: text");
     translate.detect(text);
+    verify();
   }
 
   @Test
@@ -205,6 +213,7 @@ public class TranslateImplTest {
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(ImmutableList.of(DETECTION1, DETECTION2), translate.detect(texts));
+    verify();
   }
 
   @Test
@@ -221,6 +230,7 @@ public class TranslateImplTest {
     thrown.expect(IllegalStateException.class);
     thrown.expectMessage("Multiple detections found for text: text");
     translate.detect(texts);
+    verify();
   }
 
   @Test
@@ -237,6 +247,7 @@ public class TranslateImplTest {
     thrown.expect(IllegalStateException.class);
     thrown.expectMessage("No detection found for text: other text");
     translate.detect(texts);
+    verify();
   }
 
   @Test
@@ -250,6 +261,7 @@ public class TranslateImplTest {
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(ImmutableList.of(DETECTION1, DETECTION2), translate.detect(text1, text2));
+    verify();
   }
 
   @Test
@@ -265,6 +277,7 @@ public class TranslateImplTest {
     thrown.expect(IllegalStateException.class);
     thrown.expectMessage("Multiple detections found for text: text");
     translate.detect(text1, text2);
+    verify();
   }
 
   @Test
@@ -280,6 +293,7 @@ public class TranslateImplTest {
     thrown.expect(IllegalStateException.class);
     thrown.expectMessage("No detection found for text: other text");
     translate.detect(text1, text2);
+    verify();
   }
 
   @Test
@@ -290,6 +304,7 @@ public class TranslateImplTest {
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(TRANSLATION1, translate.translate(text));
+    verify();
   }
 
   @Test
@@ -302,6 +317,7 @@ public class TranslateImplTest {
     assertEquals(
         TRANSLATION2,
         translate.translate(text, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION));
+    verify();
   }
 
   @Test
@@ -314,6 +330,7 @@ public class TranslateImplTest {
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(ImmutableList.of(TRANSLATION1, TRANSLATION2), translate.translate(texts));
+    verify();
   }
 
   @Test
@@ -327,6 +344,7 @@ public class TranslateImplTest {
     assertEquals(
         ImmutableList.of(TRANSLATION2),
         translate.translate(texts, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION));
+    verify();
   }
 
   @Test
@@ -342,6 +360,7 @@ public class TranslateImplTest {
             .build()
             .getService();
     assertEquals(LANGUAGES1, translate.listSupportedLanguages());
+    verify();
   }
 
   @Test
@@ -359,6 +378,7 @@ public class TranslateImplTest {
     thrown.expect(TranslateException.class);
     thrown.expectMessage(exceptionMessage);
     translate.listSupportedLanguages();
+    verify();
   }
 
   @Test
@@ -376,5 +396,14 @@ public class TranslateImplTest {
     thrown.expect(TranslateException.class);
     thrown.expectMessage(exceptionMessage);
     translate.listSupportedLanguages();
+    verify();
+  }
+
+  @Test
+  public void testCredentialsOverridesApiKey() {
+    Credentials credentials = NoCredentials.getInstance();
+    TranslateOptions overridden = options.toBuilder().setCredentials(credentials).build();
+    assertSame(overridden.getCredentials(), credentials);
+    assertNull(overridden.getApiKey());
   }
 }
