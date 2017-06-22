@@ -948,7 +948,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [stackdriver-logging-docs]: https://cloud.google.com/logging/docs
 [stackdriver-logging-activation]: https://console.cloud.google.com/start/api?id=logging
 
-[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/spi/v1/package-summary.html
+[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs
 
