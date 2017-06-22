@@ -136,7 +136,7 @@
     <generatedProto.version>0.1.12</generatedProto.version>
     <google.auth.version>0.7.0</google.auth.version>
     <grpc.version>1.4.0</grpc.version>
-    <guava.version>19.0</guava.version>
+    <guava.version>20.0</guava.version>
     <http-client.version>1.21.0</http-client.version>
     <protobuf.version>3.3.0</protobuf.version>
 
