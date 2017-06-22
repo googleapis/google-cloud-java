@@ -24,11 +24,11 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.core.InternalApi;
 import com.google.auth.Credentials;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.PlatformInformation;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import java.io.IOException;
@@ -55,8 +55,7 @@ public class HttpTransportOptions implements TransportOptions {
     @Override
     public HttpTransport create() {
       // Consider App Engine Standard
-      if (System.getProperty("com.google.appengine.runtime.version") != null
-          && System.getenv("GAE_SERVICE") == null) {
+      if (PlatformInformation.isOnGAEStandard7()) {
         try {
           return new UrlFetchTransport();
         } catch (Exception ignore) {
