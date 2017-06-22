@@ -40,9 +40,10 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
   private static final long serialVersionUID = -572597134540398216L;
   private static final Logger logger = Logger.getLogger(TranslateOptions.class.getName());
 
+  public static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
+
   private static final String API_SHORT_NAME = "Translate";
   private static final String DEFAULT_HOST = "https://translation.googleapis.com";
-  private static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
   private static final Set<String> SCOPES =
       ImmutableSet.of("https://www.googleapis.com/auth/cloud-platform");
 
@@ -144,13 +145,13 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
 
   private TranslateOptions(Builder builder) {
     super(TranslateFactory.class, TranslateRpcFactory.class, builder, new TranslateDefaults());
-    // Use following order of precedence for authentication, avoiding conflicts:
+    // Use following order of precedence for authentication, avoiding backend conflicts (#1405):
     // 1. explicitly set credentials
     // 2. explicitly set API key
     // 3. Application Default Credentials (e.g., through GOOGLE_APPLICATION_CREDENTIALS)
     // 4. default API key (through GOOGLE_API_KEY)
     if (builder.getCredentials() != null) {
-      // credentials assigned from builder in superclass
+      // credentials assigned from builder in superclass constructor
       apiKey = null;
       if (builder.apiKey != null) {
         logger.log(
@@ -170,7 +171,7 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
           String.format(
               "Ignoring Application Default Credentials: using explicit setting for API key instead.",
               ServiceOptions.CREDENTIAL_ENV_NAME));
-    } else if (credentials != null) { // credentials assigned from ADC in superclass
+    } else if (credentials != null) { // credentials assigned from ADC in superclass constructor
       apiKey = null;
       if (getDefaultApiKey() != null) {
         logger.log(
@@ -208,6 +209,10 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
     return HttpTransportOptions.newBuilder().build();
   }
 
+  public static String getDefaultApiKey() {
+    return System.getProperty(API_KEY_ENV_NAME, System.getenv(API_KEY_ENV_NAME));
+  }
+
   @Override
   protected boolean projectIdRequired() {
     return false;
@@ -225,11 +230,6 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
   @Override
   protected String getDefaultHost() {
     return DEFAULT_HOST;
-  }
-
-
-  protected String getDefaultApiKey() {
-    return System.getProperty(API_KEY_ENV_NAME, System.getenv(API_KEY_ENV_NAME));
   }
 
 

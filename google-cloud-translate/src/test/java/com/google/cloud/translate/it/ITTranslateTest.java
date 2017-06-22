@@ -30,11 +30,9 @@ import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
 import com.google.cloud.translate.testing.RemoteTranslateHelper;
 import com.google.common.collect.ImmutableList;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import org.junit.Test;
 
 public class ITTranslateTest {
@@ -153,5 +151,14 @@ public class ITTranslateTest {
     TranslateOptions options = RemoteTranslateHelper.create().getOptions();
     assertNotNull(options.getCredentials());
     assertNull(options.getApiKey());
+  }
+
+  @Test
+  public void testTranslateTextWithApiKey() {
+    Translate translate =
+        RemoteTranslateHelper.create(TranslateOptions.getDefaultApiKey()).getOptions().getService();
+    Translation translation = translate.translate("Hola");
+    assertEquals("Hello", translation.getTranslatedText());
+    assertEquals("es", translation.getSourceLanguage());
   }
 }
