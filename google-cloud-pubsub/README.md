@@ -26,16 +26,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>0.19.0-alpha</version>
+  <version>0.20.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:0.19.0-alpha'
+compile 'com.google.cloud:google-cloud-pubsub:0.20.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.19.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.20.0-beta"
 ```
 
 Authentication
@@ -90,7 +90,7 @@ With Pub/Sub you can create topics. A topic is a named resource to which message
 publishers. Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.pubsub.v1.TopicName;
 ```
 Then, to create the topic, use the following code:
@@ -107,7 +107,7 @@ With Pub/Sub you can publish messages to a topic. Add the following import at th
 
 ```java
 import com.google.api.gax.core.ApiFuture;
-import com.google.cloud.pubsub.spi.v1.Publisher;
+import com.google.cloud.pubsub.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 ```
@@ -132,7 +132,7 @@ With Pub/Sub you can create subscriptions. A subscription represents the stream 
 single, specific topic. Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
+import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
@@ -153,9 +153,9 @@ With Pub/Sub you can pull messages from a subscription. Add the following import
 file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
-import com.google.cloud.pubsub.spi.v1.MessageReceiver;
-import com.google.cloud.pubsub.spi.v1.Subscriber;
+import com.google.cloud.pubsub.v1.AckReplyConsumer;
+import com.google.cloud.pubsub.v1.MessageReceiver;
+import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.SubscriptionName;

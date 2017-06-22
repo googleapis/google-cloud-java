@@ -20,6 +20,7 @@ This client supports the following Google Cloud Platform services at a [GA](#ver
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
 -  [BigQuery](#google-cloud-bigquery-beta) (Beta)
+-  [Cloud Pub/Sub](#google-cloud-pubsub-beta) (Beta)
 -  [Cloud Spanner](#cloud-spanner-beta) (Beta)
 -  [Cloud Translation](#google-translation-beta) (Beta)
 -  [Cloud Natural Language](#google-cloud-language-beta) (Beta)
@@ -31,7 +32,6 @@ This client supports the following Google Cloud Platform services at an [Alpha](
 -  [Cloud DNS](#google-cloud-dns-alpha) (Alpha)
 -  [Stackdriver Error Reporting](#stackdriver-error-reporting-alpha) (Alpha)
 -  [Stackdriver Monitoring](#stackdriver-monitoring-alpha) (Alpha)
--  [Cloud Pub/Sub](#google-cloud-pubsub-alpha) (Alpha)
 -  [Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
 -  [Cloud Speech](#google-cloud-speech-alpha) (Alpha)
 -  [Cloud Trace](#google-cloud-trace-alpha) (Alpha)
@@ -53,16 +53,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.19.0-alpha</version>
+  <version>0.20.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.19.0-alpha'
+compile 'com.google.cloud:google-cloud:0.20.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.19.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.20.0-alpha"
 ```
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
@@ -411,6 +411,45 @@ if (loadJob.getStatus().getError() != null) {
 }
 ```
 
+Google Cloud Pub/Sub (Beta)
+----------------------
+- [API Documentation][pubsub-api]
+- [Official Documentation][cloud-pubsub-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example from within Compute Engine/App Engine
+Flexible. Note that you must [supply credentials](#authentication) and a project ID if running this
+snippet elsewhere. Complete source code can be found at
+[CreateTopicAndPublishMessages.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java).
+
+```java
+import com.google.api.gax.core.ApiFuture;
+import com.google.cloud.pubsub.v1.Publisher;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.TopicName;
+
+TopicName topic = TopicName.create("test-project", "test-topic");
+try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+  topicAdminClient.createTopic(topic);
+}
+
+Publisher publisher = null;
+try {
+  publisher = Publisher.newBuilder(topic).build();
+  ByteString data = ByteString.copyFromUtf8("my message");
+  PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+  ApiFuture<String> messageId = publisher.publish(pubsubMessage);
+  System.out.println("published with message ID: " + messageId.get());
+} finally {
+  if (publisher != null) {
+    publisher.shutdown();
+  }
+}
+```
+
 Cloud Spanner (Beta)
 --------------------
 
@@ -648,45 +687,6 @@ Note that you must [supply credentials](#authentication) and a project ID if run
  }
 ```
 
-Google Cloud Pub/Sub (Alpha)
-----------------------
-- [API Documentation][pubsub-api]
-- [Official Documentation][cloud-pubsub-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example from within Compute Engine/App Engine
-Flexible. Note that you must [supply credentials](#authentication) and a project ID if running this
-snippet elsewhere. Complete source code can be found at
-[CreateTopicAndPublishMessages.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java).
-
-```java
-import com.google.api.gax.core.ApiFuture;
-import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
-import com.google.protobuf.ByteString;
-import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.TopicName;
-
-TopicName topic = TopicName.create("test-project", "test-topic");
-try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-  topicAdminClient.createTopic(topic);
-}
-
-Publisher publisher = null;
-try {
-  publisher = Publisher.newBuilder(topic).build();
-  ByteString data = ByteString.copyFromUtf8("my message");
-  PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-  ApiFuture<String> messageId = publisher.publish(pubsubMessage);
-  System.out.println("published with message ID: " + messageId.get());
-} finally {
-  if (publisher != null) {
-    publisher.shutdown();
-  }
-}
-```
-
 Google Cloud Resource Manager (Alpha)
 ----------------------
 
@@ -843,7 +843,7 @@ Java 7 or above is required for using this client.
 Supported Platforms
 -------------------
 
-This client is supported on Mac OS X, Windows and Linux (excluding Android and Alpine). 
+This client is supported on Mac OS X, Windows and Linux (excluding Android and Alpine).
 Google Cloud Platform environments currently supported include GCE, GKE and GAE Flex.
 GAE Standard is not currently supported.
 
@@ -948,7 +948,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [stackdriver-logging-docs]: https://cloud.google.com/logging/docs
 [stackdriver-logging-activation]: https://console.cloud.google.com/start/api?id=logging
 
-[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/spi/v1/package-summary.html
+[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs
 

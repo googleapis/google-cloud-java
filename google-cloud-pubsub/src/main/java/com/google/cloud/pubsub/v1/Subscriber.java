@@ -35,8 +35,10 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
+import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberFutureStub;
+import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.CallCredentials;
 import io.grpc.ManagedChannel;
@@ -282,11 +284,26 @@ public class Subscriber extends AbstractApiService {
     }
   }
 
+  // Starts polling connections. Blocks until all connections declare themselves running.
   private void startPollingConnections() throws IOException {
     synchronized (pollingSubscriberConnections) {
       Credentials credentials = credentialsProvider.getCredentials();
       CallCredentials callCredentials =
           credentials == null ? null : MoreCallCredentials.from(credentials);
+
+      SubscriberGrpc.SubscriberBlockingStub getSubStub =
+          SubscriberGrpc.newBlockingStub(channels.get(0))
+              .withDeadlineAfter(
+                  PollingSubscriberConnection.DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS);
+      if (callCredentials != null) {
+        getSubStub = getSubStub.withCallCredentials(callCredentials);
+      }
+      Subscription subscriptionInfo =
+          getSubStub.getSubscription(
+              GetSubscriptionRequest.newBuilder()
+                  .setSubscription(cachedSubscriptionNameString)
+                  .build());
+
       for (int i = 0; i < numChannels; i++) {
         SubscriberFutureStub stub = SubscriberGrpc.newFutureStub(channels.get(i));
         if (callCredentials != null) {
@@ -294,7 +311,7 @@ public class Subscriber extends AbstractApiService {
         }
         pollingSubscriberConnections.add(
             new PollingSubscriberConnection(
-                cachedSubscriptionNameString,
+                subscriptionInfo,
                 receiver,
                 ackExpirationPadding,
                 maxAckExtensionPeriod,

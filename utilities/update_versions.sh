@@ -110,7 +110,7 @@ echo -e "\n${BOLD}Executing${NC} mvn -q clean install -DskipTests -Dmaven.javado
 mvn -q clean install -DskipTests -Dmaven.javadoc.skip=true
 
 echo -e "\n${BOLD}Checking modules${NC}"
-modules=$(mvn dependency:tree | grep "\[INFO\] com\.google\." | sed -r "s/.*:(.*):(.*):(.*)/\1:\3/g")
+modules=$(mvn -B dependency:tree | grep "\[INFO\] com\.google\." | sed -r "s/.*:(.*):(.*):(.*)/\1:\3/g")
 declare -A module_version_map
 root_module=""
 for item in ${modules[*]}

@@ -112,7 +112,8 @@ public class SpeechClient implements AutoCloseable {
 
   private final UnaryCallable<RecognizeRequest, RecognizeResponse> recognizeCallable;
   private final UnaryCallable<LongRunningRecognizeRequest, Operation> longRunningRecognizeCallable;
-  private final OperationCallable<LongRunningRecognizeRequest, LongRunningRecognizeResponse>
+  private final OperationCallable<
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeOperationCallable;
   private final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable;
@@ -337,8 +338,8 @@ public class SpeechClient implements AutoCloseable {
    * @param audio &#42;Required&#42; The audio data to be recognized.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final OperationFuture<LongRunningRecognizeResponse> longRunningRecognizeAsync(
-      RecognitionConfig config, RecognitionAudio audio) {
+  public final OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
+      longRunningRecognizeAsync(RecognitionConfig config, RecognitionAudio audio) {
 
     LongRunningRecognizeRequest request =
         LongRunningRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
@@ -378,8 +379,8 @@ public class SpeechClient implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final OperationFuture<LongRunningRecognizeResponse> longRunningRecognizeAsync(
-      LongRunningRecognizeRequest request) {
+  public final OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
+      longRunningRecognizeAsync(LongRunningRecognizeRequest request) {
     return longRunningRecognizeOperationCallable().futureCall(request);
   }
 
@@ -415,7 +416,8 @@ public class SpeechClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final OperationCallable<LongRunningRecognizeRequest, LongRunningRecognizeResponse>
+  public final OperationCallable<
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeOperationCallable() {
     return longRunningRecognizeOperationCallable;
   }

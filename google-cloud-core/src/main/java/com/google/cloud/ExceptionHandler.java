@@ -19,7 +19,7 @@ package com.google.cloud;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.BetaApi;
-import com.google.api.gax.retrying.ExceptionRetryAlgorithm;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -37,7 +37,7 @@ import java.util.concurrent.Callable;
  * Exception retry algorithm implementation used by {@link RetryHelper}.
  */
 @BetaApi
-public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializable {
+public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Serializable {
 
   private static final long serialVersionUID = -2460707015779532919L;
 
@@ -238,7 +238,7 @@ public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializ
   }
 
   @Override
-  public boolean accept(Throwable prevThrowable) {
+  public boolean shouldRetry(Throwable prevThrowable, Object prevResponse) {
     if(!(prevThrowable instanceof Exception)) {
       return false;
     }
@@ -263,7 +263,7 @@ public final class ExceptionHandler implements ExceptionRetryAlgorithm, Serializ
   }
 
   @Override
-  public TimedAttemptSettings createNextAttempt(Throwable prevThrowable,
+  public TimedAttemptSettings createNextAttempt(Throwable prevThrowable, Object prevResponse,
       TimedAttemptSettings prevSettings) {
     // Return null to indicate that this implementation does not provide any specific attempt
     // settings, so by default the TimedRetryAlgorithm options can be used instead.
