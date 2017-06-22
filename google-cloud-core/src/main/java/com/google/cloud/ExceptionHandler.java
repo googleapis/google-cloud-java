@@ -37,7 +37,7 @@ import java.util.concurrent.Callable;
  * Exception retry algorithm implementation used by {@link RetryHelper}.
  */
 @BetaApi
-public final class ExceptionHandler<ResponseT> implements ResultRetryAlgorithm<ResponseT>, Serializable {
+public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Serializable {
 
   private static final long serialVersionUID = -2460707015779532919L;
 
@@ -238,7 +238,7 @@ public final class ExceptionHandler<ResponseT> implements ResultRetryAlgorithm<R
   }
 
   @Override
-  public boolean shouldRetry(Throwable prevThrowable, ResponseT prevResponse) {
+  public boolean shouldRetry(Throwable prevThrowable, Object prevResponse) {
     if(!(prevThrowable instanceof Exception)) {
       return false;
     }
@@ -263,7 +263,7 @@ public final class ExceptionHandler<ResponseT> implements ResultRetryAlgorithm<R
   }
 
   @Override
-  public TimedAttemptSettings createNextAttempt(Throwable prevThrowable, ResponseT prevResponse,
+  public TimedAttemptSettings createNextAttempt(Throwable prevThrowable, Object prevResponse,
       TimedAttemptSettings prevSettings) {
     // Return null to indicate that this implementation does not provide any specific attempt
     // settings, so by default the TimedRetryAlgorithm options can be used instead.

@@ -28,7 +28,6 @@ import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.pubsub.v1.AcknowledgeRequest;
-import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
@@ -46,8 +45,9 @@ import org.threeten.bp.Duration;
  * Implementation of {@link AckProcessor} based on Cloud Pub/Sub pull and acknowledge operations.
  */
 final class PollingSubscriberConnection extends AbstractApiService implements AckProcessor {
+  static final Duration DEFAULT_TIMEOUT = Duration.ofSeconds(60);
+
   private static final int MAX_PER_REQUEST_CHANGES = 1000;
-  private static final Duration DEFAULT_TIMEOUT = Duration.ofSeconds(10);
   private static final int DEFAULT_MAX_MESSAGES = 1000;
   private static final Duration INITIAL_BACKOFF = Duration.ofMillis(100); // 100ms
   private static final Duration MAX_BACKOFF = Duration.ofSeconds(10); // 10s
@@ -55,14 +55,14 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
   private static final Logger logger =
       Logger.getLogger(PollingSubscriberConnection.class.getName());
 
-  private final String subscription;
+  private final Subscription subscription;
   private final ScheduledExecutorService pollingExecutor;
   private final SubscriberFutureStub stub;
   private final MessageDispatcher messageDispatcher;
   private final int maxDesiredPulledMessages;
 
   public PollingSubscriberConnection(
-      String subscription,
+      Subscription subscription,
       MessageReceiver receiver,
       Duration ackExpirationPadding,
       Duration maxAckExtensionPeriod,
@@ -87,7 +87,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
             executor,
             systemExecutor,
             clock);
-    messageDispatcher.setMessageDeadlineSeconds(Subscriber.MIN_ACK_DEADLINE_SECONDS);
+    messageDispatcher.setMessageDeadlineSeconds(subscription.getAckDeadlineSeconds());
     this.maxDesiredPulledMessages =
         maxDesiredPulledMessages != null
             ? Ints.saturatedCast(maxDesiredPulledMessages)
@@ -97,27 +97,8 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
   @Override
   protected void doStart() {
     logger.config("Starting subscriber.");
-    ListenableFuture<Subscription> subscriptionInfo =
-        stub.withDeadlineAfter(DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS)
-            .getSubscription(
-                GetSubscriptionRequest.newBuilder().setSubscription(subscription).build());
-
-    Futures.addCallback(
-        subscriptionInfo,
-        new FutureCallback<Subscription>() {
-          @Override
-          public void onSuccess(Subscription result) {
-            messageDispatcher.setMessageDeadlineSeconds(result.getAckDeadlineSeconds());
-            pullMessages(INITIAL_BACKOFF);
-            notifyStarted();
-          }
-
-          @Override
-          public void onFailure(Throwable cause) {
-            notifyFailed(cause);
-          }
-        },
-        pollingExecutor);
+    pullMessages(INITIAL_BACKOFF);
+    notifyStarted();
   }
 
   @Override
@@ -126,14 +107,14 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
     notifyStopped();
   }
 
-  private void pullMessages(final Duration backoff) {
+  private ListenableFuture<PullResponse> pullMessages(final Duration backoff) {
     if (!isAlive()) {
-      return;
+      return Futures.immediateCancelledFuture();
     }
     ListenableFuture<PullResponse> pullResult =
         stub.pull(
             PullRequest.newBuilder()
-                .setSubscription(subscription)
+                .setSubscription(subscription.getName())
                 .setMaxMessages(maxDesiredPulledMessages)
                 .setReturnImmediately(false)
                 .build());
@@ -200,6 +181,8 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
           }
         },
         pollingExecutor);
+
+    return pullResult;
   }
 
   private boolean isAlive() {
@@ -219,7 +202,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
         stub.withDeadlineAfter(DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS)
             .modifyAckDeadline(
                 ModifyAckDeadlineRequest.newBuilder()
-                    .setSubscription(subscription)
+                    .setSubscription(subscription.getName())
                     .addAllAckIds(ackIdChunk)
                     .setAckDeadlineSeconds(modifyAckDeadline.deadlineExtensionSeconds)
                     .build());
@@ -230,7 +213,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
       stub.withDeadlineAfter(DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS)
           .acknowledge(
               AcknowledgeRequest.newBuilder()
-                  .setSubscription(subscription)
+                  .setSubscription(subscription.getName())
                   .addAllAckIds(ackChunk)
                   .build());
     }

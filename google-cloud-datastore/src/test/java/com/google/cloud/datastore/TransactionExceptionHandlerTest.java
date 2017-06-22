@@ -39,13 +39,17 @@ public class TransactionExceptionHandlerTest {
             .build();
     ExceptionHandler transactionHandler = TransactionExceptionHandler.build();
 
-    assertFalse(handler.shouldRetry(new DatastoreException(10, "", "ABORTED", false, null), new Object()));
-    assertFalse(handler.shouldRetry(new DatastoreException(10, "", "", false, null), new Object()));
-    assertFalse(handler.shouldRetry(new DatastoreException(0, "", "", false, null), new Object()));
+    assertFalse(handler.shouldRetry(new DatastoreException(10, "", "ABORTED", false, null), null));
+    assertFalse(handler.shouldRetry(new DatastoreException(10, "", "", false, null), null));
+    assertFalse(handler.shouldRetry(new DatastoreException(0, "", "", false, null), null));
 
-    assertTrue(transactionHandler.shouldRetry(new DatastoreException(10, "", "ABORTED", false, null), new Object()));
-    assertTrue(transactionHandler.shouldRetry(new DatastoreException(10, "", "", false, null), new Object()));
-    assertFalse(transactionHandler.shouldRetry(new DatastoreException(0, "", "", false, null), new Object()));
+    assertTrue(
+        transactionHandler.shouldRetry(
+            new DatastoreException(10, "", "ABORTED", false, null), null));
+    assertTrue(
+        transactionHandler.shouldRetry(new DatastoreException(10, "", "", false, null), null));
+    assertFalse(
+        transactionHandler.shouldRetry(new DatastoreException(0, "", "", false, null), null));
 
     DatastoreException nestedDatastoreException =
         new DatastoreException(
@@ -54,7 +58,7 @@ public class TransactionExceptionHandlerTest {
             null,
             new DatastoreException(10, "", "ABORTED", false, null));
 
-    assertTrue(transactionHandler.shouldRetry(nestedDatastoreException, new Object()));
-    assertFalse(handler.shouldRetry(nestedDatastoreException, new Object()));
+    assertTrue(transactionHandler.shouldRetry(nestedDatastoreException, null));
+    assertFalse(handler.shouldRetry(nestedDatastoreException, null));
   }
 }
