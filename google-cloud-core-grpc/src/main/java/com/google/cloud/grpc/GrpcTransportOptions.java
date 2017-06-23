@@ -37,7 +37,6 @@ import io.grpc.internal.SharedResourceHolder.Resource;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Locale;
-import java.util.Locale.Category;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;

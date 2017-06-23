@@ -67,7 +67,7 @@ started](https://cloud.google.com/spanner/docs/getting-started/java/) guide.
 
 #### Complete source code
 
-In [DatabaseSelect.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/spanner/snippets/DatabaseSelect.java) we put a quick start example, which shows how you can run a simple select statement.   
+In [DatabaseSelect.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/spanner/snippets/DatabaseSelect.java) we put a quick start example, which shows how you can run a simple query.   
 
 ## Troubleshooting
 

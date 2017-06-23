@@ -52,12 +52,12 @@ public class DatabaseSelect {
       DatabaseClient dbClient = spanner.getDatabaseClient(DatabaseId.of(
           options.getProjectId(), instanceId, databaseId));
       // Queries the database
-      ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"));
-
-      System.out.println("\n\nResults:");
-      // Prints the results
-      while (resultSet.next()) {
-        System.out.printf("%d\n\n", resultSet.getLong(0));
+      try (ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"))) {
+        System.out.println("\n\nResults:");
+        // Prints the results
+        while (resultSet.next()) {
+          System.out.printf("%d\n\n", resultSet.getLong(0));
+        }
       }
     } finally {
       // Closes the client which will free up the resources used
