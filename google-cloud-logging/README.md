@@ -164,6 +164,10 @@ and
 we put together all the code shown above into three programs. The programs assume that you are
 running on Compute Engine or from your own desktop.
 
+Transport
+---------
+Logging uses gRPC for the transport layer.
+
 Java Versions
 -------------
 

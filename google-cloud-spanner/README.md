@@ -70,6 +70,10 @@ started](https://cloud.google.com/spanner/docs/getting-started/java/) guide.
 To get help, follow the instructions in the [shared Troubleshooting
 document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
+Transport
+---------
+Spanner uses gRPC for the transport layer.
+
 ## Java Versions
 
 Java 7 or above is required for using this client.

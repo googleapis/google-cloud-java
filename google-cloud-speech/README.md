@@ -61,11 +61,14 @@ In [RecognizeSpeech.java](../google-cloud-examples/src/main/java/com/google/clou
 For an example audio file please check the [audio.raw](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/speech/cloud-client/resources/audio.raw) from the samples repository.
 Note, to play the file on Unix-like system you may use the following command: `play -t raw -r 16k -e signed -b 16 -c 1 audio.raw`
 
-
 Troubleshooting
 ---------------
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+
+Transport
+---------
+Speech uses gRPC for the transport layer.
 
 Java Versions
 -------------
