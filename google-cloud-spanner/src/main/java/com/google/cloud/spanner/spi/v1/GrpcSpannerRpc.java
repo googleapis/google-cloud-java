@@ -132,7 +132,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
     TransportOptions transportOptions = options.getTransportOptions();
     // Note, getXGoogApiClientHeader() method can be added to TransportOptions directly.
     // Doing explicit casting here (instead of "contaminating" the top level interface) since most
-    // probably it is a temporary solution (eventially all grpc clients whould be come gapic-based,
+    // probably it is a temporary solution (eventually all grpc clients whould become gapic-based,
     // and gapic handles the header internally).
     if (transportOptions instanceof GrpcTransportOptions) {
       this.xGoogApiClientHeader =
