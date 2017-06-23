@@ -57,7 +57,7 @@ public class GceTestEnvConfig implements TestEnvConfig {
         builder
             .setRpcChannelFactory(
                 new SpannerOptions.NettyRpcChannelFactory(
-                    "",
+                    null,
                     ImmutableList.<ClientInterceptor>of(new GrpcErrorInjector(errorProbability))))
             .build();
   }

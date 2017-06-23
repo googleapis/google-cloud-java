@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import com.google.cloud.TransportOptions;
+import org.easymock.EasyMock;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -29,7 +30,7 @@ public class LoggingOptionsTest {
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    LoggingOptions.newBuilder().setTransportOptions(new TransportOptions() {});
+    LoggingOptions.newBuilder().setTransportOptions(EasyMock.createMock(TransportOptions.class));
   }
 
 }

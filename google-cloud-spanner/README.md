@@ -61,9 +61,13 @@ See the `google-cloud` API [spanner documentation][spanner-api] to learn how to
 interact with Cloud Spanner using this Client Library.
 
 ## Getting Started
-
+#### Prerequisites
 Please refer to the [getting
 started](https://cloud.google.com/spanner/docs/getting-started/java/) guide.
+
+#### Complete source code
+
+In [DatabaseSelect.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/spanner/snippets/DatabaseSelect.java) we put a quick start example, which shows how you can run a simple select statement.   
 
 ## Troubleshooting
 

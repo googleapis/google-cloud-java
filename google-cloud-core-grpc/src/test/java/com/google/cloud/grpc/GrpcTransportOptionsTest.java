@@ -24,6 +24,7 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.grpc.GrpcTransportOptions.DefaultExecutorFactory;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.regex.Pattern;
 import org.easymock.EasyMock;
 import org.junit.Test;
 
@@ -69,5 +70,13 @@ public class GrpcTransportOptionsTest {
     ExecutorFactory<ScheduledExecutorService> executorFactory = new DefaultExecutorFactory();
     ScheduledExecutorService executorService = executorFactory.get();
     assertSame(executorService, executorFactory.get());
+  }
+
+  @Test
+  public void testHeader() {
+    String expectedHeaderPattern = "^gl-java/.+ gccl/0.0.0+ gax/.+ grpc/.+";
+    assertTrue(Pattern.compile(expectedHeaderPattern)
+        .matcher(OPTIONS.getXGoogApiClientHeader("0.0.0"))
+        .find());
   }
 }
