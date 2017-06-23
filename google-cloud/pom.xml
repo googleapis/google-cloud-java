@@ -79,5 +79,9 @@
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-vision</artifactId>
     </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>google-cloud-spanner</artifactId>
+    </dependency>
   </dependencies>
 </project>

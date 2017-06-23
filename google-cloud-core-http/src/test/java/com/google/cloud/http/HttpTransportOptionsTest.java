@@ -22,7 +22,6 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.auth.http.HttpTransportFactory;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.http.HttpTransportOptions.DefaultHttpTransportFactory;
 import java.util.regex.Pattern;
 import org.easymock.EasyMock;
@@ -65,12 +64,9 @@ public class HttpTransportOptionsTest {
 
   @Test
   public void testHeader() {
-    String expectedHeaderPattern = "^gl-java/.* gccl/0.0.0";
-    final ServiceOptions mockOptions = EasyMock.createMock(ServiceOptions.class);
-    EasyMock.expect(mockOptions.getLibraryVersion()).andReturn("0.0.0");
-    EasyMock.replay(mockOptions);
+    String expectedHeaderPattern = "^gl-java/.+ gccl/0.0.0";
     assertTrue(Pattern.compile(expectedHeaderPattern)
-        .matcher(OPTIONS.getXGoogApiClientHeader(mockOptions))
+        .matcher(OPTIONS.getXGoogApiClientHeader("0.0.0"))
         .find());
   }
 }
