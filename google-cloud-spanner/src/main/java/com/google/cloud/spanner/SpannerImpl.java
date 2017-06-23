@@ -1284,7 +1284,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public void onError(SpannerException e) {
-      if (e.getErrorCode() == ErrorCode.ABORTED) {
+      if (e.getErrorCode() == ErrorCode.ABORTED
+          || e.getErrorCode() == ErrorCode.RESOURCE_EXHAUSTED) {
         long delay = -1L;
         if (e instanceof AbortedException) {
           delay = ((AbortedException) e).getRetryDelayInMillis();
