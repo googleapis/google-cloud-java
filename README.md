@@ -835,19 +835,19 @@ Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
-Proxy
+Using a proxy
 -----
 Clients in this repository use either HTTP or gRPC for the transport layer.
 The README of each client documents the transport layer the client uses.
 
-For HTTP clients, the proxy can be configured by `http.proxyHost` and
+For HTTP clients, a proxy can be configured by using `http.proxyHost` and
 related system properties as documented by
 [Java Networking and Proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html).
 
-For gRPC clients, the proxy can be configured by the
+For gRPC clients, a proxy can be configured by using the
 `GRPC_PROXY_EXP` environment variable as documented by
 the gRPC [release notes](https://github.com/grpc/grpc-java/releases/tag/v1.0.3).
-Please note that the gRPC proxy support is currently experimental.
+Please note that gRPC proxy support is currently experimental.
 
 Java Versions
 -------------
