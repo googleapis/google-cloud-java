@@ -29,7 +29,7 @@ public final class PlatformInformation {
   public static final String JETTY_LOGGER_ON_GAE8_PROD =
       "com.google.apphosting.runtime.jetty9.JettyLogger";
   public static final String JETTY_LOGGER_ON_GAE8_DEVSERVER =
-      " com.google.appengine.development.jetty9.JettyLogger";
+      " com.google.appengine.development.jetty9.JettyLogger"; //note the leading space
 
   private PlatformInformation() {}
 
