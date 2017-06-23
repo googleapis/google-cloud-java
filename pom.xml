@@ -589,12 +589,6 @@
         <groupId>com.google.api</groupId>
         <artifactId>gax-grpc</artifactId>
         <version>${gax-grpc.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>com.google.api.grpc</groupId>
-            <artifactId>proto-google-common-protos</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
 
       <!-- test deps -->
