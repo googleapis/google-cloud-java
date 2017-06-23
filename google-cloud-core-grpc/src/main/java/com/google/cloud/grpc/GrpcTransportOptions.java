@@ -74,6 +74,16 @@ public class GrpcTransportOptions implements TransportOptions {
         }
       };
 
+  /**
+   * Returns a string value for x-goog-api-client HTTP header. The header is used to report version
+   * of the client and its protocol-specific dependencies.
+   *
+   * For internal use.
+   *
+   * @param libraryVersion version of the google-cloud-java library
+   * @return value of x-goog-api-client HTTP header, which should be provided with each request
+   */
+  @InternalApi
   public String getXGoogApiClientHeader(String libraryVersion) {
     return String.format(Locale.US,
         "gl-java/%s %s/%s gax/%s grpc/%s",
