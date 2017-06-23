@@ -36,7 +36,7 @@ import java.util.Map;
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  * <pre>{@code target/appassembler/bin/TranslateExample
- *  -Dexec.args="<apiKey> [<targetLanguage>]
+ *  -Dexec.args="[[<apiKey>] <targetLanguage>]
  *  list languages <languageCode>?
  *  detect <text>+
  *  translate <text>+"}</pre>
@@ -169,7 +169,7 @@ public class TranslateExample {
         actionAndParams.append(' ').append(param);
       }
     }
-    System.out.printf("Usage: %s [<apiKey>] [<targetLanguage>] operation <args>*%s%n",
+    System.out.printf("Usage: %s [[<apiKey>] <targetLanguage>] operation <args>*%s%n",
         TranslateExample.class.getSimpleName(), actionAndParams);
   }
 
@@ -189,7 +189,7 @@ public class TranslateExample {
       optionsBuilder.setTargetLanguage(args[1]);
       args = Arrays.copyOfRange(args, 3, args.length);
     } else if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
-      optionsBuilder.setApiKey(args[0]);
+      optionsBuilder.setTargetLanguage(args[0]);
       actionName = args[1];
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {

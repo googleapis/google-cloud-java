@@ -117,6 +117,7 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
      * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key see <a
      * href="https://cloud.google.com/translate/v2/quickstart">Translate quickstart</a>.
      */
+    @Deprecated
     public Builder setApiKey(String apiKey) {
       this.apiKey = apiKey;
       return this;
