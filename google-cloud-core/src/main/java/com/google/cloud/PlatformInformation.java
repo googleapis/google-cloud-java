@@ -31,6 +31,8 @@ public final class PlatformInformation {
   public static final String JETTY_LOGGER_ON_GAE8_DEVSERVER =
       " com.google.appengine.development.jetty9.JettyLogger";
 
+  private PlatformInformation() {}
+
   public static boolean isOnGAE() {
     return GAE_RUNTIME_VERSION != null;
   }
