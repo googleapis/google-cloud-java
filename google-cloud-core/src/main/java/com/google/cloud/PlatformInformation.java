@@ -16,6 +16,9 @@
 
 package com.google.cloud;
 
+import com.google.api.core.InternalApi;
+
+@InternalApi("This class should only be used within google-cloud-java")
 public final class PlatformInformation {
   public static final String SPECIFICATION_VERSION =
       System.getProperty("java.specification.version");
