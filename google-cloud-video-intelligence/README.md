@@ -1,16 +1,16 @@
-Google Cloud Java Client for Vision
+Google Cloud Java Client for Video Intelligence
 ======================================
 
-Java idiomatic client for [Google Cloud Vision](https://cloud.google.com/vision/).
+Java idiomatic client for [Google Cloud Video Intelligence](https://cloud.google.com/video-intelligence/).
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-vision.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-vision.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-video-intelligence.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-video-intelligence.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation][vision-api]
+-  [API Documentation][video-api]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -21,44 +21,42 @@ If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-vision</artifactId>
+  <artifactId>google-cloud-video-intelligence</artifactId>
   <version>0.20.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-vision:0.20.0-beta'
+compile 'com.google.cloud:google-cloud-video-intelligence:0.20.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-vision" % "0.20.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-video-intelligence" % "0.20.0-beta"
 ```
 
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
+See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section
+in the base directory's README.
 
-About Google Cloud Vision
+About Google Cloud Video Intelligence
 ----------------------------
 
-Google [Cloud Vision API][cloud-vision-docs] allows developers to easily integrate vision detection features within applications, including image labeling, face and landmark detection, optical character recognition (OCR), and tagging of explicit content.
+Google [Cloud Video Intelligence API][cloud-video-docs]
+allows developers to use Google video analysis technology as part of their applications.
 
-See the ``google-cloud`` API [vision documentation][vision-api] to learn how to use this Cloud Vision API Client Library.
+See the ``google-cloud`` API [video intelligence documentation][video-api]
+to learn how to use this Cloud Video Intelligence API Client Library.
 
 Getting Started
 ---------------
 #### Prerequisites
-You will need a [Google Developers Console](https://console.developers.google.com/) project with the Vision API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+You will need a [Google Developers Console](https://console.developers.google.com/) project with the Video Intelligence API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
-You'll need to obtain the `google-cloud-vision` library.  See the [Quickstart](#quickstart) section to add `google-cloud-vision` as a dependency in your code.
-
-#### Complete source code
-
-In [AnnotateImage.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/vision/snippets/AnnotateImage.java) we put a quick start example, which shows how you can use Goolge Vision API to automatically annotate an immage (like "cat", "whiskers", "mammal" for a picture of a cat).
-
-For an example picture file please check the [wakeupcat.jpg](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/vision/cloud-client/resources/wakeupcat.jpg) from the samples repository.
+You'll need to obtain the `google-cloud-video-intelligence` library.
+See the [Quickstart](#quickstart) section to add `google-cloud-video-intelligence` as a dependency in your code.
 
 Troubleshooting
 ---------------
@@ -67,7 +65,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Vision uses gRPC for the transport layer.
+Video Intelligence uses gRPC for the transport layer.
 
 Java Versions
 -------------
@@ -100,5 +98,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[cloud-vision-docs]: https://cloud.google.com/vision/docs
-[vision-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/vision/spi/v1/package-summary.html
+[cloud-video-docs]: https://cloud.google.com/video-intelligence/docs/
+[video-api]: http://googlecloudplatform.github.io/google-cloud-java/0.20.0/apidocs/com/google/cloud/videointelligence/v1beta1/package-summary.html

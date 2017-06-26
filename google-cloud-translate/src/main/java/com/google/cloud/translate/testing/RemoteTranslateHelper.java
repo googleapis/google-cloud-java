@@ -16,10 +16,16 @@
 
 package com.google.cloud.translate.testing;
 
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.translate.TranslateOptions;
 import org.threeten.bp.Duration;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Utility to create a remote translate configuration for testing. Translate options can be obtained
@@ -34,6 +40,7 @@ import org.threeten.bp.Duration;
  * both set to {@code 60000}.
  */
 public class RemoteTranslateHelper {
+  private static final Logger logger = Logger.getLogger(RemoteTranslateHelper.class.getName());
 
   private final TranslateOptions options;
 
@@ -50,10 +57,42 @@ public class RemoteTranslateHelper {
   }
 
   /**
+   * Creates a {@code RemoteTranslateHelper} object for the given project id and JSON key input
+   * stream.
+   *
+   * @param projectId id of the project to be used for running the tests
+   * @param keyStream input stream for a JSON key
+   * @return A {@code RemoteTranslateHelper} object for the provided options
+   * @throws com.google.cloud.translate.testing.RemoteTranslateHelper.TranslateHelperException if
+   *     {@code keyStream} is not a valid JSON key stream
+   */
+  public static RemoteTranslateHelper create(String projectId, InputStream keyStream)
+      throws TranslateHelperException {
+    try {
+      HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();
+      transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+          .build();
+      TranslateOptions translateOptions = TranslateOptions.newBuilder()
+          .setCredentials(GoogleCredentials.fromStream(keyStream))
+          .setProjectId(projectId)
+          .setRetrySettings(retryParams())
+          .setTransportOptions(transportOptions)
+          .build();
+      return new RemoteTranslateHelper(translateOptions);
+    } catch (IOException ex) {
+      if (logger.isLoggable(Level.WARNING)) {
+        logger.log(Level.WARNING, ex.getMessage());
+      }
+      throw TranslateHelperException.translate(ex);
+    }
+  }
+
+  /**
    * Creates a {@code RemoteTranslateHelper} object for the given API key.
    *
    * @param apiKey API key used to issue requests to Google Translation.
    */
+  @Deprecated
   public static RemoteTranslateHelper create(String apiKey) {
     HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();
     transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
@@ -67,7 +106,8 @@ public class RemoteTranslateHelper {
   }
 
   /**
-   * Creates a {@code RemoteStorageHelper} object.
+   * Creates a {@code RemoteTranslateHelper} object using default project id and authentication
+   * credentials.
    */
   public static RemoteTranslateHelper create() {
     HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();
@@ -90,5 +130,22 @@ public class RemoteTranslateHelper {
         .setRpcTimeoutMultiplier(1.0)
         .setMaxRpcTimeout(Duration.ofMillis(120000L))
         .build();
+  }
+
+  public static class TranslateHelperException extends RuntimeException {
+
+    private static final long serialVersionUID = -1356870058436149798L;
+
+    public TranslateHelperException(String message) {
+      super(message);
+    }
+
+    public TranslateHelperException(String message, Throwable cause) {
+      super(message, cause);
+    }
+
+    public static TranslateHelperException translate(Exception ex) {
+      return new TranslateHelperException(ex.getMessage(), ex);
+    }
   }
 }

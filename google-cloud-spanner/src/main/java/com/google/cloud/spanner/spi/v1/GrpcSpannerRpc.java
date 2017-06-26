@@ -20,6 +20,8 @@ import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExcepti
 
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.TransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
@@ -94,11 +96,6 @@ import javax.annotation.Nullable;
 public class GrpcSpannerRpc implements SpannerRpc {
   private static final Logger logger = Logger.getLogger(GrpcSpannerRpc.class.getName());
 
-  public static final String API_CLIENT =
-      String.format(
-          "google-cloud-java/%s",
-          MoreObjects.firstNonNull(
-              GrpcSpannerRpc.class.getPackage().getImplementationVersion(), ""));
   private static final Metadata.Key<String> API_CLIENT_KEY =
       Metadata.Key.of("x-goog-api-client", Metadata.ASCII_STRING_MARSHALLER);
   private static final Metadata.Key<String> RESOURCE_PREFIX_KEY =
@@ -114,6 +111,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   private final List<Channel> channels;
   private final String projectId;
   private final CallCredentials credentials;
+  private final String xGoogApiClientHeader;
 
   public GrpcSpannerRpc(SpannerOptions options) {
     this.projectId = options.getProjectId();
@@ -130,7 +128,19 @@ public class GrpcSpannerRpc implements SpannerRpc {
       channelsBuilder.add(channel);
       stubsBuilder.add(withCredentials(SpannerGrpc.newFutureStub(channel), credentials));
     }
-    channels = channelsBuilder.build();
+    this.channels = channelsBuilder.build();
+    TransportOptions transportOptions = options.getTransportOptions();
+    // Note, getXGoogApiClientHeader() method can be added to TransportOptions directly.
+    // Doing explicit casting here (instead of "contaminating" the top level interface) since most
+    // probably it is a temporary solution (eventually all grpc clients will become gapic-based,
+    // and gapic handles the header internally).
+    if (transportOptions instanceof GrpcTransportOptions) {
+      this.xGoogApiClientHeader =
+          ((GrpcTransportOptions) transportOptions)
+              .getXGoogApiClientHeader(options.getLibraryVersion());
+    } else {
+      this.xGoogApiClientHeader = "";
+    }
   }
 
   private static CallCredentials callCredentials(SpannerOptions options) {
@@ -460,7 +470,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   private Metadata newMetadata(String resource) {
     Metadata metadata = new Metadata();
     metadata.put(RESOURCE_PREFIX_KEY, extractHeader(resource));
-    metadata.put(API_CLIENT_KEY, API_CLIENT);
+    metadata.put(API_CLIENT_KEY, xGoogApiClientHeader);
     return metadata;
   }
 

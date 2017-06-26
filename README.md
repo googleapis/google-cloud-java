@@ -498,7 +498,7 @@ Google Cloud Language (Beta)
 ### Preview
 
 Here is a code snippet showing a simple usage example of LanguageServiceClient. The example assumes that either default application
-credentials or a valid api key are available. (See [Authentication section](#authentication) for more information)
+credentials or a valid API key are available. (See [Authentication section](#authentication) for more information)
 ```java
  try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    Document document = Document.newBuilder().build();
@@ -515,7 +515,7 @@ Google Cloud Vision (Beta)
 ### Preview
 
 Here is a code snippet showing a simple usage example of ImageAnnotatorClient.
-The example assumes that either default application credentials or a valid api key
+The example assumes that either default application credentials or a valid API key
 are available. (See [Authentication section](#authentication) for more information)
 ```java
  try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
@@ -732,9 +732,8 @@ Google Translation (Beta)
 
 Here's a snippet showing a simple usage example. The example shows how to detect the language of
 some text and how to translate some text. The example assumes that either default application
-credentials or a valid api key are available. An api key stored in the `GOOGLE_API_KEY` environment
-variable will be automatically detected. Alternatively, you can use the `apiKey(String)` setter in
-`TranslateOptions.Builder`. Complete source code can be found at
+credentials or a valid API key are available. An API key stored in the `GOOGLE_API_KEY` environment
+variable will be automatically detected. Complete source code can be found at
 [DetectLanguageAndTranslate.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java).
 
 ```java
@@ -766,7 +765,7 @@ Google Cloud Speech (Alpha)
 ### Preview
 
 Here is a code snippet showing a simple usage example of SpeechClient. The example assumes that either default application
-credentials or a valid api key are available. (See [Authentication section](#authentication) for more information)
+credentials or a valid API key are available. (See [Authentication section](#authentication) for more information)
 Note that you must provide a uri to a FLAC audio file to run this.
 
 ```java
@@ -796,7 +795,7 @@ Google Cloud Trace (Alpha)
 ### Preview
 
 Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either default application
-credentials or a valid api key are available.
+credentials or a valid API key are available.
 Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 ```java
  try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
@@ -814,7 +813,7 @@ Google Cloud Video Intelligence (Alpha)
 ### Preview
 
 Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either default application
-credentials or a valid api key are available.
+credentials or a valid API key are available.
 Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 ```java
 try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
@@ -834,6 +833,20 @@ Troubleshooting
 ---------------
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+
+Using a proxy
+-----
+Clients in this repository use either HTTP or gRPC for the transport layer.
+The README of each client documents the transport layer the client uses.
+
+For HTTP clients, a proxy can be configured by using `http.proxyHost` and
+related system properties as documented by
+[Java Networking and Proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html).
+
+For gRPC clients, a proxy can be configured by using the
+`GRPC_PROXY_EXP` environment variable as documented by
+the gRPC [release notes](https://github.com/grpc/grpc-java/releases/tag/v1.0.3).
+Please note that gRPC proxy support is currently experimental.
 
 Java Versions
 -------------
@@ -948,7 +961,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [stackdriver-logging-docs]: https://cloud.google.com/logging/docs
 [stackdriver-logging-activation]: https://console.cloud.google.com/start/api?id=logging
 
-[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/spi/v1/package-summary.html
+[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs
 

@@ -42,8 +42,9 @@ Example Application
 Authentication
 --------------
 
-Google Translation requires an API key to be passed with every request. For instructions on how to
-get an API key follow the [Translation quickstart](https://cloud.google.com/translate/v2/quickstart).
+For instructions on how to set up authentication and make authenticated calls,
+follow
+the [Translation quickstart](https://cloud.google.com/translate/v2/quickstart).
 
 About Google Translation
 --------------------
@@ -52,7 +53,7 @@ About Google Translation
 arbitrary string into any supported language. Translation is highly responsive, so websites and
 applications can integrate with Translation API for fast, dynamic translation of source text from the
 source language to a target language (e.g., French to English). Language detection is also
-available In cases where the source language is unknown.
+available in cases where the source language is unknown.
 
 See the [Translation quickstart](https://cloud.google.com/translate/v2/quickstart) for more details
 on how to activate Google Translation for your project.
@@ -148,6 +149,10 @@ Troubleshooting
 ---------------
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+
+Transport
+---------
+Translate uses HTTP for the transport layer.
 
 Java Versions
 -------------

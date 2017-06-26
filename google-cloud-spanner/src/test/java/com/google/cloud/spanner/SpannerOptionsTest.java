@@ -26,6 +26,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.Mockito;
 
 /** Unit tests for {@link com.google.cloud.spanner.SpannerOptions}. */
 @RunWith(JUnit4.class)
@@ -71,12 +72,9 @@ public class SpannerOptionsTest {
     assertThat(options.getPrefetchChunks()).isEqualTo(2);
   }
 
-  class DummyTransportOptions implements TransportOptions {
-  }
-
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    SpannerOptions.newBuilder().setTransportOptions(new DummyTransportOptions());
+    SpannerOptions.newBuilder().setTransportOptions(Mockito.mock(TransportOptions.class));
   }
 }

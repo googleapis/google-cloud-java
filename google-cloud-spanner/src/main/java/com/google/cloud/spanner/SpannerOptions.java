@@ -48,8 +48,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           "https://www.googleapis.com/auth/spanner.admin",
           "https://www.googleapis.com/auth/spanner.data");
   private static final int MAX_CHANNELS = 256;
-  private static final RpcChannelFactory DEFAULT_RPC_CHANNEL_FACTORY =
-      new NettyRpcChannelFactory(GrpcSpannerRpc.API_CLIENT);
+  private static final RpcChannelFactory DEFAULT_RPC_CHANNEL_FACTORY = new NettyRpcChannelFactory();
 
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {
@@ -84,7 +83,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     RpcChannelFactory defaultRpcChannelFactory =
         userAgent == null
             ? DEFAULT_RPC_CHANNEL_FACTORY
-            : new NettyRpcChannelFactory(userAgent + " " + GrpcSpannerRpc.API_CLIENT);
+            : new NettyRpcChannelFactory(userAgent);
     rpcChannels =
         createChannels(
             getHost(),
@@ -259,6 +258,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private final String userAgent;
     private final List<ClientInterceptor> interceptors;
 
+    NettyRpcChannelFactory() {
+      this(null);
+    }
+
     NettyRpcChannelFactory(String userAgent) {
       this(userAgent, ImmutableList.<ClientInterceptor>of());
     }
@@ -270,12 +273,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public ManagedChannel newChannel(String host, int port) {
-      return NettyChannelBuilder.forAddress(host, port)
-          .sslContext(newSslContext())
-          .intercept(interceptors)
-          .maxMessageSize(MAX_MESSAGE_SIZE)
-          .userAgent(userAgent)
-          .build();
+      NettyChannelBuilder builder =
+          NettyChannelBuilder.forAddress(host, port)
+            .sslContext(newSslContext())
+            .intercept(interceptors)
+            .maxMessageSize(MAX_MESSAGE_SIZE);
+      if (userAgent != null) {
+        builder.userAgent(userAgent);
+      }
+      return builder.build();
     }
 
     private static SslContext newSslContext() {

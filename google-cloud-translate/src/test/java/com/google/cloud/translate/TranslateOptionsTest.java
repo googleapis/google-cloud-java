@@ -17,6 +17,7 @@
 package com.google.cloud.translate;
 
 import com.google.cloud.TransportOptions;
+import org.easymock.EasyMock;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -29,7 +30,7 @@ public class TranslateOptionsTest {
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    TranslateOptions.newBuilder().setTransportOptions(new TransportOptions() {});
+    TranslateOptions.newBuilder().setTransportOptions(EasyMock.createMock(TransportOptions.class));
   }
 
 }

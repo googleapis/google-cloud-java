@@ -17,6 +17,7 @@
 package com.google.cloud.dns;
 
 import com.google.cloud.TransportOptions;
+import org.easymock.EasyMock;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -29,7 +30,7 @@ public class DnsOptionsTest {
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    DnsOptions.newBuilder().setTransportOptions(new TransportOptions() {});
+    DnsOptions.newBuilder().setTransportOptions(EasyMock.createMock(TransportOptions.class));
   }
 
 }

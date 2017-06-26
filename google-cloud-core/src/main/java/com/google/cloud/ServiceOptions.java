@@ -61,6 +61,8 @@ import org.threeten.bp.Duration;
 public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     OptionsT extends ServiceOptions<ServiceT, OptionsT>> implements Serializable {
 
+  public static final String CREDENTIAL_ENV_NAME = "GOOGLE_APPLICATION_CREDENTIALS";
+
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
@@ -84,7 +86,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private final String serviceRpcFactoryClassName;
   private final String serviceFactoryClassName;
   private final ApiClock clock;
-  private final Credentials credentials;
+  protected Credentials credentials;
   private final TransportOptions transportOptions;
 
   private transient ServiceRpcFactory<OptionsT> serviceRpcFactory;
@@ -105,7 +107,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
 
     private String projectId;
     private String host;
-    private Credentials credentials;
+    protected Credentials credentials;
     private RetrySettings retrySettings;
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<OptionsT> serviceRpcFactory;
@@ -407,7 +409,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
 
   protected static String getServiceAccountProjectId() {
     String project = null;
-    String credentialsPath = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
+    String credentialsPath = System.getenv(CREDENTIAL_ENV_NAME);
     if (credentialsPath != null) {
       try (InputStream credentialsStream = new FileInputStream(credentialsPath)) {
         JSONObject json = new JSONObject(new JSONTokener(credentialsStream));

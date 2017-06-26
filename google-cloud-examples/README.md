@@ -160,12 +160,12 @@ To run examples from your command line:
 
   * Here's an example run of `TranslateExample`.
 
-    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Translation API" is enabled and that you have a valid API key.
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Translation API" is enabled.
     ```
-    target/appassembler/bin/TranslateExample <apiKey> languages
-    target/appassembler/bin/TranslateExample <apiKey> detect Hello,\ World!
-    target/appassembler/bin/TranslateExample <apiKey> translate ¡Hola\ Mundo!
-    target/appassembler/bin/TranslateExample <apiKey> es translate Hello,\ World!
+    target/appassembler/bin/TranslateExample languages
+    target/appassembler/bin/TranslateExample detect Hello,\ World!
+    target/appassembler/bin/TranslateExample translate ¡Hola\ Mundo!
+    target/appassembler/bin/TranslateExample es translate Hello,\ World!
     ```
 
 Troubleshooting

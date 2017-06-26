@@ -947,7 +947,7 @@
                   </group>
                   <group>
                     <title>Test helpers packages</title>
-                    <packages>com.google.cloud.bigquery.testing:com.google.cloud.compute.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.logging.testing:com.google.cloud.pubsub.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing:com.google.cloud.translate.testing</packages>
+                    <packages>com.google.cloud.bigquery.testing:com.google.cloud.compute.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.logging.testing:com.google.cloud.pubsub.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing:com.google.cloud.translate.testing:com.google.cloud.spanner.testing:com.google.cloud.storage.contrib.nio.testing</packages>
                   </group>
                   <group>
                     <title>Example packages</title>
@@ -955,7 +955,7 @@
                   </group>
                   <group>
                     <title>SPI packages</title>
-                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.errorreporting.spi:com.google.cloud.errorreporting.spi.*:com.google.cloud.language.spi:com.google.cloud.language.spi.*:com.google.cloud.logging.spi:com.google.cloud.monitoring.spi:com.google.cloud.monitoring.spi.*:com.google.cloud.logging.spi.*:com.google.cloud.pubsub.spi:com.google.cloud.pubsub.spi.*:com.google.cloud.resourcemanager.spi:com.google.cloud.speech.spi:com.google.cloud.speech.spi.*:com.google.cloud.storage.spi:com.google.cloud.trace.spi:com.google.cloud.trace.spi.*:com.google.cloud.translate.spi:com.google.cloud.vision.spi:com.google.cloud.vision.spi.*:com.google.cloud.videointelligence.spi.*</packages>
+                    <packages>com.google.cloud.spi*:com.google.cloud.bigquery.spi*:com.google.cloud.compute.spi*:com.google.cloud.datastore.spi*:com.google.cloud.dns.spi*:com.google.cloud.logging.spi*:com.google.cloud.resourcemanager.spi*:com.google.cloud.spanner.spi*:com.google.cloud.storage.spi*:com.google.cloud.translate.spi*</packages>
                   </group>
                 </groups>
                 <links>

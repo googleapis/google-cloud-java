@@ -239,13 +239,14 @@ Google Translation service.
 
 1. Create a test Google Cloud project.
 
-2. Follow [Translate Quickstart](https://cloud.google.com/translate/v2/quickstart) to get an API
+2. Download a JSON service account credentials file from the Google Developer's Console. See more about this on the [Google Cloud Platform Authentication page][cloud-platform-authentication]
 key.
 
 3. Create a `RemoteTranslateHelper` object using your project ID and API key. Here is an example
 that uses the `RemoteTranslateHelper` to list supported languages.
   ```java
-  RemoteTranslateHelper translateHelper = RemoteTranslateHelper.create(PROJECT_ID, API_KEY);
+  RemoteTranslateHelper translateHelper =
+      RemoteTranslateHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
   Translate translate = translateHelper.getOptions().getService();
   List<Language> languages = translate.listSupportedLanguages();
   ```
@@ -258,7 +259,7 @@ Currently, there isn't an emulator for Cloud Spanner, so an alternative is to cr
 
 1. Create a test Google Cloud project.
 
-2. Download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication].
+2. Download a JSON service account credentials file from the Google Developer's Console. See more about this on the [Google Cloud Platform Authentication page][cloud-platform-authentication].
 
 3. Create or use an existing Cloud Spanner Instance.
 
@@ -283,6 +284,7 @@ Here is an example that uses the `RemoteSpannerHelper` to create a database.
   RemoteSpannerHelper.cleanUp();
   ```
 
+[cloud-platform-authentication]:https://cloud.google.com/docs/authentication/getting-started
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
 [create-service-account]:https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount
 [cloud-nio]:https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio
