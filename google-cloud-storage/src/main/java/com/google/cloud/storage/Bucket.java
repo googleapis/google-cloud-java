@@ -40,6 +40,7 @@ import java.io.Serializable;
 import java.security.Key;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
@@ -562,6 +563,12 @@ public class Bucket extends BucketInfo {
     @Override
     public Builder setDefaultAcl(Iterable<Acl> acl) {
       infoBuilder.setDefaultAcl(acl);
+      return this;
+    }
+
+    @Override
+    public Builder setLabels(Map<String, String> labels) {
+      infoBuilder.setLabels(labels);
       return this;
     }
 

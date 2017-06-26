@@ -103,6 +103,7 @@ public class ITStorageTest {
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
   private static final byte[] COMPRESSED_CONTENT = BaseEncoding.base64()
       .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
+  private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
 
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -1488,5 +1489,14 @@ public class ITStorageTest {
         storage.testIamPermissions(
             BUCKET,
             ImmutableList.of("storage.buckets.getIamPolicy", "storage.buckets.setIamPolicy")));
+  }
+
+  @Test
+  public void testUpdateBucketLabel() {
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+    assertNull(remoteBucket.getLabels());
+    remoteBucket = remoteBucket.toBuilder().setLabels(BUCKET_LABELS).build();
+    Bucket updatedBucket = storage.update(remoteBucket);
+    assertEquals(BUCKET_LABELS, updatedBucket.getLabels());
   }
 }
