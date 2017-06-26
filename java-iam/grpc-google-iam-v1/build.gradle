@@ -10,7 +10,7 @@ apply plugin: 'signing'
 
 description = 'GRPC library for grpc-google-iam-v1'
 group = "com.google.api.grpc"
-version = "0.1.11"
+version = "0.1.12"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
@@ -20,8 +20,8 @@ repositories {
 }
 
 dependencies {
-  compile "io.grpc:grpc-stub:1.2.0"
-  compile "io.grpc:grpc-protobuf:1.2.0"
+  compile "io.grpc:grpc-stub:1.4.0"
+  compile "io.grpc:grpc-protobuf:1.4.0"
   compile project(":proto-google-iam-v1")
 }
 

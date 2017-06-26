@@ -98,7 +98,7 @@ public  final class SetIamPolicyRequest extends
    * resource is specified as `projects/{project}`.
    * </pre>
    *
-   * <code>optional string resource = 1;</code>
+   * <code>string resource = 1;</code>
    */
   public java.lang.String getResource() {
     java.lang.Object ref = resource_;
@@ -119,7 +119,7 @@ public  final class SetIamPolicyRequest extends
    * resource is specified as `projects/{project}`.
    * </pre>
    *
-   * <code>optional string resource = 1;</code>
+   * <code>string resource = 1;</code>
    */
   public com.google.protobuf.ByteString
       getResourceBytes() {
@@ -145,7 +145,7 @@ public  final class SetIamPolicyRequest extends
    * might reject them.
    * </pre>
    *
-   * <code>optional .google.iam.v1.Policy policy = 2;</code>
+   * <code>.google.iam.v1.Policy policy = 2;</code>
    */
   public boolean hasPolicy() {
     return policy_ != null;
@@ -158,7 +158,7 @@ public  final class SetIamPolicyRequest extends
    * might reject them.
    * </pre>
    *
-   * <code>optional .google.iam.v1.Policy policy = 2;</code>
+   * <code>.google.iam.v1.Policy policy = 2;</code>
    */
   public com.google.iam.v1.Policy getPolicy() {
     return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
@@ -171,7 +171,7 @@ public  final class SetIamPolicyRequest extends
    * might reject them.
    * </pre>
    *
-   * <code>optional .google.iam.v1.Policy policy = 2;</code>
+   * <code>.google.iam.v1.Policy policy = 2;</code>
    */
   public com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder() {
     return getPolicy();
@@ -241,7 +241,7 @@ public  final class SetIamPolicyRequest extends
       return memoizedHashCode;
     }
     int hash = 41;
-    hash = (19 * hash) + getDescriptorForType().hashCode();
+    hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getResource().hashCode();
     if (hasPolicy()) {
@@ -253,6 +253,17 @@ public  final class SetIamPolicyRequest extends
     return hash;
   }
 
+  public static com.google.iam.v1.SetIamPolicyRequest parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.google.iam.v1.SetIamPolicyRequest parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static com.google.iam.v1.SetIamPolicyRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -488,7 +499,7 @@ public  final class SetIamPolicyRequest extends
      * resource is specified as `projects/{project}`.
      * </pre>
      *
-     * <code>optional string resource = 1;</code>
+     * <code>string resource = 1;</code>
      */
     public java.lang.String getResource() {
       java.lang.Object ref = resource_;
@@ -509,7 +520,7 @@ public  final class SetIamPolicyRequest extends
      * resource is specified as `projects/{project}`.
      * </pre>
      *
-     * <code>optional string resource = 1;</code>
+     * <code>string resource = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResourceBytes() {
@@ -531,7 +542,7 @@ public  final class SetIamPolicyRequest extends
      * resource is specified as `projects/{project}`.
      * </pre>
      *
-     * <code>optional string resource = 1;</code>
+     * <code>string resource = 1;</code>
      */
     public Builder setResource(
         java.lang.String value) {
@@ -550,7 +561,7 @@ public  final class SetIamPolicyRequest extends
      * resource is specified as `projects/{project}`.
      * </pre>
      *
-     * <code>optional string resource = 1;</code>
+     * <code>string resource = 1;</code>
      */
     public Builder clearResource() {
       
@@ -565,7 +576,7 @@ public  final class SetIamPolicyRequest extends
      * resource is specified as `projects/{project}`.
      * </pre>
      *
-     * <code>optional string resource = 1;</code>
+     * <code>string resource = 1;</code>
      */
     public Builder setResourceBytes(
         com.google.protobuf.ByteString value) {
@@ -590,7 +601,7 @@ public  final class SetIamPolicyRequest extends
      * might reject them.
      * </pre>
      *
-     * <code>optional .google.iam.v1.Policy policy = 2;</code>
+     * <code>.google.iam.v1.Policy policy = 2;</code>
      */
     public boolean hasPolicy() {
       return policyBuilder_ != null || policy_ != null;
@@ -603,7 +614,7 @@ public  final class SetIamPolicyRequest extends
      * might reject them.
      * </pre>
      *
-     * <code>optional .google.iam.v1.Policy policy = 2;</code>
+     * <code>.google.iam.v1.Policy policy = 2;</code>
      */
     public com.google.iam.v1.Policy getPolicy() {
       if (policyBuilder_ == null) {
@@ -620,7 +631,7 @@ public  final class SetIamPolicyRequest extends
      * might reject them.
      * </pre>
      *
-     * <code>optional .google.iam.v1.Policy policy = 2;</code>
+     * <code>.google.iam.v1.Policy policy = 2;</code>
      */
     public Builder setPolicy(com.google.iam.v1.Policy value) {
       if (policyBuilder_ == null) {
@@ -643,7 +654,7 @@ public  final class SetIamPolicyRequest extends
      * might reject them.
      * </pre>
      *
-     * <code>optional .google.iam.v1.Policy policy = 2;</code>
+     * <code>.google.iam.v1.Policy policy = 2;</code>
      */
     public Builder setPolicy(
         com.google.iam.v1.Policy.Builder builderForValue) {
@@ -664,7 +675,7 @@ public  final class SetIamPolicyRequest extends
      * might reject them.
      * </pre>
      *
-     * <code>optional .google.iam.v1.Policy policy = 2;</code>
+     * <code>.google.iam.v1.Policy policy = 2;</code>
      */
     public Builder mergePolicy(com.google.iam.v1.Policy value) {
       if (policyBuilder_ == null) {
@@ -689,7 +700,7 @@ public  final class SetIamPolicyRequest extends
      * might reject them.
      * </pre>
      *
-     * <code>optional .google.iam.v1.Policy policy = 2;</code>
+     * <code>.google.iam.v1.Policy policy = 2;</code>
      */
     public Builder clearPolicy() {
       if (policyBuilder_ == null) {
@@ -710,7 +721,7 @@ public  final class SetIamPolicyRequest extends
      * might reject them.
      * </pre>
      *
-     * <code>optional .google.iam.v1.Policy policy = 2;</code>
+     * <code>.google.iam.v1.Policy policy = 2;</code>
      */
     public com.google.iam.v1.Policy.Builder getPolicyBuilder() {
       
@@ -725,7 +736,7 @@ public  final class SetIamPolicyRequest extends
      * might reject them.
      * </pre>
      *
-     * <code>optional .google.iam.v1.Policy policy = 2;</code>
+     * <code>.google.iam.v1.Policy policy = 2;</code>
      */
     public com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder() {
       if (policyBuilder_ != null) {
@@ -743,7 +754,7 @@ public  final class SetIamPolicyRequest extends
      * might reject them.
      * </pre>
      *
-     * <code>optional .google.iam.v1.Policy policy = 2;</code>
+     * <code>.google.iam.v1.Policy policy = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.iam.v1.Policy, com.google.iam.v1.Policy.Builder, com.google.iam.v1.PolicyOrBuilder> 

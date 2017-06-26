@@ -14,7 +14,7 @@ public interface SetIamPolicyRequestOrBuilder extends
    * resource is specified as `projects/{project}`.
    * </pre>
    *
-   * <code>optional string resource = 1;</code>
+   * <code>string resource = 1;</code>
    */
   java.lang.String getResource();
   /**
@@ -24,7 +24,7 @@ public interface SetIamPolicyRequestOrBuilder extends
    * resource is specified as `projects/{project}`.
    * </pre>
    *
-   * <code>optional string resource = 1;</code>
+   * <code>string resource = 1;</code>
    */
   com.google.protobuf.ByteString
       getResourceBytes();
@@ -37,7 +37,7 @@ public interface SetIamPolicyRequestOrBuilder extends
    * might reject them.
    * </pre>
    *
-   * <code>optional .google.iam.v1.Policy policy = 2;</code>
+   * <code>.google.iam.v1.Policy policy = 2;</code>
    */
   boolean hasPolicy();
   /**
@@ -48,7 +48,7 @@ public interface SetIamPolicyRequestOrBuilder extends
    * might reject them.
    * </pre>
    *
-   * <code>optional .google.iam.v1.Policy policy = 2;</code>
+   * <code>.google.iam.v1.Policy policy = 2;</code>
    */
   com.google.iam.v1.Policy getPolicy();
   /**
@@ -59,7 +59,7 @@ public interface SetIamPolicyRequestOrBuilder extends
    * might reject them.
    * </pre>
    *
-   * <code>optional .google.iam.v1.Policy policy = 2;</code>
+   * <code>.google.iam.v1.Policy policy = 2;</code>
    */
   com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder();
 }

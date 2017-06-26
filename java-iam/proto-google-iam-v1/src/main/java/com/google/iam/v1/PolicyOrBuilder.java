@@ -12,7 +12,7 @@ public interface PolicyOrBuilder extends
    * Version of the `Policy`. The default version is 0.
    * </pre>
    *
-   * <code>optional int32 version = 1;</code>
+   * <code>int32 version = 1;</code>
    */
   int getVersion();
 
@@ -83,7 +83,7 @@ public interface PolicyOrBuilder extends
    * policy is overwritten blindly.
    * </pre>
    *
-   * <code>optional bytes etag = 3;</code>
+   * <code>bytes etag = 3;</code>
    */
   com.google.protobuf.ByteString getEtag();
 }

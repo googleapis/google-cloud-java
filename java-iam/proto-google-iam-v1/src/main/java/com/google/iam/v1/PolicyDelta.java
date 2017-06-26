@@ -190,7 +190,7 @@ public  final class PolicyDelta extends
       return memoizedHashCode;
     }
     int hash = 41;
-    hash = (19 * hash) + getDescriptorForType().hashCode();
+    hash = (19 * hash) + getDescriptor().hashCode();
     if (getBindingDeltasCount() > 0) {
       hash = (37 * hash) + BINDING_DELTAS_FIELD_NUMBER;
       hash = (53 * hash) + getBindingDeltasList().hashCode();
@@ -200,6 +200,17 @@ public  final class PolicyDelta extends
     return hash;
   }
 
+  public static com.google.iam.v1.PolicyDelta parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.google.iam.v1.PolicyDelta parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static com.google.iam.v1.PolicyDelta parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {

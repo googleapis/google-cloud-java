@@ -14,7 +14,7 @@ public interface BindingOrBuilder extends
    * Required
    * </pre>
    *
-   * <code>optional string role = 1;</code>
+   * <code>string role = 1;</code>
    */
   java.lang.String getRole();
   /**
@@ -24,7 +24,7 @@ public interface BindingOrBuilder extends
    * Required
    * </pre>
    *
-   * <code>optional string role = 1;</code>
+   * <code>string role = 1;</code>
    */
   com.google.protobuf.ByteString
       getRoleBytes();

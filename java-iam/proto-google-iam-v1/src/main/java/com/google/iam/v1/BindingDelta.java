@@ -234,7 +234,7 @@ public  final class BindingDelta extends
    * Required
    * </pre>
    *
-   * <code>optional .google.iam.v1.BindingDelta.Action action = 1;</code>
+   * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
    */
   public int getActionValue() {
     return action_;
@@ -245,7 +245,7 @@ public  final class BindingDelta extends
    * Required
    * </pre>
    *
-   * <code>optional .google.iam.v1.BindingDelta.Action action = 1;</code>
+   * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
    */
   public com.google.iam.v1.BindingDelta.Action getAction() {
     com.google.iam.v1.BindingDelta.Action result = com.google.iam.v1.BindingDelta.Action.valueOf(action_);
@@ -261,7 +261,7 @@ public  final class BindingDelta extends
    * Required
    * </pre>
    *
-   * <code>optional string role = 2;</code>
+   * <code>string role = 2;</code>
    */
   public java.lang.String getRole() {
     java.lang.Object ref = role_;
@@ -282,7 +282,7 @@ public  final class BindingDelta extends
    * Required
    * </pre>
    *
-   * <code>optional string role = 2;</code>
+   * <code>string role = 2;</code>
    */
   public com.google.protobuf.ByteString
       getRoleBytes() {
@@ -307,7 +307,7 @@ public  final class BindingDelta extends
    * Required
    * </pre>
    *
-   * <code>optional string member = 3;</code>
+   * <code>string member = 3;</code>
    */
   public java.lang.String getMember() {
     java.lang.Object ref = member_;
@@ -328,7 +328,7 @@ public  final class BindingDelta extends
    * Required
    * </pre>
    *
-   * <code>optional string member = 3;</code>
+   * <code>string member = 3;</code>
    */
   public com.google.protobuf.ByteString
       getMemberBytes() {
@@ -412,7 +412,7 @@ public  final class BindingDelta extends
       return memoizedHashCode;
     }
     int hash = 41;
-    hash = (19 * hash) + getDescriptorForType().hashCode();
+    hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ACTION_FIELD_NUMBER;
     hash = (53 * hash) + action_;
     hash = (37 * hash) + ROLE_FIELD_NUMBER;
@@ -424,6 +424,17 @@ public  final class BindingDelta extends
     return hash;
   }
 
+  public static com.google.iam.v1.BindingDelta parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.google.iam.v1.BindingDelta parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static com.google.iam.v1.BindingDelta parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -658,7 +669,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional .google.iam.v1.BindingDelta.Action action = 1;</code>
+     * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
      */
     public int getActionValue() {
       return action_;
@@ -669,7 +680,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional .google.iam.v1.BindingDelta.Action action = 1;</code>
+     * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
      */
     public Builder setActionValue(int value) {
       action_ = value;
@@ -682,7 +693,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional .google.iam.v1.BindingDelta.Action action = 1;</code>
+     * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
      */
     public com.google.iam.v1.BindingDelta.Action getAction() {
       com.google.iam.v1.BindingDelta.Action result = com.google.iam.v1.BindingDelta.Action.valueOf(action_);
@@ -694,7 +705,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional .google.iam.v1.BindingDelta.Action action = 1;</code>
+     * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
      */
     public Builder setAction(com.google.iam.v1.BindingDelta.Action value) {
       if (value == null) {
@@ -711,7 +722,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional .google.iam.v1.BindingDelta.Action action = 1;</code>
+     * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
      */
     public Builder clearAction() {
       
@@ -728,7 +739,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional string role = 2;</code>
+     * <code>string role = 2;</code>
      */
     public java.lang.String getRole() {
       java.lang.Object ref = role_;
@@ -749,7 +760,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional string role = 2;</code>
+     * <code>string role = 2;</code>
      */
     public com.google.protobuf.ByteString
         getRoleBytes() {
@@ -771,7 +782,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional string role = 2;</code>
+     * <code>string role = 2;</code>
      */
     public Builder setRole(
         java.lang.String value) {
@@ -790,7 +801,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional string role = 2;</code>
+     * <code>string role = 2;</code>
      */
     public Builder clearRole() {
       
@@ -805,7 +816,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional string role = 2;</code>
+     * <code>string role = 2;</code>
      */
     public Builder setRoleBytes(
         com.google.protobuf.ByteString value) {
@@ -827,7 +838,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional string member = 3;</code>
+     * <code>string member = 3;</code>
      */
     public java.lang.String getMember() {
       java.lang.Object ref = member_;
@@ -848,7 +859,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional string member = 3;</code>
+     * <code>string member = 3;</code>
      */
     public com.google.protobuf.ByteString
         getMemberBytes() {
@@ -870,7 +881,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional string member = 3;</code>
+     * <code>string member = 3;</code>
      */
     public Builder setMember(
         java.lang.String value) {
@@ -889,7 +900,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional string member = 3;</code>
+     * <code>string member = 3;</code>
      */
     public Builder clearMember() {
       
@@ -904,7 +915,7 @@ public  final class BindingDelta extends
      * Required
      * </pre>
      *
-     * <code>optional string member = 3;</code>
+     * <code>string member = 3;</code>
      */
     public Builder setMemberBytes(
         com.google.protobuf.ByteString value) {

@@ -14,7 +14,7 @@ public interface TestIamPermissionsRequestOrBuilder extends
    * resource is specified as `projects/{project}`.
    * </pre>
    *
-   * <code>optional string resource = 1;</code>
+   * <code>string resource = 1;</code>
    */
   java.lang.String getResource();
   /**
@@ -24,7 +24,7 @@ public interface TestIamPermissionsRequestOrBuilder extends
    * resource is specified as `projects/{project}`.
    * </pre>
    *
-   * <code>optional string resource = 1;</code>
+   * <code>string resource = 1;</code>
    */
   com.google.protobuf.ByteString
       getResourceBytes();

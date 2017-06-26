@@ -13,7 +13,7 @@ public interface BindingDeltaOrBuilder extends
    * Required
    * </pre>
    *
-   * <code>optional .google.iam.v1.BindingDelta.Action action = 1;</code>
+   * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
    */
   int getActionValue();
   /**
@@ -22,7 +22,7 @@ public interface BindingDeltaOrBuilder extends
    * Required
    * </pre>
    *
-   * <code>optional .google.iam.v1.BindingDelta.Action action = 1;</code>
+   * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
    */
   com.google.iam.v1.BindingDelta.Action getAction();
 
@@ -33,7 +33,7 @@ public interface BindingDeltaOrBuilder extends
    * Required
    * </pre>
    *
-   * <code>optional string role = 2;</code>
+   * <code>string role = 2;</code>
    */
   java.lang.String getRole();
   /**
@@ -43,7 +43,7 @@ public interface BindingDeltaOrBuilder extends
    * Required
    * </pre>
    *
-   * <code>optional string role = 2;</code>
+   * <code>string role = 2;</code>
    */
   com.google.protobuf.ByteString
       getRoleBytes();
@@ -55,7 +55,7 @@ public interface BindingDeltaOrBuilder extends
    * Required
    * </pre>
    *
-   * <code>optional string member = 3;</code>
+   * <code>string member = 3;</code>
    */
   java.lang.String getMember();
   /**
@@ -65,7 +65,7 @@ public interface BindingDeltaOrBuilder extends
    * Required
    * </pre>
    *
-   * <code>optional string member = 3;</code>
+   * <code>string member = 3;</code>
    */
   com.google.protobuf.ByteString
       getMemberBytes();

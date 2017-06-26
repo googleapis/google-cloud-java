@@ -85,7 +85,7 @@ public  final class GetIamPolicyRequest extends
    * resource is specified as `projects/{project}`.
    * </pre>
    *
-   * <code>optional string resource = 1;</code>
+   * <code>string resource = 1;</code>
    */
   public java.lang.String getResource() {
     java.lang.Object ref = resource_;
@@ -106,7 +106,7 @@ public  final class GetIamPolicyRequest extends
    * resource is specified as `projects/{project}`.
    * </pre>
    *
-   * <code>optional string resource = 1;</code>
+   * <code>string resource = 1;</code>
    */
   public com.google.protobuf.ByteString
       getResourceBytes() {
@@ -174,7 +174,7 @@ public  final class GetIamPolicyRequest extends
       return memoizedHashCode;
     }
     int hash = 41;
-    hash = (19 * hash) + getDescriptorForType().hashCode();
+    hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getResource().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -182,6 +182,17 @@ public  final class GetIamPolicyRequest extends
     return hash;
   }
 
+  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static com.google.iam.v1.GetIamPolicyRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -403,7 +414,7 @@ public  final class GetIamPolicyRequest extends
      * resource is specified as `projects/{project}`.
      * </pre>
      *
-     * <code>optional string resource = 1;</code>
+     * <code>string resource = 1;</code>
      */
     public java.lang.String getResource() {
       java.lang.Object ref = resource_;
@@ -424,7 +435,7 @@ public  final class GetIamPolicyRequest extends
      * resource is specified as `projects/{project}`.
      * </pre>
      *
-     * <code>optional string resource = 1;</code>
+     * <code>string resource = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResourceBytes() {
@@ -446,7 +457,7 @@ public  final class GetIamPolicyRequest extends
      * resource is specified as `projects/{project}`.
      * </pre>
      *
-     * <code>optional string resource = 1;</code>
+     * <code>string resource = 1;</code>
      */
     public Builder setResource(
         java.lang.String value) {
@@ -465,7 +476,7 @@ public  final class GetIamPolicyRequest extends
      * resource is specified as `projects/{project}`.
      * </pre>
      *
-     * <code>optional string resource = 1;</code>
+     * <code>string resource = 1;</code>
      */
     public Builder clearResource() {
       
@@ -480,7 +491,7 @@ public  final class GetIamPolicyRequest extends
      * resource is specified as `projects/{project}`.
      * </pre>
      *
-     * <code>optional string resource = 1;</code>
+     * <code>string resource = 1;</code>
      */
     public Builder setResourceBytes(
         com.google.protobuf.ByteString value) {
