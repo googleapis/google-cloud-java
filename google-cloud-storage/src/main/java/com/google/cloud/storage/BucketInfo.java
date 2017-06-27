@@ -34,12 +34,14 @@ import com.google.cloud.storage.Acl.Entity;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -81,6 +83,7 @@ public class BucketInfo implements Serializable {
   private final List<Acl> defaultAcl;
   private final String location;
   private final StorageClass storageClass;
+  private final Map<String, String> labels;
 
   /**
    * Base class for bucket's delete rules. Allows to configure automatic deletion of blobs and blobs
@@ -407,6 +410,11 @@ public class BucketInfo implements Serializable {
     public abstract Builder setDefaultAcl(Iterable<Acl> acl);
 
     /**
+     * Sets the label of this bucket.
+     */
+    public abstract Builder setLabels(Map<String, String> labels);
+
+    /**
      * Creates a {@code BucketInfo} object.
      */
     public abstract BucketInfo build();
@@ -430,6 +438,7 @@ public class BucketInfo implements Serializable {
     private List<Cors> cors;
     private List<Acl> acl;
     private List<Acl> defaultAcl;
+    private Map<String, String> labels;
 
     BuilderImpl(String name) {
       this.name = name;
@@ -452,6 +461,7 @@ public class BucketInfo implements Serializable {
       indexPage = bucketInfo.indexPage;
       notFoundPage = bucketInfo.notFoundPage;
       deleteRules = bucketInfo.deleteRules;
+      labels = bucketInfo.labels;
     }
 
     @Override
@@ -551,6 +561,12 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
+    public Builder setLabels(Map<String, String> labels) {
+      this.labels = labels != null ? ImmutableMap.copyOf(labels) : null;
+      return this;
+    }
+
+    @Override
     public BucketInfo build() {
       checkNotNull(name);
       return new BucketInfo(this);
@@ -574,6 +590,7 @@ public class BucketInfo implements Serializable {
     indexPage = builder.indexPage;
     notFoundPage = builder.notFoundPage;
     deleteRules = builder.deleteRules;
+    labels = builder.labels;
   }
 
   /**
@@ -709,6 +726,13 @@ public class BucketInfo implements Serializable {
   }
 
   /**
+   * Returns the labels for this bucket.
+   */
+  public Map<String, String> getLabels() {
+    return labels;
+  }
+
+  /**
    * Returns a builder for the current bucket.
    */
   public Builder toBuilder() {
@@ -795,6 +819,10 @@ public class BucketInfo implements Serializable {
       }));
       bucketPb.setLifecycle(lifecycle);
     }
+    if (labels != null) {
+      bucketPb.setLabels(labels);
+    }
+
     return bucketPb;
   }
 
@@ -874,6 +902,9 @@ public class BucketInfo implements Serializable {
               return DeleteRule.fromPb(rule);
             }
           }));
+    }
+    if (bucketPb.getLabels() != null) {
+      builder.setLabels(bucketPb.getLabels());
     }
     return builder.build();
   }
