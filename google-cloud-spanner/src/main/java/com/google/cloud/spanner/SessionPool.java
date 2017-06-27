@@ -921,6 +921,7 @@ final class SessionPool {
       retFuture = closureFuture;
       pendingClosure =
           totalSessions() + numSessionsBeingCreated + 1 /* For pool maintenance thread */;
+
       poolMaintainer.close();
       readSessions.clear();
       writePreparedSessions.clear();

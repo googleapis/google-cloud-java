@@ -22,7 +22,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-tcnative-boringssl-static</artifactId>
-      <version>1.1.33.Fork26</version>
+      <version>2.0.3.Final</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -35,7 +35,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-trace-v1</artifactId>
-      <version>0.1.11</version>
+      <version>0.1.12</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -69,7 +69,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-trace-v1</artifactId>
-      <version>0.1.11</version>
+      <version>0.1.12</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
