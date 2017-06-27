@@ -10,7 +10,7 @@ if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
     mkdir $TRAVIS_BUILD_DIR/signing-tools
     chmod 700 $TRAVIS_BUILD_DIR/signing-tools
     tar xvf $TRAVIS_BUILD_DIR/signing-tools.tar -C $TRAVIS_BUILD_DIR/signing-tools
-    echo $api_key_password | gpg --passphrase-fd 0 target/travis/api_key.gpg --output $TRAVIS_BUILD_DIR/signing-tools/api_key
+    echo $api_key_password | gpg --passphrase-fd 0 --output $TRAVIS_BUILD_DIR/signing-tools/api_key target/travis/api_key.gpg
     source ./utilities/integration_test_env.sh
 else
     # Skip integration tests when testing pull requests.
