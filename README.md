@@ -1,4 +1,4 @@
-Google Cloud Java Client
+Google Cloud Client Library for Java
 ==========================
 
 Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
