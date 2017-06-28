@@ -851,7 +851,7 @@ Please note that gRPC proxy support is currently experimental.
 Java Versions
 -------------
 
-Java 7 or above is required for using this client.
+Java 7 or above is required for using the clients in this repository.
 
 Supported Platforms
 -------------------
