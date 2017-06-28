@@ -106,7 +106,7 @@ try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
 With Pub/Sub you can publish messages to a topic. Add the following import at the top of your file:
 
 ```java
-import com.google.api.gax.core.ApiFuture;
+import com.google.api.core.ApiFuture;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
