@@ -20,16 +20,17 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.Lists.transform;
 
+import com.google.api.Billing;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.Data;
 import com.google.api.client.util.DateTime;
+import com.google.api.services.storage.model.*;
+import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.Bucket.Lifecycle;
 import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
 import com.google.api.services.storage.model.Bucket.Owner;
 import com.google.api.services.storage.model.Bucket.Versioning;
 import com.google.api.services.storage.model.Bucket.Website;
-import com.google.api.services.storage.model.BucketAccessControl;
-import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -71,6 +72,7 @@ public class BucketInfo implements Serializable {
   private final String name;
   private final Acl.Entity owner;
   private final String selfLink;
+  private final Boolean requesterPays;
   private final Boolean versioningEnabled;
   private final String indexPage;
   private final String notFoundPage;
@@ -339,6 +341,12 @@ public class BucketInfo implements Serializable {
     abstract Builder setSelfLink(String selfLink);
 
     /**
+     * Sets whether a user accessing the bucket or an object it contains should assume the transit costs
+     * related to the access.
+     */
+    abstract Builder setRequesterPays(Boolean requesterPays);
+
+    /**
      * Sets whether versioning should be enabled for this bucket. When set to true, versioning is
      * fully enabled.
      */
@@ -426,6 +434,7 @@ public class BucketInfo implements Serializable {
     private String name;
     private Acl.Entity owner;
     private String selfLink;
+    private Boolean requesterPays;
     private Boolean versioningEnabled;
     private String indexPage;
     private String notFoundPage;
@@ -462,6 +471,7 @@ public class BucketInfo implements Serializable {
       notFoundPage = bucketInfo.notFoundPage;
       deleteRules = bucketInfo.deleteRules;
       labels = bucketInfo.labels;
+      requesterPays = bucketInfo.requesterPays;
     }
 
     @Override
@@ -491,6 +501,12 @@ public class BucketInfo implements Serializable {
     @Override
     public Builder setVersioningEnabled(Boolean enable) {
       this.versioningEnabled = firstNonNull(enable, Data.<Boolean>nullOf(Boolean.class));
+      return this;
+    }
+
+    @Override
+    public Builder setRequesterPays(Boolean enable) {
+      this.requesterPays = firstNonNull(enable, Data.<Boolean>nullOf(Boolean.class));
       return this;
     }
 
@@ -591,6 +607,7 @@ public class BucketInfo implements Serializable {
     notFoundPage = builder.notFoundPage;
     deleteRules = builder.deleteRules;
     labels = builder.labels;
+    requesterPays = builder.requesterPays;
   }
 
   /**
@@ -626,6 +643,15 @@ public class BucketInfo implements Serializable {
    */
   public Boolean versioningEnabled() {
     return Data.isNull(versioningEnabled) ? null : versioningEnabled;
+  }
+
+
+  /**
+   * Returns {@code true} if a user accessing the bucket or an object it contains should assume the transit costs
+   * related to the access, {@code false} otherwise.
+   */
+  public Boolean requesterPays() {
+    return Data.isNull(requesterPays) ? null : requesterPays;
   }
 
   /**
@@ -803,6 +829,11 @@ public class BucketInfo implements Serializable {
     if (versioningEnabled != null) {
       bucketPb.setVersioning(new Versioning().setEnabled(versioningEnabled));
     }
+    if (requesterPays != null) {
+      Bucket.Billing billing = new Bucket.Billing();
+      billing.setRequesterPays(requesterPays);
+      bucketPb.setBilling(billing);
+    }
     if (indexPage != null || notFoundPage != null) {
       Website website = new Website();
       website.setMainPageSuffix(indexPage);
@@ -905,6 +936,10 @@ public class BucketInfo implements Serializable {
     }
     if (bucketPb.getLabels() != null) {
       builder.setLabels(bucketPb.getLabels());
+    }
+    Bucket.Billing billing = bucketPb.getBilling();
+    if (billing != null) {
+      builder.setRequesterPays(billing.getRequesterPays());
     }
     return builder.build();
   }

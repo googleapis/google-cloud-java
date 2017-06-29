@@ -1499,4 +1499,13 @@ public class ITStorageTest {
     Bucket updatedBucket = storage.update(remoteBucket);
     assertEquals(BUCKET_LABELS, updatedBucket.getLabels());
   }
+
+  @Test
+  public void testUpdateBucketRequesterPays() {
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+    assertNull(remoteBucket.requesterPays());
+    remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+    Bucket updatedBucket = storage.update(remoteBucket);
+    assertTrue(updatedBucket.requesterPays());
+  }
 }
