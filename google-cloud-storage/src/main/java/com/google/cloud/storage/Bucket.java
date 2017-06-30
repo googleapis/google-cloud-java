@@ -501,6 +501,12 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
+    public Builder setRequesterPays(Boolean requesterPays) {
+      infoBuilder.setRequesterPays(requesterPays);
+      return this;
+    }
+
+    @Override
     public Builder setIndexPage(String indexPage) {
       infoBuilder.setIndexPage(indexPage);
       return this;
