@@ -506,7 +506,6 @@ public class Bucket extends BucketInfo {
       return this;
     }
 
-
     @Override
     public Builder setIndexPage(String indexPage) {
       infoBuilder.setIndexPage(indexPage);
