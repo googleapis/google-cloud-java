@@ -70,6 +70,7 @@ import com.google.protobuf.Empty;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
@@ -1448,5 +1449,44 @@ public class LoggingImplTest {
     flushWaiter.join(1000);
     assertFalse(flushWaiter.isAlive());
   }
+
+  @Test
+  public void testFlushStress() throws InterruptedException {
+    SettableApiFuture<WriteLogEntriesResponse> mockRpcResponse = SettableApiFuture.create();
+    mockRpcResponse.set(null);
+    replay(rpcFactoryMock);
+    logging = options.getService();
+    WriteLogEntriesRequest request = WriteLogEntriesRequest.newBuilder()
+        .addAllEntries(Iterables.transform(ImmutableList.of(LOG_ENTRY1),
+            LogEntry.toPbFunction(PROJECT)))
+        .build();
+
+    Thread[] threads = new Thread[100];
+    EasyMock.expect(loggingRpcMock.write(request)).andReturn(mockRpcResponse).times(threads.length);
+    EasyMock.replay(loggingRpcMock);
+
+    // log and flush concurrently in many threads to trigger a ConcurrentModificationException
+    final AtomicInteger exceptions = new AtomicInteger(0);
+    for (int i = 0; i < threads.length; i++) {
+      threads[i] = new Thread() {
+        @Override
+        public void run() {
+          try {
+            logging.write(ImmutableList.of(LOG_ENTRY1));
+            logging.flush();
+          } catch (Exception ex) {
+            ex.printStackTrace();
+            exceptions.incrementAndGet();
+          }
+        }
+      };
+      threads[i].start();
+    }
+    for (int i = 0; i < threads.length; i++) {
+      threads[i].join();
+    }
+    assertSame(0, exceptions.get());
+  }
+
 }
 

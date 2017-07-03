@@ -580,7 +580,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                 }
               }
             });
-        pendingWrites.add(writeFuture);
+        synchronized (writeLock) {
+          pendingWrites.add(writeFuture);
+        }
         break;
     }
   }
