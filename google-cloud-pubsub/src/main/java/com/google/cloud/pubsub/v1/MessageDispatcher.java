@@ -173,13 +173,13 @@ class MessageDispatcher {
     private final String ackId;
     private final int outstandingBytes;
     private final AtomicBoolean acked;
-    private final Instant receivedTime;
+    private final long receivedTimeMillis;
 
     AckHandler(String ackId, int outstandingBytes) {
       this.ackId = ackId;
       this.outstandingBytes = outstandingBytes;
       acked = new AtomicBoolean(false);
-      receivedTime = Instant.ofEpochMilli(clock.millisTime());
+      receivedTimeMillis = clock.millisTime();
     }
 
     @Override
@@ -207,7 +207,6 @@ class MessageDispatcher {
             pendingAcks.add(ackId);
           }
           // Record the latency rounded to the next closest integer.
-          long receivedTimeMillis = TimeUnit.NANOSECONDS.toMillis(receivedTime.getNano());
           ackLatencyDistribution.record(
               Ints.saturatedCast(
                   (long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D)));

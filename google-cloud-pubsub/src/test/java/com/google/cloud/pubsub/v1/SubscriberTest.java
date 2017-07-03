@@ -80,7 +80,7 @@ public class SubscriberTest {
 
   @Parameters
   public static Collection<Object[]> data() {
-    return Arrays.asList(new Object[][] {{false}});
+    return Arrays.asList(new Object[][] {{true}});
   }
 
   static class TestReceiver implements MessageReceiver {
@@ -205,6 +205,9 @@ public class SubscriberTest {
 
   @Test
   public void testGetSubscriptionOnce() throws Exception {
+    if (isStreamingTest) {
+      return;
+    }
     Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
     sendMessages(ImmutableList.of("A"));
