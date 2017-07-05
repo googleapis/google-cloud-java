@@ -17,7 +17,9 @@
 package com.google.cloud.spanner.spi.v1;
 
 import com.google.cloud.ServiceRpc;
+import com.google.cloud.spanner.Partition;
 import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import com.google.common.collect.ImmutableList;
 import com.google.longrunning.Operation;
 import com.google.protobuf.FieldMask;
@@ -206,4 +208,12 @@ public interface SpannerRpc extends ServiceRpc {
       throws SpannerException;
 
   void rollback(RollbackRequest request, @Nullable Map<Option, ?> options) throws SpannerException;
+
+  CreatePartitionsResponse createQueryPartitions(
+      CreateQueryPartitionsRequest request, @Nullable Map<Option, ?> options)
+      throws SpannerException;
+
+  CreatePartitionsResponse createReadPartitions(
+      CreateReadPartitionsRequest request, @Nullable Map<Option, ?> options)
+      throws SpannerException;
 }

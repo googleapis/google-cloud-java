@@ -16,15 +16,21 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
 import com.google.cloud.spanner.SpannerImpl.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import com.google.cloud.spanner.SpannerImpl.SessionOption;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.TransactionSelector;
+import com.google.spanner.v1.ExecuteSqlRequest.QueryMode;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.Callable;
 
 public class BatchClientImpl implements BatchClient {
   private final Random random = new Random();
@@ -59,12 +65,19 @@ public class BatchClientImpl implements BatchClient {
   static class BatchTransactionImpl extends MultiUseReadOnlyTransaction
       implements BatchTransaction {
     private final String sessionName;
+    private final SpannerImpl spanner;
+    private final Map<SpannerRpc.Option, ?> options;
 
     BatchTransactionImpl(SpannerImpl spanner, SessionImpl session, TimestampBound bound) {
       super(
-          session, bound, spanner.getOptions().getSpannerRpcV1(), spanner.getOptions().getPrefetchChunks());
+          session,
+          bound,
+          spanner.getOptions().getSpannerRpcV1(),
+          spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
-      transactionId = session.beginTransaction();
+      this.options = session.getOptions();
+      this.spanner = spanner;
+      initTransaction();
     }
 
     BatchTransactionImpl(
@@ -76,6 +89,8 @@ public class BatchClientImpl implements BatchClient {
           spanner.getOptions().getSpannerRpcV1(),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
+      this.options = session.getOptions();
+      this.spanner = spanner;
     }
 
     @Override
@@ -84,30 +99,66 @@ public class BatchClientImpl implements BatchClient {
     }
 
     @Override
-    public List<Partition> GenerateReadPartitions(
+    public List<Partition> generateReadPartitions(
         PartitionParameters parameters,
         String table,
         KeySet keys,
         Iterable<String> columns,
         ReadOption... options) {
-      // TODO(snehashah): Auto-generated method stub
-      return null;
+      return generateReadUsingIndexPartitions(parameters, table, null, keys, columns, options);
     }
 
     @Override
-    public List<Partition> GenerateReadUsingIndexPartitions(
+    public List<Partition> generateReadUsingIndexPartitions(
         PartitionParameters parameters,
         String table,
         String index,
         KeySet keys,
         Iterable<String> columns,
-        ReadOption... options) {
-      // TODO(snehashah): Auto-generated method stub
-      return null;
+        ReadOption... option) {
+      final CreateReadPartitionsRequest.Builder builder =
+          CreateReadPartitionsRequest.newBuilder()
+              .setSession(sessionName)
+              .setTable(checkNotNull(table))
+              .addAllColumns(columns);
+      keys.appendToProto(builder.getKeySetBuilder());
+      if (index != null) {
+        builder.setIndex(index);
+      }
+      Options readOptions = Options.fromReadOptions(option);
+      if (readOptions.hasLimit()) {
+        // TODO(snehashah): error!! since we don't support limit in batch APIs.
+      }
+      TransactionSelector selector = getTransactionSelector();
+      if (selector != null) {
+        builder.setTransaction(selector);
+      }
+      builder.setPartitionOptions(parameters);
+      final CreateReadPartitionsRequest request = builder.build();
+      CreatePartitionsResponse response =
+          SpannerImpl.runWithRetries(
+              new Callable<CreatePartitionsResponse>() {
+                @Override
+                public CreatePartitionsResponse call() throws Exception {
+                  return rpc.commit(request, options);
+                }
+              });
+      return consumeResponse(response, parameters, table, index, keys, columns, option);    
+    }
+
+    private List<Partition> consumeResponse(
+        CreatePartitionsResponse response,
+        PartitionParameters parameters,
+        String table,
+        String index,
+        KeySet keys,
+        Iterable<String> columns,
+        ReadOption... option) {
+      
     }
 
     @Override
-    public List<Partition> GenerateQueryPartitions(
+    public List<Partition> generateQueryPartitions(
         PartitionParameters parameters, Statement statement, QueryOption... options) {
       // TODO(snehashah): Auto-generated method stub
       return null;
@@ -115,8 +166,20 @@ public class BatchClientImpl implements BatchClient {
 
     @Override
     public ResultSet execute(Partition partition) {
-      // TODO(snehashah): Auto-generated method stub
-      return null;
+      // TODO(snehashah): add partition token to the request when available in proto.
+      if (partition.getStatement() != null)
+        return executeQueryInternalWithOptions(
+            partition.getStatement(),
+            QueryMode.NORMAL,
+            partition.getQueryOptions(),
+            partition.getPartitionToken());
+      return readInternalWithOptions(
+          partition.getTable(),
+          partition.getIndex(),
+          partition.getKeys(),
+          partition.getColumns(),
+          partition.getReadOptions(),
+          partition.getPartitionToken());
     }
   }
 }

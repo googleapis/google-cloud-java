@@ -22,14 +22,14 @@ import java.util.List;
 
 public interface BatchTransaction extends ReadOnlyTransaction {
 
-  List<Partition> GenerateReadPartitions(
+  List<Partition> generateReadPartitions(
       PartitionParameters parameters,
       String table,
       KeySet keys,
       Iterable<String> columns,
       ReadOption... options);
 
-  List<Partition> GenerateReadUsingIndexPartitions(
+  List<Partition> generateReadUsingIndexPartitions(
       PartitionParameters parameters,
       String table,
       String index,
@@ -37,7 +37,7 @@ public interface BatchTransaction extends ReadOnlyTransaction {
       Iterable<String> columns,
       ReadOption... options);
 
-  List<Partition> GenerateQueryPartitions(
+  List<Partition> generateQueryPartitions(
       PartitionParameters parameters, Statement statement, QueryOption... options);
 
   ResultSet execute(Partition partition);

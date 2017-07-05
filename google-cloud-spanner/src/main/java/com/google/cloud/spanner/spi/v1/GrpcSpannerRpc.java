@@ -53,6 +53,9 @@ import com.google.spanner.admin.instance.v1.UpdateInstanceRequest;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.CreatePartitionsResponse;
+import com.google.spanner.v1.CreateQueryPartitionsRequest;
+import com.google.spanner.v1.CreateReadPartitionsRequest;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
@@ -391,6 +394,30 @@ public class GrpcSpannerRpc implements SpannerRpc {
             Option.CHANNEL_HINT.getLong(options)));
   }
 
+  @Override
+  public CreatePartitionsResponse createQueryPartitions(
+      CreateQueryPartitionsRequest request, @Nullable Map<Option, ?> options) 
+          throws SpannerException {
+    get(
+        doUnaryCall(
+            SpannerGrpc.METHOD_CREATE_QUERY_PARTITIONS,
+            request,
+            request.getSession(),
+            Option.CHANNEL_HINT.getLong(options)));
+  }
+
+  @Override
+  public CreatePartitionsResponse createReadPartitions(
+      CreateReadPartitionsRequest request, @Nullable Map<Option, ?> options) 
+          throws SpannerException {
+    get(
+        doUnaryCall(
+            SpannerGrpc.METHOD_CREATE_READ_PARTITIONS,
+            request,
+            request.getSession(),
+            Option.CHANNEL_HINT.getLong(options)));
+  }
+  
   /** Gets the result of an async RPC call, handling any exceptions encountered. */
   private static <T> T get(final Future<T> future) throws SpannerException {
     final Context context = Context.current();
@@ -424,7 +451,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
       MethodDescriptor<T, PartialResultSet> method,
       T request,
       ResultStreamConsumer consumer,
-      @Nullable String resource,
+      @Nullable String resource,  
       @Nullable Long channelHint) {
     final Context context = Context.current();
     // TODO: Add deadline based on context.

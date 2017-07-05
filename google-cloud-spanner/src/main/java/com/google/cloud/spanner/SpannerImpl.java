@@ -697,6 +697,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public String getName() {
       return name;
     }
+    
+    public Map<SpannerRpc.Option, ?> getOptions() {
+      return options;
+    }
 
     @Override
     public Timestamp write(Iterable<Mutation> mutations) throws SpannerException {
@@ -912,11 +916,21 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               "Unknown value for QueryAnalyzeMode : " + readContextQueryMode);
       }
     }
-
+    
     private ResultSet executeQueryInternal(
         Statement statement,
         com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
         QueryOption... options) {
+      Options readOptions = Options.fromQueryOptions(options);
+      return executeQueryInternalWithOptions(statement, queryMode, readOptions, null /*partitionToken*/);
+    }
+
+    ResultSet executeQueryInternalWithOptions(
+        Statement statement,
+        com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
+        Options readOptions,
+        ByteString partitionToken) {
+      // TODO(snehashah): set partitionToken in the request.
       beforeReadOrQuery();
       ExecuteSqlRequest.Builder builder =
           ExecuteSqlRequest.newBuilder()
@@ -936,7 +950,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         builder.setTransaction(selector);
       }
       final ExecuteSqlRequest request = builder.build();
-      Options readOptions = Options.fromQueryOptions(options);
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
@@ -1015,13 +1028,24 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         KeySet keys,
         Iterable<String> columns,
         ReadOption... options) {
+      Options readOptions = Options.fromReadOptions(options);
+      return readInternalWithOptions(table, index, keys, columns, readOptions, null /*partitionToken*/);
+    }
+
+    ResultSet readInternalWithOptions(
+        String table,
+        @Nullable String index,
+        KeySet keys,
+        Iterable<String> columns,
+        Options readOptions,
+        ByteString partitionToken) {
+      // TODO(snehashah): set partitionToken in the request.
       beforeReadOrQuery();
       ReadRequest.Builder builder =
           ReadRequest.newBuilder()
               .setSession(session.name)
               .setTable(checkNotNull(table))
               .addAllColumns(columns);
-      Options readOptions = Options.fromReadOptions(options);
       if (readOptions.hasLimit()) {
         builder.setLimit(readOptions.limit());
       }
@@ -1474,7 +1498,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
     }
 
-    private void initTransaction() {
+    void initTransaction() {
       // Since we only support synchronous calls, just block on "txnLock" while the RPC is in
       // flight.  Note that we use the strategy of sending an explicit BeginTransaction() RPC,
       // rather than using the first read in the transaction to begin it implicitly.  The chosen

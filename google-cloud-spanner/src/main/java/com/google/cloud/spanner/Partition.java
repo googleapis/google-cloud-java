@@ -24,7 +24,7 @@ import java.io.Serializable;
 // TODO(snehashah): add serializable support. Add javadocs.
 public class Partition implements Serializable {
 
-  private final String partitionToken;
+  private final ByteString partitionToken;
   private final String sessionId;
   private final ByteString transactionId;
   private final String table;
@@ -52,7 +52,7 @@ public class Partition implements Serializable {
 
   // TODO(snehashah): add precondition check to ensure both Query & Read params are not set ?
   protected static class Builder {
-    private String partitionToken;
+    private ByteString partitionToken;
     private String sessionId;
     private ByteString transactionId;
     private String table;
@@ -64,7 +64,7 @@ public class Partition implements Serializable {
     private Options queryOptions;
     private PartitionParameters partitionParameters;
 
-    Builder(String partitionToken, String sessionId, ByteString transactionId) {
+    Builder(ByteString partitionToken, String sessionId, ByteString transactionId) {
       this.partitionToken = partitionToken;
       this.sessionId = sessionId;
       this.transactionId = transactionId;
@@ -116,12 +116,12 @@ public class Partition implements Serializable {
   }
 
   protected static Builder newBuilder(
-      String partitionToken, String sessionId, ByteString transactionId) {
+      ByteString partitionToken, String sessionId, ByteString transactionId) {
     return new Builder(partitionToken, sessionId, transactionId);
   }
 
   public static Partition getDefaultInstance(
-      String partitionToken, String sessionId, ByteString transactionId) {
+      ByteString partitionToken, String sessionId, ByteString transactionId) {
     return newBuilder(partitionToken, sessionId, transactionId).build();
   }
 
@@ -139,7 +139,7 @@ public class Partition implements Serializable {
     return table != null;
   }
 
-  protected String getPartitionToken() {
+  protected ByteString getPartitionToken() {
     return partitionToken;
   }
 
