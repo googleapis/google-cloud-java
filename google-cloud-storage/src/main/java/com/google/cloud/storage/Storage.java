@@ -195,6 +195,14 @@ public interface Storage extends Service<StorageOptions> {
     public static BucketTargetOption metagenerationNotMatch() {
       return new BucketTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
+
+    /**
+     * Returns an option for bucket's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    public static BucketTargetOption userProject(String userProject) {
+      return new BucketTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
   }
 
   /**
@@ -204,7 +212,7 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = 5185657617120212117L;
 
-    private BucketSourceOption(StorageRpc.Option rpcOption, long metageneration) {
+    private BucketSourceOption(StorageRpc.Option rpcOption, Object metageneration) {
       super(rpcOption, metageneration);
     }
 
@@ -223,10 +231,18 @@ public interface Storage extends Service<StorageOptions> {
     public static BucketSourceOption metagenerationNotMatch(long metageneration) {
       return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
     }
+
+    /**
+     * Returns an option for bucket's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    public static BucketSourceOption userProject(String userProject) {
+      return new BucketSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
   }
 
   /**
-   * Class for specifying bucket source options.
+   * Class for specifying bucket get options.
    */
   class BucketGetOption extends Option {
 
@@ -254,6 +270,14 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BucketGetOption metagenerationNotMatch(long metageneration) {
       return new BucketGetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option for bucket's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    public static BucketGetOption userProject(String userProject) {
+      return new BucketGetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
 
     /**
@@ -339,6 +363,14 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    public static BlobTargetOption userProject(String userProject) {
+      return new BlobTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
+    /**
      * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
      * blob.
      *
@@ -381,7 +413,7 @@ public interface Storage extends Service<StorageOptions> {
 
     enum Option {
       PREDEFINED_ACL, IF_GENERATION_MATCH, IF_GENERATION_NOT_MATCH, IF_METAGENERATION_MATCH,
-      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH, CUSTOMER_SUPPLIED_KEY;
+      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH, CUSTOMER_SUPPLIED_KEY, USER_PROJECT;
 
       StorageRpc.Option toRpcOption() {
         return StorageRpc.Option.valueOf(this.name());
@@ -498,6 +530,14 @@ public interface Storage extends Service<StorageOptions> {
     public static BlobWriteOption encryptionKey(String key) {
       return new BlobWriteOption(Option.CUSTOMER_SUPPLIED_KEY, key);
     }
+
+    /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    public static BlobWriteOption userProject(String userProject) {
+      return new BlobWriteOption(Option.USER_PROJECT, userProject);
+    }
   }
 
   /**
@@ -583,6 +623,14 @@ public interface Storage extends Service<StorageOptions> {
     public static BlobSourceOption decryptionKey(String key) {
       return new BlobSourceOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
+
+    /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    public static BlobSourceOption userProject(String userProject) {
+      return new BlobSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
   }
 
   /**
@@ -663,6 +711,14 @@ public interface Storage extends Service<StorageOptions> {
     public static BlobGetOption fields(BlobField... fields) {
       return new BlobGetOption(StorageRpc.Option.FIELDS,
           Helper.selector(BlobField.REQUIRED_FIELDS, fields));
+    }
+
+    /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    public static BlobGetOption userProject(String userProject) {
+      return new BlobGetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
   }
 

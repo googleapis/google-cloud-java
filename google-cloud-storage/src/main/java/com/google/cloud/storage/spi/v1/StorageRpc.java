@@ -50,7 +50,8 @@ public interface StorageRpc extends ServiceRpc {
     DELIMITER("delimiter"),
     VERSIONS("versions"),
     FIELDS("fields"),
-    CUSTOMER_SUPPLIED_KEY("customerSuppliedKey");
+    CUSTOMER_SUPPLIED_KEY("customerSuppliedKey"),
+    USER_PROJECT("userProject");
 
     private final String value;
 
