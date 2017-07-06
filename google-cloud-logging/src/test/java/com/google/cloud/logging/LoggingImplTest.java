@@ -1475,7 +1475,6 @@ public class LoggingImplTest {
             logging.write(ImmutableList.of(LOG_ENTRY1));
             logging.flush();
           } catch (Exception ex) {
-            ex.printStackTrace();
             exceptions.incrementAndGet();
           }
         }
