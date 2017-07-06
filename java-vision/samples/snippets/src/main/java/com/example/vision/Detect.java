@@ -27,7 +27,6 @@ import com.google.cloud.vision.v1.Feature;
 import com.google.cloud.vision.v1.Feature.Type;
 import com.google.cloud.vision.v1.Image;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
-import com.google.cloud.vision.v1.ImageAnnotatorSettings;
 import com.google.cloud.vision.v1.ImageSource;
 import com.google.cloud.vision.v1.LocationInfo;
 import com.google.cloud.vision.v1.Page;
@@ -41,7 +40,6 @@ import com.google.cloud.vision.v1.WebDetection.WebImage;
 import com.google.cloud.vision.v1.WebDetection.WebPage;
 import com.google.cloud.vision.v1.Word;
 import com.google.protobuf.ByteString;
-import org.threeten.bp.Duration;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -54,18 +52,20 @@ public class Detect {
   /**
    * Detects entities,sentiment and syntax in a document using the Natural Language API.
    *
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) throws Exception, IOException {
     argsHelper(args, System.out);
   }
 
   /**
    * Helper that handles the input passed to the program.
    *
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void argsHelper(String[] args, PrintStream out) throws IOException {
+  public static void argsHelper(String[] args, PrintStream out) throws Exception, IOException {
     if (args.length < 1) {
       out.println("Usage:");
       out.printf(
@@ -160,9 +160,10 @@ public class Detect {
    *
    * @param filePath The path to the file to perform face detection on.
    * @param out A {@link PrintStream} to write detected features to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectFaces(String filePath, PrintStream out) throws IOException {
+  public static void detectFaces(String filePath, PrintStream out) throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -173,9 +174,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -200,18 +202,12 @@ public class Detect {
    *
    * @param gcsPath The path to the remote file to perform face detection on.
    * @param out A {@link PrintStream} to write detected features to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectFacesGcs(String gcsPath, PrintStream out) throws IOException {
+  public static void detectFacesGcs(String gcsPath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
-
-    ImageAnnotatorSettings.Builder imageAnnotatorSettingsBuilder =
-        ImageAnnotatorSettings.defaultBuilder();
-    imageAnnotatorSettingsBuilder
-        .batchAnnotateImagesSettings()
-        .getRetrySettingsBuilder()
-        .setTotalTimeout(Duration.ofSeconds(30));
-    ImageAnnotatorSettings settings = imageAnnotatorSettingsBuilder.build();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
     Image img = Image.newBuilder().setSource(imgSource).build();
@@ -221,9 +217,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create(settings);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
     BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -248,9 +245,10 @@ public class Detect {
    *
    * @param filePath The path to the file to perform label detection on.
    * @param out A {@link PrintStream} to write detected labels to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectLabels(String filePath, PrintStream out) throws IOException {
+  public static void detectLabels(String filePath, PrintStream out) throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -261,9 +259,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -283,9 +282,11 @@ public class Detect {
    *
    * @param gcsPath The path to the remote file to perform label detection on.
    * @param out A {@link PrintStream} to write detected features to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectLabelsGcs(String gcsPath, PrintStream out) throws IOException {
+  public static void detectLabelsGcs(String gcsPath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -295,9 +296,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -318,9 +320,11 @@ public class Detect {
    *
    * @param filePath The path to the file to perform landmark detection on.
    * @param out A {@link PrintStream} to write detected landmarks to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectLandmarks(String filePath, PrintStream out) throws IOException {
+  public static void detectLandmarks(String filePath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
 
@@ -330,9 +334,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -353,9 +358,11 @@ public class Detect {
    *
    * @param url The path to the file to perform landmark detection on.
    * @param out A {@link PrintStream} to write detected landmarks to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectLandmarksUrl(String url, PrintStream out) throws IOException {
+  public static void detectLandmarksUrl(String url, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setImageUri(url).build();
@@ -365,9 +372,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -388,9 +396,11 @@ public class Detect {
    *
    * @param gcsPath The path to the remote file to perform landmark detection on.
    * @param out A {@link PrintStream} to write detected landmarks to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectLandmarksGcs(String gcsPath, PrintStream out) throws IOException {
+  public static void detectLandmarksGcs(String gcsPath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -400,9 +410,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -423,9 +434,10 @@ public class Detect {
    *
    * @param filePath The path to the local file to perform logo detection on.
    * @param out A {@link PrintStream} to write detected logos to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectLogos(String filePath, PrintStream out) throws IOException {
+  public static void detectLogos(String filePath, PrintStream out) throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -436,9 +448,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -458,9 +471,11 @@ public class Detect {
    *
    * @param gcsPath The path to the remote file to perform logo detection on.
    * @param out A {@link PrintStream} to write detected logos to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectLogosGcs(String gcsPath, PrintStream out) throws IOException {
+  public static void detectLogosGcs(String gcsPath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -470,9 +485,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -492,9 +508,10 @@ public class Detect {
    *
    * @param filePath The path to the file to detect text in.
    * @param out A {@link PrintStream} to write the detected text to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectText(String filePath, PrintStream out) throws IOException {
+  public static void detectText(String filePath, PrintStream out) throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -505,9 +522,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -528,9 +546,10 @@ public class Detect {
    *
    * @param gcsPath The path to the remote file to detect text in.
    * @param out A {@link PrintStream} to write the detected text to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectTextGcs(String gcsPath, PrintStream out) throws IOException {
+  public static void detectTextGcs(String gcsPath, PrintStream out) throws Exception, IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -540,9 +559,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -563,9 +583,11 @@ public class Detect {
    *
    * @param filePath The path to the file to detect properties.
    * @param out A {@link PrintStream} to write
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectProperties(String filePath, PrintStream out) throws IOException {
+  public static void detectProperties(String filePath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -576,9 +598,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -604,9 +627,11 @@ public class Detect {
    *
    * @param gcsPath The path to the remote file to detect properties on.
    * @param out A {@link PrintStream} to write
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectPropertiesGcs(String gcsPath, PrintStream out) throws IOException {
+  public static void detectPropertiesGcs(String gcsPath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -616,9 +641,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -644,9 +670,11 @@ public class Detect {
    *
    * @param filePath The path to the local file used for safe search detection.
    * @param out A {@link PrintStream} to write the results to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectSafeSearch(String filePath, PrintStream out) throws IOException {
+  public static void detectSafeSearch(String filePath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -657,9 +685,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -683,9 +712,11 @@ public class Detect {
    *
    * @param gcsPath The path to the remote file to detect safe-search on.
    * @param out A {@link PrintStream} to write the results to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectSafeSearchGcs(String gcsPath, PrintStream out) throws IOException {
+  public static void detectSafeSearchGcs(String gcsPath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -695,9 +726,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -721,9 +753,11 @@ public class Detect {
    *
    * @param filePath The path to the local file used for web annotation detection.
    * @param out A {@link PrintStream} to write the results to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectWebDetections(String filePath, PrintStream out) throws IOException {
+  public static void detectWebDetections(String filePath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -734,9 +768,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -774,9 +809,11 @@ public class Detect {
    *
    * @param gcsPath The path to the remote file to detect safe-search on.
    * @param out A {@link PrintStream} to write the results to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectWebDetectionsGcs(String gcsPath, PrintStream out) throws IOException {
+  public static void detectWebDetectionsGcs(String gcsPath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -786,9 +823,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -826,9 +864,11 @@ public class Detect {
    *
    * @param filePath The path to the local file used for web annotation detection.
    * @param out A {@link PrintStream} to write the results to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectCropHints(String filePath, PrintStream out) throws IOException {
+  public static void detectCropHints(String filePath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -839,9 +879,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -862,9 +903,11 @@ public class Detect {
    *
    * @param gcsPath The path to the remote file to detect safe-search on.
    * @param out A {@link PrintStream} to write the results to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectCropHintsGcs(String gcsPath, PrintStream out) throws IOException {
+  public static void detectCropHintsGcs(String gcsPath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -874,9 +917,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -897,9 +941,11 @@ public class Detect {
    *
    * @param filePath The path to the local file to detect document text on.
    * @param out A {@link PrintStream} to write the results to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectDocumentText(String filePath, PrintStream out) throws IOException {
+  public static void detectDocumentText(String filePath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -910,9 +956,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {
@@ -952,9 +999,11 @@ public class Detect {
    *
    * @param gcsPath The path to the remote file to detect document text on.
    * @param out A {@link PrintStream} to write the results to.
+   * @throws Exception on errors while closing the client.
    * @throws IOException on Input/Output errors.
    */
-  public static void detectDocumentTextGcs(String gcsPath, PrintStream out) throws IOException {
+  public static void detectDocumentTextGcs(String gcsPath, PrintStream out) throws Exception,
+      IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
     ImageSource imgSource = ImageSource.newBuilder().setGcsImageUri(gcsPath).build();
@@ -964,9 +1013,10 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    BatchAnnotateImagesResponse response =
-        ImageAnnotatorClient.create().batchAnnotateImages(requests);
+    ImageAnnotatorClient client = ImageAnnotatorClient.create();
+    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
     List<AnnotateImageResponse> responses = response.getResponsesList();
+    client.close();
 
     for (AnnotateImageResponse res : responses) {
       if (res.hasError()) {

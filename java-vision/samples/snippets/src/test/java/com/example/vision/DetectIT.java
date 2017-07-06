@@ -61,7 +61,7 @@ public class DetectIT {
     String got = bout.toString();
     assertThat(got).contains("anger: POSSIBLE");
     assertThat(got).contains("joy: POSSIBLE");
-    assertThat(got).contains("surprise: UNLIKELY");
+    assertThat(got).contains("surprise: LIKELY");
   }
 
   @Test
@@ -74,7 +74,7 @@ public class DetectIT {
     String got = bout.toString();
     assertThat(got).contains("anger: POSSIBLE");
     assertThat(got).contains("joy: POSSIBLE");
-    assertThat(got).contains("surprise: UNLIKELY");
+    assertThat(got).contains("surprise: LIKELY");
   }
 
   @Test

@@ -71,6 +71,9 @@ public class QuickstartSample {
         annotation.getAllFields().forEach((k, v)->System.out.printf("%s : %s\n", k, v.toString()));
       }
     }
+
+    // Close the client to free any resources
+    vision.close();
   }
 }
 // [END vision_quickstart]
