@@ -138,6 +138,30 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
+   * Changes the default configuration for every filesystem object created
+   * from here on, including via SPI. If null then future filesystem objects
+   * will have the factory default configuration.
+   *
+   * <p>If options are specified later then they override the defaults.
+   * Methods that take a whole CloudStorageConfiguration (eg.
+   * CloudStorageFileSystem.forBucket) will completely override the defaults.
+   * Methods that take individual options (eg.
+   * CloudStorageFileSystemProvier.newFileSystem) will override only these options;
+   * the rest will be taken from the defaults specified here.
+   *
+   * <p>This is meant to be done only once, at the beginning of some main program,
+   * in order to force all libraries to use some settings we like.
+   *
+   * <p>Libraries should never call this. If you're a library then, instead, create your own
+   * filesystem object with the right configuration and pass it along.
+   *
+   * @param newDefault new default CloudStorageConfiguration
+   */
+  public static void setDefaultCloudStorageConfiguration(CloudStorageConfiguration newDefault) {
+    CloudStorageFileSystem.setDefaultCloudStorageConfiguration(newDefault);
+  }
+
+  /**
    * Default constructor which should only be called by Java SPI.
    *
    * @see java.nio.file.FileSystems#getFileSystem(URI)
@@ -208,7 +232,11 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         uri);
     CloudStorageUtil.checkBucket(uri.getHost());
     initStorage();
-    return new CloudStorageFileSystem(this, uri.getHost(), CloudStorageConfiguration.fromMap(env));
+    return new CloudStorageFileSystem(
+        this,
+        uri.getHost(),
+        CloudStorageConfiguration.fromMap(
+            CloudStorageFileSystem.getDefaultCloudStorageConfiguration(), env));
   }
 
   @Override
