@@ -16,8 +16,8 @@
 
 /*
  * EDITING INSTRUCTIONS
- * This file is referenced in READMEs. Any change to this file should be reflected in
- * the project's READMEs.
+ * This file is referenced in DatabaseClient's javadoc. Any change to this file should be reflected
+ * in DatabaseClient's javadoc.
  */
 
 package com.google.cloud.examples.spanner.snippets;
