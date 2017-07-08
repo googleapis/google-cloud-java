@@ -133,7 +133,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    * Sets options that are only used by the constructor.
    */
   @VisibleForTesting
-  public static void setStorageOptions(StorageOptions newStorageOptions) {
+  public static void setStorageOptions(@Nullable StorageOptions newStorageOptions) {
     futureStorageOptions = newStorageOptions;
   }
 
@@ -157,7 +157,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    *
    * @param newDefault new default CloudStorageConfiguration
    */
-  public static void setDefaultCloudStorageConfiguration(CloudStorageConfiguration newDefault) {
+  public static void setDefaultCloudStorageConfiguration(@Nullable CloudStorageConfiguration newDefault) {
     CloudStorageFileSystem.setDefaultCloudStorageConfiguration(newDefault);
   }
 
