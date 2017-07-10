@@ -29,6 +29,7 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
 -  [Cloud Compute](#google-cloud-compute-alpha) (Alpha)
+-  [Cloud Data Loss Prevention](#google-cloud-data-loss-prevention-alpha) (Alpha)
 -  [Cloud DNS](#google-cloud-dns-alpha) (Alpha)
 -  [Stackdriver Error Reporting](#stackdriver-error-reporting-alpha) (Alpha)
 -  [Stackdriver Monitoring](#stackdriver-monitoring-alpha) (Alpha)
@@ -589,6 +590,25 @@ if (operation.getErrors() == null) {
 }
 ```
 
+Google Cloud Data Loss Prevention (Alpha)
+----------------
+
+- [API Documentation][dlp-api]
+- [Official Documentation][cloud-dlp-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example of DlpServiceClient. The example assumes that either default application
+credentials or a valid API key are available. (See [Authentication section](#authentication) for more information)
+
+```java
+try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+  InspectConfig inspectConfig = InspectConfig.newBuilder().build();
+  List<ContentItem> items = new ArrayList<>();
+  InspectContentResponse response = dlpServiceClient.inspectContent(inspectConfig, items);
+}
+```
+
 Google Cloud DNS (Alpha)
 ----------------------
 - [API Documentation][dns-api]
@@ -988,3 +1008,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-spanner]: https://cloud.google.com/spanner/
 [cloud-spanner-docs]: https://cloud.google.com/spanner/docs/
 [cloud-spanner-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/spanner/package-summary.html
+
+[cloud-dlp-docs]: https://cloud.google.com/dlp/docs/
+[dlp-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dlp/package-summary.html
