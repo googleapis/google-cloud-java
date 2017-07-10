@@ -174,25 +174,25 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      for (FaceAnnotation annotation : res.getFaceAnnotationsList()) {
-        out.printf(
-            "anger: %s\njoy: %s\nsurprise: %s\nposition: %s",
-            annotation.getAngerLikelihood(),
-            annotation.getJoyLikelihood(),
-            annotation.getSurpriseLikelihood(),
-            annotation.getBoundingPoly());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        for (FaceAnnotation annotation : res.getFaceAnnotationsList()) {
+          out.printf(
+              "anger: %s\njoy: %s\nsurprise: %s\nposition: %s",
+              annotation.getAngerLikelihood(),
+              annotation.getJoyLikelihood(),
+              annotation.getSurpriseLikelihood(),
+              annotation.getBoundingPoly());
+        }
       }
     }
   }
@@ -217,25 +217,25 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      for (FaceAnnotation annotation : res.getFaceAnnotationsList()) {
-        out.printf(
-            "anger: %s\njoy: %s\nsurprise: %s\nposition: %s",
-            annotation.getAngerLikelihood(),
-            annotation.getJoyLikelihood(),
-            annotation.getSurpriseLikelihood(),
-            annotation.getBoundingPoly());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        for (FaceAnnotation annotation : res.getFaceAnnotationsList()) {
+          out.printf(
+              "anger: %s\njoy: %s\nsurprise: %s\nposition: %s",
+              annotation.getAngerLikelihood(),
+              annotation.getJoyLikelihood(),
+              annotation.getSurpriseLikelihood(),
+              annotation.getBoundingPoly());
+        }
       }
     }
   }
@@ -259,20 +259,20 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
-        annotation.getAllFields().forEach((k, v) -> out.printf("%s : %s\n", k, v.toString()));
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
+          annotation.getAllFields().forEach((k, v) -> out.printf("%s : %s\n", k, v.toString()));
+        }
       }
     }
   }
@@ -296,21 +296,21 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
-        annotation.getAllFields().forEach((k, v) ->
-            out.printf("%s : %s\n", k, v.toString()));
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
+          annotation.getAllFields().forEach((k, v) ->
+              out.printf("%s : %s\n", k, v.toString()));
+        }
       }
     }
   }
@@ -334,21 +334,21 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      for (EntityAnnotation annotation : res.getLandmarkAnnotationsList()) {
-        LocationInfo info = annotation.getLocationsList().listIterator().next();
-        out.printf("Landmark: %s\n %s\n", annotation.getDescription(), info.getLatLng());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        for (EntityAnnotation annotation : res.getLandmarkAnnotationsList()) {
+          LocationInfo info = annotation.getLocationsList().listIterator().next();
+          out.printf("Landmark: %s\n %s\n", annotation.getDescription(), info.getLatLng());
+        }
       }
     }
   }
@@ -372,21 +372,21 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      for (EntityAnnotation annotation : res.getLandmarkAnnotationsList()) {
-        LocationInfo info = annotation.getLocationsList().listIterator().next();
-        out.printf("Landmark: %s\n %s\n", annotation.getDescription(), info.getLatLng());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        for (EntityAnnotation annotation : res.getLandmarkAnnotationsList()) {
+          LocationInfo info = annotation.getLocationsList().listIterator().next();
+          out.printf("Landmark: %s\n %s\n", annotation.getDescription(), info.getLatLng());
+        }
       }
     }
   }
@@ -410,21 +410,21 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      for (EntityAnnotation annotation : res.getLandmarkAnnotationsList()) {
-        LocationInfo info = annotation.getLocationsList().listIterator().next();
-        out.printf("Landmark: %s\n %s\n", annotation.getDescription(), info.getLatLng());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        for (EntityAnnotation annotation : res.getLandmarkAnnotationsList()) {
+          LocationInfo info = annotation.getLocationsList().listIterator().next();
+          out.printf("Landmark: %s\n %s\n", annotation.getDescription(), info.getLatLng());
+        }
       }
     }
   }
@@ -448,20 +448,20 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      for (EntityAnnotation annotation : res.getLogoAnnotationsList()) {
-        out.println(annotation.getDescription());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        for (EntityAnnotation annotation : res.getLogoAnnotationsList()) {
+          out.println(annotation.getDescription());
+        }
       }
     }
   }
@@ -485,20 +485,20 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      for (EntityAnnotation annotation : res.getLogoAnnotationsList()) {
-        out.println(annotation.getDescription());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        for (EntityAnnotation annotation : res.getLogoAnnotationsList()) {
+          out.println(annotation.getDescription());
+        }
       }
     }
   }
@@ -522,21 +522,21 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      for (EntityAnnotation annotation : res.getTextAnnotationsList()) {
-        out.printf("Text: %s\n", annotation.getDescription());
-        out.printf("Position : %s\n", annotation.getBoundingPoly());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        for (EntityAnnotation annotation : res.getTextAnnotationsList()) {
+          out.printf("Text: %s\n", annotation.getDescription());
+          out.printf("Position : %s\n", annotation.getBoundingPoly());
+        }
       }
     }
   }
@@ -559,21 +559,21 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      for (EntityAnnotation annotation : res.getTextAnnotationsList()) {
-        out.printf("Text: %s\n", annotation.getDescription());
-        out.printf("Position : %s\n", annotation.getBoundingPoly());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        for (EntityAnnotation annotation : res.getTextAnnotationsList()) {
+          out.printf("Text: %s\n", annotation.getDescription());
+          out.printf("Position : %s\n", annotation.getBoundingPoly());
+        }
       }
     }
   }
@@ -598,26 +598,26 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
-      for (ColorInfo color : colors.getColorsList()) {
-        out.printf(
-            "fraction: %f\nr: %f, g: %f, b: %f\n",
-            color.getPixelFraction(),
-            color.getColor().getRed(),
-            color.getColor().getGreen(),
-            color.getColor().getBlue());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
+        for (ColorInfo color : colors.getColorsList()) {
+          out.printf(
+              "fraction: %f\nr: %f, g: %f, b: %f\n",
+              color.getPixelFraction(),
+              color.getColor().getRed(),
+              color.getColor().getGreen(),
+              color.getColor().getBlue());
+        }
       }
     }
   }
@@ -641,26 +641,26 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
-      for (ColorInfo color : colors.getColorsList()) {
-        out.printf(
-            "fraction: %f\nr: %f, g: %f, b: %f\n",
-            color.getPixelFraction(),
-            color.getColor().getRed(),
-            color.getColor().getGreen(),
-            color.getColor().getBlue());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
+        for (ColorInfo color : colors.getColorsList()) {
+          out.printf(
+              "fraction: %f\nr: %f, g: %f, b: %f\n",
+              color.getPixelFraction(),
+              color.getColor().getRed(),
+              color.getColor().getGreen(),
+              color.getColor().getBlue());
+        }
       }
     }
   }
@@ -685,25 +685,25 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
+
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
+        out.printf(
+            "adult: %s\nmedical: %s\nspoofed: %s\nviolence: %s\n",
+            annotation.getAdult(),
+            annotation.getMedical(),
+            annotation.getSpoof(),
+            annotation.getViolence());
       }
-
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
-      out.printf(
-          "adult: %s\nmedical: %s\nspoofed: %s\nviolence: %s\n",
-          annotation.getAdult(),
-          annotation.getMedical(),
-          annotation.getSpoof(),
-          annotation.getViolence());
     }
   }
 
@@ -726,25 +726,25 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
+
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
+        out.printf(
+            "adult: %s\nmedical: %s\nspoofed: %s\nviolence: %s\n",
+            annotation.getAdult(),
+            annotation.getMedical(),
+            annotation.getSpoof(),
+            annotation.getViolence());
       }
-
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
-      out.printf(
-          "adult: %s\nmedical: %s\nspoofed: %s\nviolence: %s\n",
-          annotation.getAdult(),
-          annotation.getMedical(),
-          annotation.getSpoof(),
-          annotation.getViolence());
     }
   }
 
@@ -768,38 +768,38 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // Search the web for usages of the image. You could use these signals later
-      // for user input moderation or linking external references.
-      // For a full list of available annotations, see http://g.co/cloud/vision/docs
-      WebDetection annotation = res.getWebDetection();
-      out.println("Entity:Id:Score");
-      out.println("===============");
-      for (WebEntity entity : annotation.getWebEntitiesList()) {
-        out.println(entity.getDescription() + " : " + entity.getEntityId() + " : "
-            + entity.getScore());
-      }
-      out.println("\nPages with matching images: Score\n==");
-      for (WebPage page : annotation.getPagesWithMatchingImagesList()) {
-        out.println(page.getUrl() + " : " + page.getScore());
-      }
-      out.println("\nPages with partially matching images: Score\n==");
-      for (WebImage image : annotation.getPartialMatchingImagesList()) {
-        out.println(image.getUrl() + " : " + image.getScore());
-      }
-      out.println("\nPages with fully matching images: Score\n==");
-      for (WebImage image : annotation.getFullMatchingImagesList()) {
-        out.println(image.getUrl() + " : " + image.getScore());
+        // Search the web for usages of the image. You could use these signals later
+        // for user input moderation or linking external references.
+        // For a full list of available annotations, see http://g.co/cloud/vision/docs
+        WebDetection annotation = res.getWebDetection();
+        out.println("Entity:Id:Score");
+        out.println("===============");
+        for (WebEntity entity : annotation.getWebEntitiesList()) {
+          out.println(entity.getDescription() + " : " + entity.getEntityId() + " : "
+              + entity.getScore());
+        }
+        out.println("\nPages with matching images: Score\n==");
+        for (WebPage page : annotation.getPagesWithMatchingImagesList()) {
+          out.println(page.getUrl() + " : " + page.getScore());
+        }
+        out.println("\nPages with partially matching images: Score\n==");
+        for (WebImage image : annotation.getPartialMatchingImagesList()) {
+          out.println(image.getUrl() + " : " + image.getScore());
+        }
+        out.println("\nPages with fully matching images: Score\n==");
+        for (WebImage image : annotation.getFullMatchingImagesList()) {
+          out.println(image.getUrl() + " : " + image.getScore());
+        }
       }
     }
   }
@@ -823,38 +823,38 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // Search the web for usages of the image. You could use these signals later
-      // for user input moderation or linking external references.
-      // For a full list of available annotations, see http://g.co/cloud/vision/docs
-      WebDetection annotation = res.getWebDetection();
-      out.println("Entity:Id:Score");
-      out.println("===============");
-      for (WebEntity entity : annotation.getWebEntitiesList()) {
-        out.println(entity.getDescription() + " : " + entity.getEntityId() + " : "
-            + entity.getScore());
-      }
-      out.println("\nPages with matching images: Score\n==");
-      for (WebPage page : annotation.getPagesWithMatchingImagesList()) {
-        out.println(page.getUrl() + " : " + page.getScore());
-      }
-      out.println("\nPages with partially matching images: Score\n==");
-      for (WebImage image : annotation.getPartialMatchingImagesList()) {
-        out.println(image.getUrl() + " : " + image.getScore());
-      }
-      out.println("\nPages with fully matching images: Score\n==");
-      for (WebImage image : annotation.getFullMatchingImagesList()) {
-        out.println(image.getUrl() + " : " + image.getScore());
+        // Search the web for usages of the image. You could use these signals later
+        // for user input moderation or linking external references.
+        // For a full list of available annotations, see http://g.co/cloud/vision/docs
+        WebDetection annotation = res.getWebDetection();
+        out.println("Entity:Id:Score");
+        out.println("===============");
+        for (WebEntity entity : annotation.getWebEntitiesList()) {
+          out.println(entity.getDescription() + " : " + entity.getEntityId() + " : "
+              + entity.getScore());
+        }
+        out.println("\nPages with matching images: Score\n==");
+        for (WebPage page : annotation.getPagesWithMatchingImagesList()) {
+          out.println(page.getUrl() + " : " + page.getScore());
+        }
+        out.println("\nPages with partially matching images: Score\n==");
+        for (WebImage image : annotation.getPartialMatchingImagesList()) {
+          out.println(image.getUrl() + " : " + image.getScore());
+        }
+        out.println("\nPages with fully matching images: Score\n==");
+        for (WebImage image : annotation.getFullMatchingImagesList()) {
+          out.println(image.getUrl() + " : " + image.getScore());
+        }
       }
     }
   }
@@ -879,21 +879,21 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      CropHintsAnnotation annotation = res.getCropHintsAnnotation();
-      for (CropHint hint : annotation.getCropHintsList()) {
-        out.println(hint.getBoundingPoly());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        CropHintsAnnotation annotation = res.getCropHintsAnnotation();
+        for (CropHint hint : annotation.getCropHintsList()) {
+          out.println(hint.getBoundingPoly());
+        }
       }
     }
   }
@@ -917,21 +917,21 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      CropHintsAnnotation annotation = res.getCropHintsAnnotation();
-      for (CropHint hint : annotation.getCropHintsList()) {
-        out.println(hint.getBoundingPoly());
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        CropHintsAnnotation annotation = res.getCropHintsAnnotation();
+        for (CropHint hint : annotation.getCropHintsList()) {
+          out.println(hint.getBoundingPoly());
+        }
       }
     }
   }
@@ -956,41 +956,42 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
+      client.close();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
-
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      TextAnnotation annotation = res.getFullTextAnnotation();
-      for (Page page: annotation.getPagesList()) {
-        String pageText = "";
-        for (Block block : page.getBlocksList()) {
-          String blockText = "";
-          for (Paragraph para : block.getParagraphsList()) {
-            String paraText = "";
-            for (Word word: para.getWordsList()) {
-              String wordText = "";
-              for (Symbol symbol: word.getSymbolsList()) {
-                wordText = wordText + symbol.getText();
-              }
-              paraText = paraText + wordText;
-            }
-            // Output Example using Paragraph:
-            out.println("Paragraph: \n" + paraText);
-            out.println("Bounds: \n" + para.getBoundingBox() + "\n");
-            blockText = blockText + paraText;
-          }
-          pageText = pageText + blockText;
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
         }
+
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        TextAnnotation annotation = res.getFullTextAnnotation();
+        for (Page page: annotation.getPagesList()) {
+          String pageText = "";
+          for (Block block : page.getBlocksList()) {
+            String blockText = "";
+            for (Paragraph para : block.getParagraphsList()) {
+              String paraText = "";
+              for (Word word: para.getWordsList()) {
+                String wordText = "";
+                for (Symbol symbol: word.getSymbolsList()) {
+                  wordText = wordText + symbol.getText();
+                }
+                paraText = paraText + wordText;
+              }
+              // Output Example using Paragraph:
+              out.println("Paragraph: \n" + paraText);
+              out.println("Bounds: \n" + para.getBoundingBox() + "\n");
+              blockText = blockText + paraText;
+            }
+            pageText = pageText + blockText;
+          }
+        }
+        out.println(annotation.getText());
       }
-      out.println(annotation.getText());
     }
   }
 
@@ -1013,40 +1014,41 @@ public class Detect {
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
-    ImageAnnotatorClient client = ImageAnnotatorClient.create();
-    BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
-    client.close();
+    try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+      BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
+      client.close();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
-      // For full list of available annotations, see http://g.co/cloud/vision/docs
-      TextAnnotation annotation = res.getFullTextAnnotation();
-      for (Page page: annotation.getPagesList()) {
-        String pageText = "";
-        for (Block block : page.getBlocksList()) {
-          String blockText = "";
-          for (Paragraph para : block.getParagraphsList()) {
-            String paraText = "";
-            for (Word word: para.getWordsList()) {
-              String wordText = "";
-              for (Symbol symbol: word.getSymbolsList()) {
-                wordText = wordText + symbol.getText();
-              }
-              paraText = paraText + wordText;
-            }
-            // Output Example using Paragraph:
-            out.println("Paragraph: \n" + paraText);
-            out.println("Bounds: \n" + para.getBoundingBox() + "\n");
-            blockText = blockText + paraText;
-          }
-          pageText = pageText + blockText;
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          out.printf("Error: %s\n", res.getError().getMessage());
+          return;
         }
+        // For full list of available annotations, see http://g.co/cloud/vision/docs
+        TextAnnotation annotation = res.getFullTextAnnotation();
+        for (Page page: annotation.getPagesList()) {
+          String pageText = "";
+          for (Block block : page.getBlocksList()) {
+            String blockText = "";
+            for (Paragraph para : block.getParagraphsList()) {
+              String paraText = "";
+              for (Word word: para.getWordsList()) {
+                String wordText = "";
+                for (Symbol symbol: word.getSymbolsList()) {
+                  wordText = wordText + symbol.getText();
+                }
+                paraText = paraText + wordText;
+              }
+              // Output Example using Paragraph:
+              out.println("Paragraph: \n" + paraText);
+              out.println("Bounds: \n" + para.getBoundingBox() + "\n");
+              blockText = blockText + paraText;
+            }
+            pageText = pageText + blockText;
+          }
+        }
+        out.println(annotation.getText());
       }
-      out.println(annotation.getText());
     }
   }
 }

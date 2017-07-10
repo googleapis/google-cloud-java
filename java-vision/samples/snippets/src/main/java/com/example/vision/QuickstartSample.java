@@ -37,43 +37,42 @@ import java.util.List;
 public class QuickstartSample {
   public static void main(String... args) throws Exception {
     // Instantiates a client
-    ImageAnnotatorClient vision = ImageAnnotatorClient.create();
+    try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
 
-    // The path to the image file to annotate
-    String fileName = "./resources/wakeupcat.jpg";
+      // The path to the image file to annotate
+      String fileName = "./resources/wakeupcat.jpg";
 
-    // Reads the image file into memory
-    Path path = Paths.get(fileName);
-    byte[] data = Files.readAllBytes(path);
-    ByteString imgBytes = ByteString.copyFrom(data);
+      // Reads the image file into memory
+      Path path = Paths.get(fileName);
+      byte[] data = Files.readAllBytes(path);
+      ByteString imgBytes = ByteString.copyFrom(data);
 
-    // Builds the image annotation request
-    List<AnnotateImageRequest> requests = new ArrayList<>();
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.LABEL_DETECTION).build();
-    AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
-        .addFeatures(feat)
-        .setImage(img)
-        .build();
-    requests.add(request);
+      // Builds the image annotation request
+      List<AnnotateImageRequest> requests = new ArrayList<>();
+      Image img = Image.newBuilder().setContent(imgBytes).build();
+      Feature feat = Feature.newBuilder().setType(Type.LABEL_DETECTION).build();
+      AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
+          .addFeatures(feat)
+          .setImage(img)
+          .build();
+      requests.add(request);
 
-    // Performs label detection on the image file
-    BatchAnnotateImagesResponse response = vision.batchAnnotateImages(requests);
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+      // Performs label detection on the image file
+      BatchAnnotateImagesResponse response = vision.batchAnnotateImages(requests);
+      List<AnnotateImageResponse> responses = response.getResponsesList();
 
-    for (AnnotateImageResponse res : responses) {
-      if (res.hasError()) {
-        System.out.printf("Error: %s\n", res.getError().getMessage());
-        return;
-      }
+      for (AnnotateImageResponse res : responses) {
+        if (res.hasError()) {
+          System.out.printf("Error: %s\n", res.getError().getMessage());
+          return;
+        }
 
-      for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
-        annotation.getAllFields().forEach((k, v)->System.out.printf("%s : %s\n", k, v.toString()));
+        for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
+          annotation.getAllFields().forEach((k, v)->
+              System.out.printf("%s : %s\n", k, v.toString()));
+        }
       }
     }
-
-    // Close the client to free any resources
-    vision.close();
   }
 }
 // [END vision_quickstart]
