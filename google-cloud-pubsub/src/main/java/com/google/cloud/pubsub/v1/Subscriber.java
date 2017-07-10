@@ -278,7 +278,7 @@ public class Subscriber extends AbstractApiService {
   @Override
   protected void doStop() {
     stopAllStreamingConnections();
-    stopAllPollingConnections();
+    // stopAllPollingConnections();
     try {
       for (AutoCloseable closeable : closeables) {
         closeable.close();
@@ -339,35 +339,31 @@ public class Subscriber extends AbstractApiService {
             new Runnable() {
               @Override
               public void run() {
-                // It is guaranteed this will be <= MAX_ACK_DEADLINE_SECONDS, the max of the API.
-                long ackLatency =
-                    ackLatencyDistribution.getNthPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
-                if (ackLatency > 0) {
-                  long ackExpirationPaddingMillis = ackExpirationPadding.toMillis();
-                  int possibleStreamAckDeadlineSeconds =
-                      Math.max(
-                          MIN_ACK_DEADLINE_SECONDS,
-                          Ints.saturatedCast(
-                              Math.max(
-                                  ackLatency,
-                                  TimeUnit.MILLISECONDS.toSeconds(ackExpirationPaddingMillis))));
-                  if (streamAckDeadlineSeconds != possibleStreamAckDeadlineSeconds) {
-                    streamAckDeadlineSeconds = possibleStreamAckDeadlineSeconds;
-                    logger.log(
-                        Level.FINER,
-                        "Updating stream deadline to {0} seconds.",
-                        streamAckDeadlineSeconds);
-                    for (StreamingSubscriberConnection subscriberConnection :
-                        streamingSubscriberConnections) {
-                      subscriberConnection.updateStreamAckDeadline(streamAckDeadlineSeconds);
-                    }
-                  }
-                }
+                updateAckDeadline();
               }
             },
             ACK_DEADLINE_UPDATE_PERIOD.toMillis(),
             ACK_DEADLINE_UPDATE_PERIOD.toMillis(),
             TimeUnit.MILLISECONDS);
+  }
+
+  private void updateAckDeadline() {
+    // It is guaranteed this will be <= MAX_ACK_DEADLINE_SECONDS, the max of the API.
+    long ackLatency = ackLatencyDistribution.getNthPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
+    if (ackLatency > 0) {
+      int possibleStreamAckDeadlineSeconds =
+          Math.max(
+              MIN_ACK_DEADLINE_SECONDS,
+              Ints.saturatedCast(Math.max(ackLatency, ackExpirationPadding.getSeconds())));
+      if (streamAckDeadlineSeconds != possibleStreamAckDeadlineSeconds) {
+        streamAckDeadlineSeconds = possibleStreamAckDeadlineSeconds;
+        logger.log(
+            Level.FINER, "Updating stream deadline to {0} seconds.", streamAckDeadlineSeconds);
+        for (StreamingSubscriberConnection subscriberConnection : streamingSubscriberConnections) {
+          subscriberConnection.updateStreamAckDeadline(streamAckDeadlineSeconds);
+        }
+      }
+    }
   }
 
   private void stopAllStreamingConnections() {
