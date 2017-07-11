@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>google-cloud-trace</artifactId>
+  <artifactId>google-cloud-dlp</artifactId>
   <version>0.20.2-alpha-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>Google Cloud Trace</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-trace</url>
+  <name>Google Cloud Data Loss Prevention API</name>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-dlp</url>
   <description>
-    Java idiomatic client for Stackdriver Trace.
+    Java idiomatic client for Cloud Data Loss Prevention API v2beta1.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -15,7 +15,7 @@
     <version>0.20.2-alpha-SNAPSHOT</version>
   </parent>
   <properties>
-    <site.installationModule>google-cloud-trace</site.installationModule>
+    <site.installationModule>google-cloud-dlp-v2beta1</site.installationModule>
     <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
@@ -34,7 +34,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-trace-v1</artifactId>
+      <artifactId>proto-google-cloud-dlp-v2beta1</artifactId>
       <version>0.1.13</version>
     </dependency>
     <dependency>
@@ -68,7 +68,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-trace-v1</artifactId>
+      <artifactId>grpc-google-cloud-dlp-v2beta1</artifactId>
       <version>0.1.13</version>
       <scope>test</scope>
     </dependency>
