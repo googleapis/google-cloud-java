@@ -32,9 +32,7 @@ import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.TransactionContext;
 import com.google.cloud.spanner.TransactionRunner;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -55,17 +53,15 @@ public class DatabaseClientSnippets {
   // [VARIABLE my_singer_id]
   public void write(long singerId) {
     // [START write]
-    List<Mutation> mutations = new ArrayList<>();
-    mutations.add(
-        Mutation.newInsertBuilder("Singer")
+    Mutation mutation = Mutation.newInsertBuilder("Singer")
             .set("SingerId")
             .to(singerId)
             .set("FirstName")
             .to("Billy")
             .set("LastName")
             .to("Joel")
-            .build());
-    dbClient.write(mutations);
+            .build();
+    dbClient.write(Collections.singletonList(mutation));
     // [END write]
   }
 
@@ -76,17 +72,15 @@ public class DatabaseClientSnippets {
   // [VARIABLE my_singer_id]
   public void writeAtLeastOnce(long singerId) {
     // [START writeAtLeastOnce]
-    List<Mutation> mutations = new ArrayList<>();
-    mutations.add(
-        Mutation.newInsertBuilder("Singers")
+    Mutation mutation = Mutation.newInsertBuilder("Singers")
             .set("SingerId")
             .to(singerId)
             .set("FirstName")
             .to("Billy")
             .set("LastName")
             .to("Joel")
-            .build());
-    dbClient.writeAtLeastOnce(mutations);
+            .build();
+    dbClient.writeAtLeastOnce(Collections.singletonList(mutation));
     // [END writeAtLeastOnce]
   }
 

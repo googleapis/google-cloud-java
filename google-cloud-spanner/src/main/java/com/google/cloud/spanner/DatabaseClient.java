@@ -36,17 +36,15 @@ public interface DatabaseClient {
    * <p>Example of blind write.
    * <pre> {@code
    * long singerId = my_singer_id;
-   * List<Mutation> mutations = new ArrayList<>();
-   * mutations.add(
-   *     Mutation.newInsertBuilder("Singer")
+   * Mutation mutation = Mutation.newInsertBuilder("Singer")
    *         .set("SingerId")
    *         .to(singerId)
    *         .set("FirstName")
    *         .to("Billy")
    *         .set("LastName")
    *         .to("Joel")
-   *         .build());
-   * dbClient.write(mutations);
+   *         .build();
+   * dbClient.write(Collections.singletonList(mutation));
    * }</pre>
    *
    * @return the timestamp at which the write was committed
@@ -68,17 +66,15 @@ public interface DatabaseClient {
    * <p>Example of unprotected blind write.
    * <pre> {@code
    * long singerId = my_singer_id;
-   * List<Mutation> mutations = new ArrayList<>();
-   * mutations.add(
-   *     Mutation.newInsertBuilder("Singers")
+   * Mutation mutation = Mutation.newInsertBuilder("Singers")
    *         .set("SingerId")
    *         .to(singerId)
    *         .set("FirstName")
    *         .to("Billy")
    *         .set("LastName")
    *         .to("Joel")
-   *         .build());
-   * dbClient.writeAtLeastOnce(mutations);
+   *         .build();
+   * dbClient.writeAtLeastOnce(Collections.singletonList(mutation));
    * }</pre>
    *
    * @return the timestamp at which the write was committed
