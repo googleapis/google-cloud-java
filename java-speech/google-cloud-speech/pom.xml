@@ -35,12 +35,12 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-speech-v1beta1</artifactId>
-      <version>0.1.12</version>
+      <version>0.1.13</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-speech-v1</artifactId>
-      <version>0.1.12</version>
+      <version>0.1.13</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -74,13 +74,13 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
-      <version>0.1.12</version>
+      <version>0.1.13</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-speech-v1</artifactId>
-      <version>0.1.12</version>
+      <version>0.1.13</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
