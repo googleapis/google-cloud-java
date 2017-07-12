@@ -17,6 +17,7 @@
 package com.example.video;
 
 import com.google.api.gax.grpc.OperationFuture;
+import com.google.cloud.videointelligence.v1beta1.AnnotateVideoProgress;
 import com.google.cloud.videointelligence.v1beta1.AnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1beta1.AnnotateVideoResponse;
 import com.google.cloud.videointelligence.v1beta1.FaceAnnotation;
@@ -111,7 +112,7 @@ public class Detect {
             .addFeatures(Feature.FACE_DETECTION)
             .build();
 
-    OperationFuture<AnnotateVideoResponse> operation =
+    OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> operation =
             client.annotateVideoAsync(request);
 
     System.out.println("Waiting for operation to complete...");
@@ -151,7 +152,7 @@ public class Detect {
             .addFeatures(Feature.LABEL_DETECTION)
             .build();
 
-    OperationFuture<AnnotateVideoResponse> operation =
+    OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> operation =
             client.annotateVideoAsync(request);
 
     System.out.println("Waiting for operation to complete...");
@@ -199,7 +200,7 @@ public class Detect {
         .addFeatures(Feature.LABEL_DETECTION)
         .build();
 
-    OperationFuture<AnnotateVideoResponse> operation =
+    OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> operation =
         client.annotateVideoAsync(request);
 
     System.out.println("Waiting for operation to complete...");
@@ -244,7 +245,7 @@ public class Detect {
             .addFeatures(Feature.SHOT_CHANGE_DETECTION)
             .build();
 
-    OperationFuture<AnnotateVideoResponse> operation =
+    OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> operation =
             client.annotateVideoAsync(request);
 
     System.out.println("Waiting for operation to complete...");
@@ -284,7 +285,7 @@ public class Detect {
             .addFeatures(Feature.SAFE_SEARCH_DETECTION)
             .build();
 
-    OperationFuture<AnnotateVideoResponse> operation =
+    OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> operation =
             client.annotateVideoAsync(request);
 
     System.out.println("Waiting for operation to complete...");
