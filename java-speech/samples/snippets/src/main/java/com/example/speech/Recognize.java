@@ -19,6 +19,7 @@ package com.example.speech;
 import com.google.api.gax.grpc.ApiStreamObserver;
 import com.google.api.gax.grpc.OperationFuture;
 import com.google.api.gax.grpc.StreamingCallable;
+import com.google.cloud.speech.v1.LongRunningRecognizeMetadata;
 import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognitionAudio;
 import com.google.cloud.speech.v1.RecognitionConfig;
@@ -168,7 +169,7 @@ public class Recognize {
         .build();
 
     // Use non-blocking call for getting file transcription
-    OperationFuture<LongRunningRecognizeResponse> response =
+    OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
         speech.longRunningRecognizeAsync(config, audio);
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
@@ -207,7 +208,7 @@ public class Recognize {
         .build();
 
     // Use non-blocking call for getting file transcription
-    OperationFuture<LongRunningRecognizeResponse> response =
+    OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
         speech.longRunningRecognizeAsync(config, audio);
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
