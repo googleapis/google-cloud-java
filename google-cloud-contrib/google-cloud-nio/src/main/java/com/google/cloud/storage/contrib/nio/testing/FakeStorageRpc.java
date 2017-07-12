@@ -49,6 +49,7 @@ import javax.annotation.concurrent.NotThreadSafe;
  *   <li>object get
  *   <li>object delete
  *   <li>list the contents of a bucket
+ *   <li>generations
  *   </ul>
  * <li>Unsupported
  *   <ul>
@@ -56,7 +57,6 @@ import javax.annotation.concurrent.NotThreadSafe;
  *   <li>bucket get
  *   <li>bucket delete
  *   <li>list all buckets
- *   <li>generations
  *   <li>file attributes
  *   <li>patch
  *   <li>continueRewrite
@@ -246,7 +246,6 @@ class FakeStorageRpc implements StorageRpc {
     Long generationMatch = null;
     for (Option op : options.keySet()) {
       if (op.equals(StorageRpc.Option.IF_GENERATION_MATCH)) {
-        StorageRpc.Option sopt = (StorageRpc.Option)op;
         generationMatch = (Long)options.get(op);
       } else {
         throw new UnsupportedOperationException("Unknown option: " + op);
