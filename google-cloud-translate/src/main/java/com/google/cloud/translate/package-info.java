@@ -21,7 +21,7 @@
  * language of some text and how to translate some text. The example assumes that either Application
  * Default Credentials are available or that the {@code GOOGLE_API_KEY} environment variable is set
  * and contains a valid API key. Alternatively, you can use
- * {@link ServiceOptions.Builder#setCredentials setCredentials} to set credentials, or
+ * {@link com.google.cloud.ServiceOptions.Builder#setCredentials setCredentials} to set credentials, or
  * {@link com.google.cloud.translate.TranslateOptions.Builder#setApiKey(java.lang.String)} to set
  * an API key. For the complete source code see <a
  * href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java">
