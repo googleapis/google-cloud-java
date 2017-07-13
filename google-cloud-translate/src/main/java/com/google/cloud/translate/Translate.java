@@ -86,8 +86,8 @@ public interface Translate extends Service<TranslateOptions> {
     /**
      * Sets the language translation model. You can use this parameter to take advantage of Neural
      * Machine Translation. Possible values are {@code base} and {@code nmt}. Google Translation could
-     * use a different model to translate your text, use {@link Translation#getModel()} to know
-     * which model was used for translation. Please notice that you must be whitelisted to use this
+     * use a different model to translate your text: use {@link Translation#getModel()} to know
+     * which model was used for translation. Please note that you must be whitelisted to use this
      * option, otherwise translation will fail.
      *
      * @param model the language translation model
@@ -98,19 +98,19 @@ public interface Translate extends Service<TranslateOptions> {
   }
 
   /**
-   * Returns the list of languages supported by Google Translation. If
-   * {@link LanguageListOption#targetLanguage(String)} is provided, {@link Language#getName()}
-   * values are localized according to the provided target language. If no such option is passed,
-   * {@link Language#getName()} values are localized according to
+   * Returns the list of languages supported by Google Translation. If an option from
+   * {@link LanguageListOption#targetLanguage(String)} is provided, the value of
+   * {@link Language#getName()} is localized according to the provided target language. If no such
+   * option is passed, the value of {@link Language#getName()} is localized according to
    * {@link TranslateOptions#getTargetLanguage()}.
    *
    * <p>Example of listing supported languages, localized according to
-   * {@link TranslateOptions#getTargetLanguage()}.
+   * {@link TranslateOptions#getTargetLanguage()}:
    * <pre> {@code
    * List<Language> languages = translate.listSupportedLanguages();
    * }</pre>
    *
-   * <p>Example of listing supported languages, localized according to a provided language.
+   * <p>Example of listing supported languages, localized according to a provided language:
    * <pre> {@code
    * List<Language> languages = translate.listSupportedLanguages(
    *     LanguageListOption.targetLanguage("es"));
@@ -122,7 +122,7 @@ public interface Translate extends Service<TranslateOptions> {
   /**
    * Detects the language of the provided texts.
    *
-   * <p>Example of detecting the language of some texts.
+   * <p>Example of detecting the language of some texts:
    * <pre> {@code
    * List<String> texts = new LinkedList<>();
    * texts.add("Hello, World!");
@@ -132,21 +132,21 @@ public interface Translate extends Service<TranslateOptions> {
    *
    * @param texts the texts for which language should be detected
    * @return a list of objects containing information on the language detection, one for each
-   *     provided text, in order.
+   *     provided text, in order
    */
   List<Detection> detect(List<String> texts);
 
   /**
    * Detects the language of the provided texts.
    *
-   * <p>Example of detecting the language of some texts.
+   * <p>Example of detecting the language of some texts:
    * <pre> {@code
    * List<Detection> detections = translate.detect("Hello, World!", "¡Hola Mundo!");
    * }</pre>
    *
    * @param texts the texts for which language should be detected
    * @return a list of objects containing information on the language detection, one for each
-   *     provided text, in order.
+   *     provided text, in order
    */
   List<Detection> detect(String... texts);
 
@@ -154,7 +154,7 @@ public interface Translate extends Service<TranslateOptions> {
    * Detects the language of the provided text. Returns an object containing information on the
    * language detection.
    *
-   * <p>Example of detecting the language of a text.
+   * <p>Example of detecting the language of a text:
    * <pre> {@code
    * Detection detection = translate.detect("Hello, World!");
    * }</pre>
@@ -165,7 +165,7 @@ public interface Translate extends Service<TranslateOptions> {
   /**
    * Translates the provided texts.
    *
-   * <p>Example of translating some texts.
+   * <p>Example of translating some texts:
    * <pre> {@code
    * List<String> texts = new LinkedList<>();
    * texts.add("Hello, World!");
@@ -173,7 +173,7 @@ public interface Translate extends Service<TranslateOptions> {
    * List<Translation> translations = translate.translate(texts);
    * }</pre>
    *
-   * <p>Example of translating some texts, specifying source and target language.
+   * <p>Example of translating some texts, specifying source and target language:
    * <pre> {@code
    * List<String> texts = new LinkedList<>();
    * texts.add("¡Hola Mundo!");
@@ -183,7 +183,7 @@ public interface Translate extends Service<TranslateOptions> {
    *
    * @param texts the texts to translate
    * @return a list of objects containing information on the language translation, one for each
-   *     provided text, in order.
+   *     provided text, in order
    * @throws TranslateException upon failure or if {@link TranslateOption#model(String)} is used by
    *     a non-whitelisted user
    */
@@ -192,12 +192,12 @@ public interface Translate extends Service<TranslateOptions> {
   /**
    * Translates the provided texts.
    *
-   * <p>Example of translating a text.
+   * <p>Example of translating a text:
    * <pre> {@code
    * Translation translation = translate.translate("¡Hola Mundo!");
    * }</pre>
    *
-   * <p>Example of translating a text, specifying source and target language.
+   * <p>Example of translating a text, specifying source and target language:
    * <pre> {@code
    * Translation translation = translate.translate("¡Hola Mundo!",
    *     TranslateOption.sourceLanguage("es"), TranslateOption.targetLanguage("de"));

@@ -100,7 +100,7 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
     }
 
     /**
-     * Sets project id. Setting a project id has no impact on the {@link Translate} service.
+     * Sets the project ID. Setting a project ID has no impact on the {@link Translate} service.
      *
      * @return the builder
      */
@@ -114,8 +114,8 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
      * Sets the API key used to issue requests. This will be ignored if credentials are explicitly
      * set with {@link ServiceOptions.Builder#setCredentials setCredentials}. If neither are set,
      * and no Application Default Credentials are available, an API key is looked for in the
-     * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key see <a
-     * href="https://cloud.google.com/translate/v2/quickstart">Translate quickstart</a>.
+     * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key, see
+     * the <a href="https://cloud.google.com/translate/v2/quickstart">Translate Quickstart</a>.
      */
     @Deprecated
     public Builder setApiKey(String apiKey) {
@@ -125,11 +125,10 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
 
 
     /**
-     * Sets the code for the default target language. If not set, English ({@code en}) is used.
-     * {@link Translate#translate(List, TranslateOption...)} and
-     * {@link Translate#translate(String, TranslateOption...)} calls will use this
-     * value unless a {@link TranslateOption#targetLanguage(String)} option is explicitly
-     * provided.
+     * Sets the code for the default target language. If not set, English ({@code en}) is
+     * used. Calls to {@link Translate#translate(List, TranslateOption...)} and
+     * {@link Translate#translate(String, TranslateOption...)} will use this value unless an option
+     * from {@link TranslateOption#targetLanguage(String)} is explicitly provided.
      *
      * @return the builder
      */
@@ -235,7 +234,7 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
 
 
   /**
-   * Returns the API key, to be used to send requests.
+   * Returns the API key to be used to send requests.
    */
   public String getApiKey() {
     return apiKey;
