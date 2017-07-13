@@ -21,6 +21,7 @@ import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
+import com.google.common.annotations.VisibleForTesting;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.concurrent.ThreadSafe;
@@ -49,7 +50,8 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   private final Storage gcsStorage;
   private final BlobId file;
   // max # of times we may reopen the file
-  private final int maxChannelReopens;
+  @VisibleForTesting
+  final int maxChannelReopens;
   // how many times we re-opened the file
   private int reopens;
   private ReadChannel channel;

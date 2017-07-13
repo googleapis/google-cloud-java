@@ -92,7 +92,7 @@ public final class CloudStorageOptions {
   }
 
   /**
-   * Sets the max number of times that the channel can be reopen if reading
+   * Sets the max number of times that the channel can be reopened if reading
    * fails because the channel unexpectedly closes.
    *
    * <p>The default is 0.

@@ -1,4 +1,4 @@
-Google Cloud Java Client
+Google Cloud Client Library for Java
 ==========================
 
 Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
@@ -29,6 +29,7 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
 -  [Cloud Compute](#google-cloud-compute-alpha) (Alpha)
+-  [Cloud Data Loss Prevention](#google-cloud-data-loss-prevention-alpha) (Alpha)
 -  [Cloud DNS](#google-cloud-dns-alpha) (Alpha)
 -  [Stackdriver Error Reporting](#stackdriver-error-reporting-alpha) (Alpha)
 -  [Stackdriver Monitoring](#stackdriver-monitoring-alpha) (Alpha)
@@ -424,7 +425,7 @@ snippet elsewhere. Complete source code can be found at
 [CreateTopicAndPublishMessages.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java).
 
 ```java
-import com.google.api.gax.core.ApiFuture;
+import com.google.api.core.ApiFuture;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.protobuf.ByteString;
@@ -586,6 +587,25 @@ operation = operation.waitFor();
 if (operation.getErrors() == null) {
   // use instance
   Instance instance = compute.getInstance(instanceId);
+}
+```
+
+Google Cloud Data Loss Prevention (Alpha)
+----------------
+
+- [API Documentation][dlp-api]
+- [Official Documentation][cloud-dlp-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example of DlpServiceClient. The example assumes that either default application
+credentials or a valid API key are available. (See [Authentication section](#authentication) for more information)
+
+```java
+try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+  InspectConfig inspectConfig = InspectConfig.newBuilder().build();
+  List<ContentItem> items = new ArrayList<>();
+  InspectContentResponse response = dlpServiceClient.inspectContent(inspectConfig, items);
 }
 ```
 
@@ -851,7 +871,7 @@ Please note that gRPC proxy support is currently experimental.
 Java Versions
 -------------
 
-Java 7 or above is required for using this client.
+Java 7 or above is required for using the clients in this repository.
 
 Supported Platforms
 -------------------
@@ -988,3 +1008,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-spanner]: https://cloud.google.com/spanner/
 [cloud-spanner-docs]: https://cloud.google.com/spanner/docs/
 [cloud-spanner-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/spanner/package-summary.html
+
+[cloud-dlp-docs]: https://cloud.google.com/dlp/docs/
+[dlp-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dlp/package-summary.html

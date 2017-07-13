@@ -62,6 +62,7 @@ public class BucketInfoTest {
   private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
   private static final Boolean VERSIONING_ENABLED = true;
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
+  private static final Boolean REQUESTER_PAYS = true;
   private static final BucketInfo BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACL)
       .setEtag(ETAG)
@@ -79,6 +80,7 @@ public class BucketInfoTest {
       .setStorageClass(STORAGE_CLASS)
       .setVersioningEnabled(VERSIONING_ENABLED)
       .setLabels(BUCKET_LABELS)
+      .setRequesterPays(REQUESTER_PAYS)
       .build();
 
   @Test
@@ -122,6 +124,7 @@ public class BucketInfoTest {
     assertEquals(STORAGE_CLASS, BUCKET_INFO.getStorageClass());
     assertEquals(VERSIONING_ENABLED, BUCKET_INFO.versioningEnabled());
     assertEquals(BUCKET_LABELS, BUCKET_INFO.getLabels());
+    assertEquals(REQUESTER_PAYS, BUCKET_INFO.requesterPays());
   }
 
   @Test
@@ -150,6 +153,7 @@ public class BucketInfoTest {
     assertEquals(expected.getStorageClass(), value.getStorageClass());
     assertEquals(expected.versioningEnabled(), value.versioningEnabled());
     assertEquals(expected.getLabels(), value.getLabels());
+    assertEquals(expected.requesterPays(), value.requesterPays());
   }
 
   @Test
