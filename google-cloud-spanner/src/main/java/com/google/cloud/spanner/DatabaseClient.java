@@ -222,7 +222,7 @@ public interface DatabaseClient {
    * long singerId = my_singer_id;
    * TransactionRunner runner = dbClient.readWriteTransaction();
    * runner.run(
-   *     new TransactionCallable<Void>() {
+   *     new TransactionCallable&lt;Void&gt;() {
    * 
    *       @Override
    *       public Void run(TransactionContext transaction) throws Exception {
