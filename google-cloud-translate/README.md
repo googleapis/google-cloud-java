@@ -80,7 +80,7 @@ section to add `google-cloud-translate` as a dependency in your code.
 
 #### Creating an authorized service object
 To make authenticated requests to Google Translation, you must create a service object with
-credentials or with an API key. The simplest way to authenticate is to use
+credentials or use an API key. The simplest way to authenticate is to use
 [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
 These credentials are automatically inferred from your environment, so you only need the following
 code to create your service object:
@@ -142,8 +142,8 @@ Translation translation = translate.translate(
 
 In
 [DetectLanguageAndTranslate.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
-we put together all the code shown above into one program. The program assumes that either default
-application credentials or a valid api key are available.
+we put together all the code shown above into one program. The program assumes that either Application
+Default Credentials or a valid API key are available.
 
 Troubleshooting
 ---------------

@@ -178,7 +178,7 @@ Storage storage = StorageOptions.getDefaultInstance().getService();
   ```
 
 If no credentials are provided, `google-cloud` will attempt to detect them from the environment
-using `GoogleCredentials.getApplicationDefault()` which will search for Default Application
+using `GoogleCredentials.getApplicationDefault()` which will search for Application Default
 Credentials in the following locations (in order):
 
 1. The credentials file pointed to by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
@@ -498,8 +498,8 @@ Google Cloud Language (Beta)
 
 ### Preview
 
-Here is a code snippet showing a simple usage example of LanguageServiceClient. The example assumes that either default application
-credentials or a valid API key are available. (See [Authentication section](#authentication) for more information)
+Here is a code snippet showing a simple usage example of LanguageServiceClient. The example assumes that either Application Default
+Credentials or a valid API key are available. (See [Authentication section](#authentication) for more information)
 ```java
  try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    Document document = Document.newBuilder().build();
@@ -516,7 +516,7 @@ Google Cloud Vision (Beta)
 ### Preview
 
 Here is a code snippet showing a simple usage example of ImageAnnotatorClient.
-The example assumes that either default application credentials or a valid API key
+The example assumes that either Application Default Credentials or a valid API key
 are available. (See [Authentication section](#authentication) for more information)
 ```java
  try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
@@ -751,8 +751,8 @@ Google Translation (Beta)
 #### Preview
 
 Here's a snippet showing a simple usage example. The example shows how to detect the language of
-some text and how to translate some text. The example assumes that either default application
-credentials or a valid API key are available. An API key stored in the `GOOGLE_API_KEY` environment
+some text and how to translate some text. The example assumes that either Application Default
+Credentials or a valid API key are available. An API key stored in the `GOOGLE_API_KEY` environment
 variable will be automatically detected. Complete source code can be found at
 [DetectLanguageAndTranslate.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java).
 
@@ -784,8 +784,8 @@ Google Cloud Speech (Alpha)
 
 ### Preview
 
-Here is a code snippet showing a simple usage example of SpeechClient. The example assumes that either default application
-credentials or a valid API key are available. (See [Authentication section](#authentication) for more information)
+Here is a code snippet showing a simple usage example of SpeechClient. The example assumes that either Application Default
+Credentials or a valid API key are available. (See [Authentication section](#authentication) for more information)
 Note that you must provide a uri to a FLAC audio file to run this.
 
 ```java
@@ -814,8 +814,8 @@ Google Cloud Trace (Alpha)
 
 ### Preview
 
-Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either default application
-credentials or a valid API key are available.
+Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either Application Default
+Credentials or a valid API key are available.
 Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 ```java
  try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
@@ -832,8 +832,8 @@ Google Cloud Video Intelligence (Alpha)
 
 ### Preview
 
-Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either default application
-credentials or a valid API key are available.
+Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either Application Default
+Credentials or a valid API key are available.
 Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 ```java
 try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
