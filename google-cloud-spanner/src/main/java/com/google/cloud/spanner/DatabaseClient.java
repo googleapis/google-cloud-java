@@ -218,13 +218,13 @@ public interface DatabaseClient {
    * returned runner can only be used once.
    *
    * <p>Example of a read write transaction.
-   * <pre> {@code
+   * <pre> <code>
    * long singerId = my_singer_id;
    * TransactionRunner runner = dbClient.readWriteTransaction();
    * runner.run(
    *     new TransactionCallable&lt;Void&gt;() {
    * 
-   *       @Override
+   *       {@literal @}Override
    *       public Void run(TransactionContext transaction) throws Exception {
    *         String column = "FirstName";
    *         Struct row =
@@ -235,7 +235,7 @@ public interface DatabaseClient {
    *         return null;
    *       }
    *     });
-   * }</pre>
+   * </code></pre>
    *
    */
   TransactionRunner readWriteTransaction();
