@@ -149,6 +149,7 @@ public class HttpTransportOptions implements TransportOptions {
     final HttpRequestInitializer delegate =
         scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()
             ? new HttpCredentialsAdapter(scopedCredentials) : null;
+    final String xGoogHeader = getXGoogApiClientHeader(serviceOptions.getLibraryVersion());
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
@@ -163,8 +164,7 @@ public class HttpTransportOptions implements TransportOptions {
         }
 
         HttpHeaders headers = httpRequest.getHeaders();
-        headers.set(
-            "x-goog-api-client", getXGoogApiClientHeader(serviceOptions.getLibraryVersion()));
+        headers.set("x-goog-api-client", xGoogHeader);
       }
     };
   }
