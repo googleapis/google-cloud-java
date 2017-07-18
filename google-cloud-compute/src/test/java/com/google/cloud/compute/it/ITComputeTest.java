@@ -1565,6 +1565,8 @@ operation.waitFor();
     operation = compute.deleteNetwork(networkId);
     operation.waitFor();
     resourceCleaner.remove(networkId);
+    assertNull(compute.getSubnetwork(firstSubnetworkId));
+    assertNull(compute.getSubnetwork(secondSubnetworkId));
     assertNull(compute.getNetwork(networkName));
   }
 
