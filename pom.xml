@@ -161,7 +161,7 @@
     <speech.version>0.20.3-alpha-SNAPSHOT</speech.version>
     <storage.version>1.2.3-SNAPSHOT</storage.version>
     <trace.version>0.20.3-alpha-SNAPSHOT</trace.version>
-    <translate.version>0.20.3-beta-SNAPSHOT</translate.version>
+    <translate.version>1.2.3-SNAPSHOT</translate.version>
     <vision.version>0.20.3-beta-SNAPSHOT</vision.version>
     <video-intelligence.version>0.20.3-alpha-SNAPSHOT</video-intelligence.version>
     <testing.version>0.20.3-alpha-SNAPSHOT</testing.version>
