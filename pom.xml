@@ -632,7 +632,6 @@
         <groupId>org.easymock</groupId>
         <artifactId>easymock</artifactId>
         <version>${easymock.version}</version>
-        <scope>test</scope>
         <exclusions>
           <exclusion>
             <groupId>org.objenesis</groupId>
@@ -644,7 +643,6 @@
         <groupId>org.objenesis</groupId>
         <artifactId>objenesis</artifactId>
         <version>${objenesis.version}</version>
-        <scope>test</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>

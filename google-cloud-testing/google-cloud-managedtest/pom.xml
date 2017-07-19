@@ -221,10 +221,12 @@
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.objenesis</groupId>
       <artifactId>objenesis</artifactId>
+      <scope>compile</scope>
     </dependency>
 
     <dependency>

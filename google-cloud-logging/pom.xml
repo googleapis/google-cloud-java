@@ -78,6 +78,7 @@
     <dependency>
       <groupId>org.objenesis</groupId>
       <artifactId>objenesis</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <profiles>
