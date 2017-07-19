@@ -22,6 +22,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.Tuple;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.Storage.BlobGetOption;
@@ -117,6 +118,7 @@ public class Bucket extends BucketInfo {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
+    @GcpLaunchStage.Alpha
     public static BucketSourceOption userProject(String userProject) {
       return new BucketSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -269,6 +271,7 @@ public class Bucket extends BucketInfo {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
+    @GcpLaunchStage.Alpha
     public static BlobTargetOption userProject(String userProject) {
       return new BlobTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -465,6 +468,7 @@ public class Bucket extends BucketInfo {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
+    @GcpLaunchStage.Alpha
     public static BlobWriteOption userProject(String userProject) {
       return new BlobWriteOption(Storage.BlobWriteOption.Option.USER_PROJECT, userProject);
     }

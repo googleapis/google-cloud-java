@@ -200,6 +200,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for bucket's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
+    @GcpLaunchStage.Alpha
     public static BucketTargetOption userProject(String userProject) {
       return new BucketTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -236,6 +237,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for bucket's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
+    @GcpLaunchStage.Alpha
     public static BucketSourceOption userProject(String userProject) {
       return new BucketSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -276,6 +278,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for bucket's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
+    @GcpLaunchStage.Alpha
     public static BucketGetOption userProject(String userProject) {
       return new BucketGetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -366,6 +369,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
+    @GcpLaunchStage.Alpha
     public static BlobTargetOption userProject(String userProject) {
       return new BlobTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -535,6 +539,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
+    @GcpLaunchStage.Alpha
     public static BlobWriteOption userProject(String userProject) {
       return new BlobWriteOption(Option.USER_PROJECT, userProject);
     }
@@ -628,6 +633,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
+    @GcpLaunchStage.Alpha
     public static BlobSourceOption userProject(String userProject) {
       return new BlobSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -717,6 +723,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
+    @GcpLaunchStage.Alpha
     public static BlobGetOption userProject(String userProject) {
       return new BlobGetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
