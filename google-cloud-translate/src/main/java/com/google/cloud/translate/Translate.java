@@ -98,9 +98,9 @@ public interface Translate extends Service<TranslateOptions> {
 
     /**
      * Sets the format of the source text, in either HTML (default) or plain-text.
-     * A value of html indicates HTML and a value of text indicates plain-text.
+     * A value of {@code html} indicates HTML and a value of {@code text} indicates plain-text.
      *
-     * @param format the format of the source text (html|text)
+     * @param format the format of the source text
      */
     public static TranslateOption format(String format) {
       return new TranslateOption(TranslateRpc.Option.FORMAT, format);

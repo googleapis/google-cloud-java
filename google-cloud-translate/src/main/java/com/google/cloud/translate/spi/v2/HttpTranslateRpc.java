@@ -126,7 +126,7 @@ public class HttpTranslateRpc implements TranslateRpc {
               .setSource(sourceLanguage)
               .setKey(options.getApiKey())
               .set("model", Option.MODEL.getString(optionMap))
-              .set(Option.FORMAT.value(), Option.FORMAT.getString(optionMap))
+              .setFormat(Option.FORMAT.getString(optionMap))
               .execute()
               .getTranslations();
       return Lists.transform(
