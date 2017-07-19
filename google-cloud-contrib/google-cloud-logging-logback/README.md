@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.20.2-alpha</version>
+  <version>0.20.3-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging-logback:0.20.2-alpha'
+compile 'com.google.cloud:google-cloud-logging-logback:0.20.3-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.20.2-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.20.3-alpha"
 ```
 
 Usage 
