@@ -29,6 +29,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Google Cloud Vision API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
@@ -42,6 +47,7 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
                       BatchAnnotateImagesRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(
                       BatchAnnotateImagesResponse.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
@@ -60,7 +66,7 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
 
   /**
    * Constructs an instance of GrpcImageAnnotatorStub, using the given settings. This is protected
-   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
   protected GrpcImageAnnotatorStub(ImageAnnotatorSettings settings, ClientContext clientContext)
@@ -80,10 +86,6 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
     return batchAnnotateImagesCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

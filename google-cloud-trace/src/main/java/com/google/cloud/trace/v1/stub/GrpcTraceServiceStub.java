@@ -35,6 +35,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Stackdriver Trace API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcTraceServiceStub extends TraceServiceStub {
@@ -60,6 +65,7 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
                   "google.devtools.cloudtrace.v1.TraceService/ListTraces",
                   io.grpc.protobuf.ProtoUtils.marshaller(ListTracesRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(ListTracesResponse.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable;
@@ -78,7 +84,8 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
 
   /**
    * Constructs an instance of GrpcTraceServiceStub, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected GrpcTraceServiceStub(TraceServiceSettings settings, ClientContext clientContext)
       throws IOException {
@@ -115,10 +122,6 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
     return listTracesCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

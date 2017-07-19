@@ -43,6 +43,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for DLP API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcDlpServiceStub extends DlpServiceStub {
@@ -103,6 +108,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       ListRootCategoriesRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(
                       ListRootCategoriesResponse.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
@@ -130,7 +136,8 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
 
   /**
    * Constructs an instance of GrpcDlpServiceStub, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected GrpcDlpServiceStub(DlpServiceSettings settings, ClientContext clientContext)
       throws IOException {
@@ -205,10 +212,6 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     return listRootCategoriesCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

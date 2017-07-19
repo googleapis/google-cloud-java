@@ -29,6 +29,11 @@ import com.google.cloud.language.v1.AnnotateTextResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * Base stub class for Google Cloud Natural Language API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public abstract class LanguageServiceStub implements BackgroundResource {

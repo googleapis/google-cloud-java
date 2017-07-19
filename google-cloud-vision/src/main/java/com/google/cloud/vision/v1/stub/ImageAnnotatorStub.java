@@ -23,6 +23,11 @@ import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * Base stub class for Google Cloud Vision API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public abstract class ImageAnnotatorStub implements BackgroundResource {

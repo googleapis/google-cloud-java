@@ -45,6 +45,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Stackdriver Monitoring API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcMetricServiceStub extends MetricServiceStub {
@@ -126,6 +131,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   io.grpc.protobuf.ProtoUtils.marshaller(
                       CreateTimeSeriesRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<
@@ -161,7 +167,8 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
 
   /**
    * Constructs an instance of GrpcMetricServiceStub, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected GrpcMetricServiceStub(MetricServiceSettings settings, ClientContext clientContext)
       throws IOException {
@@ -272,10 +279,6 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
     return createTimeSeriesCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

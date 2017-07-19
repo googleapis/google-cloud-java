@@ -37,6 +37,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Stackdriver Logging API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
@@ -75,6 +80,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
               "google.logging.v2.ConfigServiceV2/DeleteSink",
               io.grpc.protobuf.ProtoUtils.marshaller(DeleteSinkRequest.getDefaultInstance()),
               io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListSinksRequest, ListSinksResponse> listSinksCallable;
@@ -95,7 +101,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
 
   /**
    * Constructs an instance of GrpcConfigServiceV2Stub, using the given settings. This is protected
-   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
   protected GrpcConfigServiceV2Stub(ConfigSettings settings, ClientContext clientContext)
@@ -147,10 +153,6 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
     return deleteSinkCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

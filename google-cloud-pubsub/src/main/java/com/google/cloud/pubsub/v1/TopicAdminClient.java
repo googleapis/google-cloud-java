@@ -130,7 +130,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   /**
    * Constructs an instance of TopicAdminClient, using the given settings. This is protected so that
-   * it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected TopicAdminClient(TopicAdminSettings settings) throws IOException {
     this.settings = settings;

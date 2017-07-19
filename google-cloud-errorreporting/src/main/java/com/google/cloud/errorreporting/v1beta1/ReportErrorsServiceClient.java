@@ -112,8 +112,8 @@ public class ReportErrorsServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ReportErrorsServiceClient, using the given settings. This is
-   * protected so that it easy to make a subclass, but otherwise, the static factory methods should
-   * be preferred.
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
   protected ReportErrorsServiceClient(ReportErrorsServiceSettings settings) throws IOException {
     this.settings = settings;

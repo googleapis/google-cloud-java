@@ -45,6 +45,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Google Cloud Pub/Sub API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcPublisherStub extends PublisherStub {
@@ -118,6 +123,7 @@ public class GrpcPublisherStub extends PublisherStub {
                       TestIamPermissionsRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(
                       TestIamPermissionsResponse.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<Topic, Topic> createTopicCallable;
@@ -145,7 +151,8 @@ public class GrpcPublisherStub extends PublisherStub {
 
   /**
    * Constructs an instance of GrpcPublisherStub, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected GrpcPublisherStub(TopicAdminSettings settings, ClientContext clientContext)
       throws IOException {
@@ -238,10 +245,6 @@ public class GrpcPublisherStub extends PublisherStub {
     return testIamPermissionsCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

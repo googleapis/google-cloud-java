@@ -118,7 +118,7 @@ public class ConfigClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ConfigClient, using the given settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected ConfigClient(ConfigSettings settings) throws IOException {
     this.settings = settings;

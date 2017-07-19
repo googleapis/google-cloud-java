@@ -125,7 +125,7 @@ public class LoggingClient implements BackgroundResource {
 
   /**
    * Constructs an instance of LoggingClient, using the given settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected LoggingClient(LoggingSettings settings) throws IOException {
     this.settings = settings;

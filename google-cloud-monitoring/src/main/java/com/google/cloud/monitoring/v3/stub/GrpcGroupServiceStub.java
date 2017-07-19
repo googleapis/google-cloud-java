@@ -40,6 +40,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Stackdriver Monitoring API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcGroupServiceStub extends GroupServiceStub {
@@ -89,6 +94,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                       ListGroupMembersRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(
                       ListGroupMembersResponse.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable;
@@ -113,7 +119,8 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
 
   /**
    * Constructs an instance of GrpcGroupServiceStub, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected GrpcGroupServiceStub(GroupServiceSettings settings, ClientContext clientContext)
       throws IOException {
@@ -180,10 +187,6 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
     return listGroupMembersCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

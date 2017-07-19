@@ -41,6 +41,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Stackdriver Logging API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
@@ -89,6 +94,7 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
               "google.logging.v2.LoggingServiceV2/ListLogs",
               io.grpc.protobuf.ProtoUtils.marshaller(ListLogsRequest.getDefaultInstance()),
               io.grpc.protobuf.ProtoUtils.marshaller(ListLogsResponse.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<DeleteLogRequest, Empty> deleteLogCallable;
@@ -117,7 +123,7 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
 
   /**
    * Constructs an instance of GrpcLoggingServiceV2Stub, using the given settings. This is protected
-   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
   protected GrpcLoggingServiceV2Stub(LoggingSettings settings, ClientContext clientContext)
@@ -192,10 +198,6 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
     return listLogsCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

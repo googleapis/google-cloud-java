@@ -30,6 +30,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Stackdriver Error Reporting API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
@@ -47,6 +52,7 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
               "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/UpdateGroup",
               io.grpc.protobuf.ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()),
               io.grpc.protobuf.ProtoUtils.marshaller(ErrorGroup.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
@@ -65,8 +71,8 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
 
   /**
    * Constructs an instance of GrpcErrorGroupServiceStub, using the given settings. This is
-   * protected so that it easy to make a subclass, but otherwise, the static factory methods should
-   * be preferred.
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
   protected GrpcErrorGroupServiceStub(
       ErrorGroupServiceSettings settings, ClientContext clientContext) throws IOException {
@@ -89,10 +95,6 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
     return updateGroupCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

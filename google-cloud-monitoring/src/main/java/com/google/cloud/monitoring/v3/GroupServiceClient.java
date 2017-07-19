@@ -128,7 +128,8 @@ public class GroupServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of GroupServiceClient, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected GroupServiceClient(GroupServiceSettings settings) throws IOException {
     this.settings = settings;

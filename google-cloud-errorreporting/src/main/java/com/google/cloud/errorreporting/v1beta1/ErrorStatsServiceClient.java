@@ -119,7 +119,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ErrorStatsServiceClient, using the given settings. This is protected
-   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
   protected ErrorStatsServiceClient(ErrorStatsServiceSettings settings) throws IOException {

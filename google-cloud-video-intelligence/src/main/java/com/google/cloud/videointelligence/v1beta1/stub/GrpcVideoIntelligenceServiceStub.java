@@ -33,6 +33,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Google Cloud Video Intelligence API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceStub {
@@ -43,6 +48,7 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
               "google.cloud.videointelligence.v1beta1.VideoIntelligenceService/AnnotateVideo",
               io.grpc.protobuf.ProtoUtils.marshaller(AnnotateVideoRequest.getDefaultInstance()),
               io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
@@ -64,8 +70,8 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
 
   /**
    * Constructs an instance of GrpcVideoIntelligenceServiceStub, using the given settings. This is
-   * protected so that it easy to make a subclass, but otherwise, the static factory methods should
-   * be preferred.
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
   protected GrpcVideoIntelligenceServiceStub(
       VideoIntelligenceServiceSettings settings, ClientContext clientContext) throws IOException {
@@ -100,10 +106,6 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
     return annotateVideoCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

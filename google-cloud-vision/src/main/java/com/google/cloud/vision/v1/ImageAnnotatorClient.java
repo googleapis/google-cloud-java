@@ -109,7 +109,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ImageAnnotatorClient, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected ImageAnnotatorClient(ImageAnnotatorSettings settings) throws IOException {
     this.settings = settings;

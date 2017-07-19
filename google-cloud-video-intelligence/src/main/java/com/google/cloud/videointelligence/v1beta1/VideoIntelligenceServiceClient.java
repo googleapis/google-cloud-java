@@ -118,8 +118,8 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of VideoIntelligenceServiceClient, using the given settings. This is
-   * protected so that it easy to make a subclass, but otherwise, the static factory methods should
-   * be preferred.
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
   protected VideoIntelligenceServiceClient(VideoIntelligenceServiceSettings settings)
       throws IOException {

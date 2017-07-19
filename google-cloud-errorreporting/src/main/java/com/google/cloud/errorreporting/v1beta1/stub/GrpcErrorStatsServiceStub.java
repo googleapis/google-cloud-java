@@ -36,6 +36,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Stackdriver Error Reporting API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
@@ -66,6 +71,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
                   io.grpc.protobuf.ProtoUtils.marshaller(DeleteEventsRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(
                       DeleteEventsResponse.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable;
@@ -88,8 +94,8 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
 
   /**
    * Constructs an instance of GrpcErrorStatsServiceStub, using the given settings. This is
-   * protected so that it easy to make a subclass, but otherwise, the static factory methods should
-   * be preferred.
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
   protected GrpcErrorStatsServiceStub(
       ErrorStatsServiceSettings settings, ClientContext clientContext) throws IOException {
@@ -134,10 +140,6 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
     return deleteEventsCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

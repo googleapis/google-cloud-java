@@ -29,6 +29,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Stackdriver Error Reporting API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
@@ -42,6 +47,7 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
                       ReportErrorEventRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(
                       ReportErrorEventResponse.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>
@@ -60,8 +66,8 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
 
   /**
    * Constructs an instance of GrpcReportErrorsServiceStub, using the given settings. This is
-   * protected so that it easy to make a subclass, but otherwise, the static factory methods should
-   * be preferred.
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
   protected GrpcReportErrorsServiceStub(
       ReportErrorsServiceSettings settings, ClientContext clientContext) throws IOException {
@@ -78,10 +84,6 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
     return reportErrorEventCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();

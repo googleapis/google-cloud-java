@@ -51,6 +51,11 @@ import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * Base stub class for Google Cloud Pub/Sub API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public abstract class SubscriberStub implements BackgroundResource {

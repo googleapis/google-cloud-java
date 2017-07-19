@@ -215,7 +215,7 @@ public class DlpServiceSettings extends ClientSettings {
   }
 
   /**
-   * Returns a builder for this class with recommened defaults for API methods, and the given
+   * Returns a builder for this class with recommended defaults for API methods, and the given
    * ClientContext used for executor/transport/credentials.
    */
   public static Builder defaultBuilder(ClientContext clientContext) {

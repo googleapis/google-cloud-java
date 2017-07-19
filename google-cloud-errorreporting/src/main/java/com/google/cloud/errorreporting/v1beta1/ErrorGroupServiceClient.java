@@ -111,7 +111,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ErrorGroupServiceClient, using the given settings. This is protected
-   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
   protected ErrorGroupServiceClient(ErrorGroupServiceSettings settings) throws IOException {

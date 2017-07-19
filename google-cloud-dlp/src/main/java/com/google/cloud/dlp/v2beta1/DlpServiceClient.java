@@ -134,7 +134,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of DlpServiceClient, using the given settings. This is protected so that
-   * it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected DlpServiceClient(DlpServiceSettings settings) throws IOException {
     this.settings = settings;

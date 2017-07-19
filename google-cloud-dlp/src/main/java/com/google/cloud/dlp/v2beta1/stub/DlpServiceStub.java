@@ -37,6 +37,11 @@ import com.google.privacy.dlp.v2beta1.RedactContentResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * Base stub class for DLP API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public abstract class DlpServiceStub implements BackgroundResource {

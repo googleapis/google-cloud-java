@@ -38,6 +38,11 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * gRPC stub implementation for Google Cloud Speech API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcSpeechStub extends SpeechStub {
@@ -69,6 +74,7 @@ public class GrpcSpeechStub extends SpeechStub {
                       StreamingRecognizeRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(
                       StreamingRecognizeResponse.getDefaultInstance())));
+
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
@@ -90,7 +96,7 @@ public class GrpcSpeechStub extends SpeechStub {
 
   /**
    * Constructs an instance of GrpcSpeechStub, using the given settings. This is protected so that
-   * it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected GrpcSpeechStub(SpeechSettings settings, ClientContext clientContext)
       throws IOException {
@@ -140,10 +146,6 @@ public class GrpcSpeechStub extends SpeechStub {
     return streamingRecognizeCallable;
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
     shutdown();
