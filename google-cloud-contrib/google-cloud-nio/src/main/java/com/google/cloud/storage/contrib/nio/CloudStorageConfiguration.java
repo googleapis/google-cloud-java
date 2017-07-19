@@ -72,6 +72,7 @@ public abstract class CloudStorageConfiguration {
    * <li>Performing I/O on paths with extra slashes, e.g. {@code a//b} will throw an error.
    * <li>The prefix slash on absolute paths will be removed when converting to an object name.
    * <li>Pseudo-directories are enabled, so any path with a trailing slash is a fake directory.
+   * <li>Channel re-opens are disabled.
    * </ul>
    */
   public static Builder builder() {
@@ -159,11 +160,27 @@ public abstract class CloudStorageConfiguration {
           maxChannelReopens);
     }
 
+    Builder(CloudStorageConfiguration toModify) {
+      workingDirectory = toModify.workingDirectory();
+      permitEmptyPathComponents = toModify.permitEmptyPathComponents();
+      stripPrefixSlash = toModify.stripPrefixSlash();
+      usePseudoDirectories = toModify.usePseudoDirectories();
+      blockSize = toModify.blockSize();
+      maxChannelReopens = toModify.maxChannelReopens();
+    }
+
     Builder() {}
   }
 
   static CloudStorageConfiguration fromMap(Map<String, ?> env) {
-    Builder builder = builder();
+    return fromMap(builder(), env);
+  }
+
+  static CloudStorageConfiguration fromMap(CloudStorageConfiguration defaultValues, Map<String, ?> env) {
+    return fromMap(new Builder(defaultValues), env);
+  }
+
+  static private CloudStorageConfiguration fromMap(Builder builder, Map<String, ?> env) {
     for (Map.Entry<String, ?> entry : env.entrySet()) {
       switch (entry.getKey()) {
         case "workingDirectory":

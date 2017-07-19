@@ -71,6 +71,10 @@ public class Bucket extends BucketInfo {
       super(rpcOption, null);
     }
 
+    private BucketSourceOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
     private Storage.BucketSourceOption toSourceOption(BucketInfo bucketInfo) {
       switch (getRpcOption()) {
         case IF_METAGENERATION_MATCH:
@@ -107,6 +111,14 @@ public class Bucket extends BucketInfo {
      */
     public static BucketSourceOption metagenerationNotMatch() {
       return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
+    }
+
+    /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    public static BucketSourceOption userProject(String userProject) {
+      return new BucketSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
 
     static Storage.BucketSourceOption[] toSourceOptions(BucketInfo bucketInfo,

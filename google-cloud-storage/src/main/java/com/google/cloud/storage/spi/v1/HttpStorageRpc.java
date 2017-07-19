@@ -235,6 +235,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
+          .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -450,6 +451,7 @@ public class HttpStorageRpc implements StorageRpc {
           .compose(target.getBucket(), target.getName(), request)
           .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(targetOptions))
           .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(targetOptions))
+          .setUserProject(Option.USER_PROJECT.getString(targetOptions))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);

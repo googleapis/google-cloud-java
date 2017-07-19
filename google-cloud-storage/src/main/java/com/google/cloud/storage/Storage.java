@@ -212,8 +212,8 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = 5185657617120212117L;
 
-    private BucketSourceOption(StorageRpc.Option rpcOption, Object metageneration) {
-      super(rpcOption, metageneration);
+    private BucketSourceOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
     }
 
     /**

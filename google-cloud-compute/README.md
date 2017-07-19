@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>0.20.1-alpha</version>
+  <version>0.20.2-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-compute:0.20.1-alpha'
+compile 'com.google.cloud:google-cloud-compute:0.20.2-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.20.1-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.20.2-alpha"
 ```
 
 Example Application
