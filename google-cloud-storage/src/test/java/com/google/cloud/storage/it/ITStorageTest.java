@@ -50,7 +50,6 @@ import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageRoles;
-import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -84,7 +83,6 @@ import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.google.protobuf.Option;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
