@@ -16,13 +16,13 @@ This client supports the following Google Cloud Platform services at a [GA](#ver
 -  [Stackdriver Logging](#stackdriver-logging-ga) (GA)
 -  [Cloud Datastore](#google-cloud-datastore-ga) (GA)
 -  [Cloud Storage](#google-cloud-storage-ga) (GA)
+-  [Cloud Translation](#google-translation-ga) (GA)
 
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
 -  [BigQuery](#google-cloud-bigquery-beta) (Beta)
 -  [Cloud Pub/Sub](#google-cloud-pubsub-beta) (Beta)
 -  [Cloud Spanner](#cloud-spanner-beta) (Beta)
--  [Cloud Translation](#google-translation-beta) (Beta)
 -  [Cloud Natural Language](#google-cloud-language-beta) (Beta)
 -  [Cloud Vision](#google-cloud-vision-beta) (Beta)
 
@@ -54,16 +54,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.20.2-alpha</version>
+  <version>0.20.3-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.20.2-alpha'
+compile 'com.google.cloud:google-cloud:0.20.3-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.20.2-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.20.3-alpha"
 ```
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
@@ -366,6 +366,40 @@ if (blob != null) {
   channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
   channel.close();
 }
+```
+
+Google Translation (GA)
+----------------
+
+- [API Documentation][translate-api]
+- [Official Documentation][translate-docs]
+
+#### Preview
+
+Here's a snippet showing a simple usage example. The example shows how to detect the language of
+some text and how to translate some text. The example assumes that either Application Default
+Credentials or a valid API key are available. An API key stored in the `GOOGLE_API_KEY` environment
+variable will be automatically detected. Complete source code can be found at
+[DetectLanguageAndTranslate.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java).
+
+```java
+import com.google.cloud.translate.Detection;
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.Translate.TranslateOption;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
+
+Translate translate = TranslateOptions.getDefaultInstance().getService();
+
+Detection detection = translate.detect("Hola");
+String detectedLanguage = detection.getLanguage();
+
+Translation translation = translate.translate(
+    "World",
+    TranslateOption.sourceLanguage("en"),
+    TranslateOption.targetLanguage(detectedLanguage));
+
+System.out.printf("Hola %s%n", translation.getTranslatedText());
 ```
 
 Google Cloud BigQuery (Beta)
@@ -740,40 +774,6 @@ System.out.println("Projects I can view:");
 while (projectIterator.hasNext()) {
   System.out.println(projectIterator.next().getProjectId());
 }
-```
-
-Google Translation (Beta)
-----------------
-
-- [API Documentation][translate-api]
-- [Official Documentation][translate-docs]
-
-#### Preview
-
-Here's a snippet showing a simple usage example. The example shows how to detect the language of
-some text and how to translate some text. The example assumes that either Application Default
-Credentials or a valid API key are available. An API key stored in the `GOOGLE_API_KEY` environment
-variable will be automatically detected. Complete source code can be found at
-[DetectLanguageAndTranslate.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java).
-
-```java
-import com.google.cloud.translate.Detection;
-import com.google.cloud.translate.Translate;
-import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.TranslateOptions;
-import com.google.cloud.translate.Translation;
-
-Translate translate = TranslateOptions.getDefaultInstance().getService();
-
-Detection detection = translate.detect("Hola");
-String detectedLanguage = detection.getLanguage();
-
-Translation translation = translate.translate(
-    "World",
-    TranslateOption.sourceLanguage("en"),
-    TranslateOption.targetLanguage(detectedLanguage));
-
-System.out.printf("Hola %s%n", translation.getTranslatedText());
 ```
 
 Google Cloud Speech (Alpha)
