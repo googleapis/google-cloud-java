@@ -29,7 +29,8 @@ public interface TranslateRpc extends ServiceRpc {
   enum Option {
     SOURCE_LANGUAGE("source"),
     TARGET_LANGUAGE("target"),
-    MODEL("model");
+    MODEL("model"),
+    FORMAT("format");
 
     private final String value;
 
