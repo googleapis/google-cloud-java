@@ -165,6 +165,9 @@
     <vision.version>0.20.4-beta-SNAPSHOT</vision.version>
     <video-intelligence.version>0.20.4-alpha-SNAPSHOT</video-intelligence.version>
     <testing.version>0.20.4-alpha-SNAPSHOT</testing.version>
+
+    <easymock.version>3.4</easymock.version>
+    <objenesis.version>2.6</objenesis.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -624,6 +627,22 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
         <version>${guava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.easymock</groupId>
+        <artifactId>easymock</artifactId>
+        <version>${easymock.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.objenesis</groupId>
+            <artifactId>objenesis</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.objenesis</groupId>
+        <artifactId>objenesis</artifactId>
+        <version>${objenesis.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
