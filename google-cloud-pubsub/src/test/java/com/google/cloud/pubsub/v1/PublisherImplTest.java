@@ -16,15 +16,19 @@
 
 package com.google.cloud.pubsub.v1;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.core.FixedExecutorProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.FixedExecutorProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.auth.Credentials;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;

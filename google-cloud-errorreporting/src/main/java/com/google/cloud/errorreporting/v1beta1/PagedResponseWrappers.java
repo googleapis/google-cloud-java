@@ -18,17 +18,17 @@ package com.google.cloud.errorreporting.v1beta1;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.gax.grpc.AbstractFixedSizeCollection;
-import com.google.api.gax.grpc.AbstractPage;
-import com.google.api.gax.grpc.AbstractPagedListResponse;
-import com.google.api.gax.grpc.PageContext;
+import com.google.api.core.BetaApi;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
-import com.google.protobuf.ExperimentalApi;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -39,7 +39,7 @@ import javax.annotation.Generated;
  * page streaming pattern.
  */
 @Generated("by GAPIC")
-@ExperimentalApi
+@BetaApi
 public class PagedResponseWrappers {
 
   public static class ListGroupStatsPagedResponse
@@ -89,7 +89,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListGroupStatsPage> createPageAsync(
+    public ApiFuture<ListGroupStatsPage> createPageAsync(
         PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
         ApiFuture<ListGroupStatsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -162,7 +162,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListEventsPage> createPageAsync(
+    public ApiFuture<ListEventsPage> createPageAsync(
         PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
         ApiFuture<ListEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);

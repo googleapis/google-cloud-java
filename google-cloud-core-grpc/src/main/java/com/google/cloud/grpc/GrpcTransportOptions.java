@@ -19,15 +19,15 @@ package com.google.cloud.grpc;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
-import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
@@ -181,8 +181,9 @@ public class GrpcTransportOptions implements TransportOptions {
   /**
    * Returns a builder for API call settings.
    */
+  @Deprecated
   public UnaryCallSettings.Builder getApiCallSettings(RetrySettings retrySettings) {
-    return UnaryCallSettings.newBuilder().setRetrySettingsBuilder(retrySettings.toBuilder());
+    return UnaryCallSettings.newUnaryCallSettingsBuilder().setRetrySettings(retrySettings);
   }
 
   /**
@@ -193,10 +194,6 @@ public class GrpcTransportOptions implements TransportOptions {
     providerBuilder.setEndpoint(serviceOptions.getHost())
         .setClientLibHeader(ServiceOptions.getGoogApiClientLibName(),
             firstNonNull(serviceOptions.getLibraryVersion(), ""));
-    Credentials scopedCredentials = serviceOptions.getScopedCredentials();
-    if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
-      providerBuilder.setCredentialsProvider(FixedCredentialsProvider.create(scopedCredentials));
-    }
     return providerBuilder.build();
   }
 

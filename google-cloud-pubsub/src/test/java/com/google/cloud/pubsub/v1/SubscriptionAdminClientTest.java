@@ -19,12 +19,13 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSnapshotsPage
 import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.ApiException;
-import com.google.api.gax.grpc.ApiStreamObserver;
-import com.google.api.gax.grpc.StreamingCallable;
+import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
+import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.api.gax.rpc.StreamingCallable;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -102,7 +103,10 @@ public class SubscriptionAdminClientTest {
     serviceHelper.reset();
     SubscriptionAdminSettings settings =
         SubscriptionAdminSettings.defaultBuilder()
-            .setChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportProvider(
+                GrpcTransportProvider.newBuilder()
+                    .setChannelProvider(serviceHelper.createChannelProvider())
+                    .build())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = SubscriptionAdminClient.create(settings);
@@ -162,8 +166,8 @@ public class SubscriptionAdminClientTest {
 
       client.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -206,8 +210,8 @@ public class SubscriptionAdminClientTest {
 
       client.getSubscription(subscription);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -250,8 +254,8 @@ public class SubscriptionAdminClientTest {
 
       client.listSubscriptions(project);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -283,8 +287,8 @@ public class SubscriptionAdminClientTest {
 
       client.deleteSubscription(subscription);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -322,8 +326,8 @@ public class SubscriptionAdminClientTest {
 
       client.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -358,8 +362,8 @@ public class SubscriptionAdminClientTest {
 
       client.acknowledge(subscription, ackIds);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -398,8 +402,8 @@ public class SubscriptionAdminClientTest {
 
       client.pull(subscription, returnImmediately, maxMessages);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -497,8 +501,8 @@ public class SubscriptionAdminClientTest {
 
       client.modifyPushConfig(subscription, pushConfig);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -541,8 +545,8 @@ public class SubscriptionAdminClientTest {
 
       client.listSnapshots(project);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -581,8 +585,8 @@ public class SubscriptionAdminClientTest {
 
       client.createSnapshot(name, subscription);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -614,8 +618,8 @@ public class SubscriptionAdminClientTest {
 
       client.deleteSnapshot(snapshot);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -653,8 +657,8 @@ public class SubscriptionAdminClientTest {
 
       client.setIamPolicy(formattedResource, policy);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -689,8 +693,8 @@ public class SubscriptionAdminClientTest {
 
       client.getIamPolicy(formattedResource);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -727,8 +731,8 @@ public class SubscriptionAdminClientTest {
 
       client.testIamPermissions(formattedResource, permissions);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 }

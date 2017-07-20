@@ -15,25 +15,33 @@
  */
 package com.google.cloud.errorreporting.v1beta1;
 
+import com.google.api.core.ApiFunction;
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ClientSettings;
-import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.grpc.GrpcTransport;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.SimpleCallSettings;
-import com.google.api.gax.grpc.UnaryCallSettings;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.SimpleCallSettings;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.errorreporting.v1beta1.stub.ErrorGroupServiceStub;
+import com.google.cloud.errorreporting.v1beta1.stub.GrpcErrorGroupServiceStub;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
-import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
@@ -68,7 +76,7 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
-@ExperimentalApi
+@BetaApi
 public class ErrorGroupServiceSettings extends ClientSettings {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -83,20 +91,6 @@ public class ErrorGroupServiceSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private static final io.grpc.MethodDescriptor<GetGroupRequest, ErrorGroup> METHOD_GET_GROUP =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/GetGroup",
-          io.grpc.protobuf.ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<UpdateGroupRequest, ErrorGroup>
-      METHOD_UPDATE_GROUP =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/UpdateGroup",
-              io.grpc.protobuf.ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()));
-
   private final SimpleCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings;
   private final SimpleCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
 
@@ -108,6 +102,15 @@ public class ErrorGroupServiceSettings extends ClientSettings {
   /** Returns the object with the settings used for calls to updateGroup. */
   public SimpleCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupSettings() {
     return updateGroupSettings;
+  }
+
+  public ErrorGroupServiceStub createStub() throws IOException {
+    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
+      return GrpcErrorGroupServiceStub.create(this);
+    } else {
+      throw new UnsupportedOperationException(
+          "Transport not supported: " + getTransportProvider().getTransportName());
+    }
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -131,11 +134,20 @@ public class ErrorGroupServiceSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
+  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
         .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
-        .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return GrpcTransportProvider.newBuilder()
+        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
+  }
+
+  public static TransportProvider defaultTransportProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
   }
 
   private static String getGapicVersion() {
@@ -153,9 +165,22 @@ public class ErrorGroupServiceSettings extends ClientSettings {
     return Builder.createDefault();
   }
 
+  /**
+   * Returns a builder for this class with recommended defaults for API methods, and the given
+   * ClientContext used for executor/transport/credentials.
+   */
+  public static Builder defaultBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
   }
 
   /** Returns a builder containing all the values of this settings class. */
@@ -164,7 +189,11 @@ public class ErrorGroupServiceSettings extends ClientSettings {
   }
 
   private ErrorGroupServiceSettings(Builder settingsBuilder) throws IOException {
-    super(settingsBuilder.getExecutorProvider(), settingsBuilder.getChannelProvider());
+    super(
+        settingsBuilder.getExecutorProvider(),
+        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getClock());
 
     getGroupSettings = settingsBuilder.getGroupSettings().build();
     updateGroupSettings = settingsBuilder.updateGroupSettings().build();
@@ -177,27 +206,26 @@ public class ErrorGroupServiceSettings extends ClientSettings {
     private final SimpleCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings;
     private final SimpleCallSettings.Builder<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          Sets.immutableEnumSet(
-              Lists.<Status.Code>newArrayList(
-                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-      definitions.put(
-          "non_idempotent",
-          Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
+          ImmutableSet.copyOf(
+              Lists.<StatusCode>newArrayList(
+                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
+                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
-    private static final ImmutableMap<String, RetrySettings.Builder> RETRY_PARAM_DEFINITIONS;
+    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, RetrySettings.Builder> definitions = ImmutableMap.builder();
-      RetrySettings.Builder settingsBuilder = null;
-      settingsBuilder =
+      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
+      RetrySettings settings = null;
+      settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
@@ -205,34 +233,47 @@ public class ErrorGroupServiceSettings extends ClientSettings {
               .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L));
-      definitions.put("default", settingsBuilder);
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     private Builder() {
-      super(defaultChannelProviderBuilder().build());
+      this((ClientContext) null);
+    }
 
-      getGroupSettings = SimpleCallSettings.newBuilder(METHOD_GET_GROUP);
+    private Builder(ClientContext clientContext) {
+      super(clientContext);
 
-      updateGroupSettings = SimpleCallSettings.newBuilder(METHOD_UPDATE_GROUP);
+      getGroupSettings = SimpleCallSettings.newBuilder();
+
+      updateGroupSettings = SimpleCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(getGroupSettings, updateGroupSettings);
+
+      initDefaults(this);
     }
 
     private static Builder createDefault() {
-      Builder builder = new Builder();
+      Builder builder = new Builder((ClientContext) null);
+      builder.setTransportProvider(defaultTransportProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
 
       builder
           .getGroupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .updateGroupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
     }
@@ -254,20 +295,25 @@ public class ErrorGroupServiceSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setChannelProvider(ChannelProvider channelProvider) {
-      super.setChannelProvider(channelProvider);
+    public Builder setTransportProvider(TransportProvider transportProvider) {
+      super.setTransportProvider(transportProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
+      super.setCredentialsProvider(credentialsProvider);
       return this;
     }
 
     /**
-     * Applies the given settings to all of the unary API methods in this service. Only values that
-     * are non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllUnaryMethods(UnaryCallSettings.Builder unaryCallSettings)
-        throws Exception {
-      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, unaryCallSettings);
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 

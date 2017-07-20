@@ -18,7 +18,8 @@ package com.google.cloud.logging.v2;
 import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogMetricsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -78,7 +79,10 @@ public class MetricsClientTest {
     serviceHelper.reset();
     MetricsSettings settings =
         MetricsSettings.defaultBuilder()
-            .setChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportProvider(
+                GrpcTransportProvider.newBuilder()
+                    .setChannelProvider(serviceHelper.createChannelProvider())
+                    .build())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = MetricsClient.create(settings);
@@ -128,8 +132,8 @@ public class MetricsClientTest {
 
       client.listLogMetrics(parent);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -166,8 +170,8 @@ public class MetricsClientTest {
 
       client.getLogMetric(metricName);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -207,8 +211,8 @@ public class MetricsClientTest {
 
       client.createLogMetric(parent, metric);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -248,8 +252,8 @@ public class MetricsClientTest {
 
       client.updateLogMetric(metricName, metric);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -281,8 +285,8 @@ public class MetricsClientTest {
 
       client.deleteLogMetric(metricName);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 }

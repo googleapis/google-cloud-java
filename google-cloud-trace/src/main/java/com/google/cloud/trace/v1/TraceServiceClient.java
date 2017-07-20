@@ -15,12 +15,12 @@
  */
 package com.google.cloud.trace.v1;
 
+import static com.google.cloud.trace.v1.PagedResponseWrappers.ListTracesPagedResponse;
+
 import com.google.api.core.BetaApi;
-import com.google.api.gax.grpc.ChannelAndExecutor;
-import com.google.api.gax.grpc.ClientContext;
-import com.google.api.gax.grpc.UnaryCallable;
-import com.google.auth.Credentials;
-import com.google.cloud.trace.v1.PagedResponseWrappers.ListTracesPagedResponse;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.trace.v1.stub.TraceServiceStub;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
@@ -28,12 +28,8 @@ import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.Traces;
 import com.google.protobuf.Empty;
-import io.grpc.ManagedChannel;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
@@ -93,18 +89,11 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
+@Generated("by GAPIC v0.0.5")
 @BetaApi
-public class TraceServiceClient implements AutoCloseable {
+public class TraceServiceClient implements BackgroundResource {
   private final TraceServiceSettings settings;
-  private final ScheduledExecutorService executor;
-  private final ManagedChannel channel;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable;
-  private final UnaryCallable<GetTraceRequest, Trace> getTraceCallable;
-  private final UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable;
-  private final UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable;
+  private final TraceServiceStub stub;
 
   /** Constructs an instance of TraceServiceClient with default settings. */
   public static final TraceServiceClient create() throws IOException {
@@ -120,51 +109,34 @@ public class TraceServiceClient implements AutoCloseable {
   }
 
   /**
+   * Constructs an instance of TraceServiceClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use TraceServiceSettings}.
+   */
+  public static final TraceServiceClient create(TraceServiceStub stub) {
+    return new TraceServiceClient(stub);
+  }
+
+  /**
    * Constructs an instance of TraceServiceClient, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected TraceServiceClient(TraceServiceSettings settings) throws IOException {
     this.settings = settings;
-    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
-    this.executor = channelAndExecutor.getExecutor();
-    this.channel = channelAndExecutor.getChannel();
-    Credentials credentials = settings.getCredentialsProvider().getCredentials();
+    this.stub = settings.createStub();
+  }
 
-    ClientContext clientContext =
-        ClientContext.newBuilder()
-            .setExecutor(this.executor)
-            .setChannel(this.channel)
-            .setCredentials(credentials)
-            .build();
-
-    this.patchTracesCallable = UnaryCallable.create(settings.patchTracesSettings(), clientContext);
-    this.getTraceCallable = UnaryCallable.create(settings.getTraceSettings(), clientContext);
-    this.listTracesCallable = UnaryCallable.create(settings.listTracesSettings(), clientContext);
-    this.listTracesPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listTracesSettings(), clientContext);
-
-    if (settings.getChannelProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              channel.shutdown();
-            }
-          });
-    }
-    if (settings.getExecutorProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              executor.shutdown();
-            }
-          });
-    }
+  protected TraceServiceClient(TraceServiceStub stub) {
+    this.settings = null;
+    this.stub = stub;
   }
 
   public final TraceServiceSettings getSettings() {
     return settings;
+  }
+
+  public TraceServiceStub getStub() {
+    return stub;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -186,7 +158,7 @@ public class TraceServiceClient implements AutoCloseable {
    *
    * @param projectId ID of the Cloud project where the trace data is stored.
    * @param traces The body of the message.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void patchTraces(String projectId, Traces traces) {
 
@@ -217,7 +189,7 @@ public class TraceServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void patchTraces(PatchTracesRequest request) {
     patchTracesCallable().call(request);
@@ -247,7 +219,7 @@ public class TraceServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable() {
-    return patchTracesCallable;
+    return stub.patchTracesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -266,7 +238,7 @@ public class TraceServiceClient implements AutoCloseable {
    *
    * @param projectId ID of the Cloud project where the trace data is stored.
    * @param traceId ID of the trace to return.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Trace getTrace(String projectId, String traceId) {
 
@@ -294,7 +266,7 @@ public class TraceServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final Trace getTrace(GetTraceRequest request) {
     return getTraceCallable().call(request);
@@ -321,7 +293,7 @@ public class TraceServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<GetTraceRequest, Trace> getTraceCallable() {
-    return getTraceCallable;
+    return stub.getTraceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -340,7 +312,7 @@ public class TraceServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param projectId ID of the Cloud project where the trace data is stored.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTracesPagedResponse listTraces(String projectId) {
     ListTracesRequest request = ListTracesRequest.newBuilder().setProjectId(projectId).build();
@@ -366,7 +338,7 @@ public class TraceServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTracesPagedResponse listTraces(ListTracesRequest request) {
     return listTracesPagedCallable().call(request);
@@ -393,7 +365,7 @@ public class TraceServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable() {
-    return listTracesPagedCallable;
+    return stub.listTracesPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -424,17 +396,36 @@ public class TraceServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable() {
-    return listTracesCallable;
+    return stub.listTracesCallable();
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
   }
 }

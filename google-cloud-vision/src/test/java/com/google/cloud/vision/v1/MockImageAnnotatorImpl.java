@@ -15,8 +15,6 @@
  */
 package com.google.cloud.vision.v1;
 
-import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
-import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
 import com.google.cloud.vision.v1.ImageAnnotatorGrpc.ImageAnnotatorImplBase;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
