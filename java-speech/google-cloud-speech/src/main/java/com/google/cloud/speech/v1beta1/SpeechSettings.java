@@ -15,26 +15,33 @@
  */
 package com.google.cloud.speech.v1beta1;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ClientSettings;
-import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.grpc.GrpcTransport;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.OperationCallSettings;
 import com.google.api.gax.grpc.OperationTimedPollAlgorithm;
-import com.google.api.gax.grpc.SimpleCallSettings;
-import com.google.api.gax.grpc.StreamingCallSettings;
-import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.SimpleCallSettings;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
+import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.speech.v1beta1.stub.GrpcSpeechStub;
+import com.google.cloud.speech.v1beta1.stub.SpeechStub;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.google.longrunning.Operation;
 import io.grpc.Status;
 import java.io.IOException;
@@ -83,35 +90,10 @@ public class SpeechSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private static final io.grpc.MethodDescriptor<SyncRecognizeRequest, SyncRecognizeResponse>
-      METHOD_SYNC_RECOGNIZE =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.cloud.speech.v1beta1.Speech/SyncRecognize",
-              io.grpc.protobuf.ProtoUtils.marshaller(SyncRecognizeRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(SyncRecognizeResponse.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<AsyncRecognizeRequest, Operation>
-      METHOD_ASYNC_RECOGNIZE =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.cloud.speech.v1beta1.Speech/AsyncRecognize",
-              io.grpc.protobuf.ProtoUtils.marshaller(AsyncRecognizeRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<
-          StreamingRecognizeRequest, StreamingRecognizeResponse>
-      METHOD_STREAMING_RECOGNIZE =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING,
-              "google.cloud.speech.v1beta1.Speech/StreamingRecognize",
-              io.grpc.protobuf.ProtoUtils.marshaller(
-                  StreamingRecognizeRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(
-                  StreamingRecognizeResponse.getDefaultInstance()));
-
   private final SimpleCallSettings<SyncRecognizeRequest, SyncRecognizeResponse>
       syncRecognizeSettings;
   private final OperationCallSettings<
-          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
+          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
       asyncRecognizeSettings;
   private final StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeSettings;
@@ -123,7 +105,7 @@ public class SpeechSettings extends ClientSettings {
 
   /** Returns the object with the settings used for calls to asyncRecognize. */
   public OperationCallSettings<
-          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
+          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
       asyncRecognizeSettings() {
     return asyncRecognizeSettings;
   }
@@ -132,6 +114,15 @@ public class SpeechSettings extends ClientSettings {
   public StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeSettings() {
     return streamingRecognizeSettings;
+  }
+
+  public SpeechStub createStub() throws IOException {
+    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
+      return GrpcSpeechStub.create(this);
+    } else {
+      throw new UnsupportedOperationException(
+          "Transport not supported: " + getTransportProvider().getTransportName());
+    }
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -155,10 +146,20 @@ public class SpeechSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
+  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
         .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return GrpcTransportProvider.newBuilder()
+        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
+  }
+
+  public static TransportProvider defaultTransportProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
   }
 
   private static String getGapicVersion() {
@@ -175,9 +176,22 @@ public class SpeechSettings extends ClientSettings {
     return Builder.createDefault();
   }
 
+  /**
+   * Returns a builder for this class with recommended defaults for API methods, and the given
+   * ClientContext used for executor/transport/credentials.
+   */
+  public static Builder defaultBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
   }
 
   /** Returns a builder containing all the values of this settings class. */
@@ -188,8 +202,9 @@ public class SpeechSettings extends ClientSettings {
   private SpeechSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getChannelProvider(),
-        settingsBuilder.getCredentialsProvider());
+        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getClock());
 
     syncRecognizeSettings = settingsBuilder.syncRecognizeSettings().build();
     asyncRecognizeSettings = settingsBuilder.asyncRecognizeSettings().build();
@@ -203,31 +218,32 @@ public class SpeechSettings extends ClientSettings {
     private final SimpleCallSettings.Builder<SyncRecognizeRequest, SyncRecognizeResponse>
         syncRecognizeSettings;
     private final OperationCallSettings.Builder<
-            AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
+            AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
         asyncRecognizeSettings;
     private final StreamingCallSettings.Builder<
             StreamingRecognizeRequest, StreamingRecognizeResponse>
         streamingRecognizeSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          Sets.immutableEnumSet(
-              Lists.<Status.Code>newArrayList(
-                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
+          ImmutableSet.copyOf(
+              Lists.<StatusCode>newArrayList(
+                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
+                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
-    private static final ImmutableMap<String, RetrySettings.Builder> RETRY_PARAM_DEFINITIONS;
+    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, RetrySettings.Builder> definitions = ImmutableMap.builder();
-      RetrySettings.Builder settingsBuilder = null;
-      settingsBuilder =
+      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
+      RetrySettings settings = null;
+      settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
@@ -235,38 +251,50 @@ public class SpeechSettings extends ClientSettings {
               .setInitialRpcTimeout(Duration.ofMillis(190000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(190000L))
-              .setTotalTimeout(Duration.ofMillis(600000L));
-      definitions.put("default", settingsBuilder);
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     private Builder() {
-      super(defaultChannelProviderBuilder().build());
-      setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      this((ClientContext) null);
+    }
 
-      syncRecognizeSettings = SimpleCallSettings.newBuilder(METHOD_SYNC_RECOGNIZE);
+    private Builder(ClientContext clientContext) {
+      super(clientContext);
+
+      syncRecognizeSettings = SimpleCallSettings.newBuilder();
 
       asyncRecognizeSettings = OperationCallSettings.newBuilder();
 
-      streamingRecognizeSettings = StreamingCallSettings.newBuilder(METHOD_STREAMING_RECOGNIZE);
+      streamingRecognizeSettings = StreamingCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(syncRecognizeSettings);
+
+      initDefaults(this);
     }
 
     private static Builder createDefault() {
-      Builder builder = new Builder();
+      Builder builder = new Builder((ClientContext) null);
+      builder.setTransportProvider(defaultTransportProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
 
       builder
           .syncRecognizeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .asyncRecognizeSettings()
           .setInitialCallSettings(
-              SimpleCallSettings.newBuilder(METHOD_ASYNC_RECOGNIZE)
+              SimpleCallSettings.<AsyncRecognizeRequest, Operation>newBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseClass(AsyncRecognizeResponse.class)
           .setMetadataClass(AsyncRecognizeMetadata.class)
@@ -303,8 +331,8 @@ public class SpeechSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setChannelProvider(ChannelProvider channelProvider) {
-      super.setChannelProvider(channelProvider);
+    public Builder setTransportProvider(TransportProvider transportProvider) {
+      super.setTransportProvider(transportProvider);
       return this;
     }
 
@@ -315,14 +343,13 @@ public class SpeechSettings extends ClientSettings {
     }
 
     /**
-     * Applies the given settings to all of the unary API methods in this service. Only values that
-     * are non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllUnaryMethods(UnaryCallSettings.Builder unaryCallSettings)
-        throws Exception {
-      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, unaryCallSettings);
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
@@ -334,7 +361,7 @@ public class SpeechSettings extends ClientSettings {
 
     /** Returns the builder for the settings used for calls to asyncRecognize. */
     public OperationCallSettings.Builder<
-            AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
+            AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
         asyncRecognizeSettings() {
       return asyncRecognizeSettings;
     }

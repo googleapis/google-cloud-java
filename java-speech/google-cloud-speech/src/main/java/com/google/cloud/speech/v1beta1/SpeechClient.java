@@ -16,25 +16,16 @@
 package com.google.cloud.speech.v1beta1;
 
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.grpc.ChannelAndExecutor;
-import com.google.api.gax.grpc.ClientContext;
-import com.google.api.gax.grpc.FixedChannelProvider;
-import com.google.api.gax.grpc.FixedExecutorProvider;
-import com.google.api.gax.grpc.OperationCallable;
-import com.google.api.gax.grpc.OperationFuture;
-import com.google.api.gax.grpc.StreamingCallable;
-import com.google.api.gax.grpc.UnaryCallable;
-import com.google.auth.Credentials;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.OperationFuture;
+import com.google.api.gax.rpc.StreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.speech.v1beta1.stub.SpeechStub;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
-import com.google.longrunning.OperationsSettings;
-import io.grpc.ManagedChannel;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
@@ -99,22 +90,12 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
+@Generated("by GAPIC v0.0.5")
 @BetaApi
-public class SpeechClient implements AutoCloseable {
+public class SpeechClient implements BackgroundResource {
   private final SpeechSettings settings;
-  private final ScheduledExecutorService executor;
-  private final ManagedChannel channel;
+  private final SpeechStub stub;
   private final OperationsClient operationsClient;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final UnaryCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable;
-  private final UnaryCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable;
-  private final OperationCallable<
-          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
-      asyncRecognizeOperationCallable;
-  private final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
-      streamingRecognizeCallable;
 
   /** Constructs an instance of SpeechClient with default settings. */
   public static final SpeechClient create() throws IOException {
@@ -130,64 +111,35 @@ public class SpeechClient implements AutoCloseable {
   }
 
   /**
+   * Constructs an instance of SpeechClient, using the given stub for making calls. This is for
+   * advanced usage - prefer to use SpeechSettings}.
+   */
+  public static final SpeechClient create(SpeechStub stub) {
+    return new SpeechClient(stub);
+  }
+
+  /**
    * Constructs an instance of SpeechClient, using the given settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected SpeechClient(SpeechSettings settings) throws IOException {
     this.settings = settings;
-    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
-    this.executor = channelAndExecutor.getExecutor();
-    this.channel = channelAndExecutor.getChannel();
-    Credentials credentials = settings.getCredentialsProvider().getCredentials();
+    this.stub = settings.createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+  }
 
-    ClientContext clientContext =
-        ClientContext.newBuilder()
-            .setExecutor(this.executor)
-            .setChannel(this.channel)
-            .setCredentials(credentials)
-            .build();
-
-    OperationsSettings operationsSettings =
-        OperationsSettings.defaultBuilder()
-            .setExecutorProvider(FixedExecutorProvider.create(this.executor))
-            .setChannelProvider(FixedChannelProvider.create(this.channel))
-            .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
-            .build();
-    this.operationsClient = OperationsClient.create(operationsSettings);
-
-    this.syncRecognizeCallable =
-        UnaryCallable.create(settings.syncRecognizeSettings(), clientContext);
-    this.asyncRecognizeCallable =
-        UnaryCallable.create(
-            settings.asyncRecognizeSettings().getInitialCallSettings(), clientContext);
-    this.asyncRecognizeOperationCallable =
-        OperationCallable.create(
-            settings.asyncRecognizeSettings(), clientContext, this.operationsClient);
-    this.streamingRecognizeCallable =
-        StreamingCallable.create(settings.streamingRecognizeSettings(), clientContext);
-
-    if (settings.getChannelProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              channel.shutdown();
-            }
-          });
-    }
-    if (settings.getExecutorProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              executor.shutdown();
-            }
-          });
-    }
+  protected SpeechClient(SpeechStub stub) {
+    this.settings = null;
+    this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final SpeechSettings getSettings() {
     return settings;
+  }
+
+  public SpeechStub getStub() {
+    return stub;
   }
 
   /**
@@ -224,7 +176,7 @@ public class SpeechClient implements AutoCloseable {
    * @param config &#42;Required&#42; Provides information to the recognizer that specifies how to
    *     process the request.
    * @param audio &#42;Required&#42; The audio data to be recognized.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SyncRecognizeResponse syncRecognize(
       RecognitionConfig config, RecognitionAudio audio) {
@@ -262,7 +214,7 @@ public class SpeechClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SyncRecognizeResponse syncRecognize(SyncRecognizeRequest request) {
     return syncRecognizeCallable().call(request);
@@ -298,7 +250,7 @@ public class SpeechClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable() {
-    return syncRecognizeCallable;
+    return stub.syncRecognizeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -329,10 +281,10 @@ public class SpeechClient implements AutoCloseable {
    * @param config &#42;Required&#42; Provides information to the recognizer that specifies how to
    *     process the request.
    * @param audio &#42;Required&#42; The audio data to be recognized.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata> asyncRecognizeAsync(
-      RecognitionConfig config, RecognitionAudio audio) {
+  public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
+      asyncRecognizeAsync(RecognitionConfig config, RecognitionAudio audio) {
 
     AsyncRecognizeRequest request =
         AsyncRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
@@ -369,10 +321,10 @@ public class SpeechClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata> asyncRecognizeAsync(
-      AsyncRecognizeRequest request) {
+  public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
+      asyncRecognizeAsync(AsyncRecognizeRequest request) {
     return asyncRecognizeOperationCallable().futureCall(request);
   }
 
@@ -408,9 +360,9 @@ public class SpeechClient implements AutoCloseable {
    * </code></pre>
    */
   public final OperationCallable<
-          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
+          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
       asyncRecognizeOperationCallable() {
-    return asyncRecognizeOperationCallable;
+    return stub.asyncRecognizeOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -445,7 +397,7 @@ public class SpeechClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable() {
-    return asyncRecognizeCallable;
+    return stub.asyncRecognizeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -484,17 +436,36 @@ public class SpeechClient implements AutoCloseable {
    */
   public final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable() {
-    return streamingRecognizeCallable;
+    return stub.streamingRecognizeCallable();
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
   }
 }
