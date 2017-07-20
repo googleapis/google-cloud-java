@@ -24,10 +24,12 @@ import com.google.protobuf.ListValue;
 
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Nullable;
 
 /**
@@ -188,9 +190,17 @@ public final class Mutation implements Serializable {
       return binder;
     }
 
+    /**
+     * Returns a newly created {@code Mutation} based on the contents of the {@code Builder}.
+     *
+     * @throws IllegalStateException if any duplicate columns are present. Duplicate detection is
+     * case-insensitive.
+     */
     public Mutation build() {
       checkBindingInProgress(false);
-      return new Mutation(table, operation, columns.build(), values.build(), null);
+      ImmutableList<String> columnNames = columns.build();
+      checkDuplicateColumns(columnNames);
+      return new Mutation(table, operation, columnNames, values.build(), null);
     }
 
     private void checkBindingInProgress(boolean expectInProgress) {
@@ -198,6 +208,17 @@ public final class Mutation implements Serializable {
         checkState(currentColumn != null, "No binding currently active");
       } else if (currentColumn != null) {
         throw new IllegalStateException("Incomplete binding for column " + currentColumn);
+      }
+    }
+
+    private void checkDuplicateColumns(ImmutableList<String> columnNames) {
+      Set<String> columnNameSet = new HashSet<>();
+      for (String columnName : columns.build()) {
+        columnName = columnName.toLowerCase();
+        if (columnNameSet.contains(columnName)) {
+          throw new IllegalStateException("Duplicate column: " + columnName);
+        }
+        columnNameSet.add(columnName);
       }
     }
   }
@@ -247,9 +268,6 @@ public final class Mutation implements Serializable {
     LinkedHashMap<String, Value> map = new LinkedHashMap<>();
     for (int i = 0; i < columns.size(); ++i) {
       Value existing = map.put(columns.get(i), values.get(i));
-      if (existing != null) {
-        throw new IllegalStateException("Duplicate column: " + columns.get(i));
-      }
     }
     return Collections.unmodifiableMap(map);
   }
