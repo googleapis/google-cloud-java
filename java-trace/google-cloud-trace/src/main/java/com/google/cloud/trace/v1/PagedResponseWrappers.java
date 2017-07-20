@@ -19,10 +19,10 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.grpc.AbstractFixedSizeCollection;
-import com.google.api.gax.grpc.AbstractPage;
-import com.google.api.gax.grpc.AbstractPagedListResponse;
-import com.google.api.gax.grpc.PageContext;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
 import com.google.devtools.cloudtrace.v1.Trace;
@@ -85,7 +85,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListTracesPage> createPageAsync(
+    public ApiFuture<ListTracesPage> createPageAsync(
         PageContext<ListTracesRequest, ListTracesResponse, Trace> context,
         ApiFuture<ListTracesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
