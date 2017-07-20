@@ -147,17 +147,30 @@ $ gcloud beta emulators pubsub env-init
 
 3. Point your client to the emulator.
 ```java
-ChannelProvider channelProvider =
-    // SubscriptionAdminSettings works too.
-    TopicAdminSettings.defaultChannelProviderBuilder()
-        .setEndpoint(System.getenv("PUBSUB_EMULATOR_HOST"))
-        .setCredentialsProvider(
-            FixedCredentialsProvider.create(NoCredentials.getInstance()))
-        .build();
-TopicAdminClient topicClient = TopicAdminClient.create(
-    TopicAdminSettings.defaultBuilder().setChannelProvider(channelProvider).build());
-Publisher publisher =
-    Publisher.newBuilder(topicName).setChannelProvider(channelProvider).build();
+String hostport = System.getenv("PUBSUB_EMULATOR_HOST");
+ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext(true).build();
+try {
+  ChannelProvider channelProvider = FixedChannelProvider.create(channel);
+  CredentialsProvider credentialsProvider = new NoCredentialsProvider();
+
+  // Similarly for SubscriptionAdminSettings
+  TopicAdminClient topicClient = TopicAdminClient.create(
+    TopicAdminSettings
+      .defaultBuilder()
+      .setChannelProvider(channelProvider)
+      .setCredentialsProvider(credentialsProvider)
+      .build());
+
+  // Similarly for Subscriber
+  Publisher publisher =
+    Publisher
+      .newBuilder(topicName)
+      .setChannelProvider(channelProvider)
+      .setCredentialsProvider(credentialsProvider)
+      .build();
+} finally {
+  channel.shutdown();
+}
 ```
 
 ### Testing code that uses Resource Manager
