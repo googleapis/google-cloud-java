@@ -213,7 +213,7 @@ public final class Mutation implements Serializable {
 
     private void checkDuplicateColumns(ImmutableList<String> columnNames) {
       Set<String> columnNameSet = new HashSet<>();
-      for (String columnName : columns.build()) {
+      for (String columnName : columnNames) {
         columnName = columnName.toLowerCase();
         if (columnNameSet.contains(columnName)) {
           throw new IllegalStateException("Duplicate column: " + columnName);

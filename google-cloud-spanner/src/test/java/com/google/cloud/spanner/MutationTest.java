@@ -126,14 +126,14 @@ public class MutationTest {
   public void duplicateColumn() {
     expectedException.expect(IllegalStateException.class);
     expectedException.expectMessage("Duplicate column");
-    Mutation m = Mutation.newInsertBuilder("T1").set("C1").to(true).set("C1").to(false).build();
+    Mutation.newInsertBuilder("T1").set("C1").to(true).set("C1").to(false).build();
   }
 
   @Test
   public void duplicateColumnCaseInsensitive() {
     expectedException.expect(IllegalStateException.class);
     expectedException.expectMessage("Duplicate column");
-    Mutation m = Mutation.newInsertBuilder("T1").set("C1").to(true).set("c1").to(false).build();
+    Mutation.newInsertBuilder("T1").set("C1").to(true).set("c1").to(false).build();
   }
 
   @Test
