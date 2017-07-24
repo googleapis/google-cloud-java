@@ -18,7 +18,7 @@ mvn site -DskipTests -Djava.util.logging.config.file=logging.properties
 mvn site:stage --quiet -Djava.util.logging.config.file=logging.properties -DtopSiteURL=http://googlecloudplatform.github.io/google-cloud-java/site/${SITE_VERSION_BASE}/
 cd tmp_gh-pages
 
-for dir in ../target/staging/${SITE_VERSION_BASE}*
+for dir in ../target/staging/*
 do
     cp -r ${dir}/* $SITE_VERSION_BASE/
 done
@@ -29,5 +29,18 @@ echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='http://GoogleCl
 git add index.html
 echo "<html><head><script>window.location.replace('/google-cloud-java/${SITE_VERSION_BASE}/apidocs' + location.search)</script></head><body></body></html>" > apidocs/index.html
 git add apidocs/index.html
+
+cd ..
+mvn site:stage --quiet -Djava.util.logging.config.file=logging.properties -DtopSiteURL=http://googlecloudplatform.github.io/google-cloud-java/site/latest/
+cd tmp_gh-pages
+rm -rf latest
+mkdir latest
+for dir in ../target/staging/*
+do
+    cp -r ${dir}/* latest/
+done
+
+sed -i "s/{{SITE_VERSION}}/$SITE_VERSION/g" latest/index.html # Update "Quickstart with Maven" to reflect version change
+git add latest
 
 echo "Site generated under tmp_gh-pages/. The changes must be committed from that directory."
