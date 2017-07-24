@@ -515,9 +515,30 @@ public  final class GetIamPolicyRequest extends
     }
 
 
+    public final Builder setResourceWithResourceName(com.google.api.resourcenames.ResourceName value) {
+      if (value == null) {
+        return setResource("");
+      }
+      return setResource(value.toString());
+    }
+    
+    public final com.google.api.resourcenames.ResourceName getResourceAsResourceName() {
+      java.lang.String str = getResource();
+      if (str.isEmpty()) {
+        return null;
+      }
+      return com.google.api.resourcenames.UntypedResourceName.parse(str);
+    }
     // @@protoc_insertion_point(builder_scope:google.iam.v1.GetIamPolicyRequest)
   }
 
+  public final com.google.api.resourcenames.ResourceName getResourceAsResourceName() {
+    java.lang.String str = getResource();
+    if (str.isEmpty()) {
+      return null;
+    }
+    return com.google.api.resourcenames.UntypedResourceName.parse(str);
+  }
   // @@protoc_insertion_point(class_scope:google.iam.v1.GetIamPolicyRequest)
   private static final com.google.iam.v1.GetIamPolicyRequest DEFAULT_INSTANCE;
   static {

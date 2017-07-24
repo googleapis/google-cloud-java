@@ -781,9 +781,30 @@ public  final class TestIamPermissionsRequest extends
     }
 
 
+    public final Builder setResourceWithResourceName(com.google.api.resourcenames.ResourceName value) {
+      if (value == null) {
+        return setResource("");
+      }
+      return setResource(value.toString());
+    }
+    
+    public final com.google.api.resourcenames.ResourceName getResourceAsResourceName() {
+      java.lang.String str = getResource();
+      if (str.isEmpty()) {
+        return null;
+      }
+      return com.google.api.resourcenames.UntypedResourceName.parse(str);
+    }
     // @@protoc_insertion_point(builder_scope:google.iam.v1.TestIamPermissionsRequest)
   }
 
+  public final com.google.api.resourcenames.ResourceName getResourceAsResourceName() {
+    java.lang.String str = getResource();
+    if (str.isEmpty()) {
+      return null;
+    }
+    return com.google.api.resourcenames.UntypedResourceName.parse(str);
+  }
   // @@protoc_insertion_point(class_scope:google.iam.v1.TestIamPermissionsRequest)
   private static final com.google.iam.v1.TestIamPermissionsRequest DEFAULT_INSTANCE;
   static {
