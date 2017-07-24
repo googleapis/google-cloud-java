@@ -343,7 +343,7 @@ public class BucketInfo implements Serializable {
      * Sets whether a user accessing the bucket or an object it contains should assume the transit costs
      * related to the access.
      *
-     * @GcpLaunchStage.Alpha
+     * GcpLaunchStage.Alpha
      */
     abstract Builder setRequesterPays(Boolean requesterPays);
 
@@ -505,7 +505,7 @@ public class BucketInfo implements Serializable {
       return this;
     }
 
-    /** @GcpLaunchStage.Alpha */
+    /** GcpLaunchStage.Alpha */
     @Override
     public Builder setRequesterPays(Boolean enable) {
       this.requesterPays = firstNonNull(enable, Data.<Boolean>nullOf(Boolean.class));
@@ -652,7 +652,7 @@ public class BucketInfo implements Serializable {
    * Returns {@code true} if a user accessing the bucket or an object it contains should assume the transit costs
    * related to the access, {@code false} otherwise.
    *
-   * @GcpLaunchStage.Alpha
+   * GcpLaunchStage.Alpha
    */
   public Boolean requesterPays() {
     return Data.isNull(requesterPays) ? null : requesterPays;
