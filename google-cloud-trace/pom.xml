@@ -35,7 +35,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-trace-v1</artifactId>
-      <version>0.1.13</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -73,7 +72,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-trace-v1</artifactId>
-      <version>0.1.13</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

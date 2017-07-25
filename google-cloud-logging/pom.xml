@@ -39,7 +39,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-logging-v2</artifactId>
-      <version>0.1.13</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -62,7 +61,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-logging-v2</artifactId>
-      <version>0.1.13</version>
       <scope>test</scope>
     </dependency>
     <dependency>
