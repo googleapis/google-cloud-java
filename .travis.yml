@@ -16,7 +16,20 @@ before_install:
 - cp target/travis/logging.properties logging.properties
 install: mvn install --quiet -Djava.util.logging.config.file=logging.properties -DskipTests=true
   -Dgpg.skip=true
+cache:
+  directories:
+    - "$HOME/google-cloud-sdk/"
 script:
+- |
+  if [ ! -d "$HOME/google-cloud-sdk/bin" ]
+  then
+    rm -rf "$HOME/google-cloud-sdk"
+    export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+    curl https://sdk.cloud.google.com | bash
+  fi
+  gcloud components update
+  source "$HOME/google-cloud-sdk/path.bash.inc"
+  gcloud version
 - travis_wait 60 utilities/verify.sh
 after_success:
 - utilities/after_success.sh
