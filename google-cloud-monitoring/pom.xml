@@ -35,7 +35,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-monitoring-v3</artifactId>
-      <version>0.1.13</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -63,13 +62,16 @@
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <version>3.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.objenesis</groupId>
+      <artifactId>objenesis</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
-      <version>0.1.13</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

@@ -15,25 +15,32 @@
  */
 package com.google.cloud.dlp.v2beta1;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ClientSettings;
-import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.grpc.GrpcTransport;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.OperationCallSettings;
 import com.google.api.gax.grpc.OperationTimedPollAlgorithm;
-import com.google.api.gax.grpc.SimpleCallSettings;
-import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.SimpleCallSettings;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.dlp.v2beta1.stub.DlpServiceStub;
+import com.google.cloud.dlp.v2beta1.stub.GrpcDlpServiceStub;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.google.longrunning.Operation;
 import com.google.privacy.dlp.v2beta1.CreateInspectOperationRequest;
 import com.google.privacy.dlp.v2beta1.InspectContentRequest;
@@ -95,62 +102,13 @@ public class DlpServiceSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private static final io.grpc.MethodDescriptor<InspectContentRequest, InspectContentResponse>
-      METHOD_INSPECT_CONTENT =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.privacy.dlp.v2beta1.DlpService/InspectContent",
-              io.grpc.protobuf.ProtoUtils.marshaller(InspectContentRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(InspectContentResponse.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<RedactContentRequest, RedactContentResponse>
-      METHOD_REDACT_CONTENT =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.privacy.dlp.v2beta1.DlpService/RedactContent",
-              io.grpc.protobuf.ProtoUtils.marshaller(RedactContentRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(RedactContentResponse.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<CreateInspectOperationRequest, Operation>
-      METHOD_CREATE_INSPECT_OPERATION =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.privacy.dlp.v2beta1.DlpService/CreateInspectOperation",
-              io.grpc.protobuf.ProtoUtils.marshaller(
-                  CreateInspectOperationRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<
-          ListInspectFindingsRequest, ListInspectFindingsResponse>
-      METHOD_LIST_INSPECT_FINDINGS =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.privacy.dlp.v2beta1.DlpService/ListInspectFindings",
-              io.grpc.protobuf.ProtoUtils.marshaller(
-                  ListInspectFindingsRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(
-                  ListInspectFindingsResponse.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<ListInfoTypesRequest, ListInfoTypesResponse>
-      METHOD_LIST_INFO_TYPES =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.privacy.dlp.v2beta1.DlpService/ListInfoTypes",
-              io.grpc.protobuf.ProtoUtils.marshaller(ListInfoTypesRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(ListInfoTypesResponse.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<
-          ListRootCategoriesRequest, ListRootCategoriesResponse>
-      METHOD_LIST_ROOT_CATEGORIES =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.privacy.dlp.v2beta1.DlpService/ListRootCategories",
-              io.grpc.protobuf.ProtoUtils.marshaller(
-                  ListRootCategoriesRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(
-                  ListRootCategoriesResponse.getDefaultInstance()));
-
   private final SimpleCallSettings<InspectContentRequest, InspectContentResponse>
       inspectContentSettings;
   private final SimpleCallSettings<RedactContentRequest, RedactContentResponse>
       redactContentSettings;
   private final OperationCallSettings<
-          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
+          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata,
+          Operation>
       createInspectOperationSettings;
   private final SimpleCallSettings<ListInspectFindingsRequest, ListInspectFindingsResponse>
       listInspectFindingsSettings;
@@ -172,7 +130,8 @@ public class DlpServiceSettings extends ClientSettings {
 
   /** Returns the object with the settings used for calls to createInspectOperation. */
   public OperationCallSettings<
-          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
+          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata,
+          Operation>
       createInspectOperationSettings() {
     return createInspectOperationSettings;
   }
@@ -192,6 +151,15 @@ public class DlpServiceSettings extends ClientSettings {
   public SimpleCallSettings<ListRootCategoriesRequest, ListRootCategoriesResponse>
       listRootCategoriesSettings() {
     return listRootCategoriesSettings;
+  }
+
+  public DlpServiceStub createStub() throws IOException {
+    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
+      return GrpcDlpServiceStub.create(this);
+    } else {
+      throw new UnsupportedOperationException(
+          "Transport not supported: " + getTransportProvider().getTransportName());
+    }
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -215,10 +183,20 @@ public class DlpServiceSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
+  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
         .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return GrpcTransportProvider.newBuilder()
+        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
+  }
+
+  public static TransportProvider defaultTransportProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
   }
 
   private static String getGapicVersion() {
@@ -236,9 +214,22 @@ public class DlpServiceSettings extends ClientSettings {
     return Builder.createDefault();
   }
 
+  /**
+   * Returns a builder for this class with recommended defaults for API methods, and the given
+   * ClientContext used for executor/transport/credentials.
+   */
+  public static Builder defaultBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
   }
 
   /** Returns a builder containing all the values of this settings class. */
@@ -249,8 +240,9 @@ public class DlpServiceSettings extends ClientSettings {
   private DlpServiceSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getChannelProvider(),
-        settingsBuilder.getCredentialsProvider());
+        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getClock());
 
     inspectContentSettings = settingsBuilder.inspectContentSettings().build();
     redactContentSettings = settingsBuilder.redactContentSettings().build();
@@ -269,7 +261,8 @@ public class DlpServiceSettings extends ClientSettings {
     private final SimpleCallSettings.Builder<RedactContentRequest, RedactContentResponse>
         redactContentSettings;
     private final OperationCallSettings.Builder<
-            CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
+            CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata,
+            Operation>
         createInspectOperationSettings;
     private final SimpleCallSettings.Builder<
             ListInspectFindingsRequest, ListInspectFindingsResponse>
@@ -279,25 +272,26 @@ public class DlpServiceSettings extends ClientSettings {
     private final SimpleCallSettings.Builder<ListRootCategoriesRequest, ListRootCategoriesResponse>
         listRootCategoriesSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          Sets.immutableEnumSet(
-              Lists.<Status.Code>newArrayList(
-                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
+          ImmutableSet.copyOf(
+              Lists.<StatusCode>newArrayList(
+                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
+                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
-    private static final ImmutableMap<String, RetrySettings.Builder> RETRY_PARAM_DEFINITIONS;
+    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, RetrySettings.Builder> definitions = ImmutableMap.builder();
-      RetrySettings.Builder settingsBuilder = null;
-      settingsBuilder =
+      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
+      RetrySettings settings = null;
+      settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
@@ -305,26 +299,30 @@ public class DlpServiceSettings extends ClientSettings {
               .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L));
-      definitions.put("default", settingsBuilder);
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     private Builder() {
-      super(defaultChannelProviderBuilder().build());
-      setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      this((ClientContext) null);
+    }
 
-      inspectContentSettings = SimpleCallSettings.newBuilder(METHOD_INSPECT_CONTENT);
+    private Builder(ClientContext clientContext) {
+      super(clientContext);
 
-      redactContentSettings = SimpleCallSettings.newBuilder(METHOD_REDACT_CONTENT);
+      inspectContentSettings = SimpleCallSettings.newBuilder();
+
+      redactContentSettings = SimpleCallSettings.newBuilder();
 
       createInspectOperationSettings = OperationCallSettings.newBuilder();
 
-      listInspectFindingsSettings = SimpleCallSettings.newBuilder(METHOD_LIST_INSPECT_FINDINGS);
+      listInspectFindingsSettings = SimpleCallSettings.newBuilder();
 
-      listInfoTypesSettings = SimpleCallSettings.newBuilder(METHOD_LIST_INFO_TYPES);
+      listInfoTypesSettings = SimpleCallSettings.newBuilder();
 
-      listRootCategoriesSettings = SimpleCallSettings.newBuilder(METHOD_LIST_ROOT_CATEGORIES);
+      listRootCategoriesSettings = SimpleCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
@@ -333,41 +331,49 @@ public class DlpServiceSettings extends ClientSettings {
               listInspectFindingsSettings,
               listInfoTypesSettings,
               listRootCategoriesSettings);
+
+      initDefaults(this);
     }
 
     private static Builder createDefault() {
-      Builder builder = new Builder();
+      Builder builder = new Builder((ClientContext) null);
+      builder.setTransportProvider(defaultTransportProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
 
       builder
           .inspectContentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .redactContentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listInspectFindingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listInfoTypesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listRootCategoriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .createInspectOperationSettings()
           .setInitialCallSettings(
-              SimpleCallSettings.newBuilder(METHOD_CREATE_INSPECT_OPERATION)
+              SimpleCallSettings.<CreateInspectOperationRequest, Operation>newBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseClass(InspectOperationResult.class)
           .setMetadataClass(InspectOperationMetadata.class)
@@ -412,8 +418,8 @@ public class DlpServiceSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setChannelProvider(ChannelProvider channelProvider) {
-      super.setChannelProvider(channelProvider);
+    public Builder setTransportProvider(TransportProvider transportProvider) {
+      super.setTransportProvider(transportProvider);
       return this;
     }
 
@@ -424,14 +430,13 @@ public class DlpServiceSettings extends ClientSettings {
     }
 
     /**
-     * Applies the given settings to all of the unary API methods in this service. Only values that
-     * are non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllUnaryMethods(UnaryCallSettings.Builder unaryCallSettings)
-        throws Exception {
-      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, unaryCallSettings);
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
@@ -449,7 +454,8 @@ public class DlpServiceSettings extends ClientSettings {
 
     /** Returns the builder for the settings used for calls to createInspectOperation. */
     public OperationCallSettings.Builder<
-            CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
+            CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata,
+            Operation>
         createInspectOperationSettings() {
       return createInspectOperationSettings;
     }

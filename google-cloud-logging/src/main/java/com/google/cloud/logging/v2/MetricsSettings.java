@@ -17,30 +17,37 @@ package com.google.cloud.logging.v2;
 
 import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogMetricsPagedResponse;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.CallContext;
-import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ClientSettings;
-import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.grpc.GrpcTransport;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.PageContext;
-import com.google.api.gax.grpc.PagedCallSettings;
-import com.google.api.gax.grpc.PagedListDescriptor;
-import com.google.api.gax.grpc.PagedListResponseFactory;
-import com.google.api.gax.grpc.SimpleCallSettings;
-import com.google.api.gax.grpc.UnaryCallSettings;
-import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.SimpleCallSettings;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.logging.v2.stub.GrpcMetricsServiceV2Stub;
+import com.google.cloud.logging.v2.stub.MetricsServiceV2Stub;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.GetLogMetricRequest;
@@ -102,42 +109,6 @@ public class MetricsSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private static final io.grpc.MethodDescriptor<ListLogMetricsRequest, ListLogMetricsResponse>
-      METHOD_LIST_LOG_METRICS =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.MetricsServiceV2/ListLogMetrics",
-              io.grpc.protobuf.ProtoUtils.marshaller(ListLogMetricsRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(ListLogMetricsResponse.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<GetLogMetricRequest, LogMetric>
-      METHOD_GET_LOG_METRIC =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.MetricsServiceV2/GetLogMetric",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetLogMetricRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(LogMetric.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<CreateLogMetricRequest, LogMetric>
-      METHOD_CREATE_LOG_METRIC =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.MetricsServiceV2/CreateLogMetric",
-              io.grpc.protobuf.ProtoUtils.marshaller(CreateLogMetricRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(LogMetric.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<UpdateLogMetricRequest, LogMetric>
-      METHOD_UPDATE_LOG_METRIC =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.MetricsServiceV2/UpdateLogMetric",
-              io.grpc.protobuf.ProtoUtils.marshaller(UpdateLogMetricRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(LogMetric.getDefaultInstance()));
-  private static final io.grpc.MethodDescriptor<DeleteLogMetricRequest, Empty>
-      METHOD_DELETE_LOG_METRIC =
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.MetricsServiceV2/DeleteLogMetric",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteLogMetricRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance()));
-
   private final PagedCallSettings<
           ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
       listLogMetricsSettings;
@@ -173,6 +144,15 @@ public class MetricsSettings extends ClientSettings {
     return deleteLogMetricSettings;
   }
 
+  public MetricsServiceV2Stub createStub() throws IOException {
+    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
+      return GrpcMetricsServiceV2Stub.create(this);
+    } else {
+      throw new UnsupportedOperationException(
+          "Transport not supported: " + getTransportProvider().getTransportName());
+    }
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
@@ -194,10 +174,20 @@ public class MetricsSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
+  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
     return InstantiatingChannelProvider.newBuilder()
         .setEndpoint(getDefaultEndpoint())
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return GrpcTransportProvider.newBuilder()
+        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
+  }
+
+  public static TransportProvider defaultTransportProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
   }
 
   private static String getGapicVersion() {
@@ -214,9 +204,22 @@ public class MetricsSettings extends ClientSettings {
     return Builder.createDefault();
   }
 
+  /**
+   * Returns a builder for this class with recommended defaults for API methods, and the given
+   * ClientContext used for executor/transport/credentials.
+   */
+  public static Builder defaultBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
   }
 
   /** Returns a builder containing all the values of this settings class. */
@@ -227,8 +230,9 @@ public class MetricsSettings extends ClientSettings {
   private MetricsSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getChannelProvider(),
-        settingsBuilder.getCredentialsProvider());
+        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getClock());
 
     listLogMetricsSettings = settingsBuilder.listLogMetricsSettings().build();
     getLogMetricSettings = settingsBuilder.getLogMetricSettings().build();
@@ -281,7 +285,7 @@ public class MetricsSettings extends ClientSettings {
             public ApiFuture<ListLogMetricsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse> callable,
                 ListLogMetricsRequest request,
-                CallContext context,
+                ApiCallContext context,
                 ApiFuture<ListLogMetricsResponse> futureResponse) {
               PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> pageContext =
                   PageContext.create(callable, LIST_LOG_METRICS_PAGE_STR_DESC, request, context);
@@ -303,25 +307,27 @@ public class MetricsSettings extends ClientSettings {
         updateLogMetricSettings;
     private final SimpleCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          Sets.immutableEnumSet(
-              Lists.<Status.Code>newArrayList(
-                  Status.Code.DEADLINE_EXCEEDED, Status.Code.INTERNAL, Status.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
+          ImmutableSet.copyOf(
+              Lists.<StatusCode>newArrayList(
+                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
+                  GrpcStatusCode.of(Status.Code.INTERNAL),
+                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
-    private static final ImmutableMap<String, RetrySettings.Builder> RETRY_PARAM_DEFINITIONS;
+    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, RetrySettings.Builder> definitions = ImmutableMap.builder();
-      RetrySettings.Builder settingsBuilder = null;
-      settingsBuilder =
+      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
+      RetrySettings settings = null;
+      settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.2)
@@ -329,25 +335,28 @@ public class MetricsSettings extends ClientSettings {
               .setInitialRpcTimeout(Duration.ofMillis(2000L))
               .setRpcTimeoutMultiplier(1.5)
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(45000L));
-      definitions.put("default", settingsBuilder);
+              .setTotalTimeout(Duration.ofMillis(45000L))
+              .build();
+      definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     private Builder() {
-      super(defaultChannelProviderBuilder().build());
-      setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      this((ClientContext) null);
+    }
 
-      listLogMetricsSettings =
-          PagedCallSettings.newBuilder(METHOD_LIST_LOG_METRICS, LIST_LOG_METRICS_PAGE_STR_FACT);
+    private Builder(ClientContext clientContext) {
+      super(clientContext);
 
-      getLogMetricSettings = SimpleCallSettings.newBuilder(METHOD_GET_LOG_METRIC);
+      listLogMetricsSettings = PagedCallSettings.newBuilder(LIST_LOG_METRICS_PAGE_STR_FACT);
 
-      createLogMetricSettings = SimpleCallSettings.newBuilder(METHOD_CREATE_LOG_METRIC);
+      getLogMetricSettings = SimpleCallSettings.newBuilder();
 
-      updateLogMetricSettings = SimpleCallSettings.newBuilder(METHOD_UPDATE_LOG_METRIC);
+      createLogMetricSettings = SimpleCallSettings.newBuilder();
 
-      deleteLogMetricSettings = SimpleCallSettings.newBuilder(METHOD_DELETE_LOG_METRIC);
+      updateLogMetricSettings = SimpleCallSettings.newBuilder();
+
+      deleteLogMetricSettings = SimpleCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
@@ -356,35 +365,43 @@ public class MetricsSettings extends ClientSettings {
               createLogMetricSettings,
               updateLogMetricSettings,
               deleteLogMetricSettings);
+
+      initDefaults(this);
     }
 
     private static Builder createDefault() {
-      Builder builder = new Builder();
+      Builder builder = new Builder((ClientContext) null);
+      builder.setTransportProvider(defaultTransportProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
 
       builder
           .listLogMetricsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .getLogMetricSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .createLogMetricSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .updateLogMetricSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .deleteLogMetricSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
     }
@@ -414,8 +431,8 @@ public class MetricsSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setChannelProvider(ChannelProvider channelProvider) {
-      super.setChannelProvider(channelProvider);
+    public Builder setTransportProvider(TransportProvider transportProvider) {
+      super.setTransportProvider(transportProvider);
       return this;
     }
 
@@ -426,14 +443,13 @@ public class MetricsSettings extends ClientSettings {
     }
 
     /**
-     * Applies the given settings to all of the unary API methods in this service. Only values that
-     * are non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllUnaryMethods(UnaryCallSettings.Builder unaryCallSettings)
-        throws Exception {
-      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, unaryCallSettings);
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 

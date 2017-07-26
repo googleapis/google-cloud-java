@@ -18,7 +18,9 @@ package com.google.cloud.errorreporting.v1beta1;
 import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
 import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
 
-import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -76,7 +78,11 @@ public class ErrorStatsServiceClientTest {
     serviceHelper.reset();
     ErrorStatsServiceSettings settings =
         ErrorStatsServiceSettings.defaultBuilder()
-            .setChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportProvider(
+                GrpcTransportProvider.newBuilder()
+                    .setChannelProvider(serviceHelper.createChannelProvider())
+                    .build())
+            .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = ErrorStatsServiceClient.create(settings);
   }
@@ -128,8 +134,8 @@ public class ErrorStatsServiceClientTest {
 
       client.listGroupStats(projectName, timeRange);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -175,8 +181,8 @@ public class ErrorStatsServiceClientTest {
 
       client.listEvents(projectName, groupId);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -209,8 +215,8 @@ public class ErrorStatsServiceClientTest {
 
       client.deleteEvents(projectName);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 }

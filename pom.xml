@@ -131,9 +131,9 @@
     <api-client.version>1.21.0</api-client.version>
 
     <api-common.version>1.1.0</api-common.version>
-    <gax.version>1.4.2</gax.version>
-    <gax-grpc.version>0.21.2</gax-grpc.version>
-    <generatedProto.version>0.1.13</generatedProto.version>
+    <gax.version>1.5.0</gax.version>
+    <gax-grpc.version>0.22.0</gax-grpc.version>
+    <generatedProto.version>0.1.14</generatedProto.version>
     <google.auth.version>0.7.0</google.auth.version>
     <grpc.version>1.4.0</grpc.version>
     <guava.version>20.0</guava.version>
@@ -165,6 +165,9 @@
     <vision.version>0.20.4-beta-SNAPSHOT</vision.version>
     <video-intelligence.version>0.20.4-alpha-SNAPSHOT</video-intelligence.version>
     <testing.version>0.20.4-alpha-SNAPSHOT</testing.version>
+
+    <easymock.version>3.4</easymock.version>
+    <objenesis.version>2.6</objenesis.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -287,6 +290,16 @@
         <version>${dlp.version}</version>
         <type>test-jar</type>
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dlp-v2beta1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dlp-v2beta1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -310,6 +323,16 @@
         <artifactId>google-cloud-errorreporting</artifactId>
         <version>${errorreporting.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-error-reporting-v1beta1</artifactId>
+        <version>${generatedProto.version}</version>
       </dependency>
 
       <dependency>
@@ -335,6 +358,26 @@
         <version>${language.version}</version>
         <type>test-jar</type>
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-language-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-language-v1beta2</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-language-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-language-v1beta2</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -346,6 +389,16 @@
         <artifactId>google-cloud-logging</artifactId>
         <version>${logging.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-logging-v2</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-logging-v2</artifactId>
+        <version>${generatedProto.version}</version>
       </dependency>
 
       <dependency>
@@ -359,6 +412,16 @@
         <version>${monitoring.version}</version>
         <type>test-jar</type>
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-monitoring-v3</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -370,6 +433,16 @@
         <artifactId>google-cloud-pubsub</artifactId>
         <version>${pubsub.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-pubsub-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
+        <version>${generatedProto.version}</version>
       </dependency>
 
       <dependency>
@@ -395,6 +468,41 @@
         <version>${spanner.version}</version>
         <type>test-jar</type>
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-spanner-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-spanner-admin-database-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-spanner-admin-instance-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-spanner-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-spanner-admin-database-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-spanner-admin-instance-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-longrunning-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -406,6 +514,26 @@
         <artifactId>google-cloud-speech</artifactId>
         <version>${speech.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-speech-v1beta1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-speech-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-speech-v1</artifactId>
+        <version>${generatedProto.version}</version>
       </dependency>
 
       <dependency>
@@ -431,6 +559,16 @@
         <version>${trace.version}</version>
         <type>test-jar</type>
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-trace-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-trace-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -455,6 +593,16 @@
         <version>${vision.version}</version>
         <type>test-jar</type>
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-vision-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-vision-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -466,6 +614,16 @@
         <artifactId>google-cloud-video-intelligence</artifactId>
         <version>${video-intelligence.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-video-intelligence-v1beta1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-video-intelligence-v1beta1</artifactId>
+        <version>${generatedProto.version}</version>
       </dependency>
 
       <dependency>
@@ -624,6 +782,22 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
         <version>${guava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.easymock</groupId>
+        <artifactId>easymock</artifactId>
+        <version>${easymock.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.objenesis</groupId>
+            <artifactId>objenesis</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.objenesis</groupId>
+        <artifactId>objenesis</artifactId>
+        <version>${objenesis.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

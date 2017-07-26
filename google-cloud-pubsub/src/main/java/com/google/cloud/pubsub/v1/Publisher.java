@@ -20,9 +20,9 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -558,7 +558,7 @@ public class Publisher {
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
     LongRandom longRandom = DEFAULT_LONG_RANDOM;
 
-    ChannelProvider channelProvider = TopicAdminSettings.defaultChannelProviderBuilder().build();
+    ChannelProvider channelProvider = TopicAdminSettings.defaultGrpcChannelProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     CredentialsProvider credentialsProvider =
         TopicAdminSettings.defaultCredentialsProviderBuilder().build();

@@ -22,6 +22,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.Tuple;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.Storage.BlobGetOption;
@@ -71,6 +72,10 @@ public class Bucket extends BucketInfo {
       super(rpcOption, null);
     }
 
+    private BucketSourceOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
     private Storage.BucketSourceOption toSourceOption(BucketInfo bucketInfo) {
       switch (getRpcOption()) {
         case IF_METAGENERATION_MATCH:
@@ -107,6 +112,15 @@ public class Bucket extends BucketInfo {
      */
     public static BucketSourceOption metagenerationNotMatch() {
       return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
+    }
+
+    /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BucketSourceOption userProject(String userProject) {
+      return new BucketSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
 
     static Storage.BucketSourceOption[] toSourceOptions(BucketInfo bucketInfo,
@@ -174,6 +188,9 @@ public class Bucket extends BucketInfo {
         case CUSTOMER_SUPPLIED_KEY:
           return Tuple.of(blobInfo,
               Storage.BlobTargetOption.encryptionKey((String) getValue()));
+        case USER_PROJECT:
+          return Tuple.of(blobInfo,
+              Storage.BlobTargetOption.userProject((String) getValue()));
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -250,6 +267,15 @@ public class Bucket extends BucketInfo {
       return new BlobTargetOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
 
+    /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BlobTargetOption userProject(String userProject) {
+      return new BlobTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
     static Tuple<BlobInfo, Storage.BlobTargetOption[]> toTargetOptions(
         BlobInfo info, BlobTargetOption... options) {
       Set<StorageRpc.Option> optionSet =
@@ -319,6 +345,8 @@ public class Bucket extends BucketInfo {
         case CUSTOMER_SUPPLIED_KEY:
           return Tuple.of(blobInfo,
               Storage.BlobWriteOption.encryptionKey((String) value));
+        case USER_PROJECT:
+          return Tuple.of(blobInfo, Storage.BlobWriteOption.userProject((String) value));
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -434,6 +462,15 @@ public class Bucket extends BucketInfo {
      */
     public static BlobWriteOption encryptionKey(String key) {
       return new BlobWriteOption(Storage.BlobWriteOption.Option.CUSTOMER_SUPPLIED_KEY, key);
+    }
+
+    /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BlobWriteOption userProject(String userProject) {
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.USER_PROJECT, userProject);
     }
 
     static Tuple<BlobInfo, Storage.BlobWriteOption[]> toWriteOptions(

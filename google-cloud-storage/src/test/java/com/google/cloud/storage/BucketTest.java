@@ -80,6 +80,7 @@ public class BucketTest {
   private static final Boolean VERSIONING_ENABLED = true;
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
   private static final Boolean REQUESTER_PAYS = true;
+  private static final String USER_PROJECT = "test-project";
   private static final BucketInfo FULL_BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACLS)
       .setEtag(ETAG)
@@ -334,14 +335,16 @@ public class BucketTest {
     expect(storage.create(info, content, Storage.BlobTargetOption.generationMatch(),
         Storage.BlobTargetOption.metagenerationMatch(),
         Storage.BlobTargetOption.predefinedAcl(acl),
-        Storage.BlobTargetOption.encryptionKey(BASE64_KEY))).andReturn(expectedBlob);
+        Storage.BlobTargetOption.encryptionKey(BASE64_KEY),
+        Storage.BlobTargetOption.userProject(USER_PROJECT))).andReturn(expectedBlob);
     replay(storage);
     initializeBucket();
     Blob blob = bucket.create("n", content, CONTENT_TYPE,
         Bucket.BlobTargetOption.generationMatch(42L),
         Bucket.BlobTargetOption.metagenerationMatch(24L),
         Bucket.BlobTargetOption.predefinedAcl(acl),
-        Bucket.BlobTargetOption.encryptionKey(BASE64_KEY));
+        Bucket.BlobTargetOption.encryptionKey(BASE64_KEY),
+        Bucket.BlobTargetOption.userProject(USER_PROJECT));
     assertEquals(expectedBlob, blob);
   }
 
@@ -452,7 +455,8 @@ public class BucketTest {
     expect(storage.create(info, streamContent, Storage.BlobWriteOption.generationMatch(),
         Storage.BlobWriteOption.metagenerationMatch(), Storage.BlobWriteOption.predefinedAcl(acl),
         Storage.BlobWriteOption.crc32cMatch(), Storage.BlobWriteOption.md5Match(),
-        Storage.BlobWriteOption.encryptionKey(BASE64_KEY)))
+        Storage.BlobWriteOption.encryptionKey(BASE64_KEY),
+        Storage.BlobWriteOption.userProject(USER_PROJECT)))
         .andReturn(expectedBlob);
     replay(storage);
     initializeBucket();
@@ -460,7 +464,8 @@ public class BucketTest {
         Bucket.BlobWriteOption.generationMatch(42L),
         Bucket.BlobWriteOption.metagenerationMatch(24L), Bucket.BlobWriteOption.predefinedAcl(acl),
         Bucket.BlobWriteOption.crc32cMatch("crc"), Bucket.BlobWriteOption.md5Match("md5"),
-        Bucket.BlobWriteOption.encryptionKey(BASE64_KEY));
+        Bucket.BlobWriteOption.encryptionKey(BASE64_KEY),
+        Bucket.BlobWriteOption.userProject(USER_PROJECT));
     assertEquals(expectedBlob, blob);
   }
 

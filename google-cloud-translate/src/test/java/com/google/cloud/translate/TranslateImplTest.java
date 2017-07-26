@@ -91,11 +91,13 @@ public class TranslateImplTest {
   private static final TranslateOption SOURCE_LANGUAGE_OPTION =
       TranslateOption.sourceLanguage("de");
   private static final TranslateOption MODEL_OPTION = TranslateOption.model("nmt");
+  private static final TranslateOption FORMAT_OPTION = TranslateOption.format("text");
   private static final Map<TranslateRpc.Option, ?> TRANSLATE_OPTIONS =
       ImmutableMap.of(
           TranslateRpc.Option.TARGET_LANGUAGE, TARGET_LANGUAGE_OPTION.getValue(),
           TranslateRpc.Option.SOURCE_LANGUAGE, SOURCE_LANGUAGE_OPTION.getValue(),
-          TranslateRpc.Option.MODEL, "nmt");
+          TranslateRpc.Option.MODEL, "nmt",
+          TranslateRpc.Option.FORMAT, "text");
   private static final RetrySettings NO_RETRY_SETTINGS = ServiceOptions.getNoRetrySettings();
 
   private TranslateOptions options;
@@ -316,7 +318,7 @@ public class TranslateImplTest {
     initializeService();
     assertEquals(
         TRANSLATION2,
-        translate.translate(text, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION));
+        translate.translate(text, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION, FORMAT_OPTION));
     verify();
   }
 
@@ -343,7 +345,7 @@ public class TranslateImplTest {
     initializeService();
     assertEquals(
         ImmutableList.of(TRANSLATION2),
-        translate.translate(texts, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION));
+        translate.translate(texts, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION, FORMAT_OPTION));
     verify();
   }
 

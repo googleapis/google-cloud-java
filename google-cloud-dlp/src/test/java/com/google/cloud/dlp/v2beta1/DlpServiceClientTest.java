@@ -16,7 +16,8 @@
 package com.google.cloud.dlp.v2beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.longrunning.Operation;
@@ -78,7 +79,10 @@ public class DlpServiceClientTest {
     serviceHelper.reset();
     DlpServiceSettings settings =
         DlpServiceSettings.defaultBuilder()
-            .setChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportProvider(
+                GrpcTransportProvider.newBuilder()
+                    .setChannelProvider(serviceHelper.createChannelProvider())
+                    .build())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = DlpServiceClient.create(settings);
@@ -121,8 +125,8 @@ public class DlpServiceClientTest {
 
       client.inspectContent(inspectConfig, items);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -162,8 +166,8 @@ public class DlpServiceClientTest {
 
       client.redactContent(inspectConfig, items, replaceConfigs);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -213,9 +217,10 @@ public class DlpServiceClientTest {
       client.createInspectOperationAsync(inspectConfig, storageConfig, outputConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(ApiException.class, e.getCause().getClass());
-      ApiException apiException = (ApiException) e.getCause();
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), apiException.getStatusCode());
+      Assert.assertEquals(GrpcApiException.class, e.getCause().getClass());
+      GrpcApiException apiException = (GrpcApiException) e.getCause();
+      Assert.assertEquals(
+          Status.INVALID_ARGUMENT.getCode(), apiException.getStatusCode().getCode());
     }
   }
 
@@ -250,8 +255,8 @@ public class DlpServiceClientTest {
 
       client.listInspectFindings(name);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -287,8 +292,8 @@ public class DlpServiceClientTest {
 
       client.listInfoTypes(category, languageCode);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 
@@ -321,8 +326,8 @@ public class DlpServiceClientTest {
 
       client.listRootCategories(languageCode);
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode());
+    } catch (GrpcApiException e) {
+      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
     }
   }
 }

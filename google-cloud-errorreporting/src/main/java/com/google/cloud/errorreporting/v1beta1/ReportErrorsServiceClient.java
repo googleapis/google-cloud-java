@@ -15,19 +15,16 @@
  */
 package com.google.cloud.errorreporting.v1beta1;
 
-import com.google.api.gax.grpc.ChannelAndExecutor;
-import com.google.api.gax.grpc.UnaryCallable;
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.errorreporting.v1beta1.stub.ReportErrorsServiceStub;
 import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
-import com.google.protobuf.ExperimentalApi;
-import io.grpc.ManagedChannel;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
@@ -76,27 +73,20 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * InstantiatingChannelProvider channelProvider =
- *     ReportErrorsServiceSettings.defaultChannelProviderBuilder()
+ * ReportErrorsServiceSettings reportErrorsServiceSettings =
+ *     ReportErrorsServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * ReportErrorsServiceSettings reportErrorsServiceSettings =
- *     ReportErrorsServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
  * ReportErrorsServiceClient reportErrorsServiceClient =
  *     ReportErrorsServiceClient.create(reportErrorsServiceSettings);
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
-@ExperimentalApi
-public class ReportErrorsServiceClient implements AutoCloseable {
+@Generated("by GAPIC v0.0.5")
+@BetaApi
+public class ReportErrorsServiceClient implements BackgroundResource {
   private final ReportErrorsServiceSettings settings;
-  private final ScheduledExecutorService executor;
-  private final ManagedChannel channel;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>
-      reportErrorEventCallable;
+  private final ReportErrorsServiceStub stub;
 
   /** Constructs an instance of ReportErrorsServiceClient with default settings. */
   public static final ReportErrorsServiceClient create() throws IOException {
@@ -113,41 +103,34 @@ public class ReportErrorsServiceClient implements AutoCloseable {
   }
 
   /**
+   * Constructs an instance of ReportErrorsServiceClient, using the given stub for making calls.
+   * This is for advanced usage - prefer to use ReportErrorsServiceSettings}.
+   */
+  public static final ReportErrorsServiceClient create(ReportErrorsServiceStub stub) {
+    return new ReportErrorsServiceClient(stub);
+  }
+
+  /**
    * Constructs an instance of ReportErrorsServiceClient, using the given settings. This is
-   * protected so that it easy to make a subclass, but otherwise, the static factory methods should
-   * be preferred.
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
   protected ReportErrorsServiceClient(ReportErrorsServiceSettings settings) throws IOException {
     this.settings = settings;
-    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
-    this.executor = channelAndExecutor.getExecutor();
-    this.channel = channelAndExecutor.getChannel();
+    this.stub = settings.createStub();
+  }
 
-    this.reportErrorEventCallable =
-        UnaryCallable.create(settings.reportErrorEventSettings(), this.channel, this.executor);
-
-    if (settings.getChannelProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              channel.shutdown();
-            }
-          });
-    }
-    if (settings.getExecutorProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              executor.shutdown();
-            }
-          });
-    }
+  protected ReportErrorsServiceClient(ReportErrorsServiceStub stub) {
+    this.settings = null;
+    this.stub = stub;
   }
 
   public final ReportErrorsServiceSettings getSettings() {
     return settings;
+  }
+
+  public ReportErrorsServiceStub getStub() {
+    return stub;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -175,7 +158,7 @@ public class ReportErrorsServiceClient implements AutoCloseable {
    *     as `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @param event [Required] The error event to be reported.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReportErrorEventResponse reportErrorEvent(
       ProjectName projectName, ReportedErrorEvent event) {
@@ -214,7 +197,7 @@ public class ReportErrorsServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReportErrorEventResponse reportErrorEvent(ReportErrorEventRequest request) {
     return reportErrorEventCallable().call(request);
@@ -249,17 +232,36 @@ public class ReportErrorsServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventCallable() {
-    return reportErrorEventCallable;
+    return stub.reportErrorEventCallable();
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
   }
 }

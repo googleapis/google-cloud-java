@@ -235,6 +235,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
+          .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -270,6 +271,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
           .setFields(Option.FIELDS.getString(options))
+          .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
       Iterable<StorageObject> storageObjects = Iterables.concat(
           firstNonNull(objects.getItems(), ImmutableList.<StorageObject>of()),
@@ -304,6 +306,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setFields(Option.FIELDS.getString(options))
+          .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
@@ -324,7 +327,8 @@ public class HttpStorageRpc implements StorageRpc {
         .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
         .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
         .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
-        .setFields(Option.FIELDS.getString(options));
+        .setFields(Option.FIELDS.getString(options))
+        .setUserProject(Option.USER_PROJECT.getString(options));
   }
 
   @Override
@@ -350,6 +354,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setPredefinedDefaultObjectAcl(Option.PREDEFINED_DEFAULT_OBJECT_ACL.getString(options))
           .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
+          .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -365,7 +370,8 @@ public class HttpStorageRpc implements StorageRpc {
         .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
         .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
         .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
-        .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options));
+        .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
+        .setUserProject(Option.USER_PROJECT.getString(options));
   }
 
   @Override
@@ -384,6 +390,7 @@ public class HttpStorageRpc implements StorageRpc {
           .delete(bucket.getName())
           .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
+          .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
       return true;
     } catch (IOException ex) {
@@ -403,7 +410,8 @@ public class HttpStorageRpc implements StorageRpc {
         .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
         .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
         .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
-        .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options));
+        .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
+        .setUserProject(Option.USER_PROJECT.getString(options));
   }
 
   @Override
@@ -443,6 +451,7 @@ public class HttpStorageRpc implements StorageRpc {
           .compose(target.getBucket(), target.getName(), request)
           .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(targetOptions))
           .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(targetOptions))
+          .setUserProject(Option.USER_PROJECT.getString(targetOptions))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -458,7 +467,8 @@ public class HttpStorageRpc implements StorageRpc {
           .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
-          .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options));
+          .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
+          .setUserProject(Option.USER_PROJECT.getString(options));
       setEncryptionHeaders(getRequest.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
       ByteArrayOutputStream out = new ByteArrayOutputStream();
       getRequest.executeMedia().download(out);
@@ -483,7 +493,8 @@ public class HttpStorageRpc implements StorageRpc {
           .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
-          .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options));
+          .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
+          .setUserProject(Option.USER_PROJECT.getString(options));
       checkArgument(position >= 0, "Position should be non-negative, is %d", position);
       StringBuilder range = new StringBuilder();
       range.append("bytes=").append(position).append("-").append(position + bytes - 1);
@@ -628,6 +639,11 @@ public class HttpStorageRpc implements StorageRpc {
 
   private RewriteResponse rewrite(RewriteRequest req, String token) {
     try {
+      String userProject = Option.USER_PROJECT.getString(req.sourceOptions);
+      if (userProject == null) {
+        userProject = Option.USER_PROJECT.getString(req.targetOptions);
+      }
+
       Long maxBytesRewrittenPerCall = req.megabytesRewrittenPerCall != null
           ? req.megabytesRewrittenPerCall * MEGABYTE : null;
       Storage.Objects.Rewrite rewrite = storage.objects()
@@ -645,7 +661,8 @@ public class HttpStorageRpc implements StorageRpc {
           .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(req.targetOptions))
           .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(req.targetOptions))
           .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(req.targetOptions))
-          .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(req.targetOptions));
+          .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(req.targetOptions))
+          .setUserProject(userProject);
       HttpHeaders requestHeaders = rewrite.getRequestHeaders();
       setEncryptionHeaders(requestHeaders, SOURCE_ENCRYPTION_KEY_PREFIX, req.sourceOptions);
       setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, req.targetOptions);

@@ -95,6 +95,16 @@ public interface Translate extends Service<TranslateOptions> {
     public static TranslateOption model(String model) {
       return new TranslateOption(TranslateRpc.Option.MODEL, model);
     }
+
+    /**
+     * Sets the format of the source text, in either HTML (default) or plain-text.
+     * A value of {@code html} indicates HTML and a value of {@code text} indicates plain-text.
+     *
+     * @param format the format of the source text
+     */
+    public static TranslateOption format(String format) {
+      return new TranslateOption(TranslateRpc.Option.FORMAT, format);
+    }
   }
 
   /**

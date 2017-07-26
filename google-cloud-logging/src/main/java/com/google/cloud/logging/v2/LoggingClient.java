@@ -21,10 +21,9 @@ import static com.google.cloud.logging.v2.PagedResponseWrappers.ListMonitoredRes
 
 import com.google.api.MonitoredResource;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.grpc.ChannelAndExecutor;
-import com.google.api.gax.grpc.ClientContext;
-import com.google.api.gax.grpc.UnaryCallable;
-import com.google.auth.Credentials;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.logging.v2.stub.LoggingServiceV2Stub;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
@@ -38,13 +37,10 @@ import com.google.logging.v2.ParentNameOneof;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
-import io.grpc.ManagedChannel;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
@@ -100,28 +96,11 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
+@Generated("by GAPIC v0.0.5")
 @BetaApi
-public class LoggingClient implements AutoCloseable {
+public class LoggingClient implements BackgroundResource {
   private final LoggingSettings settings;
-  private final ScheduledExecutorService executor;
-  private final ManagedChannel channel;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final UnaryCallable<DeleteLogRequest, Empty> deleteLogCallable;
-  private final UnaryCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
-      writeLogEntriesCallable;
-  private final UnaryCallable<ListLogEntriesRequest, ListLogEntriesResponse> listLogEntriesCallable;
-  private final UnaryCallable<ListLogEntriesRequest, ListLogEntriesPagedResponse>
-      listLogEntriesPagedCallable;
-  private final UnaryCallable<
-          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
-      listMonitoredResourceDescriptorsCallable;
-  private final UnaryCallable<
-          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
-      listMonitoredResourceDescriptorsPagedCallable;
-  private final UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable;
-  private final UnaryCallable<ListLogsRequest, ListLogsPagedResponse> listLogsPagedCallable;
+  private final LoggingServiceV2Stub stub;
 
   /** Constructs an instance of LoggingClient with default settings. */
   public static final LoggingClient create() throws IOException {
@@ -137,61 +116,33 @@ public class LoggingClient implements AutoCloseable {
   }
 
   /**
+   * Constructs an instance of LoggingClient, using the given stub for making calls. This is for
+   * advanced usage - prefer to use LoggingSettings}.
+   */
+  public static final LoggingClient create(LoggingServiceV2Stub stub) {
+    return new LoggingClient(stub);
+  }
+
+  /**
    * Constructs an instance of LoggingClient, using the given settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected LoggingClient(LoggingSettings settings) throws IOException {
     this.settings = settings;
-    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
-    this.executor = channelAndExecutor.getExecutor();
-    this.channel = channelAndExecutor.getChannel();
-    Credentials credentials = settings.getCredentialsProvider().getCredentials();
+    this.stub = settings.createStub();
+  }
 
-    ClientContext clientContext =
-        ClientContext.newBuilder()
-            .setExecutor(this.executor)
-            .setChannel(this.channel)
-            .setCredentials(credentials)
-            .build();
-
-    this.deleteLogCallable = UnaryCallable.create(settings.deleteLogSettings(), clientContext);
-    this.writeLogEntriesCallable =
-        UnaryCallable.create(settings.writeLogEntriesSettings(), clientContext);
-    this.listLogEntriesCallable =
-        UnaryCallable.create(settings.listLogEntriesSettings(), clientContext);
-    this.listLogEntriesPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listLogEntriesSettings(), clientContext);
-    this.listMonitoredResourceDescriptorsCallable =
-        UnaryCallable.create(settings.listMonitoredResourceDescriptorsSettings(), clientContext);
-    this.listMonitoredResourceDescriptorsPagedCallable =
-        UnaryCallable.createPagedVariant(
-            settings.listMonitoredResourceDescriptorsSettings(), clientContext);
-    this.listLogsCallable = UnaryCallable.create(settings.listLogsSettings(), clientContext);
-    this.listLogsPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listLogsSettings(), clientContext);
-
-    if (settings.getChannelProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              channel.shutdown();
-            }
-          });
-    }
-    if (settings.getExecutorProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              executor.shutdown();
-            }
-          });
-    }
+  protected LoggingClient(LoggingServiceV2Stub stub) {
+    this.settings = null;
+    this.stub = stub;
   }
 
   public final LoggingSettings getSettings() {
     return settings;
+  }
+
+  public LoggingServiceV2Stub getStub() {
+    return stub;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -214,7 +165,7 @@ public class LoggingClient implements AutoCloseable {
    *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"`,
    *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
    *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteLog(LogNameOneof logName) {
 
@@ -241,7 +192,7 @@ public class LoggingClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final void deleteLog(DeleteLogRequest request) {
     deleteLogCallable().call(request);
@@ -267,7 +218,7 @@ public class LoggingClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<DeleteLogRequest, Empty> deleteLogCallable() {
-    return deleteLogCallable;
+    return stub.deleteLogCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -312,7 +263,7 @@ public class LoggingClient implements AutoCloseable {
    *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
    *     for calls to `entries.write`, you should write multiple log entries at once rather than
    *     calling this method for each individual log entry.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WriteLogEntriesResponse writeLogEntries(
       LogNameOneof logName,
@@ -347,7 +298,7 @@ public class LoggingClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WriteLogEntriesResponse writeLogEntries(WriteLogEntriesRequest request) {
     return writeLogEntriesCallable().call(request);
@@ -373,7 +324,7 @@ public class LoggingClient implements AutoCloseable {
    */
   public final UnaryCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesCallable() {
-    return writeLogEntriesCallable;
+    return stub.writeLogEntriesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -410,7 +361,7 @@ public class LoggingClient implements AutoCloseable {
    *     order of increasing values of `LogEntry.timestamp` (oldest first), and the second option
    *     returns entries in order of decreasing timestamps (newest first). Entries with equal
    *     timestamps are returned in order of their `insert_id` values.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLogEntriesPagedResponse listLogEntries(
       List<String> resourceNames, String filter, String orderBy) {
@@ -443,7 +394,7 @@ public class LoggingClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLogEntriesPagedResponse listLogEntries(ListLogEntriesRequest request) {
     return listLogEntriesPagedCallable().call(request);
@@ -472,7 +423,7 @@ public class LoggingClient implements AutoCloseable {
    */
   public final UnaryCallable<ListLogEntriesRequest, ListLogEntriesPagedResponse>
       listLogEntriesPagedCallable() {
-    return listLogEntriesPagedCallable;
+    return stub.listLogEntriesPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -505,7 +456,7 @@ public class LoggingClient implements AutoCloseable {
    */
   public final UnaryCallable<ListLogEntriesRequest, ListLogEntriesResponse>
       listLogEntriesCallable() {
-    return listLogEntriesCallable;
+    return stub.listLogEntriesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -524,7 +475,7 @@ public class LoggingClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
       ListMonitoredResourceDescriptorsRequest request) {
@@ -551,7 +502,7 @@ public class LoggingClient implements AutoCloseable {
   public final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsPagedCallable() {
-    return listMonitoredResourceDescriptorsPagedCallable;
+    return stub.listMonitoredResourceDescriptorsPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -581,7 +532,7 @@ public class LoggingClient implements AutoCloseable {
   public final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable() {
-    return listMonitoredResourceDescriptorsCallable;
+    return stub.listMonitoredResourceDescriptorsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -603,7 +554,7 @@ public class LoggingClient implements AutoCloseable {
    * @param parent Required. The resource name that owns the logs:
    *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLogsPagedResponse listLogs(ParentNameOneof parent) {
     ListLogsRequest request =
@@ -631,7 +582,7 @@ public class LoggingClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLogsPagedResponse listLogs(ListLogsRequest request) {
     return listLogsPagedCallable().call(request);
@@ -659,7 +610,7 @@ public class LoggingClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<ListLogsRequest, ListLogsPagedResponse> listLogsPagedCallable() {
-    return listLogsPagedCallable;
+    return stub.listLogsPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -691,17 +642,36 @@ public class LoggingClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable() {
-    return listLogsCallable;
+    return stub.listLogsCallable();
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
   }
 }

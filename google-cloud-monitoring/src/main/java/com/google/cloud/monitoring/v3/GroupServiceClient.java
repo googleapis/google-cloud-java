@@ -15,13 +15,13 @@
  */
 package com.google.cloud.monitoring.v3;
 
+import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupMembersPagedResponse;
+import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupsPagedResponse;
+
 import com.google.api.core.BetaApi;
-import com.google.api.gax.grpc.ChannelAndExecutor;
-import com.google.api.gax.grpc.ClientContext;
-import com.google.api.gax.grpc.UnaryCallable;
-import com.google.auth.Credentials;
-import com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupMembersPagedResponse;
-import com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupsPagedResponse;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.monitoring.v3.stub.GroupServiceStub;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
 import com.google.monitoring.v3.GetGroupRequest;
@@ -34,12 +34,8 @@ import com.google.monitoring.v3.ListGroupsResponse;
 import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateGroupRequest;
 import com.google.protobuf.Empty;
-import io.grpc.ManagedChannel;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
@@ -103,24 +99,11 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
+@Generated("by GAPIC v0.0.5")
 @BetaApi
-public class GroupServiceClient implements AutoCloseable {
+public class GroupServiceClient implements BackgroundResource {
   private final GroupServiceSettings settings;
-  private final ScheduledExecutorService executor;
-  private final ManagedChannel channel;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable;
-  private final UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable;
-  private final UnaryCallable<GetGroupRequest, Group> getGroupCallable;
-  private final UnaryCallable<CreateGroupRequest, Group> createGroupCallable;
-  private final UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable;
-  private final UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable;
-  private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse>
-      listGroupMembersCallable;
-  private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
-      listGroupMembersPagedCallable;
+  private final GroupServiceStub stub;
 
   /** Constructs an instance of GroupServiceClient with default settings. */
   public static final GroupServiceClient create() throws IOException {
@@ -136,57 +119,34 @@ public class GroupServiceClient implements AutoCloseable {
   }
 
   /**
+   * Constructs an instance of GroupServiceClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use GroupServiceSettings}.
+   */
+  public static final GroupServiceClient create(GroupServiceStub stub) {
+    return new GroupServiceClient(stub);
+  }
+
+  /**
    * Constructs an instance of GroupServiceClient, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected GroupServiceClient(GroupServiceSettings settings) throws IOException {
     this.settings = settings;
-    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
-    this.executor = channelAndExecutor.getExecutor();
-    this.channel = channelAndExecutor.getChannel();
-    Credentials credentials = settings.getCredentialsProvider().getCredentials();
+    this.stub = settings.createStub();
+  }
 
-    ClientContext clientContext =
-        ClientContext.newBuilder()
-            .setExecutor(this.executor)
-            .setChannel(this.channel)
-            .setCredentials(credentials)
-            .build();
-
-    this.listGroupsCallable = UnaryCallable.create(settings.listGroupsSettings(), clientContext);
-    this.listGroupsPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listGroupsSettings(), clientContext);
-    this.getGroupCallable = UnaryCallable.create(settings.getGroupSettings(), clientContext);
-    this.createGroupCallable = UnaryCallable.create(settings.createGroupSettings(), clientContext);
-    this.updateGroupCallable = UnaryCallable.create(settings.updateGroupSettings(), clientContext);
-    this.deleteGroupCallable = UnaryCallable.create(settings.deleteGroupSettings(), clientContext);
-    this.listGroupMembersCallable =
-        UnaryCallable.create(settings.listGroupMembersSettings(), clientContext);
-    this.listGroupMembersPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listGroupMembersSettings(), clientContext);
-
-    if (settings.getChannelProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              channel.shutdown();
-            }
-          });
-    }
-    if (settings.getExecutorProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              executor.shutdown();
-            }
-          });
-    }
+  protected GroupServiceClient(GroupServiceStub stub) {
+    this.settings = null;
+    this.stub = stub;
   }
 
   public final GroupServiceSettings getSettings() {
     return settings;
+  }
+
+  public GroupServiceStub getStub() {
+    return stub;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -208,7 +168,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGroupsPagedResponse listGroups(ListGroupsRequest request) {
     return listGroupsPagedCallable().call(request);
@@ -235,7 +195,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
-    return listGroupsPagedCallable;
+    return stub.listGroupsPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -266,7 +226,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
-    return listGroupsCallable;
+    return stub.listGroupsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -284,7 +244,7 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * @param name The group to retrieve. The format is
    *     `"projects/{project_id_or_number}/groups/{group_id}"`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group getGroup(GroupName name) {
 
@@ -309,7 +269,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final Group getGroup(GetGroupRequest request) {
     return getGroupCallable().call(request);
@@ -334,7 +294,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<GetGroupRequest, Group> getGroupCallable() {
-    return getGroupCallable;
+    return stub.getGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -355,7 +315,7 @@ public class GroupServiceClient implements AutoCloseable {
    *     `"projects/{project_id_or_number}"`.
    * @param group A group definition. It is an error to define the `name` field because the system
    *     assigns the name.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group createGroup(ProjectName name, Group group) {
 
@@ -383,7 +343,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group createGroup(CreateGroupRequest request) {
     return createGroupCallable().call(request);
@@ -410,7 +370,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<CreateGroupRequest, Group> createGroupCallable() {
-    return createGroupCallable;
+    return stub.createGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -428,7 +388,7 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * @param group The new definition of the group. All fields of the existing group, excepting
    *     `name`, are replaced with the corresponding fields of this group.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group updateGroup(Group group) {
 
@@ -453,7 +413,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group updateGroup(UpdateGroupRequest request) {
     return updateGroupCallable().call(request);
@@ -478,7 +438,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable() {
-    return updateGroupCallable;
+    return stub.updateGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -496,7 +456,7 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * @param name The group to delete. The format is
    *     `"projects/{project_id_or_number}/groups/{group_id}"`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteGroup(GroupName name) {
 
@@ -521,7 +481,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final void deleteGroup(DeleteGroupRequest request) {
     deleteGroupCallable().call(request);
@@ -546,7 +506,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable() {
-    return deleteGroupCallable;
+    return stub.deleteGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -566,7 +526,7 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * @param name The group whose members are listed. The format is
    *     `"projects/{project_id_or_number}/groups/{group_id}"`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGroupMembersPagedResponse listGroupMembers(GroupName name) {
     ListGroupMembersRequest request =
@@ -593,7 +553,7 @@ public class GroupServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGroupMembersPagedResponse listGroupMembers(ListGroupMembersRequest request) {
     return listGroupMembersPagedCallable().call(request);
@@ -621,7 +581,7 @@ public class GroupServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
       listGroupMembersPagedCallable() {
-    return listGroupMembersPagedCallable;
+    return stub.listGroupMembersPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -653,17 +613,36 @@ public class GroupServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse>
       listGroupMembersCallable() {
-    return listGroupMembersCallable;
+    return stub.listGroupMembersCallable();
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
   }
 }

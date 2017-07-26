@@ -16,18 +16,13 @@
 package com.google.cloud.dlp.v2beta1;
 
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.grpc.ChannelAndExecutor;
-import com.google.api.gax.grpc.ClientContext;
-import com.google.api.gax.grpc.FixedChannelProvider;
-import com.google.api.gax.grpc.FixedExecutorProvider;
-import com.google.api.gax.grpc.OperationCallable;
-import com.google.api.gax.grpc.OperationFuture;
-import com.google.api.gax.grpc.UnaryCallable;
-import com.google.auth.Credentials;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.OperationFuture;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dlp.v2beta1.stub.DlpServiceStub;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
-import com.google.longrunning.OperationsSettings;
 import com.google.privacy.dlp.v2beta1.ContentItem;
 import com.google.privacy.dlp.v2beta1.CreateInspectOperationRequest;
 import com.google.privacy.dlp.v2beta1.InspectConfig;
@@ -47,12 +42,9 @@ import com.google.privacy.dlp.v2beta1.RedactContentRequest.ReplaceConfig;
 import com.google.privacy.dlp.v2beta1.RedactContentResponse;
 import com.google.privacy.dlp.v2beta1.ResultName;
 import com.google.privacy.dlp.v2beta1.StorageConfig;
-import io.grpc.ManagedChannel;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
@@ -112,27 +104,12 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
+@Generated("by GAPIC v0.0.5")
 @BetaApi
-public class DlpServiceClient implements AutoCloseable {
+public class DlpServiceClient implements BackgroundResource {
   private final DlpServiceSettings settings;
-  private final ScheduledExecutorService executor;
-  private final ManagedChannel channel;
+  private final DlpServiceStub stub;
   private final OperationsClient operationsClient;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable;
-  private final UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable;
-  private final UnaryCallable<CreateInspectOperationRequest, Operation>
-      createInspectOperationCallable;
-  private final OperationCallable<
-          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
-      createInspectOperationOperationCallable;
-  private final UnaryCallable<ListInspectFindingsRequest, ListInspectFindingsResponse>
-      listInspectFindingsCallable;
-  private final UnaryCallable<ListInfoTypesRequest, ListInfoTypesResponse> listInfoTypesCallable;
-  private final UnaryCallable<ListRootCategoriesRequest, ListRootCategoriesResponse>
-      listRootCategoriesCallable;
 
   /** Constructs an instance of DlpServiceClient with default settings. */
   public static final DlpServiceClient create() throws IOException {
@@ -148,70 +125,35 @@ public class DlpServiceClient implements AutoCloseable {
   }
 
   /**
+   * Constructs an instance of DlpServiceClient, using the given stub for making calls. This is for
+   * advanced usage - prefer to use DlpServiceSettings}.
+   */
+  public static final DlpServiceClient create(DlpServiceStub stub) {
+    return new DlpServiceClient(stub);
+  }
+
+  /**
    * Constructs an instance of DlpServiceClient, using the given settings. This is protected so that
-   * it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected DlpServiceClient(DlpServiceSettings settings) throws IOException {
     this.settings = settings;
-    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
-    this.executor = channelAndExecutor.getExecutor();
-    this.channel = channelAndExecutor.getChannel();
-    Credentials credentials = settings.getCredentialsProvider().getCredentials();
+    this.stub = settings.createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+  }
 
-    ClientContext clientContext =
-        ClientContext.newBuilder()
-            .setExecutor(this.executor)
-            .setChannel(this.channel)
-            .setCredentials(credentials)
-            .build();
-
-    OperationsSettings operationsSettings =
-        OperationsSettings.defaultBuilder()
-            .setExecutorProvider(FixedExecutorProvider.create(this.executor))
-            .setChannelProvider(FixedChannelProvider.create(this.channel))
-            .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
-            .build();
-    this.operationsClient = OperationsClient.create(operationsSettings);
-
-    this.inspectContentCallable =
-        UnaryCallable.create(settings.inspectContentSettings(), clientContext);
-    this.redactContentCallable =
-        UnaryCallable.create(settings.redactContentSettings(), clientContext);
-    this.createInspectOperationCallable =
-        UnaryCallable.create(
-            settings.createInspectOperationSettings().getInitialCallSettings(), clientContext);
-    this.createInspectOperationOperationCallable =
-        OperationCallable.create(
-            settings.createInspectOperationSettings(), clientContext, this.operationsClient);
-    this.listInspectFindingsCallable =
-        UnaryCallable.create(settings.listInspectFindingsSettings(), clientContext);
-    this.listInfoTypesCallable =
-        UnaryCallable.create(settings.listInfoTypesSettings(), clientContext);
-    this.listRootCategoriesCallable =
-        UnaryCallable.create(settings.listRootCategoriesSettings(), clientContext);
-
-    if (settings.getChannelProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              channel.shutdown();
-            }
-          });
-    }
-    if (settings.getExecutorProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              executor.shutdown();
-            }
-          });
-    }
+  protected DlpServiceClient(DlpServiceStub stub) {
+    this.settings = null;
+    this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final DlpServiceSettings getSettings() {
     return settings;
+  }
+
+  public DlpServiceStub getStub() {
+    return stub;
   }
 
   /**
@@ -240,7 +182,7 @@ public class DlpServiceClient implements AutoCloseable {
    * @param inspectConfig Configuration for the inspector.
    * @param items The list of items to inspect. Items in a single request are considered "related"
    *     unless inspect_config.independent_inputs is true. Up to 100 are allowed per request.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final InspectContentResponse inspectContent(
       InspectConfig inspectConfig, List<ContentItem> items) {
@@ -273,7 +215,7 @@ public class DlpServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final InspectContentResponse inspectContent(InspectContentRequest request) {
     return inspectContentCallable().call(request);
@@ -302,7 +244,7 @@ public class DlpServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<InspectContentRequest, InspectContentResponse>
       inspectContentCallable() {
-    return inspectContentCallable;
+    return stub.inspectContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -325,7 +267,7 @@ public class DlpServiceClient implements AutoCloseable {
    * @param items The list of items to inspect. Up to 100 are allowed per request.
    * @param replaceConfigs The strings to replace findings text findings with. Must specify at least
    *     one of these or one ImageRedactionConfig if redacting images.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RedactContentResponse redactContent(
       InspectConfig inspectConfig,
@@ -363,7 +305,7 @@ public class DlpServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RedactContentResponse redactContent(RedactContentRequest request) {
     return redactContentCallable().call(request);
@@ -393,7 +335,7 @@ public class DlpServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable() {
-    return redactContentCallable;
+    return stub.redactContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -425,9 +367,9 @@ public class DlpServiceClient implements AutoCloseable {
    *     &lt;li&gt;file_path &lt;li&gt;start_offset&lt;br/&gt; &lt;p&gt;For Cloud Datastore the next
    *     columns are: &lt;li&gt;project_id &lt;li&gt;namespace_id &lt;li&gt;path
    *     &lt;li&gt;column_name &lt;li&gt;offset
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<InspectOperationResult, InspectOperationMetadata>
+  public final OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation>
       createInspectOperationAsync(
           InspectConfig inspectConfig,
           StorageConfig storageConfig,
@@ -463,9 +405,9 @@ public class DlpServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<InspectOperationResult, InspectOperationMetadata>
+  public final OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation>
       createInspectOperationAsync(CreateInspectOperationRequest request) {
     return createInspectOperationOperationCallable().futureCall(request);
   }
@@ -493,9 +435,10 @@ public class DlpServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final OperationCallable<
-          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
+          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata,
+          Operation>
       createInspectOperationOperationCallable() {
-    return createInspectOperationOperationCallable;
+    return stub.createInspectOperationOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -522,7 +465,7 @@ public class DlpServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<CreateInspectOperationRequest, Operation>
       createInspectOperationCallable() {
-    return createInspectOperationCallable;
+    return stub.createInspectOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -541,7 +484,7 @@ public class DlpServiceClient implements AutoCloseable {
    * @param name Identifier of the results set returned as metadata of the longrunning operation
    *     created by a call to CreateInspectOperation. Should be in the format of
    *     `inspect/results/{id}.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectFindingsResponse listInspectFindings(ResultName name) {
 
@@ -567,7 +510,7 @@ public class DlpServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectFindingsResponse listInspectFindings(ListInspectFindingsRequest request) {
     return listInspectFindingsCallable().call(request);
@@ -593,7 +536,7 @@ public class DlpServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<ListInspectFindingsRequest, ListInspectFindingsResponse>
       listInspectFindingsCallable() {
-    return listInspectFindingsCallable;
+    return stub.listInspectFindingsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -613,7 +556,7 @@ public class DlpServiceClient implements AutoCloseable {
    * @param category Category name as returned by ListRootCategories.
    * @param languageCode Optional BCP-47 language code for localized info type friendly names. If
    *     omitted, or if localized strings are not available, en-US strings will be returned.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInfoTypesResponse listInfoTypes(String category, String languageCode) {
 
@@ -644,7 +587,7 @@ public class DlpServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInfoTypesResponse listInfoTypes(ListInfoTypesRequest request) {
     return listInfoTypesCallable().call(request);
@@ -671,7 +614,7 @@ public class DlpServiceClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<ListInfoTypesRequest, ListInfoTypesResponse> listInfoTypesCallable() {
-    return listInfoTypesCallable;
+    return stub.listInfoTypesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -689,7 +632,7 @@ public class DlpServiceClient implements AutoCloseable {
    *
    * @param languageCode Optional language code for localized friendly category names. If omitted or
    *     if localized strings are not available, en-US strings will be returned.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRootCategoriesResponse listRootCategories(String languageCode) {
 
@@ -715,7 +658,7 @@ public class DlpServiceClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final ListRootCategoriesResponse listRootCategories(ListRootCategoriesRequest request) {
     return listRootCategoriesCallable().call(request);
@@ -741,17 +684,36 @@ public class DlpServiceClient implements AutoCloseable {
    */
   public final UnaryCallable<ListRootCategoriesRequest, ListRootCategoriesResponse>
       listRootCategoriesCallable() {
-    return listRootCategoriesCallable;
+    return stub.listRootCategoriesCallable();
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
   }
 }

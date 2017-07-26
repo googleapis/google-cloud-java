@@ -19,10 +19,9 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscrip
 import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
 import com.google.api.core.BetaApi;
-import com.google.api.gax.grpc.ChannelAndExecutor;
-import com.google.api.gax.grpc.ClientContext;
-import com.google.api.gax.grpc.UnaryCallable;
-import com.google.auth.Credentials;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -41,12 +40,9 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.TopicName;
-import io.grpc.ManagedChannel;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
@@ -105,28 +101,11 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
+@Generated("by GAPIC v0.0.5")
 @BetaApi
-public class TopicAdminClient implements AutoCloseable {
+public class TopicAdminClient implements BackgroundResource {
   private final TopicAdminSettings settings;
-  private final ScheduledExecutorService executor;
-  private final ManagedChannel channel;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final UnaryCallable<Topic, Topic> createTopicCallable;
-  private final UnaryCallable<PublishRequest, PublishResponse> publishCallable;
-  private final UnaryCallable<GetTopicRequest, Topic> getTopicCallable;
-  private final UnaryCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable;
-  private final UnaryCallable<ListTopicsRequest, ListTopicsPagedResponse> listTopicsPagedCallable;
-  private final UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
-      listTopicSubscriptionsCallable;
-  private final UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsPagedResponse>
-      listTopicSubscriptionsPagedCallable;
-  private final UnaryCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
-  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
-  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
-  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable;
+  private final PublisherStub stub;
 
   /** Constructs an instance of TopicAdminClient with default settings. */
   public static final TopicAdminClient create() throws IOException {
@@ -142,63 +121,33 @@ public class TopicAdminClient implements AutoCloseable {
   }
 
   /**
+   * Constructs an instance of TopicAdminClient, using the given stub for making calls. This is for
+   * advanced usage - prefer to use TopicAdminSettings}.
+   */
+  public static final TopicAdminClient create(PublisherStub stub) {
+    return new TopicAdminClient(stub);
+  }
+
+  /**
    * Constructs an instance of TopicAdminClient, using the given settings. This is protected so that
-   * it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected TopicAdminClient(TopicAdminSettings settings) throws IOException {
     this.settings = settings;
-    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
-    this.executor = channelAndExecutor.getExecutor();
-    this.channel = channelAndExecutor.getChannel();
-    Credentials credentials = settings.getCredentialsProvider().getCredentials();
+    this.stub = settings.createStub();
+  }
 
-    ClientContext clientContext =
-        ClientContext.newBuilder()
-            .setExecutor(this.executor)
-            .setChannel(this.channel)
-            .setCredentials(credentials)
-            .build();
-
-    this.createTopicCallable = UnaryCallable.create(settings.createTopicSettings(), clientContext);
-    this.publishCallable = UnaryCallable.create(settings.publishSettings(), clientContext);
-    this.getTopicCallable = UnaryCallable.create(settings.getTopicSettings(), clientContext);
-    this.listTopicsCallable = UnaryCallable.create(settings.listTopicsSettings(), clientContext);
-    this.listTopicsPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listTopicsSettings(), clientContext);
-    this.listTopicSubscriptionsCallable =
-        UnaryCallable.create(settings.listTopicSubscriptionsSettings(), clientContext);
-    this.listTopicSubscriptionsPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listTopicSubscriptionsSettings(), clientContext);
-    this.deleteTopicCallable = UnaryCallable.create(settings.deleteTopicSettings(), clientContext);
-    this.setIamPolicyCallable =
-        UnaryCallable.create(settings.setIamPolicySettings(), clientContext);
-    this.getIamPolicyCallable =
-        UnaryCallable.create(settings.getIamPolicySettings(), clientContext);
-    this.testIamPermissionsCallable =
-        UnaryCallable.create(settings.testIamPermissionsSettings(), clientContext);
-
-    if (settings.getChannelProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              channel.shutdown();
-            }
-          });
-    }
-    if (settings.getExecutorProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              executor.shutdown();
-            }
-          });
-    }
+  protected TopicAdminClient(PublisherStub stub) {
+    this.settings = null;
+    this.stub = stub;
   }
 
   public final TopicAdminSettings getSettings() {
     return settings;
+  }
+
+  public PublisherStub getStub() {
+    return stub;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -219,7 +168,7 @@ public class TopicAdminClient implements AutoCloseable {
    *     letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`),
    *     tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in
    *     length, and it must not start with `"goog"`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Topic createTopic(TopicName name) {
 
@@ -244,7 +193,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final Topic createTopic(Topic request) {
     return createTopicCallable().call(request);
@@ -269,7 +218,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<Topic, Topic> createTopicCallable() {
-    return createTopicCallable;
+    return stub.createTopicCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -295,7 +244,7 @@ public class TopicAdminClient implements AutoCloseable {
    * @param topic The messages in the request will be published on this topic. Format is
    *     `projects/{project}/topics/{topic}`.
    * @param messages The messages to publish.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final PublishResponse publish(
       TopicName topic, List<PubsubMessage> messages) {
@@ -330,7 +279,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final PublishResponse publish(PublishRequest request) {
     return publishCallable().call(request);
@@ -363,7 +312,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    */
   /* package-private */ final UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
-    return publishCallable;
+    return stub.publishCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -380,7 +329,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    *
    * @param topic The name of the topic to get. Format is `projects/{project}/topics/{topic}`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Topic getTopic(TopicName topic) {
 
@@ -405,7 +354,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final Topic getTopic(GetTopicRequest request) {
     return getTopicCallable().call(request);
@@ -430,7 +379,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<GetTopicRequest, Topic> getTopicCallable() {
-    return getTopicCallable;
+    return stub.getTopicCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -450,7 +399,7 @@ public class TopicAdminClient implements AutoCloseable {
    *
    * @param project The name of the cloud project that topics belong to. Format is
    *     `projects/{project}`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTopicsPagedResponse listTopics(ProjectName project) {
     ListTopicsRequest request =
@@ -477,7 +426,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTopicsPagedResponse listTopics(ListTopicsRequest request) {
     return listTopicsPagedCallable().call(request);
@@ -504,7 +453,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<ListTopicsRequest, ListTopicsPagedResponse> listTopicsPagedCallable() {
-    return listTopicsPagedCallable;
+    return stub.listTopicsPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -535,7 +484,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable() {
-    return listTopicsCallable;
+    return stub.listTopicsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -555,7 +504,7 @@ public class TopicAdminClient implements AutoCloseable {
    *
    * @param topic The name of the topic that subscriptions are attached to. Format is
    *     `projects/{project}/topics/{topic}`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(TopicName topic) {
     ListTopicSubscriptionsRequest request =
@@ -582,7 +531,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(
       ListTopicSubscriptionsRequest request) {
@@ -611,7 +560,7 @@ public class TopicAdminClient implements AutoCloseable {
    */
   public final UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsPagedCallable() {
-    return listTopicSubscriptionsPagedCallable;
+    return stub.listTopicSubscriptionsPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -643,7 +592,7 @@ public class TopicAdminClient implements AutoCloseable {
    */
   public final UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
       listTopicSubscriptionsCallable() {
-    return listTopicSubscriptionsCallable;
+    return stub.listTopicSubscriptionsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -663,7 +612,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    *
    * @param topic Name of the topic to delete. Format is `projects/{project}/topics/{topic}`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTopic(TopicName topic) {
 
@@ -692,7 +641,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final void deleteTopic(DeleteTopicRequest request) {
     deleteTopicCallable().call(request);
@@ -720,7 +669,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
-    return deleteTopicCallable;
+    return stub.deleteTopicCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -743,7 +692,7 @@ public class TopicAdminClient implements AutoCloseable {
    * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
    *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
    *     Platform services (such as Projects) might reject them.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
 
@@ -771,7 +720,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(SetIamPolicyRequest request) {
     return setIamPolicyCallable().call(request);
@@ -798,7 +747,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    return setIamPolicyCallable;
+    return stub.setIamPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -818,7 +767,7 @@ public class TopicAdminClient implements AutoCloseable {
    * @param resource REQUIRED: The resource for which the policy is being requested. `resource` is
    *     usually specified as a path. For example, a Project resource is specified as
    *     `projects/{project}`.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
 
@@ -844,7 +793,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
@@ -870,7 +819,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return getIamPolicyCallable;
+    return stub.getIamPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -894,7 +843,7 @@ public class TopicAdminClient implements AutoCloseable {
    * @param permissions The set of permissions to check for the `resource`. Permissions with
    *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
    *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
@@ -927,7 +876,7 @@ public class TopicAdminClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
     return testIamPermissionsCallable().call(request);
@@ -956,17 +905,36 @@ public class TopicAdminClient implements AutoCloseable {
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
-    return testIamPermissionsCallable;
+    return stub.testIamPermissionsCallable();
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
   }
 }

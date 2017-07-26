@@ -18,10 +18,9 @@ package com.google.cloud.logging.v2;
 import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogMetricsPagedResponse;
 
 import com.google.api.core.BetaApi;
-import com.google.api.gax.grpc.ChannelAndExecutor;
-import com.google.api.gax.grpc.ClientContext;
-import com.google.api.gax.grpc.UnaryCallable;
-import com.google.auth.Credentials;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.logging.v2.stub.MetricsServiceV2Stub;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.GetLogMetricRequest;
@@ -32,12 +31,8 @@ import com.google.logging.v2.MetricNameOneof;
 import com.google.logging.v2.ParentNameOneof;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
-import io.grpc.ManagedChannel;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
@@ -93,21 +88,11 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
+@Generated("by GAPIC v0.0.5")
 @BetaApi
-public class MetricsClient implements AutoCloseable {
+public class MetricsClient implements BackgroundResource {
   private final MetricsSettings settings;
-  private final ScheduledExecutorService executor;
-  private final ManagedChannel channel;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse> listLogMetricsCallable;
-  private final UnaryCallable<ListLogMetricsRequest, ListLogMetricsPagedResponse>
-      listLogMetricsPagedCallable;
-  private final UnaryCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable;
-  private final UnaryCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable;
-  private final UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
-  private final UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
+  private final MetricsServiceV2Stub stub;
 
   /** Constructs an instance of MetricsClient with default settings. */
   public static final MetricsClient create() throws IOException {
@@ -123,58 +108,33 @@ public class MetricsClient implements AutoCloseable {
   }
 
   /**
+   * Constructs an instance of MetricsClient, using the given stub for making calls. This is for
+   * advanced usage - prefer to use MetricsSettings}.
+   */
+  public static final MetricsClient create(MetricsServiceV2Stub stub) {
+    return new MetricsClient(stub);
+  }
+
+  /**
    * Constructs an instance of MetricsClient, using the given settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected MetricsClient(MetricsSettings settings) throws IOException {
     this.settings = settings;
-    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
-    this.executor = channelAndExecutor.getExecutor();
-    this.channel = channelAndExecutor.getChannel();
-    Credentials credentials = settings.getCredentialsProvider().getCredentials();
+    this.stub = settings.createStub();
+  }
 
-    ClientContext clientContext =
-        ClientContext.newBuilder()
-            .setExecutor(this.executor)
-            .setChannel(this.channel)
-            .setCredentials(credentials)
-            .build();
-
-    this.listLogMetricsCallable =
-        UnaryCallable.create(settings.listLogMetricsSettings(), clientContext);
-    this.listLogMetricsPagedCallable =
-        UnaryCallable.createPagedVariant(settings.listLogMetricsSettings(), clientContext);
-    this.getLogMetricCallable =
-        UnaryCallable.create(settings.getLogMetricSettings(), clientContext);
-    this.createLogMetricCallable =
-        UnaryCallable.create(settings.createLogMetricSettings(), clientContext);
-    this.updateLogMetricCallable =
-        UnaryCallable.create(settings.updateLogMetricSettings(), clientContext);
-    this.deleteLogMetricCallable =
-        UnaryCallable.create(settings.deleteLogMetricSettings(), clientContext);
-
-    if (settings.getChannelProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              channel.shutdown();
-            }
-          });
-    }
-    if (settings.getExecutorProvider().shouldAutoClose()) {
-      closeables.add(
-          new Closeable() {
-            @Override
-            public void close() throws IOException {
-              executor.shutdown();
-            }
-          });
-    }
+  protected MetricsClient(MetricsServiceV2Stub stub) {
+    this.settings = null;
+    this.stub = stub;
   }
 
   public final MetricsSettings getSettings() {
     return settings;
+  }
+
+  public MetricsServiceV2Stub getStub() {
+    return stub;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -194,7 +154,7 @@ public class MetricsClient implements AutoCloseable {
    *
    * @param parent Required. The name of the project containing the metrics:
    *     <p>"projects/[PROJECT_ID]"
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLogMetricsPagedResponse listLogMetrics(ParentNameOneof parent) {
     ListLogMetricsRequest request =
@@ -221,7 +181,7 @@ public class MetricsClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLogMetricsPagedResponse listLogMetrics(ListLogMetricsRequest request) {
     return listLogMetricsPagedCallable().call(request);
@@ -249,7 +209,7 @@ public class MetricsClient implements AutoCloseable {
    */
   public final UnaryCallable<ListLogMetricsRequest, ListLogMetricsPagedResponse>
       listLogMetricsPagedCallable() {
-    return listLogMetricsPagedCallable;
+    return stub.listLogMetricsPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -281,7 +241,7 @@ public class MetricsClient implements AutoCloseable {
    */
   public final UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse>
       listLogMetricsCallable() {
-    return listLogMetricsCallable;
+    return stub.listLogMetricsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -299,7 +259,7 @@ public class MetricsClient implements AutoCloseable {
    *
    * @param metricName The resource name of the desired metric:
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric getLogMetric(MetricNameOneof metricName) {
 
@@ -325,7 +285,7 @@ public class MetricsClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final LogMetric getLogMetric(GetLogMetricRequest request) {
     return getLogMetricCallable().call(request);
@@ -350,7 +310,7 @@ public class MetricsClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable() {
-    return getLogMetricCallable;
+    return stub.getLogMetricCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -371,7 +331,7 @@ public class MetricsClient implements AutoCloseable {
    *     <p>"projects/[PROJECT_ID]"
    *     <p>The new metric must be provided in the request.
    * @param metric The new logs-based metric, which must not have an identifier that already exists.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric createLogMetric(ParentNameOneof parent, LogMetric metric) {
 
@@ -402,7 +362,7 @@ public class MetricsClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric createLogMetric(CreateLogMetricRequest request) {
     return createLogMetricCallable().call(request);
@@ -429,7 +389,7 @@ public class MetricsClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable() {
-    return createLogMetricCallable;
+    return stub.createLogMetricCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -452,7 +412,7 @@ public class MetricsClient implements AutoCloseable {
    *     same as `[METRIC_ID]` If the metric does not exist in `[PROJECT_ID]`, then a new metric is
    *     created.
    * @param metric The updated metric.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric updateLogMetric(MetricNameOneof metricName, LogMetric metric) {
 
@@ -483,7 +443,7 @@ public class MetricsClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric updateLogMetric(UpdateLogMetricRequest request) {
     return updateLogMetricCallable().call(request);
@@ -510,7 +470,7 @@ public class MetricsClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable() {
-    return updateLogMetricCallable;
+    return stub.updateLogMetricCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -528,7 +488,7 @@ public class MetricsClient implements AutoCloseable {
    *
    * @param metricName The resource name of the metric to delete:
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteLogMetric(MetricNameOneof metricName) {
 
@@ -554,7 +514,7 @@ public class MetricsClient implements AutoCloseable {
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   private final void deleteLogMetric(DeleteLogMetricRequest request) {
     deleteLogMetricCallable().call(request);
@@ -579,17 +539,36 @@ public class MetricsClient implements AutoCloseable {
    * </code></pre>
    */
   public final UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable() {
-    return deleteLogMetricCallable;
+    return stub.deleteLogMetricCallable();
   }
 
-  /**
-   * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
-   * cancelled.
-   */
   @Override
   public final void close() throws Exception {
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
   }
 }

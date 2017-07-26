@@ -15,14 +15,6 @@
  */
 package com.google.cloud.language.v1;
 
-import com.google.cloud.language.v1.AnalyzeEntitiesRequest;
-import com.google.cloud.language.v1.AnalyzeEntitiesResponse;
-import com.google.cloud.language.v1.AnalyzeSentimentRequest;
-import com.google.cloud.language.v1.AnalyzeSentimentResponse;
-import com.google.cloud.language.v1.AnalyzeSyntaxRequest;
-import com.google.cloud.language.v1.AnalyzeSyntaxResponse;
-import com.google.cloud.language.v1.AnnotateTextRequest;
-import com.google.cloud.language.v1.AnnotateTextResponse;
 import com.google.cloud.language.v1.LanguageServiceGrpc.LanguageServiceImplBase;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
