@@ -58,7 +58,6 @@ import org.junit.runners.Parameterized.Parameters;
 import org.threeten.bp.Duration;
 
 /** Tests for {@link Subscriber}. */
-@RunWith(Parameterized.class)
 public class SubscriberTest {
 
   private static final SubscriptionName TEST_SUBSCRIPTION =
@@ -69,19 +68,12 @@ public class SubscriberTest {
 
   private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECS = 2;
 
-  private final boolean isStreamingTest;
-
   private ManagedChannel testChannel;
   private FakeScheduledExecutorService fakeExecutor;
   private FakeSubscriberServiceImpl fakeSubscriberServiceImpl;
   private ServerImpl testServer;
 
   private TestReceiver testReceiver;
-
-  @Parameters
-  public static Collection<Object[]> data() {
-    return Arrays.asList(new Object[][] {{true}});
-  }
 
   static class TestReceiver implements MessageReceiver {
     private final LinkedBlockingQueue<AckReplyConsumer> outstandingMessageReplies =
@@ -166,10 +158,6 @@ public class SubscriberTest {
     }
   }
 
-  public SubscriberTest(boolean streamingTest) {
-    this.isStreamingTest = streamingTest;
-  }
-
   @Rule public TestName testName = new TestName();
 
   @Before
@@ -201,21 +189,6 @@ public class SubscriberTest {
     subscriber.stopAsync().awaitTerminated();
 
     assertEquivalent(testAckIds, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(1));
-  }
-
-  @Test
-  public void testGetSubscriptionOnce() throws Exception {
-    if (isStreamingTest) {
-      return;
-    }
-    Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
-
-    sendMessages(ImmutableList.of("A"));
-
-    // Trigger ack sending
-    subscriber.stopAsync().awaitTerminated();
-
-    assertEquals(1, fakeSubscriberServiceImpl.getSubscriptionCalledCount());
   }
 
   @Test
@@ -406,11 +379,6 @@ public class SubscriberTest {
 
   @Test
   public void testStreamAckDeadlineUpdate() throws Exception {
-    if (!isStreamingTest) {
-      // This test is not applicable to polling.
-      return;
-    }
-
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
@@ -453,11 +421,6 @@ public class SubscriberTest {
 
   @Test
   public void testOpenedChannels() throws Exception {
-    if (!isStreamingTest) {
-      // This test is not applicable to polling.
-      return;
-    }
-
     final int expectedChannelCount =
         Runtime.getRuntime().availableProcessors() * Subscriber.CHANNELS_PER_CORE;
 
@@ -471,11 +434,6 @@ public class SubscriberTest {
 
   @Test
   public void testFailedChannel_recoverableError_channelReopened() throws Exception {
-    if (!isStreamingTest) {
-      // This test is not applicable to polling.
-      return;
-    }
-
     final int expectedChannelCount =
         Runtime.getRuntime().availableProcessors() * Subscriber.CHANNELS_PER_CORE;
 
@@ -497,11 +455,6 @@ public class SubscriberTest {
 
   @Test(expected = IllegalStateException.class)
   public void testFailedChannel_fatalError_subscriberFails() throws Exception {
-    if (!isStreamingTest) {
-      // This test is not applicable to polling.
-      throw new IllegalStateException("To fullfil test expectation");
-    }
-
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
@@ -525,10 +478,6 @@ public class SubscriberTest {
   private Subscriber startSubscriber(Builder testSubscriberBuilder) throws Exception {
     Subscriber subscriber = testSubscriberBuilder.build();
     subscriber.startAsync().awaitRunning();
-    // if (!isStreamingTest) {
-    //   // Shutdown streaming
-    //   fakeSubscriberServiceImpl.sendError(new StatusException(Status.UNIMPLEMENTED));
-    // }
     return subscriber;
   }
 
@@ -538,13 +487,8 @@ public class SubscriberTest {
       messages.add(ReceivedMessage.newBuilder().setAckId(ackId).setMessage(TEST_MESSAGE).build());
     }
     testReceiver.setExpectedMessages(messages.size());
-    if (isStreamingTest) {
-      fakeSubscriberServiceImpl.sendStreamingResponse(
-          StreamingPullResponse.newBuilder().addAllReceivedMessages(messages).build());
-    } else {
-      fakeSubscriberServiceImpl.enqueuePullResponse(
-          PullResponse.newBuilder().addAllReceivedMessages(messages).build());
-    }
+    fakeSubscriberServiceImpl.sendStreamingResponse(
+    StreamingPullResponse.newBuilder().addAllReceivedMessages(messages).build());
     testReceiver.waitForExpectedMessages();
   }
 

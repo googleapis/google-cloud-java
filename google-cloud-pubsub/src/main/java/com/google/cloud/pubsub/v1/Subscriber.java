@@ -115,7 +115,6 @@ public class Subscriber extends AbstractApiService {
   private final List<ManagedChannel> channels;
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
-  private final List<PollingSubscriberConnection> pollingSubscriberConnections;
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
   private ScheduledFuture<?> ackDeadlineUpdater;
@@ -170,7 +169,6 @@ public class Subscriber extends AbstractApiService {
     numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
     channels = new ArrayList<ManagedChannel>(numChannels);
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
-    pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
   }
 
   /**
