@@ -128,7 +128,7 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud</site.installationModule>
 
-    <api-client.version>1.21.0</api-client.version>
+    <api-client.version>1.22.0</api-client.version>
 
     <api-common.version>1.1.0</api-common.version>
     <gax.version>1.5.0</gax.version>
@@ -137,8 +137,11 @@
     <google.auth.version>0.7.0</google.auth.version>
     <grpc.version>1.4.0</grpc.version>
     <guava.version>20.0</guava.version>
-    <http-client.version>1.21.0</http-client.version>
-    <protobuf.version>3.3.0</protobuf.version>
+    <http-client.version>1.22.0</http-client.version>
+    <protobuf.version>3.3.1</protobuf.version>
+
+    <easymock.version>3.4</easymock.version>
+    <objenesis.version>2.6</objenesis.version>
 
     <cloud.version>0.20.4-alpha-SNAPSHOT</cloud.version>
     <bigquery.version>0.20.4-beta-SNAPSHOT</bigquery.version>
@@ -165,9 +168,6 @@
     <vision.version>0.20.4-beta-SNAPSHOT</vision.version>
     <video-intelligence.version>0.20.4-alpha-SNAPSHOT</video-intelligence.version>
     <testing.version>0.20.4-alpha-SNAPSHOT</testing.version>
-
-    <easymock.version>3.4</easymock.version>
-    <objenesis.version>2.6</objenesis.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -729,7 +729,7 @@
       <dependency>
         <groupId>com.google.oauth-client</groupId>
         <artifactId>google-oauth-client</artifactId>
-        <version>1.21.0</version>
+        <version>1.22.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api-client</groupId>
@@ -776,7 +776,7 @@
       <dependency>
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
-        <version>2.0.8</version>
+        <version>2.0.19</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
@@ -826,6 +826,9 @@
     <module>google-cloud-translate</module>
     <module>google-cloud-vision</module>
     <module>google-cloud-video-intelligence</module>
+
+    <module>google-cloud-dep-verification</module>
+
     <!--
       Uncomment the following lines to include google app engine (GAE) testing apps in the build.
       Each GAE app packages all its dependencies in a fat war (>20MB each).
@@ -894,7 +897,8 @@
                 <requireJavaVersion>
                   <version>[1.7,)</version>
                 </requireJavaVersion>
-		<dependencyConvergence/>
+                <dependencyConvergence/>
+                <requireUpperBoundDeps/>
               </rules>
             </configuration>
           </execution>
