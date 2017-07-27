@@ -255,7 +255,7 @@ public class Subscriber extends AbstractApiService {
 
     // When started, connections submit tasks to the executor.
     // These tasks must finish before the connections can declare themselves running.
-    // If we have a single-thread executor and call startPollingConnections from the
+    // If we have a single-thread executor and call startStreamingConnections from the
     // same executor, it will deadlock: the thread will be stuck waiting for connections
     // to start but cannot start the connections.
     // For this reason, we spawn a dedicated thread. Starting subscriber should be rare.
@@ -264,7 +264,6 @@ public class Subscriber extends AbstractApiService {
               @Override
               public void run() {
                 try {
-                  // startPollingConnections();
                   startStreamingConnections();
                   notifyStarted();
                 } catch (Throwable t) {
@@ -278,7 +277,6 @@ public class Subscriber extends AbstractApiService {
   @Override
   protected void doStop() {
     stopAllStreamingConnections();
-    // stopAllPollingConnections();
     try {
       for (AutoCloseable closeable : closeables) {
         closeable.close();
@@ -371,70 +369,6 @@ public class Subscriber extends AbstractApiService {
     if (ackDeadlineUpdater != null) {
       ackDeadlineUpdater.cancel(true);
     }
-  }
-
-  // Starts polling connections. Blocks until all connections declare themselves running.
-  private void startPollingConnections() throws IOException {
-    synchronized (pollingSubscriberConnections) {
-      Credentials credentials = credentialsProvider.getCredentials();
-      CallCredentials callCredentials =
-          credentials == null ? null : MoreCallCredentials.from(credentials);
-
-      SubscriberGrpc.SubscriberBlockingStub getSubStub =
-          SubscriberGrpc.newBlockingStub(channels.get(0))
-              .withDeadlineAfter(
-                  PollingSubscriberConnection.DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS);
-      if (callCredentials != null) {
-        getSubStub = getSubStub.withCallCredentials(callCredentials);
-      }
-      Subscription subscriptionInfo =
-          getSubStub.getSubscription(
-              GetSubscriptionRequest.newBuilder()
-                  .setSubscription(cachedSubscriptionNameString)
-                  .build());
-
-      for (int i = 0; i < numChannels; i++) {
-        SubscriberFutureStub stub = SubscriberGrpc.newFutureStub(channels.get(i));
-        if (callCredentials != null) {
-          stub = stub.withCallCredentials(callCredentials);
-        }
-        pollingSubscriberConnections.add(
-            new PollingSubscriberConnection(
-                subscriptionInfo,
-                receiver,
-                ackExpirationPadding,
-                maxAckExtensionPeriod,
-                ackLatencyDistribution,
-                stub,
-                flowController,
-                flowControlSettings.getMaxOutstandingElementCount(),
-                executor,
-                alarmsExecutor,
-                clock));
-      }
-      startConnections(
-          pollingSubscriberConnections,
-          new Listener() {
-            @Override
-            public void failed(State from, Throwable failure) {
-              // If a connection failed is because of a fatal error, we should fail the
-              // whole subscriber.
-              stopAllPollingConnections();
-              try {
-                notifyFailed(failure);
-              } catch (IllegalStateException e) {
-                if (isRunning()) {
-                  throw e;
-                }
-                // It could happen that we are shutting down while some channels fail.
-              }
-            }
-          });
-    }
-  }
-
-  private void stopAllPollingConnections() {
-    stopConnections(pollingSubscriberConnections);
   }
 
   private void startConnections(
