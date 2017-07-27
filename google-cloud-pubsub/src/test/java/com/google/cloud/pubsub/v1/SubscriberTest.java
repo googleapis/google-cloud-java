@@ -30,7 +30,6 @@ import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.SubscriptionName;
@@ -42,7 +41,6 @@ import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
 import io.grpc.internal.ServerImpl;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -52,9 +50,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 import org.threeten.bp.Duration;
 
 /** Tests for {@link Subscriber}. */
@@ -488,7 +483,7 @@ public class SubscriberTest {
     }
     testReceiver.setExpectedMessages(messages.size());
     fakeSubscriberServiceImpl.sendStreamingResponse(
-    StreamingPullResponse.newBuilder().addAllReceivedMessages(messages).build());
+        StreamingPullResponse.newBuilder().addAllReceivedMessages(messages).build());
     testReceiver.waitForExpectedMessages();
   }
 
