@@ -269,7 +269,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   private SeekableByteChannel newReadChannel(Path path, Set<? extends OpenOption> options)
       throws IOException {
     initStorage();
-    int maxChannelReopens = ((CloudStorageFileSystem) path.getFileSystem()).config().maxChannelReopens();
+    int maxChannelReopens = CloudStorageUtil.getMaxChannelReopensFromPath(path);
     for (OpenOption option : options) {
       if (option instanceof StandardOpenOption) {
         switch ((StandardOpenOption) option) {
@@ -408,7 +408,18 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       }
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
-    return storage.delete(cloudPath.getBlobId());
+
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(CloudStorageUtil.getMaxChannelReopensFromPath(path));
+    // Loop will terminate via an exception if all retries are exhausted
+    while (true) {
+      try {
+        return storage.delete(cloudPath.getBlobId());
+      } catch (StorageException exs) {
+        // Will rethrow a StorageException if all retries/reopens are exhausted
+        retryHandler.handleStorageException(exs);
+        // we're being aggressive by retrying even on scenarios where we'd normally reopen.
+      }
+    }
   }
 
   @Override
@@ -440,10 +451,11 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     initStorage();
     boolean wantCopyAttributes = false;
     boolean wantReplaceExisting = false;
-    boolean setContentType = false;
-    boolean setCacheControl = false;
-    boolean setContentEncoding = false;
-    boolean setContentDisposition = false;
+    // true if the option was set manually (so we shouldn't copy the parent's)
+    boolean overrideContentType = false;
+    boolean overrideCacheControl = false;
+    boolean overrideContentEncoding = false;
+    boolean overrideContentDisposition = false;
 
     CloudStoragePath toPath = CloudStorageUtil.checkPath(target);
     BlobInfo.Builder tgtInfoBuilder = BlobInfo.newBuilder(toPath.getBlobId()).setContentType("");
@@ -467,17 +479,17 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           blockSize = ((OptionBlockSize) option).size();
         } else if (option instanceof OptionMimeType) {
           tgtInfoBuilder.setContentType(((OptionMimeType) option).mimeType());
-          setContentType = true;
+          overrideContentType = true;
         } else if (option instanceof OptionCacheControl) {
           tgtInfoBuilder.setCacheControl(((OptionCacheControl) option).cacheControl());
-          setCacheControl = true;
+          overrideCacheControl = true;
         } else if (option instanceof OptionContentEncoding) {
           tgtInfoBuilder.setContentEncoding(((OptionContentEncoding) option).contentEncoding());
-          setContentEncoding = true;
+          overrideContentEncoding = true;
         } else if (option instanceof OptionContentDisposition) {
           tgtInfoBuilder.setContentDisposition(
               ((OptionContentDisposition) option).contentDisposition());
-          setContentDisposition = true;
+          overrideContentDisposition = true;
         } else {
           throw new UnsupportedOperationException(option.toString());
         }
@@ -515,40 +527,51 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throw new CloudStoragePseudoDirectoryException(toPath);
     }
 
-    try {
-      if (wantCopyAttributes) {
-        BlobInfo blobInfo = storage.get(fromPath.getBlobId());
-        if (null == blobInfo) {
-          throw new NoSuchFileException(fromPath.toString());
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(CloudStorageUtil.getMaxChannelReopensFromPath(source));
+    // Loop will terminate via an exception if all retries are exhausted
+    while (true) {
+      try {
+        if ( wantCopyAttributes ) {
+          BlobInfo blobInfo = storage.get(fromPath.getBlobId());
+          if ( null == blobInfo ) {
+            throw new NoSuchFileException(fromPath.toString());
+          }
+          if ( !overrideCacheControl ) {
+            tgtInfoBuilder.setCacheControl(blobInfo.getCacheControl());
+          }
+          if ( !overrideContentType ) {
+            tgtInfoBuilder.setContentType(blobInfo.getContentType());
+          }
+          if ( !overrideContentEncoding ) {
+            tgtInfoBuilder.setContentEncoding(blobInfo.getContentEncoding());
+          }
+          if ( !overrideContentDisposition ) {
+            tgtInfoBuilder.setContentDisposition(blobInfo.getContentDisposition());
+          }
+          tgtInfoBuilder.setAcl(blobInfo.getAcl());
+          tgtInfoBuilder.setMetadata(blobInfo.getMetadata());
         }
-        if (!setCacheControl) {
-          tgtInfoBuilder.setCacheControl(blobInfo.getCacheControl());
-        }
-        if (!setContentType) {
-          tgtInfoBuilder.setContentType(blobInfo.getContentType());
-        }
-        if (!setContentEncoding) {
-          tgtInfoBuilder.setContentEncoding(blobInfo.getContentEncoding());
-        }
-        if (!setContentDisposition) {
-          tgtInfoBuilder.setContentDisposition(blobInfo.getContentDisposition());
-        }
-        tgtInfoBuilder.setAcl(blobInfo.getAcl());
-        tgtInfoBuilder.setMetadata(blobInfo.getMetadata());
-      }
 
-      BlobInfo tgtInfo = tgtInfoBuilder.build();
-      Storage.CopyRequest.Builder copyReqBuilder =
-          Storage.CopyRequest.newBuilder().setSource(fromPath.getBlobId());
-      if (wantReplaceExisting) {
-        copyReqBuilder = copyReqBuilder.setTarget(tgtInfo);
-      } else {
-        copyReqBuilder = copyReqBuilder.setTarget(tgtInfo, Storage.BlobTargetOption.doesNotExist());
+        BlobInfo tgtInfo = tgtInfoBuilder.build();
+        Storage.CopyRequest.Builder copyReqBuilder =
+                Storage.CopyRequest.newBuilder().setSource(fromPath.getBlobId());
+        if (wantReplaceExisting) {
+          copyReqBuilder = copyReqBuilder.setTarget(tgtInfo);
+        } else {
+          copyReqBuilder = copyReqBuilder.setTarget(tgtInfo, Storage.BlobTargetOption.doesNotExist());
+        }
+        CopyWriter copyWriter = storage.copy(copyReqBuilder.build());
+        copyWriter.getResult();
+        break;
+      } catch ( StorageException oops ) {
+        try {
+          // Will rethrow a StorageException if all retries/reopens are exhausted
+          retryHandler.handleStorageException(oops);
+          // we're being aggressive by retrying even on scenarios where we'd normally reopen.
+        } catch (StorageException retriesExhaustedException) {
+          throw asIoException(retriesExhaustedException);
+        }
       }
-      CopyWriter copyWriter = storage.copy(copyReqBuilder.build());
-      copyWriter.getResult();
-    } catch (StorageException oops) {
-      throw asIoException(oops);
     }
   }
 
@@ -579,13 +602,25 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           throw new UnsupportedOperationException(mode.toString());
       }
     }
-    CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
-      return;
-    }
-    if (storage.get(cloudPath.getBlobId(), Storage.BlobGetOption.fields(Storage.BlobField.ID))
-        == null) {
-      throw new NoSuchFileException(path.toString());
+
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(CloudStorageUtil.getMaxChannelReopensFromPath(path));
+    // Loop will terminate via an exception if all retries are exhausted
+    while (true) {
+      try {
+        CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
+        if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories() ) {
+          return;
+        }
+        if ( storage.get(cloudPath.getBlobId(), Storage.BlobGetOption.fields(Storage.BlobField.ID))
+                == null ) {
+          throw new NoSuchFileException(path.toString());
+        }
+        break;
+      } catch (StorageException exs) {
+        // Will rethrow a StorageException if all retries/reopens are exhausted
+        retryHandler.handleStorageException(exs);
+        // we're being aggressive by retrying even on scenarios where we'd normally reopen.
+      }
     }
   }
 
@@ -598,23 +633,34 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throw new UnsupportedOperationException(type.getSimpleName());
     }
     initStorage();
-    CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
-      @SuppressWarnings("unchecked")
-      A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
-      return result;
+
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(CloudStorageUtil.getMaxChannelReopensFromPath(path));
+    // Loop will terminate via an exception if all retries are exhausted
+    while (true) {
+      try {
+        CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
+        if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories() ) {
+          @SuppressWarnings("unchecked")
+          A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
+          return result;
+        }
+        BlobInfo blobInfo = storage.get(cloudPath.getBlobId());
+        // null size indicate a file that we haven't closed yet, so GCS treats it as not there yet.
+        if ( null == blobInfo || blobInfo.getSize() == null ) {
+          throw new NoSuchFileException(
+              "gs://" + cloudPath.getBlobId().getBucket() + "/" + cloudPath.getBlobId().getName());
+        }
+        CloudStorageObjectAttributes ret;
+        ret = new CloudStorageObjectAttributes(blobInfo);
+        @SuppressWarnings("unchecked")
+        A result = (A) ret;
+        return result;
+      } catch (StorageException exs) {
+        // Will rethrow a StorageException if all retries/reopens are exhausted
+        retryHandler.handleStorageException(exs);
+        // we're being aggressive by retrying even on scenarios where we'd normally reopen.
+      }
     }
-    BlobInfo blobInfo = storage.get(cloudPath.getBlobId());
-    // null size indicate a file that we haven't closed yet, so GCS treats it as not there yet.
-    if (null == blobInfo || blobInfo.getSize() == null) {
-      throw new NoSuchFileException(
-          "gs://" + cloudPath.getBlobId().getBucket() + "/" + cloudPath.getBlobId().getName());
-    }
-    CloudStorageObjectAttributes ret;
-    ret = new CloudStorageObjectAttributes(blobInfo);
-    @SuppressWarnings("unchecked")
-    A result = (A) ret;
-    return result;
   }
 
   @Override
@@ -653,21 +699,32 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(dir);
     checkNotNull(filter);
     initStorage();
-    final String prefix = cloudPath.toRealPath().toString();
-    final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(),
-        Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
-        Storage.BlobListOption.fields()).iterateAll().iterator();
-    return new DirectoryStream<Path>() {
-      @Override
-      public Iterator<Path> iterator() {
-        return new LazyPathIterator(cloudPath.getFileSystem(), prefix, blobIterator, filter);
-      }
 
-      @Override
-      public void close() throws IOException {
-        // Does nothing since there's nothing to close. Commenting this method to quiet codacy.
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(CloudStorageUtil.getMaxChannelReopensFromPath(dir));
+    // Loop will terminate via an exception if all retries are exhausted
+    while (true) {
+      try {
+        final String prefix = cloudPath.toRealPath().toString();
+        final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(),
+                Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
+                Storage.BlobListOption.fields()).iterateAll().iterator();
+        return new DirectoryStream<Path>() {
+          @Override
+          public Iterator<Path> iterator() {
+            return new LazyPathIterator(cloudPath.getFileSystem(), prefix, blobIterator, filter);
+          }
+
+          @Override
+          public void close() throws IOException {
+            // Does nothing since there's nothing to close. Commenting this method to quiet codacy.
+          }
+        };
+      } catch (StorageException exs) {
+        // Will rethrow a StorageException if all retries/reopens are exhausted
+        retryHandler.handleStorageException(exs);
+        // we're being aggressive by retrying even on scenarios where we'd normally reopen.
       }
-    };
+    }
   }
 
   /**
