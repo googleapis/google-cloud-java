@@ -17,6 +17,7 @@
 package com.google.cloud.grpc;
 
 import com.google.api.client.http.HttpResponseException;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcApiException;
 import com.google.cloud.BaseServiceException;
@@ -64,6 +65,7 @@ public class BaseGrpcServiceException extends BaseServiceException {
         .build();
   }
 
+  @BetaApi
   public BaseGrpcServiceException(GrpcApiException apiException) {
     super(ExceptionData.newBuilder()
         .setMessage(apiException.getMessage())
