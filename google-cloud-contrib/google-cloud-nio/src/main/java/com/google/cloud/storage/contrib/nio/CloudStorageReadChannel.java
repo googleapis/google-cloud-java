@@ -82,7 +82,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   private void innerOpen() throws IOException {
     this.channel = gcsStorage.reader(file);
     if (position > 0) {
-      channel.seek((int) position);
+      channel.seek(position);
     }
   }
 
