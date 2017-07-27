@@ -82,6 +82,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 import javax.crypto.spec.SecretKeySpec;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -1507,5 +1508,14 @@ public class ITStorageTest {
     remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
     Bucket updatedBucket = storage.update(remoteBucket);
     assertTrue(updatedBucket.requesterPays());
+
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    Bucket.BlobTargetOption option = Bucket.BlobTargetOption.userProject(projectId);
+    String blobName = "test-create-empty-blob-requester-pays";
+    Blob remoteBlob = updatedBucket.create(blobName, BLOB_BYTE_CONTENT, option);
+    assertNotNull(remoteBlob);
+    byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    assertTrue(remoteBlob.delete());
   }
 }

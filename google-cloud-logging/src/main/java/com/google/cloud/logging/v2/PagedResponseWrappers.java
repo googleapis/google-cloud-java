@@ -20,10 +20,10 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.grpc.AbstractFixedSizeCollection;
-import com.google.api.gax.grpc.AbstractPage;
-import com.google.api.gax.grpc.AbstractPagedListResponse;
-import com.google.api.gax.grpc.PageContext;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogMetricsRequest;
@@ -97,7 +97,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListLogEntriesPage> createPageAsync(
+    public ApiFuture<ListLogEntriesPage> createPageAsync(
         PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> context,
         ApiFuture<ListLogEntriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -187,7 +187,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListMonitoredResourceDescriptorsPage> createPageAsync(
+    public ApiFuture<ListMonitoredResourceDescriptorsPage> createPageAsync(
         PageContext<
                 ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
                 MonitoredResourceDescriptor>
@@ -262,7 +262,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListLogsPage> createPageAsync(
+    public ApiFuture<ListLogsPage> createPageAsync(
         PageContext<ListLogsRequest, ListLogsResponse, String> context,
         ApiFuture<ListLogsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -334,7 +334,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListSinksPage> createPageAsync(
+    public ApiFuture<ListSinksPage> createPageAsync(
         PageContext<ListSinksRequest, ListSinksResponse, LogSink> context,
         ApiFuture<ListSinksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -408,7 +408,7 @@ public class PagedResponseWrappers {
     }
 
     @Override
-    protected ApiFuture<ListLogMetricsPage> createPageAsync(
+    public ApiFuture<ListLogMetricsPage> createPageAsync(
         PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
         ApiFuture<ListLogMetricsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);

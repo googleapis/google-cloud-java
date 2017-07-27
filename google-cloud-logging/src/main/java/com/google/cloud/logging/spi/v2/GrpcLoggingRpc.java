@@ -19,18 +19,19 @@ package com.google.cloud.logging.spi.v2;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.FixedChannelProvider;
-import com.google.api.gax.grpc.FixedExecutorProvider;
-import com.google.api.gax.grpc.ProviderManager;
-import com.google.api.gax.grpc.UnaryCallSettings;
+import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcTransport;
+import com.google.api.gax.grpc.GrpcTransportProvider;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.Transport;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallSettings.Builder;
+import com.google.auth.Credentials;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
-import com.google.cloud.NoCredentials;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.v2.ConfigClient;
@@ -76,19 +77,16 @@ public class GrpcLoggingRpc implements LoggingRpc {
   private final LoggingClient loggingClient;
   private final MetricsClient metricsClient;
   private final ScheduledExecutorService executor;
-  private final ProviderManager providerManager;
+  private final ClientContext clientContext;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
 
   private boolean closed;
 
-  public GrpcLoggingRpc(LoggingOptions options) throws IOException {
+  public GrpcLoggingRpc(final LoggingOptions options) throws IOException {
     GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
     executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();
     try {
-      ExecutorProvider executorProvider = FixedExecutorProvider.create(executor);
-      ChannelProvider channelProvider;
-      CredentialsProvider credentialsProvider;
       // todo(mziccard): ChannelProvider should support null/absent credentials for testing
       if (options.getHost().contains("localhost")
           || NoCredentials.getInstance().equals(options.getCredentials())) {
@@ -96,37 +94,45 @@ public class GrpcLoggingRpc implements LoggingRpc {
             .usePlaintext(true)
             .executor(executor)
             .build();
-        channelProvider = FixedChannelProvider.create(managedChannel);
-        credentialsProvider = new NoCredentialsProvider();
+        clientContext = ClientContext.newBuilder()
+            .setCredentials(null)
+            .setExecutor(executor)
+            .setTransportContext(
+                GrpcTransport.newBuilder().setChannel(managedChannel).build()).build();
       } else {
-        channelProvider = GrpcTransportOptions.setUpChannelProvider(
-            LoggingSettings.defaultChannelProviderBuilder(), options);
-        credentialsProvider = GrpcTransportOptions.setUpCredentialsProvider( options);
+        Credentials credentials = GrpcTransportOptions.setUpCredentialsProvider(options)
+            .getCredentials();
+        ChannelProvider channelProvider = GrpcTransportOptions.setUpChannelProvider(
+            LoggingSettings.defaultGrpcChannelProviderBuilder(), options);
+        GrpcTransportProvider transportProviders = GrpcTransportProvider.newBuilder()
+            .setChannelProvider(channelProvider).build();
+        Transport transport;
+        if (transportProviders.needsExecutor()) {
+          transport = transportProviders.getTransport(executor);
+        } else {
+          transport = transportProviders.getTransport();
+        }
+        clientContext = ClientContext.newBuilder()
+            .setCredentials(credentials)
+            .setExecutor(executor)
+            .setTransportContext(transport)
+            .setBackgroundResources(transport.getBackgroundResources())
+            .build();
       }
-      providerManager = ProviderManager.newBuilder()
-          .setChannelProvider(channelProvider)
-          .setExecutorProvider(executorProvider)
-          .build();
-      UnaryCallSettings.Builder callSettingsBuilder = transportOptions
-          .getApiCallSettings(options.getRetrySettings());
+      ApiFunction<UnaryCallSettings.Builder, Void> retrySettingsSetter =
+          new ApiFunction<Builder, Void>() {
+        @Override
+        public Void apply(UnaryCallSettings.Builder builder) {
+          builder.setRetrySettings(options.getRetrySettings());
+          return null;
+        }
+      };
       ConfigSettings.Builder confBuilder =
-          ConfigSettings.defaultBuilder()
-              .setExecutorProvider(providerManager)
-              .setChannelProvider(providerManager)
-              .setCredentialsProvider(credentialsProvider)
-              .applyToAllUnaryMethods(callSettingsBuilder);
+          ConfigSettings.defaultBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       LoggingSettings.Builder logBuilder =
-          LoggingSettings.defaultBuilder()
-              .setExecutorProvider(providerManager)
-              .setChannelProvider(providerManager)
-              .setCredentialsProvider(credentialsProvider)
-              .applyToAllUnaryMethods(callSettingsBuilder);
+          LoggingSettings.defaultBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       MetricsSettings.Builder metricsBuilder =
-          MetricsSettings.defaultBuilder()
-              .setExecutorProvider(providerManager)
-              .setChannelProvider(providerManager)
-              .setCredentialsProvider(credentialsProvider)
-              .applyToAllUnaryMethods(callSettingsBuilder);
+          MetricsSettings.defaultBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       configClient = ConfigClient.create(confBuilder.build());
       loggingClient = LoggingClient.create(logBuilder.build());
       metricsClient = MetricsClient.create(metricsBuilder.build());
@@ -145,11 +151,11 @@ public class GrpcLoggingRpc implements LoggingRpc {
     }
     return ApiFutures.catching(
         from,
-        ApiException.class,
-        new ApiFunction<ApiException, V>() {
+        GrpcApiException.class,
+        new ApiFunction<GrpcApiException, V>() {
           @Override
-          public V apply(ApiException exception) {
-            if (returnNullOnSet.contains(exception.getStatusCode())) {
+          public V apply(GrpcApiException exception) {
+            if (returnNullOnSet.contains(exception.getStatusCode().getCode())) {
               return null;
             }
             throw new LoggingException(exception);
@@ -240,7 +246,9 @@ public class GrpcLoggingRpc implements LoggingRpc {
     configClient.close();
     loggingClient.close();
     metricsClient.close();
-    providerManager.getChannel().shutdown();
+    for (BackgroundResource resource : clientContext.getBackgroundResources()) {
+      resource.close();
+    }
     executorFactory.release(executor);
   }
 }

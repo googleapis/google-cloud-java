@@ -25,10 +25,10 @@ package com.google.cloud.examples.pubsub.snippets;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
@@ -150,12 +150,9 @@ public class SubscriberSnippets {
         FixedCredentialsProvider
             .create(ServiceAccountCredentials.fromStream(
                 new FileInputStream("credentials.json")));
-    ChannelProvider channelProvider =
-        TopicAdminSettings.defaultChannelProviderBuilder()
-            .setCredentialsProvider(credentialsProvider).build();
 
     Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
-        .setChannelProvider(channelProvider)
+        .setCredentialsProvider(credentialsProvider)
         .build();
     // [START pubsub_subscriber_custom_credentials]
     return subscriber;

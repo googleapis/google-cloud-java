@@ -26,10 +26,10 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.pubsub.v1.Publisher;
@@ -37,9 +37,8 @@ import com.google.cloud.pubsub.v1.TopicAdminSettings;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
-import org.threeten.bp.Duration;
-
 import java.io.FileInputStream;
+import org.threeten.bp.Duration;
 
 /** This class contains snippets for the {@link Publisher} interface. */
 public class PublisherSnippets {
@@ -140,12 +139,9 @@ public class PublisherSnippets {
     CredentialsProvider credentialsProvider =
         FixedCredentialsProvider.create(
             ServiceAccountCredentials.fromStream(new FileInputStream("credentials.json")));
-    ChannelProvider channelProvider =
-        TopicAdminSettings.defaultChannelProviderBuilder()
-            .setCredentialsProvider(credentialsProvider).build();
 
     Publisher publisher = Publisher.defaultBuilder(topicName)
-        .setChannelProvider(channelProvider)
+        .setCredentialsProvider(credentialsProvider)
         .build();
     // [END pubsub_publisher_custom_credentials]
     return publisher;

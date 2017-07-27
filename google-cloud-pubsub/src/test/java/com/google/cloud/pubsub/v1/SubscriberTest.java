@@ -20,9 +20,9 @@ import static com.google.cloud.pubsub.v1.MessageDispatcher.PENDING_ACKS_SEND_DEL
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.core.FixedExecutorProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.FixedChannelProvider;
-import com.google.api.gax.grpc.FixedExecutorProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.cloud.pubsub.v1.FakeSubscriberServiceImpl.ModifyAckDeadline;
 import com.google.cloud.pubsub.v1.Subscriber.Builder;
 import com.google.common.base.Function;

@@ -45,7 +45,7 @@ public abstract class BaseKey implements Serializable {
    *
    * @param <B> the key builder.
    */
-  protected abstract static class Builder<B extends Builder<B>> {
+  public abstract static class Builder<B extends Builder<B>> {
 
     String projectId = "";
     String namespace = "";

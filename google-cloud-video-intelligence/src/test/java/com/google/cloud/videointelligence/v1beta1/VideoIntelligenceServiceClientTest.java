@@ -16,7 +16,8 @@
 package com.google.cloud.videointelligence.v1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.longrunning.Operation;
@@ -61,7 +62,10 @@ public class VideoIntelligenceServiceClientTest {
     serviceHelper.reset();
     VideoIntelligenceServiceSettings settings =
         VideoIntelligenceServiceSettings.defaultBuilder()
-            .setChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportProvider(
+                GrpcTransportProvider.newBuilder()
+                    .setChannelProvider(serviceHelper.createChannelProvider())
+                    .build())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
     client = VideoIntelligenceServiceClient.create(settings);
@@ -121,9 +125,10 @@ public class VideoIntelligenceServiceClientTest {
       client.annotateVideoAsync(inputUri, features, videoContext, outputUri, locationId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(ApiException.class, e.getCause().getClass());
-      ApiException apiException = (ApiException) e.getCause();
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), apiException.getStatusCode());
+      Assert.assertEquals(GrpcApiException.class, e.getCause().getClass());
+      GrpcApiException apiException = (GrpcApiException) e.getCause();
+      Assert.assertEquals(
+          Status.INVALID_ARGUMENT.getCode(), apiException.getStatusCode().getCode());
     }
   }
 }
