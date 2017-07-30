@@ -15,9 +15,10 @@
 
 package com.example.dlp;
 
-import com.google.api.gax.grpc.OperationFuture;
+import com.google.api.gax.rpc.OperationFuture;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.dlp.v2beta1.DlpServiceClient;
+import com.google.longrunning.Operation;
 import com.google.privacy.dlp.v2beta1.CloudStorageOptions;
 import com.google.privacy.dlp.v2beta1.CloudStorageOptions.FileSet;
 import com.google.privacy.dlp.v2beta1.ContentItem;
@@ -226,7 +227,7 @@ public class Inspect {
       OutputStorageConfig outputConfig = OutputStorageConfig.getDefaultInstance();
 
       // asynchronously submit an inspect operation
-      OperationFuture<InspectOperationResult, InspectOperationMetadata> responseFuture =
+      OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation> responseFuture =
           dlpServiceClient.createInspectOperationAsync(inspectConfig, storageConfig, outputConfig);
 
       // ...
@@ -291,7 +292,7 @@ public class Inspect {
       OutputStorageConfig outputConfig = OutputStorageConfig.getDefaultInstance();
 
       // asynchronously submit an inspect operation
-      OperationFuture<InspectOperationResult, InspectOperationMetadata> responseFuture =
+      OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation> responseFuture =
           dlpServiceClient.createInspectOperationAsync(inspectConfig, storageConfig, outputConfig);
 
       // ...
