@@ -84,6 +84,13 @@ public class RecognizeIT {
   }
 
   @Test
+  public void testAsyncWordoffset() throws Exception {
+    Recognize.asyncRecognizeGcs(gcsPath);
+    String got = bout.toString();
+    assertThat(got).contains("\t0.0 sec -");
+  }
+
+  @Test
   public void testStreamRecognize() throws Exception {
     Recognize.streamingRecognizeFile(fileName);
     String got = bout.toString();
