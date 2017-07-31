@@ -75,11 +75,12 @@ public class HttpDatastoreRpc implements DatastoreRpc {
       HttpTransportOptions httpTransportOptions) {
     final HttpRequestInitializer delegate = httpTransportOptions
         .getHttpRequestInitializer(options);
+    final String applicationName = options.getApplicationName();
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
         delegate.initialize(httpRequest);
-        httpRequest.getHeaders().setUserAgent(options.getApplicationName());
+        httpRequest.getHeaders().setUserAgent(applicationName);
       }
     };
   }
