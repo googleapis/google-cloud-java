@@ -14,7 +14,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-errorreporting</artifactId>
-      <version>0.21.1-alpha</version>
+      <version>0.21.2-alpha-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <build>
