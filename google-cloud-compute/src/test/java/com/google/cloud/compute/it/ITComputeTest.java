@@ -85,6 +85,7 @@ import java.util.Set;
 import java.util.concurrent.TimeoutException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -1343,6 +1344,7 @@ operation.waitFor();
     assertTrue(count > 0);
   }
 
+  @Ignore("Avoid leaving orphan networks when interrupted: see #2118")
   @Test
   public void testCreateAndGetNetwork() throws InterruptedException, TimeoutException {
     String name = BASE_RESOURCE_NAME + "create-and-get-network";
@@ -1376,6 +1378,7 @@ operation.waitFor();
     assertNull(compute.getNetwork(name));
   }
 
+  @Ignore("Avoid leaving orphan networks when interrupted: see #2118")
   @Test
   public void testListNetworks() throws InterruptedException, TimeoutException {
     String name = BASE_RESOURCE_NAME + "list-network";
@@ -1424,6 +1427,7 @@ operation.waitFor();
     assertNull(compute.getNetwork(name));
   }
 
+  @Ignore("Avoid leaving orphan networks when interrupted: see #2118")
   @Test
   public void testCreateNetworkAndSubnetwork() throws InterruptedException, TimeoutException {
     String networkName = BASE_RESOURCE_NAME + "create-subnetwork-network";
@@ -1511,6 +1515,7 @@ operation.waitFor();
     assertNull(compute.getNetwork(networkName));
   }
 
+  @Ignore("Avoid leaving orphan networks when interrupted: see #2118")
   @Test
   public void testAggregatedListSubnetworks() throws InterruptedException, TimeoutException {
     String networkName = BASE_RESOURCE_NAME + "list-subnetwork-network";

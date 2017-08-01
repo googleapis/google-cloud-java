@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.20.4-alpha-SNAPSHOT</version>
+  <version>0.21.1-alpha-SNAPSHOT</version>
   <name>Google Cloud</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java</url>
   <description>
@@ -128,46 +128,46 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud</site.installationModule>
 
-    <api-client.version>1.21.0</api-client.version>
+    <api-client.version>1.22.0</api-client.version>
 
     <api-common.version>1.1.0</api-common.version>
     <gax.version>1.5.0</gax.version>
     <gax-grpc.version>0.22.0</gax-grpc.version>
-    <generatedProto.version>0.1.14</generatedProto.version>
+    <generatedProto.version>0.1.15</generatedProto.version>
     <google.auth.version>0.7.0</google.auth.version>
     <grpc.version>1.4.0</grpc.version>
     <guava.version>20.0</guava.version>
-    <http-client.version>1.21.0</http-client.version>
-    <protobuf.version>3.3.0</protobuf.version>
-
-    <cloud.version>0.20.4-alpha-SNAPSHOT</cloud.version>
-    <bigquery.version>0.20.4-beta-SNAPSHOT</bigquery.version>
-    <compute.version>0.20.4-alpha-SNAPSHOT</compute.version>
-    <contrib.version>0.20.4-alpha-SNAPSHOT</contrib.version>
-    <core.version>1.2.4-SNAPSHOT</core.version>
-    <core-http.version>1.2.4-SNAPSHOT</core-http.version>
-    <core-grpc.version>1.2.4-SNAPSHOT</core-grpc.version>
-    <datastore.version>1.2.4-SNAPSHOT</datastore.version>
-    <dlp.version>0.20.4-alpha-SNAPSHOT</dlp.version>
-    <dns.version>0.20.4-alpha-SNAPSHOT</dns.version>
-    <errorreporting.version>0.20.4-alpha-SNAPSHOT</errorreporting.version>
-    <examples.version>0.20.4-alpha-SNAPSHOT</examples.version>
-    <language.version>0.20.4-beta-SNAPSHOT</language.version>
-    <logging.version>1.2.4-SNAPSHOT</logging.version>
-    <monitoring.version>0.20.4-alpha-SNAPSHOT</monitoring.version>
-    <pubsub.version>0.20.4-beta-SNAPSHOT</pubsub.version>
-    <resourcemanager.version>0.20.4-alpha-SNAPSHOT</resourcemanager.version>
-    <spanner.version>0.20.4-beta-SNAPSHOT</spanner.version>
-    <speech.version>0.20.4-alpha-SNAPSHOT</speech.version>
-    <storage.version>1.2.4-SNAPSHOT</storage.version>
-    <trace.version>0.20.4-alpha-SNAPSHOT</trace.version>
-    <translate.version>1.2.4-SNAPSHOT</translate.version>
-    <vision.version>0.20.4-beta-SNAPSHOT</vision.version>
-    <video-intelligence.version>0.20.4-alpha-SNAPSHOT</video-intelligence.version>
-    <testing.version>0.20.4-alpha-SNAPSHOT</testing.version>
+    <http-client.version>1.22.0</http-client.version>
+    <protobuf.version>3.3.1</protobuf.version>
 
     <easymock.version>3.4</easymock.version>
     <objenesis.version>2.6</objenesis.version>
+
+    <cloud.version>0.21.1-alpha-SNAPSHOT</cloud.version>
+    <bigquery.version>0.21.1-beta-SNAPSHOT</bigquery.version>
+    <compute.version>0.21.1-alpha-SNAPSHOT</compute.version>
+    <contrib.version>0.21.1-alpha-SNAPSHOT</contrib.version>
+    <core.version>1.3.1-SNAPSHOT</core.version>
+    <core-http.version>1.3.1-SNAPSHOT</core-http.version>
+    <core-grpc.version>1.3.1-SNAPSHOT</core-grpc.version>
+    <datastore.version>1.3.1-SNAPSHOT</datastore.version>
+    <dlp.version>0.21.1-alpha-SNAPSHOT</dlp.version>
+    <dns.version>0.21.1-alpha-SNAPSHOT</dns.version>
+    <errorreporting.version>0.21.1-alpha-SNAPSHOT</errorreporting.version>
+    <examples.version>0.21.1-alpha-SNAPSHOT</examples.version>
+    <language.version>0.21.1-beta-SNAPSHOT</language.version>
+    <logging.version>1.3.1-SNAPSHOT</logging.version>
+    <monitoring.version>0.21.1-alpha-SNAPSHOT</monitoring.version>
+    <pubsub.version>0.21.1-beta-SNAPSHOT</pubsub.version>
+    <resourcemanager.version>0.21.1-alpha-SNAPSHOT</resourcemanager.version>
+    <spanner.version>0.21.1-beta-SNAPSHOT</spanner.version>
+    <speech.version>0.21.1-alpha-SNAPSHOT</speech.version>
+    <storage.version>1.3.1-SNAPSHOT</storage.version>
+    <trace.version>0.21.1-alpha-SNAPSHOT</trace.version>
+    <translate.version>1.3.1-SNAPSHOT</translate.version>
+    <vision.version>0.21.1-beta-SNAPSHOT</vision.version>
+    <video-intelligence.version>0.21.1-alpha-SNAPSHOT</video-intelligence.version>
+    <testing.version>0.21.1-alpha-SNAPSHOT</testing.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -729,7 +729,7 @@
       <dependency>
         <groupId>com.google.oauth-client</groupId>
         <artifactId>google-oauth-client</artifactId>
-        <version>1.21.0</version>
+        <version>1.22.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api-client</groupId>
@@ -776,7 +776,7 @@
       <dependency>
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
-        <version>2.0.8</version>
+        <version>2.0.19</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
@@ -826,6 +826,9 @@
     <module>google-cloud-translate</module>
     <module>google-cloud-vision</module>
     <module>google-cloud-video-intelligence</module>
+
+    <module>google-cloud-dep-verification</module>
+
     <!--
       Uncomment the following lines to include google app engine (GAE) testing apps in the build.
       Each GAE app packages all its dependencies in a fat war (>20MB each).
@@ -894,7 +897,8 @@
                 <requireJavaVersion>
                   <version>[1.7,)</version>
                 </requireJavaVersion>
-		<dependencyConvergence/>
+                <dependencyConvergence/>
+                <requireUpperBoundDeps/>
               </rules>
             </configuration>
           </execution>
