@@ -35,8 +35,11 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
+import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.SubscriberGrpc;
+import com.google.pubsub.v1.SubscriberGrpc.SubscriberFutureStub;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberStub;
+import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.CallCredentials;
 import io.grpc.Channel;
@@ -112,8 +115,10 @@ public class Subscriber extends AbstractApiService {
   private final List<ManagedChannel> channels;
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
+  private final List<PollingSubscriberConnection> pollingSubscriberConnections;
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
+  private final boolean useStreaming;
   private ScheduledFuture<?> ackDeadlineUpdater;
   private int streamAckDeadlineSeconds;
 
@@ -166,6 +171,8 @@ public class Subscriber extends AbstractApiService {
     numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
     channels = new ArrayList<ManagedChannel>(numChannels);
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
+    pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
+    useStreaming = builder.useStreaming;
   }
 
   /**
@@ -259,7 +266,11 @@ public class Subscriber extends AbstractApiService {
               @Override
               public void run() {
                 try {
-                  startStreamingConnections();
+                  if (useStreaming) {
+                    startStreamingConnections();
+                  } else {
+                    startPollingConnections();
+                  }
                   notifyStarted();
                 } catch (Throwable t) {
                   notifyFailed(t);
@@ -271,6 +282,8 @@ public class Subscriber extends AbstractApiService {
 
   @Override
   protected void doStop() {
+    // stop connection is no-op if connections haven't been started.
+    stopAllPollingConnections();
     stopAllStreamingConnections();
     try {
       for (AutoCloseable closeable : closeables) {
@@ -279,6 +292,65 @@ public class Subscriber extends AbstractApiService {
       notifyStopped();
     } catch (Exception e) {
       notifyFailed(e);
+    }
+  }
+
+  private void startPollingConnections() throws IOException {
+    synchronized (pollingSubscriberConnections) {
+      Credentials credentials = credentialsProvider.getCredentials();
+      CallCredentials callCredentials =
+          credentials == null ? null : MoreCallCredentials.from(credentials);
+
+      SubscriberGrpc.SubscriberBlockingStub getSubStub =
+          SubscriberGrpc.newBlockingStub(channels.get(0))
+              .withDeadlineAfter(
+                  PollingSubscriberConnection.DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS);
+      if (callCredentials != null) {
+        getSubStub = getSubStub.withCallCredentials(callCredentials);
+      }
+      Subscription subscriptionInfo =
+          getSubStub.getSubscription(
+              GetSubscriptionRequest.newBuilder()
+                  .setSubscription(cachedSubscriptionNameString)
+                  .build());
+
+      for (Channel channel : channels) {
+        SubscriberFutureStub stub = SubscriberGrpc.newFutureStub(channel);
+        if (callCredentials != null) {
+          stub = stub.withCallCredentials(callCredentials);
+        }
+        pollingSubscriberConnections.add(
+            new PollingSubscriberConnection(
+                subscriptionInfo,
+                receiver,
+                ackExpirationPadding,
+                maxAckExtensionPeriod,
+                ackLatencyDistribution,
+                stub,
+                flowController,
+                flowControlSettings.getMaxOutstandingElementCount(),
+                executor,
+                alarmsExecutor,
+                clock));
+      }
+      startConnections(
+          pollingSubscriberConnections,
+          new Listener() {
+            @Override
+            public void failed(State from, Throwable failure) {
+              // If a connection failed is because of a fatal error, we should fail the
+              // whole subscriber.
+              stopAllPollingConnections();
+              try {
+                notifyFailed(failure);
+              } catch (IllegalStateException e) {
+                if (isRunning()) {
+                  throw e;
+                }
+                // It could happen that we are shutting down while some channels fail.
+              }
+            }
+          });
     }
   }
 
@@ -359,6 +431,10 @@ public class Subscriber extends AbstractApiService {
     }
   }
 
+  private void stopAllPollingConnections() {
+    stopConnections(pollingSubscriberConnections);
+  }
+
   private void stopAllStreamingConnections() {
     stopConnections(streamingSubscriberConnections);
     if (ackDeadlineUpdater != null) {
@@ -433,6 +509,7 @@ public class Subscriber extends AbstractApiService {
     CredentialsProvider credentialsProvider =
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
+    boolean useStreaming = true;
 
     Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
@@ -515,6 +592,11 @@ public class Subscriber extends AbstractApiService {
     /** Gives the ability to set a custom clock. */
     Builder setClock(ApiClock clock) {
       this.clock = Optional.of(clock);
+      return this;
+    }
+
+    Builder setUseStreaming(boolean useStreaming) {
+      this.useStreaming = useStreaming;
       return this;
     }
 
