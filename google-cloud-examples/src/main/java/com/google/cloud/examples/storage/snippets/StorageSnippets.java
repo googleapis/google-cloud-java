@@ -55,6 +55,7 @@ import com.google.cloud.storage.StorageBatch;
 import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
+import com.google.cloud.storage.StorageOptions;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
@@ -1022,4 +1023,23 @@ public class StorageSnippets {
     // [END listBlobAcls]
     return acls;
   }
+
+  /**
+   * Example of default auth
+   */
+  public Page<Bucket> authListBuckets() {
+    // [START authListBucket]
+    // If you don't specify credentials when constructing the client, the
+    // client library will look for credentials in the environment.
+
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    Page<Bucket> buckets = storage.list();
+    for (Bucket bucket : buckets.iterateAll()) {
+      System.out.println(bucket.getName());
+    }
+    // [END authListBucket]
+    return buckets;
+  }
+
 }
