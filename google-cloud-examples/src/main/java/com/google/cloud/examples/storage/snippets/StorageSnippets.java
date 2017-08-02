@@ -1036,7 +1036,7 @@ public class StorageSnippets {
 
     Page<Bucket> buckets = storage.list();
     for (Bucket bucket : buckets.iterateAll()) {
-      System.out.println(bucket.getName());
+      // do something with the info
     }
     // [END authListBucket]
     return buckets;
