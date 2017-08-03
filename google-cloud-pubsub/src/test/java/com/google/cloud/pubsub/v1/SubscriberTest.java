@@ -80,7 +80,7 @@ public class SubscriberTest {
 
   @Parameters
   public static Collection<Object[]> data() {
-    return Arrays.asList(new Object[][] {{false}});
+    return Arrays.asList(new Object[][] {{true}, {false}});
   }
 
   static class TestReceiver implements MessageReceiver {
@@ -205,6 +205,10 @@ public class SubscriberTest {
 
   @Test
   public void testGetSubscriptionOnce() throws Exception {
+    if (isStreamingTest) {
+      // Only applicable to polling.
+      return;
+    }
     Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
     sendMessages(ImmutableList.of("A"));
@@ -520,12 +524,8 @@ public class SubscriberTest {
   }
 
   private Subscriber startSubscriber(Builder testSubscriberBuilder) throws Exception {
-    Subscriber subscriber = testSubscriberBuilder.build();
+    Subscriber subscriber = testSubscriberBuilder.setUseStreaming(isStreamingTest).build();
     subscriber.startAsync().awaitRunning();
-    // if (!isStreamingTest) {
-    //   // Shutdown streaming
-    //   fakeSubscriberServiceImpl.sendError(new StatusException(Status.UNIMPLEMENTED));
-    // }
     return subscriber;
   }
 
