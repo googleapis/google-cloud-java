@@ -63,6 +63,14 @@ public class RecognizeIT {
   }
 
   @Test
+  public void testRecognizeWordoffset() throws Exception {
+    Recognize.syncRecognizeWords(fileName);
+    String got = bout.toString();
+    assertThat(got).contains("how old is the Brooklyn Bridge");
+    assertThat(got).contains("\t0.0 sec -");
+  }
+
+  @Test
   public void testRecognizeGcs() throws Exception {
     Recognize.syncRecognizeGcs(gcsPath);
     String got = bout.toString();
@@ -85,8 +93,9 @@ public class RecognizeIT {
 
   @Test
   public void testAsyncWordoffset() throws Exception {
-    Recognize.asyncRecognizeGcs(gcsPath);
+    Recognize.asyncRecognizeWords(gcsPath);
     String got = bout.toString();
+    assertThat(got).contains("how old is the Brooklyn Bridge");
     assertThat(got).contains("\t0.0 sec -");
   }
 

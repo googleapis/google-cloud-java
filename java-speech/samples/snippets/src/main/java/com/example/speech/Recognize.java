@@ -50,7 +50,7 @@ public class Recognize {
       System.out.printf(
           "\tjava %s \"<command>\" \"<path-to-image>\"\n"
           + "Commands:\n"
-          + "\tsyncrecognize | asyncrecognize | streamrecognize\n"
+          + "\tsyncrecognize | asyncrecognize | streamrecognize | wordoffsets\n"
           + "Path:\n\tA file path (ex: ./resources/audio.raw) or a URI "
           + "for a Cloud Storage resource (gs://...)\n",
           Recognize.class.getCanonicalName());
@@ -65,6 +65,12 @@ public class Recognize {
         syncRecognizeGcs(path);
       } else {
         syncRecognizeFile(path);
+      }
+    } else if (command.equals("wordoffsets")) {
+      if (path.startsWith("gs://")) {
+        asyncRecognizeWords(path);
+      } else {
+        syncRecognizeWords(path);
       }
     } else if (command.equals("asyncrecognize")) {
       if (path.startsWith("gs://")) {
@@ -112,6 +118,51 @@ public class Recognize {
     }
     speech.close();
   }
+
+  /**
+   * Performs sync recognize and prints word time offsets.
+   *
+   * @param fileName the path to a PCM audio file to transcribe get offsets on.
+   */
+  public static void syncRecognizeWords(String fileName) throws Exception, IOException {
+    SpeechClient speech = SpeechClient.create();
+
+    Path path = Paths.get(fileName);
+    byte[] data = Files.readAllBytes(path);
+    ByteString audioBytes = ByteString.copyFrom(data);
+
+    // Configure request with local raw PCM audio
+    RecognitionConfig config = RecognitionConfig.newBuilder()
+        .setEncoding(AudioEncoding.LINEAR16)
+        .setLanguageCode("en-US")
+        .setSampleRateHertz(16000)
+        .setEnableWordTimeOffsets(true)
+        .build();
+    RecognitionAudio audio = RecognitionAudio.newBuilder()
+        .setContent(audioBytes)
+        .build();
+
+    // Use blocking call to get audio transcript
+    RecognizeResponse response = speech.recognize(config, audio);
+    List<SpeechRecognitionResult> results = response.getResultsList();
+
+    for (SpeechRecognitionResult result: results) {
+      List<SpeechRecognitionAlternative> alternatives = result.getAlternativesList();
+      for (SpeechRecognitionAlternative alternative: alternatives) {
+        System.out.printf("Transcription: %s%n", alternative.getTranscript());
+        for (WordInfo wordInfo: alternative.getWordsList()) {
+          System.out.println(wordInfo.getWord());
+          System.out.printf("\t%s.%s sec - %s.%s sec\n",
+              wordInfo.getStartTime().getSeconds(),
+              wordInfo.getStartTime().getNanos() / 100000000,
+              wordInfo.getEndTime().getSeconds(),
+              wordInfo.getEndTime().getNanos() / 100000000);
+        }
+      }
+    }
+    speech.close();
+  }
+
 
   /**
    * Performs speech recognition on remote FLAC file and prints the transcription.
@@ -193,11 +244,11 @@ public class Recognize {
 
   /**
    * Performs non-blocking speech recognition on remote FLAC file and prints
-   * the transcription.
+   * the transcription as well as word time offsets.
    *
    * @param gcsUri the path to the remote LINEAR16 audio file to transcribe.
    */
-  public static void asyncRecognizeGcs(String gcsUri) throws Exception, IOException {
+  public static void asyncRecognizeWords(String gcsUri) throws Exception, IOException {
     // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
     SpeechClient speech = SpeechClient.create();
 
@@ -239,6 +290,47 @@ public class Recognize {
     }
     speech.close();
   }
+
+  /**
+   * Performs non-blocking speech recognition on remote FLAC file and prints
+   * the transcription.
+   *
+   * @param gcsUri the path to the remote LINEAR16 audio file to transcribe.
+   */
+  public static void asyncRecognizeGcs(String gcsUri) throws Exception, IOException {
+    // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
+    SpeechClient speech = SpeechClient.create();
+
+    // Configure remote file request for Linear16
+    RecognitionConfig config = RecognitionConfig.newBuilder()
+        .setEncoding(AudioEncoding.FLAC)
+        .setLanguageCode("en-US")
+        .setSampleRateHertz(16000)
+        .build();
+    RecognitionAudio audio = RecognitionAudio.newBuilder()
+        .setUri(gcsUri)
+        .build();
+
+    // Use non-blocking call for getting file transcription
+    OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
+            Operation> response =
+        speech.longRunningRecognizeAsync(config, audio);
+    while (!response.isDone()) {
+      System.out.println("Waiting for response...");
+      Thread.sleep(10000);
+    }
+
+    List<SpeechRecognitionResult> results = response.get().getResultsList();
+
+    for (SpeechRecognitionResult result: results) {
+      List<SpeechRecognitionAlternative> alternatives = result.getAlternativesList();
+      for (SpeechRecognitionAlternative alternative: alternatives) {
+        System.out.printf("Transcription: %s\n",alternative.getTranscript());
+      }
+    }
+    speech.close();
+  }
+
 
   /**
    * Performs streaming speech recognition on raw PCM audio data.
