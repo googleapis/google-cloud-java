@@ -123,14 +123,14 @@ Then add the following code to list all your buckets and all the blobs inside yo
 
 ```java
 // List all your buckets
-Iterator<Bucket> bucketIterator = storage.list().iterateAll();
+Iterator<Bucket> bucketIterator = storage.list().iterateAll().iterator();
 System.out.println("My buckets:");
 while (bucketIterator.hasNext()) {
   System.out.println(bucketIterator.next());
 }
 
 // List the blobs in a particular bucket
-Iterator<Blob> blobIterator = bucket.list().iterateAll();
+Iterator<Blob> blobIterator = bucket.list().iterateAll().iterator();
 System.out.println("My blobs:");
 while (blobIterator.hasNext()) {
   System.out.println(blobIterator.next());
