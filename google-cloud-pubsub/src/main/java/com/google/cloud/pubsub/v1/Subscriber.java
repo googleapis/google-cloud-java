@@ -85,7 +85,7 @@ import org.threeten.bp.Duration;
  */
 public class Subscriber extends AbstractApiService {
   private static final int THREADS_PER_CHANNEL = 5;
-  @VisibleForTesting static final int CHANNELS_PER_CORE = 10;
+  @VisibleForTesting static final int CHANNELS_PER_CORE = 1;
   private static final int MAX_INBOUND_MESSAGE_SIZE =
       20 * 1024 * 1024; // 20MB API maximum message size.
   private static final int INITIAL_ACK_DEADLINE_SECONDS = 10;
