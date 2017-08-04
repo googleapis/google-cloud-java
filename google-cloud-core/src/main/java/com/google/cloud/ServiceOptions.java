@@ -391,9 +391,9 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     if (PlatformInformation.isOnGAEStandard7()) {
       try {
         Class<?> factoryClass =
-                Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
+            Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
         Class<?> serviceClass =
-                Class.forName("com.google.appengine.api.appidentity.AppIdentityService");
+            Class.forName("com.google.appengine.api.appidentity.AppIdentityService");
         Method method = factoryClass.getMethod("getAppIdentityService");
         Object appIdentityService = method.invoke(null);
         method = serviceClass.getMethod("getServiceAccountName");
@@ -403,7 +403,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       } catch (ClassNotFoundException exception) {
         if (System.getProperty("com.google.appengine.runtime.version") != null) {
           // Could not resolve appengine classes under GAE environment.
-          throw new RuntimeException("Google App Engine runtime detected "
+          throw new RuntimeException(
+              "Google App Engine runtime detected "
                   + "(the environment variable \"com.google.appengine.runtime.version\" is set), "
                   + "but unable to resolve appengine-sdk classes. "
                   + "For more details see "
@@ -420,17 +421,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
         projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
       }
       if (projectId == null) {
+        projectId = getAppEngineAppId();
+        if (projectId != null && projectId.contains(":")) {
+          int colonIndex = projectId.indexOf(":");
+          projectId = projectId.substring(colonIndex + 1);
+        }
+      }
+      if (projectId == null) {
         try {
           projectId = getAppEngineProjectIdFromMetadataServer();
         } catch (IOException ignore) {
           projectId = null;
-        }
-      }
-      if (projectId == null) {
-        projectId = getAppEngineAppId();
-        if (projectId != null && projectId.contains(":")) {
-            int colonIndex = projectId.indexOf(":");
-            projectId = projectId.substring(colonIndex + 1);
         }
       }
       return projectId;
