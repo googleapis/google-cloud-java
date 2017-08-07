@@ -29,7 +29,6 @@ import com.google.protobuf.Empty;
 
 import org.junit.Test;
 
-import javax.xml.transform.Source;
 import java.util.Map;
 
 public class LogEntryTest {

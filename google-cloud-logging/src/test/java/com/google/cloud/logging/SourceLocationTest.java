@@ -48,7 +48,7 @@ public class SourceLocationTest {
         .setFunction("newFunction")
         .build();
     assertEquals("newFile", sourceLocation.getFile());
-    assertEquals(new Long(43L), sourceLocation.getLine());
+    assertEquals(Long.valueOf(43L), sourceLocation.getLine());
     assertEquals("newFunction", sourceLocation.getFunction());
     sourceLocation = sourceLocation.toBuilder()
         .setFile(FILE)
