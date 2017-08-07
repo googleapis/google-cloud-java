@@ -1122,6 +1122,14 @@ public class ITBigQueryTest {
         .build();
     TableDataWriteChannel channel = bigquery.writer(configuration);
     try {
+      // A zero byte write should not throw an exception.
+      assertEquals(0, channel.write(ByteBuffer.wrap("".getBytes(StandardCharsets.UTF_8))));
+    } finally {
+      // Force the channel to flush by calling `close`.
+      channel.close();
+    }
+    channel = bigquery.writer(configuration);
+    try {
       channel.write(ByteBuffer.wrap(JSON_CONTENT.getBytes(StandardCharsets.UTF_8)));
     } finally {
       channel.close();
