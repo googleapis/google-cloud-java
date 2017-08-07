@@ -29,6 +29,7 @@ import com.google.protobuf.Empty;
 
 import org.junit.Test;
 
+import javax.xml.transform.Source;
 import java.util.Map;
 
 public class LogEntryTest {
@@ -48,6 +49,12 @@ public class LogEntryTest {
   private static final Map<String, String> LABELS =
       ImmutableMap.of("key1", "value1", "key2", "value2");
   private static final Operation OPERATION = Operation.of("id", "producer");
+  private static final String TRACE = "trace";
+  private static final SourceLocation SOURCE_LOCATION = SourceLocation.newBuilder()
+      .setFile("file")
+      .setLine(42L)
+      .setFunction("function")
+      .build();
   private static final StringPayload STRING_PAYLOAD = StringPayload.of("payload");
   private static final JsonPayload JSON_PAYLOAD =
       JsonPayload.of(ImmutableMap.<String, Object>of("key", "val"));
@@ -62,6 +69,8 @@ public class LogEntryTest {
       .setHttpRequest(HTTP_REQUEST)
       .setLabels(LABELS)
       .setOperation(OPERATION)
+      .setTrace(TRACE)
+      .setSourceLocation(SOURCE_LOCATION)
       .build();
   private static final LogEntry JSON_ENTRY = LogEntry.newBuilder(JSON_PAYLOAD)
       .setLogName(LOG_NAME)
@@ -72,6 +81,8 @@ public class LogEntryTest {
       .setHttpRequest(HTTP_REQUEST)
       .setLabels(LABELS)
       .setOperation(OPERATION)
+      .setTrace(TRACE)
+      .setSourceLocation(SOURCE_LOCATION)
       .build();
   private static final LogEntry PROTO_ENTRY = LogEntry.newBuilder(PROTO_PAYLOAD)
       .setLogName(LOG_NAME)
@@ -82,6 +93,8 @@ public class LogEntryTest {
       .setHttpRequest(HTTP_REQUEST)
       .setLabels(LABELS)
       .setOperation(OPERATION)
+      .setTrace(TRACE)
+      .setSourceLocation(SOURCE_LOCATION)
       .build();
 
   @Test
@@ -96,6 +109,8 @@ public class LogEntryTest {
     assertNull(logEntry.getInsertId());
     assertNull(logEntry.getHttpRequest());
     assertNull(logEntry.getOperation());
+    assertNull(logEntry.getTrace());
+    assertNull(logEntry.getSourceLocation());
     logEntry = LogEntry.of(LOG_NAME, RESOURCE, STRING_PAYLOAD);
     assertEquals(STRING_PAYLOAD, logEntry.getPayload());
     assertEquals(LOG_NAME, logEntry.getLogName());
@@ -107,6 +122,8 @@ public class LogEntryTest {
     assertNull(logEntry.getInsertId());
     assertNull(logEntry.getHttpRequest());
     assertNull(logEntry.getOperation());
+    assertNull(logEntry.getTrace());
+    assertNull(logEntry.getSourceLocation());
   }
 
   @Test
@@ -119,6 +136,8 @@ public class LogEntryTest {
     assertEquals(HTTP_REQUEST, STRING_ENTRY.getHttpRequest());
     assertEquals(LABELS, STRING_ENTRY.getLabels());
     assertEquals(OPERATION, STRING_ENTRY.getOperation());
+    assertEquals(TRACE, STRING_ENTRY.getTrace());
+    assertEquals(SOURCE_LOCATION, STRING_ENTRY.getSourceLocation());
     assertEquals(STRING_PAYLOAD, STRING_ENTRY.getPayload());
     assertEquals(LOG_NAME, JSON_ENTRY.getLogName());
     assertEquals(RESOURCE, JSON_ENTRY.getResource());
@@ -128,6 +147,8 @@ public class LogEntryTest {
     assertEquals(HTTP_REQUEST, JSON_ENTRY.getHttpRequest());
     assertEquals(LABELS, JSON_ENTRY.getLabels());
     assertEquals(OPERATION, JSON_ENTRY.getOperation());
+    assertEquals(TRACE, JSON_ENTRY.getTrace());
+    assertEquals(SOURCE_LOCATION, JSON_ENTRY.getSourceLocation());
     assertEquals(JSON_PAYLOAD, JSON_ENTRY.getPayload());
     assertEquals(LOG_NAME, PROTO_ENTRY.getLogName());
     assertEquals(RESOURCE, PROTO_ENTRY.getResource());
@@ -137,6 +158,8 @@ public class LogEntryTest {
     assertEquals(HTTP_REQUEST, PROTO_ENTRY.getHttpRequest());
     assertEquals(LABELS, PROTO_ENTRY.getLabels());
     assertEquals(OPERATION, PROTO_ENTRY.getOperation());
+    assertEquals(TRACE, PROTO_ENTRY.getTrace());
+    assertEquals(SOURCE_LOCATION, PROTO_ENTRY.getSourceLocation());
     assertEquals(PROTO_PAYLOAD, PROTO_ENTRY.getPayload());
     LogEntry logEntry = LogEntry.newBuilder(STRING_PAYLOAD)
         .setPayload(StringPayload.of("otherPayload"))
@@ -149,6 +172,8 @@ public class LogEntryTest {
         .addLabel("key1", "value1")
         .addLabel("key2", "value2")
         .setOperation(OPERATION)
+        .setTrace(TRACE)
+        .setSourceLocation(SOURCE_LOCATION)
         .build();
     assertEquals(LOG_NAME, logEntry.getLogName());
     assertEquals(RESOURCE, logEntry.getResource());
@@ -158,6 +183,8 @@ public class LogEntryTest {
     assertEquals(HTTP_REQUEST, logEntry.getHttpRequest());
     assertEquals(LABELS, logEntry.getLabels());
     assertEquals(OPERATION, logEntry.getOperation());
+    assertEquals(TRACE, logEntry.getTrace());
+    assertEquals(SOURCE_LOCATION, logEntry.getSourceLocation());
     assertEquals(StringPayload.of("otherPayload"), logEntry.getPayload());
   }
 
@@ -180,6 +207,8 @@ public class LogEntryTest {
         .clearLabels()
         .addLabel("key", "value")
         .setOperation(Operation.of("otherId", "otherProducer"))
+        .setTrace("otherTrace")
+        .setSourceLocation(SourceLocation.newBuilder().setFile("hey.java").build())
         .build();
     assertEquals("otherLogName", logEntry.getLogName());
     assertEquals(MonitoredResource.newBuilder("global").build(), logEntry.getResource());
@@ -189,6 +218,9 @@ public class LogEntryTest {
     assertEquals(request, logEntry.getHttpRequest());
     assertEquals(ImmutableMap.of("key", "value"), logEntry.getLabels());
     assertEquals(Operation.of("otherId", "otherProducer"), logEntry.getOperation());
+    assertEquals("otherTrace", logEntry.getTrace());
+    assertEquals(SourceLocation.newBuilder().setFile("hey.java").build(),
+        logEntry.getSourceLocation());
     assertEquals(StringPayload.of("otherPayload"), logEntry.getPayload());
     logEntry = logEntry.toBuilder()
         .setPayload(STRING_PAYLOAD)
@@ -200,6 +232,8 @@ public class LogEntryTest {
         .setHttpRequest(HTTP_REQUEST)
         .setLabels(LABELS)
         .setOperation(OPERATION)
+        .setTrace(TRACE)
+        .setSourceLocation(SOURCE_LOCATION)
         .build();
     compareLogEntry(STRING_ENTRY, logEntry);
   }
@@ -225,6 +259,8 @@ public class LogEntryTest {
     assertEquals(expected.getHttpRequest(), value.getHttpRequest());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.getOperation(), value.getOperation());
+    assertEquals(expected.getTrace(), value.getTrace());
+    assertEquals(expected.getSourceLocation(), value.getSourceLocation());
     assertEquals(expected.getPayload(), value.getPayload());
     assertEquals(expected.hashCode(), value.hashCode());
   }

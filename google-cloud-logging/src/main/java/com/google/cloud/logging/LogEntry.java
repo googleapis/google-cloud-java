@@ -23,6 +23,7 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.LogEntryOperation;
+import com.google.logging.v2.LogEntrySourceLocation;
 import com.google.logging.v2.LogName;
 import com.google.protobuf.Timestamp;
 
@@ -57,11 +58,14 @@ public class LogEntry implements Serializable {
   private final String logName;
   private final MonitoredResource resource;
   private final Long timestamp;
+  private final Long receiveTimestamp;
   private final Severity severity;
   private final String insertId;
   private final HttpRequest httpRequest;
   private final Map<String, String> labels;
   private final Operation operation;
+  private final String trace;
+  private final SourceLocation sourceLocation;
   private final Payload<?> payload;
 
   /**
@@ -72,11 +76,14 @@ public class LogEntry implements Serializable {
     private String logName;
     private MonitoredResource resource;
     private Long timestamp;
+    private Long receiveTimestamp;
     private Severity severity = Severity.DEFAULT;
     private String insertId;
     private HttpRequest httpRequest;
     private Map<String, String> labels = new HashMap<>();
     private Operation operation;
+    private String trace;
+    private SourceLocation sourceLocation;
     private Payload<?> payload;
 
     Builder(Payload<?> payload) {
@@ -87,11 +94,14 @@ public class LogEntry implements Serializable {
       this.logName = entry.logName;
       this.resource = entry.resource;
       this.timestamp = entry.timestamp;
+      this.receiveTimestamp = entry.receiveTimestamp;
       this.severity = entry.severity;
       this.insertId = entry.insertId;
       this.httpRequest = entry.httpRequest;
       this.labels = new HashMap<>(entry.labels);
       this.operation = entry.operation;
+      this.trace = entry.trace;
+      this.sourceLocation = entry.sourceLocation;
       this.payload = entry.payload;
     }
 
@@ -126,6 +136,12 @@ public class LogEntry implements Serializable {
      */
     public Builder setTimestamp(long timestamp) {
       this.timestamp = timestamp;
+      return this;
+    }
+
+
+    public Builder setReceiveTimestamp(long receiveTimestamp) {
+      this.receiveTimestamp = receiveTimestamp;
       return this;
     }
 
@@ -196,6 +212,18 @@ public class LogEntry implements Serializable {
     }
 
 
+    public Builder setTrace(String trace) {
+      this.trace = trace;
+      return this;
+    }
+
+
+    public Builder setSourceLocation(SourceLocation sourceLocation) {
+      this.sourceLocation = sourceLocation;
+      return this;
+    }
+
+
     /**
      * Sets the payload for this log entry. The log entry payload can be provided as an UTF-8 string
      * (see {@link Payload.StringPayload}), a JSON object (see {@link Payload.JsonPayload}, or
@@ -220,11 +248,14 @@ public class LogEntry implements Serializable {
     this.logName = builder.logName;
     this.resource = builder.resource;
     this.timestamp = builder.timestamp;
+    this.receiveTimestamp = builder.receiveTimestamp;
     this.severity = builder.severity;
     this.insertId = builder.insertId;
     this.httpRequest = builder.httpRequest;
     this.labels = ImmutableMap.copyOf(builder.labels);
     this.operation = builder.operation;
+    this.trace = builder.trace;
+    this.sourceLocation = builder.sourceLocation;
     this.payload = builder.payload;
   }
 
@@ -302,6 +333,16 @@ public class LogEntry implements Serializable {
   }
 
 
+  public String getTrace() {
+    return trace;
+  }
+
+
+  public SourceLocation getSourceLocation() {
+    return sourceLocation;
+  }
+
+
   /**
    * Returns the payload for this log entry. The log entry payload can be an UTF-8 string (see
    * {@link Payload.StringPayload}), a JSON object (see {@link Payload.JsonPayload}, or a protobuf
@@ -316,8 +357,8 @@ public class LogEntry implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(logName, resource, timestamp, severity, insertId, httpRequest, labels,
-        operation, payload);
+    return Objects.hash(logName, resource, timestamp, receiveTimestamp, severity, insertId,
+        httpRequest, labels, operation, trace, sourceLocation, payload);
   }
 
   @Override
@@ -332,11 +373,14 @@ public class LogEntry implements Serializable {
     return Objects.equals(logName, other.logName)
         && Objects.equals(resource, other.resource)
         && Objects.equals(timestamp, other.timestamp)
+        && Objects.equals(receiveTimestamp, other.receiveTimestamp)
         && Objects.equals(severity, other.severity)
         && Objects.equals(insertId, other.insertId)
         && Objects.equals(httpRequest, other.httpRequest)
         && Objects.equals(labels, other.labels)
         && Objects.equals(operation, other.operation)
+        && Objects.equals(trace, other.trace)
+        && Objects.equals(sourceLocation, other.sourceLocation)
         && Objects.equals(payload, other.payload);
   }
 
@@ -346,11 +390,14 @@ public class LogEntry implements Serializable {
         .add("logName", logName)
         .add("resource", resource)
         .add("timestamp", timestamp)
+        .add("receiveTimestamp", receiveTimestamp)
         .add("severity", severity)
         .add("insertId", insertId)
         .add("httpRequest", httpRequest)
         .add("labels", labels)
         .add("operation", operation)
+        .add("trace", trace)
+        .add("sourceLocation", sourceLocation)
         .add("payload", payload)
         .toString();
   }
@@ -377,6 +424,12 @@ public class LogEntry implements Serializable {
       tsBuilder.setNanos((int) (timestamp % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
       builder.setTimestamp(tsBuilder.build());
     }
+    if (receiveTimestamp != null) {
+      Timestamp.Builder tsBuilder = Timestamp.newBuilder();
+      tsBuilder.setSeconds(receiveTimestamp / MILLIS_PER_SECOND);
+      tsBuilder.setNanos((int) (receiveTimestamp % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
+      builder.setReceiveTimestamp(tsBuilder.build());
+    }
     if (severity != null) {
       builder.setSeverity(severity.toPb());
     }
@@ -388,6 +441,12 @@ public class LogEntry implements Serializable {
     }
     if (operation != null) {
       builder.setOperation(operation.toPb());
+    }
+    if (trace != null) {
+      builder.setTrace(trace);
+    }
+    if (sourceLocation != null) {
+      builder.setSourceLocation(sourceLocation.toPb());
     }
     return builder.build();
   }
@@ -432,6 +491,13 @@ public class LogEntry implements Serializable {
         builder.setTimestamp(millis);
       }
     }
+    if (entryPb.hasReceiveTimestamp()) {
+      Timestamp ts = entryPb.getReceiveTimestamp();
+      Long millis = ts.getSeconds() * MILLIS_PER_SECOND + ts.getNanos() / NANOS_PER_MILLISECOND;
+      if (millis != 0) {
+        builder.setReceiveTimestamp(millis);
+      }
+    }
     if (!entryPb.getInsertId().equals("")) {
       builder.setInsertId(entryPb.getInsertId());
     }
@@ -441,6 +507,12 @@ public class LogEntry implements Serializable {
     }
     if (!entryPb.getOperation().equals(LogEntryOperation.getDefaultInstance())) {
       builder.setOperation(Operation.fromPb(entryPb.getOperation()));
+    }
+    if (!entryPb.getTrace().equals("")) {
+      builder.setTrace(entryPb.getTrace());
+    }
+    if (!entryPb.getSourceLocation().equals(LogEntrySourceLocation.getDefaultInstance())) {
+      builder.setSourceLocation(SourceLocation.fromPb(entryPb.getSourceLocation()));
     }
     return builder.build();
   }
