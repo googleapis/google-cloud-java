@@ -876,12 +876,28 @@ Java 7 or above is required for using the clients in this repository.
 Supported Platforms
 -------------------
 
-This client is supported on Mac OS X, Windows and Linux (excluding Android and Alpine).
-Google Cloud Platform environments currently supported include GCE, GKE and GAE Flex.
-GAE Standard is not currently supported.
+Clients in this repository use either HTTP or gRPC for the transport layer. All
+HTTP-based clients should work in all environments (theoretically).
 
-Spring Boot users : Native Tomcat is not currently supported. Please use [embedded Jetty](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-embedded-servlet-containers.html#howto-use-jetty-instead-of-tomcat)
-to get your application working with this client.
+For clients that use gRPC, the supported platforms are constrained by the platforms
+that [Forked Tomcat Native](http://netty.io/wiki/forked-tomcat-native.html) supports,
+which for architectures means only x86_64, and for operating systems means Mac OS X,
+Windows, and Linux. Additionally, gRPC constrains the use of platforms with
+threading restrictions.
+
+Thus, the following are not supported:
+
+- Android
+- Alpine Linux (due to netty-tcnative requiring glibc, which is not present on Alpine)
+- Raspberry Pi (since it runs on the ARM architecture)
+- Google App Engine Standard Java 7
+
+The following environments should work (among others):
+
+- Google Compute Engine (GCE)
+- Google Container Engine (GKE)
+- Google App Engine Standard Java 8 (GAE Std J8)
+- Google App Engine Flex (GAE Flex)
 
 Testing
 -------
