@@ -15,8 +15,8 @@
  */
 
 /**
- * A client for Cloud Resource Manager - Centrally manage resource containers for your
- * projects.
+ * A client for Cloud Resource Manager - Centrally manage all your projects, IAM, and resource
+ * containers.
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
  * creates a project if it does not exist. For the complete source code see
