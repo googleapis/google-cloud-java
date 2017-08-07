@@ -877,7 +877,7 @@ Supported Platforms
 -------------------
 
 Clients in this repository use either HTTP or gRPC for the transport layer. All
-HTTP-based clients should work in all environments (theoretically).
+HTTP-based clients should work in all environments.
 
 For clients that use gRPC, the supported platforms are constrained by the platforms
 that [Forked Tomcat Native](http://netty.io/wiki/forked-tomcat-native.html) supports,
@@ -894,6 +894,9 @@ Thus, the following are not supported:
 
 The following environments should work (among others):
 
+- standalone Windows on x86_64
+- standalone Mac OS X on x86_64
+- standalone Linux on x86_64
 - Google Compute Engine (GCE)
 - Google Container Engine (GKE)
 - Google App Engine Standard Java 8 (GAE Std J8)
