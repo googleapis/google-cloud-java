@@ -113,27 +113,19 @@ String blobContent = new String(blob.getContent(), UTF_8);
 ```
 
 #### Listing buckets and contents of buckets
-Suppose that you've added more buckets and blobs, and now you want to see the names of your buckets and the contents of each one. Add the following imports:
-
-```java
-import java.util.Iterator;
-```
-
-Then add the following code to list all your buckets and all the blobs inside your newly created bucket.
+Suppose that you've added more buckets and blobs, and now you want to see the names of your buckets and the contents of each one. Add the following code to list all your buckets and all the blobs inside each bucket.
 
 ```java
 // List all your buckets
-Iterator<Bucket> bucketIterator = storage.list().iterateAll();
 System.out.println("My buckets:");
-while (bucketIterator.hasNext()) {
-  System.out.println(bucketIterator.next());
-}
-
-// List the blobs in a particular bucket
-Iterator<Blob> blobIterator = bucket.list().iterateAll();
-System.out.println("My blobs:");
-while (blobIterator.hasNext()) {
-  System.out.println(blobIterator.next());
+while (Bucket bucket : storage.list().iterateAll()) {
+  System.out.println(bucket);
+  
+  // List all blobs in the bucket
+  System.out.println("Blobs in the bucket:");
+  for (Blob blob : bucket.list().iterateAll()) {
+    System.out.println(blob);
+  }  
 }
 ```
 
