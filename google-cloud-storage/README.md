@@ -118,7 +118,7 @@ Suppose that you've added more buckets and blobs, and now you want to see the na
 ```java
 // List all your buckets
 System.out.println("My buckets:");
-while (Bucket bucket : storage.list().iterateAll()) {
+for (Bucket bucket : storage.list().iterateAll()) {
   System.out.println(bucket);
   
   // List all blobs in the bucket
