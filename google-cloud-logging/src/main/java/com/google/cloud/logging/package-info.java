@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Stackdriver Logging.
+ * A client for Stackdriver Logging - Real-time log management and analysis.
  *
  * <p>Here's a simple usage example for using google-cloud from Compute Engine/App Engine Flexible.
  * This example shows how to write and list log entries. For the complete source code see

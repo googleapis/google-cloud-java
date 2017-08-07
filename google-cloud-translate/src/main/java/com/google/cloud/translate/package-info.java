@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Translation.
+ * A client for Cloud Translation - Fast, dynamic translation.
  *
  * <p>Here's a simple usage example for Google Cloud Translation. This example shows how to detect
  * the language of some text and how to translate some text. The example assumes that either
