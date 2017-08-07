@@ -291,6 +291,11 @@ public class LogEntry implements Serializable {
   }
 
 
+  public Long getReceiveTimestamp() {
+    return receiveTimestamp;
+  }
+
+
   /**
    * Returns the severity of the log entry. If not set, {@link Severity#DEFAULT} is used.
    */
