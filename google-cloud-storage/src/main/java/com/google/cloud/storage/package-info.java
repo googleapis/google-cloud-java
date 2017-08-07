@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Storage.
+ * A client for Cloud Storage - Unified object storage.
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
  * shows how to create a Storage blob. For the complete source code see

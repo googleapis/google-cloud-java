@@ -15,7 +15,8 @@
  */
 
 /**
- * A client to the Google Cloud Datastore.
+ * A client for Cloud Datastore – A highly-scalable NoSQL database for web and mobile
+ * applications.
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
  * shows how to create a Datastore entity. For the complete source code see
