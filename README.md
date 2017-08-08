@@ -68,6 +68,40 @@ libraryDependencies += "com.google.cloud" % "google-cloud" % "0.21.1-alpha"
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
 
+Resolving dependency conflicts
+----------
+Optionally, if you encounter dependency conflicts, you may specify google-cloud-pom as a ["bill of materials"](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) to ensure that internal dependencies of google-cloud and your project are in sync.
+
+If you are using Maven, add this to your pom.xml file
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-pom</artifactId>
+      <version>0.21.1-alpha</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+```
+If you are using Gradle, add the following plugin at the beginning of your build.gradle file
+
+```Groovy
+plugins {
+  id "io.spring.dependency-management" version "1.0.3.RELEASE"
+}
+```
+Then add the following in your build.gradle file
+```Groovy
+dependencyManagement {
+  imports {
+    mavenBom 'com.google.cloud:google-cloud-pom:0.21.1-alpha'
+  }
+}
+```    
+
 Example Applications
 --------------------
 
