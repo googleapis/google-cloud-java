@@ -140,6 +140,9 @@ public class LogEntry implements Serializable {
     }
 
 
+    /**
+     * Sets the time the log entry was received by Stackdriver Logging.
+     */
     public Builder setReceiveTimestamp(long receiveTimestamp) {
       this.receiveTimestamp = receiveTimestamp;
       return this;
@@ -184,6 +187,7 @@ public class LogEntry implements Serializable {
       return this;
     }
 
+
     /**
      * Adds a label to the log entry's labels. Labels are user-defined (key, value) data that
      * provides additional information about the log entry.
@@ -192,6 +196,7 @@ public class LogEntry implements Serializable {
       this.labels.put(key, value);
       return this;
     }
+
 
     /**
      * Clears all the labels of the log entry. Labels are user-defined (key, value) data that
@@ -212,12 +217,19 @@ public class LogEntry implements Serializable {
     }
 
 
+    /**
+     * Sets the resource name of the trace associated with the log entry, if any. If it contains a
+     * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
+     */
     public Builder setTrace(String trace) {
       this.trace = trace;
       return this;
     }
 
 
+    /**
+     * Sets the source code location information associated with the log entry if any.
+     */
     public Builder setSourceLocation(SourceLocation sourceLocation) {
       this.sourceLocation = sourceLocation;
       return this;
@@ -291,6 +303,9 @@ public class LogEntry implements Serializable {
   }
 
 
+  /**
+   * Returns the time the log entry was received by Stackdriver Logging.
+   */
   public Long getReceiveTimestamp() {
     return receiveTimestamp;
   }
@@ -338,11 +353,18 @@ public class LogEntry implements Serializable {
   }
 
 
+  /**
+   * Returns the resource name of the trace associated with the log entry, if any. If it contains a
+   * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
+   */
   public String getTrace() {
     return trace;
   }
 
 
+  /**
+   * Returns the source code location information associated with the log entry if any.
+   */
   public SourceLocation getSourceLocation() {
     return sourceLocation;
   }

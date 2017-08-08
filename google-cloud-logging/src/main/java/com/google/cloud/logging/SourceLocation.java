@@ -22,6 +22,9 @@ import com.google.logging.v2.LogEntrySourceLocation;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Additional information about the source code location that produced the log entry.
+ */
 public final class SourceLocation implements Serializable {
 
   private static final long serialVersionUID = 8502955858162387374L;
@@ -30,6 +33,9 @@ public final class SourceLocation implements Serializable {
   Long line;
   String function;
 
+  /**
+   * A builder for {@code SourceLocation} objects.
+   */
   public static final class Builder {
 
     private String file;
@@ -45,16 +51,28 @@ public final class SourceLocation implements Serializable {
       this.function = sourceLocation.function;
     }
 
+    /**
+     * Sets the source file name. Depending on the runtime environment, this might be a simple name
+     * or a fully-qualified name.
+     */
     public Builder setFile(String file) {
       this.file = file;
       return this;
     }
 
+    /**
+     * Sets the line within the source file. 1-based; 0 indicates no line number available.
+     */
     public Builder setLine(Long line) {
       this.line = line;
       return this;
     }
 
+    /**
+     * Sets the human-readable name of the function or method being invoked, with optional context
+     * such as the class or package name. This information may be used in contexts such as the logs
+     * viewer, where a file and line number are less meaningful. The format can vary by language.
+     */
     public Builder setFunction(String function) {
       this.function = function;
       return this;
@@ -71,14 +89,26 @@ public final class SourceLocation implements Serializable {
     this.function = builder.function;
   }
 
+  /**
+   * Returns the source file name. Depending on the runtime environment, this might be a simple name
+   * or a fully-qualified name.
+   */
   public String getFile() {
     return file;
   }
 
+  /**
+   * Returns the line within the source file. 1-based; 0 indicates no line number available.
+   */
   public Long getLine() {
     return line;
   }
 
+  /**
+   * Returns the human-readable name of the function or method being invoked, with optional context
+   * such as the class or package name. This information may be used in contexts such as the logs
+   * viewer, where a file and line number are less meaningful. The format can vary by language.
+   */
   public String getFunction() {
     return function;
   }
@@ -123,12 +153,8 @@ public final class SourceLocation implements Serializable {
     return builder.build();
   }
 
-  public static Builder newBuilder() {
-    return new Builder();
-  }
-
   public static SourceLocation fromPb(LogEntrySourceLocation sourceLocationPb) {
-    return newBuilder()
+    return new Builder()
         .setFile(sourceLocationPb.getFile())
         .setLine(sourceLocationPb.getLine())
         .setFunction(sourceLocationPb.getFunction())

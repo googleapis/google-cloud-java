@@ -25,7 +25,7 @@ public class SourceLocationTest {
   private static final String FILE = "file";
   private static final Long LINE = 42L;
   private static final String FUNCTION = "function";
-  private static final SourceLocation SOURCE_LOCATION = SourceLocation.newBuilder()
+  private static final SourceLocation SOURCE_LOCATION = new SourceLocation.Builder()
       .setFile(FILE)
       .setLine(LINE)
       .setFunction(FUNCTION)
@@ -37,7 +37,6 @@ public class SourceLocationTest {
     assertEquals(LINE, SOURCE_LOCATION.getLine());
     assertEquals(FUNCTION, SOURCE_LOCATION.getFunction());
   }
-
 
   @Test
   public void testToBuilder() {

@@ -50,7 +50,7 @@ public class LogEntryTest {
       ImmutableMap.of("key1", "value1", "key2", "value2");
   private static final Operation OPERATION = Operation.of("id", "producer");
   private static final String TRACE = "trace";
-  private static final SourceLocation SOURCE_LOCATION = SourceLocation.newBuilder()
+  private static final SourceLocation SOURCE_LOCATION = new SourceLocation.Builder()
       .setFile("file")
       .setLine(42L)
       .setFunction("function")
@@ -219,7 +219,7 @@ public class LogEntryTest {
         .addLabel("key", "value")
         .setOperation(Operation.of("otherId", "otherProducer"))
         .setTrace("otherTrace")
-        .setSourceLocation(SourceLocation.newBuilder().setFile("hey.java").build())
+        .setSourceLocation(new SourceLocation.Builder().setFile("hey.java").build())
         .build();
     assertEquals("otherLogName", logEntry.getLogName());
     assertEquals(MonitoredResource.newBuilder("global").build(), logEntry.getResource());
@@ -231,7 +231,7 @@ public class LogEntryTest {
     assertEquals(ImmutableMap.of("key", "value"), logEntry.getLabels());
     assertEquals(Operation.of("otherId", "otherProducer"), logEntry.getOperation());
     assertEquals("otherTrace", logEntry.getTrace());
-    assertEquals(SourceLocation.newBuilder().setFile("hey.java").build(),
+    assertEquals(new SourceLocation.Builder().setFile("hey.java").build(),
         logEntry.getSourceLocation());
     assertEquals(StringPayload.of("otherPayload"), logEntry.getPayload());
     logEntry = logEntry.toBuilder()
