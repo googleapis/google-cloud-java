@@ -571,6 +571,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       QueryResponse.Builder builder = QueryResponse.newBuilder();
       JobId completeJobId = JobId.fromPb(results.getJobReference());
       builder.setJobId(completeJobId);
+      builder.setNumDmlAffectedRows(results.getNumDmlAffectedRows());
       builder.setJobCompleted(results.getJobComplete());
       List<TableRow> rowsPb = results.getRows();
       if (results.getJobComplete()) {
@@ -617,6 +618,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       QueryResponse.Builder builder = QueryResponse.newBuilder();
       builder.setJobId(JobId.fromPb(results.getJobReference()));
+      builder.setNumDmlAffectedRows(results.getNumDmlAffectedRows());
       builder.setEtag(results.getEtag());
       builder.setJobCompleted(results.getJobComplete());
       List<TableRow> rowsPb = results.getRows();
