@@ -5,7 +5,7 @@ Usage:
 
 ```
 git clone https://github.com/GoogleCloudPlatform/google-cloud-java.git
-cd google-cloud-java/google-cloud-compat-checker
+cd google-cloud-java/google-cloud-util/google-cloud-compat-checker
 mvn install
 mvn exec:java
 ```

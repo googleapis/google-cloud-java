@@ -828,7 +828,7 @@
     <module>google-cloud-video-intelligence</module>
 
     <module>google-cloud-dep-verification</module>
-    <module>google-cloud-compat-checker</module>
+    <module>google-cloud-util</module>
 
     <!--
       Uncomment the following lines to include google app engine (GAE) testing apps in the build.
