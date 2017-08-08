@@ -57,9 +57,39 @@ If you are using Maven, add this to your pom.xml file
   <version>0.21.1-alpha</version>
 </dependency>
 ```
+Optionally, if you encounter dependency conflicts, add this to your pom.xml file to specify google-cloud-pom as ["bill of materials"](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) in your project
+
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-pom</artifactId>
+      <version>0.21.1-alpha</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+```
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud:0.21.1-alpha'
+```
+Optionally, if you encounter dependency conflicts, add the following plugin at the beginning of your build.gradle file
+
+```Groovy
+plugins {
+  id "io.spring.dependency-management" version "1.0.3.RELEASE"
+}
+```
+Then add the following in your build.gradle file to specify google-cloud-pom as ["bill of materials"](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) in your project:
+```Groovy
+dependencyManagement {
+  imports {
+    mavenBom 'com.google.cloud:google-cloud-pom:0.21.1-alpha'
+  }
+}
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
