@@ -70,7 +70,7 @@ For running on Google App Engine, see [more instructions here](./APPENGINE.md).
 
 Resolving dependency conflicts
 ----------
-Optionally, if are you encountering dependency conflicts, you may specify google-cloud-pom as a ["bill of materials"](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) to ensure that internal dependencies of google-cloud and your project are in sync.
+Optionally, if you encounter dependency conflicts, you may specify google-cloud-pom as a ["bill of materials"](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) to ensure that internal dependencies of google-cloud and your project are in sync.
 
 If you are using Maven, add this to your pom.xml file
 ```xml
