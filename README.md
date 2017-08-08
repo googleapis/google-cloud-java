@@ -57,8 +57,22 @@ If you are using Maven, add this to your pom.xml file
   <version>0.21.1-alpha</version>
 </dependency>
 ```
-Optionally, if you encounter dependency conflicts, add this to your pom.xml file to specify google-cloud-pom as ["bill of materials"](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) in your project
+If you are using Gradle, add this to your dependencies
+```Groovy
+compile 'com.google.cloud:google-cloud:0.21.1-alpha'
+```
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.21.1-alpha"
+```
 
+For running on Google App Engine, see [more instructions here](./APPENGINE.md).
+
+Resolving dependency conflicts
+----------
+Optionally, if are you encountering dependency conflicts, you may specify google-cloud-pom as ["bill of materials"](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) to ensure that internal dependencies of google-cloud and your project are in sync.
+
+If you are using Maven, add this to your pom.xml file
 ```xml
 <dependencyManagement>
   <dependencies>
@@ -72,31 +86,21 @@ Optionally, if you encounter dependency conflicts, add this to your pom.xml file
   </dependencies>
 </dependencyManagement>
 ```
-If you are using Gradle, add this to your dependencies
-```Groovy
-compile 'com.google.cloud:google-cloud:0.21.1-alpha'
-```
-Optionally, if you encounter dependency conflicts, add the following plugin at the beginning of your build.gradle file
+If you are using Gradle, add the following plugin at the beginning of your build.gradle file
 
 ```Groovy
 plugins {
   id "io.spring.dependency-management" version "1.0.3.RELEASE"
 }
 ```
-Then add the following in your build.gradle file to specify google-cloud-pom as ["bill of materials"](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) in your project:
+Then add the following in your build.gradle file
 ```Groovy
 dependencyManagement {
   imports {
     mavenBom 'com.google.cloud:google-cloud-pom:0.21.1-alpha'
   }
 }
-```
-If you are using SBT, add this to your dependencies
-```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.21.1-alpha"
-```
-
-For running on Google App Engine, see [more instructions here](./APPENGINE.md).
+```    
 
 Example Applications
 --------------------
