@@ -190,7 +190,7 @@ public class QueryResponse implements Serializable {
 
   @Override
   public final int hashCode() {
-    return Objects.hash(jobId);
+    return Objects.hash(result, etag, jobId, numDmlAffectedRows, jobCompleted, executionErrors);
   }
 
   @Override
