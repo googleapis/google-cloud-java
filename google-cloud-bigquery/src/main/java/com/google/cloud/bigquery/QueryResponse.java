@@ -56,6 +56,7 @@ public class QueryResponse implements Serializable {
   private final QueryResult result;
   private final String etag;
   private final JobId jobId;
+  private final Long numDmlAffectedRows;
   private final boolean jobCompleted;
   private final List<BigQueryError> executionErrors;
 
@@ -64,6 +65,7 @@ public class QueryResponse implements Serializable {
     private QueryResult result;
     private String etag;
     private JobId jobId;
+    private Long numDmlAffectedRows;
     private boolean jobCompleted;
     private List<BigQueryError> executionErrors;
 
@@ -81,6 +83,11 @@ public class QueryResponse implements Serializable {
 
     Builder setJobId(JobId jobId) {
       this.jobId = jobId;
+      return this;
+    }
+
+    Builder setNumDmlAffectedRows(Long numDmlAffectedRows) {
+      this.numDmlAffectedRows = numDmlAffectedRows;
       return this;
     }
 
@@ -103,6 +110,7 @@ public class QueryResponse implements Serializable {
     this.result = builder.result;
     this.etag = builder.etag;
     this.jobId = builder.jobId;
+    this.numDmlAffectedRows = builder.numDmlAffectedRows;
     this.jobCompleted = builder.jobCompleted;
     this.executionErrors = builder.executionErrors != null ? builder.executionErrors
       : ImmutableList.<BigQueryError>of();
@@ -133,6 +141,12 @@ public class QueryResponse implements Serializable {
   public JobId getJobId() {
     return jobId;
   }
+
+  /**
+   * Returns the number of rows affected by a DML statement. Present only for DML statements INSERT,
+   * UPDATE or DELETE.
+   */
+  public Long getNumDmlAffectedRows() { return numDmlAffectedRows; }
 
   /**
    * Returns whether the job running the query has completed or not. If {@link #getResult()} is not
@@ -168,6 +182,7 @@ public class QueryResponse implements Serializable {
         .add("result", result)
         .add("etag", etag)
         .add("jobId", jobId)
+        .add("numDmlAffectedRows", numDmlAffectedRows)
         .add("jobCompleted", jobCompleted)
         .add("executionErrors", executionErrors)
         .toString();
@@ -191,6 +206,7 @@ public class QueryResponse implements Serializable {
         && Objects.equals(etag, response.etag)
         && Objects.equals(result, response.result)
         && Objects.equals(jobId, response.jobId)
+        && Objects.equals(numDmlAffectedRows, response.numDmlAffectedRows)
         && Objects.equals(executionErrors, response.executionErrors);
   }
 
