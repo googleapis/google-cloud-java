@@ -37,8 +37,12 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.Callable;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
@@ -560,39 +564,46 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public QueryResponse query(final QueryRequest request) {
+    JobId jobId = JobId.of(UUID.randomUUID().toString());
+    return query(request, jobId);
+  }
+
+  @Override
+  public QueryResponse query(final QueryRequest request, final JobId jobId) {
+    final JobId completeJobId = jobId.setProjectId(getOptions().getProjectId());
     try {
-      com.google.api.services.bigquery.model.QueryResponse results =
-          runWithRetries(new Callable<com.google.api.services.bigquery.model.QueryResponse>() {
+      QueryJobConfiguration queryJobConfiguration =
+          QueryJobConfiguration.newBuilder(request.getQuery())
+          .setPositionalParameters(request.getPositionalParameters())
+          .setNamedParameters(request.getNamedParameters())
+          .setDefaultDataset(request.getDefaultDataset())
+          .setDryRun(request.dryRun())
+          .setUseQueryCache(request.useQueryCache())
+          .setUseLegacySql(request.useLegacySql())
+          .build();
+
+      final JobInfo jobInfo =
+          JobInfo.newBuilder(queryJobConfiguration).setJobId(completeJobId).build();
+
+      com.google.api.services.bigquery.model.Job jobPb =
+          runWithRetries(new Callable<com.google.api.services.bigquery.model.Job>() {
             @Override
-            public com.google.api.services.bigquery.model.QueryResponse call() {
-              return bigQueryRpc.query(request.setProjectId(getOptions().getProjectId()).toPb());
+            public com.google.api.services.bigquery.model.Job call() {
+              return bigQueryRpc.create(jobInfo.toPb(),
+                  Collections.<BigQueryRpc.Option, Object>emptyMap());
             }
           }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
-      QueryResponse.Builder builder = QueryResponse.newBuilder();
-      JobId completeJobId = JobId.fromPb(results.getJobReference());
-      builder.setJobId(completeJobId);
-      builder.setNumDmlAffectedRows(results.getNumDmlAffectedRows());
-      builder.setJobCompleted(results.getJobComplete());
-      List<TableRow> rowsPb = results.getRows();
-      if (results.getJobComplete()) {
-        builder.setJobCompleted(true);
-        QueryResult.Builder resultBuilder = transformQueryResults(completeJobId, rowsPb,
-            results.getPageToken(), getOptions(), ImmutableMap.<BigQueryRpc.Option, Object>of());
-        resultBuilder.setTotalBytesProcessed(results.getTotalBytesProcessed());
-        resultBuilder.setCacheHit(results.getCacheHit());
-        if (results.getSchema() != null) {
-          resultBuilder.setSchema(Schema.fromPb(results.getSchema()));
-        }
-        if (results.getTotalRows() != null) {
-          resultBuilder.setTotalRows(results.getTotalRows().longValue());
-        }
-        builder.setResult(resultBuilder.build());
+      Job job = Job.fromPb(this, jobPb);
+
+      List<QueryResultsOption> options = new ArrayList<>();
+      if (request.getMaxWaitTime() != null) {
+        options.add(QueryResultsOption.maxWaitTime(request.getMaxWaitTime()));
       }
-      if (results.getErrors() != null) {
-        builder.setExecutionErrors(
-            Lists.transform(results.getErrors(), BigQueryError.FROM_PB_FUNCTION));
+      if (request.getPageSize() != null) {
+        options.add(QueryResultsOption.pageSize(request.getPageSize()));
       }
-      return builder.build();
+      return getQueryResults(job.getJobId(), options.toArray(new QueryResultsOption[0]));
+
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }

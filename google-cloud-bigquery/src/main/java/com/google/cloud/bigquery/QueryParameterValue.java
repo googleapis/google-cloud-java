@@ -431,6 +431,8 @@ public class QueryParameterValue implements Serializable {
           valuePb.getArrayValues()) {
         arrayValues.add(fromPb(elementValuePb, typePb.getArrayType()));
       }
+      valueBuilder.setArrayValues(arrayValues);
+      valueBuilder.setArrayType(StandardSQLTypeName.valueOf(typePb.getArrayType().getType()));
     }
     valueBuilder.setType(StandardSQLTypeName.valueOf(typePb.getType()));
 
