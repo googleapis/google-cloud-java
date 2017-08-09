@@ -1,0 +1,100 @@
+/**
+ * Copyright 2017 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.example.dlp;
+
+import com.google.cloud.dlp.v2beta1.DlpServiceClient;
+import com.google.privacy.dlp.v2beta1.ContentItem;
+import com.google.privacy.dlp.v2beta1.Finding;
+import com.google.privacy.dlp.v2beta1.InfoType;
+import com.google.privacy.dlp.v2beta1.InspectConfig;
+import com.google.privacy.dlp.v2beta1.InspectContentRequest;
+import com.google.privacy.dlp.v2beta1.InspectContentResponse;
+import com.google.privacy.dlp.v2beta1.InspectResult;
+import com.google.privacy.dlp.v2beta1.Likelihood;
+import java.util.Arrays;
+import java.util.List;
+
+// [START dlp_quickstart]
+public class QuickStart {
+
+  /** Quick start to DLP API : inspects a given string for an InfoType. */
+  public static void main(String[] args) throws Exception {
+
+    // string to inspect
+    String text = "Robert Frost";
+
+    // The minimum likelihood required before returning a match:
+    // LIKELIHOOD_UNSPECIFIED, VERY_UNLIKELY, UNLIKELY, POSSIBLE, LIKELY, VERY_LIKELY, UNRECOGNIZED
+    Likelihood minLikelihood = Likelihood.VERY_LIKELY;
+
+    // The maximum number of findings to report (0 = server maximum)
+    int maxFindings = 0;
+
+    // The infoTypes of information to match
+    List<InfoType> infoTypes =
+        Arrays.asList(
+            InfoType.newBuilder().setName("US_MALE_NAME").build(),
+            InfoType.newBuilder().setName("US_FEMALE_NAME").build());
+
+    // Whether to include the matching string
+    boolean includeQuote = true;
+
+    // instantiate a client
+    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+
+      InspectConfig inspectConfig =
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .setMinLikelihood(minLikelihood)
+              .setMaxFindings(maxFindings)
+              .setIncludeQuote(includeQuote)
+              .build();
+
+      ContentItem contentItem =
+          ContentItem.newBuilder().setType("text/plain").setValue(text).build();
+
+      InspectContentRequest request =
+          InspectContentRequest.newBuilder()
+              .setInspectConfig(inspectConfig)
+              .addItems(contentItem)
+              .build();
+
+      // Inspect the text for info types
+      InspectContentResponse response = dlpServiceClient.inspectContent(request);
+
+      // Print the response
+      for (InspectResult result : response.getResultsList()) {
+        if (result.getFindingsCount() > 0) {
+          System.out.println("Findings: ");
+          for (Finding finding : result.getFindingsList()) {
+            if (includeQuote) {
+              System.out.print("Quote: " + finding.getQuote());
+            }
+            System.out.print("\tInfo type: " + finding.getInfoType().getName());
+            System.out.println("\tLikelihood: " + finding.getLikelihood());
+          }
+        } else {
+          System.out.println("No findings.");
+        }
+      }
+    } catch (Exception e) {
+      System.out.println("Error in inspectString: " + e.getMessage());
+    }
+  }
+}
+
+// [END dlp_quickstart]

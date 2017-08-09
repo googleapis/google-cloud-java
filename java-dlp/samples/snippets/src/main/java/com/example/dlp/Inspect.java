@@ -1,10 +1,11 @@
 /**
- * Copyright 2017, Google, Inc.
+ * Copyright 2017 Google Inc.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -38,6 +39,14 @@ import com.google.privacy.dlp.v2beta1.PartitionId;
 import com.google.privacy.dlp.v2beta1.ResultName;
 import com.google.privacy.dlp.v2beta1.StorageConfig;
 import com.google.protobuf.ByteString;
+import java.net.URLConnection;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import javax.activation.MimetypesFileTypeMap;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -47,19 +56,14 @@ import org.apache.commons.cli.OptionGroup;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-import java.net.URLConnection;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import javax.activation.MimetypesFileTypeMap;
-
 public class Inspect {
 
-  private static void inspectString(String string, Likelihood minLikelihood, int maxFindings,
-      List<InfoType> infoTypes, boolean includeQuote) {
+  private static void inspectString(
+      String string,
+      Likelihood minLikelihood,
+      int maxFindings,
+      List<InfoType> infoTypes,
+      boolean includeQuote) {
     // [START dlp_inspect_string]
     // instantiate a client
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
@@ -75,24 +79,24 @@ public class Inspect {
 
       // Whether to include the matching string
       // includeQuote = true;
-      InspectConfig inspectConfig = InspectConfig.newBuilder()
-          .addAllInfoTypes(infoTypes)
-          .setMinLikelihood(minLikelihood)
-          .setMaxFindings(maxFindings)
-          .setIncludeQuote(includeQuote)
-          .build();
+      InspectConfig inspectConfig =
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .setMinLikelihood(minLikelihood)
+              .setMaxFindings(maxFindings)
+              .setIncludeQuote(includeQuote)
+              .build();
 
       // The string to inspect
       // string = 'My name is Gary and my email is gary@example.com';
-      ContentItem contentItem = ContentItem.newBuilder()
-          .setType("text/plain")
-          .setValue(string)
-          .build();
+      ContentItem contentItem =
+          ContentItem.newBuilder().setType("text/plain").setValue(string).build();
 
-      InspectContentRequest request = InspectContentRequest.newBuilder()
-          .setInspectConfig(inspectConfig)
-          .addItems(contentItem)
-          .build();
+      InspectContentRequest request =
+          InspectContentRequest.newBuilder()
+              .setInspectConfig(inspectConfig)
+              .addItems(contentItem)
+              .build();
       InspectContentResponse response = dlpServiceClient.inspectContent(request);
 
       for (InspectResult result : response.getResultsList()) {
@@ -115,8 +119,12 @@ public class Inspect {
     // [END dlp_inspect_string]
   }
 
-  private static void inspectFile(String filePath, Likelihood minLikelihood, int maxFindings,
-      List<InfoType> infoTypes, boolean includeQuote) {
+  private static void inspectFile(
+      String filePath,
+      Likelihood minLikelihood,
+      int maxFindings,
+      List<InfoType> infoTypes,
+      boolean includeQuote) {
     // [START dlp_inspect_file]
     // Instantiates a client
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
@@ -146,22 +154,22 @@ public class Inspect {
       }
 
       byte[] data = Files.readAllBytes(path);
-      ContentItem contentItem = ContentItem.newBuilder()
-          .setType(mimeType)
-          .setData(ByteString.copyFrom(data))
-          .build();
+      ContentItem contentItem =
+          ContentItem.newBuilder().setType(mimeType).setData(ByteString.copyFrom(data)).build();
 
-      InspectConfig inspectConfig = InspectConfig.newBuilder()
-          .addAllInfoTypes(infoTypes)
-          .setMinLikelihood(minLikelihood)
-          .setMaxFindings(maxFindings)
-          .setIncludeQuote(includeQuote)
-          .build();
+      InspectConfig inspectConfig =
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .setMinLikelihood(minLikelihood)
+              .setMaxFindings(maxFindings)
+              .setIncludeQuote(includeQuote)
+              .build();
 
-      InspectContentRequest request = InspectContentRequest.newBuilder()
-          .setInspectConfig(inspectConfig)
-          .addItems(contentItem)
-          .build();
+      InspectContentRequest request =
+          InspectContentRequest.newBuilder()
+              .setInspectConfig(inspectConfig)
+              .addItems(contentItem)
+              .build();
       InspectContentResponse response = dlpServiceClient.inspectContent(request);
 
       for (InspectResult result : response.getResultsList()) {
@@ -185,13 +193,13 @@ public class Inspect {
     // [END dlp_inspect_file]
   }
 
-  private static void inspectGcsFile(String bucketName, String fileName,
-      Likelihood minLikelihood, List<InfoType> infoTypes)
+  private static void inspectGcsFile(
+      String bucketName, String fileName, Likelihood minLikelihood, List<InfoType> infoTypes)
       throws Exception {
     // [START dlp_inspect_gcs]
     // Instantiates a client
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-// The name of the bucket where the file resides.
+      // The name of the bucket where the file resides.
       // bucketName = 'YOUR-BUCKET';
 
       // The path to the file within the bucket to inspect.
@@ -207,21 +215,19 @@ public class Inspect {
       // The infoTypes of information to match
       // infoTypes = ['US_MALE_NAME', 'US_FEMALE_NAME'];
 
-      CloudStorageOptions cloudStorageOptions = CloudStorageOptions
-          .newBuilder()
-          .setFileSet(FileSet.newBuilder().setUrl(
-              "gs://" + bucketName + "/" + fileName
-          ))
-          .build();
+      CloudStorageOptions cloudStorageOptions =
+          CloudStorageOptions.newBuilder()
+              .setFileSet(FileSet.newBuilder().setUrl("gs://" + bucketName + "/" + fileName))
+              .build();
 
-      StorageConfig storageConfig = StorageConfig.newBuilder()
-          .setCloudStorageOptions(cloudStorageOptions)
-          .build();
+      StorageConfig storageConfig =
+          StorageConfig.newBuilder().setCloudStorageOptions(cloudStorageOptions).build();
 
-      InspectConfig inspectConfig = InspectConfig.newBuilder()
-          .addAllInfoTypes(infoTypes)
-          .setMinLikelihood(minLikelihood)
-          .build();
+      InspectConfig inspectConfig =
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .setMinLikelihood(minLikelihood)
+              .build();
 
       // optionally provide an output configuration to store results, default : none
       OutputStorageConfig outputConfig = OutputStorageConfig.getDefaultInstance();
@@ -252,8 +258,12 @@ public class Inspect {
     // [END dlp_inspect_gcs]
   }
 
-  private static void inspectDatastore(String projectId, String namespaceId, String kind,
-      Likelihood minLikelihood, List<InfoType> infoTypes) {
+  private static void inspectDatastore(
+      String projectId,
+      String namespaceId,
+      String kind,
+      Likelihood minLikelihood,
+      List<InfoType> infoTypes) {
     // [START dlp_inspect_datastore]
     // Instantiates a client
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
@@ -274,19 +284,24 @@ public class Inspect {
       // The infoTypes of information to match
       // infoTypes = ['US_MALE_NAME', 'US_FEMALE_NAME'];
 
-      // Get reference to the file to be inspected
-      PartitionId partitionId = PartitionId.newBuilder().setProjectId(projectId)
-          .setNamespaceId(namespaceId).build();
-      KindExpression kindExpression = KindExpression.newBuilder().setName(kind).build();
-      DatastoreOptions datastoreOptions = DatastoreOptions.newBuilder()
-          .setKind(kindExpression).setPartitionId(partitionId).build();
-      StorageConfig storageConfig = StorageConfig.newBuilder()
-          .setDatastoreOptions(datastoreOptions).build();
+      // Reference to the Datastore namespace
+      PartitionId partitionId =
+          PartitionId.newBuilder().setProjectId(projectId).setNamespaceId(namespaceId).build();
 
-      InspectConfig inspectConfig = InspectConfig.newBuilder()
-          .addAllInfoTypes(infoTypes)
-          .setMinLikelihood(minLikelihood)
-          .build();
+      // Reference to the Datastore kind
+      KindExpression kindExpression = KindExpression.newBuilder().setName(kind).build();
+      DatastoreOptions datastoreOptions =
+          DatastoreOptions.newBuilder().setKind(kindExpression).setPartitionId(partitionId).build();
+
+      // Construct Datastore configuration to be inspected
+      StorageConfig storageConfig =
+          StorageConfig.newBuilder().setDatastoreOptions(datastoreOptions).build();
+
+      InspectConfig inspectConfig =
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .setMinLikelihood(minLikelihood)
+              .build();
 
       // optionally provide an output configuration to store results, default : none
       OutputStorageConfig outputConfig = OutputStorageConfig.getDefaultInstance();
@@ -317,6 +332,10 @@ public class Inspect {
     // [END dlp_inspect_datastore]
   }
 
+  /**
+   * Command line application to inspect data using the Data Loss Prevention API.
+   * Supported data formats : string, file, text files on GCS and Datastore entities
+   */
   public static void main(String[] args) throws Exception {
 
     OptionGroup optionsGroup = new OptionGroup();
@@ -336,61 +355,37 @@ public class Inspect {
     Options commandLineOptions = new Options();
     commandLineOptions.addOptionGroup(optionsGroup);
 
-    Option minLikelihoodOption = Option.builder("minLikelihood")
-        .hasArg(true)
-        .required(false)
-        .build();
+    Option minLikelihoodOption =
+        Option.builder("minLikelihood").hasArg(true).required(false).build();
 
     commandLineOptions.addOption(minLikelihoodOption);
 
-    Option maxFindingsOption = Option.builder("maxFindings")
-        .hasArg(true)
-        .required(false)
-        .build();
+    Option maxFindingsOption = Option.builder("maxFindings").hasArg(true).required(false).build();
 
     commandLineOptions.addOption(maxFindingsOption);
 
-    Option infoTypesOption = Option.builder("infoTypes")
-        .hasArg(true)
-        .required(false)
-        .build();
+    Option infoTypesOption = Option.builder("infoTypes").hasArg(true).required(false).build();
     infoTypesOption.setArgs(Option.UNLIMITED_VALUES);
     commandLineOptions.addOption(infoTypesOption);
 
-    Option includeQuoteOption = Option.builder("includeQuote")
-        .hasArg(true)
-        .required(false)
-        .build();
+    Option includeQuoteOption = Option.builder("includeQuote").hasArg(true).required(false).build();
     commandLineOptions.addOption(includeQuoteOption);
 
-    Option bucketNameOption = Option.builder("bucketName")
-        .hasArg(true)
-        .required(false)
-        .build();
+    Option bucketNameOption = Option.builder("bucketName").hasArg(true).required(false).build();
     commandLineOptions.addOption(bucketNameOption);
 
-    Option gcsFileNameOption = Option.builder("fileName")
-        .hasArg(true)
-        .required(false)
-        .build();
+    Option gcsFileNameOption = Option.builder("fileName").hasArg(true).required(false).build();
     commandLineOptions.addOption(gcsFileNameOption);
 
-    Option datastoreProjectIdOption = Option.builder("projectId")
-        .hasArg(true)
-        .required(false)
-        .build();
+    Option datastoreProjectIdOption =
+        Option.builder("projectId").hasArg(true).required(false).build();
     commandLineOptions.addOption(datastoreProjectIdOption);
 
-    Option datastoreNamespaceOption = Option.builder("namespace")
-        .hasArg(true)
-        .required(false)
-        .build();
+    Option datastoreNamespaceOption =
+        Option.builder("namespace").hasArg(true).required(false).build();
     commandLineOptions.addOption(datastoreNamespaceOption);
 
-    Option datastoreKindOption = Option.builder("kind")
-        .hasArg(true)
-        .required(false)
-        .build();
+    Option datastoreKindOption = Option.builder("kind").hasArg(true).required(false).build();
     commandLineOptions.addOption(datastoreKindOption);
 
     CommandLineParser parser = new DefaultParser();
@@ -406,11 +401,13 @@ public class Inspect {
       return;
     }
 
-    Likelihood minLikelihood = Likelihood.valueOf(cmd.getOptionValue(minLikelihoodOption.getOpt(),
-        Likelihood.LIKELIHOOD_UNSPECIFIED.name()));
+    Likelihood minLikelihood =
+        Likelihood.valueOf(
+            cmd.getOptionValue(
+                minLikelihoodOption.getOpt(), Likelihood.LIKELIHOOD_UNSPECIFIED.name()));
     int maxFindings = Integer.parseInt(cmd.getOptionValue(maxFindingsOption.getOpt(), "0"));
-    boolean includeQuote = Boolean
-        .parseBoolean(cmd.getOptionValue(includeQuoteOption.getOpt(), "true"));
+    boolean includeQuote =
+        Boolean.parseBoolean(cmd.getOptionValue(includeQuoteOption.getOpt(), "true"));
 
     List<InfoType> infoTypesList = Collections.emptyList();
     if (cmd.hasOption(infoTypesOption.getOpt())) {
@@ -437,8 +434,9 @@ public class Inspect {
       String namespaceId = cmd.getOptionValue(datastoreNamespaceOption.getOpt(), "");
       String kind = cmd.getOptionValue(datastoreKindOption.getOpt());
       // use default project id when project id is not specified
-      String projectId = cmd.getOptionValue(datastoreProjectIdOption.getOpt(),
-          ServiceOptions.getDefaultProjectId());
+      String projectId =
+          cmd.getOptionValue(
+              datastoreProjectIdOption.getOpt(), ServiceOptions.getDefaultProjectId());
       inspectDatastore(projectId, namespaceId, kind, minLikelihood, infoTypesList);
     }
   }

@@ -28,8 +28,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class MetadataIT {
-
+public class QuickStartIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -42,22 +41,15 @@ public class MetadataIT {
   }
 
   @Test
-  public void testRootCategoriesAreRetrieved() throws Exception {
-    Metadata.main(new String[] {});
+  public void testQuickStart() throws Exception {
+    QuickStart.main(new String[] {});
     String output = bout.toString();
-    assertTrue(output.contains("GOVERNMENT"));
-    assertTrue(output.contains("HEALTH"));
-  }
-
-  @Test
-  public void testInfoTypesAreRetrieved() throws Exception {
-    Metadata.main(new String[] {"-category", "GOVERNMENT"});
-    String output = bout.toString();
-    assertTrue(output.contains("AUSTRALIA_TAX_FILE_NUMBER"));
+    assertTrue(output.contains("US_MALE_NAME"));
   }
 
   @After
   public void tearDown() {
     System.setOut(null);
+    bout.reset();
   }
 }

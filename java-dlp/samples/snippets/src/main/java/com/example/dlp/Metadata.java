@@ -1,10 +1,11 @@
 /**
- * Copyright 2017, Google, Inc.
+ * Copyright 2017 Google Inc.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,6 +21,7 @@ import com.google.privacy.dlp.v2beta1.CategoryDescription;
 import com.google.privacy.dlp.v2beta1.InfoTypeDescription;
 import com.google.privacy.dlp.v2beta1.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2beta1.ListRootCategoriesResponse;
+import java.util.List;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -27,8 +29,6 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
-
-import java.util.List;
 
 public class Metadata {
 
@@ -54,8 +54,8 @@ public class Metadata {
     try (DlpServiceClient dlpClient = DlpServiceClient.create()) {
       // The BCP-47 language code to use, e.g. 'en-US'
       // languageCode = 'en-US'
-      ListRootCategoriesResponse rootCategoriesResponse = dlpClient
-          .listRootCategories(languageCode);
+      ListRootCategoriesResponse rootCategoriesResponse =
+          dlpClient.listRootCategories(languageCode);
       for (CategoryDescription categoryDescription : rootCategoriesResponse.getCategoriesList()) {
         System.out.println("Name : " + categoryDescription.getName());
         System.out.println("Display name : " + categoryDescription.getDisplayName());
@@ -64,6 +64,7 @@ public class Metadata {
     // [END dlp_list_root_categories]
   }
 
+  /** Retrieve infoTypes. */
   public static void main(String[] args) throws Exception {
     Options options = new Options();
     Option languageCodeOption = new Option("language", null, true, "BCP-47 language code");
