@@ -363,7 +363,7 @@ public class LogEntry implements Serializable {
 
 
   /**
-   * Returns the source code location information associated with the log entry if any.
+   * Returns the source code location information associated with the log entry, if any.
    */
   public SourceLocation getSourceLocation() {
     return sourceLocation;
@@ -436,6 +436,18 @@ public class LogEntry implements Serializable {
     return new Builder(this);
   }
 
+  private static Timestamp timestampFromMillis(Long millis) {
+    Timestamp.Builder tsBuilder = Timestamp.newBuilder();
+    tsBuilder.setSeconds(millis / MILLIS_PER_SECOND);
+    tsBuilder.setNanos((int) (millis % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
+    return tsBuilder.build();
+  }
+
+  private static Long millisFromTimestamp(Timestamp timestamp) {
+    return timestamp.getSeconds() * MILLIS_PER_SECOND
+        + timestamp.getNanos() / NANOS_PER_MILLISECOND;
+  }
+
   com.google.logging.v2.LogEntry toPb(String projectId) {
     com.google.logging.v2.LogEntry.Builder builder = payload.toPb();
     builder.putAllLabels(labels);
@@ -446,16 +458,10 @@ public class LogEntry implements Serializable {
       builder.setResource(resource.toPb());
     }
     if (timestamp != null) {
-      Timestamp.Builder tsBuilder = Timestamp.newBuilder();
-      tsBuilder.setSeconds(timestamp / MILLIS_PER_SECOND);
-      tsBuilder.setNanos((int) (timestamp % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
-      builder.setTimestamp(tsBuilder.build());
+      builder.setTimestamp(timestampFromMillis(timestamp));
     }
     if (receiveTimestamp != null) {
-      Timestamp.Builder tsBuilder = Timestamp.newBuilder();
-      tsBuilder.setSeconds(receiveTimestamp / MILLIS_PER_SECOND);
-      tsBuilder.setNanos((int) (receiveTimestamp % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
-      builder.setReceiveTimestamp(tsBuilder.build());
+      builder.setReceiveTimestamp(timestampFromMillis(receiveTimestamp));
     }
     if (severity != null) {
       builder.setSeverity(severity.toPb());
@@ -512,15 +518,13 @@ public class LogEntry implements Serializable {
       builder.setResource(MonitoredResource.fromPb(entryPb.getResource()));
     }
     if (entryPb.hasTimestamp()) {
-      Timestamp ts = entryPb.getTimestamp();
-      Long millis = ts.getSeconds() * MILLIS_PER_SECOND + ts.getNanos() / NANOS_PER_MILLISECOND;
+      Long millis = millisFromTimestamp(entryPb.getTimestamp());
       if (millis != 0) {
         builder.setTimestamp(millis);
       }
     }
     if (entryPb.hasReceiveTimestamp()) {
-      Timestamp ts = entryPb.getReceiveTimestamp();
-      Long millis = ts.getSeconds() * MILLIS_PER_SECOND + ts.getNanos() / NANOS_PER_MILLISECOND;
+      Long millis = millisFromTimestamp(entryPb.getReceiveTimestamp());
       if (millis != 0) {
         builder.setReceiveTimestamp(millis);
       }

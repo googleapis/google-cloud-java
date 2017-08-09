@@ -29,9 +29,9 @@ public final class SourceLocation implements Serializable {
 
   private static final long serialVersionUID = 8502955858162387374L;
 
-  String file;
-  Long line;
-  String function;
+  private final String file;
+  private final Long line;
+  private final String function;
 
   /**
    * A builder for {@code SourceLocation} objects.
@@ -153,7 +153,7 @@ public final class SourceLocation implements Serializable {
     return builder.build();
   }
 
-  public static SourceLocation fromPb(LogEntrySourceLocation sourceLocationPb) {
+  static SourceLocation fromPb(LogEntrySourceLocation sourceLocationPb) {
     return new Builder()
         .setFile(sourceLocationPb.getFile())
         .setLine(sourceLocationPb.getLine())
