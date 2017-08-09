@@ -1,6 +1,10 @@
 Google Cloud Java Compatibility Checker
 ==========================
 
+The Google Cloud Java Compatibility Checker is a utility to check
+compatibility of your environment with grpc-based clients in Google
+Cloud Java (e.g. Pub/Sub, Vision, Speech, and others).
+
 Usage:
 
 ```

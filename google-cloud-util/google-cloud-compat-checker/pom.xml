@@ -11,7 +11,7 @@
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-pom</artifactId>
+    <artifactId>google-cloud-util</artifactId>
     <version>0.21.2-alpha-SNAPSHOT</version>
   </parent>
   <properties>
