@@ -160,6 +160,13 @@ Most `google-cloud` libraries require a project ID.  There are multiple ways to 
 5. The Google Cloud SDK project ID
 6. The Compute Engine project ID
 
+In cases where the library may expect a project ID explicitly, we provide a helper that can provide the inferred project ID:
+   ```java
+     import com.google.cloud.ServiceOptions;
+     ...
+     String projectId = ServiceOptions.getDefaultProjectId();
+   ```
+
 Authentication
 --------------
 
