@@ -39,7 +39,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -602,7 +601,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       if (request.getPageSize() != null) {
         options.add(QueryResultsOption.pageSize(request.getPageSize()));
       }
-      return getQueryResults(job.getJobId(), options.toArray(new QueryResultsOption[0]));
+      return getQueryResults(job.getJobId(),
+          options.toArray(new QueryResultsOption[options.size()]));
 
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);

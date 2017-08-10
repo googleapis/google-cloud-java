@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.spi.v2;
 
+import com.google.api.core.BetaApi;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
@@ -209,6 +210,7 @@ public interface BigQueryRpc extends ServiceRpc {
    *
    * @throws BigQueryException upon failure
    */
+  @BetaApi
   QueryResponse query(QueryRequest request);
 
   /**

@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.eq;
 import static org.junit.Assert.assertArrayEquals;
@@ -51,7 +50,6 @@ import java.math.BigInteger;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 import org.easymock.Capture;
 import org.easymock.EasyMock;
 import org.junit.After;
@@ -1129,8 +1127,8 @@ public class BigQueryImplTest {
             .setConfiguration(QUERY_JOB_CONFIGURATION_FOR_QUERY.toPb())
             .setJobReference(queryJob.toPb())
             .setId(JOB);
-    com.google.api.services.bigquery.model.GetQueryResultsResponse responsePb =
-        new com.google.api.services.bigquery.model.GetQueryResultsResponse()
+    GetQueryResultsResponse responsePb =
+        new GetQueryResultsResponse()
             .setJobReference(queryJob.toPb())
             .setJobComplete(false);
 
@@ -1165,8 +1163,8 @@ public class BigQueryImplTest {
             .setConfiguration(QUERY_JOB_CONFIGURATION_FOR_QUERY.toPb())
             .setJobReference(queryJob.toPb())
             .setId(JOB);
-    com.google.api.services.bigquery.model.GetQueryResultsResponse responsePb =
-        new com.google.api.services.bigquery.model.GetQueryResultsResponse()
+    GetQueryResultsResponse responsePb =
+        new GetQueryResultsResponse()
             .setJobReference(queryJob.toPb())
             .setRows(ImmutableList.of(TABLE_ROW))
             .setJobComplete(true)
