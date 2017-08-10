@@ -15,7 +15,8 @@
  */
 
 /**
- * A client to Google Cloud BigQuery.
+ * A client for BigQuery – A fully managed, petabyte scale, low cost enterprise data
+ * warehouse for analytics.
  *
  * <p>A simple usage example showing how to create a table if it does not exist and load data into
  * it. For the complete source code see

@@ -935,7 +935,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   boolean cancel(JobId jobId);
 
   /**
-   * Runs the query associated with the request.
+   * Runs the query associated with the request, using an internally-generated random JobId.
    *
    * <p>Example of running a query.
    * <pre> {@code
@@ -985,6 +985,19 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    */
   QueryResponse query(QueryRequest request);
+
+  /**
+   * Runs the query associated with the request, using the given job id.
+   *
+   * <p>See {@link #query(QueryRequest)} for examples on populating a {@link QueryRequest}. The
+   * recommended way to populate a JobId is the following:
+   *
+   * <p>
+   * <pre> {@code
+   *  JobId jobId = JobId.of(UUID.randomUUID().toString());
+   * }</pre>
+   */
+  QueryResponse query(QueryRequest request, JobId jobId);
 
   /**
    * Returns results of the query associated with the provided job.

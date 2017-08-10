@@ -1,6 +1,8 @@
 Use Google Cloud Java Client with Google App Engine
 =================================================
 
+** Note: the following instructions are not required for App Engine Flex and Java 8 standard environment. **
+
 Quickstart
 ----------
 This file provides extra instructions to set up Google Cloud Java Client with Google App Engine.

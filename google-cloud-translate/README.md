@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-translate</artifactId>
-  <version>1.2.3</version>
+  <version>1.3.1</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-translate:1.2.3'
+compile 'com.google.cloud:google-cloud-translate:1.3.1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "1.2.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "1.3.1"
 ```
 
 Example Application
