@@ -237,7 +237,7 @@ public class DetectIT {
     // Assert
     String got = bout.toString();
     assertThat(got).contains("Palace");
-    assertThat(got).contains("Rom"); // Matches Rome and Roman
+    assertThat(got).contains("Francisco");
   }
 
   @Test
@@ -249,7 +249,7 @@ public class DetectIT {
     // Assert
     String got = bout.toString();
     assertThat(got).contains("Palace");
-    assertThat(got).contains("Rom"); // Matches Rome and Roman
+    assertThat(got).contains("Francisco");
   }
 
   @Test
