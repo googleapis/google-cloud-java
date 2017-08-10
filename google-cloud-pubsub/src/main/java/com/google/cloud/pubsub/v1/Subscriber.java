@@ -168,7 +168,7 @@ public class Subscriber extends AbstractApiService {
     channelProvider = builder.channelProvider;
     credentialsProvider = builder.credentialsProvider;
 
-    numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
+    numChannels = builder.numPullers;
     channels = new ArrayList<ManagedChannel>(numChannels);
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
     pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
@@ -510,6 +510,7 @@ public class Subscriber extends AbstractApiService {
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
     boolean useStreaming = true;
+    int numPullers = Runtime.getRuntime().availableProcessors() * CHANNELS_PER_CORE;
 
     Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
@@ -586,6 +587,12 @@ public class Subscriber extends AbstractApiService {
      */
     public Builder setSystemExecutorProvider(ExecutorProvider executorProvider) {
       this.systemExecutorProvider = Preconditions.checkNotNull(executorProvider);
+      return this;
+    }
+
+    /** Sets the number of pullers used to pull messages from the subscription. Defaults to the number of available processors. */
+    public Builder setNumPullers(int numPullers) {
+      this.numPullers = numPullers;
       return this;
     }
 
