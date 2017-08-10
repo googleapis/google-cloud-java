@@ -1008,58 +1008,58 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md
 [cloud-platform]: https://cloud.google.com/
-[cloud-datastore]: https://cloud.google.com/datastore/docs
-[cloud-datastore-docs]: https://cloud.google.com/datastore/docs
+[cloud-datastore]: https://cloud.google.com/datastore/docs/
+[cloud-datastore-docs]: https://cloud.google.com/datastore/docs/
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
 [datastore-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html
 
 [dns-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
-[cloud-dns-docs]: https://cloud.google.com/dns/docs
+[cloud-dns-docs]: https://cloud.google.com/dns/docs/
 [cloud-dns-activation]: https://console.cloud.google.com/start/api?id=dns
 
 [errorreporting-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/errorreporting/spi/v1beta1/package-summary.html
-[cloud-errorreporting-docs]: https://cloud.google.com/error-reporting/docs
+[cloud-errorreporting-docs]: https://cloud.google.com/error-reporting/docs/
 
 [language-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/language/spi/v1/package-summary.html
-[cloud-language-docs]: https://cloud.google.com/language/docs
+[cloud-language-docs]: https://cloud.google.com/language/docs/
 
 [monitoring-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/monitoring/spi/v3/package-summary.html
-[cloud-monitoring-docs]: https://cloud.google.com/monitoring/docs
+[cloud-monitoring-docs]: https://cloud.google.com/monitoring/docs/
 
 [speech-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/speech/spi/v1/package-summary.html
-[cloud-speech-docs]: https://cloud.google.com/speech/docs
+[cloud-speech-docs]: https://cloud.google.com/speech/docs/
 
 [trace-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/trace/spi/v1/package-summary.html
-[cloud-trace-docs]: https://cloud.google.com/trace/docs
+[cloud-trace-docs]: https://cloud.google.com/trace/docs/
 
 [vision-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/vision/spi/v1/package-summary.html
-[cloud-vision-docs]: https://cloud.google.com/vision/docs
+[cloud-vision-docs]: https://cloud.google.com/vision/docs/
 
-[cloud-video-intelligence-docs]: https://cloud.google.com/video-intelligence/docs
+[cloud-video-intelligence-docs]: https://cloud.google.com/video-intelligence/docs/
 
 [logging-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/package-summary.html
-[stackdriver-logging-docs]: https://cloud.google.com/logging/docs
+[stackdriver-logging-docs]: https://cloud.google.com/logging/docs/
 [stackdriver-logging-activation]: https://console.cloud.google.com/start/api?id=logging
 
 [pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html
 [cloud-pubsub]: https://cloud.google.com/pubsub/
-[cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs
+[cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs/
 
 [cloud-storage]: https://cloud.google.com/storage/
-[cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
+[cloud-storage-docs]: https://cloud.google.com/storage/docs/
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
 [cloud-storage-activation]: https://cloud.google.com/storage/docs/signup
 [storage-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
 
 [resourcemanager-api]:https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
-[cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/
+[cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/docs/
 
 [cloud-bigquery]: https://cloud.google.com/bigquery/
-[cloud-bigquery-docs]: https://cloud.google.com/bigquery/docs/overview
+[cloud-bigquery-docs]: https://cloud.google.com/bigquery/docs/
 [bigquery-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
 
 [cloud-compute]: https://cloud.google.com/compute/
-[cloud-compute-docs]: https://cloud.google.com/compute/docs/overview
+[cloud-compute-docs]: https://cloud.google.com/compute/docs/
 [compute-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html
 
 [translate-docs]: https://cloud.google.com/translate/docs/
