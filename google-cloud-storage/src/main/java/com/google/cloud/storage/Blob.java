@@ -34,9 +34,15 @@ import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.base.Function;
 import com.google.common.io.BaseEncoding;
+
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.channels.Channels;
+import java.nio.channels.WritableByteChannel;
+import java.nio.file.Path;
 import java.security.Key;
 import java.util.Arrays;
 import java.util.List;
@@ -184,6 +190,26 @@ public class Blob extends BlobInfo {
       }
       return convertedOptions;
     }
+  }
+
+  /**
+   * Downloads this blob to the given file path.
+   *
+   * @param path destination
+   * @throws IOException upon failure
+   */
+  public void downloadTo(Path path) throws IOException {
+    FileOutputStream outputStream = new FileOutputStream(path.toFile());
+    try (ReadChannel reader = reader()) {
+      WritableByteChannel channel = Channels.newChannel(outputStream);
+      ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
+      while (reader.read(bytes) > 0) {
+        bytes.flip();
+        channel.write(bytes);
+        bytes.clear();
+      }
+    }
+    outputStream.close();
   }
 
   /**
