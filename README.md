@@ -15,7 +15,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
 -  [Stackdriver Logging](#stackdriver-logging-ga) (GA)
 -  [Cloud Datastore](#google-cloud-datastore-ga) (GA)
--  [Cloud Storage](#google-cloud-storage-ga) (GA)
+-  [Cloud Storage](https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-storage) (GA)
 -  [Cloud Translation](#google-translation-ga) (GA)
 
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
@@ -352,63 +352,8 @@ if (entity != null) {
       .build();
   datastore.update(entity);
 }
+
 ```
-
-Google Cloud Storage (GA)
-----------------------
-
-- [API Documentation][storage-api]
-- [Official Documentation][cloud-storage-docs]
-
-*Follow the [activation instructions][cloud-storage-activation] to use the Google Cloud Storage API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-The first snippet shows how to create a Storage blob. Complete source code can be found at
-[CreateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
-
-```java
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
-
-Storage storage = StorageOptions.getDefaultInstance().getService();
-BlobId blobId = BlobId.of("bucket", "blob_name");
-BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
-Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
-```
-The second snippet shows how to update a Storage blob if it exists. Complete source code can be
-found at
-[UpdateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java).
-```java
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
-
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
-
-Storage storage = StorageOptions.getDefaultInstance().getService();
-BlobId blobId = BlobId.of("bucket", "blob_name");
-Blob blob = storage.get(blobId);
-if (blob != null) {
-  byte[] prevContent = blob.getContent();
-  System.out.println(new String(prevContent, UTF_8));
-  WritableByteChannel channel = blob.writer();
-  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
-  channel.close();
-}
-```
-
 Google Translation (GA)
 ----------------
 
