@@ -208,7 +208,7 @@ You can test against an in-memory local Resource Manager by following these step
 
 #### On your machine
 
-You can test against an in-memory local Storage by following these steps:
+You can test against an in-memory local Storage. The in-memory configuration supports only limited number of operations, please refer to the `LocalStorageHelper` class documentation for more details. Please use `RemoteStorageHelper` (see next section) if you need to use operations which are not supported by `LocalStorageHelper`.
 
 1. Follow the [Quickstart instructions][cloud-nio] to add the nio dependency to your project.
 2. In your program, create and use a fake Storage service object.  For example:
@@ -221,7 +221,7 @@ You can test against an in-memory local Storage by following these steps:
 
 #### Remote
 
-The alternative way of testing is to create a test project.  `RemoteStorageHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
+The alternative way of testing is to create a test project. This way allows using operations not supported by the `LocalStorageHelper`.  `RemoteStorageHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
 
 1. Create a test Google Cloud project.
 
