@@ -79,9 +79,8 @@ import org.threeten.bp.Duration;
  *       in memory before the receiver either ack or nack them.
  * </ul>
  *
- * <p>{@link Subscriber} will use the credentials set on the channel, which uses
- *  application default credentials through {@link GoogleCredentials#getApplicationDefault}
- *  by default.
+ * <p>{@link Subscriber} will use the credentials set on the channel, which uses application default
+ * credentials through {@link GoogleCredentials#getApplicationDefault} by default.
  */
 public class Subscriber extends AbstractApiService {
   private static final int THREADS_PER_CHANNEL = 5;
@@ -154,21 +153,21 @@ public class Subscriber extends AbstractApiService {
             }
           });
     }
-      alarmsExecutor = builder.systemExecutorProvider.getExecutor();
-      if (builder.systemExecutorProvider.shouldAutoClose()) {
-        closeables.add(
-            new AutoCloseable() {
-              @Override
-              public void close() throws IOException {
-                alarmsExecutor.shutdown();
-              }
-            });
-      }
+    alarmsExecutor = builder.systemExecutorProvider.getExecutor();
+    if (builder.systemExecutorProvider.shouldAutoClose()) {
+      closeables.add(
+          new AutoCloseable() {
+            @Override
+            public void close() throws IOException {
+              alarmsExecutor.shutdown();
+            }
+          });
+    }
 
     channelProvider = builder.channelProvider;
     credentialsProvider = builder.credentialsProvider;
 
-    numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
+    numChannels = builder.parallelPullCount;
     channels = new ArrayList<ManagedChannel>(numChannels);
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
     pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
@@ -510,6 +509,7 @@ public class Subscriber extends AbstractApiService {
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
     boolean useStreaming = true;
+    int parallelPullCount = Runtime.getRuntime().availableProcessors() * CHANNELS_PER_CORE;
 
     Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
@@ -586,6 +586,15 @@ public class Subscriber extends AbstractApiService {
      */
     public Builder setSystemExecutorProvider(ExecutorProvider executorProvider) {
       this.systemExecutorProvider = Preconditions.checkNotNull(executorProvider);
+      return this;
+    }
+
+    /**
+     * Sets the number of pullers used to pull messages from the subscription. Defaults to the
+     * number of available processors.
+     */
+    public Builder setParallelPullCount(int parallelPullCount) {
+      this.parallelPullCount = parallelPullCount;
       return this;
     }
 
