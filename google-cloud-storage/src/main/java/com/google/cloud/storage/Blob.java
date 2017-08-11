@@ -35,13 +35,14 @@ import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.base.Function;
 import com.google.common.io.BaseEncoding;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.OutputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.WritableByteChannel;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.Key;
 import java.util.Arrays;
@@ -73,6 +74,8 @@ public class Blob extends BlobInfo {
           return Blob.fromPb(pb.x(), pb.y());
         }
       };
+
+  private static final int DEFAULT_CHUNK_SIZE = 2 * 1024 * 1024;
 
   /**
    * Class for specifying blob source options when {@code Blob} methods are used.
@@ -196,20 +199,23 @@ public class Blob extends BlobInfo {
    * Downloads this blob to the given file path.
    *
    * @param path destination
-   * @throws IOException upon failure
+   * @throws StorageException upon failure
    */
-  public void downloadTo(Path path) throws IOException {
-    FileOutputStream outputStream = new FileOutputStream(path.toFile());
-    try (ReadChannel reader = reader()) {
+  public void downloadTo(Path path) throws StorageException {
+    try (
+        OutputStream outputStream = Files.newOutputStream(path);
+        ReadChannel reader = reader()
+    ) {
       WritableByteChannel channel = Channels.newChannel(outputStream);
-      ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
+      ByteBuffer bytes = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
       while (reader.read(bytes) > 0) {
         bytes.flip();
         channel.write(bytes);
         bytes.clear();
       }
+    } catch (IOException e) {
+      throw new StorageException(e);
     }
-    outputStream.close();
   }
 
   /**

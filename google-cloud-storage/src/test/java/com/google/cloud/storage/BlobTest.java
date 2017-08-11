@@ -526,7 +526,7 @@ public class BlobTest {
   }
 
   @Test
-  public void testDownloadTo() throws Exception {
+  public void testDownload() throws Exception {
     final byte[] expected = {1, 2};
 
     initializeExpectedBlob(2);
