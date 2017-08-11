@@ -208,7 +208,7 @@ You can test against an in-memory local Resource Manager by following these step
 
 #### On your machine
 
-You can test against an in-memory local Storage. The in-memory configuration supports only limited number of operations, please refer to the `LocalStorageHelper` class documentation for more details. Please use `RemoteStorageHelper` (see next section) if you need to use operations which are not supported by `LocalStorageHelper`. 
+You can test against an in-memory local Storage. The in-memory configuration supports only limited number of operations; please refer to the `LocalStorageHelper` class documentation for more details. Please use `RemoteStorageHelper` (see next section) if you need to use operations which are not supported by `LocalStorageHelper`. 
 
 To use the in-memory configuration please follow these steps:
 
