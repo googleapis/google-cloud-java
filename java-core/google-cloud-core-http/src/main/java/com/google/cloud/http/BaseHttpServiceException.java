@@ -62,6 +62,7 @@ public class BaseHttpServiceException extends BaseServiceException {
           }
         } else {
           code = ((GoogleJsonResponseException) exception).getStatusCode();
+          retryable = BaseServiceException.isRetryable(code, null, idempotent, retryableErrors);
         }
       } else {
         // In cases where an exception is an instance of HttpResponseException but not
