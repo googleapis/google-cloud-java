@@ -15,7 +15,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
 -  [Stackdriver Logging](#stackdriver-logging-ga) (GA)
 -  [Cloud Datastore](#google-cloud-datastore-ga) (GA)
--  [Cloud Storage](https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-storage) (GA)
+-  [Cloud Storage](google-cloud-storage) (GA)
 -  [Cloud Translation](#google-translation-ga) (GA)
 
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:

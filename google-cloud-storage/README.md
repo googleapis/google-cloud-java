@@ -120,7 +120,7 @@ String contentString = new String(content, UTF_8);
 A complete example for accessing blobs can be found at
 [CreateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
 
-### Updating data
+#### Updating data
 Another thing we may want to do is update a blob. The following snippet shows how to update a Storage blob if it exists. 
 
 ``` java
@@ -151,7 +151,7 @@ for (Bucket bucket : storage.list().iterateAll()) {
   System.out.println("Blobs in the bucket:");
   for (Blob blob : bucket.list().iterateAll()) {
     System.out.println(blob);
-  }  
+  }
 }
 ```
 
@@ -159,7 +159,7 @@ for (Bucket bucket : storage.list().iterateAll()) {
 
 In
 [CreateAndListBucketsAndBlobs.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateAndListBucketsAndBlobs.java)
-we put together all the code shown above into one program. The program assumes that you are
+we put together examples creating and listing buckets and blobs into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
 display on your webpage.
