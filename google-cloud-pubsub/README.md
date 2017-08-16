@@ -10,16 +10,13 @@ Java idiomatic client for [Google Cloud Pub/Sub](https://cloud.google.com/pubsub
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
+-  [Client Library Documentation][pubsub-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
 
 Quickstart
 ----------
-
-> `google-cloud-pubsub` uses gRPC as transport layer, which is not (yet) supported by App Engine
-Standard. `google-cloud-pubsub` will work on App Engine Flexible.
 
 Add this to your pom.xml file
 ```xml
@@ -48,7 +45,7 @@ About Google Cloud Pub/Sub
 
 [Google Cloud Pub/Sub][cloud-pubsub] is designed to provide reliable,
 many-to-many, asynchronous messaging between applications. Publisher
-applications can send messages to a ``topic`` and other applications can
+applications can send messages to a topic and other applications can
 subscribe to that topic to receive the messages. By decoupling senders and
 receivers, Google Cloud Pub/Sub allows developers to communicate between
 independently written applications.
@@ -56,7 +53,7 @@ independently written applications.
 See the [Google Cloud Pub/Sub docs][cloud-pubsub-quickstart] for more details on how to activate
 Cloud Pub/Sub for your project.
 
-See the ``google-cloud`` API [Pub/Sub documentation][pubsub-api] to learn how to interact with the
+See the [Pub/Sub client library docs][pubsub-client-lib-docs] to learn how to interact with the
 Cloud Pub/Sub using this Client Library.
 
 Getting Started
@@ -248,4 +245,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-quickstart]: https://cloud.google.com/pubsub/quickstart-console#before-you-begin
-[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/package-summary.html
+[pubsub-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html

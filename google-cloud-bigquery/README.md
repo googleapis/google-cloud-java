@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud BigQuery](https://cloud.google.com/bigqu
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html)
+-  [Client Library Documentation][bigquery-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -54,7 +54,7 @@ With BigQuery you can easily deploy Petabyte-scale Databases.
 Be sure to activate the Google Cloud BigQuery API on the Developer's Console to use BigQuery from
 your project.
 
-See the ``google-cloud`` API [bigquery documentation][bigquery-api] to learn how to interact
+See the [BigQuery client library docs][bigquery-client-lib-docs] to learn how to interact
 with Google Cloud BigQuery using this Client Library.
 
 Getting Started
@@ -259,4 +259,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-bigquery]: https://cloud.google.com/bigquery/
 [cloud-storage]: https://cloud.google.com/storage/
-[bigquery-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
+[bigquery-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
