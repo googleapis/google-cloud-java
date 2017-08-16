@@ -388,44 +388,42 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   protected static String getAppEngineProjectId() {
+    String projectId = null;
     if (PlatformInformation.isOnGAEStandard7()) {
-      try {
-        Class<?> factoryClass =
-            Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
-        Class<?> serviceClass =
-            Class.forName("com.google.appengine.api.appidentity.AppIdentityService");
-        Method method = factoryClass.getMethod("getAppIdentityService");
-        Object appIdentityService = method.invoke(null);
-        method = serviceClass.getMethod("getServiceAccountName");
-        String serviceAccountName = (String) method.invoke(appIdentityService);
-        int indexOfAtSign = serviceAccountName.indexOf('@');
-        return serviceAccountName.substring(0, indexOfAtSign);
-      } catch (ClassNotFoundException exception) {
-        if (System.getProperty("com.google.appengine.runtime.version") != null) {
-          // Could not resolve appengine classes under GAE environment.
-          throw new RuntimeException(
-              "Google App Engine runtime detected "
-                  + "(the environment variable \"com.google.appengine.runtime.version\" is set), "
-                  + "but unable to resolve appengine-sdk classes. "
-                  + "For more details see "
-                  + "https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/APPENGINE.md");
+      projectId = getAppEngineProjectIdFromAppId();
+      if (projectId == null) {
+        try {
+          Class<?> factoryClass =
+                  Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
+          Class<?> serviceClass =
+                  Class.forName("com.google.appengine.api.appidentity.AppIdentityService");
+          Method method = factoryClass.getMethod("getAppIdentityService");
+          Object appIdentityService = method.invoke(null);
+          method = serviceClass.getMethod("getServiceAccountName");
+          String serviceAccountName = (String) method.invoke(appIdentityService);
+          int indexOfAtSign = serviceAccountName.indexOf('@');
+          projectId = serviceAccountName.substring(0, indexOfAtSign);
+        } catch (ClassNotFoundException exception) {
+          if (System.getProperty("com.google.appengine.runtime.version") != null) {
+            // Could not resolve appengine classes under GAE environment.
+            throw new RuntimeException(
+                    "Google App Engine runtime detected "
+                            + "(the environment variable \"com.google.appengine.runtime.version\" is set), "
+                            + "but unable to resolve appengine-sdk classes. "
+                            + "For more details see "
+                            + "https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/APPENGINE.md");
+          }
+        } catch (Exception ignore) {
         }
-        return null;
-      } catch (Exception ignore) {
-        return null;
       }
     } else {
       //for GAE flex and standard Java 8 environment
-      String projectId = System.getenv("GCLOUD_PROJECT");
+      projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
       if (projectId == null) {
-        projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
+        projectId = System.getenv("GCLOUD_PROJECT");
       }
       if (projectId == null) {
-        projectId = getAppEngineAppId();
-        if (projectId != null && projectId.contains(":")) {
-          int colonIndex = projectId.indexOf(":");
-          projectId = projectId.substring(colonIndex + 1);
-        }
+        projectId = getAppEngineProjectIdFromAppId();
       }
       if (projectId == null) {
         try {
@@ -434,8 +432,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
           projectId = null;
         }
       }
-      return projectId;
     }
+    return projectId;
+  }
+
+  protected static String getAppEngineProjectIdFromAppId() {
+    String projectId = getAppEngineAppId();
+    if (projectId != null && projectId.contains(":")) {
+      int colonIndex = projectId.indexOf(":");
+      projectId = projectId.substring(colonIndex + 1);
+    }
+    return projectId;
   }
 
   private static String getAppEngineProjectIdFromMetadataServer() throws IOException {
