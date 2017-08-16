@@ -90,7 +90,7 @@ import com.google.cloud.storage.BucketInfo;
 
 Then add the following code to create a bucket and upload a simple blob.
 
-*Important: Bucket names have to be globally unique. If you choose a bucket name that already exists, you'll get a helpful error message telling you to choose another name. In the code below, replace "my_unique_bucket" with a unique bucket name. See more about naming rules [here](https://cloud.google.com/storage/docs/bucket-naming?hl=en#requirements).*
+*Important: Bucket names have to be globally unique (among all users of Cloud Storage). If you choose a bucket name that already exists, you'll get a helpful error message telling you to choose another name. In the code below, replace "my_unique_bucket" with a unique bucket name. See more about naming rules [here](https://cloud.google.com/storage/docs/bucket-naming?hl=en#requirements).*
 
 ```java
 // Create a bucket
@@ -99,9 +99,12 @@ Bucket bucket = storage.create(BucketInfo.of(bucketName));
 
 // Upload a blob to the newly created bucket
 BlobId blobId = BlobId.of(bucketName, "my_blob_name");
-Blob blob = bucket.create(
-    "my_blob_name", "a simple blob".getBytes(UTF_8), "text/plain");
+BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+Blob blob = storage.create(blobInfo, "a simple blob".getBytes(UTF_8));
 ```
+
+A complete example for creating a blob can be found at
+[CreateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
 
 At this point, you will be able to see your newly created bucket and blob on the Google Developers Console.
 
@@ -109,31 +112,46 @@ At this point, you will be able to see your newly created bucket and blob on the
 Now that we have content uploaded to the server, we can see how to read data from the server.  Add the following line to your program to get back the blob we uploaded.
 
 ```java
-String blobContent = new String(blob.getContent(), UTF_8);
+BlobId blobId = BlobId.of(bucketName, "my_blob_name");
+byte[] content = storage.readAllBytes(blobId);
+String contentString = new String(content, UTF_8);
 ```
+
+A complete example for accessing blobs can be found at
+[CreateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
+
+#### Updating data
+Another thing we may want to do is update a blob. The following snippet shows how to update a Storage blob if it exists. 
+
+``` java
+BlobId blobId = BlobId.of(bucketName, "my_blob_name");
+Blob blob = storage.get(blobId);
+if (blob != null) {
+  byte[] prevContent = blob.getContent();
+  System.out.println(new String(prevContent, UTF_8));
+  WritableByteChannel channel = blob.writer();
+  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
+  channel.close();
+}
+```
+
+The complete source code can be found at
+[UpdateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java).
 
 #### Listing buckets and contents of buckets
-Suppose that you've added more buckets and blobs, and now you want to see the names of your buckets and the contents of each one. Add the following imports:
-
-```java
-import java.util.Iterator;
-```
-
-Then add the following code to list all your buckets and all the blobs inside your newly created bucket.
+Suppose that you've added more buckets and blobs, and now you want to see the names of your buckets and the contents of each one. Add the following code to list all your buckets and all the blobs inside each bucket.
 
 ```java
 // List all your buckets
-Iterator<Bucket> bucketIterator = storage.list().iterateAll();
 System.out.println("My buckets:");
-while (bucketIterator.hasNext()) {
-  System.out.println(bucketIterator.next());
-}
-
-// List the blobs in a particular bucket
-Iterator<Blob> blobIterator = bucket.list().iterateAll();
-System.out.println("My blobs:");
-while (blobIterator.hasNext()) {
-  System.out.println(blobIterator.next());
+for (Bucket bucket : storage.list().iterateAll()) {
+  System.out.println(bucket);
+  
+  // List all blobs in the bucket
+  System.out.println("Blobs in the bucket:");
+  for (Blob blob : bucket.list().iterateAll()) {
+    System.out.println(blob);
+  }
 }
 ```
 
@@ -141,7 +159,7 @@ while (blobIterator.hasNext()) {
 
 In
 [CreateAndListBucketsAndBlobs.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateAndListBucketsAndBlobs.java)
-we put together all the code shown above into one program. The program assumes that you are
+we put together examples creating and listing buckets and blobs into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
 display on your webpage.

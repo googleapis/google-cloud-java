@@ -21,7 +21,7 @@ rm -rf tmp_gh-pages/latest
 mkdir tmp_gh-pages/latest
 for version_base in ${version_bases[@]}
 do
-  mvn site:stage --quiet -Djava.util.logging.config.file=logging.properties -DtopSiteURL=http://googlecloudplatform.github.io/google-cloud-java/site/${version_base}/
+  mvn site:stage --quiet -Djava.util.logging.config.file=logging.properties -DtopSiteURL=https://googlecloudplatform.github.io/google-cloud-java/site/${version_base}/
   cd tmp_gh-pages
   cp -r ../target/staging/*/* $version_base
   sed -i "s/{{SITE_VERSION}}/$SITE_VERSION/g" ${version_base}/index.html # Update "Quickstart with Maven" to reflect version change
@@ -30,7 +30,7 @@ do
 done
 
 cd tmp_gh-pages
-echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='http://GoogleCloudPlatform.github.io/google-cloud-java/${SITE_VERSION_BASE}/index.html'\" /></head><body></body></html>" > index.html
+echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='https://GoogleCloudPlatform.github.io/google-cloud-java/${SITE_VERSION_BASE}/index.html'\" /></head><body></body></html>" > index.html
 git add index.html
 echo "<html><head><script>window.location.replace('/google-cloud-java/${SITE_VERSION_BASE}/apidocs' + location.search)</script></head><body></body></html>" > apidocs/index.html
 git add apidocs/index.html

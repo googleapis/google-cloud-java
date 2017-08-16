@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.it;
 
+import static com.google.cloud.bigquery.JobStatus.State.DONE;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -1068,6 +1069,26 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testQueryJobWithDryRun() throws InterruptedException, TimeoutException {
+    String tableName = "test_query_job_table";
+    String query = new StringBuilder()
+        .append("SELECT TimestampField, StringField, BooleanField FROM ")
+        .append(TABLE_ID.getTable())
+        .toString();
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    QueryJobConfiguration configuration = QueryJobConfiguration.newBuilder(query)
+        .setDefaultDataset(DatasetId.of(DATASET))
+        .setDestinationTable(destinationTable)
+        .setDryRun(true)
+        .build();
+    Job remoteJob = bigquery.create(JobInfo.of(configuration));
+    System.out.println("job (dryrun): " + remoteJob);
+    assertNull(remoteJob.getJobId().getJob());
+    assertEquals(DONE, remoteJob.getStatus().getState());
+    assertNotNull(remoteJob.getConfiguration());
+  }
+
+  @Test
   public void testExtractJob() throws InterruptedException, TimeoutException {
     String tableName = "test_export_job_table";
     TableId destinationTable = TableId.of(DATASET, tableName);
@@ -1121,6 +1142,14 @@ public class ITBigQueryTest {
         .setSchema(TABLE_SCHEMA)
         .build();
     TableDataWriteChannel channel = bigquery.writer(configuration);
+    try {
+      // A zero byte write should not throw an exception.
+      assertEquals(0, channel.write(ByteBuffer.wrap("".getBytes(StandardCharsets.UTF_8))));
+    } finally {
+      // Force the channel to flush by calling `close`.
+      channel.close();
+    }
+    channel = bigquery.writer(configuration);
     try {
       channel.write(ByteBuffer.wrap(JSON_CONTENT.getBytes(StandardCharsets.UTF_8)));
     } finally {

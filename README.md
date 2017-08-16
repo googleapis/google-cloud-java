@@ -15,7 +15,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
 -  [Stackdriver Logging](#stackdriver-logging-ga) (GA)
 -  [Cloud Datastore](#google-cloud-datastore-ga) (GA)
--  [Cloud Storage](#google-cloud-storage-ga) (GA)
+-  [Cloud Storage](google-cloud-storage) (GA)
 -  [Cloud Translation](#google-translation-ga) (GA)
 
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
@@ -67,6 +67,40 @@ libraryDependencies += "com.google.cloud" % "google-cloud" % "0.21.1-alpha"
 ```
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
+
+Resolving dependency conflicts
+----------
+Optionally, if you encounter dependency conflicts, you may specify google-cloud-pom as a ["bill of materials"](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) to ensure that internal dependencies of google-cloud and your project are in sync.
+
+If you are using Maven, add this to your pom.xml file
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-pom</artifactId>
+      <version>0.21.1-alpha</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+```
+If you are using Gradle, add the following plugin at the beginning of your build.gradle file
+
+```Groovy
+plugins {
+  id "io.spring.dependency-management" version "1.0.3.RELEASE"
+}
+```
+Then add the following in your build.gradle file
+```Groovy
+dependencyManagement {
+  imports {
+    mavenBom 'com.google.cloud:google-cloud-pom:0.21.1-alpha'
+  }
+}
+```    
 
 Example Applications
 --------------------
@@ -125,6 +159,13 @@ Most `google-cloud` libraries require a project ID.  There are multiple ways to 
 4. The project ID specified in the JSON credentials file pointed by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
 5. The Google Cloud SDK project ID
 6. The Compute Engine project ID
+
+In cases where the library may expect a project ID explicitly, we provide a helper that can provide the inferred project ID:
+   ```java
+     import com.google.cloud.ServiceOptions;
+     ...
+     String projectId = ServiceOptions.getDefaultProjectId();
+   ```
 
 Authentication
 --------------
@@ -311,63 +352,8 @@ if (entity != null) {
       .build();
   datastore.update(entity);
 }
+
 ```
-
-Google Cloud Storage (GA)
-----------------------
-
-- [API Documentation][storage-api]
-- [Official Documentation][cloud-storage-docs]
-
-*Follow the [activation instructions][cloud-storage-activation] to use the Google Cloud Storage API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-The first snippet shows how to create a Storage blob. Complete source code can be found at
-[CreateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
-
-```java
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
-
-Storage storage = StorageOptions.getDefaultInstance().getService();
-BlobId blobId = BlobId.of("bucket", "blob_name");
-BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
-Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
-```
-The second snippet shows how to update a Storage blob if it exists. Complete source code can be
-found at
-[UpdateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java).
-```java
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
-
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
-
-Storage storage = StorageOptions.getDefaultInstance().getService();
-BlobId blobId = BlobId.of("bucket", "blob_name");
-Blob blob = storage.get(blobId);
-if (blob != null) {
-  byte[] prevContent = blob.getContent();
-  System.out.println(new String(prevContent, UTF_8));
-  WritableByteChannel channel = blob.writer();
-  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
-  channel.close();
-}
-```
-
 Google Translation (GA)
 ----------------
 
@@ -876,12 +862,31 @@ Java 7 or above is required for using the clients in this repository.
 Supported Platforms
 -------------------
 
-This client is supported on Mac OS X, Windows and Linux (excluding Android and Alpine).
-Google Cloud Platform environments currently supported include GCE, GKE and GAE Flex.
-GAE Standard is not currently supported.
+Clients in this repository use either HTTP or gRPC for the transport layer. All
+HTTP-based clients should work in all environments.
 
-Spring Boot users : Native Tomcat is not currently supported. Please use [embedded Jetty](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-embedded-servlet-containers.html#howto-use-jetty-instead-of-tomcat)
-to get your application working with this client.
+For clients that use gRPC, the supported platforms are constrained by the platforms
+that [Forked Tomcat Native](http://netty.io/wiki/forked-tomcat-native.html) supports,
+which for architectures means only x86_64, and for operating systems means Mac OS X,
+Windows, and Linux. Additionally, gRPC constrains the use of platforms with
+threading restrictions.
+
+Thus, the following are not supported:
+
+- Android
+- Alpine Linux (due to netty-tcnative requiring glibc, which is not present on Alpine)
+- Raspberry Pi (since it runs on the ARM architecture)
+- Google App Engine Standard Java 7
+
+The following environments should work (among others):
+
+- standalone Windows on x86_64
+- standalone Mac OS X on x86_64
+- standalone Linux on x86_64
+- Google Compute Engine (GCE)
+- Google Container Engine (GKE)
+- Google App Engine Standard Java 8 (GAE Std J8)
+- Google App Engine Flex (GAE Flex)
 
 Testing
 -------
@@ -948,58 +953,58 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md
 [cloud-platform]: https://cloud.google.com/
-[cloud-datastore]: https://cloud.google.com/datastore/docs
-[cloud-datastore-docs]: https://cloud.google.com/datastore/docs
+[cloud-datastore]: https://cloud.google.com/datastore/docs/
+[cloud-datastore-docs]: https://cloud.google.com/datastore/docs/
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
 [datastore-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html
 
 [dns-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
-[cloud-dns-docs]: https://cloud.google.com/dns/docs
+[cloud-dns-docs]: https://cloud.google.com/dns/docs/
 [cloud-dns-activation]: https://console.cloud.google.com/start/api?id=dns
 
 [errorreporting-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/errorreporting/spi/v1beta1/package-summary.html
-[cloud-errorreporting-docs]: https://cloud.google.com/error-reporting/docs
+[cloud-errorreporting-docs]: https://cloud.google.com/error-reporting/docs/
 
 [language-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/language/spi/v1/package-summary.html
-[cloud-language-docs]: https://cloud.google.com/language/docs
+[cloud-language-docs]: https://cloud.google.com/language/docs/
 
 [monitoring-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/monitoring/spi/v3/package-summary.html
-[cloud-monitoring-docs]: https://cloud.google.com/monitoring/docs
+[cloud-monitoring-docs]: https://cloud.google.com/monitoring/docs/
 
 [speech-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/speech/spi/v1/package-summary.html
-[cloud-speech-docs]: https://cloud.google.com/speech/docs
+[cloud-speech-docs]: https://cloud.google.com/speech/docs/
 
 [trace-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/trace/spi/v1/package-summary.html
-[cloud-trace-docs]: https://cloud.google.com/trace/docs
+[cloud-trace-docs]: https://cloud.google.com/trace/docs/
 
 [vision-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/vision/spi/v1/package-summary.html
-[cloud-vision-docs]: https://cloud.google.com/vision/docs
+[cloud-vision-docs]: https://cloud.google.com/vision/docs/
 
-[cloud-video-intelligence-docs]: https://cloud.google.com/video-intelligence/docs
+[cloud-video-intelligence-docs]: https://cloud.google.com/video-intelligence/docs/
 
 [logging-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/package-summary.html
-[stackdriver-logging-docs]: https://cloud.google.com/logging/docs
+[stackdriver-logging-docs]: https://cloud.google.com/logging/docs/
 [stackdriver-logging-activation]: https://console.cloud.google.com/start/api?id=logging
 
 [pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html
 [cloud-pubsub]: https://cloud.google.com/pubsub/
-[cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs
+[cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs/
 
 [cloud-storage]: https://cloud.google.com/storage/
-[cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
+[cloud-storage-docs]: https://cloud.google.com/storage/docs/
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
 [cloud-storage-activation]: https://cloud.google.com/storage/docs/signup
 [storage-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
 
 [resourcemanager-api]:https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
-[cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/
+[cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/docs/
 
 [cloud-bigquery]: https://cloud.google.com/bigquery/
-[cloud-bigquery-docs]: https://cloud.google.com/bigquery/docs/overview
+[cloud-bigquery-docs]: https://cloud.google.com/bigquery/docs/
 [bigquery-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
 
 [cloud-compute]: https://cloud.google.com/compute/
-[cloud-compute-docs]: https://cloud.google.com/compute/docs/overview
+[cloud-compute-docs]: https://cloud.google.com/compute/docs/
 [compute-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html
 
 [translate-docs]: https://cloud.google.com/translate/docs/

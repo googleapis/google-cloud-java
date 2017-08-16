@@ -23,6 +23,7 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.LogEntryOperation;
+import com.google.logging.v2.LogEntrySourceLocation;
 import com.google.logging.v2.LogName;
 import com.google.protobuf.Timestamp;
 
@@ -57,11 +58,14 @@ public class LogEntry implements Serializable {
   private final String logName;
   private final MonitoredResource resource;
   private final Long timestamp;
+  private final Long receiveTimestamp;
   private final Severity severity;
   private final String insertId;
   private final HttpRequest httpRequest;
   private final Map<String, String> labels;
   private final Operation operation;
+  private final String trace;
+  private final SourceLocation sourceLocation;
   private final Payload<?> payload;
 
   /**
@@ -72,11 +76,14 @@ public class LogEntry implements Serializable {
     private String logName;
     private MonitoredResource resource;
     private Long timestamp;
+    private Long receiveTimestamp;
     private Severity severity = Severity.DEFAULT;
     private String insertId;
     private HttpRequest httpRequest;
     private Map<String, String> labels = new HashMap<>();
     private Operation operation;
+    private String trace;
+    private SourceLocation sourceLocation;
     private Payload<?> payload;
 
     Builder(Payload<?> payload) {
@@ -87,11 +94,14 @@ public class LogEntry implements Serializable {
       this.logName = entry.logName;
       this.resource = entry.resource;
       this.timestamp = entry.timestamp;
+      this.receiveTimestamp = entry.receiveTimestamp;
       this.severity = entry.severity;
       this.insertId = entry.insertId;
       this.httpRequest = entry.httpRequest;
       this.labels = new HashMap<>(entry.labels);
       this.operation = entry.operation;
+      this.trace = entry.trace;
+      this.sourceLocation = entry.sourceLocation;
       this.payload = entry.payload;
     }
 
@@ -126,6 +136,15 @@ public class LogEntry implements Serializable {
      */
     public Builder setTimestamp(long timestamp) {
       this.timestamp = timestamp;
+      return this;
+    }
+
+
+    /**
+     * Sets the time the log entry was received by Stackdriver Logging.
+     */
+    public Builder setReceiveTimestamp(long receiveTimestamp) {
+      this.receiveTimestamp = receiveTimestamp;
       return this;
     }
 
@@ -168,6 +187,7 @@ public class LogEntry implements Serializable {
       return this;
     }
 
+
     /**
      * Adds a label to the log entry's labels. Labels are user-defined (key, value) data that
      * provides additional information about the log entry.
@@ -176,6 +196,7 @@ public class LogEntry implements Serializable {
       this.labels.put(key, value);
       return this;
     }
+
 
     /**
      * Clears all the labels of the log entry. Labels are user-defined (key, value) data that
@@ -192,6 +213,25 @@ public class LogEntry implements Serializable {
      */
     public Builder setOperation(Operation operation) {
       this.operation = operation;
+      return this;
+    }
+
+
+    /**
+     * Sets the resource name of the trace associated with the log entry, if any. If it contains a
+     * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
+     */
+    public Builder setTrace(String trace) {
+      this.trace = trace;
+      return this;
+    }
+
+
+    /**
+     * Sets the source code location information associated with the log entry if any.
+     */
+    public Builder setSourceLocation(SourceLocation sourceLocation) {
+      this.sourceLocation = sourceLocation;
       return this;
     }
 
@@ -220,11 +260,14 @@ public class LogEntry implements Serializable {
     this.logName = builder.logName;
     this.resource = builder.resource;
     this.timestamp = builder.timestamp;
+    this.receiveTimestamp = builder.receiveTimestamp;
     this.severity = builder.severity;
     this.insertId = builder.insertId;
     this.httpRequest = builder.httpRequest;
     this.labels = ImmutableMap.copyOf(builder.labels);
     this.operation = builder.operation;
+    this.trace = builder.trace;
+    this.sourceLocation = builder.sourceLocation;
     this.payload = builder.payload;
   }
 
@@ -257,6 +300,14 @@ public class LogEntry implements Serializable {
    */
   public Long getTimestamp() {
     return timestamp;
+  }
+
+
+  /**
+   * Returns the time the log entry was received by Stackdriver Logging.
+   */
+  public Long getReceiveTimestamp() {
+    return receiveTimestamp;
   }
 
 
@@ -303,6 +354,23 @@ public class LogEntry implements Serializable {
 
 
   /**
+   * Returns the resource name of the trace associated with the log entry, if any. If it contains a
+   * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
+   */
+  public String getTrace() {
+    return trace;
+  }
+
+
+  /**
+   * Returns the source code location information associated with the log entry, if any.
+   */
+  public SourceLocation getSourceLocation() {
+    return sourceLocation;
+  }
+
+
+  /**
    * Returns the payload for this log entry. The log entry payload can be an UTF-8 string (see
    * {@link Payload.StringPayload}), a JSON object (see {@link Payload.JsonPayload}, or a protobuf
    * object (see {@link Payload.ProtoPayload}).
@@ -316,8 +384,8 @@ public class LogEntry implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(logName, resource, timestamp, severity, insertId, httpRequest, labels,
-        operation, payload);
+    return Objects.hash(logName, resource, timestamp, receiveTimestamp, severity, insertId,
+        httpRequest, labels, operation, trace, sourceLocation, payload);
   }
 
   @Override
@@ -332,11 +400,14 @@ public class LogEntry implements Serializable {
     return Objects.equals(logName, other.logName)
         && Objects.equals(resource, other.resource)
         && Objects.equals(timestamp, other.timestamp)
+        && Objects.equals(receiveTimestamp, other.receiveTimestamp)
         && Objects.equals(severity, other.severity)
         && Objects.equals(insertId, other.insertId)
         && Objects.equals(httpRequest, other.httpRequest)
         && Objects.equals(labels, other.labels)
         && Objects.equals(operation, other.operation)
+        && Objects.equals(trace, other.trace)
+        && Objects.equals(sourceLocation, other.sourceLocation)
         && Objects.equals(payload, other.payload);
   }
 
@@ -346,11 +417,14 @@ public class LogEntry implements Serializable {
         .add("logName", logName)
         .add("resource", resource)
         .add("timestamp", timestamp)
+        .add("receiveTimestamp", receiveTimestamp)
         .add("severity", severity)
         .add("insertId", insertId)
         .add("httpRequest", httpRequest)
         .add("labels", labels)
         .add("operation", operation)
+        .add("trace", trace)
+        .add("sourceLocation", sourceLocation)
         .add("payload", payload)
         .toString();
   }
@@ -360,6 +434,18 @@ public class LogEntry implements Serializable {
    */
   public Builder toBuilder() {
     return new Builder(this);
+  }
+
+  private static Timestamp timestampFromMillis(Long millis) {
+    Timestamp.Builder tsBuilder = Timestamp.newBuilder();
+    tsBuilder.setSeconds(millis / MILLIS_PER_SECOND);
+    tsBuilder.setNanos((int) (millis % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
+    return tsBuilder.build();
+  }
+
+  private static Long millisFromTimestamp(Timestamp timestamp) {
+    return timestamp.getSeconds() * MILLIS_PER_SECOND
+        + timestamp.getNanos() / NANOS_PER_MILLISECOND;
   }
 
   com.google.logging.v2.LogEntry toPb(String projectId) {
@@ -372,10 +458,10 @@ public class LogEntry implements Serializable {
       builder.setResource(resource.toPb());
     }
     if (timestamp != null) {
-      Timestamp.Builder tsBuilder = Timestamp.newBuilder();
-      tsBuilder.setSeconds(timestamp / MILLIS_PER_SECOND);
-      tsBuilder.setNanos((int) (timestamp % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
-      builder.setTimestamp(tsBuilder.build());
+      builder.setTimestamp(timestampFromMillis(timestamp));
+    }
+    if (receiveTimestamp != null) {
+      builder.setReceiveTimestamp(timestampFromMillis(receiveTimestamp));
     }
     if (severity != null) {
       builder.setSeverity(severity.toPb());
@@ -388,6 +474,12 @@ public class LogEntry implements Serializable {
     }
     if (operation != null) {
       builder.setOperation(operation.toPb());
+    }
+    if (trace != null) {
+      builder.setTrace(trace);
+    }
+    if (sourceLocation != null) {
+      builder.setSourceLocation(sourceLocation.toPb());
     }
     return builder.build();
   }
@@ -426,10 +518,15 @@ public class LogEntry implements Serializable {
       builder.setResource(MonitoredResource.fromPb(entryPb.getResource()));
     }
     if (entryPb.hasTimestamp()) {
-      Timestamp ts = entryPb.getTimestamp();
-      Long millis = ts.getSeconds() * MILLIS_PER_SECOND + ts.getNanos() / NANOS_PER_MILLISECOND;
+      Long millis = millisFromTimestamp(entryPb.getTimestamp());
       if (millis != 0) {
         builder.setTimestamp(millis);
+      }
+    }
+    if (entryPb.hasReceiveTimestamp()) {
+      Long millis = millisFromTimestamp(entryPb.getReceiveTimestamp());
+      if (millis != 0) {
+        builder.setReceiveTimestamp(millis);
       }
     }
     if (!entryPb.getInsertId().equals("")) {
@@ -441,6 +538,12 @@ public class LogEntry implements Serializable {
     }
     if (!entryPb.getOperation().equals(LogEntryOperation.getDefaultInstance())) {
       builder.setOperation(Operation.fromPb(entryPb.getOperation()));
+    }
+    if (!entryPb.getTrace().equals("")) {
+      builder.setTrace(entryPb.getTrace());
+    }
+    if (!entryPb.getSourceLocation().equals(LogEntrySourceLocation.getDefaultInstance())) {
+      builder.setSourceLocation(SourceLocation.fromPb(entryPb.getSourceLocation()));
     }
     return builder.build();
   }

@@ -399,4 +399,10 @@ public class ITStorageSnippets {
       // expected
     }
   }
+
+  @Test
+  public void testAuthListBuckets() {
+    Page<Bucket> bucket = storageSnippets.authListBuckets();
+    assertNotNull(bucket);
+  }
 }

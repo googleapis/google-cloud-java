@@ -428,6 +428,9 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Job write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
       boolean last) {
     try {
+      if (length == 0) {
+        return null;
+      }
       GenericUrl url = new GenericUrl(uploadId);
       HttpRequest httpRequest = bigquery.getRequestFactory()
           .buildPutRequest(url, new ByteArrayContent(null, toWrite, toWriteOffset, length));

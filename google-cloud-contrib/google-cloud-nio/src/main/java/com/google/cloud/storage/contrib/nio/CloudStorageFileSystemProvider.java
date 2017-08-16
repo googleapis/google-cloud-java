@@ -608,7 +608,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     // null size indicate a file that we haven't closed yet, so GCS treats it as not there yet.
     if (null == blobInfo || blobInfo.getSize() == null) {
       throw new NoSuchFileException(
-          cloudPath.getBlobId().getBucket() + "/" + cloudPath.getBlobId().getName());
+          "gs://" + cloudPath.getBlobId().getBucket() + "/" + cloudPath.getBlobId().getName());
     }
     CloudStorageObjectAttributes ret;
     ret = new CloudStorageObjectAttributes(blobInfo);
