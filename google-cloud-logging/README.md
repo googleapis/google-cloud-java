@@ -10,7 +10,7 @@ Java idiomatic client for [Stackdriver Logging][stackdriver-logging].
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
+-  [Client Library Documentation][logging-client-lib-docs]
 
 Quickstart
 ----------
@@ -58,7 +58,7 @@ thousands of VMs. Even better, you can analyze all that log data in real-time.
 See the [Stackdriver Logging docs][stackdriver-logging-quickstart] for more details on how to
 activate Logging for your project.
 
-See the ``google-cloud`` API [Logging documentation][logging-api] to learn how to interact with the
+See the [Logging client library docs][logging-client-lib-docs] to learn how to interact with the
 Stackdriver Logging using this Client Library.
 
 Getting Started
@@ -137,6 +137,25 @@ LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
 logging.write(Collections.singleton(firstEntry));
 ```
 
+#### Listing log entries
+With Logging you can also list log entries that have been previously written. Add the following
+imports at the top of your file:
+```java
+import com.google.cloud.Page;
+import com.google.cloud.logging.LogEntry;
+import com.google.cloud.logging.Logging.EntryListOption;
+```
+Then, to list the log entries, use the following code:
+
+``` java
+Page<LogEntry> entries = logging.listLogEntries(
+    EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
+Iterator<LogEntry> entryIterator = entries.iterateAll();
+while (entryIterator.hasNext()) {
+  System.out.println(entryIterator.next());
+}
+```
+
 #### Add a Stackdriver Logging handler to a logger
 You can also register a `LoggingHandler` to a `java.util.logging.Logger` that publishes log entries
 to Stackdriver Logging. Given the following logger:
@@ -210,4 +229,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [stackdriver-logging]: https://cloud.google.com/logging
 [stackdriver-logging-quickstart]: https://cloud.google.com/logging/docs/quickstart-sdk
-[logging-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/package-summary.html
+[logging-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/logging/package-summary.html

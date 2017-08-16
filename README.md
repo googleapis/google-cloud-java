@@ -13,7 +13,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 -  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
 
 This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
--  [Stackdriver Logging](#stackdriver-logging-ga) (GA)
+-  [Stackdriver Logging](google-cloud-logging) (GA)
 -  [Cloud Datastore](google-cloud-datastore) (GA)
 -  [Cloud Storage](google-cloud-storage) (GA)
 -  [Cloud Translation](google-cloud-translate) (GA)
@@ -227,75 +227,6 @@ Credentials in the following locations (in order):
 3. Google App Engine built-in credentials
 4. Google Cloud Shell built-in credentials
 5. Google Compute Engine built-in credentials
-
-Stackdriver Logging (GA)
-----------------------
-- [API Documentation][logging-api]
-- [Official Documentation][stackdriver-logging-docs]
-
-*Follow the [activation instructions][stackdriver-logging-activation] to use the Stackdriver Logging
-API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute Engine/App Engine
-Flexible. Note that you must [supply credentials](#authentication) and a project ID if running this
-snippet elsewhere.
-
-The first snippet shows how to write and list log entries. Complete source code can be found on
-[WriteAndListLogEntries.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/WriteAndListLogEntries.java).
-
-```java
-import com.google.cloud.MonitoredResource;
-import com.google.cloud.Page;
-import com.google.cloud.logging.LogEntry;
-import com.google.cloud.logging.Logging;
-import com.google.cloud.logging.Logging.EntryListOption;
-import com.google.cloud.logging.LoggingOptions;
-import com.google.cloud.logging.Payload.StringPayload;
-
-import java.util.Collections;
-import java.util.Iterator;
-
-LoggingOptions options = LoggingOptions.getDefaultInstance();
-try(Logging logging = options.getService()) {
-
-  LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
-      .setLogName("test-log")
-      .setResource(MonitoredResource.newBuilder("global")
-          .addLabel("project_id", options.getProjectId())
-          .build())
-      .build();
-  logging.write(Collections.singleton(firstEntry));
-
-  Page<LogEntry> entries = logging.listLogEntries(
-      EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
-  Iterator<LogEntry> entryIterator = entries.iterateAll();
-  while (entryIterator.hasNext()) {
-    System.out.println(entryIterator.next());
-  }
-}
-```
-
-The second snippet shows how to use a `java.util.logging.Logger` to write log entries to Stackdriver
-Logging. The snippet installs a Stackdriver Logging handler using
-`LoggingHandler.addHandler(Logger, LoggingHandler)`. Notice that this could also be done through the
-`logging.properties` file, adding the following line:
-```
-com.google.cloud.examples.logging.snippets.AddLoggingHandler.handlers=com.google.cloud.logging.LoggingHandler
-```
-The complete code can be found on
-[AddLoggingHandler.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/AddLoggingHandler.java).
-
-```java
-import com.google.cloud.logging.LoggingHandler;
-
-import java.util.logging.Logger;
-
-Logger logger = Logger.getLogger(AddLoggingHandler.class.getName());
-LoggingHandler.addHandler(logger, new LoggingHandler());
-logger.warning("test warning");
-```
 
 Google Cloud BigQuery (Beta)
 ----------------------
@@ -862,10 +793,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md
 [cloud-platform]: https://cloud.google.com/
-[cloud-datastore]: https://cloud.google.com/datastore/docs/
-[cloud-datastore-docs]: https://cloud.google.com/datastore/docs/
-[cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
-[datastore-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html
 
 [dns-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
 [cloud-dns-docs]: https://cloud.google.com/dns/docs/
@@ -891,19 +818,9 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-video-intelligence-docs]: https://cloud.google.com/video-intelligence/docs/
 
-[logging-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/package-summary.html
-[stackdriver-logging-docs]: https://cloud.google.com/logging/docs/
-[stackdriver-logging-activation]: https://console.cloud.google.com/start/api?id=logging
-
 [pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs/
-
-[cloud-storage]: https://cloud.google.com/storage/
-[cloud-storage-docs]: https://cloud.google.com/storage/docs/
-[cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
-[cloud-storage-activation]: https://cloud.google.com/storage/docs/signup
-[storage-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
 
 [resourcemanager-api]:https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
 [cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/docs/
