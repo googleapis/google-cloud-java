@@ -110,7 +110,7 @@ public class GoogleCloudCompatChecker {
     if (javaSpecificationVersion == null) {
       System.out.println("  [WARN] Couldn't detect java specification version.");
     } else if (javaSpecificationVersion.equals("1.7")) {
-      System.out.println("  [WARN] ");
+      System.out.println("  [WARN] Java 1.7 is not supported on Google App Engine");
     }
     if (!compatible) {
       System.out.println("Result: FAIL");
