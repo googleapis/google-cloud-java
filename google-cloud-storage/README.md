@@ -104,7 +104,7 @@ Blob blob = storage.create(blobInfo, "a simple blob".getBytes(UTF_8));
 ```
 
 A complete example for creating a blob can be found at
-[CreateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
+[CreateBlob.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
 
 At this point, you will be able to see your newly created bucket and blob on the Google Developers Console.
 
@@ -118,7 +118,7 @@ String contentString = new String(content, UTF_8);
 ```
 
 A complete example for accessing blobs can be found at
-[CreateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
+[CreateBlob.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
 
 #### Updating data
 Another thing we may want to do is update a blob. The following snippet shows how to update a Storage blob if it exists. 
@@ -136,7 +136,7 @@ if (blob != null) {
 ```
 
 The complete source code can be found at
-[UpdateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java).
+[UpdateBlob.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java).
 
 #### Listing buckets and contents of buckets
 Suppose that you've added more buckets and blobs, and now you want to see the names of your buckets and the contents of each one. Add the following code to list all your buckets and all the blobs inside each bucket.

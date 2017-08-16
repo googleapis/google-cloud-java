@@ -14,7 +14,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
 -  [Stackdriver Logging](#stackdriver-logging-ga) (GA)
--  [Cloud Datastore](#google-cloud-datastore-ga) (GA)
+-  [Cloud Datastore](google-cloud-datastore) (GA)
 -  [Cloud Storage](google-cloud-storage) (GA)
 -  [Cloud Translation](#google-translation-ga) (GA)
 
@@ -297,63 +297,6 @@ LoggingHandler.addHandler(logger, new LoggingHandler());
 logger.warning("test warning");
 ```
 
-Google Cloud Datastore (GA)
-----------------------
-
-- [API Documentation][datastore-api]
-- [Official Documentation][cloud-datastore-docs]
-
-*Follow the [activation instructions][cloud-datastore-activation] to use the Google Cloud Datastore API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-The first snippet shows how to create a Datastore entity. Complete source code can be found at
-[CreateEntity.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/CreateEntity.java).
-
-```java
-import com.google.cloud.datastore.Datastore;
-import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.DateTime;
-import com.google.cloud.datastore.Entity;
-import com.google.cloud.datastore.Key;
-import com.google.cloud.datastore.KeyFactory;
-
-Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
-Key key = keyFactory.newKey("keyName");
-Entity entity = Entity.newBuilder(key)
-    .set("name", "John Doe")
-    .set("age", 30)
-    .set("access_time", DateTime.now())
-    .build();
-datastore.put(entity);
-```
-The second snippet shows how to update a Datastore entity if it exists. Complete source code can be
-found at
-[UpdateEntity.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
-```java
-import com.google.cloud.datastore.Datastore;
-import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.DateTime;
-import com.google.cloud.datastore.Entity;
-import com.google.cloud.datastore.Key;
-import com.google.cloud.datastore.KeyFactory;
-
-Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
-Key key = keyFactory.newKey("keyName");
-Entity entity = datastore.get(key);
-if (entity != null) {
-  System.out.println("Updating access_time for " + entity.getString("name"));
-  entity = Entity.newBuilder(entity)
-      .set("access_time", DateTime.now())
-      .build();
-  datastore.update(entity);
-}
-
-```
 Google Translation (GA)
 ----------------
 

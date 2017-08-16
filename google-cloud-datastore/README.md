@@ -136,11 +136,30 @@ while (results.hasNext()) {
 
 Cloud Datastore relies on indexing to run queries. Indexing is turned on by default for most types of properties. To read more about indexing, see the [Cloud Datastore Index Configuration documentation](https://cloud.google.com/datastore/docs/tools/indexconfig).
 
+#### Updating data
+Another thing you'll probably want to do is update your data. The following snippet shows how to update a Datastore entity if it exists.
+
+``` java
+KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
+Key key = keyFactory.newKey("keyName");
+Entity entity = datastore.get(key);
+if (entity != null) {
+  System.out.println("Updating access_time for " + entity.getString("name"));
+  entity = Entity.newBuilder(entity)
+      .set("access_time", DateTime.now())
+      .build();
+  datastore.update(entity);
+}
+```
+
+The complete source code can be found at
+[UpdateEntity.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
+
 #### Complete source code
 
 In
 [AddEntitiesAndRunQuery.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
-we put together all the code shown above into one program. The program assumes that you are
+we put together all the code to store data and run queries into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
 display on your webpage.
