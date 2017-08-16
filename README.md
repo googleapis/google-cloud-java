@@ -16,7 +16,7 @@ This client supports the following Google Cloud Platform services at a [GA](#ver
 -  [Stackdriver Logging](#stackdriver-logging-ga) (GA)
 -  [Cloud Datastore](google-cloud-datastore) (GA)
 -  [Cloud Storage](google-cloud-storage) (GA)
--  [Cloud Translation](#google-translation-ga) (GA)
+-  [Cloud Translation](google-cloud-translate) (GA)
 
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
@@ -295,40 +295,6 @@ import java.util.logging.Logger;
 Logger logger = Logger.getLogger(AddLoggingHandler.class.getName());
 LoggingHandler.addHandler(logger, new LoggingHandler());
 logger.warning("test warning");
-```
-
-Google Translation (GA)
-----------------
-
-- [API Documentation][translate-api]
-- [Official Documentation][translate-docs]
-
-#### Preview
-
-Here's a snippet showing a simple usage example. The example shows how to detect the language of
-some text and how to translate some text. The example assumes that either Application Default
-Credentials or a valid API key are available. An API key stored in the `GOOGLE_API_KEY` environment
-variable will be automatically detected. Complete source code can be found at
-[DetectLanguageAndTranslate.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java).
-
-```java
-import com.google.cloud.translate.Detection;
-import com.google.cloud.translate.Translate;
-import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.TranslateOptions;
-import com.google.cloud.translate.Translation;
-
-Translate translate = TranslateOptions.getDefaultInstance().getService();
-
-Detection detection = translate.detect("Hola");
-String detectedLanguage = detection.getLanguage();
-
-Translation translation = translate.translate(
-    "World",
-    TranslateOption.sourceLanguage("en"),
-    TranslateOption.targetLanguage(detectedLanguage));
-
-System.out.printf("Hola %s%n", translation.getTranslatedText());
 ```
 
 Google Cloud BigQuery (Beta)
@@ -949,9 +915,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-compute]: https://cloud.google.com/compute/
 [cloud-compute-docs]: https://cloud.google.com/compute/docs/
 [compute-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html
-
-[translate-docs]: https://cloud.google.com/translate/docs/
-[translate-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html
 
 [cloud-spanner]: https://cloud.google.com/spanner/
 [cloud-spanner-docs]: https://cloud.google.com/spanner/docs/
