@@ -46,7 +46,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.lang.reflect.Method;
 import java.nio.charset.Charset;
 import java.util.Locale;
 import java.util.Objects;
@@ -391,31 +390,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     String projectId = null;
     if (PlatformInformation.isOnGAEStandard7()) {
       projectId = getAppEngineProjectIdFromAppId();
-      if (projectId == null) {
-        try {
-          Class<?> factoryClass =
-                  Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
-          Class<?> serviceClass =
-                  Class.forName("com.google.appengine.api.appidentity.AppIdentityService");
-          Method method = factoryClass.getMethod("getAppIdentityService");
-          Object appIdentityService = method.invoke(null);
-          method = serviceClass.getMethod("getServiceAccountName");
-          String serviceAccountName = (String) method.invoke(appIdentityService);
-          int indexOfAtSign = serviceAccountName.indexOf('@');
-          projectId = serviceAccountName.substring(0, indexOfAtSign);
-        } catch (ClassNotFoundException exception) {
-          if (System.getProperty("com.google.appengine.runtime.version") != null) {
-            // Could not resolve appengine classes under GAE environment.
-            throw new RuntimeException(
-                    "Google App Engine runtime detected "
-                            + "(the environment variable \"com.google.appengine.runtime.version\" is set), "
-                            + "but unable to resolve appengine-sdk classes. "
-                            + "For more details see "
-                            + "https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/APPENGINE.md");
-          }
-        } catch (Exception ignore) {
-        }
-      }
     } else {
       //for GAE flex and standard Java 8 environment
       projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
