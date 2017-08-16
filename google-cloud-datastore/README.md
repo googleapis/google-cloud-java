@@ -153,7 +153,7 @@ if (entity != null) {
 ```
 
 The complete source code can be found at
-[UpdateEntity.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
+[UpdateEntity.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
 
 #### Complete source code
 
