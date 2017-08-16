@@ -78,6 +78,7 @@ public class GoogleCloudCompatChecker {
     String osClassifier = (String)osProperties.get(Detector.DETECTED_CLASSIFIER);
 
     boolean compatible = true;
+    boolean warnings = false;
     System.out.println("Checking compatibility...");
     if (supportedClassifiers.contains(osClassifier)) {
       System.out.println("  [PASS] This OS + architecture is supported.");
@@ -109,8 +110,10 @@ public class GoogleCloudCompatChecker {
     }
     if (javaSpecificationVersion == null) {
       System.out.println("  [WARN] Couldn't detect java specification version.");
+      warnings = true;
     } else if (javaSpecificationVersion.equals("1.7")) {
-      System.out.println("  [WARN] Java 1.7 is not supported on Google App Engine");
+      System.out.println("  [WARN] gRPC doesn't work on Google App Engine Standard under Java 1.7");
+      warnings = true;
     }
     if (!compatible) {
       System.out.println("Result: FAIL");
@@ -122,6 +125,9 @@ public class GoogleCloudCompatChecker {
       System.out.println("Result: UNKNOWN (checker implementation not complete)");
       System.out.println("  Based on what was checked, nothing was identified that would");
       System.out.println("  prevent you from using grpc-based APIs.");
+      if (warnings) {
+        System.out.println("  However, there were some warnings to watch out for.");
+      }
     }
 
     if (!compatible) {
