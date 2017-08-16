@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Storage](https://cloud.google.com/storag
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html)
+-  [Client Library Documentation][storage-client-lib-docs]
 
 Quickstart
 ----------
@@ -52,7 +52,7 @@ object will be returned to any GET, globally.
 See the [Google Cloud Storage docs][cloud-storage-activation] for more details on how to activate
 Cloud Storage for your project.
 
-See the ``google-cloud`` API [storage documentation][storage-api] to learn how to interact
+See the [Storage client library docs][storage-client-lib-docs] to learn how to interact
 with the Cloud Storage using this Client Library.
 
 Getting Started
@@ -216,5 +216,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage]: https://cloud.google.com/storage/
 [cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
-[storage-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
+[storage-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/storage/package-summary.html
 [cloud-storage-activation]:https://cloud.google.com/storage/docs/signup?hl=en

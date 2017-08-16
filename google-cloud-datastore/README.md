@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Datastore](https://cloud.google.com/data
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html)
+-  [Client Library Documentation][datastore-client-lib-docs]
 
 Quickstart
 ----------
@@ -52,7 +52,7 @@ consistency for all other queries.
 See the [Google Cloud Datastore docs][cloud-datastore-activation] for more details on how to activate
 Cloud Datastore for your project.
 
-See the ``google-cloud`` API [datastore documentation][datastore-api] to learn how to interact
+See the [Datastore client library docs][datastore-client-lib-docs] to learn how to interact
 with the Cloud Datastore using this Client Library.
 
 Getting Started
@@ -214,4 +214,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-datastore-docs]: https://cloud.google.com/datastore/docs
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
-[datastore-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html
+[datastore-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/datastore/package-summary.html
