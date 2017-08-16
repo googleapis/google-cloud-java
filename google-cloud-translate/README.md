@@ -10,10 +10,7 @@ Java idiomatic client for [Google Translation](https://cloud.google.com/translat
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html)
-
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
+-  [Client Library Documentation][translate-client-lib-docs]
 
 Quickstart
 ----------
@@ -58,7 +55,7 @@ available in cases where the source language is unknown.
 See the [Translation quickstart](https://cloud.google.com/translate/v2/quickstart) for more details
 on how to activate Google Translation for your project.
 
-See the ``google-cloud`` API [Translation documentation][translate-api] to learn how to interact with
+See the [Translation client library docs][translate-client-lib-docs] to learn how to interact with
 the Google Translation using this Client Library.
 
 Getting Started
@@ -197,4 +194,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [google-translate]: https://cloud.google.com/translate/
 [google-translate-docs]: https://cloud.google.com/translate/docs/
-[translate-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html
+[translate-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/translate/package-summary.html
