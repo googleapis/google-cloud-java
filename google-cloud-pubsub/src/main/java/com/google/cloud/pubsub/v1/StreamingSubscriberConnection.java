@@ -29,12 +29,9 @@ import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
-import com.google.pubsub.v1.SubscriberGrpc;
-import io.grpc.CallOptions;
-import io.grpc.Channel;
+import com.google.pubsub.v1.SubscriberGrpc.SubscriberStub;
 import io.grpc.Status;
 import io.grpc.stub.ClientCallStreamObserver;
-import io.grpc.stub.ClientCalls;
 import io.grpc.stub.ClientResponseObserver;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +52,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   private Duration channelReconnectBackoff = INITIAL_CHANNEL_RECONNECT_BACKOFF;
 
-  private final Channel channel;
+  private final SubscriberStub asyncStub;
 
   private final String subscription;
   private final ScheduledExecutorService executor;
@@ -69,14 +66,14 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       Duration maxAckExtensionPeriod,
       int streamAckDeadlineSeconds,
       Distribution ackLatencyDistribution,
-      Channel channel,
+      SubscriberStub asyncStub,
       FlowController flowController,
       ScheduledExecutorService executor,
       @Nullable ScheduledExecutorService alarmsExecutor,
       ApiClock clock) {
     this.subscription = subscription;
     this.executor = executor;
-    this.channel = channel;
+    this.asyncStub = asyncStub;
     this.messageDispatcher =
         new MessageDispatcher(
             receiver,
@@ -101,8 +98,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   @Override
   protected void doStop() {
     messageDispatcher.stop();
-    notifyStopped();
     requestObserver.onError(Status.CANCELLED.asException());
+    notifyStopped();
   }
 
   private class StreamingPullResponseObserver
@@ -137,7 +134,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     @Override
     public void onError(Throwable t) {
-      logger.log(Level.WARNING, "Terminated streaming with exception", t);
       errorFuture.setException(t);
     }
 
@@ -154,9 +150,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         new StreamingPullResponseObserver(errorFuture);
     final ClientCallStreamObserver<StreamingPullRequest> requestObserver =
         (ClientCallStreamObserver<StreamingPullRequest>)
-            (ClientCalls.asyncBidiStreamingCall(
-                channel.newCall(SubscriberGrpc.METHOD_STREAMING_PULL, CallOptions.DEFAULT),
-                responseObserver));
+            (asyncStub.streamingPull(responseObserver));
     logger.log(
         Level.FINER,
         "Initializing stream to subscription {0} with deadline {1}",
@@ -173,6 +167,9 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         new FutureCallback<Void>() {
           @Override
           public void onSuccess(@Nullable Void result) {
+            if (!isAlive()) {
+              return;
+            }
             channelReconnectBackoff = INITIAL_CHANNEL_RECONNECT_BACKOFF;
             // The stream was closed. And any case we want to reopen it to continue receiving
             // messages.
@@ -186,6 +183,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
               logger.log(Level.FINE, "pull failure after service no longer running", cause);
               return;
             }
+            logger.log(Level.WARNING, "Terminated streaming with exception", cause);
             if (StatusUtil.isRetryable(cause)) {
               long backoffMillis = channelReconnectBackoff.toMillis();
               channelReconnectBackoff = channelReconnectBackoff.plusMillis(backoffMillis);
