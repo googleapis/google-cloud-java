@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Vision](https://cloud.google.com/vision/
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation][vision-api]
+-  [Client Library Documentation][vision-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -44,7 +44,7 @@ About Google Cloud Vision
 
 Google [Cloud Vision API][cloud-vision-docs] allows developers to easily integrate vision detection features within applications, including image labeling, face and landmark detection, optical character recognition (OCR), and tagging of explicit content.
 
-See the ``google-cloud`` API [vision documentation][vision-api] to learn how to use this Cloud Vision API Client Library.
+See the [Vision client library docs][vision-client-lib-docs] to learn how to use this Cloud Vision API Client Library.
 
 Getting Started
 ---------------
@@ -54,11 +54,11 @@ You will need a [Google Developers Console](https://console.developers.google.co
 #### Installation and setup
 You'll need to obtain the `google-cloud-vision` library.  See the [Quickstart](#quickstart) section to add `google-cloud-vision` as a dependency in your code.
 
-#### Complete source code
+#### Complete working example
 
-In [AnnotateImage.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/vision/snippets/AnnotateImage.java) we put a quick start example, which shows how you can use Goolge Vision API to automatically annotate an immage (like "cat", "whiskers", "mammal" for a picture of a cat).
+In [AnnotateImage.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/vision/snippets/AnnotateImage.java) we put a quick start example, which shows how you can use the Google Vision API to automatically annotate an image (like "cat", "whiskers", "mammal" for a picture of a cat).
 
-For an example picture file please check the [wakeupcat.jpg](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/vision/cloud-client/resources/wakeupcat.jpg) from the samples repository.
+For an example picture file, you can use the [wakeupcat.jpg](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/vision/cloud-client/resources/wakeupcat.jpg) image from the samples repository.
 
 Troubleshooting
 ---------------
@@ -101,4 +101,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-vision-docs]: https://cloud.google.com/vision/docs
-[vision-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/vision/spi/v1/package-summary.html
+[vision-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/vision/v1/package-summary.html

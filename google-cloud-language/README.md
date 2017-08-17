@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Natural Language](https://cloud.google.c
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation][language-api]
+-  [Client Library Documentation][language-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -44,7 +44,7 @@ About Google Cloud Natural Language
 
 Google [Cloud Natural Language API][cloud-language-docs] provides natural language understanding technologies to developers, including sentiment analysis, entity analysis, and syntax analysis. This API is part of the larger Cloud Machine Learning API family.
 
-See the ``google-cloud`` API [natural language documentation][language-api] to learn how to use this Cloud Natural Language API Client Library.
+See the [Natural Language client library docs][language-client-lib-docs] to learn how to use this Cloud Natural Language API Client Library.
 
 Getting Started
 ---------------
@@ -54,9 +54,38 @@ You will need a [Google Developers Console](https://console.developers.google.co
 #### Installation and setup
 You'll need to obtain the `google-cloud-language` library.  See the [Quickstart](#quickstart) section to add `google-cloud-language` as a dependency in your code.
 
+#### Analyzing sentiment
+With Cloud Natural Language, you can analyze the sentiment of text. Add the following imports at the top of your file:
+
+``` java
+import com.google.cloud.language.v1.LanguageServiceClient;
+import com.google.cloud.language.v1.Document;
+import com.google.cloud.language.v1.Document.Type;
+import com.google.cloud.language.v1.Sentiment;
+```
+Then, to analyze the sentiment of some text, use the following code:
+
+``` java
+// Instantiates a client
+LanguageServiceClient language = LanguageServiceClient.create();
+
+// The text to analyze
+String[] texts = {"I love this!", "I hate this!"};
+for (String text : texts) {
+  Document doc = Document.newBuilder().setContent(text).setType(Type.PLAIN_TEXT).build();
+  // Detects the sentiment of the text
+  Sentiment sentiment = language.analyzeSentiment(doc).getDocumentSentiment();
+
+  System.out.printf("Text: \"%s\"%n", text);
+  System.out.printf(
+      "Sentiment: score = %s, magnitude = %s%n",
+      sentiment.getScore(), sentiment.getMagnitude());
+}
+```
+
 #### Complete source code
 
-In [AnalyzeSentiment.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/language/snippets/AnalyzeSentiment.java) we put a quick start example, which shows how you can use Google Natural Language API to automatically analyze a sentiment of a text message.
+In [AnalyzeSentiment.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/language/snippets/AnalyzeSentiment.java) we put the code shown above into a complete program.
 
 Troubleshooting
 ---------------
@@ -99,4 +128,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-language-docs]: https://cloud.google.com/natural-language/docs
-[language-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/language/spi/v1/package-summary.html
+[language-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/language/v1beta2/package-summary.html

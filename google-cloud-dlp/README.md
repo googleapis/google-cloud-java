@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Data Loss Prevention](https://cloud.goog
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation][dlp-api]
+-  [Client Library Documentation][dlp-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -46,7 +46,7 @@ About Google Cloud Data Loss Prevention
 Google [Cloud Data Loss Prevention API][cloud-dlp-docs]
 provides programmatic access to a powerful detection engine for personally identifiable information and other privacy-sensitive data in unstructured data streams, like text blocks and images.
 
-See the ``google-cloud`` API [Data Loss Prevention API documentation][dlp-api]
+See the [Data Loss Prevention client library docs][dlp-client-lib-docs]
 to learn how to use this Cloud Data Loss Prevention API Client Library.
 
 Getting Started
@@ -99,4 +99,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-dlp-docs]: https://cloud.google.com/dlp/docs/
-[dlp-api]: http://googlecloudplatform.github.io/google-cloud-java/0.20.2/apidocs/com/google/cloud/dlp/v2beta1/package-summary.html
+[dlp-client-lib-docs]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/dlp/v2beta1/package-summary.html

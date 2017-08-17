@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Speech](https://cloud.google.com/speech/
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation][speech-api]
+-  [Client Library Documentation][speech-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -44,7 +44,7 @@ About Google Cloud Speech
 
 Google [Cloud Speech API][cloud-speech-docs] enables easy integration of Google speech recognition technologies into developer applications. Send audio and receive a text transcription from the Cloud Speech API service.
 
-See the ``google-cloud`` API [speech documentation][speech-api] to learn how to use this Cloud Speech API Client Library.
+See the [Speech client library docs][speech-client-lib-docs] to learn how to use this Cloud Speech API Client Library.
 
 Getting Started
 ---------------
@@ -54,11 +54,41 @@ You will need a [Google Developers Console](https://console.developers.google.co
 #### Installation and setup
 You'll need to obtain the `google-cloud-speech` library.  See the [Quickstart](#quickstart) section to add `google-cloud-speech` as a dependency in your code.
 
+### Recognizing speech
+The following code sample shows how to recognize speech using an audio file from a Cloud Storage bucket as input.
+First, add the following imports at the top of your file:
+
+```java
+import com.google.cloud.speech.v1.SpeechClient;
+import com.google.cloud.speech.v1.RecognitionAudio;
+import com.google.cloud.speech.v1.RecognitionConfig;
+import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;
+import com.google.cloud.speech.v1.RecognizeResponse;
+```
+Then add the following code to do the speech recognization:
+```java
+ try (SpeechClient speechClient = SpeechClient.create()) {
+   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
+   int sampleRateHertz = 44100;
+   String languageCode = "en-US";
+   RecognitionConfig config = RecognitionConfig.newBuilder()
+     .setEncoding(encoding)
+     .setSampleRateHertz(sampleRateHertz)
+     .setLanguageCode(languageCode)
+     .build();
+   String uri = "gs://bucket_name/file_name.flac";
+   RecognitionAudio audio = RecognitionAudio.newBuilder()
+     .setUri(uri)
+     .build();
+   RecognizeResponse response = speechClient.recognize(config, audio);
+ }
+```
+
 #### Complete source code
 
-In [RecognizeSpeech.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/speech/snippets/RecognizeSpeech.java) we put a quick start example, which shows how you can use Goolge Speech API to automatically recognize speech. This sample will transcript houman speech from an audio file to a text form.  
+In [RecognizeSpeech.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/speech/snippets/RecognizeSpeech.java) we put a quick start example, which shows how you can use Google Speech API to automatically recognize speech based on a local file.
 
-For an example audio file please check the [audio.raw](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/speech/cloud-client/resources/audio.raw) from the samples repository.
+For an example audio file, you can use the [audio.raw](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/speech/cloud-client/resources/audio.raw) file from the samples repository.
 Note, to play the file on Unix-like system you may use the following command: `play -t raw -r 16k -e signed -b 16 -c 1 audio.raw`
 
 Troubleshooting
@@ -102,4 +132,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-speech-docs]: https://cloud.google.com/speech/docs
-[speech-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/speech/spi/v1/package-summary.html
+[speech-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/speech/v1beta1/package-summary.html
