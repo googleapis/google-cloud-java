@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Resource Manager](https://cloud.google.c
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html)
+-  [Client Library Documentation][resourcemanager-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -54,11 +54,9 @@ Google [Cloud Resource Manager][cloud-resourcemanager] provides a programmatic w
 * Delete projects.
 * Undelete projects that you don't want to delete.
 
-Google Cloud Resource Manager is currently in beta and may occasionally make backwards incompatible changes.
-
 Be sure to activate the Google Cloud Resource Manager API on the Developer's Console to use Resource Manager from your project.
 
-See the ``google-cloud`` API [Resource Manager documentation][resourcemanager-api] to learn how to interact
+See the [Resource Manager client library docs][resourcemanager-client-lib-docs] to learn how to interact
 with the Cloud Resource Manager using this client Library.
 
 Getting Started
@@ -87,7 +85,7 @@ ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().ge
 ```
 
 #### Getting a specific project
-You can load a project if you know it's project ID and have read permissions to the project.
+You can load a project if you know its project ID and have read permissions to the project.
 To get a project, add the following import at the top of your file:
 
 ```java
@@ -255,4 +253,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-resource-manager
 [cloud-platform]: https://cloud.google.com/
 [cloud-resourcemanager]: https://cloud.google.com/resource-manager/docs
-[resourcemanager-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
+[resourcemanager-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html

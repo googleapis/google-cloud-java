@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Compute](https://cloud.google.com/comput
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html)
+-  [Client Library Documentation][compute-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -59,7 +59,7 @@ configurations.
 Be sure to activate the Google Cloud Compute API on the Developer's Console to use Compute from
 your project.
 
-See the ``google-cloud`` API [compute documentation][compute-api] to learn how to interact
+See the [Compute client library docs][compute-client-lib-docs] to learn how to interact
 with Google Cloud Compute using this Client Library.
 
 Getting Started
@@ -159,8 +159,8 @@ if (operation.getErrors() == null) {
 ```
 
 #### Creating a virtual machine instance
-An Google Compute Engine instance is a virtual machine (VM) hosted on Google's infrastructure. An
-instance can be created given it's identity, a machine type, one boot disk and a network interface.
+A Google Compute Engine instance is a virtual machine (VM) hosted on Google's infrastructure. An
+instance can be created given its identity, a machine type, one boot disk and a network interface.
 In this code snippet, we will create a virtual machine instance in the default network using as a
 boot disk the disk we have just created and assigning to it the just created IP address.
 
@@ -213,6 +213,15 @@ running on Compute Engine or from your own desktop. To run the example on App En
 the code from the main method to your application's servlet class and change the print statements to
 display on your webpage.
 
+#### Other examples
+
+Other examples are available too:
+
+- [CreateSnapshot.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java) shows
+how to create a snapshot from an existing disk
+- [CreateInstance.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java) shows
+how to create a virtual machine instance (shorter sample than the one above)
+
 Troubleshooting
 ---------------
 
@@ -262,4 +271,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-compute]: https://cloud.google.com/compute/
-[compute-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html
+[compute-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/compute/package-summary.html

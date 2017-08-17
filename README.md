@@ -28,12 +28,12 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
--  [Cloud Compute](#google-cloud-compute-alpha) (Alpha)
+-  [Cloud Compute](google-cloud-compute) (Alpha)
 -  [Cloud Data Loss Prevention](google-cloud-dlp) (Alpha)
--  [Cloud DNS](#google-cloud-dns-alpha) (Alpha)
+-  [Cloud DNS](google-cloud-dns) (Alpha)
 -  [Stackdriver Error Reporting](google-cloud-errorreporting) (Alpha)
 -  [Stackdriver Monitoring](google-cloud-monitoring) (Alpha)
--  [Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
+-  [Cloud Resource Manager](google-cloud-resourcemanager) (Alpha)
 -  [Cloud Speech](google-cloud-speech) (Alpha)
 -  [Cloud Trace](google-cloud-trace) (Alpha)
 -  [Cloud Video Intelligence](google-cloud-video-intelligence) (Alpha)
@@ -223,178 +223,13 @@ Credentials in the following locations (in order):
 4. Google Cloud Shell built-in credentials
 5. Google Compute Engine built-in credentials
 
-Google Cloud Compute (Alpha)
-----------------------
-
-- [API Documentation][compute-api]
-- [Official Documentation][cloud-compute-docs]
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that
-you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-The first snippet shows how to create a snapshot from an existing disk. Complete source code can be
-found at
-[CreateSnapshot.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java).
-
-```java
-import com.google.cloud.compute.Compute;
-import com.google.cloud.compute.ComputeOptions;
-import com.google.cloud.compute.Disk;
-import com.google.cloud.compute.DiskId;
-import com.google.cloud.compute.Snapshot;
-
-Compute compute = ComputeOptions.getDefaultInstance().getService();
-DiskId diskId = DiskId.of("us-central1-a", "disk-name");
-Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
-if (disk != null) {
-  String snapshotName = "disk-name-snapshot";
-  Operation operation = disk.createSnapshot(snapshotName);
-  operation = operation.waitFor();
-  if (operation.getErrors() == null) {
-    // use snapshot
-    Snapshot snapshot = compute.getSnapshot(snapshotName);
-  }
-}
-```
-The second snippet shows how to create a virtual machine instance. Complete source code can be found
-at
-[CreateInstance.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java).
-```java
-import com.google.cloud.compute.AttachedDisk;
-import com.google.cloud.compute.Compute;
-import com.google.cloud.compute.ComputeOptions;
-import com.google.cloud.compute.ImageId;
-import com.google.cloud.compute.Instance;
-import com.google.cloud.compute.InstanceId;
-import com.google.cloud.compute.InstanceInfo;
-import com.google.cloud.compute.MachineTypeId;
-import com.google.cloud.compute.NetworkId;
-
-Compute compute = ComputeOptions.getDefaultInstance().getService();
-ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
-NetworkId networkId = NetworkId.of("default");
-AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));
-NetworkInterface networkInterface = NetworkInterface.of(networkId);
-InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
-MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
-Operation operation =
-    compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
-operation = operation.waitFor();
-if (operation.getErrors() == null) {
-  // use instance
-  Instance instance = compute.getInstance(instanceId);
-}
-```
-
-Google Cloud DNS (Alpha)
-----------------------
-- [API Documentation][dns-api]
-- [Official Documentation][cloud-dns-docs]
-
-*Follow the [activation instructions][cloud-dns-activation] to use the Google Cloud DNS API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-The first snippet shows how to create a zone resource. Complete source code can be found on
-[CreateZone.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java).
-
-```java
-import com.google.cloud.dns.Dns;
-import com.google.cloud.dns.DnsOptions;
-import com.google.cloud.dns.Zone;
-import com.google.cloud.dns.ZoneInfo;
-
-Dns dns = DnsOptions.getDefaultInstance().getService();
-String zoneName = "my-unique-zone";
-String domainName = "someexampledomain.com.";
-String description = "This is a google-cloud-dns sample zone.";
-ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
-Zone zone = dns.create(zoneInfo);
-```
-
-The second snippet shows how to create records inside a zone. The complete code can be found on [CreateOrUpdateRecordSets.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java).
-
-```java
-import com.google.cloud.dns.ChangeRequestInfo;
-import com.google.cloud.dns.Dns;
-import com.google.cloud.dns.DnsOptions;
-import com.google.cloud.dns.RecordSet;
-import com.google.cloud.dns.Zone;
-
-import java.util.Iterator;
-import java.util.concurrent.TimeUnit;
-
-Dns dns = DnsOptions.getDefaultInstance().getService();
-String zoneName = "my-unique-zone";
-Zone zone = dns.getZone(zoneName);
-String ip = "12.13.14.15";
-RecordSet toCreate = RecordSet.newBuilder("www.someexampledomain.com.", RecordSet.Type.A)
-    .setTtl(24, TimeUnit.HOURS)
-    .addRecord(ip)
-    .build();
-ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder().add(toCreate);
-
-// Verify that the record does not exist yet.
-// If it does exist, we will overwrite it with our prepared record.
-Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
-while (recordSetIterator.hasNext()) {
-  RecordSet current = recordSetIterator.next();
-  if (toCreate.getName().equals(current.getName()) &&
-      toCreate.getType().equals(current.getType())) {
-    changeBuilder.delete(current);
-  }
-}
-
-ChangeRequestInfo changeRequest = changeBuilder.build();
-zone.applyChangeRequest(changeRequest);
-```
-
-Google Cloud Resource Manager (Alpha)
-----------------------
-
-- [API Documentation][resourcemanager-api]
-- [Official Documentation][cloud-resourcemanager-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
-Complete source code can be found at
-[UpdateAndListProjects.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
-```java
-import com.google.cloud.resourcemanager.Project;
-import com.google.cloud.resourcemanager.ResourceManager;
-import com.google.cloud.resourcemanager.ResourceManagerOptions;
-
-import java.util.Iterator;
-
-ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
-Project project = resourceManager.get("some-project-id"); // Use an existing project's ID
-if (project != null) {
-  Project newProject = project.toBuilder()
-      .addLabel("launch-status", "in-development")
-      .build()
-      .replace();
-  System.out.println("Updated the labels of project " + newProject.getProjectId()
-      + " to be " + newProject.getLabels());
-}
-Iterator<Project> projectIterator = resourceManager.list().iterateAll();
-System.out.println("Projects I can view:");
-while (projectIterator.hasNext()) {
-  System.out.println(projectIterator.next().getProjectId());
-}
-```
-
 Troubleshooting
 ---------------
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Using a proxy
------
+-------------
 Clients in this repository use either HTTP or gRPC for the transport layer.
 The README of each client documents the transport layer the client uses.
 
@@ -506,14 +341,3 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md
 [cloud-platform]: https://cloud.google.com/
-
-[dns-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
-[cloud-dns-docs]: https://cloud.google.com/dns/docs/
-[cloud-dns-activation]: https://console.cloud.google.com/start/api?id=dns
-
-[resourcemanager-api]:https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
-[cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/docs/
-
-[cloud-compute]: https://cloud.google.com/compute/
-[cloud-compute-docs]: https://cloud.google.com/compute/docs/
-[compute-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html

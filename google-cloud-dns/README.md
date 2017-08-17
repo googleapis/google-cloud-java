@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud DNS](https://cloud.google.com/dns/).
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html)
+-  [Client Library Documentation][dns-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -58,7 +58,7 @@ and is a cost-effective way to make your applications and services available to 
 See the [Google Cloud DNS docs][dns-activate] for more details on how to activate
 Cloud DNS for your project.
 
-See the [``google-cloud-dns`` API documentation][dns-api] to learn how to interact
+See the [DNS client library docs][dns-client-lib-docs] to learn how to interact
 with the Cloud DNS using this client Library.
 
 Getting Started
@@ -93,7 +93,7 @@ For other authentication options, see the [Authentication](https://github.com/Go
 
 #### Managing Zones
 Record sets in `google-cloud-dns` are managed inside containers called "zones". `ZoneInfo` is a class
-which encapsulates metadata that describe a zone in Google Cloud DNS. `Zone`, a subclass of `ZoneInfo`, adds service-related
+which encapsulates metadata that describes a zone in Google Cloud DNS. `Zone`, a subclass of `ZoneInfo`, adds service-related
 functionality over `ZoneInfo`.
 
 *Important: Zone names must be unique to the project. If you choose a zone name that already
@@ -389,5 +389,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-dns]: https://cloud.google.com/dns/
-[dns-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
+[dns-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/dns/package-summary.html
 [dns-activate]:https://cloud.google.com/dns/getting-started#prerequisites
