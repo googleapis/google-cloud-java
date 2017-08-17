@@ -122,8 +122,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   @GuardedBy("this")
   private final Map<DatabaseId, DatabaseClientImpl> dbClients = new HashMap<>();
 
-  private final DatabaseAdminClient dbAdminClient = new DatabaseAdminClientImpl();
-  private final InstanceAdminClient instanceClient = new InstanceAdminClientImpl(dbAdminClient);
+  private final DatabaseAdminClient dbAdminClient;
+  private final InstanceAdminClient instanceClient;
 
   @GuardedBy("this")
   private boolean spannerIsClosed = false;
@@ -132,6 +132,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     super(options);
     this.rpc = rpc;
     this.defaultPrefetchChunks = defaultPrefetchChunks;
+    this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), rpc);
+    this.instanceClient = new InstanceAdminClientImpl(options.getProjectId(), rpc, dbAdminClient);
   }
 
   SpannerImpl(SpannerOptions options) {
@@ -205,7 +207,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         logger.log(Level.FINE, "Retryable exception, will sleep and retry", e);
         backoffSleep(context, backOff);
       } catch (Exception e) {
-        throw Throwables.propagate(e);
+        Throwables.throwIfUnchecked(e);
+        throw new RuntimeException(e);
       }
     }
   }
@@ -323,19 +326,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return ImmutableMap.copyOf(tmp);
   }
 
-  private String getProjectId() {
-    return getOptions().getProjectId();
-  }
-
-  private String getInstanceName(String instanceId) {
-    return new InstanceId(getProjectId(), instanceId).getName();
-  }
-
-  private String getDatabaseName(String instanceId, String databaseId) {
-    return new DatabaseId(new InstanceId(getProjectId(), instanceId), databaseId).getName();
-  }
-
-  private <T extends Message> T unpack(Any response, Class<T> clazz) throws SpannerException {
+  private static <T extends Message> T unpack(Any response, Class<T> clazz) throws SpannerException {
     try {
       return response.unpack(clazz);
     } catch (InvalidProtocolBufferException e) {
@@ -344,7 +335,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  private abstract class PageFetcher<S, T> implements NextPageFetcher<S> {
+  private static abstract class PageFetcher<S, T> implements NextPageFetcher<S> {
     private String nextPageToken;
 
     @Override
@@ -370,12 +361,21 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     abstract S fromProto(T proto);
   }
 
-  private String randomOperationId() {
+  private static String randomOperationId() {
     UUID uuid = UUID.randomUUID();
     return ("r" + uuid.toString()).replace("-", "_");
   }
 
-  class DatabaseAdminClientImpl implements DatabaseAdminClient {
+  static class DatabaseAdminClientImpl implements DatabaseAdminClient {
+    
+    private final String projectId;
+    private final SpannerRpc rpc;
+    
+    DatabaseAdminClientImpl(String projectId, SpannerRpc rpc) {
+      this.projectId = projectId;
+      this.rpc = rpc;
+    }
+    
     @Override
     public Operation<Database, CreateDatabaseMetadata> createDatabase(
         String instanceId, String databaseId, Iterable<String> statements) throws SpannerException {
@@ -436,7 +436,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   String opName =
                       OP_NAME_TEMPLATE.instantiate(
                           "project",
-                          getProjectId(),
+                          projectId,
                           "instance",
                           instanceId,
                           "database",
@@ -519,18 +519,30 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
       return pageFetcher.getNextPage();
     }
+    
+    private String getInstanceName(String instanceId) {
+      return new InstanceId(projectId, instanceId).getName();
+    }
+    
+    private String getDatabaseName(String instanceId, String databaseId) {
+      return new DatabaseId(new InstanceId(projectId, instanceId), databaseId).getName();
+    }
   }
 
-  class InstanceAdminClientImpl implements InstanceAdminClient {
+  static class InstanceAdminClientImpl implements InstanceAdminClient {
     final DatabaseAdminClient dbClient;
+    final String projectId;
+    final SpannerRpc rpc;
 
-    InstanceAdminClientImpl(DatabaseAdminClient dbClient) {
+    InstanceAdminClientImpl(String projectId, SpannerRpc rpc, DatabaseAdminClient dbClient) {
+      this.projectId = projectId;
+      this.rpc = rpc;
       this.dbClient = dbClient;
     }
 
     @Override
     public InstanceConfig getInstanceConfig(String configId) throws SpannerException {
-      final String instanceConfigName = new InstanceConfigId(getProjectId(), configId).getName();
+      final String instanceConfigName = new InstanceConfigId(projectId, configId).getName();
       return runWithRetries(
           new Callable<InstanceConfig>() {
             @Override
@@ -570,7 +582,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public Operation<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
         throws SpannerException {
-      String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", getProjectId());
+      String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
       com.google.longrunning.Operation op =
           rpc.createInstance(projectName, instance.getId().getInstance(), instance.toProto());
       return Operation.create(
@@ -594,7 +606,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public Instance getInstance(String instanceId) throws SpannerException {
-      final String instanceName = new InstanceId(getProjectId(), instanceId).getName();
+      final String instanceName = new InstanceId(projectId, instanceId).getName();
       return runWithRetries(
           new Callable<Instance>() {
             @Override
@@ -635,7 +647,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           new Callable<Void>() {
             @Override
             public Void call() {
-              rpc.deleteInstance(new InstanceId(getProjectId(), instanceId).getName());
+              rpc.deleteInstance(new InstanceId(projectId, instanceId).getName());
               return null;
             }
           });
@@ -2006,7 +2018,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<INT64> produces an Int64Array.
     protected Int64Array getLongListInternal(int columnIndex) {
       return (Int64Array) rowData.get(columnIndex);
     }
@@ -2017,7 +2028,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<FLOAT64> produces a Float64Array.
     protected Float64Array getDoubleListInternal(int columnIndex) {
       return (Float64Array) rowData.get(columnIndex);
     }
