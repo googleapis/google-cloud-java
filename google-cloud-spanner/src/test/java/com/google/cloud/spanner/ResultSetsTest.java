@@ -19,34 +19,31 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 
 import java.util.Arrays;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for {@link ResultSets}
- */
+/** Unit tests for {@link ResultSets} */
 @RunWith(JUnit4.class)
 public class ResultSetsTest {
-  
-  @Rule
-  public ExpectedException expected = ExpectedException.none();
-  
+
+  @Rule public ExpectedException expected = ExpectedException.none();
+
   @Test
   public void resultSetIteration() {
-    Type type = Type.struct(
-        Type.StructField.of("f1", Type.string()),
-        Type.StructField.of("f2", Type.int64()),
-        Type.StructField.of("f3", Type.bool()));
+    Type type =
+        Type.struct(
+            Type.StructField.of("f1", Type.string()),
+            Type.StructField.of("f2", Type.int64()),
+            Type.StructField.of("f3", Type.bool()));
     Struct struct1 =
         Struct.newBuilder().set("f1").to("x").set("f2").to(2).add("f3", Value.bool(true)).build();
     Struct struct2 =
         Struct.newBuilder().set("f1").to("y").set("f2").to(3).add("f3", Value.bool(null)).build();
     ResultSet rs = ResultSets.forRows(type, Arrays.asList(struct1, struct2));
-    
+
     assertThat(rs.next()).isTrue();
     assertThat(rs.getType()).isEqualTo(type);
     assertThat(rs.getColumnCount()).isEqualTo(3);
@@ -70,20 +67,24 @@ public class ResultSetsTest {
     assertThat(rs.isNull(2)).isTrue();
     assertThat(rs.next()).isFalse();
   }
-  
+
   @Test
   public void closeResultSet() {
-    ResultSet rs = ResultSets.forRows(Type.struct(Type.StructField.of("f1", Type.string())),
-        Arrays.asList(Struct.newBuilder().set("f1").to("x").build()));
+    ResultSet rs =
+        ResultSets.forRows(
+            Type.struct(Type.StructField.of("f1", Type.string())),
+            Arrays.asList(Struct.newBuilder().set("f1").to("x").build()));
     rs.close();
     expected.expect(IllegalStateException.class);
     rs.getCurrentRowAsStruct();
   }
-  
+
   @Test
   public void exceptionIfNextIsNotCalled() {
-    ResultSet rs = ResultSets.forRows(Type.struct(Type.StructField.of("f1", Type.string())),
-        Arrays.asList(Struct.newBuilder().set("f1").to("x").build()));
+    ResultSet rs =
+        ResultSets.forRows(
+            Type.struct(Type.StructField.of("f1", Type.string())),
+            Arrays.asList(Struct.newBuilder().set("f1").to("x").build()));
     expected.expect(IllegalStateException.class);
     rs.getCurrentRowAsStruct();
   }
