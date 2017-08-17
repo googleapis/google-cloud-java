@@ -44,13 +44,12 @@ public class GoogleCloudCompatChecker {
   }
 
   public static void main(String[] args) {
-    Boolean checkResult = check();
-    if (checkResult != null && !checkResult) {
+    if (!check()) {
       System.exit(1);
     }
   }
 
-  public static Boolean check() {
+  public static boolean check() {
     Properties osProperties = new Properties();
     new OsDetector().detect(osProperties, Lists.<String>newArrayList());
 
@@ -130,10 +129,6 @@ public class GoogleCloudCompatChecker {
       }
     }
 
-    if (!compatible) {
-      return false;
-    } else {
-      return null; // don't want to promise the answer yet
-    }
+    return compatible;
   }
 }
