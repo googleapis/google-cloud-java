@@ -20,9 +20,9 @@ This client supports the following Google Cloud Platform services at a [GA](#ver
 
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
--  [BigQuery](#google-cloud-bigquery-beta) (Beta)
--  [Cloud Pub/Sub](#google-cloud-pubsub-beta) (Beta)
--  [Cloud Spanner](#cloud-spanner-beta) (Beta)
+-  [BigQuery](google-cloud-bigquery) (Beta)
+-  [Cloud Pub/Sub](google-cloud-pubsub) (Beta)
+-  [Cloud Spanner](google-cloud-spanner) (Beta)
 -  [Cloud Natural Language](#google-cloud-language-beta) (Beta)
 -  [Cloud Vision](#google-cloud-vision-beta) (Beta)
 
@@ -227,129 +227,6 @@ Credentials in the following locations (in order):
 3. Google App Engine built-in credentials
 4. Google Cloud Shell built-in credentials
 5. Google Compute Engine built-in credentials
-
-Google Cloud BigQuery (Beta)
-----------------------
-
-- [API Documentation][bigquery-api]
-- [Official Documentation][cloud-bigquery-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example from within Compute/App Engine. Note that you
-must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-Complete source code can be found at
-[CreateTableAndLoadData.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
-
-```java
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
-import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FormatOptions;
-import com.google.cloud.bigquery.Job;
-import com.google.cloud.bigquery.Schema;
-import com.google.cloud.bigquery.StandardTableDefinition;
-import com.google.cloud.bigquery.Table;
-import com.google.cloud.bigquery.TableId;
-import com.google.cloud.bigquery.TableInfo;
-
-BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-TableId tableId = TableId.of("dataset", "table");
-Table table = bigquery.getTable(tableId);
-if (table == null) {
-  System.out.println("Creating table " + tableId);
-  Field integerField = Field.of("fieldName", Field.Type.integer());
-  Schema schema = Schema.of(integerField);
-  table = bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
-}
-System.out.println("Loading data into table " + tableId);
-Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
-loadJob = loadJob.waitFor();
-if (loadJob.getStatus().getError() != null) {
-  System.out.println("Job completed with errors");
-} else {
-  System.out.println("Job succeeded");
-}
-```
-
-Google Cloud Pub/Sub (Beta)
-----------------------
-- [API Documentation][pubsub-api]
-- [Official Documentation][cloud-pubsub-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example from within Compute Engine/App Engine
-Flexible. Note that you must [supply credentials](#authentication) and a project ID if running this
-snippet elsewhere. Complete source code can be found at
-[CreateTopicAndPublishMessages.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java).
-
-```java
-import com.google.api.core.ApiFuture;
-import com.google.cloud.pubsub.v1.Publisher;
-import com.google.cloud.pubsub.v1.TopicAdminClient;
-import com.google.protobuf.ByteString;
-import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.TopicName;
-
-TopicName topic = TopicName.create("test-project", "test-topic");
-try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-  topicAdminClient.createTopic(topic);
-}
-
-Publisher publisher = null;
-try {
-  publisher = Publisher.newBuilder(topic).build();
-  ByteString data = ByteString.copyFromUtf8("my message");
-  PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-  ApiFuture<String> messageId = publisher.publish(pubsubMessage);
-  System.out.println("published with message ID: " + messageId.get());
-} finally {
-  if (publisher != null) {
-    publisher.shutdown();
-  }
-}
-```
-
-Cloud Spanner (Beta)
---------------------
-
-- [API Documentation][cloud-spanner-api]
-- [Official Documentation][cloud-spanner-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example from within Compute/App Engine Flex. Note that you
-must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-```java
-import com.google.cloud.spanner.DatabaseClient;
-import com.google.cloud.spanner.DatabaseId;
-import com.google.cloud.spanner.ResultSet;
-import com.google.cloud.spanner.Spanner;
-import com.google.cloud.spanner.SpannerOptions;
-import com.google.cloud.spanner.Statement;
-
-// Instantiates a client
-SpannerOptions options = SpannerOptions.newBuilder().build();
-Spanner spanner = options.getService();
-String instance = "my-instance";
-String database = "my-database";
-try {
-    // Creates a database client
-    DatabaseClient dbClient = spanner.getDatabaseClient(
-      DatabaseId.of(options.getProjectId(), instance, database));
-    // Queries the database
-    ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"));
-    // Prints the results
-    while (resultSet.next()) {
-      System.out.printf("%d\n", resultSet.getLong(0));
-    }
-} finally {
-    // Closes the client which will free up the resources used
-    spanner.closeAsync().get();
-}
-```
 
 Google Cloud Language (Beta)
 ----------------------
@@ -818,24 +695,12 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-video-intelligence-docs]: https://cloud.google.com/video-intelligence/docs/
 
-[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html
-[cloud-pubsub]: https://cloud.google.com/pubsub/
-[cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs/
-
 [resourcemanager-api]:https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
 [cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/docs/
-
-[cloud-bigquery]: https://cloud.google.com/bigquery/
-[cloud-bigquery-docs]: https://cloud.google.com/bigquery/docs/
-[bigquery-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
 
 [cloud-compute]: https://cloud.google.com/compute/
 [cloud-compute-docs]: https://cloud.google.com/compute/docs/
 [compute-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html
-
-[cloud-spanner]: https://cloud.google.com/spanner/
-[cloud-spanner-docs]: https://cloud.google.com/spanner/docs/
-[cloud-spanner-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/spanner/package-summary.html
 
 [cloud-dlp-docs]: https://cloud.google.com/dlp/docs/
 [dlp-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dlp/package-summary.html
