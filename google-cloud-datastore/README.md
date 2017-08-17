@@ -1,7 +1,7 @@
 Google Cloud Java Client for Datastore
 ======================================
 
-Java idiomatic client for [Google Cloud Datastore](https://cloud.google.com/datastore/).
+Java idiomatic client for [Google Cloud Datastore][cloud-datastore].
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,8 +9,8 @@ Java idiomatic client for [Google Cloud Datastore](https://cloud.google.com/data
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [Client Library Documentation][datastore-client-lib-docs]
+- [Product Documentation][datastore-product-docs]
+- [Client Library Documentation][datastore-client-lib-docs]
 
 Quickstart
 ----------
@@ -31,9 +31,17 @@ If you are using SBT, add this to your dependencies
 libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "1.3.1"
 ```
 
-Example Application
+Example Applications
 --------------------
-[`DatastoreExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/datastore/DatastoreExample.html).
+- [`DatastoreExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/?com/google/cloud/examples/datastore/DatastoreExample.html).
+- [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
+  - This app uses `google-cloud` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
+- [`Flexible Environment/Datastore example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/datastore) - A simple app that uses Cloud Datastore to list the last 10 IP addresses that visited your site.
+- [`GuestBook`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/appengine/guestbook-cloud-datastore) - An App Engine Standard guestbook that uses Cloud Datastore.
+- [`SparkDemo`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/flexible/sparkjava) - An example of using `google-cloud-datastore` from within the SparkJava and App Engine Flexible Environment frameworks.
+  - Read about how it works on the example's [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/sparkjava#how-does-it-work).
+- [`TaskList`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/datastore/src/main/java/com/google/datastore/snippets/TaskList.java) - A command line application that uses Cloud Datastore to manage a to-do list.
+  - Read about how to run the application on its [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/datastore).
 
 Authentication
 --------------
@@ -43,7 +51,7 @@ See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-jav
 About Google Cloud Datastore
 ----------------------------
 
-Google [Cloud Datastore][cloud-datastore-docs] is a fully managed, schemaless database for
+Google [Cloud Datastore][cloud-datastore] is a fully managed, schemaless database for
 storing non-relational data. Cloud Datastore automatically scales with
 your users and supports ACID transactions, high availability of reads and
 writes, strong consistency for reads and ancestor queries, and eventual
@@ -212,6 +220,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-datastore
 [cloud-platform]: https://cloud.google.com/
-[cloud-datastore-docs]: https://cloud.google.com/datastore/docs
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
+[cloud-datastore]: https://cloud.google.com/datastore/
+[datastore-product-docs]: https://cloud.google.com/datastore/docs/
 [datastore-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/datastore/package-summary.html

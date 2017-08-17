@@ -1,7 +1,7 @@
 Google Cloud Java Client for Resource Manager
 =============================================
 
-Java idiomatic client for [Google Cloud Resource Manager](https://cloud.google.com/resource-manager/).
+Java idiomatic client for [Google Cloud Resource Manager][cloud-resourcemanager].
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,8 +9,8 @@ Java idiomatic client for [Google Cloud Resource Manager](https://cloud.google.c
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [Client Library Documentation][resourcemanager-client-lib-docs]
+- [Product Documentation][resourcemanager-product-docs]
+- [Client Library Documentation][resourcemanager-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -252,5 +252,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-resource-manager
 [cloud-platform]: https://cloud.google.com/
-[cloud-resourcemanager]: https://cloud.google.com/resource-manager/docs
+[cloud-resourcemanager]: https://cloud.google.com/resource-manager/
+[resourcemanager-product-docs]: https://cloud.google.com/resource-manager/docs/
 [resourcemanager-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
