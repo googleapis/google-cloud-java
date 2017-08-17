@@ -36,6 +36,11 @@
       <groupId>org.codehaus.plexus</groupId>
       <artifactId>plexus-utils</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-handler</artifactId>
+      <version>4.1.11.Final</version>
+    </dependency>
   </dependencies>
   <dependencyManagement>
     <dependencies>
