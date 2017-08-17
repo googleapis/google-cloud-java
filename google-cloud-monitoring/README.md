@@ -1,16 +1,16 @@
-Google Cloud Java Client for Stackdriver Error Reporting
+Google Cloud Java Client for Stackdriver Monitoring
 ======================================
 
-Java idiomatic client for [Stackdriver Error Reporting](https://cloud.google.com/error-reporting/).
+Java idiomatic client for [Stackdriver Monitoring](https://cloud.google.com/monitoring/).
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-errorreporting.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-errorreporting.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-monitoring.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-monitoring.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [Client Library Documentation][error-reporting-client-lib-docs]
+-  [Client Library Documentation][monitoring-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -21,17 +21,17 @@ If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-errorreporting</artifactId>
+  <artifactId>google-cloud-monitoring</artifactId>
   <version>0.21.1-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-errorreporting:0.21.1-alpha'
+compile 'com.google.cloud:google-cloud-monitoring:0.21.1-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.21.1-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "0.21.1-alpha"
 ```
 
 Authentication
@@ -39,23 +39,20 @@ Authentication
 
 See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
-About Stackdriver Error Reporting
+About Stackdriver Monitoring
 ----------------------------
 
-The Stackdriver Error Reporting API provides:
+Stackdriver Monitoring provides visibility into the performance, uptime, and overall health of cloud-powered applications. Stackdriver collects metrics, events, and metadata from Google Cloud Platform, Amazon Web Services, hosted uptime probes, application instrumentation, and a variety of common application components including Cassandra, Nginx, Apache Web Server, Elasticsearch, and many others.
 
-- A simple endpoint to report errors from your running service.
-- Read access to error groups and their associated errors.
-
-See the [Error Reporting client library docs][error-reporting-client-lib-docs] to learn how to use this client library.
+See the [Monitoring client library docs][monitoring-client-lib-docs] to learn how to use this client library.
 
 Getting Started
 ---------------
 #### Prerequisites
-You will need a [Google Developers Console](https://console.developers.google.com/) project with the Stackdriver Error Reporting API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+You will need a [Google Developers Console](https://console.developers.google.com/) project with the Stackdriver Monitoring API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
-You'll need to obtain the `google-cloud-errorreporting` library.  See the [Quickstart](#quickstart) section to add `google-cloud-errorreporting` as a dependency in your code.
+You'll need to obtain the `google-cloud-monitoring` library.  See the [Quickstart](#quickstart) section to add `google-cloud-monitoring` as a dependency in your code.
 
 Troubleshooting
 ---------------
@@ -64,7 +61,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-Error reporting uses gRPC for the transport layer.
+Monitoring uses gRPC for the transport layer.
 
 Java Versions
 -------------
@@ -97,4 +94,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[error-reporting-client-lib-docs]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/errorreporting/v1beta1/package-summary.html
+[monitoring-client-lib-docs]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/monitoring/v3/package-summary.html

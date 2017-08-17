@@ -23,28 +23,23 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [BigQuery](google-cloud-bigquery) (Beta)
 -  [Cloud Pub/Sub](google-cloud-pubsub) (Beta)
 -  [Cloud Spanner](google-cloud-spanner) (Beta)
--  [Cloud Natural Language](#google-cloud-language-beta) (Beta)
--  [Cloud Vision](#google-cloud-vision-beta) (Beta)
+-  [Cloud Natural Language](google-cloud-language) (Beta)
+-  [Cloud Vision](google-cloud-vision) (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
 -  [Cloud Compute](#google-cloud-compute-alpha) (Alpha)
--  [Cloud Data Loss Prevention](#google-cloud-data-loss-prevention-alpha) (Alpha)
+-  [Cloud Data Loss Prevention](google-cloud-dlp) (Alpha)
 -  [Cloud DNS](#google-cloud-dns-alpha) (Alpha)
--  [Stackdriver Error Reporting](#stackdriver-error-reporting-alpha) (Alpha)
--  [Stackdriver Monitoring](#stackdriver-monitoring-alpha) (Alpha)
+-  [Stackdriver Error Reporting](google-cloud-errorreporting) (Alpha)
+-  [Stackdriver Monitoring](google-cloud-monitoring) (Alpha)
 -  [Cloud Resource Manager](#google-cloud-resource-manager-alpha) (Alpha)
--  [Cloud Speech](#google-cloud-speech-alpha) (Alpha)
--  [Cloud Trace](#google-cloud-trace-alpha) (Alpha)
--  [Cloud Video Intelligence](#google-cloud-video-intelligence-alpha) (Alpha)
+-  [Cloud Speech](google-cloud-speech) (Alpha)
+-  [Cloud Trace](google-cloud-trace) (Alpha)
+-  [Cloud Video Intelligence](google-cloud-video-intelligence) (Alpha)
 
-> Note: This client is a work-in-progress, and may occasionally
+> Note: google-cloud-java is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
-
-## Where did `gcloud-java` go?
-
-`gcloud-java` lives on under a new name, `google-cloud`.
-Your code will behave the same, simply change your dependency (see [Quickstart](./README.md#quickstart)).
 
 Quickstart
 ----------
@@ -228,40 +223,6 @@ Credentials in the following locations (in order):
 4. Google Cloud Shell built-in credentials
 5. Google Compute Engine built-in credentials
 
-Google Cloud Language (Beta)
-----------------------
-- [API Documentation][language-api]
-- [Official Documentation][cloud-language-docs]
-
-### Preview
-
-Here is a code snippet showing a simple usage example of LanguageServiceClient. The example assumes that either Application Default
-Credentials or a valid API key are available. (See [Authentication section](#authentication) for more information)
-```java
- try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
-   Document document = Document.newBuilder().build();
-   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
- }
-```
-
-Google Cloud Vision (Beta)
-----------------
-
-- [API Documentation][vision-api]
-- [Official Documentation][cloud-vision-docs]
-
-### Preview
-
-Here is a code snippet showing a simple usage example of ImageAnnotatorClient.
-The example assumes that either Application Default Credentials or a valid API key
-are available. (See [Authentication section](#authentication) for more information)
-```java
- try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-   List<AnnotateImageRequest> requests = new ArrayList<>();
-   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
- }
-```
-
 Google Cloud Compute (Alpha)
 ----------------------
 
@@ -324,25 +285,6 @@ operation = operation.waitFor();
 if (operation.getErrors() == null) {
   // use instance
   Instance instance = compute.getInstance(instanceId);
-}
-```
-
-Google Cloud Data Loss Prevention (Alpha)
-----------------
-
-- [API Documentation][dlp-api]
-- [Official Documentation][cloud-dlp-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example of DlpServiceClient. The example assumes that either default application
-credentials or a valid API key are available. (See [Authentication section](#authentication) for more information)
-
-```java
-try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-  InspectConfig inspectConfig = InspectConfig.newBuilder().build();
-  List<ContentItem> items = new ArrayList<>();
-  InspectContentResponse response = dlpServiceClient.inspectContent(inspectConfig, items);
 }
 ```
 
@@ -411,39 +353,6 @@ ChangeRequestInfo changeRequest = changeBuilder.build();
 zone.applyChangeRequest(changeRequest);
 ```
 
-Stackdriver Error Reporting (Alpha)
-----------------------
-- [API Documentation][errorreporting-api]
-- [Official Documentation][cloud-errorreporting-docs]
-
-### Preview
-
-Here is a code snippet showing a simple usage example of ErrorGroupServiceClient.
-Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-```java
- try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
-   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
-   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
- }
-```
-
-Stackdriver Monitoring (Alpha)
-----------------------
-- [API Documentation][monitoring-api]
-- [Official Documentation][cloud-monitoring-docs]
-
-### Preview
-
-Here is a code snippet showing a simple usage example of MetricServiceClient.
-Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-```java
- try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   MonitoredResourceDescriptorName name =
-       MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
-   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
- }
-```
-
 Google Cloud Resource Manager (Alpha)
 ----------------------
 
@@ -477,79 +386,6 @@ System.out.println("Projects I can view:");
 while (projectIterator.hasNext()) {
   System.out.println(projectIterator.next().getProjectId());
 }
-```
-
-Google Cloud Speech (Alpha)
-----------------
-
-- [API Documentation][speech-api]
-- [Official Documentation][cloud-speech-docs]
-
-### Preview
-
-Here is a code snippet showing a simple usage example of SpeechClient. The example assumes that either Application Default
-Credentials or a valid API key are available. (See [Authentication section](#authentication) for more information)
-Note that you must provide a uri to a FLAC audio file to run this.
-
-```java
- try (SpeechClient speechClient = SpeechClient.create()) {
-   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
-   int sampleRateHertz = 44100;
-   String languageCode = "en-US";
-   RecognitionConfig config = RecognitionConfig.newBuilder()
-     .setEncoding(encoding)
-     .setSampleRateHertz(sampleRateHertz)
-     .setLanguageCode(languageCode)
-     .build();
-   String uri = "gs://bucket_name/file_name.flac";
-   RecognitionAudio audio = RecognitionAudio.newBuilder()
-     .setUri(uri)
-     .build();
-   RecognizeResponse response = speechClient.recognize(config, audio);
- }
-```
-
-Google Cloud Trace (Alpha)
-----------------
-
-- [API Documentation][trace-api]
-- [Official Documentation][cloud-trace-docs]
-
-### Preview
-
-Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either Application Default
-Credentials or a valid API key are available.
-Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-```java
- try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   String projectId = "";
-   Traces traces = Traces.newBuilder().build();
-   traceServiceClient.patchTraces(projectId, traces);
- }
-```
-
-Google Cloud Video Intelligence (Alpha)
-----------------
-
-- [Official Documentation][cloud-video-intelligence-docs]
-
-### Preview
-
-Here is a code snippet showing a simple usage example of TraceServiceClient. The example assumes that either Application Default
-Credentials or a valid API key are available.
-Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-```java
-try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
-    VideoIntelligenceServiceClient.create()) {
-  String inputUri = "";
-   List<Feature> features = new ArrayList<>();
-   VideoContext videoContext = VideoContext.newBuilder().build();
-   String outputUri = "";
-   String locationId = "";
-   AnnotateVideoResponse response =
-       videoIntelligenceServiceClient.annotateVideoAsync(
-           inputUri, features, videoContext, outputUri, locationId).get();
- }
 ```
 
 Troubleshooting
@@ -675,32 +511,9 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-dns-docs]: https://cloud.google.com/dns/docs/
 [cloud-dns-activation]: https://console.cloud.google.com/start/api?id=dns
 
-[errorreporting-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/errorreporting/spi/v1beta1/package-summary.html
-[cloud-errorreporting-docs]: https://cloud.google.com/error-reporting/docs/
-
-[language-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/language/spi/v1/package-summary.html
-[cloud-language-docs]: https://cloud.google.com/language/docs/
-
-[monitoring-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/monitoring/spi/v3/package-summary.html
-[cloud-monitoring-docs]: https://cloud.google.com/monitoring/docs/
-
-[speech-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/speech/spi/v1/package-summary.html
-[cloud-speech-docs]: https://cloud.google.com/speech/docs/
-
-[trace-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/trace/spi/v1/package-summary.html
-[cloud-trace-docs]: https://cloud.google.com/trace/docs/
-
-[vision-api]: http://googlecloudplatform.github.io/google-cloud-java/0.15.0/apidocs/?com/google/cloud/vision/spi/v1/package-summary.html
-[cloud-vision-docs]: https://cloud.google.com/vision/docs/
-
-[cloud-video-intelligence-docs]: https://cloud.google.com/video-intelligence/docs/
-
 [resourcemanager-api]:https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
 [cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/docs/
 
 [cloud-compute]: https://cloud.google.com/compute/
 [cloud-compute-docs]: https://cloud.google.com/compute/docs/
 [compute-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html
-
-[cloud-dlp-docs]: https://cloud.google.com/dlp/docs/
-[dlp-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dlp/package-summary.html
