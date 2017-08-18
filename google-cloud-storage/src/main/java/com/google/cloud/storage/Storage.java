@@ -1433,6 +1433,9 @@ public interface Storage extends Service<StorageOptions> {
    * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options. The given
    * input stream is closed upon success.
    *
+   * <p>This method is marked as {@link Deprecated} because it cannot safely retry, given that it
+   * accepts an {@link InputStream} which can only be consumed once.
+   *
    * <p>Example of creating a blob from an input stream.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
@@ -1460,6 +1463,7 @@ public interface Storage extends Service<StorageOptions> {
    * @return a [@code Blob} with complete information
    * @throws StorageException upon failure
    */
+  @Deprecated
   Blob create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options);
 
   /**
