@@ -59,12 +59,13 @@ public class QuickstartIT {
     System.setOut(out);
 
     Snippets.createCryptoKeyVersion(
-        SnippetsIT.PROJECT_ID, SnippetsIT.KEY_RING_ID, SnippetsIT.CRYPTO_KEY_ID);
+        SnippetsIT.PROJECT_ID, SnippetsIT.LOCATION_ID, SnippetsIT.KEY_RING_ID,
+        SnippetsIT.CRYPTO_KEY_ID);
   }
 
   @Test
   public void listKeyRings_printsKeyRing() throws Exception {
-    Quickstart.main(SnippetsIT.PROJECT_ID);
+    Quickstart.main(SnippetsIT.PROJECT_ID, SnippetsIT.LOCATION_ID);
 
     assertThat(bout.toString()).contains(String.format("keyRings/%s", SnippetsIT.KEY_RING_ID));
   }

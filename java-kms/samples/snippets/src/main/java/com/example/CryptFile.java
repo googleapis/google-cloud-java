@@ -59,64 +59,51 @@ public class CryptFile {
         .build();
   }
 
-  /**
-   * Encrypts the given bytes, using the primary version of the specified crypto key.
-   *
-   * The primary version can be updated via the <a
-   * href="https://g.co/cloud/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys/updatePrimaryVersion">updatePrimaryVersion</a>
-   * method.
-   */
-  public static byte[] encrypt(String projectId, String ringId, String keyId, byte[] plaintext)
-      throws IOException {
-    return encrypt(projectId, ringId, keyId, null, plaintext);
-  }
-
   // [START kms_encrypt]
+
   /**
-   * Encrypts the given bytes, using the specified crypto key version.
+   * Encrypts the given plaintext using the specified crypto key.
    */
   public static byte[] encrypt(
-      String projectId, String ringId, String keyId, String version, byte[] plaintext)
+      String projectId, String locationId, String keyRingId, String cryptoKeyId, byte[] plaintext)
       throws IOException {
-    String location = "global";
     // The resource name of the cryptoKey
-    String cryptoKeyName = String.format(
+    String resourceName = String.format(
         "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
-        projectId, location, ringId, keyId);
-    if (null != version) {
-      cryptoKeyName += "/cryptoKeyVersions/" + version;
-    }
+        projectId, locationId, keyRingId, cryptoKeyId);
+
     // Create the Cloud KMS client.
     CloudKMS kms = createAuthorizedClient();
 
     EncryptRequest request = new EncryptRequest().encodePlaintext(plaintext);
     EncryptResponse response = kms.projects().locations().keyRings().cryptoKeys()
-            .encrypt(cryptoKeyName, request)
-            .execute();
+        .encrypt(resourceName, request)
+        .execute();
 
     return response.decodeCiphertext();
   }
   // [END kms_encrypt]
 
   // [START kms_decrypt]
+
   /**
-   * Decrypts the given encrypted bytes, using the specified crypto key.
+   * Decrypts the provided ciphertext with the specified crypto key.
    */
-  public static byte[] decrypt(String projectId, String ringId, String keyId, byte[] encrypted)
+  public static byte[] decrypt(String projectId, String locationId, String keyRingId,
+      String cryptoKeyId, byte[] ciphertext)
       throws IOException {
-    String location = "global";
     // Create the Cloud KMS client.
     CloudKMS kms = createAuthorizedClient();
 
     // The resource name of the cryptoKey
     String cryptoKeyName = String.format(
         "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
-        projectId, location, ringId, keyId);
+        projectId, locationId, keyRingId, cryptoKeyId);
 
-    DecryptRequest request = new DecryptRequest().encodeCiphertext(encrypted);
+    DecryptRequest request = new DecryptRequest().encodeCiphertext(ciphertext);
     DecryptResponse response = kms.projects().locations().keyRings().cryptoKeys()
-            .decrypt(cryptoKeyName, request)
-            .execute();
+        .decrypt(cryptoKeyName, request)
+        .execute();
 
     return response.decodePlaintext();
   }

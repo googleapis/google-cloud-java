@@ -20,10 +20,11 @@ import org.kohsuke.args4j.spi.SubCommand;
 import org.kohsuke.args4j.spi.SubCommandHandler;
 import org.kohsuke.args4j.spi.SubCommands;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * Defines the different sub-commands and their parameters, for command-line invocation.
@@ -33,7 +34,7 @@ class CryptFileCommands {
    * An interface for a command-line sub-command.
    */
   interface Command {
-    public void run() throws IOException;
+    void run() throws IOException;
   }
 
   // Most of the commands take some subset of the same arguments, so specify groups of arguments
@@ -41,27 +42,25 @@ class CryptFileCommands {
   static class Args {
     @Option(name = "--project-id", aliases = "-p", required = true, usage = "Your GCP project ID")
     String projectId;
-    @Argument(metaVar = "ringId", required = true, index = 0, usage = "The ring id")
-    String ringId;
-    @Argument(metaVar = "keyId", required = true, index = 1, usage = "The key id")
-    String keyId;
-    @Argument(metaVar = "inFile", required = true, index = 2, usage = "The source file")
+    @Argument(metaVar = "locationId", required = true, index = 0, usage = "The key location")
+    String locationId;
+    @Argument(metaVar = "keyRingId", required = true, index = 1, usage = "The key ring id")
+    String keyRingId;
+    @Argument(metaVar = "cryptoKeyId", required = true, index = 2, usage = "The crypto key id")
+    String cryptoKeyId;
+    @Argument(metaVar = "inFile", required = true, index = 3, usage = "The source file")
     String inFile;
-    @Argument(metaVar = "outFile", required = true, index = 3, usage = "The destination file")
+    @Argument(metaVar = "outFile", required = true, index = 4, usage = "The destination file")
     String outFile;
   }
 
   public static class EncryptCommand extends Args implements Command {
     public void run() throws IOException {
       byte[] encrypted = CryptFile.encrypt(
-          projectId, ringId, keyId,
-          Files.readAllBytes(Paths.get(inFile)));
+          projectId, locationId, keyRingId, cryptoKeyId, Files.readAllBytes(Paths.get(inFile)));
 
-      FileOutputStream stream = new FileOutputStream(outFile);
-      try {
+      try (FileOutputStream stream = new FileOutputStream(outFile)) {
         stream.write(encrypted);
-      } finally {
-        stream.close();
       }
     }
   }
@@ -69,14 +68,10 @@ class CryptFileCommands {
   public static class DecryptCommand extends Args implements Command {
     public void run() throws IOException {
       byte[] decrypted = CryptFile.decrypt(
-          projectId, ringId, keyId,
-          Files.readAllBytes(Paths.get(inFile)));
+          projectId, locationId, keyRingId, cryptoKeyId, Files.readAllBytes(Paths.get(inFile)));
 
-      FileOutputStream stream = new FileOutputStream(outFile);
-      try {
+      try (FileOutputStream stream = new FileOutputStream(outFile)) {
         stream.write(decrypted);
-      } finally {
-        stream.close();
       }
     }
   }

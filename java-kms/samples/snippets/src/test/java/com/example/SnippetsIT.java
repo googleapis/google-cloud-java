@@ -41,6 +41,7 @@ import java.util.regex.Pattern;
 public class SnippetsIT {
 
   static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  static final String LOCATION_ID = "global";
   static final String KEY_RING_ID = "test-snippets-key-ring";
   static final String CRYPTO_KEY_ID = "test-snippets-crypto-key";
   static final String TEST_USER = "serviceAccount:"
@@ -63,7 +64,7 @@ public class SnippetsIT {
     // Since you can't delete keyrings & cryptokeys atm, these tests assume they already exist.
     // Use the snippets functions to create them.
     try {
-      Snippets.createKeyRing(PROJECT_ID, KEY_RING_ID);
+      Snippets.createKeyRing(PROJECT_ID,LOCATION_ID, KEY_RING_ID);
 
       // Since there's no way to delete keyrings atm, have two branches - one for the first time the
       // test is run, one for after the key already exists
@@ -76,7 +77,7 @@ public class SnippetsIT {
     }
 
     try {
-      Snippets.createCryptoKey(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+      Snippets.createCryptoKey(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 
       // Since there's no way to delete keyrings atm, have two branches - one for the first time the
       // test is run, one for after the key already exists
@@ -102,7 +103,7 @@ public class SnippetsIT {
 
     String stdout;
     try {
-      Snippets.listCryptoKeyVersions(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+      Snippets.listCryptoKeyVersions(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
       stdout = bout.toString();
     } finally {
       System.setOut(realOut);
@@ -120,7 +121,7 @@ public class SnippetsIT {
       }
 
       String version = matcher.group(1);
-      Snippets.destroyCryptoKeyVersion(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID, version);
+      Snippets.destroyCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, version);
     }
   }
 
@@ -130,7 +131,7 @@ public class SnippetsIT {
     out = new PrintStream(bout);
     System.setOut(out);
 
-    Snippets.createCryptoKeyVersion(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+    Snippets.createCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
   }
 
   @After
@@ -140,14 +141,14 @@ public class SnippetsIT {
 
   @Test
   public void listKeyRings_printsKeyRing() throws Exception {
-    Snippets.listKeyRings(PROJECT_ID);
+    Snippets.listKeyRings(PROJECT_ID, LOCATION_ID);
 
     assertThat(bout.toString()).contains(String.format("keyRings/%s", KEY_RING_ID));
   }
 
   @Test
   public void listCryptoKeys_printsCryptoKeys() throws Exception {
-    Snippets.listCryptoKeys(PROJECT_ID, KEY_RING_ID);
+    Snippets.listCryptoKeys(PROJECT_ID, LOCATION_ID, KEY_RING_ID);
 
     assertThat(bout.toString()).contains(
         String.format("keyRings/%s/cryptoKeys/%s", KEY_RING_ID, CRYPTO_KEY_ID));
@@ -155,7 +156,7 @@ public class SnippetsIT {
 
   @Test
   public void listCryptoKeyVersions_printsVersions() throws Exception {
-    Snippets.listCryptoKeyVersions(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+    Snippets.listCryptoKeyVersions(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 
     assertThat(bout.toString()).containsMatch(String.format(
         "keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/\\d+\",\"state\":\"ENABLED\"",
@@ -164,14 +165,14 @@ public class SnippetsIT {
 
   @Test
   public void disableCryptoKeyVersion_disables() throws Exception {
-    Snippets.listCryptoKeyVersions(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+    Snippets.listCryptoKeyVersions(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 
     Matcher matcher = Pattern.compile(".*cryptoKeyVersions/(\\d+)\",\"state\":\"ENABLED\".*",
         Pattern.DOTALL | Pattern.MULTILINE).matcher(bout.toString().trim());
     assertTrue(matcher.matches());
     String version = matcher.group(1);
 
-    Snippets.disableCryptoKeyVersion(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID, version);
+    Snippets.disableCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, version);
     assertThat(bout.toString()).containsMatch(String.format(
         "keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s\",\"state\":\"DISABLED\"",
         KEY_RING_ID, CRYPTO_KEY_ID, version));
@@ -179,7 +180,7 @@ public class SnippetsIT {
 
   @Test
   public void destroyCryptoKeyVersion_destroys() throws Exception {
-    Snippets.listCryptoKeyVersions(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+    Snippets.listCryptoKeyVersions(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 
     Matcher matcher = Pattern.compile(".*cryptoKeyVersions/(\\d+)\",\"state\":\"ENABLED\".*",
         Pattern.DOTALL | Pattern.MULTILINE).matcher(bout.toString().trim());
@@ -187,7 +188,7 @@ public class SnippetsIT {
 
     String version = matcher.group(1);
 
-    Snippets.destroyCryptoKeyVersion(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID, version);
+    Snippets.destroyCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, version);
 
     assertThat(bout.toString()).containsMatch(String.format(
         "keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s\",\"state\":\"DESTROY_SCHEDULED\"",
@@ -197,16 +198,16 @@ public class SnippetsIT {
   @Test
   public void addAndRemoveMemberToCryptoKeyPolicy_addsDisplaysAndRemoves() throws Exception {
     // Make sure the policy doesn't already have our test user
-    Snippets.getCryptoKeyPolicy(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+    Snippets.getCryptoKeyPolicy(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 
     assertThat(bout.toString()).doesNotContainMatch(TEST_USER);
 
     try {
       // Add the test user, and make sure the policy has it
       Snippets.addMemberToCryptoKeyPolicy(
-          PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID, TEST_USER, TEST_ROLE);
+          PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, TEST_USER, TEST_ROLE);
 
-      Snippets.getCryptoKeyPolicy(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+      Snippets.getCryptoKeyPolicy(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 
       assertThat(bout.toString()).containsMatch(TEST_USER);
 
@@ -214,13 +215,13 @@ public class SnippetsIT {
       bout.reset();
     } finally {
       Snippets.removeMemberFromCryptoKeyPolicy(
-          PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID, TEST_USER, TEST_ROLE);
+          PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, TEST_USER, TEST_ROLE);
     }
 
     assertThat(bout.toString()).doesNotContainMatch("Response:.*" + TEST_USER);
 
     bout.reset();
-    Snippets.getCryptoKeyPolicy(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+    Snippets.getCryptoKeyPolicy(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 
     assertThat(bout.toString()).doesNotContainMatch(TEST_USER);
   }
@@ -228,16 +229,16 @@ public class SnippetsIT {
   @Test
   public void addAndRemoveMemberToKeyRingPolicy_addsDisplaysAndRemoves() throws Exception {
     // Make sure the policy doesn't already have our test user
-    Snippets.getKeyRingPolicy(PROJECT_ID, KEY_RING_ID);
+    Snippets.getKeyRingPolicy(PROJECT_ID, LOCATION_ID, KEY_RING_ID);
 
     assertThat(bout.toString()).doesNotContainMatch(TEST_USER);
 
     try {
       // Add the test user, and make sure the policy has it
       Snippets.addMemberToKeyRingPolicy(
-          PROJECT_ID, KEY_RING_ID, TEST_USER, TEST_ROLE);
+          PROJECT_ID, LOCATION_ID, KEY_RING_ID, TEST_USER, TEST_ROLE);
 
-      Snippets.getKeyRingPolicy(PROJECT_ID, KEY_RING_ID);
+      Snippets.getKeyRingPolicy(PROJECT_ID, LOCATION_ID, KEY_RING_ID);
 
       assertThat(bout.toString()).containsMatch(TEST_USER);
 
@@ -245,13 +246,13 @@ public class SnippetsIT {
       bout.reset();
     } finally {
       Snippets.removeMemberFromKeyRingPolicy(
-          PROJECT_ID, KEY_RING_ID, TEST_USER, TEST_ROLE);
+          PROJECT_ID, LOCATION_ID, KEY_RING_ID, TEST_USER, TEST_ROLE);
     }
 
     assertThat(bout.toString()).doesNotContainMatch("Response:.*" + TEST_USER);
 
     bout.reset();
-    Snippets.getKeyRingPolicy(PROJECT_ID, KEY_RING_ID);
+    Snippets.getKeyRingPolicy(PROJECT_ID, LOCATION_ID, KEY_RING_ID);
 
     assertThat(bout.toString()).doesNotContainMatch(TEST_USER);
   }
@@ -259,7 +260,7 @@ public class SnippetsIT {
   @Test
   public void encryptDecrypt_encryptsAndDecrypts() throws Exception {
     // Get an enabled crypto key version, since the primary version is likely disabled
-    Snippets.listCryptoKeyVersions(PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+    Snippets.listCryptoKeyVersions(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
     Matcher matcher = Pattern.compile(".*cryptoKeyVersions/(\\d+)\",\"state\":\"ENABLED\".*",
         Pattern.DOTALL | Pattern.MULTILINE).matcher(bout.toString().trim());
     assertTrue(matcher.matches());
@@ -271,7 +272,7 @@ public class SnippetsIT {
     assertThat(new String(encrypted)).isNotEqualTo(ENCRYPT_STRING);
 
     byte[] decrypted = CryptFile.decrypt(
-        PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID, encrypted);
+        PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, encrypted);
 
     assertThat(new String(decrypted)).isEqualTo(ENCRYPT_STRING);
   }

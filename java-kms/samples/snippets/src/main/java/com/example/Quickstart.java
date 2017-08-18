@@ -57,7 +57,7 @@ public class Quickstart {
   public static void main(String... args) throws Exception {
     String projectId = args[0];
     // The location of the Key Rings
-    String location = "global";
+    String location = args[1];
 
     // Create the Cloud KMS client.
     CloudKMS kms = createAuthorizedClient();
@@ -80,7 +80,7 @@ public class Quickstart {
         System.out.println(keyRing.getName());
       }
     } else {
-      System.out.println("No keyrings defined.");
+      System.out.println("No key rings defined.");
     }
   }
 }
