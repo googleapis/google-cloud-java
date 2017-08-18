@@ -18,7 +18,6 @@ package com.google.cloud.storage;
 
 import static com.google.cloud.storage.testing.ApiPolicyMatcher.eqApiPolicy;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.easymock.EasyMock.eq;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -606,7 +605,7 @@ public class StorageImplTest {
   }
 
   @Test
-  public void testCreateBlobRetryableException() throws IOException {
+  public void testCreateBlobFromStreamRetryableException() throws IOException {
     Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
     ByteArrayInputStream fileStream = new ByteArrayInputStream(BLOB_CONTENT);
     BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
@@ -631,7 +630,7 @@ public class StorageImplTest {
     // shouldn't retry.
     thrown.expect(StorageException.class);
     thrown.expectMessage("internalError");
-    storage.create(BLOB_INFO1, fileStream);
+    storage.create(infoWithHashes, fileStream);
   }
 
   @Test
@@ -2128,7 +2127,7 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
     EasyMock.expect(
         storageRpcMock.setIamPolicy(
-            eq(BUCKET_NAME1),
+            EasyMock.eq(BUCKET_NAME1),
             eqApiPolicy(preCommitApiPolicy)))
         .andReturn(postCommitApiPolicy);
     EasyMock.replay(storageRpcMock);
