@@ -1,7 +1,7 @@
 Google Cloud Java Client for Data Loss Prevention
 ======================================
 
-Java idiomatic client for [Google Cloud Data Loss Prevention](https://cloud.google.com/dlp/).
+Java idiomatic client for [Google Cloud Data Loss Prevention][cloud-dlp].
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,8 +9,8 @@ Java idiomatic client for [Google Cloud Data Loss Prevention](https://cloud.goog
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [Client Library Documentation][dlp-client-lib-docs]
+- [Product Documentation][dlp-product-docs]
+- [Client Library Documentation][dlp-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -43,7 +43,7 @@ in the base directory's README.
 About Google Cloud Data Loss Prevention
 ----------------------------
 
-Google [Cloud Data Loss Prevention API][cloud-dlp-docs]
+Google [Cloud Data Loss Prevention API][cloud-dlp]
 provides programmatic access to a powerful detection engine for personally identifiable information and other privacy-sensitive data in unstructured data streams, like text blocks and images.
 
 See the [Data Loss Prevention client library docs][dlp-client-lib-docs]
@@ -98,5 +98,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[cloud-dlp-docs]: https://cloud.google.com/dlp/docs/
-[dlp-client-lib-docs]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/dlp/v2beta1/package-summary.html
+[cloud-dlp]: https://cloud.google.com/dlp/
+[dlp-product-docs]: https://cloud.google.com/dlp/docs/
+[dlp-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/dlp/v2beta1/package-summary.html

@@ -1,20 +1,15 @@
 # Google Cloud Java Client for Spanner
 
-Java idiomatic client for [Cloud
-Spanner](https://cloud.google.com/spanner).
+Java idiomatic client for [Cloud Spanner][cloud-spanner].
 
-[![Build
-Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
-[![Coverage
-Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
+[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner.svg)
-[![Codacy
-Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency
-Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--   [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--   [Client Library Documentation][spanner-client-lib-docs]
+- [Product Documentation][spanner-product-docs]
+- [Client Library Documentation][spanner-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally make
 > backwards-incompatible changes.
@@ -146,4 +141,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-cloud-spanner
 [cloud-platform]: https://cloud.google.com/
 [cloud-spanner]: https://cloud.google.com/spanner/
+[spanner-product-docs]: https://cloud.google.com/spanner/docs/
 [spanner-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/spanner/package-summary.html

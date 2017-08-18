@@ -9,8 +9,8 @@ Java idiomatic client for [Stackdriver Logging][stackdriver-logging].
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [Client Library Documentation][logging-client-lib-docs]
+- [Product Documentation][logging-product-docs]
+- [Client Library Documentation][logging-client-lib-docs]
 
 Quickstart
 ----------
@@ -227,6 +227,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-logging
 
 
-[stackdriver-logging]: https://cloud.google.com/logging
+[stackdriver-logging]: https://cloud.google.com/logging/
 [stackdriver-logging-quickstart]: https://cloud.google.com/logging/docs/quickstart-sdk
+[logging-product-docs]: https://cloud.google.com/logging/docs/
 [logging-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/logging/package-summary.html

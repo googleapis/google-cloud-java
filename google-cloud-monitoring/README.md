@@ -1,7 +1,7 @@
 Google Cloud Java Client for Stackdriver Monitoring
 ======================================
 
-Java idiomatic client for [Stackdriver Monitoring](https://cloud.google.com/monitoring/).
+Java idiomatic client for [Stackdriver Monitoring][stackdriver-monitoring].
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,8 +9,8 @@ Java idiomatic client for [Stackdriver Monitoring](https://cloud.google.com/moni
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [Client Library Documentation][monitoring-client-lib-docs]
+- [Product Documentation][monitoring-product-docs]
+- [Client Library Documentation][monitoring-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -42,7 +42,7 @@ See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-jav
 About Stackdriver Monitoring
 ----------------------------
 
-Stackdriver Monitoring provides visibility into the performance, uptime, and overall health of cloud-powered applications. Stackdriver collects metrics, events, and metadata from Google Cloud Platform, Amazon Web Services, hosted uptime probes, application instrumentation, and a variety of common application components including Cassandra, Nginx, Apache Web Server, Elasticsearch, and many others.
+[Stackdriver Monitoring][stackdriver-monitoring] provides visibility into the performance, uptime, and overall health of cloud-powered applications. Stackdriver collects metrics, events, and metadata from Google Cloud Platform, Amazon Web Services, hosted uptime probes, application instrumentation, and a variety of common application components including Cassandra, Nginx, Apache Web Server, Elasticsearch, and many others.
 
 See the [Monitoring client library docs][monitoring-client-lib-docs] to learn how to use this client library.
 
@@ -94,4 +94,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[monitoring-client-lib-docs]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/monitoring/v3/package-summary.html
+[stackdriver-monitoring]: https://cloud.google.com/monitoring/
+[monitoring-product-docs]: https://cloud.google.com/monitoring/docs/
+[monitoring-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/monitoring/v3/package-summary.html

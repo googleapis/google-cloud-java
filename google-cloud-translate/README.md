@@ -1,7 +1,7 @@
 Google Cloud Java Client for Translation
 ====================================
 
-Java idiomatic client for [Google Translation](https://cloud.google.com/translate/).
+Java idiomatic client for [Google Translation][cloud-translate].
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,8 +9,8 @@ Java idiomatic client for [Google Translation](https://cloud.google.com/translat
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [Client Library Documentation][translate-client-lib-docs]
+- [Product Documentation][translate-product-docs]
+- [Client Library Documentation][translate-client-lib-docs]
 
 Quickstart
 ----------
@@ -46,13 +46,13 @@ the [Translation quickstart](https://cloud.google.com/translate/v2/quickstart).
 About Google Translation
 --------------------
 
-[Google Translation][google-translate] provides a simple programmatic interface for translating an
+[Google Translation][cloud-translate] provides a simple programmatic interface for translating an
 arbitrary string into any supported language. Translation is highly responsive, so websites and
 applications can integrate with Translation API for fast, dynamic translation of source text from the
 source language to a target language (e.g., French to English). Language detection is also
 available in cases where the source language is unknown.
 
-See the [Translation quickstart](https://cloud.google.com/translate/v2/quickstart) for more details
+See the [Translation quickstart][cloud-translate-quickstart] for more details
 on how to activate Google Translation for your project.
 
 See the [Translation client library docs][translate-client-lib-docs] to learn how to interact with
@@ -192,6 +192,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-translate
 [cloud-platform]: https://cloud.google.com/
 
-[google-translate]: https://cloud.google.com/translate/
-[google-translate-docs]: https://cloud.google.com/translate/docs/
+[cloud-translate]: https://cloud.google.com/translate/
+[cloud-translate-quickstart]: https://cloud.google.com/translate/v2/quickstart
+[translate-product-docs]: https://cloud.google.com/translate/docs/
 [translate-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/translate/package-summary.html

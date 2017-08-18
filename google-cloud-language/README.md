@@ -1,7 +1,7 @@
 Google Cloud Java Client for Natural Language
 ======================================
 
-Java idiomatic client for [Google Cloud Natural Language](https://cloud.google.com/natural-language/).
+Java idiomatic client for [Google Cloud Natural Language][cloud-language].
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,8 +9,8 @@ Java idiomatic client for [Google Cloud Natural Language](https://cloud.google.c
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [Client Library Documentation][language-client-lib-docs]
+- [Product Documentation][language-product-docs]
+- [Client Library Documentation][language-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -42,7 +42,7 @@ See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-jav
 About Google Cloud Natural Language
 ----------------------------
 
-Google [Cloud Natural Language API][cloud-language-docs] provides natural language understanding technologies to developers, including sentiment analysis, entity analysis, and syntax analysis. This API is part of the larger Cloud Machine Learning API family.
+Google [Cloud Natural Language API][cloud-language] provides natural language understanding technologies to developers, including sentiment analysis, entity analysis, and syntax analysis. This API is part of the larger Cloud Machine Learning API family.
 
 See the [Natural Language client library docs][language-client-lib-docs] to learn how to use this Cloud Natural Language API Client Library.
 
@@ -127,5 +127,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[cloud-language-docs]: https://cloud.google.com/natural-language/docs
+[cloud-language]: https://cloud.google.com/natural-language/
+[language-product-docs]: https://cloud.google.com/natural-language/docs/
 [language-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/language/v1beta2/package-summary.html
