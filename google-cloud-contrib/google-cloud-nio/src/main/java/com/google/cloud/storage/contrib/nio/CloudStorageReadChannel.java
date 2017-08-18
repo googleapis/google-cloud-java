@@ -120,7 +120,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
             // but here at this higher level we can retry them.
             reopens++;
             if (reopens > maxChannelReopens) {
-              throw new StorageException(exs.getCode(), "All reopens failed", exs);
+              throw new StorageException(exs.getCode(), "All " + maxChannelReopens + " reopens failed", exs);
             }
             sleepForAttempt(reopens);
             innerOpen();
@@ -134,7 +134,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
               // "While in principle you should be able to retry, we already did that
               // for you a few times and it still didn't work so we wouldn't recommend
               // further retries."
-              throw new StorageException(exs.getCode(), "All retries failed", exs);
+              throw new StorageException(exs.getCode(), "All " + maxRetries + " retries failed", exs);
             }
             sleepForAttempt(retries);
             continue;
