@@ -1,7 +1,7 @@
 Google Cloud Java Client for Speech
 ======================================
 
-Java idiomatic client for [Google Cloud Speech](https://cloud.google.com/speech/).
+Java idiomatic client for [Google Cloud Speech][cloud-speech].
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,8 +9,8 @@ Java idiomatic client for [Google Cloud Speech](https://cloud.google.com/speech/
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [Client Library Documentation][speech-client-lib-docs]
+- [Product Documentation][speech-product-docs]
+- [Client Library Documentation][speech-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -42,7 +42,7 @@ See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-jav
 About Google Cloud Speech
 ----------------------------
 
-Google [Cloud Speech API][cloud-speech-docs] enables easy integration of Google speech recognition technologies into developer applications. Send audio and receive a text transcription from the Cloud Speech API service.
+Google [Cloud Speech API][cloud-speech] enables easy integration of Google speech recognition technologies into developer applications. Send audio and receive a text transcription from the Cloud Speech API service.
 
 See the [Speech client library docs][speech-client-lib-docs] to learn how to use this Cloud Speech API Client Library.
 
@@ -131,5 +131,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[cloud-speech-docs]: https://cloud.google.com/speech/docs
+[cloud-speech]: https://cloud.google.com/speech/
+[speech-product-docs]: https://cloud.google.com/speech/docs
 [speech-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/speech/v1beta1/package-summary.html
