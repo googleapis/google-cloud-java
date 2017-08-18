@@ -51,6 +51,7 @@ import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -121,7 +122,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         .setMd5(EMPTY_BYTE_ARRAY_MD5)
         .setCrc32c(EMPTY_BYTE_ARRAY_CRC32C)
         .build();
-    return create(updatedInfo, new ByteArrayInputStream(EMPTY_BYTE_ARRAY), options);
+    return internalCreate(updatedInfo, EMPTY_BYTE_ARRAY, options);
   }
 
   @Override
@@ -132,24 +133,29 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         .setCrc32c(BaseEncoding.base64().encode(
             Ints.toByteArray(Hashing.crc32c().hashBytes(content).asInt())))
         .build();
-    return create(updatedInfo, new ByteArrayInputStream(content), options);
+    return internalCreate(updatedInfo, content, options);
   }
 
   @Override
+  @Deprecated
   public Blob create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options) {
     Tuple<BlobInfo, BlobTargetOption[]> targetOptions = BlobTargetOption.convert(blobInfo, options);
-    return create(targetOptions.x(), content, targetOptions.y());
+    StorageObject blobPb = targetOptions.x().toPb();
+    Map<StorageRpc.Option, ?> optionsMap = optionMap(targetOptions.x(), targetOptions.y());
+    InputStream inputStreamParam = firstNonNull(content, new ByteArrayInputStream(EMPTY_BYTE_ARRAY));
+    // retries are not safe when the input is an InputStream, so we can't retry.
+    return Blob.fromPb(this, storageRpc.create(blobPb, inputStreamParam, optionsMap));
   }
 
-  private Blob create(BlobInfo info, final InputStream content, BlobTargetOption... options) {
+  private Blob internalCreate(BlobInfo info, final byte[] content, BlobTargetOption... options) {
+    Preconditions.checkNotNull(content);
     final StorageObject blobPb = info.toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(info, options);
     try {
       return Blob.fromPb(this, runWithRetries(new Callable<StorageObject>() {
         @Override
         public StorageObject call() {
-          return storageRpc.create(blobPb,
-              firstNonNull(content, new ByteArrayInputStream(EMPTY_BYTE_ARRAY)), optionsMap);
+          return storageRpc.create(blobPb, new ByteArrayInputStream(content), optionsMap);
         }
       }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
