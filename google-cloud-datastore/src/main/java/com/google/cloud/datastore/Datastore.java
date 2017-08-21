@@ -128,7 +128,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   /**
    * {@inheritDoc}
    *
-   * <p>If an entity for {@code entity.getKey()} does not exists, {@code entity} is inserted.
+   * <p>If an entity for {@code entity.getKey()} does not exist, {@code entity} is inserted.
    * Otherwise, a {@link DatastoreException} is thrown with {@link DatastoreException#getReason()}
    * equal to {@code "ALREADY_EXISTS"}.
    *
