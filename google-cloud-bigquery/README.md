@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>0.21.1-beta</version>
+  <version>0.22.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquery:0.21.1-beta'
+compile 'com.google.cloud:google-cloud-bigquery:0.22.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "0.21.1-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "0.22.0-beta"
 ```
 
 Example Application

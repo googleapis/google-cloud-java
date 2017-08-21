@@ -49,16 +49,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.21.1-alpha</version>
+  <version>0.22.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.21.1-alpha'
+compile 'com.google.cloud:google-cloud:0.22.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.21.1-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.22.0-alpha"
 ```
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
@@ -74,7 +74,7 @@ If you are using Maven, add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pom</artifactId>
-      <version>0.21.1-alpha</version>
+      <version>0.22.0-alpha</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -92,7 +92,7 @@ Then add the following in your build.gradle file
 ```Groovy
 dependencyManagement {
   imports {
-    mavenBom 'com.google.cloud:google-cloud-pom:0.21.1-alpha'
+    mavenBom 'com.google.cloud:google-cloud-pom:0.22.0-alpha'
   }
 }
 ```
