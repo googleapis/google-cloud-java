@@ -148,14 +148,9 @@ public abstract class BaseSystemTest {
         .setVersionFormat(SinkInfo.VersionFormat.V2)
         .build();
     assertNull(logging().getSink(name));
-    Sink sink = logging().update(sinkInfo);
-    assertEquals(name, sink.getName());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
-    assertEquals("severity>=ERROR", sink.getFilter());
-    DatasetDestination datasetDestination = sink.getDestination();
-    assertEquals(logging().getOptions().getProjectId(), datasetDestination.getProject());
-    assertEquals("dataset", datasetDestination.getDataset());
-    assertTrue(logging().deleteSink(name));
+    thrown.expect(LoggingException.class);
+    thrown.expectMessage("NOT_FOUND");
+    logging().update(sinkInfo);
   }
 
   @Test
@@ -166,14 +161,9 @@ public abstract class BaseSystemTest {
         .setVersionFormat(SinkInfo.VersionFormat.V2)
         .build();
     assertNull(logging().getSinkAsync(name).get());
-    Sink sink = logging().updateAsync(sinkInfo).get();
-    assertEquals(name, sink.getName());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
-    assertEquals("severity>=ERROR", sink.getFilter());
-    DatasetDestination datasetDestination = sink.getDestination();
-    assertEquals(logging().getOptions().getProjectId(), datasetDestination.getProject());
-    assertEquals("dataset", datasetDestination.getDataset());
-    assertTrue(logging().deleteSinkAsync(name).get());
+    thrown.expect(ExecutionException.class);
+    thrown.expectMessage("NOT_FOUND");
+    logging().updateAsync(sinkInfo).get();
   }
 
   @Test
