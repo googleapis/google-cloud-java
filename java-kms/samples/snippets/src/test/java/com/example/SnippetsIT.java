@@ -259,21 +259,15 @@ public class SnippetsIT {
 
   @Test
   public void encryptDecrypt_encryptsAndDecrypts() throws Exception {
-    // Get an enabled crypto key version, since the primary version is likely disabled
-    Snippets.listCryptoKeyVersions(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
-    Matcher matcher = Pattern.compile(".*cryptoKeyVersions/(\\d+)\",\"state\":\"ENABLED\".*",
-        Pattern.DOTALL | Pattern.MULTILINE).matcher(bout.toString().trim());
-    assertTrue(matcher.matches());
-    String version = matcher.group(1);
+    // Encrypt ENCRYPT_STRING with the current primary version.
+    byte[] ciphertext = CryptFile.encrypt(
+        PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, ENCRYPT_STRING.getBytes());
 
-    byte[] encrypted = CryptFile.encrypt(
-        PROJECT_ID, KEY_RING_ID, CRYPTO_KEY_ID, version, ENCRYPT_STRING.getBytes());
+    assertThat(new String(ciphertext)).isNotEqualTo(ENCRYPT_STRING);
 
-    assertThat(new String(encrypted)).isNotEqualTo(ENCRYPT_STRING);
+    byte[] plaintext = CryptFile.decrypt(
+        PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, ciphertext);
 
-    byte[] decrypted = CryptFile.decrypt(
-        PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, encrypted);
-
-    assertThat(new String(decrypted)).isEqualTo(ENCRYPT_STRING);
+    assertThat(new String(plaintext)).isEqualTo(ENCRYPT_STRING);
   }
 }
