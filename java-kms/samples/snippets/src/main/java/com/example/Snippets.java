@@ -20,6 +20,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.cloudkms.v1.CloudKMS;
+import com.google.api.services.cloudkms.v1.CloudKMS.Projects.Locations.KeyRings.CryptoKeys.UpdatePrimaryVersion;
 import com.google.api.services.cloudkms.v1.CloudKMSScopes;
 import com.google.api.services.cloudkms.v1.model.Binding;
 import com.google.api.services.cloudkms.v1.model.CryptoKey;
@@ -31,6 +32,7 @@ import com.google.api.services.cloudkms.v1.model.ListCryptoKeysResponse;
 import com.google.api.services.cloudkms.v1.model.ListKeyRingsResponse;
 import com.google.api.services.cloudkms.v1.model.Policy;
 import com.google.api.services.cloudkms.v1.model.SetIamPolicyRequest;
+import com.google.api.services.cloudkms.v1.model.UpdateCryptoKeyPrimaryVersionRequest;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
@@ -523,6 +525,27 @@ public class Snippets {
     for (CryptoKeyVersion version : versions.getCryptoKeyVersions()) {
       System.out.println(version);
     }
+  }
+
+  /**
+   * Sets a version as the primary version for a crypto key.
+   */
+  public static void setPrimaryVersion(String projectId, String locationId, String keyRingId,
+      String cryptoKeyId, String versionId) throws IOException {
+    // Create the Cloud KMS client.
+    CloudKMS kms = createAuthorizedClient();
+
+    // Resource name of the key version.
+    String resourceName = String
+        .format("projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
+            projectId, locationId, keyRingId, cryptoKeyId);
+
+    CryptoKey key = kms.projects().locations().keyRings().cryptoKeys()
+        .updatePrimaryVersion(resourceName,
+            new UpdateCryptoKeyPrimaryVersionRequest().setCryptoKeyVersionId(versionId)).execute();
+
+    System.out.println(key);
+
   }
 
 

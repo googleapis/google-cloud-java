@@ -19,7 +19,11 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
-
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -27,11 +31,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Integration (system) tests for {@link Snippets}.
@@ -43,7 +42,7 @@ public class SnippetsIT {
   static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   static final String LOCATION_ID = "global";
   static final String KEY_RING_ID = "test-snippets-key-ring";
-  static final String CRYPTO_KEY_ID = "test-snippets-crypto-key";
+  static final String CRYPTO_KEY_ID = UUID.randomUUID().toString();
   static final String TEST_USER = "serviceAccount:"
       + "131304031188-compute@developer.gserviceaccount.com";
   static final String TEST_ROLE = "roles/viewer";
@@ -64,7 +63,7 @@ public class SnippetsIT {
     // Since you can't delete keyrings & cryptokeys atm, these tests assume they already exist.
     // Use the snippets functions to create them.
     try {
-      Snippets.createKeyRing(PROJECT_ID,LOCATION_ID, KEY_RING_ID);
+      Snippets.createKeyRing(PROJECT_ID, LOCATION_ID, KEY_RING_ID);
 
       // Since there's no way to delete keyrings atm, have two branches - one for the first time the
       // test is run, one for after the key already exists
@@ -90,6 +89,17 @@ public class SnippetsIT {
       assertThat(error.getMessage()).contains(String.format(
           "keyRings/%s/cryptoKeys/%s", KEY_RING_ID, CRYPTO_KEY_ID));
     }
+
+    // Create a CryptoKeyVersion and set it as primary.
+    Snippets.createCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+    Matcher matcher = Pattern.compile(
+        ".*cryptoKeyVersions/(\\d+)\",\"state\":\"ENABLED\".*",
+        Pattern.DOTALL | Pattern.MULTILINE).matcher(bout.toString().trim());
+    assertTrue(matcher.matches());
+
+    String primaryVersion = matcher.group(1);
+
+    Snippets.setPrimaryVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, primaryVersion);
   }
 
   /**
@@ -121,7 +131,8 @@ public class SnippetsIT {
       }
 
       String version = matcher.group(1);
-      Snippets.destroyCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, version);
+      Snippets
+          .destroyCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, version);
     }
   }
 
@@ -130,8 +141,6 @@ public class SnippetsIT {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
-
-    Snippets.createCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
   }
 
   @After
@@ -165,7 +174,7 @@ public class SnippetsIT {
 
   @Test
   public void disableCryptoKeyVersion_disables() throws Exception {
-    Snippets.listCryptoKeyVersions(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+    Snippets.createCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 
     Matcher matcher = Pattern.compile(".*cryptoKeyVersions/(\\d+)\",\"state\":\"ENABLED\".*",
         Pattern.DOTALL | Pattern.MULTILINE).matcher(bout.toString().trim());
@@ -180,7 +189,7 @@ public class SnippetsIT {
 
   @Test
   public void destroyCryptoKeyVersion_destroys() throws Exception {
-    Snippets.listCryptoKeyVersions(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+    Snippets.createCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 
     Matcher matcher = Pattern.compile(".*cryptoKeyVersions/(\\d+)\",\"state\":\"ENABLED\".*",
         Pattern.DOTALL | Pattern.MULTILINE).matcher(bout.toString().trim());
@@ -192,6 +201,24 @@ public class SnippetsIT {
 
     assertThat(bout.toString()).containsMatch(String.format(
         "keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s\",\"state\":\"DESTROY_SCHEDULED\"",
+        KEY_RING_ID, CRYPTO_KEY_ID, version));
+  }
+
+  @Test
+  public void setPrimaryVersion_createKeyAndSetPrimaryVersion() throws Exception {
+    // We can't test that setPrimaryVersion actually took effect via a list call because of
+    // caching. So we test that the call was successful.
+    Snippets.createCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+
+    Matcher matcher = Pattern.compile(".*cryptoKeyVersions/(\\d+)\",\"state\":\"ENABLED\".*",
+        Pattern.DOTALL | Pattern.MULTILINE).matcher(bout.toString().trim());
+    assertTrue(matcher.matches());
+
+    String version = matcher.group(1);
+
+    Snippets.setPrimaryVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, version);
+    assertThat(bout.toString()).containsMatch(String.format(
+        "primary.*keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s",
         KEY_RING_ID, CRYPTO_KEY_ID, version));
   }
 
