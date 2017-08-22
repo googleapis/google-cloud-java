@@ -208,7 +208,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         backoffSleep(context, backOff);
       } catch (Exception e) {
         Throwables.throwIfUnchecked(e);
-        throw new RuntimeException(e);
+        throw newSpannerException(ErrorCode.INTERNAL, "Unexpected exception thrown", e);
       }
     }
   }
