@@ -91,11 +91,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of MetricServiceSettings to
  * create(). For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * MetricServiceSettings metricServiceSettings =
  *     MetricServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * MetricServiceClient metricServiceClient =
+ *     MetricServiceClient.create(metricServiceSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * MetricServiceSettings metricServiceSettings =
+ *     MetricServiceSettings.defaultBuilder()
+ *         .setTransportProvider(MetricServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(MetricServiceSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * MetricServiceClient metricServiceClient =
  *     MetricServiceClient.create(metricServiceSettings);

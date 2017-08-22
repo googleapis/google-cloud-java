@@ -75,11 +75,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of
  * VideoIntelligenceServiceSettings to create(). For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings =
  *     VideoIntelligenceServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * VideoIntelligenceServiceClient videoIntelligenceServiceClient =
+ *     VideoIntelligenceServiceClient.create(videoIntelligenceServiceSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings =
+ *     VideoIntelligenceServiceSettings.defaultBuilder()
+ *         .setTransportProvider(VideoIntelligenceServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(VideoIntelligenceServiceSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * VideoIntelligenceServiceClient videoIntelligenceServiceClient =
  *     VideoIntelligenceServiceClient.create(videoIntelligenceServiceSettings);
