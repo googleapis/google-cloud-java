@@ -64,6 +64,7 @@ public final class ResultSets {
     @Override
     public Struct getCurrentRowAsStruct() {
       Preconditions.checkState(!closed, "ResultSet is closed");
+      Preconditions.checkState(index >= 0, "Must be preceded by a next() call");
       Preconditions.checkElementIndex(index, rows.size(), "All rows have been yielded");
       return rows.get(index);
     }
