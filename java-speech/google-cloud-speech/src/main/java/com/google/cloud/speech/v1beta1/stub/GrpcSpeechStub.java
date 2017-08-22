@@ -19,9 +19,9 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.StreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeMetadata;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
@@ -64,9 +64,9 @@ public class GrpcSpeechStub extends SpeechStub {
                   io.grpc.protobuf.ProtoUtils.marshaller(
                       AsyncRecognizeRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance())));
-  private static final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
+  private static final BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       directStreamingRecognizeCallable =
-          GrpcCallableFactory.createDirectStreamingCallable(
+          GrpcCallableFactory.createDirectBidiStreamingCallable(
               io.grpc.MethodDescriptor.create(
                   io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING,
                   "google.cloud.speech.v1beta1.Speech/StreamingRecognize",
@@ -83,7 +83,7 @@ public class GrpcSpeechStub extends SpeechStub {
   private final OperationCallable<
           AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
       asyncRecognizeOperationCallable;
-  private final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
+  private final BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable;
 
   public static final GrpcSpeechStub create(SpeechSettings settings) throws IOException {
@@ -141,7 +141,7 @@ public class GrpcSpeechStub extends SpeechStub {
     return asyncRecognizeCallable;
   }
 
-  public StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
+  public BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable() {
     return streamingRecognizeCallable;
   }
