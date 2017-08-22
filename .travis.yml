@@ -17,7 +17,7 @@ install: mvn install --quiet -Djava.util.logging.config.file=logging.properties 
   -Dgpg.skip=true
 script:
 #- travis_wait 60 utilities/verify.sh
-- mvn verify -DtrimStackTrace=false -fae --quiet -Djava.util.logging.config.file=logging.properties -P release -DskipITs
+- mvn verify -DtrimStackTrace=false -fae --quiet -Djava.util.logging.config.file=logging.properties -P release -DskipITs -Dtest=SessionPoolTest -DfailIfNoTests=false
 after_success:
 - utilities/after_success.sh
 env:
