@@ -22,7 +22,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiStreamObserver;
-import com.google.api.gax.rpc.StreamingCallable;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
@@ -208,7 +208,7 @@ public class SpeechClientTest {
 
     MockStreamObserver<StreamingRecognizeResponse> responseObserver = new MockStreamObserver<>();
 
-    StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
+    BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
         client.streamingRecognizeCallable();
     ApiStreamObserver<StreamingRecognizeRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);
@@ -230,7 +230,7 @@ public class SpeechClientTest {
 
     MockStreamObserver<StreamingRecognizeResponse> responseObserver = new MockStreamObserver<>();
 
-    StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
+    BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
         client.streamingRecognizeCallable();
     ApiStreamObserver<StreamingRecognizeRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);

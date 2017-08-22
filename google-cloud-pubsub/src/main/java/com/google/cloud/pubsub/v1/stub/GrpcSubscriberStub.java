@@ -22,8 +22,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.StreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.pubsub.v1.SubscriptionAdminSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -51,6 +51,7 @@ import com.google.pubsub.v1.Snapshot;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.Subscription;
+import com.google.pubsub.v1.UpdateSnapshotRequest;
 import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -132,9 +133,9 @@ public class GrpcSubscriberStub extends SubscriberStub {
               "google.pubsub.v1.Subscriber/Pull",
               io.grpc.protobuf.ProtoUtils.marshaller(PullRequest.getDefaultInstance()),
               io.grpc.protobuf.ProtoUtils.marshaller(PullResponse.getDefaultInstance())));
-  private static final StreamingCallable<StreamingPullRequest, StreamingPullResponse>
+  private static final BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse>
       directStreamingPullCallable =
-          GrpcCallableFactory.createDirectStreamingCallable(
+          GrpcCallableFactory.createDirectBidiStreamingCallable(
               io.grpc.MethodDescriptor.create(
                   io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING,
                   "google.pubsub.v1.Subscriber/StreamingPull",
@@ -165,6 +166,13 @@ public class GrpcSubscriberStub extends SubscriberStub {
               io.grpc.MethodDescriptor.MethodType.UNARY,
               "google.pubsub.v1.Subscriber/CreateSnapshot",
               io.grpc.protobuf.ProtoUtils.marshaller(CreateSnapshotRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(Snapshot.getDefaultInstance())));
+  private static final UnaryCallable<UpdateSnapshotRequest, Snapshot> directUpdateSnapshotCallable =
+      GrpcCallableFactory.createDirectCallable(
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.pubsub.v1.Subscriber/UpdateSnapshot",
+              io.grpc.protobuf.ProtoUtils.marshaller(UpdateSnapshotRequest.getDefaultInstance()),
               io.grpc.protobuf.ProtoUtils.marshaller(Snapshot.getDefaultInstance())));
   private static final UnaryCallable<DeleteSnapshotRequest, Empty> directDeleteSnapshotCallable =
       GrpcCallableFactory.createDirectCallable(
@@ -218,13 +226,14 @@ public class GrpcSubscriberStub extends SubscriberStub {
   private final UnaryCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable;
   private final UnaryCallable<AcknowledgeRequest, Empty> acknowledgeCallable;
   private final UnaryCallable<PullRequest, PullResponse> pullCallable;
-  private final StreamingCallable<StreamingPullRequest, StreamingPullResponse>
+  private final BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse>
       streamingPullCallable;
   private final UnaryCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable;
   private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable;
   private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
       listSnapshotsPagedCallable;
   private final UnaryCallable<CreateSnapshotRequest, Snapshot> createSnapshotCallable;
+  private final UnaryCallable<UpdateSnapshotRequest, Snapshot> updateSnapshotCallable;
   private final UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable;
   private final UnaryCallable<SeekRequest, SeekResponse> seekCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
@@ -291,6 +300,9 @@ public class GrpcSubscriberStub extends SubscriberStub {
     this.createSnapshotCallable =
         GrpcCallableFactory.create(
             directCreateSnapshotCallable, settings.createSnapshotSettings(), clientContext);
+    this.updateSnapshotCallable =
+        GrpcCallableFactory.create(
+            directUpdateSnapshotCallable, settings.updateSnapshotSettings(), clientContext);
     this.deleteSnapshotCallable =
         GrpcCallableFactory.create(
             directDeleteSnapshotCallable, settings.deleteSnapshotSettings(), clientContext);
@@ -347,7 +359,8 @@ public class GrpcSubscriberStub extends SubscriberStub {
     return pullCallable;
   }
 
-  public StreamingCallable<StreamingPullRequest, StreamingPullResponse> streamingPullCallable() {
+  public BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse>
+      streamingPullCallable() {
     return streamingPullCallable;
   }
 
@@ -366,6 +379,10 @@ public class GrpcSubscriberStub extends SubscriberStub {
 
   public UnaryCallable<CreateSnapshotRequest, Snapshot> createSnapshotCallable() {
     return createSnapshotCallable;
+  }
+
+  public UnaryCallable<UpdateSnapshotRequest, Snapshot> updateSnapshotCallable() {
+    return updateSnapshotCallable;
   }
 
   public UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable() {

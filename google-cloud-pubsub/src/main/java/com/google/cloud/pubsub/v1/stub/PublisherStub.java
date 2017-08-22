@@ -36,6 +36,7 @@ import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.Topic;
+import com.google.pubsub.v1.UpdateTopicRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -50,6 +51,10 @@ public abstract class PublisherStub implements BackgroundResource {
 
   public UnaryCallable<Topic, Topic> createTopicCallable() {
     throw new UnsupportedOperationException("Not implemented: createTopicCallable()");
+  }
+
+  public UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateTopicCallable()");
   }
 
   public UnaryCallable<PublishRequest, PublishResponse> publishCallable() {

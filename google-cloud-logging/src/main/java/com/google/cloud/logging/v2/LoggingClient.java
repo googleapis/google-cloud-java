@@ -85,11 +85,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of LoggingSettings to create().
  * For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * LoggingSettings loggingSettings =
  *     LoggingSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * LoggingClient loggingClient =
+ *     LoggingClient.create(loggingSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * LoggingSettings loggingSettings =
+ *     LoggingSettings.defaultBuilder()
+ *         .setTransportProvider(LoggingSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(LoggingSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * LoggingClient loggingClient =
  *     LoggingClient.create(loggingSettings);

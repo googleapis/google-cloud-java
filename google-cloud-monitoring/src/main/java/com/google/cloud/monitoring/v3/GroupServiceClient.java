@@ -88,11 +88,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of GroupServiceSettings to
  * create(). For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * GroupServiceSettings groupServiceSettings =
  *     GroupServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * GroupServiceClient groupServiceClient =
+ *     GroupServiceClient.create(groupServiceSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * GroupServiceSettings groupServiceSettings =
+ *     GroupServiceSettings.defaultBuilder()
+ *         .setTransportProvider(GroupServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(GroupServiceSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * GroupServiceClient groupServiceClient =
  *     GroupServiceClient.create(groupServiceSettings);

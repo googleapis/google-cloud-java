@@ -17,9 +17,9 @@ package com.google.cloud.speech.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.OperationFuture;
-import com.google.api.gax.rpc.StreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.speech.v1.stub.SpeechStub;
 import com.google.longrunning.Operation;
@@ -81,11 +81,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of SpeechSettings to create().
  * For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * SpeechSettings speechSettings =
  *     SpeechSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * SpeechClient speechClient =
+ *     SpeechClient.create(speechSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * SpeechSettings speechSettings =
+ *     SpeechSettings.defaultBuilder()
+ *         .setTransportProvider(SpeechSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(SpeechSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * SpeechClient speechClient =
  *     SpeechClient.create(speechSettings);
@@ -449,7 +468,7 @@ public class SpeechClient implements BackgroundResource {
    * }
    * </code></pre>
    */
-  public final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
+  public final BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable() {
     return stub.streamingRecognizeCallable();
   }

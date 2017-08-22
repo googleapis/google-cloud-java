@@ -70,11 +70,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of ErrorGroupServiceSettings to
  * create(). For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * ErrorGroupServiceSettings errorGroupServiceSettings =
  *     ErrorGroupServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * ErrorGroupServiceClient errorGroupServiceClient =
+ *     ErrorGroupServiceClient.create(errorGroupServiceSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * ErrorGroupServiceSettings errorGroupServiceSettings =
+ *     ErrorGroupServiceSettings.defaultBuilder()
+ *         .setTransportProvider(ErrorGroupServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(ErrorGroupServiceSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * ErrorGroupServiceClient errorGroupServiceClient =
  *     ErrorGroupServiceClient.create(errorGroupServiceSettings);

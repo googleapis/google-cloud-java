@@ -40,6 +40,7 @@ import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.Topic;
+import com.google.pubsub.v1.UpdateTopicRequest;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -59,6 +60,13 @@ public class GrpcPublisherStub extends PublisherStub {
               io.grpc.MethodDescriptor.MethodType.UNARY,
               "google.pubsub.v1.Publisher/CreateTopic",
               io.grpc.protobuf.ProtoUtils.marshaller(Topic.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(Topic.getDefaultInstance())));
+  private static final UnaryCallable<UpdateTopicRequest, Topic> directUpdateTopicCallable =
+      GrpcCallableFactory.createDirectCallable(
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.pubsub.v1.Publisher/UpdateTopic",
+              io.grpc.protobuf.ProtoUtils.marshaller(UpdateTopicRequest.getDefaultInstance()),
               io.grpc.protobuf.ProtoUtils.marshaller(Topic.getDefaultInstance())));
   private static final UnaryCallable<PublishRequest, PublishResponse> directPublishCallable =
       GrpcCallableFactory.createDirectCallable(
@@ -127,6 +135,7 @@ public class GrpcPublisherStub extends PublisherStub {
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<Topic, Topic> createTopicCallable;
+  private final UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable;
   private final UnaryCallable<PublishRequest, PublishResponse> publishCallable;
   private final UnaryCallable<GetTopicRequest, Topic> getTopicCallable;
   private final UnaryCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable;
@@ -160,6 +169,9 @@ public class GrpcPublisherStub extends PublisherStub {
     this.createTopicCallable =
         GrpcCallableFactory.create(
             directCreateTopicCallable, settings.createTopicSettings(), clientContext);
+    this.updateTopicCallable =
+        GrpcCallableFactory.create(
+            directUpdateTopicCallable, settings.updateTopicSettings(), clientContext);
     this.publishCallable =
         GrpcCallableFactory.create(
             directPublishCallable, settings.publishSettings(), clientContext);
@@ -200,6 +212,10 @@ public class GrpcPublisherStub extends PublisherStub {
 
   public UnaryCallable<Topic, Topic> createTopicCallable() {
     return createTopicCallable;
+  }
+
+  public UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable() {
+    return updateTopicCallable;
   }
 
   public UnaryCallable<PublishRequest, PublishResponse> publishCallable() {

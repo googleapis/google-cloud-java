@@ -37,6 +37,7 @@ import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberImplBase;
 import com.google.pubsub.v1.Subscription;
+import com.google.pubsub.v1.UpdateSnapshotRequest;
 import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -257,6 +258,21 @@ public class MockSubscriberImpl extends SubscriberImplBase {
   @Override
   public void createSnapshot(
       CreateSnapshotRequest request, StreamObserver<Snapshot> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Snapshot) {
+      requests.add(request);
+      responseObserver.onNext((Snapshot) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateSnapshot(
+      UpdateSnapshotRequest request, StreamObserver<Snapshot> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Snapshot) {
       requests.add(request);

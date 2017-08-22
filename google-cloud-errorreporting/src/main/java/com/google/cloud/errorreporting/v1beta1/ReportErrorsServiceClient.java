@@ -71,11 +71,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of ReportErrorsServiceSettings to
  * create(). For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * ReportErrorsServiceSettings reportErrorsServiceSettings =
  *     ReportErrorsServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * ReportErrorsServiceClient reportErrorsServiceClient =
+ *     ReportErrorsServiceClient.create(reportErrorsServiceSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * ReportErrorsServiceSettings reportErrorsServiceSettings =
+ *     ReportErrorsServiceSettings.defaultBuilder()
+ *         .setTransportProvider(ReportErrorsServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(ReportErrorsServiceSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * ReportErrorsServiceClient reportErrorsServiceClient =
  *     ReportErrorsServiceClient.create(reportErrorsServiceSettings);

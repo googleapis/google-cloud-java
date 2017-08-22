@@ -78,11 +78,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of ErrorStatsServiceSettings to
  * create(). For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * ErrorStatsServiceSettings errorStatsServiceSettings =
  *     ErrorStatsServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * ErrorStatsServiceClient errorStatsServiceClient =
+ *     ErrorStatsServiceClient.create(errorStatsServiceSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * ErrorStatsServiceSettings errorStatsServiceSettings =
+ *     ErrorStatsServiceSettings.defaultBuilder()
+ *         .setTransportProvider(ErrorStatsServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(ErrorStatsServiceSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * ErrorStatsServiceClient errorStatsServiceClient =
  *     ErrorStatsServiceClient.create(errorStatsServiceSettings);

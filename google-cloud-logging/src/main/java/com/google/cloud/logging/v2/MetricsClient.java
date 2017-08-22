@@ -77,11 +77,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of MetricsSettings to create().
  * For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * MetricsSettings metricsSettings =
  *     MetricsSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * MetricsClient metricsClient =
+ *     MetricsClient.create(metricsSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * MetricsSettings metricsSettings =
+ *     MetricsSettings.defaultBuilder()
+ *         .setTransportProvider(MetricsSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(MetricsSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * MetricsClient metricsClient =
  *     MetricsClient.create(metricsSettings);
