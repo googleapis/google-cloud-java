@@ -68,11 +68,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of ImageAnnotatorSettings to
  * create(). For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * ImageAnnotatorSettings imageAnnotatorSettings =
  *     ImageAnnotatorSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * ImageAnnotatorClient imageAnnotatorClient =
+ *     ImageAnnotatorClient.create(imageAnnotatorSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * ImageAnnotatorSettings imageAnnotatorSettings =
+ *     ImageAnnotatorSettings.defaultBuilder()
+ *         .setTransportProvider(ImageAnnotatorSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(ImageAnnotatorSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * ImageAnnotatorClient imageAnnotatorClient =
  *     ImageAnnotatorClient.create(imageAnnotatorSettings);

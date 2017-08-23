@@ -72,6 +72,7 @@ import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.Topic;
+import com.google.pubsub.v1.UpdateTopicRequest;
 import io.grpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -125,6 +126,7 @@ public class TopicAdminSettings extends ClientSettings {
   private static String gapicVersion;
 
   private final SimpleCallSettings<Topic, Topic> createTopicSettings;
+  private final SimpleCallSettings<UpdateTopicRequest, Topic> updateTopicSettings;
   private final BatchingCallSettings<PublishRequest, PublishResponse> publishSettings;
   private final SimpleCallSettings<GetTopicRequest, Topic> getTopicSettings;
   private final PagedCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
@@ -142,6 +144,11 @@ public class TopicAdminSettings extends ClientSettings {
   /** Returns the object with the settings used for calls to createTopic. */
   public SimpleCallSettings<Topic, Topic> createTopicSettings() {
     return createTopicSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTopic. */
+  public SimpleCallSettings<UpdateTopicRequest, Topic> updateTopicSettings() {
+    return updateTopicSettings;
   }
 
   /** Returns the object with the settings used for calls to publish. */
@@ -281,6 +288,7 @@ public class TopicAdminSettings extends ClientSettings {
         settingsBuilder.getClock());
 
     createTopicSettings = settingsBuilder.createTopicSettings().build();
+    updateTopicSettings = settingsBuilder.updateTopicSettings().build();
     publishSettings = settingsBuilder.publishSettings().build();
     getTopicSettings = settingsBuilder.getTopicSettings().build();
     listTopicsSettings = settingsBuilder.listTopicsSettings().build();
@@ -475,6 +483,7 @@ public class TopicAdminSettings extends ClientSettings {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<Topic, Topic> createTopicSettings;
+    private final SimpleCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings;
     private final BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
     private final SimpleCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings;
     private final PagedCallSettings.Builder<
@@ -538,7 +547,7 @@ public class TopicAdminSettings extends ClientSettings {
               .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(12000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(12000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("messaging", settings);
@@ -553,6 +562,8 @@ public class TopicAdminSettings extends ClientSettings {
       super(clientContext);
 
       createTopicSettings = SimpleCallSettings.newBuilder();
+
+      updateTopicSettings = SimpleCallSettings.newBuilder();
 
       publishSettings =
           BatchingCallSettings.newBuilder(PUBLISH_BATCHING_DESC)
@@ -576,6 +587,7 @@ public class TopicAdminSettings extends ClientSettings {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
               createTopicSettings,
+              updateTopicSettings,
               publishSettings,
               getTopicSettings,
               listTopicsSettings,
@@ -599,6 +611,11 @@ public class TopicAdminSettings extends ClientSettings {
 
       builder
           .createTopicSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateTopicSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -661,6 +678,7 @@ public class TopicAdminSettings extends ClientSettings {
       super(settings);
 
       createTopicSettings = settings.createTopicSettings.toBuilder();
+      updateTopicSettings = settings.updateTopicSettings.toBuilder();
       publishSettings = settings.publishSettings.toBuilder();
       getTopicSettings = settings.getTopicSettings.toBuilder();
       listTopicsSettings = settings.listTopicsSettings.toBuilder();
@@ -673,6 +691,7 @@ public class TopicAdminSettings extends ClientSettings {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
               createTopicSettings,
+              updateTopicSettings,
               publishSettings,
               getTopicSettings,
               listTopicsSettings,
@@ -715,6 +734,11 @@ public class TopicAdminSettings extends ClientSettings {
     /** Returns the builder for the settings used for calls to createTopic. */
     public SimpleCallSettings.Builder<Topic, Topic> createTopicSettings() {
       return createTopicSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTopic. */
+    public SimpleCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings() {
+      return updateTopicSettings;
     }
 
     /** Returns the builder for the settings used for calls to publish. */

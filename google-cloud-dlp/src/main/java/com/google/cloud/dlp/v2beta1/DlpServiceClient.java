@@ -93,11 +93,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of DlpServiceSettings to
  * create(). For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * DlpServiceSettings dlpServiceSettings =
  *     DlpServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * DlpServiceClient dlpServiceClient =
+ *     DlpServiceClient.create(dlpServiceSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * DlpServiceSettings dlpServiceSettings =
+ *     DlpServiceSettings.defaultBuilder()
+ *         .setTransportProvider(DlpServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(DlpServiceSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * DlpServiceClient dlpServiceClient =
  *     DlpServiceClient.create(dlpServiceSettings);
@@ -363,10 +382,11 @@ public class DlpServiceClient implements BackgroundResource {
    *     for tracking the number of files written. &lt;p&gt;The CSV file(s) contain the following
    *     columns regardless of storage type scanned: &lt;li&gt;id &lt;li&gt;info_type
    *     &lt;li&gt;likelihood &lt;li&gt;byte size of finding &lt;li&gt;quote
-   *     &lt;li&gt;time_stamp&lt;br/&gt; &lt;p&gt;For Cloud Storage the next columns are:
+   *     &lt;li&gt;timestamp&lt;br/&gt; &lt;p&gt;For Cloud Storage the next columns are:
    *     &lt;li&gt;file_path &lt;li&gt;start_offset&lt;br/&gt; &lt;p&gt;For Cloud Datastore the next
    *     columns are: &lt;li&gt;project_id &lt;li&gt;namespace_id &lt;li&gt;path
-   *     &lt;li&gt;column_name &lt;li&gt;offset
+   *     &lt;li&gt;column_name &lt;li&gt;offset&lt;br/&gt; &lt;p&gt;For BigQuery the next columns
+   *     are: &lt;li&gt;row_number &lt;li&gt;project_id &lt;li&gt;dataset_id &lt;li&gt;table_id
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation>
@@ -483,7 +503,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param name Identifier of the results set returned as metadata of the longrunning operation
    *     created by a call to CreateInspectOperation. Should be in the format of
-   *     `inspect/results/{id}.
+   *     `inspect/results/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectFindingsResponse listInspectFindings(ResultName name) {

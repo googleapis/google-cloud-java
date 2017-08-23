@@ -40,6 +40,7 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.UpdateTopicRequest;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -90,11 +91,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of TopicAdminSettings to
  * create(). For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * TopicAdminSettings topicAdminSettings =
  *     TopicAdminSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * TopicAdminClient topicAdminClient =
+ *     TopicAdminClient.create(topicAdminSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * TopicAdminSettings topicAdminSettings =
+ *     TopicAdminSettings.defaultBuilder()
+ *         .setTransportProvider(TopicAdminSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(TopicAdminSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * TopicAdminClient topicAdminClient =
  *     TopicAdminClient.create(topicAdminSettings);
@@ -219,6 +239,61 @@ public class TopicAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<Topic, Topic> createTopicCallable() {
     return stub.createTopicCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an existing topic. Note that certain properties of a topic are not modifiable. Options
+   * settings follow the style guide: NOTE: The style guide requires body: "topic" instead of body:
+   * "&#42;". Keeping the latter for internal consistency in V1, however it should be corrected in
+   * V2. See https://cloud.google.com/apis/design/standard_methods#update for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   Topic topic = Topic.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateTopicRequest request = UpdateTopicRequest.newBuilder()
+   *     .setTopic(topic)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   Topic response = topicAdminClient.updateTopic(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  /* package-private */ final Topic updateTopic(UpdateTopicRequest request) {
+    return updateTopicCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an existing topic. Note that certain properties of a topic are not modifiable. Options
+   * settings follow the style guide: NOTE: The style guide requires body: "topic" instead of body:
+   * "&#42;". Keeping the latter for internal consistency in V1, however it should be corrected in
+   * V2. See https://cloud.google.com/apis/design/standard_methods#update for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   Topic topic = Topic.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateTopicRequest request = UpdateTopicRequest.newBuilder()
+   *     .setTopic(topic)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;Topic&gt; future = topicAdminClient.updateTopicCallable().futureCall(request);
+   *   // Do something
+   *   Topic response = future.get();
+   * }
+   * </code></pre>
+   */
+  /* package-private */ final UnaryCallable<UpdateTopicRequest, Topic> updateTopicCallable() {
+    return stub.updateTopicCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

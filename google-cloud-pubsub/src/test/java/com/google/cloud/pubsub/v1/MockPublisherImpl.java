@@ -27,6 +27,7 @@ import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc.PublisherImplBase;
 import com.google.pubsub.v1.Topic;
+import com.google.pubsub.v1.UpdateTopicRequest;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -66,6 +67,20 @@ public class MockPublisherImpl extends PublisherImplBase {
 
   @Override
   public void createTopic(Topic request, StreamObserver<Topic> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Topic) {
+      requests.add(request);
+      responseObserver.onNext((Topic) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateTopic(UpdateTopicRequest request, StreamObserver<Topic> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Topic) {
       requests.add(request);

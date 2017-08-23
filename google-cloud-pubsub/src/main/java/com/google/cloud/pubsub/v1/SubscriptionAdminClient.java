@@ -20,7 +20,7 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptions
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.rpc.StreamingCallable;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -54,6 +54,7 @@ import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.TopicNameOneof;
+import com.google.pubsub.v1.UpdateSnapshotRequest;
 import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import java.io.IOException;
 import java.util.List;
@@ -109,11 +110,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of SubscriptionAdminSettings to
  * create(). For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * SubscriptionAdminSettings subscriptionAdminSettings =
  *     SubscriptionAdminSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * SubscriptionAdminClient subscriptionAdminClient =
+ *     SubscriptionAdminClient.create(subscriptionAdminSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * SubscriptionAdminSettings subscriptionAdminSettings =
+ *     SubscriptionAdminSettings.defaultBuilder()
+ *         .setTransportProvider(SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(SubscriptionAdminSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * SubscriptionAdminClient subscriptionAdminClient =
  *     SubscriptionAdminClient.create(subscriptionAdminSettings);
@@ -252,7 +272,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *   TopicNameOneof topic = TopicNameOneof.from(TopicName.create("[PROJECT]", "[TOPIC]"));
    *   Subscription request = Subscription.newBuilder()
    *     .setNameWithSubscriptionName(name)
-   *     .setTopicWithTopicName(topic)
+   *     .setTopicWithTopicNameOneof(topic)
    *     .build();
    *   Subscription response = subscriptionAdminClient.createSubscription(request);
    * }
@@ -284,7 +304,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *   TopicNameOneof topic = TopicNameOneof.from(TopicName.create("[PROJECT]", "[TOPIC]"));
    *   Subscription request = Subscription.newBuilder()
    *     .setNameWithSubscriptionName(name)
-   *     .setTopicWithTopicName(topic)
+   *     .setTopicWithTopicNameOneof(topic)
    *     .build();
    *   ApiFuture&lt;Subscription&gt; future = subscriptionAdminClient.createSubscriptionCallable().futureCall(request);
    *   // Do something
@@ -370,7 +390,9 @@ public class SubscriptionAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates an existing subscription. Note that certain properties of a subscription, such as its
-   * topic, are not modifiable.
+   * topic, are not modifiable. NOTE: The style guide requires body: "subscription" instead of body:
+   * "&#42;". Keeping the latter for internal consistency in V1, however it should be corrected in
+   * V2. See https://cloud.google.com/apis/design/standard_methods#update for details.
    *
    * <p>Sample code:
    *
@@ -396,7 +418,9 @@ public class SubscriptionAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates an existing subscription. Note that certain properties of a subscription, such as its
-   * topic, are not modifiable.
+   * topic, are not modifiable. NOTE: The style guide requires body: "subscription" instead of body:
+   * "&#42;". Keeping the latter for internal consistency in V1, however it should be corrected in
+   * V2. See https://cloud.google.com/apis/design/standard_methods#update for details.
    *
    * <p>Sample code:
    *
@@ -938,7 +962,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
-  /* package-private */ final StreamingCallable<StreamingPullRequest, StreamingPullResponse>
+  /* package-private */ final BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse>
       streamingPullCallable() {
     return stub.streamingPullCallable();
   }
@@ -1249,6 +1273,62 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateSnapshotRequest, Snapshot> createSnapshotCallable() {
     return stub.createSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an existing snapshot. Note that certain properties of a snapshot are not modifiable.
+   * NOTE: The style guide requires body: "snapshot" instead of body: "&#42;". Keeping the latter
+   * for internal consistency in V1, however it should be corrected in V2. See
+   * https://cloud.google.com/apis/design/standard_methods#update for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   Snapshot snapshot = Snapshot.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateSnapshotRequest request = UpdateSnapshotRequest.newBuilder()
+   *     .setSnapshot(snapshot)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   Snapshot response = subscriptionAdminClient.updateSnapshot(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  /* package-private */ final Snapshot updateSnapshot(UpdateSnapshotRequest request) {
+    return updateSnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an existing snapshot. Note that certain properties of a snapshot are not modifiable.
+   * NOTE: The style guide requires body: "snapshot" instead of body: "&#42;". Keeping the latter
+   * for internal consistency in V1, however it should be corrected in V2. See
+   * https://cloud.google.com/apis/design/standard_methods#update for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+   *   Snapshot snapshot = Snapshot.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateSnapshotRequest request = UpdateSnapshotRequest.newBuilder()
+   *     .setSnapshot(snapshot)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;Snapshot&gt; future = subscriptionAdminClient.updateSnapshotCallable().futureCall(request);
+   *   // Do something
+   *   Snapshot response = future.get();
+   * }
+   * </code></pre>
+   */
+  /* package-private */ final UnaryCallable<UpdateSnapshotRequest, Snapshot>
+      updateSnapshotCallable() {
+    return stub.updateSnapshotCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

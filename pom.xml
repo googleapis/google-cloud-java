@@ -131,8 +131,8 @@
     <api-client.version>1.22.0</api-client.version>
 
     <api-common.version>1.1.0</api-common.version>
-    <gax.version>1.5.0</gax.version>
-    <gax-grpc.version>0.22.0</gax-grpc.version>
+    <gax.version>1.6.0</gax.version>
+    <gax-grpc.version>0.23.0</gax-grpc.version>
     <generatedProto.version>0.1.15</generatedProto.version>
     <google.auth.version>0.7.0</google.auth.version>
     <grpc.version>1.4.0</grpc.version>

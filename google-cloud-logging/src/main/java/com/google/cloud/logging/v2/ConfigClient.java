@@ -78,11 +78,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of ConfigSettings to create().
  * For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * ConfigSettings configSettings =
  *     ConfigSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * ConfigClient configClient =
+ *     ConfigClient.create(configSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * ConfigSettings configSettings =
+ *     ConfigSettings.defaultBuilder()
+ *         .setTransportProvider(ConfigSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(ConfigSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * ConfigClient configClient =
  *     ConfigClient.create(configSettings);

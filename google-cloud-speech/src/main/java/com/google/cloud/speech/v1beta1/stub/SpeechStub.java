@@ -17,8 +17,8 @@ package com.google.cloud.speech.v1beta1.stub;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.StreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeMetadata;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
@@ -59,7 +59,7 @@ public abstract class SpeechStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: asyncRecognizeCallable()");
   }
 
-  public StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
+  public BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable() {
     throw new UnsupportedOperationException("Not implemented: streamingRecognizeCallable()");
   }

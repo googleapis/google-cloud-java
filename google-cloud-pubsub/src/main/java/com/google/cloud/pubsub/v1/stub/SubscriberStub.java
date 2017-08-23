@@ -20,7 +20,7 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptions
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.rpc.StreamingCallable;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -47,6 +47,7 @@ import com.google.pubsub.v1.Snapshot;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.Subscription;
+import com.google.pubsub.v1.UpdateSnapshotRequest;
 import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import javax.annotation.Generated;
 
@@ -98,7 +99,8 @@ public abstract class SubscriberStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: pullCallable()");
   }
 
-  public StreamingCallable<StreamingPullRequest, StreamingPullResponse> streamingPullCallable() {
+  public BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse>
+      streamingPullCallable() {
     throw new UnsupportedOperationException("Not implemented: streamingPullCallable()");
   }
 
@@ -117,6 +119,10 @@ public abstract class SubscriberStub implements BackgroundResource {
 
   public UnaryCallable<CreateSnapshotRequest, Snapshot> createSnapshotCallable() {
     throw new UnsupportedOperationException("Not implemented: createSnapshotCallable()");
+  }
+
+  public UnaryCallable<UpdateSnapshotRequest, Snapshot> updateSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSnapshotCallable()");
   }
 
   public UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable() {

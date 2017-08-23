@@ -78,11 +78,30 @@ import javax.annotation.Generated;
  * <p>This class can be customized by passing in a custom instance of TraceServiceSettings to
  * create(). For example:
  *
+ * <p>To customize credentials:
+ *
  * <pre>
  * <code>
  * TraceServiceSettings traceServiceSettings =
  *     TraceServiceSettings.defaultBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * TraceServiceClient traceServiceClient =
+ *     TraceServiceClient.create(traceServiceSettings);
+ * </code>
+ * </pre>
+ *
+ * To customize the endpoint:
+ *
+ * <pre>
+ * <code>
+ * TraceServiceSettings traceServiceSettings =
+ *     TraceServiceSettings.defaultBuilder()
+ *         .setTransportProvider(TraceServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setChannelProvider(TraceServiceSettings.defaultGrpcChannelProviderBuilder()
+ *                 .setEndpoint(myEndpoint)
+ *                 .build())
+ *             .build())
  *         .build();
  * TraceServiceClient traceServiceClient =
  *     TraceServiceClient.create(traceServiceSettings);

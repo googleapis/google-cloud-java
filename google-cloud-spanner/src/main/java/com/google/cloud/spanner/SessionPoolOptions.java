@@ -90,8 +90,6 @@ public class SessionPoolOptions {
      * in parallel. Defaults to 0.
      */
     public Builder setMinSessions(int minSessions) {
-      Preconditions.checkArgument(
-          maxSessions >= minSessions, "Min sessions must be <= max sessions");
       this.minSessions = minSessions;
       return this;
     }
@@ -103,8 +101,6 @@ public class SessionPoolOptions {
      * can either block or fail. Defaults to 2000.
      */
     public Builder setMaxSessions(int maxSessions) {
-      Preconditions.checkArgument(
-          maxSessions >= minSessions, "Max sessions must be >= min" + "sessions");
       this.maxSessions = maxSessions;
       return this;
     }
@@ -127,8 +123,6 @@ public class SessionPoolOptions {
      * query "Select 1". Default value is 30 minutes.
      */
     public Builder setKeepAliveIntervalMinutes(int intervalMinutes) {
-      Preconditions.checkArgument(
-          intervalMinutes < 60, "Keep alive interval should be less than" + "60 minutes");
       this.keepAliveIntervalMinutes = intervalMinutes;
       return this;
     }
@@ -161,16 +155,24 @@ public class SessionPoolOptions {
      * <p>Default value is 0.2.
      */
     public Builder setWriteSessionsFraction(float writeSessionsFraction) {
-      Preconditions.checkArgument(
-          writeSessionsFraction >= 0 && writeSessionsFraction <= 1,
-          "Fraction of write sessions must be between 0 and 1 (inclusive)");
       this.writeSessionsFraction = writeSessionsFraction;
       return this;
     }
 
     /** Build a SessionPoolOption object */
     public SessionPoolOptions build() {
+      validate();
       return new SessionPoolOptions(this);
+    }
+
+    private void validate() {
+      Preconditions.checkArgument(maxSessions >= minSessions,
+              "Min sessions(%s) must be <= max sessions(%s)", minSessions, maxSessions);
+      Preconditions.checkArgument(
+              keepAliveIntervalMinutes < 60, "Keep alive interval should be less than" + "60 minutes");
+      Preconditions.checkArgument(
+              writeSessionsFraction >= 0 && writeSessionsFraction <= 1,
+              "Fraction of write sessions must be between 0 and 1 (inclusive)");
     }
   }
 }

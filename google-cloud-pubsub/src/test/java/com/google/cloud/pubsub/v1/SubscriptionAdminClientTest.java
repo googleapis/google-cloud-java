@@ -25,7 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiStreamObserver;
-import com.google.api.gax.rpc.StreamingCallable;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -425,7 +425,7 @@ public class SubscriptionAdminClientTest {
 
     MockStreamObserver<StreamingPullResponse> responseObserver = new MockStreamObserver<>();
 
-    StreamingCallable<StreamingPullRequest, StreamingPullResponse> callable =
+    BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> callable =
         client.streamingPullCallable();
     ApiStreamObserver<StreamingPullRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);
@@ -453,7 +453,7 @@ public class SubscriptionAdminClientTest {
 
     MockStreamObserver<StreamingPullResponse> responseObserver = new MockStreamObserver<>();
 
-    StreamingCallable<StreamingPullRequest, StreamingPullResponse> callable =
+    BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> callable =
         client.streamingPullCallable();
     ApiStreamObserver<StreamingPullRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);
