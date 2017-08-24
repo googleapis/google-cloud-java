@@ -6,14 +6,14 @@ matrix:
     env: JAVA_HOME=$(/usr/libexec/java_home)
 before_install:
 - mvn clean
-- git clone -b travis `git config --get remote.origin.url` target/travis
+- travis_retry git clone -b travis `git config --get remote.origin.url` target/travis
 - cp target/travis/settings.xml ~/.m2/settings.xml
 - cp target/travis/logging.properties logging.properties
 install: mvn install --quiet -Djava.util.logging.config.file=logging.properties -DskipTests=true
   -Dgpg.skip=true
 script:
 #- travis_wait 60 utilities/verify.sh
-- mvn verify -DtrimStackTrace=false -fae --quiet -Djava.util.logging.config.file=logging.properties -P release -DskipITs -Dtest=SessionPoolTest -DfailIfNoTests=false
+- mvn verify -DtrimStackTrace=false -fae --quiet -Djava.util.logging.config.file=logging.properties -P release -DskipITs -Dtest=Session* -DfailIfNoTests=false
 after_success:
 - utilities/after_success.sh
 env:
