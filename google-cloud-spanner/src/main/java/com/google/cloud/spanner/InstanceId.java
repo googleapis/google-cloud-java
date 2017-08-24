@@ -19,7 +19,6 @@ package com.google.cloud.spanner;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
 /** Represents the resource name of a Cloud Spanner Instance. */

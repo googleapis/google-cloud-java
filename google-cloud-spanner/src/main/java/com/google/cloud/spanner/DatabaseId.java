@@ -18,7 +18,6 @@ package com.google.cloud.spanner;
 
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.Objects;
 
