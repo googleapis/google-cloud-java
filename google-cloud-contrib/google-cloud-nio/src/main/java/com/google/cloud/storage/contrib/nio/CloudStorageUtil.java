@@ -76,5 +76,9 @@ final class CloudStorageUtil {
     }
   }
 
+  static int getMaxChannelReopensFromPath(Path path) {
+    return ((CloudStorageFileSystem) path.getFileSystem()).config().maxChannelReopens();
+  }
+
   private CloudStorageUtil() {}
 }

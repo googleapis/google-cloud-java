@@ -52,8 +52,8 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   // max # of times we may reopen the file
   @VisibleForTesting
   final int maxChannelReopens;
-  // how many times we re-opened the file
-  private int reopens;
+  // max # of times we may retry a GCS operation
+  final int maxRetries;
   private ReadChannel channel;
   private long position;
   private long size;
@@ -72,8 +72,8 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     this.gcsStorage = gcsStorage;
     this.file = file;
     this.position = position;
-    this.reopens = 0;
     this.maxChannelReopens = maxChannelReopens;
+    this.maxRetries = Math.max(3, maxChannelReopens);
     // XXX: Reading size and opening file should be atomic.
     this.size = fetchSize(gcsStorage, file);
     innerOpen();
@@ -106,8 +106,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     synchronized (this) {
       checkOpen();
       int amt;
-      int retries = 0;
-      int maxRetries = Math.max(3, maxChannelReopens);
+      final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(maxRetries, maxChannelReopens);
       dst.mark();
       while (true) {
         try {
@@ -115,32 +114,8 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
           amt = channel.read(dst);
           break;
         } catch (StorageException exs) {
-          if (isReopenable(exs)) {
-            // these errors aren't marked as retryable since the channel is closed;
-            // but here at this higher level we can retry them.
-            reopens++;
-            if (reopens > maxChannelReopens) {
-              throw new StorageException(exs.getCode(), "All reopens failed", exs);
-            }
-            sleepForAttempt(reopens);
-            innerOpen();
-            continue;
-          } else if (exs.isRetryable() || exs.getCode() == 500 || exs.getCode() == 503) {
-            retries++;
-            if (retries > maxRetries) {
-              // this exception will be marked as retriable in most cases since
-              // it's based on the code. It may be confusing to see a retriable error
-              // that says "all retries failed" but understand this to mean:
-              // "While in principle you should be able to retry, we already did that
-              // for you a few times and it still didn't work so we wouldn't recommend
-              // further retries."
-              throw new StorageException(exs.getCode(), "All retries failed", exs);
-            }
-            sleepForAttempt(retries);
-            continue;
-          }
-          // exception is neither reopenable nor retryable
-          throw exs;
+          // Will rethrow a StorageException if all retries/reopens are exhausted
+          handleStorageException(exs, retryHandler);
         }
       }
       if (amt > 0) {
@@ -151,36 +126,6 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
         }
       }
       return amt;
-    }
-  }
-
-  private static boolean isReopenable(Throwable exs) {
-    Throwable throwable = exs;
-    // ensures finite iteration
-    int maxDepth = 10;
-    while (throwable != null && maxDepth-- > 0) {
-      if ((throwable.getMessage() != null
-          && throwable.getMessage().contains("Connection closed prematurely"))
-          || throwable instanceof SSLException
-          || throwable instanceof EOFException
-          || throwable instanceof SocketException
-          || throwable instanceof SocketTimeoutException) {
-        return true;
-      }
-      throwable = throwable.getCause();
-    }
-    return false;
-  }
-
-  private void sleepForAttempt(int attempt) {
-    // exponential backoff, but let's bound it around 2min.
-    // aggressive backoff because we're dealing with unusual cases.
-    long delay = 1000L * (1L << Math.min(attempt, 7));
-    try {
-      Thread.sleep(delay);
-    } catch (InterruptedException iex) {
-      // reset interrupt flag
-      Thread.currentThread().interrupt();
     }
   }
 
@@ -230,11 +175,41 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     }
   }
 
-  private static long fetchSize(Storage gcsStorage, BlobId file) throws IOException {
-    BlobInfo blobInfo = gcsStorage.get(file);
-    if (blobInfo == null) {
-      throw new NoSuchFileException(String.format("gs://%s/%s", file.getBucket(), file.getName()));
+  private long fetchSize(Storage gcsStorage, BlobId file) throws IOException {
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(maxRetries, maxChannelReopens);
+
+    while (true) {
+      try {
+        BlobInfo blobInfo = gcsStorage.get(file);
+        if ( blobInfo == null ) {
+          throw new NoSuchFileException(String.format("gs://%s/%s", file.getBucket(), file.getName()));
+        }
+        return blobInfo.getSize();
+      } catch (StorageException exs) {
+        // Will rethrow a StorageException if all retries/reopens are exhausted
+        retryHandler.handleStorageException(exs);
+        // there's nothing to reopen yet, but retry even for a reopenable error.
+      }
     }
-    return blobInfo.getSize();
+
+  }
+
+  /**
+   * Handles a StorageException by reopening the channel or sleeping for a retry attempt if retry count
+   * is not exhausted. Throws a StorageException if all reopens/retries are exhausted, or if the
+   * StorageException is not reopenable/retryable.
+   *
+   * @param exs StorageException thrown by a GCS operation
+   * @param retryHandler Keeps track of reopens/retries performed so far on this operation
+   * @throws StorageException if all reopens/retries are exhausted, or if exs is not reopenable/retryable
+   * @throws IOException if a reopen operation fails
+   */
+  private void handleStorageException(final StorageException exs, final CloudStorageRetryHandler retryHandler) throws IOException {
+    boolean shouldReopen = retryHandler.handleStorageException(exs);
+    if (shouldReopen) {
+      // these errors aren't marked as retryable since the channel is closed;
+      // but here at this higher level we can retry them.
+      innerOpen();
+    }
   }
 }
