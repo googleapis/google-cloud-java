@@ -37,6 +37,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.ArgumentCaptor;
 
 import javax.net.ssl.SSLHandshakeException;
 import java.io.IOException;
@@ -190,5 +191,26 @@ public class CloudStorageReadChannelTest {
     assertThat(chan.size()).isEqualTo(42L);
     verify(gcsChannel).seek(1);
     verify(gcsChannel, times(5)).isOpen();
+  }
+
+  /*
+   * This test case was crafted in response to a bug in CloudStorageReadChannel in which the
+   * channel position (a long) was getting truncated to an int when seeking on the encapsulated
+   * ReadChannel in innerOpen(). This test case fails when the bad long -> int cast is present,
+   * and passes when it's removed.
+   */
+  @Test
+  public void testChannelPositionDoesNotGetTruncatedToInt() throws IOException {
+    // This position value will overflow to a negative value if a long -> int cast is attempted
+    long startPosition = 11918483280L;
+    ArgumentCaptor<Long> captor = ArgumentCaptor.forClass(Long.class);
+
+    // Invoke CloudStorageReadChannel.create() to trigger a call to the private
+    // CloudStorageReadChannel.innerOpen() method, which does a seek on our gcsChannel.
+    CloudStorageReadChannel.create(gcsStorage, file, startPosition, 1);
+
+    // Confirm that our position did not overflow during the seek in CloudStorageReadChannel.innerOpen()
+    verify(gcsChannel).seek(captor.capture());
+    assertThat(captor.getValue()).isEqualTo(startPosition);
   }
 }
