@@ -36,7 +36,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 /**
- * A logging handler that synchronously outputs logs generated with {@link java.util.logging.Logger}
+ * A logging handler that outputs logs generated with {@link java.util.logging.Logger}
  * to Stackdriver Logging.
  *
  * <p>Java logging levels (see {@link java.util.logging.Level}) are mapped to the following Google
