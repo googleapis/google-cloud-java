@@ -21,6 +21,7 @@
       <level>INFO</level>
     </filter>
     <log>application.log</log> <!-- Optional : default java.log -->
+    <resourceType>gae_app</resourceType> <!-- Optional : default: auto-detected, fallback: global -->
     <enhancer>com.example.logging.logback.enhancers.ExampleEnhancer</enhancer> <!-- Optional -->
     <flushLevel>WARN</flushLevel> <!-- Optional : default ERROR -->
   </appender>
