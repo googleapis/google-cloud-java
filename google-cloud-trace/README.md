@@ -3,6 +3,8 @@ Google Cloud Java Client for Stackdriver Trace
 
 Java idiomatic client for [Stackdriver Trace][stackdriver-trace].
 
+***Note:** this library allows you to interact with the Stackdriver Trace API, but is not intended for instrumenting an application. If you are looking to send traces to your app, please use the [cloud-trace-java SDK](https://github.com/GoogleCloudPlatform/cloud-trace-java/).*
+
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-trace.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-trace.svg)
