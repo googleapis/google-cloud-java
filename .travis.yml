@@ -9,8 +9,7 @@ before_install:
 - travis_retry git clone -b travis `git config --get remote.origin.url` target/travis
 - cp target/travis/settings.xml ~/.m2/settings.xml
 - cp target/travis/logging.properties logging.properties
-install: mvn install --quiet -Djava.util.logging.config.file=logging.properties -DskipTests=true
-  -Dgpg.skip=true
+install: mvn install --quiet -Djava.util.logging.config.file=logging.properties -DskipTests=true -Dgpg.skip=true -pl '!google-cloud-spanner'
 script:
 - travis_wait 60 utilities/verify.sh
 after_success:
