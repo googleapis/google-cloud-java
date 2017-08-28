@@ -1,9 +1,9 @@
 # Code owners file.
 # This file controls who is tagged for review for any given pull request.
 
-google-cloud-bigquery/*           @vam
+google-cloud-bigquery/*           @vam @tswast
 google-cloud-compute/*            @garrettjonesgoogle
-google-cloud-contrib/*            @garrettjonesgoogle
+google-cloud-contrib/*            @garrettjonesgoogle @jean-philippe-martin
 google-cloud-core-grpc/*          @garrettjonesgoogle
 google-cloud-core-http/*          @garrettjonesgoogle
 google-cloud-core/*               @garrettjonesgoogle
@@ -14,18 +14,18 @@ google-cloud-dns/*                @garrettjonesgoogle
 google-cloud-errorreporting/*     @garrettjonesgoogle
 google-cloud-examples/*           @garrettjonesgoogle
 google-cloud-language/*           @garrettjonesgoogle
-google-cloud-logging/*            @garrettjonesgoogle
+google-cloud-logging/*            @garrettjonesgoogle @jabubake
 google-cloud-monitoring/*         @garrettjonesgoogle
 google-cloud-pubsub/*             @pongad
 google-cloud-resourcemanager/*    @garrettjonesgoogle
-google-cloud-spanner/*            @vam
-google-cloud-speech/*             @shinfan
+google-cloud-spanner/*            @vam @vkedia
+google-cloud-speech/*             @vam
 google-cloud-storage/*            @garrettjonesgoogle
 google-cloud-testing/*            @vam
 google-cloud-trace/*              @garrettjonesgoogle
 google-cloud-translate/*          @garrettjonesgoogle
 google-cloud-util/*               @garrettjonesgoogle
-google-cloud-video-intelligence/* @shinfan
+google-cloud-video-intelligence/* @vam
 google-cloud-vision/*             @vam
 google-cloud/*                    @garrettjonesgoogle
 
