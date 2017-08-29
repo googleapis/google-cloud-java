@@ -1098,9 +1098,8 @@ public class StorageSnippets {
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
     // The name of the bucket to retrieve requester-pays status, eg. "my-bucket"
-    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName).build();
-
-    // Retrieve the bucket requester pays status, throws StorageException on failure
+    // String bucketName = "my-bucket"
+    // Retrieve the bucket, throws StorageException on failure
     Bucket bucket = storage.get(bucketName);
 
     System.out.println("Requester pays status : " + bucket.requesterPays());
