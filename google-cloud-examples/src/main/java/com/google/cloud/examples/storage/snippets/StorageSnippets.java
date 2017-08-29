@@ -59,10 +59,13 @@ import com.google.cloud.storage.StorageOptions;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -1042,4 +1045,101 @@ public class StorageSnippets {
     return buckets;
   }
 
+  /**
+   * Example of enabling Requester pays on a bucket.
+   */
+  public Bucket enableRequesterPays(String  bucketName) throws StorageException {
+    // [START enable_requester_pays]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of the existing bucket to enable requester-paying for, e.g. "my-bucket"
+    // String bucketName = "my-bucket"
+    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName)
+        .setRequesterPays(true)
+        .build();
+
+    // Update the bucket, throws StorageException on failure
+    Bucket bucket = storage.update(bucketInfo);
+
+    System.out.println("Requester pay status for " + bucketName +": " + bucket.requesterPays());
+    // [END enable_requester_pays]
+    return bucket;
+  }
+
+  /**
+   * Example of disabling Requester pays on a bucket.
+   */
+  public Bucket disableRequesterPays(String bucketName) {
+    // [START disable_requester_pays]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of the bucket to disable requester-paying for, e.g. "my-bucket"
+    // String bucketName = "my-bucket"
+    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName)
+        .setRequesterPays(false)
+        .build();
+
+    // Update the bucket, throws StorageException on failure
+    Bucket bucket = storage.update(bucketInfo);
+
+    System.out.println("Requester pays status for " + bucketName +": " + bucket.requesterPays());
+    // [END disable_requester_pays]
+    return bucket;
+  }
+
+  /**
+   * Example of retrieving Requester pays status on a bucket.
+   */
+  public Bucket getRequesterPaysStatus(String bucketName) throws StorageException {
+    // [START get_requester_pays_status]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of the bucket to retrieve requester-pays status, eg. "my-bucket"
+    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName).build();
+
+    // Retrieve the bucket requester pays status, throws StorageException on failure
+    Bucket bucket = storage.get(bucketName);
+
+    System.out.println("Requester pays status : " + bucket.requesterPays());
+    // [END get_requester_pays_status]
+    return bucket;
+  }
+
+  /**
+   * Example of downloading a file using Requester pay.
+   */
+  public void downloadFileUsingRequesterPays(String projectId, String bucketName,
+      String srcFilename, Path destFilePath) throws IOException {
+    // [START storage_download_file_requester_pays]
+    // Instantiate a Google Cloud Storage client
+
+    // The project ID to bill
+    // String projectId = "my-billable-project-id";
+
+    // The name of the bucket to access
+    // String bucketName = "my-bucket";
+
+    // The name of the remote file to download
+    // String srcFilename = "file.txt";
+
+    // The path to which the file should be downloaded
+    // String destFilePath = "/local/path/to/file.txt";
+
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    BlobSourceOption option = BlobSourceOption.userProject(projectId);
+
+    // read blob in a single pass
+    byte[] readBytes = storage.readAllBytes(bucketName, srcFilename, option);
+
+    // write out to file
+    PrintStream out = new PrintStream(new FileOutputStream(destFilePath.toFile()));
+    out.write(readBytes);
+    out.close();
+    // [END storage_download_file_requester_pays]
+  }
 }
