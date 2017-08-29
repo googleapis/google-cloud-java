@@ -126,13 +126,13 @@ import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.Translation;
 ```
 
-Then add the following code to translate a text (specifying its source language):
+Then, for example to translate from English to Spanish, add the following code:
 
 ```java
 Translation translation = translate.translate(
     "World",
     TranslateOption.sourceLanguage("en"),
-    TranslateOption.targetLanguage(detectedLanguage));
+    TranslateOption.targetLanguage("es"));
 ```
 
 #### Complete source code
