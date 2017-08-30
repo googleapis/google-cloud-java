@@ -3,7 +3,7 @@
 
 # For anything not explicitly taken by someone else.
 *                                 @garrettjonesgoogle
-# Owners per module
+# Owners per module.
 google-cloud-bigquery/*           @vam-google @tswast
 google-cloud-compute/*            @garrettjonesgoogle
 google-cloud-contrib/*            @garrettjonesgoogle @jean-philippe-martin
