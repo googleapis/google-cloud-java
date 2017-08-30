@@ -157,14 +157,17 @@ try {
   TopicAdminClient topicClient = TopicAdminClient.create(
     TopicAdminSettings
       .defaultBuilder()
-      .setChannelProvider(channelProvider)
+        .setTransportProvider(
+            GrpcTransportProvider.newBuilder()
+                .setChannelProvider(channelProvider)
+                .build())
       .setCredentialsProvider(credentialsProvider)
       .build());
 
   // Similarly for Subscriber
   Publisher publisher =
     Publisher
-      .newBuilder(topicName)
+      .defaultBuilder(topicName)
       .setChannelProvider(channelProvider)
       .setCredentialsProvider(credentialsProvider)
       .build();
