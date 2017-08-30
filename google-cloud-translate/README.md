@@ -111,7 +111,7 @@ import com.google.cloud.translate.Detection;
 Then add the following code to detect the text's language:
 
 ```java
-Detection detection = translate.detect("Hello, World!");
+Detection detection = translate.detect("Hola");
 String detectedLanguage = detection.getLanguage();
 ```
 #### Translating text
@@ -126,13 +126,13 @@ import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.Translation;
 ```
 
-Then, for example to translate from English to Spanish, add the following code:
+ Then add the following code to translate a text (specifying its source language):
 
 ```java
 Translation translation = translate.translate(
     "World",
     TranslateOption.sourceLanguage("en"),
-    TranslateOption.targetLanguage("es"));
+    TranslateOption.targetLanguage(detectedLanguage));
 ```
 
 #### Complete source code
