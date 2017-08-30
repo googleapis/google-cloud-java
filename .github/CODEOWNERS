@@ -18,7 +18,7 @@ google-cloud-logging/*            @garrettjonesgoogle @jabubake
 google-cloud-monitoring/*         @garrettjonesgoogle
 google-cloud-pubsub/*             @pongad
 google-cloud-resourcemanager/*    @garrettjonesgoogle
-google-cloud-spanner/*            @vam @vkedia
+google-cloud-spanner/*            @vam-google @vkedia
 google-cloud-speech/*             @vam-google
 google-cloud-storage/*            @garrettjonesgoogle
 google-cloud-testing/*            @vam-google
