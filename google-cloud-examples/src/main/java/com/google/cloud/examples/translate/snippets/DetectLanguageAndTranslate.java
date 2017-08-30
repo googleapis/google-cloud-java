@@ -42,16 +42,19 @@ public class DetectLanguageAndTranslate {
     // environment variable
     Translate translate = TranslateOptions.getDefaultInstance().getService();
 
-    // Detect the language of some text
-    Detection detection = translate.detect("Hola");
+    // Text of an "unknown" language to detect and then translate into English
+    final String mysteriousText = "Hola Mundo";
+
+    // Detect the language of the mysterious text
+    Detection detection = translate.detect(mysteriousText);
     String detectedLanguage = detection.getLanguage();
 
-    // Translate some text
+    // Translate the mysterious text to English
     Translation translation = translate.translate(
-        "World",
-        TranslateOption.sourceLanguage("en"),
-        TranslateOption.targetLanguage(detectedLanguage));
+        mysteriousText,
+        TranslateOption.sourceLanguage(detectedLanguage),
+        TranslateOption.targetLanguage("en"));
 
-    System.out.printf("Hola %s%n", translation.getTranslatedText());
+    System.out.println(translation.getTranslatedText());
   }
 }
