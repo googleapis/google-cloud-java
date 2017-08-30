@@ -126,7 +126,7 @@ import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.Translation;
 ```
 
- Then add the following code to translate a text (specifying its source language):
+Then add the following code to translate a text (specifying its source language):
 
 ```java
 Translation translation = translate.translate(
