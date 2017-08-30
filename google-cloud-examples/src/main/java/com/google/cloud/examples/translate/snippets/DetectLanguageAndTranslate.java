@@ -49,7 +49,7 @@ public class DetectLanguageAndTranslate {
     Detection detection = translate.detect(mysteriousText);
     String detectedLanguage = detection.getLanguage();
 
-    // Translate the mysterious text from Spanish to English
+    // Translate the mysterious text to English
     Translation translation = translate.translate(
         mysteriousText,
         TranslateOption.sourceLanguage(detectedLanguage),
