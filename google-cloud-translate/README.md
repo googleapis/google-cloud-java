@@ -126,7 +126,7 @@ import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.Translation;
 ```
 
-Then add the following code to translate a text, specifying English as its source language and the previously obtained `detectedLanguage` as the target language (in this concrete example it will be Spanish):
+Then add the following code to translate a text, specifying English as its source language and the previously obtained `detectedLanguage` as the target language (in this concrete example it will be Spanish (`"es"`)):
 
 ```java
 Translation translation = translate.translate(
