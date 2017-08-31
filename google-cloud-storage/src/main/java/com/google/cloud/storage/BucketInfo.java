@@ -345,7 +345,7 @@ public class BucketInfo implements Serializable {
      *
      * GcpLaunchStage.Alpha
      */
-    abstract Builder setRequesterPays(Boolean requesterPays);
+    public abstract Builder setRequesterPays(Boolean requesterPays);
 
     /**
      * Sets whether versioning should be enabled for this bucket. When set to true, versioning is
