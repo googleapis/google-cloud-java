@@ -111,10 +111,10 @@ public class Recognize {
     List<SpeechRecognitionResult> results = response.getResultsList();
 
     for (SpeechRecognitionResult result: results) {
-      List<SpeechRecognitionAlternative> alternatives = result.getAlternativesList();
-      for (SpeechRecognitionAlternative alternative: alternatives) {
-        System.out.printf("Transcription: %s%n", alternative.getTranscript());
-      }
+      // There can be several alternative transcripts for a given chunk of speech. Just use the
+      // first (most likely) one here.
+      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+      System.out.printf("Transcription: %s%n", alternative.getTranscript());
     }
     speech.close();
   }
@@ -147,17 +147,17 @@ public class Recognize {
     List<SpeechRecognitionResult> results = response.getResultsList();
 
     for (SpeechRecognitionResult result: results) {
-      List<SpeechRecognitionAlternative> alternatives = result.getAlternativesList();
-      for (SpeechRecognitionAlternative alternative: alternatives) {
-        System.out.printf("Transcription: %s%n", alternative.getTranscript());
-        for (WordInfo wordInfo: alternative.getWordsList()) {
-          System.out.println(wordInfo.getWord());
-          System.out.printf("\t%s.%s sec - %s.%s sec\n",
-              wordInfo.getStartTime().getSeconds(),
-              wordInfo.getStartTime().getNanos() / 100000000,
-              wordInfo.getEndTime().getSeconds(),
-              wordInfo.getEndTime().getNanos() / 100000000);
-        }
+      // There can be several alternative transcripts for a given chunk of speech. Just use the
+      // first (most likely) one here.
+      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+      System.out.printf("Transcription: %s%n", alternative.getTranscript());
+      for (WordInfo wordInfo: alternative.getWordsList()) {
+        System.out.println(wordInfo.getWord());
+        System.out.printf("\t%s.%s sec - %s.%s sec\n",
+            wordInfo.getStartTime().getSeconds(),
+            wordInfo.getStartTime().getNanos() / 100000000,
+            wordInfo.getEndTime().getSeconds(),
+            wordInfo.getEndTime().getNanos() / 100000000);
       }
     }
     speech.close();
@@ -188,10 +188,10 @@ public class Recognize {
     List<SpeechRecognitionResult> results = response.getResultsList();
 
     for (SpeechRecognitionResult result: results) {
-      List<SpeechRecognitionAlternative> alternatives = result.getAlternativesList();
-      for (SpeechRecognitionAlternative alternative: alternatives) {
-        System.out.printf("Transcription: %s%n", alternative.getTranscript());
-      }
+      // There can be several alternative transcripts for a given chunk of speech. Just use the
+      // first (most likely) one here.
+      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+      System.out.printf("Transcription: %s%n", alternative.getTranscript());
     }
     speech.close();
   }
@@ -234,10 +234,10 @@ public class Recognize {
     List<SpeechRecognitionResult> results = response.get().getResultsList();
 
     for (SpeechRecognitionResult result: results) {
-      List<SpeechRecognitionAlternative> alternatives = result.getAlternativesList();
-      for (SpeechRecognitionAlternative alternative: alternatives) {
-        System.out.printf("Transcription: %s%n", alternative.getTranscript());
-      }
+      // There can be several alternative transcripts for a given chunk of speech. Just use the
+      // first (most likely) one here.
+      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+      System.out.printf("Transcription: %s%n", alternative.getTranscript());
     }
     speech.close();
   }
@@ -275,17 +275,17 @@ public class Recognize {
     List<SpeechRecognitionResult> results = response.get().getResultsList();
 
     for (SpeechRecognitionResult result: results) {
-      List<SpeechRecognitionAlternative> alternatives = result.getAlternativesList();
-      for (SpeechRecognitionAlternative alternative: alternatives) {
-        System.out.printf("Transcription: %s\n",alternative.getTranscript());
-        for (WordInfo wordInfo: alternative.getWordsList()) {
-          System.out.println(wordInfo.getWord());
-          System.out.printf("\t%s.%s sec - %s.%s sec\n",
-              wordInfo.getStartTime().getSeconds(),
-              wordInfo.getStartTime().getNanos() / 100000000,
-              wordInfo.getEndTime().getSeconds(),
-              wordInfo.getEndTime().getNanos() / 100000000);
-        }
+      // There can be several alternative transcripts for a given chunk of speech. Just use the
+      // first (most likely) one here.
+      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+      System.out.printf("Transcription: %s\n",alternative.getTranscript());
+      for (WordInfo wordInfo: alternative.getWordsList()) {
+        System.out.println(wordInfo.getWord());
+        System.out.printf("\t%s.%s sec - %s.%s sec\n",
+            wordInfo.getStartTime().getSeconds(),
+            wordInfo.getStartTime().getNanos() / 100000000,
+            wordInfo.getEndTime().getSeconds(),
+            wordInfo.getEndTime().getNanos() / 100000000);
       }
     }
     speech.close();
@@ -323,10 +323,10 @@ public class Recognize {
     List<SpeechRecognitionResult> results = response.get().getResultsList();
 
     for (SpeechRecognitionResult result: results) {
-      List<SpeechRecognitionAlternative> alternatives = result.getAlternativesList();
-      for (SpeechRecognitionAlternative alternative: alternatives) {
-        System.out.printf("Transcription: %s\n",alternative.getTranscript());
-      }
+      // There can be several alternative transcripts for a given chunk of speech. Just use the
+      // first (most likely) one here.
+      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+      System.out.printf("Transcription: %s\n",alternative.getTranscript());
     }
     speech.close();
   }
@@ -404,11 +404,14 @@ public class Recognize {
     List<StreamingRecognizeResponse> responses = responseObserver.future().get();
 
     for (StreamingRecognizeResponse response: responses) {
-      for (StreamingRecognitionResult result: response.getResultsList()) {
-        for (SpeechRecognitionAlternative alternative : result.getAlternativesList()) {
-          System.out.println(alternative.getTranscript());
-        }
-      }
+      // For streaming recognize, the results list has one is_final result (if available) followed
+      // by a number of in-progress results (if iterim_results is true) for subsequent utterances.
+      // Just print the first result here.
+      StreamingRecognitionResult result = response.getResultsList().get(0);
+      // There can be several alternative transcripts for a given chunk of speech. Just use the
+      // first (most likely) one here.
+      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+      System.out.println(alternative.getTranscript());
     }
     speech.close();
   }

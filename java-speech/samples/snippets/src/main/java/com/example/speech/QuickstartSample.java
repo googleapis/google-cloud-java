@@ -60,10 +60,10 @@ public class QuickstartSample {
     List<SpeechRecognitionResult> results = response.getResultsList();
 
     for (SpeechRecognitionResult result: results) {
-      List<SpeechRecognitionAlternative> alternatives = result.getAlternativesList();
-      for (SpeechRecognitionAlternative alternative: alternatives) {
-        System.out.printf("Transcription: %s%n", alternative.getTranscript());
-      }
+      // There can be several alternative transcripts for a given chunk of speech. Just use the
+      // first (most likely) one here.
+      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+      System.out.printf("Transcription: %s%n", alternative.getTranscript());
     }
     speech.close();
   }
