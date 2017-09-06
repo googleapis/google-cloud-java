@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -48,9 +49,10 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       Logger.getLogger(StreamingSubscriberConnection.class.getName());
 
   private static final Duration INITIAL_CHANNEL_RECONNECT_BACKOFF = Duration.ofMillis(100);
+  private static final Duration MAX_CHANNEL_RECONNECT_BACKOFF = Duration.ofSeconds(10);
   private static final int MAX_PER_REQUEST_CHANGES = 10000;
 
-  private Duration channelReconnectBackoff = INITIAL_CHANNEL_RECONNECT_BACKOFF;
+  private final AtomicLong channelReconnectBackoffMillis = new AtomicLong(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
 
   private final SubscriberStub asyncStub;
 
@@ -119,6 +121,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     @Override
     public void onNext(StreamingPullResponse response) {
+      channelReconnectBackoffMillis.set(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
       messageDispatcher.processReceivedMessages(
           response.getReceivedMessagesList(),
           new Runnable() {
@@ -170,7 +173,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             if (!isAlive()) {
               return;
             }
-            channelReconnectBackoff = INITIAL_CHANNEL_RECONNECT_BACKOFF;
+            channelReconnectBackoffMillis.set(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
             // The stream was closed. And any case we want to reopen it to continue receiving
             // messages.
             initialize();
@@ -185,8 +188,13 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             }
             logger.log(Level.WARNING, "Terminated streaming with exception", cause);
             if (StatusUtil.isRetryable(cause)) {
-              long backoffMillis = channelReconnectBackoff.toMillis();
-              channelReconnectBackoff = channelReconnectBackoff.plusMillis(backoffMillis);
+              long backoffMillis = channelReconnectBackoffMillis.get();
+              long newBackoffMillis = backoffMillis*2;
+              if (newBackoffMillis > MAX_CHANNEL_RECONNECT_BACKOFF.toMillis()) {
+                newBackoffMillis = MAX_CHANNEL_RECONNECT_BACKOFF.toMillis();
+              }
+              channelReconnectBackoffMillis.set(newBackoffMillis);
+
               executor.schedule(
                   new Runnable() {
                     @Override
