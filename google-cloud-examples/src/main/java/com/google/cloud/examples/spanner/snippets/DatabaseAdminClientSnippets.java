@@ -14,19 +14,30 @@
  * limitations under the License.
  */
 
+/*
+ * EDITING INSTRUCTIONS
+ * This file is referenced in DatabaseAdminClient's javadoc. Any change to this file should be reflected
+ * in DatabaseAdminClient's javadoc.
+ */
+
 package com.google.cloud.examples.spanner.snippets;
 
 import com.google.api.gax.paging.Page;
-import com.google.cloud.spanner.Options.ListOption;
+import com.google.common.collect.Iterables;
+import com.google.cloud.spanner.DatabaseAdminClient;
+import com.google.cloud.spanner.Options;
+import com.google.cloud.spanner.Database;
+import com.google.cloud.spanner.Operation;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
-import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import javax.annotation.Nullable;
 
 /**
  * This class contains snippets for {@link DatabaseAdminClient} interface.
  */
-public interface DatabaseAdminClientSnippets {
+public class DatabaseAdminClientSnippets {
   
   private final DatabaseAdminClient dbAdminClient;
 
@@ -40,7 +51,7 @@ public interface DatabaseAdminClientSnippets {
   // [TARGET createDatabase(String, String, Iterable)]
   // [VARIABLE my_instance_id]
   // [VARIABLE my_database_id]
-  public void createDatabase(String instanceId, String databaseId) {
+  public Database createDatabase(String instanceId, String databaseId) {
     // [START createDatabase]
     Operation<Database, CreateDatabaseMetadata> op = dbAdminClient
         .createDatabase(
@@ -60,8 +71,8 @@ public interface DatabaseAdminClientSnippets {
                     + ") PRIMARY KEY (SingerId, AlbumId),\n"
                     + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"));
     Database db = op.waitFor().getResult();
-    System.out.println("Created database [" + db.getId() + "]");
     // [END createDatabase]
+    return db;
   }
 
   /**
@@ -70,11 +81,11 @@ public interface DatabaseAdminClientSnippets {
   // [TARGET getDatabase(String, String)]
   // [VARIABLE my_instance_id]
   // [VARIABLE my_database_id]
-  public void getDatabase(String instanceId, String databaseId) {
+  public Database getDatabase(String instanceId, String databaseId) {
     // [START getDatabase]
-    Database db = dbClient.getDatabase(instanceId, databaseId);
-    System.out.println("Fetched database [" + db.getId() + "]");
+    Database db = dbAdminClient.getDatabase(instanceId, databaseId);
     // [END getDatabase]
+    return db;
   }
 
   /**
@@ -89,7 +100,6 @@ public interface DatabaseAdminClientSnippets {
         databaseId, 
         Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget INT64"), 
         null).waitFor();
-    System.out.println("UpdateDatabaseDdl: added MarketingBudget column");
     // [END updateDatabaseDdl]
   }
 
@@ -102,35 +112,37 @@ public interface DatabaseAdminClientSnippets {
   public void dropDatabase(String instanceId, String databaseId) {
     // [START dropDatabase]
     dbAdminClient.dropDatabase(instanceId, databaseId);
-    System.out.println("DropDatabase: " + databaseId);
     // [END dropDatabase]
   }
 
   /**
    * Example to get the schema of a Cloud Spanner database.
    */
-  // [TARGET getDatabaseDdl(instanceId, databaseId)]
+  // [TARGET getDatabaseDdl(String, String)]
   // [VARIABLE my_instance_id]
   // [VARIABLE my_database_id]
-  public void getDatabaseDdl(String instanceId, String databaseId) {
+  public List<String> getDatabaseDdl(String instanceId, String databaseId) {
     // [START getDatabaseDdl]
     List<String> statementsInDb = dbAdminClient.getDatabaseDdl(instanceId, databaseId);
     // [END getDatabaseDdl]
+    return statementsInDb;
   }
 
   /** 
    * Example to get the list of Cloud Spanner database in the given instance. 
    */
-  // [TARGET listDatabases(String, ListOption)]
+  // [TARGET listDatabases(String, ListOption...)]
   // [VARIABLE my_instance_id]
-  public void listDatabases(String instanceId) {
+  public List<Database> listDatabases(String instanceId) {
     // [START listDatabases]
     Page<Database> page = dbAdminClient.listDatabases(instanceId, Options.pageSize(1));
+    List<Database> dbs = new ArrayList<>();
     while (page != null) {
       Database db = Iterables.getOnlyElement(page.getValues());
-      System.out.println(db.getId().getDatabase());
+      dbs.add(db);
       page = page.getNextPage();
     }
     // [END listDatabases]
+    return dbs;
   }
 }
