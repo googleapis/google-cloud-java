@@ -456,7 +456,75 @@ public class LanguageServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * A convenience method that provides all syntax, sentiment, and entity features in one call.
+   * Classifies a document into categories.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   ClassifyTextResponse response = languageServiceClient.classifyText(document);
+   * }
+   * </code></pre>
+   *
+   * @param document Input document.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ClassifyTextResponse classifyText(Document document) {
+
+    ClassifyTextRequest request = ClassifyTextRequest.newBuilder().setDocument(document).build();
+    return classifyText(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Classifies a document into categories.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   ClassifyTextRequest request = ClassifyTextRequest.newBuilder()
+   *     .setDocument(document)
+   *     .build();
+   *   ClassifyTextResponse response = languageServiceClient.classifyText(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ClassifyTextResponse classifyText(ClassifyTextRequest request) {
+    return classifyTextCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Classifies a document into categories.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   ClassifyTextRequest request = ClassifyTextRequest.newBuilder()
+   *     .setDocument(document)
+   *     .build();
+   *   ApiFuture&lt;ClassifyTextResponse&gt; future = languageServiceClient.classifyTextCallable().futureCall(request);
+   *   // Do something
+   *   ClassifyTextResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable() {
+    return stub.classifyTextCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * A convenience method that provides all syntax, sentiment, entity, and classification features
+   * in one call.
    *
    * <p>Sample code:
    *
@@ -488,7 +556,8 @@ public class LanguageServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * A convenience method that provides all syntax, sentiment, and entity features in one call.
+   * A convenience method that provides all syntax, sentiment, entity, and classification features
+   * in one call.
    *
    * <p>Sample code:
    *
@@ -513,7 +582,8 @@ public class LanguageServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * A convenience method that provides all syntax, sentiment, and entity features in one call.
+   * A convenience method that provides all syntax, sentiment, entity, and classification features
+   * in one call.
    *
    * <p>Sample code:
    *

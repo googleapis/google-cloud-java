@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.language.v1beta2;
+package com.google.cloud.speech.v1_1beta1;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -26,19 +26,30 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.grpc.GrpcTransport;
 import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.cloud.language.v1beta2.stub.GrpcLanguageServiceStub;
-import com.google.cloud.language.v1beta2.stub.LanguageServiceStub;
+import com.google.cloud.speech.v1_1beta1.stub.GrpcSpeechStub;
+import com.google.cloud.speech.v1_1beta1.stub.SpeechStub;
+import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata;
+import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest;
+import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse;
+import com.google.cloud.speech.v1p1beta1.RecognizeRequest;
+import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
+import com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest;
+import com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
@@ -47,33 +58,33 @@ import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link LanguageServiceClient}.
+ * Settings class to configure an instance of {@link SpeechClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (language.googleapis.com) and default port (443) are used.
+ *   <li>The default service address (speech.googleapis.com) and default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of analyzeSentiment to 30 seconds:
+ * example, to set the total timeout of recognize to 30 seconds:
  *
  * <pre>
  * <code>
- * LanguageServiceSettings.Builder languageServiceSettingsBuilder =
- *     LanguageServiceSettings.defaultBuilder();
- * languageServiceSettingsBuilder.analyzeSentimentSettings().getRetrySettingsBuilder()
+ * SpeechSettings.Builder speechSettingsBuilder =
+ *     SpeechSettings.defaultBuilder();
+ * speechSettingsBuilder.recognizeSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
- * LanguageServiceSettings languageServiceSettings = languageServiceSettingsBuilder.build();
+ * SpeechSettings speechSettings = speechSettingsBuilder.build();
  * </code>
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
-public class LanguageServiceSettings extends ClientSettings {
+public class SpeechSettings extends ClientSettings {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
@@ -81,58 +92,41 @@ public class LanguageServiceSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
-  private static final String PROPERTIES_FILE = "/com/google/cloud/language/project.properties";
+  private static final String PROPERTIES_FILE = "/com/google/cloud/speech/project.properties";
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
 
-  private final SimpleCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
-      analyzeSentimentSettings;
-  private final SimpleCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
-      analyzeEntitiesSettings;
-  private final SimpleCallSettings<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
-      analyzeEntitySentimentSettings;
-  private final SimpleCallSettings<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
-      analyzeSyntaxSettings;
-  private final SimpleCallSettings<ClassifyTextRequest, ClassifyTextResponse> classifyTextSettings;
-  private final SimpleCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextSettings;
+  private final SimpleCallSettings<RecognizeRequest, RecognizeResponse> recognizeSettings;
+  private final OperationCallSettings<
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
+          Operation>
+      longRunningRecognizeSettings;
+  private final StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
+      streamingRecognizeSettings;
 
-  /** Returns the object with the settings used for calls to analyzeSentiment. */
-  public SimpleCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
-      analyzeSentimentSettings() {
-    return analyzeSentimentSettings;
+  /** Returns the object with the settings used for calls to recognize. */
+  public SimpleCallSettings<RecognizeRequest, RecognizeResponse> recognizeSettings() {
+    return recognizeSettings;
   }
 
-  /** Returns the object with the settings used for calls to analyzeEntities. */
-  public SimpleCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
-      analyzeEntitiesSettings() {
-    return analyzeEntitiesSettings;
+  /** Returns the object with the settings used for calls to longRunningRecognize. */
+  public OperationCallSettings<
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
+          Operation>
+      longRunningRecognizeSettings() {
+    return longRunningRecognizeSettings;
   }
 
-  /** Returns the object with the settings used for calls to analyzeEntitySentiment. */
-  public SimpleCallSettings<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
-      analyzeEntitySentimentSettings() {
-    return analyzeEntitySentimentSettings;
+  /** Returns the object with the settings used for calls to streamingRecognize. */
+  public StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
+      streamingRecognizeSettings() {
+    return streamingRecognizeSettings;
   }
 
-  /** Returns the object with the settings used for calls to analyzeSyntax. */
-  public SimpleCallSettings<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxSettings() {
-    return analyzeSyntaxSettings;
-  }
-
-  /** Returns the object with the settings used for calls to classifyText. */
-  public SimpleCallSettings<ClassifyTextRequest, ClassifyTextResponse> classifyTextSettings() {
-    return classifyTextSettings;
-  }
-
-  /** Returns the object with the settings used for calls to annotateText. */
-  public SimpleCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextSettings() {
-    return annotateTextSettings;
-  }
-
-  public LanguageServiceStub createStub() throws IOException {
+  public SpeechStub createStub() throws IOException {
     if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
-      return GrpcLanguageServiceStub.create(this);
+      return GrpcSpeechStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportProvider().getTransportName());
@@ -146,7 +140,7 @@ public class LanguageServiceSettings extends ClientSettings {
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "language.googleapis.com:443";
+    return "speech.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -179,8 +173,7 @@ public class LanguageServiceSettings extends ClientSettings {
   private static String getGapicVersion() {
     if (gapicVersion == null) {
       gapicVersion =
-          PropertiesProvider.loadProperty(
-              LanguageServiceSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+          PropertiesProvider.loadProperty(SpeechSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
       gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
     }
     return gapicVersion;
@@ -214,38 +207,30 @@ public class LanguageServiceSettings extends ClientSettings {
     return new Builder(this);
   }
 
-  private LanguageServiceSettings(Builder settingsBuilder) throws IOException {
+  private SpeechSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
         settingsBuilder.getTransportProvider(),
         settingsBuilder.getCredentialsProvider(),
         settingsBuilder.getClock());
 
-    analyzeSentimentSettings = settingsBuilder.analyzeSentimentSettings().build();
-    analyzeEntitiesSettings = settingsBuilder.analyzeEntitiesSettings().build();
-    analyzeEntitySentimentSettings = settingsBuilder.analyzeEntitySentimentSettings().build();
-    analyzeSyntaxSettings = settingsBuilder.analyzeSyntaxSettings().build();
-    classifyTextSettings = settingsBuilder.classifyTextSettings().build();
-    annotateTextSettings = settingsBuilder.annotateTextSettings().build();
+    recognizeSettings = settingsBuilder.recognizeSettings().build();
+    longRunningRecognizeSettings = settingsBuilder.longRunningRecognizeSettings().build();
+    streamingRecognizeSettings = settingsBuilder.streamingRecognizeSettings().build();
   }
 
-  /** Builder for LanguageServiceSettings. */
+  /** Builder for SpeechSettings. */
   public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
-    private final SimpleCallSettings.Builder<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
-        analyzeSentimentSettings;
-    private final SimpleCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
-        analyzeEntitiesSettings;
-    private final SimpleCallSettings.Builder<
-            AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
-        analyzeEntitySentimentSettings;
-    private final SimpleCallSettings.Builder<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
-        analyzeSyntaxSettings;
-    private final SimpleCallSettings.Builder<ClassifyTextRequest, ClassifyTextResponse>
-        classifyTextSettings;
-    private final SimpleCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
-        annotateTextSettings;
+    private final SimpleCallSettings.Builder<RecognizeRequest, RecognizeResponse> recognizeSettings;
+    private final OperationCallSettings.Builder<
+            LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
+            Operation>
+        longRunningRecognizeSettings;
+    private final StreamingCallSettings.Builder<
+            StreamingRecognizeRequest, StreamingRecognizeResponse>
+        streamingRecognizeSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -271,9 +256,9 @@ public class LanguageServiceSettings extends ClientSettings {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(190000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeout(Duration.ofMillis(190000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
@@ -287,26 +272,13 @@ public class LanguageServiceSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      analyzeSentimentSettings = SimpleCallSettings.newBuilder();
+      recognizeSettings = SimpleCallSettings.newBuilder();
 
-      analyzeEntitiesSettings = SimpleCallSettings.newBuilder();
+      longRunningRecognizeSettings = OperationCallSettings.newBuilder();
 
-      analyzeEntitySentimentSettings = SimpleCallSettings.newBuilder();
+      streamingRecognizeSettings = StreamingCallSettings.newBuilder();
 
-      analyzeSyntaxSettings = SimpleCallSettings.newBuilder();
-
-      classifyTextSettings = SimpleCallSettings.newBuilder();
-
-      annotateTextSettings = SimpleCallSettings.newBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
-              analyzeSentimentSettings,
-              analyzeEntitiesSettings,
-              analyzeEntitySentimentSettings,
-              analyzeSyntaxSettings,
-              classifyTextSettings,
-              annotateTextSettings);
+      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder>of(recognizeSettings);
 
       initDefaults(this);
     }
@@ -321,56 +293,41 @@ public class LanguageServiceSettings extends ClientSettings {
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .analyzeSentimentSettings()
+          .recognizeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
       builder
-          .analyzeEntitiesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .analyzeEntitySentimentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .analyzeSyntaxSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .classifyTextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .annotateTextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .longRunningRecognizeSettings()
+          .setInitialCallSettings(
+              SimpleCallSettings.<LongRunningRecognizeRequest, Operation>newBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseClass(LongRunningRecognizeResponse.class)
+          .setMetadataClass(LongRunningRecognizeMetadata.class)
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(20000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .build()));
 
       return builder;
     }
 
-    private Builder(LanguageServiceSettings settings) {
+    private Builder(SpeechSettings settings) {
       super(settings);
 
-      analyzeSentimentSettings = settings.analyzeSentimentSettings.toBuilder();
-      analyzeEntitiesSettings = settings.analyzeEntitiesSettings.toBuilder();
-      analyzeEntitySentimentSettings = settings.analyzeEntitySentimentSettings.toBuilder();
-      analyzeSyntaxSettings = settings.analyzeSyntaxSettings.toBuilder();
-      classifyTextSettings = settings.classifyTextSettings.toBuilder();
-      annotateTextSettings = settings.annotateTextSettings.toBuilder();
+      recognizeSettings = settings.recognizeSettings.toBuilder();
+      longRunningRecognizeSettings = settings.longRunningRecognizeSettings.toBuilder();
+      streamingRecognizeSettings = settings.streamingRecognizeSettings.toBuilder();
 
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
-              analyzeSentimentSettings,
-              analyzeEntitiesSettings,
-              analyzeEntitySentimentSettings,
-              analyzeSyntaxSettings,
-              classifyTextSettings,
-              annotateTextSettings);
+      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder>of(recognizeSettings);
     }
 
     @Override
@@ -402,45 +359,28 @@ public class LanguageServiceSettings extends ClientSettings {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to analyzeSentiment. */
-    public SimpleCallSettings.Builder<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
-        analyzeSentimentSettings() {
-      return analyzeSentimentSettings;
+    /** Returns the builder for the settings used for calls to recognize. */
+    public SimpleCallSettings.Builder<RecognizeRequest, RecognizeResponse> recognizeSettings() {
+      return recognizeSettings;
     }
 
-    /** Returns the builder for the settings used for calls to analyzeEntities. */
-    public SimpleCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
-        analyzeEntitiesSettings() {
-      return analyzeEntitiesSettings;
+    /** Returns the builder for the settings used for calls to longRunningRecognize. */
+    public OperationCallSettings.Builder<
+            LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
+            Operation>
+        longRunningRecognizeSettings() {
+      return longRunningRecognizeSettings;
     }
 
-    /** Returns the builder for the settings used for calls to analyzeEntitySentiment. */
-    public SimpleCallSettings.Builder<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
-        analyzeEntitySentimentSettings() {
-      return analyzeEntitySentimentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to analyzeSyntax. */
-    public SimpleCallSettings.Builder<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
-        analyzeSyntaxSettings() {
-      return analyzeSyntaxSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to classifyText. */
-    public SimpleCallSettings.Builder<ClassifyTextRequest, ClassifyTextResponse>
-        classifyTextSettings() {
-      return classifyTextSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to annotateText. */
-    public SimpleCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
-        annotateTextSettings() {
-      return annotateTextSettings;
+    /** Returns the builder for the settings used for calls to streamingRecognize. */
+    public StreamingCallSettings.Builder<StreamingRecognizeRequest, StreamingRecognizeResponse>
+        streamingRecognizeSettings() {
+      return streamingRecognizeSettings;
     }
 
     @Override
-    public LanguageServiceSettings build() throws IOException {
-      return new LanguageServiceSettings(this);
+    public SpeechSettings build() throws IOException {
+      return new SpeechSettings(this);
     }
   }
 }

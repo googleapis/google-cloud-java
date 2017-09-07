@@ -116,6 +116,21 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   }
 
   @Override
+  public void classifyText(
+      ClassifyTextRequest request, StreamObserver<ClassifyTextResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ClassifyTextResponse) {
+      requests.add(request);
+      responseObserver.onNext((ClassifyTextResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void annotateText(
       AnnotateTextRequest request, StreamObserver<AnnotateTextResponse> responseObserver) {
     Object response = responses.remove();
