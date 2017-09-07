@@ -28,6 +28,30 @@ public interface DatabaseAdminClient {
   /**
    * Creates a new database in a Cloud Spanner instance.
    *
+   * <p>Example to create database.
+   * <pre> {@code
+   * String instanceId = my_instance_id;
+   * String databaseId = my_database_id;
+   * Operation<Database, CreateDatabaseMetadata> op = dbAdminClient
+   *     .createDatabase(
+   *         instanceId,
+   *         databaseId,
+   *         Arrays.asList(
+   *             "CREATE TABLE Singers (\n"
+   *                 + "  SingerId   INT64 NOT NULL,\n"
+   *                 + "  FirstName  STRING(1024),\n"
+   *                 + "  LastName   STRING(1024),\n"
+   *                 + "  SingerInfo BYTES(MAX)\n"
+   *                 + ") PRIMARY KEY (SingerId)",
+   *             "CREATE TABLE Albums (\n"
+   *                 + "  SingerId     INT64 NOT NULL,\n"
+   *                 + "  AlbumId      INT64 NOT NULL,\n"
+   *                 + "  AlbumTitle   STRING(MAX)\n"
+   *                 + ") PRIMARY KEY (SingerId, AlbumId),\n"
+   *                 + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"));
+   * Database db = op.waitFor().getResult();
+   * }</pre>
+   *
    * @param instanceId the id of the instance in which to create the database.
    * @param databaseId the id of the database which will be created. It must conform to the regular
    *     expression [a-z][a-z0-9_\-]*[a-z0-9] and be between 2 and 30 characters in length
@@ -37,7 +61,17 @@ public interface DatabaseAdminClient {
   Operation<Database, CreateDatabaseMetadata> createDatabase(
       String instanceId, String databaseId, Iterable<String> statements) throws SpannerException;
 
-  /** Gets the current state of a Cloud Spanner database. */
+  /** 
+   * Gets the current state of a Cloud Spanner database. 
+   *
+   * <p>Example to getDatabase.
+   * <pre> {@code
+   * String instanceId = my_instance_id;
+   * String databaseId = my_database_id;
+   * Database db = dbAdminClient.getDatabase(instanceId, databaseId);
+   * }</pre>
+   *
+   */
   Database getDatabase(String instanceId, String databaseId) throws SpannerException;
 
   /**
@@ -48,6 +82,16 @@ public interface DatabaseAdminClient {
    * statements is applied first and it conflicts in some way, or if there is some data-related
    * problem like a `NULL` value in a column to which `NOT NULL` would be added). If a statement
    * fails, all subsequent statements in the batch are automatically cancelled.
+   *
+   * <p>Example to update the database DDL.
+   * <pre> {@code
+   * String instanceId = my_instance_id;
+   * String databaseId = my_database_id;
+   * dbAdminClient.updateDatabaseDdl(instanceId,
+   *     databaseId,
+   *     Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget INT64"),
+   *     null).waitFor();
+   * }</pre>
    *
    * @param operationId Operation id assigned to this operation. If null, system will autogenerate
    *     one. This must be unique within a database abd must be a valid identifier
@@ -60,15 +104,48 @@ public interface DatabaseAdminClient {
       @Nullable String operationId)
       throws SpannerException;
 
-  /** Drops a Cloud Spanner database. */
+  /** 
+   * Drops a Cloud Spanner database. 
+   *
+   * <p>Example to drop a Cloud Spanner database.
+   * <pre> {@code
+   * String instanceId = my_instance_id;
+   * String databaseId = my_database_id;
+   * dbAdminClient.dropDatabase(instanceId, databaseId);
+   * }</pre>
+   *
+   */
   void dropDatabase(String instanceId, String databaseId) throws SpannerException;
 
   /**
    * Returns the schema of a Cloud Spanner database as a list of formatted DDL statements. This
    * method does not show pending schema updates.
+   *
+   * <p>Example to get the schema of a Cloud Spanner database.
+   * <pre> {@code
+   * String instanceId = my_instance_id;
+   * String databaseId = my_database_id;
+   * List<String> statementsInDb = dbAdminClient.getDatabaseDdl(instanceId, databaseId);
+   * }</pre>
+   *
    */
   List<String> getDatabaseDdl(String instanceId, String databaseId);
 
-  /** Returns the list of Cloud Spanner database in the given instance. */
+  /**
+   * Returns the list of Cloud Spanner database in the given instance. 
+   *
+   * <p>Example to get the list of Cloud Spanner database in the given instance.
+   * <pre> {@code
+   * String instanceId = my_instance_id;
+   * Page<Database> page = dbAdminClient.listDatabases(instanceId, Options.pageSize(1));
+   * List<Database> dbs = new ArrayList<>();
+   * while (page != null) {
+   *   Database db = Iterables.getOnlyElement(page.getValues());
+   *   dbs.add(db);
+   *   page = page.getNextPage();
+   * }
+   * }</pre>
+   *
+   */
   Page<Database> listDatabases(String instanceId, ListOption... options);
 }
