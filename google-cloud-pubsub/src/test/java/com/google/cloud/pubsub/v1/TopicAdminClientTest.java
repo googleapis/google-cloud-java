@@ -19,10 +19,10 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscrip
 import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcApiException;
 import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -132,8 +132,8 @@ public class TopicAdminClientTest {
 
       client.createTopic(name);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -176,8 +176,8 @@ public class TopicAdminClientTest {
 
       client.publish(topic, messages);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -211,8 +211,8 @@ public class TopicAdminClientTest {
 
       client.getTopic(topic);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -255,8 +255,8 @@ public class TopicAdminClientTest {
 
       client.listTopics(project);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -305,8 +305,8 @@ public class TopicAdminClientTest {
 
       client.listTopicSubscriptions(topic);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -338,8 +338,8 @@ public class TopicAdminClientTest {
 
       client.deleteTopic(topic);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -377,8 +377,8 @@ public class TopicAdminClientTest {
 
       client.setIamPolicy(formattedResource, policy);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -413,8 +413,8 @@ public class TopicAdminClientTest {
 
       client.getIamPolicy(formattedResource);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -451,8 +451,8 @@ public class TopicAdminClientTest {
 
       client.testIamPermissions(formattedResource, permissions);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 }

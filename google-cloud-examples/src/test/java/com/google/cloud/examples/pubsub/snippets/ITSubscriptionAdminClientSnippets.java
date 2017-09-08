@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
 import com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
@@ -124,7 +124,7 @@ public class ITSubscriptionAdminClientSnippets {
     assertTrue(subFound[0] && subFound[1]);
   }
 
-  @Test(expected = GrpcApiException.class)
+  @Test(expected = ApiException.class)
   public void deleteSubscriptionThrowsExceptionWhenRetrieved() throws Exception {
     String topicName = topics[0];
     String subscriptionName = subscriptions[0];

@@ -19,10 +19,10 @@ import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.List
 import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcApiException;
 import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
@@ -134,8 +134,8 @@ public class ErrorStatsServiceClientTest {
 
       client.listGroupStats(projectName, timeRange);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -181,8 +181,8 @@ public class ErrorStatsServiceClientTest {
 
       client.listEvents(projectName, groupId);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -215,8 +215,8 @@ public class ErrorStatsServiceClientTest {
 
       client.deleteEvents(projectName);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 }

@@ -18,10 +18,10 @@ package com.google.cloud.logging.v2;
 import static com.google.cloud.logging.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcApiException;
 import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.logging.v2.CreateSinkRequest;
@@ -130,8 +130,8 @@ public class ConfigClientTest {
 
       client.listSinks(parent);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -176,8 +176,8 @@ public class ConfigClientTest {
 
       client.getSink(sinkName);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -225,8 +225,8 @@ public class ConfigClientTest {
 
       client.createSink(parent, sink);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -274,8 +274,8 @@ public class ConfigClientTest {
 
       client.updateSink(sinkName, sink);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -307,8 +307,8 @@ public class ConfigClientTest {
 
       client.deleteSink(sinkName);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 }

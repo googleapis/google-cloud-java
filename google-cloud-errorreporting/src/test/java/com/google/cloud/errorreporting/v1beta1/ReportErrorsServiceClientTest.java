@@ -16,10 +16,10 @@
 package com.google.cloud.errorreporting.v1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcApiException;
 import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
@@ -114,8 +114,8 @@ public class ReportErrorsServiceClientTest {
 
       client.reportErrorEvent(projectName, event);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 }
