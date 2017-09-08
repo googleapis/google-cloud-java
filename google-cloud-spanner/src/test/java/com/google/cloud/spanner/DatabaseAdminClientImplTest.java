@@ -107,7 +107,7 @@ public class DatabaseAdminClientImplTest {
             com.google.longrunning.Operation.newBuilder().setDone(true).setName(opName).build());
     Operation<Void, UpdateDatabaseDdlMetadata> op =
         client.updateDatabaseDdl(INSTANCE_ID, DB_ID, ddl, opId);
-    assertThat(op.isDone());
+    assertThat(op.isDone()).isTrue();
     assertThat(op.getName()).isEqualTo(opName);
   }
 

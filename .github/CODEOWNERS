@@ -1,0 +1,34 @@
+# Code owners file.
+# This file controls who is tagged for review for any given pull request.
+
+# For anything not explicitly taken by someone else.
+*                                 @garrettjonesgoogle
+# Owners per module.
+google-cloud-bigquery/*           @vam-google @tswast
+google-cloud-compute/*            @garrettjonesgoogle
+google-cloud-contrib/*            @garrettjonesgoogle @jean-philippe-martin
+google-cloud-core-grpc/*          @garrettjonesgoogle
+google-cloud-core-http/*          @garrettjonesgoogle
+google-cloud-core/*               @garrettjonesgoogle
+google-cloud-datastore/*          @garrettjonesgoogle
+google-cloud-dep-verification/*   @garrettjonesgoogle
+google-cloud-dlp/*                @neozwu
+google-cloud-dns/*                @garrettjonesgoogle
+google-cloud-errorreporting/*     @garrettjonesgoogle
+google-cloud-examples/*           @garrettjonesgoogle
+google-cloud-language/*           @garrettjonesgoogle
+google-cloud-logging/*            @garrettjonesgoogle @jabubake
+google-cloud-monitoring/*         @garrettjonesgoogle
+google-cloud-pubsub/*             @pongad
+google-cloud-resourcemanager/*    @garrettjonesgoogle
+google-cloud-spanner/*            @vam-google @vkedia
+google-cloud-speech/*             @vam-google
+google-cloud-storage/*            @garrettjonesgoogle
+google-cloud-testing/*            @vam-google
+google-cloud-trace/*              @garrettjonesgoogle
+google-cloud-translate/*          @garrettjonesgoogle
+google-cloud-util/*               @garrettjonesgoogle
+google-cloud-video-intelligence/* @vam-google
+google-cloud-vision/*             @vam-google
+google-cloud/*                    @garrettjonesgoogle
+
