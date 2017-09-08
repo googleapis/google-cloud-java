@@ -16,11 +16,14 @@
 
 package com.google.cloud.storage;
 
+import static org.easymock.EasyMock.anyObject;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.createNiceMock;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.eq;
 import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.getCurrentArguments;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertArrayEquals;
@@ -43,11 +46,15 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
 
 import org.easymock.Capture;
+import org.easymock.IAnswer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.File;
 import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.file.Files;
 import java.security.Key;
 import java.util.List;
 import java.util.Map;
@@ -516,5 +523,35 @@ public class BlobTest {
     assertEquals(0L, (long) blob.getSize());
     assertNull(blob.getUpdateTime());
     assertTrue(blob.isDirectory());
+  }
+
+  @Test
+  public void testDownload() throws Exception {
+    final byte[] expected = {1, 2};
+
+    initializeExpectedBlob(2);
+    ReadChannel channel = createNiceMock(ReadChannel.class);
+    expect(storage.getOptions()).andReturn(mockOptions);
+    expect(storage.reader(BLOB_INFO.getBlobId())).andReturn(channel);
+    replay(storage);
+    // First read should return 2 bytes.
+    expect(channel.read(anyObject(ByteBuffer.class)))
+        .andAnswer(new IAnswer<Integer>() {
+          @Override
+          public Integer answer() throws Throwable {
+            // Modify the argument to match the expected behavior of `read`.
+            ((ByteBuffer) getCurrentArguments()[0]).put(expected);
+            return 2;
+          }
+        });
+    // Second read should return 0 bytes.
+    expect(channel.read(anyObject(ByteBuffer.class))).andReturn(0);
+    replay(channel);
+    initializeBlob();
+
+    File file = File.createTempFile("blob", ".tmp");
+    blob.downloadTo(file.toPath());
+    byte actual[] = Files.readAllBytes(file.toPath());
+    assertArrayEquals(expected, actual);
   }
 }
