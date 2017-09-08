@@ -52,7 +52,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private static final Duration MAX_CHANNEL_RECONNECT_BACKOFF = Duration.ofSeconds(10);
   private static final int MAX_PER_REQUEST_CHANGES = 10000;
 
-  private final AtomicLong channelReconnectBackoffMillis = new AtomicLong(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
+  private final AtomicLong channelReconnectBackoffMillis =
+      new AtomicLong(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
 
   private final SubscriberStub asyncStub;
 
@@ -189,10 +190,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             logger.log(Level.WARNING, "Terminated streaming with exception", cause);
             if (StatusUtil.isRetryable(cause)) {
               long backoffMillis = channelReconnectBackoffMillis.get();
-              long newBackoffMillis = backoffMillis*2;
-              if (newBackoffMillis > MAX_CHANNEL_RECONNECT_BACKOFF.toMillis()) {
-                newBackoffMillis = MAX_CHANNEL_RECONNECT_BACKOFF.toMillis();
-              }
+              long newBackoffMillis =
+                  Math.min(backoffMillis * 2, MAX_CHANNEL_RECONNECT_BACKOFF.toMillis());
               channelReconnectBackoffMillis.set(newBackoffMillis);
 
               executor.schedule(
