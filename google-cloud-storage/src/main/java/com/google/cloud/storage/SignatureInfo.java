@@ -17,12 +17,12 @@ public class SignatureInfo {
   private static final char COMPONENT_SEPARATOR = '\n';
   private static final char HEADER_SEPARATOR = ':';
 
-  private HttpMethod httpVerb;
-  private String contentMd5;
-  private String contentType;
-  private long expiration;
-  private Map<String, String> canonicalizedExtensionHeaders;
-  private Path canonicalizedResource;
+  private final HttpMethod httpVerb;
+  private final String contentMd5;
+  private final String contentType;
+  private final long expiration;
+  private final Map<String, String> canonicalizedExtensionHeaders;
+  private final Path canonicalizedResource;
 
   private SignatureInfo(Builder builder) {
     this.httpVerb = builder.httpVerb;
@@ -96,12 +96,12 @@ public class SignatureInfo {
 
   public final static class Builder {
 
-    private HttpMethod httpVerb;
+    private final HttpMethod httpVerb;
     private String contentMd5;
     private String contentType;
-    private long expiration;
+    private final long expiration;
     private Map<String, String> canonicalizedExtensionHeaders;
-    private Path canonicalizedResource;
+    private final Path canonicalizedResource;
 
     /**
      * Constructs builder.
