@@ -1,6 +1,6 @@
 package com.google.cloud.storage;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +30,7 @@ public class SignatureInfoTest {
     
     String unsignedPayload = builder.build().constructUnsignedPayload();
     
-    assertTrue(("PUT\n\n\n0\n" + RESOURCE).equals(unsignedPayload));
+    assertEquals("PUT\n\n\n0\n" + RESOURCE, unsignedPayload);
   }
   
   @Test
@@ -49,6 +49,6 @@ public class SignatureInfoTest {
     String rawPayload =
         "PUT\n\n\n0\nx-goog-acl:public-read\nx-goog-meta-owner:myself\n" + RESOURCE;
 
-    assertTrue(rawPayload.equals(unsignedPayload));
+    assertEquals(rawPayload, unsignedPayload);
   }
 }

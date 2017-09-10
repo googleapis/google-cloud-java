@@ -1716,7 +1716,7 @@ public class StorageImplTest {
         .append(BLOB_INFO1.getContentType())
         .append('\n')
         .append(42L + 1209600)
-        .append("\n")
+        .append('\n')
         .append("x-goog-acl:public-read\n")
         .append("x-goog-meta-owner:myself\n")
         .append("/")
