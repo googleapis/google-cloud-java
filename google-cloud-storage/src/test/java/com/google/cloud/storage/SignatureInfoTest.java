@@ -19,7 +19,7 @@ package com.google.cloud.storage;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.storage.SignatureInfo.Builder;
-import java.nio.file.Paths;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.Test;
@@ -31,7 +31,7 @@ public class SignatureInfoTest {
   @Test(expected = IllegalArgumentException.class)
   public void requireHttpVerb() {
     
-    new SignatureInfo.Builder(null, 0L, Paths.get(RESOURCE)).build();
+    new SignatureInfo.Builder(null, 0L, URI.create(RESOURCE)).build();
   }
   
   @Test(expected = IllegalArgumentException.class)
@@ -43,7 +43,7 @@ public class SignatureInfoTest {
   @Test
   public void constructUnsignedPayload() {
     
-    Builder builder = new SignatureInfo.Builder(HttpMethod.PUT, 0L, Paths.get(RESOURCE));
+    Builder builder = new SignatureInfo.Builder(HttpMethod.PUT, 0L, URI.create(RESOURCE));
     
     String unsignedPayload = builder.build().constructUnsignedPayload();
     
@@ -53,7 +53,7 @@ public class SignatureInfoTest {
   @Test
   public void constructUnsignedPayloadWithExtensionHeaders() {
     
-    Builder builder = new SignatureInfo.Builder(HttpMethod.PUT, 0L, Paths.get(RESOURCE));
+    Builder builder = new SignatureInfo.Builder(HttpMethod.PUT, 0L, URI.create(RESOURCE));
     
     Map<String, String> extensionHeaders = new HashMap<>();
     extensionHeaders.put("x-goog-acl", "public-read");

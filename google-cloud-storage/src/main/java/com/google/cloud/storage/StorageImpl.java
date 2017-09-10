@@ -66,10 +66,9 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
@@ -530,7 +529,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     String escapedName = UrlEscapers.urlFragmentEscaper().escape(blobInfo.getName());
     stPath.append(escapedName.replace("?", "%3F"));
     
-    Path path = Paths.get(stPath.toString());
+    URI path = URI.create(stPath.toString());
     
     try {
       SignatureInfo signatureInfo = buildSignarueInfo(optionMap, blobInfo, expiration, path);
@@ -555,11 +554,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
    * @param optionMap the option map
    * @param blobInfo  the blob info
    * @param expiration the expiration in seconds
-   * @param path  the resource path
+   * @param path  the resource URI
    * @return  signature info
    */
   private SignatureInfo buildSignarueInfo(Map<SignUrlOption.Option, Object> optionMap,
-      BlobInfo blobInfo, long expiration, Path path) {
+      BlobInfo blobInfo, long expiration, URI path) {
 
     HttpMethod httpVerb = optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD)
         ? (HttpMethod) optionMap.get(SignUrlOption.Option.HTTP_METHOD)
