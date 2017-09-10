@@ -66,10 +66,9 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
@@ -529,22 +528,23 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     
     String escapedName = UrlEscapers.urlFragmentEscaper().escape(blobInfo.getName());
     stPath.append(escapedName.replace("?", "%3F"));
-    
-    Path path = Paths.get(stPath.toString());
-    
+
+    URI resource = URI.create(stPath.toString());
+
     try {
-      SignatureInfo signatureInfo = buildSignarueInfo(optionMap, blobInfo, expiration, path);
+      SignatureInfo signatureInfo = buildSignarueInfo(optionMap, blobInfo, expiration, resource);
       byte[] signatureBytes =
           credentials.sign(signatureInfo.constructUnsignedPayload().getBytes(UTF_8));
-      StringBuilder stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
+      StringBuilder stBuilder =
+          new StringBuilder("https://storage.googleapis.com").append(resource);
       String signature =
           URLEncoder.encode(BaseEncoding.base64().encode(signatureBytes), UTF_8.name());
       stBuilder.append("?GoogleAccessId=").append(credentials.getAccount());
       stBuilder.append("&Expires=").append(expiration);
       stBuilder.append("&Signature=").append(signature);
-      
+
       return new URL(stBuilder.toString());
-    
+
     } catch (MalformedURLException | UnsupportedEncodingException ex) {
       throw new IllegalStateException(ex);
     }
@@ -552,38 +552,39 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   
   /**
    * Builds signature info.
-   * @param optionMap
-   * @param blobInfo
-   * @param expiration
-   * @param path
-   * @return
+   * @param optionMap the option map
+   * @param blobInfo  the blob info
+   * @param expiration the expiration in seconds
+   * @param resource  the resource URI
+   * @return  signature info
    */
   private SignatureInfo buildSignarueInfo(Map<SignUrlOption.Option, Object> optionMap,
-      BlobInfo blobInfo, long expiration, Path path) {
-	
-	HttpMethod httpVerb = optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD) ?
-			(HttpMethod) optionMap.get(SignUrlOption.Option.HTTP_METHOD) : HttpMethod.GET;
-	
+      BlobInfo blobInfo, long expiration, URI resource) {
+
+    HttpMethod httpVerb = optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD)
+        ? (HttpMethod) optionMap.get(SignUrlOption.Option.HTTP_METHOD)
+        : HttpMethod.GET;
+
     SignatureInfo.Builder signatureInfoBuilder =
-        new SignatureInfo.Builder(httpVerb, expiration, path);
-	
-	if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5), false)) {
-	  checkArgument(blobInfo.getMd5() != null, "Blob is missing a value for md5");
-	  signatureInfoBuilder.setContentMd5(blobInfo.getMd5());
-	}
-	
-	if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE), false)) {
-	  checkArgument(blobInfo.getContentType() != null, "Blob is missing a value for content-type");
-	  signatureInfoBuilder.setContentType(blobInfo.getContentType());
-	}
-	
-	@SuppressWarnings("unchecked")
-	Map<String, String> extHeaders =
-			(Map<String, String>) (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS) ?
-					(Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS) :
-						Collections.emptyMap());
-	
-	return signatureInfoBuilder.setCanonicalizedExtensionHeaders(extHeaders).build();
+        new SignatureInfo.Builder(httpVerb, expiration, resource);
+
+    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5), false)) {
+      checkArgument(blobInfo.getMd5() != null, "Blob is missing a value for md5");
+      signatureInfoBuilder.setContentMd5(blobInfo.getMd5());
+    }
+
+    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE), false)) {
+      checkArgument(blobInfo.getContentType() != null, "Blob is missing a value for content-type");
+      signatureInfoBuilder.setContentType(blobInfo.getContentType());
+    }
+
+    @SuppressWarnings("unchecked")
+    Map<String, String> extHeaders =
+        (Map<String, String>) (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)
+            ? (Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS)
+            : Collections.emptyMap());
+
+    return signatureInfoBuilder.setCanonicalizedExtensionHeaders(extHeaders).build();
   }
 
   @Override
