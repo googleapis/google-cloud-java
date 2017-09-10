@@ -552,38 +552,39 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   
   /**
    * Builds signature info.
-   * @param optionMap
-   * @param blobInfo
-   * @param expiration
-   * @param path
-   * @return
+   * @param optionMap the option map
+   * @param blobInfo  the blob info
+   * @param expiration the expiration in seconds
+   * @param path  the resource path
+   * @return  signature info
    */
   private SignatureInfo buildSignarueInfo(Map<SignUrlOption.Option, Object> optionMap,
       BlobInfo blobInfo, long expiration, Path path) {
-	
-	HttpMethod httpVerb = optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD) ?
-			(HttpMethod) optionMap.get(SignUrlOption.Option.HTTP_METHOD) : HttpMethod.GET;
-	
+
+    HttpMethod httpVerb = optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD)
+        ? (HttpMethod) optionMap.get(SignUrlOption.Option.HTTP_METHOD)
+        : HttpMethod.GET;
+
     SignatureInfo.Builder signatureInfoBuilder =
         new SignatureInfo.Builder(httpVerb, expiration, path);
-	
-	if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5), false)) {
-	  checkArgument(blobInfo.getMd5() != null, "Blob is missing a value for md5");
-	  signatureInfoBuilder.setContentMd5(blobInfo.getMd5());
-	}
-	
-	if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE), false)) {
-	  checkArgument(blobInfo.getContentType() != null, "Blob is missing a value for content-type");
-	  signatureInfoBuilder.setContentType(blobInfo.getContentType());
-	}
-	
-	@SuppressWarnings("unchecked")
-	Map<String, String> extHeaders =
-			(Map<String, String>) (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS) ?
-					(Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS) :
-						Collections.emptyMap());
-	
-	return signatureInfoBuilder.setCanonicalizedExtensionHeaders(extHeaders).build();
+
+    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5), false)) {
+      checkArgument(blobInfo.getMd5() != null, "Blob is missing a value for md5");
+      signatureInfoBuilder.setContentMd5(blobInfo.getMd5());
+    }
+
+    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE), false)) {
+      checkArgument(blobInfo.getContentType() != null, "Blob is missing a value for content-type");
+      signatureInfoBuilder.setContentType(blobInfo.getContentType());
+    }
+
+    @SuppressWarnings("unchecked")
+    Map<String, String> extHeaders =
+        (Map<String, String>) (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)
+            ? (Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS)
+            : Collections.emptyMap());
+
+    return signatureInfoBuilder.setCanonicalizedExtensionHeaders(extHeaders).build();
   }
 
   @Override
