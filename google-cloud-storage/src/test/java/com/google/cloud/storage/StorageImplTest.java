@@ -1719,7 +1719,7 @@ public class StorageImplTest {
         .append('\n')
         .append("x-goog-acl:public-read\n")
         .append("x-goog-meta-owner:myself\n")
-        .append("/")
+        .append('/')
         .append(BUCKET_NAME1)
         .append('/')
         .append(BLOB_NAME1);
