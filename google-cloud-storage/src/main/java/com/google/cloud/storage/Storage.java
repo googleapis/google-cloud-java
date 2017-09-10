@@ -898,8 +898,7 @@ public interface Storage extends Service<StorageOptions> {
      * Use it if signature should include the blob's canonicalized extended headers.
      * When used, users of the signed URL should include the canonicalized extended headers with
      * their request.
-     *
-     * @see <a https://cloud.google.com/storage/docs/xml-api/reference-headers>/a>
+     * @see <a href="https://cloud.google.com/storage/docs/xml-api/reference-headers"></a>
      */
     public static SignUrlOption withExtHeaders(Map<String, String> extHeaders) {
       return new SignUrlOption(Option.EXT_HEADERS, extHeaders);

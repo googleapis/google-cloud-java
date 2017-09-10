@@ -18,7 +18,7 @@ package com.google.cloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-import java.nio.file.Path;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,7 +27,9 @@ import java.util.Map;
 /**
  * Signature Info holds payload components of the string that requires signing.
  * 
- * @see https://cloud.google.com/storage/docs/access-control/signed-urls#string-components
+ * @see <a href=
+ *      "https://cloud.google.com/storage/docs/access-control/signed-urls#string-components">
+ *      Components</a>
  */
 public class SignatureInfo {
 
@@ -39,7 +41,7 @@ public class SignatureInfo {
   private final String contentType;
   private final long expiration;
   private final Map<String, String> canonicalizedExtensionHeaders;
-  private final Path canonicalizedResource;
+  private final URI canonicalizedResource;
 
   private SignatureInfo(Builder builder) {
     this.httpVerb = builder.httpVerb;
@@ -54,7 +56,7 @@ public class SignatureInfo {
    * Constructs payload to be signed.
    * 
    * @return paylod to sign
-   * @see https://cloud.google.com/storage/docs/access-control#Signed-URLs
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed URLs</a>
    */
   public String constructUnsignedPayload() {
     StringBuilder payload = new StringBuilder();
@@ -107,28 +109,28 @@ public class SignatureInfo {
     return canonicalizedExtensionHeaders;
   }
 
-  public Path getCanonicalizedResource() {
+  public URI getCanonicalizedResource() {
     return canonicalizedResource;
   }
 
-  public final static class Builder {
+  public static final class Builder {
 
     private final HttpMethod httpVerb;
     private String contentMd5;
     private String contentType;
     private final long expiration;
     private Map<String, String> canonicalizedExtensionHeaders;
-    private final Path canonicalizedResource;
+    private final URI canonicalizedResource;
 
     /**
      * Constructs builder.
      * 
      * @param httpVerb  the HTTP method
      * @param expiration  the EPOX expiration date
-     * @param canonicalizedResource  the resource path
+     * @param canonicalizedResource  the resource URI
      * @throws IllegalArgumentException if required field is not provided.
      */
-    public Builder(HttpMethod httpVerb, long expiration, Path canonicalizedResource) {
+    public Builder(HttpMethod httpVerb, long expiration, URI canonicalizedResource) {
       checkArgument(httpVerb != null, "Required HTTP method");
       checkArgument(canonicalizedResource != null, "Required canonicalized resource");
 
