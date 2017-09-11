@@ -1,5 +1,5 @@
 language: java
-dist: precise
+dist: trusty
 matrix:
   include:
   - os: linux
