@@ -21,9 +21,10 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.grpc.GrpcTransport;
 import com.google.api.gax.grpc.GrpcTransportProvider;
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.Transport;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -151,11 +152,11 @@ public class GrpcLoggingRpc implements LoggingRpc {
     }
     return ApiFutures.catching(
         from,
-        GrpcApiException.class,
-        new ApiFunction<GrpcApiException, V>() {
+        ApiException.class,
+        new ApiFunction<ApiException, V>() {
           @Override
-          public V apply(GrpcApiException exception) {
-            if (returnNullOnSet.contains(exception.getStatusCode().getCode())) {
+          public V apply(ApiException exception) {
+            if (returnNullOnSet.contains(((GrpcStatusCode) exception.getStatusCode()).getCode())) {
               return null;
             }
             throw new LoggingException(exception);

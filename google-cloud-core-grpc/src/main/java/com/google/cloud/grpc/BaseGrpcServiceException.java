@@ -19,7 +19,8 @@ package com.google.cloud.grpc;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
-import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.BaseServiceException;
 import com.google.common.base.MoreObjects;
 import java.io.IOException;
@@ -66,13 +67,13 @@ public class BaseGrpcServiceException extends BaseServiceException {
   }
 
   @BetaApi
-  public BaseGrpcServiceException(GrpcApiException apiException) {
+  public BaseGrpcServiceException(ApiException apiException) {
     super(ExceptionData.newBuilder()
         .setMessage(apiException.getMessage())
         .setCause(apiException)
         .setRetryable(apiException.isRetryable())
-        .setCode(apiException.getStatusCode().getCode().value())
-        .setReason(apiException.getStatusCode().getCode().name())
+        .setCode(((GrpcStatusCode) apiException.getStatusCode()).getCode().value())
+        .setReason(((GrpcStatusCode) apiException.getStatusCode()).getCode().name())
         .setLocation(null)
         .setDebugInfo(null)
         .build());
