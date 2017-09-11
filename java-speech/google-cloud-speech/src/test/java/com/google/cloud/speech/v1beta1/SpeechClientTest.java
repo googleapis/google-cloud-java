@@ -64,7 +64,7 @@ public class SpeechClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     SpeechSettings settings =
-        SpeechSettings.defaultBuilder()
+        SpeechSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())

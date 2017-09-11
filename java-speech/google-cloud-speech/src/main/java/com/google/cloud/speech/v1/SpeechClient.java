@@ -86,7 +86,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * SpeechSettings speechSettings =
- *     SpeechSettings.defaultBuilder()
+ *     SpeechSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * SpeechClient speechClient =
@@ -99,7 +99,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * SpeechSettings speechSettings =
- *     SpeechSettings.defaultBuilder()
+ *     SpeechSettings.newBuilder()
  *         .setTransportProvider(SpeechSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(SpeechSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -120,7 +120,7 @@ public class SpeechClient implements BackgroundResource {
 
   /** Constructs an instance of SpeechClient with default settings. */
   public static final SpeechClient create() throws IOException {
-    return create(SpeechSettings.defaultBuilder().build());
+    return create(SpeechSettings.newBuilder().build());
   }
 
   /**
@@ -159,6 +159,7 @@ public class SpeechClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public SpeechStub getStub() {
     return stub;
   }
