@@ -114,7 +114,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
   }
 
   public static final GrpcGroupServiceStub create(ClientContext clientContext) throws IOException {
-    return new GrpcGroupServiceStub(GroupServiceSettings.defaultBuilder().build(), clientContext);
+    return new GrpcGroupServiceStub(GroupServiceSettings.newBuilder().build(), clientContext);
   }
 
   /**

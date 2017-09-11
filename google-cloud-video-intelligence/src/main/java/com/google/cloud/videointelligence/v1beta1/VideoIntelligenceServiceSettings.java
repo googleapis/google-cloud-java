@@ -68,7 +68,7 @@ import org.threeten.bp.Duration;
  * <pre>
  * <code>
  * VideoIntelligenceServiceSettings.Builder videoIntelligenceServiceSettingsBuilder =
- *     VideoIntelligenceServiceSettings.defaultBuilder();
+ *     VideoIntelligenceServiceSettings.newBuilder();
  * videoIntelligenceServiceSettingsBuilder.annotateVideoSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings = videoIntelligenceServiceSettingsBuilder.build();
@@ -159,6 +159,7 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
   }
 
   /** Returns a builder for this class with recommended defaults. */
+  @Deprecated
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
@@ -167,13 +168,14 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
    * Returns a builder for this class with recommended defaults for API methods, and the given
    * ClientContext used for executor/transport/credentials.
    */
+  @Deprecated
   public static Builder defaultBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
-    return new Builder();
+    return Builder.createDefault();
   }
 
   /** Returns a new builder for this class. */

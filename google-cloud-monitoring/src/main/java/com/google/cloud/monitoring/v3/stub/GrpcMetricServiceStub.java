@@ -162,7 +162,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
   }
 
   public static final GrpcMetricServiceStub create(ClientContext clientContext) throws IOException {
-    return new GrpcMetricServiceStub(MetricServiceSettings.defaultBuilder().build(), clientContext);
+    return new GrpcMetricServiceStub(MetricServiceSettings.newBuilder().build(), clientContext);
   }
 
   /**

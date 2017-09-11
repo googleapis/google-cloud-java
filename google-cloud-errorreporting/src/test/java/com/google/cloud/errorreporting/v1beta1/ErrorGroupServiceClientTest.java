@@ -67,7 +67,7 @@ public class ErrorGroupServiceClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     ErrorGroupServiceSettings settings =
-        ErrorGroupServiceSettings.defaultBuilder()
+        ErrorGroupServiceSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())

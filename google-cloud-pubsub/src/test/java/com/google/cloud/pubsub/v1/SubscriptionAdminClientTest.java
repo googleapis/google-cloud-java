@@ -102,7 +102,7 @@ public class SubscriptionAdminClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     SubscriptionAdminSettings settings =
-        SubscriptionAdminSettings.defaultBuilder()
+        SubscriptionAdminSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())

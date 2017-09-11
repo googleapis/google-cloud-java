@@ -247,8 +247,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
   }
 
   public static final GrpcSubscriberStub create(ClientContext clientContext) throws IOException {
-    return new GrpcSubscriberStub(
-        SubscriptionAdminSettings.defaultBuilder().build(), clientContext);
+    return new GrpcSubscriberStub(SubscriptionAdminSettings.newBuilder().build(), clientContext);
   }
 
   /**

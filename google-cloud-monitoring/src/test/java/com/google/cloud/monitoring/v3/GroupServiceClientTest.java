@@ -73,7 +73,7 @@ public class GroupServiceClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     GroupServiceSettings settings =
-        GroupServiceSettings.defaultBuilder()
+        GroupServiceSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())

@@ -57,7 +57,7 @@ public class LanguageServiceClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     LanguageServiceSettings settings =
-        LanguageServiceSettings.defaultBuilder()
+        LanguageServiceSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())

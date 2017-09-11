@@ -22,8 +22,11 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.longrunning.Operation;
+import com.google.privacy.dlp.v2beta1.CloudStorageOptions;
+import com.google.privacy.dlp.v2beta1.CloudStorageOptions.FileSet;
 import com.google.privacy.dlp.v2beta1.ContentItem;
 import com.google.privacy.dlp.v2beta1.CreateInspectOperationRequest;
+import com.google.privacy.dlp.v2beta1.InfoType;
 import com.google.privacy.dlp.v2beta1.InspectConfig;
 import com.google.privacy.dlp.v2beta1.InspectContentRequest;
 import com.google.privacy.dlp.v2beta1.InspectContentResponse;
@@ -45,7 +48,6 @@ import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -79,7 +81,7 @@ public class DlpServiceClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     DlpServiceSettings settings =
-        DlpServiceSettings.defaultBuilder()
+        DlpServiceSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())
@@ -100,8 +102,14 @@ public class DlpServiceClientTest {
     InspectContentResponse expectedResponse = InspectContentResponse.newBuilder().build();
     mockDlpService.addResponse(expectedResponse);
 
-    InspectConfig inspectConfig = InspectConfig.newBuilder().build();
-    List<ContentItem> items = new ArrayList<>();
+    String name = "EMAIL_ADDRESS";
+    InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
+    List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
+    InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
+    String type = "text/plain";
+    String value = "My email is example@example.com.";
+    ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
+    List<ContentItem> items = Arrays.asList(itemsElement);
 
     InspectContentResponse actualResponse = client.inspectContent(inspectConfig, items);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -121,8 +129,14 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      InspectConfig inspectConfig = InspectConfig.newBuilder().build();
-      List<ContentItem> items = new ArrayList<>();
+      String name = "EMAIL_ADDRESS";
+      InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
+      List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
+      InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
+      String type = "text/plain";
+      String value = "My email is example@example.com.";
+      ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
+      List<ContentItem> items = Arrays.asList(itemsElement);
 
       client.inspectContent(inspectConfig, items);
       Assert.fail("No exception raised");
@@ -137,9 +151,23 @@ public class DlpServiceClientTest {
     RedactContentResponse expectedResponse = RedactContentResponse.newBuilder().build();
     mockDlpService.addResponse(expectedResponse);
 
-    InspectConfig inspectConfig = InspectConfig.newBuilder().build();
-    List<ContentItem> items = new ArrayList<>();
-    List<RedactContentRequest.ReplaceConfig> replaceConfigs = new ArrayList<>();
+    String name = "EMAIL_ADDRESS";
+    InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
+    List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
+    InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
+    String type = "text/plain";
+    String value = "My email is example@example.com.";
+    ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
+    List<ContentItem> items = Arrays.asList(itemsElement);
+    String name2 = "EMAIL_ADDRESS";
+    InfoType infoType = InfoType.newBuilder().setName(name2).build();
+    String replaceWith = "REDACTED";
+    RedactContentRequest.ReplaceConfig replaceConfigsElement =
+        RedactContentRequest.ReplaceConfig.newBuilder()
+            .setInfoType(infoType)
+            .setReplaceWith(replaceWith)
+            .build();
+    List<RedactContentRequest.ReplaceConfig> replaceConfigs = Arrays.asList(replaceConfigsElement);
 
     RedactContentResponse actualResponse =
         client.redactContent(inspectConfig, items, replaceConfigs);
@@ -161,9 +189,24 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      InspectConfig inspectConfig = InspectConfig.newBuilder().build();
-      List<ContentItem> items = new ArrayList<>();
-      List<RedactContentRequest.ReplaceConfig> replaceConfigs = new ArrayList<>();
+      String name = "EMAIL_ADDRESS";
+      InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
+      List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
+      InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
+      String type = "text/plain";
+      String value = "My email is example@example.com.";
+      ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
+      List<ContentItem> items = Arrays.asList(itemsElement);
+      String name2 = "EMAIL_ADDRESS";
+      InfoType infoType = InfoType.newBuilder().setName(name2).build();
+      String replaceWith = "REDACTED";
+      RedactContentRequest.ReplaceConfig replaceConfigsElement =
+          RedactContentRequest.ReplaceConfig.newBuilder()
+              .setInfoType(infoType)
+              .setReplaceWith(replaceWith)
+              .build();
+      List<RedactContentRequest.ReplaceConfig> replaceConfigs =
+          Arrays.asList(replaceConfigsElement);
 
       client.redactContent(inspectConfig, items, replaceConfigs);
       Assert.fail("No exception raised");
@@ -175,9 +218,9 @@ public class DlpServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createInspectOperationTest() throws Exception {
-    ResultName name = ResultName.create("[RESULT]");
+    ResultName name2 = ResultName.create("[RESULT]");
     InspectOperationResult expectedResponse =
-        InspectOperationResult.newBuilder().setNameWithResultName(name).build();
+        InspectOperationResult.newBuilder().setNameWithResultName(name2).build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("createInspectOperationTest")
@@ -186,8 +229,17 @@ public class DlpServiceClientTest {
             .build();
     mockDlpService.addResponse(resultOperation);
 
-    InspectConfig inspectConfig = InspectConfig.newBuilder().build();
-    StorageConfig storageConfig = StorageConfig.newBuilder().build();
+    String name = "EMAIL_ADDRESS";
+    InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
+    List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
+    InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
+    String url = "gs://example_bucket/example_file.png";
+    CloudStorageOptions.FileSet fileSet =
+        CloudStorageOptions.FileSet.newBuilder().setUrl(url).build();
+    CloudStorageOptions cloudStorageOptions =
+        CloudStorageOptions.newBuilder().setFileSet(fileSet).build();
+    StorageConfig storageConfig =
+        StorageConfig.newBuilder().setCloudStorageOptions(cloudStorageOptions).build();
     OutputStorageConfig outputConfig = OutputStorageConfig.newBuilder().build();
 
     InspectOperationResult actualResponse =
@@ -211,8 +263,17 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      InspectConfig inspectConfig = InspectConfig.newBuilder().build();
-      StorageConfig storageConfig = StorageConfig.newBuilder().build();
+      String name = "EMAIL_ADDRESS";
+      InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
+      List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
+      InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
+      String url = "gs://example_bucket/example_file.png";
+      CloudStorageOptions.FileSet fileSet =
+          CloudStorageOptions.FileSet.newBuilder().setUrl(url).build();
+      CloudStorageOptions cloudStorageOptions =
+          CloudStorageOptions.newBuilder().setFileSet(fileSet).build();
+      StorageConfig storageConfig =
+          StorageConfig.newBuilder().setCloudStorageOptions(cloudStorageOptions).build();
       OutputStorageConfig outputConfig = OutputStorageConfig.newBuilder().build();
 
       client.createInspectOperationAsync(inspectConfig, storageConfig, outputConfig).get();
@@ -268,8 +329,8 @@ public class DlpServiceClientTest {
     ListInfoTypesResponse expectedResponse = ListInfoTypesResponse.newBuilder().build();
     mockDlpService.addResponse(expectedResponse);
 
-    String category = "category50511102";
-    String languageCode = "languageCode-412800396";
+    String category = "PII";
+    String languageCode = "en";
 
     ListInfoTypesResponse actualResponse = client.listInfoTypes(category, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -289,8 +350,8 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      String category = "category50511102";
-      String languageCode = "languageCode-412800396";
+      String category = "PII";
+      String languageCode = "en";
 
       client.listInfoTypes(category, languageCode);
       Assert.fail("No exception raised");
@@ -305,7 +366,7 @@ public class DlpServiceClientTest {
     ListRootCategoriesResponse expectedResponse = ListRootCategoriesResponse.newBuilder().build();
     mockDlpService.addResponse(expectedResponse);
 
-    String languageCode = "languageCode-412800396";
+    String languageCode = "en";
 
     ListRootCategoriesResponse actualResponse = client.listRootCategories(languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -324,7 +385,7 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      String languageCode = "languageCode-412800396";
+      String languageCode = "en";
 
       client.listRootCategories(languageCode);
       Assert.fail("No exception raised");

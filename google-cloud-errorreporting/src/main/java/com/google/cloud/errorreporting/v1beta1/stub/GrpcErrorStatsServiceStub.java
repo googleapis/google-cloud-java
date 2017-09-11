@@ -89,7 +89,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
   public static final GrpcErrorStatsServiceStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcErrorStatsServiceStub(
-        ErrorStatsServiceSettings.defaultBuilder().build(), clientContext);
+        ErrorStatsServiceSettings.newBuilder().build(), clientContext);
   }
 
   /**

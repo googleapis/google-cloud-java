@@ -83,7 +83,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ErrorStatsServiceSettings errorStatsServiceSettings =
- *     ErrorStatsServiceSettings.defaultBuilder()
+ *     ErrorStatsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ErrorStatsServiceClient errorStatsServiceClient =
@@ -96,7 +96,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ErrorStatsServiceSettings errorStatsServiceSettings =
- *     ErrorStatsServiceSettings.defaultBuilder()
+ *     ErrorStatsServiceSettings.newBuilder()
  *         .setTransportProvider(ErrorStatsServiceSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(ErrorStatsServiceSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -116,7 +116,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
 
   /** Constructs an instance of ErrorStatsServiceClient with default settings. */
   public static final ErrorStatsServiceClient create() throws IOException {
-    return create(ErrorStatsServiceSettings.defaultBuilder().build());
+    return create(ErrorStatsServiceSettings.newBuilder().build());
   }
 
   /**
@@ -155,6 +155,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public ErrorStatsServiceStub getStub() {
     return stub;
   }
