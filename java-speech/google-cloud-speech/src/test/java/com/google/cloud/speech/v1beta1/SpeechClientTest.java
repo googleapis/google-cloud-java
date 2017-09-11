@@ -16,13 +16,14 @@
 package com.google.cloud.speech.v1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.speech.v1beta1.RecognitionConfig.AudioEncoding;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
@@ -118,8 +119,8 @@ public class SpeechClientTest {
 
       client.syncRecognize(config, audio);
       Assert.fail("No exception raised");
-    } catch (GrpcApiException e) {
-      Assert.assertEquals(Status.INVALID_ARGUMENT.getCode(), e.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
@@ -170,10 +171,11 @@ public class SpeechClientTest {
       client.asyncRecognizeAsync(config, audio).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(GrpcApiException.class, e.getCause().getClass());
-      GrpcApiException apiException = (GrpcApiException) e.getCause();
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
       Assert.assertEquals(
-          Status.INVALID_ARGUMENT.getCode(), apiException.getStatusCode().getCode());
+          Status.INVALID_ARGUMENT.getCode(),
+          ((GrpcStatusCode) apiException.getStatusCode()).getCode());
     }
   }
 
