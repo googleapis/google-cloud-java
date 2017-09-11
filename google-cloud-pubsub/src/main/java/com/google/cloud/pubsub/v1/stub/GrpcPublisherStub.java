@@ -155,7 +155,7 @@ public class GrpcPublisherStub extends PublisherStub {
   }
 
   public static final GrpcPublisherStub create(ClientContext clientContext) throws IOException {
-    return new GrpcPublisherStub(TopicAdminSettings.defaultBuilder().build(), clientContext);
+    return new GrpcPublisherStub(TopicAdminSettings.newBuilder().build(), clientContext);
   }
 
   /**

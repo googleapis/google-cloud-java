@@ -93,7 +93,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * GroupServiceSettings groupServiceSettings =
- *     GroupServiceSettings.defaultBuilder()
+ *     GroupServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * GroupServiceClient groupServiceClient =
@@ -106,7 +106,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * GroupServiceSettings groupServiceSettings =
- *     GroupServiceSettings.defaultBuilder()
+ *     GroupServiceSettings.newBuilder()
  *         .setTransportProvider(GroupServiceSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(GroupServiceSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -126,7 +126,7 @@ public class GroupServiceClient implements BackgroundResource {
 
   /** Constructs an instance of GroupServiceClient with default settings. */
   public static final GroupServiceClient create() throws IOException {
-    return create(GroupServiceSettings.defaultBuilder().build());
+    return create(GroupServiceSettings.newBuilder().build());
   }
 
   /**
@@ -164,6 +164,7 @@ public class GroupServiceClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public GroupServiceStub getStub() {
     return stub;
   }

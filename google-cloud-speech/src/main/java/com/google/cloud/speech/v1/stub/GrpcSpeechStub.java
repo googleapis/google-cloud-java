@@ -90,7 +90,7 @@ public class GrpcSpeechStub extends SpeechStub {
   }
 
   public static final GrpcSpeechStub create(ClientContext clientContext) throws IOException {
-    return new GrpcSpeechStub(SpeechSettings.defaultBuilder().build(), clientContext);
+    return new GrpcSpeechStub(SpeechSettings.newBuilder().build(), clientContext);
   }
 
   /**

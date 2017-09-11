@@ -57,7 +57,7 @@ public class ImageAnnotatorClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     ImageAnnotatorSettings settings =
-        ImageAnnotatorSettings.defaultBuilder()
+        ImageAnnotatorSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())

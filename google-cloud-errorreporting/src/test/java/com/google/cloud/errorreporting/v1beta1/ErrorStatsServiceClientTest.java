@@ -77,7 +77,7 @@ public class ErrorStatsServiceClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     ErrorStatsServiceSettings settings =
-        ErrorStatsServiceSettings.defaultBuilder()
+        ErrorStatsServiceSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())

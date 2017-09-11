@@ -87,7 +87,7 @@ public class TopicAdminClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     TopicAdminSettings settings =
-        TopicAdminSettings.defaultBuilder()
+        TopicAdminSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())

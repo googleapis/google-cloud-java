@@ -62,7 +62,7 @@ public class VideoIntelligenceServiceClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     VideoIntelligenceServiceSettings settings =
-        VideoIntelligenceServiceSettings.defaultBuilder()
+        VideoIntelligenceServiceSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())

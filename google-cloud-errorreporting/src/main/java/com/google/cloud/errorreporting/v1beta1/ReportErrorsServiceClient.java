@@ -76,7 +76,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ReportErrorsServiceSettings reportErrorsServiceSettings =
- *     ReportErrorsServiceSettings.defaultBuilder()
+ *     ReportErrorsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ReportErrorsServiceClient reportErrorsServiceClient =
@@ -89,7 +89,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ReportErrorsServiceSettings reportErrorsServiceSettings =
- *     ReportErrorsServiceSettings.defaultBuilder()
+ *     ReportErrorsServiceSettings.newBuilder()
  *         .setTransportProvider(ReportErrorsServiceSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(ReportErrorsServiceSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -109,7 +109,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
 
   /** Constructs an instance of ReportErrorsServiceClient with default settings. */
   public static final ReportErrorsServiceClient create() throws IOException {
-    return create(ReportErrorsServiceSettings.defaultBuilder().build());
+    return create(ReportErrorsServiceSettings.newBuilder().build());
   }
 
   /**
@@ -148,6 +148,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public ReportErrorsServiceStub getStub() {
     return stub;
   }

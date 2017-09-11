@@ -98,8 +98,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
 
   public static final GrpcLanguageServiceStub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcLanguageServiceStub(
-        LanguageServiceSettings.defaultBuilder().build(), clientContext);
+    return new GrpcLanguageServiceStub(LanguageServiceSettings.newBuilder().build(), clientContext);
   }
 
   /**

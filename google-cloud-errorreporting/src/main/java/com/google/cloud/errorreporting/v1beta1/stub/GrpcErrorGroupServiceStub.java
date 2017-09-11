@@ -66,7 +66,7 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
   public static final GrpcErrorGroupServiceStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcErrorGroupServiceStub(
-        ErrorGroupServiceSettings.defaultBuilder().build(), clientContext);
+        ErrorGroupServiceSettings.newBuilder().build(), clientContext);
   }
 
   /**

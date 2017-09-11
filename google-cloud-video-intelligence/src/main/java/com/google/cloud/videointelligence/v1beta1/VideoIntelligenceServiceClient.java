@@ -80,7 +80,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings =
- *     VideoIntelligenceServiceSettings.defaultBuilder()
+ *     VideoIntelligenceServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * VideoIntelligenceServiceClient videoIntelligenceServiceClient =
@@ -93,7 +93,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings =
- *     VideoIntelligenceServiceSettings.defaultBuilder()
+ *     VideoIntelligenceServiceSettings.newBuilder()
  *         .setTransportProvider(VideoIntelligenceServiceSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(VideoIntelligenceServiceSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -114,7 +114,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
 
   /** Constructs an instance of VideoIntelligenceServiceClient with default settings. */
   public static final VideoIntelligenceServiceClient create() throws IOException {
-    return create(VideoIntelligenceServiceSettings.defaultBuilder().build());
+    return create(VideoIntelligenceServiceSettings.newBuilder().build());
   }
 
   /**
@@ -157,6 +157,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public VideoIntelligenceServiceStub getStub() {
     return stub;
   }

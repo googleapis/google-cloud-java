@@ -73,7 +73,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ImageAnnotatorSettings imageAnnotatorSettings =
- *     ImageAnnotatorSettings.defaultBuilder()
+ *     ImageAnnotatorSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ImageAnnotatorClient imageAnnotatorClient =
@@ -86,7 +86,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ImageAnnotatorSettings imageAnnotatorSettings =
- *     ImageAnnotatorSettings.defaultBuilder()
+ *     ImageAnnotatorSettings.newBuilder()
  *         .setTransportProvider(ImageAnnotatorSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(ImageAnnotatorSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -106,7 +106,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
 
   /** Constructs an instance of ImageAnnotatorClient with default settings. */
   public static final ImageAnnotatorClient create() throws IOException {
-    return create(ImageAnnotatorSettings.defaultBuilder().build());
+    return create(ImageAnnotatorSettings.newBuilder().build());
   }
 
   /**
@@ -145,6 +145,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public ImageAnnotatorStub getStub() {
     return stub;
   }

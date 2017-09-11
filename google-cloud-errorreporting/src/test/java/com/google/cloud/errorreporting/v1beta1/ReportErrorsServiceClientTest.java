@@ -67,7 +67,7 @@ public class ReportErrorsServiceClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     ReportErrorsServiceSettings settings =
-        ReportErrorsServiceSettings.defaultBuilder()
+        ReportErrorsServiceSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())

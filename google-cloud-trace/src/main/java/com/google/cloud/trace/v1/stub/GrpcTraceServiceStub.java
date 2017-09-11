@@ -79,7 +79,7 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
   }
 
   public static final GrpcTraceServiceStub create(ClientContext clientContext) throws IOException {
-    return new GrpcTraceServiceStub(TraceServiceSettings.defaultBuilder().build(), clientContext);
+    return new GrpcTraceServiceStub(TraceServiceSettings.newBuilder().build(), clientContext);
   }
 
   /**

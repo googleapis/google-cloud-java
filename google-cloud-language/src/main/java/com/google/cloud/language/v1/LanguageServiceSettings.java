@@ -64,7 +64,7 @@ import org.threeten.bp.Duration;
  * <pre>
  * <code>
  * LanguageServiceSettings.Builder languageServiceSettingsBuilder =
- *     LanguageServiceSettings.defaultBuilder();
+ *     LanguageServiceSettings.newBuilder();
  * languageServiceSettingsBuilder.analyzeSentimentSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * LanguageServiceSettings languageServiceSettings = languageServiceSettingsBuilder.build();
@@ -173,6 +173,7 @@ public class LanguageServiceSettings extends ClientSettings {
   }
 
   /** Returns a builder for this class with recommended defaults. */
+  @Deprecated
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
@@ -181,13 +182,14 @@ public class LanguageServiceSettings extends ClientSettings {
    * Returns a builder for this class with recommended defaults for API methods, and the given
    * ClientContext used for executor/transport/credentials.
    */
+  @Deprecated
   public static Builder defaultBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
-    return new Builder();
+    return Builder.createDefault();
   }
 
   /** Returns a new builder for this class. */

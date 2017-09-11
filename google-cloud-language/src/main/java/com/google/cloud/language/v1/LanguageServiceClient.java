@@ -73,7 +73,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * LanguageServiceSettings languageServiceSettings =
- *     LanguageServiceSettings.defaultBuilder()
+ *     LanguageServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * LanguageServiceClient languageServiceClient =
@@ -86,7 +86,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * LanguageServiceSettings languageServiceSettings =
- *     LanguageServiceSettings.defaultBuilder()
+ *     LanguageServiceSettings.newBuilder()
  *         .setTransportProvider(LanguageServiceSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(LanguageServiceSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -106,7 +106,7 @@ public class LanguageServiceClient implements BackgroundResource {
 
   /** Constructs an instance of LanguageServiceClient with default settings. */
   public static final LanguageServiceClient create() throws IOException {
-    return create(LanguageServiceSettings.defaultBuilder().build());
+    return create(LanguageServiceSettings.newBuilder().build());
   }
 
   /**
@@ -145,6 +145,7 @@ public class LanguageServiceClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public LanguageServiceStub getStub() {
     return stub;
   }

@@ -85,7 +85,7 @@ public class MetricServiceClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     MetricServiceSettings settings =
-        MetricServiceSettings.defaultBuilder()
+        MetricServiceSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())
