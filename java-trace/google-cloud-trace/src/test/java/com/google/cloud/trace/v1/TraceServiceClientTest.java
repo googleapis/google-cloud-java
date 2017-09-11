@@ -66,7 +66,7 @@ public class TraceServiceClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     TraceServiceSettings settings =
-        TraceServiceSettings.defaultBuilder()
+        TraceServiceSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())
