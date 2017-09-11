@@ -118,6 +118,14 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       implements ClientResponseObserver<StreamingPullRequest, StreamingPullResponse> {
 
     final SettableFuture<Void> errorFuture;
+
+    /**
+     * When a batch finsihes processing, we want to request one more batch from the server. But by
+     * the time this happens, our stream might have already errored, and new stream created. We
+     * don't want to request more batches from the new stream -- that might pull more messages than
+     * the user can deal with -- so we save the request observer this response observer is "paired
+     * with". If the stream has already errored, requesting more messages is a no-op.
+     */
     ClientCallStreamObserver<StreamingPullRequest> thisRequestObserver;
 
     StreamingPullResponseObserver(SettableFuture<Void> errorFuture) {
@@ -127,12 +135,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     @Override
     public void beforeStart(ClientCallStreamObserver<StreamingPullRequest> requestObserver) {
       thisRequestObserver = requestObserver;
-      lock.lock();
-      try {
-        requestObserver.disableAutoInboundFlowControl();
-      } finally {
-        lock.unlock();
-      }
+      requestObserver.disableAutoInboundFlowControl();
     }
 
     @Override
@@ -143,15 +146,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
           new Runnable() {
             @Override
             public void run() {
-              /**
-               * Only if not shutdown we will request one more batches of messages to be delivered.
-               *
-               * <p>We use the request observer we're paired with, not the "current observer" in the
-               * outer class. By the time this Runnable is called, the stream might have already
-               * failed and the outer class might have created a new stream. In this case, we should
-               * request more messages from the already-failed stream (a no-op), otherwise the
-               * current observer might get more messages than it should.
-               */
+              // Only request more if we're not shutdown.
               if (isAlive()) {
                 lock.lock();
                 try {
