@@ -26,6 +26,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
@@ -33,6 +34,7 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
+import com.google.cloud.storage.Bucket.BlobTargetOption;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
@@ -50,6 +52,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -64,6 +68,7 @@ public class ITStorageSnippets {
 
   private static final Logger log = Logger.getLogger(ITStorageSnippets.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
+  private static final byte[] BLOB_BYTE_CONTENT = {0xD, 0xE, 0xA, 0xD};
   private static final String USER_EMAIL = "google-cloud-java-tests@"
       + "java-docs-samples-tests.iam.gserviceaccount.com";
 
@@ -404,5 +409,24 @@ public class ITStorageSnippets {
   public void testAuthListBuckets() {
     Page<Bucket> bucket = storageSnippets.authListBuckets();
     assertNotNull(bucket);
+  }
+
+  @Test
+  public void testRequesterPays() throws Exception {
+    Bucket bucket = storageSnippets.enableRequesterPays(BUCKET);
+    assertTrue(bucket.requesterPays());
+    bucket = storageSnippets.getRequesterPaysStatus(BUCKET);
+    assertTrue(bucket.requesterPays());
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String blobName = "test-create-empty-blob-requester-pays";
+    Blob remoteBlob = bucket.create(blobName, BLOB_BYTE_CONTENT,
+        BlobTargetOption.userProject(projectId));
+    assertNotNull(remoteBlob);
+    storageSnippets.downloadFileUsingRequesterPays(projectId, BUCKET, blobName,
+        Paths.get(blobName));
+    byte[] readBytes = Files.readAllBytes(Paths.get(blobName));
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    bucket = storageSnippets.disableRequesterPays(BUCKET);
+    assertFalse(bucket.requesterPays());
   }
 }
