@@ -75,7 +75,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ErrorGroupServiceSettings errorGroupServiceSettings =
- *     ErrorGroupServiceSettings.defaultBuilder()
+ *     ErrorGroupServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ErrorGroupServiceClient errorGroupServiceClient =
@@ -88,7 +88,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ErrorGroupServiceSettings errorGroupServiceSettings =
- *     ErrorGroupServiceSettings.defaultBuilder()
+ *     ErrorGroupServiceSettings.newBuilder()
  *         .setTransportProvider(ErrorGroupServiceSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(ErrorGroupServiceSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -108,7 +108,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
 
   /** Constructs an instance of ErrorGroupServiceClient with default settings. */
   public static final ErrorGroupServiceClient create() throws IOException {
-    return create(ErrorGroupServiceSettings.defaultBuilder().build());
+    return create(ErrorGroupServiceSettings.newBuilder().build());
   }
 
   /**
@@ -147,6 +147,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public ErrorGroupServiceStub getStub() {
     return stub;
   }

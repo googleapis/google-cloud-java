@@ -96,7 +96,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * TopicAdminSettings topicAdminSettings =
- *     TopicAdminSettings.defaultBuilder()
+ *     TopicAdminSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * TopicAdminClient topicAdminClient =
@@ -109,7 +109,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * TopicAdminSettings topicAdminSettings =
- *     TopicAdminSettings.defaultBuilder()
+ *     TopicAdminSettings.newBuilder()
  *         .setTransportProvider(TopicAdminSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(TopicAdminSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -129,7 +129,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   /** Constructs an instance of TopicAdminClient with default settings. */
   public static final TopicAdminClient create() throws IOException {
-    return create(TopicAdminSettings.defaultBuilder().build());
+    return create(TopicAdminSettings.newBuilder().build());
   }
 
   /**
@@ -166,6 +166,7 @@ public class TopicAdminClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public PublisherStub getStub() {
     return stub;
   }

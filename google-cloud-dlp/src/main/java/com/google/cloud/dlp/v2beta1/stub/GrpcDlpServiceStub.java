@@ -131,7 +131,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   }
 
   public static final GrpcDlpServiceStub create(ClientContext clientContext) throws IOException {
-    return new GrpcDlpServiceStub(DlpServiceSettings.defaultBuilder().build(), clientContext);
+    return new GrpcDlpServiceStub(DlpServiceSettings.newBuilder().build(), clientContext);
   }
 
   /**

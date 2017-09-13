@@ -35,12 +35,12 @@ import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.ManagedChannel;
+import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
-import io.grpc.internal.ServerImpl;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -74,7 +74,7 @@ public class SubscriberTest {
   private ManagedChannel testChannel;
   private FakeScheduledExecutorService fakeExecutor;
   private FakeSubscriberServiceImpl fakeSubscriberServiceImpl;
-  private ServerImpl testServer;
+  private Server testServer;
 
   private TestReceiver testReceiver;
 

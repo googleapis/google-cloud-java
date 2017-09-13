@@ -36,11 +36,11 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
 import io.grpc.ManagedChannel;
+import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
-import io.grpc.internal.ServerImpl;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import org.junit.After;
@@ -95,7 +95,7 @@ public class PublisherImplTest {
 
   private FakePublisherServiceImpl testPublisherServiceImpl;
 
-  private ServerImpl testServer;
+  private Server testServer;
 
   class FakeException extends Exception {}
 

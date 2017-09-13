@@ -31,8 +31,21 @@
  * <pre>
  * <code>
  * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
- *   InspectConfig inspectConfig = InspectConfig.newBuilder().build();
- *   List&lt;ContentItem&gt; items = new ArrayList&lt;&gt;();
+ *   String name = "EMAIL_ADDRESS";
+ *   InfoType infoTypesElement = InfoType.newBuilder()
+ *     .setName(name)
+ *     .build();
+ *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
+ *   InspectConfig inspectConfig = InspectConfig.newBuilder()
+ *     .addAllInfoTypes(infoTypes)
+ *     .build();
+ *   String type = "text/plain";
+ *   String value = "My email is example{@literal @}example.com.";
+ *   ContentItem itemsElement = ContentItem.newBuilder()
+ *     .setType(type)
+ *     .setValue(value)
+ *     .build();
+ *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
  *   InspectContentResponse response = dlpServiceClient.inspectContent(inspectConfig, items);
  * }
  * </code>

@@ -17,7 +17,7 @@
 package com.google.cloud.logging;
 
 import com.google.api.core.BetaApi;
-import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.grpc.BaseGrpcServiceException;
 import java.io.IOException;
 
@@ -33,7 +33,7 @@ public final class LoggingException extends BaseGrpcServiceException {
   }
 
   @BetaApi
-  public LoggingException(GrpcApiException apiException) {
+  public LoggingException(ApiException apiException) {
     super(apiException);
   }
 }

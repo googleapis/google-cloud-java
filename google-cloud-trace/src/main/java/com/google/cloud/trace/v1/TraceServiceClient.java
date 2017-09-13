@@ -83,7 +83,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * TraceServiceSettings traceServiceSettings =
- *     TraceServiceSettings.defaultBuilder()
+ *     TraceServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * TraceServiceClient traceServiceClient =
@@ -96,7 +96,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * TraceServiceSettings traceServiceSettings =
- *     TraceServiceSettings.defaultBuilder()
+ *     TraceServiceSettings.newBuilder()
  *         .setTransportProvider(TraceServiceSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(TraceServiceSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -116,7 +116,7 @@ public class TraceServiceClient implements BackgroundResource {
 
   /** Constructs an instance of TraceServiceClient with default settings. */
   public static final TraceServiceClient create() throws IOException {
-    return create(TraceServiceSettings.defaultBuilder().build());
+    return create(TraceServiceSettings.newBuilder().build());
   }
 
   /**
@@ -154,6 +154,7 @@ public class TraceServiceClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public TraceServiceStub getStub() {
     return stub;
   }

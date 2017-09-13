@@ -28,6 +28,8 @@ import com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest;
 import com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse;
 import com.google.cloud.language.v1beta2.AnnotateTextRequest;
 import com.google.cloud.language.v1beta2.AnnotateTextResponse;
+import com.google.cloud.language.v1beta2.ClassifyTextRequest;
+import com.google.cloud.language.v1beta2.ClassifyTextResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -56,6 +58,10 @@ public abstract class LanguageServiceStub implements BackgroundResource {
 
   public UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable() {
     throw new UnsupportedOperationException("Not implemented: analyzeSyntaxCallable()");
+  }
+
+  public UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable() {
+    throw new UnsupportedOperationException("Not implemented: classifyTextCallable()");
   }
 
   public UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable() {

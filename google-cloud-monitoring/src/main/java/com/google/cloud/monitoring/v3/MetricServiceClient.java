@@ -96,7 +96,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * MetricServiceSettings metricServiceSettings =
- *     MetricServiceSettings.defaultBuilder()
+ *     MetricServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * MetricServiceClient metricServiceClient =
@@ -109,7 +109,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * MetricServiceSettings metricServiceSettings =
- *     MetricServiceSettings.defaultBuilder()
+ *     MetricServiceSettings.newBuilder()
  *         .setTransportProvider(MetricServiceSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(MetricServiceSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -129,7 +129,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   /** Constructs an instance of MetricServiceClient with default settings. */
   public static final MetricServiceClient create() throws IOException {
-    return create(MetricServiceSettings.defaultBuilder().build());
+    return create(MetricServiceSettings.newBuilder().build());
   }
 
   /**
@@ -168,6 +168,7 @@ public class MetricServiceClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public MetricServiceStub getStub() {
     return stub;
   }

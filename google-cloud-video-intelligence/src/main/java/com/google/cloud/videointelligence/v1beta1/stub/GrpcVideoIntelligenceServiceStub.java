@@ -65,7 +65,7 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
   public static final GrpcVideoIntelligenceServiceStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcVideoIntelligenceServiceStub(
-        VideoIntelligenceServiceSettings.defaultBuilder().build(), clientContext);
+        VideoIntelligenceServiceSettings.newBuilder().build(), clientContext);
   }
 
   /**

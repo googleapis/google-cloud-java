@@ -85,7 +85,7 @@ import org.threeten.bp.Duration;
  * <pre>
  * <code>
  * GroupServiceSettings.Builder groupServiceSettingsBuilder =
- *     GroupServiceSettings.defaultBuilder();
+ *     GroupServiceSettings.newBuilder();
  * groupServiceSettingsBuilder.getGroupSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * GroupServiceSettings groupServiceSettings = groupServiceSettingsBuilder.build();
@@ -212,6 +212,7 @@ public class GroupServiceSettings extends ClientSettings {
   }
 
   /** Returns a builder for this class with recommended defaults. */
+  @Deprecated
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
@@ -220,13 +221,14 @@ public class GroupServiceSettings extends ClientSettings {
    * Returns a builder for this class with recommended defaults for API methods, and the given
    * ClientContext used for executor/transport/credentials.
    */
+  @Deprecated
   public static Builder defaultBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
-    return new Builder();
+    return Builder.createDefault();
   }
 
   /** Returns a new builder for this class. */

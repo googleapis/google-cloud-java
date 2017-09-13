@@ -25,7 +25,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.grpc.GrpcApiException;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.InternalException;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper;
 import io.grpc.Status.Code;
@@ -73,8 +75,8 @@ public class BaseGrpcServiceExceptionTest {
     assertNull(serviceException.getDebugInfo());
 
     Exception cause = new IllegalArgumentException("bad arg");
-    GrpcApiException apiException =
-        new GrpcApiException(MESSAGE, cause, Code.INTERNAL, NOT_RETRYABLE);
+    InternalException apiException =
+        new InternalException(MESSAGE, cause, GrpcStatusCode.of(Code.INTERNAL), NOT_RETRYABLE);
     serviceException = new BaseGrpcServiceException(apiException);
     assertFalse(serviceException.isRetryable());
     assertEquals(MESSAGE, serviceException.getMessage());

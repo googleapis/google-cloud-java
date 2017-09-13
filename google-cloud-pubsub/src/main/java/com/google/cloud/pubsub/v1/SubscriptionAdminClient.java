@@ -115,7 +115,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * SubscriptionAdminSettings subscriptionAdminSettings =
- *     SubscriptionAdminSettings.defaultBuilder()
+ *     SubscriptionAdminSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * SubscriptionAdminClient subscriptionAdminClient =
@@ -128,7 +128,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * SubscriptionAdminSettings subscriptionAdminSettings =
- *     SubscriptionAdminSettings.defaultBuilder()
+ *     SubscriptionAdminSettings.newBuilder()
  *         .setTransportProvider(SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(SubscriptionAdminSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -148,7 +148,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
   /** Constructs an instance of SubscriptionAdminClient with default settings. */
   public static final SubscriptionAdminClient create() throws IOException {
-    return create(SubscriptionAdminSettings.defaultBuilder().build());
+    return create(SubscriptionAdminSettings.newBuilder().build());
   }
 
   /**
@@ -187,6 +187,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public SubscriberStub getStub() {
     return stub;
   }
