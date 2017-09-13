@@ -41,7 +41,6 @@ import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 
-import org.apache.http.annotation.ThreadSafe;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
