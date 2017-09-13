@@ -148,12 +148,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             public void run() {
               // Only request more if we're not shutdown.
               if (isAlive()) {
-                lock.lock();
-                try {
-                  thisRequestObserver.request(1);
-                } finally {
-                  lock.unlock();
-                }
+                thisRequestObserver.request(1);
               }
             }
           });
