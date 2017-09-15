@@ -51,12 +51,12 @@ public class ITPubSubSnippets {
 
   @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
+  private TopicName topicName;
+  private SubscriptionName subscriptionName;
+
   private static String formatForTest(String resourceName) {
     return resourceName + "-" + NAME_SUFFIX;
   }
-
-  private TopicName topicName;
-  private SubscriptionName subscriptionName;
 
   @Before
   public void setUp() throws Exception {
