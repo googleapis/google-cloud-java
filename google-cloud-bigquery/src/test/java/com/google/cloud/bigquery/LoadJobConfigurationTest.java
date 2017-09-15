@@ -41,10 +41,11 @@ public class LoadJobConfigurationTest {
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final String FORMAT = "CSV";
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
-  private static final Field FIELD_SCHEMA = Field.newBuilder("IntegerField", Field.Type.integer())
-      .setMode(Field.Mode.REQUIRED)
-      .setDescription("FieldDescription")
-      .build();
+  private static final Field FIELD_SCHEMA =
+      Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
+          .setMode(Field.Mode.REQUIRED)
+          .setDescription("FieldDescription")
+          .build();
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final List<SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =
           ImmutableList.of(SchemaUpdateOption.ALLOW_FIELD_ADDITION);

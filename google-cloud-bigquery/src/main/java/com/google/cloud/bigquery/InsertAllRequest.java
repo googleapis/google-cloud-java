@@ -50,7 +50,7 @@ public final class InsertAllRequest implements Serializable {
   /**
    * A Google Big Query row to be inserted into a table. Each {@code RowToInsert} has an associated
    * id used by BigQuery to detect duplicate insertion requests on a best-effort basis. Please
-   * notice that data for fields of type {@link Field.Type#bytes()} must be provided as a base64
+   * notice that data for fields of type {@link LegacySQLTypeName#BYTES} must be provided as a base64
    * encoded string.
    *
    * <p>Example usage of creating a row to insert:
@@ -122,7 +122,7 @@ public final class InsertAllRequest implements Serializable {
 
     /**
      * Creates a row to be inserted with associated id. Please notice that data for fields of type
-     * {@link Field.Type#bytes()} must be provided as a base64 encoded string.
+     * {@link LegacySQLTypeName#BYTES} must be provided as a base64 encoded string.
      *
      * @param id id of the row, used to identify duplicates
      * @param content the actual content of the row
@@ -133,7 +133,7 @@ public final class InsertAllRequest implements Serializable {
 
     /**
      * Creates a row to be inserted without associated id. Please notice that data for fields of
-     * type {@link Field.Type#bytes()} must be provided as a base64 encoded string.
+     * type {@link LegacySQLTypeName#BYTES} must be provided as a base64 encoded string.
      *
      * @param content the actual content of the row
      */
@@ -184,7 +184,7 @@ public final class InsertAllRequest implements Serializable {
 
     /**
      * Adds a row to be inserted with associated id. Please notice that data for fields of type
-     * {@link Field.Type#bytes()} must be provided as a base64 encoded string.
+     * {@link LegacySQLTypeName#BYTES} must be provided as a base64 encoded string.
      *
      * <p>Example usage of adding a row with associated id:
      * <pre> {@code
@@ -207,7 +207,7 @@ public final class InsertAllRequest implements Serializable {
 
     /**
      * Adds a row to be inserted without an associated id. Please notice that data for fields of
-     * type {@link Field.Type#bytes()} must be provided as a base64 encoded string.
+     * type {@link LegacySQLTypeName#BYTES} must be provided as a base64 encoded string.
      *
      * <p>Example usage of adding a row without an associated id:
      * <pre> {@code

@@ -18,14 +18,14 @@ package com.google.cloud.spanner;
 
 import static com.google.common.base.Preconditions.checkState;
 
-import com.google.cloud.WaitForOption;
+import com.google.cloud.RetryOption;
 import com.google.cloud.spanner.testing.RemoteSpannerHelper;
 import com.google.common.collect.Iterators;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.rules.ExternalResource;
+import org.threeten.bp.Duration;
 
 /**
  * JUnit 4 test rule that provides access to a Cloud Spanner instance to use for tests, and allows
@@ -76,7 +76,7 @@ public class IntegrationTestEnv extends ExternalResource {
 
     SpannerOptions options = config.spannerOptions();
     String instanceProperty = System.getProperty(TEST_INSTANCE_PROPERTY, "");
-    InstanceId instanceId = null;
+    InstanceId instanceId;
     if (!instanceProperty.isEmpty()) {
       instanceId = InstanceId.of(instanceProperty);
       isOwnedInstance = false;
@@ -114,7 +114,7 @@ public class IntegrationTestEnv extends ExternalResource {
             .setInstanceConfigId(configId)
             .build();
     Operation<Instance, CreateInstanceMetadata> op = instanceAdminClient.createInstance(instance);
-    op = op.waitFor(WaitForOption.checkEvery(500, TimeUnit.MILLISECONDS));
+    op = op.waitFor(RetryOption.initialRetryDelay(Duration.ofMillis(500L)));
     Instance createdInstance = op.getResult();
     logger.log(Level.INFO, "Created test instance: {0}", createdInstance.getId());
   }

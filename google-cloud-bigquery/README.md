@@ -125,7 +125,7 @@ Then add the following code to create the table:
 ```java
 TableId tableId = TableId.of(datasetId, "my_table_id");
 // Table field definition
-Field stringField = Field.of("StringField", Field.Type.string());
+Field stringField = Field.of("StringField", LegacySQLTypeName.STRING);
 // Table schema definition
 Schema schema = Schema.of(stringField);
 // Create a table
@@ -172,7 +172,7 @@ for the result. Add the following imports at the top of your file:
 
 ```java
 import com.google.cloud.bigquery.FieldValue;
-import com.google.cloud.bigquery.QueryRequest;
+import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryResponse;
 
 import java.util.Iterator;
@@ -182,22 +182,17 @@ Then add the following code to run the query and wait for the result:
 
 ```java
 // Create a query request
-QueryRequest queryRequest =
-    QueryRequest.newBuilder("SELECT * FROM my_dataset_id.my_table_id")
-        .setMaxWaitTime(60000L)
-        .setPageSize(1000L)
-        .build();
+QueryJobConfiguration queryConfig = 
+    QueryJobConfiguration.of("SELECT * FROM my_dataset_id.my_table_id");
 // Request query to be executed and wait for results
-QueryResponse queryResponse = bigquery.query(queryRequest);
-while (!queryResponse.jobCompleted()) {
-  Thread.sleep(1000L);
-  queryResponse = bigquery.getQueryResults(queryResponse.getJobId());
-}
+QueryResponse queryResponse = bigquery.query(
+    queryConfig,
+    QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
+    QueryOption.of(QueryResultsOption.pageSize(1000L)));
 // Read rows
-Iterator<List<FieldValue>> rowIterator = queryResponse.getResult().iterateAll();
 System.out.println("Table rows:");
-while (rowIterator.hasNext()) {
-  System.out.println(rowIterator.next());
+for (FieldValues row : queryResponse.getResult().iterateAll()) {
+  System.out.println(row);
 }
 ```
 #### Complete source code

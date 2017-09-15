@@ -90,17 +90,17 @@ public class JobInfoTest {
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", Field.Type.string())
+      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.newBuilder("IntegerField", Field.Type.integer())
+      Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
           .setMode(Field.Mode.REPEATED)
           .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+      Field.newBuilder("RecordField", LegacySQLTypeName.RECORD, FIELD_SCHEMA1, FIELD_SCHEMA2)
           .setMode(Field.Mode.REQUIRED)
           .setDescription("FieldDescription3")
           .build();
