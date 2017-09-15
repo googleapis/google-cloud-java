@@ -52,7 +52,7 @@ public class FieldsTest {
       .setDescription(FIELD_DESCRIPTION3)
       .build();
 
-  private Fields fieldsSchema = Fields.of(fieldSchema1, fieldSchema2, fieldSchema3);
+  private final Fields fieldsSchema = Fields.of(fieldSchema1, fieldSchema2, fieldSchema3);
 
   @Test
   public void testGetByName() {

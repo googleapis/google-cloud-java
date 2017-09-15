@@ -43,8 +43,8 @@ public class RetryOption implements Serializable {
     JITTERED
   }
 
-  private OptionType type;
-  private Object value;
+  private final OptionType type;
+  private final Object value;
 
   private RetryOption(OptionType type, Object value) {
     this.type = checkNotNull(type);
@@ -141,6 +141,8 @@ public class RetryOption implements Serializable {
         case JITTERED:
           builder.setJittered((Boolean) option.value);
           break;
+        default:
+          throw new IllegalArgumentException("Unknown option type: " + option.type);
       }
     }
     return builder.build();
