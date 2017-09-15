@@ -147,8 +147,17 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             @Override
             public void run() {
               // Only request more if we're not shutdown.
-              if (isAlive()) {
-                thisRequestObserver.request(1);
+              // If errorFuture is done, the stream has either failed or hung up,
+              // and we don't need to request.
+              if (isAlive() && !errorFuture.isDone()) {
+                lock.lock();
+                try {
+                  thisRequestObserver.request(1);
+                } catch (Exception e) {
+                  logger.log(Level.WARNING, "cannot request more messages", e);
+                } finally {
+                  lock.unlock();
+                }
               }
             }
           });
