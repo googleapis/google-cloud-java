@@ -1176,7 +1176,8 @@
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-speech-v1beta1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-trace-v1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-vision-v1/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1beta1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1beta2/${generatedProto.version}/apidocs/</link>
                 </links>
               </configuration>
             </plugin>
