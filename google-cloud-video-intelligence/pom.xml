@@ -15,7 +15,7 @@
     <version>0.23.2-alpha-SNAPSHOT</version>
   </parent>
   <properties>
-    <site.installationModule>google-cloud-video-intelligence-v1beta1</site.installationModule>
+    <site.installationModule>google-cloud-video-intelligence</site.installationModule>
     <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
@@ -35,6 +35,10 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-video-intelligence-v1beta1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-video-intelligence-v1beta2</artifactId>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -72,6 +76,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-video-intelligence-v1beta1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-video-intelligence-v1beta2</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

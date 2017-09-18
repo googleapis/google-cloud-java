@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.language.v1;
+package com.google.cloud.videointelligence.v1beta2;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -26,19 +26,22 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.grpc.GrpcTransport;
 import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.cloud.language.v1.stub.GrpcLanguageServiceStub;
-import com.google.cloud.language.v1.stub.LanguageServiceStub;
+import com.google.cloud.videointelligence.v1beta2.stub.GrpcVideoIntelligenceServiceStub;
+import com.google.cloud.videointelligence.v1beta2.stub.VideoIntelligenceServiceStub;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
@@ -47,33 +50,34 @@ import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link LanguageServiceClient}.
+ * Settings class to configure an instance of {@link VideoIntelligenceServiceClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (language.googleapis.com) and default port (443) are used.
+ *   <li>The default service address (videointelligence.googleapis.com) and default port (443) are
+ *       used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of analyzeSentiment to 30 seconds:
+ * example, to set the total timeout of annotateVideoAsync to 30 seconds:
  *
  * <pre>
  * <code>
- * LanguageServiceSettings.Builder languageServiceSettingsBuilder =
- *     LanguageServiceSettings.newBuilder();
- * languageServiceSettingsBuilder.analyzeSentimentSettings().getRetrySettingsBuilder()
+ * VideoIntelligenceServiceSettings.Builder videoIntelligenceServiceSettingsBuilder =
+ *     VideoIntelligenceServiceSettings.newBuilder();
+ * videoIntelligenceServiceSettingsBuilder.annotateVideoSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
- * LanguageServiceSettings languageServiceSettings = languageServiceSettingsBuilder.build();
+ * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings = videoIntelligenceServiceSettingsBuilder.build();
  * </code>
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
-public class LanguageServiceSettings extends ClientSettings {
+public class VideoIntelligenceServiceSettings extends ClientSettings {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
@@ -81,52 +85,26 @@ public class LanguageServiceSettings extends ClientSettings {
   private static final String DEFAULT_GAPIC_NAME = "gapic";
   private static final String DEFAULT_GAPIC_VERSION = "";
 
-  private static final String PROPERTIES_FILE = "/com/google/cloud/language/project.properties";
+  private static final String PROPERTIES_FILE =
+      "/com/google/cloud/videointelligence/project.properties";
   private static final String META_VERSION_KEY = "artifact.version";
 
   private static String gapicVersion;
 
-  private final SimpleCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
-      analyzeSentimentSettings;
-  private final SimpleCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
-      analyzeEntitiesSettings;
-  private final SimpleCallSettings<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
-      analyzeEntitySentimentSettings;
-  private final SimpleCallSettings<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
-      analyzeSyntaxSettings;
-  private final SimpleCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextSettings;
+  private final OperationCallSettings<
+          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
+      annotateVideoSettings;
 
-  /** Returns the object with the settings used for calls to analyzeSentiment. */
-  public SimpleCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
-      analyzeSentimentSettings() {
-    return analyzeSentimentSettings;
+  /** Returns the object with the settings used for calls to annotateVideo. */
+  public OperationCallSettings<
+          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
+      annotateVideoSettings() {
+    return annotateVideoSettings;
   }
 
-  /** Returns the object with the settings used for calls to analyzeEntities. */
-  public SimpleCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
-      analyzeEntitiesSettings() {
-    return analyzeEntitiesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to analyzeEntitySentiment. */
-  public SimpleCallSettings<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
-      analyzeEntitySentimentSettings() {
-    return analyzeEntitySentimentSettings;
-  }
-
-  /** Returns the object with the settings used for calls to analyzeSyntax. */
-  public SimpleCallSettings<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxSettings() {
-    return analyzeSyntaxSettings;
-  }
-
-  /** Returns the object with the settings used for calls to annotateText. */
-  public SimpleCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextSettings() {
-    return annotateTextSettings;
-  }
-
-  public LanguageServiceStub createStub() throws IOException {
+  public VideoIntelligenceServiceStub createStub() throws IOException {
     if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
-      return GrpcLanguageServiceStub.create(this);
+      return GrpcVideoIntelligenceServiceStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportProvider().getTransportName());
@@ -140,7 +118,7 @@ public class LanguageServiceSettings extends ClientSettings {
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "language.googleapis.com:443";
+    return "videointelligence.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -174,7 +152,7 @@ public class LanguageServiceSettings extends ClientSettings {
     if (gapicVersion == null) {
       gapicVersion =
           PropertiesProvider.loadProperty(
-              LanguageServiceSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+              VideoIntelligenceServiceSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
       gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
     }
     return gapicVersion;
@@ -210,35 +188,23 @@ public class LanguageServiceSettings extends ClientSettings {
     return new Builder(this);
   }
 
-  private LanguageServiceSettings(Builder settingsBuilder) throws IOException {
+  private VideoIntelligenceServiceSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
         settingsBuilder.getTransportProvider(),
         settingsBuilder.getCredentialsProvider(),
         settingsBuilder.getClock());
 
-    analyzeSentimentSettings = settingsBuilder.analyzeSentimentSettings().build();
-    analyzeEntitiesSettings = settingsBuilder.analyzeEntitiesSettings().build();
-    analyzeEntitySentimentSettings = settingsBuilder.analyzeEntitySentimentSettings().build();
-    analyzeSyntaxSettings = settingsBuilder.analyzeSyntaxSettings().build();
-    annotateTextSettings = settingsBuilder.annotateTextSettings().build();
+    annotateVideoSettings = settingsBuilder.annotateVideoSettings().build();
   }
 
-  /** Builder for LanguageServiceSettings. */
+  /** Builder for VideoIntelligenceServiceSettings. */
   public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
-    private final SimpleCallSettings.Builder<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
-        analyzeSentimentSettings;
-    private final SimpleCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
-        analyzeEntitiesSettings;
-    private final SimpleCallSettings.Builder<
-            AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
-        analyzeEntitySentimentSettings;
-    private final SimpleCallSettings.Builder<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
-        analyzeSyntaxSettings;
-    private final SimpleCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
-        annotateTextSettings;
+    private final OperationCallSettings.Builder<
+            AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
+        annotateVideoSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -261,12 +227,12 @@ public class LanguageServiceSettings extends ClientSettings {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(2.5)
+              .setMaxRetryDelay(Duration.ofMillis(120000L))
+              .setInitialRpcTimeout(Duration.ofMillis(120000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeout(Duration.ofMillis(120000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
@@ -280,23 +246,9 @@ public class LanguageServiceSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      analyzeSentimentSettings = SimpleCallSettings.newBuilder();
+      annotateVideoSettings = OperationCallSettings.newBuilder();
 
-      analyzeEntitiesSettings = SimpleCallSettings.newBuilder();
-
-      analyzeEntitySentimentSettings = SimpleCallSettings.newBuilder();
-
-      analyzeSyntaxSettings = SimpleCallSettings.newBuilder();
-
-      annotateTextSettings = SimpleCallSettings.newBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
-              analyzeSentimentSettings,
-              analyzeEntitiesSettings,
-              analyzeEntitySentimentSettings,
-              analyzeSyntaxSettings,
-              annotateTextSettings);
+      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder>of();
 
       initDefaults(this);
     }
@@ -309,51 +261,36 @@ public class LanguageServiceSettings extends ClientSettings {
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
-          .analyzeSentimentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .analyzeEntitiesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .analyzeEntitySentimentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .analyzeSyntaxSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .annotateTextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .annotateVideoSettings()
+          .setInitialCallSettings(
+              SimpleCallSettings.<AnnotateVideoRequest, Operation>newBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseClass(AnnotateVideoResponse.class)
+          .setMetadataClass(AnnotateVideoProgress.class)
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(20000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .build()));
 
       return builder;
     }
 
-    private Builder(LanguageServiceSettings settings) {
+    private Builder(VideoIntelligenceServiceSettings settings) {
       super(settings);
 
-      analyzeSentimentSettings = settings.analyzeSentimentSettings.toBuilder();
-      analyzeEntitiesSettings = settings.analyzeEntitiesSettings.toBuilder();
-      analyzeEntitySentimentSettings = settings.analyzeEntitySentimentSettings.toBuilder();
-      analyzeSyntaxSettings = settings.analyzeSyntaxSettings.toBuilder();
-      annotateTextSettings = settings.annotateTextSettings.toBuilder();
+      annotateVideoSettings = settings.annotateVideoSettings.toBuilder();
 
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
-              analyzeSentimentSettings,
-              analyzeEntitiesSettings,
-              analyzeEntitySentimentSettings,
-              analyzeSyntaxSettings,
-              annotateTextSettings);
+      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder>of();
     }
 
     @Override
@@ -385,39 +322,16 @@ public class LanguageServiceSettings extends ClientSettings {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to analyzeSentiment. */
-    public SimpleCallSettings.Builder<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
-        analyzeSentimentSettings() {
-      return analyzeSentimentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to analyzeEntities. */
-    public SimpleCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
-        analyzeEntitiesSettings() {
-      return analyzeEntitiesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to analyzeEntitySentiment. */
-    public SimpleCallSettings.Builder<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
-        analyzeEntitySentimentSettings() {
-      return analyzeEntitySentimentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to analyzeSyntax. */
-    public SimpleCallSettings.Builder<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
-        analyzeSyntaxSettings() {
-      return analyzeSyntaxSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to annotateText. */
-    public SimpleCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
-        annotateTextSettings() {
-      return annotateTextSettings;
+    /** Returns the builder for the settings used for calls to annotateVideo. */
+    public OperationCallSettings.Builder<
+            AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
+        annotateVideoSettings() {
+      return annotateVideoSettings;
     }
 
     @Override
-    public LanguageServiceSettings build() throws IOException {
-      return new LanguageServiceSettings(this);
+    public VideoIntelligenceServiceSettings build() throws IOException {
+      return new VideoIntelligenceServiceSettings(this);
     }
   }
 }

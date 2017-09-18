@@ -20,6 +20,8 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.language.v1.AnalyzeEntitiesRequest;
 import com.google.cloud.language.v1.AnalyzeEntitiesResponse;
+import com.google.cloud.language.v1.AnalyzeEntitySentimentRequest;
+import com.google.cloud.language.v1.AnalyzeEntitySentimentResponse;
 import com.google.cloud.language.v1.AnalyzeSentimentRequest;
 import com.google.cloud.language.v1.AnalyzeSentimentResponse;
 import com.google.cloud.language.v1.AnalyzeSyntaxRequest;
@@ -45,6 +47,11 @@ public abstract class LanguageServiceStub implements BackgroundResource {
 
   public UnaryCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse> analyzeEntitiesCallable() {
     throw new UnsupportedOperationException("Not implemented: analyzeEntitiesCallable()");
+  }
+
+  public UnaryCallable<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+      analyzeEntitySentimentCallable() {
+    throw new UnsupportedOperationException("Not implemented: analyzeEntitySentimentCallable()");
   }
 
   public UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable() {
