@@ -23,6 +23,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.language.v1.AnalyzeEntitiesRequest;
 import com.google.cloud.language.v1.AnalyzeEntitiesResponse;
+import com.google.cloud.language.v1.AnalyzeEntitySentimentRequest;
+import com.google.cloud.language.v1.AnalyzeEntitySentimentResponse;
 import com.google.cloud.language.v1.AnalyzeSentimentRequest;
 import com.google.cloud.language.v1.AnalyzeSentimentResponse;
 import com.google.cloud.language.v1.AnalyzeSyntaxRequest;
@@ -63,6 +65,16 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
                       AnalyzeEntitiesRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(
                       AnalyzeEntitiesResponse.getDefaultInstance())));
+  private static final UnaryCallable<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+      directAnalyzeEntitySentimentCallable =
+          GrpcCallableFactory.createDirectCallable(
+              io.grpc.MethodDescriptor.create(
+                  io.grpc.MethodDescriptor.MethodType.UNARY,
+                  "google.cloud.language.v1.LanguageService/AnalyzeEntitySentiment",
+                  io.grpc.protobuf.ProtoUtils.marshaller(
+                      AnalyzeEntitySentimentRequest.getDefaultInstance()),
+                  io.grpc.protobuf.ProtoUtils.marshaller(
+                      AnalyzeEntitySentimentResponse.getDefaultInstance())));
   private static final UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
       directAnalyzeSyntaxCallable =
           GrpcCallableFactory.createDirectCallable(
@@ -88,6 +100,8 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
       analyzeSentimentCallable;
   private final UnaryCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesCallable;
+  private final UnaryCallable<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+      analyzeEntitySentimentCallable;
   private final UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable;
   private final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
@@ -115,6 +129,11 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
     this.analyzeEntitiesCallable =
         GrpcCallableFactory.create(
             directAnalyzeEntitiesCallable, settings.analyzeEntitiesSettings(), clientContext);
+    this.analyzeEntitySentimentCallable =
+        GrpcCallableFactory.create(
+            directAnalyzeEntitySentimentCallable,
+            settings.analyzeEntitySentimentSettings(),
+            clientContext);
     this.analyzeSyntaxCallable =
         GrpcCallableFactory.create(
             directAnalyzeSyntaxCallable, settings.analyzeSyntaxSettings(), clientContext);
@@ -132,6 +151,11 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
 
   public UnaryCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse> analyzeEntitiesCallable() {
     return analyzeEntitiesCallable;
+  }
+
+  public UnaryCallable<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+      analyzeEntitySentimentCallable() {
+    return analyzeEntitySentimentCallable;
   }
 
   public UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable() {

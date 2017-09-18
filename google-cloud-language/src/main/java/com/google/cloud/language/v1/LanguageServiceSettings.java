@@ -90,6 +90,8 @@ public class LanguageServiceSettings extends ClientSettings {
       analyzeSentimentSettings;
   private final SimpleCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesSettings;
+  private final SimpleCallSettings<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+      analyzeEntitySentimentSettings;
   private final SimpleCallSettings<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
       analyzeSyntaxSettings;
   private final SimpleCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextSettings;
@@ -104,6 +106,12 @@ public class LanguageServiceSettings extends ClientSettings {
   public SimpleCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesSettings() {
     return analyzeEntitiesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to analyzeEntitySentiment. */
+  public SimpleCallSettings<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+      analyzeEntitySentimentSettings() {
+    return analyzeEntitySentimentSettings;
   }
 
   /** Returns the object with the settings used for calls to analyzeSyntax. */
@@ -211,6 +219,7 @@ public class LanguageServiceSettings extends ClientSettings {
 
     analyzeSentimentSettings = settingsBuilder.analyzeSentimentSettings().build();
     analyzeEntitiesSettings = settingsBuilder.analyzeEntitiesSettings().build();
+    analyzeEntitySentimentSettings = settingsBuilder.analyzeEntitySentimentSettings().build();
     analyzeSyntaxSettings = settingsBuilder.analyzeSyntaxSettings().build();
     annotateTextSettings = settingsBuilder.annotateTextSettings().build();
   }
@@ -223,6 +232,9 @@ public class LanguageServiceSettings extends ClientSettings {
         analyzeSentimentSettings;
     private final SimpleCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
         analyzeEntitiesSettings;
+    private final SimpleCallSettings.Builder<
+            AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+        analyzeEntitySentimentSettings;
     private final SimpleCallSettings.Builder<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
         analyzeSyntaxSettings;
     private final SimpleCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
@@ -272,6 +284,8 @@ public class LanguageServiceSettings extends ClientSettings {
 
       analyzeEntitiesSettings = SimpleCallSettings.newBuilder();
 
+      analyzeEntitySentimentSettings = SimpleCallSettings.newBuilder();
+
       analyzeSyntaxSettings = SimpleCallSettings.newBuilder();
 
       annotateTextSettings = SimpleCallSettings.newBuilder();
@@ -280,6 +294,7 @@ public class LanguageServiceSettings extends ClientSettings {
           ImmutableList.<UnaryCallSettings.Builder>of(
               analyzeSentimentSettings,
               analyzeEntitiesSettings,
+              analyzeEntitySentimentSettings,
               analyzeSyntaxSettings,
               annotateTextSettings);
 
@@ -306,6 +321,11 @@ public class LanguageServiceSettings extends ClientSettings {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .analyzeEntitySentimentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .analyzeSyntaxSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -323,6 +343,7 @@ public class LanguageServiceSettings extends ClientSettings {
 
       analyzeSentimentSettings = settings.analyzeSentimentSettings.toBuilder();
       analyzeEntitiesSettings = settings.analyzeEntitiesSettings.toBuilder();
+      analyzeEntitySentimentSettings = settings.analyzeEntitySentimentSettings.toBuilder();
       analyzeSyntaxSettings = settings.analyzeSyntaxSettings.toBuilder();
       annotateTextSettings = settings.annotateTextSettings.toBuilder();
 
@@ -330,6 +351,7 @@ public class LanguageServiceSettings extends ClientSettings {
           ImmutableList.<UnaryCallSettings.Builder>of(
               analyzeSentimentSettings,
               analyzeEntitiesSettings,
+              analyzeEntitySentimentSettings,
               analyzeSyntaxSettings,
               annotateTextSettings);
     }
@@ -373,6 +395,12 @@ public class LanguageServiceSettings extends ClientSettings {
     public SimpleCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
         analyzeEntitiesSettings() {
       return analyzeEntitiesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeEntitySentiment. */
+    public SimpleCallSettings.Builder<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+        analyzeEntitySentimentSettings() {
+      return analyzeEntitySentimentSettings;
     }
 
     /** Returns the builder for the settings used for calls to analyzeSyntax. */

@@ -299,6 +299,88 @@ public class LanguageServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Finds entities, similar to
+   * [AnalyzeEntities][google.cloud.language.v1.LanguageService.AnalyzeEntities] in the text and
+   * analyzes sentiment associated with each entity and its mentions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   EncodingType encodingType = EncodingType.NONE;
+   *   AnalyzeEntitySentimentResponse response = languageServiceClient.analyzeEntitySentiment(document, encodingType);
+   * }
+   * </code></pre>
+   *
+   * @param document Input document.
+   * @param encodingType The encoding type used by the API to calculate offsets.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeEntitySentimentResponse analyzeEntitySentiment(
+      Document document, EncodingType encodingType) {
+
+    AnalyzeEntitySentimentRequest request =
+        AnalyzeEntitySentimentRequest.newBuilder()
+            .setDocument(document)
+            .setEncodingType(encodingType)
+            .build();
+    return analyzeEntitySentiment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finds entities, similar to
+   * [AnalyzeEntities][google.cloud.language.v1.LanguageService.AnalyzeEntities] in the text and
+   * analyzes sentiment associated with each entity and its mentions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   AnalyzeEntitySentimentRequest request = AnalyzeEntitySentimentRequest.newBuilder()
+   *     .setDocument(document)
+   *     .build();
+   *   AnalyzeEntitySentimentResponse response = languageServiceClient.analyzeEntitySentiment(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeEntitySentimentResponse analyzeEntitySentiment(
+      AnalyzeEntitySentimentRequest request) {
+    return analyzeEntitySentimentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finds entities, similar to
+   * [AnalyzeEntities][google.cloud.language.v1.LanguageService.AnalyzeEntities] in the text and
+   * analyzes sentiment associated with each entity and its mentions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   AnalyzeEntitySentimentRequest request = AnalyzeEntitySentimentRequest.newBuilder()
+   *     .setDocument(document)
+   *     .build();
+   *   ApiFuture&lt;AnalyzeEntitySentimentResponse&gt; future = languageServiceClient.analyzeEntitySentimentCallable().futureCall(request);
+   *   // Do something
+   *   AnalyzeEntitySentimentResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+      analyzeEntitySentimentCallable() {
+    return stub.analyzeEntitySentimentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
    * part of speech tags, dependency trees, and other properties.
    *
