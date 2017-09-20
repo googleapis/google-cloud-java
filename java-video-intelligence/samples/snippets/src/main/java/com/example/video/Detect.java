@@ -107,19 +107,9 @@ public class Detect {
     // [START detect_faces]
     // Instantiate a com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceClient
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
-      // detect shot and frame
-      LabelDetectionConfig labelDetectionConfig = LabelDetectionConfig.newBuilder()
-          .setLabelDetectionMode(LabelDetectionMode.SHOT_AND_FRAME_MODE)
-          .build();
-
-      VideoContext videoContext = VideoContext.newBuilder()
-          .setLabelDetectionConfig(labelDetectionConfig)
-          .build();
-
       AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
           .setInputUri(gcsUri)
-          .setVideoContext(videoContext)
-          .addFeatures(Feature.LABEL_DETECTION)
+          .addFeatures(Feature.FACE_DETECTION)
           .build();
 
       // asynchronously perform facial analysis on videos
@@ -140,17 +130,26 @@ public class Detect {
                 + segment.getSegment().getEndTimeOffset().getNanos() / 1e9;
             System.out.printf("Segment location : %.3f:%.3f\n", startTime, endTime);
           }
-          // printing info on the first frame
-          FaceFrame frame = faceAnnotation.getFrames(0);
-          double timeOffset = frame.getTimeOffset().getSeconds()
-              + frame.getTimeOffset().getNanos() / 1e9;
-          System.out.printf("First frame time offset: %.3fs", timeOffset);
-          // print info on the first normalized bounding box
-          NormalizedBoundingBox box = frame.getNormalizedBoundingBoxesList().get(0);
-          System.out.printf("Left: %.3f\n", box.getLeft());
-          System.out.printf("Top: %.3f\n", box.getTop());
-          System.out.printf("Bottom: %.3f\n", box.getBottom());
-          System.out.printf("Right: %.3f\n", box.getRight());
+          try {
+            // printing info on the first frame
+            if (faceAnnotation.getFramesCount() > 0) {
+              System.out.println(faceAnnotation.getFramesList().get(0));
+              FaceFrame frame = faceAnnotation.getFrames(0);
+              double timeOffset = frame.getTimeOffset().getSeconds()
+                  + frame.getTimeOffset().getNanos() / 1e9;
+              System.out.printf("First frame time offset: %.3fs", timeOffset);
+              // print info on the first normalized bounding box
+              NormalizedBoundingBox box = frame.getNormalizedBoundingBoxesList().get(0);
+              System.out.printf("Left: %.3f\n", box.getLeft());
+              System.out.printf("Top: %.3f\n", box.getTop());
+              System.out.printf("Bottom: %.3f\n", box.getBottom());
+              System.out.printf("Right: %.3f\n", box.getRight());
+            } else {
+              System.out.println("No frames found in annotation");
+            }
+          } catch (IndexOutOfBoundsException ioe) {
+            System.out.println("Could not retrieve frame: " + ioe.getMessage());
+          }
         }
       }
       if (!faceFound) {
