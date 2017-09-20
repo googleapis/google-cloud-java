@@ -18,16 +18,13 @@ package com.example.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.util.concurrent.ExecutionException;
 
 /** Tests for video analysis sample. */
 @RunWith(JUnit4.class)
@@ -35,12 +32,11 @@ import java.util.concurrent.ExecutionException;
 public class DetectIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
-  private Detect app;
 
   static final String FACES_FILE_LOCATION = "gs://demomaker/gbike.mp4";
   static final String LABEL_FILE_LOCATION = "gs://demomaker/cat.mp4";
   static final String SHOTS_FILE_LOCATION = "gs://demomaker/gbikes_dinosaur.mp4";
-  static final String SAFE_SEARCH_FILE_LOCATION = "gs://cloudmleap/video/next/animals.mp4";
+  static final String EXPLICIT_CONTENT_LOCATION =  "gs://demomaker/cat.mp4";
 
   @Before
   public void setUp() {
@@ -55,16 +51,15 @@ public class DetectIT {
   }
 
   @Test
-  public void testFaces() throws IOException, InterruptedException, ExecutionException {
+  public void testFaces() throws Exception {
     String[] args = {"faces", FACES_FILE_LOCATION};
     Detect.argsHelper(args);
     String got = bout.toString();
-
     // Model changes have caused the results from face detection to change to an
     // empty response (e.g. no faces detected) so we check either for an empty
     // response or that a response with face thumbnails was returned.
-    if (got.indexOf("No faces detected") == 0) {
-      assertThat(got).contains("Face Thumb is of size:");
+    if (got.indexOf("No faces detected") == -1) {
+      assertThat(got).contains("Thumbnail size:");
     } else {
       // No faces detected, verify sample reports this.
       assertThat(got).contains("No faces detected in " + FACES_FILE_LOCATION);
@@ -72,37 +67,28 @@ public class DetectIT {
   }
 
   @Test
-  public void testLabels() throws IOException, InterruptedException, ExecutionException {
+  public void testLabels() throws Exception {
     String[] args = {"labels", LABEL_FILE_LOCATION};
     Detect.argsHelper(args);
     String got = bout.toString();
-
     // Test that the video with a cat has the whiskers label (may change).
     assertThat(got.toUpperCase()).contains("WHISKERS");
   }
 
   @Test
-  public void testSafeSearch() throws IOException, InterruptedException, ExecutionException {
-    String[] args = {"safesearch", SAFE_SEARCH_FILE_LOCATION};
-    app.argsHelper(args);
+  public void testExplicitContent() throws Exception {
+    String[] args = {"explicit-content", EXPLICIT_CONTENT_LOCATION};
+    Detect.argsHelper(args);
     String got = bout.toString();
-
-    // Check that the API returned at least one safe search annotation.
-    assertThat(got).contains("Medical:");
-    // Check that the API detected positions for the annotations.
-    assertThat(got).contains("Location: ");
+    assertThat(got).contains("Adult: VERY_UNLIKELY");
   }
 
   @Test
-  public void testShots() throws IOException, InterruptedException, ExecutionException {
+  public void testShots() throws Exception {
     String[] args = {"shots", SHOTS_FILE_LOCATION};
-    app.argsHelper(args);
+    Detect.argsHelper(args);
     String got = bout.toString();
-
-    // Check that the API returned at least one segment.
-    assertThat(got).contains("Segment:");
-    // Check that the API detected a segment at the begining of the video.
+    assertThat(got).contains("Shots:");
     assertThat(got).contains("Location: 0");
   }
-
 }

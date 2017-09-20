@@ -18,16 +18,13 @@ package com.example.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.util.concurrent.ExecutionException;
 
 /** Tests for video analysis sample. */
 @RunWith(JUnit4.class)
@@ -49,7 +46,7 @@ public class QuickstartIT {
   }
 
   @Test
-  public void test() throws IOException, InterruptedException, ExecutionException {
+  public void test() throws Exception {
     QuickstartSample.main(new String[0]);
     String got = bout.toString();
 

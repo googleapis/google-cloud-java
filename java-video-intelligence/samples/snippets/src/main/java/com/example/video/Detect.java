@@ -17,25 +17,30 @@
 package com.example.video;
 
 import com.google.api.gax.rpc.OperationFuture;
-import com.google.cloud.videointelligence.v1beta1.AnnotateVideoProgress;
-import com.google.cloud.videointelligence.v1beta1.AnnotateVideoRequest;
-import com.google.cloud.videointelligence.v1beta1.AnnotateVideoResponse;
-import com.google.cloud.videointelligence.v1beta1.FaceAnnotation;
-import com.google.cloud.videointelligence.v1beta1.Feature;
-import com.google.cloud.videointelligence.v1beta1.LabelAnnotation;
-import com.google.cloud.videointelligence.v1beta1.LabelLocation;
-import com.google.cloud.videointelligence.v1beta1.Likelihood;
-import com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotation;
-import com.google.cloud.videointelligence.v1beta1.VideoAnnotationResults;
-import com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceClient;
-import com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceSettings;
-import com.google.cloud.videointelligence.v1beta1.VideoSegment;
+import com.google.cloud.videointelligence.v1beta2.AnnotateVideoProgress;
+import com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest;
+import com.google.cloud.videointelligence.v1beta2.AnnotateVideoResponse;
+import com.google.cloud.videointelligence.v1beta2.Entity;
+import com.google.cloud.videointelligence.v1beta2.ExplicitContentFrame;
+import com.google.cloud.videointelligence.v1beta2.FaceAnnotation;
+import com.google.cloud.videointelligence.v1beta2.FaceFrame;
+import com.google.cloud.videointelligence.v1beta2.FaceSegment;
+import com.google.cloud.videointelligence.v1beta2.Feature;
+import com.google.cloud.videointelligence.v1beta2.LabelAnnotation;
+import com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig;
+import com.google.cloud.videointelligence.v1beta2.LabelDetectionMode;
+import com.google.cloud.videointelligence.v1beta2.LabelSegment;
+import com.google.cloud.videointelligence.v1beta2.NormalizedBoundingBox;
+import com.google.cloud.videointelligence.v1beta2.VideoAnnotationResults;
+import com.google.cloud.videointelligence.v1beta2.VideoContext;
+import com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceClient;
+import com.google.cloud.videointelligence.v1beta2.VideoSegment;
 import com.google.longrunning.Operation;
+import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.concurrent.ExecutionException;
 import org.apache.commons.codec.binary.Base64;
 
 
@@ -46,7 +51,7 @@ public class Detect {
    *
    * @throws IOException on Input/Output errors.
    */
-  public static void main(String[] args) throws IOException, InterruptedException {
+  public static void main(String[] args) throws Exception {
     try {
       argsHelper(args);
     } catch (Exception e) {
@@ -61,8 +66,7 @@ public class Detect {
    *
    * @throws IOException on Input/Output errors.
    */
-  public static void argsHelper(String[] args) throws
-      ExecutionException, IOException, InterruptedException {
+  public static void argsHelper(String[] args) throws Exception {
     if (args.length < 1) {
       System.out.println("Usage:");
       System.out.printf(
@@ -89,8 +93,8 @@ public class Detect {
     if (command.equals("shots")) {
       analyzeShots(path);
     }
-    if (command.equals("safesearch")) {
-      analyzeSafeSearch(path);
+    if (command.equals("explicit-content")) {
+      analyzeExplicitContent(path);
     }
   }
 
@@ -99,39 +103,60 @@ public class Detect {
    *
    * @param gcsUri the path to the video file to analyze.
    */
-  public static void analyzeFaces(String gcsUri) throws ExecutionException,
-      IOException, InterruptedException {
-    VideoIntelligenceServiceSettings settings =
-        VideoIntelligenceServiceSettings.defaultBuilder().build();
-    VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create(settings);
+  public static void analyzeFaces(String gcsUri) throws Exception {
+    // [START detect_faces]
+    // Instantiate a com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceClient
+    try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
+      // detect shot and frame
+      LabelDetectionConfig labelDetectionConfig = LabelDetectionConfig.newBuilder()
+          .setLabelDetectionMode(LabelDetectionMode.SHOT_AND_FRAME_MODE)
+          .build();
 
+      VideoContext videoContext = VideoContext.newBuilder()
+          .setLabelDetectionConfig(labelDetectionConfig)
+          .build();
 
-    // Create an operation that will contain the response when the operation completes.
-    AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-            .setInputUri(gcsUri)
-            .addFeatures(Feature.FACE_DETECTION)
-            .build();
+      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+          .setInputUri(gcsUri)
+          .setVideoContext(videoContext)
+          .addFeatures(Feature.LABEL_DETECTION)
+          .build();
 
-    OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation> operation =
-            client.annotateVideoAsync(request);
+      // asynchronously perform facial analysis on videos
+      OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation> response
+          = client.annotateVideoAsync(request);
 
-    System.out.println("Waiting for operation to complete...");
-    for (VideoAnnotationResults result : operation.get().getAnnotationResultsList()) {
-      if (result.getFaceAnnotationsCount() > 0) {
-        System.out.println("Faces:");
-        for (FaceAnnotation annotation : result.getFaceAnnotationsList()) {
-          System.out.println("\tFace Thumb is of length: " + annotation.getThumbnail().length());
-          for (VideoSegment seg : annotation.getSegmentsList()) {
-            System.out.printf("\t\tLocation: %fs - %fs\n",
-                seg.getStartTimeOffset() / 1000000.0,
-                seg.getEndTimeOffset() / 1000000.0);
+      boolean faceFound = false;
+      for (VideoAnnotationResults results : response.get().getAnnotationResultsList()) {
+        int faceCount = 0;
+        for (FaceAnnotation faceAnnotation : results.getFaceAnnotationsList()) {
+          faceFound = true;
+          System.out.println("Face: " + ++faceCount);
+          System.out.println("Thumbnail size: " + faceAnnotation.getThumbnail().size());
+          for (FaceSegment segment : faceAnnotation.getSegmentsList()) {
+            double startTime = segment.getSegment().getStartTimeOffset().getSeconds()
+                + segment.getSegment().getStartTimeOffset().getNanos() / 1e9;
+            double endTime = segment.getSegment().getEndTimeOffset().getSeconds()
+                + segment.getSegment().getEndTimeOffset().getNanos() / 1e9;
+            System.out.printf("Segment location : %.3f:%.3f\n", startTime, endTime);
           }
-          System.out.println();
+          // printing info on the first frame
+          FaceFrame frame = faceAnnotation.getFrames(0);
+          double timeOffset = frame.getTimeOffset().getSeconds()
+              + frame.getTimeOffset().getNanos() / 1e9;
+          System.out.printf("First frame time offset: %.3fs", timeOffset);
+          // print info on the first normalized bounding box
+          NormalizedBoundingBox box = frame.getNormalizedBoundingBoxesList().get(0);
+          System.out.printf("Left: %.3f\n", box.getLeft());
+          System.out.printf("Top: %.3f\n", box.getTop());
+          System.out.printf("Bottom: %.3f\n", box.getBottom());
+          System.out.printf("Right: %.3f\n", box.getRight());
         }
-        System.out.println();
-      } else {
+      }
+      if (!faceFound) {
         System.out.println("No faces detected in " + gcsUri);
       }
+      // [END detect_faces]
     }
   }
 
@@ -140,44 +165,81 @@ public class Detect {
    *
    * @param gcsUri the path to the video file to analyze.
    */
-  public static void analyzeLabels(String gcsUri) throws
-      ExecutionException, IOException, InterruptedException {
-    VideoIntelligenceServiceSettings settings =
-        VideoIntelligenceServiceSettings.defaultBuilder().build();
-    VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create(settings);
+  public static void analyzeLabels(String gcsUri) throws Exception {
+    // [START detect_labels_gcs]
+    // Instantiate a com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceClient
+    try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
+      // Provide path to file hosted on GCS as "gs://bucket-name/..."
+      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+          .setInputUri(gcsUri)
+          .addFeatures(Feature.LABEL_DETECTION)
+          .build();
+      // Create an operation that will contain the response when the operation completes.
+      OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation> operation =
+          client.annotateVideoAsync(request);
 
-    // Create an operation that will contain the response when the operation completes.
-    AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-            .setInputUri(gcsUri)
-            .addFeatures(Feature.LABEL_DETECTION)
-            .build();
-
-    OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation> operation =
-            client.annotateVideoAsync(request);
-
-    System.out.println("Waiting for operation to complete...");
-    for (VideoAnnotationResults result : operation.get().getAnnotationResultsList()) {
-      if (result.getLabelAnnotationsCount() > 0) {
-        System.out.println("Labels:");
-        for (LabelAnnotation annotation : result.getLabelAnnotationsList()) {
-          System.out.println("\tDescription: " + annotation.getDescription());
-          for (LabelLocation loc : annotation.getLocationsList()) {
-            if (loc.getSegment().getStartTimeOffset() == -1
-                && loc.getSegment().getEndTimeOffset() == -1) {
-              System.out.println("\tLocation: Entire video");
-            } else {
-              System.out.printf(
-                  "\tLocation: %fs - %fs\n",
-                  loc.getSegment().getStartTimeOffset() / 1000000.0,
-                  loc.getSegment().getEndTimeOffset() / 1000000.0);
-            }
+      System.out.println("Waiting for operation to complete...");
+      for (VideoAnnotationResults results : operation.get().getAnnotationResultsList()) {
+        // process video / segment level label annotations
+        System.out.println("Locations: ");
+        for (LabelAnnotation labelAnnotation : results.getSegmentLabelAnnotationsList()) {
+          System.out
+              .println("Video label: " + labelAnnotation.getEntity().getDescription());
+          // categories
+          for (Entity categoryEntity : labelAnnotation.getCategoryEntitiesList()) {
+            System.out.println("Video label category: " + categoryEntity.getDescription());
           }
-          System.out.println();
+          // segments
+          for (LabelSegment segment : labelAnnotation.getSegmentsList()) {
+            double startTime = segment.getSegment().getStartTimeOffset().getSeconds()
+                + segment.getSegment().getStartTimeOffset().getNanos() / 1e9;
+            double endTime = segment.getSegment().getEndTimeOffset().getSeconds()
+                + segment.getSegment().getEndTimeOffset().getNanos() / 1e9;
+            System.out.printf("Segment location: %.3f:%.3f\n", startTime, endTime);
+            System.out.println("Confidence: " + segment.getConfidence());
+          }
         }
-      } else {
-        System.out.println("No labels detected in " + gcsUri);
+
+        // process shot label annotations
+        for (LabelAnnotation labelAnnotation : results.getShotLabelAnnotationsList()) {
+          System.out
+              .println("Shot label: " + labelAnnotation.getEntity().getDescription());
+          // categories
+          for (Entity categoryEntity : labelAnnotation.getCategoryEntitiesList()) {
+            System.out.println("Shot label category: " + categoryEntity.getDescription());
+          }
+          // segments
+          for (LabelSegment segment : labelAnnotation.getSegmentsList()) {
+            double startTime = segment.getSegment().getStartTimeOffset().getSeconds()
+                + segment.getSegment().getStartTimeOffset().getNanos() / 1e9;
+            double endTime = segment.getSegment().getEndTimeOffset().getSeconds()
+                + segment.getSegment().getEndTimeOffset().getNanos() / 1e9;
+            System.out.printf("Segment location: %.3f:%.3f\n", startTime, endTime);
+            System.out.println("Confidence: " + segment.getConfidence());
+          }
+        }
+
+        // process frame label annotations
+        for (LabelAnnotation labelAnnotation : results.getFrameLabelAnnotationsList()) {
+          System.out
+              .println("Frame label: " + labelAnnotation.getEntity().getDescription());
+          // categories
+          for (Entity categoryEntity : labelAnnotation.getCategoryEntitiesList()) {
+            System.out.println("Frame label category: " + categoryEntity.getDescription());
+          }
+          // segments
+          for (LabelSegment segment : labelAnnotation.getSegmentsList()) {
+            double startTime = segment.getSegment().getStartTimeOffset().getSeconds()
+                + segment.getSegment().getStartTimeOffset().getNanos() / 1e9;
+            double endTime = segment.getSegment().getEndTimeOffset().getSeconds()
+                + segment.getSegment().getEndTimeOffset().getNanos() / 1e9;
+            System.out.printf("Segment location: %.3f:%.2f\n", startTime, endTime);
+            System.out.println("Confidence: " + segment.getConfidence());
+          }
+        }
       }
     }
+    // [END detect_labels_gcs]
   }
 
   /**
@@ -185,47 +247,86 @@ public class Detect {
    *
    * @param filePath the path to the video file to analyze.
    */
-  public static void analyzeLabelsFile(String filePath) throws
-          ExecutionException, IOException, InterruptedException {
-    VideoIntelligenceServiceSettings settings =
-        VideoIntelligenceServiceSettings.defaultBuilder().build();
-    VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create(settings);
+  public static void analyzeLabelsFile(String filePath) throws Exception {
+    // [START detect_labels_file]
+    // Instantiate a com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceClient
+    try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
+      // Read file and encode into Base64
+      Path path = Paths.get(filePath);
+      byte[] data = Files.readAllBytes(path);
+      byte[] encodedBytes = Base64.encodeBase64(data);
 
-    Path path = Paths.get(filePath);
-    byte[] data = Files.readAllBytes(path);
-    byte[] encodedBytes = Base64.encodeBase64(data);
+      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+          .setInputContent(ByteString.copyFrom(encodedBytes))
+          .addFeatures(Feature.LABEL_DETECTION)
+          .build();
 
-    AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-        .setInputContent(new String(encodedBytes, "UTF-8"))
-        .addFeatures(Feature.LABEL_DETECTION)
-        .build();
+      // Create an operation that will contain the response when the operation completes.
+      OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation> operation =
+          client.annotateVideoAsync(request);
 
-    OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation> operation =
-        client.annotateVideoAsync(request);
-
-    System.out.println("Waiting for operation to complete...");
-    for (VideoAnnotationResults result : operation.get().getAnnotationResultsList()) {
-      if (result.getLabelAnnotationsCount() > 0) {
-        System.out.println("Labels:");
-        for (LabelAnnotation annotation : result.getLabelAnnotationsList()) {
-          System.out.println("\tDescription: " + annotation.getDescription());
-          for (LabelLocation loc : annotation.getLocationsList()) {
-            if (loc.getSegment().getStartTimeOffset() == -1
-                && loc.getSegment().getEndTimeOffset() == -1) {
-              System.out.println("\tLocation: Entire video");
-            } else {
-              System.out.printf(
-                  "\tLocation: %fs - %fs\n",
-                  loc.getSegment().getStartTimeOffset() / 1000000.0,
-                  loc.getSegment().getEndTimeOffset() / 1000000.0);
-            }
+      System.out.println("Waiting for operation to complete...");
+      for (VideoAnnotationResults results : operation.get().getAnnotationResultsList()) {
+        // process video / segment level label annotations
+        System.out.println("Locations: ");
+        for (LabelAnnotation labelAnnotation : results.getSegmentLabelAnnotationsList()) {
+          System.out
+              .println("Video label: " + labelAnnotation.getEntity().getDescription());
+          // categories
+          for (Entity categoryEntity : labelAnnotation.getCategoryEntitiesList()) {
+            System.out.println("Video label category: " + categoryEntity.getDescription());
           }
-          System.out.println();
+          // segments
+          for (LabelSegment segment : labelAnnotation.getSegmentsList()) {
+            double startTime = segment.getSegment().getStartTimeOffset().getSeconds()
+                + segment.getSegment().getStartTimeOffset().getNanos() / 1e9;
+            double endTime = segment.getSegment().getEndTimeOffset().getSeconds()
+                + segment.getSegment().getEndTimeOffset().getNanos() / 1e9;
+            System.out.printf("Segment location: %.3f:%.2f\n", startTime, endTime);
+            System.out.println("Confidence: " + segment.getConfidence());
+          }
         }
-      } else {
-        System.out.println("No labels detected in " + filePath);
+
+        // process shot label annotations
+        for (LabelAnnotation labelAnnotation : results.getShotLabelAnnotationsList()) {
+          System.out
+              .println("Shot label: " + labelAnnotation.getEntity().getDescription());
+          // categories
+          for (Entity categoryEntity : labelAnnotation.getCategoryEntitiesList()) {
+            System.out.println("Shot label category: " + categoryEntity.getDescription());
+          }
+          // segments
+          for (LabelSegment segment : labelAnnotation.getSegmentsList()) {
+            double startTime = segment.getSegment().getStartTimeOffset().getSeconds()
+                + segment.getSegment().getStartTimeOffset().getNanos() / 1e9;
+            double endTime = segment.getSegment().getEndTimeOffset().getSeconds()
+                + segment.getSegment().getEndTimeOffset().getNanos() / 1e9;
+            System.out.printf("Segment location: %.3f:%.2f\n", startTime, endTime);
+            System.out.println("Confidence: " + segment.getConfidence());
+          }
+        }
+
+        // process frame label annotations
+        for (LabelAnnotation labelAnnotation : results.getFrameLabelAnnotationsList()) {
+          System.out
+              .println("Frame label: " + labelAnnotation.getEntity().getDescription());
+          // categories
+          for (Entity categoryEntity : labelAnnotation.getCategoryEntitiesList()) {
+            System.out.println("Frame label category: " + categoryEntity.getDescription());
+          }
+          // segments
+          for (LabelSegment segment : labelAnnotation.getSegmentsList()) {
+            double startTime = segment.getSegment().getStartTimeOffset().getSeconds()
+                + segment.getSegment().getStartTimeOffset().getNanos() / 1e9;
+            double endTime = segment.getSegment().getEndTimeOffset().getSeconds()
+                + segment.getSegment().getEndTimeOffset().getNanos() / 1e9;
+            System.out.printf("Segment location: %.3f:%.2f\n", startTime, endTime);
+            System.out.println("Confidence: " + segment.getConfidence());
+          }
+        }
       }
     }
+    // [END detect_labels_file]
   }
 
   /**
@@ -233,92 +334,70 @@ public class Detect {
    *
    * @param gcsUri the path to the video file to analyze.
    */
-  public static void analyzeShots(String gcsUri)
-      throws ExecutionException, IOException, InterruptedException {
-    VideoIntelligenceServiceSettings settings =
-        VideoIntelligenceServiceSettings.defaultBuilder().build();
-    VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create(settings);
+  public static void analyzeShots(String gcsUri) throws Exception {
+    // [START detect_shots]
+    // Instantiate a com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceClient
+    try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
+      // Provide path to file hosted on GCS as "gs://bucket-name/..."
+      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+          .setInputUri(gcsUri)
+          .addFeatures(Feature.SHOT_CHANGE_DETECTION)
+          .build();
 
-    // Create an operation that will contain the response when the operation completes.
-    AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-            .setInputUri(gcsUri)
-            .addFeatures(Feature.SHOT_CHANGE_DETECTION)
-            .build();
+      // Create an operation that will contain the response when the operation completes.
+      OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation> operation =
+          client.annotateVideoAsync(request);
+      System.out.println("Waiting for operation to complete...");
 
-    OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation> operation =
-            client.annotateVideoAsync(request);
-
-    System.out.println("Waiting for operation to complete...");
-
-    // Print detected shot changes and their location ranges in the analyzed video.
-    for (VideoAnnotationResults result : operation.get().getAnnotationResultsList()) {
-      if (result.getShotAnnotationsCount() > 0) {
-        System.out.println("Shots:");
-        int segCount = 0;
-        for (VideoSegment seg : result.getShotAnnotationsList()) {
-          System.out.println("\tSegment: " + segCount++);
-          System.out.printf("\tLocation: %fs - %fs\n",
-              seg.getStartTimeOffset() / 1000000.0,
-              seg.getEndTimeOffset() / 1000000.0);
+      // Print detected shot changes and their location ranges in the analyzed video.
+      for (VideoAnnotationResults result : operation.get().getAnnotationResultsList()) {
+        if (result.getShotAnnotationsCount() > 0) {
+          System.out.println("Shots: ");
+          for (VideoSegment segment : result.getShotAnnotationsList()) {
+            double startTime = segment.getStartTimeOffset().getSeconds()
+                + segment.getStartTimeOffset().getNanos() / 1e9;
+            double endTime = segment.getEndTimeOffset().getSeconds()
+                + segment.getEndTimeOffset().getNanos() / 1e9;
+            System.out.printf("Location: %.3f:%.3f\n", startTime, endTime);
+          }
+        } else {
+          System.out.println("No shot changes detected in " + gcsUri);
         }
-        System.out.println();
-      } else {
-        System.out.println("No shot changes detected in " + gcsUri);
       }
     }
+    // [END detect_shots]
   }
 
   /**
-   * Performs safe search analysis on the video at the provided Cloud Storage path.
+   * Performs explicit content analysis on the video at the provided Cloud Storage path.
    *
    * @param gcsUri the path to the video file to analyze.
    */
-  public static void analyzeSafeSearch(String gcsUri)
-          throws ExecutionException, IOException, InterruptedException {
-    VideoIntelligenceServiceSettings settings =
-            VideoIntelligenceServiceSettings.defaultBuilder().build();
-    VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create(settings);
+  public static void analyzeExplicitContent(String gcsUri) throws Exception {
+    // [START detect_explicit_content]
+    // Instantiate a com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceClient
+    try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
+      // Create an operation that will contain the response when the operation completes.
+      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+          .setInputUri(gcsUri)
+          .addFeatures(Feature.EXPLICIT_CONTENT_DETECTION)
+          .build();
 
-    // Create an operation that will contain the response when the operation completes.
-    AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-            .setInputUri(gcsUri)
-            .addFeatures(Feature.SAFE_SEARCH_DETECTION)
-            .build();
+      OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation> operation =
+          client.annotateVideoAsync(request);
 
-    OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation> operation =
-            client.annotateVideoAsync(request);
+      System.out.println("Waiting for operation to complete...");
 
-    System.out.println("Waiting for operation to complete...");
-
-    // Print detected safe search annotations and their positions in the analyzed video.
-    boolean foundUnsafe = false;
-    for (VideoAnnotationResults result : operation.get().getAnnotationResultsList()) {
-      if (result.getSafeSearchAnnotationsCount() > 0) {
-        System.out.println("Safe search annotations:");
-        for (SafeSearchAnnotation note : result.getSafeSearchAnnotationsList()) {
-          System.out.printf("Location: %fs\n", note.getTimeOffset() / 1000000.0);
-          System.out.println("\tAdult: " + note.getAdult().name());
-          System.out.println("\tMedical: " + note.getMedical().name());
-          System.out.println("\tRacy: " + note.getRacy().name());
-          System.out.println("\tSpoof: " + note.getSpoof().name());
-          System.out.println("\tViolent: " + note.getViolent().name());
-          System.out.println();
-
-          if (note.getAdult().compareTo(Likelihood.LIKELY) > 1
-              || note.getViolent().compareTo(Likelihood.LIKELY) > 1
-              || note.getRacy().compareTo(Likelihood.LIKELY) > 1) {
-            foundUnsafe = false;
-          }
+      // Print detected annotations and their positions in the analyzed video.
+      for (VideoAnnotationResults result : operation.get().getAnnotationResultsList()) {
+        for (ExplicitContentFrame frame : result.getExplicitAnnotation().getFramesList()) {
+          double frameTime =
+              frame.getTimeOffset().getSeconds() + frame.getTimeOffset().getNanos() / 1e9;
+          System.out.printf("Location: %.3fs\n", frameTime);
+          System.out.println("Adult: " + frame.getPornographyLikelihood());
         }
-      } else {
-        System.out.println("No safe search annotations detected in " + gcsUri);
       }
-    }
-
-    if (foundUnsafe) {
-      System.out.println("Found potentially unsafe content.");
-    } else {
-      System.out.println("Did not detect unsafe content.");
+      // [END detect_explicit_content]
     }
   }
 }
