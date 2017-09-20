@@ -1,6 +1,8 @@
 Use Google Cloud Java Client with Google App Engine Java 8
 =================================================
 
+** Note: Google App Engine Java 7 is not supported by the google-cloud-java library. **
+
 ** Note: the following instructions are not required for App Engine Flex and Java 8 standard environment. **
 
 Quickstart
