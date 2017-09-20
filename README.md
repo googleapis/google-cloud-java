@@ -24,6 +24,7 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Cloud Pub/Sub](google-cloud-pubsub) (Beta)
 -  [Cloud Spanner](google-cloud-spanner) (Beta)
 -  [Cloud Natural Language](google-cloud-language) (Beta)
+-  [Cloud Video Intelligence](google-cloud-video-intelligence) (Beta)
 -  [Cloud Vision](google-cloud-vision) (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
@@ -36,7 +37,6 @@ This client supports the following Google Cloud Platform services at an [Alpha](
 -  [Cloud Resource Manager](google-cloud-resourcemanager) (Alpha)
 -  [Cloud Speech](google-cloud-speech) (Alpha)
 -  [Cloud Trace](google-cloud-trace) (Alpha)
--  [Cloud Video Intelligence](google-cloud-video-intelligence) (Alpha)
 
 > Note: google-cloud-java is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
