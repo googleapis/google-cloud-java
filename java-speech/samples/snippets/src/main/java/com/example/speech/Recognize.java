@@ -17,8 +17,8 @@
 package com.example.speech;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.OperationFuture;
-import com.google.api.gax.rpc.StreamingCallable;
 import com.google.cloud.speech.v1.LongRunningRecognizeMetadata;
 import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognitionAudio;
@@ -36,7 +36,6 @@ import com.google.cloud.speech.v1.WordInfo;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.longrunning.Operation;
 import com.google.protobuf.ByteString;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -382,7 +381,7 @@ public class Recognize {
     ResponseApiStreamingObserver<StreamingRecognizeResponse> responseObserver =
         new ResponseApiStreamingObserver<StreamingRecognizeResponse>();
 
-    StreamingCallable<StreamingRecognizeRequest,StreamingRecognizeResponse> callable =
+    BidiStreamingCallable<StreamingRecognizeRequest,StreamingRecognizeResponse> callable =
         speech.streamingRecognizeCallable();
 
     ApiStreamObserver<StreamingRecognizeRequest> requestObserver =
