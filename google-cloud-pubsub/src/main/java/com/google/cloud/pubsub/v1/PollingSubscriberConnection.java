@@ -33,6 +33,7 @@ import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberFutureStub;
 import com.google.pubsub.v1.Subscription;
+import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -70,6 +71,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
       SubscriberFutureStub stub,
       FlowController flowController,
       @Nullable Long maxDesiredPulledMessages,
+      Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches,
       ScheduledExecutorService executor,
       ScheduledExecutorService systemExecutor,
       ApiClock clock) {
@@ -84,6 +86,7 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
             maxAckExtensionPeriod,
             ackLatencyDistribution,
             flowController,
+            outstandingMessageBatches,
             executor,
             systemExecutor,
             clock);

@@ -34,6 +34,7 @@ import io.grpc.Status;
 import io.grpc.stub.ClientCallStreamObserver;
 import io.grpc.stub.ClientResponseObserver;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -71,6 +72,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       Distribution ackLatencyDistribution,
       SubscriberStub asyncStub,
       FlowController flowController,
+      Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches,
       ScheduledExecutorService executor,
       @Nullable ScheduledExecutorService alarmsExecutor,
       ApiClock clock) {
@@ -85,6 +87,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             maxAckExtensionPeriod,
             ackLatencyDistribution,
             flowController,
+            outstandingMessageBatches,
             executor,
             alarmsExecutor,
             clock);
