@@ -255,7 +255,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   static class NettyRpcChannelFactory implements RpcChannelFactory {
     private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
-    private static final int MAX_HEADER_LIST_SIZE = 8192 * 4; //bytes
+    private static final int MAX_HEADER_LIST_SIZE = 32 * 1024; //bytes
     private final String userAgent;
     private final List<ClientInterceptor> interceptors;
 
