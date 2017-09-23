@@ -35,6 +35,7 @@ final class StatusUtil {
       case INTERNAL:
       case CANCELLED:
       case RESOURCE_EXHAUSTED:
+      case ABORTED:
         return true;
       case UNAVAILABLE:
         if (statusRuntimeException.getMessage().contains("Server shutdownNow invoked")) {
