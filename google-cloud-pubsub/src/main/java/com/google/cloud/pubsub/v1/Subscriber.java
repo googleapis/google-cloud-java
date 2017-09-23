@@ -47,6 +47,8 @@ import io.grpc.ManagedChannel;
 import io.grpc.auth.MoreCallCredentials;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -115,6 +117,8 @@ public class Subscriber extends AbstractApiService {
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
   private final List<PollingSubscriberConnection> pollingSubscriberConnections;
+  private final Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches =
+      new LinkedList<>();
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
   private final boolean useStreaming;
@@ -328,6 +332,7 @@ public class Subscriber extends AbstractApiService {
                 stub,
                 flowController,
                 flowControlSettings.getMaxOutstandingElementCount(),
+                outstandingMessageBatches,
                 executor,
                 alarmsExecutor,
                 clock));
@@ -374,6 +379,7 @@ public class Subscriber extends AbstractApiService {
                 ackLatencyDistribution,
                 stub,
                 flowController,
+                outstandingMessageBatches,
                 executor,
                 alarmsExecutor,
                 clock));
