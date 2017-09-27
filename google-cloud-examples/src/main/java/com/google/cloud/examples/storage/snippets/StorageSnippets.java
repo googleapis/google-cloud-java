@@ -66,6 +66,7 @@ import java.io.PrintStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -1125,20 +1126,19 @@ public class StorageSnippets {
     // String srcFilename = "file.txt";
 
     // The path to which the file should be downloaded
-    // String destFilePath = "/local/path/to/file.txt";
+    // Path destFilePath = Paths.get("/local/path/to/file.txt");
 
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
+    // Set billing project
     BlobSourceOption option = BlobSourceOption.userProject(projectId);
 
-    // read blob in a single pass
-    byte[] readBytes = storage.readAllBytes(bucketName, srcFilename, option);
+    // Get specific file from specified bucket
+    Blob blob = BlobId.of(bucketName, srcFilename);
 
-    // write out to file
-    PrintStream out = new PrintStream(new FileOutputStream(destFilePath.toFile()));
-    out.write(readBytes);
-    out.close();
+    // Download file to specified path
+    blob.downloatTo(destFilePath, option);
     // [END storage_download_file_requester_pays]
   }
 }
