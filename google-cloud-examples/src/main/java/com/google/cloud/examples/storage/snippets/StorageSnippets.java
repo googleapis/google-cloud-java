@@ -1114,8 +1114,6 @@ public class StorageSnippets {
   public void downloadFileUsingRequesterPays(String projectId, String bucketName,
       String srcFilename, Path destFilePath) throws IOException {
     // [START storage_download_file_requester_pays]
-    // Instantiate a Google Cloud Storage client
-
     // The project ID to bill
     // String projectId = "my-billable-project-id";
 
@@ -1131,14 +1129,11 @@ public class StorageSnippets {
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
-    // Set billing project
-    BlobSourceOption option = BlobSourceOption.userProject(projectId);
-
     // Get specific file from specified bucket
-    Blob blob = BlobId.of(bucketName, srcFilename);
+    Blob blob = storage.get(BlobId.of(bucketName, srcFilename));
 
     // Download file to specified path
-    blob.downloatTo(destFilePath, option);
+    blob.downloadTo(destFilePath, Blob.BlobSourceOption.userProject(projectId));
     // [END storage_download_file_requester_pays]
   }
 }
