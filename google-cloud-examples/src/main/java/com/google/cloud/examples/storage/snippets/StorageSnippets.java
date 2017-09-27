@@ -66,7 +66,6 @@ import java.io.PrintStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -1101,7 +1100,8 @@ public class StorageSnippets {
     // The name of the bucket to retrieve requester-pays status, eg. "my-bucket"
     // String bucketName = "my-bucket"
     // Retrieve the bucket, throws StorageException on failure
-    Bucket bucket = storage.get(bucketName);
+    Bucket bucket = storage.get(bucketName,
+        Storage.BucketGetOption.fields(BucketField.BILLING));
 
     System.out.println("Requester pays status : " + bucket.requesterPays());
     // [END get_requester_pays_status]
