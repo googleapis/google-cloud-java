@@ -20,7 +20,7 @@ import com.google.api.core.ApiClock;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.core.Distribution;
-import com.google.cloud.pubsub.v1.MessageDispatcher.OutstandingMessagesBatch.OutstandingMessage;
+import com.google.cloud.pubsub.v1.MessageDispatcher.OutstandingMessageBatch.OutstandingMessage;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
@@ -81,7 +81,7 @@ class MessageDispatcher {
   private Instant nextAckDeadlineExtensionAlarmTime;
   private ScheduledFuture<?> pendingAcksAlarm;
 
-  private final Deque<OutstandingMessagesBatch> outstandingMessageBatches;
+  private final Deque<OutstandingMessageBatch> outstandingMessageBatches;
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
@@ -238,6 +238,7 @@ class MessageDispatcher {
       Duration maxAckExtensionPeriod,
       Distribution ackLatencyDistribution,
       FlowController flowController,
+      Deque<OutstandingMessageBatch> outstandingMessageBatches,
       ScheduledExecutorService executor,
       ScheduledExecutorService systemExecutor,
       ApiClock clock) {
@@ -248,7 +249,7 @@ class MessageDispatcher {
     this.receiver = receiver;
     this.ackProcessor = ackProcessor;
     this.flowController = flowController;
-    outstandingMessageBatches = new LinkedList<>();
+    this.outstandingMessageBatches = outstandingMessageBatches;
     outstandingAckHandlers = new PriorityQueue<>();
     pendingAcks = new HashSet<>();
     pendingNacks = new HashSet<>();
@@ -282,7 +283,7 @@ class MessageDispatcher {
     return messageDeadlineSeconds;
   }
 
-  static class OutstandingMessagesBatch {
+  static class OutstandingMessageBatch {
     private final Deque<OutstandingMessage> messages;
     private final Runnable doneCallback;
 
@@ -304,7 +305,7 @@ class MessageDispatcher {
       }
     }
 
-    public OutstandingMessagesBatch(Runnable doneCallback) {
+    public OutstandingMessageBatch(Runnable doneCallback) {
       this.messages = new LinkedList<>();
       this.doneCallback = doneCallback;
     }
@@ -325,7 +326,7 @@ class MessageDispatcher {
     }
     messagesWaiter.incrementPendingMessages(messages.size());
 
-    OutstandingMessagesBatch outstandingBatch = new OutstandingMessagesBatch(doneCallback);
+    OutstandingMessageBatch outstandingBatch = new OutstandingMessageBatch(doneCallback);
     final ArrayList<AckHandler> ackHandlers = new ArrayList<>(messages.size());
     for (ReceivedMessage message : messages) {
       AckHandler ackHandler =
@@ -358,7 +359,7 @@ class MessageDispatcher {
       Runnable batchCallback = null;
       OutstandingMessage outstandingMessage;
       synchronized (outstandingMessageBatches) {
-        OutstandingMessagesBatch nextBatch = outstandingMessageBatches.peek();
+        OutstandingMessageBatch nextBatch = outstandingMessageBatches.peek();
         if (nextBatch == null) {
           return;
         }

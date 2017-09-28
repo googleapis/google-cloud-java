@@ -58,7 +58,8 @@ public final class Mutation implements Serializable {
   public enum Op {
     /**
      * Inserts a new row in a table. If the row already exists, the write or transaction fails with
-     * {@link ErrorCode#ALREADY_EXISTS}.
+     * {@link ErrorCode#ALREADY_EXISTS}. When inserting a row, all NOT NULL columns in the table must
+     * be given a value.
      */
     INSERT,
 
@@ -70,7 +71,9 @@ public final class Mutation implements Serializable {
 
     /**
      * Like {@link #INSERT}, except that if the row already exists, then its column values are
-     * overwritten with the ones provided. Any column values not explicitly written are preserved.
+     * overwritten with the ones provided. All NOT NUll columns in the table must be give a value and
+     * this holds true even when the row already exists and will actually be updated. Values for all NULL
+     * columns not explicitly written are preserved.
      */
     INSERT_OR_UPDATE,
 
