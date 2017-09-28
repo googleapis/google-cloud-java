@@ -267,6 +267,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       for (StreamingPullRequest request : requests) {
         requestObserver.onNext(request);
       }
+    } catch (Exception e) {
+      logger.log(Level.WARNING, "failed to send acks", e);
     } finally {
       lock.unlock();
     }
@@ -324,6 +326,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
           StreamingPullRequest.newBuilder()
               .setStreamAckDeadlineSeconds(newAckDeadlineSeconds)
               .build());
+    } catch (Exception e) {
+      logger.log(Level.WARNING, "failed to set deadline", e);
     } finally {
       lock.unlock();
     }
