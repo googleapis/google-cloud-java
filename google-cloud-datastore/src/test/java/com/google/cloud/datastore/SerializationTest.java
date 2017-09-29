@@ -52,6 +52,12 @@ public class SerializationTest extends BaseSerializationTest {
       .addBinding(20)
       .setNamespace("ns1")
       .build();
+  private static final Query<Entity> GQL3 =
+      Query.newGqlQueryBuilder(
+          Query.ResultType.ENTITY, "select * from kind1")
+          .setNullBinding("name")
+          .setNamespace("ns1")
+          .build();
   private static final Query<Entity> QUERY1 =
       Query.newEntityQueryBuilder().setKind("kind1").build();
   private static final Query<Key> QUERY2 = Query.newKeyQueryBuilder()
@@ -118,7 +124,7 @@ public class SerializationTest extends BaseSerializationTest {
     DatastoreOptions otherOptions = options.toBuilder().setNamespace("ns1").build();
     return new java.io.Serializable[]{KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1,
         ENTITY2, ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, TIMESTAMP, BLOB1, CURSOR1, GQL1,
-        GQL2, QUERY1, QUERY2, QUERY3, NULL_VALUE, KEY_VALUE, STRING_VALUE, EMBEDDED_ENTITY_VALUE1,
+        GQL2, GQL3, QUERY1, QUERY2, QUERY3, NULL_VALUE, KEY_VALUE, STRING_VALUE, EMBEDDED_ENTITY_VALUE1,
         EMBEDDED_ENTITY_VALUE2, EMBEDDED_ENTITY_VALUE3, LIST_VALUE, LONG_VALUE, DOUBLE_VALUE,
         BOOLEAN_VALUE, TIMESTAMP_VALUE, BLOB_VALUE, RAW_VALUE, LAT_LNG_VALUE,
         DATASTORE_EXCEPTION, options, otherOptions};

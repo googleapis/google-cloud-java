@@ -299,6 +299,16 @@ public final class GqlQuery<V> extends Query<V> {
     }
 
     /**
+     * Sets a new named null binding.
+     *
+     * @param name name of the binding
+     */
+    public Builder<V> setNullBinding(String name) {
+      namedBindings.put(name, toNullBinding());
+      return this;
+    }
+
+    /**
      * Sets a new positional binding.
      *
      * @param cursor a {@link Cursor} object to be set as a new positional binding
@@ -394,6 +404,14 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
+    /**
+     * Sets a new null positional binding.
+     */
+    public Builder<V> addNullBinding() {
+      positionalBindings.add(toNullBinding());
+      return this;
+    }
+
     public GqlQuery<V> build() {
       return new GqlQuery<>(this);
     }
@@ -415,6 +433,10 @@ public final class GqlQuery<V> extends Query<V> {
         value = new ListValue(list);
       }
       return new Binding(value);
+    }
+
+    private static Binding toNullBinding() {
+      return new Binding(new NullValue());
     }
   }
 
