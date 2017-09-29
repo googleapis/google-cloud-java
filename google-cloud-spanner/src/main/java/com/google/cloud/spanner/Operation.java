@@ -157,11 +157,10 @@ public class Operation<R, M> {
               if (prevResponse != null) {
                 return !prevResponse.getDone();
               }
-              if (prevThrowable instanceof BaseServiceException) {
-                if (!(prevThrowable instanceof SpannerException)) {
-                  return ((BaseServiceException) prevThrowable).isRetryable();
-                }
-                return ((SpannerException) prevThrowable).getErrorCode() != ErrorCode.NOT_FOUND;
+              if (prevThrowable instanceof SpannerException) {
+                SpannerException spannerException = (SpannerException) prevThrowable;
+                return spannerException.getErrorCode() != ErrorCode.NOT_FOUND
+                    && spannerException.isRetryable();
               }
               return false;
             }
@@ -171,16 +170,19 @@ public class Operation<R, M> {
     } catch (InterruptedException e) {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     } catch (ExecutionException e) {
-      if (e.getCause() instanceof SpannerException &&
-          ((SpannerException) e.getCause()).getErrorCode() == ErrorCode.NOT_FOUND) {
-        return null;
+      Throwable cause = e.getCause();
+      if (cause instanceof SpannerException) {
+        SpannerException spannerException = (SpannerException) cause;
+        if(spannerException.getErrorCode() == ErrorCode.NOT_FOUND) {
+          return null;
+        }
+        throw spannerException;
       }
-      if (e.getCause() instanceof PollException) {
+      if (cause instanceof PollException) {
         throw SpannerExceptionFactory.newSpannerException(
             ErrorCode.DEADLINE_EXCEEDED, "Operation did not complete in the given time");
       }
-
-      throw SpannerExceptionFactory.newSpannerException(e);
+      throw SpannerExceptionFactory.newSpannerException(cause);
     }
   }
 
