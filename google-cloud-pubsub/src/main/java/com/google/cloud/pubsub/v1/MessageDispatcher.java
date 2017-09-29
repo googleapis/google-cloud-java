@@ -41,6 +41,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
@@ -76,7 +77,9 @@ class MessageDispatcher {
   private final Set<String> pendingNacks;
 
   private final Lock alarmsLock;
-  private int messageDeadlineSeconds;
+  // The deadline should be set by the subscriber connection before use,
+  // but set it to some reasonable value just in case.
+  private final AtomicInteger messageDeadlineSeconds = new AtomicInteger(10);
   private ScheduledFuture<?> ackDeadlineExtensionAlarm;
   private Instant nextAckDeadlineExtensionAlarmTime;
   private ScheduledFuture<?> pendingAcksAlarm;
@@ -276,11 +279,11 @@ class MessageDispatcher {
   }
 
   public void setMessageDeadlineSeconds(int messageDeadlineSeconds) {
-    this.messageDeadlineSeconds = messageDeadlineSeconds;
+    this.messageDeadlineSeconds.set(messageDeadlineSeconds);
   }
 
   public int getMessageDeadlineSeconds() {
-    return messageDeadlineSeconds;
+    return messageDeadlineSeconds.get();
   }
 
   static class OutstandingMessageBatch {
@@ -336,7 +339,7 @@ class MessageDispatcher {
     }
 
     Instant expiration = Instant.ofEpochMilli(clock.millisTime())
-        .plusSeconds(messageDeadlineSeconds);
+        .plusSeconds(messageDeadlineSeconds.get());
     synchronized (outstandingAckHandlers) {
       outstandingAckHandlers.add(
           new ExtensionJob(
