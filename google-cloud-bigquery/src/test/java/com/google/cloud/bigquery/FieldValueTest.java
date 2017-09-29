@@ -50,75 +50,75 @@ public class FieldValueTest {
 
   @Test
   public void testFromPb() {
-    FieldValue value = FieldValue.fromPb(BOOLEAN_FIELD, null);
+    FieldValue value = FieldValue.fromPb(BOOLEAN_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertFalse(value.getBooleanValue());
-    value = FieldValue.fromPb(INTEGER_FIELD, null);
+    value = FieldValue.fromPb(INTEGER_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertEquals(1, value.getLongValue());
-    value = FieldValue.fromPb(FLOAT_FIELD, null);
+    value = FieldValue.fromPb(FLOAT_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertEquals(1.5, value.getDoubleValue(), 0);
-    value = FieldValue.fromPb(STRING_FIELD, null);
+    value = FieldValue.fromPb(STRING_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertEquals("string", value.getStringValue());
-    value = FieldValue.fromPb(TIMESTAMP_FIELD, null);
+    value = FieldValue.fromPb(TIMESTAMP_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertEquals(42000000, value.getTimestampValue());
-    value = FieldValue.fromPb(BYTES_FIELD, null);
+    value = FieldValue.fromPb(BYTES_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertArrayEquals(BYTES, value.getBytesValue());
-    value = FieldValue.fromPb(NULL_FIELD, null);
+    value = FieldValue.fromPb(NULL_FIELD);
     assertNull(value.getValue());
-    value = FieldValue.fromPb(REPEATED_FIELD, null);
+    value = FieldValue.fromPb(REPEATED_FIELD);
     assertEquals(FieldValue.Attribute.REPEATED, value.getAttribute());
-    assertEquals(FieldValue.fromPb(INTEGER_FIELD, null), value.getRepeatedValue().get(0));
-    assertEquals(FieldValue.fromPb(INTEGER_FIELD, null), value.getRepeatedValue().get(1));
-    value = FieldValue.fromPb(RECORD_FIELD, null);
+    assertEquals(FieldValue.fromPb(INTEGER_FIELD), value.getRepeatedValue().get(0));
+    assertEquals(FieldValue.fromPb(INTEGER_FIELD), value.getRepeatedValue().get(1));
+    value = FieldValue.fromPb(RECORD_FIELD);
     assertEquals(FieldValue.Attribute.RECORD, value.getAttribute());
-    assertEquals(FieldValue.fromPb(FLOAT_FIELD, null), value.getRepeatedValue().get(0));
-    assertEquals(FieldValue.fromPb(TIMESTAMP_FIELD, null), value.getRepeatedValue().get(1));
+    assertEquals(FieldValue.fromPb(FLOAT_FIELD), value.getRepeatedValue().get(0));
+    assertEquals(FieldValue.fromPb(TIMESTAMP_FIELD), value.getRepeatedValue().get(1));
   }
 
 
   @Test
   public void testEquals() {
     FieldValue booleanValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "false");
-    assertEquals(booleanValue, FieldValue.fromPb(BOOLEAN_FIELD, null));
-    assertEquals(booleanValue.hashCode(), FieldValue.fromPb(BOOLEAN_FIELD, null).hashCode());
+    assertEquals(booleanValue, FieldValue.fromPb(BOOLEAN_FIELD));
+    assertEquals(booleanValue.hashCode(), FieldValue.fromPb(BOOLEAN_FIELD).hashCode());
 
     FieldValue integerValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "1");
-    assertEquals(integerValue, FieldValue.fromPb(INTEGER_FIELD, null));
-    assertEquals(integerValue.hashCode(), FieldValue.fromPb(INTEGER_FIELD, null).hashCode());
+    assertEquals(integerValue, FieldValue.fromPb(INTEGER_FIELD));
+    assertEquals(integerValue.hashCode(), FieldValue.fromPb(INTEGER_FIELD).hashCode());
 
     FieldValue floatValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "1.5");
-    assertEquals(floatValue, FieldValue.fromPb(FLOAT_FIELD, null));
-    assertEquals(floatValue.hashCode(), FieldValue.fromPb(FLOAT_FIELD, null).hashCode());
+    assertEquals(floatValue, FieldValue.fromPb(FLOAT_FIELD));
+    assertEquals(floatValue.hashCode(), FieldValue.fromPb(FLOAT_FIELD).hashCode());
 
     FieldValue stringValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "string");
-    assertEquals(stringValue, FieldValue.fromPb(STRING_FIELD, null));
-    assertEquals(stringValue.hashCode(), FieldValue.fromPb(STRING_FIELD, null).hashCode());
+    assertEquals(stringValue, FieldValue.fromPb(STRING_FIELD));
+    assertEquals(stringValue.hashCode(), FieldValue.fromPb(STRING_FIELD).hashCode());
 
     FieldValue timestampValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "42");
-    assertEquals(timestampValue, FieldValue.fromPb(TIMESTAMP_FIELD, null));
-    assertEquals(timestampValue.hashCode(), FieldValue.fromPb(TIMESTAMP_FIELD, null).hashCode());
+    assertEquals(timestampValue, FieldValue.fromPb(TIMESTAMP_FIELD));
+    assertEquals(timestampValue.hashCode(), FieldValue.fromPb(TIMESTAMP_FIELD).hashCode());
 
     FieldValue bytesValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, BYTES_BASE64);
-    assertEquals(bytesValue, FieldValue.fromPb(BYTES_FIELD, null));
-    assertEquals(bytesValue.hashCode(), FieldValue.fromPb(BYTES_FIELD, null).hashCode());
+    assertEquals(bytesValue, FieldValue.fromPb(BYTES_FIELD));
+    assertEquals(bytesValue.hashCode(), FieldValue.fromPb(BYTES_FIELD).hashCode());
 
     FieldValue nullValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, null);
-    assertEquals(nullValue, FieldValue.fromPb(NULL_FIELD, null));
-    assertEquals(nullValue.hashCode(), FieldValue.fromPb(NULL_FIELD, null).hashCode());
+    assertEquals(nullValue, FieldValue.fromPb(NULL_FIELD));
+    assertEquals(nullValue.hashCode(), FieldValue.fromPb(NULL_FIELD).hashCode());
 
     FieldValue repeatedValue = FieldValue.of(FieldValue.Attribute.REPEATED,
         ImmutableList.of(integerValue, integerValue));
-    assertEquals(repeatedValue, FieldValue.fromPb(REPEATED_FIELD, null));
-    assertEquals(repeatedValue.hashCode(), FieldValue.fromPb(REPEATED_FIELD, null).hashCode());
+    assertEquals(repeatedValue, FieldValue.fromPb(REPEATED_FIELD));
+    assertEquals(repeatedValue.hashCode(), FieldValue.fromPb(REPEATED_FIELD).hashCode());
 
     FieldValue recordValue = FieldValue.of(FieldValue.Attribute.RECORD,
         ImmutableList.of(floatValue, timestampValue));
-    assertEquals(recordValue, FieldValue.fromPb(RECORD_FIELD, null));
-    assertEquals(recordValue.hashCode(), FieldValue.fromPb(RECORD_FIELD, null).hashCode());
+    assertEquals(recordValue, FieldValue.fromPb(RECORD_FIELD));
+    assertEquals(recordValue.hashCode(), FieldValue.fromPb(RECORD_FIELD).hashCode());
   }
 }

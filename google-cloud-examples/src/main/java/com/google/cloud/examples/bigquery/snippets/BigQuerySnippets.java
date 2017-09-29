@@ -597,8 +597,8 @@ public class BigQuerySnippets {
   // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount"]
   public QueryResponse runQueryWithParameters(String query) throws InterruptedException {
     // [START runQueryWithParameters]
+    // Note, standard SQL is required to use query parameters. Legacy SQL will not work.
     QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
-        .setUseLegacySql(false) // standard SQL is required to use query parameters
         .addNamedParameter("wordCount", QueryParameterValue.int64(5))
         .build();
     QueryResponse response = bigquery.query(queryConfig);

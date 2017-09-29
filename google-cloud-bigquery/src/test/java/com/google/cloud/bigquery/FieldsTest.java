@@ -93,8 +93,8 @@ public class FieldsTest {
     assertEquals(2, fieldSchema3.getSubFields().size());
     assertEquals(fieldSchema1, fieldSchema3.getSubFields().get(FIELD_NAME1));
     assertEquals(fieldSchema2, fieldSchema3.getSubFields().get(FIELD_NAME2));
-    assertEquals(Integer.valueOf(0), fieldSchema3.getSubFields().getIndex(FIELD_NAME1));
-    assertEquals(Integer.valueOf(1), fieldSchema3.getSubFields().getIndex(FIELD_NAME2));
+    assertEquals(0, fieldSchema3.getSubFields().getIndex(FIELD_NAME1));
+    assertEquals(1, fieldSchema3.getSubFields().getIndex(FIELD_NAME2));
     assertEquals(fieldSchema1, fieldSchema3.getSubFields().get(0));
     assertEquals(fieldSchema2, fieldSchema3.getSubFields().get(1));
   }

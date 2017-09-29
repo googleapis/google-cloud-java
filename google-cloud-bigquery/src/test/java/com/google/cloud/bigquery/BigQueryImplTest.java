@@ -167,8 +167,8 @@ public class BigQueryImplTest {
   private static final TableCell CELL_PB2 = new TableCell().setV("Value2");
   private static final ImmutableList<FieldValues> TABLE_DATA =
       ImmutableList.of(
-          FieldValues.of(ImmutableList.of(FieldValue.fromPb(CELL_PB1, null))),
-          FieldValues.of(ImmutableList.of(FieldValue.fromPb(CELL_PB2, null))));
+          FieldValues.of(ImmutableList.of(FieldValue.fromPb(CELL_PB1))),
+          FieldValues.of(ImmutableList.of(FieldValue.fromPb(CELL_PB2))));
   private static final Tuple<String, Iterable<TableRow>> TABLE_DATA_PB =
       Tuple.<String, Iterable<TableRow>>of(
           CURSOR,

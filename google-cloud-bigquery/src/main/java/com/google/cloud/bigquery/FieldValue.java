@@ -255,6 +255,10 @@ public class FieldValue implements Serializable {
     return new FieldValue(attribute, value);
   }
 
+  static FieldValue fromPb(Object cellPb) {
+    return fromPb(cellPb, null);
+  }
+
   @SuppressWarnings("unchecked")
   static FieldValue fromPb(Object cellPb, Field recordSchema) {
     if (Data.isNull(cellPb)) {

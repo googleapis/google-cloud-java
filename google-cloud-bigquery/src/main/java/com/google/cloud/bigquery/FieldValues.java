@@ -23,6 +23,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Google BigQuery Table Field Values class, which represents a row in returned query result
+ * (table row). Tables rows can be retrieved as a result of a query or when listing table data.
+ *
+ * Depending on how a corresponding query was executed, each row (an instance of {@code FieldValues})
+ * may or may not contain related schema. If schema is not provided, the individual cells of the row
+ * will still be accessible by index but not by name.
+ */
 public class FieldValues extends AbstractList<FieldValue> implements Serializable {
 
   private static final long serialVersionUID = 2103346761764976902L;
@@ -38,11 +46,21 @@ public class FieldValues extends AbstractList<FieldValue> implements Serializabl
     this.schema = schema;
   }
 
+  /**
+   * Gets field value by index.
+   * @param index field value index
+   */
   @Override
   public FieldValue get(int index) {
     return row.get(index);
   }
 
+  /**
+   * Gets field value by index.
+   * @param name field name (defined in schema)
+   * @throws IllegalArgumentException if schema is not provided or if {@code name} was not found
+   *    in the schema
+   */
   public FieldValue get(String name) {
     if (schema == null) {
       throw new UnsupportedOperationException(
@@ -51,6 +69,16 @@ public class FieldValues extends AbstractList<FieldValue> implements Serializabl
     return get(schema.getIndex(name));
   }
 
+  /**
+   * Returns {@code true} if schema is provided, {@code false} otherwise.
+   */
+  public boolean hasSchema() {
+    return schema != null;
+  }
+
+  /**
+   * Returns the total number of field values in the row.
+   */
   @Override
   public int size() {
     return row.size();

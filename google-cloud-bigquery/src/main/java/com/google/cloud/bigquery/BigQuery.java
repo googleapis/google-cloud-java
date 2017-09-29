@@ -446,7 +446,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   class QueryOption implements Serializable {
     private static final long serialVersionUID = 6206193419355824689L;
 
-    private Object option;
+    private final Object option;
 
     private QueryOption(Object option) {
       this.option = option;

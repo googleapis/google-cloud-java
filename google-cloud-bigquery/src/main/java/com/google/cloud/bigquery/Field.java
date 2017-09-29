@@ -100,12 +100,31 @@ public final class Field implements Serializable {
     /**
      * Sets the type of the field.
      *
+     * @param type BigQuery data type
+     * @param subFields nested schema fields in case if {@code type} is
+     *    {@link LegacySQLTypeName#RECORD}, empty otherwise
+     * @throws IllegalArgumentException
+     *    if {@code type == LegacySQLTypeName.RECORD && subFields.length == 0}
+     *    or if {@code type != LegacySQLTypeName.RECORD && subFields.length != 0}
      * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
      *     Data Types</a>
      */
     public Builder setType(LegacySQLTypeName type, Field... subFields) {
       return setType(type, subFields.length > 0 ? Fields.of(subFields) : null);
     }
+
+    /**
+     * Sets the type of the field.
+     *
+     * @param type BigQuery data type
+     * @param subFields nested schema fields, in case if {@code type} is
+     *    {@link LegacySQLTypeName#RECORD}, {@code null} otherwise.
+     * @throws IllegalArgumentException
+     *    if {@code type == LegacySQLTypeName.RECORD && (subFields == null || subFields.isEmpty())}
+     *    or if {@code type != LegacySQLTypeName.RECORD && subFields != null}
+     * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
+     *     Data Types</a>
+     */
 
     public Builder setType(LegacySQLTypeName type, Fields subFields) {
       if (type == LegacySQLTypeName.RECORD) {
