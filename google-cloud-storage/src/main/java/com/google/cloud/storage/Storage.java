@@ -92,7 +92,9 @@ public interface Storage extends Service<StorageOptions> {
     VERSIONING("versioning"),
     CORS("cors"),
     STORAGE_CLASS("storageClass"),
-    ETAG("etag");
+    ETAG("etag"),
+    @GcpLaunchStage.Alpha
+    BILLING("billing");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 

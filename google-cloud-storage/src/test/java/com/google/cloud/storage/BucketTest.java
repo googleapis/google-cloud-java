@@ -693,7 +693,7 @@ public class BucketTest {
     assertEquals(STORAGE_CLASS, bucket.getStorageClass());
     assertEquals(VERSIONING_ENABLED, bucket.versioningEnabled());
     assertEquals(BUCKET_LABELS, bucket.getLabels());
-    assertEquals(VERSIONING_ENABLED, bucket.requesterPays());
+    assertEquals(REQUESTER_PAYS, bucket.requesterPays());
     assertEquals(storage.getOptions(), bucket.getStorage().getOptions());
   }
 }

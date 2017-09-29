@@ -23,6 +23,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
+import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
@@ -104,6 +105,8 @@ public class Blob extends BlobInfo {
           return Storage.BlobSourceOption.metagenerationNotMatch(blobInfo.getMetageneration());
         case CUSTOMER_SUPPLIED_KEY:
           return Storage.BlobSourceOption.decryptionKey((String) getValue());
+        case USER_PROJECT:
+          return Storage.BlobSourceOption.userProject((String) getValue());
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -119,6 +122,8 @@ public class Blob extends BlobInfo {
           return Storage.BlobGetOption.metagenerationMatch(blobInfo.getMetageneration());
         case IF_METAGENERATION_NOT_MATCH:
           return Storage.BlobGetOption.metagenerationNotMatch(blobInfo.getMetageneration());
+        case USER_PROJECT:
+          return Storage.BlobGetOption.userProject((String) getValue());
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -175,6 +180,15 @@ public class Blob extends BlobInfo {
       return new BlobSourceOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
 
+    /**
+     * Returns an option for blob's billing user project. This option is used only if the blob's
+     * bucket has requester_pays flag enabled.
+     */
+    @GcpLaunchStage.Alpha
+    public static BlobSourceOption userProject(String userProject) {
+      return new BlobSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
     static Storage.BlobSourceOption[] toSourceOptions(BlobInfo blobInfo,
         BlobSourceOption... options) {
       Storage.BlobSourceOption[] convertedOptions = new Storage.BlobSourceOption[options.length];
@@ -196,15 +210,16 @@ public class Blob extends BlobInfo {
   }
 
   /**
-   * Downloads this blob to the given file path.
+   * Downloads this blob to the given file path using specified blob read options.
    *
    * @param path destination
+   * @param options blob read options
    * @throws StorageException upon failure
    */
-  public void downloadTo(Path path) throws StorageException {
+  public void downloadTo(Path path, BlobSourceOption... options) {
     try (
         OutputStream outputStream = Files.newOutputStream(path);
-        ReadChannel reader = reader()
+        ReadChannel reader = reader(options)
     ) {
       WritableByteChannel channel = Channels.newChannel(outputStream);
       ByteBuffer bytes = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
@@ -216,6 +231,19 @@ public class Blob extends BlobInfo {
     } catch (IOException e) {
       throw new StorageException(e);
     }
+  }
+
+  /**
+   * Downloads this blob to the given file path.
+   *
+   * This method is replaced with {@link #downloadTo(Path, BlobSourceOption...)}, but is kept here
+   * for binary compatibility with the older versions of the client library.
+   *
+   * @param path destination
+   * @throws StorageException upon failure
+   */
+  public void downloadTo(Path path) {
+    downloadTo(path, new BlobSourceOption[0]);
   }
 
   /**

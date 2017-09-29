@@ -72,9 +72,6 @@ import java.util.logging.SimpleFormatter;
  *       Filter} class to use (defaults to no filter).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.formatter} specifies the name of a {@link
  *       Formatter} class to use (defaults to {@link SimpleFormatter}).
- *   <li>{@code com.google.cloud.logging.LoggingHandler.flushSize} specifies the maximum size of the
- *       log buffer. Once reached, logs are transmitted to the Stackdriver Logging service (defaults
- *       to 1).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.flushLevel} specifies the flush log level.
  *       When a log with this level is published, logs are transmitted to the Stackdriver Logging
  *       service (defaults to {@link LoggingLevel#ERROR}).

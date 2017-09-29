@@ -255,6 +255,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   static class NettyRpcChannelFactory implements RpcChannelFactory {
     private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
+    private static final int MAX_HEADER_LIST_SIZE = 32 * 1024; //bytes
     private final String userAgent;
     private final List<ClientInterceptor> interceptors;
 
@@ -277,6 +278,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           NettyChannelBuilder.forAddress(host, port)
             .sslContext(newSslContext())
             .intercept(interceptors)
+            .maxHeaderListSize(MAX_HEADER_LIST_SIZE)
             .maxMessageSize(MAX_MESSAGE_SIZE);
       if (userAgent != null) {
         builder.userAgent(userAgent);

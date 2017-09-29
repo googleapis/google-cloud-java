@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting-consumer</artifactId>
-  <version>0.23.1-alpha</version>
+  <version>0.24.0-alpha</version>
   <packaging>pom</packaging>
   <name>Google Cloud Error Reporting Consumer</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-errorreporting-consumer</url>
@@ -14,7 +14,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-errorreporting</artifactId>
-      <version>0.23.2-alpha-SNAPSHOT</version>
+      <version>0.24.1-alpha-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <build>

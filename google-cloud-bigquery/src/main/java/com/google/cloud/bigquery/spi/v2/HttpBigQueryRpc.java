@@ -383,11 +383,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
           .setTimeoutMs(Option.TIMEOUT.getLong(options))
           .execute();
     } catch (IOException ex) {
-      BigQueryException serviceException = translate(ex);
-      if (serviceException.getCode() == HTTP_NOT_FOUND) {
-        return null;
-      }
-      throw serviceException;
+      throw translate(ex);
     }
   }
 
