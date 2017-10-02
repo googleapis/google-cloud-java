@@ -62,6 +62,7 @@ public class InstanceTest {
       .add("key2", "value2")
       .setFingerprint("fingerprint")
       .build();
+  private static final Map<String, String> LABELS = ImmutableMap.of("label1", "value1");
   private static final ServiceAccount SERVICE_ACCOUNT =
       ServiceAccount.of("email", ImmutableList.of("scope1"));
   private static final List<ServiceAccount> SERVICE_ACCOUNTS =
@@ -91,6 +92,7 @@ public class InstanceTest {
             .setServiceAccounts(SERVICE_ACCOUNTS)
             .setSchedulingOptions(SCHEDULING_OPTIONS)
             .setCpuPlatform(CPU_PLATFORM)
+            .setLabels(LABELS)
             .build();
     compute = createStrictMock(Compute.class);
   }
@@ -109,6 +111,7 @@ public class InstanceTest {
             .setServiceAccounts(SERVICE_ACCOUNTS)
             .setSchedulingOptions(SCHEDULING_OPTIONS)
             .setCpuPlatform(CPU_PLATFORM)
+            .setLabels(LABELS)
             .build();
   }
 
@@ -147,6 +150,7 @@ public class InstanceTest {
     assertEquals(NETWORK_INTERFACES, expectedInstance.getNetworkInterfaces());
     assertEquals(ATTACHED_DISKS, expectedInstance.getAttachedDisks());
     assertEquals(METADATA, expectedInstance.getMetadata());
+    assertEquals(LABELS, bucket.getLabels());
     assertEquals(SERVICE_ACCOUNTS, expectedInstance.getServiceAccounts());
     assertEquals(SCHEDULING_OPTIONS, expectedInstance.getSchedulingOptions());
     assertEquals(CPU_PLATFORM, expectedInstance.getCpuPlatform());
@@ -167,6 +171,7 @@ public class InstanceTest {
     assertEquals(NETWORK_INTERFACES, instance.getNetworkInterfaces());
     assertEquals(ATTACHED_DISKS, instance.getAttachedDisks());
     assertNull(instance.getMetadata());
+    assertNull(instance.getLabels());
     assertNull(instance.getServiceAccounts());
     assertNull(instance.getSchedulingOptions());
     assertNull(instance.getCpuPlatform());
@@ -909,6 +914,7 @@ public class InstanceTest {
     assertEquals(expected.getNetworkInterfaces(), value.getNetworkInterfaces());
     assertEquals(expected.getAttachedDisks(), value.getAttachedDisks());
     assertEquals(expected.getMetadata(), value.getMetadata());
+    assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.getServiceAccounts(), value.getServiceAccounts());
     assertEquals(expected.getSchedulingOptions(), value.getSchedulingOptions());
     assertEquals(expected.getCpuPlatform(), value.getCpuPlatform());

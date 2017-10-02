@@ -100,6 +100,7 @@ public class ITComputeTest {
   private static final String BASE_RESOURCE_NAME = RemoteComputeHelper.baseResourceName();
   private static final ImageId IMAGE_ID = ImageId.of("debian-cloud", "debian-8-jessie-v20160219");
   private static final String IMAGE_PROJECT = "debian-cloud";
+  private static final Map<String, String> LABELS = ImmutableMap.of("label1", "value1");
 
   private static Compute compute;
   private static ResourceCleaner resourceCleaner;
@@ -1641,6 +1642,7 @@ operation.waitFor();
     assertEquals("NAT", remoteAccessConfig.getName());
     assertNotNull(remoteInstance.getMetadata());
     assertNotNull(remoteInstance.getTags());
+    assertNotNull(remoteInstance.getLabels());
     // test get with selected fields
     remoteInstance = compute.getInstance(instanceId,
         Compute.InstanceOption.fields(Compute.InstanceField.CREATION_TIMESTAMP));
@@ -1652,6 +1654,7 @@ operation.waitFor();
     assertNull(remoteInstance.getNetworkInterfaces());
     assertNull(remoteInstance.getMetadata());
     assertNull(remoteInstance.getTags());
+    assertNotNull(remoteInstance.getLabels());
     // test get default serial port output
     String serialPortOutput = remoteInstance.getSerialPortOutput();
     assertNotNull(serialPortOutput);
@@ -1729,6 +1732,12 @@ operation.waitFor();
     operation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(metadata, remoteInstance.getMetadata().getValues());
+    // test set labels
+    Map<String, String> labels = ImmutableMap.of("key", "value");
+    operation = remoteInstance.setLabels(labels);
+    operation.waitFor();
+    remoteInstance = compute.getInstance(instanceId);
+    assertEquals(labels, remoteInstance.getLabels().getValues());
     // test set machine type
     operation = remoteInstance.stop();
     operation.waitFor();

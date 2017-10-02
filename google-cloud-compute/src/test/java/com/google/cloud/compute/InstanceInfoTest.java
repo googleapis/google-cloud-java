@@ -16,6 +16,8 @@
 
 package com.google.cloud.compute;
 
+import com.google.common.collect.ImmutableMap;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
@@ -24,6 +26,8 @@ import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
+
 
 public class InstanceInfoTest {
 
@@ -53,6 +57,7 @@ public class InstanceInfoTest {
   private static final List<ServiceAccount> SERVICE_ACCOUNTS = ImmutableList.of(SERVICE_ACCOUNT);
   private static final SchedulingOptions SCHEDULING_OPTIONS = SchedulingOptions.preemptible();
   private static final String CPU_PLATFORM = "cpuPlatform";
+  private static final Map<String, String> LABELS = ImmutableMap.of("label1", "value1");
   private static final InstanceInfo INSTANCE_INFO =
       InstanceInfo.newBuilder(INSTANCE_ID, MACHINE_TYPE)
           .setGeneratedId(GENERATED_ID)
@@ -65,6 +70,7 @@ public class InstanceInfoTest {
           .setNetworkInterfaces(NETWORK_INTERFACES)
           .setAttachedDisks(ATTACHED_DISKS)
           .setMetadata(METADATA)
+          .setLabels(LABELS)
           .setServiceAccounts(SERVICE_ACCOUNTS)
           .setSchedulingOptions(SCHEDULING_OPTIONS)
           .setCpuPlatform(CPU_PLATFORM)
@@ -100,6 +106,7 @@ public class InstanceInfoTest {
     assertEquals(NETWORK_INTERFACES, INSTANCE_INFO.getNetworkInterfaces());
     assertEquals(ATTACHED_DISKS, INSTANCE_INFO.getAttachedDisks());
     assertEquals(METADATA, INSTANCE_INFO.getMetadata());
+    assertEquals(LABELS, INSTANCE_INFO.getLabels());
     assertEquals(SERVICE_ACCOUNTS, INSTANCE_INFO.getServiceAccounts());
     assertEquals(SCHEDULING_OPTIONS, INSTANCE_INFO.getSchedulingOptions());
     assertEquals(CPU_PLATFORM, INSTANCE_INFO.getCpuPlatform());
@@ -114,6 +121,7 @@ public class InstanceInfoTest {
         .setNetworkInterfaces(NETWORK_INTERFACE)
         .setAttachedDisks(ATTACHED_DISK)
         .setMetadata(METADATA)
+        .setLabels(LABELS)
         .setServiceAccounts(SERVICE_ACCOUNTS)
         .setSchedulingOptions(SCHEDULING_OPTIONS)
         .setCpuPlatform(CPU_PLATFORM)
@@ -137,6 +145,7 @@ public class InstanceInfoTest {
     assertEquals(NETWORK_INTERFACES, instance.getNetworkInterfaces());
     assertEquals(ATTACHED_DISKS, instance.getAttachedDisks());
     assertNull(instance.getMetadata());
+    assertNull(instance.getLabels());
     assertNull(instance.getServiceAccounts());
     assertNull(instance.getSchedulingOptions());
     assertNull(instance.getCpuPlatform());
@@ -180,5 +189,6 @@ public class InstanceInfoTest {
     assertEquals(expected.getSchedulingOptions(), value.getSchedulingOptions());
     assertEquals(expected.getCpuPlatform(), value.getCpuPlatform());
     assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.getLabels(), value.getLabels());
   }
 }

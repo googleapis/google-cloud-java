@@ -154,6 +154,12 @@ public class Instance extends InstanceInfo {
     }
 
     @Override
+    public Builder setLabels(Map<String, String> labels) {
+      this.infoBuilder.setLabels(labels);
+      return this;
+    }
+
+    @Override
     public Builder setServiceAccounts(List<ServiceAccount> serviceAccounts) {
       this.infoBuilder.setServiceAccounts(serviceAccounts);
       return this;

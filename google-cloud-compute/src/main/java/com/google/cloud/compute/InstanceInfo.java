@@ -22,6 +22,7 @@ import com.google.api.services.compute.model.Instance;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 
 import org.joda.time.format.DateTimeFormatter;
@@ -31,6 +32,7 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -86,6 +88,7 @@ public class InstanceInfo implements Serializable {
   private final List<ServiceAccount> serviceAccounts;
   private final SchedulingOptions schedulingOptions;
   private final String cpuPlatform;
+  private final Map<String, String> labels;
 
   /**
    * The status of the instance.
@@ -193,6 +196,11 @@ public class InstanceInfo implements Serializable {
      * Sets the instance metadata.
      */
     public abstract Builder setMetadata(Metadata metadata);
+          
+    /**
+     * Sets the label of the instance.
+     */
+    public abstract Builder setLabels(Map<String, String> labels);
 
     /**
      * Sets a list of service accounts, with their specified scopes, authorized for this instance.
@@ -234,6 +242,7 @@ public class InstanceInfo implements Serializable {
     private List<ServiceAccount> serviceAccounts;
     private SchedulingOptions schedulingOptions;
     private String cpuPlatform;
+    private Map<String, String> labels;
 
     BuilderImpl(InstanceId instanceId) {
       this.instanceId = checkNotNull(instanceId);
@@ -255,6 +264,7 @@ public class InstanceInfo implements Serializable {
       this.serviceAccounts = instance.serviceAccounts;
       this.schedulingOptions = instance.schedulingOptions;
       this.cpuPlatform = instance.cpuPlatform;
+      this.labels = instance.labels;
     }
 
     BuilderImpl(Instance instancePb) {
@@ -286,6 +296,9 @@ public class InstanceInfo implements Serializable {
       }
       if (instancePb.getMetadata() != null) {
         this.metadata = Metadata.fromPb(instancePb.getMetadata());
+      }
+      if (instancePb.getLabels() != null) {
+        this.labels = instancePb.getLabels();
       }
       if (instancePb.getServiceAccounts() != null) {
         this.serviceAccounts =
@@ -382,6 +395,12 @@ public class InstanceInfo implements Serializable {
     }
 
     @Override
+    public Builder setLabels(Map<String, String> labels) {
+      this.labels = labels != null ? ImmutableMap.copyOf(labels) : null;
+      return this;
+    }
+
+    @Override
     public Builder setServiceAccounts(List<ServiceAccount> serviceAccounts) {
       this.serviceAccounts = ImmutableList.copyOf(checkNotNull(serviceAccounts));
       return this;
@@ -423,6 +442,7 @@ public class InstanceInfo implements Serializable {
     this.serviceAccounts = builder.serviceAccounts;
     this.schedulingOptions = builder.schedulingOptions;
     this.cpuPlatform = builder.cpuPlatform;
+    this.labels = builder.labels
   }
 
   /**
@@ -516,6 +536,13 @@ public class InstanceInfo implements Serializable {
   }
 
   /**
+   * Returns the labels for this bucket.
+   */
+  public Map<String, String> getLabels() {
+    return labels;
+  }
+
+  /**
    * Returns a list of service accounts, with their specified scopes, authorized for this instance.
    * Service accounts generate access tokens that can be accessed through the metadata server and
    * used to authenticate applications on the instance.
@@ -566,6 +593,7 @@ public class InstanceInfo implements Serializable {
         .add("serviceAccounts", serviceAccounts)
         .add("schedulingOptions", schedulingOptions)
         .add("cpuPlatform", cpuPlatform)
+        .add("labels", labels)
         .toString();
   }
 
@@ -573,7 +601,7 @@ public class InstanceInfo implements Serializable {
   public int hashCode() {
     return Objects.hash(generatedId, instanceId, creationTimestamp, description, status,
         statusMessage, tags, machineType, canIpForward, networkInterfaces, attachedDisks, metadata,
-        serviceAccounts, schedulingOptions, cpuPlatform);
+        serviceAccounts, schedulingOptions, cpuPlatform, labels);
   }
 
   @Override
@@ -637,6 +665,9 @@ public class InstanceInfo implements Serializable {
     }
     if (metadata != null) {
       instancePb.setMetadata(metadata.toPb());
+    }
+    if (labels != null) {
+      instancePb.setLabels(labels);
     }
     if (serviceAccounts != null) {
       instancePb.setServiceAccounts(
