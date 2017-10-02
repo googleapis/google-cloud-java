@@ -100,7 +100,6 @@ public class ITComputeTest {
   private static final String BASE_RESOURCE_NAME = RemoteComputeHelper.baseResourceName();
   private static final ImageId IMAGE_ID = ImageId.of("debian-cloud", "debian-8-jessie-v20160219");
   private static final String IMAGE_PROJECT = "debian-cloud";
-  private static final Map<String, String> LABELS = ImmutableMap.of("label1", "value1");
 
   private static Compute compute;
   private static ResourceCleaner resourceCleaner;
