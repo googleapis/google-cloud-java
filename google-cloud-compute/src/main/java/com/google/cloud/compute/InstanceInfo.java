@@ -442,7 +442,7 @@ public class InstanceInfo implements Serializable {
     this.serviceAccounts = builder.serviceAccounts;
     this.schedulingOptions = builder.schedulingOptions;
     this.cpuPlatform = builder.cpuPlatform;
-    this.labels = builder.labels
+    this.labels = builder.labels;
   }
 
   /**
