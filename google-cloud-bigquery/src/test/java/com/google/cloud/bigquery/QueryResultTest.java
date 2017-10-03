@@ -22,13 +22,11 @@ import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 
-import java.util.List;
-
 public class QueryResultTest {
 
   private static final String CURSOR = "cursor";
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", Field.Type.string())
+      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
       .setMode(Field.Mode.NULLABLE)
       .setDescription("FieldDescription1")
       .build();
@@ -51,7 +49,7 @@ public class QueryResultTest {
       .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .setCursor(CURSOR)
       .setPageFetcher(FETCHER)
-      .setResults(ImmutableList.<List<FieldValue>>of())
+      .setResults(ImmutableList.<FieldValueList>of())
       .setCacheHit(CACHE_HIT)
       .build();
   private static final QueryResult QUERY_RESULT_INCOMPLETE = QueryResult.newBuilder()

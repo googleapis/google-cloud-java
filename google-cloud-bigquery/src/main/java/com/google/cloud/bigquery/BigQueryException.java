@@ -23,6 +23,7 @@ import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.ExecutionException;
 
 /**
  * BigQuery service exception.
@@ -98,6 +99,11 @@ public final class BigQueryException extends BaseHttpServiceException {
    * @throws BigQueryException when {@code ex} was caused by a {@code BigQueryException}
    */
   static BaseServiceException translateAndThrow(RetryHelperException ex) {
+    BaseServiceException.translate(ex);
+    throw new BigQueryException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
+  }
+
+  static BaseServiceException translateAndThrow(ExecutionException ex) {
     BaseServiceException.translate(ex);
     throw new BigQueryException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }

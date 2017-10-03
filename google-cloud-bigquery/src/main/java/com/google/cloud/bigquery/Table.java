@@ -290,10 +290,8 @@ public class Table extends TableInfo {
    *
    * <p>Example of listing rows in the table.
    * <pre> {@code
-   * Page<List<FieldValue>> page = table.list(TableDataListOption.pageSize(100));
-   * Iterator<List<FieldValue>> rowIterator = page.iterateAll();
-   * while (rowIterator.hasNext()) {
-   *   List<FieldValue> row = rowIterator.next();
+   * Page<FieldValueList> page = table.list(TableDataListOption.pageSize(100));
+   * for (FieldValueList row : page.iterateAll()) {
    *   // do something with the row
    * }
    * }</pre>
@@ -301,7 +299,7 @@ public class Table extends TableInfo {
    * @param options table data list options
    * @throws BigQueryException upon failure
    */
-  public Page<List<FieldValue>> list(TableDataListOption... options)
+  public Page<FieldValueList> list(TableDataListOption... options)
       throws BigQueryException {
     return bigquery.listTableData(getTableId(), options);
   }
@@ -317,8 +315,8 @@ public class Table extends TableInfo {
    * Job job = table.copy(datasetName, tableName);
    * // Wait for the job to complete.
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
+   *       RetryOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
@@ -352,8 +350,8 @@ public class Table extends TableInfo {
    * Job job = table.copy(destinationId, options);
    * // Wait for the job to complete.
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
+   *       RetryOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully.
    *   } else {
@@ -385,8 +383,8 @@ public class Table extends TableInfo {
    * Job job = table.extract(format, gcsUrl);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
+   *       RetryOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
@@ -423,8 +421,8 @@ public class Table extends TableInfo {
    * Job job = table.extract(format, destinationUris);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
+   *       RetryOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
@@ -458,8 +456,8 @@ public class Table extends TableInfo {
    * Job job = table.load(FormatOptions.csv(), sourceUri);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
+   *       RetryOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
@@ -495,8 +493,8 @@ public class Table extends TableInfo {
    * Job job = table.load(FormatOptions.csv(), sourceUris);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
+   *       RetryOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {

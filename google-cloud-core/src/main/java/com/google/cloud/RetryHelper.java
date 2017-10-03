@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.BetaApi;
+import com.google.api.gax.retrying.ExponentialPollAlgorithm;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 
@@ -26,12 +27,13 @@ import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetryingExecutor;
 import com.google.api.gax.retrying.RetryingFuture;
+import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Utility class for retrying operations. For more details about the parameters, see {@link
- * RetrySettings}. In case if retrying is unsuccessful, {@link RetryHelperException} will be
- * thrown.
+ * RetrySettings}. In case if retrying is unsuccessful, {@link RetryHelperException} will be thrown.
  */
 @BetaApi
 public class RetryHelper {
@@ -45,18 +47,32 @@ public class RetryHelper {
       // Suppressing should be ok as a workaraund. Current and only ResultRetryAlgorithm
       // implementation does not use response at all, so ignoring its type is ok.
       @SuppressWarnings("unchecked")
-      RetryAlgorithm<V> retryAlgorithm =
-          new RetryAlgorithm<>((ResultRetryAlgorithm<V>) resultRetryAlgorithm,
-              new ExponentialRetryAlgorithm(retrySettings, clock));
+      ResultRetryAlgorithm<V> algorithm = (ResultRetryAlgorithm<V>) resultRetryAlgorithm;
+      return run(callable, new ExponentialRetryAlgorithm(retrySettings, clock), algorithm);
+    } catch (Exception e) {
+      //TODO: remove RetryHelperException, throw InterruptedException or ExecutionException#getCause() explicitly
+      throw new RetryHelperException(e.getCause());
+    }
+  }
+
+  public static <V> V poll(
+      Callable<V> callable,
+      RetrySettings pollSettings,
+      ResultRetryAlgorithm<V> resultPollAlgorithm,
+      ApiClock clock) throws ExecutionException, InterruptedException {
+      return run(callable, new ExponentialPollAlgorithm(pollSettings, clock), resultPollAlgorithm);
+  }
+
+  private static <V> V run(
+      Callable<V> callable,
+      TimedRetryAlgorithm timedAlgorithm,
+      ResultRetryAlgorithm<V> resultAlgorithm) throws ExecutionException, InterruptedException {
+      RetryAlgorithm<V> retryAlgorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
       RetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
 
       RetryingFuture<V> retryingFuture = executor.createFuture(callable);
       executor.submit(retryingFuture);
-
       return retryingFuture.get();
-    } catch (Exception e) {
-      throw new RetryHelperException(e.getCause());
-    }
   }
 
   public static class RetryHelperException extends RuntimeException {

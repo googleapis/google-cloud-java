@@ -18,9 +18,10 @@ package com.google.cloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.core.ApiClock;
-import com.google.cloud.WaitForOption;
-import com.google.cloud.WaitForOption.CheckingPeriod;
+import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.RetryHelper;
+import com.google.cloud.RetryOption;
 import com.google.cloud.compute.Compute.OperationOption;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -29,6 +30,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
@@ -39,20 +42,28 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import org.threeten.bp.Duration;
 
 /**
- * Google Compute Engine operations. Operation identity can be obtained via {@link #getOperationId()}.
- * {@link #getOperationId()} returns {@link GlobalOperationId} for global operations,
- * {@link RegionOperationId} for region operations, and {@link ZoneOperationId} for zone operations.
- * To get an {@code Operation} object with the most recent information, use
- * {@link #reload(Compute.OperationOption...)}.
+ * Google Compute Engine operations. Operation identity can be obtained via {@link
+ * #getOperationId()}. {@link #getOperationId()} returns {@link GlobalOperationId} for global
+ * operations, {@link RegionOperationId} for region operations, and {@link ZoneOperationId} for zone
+ * operations. To get an {@code Operation} object with the most recent information, use {@link
+ * #reload(Compute.OperationOption...)}.
  */
 public class Operation implements Serializable {
 
   private static final long serialVersionUID = -8979001444590023899L;
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+
+  private final RetrySettings DEFAULT_OPERATION_WAIT_SETTINGS =
+      RetrySettings.newBuilder()
+          .setTotalTimeout(Duration.ofHours(12L))
+          .setInitialRetryDelay(Duration.ofMillis(500L))
+          .setRetryDelayMultiplier(1.0)
+          .setJittered(false)
+          .setMaxRetryDelay(Duration.ofMinutes(500L))
+          .build();
 
   private transient Compute compute;
   private final ComputeOptions options;
@@ -75,18 +86,14 @@ public class Operation implements Serializable {
   private final String httpErrorMessage;
   private final String description;
 
-  /**
-   * Status of an operation.
-   */
+  /** Status of an operation. */
   public enum Status {
     PENDING,
     RUNNING,
     DONE
   }
 
-  /**
-   * An error that can occur during the processing of a Google Compute Engine operation.
-   */
+  /** An error that can occur during the processing of a Google Compute Engine operation. */
   public static final class OperationError implements Serializable {
 
     static final Function<com.google.api.services.compute.model.Operation.Error.Errors,
@@ -121,23 +128,17 @@ public class Operation implements Serializable {
       this.message = message;
     }
 
-    /**
-     * Returns an error type identifier for this error.
-     */
+    /** Returns an error type identifier for this error. */
     public String getCode() {
       return code;
     }
 
-    /**
-     * Returns the field in the request which caused the error. This value is optional.
-     */
+    /** Returns the field in the request which caused the error. This value is optional. */
     public String getLocation() {
       return location;
     }
 
-    /**
-     * Returns an optional, human-readable error message.
-     */
+    /** Returns an optional, human-readable error message. */
     public String getMessage() {
       return message;
     }
@@ -225,9 +226,7 @@ public class Operation implements Serializable {
       return code;
     }
 
-    /**
-     * Returns a human-readable error message.
-     */
+    /** Returns a human-readable error message. */
     public String getMessage() {
       return message;
     }
@@ -253,8 +252,10 @@ public class Operation implements Serializable {
         List<com.google.api.services.compute.model.Operation.Warnings.Data> metadataPb =
             Lists.newArrayListWithCapacity(metadata.size());
         for (Map.Entry<String, String> entry : metadata.entrySet()) {
-          metadataPb.add(new com.google.api.services.compute.model.Operation.Warnings.Data()
-              .setKey(entry.getKey()).setValue(entry.getValue()));
+          metadataPb.add(
+              new com.google.api.services.compute.model.Operation.Warnings.Data()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue()));
         }
         warningPb.setData(metadataPb);
       }
@@ -266,8 +267,8 @@ public class Operation implements Serializable {
       Map<String, String> metadata = null;
       if (warningPb.getData() != null) {
         metadata = Maps.newHashMapWithExpectedSize(warningPb.getData().size());
-        for (com.google.api.services.compute.model.Operation.Warnings.Data data
-            : warningPb.getData()) {
+        for (com.google.api.services.compute.model.Operation.Warnings.Data data :
+            warningPb.getData()) {
           metadata.put(data.getKey(), data.getValue());
         }
       }
@@ -486,16 +487,12 @@ public class Operation implements Serializable {
     this.description = builder.description;
   }
 
-  /**
-   * Returns the operation's {@code Compute} object used to issue requests.
-   */
+  /** Returns the operation's {@code Compute} object used to issue requests. */
   public Compute getCompute() {
     return compute;
   }
 
-  /**
-   * Returns the service-generated unique identifier for the operation.
-   */
+  /** Returns the service-generated unique identifier for the operation. */
   public String getGeneratedId() {
     return generatedId;
   }
@@ -512,23 +509,17 @@ public class Operation implements Serializable {
     return (T) operationId;
   }
 
-  /**
-   * Reserved for future use.
-   */
+  /** Reserved for future use. */
   String getClientOperationId() {
     return clientOperationId;
   }
 
-  /**
-   * Returns the type of operation.
-   */
+  /** Returns the type of operation. */
   public String getOperationType() {
     return operationType;
   }
 
-  /**
-   * Returns the URL of the resource that the operation is modifying.
-   */
+  /** Returns the URL of the resource that the operation is modifying. */
   public String getTargetLink() {
     return targetLink;
   }
@@ -541,23 +532,17 @@ public class Operation implements Serializable {
     return targetId;
   }
 
-  /**
-   * Returns the status of the operation.
-   */
+  /** Returns the status of the operation. */
   public Status getStatus() {
     return status;
   }
 
-  /**
-   * Returns an optional textual description of the current status of the operation.
-   */
+  /** Returns an optional textual description of the current status of the operation. */
   public String getStatusMessage() {
     return statusMessage;
   }
 
-  /**
-   * Returns the user who requested the operation, for example: {@code user@example.com}.
-   */
+  /** Returns the user who requested the operation, for example: {@code user@example.com}. */
   public String getUser() {
     return user;
   }
@@ -572,9 +557,7 @@ public class Operation implements Serializable {
     return progress;
   }
 
-  /**
-   * Returns the time that this operation was requested. In milliseconds since epoch.
-   */
+  /** Returns the time that this operation was requested. In milliseconds since epoch. */
   public Long getInsertTime() {
     return insertTime;
   }
@@ -627,9 +610,7 @@ public class Operation implements Serializable {
     return httpErrorMessage;
   }
 
-  /**
-   * Returns an optional textual description of the operation.
-   */
+  /** Returns an optional textual description of the operation. */
   public String getDescription() {
     return description;
   }
@@ -648,30 +629,33 @@ public class Operation implements Serializable {
    * Checks if this operation has completed its execution, either failing or succeeding. If the
    * operation does not exist this method returns {@code true}. You can wait for operation
    * completion with:
-   * <pre> {@code
+   *
+   * <pre>{@code
    * while(!operation.isDone()) {
    *   Thread.sleep(1000L);
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @return {@code true} if this operation is in {@link Operation.Status#DONE} state or if it does
    *     not exist, {@code false} if the state is not {@link Operation.Status#DONE}
    * @throws ComputeException upon failure
    */
   public boolean isDone() {
-    Operation operation = compute.getOperation(operationId,
-        OperationOption.fields(Compute.OperationField.STATUS));
+    Operation operation =
+        compute.getOperation(operationId, OperationOption.fields(Compute.OperationField.STATUS));
     return operation == null || operation.getStatus() == Status.DONE;
   }
 
   /**
    * Blocks until this operation completes its execution, either failing or succeeding. This method
    * returns current operation's latest information. If the operation no longer exists, this method
-   * returns {@code null}. By default, the operation status is checked every 500 milliseconds, to
-   * configure this value use {@link WaitForOption#checkEvery(long, TimeUnit)}. Use
-   * {@link WaitForOption#timeout(long, TimeUnit)} to set the maximum time to wait.
+   * returns {@code null}. By default, the operation status is checked using jittered exponential
+   * backoff with 1 second as an initial delay, 2.0 as a backoff factor, 1 minute as maximum delay
+   * between polls, 12 hours as a total timeout and unlimited number of attempts.
    *
    * <p>Example usage of {@code waitFor()}:
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Operation completedOperation = operation.waitFor();
    * if (completedOperation == null) {
    *   // operation no longer exists
@@ -679,43 +663,57 @@ public class Operation implements Serializable {
    *   // operation failed, handle error
    * } else {
    *   // operation completed successfully
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * <p>Example usage of {@code waitFor()} with checking period and timeout:
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Operation completedOperation =
-   *     operation.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *         WaitForOption.timeout(60, TimeUnit.SECONDS));
+   *     operation.waitFor(
+   *         RetryOption.maxRetryDelay(Duration.ofSeconds(30)),
+   *         RetryOption.totalTimeout(Duration.ofMinutes(1)),
+   *         RetryOption.jittered(false));
    * if (completedOperation == null) {
    *   // operation no longer exists
    * } else if (completedOperation.errors() != null) {
    *   // operation failed, handle error
    * } else {
    *   // operation completed successfully
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @param waitOptions options to configure checking period and timeout
-   * @throws ComputeException upon failure
+   * @throws ComputeException upon failure, check {@link ComputeException#getCause()} for details
    * @throws InterruptedException if the current thread gets interrupted while waiting for the
    *     operation to complete
-   * @throws TimeoutException if the timeout provided with
-   *     {@link WaitForOption#timeout(long, TimeUnit)} is exceeded. If no such option is provided
-   *     this exception is never thrown.
    */
-  public Operation waitFor(WaitForOption... waitOptions)
-      throws InterruptedException, TimeoutException {
-    WaitForOption.Timeout timeout = WaitForOption.Timeout.getOrDefault(waitOptions);
-    CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
-    long timeoutMillis = timeout.getTimeoutMillis();
-    ApiClock clock = options.getClock();
-    long startTime = clock.millisTime();
-    while (!isDone()) {
-      if (timeoutMillis  != -1 && (clock.millisTime() - startTime)  >= timeoutMillis) {
-        throw new TimeoutException();
-      }
-      checkingPeriod.sleep();
+  public Operation waitFor(RetryOption... waitOptions)
+      throws InterruptedException {
+    RetrySettings waitSettings =
+        RetryOption.mergeToSettings(DEFAULT_OPERATION_WAIT_SETTINGS, waitOptions);
+    try {
+      Operation operation =
+          RetryHelper.poll(
+              new Callable<Operation>() {
+                @Override
+                public Operation call() throws Exception {
+                  return compute.getOperation(
+                      operationId, OperationOption.fields(Compute.OperationField.STATUS));
+                }
+              },
+              waitSettings,
+              new BasicResultRetryAlgorithm<Operation>() {
+                @Override
+                public boolean shouldRetry(Throwable prevThrowable, Operation prevResponse) {
+                  return prevResponse != null && prevResponse.getStatus() != Status.DONE;
+                }
+              },
+              options.getClock());
+      return operation == null ? null : reload();
+    } catch (ExecutionException e) {
+      throw ComputeException.translateAndThrow(e);
     }
-    return reload();
   }
 
   /**
@@ -821,8 +819,9 @@ public class Operation implements Serializable {
       operationPb.setEndTime(TIMESTAMP_FORMATTER.print(endTime));
     }
     if (errors != null) {
-      operationPb.setError(new com.google.api.services.compute.model.Operation.Error().setErrors(
-          Lists.transform(errors, OperationError.TO_PB_FUNCTION)));
+      operationPb.setError(
+          new com.google.api.services.compute.model.Operation.Error()
+              .setErrors(Lists.transform(errors, OperationError.TO_PB_FUNCTION)));
     }
     if (warnings != null) {
       operationPb.setWarnings(Lists.transform(warnings, OperationWarning.TO_PB_FUNCTION));
@@ -839,8 +838,8 @@ public class Operation implements Serializable {
     this.compute = options.getService();
   }
 
-  static Operation fromPb(Compute compute,
-      com.google.api.services.compute.model.Operation operationPb) {
+  static Operation fromPb(
+      Compute compute, com.google.api.services.compute.model.Operation operationPb) {
     return new Builder(compute, operationPb).build();
   }
 }

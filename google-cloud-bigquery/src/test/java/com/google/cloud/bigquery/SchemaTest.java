@@ -27,38 +27,23 @@ import java.util.List;
 public class SchemaTest {
 
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", Field.Type.string())
+      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.newBuilder("IntegerField", Field.Type.integer())
+      Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
           .setMode(Field.Mode.REPEATED)
           .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+      Field.newBuilder("RecordField", LegacySQLTypeName.RECORD, FIELD_SCHEMA1, FIELD_SCHEMA2)
           .setMode(Field.Mode.REQUIRED)
           .setDescription("FieldDescription3")
           .build();
   private static final List<Field> FIELDS = ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2,
       FIELD_SCHEMA3);
-  private static final Schema TABLE_SCHEMA = Schema.newBuilder().setFields(FIELDS).build();
-
-  @Test
-  public void testToBuilder() {
-    compareTableSchema(TABLE_SCHEMA, TABLE_SCHEMA.toBuilder().build());
-  }
-
-  @Test
-  public void testBuilder() {
-    assertEquals(FIELDS, TABLE_SCHEMA.getFields());
-    Schema schema = TABLE_SCHEMA.toBuilder()
-        .setFields(FIELD_SCHEMA1, FIELD_SCHEMA2)
-        .addField(FIELD_SCHEMA3)
-        .build();
-    compareTableSchema(TABLE_SCHEMA, schema);
-  }
+  private static final Schema TABLE_SCHEMA = Schema.of(FIELDS);
 
   @Test
   public void testOf() {

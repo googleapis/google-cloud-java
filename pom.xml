@@ -828,6 +828,11 @@
         <artifactId>objenesis</artifactId>
         <version>${objenesis.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.google.truth</groupId>
+        <artifactId>truth</artifactId>
+        <version>0.30</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <modules>

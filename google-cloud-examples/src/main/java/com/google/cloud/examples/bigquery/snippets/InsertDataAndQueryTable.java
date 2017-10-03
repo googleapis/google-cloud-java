@@ -23,13 +23,16 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQuery.QueryOption;
+import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
-import com.google.cloud.bigquery.QueryRequest;
+import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
@@ -37,7 +40,6 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -56,7 +58,7 @@ public class InsertDataAndQueryTable {
 
     TableId tableId = TableId.of(datasetId, "my_table_id");
     // Table field definition
-    Field stringField = Field.of("StringField", Field.Type.string());
+    Field stringField = Field.of("StringField", LegacySQLTypeName.STRING);
     // Table schema definition
     Schema schema = Schema.of(stringField);
     // Create a table
@@ -79,20 +81,16 @@ public class InsertDataAndQueryTable {
     }
 
     // Create a query request
-    QueryRequest queryRequest =
-        QueryRequest.newBuilder("SELECT * FROM my_dataset_id.my_table_id")
-            .setMaxWaitTime(60000L)
-            .setPageSize(1000L)
-            .build();
+    QueryJobConfiguration queryConfig =
+        QueryJobConfiguration.newBuilder("SELECT * FROM my_dataset_id.my_table_id").build();
     // Request query to be executed and wait for results
-    QueryResponse queryResponse = bigquery.query(queryRequest);
-    while (!queryResponse.jobCompleted()) {
-      Thread.sleep(1000L);
-      queryResponse = bigquery.getQueryResults(queryResponse.getJobId());
-    }
+    QueryResponse queryResponse = bigquery.query(
+        queryConfig,
+        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
+        QueryOption.of(QueryResultsOption.pageSize(1000L)));
     // Read rows
     System.out.println("Table rows:");
-    for (List<FieldValue> row : queryResponse.getResult().iterateAll()) {
+    for (FieldValueList row : queryResponse.getResult().iterateAll()) {
       System.out.println(row);
     }
   }

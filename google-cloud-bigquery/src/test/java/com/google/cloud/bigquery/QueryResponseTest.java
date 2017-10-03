@@ -31,7 +31,7 @@ public class QueryResponseTest {
 
   private static final String ETAG = "etag";
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", Field.Type.string())
+      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
       .setMode(Field.Mode.NULLABLE)
       .setDescription("FieldDescription1")
       .build();
@@ -42,6 +42,8 @@ public class QueryResponseTest {
   private static final Long TOTAL_ROWS = 42L;
   private static final QueryResult.QueryResultsPageFetcher FETCHER =
       new QueryResult.QueryResultsPageFetcher() {
+
+        private static final long serialVersionUID = -5754008940284215560L;
 
         @Override
         public QueryResult getNextPage() {
@@ -61,7 +63,7 @@ public class QueryResponseTest {
       .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .setCursor("cursor")
       .setPageFetcher(FETCHER)
-      .setResults(ImmutableList.<List<FieldValue>>of())
+      .setResults(ImmutableList.<FieldValueList>of())
       .setCacheHit(CACHE_HIT)
       .build();
   private static final QueryResponse QUERY_RESPONSE = QueryResponse.newBuilder()

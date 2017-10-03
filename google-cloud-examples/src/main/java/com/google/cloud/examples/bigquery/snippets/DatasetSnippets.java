@@ -26,7 +26,7 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.Dataset.Builder;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.Field.Type;
+import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -138,7 +138,7 @@ public class DatasetSnippets {
   // [VARIABLE “my_field”]
   public Table createTable(String tableName, String fieldName) {
     // [START createTable]
-    Schema schema = Schema.of(Field.of(fieldName, Type.string()));
+    Schema schema = Schema.of(Field.of(fieldName, LegacySQLTypeName.STRING));
     StandardTableDefinition definition = StandardTableDefinition.newBuilder()
         .setSchema(schema)
         .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))

@@ -30,21 +30,19 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
-import com.google.cloud.WaitForOption;
+import com.google.cloud.RetryOption;
 import com.google.cloud.compute.Operation.OperationError;
 import com.google.cloud.compute.Operation.OperationWarning;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
-import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import org.threeten.bp.Duration;
 
 public class OperationTest {
 
@@ -366,7 +364,7 @@ public class OperationTest {
   }
 
   @Test
-  public void testWaitFor() throws InterruptedException, TimeoutException {
+  public void testWaitFor() throws InterruptedException {
     initializeExpectedOperation(4);
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
@@ -383,7 +381,7 @@ public class OperationTest {
   }
 
   @Test
-  public void testWaitFor_Null() throws InterruptedException, TimeoutException {
+  public void testWaitFor_Null() throws InterruptedException {
     initializeExpectedOperation(3);
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
@@ -398,13 +396,10 @@ public class OperationTest {
   }
 
   @Test
-  public void testWaitForCheckingPeriod() throws InterruptedException, TimeoutException {
+  public void testWaitForCheckingPeriod() throws InterruptedException {
     initializeExpectedOperation(5);
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
-    TimeUnit timeUnit = createStrictMock(TimeUnit.class);
-    timeUnit.sleep(42);
-    EasyMock.expectLastCall();
     Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
         globalOperation.toPb().setError(null).setStatus("RUNNING"));
     Operation completedOperation =
@@ -415,57 +410,51 @@ public class OperationTest {
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions))
         .andReturn(completedOperation);
     expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(completedOperation);
-    replay(compute, timeUnit, mockOptions);
+    replay(compute, mockOptions);
     initializeOperation();
-    assertSame(completedOperation, operation.waitFor(WaitForOption.checkEvery(42, timeUnit)));
-    verify(timeUnit, mockOptions);
+    assertSame(
+        completedOperation, operation.waitFor(RetryOption.initialRetryDelay(Duration.ofMillis(1))));
+    verify(mockOptions);
   }
 
   @Test
-  public void testWaitForCheckingPeriod_Null() throws InterruptedException, TimeoutException {
+  public void testWaitForCheckingPeriod_Null() throws InterruptedException {
     initializeExpectedOperation(4);
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
-    TimeUnit timeUnit = createStrictMock(TimeUnit.class);
-    timeUnit.sleep(42);
-    EasyMock.expectLastCall();
     Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
         globalOperation.toPb().setError(null).setStatus("RUNNING"));
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(runningOperation);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
-    expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(null);
-    replay(compute, timeUnit, mockOptions);
+    replay(compute, mockOptions);
     initializeOperation();
-    assertNull(operation.waitFor(WaitForOption.checkEvery(42, timeUnit)));
-    verify(compute, timeUnit, mockOptions);
+    assertNull(operation.waitFor(RetryOption.initialRetryDelay(Duration.ofMillis(1L))));
+    verify(compute, mockOptions);
   }
 
   @Test
-  public void testWaitForWithTimeout() throws InterruptedException, TimeoutException {
+  public void testWaitForWithTimeout() throws InterruptedException {
     initializeExpectedOperation(4);
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
-    TimeUnit timeUnit = createStrictMock(TimeUnit.class);
-    timeUnit.sleep(1);
-    EasyMock.expectLastCall();
     ApiClock clock = createStrictMock(ApiClock.class);
-    expect(clock.millisTime()).andReturn(0L);
-    expect(clock.millisTime()).andReturn(1L);
-    expect(clock.millisTime()).andReturn(3L);
+    expect(clock.nanoTime()).andReturn(0L);
+    expect(clock.nanoTime()).andReturn(1_000_000L);
+    expect(clock.nanoTime()).andReturn(3_000_000L);
     Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
         globalOperation.toPb().setError(null).setStatus("RUNNING"));
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(mockOptions.getClock()).andReturn(clock);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(runningOperation);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(runningOperation);
-    replay(compute, timeUnit, clock, mockOptions);
+    replay(compute, clock, mockOptions);
     initializeOperation();
-    thrown.expect(TimeoutException.class);
-    operation.waitFor(WaitForOption.checkEvery(1, timeUnit),
-        WaitForOption.timeout(3, TimeUnit.MILLISECONDS));
-    verify(compute, timeUnit, clock, mockOptions);
+    thrown.expect(ComputeException.class);
+    operation.waitFor(RetryOption.initialRetryDelay(Duration.ofMillis(1L)),
+        RetryOption.totalTimeout(Duration.ofMillis(3L)));
+    verify(compute, clock, mockOptions);
   }
 
   @Test

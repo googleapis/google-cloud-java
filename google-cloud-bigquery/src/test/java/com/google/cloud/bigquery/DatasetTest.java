@@ -61,7 +61,7 @@ public class DatasetTest {
   private static final String LOCATION = "";
   private static final String SELF_LINK = "http://bigquery/p/d";
   private static final DatasetInfo DATASET_INFO = DatasetInfo.newBuilder(DATASET_ID).build();
-  private static final Field FIELD = Field.of("FieldName", Field.Type.integer());
+  private static final Field FIELD = Field.of("FieldName", LegacySQLTypeName.INTEGER);
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.of(Schema.of(FIELD));
   private static final ViewDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
