@@ -21,6 +21,7 @@ This client supports the following Google Cloud Platform services at a [GA](#ver
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
 -  [BigQuery](google-cloud-bigquery) (Beta)
+-  [Cloud Firestore](google-cloud-firestore) (Beta)
 -  [Cloud Pub/Sub](google-cloud-pubsub) (Beta)
 -  [Cloud Spanner](google-cloud-spanner) (Beta)
 -  [Cloud Natural Language](google-cloud-language) (Beta)
@@ -49,16 +50,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.24.0-alpha</version>
+  <version>0.25.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.24.0-alpha'
+compile 'com.google.cloud:google-cloud:0.25.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.24.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.25.0-alpha"
 ```
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
