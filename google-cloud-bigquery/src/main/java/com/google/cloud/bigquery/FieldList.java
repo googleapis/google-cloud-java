@@ -29,14 +29,14 @@ import java.util.Map;
  * Google BigQuery Table schema fields (columns). Each field has a unique name and index. Fields
  * with duplicate names are not allowed in BigQuery schema.
  */
-public final class Fields extends AbstractList<Field> implements Serializable {
+public final class FieldList extends AbstractList<Field> implements Serializable {
 
   private static final long serialVersionUID = 8736258375638733316L;
 
   private final List<Field> fields;
   private final Map<String, Integer> nameIndex;
 
-  private Fields(Iterable<Field> fields) {
+  private FieldList(Iterable<Field> fields) {
     this.fields = ImmutableList.copyOf(fields);
     ImmutableMap.Builder<String, Integer> nameIndexBuilder = ImmutableMap.builder();
     int index = 0;
@@ -89,30 +89,30 @@ public final class Fields extends AbstractList<Field> implements Serializable {
   }
 
   /**
-   * Returns a new {@code Fields} object, which contains a collection of {@code Field} objects in
+   * Returns a new {@code FieldList} object, which contains a collection of {@code Field} objects in
    * preserved order and represent schema columns.
    *
    * @param fields the schema fields
    */
-  public static Fields of(Field... fields) {
-    return new Fields(ImmutableList.copyOf(fields));
+  public static FieldList of(Field... fields) {
+    return new FieldList(ImmutableList.copyOf(fields));
   }
 
   /**
-   * Returns a new {@code Fields} object, which contains a collection of {@code Field} objects in
+   * Returns a new {@code FieldList} object, which contains a collection of {@code Field} objects in
    * preserved order and represent schema columns.
    *
    * @param fields the schema fields
    */
-  public static Fields of(Iterable<Field> fields) {
-    return new Fields(fields);
+  public static FieldList of(Iterable<Field> fields) {
+    return new FieldList(fields);
   }
 
   List<TableFieldSchema> toPb() {
     return Lists.transform(fields, Field.TO_PB_FUNCTION);
   }
 
-  static Fields fromPb(List<TableFieldSchema> fields) {
-    return Fields.of(Lists.transform(fields, Field.FROM_PB_FUNCTION));
+  static FieldList fromPb(List<TableFieldSchema> fields) {
+    return FieldList.of(Lists.transform(fields, Field.FROM_PB_FUNCTION));
   }
 }

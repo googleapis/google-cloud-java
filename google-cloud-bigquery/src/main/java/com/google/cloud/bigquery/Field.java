@@ -54,7 +54,7 @@ public final class Field implements Serializable {
 
   private final String name;
   private final LegacySQLTypeName type;
-  private final Fields subFields;
+  private final FieldList subFields;
   private final String mode;
   private final String description;
 
@@ -71,7 +71,7 @@ public final class Field implements Serializable {
 
     private String name;
     private LegacySQLTypeName type;
-    private Fields subFields;
+    private FieldList subFields;
     private String mode;
     private String description;
 
@@ -110,7 +110,7 @@ public final class Field implements Serializable {
      *     Data Types</a>
      */
     public Builder setType(LegacySQLTypeName type, Field... subFields) {
-      return setType(type, subFields.length > 0 ? Fields.of(subFields) : null);
+      return setType(type, subFields.length > 0 ? FieldList.of(subFields) : null);
     }
 
     /**
@@ -126,7 +126,7 @@ public final class Field implements Serializable {
      *     Data Types</a>
      */
 
-    public Builder setType(LegacySQLTypeName type, Fields subFields) {
+    public Builder setType(LegacySQLTypeName type, FieldList subFields) {
       if (type == LegacySQLTypeName.RECORD) {
         if (subFields == null || subFields.isEmpty()) {
           throw new IllegalArgumentException(
@@ -215,7 +215,7 @@ public final class Field implements Serializable {
    * Returns the list of sub-fields if {@link #getType()} is a {@link LegacySQLTypeName#RECORD}.
    * Returns {@code null} otherwise.
    */
-  public Fields getSubFields() {
+  public FieldList getSubFields() {
     return subFields;
   }
 
@@ -257,7 +257,7 @@ public final class Field implements Serializable {
   /**
    * Returns a Field object with given name and type.
    */
-  public static Field of(String name, LegacySQLTypeName type, Fields subFields) {
+  public static Field of(String name, LegacySQLTypeName type, FieldList subFields) {
     return newBuilder(name, type, subFields).build();
   }
 
@@ -271,7 +271,7 @@ public final class Field implements Serializable {
   /**
    * Returns a builder for a Field object with given name and type.
    */
-  public static Builder newBuilder(String name, LegacySQLTypeName type, Fields subFields) {
+  public static Builder newBuilder(String name, LegacySQLTypeName type, FieldList subFields) {
     return new Builder().setName(name).setType(type, subFields);
   }
 
@@ -301,8 +301,8 @@ public final class Field implements Serializable {
     if (fieldSchemaPb.getDescription() != null) {
       fieldBuilder.setDescription(fieldSchemaPb.getDescription());
     }
-    Fields subFields = fieldSchemaPb.getFields() != null
-        ? Fields.of(Lists.transform(fieldSchemaPb.getFields(), FROM_PB_FUNCTION))
+    FieldList subFields = fieldSchemaPb.getFields() != null
+        ? FieldList.of(Lists.transform(fieldSchemaPb.getFields(), FROM_PB_FUNCTION))
         : null;
     fieldBuilder.setType(LegacySQLTypeName.valueOf(fieldSchemaPb.getType()), subFields);
     return fieldBuilder.build();

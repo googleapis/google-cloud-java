@@ -273,7 +273,7 @@ public class FieldValue implements Serializable {
     if (cellPb instanceof Map) {
       Map<String, Object> cellMapPb = (Map<String, Object>) cellPb;
       if (cellMapPb.containsKey("f")) {
-        Fields subFieldsSchema = recordSchema != null ? recordSchema.getSubFields() : null;
+        FieldList subFieldsSchema = recordSchema != null ? recordSchema.getSubFields() : null;
         return FieldValue.of(
             Attribute.RECORD,
             FieldValues.fromPb((List<Object>) cellMapPb.get("f"), subFieldsSchema));

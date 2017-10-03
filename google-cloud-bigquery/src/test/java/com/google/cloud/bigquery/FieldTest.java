@@ -80,7 +80,7 @@ public class FieldTest {
     assertEquals(FIELD_TYPE3, FIELD_SCHEMA3.getType());
     assertEquals(FIELD_MODE3, FIELD_SCHEMA3.getMode());
     assertEquals(FIELD_DESCRIPTION3, FIELD_SCHEMA3.getDescription());
-    assertEquals(Fields.of(FIELD_SCHEMA1, FIELD_SCHEMA2), FIELD_SCHEMA3.getSubFields());
+    assertEquals(FieldList.of(FIELD_SCHEMA1, FIELD_SCHEMA2), FIELD_SCHEMA3.getSubFields());
   }
 
 

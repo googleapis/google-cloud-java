@@ -35,10 +35,10 @@ public class FieldValues extends AbstractList<FieldValue> implements Serializabl
 
   private static final long serialVersionUID = 2103346761764976902L;
 
-  private final Fields schema;
+  private final FieldList schema;
   private final List<FieldValue> row;
 
-  private FieldValues(List<FieldValue> row, Fields schema) {
+  private FieldValues(List<FieldValue> row, FieldList schema) {
     if (schema != null && row.size() != schema.size()) {
       throw new IllegalArgumentException("Row size and fields schema sizes should match");
     }
@@ -84,15 +84,15 @@ public class FieldValues extends AbstractList<FieldValue> implements Serializabl
     return row.size();
   }
 
-  static FieldValues of(List<FieldValue> row, Fields schema) {
+  static FieldValues of(List<FieldValue> row, FieldList schema) {
     return new FieldValues(row, schema);
   }
 
   static FieldValues of(List<FieldValue> row, Field... schema) {
-    return of(row, schema.length > 0 ? Fields.of(schema) : null);
+    return of(row, schema.length > 0 ? FieldList.of(schema) : null);
   }
 
-  static FieldValues fromPb(List<?> rowPb, Fields schema) {
+  static FieldValues fromPb(List<?> rowPb, FieldList schema) {
     List<FieldValue> row = new ArrayList<>(rowPb.size());
     if (schema != null) {
       if (schema.size() != rowPb.size()) {

@@ -22,7 +22,7 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-public class FieldsTest {
+public class FieldListTest {
   private static final String FIELD_NAME1 = "StringField";
   private static final String FIELD_NAME2 = "IntegerField";
   private static final String FIELD_NAME3 = "RecordField";
@@ -52,7 +52,7 @@ public class FieldsTest {
       .setDescription(FIELD_DESCRIPTION3)
       .build();
 
-  private final Fields fieldsSchema = Fields.of(fieldSchema1, fieldSchema2, fieldSchema3);
+  private final FieldList fieldsSchema = FieldList.of(fieldSchema1, fieldSchema2, fieldSchema3);
 
   @Test
   public void testGetByName() {
@@ -101,9 +101,9 @@ public class FieldsTest {
 
   @Test
   public void testToAndFromPb() {
-    assertEquals(fieldsSchema, Fields.of(fieldSchema1, fieldSchema2, fieldSchema3));
-    assertNotEquals(fieldsSchema, Fields.of(fieldSchema1, fieldSchema3));
+    assertEquals(fieldsSchema, FieldList.of(fieldSchema1, fieldSchema2, fieldSchema3));
+    assertNotEquals(fieldsSchema, FieldList.of(fieldSchema1, fieldSchema3));
 
-    assertEquals(fieldsSchema, Fields.fromPb(fieldsSchema.toPb()));
+    assertEquals(fieldsSchema, FieldList.fromPb(fieldsSchema.toPb()));
   }
 }

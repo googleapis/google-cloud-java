@@ -460,7 +460,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
       return option instanceof RetryOption ? (RetryOption) option : null;
     }
 
-    public static QueryResultsOption[] filterQueryResutlsOptions(QueryOption... options) {
+    static QueryResultsOption[] filterQueryResultsOptions(QueryOption... options) {
       List<QueryResultsOption> queryResultOptions = new ArrayList<>(options.length);
       for (QueryOption opt : options) {
         if (opt.getQueryResultsOption() != null) {
@@ -470,7 +470,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
       return queryResultOptions.toArray(new QueryResultsOption[queryResultOptions.size()]);
     }
 
-    public static RetryOption[] filterRetryOptions(QueryOption... options) {
+    static RetryOption[] filterRetryOptions(QueryOption... options) {
       List<RetryOption> retryOptions = new ArrayList<>(options.length);
       for (QueryOption opt : options) {
         if (opt.getRetryOption() != null) {
@@ -998,6 +998,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.of(query);
    *
    * // To run the legacy syntax queries use the following code instead:
+   * //   String query = "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"
    * //   QueryJobConfiguration queryConfig =
    * //       QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
    *

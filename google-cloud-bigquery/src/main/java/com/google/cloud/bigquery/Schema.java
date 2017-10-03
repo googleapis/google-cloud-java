@@ -49,16 +49,16 @@ public final class Schema implements Serializable {
 
   private static final long serialVersionUID = 5522743613515073017L;
 
-  private final Fields fields;
+  private final FieldList fields;
 
-  private Schema(Fields fields) {
+  private Schema(FieldList fields) {
     this.fields = checkNotNull(fields);
   }
 
   /**
    * Returns the fields in the current table schema.
    */
-  public Fields getFields() {
+  public FieldList getFields() {
     return fields;
   }
 
@@ -85,14 +85,14 @@ public final class Schema implements Serializable {
    * Creates a {@code Schema} object given a list of fields.
    */
   public static Schema of(Iterable<Field> fields) {
-    return new Schema(Fields.of(fields));
+    return new Schema(FieldList.of(fields));
   }
 
   /**
    * Creates a {@code Schema} object given some fields.
    */
   public static Schema of(Field... fields) {
-    return new Schema(Fields.of(fields));
+    return new Schema(FieldList.of(fields));
   }
 
   TableSchema toPb() {
@@ -104,6 +104,6 @@ public final class Schema implements Serializable {
   }
 
   static Schema fromPb(com.google.api.services.bigquery.model.TableSchema tableSchemaPb) {
-    return Schema.of(Fields.fromPb(tableSchemaPb.getFields()));
+    return Schema.of(FieldList.fromPb(tableSchemaPb.getFields()));
   }
 }

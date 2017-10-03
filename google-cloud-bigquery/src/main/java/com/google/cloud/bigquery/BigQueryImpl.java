@@ -476,7 +476,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   private static List<FieldValues> transformTableData(
       Iterable<TableRow> tableDataPb, Schema schema) {
-    final Fields schemaFields = schema != null ? schema.getFields() : null;
+    final FieldList schemaFields = schema != null ? schema.getFields() : null;
     return ImmutableList.copyOf(
         Iterables.transform(tableDataPb != null ? tableDataPb : ImmutableList.<TableRow>of(),
             new Function<TableRow, FieldValues>() {
@@ -573,7 +573,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       RetrySettings waitSettings =
           RetryOption.mergeToSettings(
               Job.DEFAULT_QUERY_JOB_WAIT_SETTINGS, QueryOption.filterRetryOptions(options));
-      return job.waitForQueryResults(waitSettings, QueryOption.filterQueryResutlsOptions(options));
+      return job.waitForQueryResults(waitSettings, QueryOption.filterQueryResultsOptions(options));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }

@@ -34,8 +34,8 @@ public class FieldValuesTest {
   private static final String BYTES_BASE64 = BaseEncoding.base64().encode(BYTES);
   private static final TableCell booleanPb = new TableCell().setV("false");
 
-  private final Fields schema =
-      Fields.of(
+  private final FieldList schema =
+      FieldList.of(
           Field.of("first", LegacySQLTypeName.BOOLEAN),
           Field.of("second", LegacySQLTypeName.INTEGER),
           Field.of("third", LegacySQLTypeName.FLOAT),
