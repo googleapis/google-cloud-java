@@ -25,6 +25,7 @@ import java.net.SocketTimeoutException;
 import java.security.cert.CertificateException;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.ExecutionException;
 import javax.net.ssl.SSLHandshakeException;
 
 /**
@@ -248,6 +249,13 @@ public class BaseServiceException extends RuntimeException {
 
   @InternalApi
   public static void translate(RetryHelper.RetryHelperException ex) {
+    if (ex.getCause() instanceof BaseServiceException) {
+      throw (BaseServiceException) ex.getCause();
+    }
+  }
+
+  @InternalApi
+  public static void translate(ExecutionException ex) {
     if (ex.getCause() instanceof BaseServiceException) {
       throw (BaseServiceException) ex.getCause();
     }
