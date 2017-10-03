@@ -200,7 +200,7 @@ public class SerializationTest extends BaseSerializationTest {
       .setTotalBytesProcessed(42L)
       .setCursor("cursor")
       .setPageFetcher(null)
-      .setResults(ImmutableList.<FieldValues>of())
+      .setResults(ImmutableList.<FieldValueList>of())
       .build();
   private static final QueryResponse QUERY_RESPONSE = QueryResponse.newBuilder()
       .setEtag(ETAG)

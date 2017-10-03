@@ -27,18 +27,18 @@ import java.util.List;
  * Google BigQuery Table Field Values class, which represents a row in returned query result
  * (table row). Tables rows can be retrieved as a result of a query or when listing table data.
  *
- * Depending on how a corresponding query was executed, each row (an instance of {@code FieldValues})
+ * Depending on how a corresponding query was executed, each row (an instance of {@code FieldValueList})
  * may or may not contain related schema. If schema is not provided, the individual cells of the row
  * will still be accessible by index but not by name.
  */
-public class FieldValues extends AbstractList<FieldValue> implements Serializable {
+public class FieldValueList extends AbstractList<FieldValue> implements Serializable {
 
   private static final long serialVersionUID = 2103346761764976902L;
 
   private final FieldList schema;
   private final List<FieldValue> row;
 
-  private FieldValues(List<FieldValue> row, FieldList schema) {
+  private FieldValueList(List<FieldValue> row, FieldList schema) {
     if (schema != null && row.size() != schema.size()) {
       throw new IllegalArgumentException("Row size and fields schema sizes should match");
     }
@@ -84,15 +84,15 @@ public class FieldValues extends AbstractList<FieldValue> implements Serializabl
     return row.size();
   }
 
-  static FieldValues of(List<FieldValue> row, FieldList schema) {
-    return new FieldValues(row, schema);
+  static FieldValueList of(List<FieldValue> row, FieldList schema) {
+    return new FieldValueList(row, schema);
   }
 
-  static FieldValues of(List<FieldValue> row, Field... schema) {
+  static FieldValueList of(List<FieldValue> row, Field... schema) {
     return of(row, schema.length > 0 ? FieldList.of(schema) : null);
   }
 
-  static FieldValues fromPb(List<?> rowPb, FieldList schema) {
+  static FieldValueList fromPb(List<?> rowPb, FieldList schema) {
     List<FieldValue> row = new ArrayList<>(rowPb.size());
     if (schema != null) {
       if (schema.size() != rowPb.size()) {
@@ -109,6 +109,6 @@ public class FieldValues extends AbstractList<FieldValue> implements Serializabl
       }
     }
 
-    return FieldValues.of(row, schema);
+    return FieldValueList.of(row, schema);
   }
 }

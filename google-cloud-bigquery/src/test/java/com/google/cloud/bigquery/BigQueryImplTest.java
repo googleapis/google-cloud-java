@@ -165,10 +165,10 @@ public class BigQueryImplTest {
   private static final String CURSOR = "cursor";
   private static final TableCell CELL_PB1 = new TableCell().setV("Value1");
   private static final TableCell CELL_PB2 = new TableCell().setV("Value2");
-  private static final ImmutableList<FieldValues> TABLE_DATA =
+  private static final ImmutableList<FieldValueList> TABLE_DATA =
       ImmutableList.of(
-          FieldValues.of(ImmutableList.of(FieldValue.fromPb(CELL_PB1))),
-          FieldValues.of(ImmutableList.of(FieldValue.fromPb(CELL_PB2))));
+          FieldValueList.of(ImmutableList.of(FieldValue.fromPb(CELL_PB1))),
+          FieldValueList.of(ImmutableList.of(FieldValue.fromPb(CELL_PB2))));
   private static final Tuple<String, Iterable<TableRow>> TABLE_DATA_PB =
       Tuple.<String, Iterable<TableRow>>of(
           CURSOR,
@@ -832,7 +832,7 @@ public class BigQueryImplTest {
         .andReturn(TABLE_DATA_PB);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    Page<FieldValues> page = bigquery.listTableData(DATASET, TABLE);
+    Page<FieldValueList> page = bigquery.listTableData(DATASET, TABLE);
     assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(TABLE_DATA.toArray(), Iterables.toArray(page.getValues(), List.class));
   }
@@ -843,7 +843,7 @@ public class BigQueryImplTest {
         .andReturn(TABLE_DATA_PB);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    Page<FieldValues> page = bigquery.listTableData(TableId.of(DATASET, TABLE));
+    Page<FieldValueList> page = bigquery.listTableData(TableId.of(DATASET, TABLE));
     assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(TABLE_DATA.toArray(), Iterables.toArray(page.getValues(), List.class));
   }
@@ -855,7 +855,7 @@ public class BigQueryImplTest {
         .andReturn(TABLE_DATA_PB);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    Page<FieldValues> page = bigquery.listTableData(tableId);
+    Page<FieldValueList> page = bigquery.listTableData(tableId);
     assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(TABLE_DATA.toArray(), Iterables.toArray(page.getValues(), List.class));
   }
@@ -866,7 +866,7 @@ public class BigQueryImplTest {
         .andReturn(TABLE_DATA_PB);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    Page<FieldValues> page =
+    Page<FieldValueList> page =
         bigquery.listTableData(
             DATASET,
             TABLE,
@@ -1152,7 +1152,7 @@ public class BigQueryImplTest {
     assertEquals(null, response.getResult().getSchema());
     assertEquals(42L, response.getResult().getTotalBytesProcessed());
     assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValues row : response.getResult().getValues()) {
+    for (FieldValueList row : response.getResult().getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());
       assertEquals(1L, row.get(1).getLongValue());
     }
@@ -1208,7 +1208,7 @@ public class BigQueryImplTest {
     assertEquals(null, response.getResult().getSchema());
     assertEquals(42L, response.getResult().getTotalBytesProcessed());
     assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValues row : response.getResult().getValues()) {
+    for (FieldValueList row : response.getResult().getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());
       assertEquals(1L, row.get(1).getLongValue());
     }
@@ -1242,7 +1242,7 @@ public class BigQueryImplTest {
     assertEquals(null, response.getResult().getSchema());
     assertEquals(42L, response.getResult().getTotalBytesProcessed());
     assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValues row : response.getResult().getValues()) {
+    for (FieldValueList row : response.getResult().getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());
       assertEquals(1L, row.get(1).getLongValue());
     }
@@ -1276,7 +1276,7 @@ public class BigQueryImplTest {
     assertEquals(null, response.getResult().getSchema());
     assertEquals(42L, response.getResult().getTotalBytesProcessed());
     assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValues row : response.getResult().getValues()) {
+    for (FieldValueList row : response.getResult().getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());
       assertEquals(1L, row.get(1).getLongValue());
     }
@@ -1314,7 +1314,7 @@ public class BigQueryImplTest {
     assertEquals(null, response.getResult().getSchema());
     assertEquals(42L, response.getResult().getTotalBytesProcessed());
     assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValues row : response.getResult().getValues()) {
+    for (FieldValueList row : response.getResult().getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());
       assertEquals(1L, row.get(1).getLongValue());
     }

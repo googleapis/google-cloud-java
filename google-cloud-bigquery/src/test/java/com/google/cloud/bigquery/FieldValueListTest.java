@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 import org.junit.Test;
 
-public class FieldValuesTest {
+public class FieldValueListTest {
   private static final byte[] BYTES = {0xD, 0xE, 0xA, 0xD};
   private static final String BYTES_BASE64 = BaseEncoding.base64().encode(BYTES);
   private static final TableCell booleanPb = new TableCell().setV("false");
@@ -69,11 +69,11 @@ public class FieldValuesTest {
   private final FieldValue bytesFv = FieldValue.of(Attribute.PRIMITIVE, BYTES_BASE64);
   private final FieldValue nullFv = FieldValue.of(Attribute.PRIMITIVE, null);
   private final FieldValue repeatedFv =
-      FieldValue.of(Attribute.REPEATED, FieldValues.of(ImmutableList.of(integerFv, integerFv)));
+      FieldValue.of(Attribute.REPEATED, FieldValueList.of(ImmutableList.of(integerFv, integerFv)));
   private final FieldValue recordFv =
       FieldValue.of(
           Attribute.RECORD,
-          FieldValues.of(
+          FieldValueList.of(
               ImmutableList.of(floatFv, timestampFv), schema.get("ninth").getSubFields()));
 
   private final List<?> fieldValuesPb =
@@ -88,8 +88,8 @@ public class FieldValuesTest {
           repeatedPb,
           recordPb);
 
-  private final FieldValues fieldValues =
-      FieldValues.of(
+  private final FieldValueList fieldValues =
+      FieldValueList.of(
           ImmutableList.of(
               booleanFv,
               integerFv,
@@ -104,9 +104,9 @@ public class FieldValuesTest {
 
   @Test
   public void testFromPb() {
-    assertEquals(fieldValues, FieldValues.fromPb(fieldValuesPb, schema));
+    assertEquals(fieldValues, FieldValueList.fromPb(fieldValuesPb, schema));
     // Schema does not influence values equality
-    assertEquals(fieldValues, FieldValues.fromPb(fieldValuesPb, null));
+    assertEquals(fieldValues, FieldValueList.fromPb(fieldValuesPb, null));
   }
 
   @Test
@@ -151,7 +151,7 @@ public class FieldValuesTest {
 
   @Test
   public void testNullSchema() {
-    FieldValues fieldValuesNoSchema = FieldValues.of(
+    FieldValueList fieldValuesNoSchema = FieldValueList.of(
         ImmutableList.of(
             booleanFv,
             integerFv,

@@ -28,8 +28,7 @@ import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.ExternalTableDefinition;
 import com.google.cloud.bigquery.ExtractJobConfiguration;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FieldValue;
-import com.google.cloud.bigquery.FieldValues;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
@@ -316,7 +315,7 @@ public class BigQueryExample {
   private static class ListTableDataAction extends TableAction {
     @Override
     public void run(BigQuery bigquery, TableId tableId) {
-      for (FieldValues row : bigquery.listTableData(tableId).iterateAll()) {
+      for (FieldValueList row : bigquery.listTableData(tableId).iterateAll()) {
         System.out.println(row);
       }
     }
@@ -625,7 +624,7 @@ public class BigQueryExample {
       QueryResponse queryResponse = bigquery.query(queryConfig);
       if (!queryResponse.hasErrors()) {
         System.out.println("Query succeeded. Results:");
-        for (FieldValues row : queryResponse.getResult().iterateAll()) {
+        for (FieldValueList row : queryResponse.getResult().iterateAll()) {
           System.out.println(row);
         }
       } else {

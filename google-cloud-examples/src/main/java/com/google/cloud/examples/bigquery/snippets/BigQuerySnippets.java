@@ -36,8 +36,7 @@ import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FieldValue;
-import com.google.cloud.bigquery.FieldValues;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
@@ -440,11 +439,11 @@ public class BigQuerySnippets {
   // [TARGET listTableData(String, String, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Page<FieldValues> listTableData(String datasetName, String tableName) {
+  public Page<FieldValueList> listTableData(String datasetName, String tableName) {
     // [START listTableData]
-    Page<FieldValues> tableData =
+    Page<FieldValueList> tableData =
         bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
-    for (FieldValues row : tableData.iterateAll()) {
+    for (FieldValueList row : tableData.iterateAll()) {
       // do something with the row
     }
     // [END listTableData]
@@ -457,12 +456,12 @@ public class BigQuerySnippets {
   // [TARGET listTableData(TableId, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Page<FieldValues> listTableDataFromId(String datasetName, String tableName) {
+  public Page<FieldValueList> listTableDataFromId(String datasetName, String tableName) {
     // [START listTableDataFromId]
     TableId tableIdObject = TableId.of(datasetName, tableName);
-    Page<FieldValues> tableData =
+    Page<FieldValueList> tableData =
         bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
-    for (FieldValues row : tableData.iterateAll()) {
+    for (FieldValueList row : tableData.iterateAll()) {
       // do something with the row
     }
     // [END listTableDataFromId]
@@ -583,7 +582,7 @@ public class BigQuerySnippets {
       // handle errors
     }
     QueryResult result = response.getResult();
-    for (FieldValues row : result.iterateAll()) {
+    for (FieldValueList row : result.iterateAll()) {
       // do something with the data
     }
     // [END runQuery]
@@ -606,7 +605,7 @@ public class BigQuerySnippets {
       // handle errors
     }
     QueryResult result = response.getResult();
-    for (FieldValues row : result.iterateAll()) {
+    for (FieldValueList row : result.iterateAll()) {
       // do something with the data
     }
     // [END runQueryWithParameters]
@@ -627,7 +626,7 @@ public class BigQuerySnippets {
       // handle errors
     }
     QueryResult result = response.getResult();
-    for (FieldValues row : result.iterateAll()) {
+    for (FieldValueList row : result.iterateAll()) {
       // do something with the data
     }
     // [END queryResults]

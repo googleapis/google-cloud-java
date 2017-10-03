@@ -256,7 +256,7 @@ public class Job extends JobInfo {
    * job.waitFor();
    * QueryResponse response = job.getQueryResults();
    * QueryResult result = response.getResult();
-   * for (FieldValues row : result.iterateAll()) {
+   * for (FieldValueList row : result.iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>

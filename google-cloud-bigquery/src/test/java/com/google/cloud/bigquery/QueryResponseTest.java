@@ -63,7 +63,7 @@ public class QueryResponseTest {
       .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .setCursor("cursor")
       .setPageFetcher(FETCHER)
-      .setResults(ImmutableList.<FieldValues>of())
+      .setResults(ImmutableList.<FieldValueList>of())
       .setCacheHit(CACHE_HIT)
       .build();
   private static final QueryResponse QUERY_RESPONSE = QueryResponse.newBuilder()

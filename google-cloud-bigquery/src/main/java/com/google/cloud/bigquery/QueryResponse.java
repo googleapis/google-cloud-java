@@ -35,7 +35,7 @@ import java.util.Objects;
  * List<BigQueryError> executionErrors = response.getExecutionErrors();
  * // look for errors in executionErrors
  * QueryResult result = response.getResult();
- * for(FieldValues row : result.iterateAll()) {
+ * for(FieldValueList row : result.iterateAll()) {
  *   // do something with row
  * }
  * }</pre>

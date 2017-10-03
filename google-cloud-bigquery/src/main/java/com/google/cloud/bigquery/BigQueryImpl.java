@@ -107,7 +107,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private static class TableDataPageFetcher implements NextPageFetcher<FieldValues> {
+  private static class TableDataPageFetcher implements NextPageFetcher<FieldValueList> {
 
     private static final long serialVersionUID = -8501991114794410114L;
     private final Map<BigQueryRpc.Option, ?> requestOptions;
@@ -123,13 +123,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     @Override
-    public Page<FieldValues> getNextPage() {
+    public Page<FieldValueList> getNextPage() {
       return listTableData(table, serviceOptions, requestOptions);
     }
   }
 
   private static class QueryResultsPageFetcherImpl
-      implements NextPageFetcher<FieldValues>, QueryResult.QueryResultsPageFetcher {
+      implements NextPageFetcher<FieldValueList>, QueryResult.QueryResultsPageFetcher {
 
     private static final long serialVersionUID = -9198905840550459803L;
     private final Map<BigQueryRpc.Option, ?> requestOptions;
@@ -443,17 +443,17 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Page<FieldValues> listTableData(String datasetId, String tableId,
+  public Page<FieldValueList> listTableData(String datasetId, String tableId,
       TableDataListOption... options) {
     return listTableData(TableId.of(datasetId, tableId), getOptions(), optionMap(options));
   }
 
   @Override
-  public Page<FieldValues> listTableData(TableId tableId, TableDataListOption... options) {
+  public Page<FieldValueList> listTableData(TableId tableId, TableDataListOption... options) {
     return listTableData(tableId, getOptions(), optionMap(options));
   }
 
-  private static Page<FieldValues> listTableData(final TableId tableId,
+  private static Page<FieldValueList> listTableData(final TableId tableId,
       final BigQueryOptions serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
       final TableId completeTableId = tableId.setProjectId(serviceOptions.getProjectId());
@@ -474,15 +474,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private static List<FieldValues> transformTableData(
+  private static List<FieldValueList> transformTableData(
       Iterable<TableRow> tableDataPb, Schema schema) {
     final FieldList schemaFields = schema != null ? schema.getFields() : null;
     return ImmutableList.copyOf(
         Iterables.transform(tableDataPb != null ? tableDataPb : ImmutableList.<TableRow>of(),
-            new Function<TableRow, FieldValues>() {
+            new Function<TableRow, FieldValueList>() {
               @Override
-              public FieldValues apply(TableRow rowPb) {
-                return FieldValues.fromPb(rowPb.getF(), schemaFields);
+              public FieldValueList apply(TableRow rowPb) {
+                return FieldValueList.fromPb(rowPb.getF(), schemaFields);
               }
             }));
   }

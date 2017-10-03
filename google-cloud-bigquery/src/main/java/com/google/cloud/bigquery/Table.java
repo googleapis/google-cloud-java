@@ -290,8 +290,8 @@ public class Table extends TableInfo {
    *
    * <p>Example of listing rows in the table.
    * <pre> {@code
-   * Page<FieldValues> page = table.list(TableDataListOption.pageSize(100));
-   * for (FieldValues row : page.iterateAll()) {
+   * Page<FieldValueList> page = table.list(TableDataListOption.pageSize(100));
+   * for (FieldValueList row : page.iterateAll()) {
    *   // do something with the row
    * }
    * }</pre>
@@ -299,7 +299,7 @@ public class Table extends TableInfo {
    * @param options table data list options
    * @throws BigQueryException upon failure
    */
-  public Page<FieldValues> list(TableDataListOption... options)
+  public Page<FieldValueList> list(TableDataListOption... options)
       throws BigQueryException {
     return bigquery.listTableData(getTableId(), options);
   }

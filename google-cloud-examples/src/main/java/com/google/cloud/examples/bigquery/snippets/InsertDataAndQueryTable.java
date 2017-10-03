@@ -28,8 +28,7 @@ import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FieldValue;
-import com.google.cloud.bigquery.FieldValues;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.LegacySQLTypeName;
@@ -41,7 +40,6 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -92,7 +90,7 @@ public class InsertDataAndQueryTable {
         QueryOption.of(QueryResultsOption.pageSize(1000L)));
     // Read rows
     System.out.println("Table rows:");
-    for (FieldValues row : queryResponse.getResult().iterateAll()) {
+    for (FieldValueList row : queryResponse.getResult().iterateAll()) {
       System.out.println(row);
     }
   }

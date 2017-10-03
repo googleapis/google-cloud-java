@@ -28,8 +28,7 @@ import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FieldValue;
-import com.google.cloud.bigquery.FieldValues;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.LegacySQLTypeName;
@@ -171,15 +170,15 @@ public class ITTableSnippets {
   public void testInsertParams() throws InterruptedException {
     InsertAllResponse response = tableSnippets.insertWithParams("row1", "row2");
     assertFalse(response.hasErrors());
-    List<FieldValues> rows = ImmutableList.copyOf(tableSnippets.list().getValues());
+    List<FieldValueList> rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     while (rows.isEmpty()) {
       Thread.sleep(500);
       rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     }
     Set<List<?>> values =
-        FluentIterable.from(rows).transform(new Function<FieldValues, List<?>>() {
+        FluentIterable.from(rows).transform(new Function<FieldValueList, List<?>>() {
           @Override
-          public List<?> apply(FieldValues row) {
+          public List<?> apply(FieldValueList row) {
             return ImmutableList.of(row.get(0).getStringValue(), row.get(1).getBooleanValue());
           }
         }).toSet();
@@ -188,7 +187,7 @@ public class ITTableSnippets {
 
   @Test
   public void testList() throws InterruptedException {
-    List<FieldValues> rows = ImmutableList.copyOf(tableSnippets.list().getValues());
+    List<FieldValueList> rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     assertEquals(0, rows.size());
 
     InsertAllResponse response = tableSnippets.insert("row1", "row2");
@@ -239,12 +238,12 @@ public class ITTableSnippets {
    * @param checkTable the table to query
    */
   private void verifyTestRows(Table checkTable) throws InterruptedException {
-    List<FieldValues> rows = waitForTableRows(checkTable, 2);
+    List<FieldValueList> rows = waitForTableRows(checkTable, 2);
     // Verify that the table data matches what it's supposed to.
     Set<List<?>> values =
-        FluentIterable.from(rows).transform(new Function<FieldValues, List<?>>() {
+        FluentIterable.from(rows).transform(new Function<FieldValueList, List<?>>() {
           @Override
-          public List<?> apply(FieldValues row) {
+          public List<?> apply(FieldValueList row) {
             return ImmutableList.of(row.get(0).getStringValue(), row.get(1).getBooleanValue());
           }
         }).toSet();
@@ -259,11 +258,11 @@ public class ITTableSnippets {
    * @param numRows the expected number of rows
    * @return the rows from the table
    */
-  private List<FieldValues> waitForTableRows(Table checkTable, int numRows)
+  private List<FieldValueList> waitForTableRows(Table checkTable, int numRows)
       throws InterruptedException {
     // Wait for the data to appear.
-    Page<FieldValues> page = checkTable.list(TableDataListOption.pageSize(100));
-    List<FieldValues> rows = ImmutableList.copyOf(page.getValues());
+    Page<FieldValueList> page = checkTable.list(TableDataListOption.pageSize(100));
+    List<FieldValueList> rows = ImmutableList.copyOf(page.getValues());
     while (rows.size() != numRows) {
       Thread.sleep(1000);
       page = checkTable.list(TableDataListOption.pageSize(100));

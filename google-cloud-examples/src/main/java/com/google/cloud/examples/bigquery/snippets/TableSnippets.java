@@ -22,7 +22,7 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
-import com.google.cloud.bigquery.FieldValues;
+import com.google.cloud.bigquery.FieldValueList;
 import org.threeten.bp.Duration;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.RetryOption;
@@ -166,10 +166,10 @@ public class TableSnippets {
    * Example of listing rows in the table.
    */
   // [TARGET list(TableDataListOption...)]
-  public Page<FieldValues> list() {
+  public Page<FieldValueList> list() {
     // [START list]
-    Page<FieldValues> page = table.list(TableDataListOption.pageSize(100));
-    for (FieldValues row : page.iterateAll()) {
+    Page<FieldValueList> page = table.list(TableDataListOption.pageSize(100));
+    for (FieldValueList row : page.iterateAll()) {
       // do something with the row
     }
     // [END list]

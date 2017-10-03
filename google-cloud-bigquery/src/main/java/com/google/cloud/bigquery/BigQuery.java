@@ -865,16 +865,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
-   * Page<FieldValues> tableData =
+   * Page<FieldValueList> tableData =
    *     bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
-   * for (FieldValues row : tableData.iterateAll()) {
+   * for (FieldValueList row : tableData.iterateAll()) {
    *   // do something with the row
    * }
    * }</pre>
    *
    * @throws BigQueryException upon failure
    */
-  Page<FieldValues> listTableData(String datasetId, String tableId,
+  Page<FieldValueList> listTableData(String datasetId, String tableId,
       TableDataListOption... options);
 
   /**
@@ -885,16 +885,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * TableId tableIdObject = TableId.of(datasetName, tableName);
-   * Page<FieldValues> tableData =
+   * Page<FieldValueList> tableData =
    *     bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
-   * for (FieldValues row : rowIterator.hasNext()) {
+   * for (FieldValueList row : rowIterator.hasNext()) {
    *   // do something with the row
    * }
    * }</pre>
    *
    * @throws BigQueryException upon failure
    */
-  Page<FieldValues> listTableData(TableId tableId, TableDataListOption... options);
+  Page<FieldValueList> listTableData(TableId tableId, TableDataListOption... options);
 
   /**
    * Returns the requested job or {@code null} if not found.
@@ -1007,7 +1007,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *   // handle errors
    * }
    * QueryResult result = response.getResult();
-   * for (FieldValues row : result.iterateAll()) {
+   * for (FieldValueList row : result.iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
@@ -1024,7 +1024,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *   // handle errors
    * }
    * QueryResult result = response.getResult();
-   * for (FieldValues row : result.iterateAll()) {
+   * for (FieldValueList row : result.iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
@@ -1078,8 +1078,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *   // handle errors
    * }
    * QueryResult result = response.getResult();
-   * Iterator<FieldValues> rowIterator = result.iterateAll();
-   * for (FieldValues row : result.iterateAll()) {
+   * Iterator<FieldValueList> rowIterator = result.iterateAll();
+   * for (FieldValueList row : result.iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>

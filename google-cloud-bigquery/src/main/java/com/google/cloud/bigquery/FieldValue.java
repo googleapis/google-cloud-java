@@ -214,16 +214,16 @@ public class FieldValue implements Serializable {
 
 
   /**
-   * Returns this field's value as a {@link FieldValues} instance. This method should only be used if
+   * Returns this field's value as a {@link FieldValueList} instance. This method should only be used if
    * the corresponding field has {@link LegacySQLTypeName#RECORD} type (i.e.
    * {@link #getAttribute()} is {@link Attribute#RECORD}).
    *
    * @throws ClassCastException if the field is not a {@link LegacySQLTypeName#RECORD} type
    * @throws NullPointerException if {@link #isNull()} returns {@code true}
    */
-  public FieldValues getRecordValue() {
+  public FieldValueList getRecordValue() {
     checkNotNull(value);
-    return (FieldValues) value;
+    return (FieldValueList) value;
   }
 
   @Override
@@ -268,7 +268,7 @@ public class FieldValue implements Serializable {
       return FieldValue.of(Attribute.PRIMITIVE, cellPb);
     }
     if (cellPb instanceof List) {
-      return FieldValue.of(Attribute.REPEATED, FieldValues.fromPb((List<Object>) cellPb, null));
+      return FieldValue.of(Attribute.REPEATED, FieldValueList.fromPb((List<Object>) cellPb, null));
     }
     if (cellPb instanceof Map) {
       Map<String, Object> cellMapPb = (Map<String, Object>) cellPb;
@@ -276,7 +276,7 @@ public class FieldValue implements Serializable {
         FieldList subFieldsSchema = recordSchema != null ? recordSchema.getSubFields() : null;
         return FieldValue.of(
             Attribute.RECORD,
-            FieldValues.fromPb((List<Object>) cellMapPb.get("f"), subFieldsSchema));
+            FieldValueList.fromPb((List<Object>) cellMapPb.get("f"), subFieldsSchema));
       }
       // This should never be the case when we are processing a first level table field (i.e. a
       // row's field, not a record sub-field)

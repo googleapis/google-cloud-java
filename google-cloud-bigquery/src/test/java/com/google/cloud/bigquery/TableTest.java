@@ -80,10 +80,10 @@ public class TableTest {
       FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
   private static final FieldValue FIELD_VALUE2 =
       FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
-  private static final Iterable<FieldValues> ROWS =
+  private static final Iterable<FieldValueList> ROWS =
       ImmutableList.of(
-          FieldValues.of(ImmutableList.of(FIELD_VALUE1)),
-          FieldValues.of(ImmutableList.of(FIELD_VALUE2)));
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE1)),
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE2)));
   private BigQuery serviceMockReturnsOptions = createStrictMock(BigQuery.class);
   private BigQueryOptions mockOptions = createMock(BigQueryOptions.class);
   private BigQuery bigquery;
@@ -273,13 +273,13 @@ public class TableTest {
   public void testList() throws Exception {
     initializeExpectedTable(1);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    PageImpl<FieldValues> tableDataPage = new PageImpl<>(null, "c", ROWS);
+    PageImpl<FieldValueList> tableDataPage = new PageImpl<>(null, "c", ROWS);
     expect(bigquery.listTableData(TABLE_ID1)).andReturn(tableDataPage);
     replay(bigquery);
     initializeTable();
-    Page<FieldValues> dataPage = table.list();
-    Iterator<FieldValues> tableDataIterator = dataPage.getValues().iterator();
-    Iterator<FieldValues> dataIterator = dataPage.getValues().iterator();
+    Page<FieldValueList> dataPage = table.list();
+    Iterator<FieldValueList> tableDataIterator = dataPage.getValues().iterator();
+    Iterator<FieldValueList> dataIterator = dataPage.getValues().iterator();
     assertTrue(Iterators.elementsEqual(tableDataIterator, dataIterator));
   }
 
@@ -287,14 +287,14 @@ public class TableTest {
   public void testListWithOptions() throws Exception {
     initializeExpectedTable(1);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    PageImpl<FieldValues> tableDataPage = new PageImpl<>(null, "c", ROWS);
+    PageImpl<FieldValueList> tableDataPage = new PageImpl<>(null, "c", ROWS);
     expect(bigquery.listTableData(TABLE_ID1, BigQuery.TableDataListOption.pageSize(10L)))
         .andReturn(tableDataPage);
     replay(bigquery);
     initializeTable();
-    Page<FieldValues> dataPage = table.list(BigQuery.TableDataListOption.pageSize(10L));
-    Iterator<FieldValues> tableDataIterator = dataPage.getValues().iterator();
-    Iterator<FieldValues> dataIterator = dataPage.getValues().iterator();
+    Page<FieldValueList> dataPage = table.list(BigQuery.TableDataListOption.pageSize(10L));
+    Iterator<FieldValueList> tableDataIterator = dataPage.getValues().iterator();
+    Iterator<FieldValueList> dataIterator = dataPage.getValues().iterator();
     assertTrue(Iterators.elementsEqual(tableDataIterator, dataIterator));
   }
 

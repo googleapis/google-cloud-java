@@ -47,7 +47,7 @@ import com.google.cloud.bigquery.ExternalTableDefinition;
 import com.google.cloud.bigquery.ExtractJobConfiguration;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldValue;
-import com.google.cloud.bigquery.FieldValues;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
@@ -86,7 +86,6 @@ import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -432,7 +431,7 @@ public class ITBigQueryTest {
         config, QueryOption.of(QueryResultsOption.maxWaitTime(60000L)));
     long integerValue = 0;
     int rowCount = 0;
-    for (FieldValues row : response.getResult().getValues()) {
+    for (FieldValueList row : response.getResult().getValues()) {
       FieldValue timestampCell = row.get(0);
       assertEquals(timestampCell, row.get("TimestampField"));
       FieldValue stringCell = row.get(1);
@@ -493,7 +492,7 @@ public class ITBigQueryTest {
         QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
         QueryOption.of(QueryResultsOption.pageSize(1000L)));
     int rowCount = 0;
-    for (FieldValues row : response.getResult().getValues()) {
+    for (FieldValueList row : response.getResult().getValues()) {
       FieldValue timestampCell = row.get(0);
       assertEquals(timestampCell, row.get("TimestampField"));
       FieldValue stringCell = row.get(1);
@@ -734,9 +733,9 @@ public class ITBigQueryTest {
 
   @Test
   public void testListAllTableData() {
-    Page<FieldValues> rows = bigquery.listTableData(TABLE_ID);
+    Page<FieldValueList> rows = bigquery.listTableData(TABLE_ID);
     int rowCount = 0;
-    for (FieldValues row : rows.getValues()) {
+    for (FieldValueList row : rows.getValues()) {
       FieldValue timestampCell = row.get(0);
       FieldValue stringCell = row.get(1);
       FieldValue integerArrayCell = row.get(2);
@@ -784,7 +783,7 @@ public class ITBigQueryTest {
         QueryOption.of(QueryResultsOption.pageSize(1000L)));
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
     int rowCount = 0;
-    for (FieldValues row : response.getResult().getValues()) {
+    for (FieldValueList row : response.getResult().getValues()) {
       FieldValue timestampCell = row.get(0);
       assertEquals(timestampCell, row.get("TimestampField"));
       FieldValue stringCell = row.get(1);
@@ -873,7 +872,7 @@ public class ITBigQueryTest {
     QueryResponse response = bigquery.query(
         config, QueryOption.of(QueryResultsOption.maxWaitTime(60000L)));
     int rowCount = 0;
-    for (FieldValues row : response.getResult().getValues()) {
+    for (FieldValueList row : response.getResult().getValues()) {
       rowCount++;
       assertEquals(2, row.get(0).getLongValue());
       assertEquals(2, row.get("length").getLongValue());
@@ -1038,7 +1037,7 @@ public class ITBigQueryTest {
     assertFalse(response.hasErrors());
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
     int rowCount = 0;
-    for (FieldValues row : response.getResult().getValues()) {
+    for (FieldValueList row : response.getResult().getValues()) {
       FieldValue timestampCell = row.get(0);
       FieldValue stringCell = row.get(1);
       FieldValue booleanCell = row.get(2);
@@ -1150,9 +1149,9 @@ public class ITBigQueryTest {
     assertEquals(TABLE_SCHEMA, jobConfiguration.getSchema());
     assertNull(jobConfiguration.getSourceUris());
     assertNull(job.getStatus().getError());
-    Page<FieldValues> rows = bigquery.listTableData(tableId);
+    Page<FieldValueList> rows = bigquery.listTableData(tableId);
     int rowCount = 0;
-    for (FieldValues row : rows.getValues()) {
+    for (FieldValueList row : rows.getValues()) {
       FieldValue timestampCell = row.get(0);
       FieldValue stringCell = row.get(1);
       FieldValue integerArrayCell = row.get(2);

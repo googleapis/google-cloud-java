@@ -22,8 +22,6 @@ import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 
-import java.util.List;
-
 public class QueryResultTest {
 
   private static final String CURSOR = "cursor";
@@ -51,7 +49,7 @@ public class QueryResultTest {
       .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .setCursor(CURSOR)
       .setPageFetcher(FETCHER)
-      .setResults(ImmutableList.<FieldValues>of())
+      .setResults(ImmutableList.<FieldValueList>of())
       .setCacheHit(CACHE_HIT)
       .build();
   private static final QueryResult QUERY_RESULT_INCOMPLETE = QueryResult.newBuilder()
