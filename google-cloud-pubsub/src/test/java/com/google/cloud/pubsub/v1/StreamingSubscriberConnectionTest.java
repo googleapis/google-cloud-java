@@ -23,20 +23,29 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import org.junit.Test;
+import org.threeten.bp.Duration;
 
 public class StreamingSubscriberConnectionTest {
   @Test
   public void testPartitionAckOperations() {
     List<StreamingPullRequest> requests;
+    int paddingSecs = 2;
+    Duration padding = Duration.ofSeconds(paddingSecs);
 
     requests =
         StreamingSubscriberConnection.partitionAckOperations(
-            Collections.<String>emptyList(), Collections.<PendingModifyAckDeadline>emptyList(), 3);
+            Collections.<String>emptyList(),
+            Collections.<PendingModifyAckDeadline>emptyList(),
+            3,
+            padding);
     Truth.assertThat(requests).isEmpty();
 
     requests =
         StreamingSubscriberConnection.partitionAckOperations(
-            Arrays.asList("a", "b", "c"), Collections.<PendingModifyAckDeadline>emptyList(), 3);
+            Arrays.asList("a", "b", "c"),
+            Collections.<PendingModifyAckDeadline>emptyList(),
+            3,
+            padding);
     Truth.assertThat(requests)
         .containsExactly(
             StreamingPullRequest.newBuilder().addAckIds("a").addAckIds("b").addAckIds("c").build())
@@ -46,7 +55,8 @@ public class StreamingSubscriberConnectionTest {
         StreamingSubscriberConnection.partitionAckOperations(
             Arrays.asList("a", "b", "c", "d"),
             Collections.<PendingModifyAckDeadline>emptyList(),
-            3);
+            3,
+            padding);
     Truth.assertThat(requests)
         .containsExactly(
             StreamingPullRequest.newBuilder().addAckIds("a").addAckIds("b").addAckIds("c").build(),
@@ -57,7 +67,8 @@ public class StreamingSubscriberConnectionTest {
         StreamingSubscriberConnection.partitionAckOperations(
             Arrays.asList("a", "b", "c", "d"),
             Arrays.asList(new PendingModifyAckDeadline(42, "w")),
-            3);
+            3,
+            padding);
     Truth.assertThat(requests)
         .containsExactly(
             StreamingPullRequest.newBuilder()
@@ -65,22 +76,25 @@ public class StreamingSubscriberConnectionTest {
                 .addAckIds("b")
                 .addAckIds("c")
                 .addModifyDeadlineAckIds("w")
-                .addModifyDeadlineSeconds(42)
+                .addModifyDeadlineSeconds(42 + paddingSecs)
                 .build(),
             StreamingPullRequest.newBuilder().addAckIds("d").build())
         .inOrder();
 
     requests =
         StreamingSubscriberConnection.partitionAckOperations(
-            Arrays.asList("a"), Arrays.asList(new PendingModifyAckDeadline(42, "w", "x")), 3);
+            Arrays.asList("a"),
+            Arrays.asList(new PendingModifyAckDeadline(42, "w", "x")),
+            3,
+            padding);
     Truth.assertThat(requests)
         .containsExactly(
             StreamingPullRequest.newBuilder()
                 .addAckIds("a")
                 .addModifyDeadlineAckIds("w")
-                .addModifyDeadlineSeconds(42)
+                .addModifyDeadlineSeconds(42 + paddingSecs)
                 .addModifyDeadlineAckIds("x")
-                .addModifyDeadlineSeconds(42)
+                .addModifyDeadlineSeconds(42 + paddingSecs)
                 .build())
         .inOrder();
 
@@ -90,21 +104,22 @@ public class StreamingSubscriberConnectionTest {
             Arrays.asList(
                 new PendingModifyAckDeadline(42, "w", "x"),
                 new PendingModifyAckDeadline(43, "y", "z")),
-            3);
+            3,
+            padding);
     Truth.assertThat(requests)
         .containsExactly(
             StreamingPullRequest.newBuilder()
                 .addAckIds("a")
                 .addModifyDeadlineAckIds("w")
-                .addModifyDeadlineSeconds(42)
+                .addModifyDeadlineSeconds(42 + paddingSecs)
                 .addModifyDeadlineAckIds("x")
-                .addModifyDeadlineSeconds(42)
+                .addModifyDeadlineSeconds(42 + paddingSecs)
                 .addModifyDeadlineAckIds("y")
-                .addModifyDeadlineSeconds(43)
+                .addModifyDeadlineSeconds(43 + paddingSecs)
                 .build(),
             StreamingPullRequest.newBuilder()
                 .addModifyDeadlineAckIds("z")
-                .addModifyDeadlineSeconds(43)
+                .addModifyDeadlineSeconds(43 + paddingSecs)
                 .build())
         .inOrder();
   }

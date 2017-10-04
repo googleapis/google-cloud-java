@@ -24,6 +24,7 @@ import com.google.cloud.pubsub.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
+import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.SettableFuture;
@@ -59,6 +60,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private final String subscription;
   private final ScheduledExecutorService executor;
   private final MessageDispatcher messageDispatcher;
+  private final Duration ackExpirationPadding;
 
   private final AtomicLong channelReconnectBackoffMillis =
       new AtomicLong(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
@@ -82,11 +84,12 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     this.subscription = subscription;
     this.executor = executor;
     this.asyncStub = asyncStub;
+    this.ackExpirationPadding = ackExpirationPadding;
     this.messageDispatcher =
         new MessageDispatcher(
             receiver,
             this,
-            ackExpirationPadding,
+            Duration.ZERO,
             maxAckExtensionPeriod,
             ackLatencyDistribution,
             flowController,
@@ -94,7 +97,9 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             executor,
             alarmsExecutor,
             clock);
-    messageDispatcher.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
+    messageDispatcher.setMessageDeadline(
+        intendedToExtensionDeadline(
+            Duration.ofSeconds(streamAckDeadlineSeconds), ackExpirationPadding));
   }
 
   @Override
@@ -185,14 +190,19 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     final ClientCallStreamObserver<StreamingPullRequest> requestObserver =
         (ClientCallStreamObserver<StreamingPullRequest>)
             (asyncStub.streamingPull(responseObserver));
+
+    Duration deadline =
+        extensionToServerDeadline(
+            Duration.ofSeconds(messageDispatcher.getMessageDeadlineSeconds()),
+            ackExpirationPadding);
     logger.log(
         Level.FINER,
         "Initializing stream to subscription {0} with deadline {1}",
-        new Object[] {subscription, messageDispatcher.getMessageDeadlineSeconds()});
+        new Object[] {subscription, deadline});
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
-            .setStreamAckDeadlineSeconds(messageDispatcher.getMessageDeadlineSeconds())
+            .setStreamAckDeadlineSeconds(Ints.saturatedCast(deadline.getSeconds()))
             .build());
     requestObserver.request(1);
 
@@ -261,7 +271,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   public void sendAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
     List<StreamingPullRequest> requests =
-        partitionAckOperations(acksToSend, ackDeadlineExtensions, MAX_PER_REQUEST_CHANGES);
+        partitionAckOperations(
+            acksToSend, ackDeadlineExtensions, MAX_PER_REQUEST_CHANGES, ackExpirationPadding);
     lock.lock();
     try {
       for (StreamingPullRequest request : requests) {
@@ -276,7 +287,10 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   @VisibleForTesting
   static List<StreamingPullRequest> partitionAckOperations(
-      List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions, int size) {
+      List<String> acksToSend,
+      List<PendingModifyAckDeadline> ackDeadlineExtensions,
+      int size,
+      Duration padding) {
     int numExtensions = 0;
     for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
       numExtensions += modify.ackIds.size();
@@ -298,10 +312,18 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     reqCount = 0;
     int ackCount = 0;
     for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
+      // If the extension is zero, it's a nack, don't do anything.
+      // Otherwise, add the padding.
+      int serverExtensionSeconds = 0;
+      if (modify.deadlineExtensionSeconds != 0) {
+        Duration intendedDeadlineExtension = Duration.ofSeconds(modify.deadlineExtensionSeconds);
+        Duration serverExtension = intendedToServerDeadline(intendedDeadlineExtension, padding);
+        serverExtensionSeconds = (int) (serverExtension.getSeconds());
+      }
       for (String ackId : modify.ackIds) {
         requests
             .get(reqCount)
-            .addModifyDeadlineSeconds(modify.deadlineExtensionSeconds)
+            .addModifyDeadlineSeconds(serverExtensionSeconds)
             .addModifyDeadlineAckIds(ackId);
         ackCount++;
         if (ackCount == size) {
@@ -318,18 +340,66 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     return ret;
   }
 
-  public void updateStreamAckDeadline(int newAckDeadlineSeconds) {
-    messageDispatcher.setMessageDeadlineSeconds(newAckDeadlineSeconds);
+  public void updateStreamAckDeadline(int intendedDeadlineSeconds) {
+    Duration intendedDeadline = Duration.ofSeconds(intendedDeadlineSeconds);
+    messageDispatcher.setMessageDeadline(
+        intendedToExtensionDeadline(intendedDeadline, ackExpirationPadding));
     lock.lock();
     try {
       requestObserver.onNext(
           StreamingPullRequest.newBuilder()
-              .setStreamAckDeadlineSeconds(newAckDeadlineSeconds)
+              .setStreamAckDeadlineSeconds(
+                  (int)
+                      (intendedToServerDeadline(intendedDeadline, ackExpirationPadding)
+                          .getSeconds()))
               .build());
     } catch (Exception e) {
       logger.log(Level.WARNING, "failed to set deadline", e);
     } finally {
       lock.unlock();
     }
+  }
+
+  /*
+    We define 3 forms of deadline:
+    1. intendedDeadline: The amount of time we take to process a message.
+    2. extensionDeadline: After we hold on to the message for this amount of time,
+      we ask the server for extension.
+    3. serverDeadline: The deadline we configure the stream to.
+
+    Consider the following scenarios:
+    Scenario 1.
+    We take about 10 seconds to process a message (intendedDeadline = 10s).
+    However, we expect 5s communication latency, so we have to ask the server
+    for a little more time (serverDeadline = intendedDeadline + padding = 10s + 5s = 15s)
+    so that the message doesn't expire before our ACK reaches the server.
+    The latency also affect modify deadline requests, so we need to send modify request
+    a little before the serverDeadline (extensionDeadline = serverDeadline - padding = 15s - 5s = 10s).
+
+    Scenario 2.
+    We think we take 600 seconds to process a message (intendedDeadline = 600s).
+    We also expect 5s latency, but then we can't set server deadline to 605s,
+    since pubsub only supports deadline up to 600s.
+    Our best course of action is to set serverDeadline as high as possible (serverDeadline = 600s).
+    Like scenario 1, we need to send modify deadline requests a little before
+    (extensionDeadline = serverDeadline - padding = 600s - 5s = 595s)
+
+    The helper methods below convert between these deadlines.
+  */
+
+  private static Duration intendedToServerDeadline(Duration intendedDeadline, Duration padding) {
+    Duration deadline = intendedDeadline.plus(padding);
+    if (deadline.compareTo(MessageDispatcher.MAX_ACK_DEADLINE) > 0) {
+      deadline = MessageDispatcher.MAX_ACK_DEADLINE;
+    }
+    return deadline;
+  }
+
+  private static Duration intendedToExtensionDeadline(Duration intendedDeadline, Duration padding) {
+    return intendedToServerDeadline(intendedDeadline, padding).minus(padding);
+  }
+
+  private static Duration extensionToServerDeadline(Duration extensionDeadline, Duration padding) {
+    return extensionDeadline.plus(padding);
   }
 }

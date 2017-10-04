@@ -90,8 +90,8 @@ public class Subscriber extends AbstractApiService {
   private static final int MAX_INBOUND_MESSAGE_SIZE =
       20 * 1024 * 1024; // 20MB API maximum message size.
   private static final int INITIAL_ACK_DEADLINE_SECONDS = 10;
-  private static final int MAX_ACK_DEADLINE_SECONDS = 600;
-  static final int MIN_ACK_DEADLINE_SECONDS = 10;
+  static final Duration MAX_ACK_DEADLINE = Duration.ofSeconds(600);
+  static final Duration MIN_ACK_DEADLINE = Duration.ofSeconds(10);
   private static final Duration ACK_DEADLINE_UPDATE_PERIOD = Duration.ofMinutes(1);
   private static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
 
@@ -108,7 +108,7 @@ public class Subscriber extends AbstractApiService {
   private final ScheduledExecutorService executor;
   @Nullable private final ScheduledExecutorService alarmsExecutor;
   private final Distribution ackLatencyDistribution =
-      new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
+      new Distribution((int) (MAX_ACK_DEADLINE.getSeconds()) + 1);
   private final int numChannels;
   private final FlowController flowController;
   private final ChannelProvider channelProvider;
@@ -132,11 +132,7 @@ public class Subscriber extends AbstractApiService {
     cachedSubscriptionNameString = subscriptionName.toString();
     ackExpirationPadding = builder.ackExpirationPadding;
     maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
-    long streamAckDeadlineMillis = ackExpirationPadding.toMillis();
-    streamAckDeadlineSeconds =
-        Math.max(
-            INITIAL_ACK_DEADLINE_SECONDS,
-            Ints.saturatedCast(TimeUnit.MILLISECONDS.toSeconds(streamAckDeadlineMillis)));
+    streamAckDeadlineSeconds = INITIAL_ACK_DEADLINE_SECONDS;
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
     flowController =
@@ -418,13 +414,11 @@ public class Subscriber extends AbstractApiService {
   }
 
   private void updateAckDeadline() {
-    // It is guaranteed this will be <= MAX_ACK_DEADLINE_SECONDS, the max of the API.
+    // It is guaranteed this will be <= MAX_ACK_DEADLINE.getSeconds(), the max of the API.
     long ackLatency = ackLatencyDistribution.getNthPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
     if (ackLatency > 0) {
       int possibleStreamAckDeadlineSeconds =
-          Math.max(
-              MIN_ACK_DEADLINE_SECONDS,
-              Ints.saturatedCast(Math.max(ackLatency, ackExpirationPadding.getSeconds())));
+          Math.max((int) (MIN_ACK_DEADLINE.getSeconds()), Ints.saturatedCast(ackLatency));
       if (streamAckDeadlineSeconds != possibleStreamAckDeadlineSeconds) {
         streamAckDeadlineSeconds = possibleStreamAckDeadlineSeconds;
         logger.log(
@@ -481,7 +475,7 @@ public class Subscriber extends AbstractApiService {
   /** Builder of {@link Subscriber Subscribers}. */
   public static final class Builder {
     private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.ofMillis(100);
-    private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.ofMillis(500);
+    private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.ofSeconds(5);
     private static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
     private static final long DEFAULT_MEMORY_PERCENTAGE = 20;
 

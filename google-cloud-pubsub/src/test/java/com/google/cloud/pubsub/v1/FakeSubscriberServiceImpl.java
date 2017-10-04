@@ -51,7 +51,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
   private final AtomicBoolean subscriptionInitialized = new AtomicBoolean(false);
   private String subscription = "";
   private final AtomicInteger messageAckDeadline =
-      new AtomicInteger(Subscriber.MIN_ACK_DEADLINE_SECONDS);
+      new AtomicInteger((int) (Subscriber.MIN_ACK_DEADLINE.getSeconds()));
   private final AtomicInteger getSubscriptionCalled = new AtomicInteger();
   private final List<Stream> openedStreams = new ArrayList<>();
   private final List<Stream> closedStreams = new ArrayList<>();
