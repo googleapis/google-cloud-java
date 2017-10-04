@@ -303,7 +303,6 @@ public class SubscriberTest {
     if (!isStreamingTest) {
       return;
     }
-    System.err.println("testModifyAckDeadline " + isStreamingTest);
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
