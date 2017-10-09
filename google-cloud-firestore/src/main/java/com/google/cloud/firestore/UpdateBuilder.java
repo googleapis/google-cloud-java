@@ -472,12 +472,13 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
         new ApiFunction<CommitResponse, List<WriteResult>>() {
           @Override
           public List<WriteResult> apply(CommitResponse commitResponse) {
-            List<com.google.firestore.v1beta1.WriteResult> protoWriteResultList =
+            List<com.google.firestore.v1beta1.WriteResult> writeResults =
                 commitResponse.getWriteResultsList();
 
             List<WriteResult> writeResultList = new ArrayList<>();
-            for (com.google.firestore.v1beta1.WriteResult protoWriteResult : protoWriteResultList) {
-              writeResultList.add(WriteResult.fromProto(protoWriteResult));
+            for (com.google.firestore.v1beta1.WriteResult writeResult : writeResults) {
+              writeResultList.add(
+                  WriteResult.fromProto(writeResult, commitResponse.getCommitTime()));
             }
 
             return writeResultList;

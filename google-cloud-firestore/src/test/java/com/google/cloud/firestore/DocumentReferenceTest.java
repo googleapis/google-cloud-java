@@ -27,6 +27,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.GEO_POINT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.NESTED_CLASS_OBJECT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_TRANSFORM;
+import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_DELETE_COMMIT_RESPONSE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_MAP;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_OBJECT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_PROTO;
@@ -255,7 +256,7 @@ public class DocumentReferenceTest {
 
   @Test
   public void deleteDocument() throws Exception {
-    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+    doReturn(SINGLE_DELETE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());

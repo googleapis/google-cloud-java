@@ -92,6 +92,7 @@ public final class LocalFirestoreHelper {
   public static final Map<String, Value> ALL_SUPPORTED_TYPES_PROTO;
 
   public static final CommitRequest SINGLE_CREATE_COMMIT_REQUEST;
+  public static final ApiFuture<CommitResponse> SINGLE_DELETE_COMMIT_RESPONSE;
   public static final ApiFuture<CommitResponse> SINGLE_WRITE_COMMIT_RESPONSE;
 
   public static final Date DATE;
@@ -196,11 +197,14 @@ public final class LocalFirestoreHelper {
     };
   }
 
-  public static ApiFuture<CommitResponse> commitResponse(int count) {
+  public static ApiFuture<CommitResponse> commitResponse(int adds, int deletes) {
     CommitResponse.Builder commitResponse = CommitResponse.newBuilder();
     commitResponse.getCommitTimeBuilder().setSeconds(0).setNanos(0);
-    for (int i = 0; i < count; ++i) {
+    for (int i = 0; i < adds; ++i) {
       commitResponse.addWriteResultsBuilder().getUpdateTimeBuilder().setSeconds(i).setNanos(i);
+    }
+    for (int i = 0; i < deletes; ++i) {
+      commitResponse.addWriteResultsBuilder();
     }
     return ApiFutures.immediateFuture(commitResponse.build());
   }
@@ -628,7 +632,8 @@ public final class LocalFirestoreHelper {
             .build();
     ALL_SUPPORTED_TYPES_OBJECT = new AllSupportedTypes();
 
-    SINGLE_WRITE_COMMIT_RESPONSE = commitResponse(1);
+    SINGLE_WRITE_COMMIT_RESPONSE = commitResponse(/* adds= */ 1, /* deletes= */ 0);
+    SINGLE_DELETE_COMMIT_RESPONSE = commitResponse(/* adds= */ 0, /* deletes= */ 1);
     SINGLE_CREATE_COMMIT_REQUEST = commit(create(SINGLE_FIELD_PROTO));
 
     NESTED_CLASS_OBJECT = new NestedClass();
