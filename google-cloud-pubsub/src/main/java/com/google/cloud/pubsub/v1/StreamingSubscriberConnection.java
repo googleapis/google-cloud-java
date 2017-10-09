@@ -229,11 +229,12 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
               logger.log(Level.FINE, "pull failure after service no longer running", cause);
               return;
             }
-            logger.log(Level.WARNING, "Terminated streaming with exception", cause);
             if (!StatusUtil.isRetryable(cause)) {
+              logger.log(Level.SEVERE, "terminated streaming with exception", cause);
               notifyFailed(cause);
               return;
             }
+            logger.log(Level.FINE, "stream closed with retryable exception; will reconnect", cause);
             long backoffMillis = channelReconnectBackoffMillis.get();
             long newBackoffMillis =
                 Math.min(backoffMillis * 2, MAX_CHANNEL_RECONNECT_BACKOFF.toMillis());
