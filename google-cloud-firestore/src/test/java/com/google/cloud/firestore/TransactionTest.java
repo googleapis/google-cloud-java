@@ -104,7 +104,7 @@ public class TransactionTest {
   @Test
   public void returnsValue() throws Exception {
     doReturn(beginResponse())
-        .doReturn(commitResponse(0))
+        .doReturn(commitResponse(0, 0))
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
@@ -133,7 +133,7 @@ public class TransactionTest {
     doReturn(beginResponse())
         .doReturn(ApiFutures.immediateFailedFuture(new Exception()))
         .doReturn(beginResponse(ByteString.copyFromUtf8("foo2")))
-        .doReturn(commitResponse(0))
+        .doReturn(commitResponse(0, 0))
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
@@ -269,7 +269,7 @@ public class TransactionTest {
         .doReturn(beginResponse(ByteString.copyFromUtf8("foo5")))
         .doReturn(ApiFutures.immediateFailedFuture(new Exception()))
         .doReturn(beginResponse(ByteString.copyFromUtf8("foo6")))
-        .doReturn(commitResponse(0))
+        .doReturn(commitResponse(0, 0))
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
@@ -305,7 +305,7 @@ public class TransactionTest {
   @Test
   public void getDocument() throws Exception {
     doReturn(beginResponse())
-        .doReturn(commitResponse(0))
+        .doReturn(commitResponse(0, 0))
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
@@ -340,7 +340,7 @@ public class TransactionTest {
   @Test
   public void getQuery() throws Exception {
     doReturn(beginResponse())
-        .doReturn(commitResponse(0))
+        .doReturn(commitResponse(0, 0))
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
@@ -375,7 +375,7 @@ public class TransactionTest {
   @Test
   public void updateDocument() throws Exception {
     doReturn(beginResponse())
-        .doReturn(commitResponse(0))
+        .doReturn(commitResponse(0, 0))
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
@@ -414,7 +414,7 @@ public class TransactionTest {
   @Test
   public void setDocument() throws Exception {
     doReturn(beginResponse())
-        .doReturn(commitResponse(0))
+        .doReturn(commitResponse(0, 0))
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
@@ -449,7 +449,7 @@ public class TransactionTest {
   @Test
   public void createDocument() throws Exception {
     doReturn(beginResponse())
-        .doReturn(commitResponse(0))
+        .doReturn(commitResponse(0, 0))
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
@@ -484,7 +484,7 @@ public class TransactionTest {
   @Test
   public void deleteDocument() throws Exception {
     doReturn(beginResponse())
-        .doReturn(commitResponse(0))
+        .doReturn(commitResponse(0, 0))
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
