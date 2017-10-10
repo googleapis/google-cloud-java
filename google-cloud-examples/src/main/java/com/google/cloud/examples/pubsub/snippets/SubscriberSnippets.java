@@ -82,7 +82,10 @@ public class SubscriberSnippets {
     subscriber.startAsync();
 
     // Wait for a stop signal.
+    // In a server, this might be a signal to stop serving.
+    // In this example, the signal is just a dummy Future.
     done.get();
+
     subscriber.stopAsync().awaitTerminated();
   }
 
