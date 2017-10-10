@@ -67,7 +67,7 @@ public class WriteBatchTest {
 
   @Test
   public void updateDocument() throws Exception {
-    doReturn(commitResponse(4))
+    doReturn(commitResponse(4, 0))
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
@@ -92,7 +92,7 @@ public class WriteBatchTest {
 
   @Test
   public void setDocument() throws Exception {
-    doReturn(commitResponse(2))
+    doReturn(commitResponse(2, 0))
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
@@ -120,7 +120,7 @@ public class WriteBatchTest {
 
   @Test
   public void createDocument() throws Exception {
-    doReturn(commitResponse(2))
+    doReturn(commitResponse(2, 0))
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
@@ -143,7 +143,7 @@ public class WriteBatchTest {
 
   @Test
   public void deleteDocument() throws Exception {
-    doReturn(commitResponse(2))
+    doReturn(commitResponse(2, 0))
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());

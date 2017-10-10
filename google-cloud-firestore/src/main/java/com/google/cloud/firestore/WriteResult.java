@@ -39,8 +39,9 @@ public final class WriteResult {
     return this.updateTime;
   }
 
-  static WriteResult fromProto(com.google.firestore.v1beta1.WriteResult protoWriteResult) {
-    Timestamp timestamp = protoWriteResult.getUpdateTime();
+  static WriteResult fromProto(
+      com.google.firestore.v1beta1.WriteResult writeResult, Timestamp commitTime) {
+    Timestamp timestamp = writeResult.hasUpdateTime() ? writeResult.getUpdateTime() : commitTime;
     Instant instant = Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos());
     return new WriteResult(instant);
   }

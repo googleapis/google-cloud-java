@@ -213,9 +213,11 @@ public class ITSystemTest {
     } catch (ExecutionException e) {
       assertTrue(e.getMessage().contains("FAILED_PRECONDITION"));
     }
-    documentReference.delete(Precondition.updatedAt(writeResult.getUpdateTime())).get();
+    writeResult =
+        documentReference.delete(Precondition.updatedAt(writeResult.getUpdateTime())).get();
     DocumentSnapshot documentSnapshot = documentReference.get().get();
     assertFalse(documentSnapshot.exists());
+    assertTrue(writeResult.getUpdateTime().getEpochSecond() > 0);
   }
 
   @Test
