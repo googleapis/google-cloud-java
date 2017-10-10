@@ -250,8 +250,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                 backoffMillis,
                 TimeUnit.MILLISECONDS);
           }
-        },
-        executor);
+        });
   }
 
   private boolean isAlive() {
