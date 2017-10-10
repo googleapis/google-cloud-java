@@ -17,7 +17,6 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
-import static com.google.spanner.v1.Mutation.Write;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.Timestamp;
@@ -28,6 +27,7 @@ import com.google.protobuf.util.Timestamps;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.Mutation.Write;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.ResultSetMetadata;

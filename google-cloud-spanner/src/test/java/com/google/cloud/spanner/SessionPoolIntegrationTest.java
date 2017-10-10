@@ -19,15 +19,12 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
-import com.google.common.util.concurrent.ListenableFuture;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -173,17 +170,8 @@ public class SessionPoolIntegrationTest {
   }
 
   @Test
-  public void closeWhenSessionsActiveDoesNotBlockIndefinitely() throws Exception {
+  public void closeWhenSessionsActiveFinishes() throws Exception {
     Session session = pool.getReadSession();
-    ListenableFuture<Void> future = pool.closeAsync();
-    try {
-      future.get(5, TimeUnit.SECONDS);
-      Assert.fail("Closure future should not have finished");
-    } catch (TimeoutException e) {
-      // expected
-    }
-    session.close();
-    // Now pool should close.
-    future.get();
+    pool.closeAsync().get();
   }
 }
