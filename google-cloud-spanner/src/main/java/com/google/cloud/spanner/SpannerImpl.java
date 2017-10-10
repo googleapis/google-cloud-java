@@ -1771,6 +1771,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               case STRUCT:
                 builder.add(fieldName, fieldType.getArrayElementType().getStructFields(), (Iterable<Struct>) value);
                 break;
+              default:
+                throw new AssertionError(
+                    "Unhandled array type code: " + fieldType.getArrayElementType());
             }
             break;
           case STRUCT: // Not a legal top-level field type.

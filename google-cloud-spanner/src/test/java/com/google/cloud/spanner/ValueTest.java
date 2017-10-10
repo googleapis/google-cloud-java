@@ -759,11 +759,11 @@ public class ValueTest {
     @Override protected List<T> delegate() {
       return delegate;
     }
-    private void readObject(java.io.ObjectInputStream stream)
+    private void readObject(java.io.ObjectInputStream unusedStream)
         throws IOException, ClassNotFoundException {
       throw new IllegalStateException("Serialization disabled");
     }
-    private void writeObject(java.io.ObjectOutputStream stream)
+    private void writeObject(java.io.ObjectOutputStream unusedStream)
         throws IOException {
       throw new IllegalStateException("Serialization disabled");
     }

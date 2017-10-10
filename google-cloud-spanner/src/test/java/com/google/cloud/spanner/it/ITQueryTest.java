@@ -583,7 +583,6 @@ public class ITQueryTest {
   }
 
   @Test
-  @Ignore
   public void analyzePlan() {
     Statement statement = Statement.of("SELECT 1 AS column UNION ALL SELECT 2");
     ResultSet resultSet =
@@ -597,7 +596,6 @@ public class ITQueryTest {
   }
 
   @Test
-  @Ignore
   public void analyzeProfile() {
     Statement statement =
         Statement.of("SELECT 1 AS column UNION ALL SELECT 2 AS column ORDER BY column");
