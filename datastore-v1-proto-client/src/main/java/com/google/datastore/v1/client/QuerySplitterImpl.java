@@ -61,10 +61,14 @@ final class QuerySplitterImpl implements QuerySplitter {
       Query query, PartitionId partition, int numSplits, Datastore datastore)
       throws DatastoreException, IllegalArgumentException {
 
+    List<Query> splits = new ArrayList<Query>(numSplits);
+    if (numSplits == 1) {
+      splits.add(query);
+      return splits;
+    }
     validateQuery(query);
     validateSplitSize(numSplits);
 
-    List<Query> splits = new ArrayList<Query>(numSplits);
     List<Key> scatterKeys = getScatterKeys(numSplits, query, partition, datastore);
     Key lastKey = null;
     for (Key nextKey : getSplitKey(scatterKeys, numSplits)) {

@@ -73,6 +73,7 @@ public class DatastoreFactory {
     HttpTransport transport = options.getTransport();
     if (transport == null) {
       transport = credential == null ? new NetHttpTransport() : credential.getTransport();
+      transport = transport == null ? new NetHttpTransport() : transport;
     }
     return transport.createRequestFactory(credential);
   }

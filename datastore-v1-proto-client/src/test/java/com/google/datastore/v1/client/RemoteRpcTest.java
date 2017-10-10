@@ -16,16 +16,27 @@
 package com.google.datastore.v1.client;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.util.Charsets;
+import com.google.datastore.v1.BeginTransactionResponse;
+import com.google.datastore.v1.client.RemoteRpc.GzipFixingInputStream;
+import com.google.protobuf.ByteString;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
-
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.zip.GZIPOutputStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.io.ByteArrayInputStream;
 
 /**
  * Test for {@link RemoteRpc}.
@@ -61,16 +72,40 @@ public class RemoteRpcTest {
         exception.getMessage());
     assertEquals(METHOD_NAME, exception.getMethodName());
   }
-  
+
   @Test
   public void testEmptyProtoException() {
     Status statusProto = Status.newBuilder().build();
-    DatastoreException exception = RemoteRpc.makeException("url", METHOD_NAME,
-        new ByteArrayInputStream(statusProto.toByteArray()), "application/x-protobuf",
-        Charsets.UTF_8, new RuntimeException(), 401);
+    DatastoreException exception =
+        RemoteRpc.makeException(
+            "url",
+            METHOD_NAME,
+            new ByteArrayInputStream(statusProto.toByteArray()),
+            "application/x-protobuf",
+            Charsets.UTF_8,
+            new RuntimeException(),
+            404);
     assertEquals(Code.INTERNAL, exception.getCode());
-    assertEquals("Unexpected OK error code with HTTP status code of 401. Message: .",
+    assertEquals(
+        "Unexpected OK error code with HTTP status code of 404. Message: .",
         exception.getMessage());
+    assertEquals(METHOD_NAME, exception.getMethodName());
+  }
+
+  @Test
+  public void testEmptyProtoExceptionUnauthenticated() {
+    Status statusProto = Status.newBuilder().build();
+    DatastoreException exception =
+        RemoteRpc.makeException(
+            "url",
+            METHOD_NAME,
+            new ByteArrayInputStream(statusProto.toByteArray()),
+            "application/x-protobuf",
+            Charsets.UTF_8,
+            new RuntimeException(),
+            401);
+    assertEquals(Code.UNAUTHENTICATED, exception.getCode());
+    assertEquals("Unauthenticated.", exception.getMessage());
     assertEquals(METHOD_NAME, exception.getMethodName());
   }
 
@@ -83,5 +118,197 @@ public class RemoteRpcTest {
     assertEquals(
         "Non-protobuf error: Text Error. HTTP status code was 401.", exception.getMessage());
     assertEquals(METHOD_NAME, exception.getMethodName());
+  }
+
+  @Test
+  public void testGzipHack_NonGzip() throws Exception {
+    BeginTransactionResponse resp = newBeginTransactionResp();
+    InjectedTestValues injectedTestValues =
+        new InjectedTestValues(resp.toByteArray(), new byte[0], false);
+    RemoteRpc rpc = newRemoteRpc(injectedTestValues);
+
+    InputStream is = rpc.call("beginTransaction", BeginTransactionResponse.getDefaultInstance());
+    BeginTransactionResponse parsedResp = BeginTransactionResponse.parseFrom(is);
+    is.close();
+
+    assertEquals(resp, parsedResp);
+    assertFalse(is instanceof GzipFixingInputStream);
+  }
+
+  @Test
+  public void testGzipHack_Gzip() throws Exception {
+    BeginTransactionResponse resp = newBeginTransactionResp();
+    InjectedTestValues injectedTestValues = new InjectedTestValues(gzip(resp), new byte[1], true);
+    RemoteRpc rpc = newRemoteRpc(injectedTestValues);
+
+    InputStream is = rpc.call("beginTransaction", BeginTransactionResponse.getDefaultInstance());
+    BeginTransactionResponse parsedResp = BeginTransactionResponse.parseFrom(is);
+    is.close();
+
+    assertEquals(resp, parsedResp);
+    assertTrue(is instanceof GzipFixingInputStream);
+    assertEquals(1, ((GzipFixingInputStream) is).callsToRead);
+    // Check that the underlying stream is exhausted.
+    assertEquals(-1, injectedTestValues.inputStream.read());
+  }
+
+  @Test
+  public void testGzipHack_GzipTooManyExtraBytes() throws Exception {
+    BeginTransactionResponse resp = newBeginTransactionResp();
+    // NOTE(eddavisson): We might expect 101 extra bytes to be enough that the underlying input
+    // stream is not exhausted, but this is not the case (likely due to a buffer somewhere). 1000
+    // extra bytes seems to be enough. We check the value of callsToRead directly to make sure
+    // we eventually stopped trying to consume the underlying stream.
+    InjectedTestValues injectedTestValues =
+        new InjectedTestValues(gzip(resp), new byte[1000], true);
+    RemoteRpc rpc = newRemoteRpc(injectedTestValues);
+
+    InputStream is = rpc.call("beginTransaction", BeginTransactionResponse.getDefaultInstance());
+    BeginTransactionResponse parsedResp = BeginTransactionResponse.parseFrom(is);
+    is.close();
+
+    assertEquals(resp, parsedResp);
+    assertTrue(is instanceof GzipFixingInputStream);
+    assertEquals(100, ((GzipFixingInputStream) is).callsToRead);
+    // Check that the underlying stream is _not_ exhausted.
+    assertNotEquals(-1, injectedTestValues.inputStream.read());
+  }
+
+  private static BeginTransactionResponse newBeginTransactionResp() {
+    return BeginTransactionResponse.newBuilder()
+        .setTransaction(ByteString.copyFromUtf8("blah-blah-blah"))
+        .build();
+  }
+
+  private static RemoteRpc newRemoteRpc(InjectedTestValues injectedTestValues) {
+    return new RemoteRpc(
+        new MyHttpTransport(injectedTestValues).createRequestFactory(),
+        null,
+        "https://www.example.com/v1/projects/p");
+  }
+
+  private byte[] gzip(BeginTransactionResponse resp) throws IOException {
+    ByteArrayOutputStream bytesOut = new ByteArrayOutputStream();
+    try (GZIPOutputStream gzipOut = new GZIPOutputStream(bytesOut)) {
+      resp.writeTo(gzipOut);
+    }
+    return bytesOut.toByteArray();
+  }
+
+  private static class InjectedTestValues {
+    private final InputStream inputStream;
+    private final int contentLength;
+    private final boolean isGzip;
+
+    public InjectedTestValues(byte[] messageBytes, byte[] additionalBytes, boolean isGzip) {
+      byte[] allBytes = concat(messageBytes, additionalBytes);
+      this.inputStream = new ByteArrayInputStream(allBytes);
+      this.contentLength = allBytes.length;
+      this.isGzip = isGzip;
+    }
+
+    private static byte[] concat(byte[] a, byte[] b) {
+      byte[] c = new byte[a.length + b.length];
+      System.arraycopy(a, 0, c, 0, a.length);
+      System.arraycopy(b, 0, c, a.length, b.length);
+      return c;
+    }
+  }
+
+  /** {@link HttpTransport} that allows injection of the returned {@link LowLevelHttpRequest}. */
+  private static class MyHttpTransport extends HttpTransport {
+
+    private final InjectedTestValues injectedTestValues;
+
+    public MyHttpTransport(InjectedTestValues injectedTestValues) {
+      this.injectedTestValues = injectedTestValues;
+    }
+
+    @Override
+    protected LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+      return new MyLowLevelHttpRequest(injectedTestValues);
+    }
+  }
+
+  /**
+   * {@link LowLevelHttpRequest} that allows injection of the returned {@link LowLevelHttpResponse}.
+   */
+  private static class MyLowLevelHttpRequest extends LowLevelHttpRequest {
+
+    private final InjectedTestValues injectedTestValues;
+
+    public MyLowLevelHttpRequest(InjectedTestValues injectedTestValues) {
+      this.injectedTestValues = injectedTestValues;
+    }
+
+    @Override
+    public void addHeader(String name, String value) throws IOException {
+      // Do nothing.
+    }
+
+    @Override
+    public LowLevelHttpResponse execute() throws IOException {
+      return new MyLowLevelHttpResponse(injectedTestValues);
+    }
+  }
+
+  /** {@link LowLevelHttpResponse} that allows injected properties. */
+  private static class MyLowLevelHttpResponse extends LowLevelHttpResponse {
+
+    private final InjectedTestValues injectedTestValues;
+
+    public MyLowLevelHttpResponse(InjectedTestValues injectedTestValues) {
+      this.injectedTestValues = injectedTestValues;
+    }
+
+    @Override
+    public InputStream getContent() throws IOException {
+      return injectedTestValues.inputStream;
+    }
+
+    @Override
+    public String getContentEncoding() throws IOException {
+      return injectedTestValues.isGzip ? "gzip" : "";
+    }
+
+    @Override
+    public long getContentLength() throws IOException {
+      return injectedTestValues.contentLength;
+    }
+
+    @Override
+    public String getContentType() throws IOException {
+      return "application/x-protobuf";
+    }
+
+    @Override
+    public String getStatusLine() throws IOException {
+      return null;
+    }
+
+    @Override
+    public int getStatusCode() throws IOException {
+      return 200;
+    }
+
+    @Override
+    public String getReasonPhrase() throws IOException {
+      return null;
+    }
+
+    @Override
+    public int getHeaderCount() throws IOException {
+      return 0;
+    }
+
+    @Override
+    public String getHeaderName(int index) throws IOException {
+      return null;
+    }
+
+    @Override
+    public String getHeaderValue(int index) throws IOException {
+      return null;
+    }
   }
 }

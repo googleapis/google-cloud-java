@@ -16,12 +16,10 @@
 package com.google.datastore.v1.client;
 
 import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkState;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
-
 import java.util.Arrays;
 import java.util.List;
 

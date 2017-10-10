@@ -15,23 +15,37 @@
  */
 package com.google.datastore.v1.client;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import javax.annotation.Nullable;
 
 /** An immutable object containing settings for a {@link DatastoreEmulator}. */
 public class DatastoreEmulatorOptions {
   private final Map<String, String> envVars;
+  private final String cmd;
+  private final List<String> cmdLineOptions;
+  private final String projectId;
 
-  DatastoreEmulatorOptions(Map<String, String> envVars) {
+  DatastoreEmulatorOptions(
+      Map<String, String> envVars, String cmd, List<String> cmdLineOptions, String projectId) {
     this.envVars = envVars;
+    this.cmd = cmd;
+    this.cmdLineOptions = cmdLineOptions;
+    this.projectId = projectId;
   }
 
   /** Builder for {@link DatastoreEmulatorOptions}. */
   public static class Builder {
-    private final Map<String, String> envVars = new HashMap<String, String>();
+    private final Map<String, String> envVars = new HashMap<>();
+    private final List<String> cmdLineOptions = new ArrayList<>();
+    private String cmd = "./cloud_datastore_emulator";
+    private String projectId;
 
     public DatastoreEmulatorOptions build() {
-      return new DatastoreEmulatorOptions(envVars);
+      return new DatastoreEmulatorOptions(envVars, cmd, cmdLineOptions, projectId);
     }
 
     /** Adds an environment variable to pass to the emulator. */
@@ -39,9 +53,42 @@ public class DatastoreEmulatorOptions {
       envVars.put(var, value);
       return this;
     }
+
+    public Builder addCmdLineOption(String option) {
+      cmdLineOptions.add(option);
+      return this;
+    }
+
+    public Builder addCmdLineOptions(Collection<String> options) {
+      cmdLineOptions.addAll(options);
+      return this;
+    }
+
+    public Builder setCommand(String cmd) {
+      this.cmd = cmd;
+      return this;
+    }
+
+    public Builder setProjectId(String projectId) {
+      this.projectId = projectId;
+      return this;
+    }
   }
 
   public Map<String, String> getEnvVars() {
     return envVars;
+  }
+
+  public List<String> getCmdLineOptions() {
+    return cmdLineOptions;
+  }
+
+  public String getCmd() {
+    return cmd;
+  }
+
+  @Nullable
+  public String getProjectId() {
+    return projectId;
   }
 }

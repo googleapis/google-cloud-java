@@ -54,18 +54,17 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Message;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
-
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.SocketTimeoutException;
+import java.util.List;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.List;
 
 /**
  * Tests for {@link DatastoreFactory} and {@link Datastore}.
@@ -325,7 +324,20 @@ public class DatastoreTest {
       assertEquals("oops", exception.getMessage());
     }
 
-    IOException ioException = new IOException("non");
+    SocketTimeoutException socketTimeoutException = new SocketTimeoutException("ste");
+    mockClient.setNextException(socketTimeoutException);
+    try {
+      call.invoke(datastore, callArgs);
+      fail();
+    } catch (InvocationTargetException targetException) {
+      DatastoreException exception = (DatastoreException) targetException.getCause();
+      assertEquals(Code.DEADLINE_EXCEEDED, exception.getCode());
+      assertEquals(methodName, exception.getMethodName());
+      assertEquals("Deadline exceeded", exception.getMessage());
+      assertSame(socketTimeoutException, exception.getCause());
+    }
+
+    IOException ioException = new IOException("ioe");
     mockClient.setNextException(ioException);
     try {
       call.invoke(datastore, callArgs);
@@ -338,7 +350,7 @@ public class DatastoreTest {
       assertSame(ioException, exception.getCause());
     }
 
-    assertEquals(2, datastore.getRpcCount());
+    assertEquals(3, datastore.getRpcCount());
   }
 
   private static class MockCredential extends Credential {

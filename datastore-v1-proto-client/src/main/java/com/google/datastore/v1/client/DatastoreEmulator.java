@@ -18,18 +18,16 @@ package com.google.datastore.v1.client;
 import static com.google.api.client.util.Preconditions.checkNotNull;
 import static com.google.api.client.util.Preconditions.checkState;
 
-import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpRequestFactory;
-import com.google.api.client.http.HttpResponse;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -98,17 +96,7 @@ public class DatastoreEmulator extends Datastore {
    * @throws DatastoreEmulatorException if the clear fails
    */
   public void clear() throws DatastoreEmulatorException {
-    HttpRequestFactory client = remoteRpc.getHttpRequestFactory();
-    try {
-      GenericUrl url = new GenericUrl(host + "/reset");
-      HttpResponse httpResponse = client.buildPostRequest(url, null).execute();
-      if (!httpResponse.isSuccessStatusCode()) {
-        throw new DatastoreEmulatorException(
-            "POST request to /reset returned HTTP status " + httpResponse.getStatusCode());
-      }
-    } catch (IOException e) {
-      throw new DatastoreEmulatorException("Exception trying to clear the emulator", e);
-    }
+    sendEmptyRequest("/reset", "POST");
   }
 
   /**
@@ -121,14 +109,17 @@ public class DatastoreEmulator extends Datastore {
    * @param commandLineOptions Command line options to pass to the emulator on startup
    * @throws DatastoreEmulatorException If {@link #start} has already been called or the server does
    *     not start successfully.
+   * @deprecated prefer setting options in the emulator options and calling {#start()}.
    */
+  @Deprecated
   public synchronized void start(String emulatorDir, String projectId, String... commandLineOptions)
       throws DatastoreEmulatorException {
     checkNotNull(emulatorDir, "emulatorDir cannot be null");
     checkNotNull(projectId, "projectId cannot be null");
     checkState(state == State.NEW, "Cannot call start() more than once.");
     try {
-      startEmulatorInternal(emulatorDir, projectId, commandLineOptions);
+      startEmulatorInternal(
+          emulatorDir + "/cloud_datastore_emulator", projectId, Arrays.asList(commandLineOptions));
       state = State.STARTED;
     } finally {
       if (state != State.STARTED) {
@@ -139,16 +130,29 @@ public class DatastoreEmulator extends Datastore {
     }
   }
 
-  void startEmulatorInternal(String emulatorDir, String projectId, String... commandLineOptions)
+  public synchronized void start() throws DatastoreEmulatorException {
+    checkState(state == State.NEW, "Cannot call start() more than once.");
+    try {
+      startEmulatorInternal(options.getCmd(), options.getProjectId(), options.getCmdLineOptions());
+      state = State.STARTED;
+    } finally {
+      if (state != State.STARTED) {
+        // If we're not able to start the server we don't want people trying again. Just move it
+        // straight to the STOPPED state.
+        state = State.STOPPED;
+      }
+    }
+  }
+
+  void startEmulatorInternal(String emulatorCmd, String projectId, List<String> commandLineOptions)
       throws DatastoreEmulatorException {
-    projectDirectory = createProjectDirectory(emulatorDir, projectId);
-    List<String> cmd =
-        new ArrayList<>(Arrays.asList("./cloud_datastore_emulator", "start", "--testing"));
-    Collections.addAll(cmd, commandLineOptions);
+    projectDirectory = createProjectDirectory(emulatorCmd, projectId);
+    List<String> cmd = new ArrayList<>(Arrays.asList(emulatorCmd, "start", "--testing"));
+    cmd.addAll(commandLineOptions);
     cmd.add(projectDirectory.getPath());
     final Process emulatorStartProcess;
     try {
-      emulatorStartProcess = newEmulatorProcess(emulatorDir, cmd).start();
+      emulatorStartProcess = newEmulatorProcess(cmd).start();
     } catch (IOException e) {
       throw new DatastoreEmulatorException("Could not start emulator", e);
     }
@@ -176,7 +180,7 @@ public class DatastoreEmulator extends Datastore {
     }
   }
 
-  private File createProjectDirectory(String emulatorDir, String projectId)
+  private File createProjectDirectory(String emulatorCmd, String projectId)
       throws DatastoreEmulatorException {
     File projectDirectory;
     try {
@@ -186,12 +190,9 @@ public class DatastoreEmulator extends Datastore {
     }
     List<String> cmd =
         Arrays.asList(
-            "./cloud_datastore_emulator",
-            "create",
-            "--project_id=" + projectId,
-            projectDirectory.getPath());
+            emulatorCmd, "create", "--project_id=" + projectId, projectDirectory.getPath());
     try {
-      int retCode = newEmulatorProcess(emulatorDir, cmd).start().waitFor();
+      int retCode = newEmulatorProcess(cmd).start().waitFor();
       if (retCode != 0) {
         throw new DatastoreEmulatorException(
             String.format("Could not create project (retcode=%d)", retCode));
@@ -205,9 +206,8 @@ public class DatastoreEmulator extends Datastore {
     return projectDirectory;
   }
 
-  private ProcessBuilder newEmulatorProcess(String emulatorDir, List<String> cmd) {
+  private ProcessBuilder newEmulatorProcess(List<String> cmd) {
     ProcessBuilder builder = new ProcessBuilder(cmd);
-    builder.directory(new File(emulatorDir));
     builder.redirectErrorStream(true);
     builder.environment().putAll(options.getEnvVars());
     return builder;
@@ -242,24 +242,13 @@ public class DatastoreEmulator extends Datastore {
     }
   }
 
+  protected void stopEmulatorInternal() throws DatastoreEmulatorException {
+    sendEmptyRequest("/shutdown", "POST");
+  }
+
   public synchronized File getProjectDirectory() {
     checkState(state == State.STARTED);
     return projectDirectory;
-  }
-
-  void stopEmulatorInternal() throws DatastoreEmulatorException {
-    // No need to kill the process we started, this function will take care of it.
-    HttpRequestFactory client = remoteRpc.getHttpRequestFactory();
-    GenericUrl url = new GenericUrl(host + "/shutdown");
-    try {
-      HttpResponse httpResponse = client.buildPostRequest(url, null).execute();
-      if (!httpResponse.isSuccessStatusCode()) {
-        throw new DatastoreEmulatorException(
-            "POST request to /shutdown returned HTTP status " + httpResponse.getStatusCode());
-      }
-    } catch (IOException e) {
-      throw new DatastoreEmulatorException("Exception trying to stop the emulator", e);
-    }
   }
 
   /**
@@ -311,6 +300,31 @@ public class DatastoreEmulator extends Datastore {
           // waiting.
           startupCompleteLatch.countDown();
         }
+      }
+    }
+  }
+
+  /** Send an empty request using a standard HTTP connection. */
+  private void sendEmptyRequest(String path, String method) throws DatastoreEmulatorException {
+    HttpURLConnection connection = null;
+    try {
+      URL url = new URL(this.host + path);
+      connection = (HttpURLConnection) url.openConnection();
+      connection.setDoOutput(true);
+      connection.setRequestMethod(method);
+      connection.getOutputStream().close();
+      if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
+        throw new DatastoreEmulatorException(
+            String.format(
+                "%s request to %s returned HTTP status %s",
+                method, path, connection.getResponseCode()));
+      }
+    } catch (IOException e) {
+      throw new DatastoreEmulatorException(
+          String.format("Exception connecting to emulator on %s request to %s", method, path), e);
+    } finally {
+      if (connection != null) {
+        connection.disconnect();
       }
     }
   }

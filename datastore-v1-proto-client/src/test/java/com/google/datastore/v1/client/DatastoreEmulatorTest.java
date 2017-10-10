@@ -17,6 +17,7 @@ package com.google.datastore.v1.client;
 
 import static org.junit.Assert.fail;
 
+import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -33,7 +34,8 @@ public class DatastoreEmulatorTest {
     DatastoreEmulator datastore =
         new DatastoreEmulator(null, "blar", options) {
           @Override
-          void startEmulatorInternal(String emulatorDir, String projectId, String... cmdLineOpts) {
+          void startEmulatorInternal(
+              String emulatorDir, String projectId, List<String> cmdLineOpts) {
             // no-op for testing
           }
         };
@@ -60,7 +62,8 @@ public class DatastoreEmulatorTest {
     DatastoreEmulator datastore =
         new DatastoreEmulator(null, "blar", options) {
           @Override
-          void startEmulatorInternal(String emulatorDir, String projectId, String... cmdLineOpts) {
+          void startEmulatorInternal(
+              String emulatorDir, String projectId, List<String> cmdLineOpts) {
             // no-op for testing
           }
 
