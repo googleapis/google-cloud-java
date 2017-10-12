@@ -45,7 +45,6 @@ import com.google.common.collect.Maps;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
 
