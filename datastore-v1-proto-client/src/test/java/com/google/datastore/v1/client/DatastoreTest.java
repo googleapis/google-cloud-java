@@ -46,6 +46,8 @@ import com.google.datastore.v1.EntityResult;
 import com.google.datastore.v1.LookupRequest;
 import com.google.datastore.v1.LookupResponse;
 import com.google.datastore.v1.QueryResultBatch;
+import com.google.datastore.v1.ReserveIdsRequest;
+import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
 import com.google.datastore.v1.RunQueryRequest;
@@ -272,6 +274,13 @@ public class DatastoreTest {
     request.setTransaction(ByteString.copyFromUtf8("project-id"));
     CommitResponse.Builder response = CommitResponse.newBuilder();
     expectRpc("commit", request.build(), response.build());
+  }
+
+  @Test
+  public void reserveIds() throws Exception {
+    ReserveIdsRequest.Builder request = ReserveIdsRequest.newBuilder();
+    ReserveIdsResponse.Builder response = ReserveIdsResponse.newBuilder();
+    expectRpc("reserveIds", request.build(), response.build());
   }
 
   @Test

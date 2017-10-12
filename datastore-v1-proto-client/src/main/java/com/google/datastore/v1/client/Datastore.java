@@ -23,6 +23,8 @@ import com.google.datastore.v1.CommitRequest;
 import com.google.datastore.v1.CommitResponse;
 import com.google.datastore.v1.LookupRequest;
 import com.google.datastore.v1.LookupResponse;
+import com.google.datastore.v1.ReserveIdsRequest;
+import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
 import com.google.datastore.v1.RunQueryRequest;
@@ -94,6 +96,14 @@ public class Datastore {
       return LookupResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("lookup", exception);
+    }
+  }
+
+  public ReserveIdsResponse reserveIds(ReserveIdsRequest request) throws DatastoreException {
+    try (InputStream is = remoteRpc.call("reserveIds", request)) {
+      return ReserveIdsResponse.parseFrom(is);
+    } catch (IOException exception) {
+      throw invalidResponseException("reserveIds", exception);
     }
   }
 
