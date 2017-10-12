@@ -24,12 +24,14 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
+import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.api.services.bigquery.model.TableSchema;
 import com.google.cloud.BaseService;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.RetryHelper;
+import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.RetryOption;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
@@ -43,6 +45,7 @@ import com.google.common.collect.Maps;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
 
@@ -430,16 +433,39 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     requestPb.setIgnoreUnknownValues(request.ignoreUnknownValues());
     requestPb.setSkipInvalidRows(request.skipInvalidRows());
     requestPb.setTemplateSuffix(request.getTemplateSuffix());
+    // Using an array of size 1 here to have a mutable boolean variable, which can be modified in
+    // an anonymous inner class.
+    final boolean[] allInsertIdsSet = {true};
     List<Rows> rowsPb = Lists.transform(request.getRows(), new Function<RowToInsert, Rows>() {
       @Override
       public Rows apply(RowToInsert rowToInsert) {
+        allInsertIdsSet[0] &= rowToInsert.getId() != null;
         return new Rows().setInsertId(rowToInsert.getId()).setJson(rowToInsert.getContent());
       }
     });
     requestPb.setRows(rowsPb);
-    return InsertAllResponse.fromPb(
-        bigQueryRpc.insertAll(tableId.getProject(), tableId.getDataset(), tableId.getTable(),
-            requestPb));
+
+    TableDataInsertAllResponse responsePb;
+    if (allInsertIdsSet[0]) {
+      // allowing retries only if all row insertIds are set (used for deduplication)
+      try {
+        responsePb = runWithRetries(
+            new Callable<TableDataInsertAllResponse>() {
+              @Override
+              public TableDataInsertAllResponse call() throws Exception {
+                return bigQueryRpc.insertAll(tableId.getProject(), tableId.getDataset(),
+                    tableId.getTable(), requestPb);
+              }
+            }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+      } catch (RetryHelperException e) {
+        throw BigQueryException.translateAndThrow(e);
+      }
+    } else {
+      responsePb = bigQueryRpc.insertAll(tableId.getProject(), tableId.getDataset(),
+          tableId.getTable(), requestPb);
+    }
+
+    return InsertAllResponse.fromPb(responsePb);
   }
 
   @Override
