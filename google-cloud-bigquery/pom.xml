@@ -77,6 +77,15 @@
       </resource>
     </resources>
     <plugins>
+      <plugin>
+        <!-- Allow script to run, so we can run benchmarks. -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <cleanupDaemonThreads>false</cleanupDaemonThreads>
+          <skip>false</skip>
+        </configuration>
+      </plugin>
        <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
          <version>1.4</version>
