@@ -41,6 +41,10 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
+      <artifactId>google-cloud-firestore</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-language</artifactId>
     </dependency>
     <dependency>
