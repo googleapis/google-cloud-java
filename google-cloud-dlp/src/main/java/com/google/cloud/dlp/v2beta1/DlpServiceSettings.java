@@ -58,6 +58,8 @@ import com.google.privacy.dlp.v2beta1.ListRootCategoriesRequest;
 import com.google.privacy.dlp.v2beta1.ListRootCategoriesResponse;
 import com.google.privacy.dlp.v2beta1.RedactContentRequest;
 import com.google.privacy.dlp.v2beta1.RedactContentResponse;
+import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationMetadata;
+import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationResult;
 import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
@@ -107,7 +109,9 @@ public class DlpServiceSettings extends ClientSettings {
 
   private final SimpleCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
       deidentifyContentSettings;
-  private final SimpleCallSettings<AnalyzeDataSourceRiskRequest, Operation>
+  private final OperationCallSettings<
+          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata,
+          Operation>
       analyzeDataSourceRiskSettings;
   private final SimpleCallSettings<InspectContentRequest, InspectContentResponse>
       inspectContentSettings;
@@ -131,7 +135,9 @@ public class DlpServiceSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to analyzeDataSourceRisk. */
-  public SimpleCallSettings<AnalyzeDataSourceRiskRequest, Operation>
+  public OperationCallSettings<
+          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata,
+          Operation>
       analyzeDataSourceRiskSettings() {
     return analyzeDataSourceRiskSettings;
   }
@@ -281,7 +287,9 @@ public class DlpServiceSettings extends ClientSettings {
 
     private final SimpleCallSettings.Builder<DeidentifyContentRequest, DeidentifyContentResponse>
         deidentifyContentSettings;
-    private final SimpleCallSettings.Builder<AnalyzeDataSourceRiskRequest, Operation>
+    private final OperationCallSettings.Builder<
+            AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult,
+            RiskAnalysisOperationMetadata, Operation>
         analyzeDataSourceRiskSettings;
     private final SimpleCallSettings.Builder<InspectContentRequest, InspectContentResponse>
         inspectContentSettings;
@@ -341,7 +349,7 @@ public class DlpServiceSettings extends ClientSettings {
 
       deidentifyContentSettings = SimpleCallSettings.newBuilder();
 
-      analyzeDataSourceRiskSettings = SimpleCallSettings.newBuilder();
+      analyzeDataSourceRiskSettings = OperationCallSettings.newBuilder();
 
       inspectContentSettings = SimpleCallSettings.newBuilder();
 
@@ -358,7 +366,6 @@ public class DlpServiceSettings extends ClientSettings {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
               deidentifyContentSettings,
-              analyzeDataSourceRiskSettings,
               inspectContentSettings,
               redactContentSettings,
               listInspectFindingsSettings,
@@ -379,11 +386,6 @@ public class DlpServiceSettings extends ClientSettings {
 
       builder
           .deidentifyContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .analyzeDataSourceRiskSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -411,6 +413,26 @@ public class DlpServiceSettings extends ClientSettings {
           .listRootCategoriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+      builder
+          .analyzeDataSourceRiskSettings()
+          .setInitialCallSettings(
+              SimpleCallSettings.<AnalyzeDataSourceRiskRequest, Operation>newBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseClass(RiskAnalysisOperationResult.class)
+          .setMetadataClass(RiskAnalysisOperationMetadata.class)
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(20000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .build()));
       builder
           .createInspectOperationSettings()
           .setInitialCallSettings(
@@ -450,7 +472,6 @@ public class DlpServiceSettings extends ClientSettings {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
               deidentifyContentSettings,
-              analyzeDataSourceRiskSettings,
               inspectContentSettings,
               redactContentSettings,
               listInspectFindingsSettings,
@@ -494,7 +515,9 @@ public class DlpServiceSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to analyzeDataSourceRisk. */
-    public SimpleCallSettings.Builder<AnalyzeDataSourceRiskRequest, Operation>
+    public OperationCallSettings.Builder<
+            AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult,
+            RiskAnalysisOperationMetadata, Operation>
         analyzeDataSourceRiskSettings() {
       return analyzeDataSourceRiskSettings;
     }

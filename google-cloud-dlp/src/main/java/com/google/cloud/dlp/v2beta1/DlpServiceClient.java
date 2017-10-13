@@ -47,6 +47,8 @@ import com.google.privacy.dlp.v2beta1.RedactContentRequest;
 import com.google.privacy.dlp.v2beta1.RedactContentRequest.ReplaceConfig;
 import com.google.privacy.dlp.v2beta1.RedactContentResponse;
 import com.google.privacy.dlp.v2beta1.ResultName;
+import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationMetadata;
+import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationResult;
 import com.google.privacy.dlp.v2beta1.StorageConfig;
 import java.io.IOException;
 import java.util.List;
@@ -292,7 +294,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   PrivacyMetric privacyMetric = PrivacyMetric.newBuilder().build();
    *   BigQueryTable sourceTable = BigQueryTable.newBuilder().build();
-   *   Operation response = dlpServiceClient.analyzeDataSourceRisk(privacyMetric, sourceTable);
+   *   RiskAnalysisOperationResult response = dlpServiceClient.analyzeDataSourceRiskAsync(privacyMetric, sourceTable).get();
    * }
    * </code></pre>
    *
@@ -300,15 +302,16 @@ public class DlpServiceClient implements BackgroundResource {
    * @param sourceTable Input dataset to compute metrics over.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation analyzeDataSourceRisk(
-      PrivacyMetric privacyMetric, BigQueryTable sourceTable) {
+  public final OperationFuture<
+          RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+      analyzeDataSourceRiskAsync(PrivacyMetric privacyMetric, BigQueryTable sourceTable) {
 
     AnalyzeDataSourceRiskRequest request =
         AnalyzeDataSourceRiskRequest.newBuilder()
             .setPrivacyMetric(privacyMetric)
             .setSourceTable(sourceTable)
             .build();
-    return analyzeDataSourceRisk(request);
+    return analyzeDataSourceRiskAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -326,15 +329,45 @@ public class DlpServiceClient implements BackgroundResource {
    *     .setPrivacyMetric(privacyMetric)
    *     .setSourceTable(sourceTable)
    *     .build();
-   *   Operation response = dlpServiceClient.analyzeDataSourceRisk(request);
+   *   RiskAnalysisOperationResult response = dlpServiceClient.analyzeDataSourceRiskAsync(request).get();
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation analyzeDataSourceRisk(AnalyzeDataSourceRiskRequest request) {
-    return analyzeDataSourceRiskCallable().call(request);
+  public final OperationFuture<
+          RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+      analyzeDataSourceRiskAsync(AnalyzeDataSourceRiskRequest request) {
+    return analyzeDataSourceRiskOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Schedules a job to compute risk analysis metrics over content in a Google Cloud Platform
+   * repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   PrivacyMetric privacyMetric = PrivacyMetric.newBuilder().build();
+   *   BigQueryTable sourceTable = BigQueryTable.newBuilder().build();
+   *   AnalyzeDataSourceRiskRequest request = AnalyzeDataSourceRiskRequest.newBuilder()
+   *     .setPrivacyMetric(privacyMetric)
+   *     .setSourceTable(sourceTable)
+   *     .build();
+   *   OperationFuture&lt;Operation&gt; future = dlpServiceClient.analyzeDataSourceRiskOperationCallable().futureCall(request);
+   *   // Do something
+   *   RiskAnalysisOperationResult response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final OperationCallable<
+          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata,
+          Operation>
+      analyzeDataSourceRiskOperationCallable() {
+    return stub.analyzeDataSourceRiskOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

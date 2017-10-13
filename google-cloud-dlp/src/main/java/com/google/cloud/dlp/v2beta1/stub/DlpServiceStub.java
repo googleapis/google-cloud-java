@@ -37,6 +37,8 @@ import com.google.privacy.dlp.v2beta1.ListRootCategoriesRequest;
 import com.google.privacy.dlp.v2beta1.ListRootCategoriesResponse;
 import com.google.privacy.dlp.v2beta1.RedactContentRequest;
 import com.google.privacy.dlp.v2beta1.RedactContentResponse;
+import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationMetadata;
+import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationResult;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -56,6 +58,14 @@ public abstract class DlpServiceStub implements BackgroundResource {
   public UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
       deidentifyContentCallable() {
     throw new UnsupportedOperationException("Not implemented: deidentifyContentCallable()");
+  }
+
+  public OperationCallable<
+          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata,
+          Operation>
+      analyzeDataSourceRiskOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: analyzeDataSourceRiskOperationCallable()");
   }
 
   public UnaryCallable<AnalyzeDataSourceRiskRequest, Operation> analyzeDataSourceRiskCallable() {

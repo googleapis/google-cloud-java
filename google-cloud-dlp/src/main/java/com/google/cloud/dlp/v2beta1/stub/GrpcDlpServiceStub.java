@@ -41,6 +41,8 @@ import com.google.privacy.dlp.v2beta1.ListRootCategoriesRequest;
 import com.google.privacy.dlp.v2beta1.ListRootCategoriesResponse;
 import com.google.privacy.dlp.v2beta1.RedactContentRequest;
 import com.google.privacy.dlp.v2beta1.RedactContentResponse;
+import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationMetadata;
+import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationResult;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -138,6 +140,10 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
       deidentifyContentCallable;
   private final UnaryCallable<AnalyzeDataSourceRiskRequest, Operation>
       analyzeDataSourceRiskCallable;
+  private final OperationCallable<
+          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata,
+          Operation>
+      analyzeDataSourceRiskOperationCallable;
   private final UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable;
   private final UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable;
   private final UnaryCallable<CreateInspectOperationRequest, Operation>
@@ -175,8 +181,14 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     this.analyzeDataSourceRiskCallable =
         GrpcCallableFactory.create(
             directAnalyzeDataSourceRiskCallable,
-            settings.analyzeDataSourceRiskSettings(),
+            settings.analyzeDataSourceRiskSettings().getInitialCallSettings(),
             clientContext);
+    this.analyzeDataSourceRiskOperationCallable =
+        GrpcCallableFactory.create(
+            directAnalyzeDataSourceRiskCallable,
+            settings.analyzeDataSourceRiskSettings(),
+            clientContext,
+            this.operationsStub);
     this.inspectContentCallable =
         GrpcCallableFactory.create(
             directInspectContentCallable, settings.inspectContentSettings(), clientContext);
@@ -216,6 +228,13 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   public UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
       deidentifyContentCallable() {
     return deidentifyContentCallable;
+  }
+
+  public OperationCallable<
+          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata,
+          Operation>
+      analyzeDataSourceRiskOperationCallable() {
+    return analyzeDataSourceRiskOperationCallable;
   }
 
   public UnaryCallable<AnalyzeDataSourceRiskRequest, Operation> analyzeDataSourceRiskCallable() {

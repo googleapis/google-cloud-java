@@ -48,6 +48,7 @@ import com.google.privacy.dlp.v2beta1.RedactContentRequest;
 import com.google.privacy.dlp.v2beta1.RedactContentRequest.ReplaceConfig;
 import com.google.privacy.dlp.v2beta1.RedactContentResponse;
 import com.google.privacy.dlp.v2beta1.ResultName;
+import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationResult;
 import com.google.privacy.dlp.v2beta1.StorageConfig;
 import com.google.protobuf.Any;
 import com.google.protobuf.GeneratedMessageV3;
@@ -146,16 +147,21 @@ public class DlpServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void analyzeDataSourceRiskTest() {
-    String name = "name3373707";
-    boolean done = true;
-    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
-    mockDlpService.addResponse(expectedResponse);
+  public void analyzeDataSourceRiskTest() throws Exception {
+    RiskAnalysisOperationResult expectedResponse = RiskAnalysisOperationResult.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("analyzeDataSourceRiskTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDlpService.addResponse(resultOperation);
 
     PrivacyMetric privacyMetric = PrivacyMetric.newBuilder().build();
     BigQueryTable sourceTable = BigQueryTable.newBuilder().build();
 
-    Operation actualResponse = client.analyzeDataSourceRisk(privacyMetric, sourceTable);
+    RiskAnalysisOperationResult actualResponse =
+        client.analyzeDataSourceRiskAsync(privacyMetric, sourceTable).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockDlpService.getRequests();
@@ -177,10 +183,14 @@ public class DlpServiceClientTest {
       PrivacyMetric privacyMetric = PrivacyMetric.newBuilder().build();
       BigQueryTable sourceTable = BigQueryTable.newBuilder().build();
 
-      client.analyzeDataSourceRisk(privacyMetric, sourceTable);
+      client.analyzeDataSourceRiskAsync(privacyMetric, sourceTable).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(
+          Status.INVALID_ARGUMENT.getCode(),
+          ((GrpcStatusCode) apiException.getStatusCode()).getCode());
     }
   }
 
