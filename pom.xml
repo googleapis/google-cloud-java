@@ -163,6 +163,7 @@
     <dlp.version>0.25.1-alpha-SNAPSHOT</dlp.version>
     <dns.version>0.25.1-alpha-SNAPSHOT</dns.version>
     <errorreporting.version>0.25.1-alpha-SNAPSHOT</errorreporting.version>
+    <firestore.version>0.25.1-beta-SNAPSHOT</firestore.version>
     <examples.version>0.25.1-alpha-SNAPSHOT</examples.version>
     <language.version>0.25.1-beta-SNAPSHOT</language.version>
     <logging.version>1.7.1-SNAPSHOT</logging.version>
@@ -358,6 +359,28 @@
 
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-firestore</artifactId>
+        <version>${firestore.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-firestore</artifactId>
+        <version>${firestore.version}</version>
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-firestore-v1beta1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-firestore-v1beta1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-language</artifactId>
         <version>${language.version}</version>
       </dependency>
@@ -480,16 +503,6 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-spanner-v1</artifactId>
-        <version>${generatedProto.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-firestore-v1beta1</artifactId>
-        <version>${generatedProto.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-firestore-v1beta1</artifactId>
         <version>${generatedProto.version}</version>
       </dependency>
       <dependency>
