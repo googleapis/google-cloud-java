@@ -25,7 +25,10 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dlp.v2beta1.DlpServiceSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.privacy.dlp.v2beta1.AnalyzeDataSourceRiskRequest;
 import com.google.privacy.dlp.v2beta1.CreateInspectOperationRequest;
+import com.google.privacy.dlp.v2beta1.DeidentifyContentRequest;
+import com.google.privacy.dlp.v2beta1.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2beta1.InspectContentRequest;
 import com.google.privacy.dlp.v2beta1.InspectContentResponse;
 import com.google.privacy.dlp.v2beta1.InspectOperationMetadata;
@@ -51,6 +54,25 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcDlpServiceStub extends DlpServiceStub {
+  private static final UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
+      directDeidentifyContentCallable =
+          GrpcCallableFactory.createDirectCallable(
+              io.grpc.MethodDescriptor.create(
+                  io.grpc.MethodDescriptor.MethodType.UNARY,
+                  "google.privacy.dlp.v2beta1.DlpService/DeidentifyContent",
+                  io.grpc.protobuf.ProtoUtils.marshaller(
+                      DeidentifyContentRequest.getDefaultInstance()),
+                  io.grpc.protobuf.ProtoUtils.marshaller(
+                      DeidentifyContentResponse.getDefaultInstance())));
+  private static final UnaryCallable<AnalyzeDataSourceRiskRequest, Operation>
+      directAnalyzeDataSourceRiskCallable =
+          GrpcCallableFactory.createDirectCallable(
+              io.grpc.MethodDescriptor.create(
+                  io.grpc.MethodDescriptor.MethodType.UNARY,
+                  "google.privacy.dlp.v2beta1.DlpService/AnalyzeDataSourceRisk",
+                  io.grpc.protobuf.ProtoUtils.marshaller(
+                      AnalyzeDataSourceRiskRequest.getDefaultInstance()),
+                  io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance())));
   private static final UnaryCallable<InspectContentRequest, InspectContentResponse>
       directInspectContentCallable =
           GrpcCallableFactory.createDirectCallable(
@@ -112,6 +134,10 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
+  private final UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
+      deidentifyContentCallable;
+  private final UnaryCallable<AnalyzeDataSourceRiskRequest, Operation>
+      analyzeDataSourceRiskCallable;
   private final UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable;
   private final UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable;
   private final UnaryCallable<CreateInspectOperationRequest, Operation>
@@ -143,6 +169,14 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
       throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 
+    this.deidentifyContentCallable =
+        GrpcCallableFactory.create(
+            directDeidentifyContentCallable, settings.deidentifyContentSettings(), clientContext);
+    this.analyzeDataSourceRiskCallable =
+        GrpcCallableFactory.create(
+            directAnalyzeDataSourceRiskCallable,
+            settings.analyzeDataSourceRiskSettings(),
+            clientContext);
     this.inspectContentCallable =
         GrpcCallableFactory.create(
             directInspectContentCallable, settings.inspectContentSettings(), clientContext);
@@ -177,6 +211,15 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  public UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
+      deidentifyContentCallable() {
+    return deidentifyContentCallable;
+  }
+
+  public UnaryCallable<AnalyzeDataSourceRiskRequest, Operation> analyzeDataSourceRiskCallable() {
+    return analyzeDataSourceRiskCallable;
   }
 
   public UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable() {

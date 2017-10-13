@@ -21,7 +21,10 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
+import com.google.privacy.dlp.v2beta1.AnalyzeDataSourceRiskRequest;
 import com.google.privacy.dlp.v2beta1.CreateInspectOperationRequest;
+import com.google.privacy.dlp.v2beta1.DeidentifyContentRequest;
+import com.google.privacy.dlp.v2beta1.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2beta1.InspectContentRequest;
 import com.google.privacy.dlp.v2beta1.InspectContentResponse;
 import com.google.privacy.dlp.v2beta1.InspectOperationMetadata;
@@ -48,6 +51,15 @@ public abstract class DlpServiceStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
+
+  public UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
+      deidentifyContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: deidentifyContentCallable()");
+  }
+
+  public UnaryCallable<AnalyzeDataSourceRiskRequest, Operation> analyzeDataSourceRiskCallable() {
+    throw new UnsupportedOperationException("Not implemented: analyzeDataSourceRiskCallable()");
   }
 
   public UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable() {

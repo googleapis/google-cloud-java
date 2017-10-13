@@ -142,7 +142,7 @@
     <api-common.version>1.1.0</api-common.version>
     <gax.version>1.9.0</gax.version>
     <gax-grpc.version>0.26.0</gax-grpc.version>
-    <generatedProto.version>0.1.20</generatedProto.version>
+    <generatedProto.version>0.1.21</generatedProto.version>
     <google.auth.version>0.8.0</google.auth.version>
     <grpc.version>1.6.1</grpc.version>
     <guava.version>20.0</guava.version>
