@@ -80,6 +80,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -1093,8 +1094,11 @@ public class ITBigQueryTest {
     Job remoteExtractJob = bigquery.create(JobInfo.of(extractConfiguration));
     remoteExtractJob = remoteExtractJob.waitFor();
     assertNull(remoteExtractJob.getStatus().getError());
-    assertEquals(CSV_CONTENT,
-        new String(storage.readAllBytes(BUCKET, EXTRACT_FILE), StandardCharsets.UTF_8));
+
+    String extractedCsv =
+        new String(storage.readAllBytes(BUCKET, EXTRACT_FILE), StandardCharsets.UTF_8);
+    assertEquals(
+        Sets.newHashSet(CSV_CONTENT.split("\n")), Sets.newHashSet(extractedCsv.split("\n")));
     assertTrue(bigquery.delete(DATASET, tableName));
   }
 
