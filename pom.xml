@@ -875,10 +875,8 @@
     <module>google-cloud-vision</module>
     <module>google-cloud-video-intelligence</module>
 
-    <!--
     <module>google-cloud-dep-verification</module>
     <module>google-cloud-util</module>
-    -->
 
     <!--
       Uncomment the following lines to include google app engine (GAE) testing apps in the build.
@@ -1179,7 +1177,6 @@
                 </reportSet>
               </reportSets>
               <configuration>
-                <additionalparam>-Xdoclint:none</additionalparam>
                 <aggregate>true</aggregate>
                 <show>protected</show>
                 <nohelp>true</nohelp>
