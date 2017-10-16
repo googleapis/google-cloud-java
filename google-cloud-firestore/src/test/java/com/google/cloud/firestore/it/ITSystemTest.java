@@ -43,6 +43,7 @@ import com.google.cloud.firestore.WriteBatch;
 import com.google.cloud.firestore.WriteResult;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -472,23 +473,29 @@ public class ITSystemTest {
 
   @Test
   public void getCollections() throws Exception {
-    String[] collections = new String[] {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
+    // We test with 21 collections since 20 collections are by default returned in a single paged
+    // response.
+    String[] collections =
+        new String[] {
+          "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+          "17", "18", "19", "20", "21"
+        };
+    Arrays.sort(collections); // Sort in alphabetical (non-numeric) order.
+
     DocumentReference documentReference = randomColl.document("doc");
 
     WriteBatch batch = firestore.batch();
-
     for (String collection : collections) {
       batch.create(documentReference.collection(collection).document("doc"), SINGLE_FIELD_OBJECT);
     }
-
     batch.commit().get();
 
-    List<CollectionReference> collectionRefs = documentReference.getCollections().get();
+    Iterable<CollectionReference> collectionRefs = documentReference.getCollections();
 
-    assertEquals(collections.length, collectionRefs.size());
-
-    for (int i = 0; i < collections.length; ++i) {
-      assertEquals(collections[i], collectionRefs.get(i).getId());
+    int count = 0;
+    for (CollectionReference collectionRef : collectionRefs) {
+      assertEquals(collections[count++], collectionRef.getId());
     }
+    assertEquals(collections.length, count);
   }
 }

@@ -36,7 +36,6 @@ import com.google.firestore.v1beta1.Document;
 import com.google.firestore.v1beta1.DocumentMask;
 import com.google.firestore.v1beta1.DocumentTransform;
 import com.google.firestore.v1beta1.DocumentTransform.FieldTransform;
-import com.google.firestore.v1beta1.ListCollectionIdsResponse;
 import com.google.firestore.v1beta1.MapValue;
 import com.google.firestore.v1beta1.Precondition;
 import com.google.firestore.v1beta1.RollbackRequest;
@@ -151,14 +150,6 @@ public final class LocalFirestoreHelper {
     }
 
     return streamingResponse(responses);
-  }
-
-  public static ApiFuture<ListCollectionIdsResponse> listCollectionIdsResponse(
-      String... collectionIds) {
-    return ApiFutures.immediateFuture(
-        ListCollectionIdsResponse.newBuilder()
-            .addAllCollectionIds(Arrays.asList(collectionIds))
-            .build());
   }
 
   public static ApiFuture<Empty> rollbackResponse() {

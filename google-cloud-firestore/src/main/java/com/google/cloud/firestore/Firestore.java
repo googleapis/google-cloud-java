@@ -19,6 +19,7 @@ package com.google.cloud.firestore;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.Service;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Nonnull;
 
 /** Represents a Firestore Database and is the entry point for all Firestore operations */
@@ -45,10 +46,10 @@ public interface Firestore extends Service<FirestoreOptions> {
   /**
    * Fetches the root collections that are associated with this Firestore database.
    *
-   * @return An ApiFuture that will be resolved with the list of collections.
+   * @return An Iterable that can be used to fetch all collections.
    */
   @Nonnull
-  ApiFuture<List<CollectionReference>> getCollections();
+  Iterable<CollectionReference> getCollections() throws ExecutionException, InterruptedException;
 
   /**
    * Executes the given updateFunction and then attempts to commit the changes applied within the

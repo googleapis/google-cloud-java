@@ -40,6 +40,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
@@ -175,7 +176,8 @@ class FirestoreImpl implements Firestore {
 
   @Nonnull
   @Override
-  public ApiFuture<List<CollectionReference>> getCollections() {
+  public Iterable<CollectionReference> getCollections()
+      throws ExecutionException, InterruptedException {
     DocumentReference rootDocument = new DocumentReference(this, this.databasePath);
     return rootDocument.getCollections();
   }

@@ -31,8 +31,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.firestore.FirestoreOptions;
-import com.google.cloud.firestore.v1beta1.FirestoreClient;
 import com.google.cloud.firestore.v1beta1.FirestoreSettings;
+import com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
 import com.google.cloud.firestore.v1beta1.stub.FirestoreStub;
 import com.google.cloud.firestore.v1beta1.stub.GrpcFirestoreStub;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
@@ -43,7 +43,6 @@ import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.DatabaseName;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
-import com.google.firestore.v1beta1.ListCollectionIdsResponse;
 import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
@@ -176,8 +175,8 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
   }
 
   @Override
-  public UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsResponse>
-  listCollectionIdsCallable() {
-    return firestoreStub.listCollectionIdsCallable();
+  public UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
+  listCollectionIdsPagedCallable() {
+    return firestoreStub.listCollectionIdsPagedCallable();
   }
 }
