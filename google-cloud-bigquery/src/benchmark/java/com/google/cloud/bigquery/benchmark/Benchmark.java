@@ -29,6 +29,11 @@ import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
 
 public class Benchmark {
+
+  private static final double BILLION = 1000*1000*1000;
+
+  private Benchmark() {}
+
   public static void main(String[] args) throws Exception {
     if (args.length < 1) {
       System.out.println("need path to queries.json");
@@ -66,8 +71,8 @@ public class Benchmark {
       }
       Duration total = Duration.between(start, clock.instant());
 
-      double firstByteSec = (double)(firstByte.getNano())/1000/1000/1000 + firstByte.getSeconds();
-      double totalSec = (double)(total.getNano())/1000/1000/1000 + total.getSeconds();
+      double firstByteSec = (double)(firstByte.getNano())/BILLION + firstByte.getSeconds();
+      double totalSec = (double)(total.getNano())/BILLION + total.getSeconds();
 
 
       System.out.println(
