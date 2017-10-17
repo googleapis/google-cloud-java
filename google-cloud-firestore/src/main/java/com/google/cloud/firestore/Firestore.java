@@ -17,6 +17,7 @@
 package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.Service;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -49,7 +50,7 @@ public interface Firestore extends Service<FirestoreOptions> {
    * @return An Iterable that can be used to fetch all collections.
    */
   @Nonnull
-  Iterable<CollectionReference> getCollections() throws ExecutionException, InterruptedException;
+  Iterable<CollectionReference> getCollections() throws ApiException;
 
   /**
    * Executes the given updateFunction and then attempts to commit the changes applied within the

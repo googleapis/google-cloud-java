@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -176,8 +177,7 @@ class FirestoreImpl implements Firestore {
 
   @Nonnull
   @Override
-  public Iterable<CollectionReference> getCollections()
-      throws ExecutionException, InterruptedException {
+  public Iterable<CollectionReference> getCollections() throws ApiException {
     DocumentReference rootDocument = new DocumentReference(this, this.databasePath);
     return rootDocument.getCollections();
   }

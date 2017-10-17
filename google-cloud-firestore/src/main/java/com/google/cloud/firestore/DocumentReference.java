@@ -19,6 +19,8 @@ package com.google.cloud.firestore;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptions;
 import com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
 import java.util.Iterator;
@@ -340,14 +342,12 @@ public final class DocumentReference {
    *
    * @return An Iterable that can be used to fetch all subcollections.
    */
-  public Iterable<CollectionReference> getCollections()
-      throws ExecutionException, InterruptedException {
+  public Iterable<CollectionReference> getCollections() throws ApiException {
     ListCollectionIdsRequest.Builder request = ListCollectionIdsRequest.newBuilder();
     request.setParent(path.toString());
     final ListCollectionIdsPagedResponse response =
-        firestore
-            .sendRequest(request.build(), firestore.getClient().listCollectionIdsPagedCallable())
-            .get();
+        ApiExceptions.callAndTranslateApiException(firestore
+            .sendRequest(request.build(), firestore.getClient().listCollectionIdsPagedCallable()));
 
     return new Iterable<CollectionReference>() {
       @Override
