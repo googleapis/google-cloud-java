@@ -48,8 +48,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
 import org.junit.Rule;
@@ -426,12 +426,10 @@ public class ITSystemTest {
   }
 
   @Test
-  public void successfulTransaction() throws Exception {
+  public void successfulTransactionWithContention() throws Exception {
     final DocumentReference documentReference = addDocument("counter", 1);
 
-    final Semaphore firstLock = new Semaphore(0);
-    final Semaphore secondLock = new Semaphore(0);
-
+    final CountDownLatch latch = new CountDownLatch(2);
     final AtomicInteger attempts = new AtomicInteger();
 
     // One of these transaction fails and has to be retried since they both acquire locks on the
@@ -443,13 +441,11 @@ public class ITSystemTest {
               public String updateCallback(Transaction transaction)
                   throws ExecutionException, InterruptedException {
                 attempts.incrementAndGet();
-
                 DocumentSnapshot documentSnapshot = transaction.get(documentReference).get();
-                firstLock.release();
-                secondLock.acquire();
-                transaction.update(
-                    documentReference, "counter", documentSnapshot.getLong("counter") + 1);
-                secondLock.release(); // Make sure we don't lock on retry
+                latch.countDown();
+                latch.await();
+                transaction.update(documentReference,
+                    "counter", documentSnapshot.getLong("counter") + 1);
                 return "foo";
               }
             });
@@ -461,13 +457,11 @@ public class ITSystemTest {
               public String updateCallback(Transaction transaction)
                   throws ExecutionException, InterruptedException {
                 attempts.incrementAndGet();
-
                 DocumentSnapshot documentSnapshot = transaction.get(documentReference).get();
-                firstLock.acquire();
-                secondLock.release();
-                transaction.update(
-                    documentReference, "counter", documentSnapshot.getLong("counter") + 1);
-                firstLock.release(); // Make sure we don't lock on retry
+                latch.countDown();
+                latch.await();
+                transaction.update(documentReference,
+                    "counter", documentSnapshot.getLong("counter") + 1);
                 return "bar";
               }
             });
