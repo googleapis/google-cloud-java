@@ -23,6 +23,8 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.FixedChannelProvider;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.pubsub.v1.FakeSubscriberServiceImpl.ModifyAckDeadline;
 import com.google.cloud.pubsub.v1.Subscriber.Builder;
 import com.google.common.base.Function;
@@ -38,7 +40,6 @@ import io.grpc.ManagedChannel;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
-import io.grpc.StatusRuntimeException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.util.ArrayList;
@@ -517,9 +518,15 @@ public class SubscriberTest {
     } finally {
       // The subscriber must finish with an state error because its FAILED status.
       assertEquals(Subscriber.State.FAILED, subscriber.state());
-      assertEquals(
-          Status.INVALID_ARGUMENT,
-          ((StatusRuntimeException) subscriber.failureCause()).getStatus());
+
+      Throwable t = subscriber.failureCause();
+      assertTrue(t instanceof ApiException);
+
+      ApiException ex = (ApiException) (t);
+      assertTrue(ex.getStatusCode() instanceof GrpcStatusCode);
+
+      GrpcStatusCode grpcCode = (GrpcStatusCode) ex.getStatusCode();
+      assertEquals(Status.Code.INVALID_ARGUMENT, grpcCode.getCode());
     }
   }
 

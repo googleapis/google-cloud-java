@@ -23,7 +23,9 @@ import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.GrpcApiExceptionFactory;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiException;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
@@ -367,9 +369,12 @@ public class Publisher {
                 || System.currentTimeMillis() + nextBackoffDelay
                     > outstandingBatch.creationTime + retrySettings.getTotalTimeout().toMillis()) {
               try {
+                ApiException gaxException =
+                    GrpcApiExceptionFactory.createException(
+                        t, Status.fromThrowable(t).getCode(), false);
                 for (OutstandingPublish outstandingPublish :
                     outstandingBatch.outstandingPublishes) {
-                  outstandingPublish.publishResult.setException(t);
+                  outstandingPublish.publishResult.setException(gaxException);
                 }
               } finally {
                 messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
