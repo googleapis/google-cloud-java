@@ -30,7 +30,7 @@ import org.threeten.bp.Instant;
 
 public class Benchmark {
 
-  private static final double BILLION = 1000*1000*1000;
+  private static final double NS_PER_SECOND = 1000 * 1000 * 1000;
 
   private Benchmark() {}
 
@@ -71,9 +71,8 @@ public class Benchmark {
       }
       Duration total = Duration.between(start, clock.instant());
 
-      double firstByteSec = (double)(firstByte.getNano())/BILLION + firstByte.getSeconds();
-      double totalSec = (double)(total.getNano())/BILLION + total.getSeconds();
-
+      double firstByteSec = (double) (firstByte.getNano()) / NS_PER_SECOND + firstByte.getSeconds();
+      double totalSec = (double) (total.getNano()) / NS_PER_SECOND + total.getSeconds();
 
       System.out.println(
           String.format(
