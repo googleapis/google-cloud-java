@@ -23,6 +23,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentReference;
@@ -47,7 +48,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -425,25 +428,50 @@ public class ITSystemTest {
   }
 
   @Test
-  public void successfulTransaction() throws Exception {
-    final DocumentReference documentReference = addDocument("foo", 1);
+  public void successfulTransactionWithContention() throws Exception {
+    final DocumentReference documentReference = addDocument("counter", 1);
 
-    String result =
-        firestore
-            .runTransaction(
-                new Transaction.Function<String>() {
-                  @Override
-                  public String updateCallback(Transaction transaction)
-                      throws ExecutionException, InterruptedException {
-                    DocumentSnapshot documentSnapshot = documentReference.get().get();
-                    documentReference.update("foo", documentSnapshot.getLong("foo") + 1);
-                    return "bar";
-                  }
-                })
-            .get();
+    final CountDownLatch latch = new CountDownLatch(2);
+    final AtomicInteger attempts = new AtomicInteger();
 
-    assertEquals("bar", result);
-    assertEquals(2L, documentReference.get().get().get("foo"));
+    // One of these transaction fails and has to be retried since they both acquire locks on the
+    // same document, which they then modify.
+    ApiFuture<String> firstTransaction =
+        firestore.runTransaction(
+            new Transaction.Function<String>() {
+              @Override
+              public String updateCallback(Transaction transaction)
+                  throws ExecutionException, InterruptedException {
+                attempts.incrementAndGet();
+                DocumentSnapshot documentSnapshot = transaction.get(documentReference).get();
+                latch.countDown();
+                latch.await();
+                transaction.update(documentReference,
+                    "counter", documentSnapshot.getLong("counter") + 1);
+                return "foo";
+              }
+            });
+
+    ApiFuture<String> secondTransaction =
+        firestore.runTransaction(
+            new Function<String>() {
+              @Override
+              public String updateCallback(Transaction transaction)
+                  throws ExecutionException, InterruptedException {
+                attempts.incrementAndGet();
+                DocumentSnapshot documentSnapshot = transaction.get(documentReference).get();
+                latch.countDown();
+                latch.await();
+                transaction.update(documentReference,
+                    "counter", documentSnapshot.getLong("counter") + 1);
+                return "bar";
+              }
+            });
+
+    assertEquals("foo", firstTransaction.get());
+    assertEquals("bar", secondTransaction.get());
+    assertEquals(3, attempts.intValue());
+    assertEquals(3, (long) documentReference.get().get().getLong("counter"));
   }
 
   @Test
