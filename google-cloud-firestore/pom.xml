@@ -44,10 +44,6 @@
       <artifactId>api-common</artifactId>
     </dependency>
     <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-core-http</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-firestore-v1beta1</artifactId>
     </dependency>

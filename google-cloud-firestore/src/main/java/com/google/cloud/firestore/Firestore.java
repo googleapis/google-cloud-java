@@ -45,10 +45,11 @@ public interface Firestore extends Service<FirestoreOptions> {
   /**
    * Fetches the root collections that are associated with this Firestore database.
    *
-   * @return An ApiFuture that will be resolved with the list of collections.
+   * @throws FirestoreException if the Iterable could not be initialized.
+   * @return An Iterable that can be used to fetch all collections.
    */
   @Nonnull
-  ApiFuture<List<CollectionReference>> getCollections();
+  Iterable<CollectionReference> getCollections();
 
   /**
    * Executes the given updateFunction and then attempts to commit the changes applied within the

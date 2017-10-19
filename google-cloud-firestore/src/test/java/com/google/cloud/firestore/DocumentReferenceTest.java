@@ -38,7 +38,6 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.create;
 import static com.google.cloud.firestore.LocalFirestoreHelper.delete;
 import static com.google.cloud.firestore.LocalFirestoreHelper.get;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
-import static com.google.cloud.firestore.LocalFirestoreHelper.listCollectionIdsResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.map;
 import static com.google.cloud.firestore.LocalFirestoreHelper.set;
 import static com.google.cloud.firestore.LocalFirestoreHelper.streamingResponse;
@@ -66,7 +65,6 @@ import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
 import com.google.firestore.v1beta1.Value;
-import com.google.protobuf.Message;
 import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -74,7 +72,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -674,17 +671,5 @@ public class DocumentReferenceTest {
     for (CommitRequest request : commitCapture.getAllValues()) {
       assertCommitEquals(expectedCommit, request);
     }
-  }
-
-  @Test
-  public void getCollections() throws ExecutionException, InterruptedException {
-    doReturn(listCollectionIdsResponse("second", "first"))
-        .when(firestoreMock)
-        .sendRequest(
-            listCollectionIdsCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
-
-    List<CollectionReference> collections = firestoreMock.getCollections().get();
-    assertEquals("first", collections.get(0).getId());
-    assertEquals("second", collections.get(1).getId());
   }
 }
