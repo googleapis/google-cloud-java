@@ -20,6 +20,8 @@ import com.google.api.gax.rpc.OperationFuture;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.dlp.v2beta1.DlpServiceClient;
 import com.google.longrunning.Operation;
+import com.google.privacy.dlp.v2beta1.BigQueryOptions;
+import com.google.privacy.dlp.v2beta1.BigQueryTable;
 import com.google.privacy.dlp.v2beta1.CloudStorageOptions;
 import com.google.privacy.dlp.v2beta1.CloudStorageOptions.FileSet;
 import com.google.privacy.dlp.v2beta1.ContentItem;
@@ -332,9 +334,88 @@ public class Inspect {
     // [END dlp_inspect_datastore]
   }
 
+  private static void inspectBigquery(
+          String projectId,
+          String datasetId,
+          String tableId,
+          Likelihood minLikelihood,
+          List<InfoType> infoTypes) {
+    // [START dlp_inspect_bigquery]
+    // Instantiates a client
+    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+
+      // (Optional) The project ID to run the API call under
+      // projectId =  my-project-id
+
+      // The ID of the dataset to inspect, e.g. 'my_dataset'
+      // datasetId = "my_dataset";
+
+      // The ID of the table to inspect, e.g. 'my_table'
+      // tableId = "my_table";
+
+      // The minimum likelihood required before returning a match
+      // minLikelihood = LIKELIHOOD_UNSPECIFIED;
+
+      // The infoTypes of information to match
+      // infoTypes = ['US_MALE_NAME', 'US_FEMALE_NAME'];
+
+      // Reference to the BigQuery table
+      BigQueryTable tableReference =
+              BigQueryTable.newBuilder()
+                  .setProjectId(projectId)
+                  .setDatasetId(datasetId)
+                  .setTableId(tableId)
+                  .build();
+      BigQueryOptions bigQueryOptions =
+              BigQueryOptions.newBuilder()
+                  .setTableReference(tableReference)
+                  .build();
+
+      // Construct BigQuery configuration to be inspected
+      StorageConfig storageConfig =
+              StorageConfig.newBuilder()
+                  .setBigQueryOptions(bigQueryOptions)
+                  .build();
+
+      InspectConfig inspectConfig =
+              InspectConfig.newBuilder()
+                      .addAllInfoTypes(infoTypes)
+                      .setMinLikelihood(minLikelihood)
+                      .build();
+
+      // optionally provide an output configuration to store results, default : none
+      OutputStorageConfig outputConfig = OutputStorageConfig.getDefaultInstance();
+
+      // asynchronously submit an inspect operation
+      OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation> responseFuture =
+              dlpServiceClient.createInspectOperationAsync(
+                  inspectConfig, storageConfig, outputConfig);
+
+      // ...
+      // block on response, returning job id of the operation
+      InspectOperationResult inspectOperationResult = responseFuture.get();
+      ResultName resultName = inspectOperationResult.getNameAsResultName();
+      InspectResult inspectResult = dlpServiceClient.listInspectFindings(resultName).getResult();
+
+      if (inspectResult.getFindingsCount() > 0) {
+        System.out.println("Findings: ");
+        for (Finding finding : inspectResult.getFindingsList()) {
+          System.out.print("\tInfo type: " + finding.getInfoType().getName());
+          System.out.println("\tLikelihood: " + finding.getLikelihood());
+        }
+      } else {
+        System.out.println("No findings.");
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+      System.out.println("Error in inspectBigguery: " + e.getMessage());
+    }
+    // [END dlp_inspect_bigquery]
+  }
+
   /**
    * Command line application to inspect data using the Data Loss Prevention API.
-   * Supported data formats : string, file, text files on GCS and Datastore entities
+   * Supported data formats: string, file, text file on GCS, BigQuery table, and Datastore entity
    */
   public static void main(String[] args) throws Exception {
 
@@ -351,6 +432,9 @@ public class Inspect {
 
     Option datastoreOption = new Option("ds", "Google Datastore", false, "inspect Datastore kind");
     optionsGroup.addOption(datastoreOption);
+
+    Option bigqueryOption = new Option("bq", "Google BigQuery", false, "inspect BigQuery table");
+    optionsGroup.addOption(bigqueryOption);
 
     Options commandLineOptions = new Options();
     commandLineOptions.addOptionGroup(optionsGroup);
@@ -377,9 +461,15 @@ public class Inspect {
     Option gcsFileNameOption = Option.builder("fileName").hasArg(true).required(false).build();
     commandLineOptions.addOption(gcsFileNameOption);
 
-    Option datastoreProjectIdOption =
+    Option datasetIdOption = Option.builder("datasetId").hasArg(true).required(false).build();
+    commandLineOptions.addOption(datasetIdOption);
+
+    Option tableIdOption = Option.builder("tableId").hasArg(true).required(false).build();
+    commandLineOptions.addOption(tableIdOption);
+
+    Option projectIdOption =
         Option.builder("projectId").hasArg(true).required(false).build();
-    commandLineOptions.addOption(datastoreProjectIdOption);
+    commandLineOptions.addOption(projectIdOption);
 
     Option datastoreNamespaceOption =
         Option.builder("namespace").hasArg(true).required(false).build();
@@ -436,8 +526,16 @@ public class Inspect {
       // use default project id when project id is not specified
       String projectId =
           cmd.getOptionValue(
-              datastoreProjectIdOption.getOpt(), ServiceOptions.getDefaultProjectId());
+              projectIdOption.getOpt(), ServiceOptions.getDefaultProjectId());
       inspectDatastore(projectId, namespaceId, kind, minLikelihood, infoTypesList);
+    } else if (cmd.hasOption("bq")) {
+      String datasetId = cmd.getOptionValue(datasetIdOption.getOpt());
+      String tableId = cmd.getOptionValue(tableIdOption.getOpt());
+      // use default project id when project id is not specified
+      String projectId =
+              cmd.getOptionValue(
+                      projectIdOption.getOpt(), ServiceOptions.getDefaultProjectId());
+      inspectBigquery(projectId, datasetId, tableId, minLikelihood, infoTypesList);
     }
   }
 }
