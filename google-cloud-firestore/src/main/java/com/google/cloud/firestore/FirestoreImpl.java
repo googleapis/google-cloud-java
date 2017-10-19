@@ -20,7 +20,6 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
-import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -35,6 +34,7 @@ import com.google.firestore.v1beta1.Value;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Timestamp;
+import io.grpc.Status;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -176,7 +176,7 @@ class FirestoreImpl implements Firestore {
 
   @Nonnull
   @Override
-  public Iterable<CollectionReference> getCollections() throws ApiException {
+  public Iterable<CollectionReference> getCollections() {
     DocumentReference rootDocument = new DocumentReference(this, this.databasePath);
     return rootDocument.getCollections();
   }
@@ -358,7 +358,7 @@ class FirestoreImpl implements Firestore {
             } else {
               rejectTransaction(
                   FirestoreException.serverRejected(
-                      "Transaction was cancelled because of too many retries."));
+                      Status.ABORTED, "Transaction was cancelled because of too many retries."));
             }
           }
 

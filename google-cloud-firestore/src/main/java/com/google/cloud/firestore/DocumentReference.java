@@ -339,14 +339,22 @@ public final class DocumentReference {
   /**
    * Fetches the subcollections that are direct children of this document.
    *
+   * @throws FirestoreException if the Iterable could not be initialized.
    * @return An Iterable that can be used to fetch all subcollections.
    */
-  public Iterable<CollectionReference> getCollections() throws ApiException {
+  public Iterable<CollectionReference> getCollections() {
     ListCollectionIdsRequest.Builder request = ListCollectionIdsRequest.newBuilder();
     request.setParent(path.toString());
-    final ListCollectionIdsPagedResponse response =
-        ApiExceptions.callAndTranslateApiException(firestore
-            .sendRequest(request.build(), firestore.getClient().listCollectionIdsPagedCallable()));
+    final ListCollectionIdsPagedResponse response;
+
+    try {
+      response =
+          ApiExceptions.callAndTranslateApiException(
+              firestore.sendRequest(
+                  request.build(), firestore.getClient().listCollectionIdsPagedCallable()));
+    } catch (ApiException exception) {
+      throw FirestoreException.apiException(exception);
+    }
 
     return new Iterable<CollectionReference>() {
       @Override
