@@ -19,14 +19,14 @@ package com.google.cloud.firestore;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptions;
+import com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
-import com.google.firestore.v1beta1.ListCollectionIdsResponse;
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.SortedSet;
-import java.util.TreeSet;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -339,27 +339,46 @@ public final class DocumentReference {
   /**
    * Fetches the subcollections that are direct children of this document.
    *
-   * @return An ApiFuture that will be resolved with the list of subcollections.
+   * @throws FirestoreException if the Iterable could not be initialized.
+   * @return An Iterable that can be used to fetch all subcollections.
    */
-  public ApiFuture<List<CollectionReference>> getCollections() {
+  public Iterable<CollectionReference> getCollections() {
     ListCollectionIdsRequest.Builder request = ListCollectionIdsRequest.newBuilder();
     request.setParent(path.toString());
-    ApiFuture<ListCollectionIdsResponse> response =
-        firestore.sendRequest(request.build(), firestore.getClient().listCollectionIdsCallable());
+    final ListCollectionIdsPagedResponse response;
 
-    return ApiFutures.transform(
-        response,
-        new ApiFunction<ListCollectionIdsResponse, List<CollectionReference>>() {
+    try {
+      response =
+          ApiExceptions.callAndTranslateApiException(
+              firestore.sendRequest(
+                  request.build(), firestore.getClient().listCollectionIdsPagedCallable()));
+    } catch (ApiException exception) {
+      throw FirestoreException.apiException(exception);
+    }
+
+    return new Iterable<CollectionReference>() {
+      @Override
+      @Nonnull
+      public Iterator<CollectionReference> iterator() {
+        final Iterator<String> iterator = response.iterateAll().iterator();
+        return new Iterator<CollectionReference>() {
           @Override
-          public List<CollectionReference> apply(ListCollectionIdsResponse response) {
-            List<CollectionReference> collectionList = new ArrayList<>();
-            SortedSet<String> sortedIds = new TreeSet<>(response.getCollectionIdsList());
-            for (String collectionId : sortedIds) {
-              collectionList.add(DocumentReference.this.collection(collectionId));
-            }
-            return collectionList;
+          public boolean hasNext() {
+            return iterator.hasNext();
           }
-        });
+
+          @Override
+          public CollectionReference next() {
+            return DocumentReference.this.collection(iterator.next());
+          }
+
+          @Override
+          public void remove() {
+            throw new UnsupportedOperationException("remove");
+          }
+        };
+      }
+    };
   }
 
   @Override

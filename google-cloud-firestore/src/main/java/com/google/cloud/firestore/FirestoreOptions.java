@@ -70,7 +70,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
       try {
         return new GrpcFirestoreRpc(options);
       } catch (IOException e) {
-        throw FirestoreException.networkException(e);
+        throw FirestoreException.networkException(e, false);
       }
     }
   }

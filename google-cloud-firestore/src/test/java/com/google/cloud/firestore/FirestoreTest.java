@@ -18,21 +18,16 @@ package com.google.cloud.firestore;
 
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
-import static com.google.cloud.firestore.LocalFirestoreHelper.listCollectionIdsResponse;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.doReturn;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
-import com.google.protobuf.Message;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -117,17 +112,5 @@ public class FirestoreTest {
     // Note that we sort based on the order in the getAll() call.
     assertEquals("doc4", snapshot.get(2).getId());
     assertEquals("doc3", snapshot.get(3).getId());
-  }
-
-  @Test
-  public void getCollections() throws ExecutionException, InterruptedException {
-    doReturn(listCollectionIdsResponse("first", "second"))
-        .when(firestoreMock)
-        .sendRequest(
-            listCollectionIdsCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
-
-    List<CollectionReference> collections = firestoreMock.getCollections().get();
-    assertEquals("first", collections.get(0).getId());
-    assertEquals("second", collections.get(1).getId());
   }
 }

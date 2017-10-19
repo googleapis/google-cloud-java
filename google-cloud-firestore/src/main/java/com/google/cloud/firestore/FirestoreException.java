@@ -16,62 +16,61 @@
 
 package com.google.cloud.firestore;
 
-import com.google.cloud.http.BaseHttpServiceException;
-import com.google.common.collect.ImmutableSet;
+import com.google.api.gax.rpc.ApiException;
+import com.google.cloud.grpc.BaseGrpcServiceException;
+import io.grpc.Status;
 import java.io.IOException;
-import java.util.Set;
 
 /** A Firestore Service exception. */
-public final class FirestoreException extends BaseHttpServiceException {
+public final class FirestoreException extends BaseGrpcServiceException {
 
-  private static final Set<Error> RETRYABLE_ERRORS =
-      ImmutableSet.of(
-          new Error(10, "ABORTED", false),
-          new Error(4, "DEADLINE_EXCEEDED", false),
-          new Error(14, "UNAVAILABLE", true));
-  private static final long serialVersionUID = 9100921023984662143L;
-
-  private FirestoreException(int code, String message, String reason) {
-    this(code, message, reason, true, null);
+  private FirestoreException(String reason, Status status) {
+    super(reason, null, status.getCode().value(), false);
   }
 
-  private FirestoreException(
-      int code, String message, String reason, boolean idempotent, Throwable cause) {
-    super(code, message, reason, idempotent, RETRYABLE_ERRORS, cause);
+  private FirestoreException(IOException exception, boolean retryable) {
+    super(exception, retryable);
   }
 
-  private FirestoreException(IOException exception) {
-    super(exception, true, RETRYABLE_ERRORS);
+  private FirestoreException(ApiException exception) {
+    super(exception);
   }
 
   /**
-   * Create a FirestoreException with {@code FAILED_PRECONDITION} reason and the {@code message} in
-   * a nested exception.
+   * Creates a FirestoreException with an {@code INVALID_ARGUMENT} status code and the provided
+   * message in a nested exception.
    *
    * @return The FirestoreException
    */
   static FirestoreException invalidState(String message, Object... params) {
-    return new FirestoreException(
-        UNKNOWN_CODE, String.format(message, params), "FAILED_PRECONDITION");
+    return new FirestoreException(String.format(message, params), Status.INVALID_ARGUMENT);
   }
 
   /**
-   * Create a FirestoreException with {@code FAILED_PRECONDITION} reason and the {@code message} in
-   * a nested exception.
+   * Creates a FirestoreException with the provided GRPC Status code and message in a nested
+   * exception.
    *
    * @return The FirestoreException
    */
-  static FirestoreException serverRejected(String message, Object... params) {
-    return new FirestoreException(UNKNOWN_CODE, String.format(message, params), "CANCELLED");
+  static FirestoreException serverRejected(Status status, String message, Object... params) {
+    return new FirestoreException(String.format(message, params), status);
   }
 
   /**
-   * Create a FirestoreException with {@code FAILED_PRECONDITION} reason and the {@code message} in
-   * a nested exception.
+   * Creates a FirestoreException from an IOException.
    *
    * @return The FirestoreException
    */
-  static FirestoreException networkException(IOException exception) {
+  static FirestoreException networkException(IOException exception, boolean retryable) {
+    return new FirestoreException(exception, retryable);
+  }
+
+  /**
+   * Creates a FirestoreException from an ApiException.
+   *
+   * @return The FirestoreException
+   */
+  static FirestoreException apiException(ApiException exception) {
     return new FirestoreException(exception);
   }
 }

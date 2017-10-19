@@ -648,7 +648,7 @@ public class Query {
   }
 
   /**
-   * Executes the query and streams the results as a StreamObserver of DocumentSnapsnots.
+   * Executes the query and streams the results as a StreamObserver of DocumentSnapshots.
    *
    * @param responseObserver The observer to be notified when results arrive.
    */
@@ -742,7 +742,7 @@ public class Query {
     return get(null);
   }
 
-  ApiFuture<QuerySnapshot> get(@Nullable ByteString transctionId) {
+  ApiFuture<QuerySnapshot> get(@Nullable ByteString transactionId) {
     final SettableApiFuture<QuerySnapshot> result = SettableApiFuture.create();
 
     stream(
@@ -766,7 +766,7 @@ public class Query {
             result.set(querySnapshot);
           }
         },
-        transctionId);
+        transactionId);
 
     return result;
   }
