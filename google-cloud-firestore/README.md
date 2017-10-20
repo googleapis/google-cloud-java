@@ -31,7 +31,7 @@ See the
 [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication)
 section in the base directory's README.
 
-Abuot Google Cloud Firestore
+About Google Cloud Firestore
 ----------------------------
 
 Cloud Firestore is a fully-managed NoSQL document database for mobile, web, and server development from Firebase and Google Cloud Platform.  It's backed by a multi-region replicated database that ensures once data is committed, it's durable even in the face of unexpected disasters. Not only that, but despite being a distributed database, it's also strongly consistent and offers seamless integration with other Firebase and Google Cloud Platform products, including Google Cloud Functions.
