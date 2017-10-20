@@ -77,7 +77,7 @@ public class TopicAdminClientSnippets {
     // [END pubsub_list_topics]
   }
 
-  /** Example of listing topics for a subscription. */
+  /** Example of listing subscriptions for a topic. */
   public ListTopicSubscriptionsPagedResponse listTopicSubscriptions(String topicId)
       throws Exception {
     // [START pubsub_list_topic_subscriptions]
