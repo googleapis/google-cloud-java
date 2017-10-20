@@ -2,8 +2,8 @@ Google Cloud Java Client for Firestore
 =================================
 
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [Examples](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/examples/package-summary.html)
+-  [Product Documentation](https://cloud.google.com/firestore/docs/)
+-  [Client Library Documentation](https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/firestore/package-summary.html)
 
 Quickstart
 ----------
