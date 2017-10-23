@@ -147,7 +147,7 @@ public abstract class TableDefinition implements Serializable {
      * Sets the table schema.
      */
     public B setSchema(Schema schema) {
-      this.schema = checkNotNull(schema);
+      this.schema = schema;
       return self();
     }
 
