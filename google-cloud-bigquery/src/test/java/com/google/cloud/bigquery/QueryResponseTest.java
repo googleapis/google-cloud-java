@@ -72,7 +72,7 @@ public class QueryResponseTest {
       .setNumDmlAffectedRows(NUM_DML_AFFECTED_ROWS)
       .setJobCompleted(JOB_COMPLETE)
       .setExecutionErrors(ERRORS)
-      .setResult(QUERY_RESULT)
+      // .setResult(QUERY_RESULT)
       .build();
 
   @Test

@@ -42,6 +42,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -614,40 +615,32 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       final BigQueryOptions serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
     final JobId completeJobId = jobId.setProjectId(serviceOptions.getProjectId());
     try {
+      com.google.api.services.bigquery.model.Job job =
+          runWithRetries(new Callable<com.google.api.services.bigquery.model.Job>() {
+            @Override
+            public com.google.api.services.bigquery.model.Job call() {
+              return serviceOptions.getBigQueryRpcV2().getJob(
+                  completeJobId.getProject(), completeJobId.getJob(), optionsMap);
+            }
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
+
+      final EnumMap<BigQueryRpc.Option, Object> getQueryResultsOption = new EnumMap<>(optionsMap);
+      getQueryResultsOption.put(BigQueryRpc.Option.MAX_RESULTS, Integer.valueOf(0));
       GetQueryResultsResponse results =
           runWithRetries(new Callable<GetQueryResultsResponse>() {
             @Override
             public GetQueryResultsResponse call() {
               return serviceOptions.getBigQueryRpcV2().getQueryResults(
-                  completeJobId.getProject(), completeJobId.getJob(), optionsMap);
+                  completeJobId.getProject(), completeJobId.getJob(), getQueryResultsOption);
             }
           }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
+
       QueryResponse.Builder builder = QueryResponse.newBuilder();
       builder.setJobId(JobId.fromPb(results.getJobReference()));
+      builder.setTableId(TableId.fromPb(job.getConfiguration().getQuery().getDestinationTable()));
       builder.setNumDmlAffectedRows(results.getNumDmlAffectedRows());
       builder.setEtag(results.getEtag());
       builder.setJobCompleted(results.getJobComplete());
-      List<TableRow> rowsPb = results.getRows();
-      if (results.getJobComplete()) {
-        QueryResult.Builder resultBuilder =
-            transformQueryResults(
-                completeJobId,
-                rowsPb,
-                results.getSchema(),
-                results.getPageToken(),
-                serviceOptions,
-                ImmutableMap.<BigQueryRpc.Option, Object>of());
-        if (results.getTotalBytesProcessed() != null) {
-          resultBuilder.setTotalBytesProcessed(results.getTotalBytesProcessed());
-        }
-        if (results.getCacheHit() != null) {
-          resultBuilder.setCacheHit(results.getCacheHit());
-        }
-        if (results.getTotalRows() != null) {
-          resultBuilder.setTotalRows(results.getTotalRows().longValue());
-        }
-        builder.setResult(resultBuilder.build());
-      }
       if (results.getErrors() != null) {
         builder.setExecutionErrors(
             Lists.transform(results.getErrors(), BigQueryError.FROM_PB_FUNCTION));
@@ -656,19 +649,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
-  }
-
-  private static QueryResult.Builder transformQueryResults(JobId jobId, List<TableRow> rowsPb,
-      TableSchema schemaPb, String cursor, BigQueryOptions serviceOptions,
-      Map<BigQueryRpc.Option, ?> optionsMap) {
-    QueryResultsPageFetcherImpl nextPageFetcher =
-        new QueryResultsPageFetcherImpl(jobId, serviceOptions, cursor, optionsMap);
-    Schema schema = schemaPb != null ? Schema.fromPb(schemaPb) : null;
-    return QueryResult.newBuilder()
-        .setPageFetcher(nextPageFetcher)
-        .setCursor(cursor)
-        .setSchema(schema)
-        .setResults(transformTableData(rowsPb, schema));
   }
 
   @Override

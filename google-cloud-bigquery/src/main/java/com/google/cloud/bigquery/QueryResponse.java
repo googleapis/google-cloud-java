@@ -23,6 +23,8 @@ import com.google.common.collect.ImmutableList;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Google Cloud BigQuery Query Response. This class contains the results of a Query Job
@@ -48,28 +50,27 @@ public class QueryResponse implements Serializable {
 
   private static final long serialVersionUID = 3549226764825005655L;
 
-  private final QueryResult result;
   private final String etag;
   private final JobId jobId;
+  private final TableId tableId;
   private final Long numDmlAffectedRows;
   private final boolean jobCompleted;
   private final List<BigQueryError> executionErrors;
 
+  private final Lock resultLock = new ReentrantLock();
+  private QueryResult result;
+  private Throwable resultException;
+
   static final class Builder {
 
-    private QueryResult result;
     private String etag;
     private JobId jobId;
+    private TableId tableId;
     private Long numDmlAffectedRows;
     private boolean jobCompleted;
     private List<BigQueryError> executionErrors;
 
     private Builder() {}
-
-    Builder setResult(QueryResult result) {
-      this.result = result;
-      return this;
-    }
 
     Builder setEtag(String etag) {
       this.etag = etag;
@@ -78,6 +79,11 @@ public class QueryResponse implements Serializable {
 
     Builder setJobId(JobId jobId) {
       this.jobId = jobId;
+      return this;
+    }
+
+    Builder setTableId(TableId tableId) {
+      this.tableId = tableId;
       return this;
     }
 
@@ -102,9 +108,9 @@ public class QueryResponse implements Serializable {
   }
 
   private QueryResponse(Builder builder) {
-    this.result = builder.result;
     this.etag = builder.etag;
     this.jobId = builder.jobId;
+    this.tableId = builder.tableId;
     this.numDmlAffectedRows = builder.numDmlAffectedRows;
     this.jobCompleted = builder.jobCompleted;
     this.executionErrors = builder.executionErrors != null ? builder.executionErrors
@@ -117,9 +123,32 @@ public class QueryResponse implements Serializable {
    * false}.
    */
   public QueryResult getResult() {
-    return result;
+    if (!jobCompleted()) {
+      return null;
+    }
+    resultLock.lock();
+    try {
+      if (result == null || resultException == null) {
+        try {
+          result = loadResult();
+        } catch (Throwable t) {
+          resultException = t;
+        }
+      }
+
+      if (result != null) {
+        return result;
+      }
+      throw new RuntimeException(resultException);
+    } finally {
+      resultLock.unlock();
+    }
+    // return result;
   }
 
+  private QueryResult loadResult() {
+    throw new UnsupportedOperationException();
+  }
 
   /**
    * Returns the hash of the {@code QueryResponse} resource or {@code null} if not set.
@@ -174,7 +203,6 @@ public class QueryResponse implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("result", result)
         .add("etag", etag)
         .add("jobId", jobId)
         .add("numDmlAffectedRows", numDmlAffectedRows)
@@ -185,7 +213,7 @@ public class QueryResponse implements Serializable {
 
   @Override
   public final int hashCode() {
-    return Objects.hash(result, etag, jobId, numDmlAffectedRows, jobCompleted, executionErrors);
+    return Objects.hash(etag, jobId, numDmlAffectedRows, jobCompleted, executionErrors);
   }
 
   @Override
@@ -199,7 +227,6 @@ public class QueryResponse implements Serializable {
     QueryResponse response = (QueryResponse) obj;
     return jobCompleted == response.jobCompleted
         && Objects.equals(etag, response.etag)
-        && Objects.equals(result, response.result)
         && Objects.equals(jobId, response.jobId)
         && Objects.equals(numDmlAffectedRows, response.numDmlAffectedRows)
         && Objects.equals(executionErrors, response.executionErrors);
