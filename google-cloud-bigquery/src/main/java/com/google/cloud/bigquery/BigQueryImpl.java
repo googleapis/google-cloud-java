@@ -642,6 +642,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       if (results.getTotalBytesProcessed() != null) {
         builder.setTotalBytesProcessed(results.getTotalBytesProcessed());
       }
+      if (results.getTotalRows() != null) {
+        builder.setTotalRows(results.getTotalRows().longValue());
+      }
       if (results.getCacheHit() != null) {
         builder.setCacheHit(results.getCacheHit());
       }

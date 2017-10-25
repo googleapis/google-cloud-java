@@ -49,7 +49,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import java.math.BigInteger;
 import java.util.Collections;
 import java.util.List;
@@ -1164,7 +1163,7 @@ public class BigQueryImplTest {
     assertFalse(response.hasErrors());
     assertEquals(null, response.getSchema());
     assertEquals(42L, response.getTotalBytesProcessed());
-    // assertEquals(1L, response.getResult().getTotalRows());
+    assertEquals(1L, response.getTotalRows());
     // for (FieldValueList row : response.getResult().getValues()) {
     //   assertEquals(false, row.get(0).getBooleanValue());
     //   assertEquals(1L, row.get(1).getLongValue());
@@ -1230,7 +1229,7 @@ public class BigQueryImplTest {
     assertFalse(response.hasErrors());
     assertEquals(null, response.getSchema());
     assertEquals(42L, response.getTotalBytesProcessed());
-    // assertEquals(1L, response.getResult().getTotalRows());
+    assertEquals(1L, response.getTotalRows());
     // for (FieldValueList row : response.getResult().getValues()) {
     //   assertEquals(false, row.get(0).getBooleanValue());
     //   assertEquals(1L, row.get(1).getLongValue());
@@ -1279,7 +1278,7 @@ public class BigQueryImplTest {
     assertFalse(response.hasErrors());
     assertEquals(null, response.getSchema());
     assertEquals(42L, response.getTotalBytesProcessed());
-    // assertEquals(1L, response.getResult().getTotalRows());
+    assertEquals(1L, response.getTotalRows());
     // for (FieldValueList row : response.getResult().getValues()) {
     //   assertEquals(false, row.get(0).getBooleanValue());
     //   assertEquals(1L, row.get(1).getLongValue());
@@ -1328,7 +1327,7 @@ public class BigQueryImplTest {
     assertFalse(response.hasErrors());
     assertEquals(null, response.getSchema());
     assertEquals(42L, response.getTotalBytesProcessed());
-    // assertEquals(1L, response.getResult().getTotalRows());
+    assertEquals(1L, response.getTotalRows());
     // for (FieldValueList row : response.getResult().getValues()) {
     //   assertEquals(false, row.get(0).getBooleanValue());
     //   assertEquals(1L, row.get(1).getLongValue());
@@ -1381,7 +1380,7 @@ public class BigQueryImplTest {
     assertFalse(response.hasErrors());
     assertEquals(null, response.getSchema());
     assertEquals(42L, response.getTotalBytesProcessed());
-    // assertEquals(1L, response.getResult().getTotalRows());
+    assertEquals(1L, response.getTotalRows());
     // for (FieldValueList row : response.getResult().getValues()) {
     //   assertEquals(false, row.get(0).getBooleanValue());
     //   assertEquals(1L, row.get(1).getLongValue());

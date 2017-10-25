@@ -57,6 +57,7 @@ public class QueryResponse implements Serializable {
   private final boolean cacheHit;
   private final Schema schema;
   private final long totalBytesProcessed;
+  private final long totalRows;
 
   static final class Builder {
 
@@ -69,6 +70,7 @@ public class QueryResponse implements Serializable {
     private boolean cacheHit;
     private Schema schema;
     private long totalBytesProcessed;
+    private long totalRows;
 
     private Builder() {}
 
@@ -117,6 +119,11 @@ public class QueryResponse implements Serializable {
       return this;
     }
 
+    Builder setTotalRows(long totalRows) {
+      this.totalRows = totalRows;
+      return this;
+    }
+
     QueryResponse build() {
       return new QueryResponse(this);
     }
@@ -135,6 +142,7 @@ public class QueryResponse implements Serializable {
     this.cacheHit = builder.cacheHit;
     this.schema = builder.schema;
     this.totalBytesProcessed = builder.totalBytesProcessed;
+    this.totalRows = builder.totalRows;
   }
 
   /**
@@ -145,8 +153,8 @@ public class QueryResponse implements Serializable {
     if (!jobCompleted()) {
       return null;
     }
+    // return bigquery.listTableData
     return null;
-    // return result;
   }
 
   /** Returns the hash of the {@code QueryResponse} resource or {@code null} if not set. */
@@ -221,6 +229,15 @@ public class QueryResponse implements Serializable {
     return totalBytesProcessed;
   }
 
+  /**
+   * Returns the total number of rows in the complete query result set, which can be more than the
+   * number of rows in the first page of results returned by {@link #getValues()}. Returns {@code 0}
+   * if the query was a dry run.
+   */
+  public long getTotalRows() {
+    return totalRows;
+  }
+
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
@@ -232,6 +249,7 @@ public class QueryResponse implements Serializable {
         .add("cacheHit", cacheHit)
         .add("schema", schema)
         .add("totalBytesProcessed", totalBytesProcessed)
+        .add("totalRows", totalRows)
         .toString();
   }
 
@@ -245,7 +263,7 @@ public class QueryResponse implements Serializable {
         executionErrors,
         cacheHit,
         schema,
-        totalBytesProcessed);
+        totalBytesProcessed, totalRows);
   }
 
   @Override
@@ -264,6 +282,7 @@ public class QueryResponse implements Serializable {
         && Objects.equals(executionErrors, response.executionErrors)
         && Objects.equals(schema, response.schema)
         && totalBytesProcessed == response.totalBytesProcessed
+        && totalRows == response.totalRows
         && cacheHit == response.cacheHit;
   }
 
