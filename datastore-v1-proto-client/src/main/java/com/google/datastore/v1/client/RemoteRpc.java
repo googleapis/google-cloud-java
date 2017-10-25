@@ -182,9 +182,11 @@ class RemoteRpc {
         }
         httpResponse = httpRequest.execute();
         if (!httpResponse.isSuccessStatusCode()) {
-          throw makeException(url, methodName, httpResponse.getContent(),
-              httpResponse.getContentType(), httpResponse.getContentCharset(), null,
-              httpResponse.getStatusCode());
+          try (InputStream content = httpResponse.getContent()) {
+            throw makeException(url, methodName, content,
+                httpResponse.getContentType(), httpResponse.getContentCharset(), null,
+                httpResponse.getStatusCode());
+          }
         }
         return GzipFixingInputStream.maybeWrap(httpResponse.getContent());
       } catch (SocketTimeoutException e) {
@@ -230,7 +232,7 @@ class RemoteRpc {
       String responseContent;
       try {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        IOUtils.copy(content, out);
+        IOUtils.copy(content, out, false);
         responseContent = out.toString(contentCharset.name());
       } catch (IOException e) {
         responseContent = "";
