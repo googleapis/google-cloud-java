@@ -1519,4 +1519,42 @@ public class ITStorageTest {
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     assertTrue(remoteBlob.delete());
   }
+
+  @Test
+  public void testListBucketRequesterPays() throws InterruptedException {
+
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+    assertNull(remoteBucket.requesterPays());
+    remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+    Bucket updatedBucket = storage.update(remoteBucket);
+    assertTrue(updatedBucket.requesterPays());
+
+    // list buckets code
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+        Storage.BucketListOption.fields(), Storage.BucketListOption.userProject(projectId)).iterateAll().iterator();
+    while (!bucketIterator.hasNext()) {
+      Thread.sleep(500);
+      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+          Storage.BucketListOption.fields(), Storage.BucketListOption.userProject(projectId)).iterateAll().iterator();
+    }
+    while (bucketIterator.hasNext()) {
+      Bucket listedRemoteBucket = bucketIterator.next();
+      assertTrue(listedRemoteBucket.getName().startsWith(BUCKET));
+      assertNull(listedRemoteBucket.getCreateTime());
+      assertNull(listedRemoteBucket.getSelfLink());
+    }
+
+    // update bucket code
+
+
+
+//    Bucket.BlobTargetOption option = Bucket.BlobTargetOption.userProject(projectId);
+//    String blobName = "test-create-empty-blob-requester-pays";
+//    Blob remoteBlob = updatedBucket.create(blobName, BLOB_BYTE_CONTENT, option);
+//    assertNotNull(remoteBlob);
+//    byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+//    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+//    assertTrue(remoteBlob.delete());
+  }
 }

@@ -252,6 +252,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
           .setFields(Option.FIELDS.getString(options))
+          .setUserProject(Option.FIELDS.getString(options))
           .execute();
       return Tuple.<String, Iterable<Bucket>>of(buckets.getNextPageToken(), buckets.getItems());
     } catch (IOException ex) {
