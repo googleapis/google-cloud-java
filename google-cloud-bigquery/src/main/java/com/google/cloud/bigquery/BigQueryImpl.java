@@ -26,7 +26,6 @@ import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableRow;
-import com.google.api.services.bigquery.model.TableSchema;
 import com.google.cloud.BaseService;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
@@ -38,7 +37,6 @@ import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -625,7 +623,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
 
       final EnumMap<BigQueryRpc.Option, Object> getQueryResultsOption = new EnumMap<>(optionsMap);
-      getQueryResultsOption.put(BigQueryRpc.Option.MAX_RESULTS, Integer.valueOf(0));
+      getQueryResultsOption.put(BigQueryRpc.Option.MAX_RESULTS, Long.valueOf(0));
       GetQueryResultsResponse results =
           runWithRetries(new Callable<GetQueryResultsResponse>() {
             @Override
@@ -641,6 +639,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       builder.setNumDmlAffectedRows(results.getNumDmlAffectedRows());
       builder.setEtag(results.getEtag());
       builder.setJobCompleted(results.getJobComplete());
+      if (results.getTotalBytesProcessed() != null) {
+        builder.setTotalBytesProcessed(results.getTotalBytesProcessed());
+      }
+      if (results.getCacheHit() != null) {
+        builder.setCacheHit(results.getCacheHit());
+      }
+      if (results.getSchema() != null) {
+        builder.setSchema(Schema.fromPb(results.getSchema()));
+      }
       if (results.getErrors() != null) {
         builder.setExecutionErrors(
             Lists.transform(results.getErrors(), BigQueryError.FROM_PB_FUNCTION));
