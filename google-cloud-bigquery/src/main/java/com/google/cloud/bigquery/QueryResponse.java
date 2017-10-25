@@ -19,18 +19,18 @@ package com.google.cloud.bigquery;
 import com.google.cloud.bigquery.BigQuery.QueryOption;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * Google Cloud BigQuery Query Response. This class contains the results of a Query Job
- * ({@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)}) or of a
- * Query Request ({@link BigQuery#query(QueryJobConfiguration, QueryOption...)}).
+ * Google Cloud BigQuery Query Response. This class contains the results of a Query Job ({@link
+ * BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)}) or of a Query Request ({@link
+ * BigQuery#query(QueryJobConfiguration, QueryOption...)}).
  *
  * <p>Example usage of a query response:
- * <pre> {@code
+ *
+ * <pre>{@code
  * QueryResponse response = bigquery.query(queryConfig);
  * List<BigQueryError> executionErrors = response.getExecutionErrors();
  * // look for errors in executionErrors
@@ -48,28 +48,31 @@ public class QueryResponse implements Serializable {
 
   private static final long serialVersionUID = 3549226764825005655L;
 
-  private final QueryResult result;
   private final String etag;
   private final JobId jobId;
+  private final TableId tableId;
   private final Long numDmlAffectedRows;
   private final boolean jobCompleted;
   private final List<BigQueryError> executionErrors;
+  private final boolean cacheHit;
+  private final Schema schema;
+  private final long totalBytesProcessed;
+  private final long totalRows;
 
   static final class Builder {
 
-    private QueryResult result;
     private String etag;
     private JobId jobId;
+    private TableId tableId;
     private Long numDmlAffectedRows;
     private boolean jobCompleted;
     private List<BigQueryError> executionErrors;
+    private boolean cacheHit;
+    private Schema schema;
+    private long totalBytesProcessed;
+    private long totalRows;
 
     private Builder() {}
-
-    Builder setResult(QueryResult result) {
-      this.result = result;
-      return this;
-    }
 
     Builder setEtag(String etag) {
       this.etag = etag;
@@ -78,6 +81,11 @@ public class QueryResponse implements Serializable {
 
     Builder setJobId(JobId jobId) {
       this.jobId = jobId;
+      return this;
+    }
+
+    Builder setTableId(TableId tableId) {
+      this.tableId = tableId;
       return this;
     }
 
@@ -96,38 +104,63 @@ public class QueryResponse implements Serializable {
       return this;
     }
 
+    Builder setCacheHit(boolean cacheHit) {
+      this.cacheHit = cacheHit;
+      return this;
+    }
+
+    Builder setSchema(Schema schema) {
+      this.schema = schema;
+      return this;
+    }
+
+    Builder setTotalBytesProcessed(long totalBytesProcessed) {
+      this.totalBytesProcessed = totalBytesProcessed;
+      return this;
+    }
+
+    Builder setTotalRows(long totalRows) {
+      this.totalRows = totalRows;
+      return this;
+    }
+
     QueryResponse build() {
       return new QueryResponse(this);
     }
   }
 
   private QueryResponse(Builder builder) {
-    this.result = builder.result;
     this.etag = builder.etag;
     this.jobId = builder.jobId;
+    this.tableId = builder.tableId;
     this.numDmlAffectedRows = builder.numDmlAffectedRows;
     this.jobCompleted = builder.jobCompleted;
-    this.executionErrors = builder.executionErrors != null ? builder.executionErrors
-      : ImmutableList.<BigQueryError>of();
+    this.executionErrors =
+        builder.executionErrors != null
+            ? builder.executionErrors
+            : ImmutableList.<BigQueryError>of();
+    this.cacheHit = builder.cacheHit;
+    this.schema = builder.schema;
+    this.totalBytesProcessed = builder.totalBytesProcessed;
+    this.totalRows = builder.totalRows;
   }
-
 
   /**
    * Returns the result of the query. Returns {@code null} if {@link #jobCompleted()} is {@code
    * false}.
    */
   public QueryResult getResult() {
-    return result;
+    if (!jobCompleted()) {
+      return null;
+    }
+    // return bigquery.listTableData
+    return null;
   }
 
-
-  /**
-   * Returns the hash of the {@code QueryResponse} resource or {@code null} if not set.
-   */
+  /** Returns the hash of the {@code QueryResponse} resource or {@code null} if not set. */
   public String getEtag() {
     return etag;
   }
-
 
   /**
    * Returns the identity of the BigQuery Job that was created to run the query. This field will be
@@ -141,7 +174,9 @@ public class QueryResponse implements Serializable {
    * Returns the number of rows affected by a DML statement. Present only for DML statements INSERT,
    * UPDATE or DELETE.
    */
-  public Long getNumDmlAffectedRows() { return numDmlAffectedRows; }
+  public Long getNumDmlAffectedRows() {
+    return numDmlAffectedRows;
+  }
 
   /**
    * Returns whether the job running the query has completed or not. If {@link #getResult()} is not
@@ -162,7 +197,6 @@ public class QueryResponse implements Serializable {
     return !executionErrors.isEmpty();
   }
 
-
   /**
    * Returns errors and warnings encountered during the running of the job, if any. Errors here do
    * not necessarily mean that the job has completed or was unsuccessful.
@@ -171,21 +205,65 @@ public class QueryResponse implements Serializable {
     return executionErrors;
   }
 
+  /**
+   * Returns whether the query result was fetched from the query cache.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
+   */
+  public boolean cacheHit() {
+    return cacheHit;
+  }
+
+  /**
+   * Returns the schema of the results. This is present only when the query completes successfully.
+   */
+  public Schema getSchema() {
+    return schema;
+  }
+
+  /**
+   * Returns the total number of bytes processed for the query. If this query was a dry run, this is
+   * the number of bytes that would be processed if the query were run.
+   */
+  public long getTotalBytesProcessed() {
+    return totalBytesProcessed;
+  }
+
+  /**
+   * Returns the total number of rows in the complete query result set, which can be more than the
+   * number of rows in the first page of results returned by {@link #getValues()}. Returns {@code 0}
+   * if the query was a dry run.
+   */
+  public long getTotalRows() {
+    return totalRows;
+  }
+
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("result", result)
         .add("etag", etag)
         .add("jobId", jobId)
         .add("numDmlAffectedRows", numDmlAffectedRows)
         .add("jobCompleted", jobCompleted)
         .add("executionErrors", executionErrors)
+        .add("cacheHit", cacheHit)
+        .add("schema", schema)
+        .add("totalBytesProcessed", totalBytesProcessed)
+        .add("totalRows", totalRows)
         .toString();
   }
 
   @Override
   public final int hashCode() {
-    return Objects.hash(result, etag, jobId, numDmlAffectedRows, jobCompleted, executionErrors);
+    return Objects.hash(
+        etag,
+        jobId,
+        numDmlAffectedRows,
+        jobCompleted,
+        executionErrors,
+        cacheHit,
+        schema,
+        totalBytesProcessed, totalRows);
   }
 
   @Override
@@ -199,10 +277,13 @@ public class QueryResponse implements Serializable {
     QueryResponse response = (QueryResponse) obj;
     return jobCompleted == response.jobCompleted
         && Objects.equals(etag, response.etag)
-        && Objects.equals(result, response.result)
         && Objects.equals(jobId, response.jobId)
         && Objects.equals(numDmlAffectedRows, response.numDmlAffectedRows)
-        && Objects.equals(executionErrors, response.executionErrors);
+        && Objects.equals(executionErrors, response.executionErrors)
+        && Objects.equals(schema, response.schema)
+        && totalBytesProcessed == response.totalBytesProcessed
+        && totalRows == response.totalRows
+        && cacheHit == response.cacheHit;
   }
 
   static Builder newBuilder() {

@@ -22,10 +22,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class QueryResponseTest {
 
@@ -72,13 +70,13 @@ public class QueryResponseTest {
       .setNumDmlAffectedRows(NUM_DML_AFFECTED_ROWS)
       .setJobCompleted(JOB_COMPLETE)
       .setExecutionErrors(ERRORS)
-      .setResult(QUERY_RESULT)
+      // .setResult(QUERY_RESULT)
       .build();
 
   @Test
   public void testBuilder() {
     assertEquals(ETAG, QUERY_RESPONSE.getEtag());
-    assertEquals(QUERY_RESULT, QUERY_RESPONSE.getResult());
+    // assertEquals(QUERY_RESULT, QUERY_RESPONSE.getResult());
     assertEquals(JOB_ID, QUERY_RESPONSE.getJobId());
     assertEquals(NUM_DML_AFFECTED_ROWS, QUERY_RESPONSE.getNumDmlAffectedRows());
     assertEquals(JOB_COMPLETE, QUERY_RESPONSE.jobCompleted());

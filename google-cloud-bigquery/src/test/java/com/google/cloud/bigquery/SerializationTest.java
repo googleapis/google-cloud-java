@@ -207,7 +207,7 @@ public class SerializationTest extends BaseSerializationTest {
       .setJobId(JOB_ID)
       .setNumDmlAffectedRows(NUM_DL_AFFECTED_ROWS)
       .setJobCompleted(true)
-      .setResult(QUERY_RESULT)
+      // .setResult(QUERY_RESULT)
       .build();
   private static final BigQuery BIGQUERY =
       BigQueryOptions.newBuilder().setProjectId("p1").build().getService();
