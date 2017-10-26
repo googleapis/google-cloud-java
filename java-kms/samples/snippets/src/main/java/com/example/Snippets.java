@@ -26,6 +26,7 @@ import com.google.api.services.cloudkms.v1.model.Binding;
 import com.google.api.services.cloudkms.v1.model.CryptoKey;
 import com.google.api.services.cloudkms.v1.model.CryptoKeyVersion;
 import com.google.api.services.cloudkms.v1.model.DestroyCryptoKeyVersionRequest;
+import com.google.api.services.cloudkms.v1.model.RestoreCryptoKeyVersionRequest;
 import com.google.api.services.cloudkms.v1.model.KeyRing;
 import com.google.api.services.cloudkms.v1.model.ListCryptoKeyVersionsResponse;
 import com.google.api.services.cloudkms.v1.model.ListCryptoKeysResponse;
@@ -205,6 +206,34 @@ public class Snippets {
     return destroyed;
   }
   // [END kms_destroy_cryptokey_version]
+
+  // [START kms_restore_cryptokey_version]
+
+  /**
+   * Restores the given version of a crypto key that is currently scheduled for destruction.
+   */
+  public static CryptoKeyVersion restoreCryptoKeyVersion(
+      String projectId, String locationId, String keyRingId, String cryptoKeyId, String version)
+      throws IOException {
+    // Create the Cloud KMS client.
+    CloudKMS kms = createAuthorizedClient();
+
+    // The resource name of the cryptoKey version
+    String cryptoKeyVersion = String.format(
+        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s",
+        projectId, locationId, keyRingId, cryptoKeyId, version);
+
+    RestoreCryptoKeyVersionRequest restoreRequest = new RestoreCryptoKeyVersionRequest();
+
+    CryptoKeyVersion restored = kms.projects().locations().keyRings().cryptoKeys()
+        .cryptoKeyVersions()
+        .restore(cryptoKeyVersion, restoreRequest)
+        .execute();
+
+    System.out.println(restored);
+    return restored;
+  }
+  // [END kms_restore_cryptokey_version]
 
   // [START kms_get_cryptokey_policy]
 

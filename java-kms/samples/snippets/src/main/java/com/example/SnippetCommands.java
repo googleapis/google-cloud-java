@@ -109,6 +109,12 @@ class SnippetCommands {
     }
   }
 
+  public static class RestoreCryptoKeyVersionCommand extends KeyVersionArgs implements Command {
+    public void run() throws IOException {
+      Snippets.restoreCryptoKeyVersion(projectId, locationId, keyRingId, cryptoKeyId, version);
+    }
+  }
+
   public static class SetPrimaryVersionCommand extends KeyVersionArgs implements Command {
 
     public void run() throws IOException {
@@ -206,6 +212,7 @@ class SnippetCommands {
       @SubCommand(name = "listCryptoKeyVersions", impl = ListCryptoKeyVersionsCommand.class),
       @SubCommand(name = "disableCryptoKeyVersion", impl = DisableCryptoKeyVersionCommand.class),
       @SubCommand(name = "destroyCryptoKeyVersion", impl = DestroyCryptoKeyVersionCommand.class),
+      @SubCommand(name = "restoreCryptoKeyVersion", impl = RestoreCryptoKeyVersionCommand.class),
       @SubCommand(name = "getKeyRingPolicy", impl = GetKeyRingPolicyCommand.class),
       @SubCommand(name = "getCryptoKeyPolicy", impl = GetCryptoKeyPolicyCommand.class),
       @SubCommand(name = "setPrimaryVersion", impl = SetPrimaryVersionCommand.class),
