@@ -1523,12 +1523,18 @@ public class ITStorageTest {
   @Test
   public void testListBucketRequesterPaysFails() throws InterruptedException {
     String projectId = remoteStorageHelper.getOptions().getProjectId();
-    try {
-      storage.list(Storage.BucketListOption.prefix(BUCKET),
+    Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
           Storage.BucketListOption.fields(), Storage.BucketListOption.userProject(projectId)).iterateAll().iterator();
-      fail("Expected a bad user project error.");
-    } catch (StorageException e) {
-      assertTrue(e.getMessage().contains("User project specified in the request is invalid"));
+    while (!bucketIterator.hasNext()) {
+      Thread.sleep(500);
+      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+          Storage.BucketListOption.fields()).iterateAll().iterator();
+    }
+    while (bucketIterator.hasNext()) {
+      Bucket remoteBucket = bucketIterator.next();
+      assertTrue(remoteBucket.getName().startsWith(BUCKET));
+      assertNull(remoteBucket.getCreateTime());
+      assertNull(remoteBucket.getSelfLink());
     }
   }
 }
