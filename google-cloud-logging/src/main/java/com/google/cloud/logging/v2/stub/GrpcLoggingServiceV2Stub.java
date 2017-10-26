@@ -118,7 +118,7 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
 
   public static final GrpcLoggingServiceV2Stub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcLoggingServiceV2Stub(LoggingSettings.defaultBuilder().build(), clientContext);
+    return new GrpcLoggingServiceV2Stub(LoggingSettings.newBuilder().build(), clientContext);
   }
 
   /**

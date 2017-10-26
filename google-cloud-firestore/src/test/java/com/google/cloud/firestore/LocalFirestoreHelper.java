@@ -31,7 +31,7 @@ import com.google.firestore.v1beta1.BeginTransactionResponse;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.Cursor;
-import com.google.firestore.v1beta1.DatabaseName;
+import com.google.firestore.v1beta1.DatabaseRootName;
 import com.google.firestore.v1beta1.Document;
 import com.google.firestore.v1beta1.DocumentMask;
 import com.google.firestore.v1beta1.DocumentTransform;
@@ -551,7 +551,7 @@ public final class LocalFirestoreHelper {
             null,
             new DocumentReference(
                 null,
-                ResourcePath.create(DatabaseName.create("", ""), ImmutableList.of("coll", "doc"))),
+                ResourcePath.create(DatabaseRootName.create("", ""), ImmutableList.of("coll", "doc"))),
             SINGLE_FIELD_PROTO,
             Instant.ofEpochSecond(5, 6),
             Instant.ofEpochSecond(3, 4),

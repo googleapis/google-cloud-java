@@ -24,6 +24,8 @@ import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
+import com.google.logging.v2.ListExclusionsRequest;
+import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogMetricsRequest;
@@ -35,6 +37,7 @@ import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogEntry;
+import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.LogSink;
 import java.util.List;
@@ -358,6 +361,80 @@ public class PagedResponseWrappers {
     protected ListSinksFixedSizeCollection createCollection(
         List<ListSinksPage> pages, int collectionSize) {
       return new ListSinksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListExclusionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListExclusionsRequest, ListExclusionsResponse, LogExclusion, ListExclusionsPage,
+          ListExclusionsFixedSizeCollection> {
+
+    public static ApiFuture<ListExclusionsPagedResponse> createAsync(
+        PageContext<ListExclusionsRequest, ListExclusionsResponse, LogExclusion> context,
+        ApiFuture<ListExclusionsResponse> futureResponse) {
+      ApiFuture<ListExclusionsPage> futurePage =
+          ListExclusionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListExclusionsPage, ListExclusionsPagedResponse>() {
+            @Override
+            public ListExclusionsPagedResponse apply(ListExclusionsPage input) {
+              return new ListExclusionsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListExclusionsPagedResponse(ListExclusionsPage page) {
+      super(page, ListExclusionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListExclusionsPage
+      extends AbstractPage<
+          ListExclusionsRequest, ListExclusionsResponse, LogExclusion, ListExclusionsPage> {
+
+    private ListExclusionsPage(
+        PageContext<ListExclusionsRequest, ListExclusionsResponse, LogExclusion> context,
+        ListExclusionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListExclusionsPage createEmptyPage() {
+      return new ListExclusionsPage(null, null);
+    }
+
+    @Override
+    protected ListExclusionsPage createPage(
+        PageContext<ListExclusionsRequest, ListExclusionsResponse, LogExclusion> context,
+        ListExclusionsResponse response) {
+      return new ListExclusionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListExclusionsPage> createPageAsync(
+        PageContext<ListExclusionsRequest, ListExclusionsResponse, LogExclusion> context,
+        ApiFuture<ListExclusionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListExclusionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListExclusionsRequest, ListExclusionsResponse, LogExclusion, ListExclusionsPage,
+          ListExclusionsFixedSizeCollection> {
+
+    private ListExclusionsFixedSizeCollection(List<ListExclusionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListExclusionsFixedSizeCollection createEmptyCollection() {
+      return new ListExclusionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListExclusionsFixedSizeCollection createCollection(
+        List<ListExclusionsPage> pages, int collectionSize) {
+      return new ListExclusionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

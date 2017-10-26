@@ -41,7 +41,7 @@ import com.google.firestore.v1beta1.BeginTransactionRequest;
 import com.google.firestore.v1beta1.BeginTransactionResponse;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
-import com.google.firestore.v1beta1.DatabaseName;
+import com.google.firestore.v1beta1.DatabaseRootName;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
 import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
@@ -87,7 +87,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
                 .setTransportContext(GrpcTransport.newBuilder().setChannel(managedChannel).build())
                 .build();
       } else {
-        DatabaseName databaseName = DatabaseName
+        DatabaseRootName databaseName = DatabaseRootName
             .create(options.getProjectId(), options.getDatabaseId());
         Credentials credentials =
             GrpcTransportOptions.setUpCredentialsProvider(options).getCredentials();

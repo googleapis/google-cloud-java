@@ -84,7 +84,7 @@ public class LoggingClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     LoggingSettings settings =
-        LoggingSettings.defaultBuilder()
+        LoggingSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())
