@@ -427,5 +427,5 @@ public interface StorageRpc extends ServiceRpc {
    *
    * @throws StorageException upon failure
    */
-  TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions);
+  TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions, Map<Option, ?> options);
 }

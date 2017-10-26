@@ -1518,6 +1518,10 @@ public class ITStorageTest {
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     assertTrue(remoteBlob.delete());
+//
+//    remoteBucket = remoteBucket.toBuilder().setRequesterPays(false).build();
+//    updatedBucket = storage.update(remoteBucket);
+//    assertFalse(updatedBucket.requesterPays());
   }
 
   @Test
@@ -1530,5 +1534,9 @@ public class ITStorageTest {
     } catch (StorageException e) {
       assertTrue(e.getMessage().contains("User project specified in the request is invalid"));
     }
+//    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+//    remoteBucket = remoteBucket.toBuilder().setRequesterPays(false).build();
+//    Bucket updatedBucket = storage.update(remoteBucket);
+//    assertFalse(updatedBucket.requesterPays());
   }
 }
