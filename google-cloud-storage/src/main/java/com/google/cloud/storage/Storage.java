@@ -46,6 +46,7 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -2507,5 +2508,5 @@ public interface Storage extends Service<StorageOptions> {
    */
   @BetaApi
   @GcpLaunchStage.Alpha
-  List<Boolean> testIamPermissions(String bucket, List<String> permissions);
+  List<Boolean> testIamPermissions(String bucket, List<String> permissions, BucketSourceOption... options);
 }

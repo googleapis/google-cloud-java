@@ -1491,6 +1491,20 @@ public class ITStorageTest {
         storage.testIamPermissions(
             BUCKET,
             ImmutableList.of("storage.buckets.getIamPolicy", "storage.buckets.setIamPolicy")));
+
+    // Validate testing permissions on requester pays bucket.
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+    assertNull(remoteBucket.requesterPays());
+    remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+    Bucket updatedBucket = storage.update(remoteBucket);
+    assertTrue(updatedBucket.requesterPays());
+    assertEquals(
+        expectedPermissions,
+        storage.testIamPermissions(
+            BUCKET,
+            ImmutableList.of("storage.buckets.getIamPolicy", "storage.buckets.setIamPolicy"),
+            Storage.BucketSourceOption.userProject(projectId)
+            ));
   }
 
   @Test
@@ -1518,17 +1532,13 @@ public class ITStorageTest {
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     assertTrue(remoteBlob.delete());
-//
-//    remoteBucket = remoteBucket.toBuilder().setRequesterPays(false).build();
-//    updatedBucket = storage.update(remoteBucket);
-//    assertFalse(updatedBucket.requesterPays());
   }
 
   @Test
   public void testListBucketRequesterPaysFails() throws InterruptedException {
     String projectId = remoteStorageHelper.getOptions().getProjectId();
     Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-          Storage.BucketListOption.fields(), Storage.BucketListOption.userProject(projectId)).iterateAll().iterator();
+        Storage.BucketListOption.fields(), Storage.BucketListOption.userProject(projectId)).iterateAll().iterator();
     while (!bucketIterator.hasNext()) {
       Thread.sleep(500);
       bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
@@ -1540,9 +1550,5 @@ public class ITStorageTest {
       assertNull(remoteBucket.getCreateTime());
       assertNull(remoteBucket.getSelfLink());
     }
-//    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
-//    remoteBucket = remoteBucket.toBuilder().setRequesterPays(false).build();
-//    Bucket updatedBucket = storage.update(remoteBucket);
-//    assertFalse(updatedBucket.requesterPays());
   }
 }

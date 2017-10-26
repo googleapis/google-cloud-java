@@ -74,6 +74,7 @@ import java.security.spec.EncodedKeySpec;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -2150,7 +2151,7 @@ public class StorageImplTest {
         ImmutableList
             .of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
 
-    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions))
+    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions, EMPTY_RPC_OPTIONS))
         .andReturn(new TestIamPermissionsResponse());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -2164,7 +2165,7 @@ public class StorageImplTest {
         ImmutableList
             .of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
 
-    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions))
+    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions, EMPTY_RPC_OPTIONS))
         .andReturn(new TestIamPermissionsResponse()
             .setPermissions(ImmutableList.of("storage.objects.list", "storage.buckets.get")));
     EasyMock.replay(storageRpcMock);

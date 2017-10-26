@@ -897,38 +897,14 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public List<Boolean> testIamPermissions(final String bucket, final List<String> permissions) {
+  public List<Boolean> testIamPermissions(final String bucket, final List<String> permissions, BucketSourceOption... options) {
     try {
+      final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
       TestIamPermissionsResponse response = runWithRetries(
           new Callable<TestIamPermissionsResponse>() {
             @Override
             public TestIamPermissionsResponse call() {
-              return storageRpc.testIamPermissions(bucket, permissions);
-            }
-          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
-      final Set<String> heldPermissions =
-          response.getPermissions() != null
-              ? ImmutableSet.copyOf(response.getPermissions())
-              : ImmutableSet.<String>of();
-      return Lists.transform(permissions, new Function<String, Boolean>() {
-        @Override
-        public Boolean apply(String permission) {
-          return heldPermissions.contains(permission);
-        }
-      });
-    } catch (RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
-    }
-  }
-
-  @Override
-  public List<Boolean> testIamPermissions(final String bucket, final List<String> permissions,  Map<StorageRpc.Option, ?> options) {
-    try {
-      TestIamPermissionsResponse response = runWithRetries(
-          new Callable<TestIamPermissionsResponse>() {
-            @Override
-            public TestIamPermissionsResponse call() {
-              return storageRpc.testIamPermissions(bucket, permissions);
+              return storageRpc.testIamPermissions(bucket, permissions, optionsMap);
             }
           }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       final Set<String> heldPermissions =
