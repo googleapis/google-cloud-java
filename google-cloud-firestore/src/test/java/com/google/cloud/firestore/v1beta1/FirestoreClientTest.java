@@ -74,8 +74,7 @@ public class FirestoreClientTest {
   public static void startStaticServer() {
     mockFirestore = new MockFirestore();
     serviceHelper =
-        new MockServiceHelper(
-            "in-process-1", Arrays.<MockGrpcService>asList(mockFirestore));
+        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockFirestore));
     serviceHelper.start();
   }
 

@@ -104,7 +104,7 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
 
   public static final GrpcMetricsServiceV2Stub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcMetricsServiceV2Stub(MetricsSettings.defaultBuilder().build(), clientContext);
+    return new GrpcMetricsServiceV2Stub(MetricsSettings.newBuilder().build(), clientContext);
   }
 
   /**

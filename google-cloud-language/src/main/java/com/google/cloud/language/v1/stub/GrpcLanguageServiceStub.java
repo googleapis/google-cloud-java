@@ -31,6 +31,8 @@ import com.google.cloud.language.v1.AnalyzeSyntaxRequest;
 import com.google.cloud.language.v1.AnalyzeSyntaxResponse;
 import com.google.cloud.language.v1.AnnotateTextRequest;
 import com.google.cloud.language.v1.AnnotateTextResponse;
+import com.google.cloud.language.v1.ClassifyTextRequest;
+import com.google.cloud.language.v1.ClassifyTextResponse;
 import com.google.cloud.language.v1.LanguageServiceSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -84,6 +86,15 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
                   io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeSyntaxRequest.getDefaultInstance()),
                   io.grpc.protobuf.ProtoUtils.marshaller(
                       AnalyzeSyntaxResponse.getDefaultInstance())));
+  private static final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse>
+      directClassifyTextCallable =
+          GrpcCallableFactory.createDirectCallable(
+              io.grpc.MethodDescriptor.create(
+                  io.grpc.MethodDescriptor.MethodType.UNARY,
+                  "google.cloud.language.v1.LanguageService/ClassifyText",
+                  io.grpc.protobuf.ProtoUtils.marshaller(ClassifyTextRequest.getDefaultInstance()),
+                  io.grpc.protobuf.ProtoUtils.marshaller(
+                      ClassifyTextResponse.getDefaultInstance())));
   private static final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse>
       directAnnotateTextCallable =
           GrpcCallableFactory.createDirectCallable(
@@ -103,6 +114,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
   private final UnaryCallable<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
       analyzeEntitySentimentCallable;
   private final UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable;
+  private final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable;
   private final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
   public static final GrpcLanguageServiceStub create(LanguageServiceSettings settings)
@@ -137,6 +149,9 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
     this.analyzeSyntaxCallable =
         GrpcCallableFactory.create(
             directAnalyzeSyntaxCallable, settings.analyzeSyntaxSettings(), clientContext);
+    this.classifyTextCallable =
+        GrpcCallableFactory.create(
+            directClassifyTextCallable, settings.classifyTextSettings(), clientContext);
     this.annotateTextCallable =
         GrpcCallableFactory.create(
             directAnnotateTextCallable, settings.annotateTextSettings(), clientContext);
@@ -160,6 +175,10 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
 
   public UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable() {
     return analyzeSyntaxCallable;
+  }
+
+  public UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable() {
+    return classifyTextCallable;
   }
 
   public UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable() {

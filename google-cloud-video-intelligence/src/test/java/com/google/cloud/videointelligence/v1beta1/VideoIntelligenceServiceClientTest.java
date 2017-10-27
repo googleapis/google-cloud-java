@@ -27,7 +27,6 @@ import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -89,14 +88,11 @@ public class VideoIntelligenceServiceClientTest {
             .build();
     mockVideoIntelligenceService.addResponse(resultOperation);
 
-    String inputUri = "inputUri1707300727";
-    List<Feature> features = new ArrayList<>();
-    VideoContext videoContext = VideoContext.newBuilder().build();
-    String outputUri = "outputUri-1273518802";
-    String locationId = "locationId552319461";
+    String inputUri = "gs://demomaker/cat.mp4";
+    Feature featuresElement = Feature.LABEL_DETECTION;
+    List<Feature> features = Arrays.asList(featuresElement);
 
-    AnnotateVideoResponse actualResponse =
-        client.annotateVideoAsync(inputUri, features, videoContext, outputUri, locationId).get();
+    AnnotateVideoResponse actualResponse = client.annotateVideoAsync(inputUri, features).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockVideoIntelligenceService.getRequests();
@@ -105,9 +101,6 @@ public class VideoIntelligenceServiceClientTest {
 
     Assert.assertEquals(inputUri, actualRequest.getInputUri());
     Assert.assertEquals(features, actualRequest.getFeaturesList());
-    Assert.assertEquals(videoContext, actualRequest.getVideoContext());
-    Assert.assertEquals(outputUri, actualRequest.getOutputUri());
-    Assert.assertEquals(locationId, actualRequest.getLocationId());
   }
 
   @Test
@@ -117,13 +110,11 @@ public class VideoIntelligenceServiceClientTest {
     mockVideoIntelligenceService.addException(exception);
 
     try {
-      String inputUri = "inputUri1707300727";
-      List<Feature> features = new ArrayList<>();
-      VideoContext videoContext = VideoContext.newBuilder().build();
-      String outputUri = "outputUri-1273518802";
-      String locationId = "locationId552319461";
+      String inputUri = "gs://demomaker/cat.mp4";
+      Feature featuresElement = Feature.LABEL_DETECTION;
+      List<Feature> features = Arrays.asList(featuresElement);
 
-      client.annotateVideoAsync(inputUri, features, videoContext, outputUri, locationId).get();
+      client.annotateVideoAsync(inputUri, features).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

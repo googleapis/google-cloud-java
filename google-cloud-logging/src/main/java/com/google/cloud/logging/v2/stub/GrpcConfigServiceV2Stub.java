@@ -15,6 +15,7 @@
  */
 package com.google.cloud.logging.v2.stub;
 
+import static com.google.cloud.logging.v2.PagedResponseWrappers.ListExclusionsPagedResponse;
 import static com.google.cloud.logging.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -24,12 +25,19 @@ import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.ConfigSettings;
+import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListExclusionsRequest;
+import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -80,6 +88,48 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
               "google.logging.v2.ConfigServiceV2/DeleteSink",
               io.grpc.protobuf.ProtoUtils.marshaller(DeleteSinkRequest.getDefaultInstance()),
               io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
+  private static final UnaryCallable<ListExclusionsRequest, ListExclusionsResponse>
+      directListExclusionsCallable =
+          GrpcCallableFactory.createDirectCallable(
+              io.grpc.MethodDescriptor.create(
+                  io.grpc.MethodDescriptor.MethodType.UNARY,
+                  "google.logging.v2.ConfigServiceV2/ListExclusions",
+                  io.grpc.protobuf.ProtoUtils.marshaller(
+                      ListExclusionsRequest.getDefaultInstance()),
+                  io.grpc.protobuf.ProtoUtils.marshaller(
+                      ListExclusionsResponse.getDefaultInstance())));
+  private static final UnaryCallable<GetExclusionRequest, LogExclusion> directGetExclusionCallable =
+      GrpcCallableFactory.createDirectCallable(
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.logging.v2.ConfigServiceV2/GetExclusion",
+              io.grpc.protobuf.ProtoUtils.marshaller(GetExclusionRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(LogExclusion.getDefaultInstance())));
+  private static final UnaryCallable<CreateExclusionRequest, LogExclusion>
+      directCreateExclusionCallable =
+          GrpcCallableFactory.createDirectCallable(
+              io.grpc.MethodDescriptor.create(
+                  io.grpc.MethodDescriptor.MethodType.UNARY,
+                  "google.logging.v2.ConfigServiceV2/CreateExclusion",
+                  io.grpc.protobuf.ProtoUtils.marshaller(
+                      CreateExclusionRequest.getDefaultInstance()),
+                  io.grpc.protobuf.ProtoUtils.marshaller(LogExclusion.getDefaultInstance())));
+  private static final UnaryCallable<UpdateExclusionRequest, LogExclusion>
+      directUpdateExclusionCallable =
+          GrpcCallableFactory.createDirectCallable(
+              io.grpc.MethodDescriptor.create(
+                  io.grpc.MethodDescriptor.MethodType.UNARY,
+                  "google.logging.v2.ConfigServiceV2/UpdateExclusion",
+                  io.grpc.protobuf.ProtoUtils.marshaller(
+                      UpdateExclusionRequest.getDefaultInstance()),
+                  io.grpc.protobuf.ProtoUtils.marshaller(LogExclusion.getDefaultInstance())));
+  private static final UnaryCallable<DeleteExclusionRequest, Empty> directDeleteExclusionCallable =
+      GrpcCallableFactory.createDirectCallable(
+          io.grpc.MethodDescriptor.create(
+              io.grpc.MethodDescriptor.MethodType.UNARY,
+              "google.logging.v2.ConfigServiceV2/DeleteExclusion",
+              io.grpc.protobuf.ProtoUtils.marshaller(DeleteExclusionRequest.getDefaultInstance()),
+              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
 
   private final BackgroundResource backgroundResources;
 
@@ -89,6 +139,13 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   private final UnaryCallable<CreateSinkRequest, LogSink> createSinkCallable;
   private final UnaryCallable<UpdateSinkRequest, LogSink> updateSinkCallable;
   private final UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable;
+  private final UnaryCallable<ListExclusionsRequest, ListExclusionsResponse> listExclusionsCallable;
+  private final UnaryCallable<ListExclusionsRequest, ListExclusionsPagedResponse>
+      listExclusionsPagedCallable;
+  private final UnaryCallable<GetExclusionRequest, LogExclusion> getExclusionCallable;
+  private final UnaryCallable<CreateExclusionRequest, LogExclusion> createExclusionCallable;
+  private final UnaryCallable<UpdateExclusionRequest, LogExclusion> updateExclusionCallable;
+  private final UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable;
 
   public static final GrpcConfigServiceV2Stub create(ConfigSettings settings) throws IOException {
     return new GrpcConfigServiceV2Stub(settings, ClientContext.create(settings));
@@ -96,7 +153,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
 
   public static final GrpcConfigServiceV2Stub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcConfigServiceV2Stub(ConfigSettings.defaultBuilder().build(), clientContext);
+    return new GrpcConfigServiceV2Stub(ConfigSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -125,6 +182,24 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
     this.deleteSinkCallable =
         GrpcCallableFactory.create(
             directDeleteSinkCallable, settings.deleteSinkSettings(), clientContext);
+    this.listExclusionsCallable =
+        GrpcCallableFactory.create(
+            directListExclusionsCallable, settings.listExclusionsSettings(), clientContext);
+    this.listExclusionsPagedCallable =
+        GrpcCallableFactory.createPagedVariant(
+            directListExclusionsCallable, settings.listExclusionsSettings(), clientContext);
+    this.getExclusionCallable =
+        GrpcCallableFactory.create(
+            directGetExclusionCallable, settings.getExclusionSettings(), clientContext);
+    this.createExclusionCallable =
+        GrpcCallableFactory.create(
+            directCreateExclusionCallable, settings.createExclusionSettings(), clientContext);
+    this.updateExclusionCallable =
+        GrpcCallableFactory.create(
+            directUpdateExclusionCallable, settings.updateExclusionSettings(), clientContext);
+    this.deleteExclusionCallable =
+        GrpcCallableFactory.create(
+            directDeleteExclusionCallable, settings.deleteExclusionSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -151,6 +226,31 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
 
   public UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
     return deleteSinkCallable;
+  }
+
+  public UnaryCallable<ListExclusionsRequest, ListExclusionsPagedResponse>
+      listExclusionsPagedCallable() {
+    return listExclusionsPagedCallable;
+  }
+
+  public UnaryCallable<ListExclusionsRequest, ListExclusionsResponse> listExclusionsCallable() {
+    return listExclusionsCallable;
+  }
+
+  public UnaryCallable<GetExclusionRequest, LogExclusion> getExclusionCallable() {
+    return getExclusionCallable;
+  }
+
+  public UnaryCallable<CreateExclusionRequest, LogExclusion> createExclusionCallable() {
+    return createExclusionCallable;
+  }
+
+  public UnaryCallable<UpdateExclusionRequest, LogExclusion> updateExclusionCallable() {
+    return updateExclusionCallable;
+  }
+
+  public UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
+    return deleteExclusionCallable;
   }
 
   @Override

@@ -515,13 +515,13 @@ public class TopicAdminSettings extends ClientSettings {
           "one_plus_delivery",
           ImmutableSet.copyOf(
               Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.CANCELLED),
-                  GrpcStatusCode.of(Status.Code.UNKNOWN),
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.RESOURCE_EXHAUSTED),
                   GrpcStatusCode.of(Status.Code.ABORTED),
+                  GrpcStatusCode.of(Status.Code.CANCELLED),
+                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
                   GrpcStatusCode.of(Status.Code.INTERNAL),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
+                  GrpcStatusCode.of(Status.Code.RESOURCE_EXHAUSTED),
+                  GrpcStatusCode.of(Status.Code.UNAVAILABLE),
+                  GrpcStatusCode.of(Status.Code.UNKNOWN))));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
