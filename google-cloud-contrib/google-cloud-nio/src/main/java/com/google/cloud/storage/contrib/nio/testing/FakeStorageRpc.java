@@ -462,4 +462,9 @@ class FakeStorageRpc implements StorageRpc {
   public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions) {
     throw new UnsupportedOperationException();
   }
+
+  @Override
+  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
 }

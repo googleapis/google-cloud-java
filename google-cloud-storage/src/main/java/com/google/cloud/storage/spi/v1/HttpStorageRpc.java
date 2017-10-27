@@ -69,6 +69,7 @@ import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -872,6 +873,11 @@ public class HttpStorageRpc implements StorageRpc {
     } catch (IOException ex) {
       throw translate(ex);
     }
+  }
+
+  @Override
+  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions) {
+    return testIamPermissions(bucket, permissions, new HashMap<Option, Object>());
   }
 
   @Override
