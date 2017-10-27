@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import javax.annotation.Nullable;
 
@@ -52,6 +53,7 @@ abstract class BasePath<B extends BasePath<B>> {
    * @param path A relative path
    */
   B append(String path) {
+    Preconditions.checkArgument(path != null && !path.isEmpty(), "'path' must be a non-empty String" );
     ImmutableList.Builder<String> components = ImmutableList.builder();
     components.addAll(this.getSegments());
     components.add(splitChildPath(path));
