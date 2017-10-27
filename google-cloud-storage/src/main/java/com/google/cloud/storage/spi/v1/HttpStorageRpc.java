@@ -69,6 +69,7 @@ import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -681,9 +682,11 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BucketAccessControl getAcl(String bucket, String entity) {
+  public BucketAccessControl getAcl(String bucket, String entity, Map<Option, ?> options) {
     try {
-      return storage.bucketAccessControls().get(bucket, entity).execute();
+      return storage.bucketAccessControls().get(bucket, entity)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
@@ -694,9 +697,16 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public boolean deleteAcl(String bucket, String entity) {
+  public BucketAccessControl getAcl(String bucket, String entity) {
+    return getAcl(bucket, entity, new HashMap<Option, Object>());
+  }
+
+  @Override
+  public boolean deleteAcl(String bucket, String entity, Map<Option, ?> options) {
     try {
-      storage.bucketAccessControls().delete(bucket, entity).execute();
+      storage.bucketAccessControls().delete(bucket, entity)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
       return true;
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
@@ -708,9 +718,33 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BucketAccessControl createAcl(BucketAccessControl acl) {
+  public boolean deleteAcl(String bucket, String entity) {
+    return deleteAcl(bucket, entity, new HashMap<Option, Object>());
+  }
+
+  @Override
+  public BucketAccessControl createAcl(BucketAccessControl acl, Map<Option, ?> options) {
     try {
-      return storage.bucketAccessControls().insert(acl.getBucket(), acl).execute();
+      return storage.bucketAccessControls().insert(acl.getBucket(), acl)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public BucketAccessControl createAcl(BucketAccessControl acl) {
+    return createAcl(acl, new HashMap<Option, Object>());
+  }
+
+  @Override
+  public BucketAccessControl patchAcl(BucketAccessControl acl, Map<Option, ?> options) {
+    try {
+      return storage.bucketAccessControls()
+          .patch(acl.getBucket(), acl.getEntity(), acl)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -718,9 +752,15 @@ public class HttpStorageRpc implements StorageRpc {
 
   @Override
   public BucketAccessControl patchAcl(BucketAccessControl acl) {
+    return patchAcl(acl, new HashMap<Option, Object>());
+  }
+
+  @Override
+  public List<BucketAccessControl> listAcls(String bucket, Map<Option, ?> options) {
     try {
-      return storage.bucketAccessControls()
-          .patch(acl.getBucket(), acl.getEntity(), acl).execute();
+      return storage.bucketAccessControls().list(bucket)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute().getItems();
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -728,11 +768,7 @@ public class HttpStorageRpc implements StorageRpc {
 
   @Override
   public List<BucketAccessControl> listAcls(String bucket) {
-    try {
-      return storage.bucketAccessControls().list(bucket).execute().getItems();
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
+    return listAcls(bucket, new HashMap<Option, Object>());
   }
 
   @Override
@@ -856,10 +892,29 @@ public class HttpStorageRpc implements StorageRpc {
     }
   }
 
+
+  @Override
+  public Policy getIamPolicy(String bucket, Map<Option, ?> options) {
+    try {
+      return storage.buckets().getIamPolicy(bucket)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
   @Override
   public Policy getIamPolicy(String bucket) {
+    return getIamPolicy(bucket, new HashMap<Option, Object>());
+  }
+
+  @Override
+  public Policy setIamPolicy(String bucket, Policy policy, Map<Option, ?> options) {
     try {
-      return storage.buckets().getIamPolicy(bucket).execute();
+      return storage.buckets().setIamPolicy(bucket, policy)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -867,11 +922,7 @@ public class HttpStorageRpc implements StorageRpc {
 
   @Override
   public Policy setIamPolicy(String bucket, Policy policy) {
-    try {
-      return storage.buckets().setIamPolicy(bucket, policy).execute();
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
+    return setIamPolicy(bucket, policy, new HashMap<Option, Object>());
   }
 
   @Override
