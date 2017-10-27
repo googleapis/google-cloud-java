@@ -193,7 +193,7 @@ public class LoggingAppenderTest {
 
   @Test
   public void testEncoderPattern() {
-    final String pattern = "%-5level [%thread] %logger{0}: %msg";
+    String pattern = "%-5level [%thread] %logger{0}: %msg";
 
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
@@ -224,7 +224,7 @@ public class LoggingAppenderTest {
 
   @Test
   public void testWriteEncoderHeader() {
-    final String pattern = "%-5level [%thread] %logger{0}: %msg%n";
+    String pattern = "%-5level [%thread] %logger{0}: %msg%n";
 
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
