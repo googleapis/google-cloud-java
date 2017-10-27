@@ -85,12 +85,43 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   }
 
   @Override
+  public void analyzeEntitySentiment(
+      AnalyzeEntitySentimentRequest request,
+      StreamObserver<AnalyzeEntitySentimentResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof AnalyzeEntitySentimentResponse) {
+      requests.add(request);
+      responseObserver.onNext((AnalyzeEntitySentimentResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void analyzeSyntax(
       AnalyzeSyntaxRequest request, StreamObserver<AnalyzeSyntaxResponse> responseObserver) {
     Object response = responses.remove();
     if (response instanceof AnalyzeSyntaxResponse) {
       requests.add(request);
       responseObserver.onNext((AnalyzeSyntaxResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void classifyText(
+      ClassifyTextRequest request, StreamObserver<ClassifyTextResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ClassifyTextResponse) {
+      requests.add(request);
+      responseObserver.onNext((ClassifyTextResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

@@ -523,8 +523,8 @@ public class SubscriptionAdminSettings extends ClientSettings {
               Lists.<StatusCode>newArrayList(
                   GrpcStatusCode.of(Status.Code.CANCELLED),
                   GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.RESOURCE_EXHAUSTED),
                   GrpcStatusCode.of(Status.Code.INTERNAL),
+                  GrpcStatusCode.of(Status.Code.RESOURCE_EXHAUSTED),
                   GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }

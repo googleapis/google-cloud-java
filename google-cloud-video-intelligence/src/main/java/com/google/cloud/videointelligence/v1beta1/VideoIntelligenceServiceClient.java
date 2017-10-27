@@ -38,12 +38,10 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
- *   String inputUri = "";
- *   List&lt;Feature&gt; features = new ArrayList&lt;&gt;();
- *   VideoContext videoContext = VideoContext.newBuilder().build();
- *   String outputUri = "";
- *   String locationId = "";
- *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features, videoContext, outputUri, locationId).get();
+ *   String inputUri = "gs://demomaker/cat.mp4";
+ *   Feature featuresElement = Feature.LABEL_DETECTION;
+ *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
+ *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features).get();
  * }
  * </code>
  * </pre>
@@ -181,12 +179,10 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   String inputUri = "";
-   *   List&lt;Feature&gt; features = new ArrayList&lt;&gt;();
-   *   VideoContext videoContext = VideoContext.newBuilder().build();
-   *   String outputUri = "";
-   *   String locationId = "";
-   *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features, videoContext, outputUri, locationId).get();
+   *   String inputUri = "gs://demomaker/cat.mp4";
+   *   Feature featuresElement = Feature.LABEL_DETECTION;
+   *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
+   *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features).get();
    * }
    * </code></pre>
    *
@@ -199,34 +195,13 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *     to match 0 or more characters; '?' to match 1 character. If unset, the input video should
    *     be embedded in the request as `input_content`. If set, `input_content` should be unset.
    * @param features Requested video annotation features.
-   * @param videoContext Additional video context and/or feature-specific parameters.
-   * @param outputUri Optional location where the output (in JSON format) should be stored.
-   *     Currently, only [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
-   *     supported, which must be specified in the following format: `gs://bucket-id/object-id`
-   *     (other URI formats return
-   *     [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more
-   *     information, see [Request URIs](/storage/docs/reference-uris).
-   * @param locationId Optional cloud region where annotation should take place. Supported cloud
-   *     regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region is specified, a
-   *     region will be determined based on video file location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation>
-      annotateVideoAsync(
-          String inputUri,
-          List<Feature> features,
-          VideoContext videoContext,
-          String outputUri,
-          String locationId) {
+      annotateVideoAsync(String inputUri, List<Feature> features) {
 
     AnnotateVideoRequest request =
-        AnnotateVideoRequest.newBuilder()
-            .setInputUri(inputUri)
-            .addAllFeatures(features)
-            .setVideoContext(videoContext)
-            .setOutputUri(outputUri)
-            .setLocationId(locationId)
-            .build();
+        AnnotateVideoRequest.newBuilder().setInputUri(inputUri).addAllFeatures(features).build();
     return annotateVideoAsync(request);
   }
 
@@ -241,8 +216,9 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   String inputUri = "";
-   *   List&lt;Feature&gt; features = new ArrayList&lt;&gt;();
+   *   String inputUri = "gs://demomaker/cat.mp4";
+   *   Feature featuresElement = Feature.LABEL_DETECTION;
+   *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
    *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
    *     .setInputUri(inputUri)
    *     .addAllFeatures(features)
@@ -270,8 +246,9 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   String inputUri = "";
-   *   List&lt;Feature&gt; features = new ArrayList&lt;&gt;();
+   *   String inputUri = "gs://demomaker/cat.mp4";
+   *   Feature featuresElement = Feature.LABEL_DETECTION;
+   *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
    *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
    *     .setInputUri(inputUri)
    *     .addAllFeatures(features)
@@ -299,8 +276,9 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   String inputUri = "";
-   *   List&lt;Feature&gt; features = new ArrayList&lt;&gt;();
+   *   String inputUri = "gs://demomaker/cat.mp4";
+   *   Feature featuresElement = Feature.LABEL_DETECTION;
+   *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
    *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
    *     .setInputUri(inputUri)
    *     .addAllFeatures(features)

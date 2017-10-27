@@ -15,6 +15,7 @@
  */
 package com.google.cloud.logging.v2;
 
+import static com.google.cloud.logging.v2.PagedResponseWrappers.ListExclusionsPagedResponse;
 import static com.google.cloud.logging.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -24,18 +25,28 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
+import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.ExclusionName;
+import com.google.logging.v2.ExclusionNameOneof;
+import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListExclusionsRequest;
+import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
 import com.google.logging.v2.ParentNameOneof;
 import com.google.logging.v2.ProjectName;
 import com.google.logging.v2.SinkName;
 import com.google.logging.v2.SinkNameOneof;
+import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -79,7 +90,7 @@ public class ConfigClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     ConfigSettings settings =
-        ConfigSettings.defaultBuilder()
+        ConfigSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())
@@ -306,6 +317,230 @@ public class ConfigClientTest {
       SinkNameOneof sinkName = SinkNameOneof.from(SinkName.create("[PROJECT]", "[SINK]"));
 
       client.deleteSink(sinkName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listExclusionsTest() {
+    String nextPageToken = "";
+    LogExclusion exclusionsElement = LogExclusion.newBuilder().build();
+    List<LogExclusion> exclusions = Arrays.asList(exclusionsElement);
+    ListExclusionsResponse expectedResponse =
+        ListExclusionsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllExclusions(exclusions)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+
+    ListExclusionsPagedResponse pagedListResponse = client.listExclusions(parent);
+
+    List<LogExclusion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExclusionsList().get(0), resources.get(0));
+
+    List<GeneratedMessageV3> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListExclusionsRequest actualRequest = (ListExclusionsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listExclusionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+
+      client.listExclusions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getExclusionTest() {
+    String name2 = "name2-1052831874";
+    String description = "description-1724546052";
+    String filter = "filter-1274492040";
+    boolean disabled = true;
+    LogExclusion expectedResponse =
+        LogExclusion.newBuilder()
+            .setName(name2)
+            .setDescription(description)
+            .setFilter(filter)
+            .setDisabled(disabled)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    ExclusionNameOneof name =
+        ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+
+    LogExclusion actualResponse = client.getExclusion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetExclusionRequest actualRequest = (GetExclusionRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, actualRequest.getNameAsExclusionNameOneof());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getExclusionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      ExclusionNameOneof name =
+          ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+
+      client.getExclusion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createExclusionTest() {
+    String name = "name3373707";
+    String description = "description-1724546052";
+    String filter = "filter-1274492040";
+    boolean disabled = true;
+    LogExclusion expectedResponse =
+        LogExclusion.newBuilder()
+            .setName(name)
+            .setDescription(description)
+            .setFilter(filter)
+            .setDisabled(disabled)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+    LogExclusion exclusion = LogExclusion.newBuilder().build();
+
+    LogExclusion actualResponse = client.createExclusion(parent, exclusion);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateExclusionRequest actualRequest = (CreateExclusionRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertEquals(exclusion, actualRequest.getExclusion());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createExclusionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+      LogExclusion exclusion = LogExclusion.newBuilder().build();
+
+      client.createExclusion(parent, exclusion);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateExclusionTest() {
+    String name2 = "name2-1052831874";
+    String description = "description-1724546052";
+    String filter = "filter-1274492040";
+    boolean disabled = true;
+    LogExclusion expectedResponse =
+        LogExclusion.newBuilder()
+            .setName(name2)
+            .setDescription(description)
+            .setFilter(filter)
+            .setDisabled(disabled)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    ExclusionNameOneof name =
+        ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+    LogExclusion exclusion = LogExclusion.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    LogExclusion actualResponse = client.updateExclusion(name, exclusion, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateExclusionRequest actualRequest = (UpdateExclusionRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, actualRequest.getNameAsExclusionNameOneof());
+    Assert.assertEquals(exclusion, actualRequest.getExclusion());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateExclusionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      ExclusionNameOneof name =
+          ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+      LogExclusion exclusion = LogExclusion.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+
+      client.updateExclusion(name, exclusion, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteExclusionTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    ExclusionNameOneof name =
+        ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+
+    client.deleteExclusion(name);
+
+    List<GeneratedMessageV3> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteExclusionRequest actualRequest = (DeleteExclusionRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, actualRequest.getNameAsExclusionNameOneof());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteExclusionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      ExclusionNameOneof name =
+          ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+
+      client.deleteExclusion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

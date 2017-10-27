@@ -15,17 +15,25 @@
  */
 package com.google.cloud.logging.v2.stub;
 
+import static com.google.cloud.logging.v2.PagedResponseWrappers.ListExclusionsPagedResponse;
 import static com.google.cloud.logging.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListExclusionsRequest;
+import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
@@ -62,5 +70,30 @@ public abstract class ConfigServiceV2Stub implements BackgroundResource {
 
   public UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSinkCallable()");
+  }
+
+  public UnaryCallable<ListExclusionsRequest, ListExclusionsPagedResponse>
+      listExclusionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listExclusionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListExclusionsRequest, ListExclusionsResponse> listExclusionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listExclusionsCallable()");
+  }
+
+  public UnaryCallable<GetExclusionRequest, LogExclusion> getExclusionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getExclusionCallable()");
+  }
+
+  public UnaryCallable<CreateExclusionRequest, LogExclusion> createExclusionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createExclusionCallable()");
+  }
+
+  public UnaryCallable<UpdateExclusionRequest, LogExclusion> updateExclusionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateExclusionCallable()");
+  }
+
+  public UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteExclusionCallable()");
   }
 }

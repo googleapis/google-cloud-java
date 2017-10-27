@@ -96,7 +96,7 @@ import org.threeten.bp.Duration;
  * <pre>
  * <code>
  * LoggingSettings.Builder loggingSettingsBuilder =
- *     LoggingSettings.defaultBuilder();
+ *     LoggingSettings.newBuilder();
  * loggingSettingsBuilder.deleteLogSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * LoggingSettings loggingSettings = loggingSettingsBuilder.build();
@@ -225,6 +225,7 @@ public class LoggingSettings extends ClientSettings {
   }
 
   /** Returns a builder for this class with recommended defaults. */
+  @Deprecated
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
@@ -233,13 +234,14 @@ public class LoggingSettings extends ClientSettings {
    * Returns a builder for this class with recommended defaults for API methods, and the given
    * ClientContext used for executor/transport/credentials.
    */
+  @Deprecated
   public static Builder defaultBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
-    return new Builder();
+    return Builder.createDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -548,10 +550,10 @@ public class LoggingSettings extends ClientSettings {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.2)
               .setMaxRetryDelay(Duration.ofMillis(1000L))
-              .setInitialRpcTimeout(Duration.ofMillis(2000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.5)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(45000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(90000L))
               .build();
       definitions.put("default", settings);
       settings =
@@ -559,10 +561,10 @@ public class LoggingSettings extends ClientSettings {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.2)
               .setMaxRetryDelay(Duration.ofMillis(1000L))
-              .setInitialRpcTimeout(Duration.ofMillis(7000L))
+              .setInitialRpcTimeout(Duration.ofMillis(2000L))
               .setRpcTimeoutMultiplier(1.5)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(45000L))
+              .setMaxRpcTimeout(Duration.ofMillis(10000L))
+              .setTotalTimeout(Duration.ofMillis(20000L))
               .build();
       definitions.put("list", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();

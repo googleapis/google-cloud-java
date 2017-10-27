@@ -18,7 +18,7 @@ package com.google.cloud.firestore;
 
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
-import com.google.firestore.v1beta1.DatabaseName;
+import com.google.firestore.v1beta1.DatabaseRootName;
 import java.util.Arrays;
 import javax.annotation.Nullable;
 
@@ -32,7 +32,7 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
    * @param databaseName The Firestore database name.
    * @param segments The segments of the path relative to the root collections.
    */
-  static ResourcePath create(DatabaseName databaseName, ImmutableList<String> segments) {
+  static ResourcePath create(DatabaseRootName databaseName, ImmutableList<String> segments) {
     return new AutoValue_ResourcePath(segments, databaseName);
   }
 
@@ -41,7 +41,7 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
    *
    * @param databaseName The Firestore database name.
    */
-  static ResourcePath create(DatabaseName databaseName) {
+  static ResourcePath create(DatabaseRootName databaseName) {
     return new AutoValue_ResourcePath(ImmutableList.<String>of(), databaseName);
   }
 
@@ -56,11 +56,11 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
     if (parts.length >= 6 && parts[0].equals("projects") && parts[2].equals("databases")) {
       String[] path = Arrays.copyOfRange(parts, 5, parts.length);
       return create(
-          DatabaseName.create(parts[1], parts[3]),
+          DatabaseRootName.create(parts[1], parts[3]),
           ImmutableList.<String>builder().add(path).build());
     }
 
-    return create(DatabaseName.parse(resourceName));
+    return create(DatabaseRootName.parse(resourceName));
   }
 
   /**
@@ -68,7 +68,7 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
    *
    * @return The Firestore database name.
    */
-  abstract DatabaseName getDatabaseName();
+  abstract DatabaseRootName getDatabaseName();
 
   /** Returns whether this path points to a document. */
   boolean isDocument() {

@@ -19,62 +19,7 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>==================== FirestoreAdminClient ====================
- *
- * <p>Service Description: The Cloud Firestore Admin API.
- *
- * <p>This API provides several administrative services for Cloud Firestore.
- *
- * <p># Concepts
- *
- * <p>Project, Database, Namespace, Collection, and Document are used as defined in the Google Cloud
- * Firestore API.
- *
- * <p>Operation: An Operation represents work being performed in the background.
- *
- * <p># Services
- *
- * <p>## Index
- *
- * <p>The index service manages Cloud Firestore indexes.
- *
- * <p>Index creation is performed asynchronously. An Operation resource is created for each such
- * asynchronous operation. The state of the operation (including any errors encountered) may be
- * queried via the Operation resource.
- *
- * <p>## Metadata
- *
- * <p>Provides metadata and statistical information about data in Cloud Firestore. The data provided
- * as part of this API may be stale.
- *
- * <p>## Operation
- *
- * <p>The Operations collection provides a record of actions performed for the specified Project
- * (including any Operations in progress). Operations are not created directly but through calls on
- * other collections or resources.
- *
- * <p>An Operation that is not yet done may be cancelled. The request to cancel is asynchronous and
- * the Operation may continue to run for some time after the request to cancel is made.
- *
- * <p>An Operation that is done may be deleted so that it is no longer listed as part of the
- * Operation collection.
- *
- * <p>Operations are created by service `FirestoreAdmin`, but are accessed via service
- * `google.longrunning.Operations`.
- *
- * <p>Sample for FirestoreAdminClient:
- *
- * <pre>
- * <code>
- * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
- *   String formattedParent = FirestoreAdminClient.formatDatabaseName("[PROJECT]", "[DATABASE]");
- *   Index index = Index.newBuilder().build();
- *   Operation response = firestoreAdminClient.createIndex(formattedParent, index);
- * }
- * </code>
- * </pre>
- *
- * =============== FirestoreClient ===============
+ * <p>=============== FirestoreClient ===============
  *
  * <p>Service Description: The Cloud Firestore service.
  *
