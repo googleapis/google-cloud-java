@@ -17,10 +17,13 @@
 package com.google.cloud.logging.logback;
 
 import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.UnsynchronizedAppenderBase;
+import ch.qos.logback.core.encoder.Encoder;
 import ch.qos.logback.core.util.Loader;
 import com.google.cloud.MonitoredResource;
+import com.google.cloud.Timestamp;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.WriteOption;
@@ -52,6 +55,9 @@ import java.util.Set;
  * Standard, GCE and GKE, defaults to "global". See <a
  * href="https://cloud.google.com/logging/docs/api/v2/resource-list">supported resource
  * types</a>
+ * <li>(Optional) add custom encoder, defaults to encoder with pattern "%msg",
+ * see <a href="https://logback.qos.ch/manual/layouts.html#ClassicPatternLayout">PatternLayout</a> for more information
+ * <li>&lt;encoder&gt;&lt;pattern&gt;%logger{35} - %msg%n&lt;/pattern&gt;&lt;/encoder&gt;
  * <li>(Optional) add custom labels to log entries using {@link LoggingEnhancer} classes.
  * <li>&lt;enhancer&gt;com.example.enhancer1&lt;/enhancer&gt;
  * <li>&lt;enhancer&gt;com.example.enhancer2&lt;/enhancer&gt;
@@ -70,6 +76,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private Level flushLevel;
   private String log;
   private String resourceType;
+  private Encoder<ILoggingEvent> encoder;
   private Set<String> enhancerClassNames = new HashSet<>();
 
   /**
@@ -107,6 +114,17 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   /**
+   * Sets the log line encoder that implement {@link Encoder}
+   *
+   * <p>Defaults to an instance of {@link PatternLayoutEncoder} with the pattern "%msg"
+   *
+   * @param encoder Encoder
+   */
+  public void setEncoder(Encoder<ILoggingEvent> encoder) {
+    this.encoder = encoder;
+  }
+
+  /**
    * Add extra labels using classes that implement {@link LoggingEnhancer}.
    */
   public void addEnhancer(String enhancerClassName) {
@@ -119,6 +137,10 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
   String getLogName() {
     return (log != null) ? log : "java.log";
+  }
+
+  Encoder<ILoggingEvent> getEncoder() {
+    return encoder;
   }
 
   MonitoredResource getMonitoredResource(String projectId) {
@@ -160,6 +182,9 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     if (isStarted()) {
       return;
     }
+    if (encoder == null) {
+      encoder = defaultEncoder();
+    }
     MonitoredResource resource = getMonitoredResource(getProjectId());
     defaultWriteOptions =
         new WriteOption[]{WriteOption.logName(getLogName()), WriteOption.resource(resource)};
@@ -168,6 +193,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     List<LoggingEnhancer> resourceEnhancers = MonitoredResourceUtil.getResourceEnhancers();
     loggingEnhancers.addAll(resourceEnhancers);
     loggingEnhancers.addAll(getLoggingEnhancers());
+    encoderStart();
     super.start();
   }
 
@@ -183,6 +209,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
   @Override
   public synchronized void stop() {
+    encoderStop();
     if (logging != null) {
       try {
         logging.close();
@@ -192,6 +219,22 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     }
     logging = null;
     super.stop();
+  }
+
+  private void encoderStart() {
+    byte[] header = getEncoder().headerBytes();
+    if (header != null) {
+      LogEntry logEntry = logEntryFor(Payload.StringPayload.of(new String(header)), Timestamp.now().getSeconds(), Level.INFO);
+      getLogging().write(Collections.singleton(logEntry), defaultWriteOptions);
+    }
+  }
+
+  private void encoderStop() {
+    byte[] footer = getEncoder().footerBytes();
+    if (footer != null) {
+      LogEntry logEntry = logEntryFor(Payload.StringPayload.of(new String(footer)), Timestamp.now().getSeconds(), Level.INFO);
+      getLogging().write(Collections.singleton(logEntry), defaultWriteOptions);
+    }
   }
 
   Logging getLogging() {
@@ -206,11 +249,13 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   private LogEntry logEntryFor(ILoggingEvent e) {
-    String payload = e.getFormattedMessage();
-    Level level = e.getLevel();
+    return logEntryFor(Payload.StringPayload.of(new String(getEncoder().encode(e))), e.getTimeStamp(), e.getLevel());
+  }
+
+  private LogEntry logEntryFor(Payload payload, long timeStamp, Level level) {
     LogEntry.Builder builder =
-        LogEntry.newBuilder(Payload.StringPayload.of(payload))
-            .setTimestamp(e.getTimeStamp())
+        LogEntry.newBuilder(payload)
+            .setTimestamp(timeStamp)
             .setSeverity(severityFor(level));
 
     builder
@@ -224,6 +269,14 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     }
 
     return builder.build();
+  }
+
+  private Encoder<ILoggingEvent> defaultEncoder() {
+    PatternLayoutEncoder patternLayoutEncoder = new PatternLayoutEncoder();
+    patternLayoutEncoder.setPattern("%msg");
+    patternLayoutEncoder.setContext(getContext());
+    patternLayoutEncoder.start();
+    return patternLayoutEncoder;
   }
 
   /**

@@ -23,8 +23,11 @@ import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
 import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
 import ch.qos.logback.classic.filter.ThresholdFilter;
 import ch.qos.logback.classic.spi.LoggingEvent;
+import ch.qos.logback.core.Context;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.Timestamp;
 import com.google.cloud.logging.LogEntry;
@@ -45,6 +48,7 @@ import org.junit.runner.RunWith;
 public class LoggingAppenderTest {
   private final String projectId = "test-project";
   private final Logging logging = EasyMock.createStrictMock(Logging.class);
+  private final Context loggerContext = new LoggerContext();
   private LoggingAppender loggingAppender = new TestLoggingAppender();
 
   class TestLoggingAppender extends LoggingAppender {
@@ -60,7 +64,10 @@ public class LoggingAppenderTest {
   }
 
   @Before
-  public void setUp() {}
+  public void setUp() {
+    loggerContext.setName("test-logger");
+    loggingAppender.setContext(loggerContext);
+  }
 
   private final WriteOption[] defaultWriteOptions =
       new WriteOption[] {
@@ -88,6 +95,7 @@ public class LoggingAppenderTest {
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
         capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    expectLastCall().times(2);
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent = createLoggingEvent(Level.WARN, timestamp.getSeconds());
@@ -116,7 +124,7 @@ public class LoggingAppenderTest {
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
         capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
-    expectLastCall().once();
+    expectLastCall().times(2);
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent1 = createLoggingEvent(Level.INFO, timestamp.getSeconds());
@@ -153,7 +161,7 @@ public class LoggingAppenderTest {
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
         capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
-    expectLastCall().once();
+    expectLastCall().times(2);
     replay(logging);
     loggingAppender.addEnhancer("com.example.enhancers.TestLoggingEnhancer");
     loggingAppender.addEnhancer("com.example.enhancers.AnotherTestLoggingEnhancer");
@@ -172,7 +180,7 @@ public class LoggingAppenderTest {
     Capture<WriteOption> logNameArg = Capture.newInstance();
     Capture<WriteOption> resourceArg = Capture.newInstance();
     logging.write((Iterable<LogEntry>) anyObject(), capture(logNameArg), capture(resourceArg));
-    expectLastCall().once();
+    expectLastCall().times(2);
     replay(logging);
     loggingAppender.start();
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
@@ -182,11 +190,81 @@ public class LoggingAppenderTest {
     Assert.assertTrue(resourceArg.getValue().equals(defaultWriteOptions[1]));
   }
 
+  @Test
+  public void testEncoderPattern() {
+    final String pattern = "%-5level [%thread] %logger{0}: %msg%n";
+
+    logging.setFlushSeverity(Severity.ERROR);
+    Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
+    logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    expectLastCall().times(2);
+    replay(logging);
+
+    loggingAppender.setEncoder(getPatternLayoutEncoder(pattern, false));
+    loggingAppender.start();
+    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
+    LoggingEvent loggingEvent = createLoggingEvent(Level.ERROR, timestamp.getSeconds());
+    loggingAppender.doAppend(loggingEvent);
+
+    verify(logging);
+
+    LogEntry expectedEntry = LogEntry.newBuilder(StringPayload.of("ERROR [main] test-logger: this is a test\n"))
+        .setTimestamp(100000L)
+        .setSeverity(Severity.ERROR)
+        .setLabels(
+            new ImmutableMap.Builder<String, String>()
+                .put("levelName", "ERROR")
+                .put("levelValue", String.valueOf(40000L))
+                .build())
+        .build();
+    Assert.assertTrue(capturedArgument.getValue().iterator().hasNext());
+    Assert.assertTrue(expectedEntry.equals(capturedArgument.getValue().iterator().next()));
+  }
+
+  @Test
+  public void testWriteEncoderHeader() {
+    final String pattern = "%-5level [%thread] %logger{0}: %msg%n";
+
+    logging.setFlushSeverity(Severity.ERROR);
+    Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
+    logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    expectLastCall().once();
+    replay(logging);
+
+    loggingAppender.setEncoder(getPatternLayoutEncoder(pattern, true));
+    loggingAppender.start();
+
+    verify(logging);
+
+    Assert.assertTrue(capturedArgument.getValue().iterator().hasNext());
+    LogEntry actualEntry = capturedArgument.getValue().iterator().next();
+    LogEntry expectedEntry = LogEntry.newBuilder(StringPayload.of("#logback.classic pattern: " + pattern + "\n"))
+        .setSeverity(Severity.INFO)
+        .setTimestamp(actualEntry.getTimestamp())
+        .setLabels(
+            new ImmutableMap.Builder<String, String>()
+                .put("levelName", "INFO")
+                .put("levelValue", String.valueOf(20000L))
+                .build())
+        .build();
+    Assert.assertTrue(expectedEntry.equals(actualEntry));
+  }
+
+  private PatternLayoutEncoder getPatternLayoutEncoder(String pattern, boolean setOutputPatternAsHeader) {
+    PatternLayoutEncoder patternLayoutEncoder = new PatternLayoutEncoder();
+    patternLayoutEncoder.setContext(loggerContext);
+    patternLayoutEncoder.setOutputPatternAsHeader(setOutputPatternAsHeader);
+    patternLayoutEncoder.setPattern(pattern);
+    patternLayoutEncoder.start();
+    return patternLayoutEncoder;
+  }
+
   private LoggingEvent createLoggingEvent(Level level, long timestamp) {
     LoggingEvent loggingEvent = new LoggingEvent();
     loggingEvent.setMessage("this is a test");
     loggingEvent.setLevel(level);
     loggingEvent.setTimeStamp(timestamp);
+    loggingEvent.setLoggerName(loggerContext.getName());
     return loggingEvent;
   }
 }
