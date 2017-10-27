@@ -834,6 +834,15 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * Returns an option for bucket's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BlobListOption userProject(String userProject) {
+      return new BlobListOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
+    /**
      * If set to {@code true}, lists all versions of a blob. The default is {@code false}.
      *
      * @see <a href ="https://cloud.google.com/storage/docs/object-versioning">Object Versioning</a>

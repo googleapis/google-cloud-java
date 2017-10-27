@@ -400,6 +400,30 @@ public class ITStorageTest {
       assertTrue(blobSet.contains(remoteBlob.getName()));
       assertNull(remoteBlob.getContentType());
     }
+
+    // Test listing a Requester Pays bucket.
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+    assertNull(remoteBucket.requesterPays());
+    remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+    Bucket updatedBucket = storage.update(remoteBucket);
+    assertTrue(updatedBucket.requesterPays());
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    try {
+      page = storage.list(BUCKET,
+          Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+          Storage.BlobListOption.fields(),
+          Storage.BlobListOption.userProject("fakeBillingProjectId"));
+      fail("Expected bad user project error.");
+    } catch (StorageException e) {
+      assertTrue(e.getMessage().contains("User project specified in the request is invalid"));
+    }
+    while (Iterators.size(page.iterateAll().iterator()) != 2) {
+      Thread.sleep(500);
+      page = storage.list(BUCKET,
+          Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+          Storage.BlobListOption.fields(),
+          Storage.BlobListOption.userProject(projectId));
+    }
     assertTrue(remoteBlob1.delete());
     assertTrue(remoteBlob2.delete());
   }
