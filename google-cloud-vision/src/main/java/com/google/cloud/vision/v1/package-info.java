@@ -29,7 +29,7 @@
  *
  * <pre>
  * <code>
- * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+ * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.of()) {
  *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
  *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
  * }

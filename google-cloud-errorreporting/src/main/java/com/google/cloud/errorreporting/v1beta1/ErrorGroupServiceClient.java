@@ -36,7 +36,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+ * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.of()) {
  *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
  *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
  * }
@@ -68,7 +68,7 @@ import javax.annotation.Generated;
  * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of ErrorGroupServiceSettings to
- * create(). For example:
+ * of(). For example:
  *
  * <p>To customize credentials:
  *
@@ -76,10 +76,10 @@ import javax.annotation.Generated;
  * <code>
  * ErrorGroupServiceSettings errorGroupServiceSettings =
  *     ErrorGroupServiceSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
  *         .build();
  * ErrorGroupServiceClient errorGroupServiceClient =
- *     ErrorGroupServiceClient.create(errorGroupServiceSettings);
+ *     ErrorGroupServiceClient.of(errorGroupServiceSettings);
  * </code>
  * </pre>
  *
@@ -89,14 +89,12 @@ import javax.annotation.Generated;
  * <code>
  * ErrorGroupServiceSettings errorGroupServiceSettings =
  *     ErrorGroupServiceSettings.newBuilder()
- *         .setTransportProvider(ErrorGroupServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(ErrorGroupServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(ErrorGroupServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * ErrorGroupServiceClient errorGroupServiceClient =
- *     ErrorGroupServiceClient.create(errorGroupServiceSettings);
+ *     ErrorGroupServiceClient.of(errorGroupServiceSettings);
  * </code>
  * </pre>
  */
@@ -106,16 +104,49 @@ public class ErrorGroupServiceClient implements BackgroundResource {
   private final ErrorGroupServiceSettings settings;
   private final ErrorGroupServiceStub stub;
 
-  /** Constructs an instance of ErrorGroupServiceClient with default settings. */
+  /**
+   * Constructs an instance of ErrorGroupServiceClient with default settings.
+   *
+   * @deprecated Use of() instead.
+   */
+  @Deprecated
   public static final ErrorGroupServiceClient create() throws IOException {
-    return create(ErrorGroupServiceSettings.newBuilder().build());
+    return of();
+  }
+
+  /** Constructs an instance of ErrorGroupServiceClient with default settings. */
+  public static final ErrorGroupServiceClient of() throws IOException {
+    return of(ErrorGroupServiceSettings.newBuilder().build());
+  }
+
+  /**
+   * Constructs an instance of ErrorGroupServiceClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
+   *
+   * @deprecated Use of(ErrorGroupServiceSettings) instead.
+   */
+  @Deprecated
+  public static final ErrorGroupServiceClient create(ErrorGroupServiceSettings settings)
+      throws IOException {
+    return of(settings);
+  }
+
+  /**
+   * Constructs an instance of ErrorGroupServiceClient, using the given stub for making calls. This
+   * is for advanced usage - prefer to use ErrorGroupServiceSettings}.
+   *
+   * @deprecated Use of(ErrorGroupServiceStub) instead.
+   */
+  @Deprecated
+  public static final ErrorGroupServiceClient create(ErrorGroupServiceStub stub) {
+    return of(stub);
   }
 
   /**
    * Constructs an instance of ErrorGroupServiceClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final ErrorGroupServiceClient create(ErrorGroupServiceSettings settings)
+  public static final ErrorGroupServiceClient of(ErrorGroupServiceSettings settings)
       throws IOException {
     return new ErrorGroupServiceClient(settings);
   }
@@ -124,7 +155,8 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * Constructs an instance of ErrorGroupServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer to use ErrorGroupServiceSettings}.
    */
-  public static final ErrorGroupServiceClient create(ErrorGroupServiceStub stub) {
+  @BetaApi
+  public static final ErrorGroupServiceClient of(ErrorGroupServiceStub stub) {
     return new ErrorGroupServiceClient(stub);
   }
 
@@ -159,7 +191,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.of()) {
    *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
    *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
    * }
@@ -187,7 +219,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.of()) {
    *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
    *     .setGroupNameWithGroupName(groupName)
@@ -210,7 +242,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.of()) {
    *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
    *     .setGroupNameWithGroupName(groupName)
@@ -232,7 +264,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.of()) {
    *   ErrorGroup group = ErrorGroup.newBuilder().build();
    *   ErrorGroup response = errorGroupServiceClient.updateGroup(group);
    * }
@@ -254,7 +286,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.of()) {
    *   ErrorGroup group = ErrorGroup.newBuilder().build();
    *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
    *     .setGroup(group)
@@ -277,7 +309,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.of()) {
    *   ErrorGroup group = ErrorGroup.newBuilder().build();
    *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
    *     .setGroup(group)

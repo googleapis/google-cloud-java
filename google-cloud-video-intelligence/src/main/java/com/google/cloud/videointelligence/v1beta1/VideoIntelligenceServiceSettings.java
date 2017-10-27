@@ -22,18 +22,20 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
-import com.google.api.gax.grpc.OperationTimedPollAlgorithm;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.OperationCallSettings;
-import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.videointelligence.v1beta1.stub.GrpcVideoIntelligenceServiceStub;
 import com.google.cloud.videointelligence.v1beta1.stub.VideoIntelligenceServiceStub;
@@ -42,7 +44,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -91,23 +92,30 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
 
   private static String gapicVersion;
 
+  private final UnaryCallSettings<AnnotateVideoRequest, Operation> annotateVideoSettings;
   private final OperationCallSettings<
-          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
-      annotateVideoSettings;
+          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
+      annotateVideoOperationSettings;
 
   /** Returns the object with the settings used for calls to annotateVideo. */
-  public OperationCallSettings<
-          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
-      annotateVideoSettings() {
+  public UnaryCallSettings<AnnotateVideoRequest, Operation> annotateVideoSettings() {
     return annotateVideoSettings;
   }
 
+  /** Returns the object with the settings used for calls to annotateVideo. */
+  public OperationCallSettings<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
+      annotateVideoOperationSettings() {
+    return annotateVideoOperationSettings;
+  }
+
   public VideoIntelligenceServiceStub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
-      return GrpcVideoIntelligenceServiceStub.create(this);
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcVideoIntelligenceServiceStub.of(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -132,20 +140,19 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
   }
 
   private static String getGapicVersion() {
@@ -191,32 +198,36 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
   private VideoIntelligenceServiceSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getTransportChannelProvider(),
         settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getHeaderProvider(),
         settingsBuilder.getClock());
 
     annotateVideoSettings = settingsBuilder.annotateVideoSettings().build();
+    annotateVideoOperationSettings = settingsBuilder.annotateVideoOperationSettings().build();
   }
 
   /** Builder for VideoIntelligenceServiceSettings. */
   public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<AnnotateVideoRequest, Operation> annotateVideoSettings;
     private final OperationCallSettings.Builder<
-            AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
-        annotateVideoSettings;
+            AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
+        annotateVideoOperationSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -246,32 +257,44 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      annotateVideoSettings = OperationCallSettings.newBuilder();
+      annotateVideoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder>of();
+      annotateVideoOperationSettings = OperationCallSettings.newBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(annotateVideoSettings);
 
       initDefaults(this);
     }
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
+
       builder
           .annotateVideoSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+      builder
+          .annotateVideoOperationSettings()
           .setInitialCallSettings(
-              SimpleCallSettings.<AnnotateVideoRequest, Operation>newBuilder()
+              UnaryCallSettings
+                  .<AnnotateVideoRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
-          .setResponseClass(AnnotateVideoResponse.class)
-          .setMetadataClass(AnnotateVideoProgress.class)
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.of(AnnotateVideoResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.of(AnnotateVideoProgress.class))
           .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
+              OperationTimedPollAlgorithm.of(
                   RetrySettings.newBuilder()
                       .setInitialRetryDelay(Duration.ofMillis(20000L))
                       .setRetryDelayMultiplier(1.5)
@@ -289,8 +312,10 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
       super(settings);
 
       annotateVideoSettings = settings.annotateVideoSettings.toBuilder();
+      annotateVideoOperationSettings = settings.annotateVideoOperationSettings.toBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder>of();
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(annotateVideoSettings);
     }
 
     @Override
@@ -300,8 +325,14 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
+    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
+      super.setTransportChannelProvider(transportProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      super.setHeaderProvider(headerProvider);
       return this;
     }
 
@@ -317,16 +348,21 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to annotateVideo. */
-    public OperationCallSettings.Builder<
-            AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
-        annotateVideoSettings() {
+    public UnaryCallSettings.Builder<AnnotateVideoRequest, Operation> annotateVideoSettings() {
       return annotateVideoSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to annotateVideo. */
+    public OperationCallSettings.Builder<
+            AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
+        annotateVideoOperationSettings() {
+      return annotateVideoOperationSettings;
     }
 
     @Override

@@ -17,8 +17,8 @@ package com.google.cloud.dlp.v2beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.OperationFuture;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dlp.v2beta1.stub.DlpServiceStub;
 import com.google.longrunning.Operation;
@@ -67,7 +67,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+ * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
  *   DeidentifyConfig deidentifyConfig = DeidentifyConfig.newBuilder().build();
  *   InspectConfig inspectConfig = InspectConfig.newBuilder().build();
  *   List&lt;ContentItem&gt; items = new ArrayList&lt;&gt;();
@@ -99,8 +99,8 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of DlpServiceSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of DlpServiceSettings to of().
+ * For example:
  *
  * <p>To customize credentials:
  *
@@ -108,10 +108,10 @@ import javax.annotation.Generated;
  * <code>
  * DlpServiceSettings dlpServiceSettings =
  *     DlpServiceSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
  *         .build();
  * DlpServiceClient dlpServiceClient =
- *     DlpServiceClient.create(dlpServiceSettings);
+ *     DlpServiceClient.of(dlpServiceSettings);
  * </code>
  * </pre>
  *
@@ -121,14 +121,12 @@ import javax.annotation.Generated;
  * <code>
  * DlpServiceSettings dlpServiceSettings =
  *     DlpServiceSettings.newBuilder()
- *         .setTransportProvider(DlpServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(DlpServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(DlpServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * DlpServiceClient dlpServiceClient =
- *     DlpServiceClient.create(dlpServiceSettings);
+ *     DlpServiceClient.of(dlpServiceSettings);
  * </code>
  * </pre>
  */
@@ -139,16 +137,48 @@ public class DlpServiceClient implements BackgroundResource {
   private final DlpServiceStub stub;
   private final OperationsClient operationsClient;
 
-  /** Constructs an instance of DlpServiceClient with default settings. */
+  /**
+   * Constructs an instance of DlpServiceClient with default settings.
+   *
+   * @deprecated Use of() instead.
+   */
+  @Deprecated
   public static final DlpServiceClient create() throws IOException {
-    return create(DlpServiceSettings.newBuilder().build());
+    return of();
+  }
+
+  /** Constructs an instance of DlpServiceClient with default settings. */
+  public static final DlpServiceClient of() throws IOException {
+    return of(DlpServiceSettings.newBuilder().build());
+  }
+
+  /**
+   * Constructs an instance of DlpServiceClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
+   *
+   * @deprecated Use of(DlpServiceSettings) instead.
+   */
+  @Deprecated
+  public static final DlpServiceClient create(DlpServiceSettings settings) throws IOException {
+    return of(settings);
+  }
+
+  /**
+   * Constructs an instance of DlpServiceClient, using the given stub for making calls. This is for
+   * advanced usage - prefer to use DlpServiceSettings}.
+   *
+   * @deprecated Use of(DlpServiceStub) instead.
+   */
+  @Deprecated
+  public static final DlpServiceClient create(DlpServiceStub stub) {
+    return of(stub);
   }
 
   /**
    * Constructs an instance of DlpServiceClient, using the given settings. The channels are created
    * based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final DlpServiceClient create(DlpServiceSettings settings) throws IOException {
+  public static final DlpServiceClient of(DlpServiceSettings settings) throws IOException {
     return new DlpServiceClient(settings);
   }
 
@@ -156,7 +186,8 @@ public class DlpServiceClient implements BackgroundResource {
    * Constructs an instance of DlpServiceClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use DlpServiceSettings}.
    */
-  public static final DlpServiceClient create(DlpServiceStub stub) {
+  @BetaApi
+  public static final DlpServiceClient of(DlpServiceStub stub) {
     return new DlpServiceClient(stub);
   }
 
@@ -167,13 +198,13 @@ public class DlpServiceClient implements BackgroundResource {
   protected DlpServiceClient(DlpServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = settings.createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient = OperationsClient.of(this.stub.getOperationsStub());
   }
 
   protected DlpServiceClient(DlpServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient = OperationsClient.of(this.stub.getOperationsStub());
   }
 
   public final DlpServiceSettings getSettings() {
@@ -201,7 +232,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   DeidentifyConfig deidentifyConfig = DeidentifyConfig.newBuilder().build();
    *   InspectConfig inspectConfig = InspectConfig.newBuilder().build();
    *   List&lt;ContentItem&gt; items = new ArrayList&lt;&gt;();
@@ -235,7 +266,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   DeidentifyConfig deidentifyConfig = DeidentifyConfig.newBuilder().build();
    *   InspectConfig inspectConfig = InspectConfig.newBuilder().build();
    *   List&lt;ContentItem&gt; items = new ArrayList&lt;&gt;();
@@ -263,7 +294,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   DeidentifyConfig deidentifyConfig = DeidentifyConfig.newBuilder().build();
    *   InspectConfig inspectConfig = InspectConfig.newBuilder().build();
    *   List&lt;ContentItem&gt; items = new ArrayList&lt;&gt;();
@@ -291,7 +322,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   PrivacyMetric privacyMetric = PrivacyMetric.newBuilder().build();
    *   BigQueryTable sourceTable = BigQueryTable.newBuilder().build();
    *   RiskAnalysisOperationResult response = dlpServiceClient.analyzeDataSourceRiskAsync(privacyMetric, sourceTable).get();
@@ -302,8 +333,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param sourceTable Input dataset to compute metrics over.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<
-          RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+  public final OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskAsync(PrivacyMetric privacyMetric, BigQueryTable sourceTable) {
 
     AnalyzeDataSourceRiskRequest request =
@@ -322,7 +352,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   PrivacyMetric privacyMetric = PrivacyMetric.newBuilder().build();
    *   BigQueryTable sourceTable = BigQueryTable.newBuilder().build();
    *   AnalyzeDataSourceRiskRequest request = AnalyzeDataSourceRiskRequest.newBuilder()
@@ -336,8 +366,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<
-          RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+  public final OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskAsync(AnalyzeDataSourceRiskRequest request) {
     return analyzeDataSourceRiskOperationCallable().futureCall(request);
   }
@@ -350,7 +379,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   PrivacyMetric privacyMetric = PrivacyMetric.newBuilder().build();
    *   BigQueryTable sourceTable = BigQueryTable.newBuilder().build();
    *   AnalyzeDataSourceRiskRequest request = AnalyzeDataSourceRiskRequest.newBuilder()
@@ -364,8 +393,7 @@ public class DlpServiceClient implements BackgroundResource {
    * </code></pre>
    */
   public final OperationCallable<
-          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata,
-          Operation>
+          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskOperationCallable() {
     return stub.analyzeDataSourceRiskOperationCallable();
   }
@@ -378,7 +406,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   PrivacyMetric privacyMetric = PrivacyMetric.newBuilder().build();
    *   BigQueryTable sourceTable = BigQueryTable.newBuilder().build();
    *   AnalyzeDataSourceRiskRequest request = AnalyzeDataSourceRiskRequest.newBuilder()
@@ -404,7 +432,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String name = "EMAIL_ADDRESS";
    *   InfoType infoTypesElement = InfoType.newBuilder()
    *     .setName(name)
@@ -448,7 +476,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String name = "EMAIL_ADDRESS";
    *   InfoType infoTypesElement = InfoType.newBuilder()
    *     .setName(name)
@@ -487,7 +515,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String name = "EMAIL_ADDRESS";
    *   InfoType infoTypesElement = InfoType.newBuilder()
    *     .setName(name)
@@ -526,7 +554,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String name = "EMAIL_ADDRESS";
    *   InfoType infoTypesElement = InfoType.newBuilder()
    *     .setName(name)
@@ -584,7 +612,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String name = "EMAIL_ADDRESS";
    *   InfoType infoTypesElement = InfoType.newBuilder()
    *     .setName(name)
@@ -634,7 +662,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String name = "EMAIL_ADDRESS";
    *   InfoType infoTypesElement = InfoType.newBuilder()
    *     .setName(name)
@@ -682,7 +710,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String name = "EMAIL_ADDRESS";
    *   InfoType infoTypesElement = InfoType.newBuilder()
    *     .setName(name)
@@ -711,7 +739,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param outputConfig Optional location to store findings.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation>
+  public final OperationFuture<InspectOperationResult, InspectOperationMetadata>
       createInspectOperationAsync(
           InspectConfig inspectConfig,
           StorageConfig storageConfig,
@@ -733,7 +761,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String name = "EMAIL_ADDRESS";
    *   InfoType infoTypesElement = InfoType.newBuilder()
    *     .setName(name)
@@ -765,7 +793,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation>
+  public final OperationFuture<InspectOperationResult, InspectOperationMetadata>
       createInspectOperationAsync(CreateInspectOperationRequest request) {
     return createInspectOperationOperationCallable().futureCall(request);
   }
@@ -777,7 +805,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String name = "EMAIL_ADDRESS";
    *   InfoType infoTypesElement = InfoType.newBuilder()
    *     .setName(name)
@@ -809,8 +837,7 @@ public class DlpServiceClient implements BackgroundResource {
    * </code></pre>
    */
   public final OperationCallable<
-          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata,
-          Operation>
+          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
       createInspectOperationOperationCallable() {
     return stub.createInspectOperationOperationCallable();
   }
@@ -822,7 +849,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String name = "EMAIL_ADDRESS";
    *   InfoType infoTypesElement = InfoType.newBuilder()
    *     .setName(name)
@@ -865,7 +892,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   ResultName name = ResultName.create("[RESULT]");
    *   ListInspectFindingsResponse response = dlpServiceClient.listInspectFindings(name);
    * }
@@ -889,7 +916,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   ResultName name = ResultName.create("[RESULT]");
    *   ListInspectFindingsRequest request = ListInspectFindingsRequest.newBuilder()
    *     .setNameWithResultName(name)
@@ -912,7 +939,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   ResultName name = ResultName.create("[RESULT]");
    *   ListInspectFindingsRequest request = ListInspectFindingsRequest.newBuilder()
    *     .setNameWithResultName(name)
@@ -935,7 +962,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String category = "PII";
    *   String languageCode = "en";
    *   ListInfoTypesResponse response = dlpServiceClient.listInfoTypes(category, languageCode);
@@ -964,7 +991,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String category = "PII";
    *   String languageCode = "en";
    *   ListInfoTypesRequest request = ListInfoTypesRequest.newBuilder()
@@ -989,7 +1016,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String category = "PII";
    *   String languageCode = "en";
    *   ListInfoTypesRequest request = ListInfoTypesRequest.newBuilder()
@@ -1013,7 +1040,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String languageCode = "en";
    *   ListRootCategoriesResponse response = dlpServiceClient.listRootCategories(languageCode);
    * }
@@ -1037,7 +1064,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String languageCode = "en";
    *   ListRootCategoriesRequest request = ListRootCategoriesRequest.newBuilder()
    *     .setLanguageCode(languageCode)
@@ -1060,7 +1087,7 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
    *   String languageCode = "en";
    *   ListRootCategoriesRequest request = ListRootCategoriesRequest.newBuilder()
    *     .setLanguageCode(languageCode)

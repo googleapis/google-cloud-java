@@ -22,16 +22,16 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.SimpleCallSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.language.v1beta2.stub.GrpcLanguageServiceStub;
 import com.google.cloud.language.v1beta2.stub.LanguageServiceStub;
@@ -39,7 +39,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -86,56 +85,58 @@ public class LanguageServiceSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private final SimpleCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+  private final UnaryCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentSettings;
-  private final SimpleCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+  private final UnaryCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesSettings;
-  private final SimpleCallSettings<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+  private final UnaryCallSettings<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
       analyzeEntitySentimentSettings;
-  private final SimpleCallSettings<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
+  private final UnaryCallSettings<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
       analyzeSyntaxSettings;
-  private final SimpleCallSettings<ClassifyTextRequest, ClassifyTextResponse> classifyTextSettings;
-  private final SimpleCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextSettings;
+  private final UnaryCallSettings<ClassifyTextRequest, ClassifyTextResponse> classifyTextSettings;
+  private final UnaryCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextSettings;
 
   /** Returns the object with the settings used for calls to analyzeSentiment. */
-  public SimpleCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+  public UnaryCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentSettings() {
     return analyzeSentimentSettings;
   }
 
   /** Returns the object with the settings used for calls to analyzeEntities. */
-  public SimpleCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+  public UnaryCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesSettings() {
     return analyzeEntitiesSettings;
   }
 
   /** Returns the object with the settings used for calls to analyzeEntitySentiment. */
-  public SimpleCallSettings<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+  public UnaryCallSettings<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
       analyzeEntitySentimentSettings() {
     return analyzeEntitySentimentSettings;
   }
 
   /** Returns the object with the settings used for calls to analyzeSyntax. */
-  public SimpleCallSettings<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxSettings() {
+  public UnaryCallSettings<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxSettings() {
     return analyzeSyntaxSettings;
   }
 
   /** Returns the object with the settings used for calls to classifyText. */
-  public SimpleCallSettings<ClassifyTextRequest, ClassifyTextResponse> classifyTextSettings() {
+  public UnaryCallSettings<ClassifyTextRequest, ClassifyTextResponse> classifyTextSettings() {
     return classifyTextSettings;
   }
 
   /** Returns the object with the settings used for calls to annotateText. */
-  public SimpleCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextSettings() {
+  public UnaryCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextSettings() {
     return annotateTextSettings;
   }
 
   public LanguageServiceStub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
-      return GrpcLanguageServiceStub.create(this);
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcLanguageServiceStub.of(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -160,20 +161,19 @@ public class LanguageServiceSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
   }
 
   private static String getGapicVersion() {
@@ -219,8 +219,9 @@ public class LanguageServiceSettings extends ClientSettings {
   private LanguageServiceSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getTransportChannelProvider(),
         settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getHeaderProvider(),
         settingsBuilder.getClock());
 
     analyzeSentimentSettings = settingsBuilder.analyzeSentimentSettings().build();
@@ -233,33 +234,34 @@ public class LanguageServiceSettings extends ClientSettings {
 
   /** Builder for LanguageServiceSettings. */
   public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final SimpleCallSettings.Builder<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+    private final UnaryCallSettings.Builder<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
         analyzeSentimentSettings;
-    private final SimpleCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+    private final UnaryCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
         analyzeEntitiesSettings;
-    private final SimpleCallSettings.Builder<
+    private final UnaryCallSettings.Builder<
             AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
         analyzeEntitySentimentSettings;
-    private final SimpleCallSettings.Builder<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
+    private final UnaryCallSettings.Builder<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
         analyzeSyntaxSettings;
-    private final SimpleCallSettings.Builder<ClassifyTextRequest, ClassifyTextResponse>
+    private final UnaryCallSettings.Builder<ClassifyTextRequest, ClassifyTextResponse>
         classifyTextSettings;
-    private final SimpleCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
+    private final UnaryCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
         annotateTextSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -289,20 +291,20 @@ public class LanguageServiceSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      analyzeSentimentSettings = SimpleCallSettings.newBuilder();
+      analyzeSentimentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      analyzeEntitiesSettings = SimpleCallSettings.newBuilder();
+      analyzeEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      analyzeEntitySentimentSettings = SimpleCallSettings.newBuilder();
+      analyzeEntitySentimentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      analyzeSyntaxSettings = SimpleCallSettings.newBuilder();
+      analyzeSyntaxSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      classifyTextSettings = SimpleCallSettings.newBuilder();
+      classifyTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      annotateTextSettings = SimpleCallSettings.newBuilder();
+      annotateTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               analyzeSentimentSettings,
               analyzeEntitiesSettings,
               analyzeEntitySentimentSettings,
@@ -315,8 +317,9 @@ public class LanguageServiceSettings extends ClientSettings {
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       return initDefaults(builder);
     }
 
@@ -366,7 +369,7 @@ public class LanguageServiceSettings extends ClientSettings {
       annotateTextSettings = settings.annotateTextSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               analyzeSentimentSettings,
               analyzeEntitiesSettings,
               analyzeEntitySentimentSettings,
@@ -382,8 +385,14 @@ public class LanguageServiceSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
+    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
+      super.setTransportChannelProvider(transportProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      super.setHeaderProvider(headerProvider);
       return this;
     }
 
@@ -399,43 +408,43 @@ public class LanguageServiceSettings extends ClientSettings {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to analyzeSentiment. */
-    public SimpleCallSettings.Builder<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+    public UnaryCallSettings.Builder<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
         analyzeSentimentSettings() {
       return analyzeSentimentSettings;
     }
 
     /** Returns the builder for the settings used for calls to analyzeEntities. */
-    public SimpleCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+    public UnaryCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
         analyzeEntitiesSettings() {
       return analyzeEntitiesSettings;
     }
 
     /** Returns the builder for the settings used for calls to analyzeEntitySentiment. */
-    public SimpleCallSettings.Builder<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+    public UnaryCallSettings.Builder<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
         analyzeEntitySentimentSettings() {
       return analyzeEntitySentimentSettings;
     }
 
     /** Returns the builder for the settings used for calls to analyzeSyntax. */
-    public SimpleCallSettings.Builder<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
+    public UnaryCallSettings.Builder<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
         analyzeSyntaxSettings() {
       return analyzeSyntaxSettings;
     }
 
     /** Returns the builder for the settings used for calls to classifyText. */
-    public SimpleCallSettings.Builder<ClassifyTextRequest, ClassifyTextResponse>
+    public UnaryCallSettings.Builder<ClassifyTextRequest, ClassifyTextResponse>
         classifyTextSettings() {
       return classifyTextSettings;
     }
 
     /** Returns the builder for the settings used for calls to annotateText. */
-    public SimpleCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
+    public UnaryCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
         annotateTextSettings() {
       return annotateTextSettings;
     }

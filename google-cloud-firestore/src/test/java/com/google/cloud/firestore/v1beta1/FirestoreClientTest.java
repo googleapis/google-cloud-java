@@ -18,7 +18,6 @@ package com.google.cloud.firestore.v1beta1;
 import static com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
@@ -88,13 +87,10 @@ public class FirestoreClientTest {
     serviceHelper.reset();
     FirestoreSettings settings =
         FirestoreSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
-    client = FirestoreClient.create(settings);
+    client = FirestoreClient.of(settings);
   }
 
   @After

@@ -27,7 +27,7 @@
  *
  * <pre>
  * <code>
- * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+ * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.of()) {
  *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
  *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
  * }
@@ -43,7 +43,7 @@
  *
  * <pre>
  * <code>
- * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+ * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
  *   ProjectName projectName = ProjectName.create("[PROJECT]");
  *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
  * }
@@ -58,7 +58,7 @@
  *
  * <pre>
  * <code>
- * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
+ * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.of()) {
  *   ProjectName projectName = ProjectName.create("[PROJECT]");
  *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
  *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);

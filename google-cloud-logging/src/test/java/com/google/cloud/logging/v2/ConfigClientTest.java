@@ -19,7 +19,6 @@ import static com.google.cloud.logging.v2.PagedResponseWrappers.ListExclusionsPa
 import static com.google.cloud.logging.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
@@ -91,13 +90,10 @@ public class ConfigClientTest {
     serviceHelper.reset();
     ConfigSettings settings =
         ConfigSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
-    client = ConfigClient.create(settings);
+    client = ConfigClient.of(settings);
   }
 
   @After

@@ -22,16 +22,16 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.SimpleCallSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.errorreporting.v1beta1.stub.ErrorGroupServiceStub;
 import com.google.cloud.errorreporting.v1beta1.stub.GrpcErrorGroupServiceStub;
@@ -42,7 +42,6 @@ import com.google.common.collect.Lists;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -91,25 +90,27 @@ public class ErrorGroupServiceSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private final SimpleCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings;
-  private final SimpleCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
+  private final UnaryCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings;
+  private final UnaryCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
 
   /** Returns the object with the settings used for calls to getGroup. */
-  public SimpleCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings() {
+  public UnaryCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings() {
     return getGroupSettings;
   }
 
   /** Returns the object with the settings used for calls to updateGroup. */
-  public SimpleCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupSettings() {
+  public UnaryCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupSettings() {
     return updateGroupSettings;
   }
 
   public ErrorGroupServiceStub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
-      return GrpcErrorGroupServiceStub.create(this);
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcErrorGroupServiceStub.of(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -134,20 +135,19 @@ public class ErrorGroupServiceSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
   }
 
   private static String getGapicVersion() {
@@ -193,8 +193,9 @@ public class ErrorGroupServiceSettings extends ClientSettings {
   private ErrorGroupServiceSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getTransportChannelProvider(),
         settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getHeaderProvider(),
         settingsBuilder.getClock());
 
     getGroupSettings = settingsBuilder.getGroupSettings().build();
@@ -203,22 +204,23 @@ public class ErrorGroupServiceSettings extends ClientSettings {
 
   /** Builder for ErrorGroupServiceSettings. */
   public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final SimpleCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings;
-    private final SimpleCallSettings.Builder<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
+    private final UnaryCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings;
+    private final UnaryCallSettings.Builder<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -248,20 +250,21 @@ public class ErrorGroupServiceSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      getGroupSettings = SimpleCallSettings.newBuilder();
+      getGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      updateGroupSettings = SimpleCallSettings.newBuilder();
+      updateGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(getGroupSettings, updateGroupSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getGroupSettings, updateGroupSettings);
 
       initDefaults(this);
     }
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       return initDefaults(builder);
     }
 
@@ -287,7 +290,7 @@ public class ErrorGroupServiceSettings extends ClientSettings {
       updateGroupSettings = settings.updateGroupSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(getGroupSettings, updateGroupSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getGroupSettings, updateGroupSettings);
     }
 
     @Override
@@ -297,8 +300,14 @@ public class ErrorGroupServiceSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
+    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
+      super.setTransportChannelProvider(transportProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      super.setHeaderProvider(headerProvider);
       return this;
     }
 
@@ -314,18 +323,18 @@ public class ErrorGroupServiceSettings extends ClientSettings {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to getGroup. */
-    public SimpleCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings() {
+    public UnaryCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings() {
       return getGroupSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateGroup. */
-    public SimpleCallSettings.Builder<UpdateGroupRequest, ErrorGroup> updateGroupSettings() {
+    public UnaryCallSettings.Builder<UpdateGroupRequest, ErrorGroup> updateGroupSettings() {
       return updateGroupSettings;
     }
 

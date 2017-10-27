@@ -40,8 +40,7 @@ public abstract class VideoIntelligenceServiceStub implements BackgroundResource
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public OperationCallable<
-          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
+  public OperationCallable<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: annotateVideoOperationCallable()");
   }

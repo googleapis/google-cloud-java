@@ -16,7 +16,6 @@
 package com.google.cloud.errorreporting.v1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
@@ -68,13 +67,10 @@ public class ReportErrorsServiceClientTest {
     serviceHelper.reset();
     ReportErrorsServiceSettings settings =
         ReportErrorsServiceSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
-    client = ReportErrorsServiceClient.create(settings);
+    client = ReportErrorsServiceClient.of(settings);
   }
 
   @After

@@ -16,14 +16,13 @@
 package com.google.cloud.speech.v1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
@@ -65,13 +64,10 @@ public class SpeechClientTest {
     serviceHelper.reset();
     SpeechSettings settings =
         SpeechSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
-    client = SpeechClient.create(settings);
+    client = SpeechClient.of(settings);
   }
 
   @After
@@ -195,9 +191,7 @@ public class SpeechClientTest {
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(
-          Status.INVALID_ARGUMENT.getCode(),
-          ((GrpcStatusCode) apiException.getStatusCode()).getCode());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

@@ -26,21 +26,21 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.ConfigServiceV2Stub;
@@ -64,7 +64,6 @@ import com.google.logging.v2.LogSink;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -119,17 +118,17 @@ public class ConfigSettings extends ClientSettings {
 
   private final PagedCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
       listSinksSettings;
-  private final SimpleCallSettings<GetSinkRequest, LogSink> getSinkSettings;
-  private final SimpleCallSettings<CreateSinkRequest, LogSink> createSinkSettings;
-  private final SimpleCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings;
-  private final SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings;
+  private final UnaryCallSettings<GetSinkRequest, LogSink> getSinkSettings;
+  private final UnaryCallSettings<CreateSinkRequest, LogSink> createSinkSettings;
+  private final UnaryCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings;
+  private final UnaryCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings;
   private final PagedCallSettings<
           ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
       listExclusionsSettings;
-  private final SimpleCallSettings<GetExclusionRequest, LogExclusion> getExclusionSettings;
-  private final SimpleCallSettings<CreateExclusionRequest, LogExclusion> createExclusionSettings;
-  private final SimpleCallSettings<UpdateExclusionRequest, LogExclusion> updateExclusionSettings;
-  private final SimpleCallSettings<DeleteExclusionRequest, Empty> deleteExclusionSettings;
+  private final UnaryCallSettings<GetExclusionRequest, LogExclusion> getExclusionSettings;
+  private final UnaryCallSettings<CreateExclusionRequest, LogExclusion> createExclusionSettings;
+  private final UnaryCallSettings<UpdateExclusionRequest, LogExclusion> updateExclusionSettings;
+  private final UnaryCallSettings<DeleteExclusionRequest, Empty> deleteExclusionSettings;
 
   /** Returns the object with the settings used for calls to listSinks. */
   public PagedCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
@@ -138,22 +137,22 @@ public class ConfigSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to getSink. */
-  public SimpleCallSettings<GetSinkRequest, LogSink> getSinkSettings() {
+  public UnaryCallSettings<GetSinkRequest, LogSink> getSinkSettings() {
     return getSinkSettings;
   }
 
   /** Returns the object with the settings used for calls to createSink. */
-  public SimpleCallSettings<CreateSinkRequest, LogSink> createSinkSettings() {
+  public UnaryCallSettings<CreateSinkRequest, LogSink> createSinkSettings() {
     return createSinkSettings;
   }
 
   /** Returns the object with the settings used for calls to updateSink. */
-  public SimpleCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings() {
+  public UnaryCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings() {
     return updateSinkSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteSink. */
-  public SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings() {
+  public UnaryCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings() {
     return deleteSinkSettings;
   }
 
@@ -165,31 +164,33 @@ public class ConfigSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to getExclusion. */
-  public SimpleCallSettings<GetExclusionRequest, LogExclusion> getExclusionSettings() {
+  public UnaryCallSettings<GetExclusionRequest, LogExclusion> getExclusionSettings() {
     return getExclusionSettings;
   }
 
   /** Returns the object with the settings used for calls to createExclusion. */
-  public SimpleCallSettings<CreateExclusionRequest, LogExclusion> createExclusionSettings() {
+  public UnaryCallSettings<CreateExclusionRequest, LogExclusion> createExclusionSettings() {
     return createExclusionSettings;
   }
 
   /** Returns the object with the settings used for calls to updateExclusion. */
-  public SimpleCallSettings<UpdateExclusionRequest, LogExclusion> updateExclusionSettings() {
+  public UnaryCallSettings<UpdateExclusionRequest, LogExclusion> updateExclusionSettings() {
     return updateExclusionSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteExclusion. */
-  public SimpleCallSettings<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
+  public UnaryCallSettings<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
     return deleteExclusionSettings;
   }
 
   public ConfigServiceV2Stub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
-      return GrpcConfigServiceV2Stub.create(this);
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcConfigServiceV2Stub.of(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -214,20 +215,19 @@ public class ConfigSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
   }
 
   private static String getGapicVersion() {
@@ -272,8 +272,9 @@ public class ConfigSettings extends ClientSettings {
   private ConfigSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getTransportChannelProvider(),
         settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getHeaderProvider(),
         settingsBuilder.getClock());
 
     listSinksSettings = settingsBuilder.listSinksSettings().build();
@@ -370,7 +371,7 @@ public class ConfigSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListSinksResponse> futureResponse) {
               PageContext<ListSinksRequest, ListSinksResponse, LogSink> pageContext =
-                  PageContext.create(callable, LIST_SINKS_PAGE_STR_DESC, request, context);
+                  PageContext.of(callable, LIST_SINKS_PAGE_STR_DESC, request, context);
               return ListSinksPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -387,45 +388,46 @@ public class ConfigSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListExclusionsResponse> futureResponse) {
               PageContext<ListExclusionsRequest, ListExclusionsResponse, LogExclusion> pageContext =
-                  PageContext.create(callable, LIST_EXCLUSIONS_PAGE_STR_DESC, request, context);
+                  PageContext.of(callable, LIST_EXCLUSIONS_PAGE_STR_DESC, request, context);
               return ListExclusionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
   /** Builder for ConfigSettings. */
   public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
             ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
         listSinksSettings;
-    private final SimpleCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings;
-    private final SimpleCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings;
-    private final SimpleCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings;
-    private final SimpleCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings;
+    private final UnaryCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings;
+    private final UnaryCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings;
+    private final UnaryCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings;
+    private final UnaryCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings;
     private final PagedCallSettings.Builder<
             ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
         listExclusionsSettings;
-    private final SimpleCallSettings.Builder<GetExclusionRequest, LogExclusion>
-        getExclusionSettings;
-    private final SimpleCallSettings.Builder<CreateExclusionRequest, LogExclusion>
+    private final UnaryCallSettings.Builder<GetExclusionRequest, LogExclusion> getExclusionSettings;
+    private final UnaryCallSettings.Builder<CreateExclusionRequest, LogExclusion>
         createExclusionSettings;
-    private final SimpleCallSettings.Builder<UpdateExclusionRequest, LogExclusion>
+    private final UnaryCallSettings.Builder<UpdateExclusionRequest, LogExclusion>
         updateExclusionSettings;
-    private final SimpleCallSettings.Builder<DeleteExclusionRequest, Empty> deleteExclusionSettings;
+    private final UnaryCallSettings.Builder<DeleteExclusionRequest, Empty> deleteExclusionSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.INTERNAL),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.INTERNAL,
+                  StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -468,26 +470,26 @@ public class ConfigSettings extends ClientSettings {
 
       listSinksSettings = PagedCallSettings.newBuilder(LIST_SINKS_PAGE_STR_FACT);
 
-      getSinkSettings = SimpleCallSettings.newBuilder();
+      getSinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      createSinkSettings = SimpleCallSettings.newBuilder();
+      createSinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      updateSinkSettings = SimpleCallSettings.newBuilder();
+      updateSinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteSinkSettings = SimpleCallSettings.newBuilder();
+      deleteSinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listExclusionsSettings = PagedCallSettings.newBuilder(LIST_EXCLUSIONS_PAGE_STR_FACT);
 
-      getExclusionSettings = SimpleCallSettings.newBuilder();
+      getExclusionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      createExclusionSettings = SimpleCallSettings.newBuilder();
+      createExclusionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      updateExclusionSettings = SimpleCallSettings.newBuilder();
+      updateExclusionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteExclusionSettings = SimpleCallSettings.newBuilder();
+      deleteExclusionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listSinksSettings,
               getSinkSettings,
               createSinkSettings,
@@ -504,8 +506,9 @@ public class ConfigSettings extends ClientSettings {
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       return initDefaults(builder);
     }
 
@@ -579,7 +582,7 @@ public class ConfigSettings extends ClientSettings {
       deleteExclusionSettings = settings.deleteExclusionSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listSinksSettings,
               getSinkSettings,
               createSinkSettings,
@@ -599,8 +602,14 @@ public class ConfigSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
+    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
+      super.setTransportChannelProvider(transportProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      super.setHeaderProvider(headerProvider);
       return this;
     }
 
@@ -616,7 +625,7 @@ public class ConfigSettings extends ClientSettings {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -628,22 +637,22 @@ public class ConfigSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to getSink. */
-    public SimpleCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings() {
+    public UnaryCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings() {
       return getSinkSettings;
     }
 
     /** Returns the builder for the settings used for calls to createSink. */
-    public SimpleCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings() {
+    public UnaryCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings() {
       return createSinkSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateSink. */
-    public SimpleCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings() {
+    public UnaryCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings() {
       return updateSinkSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteSink. */
-    public SimpleCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings() {
+    public UnaryCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings() {
       return deleteSinkSettings;
     }
 
@@ -655,24 +664,24 @@ public class ConfigSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to getExclusion. */
-    public SimpleCallSettings.Builder<GetExclusionRequest, LogExclusion> getExclusionSettings() {
+    public UnaryCallSettings.Builder<GetExclusionRequest, LogExclusion> getExclusionSettings() {
       return getExclusionSettings;
     }
 
     /** Returns the builder for the settings used for calls to createExclusion. */
-    public SimpleCallSettings.Builder<CreateExclusionRequest, LogExclusion>
+    public UnaryCallSettings.Builder<CreateExclusionRequest, LogExclusion>
         createExclusionSettings() {
       return createExclusionSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateExclusion. */
-    public SimpleCallSettings.Builder<UpdateExclusionRequest, LogExclusion>
+    public UnaryCallSettings.Builder<UpdateExclusionRequest, LogExclusion>
         updateExclusionSettings() {
       return updateExclusionSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteExclusion. */
-    public SimpleCallSettings.Builder<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
+    public UnaryCallSettings.Builder<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
       return deleteExclusionSettings;
     }
 

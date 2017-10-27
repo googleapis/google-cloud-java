@@ -16,7 +16,6 @@
 package com.google.cloud.vision.v1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
@@ -58,13 +57,10 @@ public class ImageAnnotatorClientTest {
     serviceHelper.reset();
     ImageAnnotatorSettings settings =
         ImageAnnotatorSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
-    client = ImageAnnotatorClient.create(settings);
+    client = ImageAnnotatorClient.of(settings);
   }
 
   @After

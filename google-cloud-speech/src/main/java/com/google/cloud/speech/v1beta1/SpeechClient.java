@@ -17,9 +17,9 @@ package com.google.cloud.speech.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.OperationFuture;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.speech.v1beta1.stub.SpeechStub;
 import com.google.longrunning.Operation;
@@ -37,7 +37,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (SpeechClient speechClient = SpeechClient.create()) {
+ * try (SpeechClient speechClient = SpeechClient.of()) {
  *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
  *   int sampleRate = 44100;
  *   RecognitionConfig config = RecognitionConfig.newBuilder()
@@ -76,8 +76,8 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of SpeechSettings to create().
- * For example:
+ * <p>This class can be customized by passing in a custom instance of SpeechSettings to of(). For
+ * example:
  *
  * <p>To customize credentials:
  *
@@ -85,10 +85,10 @@ import javax.annotation.Generated;
  * <code>
  * SpeechSettings speechSettings =
  *     SpeechSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
  *         .build();
  * SpeechClient speechClient =
- *     SpeechClient.create(speechSettings);
+ *     SpeechClient.of(speechSettings);
  * </code>
  * </pre>
  *
@@ -98,14 +98,12 @@ import javax.annotation.Generated;
  * <code>
  * SpeechSettings speechSettings =
  *     SpeechSettings.newBuilder()
- *         .setTransportProvider(SpeechSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(SpeechSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(SpeechSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * SpeechClient speechClient =
- *     SpeechClient.create(speechSettings);
+ *     SpeechClient.of(speechSettings);
  * </code>
  * </pre>
  */
@@ -116,16 +114,48 @@ public class SpeechClient implements BackgroundResource {
   private final SpeechStub stub;
   private final OperationsClient operationsClient;
 
-  /** Constructs an instance of SpeechClient with default settings. */
+  /**
+   * Constructs an instance of SpeechClient with default settings.
+   *
+   * @deprecated Use of() instead.
+   */
+  @Deprecated
   public static final SpeechClient create() throws IOException {
-    return create(SpeechSettings.newBuilder().build());
+    return of();
+  }
+
+  /** Constructs an instance of SpeechClient with default settings. */
+  public static final SpeechClient of() throws IOException {
+    return of(SpeechSettings.newBuilder().build());
+  }
+
+  /**
+   * Constructs an instance of SpeechClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
+   *
+   * @deprecated Use of(SpeechSettings) instead.
+   */
+  @Deprecated
+  public static final SpeechClient create(SpeechSettings settings) throws IOException {
+    return of(settings);
+  }
+
+  /**
+   * Constructs an instance of SpeechClient, using the given stub for making calls. This is for
+   * advanced usage - prefer to use SpeechSettings}.
+   *
+   * @deprecated Use of(SpeechStub) instead.
+   */
+  @Deprecated
+  public static final SpeechClient create(SpeechStub stub) {
+    return of(stub);
   }
 
   /**
    * Constructs an instance of SpeechClient, using the given settings. The channels are created
    * based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final SpeechClient create(SpeechSettings settings) throws IOException {
+  public static final SpeechClient of(SpeechSettings settings) throws IOException {
     return new SpeechClient(settings);
   }
 
@@ -133,7 +163,8 @@ public class SpeechClient implements BackgroundResource {
    * Constructs an instance of SpeechClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use SpeechSettings}.
    */
-  public static final SpeechClient create(SpeechStub stub) {
+  @BetaApi
+  public static final SpeechClient of(SpeechStub stub) {
     return new SpeechClient(stub);
   }
 
@@ -144,13 +175,13 @@ public class SpeechClient implements BackgroundResource {
   protected SpeechClient(SpeechSettings settings) throws IOException {
     this.settings = settings;
     this.stub = settings.createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient = OperationsClient.of(this.stub.getOperationsStub());
   }
 
   protected SpeechClient(SpeechStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient = OperationsClient.of(this.stub.getOperationsStub());
   }
 
   public final SpeechSettings getSettings() {
@@ -178,7 +209,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.create()) {
+   * try (SpeechClient speechClient = SpeechClient.of()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRate = 44100;
    *   RecognitionConfig config = RecognitionConfig.newBuilder()
@@ -214,7 +245,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.create()) {
+   * try (SpeechClient speechClient = SpeechClient.of()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRate = 44100;
    *   RecognitionConfig config = RecognitionConfig.newBuilder()
@@ -248,7 +279,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.create()) {
+   * try (SpeechClient speechClient = SpeechClient.of()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRate = 44100;
    *   RecognitionConfig config = RecognitionConfig.newBuilder()
@@ -283,7 +314,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.create()) {
+   * try (SpeechClient speechClient = SpeechClient.of()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRate = 44100;
    *   RecognitionConfig config = RecognitionConfig.newBuilder()
@@ -303,8 +334,8 @@ public class SpeechClient implements BackgroundResource {
    * @param audio &#42;Required&#42; The audio data to be recognized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
-      asyncRecognizeAsync(RecognitionConfig config, RecognitionAudio audio) {
+  public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata> asyncRecognizeAsync(
+      RecognitionConfig config, RecognitionAudio audio) {
 
     AsyncRecognizeRequest request =
         AsyncRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
@@ -321,7 +352,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.create()) {
+   * try (SpeechClient speechClient = SpeechClient.of()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRate = 44100;
    *   RecognitionConfig config = RecognitionConfig.newBuilder()
@@ -343,8 +374,8 @@ public class SpeechClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
-      asyncRecognizeAsync(AsyncRecognizeRequest request) {
+  public final OperationFuture<AsyncRecognizeResponse, AsyncRecognizeMetadata> asyncRecognizeAsync(
+      AsyncRecognizeRequest request) {
     return asyncRecognizeOperationCallable().futureCall(request);
   }
 
@@ -358,7 +389,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.create()) {
+   * try (SpeechClient speechClient = SpeechClient.of()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRate = 44100;
    *   RecognitionConfig config = RecognitionConfig.newBuilder()
@@ -380,7 +411,7 @@ public class SpeechClient implements BackgroundResource {
    * </code></pre>
    */
   public final OperationCallable<
-          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
+          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
       asyncRecognizeOperationCallable() {
     return stub.asyncRecognizeOperationCallable();
   }
@@ -395,7 +426,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.create()) {
+   * try (SpeechClient speechClient = SpeechClient.of()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRate = 44100;
    *   RecognitionConfig config = RecognitionConfig.newBuilder()
@@ -428,7 +459,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.create()) {
+   * try (SpeechClient speechClient = SpeechClient.of()) {
    *   ApiStreamObserver&lt;StreamingRecognizeResponse&gt; responseObserver =
    *       new ApiStreamObserver&lt;StreamingRecognizeResponse&gt;() {
    *         {@literal @}Override

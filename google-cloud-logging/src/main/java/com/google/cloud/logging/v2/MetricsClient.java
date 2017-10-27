@@ -44,7 +44,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (MetricsClient metricsClient = MetricsClient.create()) {
+ * try (MetricsClient metricsClient = MetricsClient.of()) {
  *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
  *   LogMetric response = metricsClient.getLogMetric(metricName);
  * }
@@ -74,8 +74,8 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of MetricsSettings to create().
- * For example:
+ * <p>This class can be customized by passing in a custom instance of MetricsSettings to of(). For
+ * example:
  *
  * <p>To customize credentials:
  *
@@ -83,10 +83,10 @@ import javax.annotation.Generated;
  * <code>
  * MetricsSettings metricsSettings =
  *     MetricsSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
  *         .build();
  * MetricsClient metricsClient =
- *     MetricsClient.create(metricsSettings);
+ *     MetricsClient.of(metricsSettings);
  * </code>
  * </pre>
  *
@@ -96,14 +96,12 @@ import javax.annotation.Generated;
  * <code>
  * MetricsSettings metricsSettings =
  *     MetricsSettings.newBuilder()
- *         .setTransportProvider(MetricsSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(MetricsSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(MetricsSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * MetricsClient metricsClient =
- *     MetricsClient.create(metricsSettings);
+ *     MetricsClient.of(metricsSettings);
  * </code>
  * </pre>
  */
@@ -113,16 +111,48 @@ public class MetricsClient implements BackgroundResource {
   private final MetricsSettings settings;
   private final MetricsServiceV2Stub stub;
 
-  /** Constructs an instance of MetricsClient with default settings. */
+  /**
+   * Constructs an instance of MetricsClient with default settings.
+   *
+   * @deprecated Use of() instead.
+   */
+  @Deprecated
   public static final MetricsClient create() throws IOException {
-    return create(MetricsSettings.newBuilder().build());
+    return of();
+  }
+
+  /** Constructs an instance of MetricsClient with default settings. */
+  public static final MetricsClient of() throws IOException {
+    return of(MetricsSettings.newBuilder().build());
+  }
+
+  /**
+   * Constructs an instance of MetricsClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
+   *
+   * @deprecated Use of(MetricsSettings) instead.
+   */
+  @Deprecated
+  public static final MetricsClient create(MetricsSettings settings) throws IOException {
+    return of(settings);
+  }
+
+  /**
+   * Constructs an instance of MetricsClient, using the given stub for making calls. This is for
+   * advanced usage - prefer to use MetricsSettings}.
+   *
+   * @deprecated Use of(MetricsServiceV2Stub) instead.
+   */
+  @Deprecated
+  public static final MetricsClient create(MetricsServiceV2Stub stub) {
+    return of(stub);
   }
 
   /**
    * Constructs an instance of MetricsClient, using the given settings. The channels are created
    * based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final MetricsClient create(MetricsSettings settings) throws IOException {
+  public static final MetricsClient of(MetricsSettings settings) throws IOException {
     return new MetricsClient(settings);
   }
 
@@ -130,7 +160,8 @@ public class MetricsClient implements BackgroundResource {
    * Constructs an instance of MetricsClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use MetricsSettings}.
    */
-  public static final MetricsClient create(MetricsServiceV2Stub stub) {
+  @BetaApi
+  public static final MetricsClient of(MetricsServiceV2Stub stub) {
     return new MetricsClient(stub);
   }
 
@@ -164,7 +195,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   for (LogMetric element : metricsClient.listLogMetrics(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -189,7 +220,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
@@ -214,7 +245,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
@@ -239,7 +270,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
@@ -271,7 +302,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   LogMetric response = metricsClient.getLogMetric(metricName);
    * }
@@ -295,7 +326,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
    *     .setMetricNameWithMetricNameOneof(metricName)
@@ -318,7 +349,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
    *     .setMetricNameWithMetricNameOneof(metricName)
@@ -340,7 +371,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   LogMetric response = metricsClient.createLogMetric(parent, metric);
@@ -370,7 +401,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
@@ -395,7 +426,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
@@ -419,7 +450,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   LogMetric response = metricsClient.updateLogMetric(metricName, metric);
@@ -451,7 +482,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
@@ -476,7 +507,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
@@ -500,7 +531,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   metricsClient.deleteLogMetric(metricName);
    * }
@@ -524,7 +555,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
    *     .setMetricNameWithMetricNameOneof(metricName)
@@ -547,7 +578,7 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsClient metricsClient = MetricsClient.create()) {
+   * try (MetricsClient metricsClient = MetricsClient.of()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
    *     .setMetricNameWithMetricNameOneof(metricName)

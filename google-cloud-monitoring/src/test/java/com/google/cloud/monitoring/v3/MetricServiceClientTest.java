@@ -22,7 +22,6 @@ import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListTimeSerie
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
@@ -86,13 +85,10 @@ public class MetricServiceClientTest {
     serviceHelper.reset();
     MetricServiceSettings settings =
         MetricServiceSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
             .setCredentialsProvider(new NoCredentialsProvider())
             .build();
-    client = MetricServiceClient.create(settings);
+    client = MetricServiceClient.of(settings);
   }
 
   @After

@@ -44,7 +44,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+ * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
  *   ProjectName projectName = ProjectName.create("[PROJECT]");
  *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
  * }
@@ -76,7 +76,7 @@ import javax.annotation.Generated;
  * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of ErrorStatsServiceSettings to
- * create(). For example:
+ * of(). For example:
  *
  * <p>To customize credentials:
  *
@@ -84,10 +84,10 @@ import javax.annotation.Generated;
  * <code>
  * ErrorStatsServiceSettings errorStatsServiceSettings =
  *     ErrorStatsServiceSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
  *         .build();
  * ErrorStatsServiceClient errorStatsServiceClient =
- *     ErrorStatsServiceClient.create(errorStatsServiceSettings);
+ *     ErrorStatsServiceClient.of(errorStatsServiceSettings);
  * </code>
  * </pre>
  *
@@ -97,14 +97,12 @@ import javax.annotation.Generated;
  * <code>
  * ErrorStatsServiceSettings errorStatsServiceSettings =
  *     ErrorStatsServiceSettings.newBuilder()
- *         .setTransportProvider(ErrorStatsServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(ErrorStatsServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(ErrorStatsServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * ErrorStatsServiceClient errorStatsServiceClient =
- *     ErrorStatsServiceClient.create(errorStatsServiceSettings);
+ *     ErrorStatsServiceClient.of(errorStatsServiceSettings);
  * </code>
  * </pre>
  */
@@ -114,16 +112,49 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   private final ErrorStatsServiceSettings settings;
   private final ErrorStatsServiceStub stub;
 
-  /** Constructs an instance of ErrorStatsServiceClient with default settings. */
+  /**
+   * Constructs an instance of ErrorStatsServiceClient with default settings.
+   *
+   * @deprecated Use of() instead.
+   */
+  @Deprecated
   public static final ErrorStatsServiceClient create() throws IOException {
-    return create(ErrorStatsServiceSettings.newBuilder().build());
+    return of();
+  }
+
+  /** Constructs an instance of ErrorStatsServiceClient with default settings. */
+  public static final ErrorStatsServiceClient of() throws IOException {
+    return of(ErrorStatsServiceSettings.newBuilder().build());
+  }
+
+  /**
+   * Constructs an instance of ErrorStatsServiceClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
+   *
+   * @deprecated Use of(ErrorStatsServiceSettings) instead.
+   */
+  @Deprecated
+  public static final ErrorStatsServiceClient create(ErrorStatsServiceSettings settings)
+      throws IOException {
+    return of(settings);
+  }
+
+  /**
+   * Constructs an instance of ErrorStatsServiceClient, using the given stub for making calls. This
+   * is for advanced usage - prefer to use ErrorStatsServiceSettings}.
+   *
+   * @deprecated Use of(ErrorStatsServiceStub) instead.
+   */
+  @Deprecated
+  public static final ErrorStatsServiceClient create(ErrorStatsServiceStub stub) {
+    return of(stub);
   }
 
   /**
    * Constructs an instance of ErrorStatsServiceClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final ErrorStatsServiceClient create(ErrorStatsServiceSettings settings)
+  public static final ErrorStatsServiceClient of(ErrorStatsServiceSettings settings)
       throws IOException {
     return new ErrorStatsServiceClient(settings);
   }
@@ -132,7 +163,8 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * Constructs an instance of ErrorStatsServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer to use ErrorStatsServiceSettings}.
    */
-  public static final ErrorStatsServiceClient create(ErrorStatsServiceStub stub) {
+  @BetaApi
+  public static final ErrorStatsServiceClient of(ErrorStatsServiceStub stub) {
     return new ErrorStatsServiceClient(stub);
   }
 
@@ -167,7 +199,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(projectName, timeRange).iterateAll()) {
@@ -206,7 +238,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
@@ -233,7 +265,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
@@ -260,7 +292,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
@@ -294,7 +326,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   String groupId = "";
    *   for (ErrorEvent element : errorStatsServiceClient.listEvents(projectName, groupId).iterateAll()) {
@@ -325,7 +357,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
@@ -352,7 +384,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
@@ -378,7 +410,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
@@ -411,7 +443,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
    * }
@@ -436,7 +468,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
@@ -459,7 +491,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.of()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)

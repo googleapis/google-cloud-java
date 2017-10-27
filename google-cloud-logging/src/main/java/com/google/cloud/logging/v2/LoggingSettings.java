@@ -33,24 +33,24 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.BatchedRequestIssuer;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.BatchingDescriptor;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.GrpcLoggingServiceV2Stub;
@@ -70,7 +70,6 @@ import com.google.logging.v2.LogEntry;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
@@ -124,7 +123,7 @@ public class LoggingSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private final SimpleCallSettings<DeleteLogRequest, Empty> deleteLogSettings;
+  private final UnaryCallSettings<DeleteLogRequest, Empty> deleteLogSettings;
   private final BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesSettings;
   private final PagedCallSettings<
@@ -138,7 +137,7 @@ public class LoggingSettings extends ClientSettings {
       listLogsSettings;
 
   /** Returns the object with the settings used for calls to deleteLog. */
-  public SimpleCallSettings<DeleteLogRequest, Empty> deleteLogSettings() {
+  public UnaryCallSettings<DeleteLogRequest, Empty> deleteLogSettings() {
     return deleteLogSettings;
   }
 
@@ -170,11 +169,13 @@ public class LoggingSettings extends ClientSettings {
   }
 
   public LoggingServiceV2Stub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
-      return GrpcLoggingServiceV2Stub.create(this);
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcLoggingServiceV2Stub.of(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -199,20 +200,19 @@ public class LoggingSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
   }
 
   private static String getGapicVersion() {
@@ -257,8 +257,9 @@ public class LoggingSettings extends ClientSettings {
   private LoggingSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getTransportChannelProvider(),
         settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getHeaderProvider(),
         settingsBuilder.getClock());
 
     deleteLogSettings = settingsBuilder.deleteLogSettings().build();
@@ -395,7 +396,7 @@ public class LoggingSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListLogEntriesResponse> futureResponse) {
               PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> pageContext =
-                  PageContext.create(callable, LIST_LOG_ENTRIES_PAGE_STR_DESC, request, context);
+                  PageContext.of(callable, LIST_LOG_ENTRIES_PAGE_STR_DESC, request, context);
               return ListLogEntriesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -420,7 +421,7 @@ public class LoggingSettings extends ClientSettings {
                       ListMonitoredResourceDescriptorsRequest,
                       ListMonitoredResourceDescriptorsResponse, MonitoredResourceDescriptor>
                   pageContext =
-                      PageContext.create(
+                      PageContext.of(
                           callable,
                           LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC,
                           request,
@@ -441,7 +442,7 @@ public class LoggingSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListLogsResponse> futureResponse) {
               PageContext<ListLogsRequest, ListLogsResponse, String> pageContext =
-                  PageContext.create(callable, LIST_LOGS_PAGE_STR_DESC, request, context);
+                  PageContext.of(callable, LIST_LOGS_PAGE_STR_DESC, request, context);
               return ListLogsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -509,9 +510,9 @@ public class LoggingSettings extends ClientSettings {
 
   /** Builder for LoggingSettings. */
   public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final SimpleCallSettings.Builder<DeleteLogRequest, Empty> deleteLogSettings;
+    private final UnaryCallSettings.Builder<DeleteLogRequest, Empty> deleteLogSettings;
     private final BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
         writeLogEntriesSettings;
     private final PagedCallSettings.Builder<
@@ -525,18 +526,20 @@ public class LoggingSettings extends ClientSettings {
             ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>
         listLogsSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.INTERNAL),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.INTERNAL,
+                  StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -577,7 +580,7 @@ public class LoggingSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteLogSettings = SimpleCallSettings.newBuilder();
+      deleteLogSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       writeLogEntriesSettings =
           BatchingCallSettings.newBuilder(WRITE_LOG_ENTRIES_BATCHING_DESC)
@@ -591,7 +594,7 @@ public class LoggingSettings extends ClientSettings {
       listLogsSettings = PagedCallSettings.newBuilder(LIST_LOGS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteLogSettings,
               writeLogEntriesSettings,
               listLogEntriesSettings,
@@ -603,8 +606,9 @@ public class LoggingSettings extends ClientSettings {
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       return initDefaults(builder);
     }
 
@@ -663,7 +667,7 @@ public class LoggingSettings extends ClientSettings {
       listLogsSettings = settings.listLogsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteLogSettings,
               writeLogEntriesSettings,
               listLogEntriesSettings,
@@ -678,8 +682,14 @@ public class LoggingSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
+    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
+      super.setTransportChannelProvider(transportProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      super.setHeaderProvider(headerProvider);
       return this;
     }
 
@@ -695,13 +705,13 @@ public class LoggingSettings extends ClientSettings {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to deleteLog. */
-    public SimpleCallSettings.Builder<DeleteLogRequest, Empty> deleteLogSettings() {
+    public UnaryCallSettings.Builder<DeleteLogRequest, Empty> deleteLogSettings() {
       return deleteLogSettings;
     }
 

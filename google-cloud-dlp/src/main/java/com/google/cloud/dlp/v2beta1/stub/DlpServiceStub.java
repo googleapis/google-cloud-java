@@ -61,8 +61,7 @@ public abstract class DlpServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata,
-          Operation>
+          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: analyzeDataSourceRiskOperationCallable()");
@@ -81,8 +80,7 @@ public abstract class DlpServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata,
-          Operation>
+          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
       createInspectOperationOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createInspectOperationOperationCallable()");

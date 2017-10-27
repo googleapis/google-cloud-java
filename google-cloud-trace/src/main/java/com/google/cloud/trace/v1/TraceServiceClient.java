@@ -44,7 +44,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+ * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
  *   String projectId = "";
  *   Traces traces = Traces.newBuilder().build();
  *   traceServiceClient.patchTraces(projectId, traces);
@@ -75,8 +75,8 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of TraceServiceSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of TraceServiceSettings to of().
+ * For example:
  *
  * <p>To customize credentials:
  *
@@ -84,10 +84,10 @@ import javax.annotation.Generated;
  * <code>
  * TraceServiceSettings traceServiceSettings =
  *     TraceServiceSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
  *         .build();
  * TraceServiceClient traceServiceClient =
- *     TraceServiceClient.create(traceServiceSettings);
+ *     TraceServiceClient.of(traceServiceSettings);
  * </code>
  * </pre>
  *
@@ -97,14 +97,12 @@ import javax.annotation.Generated;
  * <code>
  * TraceServiceSettings traceServiceSettings =
  *     TraceServiceSettings.newBuilder()
- *         .setTransportProvider(TraceServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(TraceServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(TraceServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * TraceServiceClient traceServiceClient =
- *     TraceServiceClient.create(traceServiceSettings);
+ *     TraceServiceClient.of(traceServiceSettings);
  * </code>
  * </pre>
  */
@@ -114,16 +112,48 @@ public class TraceServiceClient implements BackgroundResource {
   private final TraceServiceSettings settings;
   private final TraceServiceStub stub;
 
-  /** Constructs an instance of TraceServiceClient with default settings. */
+  /**
+   * Constructs an instance of TraceServiceClient with default settings.
+   *
+   * @deprecated Use of() instead.
+   */
+  @Deprecated
   public static final TraceServiceClient create() throws IOException {
-    return create(TraceServiceSettings.newBuilder().build());
+    return of();
+  }
+
+  /** Constructs an instance of TraceServiceClient with default settings. */
+  public static final TraceServiceClient of() throws IOException {
+    return of(TraceServiceSettings.newBuilder().build());
+  }
+
+  /**
+   * Constructs an instance of TraceServiceClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
+   *
+   * @deprecated Use of(TraceServiceSettings) instead.
+   */
+  @Deprecated
+  public static final TraceServiceClient create(TraceServiceSettings settings) throws IOException {
+    return of(settings);
+  }
+
+  /**
+   * Constructs an instance of TraceServiceClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use TraceServiceSettings}.
+   *
+   * @deprecated Use of(TraceServiceStub) instead.
+   */
+  @Deprecated
+  public static final TraceServiceClient create(TraceServiceStub stub) {
+    return of(stub);
   }
 
   /**
    * Constructs an instance of TraceServiceClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final TraceServiceClient create(TraceServiceSettings settings) throws IOException {
+  public static final TraceServiceClient of(TraceServiceSettings settings) throws IOException {
     return new TraceServiceClient(settings);
   }
 
@@ -131,7 +161,8 @@ public class TraceServiceClient implements BackgroundResource {
    * Constructs an instance of TraceServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use TraceServiceSettings}.
    */
-  public static final TraceServiceClient create(TraceServiceStub stub) {
+  @BetaApi
+  public static final TraceServiceClient of(TraceServiceStub stub) {
     return new TraceServiceClient(stub);
   }
 
@@ -169,7 +200,7 @@ public class TraceServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
    *   String projectId = "";
    *   Traces traces = Traces.newBuilder().build();
    *   traceServiceClient.patchTraces(projectId, traces);
@@ -197,7 +228,7 @@ public class TraceServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
    *   String projectId = "";
    *   Traces traces = Traces.newBuilder().build();
    *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
@@ -225,7 +256,7 @@ public class TraceServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
    *   String projectId = "";
    *   Traces traces = Traces.newBuilder().build();
    *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
@@ -249,7 +280,7 @@ public class TraceServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
    *   String projectId = "";
    *   String traceId = "";
    *   Trace response = traceServiceClient.getTrace(projectId, traceId);
@@ -274,7 +305,7 @@ public class TraceServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
    *   String projectId = "";
    *   String traceId = "";
    *   GetTraceRequest request = GetTraceRequest.newBuilder()
@@ -299,7 +330,7 @@ public class TraceServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
    *   String projectId = "";
    *   String traceId = "";
    *   GetTraceRequest request = GetTraceRequest.newBuilder()
@@ -323,7 +354,7 @@ public class TraceServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
    *   String projectId = "";
    *   for (Trace element : traceServiceClient.listTraces(projectId).iterateAll()) {
    *     // doThingsWith(element);
@@ -346,7 +377,7 @@ public class TraceServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
    *   String projectId = "";
    *   ListTracesRequest request = ListTracesRequest.newBuilder()
    *     .setProjectId(projectId)
@@ -371,7 +402,7 @@ public class TraceServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
    *   String projectId = "";
    *   ListTracesRequest request = ListTracesRequest.newBuilder()
    *     .setProjectId(projectId)
@@ -395,7 +426,7 @@ public class TraceServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
    *   String projectId = "";
    *   ListTracesRequest request = ListTracesRequest.newBuilder()
    *     .setProjectId(projectId)

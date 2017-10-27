@@ -26,22 +26,22 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamingCallSettings;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.pubsub.v1.stub.GrpcSubscriberStub;
@@ -77,7 +77,6 @@ import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.UpdateSnapshotRequest;
 import com.google.pubsub.v1.UpdateSubscriptionRequest;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -127,44 +126,44 @@ public class SubscriptionAdminSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private final SimpleCallSettings<Subscription, Subscription> createSubscriptionSettings;
-  private final SimpleCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings;
-  private final SimpleCallSettings<UpdateSubscriptionRequest, Subscription>
+  private final UnaryCallSettings<Subscription, Subscription> createSubscriptionSettings;
+  private final UnaryCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings;
+  private final UnaryCallSettings<UpdateSubscriptionRequest, Subscription>
       updateSubscriptionSettings;
   private final PagedCallSettings<
           ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
       listSubscriptionsSettings;
-  private final SimpleCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings;
-  private final SimpleCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings;
-  private final SimpleCallSettings<AcknowledgeRequest, Empty> acknowledgeSettings;
-  private final SimpleCallSettings<PullRequest, PullResponse> pullSettings;
+  private final UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings;
+  private final UnaryCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings;
+  private final UnaryCallSettings<AcknowledgeRequest, Empty> acknowledgeSettings;
+  private final UnaryCallSettings<PullRequest, PullResponse> pullSettings;
   private final StreamingCallSettings<StreamingPullRequest, StreamingPullResponse>
       streamingPullSettings;
-  private final SimpleCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings;
+  private final UnaryCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings;
   private final PagedCallSettings<
           ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
       listSnapshotsSettings;
-  private final SimpleCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotSettings;
-  private final SimpleCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings;
-  private final SimpleCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotSettings;
-  private final SimpleCallSettings<SeekRequest, SeekResponse> seekSettings;
-  private final SimpleCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
-  private final SimpleCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
-  private final SimpleCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+  private final UnaryCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotSettings;
+  private final UnaryCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings;
+  private final UnaryCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotSettings;
+  private final UnaryCallSettings<SeekRequest, SeekResponse> seekSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
 
   /** Returns the object with the settings used for calls to createSubscription. */
-  public SimpleCallSettings<Subscription, Subscription> createSubscriptionSettings() {
+  public UnaryCallSettings<Subscription, Subscription> createSubscriptionSettings() {
     return createSubscriptionSettings;
   }
 
   /** Returns the object with the settings used for calls to getSubscription. */
-  public SimpleCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings() {
+  public UnaryCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings() {
     return getSubscriptionSettings;
   }
 
   /** Returns the object with the settings used for calls to updateSubscription. */
-  public SimpleCallSettings<UpdateSubscriptionRequest, Subscription> updateSubscriptionSettings() {
+  public UnaryCallSettings<UpdateSubscriptionRequest, Subscription> updateSubscriptionSettings() {
     return updateSubscriptionSettings;
   }
 
@@ -176,22 +175,22 @@ public class SubscriptionAdminSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to deleteSubscription. */
-  public SimpleCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
+  public UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
     return deleteSubscriptionSettings;
   }
 
   /** Returns the object with the settings used for calls to modifyAckDeadline. */
-  public SimpleCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings() {
+  public UnaryCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings() {
     return modifyAckDeadlineSettings;
   }
 
   /** Returns the object with the settings used for calls to acknowledge. */
-  public SimpleCallSettings<AcknowledgeRequest, Empty> acknowledgeSettings() {
+  public UnaryCallSettings<AcknowledgeRequest, Empty> acknowledgeSettings() {
     return acknowledgeSettings;
   }
 
   /** Returns the object with the settings used for calls to pull. */
-  public SimpleCallSettings<PullRequest, PullResponse> pullSettings() {
+  public UnaryCallSettings<PullRequest, PullResponse> pullSettings() {
     return pullSettings;
   }
 
@@ -202,7 +201,7 @@ public class SubscriptionAdminSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to modifyPushConfig. */
-  public SimpleCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
+  public UnaryCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
     return modifyPushConfigSettings;
   }
 
@@ -213,47 +212,49 @@ public class SubscriptionAdminSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to createSnapshot. */
-  public SimpleCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotSettings() {
+  public UnaryCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotSettings() {
     return createSnapshotSettings;
   }
 
   /** Returns the object with the settings used for calls to updateSnapshot. */
-  public SimpleCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings() {
+  public UnaryCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings() {
     return updateSnapshotSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteSnapshot. */
-  public SimpleCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
+  public UnaryCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
     return deleteSnapshotSettings;
   }
 
   /** Returns the object with the settings used for calls to seek. */
-  public SimpleCallSettings<SeekRequest, SeekResponse> seekSettings() {
+  public UnaryCallSettings<SeekRequest, SeekResponse> seekSettings() {
     return seekSettings;
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
-  public SimpleCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
     return setIamPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to getIamPolicy. */
-  public SimpleCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
     return getIamPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
-  public SimpleCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return testIamPermissionsSettings;
   }
 
   public SubscriberStub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
-      return GrpcSubscriberStub.create(this);
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcSubscriberStub.of(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -278,20 +279,19 @@ public class SubscriptionAdminSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
   }
 
   private static String getGapicVersion() {
@@ -337,8 +337,9 @@ public class SubscriptionAdminSettings extends ClientSettings {
   private SubscriptionAdminSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getTransportChannelProvider(),
         settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getHeaderProvider(),
         settingsBuilder.getClock());
 
     createSubscriptionSettings = settingsBuilder.createSubscriptionSettings().build();
@@ -447,8 +448,7 @@ public class SubscriptionAdminSettings extends ClientSettings {
                 ApiFuture<ListSubscriptionsResponse> futureResponse) {
               PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
                   pageContext =
-                      PageContext.create(
-                          callable, LIST_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+                      PageContext.of(callable, LIST_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
               return ListSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -465,67 +465,66 @@ public class SubscriptionAdminSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListSnapshotsResponse> futureResponse) {
               PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> pageContext =
-                  PageContext.create(callable, LIST_SNAPSHOTS_PAGE_STR_DESC, request, context);
+                  PageContext.of(callable, LIST_SNAPSHOTS_PAGE_STR_DESC, request, context);
               return ListSnapshotsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
   /** Builder for SubscriptionAdminSettings. */
   public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final SimpleCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings;
-    private final SimpleCallSettings.Builder<GetSubscriptionRequest, Subscription>
+    private final UnaryCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings;
+    private final UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
         getSubscriptionSettings;
-    private final SimpleCallSettings.Builder<UpdateSubscriptionRequest, Subscription>
+    private final UnaryCallSettings.Builder<UpdateSubscriptionRequest, Subscription>
         updateSubscriptionSettings;
     private final PagedCallSettings.Builder<
             ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
         listSubscriptionsSettings;
-    private final SimpleCallSettings.Builder<DeleteSubscriptionRequest, Empty>
+    private final UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
         deleteSubscriptionSettings;
-    private final SimpleCallSettings.Builder<ModifyAckDeadlineRequest, Empty>
+    private final UnaryCallSettings.Builder<ModifyAckDeadlineRequest, Empty>
         modifyAckDeadlineSettings;
-    private final SimpleCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings;
-    private final SimpleCallSettings.Builder<PullRequest, PullResponse> pullSettings;
+    private final UnaryCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings;
+    private final UnaryCallSettings.Builder<PullRequest, PullResponse> pullSettings;
     private final StreamingCallSettings.Builder<StreamingPullRequest, StreamingPullResponse>
         streamingPullSettings;
-    private final SimpleCallSettings.Builder<ModifyPushConfigRequest, Empty>
+    private final UnaryCallSettings.Builder<ModifyPushConfigRequest, Empty>
         modifyPushConfigSettings;
     private final PagedCallSettings.Builder<
             ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
         listSnapshotsSettings;
-    private final SimpleCallSettings.Builder<CreateSnapshotRequest, Snapshot>
-        createSnapshotSettings;
-    private final SimpleCallSettings.Builder<UpdateSnapshotRequest, Snapshot>
-        updateSnapshotSettings;
-    private final SimpleCallSettings.Builder<DeleteSnapshotRequest, Empty> deleteSnapshotSettings;
-    private final SimpleCallSettings.Builder<SeekRequest, SeekResponse> seekSettings;
-    private final SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
-    private final SimpleCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private final SimpleCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+    private final UnaryCallSettings.Builder<CreateSnapshotRequest, Snapshot> createSnapshotSettings;
+    private final UnaryCallSettings.Builder<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings;
+    private final UnaryCallSettings.Builder<DeleteSnapshotRequest, Empty> deleteSnapshotSettings;
+    private final UnaryCallSettings.Builder<SeekRequest, SeekResponse> seekSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "pull",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.CANCELLED),
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.INTERNAL),
-                  GrpcStatusCode.of(Status.Code.RESOURCE_EXHAUSTED),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.CANCELLED,
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.INTERNAL,
+                  StatusCode.Code.RESOURCE_EXHAUSTED,
+                  StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -577,44 +576,44 @@ public class SubscriptionAdminSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      createSubscriptionSettings = SimpleCallSettings.newBuilder();
+      createSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      getSubscriptionSettings = SimpleCallSettings.newBuilder();
+      getSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      updateSubscriptionSettings = SimpleCallSettings.newBuilder();
+      updateSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listSubscriptionsSettings = PagedCallSettings.newBuilder(LIST_SUBSCRIPTIONS_PAGE_STR_FACT);
 
-      deleteSubscriptionSettings = SimpleCallSettings.newBuilder();
+      deleteSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      modifyAckDeadlineSettings = SimpleCallSettings.newBuilder();
+      modifyAckDeadlineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      acknowledgeSettings = SimpleCallSettings.newBuilder();
+      acknowledgeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      pullSettings = SimpleCallSettings.newBuilder();
+      pullSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       streamingPullSettings = StreamingCallSettings.newBuilder();
 
-      modifyPushConfigSettings = SimpleCallSettings.newBuilder();
+      modifyPushConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listSnapshotsSettings = PagedCallSettings.newBuilder(LIST_SNAPSHOTS_PAGE_STR_FACT);
 
-      createSnapshotSettings = SimpleCallSettings.newBuilder();
+      createSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      updateSnapshotSettings = SimpleCallSettings.newBuilder();
+      updateSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteSnapshotSettings = SimpleCallSettings.newBuilder();
+      deleteSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      seekSettings = SimpleCallSettings.newBuilder();
+      seekSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      setIamPolicySettings = SimpleCallSettings.newBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      getIamPolicySettings = SimpleCallSettings.newBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      testIamPermissionsSettings = SimpleCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createSubscriptionSettings,
               getSubscriptionSettings,
               updateSubscriptionSettings,
@@ -638,8 +637,9 @@ public class SubscriptionAdminSettings extends ClientSettings {
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       return initDefaults(builder);
     }
 
@@ -756,7 +756,7 @@ public class SubscriptionAdminSettings extends ClientSettings {
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createSubscriptionSettings,
               getSubscriptionSettings,
               updateSubscriptionSettings,
@@ -783,8 +783,14 @@ public class SubscriptionAdminSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
+    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
+      super.setTransportChannelProvider(transportProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      super.setHeaderProvider(headerProvider);
       return this;
     }
 
@@ -800,24 +806,24 @@ public class SubscriptionAdminSettings extends ClientSettings {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to createSubscription. */
-    public SimpleCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings() {
+    public UnaryCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings() {
       return createSubscriptionSettings;
     }
 
     /** Returns the builder for the settings used for calls to getSubscription. */
-    public SimpleCallSettings.Builder<GetSubscriptionRequest, Subscription>
+    public UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
         getSubscriptionSettings() {
       return getSubscriptionSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateSubscription. */
-    public SimpleCallSettings.Builder<UpdateSubscriptionRequest, Subscription>
+    public UnaryCallSettings.Builder<UpdateSubscriptionRequest, Subscription>
         updateSubscriptionSettings() {
       return updateSubscriptionSettings;
     }
@@ -830,23 +836,23 @@ public class SubscriptionAdminSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to deleteSubscription. */
-    public SimpleCallSettings.Builder<DeleteSubscriptionRequest, Empty>
+    public UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
         deleteSubscriptionSettings() {
       return deleteSubscriptionSettings;
     }
 
     /** Returns the builder for the settings used for calls to modifyAckDeadline. */
-    public SimpleCallSettings.Builder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings() {
+    public UnaryCallSettings.Builder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings() {
       return modifyAckDeadlineSettings;
     }
 
     /** Returns the builder for the settings used for calls to acknowledge. */
-    public SimpleCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings() {
+    public UnaryCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings() {
       return acknowledgeSettings;
     }
 
     /** Returns the builder for the settings used for calls to pull. */
-    public SimpleCallSettings.Builder<PullRequest, PullResponse> pullSettings() {
+    public UnaryCallSettings.Builder<PullRequest, PullResponse> pullSettings() {
       return pullSettings;
     }
 
@@ -857,7 +863,7 @@ public class SubscriptionAdminSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to modifyPushConfig. */
-    public SimpleCallSettings.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
+    public UnaryCallSettings.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
       return modifyPushConfigSettings;
     }
 
@@ -869,37 +875,37 @@ public class SubscriptionAdminSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to createSnapshot. */
-    public SimpleCallSettings.Builder<CreateSnapshotRequest, Snapshot> createSnapshotSettings() {
+    public UnaryCallSettings.Builder<CreateSnapshotRequest, Snapshot> createSnapshotSettings() {
       return createSnapshotSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateSnapshot. */
-    public SimpleCallSettings.Builder<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings() {
+    public UnaryCallSettings.Builder<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings() {
       return updateSnapshotSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteSnapshot. */
-    public SimpleCallSettings.Builder<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
+    public UnaryCallSettings.Builder<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
       return deleteSnapshotSettings;
     }
 
     /** Returns the builder for the settings used for calls to seek. */
-    public SimpleCallSettings.Builder<SeekRequest, SeekResponse> seekSettings() {
+    public UnaryCallSettings.Builder<SeekRequest, SeekResponse> seekSettings() {
       return seekSettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
       return setIamPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public SimpleCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
       return getIamPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public SimpleCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
     }
