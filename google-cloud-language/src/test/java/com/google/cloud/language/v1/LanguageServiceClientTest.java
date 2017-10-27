@@ -149,6 +149,47 @@ public class LanguageServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void analyzeEntitySentimentTest() {
+    String language = "language-1613589672";
+    AnalyzeEntitySentimentResponse expectedResponse =
+        AnalyzeEntitySentimentResponse.newBuilder().setLanguage(language).build();
+    mockLanguageService.addResponse(expectedResponse);
+
+    Document document = Document.newBuilder().build();
+    EncodingType encodingType = EncodingType.NONE;
+
+    AnalyzeEntitySentimentResponse actualResponse =
+        client.analyzeEntitySentiment(document, encodingType);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeEntitySentimentRequest actualRequest =
+        (AnalyzeEntitySentimentRequest) actualRequests.get(0);
+
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(encodingType, actualRequest.getEncodingType());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void analyzeEntitySentimentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockLanguageService.addException(exception);
+
+    try {
+      Document document = Document.newBuilder().build();
+      EncodingType encodingType = EncodingType.NONE;
+
+      client.analyzeEntitySentiment(document, encodingType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void analyzeSyntaxTest() {
     String language = "language-1613589672";
     AnalyzeSyntaxResponse expectedResponse =
@@ -180,6 +221,40 @@ public class LanguageServiceClientTest {
       EncodingType encodingType = EncodingType.NONE;
 
       client.analyzeSyntax(document, encodingType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void classifyTextTest() {
+    ClassifyTextResponse expectedResponse = ClassifyTextResponse.newBuilder().build();
+    mockLanguageService.addResponse(expectedResponse);
+
+    Document document = Document.newBuilder().build();
+
+    ClassifyTextResponse actualResponse = client.classifyText(document);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ClassifyTextRequest actualRequest = (ClassifyTextRequest) actualRequests.get(0);
+
+    Assert.assertEquals(document, actualRequest.getDocument());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void classifyTextExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockLanguageService.addException(exception);
+
+    try {
+      Document document = Document.newBuilder().build();
+
+      client.classifyText(document);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

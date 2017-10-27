@@ -81,7 +81,7 @@ import org.threeten.bp.Duration;
  * <pre>
  * <code>
  * MetricsSettings.Builder metricsSettingsBuilder =
- *     MetricsSettings.defaultBuilder();
+ *     MetricsSettings.newBuilder();
  * metricsSettingsBuilder.getLogMetricSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * MetricsSettings metricsSettings = metricsSettingsBuilder.build();
@@ -200,6 +200,7 @@ public class MetricsSettings extends ClientSettings {
   }
 
   /** Returns a builder for this class with recommended defaults. */
+  @Deprecated
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
@@ -208,13 +209,14 @@ public class MetricsSettings extends ClientSettings {
    * Returns a builder for this class with recommended defaults for API methods, and the given
    * ClientContext used for executor/transport/credentials.
    */
+  @Deprecated
   public static Builder defaultBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
-    return new Builder();
+    return Builder.createDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -332,10 +334,10 @@ public class MetricsSettings extends ClientSettings {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.2)
               .setMaxRetryDelay(Duration.ofMillis(1000L))
-              .setInitialRpcTimeout(Duration.ofMillis(2000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.5)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(45000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(90000L))
               .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();

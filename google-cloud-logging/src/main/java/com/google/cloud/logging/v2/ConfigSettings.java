@@ -15,6 +15,7 @@
  */
 package com.google.cloud.logging.v2;
 
+import static com.google.cloud.logging.v2.PagedResponseWrappers.ListExclusionsPagedResponse;
 import static com.google.cloud.logging.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -48,12 +49,19 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListExclusionsRequest;
+import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
 import io.grpc.Status;
@@ -81,7 +89,7 @@ import org.threeten.bp.Duration;
  * <pre>
  * <code>
  * ConfigSettings.Builder configSettingsBuilder =
- *     ConfigSettings.defaultBuilder();
+ *     ConfigSettings.newBuilder();
  * configSettingsBuilder.getSinkSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ConfigSettings configSettings = configSettingsBuilder.build();
@@ -115,6 +123,13 @@ public class ConfigSettings extends ClientSettings {
   private final SimpleCallSettings<CreateSinkRequest, LogSink> createSinkSettings;
   private final SimpleCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings;
   private final SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings;
+  private final PagedCallSettings<
+          ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
+      listExclusionsSettings;
+  private final SimpleCallSettings<GetExclusionRequest, LogExclusion> getExclusionSettings;
+  private final SimpleCallSettings<CreateExclusionRequest, LogExclusion> createExclusionSettings;
+  private final SimpleCallSettings<UpdateExclusionRequest, LogExclusion> updateExclusionSettings;
+  private final SimpleCallSettings<DeleteExclusionRequest, Empty> deleteExclusionSettings;
 
   /** Returns the object with the settings used for calls to listSinks. */
   public PagedCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
@@ -140,6 +155,33 @@ public class ConfigSettings extends ClientSettings {
   /** Returns the object with the settings used for calls to deleteSink. */
   public SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings() {
     return deleteSinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listExclusions. */
+  public PagedCallSettings<
+          ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
+      listExclusionsSettings() {
+    return listExclusionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getExclusion. */
+  public SimpleCallSettings<GetExclusionRequest, LogExclusion> getExclusionSettings() {
+    return getExclusionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createExclusion. */
+  public SimpleCallSettings<CreateExclusionRequest, LogExclusion> createExclusionSettings() {
+    return createExclusionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateExclusion. */
+  public SimpleCallSettings<UpdateExclusionRequest, LogExclusion> updateExclusionSettings() {
+    return updateExclusionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteExclusion. */
+  public SimpleCallSettings<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
+    return deleteExclusionSettings;
   }
 
   public ConfigServiceV2Stub createStub() throws IOException {
@@ -198,6 +240,7 @@ public class ConfigSettings extends ClientSettings {
   }
 
   /** Returns a builder for this class with recommended defaults. */
+  @Deprecated
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
@@ -206,13 +249,14 @@ public class ConfigSettings extends ClientSettings {
    * Returns a builder for this class with recommended defaults for API methods, and the given
    * ClientContext used for executor/transport/credentials.
    */
+  @Deprecated
   public static Builder defaultBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
-    return new Builder();
+    return Builder.createDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -237,6 +281,11 @@ public class ConfigSettings extends ClientSettings {
     createSinkSettings = settingsBuilder.createSinkSettings().build();
     updateSinkSettings = settingsBuilder.updateSinkSettings().build();
     deleteSinkSettings = settingsBuilder.deleteSinkSettings().build();
+    listExclusionsSettings = settingsBuilder.listExclusionsSettings().build();
+    getExclusionSettings = settingsBuilder.getExclusionSettings().build();
+    createExclusionSettings = settingsBuilder.createExclusionSettings().build();
+    updateExclusionSettings = settingsBuilder.updateExclusionSettings().build();
+    deleteExclusionSettings = settingsBuilder.deleteExclusionSettings().build();
   }
 
   private static final PagedListDescriptor<ListSinksRequest, ListSinksResponse, LogSink>
@@ -273,6 +322,42 @@ public class ConfigSettings extends ClientSettings {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListExclusionsRequest, ListExclusionsResponse, LogExclusion>
+      LIST_EXCLUSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListExclusionsRequest, ListExclusionsResponse, LogExclusion>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListExclusionsRequest injectToken(ListExclusionsRequest payload, String token) {
+              return ListExclusionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListExclusionsRequest injectPageSize(
+                ListExclusionsRequest payload, int pageSize) {
+              return ListExclusionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListExclusionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListExclusionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<LogExclusion> extractResources(ListExclusionsResponse payload) {
+              return payload.getExclusionsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
       LIST_SINKS_PAGE_STR_FACT =
@@ -290,6 +375,23 @@ public class ConfigSettings extends ClientSettings {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
+      LIST_EXCLUSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListExclusionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListExclusionsRequest, ListExclusionsResponse> callable,
+                ListExclusionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListExclusionsResponse> futureResponse) {
+              PageContext<ListExclusionsRequest, ListExclusionsResponse, LogExclusion> pageContext =
+                  PageContext.create(callable, LIST_EXCLUSIONS_PAGE_STR_DESC, request, context);
+              return ListExclusionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Builder for ConfigSettings. */
   public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
@@ -301,6 +403,16 @@ public class ConfigSettings extends ClientSettings {
     private final SimpleCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings;
     private final SimpleCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings;
     private final SimpleCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings;
+    private final PagedCallSettings.Builder<
+            ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
+        listExclusionsSettings;
+    private final SimpleCallSettings.Builder<GetExclusionRequest, LogExclusion>
+        getExclusionSettings;
+    private final SimpleCallSettings.Builder<CreateExclusionRequest, LogExclusion>
+        createExclusionSettings;
+    private final SimpleCallSettings.Builder<UpdateExclusionRequest, LogExclusion>
+        updateExclusionSettings;
+    private final SimpleCallSettings.Builder<DeleteExclusionRequest, Empty> deleteExclusionSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -327,12 +439,23 @@ public class ConfigSettings extends ClientSettings {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.2)
               .setMaxRetryDelay(Duration.ofMillis(1000L))
-              .setInitialRpcTimeout(Duration.ofMillis(2000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.5)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(45000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(90000L))
               .build();
       definitions.put("default", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.2)
+              .setMaxRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.5)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(120000L))
+              .build();
+      definitions.put("write_sink", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -353,13 +476,28 @@ public class ConfigSettings extends ClientSettings {
 
       deleteSinkSettings = SimpleCallSettings.newBuilder();
 
+      listExclusionsSettings = PagedCallSettings.newBuilder(LIST_EXCLUSIONS_PAGE_STR_FACT);
+
+      getExclusionSettings = SimpleCallSettings.newBuilder();
+
+      createExclusionSettings = SimpleCallSettings.newBuilder();
+
+      updateExclusionSettings = SimpleCallSettings.newBuilder();
+
+      deleteExclusionSettings = SimpleCallSettings.newBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
               listSinksSettings,
               getSinkSettings,
               createSinkSettings,
               updateSinkSettings,
-              deleteSinkSettings);
+              deleteSinkSettings,
+              listExclusionsSettings,
+              getExclusionSettings,
+              createExclusionSettings,
+              updateExclusionSettings,
+              deleteExclusionSettings);
 
       initDefaults(this);
     }
@@ -398,6 +536,31 @@ public class ConfigSettings extends ClientSettings {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .listExclusionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getExclusionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createExclusionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateExclusionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteExclusionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -409,6 +572,11 @@ public class ConfigSettings extends ClientSettings {
       createSinkSettings = settings.createSinkSettings.toBuilder();
       updateSinkSettings = settings.updateSinkSettings.toBuilder();
       deleteSinkSettings = settings.deleteSinkSettings.toBuilder();
+      listExclusionsSettings = settings.listExclusionsSettings.toBuilder();
+      getExclusionSettings = settings.getExclusionSettings.toBuilder();
+      createExclusionSettings = settings.createExclusionSettings.toBuilder();
+      updateExclusionSettings = settings.updateExclusionSettings.toBuilder();
+      deleteExclusionSettings = settings.deleteExclusionSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
@@ -416,7 +584,12 @@ public class ConfigSettings extends ClientSettings {
               getSinkSettings,
               createSinkSettings,
               updateSinkSettings,
-              deleteSinkSettings);
+              deleteSinkSettings,
+              listExclusionsSettings,
+              getExclusionSettings,
+              createExclusionSettings,
+              updateExclusionSettings,
+              deleteExclusionSettings);
     }
 
     @Override
@@ -472,6 +645,35 @@ public class ConfigSettings extends ClientSettings {
     /** Returns the builder for the settings used for calls to deleteSink. */
     public SimpleCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings() {
       return deleteSinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listExclusions. */
+    public PagedCallSettings.Builder<
+            ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
+        listExclusionsSettings() {
+      return listExclusionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getExclusion. */
+    public SimpleCallSettings.Builder<GetExclusionRequest, LogExclusion> getExclusionSettings() {
+      return getExclusionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createExclusion. */
+    public SimpleCallSettings.Builder<CreateExclusionRequest, LogExclusion>
+        createExclusionSettings() {
+      return createExclusionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateExclusion. */
+    public SimpleCallSettings.Builder<UpdateExclusionRequest, LogExclusion>
+        updateExclusionSettings() {
+      return updateExclusionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExclusion. */
+    public SimpleCallSettings.Builder<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
+      return deleteExclusionSettings;
     }
 
     @Override

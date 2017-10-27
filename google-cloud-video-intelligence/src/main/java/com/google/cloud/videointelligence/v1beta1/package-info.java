@@ -28,12 +28,10 @@
  * <pre>
  * <code>
  * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
- *   String inputUri = "";
- *   List&lt;Feature&gt; features = new ArrayList&lt;&gt;();
- *   VideoContext videoContext = VideoContext.newBuilder().build();
- *   String outputUri = "";
- *   String locationId = "";
- *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features, videoContext, outputUri, locationId);
+ *   String inputUri = "gs://demomaker/cat.mp4";
+ *   Feature featuresElement = Feature.LABEL_DETECTION;
+ *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
+ *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features);
  * }
  * </code>
  * </pre>

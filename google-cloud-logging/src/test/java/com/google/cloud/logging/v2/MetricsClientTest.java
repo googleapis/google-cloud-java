@@ -78,7 +78,7 @@ public class MetricsClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     MetricsSettings settings =
-        MetricsSettings.defaultBuilder()
+        MetricsSettings.newBuilder()
             .setTransportProvider(
                 GrpcTransportProvider.newBuilder()
                     .setChannelProvider(serviceHelper.createChannelProvider())
@@ -143,8 +143,14 @@ public class MetricsClientTest {
     String name = "name3373707";
     String description = "description-1724546052";
     String filter = "filter-1274492040";
+    String valueExtractor = "valueExtractor2047672534";
     LogMetric expectedResponse =
-        LogMetric.newBuilder().setName(name).setDescription(description).setFilter(filter).build();
+        LogMetric.newBuilder()
+            .setName(name)
+            .setDescription(description)
+            .setFilter(filter)
+            .setValueExtractor(valueExtractor)
+            .build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
     MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
@@ -181,8 +187,14 @@ public class MetricsClientTest {
     String name = "name3373707";
     String description = "description-1724546052";
     String filter = "filter-1274492040";
+    String valueExtractor = "valueExtractor2047672534";
     LogMetric expectedResponse =
-        LogMetric.newBuilder().setName(name).setDescription(description).setFilter(filter).build();
+        LogMetric.newBuilder()
+            .setName(name)
+            .setDescription(description)
+            .setFilter(filter)
+            .setValueExtractor(valueExtractor)
+            .build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
     ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
@@ -222,8 +234,14 @@ public class MetricsClientTest {
     String name = "name3373707";
     String description = "description-1724546052";
     String filter = "filter-1274492040";
+    String valueExtractor = "valueExtractor2047672534";
     LogMetric expectedResponse =
-        LogMetric.newBuilder().setName(name).setDescription(description).setFilter(filter).build();
+        LogMetric.newBuilder()
+            .setName(name)
+            .setDescription(description)
+            .setFilter(filter)
+            .setValueExtractor(valueExtractor)
+            .build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
     MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));

@@ -15,22 +15,32 @@
  */
 package com.google.cloud.logging.v2;
 
+import static com.google.cloud.logging.v2.PagedResponseWrappers.ListExclusionsPagedResponse;
 import static com.google.cloud.logging.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.ConfigServiceV2Stub;
+import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.ExclusionNameOneof;
+import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListExclusionsRequest;
+import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
 import com.google.logging.v2.ParentNameOneof;
 import com.google.logging.v2.SinkNameOneof;
+import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -83,7 +93,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ConfigSettings configSettings =
- *     ConfigSettings.defaultBuilder()
+ *     ConfigSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ConfigClient configClient =
@@ -96,7 +106,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ConfigSettings configSettings =
- *     ConfigSettings.defaultBuilder()
+ *     ConfigSettings.newBuilder()
  *         .setTransportProvider(ConfigSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(ConfigSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -116,7 +126,7 @@ public class ConfigClient implements BackgroundResource {
 
   /** Constructs an instance of ConfigClient with default settings. */
   public static final ConfigClient create() throws IOException {
-    return create(ConfigSettings.defaultBuilder().build());
+    return create(ConfigSettings.newBuilder().build());
   }
 
   /**
@@ -153,6 +163,7 @@ public class ConfigClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public ConfigServiceV2Stub getStub() {
     return stub;
   }
@@ -425,12 +436,10 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a sink. If the named sink doesn't exist, then this method is identical to
-   * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create). If the named sink
-   * does exist, then this method replaces the following fields in the existing sink with values
-   * from the new sink: `destination`, `filter`, `output_version_format`, `start_time`, and
-   * `end_time`. The updated filter might also have a new `writer_identity`; see the
-   * `unique_writer_identity` field.
+   * Updates a sink. This method replaces the following fields in the existing sink with values from
+   * the new sink: `destination`, `filter`, `output_version_format`, `start_time`, and `end_time`.
+   * The updated sink might also have a new `writer_identity`; see the `unique_writer_identity`
+   * field.
    *
    * <p>Sample code:
    *
@@ -450,7 +459,7 @@ public class ConfigClient implements BackgroundResource {
    *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
    *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * @param sink Required. The updated sink, whose name is the same identifier that appears as part
-   *     of `sink_name`. If `sink_name` does not exist, then this method creates a new sink.
+   *     of `sink_name`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogSink updateSink(SinkNameOneof sinkName, LogSink sink) {
@@ -462,12 +471,10 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a sink. If the named sink doesn't exist, then this method is identical to
-   * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create). If the named sink
-   * does exist, then this method replaces the following fields in the existing sink with values
-   * from the new sink: `destination`, `filter`, `output_version_format`, `start_time`, and
-   * `end_time`. The updated filter might also have a new `writer_identity`; see the
-   * `unique_writer_identity` field.
+   * Updates a sink. This method replaces the following fields in the existing sink with values from
+   * the new sink: `destination`, `filter`, `output_version_format`, `start_time`, and `end_time`.
+   * The updated sink might also have a new `writer_identity`; see the `unique_writer_identity`
+   * field.
    *
    * <p>Sample code:
    *
@@ -492,12 +499,10 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a sink. If the named sink doesn't exist, then this method is identical to
-   * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create). If the named sink
-   * does exist, then this method replaces the following fields in the existing sink with values
-   * from the new sink: `destination`, `filter`, `output_version_format`, `start_time`, and
-   * `end_time`. The updated filter might also have a new `writer_identity`; see the
-   * `unique_writer_identity` field.
+   * Updates a sink. This method replaces the following fields in the existing sink with values from
+   * the new sink: `destination`, `filter`, `output_version_format`, `start_time`, and `end_time`.
+   * The updated sink might also have a new `writer_identity`; see the `unique_writer_identity`
+   * field.
    *
    * <p>Sample code:
    *
@@ -594,6 +599,440 @@ public class ConfigClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
     return stub.deleteSinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all the exclusions in a parent resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   for (LogExclusion element : configClient.listExclusions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose exclusions are to be listed.
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExclusionsPagedResponse listExclusions(ParentNameOneof parent) {
+    ListExclusionsRequest request =
+        ListExclusionsRequest.newBuilder().setParentWithParentNameOneof(parent).build();
+    return listExclusions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all the exclusions in a parent resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ListExclusionsRequest request = ListExclusionsRequest.newBuilder()
+   *     .setParentWithParentNameOneof(parent)
+   *     .build();
+   *   for (LogExclusion element : configClient.listExclusions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExclusionsPagedResponse listExclusions(ListExclusionsRequest request) {
+    return listExclusionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all the exclusions in a parent resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ListExclusionsRequest request = ListExclusionsRequest.newBuilder()
+   *     .setParentWithParentNameOneof(parent)
+   *     .build();
+   *   ApiFuture&lt;ListExclusionsPagedResponse&gt; future = configClient.listExclusionsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (LogExclusion element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListExclusionsRequest, ListExclusionsPagedResponse>
+      listExclusionsPagedCallable() {
+    return stub.listExclusionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all the exclusions in a parent resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ListExclusionsRequest request = ListExclusionsRequest.newBuilder()
+   *     .setParentWithParentNameOneof(parent)
+   *     .build();
+   *   while (true) {
+   *     ListExclusionsResponse response = configClient.listExclusionsCallable().call(request);
+   *     for (LogExclusion element : response.getExclusionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListExclusionsRequest, ListExclusionsResponse>
+      listExclusionsCallable() {
+    return stub.listExclusionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the description of an exclusion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+   *   LogExclusion response = configClient.getExclusion(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of an existing exclusion:
+   *     <p>"projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
+   *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
+   *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+   *     <p>Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogExclusion getExclusion(ExclusionNameOneof name) {
+
+    GetExclusionRequest request =
+        GetExclusionRequest.newBuilder().setNameWithExclusionNameOneof(name).build();
+    return getExclusion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the description of an exclusion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+   *   GetExclusionRequest request = GetExclusionRequest.newBuilder()
+   *     .setNameWithExclusionNameOneof(name)
+   *     .build();
+   *   LogExclusion response = configClient.getExclusion(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  private final LogExclusion getExclusion(GetExclusionRequest request) {
+    return getExclusionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the description of an exclusion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+   *   GetExclusionRequest request = GetExclusionRequest.newBuilder()
+   *     .setNameWithExclusionNameOneof(name)
+   *     .build();
+   *   ApiFuture&lt;LogExclusion&gt; future = configClient.getExclusionCallable().futureCall(request);
+   *   // Do something
+   *   LogExclusion response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetExclusionRequest, LogExclusion> getExclusionCallable() {
+    return stub.getExclusionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new exclusion in a specified parent resource. Only log entries belonging to that
+   * resource can be excluded. You can have up to 10 exclusions in a resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   LogExclusion exclusion = LogExclusion.newBuilder().build();
+   *   LogExclusion response = configClient.createExclusion(parent, exclusion);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource in which to create the exclusion:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * @param exclusion Required. The new exclusion, whose `name` parameter is an exclusion name that
+   *     is not already used in the parent resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogExclusion createExclusion(ParentNameOneof parent, LogExclusion exclusion) {
+
+    CreateExclusionRequest request =
+        CreateExclusionRequest.newBuilder()
+            .setParentWithParentNameOneof(parent)
+            .setExclusion(exclusion)
+            .build();
+    return createExclusion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new exclusion in a specified parent resource. Only log entries belonging to that
+   * resource can be excluded. You can have up to 10 exclusions in a resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   LogExclusion exclusion = LogExclusion.newBuilder().build();
+   *   CreateExclusionRequest request = CreateExclusionRequest.newBuilder()
+   *     .setParentWithParentNameOneof(parent)
+   *     .setExclusion(exclusion)
+   *     .build();
+   *   LogExclusion response = configClient.createExclusion(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogExclusion createExclusion(CreateExclusionRequest request) {
+    return createExclusionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new exclusion in a specified parent resource. Only log entries belonging to that
+   * resource can be excluded. You can have up to 10 exclusions in a resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   LogExclusion exclusion = LogExclusion.newBuilder().build();
+   *   CreateExclusionRequest request = CreateExclusionRequest.newBuilder()
+   *     .setParentWithParentNameOneof(parent)
+   *     .setExclusion(exclusion)
+   *     .build();
+   *   ApiFuture&lt;LogExclusion&gt; future = configClient.createExclusionCallable().futureCall(request);
+   *   // Do something
+   *   LogExclusion response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateExclusionRequest, LogExclusion> createExclusionCallable() {
+    return stub.createExclusionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Changes one or more properties of an existing exclusion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+   *   LogExclusion exclusion = LogExclusion.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   LogExclusion response = configClient.updateExclusion(name, exclusion, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the exclusion to update:
+   *     <p>"projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
+   *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
+   *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+   *     <p>Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
+   * @param exclusion Required. New values for the existing exclusion. Only the fields specified in
+   *     `update_mask` are relevant.
+   * @param updateMask Required. A nonempty list of fields to change in the existing exclusion. New
+   *     values for the fields are taken from the corresponding fields in the
+   *     [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not
+   *     mentioned in `update_mask` are not changed and are ignored in the request.
+   *     <p>For example, to change the filter and description of an exclusion, specify an
+   *     `update_mask` of `"filter,description"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogExclusion updateExclusion(
+      ExclusionNameOneof name, LogExclusion exclusion, FieldMask updateMask) {
+
+    UpdateExclusionRequest request =
+        UpdateExclusionRequest.newBuilder()
+            .setNameWithExclusionNameOneof(name)
+            .setExclusion(exclusion)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateExclusion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Changes one or more properties of an existing exclusion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+   *   LogExclusion exclusion = LogExclusion.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateExclusionRequest request = UpdateExclusionRequest.newBuilder()
+   *     .setNameWithExclusionNameOneof(name)
+   *     .setExclusion(exclusion)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   LogExclusion response = configClient.updateExclusion(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogExclusion updateExclusion(UpdateExclusionRequest request) {
+    return updateExclusionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Changes one or more properties of an existing exclusion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+   *   LogExclusion exclusion = LogExclusion.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateExclusionRequest request = UpdateExclusionRequest.newBuilder()
+   *     .setNameWithExclusionNameOneof(name)
+   *     .setExclusion(exclusion)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;LogExclusion&gt; future = configClient.updateExclusionCallable().futureCall(request);
+   *   // Do something
+   *   LogExclusion response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateExclusionRequest, LogExclusion> updateExclusionCallable() {
+    return stub.updateExclusionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an exclusion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+   *   configClient.deleteExclusion(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of an existing exclusion to delete:
+   *     <p>"projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
+   *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
+   *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+   *     <p>Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteExclusion(ExclusionNameOneof name) {
+
+    DeleteExclusionRequest request =
+        DeleteExclusionRequest.newBuilder().setNameWithExclusionNameOneof(name).build();
+    deleteExclusion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an exclusion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+   *   DeleteExclusionRequest request = DeleteExclusionRequest.newBuilder()
+   *     .setNameWithExclusionNameOneof(name)
+   *     .build();
+   *   configClient.deleteExclusion(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  private final void deleteExclusion(DeleteExclusionRequest request) {
+    deleteExclusionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an exclusion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+   *   DeleteExclusionRequest request = DeleteExclusionRequest.newBuilder()
+   *     .setNameWithExclusionNameOneof(name)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = configClient.deleteExclusionCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
+    return stub.deleteExclusionCallable();
   }
 
   @Override

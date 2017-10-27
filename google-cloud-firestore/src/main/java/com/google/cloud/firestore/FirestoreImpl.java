@@ -28,7 +28,7 @@ import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.ArrayValue;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
-import com.google.firestore.v1beta1.DatabaseName;
+import com.google.firestore.v1beta1.DatabaseRootName;
 import com.google.firestore.v1beta1.MapValue;
 import com.google.firestore.v1beta1.Value;
 import com.google.protobuf.ByteString;
@@ -149,7 +149,7 @@ class FirestoreImpl implements Firestore {
         "Failed to detect Project ID. "
             + "Please explicitly set your Project ID in FirestoreOptions.");
     this.databasePath =
-        ResourcePath.create(DatabaseName.create(options.getProjectId(), options.getDatabaseId()));
+        ResourcePath.create(DatabaseRootName.create(options.getProjectId(), options.getDatabaseId()));
   }
 
   @Nonnull

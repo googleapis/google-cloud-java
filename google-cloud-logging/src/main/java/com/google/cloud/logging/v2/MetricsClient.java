@@ -82,7 +82,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * MetricsSettings metricsSettings =
- *     MetricsSettings.defaultBuilder()
+ *     MetricsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * MetricsClient metricsClient =
@@ -95,7 +95,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * MetricsSettings metricsSettings =
- *     MetricsSettings.defaultBuilder()
+ *     MetricsSettings.newBuilder()
  *         .setTransportProvider(MetricsSettings.defaultGrpcTransportProviderBuilder()
  *             .setChannelProvider(MetricsSettings.defaultGrpcChannelProviderBuilder()
  *                 .setEndpoint(myEndpoint)
@@ -115,7 +115,7 @@ public class MetricsClient implements BackgroundResource {
 
   /** Constructs an instance of MetricsClient with default settings. */
   public static final MetricsClient create() throws IOException {
-    return create(MetricsSettings.defaultBuilder().build());
+    return create(MetricsSettings.newBuilder().build());
   }
 
   /**
@@ -152,6 +152,7 @@ public class MetricsClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi
   public MetricsServiceV2Stub getStub() {
     return stub;
   }
