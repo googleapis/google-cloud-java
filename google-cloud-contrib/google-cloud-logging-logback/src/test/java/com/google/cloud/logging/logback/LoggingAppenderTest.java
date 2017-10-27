@@ -28,6 +28,7 @@ import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
 import ch.qos.logback.classic.filter.ThresholdFilter;
 import ch.qos.logback.classic.spi.LoggingEvent;
 import ch.qos.logback.core.Context;
+import ch.qos.logback.core.CoreConstants;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.Timestamp;
 import com.google.cloud.logging.LogEntry;
@@ -192,7 +193,7 @@ public class LoggingAppenderTest {
 
   @Test
   public void testEncoderPattern() {
-    final String pattern = "%-5level [%thread] %logger{0}: %msg%n";
+    final String pattern = "%-5level [%thread] %logger{0}: %msg";
 
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
@@ -208,7 +209,7 @@ public class LoggingAppenderTest {
 
     verify(logging);
 
-    LogEntry expectedEntry = LogEntry.newBuilder(StringPayload.of("ERROR [main] test-logger: this is a test\n"))
+    LogEntry expectedEntry = LogEntry.newBuilder(StringPayload.of("ERROR [main] test-logger: this is a test"))
         .setTimestamp(100000L)
         .setSeverity(Severity.ERROR)
         .setLabels(
@@ -238,7 +239,7 @@ public class LoggingAppenderTest {
 
     Assert.assertTrue(capturedArgument.getValue().iterator().hasNext());
     LogEntry actualEntry = capturedArgument.getValue().iterator().next();
-    LogEntry expectedEntry = LogEntry.newBuilder(StringPayload.of("#logback.classic pattern: " + pattern + "\n"))
+    LogEntry expectedEntry = LogEntry.newBuilder(StringPayload.of("#logback.classic pattern: " + pattern + CoreConstants.LINE_SEPARATOR))
         .setSeverity(Severity.INFO)
         .setTimestamp(actualEntry.getTimestamp())
         .setLabels(
