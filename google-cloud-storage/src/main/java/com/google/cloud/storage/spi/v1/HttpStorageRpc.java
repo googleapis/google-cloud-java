@@ -876,11 +876,6 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions) {
-    return testIamPermissions(bucket, permissions, new HashMap<Option, Object>());
-  }
-
-  @Override
   public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions, Map<Option, ?> options) {
     try {
       return storage.buckets().testIamPermissions(bucket, permissions)
