@@ -20,7 +20,6 @@ import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.gax.paging.Page;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
@@ -32,10 +31,10 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.RetryOption;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -584,24 +583,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public QueryResponse query(QueryJobConfiguration configuration, QueryOption... options)
+  public Job query(QueryJobConfiguration configuration, JobOption... options)
       throws InterruptedException {
     return query(configuration, JobId.of(), options);
   }
 
   @Override
-  public QueryResponse query(QueryJobConfiguration configuration, JobId jobId, QueryOption... options)
+  public Job query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
       throws InterruptedException {
-    try {
-      JobInfo jobInfo = JobInfo.newBuilder(configuration).setJobId(jobId).build();
-      Job job = create(jobInfo);
-      RetrySettings waitSettings =
-          RetryOption.mergeToSettings(
-              Job.DEFAULT_QUERY_JOB_WAIT_SETTINGS, QueryOption.filterRetryOptions(options));
-      return job.waitForQueryResults(waitSettings, QueryOption.filterQueryResultsOptions(options));
-    } catch (RetryHelper.RetryHelperException e) {
-      throw BigQueryException.translateAndThrow(e);
-    }
+    return create(JobInfo.of(jobId, configuration), options);
   }
 
   @Override
@@ -677,7 +667,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         writeChannelConfiguration.setProjectId(getOptions().getProjectId()));
   }
 
-  private Map<BigQueryRpc.Option, ?> optionMap(Option... options) {
+  @VisibleForTesting
+  static Map<BigQueryRpc.Option, ?> optionMap(Option... options) {
     Map<BigQueryRpc.Option, Object> optionMap = Maps.newEnumMap(BigQueryRpc.Option.class);
     for (Option option : options) {
       Object prev = optionMap.put(option.getRpcOption(), option.getValue());

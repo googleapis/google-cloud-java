@@ -20,8 +20,8 @@ import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryResponse;
 import java.io.FileInputStream;
 import java.util.List;
 import org.threeten.bp.Clock;
@@ -53,13 +53,13 @@ public class Benchmark {
       }
 
       Instant start = clock.instant();
-      QueryResponse queryResponse =
-          bq.query(QueryJobConfiguration.newBuilder(request).setUseLegacySql(false).build());
+      Job job = bq.query(QueryJobConfiguration.newBuilder(request).setUseLegacySql(false).build());
+      job = job.waitFor();
 
       int rows = 0;
       int cols = 0;
       Duration firstByte = null;
-      for (List<FieldValue> row : queryResponse.getResult().iterateAll()) {
+      for (List<FieldValue> row : job.getQueryResults().getResult().iterateAll()) {
         rows++;
         if (cols == 0) {
           cols = row.size();
