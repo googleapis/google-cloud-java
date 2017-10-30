@@ -16,39 +16,38 @@
 
 package com.google.cloud.pubsub.v1;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
-import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.ChannelProvider;
-import com.google.auth.Credentials;
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.rpc.TransportChannel;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
-import io.grpc.ManagedChannel;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
+
+import java.io.IOException;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ScheduledExecutorService;
+
+import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
@@ -58,8 +57,8 @@ public class PublisherImplTest {
   private static final ExecutorProvider SINGLE_THREAD_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
 
-  private static final ChannelProvider TEST_CHANNEL_PROVIDER =
-      new ChannelProvider() {
+  private static final TransportChannelProvider TEST_CHANNEL_PROVIDER =
+      new TransportChannelProvider() {
         @Override
         public boolean shouldAutoClose() {
           return true;
@@ -71,24 +70,30 @@ public class PublisherImplTest {
         }
 
         @Override
-        public ManagedChannel getChannel() {
-          return InProcessChannelBuilder.forName("test-server").build();
-        }
-
-        @Override
-        public ManagedChannel getChannel(Executor executor) {
-          throw new IllegalArgumentException("testChannelprovider doesn't need an executor");
-        }
-      };
-
-  // Gax declares a similar type, which can be used after gax is upgraded.
-  @Deprecated
-  static final CredentialsProvider NO_CREDENTIALS_PROVIDER =
-      new CredentialsProvider() {
-        @Override
-        public Credentials getCredentials() {
+        public TransportChannelProvider withExecutor(ScheduledExecutorService executor) {
           return null;
         }
+
+        @Override
+        public boolean needsHeaders() {
+          return false;
+        }
+
+        @Override
+        public TransportChannelProvider withHeaders(Map<String, String> headers) {
+          return null;
+        }
+
+        @Override
+        public TransportChannel getTransportChannel() throws IOException {
+          return GrpcTransportChannel.of(InProcessChannelBuilder.forName("test-server").build());
+        }
+
+        @Override
+        public String getTransportName() {
+          return null;
+        }
+
       };
 
   private FakeScheduledExecutorService fakeExecutor;
@@ -440,7 +445,7 @@ public class PublisherImplTest {
             .setDelayThreshold(Duration.ofMillis(11))
             .setElementCountThreshold(12L)
             .build());
-    builder.setCredentialsProvider(NO_CREDENTIALS_PROVIDER);
+    builder.setCredentialsProvider(NoCredentialsProvider.of());
     Publisher publisher = builder.build();
 
     assertEquals(TEST_TOPIC, publisher.getTopicName());
@@ -607,9 +612,9 @@ public class PublisherImplTest {
 
   private Builder getTestPublisherBuilder() {
     return Publisher.defaultBuilder(TEST_TOPIC)
-        .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
+        .setExecutorProvider(FixedExecutorProvider.of(fakeExecutor))
         .setChannelProvider(TEST_CHANNEL_PROVIDER)
-        .setCredentialsProvider(NO_CREDENTIALS_PROVIDER)
+        .setCredentialsProvider(NoCredentialsProvider.of())
         .setLongRandom(
             new Publisher.LongRandom() {
               @Override

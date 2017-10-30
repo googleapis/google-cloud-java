@@ -42,7 +42,7 @@ import java.util.List;
 public class RecognizeSpeech {
   public static void main(String... args) throws Exception {
     // Instantiates a client
-    SpeechClient speech = SpeechClient.create();
+    SpeechClient speech = SpeechClient.of();
 
     // The path to the audio file to transcribe
     String fileName = "your/speech/audio/file.raw"; // for example "./resources/audio.raw";

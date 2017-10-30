@@ -18,23 +18,23 @@ package com.google.cloud.firestore.spi.v1beta1;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.api.gax.rpc.Transport;
+import com.google.api.gax.rpc.TransportChannel;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings.Builder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.firestore.FirestoreOptions;
 import com.google.cloud.firestore.v1beta1.FirestoreSettings;
 import com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
 import com.google.cloud.firestore.v1beta1.stub.FirestoreStub;
 import com.google.cloud.firestore.v1beta1.stub.GrpcFirestoreStub;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.BeginTransactionRequest;
@@ -46,12 +46,12 @@ import com.google.firestore.v1beta1.ListCollectionIdsRequest;
 import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
-import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.protobuf.Empty;
+import io.grpc.CallOptions;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 
@@ -80,42 +80,38 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
                 .usePlaintext(true)
                 .executor(executor)
                 .build();
+        TransportChannel transportChannel = GrpcTransportChannel.of(managedChannel);
         clientContext =
             ClientContext.newBuilder()
                 .setCredentials(null)
                 .setExecutor(executor)
-                .setTransportContext(GrpcTransport.newBuilder().setChannel(managedChannel).build())
+                .setTransportChannel(transportChannel)
+                .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
+                .setBackgroundResources(Collections.<BackgroundResource>singletonList(transportChannel))
                 .build();
       } else {
+        FirestoreSettings.Builder settingsBuilder = FirestoreSettings.newBuilder();
+
         DatabaseRootName databaseName = DatabaseRootName
             .create(options.getProjectId(), options.getDatabaseId());
-        Credentials credentials =
-            GrpcTransportOptions.setUpCredentialsProvider(options).getCredentials();
-        InstantiatingChannelProvider.Builder channelBuilder = FirestoreSettings
-            .defaultGrpcChannelProviderBuilder();
-        channelBuilder.setGoogleCloudResourcePrefix(databaseName.toString());
-        ChannelProvider channelProvider =
-            GrpcTransportOptions.setUpChannelProvider(channelBuilder, options);
-        GrpcTransportProvider transportProviders =
-            GrpcTransportProvider.newBuilder().setChannelProvider(channelProvider).build();
-        Transport transport;
-        if (transportProviders.needsExecutor()) {
-          transport = transportProviders.getTransport(executor);
-        } else {
-          transport = transportProviders.getTransport();
-        }
-        clientContext =
-            ClientContext.newBuilder()
-                .setCredentials(credentials)
-                .setExecutor(executor)
-                .setTransportContext(transport)
-                .setBackgroundResources(transport.getBackgroundResources())
-                .build();
+
+        settingsBuilder.setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options));
+        settingsBuilder.setTransportChannelProvider(
+            GrpcTransportOptions.setUpChannelProvider(FirestoreSettings.defaultGrpcTransportProviderBuilder(), options));
+
+        ApiClientHeaderProvider.Builder headerProvider =
+            FirestoreSettings.defaultApiClientHeaderProviderBuilder();
+        headerProvider.setGoogleCloudResourcePrefix(databaseName.toString());
+
+        settingsBuilder.setHeaderProvider(
+            GrpcTransportOptions.setUpHeaderProvider(headerProvider, options));
+
+        clientContext = ClientContext.of(settingsBuilder.build());
       }
-      ApiFunction<UnaryCallSettings.Builder, Void> retrySettingsSetter =
-          new ApiFunction<Builder, Void>() {
+      ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> retrySettingsSetter =
+          new ApiFunction<Builder<?, ?>, Void>() {
             @Override
-            public Void apply(UnaryCallSettings.Builder builder) {
+            public Void apply(UnaryCallSettings.Builder<?, ?> builder) {
               builder.setRetrySettings(options.getRetrySettings());
               return null;
             }
@@ -123,7 +119,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
       FirestoreSettings.Builder firestoreBuilder =
           FirestoreSettings.newBuilder(clientContext)
               .applyToAllUnaryMethods(retrySettingsSetter);
-      firestoreStub = GrpcFirestoreStub.create(firestoreBuilder.build());
+      firestoreStub = GrpcFirestoreStub.of(firestoreBuilder.build());
     } catch (Exception e) {
       throw new IOException(e);
     }

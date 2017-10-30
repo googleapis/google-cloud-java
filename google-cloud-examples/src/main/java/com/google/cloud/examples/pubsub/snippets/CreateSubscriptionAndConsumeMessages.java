@@ -36,7 +36,7 @@ public class CreateSubscriptionAndConsumeMessages {
     TopicName topic = TopicName.create("my-project-id", "my-topic-id");
     SubscriptionName subscription = SubscriptionName.create("my-project-id", "my-topic-id");
 
-    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.of()) {
       subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
     }
 
@@ -50,7 +50,7 @@ public class CreateSubscriptionAndConsumeMessages {
         };
     Subscriber subscriber = null;
     try {
-      subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
+      subscriber = Subscriber.newBuilder(subscription, receiver).build();
       subscriber.addListener(
           new Subscriber.Listener() {
             @Override

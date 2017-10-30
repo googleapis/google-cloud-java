@@ -847,6 +847,12 @@
         <artifactId>truth</artifactId>
         <version>0.30</version>
       </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-grpc</artifactId>
+        <version>${gax-grpc.version}</version>
+	<classifier>testlib</classifier>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <modules>
