@@ -163,6 +163,7 @@
     <core-http.version>1.10.1-SNAPSHOT</core-http.version>
     <core-grpc.version>1.10.1-SNAPSHOT</core-grpc.version>
     <datastore.version>1.10.1-SNAPSHOT</datastore.version>
+    <dialogflow.version>0.28.1-alpha-SNAPSHOT</dialogflow.version>
     <dlp.version>0.28.1-beta-SNAPSHOT</dlp.version>
     <dns.version>0.28.1-alpha-SNAPSHOT</dns.version>
     <errorreporting.version>0.28.1-beta-SNAPSHOT</errorreporting.version>
@@ -344,6 +345,28 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dlp-v2beta1</artifactId>
         <version>${generated-proto-beta.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-dialogflow</artifactId>
+        <version>${dialogflow.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-dialogflow</artifactId>
+        <version>${dialogflow.version}</version>
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dialogflow-v2beta1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dialogflow-v2beta1</artifactId>
+        <version>${generatedProto.version}</version>
       </dependency>
 
       <dependency>
@@ -900,6 +923,7 @@
     <module>google-cloud-core-grpc</module>
     <module>google-cloud-datastore</module>
     <module>google-cloud-dlp</module>
+    <module>google-cloud-dialogflow</module>
     <module>google-cloud-dns</module>
     <module>google-cloud-errorreporting</module>
     <module>google-cloud-examples</module>
@@ -1242,7 +1266,7 @@
                   </group>
                   <group>
                     <title>Stub packages</title>
-                    <packages>com.google.cloud.bigtable.v2.stub:com.google.cloud.bigtable.admin.v2.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.vision.v1.stub</packages>
+                    <packages>com.google.cloud.dlp.v2beta1.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.vision.v1.stub</packages>
                   </group>
                 </groups>
                 <links>
