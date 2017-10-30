@@ -68,7 +68,7 @@ public class ErrorGroupServiceClientTest {
     ErrorGroupServiceSettings settings =
         ErrorGroupServiceSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setCredentialsProvider(NoCredentialsProvider.of())
             .build();
     client = ErrorGroupServiceClient.of(settings);
   }

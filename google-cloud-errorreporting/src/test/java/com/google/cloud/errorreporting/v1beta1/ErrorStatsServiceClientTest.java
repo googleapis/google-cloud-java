@@ -78,7 +78,7 @@ public class ErrorStatsServiceClientTest {
     ErrorStatsServiceSettings settings =
         ErrorStatsServiceSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setCredentialsProvider(NoCredentialsProvider.of())
             .build();
     client = ErrorStatsServiceClient.of(settings);
   }

@@ -67,7 +67,7 @@ public class TraceServiceClientTest {
     TraceServiceSettings settings =
         TraceServiceSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setCredentialsProvider(NoCredentialsProvider.of())
             .build();
     client = TraceServiceClient.of(settings);
   }

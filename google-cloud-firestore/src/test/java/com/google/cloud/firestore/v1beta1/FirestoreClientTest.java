@@ -88,7 +88,7 @@ public class FirestoreClientTest {
     FirestoreSettings settings =
         FirestoreSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setCredentialsProvider(NoCredentialsProvider.of())
             .build();
     client = FirestoreClient.of(settings);
   }

@@ -55,8 +55,8 @@ public class ITPubSubTest {
 
   @BeforeClass
   public static void setupClass() throws Exception {
-    topicAdminClient = TopicAdminClient.create();
-    subscriptionAdminClient = SubscriptionAdminClient.create();
+    topicAdminClient = TopicAdminClient.of();
+    subscriptionAdminClient = SubscriptionAdminClient.of();
     projectId = ServiceOptions.getDefaultProjectId();
   }
 
@@ -108,7 +108,7 @@ public class ITPubSubTest {
 
     final SettableApiFuture<PubsubMessage> received = SettableApiFuture.create();
     Subscriber subscriber =
-        Subscriber.defaultBuilder(
+        Subscriber.newBuilder(
                 subscriptionName,
                 new MessageReceiver() {
                   @Override
@@ -131,7 +131,7 @@ public class ITPubSubTest {
         MoreExecutors.directExecutor());
     subscriber.startAsync();
 
-    Publisher publisher = Publisher.defaultBuilder(topicName).build();
+    Publisher publisher = Publisher.newBuilder(topicName).build();
     publisher.publish(message).get();
     publisher.shutdown();
 

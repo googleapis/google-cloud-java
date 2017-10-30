@@ -211,7 +211,7 @@ public class GrpcTransportOptions implements TransportOptions {
      if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
        return FixedCredentialsProvider.of(scopedCredentials);
      }
-     return new NoCredentialsProvider();
+     return NoCredentialsProvider.of();
   }
 
 

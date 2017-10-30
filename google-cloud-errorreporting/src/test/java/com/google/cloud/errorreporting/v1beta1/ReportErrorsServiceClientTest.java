@@ -68,7 +68,7 @@ public class ReportErrorsServiceClientTest {
     ReportErrorsServiceSettings settings =
         ReportErrorsServiceSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setCredentialsProvider(NoCredentialsProvider.of())
             .build();
     client = ReportErrorsServiceClient.of(settings);
   }

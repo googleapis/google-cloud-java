@@ -103,7 +103,7 @@ public class SubscriptionAdminClientTest {
     SubscriptionAdminSettings settings =
         SubscriptionAdminSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setCredentialsProvider(NoCredentialsProvider.of())
             .build();
     client = SubscriptionAdminClient.of(settings);
   }

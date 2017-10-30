@@ -159,7 +159,7 @@ public class ITSubscriptionAdminClientSnippets {
   }
 
   private void createTopic(String name) throws Exception {
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
       topicAdminClient.createTopic(TopicName.create(projectId, name));
     }
   }

@@ -166,7 +166,7 @@ public class SubscriberSnippets {
   private Subscriber createSubscriberWithCustomCredentials() throws Exception {
     // [START pubsub_subscriber_custom_credentials]
     CredentialsProvider credentialsProvider =
-        FixedCredentialsProvider.create(
+        FixedCredentialsProvider.of(
             ServiceAccountCredentials.fromStream(new FileInputStream("credentials.json")));
 
     Subscriber subscriber =
@@ -182,7 +182,7 @@ public class SubscriberSnippets {
     // [START subscriber_sync_pull]
     SubscriptionAdminSettings subscriptionAdminSettings =
         SubscriptionAdminSettings.newBuilder().build();
-    try (SubscriberStub subscriber = GrpcSubscriberStub.create(subscriptionAdminSettings)) {
+    try (SubscriberStub subscriber = GrpcSubscriberStub.of(subscriptionAdminSettings)) {
       // String projectId = "my-project-id";
       // String subscriptionId = "my-subscription-id";
       // int numOfMessages = 10;   // max number of messages to be pulled

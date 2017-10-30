@@ -58,7 +58,7 @@ public class LanguageServiceClientTest {
     LanguageServiceSettings settings =
         LanguageServiceSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setCredentialsProvider(NoCredentialsProvider.of())
             .build();
     client = LanguageServiceClient.of(settings);
   }

@@ -240,7 +240,7 @@ public class Subscriber extends AbstractApiService {
    * <p>Example of receiving a specific number of messages.
    *
    * <pre>{@code
-   * Subscriber subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
+   * Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
    * subscriber.addListener(new Subscriber.Listener() {
    *   public void failed(Subscriber.State from, Throwable failure) {
    *     // Handle error.

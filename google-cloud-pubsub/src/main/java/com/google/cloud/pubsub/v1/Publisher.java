@@ -496,7 +496,7 @@ public class Publisher {
    * String projectName = "my_project";
    * String topicName = "my_topic";
    * TopicName topic = TopicName.create(projectName, topicName);
-   * Publisher publisher = Publisher.defaultBuilder(topic).build();
+   * Publisher publisher = Publisher.newBuilder(topic).build();
    * try {
    *   // ...
    * } finally {
@@ -520,7 +520,7 @@ public class Publisher {
    * String projectName = "my_project";
    * String topicName = "my_topic";
    * TopicName topic = TopicName.create(projectName, topicName);
-   * Publisher publisher = Publisher.defaultBuilder(topic).build();
+   * Publisher publisher = Publisher.newBuilder(topic).build();
    * try {
    *   // ...
    * } finally {

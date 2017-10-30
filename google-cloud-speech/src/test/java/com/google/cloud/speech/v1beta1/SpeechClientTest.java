@@ -65,7 +65,7 @@ public class SpeechClientTest {
     SpeechSettings settings =
         SpeechSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setCredentialsProvider(NoCredentialsProvider.of())
             .build();
     client = SpeechClient.of(settings);
   }

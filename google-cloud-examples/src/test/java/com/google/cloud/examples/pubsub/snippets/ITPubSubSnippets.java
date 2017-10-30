@@ -65,8 +65,8 @@ public class ITPubSubSnippets {
         SubscriptionName.create(
             ServiceOptions.getDefaultProjectId(), formatForTest("test-subscription"));
 
-    try (TopicAdminClient publisherClient = TopicAdminClient.create();
-        SubscriptionAdminClient subscriberClient = SubscriptionAdminClient.create()) {
+    try (TopicAdminClient publisherClient = TopicAdminClient.of();
+        SubscriptionAdminClient subscriberClient = SubscriptionAdminClient.of()) {
       publisherClient.createTopic(topicName);
       subscriberClient.createSubscription(
           subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
@@ -79,7 +79,7 @@ public class ITPubSubSnippets {
 
     Publisher publisher = null;
     try {
-      publisher = Publisher.defaultBuilder(topicName).build();
+      publisher = Publisher.newBuilder(topicName).build();
       PublisherSnippets snippets = new PublisherSnippets(publisher);
       final SettableApiFuture<Void> done = SettableApiFuture.create();
       ApiFutures.addCallback(
@@ -134,7 +134,7 @@ public class ITPubSubSnippets {
     String messageToPublish = "my-message";
     Publisher publisher = null;
     try {
-      publisher = Publisher.defaultBuilder(topicName).build();
+      publisher = Publisher.newBuilder(topicName).build();
       PublisherSnippets snippets = new PublisherSnippets(publisher);
       List<ApiFuture<String>> apiFutures = new ArrayList<>();
       for (int i = 0; i < 5; i++) {
@@ -159,8 +159,8 @@ public class ITPubSubSnippets {
 
   @After
   public void tearDown() throws Exception {
-    try (TopicAdminClient publisherClient = TopicAdminClient.create();
-        SubscriptionAdminClient subscriberClient = SubscriptionAdminClient.create()) {
+    try (TopicAdminClient publisherClient = TopicAdminClient.of();
+        SubscriptionAdminClient subscriberClient = SubscriptionAdminClient.of()) {
       subscriberClient.deleteSubscription(subscriptionName);
       publisherClient.deleteTopic(topicName);
     }

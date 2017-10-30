@@ -91,7 +91,7 @@ public class ConfigClientTest {
     ConfigSettings settings =
         ConfigSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setCredentialsProvider(NoCredentialsProvider.of())
             .build();
     client = ConfigClient.of(settings);
   }

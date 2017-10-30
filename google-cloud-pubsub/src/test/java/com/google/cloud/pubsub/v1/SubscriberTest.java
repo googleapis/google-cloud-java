@@ -558,7 +558,7 @@ public class SubscriberTest {
   }
 
   private Builder getTestSubscriberBuilder(MessageReceiver receiver) {
-    return Subscriber.defaultBuilder(TEST_SUBSCRIPTION, receiver)
+    return Subscriber.newBuilder(TEST_SUBSCRIPTION, receiver)
         .setExecutorProvider(FixedExecutorProvider.of(fakeExecutor))
         .setSystemExecutorProvider(FixedExecutorProvider.of(fakeExecutor))
         .setChannelProvider(FixedTransportChannelProvider.of(GrpcTransportChannel.of(testChannel)))
