@@ -459,7 +459,7 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   /** Commit the current batch. */
   ApiFuture<List<WriteResult>> commit(@Nullable ByteString transactionId) {
-    // We create our own copy of this array since we need to access it when processing the response.
+    // We create our own copy of this list since we need to access it when processing the response.
     final ImmutableList<Write> writeRequests = ImmutableList.copyOf(this.writes);
 
     CommitRequest.Builder request = CommitRequest.newBuilder();
@@ -494,7 +494,7 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
                 writeResults.iterator();
 
             while (requestIterator.hasNext() && responseIterator.hasNext()) {
-              // Don't return write results for document transforms, as the fact
+              // Don't return write results for DocumentTransforms, as the fact
               // that we have to split one write operation into two distinct
               // write requests is an implementation detail.
               switch (requestIterator.next().getOperationCase()) {
