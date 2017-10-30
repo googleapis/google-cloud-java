@@ -27,6 +27,7 @@ import static org.mockito.Mockito.doReturn;
 
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
+import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.Write;
@@ -92,7 +93,7 @@ public class WriteBatchTest {
 
   @Test
   public void setDocument() throws Exception {
-    doReturn(commitResponse(2, 0))
+    doReturn(commitResponse(4, 0))
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
@@ -116,6 +117,19 @@ public class WriteBatchTest {
 
     CommitRequest commitRequest = commitCapture.getValue();
     assertEquals(commit(writes.toArray(new Write[] {})), commitRequest);
+  }
+
+  @Test
+  public void omitWriteResultForDocumentTransforms() throws Exception {
+    doReturn(commitResponse(2, 0))
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    batch.set(documentReference, ImmutableMap.of("time", FieldValue.serverTimestamp()));
+
+    List<WriteResult> writeResults = batch.commit().get();
+    assertEquals(1, writeResults.size());
   }
 
   @Test
