@@ -53,7 +53,8 @@ abstract class BasePath<B extends BasePath<B>> {
    * @param path A relative path
    */
   B append(String path) {
-    Preconditions.checkArgument(path != null && !path.isEmpty(), "'path' must be a non-empty String" );
+    Preconditions.checkArgument(
+        path != null && !path.isEmpty(), "'path' must be a non-empty String");
     ImmutableList.Builder<String> components = ImmutableList.builder();
     components.addAll(this.getSegments());
     components.add(splitChildPath(path));
