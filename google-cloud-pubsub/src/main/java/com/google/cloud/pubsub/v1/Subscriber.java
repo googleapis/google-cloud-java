@@ -83,6 +83,12 @@ import org.threeten.bp.Duration;
  *
  * <p>{@link Subscriber} will use the credentials set on the channel, which uses application default
  * credentials through {@link GoogleCredentials#getApplicationDefault} by default.
+ *
+ * <p>{@code Subscriber} is implemented using <a
+ * href="http://google.github.io/guava/releases/snapshot/api/docs/com/google/common/util/concurrent/Service.html">Guava's
+ * Service</a> and provides the same methods. See <a
+ * href="https://github.com/google/guava/wiki/ServiceExplained">Guava documentation</a> for more
+ * details.
  */
 public class Subscriber extends AbstractApiService {
   private static final int THREADS_PER_CHANNEL = 5;
