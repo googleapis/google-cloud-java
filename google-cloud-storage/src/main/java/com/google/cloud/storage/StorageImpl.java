@@ -33,8 +33,10 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.paging.Page;
 import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
@@ -919,6 +921,24 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
+  }
+
+  @Override
+  public boolean delete(Notification notification) {
+    // TODO(andrealin): implement;
+    return false;
+  }
+
+  @Override
+  public List<Notification> listNotifications(String bucket) {
+    // TODO(andrealin): implement;
+    return null;
+  }
+
+  @Override
+  public Notification create(Notification notification) {
+    // TODO(andrealin): implement;
+    return null;
   }
 
   private static <T> void addToOptionMap(StorageRpc.Option option, T defaultValue,

@@ -16,8 +16,10 @@
 
 package com.google.cloud.storage.spi.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.StorageObject;
@@ -428,4 +430,10 @@ public interface StorageRpc extends ServiceRpc {
    * @throws StorageException upon failure
    */
   TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions);
+
+  boolean deleteNotification(String bucket, String notification);
+
+  List<Notification> listNotifications(String bucket);
+
+  Notification createNotification(String bucket, Notification notification);
 }

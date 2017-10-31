@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.paging.Page;
+import com.google.api.services.storage.model.Notification;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.cloud.FieldSelector;
@@ -2499,4 +2500,14 @@ public interface Storage extends Service<StorageOptions> {
   @BetaApi
   @GcpLaunchStage.Alpha
   List<Boolean> testIamPermissions(String bucket, List<String> permissions);
+
+  @BetaApi
+  boolean delete(Notification notification);
+
+  @BetaApi
+  List<Notification> listNotifications(String bucket);
+
+  @BetaApi
+  Notification create(Notification notification);
+
 }
