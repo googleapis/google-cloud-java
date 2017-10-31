@@ -19,10 +19,12 @@ package com.google.cloud.firestore;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.mockito.Mockito.doReturn;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.firestore.Transaction.Function;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
@@ -68,6 +70,13 @@ public class CollectionReferenceTest {
     assertEquals("doc", documentReference.getId());
     documentReference = collectionReference.document();
     assertEquals(20, documentReference.getId().length());
+
+    try {
+      collectionReference.document("");
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertTrue(e.getMessage().endsWith("'path' must be a non-empty String"));
+    }
   }
 
   @Test

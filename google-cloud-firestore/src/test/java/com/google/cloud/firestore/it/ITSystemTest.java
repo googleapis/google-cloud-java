@@ -423,6 +423,7 @@ public class ITSystemTest {
                 }
               })
           .get();
+      fail();
     } catch (Exception e) {
       assertTrue(e.getMessage().endsWith("User exception"));
     }
