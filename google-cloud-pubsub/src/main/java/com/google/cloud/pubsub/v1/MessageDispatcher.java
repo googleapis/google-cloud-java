@@ -58,7 +58,7 @@ class MessageDispatcher {
 
   private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECONDS = 2;
   @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
-  private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
+  static final Duration MAX_ACK_DEADLINE = Duration.ofSeconds(600); // 10m
 
   private final ScheduledExecutorService executor;
   private final ScheduledExecutorService systemExecutor;
@@ -117,7 +117,8 @@ class MessageDispatcher {
       Instant possibleExtension = now.plus(Duration.ofSeconds(nextExtensionSeconds));
       Instant maxExtension = creation.plus(maxAckExtensionPeriod);
       expiration = possibleExtension.isBefore(maxExtension) ? possibleExtension : maxExtension;
-      nextExtensionSeconds = Math.min(2 * nextExtensionSeconds, MAX_ACK_DEADLINE_EXTENSION_SECS);
+      nextExtensionSeconds =
+          Math.min(2 * nextExtensionSeconds, (int) (MAX_ACK_DEADLINE.getSeconds()));
     }
 
     @Override
@@ -256,7 +257,7 @@ class MessageDispatcher {
     outstandingAckHandlers = new PriorityQueue<>();
     pendingAcks = new HashSet<>();
     pendingNacks = new HashSet<>();
-    // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
+    // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE.getSeconds()
     this.ackLatencyDistribution = ackLatencyDistribution;
     alarmsLock = new ReentrantLock();
     nextAckDeadlineExtensionAlarmTime = Instant.ofEpochMilli(Long.MAX_VALUE);
@@ -278,8 +279,8 @@ class MessageDispatcher {
     processOutstandingAckOperations();
   }
 
-  public void setMessageDeadlineSeconds(int messageDeadlineSeconds) {
-    this.messageDeadlineSeconds.set(messageDeadlineSeconds);
+  public void setMessageDeadline(Duration dur) {
+    this.messageDeadlineSeconds.set((int) (dur.getSeconds()));
   }
 
   public int getMessageDeadlineSeconds() {
