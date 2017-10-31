@@ -2184,7 +2184,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of getting the ACL entry for an entity on a bucket.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
-   * Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers());
+   * BucketSourceOption userProjectOption = BucketSourceOption.userProject("myProject");
+   * Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers(), userProjectOption);
    * }</pre>
    *
    * <p>Example of getting the ACL entry for a specific user on a bucket.
@@ -2225,7 +2226,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of deleting the ACL entry for an entity on a bucket.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
-   * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers());
+   * BucketSourceOption userProject = BucketSourceOption.userProject("myProject");
+   * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers(), userProject);
    * if (deleted) {
    *   // the acl entry was deleted
    * } else {
@@ -2263,7 +2265,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of creating a new ACL entry on a bucket.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
-   * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
+   * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER),
+   *     BucketSourceOption.userProject("myProject"));
    * }</pre>
    *
    * @throws StorageException upon failure
@@ -2289,7 +2292,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of updating a new ACL entry on a bucket.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
-   * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
+   * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER),
+   *     BucketSourceOption.userProject("myProject"));
    * }</pre>
    *
    * @throws StorageException upon failure
@@ -2315,7 +2319,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of listing the ACL entries for a blob.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
-   * List<Acl> acls = storage.listAcls(bucketName);
+   * List<Acl> acls = storage.listAcls(bucketName, BucketSourceOption.userProject("myProject"));
    * for (Acl acl : acls) {
    *   // do something with ACL entry
    * }
