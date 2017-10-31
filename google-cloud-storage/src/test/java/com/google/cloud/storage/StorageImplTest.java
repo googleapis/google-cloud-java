@@ -2072,7 +2072,7 @@ public class StorageImplTest {
 
   @Test
   public void testGetIamPolicy() {
-    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
+    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1, EMPTY_RPC_OPTIONS)).andReturn(API_POLICY1);
     EasyMock.replay(storageRpcMock);
     initializeService();
     assertEquals(LIB_POLICY1, storage.getIamPolicy(BUCKET_NAME1));
@@ -2124,11 +2124,12 @@ public class StorageImplTest {
             .setEtag(POLICY_ETAG2)
             .build();
 
-    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
+    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1, EMPTY_RPC_OPTIONS)).andReturn(API_POLICY1);
     EasyMock.expect(
         storageRpcMock.setIamPolicy(
             EasyMock.eq(BUCKET_NAME1),
-            eqApiPolicy(preCommitApiPolicy)))
+            eqApiPolicy(preCommitApiPolicy),
+            EasyMock.eq(EMPTY_RPC_OPTIONS)))
         .andReturn(postCommitApiPolicy);
     EasyMock.replay(storageRpcMock);
     initializeService();

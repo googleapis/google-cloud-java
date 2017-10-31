@@ -1377,16 +1377,35 @@ public class ITStorageTest {
 
   @Test
   public void testBucketAcl() {
-    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers()));
-    assertFalse(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    testBucketAclRequesterPays(true);
+    testBucketAclRequesterPays(false);
+  }
+
+  private void testBucketAclRequesterPays(boolean requesterPays) {
+    if (requesterPays) {
+      Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+      assertNull(remoteBucket.requesterPays());
+      remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+      Bucket updatedBucket = storage.update(remoteBucket);
+      assertTrue(updatedBucket.requesterPays());
+    }
+
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+
+    Storage.BucketSourceOption[] bucketOptions = requesterPays
+        ? new Storage.BucketSourceOption[] {Storage.BucketSourceOption.userProject(projectId)}
+        : new Storage.BucketSourceOption[] {};
+
+    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
+    assertFalse(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
     Acl acl = Acl.of(User.ofAllAuthenticatedUsers(), Role.READER);
-    assertNotNull(storage.createAcl(BUCKET, acl));
-    Acl updatedAcl = storage.updateAcl(BUCKET, acl.toBuilder().setRole(Role.WRITER).build());
+    assertNotNull(storage.createAcl(BUCKET, acl, bucketOptions));
+    Acl updatedAcl = storage.updateAcl(BUCKET, acl.toBuilder().setRole(Role.WRITER).build(), bucketOptions);
     assertEquals(Role.WRITER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(storage.listAcls(BUCKET));
+    Set<Acl> acls = Sets.newHashSet(storage.listAcls(BUCKET, bucketOptions));
     assertTrue(acls.contains(updatedAcl));
-    assertTrue(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
-    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    assertTrue(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
+    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
   }
 
   @Test
@@ -1472,7 +1491,24 @@ public class ITStorageTest {
 
   @Test
   public void testBucketPolicy() {
+    testBucketPolicyRequesterPays(true);
+    testBucketPolicyRequesterPays(false);
+  }
+
+  private void testBucketPolicyRequesterPays(boolean requesterPays) {
+    if (requesterPays) {
+      Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+      assertNull(remoteBucket.requesterPays());
+      remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+      Bucket updatedBucket = storage.update(remoteBucket);
+      assertTrue(updatedBucket.requesterPays());
+    }
+
     String projectId = remoteStorageHelper.getOptions().getProjectId();
+
+    Storage.BucketSourceOption[] bucketOptions = requesterPays
+        ? new Storage.BucketSourceOption[] {Storage.BucketSourceOption.userProject(projectId)}
+        : new Storage.BucketSourceOption[] {};
     Identity projectOwner = Identity.projectOwner(projectId);
     Identity projectEditor = Identity.projectEditor(projectId);
     Identity projectViewer = Identity.projectViewer(projectId);
@@ -1489,7 +1525,7 @@ public class ITStorageTest {
             StorageRoles.legacyObjectReader(), newHashSet(Identity.allUsers()));
 
     // Validate getting policy.
-    Policy currentPolicy = storage.getIamPolicy(BUCKET);
+    Policy currentPolicy = storage.getIamPolicy(BUCKET, bucketOptions);
     assertEquals(bindingsWithoutPublicRead, currentPolicy.getBindings());
 
     // Validate updating policy.
@@ -1498,14 +1534,16 @@ public class ITStorageTest {
             BUCKET,
             currentPolicy.toBuilder()
                 .addIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
-                .build());
+                .build(),
+            bucketOptions);
     assertEquals(bindingsWithPublicRead, updatedPolicy.getBindings());
     Policy revertedPolicy =
         storage.setIamPolicy(
             BUCKET,
             updatedPolicy.toBuilder()
                 .removeIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
-                .build());
+                .build(),
+            bucketOptions);
     assertEquals(bindingsWithoutPublicRead, revertedPolicy.getBindings());
 
     // Validate testing permissions.
@@ -1514,21 +1552,8 @@ public class ITStorageTest {
         expectedPermissions,
         storage.testIamPermissions(
             BUCKET,
-            ImmutableList.of("storage.buckets.getIamPolicy", "storage.buckets.setIamPolicy")));
-
-    // Validate testing permissions on requester pays bucket.
-    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
-    assertNull(remoteBucket.requesterPays());
-    remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
-    Bucket updatedBucket = storage.update(remoteBucket);
-    assertTrue(updatedBucket.requesterPays());
-    assertEquals(
-        expectedPermissions,
-        storage.testIamPermissions(
-            BUCKET,
             ImmutableList.of("storage.buckets.getIamPolicy", "storage.buckets.setIamPolicy"),
-            Storage.BucketSourceOption.userProject(projectId)
-            ));
+            bucketOptions));
   }
 
   @Test

@@ -2196,7 +2196,47 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
+  Acl getAcl(String bucket, Entity entity, BucketSourceOption... options);
+
+  /**
+   * Returns the ACL entry for the specified entity on the specified bucket or {@code null} if not
+   * found.
+   *
+   * <p>Example of getting the ACL entry for an entity on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers());
+   * }</pre>
+   *
+   * <p>Example of getting the ACL entry for a specific user on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String userEmail = "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com";
+   * Acl acl = storage.getAcl(bucketName, new User(userEmail));
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
   Acl getAcl(String bucket, Entity entity);
+
+  /**
+   * Deletes the ACL entry for the specified entity on the specified bucket.
+   *
+   * <p>Example of deleting the ACL entry for an entity on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers());
+   * if (deleted) {
+   *   // the acl entry was deleted
+   * } else {
+   *   // the acl entry was not found
+   * }
+   * }</pre>
+   *
+   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  boolean deleteAcl(String bucket, Entity entity, BucketSourceOption... options);
 
   /**
    * Deletes the ACL entry for the specified entity on the specified bucket.
@@ -2228,6 +2268,19 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
+  Acl createAcl(String bucket, Acl acl, BucketSourceOption... options);
+
+  /**
+   * Creates a new ACL entry on the specified bucket.
+   *
+   * <p>Example of creating a new ACL entry on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
   Acl createAcl(String bucket, Acl acl);
 
   /**
@@ -2241,7 +2294,36 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
+  Acl updateAcl(String bucket, Acl acl, BucketSourceOption... options);
+
+  /**
+   * Updates an ACL entry on the specified bucket.
+   *
+   * <p>Example of updating a new ACL entry on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
   Acl updateAcl(String bucket, Acl acl);
+
+  /**
+   * Lists the ACL entries for the provided bucket.
+   *
+   * <p>Example of listing the ACL entries for a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * List<Acl> acls = storage.listAcls(bucketName);
+   * for (Acl acl : acls) {
+   *   // do something with ACL entry
+   * }
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  List<Acl> listAcls(String bucket, BucketSourceOption... options);
 
   /**
    * Lists the ACL entries for the provided bucket.
@@ -2472,7 +2554,7 @@ public interface Storage extends Service<StorageOptions> {
    */
   @BetaApi
   @GcpLaunchStage.Alpha
-  Policy getIamPolicy(String bucket);
+  Policy getIamPolicy(String bucket, BucketSourceOption... options);
 
   /**
    * Updates the IAM policy on the specified bucket.
@@ -2494,7 +2576,7 @@ public interface Storage extends Service<StorageOptions> {
    */
   @BetaApi
   @GcpLaunchStage.Alpha
-  Policy setIamPolicy(String bucket, Policy policy);
+  Policy setIamPolicy(String bucket, Policy policy, BucketSourceOption... options);
 
   /**
    * Tests whether the caller holds the permissions on the specified bucket. Returns a list of
