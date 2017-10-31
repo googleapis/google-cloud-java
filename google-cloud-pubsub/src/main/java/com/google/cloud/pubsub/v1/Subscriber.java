@@ -182,7 +182,7 @@ public class Subscriber extends AbstractApiService {
     credentialsProvider = builder.credentialsProvider;
 
     numChannels = builder.parallelPullCount;
-    channels = new ArrayList(numChannels);
+    channels = new ArrayList<>(numChannels);
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
     pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
     useStreaming = builder.useStreaming;
