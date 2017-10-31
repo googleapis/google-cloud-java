@@ -30,7 +30,7 @@
  *
  * <pre>
  * <code>
- * try (TraceServiceClient traceServiceClient = TraceServiceClient.of()) {
+ * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
  *   String projectId = "";
  *   Traces traces = Traces.newBuilder().build();
  *   traceServiceClient.patchTraces(projectId, traces);

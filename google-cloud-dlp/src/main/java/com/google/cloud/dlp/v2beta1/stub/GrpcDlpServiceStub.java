@@ -162,23 +162,11 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   private final UnaryCallable<ListRootCategoriesRequest, ListRootCategoriesResponse>
       listRootCategoriesCallable;
 
-  /** @deprecated Use of(DlpServiceSettings) instead. */
-  @Deprecated
   public static final GrpcDlpServiceStub create(DlpServiceSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcDlpServiceStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcDlpServiceStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcDlpServiceStub of(DlpServiceSettings settings) throws IOException {
-    return new GrpcDlpServiceStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcDlpServiceStub of(ClientContext clientContext) throws IOException {
     return new GrpcDlpServiceStub(DlpServiceSettings.newBuilder().build(), clientContext);
   }
 
@@ -189,7 +177,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
    */
   protected GrpcDlpServiceStub(DlpServiceSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.of(clientContext);
+    this.operationsStub = GrpcOperationsStub.create(clientContext);
 
     GrpcCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
         deidentifyContentTransportSettings =

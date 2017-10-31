@@ -62,9 +62,9 @@ public class VideoIntelligenceServiceClientTest {
     VideoIntelligenceServiceSettings settings =
         VideoIntelligenceServiceSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(NoCredentialsProvider.of())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = VideoIntelligenceServiceClient.of(settings);
+    client = VideoIntelligenceServiceClient.create(settings);
   }
 
   @After

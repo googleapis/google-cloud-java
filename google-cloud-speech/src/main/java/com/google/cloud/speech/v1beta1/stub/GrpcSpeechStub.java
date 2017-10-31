@@ -91,23 +91,11 @@ public class GrpcSpeechStub extends SpeechStub {
   private final BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable;
 
-  /** @deprecated Use of(SpeechSettings) instead. */
-  @Deprecated
   public static final GrpcSpeechStub create(SpeechSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcSpeechStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcSpeechStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcSpeechStub of(SpeechSettings settings) throws IOException {
-    return new GrpcSpeechStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcSpeechStub of(ClientContext clientContext) throws IOException {
     return new GrpcSpeechStub(SpeechSettings.newBuilder().build(), clientContext);
   }
 
@@ -117,7 +105,7 @@ public class GrpcSpeechStub extends SpeechStub {
    */
   protected GrpcSpeechStub(SpeechSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.of(clientContext);
+    this.operationsStub = GrpcOperationsStub.create(clientContext);
 
     GrpcCallSettings<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeTransportSettings =
         GrpcCallSettings.<SyncRecognizeRequest, SyncRecognizeResponse>newBuilder()

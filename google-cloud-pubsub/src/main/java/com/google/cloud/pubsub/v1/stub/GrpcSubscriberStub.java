@@ -254,24 +254,12 @@ public class GrpcSubscriberStub extends SubscriberStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
-  /** @deprecated Use of(SubscriptionAdminSettings) instead. */
-  @Deprecated
   public static final GrpcSubscriberStub create(SubscriptionAdminSettings settings)
       throws IOException {
-    return of(settings);
+    return new GrpcSubscriberStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcSubscriberStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcSubscriberStub of(SubscriptionAdminSettings settings) throws IOException {
-    return new GrpcSubscriberStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcSubscriberStub of(ClientContext clientContext) throws IOException {
     return new GrpcSubscriberStub(SubscriptionAdminSettings.newBuilder().build(), clientContext);
   }
 

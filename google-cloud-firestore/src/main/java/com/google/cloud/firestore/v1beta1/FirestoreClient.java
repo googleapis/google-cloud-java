@@ -76,7 +76,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+ * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
  *   Document document = Document.newBuilder().build();
  *   DocumentMask updateMask = DocumentMask.newBuilder().build();
  *   Document response = firestoreClient.updateDocument(document, updateMask);
@@ -107,8 +107,8 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of FirestoreSettings to of(). For
- * example:
+ * <p>This class can be customized by passing in a custom instance of FirestoreSettings to create().
+ * For example:
  *
  * <p>To customize credentials:
  *
@@ -116,10 +116,10 @@ import javax.annotation.Generated;
  * <code>
  * FirestoreSettings firestoreSettings =
  *     FirestoreSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * FirestoreClient firestoreClient =
- *     FirestoreClient.of(firestoreSettings);
+ *     FirestoreClient.create(firestoreSettings);
  * </code>
  * </pre>
  *
@@ -134,7 +134,7 @@ import javax.annotation.Generated;
  *             .build())
  *         .build();
  * FirestoreClient firestoreClient =
- *     FirestoreClient.of(firestoreSettings);
+ *     FirestoreClient.create(firestoreSettings);
  * </code>
  * </pre>
  */
@@ -275,48 +275,16 @@ public class FirestoreClient implements BackgroundResource {
     return ANY_PATH_PATH_TEMPLATE.parse(anyPathName).get("any_path");
   }
 
-  /**
-   * Constructs an instance of FirestoreClient with default settings.
-   *
-   * @deprecated Use of() instead.
-   */
-  @Deprecated
-  public static final FirestoreClient create() throws IOException {
-    return of();
-  }
-
   /** Constructs an instance of FirestoreClient with default settings. */
-  public static final FirestoreClient of() throws IOException {
-    return of(FirestoreSettings.newBuilder().build());
+  public static final FirestoreClient create() throws IOException {
+    return create(FirestoreSettings.newBuilder().build());
   }
 
   /**
    * Constructs an instance of FirestoreClient, using the given settings. The channels are created
    * based on the settings passed in, or defaults for any settings that are not set.
-   *
-   * @deprecated Use of(FirestoreSettings) instead.
    */
-  @Deprecated
   public static final FirestoreClient create(FirestoreSettings settings) throws IOException {
-    return of(settings);
-  }
-
-  /**
-   * Constructs an instance of FirestoreClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use FirestoreSettings}.
-   *
-   * @deprecated Use of(FirestoreStub) instead.
-   */
-  @Deprecated
-  public static final FirestoreClient create(FirestoreStub stub) {
-    return of(stub);
-  }
-
-  /**
-   * Constructs an instance of FirestoreClient, using the given settings. The channels are created
-   * based on the settings passed in, or defaults for any settings that are not set.
-   */
-  public static final FirestoreClient of(FirestoreSettings settings) throws IOException {
     return new FirestoreClient(settings);
   }
 
@@ -325,7 +293,7 @@ public class FirestoreClient implements BackgroundResource {
    * advanced usage - prefer to use FirestoreSettings}.
    */
   @BetaApi
-  public static final FirestoreClient of(FirestoreStub stub) {
+  public static final FirestoreClient create(FirestoreStub stub) {
     return new FirestoreClient(stub);
   }
 
@@ -359,7 +327,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedName = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   GetDocumentRequest request = GetDocumentRequest.newBuilder()
    *     .setName(formattedName)
@@ -382,7 +350,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedName = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   GetDocumentRequest request = GetDocumentRequest.newBuilder()
    *     .setName(formattedName)
@@ -404,7 +372,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   String collectionId = "";
    *   ListDocumentsRequest request = ListDocumentsRequest.newBuilder()
@@ -431,7 +399,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   String collectionId = "";
    *   ListDocumentsRequest request = ListDocumentsRequest.newBuilder()
@@ -458,7 +426,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   String collectionId = "";
    *   ListDocumentsRequest request = ListDocumentsRequest.newBuilder()
@@ -491,7 +459,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   String collectionId = "";
    *   String documentId = "";
@@ -520,7 +488,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   String collectionId = "";
    *   String documentId = "";
@@ -548,7 +516,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   DocumentMask updateMask = DocumentMask.newBuilder().build();
    *   Document response = firestoreClient.updateDocument(document, updateMask);
@@ -577,7 +545,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   DocumentMask updateMask = DocumentMask.newBuilder().build();
    *   UpdateDocumentRequest request = UpdateDocumentRequest.newBuilder()
@@ -602,7 +570,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   DocumentMask updateMask = DocumentMask.newBuilder().build();
    *   UpdateDocumentRequest request = UpdateDocumentRequest.newBuilder()
@@ -626,7 +594,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedName = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   firestoreClient.deleteDocument(formattedName);
    * }
@@ -649,7 +617,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedName = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   DeleteDocumentRequest request = DeleteDocumentRequest.newBuilder()
    *     .setName(formattedName)
@@ -672,7 +640,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedName = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   DeleteDocumentRequest request = DeleteDocumentRequest.newBuilder()
    *     .setName(formattedName)
@@ -697,7 +665,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   ApiStreamObserver&lt;BatchGetDocumentsResponse&gt; responseObserver =
    *       new ApiStreamObserver&lt;BatchGetDocumentsResponse&gt;() {
    *         {@literal @}Override
@@ -739,7 +707,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   BeginTransactionResponse response = firestoreClient.beginTransaction(formattedDatabase);
    * }
@@ -763,7 +731,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   BeginTransactionRequest request = BeginTransactionRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
@@ -786,7 +754,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   BeginTransactionRequest request = BeginTransactionRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
@@ -809,7 +777,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   List&lt;Write&gt; writes = new ArrayList&lt;&gt;();
    *   CommitResponse response = firestoreClient.commit(formattedDatabase, writes);
@@ -836,7 +804,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   List&lt;Write&gt; writes = new ArrayList&lt;&gt;();
    *   CommitRequest request = CommitRequest.newBuilder()
@@ -861,7 +829,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   List&lt;Write&gt; writes = new ArrayList&lt;&gt;();
    *   CommitRequest request = CommitRequest.newBuilder()
@@ -885,7 +853,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   ByteString transaction = ByteString.copyFromUtf8("");
    *   firestoreClient.rollback(formattedDatabase, transaction);
@@ -911,7 +879,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   ByteString transaction = ByteString.copyFromUtf8("");
    *   RollbackRequest request = RollbackRequest.newBuilder()
@@ -936,7 +904,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
    *   ByteString transaction = ByteString.copyFromUtf8("");
    *   RollbackRequest request = RollbackRequest.newBuilder()
@@ -960,7 +928,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   ApiStreamObserver&lt;RunQueryResponse&gt; responseObserver =
    *       new ApiStreamObserver&lt;RunQueryResponse&gt;() {
    *         {@literal @}Override
@@ -999,7 +967,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   ApiStreamObserver&lt;WriteResponse&gt; responseObserver =
    *       new ApiStreamObserver&lt;WriteResponse&gt;() {
    *         {@literal @}Override
@@ -1039,7 +1007,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   ApiStreamObserver&lt;ListenResponse&gt; responseObserver =
    *       new ApiStreamObserver&lt;ListenResponse&gt;() {
    *         {@literal @}Override
@@ -1079,7 +1047,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   for (String element : firestoreClient.listCollectionIds(formattedParent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1106,7 +1074,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   ListCollectionIdsRequest request = ListCollectionIdsRequest.newBuilder()
    *     .setParent(formattedParent)
@@ -1131,7 +1099,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   ListCollectionIdsRequest request = ListCollectionIdsRequest.newBuilder()
    *     .setParent(formattedParent)
@@ -1156,7 +1124,7 @@ public class FirestoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   ListCollectionIdsRequest request = ListCollectionIdsRequest.newBuilder()
    *     .setParent(formattedParent)

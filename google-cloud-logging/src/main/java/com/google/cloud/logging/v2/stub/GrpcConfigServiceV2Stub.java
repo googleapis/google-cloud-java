@@ -155,24 +155,12 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   private final UnaryCallable<UpdateExclusionRequest, LogExclusion> updateExclusionCallable;
   private final UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable;
 
-  /** @deprecated Use of(ConfigSettings) instead. */
-  @Deprecated
   public static final GrpcConfigServiceV2Stub create(ConfigSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcConfigServiceV2Stub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcConfigServiceV2Stub create(ClientContext clientContext)
       throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcConfigServiceV2Stub of(ConfigSettings settings) throws IOException {
-    return new GrpcConfigServiceV2Stub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcConfigServiceV2Stub of(ClientContext clientContext) throws IOException {
     return new GrpcConfigServiceV2Stub(ConfigSettings.newBuilder().build(), clientContext);
   }
 

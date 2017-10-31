@@ -129,7 +129,7 @@ public class TraceServiceSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcTraceServiceStub.of(this);
+      return GrpcTraceServiceStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -273,7 +273,7 @@ public class TraceServiceSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListTracesResponse> futureResponse) {
               PageContext<ListTracesRequest, ListTracesResponse, Trace> pageContext =
-                  PageContext.of(callable, LIST_TRACES_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_TRACES_PAGE_STR_DESC, request, context);
               return ListTracesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };

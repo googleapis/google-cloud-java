@@ -49,7 +49,7 @@ public class TopicAdminClientSnippets {
   /** Example of creating a topic. */
   public Topic createTopic(String topicId) throws Exception {
     // [START pubsub_create_topic]
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       // projectId <=  unique project identifier, eg. "my-project-id"
       // topicId <= "my-topic-id"
       TopicName topicName = TopicName.create(projectId, topicId);
@@ -62,7 +62,7 @@ public class TopicAdminClientSnippets {
   /** Example of listing topics.  */
   public ListTopicsPagedResponse listTopics() throws Exception {
     // [START pubsub_list_topics]
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       ListTopicsRequest listTopicsRequest =
           ListTopicsRequest.newBuilder()
               .setProjectWithProjectName(ProjectName.create(projectId))
@@ -81,7 +81,7 @@ public class TopicAdminClientSnippets {
   public ListTopicSubscriptionsPagedResponse listTopicSubscriptions(String topicId)
       throws Exception {
     // [START pubsub_list_topic_subscriptions]
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
       ListTopicSubscriptionsRequest request =
           ListTopicSubscriptionsRequest.newBuilder()
@@ -101,7 +101,7 @@ public class TopicAdminClientSnippets {
   /** Example of deleting a topic. */
   public TopicName deleteTopic(String topicId) throws Exception {
     // [START pubsub_delete_topic]
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
       topicAdminClient.deleteTopic(topicName);
       return topicName;
@@ -112,7 +112,7 @@ public class TopicAdminClientSnippets {
   /** Example of getting a topic policy. */
   public Policy getTopicPolicy(String topicId) throws Exception {
     // [START pubsub_get_topic_policy]
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
       Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
       if (policy == null) {
@@ -126,7 +126,7 @@ public class TopicAdminClientSnippets {
   /** Example of replacing a topic policy. */
   public Policy replaceTopicPolicy(String topicId) throws Exception {
     // [START pubsub_set_topic_policy]
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       String topicName = TopicName.create(projectId, topicId).toString();
       Policy policy = topicAdminClient.getIamPolicy(topicName);
       // add role -> members binding
@@ -147,7 +147,7 @@ public class TopicAdminClientSnippets {
    * Only viewer, editor or admin/owner can view results of pubsub.topics.get  */
   public TestIamPermissionsResponse testTopicPermissions(String topicId) throws Exception {
     // [START pubsub_test_topic_permissions]
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       List<String> permissions = new LinkedList<>();
       permissions.add("pubsub.topics.get");
       TopicName topicName = TopicName.create(projectId, topicId);
@@ -161,7 +161,7 @@ public class TopicAdminClientSnippets {
   /** Example of getting a topic. */
   public Topic getTopic(String topicId) throws Exception {
     // [START pubsub_get_topic]
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       TopicName topicName = TopicName.create(projectId, topicId);
       Topic topic = topicAdminClient.getTopic(topicName);
       return topic;

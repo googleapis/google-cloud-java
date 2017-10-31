@@ -27,7 +27,7 @@
  *
  * <pre>
  * <code>
- * try (SpeechClient speechClient = SpeechClient.of()) {
+ * try (SpeechClient speechClient = SpeechClient.create()) {
  *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
  *   int sampleRate = 44100;
  *   RecognitionConfig config = RecognitionConfig.newBuilder()

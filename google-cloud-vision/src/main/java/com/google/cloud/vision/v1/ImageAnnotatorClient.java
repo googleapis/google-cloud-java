@@ -35,7 +35,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.of()) {
+ * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
  *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
  *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
  * }
@@ -66,7 +66,7 @@ import javax.annotation.Generated;
  * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of ImageAnnotatorSettings to
- * of(). For example:
+ * create(). For example:
  *
  * <p>To customize credentials:
  *
@@ -74,10 +74,10 @@ import javax.annotation.Generated;
  * <code>
  * ImageAnnotatorSettings imageAnnotatorSettings =
  *     ImageAnnotatorSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ImageAnnotatorClient imageAnnotatorClient =
- *     ImageAnnotatorClient.of(imageAnnotatorSettings);
+ *     ImageAnnotatorClient.create(imageAnnotatorSettings);
  * </code>
  * </pre>
  *
@@ -92,7 +92,7 @@ import javax.annotation.Generated;
  *             .build())
  *         .build();
  * ImageAnnotatorClient imageAnnotatorClient =
- *     ImageAnnotatorClient.of(imageAnnotatorSettings);
+ *     ImageAnnotatorClient.create(imageAnnotatorSettings);
  * </code>
  * </pre>
  */
@@ -102,49 +102,17 @@ public class ImageAnnotatorClient implements BackgroundResource {
   private final ImageAnnotatorSettings settings;
   private final ImageAnnotatorStub stub;
 
-  /**
-   * Constructs an instance of ImageAnnotatorClient with default settings.
-   *
-   * @deprecated Use of() instead.
-   */
-  @Deprecated
-  public static final ImageAnnotatorClient create() throws IOException {
-    return of();
-  }
-
   /** Constructs an instance of ImageAnnotatorClient with default settings. */
-  public static final ImageAnnotatorClient of() throws IOException {
-    return of(ImageAnnotatorSettings.newBuilder().build());
+  public static final ImageAnnotatorClient create() throws IOException {
+    return create(ImageAnnotatorSettings.newBuilder().build());
   }
 
   /**
    * Constructs an instance of ImageAnnotatorClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
-   *
-   * @deprecated Use of(ImageAnnotatorSettings) instead.
    */
-  @Deprecated
   public static final ImageAnnotatorClient create(ImageAnnotatorSettings settings)
       throws IOException {
-    return of(settings);
-  }
-
-  /**
-   * Constructs an instance of ImageAnnotatorClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use ImageAnnotatorSettings}.
-   *
-   * @deprecated Use of(ImageAnnotatorStub) instead.
-   */
-  @Deprecated
-  public static final ImageAnnotatorClient create(ImageAnnotatorStub stub) {
-    return of(stub);
-  }
-
-  /**
-   * Constructs an instance of ImageAnnotatorClient, using the given settings. The channels are
-   * created based on the settings passed in, or defaults for any settings that are not set.
-   */
-  public static final ImageAnnotatorClient of(ImageAnnotatorSettings settings) throws IOException {
     return new ImageAnnotatorClient(settings);
   }
 
@@ -153,7 +121,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * for advanced usage - prefer to use ImageAnnotatorSettings}.
    */
   @BetaApi
-  public static final ImageAnnotatorClient of(ImageAnnotatorStub stub) {
+  public static final ImageAnnotatorClient create(ImageAnnotatorStub stub) {
     return new ImageAnnotatorClient(stub);
   }
 
@@ -188,7 +156,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.of()) {
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
    *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
    * }
@@ -212,7 +180,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.of()) {
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
    *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
    *     .addAllRequests(requests)
@@ -236,7 +204,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.of()) {
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
    *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
    *     .addAllRequests(requests)

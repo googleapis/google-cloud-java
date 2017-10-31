@@ -28,7 +28,7 @@
  *
  * <pre>
  * <code>
- * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+ * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
  *   Document document = Document.newBuilder().build();
  *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
  * }

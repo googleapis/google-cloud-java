@@ -134,7 +134,7 @@ public class ErrorStatsServiceSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcErrorStatsServiceStub.of(this);
+      return GrpcErrorStatsServiceStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -314,7 +314,8 @@ public class ErrorStatsServiceSettings extends ClientSettings {
                 ApiFuture<ListGroupStatsResponse> futureResponse) {
               PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
                   pageContext =
-                      PageContext.of(callable, LIST_GROUP_STATS_PAGE_STR_DESC, request, context);
+                      PageContext.create(
+                          callable, LIST_GROUP_STATS_PAGE_STR_DESC, request, context);
               return ListGroupStatsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -331,7 +332,7 @@ public class ErrorStatsServiceSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListEventsResponse> futureResponse) {
               PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> pageContext =
-                  PageContext.of(callable, LIST_EVENTS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_EVENTS_PAGE_STR_DESC, request, context);
               return ListEventsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };

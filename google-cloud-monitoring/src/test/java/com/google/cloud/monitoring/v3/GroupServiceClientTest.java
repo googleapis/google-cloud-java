@@ -74,9 +74,9 @@ public class GroupServiceClientTest {
     GroupServiceSettings settings =
         GroupServiceSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(NoCredentialsProvider.of())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = GroupServiceClient.of(settings);
+    client = GroupServiceClient.create(settings);
   }
 
   @After

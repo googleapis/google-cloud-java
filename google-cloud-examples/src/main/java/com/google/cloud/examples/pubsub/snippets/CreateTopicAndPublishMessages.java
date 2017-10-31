@@ -35,7 +35,7 @@ public class CreateTopicAndPublishMessages {
 
   public static void createTopic() throws Exception {
     TopicName topic = TopicName.create("my-project-id", "my-topic-id");
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.createTopic(topic);
     }
   }

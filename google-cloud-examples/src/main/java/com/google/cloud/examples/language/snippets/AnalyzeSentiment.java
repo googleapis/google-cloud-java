@@ -35,7 +35,7 @@ public class AnalyzeSentiment {
 
   public static void main(String... args) throws Exception {
     // Instantiates a client
-    LanguageServiceClient language = LanguageServiceClient.of();
+    LanguageServiceClient language = LanguageServiceClient.create();
 
     // The text to analyze
     String[] texts = {"I love this!", "I hate this!"};

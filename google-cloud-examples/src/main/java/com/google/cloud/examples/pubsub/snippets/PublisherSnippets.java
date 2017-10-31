@@ -136,7 +136,7 @@ public class PublisherSnippets {
     // [START pubsub_publisher_custom_credentials]
     // read service account credentials from file
     CredentialsProvider credentialsProvider =
-        FixedCredentialsProvider.of(
+        FixedCredentialsProvider.create(
             ServiceAccountCredentials.fromStream(new FileInputStream("credentials.json")));
 
     Publisher publisher = Publisher.newBuilder(topicName)

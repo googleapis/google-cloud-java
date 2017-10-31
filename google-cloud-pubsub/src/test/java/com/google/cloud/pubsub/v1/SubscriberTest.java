@@ -559,10 +559,10 @@ public class SubscriberTest {
 
   private Builder getTestSubscriberBuilder(MessageReceiver receiver) {
     return Subscriber.newBuilder(TEST_SUBSCRIPTION, receiver)
-        .setExecutorProvider(FixedExecutorProvider.of(fakeExecutor))
-        .setSystemExecutorProvider(FixedExecutorProvider.of(fakeExecutor))
-        .setChannelProvider(FixedTransportChannelProvider.of(GrpcTransportChannel.of(testChannel)))
-        .setCredentialsProvider(NoCredentialsProvider.of())
+        .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
+        .setSystemExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
+        .setChannelProvider(FixedTransportChannelProvider.create(GrpcTransportChannel.create(testChannel)))
+        .setCredentialsProvider(NoCredentialsProvider.create())
         .setClock(fakeExecutor.getClock());
   }
 

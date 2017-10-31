@@ -30,7 +30,7 @@
  *
  * <pre>
  * <code>
- * try (DlpServiceClient dlpServiceClient = DlpServiceClient.of()) {
+ * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
  *   DeidentifyConfig deidentifyConfig = DeidentifyConfig.newBuilder().build();
  *   InspectConfig inspectConfig = InspectConfig.newBuilder().build();
  *   List&lt;ContentItem&gt; items = new ArrayList&lt;&gt;();

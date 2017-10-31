@@ -55,8 +55,8 @@ public class ITPubSubTest {
 
   @BeforeClass
   public static void setupClass() throws Exception {
-    topicAdminClient = TopicAdminClient.of();
-    subscriptionAdminClient = SubscriptionAdminClient.of();
+    topicAdminClient = TopicAdminClient.create();
+    subscriptionAdminClient = SubscriptionAdminClient.create();
     projectId = ServiceOptions.getDefaultProjectId();
   }
 

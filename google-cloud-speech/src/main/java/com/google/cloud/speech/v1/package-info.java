@@ -27,7 +27,7 @@
  *
  * <pre>
  * <code>
- * try (SpeechClient speechClient = SpeechClient.of()) {
+ * try (SpeechClient speechClient = SpeechClient.create()) {
  *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
  *   int sampleRateHertz = 44100;
  *   String languageCode = "en-US";

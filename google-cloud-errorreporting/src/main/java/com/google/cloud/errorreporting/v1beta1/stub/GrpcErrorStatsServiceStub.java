@@ -88,26 +88,13 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
   private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
-  /** @deprecated Use of(ErrorStatsServiceSettings) instead. */
-  @Deprecated
   public static final GrpcErrorStatsServiceStub create(ErrorStatsServiceSettings settings)
       throws IOException {
-    return of(settings);
+    return new GrpcErrorStatsServiceStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcErrorStatsServiceStub create(ClientContext clientContext)
       throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcErrorStatsServiceStub of(ErrorStatsServiceSettings settings)
-      throws IOException {
-    return new GrpcErrorStatsServiceStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcErrorStatsServiceStub of(ClientContext clientContext) throws IOException {
     return new GrpcErrorStatsServiceStub(
         ErrorStatsServiceSettings.newBuilder().build(), clientContext);
   }

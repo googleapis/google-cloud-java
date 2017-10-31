@@ -194,7 +194,7 @@ public class DlpServiceSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcDlpServiceStub.of(this);
+      return GrpcDlpServiceStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -460,12 +460,13 @@ public class DlpServiceSettings extends ClientSettings {
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.of(RiskAnalysisOperationResult.class))
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  RiskAnalysisOperationResult.class))
           .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.of(
+              ProtoOperationTransformers.MetadataTransformer.create(
                   RiskAnalysisOperationMetadata.class))
           .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.of(
+              OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
                       .setInitialRetryDelay(Duration.ofMillis(20000L))
                       .setRetryDelayMultiplier(1.5)
@@ -484,11 +485,11 @@ public class DlpServiceSettings extends ClientSettings {
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.of(InspectOperationResult.class))
+              ProtoOperationTransformers.ResponseTransformer.create(InspectOperationResult.class))
           .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.of(InspectOperationMetadata.class))
+              ProtoOperationTransformers.MetadataTransformer.create(InspectOperationMetadata.class))
           .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.of(
+              OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
                       .setInitialRetryDelay(Duration.ofMillis(20000L))
                       .setRetryDelayMultiplier(1.5)

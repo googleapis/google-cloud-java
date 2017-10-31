@@ -30,7 +30,7 @@
  *
  * <pre>
  * <code>
- * try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
+ * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
  *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
  *   Topic response = topicAdminClient.createTopic(name);
  * }
@@ -48,7 +48,7 @@
  *
  * <pre>
  * <code>
- * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.of()) {
+ * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
  *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
  *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
  *   PushConfig pushConfig = PushConfig.newBuilder().build();

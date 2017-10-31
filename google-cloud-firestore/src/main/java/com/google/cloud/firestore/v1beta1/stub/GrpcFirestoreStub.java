@@ -201,23 +201,11 @@ public class GrpcFirestoreStub extends FirestoreStub {
   private final UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
       listCollectionIdsPagedCallable;
 
-  /** @deprecated Use of(FirestoreSettings) instead. */
-  @Deprecated
   public static final GrpcFirestoreStub create(FirestoreSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcFirestoreStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcFirestoreStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcFirestoreStub of(FirestoreSettings settings) throws IOException {
-    return new GrpcFirestoreStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcFirestoreStub of(ClientContext clientContext) throws IOException {
     return new GrpcFirestoreStub(FirestoreSettings.newBuilder().build(), clientContext);
   }
 

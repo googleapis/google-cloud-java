@@ -158,7 +158,7 @@ public class GroupServiceSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcGroupServiceStub.of(this);
+      return GrpcGroupServiceStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -341,7 +341,7 @@ public class GroupServiceSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListGroupsResponse> futureResponse) {
               PageContext<ListGroupsRequest, ListGroupsResponse, Group> pageContext =
-                  PageContext.of(callable, LIST_GROUPS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_GROUPS_PAGE_STR_DESC, request, context);
               return ListGroupsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -359,7 +359,8 @@ public class GroupServiceSettings extends ClientSettings {
                 ApiFuture<ListGroupMembersResponse> futureResponse) {
               PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
                   pageContext =
-                      PageContext.of(callable, LIST_GROUP_MEMBERS_PAGE_STR_DESC, request, context);
+                      PageContext.create(
+                          callable, LIST_GROUP_MEMBERS_PAGE_STR_DESC, request, context);
               return ListGroupMembersPagedResponse.createAsync(pageContext, futureResponse);
             }
           };

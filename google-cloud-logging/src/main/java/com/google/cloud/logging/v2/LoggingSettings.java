@@ -172,7 +172,7 @@ public class LoggingSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcLoggingServiceV2Stub.of(this);
+      return GrpcLoggingServiceV2Stub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -396,7 +396,7 @@ public class LoggingSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListLogEntriesResponse> futureResponse) {
               PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> pageContext =
-                  PageContext.of(callable, LIST_LOG_ENTRIES_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_LOG_ENTRIES_PAGE_STR_DESC, request, context);
               return ListLogEntriesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -421,7 +421,7 @@ public class LoggingSettings extends ClientSettings {
                       ListMonitoredResourceDescriptorsRequest,
                       ListMonitoredResourceDescriptorsResponse, MonitoredResourceDescriptor>
                   pageContext =
-                      PageContext.of(
+                      PageContext.create(
                           callable,
                           LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC,
                           request,
@@ -442,7 +442,7 @@ public class LoggingSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListLogsResponse> futureResponse) {
               PageContext<ListLogsRequest, ListLogsResponse, String> pageContext =
-                  PageContext.of(callable, LIST_LOGS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_LOGS_PAGE_STR_DESC, request, context);
               return ListLogsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };

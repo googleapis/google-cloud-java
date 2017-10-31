@@ -86,7 +86,7 @@ public class PublisherImplTest {
 
         @Override
         public TransportChannel getTransportChannel() throws IOException {
-          return GrpcTransportChannel.of(InProcessChannelBuilder.forName("test-server").build());
+          return GrpcTransportChannel.create(InProcessChannelBuilder.forName("test-server").build());
         }
 
         @Override
@@ -445,7 +445,7 @@ public class PublisherImplTest {
             .setDelayThreshold(Duration.ofMillis(11))
             .setElementCountThreshold(12L)
             .build());
-    builder.setCredentialsProvider(NoCredentialsProvider.of());
+    builder.setCredentialsProvider(NoCredentialsProvider.create());
     Publisher publisher = builder.build();
 
     assertEquals(TEST_TOPIC, publisher.getTopicName());
@@ -612,9 +612,9 @@ public class PublisherImplTest {
 
   private Builder getTestPublisherBuilder() {
     return Publisher.newBuilder(TEST_TOPIC)
-        .setExecutorProvider(FixedExecutorProvider.of(fakeExecutor))
+        .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setChannelProvider(TEST_CHANNEL_PROVIDER)
-        .setCredentialsProvider(NoCredentialsProvider.of())
+        .setCredentialsProvider(NoCredentialsProvider.create())
         .setLongRandom(
             new Publisher.LongRandom() {
               @Override

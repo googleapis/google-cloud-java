@@ -199,7 +199,7 @@ public class TopicAdminSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcPublisherStub.of(this);
+      return GrpcPublisherStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -388,7 +388,7 @@ public class TopicAdminSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListTopicsResponse> futureResponse) {
               PageContext<ListTopicsRequest, ListTopicsResponse, Topic> pageContext =
-                  PageContext.of(callable, LIST_TOPICS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_TOPICS_PAGE_STR_DESC, request, context);
               return ListTopicsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -409,7 +409,7 @@ public class TopicAdminSettings extends ClientSettings {
                 ApiFuture<ListTopicSubscriptionsResponse> futureResponse) {
               PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
                   pageContext =
-                      PageContext.of(
+                      PageContext.create(
                           callable, LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
               return ListTopicSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
             }

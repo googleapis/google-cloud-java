@@ -36,7 +36,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.of()) {
+ * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
  *   ProjectName projectName = ProjectName.create("[PROJECT]");
  *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
  *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
@@ -69,7 +69,7 @@ import javax.annotation.Generated;
  * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of ReportErrorsServiceSettings to
- * of(). For example:
+ * create(). For example:
  *
  * <p>To customize credentials:
  *
@@ -77,10 +77,10 @@ import javax.annotation.Generated;
  * <code>
  * ReportErrorsServiceSettings reportErrorsServiceSettings =
  *     ReportErrorsServiceSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ReportErrorsServiceClient reportErrorsServiceClient =
- *     ReportErrorsServiceClient.of(reportErrorsServiceSettings);
+ *     ReportErrorsServiceClient.create(reportErrorsServiceSettings);
  * </code>
  * </pre>
  *
@@ -95,7 +95,7 @@ import javax.annotation.Generated;
  *             .build())
  *         .build();
  * ReportErrorsServiceClient reportErrorsServiceClient =
- *     ReportErrorsServiceClient.of(reportErrorsServiceSettings);
+ *     ReportErrorsServiceClient.create(reportErrorsServiceSettings);
  * </code>
  * </pre>
  */
@@ -105,49 +105,16 @@ public class ReportErrorsServiceClient implements BackgroundResource {
   private final ReportErrorsServiceSettings settings;
   private final ReportErrorsServiceStub stub;
 
-  /**
-   * Constructs an instance of ReportErrorsServiceClient with default settings.
-   *
-   * @deprecated Use of() instead.
-   */
-  @Deprecated
-  public static final ReportErrorsServiceClient create() throws IOException {
-    return of();
-  }
-
   /** Constructs an instance of ReportErrorsServiceClient with default settings. */
-  public static final ReportErrorsServiceClient of() throws IOException {
-    return of(ReportErrorsServiceSettings.newBuilder().build());
+  public static final ReportErrorsServiceClient create() throws IOException {
+    return create(ReportErrorsServiceSettings.newBuilder().build());
   }
 
   /**
    * Constructs an instance of ReportErrorsServiceClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
-   *
-   * @deprecated Use of(ReportErrorsServiceSettings) instead.
    */
-  @Deprecated
   public static final ReportErrorsServiceClient create(ReportErrorsServiceSettings settings)
-      throws IOException {
-    return of(settings);
-  }
-
-  /**
-   * Constructs an instance of ReportErrorsServiceClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use ReportErrorsServiceSettings}.
-   *
-   * @deprecated Use of(ReportErrorsServiceStub) instead.
-   */
-  @Deprecated
-  public static final ReportErrorsServiceClient create(ReportErrorsServiceStub stub) {
-    return of(stub);
-  }
-
-  /**
-   * Constructs an instance of ReportErrorsServiceClient, using the given settings. The channels are
-   * created based on the settings passed in, or defaults for any settings that are not set.
-   */
-  public static final ReportErrorsServiceClient of(ReportErrorsServiceSettings settings)
       throws IOException {
     return new ReportErrorsServiceClient(settings);
   }
@@ -157,7 +124,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * This is for advanced usage - prefer to use ReportErrorsServiceSettings}.
    */
   @BetaApi
-  public static final ReportErrorsServiceClient of(ReportErrorsServiceStub stub) {
+  public static final ReportErrorsServiceClient create(ReportErrorsServiceStub stub) {
     return new ReportErrorsServiceClient(stub);
   }
 
@@ -199,7 +166,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.of()) {
+   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
@@ -237,7 +204,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.of()) {
+   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
@@ -269,7 +236,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.of()) {
+   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()

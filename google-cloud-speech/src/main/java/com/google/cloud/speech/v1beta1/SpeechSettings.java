@@ -127,7 +127,7 @@ public class SpeechSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcSpeechStub.of(this);
+      return GrpcSpeechStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -322,11 +322,11 @@ public class SpeechSettings extends ClientSettings {
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.of(AsyncRecognizeResponse.class))
+              ProtoOperationTransformers.ResponseTransformer.create(AsyncRecognizeResponse.class))
           .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.of(AsyncRecognizeMetadata.class))
+              ProtoOperationTransformers.MetadataTransformer.create(AsyncRecognizeMetadata.class))
           .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.of(
+              OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
                       .setInitialRetryDelay(Duration.ofMillis(20000L))
                       .setRetryDelayMultiplier(1.5)

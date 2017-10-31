@@ -57,26 +57,13 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
   private final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable;
 
-  /** @deprecated Use of(ImageAnnotatorSettings) instead. */
-  @Deprecated
   public static final GrpcImageAnnotatorStub create(ImageAnnotatorSettings settings)
       throws IOException {
-    return of(settings);
+    return new GrpcImageAnnotatorStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcImageAnnotatorStub create(ClientContext clientContext)
       throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcImageAnnotatorStub of(ImageAnnotatorSettings settings)
-      throws IOException {
-    return new GrpcImageAnnotatorStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcImageAnnotatorStub of(ClientContext clientContext) throws IOException {
     return new GrpcImageAnnotatorStub(ImageAnnotatorSettings.newBuilder().build(), clientContext);
   }
 

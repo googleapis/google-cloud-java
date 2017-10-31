@@ -58,26 +58,12 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
   private final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventCallable;
 
-  /** @deprecated Use of(ReportErrorsServiceSettings) instead. */
-  @Deprecated
   public static final GrpcReportErrorsServiceStub create(ReportErrorsServiceSettings settings)
       throws IOException {
-    return of(settings);
+    return new GrpcReportErrorsServiceStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcReportErrorsServiceStub create(ClientContext clientContext)
-      throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcReportErrorsServiceStub of(ReportErrorsServiceSettings settings)
-      throws IOException {
-    return new GrpcReportErrorsServiceStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcReportErrorsServiceStub of(ClientContext clientContext)
       throws IOException {
     return new GrpcReportErrorsServiceStub(
         ReportErrorsServiceSettings.newBuilder().build(), clientContext);

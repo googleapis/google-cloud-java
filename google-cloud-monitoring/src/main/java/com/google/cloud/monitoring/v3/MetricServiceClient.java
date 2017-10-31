@@ -58,7 +58,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+ * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
  *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
  *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
  * }
@@ -88,8 +88,8 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of MetricServiceSettings to of().
- * For example:
+ * <p>This class can be customized by passing in a custom instance of MetricServiceSettings to
+ * create(). For example:
  *
  * <p>To customize credentials:
  *
@@ -97,10 +97,10 @@ import javax.annotation.Generated;
  * <code>
  * MetricServiceSettings metricServiceSettings =
  *     MetricServiceSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * MetricServiceClient metricServiceClient =
- *     MetricServiceClient.of(metricServiceSettings);
+ *     MetricServiceClient.create(metricServiceSettings);
  * </code>
  * </pre>
  *
@@ -115,7 +115,7 @@ import javax.annotation.Generated;
  *             .build())
  *         .build();
  * MetricServiceClient metricServiceClient =
- *     MetricServiceClient.of(metricServiceSettings);
+ *     MetricServiceClient.create(metricServiceSettings);
  * </code>
  * </pre>
  */
@@ -125,49 +125,17 @@ public class MetricServiceClient implements BackgroundResource {
   private final MetricServiceSettings settings;
   private final MetricServiceStub stub;
 
-  /**
-   * Constructs an instance of MetricServiceClient with default settings.
-   *
-   * @deprecated Use of() instead.
-   */
-  @Deprecated
-  public static final MetricServiceClient create() throws IOException {
-    return of();
-  }
-
   /** Constructs an instance of MetricServiceClient with default settings. */
-  public static final MetricServiceClient of() throws IOException {
-    return of(MetricServiceSettings.newBuilder().build());
+  public static final MetricServiceClient create() throws IOException {
+    return create(MetricServiceSettings.newBuilder().build());
   }
 
   /**
    * Constructs an instance of MetricServiceClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
-   *
-   * @deprecated Use of(MetricServiceSettings) instead.
    */
-  @Deprecated
   public static final MetricServiceClient create(MetricServiceSettings settings)
       throws IOException {
-    return of(settings);
-  }
-
-  /**
-   * Constructs an instance of MetricServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use MetricServiceSettings}.
-   *
-   * @deprecated Use of(MetricServiceStub) instead.
-   */
-  @Deprecated
-  public static final MetricServiceClient create(MetricServiceStub stub) {
-    return of(stub);
-  }
-
-  /**
-   * Constructs an instance of MetricServiceClient, using the given settings. The channels are
-   * created based on the settings passed in, or defaults for any settings that are not set.
-   */
-  public static final MetricServiceClient of(MetricServiceSettings settings) throws IOException {
     return new MetricServiceClient(settings);
   }
 
@@ -176,7 +144,7 @@ public class MetricServiceClient implements BackgroundResource {
    * for advanced usage - prefer to use MetricServiceSettings}.
    */
   @BetaApi
-  public static final MetricServiceClient of(MetricServiceStub stub) {
+  public static final MetricServiceClient create(MetricServiceStub stub) {
     return new MetricServiceClient(stub);
   }
 
@@ -212,7 +180,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   for (MonitoredResourceDescriptor element : metricServiceClient.listMonitoredResourceDescriptors(name).iterateAll()) {
    *     // doThingsWith(element);
@@ -239,7 +207,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
    *     .setNameWithProjectName(name)
@@ -266,7 +234,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
    *     .setNameWithProjectName(name)
@@ -293,7 +261,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
    *     .setNameWithProjectName(name)
@@ -327,7 +295,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
    *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
    * }
@@ -356,7 +324,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
    *   GetMonitoredResourceDescriptorRequest request = GetMonitoredResourceDescriptorRequest.newBuilder()
    *     .setNameWithMonitoredResourceDescriptorName(name)
@@ -381,7 +349,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
    *   GetMonitoredResourceDescriptorRequest request = GetMonitoredResourceDescriptorRequest.newBuilder()
    *     .setNameWithMonitoredResourceDescriptorName(name)
@@ -405,7 +373,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   for (MetricDescriptor element : metricServiceClient.listMetricDescriptors(name).iterateAll()) {
    *     // doThingsWith(element);
@@ -431,7 +399,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMetricDescriptorsRequest request = ListMetricDescriptorsRequest.newBuilder()
    *     .setNameWithProjectName(name)
@@ -458,7 +426,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMetricDescriptorsRequest request = ListMetricDescriptorsRequest.newBuilder()
    *     .setNameWithProjectName(name)
@@ -484,7 +452,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMetricDescriptorsRequest request = ListMetricDescriptorsRequest.newBuilder()
    *     .setNameWithProjectName(name)
@@ -516,7 +484,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   MetricDescriptor response = metricServiceClient.getMetricDescriptor(name);
    * }
@@ -541,7 +509,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   GetMetricDescriptorRequest request = GetMetricDescriptorRequest.newBuilder()
    *     .setNameWithMetricDescriptorName(name)
@@ -564,7 +532,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   GetMetricDescriptorRequest request = GetMetricDescriptorRequest.newBuilder()
    *     .setNameWithMetricDescriptorName(name)
@@ -588,7 +556,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
    *   MetricDescriptor response = metricServiceClient.createMetricDescriptor(name, metricDescriptor);
@@ -619,7 +587,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
    *   CreateMetricDescriptorRequest request = CreateMetricDescriptorRequest.newBuilder()
@@ -645,7 +613,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
    *   CreateMetricDescriptorRequest request = CreateMetricDescriptorRequest.newBuilder()
@@ -671,7 +639,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   metricServiceClient.deleteMetricDescriptor(name);
    * }
@@ -697,7 +665,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   DeleteMetricDescriptorRequest request = DeleteMetricDescriptorRequest.newBuilder()
    *     .setNameWithMetricDescriptorName(name)
@@ -721,7 +689,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   DeleteMetricDescriptorRequest request = DeleteMetricDescriptorRequest.newBuilder()
    *     .setNameWithMetricDescriptorName(name)
@@ -744,7 +712,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   String filter = "";
    *   TimeInterval interval = TimeInterval.newBuilder().build();
@@ -789,7 +757,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   String filter = "";
    *   TimeInterval interval = TimeInterval.newBuilder().build();
@@ -820,7 +788,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   String filter = "";
    *   TimeInterval interval = TimeInterval.newBuilder().build();
@@ -851,7 +819,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   String filter = "";
    *   TimeInterval interval = TimeInterval.newBuilder().build();
@@ -891,7 +859,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   List&lt;TimeSeries&gt; timeSeries = new ArrayList&lt;&gt;();
    *   metricServiceClient.createTimeSeries(name, timeSeries);
@@ -925,7 +893,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   List&lt;TimeSeries&gt; timeSeries = new ArrayList&lt;&gt;();
    *   CreateTimeSeriesRequest request = CreateTimeSeriesRequest.newBuilder()
@@ -952,7 +920,7 @@ public class MetricServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricServiceClient metricServiceClient = MetricServiceClient.of()) {
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.create("[PROJECT]");
    *   List&lt;TimeSeries&gt; timeSeries = new ArrayList&lt;&gt;();
    *   CreateTimeSeriesRequest request = CreateTimeSeriesRequest.newBuilder()

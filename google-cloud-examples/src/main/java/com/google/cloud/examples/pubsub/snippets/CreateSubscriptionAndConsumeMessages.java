@@ -36,7 +36,7 @@ public class CreateSubscriptionAndConsumeMessages {
     TopicName topic = TopicName.create("my-project-id", "my-topic-id");
     SubscriptionName subscription = SubscriptionName.create("my-project-id", "my-topic-id");
 
-    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.of()) {
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
     }
 

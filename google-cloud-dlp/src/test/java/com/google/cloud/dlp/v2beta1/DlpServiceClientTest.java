@@ -90,9 +90,9 @@ public class DlpServiceClientTest {
     DlpServiceSettings settings =
         DlpServiceSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(NoCredentialsProvider.of())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = DlpServiceClient.of(settings);
+    client = DlpServiceClient.create(settings);
   }
 
   @After

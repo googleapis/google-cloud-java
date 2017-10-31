@@ -34,7 +34,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+ * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
  *   Document document = Document.newBuilder().build();
  *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
  * }
@@ -66,7 +66,7 @@ import javax.annotation.Generated;
  * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of LanguageServiceSettings to
- * of(). For example:
+ * create(). For example:
  *
  * <p>To customize credentials:
  *
@@ -74,10 +74,10 @@ import javax.annotation.Generated;
  * <code>
  * LanguageServiceSettings languageServiceSettings =
  *     LanguageServiceSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * LanguageServiceClient languageServiceClient =
- *     LanguageServiceClient.of(languageServiceSettings);
+ *     LanguageServiceClient.create(languageServiceSettings);
  * </code>
  * </pre>
  *
@@ -92,7 +92,7 @@ import javax.annotation.Generated;
  *             .build())
  *         .build();
  * LanguageServiceClient languageServiceClient =
- *     LanguageServiceClient.of(languageServiceSettings);
+ *     LanguageServiceClient.create(languageServiceSettings);
  * </code>
  * </pre>
  */
@@ -102,49 +102,16 @@ public class LanguageServiceClient implements BackgroundResource {
   private final LanguageServiceSettings settings;
   private final LanguageServiceStub stub;
 
-  /**
-   * Constructs an instance of LanguageServiceClient with default settings.
-   *
-   * @deprecated Use of() instead.
-   */
-  @Deprecated
-  public static final LanguageServiceClient create() throws IOException {
-    return of();
-  }
-
   /** Constructs an instance of LanguageServiceClient with default settings. */
-  public static final LanguageServiceClient of() throws IOException {
-    return of(LanguageServiceSettings.newBuilder().build());
+  public static final LanguageServiceClient create() throws IOException {
+    return create(LanguageServiceSettings.newBuilder().build());
   }
 
   /**
    * Constructs an instance of LanguageServiceClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
-   *
-   * @deprecated Use of(LanguageServiceSettings) instead.
    */
-  @Deprecated
   public static final LanguageServiceClient create(LanguageServiceSettings settings)
-      throws IOException {
-    return of(settings);
-  }
-
-  /**
-   * Constructs an instance of LanguageServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use LanguageServiceSettings}.
-   *
-   * @deprecated Use of(LanguageServiceStub) instead.
-   */
-  @Deprecated
-  public static final LanguageServiceClient create(LanguageServiceStub stub) {
-    return of(stub);
-  }
-
-  /**
-   * Constructs an instance of LanguageServiceClient, using the given settings. The channels are
-   * created based on the settings passed in, or defaults for any settings that are not set.
-   */
-  public static final LanguageServiceClient of(LanguageServiceSettings settings)
       throws IOException {
     return new LanguageServiceClient(settings);
   }
@@ -154,7 +121,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * for advanced usage - prefer to use LanguageServiceSettings}.
    */
   @BetaApi
-  public static final LanguageServiceClient of(LanguageServiceStub stub) {
+  public static final LanguageServiceClient create(LanguageServiceStub stub) {
     return new LanguageServiceClient(stub);
   }
 
@@ -189,7 +156,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
    * }
@@ -212,7 +179,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeSentimentRequest request = AnalyzeSentimentRequest.newBuilder()
    *     .setDocument(document)
@@ -235,7 +202,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeSentimentRequest request = AnalyzeSentimentRequest.newBuilder()
    *     .setDocument(document)
@@ -259,7 +226,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   EncodingType encodingType = EncodingType.NONE;
    *   AnalyzeEntitiesResponse response = languageServiceClient.analyzeEntities(document, encodingType);
@@ -289,7 +256,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeEntitiesRequest request = AnalyzeEntitiesRequest.newBuilder()
    *     .setDocument(document)
@@ -313,7 +280,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeEntitiesRequest request = AnalyzeEntitiesRequest.newBuilder()
    *     .setDocument(document)
@@ -338,7 +305,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   EncodingType encodingType = EncodingType.NONE;
    *   AnalyzeEntitySentimentResponse response = languageServiceClient.analyzeEntitySentiment(document, encodingType);
@@ -369,7 +336,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeEntitySentimentRequest request = AnalyzeEntitySentimentRequest.newBuilder()
    *     .setDocument(document)
@@ -395,7 +362,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeEntitySentimentRequest request = AnalyzeEntitySentimentRequest.newBuilder()
    *     .setDocument(document)
@@ -419,7 +386,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   EncodingType encodingType = EncodingType.NONE;
    *   AnalyzeSyntaxResponse response = languageServiceClient.analyzeSyntax(document, encodingType);
@@ -448,7 +415,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeSyntaxRequest request = AnalyzeSyntaxRequest.newBuilder()
    *     .setDocument(document)
@@ -472,7 +439,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeSyntaxRequest request = AnalyzeSyntaxRequest.newBuilder()
    *     .setDocument(document)
@@ -494,7 +461,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   ClassifyTextResponse response = languageServiceClient.classifyText(document);
    * }
@@ -516,7 +483,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   ClassifyTextRequest request = ClassifyTextRequest.newBuilder()
    *     .setDocument(document)
@@ -539,7 +506,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   ClassifyTextRequest request = ClassifyTextRequest.newBuilder()
    *     .setDocument(document)
@@ -562,7 +529,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
    *   EncodingType encodingType = EncodingType.NONE;
@@ -595,7 +562,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
    *   AnnotateTextRequest request = AnnotateTextRequest.newBuilder()
@@ -621,7 +588,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.of()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
    *   AnnotateTextRequest request = AnnotateTextRequest.newBuilder()

@@ -193,7 +193,7 @@ public class MetricServiceSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcMetricServiceStub.of(this);
+      return GrpcMetricServiceStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -436,7 +436,7 @@ public class MetricServiceSettings extends ClientSettings {
                       ListMonitoredResourceDescriptorsRequest,
                       ListMonitoredResourceDescriptorsResponse, MonitoredResourceDescriptor>
                   pageContext =
-                      PageContext.of(
+                      PageContext.create(
                           callable,
                           LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC,
                           request,
@@ -462,7 +462,7 @@ public class MetricServiceSettings extends ClientSettings {
               PageContext<
                       ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
                   pageContext =
-                      PageContext.of(
+                      PageContext.create(
                           callable, LIST_METRIC_DESCRIPTORS_PAGE_STR_DESC, request, context);
               return ListMetricDescriptorsPagedResponse.createAsync(pageContext, futureResponse);
             }
@@ -480,7 +480,7 @@ public class MetricServiceSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListTimeSeriesResponse> futureResponse) {
               PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> pageContext =
-                  PageContext.of(callable, LIST_TIME_SERIES_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_TIME_SERIES_PAGE_STR_DESC, request, context);
               return ListTimeSeriesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };

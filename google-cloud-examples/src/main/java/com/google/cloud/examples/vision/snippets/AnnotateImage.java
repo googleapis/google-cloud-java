@@ -44,7 +44,7 @@ import java.util.Map;
 public class AnnotateImage {
   public static void main(String... args) throws Exception {
     // Instantiates a client
-    ImageAnnotatorClient vision = ImageAnnotatorClient.of();
+    ImageAnnotatorClient vision = ImageAnnotatorClient.create();
 
     // The path to the image file to annotate
     String fileName = "your/image/path.jpg"; // for example "./resources/wakeupcat.jpg";

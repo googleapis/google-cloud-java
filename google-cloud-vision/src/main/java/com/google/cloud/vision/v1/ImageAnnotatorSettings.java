@@ -98,7 +98,7 @@ public class ImageAnnotatorSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcImageAnnotatorStub.of(this);
+      return GrpcImageAnnotatorStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());

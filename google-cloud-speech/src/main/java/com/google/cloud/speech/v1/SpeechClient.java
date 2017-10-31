@@ -37,7 +37,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (SpeechClient speechClient = SpeechClient.of()) {
+ * try (SpeechClient speechClient = SpeechClient.create()) {
  *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
  *   int sampleRateHertz = 44100;
  *   String languageCode = "en-US";
@@ -78,8 +78,8 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of SpeechSettings to of(). For
- * example:
+ * <p>This class can be customized by passing in a custom instance of SpeechSettings to create().
+ * For example:
  *
  * <p>To customize credentials:
  *
@@ -87,10 +87,10 @@ import javax.annotation.Generated;
  * <code>
  * SpeechSettings speechSettings =
  *     SpeechSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * SpeechClient speechClient =
- *     SpeechClient.of(speechSettings);
+ *     SpeechClient.create(speechSettings);
  * </code>
  * </pre>
  *
@@ -105,7 +105,7 @@ import javax.annotation.Generated;
  *             .build())
  *         .build();
  * SpeechClient speechClient =
- *     SpeechClient.of(speechSettings);
+ *     SpeechClient.create(speechSettings);
  * </code>
  * </pre>
  */
@@ -116,48 +116,16 @@ public class SpeechClient implements BackgroundResource {
   private final SpeechStub stub;
   private final OperationsClient operationsClient;
 
-  /**
-   * Constructs an instance of SpeechClient with default settings.
-   *
-   * @deprecated Use of() instead.
-   */
-  @Deprecated
-  public static final SpeechClient create() throws IOException {
-    return of();
-  }
-
   /** Constructs an instance of SpeechClient with default settings. */
-  public static final SpeechClient of() throws IOException {
-    return of(SpeechSettings.newBuilder().build());
+  public static final SpeechClient create() throws IOException {
+    return create(SpeechSettings.newBuilder().build());
   }
 
   /**
    * Constructs an instance of SpeechClient, using the given settings. The channels are created
    * based on the settings passed in, or defaults for any settings that are not set.
-   *
-   * @deprecated Use of(SpeechSettings) instead.
    */
-  @Deprecated
   public static final SpeechClient create(SpeechSettings settings) throws IOException {
-    return of(settings);
-  }
-
-  /**
-   * Constructs an instance of SpeechClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use SpeechSettings}.
-   *
-   * @deprecated Use of(SpeechStub) instead.
-   */
-  @Deprecated
-  public static final SpeechClient create(SpeechStub stub) {
-    return of(stub);
-  }
-
-  /**
-   * Constructs an instance of SpeechClient, using the given settings. The channels are created
-   * based on the settings passed in, or defaults for any settings that are not set.
-   */
-  public static final SpeechClient of(SpeechSettings settings) throws IOException {
     return new SpeechClient(settings);
   }
 
@@ -166,7 +134,7 @@ public class SpeechClient implements BackgroundResource {
    * advanced usage - prefer to use SpeechSettings}.
    */
   @BetaApi
-  public static final SpeechClient of(SpeechStub stub) {
+  public static final SpeechClient create(SpeechStub stub) {
     return new SpeechClient(stub);
   }
 
@@ -177,13 +145,13 @@ public class SpeechClient implements BackgroundResource {
   protected SpeechClient(SpeechSettings settings) throws IOException {
     this.settings = settings;
     this.stub = settings.createStub();
-    this.operationsClient = OperationsClient.of(this.stub.getOperationsStub());
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   protected SpeechClient(SpeechStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.of(this.stub.getOperationsStub());
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final SpeechSettings getSettings() {
@@ -211,7 +179,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.of()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRateHertz = 44100;
    *   String languageCode = "en-US";
@@ -248,7 +216,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.of()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRateHertz = 44100;
    *   String languageCode = "en-US";
@@ -284,7 +252,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.of()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRateHertz = 44100;
    *   String languageCode = "en-US";
@@ -320,7 +288,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.of()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRateHertz = 44100;
    *   String languageCode = "en-US";
@@ -359,7 +327,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.of()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRateHertz = 44100;
    *   String languageCode = "en-US";
@@ -397,7 +365,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.of()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRateHertz = 44100;
    *   String languageCode = "en-US";
@@ -435,7 +403,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.of()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
    *   int sampleRateHertz = 44100;
    *   String languageCode = "en-US";
@@ -471,7 +439,7 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechClient speechClient = SpeechClient.of()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   ApiStreamObserver&lt;StreamingRecognizeResponse&gt; responseObserver =
    *       new ApiStreamObserver&lt;StreamingRecognizeResponse&gt;() {
    *         {@literal @}Override

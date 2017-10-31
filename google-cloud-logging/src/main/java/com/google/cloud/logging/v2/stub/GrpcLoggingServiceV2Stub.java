@@ -122,24 +122,12 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
   private final UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable;
   private final UnaryCallable<ListLogsRequest, ListLogsPagedResponse> listLogsPagedCallable;
 
-  /** @deprecated Use of(LoggingSettings) instead. */
-  @Deprecated
   public static final GrpcLoggingServiceV2Stub create(LoggingSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcLoggingServiceV2Stub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcLoggingServiceV2Stub create(ClientContext clientContext)
       throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcLoggingServiceV2Stub of(LoggingSettings settings) throws IOException {
-    return new GrpcLoggingServiceV2Stub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcLoggingServiceV2Stub of(ClientContext clientContext) throws IOException {
     return new GrpcLoggingServiceV2Stub(LoggingSettings.newBuilder().build(), clientContext);
   }
 

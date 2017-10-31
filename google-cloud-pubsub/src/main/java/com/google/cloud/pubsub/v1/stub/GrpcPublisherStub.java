@@ -156,23 +156,11 @@ public class GrpcPublisherStub extends PublisherStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
-  /** @deprecated Use of(TopicAdminSettings) instead. */
-  @Deprecated
   public static final GrpcPublisherStub create(TopicAdminSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcPublisherStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcPublisherStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcPublisherStub of(TopicAdminSettings settings) throws IOException {
-    return new GrpcPublisherStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcPublisherStub of(ClientContext clientContext) throws IOException {
     return new GrpcPublisherStub(TopicAdminSettings.newBuilder().build(), clientContext);
   }
 

@@ -251,7 +251,7 @@ public class SubscriptionAdminSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcSubscriberStub.of(this);
+      return GrpcSubscriberStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -448,7 +448,8 @@ public class SubscriptionAdminSettings extends ClientSettings {
                 ApiFuture<ListSubscriptionsResponse> futureResponse) {
               PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
                   pageContext =
-                      PageContext.of(callable, LIST_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+                      PageContext.create(
+                          callable, LIST_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
               return ListSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -465,7 +466,7 @@ public class SubscriptionAdminSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListSnapshotsResponse> futureResponse) {
               PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> pageContext =
-                  PageContext.of(callable, LIST_SNAPSHOTS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_SNAPSHOTS_PAGE_STR_DESC, request, context);
               return ListSnapshotsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };

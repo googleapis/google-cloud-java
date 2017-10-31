@@ -27,7 +27,7 @@
  *
  * <pre>
  * <code>
- * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.of()) {
+ * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
  *   String inputUri = "gs://demomaker/cat.mp4";
  *   Feature featuresElement = Feature.LABEL_DETECTION;
  *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);

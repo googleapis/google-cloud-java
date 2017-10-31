@@ -38,7 +38,7 @@
  *
  * <pre>
  * <code>
- * try (FirestoreClient firestoreClient = FirestoreClient.of()) {
+ * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
  *   Document document = Document.newBuilder().build();
  *   DocumentMask updateMask = DocumentMask.newBuilder().build();
  *   Document response = firestoreClient.updateDocument(document, updateMask);

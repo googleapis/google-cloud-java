@@ -77,24 +77,12 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
   private final UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable;
   private final UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable;
 
-  /** @deprecated Use of(TraceServiceSettings) instead. */
-  @Deprecated
   public static final GrpcTraceServiceStub create(TraceServiceSettings settings)
       throws IOException {
-    return of(settings);
+    return new GrpcTraceServiceStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcTraceServiceStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcTraceServiceStub of(TraceServiceSettings settings) throws IOException {
-    return new GrpcTraceServiceStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcTraceServiceStub of(ClientContext clientContext) throws IOException {
     return new GrpcTraceServiceStub(TraceServiceSettings.newBuilder().build(), clientContext);
   }
 

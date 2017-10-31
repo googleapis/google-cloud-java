@@ -167,24 +167,12 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
       listTimeSeriesPagedCallable;
   private final UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable;
 
-  /** @deprecated Use of(MetricServiceSettings) instead. */
-  @Deprecated
   public static final GrpcMetricServiceStub create(MetricServiceSettings settings)
       throws IOException {
-    return of(settings);
+    return new GrpcMetricServiceStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcMetricServiceStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcMetricServiceStub of(MetricServiceSettings settings) throws IOException {
-    return new GrpcMetricServiceStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcMetricServiceStub of(ClientContext clientContext) throws IOException {
     return new GrpcMetricServiceStub(MetricServiceSettings.newBuilder().build(), clientContext);
   }
 

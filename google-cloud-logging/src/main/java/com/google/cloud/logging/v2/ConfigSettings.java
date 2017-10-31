@@ -187,7 +187,7 @@ public class ConfigSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcConfigServiceV2Stub.of(this);
+      return GrpcConfigServiceV2Stub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -371,7 +371,7 @@ public class ConfigSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListSinksResponse> futureResponse) {
               PageContext<ListSinksRequest, ListSinksResponse, LogSink> pageContext =
-                  PageContext.of(callable, LIST_SINKS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_SINKS_PAGE_STR_DESC, request, context);
               return ListSinksPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -388,7 +388,7 @@ public class ConfigSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListExclusionsResponse> futureResponse) {
               PageContext<ListExclusionsRequest, ListExclusionsResponse, LogExclusion> pageContext =
-                  PageContext.of(callable, LIST_EXCLUSIONS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_EXCLUSIONS_PAGE_STR_DESC, request, context);
               return ListExclusionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };

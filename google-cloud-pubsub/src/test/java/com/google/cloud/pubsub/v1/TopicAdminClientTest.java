@@ -88,9 +88,9 @@ public class TopicAdminClientTest {
     TopicAdminSettings settings =
         TopicAdminSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(NoCredentialsProvider.of())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = TopicAdminClient.of(settings);
+    client = TopicAdminClient.create(settings);
   }
 
   @After

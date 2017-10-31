@@ -80,7 +80,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
                 .usePlaintext(true)
                 .executor(executor)
                 .build();
-        TransportChannel transportChannel = GrpcTransportChannel.of(managedChannel);
+        TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
         clientContext =
             ClientContext.newBuilder()
                 .setCredentials(null)
@@ -106,7 +106,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
         settingsBuilder.setHeaderProvider(
             GrpcTransportOptions.setUpHeaderProvider(headerProvider, options));
 
-        clientContext = ClientContext.of(settingsBuilder.build());
+        clientContext = ClientContext.create(settingsBuilder.build());
       }
       ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> retrySettingsSetter =
           new ApiFunction<Builder<?, ?>, Void>() {
@@ -119,7 +119,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
       FirestoreSettings.Builder firestoreBuilder =
           FirestoreSettings.newBuilder(clientContext)
               .applyToAllUnaryMethods(retrySettingsSetter);
-      firestoreStub = GrpcFirestoreStub.of(firestoreBuilder.build());
+      firestoreStub = GrpcFirestoreStub.create(firestoreBuilder.build());
     } catch (Exception e) {
       throw new IOException(e);
     }

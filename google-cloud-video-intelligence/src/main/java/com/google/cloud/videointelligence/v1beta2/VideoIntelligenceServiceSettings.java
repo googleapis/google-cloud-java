@@ -112,7 +112,7 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcVideoIntelligenceServiceStub.of(this);
+      return GrpcVideoIntelligenceServiceStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -290,11 +290,11 @@ public class VideoIntelligenceServiceSettings extends ClientSettings {
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.of(AnnotateVideoResponse.class))
+              ProtoOperationTransformers.ResponseTransformer.create(AnnotateVideoResponse.class))
           .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.of(AnnotateVideoProgress.class))
+              ProtoOperationTransformers.MetadataTransformer.create(AnnotateVideoProgress.class))
           .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.of(
+              OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
                       .setInitialRetryDelay(Duration.ofMillis(20000L))
                       .setRetryDelayMultiplier(1.5)

@@ -124,26 +124,13 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
   private final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable;
   private final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
-  /** @deprecated Use of(LanguageServiceSettings) instead. */
-  @Deprecated
   public static final GrpcLanguageServiceStub create(LanguageServiceSettings settings)
       throws IOException {
-    return of(settings);
+    return new GrpcLanguageServiceStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcLanguageServiceStub create(ClientContext clientContext)
       throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcLanguageServiceStub of(LanguageServiceSettings settings)
-      throws IOException {
-    return new GrpcLanguageServiceStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcLanguageServiceStub of(ClientContext clientContext) throws IOException {
     return new GrpcLanguageServiceStub(LanguageServiceSettings.newBuilder().build(), clientContext);
   }
 

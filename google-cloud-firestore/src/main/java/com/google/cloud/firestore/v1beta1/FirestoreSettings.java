@@ -216,7 +216,7 @@ public class FirestoreSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcFirestoreStub.of(this);
+      return GrpcFirestoreStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -405,7 +405,7 @@ public class FirestoreSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListDocumentsResponse> futureResponse) {
               PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> pageContext =
-                  PageContext.of(callable, LIST_DOCUMENTS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_DOCUMENTS_PAGE_STR_DESC, request, context);
               return ListDocumentsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -423,7 +423,7 @@ public class FirestoreSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListCollectionIdsResponse> futureResponse) {
               PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> pageContext =
-                  PageContext.of(callable, LIST_COLLECTION_IDS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_COLLECTION_IDS_PAGE_STR_DESC, request, context);
               return ListCollectionIdsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };

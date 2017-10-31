@@ -57,7 +57,7 @@ public class WatchdogInterceptorTest {
 
   CallOptions options;
   Metadata metadata;
-  MethodDescriptor<Void, Void> descriptor = FakeMethodDescriptor.of();
+  MethodDescriptor<Void, Void> descriptor = FakeMethodDescriptor.create();
 
   @Mock Channel channel;
   @Mock ClientCall<Void, Void> innerCall;

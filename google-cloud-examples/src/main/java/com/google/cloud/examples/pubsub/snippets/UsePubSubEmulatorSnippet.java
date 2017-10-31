@@ -43,13 +43,13 @@ public class UsePubSubEmulatorSnippet {
     ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext(true).build();
     try {
       TransportChannelProvider channelProvider =
-          FixedTransportChannelProvider.of(GrpcTransportChannel.of(channel));
-      CredentialsProvider credentialsProvider = NoCredentialsProvider.of();
+          FixedTransportChannelProvider.create(GrpcTransportChannel.create(channel));
+      CredentialsProvider credentialsProvider = NoCredentialsProvider.create();
 
       // Set the channel and credentials provider when creating a `TopicAdminClient`.
       // Similarly for SubscriptionAdminClient
       TopicAdminClient topicClient =
-          TopicAdminClient.of(
+          TopicAdminClient.create(
               TopicAdminSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
                   .setCredentialsProvider(credentialsProvider)

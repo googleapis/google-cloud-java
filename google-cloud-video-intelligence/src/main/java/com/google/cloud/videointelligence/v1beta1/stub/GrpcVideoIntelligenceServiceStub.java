@@ -64,26 +64,12 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
           AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable;
 
-  /** @deprecated Use of(VideoIntelligenceServiceSettings) instead. */
-  @Deprecated
   public static final GrpcVideoIntelligenceServiceStub create(
       VideoIntelligenceServiceSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcVideoIntelligenceServiceStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcVideoIntelligenceServiceStub create(ClientContext clientContext)
-      throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcVideoIntelligenceServiceStub of(VideoIntelligenceServiceSettings settings)
-      throws IOException {
-    return new GrpcVideoIntelligenceServiceStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcVideoIntelligenceServiceStub of(ClientContext clientContext)
       throws IOException {
     return new GrpcVideoIntelligenceServiceStub(
         VideoIntelligenceServiceSettings.newBuilder().build(), clientContext);
@@ -96,7 +82,7 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
    */
   protected GrpcVideoIntelligenceServiceStub(
       VideoIntelligenceServiceSettings settings, ClientContext clientContext) throws IOException {
-    this.operationsStub = GrpcOperationsStub.of(clientContext);
+    this.operationsStub = GrpcOperationsStub.create(clientContext);
 
     GrpcCallSettings<AnnotateVideoRequest, Operation> annotateVideoTransportSettings =
         GrpcCallSettings.<AnnotateVideoRequest, Operation>newBuilder()

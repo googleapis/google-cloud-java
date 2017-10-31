@@ -95,7 +95,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
             .usePlaintext(true)
             .executor(executor)
             .build();
-        TransportChannel transportChannel = GrpcTransportChannel.of(managedChannel);
+        TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
         clientContext = ClientContext.newBuilder()
             .setCredentials(null)
             .setExecutor(executor)
@@ -111,7 +111,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
             GrpcTransportOptions.setUpChannelProvider(LoggingSettings.defaultGrpcTransportProviderBuilder(), options));
         settingsBuilder.setHeaderProvider(
             GrpcTransportOptions.setUpHeaderProvider(LoggingSettings.defaultApiClientHeaderProviderBuilder(), options));
-        clientContext = ClientContext.of(settingsBuilder.build());
+        clientContext = ClientContext.create(settingsBuilder.build());
       }
       ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> retrySettingsSetter =
           new ApiFunction<Builder<?, ?>, Void>() {
@@ -127,9 +127,9 @@ public class GrpcLoggingRpc implements LoggingRpc {
           LoggingSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       MetricsSettings.Builder metricsBuilder =
           MetricsSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
-      configClient = ConfigClient.of(confBuilder.build());
-      loggingClient = LoggingClient.of(logBuilder.build());
-      metricsClient = MetricsClient.of(metricsBuilder.build());
+      configClient = ConfigClient.create(confBuilder.build());
+      loggingClient = LoggingClient.create(logBuilder.build());
+      metricsClient = MetricsClient.create(metricsBuilder.build());
     } catch (Exception ex) {
       throw new IOException(ex);
     }

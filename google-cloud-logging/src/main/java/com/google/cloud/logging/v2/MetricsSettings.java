@@ -147,7 +147,7 @@ public class MetricsSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcMetricsServiceV2Stub.of(this);
+      return GrpcMetricsServiceV2Stub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -291,7 +291,7 @@ public class MetricsSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListLogMetricsResponse> futureResponse) {
               PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> pageContext =
-                  PageContext.of(callable, LIST_LOG_METRICS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_LOG_METRICS_PAGE_STR_DESC, request, context);
               return ListLogMetricsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };

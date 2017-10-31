@@ -105,24 +105,12 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
   private final UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
   private final UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
 
-  /** @deprecated Use of(MetricsSettings) instead. */
-  @Deprecated
   public static final GrpcMetricsServiceV2Stub create(MetricsSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcMetricsServiceV2Stub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcMetricsServiceV2Stub create(ClientContext clientContext)
       throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcMetricsServiceV2Stub of(MetricsSettings settings) throws IOException {
-    return new GrpcMetricsServiceV2Stub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcMetricsServiceV2Stub of(ClientContext clientContext) throws IOException {
     return new GrpcMetricsServiceV2Stub(MetricsSettings.newBuilder().build(), clientContext);
   }
 

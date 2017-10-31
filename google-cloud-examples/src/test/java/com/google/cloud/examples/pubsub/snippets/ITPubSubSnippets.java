@@ -65,8 +65,8 @@ public class ITPubSubSnippets {
         SubscriptionName.create(
             ServiceOptions.getDefaultProjectId(), formatForTest("test-subscription"));
 
-    try (TopicAdminClient publisherClient = TopicAdminClient.of();
-        SubscriptionAdminClient subscriberClient = SubscriptionAdminClient.of()) {
+    try (TopicAdminClient publisherClient = TopicAdminClient.create();
+        SubscriptionAdminClient subscriberClient = SubscriptionAdminClient.create()) {
       publisherClient.createTopic(topicName);
       subscriberClient.createSubscription(
           subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
@@ -159,8 +159,8 @@ public class ITPubSubSnippets {
 
   @After
   public void tearDown() throws Exception {
-    try (TopicAdminClient publisherClient = TopicAdminClient.of();
-        SubscriptionAdminClient subscriberClient = SubscriptionAdminClient.of()) {
+    try (TopicAdminClient publisherClient = TopicAdminClient.create();
+        SubscriptionAdminClient subscriberClient = SubscriptionAdminClient.create()) {
       subscriberClient.deleteSubscription(subscriptionName);
       publisherClient.deleteTopic(topicName);
     }

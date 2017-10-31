@@ -30,7 +30,7 @@ class Cleanup {
   }
 
   private static void deleteTestTopics(String projectId, String[] testTopics) throws Exception {
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.of()) {
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       for (String topicId : testTopics) {
         try {
           topicAdminClient.deleteTopic(TopicName.create(projectId, topicId));
@@ -44,7 +44,7 @@ class Cleanup {
 
   private static void deleteTestSubscriptions(String projectId, String[] subscriptions)
       throws Exception {
-    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.of()) {
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       for (String subscriptionId : subscriptions) {
         try {
           subscriptionAdminClient.deleteSubscription(

@@ -79,9 +79,9 @@ public class MetricsClientTest {
     MetricsSettings settings =
         MetricsSettings.newBuilder()
             .setTransportChannelProvider(serviceHelper.createChannelProvider())
-            .setCredentialsProvider(NoCredentialsProvider.of())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = MetricsClient.of(settings);
+    client = MetricsClient.create(settings);
   }
 
   @After

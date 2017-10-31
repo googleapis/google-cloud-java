@@ -112,24 +112,12 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
   private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
       listGroupMembersPagedCallable;
 
-  /** @deprecated Use of(GroupServiceSettings) instead. */
-  @Deprecated
   public static final GrpcGroupServiceStub create(GroupServiceSettings settings)
       throws IOException {
-    return of(settings);
+    return new GrpcGroupServiceStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcGroupServiceStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcGroupServiceStub of(GroupServiceSettings settings) throws IOException {
-    return new GrpcGroupServiceStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcGroupServiceStub of(ClientContext clientContext) throws IOException {
     return new GrpcGroupServiceStub(GroupServiceSettings.newBuilder().build(), clientContext);
   }
 

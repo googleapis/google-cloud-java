@@ -209,9 +209,9 @@ public class GrpcTransportOptions implements TransportOptions {
   public static CredentialsProvider setUpCredentialsProvider(ServiceOptions<?, ?> serviceOptions) {
     Credentials scopedCredentials = serviceOptions.getScopedCredentials();
      if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
-       return FixedCredentialsProvider.of(scopedCredentials);
+       return FixedCredentialsProvider.create(scopedCredentials);
      }
-     return NoCredentialsProvider.of();
+     return NoCredentialsProvider.create();
   }
 
 

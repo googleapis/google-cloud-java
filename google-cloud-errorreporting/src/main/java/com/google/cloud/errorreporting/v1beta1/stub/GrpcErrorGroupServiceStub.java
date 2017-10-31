@@ -65,26 +65,13 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
   private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
   private final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
 
-  /** @deprecated Use of(ErrorGroupServiceSettings) instead. */
-  @Deprecated
   public static final GrpcErrorGroupServiceStub create(ErrorGroupServiceSettings settings)
       throws IOException {
-    return of(settings);
+    return new GrpcErrorGroupServiceStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcErrorGroupServiceStub create(ClientContext clientContext)
       throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcErrorGroupServiceStub of(ErrorGroupServiceSettings settings)
-      throws IOException {
-    return new GrpcErrorGroupServiceStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcErrorGroupServiceStub of(ClientContext clientContext) throws IOException {
     return new GrpcErrorGroupServiceStub(
         ErrorGroupServiceSettings.newBuilder().build(), clientContext);
   }

@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (LoggingClient loggingClient = LoggingClient.of()) {
+ * try (LoggingClient loggingClient = LoggingClient.create()) {
  *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
  *   loggingClient.deleteLog(logName);
  * }
@@ -82,8 +82,8 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of LoggingSettings to of(). For
- * example:
+ * <p>This class can be customized by passing in a custom instance of LoggingSettings to create().
+ * For example:
  *
  * <p>To customize credentials:
  *
@@ -91,10 +91,10 @@ import javax.annotation.Generated;
  * <code>
  * LoggingSettings loggingSettings =
  *     LoggingSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * LoggingClient loggingClient =
- *     LoggingClient.of(loggingSettings);
+ *     LoggingClient.create(loggingSettings);
  * </code>
  * </pre>
  *
@@ -109,7 +109,7 @@ import javax.annotation.Generated;
  *             .build())
  *         .build();
  * LoggingClient loggingClient =
- *     LoggingClient.of(loggingSettings);
+ *     LoggingClient.create(loggingSettings);
  * </code>
  * </pre>
  */
@@ -119,48 +119,16 @@ public class LoggingClient implements BackgroundResource {
   private final LoggingSettings settings;
   private final LoggingServiceV2Stub stub;
 
-  /**
-   * Constructs an instance of LoggingClient with default settings.
-   *
-   * @deprecated Use of() instead.
-   */
-  @Deprecated
-  public static final LoggingClient create() throws IOException {
-    return of();
-  }
-
   /** Constructs an instance of LoggingClient with default settings. */
-  public static final LoggingClient of() throws IOException {
-    return of(LoggingSettings.newBuilder().build());
+  public static final LoggingClient create() throws IOException {
+    return create(LoggingSettings.newBuilder().build());
   }
 
   /**
    * Constructs an instance of LoggingClient, using the given settings. The channels are created
    * based on the settings passed in, or defaults for any settings that are not set.
-   *
-   * @deprecated Use of(LoggingSettings) instead.
    */
-  @Deprecated
   public static final LoggingClient create(LoggingSettings settings) throws IOException {
-    return of(settings);
-  }
-
-  /**
-   * Constructs an instance of LoggingClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use LoggingSettings}.
-   *
-   * @deprecated Use of(LoggingServiceV2Stub) instead.
-   */
-  @Deprecated
-  public static final LoggingClient create(LoggingServiceV2Stub stub) {
-    return of(stub);
-  }
-
-  /**
-   * Constructs an instance of LoggingClient, using the given settings. The channels are created
-   * based on the settings passed in, or defaults for any settings that are not set.
-   */
-  public static final LoggingClient of(LoggingSettings settings) throws IOException {
     return new LoggingClient(settings);
   }
 
@@ -169,7 +137,7 @@ public class LoggingClient implements BackgroundResource {
    * advanced usage - prefer to use LoggingSettings}.
    */
   @BetaApi
-  public static final LoggingClient of(LoggingServiceV2Stub stub) {
+  public static final LoggingClient create(LoggingServiceV2Stub stub) {
     return new LoggingClient(stub);
   }
 
@@ -204,7 +172,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
    *   loggingClient.deleteLog(logName);
    * }
@@ -233,7 +201,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
    *     .setLogNameWithLogNameOneof(logName)
@@ -257,7 +225,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
    *     .setLogNameWithLogNameOneof(logName)
@@ -283,7 +251,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
    *   MonitoredResource resource = MonitoredResource.newBuilder().build();
    *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
@@ -353,7 +321,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
    *   WriteLogEntriesRequest request = WriteLogEntriesRequest.newBuilder()
    *     .addAllEntries(entries)
@@ -380,7 +348,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
    *   WriteLogEntriesRequest request = WriteLogEntriesRequest.newBuilder()
    *     .addAllEntries(entries)
@@ -404,7 +372,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   String filter = "";
    *   String orderBy = "";
@@ -451,7 +419,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
    *     .addAllResourceNames(resourceNames)
@@ -477,7 +445,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
    *     .addAllResourceNames(resourceNames)
@@ -503,7 +471,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
    *     .addAllResourceNames(resourceNames)
@@ -535,7 +503,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
    *   for (MonitoredResourceDescriptor element : loggingClient.listMonitoredResourceDescriptors(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -558,7 +526,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
    *   ApiFuture&lt;ListMonitoredResourceDescriptorsPagedResponse&gt; future = loggingClient.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
    *   // Do something
@@ -581,7 +549,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
    *   while (true) {
    *     ListMonitoredResourceDescriptorsResponse response = loggingClient.listMonitoredResourceDescriptorsCallable().call(request);
@@ -612,7 +580,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   for (String element : loggingClient.listLogs(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -639,7 +607,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
@@ -665,7 +633,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
@@ -690,7 +658,7 @@ public class LoggingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.of()) {
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
