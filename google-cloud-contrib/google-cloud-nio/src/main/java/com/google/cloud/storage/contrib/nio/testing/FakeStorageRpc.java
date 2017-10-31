@@ -368,6 +368,11 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
+  public List<BucketAccessControl> listAcls(String bucket, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
   public ObjectAccessControl getDefaultAcl(String bucket, String entity) {
     throw new UnsupportedOperationException();
   }
@@ -398,7 +403,17 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
+  public BucketAccessControl getAcl(String bucket, String entity, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
   public boolean deleteAcl(String bucket, String object, Long generation, String entity) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean deleteAcl(String bucket, String entity, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
@@ -408,7 +423,17 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
+  public BucketAccessControl createAcl(BucketAccessControl acl, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
   public ObjectAccessControl patchAcl(ObjectAccessControl acl) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public BucketAccessControl patchAcl(BucketAccessControl acl, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
@@ -454,7 +479,17 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
+  public Policy getIamPolicy(String bucket, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
   public Policy setIamPolicy(String bucket, Policy policy) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Policy setIamPolicy(String bucket, Policy policy, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
