@@ -42,6 +42,7 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.CopyWriter;
 import com.google.cloud.storage.HttpMethod;
+import com.google.cloud.storage.NotificationInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobField;
 import com.google.cloud.storage.Storage.BucketField;
@@ -1518,5 +1519,20 @@ public class ITStorageTest {
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     assertTrue(remoteBlob.delete());
+  }
+
+  @Test
+  public void testNotifications() {
+    storage.create(BUCKET, NotificationInfo.of("id"));
+    assertNull(storage.listNotifications(BUCKET));
+    assertFalse(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    Acl acl = Acl.of(User.ofAllAuthenticatedUsers(), Role.READER);
+    assertNotNull(storage.createAcl(BUCKET, acl));
+    Acl updatedAcl = storage.updateAcl(BUCKET, acl.toBuilder().setRole(Role.WRITER).build());
+    assertEquals(Role.WRITER, updatedAcl.getRole());
+    Set<Acl> acls = Sets.newHashSet(storage.listAcls(BUCKET));
+    assertTrue(acls.contains(updatedAcl));
+    assertTrue(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers()));
   }
 }

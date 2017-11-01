@@ -134,8 +134,8 @@ public class NotificationInfo implements Serializable {
     private String etag;
     private String selfLink;
 
-    BuilderImpl(String generatedId) {
-      this.generatedId = generatedId;
+    BuilderImpl(String topic) {
+      this.topic = topic;
     }
 
     BuilderImpl(NotificationInfo NotificationInfo) {
@@ -200,7 +200,7 @@ public class NotificationInfo implements Serializable {
 
     @Override
     public NotificationInfo build() {
-      checkNotNull(generatedId);
+      checkNotNull(topic);
       return new NotificationInfo(this);
     }
   }
@@ -291,7 +291,7 @@ public class NotificationInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(getGeneratedId());
+    return Objects.hash(getTopic());
   }
 
   @Override
@@ -305,7 +305,7 @@ public class NotificationInfo implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("id", getGeneratedId())
+        .add("topic", getTopic())
         .toString();
   }
 
@@ -325,6 +325,8 @@ public class NotificationInfo implements Serializable {
     }
     if (payloadFormat != null) {
       notificationPb.setPayloadFormat(payloadFormat.toString());
+    } else {
+      notificationPb.setPayloadFormat(PayloadFormat.NONE.toString());
     }
     notificationPb.setSelfLink(selfLink);
     notificationPb.setTopic(topic);
@@ -335,15 +337,15 @@ public class NotificationInfo implements Serializable {
   /**
    * Creates a {@code NotificationInfo} object for the provided bucket name.
    */
-  public static NotificationInfo of(String name) {
-    return newBuilder(name).build();
+  public static NotificationInfo of(String topic) {
+    return newBuilder(topic).build();
   }
 
   /**
    * Returns a {@code NotificationInfo} builder where the bucket's name is set to the provided name.
    */
-  public static Builder newBuilder(String name) {
-    return new BuilderImpl(name);
+  public static Builder newBuilder(String topic) {
+    return new BuilderImpl(topic);
   }
 
   static NotificationInfo fromPb(com.google.api.services.storage.model.Notification notificationPb) {

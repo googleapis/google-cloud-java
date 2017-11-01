@@ -953,7 +953,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public NotificationInfo create(final String bucket, NotificationInfo notification) {
+  public NotificationInfo createNotification(final String bucket, NotificationInfo notification) {
     final Notification notificationPb = notification.toPb();
     try {
       return NotificationInfo.fromPb(runWithRetries(new Callable<Notification>() {

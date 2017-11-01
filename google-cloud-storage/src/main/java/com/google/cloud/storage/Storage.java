@@ -2507,6 +2507,6 @@ public interface Storage extends Service<StorageOptions> {
   List<NotificationInfo> listNotifications(String bucket);
 
   @BetaApi
-  NotificationInfo create(String bucket, NotificationInfo notification);
+  NotificationInfo createNotification(String bucket, NotificationInfo notification);
 
 }
