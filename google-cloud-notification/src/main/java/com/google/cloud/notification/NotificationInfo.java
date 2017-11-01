@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.storage;
+package com.google.cloud.notification;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;

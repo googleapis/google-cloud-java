@@ -22,10 +22,13 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.notification.Notification;
+import com.google.cloud.notification.NotificationFactory;
+import com.google.cloud.notification.NotificationImpl.DefaultNotificationFactory;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.storage.BucketInfo;
-import com.google.cloud.storage.NotificationInfo;
-import com.google.cloud.storage.NotificationInfo.PayloadFormat;
+import com.google.cloud.notification.NotificationInfo;
+import com.google.cloud.notification.NotificationInfo.PayloadFormat;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.Sets;
@@ -53,7 +56,8 @@ public class ITSystemTest {
 
   private static RemoteStorageHelper remoteStorageHelper;
   private static TopicAdminClient topicAdminClient;
-  private static Storage storage;
+  private static Notification notificationService;
+  private static Storage storageService;
 
   private static final Logger log = Logger.getLogger(ITSystemTest.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
@@ -67,16 +71,17 @@ public class ITSystemTest {
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException, IOException {
     remoteStorageHelper = RemoteStorageHelper.create();
     topicAdminClient = TopicAdminClient.create();
-    storage = remoteStorageHelper.getOptions().getService();
-    storage.create(BucketInfo.of(BUCKET));
+    storageService = remoteStorageHelper.getOptions().getService();
+    notificationService = new DefaultNotificationFactory().create(remoteStorageHelper.getOptions());
+    storageService.create(BucketInfo.of(BUCKET));
     projectId = ServiceOptions.getDefaultProjectId();
   }
 
   @AfterClass
   public static void afterClass() throws Exception {
     topicAdminClient.close();
-    if (storage != null) {
-      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS);
+    if (notificationService != null) {
+      boolean wasDeleted = RemoteStorageHelper.forceDelete(storageService, BUCKET, 5, TimeUnit.SECONDS);
       if (!wasDeleted && log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
@@ -108,24 +113,24 @@ public class ITSystemTest {
     assertTrue(permissions.contains(permissionName));
 
     // Use Storage API to create a Notification on that Topic.
-    NotificationInfo notification = storage.createNotification(BUCKET,  NotificationInfo.of(topic.toString()));
+    NotificationInfo notification = notificationService.createNotification(BUCKET,  NotificationInfo.of(topic.toString()));
     assertNotNull(notification);
-    Set<NotificationInfo> notifications = Sets.newHashSet(storage.listNotifications(BUCKET));
+    Set<NotificationInfo> notifications = Sets.newHashSet(notificationService.listNotifications(BUCKET));
     assertTrue(notifications.contains(notification));
     assertEquals(1, notifications.size());
 
-    NotificationInfo notification2 = storage.createNotification(BUCKET,
+    NotificationInfo notification2 = notificationService.createNotification(BUCKET,
         NotificationInfo.of(topic.toString())
             .toBuilder()
             .setPayloadFormat(PayloadFormat.JSON_API_V1).build());
     assertEquals(topic, TopicName.parse(notification2.getTopic()));
-    notifications = Sets.newHashSet(storage.listNotifications(BUCKET));
+    notifications = Sets.newHashSet(notificationService.listNotifications(BUCKET));
     assertTrue(notifications.contains(notification));
     assertTrue(notifications.contains(notification2));
     assertEquals(2, notifications.size());
-    assertTrue(storage.deleteNotification(BUCKET, notification.getGeneratedId()));
-    assertTrue(storage.deleteNotification(BUCKET, notification2.getGeneratedId()));
-    assertNull(storage.listNotifications(BUCKET));
+    assertTrue(notificationService.deleteNotification(BUCKET, notification.getGeneratedId()));
+    assertTrue(notificationService.deleteNotification(BUCKET, notification2.getGeneratedId()));
+    assertNull(notificationService.listNotifications(BUCKET));
 
     topicAdminClient.deleteTopic(topic);
   }

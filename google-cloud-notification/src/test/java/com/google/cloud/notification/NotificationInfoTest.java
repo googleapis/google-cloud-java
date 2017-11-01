@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.cloud.storage;
+package com.google.cloud.notification;
 
 import static org.junit.Assert.assertEquals;
 
-import com.google.cloud.storage.NotificationInfo.PayloadFormat;
+import com.google.cloud.notification.NotificationInfo.PayloadFormat;
 import com.google.common.collect.ImmutableList;
 
 import com.google.common.collect.ImmutableMap;
