@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-notification</artifactId>
-  <version>0.26.1-beta-SNAPSHOT</version>
+  <version>0.26.1-alpha-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Google Cloud Notification</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-notification
@@ -32,11 +32,13 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-pubsub</artifactId>
+      <artifactId>google-cloud-storage</artifactId>
+      <version>${storage.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-storage</artifactId>
+      <artifactId>google-cloud-pubsub</artifactId>
+      <version>${pubsub.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>

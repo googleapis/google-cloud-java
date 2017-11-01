@@ -16,7 +16,6 @@
 
 package com.google.cloud.storage.spi.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.Notification;
@@ -26,7 +25,6 @@ import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
-import com.google.cloud.storage.NotificationInfo;
 import com.google.cloud.storage.StorageException;
 import java.io.InputStream;
 import java.util.List;
