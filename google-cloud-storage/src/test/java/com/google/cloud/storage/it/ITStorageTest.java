@@ -16,7 +16,6 @@
 
 package com.google.cloud.storage.it;
 
-import static com.google.common.collect.Sets.newHashSet;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -1515,14 +1514,14 @@ public class ITStorageTest {
     Map<com.google.cloud.Role, Set<Identity>> bindingsWithoutPublicRead =
         ImmutableMap.of(
             StorageRoles.legacyBucketOwner(),
-            (Set<Identity>) newHashSet(projectOwner, projectEditor),
-            StorageRoles.legacyBucketReader(), newHashSet(projectViewer));
+            (Set<Identity>) Sets.newHashSet(projectOwner, projectEditor),
+            StorageRoles.legacyBucketReader(), Sets.newHashSet(projectViewer));
     Map<com.google.cloud.Role, Set<Identity>> bindingsWithPublicRead =
         ImmutableMap.of(
             StorageRoles.legacyBucketOwner(),
-            (Set<Identity>) newHashSet(projectOwner, projectEditor),
-            StorageRoles.legacyBucketReader(), newHashSet(projectViewer),
-            StorageRoles.legacyObjectReader(), newHashSet(Identity.allUsers()));
+            (Set<Identity>) Sets.newHashSet(projectOwner, projectEditor),
+            StorageRoles.legacyBucketReader(), Sets.newHashSet(projectViewer),
+            StorageRoles.legacyObjectReader(), Sets.newHashSet(Identity.allUsers()));
 
     // Validate getting policy.
     Policy currentPolicy = storage.getIamPolicy(BUCKET, bucketOptions);
