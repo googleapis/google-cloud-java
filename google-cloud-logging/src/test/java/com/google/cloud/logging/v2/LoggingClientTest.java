@@ -20,7 +20,6 @@ import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogsPagedRes
 
 import com.google.api.MonitoredResource;
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
@@ -85,11 +84,8 @@ public class LoggingClientTest {
     serviceHelper.reset();
     LoggingSettings settings =
         LoggingSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = LoggingClient.create(settings);
   }

@@ -19,7 +19,6 @@ import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupMemb
 
 import com.google.api.MonitoredResource;
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
@@ -74,11 +73,8 @@ public class GroupServiceClientTest {
     serviceHelper.reset();
     GroupServiceSettings settings =
         GroupServiceSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = GroupServiceClient.create(settings);
   }

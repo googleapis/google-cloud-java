@@ -17,8 +17,8 @@ package com.google.cloud.dlp.v2beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.OperationFuture;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dlp.v2beta1.stub.DlpServiceStub;
 import com.google.longrunning.Operation;
@@ -121,10 +121,8 @@ import javax.annotation.Generated;
  * <code>
  * DlpServiceSettings dlpServiceSettings =
  *     DlpServiceSettings.newBuilder()
- *         .setTransportProvider(DlpServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(DlpServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(DlpServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * DlpServiceClient dlpServiceClient =
@@ -156,6 +154,7 @@ public class DlpServiceClient implements BackgroundResource {
    * Constructs an instance of DlpServiceClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use DlpServiceSettings}.
    */
+  @BetaApi
   public static final DlpServiceClient create(DlpServiceStub stub) {
     return new DlpServiceClient(stub);
   }
@@ -302,8 +301,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param sourceTable Input dataset to compute metrics over.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<
-          RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+  public final OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskAsync(PrivacyMetric privacyMetric, BigQueryTable sourceTable) {
 
     AnalyzeDataSourceRiskRequest request =
@@ -336,8 +334,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<
-          RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+  public final OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskAsync(AnalyzeDataSourceRiskRequest request) {
     return analyzeDataSourceRiskOperationCallable().futureCall(request);
   }
@@ -364,8 +361,7 @@ public class DlpServiceClient implements BackgroundResource {
    * </code></pre>
    */
   public final OperationCallable<
-          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata,
-          Operation>
+          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskOperationCallable() {
     return stub.analyzeDataSourceRiskOperationCallable();
   }
@@ -711,7 +707,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param outputConfig Optional location to store findings.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation>
+  public final OperationFuture<InspectOperationResult, InspectOperationMetadata>
       createInspectOperationAsync(
           InspectConfig inspectConfig,
           StorageConfig storageConfig,
@@ -765,7 +761,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation>
+  public final OperationFuture<InspectOperationResult, InspectOperationMetadata>
       createInspectOperationAsync(CreateInspectOperationRequest request) {
     return createInspectOperationOperationCallable().futureCall(request);
   }
@@ -809,8 +805,7 @@ public class DlpServiceClient implements BackgroundResource {
    * </code></pre>
    */
   public final OperationCallable<
-          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata,
-          Operation>
+          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
       createInspectOperationOperationCallable() {
     return stub.createInspectOperationOperationCallable();
   }

@@ -26,22 +26,22 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamingCallSettings;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.firestore.v1beta1.stub.FirestoreStub;
@@ -73,7 +73,6 @@ import com.google.firestore.v1beta1.UpdateDocumentRequest;
 import com.google.firestore.v1beta1.WriteRequest;
 import com.google.firestore.v1beta1.WriteResponse;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -123,19 +122,19 @@ public class FirestoreSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private final SimpleCallSettings<GetDocumentRequest, Document> getDocumentSettings;
+  private final UnaryCallSettings<GetDocumentRequest, Document> getDocumentSettings;
   private final PagedCallSettings<
           ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
       listDocumentsSettings;
-  private final SimpleCallSettings<CreateDocumentRequest, Document> createDocumentSettings;
-  private final SimpleCallSettings<UpdateDocumentRequest, Document> updateDocumentSettings;
-  private final SimpleCallSettings<DeleteDocumentRequest, Empty> deleteDocumentSettings;
+  private final UnaryCallSettings<CreateDocumentRequest, Document> createDocumentSettings;
+  private final UnaryCallSettings<UpdateDocumentRequest, Document> updateDocumentSettings;
+  private final UnaryCallSettings<DeleteDocumentRequest, Empty> deleteDocumentSettings;
   private final StreamingCallSettings<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsSettings;
-  private final SimpleCallSettings<BeginTransactionRequest, BeginTransactionResponse>
+  private final UnaryCallSettings<BeginTransactionRequest, BeginTransactionResponse>
       beginTransactionSettings;
-  private final SimpleCallSettings<CommitRequest, CommitResponse> commitSettings;
-  private final SimpleCallSettings<RollbackRequest, Empty> rollbackSettings;
+  private final UnaryCallSettings<CommitRequest, CommitResponse> commitSettings;
+  private final UnaryCallSettings<RollbackRequest, Empty> rollbackSettings;
   private final StreamingCallSettings<RunQueryRequest, RunQueryResponse> runQuerySettings;
   private final StreamingCallSettings<WriteRequest, WriteResponse> writeSettings;
   private final StreamingCallSettings<ListenRequest, ListenResponse> listenSettings;
@@ -144,7 +143,7 @@ public class FirestoreSettings extends ClientSettings {
       listCollectionIdsSettings;
 
   /** Returns the object with the settings used for calls to getDocument. */
-  public SimpleCallSettings<GetDocumentRequest, Document> getDocumentSettings() {
+  public UnaryCallSettings<GetDocumentRequest, Document> getDocumentSettings() {
     return getDocumentSettings;
   }
 
@@ -155,17 +154,17 @@ public class FirestoreSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to createDocument. */
-  public SimpleCallSettings<CreateDocumentRequest, Document> createDocumentSettings() {
+  public UnaryCallSettings<CreateDocumentRequest, Document> createDocumentSettings() {
     return createDocumentSettings;
   }
 
   /** Returns the object with the settings used for calls to updateDocument. */
-  public SimpleCallSettings<UpdateDocumentRequest, Document> updateDocumentSettings() {
+  public UnaryCallSettings<UpdateDocumentRequest, Document> updateDocumentSettings() {
     return updateDocumentSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteDocument. */
-  public SimpleCallSettings<DeleteDocumentRequest, Empty> deleteDocumentSettings() {
+  public UnaryCallSettings<DeleteDocumentRequest, Empty> deleteDocumentSettings() {
     return deleteDocumentSettings;
   }
 
@@ -176,18 +175,18 @@ public class FirestoreSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to beginTransaction. */
-  public SimpleCallSettings<BeginTransactionRequest, BeginTransactionResponse>
+  public UnaryCallSettings<BeginTransactionRequest, BeginTransactionResponse>
       beginTransactionSettings() {
     return beginTransactionSettings;
   }
 
   /** Returns the object with the settings used for calls to commit. */
-  public SimpleCallSettings<CommitRequest, CommitResponse> commitSettings() {
+  public UnaryCallSettings<CommitRequest, CommitResponse> commitSettings() {
     return commitSettings;
   }
 
   /** Returns the object with the settings used for calls to rollback. */
-  public SimpleCallSettings<RollbackRequest, Empty> rollbackSettings() {
+  public UnaryCallSettings<RollbackRequest, Empty> rollbackSettings() {
     return rollbackSettings;
   }
 
@@ -214,11 +213,13 @@ public class FirestoreSettings extends ClientSettings {
   }
 
   public FirestoreStub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcFirestoreStub.create(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -243,20 +244,19 @@ public class FirestoreSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
   }
 
   private static String getGapicVersion() {
@@ -302,8 +302,9 @@ public class FirestoreSettings extends ClientSettings {
   private FirestoreSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getTransportChannelProvider(),
         settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getHeaderProvider(),
         settingsBuilder.getClock());
 
     getDocumentSettings = settingsBuilder.getDocumentSettings().build();
@@ -429,23 +430,21 @@ public class FirestoreSettings extends ClientSettings {
 
   /** Builder for FirestoreSettings. */
   public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final SimpleCallSettings.Builder<GetDocumentRequest, Document> getDocumentSettings;
+    private final UnaryCallSettings.Builder<GetDocumentRequest, Document> getDocumentSettings;
     private final PagedCallSettings.Builder<
             ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
         listDocumentsSettings;
-    private final SimpleCallSettings.Builder<CreateDocumentRequest, Document>
-        createDocumentSettings;
-    private final SimpleCallSettings.Builder<UpdateDocumentRequest, Document>
-        updateDocumentSettings;
-    private final SimpleCallSettings.Builder<DeleteDocumentRequest, Empty> deleteDocumentSettings;
+    private final UnaryCallSettings.Builder<CreateDocumentRequest, Document> createDocumentSettings;
+    private final UnaryCallSettings.Builder<UpdateDocumentRequest, Document> updateDocumentSettings;
+    private final UnaryCallSettings.Builder<DeleteDocumentRequest, Empty> deleteDocumentSettings;
     private final StreamingCallSettings.Builder<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
         batchGetDocumentsSettings;
-    private final SimpleCallSettings.Builder<BeginTransactionRequest, BeginTransactionResponse>
+    private final UnaryCallSettings.Builder<BeginTransactionRequest, BeginTransactionResponse>
         beginTransactionSettings;
-    private final SimpleCallSettings.Builder<CommitRequest, CommitResponse> commitSettings;
-    private final SimpleCallSettings.Builder<RollbackRequest, Empty> rollbackSettings;
+    private final UnaryCallSettings.Builder<CommitRequest, CommitResponse> commitSettings;
+    private final UnaryCallSettings.Builder<RollbackRequest, Empty> rollbackSettings;
     private final StreamingCallSettings.Builder<RunQueryRequest, RunQueryResponse> runQuerySettings;
     private final StreamingCallSettings.Builder<WriteRequest, WriteResponse> writeSettings;
     private final StreamingCallSettings.Builder<ListenRequest, ListenResponse> listenSettings;
@@ -453,17 +452,18 @@ public class FirestoreSettings extends ClientSettings {
             ListCollectionIdsRequest, ListCollectionIdsResponse, ListCollectionIdsPagedResponse>
         listCollectionIdsSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -504,23 +504,23 @@ public class FirestoreSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      getDocumentSettings = SimpleCallSettings.newBuilder();
+      getDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listDocumentsSettings = PagedCallSettings.newBuilder(LIST_DOCUMENTS_PAGE_STR_FACT);
 
-      createDocumentSettings = SimpleCallSettings.newBuilder();
+      createDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      updateDocumentSettings = SimpleCallSettings.newBuilder();
+      updateDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteDocumentSettings = SimpleCallSettings.newBuilder();
+      deleteDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       batchGetDocumentsSettings = StreamingCallSettings.newBuilder();
 
-      beginTransactionSettings = SimpleCallSettings.newBuilder();
+      beginTransactionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      commitSettings = SimpleCallSettings.newBuilder();
+      commitSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      rollbackSettings = SimpleCallSettings.newBuilder();
+      rollbackSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       runQuerySettings = StreamingCallSettings.newBuilder();
 
@@ -531,7 +531,7 @@ public class FirestoreSettings extends ClientSettings {
       listCollectionIdsSettings = PagedCallSettings.newBuilder(LIST_COLLECTION_IDS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getDocumentSettings,
               listDocumentsSettings,
               createDocumentSettings,
@@ -547,8 +547,9 @@ public class FirestoreSettings extends ClientSettings {
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       return initDefaults(builder);
     }
 
@@ -620,7 +621,7 @@ public class FirestoreSettings extends ClientSettings {
       listCollectionIdsSettings = settings.listCollectionIdsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getDocumentSettings,
               listDocumentsSettings,
               createDocumentSettings,
@@ -639,8 +640,14 @@ public class FirestoreSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
+    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
+      super.setTransportChannelProvider(transportProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      super.setHeaderProvider(headerProvider);
       return this;
     }
 
@@ -656,13 +663,13 @@ public class FirestoreSettings extends ClientSettings {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to getDocument. */
-    public SimpleCallSettings.Builder<GetDocumentRequest, Document> getDocumentSettings() {
+    public UnaryCallSettings.Builder<GetDocumentRequest, Document> getDocumentSettings() {
       return getDocumentSettings;
     }
 
@@ -674,17 +681,17 @@ public class FirestoreSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to createDocument. */
-    public SimpleCallSettings.Builder<CreateDocumentRequest, Document> createDocumentSettings() {
+    public UnaryCallSettings.Builder<CreateDocumentRequest, Document> createDocumentSettings() {
       return createDocumentSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateDocument. */
-    public SimpleCallSettings.Builder<UpdateDocumentRequest, Document> updateDocumentSettings() {
+    public UnaryCallSettings.Builder<UpdateDocumentRequest, Document> updateDocumentSettings() {
       return updateDocumentSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteDocument. */
-    public SimpleCallSettings.Builder<DeleteDocumentRequest, Empty> deleteDocumentSettings() {
+    public UnaryCallSettings.Builder<DeleteDocumentRequest, Empty> deleteDocumentSettings() {
       return deleteDocumentSettings;
     }
 
@@ -695,18 +702,18 @@ public class FirestoreSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to beginTransaction. */
-    public SimpleCallSettings.Builder<BeginTransactionRequest, BeginTransactionResponse>
+    public UnaryCallSettings.Builder<BeginTransactionRequest, BeginTransactionResponse>
         beginTransactionSettings() {
       return beginTransactionSettings;
     }
 
     /** Returns the builder for the settings used for calls to commit. */
-    public SimpleCallSettings.Builder<CommitRequest, CommitResponse> commitSettings() {
+    public UnaryCallSettings.Builder<CommitRequest, CommitResponse> commitSettings() {
       return commitSettings;
     }
 
     /** Returns the builder for the settings used for calls to rollback. */
-    public SimpleCallSettings.Builder<RollbackRequest, Empty> rollbackSettings() {
+    public UnaryCallSettings.Builder<RollbackRequest, Empty> rollbackSettings() {
       return rollbackSettings;
     }
 

@@ -18,15 +18,17 @@ package com.google.cloud.grpc;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
@@ -189,11 +191,18 @@ public class GrpcTransportOptions implements TransportOptions {
   /**
    * Returns a channel provider from the given default provider.
    */
-  public static ChannelProvider setUpChannelProvider(
-      InstantiatingChannelProvider.Builder providerBuilder, ServiceOptions<?, ?> serviceOptions) {
-    providerBuilder.setEndpoint(serviceOptions.getHost())
-        .setClientLibHeader(ServiceOptions.getGoogApiClientLibName(),
-            firstNonNull(serviceOptions.getLibraryVersion(), ""));
+  @BetaApi
+  public static TransportChannelProvider setUpChannelProvider(
+      InstantiatingGrpcChannelProvider.Builder providerBuilder, ServiceOptions<?, ?> serviceOptions) {
+    providerBuilder.setEndpoint(serviceOptions.getHost());
+    return providerBuilder.build();
+  }
+
+  @BetaApi
+  public static ApiClientHeaderProvider setUpHeaderProvider(
+      ApiClientHeaderProvider.Builder providerBuilder, ServiceOptions<?, ?> serviceOptions) {
+    providerBuilder.setClientLibHeader(ServiceOptions.getGoogApiClientLibName(),
+        firstNonNull(serviceOptions.getLibraryVersion(), ""));
     return providerBuilder.build();
   }
 
@@ -202,7 +211,7 @@ public class GrpcTransportOptions implements TransportOptions {
      if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
        return FixedCredentialsProvider.create(scopedCredentials);
      }
-     return new NoCredentialsProvider();
+     return NoCredentialsProvider.create();
   }
 
 

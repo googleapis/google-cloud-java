@@ -19,7 +19,6 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscrip
 import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
@@ -88,11 +87,8 @@ public class TopicAdminClientTest {
     serviceHelper.reset();
     TopicAdminSettings settings =
         TopicAdminSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = TopicAdminClient.create(settings);
   }

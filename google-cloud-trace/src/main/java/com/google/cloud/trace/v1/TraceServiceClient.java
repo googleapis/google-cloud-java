@@ -97,10 +97,8 @@ import javax.annotation.Generated;
  * <code>
  * TraceServiceSettings traceServiceSettings =
  *     TraceServiceSettings.newBuilder()
- *         .setTransportProvider(TraceServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(TraceServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(TraceServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * TraceServiceClient traceServiceClient =
@@ -131,6 +129,7 @@ public class TraceServiceClient implements BackgroundResource {
    * Constructs an instance of TraceServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use TraceServiceSettings}.
    */
+  @BetaApi
   public static final TraceServiceClient create(TraceServiceStub stub) {
     return new TraceServiceClient(stub);
   }

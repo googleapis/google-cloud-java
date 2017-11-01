@@ -29,16 +29,15 @@ import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.pubsub.v1.Publisher;
-import com.google.cloud.pubsub.v1.TopicAdminSettings;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
-import java.io.FileInputStream;
 import org.threeten.bp.Duration;
+
+import java.io.FileInputStream;
 
 /** This class contains snippets for the {@link Publisher} interface. */
 public class PublisherSnippets {
@@ -73,7 +72,7 @@ public class PublisherSnippets {
   // [VARIABLE "my_topic"]
   public static void newBuilder(String projectId, String topicId) throws Exception {
     TopicName topic = TopicName.create(projectId, topicId);
-    Publisher publisher = Publisher.defaultBuilder(topic).build();
+    Publisher publisher = Publisher.newBuilder(topic).build();
     try {
       // ...
     } finally {
@@ -97,7 +96,7 @@ public class PublisherSnippets {
         .setDelayThreshold(publishDelayThreshold)
         .build();
 
-    Publisher publisher = Publisher.defaultBuilder(topicName)
+    Publisher publisher = Publisher.newBuilder(topicName)
         .setBatchingSettings(batchingSettings).build();
     // [END pubsub_publisher_batch_settings]
     return publisher;
@@ -116,7 +115,7 @@ public class PublisherSnippets {
         .setMaxRetryDelay(maxRetryDelay)
         .build();
 
-    Publisher publisher = Publisher.defaultBuilder(topicName)
+    Publisher publisher = Publisher.newBuilder(topicName)
         .setRetrySettings(retrySettings).build();
     // [END pubsub_publisher_retry_settings]
     return publisher;
@@ -127,7 +126,7 @@ public class PublisherSnippets {
     // create a publisher with a single threaded executor
     ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
         .setExecutorThreadCount(1).build();
-    Publisher publisher = Publisher.defaultBuilder(topicName)
+    Publisher publisher = Publisher.newBuilder(topicName)
         .setExecutorProvider(executorProvider).build();
     // [END pubsub_publisher_single_threaded]
     return publisher;
@@ -140,7 +139,7 @@ public class PublisherSnippets {
         FixedCredentialsProvider.create(
             ServiceAccountCredentials.fromStream(new FileInputStream("credentials.json")));
 
-    Publisher publisher = Publisher.defaultBuilder(topicName)
+    Publisher publisher = Publisher.newBuilder(topicName)
         .setCredentialsProvider(credentialsProvider)
         .build();
     // [END pubsub_publisher_custom_credentials]

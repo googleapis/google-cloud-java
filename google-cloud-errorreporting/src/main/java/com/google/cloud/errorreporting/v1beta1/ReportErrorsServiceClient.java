@@ -90,10 +90,8 @@ import javax.annotation.Generated;
  * <code>
  * ReportErrorsServiceSettings reportErrorsServiceSettings =
  *     ReportErrorsServiceSettings.newBuilder()
- *         .setTransportProvider(ReportErrorsServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(ReportErrorsServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(ReportErrorsServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * ReportErrorsServiceClient reportErrorsServiceClient =
@@ -125,6 +123,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * Constructs an instance of ReportErrorsServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer to use ReportErrorsServiceSettings}.
    */
+  @BetaApi
   public static final ReportErrorsServiceClient create(ReportErrorsServiceStub stub) {
     return new ReportErrorsServiceClient(stub);
   }

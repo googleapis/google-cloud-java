@@ -107,10 +107,8 @@ import javax.annotation.Generated;
  * <code>
  * ConfigSettings configSettings =
  *     ConfigSettings.newBuilder()
- *         .setTransportProvider(ConfigSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(ConfigSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(ConfigSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * ConfigClient configClient =
@@ -141,6 +139,7 @@ public class ConfigClient implements BackgroundResource {
    * Constructs an instance of ConfigClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use ConfigSettings}.
    */
+  @BetaApi
   public static final ConfigClient create(ConfigServiceV2Stub stub) {
     return new ConfigClient(stub);
   }
