@@ -60,6 +60,8 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
+import com.google.pubsub.v1.Topic;
+import com.google.pubsub.v1.TopicName;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -1519,20 +1521,5 @@ public class ITStorageTest {
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     assertTrue(remoteBlob.delete());
-  }
-
-  @Test
-  public void testNotifications() {
-    storage.create(BUCKET, NotificationInfo.of("id"));
-    assertNull(storage.listNotifications(BUCKET));
-    assertFalse(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
-    Acl acl = Acl.of(User.ofAllAuthenticatedUsers(), Role.READER);
-    assertNotNull(storage.createAcl(BUCKET, acl));
-    Acl updatedAcl = storage.updateAcl(BUCKET, acl.toBuilder().setRole(Role.WRITER).build());
-    assertEquals(Role.WRITER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(storage.listAcls(BUCKET));
-    assertTrue(acls.contains(updatedAcl));
-    assertTrue(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
-    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers()));
   }
 }
