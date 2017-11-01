@@ -46,6 +46,9 @@ import java.util.Objects;
  *      Terminology</a>
  */
 public class NotificationInfo implements Serializable {
+
+  private static final long serialVersionUID = 5725883368559753810L;
+
   public enum PayloadFormat {
     JSON_API_V1,
     NONE
@@ -65,7 +68,6 @@ public class NotificationInfo implements Serializable {
           return NotificationInfo.toPb();
         }
       };
-  // private static final long serialVersionUID = -4712013629621638459L;
   private final String generatedId;
   private final String topic;
   private final List<String> eventTypes;
