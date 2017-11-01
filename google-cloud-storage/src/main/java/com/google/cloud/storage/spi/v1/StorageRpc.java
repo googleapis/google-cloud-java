@@ -26,6 +26,7 @@ import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
+import com.google.cloud.storage.NotificationInfo;
 import com.google.cloud.storage.StorageException;
 import java.io.InputStream;
 import java.util.List;

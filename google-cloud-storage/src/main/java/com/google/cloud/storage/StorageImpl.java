@@ -924,21 +924,47 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public boolean delete(Notification notification) {
-    // TODO(andrealin): implement;
-    return false;
+  public boolean deleteNotification(final String bucket, final String notification) {
+    try {
+      return runWithRetries(new Callable<Boolean>() {
+        @Override
+        public Boolean call() {
+          return storageRpc.deleteNotification(bucket, notification);
+        }
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
   }
 
   @Override
-  public List<Notification> listNotifications(String bucket) {
-    // TODO(andrealin): implement;
-    return null;
+  public List<NotificationInfo> listNotifications(final String bucket) {
+    try {
+      List<Notification> answer = runWithRetries(new Callable<List<Notification>>() {
+        @Override
+        public List<Notification> call() {
+          return storageRpc.listNotifications(bucket);
+        }
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+      return Lists.transform(answer, NotificationInfo.FROM_PB_FUNCTION);
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
   }
 
   @Override
-  public Notification create(Notification notification) {
-    // TODO(andrealin): implement;
-    return null;
+  public NotificationInfo create(final String bucket, NotificationInfo notification) {
+    final Notification notificationPb = notification.toPb();
+    try {
+      return NotificationInfo.fromPb(runWithRetries(new Callable<Notification>() {
+        @Override
+        public Notification call() {
+          return storageRpc.createNotification(bucket, notificationPb);
+        }
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
   }
 
   private static <T> void addToOptionMap(StorageRpc.Option option, T defaultValue,
