@@ -66,7 +66,7 @@ public final class StorageException extends BaseHttpServiceException {
    *
    * @throws StorageException when {@code ex} was caused by a {@code StorageException}
    */
-  static StorageException translateAndThrow(RetryHelperException ex) {
+  public static StorageException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translate(ex);
     throw new StorageException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
