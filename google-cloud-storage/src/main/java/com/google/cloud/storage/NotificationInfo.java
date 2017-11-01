@@ -168,7 +168,7 @@ public class NotificationInfo implements Serializable {
     }
 
     @Override
-    public Builder setPayloadFormat(PayloadFormat enable) {
+    public Builder setPayloadFormat(PayloadFormat payloadFormat) {
       this.payloadFormat = payloadFormat;
       return this;
     }
