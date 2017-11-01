@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -144,7 +144,7 @@ public class SessionEntityTypesSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcSessionEntityTypesStub.of(this);
+      return GrpcSessionEntityTypesStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -301,7 +301,7 @@ public class SessionEntityTypesSettings extends ClientSettings {
                       ListSessionEntityTypesRequest, ListSessionEntityTypesResponse,
                       SessionEntityType>
                   pageContext =
-                      PageContext.of(
+                      PageContext.create(
                           callable, LIST_SESSION_ENTITY_TYPES_PAGE_STR_DESC, request, context);
               return ListSessionEntityTypesPagedResponse.createAsync(pageContext, futureResponse);
             }

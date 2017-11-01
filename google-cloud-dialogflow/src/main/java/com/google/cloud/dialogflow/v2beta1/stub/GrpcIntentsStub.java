@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,23 +129,11 @@ public class GrpcIntentsStub extends IntentsStub {
   private final OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationCallable;
 
-  /** @deprecated Use of(IntentsSettings) instead. */
-  @Deprecated
   public static final GrpcIntentsStub create(IntentsSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcIntentsStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcIntentsStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcIntentsStub of(IntentsSettings settings) throws IOException {
-    return new GrpcIntentsStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcIntentsStub of(ClientContext clientContext) throws IOException {
     return new GrpcIntentsStub(IntentsSettings.newBuilder().build(), clientContext);
   }
 
@@ -155,7 +143,7 @@ public class GrpcIntentsStub extends IntentsStub {
    */
   protected GrpcIntentsStub(IntentsSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.of(clientContext);
+    this.operationsStub = GrpcOperationsStub.create(clientContext);
 
     GrpcCallSettings<ListIntentsRequest, ListIntentsResponse> listIntentsTransportSettings =
         GrpcCallSettings.<ListIntentsRequest, ListIntentsResponse>newBuilder()

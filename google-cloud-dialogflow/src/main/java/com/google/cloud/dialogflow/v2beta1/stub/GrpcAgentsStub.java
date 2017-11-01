@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,23 +118,11 @@ public class GrpcAgentsStub extends AgentsStub {
   private final UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable;
   private final OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable;
 
-  /** @deprecated Use of(AgentsSettings) instead. */
-  @Deprecated
   public static final GrpcAgentsStub create(AgentsSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcAgentsStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcAgentsStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcAgentsStub of(AgentsSettings settings) throws IOException {
-    return new GrpcAgentsStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcAgentsStub of(ClientContext clientContext) throws IOException {
     return new GrpcAgentsStub(AgentsSettings.newBuilder().build(), clientContext);
   }
 
@@ -144,7 +132,7 @@ public class GrpcAgentsStub extends AgentsStub {
    */
   protected GrpcAgentsStub(AgentsSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.of(clientContext);
+    this.operationsStub = GrpcOperationsStub.create(clientContext);
 
     GrpcCallSettings<GetAgentRequest, Agent> getAgentTransportSettings =
         GrpcCallSettings.<GetAgentRequest, Agent>newBuilder()

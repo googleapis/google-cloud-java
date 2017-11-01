@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,23 +112,11 @@ public class GrpcContextsStub extends ContextsStub {
   private final UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable;
   private final UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable;
 
-  /** @deprecated Use of(ContextsSettings) instead. */
-  @Deprecated
   public static final GrpcContextsStub create(ContextsSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcContextsStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcContextsStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcContextsStub of(ContextsSettings settings) throws IOException {
-    return new GrpcContextsStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcContextsStub of(ClientContext clientContext) throws IOException {
     return new GrpcContextsStub(ContextsSettings.newBuilder().build(), clientContext);
   }
 

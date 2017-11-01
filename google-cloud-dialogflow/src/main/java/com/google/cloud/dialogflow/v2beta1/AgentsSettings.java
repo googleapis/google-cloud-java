@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,7 +173,7 @@ public class AgentsSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcAgentsStub.of(this);
+      return GrpcAgentsStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -321,7 +321,7 @@ public class AgentsSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<SearchAgentsResponse> futureResponse) {
               PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> pageContext =
-                  PageContext.of(callable, SEARCH_AGENTS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, SEARCH_AGENTS_PAGE_STR_DESC, request, context);
               return SearchAgentsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -466,10 +466,12 @@ public class AgentsSettings extends ClientSettings {
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
-          .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.of(Empty.class))
-          .setMetadataTransformer(ProtoOperationTransformers.MetadataTransformer.of(Struct.class))
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
           .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.of(
+              OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
                       .setInitialRetryDelay(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
@@ -487,10 +489,11 @@ public class AgentsSettings extends ClientSettings {
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.of(ExportAgentResponse.class))
-          .setMetadataTransformer(ProtoOperationTransformers.MetadataTransformer.of(Struct.class))
+              ProtoOperationTransformers.ResponseTransformer.create(ExportAgentResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
           .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.of(
+              OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
                       .setInitialRetryDelay(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
@@ -507,10 +510,12 @@ public class AgentsSettings extends ClientSettings {
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
-          .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.of(Empty.class))
-          .setMetadataTransformer(ProtoOperationTransformers.MetadataTransformer.of(Struct.class))
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
           .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.of(
+              OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
                       .setInitialRetryDelay(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
@@ -528,10 +533,12 @@ public class AgentsSettings extends ClientSettings {
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
-          .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.of(Empty.class))
-          .setMetadataTransformer(ProtoOperationTransformers.MetadataTransformer.of(Struct.class))
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
           .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.of(
+              OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
                       .setInitialRetryDelay(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,7 +139,7 @@ public class ContextsSettings extends ClientSettings {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcContextsStub.of(this);
+      return GrpcContextsStub.create(this);
     } else {
       throw new UnsupportedOperationException(
           "Transport not supported: " + getTransportChannelProvider().getTransportName());
@@ -284,7 +284,7 @@ public class ContextsSettings extends ClientSettings {
                 ApiCallContext context,
                 ApiFuture<ListContextsResponse> futureResponse) {
               PageContext<ListContextsRequest, ListContextsResponse, Context> pageContext =
-                  PageContext.of(callable, LIST_CONTEXTS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_CONTEXTS_PAGE_STR_DESC, request, context);
               return ListContextsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };

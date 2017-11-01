@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@
  *
  * <pre>
  * <code>
- * try (AgentsClient agentsClient = AgentsClient.of()) {
+ * try (AgentsClient agentsClient = AgentsClient.create()) {
  *   ProjectName parent = ProjectName.create("[PROJECT]");
  *   Agent response = agentsClient.getAgent(parent);
  * }
@@ -50,7 +50,7 @@
  *
  * <pre>
  * <code>
- * try (ContextsClient contextsClient = ContextsClient.of()) {
+ * try (ContextsClient contextsClient = ContextsClient.create()) {
  *   ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
  *   Context response = contextsClient.getContext(name);
  * }
@@ -69,7 +69,7 @@
  *
  * <pre>
  * <code>
- * try (EntityTypesClient entityTypesClient = EntityTypesClient.of()) {
+ * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
  *   EntityTypeName name = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
  *   EntityType response = entityTypesClient.getEntityType(name);
  * }
@@ -88,7 +88,7 @@
  *
  * <pre>
  * <code>
- * try (IntentsClient intentsClient = IntentsClient.of()) {
+ * try (IntentsClient intentsClient = IntentsClient.create()) {
  *   IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
  *   Intent response = intentsClient.getIntent(name);
  * }
@@ -108,7 +108,7 @@
  *
  * <pre>
  * <code>
- * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.of()) {
+ * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
  *   SessionEntityTypeName name = SessionEntityTypeName.create("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
  *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
  * }
@@ -125,7 +125,7 @@
  *
  * <pre>
  * <code>
- * try (SessionsClient sessionsClient = SessionsClient.of()) {
+ * try (SessionsClient sessionsClient = SessionsClient.create()) {
  *   SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
  *   QueryInput queryInput = QueryInput.newBuilder().build();
  *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);

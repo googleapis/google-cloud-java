@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,23 +70,11 @@ public class GrpcSessionsStub extends SessionsStub {
   private final BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable;
 
-  /** @deprecated Use of(SessionsSettings) instead. */
-  @Deprecated
   public static final GrpcSessionsStub create(SessionsSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcSessionsStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcSessionsStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcSessionsStub of(SessionsSettings settings) throws IOException {
-    return new GrpcSessionsStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcSessionsStub of(ClientContext clientContext) throws IOException {
     return new GrpcSessionsStub(SessionsSettings.newBuilder().build(), clientContext);
   }
 

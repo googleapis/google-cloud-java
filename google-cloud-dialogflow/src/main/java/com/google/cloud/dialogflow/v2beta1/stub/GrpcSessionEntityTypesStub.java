@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,26 +118,12 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
   private final UnaryCallable<DeleteSessionEntityTypeRequest, Empty>
       deleteSessionEntityTypeCallable;
 
-  /** @deprecated Use of(SessionEntityTypesSettings) instead. */
-  @Deprecated
   public static final GrpcSessionEntityTypesStub create(SessionEntityTypesSettings settings)
       throws IOException {
-    return of(settings);
+    return new GrpcSessionEntityTypesStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcSessionEntityTypesStub create(ClientContext clientContext)
-      throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcSessionEntityTypesStub of(SessionEntityTypesSettings settings)
-      throws IOException {
-    return new GrpcSessionEntityTypesStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcSessionEntityTypesStub of(ClientContext clientContext)
       throws IOException {
     return new GrpcSessionEntityTypesStub(
         SessionEntityTypesSettings.newBuilder().build(), clientContext);

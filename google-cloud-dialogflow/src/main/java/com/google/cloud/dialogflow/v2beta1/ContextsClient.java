@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (ContextsClient contextsClient = ContextsClient.of()) {
+ * try (ContextsClient contextsClient = ContextsClient.create()) {
  *   ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
  *   Context response = contextsClient.getContext(name);
  * }
@@ -69,8 +69,8 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of ContextsSettings to of(). For
- * example:
+ * <p>This class can be customized by passing in a custom instance of ContextsSettings to create().
+ * For example:
  *
  * <p>To customize credentials:
  *
@@ -78,10 +78,10 @@ import javax.annotation.Generated;
  * <code>
  * ContextsSettings contextsSettings =
  *     ContextsSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ContextsClient contextsClient =
- *     ContextsClient.of(contextsSettings);
+ *     ContextsClient.create(contextsSettings);
  * </code>
  * </pre>
  *
@@ -96,7 +96,7 @@ import javax.annotation.Generated;
  *             .build())
  *         .build();
  * ContextsClient contextsClient =
- *     ContextsClient.of(contextsSettings);
+ *     ContextsClient.create(contextsSettings);
  * </code>
  * </pre>
  */
@@ -106,48 +106,16 @@ public class ContextsClient implements BackgroundResource {
   private final ContextsSettings settings;
   private final ContextsStub stub;
 
-  /**
-   * Constructs an instance of ContextsClient with default settings.
-   *
-   * @deprecated Use of() instead.
-   */
-  @Deprecated
-  public static final ContextsClient create() throws IOException {
-    return of();
-  }
-
   /** Constructs an instance of ContextsClient with default settings. */
-  public static final ContextsClient of() throws IOException {
-    return of(ContextsSettings.newBuilder().build());
+  public static final ContextsClient create() throws IOException {
+    return create(ContextsSettings.newBuilder().build());
   }
 
   /**
    * Constructs an instance of ContextsClient, using the given settings. The channels are created
    * based on the settings passed in, or defaults for any settings that are not set.
-   *
-   * @deprecated Use of(ContextsSettings) instead.
    */
-  @Deprecated
   public static final ContextsClient create(ContextsSettings settings) throws IOException {
-    return of(settings);
-  }
-
-  /**
-   * Constructs an instance of ContextsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use ContextsSettings}.
-   *
-   * @deprecated Use of(ContextsStub) instead.
-   */
-  @Deprecated
-  public static final ContextsClient create(ContextsStub stub) {
-    return of(stub);
-  }
-
-  /**
-   * Constructs an instance of ContextsClient, using the given settings. The channels are created
-   * based on the settings passed in, or defaults for any settings that are not set.
-   */
-  public static final ContextsClient of(ContextsSettings settings) throws IOException {
     return new ContextsClient(settings);
   }
 
@@ -156,7 +124,7 @@ public class ContextsClient implements BackgroundResource {
    * advanced usage - prefer to use ContextsSettings}.
    */
   @BetaApi
-  public static final ContextsClient of(ContextsStub stub) {
+  public static final ContextsClient create(ContextsStub stub) {
     return new ContextsClient(stub);
   }
 
@@ -190,7 +158,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
    *   for (Context element : contextsClient.listContexts(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -215,7 +183,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
    *   ListContextsRequest request = ListContextsRequest.newBuilder()
    *     .setParentWithSessionName(parent)
@@ -240,7 +208,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
    *   ListContextsRequest request = ListContextsRequest.newBuilder()
    *     .setParentWithSessionName(parent)
@@ -265,7 +233,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
    *   ListContextsRequest request = ListContextsRequest.newBuilder()
    *     .setParentWithSessionName(parent)
@@ -296,7 +264,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
    *   Context response = contextsClient.getContext(name);
    * }
@@ -319,7 +287,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
    *   GetContextRequest request = GetContextRequest.newBuilder()
    *     .setNameWithContextName(name)
@@ -342,7 +310,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
    *   GetContextRequest request = GetContextRequest.newBuilder()
    *     .setNameWithContextName(name)
@@ -364,7 +332,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
    *   Context context = Context.newBuilder().build();
    *   Context response = contextsClient.createContext(parent, context);
@@ -393,7 +361,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
    *   Context context = Context.newBuilder().build();
    *   CreateContextRequest request = CreateContextRequest.newBuilder()
@@ -418,7 +386,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
    *   Context context = Context.newBuilder().build();
    *   CreateContextRequest request = CreateContextRequest.newBuilder()
@@ -442,7 +410,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   Context context = Context.newBuilder().build();
    *   Context response = contextsClient.updateContext(context);
    * }
@@ -465,7 +433,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   Context context = Context.newBuilder().build();
    *   UpdateContextRequest request = UpdateContextRequest.newBuilder()
    *     .setContext(context)
@@ -488,7 +456,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   Context context = Context.newBuilder().build();
    *   UpdateContextRequest request = UpdateContextRequest.newBuilder()
    *     .setContext(context)
@@ -510,7 +478,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
    *   contextsClient.deleteContext(name);
    * }
@@ -534,7 +502,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
    *   DeleteContextRequest request = DeleteContextRequest.newBuilder()
    *     .setNameWithContextName(name)
@@ -557,7 +525,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
    *   DeleteContextRequest request = DeleteContextRequest.newBuilder()
    *     .setNameWithContextName(name)
@@ -579,7 +547,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
    *   contextsClient.deleteAllContexts(parent);
    * }
@@ -603,7 +571,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
    *   DeleteAllContextsRequest request = DeleteAllContextsRequest.newBuilder()
    *     .setParentWithSessionName(parent)
@@ -626,7 +594,7 @@ public class ContextsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ContextsClient contextsClient = ContextsClient.of()) {
+   * try (ContextsClient contextsClient = ContextsClient.create()) {
    *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
    *   DeleteAllContextsRequest request = DeleteAllContextsRequest.newBuilder()
    *     .setParentWithSessionName(parent)

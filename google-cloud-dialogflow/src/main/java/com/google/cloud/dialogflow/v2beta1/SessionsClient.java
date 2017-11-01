@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (SessionsClient sessionsClient = SessionsClient.of()) {
+ * try (SessionsClient sessionsClient = SessionsClient.create()) {
  *   SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
  *   QueryInput queryInput = QueryInput.newBuilder().build();
  *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
@@ -66,8 +66,8 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of SessionsSettings to of(). For
- * example:
+ * <p>This class can be customized by passing in a custom instance of SessionsSettings to create().
+ * For example:
  *
  * <p>To customize credentials:
  *
@@ -75,10 +75,10 @@ import javax.annotation.Generated;
  * <code>
  * SessionsSettings sessionsSettings =
  *     SessionsSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.of(myCredentials))
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * SessionsClient sessionsClient =
- *     SessionsClient.of(sessionsSettings);
+ *     SessionsClient.create(sessionsSettings);
  * </code>
  * </pre>
  *
@@ -93,7 +93,7 @@ import javax.annotation.Generated;
  *             .build())
  *         .build();
  * SessionsClient sessionsClient =
- *     SessionsClient.of(sessionsSettings);
+ *     SessionsClient.create(sessionsSettings);
  * </code>
  * </pre>
  */
@@ -103,48 +103,16 @@ public class SessionsClient implements BackgroundResource {
   private final SessionsSettings settings;
   private final SessionsStub stub;
 
-  /**
-   * Constructs an instance of SessionsClient with default settings.
-   *
-   * @deprecated Use of() instead.
-   */
-  @Deprecated
-  public static final SessionsClient create() throws IOException {
-    return of();
-  }
-
   /** Constructs an instance of SessionsClient with default settings. */
-  public static final SessionsClient of() throws IOException {
-    return of(SessionsSettings.newBuilder().build());
+  public static final SessionsClient create() throws IOException {
+    return create(SessionsSettings.newBuilder().build());
   }
 
   /**
    * Constructs an instance of SessionsClient, using the given settings. The channels are created
    * based on the settings passed in, or defaults for any settings that are not set.
-   *
-   * @deprecated Use of(SessionsSettings) instead.
    */
-  @Deprecated
   public static final SessionsClient create(SessionsSettings settings) throws IOException {
-    return of(settings);
-  }
-
-  /**
-   * Constructs an instance of SessionsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use SessionsSettings}.
-   *
-   * @deprecated Use of(SessionsStub) instead.
-   */
-  @Deprecated
-  public static final SessionsClient create(SessionsStub stub) {
-    return of(stub);
-  }
-
-  /**
-   * Constructs an instance of SessionsClient, using the given settings. The channels are created
-   * based on the settings passed in, or defaults for any settings that are not set.
-   */
-  public static final SessionsClient of(SessionsSettings settings) throws IOException {
     return new SessionsClient(settings);
   }
 
@@ -153,7 +121,7 @@ public class SessionsClient implements BackgroundResource {
    * advanced usage - prefer to use SessionsSettings}.
    */
   @BetaApi
-  public static final SessionsClient of(SessionsStub stub) {
+  public static final SessionsClient create(SessionsStub stub) {
     return new SessionsClient(stub);
   }
 
@@ -189,7 +157,7 @@ public class SessionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.of()) {
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
    *   SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
@@ -226,7 +194,7 @@ public class SessionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.of()) {
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
    *   SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
@@ -253,7 +221,7 @@ public class SessionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.of()) {
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
    *   SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
@@ -279,7 +247,7 @@ public class SessionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.of()) {
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
    *   ApiStreamObserver&lt;StreamingDetectIntentResponse&gt; responseObserver =
    *       new ApiStreamObserver&lt;StreamingDetectIntentResponse&gt;() {
    *         {@literal @}Override

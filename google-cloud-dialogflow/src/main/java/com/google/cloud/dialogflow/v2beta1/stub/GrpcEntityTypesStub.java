@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -183,23 +183,11 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
   private final OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationCallable;
 
-  /** @deprecated Use of(EntityTypesSettings) instead. */
-  @Deprecated
   public static final GrpcEntityTypesStub create(EntityTypesSettings settings) throws IOException {
-    return of(settings);
+    return new GrpcEntityTypesStub(settings, ClientContext.create(settings));
   }
 
-  /** @deprecated Use of(ClientContext) instead. */
-  @Deprecated
   public static final GrpcEntityTypesStub create(ClientContext clientContext) throws IOException {
-    return of(clientContext);
-  }
-
-  public static final GrpcEntityTypesStub of(EntityTypesSettings settings) throws IOException {
-    return new GrpcEntityTypesStub(settings, ClientContext.of(settings));
-  }
-
-  public static final GrpcEntityTypesStub of(ClientContext clientContext) throws IOException {
     return new GrpcEntityTypesStub(EntityTypesSettings.newBuilder().build(), clientContext);
   }
 
@@ -210,7 +198,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
    */
   protected GrpcEntityTypesStub(EntityTypesSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.of(clientContext);
+    this.operationsStub = GrpcOperationsStub.create(clientContext);
 
     GrpcCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
         listEntityTypesTransportSettings =
