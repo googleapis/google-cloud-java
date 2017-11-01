@@ -18,6 +18,7 @@ package com.google.cloud.storage.contrib.nio.testing;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.StorageObject;
@@ -460,6 +461,21 @@ class FakeStorageRpc implements StorageRpc {
 
   @Override
   public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean deleteNotification(String bucket, String notification) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public List<Notification> listNotifications(String bucket) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Notification createNotification(String bucket, Notification notification) {
     throw new UnsupportedOperationException();
   }
 }
