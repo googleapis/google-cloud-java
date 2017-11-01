@@ -1522,4 +1522,22 @@ public class ITStorageTest {
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     assertTrue(remoteBlob.delete());
   }
+
+  @Test
+  public void testListBucketRequesterPaysFails() throws InterruptedException {
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+          Storage.BucketListOption.fields(), Storage.BucketListOption.userProject(projectId)).iterateAll().iterator();
+    while (!bucketIterator.hasNext()) {
+      Thread.sleep(500);
+      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+          Storage.BucketListOption.fields()).iterateAll().iterator();
+    }
+    while (bucketIterator.hasNext()) {
+      Bucket remoteBucket = bucketIterator.next();
+      assertTrue(remoteBucket.getName().startsWith(BUCKET));
+      assertNull(remoteBucket.getCreateTime());
+      assertNull(remoteBucket.getSelfLink());
+    }
+  }
 }

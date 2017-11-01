@@ -765,6 +765,15 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * Returns an option for bucket's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BucketListOption userProject(String userProject) {
+      return new BucketListOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
+    /**
      * Returns an option to specify the bucket's fields to be returned by the RPC call. If this
      * option is not provided all bucket's fields are returned. {@code BucketListOption.fields}) can
      * be used to specify only the fields of interest. Bucket name is always returned, even if not
