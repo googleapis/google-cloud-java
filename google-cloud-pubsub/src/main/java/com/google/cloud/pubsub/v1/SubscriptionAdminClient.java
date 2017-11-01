@@ -129,10 +129,8 @@ import javax.annotation.Generated;
  * <code>
  * SubscriptionAdminSettings subscriptionAdminSettings =
  *     SubscriptionAdminSettings.newBuilder()
- *         .setTransportProvider(SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(SubscriptionAdminSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * SubscriptionAdminClient subscriptionAdminClient =
@@ -164,6 +162,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Constructs an instance of SubscriptionAdminClient, using the given stub for making calls. This
    * is for advanced usage - prefer to use SubscriptionAdminSettings}.
    */
+  @BetaApi
   public static final SubscriptionAdminClient create(SubscriberStub stub) {
     return new SubscriptionAdminClient(stub);
   }

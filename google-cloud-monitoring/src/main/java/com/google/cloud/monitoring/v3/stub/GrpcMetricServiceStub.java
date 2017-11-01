@@ -24,6 +24,7 @@ import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -40,6 +41,8 @@ import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
 import com.google.protobuf.Empty;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -53,84 +56,92 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcMetricServiceStub extends MetricServiceStub {
-  private static final UnaryCallable<
+
+  private static final MethodDescriptor<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
-      directListMonitoredResourceDescriptorsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.monitoring.v3.MetricService/ListMonitoredResourceDescriptors",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListMonitoredResourceDescriptorsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListMonitoredResourceDescriptorsResponse.getDefaultInstance())));
-  private static final UnaryCallable<
+      listMonitoredResourceDescriptorsMethodDescriptor =
+          MethodDescriptor
+              .<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.monitoring.v3.MetricService/ListMonitoredResourceDescriptors")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListMonitoredResourceDescriptorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListMonitoredResourceDescriptorsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
           GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
-      directGetMonitoredResourceDescriptorCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.monitoring.v3.MetricService/GetMonitoredResourceDescriptor",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      GetMonitoredResourceDescriptorRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      MonitoredResourceDescriptor.getDefaultInstance())));
-  private static final UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
-      directListMetricDescriptorsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.monitoring.v3.MetricService/ListMetricDescriptors",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListMetricDescriptorsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListMetricDescriptorsResponse.getDefaultInstance())));
-  private static final UnaryCallable<GetMetricDescriptorRequest, MetricDescriptor>
-      directGetMetricDescriptorCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.monitoring.v3.MetricService/GetMetricDescriptor",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      GetMetricDescriptorRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance())));
-  private static final UnaryCallable<CreateMetricDescriptorRequest, MetricDescriptor>
-      directCreateMetricDescriptorCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.monitoring.v3.MetricService/CreateMetricDescriptor",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      CreateMetricDescriptorRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance())));
-  private static final UnaryCallable<DeleteMetricDescriptorRequest, Empty>
-      directDeleteMetricDescriptorCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.monitoring.v3.MetricService/DeleteMetricDescriptor",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      DeleteMetricDescriptorRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesResponse>
-      directListTimeSeriesCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.monitoring.v3.MetricService/ListTimeSeries",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListTimeSeriesRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListTimeSeriesResponse.getDefaultInstance())));
-  private static final UnaryCallable<CreateTimeSeriesRequest, Empty>
-      directCreateTimeSeriesCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.monitoring.v3.MetricService/CreateTimeSeries",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      CreateTimeSeriesRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
+      getMonitoredResourceDescriptorMethodDescriptor =
+          MethodDescriptor
+              .<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.monitoring.v3.MetricService/GetMonitoredResourceDescriptor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMonitoredResourceDescriptorRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(MonitoredResourceDescriptor.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
+      listMetricDescriptorsMethodDescriptor =
+          MethodDescriptor.<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.monitoring.v3.MetricService/ListMetricDescriptors")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMetricDescriptorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMetricDescriptorsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetMetricDescriptorRequest, MetricDescriptor>
+      getMetricDescriptorMethodDescriptor =
+          MethodDescriptor.<GetMetricDescriptorRequest, MetricDescriptor>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.monitoring.v3.MetricService/GetMetricDescriptor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMetricDescriptorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateMetricDescriptorRequest, MetricDescriptor>
+      createMetricDescriptorMethodDescriptor =
+          MethodDescriptor.<CreateMetricDescriptorRequest, MetricDescriptor>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.monitoring.v3.MetricService/CreateMetricDescriptor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateMetricDescriptorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteMetricDescriptorRequest, Empty>
+      deleteMetricDescriptorMethodDescriptor =
+          MethodDescriptor.<DeleteMetricDescriptorRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.monitoring.v3.MetricService/DeleteMetricDescriptor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteMetricDescriptorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListTimeSeriesRequest, ListTimeSeriesResponse>
+      listTimeSeriesMethodDescriptor =
+          MethodDescriptor.<ListTimeSeriesRequest, ListTimeSeriesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.monitoring.v3.MetricService/ListTimeSeries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListTimeSeriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListTimeSeriesResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateTimeSeriesRequest, Empty>
+      createTimeSeriesMethodDescriptor =
+          MethodDescriptor.<CreateTimeSeriesRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.monitoring.v3.MetricService/CreateTimeSeries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateTimeSeriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -173,55 +184,99 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
   protected GrpcMetricServiceStub(MetricServiceSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<
+            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
+        listMonitoredResourceDescriptorsTransportSettings =
+            GrpcCallSettings
+                .<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listMonitoredResourceDescriptorsMethodDescriptor)
+                .build();
+    GrpcCallSettings<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
+        getMonitoredResourceDescriptorTransportSettings =
+            GrpcCallSettings
+                .<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>newBuilder()
+                .setMethodDescriptor(getMonitoredResourceDescriptorMethodDescriptor)
+                .build();
+    GrpcCallSettings<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
+        listMetricDescriptorsTransportSettings =
+            GrpcCallSettings
+                .<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>newBuilder()
+                .setMethodDescriptor(listMetricDescriptorsMethodDescriptor)
+                .build();
+    GrpcCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
+        getMetricDescriptorTransportSettings =
+            GrpcCallSettings.<GetMetricDescriptorRequest, MetricDescriptor>newBuilder()
+                .setMethodDescriptor(getMetricDescriptorMethodDescriptor)
+                .build();
+    GrpcCallSettings<CreateMetricDescriptorRequest, MetricDescriptor>
+        createMetricDescriptorTransportSettings =
+            GrpcCallSettings.<CreateMetricDescriptorRequest, MetricDescriptor>newBuilder()
+                .setMethodDescriptor(createMetricDescriptorMethodDescriptor)
+                .build();
+    GrpcCallSettings<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorTransportSettings =
+        GrpcCallSettings.<DeleteMetricDescriptorRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteMetricDescriptorMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListTimeSeriesRequest, ListTimeSeriesResponse>
+        listTimeSeriesTransportSettings =
+            GrpcCallSettings.<ListTimeSeriesRequest, ListTimeSeriesResponse>newBuilder()
+                .setMethodDescriptor(listTimeSeriesMethodDescriptor)
+                .build();
+    GrpcCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesTransportSettings =
+        GrpcCallSettings.<CreateTimeSeriesRequest, Empty>newBuilder()
+            .setMethodDescriptor(createTimeSeriesMethodDescriptor)
+            .build();
+
     this.listMonitoredResourceDescriptorsCallable =
-        GrpcCallableFactory.create(
-            directListMonitoredResourceDescriptorsCallable,
+        GrpcCallableFactory.createUnaryCallable(
+            listMonitoredResourceDescriptorsTransportSettings,
             settings.listMonitoredResourceDescriptorsSettings(),
             clientContext);
     this.listMonitoredResourceDescriptorsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListMonitoredResourceDescriptorsCallable,
+        GrpcCallableFactory.createPagedCallable(
+            listMonitoredResourceDescriptorsTransportSettings,
             settings.listMonitoredResourceDescriptorsSettings(),
             clientContext);
     this.getMonitoredResourceDescriptorCallable =
-        GrpcCallableFactory.create(
-            directGetMonitoredResourceDescriptorCallable,
+        GrpcCallableFactory.createUnaryCallable(
+            getMonitoredResourceDescriptorTransportSettings,
             settings.getMonitoredResourceDescriptorSettings(),
             clientContext);
     this.listMetricDescriptorsCallable =
-        GrpcCallableFactory.create(
-            directListMetricDescriptorsCallable,
+        GrpcCallableFactory.createUnaryCallable(
+            listMetricDescriptorsTransportSettings,
             settings.listMetricDescriptorsSettings(),
             clientContext);
     this.listMetricDescriptorsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListMetricDescriptorsCallable,
+        GrpcCallableFactory.createPagedCallable(
+            listMetricDescriptorsTransportSettings,
             settings.listMetricDescriptorsSettings(),
             clientContext);
     this.getMetricDescriptorCallable =
-        GrpcCallableFactory.create(
-            directGetMetricDescriptorCallable,
+        GrpcCallableFactory.createUnaryCallable(
+            getMetricDescriptorTransportSettings,
             settings.getMetricDescriptorSettings(),
             clientContext);
     this.createMetricDescriptorCallable =
-        GrpcCallableFactory.create(
-            directCreateMetricDescriptorCallable,
+        GrpcCallableFactory.createUnaryCallable(
+            createMetricDescriptorTransportSettings,
             settings.createMetricDescriptorSettings(),
             clientContext);
     this.deleteMetricDescriptorCallable =
-        GrpcCallableFactory.create(
-            directDeleteMetricDescriptorCallable,
+        GrpcCallableFactory.createUnaryCallable(
+            deleteMetricDescriptorTransportSettings,
             settings.deleteMetricDescriptorSettings(),
             clientContext);
     this.listTimeSeriesCallable =
-        GrpcCallableFactory.create(
-            directListTimeSeriesCallable, settings.listTimeSeriesSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listTimeSeriesTransportSettings, settings.listTimeSeriesSettings(), clientContext);
     this.listTimeSeriesPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListTimeSeriesCallable, settings.listTimeSeriesSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listTimeSeriesTransportSettings, settings.listTimeSeriesSettings(), clientContext);
     this.createTimeSeriesCallable =
-        GrpcCallableFactory.create(
-            directCreateTimeSeriesCallable, settings.createTimeSeriesSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createTimeSeriesTransportSettings, settings.createTimeSeriesSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

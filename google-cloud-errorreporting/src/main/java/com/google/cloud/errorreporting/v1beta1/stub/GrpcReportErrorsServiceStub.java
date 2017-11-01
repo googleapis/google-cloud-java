@@ -18,12 +18,15 @@ package com.google.cloud.errorreporting.v1beta1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.errorreporting.v1beta1.ReportErrorsServiceSettings;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -37,16 +40,18 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
-  private static final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>
-      directReportErrorEventCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.devtools.clouderrorreporting.v1beta1.ReportErrorsService/ReportErrorEvent",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ReportErrorEventRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ReportErrorEventResponse.getDefaultInstance())));
+
+  private static final MethodDescriptor<ReportErrorEventRequest, ReportErrorEventResponse>
+      reportErrorEventMethodDescriptor =
+          MethodDescriptor.<ReportErrorEventRequest, ReportErrorEventResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.clouderrorreporting.v1beta1.ReportErrorsService/ReportErrorEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReportErrorEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReportErrorEventResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -72,9 +77,15 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
   protected GrpcReportErrorsServiceStub(
       ReportErrorsServiceSettings settings, ClientContext clientContext) throws IOException {
 
+    GrpcCallSettings<ReportErrorEventRequest, ReportErrorEventResponse>
+        reportErrorEventTransportSettings =
+            GrpcCallSettings.<ReportErrorEventRequest, ReportErrorEventResponse>newBuilder()
+                .setMethodDescriptor(reportErrorEventMethodDescriptor)
+                .build();
+
     this.reportErrorEventCallable =
-        GrpcCallableFactory.create(
-            directReportErrorEventCallable, settings.reportErrorEventSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            reportErrorEventTransportSettings, settings.reportErrorEventSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

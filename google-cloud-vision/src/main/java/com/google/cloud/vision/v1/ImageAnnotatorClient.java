@@ -87,10 +87,8 @@ import javax.annotation.Generated;
  * <code>
  * ImageAnnotatorSettings imageAnnotatorSettings =
  *     ImageAnnotatorSettings.newBuilder()
- *         .setTransportProvider(ImageAnnotatorSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(ImageAnnotatorSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(ImageAnnotatorSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * ImageAnnotatorClient imageAnnotatorClient =
@@ -122,6 +120,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * Constructs an instance of ImageAnnotatorClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use ImageAnnotatorSettings}.
    */
+  @BetaApi
   public static final ImageAnnotatorClient create(ImageAnnotatorStub stub) {
     return new ImageAnnotatorClient(stub);
   }

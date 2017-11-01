@@ -89,10 +89,8 @@ import javax.annotation.Generated;
  * <code>
  * ErrorGroupServiceSettings errorGroupServiceSettings =
  *     ErrorGroupServiceSettings.newBuilder()
- *         .setTransportProvider(ErrorGroupServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(ErrorGroupServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(ErrorGroupServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * ErrorGroupServiceClient errorGroupServiceClient =
@@ -124,6 +122,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * Constructs an instance of ErrorGroupServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer to use ErrorGroupServiceSettings}.
    */
+  @BetaApi
   public static final ErrorGroupServiceClient create(ErrorGroupServiceStub stub) {
     return new ErrorGroupServiceClient(stub);
   }

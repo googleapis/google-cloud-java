@@ -96,10 +96,8 @@ import javax.annotation.Generated;
  * <code>
  * MetricsSettings metricsSettings =
  *     MetricsSettings.newBuilder()
- *         .setTransportProvider(MetricsSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(MetricsSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(MetricsSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * MetricsClient metricsClient =
@@ -130,6 +128,7 @@ public class MetricsClient implements BackgroundResource {
    * Constructs an instance of MetricsClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use MetricsSettings}.
    */
+  @BetaApi
   public static final MetricsClient create(MetricsServiceV2Stub stub) {
     return new MetricsClient(stub);
   }

@@ -71,7 +71,7 @@ public class SubscriberSnippets {
 
   // [TARGET startAsync()]
   public void startAndWait() throws Exception {
-    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
+    Subscriber subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
     subscriber.addListener(
         new Subscriber.Listener() {
           public void failed(Subscriber.State from, Throwable failure) {
@@ -110,7 +110,7 @@ public class SubscriberSnippets {
     Subscriber subscriber = null;
     try {
       // Create a subscriber for "my-subscription-id" bound to the message receiver
-      subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
+      subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
       subscriber.startAsync();
       // ...
     } finally {
@@ -142,7 +142,7 @@ public class SubscriberSnippets {
         InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
 
     Subscriber subscriber =
-        Subscriber.defaultBuilder(subscriptionName, receiver)
+        Subscriber.newBuilder(subscriptionName, receiver)
             .setExecutorProvider(executorProvider)
             .build();
     // [END pubsub_subscriber_single_threaded]
@@ -156,7 +156,7 @@ public class SubscriberSnippets {
     FlowControlSettings flowControlSettings =
         FlowControlSettings.newBuilder().setMaxOutstandingElementCount(maxMessageCount).build();
     Subscriber subscriber =
-        Subscriber.defaultBuilder(subscriptionName, receiver)
+        Subscriber.newBuilder(subscriptionName, receiver)
             .setFlowControlSettings(flowControlSettings)
             .build();
     // [END pubsub_subscriber_flow_settings]
@@ -170,7 +170,7 @@ public class SubscriberSnippets {
             ServiceAccountCredentials.fromStream(new FileInputStream("credentials.json")));
 
     Subscriber subscriber =
-        Subscriber.defaultBuilder(subscriptionName, receiver)
+        Subscriber.newBuilder(subscriptionName, receiver)
             .setCredentialsProvider(credentialsProvider)
             .build();
     // [START pubsub_subscriber_custom_credentials]
