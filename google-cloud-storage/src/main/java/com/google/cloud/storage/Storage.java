@@ -2508,14 +2508,4 @@ public interface Storage extends Service<StorageOptions> {
   @BetaApi
   @GcpLaunchStage.Alpha
   List<Boolean> testIamPermissions(String bucket, List<String> permissions);
-
-  @BetaApi
-  boolean deleteNotification(String bucket, String notification);
-
-  @BetaApi
-  List<NotificationInfo> listNotifications(String bucket);
-
-  @BetaApi
-  NotificationInfo createNotification(String bucket, NotificationInfo notification);
-
 }
