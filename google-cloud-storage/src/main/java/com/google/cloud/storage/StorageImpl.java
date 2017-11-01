@@ -946,6 +946,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           return storageRpc.listNotifications(bucket);
         }
       }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+      if (answer == null) {
+        return null;
+      }
       return Lists.transform(answer, NotificationInfo.FROM_PB_FUNCTION);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
