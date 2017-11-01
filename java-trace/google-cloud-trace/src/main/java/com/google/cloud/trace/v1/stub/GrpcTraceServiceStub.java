@@ -20,6 +20,7 @@ import static com.google.cloud.trace.v1.PagedResponseWrappers.ListTracesPagedRes
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -30,6 +31,8 @@ import com.google.devtools.cloudtrace.v1.ListTracesResponse;
 import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.protobuf.Empty;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -43,28 +46,29 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcTraceServiceStub extends TraceServiceStub {
-  private static final UnaryCallable<PatchTracesRequest, Empty> directPatchTracesCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.devtools.cloudtrace.v1.TraceService/PatchTraces",
-              io.grpc.protobuf.ProtoUtils.marshaller(PatchTracesRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<GetTraceRequest, Trace> directGetTraceCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.devtools.cloudtrace.v1.TraceService/GetTrace",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetTraceRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Trace.getDefaultInstance())));
-  private static final UnaryCallable<ListTracesRequest, ListTracesResponse>
-      directListTracesCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.devtools.cloudtrace.v1.TraceService/ListTraces",
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListTracesRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListTracesResponse.getDefaultInstance())));
+
+  private static final MethodDescriptor<PatchTracesRequest, Empty> patchTracesMethodDescriptor =
+      MethodDescriptor.<PatchTracesRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.cloudtrace.v1.TraceService/PatchTraces")
+          .setRequestMarshaller(ProtoUtils.marshaller(PatchTracesRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<GetTraceRequest, Trace> getTraceMethodDescriptor =
+      MethodDescriptor.<GetTraceRequest, Trace>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.cloudtrace.v1.TraceService/GetTrace")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetTraceRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Trace.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListTracesRequest, ListTracesResponse>
+      listTracesMethodDescriptor =
+          MethodDescriptor.<ListTracesRequest, ListTracesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.devtools.cloudtrace.v1.TraceService/ListTraces")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListTracesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListTracesResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -90,18 +94,31 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
   protected GrpcTraceServiceStub(TraceServiceSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<PatchTracesRequest, Empty> patchTracesTransportSettings =
+        GrpcCallSettings.<PatchTracesRequest, Empty>newBuilder()
+            .setMethodDescriptor(patchTracesMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetTraceRequest, Trace> getTraceTransportSettings =
+        GrpcCallSettings.<GetTraceRequest, Trace>newBuilder()
+            .setMethodDescriptor(getTraceMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListTracesRequest, ListTracesResponse> listTracesTransportSettings =
+        GrpcCallSettings.<ListTracesRequest, ListTracesResponse>newBuilder()
+            .setMethodDescriptor(listTracesMethodDescriptor)
+            .build();
+
     this.patchTracesCallable =
-        GrpcCallableFactory.create(
-            directPatchTracesCallable, settings.patchTracesSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            patchTracesTransportSettings, settings.patchTracesSettings(), clientContext);
     this.getTraceCallable =
-        GrpcCallableFactory.create(
-            directGetTraceCallable, settings.getTraceSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getTraceTransportSettings, settings.getTraceSettings(), clientContext);
     this.listTracesCallable =
-        GrpcCallableFactory.create(
-            directListTracesCallable, settings.listTracesSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listTracesTransportSettings, settings.listTracesSettings(), clientContext);
     this.listTracesPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListTracesCallable, settings.listTracesSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listTracesTransportSettings, settings.listTracesSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
