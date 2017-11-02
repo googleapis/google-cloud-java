@@ -22,6 +22,7 @@ import com.google.cloud.notification.NotificationInfo.PayloadFormat;
 import com.google.common.collect.ImmutableList;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.pubsub.v1.TopicName;
 import org.junit.Test;
 
 import java.util.List;
@@ -35,16 +36,16 @@ public class NotificationInfoTest {
   private static final List<String> EVENT_TYPES = ImmutableList.of("OBJECT_FINALIZE", "OBJECT_METADATA_UPDATE");
   private static final String OBJECT_NAME_PREFIX = "index.html";
   private static final PayloadFormat PAYLOAD_FORMAT = PayloadFormat.JSON_API_V1;
-  private static final String TOPIC = "topic1";
+  private static final TopicName TOPIC = TopicName.create("myProject", "topic1");
   private static final Map<String, String> CUSTOM_ATTRIBUTES = ImmutableMap.of("label1", "value1");
-  private static final NotificationInfo NOTIFICATION_INFO = NotificationInfo.newBuilder(GENERATED_ID)
+  private static final NotificationInfo NOTIFICATION_INFO = NotificationInfo.newBuilder(TOPIC)
       .setEtag(ETAG)
       .setCustomAttributes(CUSTOM_ATTRIBUTES)
       .setSelfLink(SELF_LINK)
       .setEventTypes(EVENT_TYPES)
       .setObjectNamePrefix(OBJECT_NAME_PREFIX)
       .setPayloadFormat(PAYLOAD_FORMAT)
-      .setTopic(TOPIC)
+      .setGeneratedId(GENERATED_ID)
       .build();
 
   @Test
@@ -58,14 +59,14 @@ public class NotificationInfoTest {
 
   @Test
   public void testToBuilderIncomplete() {
-    NotificationInfo incompleteBucketInfo = NotificationInfo.newBuilder("b").build();
+    NotificationInfo incompleteBucketInfo = NotificationInfo.newBuilder(TopicName.create("myProject", "topic1")).build();
     compareBuckets(incompleteBucketInfo, incompleteBucketInfo.toBuilder().build());
   }
 
   @Test
   public void testOf() {
-    NotificationInfo bucketInfo = NotificationInfo.of("bucket");
-    assertEquals("bucket", bucketInfo.getGeneratedId());
+    NotificationInfo bucketInfo = NotificationInfo.of(TopicName.create("myProject", "topic1"));
+    assertEquals(TopicName.create("myProject", "topic1"), bucketInfo.getTopic());
   }
 
   @Test
@@ -83,7 +84,11 @@ public class NotificationInfoTest {
   @Test
   public void testToPbAndFromPb() {
     compareBuckets(NOTIFICATION_INFO, NotificationInfo.fromPb(NOTIFICATION_INFO.toPb()));
-    NotificationInfo bucketInfo = NotificationInfo.of("b");
+    NotificationInfo bucketInfo = NotificationInfo.of(
+        TopicName.create("myProject", "topic1"))
+        .toBuilder()
+        .setPayloadFormat(PayloadFormat.NONE)
+        .build();
     compareBuckets(bucketInfo, NotificationInfo.fromPb(bucketInfo.toPb()));
   }
 

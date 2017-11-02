@@ -23,7 +23,6 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.notification.Notification;
-import com.google.cloud.notification.NotificationFactory;
 import com.google.cloud.notification.NotificationImpl.DefaultNotificationFactory;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.storage.BucketInfo;
@@ -113,17 +112,17 @@ public class ITSystemTest {
     assertTrue(permissions.contains(permissionName));
 
     // Use Storage API to create a Notification on that Topic.
-    NotificationInfo notification = notificationService.createNotification(BUCKET,  NotificationInfo.of(topic.toString()));
+    NotificationInfo notification = notificationService.createNotification(BUCKET,  NotificationInfo.of(topic));
     assertNotNull(notification);
     Set<NotificationInfo> notifications = Sets.newHashSet(notificationService.listNotifications(BUCKET));
     assertTrue(notifications.contains(notification));
     assertEquals(1, notifications.size());
 
     NotificationInfo notification2 = notificationService.createNotification(BUCKET,
-        NotificationInfo.of(topic.toString())
+        NotificationInfo.of(topic)
             .toBuilder()
             .setPayloadFormat(PayloadFormat.JSON_API_V1).build());
-    assertEquals(topic, TopicName.parse(notification2.getTopic()));
+    assertEquals(topic, notification2.getTopic());
     notifications = Sets.newHashSet(notificationService.listNotifications(BUCKET));
     assertTrue(notifications.contains(notification));
     assertTrue(notifications.contains(notification2));

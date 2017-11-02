@@ -30,6 +30,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
+import com.google.pubsub.v1.TopicName;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -69,7 +70,7 @@ public class NotificationInfo implements Serializable {
         }
       };
   private final String generatedId;
-  private final String topic;
+  private final TopicName topic;
   private final List<String> eventTypes;
   private final Map<String, String> customAttributes;
   private final PayloadFormat payloadFormat;
@@ -92,7 +93,7 @@ public class NotificationInfo implements Serializable {
      * Sets the Cloud PubSub topic to which this subscription publishes.
      * Formatted as: '//pubsub.googleapis.com/projects/{project-identifier}/topics/{my-topic}'
      */
-    public abstract Builder setTopic(String topic);
+    public abstract Builder setTopic(TopicName topic);
 
     /**
      * Sets the event types for which notifications will be sent. If empty, send notifications for
@@ -128,7 +129,7 @@ public class NotificationInfo implements Serializable {
   static final class BuilderImpl extends Builder {
 
     private String generatedId;
-    private String topic;
+    private TopicName topic;
     private List<String> eventTypes;
     private Map<String, String> customAttributes;
     private PayloadFormat payloadFormat;
@@ -136,7 +137,7 @@ public class NotificationInfo implements Serializable {
     private String etag;
     private String selfLink;
 
-    BuilderImpl(String topic) {
+    BuilderImpl(TopicName topic) {
       this.topic = topic;
     }
 
@@ -164,7 +165,7 @@ public class NotificationInfo implements Serializable {
     }
 
     @Override
-    public Builder setTopic(String topic) {
+    public Builder setTopic(TopicName topic) {
       this.topic = topic;
       return this;
     }
@@ -229,7 +230,7 @@ public class NotificationInfo implements Serializable {
   /**
    * Returns the bucket's owner. This is always the project team's owner group.
    */
-  public String getTopic() {
+  public TopicName getTopic() {
     return topic;
   }
 
@@ -331,7 +332,7 @@ public class NotificationInfo implements Serializable {
       notificationPb.setPayloadFormat(PayloadFormat.NONE.toString());
     }
     notificationPb.setSelfLink(selfLink);
-    notificationPb.setTopic(topic);
+    notificationPb.setTopic(topic.toString());
 
     return notificationPb;
   }
@@ -339,19 +340,19 @@ public class NotificationInfo implements Serializable {
   /**
    * Creates a {@code NotificationInfo} object for the provided bucket name.
    */
-  public static NotificationInfo of(String topic) {
+  public static NotificationInfo of(TopicName topic) {
     return newBuilder(topic).build();
   }
 
   /**
    * Returns a {@code NotificationInfo} builder where the bucket's name is set to the provided name.
    */
-  public static Builder newBuilder(String topic) {
+  public static Builder newBuilder(TopicName topic) {
     return new BuilderImpl(topic);
   }
 
   static NotificationInfo fromPb(com.google.api.services.storage.model.Notification notificationPb) {
-    Builder builder = new BuilderImpl(notificationPb.getId());
+    Builder builder = new BuilderImpl(TopicName.parse(notificationPb.getTopic()));
     if (notificationPb.getId() != null) {
       builder.setGeneratedId(notificationPb.getId());
     }
@@ -368,7 +369,7 @@ public class NotificationInfo implements Serializable {
       builder.setObjectNamePrefix(notificationPb.getObjectNamePrefix());
     }
     if (notificationPb.getTopic() != null) {
-      builder.setTopic(notificationPb.getTopic());
+      builder.setTopic(TopicName.parse(notificationPb.getTopic()));
     }
     if (notificationPb.getEventTypes() != null) {
       builder.setEventTypes(notificationPb.getEventTypes());
