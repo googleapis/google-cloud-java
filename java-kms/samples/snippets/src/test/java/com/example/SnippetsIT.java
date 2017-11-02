@@ -188,6 +188,29 @@ public class SnippetsIT {
   }
 
   @Test
+  public void enableCryptoKeyVersion_enables() throws Exception {
+    Snippets.createCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
+
+    Matcher matcher = Pattern.compile(".*cryptoKeyVersions/(\\d+)\",\"state\":\"ENABLED\".*",
+        Pattern.DOTALL | Pattern.MULTILINE).matcher(bout.toString().trim());
+    assertTrue(matcher.matches());
+    String version = matcher.group(1);
+
+    // Disable the new key version
+    Snippets.disableCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, version);
+    assertThat(bout.toString()).containsMatch(String.format(
+        "keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s\",\"state\":\"DISABLED\"",
+        KEY_RING_ID, CRYPTO_KEY_ID, version));
+
+    // Enable the now-disabled key version
+    Snippets.enableCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, version);
+    assertThat(bout.toString()).containsMatch(String.format(
+        "keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s\",\"state\":\"ENABLED\"",
+        KEY_RING_ID, CRYPTO_KEY_ID, version));
+
+  }
+
+  @Test
   public void destroyCryptoKeyVersion_destroys() throws Exception {
     Snippets.createCryptoKeyVersion(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 

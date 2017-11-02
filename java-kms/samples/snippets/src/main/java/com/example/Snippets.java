@@ -179,6 +179,36 @@ public class Snippets {
   }
   // [END kms_disable_cryptokey_version]
 
+    // [START kms_enable_cryptokey_version]
+
+  /**
+   * Enables the given version of the crypto key.
+   */
+  public static CryptoKeyVersion enableCryptoKeyVersion(
+      String projectId, String locationId, String keyRingId, String cryptoKeyId, String version)
+      throws IOException {
+    // Create the Cloud KMS client.
+    CloudKMS kms = createAuthorizedClient();
+
+    // The resource name of the cryptoKey version
+    String cryptoKeyVersion = String.format(
+        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s",
+        projectId, locationId, keyRingId, cryptoKeyId, version);
+
+    CryptoKeyVersion newVersionState = new CryptoKeyVersion()
+        .setState("ENABLED");
+
+    CryptoKeyVersion response = kms.projects().locations().keyRings().cryptoKeys()
+        .cryptoKeyVersions()
+        .patch(cryptoKeyVersion, newVersionState)
+        .setUpdateMask("state")
+        .execute();
+
+    System.out.println(response);
+    return response;
+  }
+  // [END kms_enable_cryptokey_version]
+
   // [START kms_destroy_cryptokey_version]
 
   /**
