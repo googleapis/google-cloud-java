@@ -1387,6 +1387,8 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Creates a new bucket.
    *
+   * Accepts an optional userProject {@link BucketTargetOption} option.
+   *
    * <p>Example of creating a bucket.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
@@ -1430,6 +1432,7 @@ public interface Storage extends Service<StorageOptions> {
    * Creates a new blob. Direct upload is used to upload {@code content}. For large content,
    * {@link #writer} is recommended as it uses resumable upload. MD5 and CRC32C hashes of
    * {@code content} are computed and used for validating transferred data.
+   * Accepts an optional userProject {@link BlobGetOption} option.
    *
    * <p>Example of creating a blob from a byte array.
    * <pre> {@code
@@ -1489,6 +1492,8 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Returns the requested bucket or {@code null} if not found.
    *
+   * Accepts an optional userProject {@link BucketGetOption} option.
+   *
    * <p>Example of getting information on a bucket, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
    * <pre> {@code
@@ -1504,6 +1509,8 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Returns the requested blob or {@code null} if not found.
+   *
+   * Accepts an optional userProject {@link BlobGetOption} option.
    *
    * <p>Example of getting information on a blob, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
@@ -1521,6 +1528,8 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Returns the requested blob or {@code null} if not found.
+   *
+   * Accepts an optional userProject {@link BlobGetOption} option.
    *
    * <p>Example of getting information on a blob, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
@@ -1594,6 +1603,8 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Updates bucket information.
    *
+   * Accepts an optional userProject {@link BucketTargetOption} option.
+   *
    * <p>Example of updating bucket information.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
@@ -1610,6 +1621,7 @@ public interface Storage extends Service<StorageOptions> {
    * Updates blob information. Original metadata are merged with metadata in the provided
    * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
+   * Accepts an optional userProject {@link BlobTargetOption} option.
    *
    * <p>Example of udating a blob, only if the blob's metageneration matches a value, otherwise a
    * {@link StorageException} is thrown.
@@ -1650,6 +1662,8 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Deletes the requested bucket.
+   *
+   * Accepts an optional userProject {@link BucketSourceOption} option.
    *
    * <p>Example of deleting a bucket, only if its metageneration matches a value, otherwise a
    * {@link StorageException} is thrown.
@@ -1696,6 +1710,8 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Deletes the requested blob.
    *
+   * Accepts an optional userProject {@link BlobSourceOption} option.
+   *
    * <p>Example of deleting a blob, only if its generation matches a value, otherwise a
    * {@link StorageException} is thrown.
    * <pre> {@code
@@ -1739,6 +1755,8 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Sends a compose request.
+   *
+   * Accepts an optional userProject {@link BlobTargetOption} option.
    *
    * <p>Example of composing two blobs.
    * <pre> {@code
