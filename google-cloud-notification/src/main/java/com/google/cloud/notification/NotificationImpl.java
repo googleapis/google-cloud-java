@@ -1,6 +1,5 @@
 package com.google.cloud.notification;
 
-import static com.google.cloud.BaseService.EXCEPTION_HANDLER;
 import static com.google.cloud.RetryHelper.runWithRetries;
 
 import com.google.cloud.BaseService;
@@ -9,15 +8,11 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageFactory;
 import com.google.cloud.storage.StorageOptions;
-import com.google.cloud.storage.StorageOptions.DefaultStorageFactory;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-/**
- * Created by andrealin on 11/1/17.
- */
 public class NotificationImpl extends BaseService<StorageOptions> implements Notification {
 
   private final StorageRpc storageRpc;

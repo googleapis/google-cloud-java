@@ -18,11 +18,10 @@ package com.google.cloud.notification;
 
 
 import com.google.cloud.ServiceFactory;
-import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
 /**
- * An interface for Storage factories.
+ * An interface for Notification factories.
  */
 public interface NotificationFactory extends ServiceFactory<Notification, StorageOptions> {
 }
