@@ -38,6 +38,29 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class MessageDispatcher2 {
+
+  private static final Logger logger = Logger.getLogger(MessageDispatcher.class.getName());
+  private static final int DEADLINE_EXTENSION_SEC = 60;
+  private static final int KEEPALIVE_SEC = 45;
+  private static final int MAX_CHANGE_PER_REQUEST = 1000;
+
+  private final ExecutorService executor;
+  private final ScheduledExecutorService systemExecutor;
+  private final MessageReceiver receiver;
+  private final FlowController flowController;
+
+  private final ConcurrentLinkedQueue<WorkItem> workQueue = new ConcurrentLinkedQueue<>();
+  private final ConcurrentLinkedQueue<String> idsToAck = new ConcurrentLinkedQueue<>();
+  private final ConcurrentLinkedQueue<String> idsToNack = new ConcurrentLinkedQueue<>();
+
+  // Boolean, not Void, because the map doesn't allow null values.
+  private final ConcurrentHashMap<String, Boolean> extensionSet = new ConcurrentHashMap<>();
+
+  private final LinkedBlockingQueue<Connection> connections = new LinkedBlockingQueue<>();
+
+  private ScheduledFuture<?> ackNackJob;
+  private ScheduledFuture<?> extensionJob;
+  
   interface Connection {
     void send(StreamingPullRequest request);
   }
@@ -98,28 +121,6 @@ class MessageDispatcher2 {
       idsToNack.add(ackId);
     }
   }
-
-  private static final Logger logger = Logger.getLogger(MessageDispatcher.class.getName());
-  private static final int DEADLINE_EXTENSION_SEC = 60;
-  private static final int KEEPALIVE_SEC = 45;
-  private static final int MAX_CHANGE_PER_REQUEST = 1000;
-
-  private final ExecutorService executor;
-  private final ScheduledExecutorService systemExecutor;
-  private final MessageReceiver receiver;
-  private final FlowController flowController;
-
-  private final ConcurrentLinkedQueue<WorkItem> workQueue = new ConcurrentLinkedQueue<>();
-  private final ConcurrentLinkedQueue<String> idsToAck = new ConcurrentLinkedQueue<>();
-  private final ConcurrentLinkedQueue<String> idsToNack = new ConcurrentLinkedQueue<>();
-
-  // Boolean, not Void, because the map doesn't allow null values.
-  private final ConcurrentHashMap<String, Boolean> extensionSet = new ConcurrentHashMap<>();
-
-  private final LinkedBlockingQueue<Connection> connections = new LinkedBlockingQueue<>();
-
-  private ScheduledFuture<?> ackNackJob;
-  private ScheduledFuture<?> extensionJob;
 
   MessageDispatcher2(
       ExecutorService executor,
