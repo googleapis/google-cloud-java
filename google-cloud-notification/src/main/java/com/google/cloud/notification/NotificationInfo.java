@@ -41,7 +41,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Google Storage bucket metadata;
+ * Google Storage Notification metadata;
  *
  * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and
  *      Terminology</a>
@@ -91,7 +91,6 @@ public class NotificationInfo implements Serializable {
 
     /**
      * Sets the Cloud PubSub topic to which this subscription publishes.
-     * Formatted as: '//pubsub.googleapis.com/projects/{project-identifier}/topics/{my-topic}'
      */
     public abstract Builder setTopic(TopicName topic);
 
@@ -221,43 +220,42 @@ public class NotificationInfo implements Serializable {
 
   // TODO(andrealin): method comments for the getters.
   /**
-   * Returns the service-generated id for the bucket.
+   * Returns the service-generated id for the notification.
    */
   public String getGeneratedId() {
     return generatedId;
   }
 
   /**
-   * Returns the bucket's owner. This is always the project team's owner group.
+   * Returns the Cloud PubSub topic to which this subscription publishes.
    */
   public TopicName getTopic() {
     return topic;
   }
 
   /**
-   * Returns the URI of this bucket as a string.
+   * Returns the canonical URI of this topic as a string.
    */
   public String getSelfLink() {
     return selfLink;
   }
 
   /**
-   * Returns {@code true} if versioning is fully enabled for this bucket, {@code false} otherwise.
+   * Returns the desired content of the Payload.
    */
   public PayloadFormat getPayloadFormat() {
     return payloadFormat;
   }
 
   /**
-   * Returns bucket's website index page. Behaves as the bucket's directory index where missing
-   * blobs are treated as potential directories.
+   * Returns the object name prefix for which this notification configuration applies.
    */
   public String getObjectNamePrefix() {
     return objectNamePrefix;
   }
 
   /**
-   * Returns HTTP 1.1 Entity tag for the bucket.
+   * Returns HTTP 1.1 Entity tag for the notification.
    *
    * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
    */
@@ -266,7 +264,8 @@ public class NotificationInfo implements Serializable {
   }
 
   /**
-   * Returns the bucket's Cross-Origin Resource Sharing (CORS) configuration.
+   * Returns the list of event types that this notification will apply to.
+   * If empty, notifications will be sent on all event types.
    *
    * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
    *     Cross-Origin Resource Sharing (CORS)</a>
@@ -276,7 +275,8 @@ public class NotificationInfo implements Serializable {
   }
 
   /**
-   * Returns the bucket's access control configuration.
+   * Returns the list of additional attributes to attach to each Cloud PubSub message published for\
+   * this notification subscription.
    *
    * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
    *     About Access Control Lists</a>
@@ -286,7 +286,7 @@ public class NotificationInfo implements Serializable {
   }
 
   /**
-   * Returns a builder for the current bucket.
+   * Returns a builder for the current notification.
    */
   public Builder toBuilder() {
     return new BuilderImpl(this);
@@ -338,14 +338,14 @@ public class NotificationInfo implements Serializable {
   }
 
   /**
-   * Creates a {@code NotificationInfo} object for the provided bucket name.
+   * Creates a {@code NotificationInfo} object for the provided topic name.
    */
   public static NotificationInfo of(TopicName topic) {
     return newBuilder(topic).build();
   }
 
   /**
-   * Returns a {@code NotificationInfo} builder where the bucket's name is set to the provided name.
+   * Returns a {@code NotificationInfo} builder where the topic's name is set to the provided name.
    */
   public static Builder newBuilder(TopicName topic) {
     return new BuilderImpl(topic);
