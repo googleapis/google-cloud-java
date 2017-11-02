@@ -36,6 +36,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import com.google.auto.value.AutoValue;
 
 class MessageDispatcher2 {
 
@@ -51,7 +52,7 @@ class MessageDispatcher2 {
 
   private final ConcurrentLinkedQueue<WorkItem> workQueue = new ConcurrentLinkedQueue<>();
   private final ConcurrentLinkedQueue<String> idsToAck = new ConcurrentLinkedQueue<>();
-  private final ConcurrentLinkedQueue<String> idsToNack = new ConcurrentLinkedQueue<>();
+  private final ConcurrentLinkedQueue<ModAckItem> modAcks = new ConcurrentLinkedQueue<>();
 
   // Boolean, not Void, because the map doesn't allow null values.
   private final ConcurrentHashMap<String, Boolean> extensionSet = new ConcurrentHashMap<>();
@@ -60,9 +61,19 @@ class MessageDispatcher2 {
 
   private ScheduledFuture<?> ackNackJob;
   private ScheduledFuture<?> extensionJob;
-  
+
   interface Connection {
     void send(StreamingPullRequest request);
+  }
+
+@AutoValue
+  static abstract class ModAckItem {
+    abstract String ackId();
+    abstract int seconds();
+
+    static ModAckItem create(String ackId, int seconds) {
+      return new AutoValue_MessageDispatcher2_ModAckItem(ackId, seconds);
+    }
   }
 
   private static class WorkItem {
@@ -108,7 +119,7 @@ class MessageDispatcher2 {
     @Override
     public void nack() {
       complete("nack");
-      idsToNack.add(workItem.message.getAckId());
+      modAcks.add(ModAckItem.create(workItem.message.getAckId(), 0));
     }
 
     void throwException(Throwable t) {
@@ -118,7 +129,7 @@ class MessageDispatcher2 {
           Level.WARNING,
           "MessageReceiver failed to processes ack ID: " + ackId + ", the message will be nacked.",
           t);
-      idsToNack.add(ackId);
+          modAcks.add(ModAckItem.create(ackId, 0));
     }
   }
 
@@ -193,14 +204,13 @@ class MessageDispatcher2 {
     }
 
     while (builder.getModifyDeadlineAckIdsCount() < MAX_CHANGE_PER_REQUEST) {
-      String id = idsToNack.poll();
-      if (id == null) {
+      ModAckItem modAck = modAcks.poll();
+      if (modAck == null) {
         break;
       }
-      builder.addModifyDeadlineAckIds(id);
+      builder.addModifyDeadlineAckIds(modAck.ackId());
+      builder.addModifyDeadlineSeconds(modAck.seconds());
     }
-    builder.addAllModifyDeadlineSeconds(
-        Collections.nCopies(builder.getModifyDeadlineAckIdsCount(), 0));
 
     return builder.getAckIdsCount() == MAX_CHANGE_PER_REQUEST
         || builder.getModifyDeadlineAckIdsCount() == MAX_CHANGE_PER_REQUEST;
@@ -212,14 +222,9 @@ class MessageDispatcher2 {
       return;
     }
 
-    StreamingPullRequest.Builder builder =
-        StreamingPullRequest.newBuilder()
-            .addAllModifyDeadlineSeconds(
-                Collections.nCopies(messages.size(), DEADLINE_EXTENSION_SEC));
     for (ReceivedMessage message : messages) {
-      builder.addModifyDeadlineAckIds(message.getAckId());
+      modAcks.add(ModAckItem.create(message.getAckId(), DEADLINE_EXTENSION_SEC));
     }
-    sendRequest(builder.build());
 
     AtomicInteger remaining = new AtomicInteger(messages.size());
     for (ReceivedMessage message : messages) {
