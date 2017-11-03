@@ -17,8 +17,8 @@ package com.google.cloud.videointelligence.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.OperationFuture;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.videointelligence.v1beta1.stub.VideoIntelligenceServiceStub;
 import com.google.longrunning.Operation;
@@ -92,10 +92,8 @@ import javax.annotation.Generated;
  * <code>
  * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings =
  *     VideoIntelligenceServiceSettings.newBuilder()
- *         .setTransportProvider(VideoIntelligenceServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(VideoIntelligenceServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(VideoIntelligenceServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * VideoIntelligenceServiceClient videoIntelligenceServiceClient =
@@ -129,6 +127,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * Constructs an instance of VideoIntelligenceServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer to use VideoIntelligenceServiceSettings}.
    */
+  @BetaApi
   public static final VideoIntelligenceServiceClient create(VideoIntelligenceServiceStub stub) {
     return new VideoIntelligenceServiceClient(stub);
   }
@@ -197,8 +196,8 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * @param features Requested video annotation features.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation>
-      annotateVideoAsync(String inputUri, List<Feature> features) {
+  public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> annotateVideoAsync(
+      String inputUri, List<Feature> features) {
 
     AnnotateVideoRequest request =
         AnnotateVideoRequest.newBuilder().setInputUri(inputUri).addAllFeatures(features).build();
@@ -230,8 +229,8 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress, Operation>
-      annotateVideoAsync(AnnotateVideoRequest request) {
+  public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> annotateVideoAsync(
+      AnnotateVideoRequest request) {
     return annotateVideoOperationCallable().futureCall(request);
   }
 
@@ -259,8 +258,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    */
-  public final OperationCallable<
-          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
+  public final OperationCallable<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable() {
     return stub.annotateVideoOperationCallable();
   }

@@ -21,6 +21,7 @@ import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupsPag
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -35,6 +36,8 @@ import com.google.monitoring.v3.ListGroupsRequest;
 import com.google.monitoring.v3.ListGroupsResponse;
 import com.google.monitoring.v3.UpdateGroupRequest;
 import com.google.protobuf.Empty;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -48,52 +51,53 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcGroupServiceStub extends GroupServiceStub {
-  private static final UnaryCallable<ListGroupsRequest, ListGroupsResponse>
-      directListGroupsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.monitoring.v3.GroupService/ListGroups",
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListGroupsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListGroupsResponse.getDefaultInstance())));
-  private static final UnaryCallable<GetGroupRequest, Group> directGetGroupCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.monitoring.v3.GroupService/GetGroup",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Group.getDefaultInstance())));
-  private static final UnaryCallable<CreateGroupRequest, Group> directCreateGroupCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.monitoring.v3.GroupService/CreateGroup",
-              io.grpc.protobuf.ProtoUtils.marshaller(CreateGroupRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Group.getDefaultInstance())));
-  private static final UnaryCallable<UpdateGroupRequest, Group> directUpdateGroupCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.monitoring.v3.GroupService/UpdateGroup",
-              io.grpc.protobuf.ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Group.getDefaultInstance())));
-  private static final UnaryCallable<DeleteGroupRequest, Empty> directDeleteGroupCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.monitoring.v3.GroupService/DeleteGroup",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteGroupRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse>
-      directListGroupMembersCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.monitoring.v3.GroupService/ListGroupMembers",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListGroupMembersRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListGroupMembersResponse.getDefaultInstance())));
+
+  private static final MethodDescriptor<ListGroupsRequest, ListGroupsResponse>
+      listGroupsMethodDescriptor =
+          MethodDescriptor.<ListGroupsRequest, ListGroupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.monitoring.v3.GroupService/ListGroups")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListGroupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListGroupsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetGroupRequest, Group> getGroupMethodDescriptor =
+      MethodDescriptor.<GetGroupRequest, Group>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.monitoring.v3.GroupService/GetGroup")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<CreateGroupRequest, Group> createGroupMethodDescriptor =
+      MethodDescriptor.<CreateGroupRequest, Group>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.monitoring.v3.GroupService/CreateGroup")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateGroupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<UpdateGroupRequest, Group> updateGroupMethodDescriptor =
+      MethodDescriptor.<UpdateGroupRequest, Group>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.monitoring.v3.GroupService/UpdateGroup")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteGroupRequest, Empty> deleteGroupMethodDescriptor =
+      MethodDescriptor.<DeleteGroupRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.monitoring.v3.GroupService/DeleteGroup")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteGroupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListGroupMembersRequest, ListGroupMembersResponse>
+      listGroupMembersMethodDescriptor =
+          MethodDescriptor.<ListGroupMembersRequest, ListGroupMembersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.monitoring.v3.GroupService/ListGroupMembers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListGroupMembersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListGroupMembersResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -125,30 +129,56 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
   protected GrpcGroupServiceStub(GroupServiceSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<ListGroupsRequest, ListGroupsResponse> listGroupsTransportSettings =
+        GrpcCallSettings.<ListGroupsRequest, ListGroupsResponse>newBuilder()
+            .setMethodDescriptor(listGroupsMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetGroupRequest, Group> getGroupTransportSettings =
+        GrpcCallSettings.<GetGroupRequest, Group>newBuilder()
+            .setMethodDescriptor(getGroupMethodDescriptor)
+            .build();
+    GrpcCallSettings<CreateGroupRequest, Group> createGroupTransportSettings =
+        GrpcCallSettings.<CreateGroupRequest, Group>newBuilder()
+            .setMethodDescriptor(createGroupMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateGroupRequest, Group> updateGroupTransportSettings =
+        GrpcCallSettings.<UpdateGroupRequest, Group>newBuilder()
+            .setMethodDescriptor(updateGroupMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteGroupRequest, Empty> deleteGroupTransportSettings =
+        GrpcCallSettings.<DeleteGroupRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteGroupMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListGroupMembersRequest, ListGroupMembersResponse>
+        listGroupMembersTransportSettings =
+            GrpcCallSettings.<ListGroupMembersRequest, ListGroupMembersResponse>newBuilder()
+                .setMethodDescriptor(listGroupMembersMethodDescriptor)
+                .build();
+
     this.listGroupsCallable =
-        GrpcCallableFactory.create(
-            directListGroupsCallable, settings.listGroupsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listGroupsTransportSettings, settings.listGroupsSettings(), clientContext);
     this.listGroupsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListGroupsCallable, settings.listGroupsSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listGroupsTransportSettings, settings.listGroupsSettings(), clientContext);
     this.getGroupCallable =
-        GrpcCallableFactory.create(
-            directGetGroupCallable, settings.getGroupSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getGroupTransportSettings, settings.getGroupSettings(), clientContext);
     this.createGroupCallable =
-        GrpcCallableFactory.create(
-            directCreateGroupCallable, settings.createGroupSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createGroupTransportSettings, settings.createGroupSettings(), clientContext);
     this.updateGroupCallable =
-        GrpcCallableFactory.create(
-            directUpdateGroupCallable, settings.updateGroupSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            updateGroupTransportSettings, settings.updateGroupSettings(), clientContext);
     this.deleteGroupCallable =
-        GrpcCallableFactory.create(
-            directDeleteGroupCallable, settings.deleteGroupSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteGroupTransportSettings, settings.deleteGroupSettings(), clientContext);
     this.listGroupMembersCallable =
-        GrpcCallableFactory.create(
-            directListGroupMembersCallable, settings.listGroupMembersSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listGroupMembersTransportSettings, settings.listGroupMembersSettings(), clientContext);
     this.listGroupMembersPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListGroupMembersCallable, settings.listGroupMembersSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listGroupMembersTransportSettings, settings.listGroupMembersSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

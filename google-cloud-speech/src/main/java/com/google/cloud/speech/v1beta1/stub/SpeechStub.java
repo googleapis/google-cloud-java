@@ -49,8 +49,7 @@ public abstract class SpeechStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: syncRecognizeCallable()");
   }
 
-  public OperationCallable<
-          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
+  public OperationCallable<AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
       asyncRecognizeOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: asyncRecognizeOperationCallable()");
   }

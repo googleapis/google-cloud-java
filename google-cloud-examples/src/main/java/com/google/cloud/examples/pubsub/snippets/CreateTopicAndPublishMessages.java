@@ -48,7 +48,7 @@ public class CreateTopicAndPublishMessages {
 
     try {
       // Create a publisher instance with default settings bound to the topic
-      publisher = Publisher.defaultBuilder(topicName).build();
+      publisher = Publisher.newBuilder(topicName).build();
 
       List<String> messages = Arrays.asList("first message", "second message");
 

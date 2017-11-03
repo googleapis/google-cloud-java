@@ -21,6 +21,7 @@ import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.List
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -31,6 +32,8 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -44,33 +47,37 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
-  private static final UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse>
-      directListGroupStatsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/ListGroupStats",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListGroupStatsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListGroupStatsResponse.getDefaultInstance())));
-  private static final UnaryCallable<ListEventsRequest, ListEventsResponse>
-      directListEventsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/ListEvents",
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListEventsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListEventsResponse.getDefaultInstance())));
-  private static final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse>
-      directDeleteEventsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/DeleteEvents",
-                  io.grpc.protobuf.ProtoUtils.marshaller(DeleteEventsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      DeleteEventsResponse.getDefaultInstance())));
+
+  private static final MethodDescriptor<ListGroupStatsRequest, ListGroupStatsResponse>
+      listGroupStatsMethodDescriptor =
+          MethodDescriptor.<ListGroupStatsRequest, ListGroupStatsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/ListGroupStats")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListGroupStatsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListGroupStatsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListEventsRequest, ListEventsResponse>
+      listEventsMethodDescriptor =
+          MethodDescriptor.<ListEventsRequest, ListEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/ListEvents")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListEventsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteEventsRequest, DeleteEventsResponse>
+      deleteEventsMethodDescriptor =
+          MethodDescriptor.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/DeleteEvents")
+              .setRequestMarshaller(ProtoUtils.marshaller(DeleteEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DeleteEventsResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -100,21 +107,35 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
   protected GrpcErrorStatsServiceStub(
       ErrorStatsServiceSettings settings, ClientContext clientContext) throws IOException {
 
+    GrpcCallSettings<ListGroupStatsRequest, ListGroupStatsResponse>
+        listGroupStatsTransportSettings =
+            GrpcCallSettings.<ListGroupStatsRequest, ListGroupStatsResponse>newBuilder()
+                .setMethodDescriptor(listGroupStatsMethodDescriptor)
+                .build();
+    GrpcCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
+        GrpcCallSettings.<ListEventsRequest, ListEventsResponse>newBuilder()
+            .setMethodDescriptor(listEventsMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsTransportSettings =
+        GrpcCallSettings.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
+            .setMethodDescriptor(deleteEventsMethodDescriptor)
+            .build();
+
     this.listGroupStatsCallable =
-        GrpcCallableFactory.create(
-            directListGroupStatsCallable, settings.listGroupStatsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listGroupStatsTransportSettings, settings.listGroupStatsSettings(), clientContext);
     this.listGroupStatsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListGroupStatsCallable, settings.listGroupStatsSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listGroupStatsTransportSettings, settings.listGroupStatsSettings(), clientContext);
     this.listEventsCallable =
-        GrpcCallableFactory.create(
-            directListEventsCallable, settings.listEventsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listEventsTransportSettings, settings.listEventsSettings(), clientContext);
     this.listEventsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListEventsCallable, settings.listEventsSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listEventsTransportSettings, settings.listEventsSettings(), clientContext);
     this.deleteEventsCallable =
-        GrpcCallableFactory.create(
-            directDeleteEventsCallable, settings.deleteEventsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteEventsTransportSettings, settings.deleteEventsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

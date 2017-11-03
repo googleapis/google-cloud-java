@@ -21,6 +21,7 @@ import static com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListDocum
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
@@ -50,6 +51,8 @@ import com.google.firestore.v1beta1.UpdateDocumentRequest;
 import com.google.firestore.v1beta1.WriteRequest;
 import com.google.firestore.v1beta1.WriteResponse;
 import com.google.protobuf.Empty;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -63,109 +66,117 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcFirestoreStub extends FirestoreStub {
-  private static final UnaryCallable<GetDocumentRequest, Document> directGetDocumentCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.firestore.v1beta1.Firestore/GetDocument",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetDocumentRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Document.getDefaultInstance())));
-  private static final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse>
-      directListDocumentsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.firestore.v1beta1.Firestore/ListDocuments",
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListDocumentsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListDocumentsResponse.getDefaultInstance())));
-  private static final UnaryCallable<CreateDocumentRequest, Document> directCreateDocumentCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.firestore.v1beta1.Firestore/CreateDocument",
-              io.grpc.protobuf.ProtoUtils.marshaller(CreateDocumentRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Document.getDefaultInstance())));
-  private static final UnaryCallable<UpdateDocumentRequest, Document> directUpdateDocumentCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.firestore.v1beta1.Firestore/UpdateDocument",
-              io.grpc.protobuf.ProtoUtils.marshaller(UpdateDocumentRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Document.getDefaultInstance())));
-  private static final UnaryCallable<DeleteDocumentRequest, Empty> directDeleteDocumentCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.firestore.v1beta1.Firestore/DeleteDocument",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteDocumentRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final ServerStreamingCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
-      directBatchGetDocumentsCallable =
-          GrpcCallableFactory.createDirectServerStreamingCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING,
-                  "google.firestore.v1beta1.Firestore/BatchGetDocuments",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      BatchGetDocumentsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      BatchGetDocumentsResponse.getDefaultInstance())));
-  private static final UnaryCallable<BeginTransactionRequest, BeginTransactionResponse>
-      directBeginTransactionCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.firestore.v1beta1.Firestore/BeginTransaction",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      BeginTransactionRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      BeginTransactionResponse.getDefaultInstance())));
-  private static final UnaryCallable<CommitRequest, CommitResponse> directCommitCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.firestore.v1beta1.Firestore/Commit",
-              io.grpc.protobuf.ProtoUtils.marshaller(CommitRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(CommitResponse.getDefaultInstance())));
-  private static final UnaryCallable<RollbackRequest, Empty> directRollbackCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.firestore.v1beta1.Firestore/Rollback",
-              io.grpc.protobuf.ProtoUtils.marshaller(RollbackRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final ServerStreamingCallable<RunQueryRequest, RunQueryResponse>
-      directRunQueryCallable =
-          GrpcCallableFactory.createDirectServerStreamingCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING,
-                  "google.firestore.v1beta1.Firestore/RunQuery",
-                  io.grpc.protobuf.ProtoUtils.marshaller(RunQueryRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(RunQueryResponse.getDefaultInstance())));
-  private static final BidiStreamingCallable<WriteRequest, WriteResponse> directWriteCallable =
-      GrpcCallableFactory.createDirectBidiStreamingCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING,
-              "google.firestore.v1beta1.Firestore/Write",
-              io.grpc.protobuf.ProtoUtils.marshaller(WriteRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(WriteResponse.getDefaultInstance())));
-  private static final BidiStreamingCallable<ListenRequest, ListenResponse> directListenCallable =
-      GrpcCallableFactory.createDirectBidiStreamingCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING,
-              "google.firestore.v1beta1.Firestore/Listen",
-              io.grpc.protobuf.ProtoUtils.marshaller(ListenRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(ListenResponse.getDefaultInstance())));
-  private static final UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsResponse>
-      directListCollectionIdsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.firestore.v1beta1.Firestore/ListCollectionIds",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListCollectionIdsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListCollectionIdsResponse.getDefaultInstance())));
+
+  private static final MethodDescriptor<GetDocumentRequest, Document> getDocumentMethodDescriptor =
+      MethodDescriptor.<GetDocumentRequest, Document>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.firestore.v1beta1.Firestore/GetDocument")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetDocumentRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListDocumentsRequest, ListDocumentsResponse>
+      listDocumentsMethodDescriptor =
+          MethodDescriptor.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.v1beta1.Firestore/ListDocuments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDocumentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDocumentsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateDocumentRequest, Document>
+      createDocumentMethodDescriptor =
+          MethodDescriptor.<CreateDocumentRequest, Document>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.v1beta1.Firestore/CreateDocument")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateDocumentRequest, Document>
+      updateDocumentMethodDescriptor =
+          MethodDescriptor.<UpdateDocumentRequest, Document>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.v1beta1.Firestore/UpdateDocument")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteDocumentRequest, Empty>
+      deleteDocumentMethodDescriptor =
+          MethodDescriptor.<DeleteDocumentRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.v1beta1.Firestore/DeleteDocument")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
+      batchGetDocumentsMethodDescriptor =
+          MethodDescriptor.<BatchGetDocumentsRequest, BatchGetDocumentsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName("google.firestore.v1beta1.Firestore/BatchGetDocuments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchGetDocumentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchGetDocumentsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<BeginTransactionRequest, BeginTransactionResponse>
+      beginTransactionMethodDescriptor =
+          MethodDescriptor.<BeginTransactionRequest, BeginTransactionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.v1beta1.Firestore/BeginTransaction")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BeginTransactionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BeginTransactionResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CommitRequest, CommitResponse> commitMethodDescriptor =
+      MethodDescriptor.<CommitRequest, CommitResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.firestore.v1beta1.Firestore/Commit")
+          .setRequestMarshaller(ProtoUtils.marshaller(CommitRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(CommitResponse.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<RollbackRequest, Empty> rollbackMethodDescriptor =
+      MethodDescriptor.<RollbackRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.firestore.v1beta1.Firestore/Rollback")
+          .setRequestMarshaller(ProtoUtils.marshaller(RollbackRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<RunQueryRequest, RunQueryResponse>
+      runQueryMethodDescriptor =
+          MethodDescriptor.<RunQueryRequest, RunQueryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName("google.firestore.v1beta1.Firestore/RunQuery")
+              .setRequestMarshaller(ProtoUtils.marshaller(RunQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RunQueryResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<WriteRequest, WriteResponse> writeMethodDescriptor =
+      MethodDescriptor.<WriteRequest, WriteResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+          .setFullMethodName("google.firestore.v1beta1.Firestore/Write")
+          .setRequestMarshaller(ProtoUtils.marshaller(WriteRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(WriteResponse.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListenRequest, ListenResponse> listenMethodDescriptor =
+      MethodDescriptor.<ListenRequest, ListenResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+          .setFullMethodName("google.firestore.v1beta1.Firestore/Listen")
+          .setRequestMarshaller(ProtoUtils.marshaller(ListenRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(ListenResponse.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListCollectionIdsRequest, ListCollectionIdsResponse>
+      listCollectionIdsMethodDescriptor =
+          MethodDescriptor.<ListCollectionIdsRequest, ListCollectionIdsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.v1beta1.Firestore/ListCollectionIds")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListCollectionIdsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListCollectionIdsResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -206,48 +217,113 @@ public class GrpcFirestoreStub extends FirestoreStub {
   protected GrpcFirestoreStub(FirestoreSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<GetDocumentRequest, Document> getDocumentTransportSettings =
+        GrpcCallSettings.<GetDocumentRequest, Document>newBuilder()
+            .setMethodDescriptor(getDocumentMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListDocumentsRequest, ListDocumentsResponse> listDocumentsTransportSettings =
+        GrpcCallSettings.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
+            .setMethodDescriptor(listDocumentsMethodDescriptor)
+            .build();
+    GrpcCallSettings<CreateDocumentRequest, Document> createDocumentTransportSettings =
+        GrpcCallSettings.<CreateDocumentRequest, Document>newBuilder()
+            .setMethodDescriptor(createDocumentMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateDocumentRequest, Document> updateDocumentTransportSettings =
+        GrpcCallSettings.<UpdateDocumentRequest, Document>newBuilder()
+            .setMethodDescriptor(updateDocumentMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteDocumentRequest, Empty> deleteDocumentTransportSettings =
+        GrpcCallSettings.<DeleteDocumentRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteDocumentMethodDescriptor)
+            .build();
+    GrpcCallSettings<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
+        batchGetDocumentsTransportSettings =
+            GrpcCallSettings.<BatchGetDocumentsRequest, BatchGetDocumentsResponse>newBuilder()
+                .setMethodDescriptor(batchGetDocumentsMethodDescriptor)
+                .build();
+    GrpcCallSettings<BeginTransactionRequest, BeginTransactionResponse>
+        beginTransactionTransportSettings =
+            GrpcCallSettings.<BeginTransactionRequest, BeginTransactionResponse>newBuilder()
+                .setMethodDescriptor(beginTransactionMethodDescriptor)
+                .build();
+    GrpcCallSettings<CommitRequest, CommitResponse> commitTransportSettings =
+        GrpcCallSettings.<CommitRequest, CommitResponse>newBuilder()
+            .setMethodDescriptor(commitMethodDescriptor)
+            .build();
+    GrpcCallSettings<RollbackRequest, Empty> rollbackTransportSettings =
+        GrpcCallSettings.<RollbackRequest, Empty>newBuilder()
+            .setMethodDescriptor(rollbackMethodDescriptor)
+            .build();
+    GrpcCallSettings<RunQueryRequest, RunQueryResponse> runQueryTransportSettings =
+        GrpcCallSettings.<RunQueryRequest, RunQueryResponse>newBuilder()
+            .setMethodDescriptor(runQueryMethodDescriptor)
+            .build();
+    GrpcCallSettings<WriteRequest, WriteResponse> writeTransportSettings =
+        GrpcCallSettings.<WriteRequest, WriteResponse>newBuilder()
+            .setMethodDescriptor(writeMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListenRequest, ListenResponse> listenTransportSettings =
+        GrpcCallSettings.<ListenRequest, ListenResponse>newBuilder()
+            .setMethodDescriptor(listenMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListCollectionIdsRequest, ListCollectionIdsResponse>
+        listCollectionIdsTransportSettings =
+            GrpcCallSettings.<ListCollectionIdsRequest, ListCollectionIdsResponse>newBuilder()
+                .setMethodDescriptor(listCollectionIdsMethodDescriptor)
+                .build();
+
     this.getDocumentCallable =
-        GrpcCallableFactory.create(
-            directGetDocumentCallable, settings.getDocumentSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getDocumentTransportSettings, settings.getDocumentSettings(), clientContext);
     this.listDocumentsCallable =
-        GrpcCallableFactory.create(
-            directListDocumentsCallable, settings.listDocumentsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listDocumentsTransportSettings, settings.listDocumentsSettings(), clientContext);
     this.listDocumentsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListDocumentsCallable, settings.listDocumentsSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listDocumentsTransportSettings, settings.listDocumentsSettings(), clientContext);
     this.createDocumentCallable =
-        GrpcCallableFactory.create(
-            directCreateDocumentCallable, settings.createDocumentSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createDocumentTransportSettings, settings.createDocumentSettings(), clientContext);
     this.updateDocumentCallable =
-        GrpcCallableFactory.create(
-            directUpdateDocumentCallable, settings.updateDocumentSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            updateDocumentTransportSettings, settings.updateDocumentSettings(), clientContext);
     this.deleteDocumentCallable =
-        GrpcCallableFactory.create(
-            directDeleteDocumentCallable, settings.deleteDocumentSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteDocumentTransportSettings, settings.deleteDocumentSettings(), clientContext);
     this.batchGetDocumentsCallable =
-        GrpcCallableFactory.create(
-            directBatchGetDocumentsCallable, settings.batchGetDocumentsSettings(), clientContext);
+        GrpcCallableFactory.createServerStreamingCallable(
+            batchGetDocumentsTransportSettings,
+            settings.batchGetDocumentsSettings(),
+            clientContext);
     this.beginTransactionCallable =
-        GrpcCallableFactory.create(
-            directBeginTransactionCallable, settings.beginTransactionSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            beginTransactionTransportSettings, settings.beginTransactionSettings(), clientContext);
     this.commitCallable =
-        GrpcCallableFactory.create(directCommitCallable, settings.commitSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            commitTransportSettings, settings.commitSettings(), clientContext);
     this.rollbackCallable =
-        GrpcCallableFactory.create(
-            directRollbackCallable, settings.rollbackSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            rollbackTransportSettings, settings.rollbackSettings(), clientContext);
     this.runQueryCallable =
-        GrpcCallableFactory.create(
-            directRunQueryCallable, settings.runQuerySettings(), clientContext);
+        GrpcCallableFactory.createServerStreamingCallable(
+            runQueryTransportSettings, settings.runQuerySettings(), clientContext);
     this.writeCallable =
-        GrpcCallableFactory.create(directWriteCallable, settings.writeSettings(), clientContext);
+        GrpcCallableFactory.createBidiStreamingCallable(
+            writeTransportSettings, settings.writeSettings(), clientContext);
     this.listenCallable =
-        GrpcCallableFactory.create(directListenCallable, settings.listenSettings(), clientContext);
+        GrpcCallableFactory.createBidiStreamingCallable(
+            listenTransportSettings, settings.listenSettings(), clientContext);
     this.listCollectionIdsCallable =
-        GrpcCallableFactory.create(
-            directListCollectionIdsCallable, settings.listCollectionIdsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listCollectionIdsTransportSettings,
+            settings.listCollectionIdsSettings(),
+            clientContext);
     this.listCollectionIdsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListCollectionIdsCallable, settings.listCollectionIdsSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listCollectionIdsTransportSettings,
+            settings.listCollectionIdsSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

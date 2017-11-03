@@ -18,6 +18,7 @@ package com.google.cloud.language.v1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -34,6 +35,8 @@ import com.google.cloud.language.v1.AnnotateTextResponse;
 import com.google.cloud.language.v1.ClassifyTextRequest;
 import com.google.cloud.language.v1.ClassifyTextResponse;
 import com.google.cloud.language.v1.LanguageServiceSettings;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -47,63 +50,67 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcLanguageServiceStub extends LanguageServiceStub {
-  private static final UnaryCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
-      directAnalyzeSentimentCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.cloud.language.v1.LanguageService/AnalyzeSentiment",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      AnalyzeSentimentRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      AnalyzeSentimentResponse.getDefaultInstance())));
-  private static final UnaryCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
-      directAnalyzeEntitiesCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.cloud.language.v1.LanguageService/AnalyzeEntities",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      AnalyzeEntitiesRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      AnalyzeEntitiesResponse.getDefaultInstance())));
-  private static final UnaryCallable<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
-      directAnalyzeEntitySentimentCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.cloud.language.v1.LanguageService/AnalyzeEntitySentiment",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      AnalyzeEntitySentimentRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      AnalyzeEntitySentimentResponse.getDefaultInstance())));
-  private static final UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
-      directAnalyzeSyntaxCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.cloud.language.v1.LanguageService/AnalyzeSyntax",
-                  io.grpc.protobuf.ProtoUtils.marshaller(AnalyzeSyntaxRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      AnalyzeSyntaxResponse.getDefaultInstance())));
-  private static final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse>
-      directClassifyTextCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.cloud.language.v1.LanguageService/ClassifyText",
-                  io.grpc.protobuf.ProtoUtils.marshaller(ClassifyTextRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ClassifyTextResponse.getDefaultInstance())));
-  private static final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse>
-      directAnnotateTextCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.cloud.language.v1.LanguageService/AnnotateText",
-                  io.grpc.protobuf.ProtoUtils.marshaller(AnnotateTextRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      AnnotateTextResponse.getDefaultInstance())));
+
+  private static final MethodDescriptor<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+      analyzeSentimentMethodDescriptor =
+          MethodDescriptor.<AnalyzeSentimentRequest, AnalyzeSentimentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.language.v1.LanguageService/AnalyzeSentiment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AnalyzeSentimentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AnalyzeSentimentResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+      analyzeEntitiesMethodDescriptor =
+          MethodDescriptor.<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.language.v1.LanguageService/AnalyzeEntities")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AnalyzeEntitiesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AnalyzeEntitiesResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
+          AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+      analyzeEntitySentimentMethodDescriptor =
+          MethodDescriptor
+              .<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.language.v1.LanguageService/AnalyzeEntitySentiment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AnalyzeEntitySentimentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AnalyzeEntitySentimentResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
+      analyzeSyntaxMethodDescriptor =
+          MethodDescriptor.<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.language.v1.LanguageService/AnalyzeSyntax")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AnalyzeSyntaxRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AnalyzeSyntaxResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ClassifyTextRequest, ClassifyTextResponse>
+      classifyTextMethodDescriptor =
+          MethodDescriptor.<ClassifyTextRequest, ClassifyTextResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.language.v1.LanguageService/ClassifyText")
+              .setRequestMarshaller(ProtoUtils.marshaller(ClassifyTextRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ClassifyTextResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<AnnotateTextRequest, AnnotateTextResponse>
+      annotateTextMethodDescriptor =
+          MethodDescriptor.<AnnotateTextRequest, AnnotateTextResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.language.v1.LanguageService/AnnotateText")
+              .setRequestMarshaller(ProtoUtils.marshaller(AnnotateTextRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AnnotateTextResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -135,26 +142,55 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
   protected GrpcLanguageServiceStub(LanguageServiceSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+        analyzeSentimentTransportSettings =
+            GrpcCallSettings.<AnalyzeSentimentRequest, AnalyzeSentimentResponse>newBuilder()
+                .setMethodDescriptor(analyzeSentimentMethodDescriptor)
+                .build();
+    GrpcCallSettings<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+        analyzeEntitiesTransportSettings =
+            GrpcCallSettings.<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>newBuilder()
+                .setMethodDescriptor(analyzeEntitiesMethodDescriptor)
+                .build();
+    GrpcCallSettings<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
+        analyzeEntitySentimentTransportSettings =
+            GrpcCallSettings
+                .<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>newBuilder()
+                .setMethodDescriptor(analyzeEntitySentimentMethodDescriptor)
+                .build();
+    GrpcCallSettings<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxTransportSettings =
+        GrpcCallSettings.<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>newBuilder()
+            .setMethodDescriptor(analyzeSyntaxMethodDescriptor)
+            .build();
+    GrpcCallSettings<ClassifyTextRequest, ClassifyTextResponse> classifyTextTransportSettings =
+        GrpcCallSettings.<ClassifyTextRequest, ClassifyTextResponse>newBuilder()
+            .setMethodDescriptor(classifyTextMethodDescriptor)
+            .build();
+    GrpcCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextTransportSettings =
+        GrpcCallSettings.<AnnotateTextRequest, AnnotateTextResponse>newBuilder()
+            .setMethodDescriptor(annotateTextMethodDescriptor)
+            .build();
+
     this.analyzeSentimentCallable =
-        GrpcCallableFactory.create(
-            directAnalyzeSentimentCallable, settings.analyzeSentimentSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            analyzeSentimentTransportSettings, settings.analyzeSentimentSettings(), clientContext);
     this.analyzeEntitiesCallable =
-        GrpcCallableFactory.create(
-            directAnalyzeEntitiesCallable, settings.analyzeEntitiesSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            analyzeEntitiesTransportSettings, settings.analyzeEntitiesSettings(), clientContext);
     this.analyzeEntitySentimentCallable =
-        GrpcCallableFactory.create(
-            directAnalyzeEntitySentimentCallable,
+        GrpcCallableFactory.createUnaryCallable(
+            analyzeEntitySentimentTransportSettings,
             settings.analyzeEntitySentimentSettings(),
             clientContext);
     this.analyzeSyntaxCallable =
-        GrpcCallableFactory.create(
-            directAnalyzeSyntaxCallable, settings.analyzeSyntaxSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            analyzeSyntaxTransportSettings, settings.analyzeSyntaxSettings(), clientContext);
     this.classifyTextCallable =
-        GrpcCallableFactory.create(
-            directClassifyTextCallable, settings.classifyTextSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            classifyTextTransportSettings, settings.classifyTextSettings(), clientContext);
     this.annotateTextCallable =
-        GrpcCallableFactory.create(
-            directAnnotateTextCallable, settings.annotateTextSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            annotateTextTransportSettings, settings.annotateTextSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

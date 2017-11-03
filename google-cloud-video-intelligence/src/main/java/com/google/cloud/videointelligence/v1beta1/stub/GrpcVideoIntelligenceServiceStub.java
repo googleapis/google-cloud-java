@@ -18,6 +18,7 @@ package com.google.cloud.videointelligence.v1beta1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
@@ -28,6 +29,8 @@ import com.google.cloud.videointelligence.v1beta1.AnnotateVideoResponse;
 import com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -41,20 +44,24 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceStub {
-  private static final UnaryCallable<AnnotateVideoRequest, Operation> directAnnotateVideoCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.cloud.videointelligence.v1beta1.VideoIntelligenceService/AnnotateVideo",
-              io.grpc.protobuf.ProtoUtils.marshaller(AnnotateVideoRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance())));
+
+  private static final MethodDescriptor<AnnotateVideoRequest, Operation>
+      annotateVideoMethodDescriptor =
+          MethodDescriptor.<AnnotateVideoRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.videointelligence.v1beta1.VideoIntelligenceService/AnnotateVideo")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AnnotateVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<AnnotateVideoRequest, Operation> annotateVideoCallable;
   private final OperationCallable<
-          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
+          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable;
 
   public static final GrpcVideoIntelligenceServiceStub create(
@@ -77,15 +84,18 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
       VideoIntelligenceServiceSettings settings, ClientContext clientContext) throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 
+    GrpcCallSettings<AnnotateVideoRequest, Operation> annotateVideoTransportSettings =
+        GrpcCallSettings.<AnnotateVideoRequest, Operation>newBuilder()
+            .setMethodDescriptor(annotateVideoMethodDescriptor)
+            .build();
+
     this.annotateVideoCallable =
-        GrpcCallableFactory.create(
-            directAnnotateVideoCallable,
-            settings.annotateVideoSettings().getInitialCallSettings(),
-            clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            annotateVideoTransportSettings, settings.annotateVideoSettings(), clientContext);
     this.annotateVideoOperationCallable =
-        GrpcCallableFactory.create(
-            directAnnotateVideoCallable,
-            settings.annotateVideoSettings(),
+        GrpcCallableFactory.createOperationCallable(
+            annotateVideoTransportSettings,
+            settings.annotateVideoOperationSettings(),
             clientContext,
             this.operationsStub);
 
@@ -96,8 +106,7 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
     return operationsStub;
   }
 
-  public OperationCallable<
-          AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress, Operation>
+  public OperationCallable<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable() {
     return annotateVideoOperationCallable;
   }

@@ -21,6 +21,7 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptions
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
@@ -53,6 +54,8 @@ import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.UpdateSnapshotRequest;
 import com.google.pubsub.v1.UpdateSubscriptionRequest;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -66,152 +69,162 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcSubscriberStub extends SubscriberStub {
-  private static final UnaryCallable<Subscription, Subscription> directCreateSubscriptionCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Subscriber/CreateSubscription",
-              io.grpc.protobuf.ProtoUtils.marshaller(Subscription.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Subscription.getDefaultInstance())));
-  private static final UnaryCallable<GetSubscriptionRequest, Subscription>
-      directGetSubscriptionCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.pubsub.v1.Subscriber/GetSubscription",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      GetSubscriptionRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(Subscription.getDefaultInstance())));
-  private static final UnaryCallable<UpdateSubscriptionRequest, Subscription>
-      directUpdateSubscriptionCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.pubsub.v1.Subscriber/UpdateSubscription",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      UpdateSubscriptionRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(Subscription.getDefaultInstance())));
-  private static final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
-      directListSubscriptionsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.pubsub.v1.Subscriber/ListSubscriptions",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListSubscriptionsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListSubscriptionsResponse.getDefaultInstance())));
-  private static final UnaryCallable<DeleteSubscriptionRequest, Empty>
-      directDeleteSubscriptionCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.pubsub.v1.Subscriber/DeleteSubscription",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      DeleteSubscriptionRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<ModifyAckDeadlineRequest, Empty>
-      directModifyAckDeadlineCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.pubsub.v1.Subscriber/ModifyAckDeadline",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ModifyAckDeadlineRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<AcknowledgeRequest, Empty> directAcknowledgeCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Subscriber/Acknowledge",
-              io.grpc.protobuf.ProtoUtils.marshaller(AcknowledgeRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<PullRequest, PullResponse> directPullCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Subscriber/Pull",
-              io.grpc.protobuf.ProtoUtils.marshaller(PullRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(PullResponse.getDefaultInstance())));
-  private static final BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse>
-      directStreamingPullCallable =
-          GrpcCallableFactory.createDirectBidiStreamingCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING,
-                  "google.pubsub.v1.Subscriber/StreamingPull",
-                  io.grpc.protobuf.ProtoUtils.marshaller(StreamingPullRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      StreamingPullResponse.getDefaultInstance())));
-  private static final UnaryCallable<ModifyPushConfigRequest, Empty>
-      directModifyPushConfigCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.pubsub.v1.Subscriber/ModifyPushConfig",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ModifyPushConfigRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse>
-      directListSnapshotsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.pubsub.v1.Subscriber/ListSnapshots",
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListSnapshotsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListSnapshotsResponse.getDefaultInstance())));
-  private static final UnaryCallable<CreateSnapshotRequest, Snapshot> directCreateSnapshotCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Subscriber/CreateSnapshot",
-              io.grpc.protobuf.ProtoUtils.marshaller(CreateSnapshotRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Snapshot.getDefaultInstance())));
-  private static final UnaryCallable<UpdateSnapshotRequest, Snapshot> directUpdateSnapshotCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Subscriber/UpdateSnapshot",
-              io.grpc.protobuf.ProtoUtils.marshaller(UpdateSnapshotRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Snapshot.getDefaultInstance())));
-  private static final UnaryCallable<DeleteSnapshotRequest, Empty> directDeleteSnapshotCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Subscriber/DeleteSnapshot",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteSnapshotRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<SeekRequest, SeekResponse> directSeekCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Subscriber/Seek",
-              io.grpc.protobuf.ProtoUtils.marshaller(SeekRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(SeekResponse.getDefaultInstance())));
-  private static final UnaryCallable<SetIamPolicyRequest, Policy> directSetIamPolicyCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.iam.v1.IAMPolicy/SetIamPolicy",
-              io.grpc.protobuf.ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Policy.getDefaultInstance())));
-  private static final UnaryCallable<GetIamPolicyRequest, Policy> directGetIamPolicyCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.iam.v1.IAMPolicy/GetIamPolicy",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Policy.getDefaultInstance())));
-  private static final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      directTestIamPermissionsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.iam.v1.IAMPolicy/TestIamPermissions",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      TestIamPermissionsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      TestIamPermissionsResponse.getDefaultInstance())));
+
+  private static final MethodDescriptor<Subscription, Subscription>
+      createSubscriptionMethodDescriptor =
+          MethodDescriptor.<Subscription, Subscription>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Subscriber/CreateSubscription")
+              .setRequestMarshaller(ProtoUtils.marshaller(Subscription.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Subscription.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetSubscriptionRequest, Subscription>
+      getSubscriptionMethodDescriptor =
+          MethodDescriptor.<GetSubscriptionRequest, Subscription>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Subscriber/GetSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Subscription.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateSubscriptionRequest, Subscription>
+      updateSubscriptionMethodDescriptor =
+          MethodDescriptor.<UpdateSubscriptionRequest, Subscription>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Subscriber/UpdateSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Subscription.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsMethodDescriptor =
+          MethodDescriptor.<ListSubscriptionsRequest, ListSubscriptionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Subscriber/ListSubscriptions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSubscriptionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSubscriptionsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteSubscriptionRequest, Empty>
+      deleteSubscriptionMethodDescriptor =
+          MethodDescriptor.<DeleteSubscriptionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Subscriber/DeleteSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ModifyAckDeadlineRequest, Empty>
+      modifyAckDeadlineMethodDescriptor =
+          MethodDescriptor.<ModifyAckDeadlineRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Subscriber/ModifyAckDeadline")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ModifyAckDeadlineRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<AcknowledgeRequest, Empty> acknowledgeMethodDescriptor =
+      MethodDescriptor.<AcknowledgeRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.pubsub.v1.Subscriber/Acknowledge")
+          .setRequestMarshaller(ProtoUtils.marshaller(AcknowledgeRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<PullRequest, PullResponse> pullMethodDescriptor =
+      MethodDescriptor.<PullRequest, PullResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.pubsub.v1.Subscriber/Pull")
+          .setRequestMarshaller(ProtoUtils.marshaller(PullRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(PullResponse.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<StreamingPullRequest, StreamingPullResponse>
+      streamingPullMethodDescriptor =
+          MethodDescriptor.<StreamingPullRequest, StreamingPullResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName("google.pubsub.v1.Subscriber/StreamingPull")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StreamingPullRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(StreamingPullResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ModifyPushConfigRequest, Empty>
+      modifyPushConfigMethodDescriptor =
+          MethodDescriptor.<ModifyPushConfigRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Subscriber/ModifyPushConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ModifyPushConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListSnapshotsRequest, ListSnapshotsResponse>
+      listSnapshotsMethodDescriptor =
+          MethodDescriptor.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Subscriber/ListSnapshots")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSnapshotsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSnapshotsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateSnapshotRequest, Snapshot>
+      createSnapshotMethodDescriptor =
+          MethodDescriptor.<CreateSnapshotRequest, Snapshot>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Subscriber/CreateSnapshot")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Snapshot.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateSnapshotRequest, Snapshot>
+      updateSnapshotMethodDescriptor =
+          MethodDescriptor.<UpdateSnapshotRequest, Snapshot>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Subscriber/UpdateSnapshot")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Snapshot.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteSnapshotRequest, Empty>
+      deleteSnapshotMethodDescriptor =
+          MethodDescriptor.<DeleteSnapshotRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Subscriber/DeleteSnapshot")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<SeekRequest, SeekResponse> seekMethodDescriptor =
+      MethodDescriptor.<SeekRequest, SeekResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.pubsub.v1.Subscriber/Seek")
+          .setRequestMarshaller(ProtoUtils.marshaller(SeekRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(SeekResponse.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -258,64 +271,155 @@ public class GrpcSubscriberStub extends SubscriberStub {
   protected GrpcSubscriberStub(SubscriptionAdminSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<Subscription, Subscription> createSubscriptionTransportSettings =
+        GrpcCallSettings.<Subscription, Subscription>newBuilder()
+            .setMethodDescriptor(createSubscriptionMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionTransportSettings =
+        GrpcCallSettings.<GetSubscriptionRequest, Subscription>newBuilder()
+            .setMethodDescriptor(getSubscriptionMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateSubscriptionRequest, Subscription> updateSubscriptionTransportSettings =
+        GrpcCallSettings.<UpdateSubscriptionRequest, Subscription>newBuilder()
+            .setMethodDescriptor(updateSubscriptionMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListSubscriptionsRequest, ListSubscriptionsResponse>
+        listSubscriptionsTransportSettings =
+            GrpcCallSettings.<ListSubscriptionsRequest, ListSubscriptionsResponse>newBuilder()
+                .setMethodDescriptor(listSubscriptionsMethodDescriptor)
+                .build();
+    GrpcCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionTransportSettings =
+        GrpcCallSettings.<DeleteSubscriptionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSubscriptionMethodDescriptor)
+            .build();
+    GrpcCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineTransportSettings =
+        GrpcCallSettings.<ModifyAckDeadlineRequest, Empty>newBuilder()
+            .setMethodDescriptor(modifyAckDeadlineMethodDescriptor)
+            .build();
+    GrpcCallSettings<AcknowledgeRequest, Empty> acknowledgeTransportSettings =
+        GrpcCallSettings.<AcknowledgeRequest, Empty>newBuilder()
+            .setMethodDescriptor(acknowledgeMethodDescriptor)
+            .build();
+    GrpcCallSettings<PullRequest, PullResponse> pullTransportSettings =
+        GrpcCallSettings.<PullRequest, PullResponse>newBuilder()
+            .setMethodDescriptor(pullMethodDescriptor)
+            .build();
+    GrpcCallSettings<StreamingPullRequest, StreamingPullResponse> streamingPullTransportSettings =
+        GrpcCallSettings.<StreamingPullRequest, StreamingPullResponse>newBuilder()
+            .setMethodDescriptor(streamingPullMethodDescriptor)
+            .build();
+    GrpcCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigTransportSettings =
+        GrpcCallSettings.<ModifyPushConfigRequest, Empty>newBuilder()
+            .setMethodDescriptor(modifyPushConfigMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsTransportSettings =
+        GrpcCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
+            .setMethodDescriptor(listSnapshotsMethodDescriptor)
+            .build();
+    GrpcCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotTransportSettings =
+        GrpcCallSettings.<CreateSnapshotRequest, Snapshot>newBuilder()
+            .setMethodDescriptor(createSnapshotMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotTransportSettings =
+        GrpcCallSettings.<UpdateSnapshotRequest, Snapshot>newBuilder()
+            .setMethodDescriptor(updateSnapshotMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotTransportSettings =
+        GrpcCallSettings.<DeleteSnapshotRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSnapshotMethodDescriptor)
+            .build();
+    GrpcCallSettings<SeekRequest, SeekResponse> seekTransportSettings =
+        GrpcCallSettings.<SeekRequest, SeekResponse>newBuilder()
+            .setMethodDescriptor(seekMethodDescriptor)
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .build();
+
     this.createSubscriptionCallable =
-        GrpcCallableFactory.create(
-            directCreateSubscriptionCallable, settings.createSubscriptionSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createSubscriptionTransportSettings,
+            settings.createSubscriptionSettings(),
+            clientContext);
     this.getSubscriptionCallable =
-        GrpcCallableFactory.create(
-            directGetSubscriptionCallable, settings.getSubscriptionSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getSubscriptionTransportSettings, settings.getSubscriptionSettings(), clientContext);
     this.updateSubscriptionCallable =
-        GrpcCallableFactory.create(
-            directUpdateSubscriptionCallable, settings.updateSubscriptionSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            updateSubscriptionTransportSettings,
+            settings.updateSubscriptionSettings(),
+            clientContext);
     this.listSubscriptionsCallable =
-        GrpcCallableFactory.create(
-            directListSubscriptionsCallable, settings.listSubscriptionsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listSubscriptionsTransportSettings,
+            settings.listSubscriptionsSettings(),
+            clientContext);
     this.listSubscriptionsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListSubscriptionsCallable, settings.listSubscriptionsSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listSubscriptionsTransportSettings,
+            settings.listSubscriptionsSettings(),
+            clientContext);
     this.deleteSubscriptionCallable =
-        GrpcCallableFactory.create(
-            directDeleteSubscriptionCallable, settings.deleteSubscriptionSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteSubscriptionTransportSettings,
+            settings.deleteSubscriptionSettings(),
+            clientContext);
     this.modifyAckDeadlineCallable =
-        GrpcCallableFactory.create(
-            directModifyAckDeadlineCallable, settings.modifyAckDeadlineSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            modifyAckDeadlineTransportSettings,
+            settings.modifyAckDeadlineSettings(),
+            clientContext);
     this.acknowledgeCallable =
-        GrpcCallableFactory.create(
-            directAcknowledgeCallable, settings.acknowledgeSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            acknowledgeTransportSettings, settings.acknowledgeSettings(), clientContext);
     this.pullCallable =
-        GrpcCallableFactory.create(directPullCallable, settings.pullSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            pullTransportSettings, settings.pullSettings(), clientContext);
     this.streamingPullCallable =
-        GrpcCallableFactory.create(
-            directStreamingPullCallable, settings.streamingPullSettings(), clientContext);
+        GrpcCallableFactory.createBidiStreamingCallable(
+            streamingPullTransportSettings, settings.streamingPullSettings(), clientContext);
     this.modifyPushConfigCallable =
-        GrpcCallableFactory.create(
-            directModifyPushConfigCallable, settings.modifyPushConfigSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            modifyPushConfigTransportSettings, settings.modifyPushConfigSettings(), clientContext);
     this.listSnapshotsCallable =
-        GrpcCallableFactory.create(
-            directListSnapshotsCallable, settings.listSnapshotsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
     this.listSnapshotsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListSnapshotsCallable, settings.listSnapshotsSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
     this.createSnapshotCallable =
-        GrpcCallableFactory.create(
-            directCreateSnapshotCallable, settings.createSnapshotSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createSnapshotTransportSettings, settings.createSnapshotSettings(), clientContext);
     this.updateSnapshotCallable =
-        GrpcCallableFactory.create(
-            directUpdateSnapshotCallable, settings.updateSnapshotSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            updateSnapshotTransportSettings, settings.updateSnapshotSettings(), clientContext);
     this.deleteSnapshotCallable =
-        GrpcCallableFactory.create(
-            directDeleteSnapshotCallable, settings.deleteSnapshotSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteSnapshotTransportSettings, settings.deleteSnapshotSettings(), clientContext);
     this.seekCallable =
-        GrpcCallableFactory.create(directSeekCallable, settings.seekSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            seekTransportSettings, settings.seekSettings(), clientContext);
     this.setIamPolicyCallable =
-        GrpcCallableFactory.create(
-            directSetIamPolicyCallable, settings.setIamPolicySettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.getIamPolicyCallable =
-        GrpcCallableFactory.create(
-            directGetIamPolicyCallable, settings.getIamPolicySettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.testIamPermissionsCallable =
-        GrpcCallableFactory.create(
-            directTestIamPermissionsCallable, settings.testIamPermissionsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

@@ -21,6 +21,7 @@ import static com.google.cloud.logging.v2.PagedResponseWrappers.ListSinksPagedRe
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -40,6 +41,8 @@ import com.google.logging.v2.LogSink;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -53,83 +56,88 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
-  private static final UnaryCallable<ListSinksRequest, ListSinksResponse> directListSinksCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.ConfigServiceV2/ListSinks",
-              io.grpc.protobuf.ProtoUtils.marshaller(ListSinksRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(ListSinksResponse.getDefaultInstance())));
-  private static final UnaryCallable<GetSinkRequest, LogSink> directGetSinkCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.ConfigServiceV2/GetSink",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetSinkRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(LogSink.getDefaultInstance())));
-  private static final UnaryCallable<CreateSinkRequest, LogSink> directCreateSinkCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.ConfigServiceV2/CreateSink",
-              io.grpc.protobuf.ProtoUtils.marshaller(CreateSinkRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(LogSink.getDefaultInstance())));
-  private static final UnaryCallable<UpdateSinkRequest, LogSink> directUpdateSinkCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.ConfigServiceV2/UpdateSink",
-              io.grpc.protobuf.ProtoUtils.marshaller(UpdateSinkRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(LogSink.getDefaultInstance())));
-  private static final UnaryCallable<DeleteSinkRequest, Empty> directDeleteSinkCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.ConfigServiceV2/DeleteSink",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteSinkRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<ListExclusionsRequest, ListExclusionsResponse>
-      directListExclusionsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.logging.v2.ConfigServiceV2/ListExclusions",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListExclusionsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListExclusionsResponse.getDefaultInstance())));
-  private static final UnaryCallable<GetExclusionRequest, LogExclusion> directGetExclusionCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.ConfigServiceV2/GetExclusion",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetExclusionRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(LogExclusion.getDefaultInstance())));
-  private static final UnaryCallable<CreateExclusionRequest, LogExclusion>
-      directCreateExclusionCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.logging.v2.ConfigServiceV2/CreateExclusion",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      CreateExclusionRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(LogExclusion.getDefaultInstance())));
-  private static final UnaryCallable<UpdateExclusionRequest, LogExclusion>
-      directUpdateExclusionCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.logging.v2.ConfigServiceV2/UpdateExclusion",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      UpdateExclusionRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(LogExclusion.getDefaultInstance())));
-  private static final UnaryCallable<DeleteExclusionRequest, Empty> directDeleteExclusionCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.ConfigServiceV2/DeleteExclusion",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteExclusionRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
+
+  private static final MethodDescriptor<ListSinksRequest, ListSinksResponse>
+      listSinksMethodDescriptor =
+          MethodDescriptor.<ListSinksRequest, ListSinksResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/ListSinks")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListSinksRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListSinksResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetSinkRequest, LogSink> getSinkMethodDescriptor =
+      MethodDescriptor.<GetSinkRequest, LogSink>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/GetSink")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetSinkRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(LogSink.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<CreateSinkRequest, LogSink> createSinkMethodDescriptor =
+      MethodDescriptor.<CreateSinkRequest, LogSink>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/CreateSink")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateSinkRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(LogSink.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<UpdateSinkRequest, LogSink> updateSinkMethodDescriptor =
+      MethodDescriptor.<UpdateSinkRequest, LogSink>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/UpdateSink")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateSinkRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(LogSink.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteSinkRequest, Empty> deleteSinkMethodDescriptor =
+      MethodDescriptor.<DeleteSinkRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/DeleteSink")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteSinkRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListExclusionsRequest, ListExclusionsResponse>
+      listExclusionsMethodDescriptor =
+          MethodDescriptor.<ListExclusionsRequest, ListExclusionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/ListExclusions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListExclusionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListExclusionsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetExclusionRequest, LogExclusion>
+      getExclusionMethodDescriptor =
+          MethodDescriptor.<GetExclusionRequest, LogExclusion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/GetExclusion")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetExclusionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LogExclusion.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateExclusionRequest, LogExclusion>
+      createExclusionMethodDescriptor =
+          MethodDescriptor.<CreateExclusionRequest, LogExclusion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/CreateExclusion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateExclusionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LogExclusion.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateExclusionRequest, LogExclusion>
+      updateExclusionMethodDescriptor =
+          MethodDescriptor.<UpdateExclusionRequest, LogExclusion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/UpdateExclusion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateExclusionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LogExclusion.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteExclusionRequest, Empty>
+      deleteExclusionMethodDescriptor =
+          MethodDescriptor.<DeleteExclusionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/DeleteExclusion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteExclusionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -164,42 +172,84 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   protected GrpcConfigServiceV2Stub(ConfigSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<ListSinksRequest, ListSinksResponse> listSinksTransportSettings =
+        GrpcCallSettings.<ListSinksRequest, ListSinksResponse>newBuilder()
+            .setMethodDescriptor(listSinksMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetSinkRequest, LogSink> getSinkTransportSettings =
+        GrpcCallSettings.<GetSinkRequest, LogSink>newBuilder()
+            .setMethodDescriptor(getSinkMethodDescriptor)
+            .build();
+    GrpcCallSettings<CreateSinkRequest, LogSink> createSinkTransportSettings =
+        GrpcCallSettings.<CreateSinkRequest, LogSink>newBuilder()
+            .setMethodDescriptor(createSinkMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateSinkRequest, LogSink> updateSinkTransportSettings =
+        GrpcCallSettings.<UpdateSinkRequest, LogSink>newBuilder()
+            .setMethodDescriptor(updateSinkMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteSinkRequest, Empty> deleteSinkTransportSettings =
+        GrpcCallSettings.<DeleteSinkRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSinkMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListExclusionsRequest, ListExclusionsResponse>
+        listExclusionsTransportSettings =
+            GrpcCallSettings.<ListExclusionsRequest, ListExclusionsResponse>newBuilder()
+                .setMethodDescriptor(listExclusionsMethodDescriptor)
+                .build();
+    GrpcCallSettings<GetExclusionRequest, LogExclusion> getExclusionTransportSettings =
+        GrpcCallSettings.<GetExclusionRequest, LogExclusion>newBuilder()
+            .setMethodDescriptor(getExclusionMethodDescriptor)
+            .build();
+    GrpcCallSettings<CreateExclusionRequest, LogExclusion> createExclusionTransportSettings =
+        GrpcCallSettings.<CreateExclusionRequest, LogExclusion>newBuilder()
+            .setMethodDescriptor(createExclusionMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateExclusionRequest, LogExclusion> updateExclusionTransportSettings =
+        GrpcCallSettings.<UpdateExclusionRequest, LogExclusion>newBuilder()
+            .setMethodDescriptor(updateExclusionMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteExclusionRequest, Empty> deleteExclusionTransportSettings =
+        GrpcCallSettings.<DeleteExclusionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteExclusionMethodDescriptor)
+            .build();
+
     this.listSinksCallable =
-        GrpcCallableFactory.create(
-            directListSinksCallable, settings.listSinksSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listSinksTransportSettings, settings.listSinksSettings(), clientContext);
     this.listSinksPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListSinksCallable, settings.listSinksSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listSinksTransportSettings, settings.listSinksSettings(), clientContext);
     this.getSinkCallable =
-        GrpcCallableFactory.create(
-            directGetSinkCallable, settings.getSinkSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getSinkTransportSettings, settings.getSinkSettings(), clientContext);
     this.createSinkCallable =
-        GrpcCallableFactory.create(
-            directCreateSinkCallable, settings.createSinkSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createSinkTransportSettings, settings.createSinkSettings(), clientContext);
     this.updateSinkCallable =
-        GrpcCallableFactory.create(
-            directUpdateSinkCallable, settings.updateSinkSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            updateSinkTransportSettings, settings.updateSinkSettings(), clientContext);
     this.deleteSinkCallable =
-        GrpcCallableFactory.create(
-            directDeleteSinkCallable, settings.deleteSinkSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteSinkTransportSettings, settings.deleteSinkSettings(), clientContext);
     this.listExclusionsCallable =
-        GrpcCallableFactory.create(
-            directListExclusionsCallable, settings.listExclusionsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listExclusionsTransportSettings, settings.listExclusionsSettings(), clientContext);
     this.listExclusionsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListExclusionsCallable, settings.listExclusionsSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listExclusionsTransportSettings, settings.listExclusionsSettings(), clientContext);
     this.getExclusionCallable =
-        GrpcCallableFactory.create(
-            directGetExclusionCallable, settings.getExclusionSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getExclusionTransportSettings, settings.getExclusionSettings(), clientContext);
     this.createExclusionCallable =
-        GrpcCallableFactory.create(
-            directCreateExclusionCallable, settings.createExclusionSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createExclusionTransportSettings, settings.createExclusionSettings(), clientContext);
     this.updateExclusionCallable =
-        GrpcCallableFactory.create(
-            directUpdateExclusionCallable, settings.updateExclusionSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            updateExclusionTransportSettings, settings.updateExclusionSettings(), clientContext);
     this.deleteExclusionCallable =
-        GrpcCallableFactory.create(
-            directDeleteExclusionCallable, settings.deleteExclusionSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteExclusionTransportSettings, settings.deleteExclusionSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

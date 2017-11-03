@@ -20,8 +20,9 @@ import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
-import com.google.api.gax.grpc.GrpcApiExceptionFactory;
+import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.cloud.pubsub.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.annotations.VisibleForTesting;
@@ -233,8 +234,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             }
             if (!StatusUtil.isRetryable(cause)) {
               ApiException gaxException =
-                  GrpcApiExceptionFactory.createException(
-                      cause, Status.fromThrowable(cause).getCode(), false);
+                  ApiExceptionFactory.createException(
+                      cause, GrpcStatusCode.of(Status.fromThrowable(cause).getCode()), false);
               logger.log(Level.SEVERE, "terminated streaming with exception", gaxException);
               notifyFailed(gaxException);
               return;
