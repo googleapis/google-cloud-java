@@ -399,6 +399,28 @@ public class ITStorageTest {
       assertTrue(blobSet.contains(remoteBlob.getName()));
       assertNull(remoteBlob.getContentType());
     }
+    assertTrue(remoteBlob1.delete());
+    assertTrue(remoteBlob2.delete());
+  }
+
+  @Test(timeout = 5000)
+  public void testListBlobRequesterPays() throws InterruptedException {
+    String[] blobNames = {"test-list-blobs-empty-selected-fields-blob1",
+        "test-list-blobs-empty-selected-fields-blob2"};
+    BlobInfo blob1 = BlobInfo.newBuilder(BUCKET, blobNames[0])
+        .setContentType(CONTENT_TYPE)
+        .build();
+    BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1])
+        .setContentType(CONTENT_TYPE)
+        .build();
+    Blob remoteBlob1 = storage.create(blob1);
+    Blob remoteBlob2 = storage.create(blob2);
+    assertNotNull(remoteBlob1);
+    assertNotNull(remoteBlob2);
+
+    Page<Blob> page = storage.list(BUCKET,
+        Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+        Storage.BlobListOption.fields());
 
     // Test listing a Requester Pays bucket.
     Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
