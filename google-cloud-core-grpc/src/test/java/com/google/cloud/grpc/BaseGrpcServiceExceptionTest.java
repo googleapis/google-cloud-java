@@ -38,7 +38,6 @@ import org.junit.Test;
 
 public class BaseGrpcServiceExceptionTest {
 
-  private static final int CODE = 1;
   private static final String MESSAGE = "some message";
   private static final boolean NOT_RETRYABLE = false;
   private static final boolean IDEMPOTENT = true;
@@ -81,7 +80,7 @@ public class BaseGrpcServiceExceptionTest {
     assertFalse(serviceException.isRetryable());
     assertEquals(MESSAGE, serviceException.getMessage());
     assertEquals(apiException, serviceException.getCause());
-    assertEquals(Code.INTERNAL.value(), serviceException.getCode());
+    assertEquals(500, serviceException.getCode());
     assertEquals(Code.INTERNAL.name(), serviceException.getReason());
     assertNull(serviceException.getLocation());
     assertNull(serviceException.getDebugInfo());

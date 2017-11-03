@@ -22,19 +22,21 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
-import com.google.api.gax.grpc.OperationTimedPollAlgorithm;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.OperationCallSettings;
-import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamingCallSettings;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.speech.v1.stub.GrpcSpeechStub;
 import com.google.cloud.speech.v1.stub.SpeechStub;
@@ -43,7 +45,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -90,25 +91,30 @@ public class SpeechSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private final SimpleCallSettings<RecognizeRequest, RecognizeResponse> recognizeSettings;
-  private final OperationCallSettings<
-          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
-          Operation>
+  private final UnaryCallSettings<RecognizeRequest, RecognizeResponse> recognizeSettings;
+  private final UnaryCallSettings<LongRunningRecognizeRequest, Operation>
       longRunningRecognizeSettings;
+  private final OperationCallSettings<
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
+      longRunningRecognizeOperationSettings;
   private final StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeSettings;
 
   /** Returns the object with the settings used for calls to recognize. */
-  public SimpleCallSettings<RecognizeRequest, RecognizeResponse> recognizeSettings() {
+  public UnaryCallSettings<RecognizeRequest, RecognizeResponse> recognizeSettings() {
     return recognizeSettings;
   }
 
   /** Returns the object with the settings used for calls to longRunningRecognize. */
-  public OperationCallSettings<
-          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
-          Operation>
-      longRunningRecognizeSettings() {
+  public UnaryCallSettings<LongRunningRecognizeRequest, Operation> longRunningRecognizeSettings() {
     return longRunningRecognizeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to longRunningRecognize. */
+  public OperationCallSettings<
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
+      longRunningRecognizeOperationSettings() {
+    return longRunningRecognizeOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to streamingRecognize. */
@@ -118,11 +124,13 @@ public class SpeechSettings extends ClientSettings {
   }
 
   public SpeechStub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcSpeechStub.create(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -147,20 +155,19 @@ public class SpeechSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
   }
 
   private static String getGapicVersion() {
@@ -205,39 +212,44 @@ public class SpeechSettings extends ClientSettings {
   private SpeechSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getTransportChannelProvider(),
         settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getHeaderProvider(),
         settingsBuilder.getClock());
 
     recognizeSettings = settingsBuilder.recognizeSettings().build();
     longRunningRecognizeSettings = settingsBuilder.longRunningRecognizeSettings().build();
+    longRunningRecognizeOperationSettings =
+        settingsBuilder.longRunningRecognizeOperationSettings().build();
     streamingRecognizeSettings = settingsBuilder.streamingRecognizeSettings().build();
   }
 
   /** Builder for SpeechSettings. */
   public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final SimpleCallSettings.Builder<RecognizeRequest, RecognizeResponse> recognizeSettings;
-    private final OperationCallSettings.Builder<
-            LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
-            Operation>
+    private final UnaryCallSettings.Builder<RecognizeRequest, RecognizeResponse> recognizeSettings;
+    private final UnaryCallSettings.Builder<LongRunningRecognizeRequest, Operation>
         longRunningRecognizeSettings;
+    private final OperationCallSettings.Builder<
+            LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
+        longRunningRecognizeOperationSettings;
     private final StreamingCallSettings.Builder<
             StreamingRecognizeRequest, StreamingRecognizeResponse>
         streamingRecognizeSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -267,21 +279,26 @@ public class SpeechSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      recognizeSettings = SimpleCallSettings.newBuilder();
+      recognizeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      longRunningRecognizeSettings = OperationCallSettings.newBuilder();
+      longRunningRecognizeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      longRunningRecognizeOperationSettings = OperationCallSettings.newBuilder();
 
       streamingRecognizeSettings = StreamingCallSettings.newBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder>of(recognizeSettings);
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              recognizeSettings, longRunningRecognizeSettings);
 
       initDefaults(this);
     }
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       return initDefaults(builder);
     }
 
@@ -291,15 +308,25 @@ public class SpeechSettings extends ClientSettings {
           .recognizeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       builder
           .longRunningRecognizeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+      builder
+          .longRunningRecognizeOperationSettings()
           .setInitialCallSettings(
-              SimpleCallSettings.<LongRunningRecognizeRequest, Operation>newBuilder()
+              UnaryCallSettings
+                  .<LongRunningRecognizeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
-          .setResponseClass(LongRunningRecognizeResponse.class)
-          .setMetadataClass(LongRunningRecognizeMetadata.class)
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  LongRunningRecognizeResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  LongRunningRecognizeMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -320,9 +347,13 @@ public class SpeechSettings extends ClientSettings {
 
       recognizeSettings = settings.recognizeSettings.toBuilder();
       longRunningRecognizeSettings = settings.longRunningRecognizeSettings.toBuilder();
+      longRunningRecognizeOperationSettings =
+          settings.longRunningRecognizeOperationSettings.toBuilder();
       streamingRecognizeSettings = settings.streamingRecognizeSettings.toBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder>of(recognizeSettings);
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              recognizeSettings, longRunningRecognizeSettings);
     }
 
     @Override
@@ -332,8 +363,14 @@ public class SpeechSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
+    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
+      super.setTransportChannelProvider(transportProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      super.setHeaderProvider(headerProvider);
       return this;
     }
 
@@ -349,22 +386,27 @@ public class SpeechSettings extends ClientSettings {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to recognize. */
-    public SimpleCallSettings.Builder<RecognizeRequest, RecognizeResponse> recognizeSettings() {
+    public UnaryCallSettings.Builder<RecognizeRequest, RecognizeResponse> recognizeSettings() {
       return recognizeSettings;
     }
 
     /** Returns the builder for the settings used for calls to longRunningRecognize. */
-    public OperationCallSettings.Builder<
-            LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
-            Operation>
+    public UnaryCallSettings.Builder<LongRunningRecognizeRequest, Operation>
         longRunningRecognizeSettings() {
       return longRunningRecognizeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to longRunningRecognize. */
+    public OperationCallSettings.Builder<
+            LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
+        longRunningRecognizeOperationSettings() {
+      return longRunningRecognizeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to streamingRecognize. */

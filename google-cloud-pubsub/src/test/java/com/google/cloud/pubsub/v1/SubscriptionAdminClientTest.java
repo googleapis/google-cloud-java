@@ -19,7 +19,6 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSnapshotsPage
 import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
@@ -103,11 +102,8 @@ public class SubscriptionAdminClientTest {
     serviceHelper.reset();
     SubscriptionAdminSettings settings =
         SubscriptionAdminSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = SubscriptionAdminClient.create(settings);
   }

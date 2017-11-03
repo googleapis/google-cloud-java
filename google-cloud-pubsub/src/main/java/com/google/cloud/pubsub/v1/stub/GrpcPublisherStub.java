@@ -21,6 +21,7 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedRe
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -41,6 +42,8 @@ import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.UpdateTopicRequest;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -54,83 +57,86 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcPublisherStub extends PublisherStub {
-  private static final UnaryCallable<Topic, Topic> directCreateTopicCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Publisher/CreateTopic",
-              io.grpc.protobuf.ProtoUtils.marshaller(Topic.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Topic.getDefaultInstance())));
-  private static final UnaryCallable<UpdateTopicRequest, Topic> directUpdateTopicCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Publisher/UpdateTopic",
-              io.grpc.protobuf.ProtoUtils.marshaller(UpdateTopicRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Topic.getDefaultInstance())));
-  private static final UnaryCallable<PublishRequest, PublishResponse> directPublishCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Publisher/Publish",
-              io.grpc.protobuf.ProtoUtils.marshaller(PublishRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(PublishResponse.getDefaultInstance())));
-  private static final UnaryCallable<GetTopicRequest, Topic> directGetTopicCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Publisher/GetTopic",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetTopicRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Topic.getDefaultInstance())));
-  private static final UnaryCallable<ListTopicsRequest, ListTopicsResponse>
-      directListTopicsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.pubsub.v1.Publisher/ListTopics",
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListTopicsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListTopicsResponse.getDefaultInstance())));
-  private static final UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
-      directListTopicSubscriptionsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.pubsub.v1.Publisher/ListTopicSubscriptions",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListTopicSubscriptionsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListTopicSubscriptionsResponse.getDefaultInstance())));
-  private static final UnaryCallable<DeleteTopicRequest, Empty> directDeleteTopicCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.pubsub.v1.Publisher/DeleteTopic",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteTopicRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<SetIamPolicyRequest, Policy> directSetIamPolicyCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.iam.v1.IAMPolicy/SetIamPolicy",
-              io.grpc.protobuf.ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Policy.getDefaultInstance())));
-  private static final UnaryCallable<GetIamPolicyRequest, Policy> directGetIamPolicyCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.iam.v1.IAMPolicy/GetIamPolicy",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Policy.getDefaultInstance())));
-  private static final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      directTestIamPermissionsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.iam.v1.IAMPolicy/TestIamPermissions",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      TestIamPermissionsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      TestIamPermissionsResponse.getDefaultInstance())));
+
+  private static final MethodDescriptor<Topic, Topic> createTopicMethodDescriptor =
+      MethodDescriptor.<Topic, Topic>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.pubsub.v1.Publisher/CreateTopic")
+          .setRequestMarshaller(ProtoUtils.marshaller(Topic.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Topic.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<UpdateTopicRequest, Topic> updateTopicMethodDescriptor =
+      MethodDescriptor.<UpdateTopicRequest, Topic>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.pubsub.v1.Publisher/UpdateTopic")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateTopicRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Topic.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<PublishRequest, PublishResponse> publishMethodDescriptor =
+      MethodDescriptor.<PublishRequest, PublishResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.pubsub.v1.Publisher/Publish")
+          .setRequestMarshaller(ProtoUtils.marshaller(PublishRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(PublishResponse.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<GetTopicRequest, Topic> getTopicMethodDescriptor =
+      MethodDescriptor.<GetTopicRequest, Topic>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.pubsub.v1.Publisher/GetTopic")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetTopicRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Topic.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListTopicsRequest, ListTopicsResponse>
+      listTopicsMethodDescriptor =
+          MethodDescriptor.<ListTopicsRequest, ListTopicsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Publisher/ListTopics")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListTopicsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListTopicsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
+      listTopicSubscriptionsMethodDescriptor =
+          MethodDescriptor
+              .<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Publisher/ListTopicSubscriptions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListTopicSubscriptionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListTopicSubscriptionsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteTopicRequest, Empty> deleteTopicMethodDescriptor =
+      MethodDescriptor.<DeleteTopicRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.pubsub.v1.Publisher/DeleteTopic")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteTopicRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -166,46 +172,92 @@ public class GrpcPublisherStub extends PublisherStub {
   protected GrpcPublisherStub(TopicAdminSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<Topic, Topic> createTopicTransportSettings =
+        GrpcCallSettings.<Topic, Topic>newBuilder()
+            .setMethodDescriptor(createTopicMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateTopicRequest, Topic> updateTopicTransportSettings =
+        GrpcCallSettings.<UpdateTopicRequest, Topic>newBuilder()
+            .setMethodDescriptor(updateTopicMethodDescriptor)
+            .build();
+    GrpcCallSettings<PublishRequest, PublishResponse> publishTransportSettings =
+        GrpcCallSettings.<PublishRequest, PublishResponse>newBuilder()
+            .setMethodDescriptor(publishMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetTopicRequest, Topic> getTopicTransportSettings =
+        GrpcCallSettings.<GetTopicRequest, Topic>newBuilder()
+            .setMethodDescriptor(getTopicMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListTopicsRequest, ListTopicsResponse> listTopicsTransportSettings =
+        GrpcCallSettings.<ListTopicsRequest, ListTopicsResponse>newBuilder()
+            .setMethodDescriptor(listTopicsMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
+        listTopicSubscriptionsTransportSettings =
+            GrpcCallSettings
+                .<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>newBuilder()
+                .setMethodDescriptor(listTopicSubscriptionsMethodDescriptor)
+                .build();
+    GrpcCallSettings<DeleteTopicRequest, Empty> deleteTopicTransportSettings =
+        GrpcCallSettings.<DeleteTopicRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTopicMethodDescriptor)
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .build();
+
     this.createTopicCallable =
-        GrpcCallableFactory.create(
-            directCreateTopicCallable, settings.createTopicSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createTopicTransportSettings, settings.createTopicSettings(), clientContext);
     this.updateTopicCallable =
-        GrpcCallableFactory.create(
-            directUpdateTopicCallable, settings.updateTopicSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            updateTopicTransportSettings, settings.updateTopicSettings(), clientContext);
     this.publishCallable =
-        GrpcCallableFactory.create(
-            directPublishCallable, settings.publishSettings(), clientContext);
+        GrpcCallableFactory.createBatchingCallable(
+            publishTransportSettings, settings.publishSettings(), clientContext);
     this.getTopicCallable =
-        GrpcCallableFactory.create(
-            directGetTopicCallable, settings.getTopicSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getTopicTransportSettings, settings.getTopicSettings(), clientContext);
     this.listTopicsCallable =
-        GrpcCallableFactory.create(
-            directListTopicsCallable, settings.listTopicsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listTopicsTransportSettings, settings.listTopicsSettings(), clientContext);
     this.listTopicsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListTopicsCallable, settings.listTopicsSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listTopicsTransportSettings, settings.listTopicsSettings(), clientContext);
     this.listTopicSubscriptionsCallable =
-        GrpcCallableFactory.create(
-            directListTopicSubscriptionsCallable,
+        GrpcCallableFactory.createUnaryCallable(
+            listTopicSubscriptionsTransportSettings,
             settings.listTopicSubscriptionsSettings(),
             clientContext);
     this.listTopicSubscriptionsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListTopicSubscriptionsCallable,
+        GrpcCallableFactory.createPagedCallable(
+            listTopicSubscriptionsTransportSettings,
             settings.listTopicSubscriptionsSettings(),
             clientContext);
     this.deleteTopicCallable =
-        GrpcCallableFactory.create(
-            directDeleteTopicCallable, settings.deleteTopicSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteTopicTransportSettings, settings.deleteTopicSettings(), clientContext);
     this.setIamPolicyCallable =
-        GrpcCallableFactory.create(
-            directSetIamPolicyCallable, settings.setIamPolicySettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.getIamPolicyCallable =
-        GrpcCallableFactory.create(
-            directGetIamPolicyCallable, settings.getIamPolicySettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.testIamPermissionsCallable =
-        GrpcCallableFactory.create(
-            directTestIamPermissionsCallable, settings.testIamPermissionsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

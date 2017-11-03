@@ -18,12 +18,15 @@ package com.google.cloud.vision.v1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
 import com.google.cloud.vision.v1.ImageAnnotatorSettings;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -37,16 +40,17 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
-  private static final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
-      directBatchAnnotateImagesCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.cloud.vision.v1.ImageAnnotator/BatchAnnotateImages",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      BatchAnnotateImagesRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      BatchAnnotateImagesResponse.getDefaultInstance())));
+
+  private static final MethodDescriptor<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+      batchAnnotateImagesMethodDescriptor =
+          MethodDescriptor.<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vision.v1.ImageAnnotator/BatchAnnotateImages")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchAnnotateImagesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchAnnotateImagesResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -71,9 +75,15 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
   protected GrpcImageAnnotatorStub(ImageAnnotatorSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+        batchAnnotateImagesTransportSettings =
+            GrpcCallSettings.<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>newBuilder()
+                .setMethodDescriptor(batchAnnotateImagesMethodDescriptor)
+                .build();
+
     this.batchAnnotateImagesCallable =
-        GrpcCallableFactory.create(
-            directBatchAnnotateImagesCallable,
+        GrpcCallableFactory.createUnaryCallable(
+            batchAnnotateImagesTransportSettings,
             settings.batchAnnotateImagesSettings(),
             clientContext);
 

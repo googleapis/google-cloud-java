@@ -110,10 +110,8 @@ import javax.annotation.Generated;
  * <code>
  * TopicAdminSettings topicAdminSettings =
  *     TopicAdminSettings.newBuilder()
- *         .setTransportProvider(TopicAdminSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(TopicAdminSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(TopicAdminSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * TopicAdminClient topicAdminClient =
@@ -144,6 +142,7 @@ public class TopicAdminClient implements BackgroundResource {
    * Constructs an instance of TopicAdminClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use TopicAdminSettings}.
    */
+  @BetaApi
   public static final TopicAdminClient create(PublisherStub stub) {
     return new TopicAdminClient(stub);
   }

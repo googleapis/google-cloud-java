@@ -22,6 +22,7 @@ import static com.google.cloud.logging.v2.PagedResponseWrappers.ListMonitoredRes
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -36,6 +37,8 @@ import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -49,51 +52,58 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
-  private static final UnaryCallable<DeleteLogRequest, Empty> directDeleteLogCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.LoggingServiceV2/DeleteLog",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteLogRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
-      directWriteLogEntriesCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.logging.v2.LoggingServiceV2/WriteLogEntries",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      WriteLogEntriesRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      WriteLogEntriesResponse.getDefaultInstance())));
-  private static final UnaryCallable<ListLogEntriesRequest, ListLogEntriesResponse>
-      directListLogEntriesCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.logging.v2.LoggingServiceV2/ListLogEntries",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListLogEntriesRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListLogEntriesResponse.getDefaultInstance())));
-  private static final UnaryCallable<
+
+  private static final MethodDescriptor<DeleteLogRequest, Empty> deleteLogMethodDescriptor =
+      MethodDescriptor.<DeleteLogRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.LoggingServiceV2/DeleteLog")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteLogRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<WriteLogEntriesRequest, WriteLogEntriesResponse>
+      writeLogEntriesMethodDescriptor =
+          MethodDescriptor.<WriteLogEntriesRequest, WriteLogEntriesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.LoggingServiceV2/WriteLogEntries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(WriteLogEntriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(WriteLogEntriesResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListLogEntriesRequest, ListLogEntriesResponse>
+      listLogEntriesMethodDescriptor =
+          MethodDescriptor.<ListLogEntriesRequest, ListLogEntriesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.LoggingServiceV2/ListLogEntries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLogEntriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLogEntriesResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
-      directListMonitoredResourceDescriptorsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.logging.v2.LoggingServiceV2/ListMonitoredResourceDescriptors",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListMonitoredResourceDescriptorsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListMonitoredResourceDescriptorsResponse.getDefaultInstance())));
-  private static final UnaryCallable<ListLogsRequest, ListLogsResponse> directListLogsCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.LoggingServiceV2/ListLogs",
-              io.grpc.protobuf.ProtoUtils.marshaller(ListLogsRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(ListLogsResponse.getDefaultInstance())));
+      listMonitoredResourceDescriptorsMethodDescriptor =
+          MethodDescriptor
+              .<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.logging.v2.LoggingServiceV2/ListMonitoredResourceDescriptors")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListMonitoredResourceDescriptorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListMonitoredResourceDescriptorsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListLogsRequest, ListLogsResponse>
+      listLogsMethodDescriptor =
+          MethodDescriptor.<ListLogsRequest, ListLogsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.LoggingServiceV2/ListLogs")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListLogsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListLogsResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -129,34 +139,61 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
   protected GrpcLoggingServiceV2Stub(LoggingSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<DeleteLogRequest, Empty> deleteLogTransportSettings =
+        GrpcCallSettings.<DeleteLogRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteLogMethodDescriptor)
+            .build();
+    GrpcCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
+        writeLogEntriesTransportSettings =
+            GrpcCallSettings.<WriteLogEntriesRequest, WriteLogEntriesResponse>newBuilder()
+                .setMethodDescriptor(writeLogEntriesMethodDescriptor)
+                .build();
+    GrpcCallSettings<ListLogEntriesRequest, ListLogEntriesResponse>
+        listLogEntriesTransportSettings =
+            GrpcCallSettings.<ListLogEntriesRequest, ListLogEntriesResponse>newBuilder()
+                .setMethodDescriptor(listLogEntriesMethodDescriptor)
+                .build();
+    GrpcCallSettings<
+            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
+        listMonitoredResourceDescriptorsTransportSettings =
+            GrpcCallSettings
+                .<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listMonitoredResourceDescriptorsMethodDescriptor)
+                .build();
+    GrpcCallSettings<ListLogsRequest, ListLogsResponse> listLogsTransportSettings =
+        GrpcCallSettings.<ListLogsRequest, ListLogsResponse>newBuilder()
+            .setMethodDescriptor(listLogsMethodDescriptor)
+            .build();
+
     this.deleteLogCallable =
-        GrpcCallableFactory.create(
-            directDeleteLogCallable, settings.deleteLogSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteLogTransportSettings, settings.deleteLogSettings(), clientContext);
     this.writeLogEntriesCallable =
-        GrpcCallableFactory.create(
-            directWriteLogEntriesCallable, settings.writeLogEntriesSettings(), clientContext);
+        GrpcCallableFactory.createBatchingCallable(
+            writeLogEntriesTransportSettings, settings.writeLogEntriesSettings(), clientContext);
     this.listLogEntriesCallable =
-        GrpcCallableFactory.create(
-            directListLogEntriesCallable, settings.listLogEntriesSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listLogEntriesTransportSettings, settings.listLogEntriesSettings(), clientContext);
     this.listLogEntriesPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListLogEntriesCallable, settings.listLogEntriesSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listLogEntriesTransportSettings, settings.listLogEntriesSettings(), clientContext);
     this.listMonitoredResourceDescriptorsCallable =
-        GrpcCallableFactory.create(
-            directListMonitoredResourceDescriptorsCallable,
+        GrpcCallableFactory.createUnaryCallable(
+            listMonitoredResourceDescriptorsTransportSettings,
             settings.listMonitoredResourceDescriptorsSettings(),
             clientContext);
     this.listMonitoredResourceDescriptorsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListMonitoredResourceDescriptorsCallable,
+        GrpcCallableFactory.createPagedCallable(
+            listMonitoredResourceDescriptorsTransportSettings,
             settings.listMonitoredResourceDescriptorsSettings(),
             clientContext);
     this.listLogsCallable =
-        GrpcCallableFactory.create(
-            directListLogsCallable, settings.listLogsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listLogsTransportSettings, settings.listLogsSettings(), clientContext);
     this.listLogsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListLogsCallable, settings.listLogsSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listLogsTransportSettings, settings.listLogsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

@@ -18,6 +18,7 @@ package com.google.cloud.errorreporting.v1beta1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -25,6 +26,8 @@ import com.google.cloud.errorreporting.v1beta1.ErrorGroupServiceSettings;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -38,20 +41,24 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
-  private static final UnaryCallable<GetGroupRequest, ErrorGroup> directGetGroupCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/GetGroup",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(ErrorGroup.getDefaultInstance())));
-  private static final UnaryCallable<UpdateGroupRequest, ErrorGroup> directUpdateGroupCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/UpdateGroup",
-              io.grpc.protobuf.ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(ErrorGroup.getDefaultInstance())));
+
+  private static final MethodDescriptor<GetGroupRequest, ErrorGroup> getGroupMethodDescriptor =
+      MethodDescriptor.<GetGroupRequest, ErrorGroup>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/GetGroup")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<UpdateGroupRequest, ErrorGroup>
+      updateGroupMethodDescriptor =
+          MethodDescriptor.<UpdateGroupRequest, ErrorGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/UpdateGroup")
+              .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -77,12 +84,21 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
   protected GrpcErrorGroupServiceStub(
       ErrorGroupServiceSettings settings, ClientContext clientContext) throws IOException {
 
+    GrpcCallSettings<GetGroupRequest, ErrorGroup> getGroupTransportSettings =
+        GrpcCallSettings.<GetGroupRequest, ErrorGroup>newBuilder()
+            .setMethodDescriptor(getGroupMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupTransportSettings =
+        GrpcCallSettings.<UpdateGroupRequest, ErrorGroup>newBuilder()
+            .setMethodDescriptor(updateGroupMethodDescriptor)
+            .build();
+
     this.getGroupCallable =
-        GrpcCallableFactory.create(
-            directGetGroupCallable, settings.getGroupSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getGroupTransportSettings, settings.getGroupSettings(), clientContext);
     this.updateGroupCallable =
-        GrpcCallableFactory.create(
-            directUpdateGroupCallable, settings.updateGroupSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            updateGroupTransportSettings, settings.updateGroupSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
