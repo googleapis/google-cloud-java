@@ -2217,13 +2217,20 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of deleting the ACL entry for an entity on a bucket.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
-   * BucketSourceOption userProject = BucketSourceOption.userProject("myProject");
-   * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers(), userProject);
+   * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers());
    * if (deleted) {
    *   // the acl entry was deleted
    * } else {
    *   // the acl entry was not found
    * }
+   * }</pre>
+   *
+   * <p>Example of deleting the ACL entry for a specific user on a requester_pays bucket with a
+   * user_project option.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * BucketSourceOption userProject = BucketSourceOption.userProject("myProject");
+   * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers(), userProject);
    * }</pre>
    *
    * @param bucket name of the bucket to delete an ACL from
