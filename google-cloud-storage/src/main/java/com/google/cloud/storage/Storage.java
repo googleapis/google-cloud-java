@@ -2200,10 +2200,7 @@ public interface Storage extends Service<StorageOptions> {
   Acl getAcl(String bucket, Entity entity, BucketSourceOption... options);
 
   /**
-   * Returns the ACL entry for the specified entity on the specified bucket or {@code null} if not
-   * found.
-   *
-   * @throws StorageException upon failure
+   * @see com.google.cloud.storage.Storage#getAcl(String bucket, Entity entity, BucketSourceOption... options)
    */
   Acl getAcl(String bucket, Entity entity);
 
@@ -2228,10 +2225,7 @@ public interface Storage extends Service<StorageOptions> {
   boolean deleteAcl(String bucket, Entity entity, BucketSourceOption... options);
 
   /**
-   * Deletes the ACL entry for the specified entity on the specified bucket.
-   *
-   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
-   * @throws StorageException upon failure
+   * @see com.google.cloud.storage.Storage#deleteAcl(String bucket, Entity entity, BucketSourceOption... options)
    */
   boolean deleteAcl(String bucket, Entity entity);
 
@@ -2250,9 +2244,7 @@ public interface Storage extends Service<StorageOptions> {
   Acl createAcl(String bucket, Acl acl, BucketSourceOption... options);
 
   /**
-   * Creates a new ACL entry on the specified bucket.
-   *
-   * @throws StorageException upon failure
+   * @see com.google.cloud.storage.Storage#createAcl(String bucket, Acl acl, BucketSourceOption... options)
    */
   Acl createAcl(String bucket, Acl acl);
 
@@ -2271,9 +2263,7 @@ public interface Storage extends Service<StorageOptions> {
   Acl updateAcl(String bucket, Acl acl, BucketSourceOption... options);
 
   /**
-   * Updates an ACL entry on the specified bucket.
-   *
-   * @throws StorageException upon failure
+   * @see com.google.cloud.storage.Storage#updateAcl(String bucket, Acl acl, BucketSourceOption... options)
    */
   Acl updateAcl(String bucket, Acl acl);
 
@@ -2294,9 +2284,7 @@ public interface Storage extends Service<StorageOptions> {
   List<Acl> listAcls(String bucket, BucketSourceOption... options);
 
   /**
-   * Lists the ACL entries for the provided bucket.
-   *
-   * @throws StorageException upon failure
+   * @see com.google.cloud.storage.Storage#listAcls(String bucket, BucketSourceOption... options)
    */
   List<Acl> listAcls(String bucket);
 
