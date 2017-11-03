@@ -834,8 +834,8 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option for bucket's billing user project. This option is only used by the buckets with
-     * 'requester_pays' flag.
+     * Returns an option for bucket's billing user project. This option is required for and only
+     * used by the buckets with 'requester_pays' flag.
      */
     @GcpLaunchStage.Alpha
     public static BlobListOption userProject(String userProject) {
@@ -1387,7 +1387,8 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Creates a new bucket.
    *
-   * Accepts an optional userProject {@link BucketTargetOption} option.
+   * Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
+   * to assign operational costs.
    *
    * <p>Example of creating a bucket.
    * <pre> {@code
