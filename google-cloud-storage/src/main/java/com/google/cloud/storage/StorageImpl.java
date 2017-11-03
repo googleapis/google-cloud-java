@@ -656,17 +656,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public Acl getAcl(final String bucket, final Entity entity) {
-    try {
-      BucketAccessControl answer = runWithRetries(new Callable<BucketAccessControl>() {
-        @Override
-        public BucketAccessControl call() {
-          return storageRpc.getAcl(bucket, entity.toPb(), new HashMap<StorageRpc.Option, Object>());
-        }
-      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
-      return answer == null ? null : Acl.fromPb(answer);
-    } catch (RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
-    }
+    return getAcl(bucket, entity, new BucketSourceOption[0]);
   }
 
   @Override
@@ -686,16 +676,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public boolean deleteAcl(final String bucket, final Entity entity) {
-    try {
-      return runWithRetries(new Callable<Boolean>() {
-        @Override
-        public Boolean call() {
-          return storageRpc.deleteAcl(bucket, entity.toPb(), new HashMap<StorageRpc.Option, Object>());
-        }
-      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
-    } catch (RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
-    }
+    return deleteAcl(bucket, entity, new BucketSourceOption[0]);
   }
 
   @Override
@@ -716,17 +697,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public Acl createAcl(String bucket, Acl acl) {
-    final BucketAccessControl aclPb = acl.toBucketPb().setBucket(bucket);
-    try {
-      return Acl.fromPb(runWithRetries(new Callable<BucketAccessControl>() {
-        @Override
-        public BucketAccessControl call() {
-          return storageRpc.createAcl(aclPb, new HashMap<StorageRpc.Option, Object>());
-        }
-      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
-    } catch (RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
-    }
+    return createAcl(bucket, acl, new BucketSourceOption[0]);
   }
 
   @Override
@@ -745,20 +716,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
   }
 
-
   @Override
   public Acl updateAcl(String bucket, Acl acl) {
-    final BucketAccessControl aclPb = acl.toBucketPb().setBucket(bucket);
-    try {
-      return Acl.fromPb(runWithRetries(new Callable<BucketAccessControl>() {
-        @Override
-        public BucketAccessControl call() {
-          return storageRpc.patchAcl(aclPb, new HashMap<StorageRpc.Option, Object>());
-        }
-      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
-    } catch (RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
-    }
+    return updateAcl(bucket, acl, new BucketSourceOption[0]);
   }
 
   @Override
@@ -779,17 +739,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public List<Acl> listAcls(final String bucket) {
-    try {
-      List<BucketAccessControl> answer = runWithRetries(new Callable<List<BucketAccessControl>>() {
-        @Override
-        public List<BucketAccessControl> call() {
-          return storageRpc.listAcls(bucket, new HashMap<StorageRpc.Option, Object>());
-        }
-      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
-      return Lists.transform(answer, Acl.FROM_BUCKET_PB_FUNCTION);
-    } catch (RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
-    }
+    return listAcls(bucket, new BucketSourceOption[0]);
   }
 
   @Override
