@@ -71,6 +71,7 @@ import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -659,7 +660,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       BucketAccessControl answer = runWithRetries(new Callable<BucketAccessControl>() {
         @Override
         public BucketAccessControl call() {
-          return storageRpc.getAcl(bucket, entity.toPb());
+          return storageRpc.getAcl(bucket, entity.toPb(), new HashMap<StorageRpc.Option, Object>());
         }
       }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Acl.fromPb(answer);
@@ -689,7 +690,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       return runWithRetries(new Callable<Boolean>() {
         @Override
         public Boolean call() {
-          return storageRpc.deleteAcl(bucket, entity.toPb());
+          return storageRpc.deleteAcl(bucket, entity.toPb(), new HashMap<StorageRpc.Option, Object>());
         }
       }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
@@ -720,7 +721,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       return Acl.fromPb(runWithRetries(new Callable<BucketAccessControl>() {
         @Override
         public BucketAccessControl call() {
-          return storageRpc.createAcl(aclPb);
+          return storageRpc.createAcl(aclPb, new HashMap<StorageRpc.Option, Object>());
         }
       }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
@@ -752,7 +753,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       return Acl.fromPb(runWithRetries(new Callable<BucketAccessControl>() {
         @Override
         public BucketAccessControl call() {
-          return storageRpc.patchAcl(aclPb);
+          return storageRpc.patchAcl(aclPb, new HashMap<StorageRpc.Option, Object>());
         }
       }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException e) {
@@ -782,7 +783,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       List<BucketAccessControl> answer = runWithRetries(new Callable<List<BucketAccessControl>>() {
         @Override
         public List<BucketAccessControl> call() {
-          return storageRpc.listAcls(bucket);
+          return storageRpc.listAcls(bucket, new HashMap<StorageRpc.Option, Object>());
         }
       }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return Lists.transform(answer, Acl.FROM_BUCKET_PB_FUNCTION);

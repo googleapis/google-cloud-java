@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage.spi.v1;
 
+import com.google.api.core.InternalApi;
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
@@ -30,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+@InternalApi
 public interface StorageRpc extends ServiceRpc {
 
   // These options are part of the Google Cloud storage header options
@@ -306,28 +308,12 @@ public interface StorageRpc extends ServiceRpc {
   BucketAccessControl getAcl(String bucket, String entity, Map<Option, ?> options);
 
   /**
-   * Returns the ACL entry for the specified entity on the specified bucket or {@code null} if not
-   * found.
-   *
-   * @throws StorageException upon failure
-   */
-  BucketAccessControl getAcl(String bucket, String entity);
-
-  /**
    * Deletes the ACL entry for the specified entity on the specified bucket.
    *
    * @return {@code true} if the ACL was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   boolean deleteAcl(String bucket, String entity, Map<Option, ?> options);
-
-  /**
-   * Deletes the ACL entry for the specified entity on the specified bucket.
-   *
-   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
-   * @throws StorageException upon failure
-   */
-  boolean deleteAcl(String bucket, String entity);
 
   /**
    * Creates a new ACL entry on the specified bucket.
@@ -337,13 +323,6 @@ public interface StorageRpc extends ServiceRpc {
   BucketAccessControl createAcl(BucketAccessControl acl, Map<Option, ?> options);
 
   /**
-   * Creates a new ACL entry on the specified bucket.
-   *
-   * @throws StorageException upon failure
-   */
-  BucketAccessControl createAcl(BucketAccessControl acl);
-
-  /**
    * Updates an ACL entry on the specified bucket.
    *
    * @throws StorageException upon failure
@@ -351,25 +330,11 @@ public interface StorageRpc extends ServiceRpc {
   BucketAccessControl patchAcl(BucketAccessControl acl, Map<Option, ?> options);
 
   /**
-   * Updates an ACL entry on the specified bucket.
-   *
-   * @throws StorageException upon failure
-   */
-  BucketAccessControl patchAcl(BucketAccessControl acl);
-
-  /**
    * Lists the ACL entries for the provided bucket.
    *
    * @throws StorageException upon failure
    */
   List<BucketAccessControl> listAcls(String bucket, Map<Option, ?> options);
-
-  /**
-   * Lists the ACL entries for the provided bucket.
-   *
-   * @throws StorageException upon failure
-   */
-  List<BucketAccessControl> listAcls(String bucket);
 
   /**
    * Returns the default object ACL entry for the specified entity on the specified bucket or
@@ -453,25 +418,11 @@ public interface StorageRpc extends ServiceRpc {
   Policy getIamPolicy(String bucket, Map<Option, ?> options);
 
   /**
-   * Returns the IAM policy for the specified bucket.
-   *
-   * @throws StorageException upon failure
-   */
-  Policy getIamPolicy(String bucket);
-
-  /**
    * Updates the IAM policy for the specified bucket.
    *
    * @throws StorageException upon failure
    */
   Policy setIamPolicy(String bucket, Policy policy, Map<Option, ?> options);
-
-  /**
-   * Updates the IAM policy for the specified bucket.
-   *
-   * @throws StorageException upon failure
-   */
-  Policy setIamPolicy(String bucket, Policy policy);
 
   /**
    * Tests whether the caller holds the specified permissions for the specified bucket.

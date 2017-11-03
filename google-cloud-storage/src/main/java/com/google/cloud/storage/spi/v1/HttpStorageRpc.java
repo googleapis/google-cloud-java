@@ -697,11 +697,6 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BucketAccessControl getAcl(String bucket, String entity) {
-    return getAcl(bucket, entity, new HashMap<Option, Object>());
-  }
-
-  @Override
   public boolean deleteAcl(String bucket, String entity, Map<Option, ?> options) {
     try {
       storage.bucketAccessControls().delete(bucket, entity)
@@ -718,11 +713,6 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public boolean deleteAcl(String bucket, String entity) {
-    return deleteAcl(bucket, entity, new HashMap<Option, Object>());
-  }
-
-  @Override
   public BucketAccessControl createAcl(BucketAccessControl acl, Map<Option, ?> options) {
     try {
       return storage.bucketAccessControls().insert(acl.getBucket(), acl)
@@ -731,11 +721,6 @@ public class HttpStorageRpc implements StorageRpc {
     } catch (IOException ex) {
       throw translate(ex);
     }
-  }
-
-  @Override
-  public BucketAccessControl createAcl(BucketAccessControl acl) {
-    return createAcl(acl, new HashMap<Option, Object>());
   }
 
   @Override
@@ -751,11 +736,6 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BucketAccessControl patchAcl(BucketAccessControl acl) {
-    return patchAcl(acl, new HashMap<Option, Object>());
-  }
-
-  @Override
   public List<BucketAccessControl> listAcls(String bucket, Map<Option, ?> options) {
     try {
       return storage.bucketAccessControls().list(bucket)
@@ -764,11 +744,6 @@ public class HttpStorageRpc implements StorageRpc {
     } catch (IOException ex) {
       throw translate(ex);
     }
-  }
-
-  @Override
-  public List<BucketAccessControl> listAcls(String bucket) {
-    return listAcls(bucket, new HashMap<Option, Object>());
   }
 
   @Override
@@ -905,11 +880,6 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Policy getIamPolicy(String bucket) {
-    return getIamPolicy(bucket, new HashMap<Option, Object>());
-  }
-
-  @Override
   public Policy setIamPolicy(String bucket, Policy policy, Map<Option, ?> options) {
     try {
       return storage.buckets().setIamPolicy(bucket, policy)
@@ -918,11 +888,6 @@ public class HttpStorageRpc implements StorageRpc {
     } catch (IOException ex) {
       throw translate(ex);
     }
-  }
-
-  @Override
-  public Policy setIamPolicy(String bucket, Policy policy) {
-    return setIamPolicy(bucket, policy, new HashMap<Option, Object>());
   }
 
   @Override
