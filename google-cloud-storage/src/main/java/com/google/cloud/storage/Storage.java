@@ -2211,8 +2211,7 @@ public interface Storage extends Service<StorageOptions> {
   Acl getAcl(String bucket, Entity entity);
 
   /**
-   * Deletes the ACL entry for the specified entity on the specified requester_pays bucket with a
-   * user_project option.
+   * Deletes the ACL entry for the specified entity on the specified bucket.
    *
    * <p>Example of deleting the ACL entry for an entity on a bucket.
    * <pre> {@code
@@ -2249,6 +2248,12 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Creates a new ACL entry on the specified bucket.
    *
+   * <p>Example of creating a new ACL entry on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
+   * }</pre>
+   *
    * <p>Example of creating a new ACL entry on a requester_pays bucket with a user_project option.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
@@ -2269,9 +2274,15 @@ public interface Storage extends Service<StorageOptions> {
   Acl createAcl(String bucket, Acl acl);
 
   /**
-   * Updates an ACL entry on the specified requester_pays bucket with a user_project option.
+   * Updates an ACL entry on the specified bucket.
    *
    * <p>Example of updating a new ACL entry on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
+   * }</pre>
+   *
+   * <p>Example of updating a new ACL entry on a requester_pays bucket with a user_project option.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER),
@@ -2291,9 +2302,19 @@ public interface Storage extends Service<StorageOptions> {
   Acl updateAcl(String bucket, Acl acl);
 
   /**
-   * Lists the ACL entries for the provided requester_pays bucket with a user_project option.
+   * Lists the ACL entries for the provided bucket.
    *
    * <p>Example of listing the ACL entries for a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * List<Acl> acls = storage.listAcls(bucketName);
+   * for (Acl acl : acls) {
+   *   // do something with ACL entry
+   * }
+   * }</pre>
+   *
+   * <p>Example of listing the ACL entries for a blob in a requester_pays bucket with a user_project
+   * option.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * List<Acl> acls = storage.listAcls(bucketName, BucketSourceOption.userProject("myProject"));
