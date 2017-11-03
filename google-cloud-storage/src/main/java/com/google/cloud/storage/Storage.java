@@ -836,6 +836,8 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns an option for bucket's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
+     *
+     * @param userProject projectId of the billing user project.
      */
     @GcpLaunchStage.Alpha
     public static BlobListOption userProject(String userProject) {
@@ -2196,6 +2198,9 @@ public interface Storage extends Service<StorageOptions> {
    * Acl acl = storage.getAcl(bucketName, new User(userEmail), userProjectOption);
    * }</pre>
    *
+   * @param bucket name of the bucket where the getAcl operation takes place
+   * @param entity ACL entity to fetch
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   Acl getAcl(String bucket, Entity entity, BucketSourceOption... options);
@@ -2221,6 +2226,9 @@ public interface Storage extends Service<StorageOptions> {
    * }
    * }</pre>
    *
+   * @param bucket name of the bucket to delete an ACL from
+   * @param entity ACL entity to delete
+   * @param options extra parameters to apply to this operation
    * @return {@code true} if the ACL was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
@@ -2241,6 +2249,9 @@ public interface Storage extends Service<StorageOptions> {
    *     BucketSourceOption.userProject("myProject"));
    * }</pre>
    *
+   * @param bucket name of the bucket for which an ACL should be created
+   * @param acl ACL to create
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   Acl createAcl(String bucket, Acl acl, BucketSourceOption... options);
@@ -2260,6 +2271,9 @@ public interface Storage extends Service<StorageOptions> {
    *     BucketSourceOption.userProject("myProject"));
    * }</pre>
    *
+   * @param bucket name of the bucket where the updateAcl operation takes place
+   * @param acl ACL to update
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   Acl updateAcl(String bucket, Acl acl, BucketSourceOption... options);
@@ -2499,6 +2513,8 @@ public interface Storage extends Service<StorageOptions> {
    * Policy policy = storage.getIamPolicy(bucketName);
    * }</pre>
    *
+   * @param bucket name of the bucket where the getIamPolicy operation takes place
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   @BetaApi
@@ -2521,6 +2537,9 @@ public interface Storage extends Service<StorageOptions> {
    *             .build());
    * }</pre>
    *
+   * @param bucket name of the bucket where the setIamPolicy operation takes place
+   * @param policy policy to be set on the specified bucket
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   @BetaApi
@@ -2543,6 +2562,9 @@ public interface Storage extends Service<StorageOptions> {
    * }
    * }</pre>
    *
+   * @param bucket name of the bucket where the testIamPermissions operation takes place
+   * @param permissions list of permissions to test on the bucket
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   @BetaApi
