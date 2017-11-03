@@ -110,10 +110,8 @@ import javax.annotation.Generated;
  * <code>
  * MetricServiceSettings metricServiceSettings =
  *     MetricServiceSettings.newBuilder()
- *         .setTransportProvider(MetricServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(MetricServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(MetricServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * MetricServiceClient metricServiceClient =
@@ -145,6 +143,7 @@ public class MetricServiceClient implements BackgroundResource {
    * Constructs an instance of MetricServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use MetricServiceSettings}.
    */
+  @BetaApi
   public static final MetricServiceClient create(MetricServiceStub stub) {
     return new MetricServiceClient(stub);
   }

@@ -20,6 +20,7 @@ import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogMetricsPa
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -32,6 +33,8 @@ import com.google.logging.v2.ListLogMetricsResponse;
 import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -45,48 +48,52 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
-  private static final UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse>
-      directListLogMetricsCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.logging.v2.MetricsServiceV2/ListLogMetrics",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListLogMetricsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListLogMetricsResponse.getDefaultInstance())));
-  private static final UnaryCallable<GetLogMetricRequest, LogMetric> directGetLogMetricCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.MetricsServiceV2/GetLogMetric",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetLogMetricRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(LogMetric.getDefaultInstance())));
-  private static final UnaryCallable<CreateLogMetricRequest, LogMetric>
-      directCreateLogMetricCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.logging.v2.MetricsServiceV2/CreateLogMetric",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      CreateLogMetricRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(LogMetric.getDefaultInstance())));
-  private static final UnaryCallable<UpdateLogMetricRequest, LogMetric>
-      directUpdateLogMetricCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.logging.v2.MetricsServiceV2/UpdateLogMetric",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      UpdateLogMetricRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(LogMetric.getDefaultInstance())));
-  private static final UnaryCallable<DeleteLogMetricRequest, Empty> directDeleteLogMetricCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.logging.v2.MetricsServiceV2/DeleteLogMetric",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteLogMetricRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
+
+  private static final MethodDescriptor<ListLogMetricsRequest, ListLogMetricsResponse>
+      listLogMetricsMethodDescriptor =
+          MethodDescriptor.<ListLogMetricsRequest, ListLogMetricsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.MetricsServiceV2/ListLogMetrics")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLogMetricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLogMetricsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetLogMetricRequest, LogMetric>
+      getLogMetricMethodDescriptor =
+          MethodDescriptor.<GetLogMetricRequest, LogMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.MetricsServiceV2/GetLogMetric")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetLogMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LogMetric.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateLogMetricRequest, LogMetric>
+      createLogMetricMethodDescriptor =
+          MethodDescriptor.<CreateLogMetricRequest, LogMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.MetricsServiceV2/CreateLogMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateLogMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LogMetric.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateLogMetricRequest, LogMetric>
+      updateLogMetricMethodDescriptor =
+          MethodDescriptor.<UpdateLogMetricRequest, LogMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.MetricsServiceV2/UpdateLogMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateLogMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LogMetric.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteLogMetricRequest, Empty>
+      deleteLogMetricMethodDescriptor =
+          MethodDescriptor.<DeleteLogMetricRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.MetricsServiceV2/DeleteLogMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteLogMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -115,24 +122,46 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
   protected GrpcMetricsServiceV2Stub(MetricsSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<ListLogMetricsRequest, ListLogMetricsResponse>
+        listLogMetricsTransportSettings =
+            GrpcCallSettings.<ListLogMetricsRequest, ListLogMetricsResponse>newBuilder()
+                .setMethodDescriptor(listLogMetricsMethodDescriptor)
+                .build();
+    GrpcCallSettings<GetLogMetricRequest, LogMetric> getLogMetricTransportSettings =
+        GrpcCallSettings.<GetLogMetricRequest, LogMetric>newBuilder()
+            .setMethodDescriptor(getLogMetricMethodDescriptor)
+            .build();
+    GrpcCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricTransportSettings =
+        GrpcCallSettings.<CreateLogMetricRequest, LogMetric>newBuilder()
+            .setMethodDescriptor(createLogMetricMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricTransportSettings =
+        GrpcCallSettings.<UpdateLogMetricRequest, LogMetric>newBuilder()
+            .setMethodDescriptor(updateLogMetricMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricTransportSettings =
+        GrpcCallSettings.<DeleteLogMetricRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteLogMetricMethodDescriptor)
+            .build();
+
     this.listLogMetricsCallable =
-        GrpcCallableFactory.create(
-            directListLogMetricsCallable, settings.listLogMetricsSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listLogMetricsTransportSettings, settings.listLogMetricsSettings(), clientContext);
     this.listLogMetricsPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListLogMetricsCallable, settings.listLogMetricsSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listLogMetricsTransportSettings, settings.listLogMetricsSettings(), clientContext);
     this.getLogMetricCallable =
-        GrpcCallableFactory.create(
-            directGetLogMetricCallable, settings.getLogMetricSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getLogMetricTransportSettings, settings.getLogMetricSettings(), clientContext);
     this.createLogMetricCallable =
-        GrpcCallableFactory.create(
-            directCreateLogMetricCallable, settings.createLogMetricSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createLogMetricTransportSettings, settings.createLogMetricSettings(), clientContext);
     this.updateLogMetricCallable =
-        GrpcCallableFactory.create(
-            directUpdateLogMetricCallable, settings.updateLogMetricSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            updateLogMetricTransportSettings, settings.updateLogMetricSettings(), clientContext);
     this.deleteLogMetricCallable =
-        GrpcCallableFactory.create(
-            directDeleteLogMetricCallable, settings.deleteLogMetricSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteLogMetricTransportSettings, settings.deleteLogMetricSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

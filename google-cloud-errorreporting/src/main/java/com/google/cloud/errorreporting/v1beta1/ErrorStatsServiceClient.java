@@ -97,10 +97,8 @@ import javax.annotation.Generated;
  * <code>
  * ErrorStatsServiceSettings errorStatsServiceSettings =
  *     ErrorStatsServiceSettings.newBuilder()
- *         .setTransportProvider(ErrorStatsServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(ErrorStatsServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(ErrorStatsServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * ErrorStatsServiceClient errorStatsServiceClient =
@@ -132,6 +130,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * Constructs an instance of ErrorStatsServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer to use ErrorStatsServiceSettings}.
    */
+  @BetaApi
   public static final ErrorStatsServiceClient create(ErrorStatsServiceStub stub) {
     return new ErrorStatsServiceClient(stub);
   }

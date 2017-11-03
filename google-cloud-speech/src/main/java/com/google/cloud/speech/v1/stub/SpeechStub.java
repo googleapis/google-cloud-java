@@ -50,8 +50,7 @@ public abstract class SpeechStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
-          Operation>
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: longRunningRecognizeOperationCallable()");

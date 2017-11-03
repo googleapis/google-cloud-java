@@ -104,10 +104,8 @@ import javax.annotation.Generated;
  * <code>
  * LoggingSettings loggingSettings =
  *     LoggingSettings.newBuilder()
- *         .setTransportProvider(LoggingSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(LoggingSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(LoggingSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * LoggingClient loggingClient =
@@ -138,6 +136,7 @@ public class LoggingClient implements BackgroundResource {
    * Constructs an instance of LoggingClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use LoggingSettings}.
    */
+  @BetaApi
   public static final LoggingClient create(LoggingServiceV2Stub stub) {
     return new LoggingClient(stub);
   }

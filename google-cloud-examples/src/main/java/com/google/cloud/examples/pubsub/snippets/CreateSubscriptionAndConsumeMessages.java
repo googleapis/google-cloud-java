@@ -50,7 +50,7 @@ public class CreateSubscriptionAndConsumeMessages {
         };
     Subscriber subscriber = null;
     try {
-      subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
+      subscriber = Subscriber.newBuilder(subscription, receiver).build();
       subscriber.addListener(
           new Subscriber.Listener() {
             @Override

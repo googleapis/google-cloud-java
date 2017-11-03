@@ -107,10 +107,8 @@ import javax.annotation.Generated;
  * <code>
  * GroupServiceSettings groupServiceSettings =
  *     GroupServiceSettings.newBuilder()
- *         .setTransportProvider(GroupServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(GroupServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(GroupServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * GroupServiceClient groupServiceClient =
@@ -141,6 +139,7 @@ public class GroupServiceClient implements BackgroundResource {
    * Constructs an instance of GroupServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use GroupServiceSettings}.
    */
+  @BetaApi
   public static final GroupServiceClient create(GroupServiceStub stub) {
     return new GroupServiceClient(stub);
   }

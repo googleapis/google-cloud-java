@@ -74,6 +74,7 @@ import java.security.spec.EncodedKeySpec;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -1882,7 +1883,7 @@ public class StorageImplTest {
 
   @Test
   public void testGetBucketAcl() {
-    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers"))
+    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>()))
         .andReturn(ACL.toBucketPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -1892,7 +1893,7 @@ public class StorageImplTest {
 
   @Test
   public void testGetBucketAclNull() {
-    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers")).andReturn(null);
+    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>())).andReturn(null);
     EasyMock.replay(storageRpcMock);
     initializeService();
     assertNull(storage.getAcl(BUCKET_NAME1, User.ofAllAuthenticatedUsers()));
@@ -1900,7 +1901,7 @@ public class StorageImplTest {
 
   @Test
   public void testDeleteBucketAcl() {
-    EasyMock.expect(storageRpcMock.deleteAcl(BUCKET_NAME1, "allAuthenticatedUsers"))
+    EasyMock.expect(storageRpcMock.deleteAcl(BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>()))
         .andReturn(true);
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -1910,7 +1911,7 @@ public class StorageImplTest {
   @Test
   public void testCreateBucketAcl() {
     Acl returnedAcl = ACL.toBuilder().setEtag("ETAG").setId("ID").build();
-    EasyMock.expect(storageRpcMock.createAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1)))
+    EasyMock.expect(storageRpcMock.createAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1), new HashMap<StorageRpc.Option, Object>()))
         .andReturn(returnedAcl.toBucketPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -1921,7 +1922,7 @@ public class StorageImplTest {
   @Test
   public void testUpdateBucketAcl() {
     Acl returnedAcl = ACL.toBuilder().setEtag("ETAG").setId("ID").build();
-    EasyMock.expect(storageRpcMock.patchAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1)))
+    EasyMock.expect(storageRpcMock.patchAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1), new HashMap<StorageRpc.Option, Object>()))
         .andReturn(returnedAcl.toBucketPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -1931,7 +1932,7 @@ public class StorageImplTest {
 
   @Test
   public void testListBucketAcl() {
-    EasyMock.expect(storageRpcMock.listAcls(BUCKET_NAME1))
+    EasyMock.expect(storageRpcMock.listAcls(BUCKET_NAME1, new HashMap<StorageRpc.Option, Object>()))
         .andReturn(ImmutableList.of(ACL.toBucketPb(), OTHER_ACL.toBucketPb()));
     EasyMock.replay(storageRpcMock);
     initializeService();
