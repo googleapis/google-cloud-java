@@ -2187,7 +2187,8 @@ public interface Storage extends Service<StorageOptions> {
    * Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers());
    * }</pre>
    *
-   * <p>Example of getting the ACL entry for a specific user on a bucket.
+   * <p>Example of getting the ACL entry for a specific user on a requester_pays bucket with a
+   * user_project option.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * String userEmail = "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com";
@@ -2205,7 +2206,8 @@ public interface Storage extends Service<StorageOptions> {
   Acl getAcl(String bucket, Entity entity);
 
   /**
-   * Deletes the ACL entry for the specified entity on the specified bucket.
+   * Deletes the ACL entry for the specified entity on the specified requester_pays bucket with a
+   * user_project option.
    *
    * <p>Example of deleting the ACL entry for an entity on a bucket.
    * <pre> {@code
@@ -2232,7 +2234,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Creates a new ACL entry on the specified bucket.
    *
-   * <p>Example of creating a new ACL entry on a bucket.
+   * <p>Example of creating a new ACL entry on a requester_pays bucket with a user_project option.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER),
@@ -2249,7 +2251,7 @@ public interface Storage extends Service<StorageOptions> {
   Acl createAcl(String bucket, Acl acl);
 
   /**
-   * Updates an ACL entry on the specified bucket.
+   * Updates an ACL entry on the specified requester_pays bucket with a user_project option.
    *
    * <p>Example of updating a new ACL entry on a bucket.
    * <pre> {@code
@@ -2268,7 +2270,7 @@ public interface Storage extends Service<StorageOptions> {
   Acl updateAcl(String bucket, Acl acl);
 
   /**
-   * Lists the ACL entries for the provided bucket.
+   * Lists the ACL entries for the provided requester_pays bucket with a user_project option.
    *
    * <p>Example of listing the ACL entries for a blob.
    * <pre> {@code
