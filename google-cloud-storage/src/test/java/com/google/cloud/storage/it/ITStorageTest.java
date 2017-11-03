@@ -55,7 +55,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
 import java.io.ByteArrayInputStream;
@@ -69,7 +68,9 @@ import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -1423,7 +1424,8 @@ public class ITStorageTest {
     assertNotNull(storage.createAcl(BUCKET, acl, bucketOptions));
     Acl updatedAcl = storage.updateAcl(BUCKET, acl.toBuilder().setRole(Role.WRITER).build(), bucketOptions);
     assertEquals(Role.WRITER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(storage.listAcls(BUCKET, bucketOptions));
+    Set<Acl> acls = new HashSet<>();
+    acls.addAll(storage.listAcls(BUCKET, bucketOptions));
     assertTrue(acls.contains(updatedAcl));
     assertTrue(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
     assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
@@ -1437,7 +1439,8 @@ public class ITStorageTest {
     assertNotNull(storage.createDefaultAcl(BUCKET, acl));
     Acl updatedAcl = storage.updateDefaultAcl(BUCKET, acl.toBuilder().setRole(Role.OWNER).build());
     assertEquals(Role.OWNER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(storage.listDefaultAcls(BUCKET));
+    Set<Acl> acls = new HashSet<>();
+    acls.addAll(storage.listDefaultAcls(BUCKET));
     assertTrue(acls.contains(updatedAcl));
     assertTrue(storage.deleteDefaultAcl(BUCKET, User.ofAllAuthenticatedUsers()));
     assertNull(storage.getDefaultAcl(BUCKET, User.ofAllAuthenticatedUsers()));
@@ -1453,7 +1456,7 @@ public class ITStorageTest {
     assertNotNull(storage.createAcl(blobId, acl));
     Acl updatedAcl = storage.updateAcl(blobId, acl.toBuilder().setRole(Role.OWNER).build());
     assertEquals(Role.OWNER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(storage.listAcls(blobId));
+    Set<Acl> acls = new HashSet<>(storage.listAcls(blobId));
     assertTrue(acls.contains(updatedAcl));
     assertTrue(storage.deleteAcl(blobId, User.ofAllAuthenticatedUsers()));
     assertNull(storage.getAcl(blobId, User.ofAllAuthenticatedUsers()));
@@ -1536,14 +1539,14 @@ public class ITStorageTest {
     Map<com.google.cloud.Role, Set<Identity>> bindingsWithoutPublicRead =
         ImmutableMap.of(
             StorageRoles.legacyBucketOwner(),
-            (Set<Identity>) Sets.newHashSet(projectOwner, projectEditor),
-            StorageRoles.legacyBucketReader(), Sets.newHashSet(projectViewer));
+            new HashSet<>(Arrays.asList(projectOwner, projectEditor)),
+            StorageRoles.legacyBucketReader(), (Set<Identity>) new HashSet<>(Collections.singleton(projectViewer)));
     Map<com.google.cloud.Role, Set<Identity>> bindingsWithPublicRead =
         ImmutableMap.of(
             StorageRoles.legacyBucketOwner(),
-            (Set<Identity>) Sets.newHashSet(projectOwner, projectEditor),
-            StorageRoles.legacyBucketReader(), Sets.newHashSet(projectViewer),
-            StorageRoles.legacyObjectReader(), Sets.newHashSet(Identity.allUsers()));
+            new HashSet<>(Arrays.asList(projectOwner, projectEditor)),
+            StorageRoles.legacyBucketReader(), new HashSet<>(Collections.singleton(projectViewer)),
+            StorageRoles.legacyObjectReader(), (Set<Identity>) new HashSet<>(Collections.singleton((Identity.allUsers()))));
 
     // Validate getting policy.
     Policy currentPolicy = storage.getIamPolicy(BUCKET, bucketOptions);
