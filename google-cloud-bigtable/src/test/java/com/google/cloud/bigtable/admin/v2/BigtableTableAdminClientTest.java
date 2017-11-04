@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.admin.v2;
 import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListTablesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
@@ -78,11 +77,8 @@ public class BigtableTableAdminClientTest {
     serviceHelper.reset();
     BigtableTableAdminSettings settings =
         BigtableTableAdminSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = BigtableTableAdminClient.create(settings);
   }

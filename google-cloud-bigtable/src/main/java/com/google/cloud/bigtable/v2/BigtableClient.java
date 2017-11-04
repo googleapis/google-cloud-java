@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,10 +105,8 @@ import javax.annotation.Generated;
  * <code>
  * BigtableSettings bigtableSettings =
  *     BigtableSettings.newBuilder()
- *         .setTransportProvider(BigtableSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(BigtableSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(BigtableSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * BigtableClient bigtableClient =
@@ -139,6 +137,7 @@ public class BigtableClient implements BackgroundResource {
    * Constructs an instance of BigtableClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use BigtableSettings}.
    */
+  @BetaApi
   public static final BigtableClient create(BigtableStub stub) {
     return new BigtableClient(stub);
   }

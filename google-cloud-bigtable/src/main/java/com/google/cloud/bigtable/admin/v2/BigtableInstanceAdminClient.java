@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@ package com.google.cloud.bigtable.admin.v2;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.OperationFuture;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.Cluster;
 import com.google.bigtable.admin.v2.ClusterName;
@@ -114,10 +114,8 @@ import javax.annotation.Generated;
  * <code>
  * BigtableInstanceAdminSettings bigtableInstanceAdminSettings =
  *     BigtableInstanceAdminSettings.newBuilder()
- *         .setTransportProvider(BigtableInstanceAdminSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(BigtableInstanceAdminSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(BigtableInstanceAdminSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * BigtableInstanceAdminClient bigtableInstanceAdminClient =
@@ -150,6 +148,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * Constructs an instance of BigtableInstanceAdminClient, using the given stub for making calls.
    * This is for advanced usage - prefer to use BigtableInstanceAdminSettings}.
    */
+  @BetaApi
   public static final BigtableInstanceAdminClient create(BigtableInstanceAdminStub stub) {
     return new BigtableInstanceAdminClient(stub);
   }
@@ -215,7 +214,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *     must be left blank. Currently exactly one cluster must be specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Instance, CreateInstanceMetadata, Operation> createInstanceAsync(
+  public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
       ProjectName parent, String instanceId, Instance instance, Map<String, Cluster> clusters) {
 
     CreateInstanceRequest request =
@@ -253,7 +252,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Instance, CreateInstanceMetadata, Operation> createInstanceAsync(
+  public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
       CreateInstanceRequest request) {
     return createInstanceOperationCallable().futureCall(request);
   }
@@ -282,7 +281,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
-  public final OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata, Operation>
+  public final OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable() {
     return stub.createInstanceOperationCallable();
   }
@@ -630,7 +629,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * @param cluster The cluster to be created. Fields marked `OutputOnly` must be left blank.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Cluster, CreateClusterMetadata, Operation> createClusterAsync(
+  public final OperationFuture<Cluster, CreateClusterMetadata> createClusterAsync(
       InstanceName parent, String clusterId, Cluster cluster) {
 
     CreateClusterRequest request =
@@ -665,7 +664,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Cluster, CreateClusterMetadata, Operation> createClusterAsync(
+  public final OperationFuture<Cluster, CreateClusterMetadata> createClusterAsync(
       CreateClusterRequest request) {
     return createClusterOperationCallable().futureCall(request);
   }
@@ -692,7 +691,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
-  public final OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata, Operation>
+  public final OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata>
       createClusterOperationCallable() {
     return stub.createClusterOperationCallable();
   }
@@ -890,7 +889,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *     its parent instance's tables, unless explicitly overridden.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Cluster, UpdateClusterMetadata, Operation> updateClusterAsync(
+  public final OperationFuture<Cluster, UpdateClusterMetadata> updateClusterAsync(
       ClusterName name, LocationName location, int serveNodes, StorageType defaultStorageType) {
 
     Cluster request =
@@ -928,8 +927,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Cluster, UpdateClusterMetadata, Operation> updateClusterAsync(
-      Cluster request) {
+  public final OperationFuture<Cluster, UpdateClusterMetadata> updateClusterAsync(Cluster request) {
     return updateClusterOperationCallable().futureCall(request);
   }
 
@@ -957,7 +955,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
-  public final OperationCallable<Cluster, Cluster, UpdateClusterMetadata, Operation>
+  public final OperationCallable<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationCallable() {
     return stub.updateClusterOperationCallable();
   }

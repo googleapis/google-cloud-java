@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,21 +25,21 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.CreateTableRequest;
@@ -57,7 +57,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -115,16 +114,16 @@ public class BigtableTableAdminSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private final SimpleCallSettings<CreateTableRequest, Table> createTableSettings;
+  private final UnaryCallSettings<CreateTableRequest, Table> createTableSettings;
   private final PagedCallSettings<ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
       listTablesSettings;
-  private final SimpleCallSettings<GetTableRequest, Table> getTableSettings;
-  private final SimpleCallSettings<DeleteTableRequest, Empty> deleteTableSettings;
-  private final SimpleCallSettings<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesSettings;
-  private final SimpleCallSettings<DropRowRangeRequest, Empty> dropRowRangeSettings;
+  private final UnaryCallSettings<GetTableRequest, Table> getTableSettings;
+  private final UnaryCallSettings<DeleteTableRequest, Empty> deleteTableSettings;
+  private final UnaryCallSettings<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesSettings;
+  private final UnaryCallSettings<DropRowRangeRequest, Empty> dropRowRangeSettings;
 
   /** Returns the object with the settings used for calls to createTable. */
-  public SimpleCallSettings<CreateTableRequest, Table> createTableSettings() {
+  public UnaryCallSettings<CreateTableRequest, Table> createTableSettings() {
     return createTableSettings;
   }
 
@@ -135,31 +134,33 @@ public class BigtableTableAdminSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to getTable. */
-  public SimpleCallSettings<GetTableRequest, Table> getTableSettings() {
+  public UnaryCallSettings<GetTableRequest, Table> getTableSettings() {
     return getTableSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteTable. */
-  public SimpleCallSettings<DeleteTableRequest, Empty> deleteTableSettings() {
+  public UnaryCallSettings<DeleteTableRequest, Empty> deleteTableSettings() {
     return deleteTableSettings;
   }
 
   /** Returns the object with the settings used for calls to modifyColumnFamilies. */
-  public SimpleCallSettings<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesSettings() {
+  public UnaryCallSettings<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesSettings() {
     return modifyColumnFamiliesSettings;
   }
 
   /** Returns the object with the settings used for calls to dropRowRange. */
-  public SimpleCallSettings<DropRowRangeRequest, Empty> dropRowRangeSettings() {
+  public UnaryCallSettings<DropRowRangeRequest, Empty> dropRowRangeSettings() {
     return dropRowRangeSettings;
   }
 
   public BigtableTableAdminStub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcBigtableTableAdminStub.create(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -184,20 +185,19 @@ public class BigtableTableAdminSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
   }
 
   private static String getGapicVersion() {
@@ -243,8 +243,9 @@ public class BigtableTableAdminSettings extends ClientSettings {
   private BigtableTableAdminSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getTransportChannelProvider(),
         settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getHeaderProvider(),
         settingsBuilder.getClock());
 
     createTableSettings = settingsBuilder.createTableSettings().build();
@@ -310,29 +311,30 @@ public class BigtableTableAdminSettings extends ClientSettings {
 
   /** Builder for BigtableTableAdminSettings. */
   public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final SimpleCallSettings.Builder<CreateTableRequest, Table> createTableSettings;
+    private final UnaryCallSettings.Builder<CreateTableRequest, Table> createTableSettings;
     private final PagedCallSettings.Builder<
             ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
         listTablesSettings;
-    private final SimpleCallSettings.Builder<GetTableRequest, Table> getTableSettings;
-    private final SimpleCallSettings.Builder<DeleteTableRequest, Empty> deleteTableSettings;
-    private final SimpleCallSettings.Builder<ModifyColumnFamiliesRequest, Table>
+    private final UnaryCallSettings.Builder<GetTableRequest, Table> getTableSettings;
+    private final UnaryCallSettings.Builder<DeleteTableRequest, Empty> deleteTableSettings;
+    private final UnaryCallSettings.Builder<ModifyColumnFamiliesRequest, Table>
         modifyColumnFamiliesSettings;
-    private final SimpleCallSettings.Builder<DropRowRangeRequest, Empty> dropRowRangeSettings;
+    private final UnaryCallSettings.Builder<DropRowRangeRequest, Empty> dropRowRangeSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -362,20 +364,20 @@ public class BigtableTableAdminSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      createTableSettings = SimpleCallSettings.newBuilder();
+      createTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listTablesSettings = PagedCallSettings.newBuilder(LIST_TABLES_PAGE_STR_FACT);
 
-      getTableSettings = SimpleCallSettings.newBuilder();
+      getTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteTableSettings = SimpleCallSettings.newBuilder();
+      deleteTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      modifyColumnFamiliesSettings = SimpleCallSettings.newBuilder();
+      modifyColumnFamiliesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      dropRowRangeSettings = SimpleCallSettings.newBuilder();
+      dropRowRangeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createTableSettings,
               listTablesSettings,
               getTableSettings,
@@ -388,8 +390,9 @@ public class BigtableTableAdminSettings extends ClientSettings {
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       return initDefaults(builder);
     }
 
@@ -439,7 +442,7 @@ public class BigtableTableAdminSettings extends ClientSettings {
       dropRowRangeSettings = settings.dropRowRangeSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createTableSettings,
               listTablesSettings,
               getTableSettings,
@@ -455,8 +458,14 @@ public class BigtableTableAdminSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
+    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
+      super.setTransportChannelProvider(transportProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      super.setHeaderProvider(headerProvider);
       return this;
     }
 
@@ -472,13 +481,13 @@ public class BigtableTableAdminSettings extends ClientSettings {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to createTable. */
-    public SimpleCallSettings.Builder<CreateTableRequest, Table> createTableSettings() {
+    public UnaryCallSettings.Builder<CreateTableRequest, Table> createTableSettings() {
       return createTableSettings;
     }
 
@@ -489,23 +498,23 @@ public class BigtableTableAdminSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to getTable. */
-    public SimpleCallSettings.Builder<GetTableRequest, Table> getTableSettings() {
+    public UnaryCallSettings.Builder<GetTableRequest, Table> getTableSettings() {
       return getTableSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteTable. */
-    public SimpleCallSettings.Builder<DeleteTableRequest, Empty> deleteTableSettings() {
+    public UnaryCallSettings.Builder<DeleteTableRequest, Empty> deleteTableSettings() {
       return deleteTableSettings;
     }
 
     /** Returns the builder for the settings used for calls to modifyColumnFamilies. */
-    public SimpleCallSettings.Builder<ModifyColumnFamiliesRequest, Table>
+    public UnaryCallSettings.Builder<ModifyColumnFamiliesRequest, Table>
         modifyColumnFamiliesSettings() {
       return modifyColumnFamiliesSettings;
     }
 
     /** Returns the builder for the settings used for calls to dropRowRange. */
-    public SimpleCallSettings.Builder<DropRowRangeRequest, Empty> dropRowRangeSettings() {
+    public UnaryCallSettings.Builder<DropRowRangeRequest, Empty> dropRowRangeSettings() {
       return dropRowRangeSettings;
     }
 

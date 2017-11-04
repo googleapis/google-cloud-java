@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.v2.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -35,6 +36,8 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.v2.BigtableSettings;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -48,58 +51,61 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcBigtableStub extends BigtableStub {
-  private static final ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse>
-      directReadRowsCallable =
-          GrpcCallableFactory.createDirectServerStreamingCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING,
-                  "google.bigtable.v2.Bigtable/ReadRows",
-                  io.grpc.protobuf.ProtoUtils.marshaller(ReadRowsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(ReadRowsResponse.getDefaultInstance())));
-  private static final ServerStreamingCallable<SampleRowKeysRequest, SampleRowKeysResponse>
-      directSampleRowKeysCallable =
-          GrpcCallableFactory.createDirectServerStreamingCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING,
-                  "google.bigtable.v2.Bigtable/SampleRowKeys",
-                  io.grpc.protobuf.ProtoUtils.marshaller(SampleRowKeysRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      SampleRowKeysResponse.getDefaultInstance())));
-  private static final UnaryCallable<MutateRowRequest, MutateRowResponse> directMutateRowCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.v2.Bigtable/MutateRow",
-              io.grpc.protobuf.ProtoUtils.marshaller(MutateRowRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(MutateRowResponse.getDefaultInstance())));
-  private static final ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse>
-      directMutateRowsCallable =
-          GrpcCallableFactory.createDirectServerStreamingCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING,
-                  "google.bigtable.v2.Bigtable/MutateRows",
-                  io.grpc.protobuf.ProtoUtils.marshaller(MutateRowsRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(MutateRowsResponse.getDefaultInstance())));
-  private static final UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
-      directCheckAndMutateRowCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.bigtable.v2.Bigtable/CheckAndMutateRow",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      CheckAndMutateRowRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      CheckAndMutateRowResponse.getDefaultInstance())));
-  private static final UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
-      directReadModifyWriteRowCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.bigtable.v2.Bigtable/ReadModifyWriteRow",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ReadModifyWriteRowRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ReadModifyWriteRowResponse.getDefaultInstance())));
+
+  private static final MethodDescriptor<ReadRowsRequest, ReadRowsResponse>
+      readRowsMethodDescriptor =
+          MethodDescriptor.<ReadRowsRequest, ReadRowsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName("google.bigtable.v2.Bigtable/ReadRows")
+              .setRequestMarshaller(ProtoUtils.marshaller(ReadRowsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ReadRowsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<SampleRowKeysRequest, SampleRowKeysResponse>
+      sampleRowKeysMethodDescriptor =
+          MethodDescriptor.<SampleRowKeysRequest, SampleRowKeysResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName("google.bigtable.v2.Bigtable/SampleRowKeys")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SampleRowKeysRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SampleRowKeysResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<MutateRowRequest, MutateRowResponse>
+      mutateRowMethodDescriptor =
+          MethodDescriptor.<MutateRowRequest, MutateRowResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.v2.Bigtable/MutateRow")
+              .setRequestMarshaller(ProtoUtils.marshaller(MutateRowRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MutateRowResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<MutateRowsRequest, MutateRowsResponse>
+      mutateRowsMethodDescriptor =
+          MethodDescriptor.<MutateRowsRequest, MutateRowsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName("google.bigtable.v2.Bigtable/MutateRows")
+              .setRequestMarshaller(ProtoUtils.marshaller(MutateRowsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MutateRowsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
+      checkAndMutateRowMethodDescriptor =
+          MethodDescriptor.<CheckAndMutateRowRequest, CheckAndMutateRowResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.v2.Bigtable/CheckAndMutateRow")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CheckAndMutateRowRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CheckAndMutateRowResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
+      readModifyWriteRowMethodDescriptor =
+          MethodDescriptor.<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.v2.Bigtable/ReadModifyWriteRow")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReadModifyWriteRowRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReadModifyWriteRowResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -128,24 +134,55 @@ public class GrpcBigtableStub extends BigtableStub {
   protected GrpcBigtableStub(BigtableSettings settings, ClientContext clientContext)
       throws IOException {
 
+    GrpcCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsTransportSettings =
+        GrpcCallSettings.<ReadRowsRequest, ReadRowsResponse>newBuilder()
+            .setMethodDescriptor(readRowsMethodDescriptor)
+            .build();
+    GrpcCallSettings<SampleRowKeysRequest, SampleRowKeysResponse> sampleRowKeysTransportSettings =
+        GrpcCallSettings.<SampleRowKeysRequest, SampleRowKeysResponse>newBuilder()
+            .setMethodDescriptor(sampleRowKeysMethodDescriptor)
+            .build();
+    GrpcCallSettings<MutateRowRequest, MutateRowResponse> mutateRowTransportSettings =
+        GrpcCallSettings.<MutateRowRequest, MutateRowResponse>newBuilder()
+            .setMethodDescriptor(mutateRowMethodDescriptor)
+            .build();
+    GrpcCallSettings<MutateRowsRequest, MutateRowsResponse> mutateRowsTransportSettings =
+        GrpcCallSettings.<MutateRowsRequest, MutateRowsResponse>newBuilder()
+            .setMethodDescriptor(mutateRowsMethodDescriptor)
+            .build();
+    GrpcCallSettings<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
+        checkAndMutateRowTransportSettings =
+            GrpcCallSettings.<CheckAndMutateRowRequest, CheckAndMutateRowResponse>newBuilder()
+                .setMethodDescriptor(checkAndMutateRowMethodDescriptor)
+                .build();
+    GrpcCallSettings<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
+        readModifyWriteRowTransportSettings =
+            GrpcCallSettings.<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>newBuilder()
+                .setMethodDescriptor(readModifyWriteRowMethodDescriptor)
+                .build();
+
     this.readRowsCallable =
-        GrpcCallableFactory.create(
-            directReadRowsCallable, settings.readRowsSettings(), clientContext);
+        GrpcCallableFactory.createServerStreamingCallable(
+            readRowsTransportSettings, settings.readRowsSettings(), clientContext);
     this.sampleRowKeysCallable =
-        GrpcCallableFactory.create(
-            directSampleRowKeysCallable, settings.sampleRowKeysSettings(), clientContext);
+        GrpcCallableFactory.createServerStreamingCallable(
+            sampleRowKeysTransportSettings, settings.sampleRowKeysSettings(), clientContext);
     this.mutateRowCallable =
-        GrpcCallableFactory.create(
-            directMutateRowCallable, settings.mutateRowSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            mutateRowTransportSettings, settings.mutateRowSettings(), clientContext);
     this.mutateRowsCallable =
-        GrpcCallableFactory.create(
-            directMutateRowsCallable, settings.mutateRowsSettings(), clientContext);
+        GrpcCallableFactory.createServerStreamingCallable(
+            mutateRowsTransportSettings, settings.mutateRowsSettings(), clientContext);
     this.checkAndMutateRowCallable =
-        GrpcCallableFactory.create(
-            directCheckAndMutateRowCallable, settings.checkAndMutateRowSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            checkAndMutateRowTransportSettings,
+            settings.checkAndMutateRowSettings(),
+            clientContext);
     this.readModifyWriteRowCallable =
-        GrpcCallableFactory.create(
-            directReadModifyWriteRowCallable, settings.readModifyWriteRowSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            readModifyWriteRowTransportSettings,
+            settings.readModifyWriteRowSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
@@ -41,6 +42,8 @@ import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -54,101 +57,106 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
-  private static final UnaryCallable<CreateInstanceRequest, Operation>
-      directCreateInstanceCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.bigtable.admin.v2.BigtableInstanceAdmin/CreateInstance",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      CreateInstanceRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance())));
-  private static final UnaryCallable<GetInstanceRequest, Instance> directGetInstanceCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.admin.v2.BigtableInstanceAdmin/GetInstance",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Instance.getDefaultInstance())));
-  private static final UnaryCallable<ListInstancesRequest, ListInstancesResponse>
-      directListInstancesCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.bigtable.admin.v2.BigtableInstanceAdmin/ListInstances",
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListInstancesResponse.getDefaultInstance())));
-  private static final UnaryCallable<Instance, Instance> directUpdateInstanceCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.admin.v2.BigtableInstanceAdmin/UpdateInstance",
-              io.grpc.protobuf.ProtoUtils.marshaller(Instance.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Instance.getDefaultInstance())));
-  private static final UnaryCallable<DeleteInstanceRequest, Empty> directDeleteInstanceCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.admin.v2.BigtableInstanceAdmin/DeleteInstance",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<CreateClusterRequest, Operation> directCreateClusterCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.admin.v2.BigtableInstanceAdmin/CreateCluster",
-              io.grpc.protobuf.ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance())));
-  private static final UnaryCallable<GetClusterRequest, Cluster> directGetClusterCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.admin.v2.BigtableInstanceAdmin/GetCluster",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Cluster.getDefaultInstance())));
-  private static final UnaryCallable<ListClustersRequest, ListClustersResponse>
-      directListClustersCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.bigtable.admin.v2.BigtableInstanceAdmin/ListClusters",
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ListClustersResponse.getDefaultInstance())));
-  private static final UnaryCallable<Cluster, Operation> directUpdateClusterCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.admin.v2.BigtableInstanceAdmin/UpdateCluster",
-              io.grpc.protobuf.ProtoUtils.marshaller(Cluster.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance())));
-  private static final UnaryCallable<DeleteClusterRequest, Empty> directDeleteClusterCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.admin.v2.BigtableInstanceAdmin/DeleteCluster",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
+
+  private static final MethodDescriptor<CreateInstanceRequest, Operation>
+      createInstanceMethodDescriptor =
+          MethodDescriptor.<CreateInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/CreateInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
+      MethodDescriptor.<GetInstanceRequest, Instance>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/GetInstance")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListInstancesRequest, ListInstancesResponse>
+      listInstancesMethodDescriptor =
+          MethodDescriptor.<ListInstancesRequest, ListInstancesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/ListInstances")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<Instance, Instance> updateInstanceMethodDescriptor =
+      MethodDescriptor.<Instance, Instance>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/UpdateInstance")
+          .setRequestMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteInstanceRequest, Empty>
+      deleteInstanceMethodDescriptor =
+          MethodDescriptor.<DeleteInstanceRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/DeleteInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateClusterRequest, Operation>
+      createClusterMethodDescriptor =
+          MethodDescriptor.<CreateClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/CreateCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
+      MethodDescriptor.<GetClusterRequest, Cluster>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/GetCluster")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListClustersRequest, ListClustersResponse>
+      listClustersMethodDescriptor =
+          MethodDescriptor.<ListClustersRequest, ListClustersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/ListClusters")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<Cluster, Operation> updateClusterMethodDescriptor =
+      MethodDescriptor.<Cluster, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/UpdateCluster")
+          .setRequestMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteClusterRequest, Empty> deleteClusterMethodDescriptor =
+      MethodDescriptor.<DeleteClusterRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/DeleteCluster")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable;
-  private final OperationCallable<
-          CreateInstanceRequest, Instance, CreateInstanceMetadata, Operation>
+  private final OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable;
   private final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<Instance, Instance> updateInstanceCallable;
   private final UnaryCallable<DeleteInstanceRequest, Empty> deleteInstanceCallable;
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
-  private final OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata, Operation>
+  private final OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata>
       createClusterOperationCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<Cluster, Operation> updateClusterCallable;
-  private final OperationCallable<Cluster, Cluster, UpdateClusterMetadata, Operation>
+  private final OperationCallable<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationCallable;
   private final UnaryCallable<DeleteClusterRequest, Empty> deleteClusterCallable;
 
@@ -172,60 +180,95 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
       BigtableInstanceAdminSettings settings, ClientContext clientContext) throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 
+    GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
+        GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(createInstanceMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
+        GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
+            .setMethodDescriptor(getInstanceMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
+        GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
+            .setMethodDescriptor(listInstancesMethodDescriptor)
+            .build();
+    GrpcCallSettings<Instance, Instance> updateInstanceTransportSettings =
+        GrpcCallSettings.<Instance, Instance>newBuilder()
+            .setMethodDescriptor(updateInstanceMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteInstanceRequest, Empty> deleteInstanceTransportSettings =
+        GrpcCallSettings.<DeleteInstanceRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteInstanceMethodDescriptor)
+            .build();
+    GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
+        GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(createClusterMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
+        GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
+            .setMethodDescriptor(getClusterMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
+        GrpcCallSettings.<ListClustersRequest, ListClustersResponse>newBuilder()
+            .setMethodDescriptor(listClustersMethodDescriptor)
+            .build();
+    GrpcCallSettings<Cluster, Operation> updateClusterTransportSettings =
+        GrpcCallSettings.<Cluster, Operation>newBuilder()
+            .setMethodDescriptor(updateClusterMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteClusterRequest, Empty> deleteClusterTransportSettings =
+        GrpcCallSettings.<DeleteClusterRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteClusterMethodDescriptor)
+            .build();
+
     this.createInstanceCallable =
-        GrpcCallableFactory.create(
-            directCreateInstanceCallable,
-            settings.createInstanceSettings().getInitialCallSettings(),
-            clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createInstanceTransportSettings, settings.createInstanceSettings(), clientContext);
     this.createInstanceOperationCallable =
-        GrpcCallableFactory.create(
-            directCreateInstanceCallable,
-            settings.createInstanceSettings(),
+        GrpcCallableFactory.createOperationCallable(
+            createInstanceTransportSettings,
+            settings.createInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
     this.getInstanceCallable =
-        GrpcCallableFactory.create(
-            directGetInstanceCallable, settings.getInstanceSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
     this.listInstancesCallable =
-        GrpcCallableFactory.create(
-            directListInstancesCallable, settings.listInstancesSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listInstancesTransportSettings, settings.listInstancesSettings(), clientContext);
     this.updateInstanceCallable =
-        GrpcCallableFactory.create(
-            directUpdateInstanceCallable, settings.updateInstanceSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            updateInstanceTransportSettings, settings.updateInstanceSettings(), clientContext);
     this.deleteInstanceCallable =
-        GrpcCallableFactory.create(
-            directDeleteInstanceCallable, settings.deleteInstanceSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
     this.createClusterCallable =
-        GrpcCallableFactory.create(
-            directCreateClusterCallable,
-            settings.createClusterSettings().getInitialCallSettings(),
-            clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createClusterTransportSettings, settings.createClusterSettings(), clientContext);
     this.createClusterOperationCallable =
-        GrpcCallableFactory.create(
-            directCreateClusterCallable,
-            settings.createClusterSettings(),
+        GrpcCallableFactory.createOperationCallable(
+            createClusterTransportSettings,
+            settings.createClusterOperationSettings(),
             clientContext,
             this.operationsStub);
     this.getClusterCallable =
-        GrpcCallableFactory.create(
-            directGetClusterCallable, settings.getClusterSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getClusterTransportSettings, settings.getClusterSettings(), clientContext);
     this.listClustersCallable =
-        GrpcCallableFactory.create(
-            directListClustersCallable, settings.listClustersSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listClustersTransportSettings, settings.listClustersSettings(), clientContext);
     this.updateClusterCallable =
-        GrpcCallableFactory.create(
-            directUpdateClusterCallable,
-            settings.updateClusterSettings().getInitialCallSettings(),
-            clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            updateClusterTransportSettings, settings.updateClusterSettings(), clientContext);
     this.updateClusterOperationCallable =
-        GrpcCallableFactory.create(
-            directUpdateClusterCallable,
-            settings.updateClusterSettings(),
+        GrpcCallableFactory.createOperationCallable(
+            updateClusterTransportSettings,
+            settings.updateClusterOperationSettings(),
             clientContext,
             this.operationsStub);
     this.deleteClusterCallable =
-        GrpcCallableFactory.create(
-            directDeleteClusterCallable, settings.deleteClusterSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -234,7 +277,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     return operationsStub;
   }
 
-  public OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata, Operation>
+  public OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable() {
     return createInstanceOperationCallable;
   }
@@ -259,7 +302,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     return deleteInstanceCallable;
   }
 
-  public OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata, Operation>
+  public OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata>
       createClusterOperationCallable() {
     return createClusterOperationCallable;
   }
@@ -276,7 +319,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     return listClustersCallable;
   }
 
-  public OperationCallable<Cluster, Cluster, UpdateClusterMetadata, Operation>
+  public OperationCallable<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationCallable() {
     return updateClusterOperationCallable;
   }

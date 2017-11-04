@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListTable
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -33,6 +34,8 @@ import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.protobuf.Empty;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -46,51 +49,52 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
-  private static final UnaryCallable<CreateTableRequest, Table> directCreateTableCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.admin.v2.BigtableTableAdmin/CreateTable",
-              io.grpc.protobuf.ProtoUtils.marshaller(CreateTableRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Table.getDefaultInstance())));
-  private static final UnaryCallable<ListTablesRequest, ListTablesResponse>
-      directListTablesCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.bigtable.admin.v2.BigtableTableAdmin/ListTables",
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListTablesRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(ListTablesResponse.getDefaultInstance())));
-  private static final UnaryCallable<GetTableRequest, Table> directGetTableCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.admin.v2.BigtableTableAdmin/GetTable",
-              io.grpc.protobuf.ProtoUtils.marshaller(GetTableRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Table.getDefaultInstance())));
-  private static final UnaryCallable<DeleteTableRequest, Empty> directDeleteTableCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.admin.v2.BigtableTableAdmin/DeleteTable",
-              io.grpc.protobuf.ProtoUtils.marshaller(DeleteTableRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
-  private static final UnaryCallable<ModifyColumnFamiliesRequest, Table>
-      directModifyColumnFamiliesCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.bigtable.admin.v2.BigtableTableAdmin/ModifyColumnFamilies",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      ModifyColumnFamiliesRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(Table.getDefaultInstance())));
-  private static final UnaryCallable<DropRowRangeRequest, Empty> directDropRowRangeCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.bigtable.admin.v2.BigtableTableAdmin/DropRowRange",
-              io.grpc.protobuf.ProtoUtils.marshaller(DropRowRangeRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(Empty.getDefaultInstance())));
+
+  private static final MethodDescriptor<CreateTableRequest, Table> createTableMethodDescriptor =
+      MethodDescriptor.<CreateTableRequest, Table>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/CreateTable")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateTableRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListTablesRequest, ListTablesResponse>
+      listTablesMethodDescriptor =
+          MethodDescriptor.<ListTablesRequest, ListTablesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/ListTables")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListTablesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListTablesResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetTableRequest, Table> getTableMethodDescriptor =
+      MethodDescriptor.<GetTableRequest, Table>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/GetTable")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetTableRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteTableRequest, Empty> deleteTableMethodDescriptor =
+      MethodDescriptor.<DeleteTableRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/DeleteTable")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteTableRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ModifyColumnFamiliesRequest, Table>
+      modifyColumnFamiliesMethodDescriptor =
+          MethodDescriptor.<ModifyColumnFamiliesRequest, Table>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/ModifyColumnFamilies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ModifyColumnFamiliesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DropRowRangeRequest, Empty> dropRowRangeMethodDescriptor =
+      MethodDescriptor.<DropRowRangeRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/DropRowRange")
+          .setRequestMarshaller(ProtoUtils.marshaller(DropRowRangeRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -121,29 +125,54 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   protected GrpcBigtableTableAdminStub(
       BigtableTableAdminSettings settings, ClientContext clientContext) throws IOException {
 
+    GrpcCallSettings<CreateTableRequest, Table> createTableTransportSettings =
+        GrpcCallSettings.<CreateTableRequest, Table>newBuilder()
+            .setMethodDescriptor(createTableMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListTablesRequest, ListTablesResponse> listTablesTransportSettings =
+        GrpcCallSettings.<ListTablesRequest, ListTablesResponse>newBuilder()
+            .setMethodDescriptor(listTablesMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetTableRequest, Table> getTableTransportSettings =
+        GrpcCallSettings.<GetTableRequest, Table>newBuilder()
+            .setMethodDescriptor(getTableMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteTableRequest, Empty> deleteTableTransportSettings =
+        GrpcCallSettings.<DeleteTableRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTableMethodDescriptor)
+            .build();
+    GrpcCallSettings<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesTransportSettings =
+        GrpcCallSettings.<ModifyColumnFamiliesRequest, Table>newBuilder()
+            .setMethodDescriptor(modifyColumnFamiliesMethodDescriptor)
+            .build();
+    GrpcCallSettings<DropRowRangeRequest, Empty> dropRowRangeTransportSettings =
+        GrpcCallSettings.<DropRowRangeRequest, Empty>newBuilder()
+            .setMethodDescriptor(dropRowRangeMethodDescriptor)
+            .build();
+
     this.createTableCallable =
-        GrpcCallableFactory.create(
-            directCreateTableCallable, settings.createTableSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            createTableTransportSettings, settings.createTableSettings(), clientContext);
     this.listTablesCallable =
-        GrpcCallableFactory.create(
-            directListTablesCallable, settings.listTablesSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            listTablesTransportSettings, settings.listTablesSettings(), clientContext);
     this.listTablesPagedCallable =
-        GrpcCallableFactory.createPagedVariant(
-            directListTablesCallable, settings.listTablesSettings(), clientContext);
+        GrpcCallableFactory.createPagedCallable(
+            listTablesTransportSettings, settings.listTablesSettings(), clientContext);
     this.getTableCallable =
-        GrpcCallableFactory.create(
-            directGetTableCallable, settings.getTableSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            getTableTransportSettings, settings.getTableSettings(), clientContext);
     this.deleteTableCallable =
-        GrpcCallableFactory.create(
-            directDeleteTableCallable, settings.deleteTableSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            deleteTableTransportSettings, settings.deleteTableSettings(), clientContext);
     this.modifyColumnFamiliesCallable =
-        GrpcCallableFactory.create(
-            directModifyColumnFamiliesCallable,
+        GrpcCallableFactory.createUnaryCallable(
+            modifyColumnFamiliesTransportSettings,
             settings.modifyColumnFamiliesSettings(),
             clientContext);
     this.dropRowRangeCallable =
-        GrpcCallableFactory.create(
-            directDropRowRangeCallable, settings.dropRowRangeSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            dropRowRangeTransportSettings, settings.dropRowRangeSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }

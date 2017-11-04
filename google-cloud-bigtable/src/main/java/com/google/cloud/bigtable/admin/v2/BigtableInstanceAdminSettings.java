@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,18 +22,20 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
-import com.google.api.gax.grpc.OperationTimedPollAlgorithm;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.OperationCallSettings;
-import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.Cluster;
 import com.google.bigtable.admin.v2.CreateClusterMetadata;
@@ -58,7 +60,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -116,82 +117,100 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private final OperationCallSettings<
-          CreateInstanceRequest, Instance, CreateInstanceMetadata, Operation>
-      createInstanceSettings;
-  private final SimpleCallSettings<GetInstanceRequest, Instance> getInstanceSettings;
-  private final SimpleCallSettings<ListInstancesRequest, ListInstancesResponse>
+  private final UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings;
+  private final OperationCallSettings<CreateInstanceRequest, Instance, CreateInstanceMetadata>
+      createInstanceOperationSettings;
+  private final UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings;
+  private final UnaryCallSettings<ListInstancesRequest, ListInstancesResponse>
       listInstancesSettings;
-  private final SimpleCallSettings<Instance, Instance> updateInstanceSettings;
-  private final SimpleCallSettings<DeleteInstanceRequest, Empty> deleteInstanceSettings;
-  private final OperationCallSettings<
-          CreateClusterRequest, Cluster, CreateClusterMetadata, Operation>
-      createClusterSettings;
-  private final SimpleCallSettings<GetClusterRequest, Cluster> getClusterSettings;
-  private final SimpleCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings;
-  private final OperationCallSettings<Cluster, Cluster, UpdateClusterMetadata, Operation>
-      updateClusterSettings;
-  private final SimpleCallSettings<DeleteClusterRequest, Empty> deleteClusterSettings;
+  private final UnaryCallSettings<Instance, Instance> updateInstanceSettings;
+  private final UnaryCallSettings<DeleteInstanceRequest, Empty> deleteInstanceSettings;
+  private final UnaryCallSettings<CreateClusterRequest, Operation> createClusterSettings;
+  private final OperationCallSettings<CreateClusterRequest, Cluster, CreateClusterMetadata>
+      createClusterOperationSettings;
+  private final UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings;
+  private final UnaryCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings;
+  private final UnaryCallSettings<Cluster, Operation> updateClusterSettings;
+  private final OperationCallSettings<Cluster, Cluster, UpdateClusterMetadata>
+      updateClusterOperationSettings;
+  private final UnaryCallSettings<DeleteClusterRequest, Empty> deleteClusterSettings;
 
   /** Returns the object with the settings used for calls to createInstance. */
-  public OperationCallSettings<CreateInstanceRequest, Instance, CreateInstanceMetadata, Operation>
-      createInstanceSettings() {
+  public UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings() {
     return createInstanceSettings;
   }
 
+  /** Returns the object with the settings used for calls to createInstance. */
+  public OperationCallSettings<CreateInstanceRequest, Instance, CreateInstanceMetadata>
+      createInstanceOperationSettings() {
+    return createInstanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getInstance. */
-  public SimpleCallSettings<GetInstanceRequest, Instance> getInstanceSettings() {
+  public UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings() {
     return getInstanceSettings;
   }
 
   /** Returns the object with the settings used for calls to listInstances. */
-  public SimpleCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesSettings() {
+  public UnaryCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesSettings() {
     return listInstancesSettings;
   }
 
   /** Returns the object with the settings used for calls to updateInstance. */
-  public SimpleCallSettings<Instance, Instance> updateInstanceSettings() {
+  public UnaryCallSettings<Instance, Instance> updateInstanceSettings() {
     return updateInstanceSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteInstance. */
-  public SimpleCallSettings<DeleteInstanceRequest, Empty> deleteInstanceSettings() {
+  public UnaryCallSettings<DeleteInstanceRequest, Empty> deleteInstanceSettings() {
     return deleteInstanceSettings;
   }
 
   /** Returns the object with the settings used for calls to createCluster. */
-  public OperationCallSettings<CreateClusterRequest, Cluster, CreateClusterMetadata, Operation>
-      createClusterSettings() {
+  public UnaryCallSettings<CreateClusterRequest, Operation> createClusterSettings() {
     return createClusterSettings;
   }
 
+  /** Returns the object with the settings used for calls to createCluster. */
+  public OperationCallSettings<CreateClusterRequest, Cluster, CreateClusterMetadata>
+      createClusterOperationSettings() {
+    return createClusterOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getCluster. */
-  public SimpleCallSettings<GetClusterRequest, Cluster> getClusterSettings() {
+  public UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings() {
     return getClusterSettings;
   }
 
   /** Returns the object with the settings used for calls to listClusters. */
-  public SimpleCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings() {
+  public UnaryCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings() {
     return listClustersSettings;
   }
 
   /** Returns the object with the settings used for calls to updateCluster. */
-  public OperationCallSettings<Cluster, Cluster, UpdateClusterMetadata, Operation>
-      updateClusterSettings() {
+  public UnaryCallSettings<Cluster, Operation> updateClusterSettings() {
     return updateClusterSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateCluster. */
+  public OperationCallSettings<Cluster, Cluster, UpdateClusterMetadata>
+      updateClusterOperationSettings() {
+    return updateClusterOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteCluster. */
-  public SimpleCallSettings<DeleteClusterRequest, Empty> deleteClusterSettings() {
+  public UnaryCallSettings<DeleteClusterRequest, Empty> deleteClusterSettings() {
     return deleteClusterSettings;
   }
 
   public BigtableInstanceAdminStub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcBigtableInstanceAdminStub.create(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -216,20 +235,19 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
   }
 
   private static String getGapicVersion() {
@@ -275,58 +293,66 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
   private BigtableInstanceAdminSettings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
+        settingsBuilder.getTransportChannelProvider(),
         settingsBuilder.getCredentialsProvider(),
+        settingsBuilder.getHeaderProvider(),
         settingsBuilder.getClock());
 
     createInstanceSettings = settingsBuilder.createInstanceSettings().build();
+    createInstanceOperationSettings = settingsBuilder.createInstanceOperationSettings().build();
     getInstanceSettings = settingsBuilder.getInstanceSettings().build();
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
     updateInstanceSettings = settingsBuilder.updateInstanceSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     createClusterSettings = settingsBuilder.createClusterSettings().build();
+    createClusterOperationSettings = settingsBuilder.createClusterOperationSettings().build();
     getClusterSettings = settingsBuilder.getClusterSettings().build();
     listClustersSettings = settingsBuilder.listClustersSettings().build();
     updateClusterSettings = settingsBuilder.updateClusterSettings().build();
+    updateClusterOperationSettings = settingsBuilder.updateClusterOperationSettings().build();
     deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
   }
 
   /** Builder for BigtableInstanceAdminSettings. */
   public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final OperationCallSettings.Builder<
-            CreateInstanceRequest, Instance, CreateInstanceMetadata, Operation>
+    private final UnaryCallSettings.Builder<CreateInstanceRequest, Operation>
         createInstanceSettings;
-    private final SimpleCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings;
-    private final SimpleCallSettings.Builder<ListInstancesRequest, ListInstancesResponse>
-        listInstancesSettings;
-    private final SimpleCallSettings.Builder<Instance, Instance> updateInstanceSettings;
-    private final SimpleCallSettings.Builder<DeleteInstanceRequest, Empty> deleteInstanceSettings;
     private final OperationCallSettings.Builder<
-            CreateClusterRequest, Cluster, CreateClusterMetadata, Operation>
-        createClusterSettings;
-    private final SimpleCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings;
-    private final SimpleCallSettings.Builder<ListClustersRequest, ListClustersResponse>
+            CreateInstanceRequest, Instance, CreateInstanceMetadata>
+        createInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings;
+    private final UnaryCallSettings.Builder<ListInstancesRequest, ListInstancesResponse>
+        listInstancesSettings;
+    private final UnaryCallSettings.Builder<Instance, Instance> updateInstanceSettings;
+    private final UnaryCallSettings.Builder<DeleteInstanceRequest, Empty> deleteInstanceSettings;
+    private final UnaryCallSettings.Builder<CreateClusterRequest, Operation> createClusterSettings;
+    private final OperationCallSettings.Builder<
+            CreateClusterRequest, Cluster, CreateClusterMetadata>
+        createClusterOperationSettings;
+    private final UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings;
+    private final UnaryCallSettings.Builder<ListClustersRequest, ListClustersResponse>
         listClustersSettings;
-    private final OperationCallSettings.Builder<Cluster, Cluster, UpdateClusterMetadata, Operation>
-        updateClusterSettings;
-    private final SimpleCallSettings.Builder<DeleteClusterRequest, Empty> deleteClusterSettings;
+    private final UnaryCallSettings.Builder<Cluster, Operation> updateClusterSettings;
+    private final OperationCallSettings.Builder<Cluster, Cluster, UpdateClusterMetadata>
+        updateClusterOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteClusterRequest, Empty> deleteClusterSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "non_idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -356,34 +382,43 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      createInstanceSettings = OperationCallSettings.newBuilder();
+      createInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      getInstanceSettings = SimpleCallSettings.newBuilder();
+      createInstanceOperationSettings = OperationCallSettings.newBuilder();
 
-      listInstancesSettings = SimpleCallSettings.newBuilder();
+      getInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      updateInstanceSettings = SimpleCallSettings.newBuilder();
+      listInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteInstanceSettings = SimpleCallSettings.newBuilder();
+      updateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      createClusterSettings = OperationCallSettings.newBuilder();
+      deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      getClusterSettings = SimpleCallSettings.newBuilder();
+      createClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listClustersSettings = SimpleCallSettings.newBuilder();
+      createClusterOperationSettings = OperationCallSettings.newBuilder();
 
-      updateClusterSettings = OperationCallSettings.newBuilder();
+      getClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteClusterSettings = SimpleCallSettings.newBuilder();
+      listClustersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateClusterOperationSettings = OperationCallSettings.newBuilder();
+
+      deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createInstanceSettings,
               getInstanceSettings,
               listInstancesSettings,
               updateInstanceSettings,
               deleteInstanceSettings,
+              createClusterSettings,
               getClusterSettings,
               listClustersSettings,
+              updateClusterSettings,
               deleteClusterSettings);
 
       initDefaults(this);
@@ -391,12 +426,18 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .createInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .getInstanceSettings()
@@ -419,6 +460,11 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .createClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .getClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -429,18 +475,26 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .updateClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .deleteClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
-          .createInstanceSettings()
+          .createInstanceOperationSettings()
           .setInitialCallSettings(
-              SimpleCallSettings.<CreateInstanceRequest, Operation>newBuilder()
+              UnaryCallSettings
+                  .<CreateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
-          .setResponseClass(Instance.class)
-          .setMetadataClass(CreateInstanceMetadata.class)
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateInstanceMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -453,14 +507,17 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
       builder
-          .createClusterSettings()
+          .createClusterOperationSettings()
           .setInitialCallSettings(
-              SimpleCallSettings.<CreateClusterRequest, Operation>newBuilder()
+              UnaryCallSettings
+                  .<CreateClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
-          .setResponseClass(Cluster.class)
-          .setMetadataClass(CreateClusterMetadata.class)
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateClusterMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -473,14 +530,16 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
       builder
-          .updateClusterSettings()
+          .updateClusterOperationSettings()
           .setInitialCallSettings(
-              SimpleCallSettings.<Cluster, Operation>newBuilder()
+              UnaryCallSettings.<Cluster, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
-          .setResponseClass(Cluster.class)
-          .setMetadataClass(UpdateClusterMetadata.class)
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(UpdateClusterMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -500,24 +559,30 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
       super(settings);
 
       createInstanceSettings = settings.createInstanceSettings.toBuilder();
+      createInstanceOperationSettings = settings.createInstanceOperationSettings.toBuilder();
       getInstanceSettings = settings.getInstanceSettings.toBuilder();
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
       updateInstanceSettings = settings.updateInstanceSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       createClusterSettings = settings.createClusterSettings.toBuilder();
+      createClusterOperationSettings = settings.createClusterOperationSettings.toBuilder();
       getClusterSettings = settings.getClusterSettings.toBuilder();
       listClustersSettings = settings.listClustersSettings.toBuilder();
       updateClusterSettings = settings.updateClusterSettings.toBuilder();
+      updateClusterOperationSettings = settings.updateClusterOperationSettings.toBuilder();
       deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createInstanceSettings,
               getInstanceSettings,
               listInstancesSettings,
               updateInstanceSettings,
               deleteInstanceSettings,
+              createClusterSettings,
               getClusterSettings,
               listClustersSettings,
+              updateClusterSettings,
               deleteClusterSettings);
     }
 
@@ -528,8 +593,14 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
     }
 
     @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
+    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
+      super.setTransportChannelProvider(transportProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      super.setHeaderProvider(headerProvider);
       return this;
     }
 
@@ -545,65 +616,78 @@ public class BigtableInstanceAdminSettings extends ClientSettings {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    public OperationCallSettings.Builder<
-            CreateInstanceRequest, Instance, CreateInstanceMetadata, Operation>
-        createInstanceSettings() {
+    public UnaryCallSettings.Builder<CreateInstanceRequest, Operation> createInstanceSettings() {
       return createInstanceSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createInstance. */
+    public OperationCallSettings.Builder<CreateInstanceRequest, Instance, CreateInstanceMetadata>
+        createInstanceOperationSettings() {
+      return createInstanceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getInstance. */
-    public SimpleCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings() {
+    public UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings() {
       return getInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to listInstances. */
-    public SimpleCallSettings.Builder<ListInstancesRequest, ListInstancesResponse>
+    public UnaryCallSettings.Builder<ListInstancesRequest, ListInstancesResponse>
         listInstancesSettings() {
       return listInstancesSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateInstance. */
-    public SimpleCallSettings.Builder<Instance, Instance> updateInstanceSettings() {
+    public UnaryCallSettings.Builder<Instance, Instance> updateInstanceSettings() {
       return updateInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
-    public SimpleCallSettings.Builder<DeleteInstanceRequest, Empty> deleteInstanceSettings() {
+    public UnaryCallSettings.Builder<DeleteInstanceRequest, Empty> deleteInstanceSettings() {
       return deleteInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
-    public OperationCallSettings.Builder<
-            CreateClusterRequest, Cluster, CreateClusterMetadata, Operation>
-        createClusterSettings() {
+    public UnaryCallSettings.Builder<CreateClusterRequest, Operation> createClusterSettings() {
       return createClusterSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createCluster. */
+    public OperationCallSettings.Builder<CreateClusterRequest, Cluster, CreateClusterMetadata>
+        createClusterOperationSettings() {
+      return createClusterOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getCluster. */
-    public SimpleCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings() {
+    public UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings() {
       return getClusterSettings;
     }
 
     /** Returns the builder for the settings used for calls to listClusters. */
-    public SimpleCallSettings.Builder<ListClustersRequest, ListClustersResponse>
+    public UnaryCallSettings.Builder<ListClustersRequest, ListClustersResponse>
         listClustersSettings() {
       return listClustersSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
-    public OperationCallSettings.Builder<Cluster, Cluster, UpdateClusterMetadata, Operation>
-        updateClusterSettings() {
+    public UnaryCallSettings.Builder<Cluster, Operation> updateClusterSettings() {
       return updateClusterSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateCluster. */
+    public OperationCallSettings.Builder<Cluster, Cluster, UpdateClusterMetadata>
+        updateClusterOperationSettings() {
+      return updateClusterOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteCluster. */
-    public SimpleCallSettings.Builder<DeleteClusterRequest, Empty> deleteClusterSettings() {
+    public UnaryCallSettings.Builder<DeleteClusterRequest, Empty> deleteClusterSettings() {
       return deleteClusterSettings;
     }
 

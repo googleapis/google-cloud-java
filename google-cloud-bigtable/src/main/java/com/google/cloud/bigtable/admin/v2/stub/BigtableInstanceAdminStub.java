@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,7 @@ public abstract class BigtableInstanceAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata, Operation>
+  public OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createInstanceOperationCallable()");
   }
@@ -78,7 +78,7 @@ public abstract class BigtableInstanceAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceCallable()");
   }
 
-  public OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata, Operation>
+  public OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata>
       createClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createClusterOperationCallable()");
   }
@@ -95,7 +95,7 @@ public abstract class BigtableInstanceAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listClustersCallable()");
   }
 
-  public OperationCallable<Cluster, Cluster, UpdateClusterMetadata, Operation>
+  public OperationCallable<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateClusterOperationCallable()");
   }
