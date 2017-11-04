@@ -2206,7 +2206,7 @@ public interface Storage extends Service<StorageOptions> {
   Acl getAcl(String bucket, Entity entity, BucketSourceOption... options);
 
   /**
-   * @see com.google.cloud.storage.Storage#getAcl(String bucket, Entity entity, BucketSourceOption... options)
+   * @see #getAcl(String, Entity, BucketSourceOption...)
    */
   Acl getAcl(String bucket, Entity entity);
 
@@ -2241,7 +2241,7 @@ public interface Storage extends Service<StorageOptions> {
   boolean deleteAcl(String bucket, Entity entity, BucketSourceOption... options);
 
   /**
-   * @see com.google.cloud.storage.Storage#deleteAcl(String bucket, Entity entity, BucketSourceOption... options)
+   * @see #deleteAcl(String, Entity, BucketSourceOption...)
    */
   boolean deleteAcl(String bucket, Entity entity);
 
@@ -2269,7 +2269,7 @@ public interface Storage extends Service<StorageOptions> {
   Acl createAcl(String bucket, Acl acl, BucketSourceOption... options);
 
   /**
-   * @see com.google.cloud.storage.Storage#createAcl(String bucket, Acl acl, BucketSourceOption... options)
+   * @see #createAcl(String, Acl, BucketSourceOption...)
    */
   Acl createAcl(String bucket, Acl acl);
 
@@ -2297,7 +2297,7 @@ public interface Storage extends Service<StorageOptions> {
   Acl updateAcl(String bucket, Acl acl, BucketSourceOption... options);
 
   /**
-   * @see com.google.cloud.storage.Storage#updateAcl(String bucket, Acl acl, BucketSourceOption... options)
+   * @see Storage#updateAcl(String, Acl, BucketSourceOption...)
    */
   Acl updateAcl(String bucket, Acl acl);
 
@@ -2328,7 +2328,7 @@ public interface Storage extends Service<StorageOptions> {
   List<Acl> listAcls(String bucket, BucketSourceOption... options);
 
   /**
-   * @see com.google.cloud.storage.Storage#listAcls(String bucket, BucketSourceOption... options)
+   * @see Storage#listAcls(String, BucketSourceOption...)
    */
   List<Acl> listAcls(String bucket);
 
