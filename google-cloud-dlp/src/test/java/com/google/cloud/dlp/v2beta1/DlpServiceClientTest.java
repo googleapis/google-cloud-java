@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -310,7 +310,7 @@ public class DlpServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createInspectOperationTest() throws Exception {
-    ResultName name2 = ResultName.create("[RESULT]");
+    ResultName name2 = ResultName.of("[RESULT]");
     InspectOperationResult expectedResponse =
         InspectOperationResult.newBuilder().setNameWithResultName(name2).build();
     Operation resultOperation =
@@ -385,7 +385,7 @@ public class DlpServiceClientTest {
         ListInspectFindingsResponse.newBuilder().setNextPageToken(nextPageToken).build();
     mockDlpService.addResponse(expectedResponse);
 
-    ResultName name = ResultName.create("[RESULT]");
+    ResultName name = ResultName.of("[RESULT]");
 
     ListInspectFindingsResponse actualResponse = client.listInspectFindings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -404,7 +404,7 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      ResultName name = ResultName.create("[RESULT]");
+      ResultName name = ResultName.of("[RESULT]");
 
       client.listInspectFindings(name);
       Assert.fail("No exception raised");

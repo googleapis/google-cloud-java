@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,7 +111,7 @@ public class ConfigClientTest {
         ListSinksResponse.newBuilder().setNextPageToken(nextPageToken).addAllSinks(sinks).build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+    ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
 
     ListSinksPagedResponse pagedListResponse = client.listSinks(parent);
 
@@ -133,7 +133,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+      ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
 
       client.listSinks(parent);
       Assert.fail("No exception raised");
@@ -146,7 +146,7 @@ public class ConfigClientTest {
   @SuppressWarnings("all")
   public void getSinkTest() {
     String name = "name3373707";
-    ResourceName destination = ProjectName.create("[PROJECT]");
+    ResourceName destination = ProjectName.of("[PROJECT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
     boolean includeChildren = true;
@@ -160,7 +160,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    SinkNameOneof sinkName = SinkNameOneof.from(SinkName.create("[PROJECT]", "[SINK]"));
+    SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
 
     LogSink actualResponse = client.getSink(sinkName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -179,7 +179,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      SinkNameOneof sinkName = SinkNameOneof.from(SinkName.create("[PROJECT]", "[SINK]"));
+      SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
 
       client.getSink(sinkName);
       Assert.fail("No exception raised");
@@ -192,7 +192,7 @@ public class ConfigClientTest {
   @SuppressWarnings("all")
   public void createSinkTest() {
     String name = "name3373707";
-    ResourceName destination = ProjectName.create("[PROJECT]");
+    ResourceName destination = ProjectName.of("[PROJECT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
     boolean includeChildren = true;
@@ -206,7 +206,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+    ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
     LogSink sink = LogSink.newBuilder().build();
 
     LogSink actualResponse = client.createSink(parent, sink);
@@ -227,7 +227,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+      ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
       LogSink sink = LogSink.newBuilder().build();
 
       client.createSink(parent, sink);
@@ -241,7 +241,7 @@ public class ConfigClientTest {
   @SuppressWarnings("all")
   public void updateSinkTest() {
     String name = "name3373707";
-    ResourceName destination = ProjectName.create("[PROJECT]");
+    ResourceName destination = ProjectName.of("[PROJECT]");
     String filter = "filter-1274492040";
     String writerIdentity = "writerIdentity775638794";
     boolean includeChildren = true;
@@ -255,7 +255,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    SinkNameOneof sinkName = SinkNameOneof.from(SinkName.create("[PROJECT]", "[SINK]"));
+    SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
     LogSink sink = LogSink.newBuilder().build();
 
     LogSink actualResponse = client.updateSink(sinkName, sink);
@@ -276,7 +276,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      SinkNameOneof sinkName = SinkNameOneof.from(SinkName.create("[PROJECT]", "[SINK]"));
+      SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
       LogSink sink = LogSink.newBuilder().build();
 
       client.updateSink(sinkName, sink);
@@ -292,7 +292,7 @@ public class ConfigClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    SinkNameOneof sinkName = SinkNameOneof.from(SinkName.create("[PROJECT]", "[SINK]"));
+    SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
 
     client.deleteSink(sinkName);
 
@@ -310,7 +310,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      SinkNameOneof sinkName = SinkNameOneof.from(SinkName.create("[PROJECT]", "[SINK]"));
+      SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
 
       client.deleteSink(sinkName);
       Assert.fail("No exception raised");
@@ -332,7 +332,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+    ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
 
     ListExclusionsPagedResponse pagedListResponse = client.listExclusions(parent);
 
@@ -354,7 +354,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+      ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
 
       client.listExclusions(parent);
       Assert.fail("No exception raised");
@@ -379,8 +379,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ExclusionNameOneof name =
-        ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+    ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
 
     LogExclusion actualResponse = client.getExclusion(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -400,7 +399,7 @@ public class ConfigClientTest {
 
     try {
       ExclusionNameOneof name =
-          ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+          ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
 
       client.getExclusion(name);
       Assert.fail("No exception raised");
@@ -425,7 +424,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+    ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
     LogExclusion exclusion = LogExclusion.newBuilder().build();
 
     LogExclusion actualResponse = client.createExclusion(parent, exclusion);
@@ -446,7 +445,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+      ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
       LogExclusion exclusion = LogExclusion.newBuilder().build();
 
       client.createExclusion(parent, exclusion);
@@ -472,8 +471,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ExclusionNameOneof name =
-        ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+    ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
     LogExclusion exclusion = LogExclusion.newBuilder().build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -497,7 +495,7 @@ public class ConfigClientTest {
 
     try {
       ExclusionNameOneof name =
-          ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+          ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
       LogExclusion exclusion = LogExclusion.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -514,8 +512,7 @@ public class ConfigClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ExclusionNameOneof name =
-        ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+    ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
 
     client.deleteExclusion(name);
 
@@ -534,7 +531,7 @@ public class ConfigClientTest {
 
     try {
       ExclusionNameOneof name =
-          ExclusionNameOneof.from(ExclusionName.create("[PROJECT]", "[EXCLUSION]"));
+          ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
 
       client.deleteExclusion(name);
       Assert.fail("No exception raised");
