@@ -57,9 +57,18 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
     SortedSet<FieldPath> sortedFields = new TreeSet<>(data.keySet());
 
+    FieldPath lastField = null;
+
     for (FieldPath field : sortedFields) {
       List<String> segments = field.getSegments();
       Object value = data.get(field);
+
+      if (lastField != null) {
+        if (lastField.isPrefixOf(field)) {
+          throw new IllegalArgumentException(
+              String.format("Detected ambiguous definition for field '%s'.", lastField));
+        }
+      }
 
       Map<String, Object> currentMap = result;
 
@@ -71,17 +80,11 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
             currentMap.put(segments.get(i), new HashMap<>());
           }
 
-          Object nestedMap = currentMap.get(segments.get(i));
-
-          if (!(nestedMap instanceof Map)) {
-            throw new IllegalArgumentException(
-                String.format(
-                    "Detected ambiguous definition for field '%s'.",
-                    FieldPath.of(segments.subList(0, i + 1).toArray(new String[] {}))));
-          }
-          currentMap = (Map<String, Object>) nestedMap;
+          currentMap = (Map<String, Object>) currentMap.get(segments.get(i));
         }
       }
+
+      lastField = field;
     }
 
     return result;

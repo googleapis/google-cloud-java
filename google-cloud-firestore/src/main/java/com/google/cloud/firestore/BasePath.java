@@ -76,4 +76,13 @@ abstract class BasePath<B extends BasePath<B>> {
   abstract String[] splitChildPath(String path);
 
   abstract B createPathWithSegments(ImmutableList<String> segments);
+
+  boolean isPrefixOf(BasePath<B> field) {
+    if (field.getSegments().size() < this.getSegments().size()) {
+      return false;
+    }
+
+    return this.equals(
+        createPathWithSegments(field.getSegments().subList(0, this.getSegments().size())));
+  }
 }
