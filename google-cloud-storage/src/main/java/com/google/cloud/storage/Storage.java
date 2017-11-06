@@ -2297,7 +2297,7 @@ public interface Storage extends Service<StorageOptions> {
   Acl updateAcl(String bucket, Acl acl, BucketSourceOption... options);
 
   /**
-   * @see Storage#updateAcl(String, Acl, BucketSourceOption...)
+   * @see #updateAcl(String, Acl, BucketSourceOption...)
    */
   Acl updateAcl(String bucket, Acl acl);
 
@@ -2323,12 +2323,14 @@ public interface Storage extends Service<StorageOptions> {
    * }
    * }</pre>
    *
+   * @param bucket the name of the bucket to list ACLs for
+   * @param options any number of BucketSourceOptions to apply to this operation
    * @throws StorageException upon failure
    */
   List<Acl> listAcls(String bucket, BucketSourceOption... options);
 
   /**
-   * @see Storage#listAcls(String, BucketSourceOption...)
+   * @see #listAcls(String, BucketSourceOption...)
    */
   List<Acl> listAcls(String bucket);
 
