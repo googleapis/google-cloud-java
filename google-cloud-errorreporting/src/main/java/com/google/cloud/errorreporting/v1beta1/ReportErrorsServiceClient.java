@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
- *   ProjectName projectName = ProjectName.create("[PROJECT]");
+ *   ProjectName projectName = ProjectName.of("[PROJECT]");
  *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
  *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
  * }
@@ -167,7 +167,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
    * }
@@ -205,7 +205,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
@@ -237,7 +237,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)

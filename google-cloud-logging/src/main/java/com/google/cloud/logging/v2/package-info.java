@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@
  * <pre>
  * <code>
  * try (LoggingClient loggingClient = LoggingClient.create()) {
- *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+ *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
  *   loggingClient.deleteLog(logName);
  * }
  * </code>
@@ -44,7 +44,7 @@
  * <pre>
  * <code>
  * try (ConfigClient configClient = ConfigClient.create()) {
- *   SinkNameOneof sinkName = SinkNameOneof.from(SinkName.create("[PROJECT]", "[SINK]"));
+ *   SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
  *   LogSink response = configClient.getSink(sinkName);
  * }
  * </code>
@@ -59,7 +59,7 @@
  * <pre>
  * <code>
  * try (MetricsClient metricsClient = MetricsClient.create()) {
- *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
+ *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
  *   LogMetric response = metricsClient.getLogMetric(metricName);
  * }
  * </code>
