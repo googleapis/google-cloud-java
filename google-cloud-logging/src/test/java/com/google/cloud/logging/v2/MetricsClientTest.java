@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,7 @@ public class MetricsClientTest {
             .build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
-    ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+    ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
 
     ListLogMetricsPagedResponse pagedListResponse = client.listLogMetrics(parent);
 
@@ -124,7 +124,7 @@ public class MetricsClientTest {
     mockMetricsServiceV2.addException(exception);
 
     try {
-      ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+      ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
 
       client.listLogMetrics(parent);
       Assert.fail("No exception raised");
@@ -149,7 +149,7 @@ public class MetricsClientTest {
             .build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
-    MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
+    MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
 
     LogMetric actualResponse = client.getLogMetric(metricName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -168,7 +168,7 @@ public class MetricsClientTest {
     mockMetricsServiceV2.addException(exception);
 
     try {
-      MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
+      MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
 
       client.getLogMetric(metricName);
       Assert.fail("No exception raised");
@@ -193,7 +193,7 @@ public class MetricsClientTest {
             .build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
-    ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+    ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
     LogMetric metric = LogMetric.newBuilder().build();
 
     LogMetric actualResponse = client.createLogMetric(parent, metric);
@@ -214,7 +214,7 @@ public class MetricsClientTest {
     mockMetricsServiceV2.addException(exception);
 
     try {
-      ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+      ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
       LogMetric metric = LogMetric.newBuilder().build();
 
       client.createLogMetric(parent, metric);
@@ -240,7 +240,7 @@ public class MetricsClientTest {
             .build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
-    MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
+    MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
     LogMetric metric = LogMetric.newBuilder().build();
 
     LogMetric actualResponse = client.updateLogMetric(metricName, metric);
@@ -261,7 +261,7 @@ public class MetricsClientTest {
     mockMetricsServiceV2.addException(exception);
 
     try {
-      MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
+      MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
       LogMetric metric = LogMetric.newBuilder().build();
 
       client.updateLogMetric(metricName, metric);
@@ -277,7 +277,7 @@ public class MetricsClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
-    MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
+    MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
 
     client.deleteLogMetric(metricName);
 
@@ -295,7 +295,7 @@ public class MetricsClientTest {
     mockMetricsServiceV2.addException(exception);
 
     try {
-      MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
+      MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
 
       client.deleteLogMetric(metricName);
       Assert.fail("No exception raised");

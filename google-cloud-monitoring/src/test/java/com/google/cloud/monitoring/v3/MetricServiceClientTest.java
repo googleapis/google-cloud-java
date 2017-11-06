@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,7 +111,7 @@ public class MetricServiceClientTest {
             .build();
     mockMetricService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.create("[PROJECT]");
+    ProjectName name = ProjectName.of("[PROJECT]");
 
     ListMonitoredResourceDescriptorsPagedResponse pagedListResponse =
         client.listMonitoredResourceDescriptors(name);
@@ -136,7 +136,7 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.create("[PROJECT]");
+      ProjectName name = ProjectName.of("[PROJECT]");
 
       client.listMonitoredResourceDescriptors(name);
       Assert.fail("No exception raised");
@@ -162,7 +162,7 @@ public class MetricServiceClientTest {
     mockMetricService.addResponse(expectedResponse);
 
     MonitoredResourceDescriptorName name =
-        MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+        MonitoredResourceDescriptorName.of("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
 
     MonitoredResourceDescriptor actualResponse = client.getMonitoredResourceDescriptor(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -183,7 +183,7 @@ public class MetricServiceClientTest {
 
     try {
       MonitoredResourceDescriptorName name =
-          MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+          MonitoredResourceDescriptorName.of("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
 
       client.getMonitoredResourceDescriptor(name);
       Assert.fail("No exception raised");
@@ -205,7 +205,7 @@ public class MetricServiceClientTest {
             .build();
     mockMetricService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.create("[PROJECT]");
+    ProjectName name = ProjectName.of("[PROJECT]");
 
     ListMetricDescriptorsPagedResponse pagedListResponse = client.listMetricDescriptors(name);
 
@@ -228,7 +228,7 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.create("[PROJECT]");
+      ProjectName name = ProjectName.of("[PROJECT]");
 
       client.listMetricDescriptors(name);
       Assert.fail("No exception raised");
@@ -255,7 +255,7 @@ public class MetricServiceClientTest {
             .build();
     mockMetricService.addResponse(expectedResponse);
 
-    MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
+    MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
 
     MetricDescriptor actualResponse = client.getMetricDescriptor(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -274,7 +274,7 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
+      MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
 
       client.getMetricDescriptor(name);
       Assert.fail("No exception raised");
@@ -301,7 +301,7 @@ public class MetricServiceClientTest {
             .build();
     mockMetricService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.create("[PROJECT]");
+    ProjectName name = ProjectName.of("[PROJECT]");
     MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
 
     MetricDescriptor actualResponse = client.createMetricDescriptor(name, metricDescriptor);
@@ -323,7 +323,7 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.create("[PROJECT]");
+      ProjectName name = ProjectName.of("[PROJECT]");
       MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
 
       client.createMetricDescriptor(name, metricDescriptor);
@@ -339,7 +339,7 @@ public class MetricServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockMetricService.addResponse(expectedResponse);
 
-    MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
+    MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
 
     client.deleteMetricDescriptor(name);
 
@@ -358,7 +358,7 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
+      MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
 
       client.deleteMetricDescriptor(name);
       Assert.fail("No exception raised");
@@ -380,7 +380,7 @@ public class MetricServiceClientTest {
             .build();
     mockMetricService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.create("[PROJECT]");
+    ProjectName name = ProjectName.of("[PROJECT]");
     String filter = "filter-1274492040";
     TimeInterval interval = TimeInterval.newBuilder().build();
     ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
@@ -409,7 +409,7 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.create("[PROJECT]");
+      ProjectName name = ProjectName.of("[PROJECT]");
       String filter = "filter-1274492040";
       TimeInterval interval = TimeInterval.newBuilder().build();
       ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
@@ -427,7 +427,7 @@ public class MetricServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockMetricService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.create("[PROJECT]");
+    ProjectName name = ProjectName.of("[PROJECT]");
     List<TimeSeries> timeSeries = new ArrayList<>();
 
     client.createTimeSeries(name, timeSeries);
@@ -447,7 +447,7 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.create("[PROJECT]");
+      ProjectName name = ProjectName.of("[PROJECT]");
       List<TimeSeries> timeSeries = new ArrayList<>();
 
       client.createTimeSeries(name, timeSeries);

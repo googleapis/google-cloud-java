@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (LoggingClient loggingClient = LoggingClient.create()) {
- *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+ *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
  *   loggingClient.deleteLog(logName);
  * }
  * </code>
@@ -173,7 +173,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
    *   loggingClient.deleteLog(logName);
    * }
    * </code></pre>
@@ -202,7 +202,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
    *     .setLogNameWithLogNameOneof(logName)
    *     .build();
@@ -226,7 +226,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
    *     .setLogNameWithLogNameOneof(logName)
    *     .build();
@@ -252,7 +252,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
    *   MonitoredResource resource = MonitoredResource.newBuilder().build();
    *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
@@ -581,7 +581,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   for (String element : loggingClient.listLogs(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -608,7 +608,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();
@@ -634,7 +634,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();
@@ -659,7 +659,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();
