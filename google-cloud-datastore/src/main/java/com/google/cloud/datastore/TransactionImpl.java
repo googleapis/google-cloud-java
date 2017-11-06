@@ -16,8 +16,8 @@
 
 package com.google.cloud.datastore;
 
+import com.google.datastore.v1.TransactionOptions;
 import com.google.protobuf.ByteString;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -52,10 +52,19 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   TransactionImpl(DatastoreImpl datastore) {
+      this(datastore, null);
+  }
+
+  TransactionImpl(DatastoreImpl datastore, TransactionOptions options) {
     super("transaction");
     this.datastore = datastore;
     com.google.datastore.v1.BeginTransactionRequest.Builder requestPb =
-        com.google.datastore.v1.BeginTransactionRequest.newBuilder();
+            com.google.datastore.v1.BeginTransactionRequest.newBuilder();
+
+    if (options != null) {
+      requestPb.setTransactionOptions(options);
+    }
+
     transaction = datastore.requestTransactionId(requestPb);
   }
 
@@ -117,5 +126,10 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   @Override
   public Datastore getDatastore() {
     return datastore;
+  }
+
+  @Override
+  public ByteString getTransactionId() {
+    return transaction;
   }
 }

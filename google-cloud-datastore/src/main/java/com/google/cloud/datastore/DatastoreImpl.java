@@ -31,6 +31,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import com.google.datastore.v1.ReadOptions.ReadConsistency;
+import com.google.datastore.v1.TransactionOptions;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -63,8 +64,75 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   @Override
+  public Transaction newTransaction(TransactionOptions transactionOptions) {
+    return new TransactionImpl(this, transactionOptions);
+  }
+
+  @Override
   public Transaction newTransaction() {
     return new TransactionImpl(this);
+  }
+
+  static class ReadWriteTransactionCallable<T> implements Datastore.ReadWriteTransactionCallable<T>, Callable<T> {
+    private TransactionOptions options;
+    private Datastore datastore;
+    private TransactionCallable<T> callable;
+    private Transaction transaction;
+
+    ReadWriteTransactionCallable(Datastore datastore, TransactionCallable<T> callable, TransactionOptions options) {
+      this.datastore = datastore;
+      this.callable = callable;
+      this.options = options;
+      this.transaction = null;
+    }
+
+    Datastore getDatastore() {
+      return datastore;
+    }
+
+    TransactionOptions getOptions() {
+      return options;
+    }
+
+    Transaction getTransaction() {
+      return transaction;
+    }
+
+    @Override
+    public T run() {
+      transaction = datastore.newTransaction(options);
+      try {
+        T value = callable.run(transaction);
+        transaction.commit();
+        return value;
+      } catch (Exception ex) {
+        transaction.rollback();
+        throw DatastoreException.propagateUserException(ex);
+      } finally {
+        if (transaction.isActive()) {
+          transaction.rollback();
+        }
+        if (options.getModeCase().equals(TransactionOptions.ModeCase.READ_WRITE)) {
+          setPrevTransactionId(transaction);
+        }
+      }
+    }
+
+    void setPrevTransactionId(Transaction transaction) {
+      options =
+          options
+              .toBuilder()
+              .setReadWrite(
+                  TransactionOptions.ReadWrite.newBuilder()
+                      .setPreviousTransaction(transaction.getTransactionId())
+                      .build())
+              .build();
+    }
+
+    @Override
+    public T call() throws DatastoreException {
+      return DatastoreHelper.runInTransaction(this);
+    }
   }
 
   @Override
@@ -72,15 +140,24 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     final DatastoreImpl self = this;
     try {
       return RetryHelper.runWithRetries(
-          new Callable<T>() {
-            @Override
-            public T call() throws DatastoreException {
-              return DatastoreHelper.runInTransaction(self, callable);
-            }
-          },
+          new ReadWriteTransactionCallable<T>(self, callable, null),
           retrySettings,
           TRANSACTION_EXCEPTION_HANDLER,
           getOptions().getClock());
+    } catch (RetryHelperException e) {
+      throw DatastoreException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public <T> T runInTransaction(final TransactionCallable<T> callable, TransactionOptions options) {
+    final DatastoreImpl self = this;
+    try {
+      return RetryHelper.runWithRetries(
+              new ReadWriteTransactionCallable<T>(self, callable, options),
+              retrySettings,
+              TRANSACTION_EXCEPTION_HANDLER,
+              getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
