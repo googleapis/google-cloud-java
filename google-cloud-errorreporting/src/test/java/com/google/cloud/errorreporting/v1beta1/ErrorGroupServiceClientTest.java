@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,13 +81,13 @@ public class ErrorGroupServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getGroupTest() {
-    GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
+    GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
     String groupId = "groupId506361563";
     ErrorGroup expectedResponse =
         ErrorGroup.newBuilder().setNameWithGroupName(name).setGroupId(groupId).build();
     mockErrorGroupService.addResponse(expectedResponse);
 
-    GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
+    GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
 
     ErrorGroup actualResponse = client.getGroup(groupName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -106,7 +106,7 @@ public class ErrorGroupServiceClientTest {
     mockErrorGroupService.addException(exception);
 
     try {
-      GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
+      GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
 
       client.getGroup(groupName);
       Assert.fail("No exception raised");
@@ -118,7 +118,7 @@ public class ErrorGroupServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateGroupTest() {
-    GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
+    GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
     String groupId = "groupId506361563";
     ErrorGroup expectedResponse =
         ErrorGroup.newBuilder().setNameWithGroupName(name).setGroupId(groupId).build();
