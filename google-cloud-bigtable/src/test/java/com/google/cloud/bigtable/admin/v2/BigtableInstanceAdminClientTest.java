@@ -1,11 +1,11 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -99,7 +99,7 @@ public class BigtableInstanceAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void createInstanceTest() throws Exception {
-    InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+    InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
     String displayName = "displayName1615086568";
     Instance expectedResponse =
         Instance.newBuilder().setNameWithInstanceName(name).setDisplayName(displayName).build();
@@ -111,7 +111,7 @@ public class BigtableInstanceAdminClientTest {
             .build();
     mockBigtableInstanceAdmin.addResponse(resultOperation);
 
-    ProjectName parent = ProjectName.create("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String instanceId = "instanceId-2101995259";
     Instance instance = Instance.newBuilder().build();
     Map<String, Cluster> clusters = new HashMap<>();
@@ -137,7 +137,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.create("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       String instanceId = "instanceId-2101995259";
       Instance instance = Instance.newBuilder().build();
       Map<String, Cluster> clusters = new HashMap<>();
@@ -154,13 +154,13 @@ public class BigtableInstanceAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void getInstanceTest() {
-    InstanceName name2 = InstanceName.create("[PROJECT]", "[INSTANCE]");
+    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
     String displayName = "displayName1615086568";
     Instance expectedResponse =
         Instance.newBuilder().setNameWithInstanceName(name2).setDisplayName(displayName).build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+    InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
     Instance actualResponse = client.getInstance(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -179,7 +179,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+      InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
       client.getInstance(name);
       Assert.fail("No exception raised");
@@ -196,7 +196,7 @@ public class BigtableInstanceAdminClientTest {
         ListInstancesResponse.newBuilder().setNextPageToken(nextPageToken).build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.create("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
     ListInstancesResponse actualResponse = client.listInstances(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -215,7 +215,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.create("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
       client.listInstances(parent);
       Assert.fail("No exception raised");
@@ -227,13 +227,13 @@ public class BigtableInstanceAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateInstanceTest() {
-    InstanceName name2 = InstanceName.create("[PROJECT]", "[INSTANCE]");
+    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
     String displayName2 = "displayName21615000987";
     Instance expectedResponse =
         Instance.newBuilder().setNameWithInstanceName(name2).setDisplayName(displayName2).build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+    InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
     String displayName = "displayName1615086568";
     Instance.Type type = Instance.Type.TYPE_UNSPECIFIED;
 
@@ -256,7 +256,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+      InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
       String displayName = "displayName1615086568";
       Instance.Type type = Instance.Type.TYPE_UNSPECIFIED;
 
@@ -273,7 +273,7 @@ public class BigtableInstanceAdminClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+    InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
     client.deleteInstance(name);
 
@@ -291,7 +291,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+      InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
       client.deleteInstance(name);
       Assert.fail("No exception raised");
@@ -303,8 +303,8 @@ public class BigtableInstanceAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void createClusterTest() throws Exception {
-    ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-    LocationName location = LocationName.create("[PROJECT]", "[LOCATION]");
+    ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+    LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
     int serveNodes = -1288838783;
     Cluster expectedResponse =
         Cluster.newBuilder()
@@ -320,7 +320,7 @@ public class BigtableInstanceAdminClientTest {
             .build();
     mockBigtableInstanceAdmin.addResponse(resultOperation);
 
-    InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+    InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
     String clusterId = "clusterId240280960";
     Cluster cluster = Cluster.newBuilder().build();
 
@@ -343,7 +343,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+      InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
       String clusterId = "clusterId240280960";
       Cluster cluster = Cluster.newBuilder().build();
 
@@ -359,8 +359,8 @@ public class BigtableInstanceAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void getClusterTest() {
-    ClusterName name2 = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-    LocationName location = LocationName.create("[PROJECT]", "[LOCATION]");
+    ClusterName name2 = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+    LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
     int serveNodes = -1288838783;
     Cluster expectedResponse =
         Cluster.newBuilder()
@@ -370,7 +370,7 @@ public class BigtableInstanceAdminClientTest {
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+    ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
 
     Cluster actualResponse = client.getCluster(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -389,7 +389,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+      ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
 
       client.getCluster(name);
       Assert.fail("No exception raised");
@@ -406,7 +406,7 @@ public class BigtableInstanceAdminClientTest {
         ListClustersResponse.newBuilder().setNextPageToken(nextPageToken).build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+    InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
     ListClustersResponse actualResponse = client.listClusters(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -425,7 +425,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+      InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
       client.listClusters(parent);
       Assert.fail("No exception raised");
@@ -437,8 +437,8 @@ public class BigtableInstanceAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateClusterTest() throws Exception {
-    ClusterName name2 = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-    LocationName location2 = LocationName.create("[PROJECT]", "[LOCATION]");
+    ClusterName name2 = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+    LocationName location2 = LocationName.of("[PROJECT]", "[LOCATION]");
     int serveNodes2 = -1623486220;
     Cluster expectedResponse =
         Cluster.newBuilder()
@@ -454,8 +454,8 @@ public class BigtableInstanceAdminClientTest {
             .build();
     mockBigtableInstanceAdmin.addResponse(resultOperation);
 
-    ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-    LocationName location = LocationName.create("[PROJECT]", "[LOCATION]");
+    ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+    LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
     int serveNodes = -1288838783;
     StorageType defaultStorageType = StorageType.STORAGE_TYPE_UNSPECIFIED;
 
@@ -480,8 +480,8 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-      LocationName location = LocationName.create("[PROJECT]", "[LOCATION]");
+      ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+      LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
       int serveNodes = -1288838783;
       StorageType defaultStorageType = StorageType.STORAGE_TYPE_UNSPECIFIED;
 
@@ -500,7 +500,7 @@ public class BigtableInstanceAdminClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+    ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
 
     client.deleteCluster(name);
 
@@ -518,7 +518,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+      ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
 
       client.deleteCluster(name);
       Assert.fail("No exception raised");

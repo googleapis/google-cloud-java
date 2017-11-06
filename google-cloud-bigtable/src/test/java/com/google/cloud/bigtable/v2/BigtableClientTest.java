@@ -1,11 +1,11 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -96,7 +96,7 @@ public class BigtableClientTest {
     ReadRowsResponse expectedResponse =
         ReadRowsResponse.newBuilder().setLastScannedRowKey(lastScannedRowKey).build();
     mockBigtable.addResponse(expectedResponse);
-    TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     ReadRowsRequest request =
         ReadRowsRequest.newBuilder().setTableNameWithTableName(tableName).build();
 
@@ -115,7 +115,7 @@ public class BigtableClientTest {
   public void readRowsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockBigtable.addException(exception);
-    TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     ReadRowsRequest request =
         ReadRowsRequest.newBuilder().setTableNameWithTableName(tableName).build();
 
@@ -142,7 +142,7 @@ public class BigtableClientTest {
     SampleRowKeysResponse expectedResponse =
         SampleRowKeysResponse.newBuilder().setRowKey(rowKey).setOffsetBytes(offsetBytes).build();
     mockBigtable.addResponse(expectedResponse);
-    TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     SampleRowKeysRequest request =
         SampleRowKeysRequest.newBuilder().setTableNameWithTableName(tableName).build();
 
@@ -162,7 +162,7 @@ public class BigtableClientTest {
   public void sampleRowKeysExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockBigtable.addException(exception);
-    TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     SampleRowKeysRequest request =
         SampleRowKeysRequest.newBuilder().setTableNameWithTableName(tableName).build();
 
@@ -188,7 +188,7 @@ public class BigtableClientTest {
     MutateRowResponse expectedResponse = MutateRowResponse.newBuilder().build();
     mockBigtable.addResponse(expectedResponse);
 
-    TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     ByteString rowKey = ByteString.copyFromUtf8("122");
     List<Mutation> mutations = new ArrayList<>();
 
@@ -211,7 +211,7 @@ public class BigtableClientTest {
     mockBigtable.addException(exception);
 
     try {
-      TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
       ByteString rowKey = ByteString.copyFromUtf8("122");
       List<Mutation> mutations = new ArrayList<>();
 
@@ -227,7 +227,7 @@ public class BigtableClientTest {
   public void mutateRowsTest() throws Exception {
     MutateRowsResponse expectedResponse = MutateRowsResponse.newBuilder().build();
     mockBigtable.addResponse(expectedResponse);
-    TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     List<MutateRowsRequest.Entry> entries = new ArrayList<>();
     MutateRowsRequest request =
         MutateRowsRequest.newBuilder()
@@ -251,7 +251,7 @@ public class BigtableClientTest {
   public void mutateRowsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockBigtable.addException(exception);
-    TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     List<MutateRowsRequest.Entry> entries = new ArrayList<>();
     MutateRowsRequest request =
         MutateRowsRequest.newBuilder()
@@ -283,7 +283,7 @@ public class BigtableClientTest {
         CheckAndMutateRowResponse.newBuilder().setPredicateMatched(predicateMatched).build();
     mockBigtable.addResponse(expectedResponse);
 
-    TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     ByteString rowKey = ByteString.copyFromUtf8("122");
     RowFilter predicateFilter = RowFilter.newBuilder().build();
     List<Mutation> trueMutations = new ArrayList<>();
@@ -311,7 +311,7 @@ public class BigtableClientTest {
     mockBigtable.addException(exception);
 
     try {
-      TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
       ByteString rowKey = ByteString.copyFromUtf8("122");
       RowFilter predicateFilter = RowFilter.newBuilder().build();
       List<Mutation> trueMutations = new ArrayList<>();
@@ -330,7 +330,7 @@ public class BigtableClientTest {
     ReadModifyWriteRowResponse expectedResponse = ReadModifyWriteRowResponse.newBuilder().build();
     mockBigtable.addResponse(expectedResponse);
 
-    TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     ByteString rowKey = ByteString.copyFromUtf8("122");
     List<ReadModifyWriteRule> rules = new ArrayList<>();
 
@@ -353,7 +353,7 @@ public class BigtableClientTest {
     mockBigtable.addException(exception);
 
     try {
-      TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
       ByteString rowKey = ByteString.copyFromUtf8("122");
       List<ReadModifyWriteRule> rules = new ArrayList<>();
 

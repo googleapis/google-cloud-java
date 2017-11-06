@@ -1,11 +1,11 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -62,7 +62,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
- *   InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+ *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
  *   Instance response = bigtableInstanceAdminClient.getInstance(name);
  * }
  * </code>
@@ -195,7 +195,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
    *   Map&lt;String, Cluster&gt; clusters = new HashMap&lt;&gt;();
@@ -235,7 +235,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
    *   Map&lt;String, Cluster&gt; clusters = new HashMap&lt;&gt;();
@@ -265,7 +265,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
    *   Map&lt;String, Cluster&gt; clusters = new HashMap&lt;&gt;();
@@ -294,7 +294,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
    *   Map&lt;String, Cluster&gt; clusters = new HashMap&lt;&gt;();
@@ -322,7 +322,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   Instance response = bigtableInstanceAdminClient.getInstance(name);
    * }
    * </code></pre>
@@ -346,7 +346,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
    *     .setNameWithInstanceName(name)
    *     .build();
@@ -369,7 +369,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
    *     .setNameWithInstanceName(name)
    *     .build();
@@ -391,7 +391,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListInstancesResponse response = bigtableInstanceAdminClient.listInstances(parent);
    * }
    * </code></pre>
@@ -415,7 +415,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -438,7 +438,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -460,7 +460,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String displayName = "";
    *   Instance.Type type = Instance.Type.TYPE_UNSPECIFIED;
    *   Instance response = bigtableInstanceAdminClient.updateInstance(name, displayName, type);
@@ -493,7 +493,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String displayName = "";
    *   Instance.Type type = Instance.Type.TYPE_UNSPECIFIED;
    *   Instance request = Instance.newBuilder()
@@ -520,7 +520,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String displayName = "";
    *   Instance.Type type = Instance.Type.TYPE_UNSPECIFIED;
    *   Instance request = Instance.newBuilder()
@@ -546,7 +546,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   bigtableInstanceAdminClient.deleteInstance(name);
    * }
    * </code></pre>
@@ -570,7 +570,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
    *     .setNameWithInstanceName(name)
    *     .build();
@@ -593,7 +593,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
    *     .setNameWithInstanceName(name)
    *     .build();
@@ -615,7 +615,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
    *   Cluster response = bigtableInstanceAdminClient.createClusterAsync(parent, clusterId, cluster).get();
@@ -649,7 +649,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
    *   CreateClusterRequest request = CreateClusterRequest.newBuilder()
@@ -677,7 +677,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
    *   CreateClusterRequest request = CreateClusterRequest.newBuilder()
@@ -704,7 +704,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
    *   CreateClusterRequest request = CreateClusterRequest.newBuilder()
@@ -730,7 +730,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   Cluster response = bigtableInstanceAdminClient.getCluster(name);
    * }
    * </code></pre>
@@ -753,7 +753,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   GetClusterRequest request = GetClusterRequest.newBuilder()
    *     .setNameWithClusterName(name)
    *     .build();
@@ -776,7 +776,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   GetClusterRequest request = GetClusterRequest.newBuilder()
    *     .setNameWithClusterName(name)
    *     .build();
@@ -798,7 +798,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListClustersResponse response = bigtableInstanceAdminClient.listClusters(parent);
    * }
    * </code></pre>
@@ -824,7 +824,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListClustersRequest request = ListClustersRequest.newBuilder()
    *     .setParentWithInstanceName(parent)
    *     .build();
@@ -847,7 +847,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListClustersRequest request = ListClustersRequest.newBuilder()
    *     .setParentWithInstanceName(parent)
    *     .build();
@@ -869,8 +869,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   LocationName location = LocationName.create("[PROJECT]", "[LOCATION]");
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
    *   int serveNodes = 0;
    *   StorageType defaultStorageType = StorageType.STORAGE_TYPE_UNSPECIFIED;
    *   Cluster response = bigtableInstanceAdminClient.updateClusterAsync(name, location, serveNodes, defaultStorageType).get();
@@ -910,8 +910,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   LocationName location = LocationName.create("[PROJECT]", "[LOCATION]");
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
    *   int serveNodes = 0;
    *   StorageType defaultStorageType = StorageType.STORAGE_TYPE_UNSPECIFIED;
    *   Cluster request = Cluster.newBuilder()
@@ -939,8 +939,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   LocationName location = LocationName.create("[PROJECT]", "[LOCATION]");
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
    *   int serveNodes = 0;
    *   StorageType defaultStorageType = StorageType.STORAGE_TYPE_UNSPECIFIED;
    *   Cluster request = Cluster.newBuilder()
@@ -968,8 +968,8 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   LocationName location = LocationName.create("[PROJECT]", "[LOCATION]");
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
    *   int serveNodes = 0;
    *   StorageType defaultStorageType = StorageType.STORAGE_TYPE_UNSPECIFIED;
    *   Cluster request = Cluster.newBuilder()
@@ -996,7 +996,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   bigtableInstanceAdminClient.deleteCluster(name);
    * }
    * </code></pre>
@@ -1020,7 +1020,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder()
    *     .setNameWithClusterName(name)
    *     .build();
@@ -1043,7 +1043,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ClusterName name = ClusterName.create("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder()
    *     .setNameWithClusterName(name)
    *     .build();

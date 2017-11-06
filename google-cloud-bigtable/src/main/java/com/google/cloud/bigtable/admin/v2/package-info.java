@@ -1,11 +1,11 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,7 +30,7 @@
  * <pre>
  * <code>
  * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
- *   InstanceName name = InstanceName.create("[PROJECT]", "[INSTANCE]");
+ *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
  *   Instance response = bigtableInstanceAdminClient.getInstance(name);
  * }
  * </code>
@@ -47,7 +47,7 @@
  * <pre>
  * <code>
  * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
- *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+ *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
  *   String tableId = "";
  *   Table table = Table.newBuilder().build();
  *   Table response = bigtableTableAdminClient.createTable(parent, tableId, table);

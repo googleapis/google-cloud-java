@@ -1,11 +1,11 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -51,7 +51,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
- *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+ *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
  *   String tableId = "";
  *   Table table = Table.newBuilder().build();
  *   Table response = bigtableTableAdminClient.createTable(parent, tableId, table);
@@ -176,7 +176,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String tableId = "";
    *   Table table = Table.newBuilder().build();
    *   Table response = bigtableTableAdminClient.createTable(parent, tableId, table);
@@ -210,7 +210,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String tableId = "";
    *   Table table = Table.newBuilder().build();
    *   CreateTableRequest request = CreateTableRequest.newBuilder()
@@ -238,7 +238,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String tableId = "";
    *   Table table = Table.newBuilder().build();
    *   CreateTableRequest request = CreateTableRequest.newBuilder()
@@ -264,7 +264,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   for (Table element : bigtableTableAdminClient.listTables(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -289,7 +289,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListTablesRequest request = ListTablesRequest.newBuilder()
    *     .setParentWithInstanceName(parent)
    *     .build();
@@ -314,7 +314,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListTablesRequest request = ListTablesRequest.newBuilder()
    *     .setParentWithInstanceName(parent)
    *     .build();
@@ -338,7 +338,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListTablesRequest request = ListTablesRequest.newBuilder()
    *     .setParentWithInstanceName(parent)
    *     .build();
@@ -369,7 +369,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   Table response = bigtableTableAdminClient.getTable(name);
    * }
    * </code></pre>
@@ -392,7 +392,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   GetTableRequest request = GetTableRequest.newBuilder()
    *     .setNameWithTableName(name)
    *     .build();
@@ -415,7 +415,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   GetTableRequest request = GetTableRequest.newBuilder()
    *     .setNameWithTableName(name)
    *     .build();
@@ -437,7 +437,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   bigtableTableAdminClient.deleteTable(name);
    * }
    * </code></pre>
@@ -460,7 +460,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   DeleteTableRequest request = DeleteTableRequest.newBuilder()
    *     .setNameWithTableName(name)
    *     .build();
@@ -483,7 +483,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   DeleteTableRequest request = DeleteTableRequest.newBuilder()
    *     .setNameWithTableName(name)
    *     .build();
@@ -507,7 +507,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   List&lt;ModifyColumnFamiliesRequest.Modification&gt; modifications = new ArrayList&lt;&gt;();
    *   Table response = bigtableTableAdminClient.modifyColumnFamilies(name, modifications);
    * }
@@ -541,7 +541,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   List&lt;ModifyColumnFamiliesRequest.Modification&gt; modifications = new ArrayList&lt;&gt;();
    *   ModifyColumnFamiliesRequest request = ModifyColumnFamiliesRequest.newBuilder()
    *     .setNameWithTableName(name)
@@ -568,7 +568,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   List&lt;ModifyColumnFamiliesRequest.Modification&gt; modifications = new ArrayList&lt;&gt;();
    *   ModifyColumnFamiliesRequest request = ModifyColumnFamiliesRequest.newBuilder()
    *     .setNameWithTableName(name)
@@ -593,7 +593,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   String formattedName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   String formattedName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
    *   ByteString rowKeyPrefix = ByteString.copyFromUtf8("");
    *   bigtableTableAdminClient.dropRowRange(formattedName, rowKeyPrefix);
    * }
@@ -621,7 +621,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   String formattedName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   String formattedName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
    *   DropRowRangeRequest request = DropRowRangeRequest.newBuilder()
    *     .setName(formattedName)
    *     .build();
@@ -645,7 +645,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
-   *   String formattedName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   String formattedName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
    *   DropRowRangeRequest request = DropRowRangeRequest.newBuilder()
    *     .setName(formattedName)
    *     .build();

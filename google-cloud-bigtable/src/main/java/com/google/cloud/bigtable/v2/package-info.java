@@ -1,11 +1,11 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,7 +28,7 @@
  * <pre>
  * <code>
  * try (BigtableClient bigtableClient = BigtableClient.create()) {
- *   TableName tableName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+ *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
  *   ByteString rowKey = ByteString.copyFromUtf8("");
  *   List&lt;Mutation&gt; mutations = new ArrayList&lt;&gt;();
  *   MutateRowResponse response = bigtableClient.mutateRow(tableName, rowKey, mutations);

@@ -1,11 +1,11 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -91,11 +91,11 @@ public class BigtableTableAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void createTableTest() {
-    TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     Table expectedResponse = Table.newBuilder().setNameWithTableName(name).build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
-    InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+    InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
     String tableId = "tableId-895419604";
     Table table = Table.newBuilder().build();
 
@@ -118,7 +118,7 @@ public class BigtableTableAdminClientTest {
     mockBigtableTableAdmin.addException(exception);
 
     try {
-      InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+      InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
       String tableId = "tableId-895419604";
       Table table = Table.newBuilder().build();
 
@@ -142,7 +142,7 @@ public class BigtableTableAdminClientTest {
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
-    InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+    InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
     ListTablesPagedResponse pagedListResponse = client.listTables(parent);
 
@@ -164,7 +164,7 @@ public class BigtableTableAdminClientTest {
     mockBigtableTableAdmin.addException(exception);
 
     try {
-      InstanceName parent = InstanceName.create("[PROJECT]", "[INSTANCE]");
+      InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
       client.listTables(parent);
       Assert.fail("No exception raised");
@@ -176,11 +176,11 @@ public class BigtableTableAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTableTest() {
-    TableName name2 = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName name2 = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     Table expectedResponse = Table.newBuilder().setNameWithTableName(name2).build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
-    TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
 
     Table actualResponse = client.getTable(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -199,7 +199,7 @@ public class BigtableTableAdminClientTest {
     mockBigtableTableAdmin.addException(exception);
 
     try {
-      TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
 
       client.getTable(name);
       Assert.fail("No exception raised");
@@ -214,7 +214,7 @@ public class BigtableTableAdminClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
-    TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
 
     client.deleteTable(name);
 
@@ -232,7 +232,7 @@ public class BigtableTableAdminClientTest {
     mockBigtableTableAdmin.addException(exception);
 
     try {
-      TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
 
       client.deleteTable(name);
       Assert.fail("No exception raised");
@@ -244,11 +244,11 @@ public class BigtableTableAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void modifyColumnFamiliesTest() {
-    TableName name2 = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName name2 = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     Table expectedResponse = Table.newBuilder().setNameWithTableName(name2).build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
-    TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     List<ModifyColumnFamiliesRequest.Modification> modifications = new ArrayList<>();
 
     Table actualResponse = client.modifyColumnFamilies(name, modifications);
@@ -269,7 +269,7 @@ public class BigtableTableAdminClientTest {
     mockBigtableTableAdmin.addException(exception);
 
     try {
-      TableName name = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
       List<ModifyColumnFamiliesRequest.Modification> modifications = new ArrayList<>();
 
       client.modifyColumnFamilies(name, modifications);
@@ -285,7 +285,7 @@ public class BigtableTableAdminClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
-    String formattedName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+    String formattedName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
     ByteString rowKeyPrefix = ByteString.copyFromUtf8("-9");
 
     client.dropRowRange(formattedName, rowKeyPrefix);
@@ -305,7 +305,7 @@ public class BigtableTableAdminClientTest {
     mockBigtableTableAdmin.addException(exception);
 
     try {
-      String formattedName = TableName.create("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+      String formattedName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
       ByteString rowKeyPrefix = ByteString.copyFromUtf8("-9");
 
       client.dropRowRange(formattedName, rowKeyPrefix);
