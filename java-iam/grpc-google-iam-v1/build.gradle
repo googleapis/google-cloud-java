@@ -10,7 +10,7 @@ apply plugin: 'signing'
 
 description = 'GRPC library for grpc-google-iam-v1'
 group = "com.google.api.grpc"
-version = "0.1.22"
+version = "0.1.23"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
@@ -20,8 +20,8 @@ repositories {
 }
 
 dependencies {
-  compile "io.grpc:grpc-stub:1.6.1"
-  compile "io.grpc:grpc-protobuf:1.6.1"
+  compile "io.grpc:grpc-stub:1.7.0"
+  compile "io.grpc:grpc-protobuf:1.7.0"
   compile project(":proto-google-iam-v1")
 }
 
@@ -93,7 +93,7 @@ if (project.hasProperty('ossrhUsername') && project.hasProperty('ossrhPassword')
               name 'Google Inc'
               email 'googleapis-packages@google.com'
               url 'https://github.com/googleapis/googleapis'
-              organization 'Google, Inc.'
+              organization 'Google LLC'
               organizationUrl 'https://www.google.com'
             }
           }
