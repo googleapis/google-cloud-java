@@ -16,26 +16,16 @@
 
 package com.google.cloud.notification;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.common.collect.Lists.transform;
 
-import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.client.util.Data;
-import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.Notification;
-import com.google.cloud.storage.Acl.Entity;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
 import com.google.pubsub.v1.TopicName;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -55,17 +45,17 @@ public class NotificationInfo implements Serializable {
     NONE
   }
 
-  static final Function<com.google.api.services.storage.model.Notification, NotificationInfo> FROM_PB_FUNCTION =
-      new Function<com.google.api.services.storage.model.Notification, NotificationInfo>() {
+  static final Function<Notification, NotificationInfo> FROM_PB_FUNCTION =
+      new Function<Notification, NotificationInfo>() {
         @Override
-        public NotificationInfo apply(com.google.api.services.storage.model.Notification pb) {
+        public NotificationInfo apply(Notification pb) {
           return NotificationInfo.fromPb(pb);
         }
       };
-  static final Function<NotificationInfo, com.google.api.services.storage.model.Notification> TO_PB_FUNCTION =
-      new Function<NotificationInfo, com.google.api.services.storage.model.Notification>() {
+  static final Function<NotificationInfo, Notification> TO_PB_FUNCTION =
+      new Function<NotificationInfo, Notification>() {
         @Override
-        public com.google.api.services.storage.model.Notification apply(NotificationInfo NotificationInfo) {
+        public Notification apply(NotificationInfo NotificationInfo) {
           return NotificationInfo.toPb();
         }
       };
@@ -312,9 +302,8 @@ public class NotificationInfo implements Serializable {
         .toString();
   }
 
-  com.google.api.services.storage.model.Notification toPb() {
-    com.google.api.services.storage.model.Notification notificationPb =
-        new com.google.api.services.storage.model.Notification();
+  Notification toPb() {
+    Notification notificationPb = new Notification();
     notificationPb.setId(generatedId);
     notificationPb.setEtag(etag);
     if (customAttributes != null) {
@@ -351,7 +340,7 @@ public class NotificationInfo implements Serializable {
     return new BuilderImpl(topic);
   }
 
-  static NotificationInfo fromPb(com.google.api.services.storage.model.Notification notificationPb) {
+  static NotificationInfo fromPb(Notification notificationPb) {
     Builder builder = new BuilderImpl(TopicName.parse(notificationPb.getTopic()));
     if (notificationPb.getId() != null) {
       builder.setGeneratedId(notificationPb.getId());
