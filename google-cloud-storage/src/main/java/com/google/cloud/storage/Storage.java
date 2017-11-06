@@ -2350,6 +2350,8 @@ public interface Storage extends Service<StorageOptions> {
    * }
    * }</pre>
    *
+   * @param bucket the name of the bucket to list ACLs for
+   * @param options any number of BucketSourceOptions to apply to this operation
    * @throws StorageException upon failure
    */
   List<Acl> listAcls(String bucket, BucketSourceOption... options);
