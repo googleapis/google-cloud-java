@@ -21,6 +21,7 @@ import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Policy;
+import com.google.api.services.storage.model.ServiceAccount;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.ServiceRpc;
@@ -430,9 +431,35 @@ public interface StorageRpc extends ServiceRpc {
    */
   TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions);
 
+  /**
+   * Deletes the notification with the specified name on the specified object.
+   *
+   * @return {@code true} if the notification was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
   boolean deleteNotification(String bucket, String notification);
 
+  /**
+   * List the notifications for the provided bucket.
+   *
+   * @return a list of {@link Notification} objects that exist on the bucket.
+   * @throws StorageException upon failure
+   */
   List<Notification> listNotifications(String bucket);
 
+  /**
+   * Creates a notification with the specified entity on the specified bucket.
+   *
+   * @return the notification that was created.
+   * @throws StorageException upon failure
+   */
   Notification createNotification(String bucket, Notification notification);
+
+  /**
+   * Returns the service account associated with the given project.
+   *
+   * @return the ID of the project to fetch the service account for.
+   * @throws StorageException upon failure
+   */
+  ServiceAccount getServiceAccount(String projectId);
 }

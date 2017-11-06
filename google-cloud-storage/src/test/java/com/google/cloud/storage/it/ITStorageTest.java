@@ -26,6 +26,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
@@ -42,6 +43,7 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.CopyWriter;
 import com.google.cloud.storage.HttpMethod;
+import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobField;
 import com.google.cloud.storage.Storage.BucketField;
@@ -105,6 +107,7 @@ public class ITStorageTest {
   private static final byte[] COMPRESSED_CONTENT = BaseEncoding.base64()
       .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
+  private static final String SERVICE_ACCOUNT_EMAIL = "gcloud-devel@gs-project-accounts.iam.gserviceaccount.com";
 
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -1536,5 +1539,13 @@ public class ITStorageTest {
       assertNull(remoteBucket.getCreateTime());
       assertNull(remoteBucket.getSelfLink());
     }
+  }
+
+  @Test
+  public void testGetServiceAccount() throws InterruptedException {
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
+    assertNotNull(serviceAccount);
+    assertEquals(SERVICE_ACCOUNT_EMAIL, serviceAccount.getEmail());
   }
 }
