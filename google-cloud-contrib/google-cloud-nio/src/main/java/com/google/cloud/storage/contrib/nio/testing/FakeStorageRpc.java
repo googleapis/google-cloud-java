@@ -21,6 +21,7 @@ import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Policy;
+import com.google.api.services.storage.model.ServiceAccount;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.Tuple;
@@ -477,5 +478,10 @@ class FakeStorageRpc implements StorageRpc {
   @Override
   public Notification createNotification(String bucket, Notification notification) {
     throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public ServiceAccount getServiceAccount(String projectId) {
+    return null;
   }
 }
