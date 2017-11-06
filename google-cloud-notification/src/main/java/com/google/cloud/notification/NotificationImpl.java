@@ -30,9 +30,6 @@ public class NotificationImpl extends BaseService<StorageOptions> implements Not
   }
 
   public static class DefaultNotificationFactory implements NotificationFactory {
-
-    private static final StorageFactory INSTANCE = new StorageOptions.DefaultStorageFactory();
-
     @Override
     public Notification create(StorageOptions options) {
       return new NotificationImpl(options);

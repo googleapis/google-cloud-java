@@ -18,8 +18,6 @@ package com.google.cloud.storage;
 
 import static org.junit.Assert.assertEquals;
 
-import com.google.common.collect.ImmutableList;
-
 import org.junit.Test;
 
 public class ServiceAccountTest {

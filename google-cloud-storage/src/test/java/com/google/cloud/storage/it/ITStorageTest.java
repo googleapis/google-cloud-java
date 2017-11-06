@@ -25,7 +25,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
