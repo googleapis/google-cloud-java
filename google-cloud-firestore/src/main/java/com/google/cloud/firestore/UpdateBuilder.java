@@ -60,16 +60,13 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
     FieldPath lastField = null;
 
     for (FieldPath field : sortedFields) {
-      List<String> segments = field.getSegments();
-      Object value = data.get(field);
-
-      if (lastField != null) {
-        if (lastField.isPrefixOf(field)) {
-          throw new IllegalArgumentException(
-              String.format("Detected ambiguous definition for field '%s'.", lastField));
-        }
+      if (lastField != null && lastField.isPrefixOf(field)) {
+        throw new IllegalArgumentException(
+            String.format("Detected ambiguous definition for field '%s'.", lastField));
       }
 
+      List<String> segments = field.getSegments();
+      Object value = data.get(field);
       Map<String, Object> currentMap = result;
 
       for (int i = 0; i < segments.size(); ++i) {
