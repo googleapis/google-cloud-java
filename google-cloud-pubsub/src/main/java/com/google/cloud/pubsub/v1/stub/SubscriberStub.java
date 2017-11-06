@@ -58,7 +58,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by GAPIC v0.0.5")
-@BetaApi
+@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class SubscriberStub implements BackgroundResource {
 
   public UnaryCallable<Subscription, Subscription> createSubscriptionCallable() {

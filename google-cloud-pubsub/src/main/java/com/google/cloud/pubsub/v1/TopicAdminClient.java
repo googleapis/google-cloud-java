@@ -109,11 +109,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * TopicAdminSettings topicAdminSettings =
- *     TopicAdminSettings.newBuilder()
- *         .setTransportChannelProvider(TopicAdminSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     TopicAdminSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TopicAdminClient topicAdminClient =
  *     TopicAdminClient.create(topicAdminSettings);
  * </code>
@@ -142,7 +138,7 @@ public class TopicAdminClient implements BackgroundResource {
    * Constructs an instance of TopicAdminClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use TopicAdminSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TopicAdminClient create(PublisherStub stub) {
     return new TopicAdminClient(stub);
   }
@@ -156,6 +152,7 @@ public class TopicAdminClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TopicAdminClient(PublisherStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -165,7 +162,7 @@ public class TopicAdminClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PublisherStub getStub() {
     return stub;
   }

@@ -120,11 +120,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * DlpServiceSettings dlpServiceSettings =
- *     DlpServiceSettings.newBuilder()
- *         .setTransportChannelProvider(DlpServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     DlpServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DlpServiceClient dlpServiceClient =
  *     DlpServiceClient.create(dlpServiceSettings);
  * </code>
@@ -154,7 +150,7 @@ public class DlpServiceClient implements BackgroundResource {
    * Constructs an instance of DlpServiceClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use DlpServiceSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DlpServiceClient create(DlpServiceStub stub) {
     return new DlpServiceClient(stub);
   }
@@ -169,6 +165,7 @@ public class DlpServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DlpServiceClient(DlpServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -179,7 +176,7 @@ public class DlpServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DlpServiceStub getStub() {
     return stub;
   }

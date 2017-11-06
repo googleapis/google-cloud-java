@@ -89,6 +89,16 @@ public class PublisherImplTest {
         }
 
         @Override
+        public boolean needsEndpoint() {
+          return false;
+        }
+
+        @Override
+        public TransportChannelProvider withEndpoint(String endpoint) {
+          return null;
+        }
+
+        @Override
         public TransportChannel getTransportChannel() throws IOException {
           return GrpcTransportChannel.create(InProcessChannelBuilder.forName("test-server").build());
         }
