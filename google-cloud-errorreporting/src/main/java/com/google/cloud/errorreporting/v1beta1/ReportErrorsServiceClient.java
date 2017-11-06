@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
- *   ProjectName projectName = ProjectName.create("[PROJECT]");
+ *   ProjectName projectName = ProjectName.of("[PROJECT]");
  *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
  *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
  * }
@@ -90,10 +90,8 @@ import javax.annotation.Generated;
  * <code>
  * ReportErrorsServiceSettings reportErrorsServiceSettings =
  *     ReportErrorsServiceSettings.newBuilder()
- *         .setTransportProvider(ReportErrorsServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(ReportErrorsServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(ReportErrorsServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * ReportErrorsServiceClient reportErrorsServiceClient =
@@ -125,6 +123,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * Constructs an instance of ReportErrorsServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer to use ReportErrorsServiceSettings}.
    */
+  @BetaApi
   public static final ReportErrorsServiceClient create(ReportErrorsServiceStub stub) {
     return new ReportErrorsServiceClient(stub);
   }
@@ -168,7 +167,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
    * }
@@ -206,7 +205,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
@@ -238,7 +237,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)

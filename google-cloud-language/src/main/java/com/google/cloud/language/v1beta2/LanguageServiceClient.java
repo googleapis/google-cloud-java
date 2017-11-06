@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,10 +87,8 @@ import javax.annotation.Generated;
  * <code>
  * LanguageServiceSettings languageServiceSettings =
  *     LanguageServiceSettings.newBuilder()
- *         .setTransportProvider(LanguageServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(LanguageServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(LanguageServiceSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * LanguageServiceClient languageServiceClient =
@@ -122,6 +120,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * Constructs an instance of LanguageServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use LanguageServiceSettings}.
    */
+  @BetaApi
   public static final LanguageServiceClient create(LanguageServiceStub stub) {
     return new LanguageServiceClient(stub);
   }

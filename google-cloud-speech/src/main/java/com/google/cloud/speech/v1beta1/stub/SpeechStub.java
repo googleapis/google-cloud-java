@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,8 +49,7 @@ public abstract class SpeechStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: syncRecognizeCallable()");
   }
 
-  public OperationCallable<
-          AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata, Operation>
+  public OperationCallable<AsyncRecognizeRequest, AsyncRecognizeResponse, AsyncRecognizeMetadata>
       asyncRecognizeOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: asyncRecognizeOperationCallable()");
   }

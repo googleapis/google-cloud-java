@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.vision.v1;
+package com.google.cloud.videointelligence.v1beta2;
 
-import com.google.cloud.vision.v1.ImageAnnotatorGrpc.ImageAnnotatorImplBase;
+import com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceGrpc.VideoIntelligenceServiceImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -24,11 +25,11 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
-public class MockImageAnnotatorImpl extends ImageAnnotatorImplBase {
+public class MockVideoIntelligenceServiceImpl extends VideoIntelligenceServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;
 
-  public MockImageAnnotatorImpl() {
+  public MockVideoIntelligenceServiceImpl() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
   }
@@ -55,13 +56,12 @@ public class MockImageAnnotatorImpl extends ImageAnnotatorImplBase {
   }
 
   @Override
-  public void batchAnnotateImages(
-      BatchAnnotateImagesRequest request,
-      StreamObserver<BatchAnnotateImagesResponse> responseObserver) {
+  public void annotateVideo(
+      AnnotateVideoRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof BatchAnnotateImagesResponse) {
+    if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((BatchAnnotateImagesResponse) response);
+      responseObserver.onNext((Operation) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

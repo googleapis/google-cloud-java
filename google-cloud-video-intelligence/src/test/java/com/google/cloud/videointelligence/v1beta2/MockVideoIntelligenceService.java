@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.vision.v1;
+package com.google.cloud.videointelligence.v1beta2;
 
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.protobuf.GeneratedMessageV3;
@@ -21,11 +21,11 @@ import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
-public class MockImageAnnotator implements MockGrpcService {
-  private final MockImageAnnotatorImpl serviceImpl;
+public class MockVideoIntelligenceService implements MockGrpcService {
+  private final MockVideoIntelligenceServiceImpl serviceImpl;
 
-  public MockImageAnnotator() {
-    serviceImpl = new MockImageAnnotatorImpl();
+  public MockVideoIntelligenceService() {
+    serviceImpl = new MockVideoIntelligenceServiceImpl();
   }
 
   @Override

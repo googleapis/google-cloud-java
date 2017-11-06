@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,10 +87,8 @@ import javax.annotation.Generated;
  * <code>
  * ImageAnnotatorSettings imageAnnotatorSettings =
  *     ImageAnnotatorSettings.newBuilder()
- *         .setTransportProvider(ImageAnnotatorSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(ImageAnnotatorSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
+ *         .setTransportChannelProvider(ImageAnnotatorSettings.defaultGrpcTransportProviderBuilder()
+ *             .setEndpoint(myEndpoint)
  *             .build())
  *         .build();
  * ImageAnnotatorClient imageAnnotatorClient =
@@ -122,6 +120,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * Constructs an instance of ImageAnnotatorClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use ImageAnnotatorSettings}.
    */
+  @BetaApi
   public static final ImageAnnotatorClient create(ImageAnnotatorStub stub) {
     return new ImageAnnotatorClient(stub);
   }

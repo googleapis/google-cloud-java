@@ -28,7 +28,10 @@ import com.google.api.gax.core.Distribution;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.TransportChannel;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
@@ -83,6 +86,12 @@ import org.threeten.bp.Duration;
  *
  * <p>{@link Subscriber} will use the credentials set on the channel, which uses application default
  * credentials through {@link GoogleCredentials#getApplicationDefault} by default.
+ *
+ * <p>{@code Subscriber} is implemented using <a
+ * href="http://google.github.io/guava/releases/snapshot/api/docs/com/google/common/util/concurrent/Service.html">Guava's
+ * Service</a> and provides the same methods. See <a
+ * href="https://github.com/google/guava/wiki/ServiceExplained">Guava documentation</a> for more
+ * details.
  */
 public class Subscriber extends AbstractApiService {
   private static final int THREADS_PER_CHANNEL = 5;
@@ -111,9 +120,9 @@ public class Subscriber extends AbstractApiService {
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
   private final int numChannels;
   private final FlowController flowController;
-  private final ChannelProvider channelProvider;
+  private final TransportChannelProvider channelProvider;
   private final CredentialsProvider credentialsProvider;
-  private final List<ManagedChannel> channels;
+  private final List<Channel> channels;
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
   private final List<PollingSubscriberConnection> pollingSubscriberConnections;
@@ -168,11 +177,18 @@ public class Subscriber extends AbstractApiService {
           });
     }
 
-    channelProvider = builder.channelProvider;
+    TransportChannelProvider channelProvider = builder.channelProvider;
+    if (channelProvider.needsExecutor()) {
+      channelProvider = channelProvider.withExecutor(executor);
+    }
+    if (channelProvider.needsHeaders()) {
+      channelProvider = channelProvider.withHeaders(builder.headerProvider.getHeaders());
+    }
+    this.channelProvider = channelProvider;
     credentialsProvider = builder.credentialsProvider;
 
     numChannels = builder.parallelPullCount;
-    channels = new ArrayList<ManagedChannel>(numChannels);
+    channels = new ArrayList<>(numChannels);
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
     pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
     useStreaming = builder.useStreaming;
@@ -187,8 +203,25 @@ public class Subscriber extends AbstractApiService {
    * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
    * @param receiver an implementation of {@link MessageReceiver} used to process the received
    *     messages
+   *
+   * @deprecated Use {@link #newBuilder(SubscriptionName, MessageReceiver)} instead.
    */
+  @Deprecated
   public static Builder defaultBuilder(SubscriptionName subscription, MessageReceiver receiver) {
+    return newBuilder(subscription, receiver);
+  }
+
+  /**
+   * Constructs a new {@link Builder}.
+   *
+   * <p>Once {@link Builder#build} is called a gRPC stub will be created for use of the {@link
+   * Subscriber}.
+   *
+   * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
+   * @param receiver an implementation of {@link MessageReceiver} used to process the received
+   *     messages
+   */
+  public static Builder newBuilder(SubscriptionName subscription, MessageReceiver receiver) {
     return new Builder(subscription, receiver);
   }
 
@@ -213,7 +246,7 @@ public class Subscriber extends AbstractApiService {
    * <p>Example of receiving a specific number of messages.
    *
    * <pre>{@code
-   * Subscriber subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
+   * Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
    * subscriber.addListener(new Subscriber.Listener() {
    *   public void failed(Subscriber.State from, Throwable failure) {
    *     // Handle error.
@@ -241,19 +274,11 @@ public class Subscriber extends AbstractApiService {
 
     try {
       for (int i = 0; i < numChannels; i++) {
-        final ManagedChannel channel =
-            channelProvider.needsExecutor()
-                ? channelProvider.getChannel(executor)
-                : channelProvider.getChannel();
-        channels.add(channel);
+        GrpcTransportChannel transportChannel =
+            (GrpcTransportChannel) channelProvider.getTransportChannel();
+        channels.add(transportChannel.getChannel());
         if (channelProvider.shouldAutoClose()) {
-          closeables.add(
-              new AutoCloseable() {
-                @Override
-                public void close() {
-                  channel.shutdown();
-                }
-              });
+          closeables.add(transportChannel);
         }
       }
     } catch (IOException e) {
@@ -510,10 +535,12 @@ public class Subscriber extends AbstractApiService {
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     ExecutorProvider systemExecutorProvider = FixedExecutorProvider.create(SHARED_SYSTEM_EXECUTOR);
-    ChannelProvider channelProvider =
-        SubscriptionAdminSettings.defaultGrpcChannelProviderBuilder()
+    TransportChannelProvider channelProvider =
+        SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
             .build();
+    HeaderProvider headerProvider =
+        SubscriptionAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     CredentialsProvider credentialsProvider =
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
@@ -533,8 +560,13 @@ public class Subscriber extends AbstractApiService {
      * are encouraged to provide instances of {@code ChannelProvider} that creates new channels
      * instead of returning pre-initialized ones.
      */
-    public Builder setChannelProvider(ChannelProvider channelProvider) {
+    public Builder setChannelProvider(TransportChannelProvider channelProvider) {
       this.channelProvider = Preconditions.checkNotNull(channelProvider);
+      return this;
+    }
+
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      this.headerProvider = Preconditions.checkNotNull(headerProvider);
       return this;
     }
 

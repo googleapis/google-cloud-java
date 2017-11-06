@@ -108,7 +108,7 @@ public class ITPubSubTest {
 
     final SettableApiFuture<PubsubMessage> received = SettableApiFuture.create();
     Subscriber subscriber =
-        Subscriber.defaultBuilder(
+        Subscriber.newBuilder(
                 subscriptionName,
                 new MessageReceiver() {
                   @Override
@@ -131,7 +131,7 @@ public class ITPubSubTest {
         MoreExecutors.directExecutor());
     subscriber.startAsync();
 
-    Publisher publisher = Publisher.defaultBuilder(topicName).build();
+    Publisher publisher = Publisher.newBuilder(topicName).build();
     publisher.publish(message).get();
     publisher.shutdown();
 

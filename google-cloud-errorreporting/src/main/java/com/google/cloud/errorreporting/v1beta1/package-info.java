@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@
  * <pre>
  * <code>
  * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
- *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
+ *   GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
  *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
  * }
  * </code>
@@ -44,7 +44,7 @@
  * <pre>
  * <code>
  * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
- *   ProjectName projectName = ProjectName.create("[PROJECT]");
+ *   ProjectName projectName = ProjectName.of("[PROJECT]");
  *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
  * }
  * </code>
@@ -59,7 +59,7 @@
  * <pre>
  * <code>
  * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
- *   ProjectName projectName = ProjectName.create("[PROJECT]");
+ *   ProjectName projectName = ProjectName.of("[PROJECT]");
  *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
  *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
  * }

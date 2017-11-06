@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@
  * <pre>
  * <code>
  * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
- *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
+ *   TopicName name = TopicName.of("[PROJECT]", "[TOPIC]");
  *   Topic response = topicAdminClient.createTopic(name);
  * }
  * </code>
@@ -49,8 +49,8 @@
  * <pre>
  * <code>
  * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
- *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
- *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+ *   SubscriptionName name = SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+ *   TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
  *   Subscription response = subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
