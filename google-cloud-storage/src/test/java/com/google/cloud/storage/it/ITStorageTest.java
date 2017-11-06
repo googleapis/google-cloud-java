@@ -16,7 +16,6 @@
 
 package com.google.cloud.storage.it;
 
-import static com.google.common.collect.Sets.newHashSet;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -58,7 +57,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
 import java.io.ByteArrayInputStream;
@@ -72,7 +70,9 @@ import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -402,6 +402,52 @@ public class ITStorageTest {
       assertEquals(BUCKET, remoteBlob.getBucket());
       assertTrue(blobSet.contains(remoteBlob.getName()));
       assertNull(remoteBlob.getContentType());
+    }
+    assertTrue(remoteBlob1.delete());
+    assertTrue(remoteBlob2.delete());
+  }
+
+  @Test(timeout = 5000)
+  public void testListBlobRequesterPays() throws InterruptedException {
+    String[] blobNames = {"test-list-blobs-empty-selected-fields-blob1",
+        "test-list-blobs-empty-selected-fields-blob2"};
+    BlobInfo blob1 = BlobInfo.newBuilder(BUCKET, blobNames[0])
+        .setContentType(CONTENT_TYPE)
+        .build();
+    BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1])
+        .setContentType(CONTENT_TYPE)
+        .build();
+    Blob remoteBlob1 = storage.create(blob1);
+    Blob remoteBlob2 = storage.create(blob2);
+    assertNotNull(remoteBlob1);
+    assertNotNull(remoteBlob2);
+
+    Page<Blob> page = storage.list(BUCKET,
+        Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+        Storage.BlobListOption.fields());
+
+    // Test listing a Requester Pays bucket.
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+    assertNull(remoteBucket.requesterPays());
+    remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+    Bucket updatedBucket = storage.update(remoteBucket);
+    assertTrue(updatedBucket.requesterPays());
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    try {
+      page = storage.list(BUCKET,
+          Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+          Storage.BlobListOption.fields(),
+          Storage.BlobListOption.userProject("fakeBillingProjectId"));
+      fail("Expected bad user project error.");
+    } catch (StorageException e) {
+      assertTrue(e.getMessage().contains("User project specified in the request is invalid"));
+    }
+    while (Iterators.size(page.iterateAll().iterator()) != 2) {
+      Thread.sleep(500);
+      page = storage.list(BUCKET,
+          Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+          Storage.BlobListOption.fields(),
+          Storage.BlobListOption.userProject(projectId));
     }
     assertTrue(remoteBlob1.delete());
     assertTrue(remoteBlob2.delete());
@@ -1356,16 +1402,36 @@ public class ITStorageTest {
 
   @Test
   public void testBucketAcl() {
-    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers()));
-    assertFalse(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    testBucketAclRequesterPays(true);
+    testBucketAclRequesterPays(false);
+  }
+
+  private void testBucketAclRequesterPays(boolean requesterPays) {
+    if (requesterPays) {
+      Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+      assertNull(remoteBucket.requesterPays());
+      remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+      Bucket updatedBucket = storage.update(remoteBucket);
+      assertTrue(updatedBucket.requesterPays());
+    }
+
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+
+    Storage.BucketSourceOption[] bucketOptions = requesterPays
+        ? new Storage.BucketSourceOption[] {Storage.BucketSourceOption.userProject(projectId)}
+        : new Storage.BucketSourceOption[] {};
+
+    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
+    assertFalse(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
     Acl acl = Acl.of(User.ofAllAuthenticatedUsers(), Role.READER);
-    assertNotNull(storage.createAcl(BUCKET, acl));
-    Acl updatedAcl = storage.updateAcl(BUCKET, acl.toBuilder().setRole(Role.WRITER).build());
+    assertNotNull(storage.createAcl(BUCKET, acl, bucketOptions));
+    Acl updatedAcl = storage.updateAcl(BUCKET, acl.toBuilder().setRole(Role.WRITER).build(), bucketOptions);
     assertEquals(Role.WRITER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(storage.listAcls(BUCKET));
+    Set<Acl> acls = new HashSet<>();
+    acls.addAll(storage.listAcls(BUCKET, bucketOptions));
     assertTrue(acls.contains(updatedAcl));
-    assertTrue(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
-    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    assertTrue(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
+    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
   }
 
   @Test
@@ -1376,7 +1442,8 @@ public class ITStorageTest {
     assertNotNull(storage.createDefaultAcl(BUCKET, acl));
     Acl updatedAcl = storage.updateDefaultAcl(BUCKET, acl.toBuilder().setRole(Role.OWNER).build());
     assertEquals(Role.OWNER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(storage.listDefaultAcls(BUCKET));
+    Set<Acl> acls = new HashSet<>();
+    acls.addAll(storage.listDefaultAcls(BUCKET));
     assertTrue(acls.contains(updatedAcl));
     assertTrue(storage.deleteDefaultAcl(BUCKET, User.ofAllAuthenticatedUsers()));
     assertNull(storage.getDefaultAcl(BUCKET, User.ofAllAuthenticatedUsers()));
@@ -1392,7 +1459,7 @@ public class ITStorageTest {
     assertNotNull(storage.createAcl(blobId, acl));
     Acl updatedAcl = storage.updateAcl(blobId, acl.toBuilder().setRole(Role.OWNER).build());
     assertEquals(Role.OWNER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(storage.listAcls(blobId));
+    Set<Acl> acls = new HashSet<>(storage.listAcls(blobId));
     assertTrue(acls.contains(updatedAcl));
     assertTrue(storage.deleteAcl(blobId, User.ofAllAuthenticatedUsers()));
     assertNull(storage.getAcl(blobId, User.ofAllAuthenticatedUsers()));
@@ -1451,24 +1518,41 @@ public class ITStorageTest {
 
   @Test
   public void testBucketPolicy() {
+    testBucketPolicyRequesterPays(true);
+    testBucketPolicyRequesterPays(false);
+  }
+
+  private void testBucketPolicyRequesterPays(boolean requesterPays) {
+    if (requesterPays) {
+      Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+      assertNull(remoteBucket.requesterPays());
+      remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+      Bucket updatedBucket = storage.update(remoteBucket);
+      assertTrue(updatedBucket.requesterPays());
+    }
+
     String projectId = remoteStorageHelper.getOptions().getProjectId();
+
+    Storage.BucketSourceOption[] bucketOptions = requesterPays
+        ? new Storage.BucketSourceOption[] {Storage.BucketSourceOption.userProject(projectId)}
+        : new Storage.BucketSourceOption[] {};
     Identity projectOwner = Identity.projectOwner(projectId);
     Identity projectEditor = Identity.projectEditor(projectId);
     Identity projectViewer = Identity.projectViewer(projectId);
     Map<com.google.cloud.Role, Set<Identity>> bindingsWithoutPublicRead =
         ImmutableMap.of(
             StorageRoles.legacyBucketOwner(),
-            (Set<Identity>) newHashSet(projectOwner, projectEditor),
-            StorageRoles.legacyBucketReader(), newHashSet(projectViewer));
+            new HashSet<>(Arrays.asList(projectOwner, projectEditor)),
+            StorageRoles.legacyBucketReader(), (Set<Identity>) new HashSet<>(Collections.singleton(projectViewer)));
     Map<com.google.cloud.Role, Set<Identity>> bindingsWithPublicRead =
         ImmutableMap.of(
             StorageRoles.legacyBucketOwner(),
-            (Set<Identity>) newHashSet(projectOwner, projectEditor),
-            StorageRoles.legacyBucketReader(), newHashSet(projectViewer),
-            StorageRoles.legacyObjectReader(), newHashSet(Identity.allUsers()));
+            new HashSet<>(Arrays.asList(projectOwner, projectEditor)),
+            StorageRoles.legacyBucketReader(), new HashSet<>(Collections.singleton(projectViewer)),
+            StorageRoles.legacyObjectReader(), (Set<Identity>) new HashSet<>(Collections.singleton((Identity.allUsers()))));
 
     // Validate getting policy.
-    Policy currentPolicy = storage.getIamPolicy(BUCKET);
+    Policy currentPolicy = storage.getIamPolicy(BUCKET, bucketOptions);
     assertEquals(bindingsWithoutPublicRead, currentPolicy.getBindings());
 
     // Validate updating policy.
@@ -1477,14 +1561,16 @@ public class ITStorageTest {
             BUCKET,
             currentPolicy.toBuilder()
                 .addIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
-                .build());
+                .build(),
+            bucketOptions);
     assertEquals(bindingsWithPublicRead, updatedPolicy.getBindings());
     Policy revertedPolicy =
         storage.setIamPolicy(
             BUCKET,
             updatedPolicy.toBuilder()
                 .removeIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
-                .build());
+                .build(),
+            bucketOptions);
     assertEquals(bindingsWithoutPublicRead, revertedPolicy.getBindings());
 
     // Validate testing permissions.
@@ -1493,7 +1579,8 @@ public class ITStorageTest {
         expectedPermissions,
         storage.testIamPermissions(
             BUCKET,
-            ImmutableList.of("storage.buckets.getIamPolicy", "storage.buckets.setIamPolicy")));
+            ImmutableList.of("storage.buckets.getIamPolicy", "storage.buckets.setIamPolicy"),
+            bucketOptions));
   }
 
   @Test
@@ -1527,7 +1614,7 @@ public class ITStorageTest {
   public void testListBucketRequesterPaysFails() throws InterruptedException {
     String projectId = remoteStorageHelper.getOptions().getProjectId();
     Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-          Storage.BucketListOption.fields(), Storage.BucketListOption.userProject(projectId)).iterateAll().iterator();
+        Storage.BucketListOption.fields(), Storage.BucketListOption.userProject(projectId)).iterateAll().iterator();
     while (!bucketIterator.hasNext()) {
       Thread.sleep(500);
       bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),

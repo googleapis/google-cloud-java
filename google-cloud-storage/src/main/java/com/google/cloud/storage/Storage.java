@@ -834,6 +834,17 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * Returns an option for bucket's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     *
+     * @param userProject projectId of the billing user project.
+     */
+    @GcpLaunchStage.Alpha
+    public static BlobListOption userProject(String userProject) {
+      return new BlobListOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
+    /**
      * If set to {@code true}, lists all versions of a blob. The default is {@code false}.
      *
      * @see <a href ="https://cloud.google.com/storage/docs/object-versioning">Object Versioning</a>
@@ -2178,14 +2189,24 @@ public interface Storage extends Service<StorageOptions> {
    * Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers());
    * }</pre>
    *
-   * <p>Example of getting the ACL entry for a specific user on a bucket.
+   * <p>Example of getting the ACL entry for a specific user on a requester_pays bucket with a
+   * user_project option.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * String userEmail = "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com";
-   * Acl acl = storage.getAcl(bucketName, new User(userEmail));
+   * BucketSourceOption userProjectOption = BucketSourceOption.userProject("myProject");
+   * Acl acl = storage.getAcl(bucketName, new User(userEmail), userProjectOption);
    * }</pre>
    *
+   * @param bucket name of the bucket where the getAcl operation takes place
+   * @param entity ACL entity to fetch
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
+   */
+  Acl getAcl(String bucket, Entity entity, BucketSourceOption... options);
+
+  /**
+   * @see #getAcl(String, Entity, BucketSourceOption...)
    */
   Acl getAcl(String bucket, Entity entity);
 
@@ -2203,8 +2224,24 @@ public interface Storage extends Service<StorageOptions> {
    * }
    * }</pre>
    *
+   * <p>Example of deleting the ACL entry for a specific user on a requester_pays bucket with a
+   * user_project option.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * BucketSourceOption userProject = BucketSourceOption.userProject("myProject");
+   * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers(), userProject);
+   * }</pre>
+   *
+   * @param bucket name of the bucket to delete an ACL from
+   * @param entity ACL entity to delete
+   * @param options extra parameters to apply to this operation
    * @return {@code true} if the ACL was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
+   */
+  boolean deleteAcl(String bucket, Entity entity, BucketSourceOption... options);
+
+  /**
+   * @see #deleteAcl(String, Entity, BucketSourceOption...)
    */
   boolean deleteAcl(String bucket, Entity entity);
 
@@ -2217,7 +2254,22 @@ public interface Storage extends Service<StorageOptions> {
    * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
    * }</pre>
    *
+   * <p>Example of creating a new ACL entry on a requester_pays bucket with a user_project option.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER),
+   *     BucketSourceOption.userProject("myProject"));
+   * }</pre>
+   *
+   * @param bucket name of the bucket for which an ACL should be created
+   * @param acl ACL to create
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
+   */
+  Acl createAcl(String bucket, Acl acl, BucketSourceOption... options);
+
+  /**
+   * @see #createAcl(String, Acl, BucketSourceOption...)
    */
   Acl createAcl(String bucket, Acl acl);
 
@@ -2230,7 +2282,22 @@ public interface Storage extends Service<StorageOptions> {
    * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
    * }</pre>
    *
+   * <p>Example of updating a new ACL entry on a requester_pays bucket with a user_project option.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER),
+   *     BucketSourceOption.userProject("myProject"));
+   * }</pre>
+   *
+   * @param bucket name of the bucket where the updateAcl operation takes place
+   * @param acl ACL to update
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
+   */
+  Acl updateAcl(String bucket, Acl acl, BucketSourceOption... options);
+
+  /**
+   * @see #updateAcl(String, Acl, BucketSourceOption...)
    */
   Acl updateAcl(String bucket, Acl acl);
 
@@ -2246,7 +2313,24 @@ public interface Storage extends Service<StorageOptions> {
    * }
    * }</pre>
    *
+   * <p>Example of listing the ACL entries for a blob in a requester_pays bucket with a user_project
+   * option.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * List<Acl> acls = storage.listAcls(bucketName, BucketSourceOption.userProject("myProject"));
+   * for (Acl acl : acls) {
+   *   // do something with ACL entry
+   * }
+   * }</pre>
+   *
+   * @param bucket the name of the bucket to list ACLs for
+   * @param options any number of BucketSourceOptions to apply to this operation
    * @throws StorageException upon failure
+   */
+  List<Acl> listAcls(String bucket, BucketSourceOption... options);
+
+  /**
+   * @see #listAcls(String, BucketSourceOption...)
    */
   List<Acl> listAcls(String bucket);
 
@@ -2459,11 +2543,13 @@ public interface Storage extends Service<StorageOptions> {
    * Policy policy = storage.getIamPolicy(bucketName);
    * }</pre>
    *
+   * @param bucket name of the bucket where the getIamPolicy operation takes place
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   @BetaApi
   @GcpLaunchStage.Alpha
-  Policy getIamPolicy(String bucket);
+  Policy getIamPolicy(String bucket, BucketSourceOption... options);
 
   /**
    * Updates the IAM policy on the specified bucket.
@@ -2481,11 +2567,14 @@ public interface Storage extends Service<StorageOptions> {
    *             .build());
    * }</pre>
    *
+   * @param bucket name of the bucket where the setIamPolicy operation takes place
+   * @param policy policy to be set on the specified bucket
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   @BetaApi
   @GcpLaunchStage.Alpha
-  Policy setIamPolicy(String bucket, Policy policy);
+  Policy setIamPolicy(String bucket, Policy policy, BucketSourceOption... options);
 
   /**
    * Tests whether the caller holds the permissions on the specified bucket. Returns a list of
@@ -2503,11 +2592,14 @@ public interface Storage extends Service<StorageOptions> {
    * }
    * }</pre>
    *
+   * @param bucket name of the bucket where the testIamPermissions operation takes place
+   * @param permissions list of permissions to test on the bucket
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   @BetaApi
   @GcpLaunchStage.Alpha
-  List<Boolean> testIamPermissions(String bucket, List<String> permissions);
+  List<Boolean> testIamPermissions(String bucket, List<String> permissions, BucketSourceOption... options);
 
   /**
    * Returns the service account associated with the given project.
