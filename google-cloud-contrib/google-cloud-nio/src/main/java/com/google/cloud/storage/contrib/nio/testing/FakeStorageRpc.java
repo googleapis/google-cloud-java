@@ -343,27 +343,27 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BucketAccessControl getAcl(String bucket, String entity) {
+  public BucketAccessControl getAcl(String bucket, String entity, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public boolean deleteAcl(String bucket, String entity) {
+  public boolean deleteAcl(String bucket, String entity, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public BucketAccessControl createAcl(BucketAccessControl acl) {
+  public BucketAccessControl createAcl(BucketAccessControl acl, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public BucketAccessControl patchAcl(BucketAccessControl acl) {
+  public BucketAccessControl patchAcl(BucketAccessControl acl, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public List<BucketAccessControl> listAcls(String bucket) {
+  public List<BucketAccessControl> listAcls(String bucket, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
@@ -449,17 +449,17 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Policy getIamPolicy(String bucket) {
+  public Policy getIamPolicy(String bucket, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public Policy setIamPolicy(String bucket, Policy policy) {
+  public Policy setIamPolicy(String bucket, Policy policy, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions) {
+  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 }
