@@ -155,6 +155,6 @@ abstract class FieldPath extends BasePath<FieldPath> implements Comparable<Field
 
   @Override
   public int compareTo(@Nonnull FieldPath other) {
-    return canonicalString().compareTo(other.canonicalString());
+    return getEncodedPath().compareTo(other.getEncodedPath());
   }
 }
