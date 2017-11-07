@@ -1,9 +1,9 @@
-Google Cloud Java Client for Firestore
+Google Cloud Java Client for Cloud Pub/Sub Notifications
 =================================
 
 
--  [Product Documentation](https://cloud.google.com/firestore/docs/)
--  [Client Library Documentation](https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/firestore/package-summary.html)
+-  [Product Documentation](https://cloud.google.com/storage/docs/pubsub-notifications)
+-  [Client Library Documentation](https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/notification/package-summary.html)
 
 Quickstart
 ----------
@@ -11,17 +11,17 @@ If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-firestore</artifactId>
-  <version>0.26.0-beta</version>
+  <artifactId>google-cloud-notification</artifactId>
+  <version>0.26.1-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-firestore:0.26.0-beta'
+compile 'com.google.cloud:google-cloud-notification:0.26.1-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-firestore" % "0.26.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-notification" % "0.26.1-alpha"
 ```
 
 Authentication
@@ -31,10 +31,10 @@ See the
 [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication)
 section in the base directory's README.
 
-About Google Cloud Firestore
+About Google Cloud Pub/Sub Notifications
 ----------------------------
 
-Cloud Firestore is a fully-managed NoSQL document database for mobile, web, and server development from Firebase and Google Cloud Platform.  It's backed by a multi-region replicated database that ensures once data is committed, it's durable even in the face of unexpected disasters. Not only that, but despite being a distributed database, it's also strongly consistent and offers seamless integration with other Firebase and Google Cloud Platform products, including Google Cloud Functions.
+Cloud Pub/Sub Notifications sends information about changes to objects in your buckets to Google Cloud Pub/Sub, where the information is added to a Cloud Pub/Sub topic of your choice in the form of messages. For example, you can track objects that are created and deleted in your bucket. Each notification contains information describing both the event that triggered it and the object that changed.
 
 Troubleshooting
 ---------------
