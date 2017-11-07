@@ -16,6 +16,10 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.cloud.pubsub.v1.MessageDispatcher.PENDING_ACKS_SEND_DELAY;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -41,6 +45,12 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.LinkedBlockingQueue;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -50,17 +60,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.threeten.bp.Duration;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.LinkedBlockingQueue;
-
-import static com.google.cloud.pubsub.v1.MessageDispatcher.PENDING_ACKS_SEND_DELAY;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /** Tests for {@link Subscriber}. */
 @RunWith(Parameterized.class)
@@ -235,9 +234,12 @@ public class SubscriberTest {
     // Trigger ack sending
     subscriber.stopAsync().awaitTerminated();
 
+    // One receipt, one nack
     assertEquivalent(
-        ImmutableList.of(new ModifyAckDeadline("A", 0)),
-        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(1));
+        ImmutableList.of(
+            new ModifyAckDeadline("A", 0),
+            new ModifyAckDeadline("A", Subscriber.MIN_ACK_DEADLINE_SECONDS)),
+        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(2));
   }
 
   @Test
@@ -251,9 +253,12 @@ public class SubscriberTest {
     // Trigger nack sending
     subscriber.stopAsync().awaitTerminated();
 
+    // One receipt, one nack
     assertEquivalent(
-        ImmutableList.of(new ModifyAckDeadline("A", 0)),
-        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(1));
+        ImmutableList.of(
+            new ModifyAckDeadline("A", 0),
+            new ModifyAckDeadline("A", Subscriber.MIN_ACK_DEADLINE_SECONDS)),
+        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(2));
   }
 
   @Test
@@ -298,30 +303,17 @@ public class SubscriberTest {
 
     assertEquivalent(testAckIdsBatch1, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(3));
     assertEquivalent(
-        ImmutableList.of(new ModifyAckDeadline("D", 0), new ModifyAckDeadline("E", 0)),
-        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(2));
+        ImmutableList.of(
+            new ModifyAckDeadline("A", Subscriber.MIN_ACK_DEADLINE_SECONDS),
+            new ModifyAckDeadline("B", Subscriber.MIN_ACK_DEADLINE_SECONDS),
+            new ModifyAckDeadline("C", Subscriber.MIN_ACK_DEADLINE_SECONDS),
+            new ModifyAckDeadline("D", Subscriber.MIN_ACK_DEADLINE_SECONDS),
+            new ModifyAckDeadline("E", Subscriber.MIN_ACK_DEADLINE_SECONDS),
+            new ModifyAckDeadline("D", 0),
+            new ModifyAckDeadline("E", 0)),
+        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(7));
 
     subscriber.stopAsync().awaitTerminated();
-  }
-
-  @Test
-  public void testReceipts() throws Exception {
-    Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
-
-    List<String> testAckIdsBatch = ImmutableList.of("A", "B", "C");
-    testReceiver.setExplicitAck(true);
-    sendMessages(testAckIdsBatch);
-    fakeExecutor.advanceTime(MessageDispatcher.PENDING_ACKS_SEND_DELAY);
-
-    assertEquivalentWithTransformation(
-        testAckIdsBatch,
-        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(3),
-        new Function<String, ModifyAckDeadline>() {
-          @Override
-          public ModifyAckDeadline apply(String ack) {
-            return new ModifyAckDeadline(ack, Subscriber.MIN_ACK_DEADLINE_SECONDS);
-          }
-        });
   }
 
   // @Test
