@@ -23,9 +23,9 @@ import com.google.cloud.storage.StorageOptions;
 import java.util.List;
 
 /**
- * An interface for notifications in Google Cloud Storage.
+ * An interface for Pub/Sub Notifications in Google Cloud Storage.
  *
- * @see <a href="https://cloud.google.com/storage/docs">Google Cloud Storage</a>
+ * @see <a href="https://cloud.google.com/storage/docs/pubsub-notifications">Google Cloud Pub/Sub Notifications for Storage</a>
  */
 public interface Notification extends Service<StorageOptions> {
   @BetaApi
