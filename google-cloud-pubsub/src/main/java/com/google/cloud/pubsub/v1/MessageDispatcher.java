@@ -32,11 +32,10 @@ import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Deque;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
-import java.util.Set;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -73,8 +72,9 @@ class MessageDispatcher {
   private final MessageWaiter messagesWaiter;
 
   private final PriorityQueue<ExtensionJob> outstandingAckHandlers;
-  private final Set<String> pendingAcks;
-  private final Set<String> pendingNacks;
+  private final LinkedBlockingQueue<String> pendingAcks = new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<String> pendingNacks = new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<String> pendingReceipts = new LinkedBlockingQueue<>();
 
   private final Lock alarmsLock;
   // The deadline should be set by the subscriber connection before use,
@@ -185,47 +185,41 @@ class MessageDispatcher {
       receivedTimeMillis = clock.millisTime();
     }
 
-    @Override
-    public void onFailure(Throwable t) {
-      logger.log(
-          Level.WARNING,
-          "MessageReceiver failed to processes ack ID: " + ackId + ", the message will be nacked.",
-          t);
+    private void onBoth(LinkedBlockingQueue<String> destination) {
       acked.getAndSet(true);
-      synchronized (pendingNacks) {
-        pendingNacks.add(ackId);
-      }
-      setupPendingAcksAlarm();
+      destination.add(ackId);
       flowController.release(1, outstandingBytes);
       messagesWaiter.incrementPendingMessages(-1);
       processOutstandingBatches();
     }
 
     @Override
+    public void onFailure(Throwable t) {
+      logger.log(
+          Level.WARNING,
+          "MessageReceiver failed to processes ack ID: " + ackId + ", the message will be nacked.",
+          t);
+      onBoth(pendingNacks);
+    }
+
+    @Override
     public void onSuccess(AckReply reply) {
-      acked.getAndSet(true);
+      LinkedBlockingQueue<String> destination;
       switch (reply) {
         case ACK:
-          synchronized (pendingAcks) {
-            pendingAcks.add(ackId);
-          }
+          destination = pendingAcks;
           // Record the latency rounded to the next closest integer.
           ackLatencyDistribution.record(
               Ints.saturatedCast(
                   (long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D)));
           break;
         case NACK:
-          synchronized (pendingNacks) {
-            pendingNacks.add(ackId);
-          }
+          destination = pendingNacks;
           break;
         default:
           throw new IllegalArgumentException(String.format("AckReply: %s not supported", reply));
       }
-      setupPendingAcksAlarm();
-      flowController.release(1, outstandingBytes);
-      messagesWaiter.incrementPendingMessages(-1);
-      processOutstandingBatches();
+      onBoth(destination);
     }
   }
 
@@ -254,14 +248,31 @@ class MessageDispatcher {
     this.flowController = flowController;
     this.outstandingMessageBatches = outstandingMessageBatches;
     outstandingAckHandlers = new PriorityQueue<>();
-    pendingAcks = new HashSet<>();
-    pendingNacks = new HashSet<>();
     // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
     this.ackLatencyDistribution = ackLatencyDistribution;
     alarmsLock = new ReentrantLock();
     nextAckDeadlineExtensionAlarmTime = Instant.ofEpochMilli(Long.MAX_VALUE);
     messagesWaiter = new MessageWaiter();
     this.clock = clock;
+  }
+
+  public void start() {
+    pendingAcksAlarm =
+        systemExecutor.scheduleWithFixedDelay(
+            new Runnable() {
+              @Override
+              public void run() {
+                try {
+                  processOutstandingAckOperations();
+                } catch (Exception e) {
+                  // Catch everything so that one run failing doesn't prevent subsequent runs.
+                  logger.log(Level.WARNING, "failed to send acks/nacks", e);
+                }
+              }
+            },
+            PENDING_ACKS_SEND_DELAY.toMillis(),
+            PENDING_ACKS_SEND_DELAY.toMillis(),
+            TimeUnit.MILLISECONDS);
   }
 
   public void stop() {
@@ -271,6 +282,10 @@ class MessageDispatcher {
       if (ackDeadlineExtensionAlarm != null) {
         ackDeadlineExtensionAlarm.cancel(true);
         ackDeadlineExtensionAlarm = null;
+      }
+      if (pendingAcksAlarm != null) {
+        pendingAcksAlarm.cancel(false);
+        pendingAcksAlarm = null;
       }
     } finally {
       alarmsLock.unlock();
@@ -328,6 +343,9 @@ class MessageDispatcher {
       return;
     }
     messagesWaiter.incrementPendingMessages(messages.size());
+    for (ReceivedMessage message : messages) {
+      pendingReceipts.add(message.getAckId());
+    }
 
     OutstandingMessageBatch outstandingBatch = new OutstandingMessageBatch(doneCallback);
     final ArrayList<AckHandler> ackHandlers = new ArrayList<>(messages.size());
@@ -418,32 +436,6 @@ class MessageDispatcher {
       if (batchDone) {
         batchCallback.run();
       }
-    }
-  }
-
-  private void setupPendingAcksAlarm() {
-    alarmsLock.lock();
-    try {
-      if (pendingAcksAlarm == null) {
-        pendingAcksAlarm =
-            systemExecutor.schedule(
-                new Runnable() {
-                  @Override
-                  public void run() {
-                    alarmsLock.lock();
-                    try {
-                      pendingAcksAlarm = null;
-                    } finally {
-                      alarmsLock.unlock();
-                    }
-                    processOutstandingAckOperations();
-                  }
-                },
-                PENDING_ACKS_SEND_DELAY.toMillis(),
-                TimeUnit.MILLISECONDS);
-      }
-    } finally {
-      alarmsLock.unlock();
     }
   }
 
@@ -574,31 +566,29 @@ class MessageDispatcher {
       List<PendingModifyAckDeadline> ackDeadlineExtensions) {
     List<PendingModifyAckDeadline> modifyAckDeadlinesToSend =
         Lists.newArrayList(ackDeadlineExtensions);
-    List<String> acksToSend = new ArrayList<>(pendingAcks.size());
-    synchronized (pendingAcks) {
-      if (!pendingAcks.isEmpty()) {
-        try {
-          acksToSend = new ArrayList<>(pendingAcks);
-          logger.log(Level.FINER, "Sending {0} acks", acksToSend.size());
-        } finally {
-          pendingAcks.clear();
-        }
-      }
-    }
+
+    List<String> acksToSend = new ArrayList<>();
+    pendingAcks.drainTo(acksToSend);
+    logger.log(Level.FINER, "Sending {0} acks", acksToSend.size());
+
     PendingModifyAckDeadline nacksToSend = new PendingModifyAckDeadline(0);
-    synchronized (pendingNacks) {
-      if (!pendingNacks.isEmpty()) {
-        try {
-          for (String ackId : pendingNacks) {
-            nacksToSend.addAckId(ackId);
-          }
-          logger.log(Level.FINER, "Sending {0} nacks", pendingNacks.size());
-        } finally {
-          pendingNacks.clear();
-        }
-        modifyAckDeadlinesToSend.add(nacksToSend);
-      }
+    pendingNacks.drainTo(nacksToSend.ackIds);
+    logger.log(Level.FINER, "Sending {0} nacks", nacksToSend.ackIds.size());
+    if (!nacksToSend.ackIds.isEmpty()) {
+      modifyAckDeadlinesToSend.add(nacksToSend);
     }
+
+    PendingModifyAckDeadline receiptsToSend =
+        new PendingModifyAckDeadline(getMessageDeadlineSeconds());
+    pendingReceipts.drainTo(receiptsToSend.ackIds);
+    logger.log(Level.FINER, "Sending {0} receipts", receiptsToSend.ackIds.size());
+    if (!receiptsToSend.ackIds.isEmpty()) {
+      modifyAckDeadlinesToSend.add(receiptsToSend);
+    }
+
+    System.err.println(String.format("sending %d %d %d", acksToSend.size(), nacksToSend.ackIds.size(), receiptsToSend.ackIds.size()));
+    Thread.dumpStack();
+
     ackProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
   }
 }
