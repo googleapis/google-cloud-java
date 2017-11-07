@@ -114,7 +114,7 @@ public class ITSystemTest {
     // Use Storage API to create a Notification on that Topic.
     NotificationInfo notification = notificationService.createNotification(BUCKET,  NotificationInfo.of(topic));
     assertNotNull(notification);
-    Set<NotificationInfo> notifications = Sets.newHashSet(notificationService.listNotifications(BUCKET));
+    List<NotificationInfo> notifications = notificationService.listNotifications(BUCKET);
     assertTrue(notifications.contains(notification));
     assertEquals(1, notifications.size());
 
@@ -123,7 +123,7 @@ public class ITSystemTest {
             .toBuilder()
             .setPayloadFormat(PayloadFormat.JSON_API_V1).build());
     assertEquals(topic, notification2.getTopic());
-    notifications = Sets.newHashSet(notificationService.listNotifications(BUCKET));
+    notifications = notificationService.listNotifications(BUCKET);
     assertTrue(notifications.contains(notification));
     assertTrue(notifications.contains(notification2));
     assertEquals(2, notifications.size());
