@@ -538,6 +538,7 @@ public class Subscriber extends AbstractApiService {
     TransportChannelProvider channelProvider =
         SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
+            .setKeepAliveTime(Duration.ofMinutes(5))
             .build();
     HeaderProvider headerProvider =
         SubscriptionAdminSettings.defaultApiClientHeaderProviderBuilder().build();
