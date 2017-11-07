@@ -20,12 +20,15 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.UnmodifiableIterator;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.Write;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -456,9 +459,12 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   /** Commit the current batch. */
   ApiFuture<List<WriteResult>> commit(@Nullable ByteString transactionId) {
+    // We create our own copy of this list since we need to access it when processing the response.
+    final ImmutableList<Write> writeRequests = ImmutableList.copyOf(this.writes);
+
     CommitRequest.Builder request = CommitRequest.newBuilder();
     request.setDatabase(firestore.getDatabaseName());
-    request.addAllWrites(writes);
+    request.addAllWrites(writeRequests);
 
     if (transactionId != null) {
       request.setTransaction(transactionId);
@@ -475,13 +481,35 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
             List<com.google.firestore.v1beta1.WriteResult> writeResults =
                 commitResponse.getWriteResultsList();
 
-            List<WriteResult> writeResultList = new ArrayList<>();
-            for (com.google.firestore.v1beta1.WriteResult writeResult : writeResults) {
-              writeResultList.add(
-                  WriteResult.fromProto(writeResult, commitResponse.getCommitTime()));
+            List<WriteResult> result = new ArrayList<>();
+
+            Preconditions.checkState(
+                writeRequests.size() == writeResults.size(),
+                "Expected one write result per operation, but got %s results for %s operations.",
+                writeResults.size(),
+                writeRequests.size());
+
+            UnmodifiableIterator<Write> requestIterator = writeRequests.iterator();
+            Iterator<com.google.firestore.v1beta1.WriteResult> responseIterator =
+                writeResults.iterator();
+
+            while (requestIterator.hasNext() && responseIterator.hasNext()) {
+              // Don't return write results for DocumentTransforms, as the fact
+              // that we have to split one write operation into two distinct
+              // write requests is an implementation detail.
+              switch (requestIterator.next().getOperationCase()) {
+                case UPDATE: // Fall through
+                case DELETE:
+                  result.add(
+                      WriteResult.fromProto(
+                          responseIterator.next(), commitResponse.getCommitTime()));
+                  break;
+                default:
+                  break;
+              }
             }
 
-            return writeResultList;
+            return result;
           }
         });
   }

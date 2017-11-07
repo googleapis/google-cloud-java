@@ -149,7 +149,8 @@ class FirestoreImpl implements Firestore {
         "Failed to detect Project ID. "
             + "Please explicitly set your Project ID in FirestoreOptions.");
     this.databasePath =
-        ResourcePath.create(DatabaseRootName.create(options.getProjectId(), options.getDatabaseId()));
+        ResourcePath.create(
+            DatabaseRootName.create(options.getProjectId(), options.getDatabaseId()));
   }
 
   @Nonnull

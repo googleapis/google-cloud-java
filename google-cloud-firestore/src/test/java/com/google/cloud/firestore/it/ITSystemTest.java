@@ -448,8 +448,8 @@ public class ITSystemTest {
                 DocumentSnapshot documentSnapshot = transaction.get(documentReference).get();
                 latch.countDown();
                 latch.await();
-                transaction.update(documentReference,
-                    "counter", documentSnapshot.getLong("counter") + 1);
+                transaction.update(
+                    documentReference, "counter", documentSnapshot.getLong("counter") + 1);
                 return "foo";
               }
             });
@@ -464,8 +464,8 @@ public class ITSystemTest {
                 DocumentSnapshot documentSnapshot = transaction.get(documentReference).get();
                 latch.countDown();
                 latch.await();
-                transaction.update(documentReference,
-                    "counter", documentSnapshot.getLong("counter") + 1);
+                transaction.update(
+                    documentReference, "counter", documentSnapshot.getLong("counter") + 1);
                 return "bar";
               }
             });
@@ -500,6 +500,15 @@ public class ITSystemTest {
     assertEquals(ALL_SUPPORTED_TYPES_OBJECT, iterator.next().toObject(AllSupportedTypes.class));
     assertEquals("foobar", iterator.next().get("foo"));
     assertFalse(iterator.next().exists());
+  }
+
+  @Test
+  public void omitWriteResultForDocumentTransforms() throws ExecutionException, InterruptedException {
+    WriteBatch batch = firestore.batch();
+    batch.set(randomColl.document(), SINGLE_FIELD_MAP);
+    batch.set(randomColl.document(), ImmutableMap.of("time", FieldValue.serverTimestamp()));
+    List<WriteResult> writeResults = batch.commit().get();
+    assertEquals(2, writeResults.size());
   }
 
   @Test
