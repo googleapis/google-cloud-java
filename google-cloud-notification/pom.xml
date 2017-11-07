@@ -6,7 +6,7 @@
   <artifactId>google-cloud-notification</artifactId>
   <version>0.26.1-alpha-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>Google Cloud Notification</name>
+  <name>Google Cloud Pub/Sub Notifications for Google Cloud Storage</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-notification
   </url>
   <description>
