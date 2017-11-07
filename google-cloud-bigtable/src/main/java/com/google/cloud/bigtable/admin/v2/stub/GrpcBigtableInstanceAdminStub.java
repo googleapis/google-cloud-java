@@ -1,11 +1,11 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -55,7 +55,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by GAPIC v0.0.5")
-@BetaApi
+@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>

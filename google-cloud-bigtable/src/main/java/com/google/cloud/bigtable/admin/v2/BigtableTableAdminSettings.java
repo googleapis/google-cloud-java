@@ -1,11 +1,11 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,8 +20,6 @@ import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListTable
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
@@ -33,7 +31,6 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -90,7 +87,7 @@ import org.threeten.bp.Duration;
  */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
-public class BigtableTableAdminSettings extends ClientSettings {
+public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdminSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -153,6 +150,7 @@ public class BigtableTableAdminSettings extends ClientSettings {
     return dropRowRangeSettings;
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BigtableTableAdminStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -186,13 +184,14 @@ public class BigtableTableAdminSettings extends ClientSettings {
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
+    return InstantiatingGrpcChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
@@ -241,12 +240,7 @@ public class BigtableTableAdminSettings extends ClientSettings {
   }
 
   private BigtableTableAdminSettings(Builder settingsBuilder) throws IOException {
-    super(
-        settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportChannelProvider(),
-        settingsBuilder.getCredentialsProvider(),
-        settingsBuilder.getHeaderProvider(),
-        settingsBuilder.getClock());
+    super(settingsBuilder);
 
     createTableSettings = settingsBuilder.createTableSettings().build();
     listTablesSettings = settingsBuilder.listTablesSettings().build();
@@ -310,7 +304,7 @@ public class BigtableTableAdminSettings extends ClientSettings {
           };
 
   /** Builder for BigtableTableAdminSettings. */
-  public static class Builder extends ClientSettings.Builder {
+  public static class Builder extends ClientSettings.Builder<BigtableTableAdminSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<CreateTableRequest, Table> createTableSettings;
@@ -393,6 +387,7 @@ public class BigtableTableAdminSettings extends ClientSettings {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
       return initDefaults(builder);
     }
 
@@ -449,30 +444,6 @@ public class BigtableTableAdminSettings extends ClientSettings {
               deleteTableSettings,
               modifyColumnFamiliesSettings,
               dropRowRangeSettings);
-    }
-
-    @Override
-    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
-      super.setExecutorProvider(executorProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
-      super.setTransportChannelProvider(transportProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setHeaderProvider(HeaderProvider headerProvider) {
-      super.setHeaderProvider(headerProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
-      super.setCredentialsProvider(credentialsProvider);
-      return this;
     }
 
     /**
