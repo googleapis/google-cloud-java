@@ -586,6 +586,9 @@ class MessageDispatcher {
       modifyAckDeadlinesToSend.add(receiptsToSend);
     }
 
+    System.err.println(String.format("sending %d %d %d", acksToSend.size(), nacksToSend.ackIds.size(), receiptsToSend.ackIds.size()));
+    Thread.dumpStack();
+
     ackProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
   }
 }
