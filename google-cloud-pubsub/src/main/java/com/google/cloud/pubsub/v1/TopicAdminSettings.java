@@ -26,8 +26,6 @@ import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
@@ -42,7 +40,6 @@ import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.BatchingDescriptor;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -108,7 +105,7 @@ import org.threeten.bp.Duration;
  */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
-public class TopicAdminSettings extends ClientSettings {
+public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -195,6 +192,7 @@ public class TopicAdminSettings extends ClientSettings {
     return testIamPermissionsSettings;
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PublisherStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -228,13 +226,14 @@ public class TopicAdminSettings extends ClientSettings {
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
+    return InstantiatingGrpcChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
@@ -283,12 +282,7 @@ public class TopicAdminSettings extends ClientSettings {
   }
 
   private TopicAdminSettings(Builder settingsBuilder) throws IOException {
-    super(
-        settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportChannelProvider(),
-        settingsBuilder.getCredentialsProvider(),
-        settingsBuilder.getHeaderProvider(),
-        settingsBuilder.getClock());
+    super(settingsBuilder);
 
     createTopicSettings = settingsBuilder.createTopicSettings().build();
     updateTopicSettings = settingsBuilder.updateTopicSettings().build();
@@ -482,7 +476,7 @@ public class TopicAdminSettings extends ClientSettings {
       };
 
   /** Builder for TopicAdminSettings. */
-  public static class Builder extends ClientSettings.Builder {
+  public static class Builder extends ClientSettings.Builder<TopicAdminSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<Topic, Topic> createTopicSettings;
@@ -609,6 +603,7 @@ public class TopicAdminSettings extends ClientSettings {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
       return initDefaults(builder);
     }
 
@@ -705,30 +700,6 @@ public class TopicAdminSettings extends ClientSettings {
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
-    }
-
-    @Override
-    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
-      super.setExecutorProvider(executorProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
-      super.setTransportChannelProvider(transportProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setHeaderProvider(HeaderProvider headerProvider) {
-      super.setHeaderProvider(headerProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
-      super.setCredentialsProvider(credentialsProvider);
-      return this;
     }
 
     /**
