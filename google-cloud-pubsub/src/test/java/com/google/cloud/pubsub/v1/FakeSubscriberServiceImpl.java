@@ -335,7 +335,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
     while (collection.size() < target) {
       long now = System.currentTimeMillis();
       if (now >= untilMillis) {
-        throw new IllegalStateException("waited too long");
+        throw new IllegalStateException("timed out, last state: " + collection);
       }
       collection.wait(untilMillis - now);
     }

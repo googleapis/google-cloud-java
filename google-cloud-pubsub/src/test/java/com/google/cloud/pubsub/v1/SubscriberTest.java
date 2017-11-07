@@ -464,8 +464,7 @@ public class SubscriberTest {
       return;
     }
 
-    final int expectedChannelCount =
-        Runtime.getRuntime().availableProcessors() * Subscriber.CHANNELS_PER_CORE;
+    int expectedChannelCount = 1;
 
     Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
@@ -482,8 +481,7 @@ public class SubscriberTest {
       return;
     }
 
-    final int expectedChannelCount =
-        Runtime.getRuntime().availableProcessors() * Subscriber.CHANNELS_PER_CORE;
+    int expectedChannelCount = 1;
 
     Subscriber subscriber =
         startSubscriber(
@@ -562,7 +560,8 @@ public class SubscriberTest {
         .setSystemExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setChannelProvider(FixedTransportChannelProvider.create(GrpcTransportChannel.create(testChannel)))
         .setCredentialsProvider(NoCredentialsProvider.create())
-        .setClock(fakeExecutor.getClock());
+        .setClock(fakeExecutor.getClock())
+        .setParallelPullCount(1);
   }
 
   @SuppressWarnings("unchecked")
