@@ -154,6 +154,7 @@
     <objenesis.version>2.6</objenesis.version>
 
     <cloud.version>0.26.1-alpha-SNAPSHOT</cloud.version>
+    <bigtable.version>0.26.1-beta-SNAPSHOT</bigtable.version>
     <bigquery.version>0.26.1-beta-SNAPSHOT</bigquery.version>
     <compute.version>0.26.1-alpha-SNAPSHOT</compute.version>
     <contrib.version>0.26.1-alpha-SNAPSHOT</contrib.version>
@@ -192,6 +193,38 @@
         <artifactId>google-cloud</artifactId>
         <version>${cloud.version}</version>
         <type>test-jar</type>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bigtable</artifactId>
+        <version>${bigtable.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bigtable</artifactId>
+        <version>${bigtable.version}</version>
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-bigtable-v2</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
+        <version>${generatedProto.version}</version>
       </dependency>
 
       <dependency>
@@ -857,6 +890,7 @@
   </dependencyManagement>
   <modules>
     <module>google-cloud</module>
+    <module>google-cloud-bigtable</module>
     <module>google-cloud-bigquery</module>
     <module>google-cloud-compute</module>
     <module>google-cloud-contrib</module>
@@ -1207,7 +1241,7 @@
                   </group>
                   <group>
                     <title>Stub packages</title>
-                    <packages>com.google.cloud.dlp.v2beta1.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.vision.v1.stub</packages>
+                    <packages>com.google.cloud.bigtable.v2.stub:com.google.cloud.bigtable.admin.v2.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.vision.v1.stub</packages>
                   </group>
                 </groups>
                 <links>
@@ -1215,6 +1249,8 @@
                   <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
                   <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-iam-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-bigtable-v2/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-bigtable-admin-v2/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-error-reporting-v1beta1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-language-v1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-language-v1beta2/${generatedProto.version}/apidocs/</link>
