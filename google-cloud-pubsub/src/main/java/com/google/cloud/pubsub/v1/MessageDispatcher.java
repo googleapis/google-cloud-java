@@ -264,9 +264,9 @@ class MessageDispatcher {
               public void run() {
                 try {
                   processOutstandingAckOperations();
-                } catch (Exception e) {
+                } catch (Throwable t) {
                   // Catch everything so that one run failing doesn't prevent subsequent runs.
-                  logger.log(Level.WARNING, "failed to send acks/nacks", e);
+                  logger.log(Level.WARNING, "failed to send acks/nacks", t);
                 }
               }
             },
