@@ -95,34 +95,40 @@ public class SubscriberTest {
     private Optional<RuntimeException> error = Optional.absent();
     private boolean explicitAckReplies;
 
-    void setAckReply() {
+    synchronized void setAckReply() {
       this.shouldAck = true;
     }
 
-    void setNackReply() {
+    synchronized void setNackReply() {
       this.shouldAck = false;
     }
 
-    void setErrorReply(RuntimeException error) {
+    synchronized void setErrorReply(RuntimeException error) {
       this.error = Optional.of(error);
     }
 
-    void setExplicitAck(boolean explicitAckReplies) {
+    synchronized void setExplicitAck(boolean explicitAckReplies) {
       this.explicitAckReplies = explicitAckReplies;
     }
 
-    void setExpectedMessages(int expected) {
+    synchronized void setExpectedMessages(int expected) {
       this.messageCountLatch = Optional.of(new CountDownLatch(expected));
     }
 
     void waitForExpectedMessages() throws InterruptedException {
-      if (messageCountLatch.isPresent()) {
-        messageCountLatch.get().await();
+      CountDownLatch latch;
+      synchronized(this) {
+        if (messageCountLatch.isPresent()) {
+          latch = messageCountLatch.get();
+        } else {
+          return;
+        }
       }
+      latch.await();
     }
 
     @Override
-    public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
+    public synchronized void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
       try {
         if (explicitAckReplies) {
           try {
@@ -140,7 +146,7 @@ public class SubscriberTest {
       }
     }
 
-    public void replyNextOutstandingMessage() {
+    public synchronized void replyNextOutstandingMessage() {
       Preconditions.checkState(explicitAckReplies);
       try {
         replyTo(outstandingMessageReplies.take());
@@ -149,7 +155,7 @@ public class SubscriberTest {
       }
     }
 
-    public void replyAllOutstandingMessage() {
+    public synchronized void replyAllOutstandingMessage() {
       Preconditions.checkState(explicitAckReplies);
       AckReplyConsumer reply;
       while ((reply = outstandingMessageReplies.poll()) != null) {
@@ -157,7 +163,7 @@ public class SubscriberTest {
       }
     }
 
-    private void replyTo(AckReplyConsumer reply) {
+    private synchronized void replyTo(AckReplyConsumer reply) {
       if (error.isPresent()) {
         throw error.get();
       } else {
