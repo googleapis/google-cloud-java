@@ -117,7 +117,7 @@ public class SubscriberTest {
 
     void waitForExpectedMessages() throws InterruptedException {
       CountDownLatch latch;
-      synchronized(this) {
+      synchronized (this) {
         if (messageCountLatch.isPresent()) {
           latch = messageCountLatch.get();
         } else {
@@ -238,25 +238,6 @@ public class SubscriberTest {
     sendMessages(ImmutableList.of("A"));
 
     // Trigger ack sending
-    subscriber.stopAsync().awaitTerminated();
-
-    // One receipt, one nack
-    assertEquivalent(
-        ImmutableList.of(
-            new ModifyAckDeadline("A", 0),
-            new ModifyAckDeadline("A", Subscriber.MIN_ACK_DEADLINE_SECONDS)),
-        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(2));
-  }
-
-  @Test
-  public void testReceiverError_NacksMessage() throws Exception {
-    testReceiver.setErrorReply(new RuntimeException("Can't process message"));
-
-    Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
-
-    sendMessages(ImmutableList.of("A"));
-
-    // Trigger nack sending
     subscriber.stopAsync().awaitTerminated();
 
     // One receipt, one nack

@@ -32,11 +32,10 @@ import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Deque;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
-import java.util.Set;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -44,7 +43,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.threeten.bp.Duration;
@@ -345,7 +343,7 @@ class MessageDispatcher {
       return;
     }
     messagesWaiter.incrementPendingMessages(messages.size());
-    for (ReceivedMessage message: messages) {
+    for (ReceivedMessage message : messages) {
       pendingReceipts.add(message.getAckId());
     }
 
@@ -580,7 +578,8 @@ class MessageDispatcher {
       modifyAckDeadlinesToSend.add(nacksToSend);
     }
 
-    PendingModifyAckDeadline receiptsToSend = new PendingModifyAckDeadline(getMessageDeadlineSeconds());
+    PendingModifyAckDeadline receiptsToSend =
+        new PendingModifyAckDeadline(getMessageDeadlineSeconds());
     pendingReceipts.drainTo(receiptsToSend.ackIds);
     logger.log(Level.FINER, "Sending {0} receipts", receiptsToSend.ackIds.size());
     if (!receiptsToSend.ackIds.isEmpty()) {
