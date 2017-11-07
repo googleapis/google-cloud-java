@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,6 @@ import java.util.List;
  * @see <a href="https://cloud.google.com/storage/docs">Google Cloud Storage</a>
  */
 public interface Notification extends Service<StorageOptions> {
-
-  @BetaApi
-  Storage getStorageService();
-
   @BetaApi
   boolean deleteNotification(String bucket, String notification);
 

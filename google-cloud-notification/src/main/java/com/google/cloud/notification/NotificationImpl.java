@@ -15,17 +15,10 @@ import java.util.concurrent.Callable;
 public class NotificationImpl extends BaseService<StorageOptions> implements Notification {
 
   private final StorageRpc storageRpc;
-  private Storage storage;
 
   NotificationImpl(StorageOptions options) {
     super(options);
     storageRpc = options.getStorageRpcV1();
-    storage = options.getService();
-  }
-
-
-  void setStorage(Storage storage) {
-    this.storage = storage;
   }
 
   public static class DefaultNotificationFactory implements NotificationFactory {
@@ -33,11 +26,6 @@ public class NotificationImpl extends BaseService<StorageOptions> implements Not
     public Notification create(StorageOptions options) {
       return new NotificationImpl(options);
     }
-  }
-
-  @Override
-  public Storage getStorageService() {
-    return storage;
   }
 
   @Override
