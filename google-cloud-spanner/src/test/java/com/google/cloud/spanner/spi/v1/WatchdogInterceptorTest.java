@@ -60,7 +60,12 @@ public class WatchdogInterceptorTest {
   MethodDescriptor<Void, Void> descriptor = FakeMethodDescriptor.create();
 
   @Mock Channel channel;
-  @Mock ClientCall<Void, Void> innerCall;
+
+  // TODO(spencerfang): Fix this test because mocking ClientCall is not allowed
+  @SuppressWarnings("DoNotMock")
+  @Mock
+  ClientCall<Void, Void> innerCall;
+
   @Mock ClientCall.Listener<Void> listener;
 
   @Captor ArgumentCaptor<ClientCall.Listener<Void>> innerListener;

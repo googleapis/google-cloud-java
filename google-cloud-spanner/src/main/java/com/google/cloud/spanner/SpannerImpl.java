@@ -21,18 +21,14 @@ import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExcepti
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
-import static com.google.common.util.concurrent.Futures.transform;
-import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
-import com.google.api.core.ApiFuture;
-import com.google.api.core.ListenableFutureToApiFuture;
+import com.google.api.gax.paging.Page;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.BaseService;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
-import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.Timestamp;
@@ -81,6 +77,7 @@ import com.google.spanner.v1.TypeCode;
 import io.grpc.Context;
 import io.grpc.ManagedChannel;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -96,6 +93,7 @@ import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
@@ -124,8 +122,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   @GuardedBy("this")
   private final Map<DatabaseId, DatabaseClientImpl> dbClients = new HashMap<>();
 
-  private final DatabaseAdminClient dbAdminClient = new DatabaseAdminClientImpl();
-  private final InstanceAdminClient instanceClient = new InstanceAdminClientImpl(dbAdminClient);
+  private final DatabaseAdminClient dbAdminClient;
+  private final InstanceAdminClient instanceClient;
 
   @GuardedBy("this")
   private boolean spannerIsClosed = false;
@@ -134,6 +132,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     super(options);
     this.rpc = rpc;
     this.defaultPrefetchChunks = defaultPrefetchChunks;
+    this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), rpc);
+    this.instanceClient = new InstanceAdminClientImpl(options.getProjectId(), rpc, dbAdminClient);
   }
 
   SpannerImpl(SpannerOptions options) {
@@ -207,11 +207,13 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         logger.log(Level.FINE, "Retryable exception, will sleep and retry", e);
         backoffSleep(context, backOff);
       } catch (Exception e) {
-        throw Throwables.propagate(e);
+        Throwables.throwIfUnchecked(e);
+        throw newSpannerException(ErrorCode.INTERNAL, "Unexpected exception thrown", e);
       }
     }
   }
 
+  // TODO(snehashah): change this to return SessionImpl and modify all corresponding references.
   Session createSession(final DatabaseId db) throws SpannerException {
     final Map<SpannerRpc.Option, ?> options =
         optionMap(SessionOption.channelHint(random.nextLong()));
@@ -224,6 +226,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               }
             });
     return new SessionImpl(session.getName(), options);
+  }
+
+  SessionImpl sessionWithId(String name) {
+    final Map<SpannerRpc.Option, ?> options =
+        SpannerImpl.optionMap(SessionOption.channelHint(random.nextLong()));
+    return new SessionImpl(name, options);
   }
 
   @Override
@@ -250,14 +258,14 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
     }
   }
-  
+
   @Override
   public BatchClient getBatchClient(DatabaseId db) {
     return new BatchClientImpl(db, SpannerImpl.this);
   }
 
   @Override
-  public ApiFuture<Void> closeAsync() {
+  public void close() {
     List<ListenableFuture<Void>> closureFutures = null;
     synchronized (this) {
       Preconditions.checkState(!spannerIsClosed, "Cloud Spanner client has been closed");
@@ -268,18 +276,18 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
       dbClients.clear();
     }
-    return new ListenableFutureToApiFuture<>(transform(
-        Futures.successfulAsList(closureFutures),
-        new Function<List<Void>, Void>() {
-          @Override
-          public Void apply(List<Void> inputs) {
-            for (ManagedChannel channel : getOptions().getRpcChannels()) {
-              channel.shutdown();
-            }
-            return null;
-          }
-        },
-        directExecutor()));
+    try {
+      Futures.successfulAsList(closureFutures).get();
+    } catch (InterruptedException | ExecutionException e) {
+      throw SpannerExceptionFactory.newSpannerException(e);
+    }
+    for (ManagedChannel channel : getOptions().getRpcChannels()) {
+      try {
+        channel.shutdown();
+      } catch (RuntimeException e) {
+        logger.log(Level.WARNING, "Failed to close channel", e);
+      }
+    }
   }
 
   /**
@@ -330,19 +338,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return ImmutableMap.copyOf(tmp);
   }
 
-  private String getProjectId() {
-    return getOptions().getProjectId();
-  }
-
-  private String getInstanceName(String instanceId) {
-    return new InstanceId(getProjectId(), instanceId).getName();
-  }
-
-  private String getDatabaseName(String instanceId, String databaseId) {
-    return new DatabaseId(new InstanceId(getProjectId(), instanceId), databaseId).getName();
-  }
-
-  private <T extends Message> T unpack(Any response, Class<T> clazz) throws SpannerException {
+  private static <T extends Message> T unpack(Any response, Class<T> clazz)
+      throws SpannerException {
     try {
       return response.unpack(clazz);
     } catch (InvalidProtocolBufferException e) {
@@ -351,9 +348,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  private abstract class PageFetcher<S, T> implements NextPageFetcher<S> {
+  private abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
     private String nextPageToken;
-
 
     @Override
     public Page<S> getNextPage() {
@@ -378,12 +374,21 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     abstract S fromProto(T proto);
   }
 
-  private String randomOperationId() {
+  private static String randomOperationId() {
     UUID uuid = UUID.randomUUID();
     return ("r" + uuid.toString()).replace("-", "_");
   }
 
-  class DatabaseAdminClientImpl implements DatabaseAdminClient {
+  static class DatabaseAdminClientImpl implements DatabaseAdminClient {
+
+    private final String projectId;
+    private final SpannerRpc rpc;
+
+    DatabaseAdminClientImpl(String projectId, SpannerRpc rpc) {
+      this.projectId = projectId;
+      this.rpc = rpc;
+    }
+
     @Override
     public Operation<Database, CreateDatabaseMetadata> createDatabase(
         String instanceId, String databaseId, Iterable<String> statements) throws SpannerException {
@@ -444,7 +449,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   String opName =
                       OP_NAME_TEMPLATE.instantiate(
                           "project",
-                          getProjectId(),
+                          projectId,
                           "instance",
                           instanceId,
                           "database",
@@ -527,18 +532,30 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
       return pageFetcher.getNextPage();
     }
+
+    private String getInstanceName(String instanceId) {
+      return new InstanceId(projectId, instanceId).getName();
+    }
+
+    private String getDatabaseName(String instanceId, String databaseId) {
+      return new DatabaseId(new InstanceId(projectId, instanceId), databaseId).getName();
+    }
   }
 
-  class InstanceAdminClientImpl implements InstanceAdminClient {
+  static class InstanceAdminClientImpl implements InstanceAdminClient {
     final DatabaseAdminClient dbClient;
+    final String projectId;
+    final SpannerRpc rpc;
 
-    InstanceAdminClientImpl(DatabaseAdminClient dbClient) {
+    InstanceAdminClientImpl(String projectId, SpannerRpc rpc, DatabaseAdminClient dbClient) {
+      this.projectId = projectId;
+      this.rpc = rpc;
       this.dbClient = dbClient;
     }
 
     @Override
     public InstanceConfig getInstanceConfig(String configId) throws SpannerException {
-      final String instanceConfigName = new InstanceConfigId(getProjectId(), configId).getName();
+      final String instanceConfigName = new InstanceConfigId(projectId, configId).getName();
       return runWithRetries(
           new Callable<InstanceConfig>() {
             @Override
@@ -578,7 +595,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public Operation<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
         throws SpannerException {
-      String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", getProjectId());
+      String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
       com.google.longrunning.Operation op =
           rpc.createInstance(projectName, instance.getId().getInstance(), instance.toProto());
       return Operation.create(
@@ -602,7 +619,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public Instance getInstance(String instanceId) throws SpannerException {
-      final String instanceName = new InstanceId(getProjectId(), instanceId).getName();
+      final String instanceName = new InstanceId(projectId, instanceId).getName();
       return runWithRetries(
           new Callable<Instance>() {
             @Override
@@ -643,7 +660,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           new Callable<Void>() {
             @Override
             public Void call() {
-              rpc.deleteInstance(new InstanceId(getProjectId(), instanceId).getName());
+              rpc.deleteInstance(new InstanceId(projectId, instanceId).getName());
               return null;
             }
           });
@@ -697,8 +714,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public String getName() {
       return name;
     }
-    
-    public Map<SpannerRpc.Option, ?> getOptions() {
+
+    Map<SpannerRpc.Option, ?> getOptions() {
       return options;
     }
 
@@ -856,9 +873,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @GuardedBy("lock")
     private boolean isClosed = false;
-    // Allow up to 2GB to be buffered (assuming 1MB chunks), which is larger than the largest
-    // possible row.  In practice, restart tokens are sent much more frequently.
-    private static final int MAX_BUFFERED_CHUNKS = 2048;
+    // Allow up to 512MB to be buffered (assuming 1MB chunks). In practice, restart tokens are sent
+    // much more frequently.
+    private static final int MAX_BUFFERED_CHUNKS = 512;
 
     private AbstractReadContext(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
       this.session = session;
@@ -916,13 +933,14 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               "Unknown value for QueryAnalyzeMode : " + readContextQueryMode);
       }
     }
-    
+
     private ResultSet executeQueryInternal(
         Statement statement,
         com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
         QueryOption... options) {
       Options readOptions = Options.fromQueryOptions(options);
-      return executeQueryInternalWithOptions(statement, queryMode, readOptions, null /*partitionToken*/);
+      return executeQueryInternalWithOptions(
+          statement, queryMode, readOptions, null /*partitionToken*/);
     }
 
     ResultSet executeQueryInternalWithOptions(
@@ -930,7 +948,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
         Options readOptions,
         ByteString partitionToken) {
-      // TODO(snehashah): set partitionToken in the request.
       beforeReadOrQuery();
       ExecuteSqlRequest.Builder builder =
           ExecuteSqlRequest.newBuilder()
@@ -948,6 +965,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       TransactionSelector selector = getTransactionSelector();
       if (selector != null) {
         builder.setTransaction(selector);
+      }
+      if (partitionToken != null) {
+        builder.setPartitionToken(partitionToken);
       }
       final ExecuteSqlRequest request = builder.build();
       final int prefetchChunks =
@@ -1029,7 +1049,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         Iterable<String> columns,
         ReadOption... options) {
       Options readOptions = Options.fromReadOptions(options);
-      return readInternalWithOptions(table, index, keys, columns, readOptions, null /*partitionToken*/);
+      return readInternalWithOptions(
+          table, index, keys, columns, readOptions, null /*partitionToken*/);
     }
 
     ResultSet readInternalWithOptions(
@@ -1039,7 +1060,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         Iterable<String> columns,
         Options readOptions,
         ByteString partitionToken) {
-      // TODO(snehashah): set partitionToken in the request.
       beforeReadOrQuery();
       ReadRequest.Builder builder =
           ReadRequest.newBuilder()
@@ -1057,6 +1077,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       TransactionSelector selector = getTransactionSelector();
       if (selector != null) {
         builder.setTransaction(selector);
+      }
+      if (partitionToken != null) {
+        builder.setPartitionToken(partitionToken);
       }
       final ReadRequest request = builder.build();
       final int prefetchChunks =
@@ -1229,16 +1252,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         txnLogger.log(
             Level.FINER,
             "Started transaction {0}",
-            txnLogger.isLoggable(Level.FINER)
-                ? transactionId.asReadOnlyByteBuffer()
-                : null);
+            txnLogger.isLoggable(Level.FINER) ? transactionId.asReadOnlyByteBuffer() : null);
       } else {
         txnLogger.log(
             Level.FINER,
             "Using prepared transaction {0}",
-            txnLogger.isLoggable(Level.FINER)
-                ? transactionId.asReadOnlyByteBuffer()
-                : null);
+            txnLogger.isLoggable(Level.FINER) ? transactionId.asReadOnlyByteBuffer() : null);
       }
     }
 
@@ -1445,10 +1464,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private final Object txnLock = new Object();
 
     @GuardedBy("txnLock")
-    Timestamp timestamp;
+    private Timestamp timestamp;
 
     @GuardedBy("txnLock")
-    ByteString transactionId;
+    private ByteString transactionId;
 
     MultiUseReadOnlyTransaction(
         SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
@@ -1461,7 +1480,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           bound.getMode());
       this.bound = bound;
     }
-    
+
     MultiUseReadOnlyTransaction(
         SessionImpl session,
         ByteString transactionId,
@@ -1495,6 +1514,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       synchronized (txnLock) {
         assertTimestampAvailable(timestamp != null);
         return timestamp;
+      }
+    }
+
+    ByteString getTransactionId() {
+      synchronized (txnLock) {
+        return transactionId;
       }
     }
 
@@ -1545,142 +1570,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  /**
-   * Base class for gRPC/proto-based structs.
-   *
-   * @param <R> the type of row data
-   */
-  private static class BaseStruct<R> extends Struct {
-    protected final Type type;
-    protected final List<Object> rowData;
-
-    private BaseStruct(Type type, List<Object> rowData) {
-      this.type = type;
-      this.rowData = rowData;
-    }
-
-    Struct immutableCopy() {
-      return new BaseStruct<R>(type, new ArrayList<>(rowData));
-    }
-
-    @Override
-    public Type getType() {
-      return type;
-    }
-
-    @Override
-    public boolean isNull(int columnIndex) {
-      return rowData.get(columnIndex) == null;
-    }
-
-    @Override
-    protected boolean getBooleanInternal(int columnIndex) {
-      return (Boolean) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected long getLongInternal(int columnIndex) {
-      return (Long) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected double getDoubleInternal(int columnIndex) {
-      return (Double) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected String getStringInternal(int columnIndex) {
-      return (String) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected ByteArray getBytesInternal(int columnIndex) {
-      return (ByteArray) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected Timestamp getTimestampInternal(int columnIndex) {
-      return (Timestamp) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected Date getDateInternal(int columnIndex) {
-      return (Date) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected boolean[] getBooleanArrayInternal(int columnIndex) {
-      @SuppressWarnings("unchecked") // We know ARRAY<BOOL> produces a List<Boolean>.
-      List<Boolean> values = (List<Boolean>) rowData.get(columnIndex);
-      boolean[] r = new boolean[values.size()];
-      for (int i = 0; i < values.size(); ++i) {
-        if (values.get(i) == null) {
-          throw throwNotNull(columnIndex);
-        }
-        r[i] = values.get(i);
-      }
-      return r;
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<BOOL> produces a List<Boolean>.
-    protected List<Boolean> getBooleanListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<Boolean>) rowData.get(columnIndex));
-    }
-
-    @Override
-    protected long[] getLongArrayInternal(int columnIndex) {
-      return getLongListInternal(columnIndex).toPrimitiveArray(columnIndex);
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<INT64> produces an Int64Array.
-    protected Int64Array getLongListInternal(int columnIndex) {
-      return (Int64Array) rowData.get(columnIndex);
-    }
-
-    @Override
-    protected double[] getDoubleArrayInternal(int columnIndex) {
-      return getDoubleListInternal(columnIndex).toPrimitiveArray(columnIndex);
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<FLOAT64> produces a Float64Array.
-    protected Float64Array getDoubleListInternal(int columnIndex) {
-      return (Float64Array) rowData.get(columnIndex);
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<STRING> produces a List<String>.
-    protected List<String> getStringListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<String>) rowData.get(columnIndex));
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<BYTES> produces a List<ByteArray>.
-    protected List<ByteArray> getBytesListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<ByteArray>) rowData.get(columnIndex));
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<TIMESTAMP> produces a List<Timestamp>.
-    protected List<Timestamp> getTimestampListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<Timestamp>) rowData.get(columnIndex));
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<DATE> produces a List<Date>.
-    protected List<Date> getDateListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<Date>) rowData.get(columnIndex));
-    }
-
-    @Override
-    @SuppressWarnings("unchecked") // We know ARRAY<STRUCT<...>> produces a List<STRUCT>.
-    protected List<Struct> getStructListInternal(int columnIndex) {
-      return Collections.unmodifiableList((List<Struct>) rowData.get(columnIndex));
-    }
-  }
-
   @VisibleForTesting
   abstract static class AbstractResultSet<R> extends AbstractStructReader implements ResultSet {
     interface Listener {
@@ -1697,7 +1586,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       void onDone();
     }
 
-    protected abstract BaseStruct<R> currRow();
+    protected abstract GrpcStruct currRow();
 
     @Override
     public Struct getCurrentRowAsStruct() {
@@ -1818,7 +1707,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     @Override
-    protected BaseStruct<List<Object>> currRow() {
+    protected GrpcStruct currRow() {
       checkState(!closed, "ResultSet is closed");
       checkState(currRow != null, "next() call required");
       return currRow;
@@ -1877,9 +1766,91 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  private static class GrpcStruct extends BaseStruct<List<Object>> {
+  private static class GrpcStruct extends Struct implements Serializable {
+
+    protected final Type type;
+    protected final List<Object> rowData;
+
+    /**
+     * Builds an immutable version of this struct using {@link Struct#newBuilder()} which is used as
+     * a serialization proxy.
+     */
+    private Object writeReplace() {
+      Builder builder = Struct.newBuilder();
+      List<Type.StructField> structFields = getType().getStructFields();
+      for (int i = 0; i < structFields.size(); i++) {
+        Type.StructField field = structFields.get(i);
+        String fieldName = field.getName();
+        Object value = rowData.get(i);
+        Type fieldType = field.getType();
+        switch (fieldType.getCode()) {
+          case BOOL:
+            builder.set(fieldName).to((Boolean) value);
+            break;
+          case INT64:
+            builder.set(fieldName).to((Long) value);
+            break;
+          case FLOAT64:
+            builder.set(fieldName).to((Double) value);
+            break;
+          case STRING:
+            builder.set(fieldName).to((String) value);
+            break;
+          case BYTES:
+            builder.set(fieldName).to((ByteArray) value);
+            break;
+          case TIMESTAMP:
+            builder.set(fieldName).to((Timestamp) value);
+            break;
+          case DATE:
+            builder.set(fieldName).to((Date) value);
+            break;
+          case ARRAY:
+            switch (fieldType.getArrayElementType().getCode()) {
+              case BOOL:
+                builder.set(fieldName).toBoolArray((Iterable<Boolean>) value);
+                break;
+              case INT64:
+                builder.set(fieldName).toInt64Array((Iterable<Long>) value);
+                break;
+              case FLOAT64:
+                builder.set(fieldName).toFloat64Array((Iterable<Double>) value);
+                break;
+              case STRING:
+                builder.set(fieldName).toStringArray((Iterable<String>) value);
+                break;
+              case BYTES:
+                builder.set(fieldName).toBytesArray((Iterable<ByteArray>) value);
+                break;
+              case TIMESTAMP:
+                builder.set(fieldName).toTimestampArray((Iterable<Timestamp>) value);
+                break;
+              case DATE:
+                builder.set(fieldName).toDateArray((Iterable<Date>) value);
+                break;
+              case STRUCT:
+                builder.add(
+                    fieldName,
+                    fieldType.getArrayElementType().getStructFields(),
+                    (Iterable<Struct>) value);
+                break;
+              default:
+                throw new AssertionError(
+                    "Unhandled array type code: " + fieldType.getArrayElementType());
+            }
+            break;
+          case STRUCT: // Not a legal top-level field type.
+          default:
+            throw new AssertionError("Unhandled type code: " + fieldType.getCode());
+        }
+
+      }
+      return builder.build();
+    }
+
     GrpcStruct(Type type, List<Object> rowData) {
-      super(type, rowData);
+      this.type = type;
+      this.rowData = rowData;
     }
 
     boolean consumeRow(Iterator<com.google.protobuf.Value> iterator) {
@@ -2036,6 +2007,125 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 + " but was "
                 + proto.getKindCase());
       }
+    }
+
+    Struct immutableCopy() {
+      return new GrpcStruct(type, new ArrayList<>(rowData));
+    }
+
+    @Override
+    public Type getType() {
+      return type;
+    }
+
+    @Override
+    public boolean isNull(int columnIndex) {
+      return rowData.get(columnIndex) == null;
+    }
+
+    @Override
+    protected boolean getBooleanInternal(int columnIndex) {
+      return (Boolean) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected long getLongInternal(int columnIndex) {
+      return (Long) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected double getDoubleInternal(int columnIndex) {
+      return (Double) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected String getStringInternal(int columnIndex) {
+      return (String) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected ByteArray getBytesInternal(int columnIndex) {
+      return (ByteArray) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected Timestamp getTimestampInternal(int columnIndex) {
+      return (Timestamp) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected Date getDateInternal(int columnIndex) {
+      return (Date) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected boolean[] getBooleanArrayInternal(int columnIndex) {
+      @SuppressWarnings("unchecked") // We know ARRAY<BOOL> produces a List<Boolean>.
+      List<Boolean> values = (List<Boolean>) rowData.get(columnIndex);
+      boolean[] r = new boolean[values.size()];
+      for (int i = 0; i < values.size(); ++i) {
+        if (values.get(i) == null) {
+          throw throwNotNull(columnIndex);
+        }
+        r[i] = values.get(i);
+      }
+      return r;
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<BOOL> produces a List<Boolean>.
+    protected List<Boolean> getBooleanListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<Boolean>) rowData.get(columnIndex));
+    }
+
+    @Override
+    protected long[] getLongArrayInternal(int columnIndex) {
+      return getLongListInternal(columnIndex).toPrimitiveArray(columnIndex);
+    }
+
+    @Override
+    protected Int64Array getLongListInternal(int columnIndex) {
+      return (Int64Array) rowData.get(columnIndex);
+    }
+
+    @Override
+    protected double[] getDoubleArrayInternal(int columnIndex) {
+      return getDoubleListInternal(columnIndex).toPrimitiveArray(columnIndex);
+    }
+
+    @Override
+    protected Float64Array getDoubleListInternal(int columnIndex) {
+      return (Float64Array) rowData.get(columnIndex);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<STRING> produces a List<String>.
+    protected List<String> getStringListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<String>) rowData.get(columnIndex));
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<BYTES> produces a List<ByteArray>.
+    protected List<ByteArray> getBytesListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<ByteArray>) rowData.get(columnIndex));
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<TIMESTAMP> produces a List<Timestamp>.
+    protected List<Timestamp> getTimestampListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<Timestamp>) rowData.get(columnIndex));
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<DATE> produces a List<Date>.
+    protected List<Date> getDateListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<Date>) rowData.get(columnIndex));
+    }
+
+    @Override
+    @SuppressWarnings("unchecked") // We know ARRAY<STRUCT<...>> produces a List<STRUCT>.
+    protected List<Struct> getStructListInternal(int columnIndex) {
+      return Collections.unmodifiableList((List<Struct>) rowData.get(columnIndex));
     }
   }
 

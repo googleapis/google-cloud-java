@@ -25,7 +25,6 @@ import com.google.common.base.Joiner;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Value;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;

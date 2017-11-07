@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkState;
 
 import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
 import com.google.common.collect.ImmutableMap;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -50,7 +51,9 @@ import java.util.Objects;
  *
  * <p>{@code Statement} instances are immutable.
  */
-public final class Statement {
+public final class Statement implements Serializable {
+  private static final long serialVersionUID = -1967958247625065259L;
+
   private final ImmutableMap<String, Value> parameters;
   private final String sql;
 

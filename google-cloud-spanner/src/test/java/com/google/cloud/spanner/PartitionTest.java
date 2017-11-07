@@ -16,140 +16,130 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.spanner.Options;
+import com.google.common.testing.EqualsTester;
 import com.google.protobuf.ByteString;
 import java.util.Arrays;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+/** Unit tests for {@link com.google.cloud.spanner.Partition}. */
+@RunWith(JUnit4.class)
 public class PartitionTest {
 
-  @Test
-  public void defaultInstance() {
-    String partitionToken = "partitionToken";
-    String sessionId = "sessionId";
-    ByteString transactionId = ByteString.copyFromUtf8("transactionId");
-    Partition p = Partition.getDefaultInstance(partitionToken, sessionId, transactionId);
-    assertThat(p.getPartitionToken()).isEqualTo(partitionToken);
-    assertThat(p.getSessionId()).isEqualTo(sessionId);
-    assertThat(p.getTransactionId()).isEqualTo(transactionId);
-
-    assertNull(p.getTable());
-    assertNull(p.getColumns());
-    assertNull(p.getKeys());
-    assertNull(p.getIndex());
-    assertNull(p.getReadOptions());
-    assertNull(p.getStatement());
-    assertNull(p.getQueryOptions());
-    assertNull(p.getPartitionParameters());
-  }
+  ByteString partitionToken = ByteString.copyFromUtf8("partitionToken");
+  PartitionOptions partitionOptions = PartitionOptions.getDefaultInstance();
+  String table = "table";
+  String index = "index";
+  KeySet keys = KeySet.singleKey(Key.of("a", "b", "c"));
+  Iterable<String> columns = Arrays.asList("c1", "c2");
+  Options.ReadOption rOption = Options.limit(10);
+  Options readOptions = Options.fromReadOptions(rOption);
+  Statement stmt =
+      Statement.newBuilder("SELECT Name FROM Users")
+          .append(" WHERE Id = @id")
+          .bind("id")
+          .to(1234)
+          .append(" AND Status = @status")
+          .bind("status")
+          .to("ACTIVE")
+          .build();
+  Options.QueryOption qOption = Options.prefetchChunks(10);
+  Options queryOptions = Options.fromQueryOptions(qOption);
 
   @Test
   public void statementInstance() {
-    String partitionToken = "partitionToken";
-    String sessionId = "sessionId";
-    ByteString transactionId = ByteString.copyFromUtf8("transactionId");
-    Statement stmt =
-        Statement.newBuilder("SELECT Name FROM Users")
-            .append(" WHERE Id = @id")
-            .bind("id")
-            .to(1234)
-            .append(" AND Status = @status")
-            .bind("status")
-            .to("ACTIVE")
-            .build();
-    Options.QueryOption queryOptions = Options.prefetchChunks(10);
-
     Partition p =
-        Partition.newBuilder(partitionToken, sessionId, transactionId)
-            .setStatement(stmt)
-            .setQueryOptions(queryOptions)
-            .build();
+        Partition.createQueryPartition(partitionToken, partitionOptions, stmt, queryOptions);
     assertThat(p.getPartitionToken()).isEqualTo(partitionToken);
-    assertThat(p.getSessionId()).isEqualTo(sessionId);
-    assertThat(p.getTransactionId()).isEqualTo(transactionId);
     assertThat(p.getStatement()).isEqualTo(stmt);
     assertThat(p.getQueryOptions().hasPrefetchChunks()).isTrue();
     assertThat(p.getQueryOptions().prefetchChunks()).isEqualTo(10);
-    assertTrue(p.hasQueryParams());
-    
+
     assertNull(p.getTable());
     assertNull(p.getColumns());
     assertNull(p.getKeys());
     assertNull(p.getIndex());
     assertNull(p.getReadOptions());
-    assertNull(p.getPartitionParameters());
+
+    // Test serialization.
+    reserializeAndAssert(p);
   }
 
   @Test
   public void readInstance() {
-    String partitionToken = "partitionToken";
-    String sessionId = "sessionId";
-    ByteString transactionId = ByteString.copyFromUtf8("transactionId");
-    String table = "table";
-    KeySet keySet = KeySet.singleKey(Key.of("a", "b", "c"));
-    Iterable<String> columns = Arrays.asList("c1", "c2");
-    Options.ReadOption readOptions = Options.limit(10);
-
     Partition p =
-        Partition.newBuilder(partitionToken, sessionId, transactionId)
-            .setTable(table)
-            .setKeys(keySet)
-            .setColumns(columns)
-            .setReadOptions(readOptions)
-            .build();
+        Partition.createReadPartition(
+            partitionToken, partitionOptions, table, null /*index*/, keys, columns, readOptions);
     assertThat(p.getPartitionToken()).isEqualTo(partitionToken);
-    assertThat(p.getSessionId()).isEqualTo(sessionId);
-    assertThat(p.getTransactionId()).isEqualTo(transactionId);
 
     assertThat(p.getTable()).isEqualTo(table);
-    assertThat(p.getKeys()).isEqualTo(keySet);
+    assertThat(p.getKeys()).isEqualTo(keys);
     assertThat(p.getColumns()).isEqualTo(columns);
     assertTrue(p.getReadOptions().hasLimit());
     assertThat(p.getReadOptions().limit()).isEqualTo(10);
-    assertTrue(p.hasReadParams());
-    
+
     assertNull(p.getIndex());
     assertNull(p.getStatement());
     assertNull(p.getQueryOptions());
-    assertNull(p.getPartitionParameters());
+
+    // Test serialization.
+    reserializeAndAssert(p);
   }
 
   @Test
   public void readUsingIndexInstance() {
-    String partitionToken = "partitionToken";
-    String sessionId = "sessionId";
-    ByteString transactionId = ByteString.copyFromUtf8("transactionId");
-    String table = "table";
-    String index = "index";
-    KeySet keySet = KeySet.singleKey(Key.of("a", "b", "c"));
-    Iterable<String> columns = Arrays.asList("c1", "c2");
-    Options.ReadOption readOptions = Options.limit(10);
-
     Partition p =
-        Partition.newBuilder(partitionToken, sessionId, transactionId)
-            .setTable(table)
-            .setIndex(index)
-            .setKeys(keySet)
-            .setColumns(columns)
-            .setReadOptions(readOptions)
-            .build();
+        Partition.createReadPartition(
+            partitionToken, partitionOptions, table, index, keys, columns, readOptions);
     assertThat(p.getPartitionToken()).isEqualTo(partitionToken);
-    assertThat(p.getSessionId()).isEqualTo(sessionId);
-    assertThat(p.getTransactionId()).isEqualTo(transactionId);
-    assertTrue(p.hasReadUsingIndexParams());
-
     assertThat(p.getTable()).isEqualTo(table);
     assertThat(p.getIndex()).isEqualTo(index);
-    assertThat(p.getKeys()).isEqualTo(keySet);
+    assertThat(p.getKeys()).isEqualTo(keys);
     assertThat(p.getColumns()).isEqualTo(columns);
     assertTrue(p.getReadOptions().hasLimit());
     assertThat(p.getReadOptions().limit()).isEqualTo(10);
 
     assertNull(p.getStatement());
     assertNull(p.getQueryOptions());
-    assertNull(p.getPartitionParameters());
+
+    // Test serialization.
+    reserializeAndAssert(p);
+  }
+
+  @Test
+  public void equalAndHashCode() {
+    new EqualsTester()
+        .addEqualityGroup(
+            Partition.createQueryPartition(partitionToken, partitionOptions, stmt, queryOptions),
+            Partition.createQueryPartition(partitionToken, partitionOptions, stmt, queryOptions))
+        .addEqualityGroup(
+            Partition.createReadPartition(
+                partitionToken,
+                partitionOptions,
+                table,
+                null /*index*/,
+                keys,
+                columns,
+                readOptions),
+            Partition.createReadPartition(
+                partitionToken,
+                partitionOptions,
+                table,
+                null /*index*/,
+                keys,
+                columns,
+                readOptions))
+        .addEqualityGroup(
+            Partition.createReadPartition(
+                partitionToken, partitionOptions, table, index, keys, columns, readOptions),
+            Partition.createReadPartition(
+                partitionToken, partitionOptions, table, index, keys, columns, readOptions))
+        .testEquals();
   }
 }

@@ -34,6 +34,7 @@ import org.mockito.MockitoAnnotations;
 @RunWith(JUnit4.class)
 public class SpannerImplTest {
   @Mock private SpannerRpc rpc;
+  @Mock private SpannerOptions spannerOptions;
   private SpannerImpl impl;
 
   @Captor ArgumentCaptor<Map<SpannerRpc.Option, Object>> options;
@@ -41,7 +42,7 @@ public class SpannerImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    impl = new SpannerImpl(rpc, 1, null);
+    impl = new SpannerImpl(rpc, 1, spannerOptions);
   }
 
   @Test

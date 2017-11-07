@@ -56,7 +56,12 @@ public class RequestMetadataTest {
   Metadata metadata;
 
   @Mock ManagedChannel channel;
-  @Mock ClientCall<Void, Void> innerCall;
+
+  // TODO(spencerfang): Fix this test because mocking ClientCall is not allowed
+  @SuppressWarnings("DoNotMock")
+  @Mock
+  ClientCall<Void, Void> innerCall;
+
   @Mock Listener<Void> innerListener;
   @Mock ClientCall.Listener<Void> listener;
   @Captor ArgumentCaptor<Metadata> innerMetadata;

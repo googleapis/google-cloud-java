@@ -17,7 +17,6 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.Timestamp;
-
 import javax.annotation.Nullable;
 
 /**

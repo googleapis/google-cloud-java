@@ -16,12 +16,18 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.testing.EqualsTester;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
 import org.junit.Rule;
@@ -29,13 +35,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import static com.google.common.testing.SerializableTester.reserializeAndAssert;
-import static com.google.common.truth.Truth.assertThat;
 
 /** Unit tests for {@link com.google.cloud.spanner.Mutation}. */
 @RunWith(JUnit4.class)
@@ -124,13 +123,16 @@ public class MutationTest {
 
   @Test
   public void duplicateColumn() {
-    // The current implementation does not repeat validation performed by the server; duplicates
-    // are permitted but will later cause an operation failure.
-    Mutation m = Mutation.newInsertBuilder("T1").set("C1").to(true).set("C1").to(false).build();
-    assertThat(m.getOperation()).isEqualTo(Mutation.Op.INSERT);
-    assertThat(m.getColumns()).containsExactly("C1", "C1").inOrder();
-    assertThat(m.getValues()).containsExactly(Value.bool(true), Value.bool(false)).inOrder();
-    assertThat(m.toString()).isEqualTo("insert(T1{C1=true,C1=false})");
+    expectedException.expect(IllegalStateException.class);
+    expectedException.expectMessage("Duplicate column");
+    Mutation.newInsertBuilder("T1").set("C1").to(true).set("C1").to(false).build();
+  }
+
+  @Test
+  public void duplicateColumnCaseInsensitive() {
+    expectedException.expect(IllegalStateException.class);
+    expectedException.expectMessage("Duplicate column");
+    Mutation.newInsertBuilder("T1").set("C1").to(true).set("c1").to(false).build();
   }
 
   @Test
@@ -141,11 +143,6 @@ public class MutationTest {
     m = Mutation.newInsertBuilder("T").set("C1").to(true).set("C2").to(1234).build();
     assertThat(m.asMap())
         .isEqualTo(ImmutableMap.of("C1", Value.bool(true), "C2", Value.int64(1234)));
-
-    m = Mutation.newInsertBuilder("T").set("C1").to(true).set("C1").to(false).build();
-    expectedException.expect(IllegalStateException.class);
-    expectedException.expectMessage("Duplicate column");
-    m.asMap();
   }
 
   @Test

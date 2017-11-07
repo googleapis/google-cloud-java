@@ -16,14 +16,14 @@
 
 package com.google.cloud.spanner;
 
-import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -48,8 +48,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           "https://www.googleapis.com/auth/spanner.admin",
           "https://www.googleapis.com/auth/spanner.data");
   private static final int MAX_CHANNELS = 256;
-  private static final RpcChannelFactory DEFAULT_RPC_CHANNEL_FACTORY =
-      new NettyRpcChannelFactory(GrpcSpannerRpc.API_CLIENT);
+  private static final RpcChannelFactory DEFAULT_RPC_CHANNEL_FACTORY = new NettyRpcChannelFactory();
 
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {
@@ -82,9 +81,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     numChannels = builder.numChannels;
     userAgent = builder.userAgentPrefix;
     RpcChannelFactory defaultRpcChannelFactory =
-        userAgent == null
-            ? DEFAULT_RPC_CHANNEL_FACTORY
-            : new NettyRpcChannelFactory(userAgent + " " + GrpcSpannerRpc.API_CLIENT);
+        userAgent == null ? DEFAULT_RPC_CHANNEL_FACTORY : new NettyRpcChannelFactory(userAgent);
     rpcChannels =
         createChannels(
             getHost(),
@@ -256,8 +253,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   static class NettyRpcChannelFactory implements RpcChannelFactory {
     private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
+    private static final int MAX_HEADER_LIST_SIZE = 32 * 1024; //bytes
     private final String userAgent;
     private final List<ClientInterceptor> interceptors;
+
+    NettyRpcChannelFactory() {
+      this(null);
+    }
 
     NettyRpcChannelFactory(String userAgent) {
       this(userAgent, ImmutableList.<ClientInterceptor>of());
@@ -270,12 +272,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public ManagedChannel newChannel(String host, int port) {
-      return NettyChannelBuilder.forAddress(host, port)
-          .sslContext(newSslContext())
-          .intercept(interceptors)
-          .maxMessageSize(MAX_MESSAGE_SIZE)
-          .userAgent(userAgent)
-          .build();
+      NettyChannelBuilder builder =
+          NettyChannelBuilder.forAddress(host, port)
+              .sslContext(newSslContext())
+              .intercept(interceptors)
+              .maxHeaderListSize(MAX_HEADER_LIST_SIZE)
+              .maxMessageSize(MAX_MESSAGE_SIZE);
+      if (userAgent != null) {
+        builder.userAgent(userAgent);
+      }
+      return builder.build();
     }
 
     private static SslContext newSslContext() {

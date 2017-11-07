@@ -19,10 +19,31 @@ package com.google.cloud.spanner;
 import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 
 import com.google.cloud.Timestamp;
+import com.google.common.testing.EqualsTester;
 import com.google.protobuf.ByteString;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+/** Unit tests for {@link com.google.cloud.spanner.BatchTransactionId}. */
+@RunWith(JUnit4.class)
 public class BatchTransactionIdTest {
+
+  @Test
+  public void equalAndHashCode() {
+    new EqualsTester()
+        .addEqualityGroup(
+            new BatchTransactionId(
+                "testSession", ByteString.copyFromUtf8("testTxn"), Timestamp.MIN_VALUE),
+            new BatchTransactionId(
+                "testSession", ByteString.copyFromUtf8("testTxn"), Timestamp.MIN_VALUE))
+        .addEqualityGroup(
+            new BatchTransactionId(
+                "testSession", ByteString.copyFromUtf8("testTxn"), Timestamp.MAX_VALUE),
+            new BatchTransactionId(
+                "testSession", ByteString.copyFromUtf8("testTxn"), Timestamp.MAX_VALUE))
+        .testEquals();
+  }
 
   @Test
   public void serialization() {

@@ -174,5 +174,10 @@
       <artifactId>guava-testlib</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.wrenchworks</groupId>
+      <artifactId>protobuf</artifactId>
+      <version>1.0.2</version>
+    </dependency>
   </dependencies>
 </project>

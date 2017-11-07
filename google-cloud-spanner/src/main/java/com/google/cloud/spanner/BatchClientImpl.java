@@ -22,102 +22,100 @@ import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
 import com.google.cloud.spanner.SpannerImpl.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.SpannerImpl.SessionImpl;
-import com.google.cloud.spanner.SpannerImpl.SessionOption;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import com.google.spanner.v1.CommitResponse;
-import com.google.spanner.v1.TransactionSelector;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import com.google.protobuf.Struct;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryMode;
+import com.google.spanner.v1.PartitionQueryRequest;
+import com.google.spanner.v1.PartitionReadRequest;
+import com.google.spanner.v1.PartitionResponse;
+import com.google.spanner.v1.TransactionSelector;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.Callable;
 
+/** Default implementation for Batch Client interface. */
 public class BatchClientImpl implements BatchClient {
-  private final Random random = new Random();
-  private SpannerImpl spanner;
-  private DatabaseId db;
+  private final SpannerImpl spanner;
+  private final DatabaseId db;
 
   BatchClientImpl(DatabaseId db, SpannerImpl spanner) {
-    this.db = db;
-    this.spanner = spanner;
+    this.db = Preconditions.checkNotNull(db);
+    this.spanner = Preconditions.checkNotNull(spanner);
   }
 
   @Override
-  public BatchTransaction batchRead(TimestampBound bound) {
+  public BatchReadOnlyTransaction batchReadOnlyTransaction(TimestampBound bound) {
     SessionImpl session = (SessionImpl) spanner.createSession(db);
-    return new BatchTransactionImpl(spanner, session, bound);
+    return new BatchReadOnlyTransactionImpl(spanner, session, Preconditions.checkNotNull(bound));
   }
 
   @Override
-  public BatchTransaction batchRead(BatchTransactionId batchTransactionId) {
-    final Map<SpannerRpc.Option, ?> options =
-        SpannerImpl.optionMap(SessionOption.channelHint(random.nextLong()));
-    SessionImpl session = spanner.new SessionImpl(batchTransactionId.getSessionId(), options);
-    return new BatchTransactionImpl(spanner, session, batchTransactionId);
+  public BatchReadOnlyTransaction batchReadOnlyTransaction(BatchTransactionId batchTransactionId) {
+    SessionImpl session =
+        spanner.sessionWithId(Preconditions.checkNotNull(batchTransactionId).getSessionId());
+    return new BatchReadOnlyTransactionImpl(spanner, session, batchTransactionId);
   }
 
-  @Override
-  public void close() {
-    // TODO(snehashah): Auto-generated method stub
-
-  }
-
-  static class BatchTransactionImpl extends MultiUseReadOnlyTransaction
-      implements BatchTransaction {
+  private static class BatchReadOnlyTransactionImpl extends MultiUseReadOnlyTransaction
+      implements BatchReadOnlyTransaction {
     private final String sessionName;
-    private final SpannerImpl spanner;
     private final Map<SpannerRpc.Option, ?> options;
 
-    BatchTransactionImpl(SpannerImpl spanner, SessionImpl session, TimestampBound bound) {
+    BatchReadOnlyTransactionImpl(SpannerImpl spanner, SessionImpl session, TimestampBound bound) {
       super(
-          session,
-          bound,
-          spanner.getOptions().getSpannerRpcV1(),
+          Preconditions.checkNotNull(session),
+          Preconditions.checkNotNull(bound),
+          Preconditions.checkNotNull(spanner).getOptions().getSpannerRpcV1(),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
-      this.spanner = spanner;
       initTransaction();
     }
 
-    BatchTransactionImpl(
+    BatchReadOnlyTransactionImpl(
         SpannerImpl spanner, SessionImpl session, BatchTransactionId batchTransactionId) {
       super(
-          session,
-          batchTransactionId.getTransactionId(),
+          Preconditions.checkNotNull(session),
+          Preconditions.checkNotNull(batchTransactionId).getTransactionId(),
           batchTransactionId.getTimestamp(),
-          spanner.getOptions().getSpannerRpcV1(),
+          Preconditions.checkNotNull(spanner).getOptions().getSpannerRpcV1(),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
-      this.spanner = spanner;
     }
 
     @Override
     public BatchTransactionId getBatchTransactionId() {
-      return new BatchTransactionId(sessionName, transactionId, timestamp);
+      return new BatchTransactionId(sessionName, getTransactionId(), getReadTimestamp());
     }
 
     @Override
-    public List<Partition> generateReadPartitions(
-        PartitionParameters parameters,
+    public List<Partition> partitionRead(
+        PartitionOptions partitionOptions,
         String table,
         KeySet keys,
         Iterable<String> columns,
-        ReadOption... options) {
-      return generateReadUsingIndexPartitions(parameters, table, null, keys, columns, options);
+        ReadOption... options) throws SpannerException {
+      return partitionReadUsingIndex(
+          partitionOptions, table, null /*index*/, keys, columns, options);
     }
 
     @Override
-    public List<Partition> generateReadUsingIndexPartitions(
-        PartitionParameters parameters,
+    public List<Partition> partitionReadUsingIndex(
+        PartitionOptions partitionOptions,
         String table,
         String index,
         KeySet keys,
         Iterable<String> columns,
-        ReadOption... option) {
-      final CreateReadPartitionsRequest.Builder builder =
-          CreateReadPartitionsRequest.newBuilder()
+        ReadOption... option) throws SpannerException {
+      Options readOptions = Options.fromReadOptions(option);
+      Preconditions.checkArgument(
+          !readOptions.hasLimit(),
+          "Limit option not supported by partitionRead|partitionReadUsingIndex");
+      final PartitionReadRequest.Builder builder =
+          PartitionReadRequest.newBuilder()
               .setSession(sessionName)
               .setTable(checkNotNull(table))
               .addAllColumns(columns);
@@ -125,54 +123,92 @@ public class BatchClientImpl implements BatchClient {
       if (index != null) {
         builder.setIndex(index);
       }
-      Options readOptions = Options.fromReadOptions(option);
-      if (readOptions.hasLimit()) {
-        // TODO(snehashah): error!! since we don't support limit in batch APIs.
+      TransactionSelector selector = getTransactionSelector();
+      if (selector != null) {
+        builder.setTransaction(selector);
+      }
+      com.google.spanner.v1.PartitionOptions.Builder pbuilder =
+          com.google.spanner.v1.PartitionOptions.newBuilder();
+      if (partitionOptions != null) {
+        partitionOptions.appendToProto(pbuilder);
+      }
+      builder.setPartitionOptions(pbuilder.build());
+
+      final PartitionReadRequest request = builder.build();
+      PartitionResponse response =
+          SpannerImpl.runWithRetries(
+              new Callable<PartitionResponse>() {
+                @Override
+                public PartitionResponse call() throws Exception {
+                  return rpc.partitionRead(request, options);
+                }
+              });
+      ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
+      for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
+        Partition partition =
+            Partition.createReadPartition(
+                p.getPartitionToken(), partitionOptions, table, index, keys, columns, readOptions);
+        partitions.add(partition);
+      }
+      return partitions.build();
+    }
+
+    @Override
+    public List<Partition> partitionQuery(
+        PartitionOptions partitionOptions, Statement statement, QueryOption... option)
+        throws SpannerException {
+      Options queryOptions = Options.fromQueryOptions(option);
+      final PartitionQueryRequest.Builder builder =
+          PartitionQueryRequest.newBuilder()
+              .setSession(sessionName)
+              .setSql(statement.getSql());
+      Map<String, Value> stmtParameters = statement.getParameters();
+      if (!stmtParameters.isEmpty()) {
+        Struct.Builder paramsBuilder = builder.getParamsBuilder();
+        for (Map.Entry<String, Value> param : stmtParameters.entrySet()) {
+          paramsBuilder.putFields(param.getKey(), param.getValue().toProto());
+          builder.putParamTypes(param.getKey(), param.getValue().getType().toProto());
+        }
       }
       TransactionSelector selector = getTransactionSelector();
       if (selector != null) {
         builder.setTransaction(selector);
       }
-      builder.setPartitionOptions(parameters);
-      final CreateReadPartitionsRequest request = builder.build();
-      CreatePartitionsResponse response =
+      com.google.spanner.v1.PartitionOptions.Builder pbuilder =
+          com.google.spanner.v1.PartitionOptions.newBuilder();
+      if (partitionOptions != null) {
+        partitionOptions.appendToProto(pbuilder);
+      }
+      builder.setPartitionOptions(pbuilder.build());
+
+      final PartitionQueryRequest request = builder.build();
+      PartitionResponse response =
           SpannerImpl.runWithRetries(
-              new Callable<CreatePartitionsResponse>() {
+              new Callable<PartitionResponse>() {
                 @Override
-                public CreatePartitionsResponse call() throws Exception {
-                  return rpc.commit(request, options);
+                public PartitionResponse call() throws Exception {
+                  return rpc.partitionQuery(request, options);
                 }
               });
-      return consumeResponse(response, parameters, table, index, keys, columns, option);    
-    }
-
-    private List<Partition> consumeResponse(
-        CreatePartitionsResponse response,
-        PartitionParameters parameters,
-        String table,
-        String index,
-        KeySet keys,
-        Iterable<String> columns,
-        ReadOption... option) {
-      
+      ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
+      for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
+        Partition partition =
+            Partition.createQueryPartition(
+                p.getPartitionToken(), partitionOptions, statement, queryOptions);
+        partitions.add(partition);
+      }
+      return partitions.build();
     }
 
     @Override
-    public List<Partition> generateQueryPartitions(
-        PartitionParameters parameters, Statement statement, QueryOption... options) {
-      // TODO(snehashah): Auto-generated method stub
-      return null;
-    }
-
-    @Override
-    public ResultSet execute(Partition partition) {
-      // TODO(snehashah): add partition token to the request when available in proto.
-      if (partition.getStatement() != null)
+    public ResultSet execute(Partition partition) throws SpannerException {
+      if (partition.getStatement() != null) {
         return executeQueryInternalWithOptions(
             partition.getStatement(),
             QueryMode.NORMAL,
             partition.getQueryOptions(),
             partition.getPartitionToken());
+      }
       return readInternalWithOptions(
           partition.getTable(),
           partition.getIndex(),
@@ -180,6 +216,12 @@ public class BatchClientImpl implements BatchClient {
           partition.getColumns(),
           partition.getReadOptions(),
           partition.getPartitionToken());
+    }
+
+    @Override
+    public void close() {
+      super.close();
+      session.close();
     }
   }
 }

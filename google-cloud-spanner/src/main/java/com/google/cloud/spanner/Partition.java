@@ -16,17 +16,18 @@
 
 package com.google.cloud.spanner;
 
-import com.google.cloud.spanner.Options.QueryOption;
-import com.google.cloud.spanner.Options.ReadOption;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
+import java.util.Objects;
 
-// TODO(snehashah): add serializable support. Add javadocs.
+/**
+ * Defines the segments of data to be read in a batch read/query context. They can be serialized and
+ * processed across several different machines or proccesses.
+ */
 public class Partition implements Serializable {
+  private static final long serialVersionUID = 8067099123096783937L;
 
   private final ByteString partitionToken;
-  private final String sessionId;
-  private final ByteString transactionId;
   private final String table;
   private final KeySet keys;
   private final Iterable<String> columns;
@@ -34,152 +35,162 @@ public class Partition implements Serializable {
   private final Options readOptions;
   private final Statement statement;
   private final Options queryOptions;
-  private final PartitionParameters partitionParameters;
+  private final PartitionOptions partitionOptions;
 
-  protected Partition(Builder builder) {
-    this.partitionToken = builder.partitionToken;
-    this.sessionId = builder.sessionId;
-    this.transactionId = builder.transactionId;
-    this.table = builder.table;
-    this.keys = builder.keys;
-    this.columns = builder.columns;
-    this.index = builder.index;
-    this.readOptions = builder.readOptions;
-    this.statement = builder.statement;
-    this.queryOptions = builder.queryOptions;
-    this.partitionParameters = builder.partitionParameters;
+  private Partition(
+      ByteString partitionToken,
+      PartitionOptions partitionOptions,
+      Statement statement,
+      Options queryOption) {
+    this.partitionToken = partitionToken;
+    this.partitionOptions = partitionOptions;
+    this.statement = statement;
+    this.queryOptions = queryOption;
+    this.table = null;
+    this.keys = null;
+    this.columns = null;
+    this.index = null;
+    this.readOptions = null;
   }
 
-  // TODO(snehashah): add precondition check to ensure both Query & Read params are not set ?
-  protected static class Builder {
-    private ByteString partitionToken;
-    private String sessionId;
-    private ByteString transactionId;
-    private String table;
-    private KeySet keys;
-    private Iterable<String> columns;
-    private String index;
-    private Options readOptions;
-    private Statement statement;
-    private Options queryOptions;
-    private PartitionParameters partitionParameters;
-
-    Builder(ByteString partitionToken, String sessionId, ByteString transactionId) {
-      this.partitionToken = partitionToken;
-      this.sessionId = sessionId;
-      this.transactionId = transactionId;
-    }
-
-    protected Partition build() {
-      return new Partition(this);
-    }
-
-    protected Builder setTable(String table) {
-      this.table = table;
-      return this;
-    }
-
-    protected Builder setKeys(KeySet keys) {
-      this.keys = keys;
-      return this;
-    }
-
-    protected Builder setColumns(Iterable<String> columns) {
-      this.columns = columns;
-      return this;
-    }
-
-    protected Builder setIndex(String index) {
-      this.index = index;
-      return this;
-    }
-
-    protected Builder setReadOptions(ReadOption... readOptions) {
-      this.readOptions = Options.fromReadOptions(readOptions);
-      return this;
-    }
-
-    protected Builder setStatement(Statement statement) {
-      this.statement = statement;
-      return this;
-    }
-
-    protected Builder setQueryOptions(QueryOption... queryOptions) {
-      this.queryOptions = Options.fromQueryOptions(queryOptions);
-      return this;
-    }
-
-    protected Builder setPartitionParameters(PartitionParameters parameters) {
-      this.partitionParameters = parameters;
-      return this;
-    }
+  private Partition(
+      ByteString partitionToken,
+      PartitionOptions partitionOptions,
+      String table,
+      String index,
+      KeySet keys,
+      Iterable<String> columns,
+      Options readOptions) {
+    this.partitionToken = partitionToken;
+    this.partitionOptions = partitionOptions;
+    this.table = table;
+    this.index = index;
+    this.keys = keys;
+    this.columns = columns;
+    this.readOptions = readOptions;
+    this.statement = null;
+    this.queryOptions = null;
   }
 
-  protected static Builder newBuilder(
-      ByteString partitionToken, String sessionId, ByteString transactionId) {
-    return new Builder(partitionToken, sessionId, transactionId);
+  static Partition createReadPartition(
+      ByteString partitionToken,
+      PartitionOptions partitionOptions,
+      String table,
+      String index,
+      KeySet keys,
+      Iterable<String> columns,
+      Options readOptions) {
+    return new Partition(
+        partitionToken, partitionOptions, table, index, keys, columns, readOptions);
   }
 
-  public static Partition getDefaultInstance(
-      ByteString partitionToken, String sessionId, ByteString transactionId) {
-    return newBuilder(partitionToken, sessionId, transactionId).build();
+  static Partition createQueryPartition(
+      ByteString partitionToken,
+      PartitionOptions partitionOptions,
+      Statement statement,
+      Options queryOption) {
+    return new Partition(partitionToken, partitionOptions, statement, queryOption);
   }
 
-  protected boolean hasQueryParams() {
-    return statement != null;
-  }
-
-  // TODO(snehashah): verify other mandatory args.
-  protected boolean hasReadUsingIndexParams() {
-    return table != null && index != null;
-  }
-
-  // TODO(snehashah): verify other mandatory args.
-  protected boolean hasReadParams() {
-    return table != null;
-  }
-
-  protected ByteString getPartitionToken() {
+  ByteString getPartitionToken() {
     return partitionToken;
   }
 
-  protected String getSessionId() {
-    return sessionId;
-  }
-
-  protected ByteString getTransactionId() {
-    return transactionId;
-  }
-
-  protected String getTable() {
+  String getTable() {
     return table;
   }
 
-  protected KeySet getKeys() {
+  KeySet getKeys() {
     return keys;
   }
 
-  protected Iterable<String> getColumns() {
+  Iterable<String> getColumns() {
     return columns;
   }
 
-  protected String getIndex() {
+  String getIndex() {
     return index;
   }
 
-  protected Options getReadOptions() {
+  Options getReadOptions() {
     return readOptions;
   }
 
-  protected Statement getStatement() {
+  Statement getStatement() {
     return statement;
   }
 
-  protected Options getQueryOptions() {
+  Options getQueryOptions() {
     return queryOptions;
   }
 
-  protected PartitionParameters getPartitionParameters() {
-    return partitionParameters;
+  PartitionOptions getPartitionOptions() {
+    return partitionOptions;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder b = new StringBuilder();
+    b.append("partitionToken: ")
+        .append(partitionToken.toStringUtf8())
+        .append(" partitionOptions: ")
+        .append(partitionOptions).append(" ");
+    if (table != null) {
+      b.append("table: ").append(table).append(" ");
+    }
+    if (index != null) {
+      b.append("index: ").append(index).append(" ");
+    }
+    if (keys != null) {
+      b.append("keys: ").append(keys).append(" ");
+    }
+    if (columns != null) {
+      b.append("columns: ").append(columns).append(" ");
+    }
+    if (readOptions != null) {
+      b.append("readOptions: ").append(readOptions).append(" ");
+    }
+    if (statement != null) {
+      b.append("statement: ").append(statement).append(" ");
+    }
+    if (queryOptions != null) {
+      b.append("queryOptions: ").append(queryOptions).append(" ");
+    }
+    return b.toString();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    Partition that = (Partition) o;
+    return Objects.equals(getPartitionToken(), that.getPartitionToken())
+        && Objects.equals(getPartitionOptions(), that.getPartitionOptions())
+        && Objects.equals(getTable(), that.getTable())
+        && Objects.equals(getKeys(), that.getKeys())
+        && Objects.equals(getColumns(), that.getColumns())
+        && Objects.equals(getIndex(), that.getIndex())
+        && Objects.equals(getReadOptions(), that.getReadOptions())
+        && Objects.equals(getStatement(), that.getStatement())
+        && Objects.equals(getQueryOptions(), that.getQueryOptions());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        getPartitionToken(),
+        getPartitionOptions(),
+        getTable(),
+        getKeys(),
+        getColumns(),
+        getIndex(),
+        getReadOptions(),
+        getStatement(),
+        getQueryOptions());
   }
 }
