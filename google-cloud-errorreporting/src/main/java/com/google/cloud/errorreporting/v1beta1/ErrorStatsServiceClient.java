@@ -96,11 +96,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ErrorStatsServiceSettings errorStatsServiceSettings =
- *     ErrorStatsServiceSettings.newBuilder()
- *         .setTransportChannelProvider(ErrorStatsServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     ErrorStatsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ErrorStatsServiceClient errorStatsServiceClient =
  *     ErrorStatsServiceClient.create(errorStatsServiceSettings);
  * </code>
@@ -130,7 +126,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * Constructs an instance of ErrorStatsServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer to use ErrorStatsServiceSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ErrorStatsServiceClient create(ErrorStatsServiceStub stub) {
     return new ErrorStatsServiceClient(stub);
   }
@@ -145,6 +141,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ErrorStatsServiceClient(ErrorStatsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +151,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ErrorStatsServiceStub getStub() {
     return stub;
   }

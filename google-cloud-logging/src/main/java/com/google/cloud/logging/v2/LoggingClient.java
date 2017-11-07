@@ -103,11 +103,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * LoggingSettings loggingSettings =
- *     LoggingSettings.newBuilder()
- *         .setTransportChannelProvider(LoggingSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     LoggingSettings.newBuilder().setEndpoint(myEndpoint).build();
  * LoggingClient loggingClient =
  *     LoggingClient.create(loggingSettings);
  * </code>
@@ -136,7 +132,7 @@ public class LoggingClient implements BackgroundResource {
    * Constructs an instance of LoggingClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use LoggingSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final LoggingClient create(LoggingServiceV2Stub stub) {
     return new LoggingClient(stub);
   }
@@ -150,6 +146,7 @@ public class LoggingClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected LoggingClient(LoggingServiceV2Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +156,7 @@ public class LoggingClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LoggingServiceV2Stub getStub() {
     return stub;
   }

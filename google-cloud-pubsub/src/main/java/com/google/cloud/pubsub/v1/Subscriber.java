@@ -184,6 +184,9 @@ public class Subscriber extends AbstractApiService {
     if (channelProvider.needsHeaders()) {
       channelProvider = channelProvider.withHeaders(builder.headerProvider.getHeaders());
     }
+    if (channelProvider.needsEndpoint()) {
+      channelProvider = channelProvider.withEndpoint(SubscriptionAdminSettings.getDefaultEndpoint());
+    }
     this.channelProvider = channelProvider;
     credentialsProvider = builder.credentialsProvider;
 

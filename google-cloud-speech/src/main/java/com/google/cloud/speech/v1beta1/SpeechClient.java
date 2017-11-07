@@ -97,11 +97,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * SpeechSettings speechSettings =
- *     SpeechSettings.newBuilder()
- *         .setTransportChannelProvider(SpeechSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     SpeechSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SpeechClient speechClient =
  *     SpeechClient.create(speechSettings);
  * </code>
@@ -131,7 +127,7 @@ public class SpeechClient implements BackgroundResource {
    * Constructs an instance of SpeechClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use SpeechSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SpeechClient create(SpeechStub stub) {
     return new SpeechClient(stub);
   }
@@ -146,6 +142,7 @@ public class SpeechClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SpeechClient(SpeechStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -156,7 +153,7 @@ public class SpeechClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SpeechStub getStub() {
     return stub;
   }

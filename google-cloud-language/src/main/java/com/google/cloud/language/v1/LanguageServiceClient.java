@@ -86,11 +86,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * LanguageServiceSettings languageServiceSettings =
- *     LanguageServiceSettings.newBuilder()
- *         .setTransportChannelProvider(LanguageServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     LanguageServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * LanguageServiceClient languageServiceClient =
  *     LanguageServiceClient.create(languageServiceSettings);
  * </code>
@@ -120,7 +116,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * Constructs an instance of LanguageServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use LanguageServiceSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final LanguageServiceClient create(LanguageServiceStub stub) {
     return new LanguageServiceClient(stub);
   }
@@ -135,6 +131,7 @@ public class LanguageServiceClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected LanguageServiceClient(LanguageServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +141,7 @@ public class LanguageServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LanguageServiceStub getStub() {
     return stub;
   }
