@@ -14,7 +14,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud</artifactId>
-      <version>0.27.0-alpha-SNAPSHOT</version>
+      <version>0.27.1-alpha-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <build>
