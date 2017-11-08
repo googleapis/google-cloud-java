@@ -15,6 +15,7 @@
  */
 package com.google.cloud.trace.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
@@ -30,6 +31,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockTraceServiceImpl extends TraceServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

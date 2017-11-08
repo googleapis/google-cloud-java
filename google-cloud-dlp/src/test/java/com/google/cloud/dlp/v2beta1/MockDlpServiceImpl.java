@@ -15,6 +15,7 @@
  */
 package com.google.cloud.dlp.v2beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.longrunning.Operation;
 import com.google.privacy.dlp.v2beta1.AnalyzeDataSourceRiskRequest;
 import com.google.privacy.dlp.v2beta1.CreateInspectOperationRequest;
@@ -39,6 +40,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockDlpServiceImpl extends DlpServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

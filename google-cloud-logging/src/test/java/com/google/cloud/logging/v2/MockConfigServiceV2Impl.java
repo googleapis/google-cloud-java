@@ -15,6 +15,7 @@
  */
 package com.google.cloud.logging.v2;
 
+import com.google.api.core.BetaApi;
 import com.google.logging.v2.ConfigServiceV2Grpc.ConfigServiceV2ImplBase;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
@@ -39,6 +40,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

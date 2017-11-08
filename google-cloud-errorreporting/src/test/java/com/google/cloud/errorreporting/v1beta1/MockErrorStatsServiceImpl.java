@@ -15,6 +15,7 @@
  */
 package com.google.cloud.errorreporting.v1beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceGrpc.ErrorStatsServiceImplBase;
@@ -30,6 +31,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockErrorStatsServiceImpl extends ErrorStatsServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

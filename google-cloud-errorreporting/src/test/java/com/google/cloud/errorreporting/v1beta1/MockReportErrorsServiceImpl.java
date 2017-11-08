@@ -15,6 +15,7 @@
  */
 package com.google.cloud.errorreporting.v1beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceGrpc.ReportErrorsServiceImplBase;
@@ -26,6 +27,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockReportErrorsServiceImpl extends ReportErrorsServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;
