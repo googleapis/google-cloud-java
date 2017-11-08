@@ -68,7 +68,6 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
-@BetaApi
 public class LanguageServiceSettings extends ClientSettings<LanguageServiceSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =

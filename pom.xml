@@ -139,10 +139,11 @@
 
     <api-client.version>1.23.0</api-client.version>
 
-    <api-common.version>1.1.0</api-common.version>
-    <gax.version>1.13.0</gax.version>
-    <gax-grpc.version>0.30.0</gax-grpc.version>
-    <generatedProto.version>0.1.23</generatedProto.version>
+    <api-common.version>1.2.0</api-common.version>
+    <gax.version>1.14.0</gax.version>
+    <gax-grpc.version>1.14.0</gax-grpc.version>
+    <generatedProto.version>0.1.24</generatedProto.version>
+    <generatedProto-ga.version>1.0.0</generatedProto-ga.version>
     <google.auth.version>0.9.0</google.auth.version>
     <grpc.version>1.7.0</grpc.version>
     <nettyssl.version>2.0.6.Final</nettyssl.version>
@@ -427,7 +428,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-language-v1</artifactId>
-        <version>${generatedProto.version}</version>
+        <version>${generatedProto-ga.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -437,7 +438,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-language-v1</artifactId>
-        <version>${generatedProto.version}</version>
+        <version>${generatedProto-ga.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -562,11 +563,6 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-spanner-admin-instance-v1</artifactId>
-        <version>${generatedProto.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-longrunning-v1</artifactId>
         <version>${generatedProto.version}</version>
       </dependency>
 
@@ -760,7 +756,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-common-protos</artifactId>
-        <version>${generatedProto.version}</version>
+        <version>${generatedProto-ga.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-common-protos</artifactId>
+        <version>${generatedProto-ga.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
