@@ -1147,24 +1147,19 @@ public class BigQueryImplTest {
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    QueryResponse response =
+    QueryResult result =
         bigquery
             .query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob)
             .getQueryResults(QueryResultsOption.pageSize(42L));
-    assertNull(response.getEtag());
-    assertEquals(queryJob, response.getJobId());
-    assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.getResult().cacheHit());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
-    assertFalse(response.hasErrors());
-    assertEquals(null, response.getResult().getSchema());
-    assertEquals(42L, response.getResult().getTotalBytesProcessed());
-    assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValueList row : response.getResult().getValues()) {
+    assertEquals(false, result.cacheHit());
+    assertEquals(null, result.getSchema());
+    assertEquals(42L, result.getTotalBytesProcessed());
+    assertEquals(1L, result.getTotalRows());
+    for (FieldValueList row : result.getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());
       assertEquals(1L, row.get(1).getLongValue());
     }
-    assertEquals(CURSOR, response.getResult().getNextPageToken());
+    assertEquals(CURSOR, result.getNextPageToken());
   }
 
   @Test
@@ -1216,24 +1211,19 @@ public class BigQueryImplTest {
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    QueryResponse response =
+    QueryResult result =
         bigquery
             .query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob)
             .getQueryResults(QueryResultsOption.pageSize(42L));
-    assertNull(response.getEtag());
-    assertEquals(queryJob, response.getJobId());
-    assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.getResult().cacheHit());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
-    assertFalse(response.hasErrors());
-    assertEquals(null, response.getResult().getSchema());
-    assertEquals(42L, response.getResult().getTotalBytesProcessed());
-    assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValueList row : response.getResult().getValues()) {
+    assertEquals(false, result.cacheHit());
+    assertEquals(null, result.getSchema());
+    assertEquals(42L, result.getTotalBytesProcessed());
+    assertEquals(1L, result.getTotalRows());
+    for (FieldValueList row : result.getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());
       assertEquals(1L, row.get(1).getLongValue());
     }
-    assertEquals(CURSOR, response.getResult().getNextPageToken());
+    assertEquals(CURSOR, result.getNextPageToken());
   }
 
   @Test

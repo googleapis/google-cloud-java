@@ -24,7 +24,6 @@ import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
-
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.JobConfiguration.Type;
 import java.io.IOException;
@@ -247,11 +246,12 @@ public class Job extends JobInfo {
   /**
    * Gets the query results of this job. This job must be of type {@code
    * JobConfiguration.Type.QUERY}, otherwise this method will throw {@link
-   * UnsupportedOperationException}. This method does not wait for the job to complete, to ensure that the job is completed first call {@link #waitFor(RetryOption...)} method.
+   * UnsupportedOperationException}. This method does not wait for the job to complete, to ensure
+   * that the job is completed first call {@link #waitFor(RetryOption...)} method.
    *
    * <p>Example of getting the results of a query job.
-   * <pre>{@code
    *
+   * <pre>{@code
    * Job job = bigquery.create(queryJobInfo);
    * job.waitFor();
    * QueryResponse response = job.getQueryResults();
@@ -263,13 +263,20 @@ public class Job extends JobInfo {
    *
    * @throws BigQueryException upon failure
    */
-  public QueryResponse getQueryResults(QueryResultsOption... options) {
+  public QueryResult getQueryResults(QueryResultsOption... options) {
     if (getConfiguration().getType() != Type.QUERY) {
       throw new UnsupportedOperationException(
           "Getting query results is supported only for " + Type.QUERY + " jobs");
     }
 
-    return bigquery.getQueryResults(getJobId(), options);
+    QueryResponse response = bigquery.getQueryResults(getJobId(), options);
+    if (!response.jobCompleted()) {
+      throw new IllegalStateException("the job hasn't completed yet");
+    }
+    if (response.hasErrors()) {
+      throw new IllegalStateException("job has errors: " + response.getExecutionErrors());
+    }
+    return response.getResult();
   }
 
   QueryResponse waitForQueryResults(

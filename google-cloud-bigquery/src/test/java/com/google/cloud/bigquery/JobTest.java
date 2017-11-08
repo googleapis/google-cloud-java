@@ -32,13 +32,11 @@ import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
-
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
 import org.threeten.bp.Duration;
 
 public class JobTest {
@@ -248,7 +246,9 @@ public class JobTest {
     expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     Job completedJob = expectedJob.toBuilder().setStatus(status).build();
-    QueryResponse completedQuery = QueryResponse.newBuilder().setJobCompleted(true).build();
+    QueryResult result = QueryResult.newBuilder().build();
+    QueryResponse completedQuery =
+        QueryResponse.newBuilder().setJobCompleted(true).setResult(result).build();
 
     expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS)).andReturn(completedQuery);
     expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(completedJob);
@@ -257,7 +257,7 @@ public class JobTest {
     replay(status, bigquery, mockOptions);
     initializeJob(jobInfo);
     assertSame(completedJob, job.waitFor(TEST_RETRY_OPTIONS));
-    assertSame(completedQuery, job.getQueryResults());
+    assertSame(result, job.getQueryResults());
     verify(status, mockOptions);
   }
 

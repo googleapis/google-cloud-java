@@ -59,7 +59,7 @@ public class Benchmark {
       int rows = 0;
       int cols = 0;
       Duration firstByte = null;
-      for (List<FieldValue> row : job.getQueryResults().getResult().iterateAll()) {
+      for (List<FieldValue> row : job.getQueryResults().iterateAll()) {
         rows++;
         if (cols == 0) {
           cols = row.size();
