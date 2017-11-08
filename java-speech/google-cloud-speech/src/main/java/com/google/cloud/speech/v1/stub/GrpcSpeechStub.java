@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.speech.v1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
@@ -33,6 +34,8 @@ import com.google.cloud.speech.v1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1.StreamingRecognizeResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -44,34 +47,36 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by GAPIC v0.0.5")
-@BetaApi
+@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcSpeechStub extends SpeechStub {
-  private static final UnaryCallable<RecognizeRequest, RecognizeResponse> directRecognizeCallable =
-      GrpcCallableFactory.createDirectCallable(
-          io.grpc.MethodDescriptor.create(
-              io.grpc.MethodDescriptor.MethodType.UNARY,
-              "google.cloud.speech.v1.Speech/Recognize",
-              io.grpc.protobuf.ProtoUtils.marshaller(RecognizeRequest.getDefaultInstance()),
-              io.grpc.protobuf.ProtoUtils.marshaller(RecognizeResponse.getDefaultInstance())));
-  private static final UnaryCallable<LongRunningRecognizeRequest, Operation>
-      directLongRunningRecognizeCallable =
-          GrpcCallableFactory.createDirectCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.UNARY,
-                  "google.cloud.speech.v1.Speech/LongRunningRecognize",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      LongRunningRecognizeRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance())));
-  private static final BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
-      directStreamingRecognizeCallable =
-          GrpcCallableFactory.createDirectBidiStreamingCallable(
-              io.grpc.MethodDescriptor.create(
-                  io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING,
-                  "google.cloud.speech.v1.Speech/StreamingRecognize",
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      StreamingRecognizeRequest.getDefaultInstance()),
-                  io.grpc.protobuf.ProtoUtils.marshaller(
-                      StreamingRecognizeResponse.getDefaultInstance())));
+
+  private static final MethodDescriptor<RecognizeRequest, RecognizeResponse>
+      recognizeMethodDescriptor =
+          MethodDescriptor.<RecognizeRequest, RecognizeResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.speech.v1.Speech/Recognize")
+              .setRequestMarshaller(ProtoUtils.marshaller(RecognizeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RecognizeResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<LongRunningRecognizeRequest, Operation>
+      longRunningRecognizeMethodDescriptor =
+          MethodDescriptor.<LongRunningRecognizeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.speech.v1.Speech/LongRunningRecognize")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(LongRunningRecognizeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<StreamingRecognizeRequest, StreamingRecognizeResponse>
+      streamingRecognizeMethodDescriptor =
+          MethodDescriptor.<StreamingRecognizeRequest, StreamingRecognizeResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName("google.cloud.speech.v1.Speech/StreamingRecognize")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StreamingRecognizeRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(StreamingRecognizeResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -79,8 +84,7 @@ public class GrpcSpeechStub extends SpeechStub {
   private final UnaryCallable<RecognizeRequest, RecognizeResponse> recognizeCallable;
   private final UnaryCallable<LongRunningRecognizeRequest, Operation> longRunningRecognizeCallable;
   private final OperationCallable<
-          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
-          Operation>
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeOperationCallable;
   private final BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable;
@@ -101,23 +105,39 @@ public class GrpcSpeechStub extends SpeechStub {
       throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 
+    GrpcCallSettings<RecognizeRequest, RecognizeResponse> recognizeTransportSettings =
+        GrpcCallSettings.<RecognizeRequest, RecognizeResponse>newBuilder()
+            .setMethodDescriptor(recognizeMethodDescriptor)
+            .build();
+    GrpcCallSettings<LongRunningRecognizeRequest, Operation> longRunningRecognizeTransportSettings =
+        GrpcCallSettings.<LongRunningRecognizeRequest, Operation>newBuilder()
+            .setMethodDescriptor(longRunningRecognizeMethodDescriptor)
+            .build();
+    GrpcCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
+        streamingRecognizeTransportSettings =
+            GrpcCallSettings.<StreamingRecognizeRequest, StreamingRecognizeResponse>newBuilder()
+                .setMethodDescriptor(streamingRecognizeMethodDescriptor)
+                .build();
+
     this.recognizeCallable =
-        GrpcCallableFactory.create(
-            directRecognizeCallable, settings.recognizeSettings(), clientContext);
+        GrpcCallableFactory.createUnaryCallable(
+            recognizeTransportSettings, settings.recognizeSettings(), clientContext);
     this.longRunningRecognizeCallable =
-        GrpcCallableFactory.create(
-            directLongRunningRecognizeCallable,
-            settings.longRunningRecognizeSettings().getInitialCallSettings(),
+        GrpcCallableFactory.createUnaryCallable(
+            longRunningRecognizeTransportSettings,
+            settings.longRunningRecognizeSettings(),
             clientContext);
     this.longRunningRecognizeOperationCallable =
-        GrpcCallableFactory.create(
-            directLongRunningRecognizeCallable,
-            settings.longRunningRecognizeSettings(),
+        GrpcCallableFactory.createOperationCallable(
+            longRunningRecognizeTransportSettings,
+            settings.longRunningRecognizeOperationSettings(),
             clientContext,
             this.operationsStub);
     this.streamingRecognizeCallable =
-        GrpcCallableFactory.create(
-            directStreamingRecognizeCallable, settings.streamingRecognizeSettings(), clientContext);
+        GrpcCallableFactory.createBidiStreamingCallable(
+            streamingRecognizeTransportSettings,
+            settings.streamingRecognizeSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -131,8 +151,7 @@ public class GrpcSpeechStub extends SpeechStub {
   }
 
   public OperationCallable<
-          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
-          Operation>
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeOperationCallable() {
     return longRunningRecognizeOperationCallable;
   }
