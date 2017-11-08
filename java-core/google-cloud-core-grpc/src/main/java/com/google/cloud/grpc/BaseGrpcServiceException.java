@@ -72,8 +72,8 @@ public class BaseGrpcServiceException extends BaseServiceException {
         .setMessage(apiException.getMessage())
         .setCause(apiException)
         .setRetryable(apiException.isRetryable())
-        .setCode(((GrpcStatusCode) apiException.getStatusCode()).getCode().value())
-        .setReason(((GrpcStatusCode) apiException.getStatusCode()).getCode().name())
+        .setCode(apiException.getStatusCode().getCode().getHttpStatusCode())
+        .setReason(apiException.getStatusCode().getCode().name())
         .setLocation(null)
         .setDebugInfo(null)
         .build());
