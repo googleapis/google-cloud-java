@@ -73,6 +73,26 @@ abstract class BasePath<B extends BasePath<B>> {
     return createPathWithSegments(components.build());
   }
 
+  /**
+   * Checks to see if this path is a prefix of (or equals) another path.
+   *
+   * @param path the path to check against
+   * @return true if current path is a prefix of the other path.
+   */
+  boolean isPrefixOf(B path) {
+    ImmutableList<String> prefixSegments = getSegments();
+    ImmutableList<String> childSegments = path.getSegments();
+    if (prefixSegments.size() > path.getSegments().size()) {
+      return false;
+    }
+    for (int i = 0; i < prefixSegments.size(); i++) {
+      if (!prefixSegments.get(i).equals(childSegments.get(i))) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   abstract String[] splitChildPath(String path);
 
   abstract B createPathWithSegments(ImmutableList<String> segments);
