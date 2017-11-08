@@ -27,7 +27,7 @@ import java.util.Objects;
 /**
  * Google Cloud BigQuery Query Response. This class contains the results of a Query Job
  * ({@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)}) or of a
- * Query Request ({@link BigQuery#query(QueryJobConfiguration, QueryOption...)}).
+ * Query Request ({@link BigQuery#query(QueryJobConfiguration, JobOption...)}).
  *
  * <p>Example usage of a query response:
  * <pre> {@code
