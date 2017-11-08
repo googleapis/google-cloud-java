@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,10 @@
 package com.google.cloud.dlp.v2beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
 import com.google.privacy.dlp.v2beta1.AnalyzeDataSourceRiskRequest;
 import com.google.privacy.dlp.v2beta1.BigQueryTable;
@@ -90,11 +89,8 @@ public class DlpServiceClientTest {
     serviceHelper.reset();
     DlpServiceSettings settings =
         DlpServiceSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = DlpServiceClient.create(settings);
   }
@@ -188,9 +184,7 @@ public class DlpServiceClientTest {
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(
-          Status.INVALID_ARGUMENT.getCode(),
-          ((GrpcStatusCode) apiException.getStatusCode()).getCode());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -316,7 +310,7 @@ public class DlpServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createInspectOperationTest() throws Exception {
-    ResultName name2 = ResultName.create("[RESULT]");
+    ResultName name2 = ResultName.of("[RESULT]");
     InspectOperationResult expectedResponse =
         InspectOperationResult.newBuilder().setNameWithResultName(name2).build();
     Operation resultOperation =
@@ -379,9 +373,7 @@ public class DlpServiceClientTest {
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(
-          Status.INVALID_ARGUMENT.getCode(),
-          ((GrpcStatusCode) apiException.getStatusCode()).getCode());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -393,7 +385,7 @@ public class DlpServiceClientTest {
         ListInspectFindingsResponse.newBuilder().setNextPageToken(nextPageToken).build();
     mockDlpService.addResponse(expectedResponse);
 
-    ResultName name = ResultName.create("[RESULT]");
+    ResultName name = ResultName.of("[RESULT]");
 
     ListInspectFindingsResponse actualResponse = client.listInspectFindings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -412,7 +404,7 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      ResultName name = ResultName.create("[RESULT]");
+      ResultName name = ResultName.of("[RESULT]");
 
       client.listInspectFindings(name);
       Assert.fail("No exception raised");

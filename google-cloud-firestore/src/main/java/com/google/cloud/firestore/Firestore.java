@@ -85,7 +85,7 @@ public interface Firestore extends Service<FirestoreOptions> {
   ApiFuture<List<DocumentSnapshot>> getAll(final DocumentReference... documentReferences);
 
   /**
-   * Gets a Firestore {@see WriteBatch} instance that can be used to combine multiple writes.
+   * Gets a Firestore {@link WriteBatch} instance that can be used to combine multiple writes.
    *
    * @return A WriteBatch that operates on this Firestore client.
    */

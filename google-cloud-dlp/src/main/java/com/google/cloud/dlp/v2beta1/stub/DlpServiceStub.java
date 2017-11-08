@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by GAPIC v0.0.5")
-@BetaApi
+@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class DlpServiceStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {
@@ -61,8 +61,7 @@ public abstract class DlpServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata,
-          Operation>
+          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: analyzeDataSourceRiskOperationCallable()");
@@ -81,8 +80,7 @@ public abstract class DlpServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata,
-          Operation>
+          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
       createInspectOperationOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createInspectOperationOperationCallable()");

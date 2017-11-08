@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package com.google.cloud.errorreporting.v1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
@@ -68,11 +67,8 @@ public class ReportErrorsServiceClientTest {
     serviceHelper.reset();
     ReportErrorsServiceSettings settings =
         ReportErrorsServiceSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = ReportErrorsServiceClient.create(settings);
   }
@@ -88,7 +84,7 @@ public class ReportErrorsServiceClientTest {
     ReportErrorEventResponse expectedResponse = ReportErrorEventResponse.newBuilder().build();
     mockReportErrorsService.addResponse(expectedResponse);
 
-    ProjectName projectName = ProjectName.create("[PROJECT]");
+    ProjectName projectName = ProjectName.of("[PROJECT]");
     ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
 
     ReportErrorEventResponse actualResponse = client.reportErrorEvent(projectName, event);
@@ -109,7 +105,7 @@ public class ReportErrorsServiceClientTest {
     mockReportErrorsService.addException(exception);
 
     try {
-      ProjectName projectName = ProjectName.create("[PROJECT]");
+      ProjectName projectName = ProjectName.of("[PROJECT]");
       ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
 
       client.reportErrorEvent(projectName, event);

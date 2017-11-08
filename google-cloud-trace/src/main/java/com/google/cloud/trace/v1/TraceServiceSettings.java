@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,26 +20,23 @@ import static com.google.cloud.trace.v1.PagedResponseWrappers.ListTracesPagedRes
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.trace.v1.stub.GrpcTraceServiceStub;
@@ -54,7 +51,6 @@ import com.google.devtools.cloudtrace.v1.ListTracesResponse;
 import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -88,7 +84,7 @@ import org.threeten.bp.Duration;
  */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
-public class TraceServiceSettings extends ClientSettings {
+public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -105,18 +101,18 @@ public class TraceServiceSettings extends ClientSettings {
 
   private static String gapicVersion;
 
-  private final SimpleCallSettings<PatchTracesRequest, Empty> patchTracesSettings;
-  private final SimpleCallSettings<GetTraceRequest, Trace> getTraceSettings;
+  private final UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings;
+  private final UnaryCallSettings<GetTraceRequest, Trace> getTraceSettings;
   private final PagedCallSettings<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
       listTracesSettings;
 
   /** Returns the object with the settings used for calls to patchTraces. */
-  public SimpleCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
+  public UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
     return patchTracesSettings;
   }
 
   /** Returns the object with the settings used for calls to getTrace. */
-  public SimpleCallSettings<GetTraceRequest, Trace> getTraceSettings() {
+  public UnaryCallSettings<GetTraceRequest, Trace> getTraceSettings() {
     return getTraceSettings;
   }
 
@@ -126,12 +122,15 @@ public class TraceServiceSettings extends ClientSettings {
     return listTracesSettings;
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TraceServiceStub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcTraceServiceStub.create(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -156,20 +155,20 @@ public class TraceServiceSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder();
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
   }
 
   private static String getGapicVersion() {
@@ -213,11 +212,7 @@ public class TraceServiceSettings extends ClientSettings {
   }
 
   private TraceServiceSettings(Builder settingsBuilder) throws IOException {
-    super(
-        settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
-        settingsBuilder.getCredentialsProvider(),
-        settingsBuilder.getClock());
+    super(settingsBuilder);
 
     patchTracesSettings = settingsBuilder.patchTracesSettings().build();
     getTraceSettings = settingsBuilder.getTraceSettings().build();
@@ -278,26 +273,27 @@ public class TraceServiceSettings extends ClientSettings {
           };
 
   /** Builder for TraceServiceSettings. */
-  public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+  public static class Builder extends ClientSettings.Builder<TraceServiceSettings, Builder> {
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final SimpleCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings;
-    private final SimpleCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings;
+    private final UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings;
+    private final UnaryCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings;
     private final PagedCallSettings.Builder<
             ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
         listTracesSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -327,14 +323,14 @@ public class TraceServiceSettings extends ClientSettings {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      patchTracesSettings = SimpleCallSettings.newBuilder();
+      patchTracesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      getTraceSettings = SimpleCallSettings.newBuilder();
+      getTraceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listTracesSettings = PagedCallSettings.newBuilder(LIST_TRACES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               patchTracesSettings, getTraceSettings, listTracesSettings);
 
       initDefaults(this);
@@ -342,8 +338,10 @@ public class TraceServiceSettings extends ClientSettings {
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
       return initDefaults(builder);
     }
 
@@ -375,26 +373,8 @@ public class TraceServiceSettings extends ClientSettings {
       listTracesSettings = settings.listTracesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               patchTracesSettings, getTraceSettings, listTracesSettings);
-    }
-
-    @Override
-    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
-      super.setExecutorProvider(executorProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
-      super.setCredentialsProvider(credentialsProvider);
-      return this;
     }
 
     /**
@@ -403,18 +383,18 @@ public class TraceServiceSettings extends ClientSettings {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to patchTraces. */
-    public SimpleCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
+    public UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
       return patchTracesSettings;
     }
 
     /** Returns the builder for the settings used for calls to getTrace. */
-    public SimpleCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings() {
+    public UnaryCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings() {
       return getTraceSettings;
     }
 

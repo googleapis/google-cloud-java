@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,13 +128,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * FirestoreSettings firestoreSettings =
- *     FirestoreSettings.newBuilder()
- *         .setTransportProvider(FirestoreSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(FirestoreSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
- *             .build())
- *         .build();
+ *     FirestoreSettings.newBuilder().setEndpoint(myEndpoint).build();
  * FirestoreClient firestoreClient =
  *     FirestoreClient.create(firestoreSettings);
  * </code>
@@ -294,6 +288,7 @@ public class FirestoreClient implements BackgroundResource {
    * Constructs an instance of FirestoreClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use FirestoreSettings}.
    */
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final FirestoreClient create(FirestoreStub stub) {
     return new FirestoreClient(stub);
   }
@@ -307,6 +302,7 @@ public class FirestoreClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected FirestoreClient(FirestoreStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -316,7 +312,7 @@ public class FirestoreClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FirestoreStub getStub() {
     return stub;
   }

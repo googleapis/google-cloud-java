@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@ package com.google.cloud.dlp.v2beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.OperationFuture;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dlp.v2beta1.stub.DlpServiceStub;
 import com.google.longrunning.Operation;
@@ -120,13 +120,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * DlpServiceSettings dlpServiceSettings =
- *     DlpServiceSettings.newBuilder()
- *         .setTransportProvider(DlpServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(DlpServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
- *             .build())
- *         .build();
+ *     DlpServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DlpServiceClient dlpServiceClient =
  *     DlpServiceClient.create(dlpServiceSettings);
  * </code>
@@ -156,6 +150,7 @@ public class DlpServiceClient implements BackgroundResource {
    * Constructs an instance of DlpServiceClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use DlpServiceSettings}.
    */
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DlpServiceClient create(DlpServiceStub stub) {
     return new DlpServiceClient(stub);
   }
@@ -170,6 +165,7 @@ public class DlpServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DlpServiceClient(DlpServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -180,7 +176,7 @@ public class DlpServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DlpServiceStub getStub() {
     return stub;
   }
@@ -302,8 +298,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param sourceTable Input dataset to compute metrics over.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<
-          RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+  public final OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskAsync(PrivacyMetric privacyMetric, BigQueryTable sourceTable) {
 
     AnalyzeDataSourceRiskRequest request =
@@ -336,8 +331,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<
-          RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+  public final OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskAsync(AnalyzeDataSourceRiskRequest request) {
     return analyzeDataSourceRiskOperationCallable().futureCall(request);
   }
@@ -364,8 +358,7 @@ public class DlpServiceClient implements BackgroundResource {
    * </code></pre>
    */
   public final OperationCallable<
-          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata,
-          Operation>
+          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskOperationCallable() {
     return stub.analyzeDataSourceRiskOperationCallable();
   }
@@ -711,7 +704,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param outputConfig Optional location to store findings.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation>
+  public final OperationFuture<InspectOperationResult, InspectOperationMetadata>
       createInspectOperationAsync(
           InspectConfig inspectConfig,
           StorageConfig storageConfig,
@@ -765,7 +758,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<InspectOperationResult, InspectOperationMetadata, Operation>
+  public final OperationFuture<InspectOperationResult, InspectOperationMetadata>
       createInspectOperationAsync(CreateInspectOperationRequest request) {
     return createInspectOperationOperationCallable().futureCall(request);
   }
@@ -809,8 +802,7 @@ public class DlpServiceClient implements BackgroundResource {
    * </code></pre>
    */
   public final OperationCallable<
-          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata,
-          Operation>
+          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
       createInspectOperationOperationCallable() {
     return stub.createInspectOperationOperationCallable();
   }
@@ -866,7 +858,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ResultName name = ResultName.create("[RESULT]");
+   *   ResultName name = ResultName.of("[RESULT]");
    *   ListInspectFindingsResponse response = dlpServiceClient.listInspectFindings(name);
    * }
    * </code></pre>
@@ -890,7 +882,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ResultName name = ResultName.create("[RESULT]");
+   *   ResultName name = ResultName.of("[RESULT]");
    *   ListInspectFindingsRequest request = ListInspectFindingsRequest.newBuilder()
    *     .setNameWithResultName(name)
    *     .build();
@@ -913,7 +905,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ResultName name = ResultName.create("[RESULT]");
+   *   ResultName name = ResultName.of("[RESULT]");
    *   ListInspectFindingsRequest request = ListInspectFindingsRequest.newBuilder()
    *     .setNameWithResultName(name)
    *     .build();

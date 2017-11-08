@@ -74,6 +74,7 @@ import java.security.spec.EncodedKeySpec;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -1882,7 +1883,7 @@ public class StorageImplTest {
 
   @Test
   public void testGetBucketAcl() {
-    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers"))
+    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>()))
         .andReturn(ACL.toBucketPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -1892,7 +1893,7 @@ public class StorageImplTest {
 
   @Test
   public void testGetBucketAclNull() {
-    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers")).andReturn(null);
+    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>())).andReturn(null);
     EasyMock.replay(storageRpcMock);
     initializeService();
     assertNull(storage.getAcl(BUCKET_NAME1, User.ofAllAuthenticatedUsers()));
@@ -1900,7 +1901,7 @@ public class StorageImplTest {
 
   @Test
   public void testDeleteBucketAcl() {
-    EasyMock.expect(storageRpcMock.deleteAcl(BUCKET_NAME1, "allAuthenticatedUsers"))
+    EasyMock.expect(storageRpcMock.deleteAcl(BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>()))
         .andReturn(true);
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -1910,7 +1911,7 @@ public class StorageImplTest {
   @Test
   public void testCreateBucketAcl() {
     Acl returnedAcl = ACL.toBuilder().setEtag("ETAG").setId("ID").build();
-    EasyMock.expect(storageRpcMock.createAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1)))
+    EasyMock.expect(storageRpcMock.createAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1), new HashMap<StorageRpc.Option, Object>()))
         .andReturn(returnedAcl.toBucketPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -1921,7 +1922,7 @@ public class StorageImplTest {
   @Test
   public void testUpdateBucketAcl() {
     Acl returnedAcl = ACL.toBuilder().setEtag("ETAG").setId("ID").build();
-    EasyMock.expect(storageRpcMock.patchAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1)))
+    EasyMock.expect(storageRpcMock.patchAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1), new HashMap<StorageRpc.Option, Object>()))
         .andReturn(returnedAcl.toBucketPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -1931,7 +1932,7 @@ public class StorageImplTest {
 
   @Test
   public void testListBucketAcl() {
-    EasyMock.expect(storageRpcMock.listAcls(BUCKET_NAME1))
+    EasyMock.expect(storageRpcMock.listAcls(BUCKET_NAME1, new HashMap<StorageRpc.Option, Object>()))
         .andReturn(ImmutableList.of(ACL.toBucketPb(), OTHER_ACL.toBucketPb()));
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -2072,7 +2073,7 @@ public class StorageImplTest {
 
   @Test
   public void testGetIamPolicy() {
-    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
+    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1, EMPTY_RPC_OPTIONS)).andReturn(API_POLICY1);
     EasyMock.replay(storageRpcMock);
     initializeService();
     assertEquals(LIB_POLICY1, storage.getIamPolicy(BUCKET_NAME1));
@@ -2124,11 +2125,12 @@ public class StorageImplTest {
             .setEtag(POLICY_ETAG2)
             .build();
 
-    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1)).andReturn(API_POLICY1);
+    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1, EMPTY_RPC_OPTIONS)).andReturn(API_POLICY1);
     EasyMock.expect(
         storageRpcMock.setIamPolicy(
             EasyMock.eq(BUCKET_NAME1),
-            eqApiPolicy(preCommitApiPolicy)))
+            eqApiPolicy(preCommitApiPolicy),
+            EasyMock.eq(EMPTY_RPC_OPTIONS)))
         .andReturn(postCommitApiPolicy);
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -2150,7 +2152,7 @@ public class StorageImplTest {
         ImmutableList
             .of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
 
-    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions))
+    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions, EMPTY_RPC_OPTIONS))
         .andReturn(new TestIamPermissionsResponse());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -2164,7 +2166,7 @@ public class StorageImplTest {
         ImmutableList
             .of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
 
-    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions))
+    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions, EMPTY_RPC_OPTIONS))
         .andReturn(new TestIamPermissionsResponse()
             .setPermissions(ImmutableList.of("storage.objects.list", "storage.buckets.get")));
     EasyMock.replay(storageRpcMock);

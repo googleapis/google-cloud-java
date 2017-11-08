@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
- *   ProjectName projectName = ProjectName.create("[PROJECT]");
+ *   ProjectName projectName = ProjectName.of("[PROJECT]");
  *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
  * }
  * </code>
@@ -96,13 +96,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ErrorStatsServiceSettings errorStatsServiceSettings =
- *     ErrorStatsServiceSettings.newBuilder()
- *         .setTransportProvider(ErrorStatsServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(ErrorStatsServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
- *             .build())
- *         .build();
+ *     ErrorStatsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ErrorStatsServiceClient errorStatsServiceClient =
  *     ErrorStatsServiceClient.create(errorStatsServiceSettings);
  * </code>
@@ -132,6 +126,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * Constructs an instance of ErrorStatsServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer to use ErrorStatsServiceSettings}.
    */
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ErrorStatsServiceClient create(ErrorStatsServiceStub stub) {
     return new ErrorStatsServiceClient(stub);
   }
@@ -146,6 +141,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ErrorStatsServiceClient(ErrorStatsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -155,7 +151,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ErrorStatsServiceStub getStub() {
     return stub;
   }
@@ -168,7 +164,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(projectName, timeRange).iterateAll()) {
    *     // doThingsWith(element);
@@ -207,7 +203,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
@@ -234,7 +230,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
@@ -261,7 +257,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
@@ -295,7 +291,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   String groupId = "";
    *   for (ErrorEvent element : errorStatsServiceClient.listEvents(projectName, groupId).iterateAll()) {
    *     // doThingsWith(element);
@@ -326,7 +322,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
@@ -353,7 +349,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
@@ -379,7 +375,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
@@ -412,7 +408,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
    * }
    * </code></pre>
@@ -437,7 +433,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
    *     .build();
@@ -460,7 +456,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
    *     .build();
