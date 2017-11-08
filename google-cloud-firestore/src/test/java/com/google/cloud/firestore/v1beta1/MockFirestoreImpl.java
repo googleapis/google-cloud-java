@@ -15,6 +15,7 @@
  */
 package com.google.cloud.firestore.v1beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.BeginTransactionRequest;
@@ -47,6 +48,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockFirestoreImpl extends FirestoreImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

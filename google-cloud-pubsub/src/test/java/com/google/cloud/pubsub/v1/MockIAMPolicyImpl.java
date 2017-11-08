@@ -15,6 +15,7 @@
  */
 package com.google.cloud.pubsub.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.IAMPolicyGrpc.IAMPolicyImplBase;
 import com.google.iam.v1.Policy;
@@ -29,6 +30,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockIAMPolicyImpl extends IAMPolicyImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

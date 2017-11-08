@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.v2;
 
+import com.google.api.core.BetaApi;
 import com.google.bigtable.v2.BigtableGrpc.BigtableImplBase;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
@@ -36,6 +37,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockBigtableImpl extends BigtableImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

@@ -15,6 +15,7 @@
  */
 package com.google.cloud.monitoring.v3;
 
+import com.google.api.core.BetaApi;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
 import com.google.monitoring.v3.GetGroupRequest;
@@ -34,6 +35,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockGroupServiceImpl extends GroupServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;
