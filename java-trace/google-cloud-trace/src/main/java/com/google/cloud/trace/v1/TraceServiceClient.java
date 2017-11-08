@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,13 +96,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * TraceServiceSettings traceServiceSettings =
- *     TraceServiceSettings.newBuilder()
- *         .setTransportProvider(TraceServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(TraceServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
- *             .build())
- *         .build();
+ *     TraceServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TraceServiceClient traceServiceClient =
  *     TraceServiceClient.create(traceServiceSettings);
  * </code>
@@ -131,6 +125,7 @@ public class TraceServiceClient implements BackgroundResource {
    * Constructs an instance of TraceServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use TraceServiceSettings}.
    */
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TraceServiceClient create(TraceServiceStub stub) {
     return new TraceServiceClient(stub);
   }
@@ -145,6 +140,7 @@ public class TraceServiceClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TraceServiceClient(TraceServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +150,7 @@ public class TraceServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TraceServiceStub getStub() {
     return stub;
   }
