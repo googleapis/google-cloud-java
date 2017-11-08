@@ -26,10 +26,8 @@ public class QueryResult extends PageImpl<FieldValueList> {
 
   private static final long serialVersionUID = -4831062717210349818L;
 
-  private final boolean cacheHit;
   private final Schema schema;
   private final long totalRows;
-  private final long totalBytesProcessed;
 
   interface QueryResultsPageFetcher extends PageImpl.NextPageFetcher<FieldValueList> {
 
@@ -42,25 +40,13 @@ public class QueryResult extends PageImpl<FieldValueList> {
     private QueryResultsPageFetcher pageFetcher;
     private String cursor;
     private Iterable<FieldValueList> results;
-    private boolean cacheHit;
     private Schema schema;
     private long totalRows;
-    private long totalBytesProcessed;
 
     private Builder() {}
 
-    Builder setCacheHit(boolean cacheHit) {
-      this.cacheHit = cacheHit;
-      return this;
-    }
-
     Builder setSchema(Schema schema) {
       this.schema = schema;
-      return this;
-    }
-
-    Builder setTotalBytesProcessed(long totalBytesProcessed) {
-      this.totalBytesProcessed = totalBytesProcessed;
       return this;
     }
 
@@ -93,21 +79,9 @@ public class QueryResult extends PageImpl<FieldValueList> {
     super(builder.pageFetcher,
         builder.cursor,
         builder.results != null ? builder.results : ImmutableList.<FieldValueList>of());
-    this.cacheHit = builder.cacheHit;
     this.schema = builder.schema;
-    this.totalBytesProcessed = builder.totalBytesProcessed;
     this.totalRows = builder.totalRows;
   }
-
-  /**
-   * Returns whether the query result was fetched from the query cache.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
-   */
-  public boolean cacheHit() {
-    return cacheHit;
-  }
-
 
   /**
    * Returns the schema of the results. This is present only when the query completes successfully.
@@ -115,16 +89,6 @@ public class QueryResult extends PageImpl<FieldValueList> {
   public Schema getSchema() {
     return schema;
   }
-
-
-  /**
-   * Returns the total number of bytes processed for the query. If this query was a dry run, this is
-   * the number of bytes that would be processed if the query were run.
-   */
-  public long getTotalBytesProcessed() {
-    return totalBytesProcessed;
-  }
-
 
   /**
    * Returns the total number of rows in the complete query result set, which can be more than the
@@ -145,9 +109,7 @@ public class QueryResult extends PageImpl<FieldValueList> {
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("rows", getValues())
-        .add("cacheHit", cacheHit)
         .add("schema", schema)
-        .add("totalBytesProcessed", totalBytesProcessed)
         .add("totalRows", totalRows)
         .add("cursor", getNextPageToken())
         .toString();
@@ -155,7 +117,7 @@ public class QueryResult extends PageImpl<FieldValueList> {
 
   @Override
   public final int hashCode() {
-    return Objects.hash(super.hashCode(), cacheHit, schema, totalBytesProcessed, totalRows);
+    return Objects.hash(super.hashCode(), schema, totalRows);
   }
 
   @Override
@@ -170,9 +132,7 @@ public class QueryResult extends PageImpl<FieldValueList> {
     return Objects.equals(getNextPageToken(), response.getNextPageToken())
         && Objects.equals(getValues(), response.getValues())
         && Objects.equals(schema, response.schema)
-        && totalRows == response.totalRows
-        && totalBytesProcessed == response.totalBytesProcessed
-        && cacheHit == response.cacheHit;
+        && totalRows == response.totalRows;
   }
 
   static Builder newBuilder() {

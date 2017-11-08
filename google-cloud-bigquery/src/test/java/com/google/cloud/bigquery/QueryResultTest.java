@@ -46,28 +46,22 @@ public class QueryResultTest {
   private static final QueryResult QUERY_RESULT = QueryResult.newBuilder()
       .setSchema(SCHEMA)
       .setTotalRows(TOTAL_ROWS)
-      .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .setCursor(CURSOR)
       .setPageFetcher(FETCHER)
       .setResults(ImmutableList.<FieldValueList>of())
-      .setCacheHit(CACHE_HIT)
       .build();
   private static final QueryResult QUERY_RESULT_INCOMPLETE = QueryResult.newBuilder()
-      .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .build();
 
   @Test
   public void testBuilder() {
     assertEquals(SCHEMA, QUERY_RESULT.getSchema());
     assertEquals(TOTAL_ROWS, QUERY_RESULT.getTotalRows());
-    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESULT.getTotalBytesProcessed());
-    assertEquals(CACHE_HIT, QUERY_RESULT.cacheHit());
     assertEquals(CURSOR, QUERY_RESULT.getNextPageToken());
     assertEquals(null, QUERY_RESULT.getNextPage());
+
     assertEquals(null, QUERY_RESULT_INCOMPLETE.getSchema());
     assertEquals(0L, QUERY_RESULT_INCOMPLETE.getTotalRows());
-    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESULT_INCOMPLETE.getTotalBytesProcessed());
-    assertEquals(false, QUERY_RESULT_INCOMPLETE.cacheHit());
     assertEquals(null, QUERY_RESULT_INCOMPLETE.getNextPageToken());
     assertEquals(null, QUERY_RESULT_INCOMPLETE.getNextPage());
   }
@@ -86,7 +80,5 @@ public class QueryResultTest {
     assertEquals(expected.getValues(), value.getValues());
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(expected.getTotalRows(), value.getTotalRows());
-    assertEquals(expected.getTotalBytesProcessed(), value.getTotalBytesProcessed());
-    assertEquals(expected.cacheHit(), value.cacheHit());
   }
 }
