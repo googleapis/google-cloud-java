@@ -33,7 +33,6 @@ import com.google.cloud.bigquery.BigQuery.DatasetOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
-import com.google.cloud.bigquery.BigQuery.QueryOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableOption;
@@ -428,8 +427,10 @@ public class ITBigQueryTest {
         .setDefaultDataset(DatasetId.of(DATASET))
         .setUseLegacySql(true)
         .build();
-    QueryResponse response = bigquery.query(
-        config, QueryOption.of(QueryResultsOption.maxWaitTime(60000L)));
+    QueryResponse response =
+        bigquery
+            .query(config)
+            .getQueryResults();
     long integerValue = 0;
     int rowCount = 0;
     for (FieldValueList row : response.getResult().getValues()) {
@@ -488,10 +489,10 @@ public class ITBigQueryTest {
         .setDefaultDataset(DatasetId.of(DATASET))
         .setUseLegacySql(true)
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
+    QueryResponse response =
+        bigquery
+            .query(config)
+            .getQueryResults(QueryResultsOption.pageSize(1000L));
     int rowCount = 0;
     for (FieldValueList row : response.getResult().getValues()) {
       FieldValue timestampCell = row.get(0);
@@ -778,10 +779,10 @@ public class ITBigQueryTest {
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query)
         .setDefaultDataset(DatasetId.of(DATASET))
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
+    QueryResponse response =
+        bigquery
+            .query(config)
+            .getQueryResults(QueryResultsOption.pageSize(1000L));
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
     int rowCount = 0;
     for (FieldValueList row : response.getResult().getValues()) {
@@ -830,10 +831,10 @@ public class ITBigQueryTest {
         .addPositionalParameter(int64Parameter)
         .addPositionalParameter(float64Parameter)
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
+    QueryResponse response =
+        bigquery
+            .query(config)
+            .getQueryResults(QueryResultsOption.pageSize(1000L));
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
     assertEquals(2, Iterables.size(response.getResult().getValues()));
   }
@@ -853,10 +854,10 @@ public class ITBigQueryTest {
         .addNamedParameter("stringParam", stringParameter)
         .addNamedParameter("integerList", intArrayParameter)
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
+    QueryResponse response =
+        bigquery
+            .query(config)
+            .getQueryResults(QueryResultsOption.pageSize(1000L));
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
     assertEquals(2, Iterables.size(response.getResult().getValues()));
   }
@@ -870,8 +871,8 @@ public class ITBigQueryTest {
         .setUseLegacySql(false)
         .addNamedParameter("p", bytesParameter)
         .build();
-    QueryResponse response = bigquery.query(
-        config, QueryOption.of(QueryResultsOption.maxWaitTime(60000L)));
+    QueryResponse response =
+        bigquery.query(config).getQueryResults(QueryResultsOption.pageSize(1000L));
     int rowCount = 0;
     for (FieldValueList row : response.getResult().getValues()) {
       rowCount++;

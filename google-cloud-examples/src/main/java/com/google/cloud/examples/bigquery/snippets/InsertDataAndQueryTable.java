@@ -85,9 +85,7 @@ public class InsertDataAndQueryTable {
         QueryJobConfiguration.newBuilder("SELECT * FROM my_dataset_id.my_table_id").build();
     // Request query to be executed and wait for results
     QueryResponse queryResponse = bigquery.query(
-        queryConfig,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
+        queryConfig).getQueryResults(QueryResultsOption.pageSize(1000L));
     // Read rows
     System.out.println("Table rows:");
     for (FieldValueList row : queryResponse.getResult().iterateAll()) {

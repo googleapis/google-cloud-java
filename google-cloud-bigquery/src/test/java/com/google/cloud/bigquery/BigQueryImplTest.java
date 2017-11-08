@@ -36,7 +36,6 @@ import com.google.api.services.bigquery.model.TableRow;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
-import com.google.cloud.bigquery.BigQuery.QueryOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
@@ -1134,15 +1133,24 @@ public class BigQueryImplTest {
     Map<BigQueryRpc.Option, Object> optionMap = Maps.newEnumMap(BigQueryRpc.Option.class);
     QueryResultsOption pageSizeOption = QueryResultsOption.pageSize(42L);
     optionMap.put(pageSizeOption.getRpcOption(), pageSizeOption.getValue());
+
+    EasyMock.expect(
+            bigqueryRpcMock.getQueryResults(
+                PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+        .andReturn(responsePb);
+    EasyMock.expect(
+            bigqueryRpcMock.getJob(
+                PROJECT, JOB, Collections.<BigQueryRpc.Option, Object>emptyMap()))
+        .andReturn(jobResponsePb);
     EasyMock.expect(
         bigqueryRpcMock.getQueryResults(PROJECT, JOB, optionMap)).andReturn(responsePb);
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    QueryResponse response = bigquery.query(
-        QUERY_JOB_CONFIGURATION_FOR_QUERY,
-        queryJob,
-        QueryOption.of(QueryResultsOption.pageSize(42L)));
+    QueryResponse response =
+        bigquery
+            .query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob)
+            .getQueryResults(QueryResultsOption.pageSize(42L));
     assertNull(response.getEtag());
     assertEquals(queryJob, response.getJobId());
     assertEquals(true, response.jobCompleted());
@@ -1190,15 +1198,28 @@ public class BigQueryImplTest {
     QueryResultsOption pageSizeOption = QueryResultsOption.pageSize(42L);
     Map<BigQueryRpc.Option, Object> optionMap = Maps.newEnumMap(BigQueryRpc.Option.class);
     optionMap.put(pageSizeOption.getRpcOption(), pageSizeOption.getValue());
+
     EasyMock.expect(
-        bigqueryRpcMock.getQueryResults(PROJECT, JOB, optionMap)).andReturn(responsePb1);
+            bigqueryRpcMock.getQueryResults(
+                PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+        .andReturn(responsePb1);
+    EasyMock.expect(
+            bigqueryRpcMock.getQueryResults(
+                PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+        .andReturn(responsePb2);
+    EasyMock.expect(
+            bigqueryRpcMock.getJob(
+                PROJECT, JOB, Collections.<BigQueryRpc.Option, Object>emptyMap()))
+        .andReturn(jobResponsePb);
     EasyMock.expect(
         bigqueryRpcMock.getQueryResults(PROJECT, JOB, optionMap)).andReturn(responsePb2);
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    QueryResponse response = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob,
-        QueryOption.of(QueryResultsOption.pageSize(42L)));
+    QueryResponse response =
+        bigquery
+            .query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob)
+            .getQueryResults(QueryResultsOption.pageSize(42L));
     assertNull(response.getEtag());
     assertEquals(queryJob, response.getJobId());
     assertEquals(true, response.jobCompleted());

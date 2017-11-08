@@ -27,7 +27,6 @@ import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -989,11 +988,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    */
   boolean cancel(JobId jobId);
 
+  // TODO(pongad): rewrite query() samples.
+
   /**
-   * Runs the query associated with the request, using an internally-generated random JobId.
+   * Runs the query associated with the request, using an internally-generated random JobId. The returned job is always completed.
    *
    * <p>Example of running a query.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare`";
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.of(query);
    *
@@ -1013,7 +1015,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * }</pre>
    *
    * <p>Example of running a query with query parameters.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String query =
    *     "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > ?";
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
@@ -1033,32 +1036,31 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
    *     to complete
    */
-  QueryResponse query(QueryJobConfiguration configuration, QueryOption... options)
-      throws InterruptedException;
+  Job query(QueryJobConfiguration configuration, JobOption... options) throws InterruptedException;
 
   /**
-   * Runs the query associated with the request, using the given job id.
+   * Runs the query associated with the request, using the given JobId. The returned job is always completed.
    *
-   * <p>See {@link #query(QueryJobConfiguration, QueryOption...)} for examples on populating a
-   * {@link QueryJobConfiguration}.
+   * <p>See {@link #query(QueryJobConfiguration, JobOption...)} for examples on populating a {@link
+   * QueryJobConfiguration}.
    *
-   * <p>
-   * The recommended way to create a randomly generated JobId is the following:
+   * <p>The recommended way to create a randomly generated JobId is the following:
    *
-   * <pre> {@code
-   *  JobId jobId = JobId.of();
+   * <pre>{@code
+   * JobId jobId = JobId.of();
    * }</pre>
    *
    * For a user specified job id with an optional prefix use the following:
-   * <pre> {@code
-   *  JobId jobId = JobId.of("my_prefix-my_unique_job_id");
+   *
+   * <pre>{@code
+   * JobId jobId = JobId.of("my_prefix-my_unique_job_id");
    * }</pre>
    *
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
    *     to complete
    */
-  QueryResponse query(QueryJobConfiguration configuration, JobId jobId, QueryOption... options)
+  Job query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
       throws InterruptedException;
 
   /**
