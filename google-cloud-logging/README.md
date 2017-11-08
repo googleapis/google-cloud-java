@@ -15,9 +15,6 @@ Java idiomatic client for [Stackdriver Logging][stackdriver-logging].
 Quickstart
 ----------
 
-> `google-cloud-logging` uses gRPC as transport layer, which is not (yet) supported by App Engine
-Standard. `google-cloud-logging` will work on App Engine Flexible.
-
 Add this to your pom.xml file
 ```xml
 <dependency>
