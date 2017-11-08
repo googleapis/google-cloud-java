@@ -84,9 +84,7 @@ public class CollectionReferenceTest {
     assertNull(documentReference);
     CollectionReference subcollection = collectionReference.document("doc").collection("subcoll");
     assertEquals("subcoll", subcollection.getId());
-    assertEquals(
-        "projects/test-project/databases/(default)/documents/coll/doc/subcoll",
-        subcollection.getPath());
+    assertEquals("coll/doc/subcoll", subcollection.getPath());
     documentReference = subcollection.getParent();
     assertEquals("doc", documentReference.getId());
   }

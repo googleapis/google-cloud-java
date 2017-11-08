@@ -116,7 +116,7 @@ final class DocumentTransform {
     Write.Builder write = Write.newBuilder();
     com.google.firestore.v1beta1.DocumentTransform.Builder transform = write.getTransformBuilder();
     transform.addAllFieldTransforms(transforms);
-    transform.setDocument(documentReference.getPath());
+    transform.setDocument(documentReference.getName());
     return write.build();
   }
 }

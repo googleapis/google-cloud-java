@@ -256,7 +256,7 @@ class FirestoreImpl implements Firestore {
     }
 
     for (DocumentReference docRef : documentReferences) {
-      request.addDocuments(docRef.getPath());
+      request.addDocuments(docRef.getName());
     }
 
     streamRequest(request.build(), responseObserver, firestoreClient.batchGetDocumentsCallable());
