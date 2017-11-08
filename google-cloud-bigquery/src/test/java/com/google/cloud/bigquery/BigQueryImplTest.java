@@ -1150,7 +1150,6 @@ public class BigQueryImplTest {
     QueryResponse response =
         bigquery
             .query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob)
-            .waitFor()
             .getQueryResults(QueryResultsOption.pageSize(42L));
     assertNull(response.getEtag());
     assertEquals(queryJob, response.getJobId());
@@ -1220,7 +1219,6 @@ public class BigQueryImplTest {
     QueryResponse response =
         bigquery
             .query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob)
-            .waitFor()
             .getQueryResults(QueryResultsOption.pageSize(42L));
     assertNull(response.getEtag());
     assertEquals(queryJob, response.getJobId());

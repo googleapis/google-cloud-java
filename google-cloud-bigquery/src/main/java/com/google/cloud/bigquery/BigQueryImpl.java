@@ -591,7 +591,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public Job query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
       throws InterruptedException {
-    return create(JobInfo.of(jobId, configuration), options);
+    return create(JobInfo.of(jobId, configuration), options).waitFor();
   }
 
   @Override

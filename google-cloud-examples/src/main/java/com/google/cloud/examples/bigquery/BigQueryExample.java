@@ -621,7 +621,7 @@ public class BigQueryExample {
     @Override
     void run(BigQuery bigquery, QueryJobConfiguration queryConfig) throws Exception {
       System.out.println("Running query");
-      QueryResponse queryResponse = bigquery.query(queryConfig);
+      QueryResponse queryResponse = bigquery.query(queryConfig).getQueryResults();
       if (!queryResponse.hasErrors()) {
         System.out.println("Query succeeded. Results:");
         for (FieldValueList row : queryResponse.getResult().iterateAll()) {

@@ -577,7 +577,7 @@ public class BigQuerySnippets {
     // [START runQuery]
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
-    QueryResponse response = bigquery.query(queryConfig);
+    QueryResponse response = bigquery.query(queryConfig).getQueryResults();
     if (response.hasErrors()) {
       // handle errors
     }
@@ -600,7 +600,7 @@ public class BigQuerySnippets {
     QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
         .addNamedParameter("wordCount", QueryParameterValue.int64(5))
         .build();
-    QueryResponse response = bigquery.query(queryConfig);
+    QueryResponse response = bigquery.query(queryConfig).getQueryResults();
     if (response.hasErrors()) {
       // handle errors
     }
@@ -621,7 +621,7 @@ public class BigQuerySnippets {
     // [START queryResults]
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
-    QueryResponse response = bigquery.query(queryConfig);
+    QueryResponse response = bigquery.query(queryConfig).getQueryResults();
     if (response.hasErrors()) {
       // handle errors
     }

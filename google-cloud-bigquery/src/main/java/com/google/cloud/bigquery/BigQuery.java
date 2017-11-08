@@ -991,7 +991,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   // TODO(pongad): rewrite query() samples.
 
   /**
-   * Runs the query associated with the request, using an internally-generated random JobId.
+   * Runs the query associated with the request, using an internally-generated random JobId. The returned job is always completed.
    *
    * <p>Example of running a query.
    *
@@ -1039,7 +1039,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Job query(QueryJobConfiguration configuration, JobOption... options) throws InterruptedException;
 
   /**
-   * Runs the query associated with the request, using the given job id.
+   * Runs the query associated with the request, using the given JobId. The returned job is always completed.
    *
    * <p>See {@link #query(QueryJobConfiguration, JobOption...)} for examples on populating a {@link
    * QueryJobConfiguration}.

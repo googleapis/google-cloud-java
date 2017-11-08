@@ -430,7 +430,6 @@ public class ITBigQueryTest {
     QueryResponse response =
         bigquery
             .query(config)
-            .waitFor(RetryOption.totalTimeout(Duration.ofMinutes(1)))
             .getQueryResults();
     long integerValue = 0;
     int rowCount = 0;
@@ -493,7 +492,6 @@ public class ITBigQueryTest {
     QueryResponse response =
         bigquery
             .query(config)
-            .waitFor(RetryOption.totalTimeout(Duration.ofMinutes(1)))
             .getQueryResults(QueryResultsOption.pageSize(1000L));
     int rowCount = 0;
     for (FieldValueList row : response.getResult().getValues()) {
@@ -784,7 +782,6 @@ public class ITBigQueryTest {
     QueryResponse response =
         bigquery
             .query(config)
-            .waitFor(RetryOption.totalTimeout(Duration.ofMinutes(1)))
             .getQueryResults(QueryResultsOption.pageSize(1000L));
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
     int rowCount = 0;
@@ -837,7 +834,6 @@ public class ITBigQueryTest {
     QueryResponse response =
         bigquery
             .query(config)
-            .waitFor(RetryOption.totalTimeout(Duration.ofMinutes(1)))
             .getQueryResults(QueryResultsOption.pageSize(1000L));
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
     assertEquals(2, Iterables.size(response.getResult().getValues()));
@@ -861,7 +857,6 @@ public class ITBigQueryTest {
     QueryResponse response =
         bigquery
             .query(config)
-            .waitFor(RetryOption.totalTimeout(Duration.ofMinutes(1)))
             .getQueryResults(QueryResultsOption.pageSize(1000L));
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
     assertEquals(2, Iterables.size(response.getResult().getValues()));
@@ -877,7 +872,7 @@ public class ITBigQueryTest {
         .addNamedParameter("p", bytesParameter)
         .build();
     QueryResponse response =
-        bigquery.query(config).waitFor().getQueryResults(QueryResultsOption.pageSize(1000L));
+        bigquery.query(config).getQueryResults(QueryResultsOption.pageSize(1000L));
     int rowCount = 0;
     for (FieldValueList row : response.getResult().getValues()) {
       rowCount++;
