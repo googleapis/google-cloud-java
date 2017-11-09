@@ -68,7 +68,6 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
-@BetaApi
 public class LanguageServiceSettings extends ClientSettings<LanguageServiceSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -183,21 +182,6 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
       gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
     }
     return gapicVersion;
-  }
-
-  /** Returns a builder for this class with recommended defaults. */
-  @Deprecated
-  public static Builder defaultBuilder() {
-    return Builder.createDefault();
-  }
-
-  /**
-   * Returns a builder for this class with recommended defaults for API methods, and the given
-   * ClientContext used for executor/transport/credentials.
-   */
-  @Deprecated
-  public static Builder defaultBuilder(ClientContext clientContext) {
-    return new Builder(clientContext);
   }
 
   /** Returns a new builder for this class. */

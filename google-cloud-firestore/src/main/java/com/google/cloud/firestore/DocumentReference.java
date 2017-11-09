@@ -391,6 +391,10 @@ public final class DocumentReference {
     };
   }
 
+  ResourcePath getResourcePath() {
+    return path;
+  }
+
   @Override
   public String toString() {
     return String.format("DocumentReference{path=%s}", path);

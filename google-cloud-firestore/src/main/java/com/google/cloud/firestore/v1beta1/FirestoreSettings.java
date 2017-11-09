@@ -268,21 +268,6 @@ public class FirestoreSettings extends ClientSettings<FirestoreSettings> {
     return gapicVersion;
   }
 
-  /** Returns a builder for this class with recommended defaults. */
-  @Deprecated
-  public static Builder defaultBuilder() {
-    return Builder.createDefault();
-  }
-
-  /**
-   * Returns a builder for this class with recommended defaults for API methods, and the given
-   * ClientContext used for executor/transport/credentials.
-   */
-  @Deprecated
-  public static Builder defaultBuilder(ClientContext clientContext) {
-    return new Builder(clientContext);
-  }
-
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();

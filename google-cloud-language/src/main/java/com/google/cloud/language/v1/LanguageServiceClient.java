@@ -93,7 +93,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
-@BetaApi
 public class LanguageServiceClient implements BackgroundResource {
   private final LanguageServiceSettings settings;
   private final LanguageServiceStub stub;
