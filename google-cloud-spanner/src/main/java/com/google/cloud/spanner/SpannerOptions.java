@@ -27,6 +27,7 @@ import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannel;
@@ -36,6 +37,7 @@ import io.netty.handler.ssl.SslContext;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import javax.net.ssl.SSLException;
 
@@ -75,7 +77,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final int prefetchChunks;
   private final int numChannels;
   private final String userAgent;
-
+  private final ImmutableMap<String, String> sessionLabels;
+  
   private SpannerOptions(Builder builder) {
     super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
     numChannels = builder.numChannels;
@@ -94,6 +97,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             ? builder.sessionPoolOptions
             : SessionPoolOptions.newBuilder().build();
     prefetchChunks = builder.prefetchChunks;
+    sessionLabels = ImmutableMap.copyOf(builder.sessionLabels);
   }
 
   /** Builder for {@link SpannerOptions} instances. */
@@ -108,6 +112,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private int prefetchChunks = DEFAULT_PREFETCH_CHUNKS;
     private SessionPoolOptions sessionPoolOptions;
     private String userAgentPrefix;
+    private Map<String, String> sessionLabels;
 
     private Builder() {}
 
@@ -117,6 +122,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.sessionPoolOptions = options.sessionPoolOptions;
       this.prefetchChunks = options.prefetchChunks;
       this.userAgentPrefix = options.userAgent;
+      this.sessionLabels = options.sessionLabels;
     }
 
     @Override
@@ -152,6 +158,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
+    /**
+     * Sets the labels to add to all Sessions created in this client. 
+     */
+    public Builder setSessionLabels(Map<String, String> sessionLabels) {
+    	  this.sessionLabels = sessionLabels;
+    	  return this;
+    }
+    
     /**
      * Specifying this will allow the client to prefetch up to {@code prefetchChunks} {@code
      * PartialResultSet} chunks for each read and query. The data size of each chunk depends on the
@@ -205,6 +219,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return sessionPoolOptions;
   }
 
+  public Map<String, String> getSessionLabels() {
+	  return sessionLabels;
+  }
+  
   public int getPrefetchChunks() {
     return prefetchChunks;
   }
