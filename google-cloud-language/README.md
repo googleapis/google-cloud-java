@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-language</artifactId>
-  <version>0.27.0-beta</version>
+  <version>1.10.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-language:0.27.0-beta'
+compile 'com.google.cloud:google-cloud-language:1.10.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-language" % "0.27.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-language" % "1.10.0"
 ```
 
 Authentication
