@@ -59,7 +59,6 @@ import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import org.threeten.bp.Duration;
 
 /** Tests for {@link Subscriber}. */
 @RunWith(Parameterized.class)

@@ -21,6 +21,8 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
+import com.google.auto.value.AutoValue;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
@@ -30,13 +32,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
-import org.junit.After;
+import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
 import org.threeten.bp.Duration;
-import java.util.concurrent.TimeUnit;
-import com.google.auto.value.AutoValue;
-import com.google.common.util.concurrent.MoreExecutors;
 
 public class MessageDispatcherTest {
   private static final ReceivedMessage TEST_MESSAGE =
@@ -47,7 +46,9 @@ public class MessageDispatcherTest {
   private static final Runnable NOOP_RUNNABLE =
       new Runnable() {
         @Override
-        public void run() {}
+        public void run() {
+          // No-op; don't do anything.
+        }
       };
   private static final int TEST_STREAM_DEADLINE_SECS = 42;
 
@@ -58,8 +59,9 @@ public class MessageDispatcherTest {
   private FakeClock clock;
 
   @AutoValue
-  static abstract class ModAckItem {
+  abstract static class ModAckItem {
     abstract String ackId();
+
     abstract int seconds();
 
     static ModAckItem of(String ackId, int seconds) {
@@ -113,18 +115,19 @@ public class MessageDispatcherTest {
             MoreExecutors.directExecutor(),
             systemExecutor,
             clock);
-            dispatcher.setMessageDeadlineSeconds(TEST_STREAM_DEADLINE_SECS);
+    dispatcher.setMessageDeadlineSeconds(TEST_STREAM_DEADLINE_SECS);
   }
 
   @Test
   public void testReceipt() throws Exception {
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
     dispatcher.processOutstandingAckOperations();
-    assertThat(sentModAcks).contains(ModAckItem.of(TEST_MESSAGE.getAckId(), TEST_STREAM_DEADLINE_SECS));
+    assertThat(sentModAcks)
+        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), TEST_STREAM_DEADLINE_SECS));
   }
 
   @Test
-  public void testAck() throws Exception  {
+  public void testAck() throws Exception {
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
     consumers.take().ack();
     dispatcher.processOutstandingAckOperations();
@@ -143,7 +146,8 @@ public class MessageDispatcherTest {
   public void testExtension() throws Exception {
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
     dispatcher.extendDeadlines();
-    assertThat(sentModAcks).contains(ModAckItem.of(TEST_MESSAGE.getAckId(), TEST_STREAM_DEADLINE_SECS));
+    assertThat(sentModAcks)
+        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), TEST_STREAM_DEADLINE_SECS));
 
     sentModAcks.clear();
     consumers.take().ack();
@@ -155,7 +159,8 @@ public class MessageDispatcherTest {
   public void testExtension_GiveUp() throws Exception {
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
     dispatcher.extendDeadlines();
-    assertThat(sentModAcks).contains(ModAckItem.of(TEST_MESSAGE.getAckId(), TEST_STREAM_DEADLINE_SECS));
+    assertThat(sentModAcks)
+        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), TEST_STREAM_DEADLINE_SECS));
 
     sentModAcks.clear();
     clock.advance(1, TimeUnit.DAYS);

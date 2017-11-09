@@ -17,11 +17,11 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiClock;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.core.Distribution;
 import com.google.cloud.pubsub.v1.MessageDispatcher.OutstandingMessageBatch.OutstandingMessage;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
@@ -37,9 +37,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -49,7 +49,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
-import com.google.common.annotations.VisibleForTesting;
 
 /**
  * Dispatches messages to a message receiver while handling the messages acking and lease
@@ -58,7 +57,7 @@ import com.google.common.annotations.VisibleForTesting;
 class MessageDispatcher {
   private static final Logger logger = Logger.getLogger(MessageDispatcher.class.getName());
 
-  @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
+  @InternalApi static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
 
   private final Executor executor;
   private final ScheduledExecutorService systemExecutor;
@@ -400,7 +399,8 @@ class MessageDispatcher {
     }
   }
 
-  @VisibleForTesting void extendDeadlines() {
+  @InternalApi
+  void extendDeadlines() {
     List<String> acksToSend = Collections.<String>emptyList();
     PendingModifyAckDeadline modack = new PendingModifyAckDeadline(getMessageDeadlineSeconds());
     Instant now = now();
@@ -418,7 +418,7 @@ class MessageDispatcher {
     ackProcessor.sendAckOperations(acksToSend, Collections.singletonList(modack));
   }
 
-  @VisibleForTesting
+  @InternalApi
   void processOutstandingAckOperations() {
     List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
 

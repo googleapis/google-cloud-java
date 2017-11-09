@@ -20,6 +20,7 @@ import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiService;
 import com.google.api.core.CurrentMillisClock;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
@@ -30,11 +31,9 @@ import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.HeaderProvider;
-import com.google.api.gax.rpc.TransportChannel;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
@@ -46,7 +45,6 @@ import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.CallCredentials;
 import io.grpc.Channel;
-import io.grpc.ManagedChannel;
 import io.grpc.auth.MoreCallCredentials;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -95,12 +93,12 @@ import org.threeten.bp.Duration;
  */
 public class Subscriber extends AbstractApiService {
   private static final int THREADS_PER_CHANNEL = 5;
-  @VisibleForTesting static final int CHANNELS_PER_CORE = 1;
+  @InternalApi static final int CHANNELS_PER_CORE = 1;
   private static final int MAX_INBOUND_MESSAGE_SIZE =
       20 * 1024 * 1024; // 20MB API maximum message size.
   private static final int INITIAL_ACK_DEADLINE_SECONDS = 60;
-  @VisibleForTesting static final int MAX_ACK_DEADLINE_SECONDS = 600;
-  @VisibleForTesting static final int MIN_ACK_DEADLINE_SECONDS = 10;
+  @InternalApi static final int MAX_ACK_DEADLINE_SECONDS = 600;
+  @InternalApi static final int MIN_ACK_DEADLINE_SECONDS = 10;
   private static final Duration ACK_DEADLINE_UPDATE_PERIOD = Duration.ofMinutes(1);
   private static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
 
@@ -233,7 +231,8 @@ public class Subscriber extends AbstractApiService {
   }
 
   /** Acknowledgement expiration padding. See {@link Builder#setAckExpirationPadding}. */
-  @VisibleForTesting Duration getAckExpirationPadding() {
+  @InternalApi
+  Duration getAckExpirationPadding() {
     return ackExpirationPadding;
   }
 
@@ -468,11 +467,11 @@ public class Subscriber extends AbstractApiService {
     }
   }
 
-  @VisibleForTesting
+  @InternalApi
   void setAckDeadline(int seconds) {
-        for (StreamingSubscriberConnection subscriberConnection : streamingSubscriberConnections) {
-          subscriberConnection.updateStreamAckDeadline(seconds);
-        }
+    for (StreamingSubscriberConnection subscriberConnection : streamingSubscriberConnections) {
+      subscriberConnection.updateStreamAckDeadline(seconds);
+    }
   }
 
   private void stopAllPollingConnections() {
@@ -600,7 +599,8 @@ public class Subscriber extends AbstractApiService {
      *
      * @param ackExpirationPadding must be greater or equal to {@link #MIN_ACK_EXPIRATION_PADDING}
      */
-    @VisibleForTesting Builder setAckExpirationPadding(Duration ackExpirationPadding) {
+    @InternalApi
+    Builder setAckExpirationPadding(Duration ackExpirationPadding) {
       Preconditions.checkArgument(ackExpirationPadding.compareTo(MIN_ACK_EXPIRATION_PADDING) >= 0);
       this.ackExpirationPadding = ackExpirationPadding;
       return this;
