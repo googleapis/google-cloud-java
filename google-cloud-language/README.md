@@ -12,9 +12,6 @@ Java idiomatic client for [Google Cloud Natural Language][cloud-language].
 - [Product Documentation][language-product-docs]
 - [Client Library Documentation][language-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 If you are using Maven, add this to your pom.xml file
