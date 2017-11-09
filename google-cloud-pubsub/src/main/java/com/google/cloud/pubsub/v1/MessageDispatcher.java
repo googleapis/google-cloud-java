@@ -22,7 +22,6 @@ import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.core.Distribution;
 import com.google.cloud.pubsub.v1.MessageDispatcher.OutstandingMessageBatch.OutstandingMessage;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
@@ -32,14 +31,17 @@ import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Deque;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.PriorityQueue;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -47,6 +49,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
+import com.google.common.annotations.VisibleForTesting;
 
 /**
  * Dispatches messages to a message receiver while handling the messages acking and lease
@@ -55,11 +58,9 @@ import org.threeten.bp.Instant;
 class MessageDispatcher {
   private static final Logger logger = Logger.getLogger(MessageDispatcher.class.getName());
 
-  private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECONDS = 2;
   @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
-  private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
-  private final ScheduledExecutorService executor;
+  private final Executor executor;
   private final ScheduledExecutorService systemExecutor;
   private final ApiClock clock;
 
@@ -71,7 +72,9 @@ class MessageDispatcher {
   private final FlowController flowController;
   private final MessageWaiter messagesWaiter;
 
-  private final PriorityQueue<ExtensionJob> outstandingAckHandlers;
+  // Maps ID to "total expiration time". If it takes longer than this, stop extending.
+  private final ConcurrentMap<String, Instant> pendingMessages = new ConcurrentHashMap<>();
+
   private final LinkedBlockingQueue<String> pendingAcks = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<String> pendingNacks = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<String> pendingReceipts = new LinkedBlockingQueue<>();
@@ -81,61 +84,12 @@ class MessageDispatcher {
   // but set it to some reasonable value just in case.
   private final AtomicInteger messageDeadlineSeconds = new AtomicInteger(10);
   private ScheduledFuture<?> ackDeadlineExtensionAlarm;
-  private Instant nextAckDeadlineExtensionAlarmTime;
   private ScheduledFuture<?> pendingAcksAlarm;
 
   private final Deque<OutstandingMessageBatch> outstandingMessageBatches;
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
-
-  // ExtensionJob represents a group of {@code AckHandler}s that shares the same expiration.
-  //
-  // It is Comparable so that it may be put in a PriorityQueue.
-  // For efficiency, it is also mutable, so great care should be taken to make sure
-  // it is not modified while inside the queue.
-  // The hashcode and equals methods are explicitly not implemented to discourage
-  // the use of this class as keys in maps or similar containers.
-  private class ExtensionJob implements Comparable<ExtensionJob> {
-    Instant creation;
-    Instant expiration;
-    int nextExtensionSeconds;
-    ArrayList<AckHandler> ackHandlers;
-
-    ExtensionJob(
-        Instant creation,
-        Instant expiration,
-        int initialAckDeadlineExtension,
-        ArrayList<AckHandler> ackHandlers) {
-      this.creation = creation;
-      this.expiration = expiration;
-      nextExtensionSeconds = initialAckDeadlineExtension;
-      this.ackHandlers = ackHandlers;
-    }
-
-    void extendExpiration(Instant now) {
-      Instant possibleExtension = now.plus(Duration.ofSeconds(nextExtensionSeconds));
-      Instant maxExtension = creation.plus(maxAckExtensionPeriod);
-      expiration = possibleExtension.isBefore(maxExtension) ? possibleExtension : maxExtension;
-      nextExtensionSeconds = Math.min(2 * nextExtensionSeconds, MAX_ACK_DEADLINE_EXTENSION_SECS);
-    }
-
-    @Override
-    public int compareTo(ExtensionJob other) {
-      return expiration.compareTo(other.expiration);
-    }
-
-    @Override
-    public String toString() {
-      ArrayList<String> ackIds = new ArrayList<>();
-      for (AckHandler ah : ackHandlers) {
-        ackIds.add(ah.ackId);
-      }
-      return String.format(
-          "ExtensionJob {expiration: %s, nextExtensionSeconds: %d, ackIds: %s}",
-          expiration, nextExtensionSeconds, ackIds);
-    }
-  }
 
   /** Stores the data needed to asynchronously modify acknowledgement deadlines. */
   static class PendingModifyAckDeadline {
@@ -168,25 +122,20 @@ class MessageDispatcher {
     NACK
   }
 
-  /**
-   * Handles callbacks for acking/nacking messages from the {@link
-   * MessageReceiver}.
-   */
+  /** Handles callbacks for acking/nacking messages from the {@link MessageReceiver}. */
   private class AckHandler implements FutureCallback<AckReply> {
     private final String ackId;
     private final int outstandingBytes;
-    private final AtomicBoolean acked;
     private final long receivedTimeMillis;
 
     AckHandler(String ackId, int outstandingBytes) {
       this.ackId = ackId;
       this.outstandingBytes = outstandingBytes;
-      acked = new AtomicBoolean(false);
       receivedTimeMillis = clock.millisTime();
     }
 
     private void onBoth(LinkedBlockingQueue<String> destination) {
-      acked.getAndSet(true);
+      pendingMessages.remove(ackId);
       destination.add(ackId);
       flowController.release(1, outstandingBytes);
       messagesWaiter.incrementPendingMessages(-1);
@@ -236,7 +185,7 @@ class MessageDispatcher {
       Distribution ackLatencyDistribution,
       FlowController flowController,
       Deque<OutstandingMessageBatch> outstandingMessageBatches,
-      ScheduledExecutorService executor,
+      Executor executor,
       ScheduledExecutorService systemExecutor,
       ApiClock clock) {
     this.executor = executor;
@@ -247,32 +196,54 @@ class MessageDispatcher {
     this.ackProcessor = ackProcessor;
     this.flowController = flowController;
     this.outstandingMessageBatches = outstandingMessageBatches;
-    outstandingAckHandlers = new PriorityQueue<>();
     // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
     this.ackLatencyDistribution = ackLatencyDistribution;
     alarmsLock = new ReentrantLock();
-    nextAckDeadlineExtensionAlarmTime = Instant.ofEpochMilli(Long.MAX_VALUE);
     messagesWaiter = new MessageWaiter();
     this.clock = clock;
   }
 
   public void start() {
-    pendingAcksAlarm =
-        systemExecutor.scheduleWithFixedDelay(
-            new Runnable() {
-              @Override
-              public void run() {
-                try {
-                  processOutstandingAckOperations();
-                } catch (Throwable t) {
-                  // Catch everything so that one run failing doesn't prevent subsequent runs.
-                  logger.log(Level.WARNING, "failed to send acks/nacks", t);
+    alarmsLock.lock();
+    try {
+      pendingAcksAlarm =
+          systemExecutor.scheduleWithFixedDelay(
+              new Runnable() {
+                @Override
+                public void run() {
+                  try {
+                    processOutstandingAckOperations();
+                  } catch (Throwable t) {
+                    // Catch everything so that one run failing doesn't prevent subsequent runs.
+                    logger.log(Level.WARNING, "failed to send acks/nacks", t);
+                  }
                 }
-              }
-            },
-            PENDING_ACKS_SEND_DELAY.toMillis(),
-            PENDING_ACKS_SEND_DELAY.toMillis(),
-            TimeUnit.MILLISECONDS);
+              },
+              PENDING_ACKS_SEND_DELAY.toMillis(),
+              PENDING_ACKS_SEND_DELAY.toMillis(),
+              TimeUnit.MILLISECONDS);
+
+      Duration extensionPeriod =
+          Duration.ofSeconds(messageDeadlineSeconds.get()).minus(ackExpirationPadding);
+      ackDeadlineExtensionAlarm =
+          systemExecutor.scheduleWithFixedDelay(
+              new Runnable() {
+                @Override
+                public void run() {
+                  try {
+                    extendDeadlines();
+                  } catch (Throwable t) {
+                    // Catch everything so that one run failing doesn't prevent subsequent runs.
+                    logger.log(Level.WARNING, "failed to send extend deadlines", t);
+                  }
+                }
+              },
+              extensionPeriod.toMillis(),
+              extensionPeriod.toMillis(),
+              TimeUnit.MILLISECONDS);
+    } finally {
+      alarmsLock.unlock();
+    }
   }
 
   public void stop() {
@@ -343,8 +314,11 @@ class MessageDispatcher {
       return;
     }
     messagesWaiter.incrementPendingMessages(messages.size());
+
+    Instant totalExpiration = now().plus(maxAckExtensionPeriod);
     for (ReceivedMessage message : messages) {
       pendingReceipts.add(message.getAckId());
+      pendingMessages.put(message.getAckId(), totalExpiration);
     }
 
     OutstandingMessageBatch outstandingBatch = new OutstandingMessageBatch(doneCallback);
@@ -355,19 +329,6 @@ class MessageDispatcher {
       ackHandlers.add(ackHandler);
       outstandingBatch.addMessage(message, ackHandler);
     }
-
-    Instant expiration = Instant.ofEpochMilli(clock.millisTime())
-        .plusSeconds(messageDeadlineSeconds.get());
-    synchronized (outstandingAckHandlers) {
-      outstandingAckHandlers.add(
-          new ExtensionJob(
-              Instant.ofEpochMilli(clock.millisTime()),
-              expiration,
-              INITIAL_ACK_DEADLINE_EXTENSION_SECONDS,
-              ackHandlers));
-    }
-    setupNextAckDeadlineExtensionAlarm(expiration);
-
     synchronized (outstandingMessageBatches) {
       outstandingMessageBatches.add(outstandingBatch);
     }
@@ -422,7 +383,7 @@ class MessageDispatcher {
             }
           };
       Futures.addCallback(response, ackHandler);
-      executor.submit(
+      executor.execute(
           new Runnable() {
             @Override
             public void run() {
@@ -439,133 +400,27 @@ class MessageDispatcher {
     }
   }
 
-  private class AckDeadlineAlarm implements Runnable {
-    @Override
-    public void run() {
-      alarmsLock.lock();
-      try {
-        nextAckDeadlineExtensionAlarmTime = Instant.ofEpochMilli(Long.MAX_VALUE);
-        ackDeadlineExtensionAlarm = null;
-        if (pendingAcksAlarm != null) {
-          pendingAcksAlarm.cancel(false);
-          pendingAcksAlarm = null;
-        }
-      } finally {
-        alarmsLock.unlock();
-      }
+  @VisibleForTesting void extendDeadlines() {
+    List<String> acksToSend = Collections.<String>emptyList();
+    PendingModifyAckDeadline modack = new PendingModifyAckDeadline(getMessageDeadlineSeconds());
+    Instant now = now();
 
-      Instant now = Instant.ofEpochMilli(clock.millisTime());
-      // Rounded to the next second, so we only schedule future alarms at the second
-      // resolution.
-      Instant cutOverTime =
-          Instant.ofEpochMilli(
-              ((long) Math.ceil(now.plus(ackExpirationPadding).plusMillis(500).toEpochMilli() / 1000.0))
-                  * 1000L);
-      logger.log(
-          Level.FINER,
-          "Running alarm sent outstanding acks, at time: {0}, with cutover time: {1}, padding: {2}",
-          new Object[] {now, cutOverTime, ackExpirationPadding});
-      Instant nextScheduleExpiration = null;
-      List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
-
-      // Holding area for jobs we'll put back into the queue
-      // so we don't process the same job twice.
-      List<ExtensionJob> renewJobs = new ArrayList<>();
-
-      synchronized (outstandingAckHandlers) {
-        while (!outstandingAckHandlers.isEmpty()
-            && outstandingAckHandlers.peek().expiration.compareTo(cutOverTime) <= 0) {
-          ExtensionJob job = outstandingAckHandlers.poll();
-
-          if (maxAckExtensionPeriod.toMillis() > 0
-              && job.creation.plus(maxAckExtensionPeriod).compareTo(now) <= 0) {
-            // The job has expired, according to the maxAckExtensionPeriod, we are just going to
-            // drop it.
-            continue;
-          }
-
-          // If a message has already been acked, remove it, nothing to do.
-          for (int i = 0; i < job.ackHandlers.size(); ) {
-            if (job.ackHandlers.get(i).acked.get()) {
-              Collections.swap(job.ackHandlers, i, job.ackHandlers.size() - 1);
-              job.ackHandlers.remove(job.ackHandlers.size() - 1);
-            } else {
-              i++;
-            }
-          }
-
-          if (job.ackHandlers.isEmpty()) {
-            continue;
-          }
-
-          job.extendExpiration(now);
-          long extensionMillis = Duration.between(now, job.expiration).toMillis();
-          int extensionSeconds = Ints
-              .saturatedCast(TimeUnit.MILLISECONDS.toSeconds(extensionMillis));
-          PendingModifyAckDeadline pendingModAckDeadline =
-              new PendingModifyAckDeadline(extensionSeconds);
-          for (AckHandler ackHandler : job.ackHandlers) {
-            pendingModAckDeadline.addAckId(ackHandler.ackId);
-          }
-          modifyAckDeadlinesToSend.add(pendingModAckDeadline);
-          renewJobs.add(job);
-        }
-        for (ExtensionJob job : renewJobs) {
-          outstandingAckHandlers.add(job);
-        }
-        if (!outstandingAckHandlers.isEmpty()) {
-          nextScheduleExpiration = outstandingAckHandlers.peek().expiration;
-        }
-      }
-
-      processOutstandingAckOperations(modifyAckDeadlinesToSend);
-
-      if (nextScheduleExpiration != null) {
-        logger.log(
-            Level.FINER,
-            "Scheduling based on outstanding, at time: {0}, next scheduled time: {1}",
-            new Object[] {now, nextScheduleExpiration});
-        setupNextAckDeadlineExtensionAlarm(nextScheduleExpiration);
+    Iterator<Map.Entry<String, Instant>> it = pendingMessages.entrySet().iterator();
+    while (it.hasNext()) {
+      Map.Entry<String, Instant> entry = it.next();
+      if (entry.getValue().isBefore(now)) {
+        it.remove();
+      } else {
+        modack.ackIds.add(entry.getKey());
       }
     }
+
+    ackProcessor.sendAckOperations(acksToSend, Collections.singletonList(modack));
   }
 
-  private void setupNextAckDeadlineExtensionAlarm(Instant expiration) {
-    Instant possibleNextAlarmTime = expiration.minus(ackExpirationPadding);
-    alarmsLock.lock();
-    try {
-      if (nextAckDeadlineExtensionAlarmTime.isAfter(possibleNextAlarmTime)) {
-        logger.log(
-            Level.FINER,
-            "Scheduling next alarm time: {0}, previous alarm time: {1}",
-            new Object[] {possibleNextAlarmTime, nextAckDeadlineExtensionAlarmTime});
-        if (ackDeadlineExtensionAlarm != null) {
-          logger.log(Level.FINER, "Canceling previous alarm");
-          ackDeadlineExtensionAlarm.cancel(false);
-        }
-
-        nextAckDeadlineExtensionAlarmTime = possibleNextAlarmTime;
-
-        ackDeadlineExtensionAlarm =
-            systemExecutor.schedule(
-                new AckDeadlineAlarm(),
-                nextAckDeadlineExtensionAlarmTime.toEpochMilli() - clock.millisTime(),
-                TimeUnit.MILLISECONDS);
-      }
-
-    } finally {
-      alarmsLock.unlock();
-    }
-  }
-
-  private void processOutstandingAckOperations() {
-    processOutstandingAckOperations(Collections.<PendingModifyAckDeadline>emptyList());
-  }
-
-  private void processOutstandingAckOperations(
-      List<PendingModifyAckDeadline> ackDeadlineExtensions) {
-    List<PendingModifyAckDeadline> modifyAckDeadlinesToSend =
-        Lists.newArrayList(ackDeadlineExtensions);
+  @VisibleForTesting
+  void processOutstandingAckOperations() {
+    List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
 
     List<String> acksToSend = new ArrayList<>();
     pendingAcks.drainTo(acksToSend);
@@ -587,5 +442,9 @@ class MessageDispatcher {
     }
 
     ackProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
+  }
+
+  private Instant now() {
+    return Instant.ofEpochMilli(clock.millisTime());
   }
 }
