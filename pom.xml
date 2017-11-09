@@ -689,12 +689,22 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-video-intelligence-v1</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1beta1</artifactId>
         <version>${generatedProto.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1beta2</artifactId>
+        <version>${generatedProto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-video-intelligence-v1</artifactId>
         <version>${generatedProto.version}</version>
       </dependency>
 
@@ -1242,7 +1252,7 @@
                   </group>
                   <group>
                     <title>Stub packages</title>
-                    <packages>com.google.cloud.bigtable.v2.stub:com.google.cloud.bigtable.admin.v2.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.vision.v1.stub</packages>
+                    <packages>com.google.cloud.bigtable.v2.stub:com.google.cloud.bigtable.admin.v2.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.vision.v1.stub</packages>
                   </group>
                 </groups>
                 <links>
@@ -1264,6 +1274,7 @@
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-vision-v1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1beta1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1beta2/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1/${generatedProto.version}/apidocs/</link>
                 </links>
               </configuration>
             </plugin>
