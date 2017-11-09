@@ -326,7 +326,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public com.google.spanner.v1.Session createSession(
+  public Session createSession(
       String databaseName, @Nullable Map<String, String> labels, @Nullable Map<Option, ?> options) {
     CreateSessionRequest.Builder request =
         CreateSessionRequest.newBuilder().setDatabase(databaseName);
