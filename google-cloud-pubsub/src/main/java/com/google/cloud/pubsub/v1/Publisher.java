@@ -141,6 +141,9 @@ public class Publisher {
     if (channelProvider.needsHeaders()) {
       channelProvider = channelProvider.withHeaders(builder.headerProvider.getHeaders());
     }
+    if (channelProvider.needsEndpoint()) {
+      channelProvider = channelProvider.withEndpoint(TopicAdminSettings.getDefaultEndpoint());
+    }
     for (int i = 0; i < channels.length; i++) {
       GrpcTransportChannel transportChannel =
           (GrpcTransportChannel) channelProvider.getTransportChannel();
@@ -586,7 +589,7 @@ public class Publisher {
     TransportChannelProvider channelProvider =
         TopicAdminSettings.defaultGrpcTransportProviderBuilder().build();
     HeaderProvider headerProvider =
-        SubscriptionAdminSettings.defaultApiClientHeaderProviderBuilder().build();
+        TopicAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     CredentialsProvider credentialsProvider =
         TopicAdminSettings.defaultCredentialsProviderBuilder().build();

@@ -91,11 +91,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings =
- *     VideoIntelligenceServiceSettings.newBuilder()
- *         .setTransportChannelProvider(VideoIntelligenceServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     VideoIntelligenceServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * VideoIntelligenceServiceClient videoIntelligenceServiceClient =
  *     VideoIntelligenceServiceClient.create(videoIntelligenceServiceSettings);
  * </code>
@@ -127,7 +123,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * Constructs an instance of VideoIntelligenceServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer to use VideoIntelligenceServiceSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final VideoIntelligenceServiceClient create(VideoIntelligenceServiceStub stub) {
     return new VideoIntelligenceServiceClient(stub);
   }
@@ -144,6 +140,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected VideoIntelligenceServiceClient(VideoIntelligenceServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +151,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public VideoIntelligenceServiceStub getStub() {
     return stub;
   }

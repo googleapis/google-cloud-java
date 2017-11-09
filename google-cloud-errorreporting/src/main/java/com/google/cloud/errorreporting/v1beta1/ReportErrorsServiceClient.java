@@ -89,11 +89,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ReportErrorsServiceSettings reportErrorsServiceSettings =
- *     ReportErrorsServiceSettings.newBuilder()
- *         .setTransportChannelProvider(ReportErrorsServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     ReportErrorsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ReportErrorsServiceClient reportErrorsServiceClient =
  *     ReportErrorsServiceClient.create(reportErrorsServiceSettings);
  * </code>
@@ -123,7 +119,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * Constructs an instance of ReportErrorsServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer to use ReportErrorsServiceSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ReportErrorsServiceClient create(ReportErrorsServiceStub stub) {
     return new ReportErrorsServiceClient(stub);
   }
@@ -138,6 +134,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ReportErrorsServiceClient(ReportErrorsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -147,7 +144,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ReportErrorsServiceStub getStub() {
     return stub;
   }

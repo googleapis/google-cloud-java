@@ -184,6 +184,9 @@ public class Subscriber extends AbstractApiService {
     if (channelProvider.needsHeaders()) {
       channelProvider = channelProvider.withHeaders(builder.headerProvider.getHeaders());
     }
+    if (channelProvider.needsEndpoint()) {
+      channelProvider = channelProvider.withEndpoint(SubscriptionAdminSettings.getDefaultEndpoint());
+    }
     this.channelProvider = channelProvider;
     credentialsProvider = builder.credentialsProvider;
 
@@ -538,6 +541,7 @@ public class Subscriber extends AbstractApiService {
     TransportChannelProvider channelProvider =
         SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
+            .setKeepAliveTime(Duration.ofMinutes(5))
             .build();
     HeaderProvider headerProvider =
         SubscriptionAdminSettings.defaultApiClientHeaderProviderBuilder().build();

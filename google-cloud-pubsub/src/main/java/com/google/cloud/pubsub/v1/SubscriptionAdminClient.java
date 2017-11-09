@@ -128,11 +128,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * SubscriptionAdminSettings subscriptionAdminSettings =
- *     SubscriptionAdminSettings.newBuilder()
- *         .setTransportChannelProvider(SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     SubscriptionAdminSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SubscriptionAdminClient subscriptionAdminClient =
  *     SubscriptionAdminClient.create(subscriptionAdminSettings);
  * </code>
@@ -162,7 +158,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Constructs an instance of SubscriptionAdminClient, using the given stub for making calls. This
    * is for advanced usage - prefer to use SubscriptionAdminSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SubscriptionAdminClient create(SubscriberStub stub) {
     return new SubscriptionAdminClient(stub);
   }
@@ -177,6 +173,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SubscriptionAdminClient(SubscriberStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -186,7 +183,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SubscriberStub getStub() {
     return stub;
   }

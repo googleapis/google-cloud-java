@@ -94,6 +94,8 @@ public final class LocalFirestoreHelper {
   public static final ApiFuture<CommitResponse> SINGLE_DELETE_COMMIT_RESPONSE;
   public static final ApiFuture<CommitResponse> SINGLE_WRITE_COMMIT_RESPONSE;
 
+  public static final ApiFuture<CommitResponse> SERVER_TIMESTAMP_COMMIT_RESPONSE;
+
   public static final Date DATE;
   public static final GeoPoint GEO_POINT;
   public static final Blob BLOB;
@@ -551,7 +553,8 @@ public final class LocalFirestoreHelper {
             null,
             new DocumentReference(
                 null,
-                ResourcePath.create(DatabaseRootName.create("", ""), ImmutableList.of("coll", "doc"))),
+                ResourcePath.create(
+                    DatabaseRootName.create("", ""), ImmutableList.of("coll", "doc"))),
             SINGLE_FIELD_PROTO,
             Instant.ofEpochSecond(5, 6),
             Instant.ofEpochSecond(3, 4),
@@ -626,6 +629,8 @@ public final class LocalFirestoreHelper {
     SINGLE_WRITE_COMMIT_RESPONSE = commitResponse(/* adds= */ 1, /* deletes= */ 0);
     SINGLE_DELETE_COMMIT_RESPONSE = commitResponse(/* adds= */ 0, /* deletes= */ 1);
     SINGLE_CREATE_COMMIT_REQUEST = commit(create(SINGLE_FIELD_PROTO));
+
+    SERVER_TIMESTAMP_COMMIT_RESPONSE = commitResponse(/* adds= */ 2, /* deletes= */ 0);
 
     NESTED_CLASS_OBJECT = new NestedClass();
   }
