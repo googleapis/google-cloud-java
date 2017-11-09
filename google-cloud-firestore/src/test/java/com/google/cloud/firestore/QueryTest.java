@@ -288,8 +288,7 @@ public class QueryTest {
       fail();
     } catch (IllegalArgumentException e) {
       assertEquals(
-          "Only a direct child can be used as a query boundary. Found: "
-              + "'projects/test-project/databases/(default)/documents/coll/coll/doc/coll'",
+          "Only a direct child can be used as a query boundary. Found: 'coll/coll/doc/coll'",
           e.getMessage());
     }
 
@@ -298,8 +297,7 @@ public class QueryTest {
       fail();
     } catch (IllegalArgumentException e) {
       assertEquals(
-          "'projects/test-project/databases/(default)/documents/foo/bar' is not part of "
-              + "the query result set and cannot be used as a query boundary.",
+          "'foo/bar' is not part of the query result set and cannot be used as a query boundary.",
           e.getMessage());
     }
   }

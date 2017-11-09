@@ -118,7 +118,7 @@ class FirestoreImpl implements Firestore {
       return Value.newBuilder().setBytesValue(blob.toByteString()).build();
     } else if (sanitizedObject instanceof DocumentReference) {
       DocumentReference docRef = (DocumentReference) sanitizedObject;
-      return Value.newBuilder().setReferenceValue(docRef.getPath()).build();
+      return Value.newBuilder().setReferenceValue(docRef.getName()).build();
     } else if (sanitizedObject instanceof Map) {
       MapValue.Builder res = MapValue.newBuilder();
       for (Map.Entry<String, Object> entry : ((Map<String, Object>) sanitizedObject).entrySet()) {

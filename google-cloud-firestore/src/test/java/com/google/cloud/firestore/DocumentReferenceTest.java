@@ -152,7 +152,7 @@ public class DocumentReferenceTest {
 
     Map<String, Value> documentReferenceFields = new HashMap<>();
     documentReferenceFields.put(
-        "docRef", Value.newBuilder().setReferenceValue(DOCUMENT_PATH).build());
+        "docRef", Value.newBuilder().setReferenceValue(DOCUMENT_NAME).build());
 
     assertCommitEquals(commit(set(documentReferenceFields)), commitCapture.getValue());
   }
