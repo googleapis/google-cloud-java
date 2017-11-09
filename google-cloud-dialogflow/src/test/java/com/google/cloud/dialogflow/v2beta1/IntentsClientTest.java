@@ -108,7 +108,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(expectedResponse);
 
-    ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+    ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
 
     ListIntentsPagedResponse pagedListResponse = client.listIntents(parent);
 
@@ -130,7 +130,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+      ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
 
       client.listIntents(parent);
       Assert.fail("No exception raised");
@@ -152,7 +152,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(expectedResponse);
 
-    ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+    ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
     String languageCode = "languageCode-412800396";
 
     ListIntentsPagedResponse pagedListResponse = client.listIntents(parent, languageCode);
@@ -176,7 +176,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+      ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
       String languageCode = "languageCode-412800396";
 
       client.listIntents(parent, languageCode);
@@ -189,7 +189,7 @@ public class IntentsClientTest {
   @Test
   @SuppressWarnings("all")
   public void getIntentTest() {
-    IntentName name2 = IntentName.create("[PROJECT]", "[INTENT]");
+    IntentName name2 = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
     int priority = -1165461084;
     boolean isFallback = false;
@@ -212,7 +212,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(expectedResponse);
 
-    IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
+    IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
 
     Intent actualResponse = client.getIntent(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -231,7 +231,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
+      IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
 
       client.getIntent(name);
       Assert.fail("No exception raised");
@@ -243,7 +243,7 @@ public class IntentsClientTest {
   @Test
   @SuppressWarnings("all")
   public void getIntentTest2() {
-    IntentName name2 = IntentName.create("[PROJECT]", "[INTENT]");
+    IntentName name2 = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
     int priority = -1165461084;
     boolean isFallback = false;
@@ -266,7 +266,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(expectedResponse);
 
-    IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
+    IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
     String languageCode = "languageCode-412800396";
 
     Intent actualResponse = client.getIntent(name, languageCode);
@@ -287,7 +287,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
+      IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
       String languageCode = "languageCode-412800396";
 
       client.getIntent(name, languageCode);
@@ -300,7 +300,7 @@ public class IntentsClientTest {
   @Test
   @SuppressWarnings("all")
   public void createIntentTest() {
-    IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
+    IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
     int priority = -1165461084;
     boolean isFallback = false;
@@ -323,7 +323,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(expectedResponse);
 
-    ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+    ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
     Intent intent = Intent.newBuilder().build();
 
     Intent actualResponse = client.createIntent(parent, intent);
@@ -344,7 +344,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+      ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
       Intent intent = Intent.newBuilder().build();
 
       client.createIntent(parent, intent);
@@ -357,7 +357,7 @@ public class IntentsClientTest {
   @Test
   @SuppressWarnings("all")
   public void createIntentTest2() {
-    IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
+    IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
     int priority = -1165461084;
     boolean isFallback = false;
@@ -380,7 +380,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(expectedResponse);
 
-    ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+    ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
     Intent intent = Intent.newBuilder().build();
     String languageCode = "languageCode-412800396";
 
@@ -403,7 +403,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+      ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
       Intent intent = Intent.newBuilder().build();
       String languageCode = "languageCode-412800396";
 
@@ -417,7 +417,7 @@ public class IntentsClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateIntentTest() {
-    IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
+    IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
     int priority = -1165461084;
     boolean isFallback = false;
@@ -474,7 +474,7 @@ public class IntentsClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateIntentTest2() {
-    IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
+    IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
     int priority = -1165461084;
     boolean isFallback = false;
@@ -537,7 +537,7 @@ public class IntentsClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockIntents.addResponse(expectedResponse);
 
-    IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
+    IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
 
     client.deleteIntent(name);
 
@@ -555,7 +555,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
+      IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
 
       client.deleteIntent(name);
       Assert.fail("No exception raised");
@@ -576,7 +576,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(resultOperation);
 
-    ProjectName parent = ProjectName.create("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     List<Intent> intents = new ArrayList<>();
 
     Empty actualResponse = client.batchDeleteIntentsAsync(parent, intents).get();
@@ -597,7 +597,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.create("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       List<Intent> intents = new ArrayList<>();
 
       client.batchDeleteIntentsAsync(parent, intents).get();

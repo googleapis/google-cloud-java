@@ -15,6 +15,7 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.dialogflow.v2beta1.EntityTypesGrpc.EntityTypesImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -26,6 +27,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockEntityTypesImpl extends EntityTypesImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

@@ -32,7 +32,7 @@
  * <pre>
  * <code>
  * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   ProjectName parent = ProjectName.create("[PROJECT]");
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Agent response = agentsClient.getAgent(parent);
  * }
  * </code>
@@ -51,7 +51,7 @@
  * <pre>
  * <code>
  * try (ContextsClient contextsClient = ContextsClient.create()) {
- *   ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
+ *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
  *   Context response = contextsClient.getContext(name);
  * }
  * </code>
@@ -70,7 +70,7 @@
  * <pre>
  * <code>
  * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
- *   EntityTypeName name = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+ *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
  *   EntityType response = entityTypesClient.getEntityType(name);
  * }
  * </code>
@@ -89,7 +89,7 @@
  * <pre>
  * <code>
  * try (IntentsClient intentsClient = IntentsClient.create()) {
- *   IntentName name = IntentName.create("[PROJECT]", "[INTENT]");
+ *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
  *   Intent response = intentsClient.getIntent(name);
  * }
  * </code>
@@ -109,7 +109,7 @@
  * <pre>
  * <code>
  * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
- *   SessionEntityTypeName name = SessionEntityTypeName.create("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+ *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
  *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
  * }
  * </code>
@@ -126,7 +126,7 @@
  * <pre>
  * <code>
  * try (SessionsClient sessionsClient = SessionsClient.create()) {
- *   SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
+ *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
  *   QueryInput queryInput = QueryInput.newBuilder().build();
  *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
  * }

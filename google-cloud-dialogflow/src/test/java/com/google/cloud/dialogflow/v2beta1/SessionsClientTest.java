@@ -97,7 +97,7 @@ public class SessionsClientTest {
         DetectIntentResponse.newBuilder().setResponseId(responseId).build();
     mockSessions.addResponse(expectedResponse);
 
-    SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
+    SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
     QueryInput queryInput = QueryInput.newBuilder().build();
 
     DetectIntentResponse actualResponse = client.detectIntent(session, queryInput);
@@ -118,7 +118,7 @@ public class SessionsClientTest {
     mockSessions.addException(exception);
 
     try {
-      SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
+      SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
       QueryInput queryInput = QueryInput.newBuilder().build();
 
       client.detectIntent(session, queryInput);

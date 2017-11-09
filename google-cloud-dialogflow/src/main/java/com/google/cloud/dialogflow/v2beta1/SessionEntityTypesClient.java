@@ -41,7 +41,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
- *   SessionEntityTypeName name = SessionEntityTypeName.create("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+ *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
  *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
  * }
  * </code>
@@ -92,11 +92,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * SessionEntityTypesSettings sessionEntityTypesSettings =
- *     SessionEntityTypesSettings.newBuilder()
- *         .setTransportChannelProvider(SessionEntityTypesSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     SessionEntityTypesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SessionEntityTypesClient sessionEntityTypesClient =
  *     SessionEntityTypesClient.create(sessionEntityTypesSettings);
  * </code>
@@ -126,7 +122,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * Constructs an instance of SessionEntityTypesClient, using the given stub for making calls. This
    * is for advanced usage - prefer to use SessionEntityTypesSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SessionEntityTypesClient create(SessionEntityTypesStub stub) {
     return new SessionEntityTypesClient(stub);
   }
@@ -141,6 +137,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SessionEntityTypesClient(SessionEntityTypesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +147,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SessionEntityTypesStub getStub() {
     return stub;
   }
@@ -163,7 +160,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
    *   for (SessionEntityType element : sessionEntityTypesClient.listSessionEntityTypes(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -188,7 +185,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
    *   ListSessionEntityTypesRequest request = ListSessionEntityTypesRequest.newBuilder()
    *     .setParentWithSessionName(parent)
    *     .build();
@@ -214,7 +211,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
    *   ListSessionEntityTypesRequest request = ListSessionEntityTypesRequest.newBuilder()
    *     .setParentWithSessionName(parent)
    *     .build();
@@ -239,7 +236,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
    *   ListSessionEntityTypesRequest request = ListSessionEntityTypesRequest.newBuilder()
    *     .setParentWithSessionName(parent)
    *     .build();
@@ -271,7 +268,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.create("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
    *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
    * }
    * </code></pre>
@@ -295,7 +292,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.create("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
    *   GetSessionEntityTypeRequest request = GetSessionEntityTypeRequest.newBuilder()
    *     .setNameWithSessionEntityTypeName(name)
    *     .build();
@@ -318,7 +315,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.create("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
    *   GetSessionEntityTypeRequest request = GetSessionEntityTypeRequest.newBuilder()
    *     .setNameWithSessionEntityTypeName(name)
    *     .build();
@@ -341,7 +338,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
    *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
    *   SessionEntityType response = sessionEntityTypesClient.createSessionEntityType(parent, sessionEntityType);
    * }
@@ -371,7 +368,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
    *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
    *   CreateSessionEntityTypeRequest request = CreateSessionEntityTypeRequest.newBuilder()
    *     .setParentWithSessionName(parent)
@@ -396,7 +393,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
    *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
    *   CreateSessionEntityTypeRequest request = CreateSessionEntityTypeRequest.newBuilder()
    *     .setParentWithSessionName(parent)
@@ -491,7 +488,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.create("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
    *   sessionEntityTypesClient.deleteSessionEntityType(name);
    * }
    * </code></pre>
@@ -515,7 +512,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.create("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
    *   DeleteSessionEntityTypeRequest request = DeleteSessionEntityTypeRequest.newBuilder()
    *     .setNameWithSessionEntityTypeName(name)
    *     .build();
@@ -538,7 +535,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.create("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
    *   DeleteSessionEntityTypeRequest request = DeleteSessionEntityTypeRequest.newBuilder()
    *     .setNameWithSessionEntityTypeName(name)
    *     .build();

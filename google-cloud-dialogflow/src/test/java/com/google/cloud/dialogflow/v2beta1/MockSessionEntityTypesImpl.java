@@ -15,6 +15,7 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.dialogflow.v2beta1.SessionEntityTypesGrpc.SessionEntityTypesImplBase;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
@@ -25,6 +26,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

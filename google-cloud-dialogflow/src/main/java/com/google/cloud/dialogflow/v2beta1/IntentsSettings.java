@@ -20,8 +20,6 @@ import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListInte
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.PropertiesProvider;
@@ -36,7 +34,6 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -88,7 +85,7 @@ import org.threeten.bp.Duration;
  */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
-public class IntentsSettings extends ClientSettings {
+public class IntentsSettings extends ClientSettings<IntentsSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
@@ -162,6 +159,7 @@ public class IntentsSettings extends ClientSettings {
     return batchDeleteIntentsOperationSettings;
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public IntentsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -195,13 +193,14 @@ public class IntentsSettings extends ClientSettings {
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder().setEndpoint(getDefaultEndpoint());
+    return InstantiatingGrpcChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
@@ -216,21 +215,6 @@ public class IntentsSettings extends ClientSettings {
       gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
     }
     return gapicVersion;
-  }
-
-  /** Returns a builder for this class with recommended defaults. */
-  @Deprecated
-  public static Builder defaultBuilder() {
-    return Builder.createDefault();
-  }
-
-  /**
-   * Returns a builder for this class with recommended defaults for API methods, and the given
-   * ClientContext used for executor/transport/credentials.
-   */
-  @Deprecated
-  public static Builder defaultBuilder(ClientContext clientContext) {
-    return new Builder(clientContext);
   }
 
   /** Returns a new builder for this class. */
@@ -249,12 +233,7 @@ public class IntentsSettings extends ClientSettings {
   }
 
   private IntentsSettings(Builder settingsBuilder) throws IOException {
-    super(
-        settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportChannelProvider(),
-        settingsBuilder.getCredentialsProvider(),
-        settingsBuilder.getHeaderProvider(),
-        settingsBuilder.getClock());
+    super(settingsBuilder);
 
     listIntentsSettings = settingsBuilder.listIntentsSettings().build();
     getIntentSettings = settingsBuilder.getIntentSettings().build();
@@ -321,7 +300,7 @@ public class IntentsSettings extends ClientSettings {
           };
 
   /** Builder for IntentsSettings. */
-  public static class Builder extends ClientSettings.Builder {
+  public static class Builder extends ClientSettings.Builder<IntentsSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
@@ -418,6 +397,7 @@ public class IntentsSettings extends ClientSettings {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
       return initDefaults(builder);
     }
 
@@ -532,30 +512,6 @@ public class IntentsSettings extends ClientSettings {
               deleteIntentSettings,
               batchUpdateIntentsSettings,
               batchDeleteIntentsSettings);
-    }
-
-    @Override
-    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
-      super.setExecutorProvider(executorProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setTransportChannelProvider(TransportChannelProvider transportProvider) {
-      super.setTransportChannelProvider(transportProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setHeaderProvider(HeaderProvider headerProvider) {
-      super.setHeaderProvider(headerProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
-      super.setCredentialsProvider(credentialsProvider);
-      return this;
     }
 
     /**

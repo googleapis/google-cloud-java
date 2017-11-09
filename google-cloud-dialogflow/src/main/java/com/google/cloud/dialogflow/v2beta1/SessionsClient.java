@@ -36,7 +36,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (SessionsClient sessionsClient = SessionsClient.create()) {
- *   SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
+ *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
  *   QueryInput queryInput = QueryInput.newBuilder().build();
  *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
  * }
@@ -87,11 +87,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * SessionsSettings sessionsSettings =
- *     SessionsSettings.newBuilder()
- *         .setTransportChannelProvider(SessionsSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     SessionsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SessionsClient sessionsClient =
  *     SessionsClient.create(sessionsSettings);
  * </code>
@@ -120,7 +116,7 @@ public class SessionsClient implements BackgroundResource {
    * Constructs an instance of SessionsClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use SessionsSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SessionsClient create(SessionsStub stub) {
     return new SessionsClient(stub);
   }
@@ -134,6 +130,7 @@ public class SessionsClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SessionsClient(SessionsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -143,7 +140,7 @@ public class SessionsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SessionsStub getStub() {
     return stub;
   }
@@ -158,7 +155,7 @@ public class SessionsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
+   *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
    * }
@@ -195,7 +192,7 @@ public class SessionsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
+   *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
    *     .setSessionWithSessionName(session)
@@ -222,7 +219,7 @@ public class SessionsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.create("[PROJECT]", "[SESSION]");
+   *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
    *     .setSessionWithSessionName(session)

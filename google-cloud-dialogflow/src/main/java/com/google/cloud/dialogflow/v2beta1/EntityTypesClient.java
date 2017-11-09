@@ -47,7 +47,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
- *   EntityTypeName name = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+ *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
  *   EntityType response = entityTypesClient.getEntityType(name);
  * }
  * </code>
@@ -97,11 +97,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * EntityTypesSettings entityTypesSettings =
- *     EntityTypesSettings.newBuilder()
- *         .setTransportChannelProvider(EntityTypesSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     EntityTypesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * EntityTypesClient entityTypesClient =
  *     EntityTypesClient.create(entityTypesSettings);
  * </code>
@@ -131,7 +127,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Constructs an instance of EntityTypesClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use EntityTypesSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final EntityTypesClient create(EntityTypesStub stub) {
     return new EntityTypesClient(stub);
   }
@@ -147,6 +143,7 @@ public class EntityTypesClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected EntityTypesClient(EntityTypesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -157,7 +154,7 @@ public class EntityTypesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public EntityTypesStub getStub() {
     return stub;
   }
@@ -178,7 +175,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   for (EntityType element : entityTypesClient.listEntityTypes(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -203,7 +200,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   String languageCode = "";
    *   for (EntityType element : entityTypesClient.listEntityTypes(parent, languageCode).iterateAll()) {
    *     // doThingsWith(element);
@@ -237,7 +234,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   ListEntityTypesRequest request = ListEntityTypesRequest.newBuilder()
    *     .setParentWithProjectAgentName(parent)
    *     .build();
@@ -262,7 +259,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   ListEntityTypesRequest request = ListEntityTypesRequest.newBuilder()
    *     .setParentWithProjectAgentName(parent)
    *     .build();
@@ -287,7 +284,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   ListEntityTypesRequest request = ListEntityTypesRequest.newBuilder()
    *     .setParentWithProjectAgentName(parent)
    *     .build();
@@ -319,7 +316,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName name = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   EntityType response = entityTypesClient.getEntityType(name);
    * }
    * </code></pre>
@@ -343,7 +340,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName name = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   String languageCode = "";
    *   EntityType response = entityTypesClient.getEntityType(name, languageCode);
    * }
@@ -375,7 +372,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName name = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   GetEntityTypeRequest request = GetEntityTypeRequest.newBuilder()
    *     .setNameWithEntityTypeName(name)
    *     .build();
@@ -398,7 +395,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName name = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   GetEntityTypeRequest request = GetEntityTypeRequest.newBuilder()
    *     .setNameWithEntityTypeName(name)
    *     .build();
@@ -420,7 +417,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   EntityType entityType = EntityType.newBuilder().build();
    *   EntityType response = entityTypesClient.createEntityType(parent, entityType);
    * }
@@ -449,7 +446,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   EntityType entityType = EntityType.newBuilder().build();
    *   String languageCode = "";
    *   EntityType response = entityTypesClient.createEntityType(parent, entityType, languageCode);
@@ -485,7 +482,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   EntityType entityType = EntityType.newBuilder().build();
    *   CreateEntityTypeRequest request = CreateEntityTypeRequest.newBuilder()
    *     .setParentWithProjectAgentName(parent)
@@ -510,7 +507,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   EntityType entityType = EntityType.newBuilder().build();
    *   CreateEntityTypeRequest request = CreateEntityTypeRequest.newBuilder()
    *     .setParentWithProjectAgentName(parent)
@@ -635,7 +632,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName name = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   entityTypesClient.deleteEntityType(name);
    * }
    * </code></pre>
@@ -659,7 +656,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName name = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder()
    *     .setNameWithEntityTypeName(name)
    *     .build();
@@ -682,7 +679,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName name = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder()
    *     .setNameWithEntityTypeName(name)
    *     .build();
@@ -706,7 +703,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   BatchUpdateEntityTypesRequest request = BatchUpdateEntityTypesRequest.newBuilder()
    *     .setParentWithProjectAgentName(parent)
    *     .build();
@@ -732,7 +729,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   BatchUpdateEntityTypesRequest request = BatchUpdateEntityTypesRequest.newBuilder()
    *     .setParentWithProjectAgentName(parent)
    *     .build();
@@ -758,7 +755,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   BatchUpdateEntityTypesRequest request = BatchUpdateEntityTypesRequest.newBuilder()
    *     .setParentWithProjectAgentName(parent)
    *     .build();
@@ -783,7 +780,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
    *   Empty response = entityTypesClient.batchDeleteEntityTypesAsync(parent, entityTypeNames).get();
    * }
@@ -816,7 +813,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
    *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
    *     .setParentWithProjectAgentName(parent)
@@ -844,7 +841,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
    *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
    *     .setParentWithProjectAgentName(parent)
@@ -871,7 +868,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.create("[PROJECT]");
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
    *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
    *     .setParentWithProjectAgentName(parent)
@@ -899,7 +896,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   Empty response = entityTypesClient.batchCreateEntitiesAsync(parent, entities).get();
    * }
@@ -932,7 +929,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   String languageCode = "";
    *   Empty response = entityTypesClient.batchCreateEntitiesAsync(parent, entities, languageCode).get();
@@ -971,7 +968,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchCreateEntitiesRequest request = BatchCreateEntitiesRequest.newBuilder()
    *     .setParentWithEntityTypeName(parent)
@@ -1000,7 +997,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchCreateEntitiesRequest request = BatchCreateEntitiesRequest.newBuilder()
    *     .setParentWithEntityTypeName(parent)
@@ -1028,7 +1025,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchCreateEntitiesRequest request = BatchCreateEntitiesRequest.newBuilder()
    *     .setParentWithEntityTypeName(parent)
@@ -1054,7 +1051,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   Empty response = entityTypesClient.batchUpdateEntitiesAsync(parent, entities).get();
    * }
@@ -1086,7 +1083,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   String languageCode = "";
    *   Empty response = entityTypesClient.batchUpdateEntitiesAsync(parent, entities, languageCode).get();
@@ -1124,7 +1121,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchUpdateEntitiesRequest request = BatchUpdateEntitiesRequest.newBuilder()
    *     .setParentWithEntityTypeName(parent)
@@ -1152,7 +1149,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchUpdateEntitiesRequest request = BatchUpdateEntitiesRequest.newBuilder()
    *     .setParentWithEntityTypeName(parent)
@@ -1179,7 +1176,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchUpdateEntitiesRequest request = BatchUpdateEntitiesRequest.newBuilder()
    *     .setParentWithEntityTypeName(parent)
@@ -1205,7 +1202,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
    *   Empty response = entityTypesClient.batchDeleteEntitiesAsync(parent, entityValues).get();
    * }
@@ -1238,7 +1235,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
    *   String languageCode = "";
    *   Empty response = entityTypesClient.batchDeleteEntitiesAsync(parent, entityValues, languageCode).get();
@@ -1277,7 +1274,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
    *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
    *     .setParentWithEntityTypeName(parent)
@@ -1305,7 +1302,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
    *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
    *     .setParentWithEntityTypeName(parent)
@@ -1332,7 +1329,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.create("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
    *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
    *     .setParentWithEntityTypeName(parent)

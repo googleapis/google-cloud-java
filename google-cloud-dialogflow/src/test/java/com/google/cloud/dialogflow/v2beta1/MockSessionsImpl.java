@@ -15,6 +15,7 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.dialogflow.v2beta1.SessionsGrpc.SessionsImplBase;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
@@ -24,6 +25,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockSessionsImpl extends SessionsImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

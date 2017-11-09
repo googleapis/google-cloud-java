@@ -102,7 +102,7 @@ public class ContextsClientTest {
             .build();
     mockContexts.addResponse(expectedResponse);
 
-    SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+    SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
 
     ListContextsPagedResponse pagedListResponse = client.listContexts(parent);
 
@@ -124,7 +124,7 @@ public class ContextsClientTest {
     mockContexts.addException(exception);
 
     try {
-      SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+      SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
 
       client.listContexts(parent);
       Assert.fail("No exception raised");
@@ -136,13 +136,13 @@ public class ContextsClientTest {
   @Test
   @SuppressWarnings("all")
   public void getContextTest() {
-    ContextName name2 = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
+    ContextName name2 = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
     int lifespanCount = 1178775510;
     Context expectedResponse =
         Context.newBuilder().setNameWithContextName(name2).setLifespanCount(lifespanCount).build();
     mockContexts.addResponse(expectedResponse);
 
-    ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
+    ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
 
     Context actualResponse = client.getContext(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -161,7 +161,7 @@ public class ContextsClientTest {
     mockContexts.addException(exception);
 
     try {
-      ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
+      ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
 
       client.getContext(name);
       Assert.fail("No exception raised");
@@ -173,13 +173,13 @@ public class ContextsClientTest {
   @Test
   @SuppressWarnings("all")
   public void createContextTest() {
-    ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
+    ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
     int lifespanCount = 1178775510;
     Context expectedResponse =
         Context.newBuilder().setNameWithContextName(name).setLifespanCount(lifespanCount).build();
     mockContexts.addResponse(expectedResponse);
 
-    SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+    SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
     Context context = Context.newBuilder().build();
 
     Context actualResponse = client.createContext(parent, context);
@@ -200,7 +200,7 @@ public class ContextsClientTest {
     mockContexts.addException(exception);
 
     try {
-      SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+      SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
       Context context = Context.newBuilder().build();
 
       client.createContext(parent, context);
@@ -213,7 +213,7 @@ public class ContextsClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateContextTest() {
-    ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
+    ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
     int lifespanCount = 1178775510;
     Context expectedResponse =
         Context.newBuilder().setNameWithContextName(name).setLifespanCount(lifespanCount).build();
@@ -253,7 +253,7 @@ public class ContextsClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockContexts.addResponse(expectedResponse);
 
-    ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
+    ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
 
     client.deleteContext(name);
 
@@ -271,7 +271,7 @@ public class ContextsClientTest {
     mockContexts.addException(exception);
 
     try {
-      ContextName name = ContextName.create("[PROJECT]", "[SESSION]", "[CONTEXT]");
+      ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
 
       client.deleteContext(name);
       Assert.fail("No exception raised");
@@ -286,7 +286,7 @@ public class ContextsClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockContexts.addResponse(expectedResponse);
 
-    SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+    SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
 
     client.deleteAllContexts(parent);
 
@@ -304,7 +304,7 @@ public class ContextsClientTest {
     mockContexts.addException(exception);
 
     try {
-      SessionName parent = SessionName.create("[PROJECT]", "[SESSION]");
+      SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
 
       client.deleteAllContexts(parent);
       Assert.fail("No exception raised");

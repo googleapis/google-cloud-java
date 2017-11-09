@@ -118,7 +118,7 @@ public class AgentsClientTest {
             .build();
     mockAgents.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.create("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
     Agent actualResponse = client.getAgent(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -137,7 +137,7 @@ public class AgentsClientTest {
     mockAgents.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.create("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
       client.getAgent(parent);
       Assert.fail("No exception raised");
@@ -159,7 +159,7 @@ public class AgentsClientTest {
             .build();
     mockAgents.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.create("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
     SearchAgentsPagedResponse pagedListResponse = client.searchAgents(parent);
 
@@ -181,7 +181,7 @@ public class AgentsClientTest {
     mockAgents.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.create("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
       client.searchAgents(parent);
       Assert.fail("No exception raised");
@@ -202,7 +202,7 @@ public class AgentsClientTest {
             .build();
     mockAgents.addResponse(resultOperation);
 
-    ProjectName parent = ProjectName.create("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
     Empty actualResponse = client.trainAgentAsync(parent).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -221,7 +221,7 @@ public class AgentsClientTest {
     mockAgents.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.create("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
       client.trainAgentAsync(parent).get();
       Assert.fail("No exception raised");
@@ -250,7 +250,7 @@ public class AgentsClientTest {
             .build();
     mockAgents.addResponse(resultOperation);
 
-    ProjectName parent = ProjectName.create("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
     ExportAgentResponse actualResponse = client.exportAgentAsync(parent).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -269,7 +269,7 @@ public class AgentsClientTest {
     mockAgents.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.create("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
       client.exportAgentAsync(parent).get();
       Assert.fail("No exception raised");

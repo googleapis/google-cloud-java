@@ -45,7 +45,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   ProjectName parent = ProjectName.create("[PROJECT]");
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Agent response = agentsClient.getAgent(parent);
  * }
  * </code>
@@ -95,11 +95,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * AgentsSettings agentsSettings =
- *     AgentsSettings.newBuilder()
- *         .setTransportChannelProvider(AgentsSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     AgentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AgentsClient agentsClient =
  *     AgentsClient.create(agentsSettings);
  * </code>
@@ -129,7 +125,7 @@ public class AgentsClient implements BackgroundResource {
    * Constructs an instance of AgentsClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use AgentsSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AgentsClient create(AgentsStub stub) {
     return new AgentsClient(stub);
   }
@@ -144,6 +140,7 @@ public class AgentsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AgentsClient(AgentsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +151,7 @@ public class AgentsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AgentsStub getStub() {
     return stub;
   }
@@ -175,7 +172,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Agent response = agentsClient.getAgent(parent);
    * }
    * </code></pre>
@@ -197,7 +194,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   GetAgentRequest request = GetAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -220,7 +217,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   GetAgentRequest request = GetAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -247,7 +244,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (Agent element : agentsClient.searchAgents(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -277,7 +274,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   SearchAgentsRequest request = SearchAgentsRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -307,7 +304,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   SearchAgentsRequest request = SearchAgentsRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -337,7 +334,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   SearchAgentsRequest request = SearchAgentsRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -370,7 +367,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Empty response = agentsClient.trainAgentAsync(parent).get();
    * }
    * </code></pre>
@@ -395,7 +392,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   TrainAgentRequest request = TrainAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -420,7 +417,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   TrainAgentRequest request = TrainAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -444,7 +441,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   TrainAgentRequest request = TrainAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -468,7 +465,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ExportAgentResponse response = agentsClient.exportAgentAsync(parent).get();
    * }
    * </code></pre>
@@ -493,7 +490,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ExportAgentRequest request = ExportAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -519,7 +516,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ExportAgentRequest request = ExportAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -544,7 +541,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ExportAgentRequest request = ExportAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -571,7 +568,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -599,7 +596,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -626,7 +623,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -653,7 +650,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -681,7 +678,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
@@ -709,7 +706,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.create("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
    *     .setParentWithProjectName(parent)
    *     .build();
