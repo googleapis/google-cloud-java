@@ -23,7 +23,7 @@
  *
  * <p>Service Description: Manages conversational agents.
  *
- * <p>Refer to [documentation](https://api.ai/docs/agents) for more details about # agents.
+ * <p>Refer to [documentation](https://dialogflow.com/docs/agents) for more details # about agents.
  *
  * <p>Standard methods.
  *
@@ -42,7 +42,8 @@
  *
  * <p>Service Description: Manages contexts.
  *
- * <p>Refer to [documentation](https://api.ai/docs/contexts) for more details about # contexts.
+ * <p>Refer to [documentation](https://dialogflow.com/docs/contexts) for more # details about
+ * contexts.
  *
  * <p>Standard methods.
  *
@@ -61,7 +62,8 @@
  *
  * <p>Service Description: Manages agent entity types.
  *
- * <p>Refer to [documentation](https://api.ai/docs/entities) for more details about # entity types.
+ * <p>Refer to [documentation](https://dialogflow.com/docs/entities) for more # details about entity
+ * types.
  *
  * <p>Standard methods.
  *
@@ -80,7 +82,8 @@
  *
  * <p>Service Description: Manages agent intents.
  *
- * <p>Refer to [documentation](https://api.ai/docs/intents) for more details about # agent intents.
+ * <p>Refer to [documentation](https://dialogflow.com/docs/intents) for more # details about agent
+ * intents.
  *
  * <p>Standard methods.
  *

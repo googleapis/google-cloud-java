@@ -30,7 +30,8 @@ import javax.annotation.Generated;
 /**
  * Service Description: Manages contexts.
  *
- * <p>Refer to [documentation](https://api.ai/docs/contexts) for more details about # contexts.
+ * <p>Refer to [documentation](https://dialogflow.com/docs/contexts) for more # details about
+ * contexts.
  *
  * <p>Standard methods.
  *
