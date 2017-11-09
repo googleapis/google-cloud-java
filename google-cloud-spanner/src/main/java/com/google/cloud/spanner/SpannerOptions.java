@@ -220,7 +220,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   public Map<String, String> getSessionLabels() {
-	  return sessionLabels;
+    return sessionLabels;
   }
   
   public int getPrefetchChunks() {
