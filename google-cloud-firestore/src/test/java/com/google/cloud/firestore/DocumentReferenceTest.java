@@ -22,6 +22,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.ALL_SUPPORTED_TYPE
 import static com.google.cloud.firestore.LocalFirestoreHelper.BLOB;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DATE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_NAME;
+import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_PATH;
 import static com.google.cloud.firestore.LocalFirestoreHelper.EMPTY_MAP_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.GEO_POINT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.NESTED_CLASS_OBJECT;
@@ -116,7 +117,7 @@ public class DocumentReferenceTest {
 
   @Test
   public void getPath() {
-    assertEquals(DOCUMENT_NAME, documentReference.getPath());
+    assertEquals(DOCUMENT_PATH, documentReference.getPath());
   }
 
   @Test

@@ -451,7 +451,7 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
   private T performDelete(
       @Nonnull DocumentReference documentReference, @Nonnull Precondition precondition) {
     Write.Builder writeBuilder = Write.newBuilder();
-    writeBuilder.setDelete(documentReference.getPath());
+    writeBuilder.setDelete(documentReference.getName());
     writeBuilder.setCurrentDocument(precondition.toPb());
     writes.add(writeBuilder.build());
     return (T) this;

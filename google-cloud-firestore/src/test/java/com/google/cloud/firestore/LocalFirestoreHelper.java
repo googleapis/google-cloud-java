@@ -69,6 +69,7 @@ import org.threeten.bp.Instant;
 public final class LocalFirestoreHelper {
 
   public static final String DATABASE_NAME;
+  public static final String DOCUMENT_PATH;
   public static final String DOCUMENT_NAME;
   public static final ByteString TRANSACTION_ID;
 
@@ -547,7 +548,8 @@ public final class LocalFirestoreHelper {
     BLOB = Blob.fromBytes(new byte[] {1, 2, 3});
 
     DATABASE_NAME = "projects/test-project/databases/(default)";
-    DOCUMENT_NAME = DATABASE_NAME + "/documents/coll/doc";
+    DOCUMENT_PATH = "coll/doc";
+    DOCUMENT_NAME = DATABASE_NAME + "/documents/" + DOCUMENT_PATH;
 
     EMPTY_MAP_PROTO =
         ImmutableMap.of(

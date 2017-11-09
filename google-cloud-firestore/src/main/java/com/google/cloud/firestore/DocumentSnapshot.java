@@ -388,7 +388,7 @@ public final class DocumentSnapshot {
   Document.Builder toPb() {
     Preconditions.checkState(exists(), "Can't call toDocument() on a document that doesn't exist");
     Document.Builder document = Document.newBuilder();
-    document.setName(docRef.getPath());
+    document.setName(docRef.getName());
     document.putAllFields(fields);
     return document;
   }
