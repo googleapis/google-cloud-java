@@ -28,7 +28,7 @@ import javax.annotation.Nonnull;
  * field in the document).
  */
 @AutoValue
-abstract class FieldPath extends BasePath<FieldPath> {
+public abstract class FieldPath extends BasePath<FieldPath> {
 
   /**
    * A special sentinel FieldPath to refer to the ID of a document. It can be used in queries to
