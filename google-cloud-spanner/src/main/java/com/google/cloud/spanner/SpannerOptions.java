@@ -97,7 +97,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             ? builder.sessionPoolOptions
             : SessionPoolOptions.newBuilder().build();
     prefetchChunks = builder.prefetchChunks;
-    sessionLabels = ImmutableMap.copyOf(builder.sessionLabels);
+    sessionLabels = builder.sessionLabels;
   }
 
   /** Builder for {@link SpannerOptions} instances. */
@@ -112,7 +112,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private int prefetchChunks = DEFAULT_PREFETCH_CHUNKS;
     private SessionPoolOptions sessionPoolOptions;
     private String userAgentPrefix;
-    private Map<String, String> sessionLabels;
+    private ImmutableMap<String, String> sessionLabels;
 
     private Builder() {}
 
@@ -167,10 +167,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      *     api docs </a>.
      */
     public Builder setSessionLabels(Map<String, String> sessionLabels) {
+      Preconditions.checkNotNull(sessionLabels, "Session labels map cannot be null");
       for (String value : sessionLabels.values()) {
         Preconditions.checkNotNull(value, "Null values are not allowed in the labels map.");
       }
-      this.sessionLabels = sessionLabels;
+      this.sessionLabels = ImmutableMap.copyOf(sessionLabels);
       return this;
     }
     
