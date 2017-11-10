@@ -22,9 +22,11 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.ALL_SUPPORTED_TYPE
 import static com.google.cloud.firestore.LocalFirestoreHelper.BLOB;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DATE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_NAME;
+import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_PATH;
 import static com.google.cloud.firestore.LocalFirestoreHelper.EMPTY_MAP_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.GEO_POINT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.NESTED_CLASS_OBJECT;
+import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_COMMIT_RESPONSE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_TRANSFORM;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_DELETE_COMMIT_RESPONSE;
@@ -115,7 +117,7 @@ public class DocumentReferenceTest {
 
   @Test
   public void getPath() {
-    assertEquals(DOCUMENT_NAME, documentReference.getPath());
+    assertEquals(DOCUMENT_PATH, documentReference.getPath());
   }
 
   @Test
@@ -291,7 +293,7 @@ public class DocumentReferenceTest {
 
   @Test
   public void serverTimestamp() throws Exception {
-    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+    doReturn(SERVER_TIMESTAMP_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
@@ -327,7 +329,7 @@ public class DocumentReferenceTest {
 
   @Test
   public void mergeWithServerTimestamps() throws Exception {
-    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+    doReturn(SERVER_TIMESTAMP_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());

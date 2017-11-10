@@ -70,7 +70,7 @@ public final class CollectionReference extends Query {
    */
   @Nonnull
   public String getPath() {
-    return path.toString();
+    return path.getPath();
   }
 
   /**

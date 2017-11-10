@@ -88,11 +88,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ErrorGroupServiceSettings errorGroupServiceSettings =
- *     ErrorGroupServiceSettings.newBuilder()
- *         .setTransportChannelProvider(ErrorGroupServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     ErrorGroupServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ErrorGroupServiceClient errorGroupServiceClient =
  *     ErrorGroupServiceClient.create(errorGroupServiceSettings);
  * </code>
@@ -122,7 +118,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * Constructs an instance of ErrorGroupServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer to use ErrorGroupServiceSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ErrorGroupServiceClient create(ErrorGroupServiceStub stub) {
     return new ErrorGroupServiceClient(stub);
   }
@@ -137,6 +133,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ErrorGroupServiceClient(ErrorGroupServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -146,7 +143,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ErrorGroupServiceStub getStub() {
     return stub;
   }

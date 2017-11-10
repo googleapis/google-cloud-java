@@ -15,6 +15,7 @@
  */
 package com.google.cloud.logging.v2;
 
+import com.google.api.core.BetaApi;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
@@ -34,6 +35,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

@@ -106,11 +106,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * GroupServiceSettings groupServiceSettings =
- *     GroupServiceSettings.newBuilder()
- *         .setTransportChannelProvider(GroupServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     GroupServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GroupServiceClient groupServiceClient =
  *     GroupServiceClient.create(groupServiceSettings);
  * </code>
@@ -139,7 +135,7 @@ public class GroupServiceClient implements BackgroundResource {
    * Constructs an instance of GroupServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use GroupServiceSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GroupServiceClient create(GroupServiceStub stub) {
     return new GroupServiceClient(stub);
   }
@@ -154,6 +150,7 @@ public class GroupServiceClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GroupServiceClient(GroupServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -163,7 +160,7 @@ public class GroupServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GroupServiceStub getStub() {
     return stub;
   }

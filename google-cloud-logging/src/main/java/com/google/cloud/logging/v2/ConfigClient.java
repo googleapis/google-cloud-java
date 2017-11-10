@@ -106,11 +106,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ConfigSettings configSettings =
- *     ConfigSettings.newBuilder()
- *         .setTransportChannelProvider(ConfigSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     ConfigSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ConfigClient configClient =
  *     ConfigClient.create(configSettings);
  * </code>
@@ -139,7 +135,7 @@ public class ConfigClient implements BackgroundResource {
    * Constructs an instance of ConfigClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use ConfigSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ConfigClient create(ConfigServiceV2Stub stub) {
     return new ConfigClient(stub);
   }
@@ -153,6 +149,7 @@ public class ConfigClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ConfigClient(ConfigServiceV2Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -162,7 +159,7 @@ public class ConfigClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ConfigServiceV2Stub getStub() {
     return stub;
   }

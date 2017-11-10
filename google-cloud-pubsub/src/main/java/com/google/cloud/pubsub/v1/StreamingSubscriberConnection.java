@@ -103,6 +103,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   @Override
   protected void doStart() {
     logger.config("Starting subscriber.");
+    messageDispatcher.start();
     initialize();
     notifyStarted();
   }

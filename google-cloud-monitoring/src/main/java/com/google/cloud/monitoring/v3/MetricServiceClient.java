@@ -109,11 +109,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * MetricServiceSettings metricServiceSettings =
- *     MetricServiceSettings.newBuilder()
- *         .setTransportChannelProvider(MetricServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     MetricServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * MetricServiceClient metricServiceClient =
  *     MetricServiceClient.create(metricServiceSettings);
  * </code>
@@ -143,7 +139,7 @@ public class MetricServiceClient implements BackgroundResource {
    * Constructs an instance of MetricServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use MetricServiceSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final MetricServiceClient create(MetricServiceStub stub) {
     return new MetricServiceClient(stub);
   }
@@ -158,6 +154,7 @@ public class MetricServiceClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected MetricServiceClient(MetricServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -167,7 +164,7 @@ public class MetricServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MetricServiceStub getStub() {
     return stub;
   }
