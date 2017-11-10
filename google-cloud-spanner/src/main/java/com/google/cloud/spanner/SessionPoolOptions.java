@@ -81,7 +81,7 @@ public class SessionPoolOptions {
     private int minSessions;
     private int maxSessions = DEFAULT_MAX_SESSIONS;
     private int maxIdleSessions;
-    private float writeSessionsFraction = 0.2f;
+    private float writeSessionsFraction = 0.f;
     private ActionOnExhaustion actionOnExhaustion = DEFAULT_ACTION;
     private int keepAliveIntervalMinutes = 30;
 
@@ -152,7 +152,7 @@ public class SessionPoolOptions {
      * write request comes, we will make the BeginTransaction() rpc inline. It must be between 0 and
      * 1(inclusive).
      *
-     * <p>Default value is 0.2.
+     * <p>Default value is 0.
      */
     public Builder setWriteSessionsFraction(float writeSessionsFraction) {
       this.writeSessionsFraction = writeSessionsFraction;
