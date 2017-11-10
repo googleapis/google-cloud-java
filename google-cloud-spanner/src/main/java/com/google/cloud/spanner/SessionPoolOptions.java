@@ -81,7 +81,7 @@ public class SessionPoolOptions {
     private int minSessions;
     private int maxSessions = DEFAULT_MAX_SESSIONS;
     private int maxIdleSessions;
-    private float writeSessionsFraction = 0.f;
+    private float writeSessionsFraction;
     private ActionOnExhaustion actionOnExhaustion = DEFAULT_ACTION;
     private int keepAliveIntervalMinutes = 30;
 
