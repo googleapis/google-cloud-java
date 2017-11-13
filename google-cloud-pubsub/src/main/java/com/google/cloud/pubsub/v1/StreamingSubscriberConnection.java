@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
 import com.google.api.gax.grpc.GrpcStatusCode;
@@ -25,7 +26,6 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.cloud.pubsub.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.v1.MessageDispatcher.PendingModifyAckDeadline;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
@@ -281,7 +281,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     }
   }
 
-  @VisibleForTesting
+  @InternalApi
   static List<StreamingPullRequest> partitionAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions, int size) {
     int numExtensions = 0;
