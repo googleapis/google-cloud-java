@@ -62,10 +62,13 @@ public class CreateSubscriptionAndConsumeMessages {
           MoreExecutors.directExecutor());
       subscriber.startAsync().awaitRunning();
 
+      // In this example, we will pull messages for one minute (60,000ms) then stop.
+      // In a real application, this sleep-then-stop is not necessary.
+      // Simply call stopAsync().awaitTerminated() when the server is shutting down, etc.
       Thread.sleep(60000);
     } finally {
       if (subscriber != null) {
-        subscriber.stopAsync();
+        subscriber.stopAsync().awaitTerminated();
       }
     }
   }
