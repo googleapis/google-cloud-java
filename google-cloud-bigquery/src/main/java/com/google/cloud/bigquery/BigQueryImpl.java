@@ -627,12 +627,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 results.getPageToken(),
                 serviceOptions,
                 ImmutableMap.<BigQueryRpc.Option, Object>of());
-        if (results.getTotalBytesProcessed() != null) {
-          resultBuilder.setTotalBytesProcessed(results.getTotalBytesProcessed());
-        }
-        if (results.getCacheHit() != null) {
-          resultBuilder.setCacheHit(results.getCacheHit());
-        }
         if (results.getTotalRows() != null) {
           resultBuilder.setTotalRows(results.getTotalRows().longValue());
         }
