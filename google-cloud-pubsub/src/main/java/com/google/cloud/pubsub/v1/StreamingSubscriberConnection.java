@@ -275,7 +275,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         requestObserver.onNext(request);
       }
     } catch (Exception e) {
-      logger.log(Level.WARNING, "failed to send acks", e);
+      Level level = isAlive() ? Level.WARNING : Level.FINER;
+      logger.log(level, "failed to send ack operations", e);
     } finally {
       lock.unlock();
     }
