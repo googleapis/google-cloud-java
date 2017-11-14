@@ -41,7 +41,7 @@
     <dependency>
       <groupId>com.google.cloud.datastore</groupId>
       <artifactId>datastore-v1-proto-client</artifactId>
-      <version>1.5.0</version>
+      <version>1.5.1</version>
       <exclusions>
         <exclusion>
           <groupId>com.google.guava</groupId>
