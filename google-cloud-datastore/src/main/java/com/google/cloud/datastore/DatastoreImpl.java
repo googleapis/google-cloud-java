@@ -74,9 +74,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   static class ReadWriteTransactionCallable<T> implements Datastore.ReadWriteTransactionCallable<T>, Callable<T> {
+    private final Datastore datastore;
+    private final TransactionCallable<T> callable;
     private TransactionOptions options;
-    private Datastore datastore;
-    private TransactionCallable<T> callable;
     private Transaction transaction;
 
     ReadWriteTransactionCallable(Datastore datastore, TransactionCallable<T> callable, TransactionOptions options) {

@@ -151,8 +151,25 @@ public class ITDatastoreTest {
           .set("partial2", ENTITY2)
           .build();
 
+  @Rule public Timeout globalTimeout = Timeout.seconds(100);
+
+  @AfterClass
+  public static void afterClass() {
+    HELPER.deleteNamespace();
+  }
+
+  @Before
+  public void setUp() {
+    DATASTORE.put(ENTITY1, ENTITY2);
+  }
+
+  @After
+  public void tearDown() {
+    DATASTORE.delete(KEY1, KEY2, KEY3);
+  }
+
   private <T> Iterator<T> getStronglyConsistentResults(Query scQuery, Query query)
-      throws InterruptedException {
+          throws InterruptedException {
     //scQuery is equivalent to query, but with an ancestor filter in it
     //this makes scQuery strongly consistent
     QueryResults<T> scResults = DATASTORE.run(scQuery);
@@ -172,7 +189,7 @@ public class ITDatastoreTest {
     }
 
     throw new RuntimeException(
-        "reached max number of attempts to get strongly consistent results.");
+            "reached max number of attempts to get strongly consistent results.");
   }
 
   private <T> List<T> makeResultsCopy(QueryResults<T> scResults) {
@@ -182,23 +199,6 @@ public class ITDatastoreTest {
       results.add(scResults.next());
     }
     return results;
-  }
-
-  @Rule public Timeout globalTimeout = Timeout.seconds(100);
-
-  @AfterClass
-  public static void afterClass() {
-    HELPER.deleteNamespace();
-  }
-
-  @Before
-  public void setUp() {
-    DATASTORE.put(ENTITY1, ENTITY2);
-  }
-
-  @After
-  public void tearDown() {
-    DATASTORE.delete(KEY1, KEY2, KEY3);
   }
 
   @Test
