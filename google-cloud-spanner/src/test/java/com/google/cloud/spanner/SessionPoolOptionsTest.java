@@ -13,55 +13,62 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.spanner;
+
+import static com.google.common.truth.Truth.assertThat;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
-import org.junit.runners.Parameterized.Parameters;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import static junit.framework.TestCase.assertEquals;
+import org.junit.runners.JUnit4;
 
 /**
  * Unit tests for {@link com.google.cloud.spanner.SessionPoolOptions}
  */
-@RunWith(Parameterized.class)
+@RunWith(JUnit4.class)
 public class SessionPoolOptionsTest {
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
-    @Parameter
-    public int minSessions;
-    @Parameter(1)
-    public int maxSessions;
+  @Rule
+  public ExpectedException expectedException = ExpectedException.none();
 
-    @Parameters(name = "min sessions = {0}, max sessions = {1}")
-    public static Collection<Object[]> data() {
-        List<Object[]> params = new ArrayList<>();
-        params.add(new Object[]{1, 1});
-        params.add(new Object[]{500, 600});
-        params.add(new Object[]{600, 500});
+  @Test
+  public void minSessionsGreaterThanMaxSessions() {
+    expectedException.expect(IllegalArgumentException.class);
+    SessionPoolOptions.newBuilder()
+        .setMinSessions(2)
+        .setMaxSessions(1)
+        .build();
+  }
 
-        return params;
-    }
-
-    @Test
-    public void setMinMaxSessions() {
-        if (minSessions > maxSessions) {
-            expectedException.expect(IllegalArgumentException.class);
-        }
-        SessionPoolOptions options = SessionPoolOptions.newBuilder()
-                .setMinSessions(minSessions)
-                .setMaxSessions(maxSessions)
-                .build();
-
-        assertEquals(minSessions, options.getMinSessions());
-        assertEquals(maxSessions, options.getMaxSessions());
-    }
+  @Test
+  public void defaultBuilder() {
+    SessionPoolOptions options = SessionPoolOptions.newBuilder().build();
+    assertThat(options.getWriteSessionsFraction()).isWithin(0.0f).of(0.0f);
+    assertThat(options.getMinSessions()).isEqualTo(0);
+    assertThat(options.getMaxSessions()).isEqualTo(400);
+    assertThat(options.getMaxIdleSessions()).isEqualTo(0);
+    assertThat(options.getKeepAliveIntervalMinutes()).isEqualTo(30);
+    assertThat(options.isBlockIfPoolExhausted()).isTrue();
+    assertThat(options.isFailIfPoolExhausted()).isFalse();
+  }
+  
+  @Test
+  public void builder() {
+    SessionPoolOptions options = SessionPoolOptions.newBuilder()
+        .setMinSessions(1)
+        .setMaxIdleSessions(2)
+        .setMaxSessions(3)
+        .setWriteSessionsFraction(0.2f)
+        .setKeepAliveIntervalMinutes(10)
+        .setFailIfPoolExhausted()
+        .build();
+    assertThat(options.getMinSessions()).isEqualTo(1);
+    assertThat(options.getMaxIdleSessions()).isEqualTo(2);
+    assertThat(options.getMaxSessions()).isEqualTo(3);
+    assertThat(options.getWriteSessionsFraction()).isWithin(0.0f).of(0.2f);
+    assertThat(options.getKeepAliveIntervalMinutes()).isEqualTo(10);
+    assertThat(options.isFailIfPoolExhausted()).isTrue();
+    assertThat(options.isBlockIfPoolExhausted()).isFalse();
+  }
 }
