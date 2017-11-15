@@ -16,7 +16,7 @@
 
 package com.example.dlp;
 
-import com.google.api.gax.rpc.OperationFuture;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.dlp.v2beta1.DlpServiceClient;
 import com.google.longrunning.Operation;
@@ -102,7 +102,7 @@ public class RiskAnalysis {
               .build();
 
       // asynchronously submit a risk analysis operation
-      OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+      OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
           responseFuture = dlpServiceClient.analyzeDataSourceRiskAsync(request);
 
       // ...
@@ -180,7 +180,7 @@ public class RiskAnalysis {
               .build();
 
       // asynchronously submit a risk analysis operation
-      OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+      OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
           responseFuture = dlpServiceClient.analyzeDataSourceRiskAsync(request);
 
       // ...
@@ -259,7 +259,7 @@ public class RiskAnalysis {
               .build();
 
       // asynchronously submit a risk analysis operation
-      OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+      OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
           responseFuture = dlpServiceClient.analyzeDataSourceRiskAsync(request);
 
       // ...
@@ -352,7 +352,7 @@ public class RiskAnalysis {
               .build();
 
       // asynchronously submit a risk analysis operation
-      OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata, Operation>
+      OperationFuture<RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
           responseFuture = dlpServiceClient.analyzeDataSourceRiskAsync(request);
 
       // ...
