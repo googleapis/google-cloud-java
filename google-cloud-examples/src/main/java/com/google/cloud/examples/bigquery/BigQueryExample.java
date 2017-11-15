@@ -19,7 +19,6 @@ package com.google.cloud.examples.bigquery;
 import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.CopyJobConfiguration;
 import com.google.cloud.bigquery.Dataset;
@@ -36,7 +35,6 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -621,16 +619,15 @@ public class BigQueryExample {
     @Override
     void run(BigQuery bigquery, QueryJobConfiguration queryConfig) throws Exception {
       System.out.println("Running query");
-      QueryResponse queryResponse = bigquery.query(queryConfig).getQueryResults();
-      if (!queryResponse.hasErrors()) {
-        System.out.println("Query succeeded. Results:");
-        for (FieldValueList row : queryResponse.getResult().iterateAll()) {
-          System.out.println(row);
-        }
+      Job job = bigquery.query(queryConfig).waitFor();
+      if (job == null) {
+        System.out.println("job no longer exists");
+      } else if (job.getStatus().getError() != null) {
+        System.out.println("query completed with error: " + job.getStatus().getError());
       } else {
-        System.out.println("Query completed with errors. Errors:");
-        for (BigQueryError err : queryResponse.getExecutionErrors()) {
-          System.out.println(err);
+        System.out.println("Query succeeded. Results:");
+        for (FieldValueList row : job.getQueryResults().iterateAll()) {
+          System.out.println(row);
         }
       }
     }
