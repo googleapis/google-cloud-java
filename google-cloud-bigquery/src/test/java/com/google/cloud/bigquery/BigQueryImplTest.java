@@ -1151,9 +1151,7 @@ public class BigQueryImplTest {
         bigquery
             .query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob)
             .getQueryResults(QueryResultsOption.pageSize(42L));
-    assertEquals(false, result.cacheHit());
     assertEquals(null, result.getSchema());
-    assertEquals(42L, result.getTotalBytesProcessed());
     assertEquals(1L, result.getTotalRows());
     for (FieldValueList row : result.getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());
@@ -1215,9 +1213,7 @@ public class BigQueryImplTest {
         bigquery
             .query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob)
             .getQueryResults(QueryResultsOption.pageSize(42L));
-    assertEquals(false, result.cacheHit());
     assertEquals(null, result.getSchema());
-    assertEquals(42L, result.getTotalBytesProcessed());
     assertEquals(1L, result.getTotalRows());
     for (FieldValueList row : result.getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());
@@ -1247,11 +1243,9 @@ public class BigQueryImplTest {
     assertEquals("etag", response.getEtag());
     assertEquals(queryJob, response.getJobId());
     assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.getResult().cacheHit());
     assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
     assertFalse(response.hasErrors());
     assertEquals(null, response.getResult().getSchema());
-    assertEquals(42L, response.getResult().getTotalBytesProcessed());
     assertEquals(1L, response.getResult().getTotalRows());
     for (FieldValueList row : response.getResult().getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());
@@ -1281,11 +1275,9 @@ public class BigQueryImplTest {
     assertEquals("etag", response.getEtag());
     assertEquals(queryJob, response.getJobId());
     assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.getResult().cacheHit());
     assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
     assertFalse(response.hasErrors());
     assertEquals(null, response.getResult().getSchema());
-    assertEquals(42L, response.getResult().getTotalBytesProcessed());
     assertEquals(1L, response.getResult().getTotalRows());
     for (FieldValueList row : response.getResult().getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());
@@ -1319,11 +1311,9 @@ public class BigQueryImplTest {
             QUERY_RESULTS_OPTION_PAGE_TOKEN);
     assertEquals(queryJob, response.getJobId());
     assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.getResult().cacheHit());
     assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
     assertFalse(response.hasErrors());
     assertEquals(null, response.getResult().getSchema());
-    assertEquals(42L, response.getResult().getTotalBytesProcessed());
     assertEquals(1L, response.getResult().getTotalRows());
     for (FieldValueList row : response.getResult().getValues()) {
       assertEquals(false, row.get(0).getBooleanValue());

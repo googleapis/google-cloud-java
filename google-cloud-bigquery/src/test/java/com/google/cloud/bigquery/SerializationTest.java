@@ -197,7 +197,6 @@ public class SerializationTest extends BaseSerializationTest {
   private static final QueryResult QUERY_RESULT = QueryResult.newBuilder()
       .setSchema(TABLE_SCHEMA)
       .setTotalRows(1L)
-      .setTotalBytesProcessed(42L)
       .setCursor("cursor")
       .setPageFetcher(null)
       .setResults(ImmutableList.<FieldValueList>of())

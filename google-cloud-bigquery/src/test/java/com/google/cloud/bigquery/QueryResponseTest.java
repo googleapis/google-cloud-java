@@ -50,21 +50,17 @@ public class QueryResponseTest {
           return null;
         }
       };
-  private static final Long TOTAL_BYTES_PROCESSED = 4200L;
   private static final Boolean JOB_COMPLETE = true;
   private static final List<BigQueryError> ERRORS = ImmutableList.of(
       new BigQueryError("reason1", "location1", "message1", "debugInfo1"),
       new BigQueryError("reason2", "location2", "message2", "debugInfo2")
   );
-  private static final Boolean CACHE_HIT = false;
   private static final QueryResult QUERY_RESULT = QueryResult.newBuilder()
       .setSchema(SCHEMA)
       .setTotalRows(TOTAL_ROWS)
-      .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .setCursor("cursor")
       .setPageFetcher(FETCHER)
       .setResults(ImmutableList.<FieldValueList>of())
-      .setCacheHit(CACHE_HIT)
       .build();
   private static final QueryResponse QUERY_RESPONSE = QueryResponse.newBuilder()
       .setEtag(ETAG)

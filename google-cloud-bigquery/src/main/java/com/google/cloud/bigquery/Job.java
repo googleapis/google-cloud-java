@@ -269,12 +269,10 @@ public class Job extends JobInfo {
           "Getting query results is supported only for " + Type.QUERY + " jobs");
     }
 
+    // TODO(pongad): check job stats.state instead.
     QueryResponse response = bigquery.getQueryResults(getJobId(), options);
     if (!response.jobCompleted()) {
       throw new IllegalStateException("the job hasn't completed yet");
-    }
-    if (response.hasErrors()) {
-      throw new IllegalStateException("job has errors: " + response.getExecutionErrors());
     }
     return response.getResult();
   }
