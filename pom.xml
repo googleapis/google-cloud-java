@@ -361,12 +361,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-v2beta1</artifactId>
-        <version>${generatedProto.version}</version>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-v2beta1</artifactId>
-        <version>${generatedProto.version}</version>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
 
       <dependency>
