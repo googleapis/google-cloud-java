@@ -37,6 +37,10 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
+      <artifactId>google-cloud-dialogflow</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-dns</artifactId>
     </dependency>
     <dependency>
