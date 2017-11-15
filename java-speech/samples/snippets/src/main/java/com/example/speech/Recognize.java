@@ -18,7 +18,7 @@ package com.example.speech;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
-import com.google.api.gax.rpc.OperationFuture;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.speech.v1.LongRunningRecognizeMetadata;
 import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognitionAudio;
@@ -34,7 +34,6 @@ import com.google.cloud.speech.v1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1.WordInfo;
 import com.google.common.util.concurrent.SettableFuture;
-import com.google.longrunning.Operation;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -221,8 +220,7 @@ public class Recognize {
         .build();
 
     // Use non-blocking call for getting file transcription
-    OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
-            Operation> response =
+    OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
         speech.longRunningRecognizeAsync(config, audio);
 
     while (!response.isDone()) {
@@ -263,8 +261,7 @@ public class Recognize {
         .build();
 
     // Use non-blocking call for getting file transcription
-    OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
-            Operation> response =
+    OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
         speech.longRunningRecognizeAsync(config, audio);
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
@@ -311,8 +308,7 @@ public class Recognize {
         .build();
 
     // Use non-blocking call for getting file transcription
-    OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
-            Operation> response =
+    OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
         speech.longRunningRecognizeAsync(config, audio);
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
