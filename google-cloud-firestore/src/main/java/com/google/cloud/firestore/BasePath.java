@@ -79,7 +79,7 @@ abstract class BasePath<B extends BasePath<B>> {
    * @param path the path to check against
    * @return true if current path is a prefix of the other path.
    */
-  boolean isPrefixOf(B path) {
+  boolean isPrefixOf(BasePath<B> path) {
     ImmutableList<String> prefixSegments = getSegments();
     ImmutableList<String> childSegments = path.getSegments();
     if (prefixSegments.size() > path.getSegments().size()) {

@@ -585,6 +585,45 @@ public class DocumentReferenceTest {
   }
 
   @Test
+  public void updateConflictingFields() throws Exception {
+   try {
+     documentReference
+         .update("a.b", "foo", "a", "foo")
+         .get();
+     fail();
+   } catch (IllegalArgumentException e) {
+      assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a'.");
+   }
+
+    try {
+      documentReference
+          .update("a.b", "foo", "a.b.c", "foo")
+          .get();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a.b'.");
+    }
+
+    try {
+      documentReference
+          .update("a.b", SINGLE_FIELD_MAP, "a", SINGLE_FIELD_MAP)
+          .get();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a'.");
+    }
+
+    try {
+      documentReference
+          .update("a.b", SINGLE_FIELD_MAP, "a.b.c", SINGLE_FIELD_MAP)
+          .get();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a.b'.");
+    }
+  }
+
+  @Test
   public void deleteField() throws Exception {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
