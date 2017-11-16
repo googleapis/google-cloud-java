@@ -15,6 +15,7 @@
  */
 package com.google.cloud.speech.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.speech.v1.SpeechGrpc.SpeechImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.GeneratedMessageV3;
@@ -25,6 +26,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockSpeechImpl extends SpeechImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;
