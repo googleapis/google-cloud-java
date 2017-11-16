@@ -20,6 +20,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.paging.Page;
@@ -37,6 +38,7 @@ import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.JobStatus;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
@@ -254,30 +256,25 @@ public class ITBigQuerySnippets {
 
   @Test
   public void testRunQuery() throws InterruptedException {
-    QueryResponse queryResponse = bigquerySnippets.runQuery(QUERY);
-    assertNotNull(queryResponse);
-    assertTrue(queryResponse.jobCompleted());
-    assertFalse(queryResponse.hasErrors());
-    QueryResult result = queryResponse.getResult();
-    assertNotNull(result);
-    assertTrue(bigquerySnippets.cancelJob(queryResponse.getJobId().getJob()));
-    queryResponse = bigquerySnippets.queryResults(QUERY);
-    assertNotNull(queryResponse);
-    assertTrue(queryResponse.jobCompleted());
-    assertFalse(queryResponse.hasErrors());
-    result = queryResponse.getResult();
-    assertNotNull(result);
-    assertTrue(bigquerySnippets.cancelJobFromId(queryResponse.getJobId().getJob()));
+    Job job = bigquerySnippets.runQuery(QUERY);
+    assertNotNull(job);
+    assertEquals(JobStatus.State.DONE, job.getStatus().getState());
+    assertNull(job.getStatus().getError());
+    assertTrue(bigquerySnippets.cancelJob(job.getJobId().getJob()));
+
+    job = bigquerySnippets.queryResults(QUERY);
+    assertNotNull(job);
+    assertEquals(JobStatus.State.DONE, job.getStatus().getState());
+    assertNull(job.getStatus().getError());
+    assertTrue(bigquerySnippets.cancelJobFromId(job.getJobId().getJob()));
   }
 
   @Test
   public void testRunQueryWithParameters() throws InterruptedException {
-    QueryResponse queryResponse = bigquerySnippets.runQueryWithParameters(QUERY_WITH_PARAMETERS);
-    assertNotNull(queryResponse);
-    assertTrue(queryResponse.jobCompleted());
-    assertFalse(queryResponse.hasErrors());
-    QueryResult result = queryResponse.getResult();
-    assertNotNull(result);
-    assertTrue(bigquerySnippets.cancelJob(queryResponse.getJobId().getJob()));
+    Job job = bigquerySnippets.runQueryWithParameters(QUERY_WITH_PARAMETERS);
+    assertNotNull(job);
+    assertEquals(JobStatus.State.DONE, job.getStatus().getState());
+    assertNull(job.getStatus().getError());
+    assertTrue(bigquerySnippets.cancelJobFromId(job.getJobId().getJob()));
   }
 }
