@@ -23,22 +23,19 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQuery.QueryOption;
-import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
+import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -84,11 +81,10 @@ public class InsertDataAndQueryTable {
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder("SELECT * FROM my_dataset_id.my_table_id").build();
     // Request query to be executed and wait for results
-    QueryResponse queryResponse = bigquery.query(
-        queryConfig).getQueryResults(QueryResultsOption.pageSize(1000L));
+    Job job = bigquery.query(queryConfig).waitFor();
     // Read rows
     System.out.println("Table rows:");
-    for (FieldValueList row : queryResponse.getResult().iterateAll()) {
+    for (FieldValueList row : job.getQueryResults().iterateAll()) {
       System.out.println(row);
     }
   }

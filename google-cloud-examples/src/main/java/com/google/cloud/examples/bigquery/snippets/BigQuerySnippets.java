@@ -48,8 +48,6 @@ import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
-import com.google.cloud.bigquery.QueryResponse;
-import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -58,7 +56,6 @@ import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
@@ -568,68 +565,60 @@ public class BigQuerySnippets {
     return success;
   }
 
-  /**
-   * Example of running a query.
-   */
+  /** Example of running a query. */
   // [TARGET query(QueryJobConfiguration, QueryOption...)]
   // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
-  public QueryResponse runQuery(String query) throws InterruptedException {
+  public Job runQuery(String query) throws InterruptedException {
     // [START runQuery]
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
-    QueryResponse response = bigquery.query(queryConfig).getQueryResults();
-    if (response.hasErrors()) {
+    Job job = bigquery.query(queryConfig);
+    if (job.getStatus().getError() != null) {
       // handle errors
     }
-    QueryResult result = response.getResult();
-    for (FieldValueList row : result.iterateAll()) {
+    for (FieldValueList row : job.getQueryResults().iterateAll()) {
       // do something with the data
     }
     // [END runQuery]
-    return response;
+    return job;
   }
 
-  /**
-   * Example of running a query with query parameters.
-   */
+  /** Example of running a query with query parameters. */
   // [TARGET query(QueryJobConfiguration, QueryOption...)]
-  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount"]
-  public QueryResponse runQueryWithParameters(String query) throws InterruptedException {
+  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where
+  // word_count > @wordCount"]
+  public Job runQueryWithParameters(String query) throws InterruptedException {
     // [START runQueryWithParameters]
     // Note, standard SQL is required to use query parameters. Legacy SQL will not work.
     QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
         .addNamedParameter("wordCount", QueryParameterValue.int64(5))
         .build();
-    QueryResponse response = bigquery.query(queryConfig).getQueryResults();
-    if (response.hasErrors()) {
+    Job job = bigquery.query(queryConfig);
+    if (job.getStatus().getError() != null) {
       // handle errors
     }
-    QueryResult result = response.getResult();
-    for (FieldValueList row : result.iterateAll()) {
+    for (FieldValueList row : job.getQueryResults().iterateAll()) {
       // do something with the data
     }
     // [END runQueryWithParameters]
-    return response;
+    return job;
   }
 
-  /**
-   * Example of getting the results of query.
-   */
+  /** Example of getting the results of query. */
   // [TARGET getQueryResults(JobId, QueryResultsOption...)]
   // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
-  public QueryResponse queryResults(final String query) throws InterruptedException {
+  public Job queryResults(final String query) throws InterruptedException {
     // [START queryResults]
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
-    QueryResponse response = bigquery.query(queryConfig).getQueryResults();
-    if (response.hasErrors()) {
+    Job job = bigquery.query(queryConfig);
+    if (job.getStatus().getError() != null) {
       // handle errors
     }
-    QueryResult result = response.getResult();
-    for (FieldValueList row : result.iterateAll()) {
+    for (FieldValueList row : job.getQueryResults().iterateAll()) {
       // do something with the data
     }
     // [END queryResults]
-    return response;
+    return job;
   }
 }

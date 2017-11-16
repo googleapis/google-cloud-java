@@ -988,10 +988,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
    */
   boolean cancel(JobId jobId);
 
-  // TODO(pongad): rewrite query() samples.
-
   /**
-   * Runs the query associated with the request, using an internally-generated random JobId. The returned job is always completed.
+   * Runs the query associated with the request, using an internally-generated random JobId. The
+   * returned job is always completed.
    *
    * <p>Example of running a query.
    *
@@ -1004,12 +1003,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * //   QueryJobConfiguration queryConfig =
    * //       QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
    *
-   * QueryResponse response = bigquery.query(queryConfig);
-   * if (response.hasErrors()) {
+   * Job job = bigquery.query(queryConfig);
+   * if (job.getStatus().getError() != null) {
    *   // handle errors
    * }
-   * QueryResult result = response.getResult();
-   * for (FieldValueList row : result.iterateAll()) {
+   * for (FieldValueList row : job.getQueryResults().iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
@@ -1022,12 +1020,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
    *     .addPositionalParameter(QueryParameterValue.int64(5))
    *     .build();
-   * QueryResponse response = bigquery.query(queryConfig);
-   * if (response.hasErrors()) {
+   * Job job = bigquery.query(queryConfig);
+   * if (job.getStatus().getError() != null) {
    *   // handle errors
    * }
-   * QueryResult result = response.getResult();
-   * for (FieldValueList row : result.iterateAll()) {
+   * for (FieldValueList row : job.getQueryResults().iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
