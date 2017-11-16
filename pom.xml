@@ -179,7 +179,7 @@
     <storage.version>1.11.1-SNAPSHOT</storage.version>
     <trace.version>0.29.1-beta-SNAPSHOT</trace.version>
     <translate.version>1.11.1-SNAPSHOT</translate.version>
-    <vision.version>0.29.1-beta-SNAPSHOT</vision.version>
+    <vision.version>1.11.1-SNAPSHOT</vision.version>
     <video-intelligence.version>0.29.1-beta-SNAPSHOT</video-intelligence.version>
     <testing.version>0.29.1-alpha-SNAPSHOT</testing.version>
   </properties>
@@ -691,12 +691,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1</artifactId>
-        <version>${generated-proto-beta.version}</version>
+        <version>${generated-proto-ga.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1</artifactId>
-        <version>${generated-proto-beta.version}</version>
+        <version>${generated-proto-ga.version}</version>
       </dependency>
 
       <dependency>

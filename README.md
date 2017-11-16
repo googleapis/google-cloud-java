@@ -18,6 +18,7 @@ This client supports the following Google Cloud Platform services at a [GA](#ver
 -  [Cloud Natural Language](google-cloud-language) (GA)
 -  [Cloud Storage](google-cloud-storage) (GA)
 -  [Cloud Translation](google-cloud-translate) (GA)
+-  [Cloud Vision](google-cloud-vision) (GA)
 
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
@@ -29,7 +30,6 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Cloud Pub/Sub](google-cloud-pubsub) (Beta)
 -  [Cloud Spanner](google-cloud-spanner) (Beta)
 -  [Cloud Video Intelligence](google-cloud-video-intelligence) (Beta)
--  [Cloud Vision](google-cloud-vision) (Beta)
 -  [Stackdriver Trace](google-cloud-trace) (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
