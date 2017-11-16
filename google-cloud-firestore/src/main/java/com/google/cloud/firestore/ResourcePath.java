@@ -84,7 +84,7 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
   /**
    * The Path's id (last component).
    *
-   * @return The last component of the Path or null if the path points to the root..
+   * @return The last component of the Path or null if the path points to the root.
    */
   @Nullable
   String getId() {
@@ -98,24 +98,44 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
   }
 
   /**
-   * String representation as expected by the Firestore API.
+   * The Path's name (the location relative to the root of the database).
    *
-   * @return The formatted name of the resource.
+   * @return The resource path relative to the root of the database.
    */
-  @Override
-  public String toString() {
+  String getPath() {
     StringBuilder result = new StringBuilder();
-    result.append(getDatabaseName());
 
-    ImmutableList<String> parts = getSegments();
-    if (parts.size() > 0) {
-      result.append("/documents");
-      for (String part : parts) {
+    boolean first = true;
+    for (String part : getSegments()) {
+      if (first) {
+        result.append(part);
+        first = false;
+      } else {
         result.append("/").append(part);
       }
     }
 
     return result.toString();
+  }
+
+  /**
+   * String representation as expected by the Firestore API.
+   *
+   * @return The formatted name of the resource.
+   */
+  String getName() {
+    String path = getPath();
+
+    if (path.isEmpty()) {
+      return getDatabaseName().toString();
+    } else {
+      return getDatabaseName() + "/documents/" + getPath();
+    }
+  }
+
+  @Override
+  public String toString() {
+    return getName();
   }
 
   @Override

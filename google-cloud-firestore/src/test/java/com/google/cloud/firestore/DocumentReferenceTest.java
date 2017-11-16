@@ -22,6 +22,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.ALL_SUPPORTED_TYPE
 import static com.google.cloud.firestore.LocalFirestoreHelper.BLOB;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DATE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_NAME;
+import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_PATH;
 import static com.google.cloud.firestore.LocalFirestoreHelper.EMPTY_MAP_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.GEO_POINT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.NESTED_CLASS_OBJECT;
@@ -116,7 +117,7 @@ public class DocumentReferenceTest {
 
   @Test
   public void getPath() {
-    assertEquals(DOCUMENT_NAME, documentReference.getPath());
+    assertEquals(DOCUMENT_PATH, documentReference.getPath());
   }
 
   @Test
@@ -581,6 +582,45 @@ public class DocumentReferenceTest {
 
     CommitRequest expectedCommit = commit(update(nestedUpdate, Arrays.asList("a.b.c")));
     assertCommitEquals(expectedCommit, commitCapture.getValue());
+  }
+
+  @Test
+  public void updateConflictingFields() throws Exception {
+   try {
+     documentReference
+         .update("a.b", "foo", "a", "foo")
+         .get();
+     fail();
+   } catch (IllegalArgumentException e) {
+      assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a'.");
+   }
+
+    try {
+      documentReference
+          .update("a.b", "foo", "a.b.c", "foo")
+          .get();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a.b'.");
+    }
+
+    try {
+      documentReference
+          .update("a.b", SINGLE_FIELD_MAP, "a", SINGLE_FIELD_MAP)
+          .get();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a'.");
+    }
+
+    try {
+      documentReference
+          .update("a.b", SINGLE_FIELD_MAP, "a.b.c", SINGLE_FIELD_MAP)
+          .get();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a.b'.");
+    }
   }
 
   @Test

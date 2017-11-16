@@ -28,7 +28,7 @@ import javax.annotation.Nonnull;
  * field in the document).
  */
 @AutoValue
-abstract class FieldPath extends BasePath<FieldPath> {
+public abstract class FieldPath extends BasePath<FieldPath> implements Comparable<FieldPath> {
 
   /**
    * A special sentinel FieldPath to refer to the ID of a document. It can be used in queries to
@@ -151,5 +151,10 @@ abstract class FieldPath extends BasePath<FieldPath> {
   @Override
   public String toString() {
     return getEncodedPath();
+  }
+
+  @Override
+  public int compareTo(@Nonnull FieldPath other) {
+    return getEncodedPath().compareTo(other.getEncodedPath());
   }
 }

@@ -69,6 +69,7 @@ import org.threeten.bp.Instant;
 public final class LocalFirestoreHelper {
 
   public static final String DATABASE_NAME;
+  public static final String DOCUMENT_PATH;
   public static final String DOCUMENT_NAME;
   public static final ByteString TRANSACTION_ID;
 
@@ -410,14 +411,22 @@ public final class LocalFirestoreHelper {
   }
 
   public static StructuredQuery startAt(boolean before) {
+    return startAt(string(), before);
+  }
+
+  public static StructuredQuery startAt(Value value, boolean before) {
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
-    structuredQuery.setStartAt(Cursor.newBuilder().setBefore(before).addValues(string()));
+    structuredQuery.setStartAt(Cursor.newBuilder().setBefore(before).addValues(value));
     return structuredQuery.build();
   }
 
   public static StructuredQuery endAt(boolean before) {
+    return endAt(string(), before);
+  }
+
+  public static StructuredQuery endAt(Value value, boolean before) {
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
-    structuredQuery.setEndAt(Cursor.newBuilder().setBefore(before).addValues(string()));
+    structuredQuery.setEndAt(Cursor.newBuilder().setBefore(before).addValues(value));
     return structuredQuery.build();
   }
 
@@ -539,7 +548,8 @@ public final class LocalFirestoreHelper {
     BLOB = Blob.fromBytes(new byte[] {1, 2, 3});
 
     DATABASE_NAME = "projects/test-project/databases/(default)";
-    DOCUMENT_NAME = DATABASE_NAME + "/documents/coll/doc";
+    DOCUMENT_PATH = "coll/doc";
+    DOCUMENT_NAME = DATABASE_NAME + "/documents/" + DOCUMENT_PATH;
 
     EMPTY_MAP_PROTO =
         ImmutableMap.of(
