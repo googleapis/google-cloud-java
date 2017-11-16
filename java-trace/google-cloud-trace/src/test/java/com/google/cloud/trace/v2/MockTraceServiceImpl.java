@@ -13,15 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.trace.v1;
+package com.google.cloud.trace.v2;
 
 import com.google.api.core.BetaApi;
-import com.google.devtools.cloudtrace.v1.GetTraceRequest;
-import com.google.devtools.cloudtrace.v1.ListTracesRequest;
-import com.google.devtools.cloudtrace.v1.ListTracesResponse;
-import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
-import com.google.devtools.cloudtrace.v1.Trace;
-import com.google.devtools.cloudtrace.v1.TraceServiceGrpc.TraceServiceImplBase;
+import com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest;
+import com.google.devtools.cloudtrace.v2.Span;
+import com.google.devtools.cloudtrace.v2.TraceServiceGrpc.TraceServiceImplBase;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
@@ -63,40 +60,26 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
   }
 
   @Override
-  public void listTraces(
-      ListTracesRequest request, StreamObserver<ListTracesResponse> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof ListTracesResponse) {
-      requests.add(request);
-      responseObserver.onNext((ListTracesResponse) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void getTrace(GetTraceRequest request, StreamObserver<Trace> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Trace) {
-      requests.add(request);
-      responseObserver.onNext((Trace) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void patchTraces(PatchTracesRequest request, StreamObserver<Empty> responseObserver) {
+  public void batchWriteSpans(
+      BatchWriteSpansRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void createSpan(Span request, StreamObserver<Span> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Span) {
+      requests.add(request);
+      responseObserver.onNext((Span) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

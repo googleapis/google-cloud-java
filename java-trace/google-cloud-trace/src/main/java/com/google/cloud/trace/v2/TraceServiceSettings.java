@@ -13,12 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.trace.v1;
-
-import static com.google.cloud.trace.v1.PagedResponseWrappers.ListTracesPagedResponse;
+package com.google.cloud.trace.v2;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -27,29 +24,20 @@ import com.google.api.gax.grpc.GrpcExtraHeaderData;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.PageContext;
-import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.PagedListDescriptor;
-import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.trace.v1.stub.GrpcTraceServiceStub;
-import com.google.cloud.trace.v1.stub.TraceServiceStub;
+import com.google.cloud.trace.v2.stub.GrpcTraceServiceStub;
+import com.google.cloud.trace.v2.stub.TraceServiceStub;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.devtools.cloudtrace.v1.GetTraceRequest;
-import com.google.devtools.cloudtrace.v1.ListTracesRequest;
-import com.google.devtools.cloudtrace.v1.ListTracesResponse;
-import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
-import com.google.devtools.cloudtrace.v1.Trace;
+import com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest;
+import com.google.devtools.cloudtrace.v2.Span;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -70,13 +58,13 @@ import org.threeten.bp.Duration;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of patchTraces to 30 seconds:
+ * example, to set the total timeout of batchWriteSpans to 30 seconds:
  *
  * <pre>
  * <code>
  * TraceServiceSettings.Builder traceServiceSettingsBuilder =
  *     TraceServiceSettings.newBuilder();
- * traceServiceSettingsBuilder.patchTracesSettings().getRetrySettingsBuilder()
+ * traceServiceSettingsBuilder.batchWriteSpansSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * TraceServiceSettings traceServiceSettings = traceServiceSettingsBuilder.build();
  * </code>
@@ -90,7 +78,6 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/trace.append")
-          .add("https://www.googleapis.com/auth/trace.readonly")
           .build();
 
   private static final String DEFAULT_GAPIC_NAME = "gapic";
@@ -101,25 +88,17 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
 
   private static String gapicVersion;
 
-  private final UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings;
-  private final UnaryCallSettings<GetTraceRequest, Trace> getTraceSettings;
-  private final PagedCallSettings<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
-      listTracesSettings;
+  private final UnaryCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansSettings;
+  private final UnaryCallSettings<Span, Span> createSpanSettings;
 
-  /** Returns the object with the settings used for calls to patchTraces. */
-  public UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
-    return patchTracesSettings;
+  /** Returns the object with the settings used for calls to batchWriteSpans. */
+  public UnaryCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansSettings() {
+    return batchWriteSpansSettings;
   }
 
-  /** Returns the object with the settings used for calls to getTrace. */
-  public UnaryCallSettings<GetTraceRequest, Trace> getTraceSettings() {
-    return getTraceSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listTraces. */
-  public PagedCallSettings<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
-      listTracesSettings() {
-    return listTracesSettings;
+  /** Returns the object with the settings used for calls to createSpan. */
+  public UnaryCallSettings<Span, Span> createSpanSettings() {
+    return createSpanSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -199,73 +178,16 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
   private TraceServiceSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    patchTracesSettings = settingsBuilder.patchTracesSettings().build();
-    getTraceSettings = settingsBuilder.getTraceSettings().build();
-    listTracesSettings = settingsBuilder.listTracesSettings().build();
+    batchWriteSpansSettings = settingsBuilder.batchWriteSpansSettings().build();
+    createSpanSettings = settingsBuilder.createSpanSettings().build();
   }
-
-  private static final PagedListDescriptor<ListTracesRequest, ListTracesResponse, Trace>
-      LIST_TRACES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListTracesRequest, ListTracesResponse, Trace>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTracesRequest injectToken(ListTracesRequest payload, String token) {
-              return ListTracesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTracesRequest injectPageSize(ListTracesRequest payload, int pageSize) {
-              throw new UnsupportedOperationException(
-                  "page size is not supported by this API method");
-            }
-
-            @Override
-            public Integer extractPageSize(ListTracesRequest payload) {
-              throw new UnsupportedOperationException(
-                  "page size is not supported by this API method");
-            }
-
-            @Override
-            public String extractNextToken(ListTracesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Trace> extractResources(ListTracesResponse payload) {
-              return payload.getTracesList();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
-      LIST_TRACES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>() {
-            @Override
-            public ApiFuture<ListTracesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTracesRequest, ListTracesResponse> callable,
-                ListTracesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTracesResponse> futureResponse) {
-              PageContext<ListTracesRequest, ListTracesResponse, Trace> pageContext =
-                  PageContext.create(callable, LIST_TRACES_PAGE_STR_DESC, request, context);
-              return ListTracesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
 
   /** Builder for TraceServiceSettings. */
   public static class Builder extends ClientSettings.Builder<TraceServiceSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings;
-    private final UnaryCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings;
-    private final PagedCallSettings.Builder<
-            ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
-        listTracesSettings;
+    private final UnaryCallSettings.Builder<BatchWriteSpansRequest, Empty> batchWriteSpansSettings;
+    private final UnaryCallSettings.Builder<Span, Span> createSpanSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -292,10 +214,10 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.2)
               .setMaxRetryDelay(Duration.ofMillis(1000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.5)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(45000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(120000L))
               .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -308,15 +230,13 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
-      patchTracesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchWriteSpansSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      getTraceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listTracesSettings = PagedCallSettings.newBuilder(LIST_TRACES_PAGE_STR_FACT);
+      createSpanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              patchTracesSettings, getTraceSettings, listTracesSettings);
+              batchWriteSpansSettings, createSpanSettings);
 
       initDefaults(this);
     }
@@ -333,17 +253,12 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .patchTracesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .batchWriteSpansSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .getTraceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listTracesSettings()
+          .createSpanSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -353,13 +268,12 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
     private Builder(TraceServiceSettings settings) {
       super(settings);
 
-      patchTracesSettings = settings.patchTracesSettings.toBuilder();
-      getTraceSettings = settings.getTraceSettings.toBuilder();
-      listTracesSettings = settings.listTracesSettings.toBuilder();
+      batchWriteSpansSettings = settings.batchWriteSpansSettings.toBuilder();
+      createSpanSettings = settings.createSpanSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              patchTracesSettings, getTraceSettings, listTracesSettings);
+              batchWriteSpansSettings, createSpanSettings);
     }
 
     /**
@@ -373,20 +287,14 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to patchTraces. */
-    public UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
-      return patchTracesSettings;
+    /** Returns the builder for the settings used for calls to batchWriteSpans. */
+    public UnaryCallSettings.Builder<BatchWriteSpansRequest, Empty> batchWriteSpansSettings() {
+      return batchWriteSpansSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getTrace. */
-    public UnaryCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings() {
-      return getTraceSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listTraces. */
-    public PagedCallSettings.Builder<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
-        listTracesSettings() {
-      return listTracesSettings;
+    /** Returns the builder for the settings used for calls to createSpan. */
+    public UnaryCallSettings.Builder<Span, Span> createSpanSettings() {
+      return createSpanSettings;
     }
 
     @Override
