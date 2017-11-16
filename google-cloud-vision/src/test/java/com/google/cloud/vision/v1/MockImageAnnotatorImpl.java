@@ -15,6 +15,7 @@
  */
 package com.google.cloud.vision.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.vision.v1.ImageAnnotatorGrpc.ImageAnnotatorImplBase;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
@@ -24,6 +25,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockImageAnnotatorImpl extends ImageAnnotatorImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

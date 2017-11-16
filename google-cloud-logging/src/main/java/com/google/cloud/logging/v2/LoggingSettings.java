@@ -223,21 +223,6 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
     return gapicVersion;
   }
 
-  /** Returns a builder for this class with recommended defaults. */
-  @Deprecated
-  public static Builder defaultBuilder() {
-    return Builder.createDefault();
-  }
-
-  /**
-   * Returns a builder for this class with recommended defaults for API methods, and the given
-   * ClientContext used for executor/transport/credentials.
-   */
-  @Deprecated
-  public static Builder defaultBuilder(ClientContext clientContext) {
-    return new Builder(clientContext);
-  }
-
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
@@ -623,8 +608,8 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
                   .setDelayThreshold(Duration.ofMillis(50))
                   .setFlowControlSettings(
                       FlowControlSettings.newBuilder()
-                          .setMaxOutstandingElementCount(100000)
-                          .setMaxOutstandingRequestBytes(10485760)
+                          .setMaxOutstandingElementCount(100000L)
+                          .setMaxOutstandingRequestBytes(10485760L)
                           .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
                           .build())
                   .build());

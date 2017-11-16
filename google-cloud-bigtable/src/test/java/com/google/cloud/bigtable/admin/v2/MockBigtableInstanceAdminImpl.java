@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import com.google.api.core.BetaApi;
 import com.google.bigtable.admin.v2.BigtableInstanceAdminGrpc.BigtableInstanceAdminImplBase;
 import com.google.bigtable.admin.v2.Cluster;
 import com.google.bigtable.admin.v2.CreateClusterRequest;
@@ -38,6 +39,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

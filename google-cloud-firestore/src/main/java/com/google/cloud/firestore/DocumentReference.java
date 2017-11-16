@@ -68,16 +68,6 @@ public final class DocumentReference {
   }
 
   /**
-   * A reference to the Collection to which this DocumentReference belongs to.
-   *
-   * @return The parent Collection.
-   */
-  @Nonnull
-  public CollectionReference getParent() {
-    return new CollectionReference(firestore, path.getParent());
-  }
-
-  /**
    * A string representing the path of the referenced document (relative to the root of the
    * database).
    *
@@ -85,7 +75,27 @@ public final class DocumentReference {
    */
   @Nonnull
   public String getPath() {
-    return path.toString();
+    return path.getPath();
+  }
+
+  /**
+   * A string representing the fully-qualified path of the referenced document.
+   *
+   * @return The fully-qualified path of the document.
+   */
+  @Nonnull
+  String getName() {
+    return path.getName();
+  }
+
+  /**
+   * A reference to the Collection to which this DocumentReference belongs to.
+   *
+   * @return The parent Collection.
+   */
+  @Nonnull
+  public CollectionReference getParent() {
+    return new CollectionReference(firestore, path.getParent());
   }
 
   /**
@@ -379,6 +389,10 @@ public final class DocumentReference {
         };
       }
     };
+  }
+
+  ResourcePath getResourcePath() {
+    return path;
   }
 
   @Override

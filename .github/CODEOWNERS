@@ -2,33 +2,35 @@
 # This file controls who is tagged for review for any given pull request.
 
 # For anything not explicitly taken by someone else.
-*                                 @garrettjonesgoogle
+*                                     @garrettjonesgoogle
 # Owners per module.
-google-cloud-bigquery/*           @vam-google @tswast
-google-cloud-compute/*            @garrettjonesgoogle
-google-cloud-contrib/*            @garrettjonesgoogle @jean-philippe-martin
-google-cloud-core-grpc/*          @garrettjonesgoogle
-google-cloud-core-http/*          @garrettjonesgoogle
-google-cloud-core/*               @garrettjonesgoogle
-google-cloud-datastore/*          @garrettjonesgoogle
-google-cloud-dep-verification/*   @garrettjonesgoogle
-google-cloud-dlp/*                @neozwu
-google-cloud-dns/*                @garrettjonesgoogle
-google-cloud-errorreporting/*     @garrettjonesgoogle
-google-cloud-examples/*           @garrettjonesgoogle
-google-cloud-language/*           @garrettjonesgoogle
-google-cloud-logging/*            @garrettjonesgoogle @jabubake
-google-cloud-monitoring/*         @garrettjonesgoogle
-google-cloud-pubsub/*             @pongad
-google-cloud-resourcemanager/*    @garrettjonesgoogle
-google-cloud-spanner/*            @vam-google @vkedia
-google-cloud-speech/*             @vam-google
-google-cloud-storage/*            @garrettjonesgoogle
-google-cloud-testing/*            @vam-google
-google-cloud-trace/*              @garrettjonesgoogle
-google-cloud-translate/*          @garrettjonesgoogle
-google-cloud-util/*               @garrettjonesgoogle
-google-cloud-video-intelligence/* @vam-google
-google-cloud-vision/*             @vam-google
-google-cloud/*                    @garrettjonesgoogle
+google-cloud-bigquery/src/*           @vam-google @tswast
+google-cloud-bigtable/src/*           @igorbernstein2
+google-cloud-compute/src/*            @andreamlin
+google-cloud-contrib/src/*            @garrettjonesgoogle @jean-philippe-martin
+google-cloud-core-grpc/src/*          @garrettjonesgoogle
+google-cloud-core-http/src/*          @garrettjonesgoogle
+google-cloud-core/src/*               @garrettjonesgoogle
+google-cloud-datastore/src/*          @neozwu @vam-google
+google-cloud-dep-verification/src/*   @garrettjonesgoogle
+google-cloud-dlp/src/*                @neozwu
+google-cloud-dns/src/*                @garrettjonesgoogle
+google-cloud-errorreporting/src/*     @garrettjonesgoogle
+google-cloud-examples/src/*           @garrettjonesgoogle
+google-cloud-firestore/src/*          @schmidt-sebastian
+google-cloud-language/src/*           @garrettjonesgoogle
+google-cloud-logging/src/*            @saicheems @andreamlin @jabubake
+google-cloud-monitoring/src/*         @garrettjonesgoogle
+google-cloud-pubsub/src/*             @pongad @garrettjonesgoogle
+google-cloud-resourcemanager/src/*    @garrettjonesgoogle
+google-cloud-spanner/src/*            @vam-google @vkedia
+google-cloud-speech/src/*             @vam-google
+google-cloud-storage/src/*            @andreamlin @neozwu
+google-cloud-testing/src/*            @vam-google
+google-cloud-trace/src/*              @garrettjonesgoogle
+google-cloud-translate/src/*          @andreamlin @saicheems
+google-cloud-util/src/*               @garrettjonesgoogle
+google-cloud-video-intelligence/src/* @vam-google
+google-cloud-vision/src/*             @vam-google
+google-cloud/src/*                    @garrettjonesgoogle
 

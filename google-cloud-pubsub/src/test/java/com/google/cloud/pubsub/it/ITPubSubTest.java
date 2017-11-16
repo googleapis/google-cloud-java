@@ -16,10 +16,9 @@
 
 package com.google.cloud.pubsub.it;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static com.google.common.truth.Truth.assertThat;
 
-import com.google.api.core.SettableApiFuture;
+import com.google.auto.value.AutoValue;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
@@ -38,6 +37,9 @@ import com.google.pubsub.v1.TopicName;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -52,6 +54,17 @@ public class ITPubSubTest {
   private static String projectId;
 
   @Rule public Timeout globalTimeout = Timeout.seconds(300);
+
+  @AutoValue
+  abstract static class MessageAndConsumer {
+    abstract PubsubMessage message();
+
+    abstract AckReplyConsumer consumer();
+
+    static MessageAndConsumer create(PubsubMessage message, AckReplyConsumer consumer) {
+      return new AutoValue_ITPubSubTest_MessageAndConsumer(message, consumer);
+    }
+  }
 
   @BeforeClass
   public static void setupClass() throws Exception {
@@ -81,14 +94,14 @@ public class ITPubSubTest {
     Policy newPolicy =
         topicAdminClient.setIamPolicy(
             topicName.toString(), policy.toBuilder().addBindings(binding).build());
-    assertTrue(newPolicy.getBindingsList().contains(binding));
+    assertThat(newPolicy.getBindingsList()).contains(binding);
 
     String permissionName = "pubsub.topics.get";
     List<String> permissions =
         topicAdminClient
             .testIamPermissions(topicName.toString(), Collections.singletonList(permissionName))
             .getPermissionsList();
-    assertTrue(permissions.contains(permissionName));
+    assertThat(permissions).contains(permissionName);
 
     topicAdminClient.deleteTopic(topicName);
   }
@@ -103,10 +116,8 @@ public class ITPubSubTest {
     topicAdminClient.createTopic(topicName);
     subscriptionAdminClient.createSubscription(
         subscriptionName, topicName, PushConfig.newBuilder().build(), 10);
-    PubsubMessage message =
-        PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("my message")).build();
 
-    final SettableApiFuture<PubsubMessage> received = SettableApiFuture.create();
+    final BlockingQueue<Object> receiveQueue = new LinkedBlockingQueue<>();
     Subscriber subscriber =
         Subscriber.newBuilder(
                 subscriptionName,
@@ -114,30 +125,59 @@ public class ITPubSubTest {
                   @Override
                   public void receiveMessage(
                       final PubsubMessage message, final AckReplyConsumer consumer) {
-                    if (received.set(message)) {
-                      consumer.ack();
-                    } else {
-                      consumer.nack();
-                    }
+                    receiveQueue.offer(MessageAndConsumer.create(message, consumer));
                   }
                 })
             .build();
     subscriber.addListener(
         new Subscriber.Listener() {
           public void failed(Subscriber.State from, Throwable failure) {
-            received.setException(failure);
+            receiveQueue.offer(failure);
           }
         },
         MoreExecutors.directExecutor());
     subscriber.startAsync();
 
     Publisher publisher = Publisher.newBuilder(topicName).build();
-    publisher.publish(message).get();
+    publisher
+        .publish(PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("msg1")).build())
+        .get();
+    publisher
+        .publish(PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("msg2")).build())
+        .get();
     publisher.shutdown();
 
-    assertEquals(received.get().getData(), message.getData());
+    // Ack the first message.
+    MessageAndConsumer toAck = pollQueue(receiveQueue);
+    toAck.consumer().ack();
+
+    // Nack the other.
+    MessageAndConsumer toNack = pollQueue(receiveQueue);
+    assertThat(toNack.message().getData()).isNotEqualTo(toAck.message().getData());
+    toNack.consumer().nack();
+
+    // We should get the nacked message back.
+    MessageAndConsumer redelivered = pollQueue(receiveQueue);
+    assertThat(redelivered.message().getData()).isEqualTo(toNack.message().getData());
+    redelivered.consumer().ack();
+
     subscriber.stopAsync().awaitTerminated();
     subscriptionAdminClient.deleteSubscription(subscriptionName);
     topicAdminClient.deleteTopic(topicName);
+  }
+
+  private MessageAndConsumer pollQueue(BlockingQueue<Object> queue) throws InterruptedException {
+    Object obj = queue.poll(1, TimeUnit.MINUTES);
+    if (obj == null) {
+      return null;
+    }
+    if (obj instanceof Throwable) {
+      throw new IllegalStateException("unexpected error", (Throwable) obj);
+    }
+    if (obj instanceof MessageAndConsumer) {
+      return (MessageAndConsumer) obj;
+    }
+    throw new IllegalStateException(
+        "expected either MessageAndConsumer or Throwable, found: " + obj);
   }
 }

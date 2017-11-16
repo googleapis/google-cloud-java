@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.StructuredQuery;
+import com.google.firestore.v1beta1.Value;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.concurrent.Semaphore;
@@ -255,12 +256,50 @@ public class QueryTest {
             streamObserverCapture.capture(),
             Matchers.<ServerStreamingCallable>any());
 
-    query.orderBy("foo").startAt("bar").get().get();
+    query.orderBy("foo").orderBy(FieldPath.documentId()).startAt("bar", "foo").get().get();
+
+    Value documentBoundary =
+        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/foo").build();
 
     RunQueryRequest queryRequest =
-        query(order("foo", StructuredQuery.Direction.ASCENDING), startAt(true));
+        query(
+            order("foo", StructuredQuery.Direction.ASCENDING),
+            order("__name__", StructuredQuery.Direction.ASCENDING),
+            startAt(true),
+            startAt(documentBoundary, true));
 
     assertEquals(queryRequest, runQuery.getValue());
+  }
+
+  @Test
+  public void withInvalidStartAt() throws Exception {
+    try {
+      query.orderBy(FieldPath.documentId()).startAt(42).get();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals(
+          "The corresponding value for FieldPath.documentId() must be a String or a "
+              + "DocumentReference.",
+          e.getMessage());
+    }
+
+    try {
+      query.orderBy(FieldPath.documentId()).startAt("coll/doc/coll").get();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals(
+          "Only a direct child can be used as a query boundary. Found: 'coll/coll/doc/coll'",
+          e.getMessage());
+    }
+
+    try {
+      query.orderBy(FieldPath.documentId()).startAt(firestoreMock.document("foo/bar")).get();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals(
+          "'foo/bar' is not part of the query result set and cannot be used as a query boundary.",
+          e.getMessage());
+    }
   }
 
   @Test

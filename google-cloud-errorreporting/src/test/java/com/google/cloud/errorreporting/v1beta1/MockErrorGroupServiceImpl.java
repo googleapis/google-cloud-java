@@ -15,6 +15,7 @@
  */
 package com.google.cloud.errorreporting.v1beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupServiceGrpc.ErrorGroupServiceImplBase;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
@@ -27,6 +28,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockErrorGroupServiceImpl extends ErrorGroupServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;
