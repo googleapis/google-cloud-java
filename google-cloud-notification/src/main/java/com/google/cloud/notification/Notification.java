@@ -17,17 +17,16 @@
 package com.google.cloud.notification;
 
 import com.google.api.core.BetaApi;
-import com.google.cloud.Service;
-import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import java.util.List;
 
 /**
  * An interface for Pub/Sub Notifications in Google Cloud Storage.
  *
- * This is a light wrapper around a Storage client.
+ * <p>This is a light wrapper around a Storage client.
  *
- * @see <a href="https://cloud.google.com/storage/docs/pubsub-notifications">Google Cloud Pub/Sub Notifications for Storage</a>
+ * @see <a href="https://cloud.google.com/storage/docs/pubsub-notifications">Google Cloud Pub/Sub
+ *     Notifications for Storage</a>
  */
 public interface Notification {
 

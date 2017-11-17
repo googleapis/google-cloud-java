@@ -20,7 +20,6 @@ import static com.google.cloud.RetryHelper.runWithRetries;
 
 import com.google.cloud.BaseService;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.spi.v1.StorageRpc;

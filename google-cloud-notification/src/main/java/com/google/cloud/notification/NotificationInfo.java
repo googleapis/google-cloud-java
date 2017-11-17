@@ -23,7 +23,6 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
 import com.google.pubsub.v1.TopicName;
 import java.io.Serializable;
 import java.util.List;
@@ -37,6 +36,7 @@ import java.util.Objects;
  *      Terminology</a>
  */
 public class NotificationInfo implements Serializable {
+  // TODO: Consider making this an AutoValue class.
 
   private static final long serialVersionUID = 5725883368559753810L;
 
