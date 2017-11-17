@@ -96,11 +96,8 @@ public class Subscriber extends AbstractApiService {
   @InternalApi static final int CHANNELS_PER_CORE = 1;
   private static final int MAX_INBOUND_MESSAGE_SIZE =
       20 * 1024 * 1024; // 20MB API maximum message size.
-  private static final int INITIAL_ACK_DEADLINE_SECONDS = 60;
   @InternalApi static final int MAX_ACK_DEADLINE_SECONDS = 600;
   @InternalApi static final int MIN_ACK_DEADLINE_SECONDS = 10;
-  private static final Duration ACK_DEADLINE_UPDATE_PERIOD = Duration.ofMinutes(1);
-  private static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
 
   private static final ScheduledExecutorService SHARED_SYSTEM_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(6).build().getExecutor();
@@ -130,7 +127,6 @@ public class Subscriber extends AbstractApiService {
   private final List<AutoCloseable> closeables = new ArrayList<>();
   private final boolean useStreaming;
   private ScheduledFuture<?> ackDeadlineUpdater;
-  private int streamAckDeadlineSeconds;
 
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
@@ -139,10 +135,6 @@ public class Subscriber extends AbstractApiService {
     cachedSubscriptionNameString = subscriptionName.toString();
     ackExpirationPadding = builder.ackExpirationPadding;
     maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
-    streamAckDeadlineSeconds =
-        Math.max(
-            INITIAL_ACK_DEADLINE_SECONDS,
-            Ints.saturatedCast(TimeUnit.MILLISECONDS.toSeconds(ackExpirationPadding.toMillis())));
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
     flowController =
@@ -404,7 +396,6 @@ public class Subscriber extends AbstractApiService {
                 receiver,
                 ackExpirationPadding,
                 maxAckExtensionPeriod,
-                streamAckDeadlineSeconds,
                 ackLatencyDistribution,
                 stub,
                 flowController,
@@ -431,46 +422,6 @@ public class Subscriber extends AbstractApiService {
               }
             }
           });
-    }
-
-    // TODO(pongad): re-enable deadline adjustment.
-
-    // ackDeadlineUpdater =
-    //     executor.scheduleAtFixedRate(
-    //         new Runnable() {
-    //           @Override
-    //           public void run() {
-    //             updateAckDeadline();
-    //           }
-    //         },
-    //         ACK_DEADLINE_UPDATE_PERIOD.toMillis(),
-    //         ACK_DEADLINE_UPDATE_PERIOD.toMillis(),
-    //         TimeUnit.MILLISECONDS);
-  }
-
-  private void updateAckDeadline() {
-    // It is guaranteed this will be <= MAX_ACK_DEADLINE_SECONDS, the max of the API.
-    long ackLatency = ackLatencyDistribution.getNthPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
-    if (ackLatency > 0) {
-      int possibleStreamAckDeadlineSeconds =
-          Math.max(
-              MIN_ACK_DEADLINE_SECONDS,
-              Ints.saturatedCast(Math.max(ackLatency, ackExpirationPadding.getSeconds())));
-      if (streamAckDeadlineSeconds != possibleStreamAckDeadlineSeconds) {
-        streamAckDeadlineSeconds = possibleStreamAckDeadlineSeconds;
-        logger.log(
-            Level.FINER, "Updating stream deadline to {0} seconds.", streamAckDeadlineSeconds);
-        for (StreamingSubscriberConnection subscriberConnection : streamingSubscriberConnections) {
-          subscriberConnection.updateStreamAckDeadline(streamAckDeadlineSeconds);
-        }
-      }
-    }
-  }
-
-  @InternalApi
-  void setAckDeadline(int seconds) {
-    for (StreamingSubscriberConnection subscriberConnection : streamingSubscriberConnections) {
-      subscriberConnection.updateStreamAckDeadline(seconds);
     }
   }
 

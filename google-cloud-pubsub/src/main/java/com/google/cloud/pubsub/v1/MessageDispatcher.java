@@ -42,6 +42,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -56,6 +57,7 @@ import org.threeten.bp.Instant;
  */
 class MessageDispatcher {
   private static final Logger logger = Logger.getLogger(MessageDispatcher.class.getName());
+  private static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
 
   @InternalApi static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
 
@@ -78,12 +80,12 @@ class MessageDispatcher {
   private final LinkedBlockingQueue<String> pendingNacks = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<String> pendingReceipts = new LinkedBlockingQueue<>();
 
-  private final Lock alarmsLock;
-  // The deadline should be set by the subscriber connection before use,
-  // but set it to some reasonable value just in case.
-  private final AtomicInteger messageDeadlineSeconds = new AtomicInteger(10);
-  private ScheduledFuture<?> ackDeadlineExtensionAlarm;
-  private ScheduledFuture<?> pendingAcksAlarm;
+  // The deadline should be set before use. Here, set it to something unreasonable,
+  // so we fail loudly if we mess up.
+  private final AtomicInteger messageDeadlineSeconds = new AtomicInteger(-1234);
+  private final AtomicBoolean extendDeadline = new AtomicBoolean(true);
+  private final Lock jobLock;
+  private ScheduledFuture<?> backgroundJob;
 
   private final Deque<OutstandingMessageBatch> outstandingMessageBatches;
 
@@ -197,74 +199,74 @@ class MessageDispatcher {
     this.outstandingMessageBatches = outstandingMessageBatches;
     // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
     this.ackLatencyDistribution = ackLatencyDistribution;
-    alarmsLock = new ReentrantLock();
+    jobLock = new ReentrantLock();
     messagesWaiter = new MessageWaiter();
     this.clock = clock;
   }
 
   public void start() {
-    alarmsLock.lock();
+    final Runnable setExtendDeadline =
+        new Runnable() {
+          @Override
+          public void run() {
+            extendDeadline.set(true);
+          }
+        };
+
+    jobLock.lock();
     try {
-      pendingAcksAlarm =
+      // Do not adjust deadline concurrently with extendDeadline or processOutstandingAckOperations.
+      // The following sequence can happen:
+      //  0. Initially, deadline = 1 min
+      //  1. Thread A (TA) wants to send receipts, reads deadline = 1m, but stalls before actually sending request
+      //  2. Thread B (TB) adjusts deadline to 2m
+      //  3. TB calls extendDeadline, modack all messages to 2m, schedules next extension in 2m
+      //  4. TA sends request, modacking messages to 1m.
+      // Then messages will expire too early.
+      // This can be resolved by adding locks in the right places, but at that point,
+      // we might as well do things sequentially.
+      backgroundJob =
           systemExecutor.scheduleWithFixedDelay(
               new Runnable() {
                 @Override
                 public void run() {
                   try {
+                    if (extendDeadline.getAndSet(false)) {
+                      int newDeadlineSec = computeAndSetDeadlineSeconds();
+                      extendDeadlines();
+                      // Don't bother cancelling this when we stop. It'd just set an atomic boolean.
+                      systemExecutor.schedule(
+                          setExtendDeadline,
+                          newDeadlineSec - ackExpirationPadding.getSeconds(),
+                          TimeUnit.SECONDS);
+                    }
                     processOutstandingAckOperations();
                   } catch (Throwable t) {
                     // Catch everything so that one run failing doesn't prevent subsequent runs.
-                    logger.log(Level.WARNING, "failed to send acks/nacks", t);
+                    logger.log(Level.WARNING, "failed to run periodic job", t);
                   }
                 }
               },
               PENDING_ACKS_SEND_DELAY.toMillis(),
               PENDING_ACKS_SEND_DELAY.toMillis(),
-              TimeUnit.MILLISECONDS);
-
-      Duration extensionPeriod =
-          Duration.ofSeconds(messageDeadlineSeconds.get()).minus(ackExpirationPadding);
-      ackDeadlineExtensionAlarm =
-          systemExecutor.scheduleWithFixedDelay(
-              new Runnable() {
-                @Override
-                public void run() {
-                  try {
-                    extendDeadlines();
-                  } catch (Throwable t) {
-                    // Catch everything so that one run failing doesn't prevent subsequent runs.
-                    logger.log(Level.WARNING, "failed to send extend deadlines", t);
-                  }
-                }
-              },
-              extensionPeriod.toMillis(),
-              extensionPeriod.toMillis(),
               TimeUnit.MILLISECONDS);
     } finally {
-      alarmsLock.unlock();
+      jobLock.unlock();
     }
   }
 
   public void stop() {
     messagesWaiter.waitNoMessages();
-    alarmsLock.lock();
+    jobLock.lock();
     try {
-      if (ackDeadlineExtensionAlarm != null) {
-        ackDeadlineExtensionAlarm.cancel(true);
-        ackDeadlineExtensionAlarm = null;
-      }
-      if (pendingAcksAlarm != null) {
-        pendingAcksAlarm.cancel(false);
-        pendingAcksAlarm = null;
+      if (backgroundJob != null) {
+        backgroundJob.cancel(false);
+        backgroundJob = null;
       }
     } finally {
-      alarmsLock.unlock();
+      jobLock.unlock();
     }
     processOutstandingAckOperations();
-  }
-
-  public void setMessageDeadlineSeconds(int messageDeadlineSeconds) {
-    this.messageDeadlineSeconds.set(messageDeadlineSeconds);
   }
 
   public int getMessageDeadlineSeconds() {
@@ -397,6 +399,23 @@ class MessageDispatcher {
         batchCallback.run();
       }
     }
+  }
+
+  /** Compute the ideal deadline, set subsequent modacks to this deadline, and return it. */
+  @InternalApi
+  int computeAndSetDeadlineSeconds() {
+    long secLong = ackLatencyDistribution.getNthPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
+    int sec = Ints.saturatedCast(secLong);
+
+    // Use Ints.constrainToRange when we get guava 21.
+    if (sec < Subscriber.MIN_ACK_DEADLINE_SECONDS) {
+      sec = Subscriber.MIN_ACK_DEADLINE_SECONDS;
+    } else if (sec > Subscriber.MAX_ACK_DEADLINE_SECONDS) {
+      sec = Subscriber.MAX_ACK_DEADLINE_SECONDS;
+    }
+
+    messageDeadlineSeconds.set(sec);
+    return sec;
   }
 
   @InternalApi

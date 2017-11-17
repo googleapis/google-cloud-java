@@ -278,7 +278,6 @@ public class SubscriberTest {
   private Subscriber startSubscriber(Builder testSubscriberBuilder) throws Exception {
     Subscriber subscriber = testSubscriberBuilder.setUseStreaming(isStreamingTest).build();
     subscriber.startAsync().awaitRunning();
-    subscriber.setAckDeadline(10);
     return subscriber;
   }
 

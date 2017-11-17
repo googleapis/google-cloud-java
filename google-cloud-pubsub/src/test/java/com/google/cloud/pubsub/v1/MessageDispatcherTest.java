@@ -50,7 +50,6 @@ public class MessageDispatcherTest {
           // No-op; don't do anything.
         }
       };
-  private static final int TEST_STREAM_DEADLINE_SECS = 42;
 
   private MessageDispatcher dispatcher;
   private LinkedBlockingQueue<AckReplyConsumer> consumers;
@@ -115,7 +114,7 @@ public class MessageDispatcherTest {
             MoreExecutors.directExecutor(),
             systemExecutor,
             clock);
-    dispatcher.setMessageDeadlineSeconds(TEST_STREAM_DEADLINE_SECS);
+    dispatcher.computeAndSetDeadlineSeconds();
   }
 
   @Test
@@ -123,7 +122,7 @@ public class MessageDispatcherTest {
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
     dispatcher.processOutstandingAckOperations();
     assertThat(sentModAcks)
-        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), TEST_STREAM_DEADLINE_SECS));
+        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
   }
 
   @Test
@@ -147,7 +146,7 @@ public class MessageDispatcherTest {
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
     dispatcher.extendDeadlines();
     assertThat(sentModAcks)
-        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), TEST_STREAM_DEADLINE_SECS));
+        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
 
     sentModAcks.clear();
     consumers.take().ack();
@@ -160,11 +159,22 @@ public class MessageDispatcherTest {
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
     dispatcher.extendDeadlines();
     assertThat(sentModAcks)
-        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), TEST_STREAM_DEADLINE_SECS));
+        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
 
     sentModAcks.clear();
     clock.advance(1, TimeUnit.DAYS);
     dispatcher.extendDeadlines();
     assertThat(sentModAcks).isEmpty();
+  }
+
+  @Test
+  public void testDeadlineAdjustment() throws Exception {
+    assertThat(dispatcher.computeAndSetDeadlineSeconds()).isEqualTo(10);
+
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    clock.advance(42, TimeUnit.SECONDS);
+    consumers.take().ack();
+
+    assertThat(dispatcher.computeAndSetDeadlineSeconds()).isEqualTo(42);
   }
 }
