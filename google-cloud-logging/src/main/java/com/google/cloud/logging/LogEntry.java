@@ -452,7 +452,7 @@ public class LogEntry implements Serializable {
     com.google.logging.v2.LogEntry.Builder builder = payload.toPb();
     builder.putAllLabels(labels);
     if (logName != null) {
-      builder.setLogName(LogName.create(projectId, logName).toString());
+      builder.setLogName(LogName.of(projectId, logName).toString());
     }
     if (resource != null) {
       builder.setResource(resource.toPb());

@@ -65,7 +65,7 @@ import org.junit.runners.Parameterized.Parameters;
 public class SubscriberTest {
 
   private static final SubscriptionName TEST_SUBSCRIPTION =
-      SubscriptionName.create("test-project", "test-subscription");
+      SubscriptionName.of("test-project", "test-subscription");
 
   private static final PubsubMessage TEST_MESSAGE =
       PubsubMessage.newBuilder().setMessageId("1").build();
