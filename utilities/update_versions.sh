@@ -125,7 +125,7 @@ done
 echo -e "\n${BOLD}Validating explicitly specified modules${NC}"
 declare -A specified_modules_map
 if [ "${MODULES}" != "" ]; then
-  specified_modules_arr=(${MODULES//,/ })
+  IFS="," read -r -a specified_modules_arr <<< "${MODULES}"
 
   for item in ${specified_modules_arr[*]}; do
     if [ "${module_version_map[${item}]}" != "" ]; then
@@ -148,7 +148,7 @@ do
 done
 
 echo -e "\n${BOLD}Validating module folder mapping${NC}"
-for item in ${!module_folder_map[@]}
+for item in "${!module_folder_map[@]}"
 do
   if [ "${item}" != "." ] && [ "${module_version_map[${item}]}" == "" ]; then
     echo -e "${RED}WARNING:${NC} Ignoring \"${module_folder_map[${item}]}\" folder, as there is no corresponding module found in the root pom"
