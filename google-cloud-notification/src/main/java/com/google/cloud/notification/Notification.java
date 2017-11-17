@@ -25,15 +25,27 @@ import java.util.List;
 /**
  * An interface for Pub/Sub Notifications in Google Cloud Storage.
  *
+ * This is a light wrapper around a Storage client.
+ *
  * @see <a href="https://cloud.google.com/storage/docs/pubsub-notifications">Google Cloud Pub/Sub Notifications for Storage</a>
  */
-public interface Notification extends Service<StorageOptions> {
+public interface Notification {
+
+  /* Create a Notifications client given a StorageOptions object. */
+  Notification create(StorageOptions storage);
+
+  /* Delete the specified notification on the specified bucket.
+   *
+   * @return true if the notification was deleted, or false if not.
+   */
   @BetaApi
   boolean deleteNotification(String bucket, String notification);
 
+  /* List the notifications that are present on a given bucket. */
   @BetaApi
   List<NotificationInfo> listNotifications(String bucket);
 
+  /* Create a notification on a bucket. */
   @BetaApi
   NotificationInfo createNotification(String bucket, NotificationInfo notification);
 }

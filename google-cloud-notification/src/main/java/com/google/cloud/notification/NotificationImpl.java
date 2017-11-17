@@ -20,6 +20,7 @@ import static com.google.cloud.RetryHelper.runWithRetries;
 
 import com.google.cloud.BaseService;
 import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.spi.v1.StorageRpc;
@@ -31,13 +32,17 @@ public class NotificationImpl extends BaseService<StorageOptions> implements Not
 
   private final StorageRpc storageRpc;
 
-  NotificationImpl(StorageOptions options) {
+  private NotificationImpl(StorageOptions options) {
     super(options);
     storageRpc = options.getStorageRpcV1();
   }
 
-  public static class DefaultNotificationFactory implements NotificationFactory {
-    @Override
+  @Override
+  public Notification create(StorageOptions storage) {
+    return new NotificationImpl(storage);
+  }
+
+  public static class DefaultNotificationFactory {
     public Notification create(StorageOptions options) {
       return new NotificationImpl(options);
     }
