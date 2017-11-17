@@ -17,7 +17,7 @@
 package com.google.cloud.notification;
 
 import com.google.api.core.BetaApi;
-import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.storage.Storage;
 import java.util.List;
 
 /**
@@ -30,8 +30,8 @@ import java.util.List;
  */
 public interface Notification {
 
-  /* Create a Notifications client given a StorageOptions object. */
-  Notification create(StorageOptions storage);
+  /* Create a Notifications client wrapper on top of a given a Storage client. */
+  Notification create(Storage storage);
 
   /* Delete the specified notification on the specified bucket.
    *

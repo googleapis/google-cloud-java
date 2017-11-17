@@ -69,7 +69,7 @@ public class ITSystemTest {
     remoteStorageHelper = RemoteStorageHelper.create();
     topicAdminClient = TopicAdminClient.create();
     storageService = remoteStorageHelper.getOptions().getService();
-    notificationService = new DefaultNotificationFactory().create(remoteStorageHelper.getOptions());
+    notificationService = new DefaultNotificationFactory().create(remoteStorageHelper.getOptions().getService());
     storageService.create(BucketInfo.of(BUCKET));
     projectId = ServiceOptions.getDefaultProjectId();
   }
