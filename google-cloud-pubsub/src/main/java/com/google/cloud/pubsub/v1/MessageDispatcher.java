@@ -82,7 +82,7 @@ class MessageDispatcher {
 
   // The deadline should be set before use. Here, set it to something unreasonable,
   // so we fail loudly if we mess up.
-  private final AtomicInteger messageDeadlineSeconds = new AtomicInteger(-1234);
+  private final AtomicInteger messageDeadlineSeconds = new AtomicInteger(60);
   private final AtomicBoolean extendDeadline = new AtomicBoolean(true);
   private final Lock jobLock;
   private ScheduledFuture<?> backgroundJob;
@@ -218,7 +218,8 @@ class MessageDispatcher {
       // Do not adjust deadline concurrently with extendDeadline or processOutstandingAckOperations.
       // The following sequence can happen:
       //  0. Initially, deadline = 1 min
-      //  1. Thread A (TA) wants to send receipts, reads deadline = 1m, but stalls before actually sending request
+      //  1. Thread A (TA) wants to send receipts, reads deadline = 1m, but stalls before actually
+      // sending request
       //  2. Thread B (TB) adjusts deadline to 2m
       //  3. TB calls extendDeadline, modack all messages to 2m, schedules next extension in 2m
       //  4. TA sends request, modacking messages to 1m.
@@ -232,7 +233,8 @@ class MessageDispatcher {
                 public void run() {
                   try {
                     if (extendDeadline.getAndSet(false)) {
-                      int newDeadlineSec = computeAndSetDeadlineSeconds();
+                      int newDeadlineSec = computeDeadlineSeconds();
+                      messageDeadlineSeconds.set(newDeadlineSec);
                       extendDeadlines();
                       // Don't bother cancelling this when we stop. It'd just set an atomic boolean.
                       systemExecutor.schedule(
@@ -269,7 +271,13 @@ class MessageDispatcher {
     processOutstandingAckOperations();
   }
 
-  public int getMessageDeadlineSeconds() {
+  @InternalApi
+  void setMessageDeadlineSeconds(int sec) {
+    messageDeadlineSeconds.set(sec);
+  }
+
+  @InternalApi
+  int getMessageDeadlineSeconds() {
     return messageDeadlineSeconds.get();
   }
 
@@ -403,7 +411,7 @@ class MessageDispatcher {
 
   /** Compute the ideal deadline, set subsequent modacks to this deadline, and return it. */
   @InternalApi
-  int computeAndSetDeadlineSeconds() {
+  int computeDeadlineSeconds() {
     long secLong = ackLatencyDistribution.getNthPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
     int sec = Ints.saturatedCast(secLong);
 
@@ -413,8 +421,6 @@ class MessageDispatcher {
     } else if (sec > Subscriber.MAX_ACK_DEADLINE_SECONDS) {
       sec = Subscriber.MAX_ACK_DEADLINE_SECONDS;
     }
-
-    messageDeadlineSeconds.set(sec);
     return sec;
   }
 

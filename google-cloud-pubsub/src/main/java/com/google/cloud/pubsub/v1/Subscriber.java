@@ -36,7 +36,6 @@ import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
-import com.google.common.primitives.Ints;
 import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberFutureStub;
@@ -133,6 +132,13 @@ public class Subscriber extends AbstractApiService {
     flowControlSettings = builder.flowControlSettings;
     subscriptionName = builder.subscriptionName;
     cachedSubscriptionNameString = subscriptionName.toString();
+
+    Preconditions.checkArgument(
+        builder.ackExpirationPadding.compareTo(Duration.ZERO) > 0, "padding must be positive");
+    Preconditions.checkArgument(
+        builder.ackExpirationPadding.compareTo(Duration.ofSeconds(MIN_ACK_DEADLINE_SECONDS)) < 0,
+        "padding must be less than %s seconds",
+        MIN_ACK_DEADLINE_SECONDS);
     ackExpirationPadding = builder.ackExpirationPadding;
     maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();

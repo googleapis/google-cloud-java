@@ -114,7 +114,7 @@ public class MessageDispatcherTest {
             MoreExecutors.directExecutor(),
             systemExecutor,
             clock);
-    dispatcher.computeAndSetDeadlineSeconds();
+    dispatcher.setMessageDeadlineSeconds(Subscriber.MIN_ACK_DEADLINE_SECONDS);
   }
 
   @Test
@@ -169,12 +169,12 @@ public class MessageDispatcherTest {
 
   @Test
   public void testDeadlineAdjustment() throws Exception {
-    assertThat(dispatcher.computeAndSetDeadlineSeconds()).isEqualTo(10);
+    assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(10);
 
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
     clock.advance(42, TimeUnit.SECONDS);
     consumers.take().ack();
 
-    assertThat(dispatcher.computeAndSetDeadlineSeconds()).isEqualTo(42);
+    assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(42);
   }
 }
