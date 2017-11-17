@@ -76,6 +76,9 @@ import com.google.spanner.v1.TransactionSelector;
 import com.google.spanner.v1.TypeCode;
 import io.grpc.Context;
 import io.grpc.ManagedChannel;
+import io.opencensus.trace.Tracer;
+import io.opencensus.trace.Tracing;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -114,7 +117,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   private static final Logger logger = Logger.getLogger(SpannerImpl.class.getName());
   private static final Logger txnLogger = Logger.getLogger(TransactionRunner.class.getName());
-
+  private static final Tracer tracer = Tracing.getTracer();
+  
   private final Random random = new Random();
   private final SpannerRpc rpc;
   private final int defaultPrefetchChunks;

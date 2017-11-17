@@ -19,8 +19,24 @@ package com.google.cloud.spanner;
 import com.google.cloud.Timestamp;
 import com.google.common.util.concurrent.ListenableFuture;
 
-class DatabaseClientImpl implements DatabaseClient {
+import io.opencensus.common.Scope;
+import io.opencensus.trace.Span;
+import io.opencensus.trace.Tracer;
+import io.opencensus.trace.Tracing;
+import io.opencensus.trace.samplers.Samplers;
 
+import java.util.Arrays;
+
+class DatabaseClientImpl implements DatabaseClient {
+  private static final String READ_WRITE_TRANSACTION = "CloudSpanner.ReadWriteTransaction";
+  private static final String READ_ONLY_TRANSACTION = "CloudSpanner.ReadOnlyTransaction";
+  private static final Tracer tracer = Tracing.getTracer();
+  
+  static {
+    Tracing.getExportComponent().getSampledSpanStore().registerSpanNamesForCollection(
+        Arrays.asList(READ_WRITE_TRANSACTION, READ_ONLY_TRANSACTION));
+  }
+  
   private final SessionPool pool;
 
   DatabaseClientImpl(SessionPool pool) {
@@ -29,47 +45,66 @@ class DatabaseClientImpl implements DatabaseClient {
 
   @Override
   public Timestamp write(Iterable<Mutation> mutations) throws SpannerException {
-    return pool.getReadWriteSession().write(mutations);
+    try (Scope s = tracer.spanBuilder(READ_WRITE_TRANSACTION).startScopedSpan()) {
+      return pool.getReadWriteSession().write(mutations);
+    }
   }
 
   @Override
   public Timestamp writeAtLeastOnce(Iterable<Mutation> mutations) throws SpannerException {
-    return pool.getReadSession().writeAtLeastOnce(mutations);
+    try (Scope s = tracer.spanBuilder(READ_WRITE_TRANSACTION).startScopedSpan()) {
+      return pool.getReadSession().writeAtLeastOnce(mutations);
+    }
   }
 
   @Override
   public ReadContext singleUse() {
-    return pool.getReadSession().singleUse();
+    Span span = tracer.spanBuilder(READ_ONLY_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)){
+      return pool.getReadSession().singleUse();
+    }
   }
 
   @Override
   public ReadContext singleUse(TimestampBound bound) {
-    return pool.getReadSession().singleUse(bound);
+    try (Scope s = tracer.spanBuilder(READ_ONLY_TRANSACTION).startScopedSpan()) {
+      return pool.getReadSession().singleUse(bound);
+    }
   }
 
   @Override
   public ReadOnlyTransaction singleUseReadOnlyTransaction() {
-    return pool.getReadSession().singleUseReadOnlyTransaction();
+    try (Scope s = tracer.spanBuilder(READ_ONLY_TRANSACTION).startScopedSpan()) {
+      return pool.getReadSession().singleUseReadOnlyTransaction();
+    }
   }
 
   @Override
   public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
-    return pool.getReadSession().singleUseReadOnlyTransaction(bound);
+    try (Scope s = tracer.spanBuilder(READ_ONLY_TRANSACTION).startScopedSpan()) {
+      return pool.getReadSession().singleUseReadOnlyTransaction(bound);
+    }
   }
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction() {
-    return pool.getReadSession().readOnlyTransaction();
+    try (Scope s = tracer.spanBuilder(READ_ONLY_TRANSACTION).startScopedSpan()) {
+      return pool.getReadSession().readOnlyTransaction();
+    }
   }
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
-    return pool.getReadSession().readOnlyTransaction(bound);
+    try (Scope s = tracer.spanBuilder(READ_ONLY_TRANSACTION).startScopedSpan()) {
+      return pool.getReadSession().readOnlyTransaction(bound);
+    }
   }
 
   @Override
   public TransactionRunner readWriteTransaction() {
-    return pool.getReadWriteSession().readWriteTransaction();
+    try (Scope s = tracer.spanBuilder(READ_WRITE_TRANSACTION).startScopedSpan()) {
+      return pool.getReadWriteSession().readWriteTransaction();
+    }
   }
 
   ListenableFuture<Void> closeAsync() {
