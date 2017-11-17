@@ -68,54 +68,7 @@ public class NotificationInfo implements Serializable {
   private final String etag;
   private final String selfLink;
 
-  /**
-   * Builder for {@code NotificationInfo}.
-   */
-  public abstract static class Builder {
-    Builder() {
-    }
-
-    abstract Builder setGeneratedId(String generatedId);
-
-    abstract Builder setSelfLink(String selfLink);
-
-    /**
-     * Sets the Cloud PubSub topic to which this subscription publishes.
-     */
-    public abstract Builder setTopic(TopicName topic);
-
-    /**
-     * Sets the event types for which notifications will be sent. If empty, send notifications for
-     * all event types.
-     */
-    public abstract Builder setEventTypes(Iterable<String> eventTypes);
-
-    /**
-     * Sets the desired content of the Payload
-     */
-    public abstract Builder setPayloadFormat(PayloadFormat payloadFormat);
-
-    /**
-     * Sets the prefix that names of objects must match in order to have this notification
-     * configuration apply.
-     */
-    public abstract Builder setObjectNamePrefix(String objectNamePrefix);
-
-    /**
-     * Sets the list of additional attributes to attach to each Cloud PubSub message published for
-     * this notification subscription.
-     */
-    public abstract Builder setCustomAttributes(Map<String, String> customAttributes);
-
-    abstract Builder setEtag(String etag);
-
-    /**
-     * Creates a {@code NotificationInfo} object.
-     */
-    public abstract NotificationInfo build();
-  }
-
-  static final class BuilderImpl extends Builder {
+  public static final class Builder {
 
     private String generatedId;
     private TopicName topic;
@@ -126,11 +79,11 @@ public class NotificationInfo implements Serializable {
     private String etag;
     private String selfLink;
 
-    BuilderImpl(TopicName topic) {
+    Builder(TopicName topic) {
       this.topic = topic;
     }
 
-    BuilderImpl(NotificationInfo NotificationInfo) {
+    Builder(NotificationInfo NotificationInfo) {
       generatedId = NotificationInfo.generatedId;
       etag = NotificationInfo.etag;
       selfLink = NotificationInfo.selfLink;
@@ -141,63 +94,54 @@ public class NotificationInfo implements Serializable {
       objectNamePrefix = NotificationInfo.objectNamePrefix;
     }
 
-    @Override
     Builder setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
-    @Override
     Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
-    @Override
     public Builder setTopic(TopicName topic) {
       this.topic = topic;
       return this;
     }
 
-    @Override
     public Builder setPayloadFormat(PayloadFormat payloadFormat) {
       this.payloadFormat = payloadFormat;
       return this;
     }
 
     /** GcpLaunchStage.Alpha */
-    @Override
     public Builder setObjectNamePrefix(String objectNamePrefix) {
       this.objectNamePrefix = objectNamePrefix;
       return this;
     }
 
-    @Override
     public Builder setEventTypes(Iterable<String> eventTypes) {
       this.eventTypes = eventTypes != null ? ImmutableList.copyOf(eventTypes) : null;
       return this;
     }
 
-    @Override
     Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }
 
-    @Override
     public Builder setCustomAttributes(Map<String, String> customAttributes) {
       this.customAttributes = customAttributes != null ? ImmutableMap.copyOf(customAttributes) : null;
       return this;
     }
 
-    @Override
     public NotificationInfo build() {
       checkNotNull(topic);
       return new NotificationInfo(this);
     }
   }
 
-  NotificationInfo(BuilderImpl builder) {
+  NotificationInfo(Builder builder) {
     generatedId = builder.generatedId;
     etag = builder.etag;
     selfLink = builder.selfLink;
@@ -279,7 +223,7 @@ public class NotificationInfo implements Serializable {
    * Returns a builder for the current notification.
    */
   public Builder toBuilder() {
-    return new BuilderImpl(this);
+    return new Builder(this);
   }
 
   @Override
@@ -337,11 +281,11 @@ public class NotificationInfo implements Serializable {
    * Returns a {@code NotificationInfo} builder where the topic's name is set to the provided name.
    */
   public static Builder newBuilder(TopicName topic) {
-    return new BuilderImpl(topic);
+    return new Builder(topic);
   }
 
   static NotificationInfo fromPb(Notification notificationPb) {
-    Builder builder = new BuilderImpl(TopicName.parse(notificationPb.getTopic()));
+    Builder builder = newBuilder(TopicName.parse(notificationPb.getTopic()));
     if (notificationPb.getId() != null) {
       builder.setGeneratedId(notificationPb.getId());
     }
