@@ -161,8 +161,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     /**
      * Sets the labels to add to all Sessions created in this client.
      * 
-     * @param sessionLabels Map from label key to label value. Label value cannot be null. For
-     *     more information on valid syntax see
+     * @param sessionLabels Map from label key to label value. Label key and value cannot be null.
+     *     For more information on valid syntax see
      *     <a href="https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#google.spanner.v1.Session">
      *     api docs </a>.
      */
