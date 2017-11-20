@@ -74,7 +74,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       MessageReceiver receiver,
       Duration ackExpirationPadding,
       Duration maxAckExtensionPeriod,
-      int streamAckDeadlineSeconds,
       Distribution ackLatencyDistribution,
       SubscriberStub asyncStub,
       FlowController flowController,
@@ -97,7 +96,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             executor,
             alarmsExecutor,
             clock);
-    messageDispatcher.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
   }
 
   @Override
@@ -191,12 +189,13 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             (asyncStub.streamingPull(responseObserver));
     logger.log(
         Level.FINER,
-        "Initializing stream to subscription {0} with deadline {1}",
-        new Object[] {subscription, messageDispatcher.getMessageDeadlineSeconds()});
+        "Initializing stream to subscription {0}",subscription);
+        // We need to set streaming ack deadline, but it's not useful since we'll modack to send receipt anyway.
+        // Set to some big-ish value in case we modack late.
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
-            .setStreamAckDeadlineSeconds(messageDispatcher.getMessageDeadlineSeconds())
+            .setStreamAckDeadlineSeconds(60)
             .build());
     requestObserver.request(1);
 
@@ -324,20 +323,5 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       ret.add(builder.build());
     }
     return ret;
-  }
-
-  public void updateStreamAckDeadline(int newAckDeadlineSeconds) {
-    messageDispatcher.setMessageDeadlineSeconds(newAckDeadlineSeconds);
-    lock.lock();
-    try {
-      requestObserver.onNext(
-          StreamingPullRequest.newBuilder()
-              .setStreamAckDeadlineSeconds(newAckDeadlineSeconds)
-              .build());
-    } catch (Exception e) {
-      logger.log(Level.WARNING, "failed to set deadline", e);
-    } finally {
-      lock.unlock();
-    }
   }
 }
