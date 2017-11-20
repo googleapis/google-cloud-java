@@ -253,9 +253,8 @@ public class Job extends JobInfo {
    *
    * <pre>{@code
    * Job job = bigquery.create(queryJobInfo);
-   * job.waitFor();
-   * QueryResponse response = job.getQueryResults();
-   * QueryResult result = response.getResult();
+   * job = job.waitFor();
+   * QueryResult result = job.getQueryResults();
    * for (FieldValueList row : result.iterateAll()) {
    *   // do something with the data
    * }
@@ -268,12 +267,14 @@ public class Job extends JobInfo {
       throw new UnsupportedOperationException(
           "Getting query results is supported only for " + Type.QUERY + " jobs");
     }
-
-    // TODO(pongad): check job stats.state instead.
-    QueryResponse response = bigquery.getQueryResults(getJobId(), options);
-    if (!response.jobCompleted()) {
-      throw new IllegalStateException("the job hasn't completed yet");
+    if (getStatus().getState() != JobStatus.State.DONE) {
+      throw new BigQueryException(BigQueryException.UNKNOWN_CODE, "the job hasn't completed yet");
     }
+    if (getStatus().getError() != null) {
+      throw new BigQueryException(
+          BigQueryException.UNKNOWN_CODE, "job completed with error", getStatus().getError());
+    }
+    QueryResponse response = bigquery.getQueryResults(getJobId(), options);
     return response.getResult();
   }
 

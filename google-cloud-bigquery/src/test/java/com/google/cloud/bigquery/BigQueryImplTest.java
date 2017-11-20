@@ -1115,7 +1115,8 @@ public class BigQueryImplTest {
         new com.google.api.services.bigquery.model.Job()
             .setConfiguration(QUERY_JOB_CONFIGURATION_FOR_QUERY.toPb())
             .setJobReference(queryJob.toPb())
-            .setId(JOB);
+            .setId(JOB)
+            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"));
     GetQueryResultsResponse responsePb =
         new GetQueryResultsResponse()
             .setJobReference(queryJob.toPb())
@@ -1163,11 +1164,16 @@ public class BigQueryImplTest {
   @Test
   public void testQueryRequestCompletedOnSecondAttempt() throws InterruptedException {
     JobId queryJob = JobId.of(PROJECT, JOB);
-    com.google.api.services.bigquery.model.Job jobResponsePb =
+    com.google.api.services.bigquery.model.Job jobResponsePb1 =
         new com.google.api.services.bigquery.model.Job()
             .setConfiguration(QUERY_JOB_CONFIGURATION_FOR_QUERY.toPb())
             .setJobReference(queryJob.toPb())
             .setId(JOB);
+
+    com.google.api.services.bigquery.model.Job jobResponsePb2 =
+        jobResponsePb1
+            .clone()
+            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"));
 
     GetQueryResultsResponse responsePb1 =
         new GetQueryResultsResponse()
@@ -1185,8 +1191,9 @@ public class BigQueryImplTest {
             .setTotalRows(BigInteger.valueOf(1L));
 
     EasyMock.expect(
-        bigqueryRpcMock.create(JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
-        .andReturn(jobResponsePb);
+            bigqueryRpcMock.create(
+                JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
+        .andReturn(jobResponsePb1);
 
     QueryResultsOption pageSizeOption = QueryResultsOption.pageSize(42L);
     Map<BigQueryRpc.Option, Object> optionMap = Maps.newEnumMap(BigQueryRpc.Option.class);
@@ -1203,7 +1210,7 @@ public class BigQueryImplTest {
     EasyMock.expect(
             bigqueryRpcMock.getJob(
                 PROJECT, JOB, Collections.<BigQueryRpc.Option, Object>emptyMap()))
-        .andReturn(jobResponsePb);
+        .andReturn(jobResponsePb2);
     EasyMock.expect(
         bigqueryRpcMock.getQueryResults(PROJECT, JOB, optionMap)).andReturn(responsePb2);
 
