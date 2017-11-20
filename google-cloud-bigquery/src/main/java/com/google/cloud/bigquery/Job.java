@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.gax.paging.Page;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.TimedAttemptSettings;
@@ -262,7 +263,7 @@ public class Job extends JobInfo {
    *
    * @throws BigQueryException upon failure
    */
-  public QueryResult getQueryResults(QueryResultsOption... options) {
+  public Page<FieldValueList> getQueryResults(QueryResultsOption... options) {
     if (getConfiguration().getType() != Type.QUERY) {
       throw new UnsupportedOperationException(
           "Getting query results is supported only for " + Type.QUERY + " jobs");
@@ -274,11 +275,13 @@ public class Job extends JobInfo {
       throw new BigQueryException(
           BigQueryException.UNKNOWN_CODE, "job completed with error", getStatus().getError());
     }
-    QueryResponse response = bigquery.getQueryResults(getJobId(), options);
-    return response.getResult();
+
+    TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
+    // TODO(pongad): return QueryResult so we can inject schema.
+    return bigquery.listTableData(table);
   }
 
-  QueryResponse waitForQueryResults(
+  private QueryResponse waitForQueryResults(
       RetrySettings waitSettings, final QueryResultsOption... resultsOptions)
       throws InterruptedException {
     if (getConfiguration().getType() != Type.QUERY) {

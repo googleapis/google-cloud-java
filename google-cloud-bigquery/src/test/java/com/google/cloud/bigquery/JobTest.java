@@ -222,7 +222,8 @@ public class JobTest {
 
   @Test
   public void testWaitForAndGetQueryResults() throws InterruptedException {
-    QueryJobConfiguration jobConfig = QueryJobConfiguration.of("SELECT 1");
+    QueryJobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder("SELECT 1").setDestinationTable(TABLE_ID1).build();
     QueryStatistics jobStatistics =
         QueryStatistics.newBuilder()
             .setCreationTimestamp(1L)
@@ -252,7 +253,7 @@ public class JobTest {
 
     expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS)).andReturn(completedQuery);
     expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(completedJob);
-    expect(bigquery.getQueryResults(jobInfo.getJobId())).andReturn(completedQuery);
+    expect(bigquery.listTableData(TABLE_ID1)).andReturn(result);
 
     replay(status, bigquery, mockOptions);
     initializeJob(jobInfo);
