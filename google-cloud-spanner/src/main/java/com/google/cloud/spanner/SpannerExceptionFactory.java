@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerException.DoNotConstructDirectly;
+import static com.google.cloud.spanner.SpannerException.extractRetryDelay;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Predicate;
@@ -126,6 +127,8 @@ public final class SpannerExceptionFactory {
         return hasCauseMatching(cause, Matchers.isRetryableInternalError);
       case UNAVAILABLE:
         return true;
+      case RESOURCE_EXHAUSTED:
+        return extractRetryDelay(cause) > 0;
       default:
         return false;
     }

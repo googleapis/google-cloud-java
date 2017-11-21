@@ -1420,15 +1420,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public void onError(SpannerException e) {
-      if (e.getErrorCode() == ErrorCode.ABORTED) {
-        long delay = -1L;
-        if (e instanceof AbortedException) {
-          delay = ((AbortedException) e).getRetryDelayInMillis();
-        }
+      long delay = SpannerException.extractRetryDelay(e.getCause());
+      if (e.getErrorCode() == ErrorCode.ABORTED || (e.getErrorCode() ==
+          ErrorCode.RESOURCE_EXHAUSTED && delay >= 0)) {
         if (delay == -1L) {
           txnLogger.log(Level.FINE, "Retry duration is missing from the exception.", e);
         }
-
         synchronized (lock) {
           retryDelayInMillis = delay;
           aborted = true;
@@ -2318,7 +2315,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private ByteString resumeToken;
     private boolean finished;
     /**
-     * Indicates whether it is currently safe to retry RPCs. This will be {@code false} if we have
+     * Indicates whether it is currently safe to shouldRetry RPCs. This will be {@code false} if we have
      * reached the maximum buffer size without seeing a restart token; in this case, we will drain
      * the buffer and remain in this state until we see a new restart token.
      */
@@ -2389,7 +2386,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             span.addAnnotation("Stream broken. Safe to retry",
                 TraceUtil.getExceptionAnnotations(e));
             logger.log(Level.FINE, "Retryable exception, will sleep and retry", e);
-            // Truncate any items in the buffer before the last retry token.
+            // Truncate any items in the buffer before the last shouldRetry token.
             while (!buffer.isEmpty() && buffer.getLast().getResumeToken().isEmpty()) {
               buffer.removeLast();
             }
