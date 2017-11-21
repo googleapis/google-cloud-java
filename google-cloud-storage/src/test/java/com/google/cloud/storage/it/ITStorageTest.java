@@ -49,6 +49,7 @@ import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageRoles;
+import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -1315,6 +1316,47 @@ public class ITStorageTest {
     assertEquals(sourceBlob2.getName(), remoteBlobs.get(1).getName());
     assertTrue(remoteBlobs.get(0).delete());
     assertTrue(remoteBlobs.get(1).delete());
+  }
+
+  @Test
+  public void testDownloadPublicBlobWithoutAuthentication() {
+    // create an unauthorized user
+    Storage unauthorizedStorage = StorageOptions.getUnauthenticated().getService();
+
+    // try to download blobs from a public bucket
+    String landsatBucket = "gcp-public-data-landsat";
+    String landsatPrefix = "LC08/PRE/044/034/LC80440342016259LGN00/";
+    String landsatBlob = landsatPrefix + "LC80440342016259LGN00_MTL.txt";
+    byte[] bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
+    assertEquals(7903, bytes.length);
+    int numBlobs = 0;
+    Iterator<Blob> blobIterator = unauthorizedStorage
+      .list(landsatBucket, Storage.BlobListOption.prefix(landsatPrefix))
+      .iterateAll().iterator();
+    while (blobIterator.hasNext()) {
+      numBlobs++;
+      blobIterator.next();
+    }
+    assertEquals(13, numBlobs);
+
+    // try to download blobs from a bucket that requires authentication
+    String sourceBlobName = "source-blob-name";
+    BlobInfo sourceBlob = BlobInfo.newBuilder(BUCKET, sourceBlobName).build();
+    assertNotNull(storage.create(sourceBlob));
+    try {
+      unauthorizedStorage.readAllBytes(BUCKET, sourceBlobName);
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
+
+    // try to upload blobs to a bucket that requires authentication
+    try {
+      unauthorizedStorage.create(sourceBlob);
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
   }
 
   @Test
