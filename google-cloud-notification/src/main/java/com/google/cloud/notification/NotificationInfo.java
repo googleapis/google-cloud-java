@@ -152,7 +152,6 @@ public class NotificationInfo implements Serializable {
     objectNamePrefix = builder.objectNamePrefix;
   }
 
-  // TODO(andrealin): method comments for the getters.
   /**
    * Returns the service-generated id for the notification.
    */

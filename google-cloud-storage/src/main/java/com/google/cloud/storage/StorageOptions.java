@@ -117,7 +117,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
     return SCOPES;
   }
 
-  public StorageRpc getStorageRpcV1() {
+  protected StorageRpc getStorageRpcV1() {
     return (StorageRpc) getRpc();
   }
 

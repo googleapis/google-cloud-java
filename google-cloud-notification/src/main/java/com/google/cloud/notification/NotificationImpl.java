@@ -54,7 +54,7 @@ public class NotificationImpl implements Notification {
       return runWithRetries(new Callable<Boolean>() {
         @Override
         public Boolean call() {
-          return storage.getOptions().getStorageRpcV1().deleteNotification(bucket, notification);
+          return ((StorageRpc) storage.getOptions().getRpc()).deleteNotification(bucket, notification);
         }
       }, storage.getOptions().getRetrySettings(), EXCEPTION_HANDLER, storage.getOptions().getClock());
     } catch (RetryHelperException e) {
@@ -68,7 +68,7 @@ public class NotificationImpl implements Notification {
       List<com.google.api.services.storage.model.Notification> answer = runWithRetries(new Callable<List<com.google.api.services.storage.model.Notification>>() {
         @Override
         public List<com.google.api.services.storage.model.Notification> call() {
-          return storage.getOptions().getStorageRpcV1().listNotifications(bucket);
+          return ((StorageRpc) storage.getOptions().getRpc()).listNotifications(bucket);
         }
       }, storage.getOptions().getRetrySettings(), EXCEPTION_HANDLER, storage.getOptions().getClock());
       if (answer == null) {
@@ -87,7 +87,7 @@ public class NotificationImpl implements Notification {
       return NotificationInfo.fromPb(runWithRetries(new Callable<com.google.api.services.storage.model.Notification>() {
         @Override
         public com.google.api.services.storage.model.Notification call() {
-          return storage.getOptions().getStorageRpcV1().createNotification(bucket, notificationPb);
+          return ((StorageRpc) storage.getOptions().getRpc()).createNotification(bucket, notificationPb);
         }
       }, storage.getOptions().getRetrySettings(), EXCEPTION_HANDLER, storage.getOptions().getClock()));
     } catch (RetryHelperException e) {
