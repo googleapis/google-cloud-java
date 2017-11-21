@@ -1340,23 +1340,31 @@ public class ITStorageTest {
     assertEquals(13, numBlobs);
 
     // try to download blobs from a bucket that requires authentication
+    // authenticated client will succeed
+    // unauthenticated client will receive an exception
     String sourceBlobName = "source-blob-name";
     BlobInfo sourceBlob = BlobInfo.newBuilder(BUCKET, sourceBlobName).build();
     assertNotNull(storage.create(sourceBlob));
+    assertNotNull(storage.readAllBytes(BUCKET, sourceBlobName));
     try {
       unauthorizedStorage.readAllBytes(BUCKET, sourceBlobName);
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
     }
+    assertTrue(storage.get(sourceBlob.getBlobId()).delete());
 
     // try to upload blobs to a bucket that requires authentication
+    // authenticated client will succeed
+    // unauthenticated client will receive an exception
+    assertNotNull(storage.create(sourceBlob));
     try {
       unauthorizedStorage.create(sourceBlob);
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
     }
+    assertTrue(storage.get(sourceBlob.getBlobId()).delete());
   }
 
   @Test

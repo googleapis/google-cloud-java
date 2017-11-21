@@ -130,7 +130,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
   }
 
   /**
-   * Returns a unautenticated {@code StorageOptions} instance.
+   * Returns a unauthenticated {@code StorageOptions} instance.
    */
   public static StorageOptions getUnauthenticated() {
     return newBuilder().setCredentials(NoCredentials.getInstance()).build();
