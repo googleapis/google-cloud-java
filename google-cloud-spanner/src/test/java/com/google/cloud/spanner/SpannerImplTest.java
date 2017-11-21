@@ -19,6 +19,8 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
+
+import java.util.HashMap;
 import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,13 +49,20 @@ public class SpannerImplTest {
 
   @Test
   public void createAndCloseSession() {
+    Map<String, String> labels = new HashMap<>();
+    labels.put("env", "dev");
+    Mockito.when(spannerOptions.getSessionLabels()).thenReturn(labels);
     String dbName = "projects/p1/instances/i1/databases/d1";
     String sessionName = dbName + "/sessions/s1";
     DatabaseId db = DatabaseId.of(dbName);
 
     com.google.spanner.v1.Session sessionProto =
-        com.google.spanner.v1.Session.newBuilder().setName(sessionName).build();
-    Mockito.when(rpc.createSession(Mockito.eq(dbName), options.capture())).thenReturn(sessionProto);
+        com.google.spanner.v1.Session.newBuilder()
+          .setName(sessionName)
+          .putAllLabels(labels)
+          .build();
+    Mockito.when(rpc.createSession(Mockito.eq(dbName), Mockito.eq(labels), options.capture()))
+      .thenReturn(sessionProto);
     Session session = impl.createSession(db);
     assertThat(session.getName()).isEqualTo(sessionName);
 
