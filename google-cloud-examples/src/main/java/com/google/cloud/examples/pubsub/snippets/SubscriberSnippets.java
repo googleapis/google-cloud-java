@@ -94,7 +94,7 @@ public class SubscriberSnippets {
     String projectId = "my-project-id";
     String subscriptionId = "my-subscription-id";
 
-    SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
+    SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
     // Instantiate an asynchronous message receiver
     MessageReceiver receiver =
         new MessageReceiver() {
@@ -186,7 +186,7 @@ public class SubscriberSnippets {
       // String projectId = "my-project-id";
       // String subscriptionId = "my-subscription-id";
       // int numOfMessages = 10;   // max number of messages to be pulled
-      String subscriptionName = SubscriptionName.create(projectId, subscriptionId).toString();
+      String subscriptionName = SubscriptionName.of(projectId, subscriptionId).toString();
       PullRequest pullRequest =
           PullRequest.newBuilder()
               .setMaxMessages(numOfMessages)
