@@ -18,6 +18,7 @@ This client supports the following Google Cloud Platform services at a [GA](#ver
 -  [Cloud Natural Language](google-cloud-language) (GA)
 -  [Cloud Storage](google-cloud-storage) (GA)
 -  [Cloud Translation](google-cloud-translate) (GA)
+-  [Cloud Vision](google-cloud-vision) (GA)
 
 This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
@@ -29,7 +30,6 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Cloud Pub/Sub](google-cloud-pubsub) (Beta)
 -  [Cloud Spanner](google-cloud-spanner) (Beta)
 -  [Cloud Video Intelligence](google-cloud-video-intelligence) (Beta)
--  [Cloud Vision](google-cloud-vision) (Beta)
 -  [Stackdriver Trace](google-cloud-trace) (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
@@ -50,16 +50,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.29.0-alpha</version>
+  <version>0.30.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.29.0-alpha'
+compile 'com.google.cloud:google-cloud:0.30.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.29.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.30.0-alpha"
 ```
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).

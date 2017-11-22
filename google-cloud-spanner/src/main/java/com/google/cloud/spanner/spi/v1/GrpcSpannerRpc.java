@@ -61,6 +61,7 @@ import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RollbackRequest;
+import com.google.spanner.v1.Session;
 import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.Transaction;
 import io.grpc.CallCredentials;
@@ -325,14 +326,18 @@ public class GrpcSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public com.google.spanner.v1.Session createSession(
-      String databaseName, @Nullable Map<Option, ?> options) {
-    CreateSessionRequest request =
-        CreateSessionRequest.newBuilder().setDatabase(databaseName).build();
+  public Session createSession(
+      String databaseName, @Nullable Map<String, String> labels, @Nullable Map<Option, ?> options) {
+    CreateSessionRequest.Builder request =
+        CreateSessionRequest.newBuilder().setDatabase(databaseName);
+    if (labels != null && !labels.isEmpty()) {
+    	  Session.Builder session = Session.newBuilder().putAllLabels(labels);
+    	  request.setSession(session);
+    }
     return get(
         doUnaryCall(
             SpannerGrpc.METHOD_CREATE_SESSION,
-            request,
+            request.build(),
             databaseName,
             Option.CHANNEL_HINT.getLong(options)));
   }
