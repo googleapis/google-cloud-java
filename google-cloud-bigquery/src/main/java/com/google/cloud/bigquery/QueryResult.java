@@ -16,71 +16,35 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.cloud.PageImpl;
-import com.google.common.base.MoreObjects;
-import com.google.common.collect.ImmutableList;
+import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.gax.paging.Page;
+import com.google.common.base.Function;
+import com.google.common.base.MoreObjects;
+import com.google.common.collect.Iterables;
 import java.util.Objects;
 
-public class QueryResult extends PageImpl<FieldValueList> {
+// TODO(pongad): Serializable ?
+public class QueryResult implements Page<FieldValueList> {
 
   private static final long serialVersionUID = -4831062717210349818L;
 
   private final Schema schema;
   private final long totalRows;
+  private final Page<FieldValueList> pageNoSchema;
+  private final Function<FieldValueList, FieldValueList> addSchemaFunc;
 
-  interface QueryResultsPageFetcher extends PageImpl.NextPageFetcher<FieldValueList> {
-
-    @Override
-    QueryResult getNextPage();
-  }
-
-  static final class Builder {
-
-    private QueryResultsPageFetcher pageFetcher;
-    private String cursor;
-    private Iterable<FieldValueList> results;
-    private Schema schema;
-    private long totalRows;
-
-    private Builder() {}
-
-    Builder setSchema(Schema schema) {
-      this.schema = schema;
-      return this;
-    }
-
-    Builder setTotalRows(long totalRows) {
-      this.totalRows = totalRows;
-      return this;
-    }
-
-    Builder setPageFetcher(QueryResultsPageFetcher pageFetcher) {
-      this.pageFetcher = pageFetcher;
-      return this;
-    }
-
-    Builder setCursor(String cursor) {
-      this.cursor = cursor;
-      return this;
-    }
-
-    Builder setResults(Iterable<FieldValueList> results) {
-      this.results = results;
-      return this;
-    }
-
-    QueryResult build() {
-      return new QueryResult(this);
-    }
-  }
-
-  private QueryResult(Builder builder) {
-    super(builder.pageFetcher,
-        builder.cursor,
-        builder.results != null ? builder.results : ImmutableList.<FieldValueList>of());
-    this.schema = builder.schema;
-    this.totalRows = builder.totalRows;
+  QueryResult(final Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
+    this.schema = checkNotNull(schema);
+    this.totalRows = totalRows;
+    this.pageNoSchema = checkNotNull(pageNoSchema);
+    this.addSchemaFunc =
+        new Function<FieldValueList, FieldValueList>() {
+          @Override
+          public FieldValueList apply(FieldValueList list) {
+            return list.withSchema(schema.getFields());
+          }
+        };
   }
 
   /**
@@ -99,10 +63,29 @@ public class QueryResult extends PageImpl<FieldValueList> {
     return totalRows;
   }
 
+  @Override
+  public boolean hasNextPage() {
+    return pageNoSchema.hasNextPage();
+  }
+
+  @Override
+  public String getNextPageToken() {
+    return pageNoSchema.getNextPageToken();
+  }
 
   @Override
   public QueryResult getNextPage() {
-    return (QueryResult) super.getNextPage();
+    return new QueryResult(schema, totalRows, pageNoSchema.getNextPage());
+  }
+
+  @Override
+  public Iterable<FieldValueList> iterateAll() {
+    return Iterables.transform(pageNoSchema.iterateAll(), addSchemaFunc);
+  }
+
+  @Override
+  public Iterable<FieldValueList> getValues() {
+    return Iterables.transform(pageNoSchema.getValues(), addSchemaFunc);
   }
 
   @Override
@@ -133,9 +116,5 @@ public class QueryResult extends PageImpl<FieldValueList> {
         && Objects.equals(getValues(), response.getValues())
         && Objects.equals(schema, response.schema)
         && totalRows == response.totalRows;
-  }
-
-  static Builder newBuilder() {
-    return new Builder();
   }
 }

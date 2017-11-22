@@ -278,6 +278,8 @@ public class Job extends JobInfo {
 
     TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
     // TODO(pongad): return QueryResult so we can inject schema.
+    // QueryResponse response = bigquery.getQueryResults(getJobId()); // should return immediately
+    // return new QueryResult(response.getSchema(), response.getTotalRows(), bigquery.listTableData(table));
     return bigquery.listTableData(table);
   }
 
@@ -301,7 +303,7 @@ public class Job extends JobInfo {
           new BasicResultRetryAlgorithm<QueryResponse>() {
             @Override
             public boolean shouldRetry(Throwable prevThrowable, QueryResponse prevResponse) {
-              return prevResponse != null && !prevResponse.jobCompleted();
+              return prevResponse != null && !prevResponse.getCompleted();
             }
           },
           options.getClock());

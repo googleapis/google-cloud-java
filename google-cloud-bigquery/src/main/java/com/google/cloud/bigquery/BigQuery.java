@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
@@ -1063,28 +1064,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Returns results of the query associated with the provided job.
    *
-   * <p>Example of getting the results of query.
-   * <pre> {@code
-   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare`";
-   * QueryJobConfiguration queryConfig = QueryJobConfiguration.of(query);
-   * QueryResponse response = bigquery.query(queryConfig);
-   * // Wait for things to finish
-   * while (!response.jobCompleted()) {
-   *   Thread.sleep(1000);
-   *   response = bigquery.getQueryResults(response.getJobId());
-   * }
-   * if (response.hasErrors()) {
-   *   // handle errors
-   * }
-   * QueryResult result = response.getResult();
-   * Iterator<FieldValueList> rowIterator = result.iterateAll();
-   * for (FieldValueList row : result.iterateAll()) {
-   *   // do something with the data
-   * }
-   * }</pre>
-   *
-   * @throws BigQueryException upon failure
+   * <p>Users are encouraged to use {@link Job.getQueryResults(QueryResultsOption...)} instead.
    */
+  @InternalApi
   QueryResponse getQueryResults(JobId jobId, QueryResultsOption... options);
 
   /**
