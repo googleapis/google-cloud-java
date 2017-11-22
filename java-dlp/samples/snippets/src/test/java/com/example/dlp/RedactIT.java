@@ -25,6 +25,7 @@ import java.io.File;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -51,6 +52,7 @@ public class RedactIT {
     assertTrue(output.contains("My phone number is _REDACTED_ and my email address is _REDACTED_"));
   }
 
+  @Ignore // TODO: b/69461298
   @Test
   public void testInfoTypesInImageAreReplaced() throws Exception {
     ClassLoader classLoader = getClass().getClassLoader();

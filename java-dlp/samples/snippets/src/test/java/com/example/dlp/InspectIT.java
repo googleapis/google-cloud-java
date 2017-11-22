@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -68,6 +69,7 @@ public class InspectIT {
     assertTrue(output.contains("EMAIL_ADDRESS"));
   }
 
+  @Ignore // TODO: b/69461298
   @Test
   public void testImageFileInspectionReturnsInfoTypes() throws Exception {
     ClassLoader classLoader = getClass().getClassLoader();
