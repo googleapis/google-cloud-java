@@ -24,6 +24,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.Identity;
@@ -1321,14 +1322,14 @@ public class ITStorageTest {
   @Test
   public void testDownloadPublicBlobWithoutAuthentication() {
     // create an unauthorized user
-    Storage unauthorizedStorage = StorageOptions.getUnauthenticated().getService();
+    Storage unauthorizedStorage = StorageOptions.getUnauthenticatedInstance().getService();
 
     // try to download blobs from a public bucket
     String landsatBucket = "gcp-public-data-landsat";
     String landsatPrefix = "LC08/PRE/044/034/LC80440342016259LGN00/";
     String landsatBlob = landsatPrefix + "LC80440342016259LGN00_MTL.txt";
     byte[] bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
-    assertEquals(7903, bytes.length);
+    assertThat(bytes.length).isEqualTo(7903);
     int numBlobs = 0;
     Iterator<Blob> blobIterator = unauthorizedStorage
       .list(landsatBucket, Storage.BlobListOption.prefix(landsatPrefix))
@@ -1337,34 +1338,34 @@ public class ITStorageTest {
       numBlobs++;
       blobIterator.next();
     }
-    assertEquals(13, numBlobs);
+    assertThat(numBlobs).isEqualTo(13);
 
     // try to download blobs from a bucket that requires authentication
     // authenticated client will succeed
     // unauthenticated client will receive an exception
     String sourceBlobName = "source-blob-name";
     BlobInfo sourceBlob = BlobInfo.newBuilder(BUCKET, sourceBlobName).build();
-    assertNotNull(storage.create(sourceBlob));
-    assertNotNull(storage.readAllBytes(BUCKET, sourceBlobName));
+    assertThat(storage.create(sourceBlob)).isNotNull();
+    assertThat(storage.readAllBytes(BUCKET, sourceBlobName)).isNotNull();
     try {
       unauthorizedStorage.readAllBytes(BUCKET, sourceBlobName);
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(storage.get(sourceBlob.getBlobId()).delete());
+    assertThat(storage.get(sourceBlob.getBlobId()).delete()).isTrue();
 
     // try to upload blobs to a bucket that requires authentication
     // authenticated client will succeed
     // unauthenticated client will receive an exception
-    assertNotNull(storage.create(sourceBlob));
+    assertThat(storage.create(sourceBlob)).isNotNull();
     try {
       unauthorizedStorage.create(sourceBlob);
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(storage.get(sourceBlob.getBlobId()).delete());
+    assertThat(storage.get(sourceBlob.getBlobId()).delete()).isTrue();
   }
 
   @Test
