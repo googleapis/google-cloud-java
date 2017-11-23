@@ -434,8 +434,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
     /**
      * Returns an option that sets how long to wait for the query to complete, in milliseconds,
-     * before returning. Default is 10 seconds. If the timeout passes before the job completes,
-     * {@link QueryResponse#jobCompleted()} will be {@code false}.
+     * before returning. Default is 10 seconds.
      */
     public static QueryResultsOption maxWaitTime(long maxWaitTime) {
       checkArgument(maxWaitTime >= 0);
@@ -1064,7 +1063,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Returns results of the query associated with the provided job.
    *
-   * <p>Users are encouraged to use {@link Job.getQueryResults(QueryResultsOption...)} instead.
+   * <p>Users are encouraged to use {@link Job#getQueryResults(QueryResultsOption...)} instead.
    */
   @InternalApi
   QueryResponse getQueryResults(JobId jobId, QueryResultsOption... options);
