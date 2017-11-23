@@ -92,6 +92,10 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
     return of(row, schema.length > 0 ? FieldList.of(schema) : null);
   }
 
+  FieldValueList withSchema(FieldList schema) {
+    return new FieldValueList(this.row, schema);
+  }
+
   static FieldValueList fromPb(List<?> rowPb, FieldList schema) {
     List<FieldValue> row = new ArrayList<>(rowPb.size());
     if (schema != null) {

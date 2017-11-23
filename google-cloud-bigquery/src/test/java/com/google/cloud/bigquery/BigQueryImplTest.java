@@ -20,7 +20,6 @@ import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.eq;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
@@ -1255,18 +1254,8 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     QueryResponse response = bigquery.getQueryResults(queryJob);
-    assertEquals("etag", response.getEtag());
-    assertEquals(queryJob, response.getJobId());
-    assertEquals(true, response.jobCompleted());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
-    assertFalse(response.hasErrors());
-    assertEquals(null, response.getResult().getSchema());
-    assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValueList row : response.getResult().getValues()) {
-      assertEquals(false, row.get(0).getBooleanValue());
-      assertEquals(1L, row.get(1).getLongValue());
-    }
-    assertEquals(CURSOR, response.getResult().getNextPageToken());
+    assertEquals(true, response.getCompleted());
+    assertEquals(null, response.getSchema());
   }
 
   @Test
@@ -1287,18 +1276,8 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     QueryResponse response = bigquery.getQueryResults(queryJob);
-    assertEquals("etag", response.getEtag());
-    assertEquals(queryJob, response.getJobId());
-    assertEquals(true, response.jobCompleted());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
-    assertFalse(response.hasErrors());
-    assertEquals(null, response.getResult().getSchema());
-    assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValueList row : response.getResult().getValues()) {
-      assertEquals(false, row.get(0).getBooleanValue());
-      assertEquals(1L, row.get(1).getLongValue());
-    }
-    assertEquals(CURSOR, response.getResult().getNextPageToken());
+    assertEquals(true, response.getCompleted());
+    assertEquals(null, response.getSchema());
   }
 
   @Test
@@ -1324,17 +1303,8 @@ public class BigQueryImplTest {
             QUERY_RESULTS_OPTION_INDEX,
             QUERY_RESULTS_OPTION_PAGE_SIZE,
             QUERY_RESULTS_OPTION_PAGE_TOKEN);
-    assertEquals(queryJob, response.getJobId());
-    assertEquals(true, response.jobCompleted());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
-    assertFalse(response.hasErrors());
-    assertEquals(null, response.getResult().getSchema());
-    assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValueList row : response.getResult().getValues()) {
-      assertEquals(false, row.get(0).getBooleanValue());
-      assertEquals(1L, row.get(1).getLongValue());
-    }
-    assertEquals(CURSOR, response.getResult().getNextPageToken());
+    assertEquals(true, response.getCompleted());
+    assertEquals(null, response.getSchema());
   }
 
   @Test

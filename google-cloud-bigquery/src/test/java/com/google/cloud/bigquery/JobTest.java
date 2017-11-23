@@ -247,9 +247,9 @@ public class JobTest {
     expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     Job completedJob = expectedJob.toBuilder().setStatus(status).build();
-    QueryResult result = QueryResult.newBuilder().build();
+    QueryResult result = createMock(QueryResult.class);
     QueryResponse completedQuery =
-        QueryResponse.newBuilder().setJobCompleted(true).setResult(result).build();
+        QueryResponse.newBuilder().setCompleted(true).setTotalRows(0).build();
 
     expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS)).andReturn(completedQuery);
     expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(completedJob);

@@ -37,7 +37,6 @@ import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -126,28 +125,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     @Override
     public Page<FieldValueList> getNextPage() {
       return listTableData(table, serviceOptions, requestOptions);
-    }
-  }
-
-  private static class QueryResultsPageFetcherImpl
-      implements NextPageFetcher<FieldValueList>, QueryResult.QueryResultsPageFetcher {
-
-    private static final long serialVersionUID = -9198905840550459803L;
-    private final Map<BigQueryRpc.Option, ?> requestOptions;
-    private final BigQueryOptions serviceOptions;
-    private final JobId job;
-
-    QueryResultsPageFetcherImpl(JobId job, BigQueryOptions serviceOptions, String cursor,
-        Map<BigQueryRpc.Option, ?> optionMap) {
-      this.requestOptions =
-          PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
-      this.serviceOptions = serviceOptions;
-      this.job = job;
-    }
-
-    @Override
-    public QueryResult getNextPage() {
-      return getQueryResults(job, serviceOptions, requestOptions).getResult();
     }
   }
 
@@ -612,47 +589,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                   completeJobId.getProject(), completeJobId.getJob(), optionsMap);
             }
           }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
-      QueryResponse.Builder builder = QueryResponse.newBuilder();
-      builder.setJobId(JobId.fromPb(results.getJobReference()));
-      builder.setNumDmlAffectedRows(results.getNumDmlAffectedRows());
-      builder.setEtag(results.getEtag());
-      builder.setJobCompleted(results.getJobComplete());
-      List<TableRow> rowsPb = results.getRows();
-      if (results.getJobComplete()) {
-        QueryResult.Builder resultBuilder =
-            transformQueryResults(
-                completeJobId,
-                rowsPb,
-                results.getSchema(),
-                results.getPageToken(),
-                serviceOptions,
-                ImmutableMap.<BigQueryRpc.Option, Object>of());
-        if (results.getTotalRows() != null) {
-          resultBuilder.setTotalRows(results.getTotalRows().longValue());
-        }
-        builder.setResult(resultBuilder.build());
-      }
-      if (results.getErrors() != null) {
-        builder.setExecutionErrors(
-            Lists.transform(results.getErrors(), BigQueryError.FROM_PB_FUNCTION));
-      }
-      return builder.build();
+      TableSchema schemaPb = results.getSchema();
+      return QueryResponse.newBuilder()
+          .setCompleted(results.getJobComplete())
+          .setSchema(schemaPb == null ? null : Schema.fromPb(schemaPb))
+          .setTotalRows(results.getTotalRows() == null ? 0 : results.getTotalRows().longValue())
+          .build();
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
-  }
-
-  private static QueryResult.Builder transformQueryResults(JobId jobId, List<TableRow> rowsPb,
-      TableSchema schemaPb, String cursor, BigQueryOptions serviceOptions,
-      Map<BigQueryRpc.Option, ?> optionsMap) {
-    QueryResultsPageFetcherImpl nextPageFetcher =
-        new QueryResultsPageFetcherImpl(jobId, serviceOptions, cursor, optionsMap);
-    Schema schema = schemaPb != null ? Schema.fromPb(schemaPb) : null;
-    return QueryResult.newBuilder()
-        .setPageFetcher(nextPageFetcher)
-        .setCursor(cursor)
-        .setSchema(schema)
-        .setResults(transformTableData(rowsPb, schema));
   }
 
   @Override
