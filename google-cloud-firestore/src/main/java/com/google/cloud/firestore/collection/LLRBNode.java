@@ -1,60 +1,57 @@
 package com.google.cloud.firestore.collection;
 
 import java.util.Comparator;
-import java.util.Iterator;
-import java.util.Map;
 
-/**
- * User: greg
- * Date: 5/17/13
- * Time: 8:48 AM
- */
+/** User: greg Date: 5/17/13 Time: 8:48 AM */
 public interface LLRBNode<K, V> {
 
-    public interface ShortCircuitingNodeVisitor<K, V> {
-        boolean shouldContinue(K key, V value);
+  public interface ShortCircuitingNodeVisitor<K, V> {
+    boolean shouldContinue(K key, V value);
+  }
+
+  public abstract class NodeVisitor<K, V> implements ShortCircuitingNodeVisitor<K, V> {
+
+    @Override
+    public boolean shouldContinue(K key, V value) {
+      visitEntry(key, value);
+      return true;
     }
 
-    public abstract class NodeVisitor<K, V> implements ShortCircuitingNodeVisitor<K, V> {
+    public abstract void visitEntry(K key, V value);
+  }
 
-        @Override
-        public boolean shouldContinue(K key, V value) {
-            visitEntry(key, value);
-            return true;
-        }
+  enum Color {
+    RED,
+    BLACK
+  }
 
-        abstract public void visitEntry(K key, V value);
-    }
+  LLRBNode<K, V> copy(K key, V value, Color color, LLRBNode<K, V> left, LLRBNode<K, V> right);
 
-    enum Color {RED, BLACK}
+  LLRBNode<K, V> insert(K key, V value, Comparator<K> comparator);
 
-    LLRBNode<K, V> copy(K key, V value, Color color, LLRBNode<K, V> left, LLRBNode<K, V> right);
+  LLRBNode<K, V> remove(K key, Comparator<K> comparator);
 
-    LLRBNode<K, V> insert(K key, V value, Comparator<K> comparator);
+  boolean isEmpty();
 
-    LLRBNode<K, V> remove(K key, Comparator<K> comparator);
+  boolean isRed();
 
-    boolean isEmpty();
+  K getKey();
 
-    boolean isRed();
+  V getValue();
 
-    K getKey();
+  LLRBNode<K, V> getLeft();
 
-    V getValue();
+  LLRBNode<K, V> getRight();
 
-    LLRBNode<K, V> getLeft();
+  LLRBNode<K, V> getMin();
 
-    LLRBNode<K, V> getRight();
+  LLRBNode<K, V> getMax();
 
-    LLRBNode<K, V> getMin();
+  int size();
 
-    LLRBNode<K, V> getMax();
+  void inOrderTraversal(NodeVisitor<K, V> visitor);
 
-    int size();
+  boolean shortCircuitingInOrderTraversal(ShortCircuitingNodeVisitor<K, V> visitor);
 
-    void inOrderTraversal(NodeVisitor<K, V> visitor);
-
-    boolean shortCircuitingInOrderTraversal(ShortCircuitingNodeVisitor<K, V> visitor);
-
-    boolean shortCircuitingReverseOrderTraversal(ShortCircuitingNodeVisitor<K, V> visitor);
+  boolean shortCircuitingReverseOrderTraversal(ShortCircuitingNodeVisitor<K, V> visitor);
 }
