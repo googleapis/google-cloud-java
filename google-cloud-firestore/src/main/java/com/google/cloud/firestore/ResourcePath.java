@@ -133,6 +133,30 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
     }
   }
 
+
+  /**
+   * Compare the current path against another ResourcePath object.
+   *
+   * @param other - The path to compare to.
+   * @return -1 if current < other, 1 if current > other, 0 if equal
+   */
+  @Override
+  public int compareTo(ResourcePath other) {
+    int comp = this.getDatabaseName().getProject().compareTo(other.getDatabaseName().getProject());
+
+    if (comp != 0) {
+      return comp;
+    }
+
+    comp = this.getDatabaseName().getDatabase().compareTo(other.getDatabaseName().getDatabase());
+
+    if (comp != 0) {
+      return comp;
+    }
+
+    return super.compareTo(other);
+  }
+
   @Override
   public String toString() {
     return getName();
