@@ -35,6 +35,7 @@ public class QueryResult implements Page<FieldValueList> {
   private final Function<FieldValueList, FieldValueList> addSchemaFunc;
 
   QueryResult(final Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
+    // TODO(pongad): read totalRows directly from listTableData.
     this.schema = checkNotNull(schema);
     this.totalRows = totalRows;
     this.pageNoSchema = checkNotNull(pageNoSchema);
