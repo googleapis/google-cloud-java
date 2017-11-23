@@ -698,6 +698,16 @@
         <artifactId>grpc-google-cloud-vision-v1</artifactId>
         <version>${generated-proto-ga.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-vision-v1p1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-vision-v1p1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
