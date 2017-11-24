@@ -18,7 +18,6 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.gax.paging.Page;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.TimedAttemptSettings;
@@ -263,7 +262,7 @@ public class Job extends JobInfo {
    *
    * @throws BigQueryException upon failure
    */
-  public Page<FieldValueList> getQueryResults(QueryResultsOption... options) {
+  public QueryResult getQueryResults(QueryResultsOption... options) {
     if (getConfiguration().getType() != Type.QUERY) {
       throw new UnsupportedOperationException(
           "Getting query results is supported only for " + Type.QUERY + " jobs");
@@ -277,10 +276,11 @@ public class Job extends JobInfo {
     }
 
     TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
-    // TODO(pongad): return QueryResult so we can inject schema.
-    // QueryResponse response = bigquery.getQueryResults(getJobId()); // should return immediately
-    // return new QueryResult(response.getSchema(), response.getTotalRows(), bigquery.listTableData(table));
-    return bigquery.listTableData(table);
+    QueryResponse response =
+        bigquery.getQueryResults(
+            getJobId(), DEFAULT_QUERY_WAIT_OPTIONS); // should return immediately
+    return new QueryResult(
+        response.getSchema(), response.getTotalRows(), bigquery.listTableData(table));
   }
 
   private QueryResponse waitForQueryResults(

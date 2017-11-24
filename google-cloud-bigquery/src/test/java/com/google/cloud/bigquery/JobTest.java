@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.collect.ObjectArrays.concat;
+import static com.google.common.truth.Truth.assertThat;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.expect;
@@ -30,9 +31,11 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import java.util.Collections;
 import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
@@ -247,18 +250,52 @@ public class JobTest {
     expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     Job completedJob = expectedJob.toBuilder().setStatus(status).build();
-    QueryResult result = createMock(QueryResult.class);
+    // TODO(pongad): remove when https://github.com/googleapis/gax-java/pull/431/ lands.
+    Page<FieldValueList> emptyPage =
+        new Page<FieldValueList>() {
+          @Override
+          public boolean hasNextPage() {
+            return false;
+          }
+
+          @Override
+          public String getNextPageToken() {
+            return "";
+          }
+
+          @Override
+          public Page<FieldValueList> getNextPage() {
+            return null;
+          }
+
+          @Override
+          public Iterable<FieldValueList> iterateAll() {
+            return Collections.emptyList();
+          }
+
+          @Override
+          public Iterable<FieldValueList> getValues() {
+            return Collections.emptyList();
+          }
+        };
+    QueryResult result = new QueryResult(Schema.of(), 0, emptyPage);
     QueryResponse completedQuery =
-        QueryResponse.newBuilder().setCompleted(true).setTotalRows(0).build();
+        QueryResponse.newBuilder()
+            .setCompleted(true)
+            .setTotalRows(0)
+            .setSchema(Schema.of())
+            .build();
 
     expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS)).andReturn(completedQuery);
     expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(completedJob);
+    expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS))
+        .andReturn(completedQuery);
     expect(bigquery.listTableData(TABLE_ID1)).andReturn(result);
 
     replay(status, bigquery, mockOptions);
     initializeJob(jobInfo);
-    assertSame(completedJob, job.waitFor(TEST_RETRY_OPTIONS));
-    assertSame(result, job.getQueryResults());
+    assertThat(job.waitFor(TEST_RETRY_OPTIONS)).isSameAs(completedJob);
+    assertThat(job.getQueryResults().iterateAll()).isEmpty();
     verify(status, mockOptions);
   }
 
