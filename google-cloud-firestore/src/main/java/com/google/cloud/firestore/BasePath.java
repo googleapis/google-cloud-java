@@ -18,7 +18,7 @@ package com.google.cloud.firestore;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.sun.istack.internal.NotNull;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
@@ -94,21 +94,19 @@ abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
     return true;
   }
 
-
   /**
    * Compare the current path against another Path object.
    *
-   * @param other - The path to compare to.
-   * @return {number} -1 if current < other, 1 if current > other, 0 if equal
+   * @param other The path to compare to.
+   * @return -1 if current < other, 1 if current > other, 0 if equal
    */
   @Override
-  public int compareTo(B other) {
+  public int compareTo(@Nonnull B other) {
     int length = Math.min(this.getSegments().size(), other.getSegments().size());
     for (int i = 0; i < length; i++) {
-      int res = this.getSegments().get(i).compareTo(other.getSegments().get(i));
-
-      if (res != 0) {
-        return res;
+      int cmp = this.getSegments().get(i).compareTo(other.getSegments().get(i));
+      if (cmp != 0) {
+        return Integer.compare(cmp, 0);
       }
     }
     return Integer.compare(this.getSegments().size(), other.getSegments().size());
