@@ -58,9 +58,13 @@ public class SpannerException extends BaseGrpcServiceException {
 
   /**
    * Return the retry delay for transaction in milliseconds. Return -1 if this does not specify any
-   * retry delay. In that case, clients should fall back to a locally computed retry delay.
+   * retry delay.
    */
-  public static long extractRetryDelay(Throwable cause) {
+  public long getRetryDelayInMillis() {
+    return extractRetryDelay(this.getCause());
+  }
+
+  static long extractRetryDelay(Throwable cause) {
     if (cause != null) {
       Metadata trailers = Status.trailersFromThrowable(cause);
       if (trailers != null && trailers.containsKey(KEY_RETRY_INFO)) {

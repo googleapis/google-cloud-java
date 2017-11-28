@@ -52,6 +52,33 @@ public class SpannerExceptionFactoryTest {
   }
 
   @Test
+  public void resourceExhausted() {
+    Status status =
+        Status.fromCodeValue(Status.Code.RESOURCE_EXHAUSTED.value())
+            .withDescription("Memory pushback");
+    SpannerException e =
+        SpannerExceptionFactory.newSpannerException(new StatusRuntimeException(status));
+    assertThat(e.isRetryable()).isFalse();
+  }
+
+  @Test
+  public void resourceExhaustedWithBackoff() {
+    Status status =
+        Status.fromCodeValue(Status.Code.RESOURCE_EXHAUSTED.value())
+            .withDescription("Memory pushback");
+    Metadata trailers = new Metadata();
+    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+    RetryInfo retryInfo =
+        RetryInfo.newBuilder()
+            .setRetryDelay(Duration.newBuilder().setNanos(1000000).setSeconds(1L))
+            .build();
+    trailers.put(key, retryInfo);
+    SpannerException e =
+        SpannerExceptionFactory.newSpannerException(new StatusRuntimeException(status, trailers));
+    assertThat(e.isRetryable()).isTrue();
+  }
+
+  @Test
   public void abortWithRetryInfo() {
     Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
     Status status = Status.fromCodeValue(Status.Code.ABORTED.value());

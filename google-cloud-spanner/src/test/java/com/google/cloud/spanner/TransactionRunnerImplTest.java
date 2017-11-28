@@ -106,14 +106,6 @@ public class TransactionRunnerImplTest {
     assertThat(backoffMillis.getValue()).isEqualTo(1001L);
   }
 
-  @Test
-  public void runResourceExhausted() {
-    runTransaction(createRetryException(Status.Code.RESOURCE_EXHAUSTED));
-    ArgumentCaptor<Long> backoffMillis = ArgumentCaptor.forClass(Long.class);
-    verify(sleeper, times(1)).backoffSleep(Mockito.<Context>any(), backoffMillis.capture());
-    assertThat(backoffMillis.getValue()).isGreaterThan(0L);
-  }
-
   @Test(expected = SpannerException.class)
   public void runResourceExhaustedNoRetry() throws Exception {
     runTransaction(

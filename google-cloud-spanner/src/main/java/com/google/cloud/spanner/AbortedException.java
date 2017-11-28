@@ -36,7 +36,4 @@ public class AbortedException extends SpannerException {
       DoNotConstructDirectly token, @Nullable String message, @Nullable Throwable cause) {
     super(token, ErrorCode.ABORTED, IS_RETRYABLE, message, cause);
   }
-  public long getRetryDelayInMillis() {
-    return SpannerException.extractRetryDelay(getCause());
-  }
 }
