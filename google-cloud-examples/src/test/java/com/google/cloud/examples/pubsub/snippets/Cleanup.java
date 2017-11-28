@@ -33,7 +33,7 @@ class Cleanup {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       for (String topicId : testTopics) {
         try {
-          topicAdminClient.deleteTopic(TopicName.create(projectId, topicId));
+          topicAdminClient.deleteTopic(TopicName.of(projectId, topicId));
           System.out.println("Topic deleted : " + topicId);
         } catch (Exception e) {
           //do nothing catch clause
@@ -48,7 +48,7 @@ class Cleanup {
       for (String subscriptionId : subscriptions) {
         try {
           subscriptionAdminClient.deleteSubscription(
-              SubscriptionName.create(projectId, subscriptionId));
+              SubscriptionName.of(projectId, subscriptionId));
           System.out.println("Subscription deleted : " + subscriptionId);
         } catch (Exception e) {
           //do nothing catch clause

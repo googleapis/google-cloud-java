@@ -85,7 +85,7 @@ public class ITPubSubTest {
 
   @Test
   public void testTopicPolicy() {
-    TopicName topicName = TopicName.create(projectId, formatForTest("testing-topic-policy"));
+    TopicName topicName = TopicName.of(projectId, formatForTest("testing-topic-policy"));
     topicAdminClient.createTopic(topicName);
 
     Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
@@ -109,9 +109,9 @@ public class ITPubSubTest {
   @Test
   public void testPublishSubscribe() throws Exception {
     TopicName topicName =
-        TopicName.create(projectId, formatForTest("testing-publish-subscribe-topic"));
+        TopicName.of(projectId, formatForTest("testing-publish-subscribe-topic"));
     SubscriptionName subscriptionName =
-        SubscriptionName.create(projectId, formatForTest("testing-publish-subscribe-subscription"));
+        SubscriptionName.of(projectId, formatForTest("testing-publish-subscribe-subscription"));
 
     topicAdminClient.createTopic(topicName);
     subscriptionAdminClient.createSubscription(

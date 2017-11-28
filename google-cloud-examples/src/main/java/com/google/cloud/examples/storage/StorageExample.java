@@ -551,8 +551,10 @@ public class StorageExample {
       KeyStore keystore = KeyStore.getInstance("PKCS12");
       keystore.load(Files.newInputStream(Paths.get(args[0])), PASSWORD);
       PrivateKey privateKey = (PrivateKey) keystore.getKey("privatekey", PASSWORD);
-      ServiceAccountCredentials credentials =
-          new ServiceAccountCredentials(null, args[1], privateKey, null, null);
+      ServiceAccountCredentials credentials = ServiceAccountCredentials.newBuilder()
+          .setClientEmail(args[1])
+          .setPrivateKey(privateKey)
+          .build();
       return Tuple.of(credentials, BlobInfo.newBuilder(BlobId.of(args[2], args[3])).build());
     }
 

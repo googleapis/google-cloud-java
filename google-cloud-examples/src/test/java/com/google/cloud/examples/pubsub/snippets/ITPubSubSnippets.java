@@ -60,9 +60,9 @@ public class ITPubSubSnippets {
 
   @Before
   public void setUp() throws Exception {
-    topicName = TopicName.create(ServiceOptions.getDefaultProjectId(), formatForTest("test-topic"));
+    topicName = TopicName.of(ServiceOptions.getDefaultProjectId(), formatForTest("test-topic"));
     subscriptionName =
-        SubscriptionName.create(
+        SubscriptionName.of(
             ServiceOptions.getDefaultProjectId(), formatForTest("test-subscription"));
 
     try (TopicAdminClient publisherClient = TopicAdminClient.create();

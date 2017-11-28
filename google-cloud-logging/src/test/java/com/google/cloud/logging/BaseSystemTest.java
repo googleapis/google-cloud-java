@@ -338,7 +338,7 @@ public abstract class BaseSystemTest {
   public void testWriteAndListLogEntries() throws InterruptedException {
     String logId = formatForTest("test-write-log-entries-log");
     LoggingOptions loggingOptions = logging().getOptions();
-    LogName logName = LogName.create(loggingOptions.getProjectId(), logId);
+    LogName logName = LogName.of(loggingOptions.getProjectId(), logId);
     StringPayload firstPayload = StringPayload.of("stringPayload");
     LogEntry firstEntry = LogEntry.newBuilder(firstPayload)
         .addLabel("key1", "value1")
@@ -405,7 +405,7 @@ public abstract class BaseSystemTest {
   public void testWriteAndListLogEntriesAsync() throws InterruptedException, ExecutionException {
     String logId = formatForTest("test-write-log-entries-async-log");
     LoggingOptions loggingOptions = logging().getOptions();
-    LogName logName = LogName.create(loggingOptions.getProjectId(), logId);
+    LogName logName = LogName.of(loggingOptions.getProjectId(), logId);
     StringPayload firstPayload = StringPayload.of("stringPayload");
     LogEntry firstEntry = LogEntry.newBuilder(firstPayload).setSeverity(Severity.ALERT).build();
     ProtoPayload secondPayload =
@@ -465,7 +465,7 @@ public abstract class BaseSystemTest {
   public void testLoggingHandler() throws InterruptedException {
     String logId = formatForTest("test-logging-handler");
     LoggingOptions options = logging().getOptions();
-    LogName logName = LogName.create(options.getProjectId(), logId);
+    LogName logName = LogName.of(options.getProjectId(), logId);
     LoggingHandler handler = new LoggingHandler(logId, options);
     handler.setLevel(Level.INFO);
     Logger logger = Logger.getLogger(getClass().getName());
@@ -504,7 +504,7 @@ public abstract class BaseSystemTest {
   public void testSyncLoggingHandler() throws InterruptedException {
     String logId = formatForTest("test-sync-logging-handler");
     LoggingOptions options = logging().getOptions();
-    LogName logName = LogName.create(options.getProjectId(), logId);
+    LogName logName = LogName.of(options.getProjectId(), logId);
     MonitoredResource resource = MonitoredResource.of("gce_instance",
         ImmutableMap.of("project_id", options.getProjectId(),
             "instance_id", "instance",

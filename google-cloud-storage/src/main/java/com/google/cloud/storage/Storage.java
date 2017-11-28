@@ -2627,4 +2627,19 @@ public interface Storage extends Service<StorageOptions> {
   @BetaApi
   @GcpLaunchStage.Alpha
   List<Boolean> testIamPermissions(String bucket, List<String> permissions, BucketSourceOption... options);
+
+  /**
+   * Returns the service account associated with the given project.
+   *
+   * <p>Example of getting a service account.
+   * <pre> {@code
+   * String projectId = "test@gmail.com";
+   * ServiceAccount account = storage.getServiceAccount(projectId);
+   * }</pre>
+   *
+   * @param projectId the ID of the project for which the service account should be fetched.
+   * @return the service account associated with this project
+   * @throws StorageException upon failure
+   */
+  ServiceAccount getServiceAccount(String projectId);
 }
