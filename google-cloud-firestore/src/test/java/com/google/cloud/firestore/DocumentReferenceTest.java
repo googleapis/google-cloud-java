@@ -65,7 +65,6 @@ import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
-import com.google.firestore.v1beta1.ListCollectionIdsRequest;
 import com.google.firestore.v1beta1.Value;
 import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
@@ -99,8 +98,6 @@ public class DocumentReferenceTest {
   @Captor private ArgumentCaptor<BatchGetDocumentsRequest> getAllCapture;
 
   @Captor private ArgumentCaptor<ApiStreamObserver> streamObserverCapture;
-
-  @Captor private ArgumentCaptor<ListCollectionIdsRequest> listCollectionIdsCapture;
 
   private DocumentReference documentReference;
 

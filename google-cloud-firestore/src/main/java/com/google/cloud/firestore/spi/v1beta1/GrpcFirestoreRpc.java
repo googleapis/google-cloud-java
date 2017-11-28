@@ -21,6 +21,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.TransportChannel;
@@ -43,6 +44,8 @@ import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.DatabaseRootName;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
+import com.google.firestore.v1beta1.ListenRequest;
+import com.google.firestore.v1beta1.ListenResponse;
 import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
@@ -139,7 +142,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
   }
 
   @Override
-  public Executor getExecutor() {
+  public ScheduledExecutorService getExecutor() {
     return executor;
   }
 
@@ -174,5 +177,10 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
   public UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
   listCollectionIdsPagedCallable() {
     return firestoreStub.listCollectionIdsPagedCallable();
+  }
+
+  @Override
+  public BidiStreamingCallable<ListenRequest, ListenResponse> listenCallable() {
+    return firestoreStub.listenCallable();
   }
 }

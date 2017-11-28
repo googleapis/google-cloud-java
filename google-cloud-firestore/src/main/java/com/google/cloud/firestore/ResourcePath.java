@@ -20,6 +20,7 @@ import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import com.google.firestore.v1beta1.DatabaseRootName;
 import java.util.Arrays;
+import java.util.Comparator;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -142,16 +143,16 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
    */
   @Override
   public int compareTo(@Nonnull ResourcePath other) {
-    int cmp = this.getDatabaseName().getProject().compareTo(other.getDatabaseName().getProject());
+    int comp = this.getDatabaseName().getProject().compareTo(other.getDatabaseName().getProject());
 
-    if (cmp != 0) {
-      return Integer.compare(cmp, 0);
+    if (comp != 0) {
+      return Integer.compare(comp, 0);
     }
 
-    cmp = this.getDatabaseName().getDatabase().compareTo(other.getDatabaseName().getDatabase());
+    comp = this.getDatabaseName().getDatabase().compareTo(other.getDatabaseName().getDatabase());
 
-    if (cmp != 0) {
-      return Integer.compare(cmp, 0);
+    if (comp != 0) {
+      return Integer.compare(comp, 0);
     }
 
     return super.compareTo(other);
@@ -170,5 +171,14 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
   @Override
   ResourcePath createPathWithSegments(ImmutableList<String> segments) {
     return create(getDatabaseName(), segments);
+  }
+
+  public static Comparator<ResourcePath> comparator() {
+    return new Comparator<ResourcePath>() {
+      @Override
+      public int compare(ResourcePath left, ResourcePath right) {
+        return left.compareTo(right);
+      }
+    };
   }
 }

@@ -18,14 +18,19 @@ package com.google.cloud.firestore;
 
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.grpc.BaseGrpcServiceException;
+import com.google.common.annotations.VisibleForTesting;
 import io.grpc.Status;
 import java.io.IOException;
+import javax.annotation.Nullable;
 
 /** A Firestore Service exception. */
 public final class FirestoreException extends BaseGrpcServiceException {
+  private Status status;
 
   private FirestoreException(String reason, Status status) {
     super(reason, null, status.getCode().value(), false);
+
+    this.status = status;
   }
 
   private FirestoreException(IOException exception, boolean retryable) {
@@ -72,5 +77,11 @@ public final class FirestoreException extends BaseGrpcServiceException {
    */
   static FirestoreException apiException(ApiException exception) {
     return new FirestoreException(exception);
+  }
+
+  @VisibleForTesting
+  @Nullable
+  Status getStatus() {
+    return status;
   }
 }

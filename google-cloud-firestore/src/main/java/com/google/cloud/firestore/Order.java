@@ -72,6 +72,10 @@ class Order implements Comparator<Value> {
     }
   }
 
+  static final Order INSTANCE = new Order();
+
+  private Order() {}
+
   /**
    * Main comparison function for all Firestore types.
    *

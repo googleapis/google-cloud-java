@@ -26,11 +26,15 @@ import static org.junit.Assert.fail;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.firestore.CollectionReference;
+import com.google.cloud.firestore.DocumentChange.Type;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
+import com.google.cloud.firestore.EventListener;
 import com.google.cloud.firestore.FieldValue;
 import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.FirestoreException;
 import com.google.cloud.firestore.FirestoreOptions;
+import com.google.cloud.firestore.ListenerRegistration;
 import com.google.cloud.firestore.LocalFirestoreHelper;
 import com.google.cloud.firestore.LocalFirestoreHelper.AllSupportedTypes;
 import com.google.cloud.firestore.LocalFirestoreHelper.SingleField;
@@ -51,7 +55,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
+import javax.annotation.Nullable;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -503,7 +509,8 @@ public class ITSystemTest {
   }
 
   @Test
-  public void omitWriteResultForDocumentTransforms() throws ExecutionException, InterruptedException {
+  public void omitWriteResultForDocumentTransforms()
+      throws ExecutionException, InterruptedException {
     WriteBatch batch = firestore.batch();
     batch.set(randomColl.document(), SINGLE_FIELD_MAP);
     batch.set(randomColl.document(), ImmutableMap.of("time", FieldValue.serverTimestamp()));
@@ -537,5 +544,126 @@ public class ITSystemTest {
       assertEquals(collections[count++], collectionRef.getId());
     }
     assertEquals(collections.length, count);
+  }
+
+  @Test
+  public void documentWatch() throws Exception {
+    final DocumentReference documentReference = randomColl.document();
+
+    final Semaphore semaphore = new Semaphore(0);
+    ListenerRegistration registration = null;
+
+    try {
+      registration =
+          documentReference.addSnapshotListener(
+              new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(
+                    @Nullable DocumentSnapshot value, @Nullable FirestoreException error) {
+                  try {
+                    switch (semaphore.availablePermits()) {
+                      case 0:
+                        assertFalse(value.exists());
+                        documentReference.set(ImmutableMap.of("foo", "foo"));
+                        break;
+                      case 1:
+                        assertTrue(value.exists());
+                        DocumentSnapshot documentSnapshot = documentReference.get().get();
+                        assertEquals("foo", documentSnapshot.getString("foo"));
+                        documentReference.set(ImmutableMap.of("foo", "bar"));
+                        break;
+                      case 2:
+                        assertTrue(value.exists());
+                        documentSnapshot = documentReference.get().get();
+                        assertEquals("bar", documentSnapshot.getString("foo"));
+                        documentReference.delete();
+                        break;
+                      case 3:
+                        assertFalse(value.exists());
+                        break;
+                    }
+                  } catch (Exception e) {
+                    fail(e.getMessage());
+                  }
+                  semaphore.release();
+                }
+              });
+
+      semaphore.acquire(4);
+    } finally {
+      if (registration != null) {
+        registration.remove();
+      }
+    }
+  }
+
+  @Test
+  public void queryWatch() throws Exception {
+    final Semaphore semaphore = new Semaphore(0);
+    ListenerRegistration registration = null;
+
+    try {
+      registration =
+          randomColl
+              .whereEqualTo("foo", "bar")
+              .addSnapshotListener(
+                  new EventListener<QuerySnapshot>() {
+                    DocumentReference ref1;
+                    DocumentReference ref2;
+
+                    @Override
+                    public void onEvent(
+                        @Nullable QuerySnapshot value, @Nullable FirestoreException error) {
+                      try {
+                        switch (semaphore.availablePermits()) {
+                          case 0:
+                            assertTrue(value.isEmpty());
+                            ref1 = randomColl.add(ImmutableMap.of("foo", "foo")).get();
+                            ref2 = randomColl.add(ImmutableMap.of("foo", "bar")).get();
+                            break;
+                          case 1:
+                            assertEquals(1, value.size());
+                            assertEquals(1, value.getDocumentChanges().size());
+                            assertEquals(Type.ADDED, value.getDocumentChanges().get(0).getType());
+                            ref1.set(ImmutableMap.of("foo", "bar"));
+                            break;
+                          case 2:
+                            assertEquals(2, value.size());
+                            assertEquals(1, value.getDocumentChanges().size());
+                            assertEquals(Type.ADDED, value.getDocumentChanges().get(0).getType());
+                            ref1.set(ImmutableMap.of("foo", "bar", "bar", " foo"));
+                            break;
+                          case 3:
+                            assertEquals(2, value.size());
+                            assertEquals(1, value.getDocumentChanges().size());
+                            assertEquals(
+                                Type.MODIFIED, value.getDocumentChanges().get(0).getType());
+                            ref2.set(ImmutableMap.of("foo", "foo"));
+                            break;
+                          case 4:
+                            assertEquals(1, value.size());
+                            assertEquals(1, value.getDocumentChanges().size());
+                            assertEquals(Type.REMOVED, value.getDocumentChanges().get(0).getType());
+                            ref1.delete();
+                            break;
+                          case 5:
+                            assertTrue(value.isEmpty());
+                            assertEquals(1, value.getDocumentChanges().size());
+                            assertEquals(Type.REMOVED, value.getDocumentChanges().get(0).getType());
+                            break;
+                        }
+                      } catch (Exception e) {
+                        fail(e.getMessage());
+                      }
+                      semaphore.release();
+                    }
+                  });
+
+      semaphore.acquire(6);
+    } finally {
+      if (registration != null) {
+        registration.remove();
+      }
+    }
   }
 }
