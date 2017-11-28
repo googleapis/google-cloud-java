@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore.collection;
 
+import com.google.api.core.InternalApi;
 import java.util.*;
 
 /**
@@ -23,6 +24,7 @@ import java.util.*;
  * complexity for large collections, but performs worse in practice than an ArraySortedMap for small
  * collections. It also uses about twice as much memory.
  */
+@InternalApi
 public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
 
   private LLRBNode<K, V> root;

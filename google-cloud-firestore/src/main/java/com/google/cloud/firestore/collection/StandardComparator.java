@@ -16,8 +16,10 @@
 
 package com.google.cloud.firestore.collection;
 
+import com.google.api.core.InternalApi;
 import java.util.Comparator;
 
+@InternalApi
 public class StandardComparator<A extends Comparable<A>> implements Comparator<A> {
 
   private static StandardComparator INSTANCE = new StandardComparator();

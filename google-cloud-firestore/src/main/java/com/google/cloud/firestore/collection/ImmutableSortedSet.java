@@ -16,8 +16,10 @@
 
 package com.google.cloud.firestore.collection;
 
+import com.google.api.core.InternalApi;
 import java.util.*;
 
+@InternalApi
 public class ImmutableSortedSet<T> implements Iterable<T> {
 
   private final ImmutableSortedMap<T, Void> map;

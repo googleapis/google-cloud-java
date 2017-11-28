@@ -16,8 +16,10 @@
 
 package com.google.cloud.firestore.collection;
 
+import com.google.api.core.InternalApi;
 import java.util.Comparator;
 
+@InternalApi
 public interface LLRBNode<K, V> {
 
   public interface ShortCircuitingNodeVisitor<K, V> {

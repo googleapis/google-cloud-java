@@ -16,8 +16,10 @@
 
 package com.google.cloud.firestore.collection;
 
+import com.google.api.core.InternalApi;
 import java.util.Comparator;
 
+@InternalApi
 public class LLRBEmptyNode<K, V> implements LLRBNode<K, V> {
 
   private static final LLRBEmptyNode INSTANCE = new LLRBEmptyNode();

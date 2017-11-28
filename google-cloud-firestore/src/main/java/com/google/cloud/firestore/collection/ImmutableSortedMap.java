@@ -16,11 +16,13 @@
 
 package com.google.cloud.firestore.collection;
 
+import com.google.api.core.InternalApi;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+@InternalApi
 public abstract class ImmutableSortedMap<K, V> implements Iterable<Map.Entry<K, V>> {
 
   public abstract boolean containsKey(K key);

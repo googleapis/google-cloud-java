@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore.collection;
 
+import com.google.api.core.InternalApi;
 import java.util.*;
 
 /**
@@ -24,6 +25,7 @@ import java.util.*;
  * avoid degrading performance with increasing collection size it will automatically convert to a
  * RBTreeSortedMap after an insert call above a certain threshold.
  */
+@InternalApi
 public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
 
   @SuppressWarnings("unchecked")

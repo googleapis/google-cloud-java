@@ -16,8 +16,10 @@
 
 package com.google.cloud.firestore.collection;
 
+import com.google.api.core.InternalApi;
 import java.util.*;
 
+@InternalApi
 public class ImmutableSortedMapIterator<K, V> implements Iterator<Map.Entry<K, V>> {
 
   private final Stack<LLRBValueNode<K, V>> nodeStack;

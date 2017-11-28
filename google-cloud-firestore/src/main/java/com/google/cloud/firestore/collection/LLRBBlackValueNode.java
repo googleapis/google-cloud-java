@@ -16,6 +16,9 @@
 
 package com.google.cloud.firestore.collection;
 
+import com.google.api.core.InternalApi;
+
+@InternalApi
 public class LLRBBlackValueNode<K, V> extends LLRBValueNode<K, V> {
 
   /**

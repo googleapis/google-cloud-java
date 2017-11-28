@@ -16,8 +16,10 @@
 
 package com.google.cloud.firestore.collection;
 
+import com.google.api.core.InternalApi;
 import java.util.Comparator;
 
+@InternalApi
 public abstract class LLRBValueNode<K, V> implements LLRBNode<K, V> {
 
   private static Color oppositeColor(LLRBNode node) {
