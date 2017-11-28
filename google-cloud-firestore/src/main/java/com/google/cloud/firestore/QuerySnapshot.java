@@ -23,6 +23,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
 
 /**
@@ -33,7 +34,7 @@ public final class QuerySnapshot implements Iterable<DocumentSnapshot> {
 
   private final Query query;
   private final DocumentSet documentSet;
-  private volatile List<DocumentSnapshot> documentSnapshots;
+  @Nullable private volatile List<DocumentSnapshot> documentSnapshots;
   private final Instant readTime;
   private final List<DocumentChange> documentChanges;
 
@@ -150,13 +151,11 @@ public final class QuerySnapshot implements Iterable<DocumentSnapshot> {
     }
     QuerySnapshot that = (QuerySnapshot) o;
     return Objects.equals(query, that.query)
-        && Objects.equals(documentSnapshots, that.documentSnapshots)
-        && Objects.equals(documentSet, that.documentSet)
         && Objects.equals(readTime, that.readTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, documentSnapshots, documentSet, readTime);
+    return Objects.hash(query, readTime);
   }
 }
