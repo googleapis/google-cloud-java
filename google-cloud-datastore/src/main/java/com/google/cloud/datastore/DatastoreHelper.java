@@ -87,8 +87,4 @@ class DatastoreHelper {
     }
     return list;
   }
-
-  static <T> T runInTransaction(Datastore.ReadWriteTransactionCallable<T> readWriteCallable) {
-      return readWriteCallable.run();
-  }
 }

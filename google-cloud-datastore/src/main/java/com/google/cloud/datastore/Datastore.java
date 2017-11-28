@@ -54,17 +54,6 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   }
 
   /**
-   * A wrapper around {@link TransactionCallable} with {@link TransactionOptions}.
-   * If {@link TransactionOptions} mode is set to ReadWrite, its previous transaction id will
-   * be populated each time the underlying {@link TransactionCallable} is retried.
-   *
-   * @param <T> the type of the return value
-   */
-  interface ReadWriteTransactionCallable<T> {
-    T run();
-  }
-
-  /**
    * Invokes the callback's {@link Datastore.TransactionCallable#run} method with a
    * {@link DatastoreReaderWriter} that is associated with a new transaction.
    * The transaction will be committed upon successful invocation.

@@ -25,7 +25,7 @@ import java.util.List;
 final class TransactionImpl extends BaseDatastoreBatchWriter implements Transaction {
 
   private final DatastoreImpl datastore;
-  private final ByteString transaction;
+  private final ByteString transactionId;
   private boolean rolledback;
 
   static class ResponseImpl implements Transaction.Response {
@@ -65,7 +65,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
       requestPb.setTransactionOptions(options);
     }
 
-    transaction = datastore.requestTransactionId(requestPb);
+    transactionId = datastore.requestTransactionId(requestPb);
   }
 
   @Override
@@ -78,7 +78,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     validateActive();
     com.google.datastore.v1.ReadOptions.Builder readOptionsPb =
         com.google.datastore.v1.ReadOptions.newBuilder();
-    readOptionsPb.setTransaction(transaction);
+    readOptionsPb.setTransaction(transactionId);
     return datastore.get(readOptionsPb.build(), keys);
   }
 
@@ -93,7 +93,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     validateActive();
     com.google.datastore.v1.ReadOptions.Builder readOptionsPb =
         com.google.datastore.v1.ReadOptions.newBuilder();
-    readOptionsPb.setTransaction(transaction);
+    readOptionsPb.setTransaction(transactionId);
     return datastore.run(readOptionsPb.build(), query);
   }
 
@@ -104,7 +104,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     com.google.datastore.v1.CommitRequest.Builder requestPb =
         com.google.datastore.v1.CommitRequest.newBuilder();
     requestPb.setMode(com.google.datastore.v1.CommitRequest.Mode.TRANSACTIONAL);
-    requestPb.setTransaction(transaction);
+    requestPb.setTransaction(transactionId);
     requestPb.addAllMutations(mutationsPb);
     com.google.datastore.v1.CommitResponse responsePb = datastore.commit(requestPb.build());
     deactivate();
@@ -117,7 +117,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
       return;
     }
     validateActive();
-    datastore.rollbackTransaction(transaction);
+    datastore.rollbackTransaction(transactionId);
     deactivate();
     rolledback = true;
   }
@@ -130,6 +130,6 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
   @Override
   public ByteString getTransactionId() {
-    return transaction;
+    return transactionId;
   }
 }
