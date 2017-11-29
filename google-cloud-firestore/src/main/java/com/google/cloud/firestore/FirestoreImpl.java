@@ -118,7 +118,7 @@ class FirestoreImpl implements Firestore {
       return Value.newBuilder().setBytesValue(blob.toByteString()).build();
     } else if (sanitizedObject instanceof DocumentReference) {
       DocumentReference docRef = (DocumentReference) sanitizedObject;
-      return Value.newBuilder().setReferenceValue(docRef.getPath()).build();
+      return Value.newBuilder().setReferenceValue(docRef.getName()).build();
     } else if (sanitizedObject instanceof Map) {
       MapValue.Builder res = MapValue.newBuilder();
       for (Map.Entry<String, Object> entry : ((Map<String, Object>) sanitizedObject).entrySet()) {
@@ -149,7 +149,8 @@ class FirestoreImpl implements Firestore {
         "Failed to detect Project ID. "
             + "Please explicitly set your Project ID in FirestoreOptions.");
     this.databasePath =
-        ResourcePath.create(DatabaseRootName.create(options.getProjectId(), options.getDatabaseId()));
+        ResourcePath.create(
+            DatabaseRootName.of(options.getProjectId(), options.getDatabaseId()));
   }
 
   @Nonnull
@@ -255,7 +256,7 @@ class FirestoreImpl implements Firestore {
     }
 
     for (DocumentReference docRef : documentReferences) {
-      request.addDocuments(docRef.getPath());
+      request.addDocuments(docRef.getName());
     }
 
     streamRequest(request.build(), responseObserver, firestoreClient.batchGetDocumentsCallable());

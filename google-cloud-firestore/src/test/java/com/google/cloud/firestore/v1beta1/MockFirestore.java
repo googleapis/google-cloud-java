@@ -15,12 +15,14 @@
  */
 package com.google.cloud.firestore.v1beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockFirestore implements MockGrpcService {
   private final MockFirestoreImpl serviceImpl;
 

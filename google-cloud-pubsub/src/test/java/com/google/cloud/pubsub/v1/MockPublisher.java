@@ -15,12 +15,14 @@
  */
 package com.google.cloud.pubsub.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockPublisher implements MockGrpcService {
   private final MockPublisherImpl serviceImpl;
 

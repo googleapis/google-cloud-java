@@ -15,6 +15,7 @@
  */
 package com.google.cloud.logging.v2;
 
+import com.google.api.core.BetaApi;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.GetLogMetricRequest;
@@ -32,6 +33,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

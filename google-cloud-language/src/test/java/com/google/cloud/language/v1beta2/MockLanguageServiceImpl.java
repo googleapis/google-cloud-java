@@ -15,6 +15,7 @@
  */
 package com.google.cloud.language.v1beta2;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.language.v1beta2.LanguageServiceGrpc.LanguageServiceImplBase;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
@@ -24,6 +25,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;

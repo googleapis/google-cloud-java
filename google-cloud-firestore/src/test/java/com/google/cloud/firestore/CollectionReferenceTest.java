@@ -24,7 +24,6 @@ import static org.mockito.Mockito.doReturn;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.firestore.Transaction.Function;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
@@ -85,9 +84,7 @@ public class CollectionReferenceTest {
     assertNull(documentReference);
     CollectionReference subcollection = collectionReference.document("doc").collection("subcoll");
     assertEquals("subcoll", subcollection.getId());
-    assertEquals(
-        "projects/test-project/databases/(default)/documents/coll/doc/subcoll",
-        subcollection.getPath());
+    assertEquals("coll/doc/subcoll", subcollection.getPath());
     documentReference = subcollection.getParent();
     assertEquals("doc", documentReference.getId());
   }

@@ -15,24 +15,21 @@ Java idiomatic client for [Stackdriver Logging][stackdriver-logging].
 Quickstart
 ----------
 
-> `google-cloud-logging` uses gRPC as transport layer, which is not (yet) supported by App Engine
-Standard. `google-cloud-logging` will work on App Engine Flexible.
-
 Add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>1.8.0</version>
+  <version>1.12.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging:1.8.0'
+compile 'com.google.cloud:google-cloud-logging:1.12.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "1.8.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "1.12.0"
 ```
 
 Example Application

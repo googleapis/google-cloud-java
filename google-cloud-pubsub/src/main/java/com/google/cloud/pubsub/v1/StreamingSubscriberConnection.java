@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
 import com.google.api.gax.grpc.GrpcStatusCode;
@@ -25,7 +26,6 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.cloud.pubsub.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.v1.MessageDispatcher.PendingModifyAckDeadline;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
@@ -74,7 +74,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       MessageReceiver receiver,
       Duration ackExpirationPadding,
       Duration maxAckExtensionPeriod,
-      int streamAckDeadlineSeconds,
       Distribution ackLatencyDistribution,
       SubscriberStub asyncStub,
       FlowController flowController,
@@ -97,12 +96,12 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             executor,
             alarmsExecutor,
             clock);
-    messageDispatcher.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
   }
 
   @Override
   protected void doStart() {
     logger.config("Starting subscriber.");
+    messageDispatcher.start();
     initialize();
     notifyStarted();
   }
@@ -190,12 +189,13 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             (asyncStub.streamingPull(responseObserver));
     logger.log(
         Level.FINER,
-        "Initializing stream to subscription {0} with deadline {1}",
-        new Object[] {subscription, messageDispatcher.getMessageDeadlineSeconds()});
+        "Initializing stream to subscription {0}",subscription);
+        // We need to set streaming ack deadline, but it's not useful since we'll modack to send receipt anyway.
+        // Set to some big-ish value in case we modack late.
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
-            .setStreamAckDeadlineSeconds(messageDispatcher.getMessageDeadlineSeconds())
+            .setStreamAckDeadlineSeconds(60)
             .build());
     requestObserver.request(1);
 
@@ -274,13 +274,14 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         requestObserver.onNext(request);
       }
     } catch (Exception e) {
-      logger.log(Level.WARNING, "failed to send acks", e);
+      Level level = isAlive() ? Level.WARNING : Level.FINER;
+      logger.log(level, "failed to send ack operations", e);
     } finally {
       lock.unlock();
     }
   }
 
-  @VisibleForTesting
+  @InternalApi
   static List<StreamingPullRequest> partitionAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions, int size) {
     int numExtensions = 0;
@@ -322,20 +323,5 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       ret.add(builder.build());
     }
     return ret;
-  }
-
-  public void updateStreamAckDeadline(int newAckDeadlineSeconds) {
-    messageDispatcher.setMessageDeadlineSeconds(newAckDeadlineSeconds);
-    lock.lock();
-    try {
-      requestObserver.onNext(
-          StreamingPullRequest.newBuilder()
-              .setStreamAckDeadlineSeconds(newAckDeadlineSeconds)
-              .build());
-    } catch (Exception e) {
-      logger.log(Level.WARNING, "failed to set deadline", e);
-    } finally {
-      lock.unlock();
-    }
   }
 }

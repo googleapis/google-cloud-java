@@ -56,7 +56,7 @@ import static org.junit.Assert.fail;
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
 
-  private static final TopicName TEST_TOPIC = TopicName.create("test-project", "test-topic");
+  private static final TopicName TEST_TOPIC = TopicName.of("test-project", "test-topic");
 
   private static final ExecutorProvider SINGLE_THREAD_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
@@ -85,6 +85,16 @@ public class PublisherImplTest {
 
         @Override
         public TransportChannelProvider withHeaders(Map<String, String> headers) {
+          return null;
+        }
+
+        @Override
+        public boolean needsEndpoint() {
+          return false;
+        }
+
+        @Override
+        public TransportChannelProvider withEndpoint(String endpoint) {
           return null;
         }
 

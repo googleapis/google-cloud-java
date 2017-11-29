@@ -12,9 +12,6 @@ Java idiomatic client for [Google Cloud Natural Language][cloud-language].
 - [Product Documentation][language-product-docs]
 - [Client Library Documentation][language-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 If you are using Maven, add this to your pom.xml file
@@ -22,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-language</artifactId>
-  <version>0.26.0-beta</version>
+  <version>1.12.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-language:0.26.0-beta'
+compile 'com.google.cloud:google-cloud-language:1.12.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-language" % "0.26.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-language" % "1.12.0"
 ```
 
 Authentication

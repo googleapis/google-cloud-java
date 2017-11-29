@@ -53,7 +53,8 @@ abstract class BasePath<B extends BasePath<B>> {
    * @param path A relative path
    */
   B append(String path) {
-    Preconditions.checkArgument(path != null && !path.isEmpty(), "'path' must be a non-empty String" );
+    Preconditions.checkArgument(
+        path != null && !path.isEmpty(), "'path' must be a non-empty String");
     ImmutableList.Builder<String> components = ImmutableList.builder();
     components.addAll(this.getSegments());
     components.add(splitChildPath(path));
@@ -70,6 +71,26 @@ abstract class BasePath<B extends BasePath<B>> {
     components.addAll(this.getSegments());
     components.addAll(path.getSegments());
     return createPathWithSegments(components.build());
+  }
+
+  /**
+   * Checks to see if this path is a prefix of (or equals) another path.
+   *
+   * @param path the path to check against
+   * @return true if current path is a prefix of the other path.
+   */
+  boolean isPrefixOf(BasePath<B> path) {
+    ImmutableList<String> prefixSegments = getSegments();
+    ImmutableList<String> childSegments = path.getSegments();
+    if (prefixSegments.size() > path.getSegments().size()) {
+      return false;
+    }
+    for (int i = 0; i < prefixSegments.size(); i++) {
+      if (!prefixSegments.get(i).equals(childSegments.get(i))) {
+        return false;
+      }
+    }
+    return true;
   }
 
   abstract String[] splitChildPath(String path);

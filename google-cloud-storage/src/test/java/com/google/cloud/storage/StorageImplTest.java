@@ -258,6 +258,8 @@ public class StorageImplTest {
           .setEtag(POLICY_ETAG1)
           .build();
 
+  private static final ServiceAccount SERVICE_ACCOUNT = ServiceAccount.of("test@google.com");
+
   private static final com.google.api.services.storage.model.Policy API_POLICY1 =
       new com.google.api.services.storage.model.Policy()
           .setBindings(ImmutableList.of(
@@ -2172,6 +2174,16 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     assertEquals(expectedPermissions, storage.testIamPermissions(BUCKET_NAME1, checkedPermissions));
+  }
+
+  @Test
+  public void testGetServiceAccount() {
+    EasyMock.expect(storageRpcMock.getServiceAccount("projectId"))
+        .andReturn(SERVICE_ACCOUNT.toPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    ServiceAccount serviceAccount = storage.getServiceAccount("projectId");
+    assertEquals(SERVICE_ACCOUNT, serviceAccount);
   }
 
   @Test

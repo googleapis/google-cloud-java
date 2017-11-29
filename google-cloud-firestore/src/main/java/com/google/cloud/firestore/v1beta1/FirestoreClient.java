@@ -128,11 +128,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * FirestoreSettings firestoreSettings =
- *     FirestoreSettings.newBuilder()
- *         .setTransportChannelProvider(FirestoreSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     FirestoreSettings.newBuilder().setEndpoint(myEndpoint).build();
  * FirestoreClient firestoreClient =
  *     FirestoreClient.create(firestoreSettings);
  * </code>
@@ -292,7 +288,7 @@ public class FirestoreClient implements BackgroundResource {
    * Constructs an instance of FirestoreClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use FirestoreSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final FirestoreClient create(FirestoreStub stub) {
     return new FirestoreClient(stub);
   }
@@ -306,6 +302,7 @@ public class FirestoreClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected FirestoreClient(FirestoreStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -315,7 +312,7 @@ public class FirestoreClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FirestoreStub getStub() {
     return stub;
   }

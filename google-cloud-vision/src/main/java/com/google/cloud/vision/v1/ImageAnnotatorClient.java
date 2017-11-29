@@ -86,18 +86,13 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * ImageAnnotatorSettings imageAnnotatorSettings =
- *     ImageAnnotatorSettings.newBuilder()
- *         .setTransportChannelProvider(ImageAnnotatorSettings.defaultGrpcTransportProviderBuilder()
- *             .setEndpoint(myEndpoint)
- *             .build())
- *         .build();
+ *     ImageAnnotatorSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ImageAnnotatorClient imageAnnotatorClient =
  *     ImageAnnotatorClient.create(imageAnnotatorSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
-@BetaApi
 public class ImageAnnotatorClient implements BackgroundResource {
   private final ImageAnnotatorSettings settings;
   private final ImageAnnotatorStub stub;
@@ -120,7 +115,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * Constructs an instance of ImageAnnotatorClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use ImageAnnotatorSettings}.
    */
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ImageAnnotatorClient create(ImageAnnotatorStub stub) {
     return new ImageAnnotatorClient(stub);
   }
@@ -135,6 +130,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ImageAnnotatorClient(ImageAnnotatorStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +140,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ImageAnnotatorStub getStub() {
     return stub;
   }

@@ -55,25 +55,6 @@ public class Query {
   final FirestoreImpl firestore;
   final QueryOptions options;
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Query query = (Query) o;
-    return Objects.equals(path, query.path)
-        && Objects.equals(firestore, query.firestore)
-        && Objects.equals(options, query.options);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(path, firestore, options);
-  }
-
   /** The direction of a sort. */
   public enum Direction {
     ASCENDING(StructuredQuery.Direction.ASCENDING),
@@ -254,9 +235,31 @@ public class Query {
           .getField()
           .getFieldPath()
           .equals(FieldPath.DOCUMENT_ID.getEncodedPath())) {
-        Preconditions.checkArgument(
-            fieldValues[i] instanceof String, "Argument at index %d must be a String", i);
-        sanitizedValue = new DocumentReference(firestore, path.append((String) fieldValues[i]));
+        DocumentReference cursorDocument;
+        if (fieldValues[i] instanceof String) {
+          cursorDocument = new DocumentReference(firestore, path.append((String) fieldValues[i]));
+        } else if (fieldValues[i] instanceof DocumentReference) {
+          cursorDocument = (DocumentReference) fieldValues[i];
+        } else {
+          throw new IllegalArgumentException(
+              "The corresponding value for FieldPath.documentId() must be a String or a "
+                  + "DocumentReference.");
+        }
+
+        if (!this.path.isPrefixOf(cursorDocument.getResourcePath())) {
+          throw new IllegalArgumentException(
+              String.format(
+                  "'%s' is not part of the query result set and cannot be used as a query boundary.",
+                  cursorDocument.getPath()));
+        }
+        if (!cursorDocument.getParent().getResourcePath().equals(this.path)) {
+          throw new IllegalArgumentException(
+              String.format(
+                  "Only a direct child can be used as a query boundary. Found: '%s'",
+                  cursorDocument.getPath()));
+        }
+
+        sanitizedValue = cursorDocument;
       } else {
         sanitizedValue = CustomClassMapper.serialize(fieldValues[i]);
       }
@@ -769,5 +772,28 @@ public class Query {
         transactionId);
 
     return result;
+  }
+
+  ResourcePath getResourcePath() {
+    return path;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Query query = (Query) o;
+    return Objects.equals(path, query.path)
+        && Objects.equals(firestore, query.firestore)
+        && Objects.equals(options, query.options);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(path, firestore, options);
   }
 }

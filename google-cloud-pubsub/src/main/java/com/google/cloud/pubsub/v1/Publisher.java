@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
@@ -32,7 +33,6 @@ import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.FutureCallback;
@@ -140,6 +140,9 @@ public class Publisher {
     }
     if (channelProvider.needsHeaders()) {
       channelProvider = channelProvider.withHeaders(builder.headerProvider.getHeaders());
+    }
+    if (channelProvider.needsEndpoint()) {
+      channelProvider = channelProvider.withEndpoint(TopicAdminSettings.getDefaultEndpoint());
     }
     for (int i = 0; i < channels.length; i++) {
       GrpcTransportChannel transportChannel =
@@ -586,7 +589,7 @@ public class Publisher {
     TransportChannelProvider channelProvider =
         TopicAdminSettings.defaultGrpcTransportProviderBuilder().build();
     HeaderProvider headerProvider =
-        SubscriptionAdminSettings.defaultApiClientHeaderProviderBuilder().build();
+        TopicAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     CredentialsProvider credentialsProvider =
         TopicAdminSettings.defaultCredentialsProviderBuilder().build();
@@ -642,7 +645,7 @@ public class Publisher {
       return this;
     }
 
-    @VisibleForTesting
+    @InternalApi
     Builder setLongRandom(LongRandom longRandom) {
       this.longRandom = Preconditions.checkNotNull(longRandom);
       return this;
