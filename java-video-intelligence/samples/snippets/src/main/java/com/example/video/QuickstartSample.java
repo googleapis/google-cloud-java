@@ -19,15 +19,15 @@ package com.example.video;
 // [START videointelligence_quickstart]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.videointelligence.v1beta2.AnnotateVideoProgress;
-import com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest;
-import com.google.cloud.videointelligence.v1beta2.AnnotateVideoResponse;
-import com.google.cloud.videointelligence.v1beta2.Entity;
-import com.google.cloud.videointelligence.v1beta2.Feature;
-import com.google.cloud.videointelligence.v1beta2.LabelAnnotation;
-import com.google.cloud.videointelligence.v1beta2.LabelSegment;
-import com.google.cloud.videointelligence.v1beta2.VideoAnnotationResults;
-import com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceClient;
+import com.google.cloud.videointelligence.v1.AnnotateVideoProgress;
+import com.google.cloud.videointelligence.v1.AnnotateVideoRequest;
+import com.google.cloud.videointelligence.v1.AnnotateVideoResponse;
+import com.google.cloud.videointelligence.v1.Entity;
+import com.google.cloud.videointelligence.v1.Feature;
+import com.google.cloud.videointelligence.v1.LabelAnnotation;
+import com.google.cloud.videointelligence.v1.LabelSegment;
+import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
+import com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient;
 import java.util.List;
 
 public class QuickstartSample {
@@ -47,12 +47,12 @@ public class QuickstartSample {
           .addFeatures(Feature.LABEL_DETECTION)
           .build();
 
-      OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> operation =
+      OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> response =
           client.annotateVideoAsync(request);
 
       System.out.println("Waiting for operation to complete...");
 
-      List<VideoAnnotationResults> results = operation.get().getAnnotationResultsList();
+      List<VideoAnnotationResults> results = response.get().getAnnotationResultsList();
       if (results.isEmpty()) {
         System.out.println("No labels detected in " + gcsUri);
         return;
