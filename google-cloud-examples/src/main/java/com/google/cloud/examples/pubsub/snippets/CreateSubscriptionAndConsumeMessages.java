@@ -34,7 +34,7 @@ public class CreateSubscriptionAndConsumeMessages {
 
   public static void main(String... args) throws Exception {
     TopicName topic = TopicName.of("my-project-id", "my-topic-id");
-    SubscriptionName subscription = SubscriptionName.of("my-project-id", "my-topic-id");
+    SubscriptionName subscription = SubscriptionName.of("my-project-id", "my-subscription-id");
 
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
