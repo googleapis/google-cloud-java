@@ -17,13 +17,13 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.Timestamp;
+
 import com.google.common.util.concurrent.ListenableFuture;
 
 import io.opencensus.common.Scope;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-import io.opencensus.trace.samplers.Samplers;
 
 import java.util.Arrays;
 
@@ -45,65 +45,105 @@ class DatabaseClientImpl implements DatabaseClient {
 
   @Override
   public Timestamp write(Iterable<Mutation> mutations) throws SpannerException {
-    try (Scope s = tracer.spanBuilder(READ_WRITE_TRANSACTION).startScopedSpan()) {
+    Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
       return pool.getReadWriteSession().write(mutations);
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
+    } finally {
+      span.end();
     }
   }
 
   @Override
   public Timestamp writeAtLeastOnce(Iterable<Mutation> mutations) throws SpannerException {
-    try (Scope s = tracer.spanBuilder(READ_WRITE_TRANSACTION).startScopedSpan()) {
+    Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
       return pool.getReadSession().writeAtLeastOnce(mutations);
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
+    } finally {
+      span.end();
     }
   }
 
   @Override
   public ReadContext singleUse() {
     Span span = tracer.spanBuilder(READ_ONLY_TRANSACTION).startSpan();
-    try (Scope s = tracer.withSpan(span)){
+    try (Scope s = tracer.withSpan(span)) {
       return pool.getReadSession().singleUse();
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
     }
+    
   }
 
   @Override
   public ReadContext singleUse(TimestampBound bound) {
-    try (Scope s = tracer.spanBuilder(READ_ONLY_TRANSACTION).startScopedSpan()) {
+    Span span = tracer.spanBuilder(READ_ONLY_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
       return pool.getReadSession().singleUse(bound);
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
     }
   }
 
   @Override
   public ReadOnlyTransaction singleUseReadOnlyTransaction() {
-    try (Scope s = tracer.spanBuilder(READ_ONLY_TRANSACTION).startScopedSpan()) {
+    Span span = tracer.spanBuilder(READ_ONLY_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
       return pool.getReadSession().singleUseReadOnlyTransaction();
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
     }
   }
 
   @Override
   public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
-    try (Scope s = tracer.spanBuilder(READ_ONLY_TRANSACTION).startScopedSpan()) {
+    Span span = tracer.spanBuilder(READ_ONLY_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
       return pool.getReadSession().singleUseReadOnlyTransaction(bound);
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
     }
   }
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction() {
-    try (Scope s = tracer.spanBuilder(READ_ONLY_TRANSACTION).startScopedSpan()) {
+    Span span = tracer.spanBuilder(READ_ONLY_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
       return pool.getReadSession().readOnlyTransaction();
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
     }
   }
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
-    try (Scope s = tracer.spanBuilder(READ_ONLY_TRANSACTION).startScopedSpan()) {
+    Span span = tracer.spanBuilder(READ_ONLY_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
       return pool.getReadSession().readOnlyTransaction(bound);
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
     }
   }
 
   @Override
   public TransactionRunner readWriteTransaction() {
-    try (Scope s = tracer.spanBuilder(READ_WRITE_TRANSACTION).startScopedSpan()) {
+    Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
       return pool.getReadWriteSession().readWriteTransaction();
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
     }
   }
 
