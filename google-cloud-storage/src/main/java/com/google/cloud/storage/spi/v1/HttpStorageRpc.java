@@ -58,6 +58,8 @@ import com.google.cloud.Tuple;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.storage.RestartableInputStream;
+import com.google.cloud.storage.RetryableInputStreamContent;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
@@ -239,6 +241,28 @@ public class HttpStorageRpc implements StorageRpc {
           .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public StorageObject create(StorageObject storageObject, final RestartableInputStream content,
+                              Map<Option, ?> options) {
+    try {
+      Storage.Objects.Insert insert = storage.objects()
+              .insert(storageObject.getBucket(), storageObject,
+                      new RetryableInputStreamContent(storageObject.getContentType(), content));
+      insert.getMediaHttpUploader().setDirectUploadEnabled(true);
+      setEncryptionHeaders(insert.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
+      return insert.setProjection(DEFAULT_PROJECTION)
+              .setPredefinedAcl(Option.PREDEFINED_ACL.getString(options))
+              .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
+              .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
+              .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
+              .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
+              .setUserProject(Option.USER_PROJECT.getString(options))
+              .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }

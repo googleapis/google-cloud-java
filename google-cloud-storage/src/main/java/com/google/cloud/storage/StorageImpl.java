@@ -63,6 +63,7 @@ import com.google.common.io.BaseEncoding;
 import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
@@ -146,6 +147,25 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     // retries are not safe when the input is an InputStream, so we can't retry.
     return Blob.fromPb(this, storageRpc.create(blobPb, inputStreamParam, optionsMap));
   }
+
+  public Blob create(BlobInfo blobInfo, RestartableInputStream content, BlobWriteOption... options) {
+    Tuple<BlobInfo, BlobTargetOption[]> targetOptions = BlobTargetOption.convert(blobInfo, options);
+    StorageObject blobPb = targetOptions.x().toPb();
+    Map<StorageRpc.Option, ?> optionsMap = optionMap(targetOptions.x(), targetOptions.y());
+    RestartableInputStream inputStreamParam = firstNonNull(content
+            , new RestartableInputStream(new ByteArrayInputStream(EMPTY_BYTE_ARRAY)));
+    try {
+      return Blob.fromPb(this, runWithRetries(new Callable<StorageObject>() {
+        @Override
+        public StorageObject call() {
+          content.restart();
+          return storageRpc.create(blobPb, content, optionsMap);}
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
 
   private Blob internalCreate(BlobInfo info, final byte[] content, BlobTargetOption... options) {
     Preconditions.checkNotNull(content);
