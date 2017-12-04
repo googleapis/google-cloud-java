@@ -26,6 +26,7 @@ import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
 import com.google.cloud.storage.StorageException;
+import com.google.cloud.storage.RestartableInputStream;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
@@ -183,6 +184,13 @@ public interface StorageRpc extends ServiceRpc {
    * @throws StorageException upon failure
    */
   StorageObject create(StorageObject object, InputStream content, Map<Option, ?> options);
+
+  /**
+   * Creates a new storage object.
+   *
+   * @throws StorageException upon failure
+   */
+  StorageObject create(StorageObject object, RestartableInputStream content, Map<Option, ?> options);
 
   /**
    * Lists the project's buckets.
