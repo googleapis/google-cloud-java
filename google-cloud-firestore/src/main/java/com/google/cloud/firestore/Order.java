@@ -67,7 +67,7 @@ class Order implements Comparator<Value> {
         case MAP_VALUE:
           return OBJECT;
         default:
-          throw new IllegalStateException("Could not detect value type for " + value);
+          throw new IllegalArgumentException("Could not detect value type for " + value);
       }
     }
   }
@@ -83,7 +83,7 @@ class Order implements Comparator<Value> {
     TypeOrder rightType = TypeOrder.fromValue(right);
     int typeComparison = leftType.compareTo(rightType);
     if (typeComparison != 0) {
-      return typeComparison < 0 ? -1 : 1;
+      return typeComparison;
     }
 
     // So they are the same type.
@@ -109,13 +109,12 @@ class Order implements Comparator<Value> {
       case OBJECT:
         return compareObjects(left, right);
       default:
-        throw new Error("Cannot compare " + leftType);
+        throw new IllegalArgumentException("Cannot compare " + leftType);
     }
   }
 
   private int compareStrings(Value left, Value right) {
-    int comp = left.getStringValue().compareTo(right.getStringValue());
-    return Integer.compare(comp, 0);
+    return left.getStringValue().compareTo(right.getStringValue());
   }
 
   private int compareBlobs(Value left, Value right) {
@@ -165,7 +164,7 @@ class Order implements Comparator<Value> {
   private int compareResourcePaths(Value left, Value right) {
     ResourcePath leftPath = ResourcePath.create(left.getReferenceValue());
     ResourcePath rightPath = ResourcePath.create(right.getReferenceValue());
-    return Integer.compare(leftPath.compareTo(rightPath), 0);
+    return leftPath.compareTo(rightPath);
   }
 
   private int compareArrays(Value left, Value right) {

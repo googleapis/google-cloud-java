@@ -145,13 +145,13 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
     int cmp = this.getDatabaseName().getProject().compareTo(other.getDatabaseName().getProject());
 
     if (cmp != 0) {
-      return Integer.compare(cmp, 0);
+      return cmp;
     }
 
     cmp = this.getDatabaseName().getDatabase().compareTo(other.getDatabaseName().getDatabase());
 
     if (cmp != 0) {
-      return Integer.compare(cmp, 0);
+      return cmp;
     }
 
     return super.compareTo(other);

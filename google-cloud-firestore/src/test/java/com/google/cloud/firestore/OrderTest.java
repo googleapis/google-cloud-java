@@ -131,7 +131,7 @@ public class OrderTest {
                     "Order does not match for: groups[%d][%d] and groups[%d][%d]",
                     left, i, right, j),
                 Integer.compare(left, right),
-                order.compare(groups[left][i], groups[right][j]));
+                Integer.compare(order.compare(groups[left][i], groups[right][j]), 0));
           }
         }
       }

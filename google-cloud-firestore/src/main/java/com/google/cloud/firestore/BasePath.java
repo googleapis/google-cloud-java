@@ -106,7 +106,7 @@ abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
     for (int i = 0; i < length; i++) {
       int cmp = this.getSegments().get(i).compareTo(other.getSegments().get(i));
       if (cmp != 0) {
-        return Integer.compare(cmp, 0);
+        return cmp;
       }
     }
     return Integer.compare(this.getSegments().size(), other.getSegments().size());
