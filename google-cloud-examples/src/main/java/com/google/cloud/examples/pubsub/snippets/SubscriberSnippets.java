@@ -25,27 +25,37 @@ package com.google.cloud.examples.pubsub.snippets;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
-import com.google.cloud.pubsub.spi.v1.MessageReceiver;
-import com.google.cloud.pubsub.spi.v1.Subscriber;
-import com.google.cloud.pubsub.spi.v1.TopicAdminSettings;
+import com.google.cloud.pubsub.v1.AckReplyConsumer;
+import com.google.cloud.pubsub.v1.MessageReceiver;
+import com.google.cloud.pubsub.v1.Subscriber;
+import com.google.cloud.pubsub.v1.SubscriptionAdminSettings;
+import com.google.cloud.pubsub.v1.stub.GrpcSubscriberStub;
+import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.PullRequest;
+import com.google.pubsub.v1.PullResponse;
+import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.SubscriptionName;
 import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Executor;
 
 /** This class contains snippets for the {@link Subscriber} interface. */
 public class SubscriberSnippets {
 
   private final SubscriptionName subscriptionName;
+
   private final MessageReceiver receiver;
+
   private final ApiFuture<Void> done;
+
   private final Executor executor;
 
   public SubscriberSnippets(
@@ -61,33 +71,38 @@ public class SubscriberSnippets {
 
   // [TARGET startAsync()]
   public void startAndWait() throws Exception {
-    // [START startAsync]
-    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
-    subscriber.addListener(new Subscriber.Listener() {
-      public void failed(Subscriber.State from, Throwable failure) {
-        // Handle error.
-      }
-    }, executor);
+    Subscriber subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
+    subscriber.addListener(
+        new Subscriber.Listener() {
+          public void failed(Subscriber.State from, Throwable failure) {
+            // Handle error.
+          }
+        },
+        executor);
     subscriber.startAsync();
 
     // Wait for a stop signal.
+    // In a server, this might be a signal to stop serving.
+    // In this example, the signal is just a dummy Future.
     done.get();
+
     subscriber.stopAsync().awaitTerminated();
-    // [END startAsync]
   }
 
   private void createSubscriber() throws Exception {
-    // [START pullSubscriber]
+    // [START pubsub_pull]
     String projectId = "my-project-id";
     String subscriptionId = "my-subscription-id";
 
-    SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
+    SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
     // Instantiate an asynchronous message receiver
-    MessageReceiver receiver = new MessageReceiver() {
+    MessageReceiver receiver =
+        new MessageReceiver() {
           @Override
           public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
-            // handle incoming message, then ack or nack the received message
-            // ...
+            // handle incoming message, then ack/nack the received message
+            System.out.println("Id : " + message.getMessageId());
+            System.out.println("Data : " + message.getData().toStringUtf8());
             consumer.ack();
           }
         };
@@ -95,7 +110,7 @@ public class SubscriberSnippets {
     Subscriber subscriber = null;
     try {
       // Create a subscriber for "my-subscription-id" bound to the message receiver
-      subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
+      subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
       subscriber.startAsync();
       // ...
     } finally {
@@ -104,63 +119,99 @@ public class SubscriberSnippets {
         subscriber.stopAsync();
       }
     }
-    // [END pullSubscriber]
+    // [END pubsub_pull]
   }
 
-  private Subscriber createSubscriberWithErrorListener() throws Exception {
-    // [START subscriberWithErrorListener]
-    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
-
-    subscriber.addListener(new Subscriber.Listener() {
-      public void failed(Subscriber.State from, Throwable failure) {
-        // Handle error.
-      }
-    }, MoreExecutors.directExecutor());
-    // [END subscriberWithErrorListener]
+  private Subscriber createSubscriberWithErrorListener(Subscriber subscriber) throws Exception {
+    // [START pubsub_subscriber_error_listener]
+    subscriber.addListener(
+        new Subscriber.Listener() {
+          public void failed(Subscriber.State from, Throwable failure) {
+            // Handle error.
+          }
+        },
+        MoreExecutors.directExecutor());
+    // [END pubsub_subscriber_error_listener]
     return subscriber;
   }
 
   private Subscriber createSingleThreadedSubscriber() throws Exception {
-    // [START singleThreadedSubscriber]
+    // [START pubsub_subscriber_single_threaded]
     // provide a separate executor service for polling
-    ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
-        .setExecutorThreadCount(1).build();
+    ExecutorProvider executorProvider =
+        InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
 
-    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
-        .setExecutorProvider(executorProvider)
-        .build();
-    // [END singleThreadedSubscriber]
+    Subscriber subscriber =
+        Subscriber.newBuilder(subscriptionName, receiver)
+            .setExecutorProvider(executorProvider)
+            .build();
+    // [END pubsub_subscriber_single_threaded]
     return subscriber;
   }
 
   private Subscriber createSubscriberWithCustomFlowSettings() throws Exception {
-    // [START subscriberWithCustomFlow]
-    int maxMessageCount = 10;
+    // [START pubsub_subscriber_flow_settings]
+    long maxMessageCount = 10L;
     // Configure max number of messages to be pulled
-    FlowControlSettings flowControlSettings = FlowControlSettings.newBuilder()
-        .setMaxOutstandingElementCount(maxMessageCount)
-        .build();
-    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
-        .setFlowControlSettings(flowControlSettings)
-        .build();
-    // [END subscriberWithCustomFlow]
+    FlowControlSettings flowControlSettings =
+        FlowControlSettings.newBuilder().setMaxOutstandingElementCount(maxMessageCount).build();
+    Subscriber subscriber =
+        Subscriber.newBuilder(subscriptionName, receiver)
+            .setFlowControlSettings(flowControlSettings)
+            .build();
+    // [END pubsub_subscriber_flow_settings]
     return subscriber;
   }
 
   private Subscriber createSubscriberWithCustomCredentials() throws Exception {
-    // [START subscriberWithCustomCredentials]
+    // [START pubsub_subscriber_custom_credentials]
     CredentialsProvider credentialsProvider =
-        FixedCredentialsProvider
-            .create(ServiceAccountCredentials.fromStream(
-                new FileInputStream("credentials.json")));
-    ChannelProvider channelProvider =
-        TopicAdminSettings.defaultChannelProviderBuilder()
-            .setCredentialsProvider(credentialsProvider).build();
+        FixedCredentialsProvider.create(
+            ServiceAccountCredentials.fromStream(new FileInputStream("credentials.json")));
 
-    Subscriber subscriber = Subscriber.defaultBuilder(subscriptionName, receiver)
-        .setChannelProvider(channelProvider)
-        .build();
-    // [START subscriberWithCustomCredentials]
+    Subscriber subscriber =
+        Subscriber.newBuilder(subscriptionName, receiver)
+            .setCredentialsProvider(credentialsProvider)
+            .build();
+    // [START pubsub_subscriber_custom_credentials]
     return subscriber;
+  }
+
+  static List<ReceivedMessage> createSubscriberWithSyncPull(
+      String projectId, String subscriptionId, int numOfMessages) throws Exception {
+    // [START subscriber_sync_pull]
+    SubscriptionAdminSettings subscriptionAdminSettings =
+        SubscriptionAdminSettings.newBuilder().build();
+    try (SubscriberStub subscriber = GrpcSubscriberStub.create(subscriptionAdminSettings)) {
+      // String projectId = "my-project-id";
+      // String subscriptionId = "my-subscription-id";
+      // int numOfMessages = 10;   // max number of messages to be pulled
+      String subscriptionName = SubscriptionName.of(projectId, subscriptionId).toString();
+      PullRequest pullRequest =
+          PullRequest.newBuilder()
+              .setMaxMessages(numOfMessages)
+              .setReturnImmediately(false) // return immediately if messages are not available
+              .setSubscription(subscriptionName)
+              .build();
+
+      // use pullCallable().futureCall to asynchronously perform this operation
+      PullResponse pullResponse = subscriber.pullCallable().call(pullRequest);
+      List<String> ackIds = new ArrayList<>();
+      for (ReceivedMessage message : pullResponse.getReceivedMessagesList()) {
+        // handle received message
+        // ...
+        ackIds.add(message.getAckId());
+      }
+      // acknowledge received messages
+      AcknowledgeRequest acknowledgeRequest =
+          AcknowledgeRequest.newBuilder()
+              .setSubscription(subscriptionName)
+              .addAllAckIds(ackIds)
+              .build();
+      // use acknowledgeCallable().futureCall to asynchronously perform this operation
+      subscriber.acknowledgeCallable().call(acknowledgeRequest);
+      return pullResponse.getReceivedMessagesList();
+    }
+    // [END subscriber_sync_pull]
   }
 }

@@ -37,17 +37,17 @@ public class QueryJobConfigurationTest {
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", Field.Type.string())
+      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.newBuilder("IntegerField", Field.Type.integer())
+      Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
           .setMode(Field.Mode.REPEATED)
           .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+      Field.newBuilder("RecordField", LegacySQLTypeName.RECORD, FIELD_SCHEMA1, FIELD_SCHEMA2)
           .setMode(Field.Mode.REQUIRED)
           .setDescription("FieldDescription3")
           .build();
@@ -71,6 +71,7 @@ public class QueryJobConfigurationTest {
   private static final boolean USE_QUERY_CACHE = false;
   private static final boolean FLATTEN_RESULTS = true;
   private static final boolean USE_LEGACY_SQL = true;
+  private static final Integer MAX_BILLING_TIER = 123;
   private static final List<SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =
       ImmutableList.of(SchemaUpdateOption.ALLOW_FIELD_RELAXATION);
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
@@ -89,6 +90,7 @@ public class QueryJobConfigurationTest {
           .setUserDefinedFunctions(USER_DEFINED_FUNCTIONS)
           .setDryRun(true)
           .setUseLegacySql(USE_LEGACY_SQL)
+          .setMaximumBillingTier(MAX_BILLING_TIER)
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .build();
 
@@ -158,6 +160,7 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.getUserDefinedFunctions(), value.getUserDefinedFunctions());
     assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
     assertEquals(expected.useLegacySql(), value.useLegacySql());
+    assertEquals(expected.getMaximumBillingTier(), value.getMaximumBillingTier());
     assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
   }
 }

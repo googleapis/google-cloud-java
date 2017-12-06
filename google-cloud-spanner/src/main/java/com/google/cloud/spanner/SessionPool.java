@@ -826,9 +826,8 @@ final class SessionPool {
           throw newSpannerException(
               ErrorCode.RESOURCE_EXHAUSTED,
               "No session available in the pool. Maximum number of sessions in the pool can be"
-              + " overridden by invoking SessionPoolOptions#Builder#setMaxSessions."
-              + " Client can be made to block rather than fail by setting"
-              + " SessionPoolOptions#Builder#setBlockIfPoolExhausted.");
+                  + " overridden by invoking SessionPoolOptions#Builder#setMaxSessions. Client can be made to block"
+                  + " rather than fail by setting SessionPoolOptions#Builder#setBlockIfPoolExhausted.");
         }
       }
     }

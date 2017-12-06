@@ -39,13 +39,17 @@ public class TransactionExceptionHandlerTest {
             .build();
     ExceptionHandler transactionHandler = TransactionExceptionHandler.build();
 
-    assertFalse(handler.accept(new DatastoreException(10, "", "ABORTED", false, null)));
-    assertFalse(handler.accept(new DatastoreException(10, "", "", false, null)));
-    assertFalse(handler.accept(new DatastoreException(0, "", "", false, null)));
+    assertFalse(handler.shouldRetry(new DatastoreException(10, "", "ABORTED", false, null), null));
+    assertFalse(handler.shouldRetry(new DatastoreException(10, "", "", false, null), null));
+    assertFalse(handler.shouldRetry(new DatastoreException(0, "", "", false, null), null));
 
-    assertTrue(transactionHandler.accept(new DatastoreException(10, "", "ABORTED", false, null)));
-    assertTrue(transactionHandler.accept(new DatastoreException(10, "", "", false, null)));
-    assertFalse(transactionHandler.accept(new DatastoreException(0, "", "", false, null)));
+    assertTrue(
+        transactionHandler.shouldRetry(
+            new DatastoreException(10, "", "ABORTED", false, null), null));
+    assertTrue(
+        transactionHandler.shouldRetry(new DatastoreException(10, "", "", false, null), null));
+    assertFalse(
+        transactionHandler.shouldRetry(new DatastoreException(0, "", "", false, null), null));
 
     DatastoreException nestedDatastoreException =
         new DatastoreException(
@@ -54,7 +58,17 @@ public class TransactionExceptionHandlerTest {
             null,
             new DatastoreException(10, "", "ABORTED", false, null));
 
-    assertTrue(transactionHandler.accept(nestedDatastoreException));
-    assertFalse(handler.accept(nestedDatastoreException));
+    assertTrue(transactionHandler.shouldRetry(nestedDatastoreException, null));
+    assertFalse(handler.shouldRetry(nestedDatastoreException, null));
+
+    DatastoreException nestedUserException =
+        new DatastoreException(
+            BaseServiceException.UNKNOWN_CODE,
+            "",
+            null,
+            new RuntimeException(""));
+
+    assertFalse(transactionHandler.shouldRetry(nestedUserException, null));
+    assertFalse(handler.shouldRetry(nestedDatastoreException, null));
   }
 }

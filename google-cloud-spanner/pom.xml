@@ -4,7 +4,7 @@
                               http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>0.17.2-beta-SNAPSHOT</version>
+  <version>0.30.1-beta-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Google Cloud Spanner</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner</url>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.17.2-alpha-SNAPSHOT</version>
+    <version>0.30.1-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
@@ -84,7 +84,6 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-tcnative-boringssl-static</artifactId>
-      <version>1.1.33.Fork26</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -101,37 +100,30 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-spanner-v1</artifactId>
-      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-spanner-admin-database-v1</artifactId>
-      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-spanner-admin-instance-v1</artifactId>
-      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-v1</artifactId>
-      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-admin-database-v1</artifactId>
-      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-admin-instance-v1</artifactId>
-      <version>0.1.9</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-longrunning-v1</artifactId>
-      <version>0.1.9</version>
+      <artifactId>grpc-google-common-protos</artifactId>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -160,13 +152,23 @@
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>0.30</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-all</artifactId>
       <version>1.9.5</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.objenesis</groupId>
+          <artifactId>objenesis</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.objenesis</groupId>
+      <artifactId>objenesis</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -175,9 +177,10 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.wrenchworks</groupId>
-      <artifactId>protobuf</artifactId>
-      <version>1.0.2</version>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

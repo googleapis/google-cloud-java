@@ -20,12 +20,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
-import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
-import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
+import com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
+import com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
+import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.common.collect.Iterables;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -170,8 +170,8 @@ public class ITTopicAdminClientSnippets {
   private String createSubscription(String topic, String subscriptionName) throws Exception {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       Subscription subscription = subscriptionAdminClient.createSubscription(
-          SubscriptionName.create(projectId, subscriptionName),
-          TopicName.create(projectId, topic), PushConfig.getDefaultInstance(), 0);
+          SubscriptionName.of(projectId, subscriptionName),
+          TopicName.of(projectId, topic), PushConfig.getDefaultInstance(), 0);
       return subscription.getName();
     }
   }

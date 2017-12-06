@@ -20,8 +20,6 @@ import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.JobConfiguration;
-import com.google.api.services.bigquery.model.QueryRequest;
-import com.google.api.services.bigquery.model.QueryResponse;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
@@ -203,13 +201,6 @@ public interface BigQueryRpc extends ServiceRpc {
    * @throws BigQueryException upon failure
    */
   GetQueryResultsResponse getQueryResults(String projectId, String jobId, Map<Option, ?> options);
-
-  /**
-   * Runs the query associated with the request.
-   *
-   * @throws BigQueryException upon failure
-   */
-  QueryResponse query(QueryRequest request);
 
   /**
    * Opens a resumable upload session to load data into a BigQuery table and returns an upload URI.

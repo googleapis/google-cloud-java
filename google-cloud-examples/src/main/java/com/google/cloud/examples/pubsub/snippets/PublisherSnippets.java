@@ -25,17 +25,13 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.BatchingSettings;
-import com.google.api.gax.batching.FlowControlSettings;
-import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.TopicAdminSettings;
+import com.google.cloud.pubsub.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
@@ -75,8 +71,8 @@ public class PublisherSnippets {
   // [VARIABLE "my_project"]
   // [VARIABLE "my_topic"]
   public static void newBuilder(String projectId, String topicId) throws Exception {
-    TopicName topic = TopicName.create(projectId, topicId);
-    Publisher publisher = Publisher.defaultBuilder(topic).build();
+    TopicName topic = TopicName.of(projectId, topicId);
+    Publisher publisher = Publisher.newBuilder(topic).build();
     try {
       // ...
     } finally {
@@ -86,7 +82,7 @@ public class PublisherSnippets {
   }
 
   public Publisher getPublisherWithCustomBatchSettings(TopicName topicName) throws Exception {
-    // [START publisherBatchSettings]
+    // [START pubsub_publisher_batch_settings]
     // Batch settings control how the publisher batches messages
     long requestBytesThreshold = 5000L; // default : 1kb
     long messageCountBatchSize = 10L; // default : 100
@@ -100,14 +96,14 @@ public class PublisherSnippets {
         .setDelayThreshold(publishDelayThreshold)
         .build();
 
-    Publisher publisher = Publisher.defaultBuilder(topicName)
+    Publisher publisher = Publisher.newBuilder(topicName)
         .setBatchingSettings(batchingSettings).build();
-    // [END publisherBatchSettings]
+    // [END pubsub_publisher_batch_settings]
     return publisher;
   }
 
   public Publisher getPublisherWithCustomRetrySettings(TopicName topicName) throws Exception {
-    // [START publisherRetrySettings]
+    // [START pubsub_publisher_retry_settings]
     // Retry settings control how the publisher handles retryable failures
     Duration retryDelay = Duration.ofMillis(100); // default : 1 ms
     double retryDelayMultiplier = 2.0; // back off for repeated failures
@@ -119,60 +115,34 @@ public class PublisherSnippets {
         .setMaxRetryDelay(maxRetryDelay)
         .build();
 
-    Publisher publisher = Publisher.defaultBuilder(topicName)
+    Publisher publisher = Publisher.newBuilder(topicName)
         .setRetrySettings(retrySettings).build();
-    // [END publisherRetrySettings]
-    return publisher;
-  }
-
-  public Publisher getPublisherWithCustomFlowControlSettings(TopicName topicName) throws Exception {
-    // [START publisherFlowControlSettings]
-
-    // Flow control settings restrict the number of outstanding publish requests
-    int maxOutstandingBatches = 20;
-    int maxOutstandingRequestBytes = 500000;
-
-    // override behavior on limits exceeded if needed, default behavior is to block
-    LimitExceededBehavior limitExceededBehavior = LimitExceededBehavior.ThrowException;
-
-    FlowControlSettings flowControlSettings = FlowControlSettings.newBuilder()
-        .setMaxOutstandingElementCount(maxOutstandingBatches)
-        .setMaxOutstandingRequestBytes(maxOutstandingRequestBytes)
-        .setLimitExceededBehavior(limitExceededBehavior)
-        .build();
-
-    Publisher publisher = Publisher.defaultBuilder(topicName)
-        .setFlowControlSettings(flowControlSettings).build();
-    // [END publisherFlowControlSettings]
+    // [END pubsub_publisher_retry_settings]
     return publisher;
   }
 
   public Publisher getSingleThreadedPublisher(TopicName topicName) throws Exception {
-    // [START singleThreadedPublisher]
+    // [START pubsub_publisher_single_threaded]
     // create a publisher with a single threaded executor
     ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
         .setExecutorThreadCount(1).build();
-    Publisher publisher = Publisher.defaultBuilder(topicName)
+    Publisher publisher = Publisher.newBuilder(topicName)
         .setExecutorProvider(executorProvider).build();
-    // [END singleThreadedPublisher]
+    // [END pubsub_publisher_single_threaded]
     return publisher;
   }
 
   private Publisher createPublisherWithCustomCredentials(TopicName topicName) throws Exception {
-    // [START publisherWithCustomCredentials]
+    // [START pubsub_publisher_custom_credentials]
     // read service account credentials from file
     CredentialsProvider credentialsProvider =
-        FixedCredentialsProvider
-            .create(ServiceAccountCredentials.fromStream(
-                new FileInputStream("credentials.json")));
-    ChannelProvider channelProvider =
-        TopicAdminSettings.defaultChannelProviderBuilder()
-            .setCredentialsProvider(credentialsProvider).build();
+        FixedCredentialsProvider.create(
+            ServiceAccountCredentials.fromStream(new FileInputStream("credentials.json")));
 
-    Publisher publisher = Publisher.defaultBuilder(topicName)
-        .setChannelProvider(channelProvider)
+    Publisher publisher = Publisher.newBuilder(topicName)
+        .setCredentialsProvider(credentialsProvider)
         .build();
-    // [START publisherWithCustomCredentials]
+    // [END pubsub_publisher_custom_credentials]
     return publisher;
   }
 }

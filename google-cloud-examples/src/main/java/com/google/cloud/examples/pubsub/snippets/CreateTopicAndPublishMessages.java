@@ -18,8 +18,8 @@ package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
+import com.google.cloud.pubsub.v1.Publisher;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
@@ -34,28 +34,27 @@ import java.util.List;
 public class CreateTopicAndPublishMessages {
 
   public static void createTopic() throws Exception {
-    TopicName topic = TopicName.create("test-project", "test-topic");
+    TopicName topic = TopicName.of("my-project-id", "my-topic-id");
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.createTopic(topic);
     }
   }
 
   public static void publishMessages() throws Exception {
-    // [START publish]
-    TopicName topicName = TopicName.create("test-project", "test-topic");
+    // [START pubsub_publish]
+    TopicName topicName = TopicName.of("my-project-id", "my-topic-id");
     Publisher publisher = null;
     List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
 
     try {
       // Create a publisher instance with default settings bound to the topic
-      publisher = Publisher.defaultBuilder(topicName).build();
+      publisher = Publisher.newBuilder(topicName).build();
 
       List<String> messages = Arrays.asList("first message", "second message");
 
       // schedule publishing one message at a time : messages get automatically batched
       for (String message : messages) {
         ByteString data = ByteString.copyFromUtf8(message);
-        // message data is converted to base64-encoding
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
 
         // Once published, returns a server-assigned message id (unique within the topic)
@@ -75,7 +74,7 @@ public class CreateTopicAndPublishMessages {
         publisher.shutdown();
       }
     }
-    // [END publish]
+    // [END pubsub_publish]
   }
 
   public static void main(String... args) throws Exception {

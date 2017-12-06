@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>0.17.2-beta-SNAPSHOT</version>
+  <version>0.30.1-beta-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Google Cloud BigQuery</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery</url>
@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.17.2-alpha-SNAPSHOT</version>
+    <version>0.30.1-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquery</site.installationModule>
@@ -35,7 +35,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-bigquery</artifactId>
-      <version>v2-rev330-1.22.0</version>
+      <version>v2-rev347-1.22.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
@@ -58,7 +58,11 @@
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <version>3.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.objenesis</groupId>
+      <artifactId>objenesis</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -73,6 +77,15 @@
       </resource>
     </resources>
     <plugins>
+      <plugin>
+        <!-- Allow script to run, so we can run benchmarks. -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <cleanupDaemonThreads>false</cleanupDaemonThreads>
+          <skip>false</skip>
+        </configuration>
+      </plugin>
        <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
          <version>1.4</version>
@@ -89,6 +102,25 @@
             <goals>
               <goal>run</goal>
             </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/benchmark/java</source>
+              </sources>
+            </configuration>
           </execution>
         </executions>
       </plugin>

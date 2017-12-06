@@ -1,7 +1,7 @@
 Google Cloud Java Client for Translation
 ====================================
 
-Java idiomatic client for [Google Translation](https://cloud.google.com/translate/).
+Java idiomatic client for [Google Translation][cloud-translate].
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,11 +9,8 @@ Java idiomatic client for [Google Translation](https://cloud.google.com/translat
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html)
-
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
+- [Product Documentation][translate-product-docs]
+- [Client Library Documentation][translate-client-lib-docs]
 
 Quickstart
 ----------
@@ -22,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-translate</artifactId>
-  <version>0.17.1-beta</version>
+  <version>1.12.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-translate:0.17.1-beta'
+compile 'com.google.cloud:google-cloud-translate:1.12.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "0.17.1-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "1.12.0"
 ```
 
 Example Application
@@ -42,22 +39,23 @@ Example Application
 Authentication
 --------------
 
-Google Translation requires an API key to be passed with every request. For instructions on how to
-get an API key follow the [Translation quickstart](https://cloud.google.com/translate/v2/quickstart).
+For instructions on how to set up authentication and make authenticated calls,
+follow
+the [Translation quickstart](https://cloud.google.com/translate/v2/quickstart).
 
 About Google Translation
 --------------------
 
-[Google Translation][google-translate] provides a simple programmatic interface for translating an
+[Google Translation][cloud-translate] provides a simple programmatic interface for translating an
 arbitrary string into any supported language. Translation is highly responsive, so websites and
 applications can integrate with Translation API for fast, dynamic translation of source text from the
 source language to a target language (e.g., French to English). Language detection is also
-available In cases where the source language is unknown.
+available in cases where the source language is unknown.
 
-See the [Translation quickstart](https://cloud.google.com/translate/v2/quickstart) for more details
+See the [Translation quickstart][cloud-translate-quickstart] for more details
 on how to activate Google Translation for your project.
 
-See the ``google-cloud`` API [Translation documentation][translate-api] to learn how to interact with
+See the [Translation client library docs][translate-client-lib-docs] to learn how to interact with
 the Google Translation using this Client Library.
 
 Getting Started
@@ -79,7 +77,7 @@ section to add `google-cloud-translate` as a dependency in your code.
 
 #### Creating an authorized service object
 To make authenticated requests to Google Translation, you must create a service object with
-credentials or with an API key. The simplest way to authenticate is to use
+credentials or use an API key. The simplest way to authenticate is to use
 [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
 These credentials are automatically inferred from your environment, so you only need the following
 code to create your service object:
@@ -110,9 +108,16 @@ Add the following import at the top of your file:
 import com.google.cloud.translate.Detection;
 ```
 
+Then pick a text sample:
+
+```java
+final String mysteriousText = "Hola Mundo";
+```
+
 Then add the following code to detect the text's language:
 
 ```java
+Detection detection = translate.detect(mysteriousText);
 String detectedLanguage = detection.getLanguage();
 ```
 #### Translating text
@@ -127,26 +132,30 @@ import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.Translation;
 ```
 
-Then add the following code to translate a text (specifying its source language):
+Then add the following code to translate the text, specifying the previously detected language (`detectedLanguage`) as its source language and English as the target language (providing the source language is optional, if it is not specified the service will try to detect it automatically):
 
 ```java
 Translation translation = translate.translate(
-    "World",
-    TranslateOption.sourceLanguage("en"),
-    TranslateOption.targetLanguage(detectedLanguage));
+    mysteriousText,
+    TranslateOption.sourceLanguage(detectedLanguage),
+    TranslateOption.targetLanguage("en"));
 ```
 
 #### Complete source code
 
 In
 [DetectLanguageAndTranslate.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
-we put together all the code shown above into one program. The program assumes that either default
-application credentials or a valid api key are available.
+we put together all the code shown above into one program. The program assumes that either Application
+Default Credentials or a valid API key are available.
 
 Troubleshooting
 ---------------
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+
+Transport
+---------
+Translate uses HTTP for the transport layer.
 
 Java Versions
 -------------
@@ -189,6 +198,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-translate
 [cloud-platform]: https://cloud.google.com/
 
-[google-translate]: https://cloud.google.com/translate/
-[google-translate-docs]: https://cloud.google.com/translate/docs/
-[translate-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html
+[cloud-translate]: https://cloud.google.com/translate/
+[cloud-translate-quickstart]: https://cloud.google.com/translate/v2/quickstart
+[translate-product-docs]: https://cloud.google.com/translate/docs/
+[translate-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/translate/package-summary.html

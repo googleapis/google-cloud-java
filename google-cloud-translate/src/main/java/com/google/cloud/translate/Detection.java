@@ -26,8 +26,8 @@ import java.util.Objects;
  * Information about a language detection. Objects of this class contain the detected language and
  * possibly a confidence level.
  *
- * <a href="https://cloud.google.com/translate/v2/detecting-language-with-rest">Detecting Language
- *     </a>
+ * @see <a href="https://cloud.google.com/translate/v2/detecting-language-with-rest">Detecting
+ *     Language </a>
  */
 public class Detection implements Serializable {
 

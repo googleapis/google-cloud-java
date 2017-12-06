@@ -1,0 +1,815 @@
+/*
+ * Copyright 2017, Google LLC All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.dialogflow.v2beta1;
+
+import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListEntityTypesPagedResponse;
+
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.gax.core.PropertiesProvider;
+import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.v2beta1.stub.EntityTypesStub;
+import com.google.cloud.dialogflow.v2beta1.stub.GrpcEntityTypesStub;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
+import java.io.IOException;
+import java.util.List;
+import javax.annotation.Generated;
+import org.threeten.bp.Duration;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * Settings class to configure an instance of {@link EntityTypesClient}.
+ *
+ * <p>The default instance has everything set to sensible defaults:
+ *
+ * <ul>
+ *   <li>The default service address (dialogflow.googleapis.com) and default port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ * </ul>
+ *
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of getEntityType to 30 seconds:
+ *
+ * <pre>
+ * <code>
+ * EntityTypesSettings.Builder entityTypesSettingsBuilder =
+ *     EntityTypesSettings.newBuilder();
+ * entityTypesSettingsBuilder.getEntityTypeSettings().getRetrySettingsBuilder()
+ *     .setTotalTimeout(Duration.ofSeconds(30));
+ * EntityTypesSettings entityTypesSettings = entityTypesSettingsBuilder.build();
+ * </code>
+ * </pre>
+ */
+@Generated("by GAPIC v0.0.5")
+@BetaApi
+public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
+  /** The default scopes of the service. */
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
+      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+
+  private static final String DEFAULT_GAPIC_NAME = "gapic";
+  private static final String DEFAULT_GAPIC_VERSION = "";
+
+  private static final String PROPERTIES_FILE = "/com/google/cloud/dialogflow/project.properties";
+  private static final String META_VERSION_KEY = "artifact.version";
+
+  private static String gapicVersion;
+
+  private final PagedCallSettings<
+          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+      listEntityTypesSettings;
+  private final UnaryCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeSettings;
+  private final UnaryCallSettings<CreateEntityTypeRequest, EntityType> createEntityTypeSettings;
+  private final UnaryCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeSettings;
+  private final UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings;
+  private final UnaryCallSettings<BatchUpdateEntityTypesRequest, Operation>
+      batchUpdateEntityTypesSettings;
+  private final OperationCallSettings<
+          BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
+      batchUpdateEntityTypesOperationSettings;
+  private final UnaryCallSettings<BatchDeleteEntityTypesRequest, Operation>
+      batchDeleteEntityTypesSettings;
+  private final OperationCallSettings<BatchDeleteEntityTypesRequest, Empty, Struct>
+      batchDeleteEntityTypesOperationSettings;
+  private final UnaryCallSettings<BatchCreateEntitiesRequest, Operation>
+      batchCreateEntitiesSettings;
+  private final OperationCallSettings<BatchCreateEntitiesRequest, Empty, Struct>
+      batchCreateEntitiesOperationSettings;
+  private final UnaryCallSettings<BatchUpdateEntitiesRequest, Operation>
+      batchUpdateEntitiesSettings;
+  private final OperationCallSettings<BatchUpdateEntitiesRequest, Empty, Struct>
+      batchUpdateEntitiesOperationSettings;
+  private final UnaryCallSettings<BatchDeleteEntitiesRequest, Operation>
+      batchDeleteEntitiesSettings;
+  private final OperationCallSettings<BatchDeleteEntitiesRequest, Empty, Struct>
+      batchDeleteEntitiesOperationSettings;
+
+  /** Returns the object with the settings used for calls to listEntityTypes. */
+  public PagedCallSettings<
+          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+      listEntityTypesSettings() {
+    return listEntityTypesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEntityType. */
+  public UnaryCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeSettings() {
+    return getEntityTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createEntityType. */
+  public UnaryCallSettings<CreateEntityTypeRequest, EntityType> createEntityTypeSettings() {
+    return createEntityTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEntityType. */
+  public UnaryCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeSettings() {
+    return updateEntityTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEntityType. */
+  public UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
+    return deleteEntityTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateEntityTypes. */
+  public UnaryCallSettings<BatchUpdateEntityTypesRequest, Operation>
+      batchUpdateEntityTypesSettings() {
+    return batchUpdateEntityTypesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateEntityTypes. */
+  public OperationCallSettings<
+          BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
+      batchUpdateEntityTypesOperationSettings() {
+    return batchUpdateEntityTypesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteEntityTypes. */
+  public UnaryCallSettings<BatchDeleteEntityTypesRequest, Operation>
+      batchDeleteEntityTypesSettings() {
+    return batchDeleteEntityTypesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteEntityTypes. */
+  public OperationCallSettings<BatchDeleteEntityTypesRequest, Empty, Struct>
+      batchDeleteEntityTypesOperationSettings() {
+    return batchDeleteEntityTypesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateEntities. */
+  public UnaryCallSettings<BatchCreateEntitiesRequest, Operation> batchCreateEntitiesSettings() {
+    return batchCreateEntitiesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateEntities. */
+  public OperationCallSettings<BatchCreateEntitiesRequest, Empty, Struct>
+      batchCreateEntitiesOperationSettings() {
+    return batchCreateEntitiesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateEntities. */
+  public UnaryCallSettings<BatchUpdateEntitiesRequest, Operation> batchUpdateEntitiesSettings() {
+    return batchUpdateEntitiesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateEntities. */
+  public OperationCallSettings<BatchUpdateEntitiesRequest, Empty, Struct>
+      batchUpdateEntitiesOperationSettings() {
+    return batchUpdateEntitiesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteEntities. */
+  public UnaryCallSettings<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesSettings() {
+    return batchDeleteEntitiesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteEntities. */
+  public OperationCallSettings<BatchDeleteEntitiesRequest, Empty, Struct>
+      batchDeleteEntitiesOperationSettings() {
+    return batchDeleteEntitiesOperationSettings;
+  }
+
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+  public EntityTypesStub createStub() throws IOException {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcEntityTypesStub.create(this);
+    } else {
+      throw new UnsupportedOperationException(
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
+    }
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return InstantiatingExecutorProvider.newBuilder();
+  }
+
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "dialogflow.googleapis.com:443";
+  }
+
+  /** Returns the default service scopes. */
+  public static List<String> getDefaultServiceScopes() {
+    return DEFAULT_SERVICE_SCOPES;
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder();
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
+        .setApiClientHeaderLineKey("x-goog-api-client")
+        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
+  }
+
+  private static String getGapicVersion() {
+    if (gapicVersion == null) {
+      gapicVersion =
+          PropertiesProvider.loadProperty(
+              EntityTypesSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
+      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
+    }
+    return gapicVersion;
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder() {
+    return Builder.createDefault();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
+  /** Returns a builder containing all the values of this settings class. */
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  private EntityTypesSettings(Builder settingsBuilder) throws IOException {
+    super(settingsBuilder);
+
+    listEntityTypesSettings = settingsBuilder.listEntityTypesSettings().build();
+    getEntityTypeSettings = settingsBuilder.getEntityTypeSettings().build();
+    createEntityTypeSettings = settingsBuilder.createEntityTypeSettings().build();
+    updateEntityTypeSettings = settingsBuilder.updateEntityTypeSettings().build();
+    deleteEntityTypeSettings = settingsBuilder.deleteEntityTypeSettings().build();
+    batchUpdateEntityTypesSettings = settingsBuilder.batchUpdateEntityTypesSettings().build();
+    batchUpdateEntityTypesOperationSettings =
+        settingsBuilder.batchUpdateEntityTypesOperationSettings().build();
+    batchDeleteEntityTypesSettings = settingsBuilder.batchDeleteEntityTypesSettings().build();
+    batchDeleteEntityTypesOperationSettings =
+        settingsBuilder.batchDeleteEntityTypesOperationSettings().build();
+    batchCreateEntitiesSettings = settingsBuilder.batchCreateEntitiesSettings().build();
+    batchCreateEntitiesOperationSettings =
+        settingsBuilder.batchCreateEntitiesOperationSettings().build();
+    batchUpdateEntitiesSettings = settingsBuilder.batchUpdateEntitiesSettings().build();
+    batchUpdateEntitiesOperationSettings =
+        settingsBuilder.batchUpdateEntitiesOperationSettings().build();
+    batchDeleteEntitiesSettings = settingsBuilder.batchDeleteEntitiesSettings().build();
+    batchDeleteEntitiesOperationSettings =
+        settingsBuilder.batchDeleteEntitiesOperationSettings().build();
+  }
+
+  private static final PagedListDescriptor<
+          ListEntityTypesRequest, ListEntityTypesResponse, EntityType>
+      LIST_ENTITY_TYPES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListEntityTypesRequest, ListEntityTypesResponse, EntityType>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEntityTypesRequest injectToken(
+                ListEntityTypesRequest payload, String token) {
+              return ListEntityTypesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEntityTypesRequest injectPageSize(
+                ListEntityTypesRequest payload, int pageSize) {
+              return ListEntityTypesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEntityTypesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEntityTypesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EntityType> extractResources(ListEntityTypesResponse payload) {
+              return payload.getEntityTypesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+      LIST_ENTITY_TYPES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>() {
+            @Override
+            public ApiFuture<ListEntityTypesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse> callable,
+                ListEntityTypesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEntityTypesResponse> futureResponse) {
+              PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> pageContext =
+                  PageContext.create(callable, LIST_ENTITY_TYPES_PAGE_STR_DESC, request, context);
+              return ListEntityTypesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  /** Builder for EntityTypesSettings. */
+  public static class Builder extends ClientSettings.Builder<EntityTypesSettings, Builder> {
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+
+    private final PagedCallSettings.Builder<
+            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+        listEntityTypesSettings;
+    private final UnaryCallSettings.Builder<GetEntityTypeRequest, EntityType> getEntityTypeSettings;
+    private final UnaryCallSettings.Builder<CreateEntityTypeRequest, EntityType>
+        createEntityTypeSettings;
+    private final UnaryCallSettings.Builder<UpdateEntityTypeRequest, EntityType>
+        updateEntityTypeSettings;
+    private final UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty>
+        deleteEntityTypeSettings;
+    private final UnaryCallSettings.Builder<BatchUpdateEntityTypesRequest, Operation>
+        batchUpdateEntityTypesSettings;
+    private final OperationCallSettings.Builder<
+            BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
+        batchUpdateEntityTypesOperationSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteEntityTypesRequest, Operation>
+        batchDeleteEntityTypesSettings;
+    private final OperationCallSettings.Builder<BatchDeleteEntityTypesRequest, Empty, Struct>
+        batchDeleteEntityTypesOperationSettings;
+    private final UnaryCallSettings.Builder<BatchCreateEntitiesRequest, Operation>
+        batchCreateEntitiesSettings;
+    private final OperationCallSettings.Builder<BatchCreateEntitiesRequest, Empty, Struct>
+        batchCreateEntitiesOperationSettings;
+    private final UnaryCallSettings.Builder<BatchUpdateEntitiesRequest, Operation>
+        batchUpdateEntitiesSettings;
+    private final OperationCallSettings.Builder<BatchUpdateEntitiesRequest, Empty, Struct>
+        batchUpdateEntitiesOperationSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteEntitiesRequest, Operation>
+        batchDeleteEntitiesSettings;
+    private final OperationCallSettings.Builder<BatchDeleteEntitiesRequest, Empty, Struct>
+        batchDeleteEntitiesOperationSettings;
+
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
+      definitions.put(
+          "idempotent",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      RETRYABLE_CODE_DEFINITIONS = definitions.build();
+    }
+
+    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
+      RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("default", settings);
+      RETRY_PARAM_DEFINITIONS = definitions.build();
+    }
+
+    private Builder() {
+      this((ClientContext) null);
+    }
+
+    private Builder(ClientContext clientContext) {
+      super(clientContext);
+
+      listEntityTypesSettings = PagedCallSettings.newBuilder(LIST_ENTITY_TYPES_PAGE_STR_FACT);
+
+      getEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      createEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchUpdateEntityTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchUpdateEntityTypesOperationSettings = OperationCallSettings.newBuilder();
+
+      batchDeleteEntityTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchDeleteEntityTypesOperationSettings = OperationCallSettings.newBuilder();
+
+      batchCreateEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchCreateEntitiesOperationSettings = OperationCallSettings.newBuilder();
+
+      batchUpdateEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchUpdateEntitiesOperationSettings = OperationCallSettings.newBuilder();
+
+      batchDeleteEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchDeleteEntitiesOperationSettings = OperationCallSettings.newBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listEntityTypesSettings,
+              getEntityTypeSettings,
+              createEntityTypeSettings,
+              updateEntityTypeSettings,
+              deleteEntityTypeSettings,
+              batchUpdateEntityTypesSettings,
+              batchDeleteEntityTypesSettings,
+              batchCreateEntitiesSettings,
+              batchUpdateEntitiesSettings,
+              batchDeleteEntitiesSettings);
+
+      initDefaults(this);
+    }
+
+    private static Builder createDefault() {
+      Builder builder = new Builder((ClientContext) null);
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+
+      builder
+          .listEntityTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getEntityTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createEntityTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateEntityTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteEntityTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .batchUpdateEntityTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .batchDeleteEntityTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .batchCreateEntitiesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .batchUpdateEntitiesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .batchDeleteEntitiesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+      builder
+          .batchUpdateEntityTypesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchUpdateEntityTypesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  BatchUpdateEntityTypesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
+          .batchDeleteEntityTypesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchDeleteEntityTypesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
+          .batchCreateEntitiesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchCreateEntitiesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
+          .batchUpdateEntitiesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchUpdateEntitiesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
+          .batchDeleteEntitiesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchDeleteEntitiesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    private Builder(EntityTypesSettings settings) {
+      super(settings);
+
+      listEntityTypesSettings = settings.listEntityTypesSettings.toBuilder();
+      getEntityTypeSettings = settings.getEntityTypeSettings.toBuilder();
+      createEntityTypeSettings = settings.createEntityTypeSettings.toBuilder();
+      updateEntityTypeSettings = settings.updateEntityTypeSettings.toBuilder();
+      deleteEntityTypeSettings = settings.deleteEntityTypeSettings.toBuilder();
+      batchUpdateEntityTypesSettings = settings.batchUpdateEntityTypesSettings.toBuilder();
+      batchUpdateEntityTypesOperationSettings =
+          settings.batchUpdateEntityTypesOperationSettings.toBuilder();
+      batchDeleteEntityTypesSettings = settings.batchDeleteEntityTypesSettings.toBuilder();
+      batchDeleteEntityTypesOperationSettings =
+          settings.batchDeleteEntityTypesOperationSettings.toBuilder();
+      batchCreateEntitiesSettings = settings.batchCreateEntitiesSettings.toBuilder();
+      batchCreateEntitiesOperationSettings =
+          settings.batchCreateEntitiesOperationSettings.toBuilder();
+      batchUpdateEntitiesSettings = settings.batchUpdateEntitiesSettings.toBuilder();
+      batchUpdateEntitiesOperationSettings =
+          settings.batchUpdateEntitiesOperationSettings.toBuilder();
+      batchDeleteEntitiesSettings = settings.batchDeleteEntitiesSettings.toBuilder();
+      batchDeleteEntitiesOperationSettings =
+          settings.batchDeleteEntitiesOperationSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listEntityTypesSettings,
+              getEntityTypeSettings,
+              createEntityTypeSettings,
+              updateEntityTypeSettings,
+              deleteEntityTypeSettings,
+              batchUpdateEntityTypesSettings,
+              batchDeleteEntityTypesSettings,
+              batchCreateEntitiesSettings,
+              batchUpdateEntitiesSettings,
+              batchDeleteEntitiesSettings);
+    }
+
+    /**
+     * Applies the given settings updater function to all of the unary API methods in this service.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
+     */
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
+      return this;
+    }
+
+    /** Returns the builder for the settings used for calls to listEntityTypes. */
+    public PagedCallSettings.Builder<
+            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+        listEntityTypesSettings() {
+      return listEntityTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEntityType. */
+    public UnaryCallSettings.Builder<GetEntityTypeRequest, EntityType> getEntityTypeSettings() {
+      return getEntityTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createEntityType. */
+    public UnaryCallSettings.Builder<CreateEntityTypeRequest, EntityType>
+        createEntityTypeSettings() {
+      return createEntityTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEntityType. */
+    public UnaryCallSettings.Builder<UpdateEntityTypeRequest, EntityType>
+        updateEntityTypeSettings() {
+      return updateEntityTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEntityType. */
+    public UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
+      return deleteEntityTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateEntityTypes. */
+    public UnaryCallSettings.Builder<BatchUpdateEntityTypesRequest, Operation>
+        batchUpdateEntityTypesSettings() {
+      return batchUpdateEntityTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateEntityTypes. */
+    public OperationCallSettings.Builder<
+            BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
+        batchUpdateEntityTypesOperationSettings() {
+      return batchUpdateEntityTypesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteEntityTypes. */
+    public UnaryCallSettings.Builder<BatchDeleteEntityTypesRequest, Operation>
+        batchDeleteEntityTypesSettings() {
+      return batchDeleteEntityTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteEntityTypes. */
+    public OperationCallSettings.Builder<BatchDeleteEntityTypesRequest, Empty, Struct>
+        batchDeleteEntityTypesOperationSettings() {
+      return batchDeleteEntityTypesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateEntities. */
+    public UnaryCallSettings.Builder<BatchCreateEntitiesRequest, Operation>
+        batchCreateEntitiesSettings() {
+      return batchCreateEntitiesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateEntities. */
+    public OperationCallSettings.Builder<BatchCreateEntitiesRequest, Empty, Struct>
+        batchCreateEntitiesOperationSettings() {
+      return batchCreateEntitiesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateEntities. */
+    public UnaryCallSettings.Builder<BatchUpdateEntitiesRequest, Operation>
+        batchUpdateEntitiesSettings() {
+      return batchUpdateEntitiesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateEntities. */
+    public OperationCallSettings.Builder<BatchUpdateEntitiesRequest, Empty, Struct>
+        batchUpdateEntitiesOperationSettings() {
+      return batchUpdateEntitiesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteEntities. */
+    public UnaryCallSettings.Builder<BatchDeleteEntitiesRequest, Operation>
+        batchDeleteEntitiesSettings() {
+      return batchDeleteEntitiesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteEntities. */
+    public OperationCallSettings.Builder<BatchDeleteEntitiesRequest, Empty, Struct>
+        batchDeleteEntitiesOperationSettings() {
+      return batchDeleteEntitiesOperationSettings;
+    }
+
+    @Override
+    public EntityTypesSettings build() throws IOException {
+      return new EntityTypesSettings(this);
+    }
+  }
+}

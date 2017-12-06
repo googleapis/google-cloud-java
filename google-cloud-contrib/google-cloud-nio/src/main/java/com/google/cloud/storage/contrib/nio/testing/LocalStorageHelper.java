@@ -23,6 +23,31 @@ import com.google.cloud.storage.StorageOptions;
 /**
  * Utility to create an in-memory storage configuration for testing. Storage options can be
  * obtained via the {@link #getOptions()} method. Returned options will point to FakeStorageRpc.
+ *
+ * <p>Note, the created in-memory storage configuration supports limited set of operations and is <b>not</b> thread-safe:
+ * <ul>
+ * <li>Supported operations
+ *   <ul>
+ *   <li>object create
+ *   <li>object get
+ *   <li>object delete
+ *   <li>list the contents of a bucket
+ *   </ul>
+ * <li>Unsupported operations
+ *   <ul>
+ *   <li>bucket create
+ *   <li>bucket get
+ *   <li>bucket delete
+ *   <li>list all buckets
+ *   <li>generations
+ *   <li>file attributes
+ *   <li>patch
+ *   <li>continueRewrite
+ *   <li>createBatch
+ *   <li>checksums, etags
+ *   <li>IAM operations</li>
+ *   </ul>
+ * </ul>
  */
 public final class LocalStorageHelper {
 

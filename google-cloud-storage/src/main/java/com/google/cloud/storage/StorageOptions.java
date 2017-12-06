@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage;
 
+import com.google.cloud.NoCredentials;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
@@ -105,6 +106,13 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
     return HttpTransportOptions.newBuilder().build();
   }
 
+  // Project ID is only required for creating buckets, so we don't require it for creating the
+  // service.
+  @Override
+  protected boolean projectIdRequired() {
+    return false;
+  }
+
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
@@ -119,6 +127,13 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
    */
   public static StorageOptions getDefaultInstance() {
     return newBuilder().build();
+  }
+
+  /**
+   * Returns a unauthenticated {@code StorageOptions} instance.
+   */
+  public static StorageOptions getUnauthenticatedInstance() {
+    return newBuilder().setCredentials(NoCredentials.getInstance()).build();
   }
 
   @SuppressWarnings("unchecked")

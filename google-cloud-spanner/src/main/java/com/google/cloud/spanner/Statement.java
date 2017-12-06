@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkState;
 
 import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
 import com.google.common.collect.ImmutableMap;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;

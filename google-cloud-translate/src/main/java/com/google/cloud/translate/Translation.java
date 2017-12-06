@@ -26,10 +26,11 @@ import java.util.Objects;
 
 /**
  * Information about a translation. Objects of this class contain the translated text and the source
- * language's code. Source language's code can be the one provided by the user (if any) or the one
- * detected by the Google Translation service.
+ * language's code. The source language's code can be optionally specified by the user or
+ * automatically detected by the Google Translation service.
  *
- * <a href="https://cloud.google.com/translate/v2/translating-text-with-rest">Translating Text</a>
+ * @see <a href="https://cloud.google.com/translate/v2/translating-text-with-rest">Translating
+ * Text</a>
  */
 public class Translation implements Serializable {
 
@@ -71,10 +72,10 @@ public class Translation implements Serializable {
 
   /**
    * Returns the translation model used to translate the text. This value is only available if
-   * {@link Translate.TranslateOption#model(String)} was passed to
+   * a result from {@link Translate.TranslateOption#model(String)} was passed to
    * {@link Translate#translate(List, Translate.TranslateOption...)}.
    *
-   * <p>Please notice that you must be whitelisted to use the
+   * <p>Please note that you must be whitelisted to use the
    * {@link Translate.TranslateOption#model(String)} option, otherwise translation will fail.
    */
   public String getModel() {

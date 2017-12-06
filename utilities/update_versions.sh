@@ -72,6 +72,9 @@ BETA_VERSION=""
 RC_VERSION=""
 GA_VERSION=""
 
+# uncomment module for GAE testing apps to enable detection (re-commented below)
+sed -i -e 's:<!--<module>google-cloud-testing</module>-->:<module>google-cloud-testing</module>:' pom.xml
+
 for i in "$@"
 do
 case $i in
@@ -107,7 +110,7 @@ echo -e "\n${BOLD}Executing${NC} mvn -q clean install -DskipTests -Dmaven.javado
 mvn -q clean install -DskipTests -Dmaven.javadoc.skip=true
 
 echo -e "\n${BOLD}Checking modules${NC}"
-modules=$(mvn dependency:tree | grep "\[INFO\] com\.google\." | sed -r "s/.*:(.*):(.*):(.*)/\1:\3/g")
+modules=$(mvn -B dependency:tree | grep "\[INFO\] com\.google\." | sed -r "s/.*:(.*):(.*):(.*)/\1:\3/g")
 declare -A module_version_map
 root_module=""
 for item in ${modules[*]}
@@ -269,3 +272,6 @@ for item in ${modules[*]}; do
     fi
   fi
 done
+
+# re-comment module for GAE testing apps
+sed -i -e 's:<module>google-cloud-testing</module>:<!--<module>google-cloud-testing</module>-->:' pom.xml

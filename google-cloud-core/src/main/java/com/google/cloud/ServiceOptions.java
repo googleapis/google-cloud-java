@@ -20,6 +20,13 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestFactory;
+import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
 import com.google.api.core.InternalApi;
@@ -39,7 +46,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.lang.reflect.Method;
 import java.nio.charset.Charset;
 import java.util.Locale;
 import java.util.Objects;
@@ -60,6 +66,8 @@ import org.threeten.bp.Duration;
  */
 public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     OptionsT extends ServiceOptions<ServiceT, OptionsT>> implements Serializable {
+
+  public static final String CREDENTIAL_ENV_NAME = "GOOGLE_APPLICATION_CREDENTIALS";
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
@@ -84,7 +92,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private final String serviceRpcFactoryClassName;
   private final String serviceFactoryClassName;
   private final ApiClock clock;
-  private final Credentials credentials;
+  protected Credentials credentials;
   private final TransportOptions transportOptions;
 
   private transient ServiceRpcFactory<OptionsT> serviceRpcFactory;
@@ -105,7 +113,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
 
     private String projectId;
     private String host;
-    private Credentials credentials;
+    protected Credentials credentials;
     private RetrySettings retrySettings;
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<OptionsT> serviceRpcFactory;
@@ -379,35 +387,56 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   protected static String getAppEngineProjectId() {
-    try {
-      Class<?> factoryClass =
-          Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
-      Class<?> serviceClass =
-          Class.forName("com.google.appengine.api.appidentity.AppIdentityService");
-      Method method = factoryClass.getMethod("getAppIdentityService");
-      Object appIdentityService = method.invoke(null);
-      method = serviceClass.getMethod("getServiceAccountName");
-      String serviceAccountName = (String) method.invoke(appIdentityService);
-      int indexOfAtSign = serviceAccountName.indexOf('@');
-      return serviceAccountName.substring(0, indexOfAtSign);
-    } catch (ClassNotFoundException exception) {
-      if (System.getProperty("com.google.appengine.runtime.version") != null) {
-        // Could not resolve appengine classes under GAE environment.
-        throw new RuntimeException("Google App Engine runtime detected "
-            + "(the environment variable \"com.google.appengine.runtime.version\" is set), "
-            + "but unable to resolve appengine-sdk classes. "
-            + "For more details see "
-            + "https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/APPENGINE.md");
+    String projectId = null;
+    if (PlatformInformation.isOnGAEStandard7()) {
+      projectId = getAppEngineProjectIdFromAppId();
+    } else {
+      //for GAE flex and standard Java 8 environment
+      projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
+      if (projectId == null) {
+        projectId = System.getenv("GCLOUD_PROJECT");
       }
-      return null;
-    } catch (Exception ignore) {
-      return null;
+      if (projectId == null) {
+        projectId = getAppEngineProjectIdFromAppId();
+      }
+      if (projectId == null) {
+        try {
+          projectId = getAppEngineProjectIdFromMetadataServer();
+        } catch (IOException ignore) {
+          projectId = null;
+        }
+      }
     }
+    return projectId;
+  }
+
+  protected static String getAppEngineProjectIdFromAppId() {
+    String projectId = getAppEngineAppId();
+    if (projectId != null && projectId.contains(":")) {
+      int colonIndex = projectId.indexOf(":");
+      projectId = projectId.substring(colonIndex + 1);
+    }
+    return projectId;
+  }
+
+  private static String getAppEngineProjectIdFromMetadataServer() throws IOException {
+    String metadata = "http://metadata.google.internal";
+    String projectIdURL = "/computeMetadata/v1/project/project-id";
+    GenericUrl url = new GenericUrl(metadata + projectIdURL);
+
+    HttpTransport netHttpTransport = new NetHttpTransport();
+    HttpRequestFactory requestFactory = netHttpTransport.createRequestFactory();
+    HttpRequest request = requestFactory.buildGetRequest(url)
+            .setConnectTimeout(500)
+            .setReadTimeout(500)
+            .setHeaders(new HttpHeaders().set("Metadata-Flavor", "Google"));
+    HttpResponse response = request.execute();
+    return response.parseAsString();
   }
 
   protected static String getServiceAccountProjectId() {
     String project = null;
-    String credentialsPath = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
+    String credentialsPath = System.getenv(CREDENTIAL_ENV_NAME);
     if (credentialsPath != null) {
       try (InputStream credentialsStream = new FileInputStream(credentialsPath)) {
         JSONObject json = new JSONObject(new JSONTokener(credentialsStream));
@@ -420,6 +449,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
 
+  /**
+   * Returns a Service object for the current service. For instance, when using Google Cloud
+   * Storage, it returns a Storage object.
+   */
   @SuppressWarnings("unchecked")
   public ServiceT getService() {
     if (service == null) {
@@ -429,6 +462,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
 
+  /**
+   * Returns a Service RPC object for the current service. For instance, when using Google Cloud
+   * Storage, it returns a StorageRpc object.
+   */
   @SuppressWarnings("unchecked")
   public ServiceRpc getRpc() {
     if (rpc == null) {

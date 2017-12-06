@@ -16,14 +16,15 @@
 
 package com.google.cloud.storage.contrib.nio;
 
-import static com.google.common.base.Preconditions.checkArgument;
-
 import com.google.cloud.ReadChannel;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
+import com.google.common.annotations.VisibleForTesting;
 
+import javax.annotation.CheckReturnValue;
+import javax.annotation.concurrent.ThreadSafe;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
@@ -31,8 +32,12 @@ import java.nio.channels.NonWritableChannelException;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.NoSuchFileException;
 
-import javax.annotation.CheckReturnValue;
-import javax.annotation.concurrent.ThreadSafe;
+import javax.net.ssl.SSLException;
+import java.io.EOFException;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * Cloud Storage read channel.
@@ -45,9 +50,10 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   private final Storage gcsStorage;
   private final BlobId file;
   // max # of times we may reopen the file
-  private final int maxChannelReopens;
-  // how many times we re-opened the file
-  private int reopens;
+  @VisibleForTesting
+  final int maxChannelReopens;
+  // max # of times we may retry a GCS operation
+  final int maxRetries;
   private ReadChannel channel;
   private long position;
   private long size;
@@ -66,8 +72,8 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     this.gcsStorage = gcsStorage;
     this.file = file;
     this.position = position;
-    this.reopens = 0;
     this.maxChannelReopens = maxChannelReopens;
+    this.maxRetries = Math.max(3, maxChannelReopens);
     // XXX: Reading size and opening file should be atomic.
     this.size = fetchSize(gcsStorage, file);
     innerOpen();
@@ -76,7 +82,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   private void innerOpen() throws IOException {
     this.channel = gcsStorage.reader(file);
     if (position > 0) {
-      channel.seek((int) position);
+      channel.seek(position);
     }
   }
 
@@ -100,8 +106,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     synchronized (this) {
       checkOpen();
       int amt;
-      int retries = 0;
-      int maxRetries = 3;
+      final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(maxRetries, maxChannelReopens);
       dst.mark();
       while (true) {
         try {
@@ -109,19 +114,8 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
           amt = channel.read(dst);
           break;
         } catch (StorageException exs) {
-          if (exs.getMessage().contains("Connection closed prematurely") && reopens < maxChannelReopens) {
-            // this error isn't marked as retryable since the channel is closed;
-            // but here at this higher level we can retry it.
-            reopens++;
-            sleepForAttempt(reopens);
-            innerOpen();
-            continue;
-          } else if ((exs.getCode() == 500 || exs.getCode() == 503)  && retries < maxRetries) {
-            retries++;
-            sleepForAttempt(retries);
-            continue;
-          }
-          throw exs;
+          // Will rethrow a StorageException if all retries/reopens are exhausted
+          handleStorageException(exs, retryHandler);
         }
       }
       if (amt > 0) {
@@ -132,15 +126,6 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
         }
       }
       return amt;
-    }
-  }
-
-  private void sleepForAttempt(int attempt) {
-    try {
-      Thread.sleep((attempt - 1) * 500);
-    } catch (InterruptedException iex) {
-      // reset interrupt flag
-      Thread.currentThread().interrupt();
     }
   }
 
@@ -190,11 +175,41 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     }
   }
 
-  private static long fetchSize(Storage gcsStorage, BlobId file) throws IOException {
-    BlobInfo blobInfo = gcsStorage.get(file);
-    if (blobInfo == null) {
-      throw new NoSuchFileException(String.format("gs://%s/%s", file.getBucket(), file.getName()));
+  private long fetchSize(Storage gcsStorage, BlobId file) throws IOException {
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(maxRetries, maxChannelReopens);
+
+    while (true) {
+      try {
+        BlobInfo blobInfo = gcsStorage.get(file);
+        if ( blobInfo == null ) {
+          throw new NoSuchFileException(String.format("gs://%s/%s", file.getBucket(), file.getName()));
+        }
+        return blobInfo.getSize();
+      } catch (StorageException exs) {
+        // Will rethrow a StorageException if all retries/reopens are exhausted
+        retryHandler.handleStorageException(exs);
+        // there's nothing to reopen yet, but retry even for a reopenable error.
+      }
     }
-    return blobInfo.getSize();
+
+  }
+
+  /**
+   * Handles a StorageException by reopening the channel or sleeping for a retry attempt if retry count
+   * is not exhausted. Throws a StorageException if all reopens/retries are exhausted, or if the
+   * StorageException is not reopenable/retryable.
+   *
+   * @param exs StorageException thrown by a GCS operation
+   * @param retryHandler Keeps track of reopens/retries performed so far on this operation
+   * @throws StorageException if all reopens/retries are exhausted, or if exs is not reopenable/retryable
+   * @throws IOException if a reopen operation fails
+   */
+  private void handleStorageException(final StorageException exs, final CloudStorageRetryHandler retryHandler) throws IOException {
+    boolean shouldReopen = retryHandler.handleStorageException(exs);
+    if (shouldReopen) {
+      // these errors aren't marked as retryable since the channel is closed;
+      // but here at this higher level we can retry them.
+      innerOpen();
+    }
   }
 }

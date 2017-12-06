@@ -147,17 +147,33 @@ $ gcloud beta emulators pubsub env-init
 
 3. Point your client to the emulator.
 ```java
-ChannelProvider channelProvider =
-    // SubscriptionAdminSettings works too.
-    TopicAdminSettings.defaultChannelProviderBuilder()
-        .setEndpoint(System.getenv("PUBSUB_EMULATOR_HOST"))
-        .setCredentialsProvider(
-            FixedCredentialsProvider.create(NoCredentials.getInstance()))
-        .build();
-TopicAdminClient topicClient = TopicAdminClient.create(
-    TopicAdminSettings.defaultBuilder().setChannelProvider(channelProvider).build());
-Publisher publisher =
-    Publisher.newBuilder(topicName).setChannelProvider(channelProvider).build();
+String hostport = System.getenv("PUBSUB_EMULATOR_HOST");
+ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext(true).build();
+try {
+  ChannelProvider channelProvider = FixedChannelProvider.create(channel);
+  CredentialsProvider credentialsProvider = new NoCredentialsProvider();
+
+  // Similarly for SubscriptionAdminSettings
+  TopicAdminClient topicClient = TopicAdminClient.create(
+    TopicAdminSettings
+      .defaultBuilder()
+        .setTransportProvider(
+            GrpcTransportProvider.newBuilder()
+                .setChannelProvider(channelProvider)
+                .build())
+      .setCredentialsProvider(credentialsProvider)
+      .build());
+
+  // Similarly for Subscriber
+  Publisher publisher =
+    Publisher
+      .defaultBuilder(topicName)
+      .setChannelProvider(channelProvider)
+      .setCredentialsProvider(credentialsProvider)
+      .build();
+} finally {
+  channel.shutdown();
+}
 ```
 
 ### Testing code that uses Resource Manager
@@ -195,7 +211,9 @@ You can test against an in-memory local Resource Manager by following these step
 
 #### On your machine
 
-You can test against an in-memory local Storage by following these steps:
+You can test against an in-memory local Storage. The in-memory configuration supports only limited number of operations; please refer to the `LocalStorageHelper` class documentation for more details. Please use `RemoteStorageHelper` (see next section) if you need to use operations which are not supported by `LocalStorageHelper`. 
+
+To use the in-memory configuration please follow these steps:
 
 1. Follow the [Quickstart instructions][cloud-nio] to add the nio dependency to your project.
 2. In your program, create and use a fake Storage service object.  For example:
@@ -208,7 +226,7 @@ You can test against an in-memory local Storage by following these steps:
 
 #### Remote
 
-The alternative way of testing is to create a test project.  `RemoteStorageHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
+The alternative way of testing is to create a test project. This way allows using operations not supported by the in-memory configuration.  `RemoteStorageHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
 
 1. Create a test Google Cloud project.
 
@@ -239,13 +257,14 @@ Google Translation service.
 
 1. Create a test Google Cloud project.
 
-2. Follow [Translate Quickstart](https://cloud.google.com/translate/v2/quickstart) to get an API
+2. Download a JSON service account credentials file from the Google Developer's Console. See more about this on the [Google Cloud Platform Authentication page][cloud-platform-authentication]
 key.
 
 3. Create a `RemoteTranslateHelper` object using your project ID and API key. Here is an example
 that uses the `RemoteTranslateHelper` to list supported languages.
   ```java
-  RemoteTranslateHelper translateHelper = RemoteTranslateHelper.create(PROJECT_ID, API_KEY);
+  RemoteTranslateHelper translateHelper =
+      RemoteTranslateHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
   Translate translate = translateHelper.getOptions().getService();
   List<Language> languages = translate.listSupportedLanguages();
   ```
@@ -258,7 +277,7 @@ Currently, there isn't an emulator for Cloud Spanner, so an alternative is to cr
 
 1. Create a test Google Cloud project.
 
-2. Download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication].
+2. Download a JSON service account credentials file from the Google Developer's Console. See more about this on the [Google Cloud Platform Authentication page][cloud-platform-authentication].
 
 3. Create or use an existing Cloud Spanner Instance.
 
@@ -283,6 +302,7 @@ Here is an example that uses the `RemoteSpannerHelper` to create a database.
   RemoteSpannerHelper.cleanUp();
   ```
 
+[cloud-platform-authentication]:https://cloud.google.com/docs/authentication/getting-started
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
 [create-service-account]:https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount
 [cloud-nio]:https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio

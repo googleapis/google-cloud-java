@@ -15,11 +15,6 @@
  */
 package com.google.cloud.spanner;
 
-import static junit.framework.TestCase.assertEquals;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -28,37 +23,45 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-/** Unit tests for {@link com.google.cloud.spanner.SessionPoolOptions} */
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import static junit.framework.TestCase.assertEquals;
+
+/**
+ * Unit tests for {@link com.google.cloud.spanner.SessionPoolOptions}
+ */
 @RunWith(Parameterized.class)
 public class SessionPoolOptionsTest {
-  @Rule public ExpectedException expectedException = ExpectedException.none();
-  @Parameter public int minSessions;
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+    @Parameter
+    public int minSessions;
+    @Parameter(1)
+    public int maxSessions;
 
-  @Parameter(1)
-  public int maxSessions;
+    @Parameters(name = "min sessions = {0}, max sessions = {1}")
+    public static Collection<Object[]> data() {
+        List<Object[]> params = new ArrayList<>();
+        params.add(new Object[]{1, 1});
+        params.add(new Object[]{500, 600});
+        params.add(new Object[]{600, 500});
 
-  @Parameters(name = "min sessions = {0}, max sessions = {1}")
-  public static Collection<Object[]> data() {
-    List<Object[]> params = new ArrayList<>();
-    params.add(new Object[] {1, 1});
-    params.add(new Object[] {500, 600});
-    params.add(new Object[] {600, 500});
-
-    return params;
-  }
-
-  @Test
-  public void setMinMaxSessions() {
-    if (minSessions > maxSessions) {
-      expectedException.expect(IllegalArgumentException.class);
+        return params;
     }
-    SessionPoolOptions options =
-        SessionPoolOptions.newBuilder()
-            .setMinSessions(minSessions)
-            .setMaxSessions(maxSessions)
-            .build();
 
-    assertEquals(minSessions, options.getMinSessions());
-    assertEquals(maxSessions, options.getMaxSessions());
-  }
+    @Test
+    public void setMinMaxSessions() {
+        if (minSessions > maxSessions) {
+            expectedException.expect(IllegalArgumentException.class);
+        }
+        SessionPoolOptions options = SessionPoolOptions.newBuilder()
+                .setMinSessions(minSessions)
+                .setMaxSessions(maxSessions)
+                .build();
+
+        assertEquals(minSessions, options.getMinSessions());
+        assertEquals(maxSessions, options.getMaxSessions());
+    }
 }

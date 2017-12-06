@@ -33,8 +33,10 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 
+import java.util.Map;
 import org.junit.After;
 import org.junit.Test;
 
@@ -46,6 +48,9 @@ public class DatasetTest {
   private static final List<Acl> ACCESS_RULES = ImmutableList.of(
       Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
       Acl.of(new Acl.View(TableId.of("dataset", "table"))));
+  private static final Map<String, String> LABELS = ImmutableMap.of(
+      "example-label1", "example-value1",
+      "example-label2", "example-value2");
   private static final Long CREATION_TIME = System.currentTimeMillis();
   private static final Long DEFAULT_TABLE_EXPIRATION = CREATION_TIME + 100;
   private static final String DESCRIPTION = "description";
@@ -56,7 +61,7 @@ public class DatasetTest {
   private static final String LOCATION = "";
   private static final String SELF_LINK = "http://bigquery/p/d";
   private static final DatasetInfo DATASET_INFO = DatasetInfo.newBuilder(DATASET_ID).build();
-  private static final Field FIELD = Field.of("FieldName", Field.Type.integer());
+  private static final Field FIELD = Field.of("FieldName", LegacySQLTypeName.INTEGER);
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.of(Schema.of(FIELD));
   private static final ViewDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
@@ -106,6 +111,7 @@ public class DatasetTest {
         .setLastModified(LAST_MODIFIED)
         .setLocation(LOCATION)
         .setSelfLink(SELF_LINK)
+        .setLabels(LABELS)
         .build();
     assertEquals(DATASET_ID, builtDataset.getDatasetId());
     assertEquals(ACCESS_RULES, builtDataset.getAcl());
@@ -118,6 +124,7 @@ public class DatasetTest {
     assertEquals(LAST_MODIFIED, builtDataset.getLastModified());
     assertEquals(LOCATION, builtDataset.getLocation());
     assertEquals(SELF_LINK, builtDataset.getSelfLink());
+    assertEquals(LABELS, builtDataset.getLabels());
   }
 
 

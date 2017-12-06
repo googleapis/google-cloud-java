@@ -228,12 +228,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return new SessionImpl(session.getName(), options);
   }
 
-  SessionImpl sessionWithId(String name) {
-    final Map<SpannerRpc.Option, ?> options =
-        SpannerImpl.optionMap(SessionOption.channelHint(random.nextLong()));
-    return new SessionImpl(name, options);
-  }
-
   @Override
   public DatabaseAdminClient getDatabaseAdminClient() {
     return dbAdminClient;
@@ -338,8 +332,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return ImmutableMap.copyOf(tmp);
   }
 
-  private static <T extends Message> T unpack(Any response, Class<T> clazz)
-      throws SpannerException {
+  private static <T extends Message> T unpack(Any response, Class<T> clazz) throws SpannerException {
     try {
       return response.unpack(clazz);
     } catch (InvalidProtocolBufferException e) {
@@ -348,7 +341,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  private abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
+  private static abstract class PageFetcher<S, T> implements NextPageFetcher<S> {
     private String nextPageToken;
 
     @Override
@@ -380,15 +373,15 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   static class DatabaseAdminClientImpl implements DatabaseAdminClient {
-
+    
     private final String projectId;
     private final SpannerRpc rpc;
-
+    
     DatabaseAdminClientImpl(String projectId, SpannerRpc rpc) {
       this.projectId = projectId;
       this.rpc = rpc;
     }
-
+    
     @Override
     public Operation<Database, CreateDatabaseMetadata> createDatabase(
         String instanceId, String databaseId, Iterable<String> statements) throws SpannerException {
@@ -532,11 +525,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
       return pageFetcher.getNextPage();
     }
-
+    
     private String getInstanceName(String instanceId) {
       return new InstanceId(projectId, instanceId).getName();
     }
-
+    
     private String getDatabaseName(String instanceId, String databaseId) {
       return new DatabaseId(new InstanceId(projectId, instanceId), databaseId).getName();
     }
@@ -1772,8 +1765,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     protected final List<Object> rowData;
 
     /**
-     * Builds an immutable version of this struct using {@link Struct#newBuilder()} which is used as
-     * a serialization proxy.
+     * Builds an immutable version of this struct using {@link Struct#newBuilder()} which is used
+     * as a serialization proxy.
      */
     private Object writeReplace() {
       Builder builder = Struct.newBuilder();
@@ -1829,10 +1822,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 builder.set(fieldName).toDateArray((Iterable<Date>) value);
                 break;
               case STRUCT:
-                builder.add(
-                    fieldName,
-                    fieldType.getArrayElementType().getStructFields(),
-                    (Iterable<Struct>) value);
+                builder.add(fieldName, fieldType.getArrayElementType().getStructFields(), (Iterable<Struct>) value);
                 break;
               default:
                 throw new AssertionError(

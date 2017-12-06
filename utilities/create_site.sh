@@ -14,18 +14,23 @@ fi
 
 git clone --branch gh-pages --single-branch https://github.com/GoogleCloudPlatform/google-cloud-java/ tmp_gh-pages
 mkdir -p tmp_gh-pages/$SITE_VERSION_BASE
-mvn site -DskipITs -Djava.util.logging.config.file=logging.properties
-mvn site:stage --quiet -Djava.util.logging.config.file=logging.properties -DtopSiteURL=http://googlecloudplatform.github.io/google-cloud-java/site/${SITE_VERSION_BASE}/
-cd tmp_gh-pages
+mvn site -DskipTests -Djava.util.logging.config.file=logging.properties
 
-for dir in ../target/staging/${SITE_VERSION_BASE}*
+version_bases=(${SITE_VERSION_BASE} latest)
+rm -rf tmp_gh-pages/latest
+mkdir tmp_gh-pages/latest
+for version_base in ${version_bases[@]}
 do
-    cp -r ${dir}/* $SITE_VERSION_BASE/
+  mvn site:stage --quiet -Djava.util.logging.config.file=logging.properties -DtopSiteURL=https://googlecloudplatform.github.io/google-cloud-java/site/${version_base}/
+  cd tmp_gh-pages
+  cp -r ../target/staging/*/* $version_base
+  sed -i "s/{{SITE_VERSION}}/$SITE_VERSION/g" ${version_base}/index.html # Update "Quickstart with Maven" to reflect version change
+  git add $version_base
+  cd ..
 done
 
-sed -i "s/{{SITE_VERSION}}/$SITE_VERSION/g" ${SITE_VERSION_BASE}/index.html # Update "Quickstart with Maven" to reflect version change
-git add $SITE_VERSION_BASE
-echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='http://GoogleCloudPlatform.github.io/google-cloud-java/${SITE_VERSION_BASE}/index.html'\" /></head><body></body></html>" > index.html
+cd tmp_gh-pages
+echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='https://GoogleCloudPlatform.github.io/google-cloud-java/${SITE_VERSION_BASE}/index.html'\" /></head><body></body></html>" > index.html
 git add index.html
 echo "<html><head><script>window.location.replace('/google-cloud-java/${SITE_VERSION_BASE}/apidocs' + location.search)</script></head><body></body></html>" > apidocs/index.html
 git add apidocs/index.html

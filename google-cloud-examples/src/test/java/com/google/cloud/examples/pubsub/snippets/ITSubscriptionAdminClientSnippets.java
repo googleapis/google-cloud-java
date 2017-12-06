@@ -20,25 +20,18 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
-import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
+import com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.common.collect.Iterables;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
-import com.google.protobuf.ByteString;
-import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.PullResponse;
-import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.TopicName;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
@@ -167,7 +160,7 @@ public class ITSubscriptionAdminClientSnippets {
 
   private void createTopic(String name) throws Exception {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-      topicAdminClient.createTopic(TopicName.create(projectId, name));
+      topicAdminClient.createTopic(TopicName.of(projectId, name));
     }
   }
 

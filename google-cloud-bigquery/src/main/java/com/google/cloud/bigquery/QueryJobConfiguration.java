@@ -16,15 +16,19 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
+import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
@@ -41,6 +45,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private static final long serialVersionUID = -1108948249081804890L;
 
   private final String query;
+  private final ImmutableList<QueryParameterValue> positionalParameters;
+  private final ImmutableMap<String, QueryParameterValue> namedParameters;
   private final TableId destinationTable;
   private final Map<String, ExternalTableDefinition> tableDefinitions;
   private final List<UserDefinedFunction> userDefinedFunctions;
@@ -53,6 +59,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Boolean flattenResults;
   private final Boolean dryRun;
   private final Boolean useLegacySql;
+  private final Integer maximumBillingTier;
   private final List<SchemaUpdateOption> schemaUpdateOptions;
 
   /**
@@ -79,6 +86,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
       extends JobConfiguration.Builder<QueryJobConfiguration, Builder> {
 
     private String query;
+    private List<QueryParameterValue> positionalParameters = Lists.newArrayList();
+    private Map<String, QueryParameterValue> namedParameters = Maps.newHashMap();
     private TableId destinationTable;
     private Map<String, ExternalTableDefinition> tableDefinitions;
     private List<UserDefinedFunction> userDefinedFunctions;
@@ -90,7 +99,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Boolean useQueryCache;
     private Boolean flattenResults;
     private Boolean dryRun;
-    private Boolean useLegacySql;
+    private Boolean useLegacySql = false;
+    private Integer maximumBillingTier;
     private List<SchemaUpdateOption> schemaUpdateOptions;
 
     private Builder() {
@@ -100,6 +110,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Builder(QueryJobConfiguration jobConfiguration) {
       this();
       this.query = jobConfiguration.query;
+      this.namedParameters = jobConfiguration.namedParameters;
+      this.positionalParameters = jobConfiguration.positionalParameters;
       this.destinationTable = jobConfiguration.destinationTable;
       this.tableDefinitions = jobConfiguration.tableDefinitions;
       this.userDefinedFunctions = jobConfiguration.userDefinedFunctions;
@@ -112,6 +124,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.flattenResults = jobConfiguration.flattenResults;
       this.dryRun = jobConfiguration.dryRun;
       this.useLegacySql = jobConfiguration.useLegacySql;
+      this.maximumBillingTier = jobConfiguration.maximumBillingTier;
       this.schemaUpdateOptions = jobConfiguration.schemaUpdateOptions;
     }
 
@@ -119,10 +132,28 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this();
       JobConfigurationQuery queryConfigurationPb = configurationPb.getQuery();
       this.query = queryConfigurationPb.getQuery();
+      if (queryConfigurationPb.getQueryParameters() != null && !queryConfigurationPb.getQueryParameters().isEmpty()) {
+        if (queryConfigurationPb.getQueryParameters().get(0).getName() == null) {
+          setPositionalParameters(
+              Lists.transform(queryConfigurationPb.getQueryParameters(), POSITIONAL_PARAMETER_FROM_PB_FUNCTION));
+        } else {
+          Map<String, QueryParameterValue> values = Maps.newHashMap();
+          for (QueryParameter queryParameterPb : queryConfigurationPb.getQueryParameters()) {
+            checkNotNull(queryParameterPb.getName());
+            QueryParameterValue value = QueryParameterValue.fromPb(
+                queryParameterPb.getParameterValue(), queryParameterPb.getParameterType());
+            values.put(queryParameterPb.getName(), value);
+          }
+          setNamedParameters(values);
+        }
+      }
       allowLargeResults = queryConfigurationPb.getAllowLargeResults();
       useQueryCache = queryConfigurationPb.getUseQueryCache();
       flattenResults = queryConfigurationPb.getFlattenResults();
       useLegacySql = queryConfigurationPb.getUseLegacySql();
+      if (queryConfigurationPb.getMaximumBillingTier() != null) {
+        maximumBillingTier = queryConfigurationPb.getMaximumBillingTier();
+      }
       dryRun = configurationPb.getDryRun();
       if (queryConfigurationPb.getDestinationTable() != null) {
         destinationTable = TableId.fromPb(queryConfigurationPb.getDestinationTable());
@@ -168,6 +199,88 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+
+    /**
+     * Adds a positional query parameter to the list of query parameters. See
+     * {@link #setPositionalParameters(Iterable)} for more details on the input requirements.
+     *
+     * <p>A positional parameter cannot be added after named parameters have been added.
+     */
+    public Builder addPositionalParameter(QueryParameterValue value) {
+      checkNotNull(value);
+      if (!namedParameters.isEmpty()) {
+        throw new IllegalStateException(
+            "Positional parameters can't be combined with named parameters");
+      }
+      positionalParameters.add(value);
+      return this;
+    }
+
+    /**
+     * Sets the query parameters to a list of positional query parameters to use in the query.
+     *
+     * <p>The set of query parameters must either be all positional or all named parameters.
+     * Positional parameters are denoted in the query with a question mark (?).
+     *
+     * <p>Additionally, useLegacySql must be set to false; query parameters cannot be used with
+     * legacy SQL.
+     *
+     * <p>The values parameter can be set to null to clear out the positional
+     * parameters so that named parameters can be used instead.
+     */
+    public Builder setPositionalParameters(Iterable<QueryParameterValue> values) {
+      if (values == null || Iterables.isEmpty(values)) {
+        positionalParameters = Lists.newArrayList();
+      } else {
+        if (!this.namedParameters.isEmpty()) {
+          throw new IllegalStateException(
+              "Positional parameters can't be combined with named parameters");
+        }
+        this.positionalParameters = Lists.newArrayList(values);
+      }
+      return this;
+    }
+
+    /**
+     * Adds a named query parameter to the set of query parameters. See
+     * {@link #setNamedParameters(Map)} for more details on the input requirements.
+     *
+     * <p>A named parameter cannot be added after positional parameters have been added.
+     */
+    public Builder addNamedParameter(String name, QueryParameterValue value) {
+      checkNotNull(value);
+      if (!this.positionalParameters.isEmpty()) {
+        throw new IllegalStateException(
+            "Named parameters can't be combined with positional parameters");
+      }
+      namedParameters.put(name, value);
+      return this;
+    }
+
+    /**
+     * Sets the query parameters to a set of named query parameters to use in the query.
+     *
+     * <p>The set of query parameters must either be all positional or all named parameters. Named
+     * parameters are denoted using an @ prefix, e.g. @myParam for a parameter named "myParam".
+     *
+     * <p>Additionally, useLegacySql must be set to false; query parameters cannot be used with
+     * legacy SQL.
+     *
+     * <p>The values parameter can be set to null to clear out the named parameters so that
+     * positional parameters can be used instead.
+     */
+    public Builder setNamedParameters(Map<String, QueryParameterValue> values) {
+      if (values == null || values.isEmpty()) {
+        namedParameters = Maps.newHashMap();
+      } else {
+        if (!this.positionalParameters.isEmpty()) {
+          throw new IllegalStateException(
+              "Named parameters can't be combined with positional parameters");
+        }
+        this.namedParameters = Maps.newHashMap(values);
+      }
+      return this;
+    }
 
     /**
      * Sets the table where to put query results. If not provided a new table is created. This value
@@ -323,16 +436,30 @@ public final class QueryJobConfiguration extends JobConfiguration {
 
 
     /**
-     * Sets whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
-     * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
-     * Standard SQL</a>. When set to {@code false}, the values of
-     * {@link #setAllowLargeResults(Boolean)} and {@link #setFlattenResults(Boolean)} are ignored; query
-     * will be run as if {@link #setAllowLargeResults(Boolean)} is {@code true} and
-     * {@link #setFlattenResults(Boolean)} is {@code false}. If not set, legacy SQL dialect is used.
-     * This property is experimental and might be subject to change.
+     * Sets whether to use BigQuery's legacy SQL dialect for this query. By default this property is
+     * set to {@code false}. If set to {@code false}, the query will use BigQuery's
+     * <a href="https://cloud.google.com/bigquery/sql-reference/"> Standard SQL</a>. When set to
+     * {@code false}, the values of {@link #setAllowLargeResults(Boolean)} and
+     * {@link #setFlattenResults(Boolean)} are ignored; query will be run as if
+     * {@link #setAllowLargeResults(Boolean)} is {@code true} and {@link #setFlattenResults(Boolean)}
+     * is {@code false}.
+     *
+     * If set to {@code null} or {@code true}, legacy SQL dialect is used. This property is
+     * experimental and might be subject to change.
      */
     public Builder setUseLegacySql(Boolean useLegacySql) {
       this.useLegacySql = useLegacySql;
+      return this;
+    }
+
+    /**
+     * Limits the billing tier for this job. Queries that have resource usage beyond this tier will fail
+     * (without incurring a charge). If unspecified, this will be set to your project default.
+
+     * @param maximumBillingTier maximum billing tier for this job
+     */
+    public Builder setMaximumBillingTier(Integer maximumBillingTier) {
+      this.maximumBillingTier = maximumBillingTier;
       return this;
     }
 
@@ -356,6 +483,16 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private QueryJobConfiguration(Builder builder) {
     super(builder);
     this.query = checkNotNull(builder.query);
+    checkNotNull(builder.positionalParameters);
+    checkNotNull(builder.namedParameters);
+    if (!builder.positionalParameters.isEmpty()) {
+      checkArgument(builder.namedParameters.isEmpty());
+    }
+    if (!builder.namedParameters.isEmpty()) {
+      checkArgument(builder.positionalParameters.isEmpty());
+    }
+    positionalParameters = ImmutableList.copyOf(builder.positionalParameters);
+    namedParameters = ImmutableMap.copyOf(builder.namedParameters);
     this.allowLargeResults = builder.allowLargeResults;
     this.createDisposition = builder.createDisposition;
     this.defaultDataset = builder.defaultDataset;
@@ -369,6 +506,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         builder.tableDefinitions != null ? ImmutableMap.copyOf(builder.tableDefinitions) : null;
     this.dryRun = builder.dryRun;
     this.useLegacySql = builder.useLegacySql;
+    this.maximumBillingTier = builder.maximumBillingTier;
     this.schemaUpdateOptions = builder.schemaUpdateOptions;
   }
 
@@ -441,6 +579,21 @@ public final class QueryJobConfiguration extends JobConfiguration {
 
 
   /**
+   * Returns the positional query parameters to use for the query.
+   */
+  public List<QueryParameterValue> getPositionalParameters() {
+    return positionalParameters;
+  }
+
+  /**
+   * Returns the named query parameters to use for the query.
+   */
+  public Map<String, QueryParameterValue> getNamedParameters() {
+    return namedParameters;
+  }
+
+
+  /**
    * Returns the external tables definitions. If querying external data sources outside of BigQuery,
    * this value describes the data format, location and other properties of the data
    * sources. By defining these properties, the data sources can be queried as if they were
@@ -492,15 +645,24 @@ public final class QueryJobConfiguration extends JobConfiguration {
   }
 
   /**
-   * Returns whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
-   * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
-   * Standard SQL</a>. When set to {@code false}, the values of {@link #allowLargeResults()} and
+   * Returns whether to use BigQuery's legacy SQL dialect for this query. By default this property is
+   * set to {@code false}. If set to {@code false}, the query will use BigQuery's
+   * <a href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>.
+   * When set to {@code false}, the values of {@link #allowLargeResults()} and
    * {@link #flattenResults()} are ignored; query will be run as if {@link #allowLargeResults()} is
-   * {@code true} and {@link #flattenResults()} is {@code false}. If not set, legacy SQL dialect is
-   * used. This property is experimental and might be subject to change.
+   * {@code true} and {@link #flattenResults()} is {@code false}. If set to {@code null} or
+   * {@code true}, legacy SQL dialect is used. This property is experimental and might be subject
+   * to change.
    */
   public Boolean useLegacySql() {
     return useLegacySql;
+  }
+
+  /**
+   * Returns the optional billing tier limit for this job.
+   */
+  public Integer getMaximumBillingTier() {
+    return maximumBillingTier;
   }
 
   /**
@@ -522,6 +684,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("query", query)
+        .add("positionalParameters", positionalParameters)
+        .add("namedParameters", namedParameters)
         .add("destinationTable", destinationTable)
         .add("defaultDataset", defaultDataset)
         .add("allowLargeResults", allowLargeResults)
@@ -534,6 +698,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("writeDisposition", writeDisposition)
         .add("dryRun", dryRun)
         .add("useLegacySql", useLegacySql)
+        .add("maximumBillingTier", maximumBillingTier)
         .add("schemaUpdateOptions", schemaUpdateOptions);
   }
 
@@ -547,8 +712,10 @@ public final class QueryJobConfiguration extends JobConfiguration {
   @Override
   public int hashCode() {
     return Objects.hash(baseHashCode(), allowLargeResults, createDisposition, destinationTable,
-        defaultDataset, flattenResults, priority, query, tableDefinitions, useQueryCache,
-        userDefinedFunctions, writeDisposition, dryRun, useLegacySql, schemaUpdateOptions);
+        defaultDataset, flattenResults, priority, query, positionalParameters,
+        namedParameters, tableDefinitions, useQueryCache,
+        userDefinedFunctions, writeDisposition, dryRun, useLegacySql, maximumBillingTier,
+        schemaUpdateOptions);
   }
 
   @Override
@@ -569,6 +736,15 @@ public final class QueryJobConfiguration extends JobConfiguration {
         new com.google.api.services.bigquery.model.JobConfiguration();
     JobConfigurationQuery queryConfigurationPb = new JobConfigurationQuery();
     queryConfigurationPb.setQuery(query);
+    if (!positionalParameters.isEmpty()) {
+      List<QueryParameter> queryParametersPb
+          = Lists.transform(positionalParameters, POSITIONAL_PARAMETER_TO_PB_FUNCTION);
+      queryConfigurationPb.setQueryParameters(queryParametersPb);
+    } else if (!namedParameters.isEmpty()) {
+      List<QueryParameter> queryParametersPb
+          = Lists.transform(namedParameters.entrySet().asList(), NAMED_PARAMETER_TO_PB_FUNCTION);
+      queryConfigurationPb.setQueryParameters(queryParametersPb);
+    }
     configurationPb.setDryRun(dryRun());
     if (allowLargeResults != null) {
       queryConfigurationPb.setAllowLargeResults(allowLargeResults);
@@ -605,6 +781,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
     if (useLegacySql != null) {
       queryConfigurationPb.setUseLegacySql(useLegacySql);
     }
+    if (maximumBillingTier != null) {
+      queryConfigurationPb.setMaximumBillingTier(maximumBillingTier);
+    }
     if (schemaUpdateOptions != null) {
       ImmutableList.Builder<String> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
       for (JobInfo.SchemaUpdateOption schemaUpdateOption : schemaUpdateOptions) {
@@ -636,4 +815,37 @@ public final class QueryJobConfiguration extends JobConfiguration {
       com.google.api.services.bigquery.model.JobConfiguration jobPb) {
     return new Builder(jobPb).build();
   }
+
+  private static final Function<QueryParameter, QueryParameterValue> POSITIONAL_PARAMETER_FROM_PB_FUNCTION =
+      new Function<QueryParameter, QueryParameterValue>() {
+        @Override
+        public QueryParameterValue apply(QueryParameter pb) {
+          checkArgument(pb.getName() == null);
+          return QueryParameterValue.fromPb(pb.getParameterValue(), pb.getParameterType());
+        }
+      };
+
+  private static final Function<QueryParameterValue, QueryParameter> POSITIONAL_PARAMETER_TO_PB_FUNCTION =
+      new Function<QueryParameterValue, QueryParameter>() {
+        @Override
+        public QueryParameter apply(QueryParameterValue value) {
+          QueryParameter queryParameterPb = new QueryParameter();
+          queryParameterPb.setParameterValue(value.toValuePb());
+          queryParameterPb.setParameterType(value.toTypePb());
+          return queryParameterPb;
+        }
+      };
+
+  private static final Function<Map.Entry<String, QueryParameterValue>, QueryParameter>
+      NAMED_PARAMETER_TO_PB_FUNCTION =
+          new Function<Map.Entry<String, QueryParameterValue>, QueryParameter>() {
+            @Override
+            public QueryParameter apply(Map.Entry<String, QueryParameterValue> entry) {
+              QueryParameter queryParameterPb = new QueryParameter();
+              queryParameterPb.setName(entry.getKey());
+              queryParameterPb.setParameterValue(entry.getValue().toValuePb());
+              queryParameterPb.setParameterType(entry.getValue().toTypePb());
+              return queryParameterPb;
+            }
+          };
 }

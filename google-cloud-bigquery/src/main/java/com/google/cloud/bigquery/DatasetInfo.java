@@ -25,10 +25,11 @@ import com.google.api.services.bigquery.model.TableReference;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -68,6 +69,7 @@ public class DatasetInfo implements Serializable {
   private final Long lastModified;
   private final String location;
   private final String selfLink;
+  private final Map<String, String> labels;
 
   /**
    * A builder for {@code DatasetInfo} objects.
@@ -134,6 +136,8 @@ public class DatasetInfo implements Serializable {
 
     abstract Builder setSelfLink(String selfLink);
 
+    public abstract Builder setLabels(Map<String, String> labels);
+
     /**
      * Creates a {@code DatasetInfo} object.
      */
@@ -153,6 +157,7 @@ public class DatasetInfo implements Serializable {
     private Long lastModified;
     private String location;
     private String selfLink;
+    private Map<String, String> labels;
 
     BuilderImpl() {}
 
@@ -168,6 +173,9 @@ public class DatasetInfo implements Serializable {
       this.lastModified = datasetInfo.lastModified;
       this.location = datasetInfo.location;
       this.selfLink = datasetInfo.selfLink;
+      this.labels = datasetInfo.labels != null
+                    ? ImmutableMap.copyOf(datasetInfo.labels)
+                    : null;
     }
 
     BuilderImpl(com.google.api.services.bigquery.model.Dataset datasetPb) {
@@ -191,6 +199,9 @@ public class DatasetInfo implements Serializable {
       this.lastModified = datasetPb.getLastModifiedTime();
       this.location = datasetPb.getLocation();
       this.selfLink = datasetPb.getSelfLink();
+      this.labels = datasetPb.getLabels() != null
+                    ? ImmutableMap.copyOf(datasetPb.getLabels())
+                    : null;
     }
 
 
@@ -267,6 +278,12 @@ public class DatasetInfo implements Serializable {
     }
 
     @Override
+    public Builder setLabels(Map<String, String> labels) {
+      this.labels = ImmutableMap.copyOf(labels);
+      return this;
+    }
+
+    @Override
     public DatasetInfo build() {
       return new DatasetInfo(this);
     }
@@ -284,6 +301,7 @@ public class DatasetInfo implements Serializable {
     lastModified = builder.lastModified;
     location = builder.location;
     selfLink = builder.selfLink;
+    labels = builder.labels;
   }
 
 
@@ -388,6 +406,15 @@ public class DatasetInfo implements Serializable {
   }
 
   /**
+   * Return a map for labels applied to the dataset.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/labeling-datasets">Labeling Datasets</a>
+   */
+  public Map<String, String> getLabels() {
+    return labels;
+  }
+
+  /**
    * Returns a builder for the dataset object.
    */
   public Builder toBuilder() {
@@ -408,6 +435,7 @@ public class DatasetInfo implements Serializable {
         .add("location", location)
         .add("selfLink", selfLink)
         .add("acl", acl)
+        .add("labels", labels)
         .toString();
   }
 
@@ -465,6 +493,9 @@ public class DatasetInfo implements Serializable {
           return acl.toPb();
         }
       }));
+    }
+    if (labels != null) {
+      datasetPb.setLabels(labels);
     }
     return datasetPb;
   }

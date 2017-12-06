@@ -36,7 +36,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 /**
- * A logging handler that synchronously outputs logs generated with {@link java.util.logging.Logger}
+ * A logging handler that outputs logs generated with {@link java.util.logging.Logger}
  * to Stackdriver Logging.
  *
  * <p>Java logging levels (see {@link java.util.logging.Level}) are mapped to the following Google
@@ -72,9 +72,6 @@ import java.util.logging.SimpleFormatter;
  *       Filter} class to use (defaults to no filter).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.formatter} specifies the name of a {@link
  *       Formatter} class to use (defaults to {@link SimpleFormatter}).
- *   <li>{@code com.google.cloud.logging.LoggingHandler.flushSize} specifies the maximum size of the
- *       log buffer. Once reached, logs are transmitted to the Stackdriver Logging service (defaults
- *       to 1).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.flushLevel} specifies the flush log level.
  *       When a log with this level is published, logs are transmitted to the Stackdriver Logging
  *       service (defaults to {@link LoggingLevel#ERROR}).
@@ -206,7 +203,7 @@ public class LoggingHandler extends Handler {
 
       this.enhancers.addAll(enhancersParam);
 
-      List<LoggingEnhancer> loggingEnhancers = MonitoredResourceUtil.createResourceEnhancers();
+      List<LoggingEnhancer> loggingEnhancers = MonitoredResourceUtil.getResourceEnhancers();
       if (loggingEnhancers != null) {
         this.enhancers.addAll(loggingEnhancers);
       }

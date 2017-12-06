@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-examples</artifactId>
-  <version>0.17.1-alpha</version>
+  <version>0.30.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-examples:0.17.1-alpha'
+compile 'com.google.cloud:google-cloud-examples:0.30.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-examples" % "0.17.1-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-examples" % "0.30.0-alpha"
 ```
 
 To run examples from your command line:
@@ -160,12 +160,12 @@ To run examples from your command line:
 
   * Here's an example run of `TranslateExample`.
 
-    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Translation API" is enabled and that you have a valid API key.
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Translation API" is enabled.
     ```
-    target/appassembler/bin/TranslateExample <apiKey> languages
-    target/appassembler/bin/TranslateExample <apiKey> detect Hello,\ World!
-    target/appassembler/bin/TranslateExample <apiKey> translate ¡Hola\ Mundo!
-    target/appassembler/bin/TranslateExample <apiKey> es translate Hello,\ World!
+    target/appassembler/bin/TranslateExample languages
+    target/appassembler/bin/TranslateExample detect Hello,\ World!
+    target/appassembler/bin/TranslateExample translate ¡Hola\ Mundo!
+    target/appassembler/bin/TranslateExample es translate Hello,\ World!
     ```
 
 Troubleshooting

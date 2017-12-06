@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.cloud.bigquery.BigQuery.QueryOption;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 
@@ -26,21 +27,15 @@ import java.util.Objects;
 /**
  * Google Cloud BigQuery Query Response. This class contains the results of a Query Job
  * ({@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)}) or of a
- * Query Request ({@link BigQuery#query(QueryRequest)}).
+ * Query Request ({@link BigQuery#query(QueryJobConfiguration, QueryOption...)}).
  *
  * <p>Example usage of a query response:
  * <pre> {@code
- * QueryResponse response = bigquery.query(request);
- * while (!response.jobCompleted()) {
- *   Thread.sleep(1000);
- *   response = bigquery.getQueryResults(response.getJobId());
- * }
+ * QueryResponse response = bigquery.query(queryConfig);
  * List<BigQueryError> executionErrors = response.getExecutionErrors();
  * // look for errors in executionErrors
  * QueryResult result = response.getResult();
- * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
- * while(rowIterator.hasNext()) {
- *   List<FieldValue> row = rowIterator.next();
+ * for(FieldValueList row : result.iterateAll()) {
  *   // do something with row
  * }
  * }</pre>
@@ -56,6 +51,7 @@ public class QueryResponse implements Serializable {
   private final QueryResult result;
   private final String etag;
   private final JobId jobId;
+  private final Long numDmlAffectedRows;
   private final boolean jobCompleted;
   private final List<BigQueryError> executionErrors;
 
@@ -64,6 +60,7 @@ public class QueryResponse implements Serializable {
     private QueryResult result;
     private String etag;
     private JobId jobId;
+    private Long numDmlAffectedRows;
     private boolean jobCompleted;
     private List<BigQueryError> executionErrors;
 
@@ -81,6 +78,11 @@ public class QueryResponse implements Serializable {
 
     Builder setJobId(JobId jobId) {
       this.jobId = jobId;
+      return this;
+    }
+
+    Builder setNumDmlAffectedRows(Long numDmlAffectedRows) {
+      this.numDmlAffectedRows = numDmlAffectedRows;
       return this;
     }
 
@@ -103,6 +105,7 @@ public class QueryResponse implements Serializable {
     this.result = builder.result;
     this.etag = builder.etag;
     this.jobId = builder.jobId;
+    this.numDmlAffectedRows = builder.numDmlAffectedRows;
     this.jobCompleted = builder.jobCompleted;
     this.executionErrors = builder.executionErrors != null ? builder.executionErrors
       : ImmutableList.<BigQueryError>of();
@@ -133,6 +136,12 @@ public class QueryResponse implements Serializable {
   public JobId getJobId() {
     return jobId;
   }
+
+  /**
+   * Returns the number of rows affected by a DML statement. Present only for DML statements INSERT,
+   * UPDATE or DELETE.
+   */
+  public Long getNumDmlAffectedRows() { return numDmlAffectedRows; }
 
   /**
    * Returns whether the job running the query has completed or not. If {@link #getResult()} is not
@@ -168,6 +177,7 @@ public class QueryResponse implements Serializable {
         .add("result", result)
         .add("etag", etag)
         .add("jobId", jobId)
+        .add("numDmlAffectedRows", numDmlAffectedRows)
         .add("jobCompleted", jobCompleted)
         .add("executionErrors", executionErrors)
         .toString();
@@ -175,7 +185,7 @@ public class QueryResponse implements Serializable {
 
   @Override
   public final int hashCode() {
-    return Objects.hash(jobId);
+    return Objects.hash(result, etag, jobId, numDmlAffectedRows, jobCompleted, executionErrors);
   }
 
   @Override
@@ -191,6 +201,7 @@ public class QueryResponse implements Serializable {
         && Objects.equals(etag, response.etag)
         && Objects.equals(result, response.result)
         && Objects.equals(jobId, response.jobId)
+        && Objects.equals(numDmlAffectedRows, response.numDmlAffectedRows)
         && Objects.equals(executionErrors, response.executionErrors);
   }
 

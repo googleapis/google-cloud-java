@@ -89,6 +89,6 @@ public class DatastoreOptionsTest {
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    DatastoreOptions.newBuilder().setTransportOptions(new TransportOptions() {});
+    DatastoreOptions.newBuilder().setTransportOptions(EasyMock.createMock(TransportOptions.class));
   }
 }

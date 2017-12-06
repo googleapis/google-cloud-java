@@ -22,15 +22,16 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
+import com.google.cloud.bigquery.FieldValueList;
+import org.threeten.bp.Duration;
 import com.google.api.gax.paging.Page;
-import com.google.cloud.WaitForOption;
+import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryException;
-import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.InsertAllResponse;
@@ -42,8 +43,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 
 /**
@@ -167,10 +166,10 @@ public class TableSnippets {
    * Example of listing rows in the table.
    */
   // [TARGET list(TableDataListOption...)]
-  public Page<List<FieldValue>> list() {
+  public Page<FieldValueList> list() {
     // [START list]
-    Page<List<FieldValue>> page = table.list(TableDataListOption.pageSize(100));
-    for (List<FieldValue> row : page.iterateAll()) {
+    Page<FieldValueList> page = table.list(TableDataListOption.pageSize(100));
+    for (FieldValueList row : page.iterateAll()) {
       // do something with the row
     }
     // [END list]
@@ -188,14 +187,14 @@ public class TableSnippets {
     Job job = table.copy(datasetName, tableName);
     // Wait for the job to complete.
     try {
-      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(3, TimeUnit.MINUTES));
+      Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+          RetryOption.totalTimeout(Duration.ofMinutes(3)));
       if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully
       } else {
         // Handle error case
       }
-    } catch (InterruptedException | TimeoutException e) {
+    } catch (InterruptedException e) {
       // Handle interrupted wait
     }
     // [END copy]
@@ -215,14 +214,14 @@ public class TableSnippets {
     Job job = table.copy(destinationId, options);
     // Wait for the job to complete.
     try {
-      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(3, TimeUnit.MINUTES));
+      Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+          RetryOption.totalTimeout(Duration.ofMinutes(3)));
       if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully.
       } else {
         // Handle error case.
       }
-    } catch (InterruptedException | TimeoutException e) {
+    } catch (InterruptedException e) {
       // Handle interrupted wait
     }
     // [END copyTableId]
@@ -244,14 +243,14 @@ public class TableSnippets {
     Job job = table.extract(format, destinationUris);
     // Wait for the job to complete
     try {
-      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(3, TimeUnit.MINUTES));
+      Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+          RetryOption.totalTimeout(Duration.ofMinutes(3)));
       if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully
       } else {
         // Handle error case
       }
-    } catch (InterruptedException | TimeoutException e) {
+    } catch (InterruptedException e) {
       // Handle interrupted wait
     }
     // [END extractList]
@@ -269,14 +268,14 @@ public class TableSnippets {
     Job job = table.extract(format, gcsUrl);
     // Wait for the job to complete
     try {
-      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(3, TimeUnit.MINUTES));
+      Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+          RetryOption.totalTimeout(Duration.ofMinutes(3)));
       if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully
       } else {
         // Handle error case
       }
-    } catch (InterruptedException | TimeoutException e) {
+    } catch (InterruptedException e) {
       // Handle interrupted wait
     }
     // [END extractSingle]
@@ -297,14 +296,14 @@ public class TableSnippets {
     Job job = table.load(FormatOptions.csv(), sourceUris);
     // Wait for the job to complete
     try {
-      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(3, TimeUnit.MINUTES));
+      Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+          RetryOption.totalTimeout(Duration.ofMinutes(3)));
       if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully
       } else {
         // Handle error case
       }
-    } catch (InterruptedException | TimeoutException e) {
+    } catch (InterruptedException e) {
       // Handle interrupted wait
     }
     // [END loadList]
@@ -321,14 +320,14 @@ public class TableSnippets {
     Job job = table.load(FormatOptions.csv(), sourceUri);
     // Wait for the job to complete
     try {
-      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(3, TimeUnit.MINUTES));
+      Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+                RetryOption.totalTimeout(Duration.ofMinutes(3)));
       if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully
       } else {
         // Handle error case
       }
-    } catch (InterruptedException | TimeoutException e) {
+    } catch (InterruptedException e) {
       // Handle interrupted wait
     }
     // [END loadSingle]

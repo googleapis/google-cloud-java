@@ -36,7 +36,7 @@ import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
@@ -45,9 +45,9 @@ import com.google.cloud.bigquery.JobConfiguration;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
+import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
-import com.google.cloud.bigquery.QueryRequest;
 import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
@@ -423,7 +423,7 @@ public class BigQuerySnippets {
     // [START createTable]
     TableId tableId = TableId.of(datasetName, tableName);
     // Table field definition
-    Field field = Field.of(fieldName, Field.Type.string());
+    Field field = Field.of(fieldName, LegacySQLTypeName.STRING);
     // Table schema definition
     Schema schema = Schema.of(field);
     TableDefinition tableDefinition = StandardTableDefinition.of(schema);
@@ -439,11 +439,11 @@ public class BigQuerySnippets {
   // [TARGET listTableData(String, String, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Page<List<FieldValue>> listTableData(String datasetName, String tableName) {
+  public Page<FieldValueList> listTableData(String datasetName, String tableName) {
     // [START listTableData]
-    Page<List<FieldValue>> tableData =
+    Page<FieldValueList> tableData =
         bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
-    for (List<FieldValue> row : tableData.iterateAll()) {
+    for (FieldValueList row : tableData.iterateAll()) {
       // do something with the row
     }
     // [END listTableData]
@@ -456,12 +456,12 @@ public class BigQuerySnippets {
   // [TARGET listTableData(TableId, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Page<List<FieldValue>> listTableDataFromId(String datasetName, String tableName) {
+  public Page<FieldValueList> listTableDataFromId(String datasetName, String tableName) {
     // [START listTableDataFromId]
     TableId tableIdObject = TableId.of(datasetName, tableName);
-    Page<List<FieldValue>> tableData =
+    Page<FieldValueList> tableData =
         bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
-    for (List<FieldValue> row : tableData.iterateAll()) {
+    for (FieldValueList row : tableData.iterateAll()) {
       // do something with the row
     }
     // [END listTableDataFromId]
@@ -571,22 +571,18 @@ public class BigQuerySnippets {
   /**
    * Example of running a query.
    */
-  // [TARGET query(QueryRequest)]
+  // [TARGET query(QueryJobConfiguration, QueryOption...)]
   // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
   public QueryResponse runQuery(String query) throws InterruptedException {
     // [START runQuery]
-    QueryRequest request = QueryRequest.of(query);
-    QueryResponse response = bigquery.query(request);
-    // Wait for things to finish
-    while (!response.jobCompleted()) {
-      Thread.sleep(1000);
-      response = bigquery.getQueryResults(response.getJobId());
-    }
+    QueryJobConfiguration queryConfig =
+        QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
+    QueryResponse response = bigquery.query(queryConfig);
     if (response.hasErrors()) {
       // handle errors
     }
     QueryResult result = response.getResult();
-    for (List<FieldValue> row : result.iterateAll()) {
+    for (FieldValueList row : result.iterateAll()) {
       // do something with the data
     }
     // [END runQuery]
@@ -596,25 +592,20 @@ public class BigQuerySnippets {
   /**
    * Example of running a query with query parameters.
    */
-  // [TARGET query(QueryRequest)]
+  // [TARGET query(QueryJobConfiguration, QueryOption...)]
   // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount"]
   public QueryResponse runQueryWithParameters(String query) throws InterruptedException {
     // [START runQueryWithParameters]
-    QueryRequest request = QueryRequest.newBuilder(query)
-        .setUseLegacySql(false) // standard SQL is required to use query parameters
+    // Note, standard SQL is required to use query parameters. Legacy SQL will not work.
+    QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
         .addNamedParameter("wordCount", QueryParameterValue.int64(5))
         .build();
-    QueryResponse response = bigquery.query(request);
-    // Wait for things to finish
-    while (!response.jobCompleted()) {
-      Thread.sleep(1000);
-      response = bigquery.getQueryResults(response.getJobId());
-    }
+    QueryResponse response = bigquery.query(queryConfig);
     if (response.hasErrors()) {
       // handle errors
     }
     QueryResult result = response.getResult();
-    for (List<FieldValue> row : result.iterateAll()) {
+    for (FieldValueList row : result.iterateAll()) {
       // do something with the data
     }
     // [END runQueryWithParameters]
@@ -628,18 +619,14 @@ public class BigQuerySnippets {
   // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
   public QueryResponse queryResults(final String query) throws InterruptedException {
     // [START queryResults]
-    QueryRequest request = QueryRequest.of(query);
-    QueryResponse response = bigquery.query(request);
-    // Wait for things to finish
-    while (!response.jobCompleted()) {
-      Thread.sleep(1000);
-      response = bigquery.getQueryResults(response.getJobId());
-    }
+    QueryJobConfiguration queryConfig =
+        QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
+    QueryResponse response = bigquery.query(queryConfig);
     if (response.hasErrors()) {
       // handle errors
     }
     QueryResult result = response.getResult();
-    for (List<FieldValue> row : result.iterateAll()) {
+    for (FieldValueList row : result.iterateAll()) {
       // do something with the data
     }
     // [END queryResults]

@@ -16,10 +16,10 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
-import com.google.cloud.pubsub.spi.v1.MessageReceiver;
-import com.google.cloud.pubsub.spi.v1.Subscriber;
-import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
+import com.google.cloud.pubsub.v1.AckReplyConsumer;
+import com.google.cloud.pubsub.v1.MessageReceiver;
+import com.google.cloud.pubsub.v1.Subscriber;
+import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PushConfig;
@@ -33,8 +33,8 @@ import com.google.pubsub.v1.TopicName;
 public class CreateSubscriptionAndConsumeMessages {
 
   public static void main(String... args) throws Exception {
-    TopicName topic = TopicName.create("test-project", "test-topic");
-    SubscriptionName subscription = SubscriptionName.create("test-project", "test-subscription");
+    TopicName topic = TopicName.of("my-project-id", "my-topic-id");
+    SubscriptionName subscription = SubscriptionName.of("my-project-id", "my-subscription-id");
 
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
@@ -44,13 +44,13 @@ public class CreateSubscriptionAndConsumeMessages {
         new MessageReceiver() {
           @Override
           public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
-            System.out.println("got message: " + message.getData().toStringUtf8());
+            System.out.println("Received message: " + message.getData().toStringUtf8());
             consumer.ack();
           }
         };
     Subscriber subscriber = null;
     try {
-      subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
+      subscriber = Subscriber.newBuilder(subscription, receiver).build();
       subscriber.addListener(
           new Subscriber.Listener() {
             @Override
@@ -62,10 +62,13 @@ public class CreateSubscriptionAndConsumeMessages {
           MoreExecutors.directExecutor());
       subscriber.startAsync().awaitRunning();
 
+      // In this example, we will pull messages for one minute (60,000ms) then stop.
+      // In a real application, this sleep-then-stop is not necessary.
+      // Simply call stopAsync().awaitTerminated() when the server is shutting down, etc.
       Thread.sleep(60000);
     } finally {
       if (subscriber != null) {
-        subscriber.stopAsync();
+        subscriber.stopAsync().awaitTerminated();
       }
     }
   }

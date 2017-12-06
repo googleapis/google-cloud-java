@@ -24,15 +24,16 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.core.InternalApi;
 import com.google.auth.Credentials;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.PlatformInformation;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.Locale;
 import java.util.Objects;
 
 /**
@@ -55,8 +56,7 @@ public class HttpTransportOptions implements TransportOptions {
     @Override
     public HttpTransport create() {
       // Consider App Engine Standard
-      if (System.getProperty("com.google.appengine.runtime.version") != null
-          && System.getenv("GAE_SERVICE") == null) {
+      if (PlatformInformation.isOnGAEStandard7()) {
         try {
           return new UrlFetchTransport();
         } catch (Exception ignore) {
@@ -149,6 +149,7 @@ public class HttpTransportOptions implements TransportOptions {
     final HttpRequestInitializer delegate =
         scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()
             ? new HttpCredentialsAdapter(scopedCredentials) : null;
+    final String xGoogHeader = getXGoogApiClientHeader(serviceOptions.getLibraryVersion());
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
@@ -163,22 +164,26 @@ public class HttpTransportOptions implements TransportOptions {
         }
 
         HttpHeaders headers = httpRequest.getHeaders();
-        headers.set("x-goog-api-client", getXGoogApiClientHeader(serviceOptions));
+        headers.set("x-goog-api-client", xGoogHeader);
       }
     };
   }
 
-  String getXGoogApiClientHeader(ServiceOptions<?, ?> serviceOptions) {
-    return String.format(
+  /**
+   * Returns a string value for x-goog-api-client HTTP header. The header is used to report version
+   * of the client and its protocol-specific dependencies.
+   *
+   * For internal use.
+   *
+   * @param libraryVersion version of the google-cloud-java library
+   * @return value of x-goog-api-client HTTP header, which should be provided with each request
+   */
+  String getXGoogApiClientHeader(String libraryVersion) {
+    return String.format(Locale.US,
         "gl-java/%s %s/%s",
-        getJavaVersion(),
+        firstNonNull(Runtime.class.getPackage().getImplementationVersion(), ""),
         ServiceOptions.getGoogApiClientLibName(),
-        serviceOptions.getLibraryVersion());
-  }
-
-  private static String getJavaVersion() {
-    String javaVersion = Runtime.class.getPackage().getImplementationVersion();
-    return javaVersion != null ? javaVersion : "";
+        libraryVersion);
   }
 
   /**

@@ -21,12 +21,15 @@ import static com.google.common.base.Preconditions.checkArgument;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
+import com.google.cloud.RetryOption;
 import com.google.cloud.Service;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,6 +54,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     ETAG("etag"),
     FRIENDLY_NAME("friendlyName"),
     ID("id"),
+    LABELS("labels"),
     LAST_MODIFIED_TIME("lastModifiedTime"),
     LOCATION("location"),
     SELF_LINK("selfLink");
@@ -439,6 +443,72 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
   }
 
+  class QueryOption implements Serializable {
+    private static final long serialVersionUID = 6206193419355824689L;
+
+    private final Object option;
+
+    private QueryOption(Object option) {
+      this.option = option;
+    }
+
+    public QueryResultsOption getQueryResultsOption() {
+      return option instanceof QueryResultsOption ? (QueryResultsOption) option : null;
+    }
+
+    public RetryOption getRetryOption() {
+      return option instanceof RetryOption ? (RetryOption) option : null;
+    }
+
+    static QueryResultsOption[] filterQueryResultsOptions(QueryOption... options) {
+      List<QueryResultsOption> queryResultOptions = new ArrayList<>(options.length);
+      for (QueryOption opt : options) {
+        if (opt.getQueryResultsOption() != null) {
+          queryResultOptions.add(opt.getQueryResultsOption());
+        }
+      }
+      return queryResultOptions.toArray(new QueryResultsOption[queryResultOptions.size()]);
+    }
+
+    static RetryOption[] filterRetryOptions(QueryOption... options) {
+      List<RetryOption> retryOptions = new ArrayList<>(options.length);
+      for (QueryOption opt : options) {
+        if (opt.getRetryOption() != null) {
+          retryOptions.add(opt.getRetryOption());
+        }
+      }
+      return retryOptions.toArray(new RetryOption[retryOptions.size()]);
+    }
+
+    public static QueryOption of(QueryResultsOption resultsOption) {
+      return new QueryOption(resultsOption);
+    }
+
+    public static QueryOption of(RetryOption waitOption) {
+      return new QueryOption(waitOption);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+
+      QueryOption that = (QueryOption) o;
+
+      return option != null ? option.equals(that.option) : that.option == null;
+    }
+
+    @Override
+    public int hashCode() {
+      return option != null ? option.hashCode() : 0;
+    }
+  }
+
+
   /**
    * Creates a new dataset.
    *
@@ -539,9 +609,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <p>Example of listing datasets, specifying the page size.
    * <pre> {@code
    * Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.pageSize(100));
-   * Iterator<Dataset> datasetIterator = datasets.iterateAll();
-   * while (datasetIterator.hasNext()) {
-   *   Dataset dataset = datasetIterator.next();
+   * for (Dataset dataset : datasets.iterateAll()) {
    *   // do something with the dataset
    * }
    * }</pre>
@@ -561,9 +629,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <pre> {@code
    * String projectId = "my_project_id";
    * Page<Dataset> datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
-   * Iterator<Dataset> datasetIterator = datasets.iterateAll();
-   * while (datasetIterator.hasNext()) {
-   *   Dataset dataset = datasetIterator.next();
+   * for (Dataset dataset : datasets.iterateAll()) {
    *   // do something with the dataset
    * }
    * }</pre>
@@ -728,9 +794,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <pre> {@code
    * String datasetName = "my_dataset_name";
    * Page<Table> tables = bigquery.listTables(datasetName, TableListOption.pageSize(100));
-   * Iterator<Table> tableIterator = tables.iterateAll();
-   * while (tableIterator.hasNext()) {
-   *   Table table = tableIterator.next();
+   * for (Table table : tables.iterateAll()) {
    *   // do something with the table
    * }
    * }</pre>
@@ -752,9 +816,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String datasetName = "my_dataset_name";
    * DatasetId datasetId = DatasetId.of(projectId, datasetName);
    * Page<Table> tables = bigquery.listTables(datasetId, TableListOption.pageSize(100));
-   * Iterator<Table> tableIterator = tables.iterateAll();
-   * while (tableIterator.hasNext()) {
-   *   Table table = tableIterator.next();
+   * for (Table table : tables.iterateAll()) {
    *   // do something with the table
    * }
    * }</pre>
@@ -803,18 +865,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
-   * Page<List<FieldValue>> tableData =
+   * Page<FieldValueList> tableData =
    *     bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
-   * Iterator<List<FieldValue>> rowIterator = tableData.iterateAll();
-   * while (rowIterator.hasNext()) {
-   *   List<FieldValue> row = rowIterator.next();
+   * for (FieldValueList row : tableData.iterateAll()) {
    *   // do something with the row
    * }
    * }</pre>
    *
    * @throws BigQueryException upon failure
    */
-  Page<List<FieldValue>> listTableData(String datasetId, String tableId,
+  Page<FieldValueList> listTableData(String datasetId, String tableId,
       TableDataListOption... options);
 
   /**
@@ -825,18 +885,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * TableId tableIdObject = TableId.of(datasetName, tableName);
-   * Page<List<FieldValue>> tableData =
+   * Page<FieldValueList> tableData =
    *     bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
-   * Iterator<List<FieldValue>> rowIterator = tableData.iterateAll();
-   * while (rowIterator.hasNext()) {
-   *   List<FieldValue> row = rowIterator.next();
+   * for (FieldValueList row : rowIterator.hasNext()) {
    *   // do something with the row
    * }
    * }</pre>
    *
    * @throws BigQueryException upon failure
    */
-  Page<List<FieldValue>> listTableData(TableId tableId, TableDataListOption... options);
+  Page<FieldValueList> listTableData(TableId tableId, TableDataListOption... options);
 
   /**
    * Returns the requested job or {@code null} if not found.
@@ -877,9 +935,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <p>Example of listing jobs, specifying the page size.
    * <pre> {@code
    * Page<Job> jobs = bigquery.listJobs(JobListOption.pageSize(100));
-   * Iterator<Job> jobIterator = jobs.iterateAll();
-   * while (jobIterator.hasNext()) {
-   *   Job job = jobIterator.next();
+   * for (Job job : jobs.iterateAll()) {
    *   // do something with the job
    * }
    * }</pre>
@@ -934,65 +990,85 @@ public interface BigQuery extends Service<BigQueryOptions> {
   boolean cancel(JobId jobId);
 
   /**
-   * Runs the query associated with the request.
+   * Runs the query associated with the request, using an internally-generated random JobId.
    *
    * <p>Example of running a query.
    * <pre> {@code
-   * String query = "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]";
-   * QueryRequest request = QueryRequest.of(query);
-   * QueryResponse response = bigquery.query(request);
-   * // Wait for things to finish
-   * while (!response.jobCompleted()) {
-   *   Thread.sleep(1000);
-   *   response = bigquery.getQueryResults(response.getJobId());
-   * }
+   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare`";
+   * QueryJobConfiguration queryConfig = QueryJobConfiguration.of(query);
+   *
+   * // To run the legacy syntax queries use the following code instead:
+   * //   String query = "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"
+   * //   QueryJobConfiguration queryConfig =
+   * //       QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
+   *
+   * QueryResponse response = bigquery.query(queryConfig);
    * if (response.hasErrors()) {
    *   // handle errors
    * }
    * QueryResult result = response.getResult();
-   * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
-   * while (rowIterator.hasNext()) {
-   *   List<FieldValue> row = rowIterator.next();
+   * for (FieldValueList row : result.iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
    *
    * <p>Example of running a query with query parameters.
    * <pre> {@code
-   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > ?";
-   * QueryRequest request = QueryRequest.newBuilder(query)
-   *     .setUseLegacySql(false) // standard SQL is required to use query parameters
+   * String query =
+   *     "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > ?";
+   * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
    *     .addPositionalParameter(QueryParameterValue.int64(5))
    *     .build();
-   * QueryResponse response = bigquery.query(request);
-   * // Wait for things to finish
-   * while (!response.jobCompleted()) {
-   *   Thread.sleep(1000);
-   *   response = bigquery.getQueryResults(response.getJobId());
-   * }
+   * QueryResponse response = bigquery.query(queryConfig);
    * if (response.hasErrors()) {
    *   // handle errors
    * }
    * QueryResult result = response.getResult();
-   * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
-   * while (rowIterator.hasNext()) {
-   *   List<FieldValue> row = rowIterator.next();
+   * for (FieldValueList row : result.iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
    *
    * @throws BigQueryException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the query
+   *     to complete
    */
-  QueryResponse query(QueryRequest request);
+  QueryResponse query(QueryJobConfiguration configuration, QueryOption... options)
+      throws InterruptedException;
+
+  /**
+   * Runs the query associated with the request, using the given job id.
+   *
+   * <p>See {@link #query(QueryJobConfiguration, QueryOption...)} for examples on populating a
+   * {@link QueryJobConfiguration}.
+   *
+   * <p>
+   * The recommended way to create a randomly generated JobId is the following:
+   *
+   * <pre> {@code
+   *  JobId jobId = JobId.of();
+   * }</pre>
+   *
+   * For a user specified job id with an optional prefix use the following:
+   * <pre> {@code
+   *  JobId jobId = JobId.of("my_prefix-my_unique_job_id");
+   * }</pre>
+   *
+   * @throws BigQueryException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the query
+   *     to complete
+   */
+  QueryResponse query(QueryJobConfiguration configuration, JobId jobId, QueryOption... options)
+      throws InterruptedException;
 
   /**
    * Returns results of the query associated with the provided job.
    *
    * <p>Example of getting the results of query.
    * <pre> {@code
-   * String query = "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]";
-   * QueryRequest request = QueryRequest.of(query);
-   * QueryResponse response = bigquery.query(request);
+   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare`";
+   * QueryJobConfiguration queryConfig = QueryJobConfiguration.of(query);
+   * QueryResponse response = bigquery.query(queryConfig);
    * // Wait for things to finish
    * while (!response.jobCompleted()) {
    *   Thread.sleep(1000);
@@ -1002,9 +1078,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *   // handle errors
    * }
    * QueryResult result = response.getResult();
-   * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
-   * while (rowIterator.hasNext()) {
-   *   List<FieldValue> row = rowIterator.next();
+   * Iterator<FieldValueList> rowIterator = result.iterateAll();
+   * for (FieldValueList row : result.iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>

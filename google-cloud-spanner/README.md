@@ -1,21 +1,15 @@
 # Google Cloud Java Client for Spanner
 
-Java idiomatic client for [Cloud
-Spanner](https://cloud.google.com/spanner).
+Java idiomatic client for [Cloud Spanner][cloud-spanner].
 
-[![Build
-Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
-[![Coverage
-Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
+[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner.svg)
-[![Codacy
-Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency
-Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--   [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--   [API
-    Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/spanner/package-summary.html)
+- [Product Documentation][spanner-product-docs]
+- [Client Library Documentation][spanner-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally make
 > backwards-incompatible changes.
@@ -27,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>0.17.1-beta</version>
+  <version>0.30.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-spanner:0.17.1-beta'
+compile 'com.google.cloud:google-cloud-spanner:0.30.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.17.1-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.30.0-beta"
 ```
 
 ## Authentication
@@ -57,18 +51,63 @@ market.
 Be sure to activate the Cloud Spanner API on the Developer's Console to
 use Cloud Spanner from your project.
 
-See the `google-cloud` API [spanner documentation][spanner-api] to learn how to
+See the [Spanner client lib docs][spanner-client-lib-docs] to learn how to
 interact with Cloud Spanner using this Client Library.
 
 ## Getting Started
-
+#### Prerequisites
 Please refer to the [getting
 started](https://cloud.google.com/spanner/docs/getting-started/java/) guide.
+
+#### Calling Cloud Spanner
+Here is a code snippet showing a simple usage example. Add the following imports
+at the top of your file:
+
+```java
+import com.google.cloud.spanner.DatabaseClient;
+import com.google.cloud.spanner.DatabaseId;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.Spanner;
+import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.Statement;
+
+```
+
+Then, to make a query to Spanner, use the following code:
+```java
+// Instantiates a client
+SpannerOptions options = SpannerOptions.newBuilder().build();
+Spanner spanner = options.getService();
+String instance = "my-instance";
+String database = "my-database";
+try {
+  // Creates a database client
+  DatabaseClient dbClient = spanner.getDatabaseClient(
+    DatabaseId.of(options.getProjectId(), instance, database));
+  // Queries the database
+  ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"));
+  // Prints the results
+  while (resultSet.next()) {
+    System.out.printf("%d\n", resultSet.getLong(0));
+  }
+} finally {
+  // Closes the client which will free up the resources used
+  spanner.closeAsync().get();
+}
+```
+
+#### Complete source code
+
+In [DatabaseSelect.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/spanner/snippets/DatabaseSelect.java) we put together all the code shown above in a single program.
 
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting
 document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+
+Transport
+---------
+Spanner uses gRPC for the transport layer.
 
 ## Java Versions
 
@@ -102,4 +141,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-cloud-spanner
 [cloud-platform]: https://cloud.google.com/
 [cloud-spanner]: https://cloud.google.com/spanner/
-[spanner-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/spanner/package-summary.html
+[spanner-product-docs]: https://cloud.google.com/spanner/docs/
+[spanner-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/spanner/package-summary.html

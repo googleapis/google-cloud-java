@@ -29,8 +29,7 @@ public interface DatabaseAdminClient {
    * Creates a new database in a Cloud Spanner instance.
    *
    * <p>Example to create database.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String instanceId = my_instance_id;
    * String databaseId = my_database_id;
    * Operation<Database, CreateDatabaseMetadata> op = dbAdminClient
@@ -62,16 +61,16 @@ public interface DatabaseAdminClient {
   Operation<Database, CreateDatabaseMetadata> createDatabase(
       String instanceId, String databaseId, Iterable<String> statements) throws SpannerException;
 
-  /**
-   * Gets the current state of a Cloud Spanner database.
+  /** 
+   * Gets the current state of a Cloud Spanner database. 
    *
    * <p>Example to getDatabase.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String instanceId = my_instance_id;
    * String databaseId = my_database_id;
    * Database db = dbAdminClient.getDatabase(instanceId, databaseId);
    * }</pre>
+   *
    */
   Database getDatabase(String instanceId, String databaseId) throws SpannerException;
 
@@ -85,8 +84,7 @@ public interface DatabaseAdminClient {
    * fails, all subsequent statements in the batch are automatically cancelled.
    *
    * <p>Example to update the database DDL.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String instanceId = my_instance_id;
    * String databaseId = my_database_id;
    * dbAdminClient.updateDatabaseDdl(instanceId,
@@ -106,16 +104,16 @@ public interface DatabaseAdminClient {
       @Nullable String operationId)
       throws SpannerException;
 
-  /**
-   * Drops a Cloud Spanner database.
+  /** 
+   * Drops a Cloud Spanner database. 
    *
    * <p>Example to drop a Cloud Spanner database.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String instanceId = my_instance_id;
    * String databaseId = my_database_id;
    * dbAdminClient.dropDatabase(instanceId, databaseId);
    * }</pre>
+   *
    */
   void dropDatabase(String instanceId, String databaseId) throws SpannerException;
 
@@ -124,21 +122,20 @@ public interface DatabaseAdminClient {
    * method does not show pending schema updates.
    *
    * <p>Example to get the schema of a Cloud Spanner database.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String instanceId = my_instance_id;
    * String databaseId = my_database_id;
    * List<String> statementsInDb = dbAdminClient.getDatabaseDdl(instanceId, databaseId);
    * }</pre>
+   *
    */
   List<String> getDatabaseDdl(String instanceId, String databaseId);
 
   /**
-   * Returns the list of Cloud Spanner database in the given instance.
+   * Returns the list of Cloud Spanner database in the given instance. 
    *
    * <p>Example to get the list of Cloud Spanner database in the given instance.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String instanceId = my_instance_id;
    * Page<Database> page = dbAdminClient.listDatabases(instanceId, Options.pageSize(1));
    * List<Database> dbs = new ArrayList<>();
@@ -148,6 +145,7 @@ public interface DatabaseAdminClient {
    *   page = page.getNextPage();
    * }
    * }</pre>
+   *
    */
   Page<Database> listDatabases(String instanceId, ListOption... options);
 }

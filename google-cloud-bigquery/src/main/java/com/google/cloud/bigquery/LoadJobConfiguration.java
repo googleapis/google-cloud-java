@@ -40,6 +40,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final JobInfo.CreateDisposition createDisposition;
   private final JobInfo.WriteDisposition writeDisposition;
   private final FormatOptions formatOptions;
+  private final String nullMarker;
   private final Integer maxBadRecords;
   private final Schema schema;
   private final Boolean ignoreUnknownValues;
@@ -55,6 +56,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private JobInfo.CreateDisposition createDisposition;
     private JobInfo.WriteDisposition writeDisposition;
     private FormatOptions formatOptions;
+    private String nullMarker;
     private Integer maxBadRecords;
     private Schema schema;
     private Boolean ignoreUnknownValues;
@@ -72,6 +74,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.createDisposition = loadConfiguration.createDisposition;
       this.writeDisposition = loadConfiguration.writeDisposition;
       this.formatOptions = loadConfiguration.formatOptions;
+      this.nullMarker = loadConfiguration.nullMarker;
       this.maxBadRecords = loadConfiguration.maxBadRecords;
       this.schema = loadConfiguration.schema;
       this.ignoreUnknownValues = loadConfiguration.ignoreUnknownValues;
@@ -94,6 +97,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       }
       if (loadConfigurationPb.getSourceFormat() != null) {
         this.formatOptions = FormatOptions.of(loadConfigurationPb.getSourceFormat());
+      }
+      if (loadConfigurationPb.getNullMarker() != null) {
+        this.nullMarker = loadConfigurationPb.getNullMarker();
       }
       if (loadConfigurationPb.getAllowJaggedRows() != null
           || loadConfigurationPb.getAllowQuotedNewlines() != null
@@ -165,6 +171,13 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
 
 
     @Override
+    public Builder setNullMarker(String nullMarker) {
+      this.nullMarker = nullMarker;
+      return this;
+    }
+
+
+    @Override
     public Builder setMaxBadRecords(Integer maxBadRecords) {
       this.maxBadRecords = maxBadRecords;
       return this;
@@ -219,6 +232,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.createDisposition = builder.createDisposition;
     this.writeDisposition = builder.writeDisposition;
     this.formatOptions = builder.formatOptions;
+    this.nullMarker = builder.nullMarker;
     this.maxBadRecords = builder.maxBadRecords;
     this.schema = builder.schema;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
@@ -242,6 +256,12 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Override
   public JobInfo.WriteDisposition getWriteDisposition() {
     return writeDisposition;
+  }
+
+
+  @Override
+  public String getNullMarker() {
+    return nullMarker;
   }
 
 
@@ -309,6 +329,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
         .add("formatOptions", formatOptions)
+        .add("nullMarker", nullMarker)
         .add("maxBadRecords", maxBadRecords)
         .add("schema", schema)
         .add("ignoreUnknownValue", ignoreUnknownValues)
@@ -343,6 +364,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     if (writeDisposition != null) {
       loadConfigurationPb.setWriteDisposition(writeDisposition.toString());
+    }
+    if (nullMarker != null) {
+      loadConfigurationPb.setNullMarker(nullMarker);
     }
     if (getCsvOptions() != null) {
       CsvOptions csvOptions = getCsvOptions();

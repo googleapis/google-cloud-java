@@ -8,5 +8,9 @@ mvn nexus-staging:release
 git push
 
 # Push the gh-pages updates
-cd tmp_gh-pages
+pushd tmp_gh-pages
 git push
+popd
+
+# Remove gh-pages temporary directory
+rm -rf tmp_gh-pages

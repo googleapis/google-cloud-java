@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Compute.
+ * A client for Google Compute Engine – High-performance, scalable virtual machines.
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
  * shows how to create a snapshot from an existing disk. For the complete source code see

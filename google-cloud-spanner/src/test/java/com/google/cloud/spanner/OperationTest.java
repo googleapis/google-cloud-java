@@ -23,14 +23,13 @@ import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.api.core.ApiClock;
-import com.google.cloud.WaitForOption;
+import com.google.cloud.RetryOption;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
-import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -38,6 +37,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
+import org.threeten.bp.Duration;
 
 /** Unit tests for {@link Operation}. */
 @RunWith(JUnit4.class)
@@ -45,9 +45,12 @@ public class OperationTest {
   private static final String NAME =
       "projects/test-project/instances/test-instance/databases/database-1";
 
-  @Mock SpannerRpc rpc;
-  @Mock DatabaseAdminClient dbClient;
-  @Mock ApiClock clock;
+  @Mock
+  private SpannerRpc rpc;
+  @Mock
+  private DatabaseAdminClient dbClient;
+  @Mock
+  private ApiClock clock;
 
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
@@ -161,7 +164,9 @@ public class OperationTest {
         newBuilder().setName("op1").setDone(true).setResponse(Any.pack(db)).build();
     when(rpc.getOperation("op1")).thenReturn(proto, proto2);
 
-    op = op.waitFor(WaitForOption.checkEvery(0, TimeUnit.MILLISECONDS));
+    op = op.waitFor(RetryOption.totalTimeout(Duration.ofSeconds(3)),
+        RetryOption.initialRetryDelay(Duration.ZERO));
+
     assertThat(op.getName()).isEqualTo("op1");
     assertThat(op.isDone()).isTrue();
     assertThat(op.isSuccessful()).isTrue();
@@ -174,11 +179,10 @@ public class OperationTest {
     com.google.longrunning.Operation proto = newBuilder().setName("op1").setDone(false).build();
     Operation<Database, String> op = Operation.create(rpc, proto, new ParserImpl(), clock);
     when(rpc.getOperation("op1")).thenReturn(proto);
-    when(clock.millisTime()).thenReturn(0L, 50L, 100L, 150L);
+    when(clock.nanoTime()).thenReturn(0L, 50_000_000L, 100_000_000L, 150_000_000L);
 
     expectedException.expect(isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    op.waitFor(
-        WaitForOption.checkEvery(0, TimeUnit.MILLISECONDS),
-        WaitForOption.timeout(100, TimeUnit.MILLISECONDS));
+    op.waitFor(RetryOption.totalTimeout(Duration.ofMillis(100L)),
+        RetryOption.initialRetryDelay(Duration.ZERO));
   }
 }

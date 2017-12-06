@@ -28,13 +28,14 @@ import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.ExternalTableDefinition;
 import com.google.cloud.bigquery.ExtractJobConfiguration;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
-import com.google.cloud.bigquery.QueryRequest;
+import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
@@ -46,6 +47,7 @@ import com.google.cloud.bigquery.WriteChannelConfiguration;
 import com.google.common.collect.ImmutableMap;
 import java.nio.channels.FileChannel;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -313,7 +315,7 @@ public class BigQueryExample {
   private static class ListTableDataAction extends TableAction {
     @Override
     public void run(BigQuery bigquery, TableId tableId) {
-      for (List<FieldValue> row : bigquery.listTableData(tableId).iterateAll()) {
+      for (FieldValueList row : bigquery.listTableData(tableId).iterateAll()) {
         System.out.println(row);
       }
     }
@@ -390,7 +392,7 @@ public class BigQueryExample {
     }
 
     static Schema parseSchema(String[] args, int start, int end) {
-      Schema.Builder builder = Schema.newBuilder();
+      List<Field> schemaFields = new ArrayList<>();
       for (int i = start; i < end; i++) {
         String[] fieldsArray = args[i].split(":");
         if (fieldsArray.length != 2) {
@@ -398,32 +400,32 @@ public class BigQueryExample {
         }
         String fieldName = fieldsArray[0];
         String typeString = fieldsArray[1].toLowerCase();
-        Field.Type fieldType;
+        LegacySQLTypeName fieldType;
         switch (typeString) {
           case "string":
-            fieldType = Field.Type.string();
+            fieldType = LegacySQLTypeName.STRING;
             break;
           case "integer":
-            fieldType = Field.Type.integer();
+            fieldType = LegacySQLTypeName.INTEGER;
             break;
           case "timestamp":
-            fieldType = Field.Type.timestamp();
+            fieldType = LegacySQLTypeName.TIMESTAMP;
             break;
           case "float":
-            fieldType = Field.Type.floatingPoint();
+            fieldType = LegacySQLTypeName.FLOAT;
             break;
           case "boolean":
-            fieldType = Field.Type.bool();
+            fieldType = LegacySQLTypeName.BOOLEAN;
             break;
           case "bytes":
-            fieldType = Field.Type.bytes();
+            fieldType = LegacySQLTypeName.BYTES;
             break;
           default:
             throw new IllegalArgumentException("Unrecognized field type '" + typeString + "'.");
         }
-        builder.addField(Field.of(fieldName, fieldType));
+        schemaFields.add(Field.of(fieldName, fieldType));
       }
-      return builder.build();
+      return Schema.of(schemaFields);
     }
   }
 
@@ -615,19 +617,14 @@ public class BigQueryExample {
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/query">Jobs: query</a>
    */
-  private static class QueryAction extends BigQueryAction<QueryRequest> {
+  private static class QueryAction extends BigQueryAction<QueryJobConfiguration> {
     @Override
-    void run(BigQuery bigquery, QueryRequest queryRequest) throws Exception {
+    void run(BigQuery bigquery, QueryJobConfiguration queryConfig) throws Exception {
       System.out.println("Running query");
-      QueryResponse queryResponse = bigquery.query(queryRequest);
-      while (!queryResponse.jobCompleted()) {
-        System.out.println("Waiting for query job " + queryResponse.getJobId() + " to complete");
-        Thread.sleep(1000L);
-        queryResponse = bigquery.getQueryResults(queryResponse.getJobId());
-      }
+      QueryResponse queryResponse = bigquery.query(queryConfig);
       if (!queryResponse.hasErrors()) {
         System.out.println("Query succeeded. Results:");
-        for (List<FieldValue> row : queryResponse.getResult().iterateAll()) {
+        for (FieldValueList row : queryResponse.getResult().iterateAll()) {
           System.out.println(row);
         }
       } else {
@@ -639,10 +636,10 @@ public class BigQueryExample {
     }
 
     @Override
-    QueryRequest parse(String... args) throws Exception {
+    QueryJobConfiguration parse(String... args) throws Exception {
       String message;
       if (args.length == 1) {
-        return QueryRequest.of(args[0]);
+        return QueryJobConfiguration.of(args[0]);
       }  else if (args.length > 1) {
         message = "Too many arguments.";
       } else {

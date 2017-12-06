@@ -166,16 +166,13 @@ public class SessionPoolOptions {
     }
 
     private void validate() {
+      Preconditions.checkArgument(maxSessions >= minSessions,
+              "Min sessions(%s) must be <= max sessions(%s)", minSessions, maxSessions);
       Preconditions.checkArgument(
-          maxSessions >= minSessions,
-          "Min sessions(%s) must be <= max sessions(%s)",
-          minSessions,
-          maxSessions);
+              keepAliveIntervalMinutes < 60, "Keep alive interval should be less than" + "60 minutes");
       Preconditions.checkArgument(
-          keepAliveIntervalMinutes < 60, "Keep alive interval should be less than" + "60 minutes");
-      Preconditions.checkArgument(
-          writeSessionsFraction >= 0 && writeSessionsFraction <= 1,
-          "Fraction of write sessions must be between 0 and 1 (inclusive)");
+              writeSessionsFraction >= 0 && writeSessionsFraction <= 1,
+              "Fraction of write sessions must be between 0 and 1 (inclusive)");
     }
   }
 }

@@ -1,7 +1,7 @@
 Google Cloud Java Client for Natural Language
 ======================================
 
-Java idiomatic client for [Google Cloud Natural Language](https://cloud.google.com/natural-language/).
+Java idiomatic client for [Google Cloud Natural Language][cloud-language].
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,11 +9,8 @@ Java idiomatic client for [Google Cloud Natural Language](https://cloud.google.c
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation][language-api]
-
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
+- [Product Documentation][language-product-docs]
+- [Client Library Documentation][language-client-lib-docs]
 
 Quickstart
 ----------
@@ -22,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-language</artifactId>
-  <version>0.17.1-beta</version>
+  <version>1.12.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-language:0.17.1-beta'
+compile 'com.google.cloud:google-cloud-language:1.12.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-language" % "0.17.1-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-language" % "1.12.0"
 ```
 
 Authentication
@@ -42,9 +39,9 @@ See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-jav
 About Google Cloud Natural Language
 ----------------------------
 
-Google [Cloud Natural Language API][cloud-language-docs] provides natural language understanding technologies to developers, including sentiment analysis, entity analysis, and syntax analysis. This API is part of the larger Cloud Machine Learning API family.
+Google [Cloud Natural Language API][cloud-language] provides natural language understanding technologies to developers, including sentiment analysis, entity analysis, and syntax analysis. This API is part of the larger Cloud Machine Learning API family.
 
-See the ``google-cloud`` API [natural language documentation][language-api] to learn how to use this Cloud Natural Language API Client Library.
+See the [Natural Language client library docs][language-client-lib-docs] to learn how to use this Cloud Natural Language API Client Library.
 
 Getting Started
 ---------------
@@ -54,14 +51,47 @@ You will need a [Google Developers Console](https://console.developers.google.co
 #### Installation and setup
 You'll need to obtain the `google-cloud-language` library.  See the [Quickstart](#quickstart) section to add `google-cloud-language` as a dependency in your code.
 
+#### Analyzing sentiment
+With Cloud Natural Language, you can analyze the sentiment of text. Add the following imports at the top of your file:
+
+``` java
+import com.google.cloud.language.v1.LanguageServiceClient;
+import com.google.cloud.language.v1.Document;
+import com.google.cloud.language.v1.Document.Type;
+import com.google.cloud.language.v1.Sentiment;
+```
+Then, to analyze the sentiment of some text, use the following code:
+
+``` java
+// Instantiates a client
+LanguageServiceClient language = LanguageServiceClient.create();
+
+// The text to analyze
+String[] texts = {"I love this!", "I hate this!"};
+for (String text : texts) {
+  Document doc = Document.newBuilder().setContent(text).setType(Type.PLAIN_TEXT).build();
+  // Detects the sentiment of the text
+  Sentiment sentiment = language.analyzeSentiment(doc).getDocumentSentiment();
+
+  System.out.printf("Text: \"%s\"%n", text);
+  System.out.printf(
+      "Sentiment: score = %s, magnitude = %s%n",
+      sentiment.getScore(), sentiment.getMagnitude());
+}
+```
+
 #### Complete source code
 
-In [AnalyzeSentiment.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/language/snippets/AnalyzeSentiment.java) we put a quick start example, which shows how you can use Google Natural Language API to automatically analyze a sentiment of a text message.
+In [AnalyzeSentiment.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/language/snippets/AnalyzeSentiment.java) we put the code shown above into a complete program.
 
 Troubleshooting
 ---------------
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+
+Transport
+---------
+Language uses gRPC for the transport layer.
 
 Java Versions
 -------------
@@ -94,5 +124,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[cloud-language-docs]: https://cloud.google.com/natural-language/docs
-[language-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/language/spi/v1/package-summary.html
+[cloud-language]: https://cloud.google.com/natural-language/
+[language-product-docs]: https://cloud.google.com/natural-language/docs/
+[language-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/language/v1beta2/package-summary.html

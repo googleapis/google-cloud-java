@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.testing.SerializableTester.reserialize;
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
@@ -428,7 +429,10 @@ public class GrpcResultSetTest {
       if (element == null) {
         elementProto.setNullValue(NullValue.NULL_VALUE);
       } else {
-        elementProto.getListValueBuilder().addValuesBuilder().setStringValue(element.getString(0));
+        elementProto
+            .getListValueBuilder()
+            .addValuesBuilder()
+            .setStringValue(element.getString(0));
         elementProto
             .getListValueBuilder()
             .addValuesBuilder()
@@ -596,8 +600,7 @@ public class GrpcResultSetTest {
 
   @Test
   public void serialization() throws Exception {
-    verifySerialization(
-        Value.string("a"),
+    verifySerialization(Value.string("a"),
         Value.string(null),
         Value.bool(true),
         Value.bool(null),
@@ -613,53 +616,48 @@ public class GrpcResultSetTest {
         Value.date(null),
         Value.stringArray(ImmutableList.of("one", "two")),
         Value.stringArray(null),
-        Value.boolArray(new boolean[] {true, false}),
+        Value.boolArray(new boolean[]{true, false}),
         Value.boolArray((boolean[]) null),
-        Value.int64Array(new long[] {1, 2, 3}),
+        Value.int64Array(new long[]{1, 2, 3}),
         Value.int64Array((long[]) null),
         Value.timestampArray(ImmutableList.of(Timestamp.MAX_VALUE, Timestamp.MAX_VALUE)),
         Value.timestampArray(null),
-        Value.dateArray(
-            ImmutableList.of(
-                Date.fromYearMonthDay(2017, 4, 17), Date.fromYearMonthDay(2017, 5, 18))),
-        Value.dateArray(null));
+        Value.dateArray(ImmutableList.of(
+            Date.fromYearMonthDay(2017, 4, 17), Date.fromYearMonthDay(2017, 5, 18))),
+        Value.dateArray(null)
+    );
   }
 
   @Test
   public void nestedStructSerialization() throws Exception {
     Type.StructField[] structFields = {
-      Type.StructField.of("a", Type.string()), Type.StructField.of("b", Type.int64())
+        Type.StructField.of("a", Type.string()),
+        Type.StructField.of("b", Type.int64())
     };
 
     Struct nestedStruct = s("1", 2L);
     Value struct = Value.structArray(Arrays.asList(structFields), Arrays.asList(nestedStruct));
-    verifySerialization(
-        new Function<Value, com.google.protobuf.Value>() {
+    verifySerialization(new Function<Value, com.google.protobuf.Value>() {
 
-          @Override
-          @Nullable
-          public com.google.protobuf.Value apply(@Nullable Value input) {
-            return toProto(input.getStructArray());
-          }
-        },
-        struct);
+      @Override @Nullable public com.google.protobuf.Value apply(@Nullable Value input) {
+        return toProto(input.getStructArray());
+      }
+    }, struct);
+
   }
 
   private void verifySerialization(Value... values) {
-    verifySerialization(
-        new Function<Value, com.google.protobuf.Value>() {
+    verifySerialization(new Function<Value, com.google.protobuf.Value>() {
 
-          @Override
-          @Nullable
-          public com.google.protobuf.Value apply(@Nullable Value input) {
-            return input.toProto();
-          }
-        },
-        values);
+      @Override
+      @Nullable
+      public com.google.protobuf.Value apply(@Nullable Value input) {
+        return input.toProto();
+      }
+    }, values);
   }
-
-  private void verifySerialization(
-      Function<Value, com.google.protobuf.Value> protoFn, Value... values) {
+  private void verifySerialization( Function<Value, com.google.protobuf.Value>
+      protoFn, Value... values) {
     resultSet = new SpannerImpl.GrpcResultSet(stream, new NoOpListener(), QueryMode.NORMAL);
     PartialResultSet.Builder builder = PartialResultSet.newBuilder();
     List<Type.StructField> types = new ArrayList<>();
@@ -667,11 +665,14 @@ public class GrpcResultSetTest {
       types.add(Type.StructField.of("f", value.getType()));
       builder.addValues(protoFn.apply(value));
     }
-    consumer.onPartialResultSet(builder.setMetadata(makeMetadata(Type.struct(types))).build());
+    consumer.onPartialResultSet(
+        builder.setMetadata(makeMetadata(Type.struct(types)))
+            .build());
     consumer.onCompleted();
     assertThat(resultSet.next()).isTrue();
     Struct row = resultSet.getCurrentRowAsStruct();
     Struct copy = reserialize(row);
     assertThat(row).isEqualTo(copy);
   }
+
 }

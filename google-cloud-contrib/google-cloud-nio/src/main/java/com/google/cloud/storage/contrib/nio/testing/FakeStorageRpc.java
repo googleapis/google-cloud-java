@@ -18,8 +18,10 @@ package com.google.cloud.storage.contrib.nio.testing;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Policy;
+import com.google.api.services.storage.model.ServiceAccount;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.Tuple;
@@ -290,7 +292,9 @@ class FakeStorageRpc implements StorageRpc {
     if (futureContents.containsKey(uploadId)) {
       bytes = futureContents.get(uploadId);
       if (bytes.length < length + destOffset) {
-        bytes = new byte[(int) (length + destOffset)];
+        byte[] newBytes = new byte[(int) (length + destOffset)];
+        System.arraycopy(bytes, 0, newBytes, (int) 0, bytes.length);
+        bytes = newBytes;
       }
     } else {
       bytes = new byte[(int) (length + destOffset)];
@@ -341,27 +345,27 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BucketAccessControl getAcl(String bucket, String entity) {
+  public BucketAccessControl getAcl(String bucket, String entity, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public boolean deleteAcl(String bucket, String entity) {
+  public boolean deleteAcl(String bucket, String entity, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public BucketAccessControl createAcl(BucketAccessControl acl) {
+  public BucketAccessControl createAcl(BucketAccessControl acl, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public BucketAccessControl patchAcl(BucketAccessControl acl) {
+  public BucketAccessControl patchAcl(BucketAccessControl acl, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public List<BucketAccessControl> listAcls(String bucket) {
+  public List<BucketAccessControl> listAcls(String bucket, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
@@ -447,17 +451,37 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Policy getIamPolicy(String bucket) {
+  public Policy getIamPolicy(String bucket, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public Policy setIamPolicy(String bucket, Policy policy) {
+  public Policy setIamPolicy(String bucket, Policy policy, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions) {
+  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean deleteNotification(String bucket, String notification) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public List<Notification> listNotifications(String bucket) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Notification createNotification(String bucket, Notification notification) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public ServiceAccount getServiceAccount(String projectId) {
+    return null;
   }
 }

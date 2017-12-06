@@ -19,22 +19,28 @@ package com.google.cloud.examples.pubsub.snippets;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.SubscriptionAdminClient;
-import com.google.cloud.pubsub.spi.v1.TopicAdminClient;
+import com.google.cloud.pubsub.v1.Publisher;
+import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PushConfig;
+import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -45,37 +51,35 @@ public class ITPubSubSnippets {
 
   @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
+  private TopicName topicName;
+  private SubscriptionName subscriptionName;
+
   private static String formatForTest(String resourceName) {
     return resourceName + "-" + NAME_SUFFIX;
   }
 
-  @Test
-  public void testPublisherSubscriber() throws Exception {
-    TopicName topicName =
-        TopicName.create(ServiceOptions.getDefaultProjectId(), formatForTest("test-topic"));
-    SubscriptionName subscriptionName =
-        SubscriptionName.create(
+  @Before
+  public void setUp() throws Exception {
+    topicName = TopicName.of(ServiceOptions.getDefaultProjectId(), formatForTest("test-topic"));
+    subscriptionName =
+        SubscriptionName.of(
             ServiceOptions.getDefaultProjectId(), formatForTest("test-subscription"));
+
     try (TopicAdminClient publisherClient = TopicAdminClient.create();
         SubscriptionAdminClient subscriberClient = SubscriptionAdminClient.create()) {
       publisherClient.createTopic(topicName);
       subscriberClient.createSubscription(
           subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
-
-      testPublisherSubscriberHelper(topicName, subscriptionName);
-
-      subscriberClient.deleteSubscription(subscriptionName);
-      publisherClient.deleteTopic(topicName);
     }
   }
 
-  private void testPublisherSubscriberHelper(TopicName topicName, SubscriptionName subscriptionName)
-      throws Exception {
+  @Test
+  public void testPublisherAsyncSubscriber() throws Exception {
     String messageToPublish = "my-message";
 
     Publisher publisher = null;
     try {
-      publisher = Publisher.defaultBuilder(topicName).build();
+      publisher = Publisher.newBuilder(topicName).build();
       PublisherSnippets snippets = new PublisherSnippets(publisher);
       final SettableApiFuture<Void> done = SettableApiFuture.create();
       ApiFutures.addCallback(
@@ -123,5 +127,42 @@ public class ITPubSubSnippets {
     PubsubMessage message = received.get();
     assertNotNull(message);
     assertEquals(message.getData().toStringUtf8(), messageToPublish);
+  }
+
+  @Test
+  public void testPublisherSyncSubscriber() throws Exception {
+    String messageToPublish = "my-message";
+    Publisher publisher = null;
+    try {
+      publisher = Publisher.newBuilder(topicName).build();
+      PublisherSnippets snippets = new PublisherSnippets(publisher);
+      List<ApiFuture<String>> apiFutures = new ArrayList<>();
+      for (int i = 0; i < 5; i++) {
+        apiFutures.add(snippets.publish(messageToPublish + "-" + i));
+      }
+      ApiFutures.allAsList(apiFutures).get();
+    } finally {
+      if (publisher != null) {
+        publisher.shutdown();
+      }
+    }
+
+    List<ReceivedMessage> messages =
+        SubscriberSnippets.createSubscriberWithSyncPull(
+            subscriptionName.getProject(), subscriptionName.getSubscription(), 5);
+    assertEquals(messages.size(), 5);
+    for (int i = 0; i < 5; i++) {
+      String messageData = messages.get(i).getMessage().getData().toStringUtf8();
+      assertEquals(messageData, messageToPublish + "-" + i);
+    }
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    try (TopicAdminClient publisherClient = TopicAdminClient.create();
+        SubscriptionAdminClient subscriberClient = SubscriptionAdminClient.create()) {
+      subscriberClient.deleteSubscription(subscriptionName);
+      publisherClient.deleteTopic(topicName);
+    }
   }
 }

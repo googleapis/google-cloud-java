@@ -31,16 +31,19 @@ public class QueryResponseTest {
 
   private static final String ETAG = "etag";
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", Field.Type.string())
+      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
       .setMode(Field.Mode.NULLABLE)
       .setDescription("FieldDescription1")
       .build();
 
   private static final Schema SCHEMA = Schema.of(FIELD_SCHEMA1);
   private static final JobId JOB_ID = JobId.of("project", "job");
+  private static final Long NUM_DML_AFFECTED_ROWS = 24L;
   private static final Long TOTAL_ROWS = 42L;
   private static final QueryResult.QueryResultsPageFetcher FETCHER =
       new QueryResult.QueryResultsPageFetcher() {
+
+        private static final long serialVersionUID = -5754008940284215560L;
 
         @Override
         public QueryResult getNextPage() {
@@ -60,12 +63,13 @@ public class QueryResponseTest {
       .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .setCursor("cursor")
       .setPageFetcher(FETCHER)
-      .setResults(ImmutableList.<List<FieldValue>>of())
+      .setResults(ImmutableList.<FieldValueList>of())
       .setCacheHit(CACHE_HIT)
       .build();
   private static final QueryResponse QUERY_RESPONSE = QueryResponse.newBuilder()
       .setEtag(ETAG)
       .setJobId(JOB_ID)
+      .setNumDmlAffectedRows(NUM_DML_AFFECTED_ROWS)
       .setJobCompleted(JOB_COMPLETE)
       .setExecutionErrors(ERRORS)
       .setResult(QUERY_RESULT)
@@ -76,6 +80,7 @@ public class QueryResponseTest {
     assertEquals(ETAG, QUERY_RESPONSE.getEtag());
     assertEquals(QUERY_RESULT, QUERY_RESPONSE.getResult());
     assertEquals(JOB_ID, QUERY_RESPONSE.getJobId());
+    assertEquals(NUM_DML_AFFECTED_ROWS, QUERY_RESPONSE.getNumDmlAffectedRows());
     assertEquals(JOB_COMPLETE, QUERY_RESPONSE.jobCompleted());
     assertEquals(ERRORS, QUERY_RESPONSE.getExecutionErrors());
     assertTrue(QUERY_RESPONSE.hasErrors());
@@ -88,6 +93,7 @@ public class QueryResponseTest {
     assertNull(queryResponse.getEtag());
     assertNull(queryResponse.getResult());
     assertNull(queryResponse.getJobId());
+    assertNull(queryResponse.getNumDmlAffectedRows());
     assertFalse(queryResponse.jobCompleted());
     assertEquals(ImmutableList.<BigQueryError>of(), queryResponse.getExecutionErrors());
     assertFalse(queryResponse.hasErrors());
@@ -103,6 +109,7 @@ public class QueryResponseTest {
     assertEquals(expected.getEtag(), value.getEtag());
     assertEquals(expected.getResult(), value.getResult());
     assertEquals(expected.getJobId(), value.getJobId());
+    assertEquals(expected.getNumDmlAffectedRows(), value.getNumDmlAffectedRows());
     assertEquals(expected.jobCompleted(), value.jobCompleted());
     assertEquals(expected.getExecutionErrors(), value.getExecutionErrors());
     assertEquals(expected.hasErrors(), value.hasErrors());

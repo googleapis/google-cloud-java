@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to the Google Cloud DNS.
+ * A client for Cloud DNS - A highly available global DNS network.
  *
  * <p>
  * Here are two simple usage examples from within Compute/App Engine.

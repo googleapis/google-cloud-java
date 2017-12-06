@@ -92,7 +92,9 @@ public interface Storage extends Service<StorageOptions> {
     VERSIONING("versioning"),
     CORS("cors"),
     STORAGE_CLASS("storageClass"),
-    ETAG("etag");
+    ETAG("etag"),
+    @GcpLaunchStage.Alpha
+    BILLING("billing");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 
@@ -195,6 +197,15 @@ public interface Storage extends Service<StorageOptions> {
     public static BucketTargetOption metagenerationNotMatch() {
       return new BucketTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
+
+    /**
+     * Returns an option to define the billing user project. This option is required by buckets with
+     * `requester_pays` flag enabled to assign operation costs.
+     */
+    @GcpLaunchStage.Alpha
+    public static BucketTargetOption userProject(String userProject) {
+      return new BucketTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
   }
 
   /**
@@ -204,8 +215,8 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = 5185657617120212117L;
 
-    private BucketSourceOption(StorageRpc.Option rpcOption, long metageneration) {
-      super(rpcOption, metageneration);
+    private BucketSourceOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
     }
 
     /**
@@ -223,10 +234,19 @@ public interface Storage extends Service<StorageOptions> {
     public static BucketSourceOption metagenerationNotMatch(long metageneration) {
       return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
     }
+
+    /**
+     * Returns an option for bucket's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BucketSourceOption userProject(String userProject) {
+      return new BucketSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
   }
 
   /**
-   * Class for specifying bucket source options.
+   * Class for specifying bucket get options.
    */
   class BucketGetOption extends Option {
 
@@ -254,6 +274,15 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BucketGetOption metagenerationNotMatch(long metageneration) {
       return new BucketGetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option for bucket's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BucketGetOption userProject(String userProject) {
+      return new BucketGetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
 
     /**
@@ -339,6 +368,15 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BlobTargetOption userProject(String userProject) {
+      return new BlobTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
+    /**
      * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
      * blob.
      *
@@ -381,7 +419,7 @@ public interface Storage extends Service<StorageOptions> {
 
     enum Option {
       PREDEFINED_ACL, IF_GENERATION_MATCH, IF_GENERATION_NOT_MATCH, IF_METAGENERATION_MATCH,
-      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH, CUSTOMER_SUPPLIED_KEY;
+      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH, CUSTOMER_SUPPLIED_KEY, USER_PROJECT;
 
       StorageRpc.Option toRpcOption() {
         return StorageRpc.Option.valueOf(this.name());
@@ -498,6 +536,15 @@ public interface Storage extends Service<StorageOptions> {
     public static BlobWriteOption encryptionKey(String key) {
       return new BlobWriteOption(Option.CUSTOMER_SUPPLIED_KEY, key);
     }
+
+    /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BlobWriteOption userProject(String userProject) {
+      return new BlobWriteOption(Option.USER_PROJECT, userProject);
+    }
   }
 
   /**
@@ -583,6 +630,15 @@ public interface Storage extends Service<StorageOptions> {
     public static BlobSourceOption decryptionKey(String key) {
       return new BlobSourceOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
+
+    /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BlobSourceOption userProject(String userProject) {
+      return new BlobSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
   }
 
   /**
@@ -664,6 +720,15 @@ public interface Storage extends Service<StorageOptions> {
       return new BlobGetOption(StorageRpc.Option.FIELDS,
           Helper.selector(BlobField.REQUIRED_FIELDS, fields));
     }
+
+    /**
+     * Returns an option for blob's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BlobGetOption userProject(String userProject) {
+      return new BlobGetOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
   }
 
   /**
@@ -697,6 +762,15 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BucketListOption prefix(String prefix) {
       return new BucketListOption(StorageRpc.Option.PREFIX, prefix);
+    }
+
+    /**
+     * Returns an option for bucket's billing user project. This option is only used by the buckets with
+     * 'requester_pays' flag.
+     */
+    @GcpLaunchStage.Alpha
+    public static BucketListOption userProject(String userProject) {
+      return new BucketListOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
 
     /**
@@ -757,6 +831,17 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobListOption currentDirectory() {
       return new BlobListOption(StorageRpc.Option.DELIMITER, true);
+    }
+
+    /**
+     * Returns an option to define the billing user project. This option is required by buckets with
+     * `requester_pays` flag enabled to assign operation costs.
+     *
+     * @param userProject projectId of the billing user project.
+     */
+    @GcpLaunchStage.Alpha
+    public static BlobListOption userProject(String userProject) {
+      return new BlobListOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
 
     /**
@@ -1304,6 +1389,9 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Creates a new bucket.
    *
+   * Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
+   * to assign operational costs.
+   *
    * <p>Example of creating a bucket.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
@@ -1347,6 +1435,8 @@ public interface Storage extends Service<StorageOptions> {
    * Creates a new blob. Direct upload is used to upload {@code content}. For large content,
    * {@link #writer} is recommended as it uses resumable upload. MD5 and CRC32C hashes of
    * {@code content} are computed and used for validating transferred data.
+   * Accepts an optional userProject {@link BlobGetOption} option which defines the project id
+   * to assign operational costs.
    *
    * <p>Example of creating a blob from a byte array.
    * <pre> {@code
@@ -1369,6 +1459,9 @@ public interface Storage extends Service<StorageOptions> {
    * values in the given {@code blobInfo} are ignored unless requested via the
    * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options. The given
    * input stream is closed upon success.
+   *
+   * <p>This method is marked as {@link Deprecated} because it cannot safely retry, given that it
+   * accepts an {@link InputStream} which can only be consumed once.
    *
    * <p>Example of creating a blob from an input stream.
    * <pre> {@code
@@ -1397,10 +1490,14 @@ public interface Storage extends Service<StorageOptions> {
    * @return a [@code Blob} with complete information
    * @throws StorageException upon failure
    */
+  @Deprecated
   Blob create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options);
 
   /**
    * Returns the requested bucket or {@code null} if not found.
+   *
+   * Accepts an optional userProject {@link BucketGetOption} option which defines the project id
+   * to assign operational costs.
    *
    * <p>Example of getting information on a bucket, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
@@ -1418,6 +1515,9 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Returns the requested blob or {@code null} if not found.
    *
+   * Accepts an optional userProject {@link BlobGetOption} option which defines the project id
+   * to assign operational costs.
+   *
    * <p>Example of getting information on a blob, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
    * <pre> {@code
@@ -1434,6 +1534,9 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Returns the requested blob or {@code null} if not found.
+   *
+   * Accepts an optional userProject {@link BlobGetOption} option which defines the project id
+   * to assign operational costs.
    *
    * <p>Example of getting information on a blob, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
@@ -1507,6 +1610,8 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Updates bucket information.
    *
+   * Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
+   * to assign operational costs.
    * <p>Example of updating bucket information.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
@@ -1523,6 +1628,8 @@ public interface Storage extends Service<StorageOptions> {
    * Updates blob information. Original metadata are merged with metadata in the provided
    * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
+   * Accepts an optional userProject {@link BlobTargetOption} option which defines the project id
+   * to assign operational costs.
    *
    * <p>Example of udating a blob, only if the blob's metageneration matches a value, otherwise a
    * {@link StorageException} is thrown.
@@ -1563,6 +1670,9 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Deletes the requested bucket.
+   *
+   * Accepts an optional userProject {@link BucketSourceOption} option which defines the project id
+   * to assign operational costs.
    *
    * <p>Example of deleting a bucket, only if its metageneration matches a value, otherwise a
    * {@link StorageException} is thrown.
@@ -1609,6 +1719,9 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Deletes the requested blob.
    *
+   * Accepts an optional userProject {@link BlobSourceOption} option which defines the project id
+   * to assign operational costs.
+   *
    * <p>Example of deleting a blob, only if its generation matches a value, otherwise a
    * {@link StorageException} is thrown.
    * <pre> {@code
@@ -1652,6 +1765,9 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Sends a compose request.
+   *
+   * Accepts an optional userProject {@link BlobTargetOption} option which defines the project id
+   * to assign operational costs.
    *
    * <p>Example of composing two blobs.
    * <pre> {@code
@@ -2100,14 +2216,24 @@ public interface Storage extends Service<StorageOptions> {
    * Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers());
    * }</pre>
    *
-   * <p>Example of getting the ACL entry for a specific user on a bucket.
+   * <p>Example of getting the ACL entry for a specific user on a requester_pays bucket with a
+   * user_project option.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * String userEmail = "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com";
-   * Acl acl = storage.getAcl(bucketName, new User(userEmail));
+   * BucketSourceOption userProjectOption = BucketSourceOption.userProject("myProject");
+   * Acl acl = storage.getAcl(bucketName, new User(userEmail), userProjectOption);
    * }</pre>
    *
+   * @param bucket name of the bucket where the getAcl operation takes place
+   * @param entity ACL entity to fetch
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
+   */
+  Acl getAcl(String bucket, Entity entity, BucketSourceOption... options);
+
+  /**
+   * @see #getAcl(String, Entity, BucketSourceOption...)
    */
   Acl getAcl(String bucket, Entity entity);
 
@@ -2125,8 +2251,24 @@ public interface Storage extends Service<StorageOptions> {
    * }
    * }</pre>
    *
+   * <p>Example of deleting the ACL entry for a specific user on a requester_pays bucket with a
+   * user_project option.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * BucketSourceOption userProject = BucketSourceOption.userProject("myProject");
+   * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers(), userProject);
+   * }</pre>
+   *
+   * @param bucket name of the bucket to delete an ACL from
+   * @param entity ACL entity to delete
+   * @param options extra parameters to apply to this operation
    * @return {@code true} if the ACL was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
+   */
+  boolean deleteAcl(String bucket, Entity entity, BucketSourceOption... options);
+
+  /**
+   * @see #deleteAcl(String, Entity, BucketSourceOption...)
    */
   boolean deleteAcl(String bucket, Entity entity);
 
@@ -2139,7 +2281,22 @@ public interface Storage extends Service<StorageOptions> {
    * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
    * }</pre>
    *
+   * <p>Example of creating a new ACL entry on a requester_pays bucket with a user_project option.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER),
+   *     BucketSourceOption.userProject("myProject"));
+   * }</pre>
+   *
+   * @param bucket name of the bucket for which an ACL should be created
+   * @param acl ACL to create
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
+   */
+  Acl createAcl(String bucket, Acl acl, BucketSourceOption... options);
+
+  /**
+   * @see #createAcl(String, Acl, BucketSourceOption...)
    */
   Acl createAcl(String bucket, Acl acl);
 
@@ -2152,7 +2309,22 @@ public interface Storage extends Service<StorageOptions> {
    * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
    * }</pre>
    *
+   * <p>Example of updating a new ACL entry on a requester_pays bucket with a user_project option.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER),
+   *     BucketSourceOption.userProject("myProject"));
+   * }</pre>
+   *
+   * @param bucket name of the bucket where the updateAcl operation takes place
+   * @param acl ACL to update
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
+   */
+  Acl updateAcl(String bucket, Acl acl, BucketSourceOption... options);
+
+  /**
+   * @see #updateAcl(String, Acl, BucketSourceOption...)
    */
   Acl updateAcl(String bucket, Acl acl);
 
@@ -2168,7 +2340,24 @@ public interface Storage extends Service<StorageOptions> {
    * }
    * }</pre>
    *
+   * <p>Example of listing the ACL entries for a blob in a requester_pays bucket with a user_project
+   * option.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * List<Acl> acls = storage.listAcls(bucketName, BucketSourceOption.userProject("myProject"));
+   * for (Acl acl : acls) {
+   *   // do something with ACL entry
+   * }
+   * }</pre>
+   *
+   * @param bucket the name of the bucket to list ACLs for
+   * @param options any number of BucketSourceOptions to apply to this operation
    * @throws StorageException upon failure
+   */
+  List<Acl> listAcls(String bucket, BucketSourceOption... options);
+
+  /**
+   * @see #listAcls(String, BucketSourceOption...)
    */
   List<Acl> listAcls(String bucket);
 
@@ -2381,11 +2570,13 @@ public interface Storage extends Service<StorageOptions> {
    * Policy policy = storage.getIamPolicy(bucketName);
    * }</pre>
    *
+   * @param bucket name of the bucket where the getIamPolicy operation takes place
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   @BetaApi
   @GcpLaunchStage.Alpha
-  Policy getIamPolicy(String bucket);
+  Policy getIamPolicy(String bucket, BucketSourceOption... options);
 
   /**
    * Updates the IAM policy on the specified bucket.
@@ -2403,11 +2594,14 @@ public interface Storage extends Service<StorageOptions> {
    *             .build());
    * }</pre>
    *
+   * @param bucket name of the bucket where the setIamPolicy operation takes place
+   * @param policy policy to be set on the specified bucket
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   @BetaApi
   @GcpLaunchStage.Alpha
-  Policy setIamPolicy(String bucket, Policy policy);
+  Policy setIamPolicy(String bucket, Policy policy, BucketSourceOption... options);
 
   /**
    * Tests whether the caller holds the permissions on the specified bucket. Returns a list of
@@ -2425,9 +2619,27 @@ public interface Storage extends Service<StorageOptions> {
    * }
    * }</pre>
    *
+   * @param bucket name of the bucket where the testIamPermissions operation takes place
+   * @param permissions list of permissions to test on the bucket
+   * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
   @BetaApi
   @GcpLaunchStage.Alpha
-  List<Boolean> testIamPermissions(String bucket, List<String> permissions);
+  List<Boolean> testIamPermissions(String bucket, List<String> permissions, BucketSourceOption... options);
+
+  /**
+   * Returns the service account associated with the given project.
+   *
+   * <p>Example of getting a service account.
+   * <pre> {@code
+   * String projectId = "test@gmail.com";
+   * ServiceAccount account = storage.getServiceAccount(projectId);
+   * }</pre>
+   *
+   * @param projectId the ID of the project for which the service account should be fetched.
+   * @return the service account associated with this project
+   * @throws StorageException upon failure
+   */
+  ServiceAccount getServiceAccount(String projectId);
 }

@@ -1,7 +1,7 @@
 Google Cloud Java Client for Storage
 ====================================
 
-Java idiomatic client for [Google Cloud Storage](https://cloud.google.com/storage/).
+Java idiomatic client for [Google Cloud Storage][cloud-storage].
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
@@ -9,8 +9,8 @@ Java idiomatic client for [Google Cloud Storage](https://cloud.google.com/storag
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html)
+- [Product Documentation][storage-product-docs]
+- [Client Library Documentation][storage-client-lib-docs]
 
 Quickstart
 ----------
@@ -19,22 +19,25 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.0.0</version>
+  <version>1.12.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.0.0'
+compile 'com.google.cloud:google-cloud-storage:1.12.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.12.0"
 ```
 
-Example Application
+Example Applications
 -------------------
 
-[`StorageExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/StorageExample.java) is a simple command line interface that provides some of Cloud Storage's functionality.  Read more about using the application on the [`StorageExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/storage/StorageExample.html).
+- [`StorageExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/StorageExample.java) is a simple command line interface that provides some of Cloud Storage's functionality.  Read more about using the application on the [`StorageExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/?com/google/cloud/examples/storage/StorageExample.html).
+- [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
+  - This app uses `google-cloud` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
+- [`Flexible Environment/Storage example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/cloudstorage) - An app that uploads files to a public Cloud Storage bucket on the App Engine Flexible Environment runtime.
 
 Authentication
 --------------
@@ -52,7 +55,7 @@ object will be returned to any GET, globally.
 See the [Google Cloud Storage docs][cloud-storage-activation] for more details on how to activate
 Cloud Storage for your project.
 
-See the ``google-cloud`` API [storage documentation][storage-api] to learn how to interact
+See the [Storage client library docs][storage-client-lib-docs] to learn how to interact
 with the Cloud Storage using this Client Library.
 
 Getting Started
@@ -90,7 +93,7 @@ import com.google.cloud.storage.BucketInfo;
 
 Then add the following code to create a bucket and upload a simple blob.
 
-*Important: Bucket names have to be globally unique. If you choose a bucket name that already exists, you'll get a helpful error message telling you to choose another name. In the code below, replace "my_unique_bucket" with a unique bucket name. See more about naming rules [here](https://cloud.google.com/storage/docs/bucket-naming?hl=en#requirements).*
+*Important: Bucket names have to be globally unique (among all users of Cloud Storage). If you choose a bucket name that already exists, you'll get a helpful error message telling you to choose another name. In the code below, replace "my_unique_bucket" with a unique bucket name. See more about naming rules [here](https://cloud.google.com/storage/docs/bucket-naming?hl=en#requirements).*
 
 ```java
 // Create a bucket
@@ -99,9 +102,12 @@ Bucket bucket = storage.create(BucketInfo.of(bucketName));
 
 // Upload a blob to the newly created bucket
 BlobId blobId = BlobId.of(bucketName, "my_blob_name");
-Blob blob = bucket.create(
-    "my_blob_name", "a simple blob".getBytes(UTF_8), "text/plain");
+BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+Blob blob = storage.create(blobInfo, "a simple blob".getBytes(UTF_8));
 ```
+
+A complete example for creating a blob can be found at
+[CreateBlob.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
 
 At this point, you will be able to see your newly created bucket and blob on the Google Developers Console.
 
@@ -109,31 +115,46 @@ At this point, you will be able to see your newly created bucket and blob on the
 Now that we have content uploaded to the server, we can see how to read data from the server.  Add the following line to your program to get back the blob we uploaded.
 
 ```java
-String blobContent = new String(blob.getContent(), UTF_8);
+BlobId blobId = BlobId.of(bucketName, "my_blob_name");
+byte[] content = storage.readAllBytes(blobId);
+String contentString = new String(content, UTF_8);
 ```
+
+A complete example for accessing blobs can be found at
+[CreateBlob.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
+
+#### Updating data
+Another thing we may want to do is update a blob. The following snippet shows how to update a Storage blob if it exists. 
+
+``` java
+BlobId blobId = BlobId.of(bucketName, "my_blob_name");
+Blob blob = storage.get(blobId);
+if (blob != null) {
+  byte[] prevContent = blob.getContent();
+  System.out.println(new String(prevContent, UTF_8));
+  WritableByteChannel channel = blob.writer();
+  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
+  channel.close();
+}
+```
+
+The complete source code can be found at
+[UpdateBlob.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java).
 
 #### Listing buckets and contents of buckets
-Suppose that you've added more buckets and blobs, and now you want to see the names of your buckets and the contents of each one. Add the following imports:
-
-```java
-import java.util.Iterator;
-```
-
-Then add the following code to list all your buckets and all the blobs inside your newly created bucket.
+Suppose that you've added more buckets and blobs, and now you want to see the names of your buckets and the contents of each one. Add the following code to list all your buckets and all the blobs inside each bucket.
 
 ```java
 // List all your buckets
-Iterator<Bucket> bucketIterator = storage.list().iterateAll();
 System.out.println("My buckets:");
-while (bucketIterator.hasNext()) {
-  System.out.println(bucketIterator.next());
-}
-
-// List the blobs in a particular bucket
-Iterator<Blob> blobIterator = bucket.list().iterateAll();
-System.out.println("My blobs:");
-while (blobIterator.hasNext()) {
-  System.out.println(blobIterator.next());
+for (Bucket bucket : storage.list().iterateAll()) {
+  System.out.println(bucket);
+  
+  // List all blobs in the bucket
+  System.out.println("Blobs in the bucket:");
+  for (Blob blob : bucket.list().iterateAll()) {
+    System.out.println(blob);
+  }
 }
 ```
 
@@ -141,7 +162,7 @@ while (blobIterator.hasNext()) {
 
 In
 [CreateAndListBucketsAndBlobs.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateAndListBucketsAndBlobs.java)
-we put together all the code shown above into one program. The program assumes that you are
+we put together examples creating and listing buckets and blobs into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
 display on your webpage.
@@ -150,6 +171,10 @@ Troubleshooting
 ---------------
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+
+Transport
+---------
+Storage uses HTTP for the transport layer.
 
 Java Versions
 -------------
@@ -192,7 +217,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-storage]: https://cloud.google.com/storage/
-[cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
-[storage-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
 [cloud-storage-activation]:https://cloud.google.com/storage/docs/signup?hl=en
+[storage-product-docs]: https://cloud.google.com/storage/docs/
+[storage-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/storage/package-summary.html

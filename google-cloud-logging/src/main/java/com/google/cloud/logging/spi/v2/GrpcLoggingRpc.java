@@ -19,18 +19,28 @@ package com.google.cloud.logging.spi.v2;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.gax.grpc.ApiException;
-import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.FixedChannelProvider;
-import com.google.api.gax.grpc.FixedExecutorProvider;
-import com.google.api.gax.grpc.ProviderManager;
-import com.google.api.gax.grpc.UnaryCallSettings;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.TransportChannel;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallSettings.Builder;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
-import com.google.cloud.NoCredentials;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.LoggingOptions;
+import com.google.cloud.logging.v2.ConfigClient;
+import com.google.cloud.logging.v2.ConfigSettings;
+import com.google.cloud.logging.v2.LoggingClient;
+import com.google.cloud.logging.v2.LoggingSettings;
+import com.google.cloud.logging.v2.MetricsClient;
+import com.google.cloud.logging.v2.MetricsSettings;
+import com.google.common.collect.Lists;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
@@ -53,9 +63,9 @@ import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
+import io.grpc.CallOptions;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.Status.Code;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.EnumSet;
@@ -68,18 +78,16 @@ public class GrpcLoggingRpc implements LoggingRpc {
   private final LoggingClient loggingClient;
   private final MetricsClient metricsClient;
   private final ScheduledExecutorService executor;
-  private final ProviderManager providerManager;
+  private final ClientContext clientContext;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
 
   private boolean closed;
 
-  public GrpcLoggingRpc(LoggingOptions options) throws IOException {
+  public GrpcLoggingRpc(final LoggingOptions options) throws IOException {
     GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
     executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();
     try {
-      ExecutorProvider executorProvider = FixedExecutorProvider.create(executor);
-      ChannelProvider channelProvider;
       // todo(mziccard): ChannelProvider should support null/absent credentials for testing
       if (options.getHost().contains("localhost")
           || NoCredentials.getInstance().equals(options.getCredentials())) {
@@ -87,32 +95,38 @@ public class GrpcLoggingRpc implements LoggingRpc {
             .usePlaintext(true)
             .executor(executor)
             .build();
-        channelProvider = FixedChannelProvider.create(managedChannel);
+        TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
+        clientContext = ClientContext.newBuilder()
+            .setCredentials(null)
+            .setExecutor(executor)
+            .setTransportChannel(transportChannel)
+            .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
+            .setBackgroundResources(Collections.<BackgroundResource>singletonList(transportChannel))
+            .build();
       } else {
-        channelProvider = GrpcTransportOptions.setUpChannelProvider(
-            LoggingSettings.defaultChannelProviderBuilder(), options);
+        LoggingSettings.Builder settingsBuilder = LoggingSettings.newBuilder();
+
+        settingsBuilder.setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options));
+        settingsBuilder.setTransportChannelProvider(
+            GrpcTransportOptions.setUpChannelProvider(LoggingSettings.defaultGrpcTransportProviderBuilder(), options));
+        settingsBuilder.setHeaderProvider(
+            GrpcTransportOptions.setUpHeaderProvider(LoggingSettings.defaultApiClientHeaderProviderBuilder(), options));
+        clientContext = ClientContext.create(settingsBuilder.build());
       }
-      providerManager = ProviderManager.newBuilder()
-          .setChannelProvider(channelProvider)
-          .setExecutorProvider(executorProvider)
-          .build();
-      UnaryCallSettings.Builder callSettingsBuilder = transportOptions
-          .getApiCallSettings(options.getRetrySettings());
+      ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> retrySettingsSetter =
+          new ApiFunction<Builder<?, ?>, Void>() {
+        @Override
+        public Void apply(UnaryCallSettings.Builder<?, ?> builder) {
+          builder.setRetrySettings(options.getRetrySettings());
+          return null;
+        }
+      };
       ConfigSettings.Builder confBuilder =
-          ConfigSettings.defaultBuilder()
-              .setExecutorProvider(providerManager)
-              .setChannelProvider(providerManager)
-              .applyToAllUnaryMethods(callSettingsBuilder);
+          ConfigSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       LoggingSettings.Builder logBuilder =
-          LoggingSettings.defaultBuilder()
-              .setExecutorProvider(providerManager)
-              .setChannelProvider(providerManager)
-              .applyToAllUnaryMethods(callSettingsBuilder);
+          LoggingSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       MetricsSettings.Builder metricsBuilder =
-          MetricsSettings.defaultBuilder()
-              .setExecutorProvider(providerManager)
-              .setChannelProvider(providerManager)
-              .applyToAllUnaryMethods(callSettingsBuilder);
+          MetricsSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       configClient = ConfigClient.create(confBuilder.build());
       loggingClient = LoggingClient.create(logBuilder.build());
       metricsClient = MetricsClient.create(metricsBuilder.build());
@@ -122,12 +136,12 @@ public class GrpcLoggingRpc implements LoggingRpc {
   }
 
   private static <V> ApiFuture<V> translate(
-      ApiFuture<V> from, final boolean idempotent, Code... returnNullOn) {
-    final Set<Code> returnNullOnSet;
+      ApiFuture<V> from, final boolean idempotent, StatusCode.Code... returnNullOn) {
+    final Set<StatusCode.Code> returnNullOnSet;
     if (returnNullOn.length > 0) {
       returnNullOnSet = EnumSet.of(returnNullOn[0], returnNullOn);
     } else {
-      returnNullOnSet = Collections.<Code>emptySet();
+      returnNullOnSet = Collections.emptySet();
     }
     return ApiFutures.catching(
         from,
@@ -135,7 +149,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
         new ApiFunction<ApiException, V>() {
           @Override
           public V apply(ApiException exception) {
-            if (returnNullOnSet.contains(exception.getStatusCode())) {
+            if (returnNullOnSet.contains(exception.getStatusCode().getCode())) {
               return null;
             }
             throw new LoggingException(exception);
@@ -155,7 +169,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
 
   @Override
   public ApiFuture<LogSink> get(GetSinkRequest request) {
-    return translate(configClient.getSinkCallable().futureCall(request), true, Code.NOT_FOUND);
+    return translate(configClient.getSinkCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
   }
 
   @Override
@@ -165,12 +179,12 @@ public class GrpcLoggingRpc implements LoggingRpc {
 
   @Override
   public ApiFuture<Empty> delete(DeleteSinkRequest request) {
-    return translate(configClient.deleteSinkCallable().futureCall(request), true, Code.NOT_FOUND);
+    return translate(configClient.deleteSinkCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
   }
 
   @Override
   public ApiFuture<Empty> delete(DeleteLogRequest request) {
-    return translate(loggingClient.deleteLogCallable().futureCall(request), true, Code.NOT_FOUND);
+    return translate(loggingClient.deleteLogCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
   }
 
   @Override
@@ -203,7 +217,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
   @Override
   public ApiFuture<LogMetric> get(GetLogMetricRequest request) {
     return translate(
-        metricsClient.getLogMetricCallable().futureCall(request), true, Code.NOT_FOUND);
+        metricsClient.getLogMetricCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
   }
 
   @Override
@@ -214,7 +228,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
   @Override
   public ApiFuture<Empty> delete(DeleteLogMetricRequest request) {
     return translate(
-        metricsClient.deleteLogMetricCallable().futureCall(request), true, Code.NOT_FOUND);
+        metricsClient.deleteLogMetricCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
   }
 
   @Override
@@ -226,7 +240,9 @@ public class GrpcLoggingRpc implements LoggingRpc {
     configClient.close();
     loggingClient.close();
     metricsClient.close();
-    providerManager.getChannel().shutdown();
+    for (BackgroundResource resource : clientContext.getBackgroundResources()) {
+      resource.close();
+    }
     executorFactory.release(executor);
   }
 }

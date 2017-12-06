@@ -38,6 +38,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
+import com.google.logging.v2.LogName;
 import com.google.protobuf.Any;
 import com.google.protobuf.StringValue;
 import java.util.Iterator;
@@ -75,6 +76,16 @@ public abstract class BaseSystemTest {
    * clashes.
    */
   protected abstract String formatForTest(String resourceName);
+
+  /**
+   * Creates an equality expression for logging filter.
+   *
+   * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Logs
+   *     Filters Documentation</a>
+   */
+  static <V> String createEqualityFilter(String name, V value) {
+    return name + " = " + "\"" + value.toString() + "\"";
+  }
 
   @Test
   public void testCreateGetUpdateAndDeleteSink() {
@@ -137,14 +148,9 @@ public abstract class BaseSystemTest {
         .setVersionFormat(SinkInfo.VersionFormat.V2)
         .build();
     assertNull(logging().getSink(name));
-    Sink sink = logging().update(sinkInfo);
-    assertEquals(name, sink.getName());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
-    assertEquals("severity>=ERROR", sink.getFilter());
-    DatasetDestination datasetDestination = sink.getDestination();
-    assertEquals(logging().getOptions().getProjectId(), datasetDestination.getProject());
-    assertEquals("dataset", datasetDestination.getDataset());
-    assertTrue(logging().deleteSink(name));
+    thrown.expect(LoggingException.class);
+    thrown.expectMessage("NOT_FOUND");
+    logging().update(sinkInfo);
   }
 
   @Test
@@ -155,14 +161,9 @@ public abstract class BaseSystemTest {
         .setVersionFormat(SinkInfo.VersionFormat.V2)
         .build();
     assertNull(logging().getSinkAsync(name).get());
-    Sink sink = logging().updateAsync(sinkInfo).get();
-    assertEquals(name, sink.getName());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
-    assertEquals("severity>=ERROR", sink.getFilter());
-    DatasetDestination datasetDestination = sink.getDestination();
-    assertEquals(logging().getOptions().getProjectId(), datasetDestination.getProject());
-    assertEquals("dataset", datasetDestination.getDataset());
-    assertTrue(logging().deleteSinkAsync(name).get());
+    thrown.expect(ExecutionException.class);
+    thrown.expectMessage("NOT_FOUND");
+    logging().updateAsync(sinkInfo).get();
   }
 
   @Test
@@ -335,13 +336,13 @@ public abstract class BaseSystemTest {
 
   @Test
   public void testWriteAndListLogEntries() throws InterruptedException {
-    String logName = formatForTest("test-write-log-entries-log");
-    String filter =
-        "logName = projects/" + logging().getOptions().getProjectId() + "/logs/" + logName;
+    String logId = formatForTest("test-write-log-entries-log");
+    LoggingOptions loggingOptions = logging().getOptions();
+    LogName logName = LogName.of(loggingOptions.getProjectId(), logId);
     StringPayload firstPayload = StringPayload.of("stringPayload");
     LogEntry firstEntry = LogEntry.newBuilder(firstPayload)
         .addLabel("key1", "value1")
-        .setLogName(logName)
+        .setLogName(logId)
         .setHttpRequest(HttpRequest.newBuilder().setStatus(500).build())
         .setResource(MonitoredResource.newBuilder("global").build())
         .build();
@@ -349,12 +350,13 @@ public abstract class BaseSystemTest {
         JsonPayload.of(ImmutableMap.<String, Object>of("jsonKey", "jsonValue"));
     LogEntry secondEntry = LogEntry.newBuilder(secondPayload)
         .addLabel("key2", "value2")
-        .setLogName(logName)
+        .setLogName(logId)
         .setOperation(Operation.of("operationId", "operationProducer"))
         .setResource(MonitoredResource.newBuilder("cloudsql_database").build())
         .build();
     logging().write(ImmutableList.of(firstEntry));
     logging().write(ImmutableList.of(secondEntry));
+    String filter = createEqualityFilter("logName", logName);
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     Page<LogEntry> page = logging().listLogEntries(options);
     while (Iterators.size(page.iterateAll().iterator()) < 2) {
@@ -365,7 +367,7 @@ public abstract class BaseSystemTest {
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
     assertEquals(firstPayload, entry.getPayload());
-    assertEquals(logName, entry.getLogName());
+    assertEquals(logId, entry.getLogName());
     assertEquals(ImmutableMap.of("key1", "value1"), entry.getLabels());
     assertEquals("global", entry.getResource().getType());
     assertEquals(HttpRequest.newBuilder().setStatus(500).build(), entry.getHttpRequest());
@@ -376,7 +378,7 @@ public abstract class BaseSystemTest {
     assertTrue(iterator.hasNext());
     entry = iterator.next();
     assertEquals(secondPayload, entry.getPayload());
-    assertEquals(logName, entry.getLogName());
+    assertEquals(logId, entry.getLogName());
     assertEquals(ImmutableMap.of("key2", "value2"), entry.getLabels());
     assertEquals("cloudsql_database", entry.getResource().getType());
     assertEquals(Operation.of("operationId", "operationProducer"), entry.getOperation());
@@ -396,14 +398,14 @@ public abstract class BaseSystemTest {
     while (iterator.hasNext()) {
       assertTrue(iterator.next().getTimestamp() <= lastTimestamp);
     }
-    assertTrue(logging().deleteLog(logName));
+    assertTrue(logging().deleteLog(logId));
   }
 
   @Test
   public void testWriteAndListLogEntriesAsync() throws InterruptedException, ExecutionException {
-    String logName = formatForTest("test-write-log-entries-async-log");
-    String filter =
-        "logName = projects/" + logging().getOptions().getProjectId() + "/logs/" + logName;
+    String logId = formatForTest("test-write-log-entries-async-log");
+    LoggingOptions loggingOptions = logging().getOptions();
+    LogName logName = LogName.of(loggingOptions.getProjectId(), logId);
     StringPayload firstPayload = StringPayload.of("stringPayload");
     LogEntry firstEntry = LogEntry.newBuilder(firstPayload).setSeverity(Severity.ALERT).build();
     ProtoPayload secondPayload =
@@ -412,8 +414,9 @@ public abstract class BaseSystemTest {
     logging().write(ImmutableList.of(firstEntry, secondEntry),
         WriteOption.labels(ImmutableMap.of("key1", "value1")),
         WriteOption.resource(MonitoredResource.newBuilder("global").build()),
-        WriteOption.logName(logName));
+        WriteOption.logName(logId));
     logging().flush();
+    String filter = createEqualityFilter("logName", logName);
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     AsyncPage<LogEntry> page = logging().listLogEntriesAsync(options).get();
     while (Iterators.size(page.iterateAll().iterator()) < 2) {
@@ -424,7 +427,7 @@ public abstract class BaseSystemTest {
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
     assertEquals(firstPayload, entry.getPayload());
-    assertEquals(logName, entry.getLogName());
+    assertEquals(logId, entry.getLogName());
     assertEquals(ImmutableMap.of("key1", "value1"), entry.getLabels());
     assertEquals("global", entry.getResource().getType());
     assertNull(entry.getHttpRequest());
@@ -435,7 +438,7 @@ public abstract class BaseSystemTest {
     assertTrue(iterator.hasNext());
     entry = iterator.next();
     assertEquals(secondPayload, entry.getPayload());
-    assertEquals(logName, entry.getLogName());
+    assertEquals(logId, entry.getLogName());
     assertEquals(ImmutableMap.of("key1", "value1"), entry.getLabels());
     assertEquals("global", entry.getResource().getType());
     assertNull(entry.getOperation());
@@ -443,43 +446,45 @@ public abstract class BaseSystemTest {
     assertNull(entry.getHttpRequest());
     assertNotNull(entry.getInsertId());
     assertNotNull(entry.getTimestamp());
-    assertTrue(logging().deleteLogAsync(logName).get());
+    assertTrue(logging().deleteLogAsync(logId).get());
   }
 
   @Test
   public void testDeleteNonExistingLog() {
-    String logName = formatForTest("test-delete-non-existing-log");
-    assertFalse(logging().deleteLog(logName));
+    String logId = formatForTest("test-delete-non-existing-log");
+    assertFalse(logging().deleteLog(logId));
   }
 
   @Test
   public void testDeleteNonExistingLogAsync() throws ExecutionException, InterruptedException {
-    String logName = formatForTest("test-delete-non-existing-log-async");
-    assertFalse(logging().deleteLogAsync(logName).get());
+    String logId = formatForTest("test-delete-non-existing-log-async");
+    assertFalse(logging().deleteLogAsync(logId).get());
   }
 
   @Test
   public void testLoggingHandler() throws InterruptedException {
-    String logName = formatForTest("test-logging-handler");
+    String logId = formatForTest("test-logging-handler");
     LoggingOptions options = logging().getOptions();
-    LoggingHandler handler = new LoggingHandler(logName, options);
+    LogName logName = LogName.of(options.getProjectId(), logId);
+    LoggingHandler handler = new LoggingHandler(logId, options);
     handler.setLevel(Level.INFO);
     Logger logger = Logger.getLogger(getClass().getName());
     logger.addHandler(handler);
     logger.setLevel(Level.INFO);
     logger.info("Message");
+    String filter = createEqualityFilter("logName", logName);
     Iterator<LogEntry> iterator =
-        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
+        logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     while (!iterator.hasNext()) {
       Thread.sleep(500L);
       iterator =
-          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
+          logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     }
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
     assertTrue(entry.getPayload() instanceof StringPayload);
     assertTrue(entry.<StringPayload>getPayload().getData().contains("Message"));
-    assertEquals(logName, entry.getLogName());
+    assertEquals(logId, entry.getLogName());
     assertEquals(ImmutableMap.of("levelName", "INFO",
         "levelValue", String.valueOf(Level.INFO.intValue())), entry.getLabels());
     assertEquals("global", entry.getResource().getType());
@@ -492,36 +497,38 @@ public abstract class BaseSystemTest {
     assertNotNull(entry.getTimestamp());
     assertFalse(iterator.hasNext());
     logger.removeHandler(handler);
-    logging().deleteLog(logName);
+    logging().deleteLog(logId);
   }
 
   @Test
   public void testSyncLoggingHandler() throws InterruptedException {
-    String logName = formatForTest("test-sync-logging-handler");
+    String logId = formatForTest("test-sync-logging-handler");
     LoggingOptions options = logging().getOptions();
+    LogName logName = LogName.of(options.getProjectId(), logId);
     MonitoredResource resource = MonitoredResource.of("gce_instance",
         ImmutableMap.of("project_id", options.getProjectId(),
             "instance_id", "instance",
             "zone", "us-central1-a"));
-    LoggingHandler handler = new LoggingHandler(logName, options, resource);
+    LoggingHandler handler = new LoggingHandler(logId, options, resource);
     handler.setLevel(Level.WARNING);
     handler.setSynchronicity(Synchronicity.SYNC);
     Logger logger = Logger.getLogger(getClass().getName());
     logger.addHandler(handler);
     logger.setLevel(Level.WARNING);
     logger.warning("Message");
+    String filter = createEqualityFilter("logName", logName);
     Iterator<LogEntry> iterator =
-        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
+        logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     while (!iterator.hasNext()) {
       Thread.sleep(500L);
       iterator =
-          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll().iterator();
+          logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     }
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
     assertTrue(entry.getPayload() instanceof StringPayload);
     assertTrue(entry.<StringPayload>getPayload().getData().contains("Message"));
-    assertEquals(logName, entry.getLogName());
+    assertEquals(logId, entry.getLogName());
     assertEquals(ImmutableMap.of("levelName", "WARNING",
         "levelValue", String.valueOf(Level.WARNING.intValue())), entry.getLabels());
     assertEquals(resource, entry.getResource());
@@ -532,6 +539,6 @@ public abstract class BaseSystemTest {
     assertNotNull(entry.getTimestamp());
     assertFalse(iterator.hasNext());
     logger.removeHandler(handler);
-    logging().deleteLog(logName);
+    logging().deleteLog(logId);
   }
 }
