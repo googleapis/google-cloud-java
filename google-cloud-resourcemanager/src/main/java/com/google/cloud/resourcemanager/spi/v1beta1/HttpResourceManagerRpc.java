@@ -23,7 +23,7 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
-import com.google.api.services.cloudresourcemanager.Cloudresourcemanager;
+import com.google.api.services.cloudresourcemanager.CloudResourceManager;
 import com.google.api.services.cloudresourcemanager.model.GetIamPolicyRequest;
 import com.google.api.services.cloudresourcemanager.model.ListProjectsResponse;
 import com.google.api.services.cloudresourcemanager.model.Policy;
@@ -31,6 +31,7 @@ import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.api.services.cloudresourcemanager.model.SetIamPolicyRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsResponse;
+import com.google.api.services.cloudresourcemanager.model.UndeleteProjectRequest;
 import com.google.cloud.Tuple;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.resourcemanager.ResourceManagerException;
@@ -44,14 +45,14 @@ import java.util.Set;
 
 public class HttpResourceManagerRpc implements ResourceManagerRpc {
 
-  private final Cloudresourcemanager resourceManager;
+  private final CloudResourceManager resourceManager;
 
   public HttpResourceManagerRpc(ResourceManagerOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     resourceManager =
-        new Cloudresourcemanager.Builder(transport, new JacksonFactory(), initializer)
+        new CloudResourceManager.Builder(transport, new JacksonFactory(), initializer)
             .setRootUrl(options.getHost())
             .setApplicationName(options.getApplicationName())
             .build();
@@ -117,7 +118,7 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   @Override
   public void undelete(String projectId) {
     try {
-      resourceManager.projects().undelete(projectId).execute();
+      resourceManager.projects().undelete(projectId, new UndeleteProjectRequest()).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }

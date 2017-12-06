@@ -30,7 +30,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-cloudresourcemanager</artifactId>
-      <version>v1beta1-rev10-1.21.0</version>
+      <version>v1beta1-rev440-1.21.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
