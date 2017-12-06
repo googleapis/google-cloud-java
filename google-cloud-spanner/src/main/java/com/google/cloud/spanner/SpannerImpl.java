@@ -222,10 +222,16 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             new Callable<com.google.spanner.v1.Session>() {
               @Override
               public com.google.spanner.v1.Session call() throws Exception {
-                return rpc.createSession(db.getName(), options);
+                return rpc.createSession(db.getName(), getOptions().getSessionLabels(), options);
               }
             });
     return new SessionImpl(session.getName(), options);
+  }
+
+  SessionImpl sessionWithId(String name) {
+    final Map<SpannerRpc.Option, ?> options =
+        SpannerImpl.optionMap(SessionOption.channelHint(random.nextLong()));
+    return new SessionImpl(name, options);
   }
 
   @Override

@@ -403,7 +403,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   public void rollback(RollbackRequest request, @Nullable Map<Option, ?> options) {
     get(
         doUnaryCall(
-            SpannerGrpc.getRollbackMethod(),
+            SpannerGrpc.METHOD_ROLLBACK,
             request,
             request.getSession(),
             Option.CHANNEL_HINT.getLong(options)));
@@ -415,7 +415,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
           throws SpannerException {
     return get(
         doUnaryCall(
-            SpannerGrpc.getPartitionQueryMethod(),
+            SpannerGrpc.METHOD_PARTITION_QUERY,
             request,
             request.getSession(),
             Option.CHANNEL_HINT.getLong(options)));
@@ -427,7 +427,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
           throws SpannerException {
     return get(
         doUnaryCall(
-            SpannerGrpc.getPartitionReadMethod(),
+            SpannerGrpc.METHOD_PARTITION_READ,
             request,
             request.getSession(),
             Option.CHANNEL_HINT.getLong(options)));
