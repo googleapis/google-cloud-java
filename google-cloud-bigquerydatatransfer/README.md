@@ -112,5 +112,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-bigquerydatatransfer
 
 [cloud-bigquerydatatransfer]: https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/
-[bigquerydatatransfer-product-docs]: hhttps://cloud.google.com/bigquery/docs/reference/datatransfer/rest/
+[bigquerydatatransfer-product-docs]: https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/
 [bigquerydatatransfer-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/bigquerydatatransfer/v1/package-summary.html
