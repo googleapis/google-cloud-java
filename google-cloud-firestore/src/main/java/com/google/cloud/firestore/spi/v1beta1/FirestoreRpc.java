@@ -33,44 +33,29 @@ import com.google.firestore.v1beta1.RunQueryResponse;
 import com.google.protobuf.Empty;
 import java.util.concurrent.Executor;
 
-/**
- * Contains the RPC stubs used by the manual Cloud Firestore client.
- */
+/** Contains the RPC stubs used by the manual Cloud Firestore client. */
 public interface FirestoreRpc extends AutoCloseable, ServiceRpc {
 
-  /**
-   * Commits a transaction, while optionally updating documents.
-   */
+  /** Commits a transaction, while optionally updating documents. */
   UnaryCallable<CommitRequest, CommitResponse> commitCallable();
 
-  /**
-   * Gets multiple documents.
-   */
+  /** Gets multiple documents. */
   ServerStreamingCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
-  batchGetDocumentsCallable();
+      batchGetDocumentsCallable();
 
-  /**
-   * Returns the executor used by the GAPIC client.
-   */
+  /** Returns the executor used by the GAPIC client. */
   Executor getExecutor();
 
-  /**
-   * Runs a query.
-   */
+  /** Runs a query. */
   ServerStreamingCallable<RunQueryRequest, RunQueryResponse> runQueryCallable();
 
-  /**
-   * Starts a new transaction.
-   */
+  /** Starts a new transaction. */
   UnaryCallable<BeginTransactionRequest, BeginTransactionResponse> beginTransactionCallable();
 
-  /**
-   * Rolls back a transaction.
-   */
+  /** Rolls back a transaction. */
   UnaryCallable<RollbackRequest, Empty> rollbackCallable();
 
-  /**
-   * Returns a list of collections IDs.
-   */
-  UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse> listCollectionIdsPagedCallable();
+  /** Returns a list of collections IDs. */
+  UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
+      listCollectionIdsPagedCallable();
 }

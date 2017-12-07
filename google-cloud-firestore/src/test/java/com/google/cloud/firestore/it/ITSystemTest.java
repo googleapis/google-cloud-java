@@ -503,7 +503,8 @@ public class ITSystemTest {
   }
 
   @Test
-  public void omitWriteResultForDocumentTransforms() throws ExecutionException, InterruptedException {
+  public void omitWriteResultForDocumentTransforms()
+      throws ExecutionException, InterruptedException {
     WriteBatch batch = firestore.batch();
     batch.set(randomColl.document(), SINGLE_FIELD_MAP);
     batch.set(randomColl.document(), ImmutableMap.of("time", FieldValue.serverTimestamp()));
