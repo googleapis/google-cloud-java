@@ -56,7 +56,7 @@ import org.threeten.bp.Instant;
 class Watch implements ApiStreamObserver<ListenResponse> {
   /**
    * Target ID used by watch. Watch uses a fixed target id since we only support one target per
-   * stream.
+   * stream. The actual target ID we use is arbitrary.
    */
   private static final int WATCH_TARGET_ID = 0xD0;
 
@@ -137,6 +137,8 @@ class Watch implements ApiStreamObserver<ListenResponse> {
         new Comparator<DocumentSnapshot>() {
           @Override
           public int compare(DocumentSnapshot o1, DocumentSnapshot o2) {
+            // We should only ever receive one document for DocumentReference listeners.
+            Preconditions.checkState(o1.equals(o2));
             return 0;
           }
         });
@@ -195,7 +197,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
             resetDocs();
             break;
           default:
-            closeStream(FirestoreException.invalidState("Encountered invalid target change type"));
+            closeStream(FirestoreException.invalidState("Encountered invalid target change type: " + change.getTargetChangeType()));
         }
 
         if (change.getResumeToken() != null
@@ -402,17 +404,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
    * targetIds are provided.
    */
   private boolean affectsTarget(List<Integer> targetIds, int currentId) {
-    if (targetIds == null || targetIds.size() == 0) {
-      return true;
-    }
-
-    for (int targetId : targetIds) {
-      if (targetId == currentId) {
-        return true;
-      }
-    }
-
-    return false;
+    return targetIds == null || targetIds.size() == 0 || targetIds.contains(currentId);
   }
 
   /** Splits up document changes into removals, additions, and updates. */
@@ -573,7 +565,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
     return status;
   }
 
-  /** Determines whether we need to initiate a longer backoff due to system overload.b */
+  /** Determines whether we need to initiate a longer backoff due to system overload. */
   private static boolean isResourceExhaustedError(Throwable throwable) {
     return getStatus(throwable).getCode().equals(Code.RESOURCE_EXHAUSTED);
   };

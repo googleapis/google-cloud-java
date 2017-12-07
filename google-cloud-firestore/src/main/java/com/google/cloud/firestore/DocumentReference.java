@@ -409,20 +409,21 @@ public final class DocumentReference {
               @Override
               public void onEvent(
                   @Nullable QuerySnapshot value, @Nullable FirestoreException error) {
-                if (value != null) {
-                  for (DocumentSnapshot doc : value) {
-                    if (doc.getReference().equals(DocumentReference.this)) {
-                      listener.onEvent(value.getDocuments().get(0), null);
-                      return;
-                    }
-                  }
-                  listener.onEvent(
-                      DocumentSnapshot.fromMissing(
-                          firestore, DocumentReference.this, value.getReadTime()),
-                      null);
-                } else {
+                if (value == null) {
                   listener.onEvent(null, error);
+                  return;
                 }
+
+                for (DocumentSnapshot doc : value) {
+                  if (doc.getReference().equals(DocumentReference.this)) {
+                    listener.onEvent(value.getDocuments().get(0), null);
+                    return;
+                  }
+                }
+                listener.onEvent(
+                    DocumentSnapshot.fromMissing(
+                        firestore, DocumentReference.this, value.getReadTime()),
+                    null);
               }
             });
   }
