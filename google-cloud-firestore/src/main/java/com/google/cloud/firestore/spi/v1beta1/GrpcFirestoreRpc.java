@@ -87,17 +87,20 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
                 .setExecutor(executor)
                 .setTransportChannel(transportChannel)
                 .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
-                .setBackgroundResources(Collections.<BackgroundResource>singletonList(transportChannel))
+                .setBackgroundResources(
+                    Collections.<BackgroundResource>singletonList(transportChannel))
                 .build();
       } else {
         FirestoreSettings.Builder settingsBuilder = FirestoreSettings.newBuilder();
 
-        DatabaseRootName databaseName = DatabaseRootName
-            .of(options.getProjectId(), options.getDatabaseId());
+        DatabaseRootName databaseName =
+            DatabaseRootName.of(options.getProjectId(), options.getDatabaseId());
 
-        settingsBuilder.setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options));
+        settingsBuilder.setCredentialsProvider(
+            GrpcTransportOptions.setUpCredentialsProvider(options));
         settingsBuilder.setTransportChannelProvider(
-            GrpcTransportOptions.setUpChannelProvider(FirestoreSettings.defaultGrpcTransportProviderBuilder(), options));
+            GrpcTransportOptions.setUpChannelProvider(
+                FirestoreSettings.defaultGrpcTransportProviderBuilder(), options));
 
         ApiClientHeaderProvider.Builder headerProvider =
             FirestoreSettings.defaultApiClientHeaderProviderBuilder();
@@ -117,8 +120,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
             }
           };
       FirestoreSettings.Builder firestoreBuilder =
-          FirestoreSettings.newBuilder(clientContext)
-              .applyToAllUnaryMethods(retrySettingsSetter);
+          FirestoreSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       firestoreStub = GrpcFirestoreStub.create(firestoreBuilder.build());
     } catch (Exception e) {
       throw new IOException(e);
@@ -150,7 +152,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
 
   @Override
   public ServerStreamingCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
-  batchGetDocumentsCallable() {
+      batchGetDocumentsCallable() {
     return firestoreStub.batchGetDocumentsCallable();
   }
 
@@ -161,7 +163,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
 
   @Override
   public UnaryCallable<BeginTransactionRequest, BeginTransactionResponse>
-  beginTransactionCallable() {
+      beginTransactionCallable() {
     return firestoreStub.beginTransactionCallable();
   }
 
@@ -172,7 +174,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
 
   @Override
   public UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
-  listCollectionIdsPagedCallable() {
+      listCollectionIdsPagedCallable() {
     return firestoreStub.listCollectionIdsPagedCallable();
   }
 }

@@ -29,7 +29,7 @@ import java.util.Map;
  * complexity for large collections, but performs worse in practice than an ArraySortedMap for small
  * collections. It also uses about twice as much memory.
  *
- * Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/
+ * <p>Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/
  * src/main/java/com/google/firebase/database/collection
  */
 @InternalApi

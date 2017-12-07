@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Bigtable API.
+ * A client to Cloud Bigtable API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

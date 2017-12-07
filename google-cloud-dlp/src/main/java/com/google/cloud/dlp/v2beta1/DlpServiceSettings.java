@@ -78,13 +78,13 @@ import org.threeten.bp.Duration;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deidentifyContent to 30 seconds:
+ * example, to set the total timeout of inspectContent to 30 seconds:
  *
  * <pre>
  * <code>
  * DlpServiceSettings.Builder dlpServiceSettingsBuilder =
  *     DlpServiceSettings.newBuilder();
- * dlpServiceSettingsBuilder.deidentifyContentSettings().getRetrySettingsBuilder()
+ * dlpServiceSettingsBuilder.inspectContentSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * DlpServiceSettings dlpServiceSettings = dlpServiceSettingsBuilder.build();
  * </code>
@@ -105,6 +105,10 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
 
   private static String gapicVersion;
 
+  private final UnaryCallSettings<InspectContentRequest, InspectContentResponse>
+      inspectContentSettings;
+  private final UnaryCallSettings<RedactContentRequest, RedactContentResponse>
+      redactContentSettings;
   private final UnaryCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
       deidentifyContentSettings;
   private final UnaryCallSettings<AnalyzeDataSourceRiskRequest, Operation>
@@ -112,10 +116,6 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
   private final OperationCallSettings<
           AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskOperationSettings;
-  private final UnaryCallSettings<InspectContentRequest, InspectContentResponse>
-      inspectContentSettings;
-  private final UnaryCallSettings<RedactContentRequest, RedactContentResponse>
-      redactContentSettings;
   private final UnaryCallSettings<CreateInspectOperationRequest, Operation>
       createInspectOperationSettings;
   private final OperationCallSettings<
@@ -127,6 +127,16 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
       listInfoTypesSettings;
   private final UnaryCallSettings<ListRootCategoriesRequest, ListRootCategoriesResponse>
       listRootCategoriesSettings;
+
+  /** Returns the object with the settings used for calls to inspectContent. */
+  public UnaryCallSettings<InspectContentRequest, InspectContentResponse> inspectContentSettings() {
+    return inspectContentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to redactContent. */
+  public UnaryCallSettings<RedactContentRequest, RedactContentResponse> redactContentSettings() {
+    return redactContentSettings;
+  }
 
   /** Returns the object with the settings used for calls to deidentifyContent. */
   public UnaryCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
@@ -145,16 +155,6 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
           AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskOperationSettings() {
     return analyzeDataSourceRiskOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to inspectContent. */
-  public UnaryCallSettings<InspectContentRequest, InspectContentResponse> inspectContentSettings() {
-    return inspectContentSettings;
-  }
-
-  /** Returns the object with the settings used for calls to redactContent. */
-  public UnaryCallSettings<RedactContentRequest, RedactContentResponse> redactContentSettings() {
-    return redactContentSettings;
   }
 
   /** Returns the object with the settings used for calls to createInspectOperation. */
@@ -264,12 +264,12 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
   private DlpServiceSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    inspectContentSettings = settingsBuilder.inspectContentSettings().build();
+    redactContentSettings = settingsBuilder.redactContentSettings().build();
     deidentifyContentSettings = settingsBuilder.deidentifyContentSettings().build();
     analyzeDataSourceRiskSettings = settingsBuilder.analyzeDataSourceRiskSettings().build();
     analyzeDataSourceRiskOperationSettings =
         settingsBuilder.analyzeDataSourceRiskOperationSettings().build();
-    inspectContentSettings = settingsBuilder.inspectContentSettings().build();
-    redactContentSettings = settingsBuilder.redactContentSettings().build();
     createInspectOperationSettings = settingsBuilder.createInspectOperationSettings().build();
     createInspectOperationOperationSettings =
         settingsBuilder.createInspectOperationOperationSettings().build();
@@ -282,6 +282,10 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
   public static class Builder extends ClientSettings.Builder<DlpServiceSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<InspectContentRequest, InspectContentResponse>
+        inspectContentSettings;
+    private final UnaryCallSettings.Builder<RedactContentRequest, RedactContentResponse>
+        redactContentSettings;
     private final UnaryCallSettings.Builder<DeidentifyContentRequest, DeidentifyContentResponse>
         deidentifyContentSettings;
     private final UnaryCallSettings.Builder<AnalyzeDataSourceRiskRequest, Operation>
@@ -290,10 +294,6 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
             AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult,
             RiskAnalysisOperationMetadata>
         analyzeDataSourceRiskOperationSettings;
-    private final UnaryCallSettings.Builder<InspectContentRequest, InspectContentResponse>
-        inspectContentSettings;
-    private final UnaryCallSettings.Builder<RedactContentRequest, RedactContentResponse>
-        redactContentSettings;
     private final UnaryCallSettings.Builder<CreateInspectOperationRequest, Operation>
         createInspectOperationSettings;
     private final OperationCallSettings.Builder<
@@ -347,15 +347,15 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
     private Builder(ClientContext clientContext) {
       super(clientContext);
 
+      inspectContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      redactContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       deidentifyContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       analyzeDataSourceRiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       analyzeDataSourceRiskOperationSettings = OperationCallSettings.newBuilder();
-
-      inspectContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      redactContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createInspectOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -369,10 +369,10 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deidentifyContentSettings,
-              analyzeDataSourceRiskSettings,
               inspectContentSettings,
               redactContentSettings,
+              deidentifyContentSettings,
+              analyzeDataSourceRiskSettings,
               createInspectOperationSettings,
               listInspectFindingsSettings,
               listInfoTypesSettings,
@@ -393,16 +393,6 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deidentifyContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .analyzeDataSourceRiskSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .inspectContentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -410,6 +400,16 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
       builder
           .redactContentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deidentifyContentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .analyzeDataSourceRiskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -486,12 +486,12 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
     private Builder(DlpServiceSettings settings) {
       super(settings);
 
+      inspectContentSettings = settings.inspectContentSettings.toBuilder();
+      redactContentSettings = settings.redactContentSettings.toBuilder();
       deidentifyContentSettings = settings.deidentifyContentSettings.toBuilder();
       analyzeDataSourceRiskSettings = settings.analyzeDataSourceRiskSettings.toBuilder();
       analyzeDataSourceRiskOperationSettings =
           settings.analyzeDataSourceRiskOperationSettings.toBuilder();
-      inspectContentSettings = settings.inspectContentSettings.toBuilder();
-      redactContentSettings = settings.redactContentSettings.toBuilder();
       createInspectOperationSettings = settings.createInspectOperationSettings.toBuilder();
       createInspectOperationOperationSettings =
           settings.createInspectOperationOperationSettings.toBuilder();
@@ -501,10 +501,10 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deidentifyContentSettings,
-              analyzeDataSourceRiskSettings,
               inspectContentSettings,
               redactContentSettings,
+              deidentifyContentSettings,
+              analyzeDataSourceRiskSettings,
               createInspectOperationSettings,
               listInspectFindingsSettings,
               listInfoTypesSettings,
@@ -520,6 +520,18 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
         ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to inspectContent. */
+    public UnaryCallSettings.Builder<InspectContentRequest, InspectContentResponse>
+        inspectContentSettings() {
+      return inspectContentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to redactContent. */
+    public UnaryCallSettings.Builder<RedactContentRequest, RedactContentResponse>
+        redactContentSettings() {
+      return redactContentSettings;
     }
 
     /** Returns the builder for the settings used for calls to deidentifyContent. */
@@ -540,18 +552,6 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
             RiskAnalysisOperationMetadata>
         analyzeDataSourceRiskOperationSettings() {
       return analyzeDataSourceRiskOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to inspectContent. */
-    public UnaryCallSettings.Builder<InspectContentRequest, InspectContentResponse>
-        inspectContentSettings() {
-      return inspectContentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to redactContent. */
-    public UnaryCallSettings.Builder<RedactContentRequest, RedactContentResponse>
-        redactContentSettings() {
-      return redactContentSettings;
     }
 
     /** Returns the builder for the settings used for calls to createInspectOperation. */
