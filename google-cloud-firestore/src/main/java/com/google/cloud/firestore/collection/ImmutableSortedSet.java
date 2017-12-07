@@ -17,8 +17,14 @@
 package com.google.cloud.firestore.collection;
 
 import com.google.api.core.InternalApi;
-import java.util.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
+// Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/src
+// /main/java/com/google/firebase/database/collection
 @InternalApi
 public class ImmutableSortedSet<T> implements Iterable<T> {
 
