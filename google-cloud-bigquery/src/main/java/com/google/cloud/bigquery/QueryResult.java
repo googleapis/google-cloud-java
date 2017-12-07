@@ -22,17 +22,17 @@ import com.google.api.gax.paging.Page;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
+import java.io.Serializable;
 import java.util.Objects;
 
-// TODO(pongad): Serializable ?
-public class QueryResult implements Page<FieldValueList> {
+public class QueryResult implements Page<FieldValueList>, Serializable {
 
-  private static final long serialVersionUID = -4831062717210349818L;
+  private static final long serialVersionUID = -4831062717210349819L;
 
   private final Schema schema;
   private final long totalRows;
   private final Page<FieldValueList> pageNoSchema;
-  private final Function<FieldValueList, FieldValueList> addSchemaFunc;
+  private final transient Function<FieldValueList, FieldValueList> addSchemaFunc;
 
   QueryResult(final Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
     // TODO(pongad): read totalRows directly from listTableData.

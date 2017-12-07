@@ -41,6 +41,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import java.util.List;
+import com.google.api.services.bigquery.model.ErrorProto;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
@@ -560,15 +561,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Job query(QueryJobConfiguration configuration, JobOption... options)
-      throws InterruptedException {
+  public QueryResult query(QueryJobConfiguration configuration, JobOption... options)
+      throws InterruptedException, JobException {
     return query(configuration, JobId.of(), options);
   }
 
   @Override
-  public Job query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
-      throws InterruptedException {
-    return create(JobInfo.of(jobId, configuration), options).waitFor();
+  public QueryResult query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
+      throws InterruptedException, JobException {
+    return create(JobInfo.of(jobId, configuration), options).getQueryResults();
   }
 
   @Override
@@ -590,10 +591,19 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             }
           }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       TableSchema schemaPb = results.getSchema();
+
+      ImmutableList.Builder<BigQueryError> errors = ImmutableList.builder();
+      if (results.getErrors() != null) {
+        for (ErrorProto error : results.getErrors()) {
+          errors.add(BigQueryError.fromPb(error));
+        }
+      }
+
       return QueryResponse.newBuilder()
           .setCompleted(results.getJobComplete())
           .setSchema(schemaPb == null ? null : Schema.fromPb(schemaPb))
           .setTotalRows(results.getTotalRows() == null ? 0 : results.getTotalRows().longValue())
+          .setErrors(errors.build())
           .build();
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);

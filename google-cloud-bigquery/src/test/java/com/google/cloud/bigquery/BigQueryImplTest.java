@@ -1137,24 +1137,14 @@ public class BigQueryImplTest {
                 PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
         .andReturn(responsePb);
     EasyMock.expect(
-            bigqueryRpcMock.getJob(
-                PROJECT, JOB, Collections.<BigQueryRpc.Option, Object>emptyMap()))
-        .andReturn(jobResponsePb);
-    EasyMock.expect(
-            bigqueryRpcMock.getQueryResults(
-                PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
-        .andReturn(responsePb);
-    EasyMock.expect(
             bigqueryRpcMock.listTableData(
                 PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap()))
         .andReturn(Tuple.<String, Iterable<TableRow>>of("", ImmutableList.of(TABLE_ROW)));
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    QueryResult result =
-        bigquery
-            .query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob)
-            .getQueryResults(QueryResultsOption.pageSize(42L));
+    // TODO(pongad): pagesize = 42
+    QueryResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
     assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
     assertThat(result.getTotalRows()).isEqualTo(1);
     for (FieldValueList row : result.getValues()) {
@@ -1212,24 +1202,14 @@ public class BigQueryImplTest {
                 PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
         .andReturn(responsePb2);
     EasyMock.expect(
-            bigqueryRpcMock.getJob(
-                PROJECT, JOB, Collections.<BigQueryRpc.Option, Object>emptyMap()))
-        .andReturn(jobResponsePb2);
-    EasyMock.expect(
-            bigqueryRpcMock.getQueryResults(
-                PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
-        .andReturn(responsePb2);
-    EasyMock.expect(
             bigqueryRpcMock.listTableData(
                 PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap()))
         .andReturn(Tuple.<String, Iterable<TableRow>>of("", ImmutableList.of(TABLE_ROW)));
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    QueryResult result =
-        bigquery
-            .query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob)
-            .getQueryResults(QueryResultsOption.pageSize(42L));
+    // TODO(pongad): pagesize = 42
+    QueryResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
     assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
     assertThat(result.getTotalRows()).isEqualTo(1);
     for (FieldValueList row : result.getValues()) {

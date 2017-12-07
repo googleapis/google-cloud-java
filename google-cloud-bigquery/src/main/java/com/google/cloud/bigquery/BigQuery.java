@@ -989,8 +989,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   boolean cancel(JobId jobId);
 
   /**
-   * Runs the query associated with the request, using an internally-generated random JobId. The
-   * returned job is always completed.
+   * Runs the query associated with the request, using an internally-generated random JobId.
    *
    * <p>Example of running a query.
    *
@@ -1033,10 +1032,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
    *     to complete
    */
-  Job query(QueryJobConfiguration configuration, JobOption... options) throws InterruptedException;
+  QueryResult query(QueryJobConfiguration configuration, JobOption... options)
+      throws InterruptedException;
 
   /**
-   * Runs the query associated with the request, using the given JobId. The returned job is always completed.
+   * Runs the query associated with the request, using the given JobId.
    *
    * <p>See {@link #query(QueryJobConfiguration, JobOption...)} for examples on populating a {@link
    * QueryJobConfiguration}.
@@ -1057,7 +1057,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
    *     to complete
    */
-  Job query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
+  QueryResult query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
       throws InterruptedException;
 
   /**
