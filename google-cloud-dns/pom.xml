@@ -32,7 +32,6 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-dns</artifactId>
-      <version>v1-rev7-1.21.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
@@ -48,7 +47,6 @@
     <dependency>
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
-      <version>1.3.2</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>

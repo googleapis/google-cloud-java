@@ -136,21 +136,21 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud</site.installationModule>
-    <google-cloud-parent.version>0.30.1-alpha-SNAPSHOT</google-cloud-parent.version>
+    <google-cloud-bom.version>0.30.1-alpha-SNAPSHOT</google-cloud-bom.version>
   </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-dependencies</artifactId>
-        <version>${google-cloud-parent.version}</version>
+        <artifactId>google-cloud-bom</artifactId>
+        <version>${google-cloud-bom.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
   <modules>
-    <module>google-cloud-dependencies</module>
+    <module>google-cloud-bom</module>
     <module>google-cloud-bigtable</module>
     <module>google-cloud-bigquery</module>
     <module>google-cloud-compute</module>
