@@ -80,7 +80,7 @@ abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
    * @param path the path to check against
    * @return true if current path is a prefix of the other path.
    */
-  boolean isPrefixOf(B path) {
+  boolean isPrefixOf(BasePath<B> path) {
     ImmutableList<String> prefixSegments = getSegments();
     ImmutableList<String> childSegments = path.getSegments();
     if (prefixSegments.size() > path.getSegments().size()) {
@@ -95,7 +95,7 @@ abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
   }
 
   /**
-   * Compare the current path against another Path object.
+   * Compare the current path lexicographically against another Path object.
    *
    * @param other The path to compare to.
    * @return -1 if current < other, 1 if current > other, 0 if equal
@@ -106,7 +106,7 @@ abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
     for (int i = 0; i < length; i++) {
       int cmp = this.getSegments().get(i).compareTo(other.getSegments().get(i));
       if (cmp != 0) {
-        return Integer.compare(cmp, 0);
+        return cmp;
       }
     }
     return Integer.compare(this.getSegments().size(), other.getSegments().size());

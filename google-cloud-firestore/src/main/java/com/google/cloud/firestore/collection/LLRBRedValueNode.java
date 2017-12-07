@@ -16,6 +16,11 @@
 
 package com.google.cloud.firestore.collection;
 
+import com.google.api.core.InternalApi;
+
+// Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/
+// src/main/java/com/google/firebase/database/collection
+@InternalApi
 public class LLRBRedValueNode<K, V> extends LLRBValueNode<K, V> {
 
   LLRBRedValueNode(K key, V value) {

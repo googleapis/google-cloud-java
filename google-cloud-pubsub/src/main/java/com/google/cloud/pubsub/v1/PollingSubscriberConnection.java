@@ -90,7 +90,6 @@ final class PollingSubscriberConnection extends AbstractApiService implements Ac
             executor,
             systemExecutor,
             clock);
-    messageDispatcher.setMessageDeadlineSeconds(subscription.getAckDeadlineSeconds());
     this.maxDesiredPulledMessages =
         maxDesiredPulledMessages != null
             ? Ints.saturatedCast(maxDesiredPulledMessages)

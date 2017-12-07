@@ -16,14 +16,26 @@
 
 package com.google.cloud.firestore.collection;
 
-import java.util.*;
+import com.google.api.core.InternalApi;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This is an array backed implementation of ImmutableSortedMap. It uses arrays and linear lookups
  * to achieve good memory efficiency while maintaining good performance for small collections. To
  * avoid degrading performance with increasing collection size it will automatically convert to a
  * RBTreeSortedMap after an insert call above a certain threshold.
+ *
+ * Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/
+ * src/main/java/com/google/firebase/database/collection
  */
+@InternalApi
 public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
 
   @SuppressWarnings("unchecked")

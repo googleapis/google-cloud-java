@@ -54,10 +54,10 @@ public class SubscriptionAdminClientSnippets {
     // [START pubsub_create_pull_subscription]
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       // eg. projectId = "my-test-project", topicId = "my-test-topic"
-      TopicName topicName = TopicName.create(projectId, topicId);
+      TopicName topicName = TopicName.of(projectId, topicId);
       // eg. subscriptionId = "my-test-subscription"
       SubscriptionName subscriptionName =
-          SubscriptionName.create(projectId, subscriptionId);
+          SubscriptionName.of(projectId, subscriptionId);
       // create a pull subscription with default acknowledgement deadline
       Subscription subscription =
           subscriptionAdminClient.createSubscription(
@@ -73,9 +73,9 @@ public class SubscriptionAdminClientSnippets {
           throws Exception {
     // [START pubsub_create_push_subscription]
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      TopicName topicName = TopicName.create(projectId, topicId);
+      TopicName topicName = TopicName.of(projectId, topicId);
       SubscriptionName subscriptionName =
-              SubscriptionName.create(projectId, subscriptionId);
+              SubscriptionName.of(projectId, subscriptionId);
 
       // eg. endpoint = "https://my-test-project.appspot.com/push"
       PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
@@ -95,7 +95,7 @@ public class SubscriptionAdminClientSnippets {
   public void replacePushConfig(String subscriptionId, String endpoint) throws Exception {
     // [START pubsub_update_push_configuration]
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
+      SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
       PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
       subscriptionAdminClient.modifyPushConfig(subscriptionName, pushConfig);
     }
@@ -108,7 +108,7 @@ public class SubscriptionAdminClientSnippets {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       ListSubscriptionsRequest listSubscriptionsRequest =
           ListSubscriptionsRequest.newBuilder()
-              .setProjectWithProjectName(ProjectName.create(projectId))
+              .setProjectWithProjectName(ProjectName.of(projectId))
               .build();
       ListSubscriptionsPagedResponse response =
           subscriptionAdminClient.listSubscriptions(listSubscriptionsRequest);
@@ -125,7 +125,7 @@ public class SubscriptionAdminClientSnippets {
   public SubscriptionName deleteSubscription(String subscriptionId) throws Exception {
     // [START pubsub_delete_subscription]
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
+      SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
       subscriptionAdminClient.deleteSubscription(subscriptionName);
       return subscriptionName;
     }
@@ -136,7 +136,7 @@ public class SubscriptionAdminClientSnippets {
   public Policy getSubscriptionPolicy(String subscriptionId) throws Exception {
     // [START pubsub_get_subscription_policy]
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
+      SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
       Policy policy = subscriptionAdminClient.getIamPolicy(subscriptionName.toString());
       if (policy == null) {
         // subscription was not found
@@ -150,7 +150,7 @@ public class SubscriptionAdminClientSnippets {
   public Policy replaceSubscriptionPolicy(String subscriptionId) throws Exception {
     // [START pubsub_set_subscription_policy]
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
+      SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
       Policy policy = subscriptionAdminClient.getIamPolicy(subscriptionName.toString());
       // Create a role => members binding
       Binding binding =
@@ -174,7 +174,7 @@ public class SubscriptionAdminClientSnippets {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       List<String> permissions = new LinkedList<>();
       permissions.add("pubsub.subscriptions.get");
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
+      SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
       TestIamPermissionsResponse testedPermissions =
           topicAdminClient.testIamPermissions(subscriptionName.toString(), permissions);
       return testedPermissions;
@@ -186,7 +186,7 @@ public class SubscriptionAdminClientSnippets {
   public Subscription getSubscription(String subscriptionId) throws Exception {
     // [START pubsub_get_subscription]
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
+      SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
       Subscription subscription = subscriptionAdminClient.getSubscription(subscriptionName);
       return subscription;
     }

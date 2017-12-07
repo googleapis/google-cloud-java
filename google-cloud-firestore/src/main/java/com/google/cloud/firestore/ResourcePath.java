@@ -58,7 +58,7 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
     if (parts.length >= 6 && parts[0].equals("projects") && parts[2].equals("databases")) {
       String[] path = Arrays.copyOfRange(parts, 5, parts.length);
       return create(
-          DatabaseRootName.create(parts[1], parts[3]),
+          DatabaseRootName.of(parts[1], parts[3]),
           ImmutableList.<String>builder().add(path).build());
     }
 
@@ -143,16 +143,16 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
    */
   @Override
   public int compareTo(@Nonnull ResourcePath other) {
-    int comp = this.getDatabaseName().getProject().compareTo(other.getDatabaseName().getProject());
+    int cmp = this.getDatabaseName().getProject().compareTo(other.getDatabaseName().getProject());
 
-    if (comp != 0) {
-      return Integer.compare(comp, 0);
+    if (cmp != 0) {
+      return cmp;
     }
 
-    comp = this.getDatabaseName().getDatabase().compareTo(other.getDatabaseName().getDatabase());
+    cmp = this.getDatabaseName().getDatabase().compareTo(other.getDatabaseName().getDatabase());
 
-    if (comp != 0) {
-      return Integer.compare(comp, 0);
+    if (cmp != 0) {
+      return cmp;
     }
 
     return super.compareTo(other);

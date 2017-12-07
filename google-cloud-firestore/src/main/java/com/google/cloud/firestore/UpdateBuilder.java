@@ -32,6 +32,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -56,10 +58,18 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
   private static Map<String, Object> expandObject(Map<FieldPath, Object> data) {
     Map<String, Object> result = new HashMap<>();
 
-    for (Map.Entry<FieldPath, Object> entrySet : data.entrySet()) {
-      List<String> segments = entrySet.getKey().getSegments();
-      Object value = entrySet.getValue();
+    SortedSet<FieldPath> sortedFields = new TreeSet<>(data.keySet());
 
+    FieldPath lastField = null;
+
+    for (FieldPath field : sortedFields) {
+      if (lastField != null && lastField.isPrefixOf(field)) {
+        throw new IllegalArgumentException(
+            String.format("Detected ambiguous definition for field '%s'.", lastField));
+      }
+
+      List<String> segments = field.getSegments();
+      Object value = data.get(field);
       Map<String, Object> currentMap = result;
 
       for (int i = 0; i < segments.size(); ++i) {
@@ -69,9 +79,12 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
           if (!currentMap.containsKey(segments.get(i))) {
             currentMap.put(segments.get(i), new HashMap<>());
           }
+
           currentMap = (Map<String, Object>) currentMap.get(segments.get(i));
         }
       }
+
+      lastField = field;
     }
 
     return result;

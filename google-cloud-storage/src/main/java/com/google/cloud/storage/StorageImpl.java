@@ -955,6 +955,21 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
   }
 
+  @Override
+  public ServiceAccount getServiceAccount(final String projectId) {
+    try {
+      com.google.api.services.storage.model.ServiceAccount answer = runWithRetries(new Callable<com.google.api.services.storage.model.ServiceAccount>() {
+        @Override
+        public com.google.api.services.storage.model.ServiceAccount call() {
+          return storageRpc.getServiceAccount(projectId);
+        }
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+      return answer == null ? null : ServiceAccount.fromPb(answer);
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
   private static <T> void addToOptionMap(StorageRpc.Option option, T defaultValue,
       Map<StorageRpc.Option, Object> map) {
     addToOptionMap(option, option, defaultValue, map);

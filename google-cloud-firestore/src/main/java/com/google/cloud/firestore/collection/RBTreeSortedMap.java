@@ -16,13 +16,23 @@
 
 package com.google.cloud.firestore.collection;
 
-import java.util.*;
+import com.google.api.core.InternalApi;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This is a red-black tree backed implementation of ImmutableSortedMap. This has better asymptotic
  * complexity for large collections, but performs worse in practice than an ArraySortedMap for small
  * collections. It also uses about twice as much memory.
+ *
+ * Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/
+ * src/main/java/com/google/firebase/database/collection
  */
+@InternalApi
 public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
 
   private LLRBNode<K, V> root;

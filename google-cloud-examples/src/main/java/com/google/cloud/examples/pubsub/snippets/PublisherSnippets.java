@@ -71,7 +71,7 @@ public class PublisherSnippets {
   // [VARIABLE "my_project"]
   // [VARIABLE "my_topic"]
   public static void newBuilder(String projectId, String topicId) throws Exception {
-    TopicName topic = TopicName.create(projectId, topicId);
+    TopicName topic = TopicName.of(projectId, topicId);
     Publisher publisher = Publisher.newBuilder(topic).build();
     try {
       // ...

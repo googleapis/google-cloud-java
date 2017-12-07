@@ -17,6 +17,7 @@
 package com.google.cloud.storage;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.core.InternalApi;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.http.BaseHttpServiceException;
@@ -30,6 +31,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/status-codes">Google Cloud
  *      Storage error codes</a>
  */
+@InternalApi
 public final class StorageException extends BaseHttpServiceException {
 
   // see: https://cloud.google.com/storage/docs/resumable-uploads-xml#practices
@@ -66,7 +68,7 @@ public final class StorageException extends BaseHttpServiceException {
    *
    * @throws StorageException when {@code ex} was caused by a {@code StorageException}
    */
-  static StorageException translateAndThrow(RetryHelperException ex) {
+  public static StorageException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translate(ex);
     throw new StorageException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }

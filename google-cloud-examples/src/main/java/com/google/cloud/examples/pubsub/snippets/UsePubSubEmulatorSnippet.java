@@ -55,7 +55,7 @@ public class UsePubSubEmulatorSnippet {
                   .setCredentialsProvider(credentialsProvider)
                   .build());
 
-      TopicName topicName = TopicName.create("my-project-id", "my-topic-id");
+      TopicName topicName = TopicName.of("my-project-id", "my-topic-id");
       // Set the channel and credentials provider when creating a `Publisher`.
       // Similarly for Subscriber
       Publisher publisher =

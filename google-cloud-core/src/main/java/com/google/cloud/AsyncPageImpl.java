@@ -64,7 +64,8 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
         return asyncPageFetcher != null
             ? Uninterruptibles.getUninterruptibly(asyncPageFetcher.getNextPage()) : null;
       } catch (ExecutionException ex) {
-        throw Throwables.propagate(ex.getCause());
+        Throwables.throwIfUnchecked(ex.getCause());
+        throw new RuntimeException(ex);
       }
     }
   }

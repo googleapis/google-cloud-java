@@ -16,8 +16,18 @@
 
 package com.google.cloud.firestore.collection;
 
-import java.util.*;
+import com.google.api.core.InternalApi;
+import java.util.AbstractMap;
+import java.util.Comparator;
+import java.util.EmptyStackException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Stack;
 
+// Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/
+// src/main/java/com/google/firebase/database/collection
+@InternalApi
 public class ImmutableSortedMapIterator<K, V> implements Iterator<Map.Entry<K, V>> {
 
   private final Stack<LLRBValueNode<K, V>> nodeStack;

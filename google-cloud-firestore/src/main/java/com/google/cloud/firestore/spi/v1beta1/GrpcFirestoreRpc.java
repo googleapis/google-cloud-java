@@ -96,7 +96,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
         FirestoreSettings.Builder settingsBuilder = FirestoreSettings.newBuilder();
 
         DatabaseRootName databaseName = DatabaseRootName
-            .create(options.getProjectId(), options.getDatabaseId());
+            .of(options.getProjectId(), options.getDatabaseId());
 
         settingsBuilder.setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options));
         settingsBuilder.setTransportChannelProvider(

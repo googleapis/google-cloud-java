@@ -18,7 +18,11 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.cloud.TransportOptions;
+
 import io.grpc.ManagedChannel;
 import io.grpc.netty.NettyChannelBuilder;
 import org.junit.Rule;
@@ -54,27 +58,46 @@ public class SpannerOptionsTest {
             .build();
     assertThat(options.getHost()).isEqualTo("https://spanner.googleapis.com");
     assertThat(options.getPrefetchChunks()).isEqualTo(4);
+    assertThat(options.getSessionLabels()).isNull();
   }
 
   @Test
   public void builder() {
     String host = "http://localhost:8000/";
     String projectId = "test-project";
+    Map<String, String> labels = new HashMap<>();
+    labels.put("env", "dev");
     SpannerOptions options =
         SpannerOptions.newBuilder()
             .setRpcChannelFactory(new TestChannelFactory())
             .setHost(host)
             .setProjectId(projectId)
             .setPrefetchChunks(2)
+            .setSessionLabels(labels)
             .build();
     assertThat(options.getHost()).isEqualTo(host);
     assertThat(options.getProjectId()).isEqualTo(projectId);
     assertThat(options.getPrefetchChunks()).isEqualTo(2);
+    assertThat(options.getSessionLabels()).containsExactlyEntriesIn(labels);
   }
 
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
     SpannerOptions.newBuilder().setTransportOptions(Mockito.mock(TransportOptions.class));
+  }
+  
+  @Test
+  public void testInvalidSessionLabels() {
+    thrown.expect(NullPointerException.class);
+    Map<String, String> labels = new HashMap<>();
+    labels.put("env", null);
+    SpannerOptions.newBuilder().setSessionLabels(labels);
+  }
+  
+  @Test
+  public void testNullSessionLabels() {
+    thrown.expect(NullPointerException.class);
+    SpannerOptions.newBuilder().setSessionLabels(null);
   }
 }
