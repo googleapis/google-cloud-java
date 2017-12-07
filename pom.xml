@@ -142,8 +142,8 @@
     <api-common.version>1.2.0</api-common.version>
     <gax.version>1.15.0</gax.version>
     <gax-grpc.version>1.15.0</gax-grpc.version>
-    <generated-proto-beta.version>0.1.26</generated-proto-beta.version>
-    <generated-proto-ga.version>1.0.1</generated-proto-ga.version>
+    <generated-proto-beta.version>0.1.25</generated-proto-beta.version>
+    <generated-proto-ga.version>1.0.2</generated-proto-ga.version>
     <google.auth.version>0.9.0</google.auth.version>
     <grpc.version>1.7.0</grpc.version>
     <nettyssl.version>2.0.6.Final</nettyssl.version>
@@ -978,7 +978,7 @@
       Uncomment the following lines to include google app engine (GAE) testing apps in the build.
       Each GAE app packages all its dependencies in a fat war (>20MB each).
     -->
-    <!--<module>google-cloud-testing</module>-->
+    <module>google-cloud-testing</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>
