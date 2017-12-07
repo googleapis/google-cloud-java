@@ -277,29 +277,27 @@
         <type>test-jar</type>
       </dependency>
 
-      <!--<dependency>-->
-        <!--<groupId>com.google.cloud</groupId>-->
-        <!--<artifactId>google-cloud-container</artifactId>-->
-        <!--<version>${container.version}</version>-->
-      <!--</dependency>-->
-      <!--<dependency>-->
-        <!--<groupId>com.google.cloud</groupId>-->
-        <!--<artifactId>google-cloud-container</artifactId>-->
-        <!--<version>${container.version}</version>-->
-        <!--<type>test-jar</type>-->
-      <!--</dependency>-->
-
-      <!--<dependency>-->
-        <!--<groupId>com.google.cloud</groupId>-->
-        <!--<artifactId>proto-google-cloud-container-v1</artifactId>-->
-        <!--<version>${generated-proto-beta.version}</version>-->
-      <!--</dependency>-->
-      <!--<dependency>-->
-        <!--<groupId>com.google.cloud</groupId>-->
-        <!--<artifactId>grpc-google-cloud-container-v1</artifactId>-->
-        <!--<version>${generated-proto-beta.version}</version>-->
-        <!--<type>test-jar</type>-->
-      <!--</dependency>-->
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-container</artifactId>
+        <version>${container.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-container</artifactId>
+        <version>${container.version}</version>
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-container-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-container-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -996,7 +994,7 @@
     <module>google-cloud-bigquery</module>
     <module>google-cloud-bigquerydatatransfer</module>
     <module>google-cloud-compute</module>
-    <!--<module>google-cloud-container</module>-->
+    <module>google-cloud-container</module>
     <module>google-cloud-contrib</module>
     <module>google-cloud-core</module>
     <module>google-cloud-core-http</module>
@@ -1346,8 +1344,7 @@
                   </group>
                   <group>
                     <title>Stub packages</title>
-                    <packages>com.google.cloud.bigquerydatatransfer.v1.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub</packages>
-                    <!--<packages>com.google.cloud.bigquerydatatransfer.v1.stub:com.google.cloud.container.v1.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub</packages>-->
+                    <packages>com.google.cloud.bigquerydatatransfer.v1.stub:com.google.cloud.container.v1.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub</packages>
                   </group>
                 </groups>
                 <links>
@@ -1355,7 +1352,7 @@
                   <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
                   <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-iam-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <!--<link>http://googleapis.github.io/googleapis/java/proto-google-cloud-container-v1/${generated-proto-beta.version}/apidocs/</link>-->
+                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-container-v1/${generated-proto-beta.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-bigquerydatatransfer-v1/${generated-proto-beta.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-bigtable-v2/${generated-proto-beta.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-bigtable-admin-v2/${generated-proto-beta.version}/apidocs/</link>
