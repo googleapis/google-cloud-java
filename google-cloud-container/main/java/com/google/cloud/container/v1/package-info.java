@@ -15,25 +15,24 @@
  */
 
 /**
- * A client to Cloud Bigtable API.
+ * A client to Google Container Engine API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>============== BigtableClient ==============
+ * <p>==================== ClusterManagerClient ====================
  *
- * <p>Service Description: Service for reading from and writing to existing Bigtable tables.
+ * <p>Service Description: Google Container Engine Cluster Manager v1
  *
- * <p>Sample for BigtableClient:
+ * <p>Sample for ClusterManagerClient:
  *
  * <pre>
  * <code>
- * try (BigtableClient bigtableClient = BigtableClient.create()) {
- *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
- *   ByteString rowKey = ByteString.copyFromUtf8("");
- *   List&lt;Mutation&gt; mutations = new ArrayList&lt;&gt;();
- *   MutateRowResponse response = bigtableClient.mutateRow(tableName, rowKey, mutations);
+ * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+ *   String projectId = "";
+ *   String zone = "";
+ *   ListClustersResponse response = clusterManagerClient.listClusters(projectId, zone);
  * }
  * </code>
  * </pre>
  */
-package com.google.cloud.bigtable.v2;
+package com.google.cloud.container.v1;

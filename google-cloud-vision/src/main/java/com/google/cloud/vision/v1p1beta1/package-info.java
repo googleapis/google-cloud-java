@@ -15,25 +15,25 @@
  */
 
 /**
- * A client to Cloud Bigtable API.
+ * A client to Google Cloud Vision API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>============== BigtableClient ==============
+ * <p>==================== ImageAnnotatorClient ====================
  *
- * <p>Service Description: Service for reading from and writing to existing Bigtable tables.
+ * <p>Service Description: Service that performs Google Cloud Vision API detection tasks over client
+ * images, such as face, landmark, logo, label, and text detection. The ImageAnnotator service
+ * returns detected entities from the images.
  *
- * <p>Sample for BigtableClient:
+ * <p>Sample for ImageAnnotatorClient:
  *
  * <pre>
  * <code>
- * try (BigtableClient bigtableClient = BigtableClient.create()) {
- *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
- *   ByteString rowKey = ByteString.copyFromUtf8("");
- *   List&lt;Mutation&gt; mutations = new ArrayList&lt;&gt;();
- *   MutateRowResponse response = bigtableClient.mutateRow(tableName, rowKey, mutations);
+ * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+ *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
+ *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
  * }
  * </code>
  * </pre>
  */
-package com.google.cloud.bigtable.v2;
+package com.google.cloud.vision.v1p1beta1;
