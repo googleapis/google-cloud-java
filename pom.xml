@@ -138,6 +138,7 @@
     <site.installationModule>google-cloud</site.installationModule>
     <google-cloud-bom.version>0.30.1-alpha-SNAPSHOT</google-cloud-bom.version>
   </properties>
+  <!-- All dependency versions should be added to google-cloud-bom/pom.xml -->
   <dependencyManagement>
     <dependencies>
       <dependency>
