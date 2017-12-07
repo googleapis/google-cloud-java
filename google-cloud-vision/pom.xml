@@ -36,6 +36,10 @@
       <artifactId>proto-google-cloud-vision-v1</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-vision-v1p1beta1</artifactId>
+    </dependency>
+    <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty</artifactId>
     </dependency>
@@ -71,6 +75,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-vision-v1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-vision-v1p1beta1</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -156,10 +165,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <!-- Downgrading to 3.1 because of https://issues.apache.org/jira/browse/MCOMPILER-236 -->
-        <!-- Upgrade to 3.5.1 which fixes the problem when available -->
-        <!-- <version>3.5.1</version> -->
-        <version>3.1</version>
+        <version>3.5.1</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
