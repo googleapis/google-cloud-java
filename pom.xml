@@ -168,6 +168,7 @@
     <module>google-cloud-language</module>
     <module>google-cloud-logging</module>
     <module>google-cloud-monitoring</module>
+    <module>google-cloud-notification</module>
     <module>google-cloud-pubsub</module>
     <module>google-cloud-resourcemanager</module>
     <module>google-cloud-spanner</module>
