@@ -98,7 +98,7 @@ abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
    * Compare the current path lexicographically against another Path object.
    *
    * @param other The path to compare to.
-   * @return -1 if current < other, 1 if current > other, 0 if equal
+   * @return -1 if current is less than other, 1 if current greater than other, 0 if equal
    */
   @Override
   public int compareTo(@Nonnull B other) {

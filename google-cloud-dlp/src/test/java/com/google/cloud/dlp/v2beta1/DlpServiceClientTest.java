@@ -43,9 +43,6 @@ import com.google.privacy.dlp.v2beta1.ListRootCategoriesRequest;
 import com.google.privacy.dlp.v2beta1.ListRootCategoriesResponse;
 import com.google.privacy.dlp.v2beta1.OutputStorageConfig;
 import com.google.privacy.dlp.v2beta1.PrivacyMetric;
-import com.google.privacy.dlp.v2beta1.RedactContentRequest;
-import com.google.privacy.dlp.v2beta1.RedactContentRequest.ReplaceConfig;
-import com.google.privacy.dlp.v2beta1.RedactContentResponse;
 import com.google.privacy.dlp.v2beta1.ResultName;
 import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationResult;
 import com.google.privacy.dlp.v2beta1.StorageConfig;
@@ -98,6 +95,55 @@ public class DlpServiceClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void inspectContentTest() {
+    InspectContentResponse expectedResponse = InspectContentResponse.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "EMAIL_ADDRESS";
+    InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
+    List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
+    InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
+    String type = "text/plain";
+    String value = "My email is example@example.com.";
+    ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
+    List<ContentItem> items = Arrays.asList(itemsElement);
+
+    InspectContentResponse actualResponse = client.inspectContent(inspectConfig, items);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    InspectContentRequest actualRequest = (InspectContentRequest) actualRequests.get(0);
+
+    Assert.assertEquals(inspectConfig, actualRequest.getInspectConfig());
+    Assert.assertEquals(items, actualRequest.getItemsList());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void inspectContentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "EMAIL_ADDRESS";
+      InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
+      List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
+      InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
+      String type = "text/plain";
+      String value = "My email is example@example.com.";
+      ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
+      List<ContentItem> items = Arrays.asList(itemsElement);
+
+      client.inspectContent(inspectConfig, items);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test
@@ -185,125 +231,6 @@ public class DlpServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void inspectContentTest() {
-    InspectContentResponse expectedResponse = InspectContentResponse.newBuilder().build();
-    mockDlpService.addResponse(expectedResponse);
-
-    String name = "EMAIL_ADDRESS";
-    InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
-    List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
-    InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
-    String type = "text/plain";
-    String value = "My email is example@example.com.";
-    ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
-    List<ContentItem> items = Arrays.asList(itemsElement);
-
-    InspectContentResponse actualResponse = client.inspectContent(inspectConfig, items);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<GeneratedMessageV3> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    InspectContentRequest actualRequest = (InspectContentRequest) actualRequests.get(0);
-
-    Assert.assertEquals(inspectConfig, actualRequest.getInspectConfig());
-    Assert.assertEquals(items, actualRequest.getItemsList());
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void inspectContentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      String name = "EMAIL_ADDRESS";
-      InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
-      List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
-      InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
-      String type = "text/plain";
-      String value = "My email is example@example.com.";
-      ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
-      List<ContentItem> items = Arrays.asList(itemsElement);
-
-      client.inspectContent(inspectConfig, items);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void redactContentTest() {
-    RedactContentResponse expectedResponse = RedactContentResponse.newBuilder().build();
-    mockDlpService.addResponse(expectedResponse);
-
-    String name = "EMAIL_ADDRESS";
-    InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
-    List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
-    InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
-    String type = "text/plain";
-    String value = "My email is example@example.com.";
-    ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
-    List<ContentItem> items = Arrays.asList(itemsElement);
-    String name2 = "EMAIL_ADDRESS";
-    InfoType infoType = InfoType.newBuilder().setName(name2).build();
-    String replaceWith = "REDACTED";
-    RedactContentRequest.ReplaceConfig replaceConfigsElement =
-        RedactContentRequest.ReplaceConfig.newBuilder()
-            .setInfoType(infoType)
-            .setReplaceWith(replaceWith)
-            .build();
-    List<RedactContentRequest.ReplaceConfig> replaceConfigs = Arrays.asList(replaceConfigsElement);
-
-    RedactContentResponse actualResponse =
-        client.redactContent(inspectConfig, items, replaceConfigs);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<GeneratedMessageV3> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    RedactContentRequest actualRequest = (RedactContentRequest) actualRequests.get(0);
-
-    Assert.assertEquals(inspectConfig, actualRequest.getInspectConfig());
-    Assert.assertEquals(items, actualRequest.getItemsList());
-    Assert.assertEquals(replaceConfigs, actualRequest.getReplaceConfigsList());
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void redactContentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      String name = "EMAIL_ADDRESS";
-      InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
-      List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
-      InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
-      String type = "text/plain";
-      String value = "My email is example@example.com.";
-      ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
-      List<ContentItem> items = Arrays.asList(itemsElement);
-      String name2 = "EMAIL_ADDRESS";
-      InfoType infoType = InfoType.newBuilder().setName(name2).build();
-      String replaceWith = "REDACTED";
-      RedactContentRequest.ReplaceConfig replaceConfigsElement =
-          RedactContentRequest.ReplaceConfig.newBuilder()
-              .setInfoType(infoType)
-              .setReplaceWith(replaceWith)
-              .build();
-      List<RedactContentRequest.ReplaceConfig> replaceConfigs =
-          Arrays.asList(replaceConfigsElement);
-
-      client.redactContent(inspectConfig, items, replaceConfigs);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
     }
   }
 

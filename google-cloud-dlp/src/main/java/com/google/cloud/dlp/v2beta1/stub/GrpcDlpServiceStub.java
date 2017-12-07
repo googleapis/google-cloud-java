@@ -60,25 +60,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcDlpServiceStub extends DlpServiceStub {
 
-  private static final MethodDescriptor<DeidentifyContentRequest, DeidentifyContentResponse>
-      deidentifyContentMethodDescriptor =
-          MethodDescriptor.<DeidentifyContentRequest, DeidentifyContentResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.privacy.dlp.v2beta1.DlpService/DeidentifyContent")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeidentifyContentRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(DeidentifyContentResponse.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<AnalyzeDataSourceRiskRequest, Operation>
-      analyzeDataSourceRiskMethodDescriptor =
-          MethodDescriptor.<AnalyzeDataSourceRiskRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.privacy.dlp.v2beta1.DlpService/AnalyzeDataSourceRisk")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(AnalyzeDataSourceRiskRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<InspectContentRequest, InspectContentResponse>
       inspectContentMethodDescriptor =
           MethodDescriptor.<InspectContentRequest, InspectContentResponse>newBuilder()
@@ -98,6 +79,25 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(RedactContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RedactContentResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeidentifyContentRequest, DeidentifyContentResponse>
+      deidentifyContentMethodDescriptor =
+          MethodDescriptor.<DeidentifyContentRequest, DeidentifyContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2beta1.DlpService/DeidentifyContent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeidentifyContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DeidentifyContentResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<AnalyzeDataSourceRiskRequest, Operation>
+      analyzeDataSourceRiskMethodDescriptor =
+          MethodDescriptor.<AnalyzeDataSourceRiskRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2beta1.DlpService/AnalyzeDataSourceRisk")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AnalyzeDataSourceRiskRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<CreateInspectOperationRequest, Operation>
       createInspectOperationMethodDescriptor =
@@ -142,6 +142,8 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
+  private final UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable;
+  private final UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable;
   private final UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
       deidentifyContentCallable;
   private final UnaryCallable<AnalyzeDataSourceRiskRequest, Operation>
@@ -149,8 +151,6 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   private final OperationCallable<
           AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskOperationCallable;
-  private final UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable;
-  private final UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable;
   private final UnaryCallable<CreateInspectOperationRequest, Operation>
       createInspectOperationCallable;
   private final OperationCallable<
@@ -179,6 +179,15 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
       throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 
+    GrpcCallSettings<InspectContentRequest, InspectContentResponse>
+        inspectContentTransportSettings =
+            GrpcCallSettings.<InspectContentRequest, InspectContentResponse>newBuilder()
+                .setMethodDescriptor(inspectContentMethodDescriptor)
+                .build();
+    GrpcCallSettings<RedactContentRequest, RedactContentResponse> redactContentTransportSettings =
+        GrpcCallSettings.<RedactContentRequest, RedactContentResponse>newBuilder()
+            .setMethodDescriptor(redactContentMethodDescriptor)
+            .build();
     GrpcCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
         deidentifyContentTransportSettings =
             GrpcCallSettings.<DeidentifyContentRequest, DeidentifyContentResponse>newBuilder()
@@ -189,15 +198,6 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<AnalyzeDataSourceRiskRequest, Operation>newBuilder()
                 .setMethodDescriptor(analyzeDataSourceRiskMethodDescriptor)
                 .build();
-    GrpcCallSettings<InspectContentRequest, InspectContentResponse>
-        inspectContentTransportSettings =
-            GrpcCallSettings.<InspectContentRequest, InspectContentResponse>newBuilder()
-                .setMethodDescriptor(inspectContentMethodDescriptor)
-                .build();
-    GrpcCallSettings<RedactContentRequest, RedactContentResponse> redactContentTransportSettings =
-        GrpcCallSettings.<RedactContentRequest, RedactContentResponse>newBuilder()
-            .setMethodDescriptor(redactContentMethodDescriptor)
-            .build();
     GrpcCallSettings<CreateInspectOperationRequest, Operation>
         createInspectOperationTransportSettings =
             GrpcCallSettings.<CreateInspectOperationRequest, Operation>newBuilder()
@@ -218,6 +218,12 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                 .setMethodDescriptor(listRootCategoriesMethodDescriptor)
                 .build();
 
+    this.inspectContentCallable =
+        GrpcCallableFactory.createUnaryCallable(
+            inspectContentTransportSettings, settings.inspectContentSettings(), clientContext);
+    this.redactContentCallable =
+        GrpcCallableFactory.createUnaryCallable(
+            redactContentTransportSettings, settings.redactContentSettings(), clientContext);
     this.deidentifyContentCallable =
         GrpcCallableFactory.createUnaryCallable(
             deidentifyContentTransportSettings,
@@ -234,12 +240,6 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             settings.analyzeDataSourceRiskOperationSettings(),
             clientContext,
             this.operationsStub);
-    this.inspectContentCallable =
-        GrpcCallableFactory.createUnaryCallable(
-            inspectContentTransportSettings, settings.inspectContentSettings(), clientContext);
-    this.redactContentCallable =
-        GrpcCallableFactory.createUnaryCallable(
-            redactContentTransportSettings, settings.redactContentSettings(), clientContext);
     this.createInspectOperationCallable =
         GrpcCallableFactory.createUnaryCallable(
             createInspectOperationTransportSettings,
@@ -272,6 +272,14 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     return operationsStub;
   }
 
+  public UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable() {
+    return inspectContentCallable;
+  }
+
+  public UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable() {
+    return redactContentCallable;
+  }
+
   public UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
       deidentifyContentCallable() {
     return deidentifyContentCallable;
@@ -285,14 +293,6 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
 
   public UnaryCallable<AnalyzeDataSourceRiskRequest, Operation> analyzeDataSourceRiskCallable() {
     return analyzeDataSourceRiskCallable;
-  }
-
-  public UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable() {
-    return inspectContentCallable;
-  }
-
-  public UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable() {
-    return redactContentCallable;
   }
 
   public OperationCallable<

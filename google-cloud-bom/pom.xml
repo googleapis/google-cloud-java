@@ -16,8 +16,8 @@
     <api-common.version>1.2.0</api-common.version>
     <gax.version>1.15.0</gax.version>
     <gax-grpc.version>1.15.0</gax-grpc.version>
-    <generated-proto-beta.version>0.1.25</generated-proto-beta.version>
-    <generated-proto-ga.version>1.0.1</generated-proto-ga.version>
+    <generated-proto-beta.version>0.1.26</generated-proto-beta.version>
+    <generated-proto-ga.version>1.0.2</generated-proto-ga.version>
     <google.auth.version>0.9.0</google.auth.version>
     <grpc.version>1.7.0</grpc.version>
     <nettyssl.version>2.0.6.Final</nettyssl.version>
@@ -28,7 +28,9 @@
     <cloud.version>0.30.1-alpha-SNAPSHOT</cloud.version>
     <bigtable.version>0.30.1-beta-SNAPSHOT</bigtable.version>
     <bigquery.version>0.30.1-beta-SNAPSHOT</bigquery.version>
+    <bigquerydatatransfer.version>0.30.1-beta-SNAPSHOT</bigquerydatatransfer.version>
     <compute.version>0.30.1-alpha-SNAPSHOT</compute.version>
+    <container.version>0.30.1-beta-SNAPSHOT</container.version>
     <contrib.version>0.30.1-alpha-SNAPSHOT</contrib.version>
     <core.version>1.12.1-SNAPSHOT</core.version>
     <core-http.version>1.12.1-SNAPSHOT</core-http.version>
@@ -119,6 +121,28 @@
 
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bigquerydatatransfer</artifactId>
+        <version>${bigquerydatatransfer.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bigquerydatatransfer</artifactId>
+        <version>${bigquerydatatransfer.version}</version>
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-bigquerydatatransfer-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-bigquerydatatransfer-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
         <version>${compute.version}</version>
       </dependency>
@@ -133,6 +157,29 @@
         <artifactId>google-api-services-compute</artifactId>
         <version>v1-rev103-1.21.0</version>
       </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-container</artifactId>
+        <version>${container.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-container</artifactId>
+        <version>${container.version}</version>
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-container-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-container-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+
 
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -613,6 +660,16 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1</artifactId>
         <version>${generated-proto-ga.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-vision-v1p1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-vision-v1p1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
 
       <dependency>
