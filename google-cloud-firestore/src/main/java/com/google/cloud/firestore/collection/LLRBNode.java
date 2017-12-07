@@ -19,8 +19,8 @@ package com.google.cloud.firestore.collection;
 import com.google.api.core.InternalApi;
 import java.util.Comparator;
 
-// Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/src
-// /main/java/com/google/firebase/database/collection
+// Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/
+// src/main/java/com/google/firebase/database/collection
 @InternalApi
 public interface LLRBNode<K, V> {
 

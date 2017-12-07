@@ -25,8 +25,8 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
-// Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/src
-// /main/java/com/google/firebase/database/collection
+// Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/
+// src/main/java/com/google/firebase/database/collection
 @InternalApi
 public class ImmutableSortedMapIterator<K, V> implements Iterator<Map.Entry<K, V>> {
 
