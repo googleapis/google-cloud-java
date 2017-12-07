@@ -20,6 +20,7 @@ import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import com.google.firestore.v1beta1.DatabaseRootName;
 import java.util.Arrays;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /** An immutable representation of a Firestore path to a Document or Collection. */
@@ -131,6 +132,29 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
     } else {
       return getDatabaseName() + "/documents/" + getPath();
     }
+  }
+
+  /**
+   * Compare the current path against another ResourcePath object.
+   *
+   * @param other The path to compare to.
+   * @return -1 if current < other, 1 if current > other, 0 if equal
+   */
+  @Override
+  public int compareTo(@Nonnull ResourcePath other) {
+    int cmp = this.getDatabaseName().getProject().compareTo(other.getDatabaseName().getProject());
+
+    if (cmp != 0) {
+      return cmp;
+    }
+
+    cmp = this.getDatabaseName().getDatabase().compareTo(other.getDatabaseName().getDatabase());
+
+    if (cmp != 0) {
+      return cmp;
+    }
+
+    return super.compareTo(other);
   }
 
   @Override
