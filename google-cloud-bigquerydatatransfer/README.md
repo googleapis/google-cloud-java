@@ -47,9 +47,6 @@ About Google Cloud Bigquery Data Transfer
 [Google Cloud Bigquery Data Transfer API][cloud-bigquerydatatransfer] transfers data from partner
 SaaS applications to Google BigQuery on a scheduled, managed basis.
 
-See the [Google Cloud Bigquery Data Transfer docs][cloud-bigquerydatatransfer-quickstart] for more details on how to activate
-Cloud Bigquery Data Transfer for your project.
-
 See the [Bigquery Data Transfer client library docs][bigquerydatatransfer-client-lib-docs] to learn how to interact with the
 Cloud Bigquery Data Transfer using this Client Library.
 
@@ -114,7 +111,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-bigquerydatatransfer
 
-[cloud-bigquerydatatransfer]: https://cloud.google.com/bigquerydatatransfer/
-[cloud-bigquerydatatransfer-quickstart]: https://cloud.google.com/bigquerydatatransfer/quickstart-console#before-you-begin
-[bigquerydatatransfer-product-docs]: https://cloud.google.com/bigquerydatatransfer/docs/
+[cloud-bigquerydatatransfer]: https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/
+[bigquerydatatransfer-product-docs]: https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/
 [bigquerydatatransfer-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/bigquerydatatransfer/v1/package-summary.html

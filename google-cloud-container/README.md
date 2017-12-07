@@ -1,4 +1,4 @@
-Google Cloud Java Client for Bigquery Data Transfer
+Google Cloud Java Client for Container (Kubernetes Engine)
 ====================================
 
 Java idiomatic client for [Google Cloud Container][cloud-container].
@@ -113,6 +113,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-container
 
 [cloud-container]: https://cloud.google.com/container/
-[cloud-container-quickstart]: https://cloud.google.com/container/quickstart-console#before-you-begin
-[container-product-docs]: https://cloud.google.com/container/docs/
+[cloud-container-quickstart]: https://cloud.google.com/kubernetes-engine/docs/quickstart
+[container-product-docs]: https://cloud.google.com/kubernetes-engine/docs/
 [container-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/container/v1/package-summary.html
