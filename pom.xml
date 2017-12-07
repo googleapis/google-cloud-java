@@ -968,7 +968,7 @@
       Uncomment the following lines to include google app engine (GAE) testing apps in the build.
       Each GAE app packages all its dependencies in a fat war (>20MB each).
     -->
-    <!--<module>google-cloud-testing</module>-->
+    <module>google-cloud-testing</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>
