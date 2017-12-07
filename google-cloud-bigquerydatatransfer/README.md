@@ -1,4 +1,4 @@
-Google Cloud Java Client for Pub/Sub
+Google Cloud Java Client for Bigquery Data Transfer
 ====================================
 
 Java idiomatic client for [Google Cloud Bigquery Data
@@ -41,29 +41,25 @@ Authentication
 
 See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
-About Google Cloud Pub/Sub
+About Google Cloud Bigquery Data Transfer
 --------------------------
 
-[Google Cloud Pub/Sub][cloud-bigquerydatatransfer] is designed to provide reliable,
-many-to-many, asynchronous messaging between applications. Publisher
-applications can send messages to a topic and other applications can
-subscribe to that topic to receive the messages. By decoupling senders and
-receivers, Google Cloud Pub/Sub allows developers to communicate between
-independently written applications.
+[Google Cloud Bigquery Data Transfer API][cloud-bigquerydatatransfer] transfers data from partner
+SaaS applications to Google BigQuery on a scheduled, managed basis.
 
-See the [Google Cloud Pub/Sub docs][cloud-bigquerydatatransfer-quickstart] for more details on how to activate
-Cloud Pub/Sub for your project.
+See the [Google Cloud Bigquery Data Transfer docs][cloud-bigquerydatatransfer-quickstart] for more details on how to activate
+Cloud Bigquery Data Transfer for your project.
 
-See the [Pub/Sub client library docs][bigquerydatatransfer-client-lib-docs] to learn how to interact with the
-Cloud Pub/Sub using this Client Library.
+See the [Bigquery Data Transfer client library docs][bigquerydatatransfer-client-lib-docs] to learn how to interact with the
+Cloud Bigquery Data Transfer using this Client Library.
 
 Getting Started
 ---------------
 #### Prerequisites
 For this tutorial, you will need a
-[Google Developers Console](https://console.developers.google.com/) project with the Pub/Sub API
+[Google Developers Console](https://console.developers.google.com/) project with the Bigquery Data Transfer API
 enabled. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to
-use Google Cloud Pub/Sub.
+use Google Cloud Bigquery Data Transfer.
 [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your
 project set up. You will also need to set up the local development environment by [installing the
 Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line:
@@ -73,135 +69,9 @@ Google Cloud SDK](https://cloud.google.com/sdk/) and running the following comma
 You'll need to obtain the `google-cloud-bigquerydatatransfer` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-bigquerydatatransfer` as a dependency in your code.
 
-#### Creating an authorized service object
-To make authenticated requests to Google Cloud Pub/Sub, you must create a service object with
-credentials. You can then make API calls by calling methods on the Pub/Sub service object. The
-simplest way to authenticate is to use
-[Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
-These credentials are automatically inferred from your environment.
-
-For other authentication options, see the
-[Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.
-
-#### Creating a topic
-With Pub/Sub you can create topics. A topic is a named resource to which messages are sent by
-publishers. Add the following imports at the top of your file:
-
-```java
-import com.google.cloud.bigquerydatatransfer.v1.TopicAdminClient;
-import com.google.bigquerydatatransfer.v1.TopicName;
-```
-Then, to create the topic, use the following code:
-
-```java
-TopicName topic = TopicName.create("test-project", "test-topic");
-try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-  topicAdminClient.createTopic(topic);
-}
-```
-
-#### Publishing messages
-With Pub/Sub you can publish messages to a topic. Add the following import at the top of your file:
-
-```java
-import com.google.api.core.ApiFuture;
-import com.google.cloud.bigquerydatatransfer.v1.Publisher;
-import com.google.protobuf.ByteString;
-import com.google.bigquerydatatransfer.v1.PubsubMessage;
-```
-Then, to publish messages asynchronously, use the following code:
-
-```java
-Publisher publisher = null;
-try {
-  publisher = Publisher.defaultBuilder(topic).build();
-  ByteString data = ByteString.copyFromUtf8("my-message");
-  PubsubMessage bigquerydatatransferMessage = PubsubMessage.newBuilder().setData(data).build();
-  ApiFuture<String> messageIdFuture = publisher.publish(bigquerydatatransferMessage);
-} finally {
-  if (publisher != null) {
-    publisher.shutdown();
-  }
-}
-```
-
-#### Creating a subscription
-With Pub/Sub you can create subscriptions. A subscription represents the stream of messages from a
-single, specific topic. Add the following imports at the top of your file:
-
-```java
-import com.google.cloud.bigquerydatatransfer.v1.SubscriptionAdminClient;
-import com.google.bigquerydatatransfer.v1.PushConfig;
-import com.google.bigquerydatatransfer.v1.SubscriptionName;
-import com.google.bigquerydatatransfer.v1.TopicName;
-```
-Then, to create the subscription, use the following code:
-
-```java
-TopicName topic = TopicName.create("test-project", "test-topic");
-SubscriptionName subscription = SubscriptionName.create("test-project", "test-subscription");
-
-try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-  subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
-}
-```
-
-#### Pulling messages
-With Pub/Sub you can pull messages from a subscription. Add the following imports at the top of your
-file:
-
-```java
-import com.google.cloud.bigquerydatatransfer.v1.AckReplyConsumer;
-import com.google.cloud.bigquerydatatransfer.v1.MessageReceiver;
-import com.google.cloud.bigquerydatatransfer.v1.Subscriber;
-import com.google.common.util.concurrent.MoreExecutors;
-import com.google.bigquerydatatransfer.v1.PubsubMessage;
-import com.google.bigquerydatatransfer.v1.SubscriptionName;
-import com.google.bigquerydatatransfer.v1.TopicName;
-```
-Then, to pull messages asynchronously, use the following code:
-
-```java
-MessageReceiver receiver =
-    new MessageReceiver() {
-      @Override
-      public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
-        System.out.println("got message: " + message.getData().toStringUtf8());
-        consumer.ack();
-      }
-    };
-Subscriber subscriber = null;
-try {
-  subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
-  subscriber.addListener(
-      new Subscriber.Listener() {
-        @Override
-        public void failed(Subscriber.State from, Throwable failure) {
-          // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.
-          System.err.println(failure);
-        }
-      },
-      MoreExecutors.directExecutor());
-  subscriber.startAsync().awaitRunning();
-  //...
-} finally {
-  if (subscriber != null) {
-    subscriber.stopAsync();
-  }
-}
-```
-#### Complete source code
-
-In
-[CreateTopicAndPublishMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/bigquerydatatransfer/snippets/CreateTopicAndPublishMessages.java)
-and
-[CreateSubscriptionAndConsumeMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/bigquerydatatransfer/snippets/CreateSubscriptionAndConsumeMessages.java)
-we put together all the code shown above into two programs. The programs assume that you are
-running on Compute Engine, App Engine Flexible or from your own desktop.
-
 Transport
 ---------
-Pub/Sub uses gRPC for the transport layer.
+Bigquery Data Transfer uses gRPC for the transport layer.
 
 Java Versions
 -------------
@@ -211,7 +81,7 @@ Java 7 or above is required for using this client.
 Testing
 -------
 
-This library has tools to help make tests for code using Cloud Pub/Sub.
+This library has tools to help make tests for code using Cloud Bigquery Data Transfer.
 
 See [TESTING] to read more about testing.
 
