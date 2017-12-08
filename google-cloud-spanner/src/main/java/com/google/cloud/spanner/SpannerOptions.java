@@ -16,8 +16,6 @@
 
 package com.google.cloud.spanner;
 
-import com.google.api.gax.rpc.HeaderProvider;
-import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;

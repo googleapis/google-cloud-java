@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 class SpannerClientHeaderProvider implements HeaderProvider {
   private final Map<String, String> headers;
   private final Map<Metadata.Key<String>, String> headersAsMetadata;
-  private String resourceHeaderKey;
+  private final String resourceHeaderKey;
 
   private SpannerClientHeaderProvider(Map<String, String> headers, String resourceHeaderKey) {
     this.headers = ImmutableMap.copyOf(headers);

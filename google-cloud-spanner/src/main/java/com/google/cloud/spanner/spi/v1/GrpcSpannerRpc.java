@@ -143,7 +143,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
 
     HeaderProvider mergedHeaderProvider = options.getMergedHeaderProvider(internalHeaderProvider);
     this.headerProvider = SpannerClientHeaderProvider.create(mergedHeaderProvider.getHeaders(),
-        internalHeaderProviderBuilder.getResourceHeaderKey());;
+        internalHeaderProviderBuilder.getResourceHeaderKey());
   }
 
   private static CallCredentials callCredentials(SpannerOptions options) {

@@ -21,12 +21,9 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.rpc.HeaderProvider;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.DefaultExecutorFactory;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.regex.Pattern;
 import org.easymock.EasyMock;
 import org.junit.Test;
 
