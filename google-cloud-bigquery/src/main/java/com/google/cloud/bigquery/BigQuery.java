@@ -1031,9 +1031,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
    *     to complete
+   * @throws JobException if the job completes unsuccessfully
    */
   QueryResult query(QueryJobConfiguration configuration, JobOption... options)
-      throws InterruptedException;
+      throws InterruptedException, JobException;
 
   /**
    * Runs the query associated with the request, using the given JobId.
@@ -1056,9 +1057,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
    *     to complete
+   * @throws JobException if the job completes unsuccessfully
    */
   QueryResult query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
-      throws InterruptedException;
+      throws InterruptedException, JobException;
 
   /**
    * Returns results of the query associated with the provided job.
