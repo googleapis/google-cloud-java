@@ -404,7 +404,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
    * targetIds are provided.
    */
   private boolean affectsTarget(List<Integer> targetIds, int currentId) {
-    return targetIds == null || targetIds.size() == 0 || targetIds.contains(currentId);
+    return targetIds == null || targetIds.isEmpty() || targetIds.contains(currentId);
   }
 
   /** Splits up document changes into removals, additions, and updates. */
