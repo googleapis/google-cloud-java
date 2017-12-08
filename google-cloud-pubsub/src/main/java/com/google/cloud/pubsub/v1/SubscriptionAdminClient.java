@@ -395,8 +395,15 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-   *   Subscription subscription = Subscription.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   int ackDeadlineSeconds = 42;
+   *   Subscription subscription = Subscription.newBuilder()
+   *     .setAckDeadlineSeconds(ackDeadlineSeconds)
+   *     .build();
+   *   String pathsElement = "ack_deadline_seconds";
+   *   List&lt;String&gt; paths = Arrays.asList(pathsElement);
+   *   FieldMask updateMask = FieldMask.newBuilder()
+   *     .addAllPaths(paths)
+   *     .build();
    *   UpdateSubscriptionRequest request = UpdateSubscriptionRequest.newBuilder()
    *     .setSubscription(subscription)
    *     .setUpdateMask(updateMask)
@@ -408,7 +415,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  /* package-private */ final Subscription updateSubscription(UpdateSubscriptionRequest request) {
+  public final Subscription updateSubscription(UpdateSubscriptionRequest request) {
     return updateSubscriptionCallable().call(request);
   }
 
@@ -423,8 +430,15 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-   *   Subscription subscription = Subscription.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   int ackDeadlineSeconds = 42;
+   *   Subscription subscription = Subscription.newBuilder()
+   *     .setAckDeadlineSeconds(ackDeadlineSeconds)
+   *     .build();
+   *   String pathsElement = "ack_deadline_seconds";
+   *   List&lt;String&gt; paths = Arrays.asList(pathsElement);
+   *   FieldMask updateMask = FieldMask.newBuilder()
+   *     .addAllPaths(paths)
+   *     .build();
    *   UpdateSubscriptionRequest request = UpdateSubscriptionRequest.newBuilder()
    *     .setSubscription(subscription)
    *     .setUpdateMask(updateMask)
@@ -435,8 +449,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
-  /* package-private */ final UnaryCallable<UpdateSubscriptionRequest, Subscription>
-      updateSubscriptionCallable() {
+  public final UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable() {
     return stub.updateSubscriptionCallable();
   }
 
@@ -1283,8 +1296,18 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-   *   Snapshot snapshot = Snapshot.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   long seconds = 123456L;
+   *   Timestamp expireTime = Timestamp.newBuilder()
+   *     .setSeconds(seconds)
+   *     .build();
+   *   Snapshot snapshot = Snapshot.newBuilder()
+   *     .setExpireTime(expireTime)
+   *     .build();
+   *   String pathsElement = "expire_time";
+   *   List&lt;String&gt; paths = Arrays.asList(pathsElement);
+   *   FieldMask updateMask = FieldMask.newBuilder()
+   *     .addAllPaths(paths)
+   *     .build();
    *   UpdateSnapshotRequest request = UpdateSnapshotRequest.newBuilder()
    *     .setSnapshot(snapshot)
    *     .setUpdateMask(updateMask)
@@ -1296,7 +1319,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  /* package-private */ final Snapshot updateSnapshot(UpdateSnapshotRequest request) {
+  public final Snapshot updateSnapshot(UpdateSnapshotRequest request) {
     return updateSnapshotCallable().call(request);
   }
 
@@ -1311,8 +1334,18 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-   *   Snapshot snapshot = Snapshot.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   long seconds = 123456L;
+   *   Timestamp expireTime = Timestamp.newBuilder()
+   *     .setSeconds(seconds)
+   *     .build();
+   *   Snapshot snapshot = Snapshot.newBuilder()
+   *     .setExpireTime(expireTime)
+   *     .build();
+   *   String pathsElement = "expire_time";
+   *   List&lt;String&gt; paths = Arrays.asList(pathsElement);
+   *   FieldMask updateMask = FieldMask.newBuilder()
+   *     .addAllPaths(paths)
+   *     .build();
    *   UpdateSnapshotRequest request = UpdateSnapshotRequest.newBuilder()
    *     .setSnapshot(snapshot)
    *     .setUpdateMask(updateMask)
@@ -1323,8 +1356,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * </code></pre>
    */
-  /* package-private */ final UnaryCallable<UpdateSnapshotRequest, Snapshot>
-      updateSnapshotCallable() {
+  public final UnaryCallable<UpdateSnapshotRequest, Snapshot> updateSnapshotCallable() {
     return stub.updateSnapshotCallable();
   }
 

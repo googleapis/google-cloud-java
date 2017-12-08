@@ -32,7 +32,7 @@ import java.util.Map;
  * avoid degrading performance with increasing collection size it will automatically convert to a
  * RBTreeSortedMap after an insert call above a certain threshold.
  *
- * Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/
+ * <p>Note: This package is copied from https://github.com/firebase/firebase-admin-java/tree/master/
  * src/main/java/com/google/firebase/database/collection
  */
 @InternalApi

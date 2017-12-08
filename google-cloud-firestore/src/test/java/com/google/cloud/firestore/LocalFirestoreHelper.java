@@ -566,8 +566,7 @@ public final class LocalFirestoreHelper {
             null,
             new DocumentReference(
                 null,
-                ResourcePath.create(
-                    DatabaseRootName.of("", ""), ImmutableList.of("coll", "doc"))),
+                ResourcePath.create(DatabaseRootName.of("", ""), ImmutableList.of("coll", "doc"))),
             SINGLE_FIELD_PROTO,
             Instant.ofEpochSecond(5, 6),
             Instant.ofEpochSecond(3, 4),
