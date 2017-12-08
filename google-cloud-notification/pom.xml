@@ -15,7 +15,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.31.0-beta</version>
+    <version>0.31.0-alpha</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-notification</site.installationModule>
