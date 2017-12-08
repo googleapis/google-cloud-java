@@ -16,7 +16,6 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-core</site.installationModule>
-    <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
     <dependency>
@@ -94,36 +93,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <build>
-    <resources>
-      <resource>
-        <directory>./..</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>project.properties</include>
-        </includes>
-      </resource>
-    </resources>
-    <plugins>
-       <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-         <version>1.4</version>
-         <executions>
-          <execution>
-            <phase>process-resources</phase>
-            <configuration>
-               <tasks>
-                 <copy file="${project.build.outputDirectory}/project.properties"
-                   toFile="${project.build.outputDirectory}/com/google/cloud/project.properties"
-                   overwrite="true" />
-              </tasks>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
 </project>

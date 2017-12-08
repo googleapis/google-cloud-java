@@ -24,11 +24,14 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.api.gax.rpc.FixedHeaderProvider;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
+import com.google.common.collect.ImmutableMap;
 
 
 /**

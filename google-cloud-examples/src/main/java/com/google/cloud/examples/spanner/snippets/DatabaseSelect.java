@@ -22,6 +22,8 @@
 
 package com.google.cloud.examples.spanner.snippets;
 
+import com.google.api.gax.rpc.FixedHeaderProvider;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
 import com.google.cloud.spanner.ResultSet;
@@ -41,7 +43,14 @@ public class DatabaseSelect {
       return;
     }
     // Instantiates a client
-    SpannerOptions options = SpannerOptions.newBuilder().build();
+
+    HeaderProvider headerProvider =
+        FixedHeaderProvider.create("user-agent", "my-client-name", "custom-header", "custom stuff");
+
+    SpannerOptions options =
+        SpannerOptions.newBuilder().setHeaderProvider(headerProvider).build();
+
+    //SpannerOptions options = SpannerOptions.newBuilder().build();
     Spanner spanner = options.getService();
 
     // Name of your instance & database.

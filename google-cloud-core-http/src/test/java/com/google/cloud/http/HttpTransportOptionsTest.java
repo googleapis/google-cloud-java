@@ -21,7 +21,9 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.http.HttpTransportOptions.DefaultHttpTransportFactory;
 import java.util.regex.Pattern;
 import org.easymock.EasyMock;
@@ -64,9 +66,13 @@ public class HttpTransportOptionsTest {
 
   @Test
   public void testHeader() {
-    String expectedHeaderPattern = "^gl-java/.+ gccl/0.0.0";
+    String expectedHeaderPattern = "^gl-java/.+ gccl/.* gax/.+";
+    ServiceOptions<?, ?> serviceOptions = EasyMock.createMock(ServiceOptions.class);
+    HeaderProvider headerProvider = OPTIONS.getInternalHeaderProviderBuilder(serviceOptions).build();
+
+    assertEquals(1, headerProvider.getHeaders().size());
     assertTrue(Pattern.compile(expectedHeaderPattern)
-        .matcher(OPTIONS.getXGoogApiClientHeader("0.0.0"))
+        .matcher(headerProvider.getHeaders().values().iterator().next())
         .find());
   }
 }

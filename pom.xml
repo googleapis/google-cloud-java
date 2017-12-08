@@ -355,7 +355,6 @@
               <artifactId>${project.artifactId}</artifactId>
               <groupId>${project.groupId}</groupId>
               <version>${project.version}</version>
-              <buildNumber>${buildNumber}</buildNumber>
             </manifestEntries>
           </archive>
         </configuration>

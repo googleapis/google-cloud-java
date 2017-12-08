@@ -24,11 +24,14 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.api.gax.rpc.FixedHeaderProvider;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
+import com.google.common.collect.ImmutableMap;
 
 /**
  * A snippet for Google Cloud Storage showing how to create a blob.
@@ -36,8 +39,14 @@ import com.google.cloud.storage.StorageOptions;
 public class CreateBlob {
 
   public static void main(String... args) {
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-    BlobId blobId = BlobId.of("bucket", "blob_name");
+    HeaderProvider headerProvider = FixedHeaderProvider.create(
+        ImmutableMap.of("User-Agent", "somebs", "the-custom-header", "the-custom-value")
+    );
+
+    Storage storage = StorageOptions.newBuilder().setHeaderProvider(headerProvider).build().getService();
+
+    //Storage storage = StorageOptions.getDefaultInstance().getService();
+    BlobId blobId = BlobId.of("bucket_11", "blob_name_11");
     BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
   }

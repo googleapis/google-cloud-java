@@ -18,10 +18,11 @@ package com.google.cloud.firestore.spi.v1beta1;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.TransportChannel;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -102,12 +103,14 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
             GrpcTransportOptions.setUpChannelProvider(
                 FirestoreSettings.defaultGrpcTransportProviderBuilder(), options));
 
-        ApiClientHeaderProvider.Builder headerProvider =
-            FirestoreSettings.defaultApiClientHeaderProviderBuilder();
-        headerProvider.setGoogleCloudResourcePrefix(databaseName.toString());
+        HeaderProvider internalHeaderProvider =
+            FirestoreSettings
+                .defaultApiClientHeaderProviderBuilder()
+                .setClientLibToken(null, GaxProperties.getLibraryVersion(options.getClass()))
+                .build();
+        HeaderProvider headerProvider = options.getMergedHeaderProvider(internalHeaderProvider);
 
-        settingsBuilder.setHeaderProvider(
-            GrpcTransportOptions.setUpHeaderProvider(headerProvider, options));
+        settingsBuilder.setHeaderProvider(headerProvider);
 
         clientContext = ClientContext.create(settingsBuilder.build());
       }

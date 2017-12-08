@@ -16,6 +16,8 @@
 
 package com.google.cloud.spanner;
 
+import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
@@ -43,6 +45,8 @@ import javax.net.ssl.SSLException;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
+  private static final long serialVersionUID = 2789571558532701170L;
+
   private static final String API_SHORT_NAME = "Spanner";
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
   private static final ImmutableSet<String> SCOPES =
@@ -82,7 +86,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private SpannerOptions(Builder builder) {
     super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
     numChannels = builder.numChannels;
-    userAgent = builder.userAgentPrefix;
+    userAgent = getUserAgent();
     RpcChannelFactory defaultRpcChannelFactory =
         userAgent == null
             ? DEFAULT_RPC_CHANNEL_FACTORY

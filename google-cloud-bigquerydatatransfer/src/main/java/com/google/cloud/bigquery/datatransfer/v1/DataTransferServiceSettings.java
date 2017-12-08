@@ -23,10 +23,10 @@ import static com.google.cloud.bigquery.datatransfer.v1.PagedResponseWrappers.Li
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GrpcClientHeaderProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
@@ -91,15 +91,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/cloud-platform.read-only")
           .build();
-
-  private static final String DEFAULT_GAPIC_NAME = "gapic";
-  private static final String DEFAULT_GAPIC_VERSION = "";
-
-  private static final String PROPERTIES_FILE =
-      "/com/google/cloud/bigquery/datatransfer/project.properties";
-  private static final String META_VERSION_KEY = "artifact.version";
-
-  private static String gapicVersion;
 
   private final UnaryCallSettings<GetDataSourceRequest, DataSource> getDataSourceSettings;
   private final PagedCallSettings<
@@ -248,20 +239,9 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
-        .setApiClientHeaderLineKey("x-goog-api-client")
-        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
-  }
-
-  private static String getGapicVersion() {
-    if (gapicVersion == null) {
-      gapicVersion =
-          PropertiesProvider.loadProperty(
-              DataTransferServiceSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
-      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
-    }
-    return gapicVersion;
+    return GrpcClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken(
+            null, GaxProperties.getLibraryVersion(DataTransferServiceSettings.class));
   }
 
   /** Returns a new builder for this class. */

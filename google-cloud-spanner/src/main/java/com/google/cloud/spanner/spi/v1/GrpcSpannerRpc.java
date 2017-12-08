@@ -18,10 +18,13 @@ package com.google.cloud.spanner.spi.v1;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
+import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.grpc.GrpcClientHeaderProvider;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.NoCredentials;
-import com.google.cloud.TransportOptions;
-import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
@@ -97,25 +100,23 @@ import javax.annotation.Nullable;
 public class GrpcSpannerRpc implements SpannerRpc {
   private static final Logger logger = Logger.getLogger(GrpcSpannerRpc.class.getName());
 
-  private static final Metadata.Key<String> API_CLIENT_KEY =
-      Metadata.Key.of("x-goog-api-client", Metadata.ASCII_STRING_MARSHALLER);
-  private static final Metadata.Key<String> RESOURCE_PREFIX_KEY =
-      Metadata.Key.of("google-cloud-resource-prefix", Metadata.ASCII_STRING_MARSHALLER);
   private static final Pattern DATABASE_PATTERN =
-      Pattern.compile("^(?<database>projects/[^/]*/instances/[^/]*/databases/[^/]*)(.*)?");
+      Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*/databases/[^/]*)(.*)?");
   private static final Pattern INSTANCE_PATTERN =
-      Pattern.compile("^(?<instance>projects/[^/]*/instances/[^/]*)(.*)?");
+      Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*)(.*)?");
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
 
   private final Random random = new Random();
   private final List<Channel> channels;
   private final String projectId;
+  private final String projectName;
   private final CallCredentials credentials;
-  private final String xGoogApiClientHeader;
+  private final SpannerClientHeaderProvider headerProvider;
 
   public GrpcSpannerRpc(SpannerOptions options) {
     this.projectId = options.getProjectId();
+    this.projectName = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
     this.credentials = callCredentials(options);
     ImmutableList.Builder<Channel> channelsBuilder = ImmutableList.builder();
     ImmutableList.Builder<SpannerGrpc.SpannerFutureStub> stubsBuilder = ImmutableList.builder();
@@ -130,18 +131,19 @@ public class GrpcSpannerRpc implements SpannerRpc {
       stubsBuilder.add(withCredentials(SpannerGrpc.newFutureStub(channel), credentials));
     }
     this.channels = channelsBuilder.build();
-    TransportOptions transportOptions = options.getTransportOptions();
-    // Note, getXGoogApiClientHeader() method can be added to TransportOptions directly.
-    // Doing explicit casting here (instead of "contaminating" the top level interface) since most
-    // probably it is a temporary solution (eventually all grpc clients will become gapic-based,
-    // and gapic handles the header internally).
-    if (transportOptions instanceof GrpcTransportOptions) {
-      this.xGoogApiClientHeader =
-          ((GrpcTransportOptions) transportOptions)
-              .getXGoogApiClientHeader(options.getLibraryVersion());
-    } else {
-      this.xGoogApiClientHeader = "";
-    }
+
+    ApiClientHeaderProvider.Builder internalHeaderProviderBuilder
+        = GrpcClientHeaderProvider.newBuilder();
+    ApiClientHeaderProvider internalHeaderProvider =
+        internalHeaderProviderBuilder
+            .setClientLibToken(
+                ServiceOptions.getGoogApiClientLibName(),
+                GaxProperties.getLibraryVersion(options.getClass()))
+            .build();
+
+    HeaderProvider mergedHeaderProvider = options.getMergedHeaderProvider(internalHeaderProvider);
+    this.headerProvider = SpannerClientHeaderProvider.create(mergedHeaderProvider.getHeaders(),
+        internalHeaderProviderBuilder.getResourceHeaderKey());;
   }
 
   private static CallCredentials callCredentials(SpannerOptions options) {
@@ -162,7 +164,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   }
 
   private String projectName() {
-    return PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
+    return projectName;
   }
 
   @Override
@@ -474,8 +476,18 @@ public class GrpcSpannerRpc implements SpannerRpc {
 
   private Metadata newMetadata(String resource) {
     Metadata metadata = new Metadata();
-    metadata.put(RESOURCE_PREFIX_KEY, extractHeader(resource));
-    metadata.put(API_CLIENT_KEY, xGoogApiClientHeader);
+
+    Map<Metadata.Key<String>, String> headers = headerProvider.getHeadersAsMetadata();
+    for (Map.Entry<Metadata.Key<String>, String> header : headers.entrySet()) {
+      metadata.put(header.getKey(), header.getValue());
+    }
+    headers =
+        headerProvider.getResourceHeadersAsMetadata(
+            resource, projectName(), DATABASE_PATTERN, INSTANCE_PATTERN);
+    for (Map.Entry<Metadata.Key<String>, String> header : headers.entrySet()) {
+      metadata.put(header.getKey(), header.getValue());
+    }
+
     return metadata;
   }
 

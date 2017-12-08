@@ -16,7 +16,6 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-core-grpc</site.installationModule>
-    <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
     <dependency>

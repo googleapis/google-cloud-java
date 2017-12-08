@@ -53,7 +53,7 @@ public class InsertDataAndQueryTable {
     BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
     // Create a dataset
-    String datasetId = "my_dataset_id";
+    String datasetId = "my_dataset_id_1";
     bigquery.create(DatasetInfo.newBuilder(datasetId).build());
 
     TableId tableId = TableId.of(datasetId, "my_table_id");
