@@ -491,16 +491,6 @@ public class GrpcSpannerRpc implements SpannerRpc {
     return metadata;
   }
 
-  @VisibleForTesting
-  String extractHeader(String resource) {
-    Matcher m = DATABASE_PATTERN.matcher(resource);
-    if (m.matches()) {
-      return m.group("database");
-    }
-    m = INSTANCE_PATTERN.matcher(resource);
-    return m.matches() ? m.group("instance") : projectName();
-  }
-
   private <T> T pick(@Nullable Long hint, List<T> elements) {
     long hintVal = Math.abs(hint != null ? hint : random.nextLong());
     long index = hintVal % elements.size();
