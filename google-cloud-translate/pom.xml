@@ -30,7 +30,6 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-translate</artifactId>
-      <version>v2-rev47-1.22.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
