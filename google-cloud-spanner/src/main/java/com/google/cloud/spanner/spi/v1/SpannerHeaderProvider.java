@@ -23,19 +23,24 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-class SpannerClientHeaderProvider implements HeaderProvider {
+class SpannerHeaderProvider implements HeaderProvider {
   private final Map<String, String> headers;
   private final Map<Metadata.Key<String>, String> headersAsMetadata;
   private final String resourceHeaderKey;
 
-  private SpannerClientHeaderProvider(Map<String, String> headers, String resourceHeaderKey) {
+  private static final Pattern[] RESOURCE_TOKEN_PATTERNS = {
+    Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*/databases/[^/]*)(.*)?"),
+    Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*)(.*)?")
+  };
+
+  private SpannerHeaderProvider(Map<String, String> headers, String resourceHeaderKey) {
     this.headers = ImmutableMap.copyOf(headers);
     this.resourceHeaderKey = resourceHeaderKey;
     this.headersAsMetadata = constructHeadersAsMetadata(this.headers);
   }
 
-  static SpannerClientHeaderProvider create(Map<String, String> headers, String resourceHeaderKey) {
-    return new SpannerClientHeaderProvider(headers, resourceHeaderKey);
+  static SpannerHeaderProvider create(Map<String, String> headers, String resourceHeaderKey) {
+    return new SpannerHeaderProvider(headers, resourceHeaderKey);
   }
 
   @Override
@@ -59,10 +64,10 @@ class SpannerClientHeaderProvider implements HeaderProvider {
   }
 
   Map<Key<String>, String> getResourceHeadersAsMetadata(
-      String resourceTokenTemplate, String defaultResourceToken, Pattern... resourceTokenPatterns) {
+      String resourceTokenTemplate, String defaultResourceToken) {
 
     String resourceToken = defaultResourceToken;
-    for (Pattern pattern : resourceTokenPatterns) {
+    for (Pattern pattern : RESOURCE_TOKEN_PATTERNS) {
       Matcher m = pattern.matcher(resourceTokenTemplate);
       if (m.matches()) {
         resourceToken = m.group("headerValue");

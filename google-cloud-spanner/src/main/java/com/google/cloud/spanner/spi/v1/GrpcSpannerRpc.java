@@ -92,17 +92,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
 /** Implementation of Cloud Spanner remote calls using gRPC. */
 public class GrpcSpannerRpc implements SpannerRpc {
   private static final Logger logger = Logger.getLogger(GrpcSpannerRpc.class.getName());
 
-  private static final Pattern DATABASE_PATTERN =
-      Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*/databases/[^/]*)(.*)?");
-  private static final Pattern INSTANCE_PATTERN =
-      Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*)(.*)?");
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
 
@@ -111,7 +106,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   private final String projectId;
   private final String projectName;
   private final CallCredentials credentials;
-  private final SpannerClientHeaderProvider headerProvider;
+  private final SpannerHeaderProvider headerProvider;
 
   public GrpcSpannerRpc(SpannerOptions options) {
     this.projectId = options.getProjectId();
@@ -141,7 +136,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
             .build();
 
     HeaderProvider mergedHeaderProvider = options.getMergedHeaderProvider(internalHeaderProvider);
-    this.headerProvider = SpannerClientHeaderProvider.create(mergedHeaderProvider.getHeaders(),
+    this.headerProvider = SpannerHeaderProvider.create(mergedHeaderProvider.getHeaders(),
         internalHeaderProviderBuilder.getResourceHeaderKey());
   }
 
@@ -480,9 +475,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
     for (Map.Entry<Metadata.Key<String>, String> header : headers.entrySet()) {
       metadata.put(header.getKey(), header.getValue());
     }
-    headers =
-        headerProvider.getResourceHeadersAsMetadata(
-            resource, projectName(), DATABASE_PATTERN, INSTANCE_PATTERN);
+    headers = headerProvider.getResourceHeadersAsMetadata(resource, projectName());
     for (Map.Entry<Metadata.Key<String>, String> header : headers.entrySet()) {
       metadata.put(header.getKey(), header.getValue());
     }

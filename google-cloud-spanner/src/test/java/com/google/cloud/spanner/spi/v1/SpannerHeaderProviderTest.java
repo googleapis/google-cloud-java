@@ -21,20 +21,14 @@ import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
 import java.util.Map;
-import java.util.regex.Pattern;
 import org.junit.Test;
 
-public class SpannerClientHeaderProviderTest {
-  private static final Pattern DATABASE_PATTERN =
-      Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*/databases/[^/]*)(.*)?");
-  private static final Pattern INSTANCE_PATTERN =
-      Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*)(.*)?");
-
+public class SpannerHeaderProviderTest {
   @Test
   public void getHeadersAsMetadata() {
     Map<String, String> headers = ImmutableMap.of("header1", "value1", "header2", "value2");
-    SpannerClientHeaderProvider headerProvider =
-        SpannerClientHeaderProvider.create(headers, "header3");
+    SpannerHeaderProvider headerProvider =
+        SpannerHeaderProvider.create(headers, "header3");
 
     assertEquals(headers, headerProvider.getHeaders());
 
@@ -50,8 +44,8 @@ public class SpannerClientHeaderProviderTest {
 
   @Test
   public void getResourceHeadersAsMetadata() {
-    SpannerClientHeaderProvider headerProvider =
-        SpannerClientHeaderProvider.create(ImmutableMap.<String, String>of(), "header3");
+    SpannerHeaderProvider headerProvider =
+        SpannerHeaderProvider.create(ImmutableMap.<String, String>of(), "header3");
 
     assertEquals(ImmutableMap.<String, String>of(), headerProvider.getHeaders());
     Map<Key<String>, String> headersAsMetadata = headerProvider.getHeadersAsMetadata();
@@ -86,10 +80,9 @@ public class SpannerClientHeaderProviderTest {
   }
 
   private String getResourceHeadersAsMetadata(
-      SpannerClientHeaderProvider headerProvider, String resourceTokenTemplate) {
+      SpannerHeaderProvider headerProvider, String resourceTokenTemplate) {
     Map<Key<String>, String> resourceHeaders =
-        headerProvider.getResourceHeadersAsMetadata(
-            resourceTokenTemplate, "projects/p", DATABASE_PATTERN, INSTANCE_PATTERN);
+        headerProvider.getResourceHeadersAsMetadata(resourceTokenTemplate, "projects/p");
     assertEquals(1, resourceHeaders.size());
     return resourceHeaders.get(Key.of("header3", Metadata.ASCII_STRING_MARSHALLER));
   }
