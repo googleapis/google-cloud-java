@@ -37,7 +37,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-video-intelligence-v1beta2</artifactId>
+      <artifactId>proto-google-cloud-video-intelligence-v1beta1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -83,7 +83,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-video-intelligence-v1beta2</artifactId>
+      <artifactId>grpc-google-cloud-video-intelligence-v1beta1</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -174,10 +174,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <!-- Downgrading to 3.1 because of https://issues.apache.org/jira/browse/MCOMPILER-236 -->
-        <!-- Upgrade to 3.5.1 which fixes the problem when available -->
-        <!-- <version>3.5.1</version> -->
-        <version>3.1</version>
+        <version>3.5.1</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
