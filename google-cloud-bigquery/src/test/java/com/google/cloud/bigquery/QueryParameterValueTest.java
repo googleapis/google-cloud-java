@@ -16,9 +16,9 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.services.bigquery.model.QueryParameterType;
 import java.util.List;
 import org.junit.Test;
 
@@ -27,136 +27,136 @@ public class QueryParameterValueTest {
   @Test
   public void testBool() {
     QueryParameterValue value = QueryParameterValue.bool(true);
-    assertEquals("true", value.getValue());
-    assertEquals(StandardSQLTypeName.BOOL, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("true");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.BOOL);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test
   public void testInt64() {
     QueryParameterValue value = QueryParameterValue.int64(8L);
-    assertEquals("8", value.getValue());
-    assertEquals(StandardSQLTypeName.INT64, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("8");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.INT64);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test
   public void testInt64FromInteger() {
     QueryParameterValue value = QueryParameterValue.int64(7);
-    assertEquals("7", value.getValue());
-    assertEquals(StandardSQLTypeName.INT64, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("7");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.INT64);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test
   public void testFloat64() {
     QueryParameterValue value = QueryParameterValue.float64(1.2);
-    assertEquals("1.2", value.getValue());
-    assertEquals(StandardSQLTypeName.FLOAT64, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("1.2");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.FLOAT64);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test
   public void testFloat64FromFloat() {
     QueryParameterValue value = QueryParameterValue.float64(1.2f);
-    assertEquals("1.2", value.getValue());
-    assertEquals(StandardSQLTypeName.FLOAT64, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("1.2");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.FLOAT64);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test
   public void testString() {
     QueryParameterValue value = QueryParameterValue.string("foo");
-    assertEquals("foo", value.getValue());
-    assertEquals(StandardSQLTypeName.STRING, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("foo");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.STRING);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test
   public void testBytes() {
     QueryParameterValue value = QueryParameterValue.bytes(new byte[] {1, 3});
-    assertEquals("AQM=", value.getValue());
-    assertEquals(StandardSQLTypeName.BYTES, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("AQM=");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.BYTES);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test
   public void testBoolArray() {
     QueryParameterValue value = QueryParameterValue.array(new Boolean[] {true, false}, Boolean.class);
-    assertNull(value.getValue());
-    assertEquals(StandardSQLTypeName.ARRAY, value.getType());
-    assertEquals(StandardSQLTypeName.BOOL, value.getArrayType());
+    assertThat(value.getValue()).isNull();
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.BOOL);
     assertArrayDataEquals(new String[]{"true", "false"}, StandardSQLTypeName.BOOL, value.getArrayValues());
   }
 
   @Test
   public void testInt64Array() {
     QueryParameterValue value = QueryParameterValue.array(new Long[] {2L, 5L}, Long.class);
-    assertNull(value.getValue());
-    assertEquals(StandardSQLTypeName.ARRAY, value.getType());
-    assertEquals(StandardSQLTypeName.INT64, value.getArrayType());
+    assertThat(value.getValue()).isNull();
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.INT64);
     assertArrayDataEquals(new String[]{"2", "5"}, StandardSQLTypeName.INT64, value.getArrayValues());
   }
 
   @Test
   public void testInt64ArrayFromIntegers() {
     QueryParameterValue value = QueryParameterValue.array(new Integer[] {2, 5}, Integer.class);
-    assertNull(value.getValue());
-    assertEquals(StandardSQLTypeName.ARRAY, value.getType());
-    assertEquals(StandardSQLTypeName.INT64, value.getArrayType());
+    assertThat(value.getValue()).isNull();
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.INT64);
     assertArrayDataEquals(new String[]{"2", "5"}, StandardSQLTypeName.INT64, value.getArrayValues());
   }
 
   @Test
   public void testFloat64Array() {
     QueryParameterValue value = QueryParameterValue.array(new Double[] {2.6, 5.4}, Double.class);
-    assertNull(value.getValue());
-    assertEquals(StandardSQLTypeName.ARRAY, value.getType());
-    assertEquals(StandardSQLTypeName.FLOAT64, value.getArrayType());
+    assertThat(value.getValue()).isNull();
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.FLOAT64);
     assertArrayDataEquals(new String[]{"2.6", "5.4"}, StandardSQLTypeName.FLOAT64, value.getArrayValues());
   }
 
   @Test
   public void testFloat64ArrayFromFloats() {
     QueryParameterValue value = QueryParameterValue.array(new Float[] {2.6f, 5.4f}, Float.class);
-    assertNull(value.getValue());
-    assertEquals(StandardSQLTypeName.ARRAY, value.getType());
-    assertEquals(StandardSQLTypeName.FLOAT64, value.getArrayType());
+    assertThat(value.getValue()).isNull();
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.FLOAT64);
     assertArrayDataEquals(new String[]{"2.6", "5.4"}, StandardSQLTypeName.FLOAT64, value.getArrayValues());
   }
 
   @Test
   public void testStringArray() {
     QueryParameterValue value = QueryParameterValue.array(new String[] {"Ana", "Marv"}, String.class);
-    assertNull(value.getValue());
-    assertEquals(StandardSQLTypeName.ARRAY, value.getType());
-    assertEquals(StandardSQLTypeName.STRING, value.getArrayType());
+    assertThat(value.getValue()).isNull();
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.STRING);
     assertArrayDataEquals(new String[]{"Ana", "Marv"}, StandardSQLTypeName.STRING, value.getArrayValues());
   }
 
   @Test
   public void testTimestampFromLong() {
     QueryParameterValue value = QueryParameterValue.timestamp(1408452095220000L);
-    assertEquals("2014-08-19 12:41:35.220000+00:00", value.getValue());
-    assertEquals(StandardSQLTypeName.TIMESTAMP, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("2014-08-19 12:41:35.220000+00:00");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test
   public void testTimestamp() {
     QueryParameterValue value = QueryParameterValue.timestamp("2014-08-19 12:41:35.220000+00:00");
-    assertEquals("2014-08-19 12:41:35.220000+00:00", value.getValue());
-    assertEquals(StandardSQLTypeName.TIMESTAMP, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("2014-08-19 12:41:35.220000+00:00");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -168,10 +168,10 @@ public class QueryParameterValueTest {
   @Test
   public void testDate() {
     QueryParameterValue value = QueryParameterValue.date("2014-08-19");
-    assertEquals("2014-08-19", value.getValue());
-    assertEquals(StandardSQLTypeName.DATE, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("2014-08-19");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.DATE);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -183,10 +183,10 @@ public class QueryParameterValueTest {
   @Test
   public void testTime() {
     QueryParameterValue value = QueryParameterValue.time("05:41:35.220000");
-    assertEquals("05:41:35.220000", value.getValue());
-    assertEquals(StandardSQLTypeName.TIME, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("05:41:35.220000");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.TIME);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -198,10 +198,10 @@ public class QueryParameterValueTest {
   @Test
   public void testDateTime() {
     QueryParameterValue value = QueryParameterValue.dateTime("2014-08-19 05:41:35.220000");
-    assertEquals("2014-08-19 05:41:35.220000", value.getValue());
-    assertEquals(StandardSQLTypeName.DATETIME, value.getType());
-    assertNull(value.getArrayType());
-    assertNull(value.getArrayValues());
+    assertThat(value.getValue()).isEqualTo("2014-08-19 05:41:35.220000");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.DATETIME);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -214,9 +214,9 @@ public class QueryParameterValueTest {
   public void testTimestampArrayFromLongs() {
     QueryParameterValue value =
         QueryParameterValue.array(new Long[] {1408452095220000L, 1481041545110000L}, StandardSQLTypeName.TIMESTAMP);
-    assertNull(value.getValue());
-    assertEquals(StandardSQLTypeName.ARRAY, value.getType());
-    assertEquals(StandardSQLTypeName.TIMESTAMP, value.getArrayType());
+    assertThat(value.getValue()).isNull();
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
     assertArrayDataEquals(
         new String[]{"2014-08-19 12:41:35.220000+00:00", "2016-12-06 16:25:45.110000+00:00"},
         StandardSQLTypeName.TIMESTAMP,
@@ -229,24 +229,38 @@ public class QueryParameterValueTest {
         QueryParameterValue.array(
             new String[] {"2014-08-19 12:41:35.220000+00:00", "2016-12-06 16:25:45.110000+00:00"},
             StandardSQLTypeName.TIMESTAMP);
-    assertNull(value.getValue());
-    assertEquals(StandardSQLTypeName.ARRAY, value.getType());
-    assertEquals(StandardSQLTypeName.TIMESTAMP, value.getArrayType());
+    assertThat(value.getValue()).isNull();
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
     assertArrayDataEquals(
         new String[]{"2014-08-19 12:41:35.220000+00:00", "2016-12-06 16:25:45.110000+00:00"},
         StandardSQLTypeName.TIMESTAMP,
         value.getArrayValues());
   }
 
+  @Test
+  public void testFromEmptyArray() {
+    QueryParameterType typePb =
+        new QueryParameterType()
+            .setType("ARRAY")
+            .setArrayType(new QueryParameterType().setType("INT64"));
+    // If the array is empty, the server sends us a null value, not a value with empty array.
+    QueryParameterValue value = QueryParameterValue.fromPb(null, typePb);
+    assertThat(value.getValue()).isNull();
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.INT64);
+    assertThat(value.getArrayValues()).isEmpty();
+  }
+
   private static void assertArrayDataEquals(String[] expectedValues,
       StandardSQLTypeName expectedType, List<QueryParameterValue> actualValues) {
-    assertEquals(expectedValues.length, actualValues.size());
+    assertThat(actualValues.size()).isEqualTo(expectedValues.length);
     for (int i = 0; i < expectedValues.length; i++) {
       QueryParameterValue value = actualValues.get(i);
-      assertEquals(expectedType, value.getType());
-      assertEquals(expectedValues[i], value.getValue());
-      assertNull(value.getArrayType());
-      assertNull(value.getArrayValues());
+      assertThat(value.getType()).isEqualTo(expectedType);
+      assertThat(value.getValue()).isEqualTo(expectedValues[i]);
+      assertThat(value.getArrayType()).isNull();
+      assertThat(value.getArrayValues()).isNull();
     }
   }
 }
