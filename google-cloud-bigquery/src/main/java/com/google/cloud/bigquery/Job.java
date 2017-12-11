@@ -250,7 +250,7 @@ public class Job extends JobInfo {
    *
    * <p>If the job hasn't finished, this method waits for the job to complete. However, the state of
    * the current {@code Job} instance is not updated. To get the new state, call {@link
-   * #waitFor(RetryOption...)} or {@link #reload()}.
+   * #waitFor(RetryOption...)} or {@link #reload(JobOption...)}.
    *
    * <p>Example of getting the results of a query job.
    *
