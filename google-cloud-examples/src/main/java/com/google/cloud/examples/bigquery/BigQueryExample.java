@@ -619,16 +619,8 @@ public class BigQueryExample {
     @Override
     void run(BigQuery bigquery, QueryJobConfiguration queryConfig) throws Exception {
       System.out.println("Running query");
-      Job job = bigquery.query(queryConfig).waitFor();
-      if (job == null) {
-        System.out.println("job no longer exists");
-      } else if (job.getStatus().getError() != null) {
-        System.out.println("query completed with error: " + job.getStatus().getError());
-      } else {
-        System.out.println("Query succeeded. Results:");
-        for (FieldValueList row : job.getQueryResults().iterateAll()) {
-          System.out.println(row);
-        }
+      for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
+        System.out.println(row);
       }
     }
 

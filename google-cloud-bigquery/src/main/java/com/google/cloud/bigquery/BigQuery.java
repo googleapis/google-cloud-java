@@ -1002,11 +1002,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * //   QueryJobConfiguration queryConfig =
    * //       QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
    *
-   * Job job = bigquery.query(queryConfig);
-   * if (job.getStatus().getError() != null) {
-   *   // handle errors
-   * }
-   * for (FieldValueList row : job.getQueryResults().iterateAll()) {
+   * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
@@ -1019,11 +1015,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
    *     .addPositionalParameter(QueryParameterValue.int64(5))
    *     .build();
-   * Job job = bigquery.query(queryConfig);
-   * if (job.getStatus().getError() != null) {
-   *   // handle errors
-   * }
-   * for (FieldValueList row : job.getQueryResults().iterateAll()) {
+   * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
