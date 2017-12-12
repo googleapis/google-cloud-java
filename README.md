@@ -271,7 +271,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.30.0-alpha</version>
+        <version>0.32.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -279,7 +279,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
   </dependencyManagement>
 ```
 
-This BOM is only available starting at version 0.31.0-alpha. If you are having problems with prior versions of
+This BOM is only available starting at version 0.32.0-alpha. If you are having problems with prior versions of
 google-cloud, use the following table as a reference to make sure that your versions are compatible. Definitions:
 
 * **alpha**: The version of any alpha package in google-cloud
