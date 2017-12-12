@@ -278,8 +278,7 @@ public class Job extends JobInfo {
     if (response.getSchema() == null) {
       throw new JobException(getJobId(), response.getErrors());
     }
-    return new TableResult(
-        response.getSchema(), response.getTotalRows(), bigquery.listTableData(table));
+    return bigquery.listTableData(table, response.getSchema());
   }
 
   private QueryResponse waitForQueryResults(

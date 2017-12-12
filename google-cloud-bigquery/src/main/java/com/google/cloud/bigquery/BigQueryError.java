@@ -23,8 +23,6 @@ import com.google.common.base.MoreObjects;
 import java.io.Serializable;
 import java.util.Objects;
 
-// TODO(pongad): Clean up this doc, depending on what we decide to do with query().
-
 /**
  * Google Cloud BigQuery Error. Objects of this class represent errors encountered by the BigQuery
  * service while executing a request. A BigQuery Job that terminated with an error has a non-null

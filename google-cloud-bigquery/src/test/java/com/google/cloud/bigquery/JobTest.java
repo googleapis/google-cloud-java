@@ -292,7 +292,7 @@ public class JobTest {
     expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(completedJob);
     expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS))
         .andReturn(completedQuery);
-    expect(bigquery.listTableData(TABLE_ID1)).andReturn(result);
+    expect(bigquery.listTableData(TABLE_ID1, Schema.of())).andReturn(result);
 
     replay(status, bigquery, mockOptions);
     initializeJob(jobInfo);

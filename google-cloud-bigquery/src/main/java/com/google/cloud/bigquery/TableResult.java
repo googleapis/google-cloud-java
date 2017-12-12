@@ -24,6 +24,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
 import java.io.Serializable;
 import java.util.Objects;
+import com.google.common.collect.Iterators;
 import javax.annotation.Nullable;
 
 public class TableResult implements Page<FieldValueList>, Serializable {
@@ -106,7 +107,7 @@ public class TableResult implements Page<FieldValueList>, Serializable {
 
   @Override
   public final int hashCode() {
-    return Objects.hash(super.hashCode(), schema, totalRows);
+    return Objects.hash(pageNoSchema, schema, totalRows);
   }
 
   @Override
@@ -119,7 +120,7 @@ public class TableResult implements Page<FieldValueList>, Serializable {
     }
     TableResult response = (TableResult) obj;
     return Objects.equals(getNextPageToken(), response.getNextPageToken())
-        && Objects.equals(getValues(), response.getValues())
+        && Iterators.elementsEqual(getValues().iterator(), response.getValues().iterator())
         && Objects.equals(schema, response.schema)
         && totalRows == response.totalRows;
   }
