@@ -35,6 +35,7 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.common.collect.ImmutableList;
 import java.util.Collections;
 import org.junit.After;
 import org.junit.Rule;
@@ -248,7 +249,7 @@ public class JobTest {
     initializeExpectedJob(2, jobInfo);
     JobStatus status = createStrictMock(JobStatus.class);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
+    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock()).times(2);
     Job completedJob = expectedJob.toBuilder().setStatus(status).build();
     // TODO(pongad): remove when https://github.com/googleapis/gax-java/pull/431/ lands.
     Page<FieldValueList> emptyPage =
@@ -284,6 +285,7 @@ public class JobTest {
             .setCompleted(true)
             .setTotalRows(0)
             .setSchema(Schema.of())
+            .setErrors(ImmutableList.<BigQueryError>of())
             .build();
 
     expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS)).andReturn(completedQuery);

@@ -989,8 +989,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   boolean cancel(JobId jobId);
 
   /**
-   * Runs the query associated with the request, using an internally-generated random JobId. The
-   * returned job is always completed.
+   * Runs the query associated with the request, using an internally-generated random JobId.
    *
    * <p>Example of running a query.
    *
@@ -1003,11 +1002,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * //   QueryJobConfiguration queryConfig =
    * //       QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
    *
-   * Job job = bigquery.query(queryConfig);
-   * if (job.getStatus().getError() != null) {
-   *   // handle errors
-   * }
-   * for (FieldValueList row : job.getQueryResults().iterateAll()) {
+   * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
@@ -1020,11 +1015,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
    *     .addPositionalParameter(QueryParameterValue.int64(5))
    *     .build();
-   * Job job = bigquery.query(queryConfig);
-   * if (job.getStatus().getError() != null) {
-   *   // handle errors
-   * }
-   * for (FieldValueList row : job.getQueryResults().iterateAll()) {
+   * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
@@ -1032,11 +1023,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
    *     to complete
+   * @throws JobException if the job completes unsuccessfully
    */
-  Job query(QueryJobConfiguration configuration, JobOption... options) throws InterruptedException;
+  QueryResult query(QueryJobConfiguration configuration, JobOption... options)
+      throws InterruptedException, JobException;
 
   /**
-   * Runs the query associated with the request, using the given JobId. The returned job is always completed.
+   * Runs the query associated with the request, using the given JobId.
    *
    * <p>See {@link #query(QueryJobConfiguration, JobOption...)} for examples on populating a {@link
    * QueryJobConfiguration}.
@@ -1056,9 +1049,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
    *     to complete
+   * @throws JobException if the job completes unsuccessfully
    */
-  Job query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
-      throws InterruptedException;
+  QueryResult query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
+      throws InterruptedException, JobException;
 
   /**
    * Returns results of the query associated with the provided job.

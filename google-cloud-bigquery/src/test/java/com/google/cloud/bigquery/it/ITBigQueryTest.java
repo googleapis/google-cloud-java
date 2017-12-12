@@ -33,7 +33,6 @@ import com.google.cloud.bigquery.BigQuery.DatasetOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
-import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryError;
@@ -51,6 +50,7 @@ import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
@@ -427,7 +427,7 @@ public class ITBigQueryTest {
         .setDefaultDataset(DatasetId.of(DATASET))
         .setUseLegacySql(true)
         .build();
-    QueryResult result = bigquery.query(config).getQueryResults();
+    QueryResult result = bigquery.query(config);
     long integerValue = 0;
     int rowCount = 0;
     for (FieldValueList row : result.getValues()) {
@@ -486,8 +486,7 @@ public class ITBigQueryTest {
         .setDefaultDataset(DatasetId.of(DATASET))
         .setUseLegacySql(true)
         .build();
-    QueryResult result =
-        bigquery.query(config).getQueryResults(QueryResultsOption.pageSize(1000L));
+    QueryResult result = bigquery.query(config);
     int rowCount = 0;
     for (FieldValueList row : result.getValues()) {
       FieldValue timestampCell = row.get(0);
@@ -774,8 +773,9 @@ public class ITBigQueryTest {
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query)
         .setDefaultDataset(DatasetId.of(DATASET))
         .build();
-    Job job = bigquery.query(config);
-    QueryResult result = job.waitFor().getQueryResults(QueryResultsOption.pageSize(1000L));
+    Job job = bigquery.create(JobInfo.of(JobId.of(), config));
+
+    QueryResult result = job.getQueryResults();
     assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
     int rowCount = 0;
     for (FieldValueList row : result.getValues()) {
@@ -825,7 +825,7 @@ public class ITBigQueryTest {
         .addPositionalParameter(int64Parameter)
         .addPositionalParameter(float64Parameter)
         .build();
-    QueryResult result = bigquery.query(config).getQueryResults(QueryResultsOption.pageSize(1000L));
+    QueryResult result = bigquery.query(config);
     assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
     assertEquals(2, Iterables.size(result.getValues()));
   }
@@ -845,7 +845,7 @@ public class ITBigQueryTest {
         .addNamedParameter("stringParam", stringParameter)
         .addNamedParameter("integerList", intArrayParameter)
         .build();
-    QueryResult result = bigquery.query(config).getQueryResults(QueryResultsOption.pageSize(1000L));
+    QueryResult result = bigquery.query(config);
     assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
     assertEquals(2, Iterables.size(result.getValues()));
   }
@@ -859,7 +859,7 @@ public class ITBigQueryTest {
         .setUseLegacySql(false)
         .addNamedParameter("p", bytesParameter)
         .build();
-    QueryResult result = bigquery.query(config).getQueryResults(QueryResultsOption.pageSize(1000L));
+    QueryResult result = bigquery.query(config);
     int rowCount = 0;
     for (FieldValueList row : result.getValues()) {
       rowCount++;

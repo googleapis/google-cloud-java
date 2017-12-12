@@ -568,57 +568,29 @@ public class BigQuerySnippets {
   /** Example of running a query. */
   // [TARGET query(QueryJobConfiguration, QueryOption...)]
   // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
-  public Job runQuery(String query) throws InterruptedException {
+  public void runQuery(String query) throws InterruptedException {
     // [START runQuery]
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
-    Job job = bigquery.query(queryConfig);
-    if (job.getStatus().getError() != null) {
-      // handle errors
-    }
-    for (FieldValueList row : job.getQueryResults().iterateAll()) {
+    for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
       // do something with the data
     }
     // [END runQuery]
-    return job;
   }
 
   /** Example of running a query with query parameters. */
   // [TARGET query(QueryJobConfiguration, QueryOption...)]
   // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where
   // word_count > @wordCount"]
-  public Job runQueryWithParameters(String query) throws InterruptedException {
+  public void runQueryWithParameters(String query) throws InterruptedException {
     // [START runQueryWithParameters]
     // Note, standard SQL is required to use query parameters. Legacy SQL will not work.
     QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
         .addNamedParameter("wordCount", QueryParameterValue.int64(5))
         .build();
-    Job job = bigquery.query(queryConfig);
-    if (job.getStatus().getError() != null) {
-      // handle errors
-    }
-    for (FieldValueList row : job.getQueryResults().iterateAll()) {
+    for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
       // do something with the data
     }
     // [END runQueryWithParameters]
-    return job;
-  }
-
-  /** Example of getting the results of query. */
-  // [TARGET getQueryResults(JobId, QueryResultsOption...)]
-  // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
-  public Job queryResults(final String query) throws InterruptedException {
-    // [START queryResults]
-    QueryJobConfiguration queryConfig =
-        QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
-    Job job = bigquery.query(queryConfig);
-    if (job.getStatus().getError() != null) {
-      // handle errors
-    }
-    for (FieldValueList row : job.getQueryResults().iterateAll()) {
-      // do something with the data
-    }
-    // [END queryResults]
-    return job;
   }
 }

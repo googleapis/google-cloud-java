@@ -171,27 +171,18 @@ directly or through a Query Job. In this code snippet we show how to run a query
 for the result. Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryResponse;
-
-import java.util.Iterator;
-import java.util.List;
 ```
 Then add the following code to run the query and wait for the result:
 
 ```java
 // Create a query request
-QueryJobConfiguration queryConfig = 
-    QueryJobConfiguration.of("SELECT * FROM my_dataset_id.my_table_id");
-// Request query to be executed and wait for results
-QueryResponse queryResponse = bigquery.query(
-    queryConfig,
-    QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-    QueryOption.of(QueryResultsOption.pageSize(1000L)));
+QueryJobConfiguration queryConfig =
+    QueryJobConfiguration.newBuilder("SELECT * FROM my_dataset_id.my_table_id").build();
 // Read rows
 System.out.println("Table rows:");
-for (FieldValues row : queryResponse.getResult().iterateAll()) {
+for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
   System.out.println(row);
 }
 ```

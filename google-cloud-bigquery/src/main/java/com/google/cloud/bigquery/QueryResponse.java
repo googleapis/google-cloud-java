@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
+import com.google.common.collect.ImmutableList;
 import javax.annotation.Nullable;
 
 @InternalApi
@@ -33,6 +34,8 @@ public abstract class QueryResponse {
 
   abstract long getTotalRows();
 
+  abstract ImmutableList<BigQueryError> getErrors();
+
   static Builder newBuilder() {
     return new AutoValue_QueryResponse.Builder();
   }
@@ -44,6 +47,8 @@ public abstract class QueryResponse {
     abstract Builder setCompleted(boolean val);
 
     abstract Builder setTotalRows(long val);
+
+    abstract Builder setErrors(ImmutableList<BigQueryError> val);
 
     abstract QueryResponse build();
   }

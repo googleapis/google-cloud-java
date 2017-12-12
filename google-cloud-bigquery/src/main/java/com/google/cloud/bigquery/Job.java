@@ -246,14 +246,16 @@ public class Job extends JobInfo {
   /**
    * Gets the query results of this job. This job must be of type {@code
    * JobConfiguration.Type.QUERY}, otherwise this method will throw {@link
-   * UnsupportedOperationException}. This method does not wait for the job to complete, to ensure
-   * that the job is completed first call {@link #waitFor(RetryOption...)} method.
+   * UnsupportedOperationException}.
+   *
+   * <p>If the job hasn't finished, this method waits for the job to complete. However, the state of
+   * the current {@code Job} instance is not updated. To get the new state, call {@link
+   * #waitFor(RetryOption...)} or {@link #reload(JobOption...)}.
    *
    * <p>Example of getting the results of a query job.
    *
    * <pre>{@code
    * Job job = bigquery.create(queryJobInfo);
-   * job = job.waitFor();
    * QueryResult result = job.getQueryResults();
    * for (FieldValueList row : result.iterateAll()) {
    *   // do something with the data
@@ -262,23 +264,20 @@ public class Job extends JobInfo {
    *
    * @throws BigQueryException upon failure
    */
-  public QueryResult getQueryResults(QueryResultsOption... options) {
+  public QueryResult getQueryResults(QueryResultsOption... options)
+      throws InterruptedException, JobException {
     if (getConfiguration().getType() != Type.QUERY) {
       throw new UnsupportedOperationException(
           "Getting query results is supported only for " + Type.QUERY + " jobs");
     }
-    if (getStatus().getState() != JobStatus.State.DONE) {
-      throw new BigQueryException(BigQueryException.UNKNOWN_CODE, "the job hasn't completed yet");
-    }
-    if (getStatus().getError() != null) {
-      throw new BigQueryException(
-          BigQueryException.UNKNOWN_CODE, "job completed with error", getStatus().getError());
-    }
 
     TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
+    // TODO(pongad): merge options?
     QueryResponse response =
-        bigquery.getQueryResults(
-            getJobId(), DEFAULT_QUERY_WAIT_OPTIONS); // should return immediately
+        waitForQueryResults(DEFAULT_JOB_WAIT_SETTINGS, DEFAULT_QUERY_WAIT_OPTIONS);
+    if (response.getSchema() == null) {
+      throw new JobException(getJobId(), response.getErrors());
+    }
     return new QueryResult(
         response.getSchema(), response.getTotalRows(), bigquery.listTableData(table));
   }

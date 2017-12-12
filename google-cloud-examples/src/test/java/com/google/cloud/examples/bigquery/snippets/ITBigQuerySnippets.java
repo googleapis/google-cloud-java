@@ -256,25 +256,11 @@ public class ITBigQuerySnippets {
 
   @Test
   public void testRunQuery() throws InterruptedException {
-    Job job = bigquerySnippets.runQuery(QUERY);
-    assertNotNull(job);
-    assertEquals(JobStatus.State.DONE, job.getStatus().getState());
-    assertNull(job.getStatus().getError());
-    assertTrue(bigquerySnippets.cancelJob(job.getJobId().getJob()));
-
-    job = bigquerySnippets.queryResults(QUERY);
-    assertNotNull(job);
-    assertEquals(JobStatus.State.DONE, job.getStatus().getState());
-    assertNull(job.getStatus().getError());
-    assertTrue(bigquerySnippets.cancelJobFromId(job.getJobId().getJob()));
+    bigquerySnippets.runQuery(QUERY);
   }
 
   @Test
   public void testRunQueryWithParameters() throws InterruptedException {
-    Job job = bigquerySnippets.runQueryWithParameters(QUERY_WITH_PARAMETERS);
-    assertNotNull(job);
-    assertEquals(JobStatus.State.DONE, job.getStatus().getState());
-    assertNull(job.getStatus().getError());
-    assertTrue(bigquerySnippets.cancelJobFromId(job.getJobId().getJob()));
+    bigquerySnippets.runQueryWithParameters(QUERY_WITH_PARAMETERS);
   }
 }

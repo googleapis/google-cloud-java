@@ -29,7 +29,6 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
-import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.Schema;
@@ -80,11 +79,9 @@ public class InsertDataAndQueryTable {
     // Create a query request
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder("SELECT * FROM my_dataset_id.my_table_id").build();
-    // Request query to be executed and wait for results
-    Job job = bigquery.query(queryConfig).waitFor();
     // Read rows
     System.out.println("Table rows:");
-    for (FieldValueList row : job.getQueryResults().iterateAll()) {
+    for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
       System.out.println(row);
     }
   }
