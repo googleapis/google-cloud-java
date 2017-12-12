@@ -242,6 +242,7 @@ for item in ${modules[*]}; do
   # 1) Update version properties (used to define dependencies between google-cloud modules).
   echo -e "    Updating ${module_suffix}.version property in root pom.xml"
   sed -ri "s/(<${module_suffix}.version>\s*)((\w|-|\.)+)(\s*<\/${module_suffix}.version>)/\1${new_version}\4/" pom.xml
+  sed -ri "s/(<${module_suffix}.version>\s*)((\w|-|\.)+)(\s*<\/${module_suffix}.version>)/\1${new_version}\4/" google-cloud-bom/pom.xml
 
   # 2) Update version of the module. If the module is a parent of other modules
   # (like the root module or the google-cloud-contrib), then the parent secion of its child modules
