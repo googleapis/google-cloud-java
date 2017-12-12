@@ -194,7 +194,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final FieldValue FIELD_VALUE =
       FieldValue.of(FieldValue.Attribute.PRIMITIVE, "value");
   // TODO (pongad): test this once we make it serializable.
-  // private static final QueryResult QUERY_RESULT = QueryResult.newBuilder()
+  // private static final TableResult QUERY_RESULT = TableResult.newBuilder()
   //     .setSchema(TABLE_SCHEMA)
   //     .setTotalRows(1L)
   //     .setCursor("cursor")

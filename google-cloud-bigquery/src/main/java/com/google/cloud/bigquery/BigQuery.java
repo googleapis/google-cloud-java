@@ -1025,7 +1025,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *     to complete
    * @throws JobException if the job completes unsuccessfully
    */
-  QueryResult query(QueryJobConfiguration configuration, JobOption... options)
+  TableResult query(QueryJobConfiguration configuration, JobOption... options)
       throws InterruptedException, JobException;
 
   /**
@@ -1051,7 +1051,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *     to complete
    * @throws JobException if the job completes unsuccessfully
    */
-  QueryResult query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
+  TableResult query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
       throws InterruptedException, JobException;
 
   /**

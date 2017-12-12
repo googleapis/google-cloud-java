@@ -1144,7 +1144,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     // TODO(pongad): pagesize = 42
-    QueryResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
     assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
     assertThat(result.getTotalRows()).isEqualTo(1);
     for (FieldValueList row : result.getValues()) {
@@ -1209,7 +1209,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     // TODO(pongad): pagesize = 42
-    QueryResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
     assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
     assertThat(result.getTotalRows()).isEqualTo(1);
     for (FieldValueList row : result.getValues()) {

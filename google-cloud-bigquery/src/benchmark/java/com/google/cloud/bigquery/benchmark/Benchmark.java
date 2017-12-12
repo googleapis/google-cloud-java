@@ -21,7 +21,7 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryResult;
+import com.google.cloud.bigquery.TableResult;
 import java.io.FileInputStream;
 import java.util.List;
 import org.threeten.bp.Clock;
@@ -53,7 +53,7 @@ public class Benchmark {
       }
 
       Instant start = clock.instant();
-      QueryResult result =
+      TableResult result =
           bq.query(QueryJobConfiguration.newBuilder(request).setUseLegacySql(false).build());
 
       int rows = 0;

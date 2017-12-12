@@ -25,7 +25,7 @@ import com.google.common.collect.Iterables;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class QueryResult implements Page<FieldValueList>, Serializable {
+public class TableResult implements Page<FieldValueList>, Serializable {
 
   private static final long serialVersionUID = -4831062717210349819L;
 
@@ -34,7 +34,7 @@ public class QueryResult implements Page<FieldValueList>, Serializable {
   private final Page<FieldValueList> pageNoSchema;
   private final transient Function<FieldValueList, FieldValueList> addSchemaFunc;
 
-  QueryResult(final Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
+  TableResult(final Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
     // TODO(pongad): read totalRows directly from listTableData.
     this.schema = checkNotNull(schema);
     this.totalRows = totalRows;
@@ -75,8 +75,8 @@ public class QueryResult implements Page<FieldValueList>, Serializable {
   }
 
   @Override
-  public QueryResult getNextPage() {
-    return new QueryResult(schema, totalRows, pageNoSchema.getNextPage());
+  public TableResult getNextPage() {
+    return new TableResult(schema, totalRows, pageNoSchema.getNextPage());
   }
 
   @Override
@@ -109,10 +109,10 @@ public class QueryResult implements Page<FieldValueList>, Serializable {
     if (obj == this) {
       return true;
     }
-    if (obj == null || !obj.getClass().equals(QueryResult.class)) {
+    if (obj == null || !obj.getClass().equals(TableResult.class)) {
       return false;
     }
-    QueryResult response = (QueryResult) obj;
+    TableResult response = (TableResult) obj;
     return Objects.equals(getNextPageToken(), response.getNextPageToken())
         && Objects.equals(getValues(), response.getValues())
         && Objects.equals(schema, response.schema)

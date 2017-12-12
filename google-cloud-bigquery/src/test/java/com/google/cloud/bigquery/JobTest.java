@@ -279,7 +279,7 @@ public class JobTest {
             return Collections.emptyList();
           }
         };
-    QueryResult result = new QueryResult(Schema.of(), 0, emptyPage);
+    TableResult result = new TableResult(Schema.of(), 0, emptyPage);
     QueryResponse completedQuery =
         QueryResponse.newBuilder()
             .setCompleted(true)

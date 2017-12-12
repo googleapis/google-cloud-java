@@ -58,7 +58,7 @@ import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
-import com.google.cloud.bigquery.QueryResult;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -427,7 +427,7 @@ public class ITBigQueryTest {
         .setDefaultDataset(DatasetId.of(DATASET))
         .setUseLegacySql(true)
         .build();
-    QueryResult result = bigquery.query(config);
+    TableResult result = bigquery.query(config);
     long integerValue = 0;
     int rowCount = 0;
     for (FieldValueList row : result.getValues()) {
@@ -486,7 +486,7 @@ public class ITBigQueryTest {
         .setDefaultDataset(DatasetId.of(DATASET))
         .setUseLegacySql(true)
         .build();
-    QueryResult result = bigquery.query(config);
+    TableResult result = bigquery.query(config);
     int rowCount = 0;
     for (FieldValueList row : result.getValues()) {
       FieldValue timestampCell = row.get(0);
@@ -775,7 +775,7 @@ public class ITBigQueryTest {
         .build();
     Job job = bigquery.create(JobInfo.of(JobId.of(), config));
 
-    QueryResult result = job.getQueryResults();
+    TableResult result = job.getQueryResults();
     assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
     int rowCount = 0;
     for (FieldValueList row : result.getValues()) {
@@ -825,7 +825,7 @@ public class ITBigQueryTest {
         .addPositionalParameter(int64Parameter)
         .addPositionalParameter(float64Parameter)
         .build();
-    QueryResult result = bigquery.query(config);
+    TableResult result = bigquery.query(config);
     assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
     assertEquals(2, Iterables.size(result.getValues()));
   }
@@ -845,7 +845,7 @@ public class ITBigQueryTest {
         .addNamedParameter("stringParam", stringParameter)
         .addNamedParameter("integerList", intArrayParameter)
         .build();
-    QueryResult result = bigquery.query(config);
+    TableResult result = bigquery.query(config);
     assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
     assertEquals(2, Iterables.size(result.getValues()));
   }
@@ -859,7 +859,7 @@ public class ITBigQueryTest {
         .setUseLegacySql(false)
         .addNamedParameter("p", bytesParameter)
         .build();
-    QueryResult result = bigquery.query(config);
+    TableResult result = bigquery.query(config);
     int rowCount = 0;
     for (FieldValueList row : result.getValues()) {
       rowCount++;
@@ -1022,7 +1022,7 @@ public class ITBigQueryTest {
     remoteJob = remoteJob.waitFor();
     assertNull(remoteJob.getStatus().getError());
 
-    QueryResult result = remoteJob.getQueryResults();
+    TableResult result = remoteJob.getQueryResults();
     assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
     int rowCount = 0;
     for (FieldValueList row : result.getValues()) {
