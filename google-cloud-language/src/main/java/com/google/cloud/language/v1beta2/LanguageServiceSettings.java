@@ -162,7 +162,8 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(null, GaxProperties.getLibraryVersion(LanguageServiceSettings.class));
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(LanguageServiceSettings.class));
   }
 
   /** Returns a new builder for this class. */

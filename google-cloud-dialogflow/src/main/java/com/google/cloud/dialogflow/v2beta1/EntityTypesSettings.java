@@ -248,7 +248,7 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(null, GaxProperties.getLibraryVersion(EntityTypesSettings.class));
+        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(EntityTypesSettings.class));
   }
 
   /** Returns a new builder for this class. */

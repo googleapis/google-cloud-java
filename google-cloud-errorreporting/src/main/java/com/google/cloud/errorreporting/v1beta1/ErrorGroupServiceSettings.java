@@ -136,7 +136,7 @@ public class ErrorGroupServiceSettings extends ClientSettings<ErrorGroupServiceS
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
-            null, GaxProperties.getLibraryVersion(ErrorGroupServiceSettings.class));
+            "gapic", GaxProperties.getLibraryVersion(ErrorGroupServiceSettings.class));
   }
 
   /** Returns a new builder for this class. */

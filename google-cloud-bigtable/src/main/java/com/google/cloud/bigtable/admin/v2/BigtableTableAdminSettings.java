@@ -186,7 +186,7 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
-            null, GaxProperties.getLibraryVersion(BigtableTableAdminSettings.class));
+            "gapic", GaxProperties.getLibraryVersion(BigtableTableAdminSettings.class));
   }
 
   /** Returns a new builder for this class. */

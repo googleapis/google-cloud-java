@@ -163,7 +163,7 @@ public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceS
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
-            null, GaxProperties.getLibraryVersion(ErrorStatsServiceSettings.class));
+            "gapic", GaxProperties.getLibraryVersion(ErrorStatsServiceSettings.class));
   }
 
   /** Returns a new builder for this class. */

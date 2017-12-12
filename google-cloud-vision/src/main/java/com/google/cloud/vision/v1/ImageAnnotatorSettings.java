@@ -129,7 +129,8 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(null, GaxProperties.getLibraryVersion(ImageAnnotatorSettings.class));
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(ImageAnnotatorSettings.class));
   }
 
   /** Returns a new builder for this class. */

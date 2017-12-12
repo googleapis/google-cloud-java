@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings.Builder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.firestore.FirestoreOptions;
 import com.google.cloud.firestore.v1beta1.FirestoreSettings;
 import com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
@@ -104,9 +105,10 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
                 FirestoreSettings.defaultGrpcTransportProviderBuilder(), options));
 
         HeaderProvider internalHeaderProvider =
-            FirestoreSettings
-                .defaultApiClientHeaderProviderBuilder()
-                .setClientLibToken(null, GaxProperties.getLibraryVersion(options.getClass()))
+            FirestoreSettings.defaultApiClientHeaderProviderBuilder()
+                .setClientLibToken(
+                    ServiceOptions.getGoogApiClientLibName(),
+                    GaxProperties.getLibraryVersion(options.getClass()))
                 .build();
         HeaderProvider headerProvider = options.getMergedHeaderProvider(internalHeaderProvider);
 

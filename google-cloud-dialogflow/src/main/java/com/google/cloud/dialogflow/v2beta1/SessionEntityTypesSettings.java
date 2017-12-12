@@ -174,7 +174,7 @@ public class SessionEntityTypesSettings extends ClientSettings<SessionEntityType
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
-            null, GaxProperties.getLibraryVersion(SessionEntityTypesSettings.class));
+            "gapic", GaxProperties.getLibraryVersion(SessionEntityTypesSettings.class));
   }
 
   /** Returns a new builder for this class. */

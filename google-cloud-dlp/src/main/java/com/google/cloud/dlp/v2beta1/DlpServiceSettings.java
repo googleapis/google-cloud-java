@@ -223,7 +223,7 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(null, GaxProperties.getLibraryVersion(DlpServiceSettings.class));
+        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(DlpServiceSettings.class));
   }
 
   /** Returns a new builder for this class. */

@@ -142,7 +142,7 @@ public class VideoIntelligenceServiceSettings
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
-            null, GaxProperties.getLibraryVersion(VideoIntelligenceServiceSettings.class));
+            "gapic", GaxProperties.getLibraryVersion(VideoIntelligenceServiceSettings.class));
   }
 
   /** Returns a new builder for this class. */

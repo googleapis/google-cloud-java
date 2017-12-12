@@ -347,7 +347,8 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(null, GaxProperties.getLibraryVersion(ClusterManagerSettings.class));
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(ClusterManagerSettings.class));
   }
 
   /** Returns a new builder for this class. */

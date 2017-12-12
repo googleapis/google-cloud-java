@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.TransportChannel;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings.Builder;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.logging.LoggingException;
@@ -113,7 +114,9 @@ public class GrpcLoggingRpc implements LoggingRpc {
         HeaderProvider internalHeaderProvider =
             LoggingSettings
                 .defaultApiClientHeaderProviderBuilder()
-                .setClientLibToken(null, GaxProperties.getLibraryVersion(options.getClass()))
+                .setClientLibToken(
+                    ServiceOptions.getGoogApiClientLibName(),
+                    GaxProperties.getLibraryVersion(options.getClass()))
                 .build();
         HeaderProvider headerProvider = options.getMergedHeaderProvider(internalHeaderProvider);
         settingsBuilder.setHeaderProvider(headerProvider);

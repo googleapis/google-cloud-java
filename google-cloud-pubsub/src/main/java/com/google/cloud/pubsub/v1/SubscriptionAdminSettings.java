@@ -280,7 +280,8 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(null, GaxProperties.getLibraryVersion(SubscriptionAdminSettings.class));
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(SubscriptionAdminSettings.class));
   }
 
   /** Returns a new builder for this class. */

@@ -241,7 +241,7 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return GrpcClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
-            null, GaxProperties.getLibraryVersion(DataTransferServiceSettings.class));
+            "gapic", GaxProperties.getLibraryVersion(DataTransferServiceSettings.class));
   }
 
   /** Returns a new builder for this class. */
