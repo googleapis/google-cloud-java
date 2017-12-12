@@ -20,10 +20,12 @@ import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.gax.paging.Page;
+import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
+import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.api.services.bigquery.model.TableSchema;
 import com.google.cloud.BaseService;
@@ -41,7 +43,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import java.util.List;
-import com.google.api.services.bigquery.model.ErrorProto;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
@@ -459,32 +460,41 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       final BigQueryOptions serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
       final TableId completeTableId = tableId.setProjectId(serviceOptions.getProjectId());
-      Tuple<String, Iterable<TableRow>> result =
-          runWithRetries(new Callable<Tuple<String, Iterable<TableRow>>>() {
-            @Override
-            public Tuple<String, Iterable<TableRow>> call() {
-              return serviceOptions.getBigQueryRpcV2()
-                  .listTableData(completeTableId.getProject(), completeTableId.getDataset(),
-                      completeTableId.getTable(), optionsMap);
-            }
-          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
-      String cursor = result.x();
-      return new PageImpl<>(new TableDataPageFetcher(tableId, serviceOptions, cursor, optionsMap),
-          cursor, transformTableData(result.y(), null));
+      TableDataList result =
+          runWithRetries(
+              new Callable<TableDataList>() {
+                @Override
+                public TableDataList call() {
+                  return serviceOptions
+                      .getBigQueryRpcV2()
+                      .listTableData(
+                          completeTableId.getProject(),
+                          completeTableId.getDataset(),
+                          completeTableId.getTable(),
+                          optionsMap);
+                }
+              },
+              serviceOptions.getRetrySettings(),
+              EXCEPTION_HANDLER,
+              serviceOptions.getClock());
+      String cursor = result.getPageToken();
+      return new PageImpl<>(
+          new TableDataPageFetcher(tableId, serviceOptions, cursor, optionsMap),
+          cursor,
+          transformTableData(result.getRows()));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
-  private static List<FieldValueList> transformTableData(
-      Iterable<TableRow> tableDataPb, Schema schema) {
-    final FieldList schemaFields = schema != null ? schema.getFields() : null;
+  private static Iterable<FieldValueList> transformTableData(Iterable<TableRow> tableDataPb) {
     return ImmutableList.copyOf(
-        Iterables.transform(tableDataPb != null ? tableDataPb : ImmutableList.<TableRow>of(),
+        Iterables.transform(
+            tableDataPb != null ? tableDataPb : ImmutableList.<TableRow>of(),
             new Function<TableRow, FieldValueList>() {
               @Override
               public FieldValueList apply(TableRow rowPb) {
-                return FieldValueList.fromPb(rowPb.getF(), schemaFields);
+                return FieldValueList.fromPb(rowPb.getF(), null);
               }
             }));
   }

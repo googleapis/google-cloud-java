@@ -46,7 +46,6 @@ import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableList;
 import com.google.api.services.bigquery.model.TableReference;
-import com.google.api.services.bigquery.model.TableRow;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -283,18 +282,19 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<TableRow>> listTableData(String projectId, String datasetId,
-      String tableId, Map<Option, ?> options) {
+  public TableDataList listTableData(
+      String projectId, String datasetId, String tableId, Map<Option, ?> options) {
     try {
-      TableDataList tableDataList = bigquery.tabledata()
+      return bigquery
+          .tabledata()
           .list(projectId, datasetId, tableId)
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setStartIndex(Option.START_INDEX.getLong(options) != null
-              ? BigInteger.valueOf(Option.START_INDEX.getLong(options)) : null)
+          .setStartIndex(
+              Option.START_INDEX.getLong(options) != null
+                  ? BigInteger.valueOf(Option.START_INDEX.getLong(options))
+                  : null)
           .execute();
-      return Tuple.<String, Iterable<TableRow>>of(tableDataList.getPageToken(),
-          tableDataList.getRows());
     } catch (IOException ex) {
       throw translate(ex);
     }
