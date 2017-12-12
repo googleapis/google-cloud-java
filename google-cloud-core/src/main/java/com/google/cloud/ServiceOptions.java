@@ -388,6 +388,9 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
 
   protected static String getAppEngineProjectId() {
     String projectId = null;
+    if (!PlatformInformation.isOnGAE()) {
+      return projectId;
+    }
     if (PlatformInformation.isOnGAEStandard7()) {
       projectId = getAppEngineProjectIdFromAppId();
     } else {
