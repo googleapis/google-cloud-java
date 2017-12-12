@@ -861,10 +861,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Lists the table's rows.
    *
    * <p>Example of listing table rows, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
-   * Page<FieldValueList> tableData =
+   * TableResult tableData =
    *     bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
    * for (FieldValueList row : tableData.iterateAll()) {
    *   // do something with the row
@@ -873,18 +874,18 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  Page<FieldValueList> listTableData(String datasetId, String tableId,
-      TableDataListOption... options);
+  TableResult listTableData(String datasetId, String tableId, TableDataListOption... options);
 
   /**
    * Lists the table's rows.
    *
    * <p>Example of listing table rows, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * TableId tableIdObject = TableId.of(datasetName, tableName);
-   * Page<FieldValueList> tableData =
+   * TableResult tableData =
    *     bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
    * for (FieldValueList row : rowIterator.hasNext()) {
    *   // do something with the row
@@ -893,7 +894,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  Page<FieldValueList> listTableData(TableId tableId, TableDataListOption... options);
+  TableResult listTableData(TableId tableId, TableDataListOption... options);
+
+  TableResult listTableData(
+      String datasetId, String tableId, Schema schema, TableDataListOption... options);
+
+  TableResult listTableData(TableId tableId, Schema schema, TableDataListOption... options);
 
   /**
    * Returns the requested job or {@code null} if not found.

@@ -167,6 +167,7 @@ public class BigQueryImplTest {
   private static final TableDataList TABLE_DATA_PB =
       new TableDataList()
           .setPageToken(CURSOR)
+          .setTotalRows(3L)
           .setRows(
               ImmutableList.of(
                   new TableRow().setF(ImmutableList.of(new TableCell().setV("Value1"))),
@@ -1141,7 +1142,11 @@ public class BigQueryImplTest {
     EasyMock.expect(
             bigqueryRpcMock.listTableData(
                 PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap()))
-        .andReturn(new TableDataList().setPageToken("").setRows(ImmutableList.of(TABLE_ROW)));
+        .andReturn(
+            new TableDataList()
+                .setPageToken("")
+                .setRows(ImmutableList.of(TABLE_ROW))
+                .setTotalRows(1L));
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
@@ -1206,7 +1211,11 @@ public class BigQueryImplTest {
     EasyMock.expect(
             bigqueryRpcMock.listTableData(
                 PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap()))
-        .andReturn(new TableDataList().setPageToken("").setRows(ImmutableList.of(TABLE_ROW)));
+        .andReturn(
+            new TableDataList()
+                .setPageToken("")
+                .setRows(ImmutableList.of(TABLE_ROW))
+                .setTotalRows(1L));
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();

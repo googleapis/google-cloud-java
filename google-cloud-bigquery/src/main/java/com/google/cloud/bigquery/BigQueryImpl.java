@@ -126,7 +126,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     @Override
     public Page<FieldValueList> getNextPage() {
-      return listTableData(table, serviceOptions, requestOptions);
+      return listTableData(table, serviceOptions, requestOptions).x();
     }
   }
 
@@ -446,18 +446,33 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Page<FieldValueList> listTableData(String datasetId, String tableId,
-      TableDataListOption... options) {
-    return listTableData(TableId.of(datasetId, tableId), getOptions(), optionMap(options));
+  public TableResult listTableData(
+      String datasetId, String tableId, TableDataListOption... options) {
+    return listTableData(TableId.of(datasetId, tableId), options);
   }
 
   @Override
-  public Page<FieldValueList> listTableData(TableId tableId, TableDataListOption... options) {
-    return listTableData(tableId, getOptions(), optionMap(options));
+  public TableResult listTableData(TableId tableId, TableDataListOption... options) {
+    return listTableData(tableId, null, options);
   }
 
-  private static Page<FieldValueList> listTableData(final TableId tableId,
-      final BigQueryOptions serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
+  @Override
+  public TableResult listTableData(
+      String datasetId, String tableId, Schema schema, TableDataListOption... options) {
+    return listTableData(TableId.of(datasetId, tableId), schema, options);
+  }
+
+  @Override
+  public TableResult listTableData(TableId tableId, Schema schema, TableDataListOption... options) {
+    Tuple<? extends Page<FieldValueList>, Long> data =
+        listTableData(tableId, getOptions(), optionMap(options));
+    return new TableResult(schema, data.y(), data.x());
+  }
+
+  private static Tuple<? extends Page<FieldValueList>, Long> listTableData(
+      final TableId tableId,
+      final BigQueryOptions serviceOptions,
+      final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
       final TableId completeTableId = tableId.setProjectId(serviceOptions.getProjectId());
       TableDataList result =
@@ -478,10 +493,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               EXCEPTION_HANDLER,
               serviceOptions.getClock());
       String cursor = result.getPageToken();
-      return new PageImpl<>(
-          new TableDataPageFetcher(tableId, serviceOptions, cursor, optionsMap),
-          cursor,
-          transformTableData(result.getRows()));
+      return Tuple.of(
+          new PageImpl<>(
+              new TableDataPageFetcher(tableId, serviceOptions, cursor, optionsMap),
+              cursor,
+              transformTableData(result.getRows())),
+          result.getTotalRows());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }

@@ -34,12 +34,10 @@ import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
-
-import org.junit.After;
-import org.junit.Test;
-
 import java.util.Iterator;
 import java.util.List;
+import org.junit.After;
+import org.junit.Test;
 
 public class TableTest {
 
@@ -80,7 +78,7 @@ public class TableTest {
       FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
   private static final FieldValue FIELD_VALUE2 =
       FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
-  private static final Iterable<FieldValueList> ROWS =
+  private static final List<FieldValueList> ROWS =
       ImmutableList.of(
           FieldValueList.of(ImmutableList.of(FIELD_VALUE1)),
           FieldValueList.of(ImmutableList.of(FIELD_VALUE2)));
@@ -273,7 +271,7 @@ public class TableTest {
   public void testList() throws Exception {
     initializeExpectedTable(1);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    PageImpl<FieldValueList> tableDataPage = new PageImpl<>(null, "c", ROWS);
+    TableResult tableDataPage = new TableResult(null, ROWS.size(), new PageImpl<>(null, "c", ROWS));
     expect(bigquery.listTableData(TABLE_ID1)).andReturn(tableDataPage);
     replay(bigquery);
     initializeTable();
@@ -287,7 +285,7 @@ public class TableTest {
   public void testListWithOptions() throws Exception {
     initializeExpectedTable(1);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    PageImpl<FieldValueList> tableDataPage = new PageImpl<>(null, "c", ROWS);
+    TableResult tableDataPage = new TableResult(null, ROWS.size(), new PageImpl<>(null, "c", ROWS));
     expect(bigquery.listTableData(TABLE_ID1, BigQuery.TableDataListOption.pageSize(10L)))
         .andReturn(tableDataPage);
     replay(bigquery);
