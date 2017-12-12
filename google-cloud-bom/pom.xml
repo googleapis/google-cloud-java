@@ -4,12 +4,125 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bom</artifactId>
   <packaging>pom</packaging>
-  <version>0.30.1-alpha-SNAPSHOT</version>
+  <version>0.32.0-alpha</version>
   <name>Google Cloud Java BOM</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bom</url>
   <description>
     BOM for google-cloud-java
   </description>
+  <developers>
+    <developer>
+      <id>garrettjonesgoogle</id>
+      <name>Garrett Jones</name>
+      <email>garrettjones@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>pongad</id>
+      <name>Michael Darakananda</name>
+      <email>pongad@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>shinfan</id>
+      <name>Shin Fan</name>
+      <email>shinfan@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>michaelbausor</id>
+      <name>Micheal Bausor</name>
+      <email>michaelbausor@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>vam-google</id>
+      <name>Vadym Matsishevskyi</name>
+      <email>vam@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>tswast</id>
+      <name>Tim Swast</name>
+      <email>tswast@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>neozwu</id>
+      <name>Neo Wu</name>
+      <email>neowu@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>lesv</id>
+      <name>Les Vogel</name>
+      <email>lesv@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>schmidt_sebastian</id>
+      <name>Sebastian Schmidt</name>
+      <email>mrschmidt@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>Google</name>
+  </organization>
+  <scm>
+    <connection>scm:git:git@github.com:GoogleCloudPlatform/google-cloud.git</connection>
+    <developerConnection>scm:git:git@github.com:GoogleCloudPlatform/google-cloud.git</developerConnection>
+    <url>https://github.com/GoogleCloudPlatform/google-cloud</url>
+    <tag>HEAD</tag>
+  </scm>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <site>
+      <id>github-pages-site</id>
+      <name>Deployment through GitHub's site deployment plugin</name>
+      <url>${project.version}/</url>
+    </site>
+  </distributionManagement>
+  <licenses>
+    <license>
+      <name>Google Cloud Software License</name>
+      <url>https://raw.githubusercontent.com/GoogleCloudPlatform/google-cloud-java/master/LICENSE</url>
+    </license>
+  </licenses>
   <properties>
     <api-client.version>1.23.0</api-client.version>
 
@@ -25,36 +138,36 @@
     <http-client.version>1.23.0</http-client.version>
     <protobuf.version>3.4.0</protobuf.version>
 
-    <cloud.version>0.30.1-alpha-SNAPSHOT</cloud.version>
-    <bigtable.version>0.30.1-beta-SNAPSHOT</bigtable.version>
-    <bigquery.version>0.30.1-beta-SNAPSHOT</bigquery.version>
-    <bigquerydatatransfer.version>0.30.1-beta-SNAPSHOT</bigquerydatatransfer.version>
-    <compute.version>0.30.1-alpha-SNAPSHOT</compute.version>
-    <container.version>0.30.1-beta-SNAPSHOT</container.version>
-    <contrib.version>0.30.1-alpha-SNAPSHOT</contrib.version>
-    <core.version>1.12.1-SNAPSHOT</core.version>
-    <core-http.version>1.12.1-SNAPSHOT</core-http.version>
-    <core-grpc.version>1.12.1-SNAPSHOT</core-grpc.version>
-    <datastore.version>1.12.1-SNAPSHOT</datastore.version>
-    <dialogflow.version>0.30.1-alpha-SNAPSHOT</dialogflow.version>
-    <dlp.version>0.30.1-beta-SNAPSHOT</dlp.version>
-    <dns.version>0.30.1-alpha-SNAPSHOT</dns.version>
-    <errorreporting.version>0.30.1-beta-SNAPSHOT</errorreporting.version>
-    <firestore.version>0.30.1-beta-SNAPSHOT</firestore.version>
-    <examples.version>0.30.1-alpha-SNAPSHOT</examples.version>
-    <language.version>1.12.1-SNAPSHOT</language.version>
-    <logging.version>1.12.1-SNAPSHOT</logging.version>
-    <monitoring.version>0.30.1-beta-SNAPSHOT</monitoring.version>
-    <pubsub.version>0.30.1-beta-SNAPSHOT</pubsub.version>
-    <resourcemanager.version>0.30.1-alpha-SNAPSHOT</resourcemanager.version>
-    <spanner.version>0.30.1-beta-SNAPSHOT</spanner.version>
-    <speech.version>0.30.1-alpha-SNAPSHOT</speech.version>
-    <storage.version>1.12.1-SNAPSHOT</storage.version>
-    <trace.version>0.30.1-beta-SNAPSHOT</trace.version>
-    <translate.version>1.12.1-SNAPSHOT</translate.version>
-    <vision.version>1.12.1-SNAPSHOT</vision.version>
-    <video-intelligence.version>0.30.1-beta-SNAPSHOT</video-intelligence.version>
-    <testing.version>0.30.1-alpha-SNAPSHOT</testing.version>
+    <cloud.version>0.32.0-alpha</cloud.version>
+    <bigtable.version>0.32.0-beta</bigtable.version>
+    <bigquery.version>0.32.0-beta</bigquery.version>
+    <bigquerydatatransfer.version>0.32.0-beta</bigquerydatatransfer.version>
+    <compute.version>0.32.0-alpha</compute.version>
+    <container.version>0.32.0-beta</container.version>
+    <contrib.version>0.32.0-alpha</contrib.version>
+    <core.version>1.14.0</core.version>
+    <core-http.version>1.14.0</core-http.version>
+    <core-grpc.version>1.14.0</core-grpc.version>
+    <datastore.version>1.14.0</datastore.version>
+    <dialogflow.version>0.32.0-alpha</dialogflow.version>
+    <dlp.version>0.32.0-beta</dlp.version>
+    <dns.version>0.32.0-alpha</dns.version>
+    <errorreporting.version>0.32.0-beta</errorreporting.version>
+    <firestore.version>0.32.0-beta</firestore.version>
+    <examples.version>0.32.0-alpha</examples.version>
+    <language.version>1.14.0</language.version>
+    <logging.version>1.14.0</logging.version>
+    <monitoring.version>0.32.0-beta</monitoring.version>
+    <pubsub.version>0.32.0-beta</pubsub.version>
+    <resourcemanager.version>0.32.0-alpha</resourcemanager.version>
+    <spanner.version>0.32.0-beta</spanner.version>
+    <speech.version>0.32.0-alpha</speech.version>
+    <storage.version>1.14.0</storage.version>
+    <trace.version>0.32.0-beta</trace.version>
+    <translate.version>1.14.0</translate.version>
+    <vision.version>1.14.0</vision.version>
+    <video-intelligence.version>0.32.0-beta</video-intelligence.version>
+    <testing.version>0.32.0-alpha</testing.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -878,4 +991,93 @@
     </dependencies>
   </dependencyManagement>
 
+  <pluginRepositories>
+    <pluginRepository>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>http://repo.maven.apache.org/maven2</url>
+    </pluginRepository>
+  </pluginRepositories>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>cobertura-maven-plugin</artifactId>
+          <version>2.7</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>1.4.0</version>
+          <configuration>
+            <skip>true</skip>
+            <executable>java</executable>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.6</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>sonatype-nexus-staging</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>false</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <!--
+              maven-source-plugin-3.0.0 exhibits the zipping behavior on ubuntu that was seen in
+              maven-jar-plugin with version < 2.5 (https://issues.apache.org/jira/browse/MJAR-188).
+              Until that is fixed we should stick to 2.4.
+            -->
+            <version>2.4</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
