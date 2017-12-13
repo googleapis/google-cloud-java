@@ -456,11 +456,11 @@ public class FirestoreSettings extends ClientSettings<FirestoreSettings> {
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
-    private Builder() {
+    protected Builder() {
       this((ClientContext) null);
     }
 
-    private Builder(ClientContext clientContext) {
+    protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       getDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -563,7 +563,7 @@ public class FirestoreSettings extends ClientSettings<FirestoreSettings> {
       return builder;
     }
 
-    private Builder(FirestoreSettings settings) {
+    protected Builder(FirestoreSettings settings) {
       super(settings);
 
       getDocumentSettings = settings.getDocumentSettings.toBuilder();
