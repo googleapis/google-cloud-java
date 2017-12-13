@@ -22,6 +22,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * For internal use only.
+ */
 class SpannerMetadataProvider {
   private final Map<Metadata.Key<String>, String> headers;
   private final Key<String> resourceHeaderKey;

@@ -17,8 +17,6 @@
 package com.google.cloud.examples.logging.snippets;
 
 import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.FixedHeaderProvider;
-import com.google.api.gax.rpc.HeaderProvider;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Metric;
@@ -37,15 +35,7 @@ public class CreateAndListMetrics {
   public static void main(String... args) throws Exception {
     // Create a service object
     // Credentials are inferred from the environment
-
-
-    HeaderProvider headerProvider =
-        FixedHeaderProvider.create("user-agent", "my-client-name", "custom-header", "custom stuff");
-
-    LoggingOptions options =
-        LoggingOptions.newBuilder().setHeaderProvider(headerProvider).build();
-
-    try(Logging logging = options.getService()) {
+    try(Logging logging = LoggingOptions.getDefaultInstance().getService()) {
 
       // Create a metric
       MetricInfo metricInfo = MetricInfo.newBuilder("test-metric", "severity >= ERROR")

@@ -28,6 +28,7 @@ import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.core.ApiClock;
+import com.google.api.core.BetaApi;
 import com.google.api.core.CurrentMillisClock;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.GaxProperties;
@@ -246,6 +247,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
      * @param headerProvider the header provider
      * @return the builder
      */
+    @BetaApi
     public B setHeaderProvider(HeaderProvider headerProvider) {
       this.headerProvider = headerProvider;
       return self();

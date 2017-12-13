@@ -105,7 +105,8 @@ public class GrpcLoggingRpc implements LoggingRpc {
             .setBackgroundResources(Collections.<BackgroundResource>singletonList(transportChannel))
             .build();
       } else {
-        LoggingSettings.Builder settingsBuilder = LoggingSettings.newBuilder();
+        LoggingSettingsBuilder settingsBuilder =
+            new LoggingSettingsBuilder(LoggingSettings.newBuilder().build());
 
         settingsBuilder.setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options));
         settingsBuilder.setTransportChannelProvider(
@@ -119,7 +120,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
                     GaxProperties.getLibraryVersion(options.getClass()))
                 .build();
         HeaderProvider headerProvider = options.getMergedHeaderProvider(internalHeaderProvider);
-        settingsBuilder.setHeaderProvider(headerProvider);
+        settingsBuilder.setInternalHeaderProvider(headerProvider);
 
         clientContext = ClientContext.create(settingsBuilder.build());
       }
@@ -254,5 +255,18 @@ public class GrpcLoggingRpc implements LoggingRpc {
       resource.close();
     }
     executorFactory.release(executor);
+  }
+
+  // This class is needed solely to get access to protected method setInternalHeaderProvider()
+  private static class LoggingSettingsBuilder extends LoggingSettings.Builder {
+    private LoggingSettingsBuilder(LoggingSettings settings) {
+      super(settings);
+    }
+
+    @Override
+    protected LoggingSettings.Builder setInternalHeaderProvider(
+        HeaderProvider internalHeaderProvider) {
+      return super.setInternalHeaderProvider(internalHeaderProvider);
+    }
   }
 }

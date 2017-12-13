@@ -27,9 +27,9 @@ public class SpannerMetadataProviderTest {
   @Test
   public void testGetHeadersAsMetadata() {
     Map<String, String> headers = ImmutableMap.of("header1", "value1", "header2", "value2");
-    SpannerMetadataProvider headerProvider = SpannerMetadataProvider.create(headers, "header3");
+    SpannerMetadataProvider metadataProvider = SpannerMetadataProvider.create(headers, "header3");
 
-    Metadata metadata = headerProvider.newMetadata(null, "stuff");
+    Metadata metadata = metadataProvider.newMetadata(null, "stuff");
     assertEquals(headers.size() + 1, metadata.keys().size());
     assertEquals(
         headers.get("header1"), metadata.get(Key.of("header1", Metadata.ASCII_STRING_MARSHALLER)));
@@ -40,31 +40,31 @@ public class SpannerMetadataProviderTest {
 
   @Test
   public void testGetResourceHeaderValue() {
-    SpannerMetadataProvider headerProvider =
+    SpannerMetadataProvider metadataProvider =
         SpannerMetadataProvider.create(ImmutableMap.<String, String>of(), "header3");
 
-    assertEquals("projects/p", getResourceHeaderValue(headerProvider, "garbage"));
-    assertEquals("projects/p", getResourceHeaderValue(headerProvider, "projects/p"));
+    assertEquals("projects/p", getResourceHeaderValue(metadataProvider, "garbage"));
+    assertEquals("projects/p", getResourceHeaderValue(metadataProvider, "projects/p"));
     assertEquals(
-        "projects/p/instances/i", getResourceHeaderValue(headerProvider, "projects/p/instances/i"));
-    assertEquals(
-        "projects/p/instances/i/databases/d",
-        getResourceHeaderValue(headerProvider, "projects/p/instances/i/databases/d"));
+        "projects/p/instances/i", getResourceHeaderValue(metadataProvider, "projects/p/instances/i"));
     assertEquals(
         "projects/p/instances/i/databases/d",
-        getResourceHeaderValue(headerProvider, "projects/p/instances/i/databases/d/sessions/s"));
+        getResourceHeaderValue(metadataProvider, "projects/p/instances/i/databases/d"));
+    assertEquals(
+        "projects/p/instances/i/databases/d",
+        getResourceHeaderValue(metadataProvider, "projects/p/instances/i/databases/d/sessions/s"));
     assertEquals(
         "projects/p/instances/i",
-        getResourceHeaderValue(headerProvider, "projects/p/instances/i/operations/op"));
+        getResourceHeaderValue(metadataProvider, "projects/p/instances/i/operations/op"));
     assertEquals(
         "projects/p/instances/i/databases/d",
-        getResourceHeaderValue(headerProvider, "projects/p/instances/i/databases/d/operations/op"));
+        getResourceHeaderValue(metadataProvider, "projects/p/instances/i/databases/d/operations/op"));
     assertEquals(
         "projects/p/instances/i",
-        getResourceHeaderValue(headerProvider, "projects/p/instances/i/operations"));
+        getResourceHeaderValue(metadataProvider, "projects/p/instances/i/operations"));
     assertEquals(
         "projects/p/instances/i/databases/d",
-        getResourceHeaderValue(headerProvider, "projects/p/instances/i/databases/d/operations"));
+        getResourceHeaderValue(metadataProvider, "projects/p/instances/i/databases/d/operations"));
   }
 
   private String getResourceHeaderValue(

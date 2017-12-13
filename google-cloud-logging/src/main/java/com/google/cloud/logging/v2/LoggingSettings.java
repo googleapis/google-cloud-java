@@ -533,11 +533,11 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
-    private Builder() {
+    protected Builder() {
       this((ClientContext) null);
     }
 
-    private Builder(ClientContext clientContext) {
+    protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       deleteLogSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -617,7 +617,7 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
       return builder;
     }
 
-    private Builder(LoggingSettings settings) {
+    protected Builder(LoggingSettings settings) {
       super(settings);
 
       deleteLogSettings = settings.deleteLogSettings.toBuilder();
