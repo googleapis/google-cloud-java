@@ -106,7 +106,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   private final String projectId;
   private final String projectName;
   private final CallCredentials credentials;
-  private final SpannerHeaderProvider headerProvider;
+  private final SpannerMetadataProvider metadataProvider;
 
   public GrpcSpannerRpc(SpannerOptions options) {
     this.projectId = options.getProjectId();
@@ -136,7 +136,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
             .build();
 
     HeaderProvider mergedHeaderProvider = options.getMergedHeaderProvider(internalHeaderProvider);
-    this.headerProvider = SpannerHeaderProvider.create(mergedHeaderProvider.getHeaders(),
+    this.metadataProvider = SpannerMetadataProvider.create(mergedHeaderProvider.getHeaders(),
         internalHeaderProviderBuilder.getResourceHeaderKey());
   }
 
@@ -427,7 +427,8 @@ public class GrpcSpannerRpc implements SpannerRpc {
             : CallOptions.DEFAULT.withCallCredentials(credentials);
     final ClientCall<ReqT, RespT> call =
         new MetadataClientCall<>(
-            pick(channelHint, channels).newCall(method, callOptions), newMetadata(resource));
+            pick(channelHint, channels).newCall(method, callOptions),
+            metadataProvider.newMetadata(resource, projectName()));
     return ClientCalls.futureUnaryCall(call, request);
   }
 
@@ -445,7 +446,8 @@ public class GrpcSpannerRpc implements SpannerRpc {
             : CallOptions.DEFAULT.withCallCredentials(credentials);
     final ClientCall<T, PartialResultSet> call =
         new MetadataClientCall<>(
-            pick(channelHint, channels).newCall(method, callOptions), newMetadata(resource));
+            pick(channelHint, channels).newCall(method, callOptions),
+            metadataProvider.newMetadata(resource, projectName()));
     ResultSetStreamObserver<T> observer = new ResultSetStreamObserver<T>(consumer, context, call);
     ClientCalls.asyncServerStreamingCall(call, request, observer);
     return observer;
@@ -466,21 +468,6 @@ public class GrpcSpannerRpc implements SpannerRpc {
       metadata.merge(extraMetadata);
       super.start(responseListener, metadata);
     }
-  }
-
-  private Metadata newMetadata(String resource) {
-    Metadata metadata = new Metadata();
-
-    Map<Metadata.Key<String>, String> headers = headerProvider.getHeadersAsMetadata();
-    for (Map.Entry<Metadata.Key<String>, String> header : headers.entrySet()) {
-      metadata.put(header.getKey(), header.getValue());
-    }
-    headers = headerProvider.getResourceHeadersAsMetadata(resource, projectName());
-    for (Map.Entry<Metadata.Key<String>, String> header : headers.entrySet()) {
-      metadata.put(header.getKey(), header.getValue());
-    }
-
-    return metadata;
   }
 
   private <T> T pick(@Nullable Long hint, List<T> elements) {

@@ -15,7 +15,6 @@
  */
 package com.google.cloud.spanner.spi.v1;
 
-import com.google.api.gax.rpc.HeaderProvider;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
@@ -23,29 +22,34 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-class SpannerHeaderProvider implements HeaderProvider {
-  private final Map<String, String> headers;
-  private final Map<Metadata.Key<String>, String> headersAsMetadata;
-  private final String resourceHeaderKey;
+class SpannerMetadataProvider {
+  private final Map<Metadata.Key<String>, String> headers;
+  private final Key<String> resourceHeaderKey;
 
   private static final Pattern[] RESOURCE_TOKEN_PATTERNS = {
     Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*/databases/[^/]*)(.*)?"),
     Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*)(.*)?")
   };
 
-  private SpannerHeaderProvider(Map<String, String> headers, String resourceHeaderKey) {
-    this.headers = ImmutableMap.copyOf(headers);
-    this.resourceHeaderKey = resourceHeaderKey;
-    this.headersAsMetadata = constructHeadersAsMetadata(this.headers);
+  private SpannerMetadataProvider(Map<String, String> headers, String resourceHeaderKey) {
+    this.resourceHeaderKey = Key.of(resourceHeaderKey, Metadata.ASCII_STRING_MARSHALLER);
+    this.headers = constructHeadersAsMetadata(headers);
   }
 
-  static SpannerHeaderProvider create(Map<String, String> headers, String resourceHeaderKey) {
-    return new SpannerHeaderProvider(headers, resourceHeaderKey);
+  static SpannerMetadataProvider create(Map<String, String> headers, String resourceHeaderKey) {
+    return new SpannerMetadataProvider(headers, resourceHeaderKey);
   }
 
-  @Override
-  public Map<String, String> getHeaders() {
-    return headers;
+  Metadata newMetadata(String resourceTokenTemplate, String defaultResourceToken) {
+    Metadata metadata = new Metadata();
+    for (Map.Entry<Metadata.Key<String>, String> header : headers.entrySet()) {
+      metadata.put(header.getKey(), header.getValue());
+    }
+
+    metadata.put(
+        resourceHeaderKey, getResourceHeaderValue(resourceTokenTemplate, defaultResourceToken));
+
+    return metadata;
   }
 
   private Map<Metadata.Key<String>, String> constructHeadersAsMetadata(
@@ -59,23 +63,18 @@ class SpannerHeaderProvider implements HeaderProvider {
     return headersAsMetadataBuilder.build();
   }
 
-  Map<Key<String>, String> getHeadersAsMetadata() {
-    return headersAsMetadata;
-  }
-
-  Map<Key<String>, String> getResourceHeadersAsMetadata(
-      String resourceTokenTemplate, String defaultResourceToken) {
-
+  private String getResourceHeaderValue(String resourceTokenTemplate, String defaultResourceToken) {
     String resourceToken = defaultResourceToken;
-    for (Pattern pattern : RESOURCE_TOKEN_PATTERNS) {
-      Matcher m = pattern.matcher(resourceTokenTemplate);
-      if (m.matches()) {
-        resourceToken = m.group("headerValue");
-        break;
+    if (resourceTokenTemplate != null) {
+      for (Pattern pattern : RESOURCE_TOKEN_PATTERNS) {
+        Matcher m = pattern.matcher(resourceTokenTemplate);
+        if (m.matches()) {
+          resourceToken = m.group("headerValue");
+          break;
+        }
       }
     }
 
-    return ImmutableMap.of(
-        Key.of(resourceHeaderKey, Metadata.ASCII_STRING_MARSHALLER), resourceToken);
+    return resourceToken;
   }
 }
