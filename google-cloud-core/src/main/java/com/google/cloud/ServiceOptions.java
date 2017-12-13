@@ -561,9 +561,9 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   public String getApplicationName() {
     String libraryVersion = getLibraryVersion();
 
-    // We have to do it, since underlying layers often do not appreciate User-Agent provided as a
-    // normal header and override it or treat setting "application name" as the only way to append
-    // something to User-Agent header.
+    // We have to do the following since, since underlying layers often do not appreciate User-Agent
+    // provided as a normal header and override it or treat setting "application name" as the only
+    // way to append something to User-Agent header.
 
     StringBuilder sb = new StringBuilder();
     String customUserAgentValue = getUserAgent();
