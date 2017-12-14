@@ -24,41 +24,33 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
 import java.io.Serializable;
 import java.util.Objects;
+import com.google.common.collect.Iterators;
+import javax.annotation.Nullable;
 
-public class QueryResult implements Page<FieldValueList>, Serializable {
+public class TableResult implements Page<FieldValueList>, Serializable {
 
   private static final long serialVersionUID = -4831062717210349819L;
 
-  private final Schema schema;
+  @Nullable private final Schema schema;
   private final long totalRows;
   private final Page<FieldValueList> pageNoSchema;
-  private final transient Function<FieldValueList, FieldValueList> addSchemaFunc;
 
-  QueryResult(final Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
-    // TODO(pongad): read totalRows directly from listTableData.
-    this.schema = checkNotNull(schema);
+  TableResult(final Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
+    this.schema = schema;
     this.totalRows = totalRows;
     this.pageNoSchema = checkNotNull(pageNoSchema);
-    this.addSchemaFunc =
-        new Function<FieldValueList, FieldValueList>() {
-          @Override
-          public FieldValueList apply(FieldValueList list) {
-            return list.withSchema(schema.getFields());
-          }
-        };
   }
 
-  /**
-   * Returns the schema of the results. This is present only when the query completes successfully.
-   */
+  /** Returns the schema of the results. Null if the schema is not supplied. */
   public Schema getSchema() {
     return schema;
   }
 
   /**
-   * Returns the total number of rows in the complete query result set, which can be more than the
-   * number of rows in the first page of results returned by {@link #getValues()}. Returns {@code 0}
-   * if the query was a dry run.
+   * Returns the total number of rows in the complete result set, which can be more than the number
+   * of rows in the first page of results returned by {@link #getValues()}.
+   *
+   * <p>If this instance is a result of a dry-run query, returns {@code 0}.
    */
   public long getTotalRows() {
     return totalRows;
@@ -75,18 +67,32 @@ public class QueryResult implements Page<FieldValueList>, Serializable {
   }
 
   @Override
-  public QueryResult getNextPage() {
-    return new QueryResult(schema, totalRows, pageNoSchema.getNextPage());
+  public TableResult getNextPage() {
+    return new TableResult(schema, totalRows, pageNoSchema.getNextPage());
   }
 
   @Override
   public Iterable<FieldValueList> iterateAll() {
-    return Iterables.transform(pageNoSchema.iterateAll(), addSchemaFunc);
+    return addSchema(pageNoSchema.iterateAll());
   }
 
   @Override
   public Iterable<FieldValueList> getValues() {
-    return Iterables.transform(pageNoSchema.getValues(), addSchemaFunc);
+    return addSchema(pageNoSchema.getValues());
+  }
+
+  private Iterable<FieldValueList> addSchema(Iterable<FieldValueList> iter) {
+    if (schema == null) {
+      return iter;
+    }
+    return Iterables.transform(
+        pageNoSchema.getValues(),
+        new Function<FieldValueList, FieldValueList>() {
+          @Override
+          public FieldValueList apply(FieldValueList list) {
+            return list.withSchema(schema.getFields());
+          }
+        });
   }
 
   @Override
@@ -101,7 +107,7 @@ public class QueryResult implements Page<FieldValueList>, Serializable {
 
   @Override
   public final int hashCode() {
-    return Objects.hash(super.hashCode(), schema, totalRows);
+    return Objects.hash(pageNoSchema, schema, totalRows);
   }
 
   @Override
@@ -109,12 +115,12 @@ public class QueryResult implements Page<FieldValueList>, Serializable {
     if (obj == this) {
       return true;
     }
-    if (obj == null || !obj.getClass().equals(QueryResult.class)) {
+    if (obj == null || !obj.getClass().equals(TableResult.class)) {
       return false;
     }
-    QueryResult response = (QueryResult) obj;
+    TableResult response = (TableResult) obj;
     return Objects.equals(getNextPageToken(), response.getNextPageToken())
-        && Objects.equals(getValues(), response.getValues())
+        && Iterators.elementsEqual(getValues().iterator(), response.getValues().iterator())
         && Objects.equals(schema, response.schema)
         && totalRows == response.totalRows;
   }

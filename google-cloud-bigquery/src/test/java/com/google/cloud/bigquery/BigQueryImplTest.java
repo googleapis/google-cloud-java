@@ -32,6 +32,7 @@ import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.TableCell;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
+import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
@@ -163,12 +164,14 @@ public class BigQueryImplTest {
       ImmutableList.of(
           FieldValueList.of(ImmutableList.of(FieldValue.fromPb(CELL_PB1))),
           FieldValueList.of(ImmutableList.of(FieldValue.fromPb(CELL_PB2))));
-  private static final Tuple<String, Iterable<TableRow>> TABLE_DATA_PB =
-      Tuple.<String, Iterable<TableRow>>of(
-          CURSOR,
-          ImmutableList.of(
-              new TableRow().setF(ImmutableList.of(new TableCell().setV("Value1"))),
-              new TableRow().setF(ImmutableList.of(new TableCell().setV("Value2")))));
+  private static final TableDataList TABLE_DATA_PB =
+      new TableDataList()
+          .setPageToken(CURSOR)
+          .setTotalRows(3L)
+          .setRows(
+              ImmutableList.of(
+                  new TableRow().setF(ImmutableList.of(new TableCell().setV("Value1"))),
+                  new TableRow().setF(ImmutableList.of(new TableCell().setV("Value2")))));
 
   // Empty BigQueryRpc options
   private static final Map<BigQueryRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -1139,12 +1142,16 @@ public class BigQueryImplTest {
     EasyMock.expect(
             bigqueryRpcMock.listTableData(
                 PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap()))
-        .andReturn(Tuple.<String, Iterable<TableRow>>of("", ImmutableList.of(TABLE_ROW)));
+        .andReturn(
+            new TableDataList()
+                .setPageToken("")
+                .setRows(ImmutableList.of(TABLE_ROW))
+                .setTotalRows(1L));
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     // TODO(pongad): pagesize = 42
-    QueryResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
     assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
     assertThat(result.getTotalRows()).isEqualTo(1);
     for (FieldValueList row : result.getValues()) {
@@ -1204,12 +1211,16 @@ public class BigQueryImplTest {
     EasyMock.expect(
             bigqueryRpcMock.listTableData(
                 PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap()))
-        .andReturn(Tuple.<String, Iterable<TableRow>>of("", ImmutableList.of(TABLE_ROW)));
+        .andReturn(
+            new TableDataList()
+                .setPageToken("")
+                .setRows(ImmutableList.of(TABLE_ROW))
+                .setTotalRows(1L));
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     // TODO(pongad): pagesize = 42
-    QueryResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
     assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
     assertThat(result.getTotalRows()).isEqualTo(1);
     for (FieldValueList row : result.getValues()) {

@@ -256,7 +256,7 @@ public class Job extends JobInfo {
    *
    * <pre>{@code
    * Job job = bigquery.create(queryJobInfo);
-   * QueryResult result = job.getQueryResults();
+   * TableResult result = job.getQueryResults();
    * for (FieldValueList row : result.iterateAll()) {
    *   // do something with the data
    * }
@@ -264,7 +264,7 @@ public class Job extends JobInfo {
    *
    * @throws BigQueryException upon failure
    */
-  public QueryResult getQueryResults(QueryResultsOption... options)
+  public TableResult getQueryResults(QueryResultsOption... options)
       throws InterruptedException, JobException {
     if (getConfiguration().getType() != Type.QUERY) {
       throw new UnsupportedOperationException(
@@ -278,8 +278,7 @@ public class Job extends JobInfo {
     if (response.getSchema() == null) {
       throw new JobException(getJobId(), response.getErrors());
     }
-    return new QueryResult(
-        response.getSchema(), response.getTotalRows(), bigquery.listTableData(table));
+    return bigquery.listTableData(table, response.getSchema());
   }
 
   private QueryResponse waitForQueryResults(

@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
+import com.google.cloud.PageImpl;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -193,14 +194,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final InsertAllResponse INSERT_ALL_RESPONSE = new InsertAllResponse(ERRORS_MAP);
   private static final FieldValue FIELD_VALUE =
       FieldValue.of(FieldValue.Attribute.PRIMITIVE, "value");
-  // TODO (pongad): test this once we make it serializable.
-  // private static final QueryResult QUERY_RESULT = QueryResult.newBuilder()
-  //     .setSchema(TABLE_SCHEMA)
-  //     .setTotalRows(1L)
-  //     .setCursor("cursor")
-  //     .setPageFetcher(null)
-  //     .setResults(ImmutableList.<FieldValueList>of())
-  //     .build();
+  private static final TableResult TABLE_RESULT = new TableResult(Schema.of(), 0L, new PageImpl(null, "", ImmutableList.of()));
   private static final BigQuery BIGQUERY =
       BigQueryOptions.newBuilder().setProjectId("p1").build().getService();
   private static final Dataset DATASET =
@@ -256,6 +250,7 @@ public class SerializationTest extends BaseSerializationTest {
       FIELD_VALUE,
       BIG_QUERY_EXCEPTION,
       TIME_PARTITIONING,
+      TABLE_RESULT,
       BigQuery.DatasetOption.fields(),
       BigQuery.DatasetDeleteOption.deleteContents(),
       BigQuery.DatasetListOption.all(),
