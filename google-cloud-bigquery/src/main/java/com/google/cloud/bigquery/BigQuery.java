@@ -896,9 +896,51 @@ public interface BigQuery extends Service<BigQueryOptions> {
    */
   TableResult listTableData(TableId tableId, TableDataListOption... options);
 
+  /**
+   * Lists the table's rows. If the {@code schema} is not {@code null}, it is available to the
+   * {@link FieldValueList} iterated over.
+   *
+   * <p>Example of listing table rows.
+   *
+   * <pre>{@code
+   * String datasetName = "my_dataset_name";
+   * String tableName = "my_table_name";
+   * Schema schema = ...;
+   * String field = "my_field";
+   * Page<FieldValueList> tableData =
+   *     bigquery.listTableData(datasetName, tableName, schema);
+   * for (FieldValueList row : tableData.iterateAll()) {
+   *   row.get(field)
+   * }
+   * }</pre>
+   *
+   * @throws BigQueryException upon failure
+   */
   TableResult listTableData(
       String datasetId, String tableId, Schema schema, TableDataListOption... options);
 
+  /**
+   * Lists the table's rows. If the {@code schema} is not {@code null}, it is available to the
+   * {@link FieldValueList} iterated over.
+   *
+   * <p>Example of listing table rows.
+   *
+   * <pre>{@code
+   * Schema schema =
+   *     Schema.of(
+   *         Field.of("word", LegacySQLTypeName.STRING),
+   *         Field.of("word_count", LegacySQLTypeName.STRING),
+   *         Field.of("corpus", LegacySQLTypeName.STRING),
+   *         Field.of("corpus_date", LegacySQLTypeName.STRING));
+   * Page<FieldValueList> page =
+   *     bigquery.listTableData(
+   *         TableId.of("bigquery-public-data", "samples", "shakespeare"), schema);
+   * FieldValueList row = page.getValues().iterator().next();
+   * System.out.println(row.get("word").getStringValue());
+   * }</pre>
+   *
+   * @throws BigQueryException upon failure
+   */
   TableResult listTableData(TableId tableId, Schema schema, TableDataListOption... options);
 
   /**

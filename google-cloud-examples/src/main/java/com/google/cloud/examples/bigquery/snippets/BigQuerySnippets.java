@@ -465,6 +465,43 @@ public class BigQuerySnippets {
     return tableData;
   }
 
+  /** Example of listing table rows with schema. */
+  // [TARGET listTableData(String, String, Schema, TableDataListOption...)]
+  // [VARIABLE "my_dataset_name"]
+  // [VARIABLE "my_table_name"]
+  // [VARIABLE ...]
+  // [VARIABLE "field"]
+  public Page<FieldValueList> listTableDataSchema(
+      String datasetName, String tableName, Schema schema, String field) {
+    // [START listTableDataSchema]
+    Page<FieldValueList> tableData =
+        bigquery.listTableData(datasetName, tableName, schema, TableDataListOption.pageSize(100));
+    for (FieldValueList row : tableData.iterateAll()) {
+      row.get(field);
+    }
+    // [END listTableDataSchema]
+    return tableData;
+  }
+
+  /** Example of listing table rows with schema. */
+  // [TARGET listTableData(TableId, Schema, TableDataListOption...)]
+  public FieldValueList listTableDataSchemaId() {
+    // [START listTableDataSchemaId]
+    Schema schema =
+        Schema.of(
+            Field.of("word", LegacySQLTypeName.STRING),
+            Field.of("word_count", LegacySQLTypeName.STRING),
+            Field.of("corpus", LegacySQLTypeName.STRING),
+            Field.of("corpus_date", LegacySQLTypeName.STRING));
+    Page<FieldValueList> page =
+        bigquery.listTableData(
+            TableId.of("bigquery-public-data", "samples", "shakespeare"), schema);
+    FieldValueList row = page.getValues().iterator().next();
+    System.out.println(row.get("word").getStringValue());
+    // [END listTableDataSchemaId]
+    return row;
+  }
+
   /**
    * Example of creating a query job.
    */
