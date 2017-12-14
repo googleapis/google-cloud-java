@@ -16,7 +16,6 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-core-http</site.installationModule>
-    <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
     <dependency>
@@ -94,6 +93,10 @@
           <groupId>com.google.guava</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-httpjson</artifactId>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
