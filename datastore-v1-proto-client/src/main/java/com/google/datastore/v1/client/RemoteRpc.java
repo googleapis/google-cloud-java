@@ -182,7 +182,7 @@ class RemoteRpc {
         }
         httpResponse = httpRequest.execute();
         if (!httpResponse.isSuccessStatusCode()) {
-          try (InputStream content = httpResponse.getContent()) {
+          try (InputStream content = GzipFixingInputStream.maybeWrap(httpResponse.getContent())) {
             throw makeException(url, methodName, content,
                 httpResponse.getContentType(), httpResponse.getContentCharset(), null,
                 httpResponse.getStatusCode());
