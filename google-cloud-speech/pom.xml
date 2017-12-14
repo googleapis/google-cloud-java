@@ -16,7 +16,6 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-speech</site.installationModule>
-    <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
     <dependency>
@@ -107,35 +106,7 @@
     </profile>
   </profiles>
   <build>
-    <resources>
-      <resource>
-        <directory>./..</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>project.properties</include>
-        </includes>
-      </resource>
-    </resources>
     <plugins>
-       <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-         <version>1.4</version>
-         <executions>
-          <execution>
-            <phase>process-resources</phase>
-            <configuration>
-               <tasks>
-                 <copy file="${project.build.outputDirectory}/project.properties"
-                   toFile="${project.build.outputDirectory}/com/google/cloud/speech/project.properties"
-                   overwrite="true" />
-              </tasks>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>

@@ -19,7 +19,6 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-firestore</site.installationModule>
-    <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
     <dependency>
@@ -99,51 +98,7 @@
     </profile>
   </profiles>
   <build>
-    <resources>
-      <resource>
-        <directory>./..</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>project.properties</include>
-        </includes>
-      </resource>
-    </resources>
     <plugins>
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.4</version>
-        <executions>
-          <execution>
-            <phase>process-resources</phase>
-            <configuration>
-               <tasks>
-                 <copy file="${project.build.outputDirectory}/project.properties"
-                   toFile="${project.build.outputDirectory}/com/google/cloud/firestore/project.properties"
-                   overwrite="true" />
-              </tasks>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>properties-maven-plugin</artifactId>
-        <version>1.0-alpha-2</version>
-        <executions>
-          <execution>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>write-project-properties</goal>
-            </goals>
-            <configuration>
-              <outputFile>${project.build.outputDirectory}/project.properties</outputFile>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>

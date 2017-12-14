@@ -22,12 +22,9 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.Credentials;
@@ -38,7 +35,6 @@ import io.grpc.internal.SharedResourceHolder;
 import io.grpc.internal.SharedResourceHolder.Resource;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.Locale;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;
@@ -75,26 +71,6 @@ public class GrpcTransportOptions implements TransportOptions {
           instance.shutdown();
         }
       };
-
-  /**
-   * Returns a string value for x-goog-api-client HTTP header. The header is used to report version
-   * of the client and its protocol-specific dependencies.
-   *
-   * For internal use.
-   *
-   * @param libraryVersion version of the google-cloud-java library
-   * @return value of x-goog-api-client HTTP header, which should be provided with each request
-   */
-  @InternalApi
-  public String getXGoogApiClientHeader(String libraryVersion) {
-    return String.format(Locale.US,
-        "gl-java/%s %s/%s gax/%s grpc/%s",
-        firstNonNull(Runtime.class.getPackage().getImplementationVersion(), ""),
-        ServiceOptions.getGoogApiClientLibName(),
-        libraryVersion,
-        GaxProperties.getGaxVersion(),
-        GaxGrpcProperties.getGrpcVersion());
-  }
 
   /**
    * An interface for {@link ExecutorService} factories. Implementations of this interface can be
@@ -195,14 +171,6 @@ public class GrpcTransportOptions implements TransportOptions {
   public static TransportChannelProvider setUpChannelProvider(
       InstantiatingGrpcChannelProvider.Builder providerBuilder, ServiceOptions<?, ?> serviceOptions) {
     providerBuilder.setEndpoint(serviceOptions.getHost());
-    return providerBuilder.build();
-  }
-
-  @BetaApi
-  public static ApiClientHeaderProvider setUpHeaderProvider(
-      ApiClientHeaderProvider.Builder providerBuilder, ServiceOptions<?, ?> serviceOptions) {
-    providerBuilder.setClientLibHeader(ServiceOptions.getGoogApiClientLibName(),
-        firstNonNull(serviceOptions.getLibraryVersion(), ""));
     return providerBuilder.build();
   }
 

@@ -16,7 +16,6 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquery</site.installationModule>
-    <artifact.version>${project.version}</artifact.version>
   </properties>
   <dependencies>
     <dependency>
@@ -71,15 +70,6 @@
     </dependency>
   </dependencies>
   <build>
-    <resources>
-      <resource>
-        <directory>./..</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>project.properties</include>
-        </includes>
-      </resource>
-    </resources>
     <plugins>
       <plugin>
         <!-- Allow script to run, so we can run benchmarks. -->
@@ -89,25 +79,6 @@
           <cleanupDaemonThreads>false</cleanupDaemonThreads>
           <skip>false</skip>
         </configuration>
-      </plugin>
-       <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-         <version>1.4</version>
-         <executions>
-          <execution>
-            <phase>process-resources</phase>
-            <configuration>
-               <tasks>
-                 <copy file="${project.build.outputDirectory}/project.properties"
-                   toFile="${project.build.outputDirectory}/com/google/cloud/bigquery/project.properties"
-                   overwrite="true" />
-              </tasks>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
