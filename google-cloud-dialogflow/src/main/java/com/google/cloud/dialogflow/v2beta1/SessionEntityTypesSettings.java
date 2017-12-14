@@ -23,7 +23,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.GrpcClientHeaderProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
@@ -172,9 +172,11 @@ public class SessionEntityTypesSettings extends ClientSettings<SessionEntityType
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return GrpcClientHeaderProvider.newBuilder()
+    return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
-            "gapic", GaxProperties.getLibraryVersion(SessionEntityTypesSettings.class));
+            "gapic", GaxProperties.getLibraryVersion(SessionEntityTypesSettings.class))
+        .setTransportToken(
+            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
   /** Returns a new builder for this class. */

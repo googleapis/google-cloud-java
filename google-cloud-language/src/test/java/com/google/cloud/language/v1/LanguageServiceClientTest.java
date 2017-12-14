@@ -16,7 +16,7 @@
 package com.google.cloud.language.v1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcClientHeaderProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
@@ -92,9 +92,9 @@ public class LanguageServiceClientTest {
 
     Assert.assertEquals(document, actualRequest.getDocument());
     Assert.assertTrue(
-        channelProvider.validateSentHeader(
+        channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GrpcClientHeaderProvider.getDefaultApiClientHeaderPattern()));
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -134,9 +134,9 @@ public class LanguageServiceClientTest {
     Assert.assertEquals(document, actualRequest.getDocument());
     Assert.assertEquals(encodingType, actualRequest.getEncodingType());
     Assert.assertTrue(
-        channelProvider.validateSentHeader(
+        channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GrpcClientHeaderProvider.getDefaultApiClientHeaderPattern()));
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -179,9 +179,9 @@ public class LanguageServiceClientTest {
     Assert.assertEquals(document, actualRequest.getDocument());
     Assert.assertEquals(encodingType, actualRequest.getEncodingType());
     Assert.assertTrue(
-        channelProvider.validateSentHeader(
+        channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GrpcClientHeaderProvider.getDefaultApiClientHeaderPattern()));
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -222,9 +222,9 @@ public class LanguageServiceClientTest {
     Assert.assertEquals(document, actualRequest.getDocument());
     Assert.assertEquals(encodingType, actualRequest.getEncodingType());
     Assert.assertTrue(
-        channelProvider.validateSentHeader(
+        channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GrpcClientHeaderProvider.getDefaultApiClientHeaderPattern()));
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -261,9 +261,9 @@ public class LanguageServiceClientTest {
 
     Assert.assertEquals(document, actualRequest.getDocument());
     Assert.assertTrue(
-        channelProvider.validateSentHeader(
+        channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GrpcClientHeaderProvider.getDefaultApiClientHeaderPattern()));
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -305,9 +305,9 @@ public class LanguageServiceClientTest {
     Assert.assertEquals(features, actualRequest.getFeatures());
     Assert.assertEquals(encodingType, actualRequest.getEncodingType());
     Assert.assertTrue(
-        channelProvider.validateSentHeader(
+        channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GrpcClientHeaderProvider.getDefaultApiClientHeaderPattern()));
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

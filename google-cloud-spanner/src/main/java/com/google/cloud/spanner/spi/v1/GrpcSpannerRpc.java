@@ -19,7 +19,7 @@ package com.google.cloud.spanner.spi.v1;
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
 import com.google.api.gax.core.GaxProperties;
-import com.google.api.gax.grpc.GrpcClientHeaderProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.pathtemplate.PathTemplate;
@@ -126,18 +126,22 @@ public class GrpcSpannerRpc implements SpannerRpc {
     }
     this.channels = channelsBuilder.build();
 
-    ApiClientHeaderProvider.Builder internalHeaderProviderBuilder
-        = GrpcClientHeaderProvider.newBuilder();
+    ApiClientHeaderProvider.Builder internalHeaderProviderBuilder =
+        ApiClientHeaderProvider.newBuilder();
     ApiClientHeaderProvider internalHeaderProvider =
         internalHeaderProviderBuilder
             .setClientLibToken(
                 ServiceOptions.getGoogApiClientLibName(),
                 GaxProperties.getLibraryVersion(options.getClass()))
+            .setTransportToken(
+                GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion())
             .build();
 
     HeaderProvider mergedHeaderProvider = options.getMergedHeaderProvider(internalHeaderProvider);
-    this.metadataProvider = SpannerMetadataProvider.create(mergedHeaderProvider.getHeaders(),
-        internalHeaderProviderBuilder.getResourceHeaderKey());
+    this.metadataProvider =
+        SpannerMetadataProvider.create(
+            mergedHeaderProvider.getHeaders(),
+            internalHeaderProviderBuilder.getResourceHeaderKey());
   }
 
   private static CallCredentials callCredentials(SpannerOptions options) {
@@ -327,8 +331,8 @@ public class GrpcSpannerRpc implements SpannerRpc {
     CreateSessionRequest.Builder request =
         CreateSessionRequest.newBuilder().setDatabase(databaseName);
     if (labels != null && !labels.isEmpty()) {
-    	  Session.Builder session = Session.newBuilder().putAllLabels(labels);
-    	  request.setSession(session);
+      Session.Builder session = Session.newBuilder().putAllLabels(labels);
+      request.setSession(session);
     }
     return get(
         doUnaryCall(
