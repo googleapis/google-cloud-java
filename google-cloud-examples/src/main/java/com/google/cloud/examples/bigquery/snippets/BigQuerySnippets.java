@@ -438,6 +438,8 @@ public class BigQuerySnippets {
   // [VARIABLE "my_table_name"]
   public Page<FieldValueList> listTableData(String datasetName, String tableName) {
     // [START listTableData]
+    // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+    // simply omit the option.
     Page<FieldValueList> tableData =
         bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
     for (FieldValueList row : tableData.iterateAll()) {
@@ -456,6 +458,8 @@ public class BigQuerySnippets {
   public Page<FieldValueList> listTableDataFromId(String datasetName, String tableName) {
     // [START listTableDataFromId]
     TableId tableIdObject = TableId.of(datasetName, tableName);
+    // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+    // simply omit the option.
     Page<FieldValueList> tableData =
         bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
     for (FieldValueList row : tableData.iterateAll()) {
@@ -475,7 +479,7 @@ public class BigQuerySnippets {
       String datasetName, String tableName, Schema schema, String field) {
     // [START listTableDataSchema]
     Page<FieldValueList> tableData =
-        bigquery.listTableData(datasetName, tableName, schema, TableDataListOption.pageSize(100));
+        bigquery.listTableData(datasetName, tableName, schema);
     for (FieldValueList row : tableData.iterateAll()) {
       row.get(field);
     }

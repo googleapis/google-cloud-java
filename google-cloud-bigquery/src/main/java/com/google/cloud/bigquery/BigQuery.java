@@ -865,6 +865,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
+   * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+   * // simply omit the option.
    * TableResult tableData =
    *     bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
    * for (FieldValueList row : tableData.iterateAll()) {
@@ -885,6 +887,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * TableId tableIdObject = TableId.of(datasetName, tableName);
+   * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+   * // simply omit the option.
    * TableResult tableData =
    *     bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
    * for (FieldValueList row : rowIterator.hasNext()) {
