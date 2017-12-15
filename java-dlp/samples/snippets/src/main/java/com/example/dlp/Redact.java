@@ -78,9 +78,13 @@ public class Redact {
         }
       }
 
-      RedactContentResponse contentResponse =
-          dlpClient.redactContent(
-              inspectConfig, Collections.singletonList(contentItem), replaceConfigs);
+      RedactContentRequest request = RedactContentRequest.newBuilder()
+          .setInspectConfig(inspectConfig)
+          .addAllItems(Collections.singletonList(contentItem))
+          .addAllReplaceConfigs(replaceConfigs)
+          .build();
+
+      RedactContentResponse contentResponse = dlpClient.redactContent(request);
       for (ContentItem responseItem : contentResponse.getItemsList()) {
         // print out string with redacted content
         System.out.println(responseItem.getData().toStringUtf8());
