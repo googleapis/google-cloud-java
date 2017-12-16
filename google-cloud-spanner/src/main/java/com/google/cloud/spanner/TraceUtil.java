@@ -19,21 +19,18 @@ package com.google.cloud.spanner;
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableMap;
 import com.google.spanner.v1.Transaction;
-
 import io.opencensus.contrib.grpc.util.StatusConverter;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Status;
-
 import java.util.Map;
 
-/**
- * Utility methods for tracing.
- */
+/** Utility methods for tracing. */
 class TraceUtil {
 
   static Map<String, AttributeValue> getTransactionAnnotations(Transaction t) {
-    return ImmutableMap.of("Id",
+    return ImmutableMap.of(
+        "Id",
         AttributeValue.stringAttributeValue(t.getId().toStringUtf8()),
         "Timestamp",
         AttributeValue.stringAttributeValue(Timestamp.fromProto(t.getReadTimestamp()).toString()));
@@ -41,15 +38,16 @@ class TraceUtil {
 
   static ImmutableMap<String, AttributeValue> getExceptionAnnotations(RuntimeException e) {
     if (e instanceof SpannerException) {
-    return ImmutableMap.of("Status",
-        AttributeValue.stringAttributeValue(((SpannerException) e).getErrorCode().toString()));
+      return ImmutableMap.of(
+          "Status",
+          AttributeValue.stringAttributeValue(((SpannerException) e).getErrorCode().toString()));
     }
     return ImmutableMap.of();
   }
 
   static ImmutableMap<String, AttributeValue> getExceptionAnnotations(SpannerException e) {
-    return ImmutableMap.of("Status",
-        AttributeValue.stringAttributeValue(e.getErrorCode().toString()));
+    return ImmutableMap.of(
+        "Status", AttributeValue.stringAttributeValue(e.getErrorCode().toString()));
   }
 
   static void endSpanWithFailure(Span span, Exception e) {
@@ -58,13 +56,13 @@ class TraceUtil {
     } else {
       span.setStatus(Status.INTERNAL.withDescription(e.getMessage()));
       span.end();
-
     }
   }
 
   static void endSpanWithFailure(Span span, SpannerException e) {
-    span.setStatus(StatusConverter.fromGrpcStatus(e.getErrorCode().getGrpcStatus())
-          .withDescription(e.getMessage()));
+    span.setStatus(
+        StatusConverter.fromGrpcStatus(e.getErrorCode().getGrpcStatus())
+            .withDescription(e.getMessage()));
     span.end();
   }
 }
