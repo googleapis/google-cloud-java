@@ -508,6 +508,8 @@ public class GrpcSpannerRpc implements SpannerRpc {
    * This is a one time setup for grpcz pages. This adds all of the methods to the Tracing
    * environment required to show a consistent set of methods relating to Cloud Bigtable on the
    * grpcz page.  If HBase artifacts are present, this will add tracing metadata for HBase methods.
+   *
+   * TODO: Remove this when we depend on gRPC 1.8
    */
   private static void setupTracingConfig() {
     List<String> descriptors = new ArrayList<>();
@@ -528,7 +530,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
       descriptors.add("Sent." + method.getFullMethodName().replace('/', '.'));
     }
   }
-  
+
   private static class ResultSetStreamObserver<T>
       implements ClientResponseObserver<T, PartialResultSet>, StreamingCall {
     private final ResultStreamConsumer consumer;

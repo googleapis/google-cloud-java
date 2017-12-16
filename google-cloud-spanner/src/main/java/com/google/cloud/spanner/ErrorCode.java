@@ -65,6 +65,10 @@ public enum ErrorCode {
     return this.code.value();
   }
 
+  Status getGrpcStatus() {
+    return this.code.toStatus();
+  }
+
   /**
    * Returns the error code represents by {@code name}, or {@code defaultValue} if {@code name} does
    * not map to a known code.

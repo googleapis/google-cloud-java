@@ -20,8 +20,8 @@ import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableMap;
 import com.google.spanner.v1.Transaction;
 
+import io.opencensus.contrib.grpc.util.StatusConverter;
 import io.opencensus.trace.AttributeValue;
-import io.opencensus.trace.EndSpanOptions;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Status;
 
@@ -31,14 +31,14 @@ import java.util.Map;
  * Utility methods for tracing.
  */
 class TraceUtil {
-  
+
   static Map<String, AttributeValue> getTransactionAnnotations(Transaction t) {
     return ImmutableMap.of("Id",
         AttributeValue.stringAttributeValue(t.getId().toStringUtf8()),
         "Timestamp",
         AttributeValue.stringAttributeValue(Timestamp.fromProto(t.getReadTimestamp()).toString()));
   }
-  
+
   static ImmutableMap<String, AttributeValue> getExceptionAnnotations(RuntimeException e) {
     if (e instanceof SpannerException) {
     return ImmutableMap.of("Status",
@@ -46,64 +46,25 @@ class TraceUtil {
     }
     return ImmutableMap.of();
   }
-  
+
   static ImmutableMap<String, AttributeValue> getExceptionAnnotations(SpannerException e) {
     return ImmutableMap.of("Status",
         AttributeValue.stringAttributeValue(e.getErrorCode().toString()));
   }
-  
+
   static void endSpanWithFailure(Span span, Exception e) {
     if (e instanceof SpannerException) {
-      endSpanWithFailure(span, (SpannerException) e); 
+      endSpanWithFailure(span, (SpannerException) e);
     } else {
-      span.end(EndSpanOptions.builder()
-          .setStatus(Status.INTERNAL.withDescription(e.getMessage()))
-          .build());
-    }
-  }
-  
-  static void endSpanWithFailure(Span span, SpannerException e) {
-    span.end(EndSpanOptions.builder()
-        .setStatus(getOpenCensusStatus(e.getErrorCode()).withDescription(e.getMessage()))
-        .build());
-  }
-  
-  private static Status getOpenCensusStatus(ErrorCode code) {
-    switch (code) {
-      case ABORTED:
-        return Status.ABORTED;
-      case ALREADY_EXISTS:
-        return Status.ALREADY_EXISTS;
-      case CANCELLED:
-        return Status.CANCELLED;
-      case DATA_LOSS:
-        return Status.DATA_LOSS;
-      case DEADLINE_EXCEEDED:
-        return Status.DEADLINE_EXCEEDED;
-      case FAILED_PRECONDITION:
-        return Status.FAILED_PRECONDITION;
-      case INTERNAL:
-        return Status.INTERNAL;
-      case INVALID_ARGUMENT:
-        return Status.INVALID_ARGUMENT;
-      case NOT_FOUND:
-        return Status.NOT_FOUND;
-      case OUT_OF_RANGE:
-        return Status.OUT_OF_RANGE;
-      case PERMISSION_DENIED:
-        return Status.PERMISSION_DENIED;
-      case RESOURCE_EXHAUSTED:
-        return Status.RESOURCE_EXHAUSTED;
-      case UNAUTHENTICATED:
-        return Status.UNAUTHENTICATED;
-      case UNAVAILABLE:
-        return Status.UNAVAILABLE;
-      case UNIMPLEMENTED:
-        return Status.UNIMPLEMENTED;
-      case UNKNOWN:
-      default:
-        return Status.UNKNOWN;
+      span.setStatus(Status.INTERNAL.withDescription(e.getMessage()))
+      span.end()
+
     }
   }
 
+  static void endSpanWithFailure(Span span, SpannerException e) {
+    span.setStatus(StatusConverter.fromGrpcStatus(e.getErrorCode().getGrpcStatus())
+          .withDescription(e.getMessage()));
+    span.end()
+  }
 }

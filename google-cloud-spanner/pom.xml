@@ -185,7 +185,12 @@
     <dependency>
       <groupId>io.opencensus</groupId>
       <artifactId>opencensus-api</artifactId>
-      <version>0.6.0</version>
+      <version>0.10.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.opencensus</groupId>
+      <artifactId>opencensus-contrib-grpc-util</artifactId>
+      <version>0.10.0</version>
     </dependency>
   </dependencies>
 </project>
