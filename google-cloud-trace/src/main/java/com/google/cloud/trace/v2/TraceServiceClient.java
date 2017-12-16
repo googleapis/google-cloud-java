@@ -153,10 +153,7 @@ public class TraceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sends new spans to Stackdriver Trace or updates existing traces. If the name of a trace that
-   * you send matches that of an existing trace, new spans are added to the existing trace. Attempt
-   * to update existing spans results undefined behavior. If the name does not match, a new trace is
-   * created with given set of spans.
+   * Sends new spans to new or existing traces. You cannot update existing spans.
    *
    * <p>Sample code:
    *
@@ -168,9 +165,10 @@ public class TraceServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. Name of the project where the spans belong. The format is
-   *     `projects/PROJECT_ID`.
-   * @param spans A collection of spans.
+   * @param name Required. The name of the project where the spans belong. The format is
+   *     `projects/[PROJECT_ID]`.
+   * @param spans A list of new spans. The span names must not match existing spans, or the results
+   *     are undefined.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchWriteSpans(ProjectName name, List<Span> spans) {
@@ -182,10 +180,7 @@ public class TraceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sends new spans to Stackdriver Trace or updates existing traces. If the name of a trace that
-   * you send matches that of an existing trace, new spans are added to the existing trace. Attempt
-   * to update existing spans results undefined behavior. If the name does not match, a new trace is
-   * created with given set of spans.
+   * Sends new spans to new or existing traces. You cannot update existing spans.
    *
    * <p>Sample code:
    *
@@ -210,10 +205,7 @@ public class TraceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sends new spans to Stackdriver Trace or updates existing traces. If the name of a trace that
-   * you send matches that of an existing trace, new spans are added to the existing trace. Attempt
-   * to update existing spans results undefined behavior. If the name does not match, a new trace is
-   * created with given set of spans.
+   * Sends new spans to new or existing traces. You cannot update existing spans.
    *
    * <p>Sample code:
    *
@@ -237,7 +229,7 @@ public class TraceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new Span.
+   * Creates a new span.
    *
    * <p>Sample code:
    *
@@ -268,7 +260,7 @@ public class TraceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new Span.
+   * Creates a new span.
    *
    * <p>Sample code:
    *

@@ -18,13 +18,14 @@ package com.google.cloud.firestore;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
  * BasePath represents a path sequence in the Firestore database. It is composed of an ordered
  * sequence of string segments.
  */
-abstract class BasePath<B extends BasePath<B>> {
+abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
 
   /**
    * Returns the segments that make up this path.
@@ -91,6 +92,24 @@ abstract class BasePath<B extends BasePath<B>> {
       }
     }
     return true;
+  }
+
+  /**
+   * Compare the current path lexicographically against another Path object.
+   *
+   * @param other The path to compare to.
+   * @return -1 if current is less than other, 1 if current greater than other, 0 if equal
+   */
+  @Override
+  public int compareTo(@Nonnull B other) {
+    int length = Math.min(this.getSegments().size(), other.getSegments().size());
+    for (int i = 0; i < length; i++) {
+      int cmp = this.getSegments().get(i).compareTo(other.getSegments().get(i));
+      if (cmp != 0) {
+        return cmp;
+      }
+    }
+    return Integer.compare(this.getSegments().size(), other.getSegments().size());
   }
 
   abstract String[] splitChildPath(String path);
