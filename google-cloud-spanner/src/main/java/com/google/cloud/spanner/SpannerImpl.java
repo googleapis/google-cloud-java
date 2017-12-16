@@ -122,19 +122,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final Logger logger = Logger.getLogger(SpannerImpl.class.getName());
   private static final Logger txnLogger = Logger.getLogger(TransactionRunner.class.getName());
   private static final Tracer tracer = Tracing.getTracer();
-  
+
   private static final String CREATE_SESSION = "CloudSpannerOperation.CreateSession";
   private static final String DELETE_SESSION = "CloudSpannerOperation.DeleteSession";
   private static final String BEGIN_TRANSACTION = "CloudSpannerOperation.BeginTransaction";
   private static final String COMMIT = "CloudSpannerOperation.Commit";
   private static final String QUERY = "CloudSpannerOperation.ExecuteStreamingQuery";
   private static final String READ = "CloudSpannerOperation.ExecuteStreamingRead";
-  
+
   static {
     Tracing.getExportComponent().getSampledSpanStore().registerSpanNamesForCollection(
         Arrays.asList(CREATE_SESSION, DELETE_SESSION, BEGIN_TRANSACTION, COMMIT, QUERY, READ));
   }
-  
+
   private final Random random = new Random();
   private final SpannerRpc rpc;
   private final int defaultPrefetchChunks;
@@ -402,15 +402,15 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   static class DatabaseAdminClientImpl implements DatabaseAdminClient {
-    
+
     private final String projectId;
     private final SpannerRpc rpc;
-    
+
     DatabaseAdminClientImpl(String projectId, SpannerRpc rpc) {
       this.projectId = projectId;
       this.rpc = rpc;
     }
-    
+
     @Override
     public Operation<Database, CreateDatabaseMetadata> createDatabase(
         String instanceId, String databaseId, Iterable<String> statements) throws SpannerException {
@@ -554,11 +554,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
       return pageFetcher.getNextPage();
     }
-    
+
     private String getInstanceName(String instanceId) {
       return new InstanceId(projectId, instanceId).getName();
     }
-    
+
     private String getDatabaseName(String instanceId, String databaseId) {
       return new DatabaseId(new InstanceId(projectId, instanceId), databaseId).getName();
     }
@@ -920,7 +920,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private AbstractReadContext(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
       this(session, rpc, defaultPrefetchChunks, Tracing.getTracer().getCurrentSpan());
     }
-    
+
     private AbstractReadContext(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks,
         Span span) {
       this.session = session;
@@ -1181,7 +1181,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     TransactionRunnerImpl(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
       this(session, rpc, new Sleeper(), defaultPrefetchChunks);
     }
-    
+
     @Nullable
     @Override
     public <T> T run(TransactionCallable<T> callable) {
