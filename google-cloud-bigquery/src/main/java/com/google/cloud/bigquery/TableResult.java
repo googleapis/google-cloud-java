@@ -22,9 +22,9 @@ import com.google.api.gax.paging.Page;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Iterators;
 import java.io.Serializable;
 import java.util.Objects;
-import com.google.common.collect.Iterators;
 import javax.annotation.Nullable;
 
 public class TableResult implements Page<FieldValueList>, Serializable {
@@ -35,7 +35,7 @@ public class TableResult implements Page<FieldValueList>, Serializable {
   private final long totalRows;
   private final Page<FieldValueList> pageNoSchema;
 
-  TableResult(final Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
+  TableResult(Schema schema, long totalRows, Page<FieldValueList> pageNoSchema) {
     this.schema = schema;
     this.totalRows = totalRows;
     this.pageNoSchema = checkNotNull(pageNoSchema);
@@ -68,7 +68,10 @@ public class TableResult implements Page<FieldValueList>, Serializable {
 
   @Override
   public TableResult getNextPage() {
-    return new TableResult(schema, totalRows, pageNoSchema.getNextPage());
+    if (pageNoSchema.hasNextPage()) {
+      return new TableResult(schema, totalRows, pageNoSchema.getNextPage());
+    }
+    return null;
   }
 
   @Override
@@ -86,7 +89,7 @@ public class TableResult implements Page<FieldValueList>, Serializable {
       return iter;
     }
     return Iterables.transform(
-        pageNoSchema.getValues(),
+        iter,
         new Function<FieldValueList, FieldValueList>() {
           @Override
           public FieldValueList apply(FieldValueList list) {
