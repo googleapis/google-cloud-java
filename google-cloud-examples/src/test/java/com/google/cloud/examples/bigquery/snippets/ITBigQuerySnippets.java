@@ -20,7 +20,6 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.paging.Page;
@@ -35,9 +34,7 @@ import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.LegacySQLTypeName;
-import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.Schema;
-import com.google.cloud.bigquery.JobStatus;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
@@ -47,13 +44,6 @@ import com.google.common.base.Function;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.common.io.Resources;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.Timeout;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
@@ -62,6 +52,11 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.Timeout;
 
 public class ITBigQuerySnippets {
 
@@ -230,6 +225,14 @@ public class ITBigQuerySnippets {
     assertEquals(true, row.get(0).getBooleanValue());
     assertArrayEquals(new byte[]{0xA, 0xD, 0xD, 0xE, 0xD}, row.get(1).getBytesValue());
     assertEquals("Hello, World!", row.get(2).getRecordValue().get(0).getStringValue());
+
+    listPage = bigquerySnippets.listTableDataSchema(DATASET, tableName, schema, fieldName1);
+    row = listPage.getValues().iterator().next();
+    assertEquals(true, row.get(fieldName1));
+    assertArrayEquals(new byte[] {0xA, 0xD, 0xD, 0xE, 0xD}, row.get(fieldName2).getBytesValue());
+
+    bigquerySnippets.listTableDataSchemaId();
+
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
   }
 
