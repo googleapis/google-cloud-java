@@ -31,6 +31,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.Write;
+import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -73,18 +74,34 @@ public class WriteBatchTest {
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
+    List<com.google.firestore.v1beta1.Precondition> preconditions =
+        Arrays.asList(
+            com.google.firestore.v1beta1.Precondition.newBuilder().setExists(true).build(),
+            com.google.firestore.v1beta1.Precondition.newBuilder().setExists(true).build(),
+            com.google.firestore.v1beta1.Precondition.newBuilder()
+                .setUpdateTime(Timestamp.getDefaultInstance())
+                .build(),
+            com.google.firestore.v1beta1.Precondition.newBuilder()
+                .setUpdateTime(Timestamp.getDefaultInstance())
+                .build());
+
+    Precondition updateTime = Precondition.updatedAt(Instant.ofEpochSecond(0, 0));
+
     batch.update(documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP);
-    batch.update(
-        documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP, Precondition.exists(true));
     batch.update(documentReference, "foo", "bar");
-    batch.update(documentReference, Precondition.exists(true), "foo", "bar");
+    batch.update(documentReference, updateTime, "foo", "bar");
+    batch.update(documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP, updateTime);
 
     List<WriteResult> writeResults = batch.commit().get();
     List<Write> writes = new ArrayList<>();
 
     for (int i = 0; i < writeResults.size(); ++i) {
       assertEquals(Instant.ofEpochSecond(i, i), writeResults.get(i).getUpdateTime());
-      writes.add(update(LocalFirestoreHelper.SINGLE_FIELD_PROTO, Collections.singletonList("foo")));
+      writes.add(
+          update(
+              LocalFirestoreHelper.SINGLE_FIELD_PROTO,
+              Collections.singletonList("foo"),
+              preconditions.get(i)));
     }
 
     CommitRequest commitRequest = commitCapture.getValue();

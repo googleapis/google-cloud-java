@@ -72,11 +72,14 @@ public final class DocumentSnapshot {
   }
 
   static DocumentSnapshot fromObject(
-      FirestoreImpl firestore, DocumentReference docRef, Map<String, Object> values, EncodingOptions options) {
+      FirestoreImpl firestore,
+      DocumentReference docRef,
+      Map<String, Object> values,
+      EncodingOptions options) {
     Map<String, Value> fields = new HashMap<>();
     for (Map.Entry<String, Object> entry : values.entrySet()) {
-      Value encodedValue = UserDataConverter
-          .encodeValue(FieldPath.of(entry.getKey()), entry.getValue(), options);
+      Value encodedValue =
+          UserDataConverter.encodeValue(FieldPath.of(entry.getKey()), entry.getValue(), options);
       if (encodedValue != null) {
         fields.put(entry.getKey(), encodedValue);
       }

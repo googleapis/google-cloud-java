@@ -18,17 +18,14 @@ package com.google.cloud.firestore;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import javax.annotation.Nullable;
 
 /** A DocumentMask contains the field paths affected by an update. */
 final class DocumentMask {
-  // Sorted for testing.
-  private final SortedSet<FieldPath> fieldPaths;
+  private final SortedSet<FieldPath> fieldPaths; // Sorted for testing.
 
   DocumentMask(Collection<FieldPath> fieldPaths) {
     this(new TreeSet<>(fieldPaths));
@@ -37,16 +34,6 @@ final class DocumentMask {
   private DocumentMask(SortedSet<FieldPath> fieldPaths) {
     this.fieldPaths = fieldPaths;
   }
-
-//  @Nullable FieldPath matchFor(FieldPath fieldPath) {
-//    SortedSet<FieldPath> headSet = this.fieldPaths.headSet(fieldPath);
-//    if (headSet.isEmpty()) {
-//      return null;
-//    } else {
-//      FieldPath result = headSet.iterator().next();
-//      return fieldPath.isPrefixOf(result) ? result : null;
-//    }
-//  }
 
   static DocumentMask fromObject(Map<String, Object> values) {
     List<FieldPath> fieldPaths = extractFromMap(values, FieldPath.empty());

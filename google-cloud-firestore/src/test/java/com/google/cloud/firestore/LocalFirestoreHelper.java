@@ -277,7 +277,9 @@ public final class LocalFirestoreHelper {
   }
 
   public static Write delete() {
-    return delete(Precondition.getDefaultInstance());
+    Write.Builder write = Write.newBuilder();
+    write.setDelete(DOCUMENT_NAME);
+    return write.build();
   }
 
   public static Write delete(Precondition precondition) {

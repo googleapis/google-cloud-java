@@ -184,8 +184,8 @@ public class Query {
     Filter.Builder result = Filter.newBuilder();
 
     Object sanitizedObject = CustomClassMapper.serialize(value);
-    Value encodedValue = UserDataConverter
-        .encodeValue(fieldPath, sanitizedObject, UserDataConverter.NO_DELETES);
+    Value encodedValue =
+        UserDataConverter.encodeValue(fieldPath, sanitizedObject, UserDataConverter.NO_DELETES);
 
     if (encodedValue == null) {
       throw FirestoreException.invalidState("Cannot use Firestore Sentinels in FieldFilter");
@@ -230,18 +230,19 @@ public class Query {
         "Too many cursor values specified. The specified values must match the "
             + "orderBy() constraints of the query.");
 
-    Iterator<Entry<FieldPath, Order>> fieldOrderIterator = options.fieldOrders.entrySet().iterator();
+    Iterator<Entry<FieldPath, Order>> fieldOrderIterator =
+        options.fieldOrders.entrySet().iterator();
 
-    for (int i = 0; i < fieldValues.length; ++i) {
+    for (Object fieldValue : fieldValues) {
       Object sanitizedValue;
 
       FieldPath fieldPath = fieldOrderIterator.next().getKey();
       if (fieldPath.equals(FieldPath.DOCUMENT_ID)) {
         DocumentReference cursorDocument;
-        if (fieldValues[i] instanceof String) {
-          cursorDocument = new DocumentReference(firestore, path.append((String) fieldValues[i]));
-        } else if (fieldValues[i] instanceof DocumentReference) {
-          cursorDocument = (DocumentReference) fieldValues[i];
+        if (fieldValue instanceof String) {
+          cursorDocument = new DocumentReference(firestore, path.append((String) fieldValue));
+        } else if (fieldValue instanceof DocumentReference) {
+          cursorDocument = (DocumentReference) fieldValue;
         } else {
           throw new IllegalArgumentException(
               "The corresponding value for FieldPath.documentId() must be a String or a "
@@ -263,11 +264,11 @@ public class Query {
 
         sanitizedValue = cursorDocument;
       } else {
-        sanitizedValue = CustomClassMapper.serialize(fieldValues[i]);
+        sanitizedValue = CustomClassMapper.serialize(fieldValue);
       }
 
-      Value encodedValue = UserDataConverter
-          .encodeValue(fieldPath, sanitizedValue, UserDataConverter.NO_DELETES);
+      Value encodedValue =
+          UserDataConverter.encodeValue(fieldPath, sanitizedValue, UserDataConverter.NO_DELETES);
       if (encodedValue == null) {
         throw FirestoreException.invalidState("Cannot use Firestore Sentinels in Cursor");
       }
@@ -474,6 +475,11 @@ public class Query {
         options.startCursor == null && options.endCursor == null,
         "Cannot specify an orderBy() constraint after calling startAt(), "
             + "startAfter(), endBefore() or endAt().");
+
+    if (options.fieldOrders.containsValue(fieldPath)) {
+      throw new IllegalArgumentException(
+          String.format("A field order is already specified for field '%'", fieldPath));
+    }
 
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldOrders.put(fieldPath, createFieldOrder(fieldPath, direction));

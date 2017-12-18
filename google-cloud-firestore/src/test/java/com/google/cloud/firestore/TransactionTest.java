@@ -375,7 +375,7 @@ public class TransactionTest {
   @Test
   public void updateDocument() throws Exception {
     doReturn(beginResponse())
-        .doReturn(commitResponse(4, 0))
+        .doReturn(commitResponse(2, 0))
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
@@ -385,12 +385,7 @@ public class TransactionTest {
               @Override
               public String updateCallback(Transaction transaction) {
                 transaction.update(documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP);
-                transaction.update(
-                    documentReference,
-                    LocalFirestoreHelper.SINGLE_FIELD_MAP,
-                    Precondition.exists(true));
                 transaction.update(documentReference, "foo", "bar");
-                transaction.update(documentReference, Precondition.exists(true), "foo", "bar");
                 return "foo";
               }
             },
@@ -400,7 +395,7 @@ public class TransactionTest {
 
     List<Write> writes = new ArrayList<>();
 
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < 2; ++i) {
       writes.add(update(SINGLE_FIELD_PROTO, Collections.singletonList("foo")));
     }
 

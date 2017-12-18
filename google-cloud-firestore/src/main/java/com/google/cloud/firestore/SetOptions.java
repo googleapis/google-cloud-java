@@ -119,6 +119,11 @@ public final class SetOptions {
     return new SetOptions(true, fields);
   }
 
+  /** Returns the EncodingOptions to use for a set() call. */
+  EncodingOptions getEncodingOptions() {
+    return merge ? UserDataConverter.ALLOW_ALL_DELETES : UserDataConverter.NO_DELETES;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -134,9 +139,5 @@ public final class SetOptions {
   @Override
   public int hashCode() {
     return Objects.hash(merge, fieldMask);
-  }
-
-  EncodingOptions getEncodingOptions() {
-    return merge ? UserDataConverter.ALLOW_ALL_DELETES : UserDataConverter.NO_DELETES;
   }
 }

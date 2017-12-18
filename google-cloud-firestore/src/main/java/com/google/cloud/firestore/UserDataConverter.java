@@ -12,9 +12,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 
-/**
- * Converts user input into the Firestore Value representation.
- */
+/** Converts user input into the Firestore Value representation. */
 class UserDataConverter {
 
   /** Controls the behavior for field deletes. */
@@ -24,20 +22,22 @@ class UserDataConverter {
   }
 
   /** Rejects all field deletes. */
-  static final EncodingOptions NO_DELETES = new EncodingOptions() {
-    @Override
-    public boolean allowDelete(FieldPath fieldPath) {
-      return false;
-    }
-  };
+  static final EncodingOptions NO_DELETES =
+      new EncodingOptions() {
+        @Override
+        public boolean allowDelete(FieldPath fieldPath) {
+          return false;
+        }
+      };
 
   /** Allows all field deletes. */
-  static final EncodingOptions ALLOW_ALL_DELETES = new EncodingOptions() {
-    @Override
-    public boolean allowDelete(FieldPath fieldPath) {
-      return true;
-    }
-  };
+  static final EncodingOptions ALLOW_ALL_DELETES =
+      new EncodingOptions() {
+        @Override
+        public boolean allowDelete(FieldPath fieldPath) {
+          return true;
+        }
+      };
 
   /**
    * Encodes a Java Object to a Firestore Value proto.
@@ -48,12 +48,13 @@ class UserDataConverter {
    * @param options Encoding opions to use for this value.
    * @return The Value proto.
    */
-  static Value encodeValue(FieldPath path, @Nullable Object sanitizedObject,
-      EncodingOptions options) {
+  static Value encodeValue(
+      FieldPath path, @Nullable Object sanitizedObject, EncodingOptions options) {
     if (sanitizedObject == FieldValue.DELETE_SENTINEL) {
-      Preconditions.checkArgument(options.allowDelete(path), "Encountered unexpected delete sentinel at field '%s", path);
+      Preconditions.checkArgument(
+          options.allowDelete(path), "Encountered unexpected delete sentinel at field '%s", path);
       return null;
-    }  else if (sanitizedObject == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
+    } else if (sanitizedObject == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
       return null;
     } else if (sanitizedObject == null) {
       return Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
