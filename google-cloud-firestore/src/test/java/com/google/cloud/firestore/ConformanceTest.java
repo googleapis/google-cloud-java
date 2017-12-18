@@ -72,6 +72,8 @@ import org.threeten.bp.Instant;
 
 @RunWith(AllTests.class)
 public class ConformanceTest {
+  /** Interface implemented by the conformance test cases. */
+  private interface ConformanceTestCase extends Test, Describable { }
 
   private static final String TEST_FILE = "./src/test/resources/test_data.binprotos";
 
@@ -127,63 +129,6 @@ public class ConformanceTest {
       suite.addTest(test);
     }
     return suite;
-  }
-
-  class ConformanceTestCase implements Test, Describable {
-    TestDefinition.Test testDefinition;
-
-    ConformanceTestCase(TestDefinition.Test testDefinition) {
-      this.testDefinition = testDefinition;
-    }
-
-    @Override
-    public Description getDescription() {
-      return Description.createTestDescription(
-          ConformanceTest.class.getName(), testDefinition.getDescription());
-    }
-
-    @Override
-    public int countTestCases() {
-      return 1;
-    }
-
-    @Override
-    public void run(TestResult testResult) {
-      testResult.startTest(this);
-      testResult.runProtected(
-          this,
-          new Protectable() {
-            @Override
-            public void protect() throws Throwable {
-              // Uncomment to print the test protobuf:
-              // System.out.println(testDefinition);
-
-              switch (testDefinition.getTestCase()) {
-                case GET:
-                  runGetTest(testDefinition.getGet());
-                  break;
-                case CREATE:
-                  runCreateTest(testDefinition.getCreate());
-                  break;
-                case SET:
-                  runSetTest(testDefinition.getSet());
-                  break;
-                case UPDATE:
-                  runUpdateTest(testDefinition.getUpdate());
-                  break;
-                case UPDATE_PATHS:
-                  runUpdatePathTest(testDefinition.getUpdatePaths());
-                  break;
-                case DELETE:
-                  runDeleteTest(testDefinition.getDelete());
-                  break;
-                default:
-                  break;
-              }
-            }
-          });
-      testResult.endTest(this);
-    }
   }
 
   /** Creates a document reference from an absolute path. */
@@ -319,7 +264,56 @@ public class ConformanceTest {
 
   /** Returns the test case for the provided test definition. */
   private Test buildTest(final TestDefinition.Test testDefinition) {
-    return new ConformanceTestCase(testDefinition);
+    return new ConformanceTestCase() {
+      @Override
+      public Description getDescription() {
+        return Description.createTestDescription(
+            ConformanceTest.class.getName(), testDefinition.getDescription());
+      }
+
+      @Override
+      public int countTestCases() {
+        return 1;
+      }
+
+      @Override
+      public void run(TestResult testResult) {
+        testResult.startTest(this);
+        testResult.runProtected(
+            this,
+            new Protectable() {
+              @Override
+              public void protect() throws Throwable {
+                // Uncomment to print the test protobuf:
+                // System.out.println(testDefinition);
+
+                switch (testDefinition.getTestCase()) {
+                  case GET:
+                    runGetTest(testDefinition.getGet());
+                    break;
+                  case CREATE:
+                    runCreateTest(testDefinition.getCreate());
+                    break;
+                  case SET:
+                    runSetTest(testDefinition.getSet());
+                    break;
+                  case UPDATE:
+                    runUpdateTest(testDefinition.getUpdate());
+                    break;
+                  case UPDATE_PATHS:
+                    runUpdatePathTest(testDefinition.getUpdatePaths());
+                    break;
+                  case DELETE:
+                    runDeleteTest(testDefinition.getDelete());
+                    break;
+                  default:
+                    break;
+                }
+              }
+            });
+        testResult.endTest(this);
+      }
+    };
   }
 
   private void runUpdatePathTest(UpdatePathsTest testCase) {
