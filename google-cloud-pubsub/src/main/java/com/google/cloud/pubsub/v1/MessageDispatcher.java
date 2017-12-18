@@ -29,12 +29,14 @@ import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Deque;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executor;
@@ -50,6 +52,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
+import com.google.common.collect.ArrayListMultimap;
+import org.threeten.bp.temporal.ChronoUnit;
 
 /**
  * Dispatches messages to a message receiver while handling the messages acking and lease
@@ -98,11 +102,12 @@ class MessageDispatcher {
     final int deadlineExtensionSeconds;
 
     PendingModifyAckDeadline(int deadlineExtensionSeconds, String... ackIds) {
-      this.ackIds = new ArrayList<String>();
+      this(deadlineExtensionSeconds, Arrays.asList(ackIds));
+    }
+
+    private PendingModifyAckDeadline(int deadlineExtensionSeconds, Collection<String> ackIds) {
+      this.ackIds = new ArrayList<String>(ackIds);
       this.deadlineExtensionSeconds = deadlineExtensionSeconds;
-      for (String ackId : ackIds) {
-        addAckId(ackId);
-      }
     }
 
     public void addAckId(String ackId) {
@@ -426,21 +431,37 @@ class MessageDispatcher {
 
   @InternalApi
   void extendDeadlines() {
-    List<String> acksToSend = Collections.<String>emptyList();
-    PendingModifyAckDeadline modack = new PendingModifyAckDeadline(getMessageDeadlineSeconds());
+    int extendSeconds = getMessageDeadlineSeconds();
+    PendingModifyAckDeadline modack = new PendingModifyAckDeadline(extendSeconds);
+    ArrayListMultimap<Long, String> expiringModack = ArrayListMultimap.create();
     Instant now = now();
+    Instant extendTo = now.plusSeconds(extendSeconds);
 
     Iterator<Map.Entry<String, Instant>> it = pendingMessages.entrySet().iterator();
     while (it.hasNext()) {
       Map.Entry<String, Instant> entry = it.next();
-      if (entry.getValue().isBefore(now)) {
-        it.remove();
-      } else {
-        modack.ackIds.add(entry.getKey());
+      String ackId = entry.getKey();
+      Instant totalExpiration = entry.getValue();
+      if (totalExpiration.isAfter(extendTo)) {
+        // Most extensions won't reach total expiration, so avoid map lookup.
+        modack.ackIds.add(ackId);
+        continue;
+      }
+      it.remove();
+      if (totalExpiration.isAfter(now)) {
+        expiringModack.put(now.until(totalExpiration, ChronoUnit.SECONDS), ackId);
       }
     }
+    logger.log(Level.FINER, "Sending {0} modacks", modack.ackIds.size() + expiringModack.size());
 
-    ackProcessor.sendAckOperations(acksToSend, Collections.singletonList(modack));
+    List<PendingModifyAckDeadline> modacks = new ArrayList<>();
+    modacks.add(modack);
+    for (Long sec : expiringModack.keySet()) {
+      modacks.add(new PendingModifyAckDeadline(sec.intValue(), expiringModack.get(sec)));
+    }
+
+    List<String> acksToSend = Collections.<String>emptyList();
+    ackProcessor.sendAckOperations(acksToSend, modacks);
   }
 
   @InternalApi
