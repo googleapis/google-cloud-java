@@ -30,6 +30,7 @@ import com.google.cloud.bigquery.JobConfiguration.Type;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Callable;
@@ -65,11 +66,9 @@ public class Job extends JobInfo {
           .setMaxRetryDelay(Duration.ofSeconds(3L))
           .build();
 
-  static final QueryResultsOption[] DEFAULT_QUERY_WAIT_OPTIONS =
-      new QueryResultsOption[] {
-        QueryResultsOption.pageSize(0L),
-        QueryResultsOption.maxWaitTime(Duration.ofMinutes(1).toMillis())
-      };
+  static final QueryResultsOption[] DEFAULT_QUERY_WAIT_OPTIONS = {
+    QueryResultsOption.pageSize(0L),
+  };
 
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
@@ -276,10 +275,9 @@ public class Job extends JobInfo {
 
     TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
 
-    List<QueryResultsOption> waitOptions = new ArrayList<>();
-    waitOptions.add(QueryResultsOption.pageSize(0L));
+    List<QueryResultsOption> waitOptions =
+        new ArrayList<>(Arrays.asList(DEFAULT_QUERY_WAIT_OPTIONS));
     List<TableDataListOption> listOptions = new ArrayList<>();
-    boolean hasWaitTime = false;
     for (QueryResultsOption option : options) {
       switch (option.getRpcOption()) {
         case MAX_RESULTS:
@@ -292,13 +290,9 @@ public class Job extends JobInfo {
           listOptions.add(TableDataListOption.startIndex((Long) option.getValue()));
           break;
         case TIMEOUT:
-          hasWaitTime = true;
           waitOptions.add(QueryResultsOption.maxWaitTime((Long) option.getValue()));
           break;
       }
-    }
-    if (!hasWaitTime) {
-      waitOptions.add(QueryResultsOption.maxWaitTime(Duration.ofMinutes(1).toMillis()));
     }
 
     QueryResponse response =
