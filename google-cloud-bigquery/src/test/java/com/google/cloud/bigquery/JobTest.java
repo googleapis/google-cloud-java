@@ -132,7 +132,7 @@ public class JobTest {
     assertEquals(JOB_STATUS, builtJob.getStatus());
     assertEquals(COPY_CONFIGURATION, builtJob.getConfiguration());
     assertEquals(COPY_JOB_STATISTICS, builtJob.getStatistics());
-    assertSame(serviceMockReturnsOptions, builtJob.getBigquery());
+    assertSame(serviceMockReturnsOptions, builtJob.getBigQuery());
   }
 
   @Test
@@ -435,10 +435,10 @@ public class JobTest {
   }
 
   @Test
-  public void testBigquery() {
+  public void testBigQuery() {
     initializeExpectedJob(1);
     replay(bigquery);
-    assertSame(serviceMockReturnsOptions, expectedJob.getBigquery());
+    assertSame(serviceMockReturnsOptions, expectedJob.getBigQuery());
   }
 
   @Test
@@ -451,7 +451,7 @@ public class JobTest {
   private void compareJob(Job expected, Job value) {
     assertEquals(expected, value);
     compareJobInfo(expected, value);
-    assertEquals(expected.getBigquery().getOptions(), value.getBigquery().getOptions());
+    assertEquals(expected.getBigQuery().getOptions(), value.getBigQuery().getOptions());
   }
 
   private void compareJobInfo(JobInfo expected, JobInfo value) {

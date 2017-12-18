@@ -390,7 +390,7 @@ public class Job extends JobInfo {
   }
 
   /** Returns the job's {@code BigQuery} object used to issue requests. */
-  public BigQuery getBigquery() {
+  public BigQuery getBigQuery() {
     return bigquery;
   }
 

@@ -521,7 +521,7 @@ public class Table extends TableInfo {
   /**
    * Returns the table's {@code BigQuery} object used to issue requests.
    */
-  public BigQuery getBigquery() {
+  public BigQuery getBigQuery() {
     return bigquery;
   }
 
