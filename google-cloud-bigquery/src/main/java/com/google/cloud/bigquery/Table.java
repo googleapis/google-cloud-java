@@ -23,7 +23,6 @@ import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.common.collect.ImmutableList;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
@@ -289,7 +288,10 @@ public class Table extends TableInfo {
    * Returns the paginated list rows in this table.
    *
    * <p>Example of listing rows in the table.
-   * <pre> {@code
+   *
+   * <pre>{@code
+   * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+   * // simply omit the option.
    * Page<FieldValueList> page = table.list(TableDataListOption.pageSize(100));
    * for (FieldValueList row : page.iterateAll()) {
    *   // do something with the row
@@ -299,9 +301,30 @@ public class Table extends TableInfo {
    * @param options table data list options
    * @throws BigQueryException upon failure
    */
-  public Page<FieldValueList> list(TableDataListOption... options)
-      throws BigQueryException {
+  public Page<FieldValueList> list(TableDataListOption... options) throws BigQueryException {
     return bigquery.listTableData(getTableId(), options);
+  }
+
+  /**
+   * Returns the paginated list rows in this table.
+   *
+   * <p>Example of listing rows in the table.
+   *
+   * <pre>{@code
+   * Schema schema = ...;
+   * String field = "my_field";
+   * Page<FieldValueList> page = table.list(schema);
+   * for (FieldValueList row : page.iterateAll()) {
+   *   row.get(field);
+   * }
+   * }</pre>
+   *
+   * @param options table data list options
+   * @throws BigQueryException upon failure
+   */
+  public Page<FieldValueList> list(Schema schema, TableDataListOption... options)
+      throws BigQueryException {
+    return bigquery.listTableData(getTableId(), schema, options);
   }
 
   /**

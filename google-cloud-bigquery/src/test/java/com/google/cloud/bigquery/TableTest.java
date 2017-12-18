@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.eq;
@@ -33,8 +34,6 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterators;
-import java.util.Iterator;
 import java.util.List;
 import org.junit.After;
 import org.junit.Test;
@@ -58,9 +57,9 @@ public class TableTest {
       JobInfo.of(LoadJobConfiguration.of(TABLE_ID1, ImmutableList.of("URI"), FormatOptions.json()));
   private static final JobInfo EXTRACT_JOB_INFO =
       JobInfo.of(ExtractJobConfiguration.of(TABLE_ID1, ImmutableList.of("URI"), "CSV"));
-  private static final Field FIELD = Field.of("FieldName", LegacySQLTypeName.INTEGER);
-  private static final TableDefinition TABLE_DEFINITION =
-      StandardTableDefinition.of(Schema.of(FIELD));
+  private static final Field FIELD = Field.of("FieldName", LegacySQLTypeName.STRING);
+  private static final Schema SCHEMA = Schema.of(FIELD);
+  private static final TableDefinition TABLE_DEFINITION = StandardTableDefinition.of(SCHEMA);
   private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID1, TABLE_DEFINITION);
   private static final List<RowToInsert> ROWS_TO_INSERT = ImmutableList.of(
       RowToInsert.of("id1", ImmutableMap.<String, Object>of("key", "val1")),
@@ -82,6 +81,10 @@ public class TableTest {
       ImmutableList.of(
           FieldValueList.of(ImmutableList.of(FIELD_VALUE1)),
           FieldValueList.of(ImmutableList.of(FIELD_VALUE2)));
+  private static final List<FieldValueList> ROWS_WITH_SCHEMA =
+      ImmutableList.of(
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE1)).withSchema(SCHEMA.getFields()),
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE2)).withSchema(SCHEMA.getFields()));
   private BigQuery serviceMockReturnsOptions = createStrictMock(BigQuery.class);
   private BigQueryOptions mockOptions = createMock(BigQueryOptions.class);
   private BigQuery bigquery;
@@ -269,31 +272,38 @@ public class TableTest {
 
   @Test
   public void testList() throws Exception {
+    Page<FieldValueList> page = new PageImpl<>(null, "c", ROWS);
+
     initializeExpectedTable(1);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    TableResult tableDataPage = new TableResult(null, ROWS.size(), new PageImpl<>(null, "c", ROWS));
-    expect(bigquery.listTableData(TABLE_ID1)).andReturn(tableDataPage);
+    expect(bigquery.listTableData(TABLE_ID1)).andReturn(new TableResult(null, ROWS.size(), page));
+    expect(bigquery.listTableData(TABLE_ID1, SCHEMA))
+        .andReturn(new TableResult(SCHEMA, ROWS.size(), page));
     replay(bigquery);
     initializeTable();
     Page<FieldValueList> dataPage = table.list();
-    Iterator<FieldValueList> tableDataIterator = dataPage.getValues().iterator();
-    Iterator<FieldValueList> dataIterator = dataPage.getValues().iterator();
-    assertTrue(Iterators.elementsEqual(tableDataIterator, dataIterator));
+    assertThat(dataPage.getValues()).containsExactlyElementsIn(ROWS).inOrder();
+
+    dataPage = table.list(SCHEMA);
+    assertThat(dataPage.getValues()).containsExactlyElementsIn(ROWS_WITH_SCHEMA).inOrder();
   }
 
   @Test
   public void testListWithOptions() throws Exception {
+    Page<FieldValueList> page = new PageImpl<>(null, "c", ROWS);
     initializeExpectedTable(1);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    TableResult tableDataPage = new TableResult(null, ROWS.size(), new PageImpl<>(null, "c", ROWS));
     expect(bigquery.listTableData(TABLE_ID1, BigQuery.TableDataListOption.pageSize(10L)))
-        .andReturn(tableDataPage);
+        .andReturn(new TableResult(null, ROWS.size(), page));
+    expect(bigquery.listTableData(TABLE_ID1, SCHEMA, BigQuery.TableDataListOption.pageSize(10L)))
+        .andReturn(new TableResult(SCHEMA, ROWS.size(), page));
     replay(bigquery);
     initializeTable();
     Page<FieldValueList> dataPage = table.list(BigQuery.TableDataListOption.pageSize(10L));
-    Iterator<FieldValueList> tableDataIterator = dataPage.getValues().iterator();
-    Iterator<FieldValueList> dataIterator = dataPage.getValues().iterator();
-    assertTrue(Iterators.elementsEqual(tableDataIterator, dataIterator));
+    assertThat(dataPage.getValues()).containsExactlyElementsIn(ROWS).inOrder();
+
+    dataPage = table.list(SCHEMA, BigQuery.TableDataListOption.pageSize(10L));
+    assertThat(dataPage.getValues()).containsExactlyElementsIn(ROWS_WITH_SCHEMA).inOrder();
   }
 
   @Test
