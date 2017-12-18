@@ -25,7 +25,6 @@ import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
-import com.google.cloud.firestore.FirestoreImpl.EncodingOptions;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Cursor;
 import com.google.firestore.v1beta1.Document;
@@ -185,7 +184,8 @@ public class Query {
     Filter.Builder result = Filter.newBuilder();
 
     Object sanitizedObject = CustomClassMapper.serialize(value);
-    Value encodedValue = FirestoreImpl.encodeValue(sanitizedObject, fieldPath, EncodingOptions.NO_DELETES);
+    Value encodedValue = UserDataConverter
+        .encodeValue(fieldPath, sanitizedObject, UserDataConverter.NO_DELETES);
 
     if (encodedValue == null) {
       throw FirestoreException.invalidState("Cannot use Firestore Sentinels in FieldFilter");
@@ -266,7 +266,8 @@ public class Query {
         sanitizedValue = CustomClassMapper.serialize(fieldValues[i]);
       }
 
-      Value encodedValue = FirestoreImpl.encodeValue(sanitizedValue, fieldPath, EncodingOptions.NO_DELETES);
+      Value encodedValue = UserDataConverter
+          .encodeValue(fieldPath, sanitizedValue, UserDataConverter.NO_DELETES);
       if (encodedValue == null) {
         throw FirestoreException.invalidState("Cannot use Firestore Sentinels in Cursor");
       }

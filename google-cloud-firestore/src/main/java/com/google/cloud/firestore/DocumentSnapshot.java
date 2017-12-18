@@ -16,7 +16,7 @@
 
 package com.google.cloud.firestore;
 
-import com.google.cloud.firestore.FirestoreImpl.EncodingOptions;
+import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Document;
 import com.google.firestore.v1beta1.Value;
@@ -27,9 +27,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Objects;
-import java.util.Stack;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -77,7 +75,8 @@ public final class DocumentSnapshot {
       FirestoreImpl firestore, DocumentReference docRef, Map<String, Object> values, EncodingOptions options) {
     Map<String, Value> fields = new HashMap<>();
     for (Map.Entry<String, Object> entry : values.entrySet()) {
-      Value encodedValue = FirestoreImpl.encodeValue(entry.getValue(), FieldPath.of(entry.getKey()), options);
+      Value encodedValue = UserDataConverter
+          .encodeValue(FieldPath.of(entry.getKey()), entry.getValue(), options);
       if (encodedValue != null) {
         fields.put(entry.getKey(), encodedValue);
       }

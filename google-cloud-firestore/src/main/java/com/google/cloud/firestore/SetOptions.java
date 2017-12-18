@@ -16,7 +16,7 @@
 
 package com.google.cloud.firestore;
 
-import com.google.cloud.firestore.FirestoreImpl.EncodingOptions;
+import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.List;
@@ -137,6 +137,6 @@ public final class SetOptions {
   }
 
   EncodingOptions getEncodingOptions() {
-    return merge ? EncodingOptions.ALLOW_ALL_DELETES : EncodingOptions.NO_DELETES;
+    return merge ? UserDataConverter.ALLOW_ALL_DELETES : UserDataConverter.NO_DELETES;
   }
 }

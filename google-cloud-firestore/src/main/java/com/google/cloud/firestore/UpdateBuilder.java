@@ -19,7 +19,7 @@ package com.google.cloud.firestore;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.cloud.firestore.FirestoreImpl.EncodingOptions;
+import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.UnmodifiableIterator;
@@ -108,7 +108,7 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
   private T performCreate(
       @Nonnull DocumentReference documentReference, @Nonnull Map<String, Object> fields) {
     DocumentSnapshot documentSnapshot =
-        DocumentSnapshot.fromObject(firestore, documentReference, fields, EncodingOptions.NO_DELETES);
+        DocumentSnapshot.fromObject(firestore, documentReference, fields, UserDataConverter.NO_DELETES);
     Write.Builder write = Write.newBuilder();
     write.setUpdate(documentSnapshot.toPb());
     write.getCurrentDocumentBuilder().setExists(false);
