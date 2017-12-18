@@ -41,6 +41,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
@@ -68,18 +69,38 @@ class FirestoreImpl implements Firestore {
     return builder.toString();
   }
 
+  interface EncodingOptions {
+    EncodingOptions NO_DELETES = new EncodingOptions() {
+      @Override
+      public boolean allowDelete(FieldPath fieldPath) {
+        return false;
+      }
+    };
+
+    EncodingOptions ALLOW_ALL_DELETES = new EncodingOptions() {
+      @Override
+      public boolean allowDelete(FieldPath fieldPath) {
+        return true;
+      }
+    };
+
+    boolean allowDelete(FieldPath fieldPath);
+  }
+
   /**
    * Encodes a Java Object to a Firestore Value proto.
    *
    * @param sanitizedObject An Object that has been sanitized by CustomClassMapper and only contains
    *     valid types.
+   *     ....
    * @return The Value proto.
    */
-  @Nullable
-  static Value encodeValue(@Nullable Object sanitizedObject) {
-    if (sanitizedObject == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
+  static Value encodeValue(@Nullable Object sanitizedObject, FieldPath path,
+      EncodingOptions options) {
+    if (sanitizedObject == FieldValue.DELETE_SENTINEL) {
+      Preconditions.checkArgument(options.allowDelete(path), "Encountered unexpected delete sentinel at field '%s", path);
       return null;
-    } else if (sanitizedObject == FieldValue.DELETE_SENTINEL) {
+    }  else if (sanitizedObject == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
       return null;
     } else if (sanitizedObject == null) {
       return Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
@@ -103,8 +124,9 @@ class FirestoreImpl implements Firestore {
       return Value.newBuilder().setTimestampValue(timestampBuilder.build()).build();
     } else if (sanitizedObject instanceof List) {
       ArrayValue.Builder res = ArrayValue.newBuilder();
+      int i = 0;
       for (Object child : (List) sanitizedObject) {
-        Value encodedValue = encodeValue(child);
+        Value encodedValue = encodeValue(child, path.append(Integer.toString(i++)), options);
         if (encodedValue != null) {
           res.addValues(encodedValue);
         }
@@ -122,7 +144,7 @@ class FirestoreImpl implements Firestore {
     } else if (sanitizedObject instanceof Map) {
       MapValue.Builder res = MapValue.newBuilder();
       for (Map.Entry<String, Object> entry : ((Map<String, Object>) sanitizedObject).entrySet()) {
-        Value encodedValue = encodeValue(entry.getValue());
+        Value encodedValue = encodeValue(entry.getValue(), path.append(entry.getKey()), options);
         if (encodedValue != null) {
           res.putFields(entry.getKey(), encodedValue);
         }

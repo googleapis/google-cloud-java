@@ -93,4 +93,12 @@ public final class Precondition {
   public int hashCode() {
     return Objects.hash(exists, updateTime);
   }
+
+  boolean isEmpty() {
+    return exists == null && updateTime == null;
+  }
+
+  public boolean hasExists() {
+    return exists != null;
+  }
 }

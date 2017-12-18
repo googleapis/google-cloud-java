@@ -25,6 +25,7 @@ import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.cloud.firestore.FirestoreImpl.EncodingOptions;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Cursor;
 import com.google.firestore.v1beta1.Document;
@@ -39,7 +40,10 @@ import com.google.firestore.v1beta1.Value;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Int32Value;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Objects;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -79,14 +83,14 @@ public class Query {
     private Cursor startCursor;
     private Cursor endCursor;
     private List<Filter> fieldFilters;
-    private List<Order> fieldOrders;
+    private LinkedHashMap<FieldPath, Order> fieldOrders;
     private List<FieldReference> fieldProjections;
 
     QueryOptions() {
       limit = -1;
       offset = -1;
       fieldFilters = new ArrayList<>();
-      fieldOrders = new ArrayList<>();
+      fieldOrders = new LinkedHashMap<>();
       fieldProjections = new ArrayList<>();
     }
 
@@ -96,7 +100,7 @@ public class Query {
       startCursor = options.startCursor;
       endCursor = options.endCursor;
       fieldFilters = new ArrayList<>(options.fieldFilters);
-      fieldOrders = new ArrayList<>(options.fieldOrders);
+      fieldOrders = new LinkedHashMap<>(options.fieldOrders);
       fieldProjections = options.fieldProjections;
     }
 
@@ -181,7 +185,7 @@ public class Query {
     Filter.Builder result = Filter.newBuilder();
 
     Object sanitizedObject = CustomClassMapper.serialize(value);
-    Value encodedValue = FirestoreImpl.encodeValue(sanitizedObject);
+    Value encodedValue = FirestoreImpl.encodeValue(sanitizedObject, fieldPath, EncodingOptions.NO_DELETES);
 
     if (encodedValue == null) {
       throw FirestoreException.invalidState("Cannot use Firestore Sentinels in FieldFilter");
@@ -226,15 +230,13 @@ public class Query {
         "Too many cursor values specified. The specified values must match the "
             + "orderBy() constraints of the query.");
 
+    Iterator<Entry<FieldPath, Order>> fieldOrderIterator = options.fieldOrders.entrySet().iterator();
+
     for (int i = 0; i < fieldValues.length; ++i) {
       Object sanitizedValue;
 
-      if (options
-          .fieldOrders
-          .get(i)
-          .getField()
-          .getFieldPath()
-          .equals(FieldPath.DOCUMENT_ID.getEncodedPath())) {
+      FieldPath fieldPath = fieldOrderIterator.next().getKey();
+      if (fieldPath.equals(FieldPath.DOCUMENT_ID)) {
         DocumentReference cursorDocument;
         if (fieldValues[i] instanceof String) {
           cursorDocument = new DocumentReference(firestore, path.append((String) fieldValues[i]));
@@ -264,7 +266,7 @@ public class Query {
         sanitizedValue = CustomClassMapper.serialize(fieldValues[i]);
       }
 
-      Value encodedValue = FirestoreImpl.encodeValue(sanitizedValue);
+      Value encodedValue = FirestoreImpl.encodeValue(sanitizedValue, fieldPath, EncodingOptions.NO_DELETES);
       if (encodedValue == null) {
         throw FirestoreException.invalidState("Cannot use Firestore Sentinels in Cursor");
       }
@@ -473,7 +475,7 @@ public class Query {
             + "startAfter(), endBefore() or endAt().");
 
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldOrders.add(createFieldOrder(fieldPath, direction));
+    newOptions.fieldOrders.put(fieldPath, createFieldOrder(fieldPath, direction));
     return new Query(firestore, path, newOptions);
   }
 
@@ -624,7 +626,7 @@ public class Query {
     }
 
     if (!options.fieldOrders.isEmpty()) {
-      structuredQuery.addAllOrderBy(options.fieldOrders);
+      structuredQuery.addAllOrderBy(options.fieldOrders.values());
     }
 
     if (!options.fieldProjections.isEmpty()) {

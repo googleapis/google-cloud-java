@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import com.google.cloud.firestore.FirestoreImpl.EncodingOptions;
 import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.List;
@@ -133,5 +134,9 @@ public final class SetOptions {
   @Override
   public int hashCode() {
     return Objects.hash(merge, fieldMask);
+  }
+
+  EncodingOptions getEncodingOptions() {
+    return merge ? EncodingOptions.ALLOW_ALL_DELETES : EncodingOptions.NO_DELETES;
   }
 }
