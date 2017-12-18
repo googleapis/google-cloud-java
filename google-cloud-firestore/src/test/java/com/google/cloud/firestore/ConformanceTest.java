@@ -58,6 +58,8 @@ import junit.framework.Test;
 import junit.framework.TestResult;
 import junit.framework.TestSuite;
 import org.junit.Assert;
+import org.junit.runner.Describable;
+import org.junit.runner.Description;
 import org.junit.runner.RunWith;
 import org.junit.runners.AllTests;
 import org.mockito.ArgumentCaptor;
@@ -75,7 +77,7 @@ public class ConformanceTest {
 
   // The Firestore Java SDK currently does not strip empty writes. These tests fail without this
   // optimization.
-  /** Excludes test by test description. */
+  /** Excluded tests by test description. */
   private Set<String> excludedTests =
       ImmutableSet.<String>builder()
           .add(
@@ -99,7 +101,7 @@ public class ConformanceTest {
               "update-paths: multiple ServerTimestamp fields")
           .build();
 
-  /** If non empty, only runs tests included in this set. */
+  /** If non-empty, only runs tests included in this set. */
   private Set<String> includedTests = Collections.emptySet();
 
   @Spy
@@ -125,6 +127,63 @@ public class ConformanceTest {
       suite.addTest(test);
     }
     return suite;
+  }
+
+  class ConformanceTestCase implements Test, Describable {
+    TestDefinition.Test testDefinition;
+
+    ConformanceTestCase(TestDefinition.Test testDefinition) {
+      this.testDefinition = testDefinition;
+    }
+
+    @Override
+    public Description getDescription() {
+      return Description.createTestDescription(
+          ConformanceTest.class.getName(), testDefinition.getDescription());
+    }
+
+    @Override
+    public int countTestCases() {
+      return 1;
+    }
+
+    @Override
+    public void run(TestResult testResult) {
+      testResult.startTest(this);
+      testResult.runProtected(
+          this,
+          new Protectable() {
+            @Override
+            public void protect() throws Throwable {
+              // Uncomment to print the test protobuf:
+              // System.out.println(testDefinition);
+
+              switch (testDefinition.getTestCase()) {
+                case GET:
+                  runGetTest(testDefinition.getGet());
+                  break;
+                case CREATE:
+                  runCreateTest(testDefinition.getCreate());
+                  break;
+                case SET:
+                  runSetTest(testDefinition.getSet());
+                  break;
+                case UPDATE:
+                  runUpdateTest(testDefinition.getUpdate());
+                  break;
+                case UPDATE_PATHS:
+                  runUpdatePathTest(testDefinition.getUpdatePaths());
+                  break;
+                case DELETE:
+                  runDeleteTest(testDefinition.getDelete());
+                  break;
+                default:
+                  break;
+              }
+            }
+          });
+      testResult.endTest(this);
+    }
   }
 
   /** Creates a document reference from an absolute path. */
@@ -194,7 +253,7 @@ public class ConformanceTest {
     return result;
   }
 
-  /** Helper function to convert test values in a nested Map to Firestore user types. */
+  /** Helper function to convert test values in a nested Map to Firestore API types. */
   private Map<String, Object> convertMap(Map<String, Object> parsedData) {
     for (Entry<String, Object> entry : parsedData.entrySet()) {
       parsedData.put(entry.getKey(), convertValue(entry.getValue()));
@@ -203,7 +262,7 @@ public class ConformanceTest {
   }
 
   /**
-   * Converts test values to Firestore user types. Replaces sentinel values with their FieldValue
+   * Converts test values to Firestore API types. Replaces sentinel values with their FieldValue
    * constants.
    */
   private Object convertValue(Object data) {
@@ -223,7 +282,7 @@ public class ConformanceTest {
     }
   }
 
-  /** Helper function to convert test values in a list to Firestore user types. */
+  /** Helper function to convert test values in a list to Firestore API types. */
   private List<Object> convertArray(List<Object> list) {
     for (int i = 0; i < list.size(); ++i) {
       list.set(i, convertValue(list.get(i)));
@@ -251,7 +310,8 @@ public class ConformanceTest {
           || excludedTests.contains(testDefinition.getDescription())) {
         continue;
       }
-      tests.add(buildTest(testDefinition));
+      Test test = buildTest(testDefinition);
+      tests.add(test);
     }
 
     return tests;
@@ -259,55 +319,7 @@ public class ConformanceTest {
 
   /** Returns the test case for the provided test definition. */
   private Test buildTest(final TestDefinition.Test testDefinition) {
-    return new Test() {
-      @Override
-      public String toString() {
-        return testDefinition.getDescription();
-      }
-
-      @Override
-      public int countTestCases() {
-        return 1;
-      }
-
-      @Override
-      public void run(TestResult testResult) {
-        testResult.startTest(this);
-        testResult.runProtected(
-            this,
-            new Protectable() {
-              @Override
-              public void protect() throws Throwable {
-                // Uncomment to print the test protobuf.
-                // System.out.println(testDefinition);
-
-                switch (testDefinition.getTestCase()) {
-                  case GET:
-                    runGetTest(testDefinition.getGet());
-                    break;
-                  case CREATE:
-                    runCreateTest(testDefinition.getCreate());
-                    break;
-                  case SET:
-                    runSetTest(testDefinition.getSet());
-                    break;
-                  case UPDATE:
-                    runUpdateTest(testDefinition.getUpdate());
-                    break;
-                  case UPDATE_PATHS:
-                    runUpdatePathTest(testDefinition.getUpdatePaths());
-                    break;
-                  case DELETE:
-                    runDeleteTest(testDefinition.getDelete());
-                    break;
-                  default:
-                    break;
-                }
-              }
-            });
-        testResult.endTest(this);
-      }
-    };
+    return new ConformanceTestCase(testDefinition);
   }
 
   private void runUpdatePathTest(UpdatePathsTest testCase) {
@@ -390,7 +402,6 @@ public class ConformanceTest {
     if (!testCase.hasPrecondition()) {
       document(testCase.getDocRefPath()).delete().get();
     } else {
-
       document(testCase.getDocRefPath())
           .delete(convertPrecondition(testCase.getPrecondition()))
           .get();

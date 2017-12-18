@@ -67,8 +67,8 @@ class UserDataConverter {
   static Value encodeValue(
       FieldPath path, @Nullable Object sanitizedObject, EncodingOptions options) {
     if (sanitizedObject == FieldValue.DELETE_SENTINEL) {
-      Preconditions.checkArgument(
-          options.allowDelete(path), "Encountered unexpected delete sentinel at field '%s", path);
+      Preconditions.checkArgument(options.allowDelete(path),
+          "Encountered unexpected delete sentinel at field '%s'.", path);
       return null;
     } else if (sanitizedObject == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
       return null;

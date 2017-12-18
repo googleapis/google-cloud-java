@@ -63,7 +63,7 @@ public final class Precondition {
     return exists == null && updateTime == null;
   }
 
-  public boolean hasExists() {
+  boolean hasExists() {
     return exists != null;
   }
 
