@@ -497,12 +497,16 @@ public class GrpcSpannerRpc implements SpannerRpc {
    * TODO: Remove this when we depend on gRPC 1.8
    */
   private static void setupTracingConfig() {
+    SampledSpanStore store = Tracing.getExportComponent().getSampledSpanStore();
+    if (store == null) {
+      // Tracing implementation is not linked.
+      return;
+    }
     List<String> descriptors = new ArrayList<>();
     addDescriptor(descriptors, SpannerGrpc.getServiceDescriptor());
     addDescriptor(descriptors, DatabaseAdminGrpc.getServiceDescriptor());
     addDescriptor(descriptors, InstanceAdminGrpc.getServiceDescriptor());
-
-    Tracing.getExportComponent().getSampledSpanStore().registerSpanNamesForCollection(descriptors);
+    store.registerSpanNamesForCollection(descriptors);
   }
 
   /**
