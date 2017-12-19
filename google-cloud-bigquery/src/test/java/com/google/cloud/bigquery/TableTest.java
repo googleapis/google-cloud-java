@@ -128,7 +128,7 @@ public class TableTest {
     assertEquals(LAST_MODIFIED_TIME, builtTable.getLastModifiedTime());
     assertEquals(TABLE_DEFINITION, builtTable.getDefinition());
     assertEquals(SELF_LINK, builtTable.getSelfLink());
-    assertSame(serviceMockReturnsOptions, builtTable.getBigquery());
+    assertSame(serviceMockReturnsOptions, builtTable.getBigQuery());
   }
 
 
@@ -370,10 +370,10 @@ public class TableTest {
   }
 
   @Test
-  public void testBigquery() {
+  public void testBigQuery() {
     initializeExpectedTable(1);
     replay(bigquery);
-    assertSame(serviceMockReturnsOptions, expectedTable.getBigquery());
+    assertSame(serviceMockReturnsOptions, expectedTable.getBigQuery());
   }
 
   @Test
@@ -386,7 +386,7 @@ public class TableTest {
   private void compareTable(Table expected, Table value) {
     assertEquals(expected, value);
     compareTableInfo(expected, value);
-    assertEquals(expected.getBigquery().getOptions(), value.getBigquery().getOptions());
+    assertEquals(expected.getBigQuery().getOptions(), value.getBigQuery().getOptions());
   }
 
   private void compareTableInfo(TableInfo expected, TableInfo value) {
