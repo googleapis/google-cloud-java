@@ -85,6 +85,7 @@ import io.grpc.stub.AbstractStub;
 import io.grpc.stub.ClientCallStreamObserver;
 import io.grpc.stub.ClientCalls;
 import io.grpc.stub.ClientResponseObserver;
+import io.opencensus.trace.export.SampledSpanStore;
 import io.opencensus.trace.Tracing;
 
 import java.util.ArrayList;

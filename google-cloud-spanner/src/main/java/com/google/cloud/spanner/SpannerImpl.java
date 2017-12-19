@@ -86,7 +86,6 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.BitSet;
 import java.util.Collection;
 import java.util.Collections;
@@ -131,8 +130,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final String READ = "CloudSpannerOperation.ExecuteStreamingRead";
 
   static {
-    Tracing.getExportComponent().getSampledSpanStore().registerSpanNamesForCollection(
-        Arrays.asList(CREATE_SESSION, DELETE_SESSION, BEGIN_TRANSACTION, COMMIT, QUERY, READ));
+    TraceUtil.exportSpans(CREATE_SESSION, DELETE_SESSION, BEGIN_TRANSACTION, COMMIT, QUERY, READ);
   }
 
   private final Random random = new Random();

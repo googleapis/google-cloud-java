@@ -25,16 +25,13 @@ import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 
-import java.util.Arrays;
-
 class DatabaseClientImpl implements DatabaseClient {
   private static final String READ_WRITE_TRANSACTION = "CloudSpanner.ReadWriteTransaction";
   private static final String READ_ONLY_TRANSACTION = "CloudSpanner.ReadOnlyTransaction";
   private static final Tracer tracer = Tracing.getTracer();
   
   static {
-    Tracing.getExportComponent().getSampledSpanStore().registerSpanNamesForCollection(
-        Arrays.asList(READ_WRITE_TRANSACTION, READ_ONLY_TRANSACTION));
+    TraceUtil.exportSpans(READ_WRITE_TRANSACTION, READ_ONLY_TRANSACTION);
   }
   
   private final SessionPool pool;
