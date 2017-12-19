@@ -35,16 +35,18 @@ import com.google.cloud.pubsub.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
-import org.threeten.bp.Duration;
-
 import java.io.FileInputStream;
+import java.util.concurrent.Semaphore;
+import org.threeten.bp.Duration;
 
 /** This class contains snippets for the {@link Publisher} interface. */
 public class PublisherSnippets {
   private final Publisher publisher;
+  private final Semaphore semaphore;
 
   public PublisherSnippets(Publisher publisher) {
     this.publisher = publisher;
+    this.semaphore = new Semaphore(1000);
   }
 
   /** Example of publishing a message. */
@@ -53,16 +55,26 @@ public class PublisherSnippets {
   public ApiFuture<String> publish(String message) {
     ByteString data = ByteString.copyFromUtf8(message);
     PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-    ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-    ApiFutures.addCallback(messageIdFuture, new ApiFutureCallback<String>() {
-      public void onSuccess(String messageId) {
-        System.out.println("published with message id: " + messageId);
-      }
 
-      public void onFailure(Throwable t) {
-        System.out.println("failed to publish: " + t);
-      }
-    });
+    // In this example, the semaphore limits the number of pending messages and blocks until
+    // a permit is available.
+    // To fit individual applications, we could provide an acquire timeout, acquire (and release!)
+    // more permits for large messages, etc.
+    semaphore.acquireUninterruptibly();
+    ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+    ApiFutures.addCallback(
+        messageIdFuture,
+        new ApiFutureCallback<String>() {
+          public void onSuccess(String messageId) {
+            System.out.println("published with message id: " + messageId);
+            semaphore.release();
+          }
+
+          public void onFailure(Throwable t) {
+            System.out.println("failed to publish: " + t);
+            semaphore.release();
+          }
+        });
     return messageIdFuture;
   }
 

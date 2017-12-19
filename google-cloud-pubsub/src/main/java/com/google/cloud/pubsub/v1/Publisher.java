@@ -170,22 +170,36 @@ public class Publisher {
    * Schedules the publishing of a message. The publishing of the message may occur immediately or
    * be delayed based on the publisher batching options.
    *
+   * <p>This method does not implement any form of back-pressure. If {@code publish} is called
+   * faster than messages can be sent, the computer might run out of memory or some messages might
+   * time out. Users are encouraged to implement some form of back-pressure like the example below.
+   *
    * <p>Example of publishing a message.
    *
    * <pre>{@code
    * String message = "my_message";
    * ByteString data = ByteString.copyFromUtf8(message);
    * PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-   * ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-   * ApiFutures.addCallback(messageIdFuture, new ApiFutureCallback<String>() {
-   *   public void onSuccess(String messageId) {
-   *     System.out.println("published with message id: " + messageId);
-   *   }
    *
-   *   public void onFailure(Throwable t) {
-   *     System.out.println("failed to publish: " + t);
-   *   }
-   * });
+   * // In this example, the semaphore limits the number of pending messages and blocks until
+   * // a permit is available.
+   * // To fit individual applications, we could provide an acquire timeout, acquire (and release!)
+   * // more permits for large messages, etc.
+   * semaphore.acquireUninterruptibly();
+   * ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+   * ApiFutures.addCallback(
+   *     messageIdFuture,
+   *     new ApiFutureCallback<String>() {
+   *       public void onSuccess(String messageId) {
+   *         System.out.println("published with message id: " + messageId);
+   *         semaphore.release();
+   *       }
+   *
+   *       public void onFailure(Throwable t) {
+   *         System.out.println("failed to publish: " + t);
+   *         semaphore.release();
+   *       }
+   *     });
    * }</pre>
    *
    * @param message the message to publish.
