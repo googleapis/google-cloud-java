@@ -432,33 +432,35 @@ class MessageDispatcher {
   @InternalApi
   void extendDeadlines() {
     int extendSeconds = getMessageDeadlineSeconds();
+    List<PendingModifyAckDeadline> modacks = new ArrayList<>();
     PendingModifyAckDeadline modack = new PendingModifyAckDeadline(extendSeconds);
-    ArrayListMultimap<Long, String> expiringModack = ArrayListMultimap.create();
     Instant now = now();
     Instant extendTo = now.plusSeconds(extendSeconds);
 
+    int count = 0;
     Iterator<Map.Entry<String, Instant>> it = pendingMessages.entrySet().iterator();
     while (it.hasNext()) {
       Map.Entry<String, Instant> entry = it.next();
       String ackId = entry.getKey();
       Instant totalExpiration = entry.getValue();
+      // TODO(pongad): PendingModifyAckDeadline is created to dance around polling pull,
+      // since one modack RPC only takes one expiration.
+      // Whenever we delete polling pull, we should also delete PendingModifyAckDeadline,
+      // and just construct StreamingPullRequest directly.
       if (totalExpiration.isAfter(extendTo)) {
-        // Most extensions won't reach total expiration, so avoid map lookup.
         modack.ackIds.add(ackId);
+        count++;
         continue;
       }
       it.remove();
       if (totalExpiration.isAfter(now)) {
-        expiringModack.put(now.until(totalExpiration, ChronoUnit.SECONDS), ackId);
+        int sec = Math.max(1, (int) now.until(totalExpiration, ChronoUnit.SECONDS));
+        modacks.add(new PendingModifyAckDeadline(sec, ackId));
+        count++;
       }
     }
-    logger.log(Level.FINER, "Sending {0} modacks", modack.ackIds.size() + expiringModack.size());
-
-    List<PendingModifyAckDeadline> modacks = new ArrayList<>();
     modacks.add(modack);
-    for (Long sec : expiringModack.keySet()) {
-      modacks.add(new PendingModifyAckDeadline(sec.intValue(), expiringModack.get(sec)));
-    }
+    logger.log(Level.FINER, "Sending {0} modacks", count);
 
     List<String> acksToSend = Collections.<String>emptyList();
     ackProcessor.sendAckOperations(acksToSend, modacks);
