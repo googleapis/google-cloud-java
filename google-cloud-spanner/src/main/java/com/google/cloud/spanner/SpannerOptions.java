@@ -43,6 +43,8 @@ import javax.net.ssl.SSLException;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
+  private static final long serialVersionUID = 2789571558532701170L;
+
   private static final String API_SHORT_NAME = "Spanner";
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
   private static final ImmutableSet<String> SCOPES =
@@ -76,13 +78,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final SessionPoolOptions sessionPoolOptions;
   private final int prefetchChunks;
   private final int numChannels;
-  private final String userAgent;
   private final ImmutableMap<String, String> sessionLabels;
   
   private SpannerOptions(Builder builder) {
     super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
     numChannels = builder.numChannels;
-    userAgent = builder.userAgentPrefix;
+    String userAgent = getUserAgent();
     RpcChannelFactory defaultRpcChannelFactory =
         userAgent == null
             ? DEFAULT_RPC_CHANNEL_FACTORY
@@ -111,7 +112,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     private int prefetchChunks = DEFAULT_PREFETCH_CHUNKS;
     private SessionPoolOptions sessionPoolOptions;
-    private String userAgentPrefix;
     private ImmutableMap<String, String> sessionLabels;
 
     private Builder() {}
@@ -121,7 +121,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.numChannels = options.numChannels;
       this.sessionPoolOptions = options.sessionPoolOptions;
       this.prefetchChunks = options.prefetchChunks;
-      this.userAgentPrefix = options.userAgent;
       this.sessionLabels = options.sessionLabels;
     }
 
@@ -188,12 +187,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      */
     public Builder setPrefetchChunks(int prefetchChunks) {
       this.prefetchChunks = prefetchChunks;
-      return this;
-    }
-
-    /** If specified, this will be prefixed to the default user agent sent in the requests. */
-    public Builder setUserAgentPrefix(String userAgentPrefix) {
-      this.userAgentPrefix = userAgentPrefix;
       return this;
     }
 

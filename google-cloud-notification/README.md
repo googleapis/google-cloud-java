@@ -12,16 +12,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-notification</artifactId>
-  <version>0.30.0-alpha</version>
+  <version>0.32.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-notification:0.30.0-alpha'
+compile 'com.google.cloud:google-cloud-notification:0.32.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-notification" % "0.30.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-notification" % "0.32.0-beta"
 ```
 
 Authentication

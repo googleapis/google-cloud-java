@@ -20,12 +20,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.doNothing;
 
-import com.google.cloud.NoCredentials;
-import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc.MetadataClientCall;
 import io.grpc.ClientCall;
-import io.grpc.ClientCall.Listener;
-import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,60 +36,22 @@ import org.mockito.MockitoAnnotations;
 /** Unit tests for {@link GrpcSpannerRpc.MetadataClientCall}. */
 @RunWith(JUnit4.class)
 public class RequestMetadataTest {
-  static final Metadata.Key<String> HEADER_KEY =
+  private static final Metadata.Key<String> HEADER_KEY =
       Metadata.Key.of("google-cloud-resource-prefix", Metadata.ASCII_STRING_MARSHALLER);
 
-  // Used to mock out channels to Cloud Spanner.
-  private class TestChannelFactory implements SpannerOptions.RpcChannelFactory {
-    @Override
-    public ManagedChannel newChannel(String host, int port) {
-      return channel;
-    }
-  }
+  private Metadata metadata;
 
-  SpannerOptions options;
-  GrpcSpannerRpc rpc;
-  Metadata metadata;
-
-  @Mock ManagedChannel channel;
-  @Mock ClientCall<Void, Void> innerCall;
-  @Mock Listener<Void> innerListener;
-  @Mock ClientCall.Listener<Void> listener;
-  @Captor ArgumentCaptor<Metadata> innerMetadata;
+  @Mock
+  private ClientCall<Void, Void> innerCall;
+  @Mock
+  private ClientCall.Listener<Void> listener;
+  @Captor
+  private ArgumentCaptor<Metadata> innerMetadata;
 
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    options =
-        SpannerOptions.newBuilder()
-            .setRpcChannelFactory(new TestChannelFactory())
-            .setProjectId("p")
-            .setCredentials(NoCredentials.getInstance())
-            .build();
-    rpc = new GrpcSpannerRpc(options);
     metadata = new Metadata();
-  }
-
-  @Test
-  public void extractHeaderTest() {
-    assertEquals(rpc.extractHeader("garbage"), "projects/p");
-    assertEquals(rpc.extractHeader("projects/p"), "projects/p");
-    assertEquals(rpc.extractHeader("projects/p/instances/i"), "projects/p/instances/i");
-    assertEquals(
-        rpc.extractHeader("projects/p/instances/i/databases/d"),
-        "projects/p/instances/i/databases/d");
-    assertEquals(
-        rpc.extractHeader("projects/p/instances/i/databases/d/sessions/s"),
-        "projects/p/instances/i/databases/d");
-    assertEquals(
-        rpc.extractHeader("projects/p/instances/i/operations/op"), "projects/p/instances/i");
-    assertEquals(
-        rpc.extractHeader("projects/p/instances/i/databases/d/operations/op"),
-        "projects/p/instances/i/databases/d");
-    assertEquals(rpc.extractHeader("projects/p/instances/i/operations"), "projects/p/instances/i");
-    assertEquals(
-        rpc.extractHeader("projects/p/instances/i/databases/d/operations"),
-        "projects/p/instances/i/databases/d");
   }
 
   @Test
