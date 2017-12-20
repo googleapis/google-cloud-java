@@ -25,6 +25,7 @@ import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.cloud.firestore.DocumentChange.Type;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Cursor;
 import com.google.firestore.v1beta1.Document;
@@ -39,8 +40,10 @@ import com.google.firestore.v1beta1.Value;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Int32Value;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.Executor;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
@@ -71,6 +74,23 @@ public class Query {
     }
   }
 
+  private static class FieldOrder {
+    final FieldPath fieldPath;
+    final Direction direction;
+
+    FieldOrder(FieldPath fieldPath, Direction direction) {
+      this.fieldPath = fieldPath;
+      this.direction = direction;
+    }
+
+    private Order toProto() {
+      Order.Builder result = Order.newBuilder();
+      result.setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()));
+      result.setDirection(direction.getDirection());
+      return result.build();
+    }
+  }
+
   /** Options that define a Firestore Query. */
   private static class QueryOptions {
 
@@ -79,7 +99,7 @@ public class Query {
     private Cursor startCursor;
     private Cursor endCursor;
     private List<Filter> fieldFilters;
-    private List<Order> fieldOrders;
+    private List<FieldOrder> fieldOrders;
     private List<FieldReference> fieldProjections;
 
     QueryOptions() {
@@ -211,13 +231,6 @@ public class Query {
     return result.build();
   }
 
-  private Order createFieldOrder(FieldPath fieldPath, Direction direction) {
-    Order.Builder result = Order.newBuilder();
-    result.setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()));
-    result.setDirection(direction.getDirection());
-    return result.build();
-  }
-
   private Cursor createCursor(Object[] fieldValues, boolean before) {
     Cursor.Builder result = Cursor.newBuilder();
 
@@ -229,12 +242,7 @@ public class Query {
     for (int i = 0; i < fieldValues.length; ++i) {
       Object sanitizedValue;
 
-      if (options
-          .fieldOrders
-          .get(i)
-          .getField()
-          .getFieldPath()
-          .equals(FieldPath.DOCUMENT_ID.getEncodedPath())) {
+      if (options.fieldOrders.get(i).fieldPath.equals(FieldPath.DOCUMENT_ID)) {
         DocumentReference cursorDocument;
         if (fieldValues[i] instanceof String) {
           cursorDocument = new DocumentReference(firestore, path.append((String) fieldValues[i]));
@@ -473,7 +481,7 @@ public class Query {
             + "startAfter(), endBefore() or endAt().");
 
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldOrders.add(createFieldOrder(fieldPath, direction));
+    newOptions.fieldOrders.add(new FieldOrder(fieldPath, direction));
     return new Query(firestore, path, newOptions);
   }
 
@@ -608,7 +616,7 @@ public class Query {
   }
 
   /** Build the final Firestore query. */
-  private StructuredQuery.Builder buildQuery() {
+  StructuredQuery.Builder buildQuery() {
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
     structuredQuery.addFrom(
         StructuredQuery.CollectionSelector.newBuilder().setCollectionId(path.getId()));
@@ -624,7 +632,9 @@ public class Query {
     }
 
     if (!options.fieldOrders.isEmpty()) {
-      structuredQuery.addAllOrderBy(options.fieldOrders);
+      for (FieldOrder order : options.fieldOrders) {
+        structuredQuery.addOrderBy(order.toProto());
+      }
     }
 
     if (!options.fieldProjections.isEmpty()) {
@@ -745,16 +755,43 @@ public class Query {
     return get(null);
   }
 
+  /**
+   * Starts listening to this query.
+   *
+   * @param listener The event listener that will be called with the snapshots.
+   * @return A registration object that can be used to remove the listener.
+   */
+  @Nonnull
+  public ListenerRegistration addSnapshotListener(@Nonnull EventListener<QuerySnapshot> listener) {
+    return addSnapshotListener(firestore.getClient().getExecutor(), listener);
+  }
+
+  /**
+   * Starts listening to this query.
+   *
+   * @param executor The executor to use to call the listener.
+   * @param listener The event listener that will be called with the snapshots.
+   * @return A registration object that can be used to remove the listener.
+   */
+  @Nonnull
+  public ListenerRegistration addSnapshotListener(
+      @Nonnull Executor executor, @Nonnull EventListener<QuerySnapshot> listener) {
+    return Watch.forQuery(this).runWatch(executor, listener);
+  }
+
   ApiFuture<QuerySnapshot> get(@Nullable ByteString transactionId) {
     final SettableApiFuture<QuerySnapshot> result = SettableApiFuture.create();
 
     stream(
         new QuerySnapshotObserver() {
           List<DocumentSnapshot> documentSnapshots = new ArrayList<>();
+          List<DocumentChange> documentChanges = new ArrayList<>();
 
           @Override
           public void onNext(DocumentSnapshot documentSnapshot) {
             documentSnapshots.add(documentSnapshot);
+            documentChanges.add(
+                new DocumentChange(documentSnapshot, Type.ADDED, -1, documentSnapshots.size() - 1));
           }
 
           @Override
@@ -765,13 +802,58 @@ public class Query {
           @Override
           public void onCompleted() {
             QuerySnapshot querySnapshot =
-                new QuerySnapshot(Query.this, this.getReadTime(), documentSnapshots);
+                new QuerySnapshot(
+                    Query.this, this.getReadTime(), documentSnapshots, documentChanges);
             result.set(querySnapshot);
           }
         },
         transactionId);
 
     return result;
+  }
+
+  Comparator<DocumentSnapshot> comparator() {
+    return new Comparator<DocumentSnapshot>() {
+      @Override
+      public int compare(DocumentSnapshot doc1, DocumentSnapshot doc2) {
+        // Add implicit sorting by name, using the last specified direction.
+        Direction lastDirection =
+            options.fieldOrders.size() == 0
+                ? Direction.ASCENDING
+                : options.fieldOrders.get(options.fieldOrders.size() - 1).direction;
+
+        List<FieldOrder> orderBys = new ArrayList<>();
+        orderBys.addAll(options.fieldOrders);
+        orderBys.add(new FieldOrder(FieldPath.DOCUMENT_ID, lastDirection));
+
+        for (FieldOrder orderBy : orderBys) {
+          int comp;
+
+          if (orderBy.fieldPath.equals(FieldPath.documentId())) {
+            comp =
+                doc1.getReference()
+                    .getResourcePath()
+                    .compareTo(doc2.getReference().getResourcePath());
+          } else {
+            Preconditions.checkState(
+                doc1.contains(orderBy.fieldPath) && doc2.contains(orderBy.fieldPath),
+                "Can only compare fields that exist in the DocumentSnapshot."
+                    + " Please include the fields you are ordering on in your select() call.");
+            Value v1 = doc1.extractField(orderBy.fieldPath);
+            Value v2 = doc2.extractField(orderBy.fieldPath);
+
+            comp = com.google.cloud.firestore.Order.INSTANCE.compare(v1, v2);
+          }
+
+          if (comp != 0) {
+            int direction = orderBy.direction.equals(Direction.ASCENDING) ? 1 : -1;
+            return direction * comp;
+          }
+        }
+
+        return 0;
+      }
+    };
   }
 
   ResourcePath getResourcePath() {
