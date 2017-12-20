@@ -828,7 +828,7 @@ public class Query {
       public int compare(DocumentSnapshot doc1, DocumentSnapshot doc2) {
         // Add implicit sorting by name, using the last specified direction.
         Direction lastDirection =
-            options.fieldOrders.size() == 0
+            options.fieldOrders.isEmpty()
                 ? Direction.ASCENDING
                 : options.fieldOrders.get(options.fieldOrders.size() - 1).direction;
 
