@@ -27,6 +27,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.Executor;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -389,6 +390,54 @@ public final class DocumentReference {
         };
       }
     };
+  }
+
+  /**
+   * Starts listening to the document referenced by this DocumentReference.
+   *
+   * @param executor The executor to use to call the listener.
+   * @param listener The event listener that will be called with the snapshots.
+   * @return A registration object that can be used to remove the listener.
+   */
+  @Nonnull
+  public ListenerRegistration addSnapshotListener(
+      @Nonnull Executor executor, @Nonnull final EventListener<DocumentSnapshot> listener) {
+    return Watch.forDocument(this)
+        .runWatch(
+            executor,
+            new EventListener<QuerySnapshot>() {
+              @Override
+              public void onEvent(
+                  @Nullable QuerySnapshot value, @Nullable FirestoreException error) {
+                if (value == null) {
+                  listener.onEvent(null, error);
+                  return;
+                }
+
+                for (DocumentSnapshot doc : value) {
+                  if (doc.getReference().equals(DocumentReference.this)) {
+                    listener.onEvent(value.getDocuments().get(0), null);
+                    return;
+                  }
+                }
+                listener.onEvent(
+                    DocumentSnapshot.fromMissing(
+                        firestore, DocumentReference.this, value.getReadTime()),
+                    null);
+              }
+            });
+  }
+
+  /**
+   * Starts listening to the document referenced by this DocumentReference.
+   *
+   * @param listener The event listener that will be called with the snapshots.
+   * @return A registration object that can be used to remove the listener.
+   */
+  @Nonnull
+  public ListenerRegistration addSnapshotListener(
+      @Nonnull EventListener<DocumentSnapshot> listener) {
+    return addSnapshotListener(firestore.getClient().getExecutor(), listener);
   }
 
   ResourcePath getResourcePath() {

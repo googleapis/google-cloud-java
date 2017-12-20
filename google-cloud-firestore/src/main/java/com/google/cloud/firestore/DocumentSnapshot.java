@@ -95,6 +95,11 @@ public final class DocumentSnapshot {
         Instant.ofEpochSecond(createTime.getSeconds(), createTime.getNanos()));
   }
 
+  static DocumentSnapshot fromMissing(
+      FirestoreImpl firestore, DocumentReference documentReference, Instant readTime) {
+    return new DocumentSnapshot(firestore, documentReference, null, readTime, null, null);
+  }
+
   private Object decodeValue(Value v) {
     Value.ValueTypeCase typeCase = v.getValueTypeCase();
     switch (typeCase) {
@@ -266,7 +271,7 @@ public final class DocumentSnapshot {
 
   /** Returns the Value Proto at 'fieldPath'. Returns null if the field was not found. */
   @Nullable
-  private Value extractField(@Nonnull FieldPath fieldPath) {
+  Value extractField(@Nonnull FieldPath fieldPath) {
     Value value = null;
 
     if (fields != null) {

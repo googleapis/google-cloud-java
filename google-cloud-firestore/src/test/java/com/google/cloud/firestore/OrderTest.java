@@ -32,8 +32,6 @@ public class OrderTest {
 
   @Test
   public void verifyOrder() {
-    Order order = new Order();
-
     Value[][] groups = new Value[64][];
 
     groups[0] = new Value[] {nullValue()};
@@ -131,7 +129,7 @@ public class OrderTest {
                     "Order does not match for: groups[%d][%d] and groups[%d][%d]",
                     left, i, right, j),
                 Integer.compare(left, right),
-                Integer.compare(order.compare(groups[left][i], groups[right][j]), 0));
+                Integer.compare(Order.INSTANCE.compare(groups[left][i], groups[right][j]), 0));
           }
         }
       }
