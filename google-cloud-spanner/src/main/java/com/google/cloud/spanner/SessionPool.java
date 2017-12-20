@@ -26,10 +26,17 @@ import com.google.cloud.spanner.Options.ReadOption;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
+
+import io.opencensus.trace.Annotation;
+import io.opencensus.trace.AttributeValue;
+import io.opencensus.trace.Span;
+import io.opencensus.trace.Tracing;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -731,30 +738,40 @@ final class SessionPool {
    * </ol>
    */
   Session getReadSession() throws SpannerException {
+    Span span = Tracing.getTracer().getCurrentSpan();
+    span.addAnnotation("Acquiring session");
     Waiter waiter = null;
     PooledSession sess = null;
     synchronized (lock) {
       if (closureFuture != null) {
+        span.addAnnotation("Pool has been closed");
         throw new IllegalStateException("Pool has been closed");
       }
       sess = readSessions.poll();
       if (sess == null) {
         sess = writePreparedSessions.poll();
         if (sess == null) {
+          span.addAnnotation("No session available");
           maybeCreateSession();
           waiter = new Waiter();
           readWaiters.add(waiter);
+        } else {
+          span.addAnnotation("Acquired read write session");
         }
+      } else {
+        span.addAnnotation("Acquired read only session");
       }
     }
     if (waiter != null) {
       logger.log(
           Level.FINE,
           "No session available in the pool. Blocking for one to become available/created");
+      span.addAnnotation("Waiting for read only session to be available");
       sess = waiter.take();
     }
     sess.markBusy();
     incrementNumSessionsInUse();
+    span.addAnnotation(sessionAnnotation(sess));
     return sess;
   }
 
@@ -777,6 +794,8 @@ final class SessionPool {
    * </ol>
    */
   Session getReadWriteSession() {
+    Span span = Tracing.getTracer().getCurrentSpan();
+    span.addAnnotation("Acquiring read write session");
     Waiter waiter = null;
     PooledSession sess = null;
     synchronized (lock) {
@@ -788,26 +807,38 @@ final class SessionPool {
         if (numSessionsBeingPrepared <= readWriteWaiters.size()) {
           PooledSession readSession = readSessions.poll();
           if (readSession != null) {
+            span.addAnnotation("Acquired read only session. Preparing for read write transaction");
             prepareSession(readSession);
           } else {
+            span.addAnnotation("No session available");
             maybeCreateSession();
           }
         }
         waiter = new Waiter();
         readWriteWaiters.add(waiter);
+      } else {
+        span.addAnnotation("Acquired read write session");
       }
     }
     if (waiter != null) {
       logger.log(
           Level.FINE,
           "No session available in the pool. Blocking for one to become available/created");
+      span.addAnnotation("Waiting for read write session to be available");
       sess = waiter.take();
     }
     sess.markBusy();
     incrementNumSessionsInUse();
+    span.addAnnotation(sessionAnnotation(sess));
     return sess;
   }
 
+  private Annotation sessionAnnotation(Session session) {
+    AttributeValue sessionId = AttributeValue.stringAttributeValue(session.getName());
+    return Annotation.fromDescriptionAndAttributes("Using Session",
+        ImmutableMap.of("sessionId", sessionId));
+  }
+ 
   private void incrementNumSessionsInUse() {
     synchronized (lock) {
       if (maxSessionsInUse < ++numSessionsInUse) {
@@ -817,11 +848,14 @@ final class SessionPool {
   }
 
   private void maybeCreateSession() {
+    Span span = Tracing.getTracer().getCurrentSpan();
     synchronized (lock) {
       if (numWaiters() >= numSessionsBeingCreated) {
         if (canCreateSession()) {
+          span.addAnnotation("Creating session");
           createSession();
         } else if (options.isFailIfPoolExhausted()) {
+          span.addAnnotation("Pool exhausted. Failing");
           // throw specific exception
           throw newSpannerException(
               ErrorCode.RESOURCE_EXHAUSTED,

@@ -76,6 +76,12 @@ import com.google.spanner.v1.TransactionSelector;
 import com.google.spanner.v1.TypeCode;
 import io.grpc.Context;
 import io.grpc.ManagedChannel;
+import io.opencensus.common.Scope;
+import io.opencensus.trace.AttributeValue;
+import io.opencensus.trace.Span;
+import io.opencensus.trace.Tracer;
+import io.opencensus.trace.Tracing;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -114,6 +120,18 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   private static final Logger logger = Logger.getLogger(SpannerImpl.class.getName());
   private static final Logger txnLogger = Logger.getLogger(TransactionRunner.class.getName());
+  private static final Tracer tracer = Tracing.getTracer();
+
+  private static final String CREATE_SESSION = "CloudSpannerOperation.CreateSession";
+  private static final String DELETE_SESSION = "CloudSpannerOperation.DeleteSession";
+  private static final String BEGIN_TRANSACTION = "CloudSpannerOperation.BeginTransaction";
+  private static final String COMMIT = "CloudSpannerOperation.Commit";
+  private static final String QUERY = "CloudSpannerOperation.ExecuteStreamingQuery";
+  private static final String READ = "CloudSpannerOperation.ExecuteStreamingRead";
+
+  static {
+    TraceUtil.exportSpans(CREATE_SESSION, DELETE_SESSION, BEGIN_TRANSACTION, COMMIT, QUERY, READ);
+  }
 
   private final Random random = new Random();
   private final SpannerRpc rpc;
@@ -161,6 +179,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   private static void backoffSleep(Context context, long backoffMillis) throws SpannerException {
+    tracer.getCurrentSpan().addAnnotation("Backing off",
+        ImmutableMap.of("Delay", AttributeValue.longAttributeValue(backoffMillis)));
     final CountDownLatch latch = new CountDownLatch(1);
     final Context.CancellationListener listener =
         new Context.CancellationListener() {
@@ -195,11 +215,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
    */
   static <T> T runWithRetries(Callable<T> callable) {
     // Use same backoff setting as abort, somewhat arbitrarily.
+    Span span = tracer.getCurrentSpan();
     ExponentialBackOff backOff = newBackOff();
     Context context = Context.current();
+    int attempt = 0;
     while (true) {
+      attempt++;
       try {
-        return callable.call();
+        span.addAnnotation("Starting operation",
+            ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
+        T result = callable.call();
+        return result;
       } catch (SpannerException e) {
         if (!e.isRetryable()) {
           throw e;
@@ -216,15 +242,22 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   Session createSession(final DatabaseId db) throws SpannerException {
     final Map<SpannerRpc.Option, ?> options =
         optionMap(SessionOption.channelHint(random.nextLong()));
-    com.google.spanner.v1.Session session =
-        runWithRetries(
-            new Callable<com.google.spanner.v1.Session>() {
-              @Override
-              public com.google.spanner.v1.Session call() throws Exception {
-                return rpc.createSession(db.getName(), getOptions().getSessionLabels(), options);
-              }
-            });
-    return new SessionImpl(session.getName(), options);
+    Span span = tracer.spanBuilder(CREATE_SESSION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
+      com.google.spanner.v1.Session session =
+          runWithRetries(
+              new Callable<com.google.spanner.v1.Session>() {
+                @Override
+                public com.google.spanner.v1.Session call() throws Exception {
+                  return rpc.createSession(db.getName(), getOptions().getSessionLabels(), options);
+                }
+              });
+      span.end();
+      return new SessionImpl(session.getName(), options);
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
+    }
   }
 
   @Override
@@ -367,15 +400,15 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   static class DatabaseAdminClientImpl implements DatabaseAdminClient {
-    
+
     private final String projectId;
     private final SpannerRpc rpc;
-    
+
     DatabaseAdminClientImpl(String projectId, SpannerRpc rpc) {
       this.projectId = projectId;
       this.rpc = rpc;
     }
-    
+
     @Override
     public Operation<Database, CreateDatabaseMetadata> createDatabase(
         String instanceId, String databaseId, Iterable<String> statements) throws SpannerException {
@@ -519,11 +552,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
       return pageFetcher.getNextPage();
     }
-    
+
     private String getInstanceName(String instanceId) {
       return new InstanceId(projectId, instanceId).getName();
     }
-    
+
     private String getDatabaseName(String instanceId, String databaseId) {
       return new DatabaseId(new InstanceId(projectId, instanceId), databaseId).getName();
     }
@@ -727,24 +760,31 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       Mutation.toProto(mutations, mutationsProto);
       final CommitRequest request =
           CommitRequest.newBuilder()
-              .setSession(name)
-              .addAllMutations(mutationsProto)
-              .setSingleUseTransaction(
-                  TransactionOptions.newBuilder()
-                      .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
-              .build();
-      CommitResponse response =
-          runWithRetries(
-              new Callable<CommitResponse>() {
-                @Override
-                public CommitResponse call() throws Exception {
-                  return rpc.commit(request, options);
-                }
-              });
-      try {
-        return Timestamp.fromProto(response.getCommitTimestamp());
+          .setSession(name)
+          .addAllMutations(mutationsProto)
+          .setSingleUseTransaction(
+              TransactionOptions.newBuilder()
+              .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+          .build();
+      Span span = tracer.spanBuilder(COMMIT).startSpan();
+      try (Scope s = tracer.withSpan(span)) {
+        CommitResponse response =
+            runWithRetries(
+                new Callable<CommitResponse>() {
+                  @Override
+                  public CommitResponse call() throws Exception {
+                    return rpc.commit(request, options);
+                  }
+                });
+        Timestamp t = Timestamp.fromProto(response.getCommitTimestamp());
+        span.end();
+        return t;
       } catch (IllegalArgumentException e) {
+        TraceUtil.endSpanWithFailure(span, e);
         throw newSpannerException(ErrorCode.INTERNAL, "Could not parse commit timestamp", e);
+      } catch (RuntimeException e) {
+        TraceUtil.endSpanWithFailure(span, e);
+        throw e;
       }
     }
 
@@ -791,36 +831,50 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public void close() {
-      runWithRetries(
-          new Callable<Void>() {
-            @Override
-            public Void call() throws Exception {
-              rpc.deleteSession(name, options);
-              return null;
-            }
-          });
+      Span span = tracer.spanBuilder(DELETE_SESSION).startSpan();
+      try (Scope s = tracer.withSpan(span)) {
+        runWithRetries(
+            new Callable<Void>() {
+              @Override
+              public Void call() throws Exception {
+                rpc.deleteSession(name, options);
+                return null;
+              }
+            });
+        span.end();
+      } catch (RuntimeException e) {
+        TraceUtil.endSpanWithFailure(span, e);
+        throw e;
+      }
     }
 
     ByteString beginTransaction() {
-      final BeginTransactionRequest request =
-          BeginTransactionRequest.newBuilder()
-              .setSession(name)
-              .setOptions(
-                  TransactionOptions.newBuilder()
-                      .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
-              .build();
-      Transaction txn =
-          runWithRetries(
-              new Callable<Transaction>() {
-                @Override
-                public Transaction call() throws Exception {
-                  return rpc.beginTransaction(request, options);
-                }
-              });
-      if (txn.getId().isEmpty()) {
-        throw newSpannerException(ErrorCode.INTERNAL, "Missing id in transaction\n" + getName());
+      Span span = tracer.spanBuilder(BEGIN_TRANSACTION).startSpan();
+      try (Scope s = tracer.withSpan(span)) {
+        final BeginTransactionRequest request =
+            BeginTransactionRequest.newBuilder()
+            .setSession(name)
+            .setOptions(
+                TransactionOptions.newBuilder()
+                .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+            .build();
+        Transaction txn =
+            runWithRetries(
+                new Callable<Transaction>() {
+                  @Override
+                  public Transaction call() throws Exception {
+                    return rpc.beginTransaction(request, options);
+                  }
+                });
+        if (txn.getId().isEmpty()) {
+          throw newSpannerException(ErrorCode.INTERNAL, "Missing id in transaction\n" + getName());
+        }
+        span.end();
+        return txn.getId();
+      } catch (RuntimeException e) {
+        TraceUtil.endSpanWithFailure(span, e);
+        throw e;
       }
-      return txn.getId();
     }
 
     private <T extends SessionTransaction> T setActive(@Nullable T ctx) {
@@ -850,6 +904,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     final SessionImpl session;
     final SpannerRpc rpc;
     final int defaultPrefetchChunks;
+    final Span span;
 
     @GuardedBy("lock")
     private boolean isValid = true;
@@ -861,9 +916,15 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private static final int MAX_BUFFERED_CHUNKS = 2048;
 
     private AbstractReadContext(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
+      this(session, rpc, defaultPrefetchChunks, Tracing.getTracer().getCurrentSpan());
+    }
+
+    private AbstractReadContext(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks,
+        Span span) {
       this.session = session;
       this.rpc = rpc;
       this.defaultPrefetchChunks = defaultPrefetchChunks;
+      this.span = span;
     }
 
     @Override
@@ -944,7 +1005,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
-          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS) {
+          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
               GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
@@ -996,6 +1057,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public void close() {
+      span.end();
       synchronized (lock) {
         isClosed = true;
       }
@@ -1042,7 +1104,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final int prefetchChunks =
           readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
-          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS) {
+          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, READ) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
               GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
@@ -1099,16 +1161,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     private final SessionImpl session;
     private final Sleeper sleeper;
+    private final Span span;
     private TransactionContextImpl txn;
     private volatile boolean isValid = true;
 
     TransactionRunnerImpl(
         SessionImpl session, SpannerRpc rpc, Sleeper sleeper, int defaultPrefetchChunks) {
-      ByteString transactionId = session.readyTransactionId;
-      session.readyTransactionId = null;
       this.session = session;
       this.sleeper = sleeper;
-      this.txn = new TransactionContextImpl(session, transactionId, rpc, defaultPrefetchChunks);
+      this.span = Tracing.getTracer().getCurrentSpan();
+      ByteString transactionId = session.readyTransactionId;
+      session.readyTransactionId = null;
+      this.txn = new TransactionContextImpl(session, transactionId, rpc, defaultPrefetchChunks,
+          span);
     }
 
     TransactionRunnerImpl(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
@@ -1118,15 +1183,29 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Nullable
     @Override
     public <T> T run(TransactionCallable<T> callable) {
+      try {
+        return runInternal(callable);
+      } catch (RuntimeException e) {
+        TraceUtil.endSpanWithFailure(span, e);
+        throw e;
+      } finally {
+        span.end();
+      }
+    }
+
+    private <T> T runInternal(TransactionCallable<T> callable) {
       BackOff backoff = newBackOff();
       final Context context = Context.current();
+      int attempt = 0;
       while (true) {
         checkState(
             isValid, "TransactionRunner has been invalidated by a new operation on the session");
         checkContext(context);
-
+        attempt++;
         // TODO(user): When using streaming reads, consider using the first read to begin
         // the txn.
+        span.addAnnotation("Starting Transaction Attempt",
+            ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
         txn.ensureTxn();
 
         T result;
@@ -1137,15 +1216,23 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         } catch (Exception e) {
           txnLogger.log(Level.FINE, "User-provided TransactionCallable raised exception", e);
           if (txn.isAborted()) {
+            span.addAnnotation("Transaction Attempt Aborted in user operation. Retrying",
+                ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
             shouldRollback = false;
             backoff(context, backoff);
             continue;
           }
+          SpannerException toThrow;
           if (e instanceof SpannerException) {
-            throw (SpannerException) e;
+            toThrow = (SpannerException) e;
           } else {
-            throw newSpannerException(ErrorCode.UNKNOWN, e.getMessage(), e);
+            toThrow = newSpannerException(ErrorCode.UNKNOWN, e.getMessage(), e);
           }
+          span.addAnnotation("Transaction Attempt Failed in user operation",
+              ImmutableMap.<String, AttributeValue>builder()
+              .putAll(TraceUtil.getExceptionAnnotations(toThrow))
+              .put("Attempt", AttributeValue.longAttributeValue(attempt)).build());
+          throw toThrow;
         } finally {
           if (shouldRollback) {
             txn.rollback();
@@ -1154,10 +1241,20 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
         try {
           txn.commit();
+          span.addAnnotation("Transaction Attempt Succeeded",
+              ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
           return result;
         } catch (AbortedException e) {
           txnLogger.log(Level.FINE, "Commit aborted", e);
+          span.addAnnotation("Transaction Attempt Aborted in Commit. Retrying",
+              ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
           backoff(context, backoff);
+        } catch (SpannerException e) {
+          span.addAnnotation("Transaction Attempt Failed in Commit",
+              ImmutableMap.<String, AttributeValue>builder()
+              .putAll(TraceUtil.getExceptionAnnotations(e))
+              .put("Attempt", AttributeValue.longAttributeValue(attempt)).build());
+          throw e;
         }
       }
     }
@@ -1174,7 +1271,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     private void backoff(Context context, BackOff backoff) {
       long delay = txn.getRetryDelayInMillis(backoff);
-      txn = new TransactionContextImpl(session, null, txn.rpc, txn.defaultPrefetchChunks);
+      txn = new TransactionContextImpl(session, null, txn.rpc, txn.defaultPrefetchChunks, span);
+      span.addAnnotation("Backing off",
+          ImmutableMap.of("Delay", AttributeValue.longAttributeValue(delay)));
       sleeper.backoffSleep(context, delay);
     }
   }
@@ -1198,19 +1297,31 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         SessionImpl session,
         @Nullable ByteString transactionId,
         SpannerRpc rpc,
-        int defaultPrefetchChunks) {
-      super(session, rpc, defaultPrefetchChunks);
+        int defaultPrefetchChunks,
+        Span span) {
+      super(session, rpc, defaultPrefetchChunks, span);
       this.transactionId = transactionId;
     }
 
     void ensureTxn() {
       if (transactionId == null) {
-        transactionId = session.beginTransaction();
-        txnLogger.log(
-            Level.FINER,
-            "Started transaction {0}",
-            txnLogger.isLoggable(Level.FINER) ? transactionId.asReadOnlyByteBuffer() : null);
+        span.addAnnotation("Creating Transaction");
+        try {
+          transactionId = session.beginTransaction();
+          span.addAnnotation("Transaction Creation Done", ImmutableMap.of("Id",
+              AttributeValue.stringAttributeValue(transactionId.toStringUtf8())));
+          txnLogger.log(
+              Level.FINER,
+              "Started transaction {0}",
+              txnLogger.isLoggable(Level.FINER) ? transactionId.asReadOnlyByteBuffer() : null);
+        } catch (SpannerException e) {
+          span.addAnnotation("Transaction Creation Failed", TraceUtil.getExceptionAnnotations(e));
+          throw e;
+        }
       } else {
+        span.addAnnotation("Transaction Initialized",
+            ImmutableMap.of("Id",  AttributeValue.stringAttributeValue(
+                transactionId.toStringUtf8())));
         txnLogger.log(
             Level.FINER,
             "Using prepared transaction {0}",
@@ -1219,6 +1330,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     void commit() {
+      span.addAnnotation("Starting Commit");
       CommitRequest.Builder builder =
           CommitRequest.newBuilder().setSession(session.getName()).setTransactionId(transactionId);
       synchronized (lock) {
@@ -1231,20 +1343,29 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         mutations = null;
       }
       final CommitRequest commitRequest = builder.build();
-      CommitResponse commitResponse =
-          runWithRetries(
-              new Callable<CommitResponse>() {
-                @Override
-                public CommitResponse call() throws Exception {
-                  return rpc.commit(commitRequest, session.options);
-                }
-              });
+      Span opSpan = tracer.spanBuilder(COMMIT).startSpan();
+      try (Scope s = tracer.withSpan(opSpan)) {
+        CommitResponse commitResponse =
+            runWithRetries(
+                new Callable<CommitResponse>() {
+                  @Override
+                  public CommitResponse call() throws Exception {
+                    return rpc.commit(commitRequest, session.options);
+                  }
+                });
 
-      if (!commitResponse.hasCommitTimestamp()) {
-        throw newSpannerException(
-            ErrorCode.INTERNAL, "Missing commitTimestamp:\n" + session.getName());
+        if (!commitResponse.hasCommitTimestamp()) {
+          throw newSpannerException(
+              ErrorCode.INTERNAL, "Missing commitTimestamp:\n" + session.getName());
+        }
+        commitTimestamp = Timestamp.fromProto(commitResponse.getCommitTimestamp());
+        opSpan.end();
+      } catch (RuntimeException e) {
+        span.addAnnotation("Commit Failed", TraceUtil.getExceptionAnnotations(e));
+        TraceUtil.endSpanWithFailure(opSpan, e);
+        throw e;
       }
-      commitTimestamp = Timestamp.fromProto(commitResponse.getCommitTimestamp());
+      span.addAnnotation("Commit Done");
     }
 
     Timestamp commitTimestamp() {
@@ -1277,14 +1398,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         // Note that we're not retrying this request since we don't particularly care about the
         // response.  Normally, the next thing that will happen is that we will make a fresh
         // transaction attempt, which should implicitly abort this one.
+        span.addAnnotation("Starting Rollback");
         rpc.rollback(
             RollbackRequest.newBuilder()
                 .setSession(session.getName())
                 .setTransactionId(transactionId)
                 .build(),
             session.options);
+        span.addAnnotation("Rollback Done");
       } catch (SpannerException e) {
         txnLogger.log(Level.FINE, "Exception during rollback", e);
+        span.addAnnotation("Rollback Failed", TraceUtil.getExceptionAnnotations(e));
       }
     }
 
@@ -1476,36 +1600,44 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         if (transactionId != null) {
           return;
         }
-        TransactionOptions.Builder options = TransactionOptions.newBuilder();
-        bound.applyToBuilder(options.getReadOnlyBuilder()).setReturnReadTimestamp(true);
-        final BeginTransactionRequest request =
-            BeginTransactionRequest.newBuilder()
-                .setSession(session.getName())
-                .setOptions(options)
-                .build();
-        Transaction transaction =
-            runWithRetries(
-                new Callable<Transaction>() {
-                  @Override
-                  public Transaction call() throws Exception {
-                    return rpc.beginTransaction(request, session.options);
-                  }
-                });
-        if (!transaction.hasReadTimestamp()) {
-          throw SpannerExceptionFactory.newSpannerException(
-              ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
-        }
-        if (transaction.getId().isEmpty()) {
-          throw SpannerExceptionFactory.newSpannerException(
-              ErrorCode.INTERNAL, "Missing expected transaction.id metadata field");
-        }
+        span.addAnnotation("Creating Transaction");
         try {
-          timestamp = Timestamp.fromProto(transaction.getReadTimestamp());
-        } catch (IllegalArgumentException e) {
-          throw SpannerExceptionFactory.newSpannerException(
-              ErrorCode.INTERNAL, "Bad value in transaction.read_timestamp metadata field", e);
+          TransactionOptions.Builder options = TransactionOptions.newBuilder();
+          bound.applyToBuilder(options.getReadOnlyBuilder()).setReturnReadTimestamp(true);
+          final BeginTransactionRequest request =
+              BeginTransactionRequest.newBuilder()
+              .setSession(session.getName())
+              .setOptions(options)
+              .build();
+          Transaction transaction =
+              runWithRetries(
+                  new Callable<Transaction>() {
+                    @Override
+                    public Transaction call() throws Exception {
+                      return rpc.beginTransaction(request, session.options);
+                    }
+                  });
+          if (!transaction.hasReadTimestamp()) {
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
+          }
+          if (transaction.getId().isEmpty()) {
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INTERNAL, "Missing expected transaction.id metadata field");
+          }
+          try {
+            timestamp = Timestamp.fromProto(transaction.getReadTimestamp());
+          } catch (IllegalArgumentException e) {
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INTERNAL, "Bad value in transaction.read_timestamp metadata field", e);
+          }
+          transactionId = transaction.getId();
+          span.addAnnotation("Transaction Creation Done",
+              TraceUtil.getTransactionAnnotations(transaction));
+        } catch (SpannerException e) {
+          span.addAnnotation("Transaction Creation Failed", TraceUtil.getExceptionAnnotations(e));
+          throw e;
         }
-        transactionId = transaction.getId();
       }
     }
   }
@@ -2181,6 +2313,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private final BackOff backOff = newBackOff();
     private final LinkedList<PartialResultSet> buffer = new LinkedList<>();
     private final int maxBufferSize;
+    private final Span span;
     private CloseableIterator<PartialResultSet> stream;
     private ByteString resumeToken;
     private boolean finished;
@@ -2191,15 +2324,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
      */
     private boolean safeToRetry = true;
 
-    protected ResumableStreamIterator(int maxBufferSize) {
+    protected ResumableStreamIterator(int maxBufferSize, String streamName) {
       checkArgument(maxBufferSize >= 0);
       this.maxBufferSize = maxBufferSize;
+      this.span = tracer.spanBuilder(streamName).startSpan();
     }
 
     abstract CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken);
 
     @Override
     public void close(@Nullable String message) {
+      span.end();
       if (stream != null) {
         stream.close(message);
       }
@@ -2211,6 +2346,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       while (true) {
         // Eagerly start stream before consuming any buffered items.
         if (stream == null) {
+          span.addAnnotation("Starting/Resuming stream",
+              ImmutableMap.of("ResumeToken",
+                  AttributeValue.stringAttributeValue(
+                      resumeToken == null ? "null" : resumeToken.toStringUtf8())));
           stream = checkNotNull(startStream(resumeToken));
         }
         // Buffer contains items up to a resume token or has reached capacity: flush.
@@ -2247,6 +2386,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           }
         } catch (SpannerException e) {
           if (safeToRetry && e.isRetryable()) {
+            span.addAnnotation("Stream broken. Safe to retry",
+                TraceUtil.getExceptionAnnotations(e));
             logger.log(Level.FINE, "Retryable exception, will sleep and retry", e);
             // Truncate any items in the buffer before the last retry token.
             while (!buffer.isEmpty() && buffer.getLast().getResumeToken().isEmpty()) {
@@ -2254,9 +2395,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             }
             assert buffer.isEmpty() || buffer.getLast().getResumeToken().equals(resumeToken);
             stream = null;
-            backoffSleep(context, backOff);
+            try (Scope s = tracer.withSpan(span)) {
+              backoffSleep(context, backOff);
+            }
             continue;
           }
+          span.addAnnotation("Stream broken. Not safe to retry");
+          TraceUtil.endSpanWithFailure(span, e);
+          throw e;
+        } catch (RuntimeException e) {
+          span.addAnnotation("Stream broken. Not safe to retry");
+          TraceUtil.endSpanWithFailure(span, e);
           throw e;
         }
       }

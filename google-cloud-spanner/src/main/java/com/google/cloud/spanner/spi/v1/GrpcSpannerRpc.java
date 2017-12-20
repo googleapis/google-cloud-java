@@ -78,12 +78,17 @@ import io.grpc.ForwardingClientCall;
 import io.grpc.ForwardingClientCallListener;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
+import io.grpc.ServiceDescriptor;
 import io.grpc.Status;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.AbstractStub;
 import io.grpc.stub.ClientCallStreamObserver;
 import io.grpc.stub.ClientCalls;
 import io.grpc.stub.ClientResponseObserver;
+import io.opencensus.trace.export.SampledSpanStore;
+import io.opencensus.trace.Tracing;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -96,6 +101,11 @@ import javax.annotation.Nullable;
 
 /** Implementation of Cloud Spanner remote calls using gRPC. */
 public class GrpcSpannerRpc implements SpannerRpc {
+  
+  static {
+    setupTracingConfig();
+  }
+  
   private static final Logger logger = Logger.getLogger(GrpcSpannerRpc.class.getName());
 
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
@@ -478,6 +488,37 @@ public class GrpcSpannerRpc implements SpannerRpc {
     long hintVal = Math.abs(hint != null ? hint : random.nextLong());
     long index = hintVal % elements.size();
     return elements.get((int) index);
+  }
+
+  /**
+   * This is a one time setup for grpcz pages. This adds all of the methods to the Tracing
+   * environment required to show a consistent set of methods relating to Cloud Bigtable on the
+   * grpcz page.  If HBase artifacts are present, this will add tracing metadata for HBase methods.
+   *
+   * TODO: Remove this when we depend on gRPC 1.8
+   */
+  private static void setupTracingConfig() {
+    SampledSpanStore store = Tracing.getExportComponent().getSampledSpanStore();
+    if (store == null) {
+      // Tracing implementation is not linked.
+      return;
+    }
+    List<String> descriptors = new ArrayList<>();
+    addDescriptor(descriptors, SpannerGrpc.getServiceDescriptor());
+    addDescriptor(descriptors, DatabaseAdminGrpc.getServiceDescriptor());
+    addDescriptor(descriptors, InstanceAdminGrpc.getServiceDescriptor());
+    store.registerSpanNamesForCollection(descriptors);
+  }
+
+  /**
+   * Reads a list of {@link MethodDescriptor}s from a {@link ServiceDescriptor} and creates a list
+   * of Open Census tags.
+   */
+  private static void addDescriptor(List<String> descriptors, ServiceDescriptor serviceDescriptor) {
+    for (MethodDescriptor<?, ?> method : serviceDescriptor.getMethods()) {
+      // This is added by a grpc ClientInterceptor
+      descriptors.add("Sent." + method.getFullMethodName().replace('/', '.'));
+    }
   }
 
   private static class ResultSetStreamObserver<T>
