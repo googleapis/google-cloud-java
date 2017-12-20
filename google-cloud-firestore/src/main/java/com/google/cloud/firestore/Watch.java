@@ -16,7 +16,11 @@
 
 package com.google.cloud.firestore;
 
+import com.google.api.core.CurrentMillisClock;
 import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.firestore.DocumentChange.Type;
@@ -41,15 +45,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javax.annotation.Nullable;
+import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
 
 /**
- * Watch provides listen functionality and exposes snapshot listeners. It can be used with any
- * valid Firestore Listen target.
+ * Watch provides listen functionality and exposes snapshot listeners. It can be used with any valid
+ * Firestore Listen target.
  *
- * This class is thread-compatible when called through the methods defined in ApiStreamObserver.
+ * <p>This class is thread-compatible when called through the methods defined in ApiStreamObserver.
  * It synchronizes on its own instance so it is advisable not to use this class for external
  * synchronization.
  */
@@ -60,10 +67,35 @@ class Watch implements ApiStreamObserver<ListenResponse> {
    */
   private static final int WATCH_TARGET_ID = 0xD0;
 
+  private static int RETRY_INITIAL_DELAY_MS = 1000;
+
+  /** The maximum backoff time in milliseconds. */
+  private static int RETRY_MAX_DELAY_MS = 60 * 1000;
+
+  /** The factor to increase the backup by after each failed attempt. */
+  private static double RETRY_BACKOFF_FACTOR = 1.5;
+
+  private static RetrySettings RETRY_SETTINGS =
+      RetrySettings.newBuilder()
+          .
+          // The initial backoff time in seconds after an error.
+          // Set to 1s according to https://cloud.google.com/apis/design/errors.
+          setInitialRetryDelay(Duration.ofSeconds(1))
+          .
+          // The maximum backoff time in minutes.
+          setMaxRetryDelay(Duration.ofMinutes(1))
+          .
+          // The factor to increase the backup by after each failed attempt.
+          setRetryDelayMultiplier(1.5)
+          .setJittered(true)
+          .build();
+
   private final FirestoreImpl firestore;
+  private final ScheduledExecutorService firestoreExecutor;
   private final Comparator<DocumentSnapshot> comparator;
-  private final ExponentialBackoff backoff;
+  private final ExponentialRetryAlgorithm backoff;
   private final Target target;
+  private TimedAttemptSettings nextAttempt;
   private ApiStreamObserver<ListenRequest> stream;
 
   /** The sorted tree of DocumentSnapshots as sent in the last snapshot. */
@@ -94,8 +126,8 @@ class Watch implements ApiStreamObserver<ListenResponse> {
   private boolean hasPushed;
 
   /**
-   * Indicates whether we are interested in data from the stream. Set to false
-   * in the 'unsubscribe()' callback.
+   * Indicates whether we are interested in data from the stream. Set to false in the
+   * 'unsubscribe()' callback.
    */
   private AtomicBoolean isActive;
 
@@ -116,8 +148,11 @@ class Watch implements ApiStreamObserver<ListenResponse> {
     this.firestore = firestore;
     this.target = target;
     this.comparator = comparator;
-    this.backoff = new ExponentialBackoff(firestore.getClient().getExecutor());
+    this.backoff =
+        new ExponentialRetryAlgorithm(RETRY_SETTINGS, CurrentMillisClock.getDefaultClock());
+    this.firestoreExecutor = firestore.getClient().getExecutor();
     this.isActive = new AtomicBoolean();
+    this.nextAttempt = backoff.createFirstAttempt();
   }
 
   /**
@@ -197,12 +232,14 @@ class Watch implements ApiStreamObserver<ListenResponse> {
             resetDocs();
             break;
           default:
-            closeStream(FirestoreException.invalidState("Encountered invalid target change type: " + change.getTargetChangeType()));
+            closeStream(
+                FirestoreException.invalidState(
+                    "Encountered invalid target change type: " + change.getTargetChangeType()));
         }
 
         if (change.getResumeToken() != null
             && affectsTarget(change.getTargetIdsList(), WATCH_TARGET_ID)) {
-          backoff.reset();
+          nextAttempt = backoff.createFirstAttempt();
         }
 
         break;
@@ -348,7 +385,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
   private void maybeReopenStream(Throwable throwable) {
     if (isActive.get() && !isPermanentError(throwable)) {
       if (isResourceExhaustedError(throwable)) {
-        backoff.resetToMax();
+        nextAttempt = backoff.createNextAttempt(nextAttempt);
       }
 
       changeMap.clear();
@@ -370,7 +407,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
 
   /** Initializes a new stream to the backend with backoff. */
   private void initStream() {
-    backoff.backoffAndRun(
+    firestoreExecutor.schedule(
         new Runnable() {
           @Override
           public void run() {
@@ -379,10 +416,15 @@ class Watch implements ApiStreamObserver<ListenResponse> {
             }
 
             synchronized (Watch.this) {
+              if (!isActive.get()) {
+                return;
+              }
+
               Preconditions.checkState(stream == null);
 
               current = false;
               hasPushed = false;
+              nextAttempt = backoff.createNextAttempt(nextAttempt);
 
               stream = firestore.streamRequest(Watch.this, firestore.getClient().listenCallable());
 
@@ -396,7 +438,9 @@ class Watch implements ApiStreamObserver<ListenResponse> {
               stream.onNext(request.build());
             }
           }
-        });
+        },
+        nextAttempt.getRandomizedRetryDelay().toMillis(),
+        TimeUnit.MILLISECONDS);
   }
 
   /**

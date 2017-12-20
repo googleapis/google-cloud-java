@@ -150,8 +150,7 @@ public final class QuerySnapshot implements Iterable<DocumentSnapshot> {
       return false;
     }
     QuerySnapshot that = (QuerySnapshot) o;
-    return Objects.equals(query, that.query)
-        && Objects.equals(readTime, that.readTime);
+    return Objects.equals(query, that.query) && Objects.equals(readTime, that.readTime);
   }
 
   @Override

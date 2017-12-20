@@ -119,9 +119,7 @@ class DocumentSet implements Iterable<DocumentSnapshot> {
     return new DocumentSet(newKeyIndex, newSortedSet);
   }
 
-  /**
-   * Returns a copy of the documents in this set as array. This is O(n) in the size of the set.
-   */
+  /** Returns a copy of the documents in this set as array. This is O(n) in the size of the set. */
   List<DocumentSnapshot> toList() {
     List<DocumentSnapshot> documents = new ArrayList<>(size());
     for (DocumentSnapshot document : this) {
@@ -134,6 +132,7 @@ class DocumentSet implements Iterable<DocumentSnapshot> {
   public Iterator<DocumentSnapshot> iterator() {
     return sortedSet.iterator();
   }
+
   @Override
   public boolean equals(Object other) {
     if (this == other) {

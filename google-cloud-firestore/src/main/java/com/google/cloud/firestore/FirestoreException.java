@@ -16,9 +16,9 @@
 
 package com.google.cloud.firestore;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.grpc.BaseGrpcServiceException;
-import com.google.common.annotations.VisibleForTesting;
 import io.grpc.Status;
 import java.io.IOException;
 import javax.annotation.Nullable;
@@ -79,7 +79,7 @@ public final class FirestoreException extends BaseGrpcServiceException {
     return new FirestoreException(exception);
   }
 
-  @VisibleForTesting
+  @InternalApi
   @Nullable
   Status getStatus() {
     return status;
