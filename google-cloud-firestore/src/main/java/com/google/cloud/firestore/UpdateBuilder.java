@@ -21,10 +21,13 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.Write;
 import com.google.protobuf.ByteString;
+import io.opencensus.trace.AttributeValue;
+import io.opencensus.trace.Tracing;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -575,6 +578,9 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   /** Commit the current batch. */
   ApiFuture<List<WriteResult>> commit(@Nullable ByteString transactionId) {
+    Tracing.getTracer().getCurrentSpan().addAnnotation(
+        "CloudFirestore.Commit",
+        ImmutableMap.of("numDocuments", AttributeValue.longAttributeValue(mutations.size())));
 
     final CommitRequest.Builder request = CommitRequest.newBuilder();
     request.setDatabase(firestore.getDatabaseName());
