@@ -1128,13 +1128,9 @@ public class BigQueryImplTest {
             .setSchema(TABLE_SCHEMA.toPb());
 
     EasyMock.expect(
-        bigqueryRpcMock.create(JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
+            bigqueryRpcMock.create(
+                JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
         .andReturn(jobResponsePb);
-
-    Map<BigQueryRpc.Option, Object> optionMap = Maps.newEnumMap(BigQueryRpc.Option.class);
-    QueryResultsOption pageSizeOption = QueryResultsOption.pageSize(42L);
-    optionMap.put(pageSizeOption.getRpcOption(), pageSizeOption.getValue());
-
     EasyMock.expect(
             bigqueryRpcMock.getQueryResults(
                 PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
@@ -1150,8 +1146,60 @@ public class BigQueryImplTest {
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    // TODO(pongad): pagesize = 42
     TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
+    assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
+    assertThat(result.getTotalRows()).isEqualTo(1);
+    for (FieldValueList row : result.getValues()) {
+      assertThat(row.get(0).getBooleanValue()).isFalse();
+      assertThat(row.get(1).getLongValue()).isEqualTo(1);
+    }
+  }
+
+  @Test
+  public void testQueryRequestCompletedOptions() throws InterruptedException {
+    JobId queryJob = JobId.of(PROJECT, JOB);
+    com.google.api.services.bigquery.model.Job jobResponsePb =
+        new com.google.api.services.bigquery.model.Job()
+            .setConfiguration(QUERY_JOB_CONFIGURATION_FOR_QUERY.toPb())
+            .setJobReference(queryJob.toPb())
+            .setId(JOB)
+            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"));
+    jobResponsePb.getConfiguration().getQuery().setDestinationTable(TABLE_ID.toPb());
+    GetQueryResultsResponse responsePb =
+        new GetQueryResultsResponse()
+            .setJobReference(queryJob.toPb())
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setJobComplete(true)
+            .setCacheHit(false)
+            .setPageToken(CURSOR)
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(1L))
+            .setSchema(TABLE_SCHEMA.toPb());
+
+    EasyMock.expect(
+        bigqueryRpcMock.create(JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
+        .andReturn(jobResponsePb);
+
+    Map<BigQueryRpc.Option, Object> optionMap = Maps.newEnumMap(BigQueryRpc.Option.class);
+    QueryResultsOption pageSizeOption = QueryResultsOption.pageSize(42L);
+    optionMap.put(pageSizeOption.getRpcOption(), pageSizeOption.getValue());
+
+    EasyMock.expect(
+            bigqueryRpcMock.getQueryResults(
+                PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+        .andReturn(responsePb);
+    EasyMock.expect(bigqueryRpcMock.listTableData(PROJECT, DATASET, TABLE, optionMap))
+        .andReturn(
+            new TableDataList()
+                .setPageToken("")
+                .setRows(ImmutableList.of(TABLE_ROW))
+                .setTotalRows(1L));
+
+    EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.getService();
+    // TODO(pongad): pagesize = 42
+    Job job = bigquery.create(JobInfo.of(queryJob, QUERY_JOB_CONFIGURATION_FOR_QUERY));
+    TableResult result = job.getQueryResults(pageSizeOption);
     assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
     assertThat(result.getTotalRows()).isEqualTo(1);
     for (FieldValueList row : result.getValues()) {
@@ -1195,10 +1243,6 @@ public class BigQueryImplTest {
             bigqueryRpcMock.create(
                 JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
         .andReturn(jobResponsePb1);
-
-    QueryResultsOption pageSizeOption = QueryResultsOption.pageSize(42L);
-    Map<BigQueryRpc.Option, Object> optionMap = Maps.newEnumMap(BigQueryRpc.Option.class);
-    optionMap.put(pageSizeOption.getRpcOption(), pageSizeOption.getValue());
 
     EasyMock.expect(
             bigqueryRpcMock.getQueryResults(

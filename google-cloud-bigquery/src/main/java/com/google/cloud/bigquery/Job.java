@@ -25,9 +25,13 @@ import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
+import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.JobConfiguration.Type;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -62,11 +66,9 @@ public class Job extends JobInfo {
           .setMaxRetryDelay(Duration.ofSeconds(3L))
           .build();
 
-  static final QueryResultsOption[] DEFAULT_QUERY_WAIT_OPTIONS =
-      new QueryResultsOption[] {
-        QueryResultsOption.pageSize(0L),
-        QueryResultsOption.maxWaitTime(Duration.ofMinutes(1).toMillis())
-      };
+  static final QueryResultsOption[] DEFAULT_QUERY_WAIT_OPTIONS = {
+    QueryResultsOption.pageSize(0L),
+  };
 
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
@@ -272,13 +274,35 @@ public class Job extends JobInfo {
     }
 
     TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
-    // TODO(pongad): merge options?
+
+    List<QueryResultsOption> waitOptions =
+        new ArrayList<>(Arrays.asList(DEFAULT_QUERY_WAIT_OPTIONS));
+    List<TableDataListOption> listOptions = new ArrayList<>();
+    for (QueryResultsOption option : options) {
+      switch (option.getRpcOption()) {
+        case MAX_RESULTS:
+          listOptions.add(TableDataListOption.pageSize((Long) option.getValue()));
+          break;
+        case PAGE_TOKEN:
+          listOptions.add(TableDataListOption.pageToken((String) option.getValue()));
+          break;
+        case START_INDEX:
+          listOptions.add(TableDataListOption.startIndex((Long) option.getValue()));
+          break;
+        case TIMEOUT:
+          waitOptions.add(QueryResultsOption.maxWaitTime((Long) option.getValue()));
+          break;
+      }
+    }
+
     QueryResponse response =
-        waitForQueryResults(DEFAULT_JOB_WAIT_SETTINGS, DEFAULT_QUERY_WAIT_OPTIONS);
+        waitForQueryResults(
+            DEFAULT_JOB_WAIT_SETTINGS, waitOptions.toArray(new QueryResultsOption[0]));
     if (response.getSchema() == null) {
       throw new JobException(getJobId(), response.getErrors());
     }
-    return bigquery.listTableData(table, response.getSchema());
+    return bigquery.listTableData(
+        table, response.getSchema(), listOptions.toArray(new TableDataListOption[0]));
   }
 
   private QueryResponse waitForQueryResults(
