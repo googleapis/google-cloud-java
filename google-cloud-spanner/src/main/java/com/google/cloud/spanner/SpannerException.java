@@ -57,7 +57,7 @@ public class SpannerException extends BaseGrpcServiceException {
   }
 
   /**
-   * Return the retry delay for transaction in milliseconds. Return -1 if this does not specify any
+   * Return the retry delay for operation in milliseconds. Return -1 if this does not specify any
    * retry delay.
    */
   public long getRetryDelayInMillis() {

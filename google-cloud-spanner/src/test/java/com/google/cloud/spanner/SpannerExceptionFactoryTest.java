@@ -76,6 +76,7 @@ public class SpannerExceptionFactoryTest {
     SpannerException e =
         SpannerExceptionFactory.newSpannerException(new StatusRuntimeException(status, trailers));
     assertThat(e.isRetryable()).isTrue();
+    assertThat(e.getRetryDelayInMillis()).isEqualTo(1001);
   }
 
   @Test
