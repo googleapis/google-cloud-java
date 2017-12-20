@@ -25,6 +25,7 @@ import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.cloud.firestore.DocumentChange.Type;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Cursor;
 import com.google.firestore.v1beta1.Document;
@@ -39,11 +40,13 @@ import com.google.firestore.v1beta1.Value;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Int32Value;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Objects;
+import java.util.concurrent.Executor;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
@@ -74,6 +77,23 @@ public class Query {
     }
   }
 
+  private static class FieldOrder {
+    final FieldPath fieldPath;
+    final Direction direction;
+
+    FieldOrder(FieldPath fieldPath, Direction direction) {
+      this.fieldPath = fieldPath;
+      this.direction = direction;
+    }
+
+    private Order toProto() {
+      Order.Builder result = Order.newBuilder();
+      result.setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()));
+      result.setDirection(direction.getDirection());
+      return result.build();
+    }
+  }
+
   /** Options that define a Firestore Query. */
   private static class QueryOptions {
 
@@ -82,14 +102,14 @@ public class Query {
     private Cursor startCursor;
     private Cursor endCursor;
     private List<Filter> fieldFilters;
-    private LinkedHashMap<FieldPath, Order> fieldOrders;
+    private List<FieldOrder> fieldOrders;
     private List<FieldReference> fieldProjections;
 
     QueryOptions() {
       limit = -1;
       offset = -1;
       fieldFilters = new ArrayList<>();
-      fieldOrders = new LinkedHashMap<>();
+      fieldOrders = new ArrayList<>();
       fieldProjections = new ArrayList<>();
     }
 
@@ -99,7 +119,7 @@ public class Query {
       startCursor = options.startCursor;
       endCursor = options.endCursor;
       fieldFilters = new ArrayList<>(options.fieldFilters);
-      fieldOrders = new LinkedHashMap<>(options.fieldOrders);
+      fieldOrders = new ArrayList<>(options.fieldOrders);
       fieldProjections = options.fieldProjections;
     }
 
@@ -215,13 +235,6 @@ public class Query {
     return result.build();
   }
 
-  private Order createFieldOrder(FieldPath fieldPath, Direction direction) {
-    Order.Builder result = Order.newBuilder();
-    result.setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()));
-    result.setDirection(direction.getDirection());
-    return result.build();
-  }
-
   private Cursor createCursor(Object[] fieldValues, boolean before) {
     Cursor.Builder result = Cursor.newBuilder();
 
@@ -230,13 +243,13 @@ public class Query {
         "Too many cursor values specified. The specified values must match the "
             + "orderBy() constraints of the query.");
 
-    Iterator<Entry<FieldPath, Order>> fieldOrderIterator =
-        options.fieldOrders.entrySet().iterator();
+    Iterator<FieldOrder> fieldOrderIterator = options.fieldOrders.iterator();
 
     for (Object fieldValue : fieldValues) {
       Object sanitizedValue;
 
-      FieldPath fieldPath = fieldOrderIterator.next().getKey();
+      FieldPath fieldPath = fieldOrderIterator.next().fieldPath;
+
       if (fieldPath.equals(FieldPath.DOCUMENT_ID)) {
         DocumentReference cursorDocument;
         if (fieldValue instanceof String) {
@@ -476,13 +489,9 @@ public class Query {
         "Cannot specify an orderBy() constraint after calling startAt(), "
             + "startAfter(), endBefore() or endAt().");
 
-    if (options.fieldOrders.containsValue(fieldPath)) {
-      throw new IllegalArgumentException(
-          String.format("A field order is already specified for field '%'", fieldPath));
-    }
-
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldOrders.put(fieldPath, createFieldOrder(fieldPath, direction));
+    newOptions.fieldOrders.add(new FieldOrder(fieldPath, direction));
+
     return new Query(firestore, path, newOptions);
   }
 
@@ -617,7 +626,7 @@ public class Query {
   }
 
   /** Build the final Firestore query. */
-  private StructuredQuery.Builder buildQuery() {
+  StructuredQuery.Builder buildQuery() {
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
     structuredQuery.addFrom(
         StructuredQuery.CollectionSelector.newBuilder().setCollectionId(path.getId()));
@@ -633,7 +642,9 @@ public class Query {
     }
 
     if (!options.fieldOrders.isEmpty()) {
-      structuredQuery.addAllOrderBy(options.fieldOrders.values());
+      for (FieldOrder order : options.fieldOrders) {
+        structuredQuery.addOrderBy(order.toProto());
+      }
     }
 
     if (!options.fieldProjections.isEmpty()) {
@@ -754,16 +765,43 @@ public class Query {
     return get(null);
   }
 
+  /**
+   * Starts listening to this query.
+   *
+   * @param listener The event listener that will be called with the snapshots.
+   * @return A registration object that can be used to remove the listener.
+   */
+  @Nonnull
+  public ListenerRegistration addSnapshotListener(@Nonnull EventListener<QuerySnapshot> listener) {
+    return addSnapshotListener(firestore.getClient().getExecutor(), listener);
+  }
+
+  /**
+   * Starts listening to this query.
+   *
+   * @param executor The executor to use to call the listener.
+   * @param listener The event listener that will be called with the snapshots.
+   * @return A registration object that can be used to remove the listener.
+   */
+  @Nonnull
+  public ListenerRegistration addSnapshotListener(
+      @Nonnull Executor executor, @Nonnull EventListener<QuerySnapshot> listener) {
+    return Watch.forQuery(this).runWatch(executor, listener);
+  }
+
   ApiFuture<QuerySnapshot> get(@Nullable ByteString transactionId) {
     final SettableApiFuture<QuerySnapshot> result = SettableApiFuture.create();
 
     stream(
         new QuerySnapshotObserver() {
           List<DocumentSnapshot> documentSnapshots = new ArrayList<>();
+          List<DocumentChange> documentChanges = new ArrayList<>();
 
           @Override
           public void onNext(DocumentSnapshot documentSnapshot) {
             documentSnapshots.add(documentSnapshot);
+            documentChanges.add(
+                new DocumentChange(documentSnapshot, Type.ADDED, -1, documentSnapshots.size() - 1));
           }
 
           @Override
@@ -774,13 +812,58 @@ public class Query {
           @Override
           public void onCompleted() {
             QuerySnapshot querySnapshot =
-                new QuerySnapshot(Query.this, this.getReadTime(), documentSnapshots);
+                new QuerySnapshot(
+                    Query.this, this.getReadTime(), documentSnapshots, documentChanges);
             result.set(querySnapshot);
           }
         },
         transactionId);
 
     return result;
+  }
+
+  Comparator<DocumentSnapshot> comparator() {
+    return new Comparator<DocumentSnapshot>() {
+      @Override
+      public int compare(DocumentSnapshot doc1, DocumentSnapshot doc2) {
+        // Add implicit sorting by name, using the last specified direction.
+        Direction lastDirection =
+            options.fieldOrders.size() == 0
+                ? Direction.ASCENDING
+                : options.fieldOrders.get(options.fieldOrders.size() - 1).direction;
+
+        List<FieldOrder> orderBys = new ArrayList<>();
+        orderBys.addAll(options.fieldOrders);
+        orderBys.add(new FieldOrder(FieldPath.DOCUMENT_ID, lastDirection));
+
+        for (FieldOrder orderBy : orderBys) {
+          int comp;
+
+          if (orderBy.fieldPath.equals(FieldPath.documentId())) {
+            comp =
+                doc1.getReference()
+                    .getResourcePath()
+                    .compareTo(doc2.getReference().getResourcePath());
+          } else {
+            Preconditions.checkState(
+                doc1.contains(orderBy.fieldPath) && doc2.contains(orderBy.fieldPath),
+                "Can only compare fields that exist in the DocumentSnapshot."
+                    + " Please include the fields you are ordering on in your select() call.");
+            Value v1 = doc1.extractField(orderBy.fieldPath);
+            Value v2 = doc2.extractField(orderBy.fieldPath);
+
+            comp = com.google.cloud.firestore.Order.INSTANCE.compare(v1, v2);
+          }
+
+          if (comp != 0) {
+            int direction = orderBy.direction.equals(Direction.ASCENDING) ? 1 : -1;
+            return direction * comp;
+          }
+        }
+
+        return 0;
+      }
+    };
   }
 
   ResourcePath getResourcePath() {

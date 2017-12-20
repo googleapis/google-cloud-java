@@ -17,18 +17,17 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.QueryParameterType;
+import com.google.auto.value.AutoValue;
 import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+import javax.annotation.Nullable;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -43,12 +42,12 @@ import org.joda.time.format.DateTimeFormatter;
  * <p>
  *
  * <ul>
- * <li>Boolean: StandardSQLTypeName.BOOL
- * <li>String: StandardSQLTypeName.STRING
- * <li>Integer: StandardSQLTypeName.INT64
- * <li>Long: StandardSQLTypeName.INT64
- * <li>Double: StandardSQLTypeName.FLOAT64
- * <li>Float: StandardSQLTypeName.FLOAT64
+ *   <li>Boolean: StandardSQLTypeName.BOOL
+ *   <li>String: StandardSQLTypeName.STRING
+ *   <li>Integer: StandardSQLTypeName.INT64
+ *   <li>Long: StandardSQLTypeName.INT64
+ *   <li>Double: StandardSQLTypeName.FLOAT64
+ *   <li>Float: StandardSQLTypeName.FLOAT64
  * </ul>
  *
  * <p>No other types are supported through that entry point. The other types can be created by
@@ -57,7 +56,8 @@ import org.joda.time.format.DateTimeFormatter;
  *
  * <p>Struct parameters are currently not supported.
  */
-public class QueryParameterValue implements Serializable {
+@AutoValue
+public abstract class QueryParameterValue implements Serializable {
 
   private static final DateTimeFormatter timestampFormatter =
       DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSSSSSZZ").withZone(DateTimeZone.UTC);
@@ -80,100 +80,67 @@ public class QueryParameterValue implements Serializable {
           };
   private static final long serialVersionUID = -5620695863123562896L;
 
-  private final String value;
-  private final StandardSQLTypeName type;
-  private final List<QueryParameterValue> arrayValues;
-  private final StandardSQLTypeName arrayType;
-
-  public static final class Builder {
-
-    private String value;
-    private List<QueryParameterValue> arrayValues;
-    private StandardSQLTypeName type;
-    private StandardSQLTypeName arrayType;
-
-    private Builder() {}
-
-    private Builder(QueryParameterValue queryParameterValue) {
-      this.value = queryParameterValue.value;
-      this.arrayValues =
-          queryParameterValue.arrayValues == null
-              ? null
-              : Lists.newArrayList(queryParameterValue.arrayValues);
-      this.type = queryParameterValue.type;
-      this.arrayType = queryParameterValue.arrayType;
-    }
+  @AutoValue.Builder
+  public abstract static class Builder {
 
     /** Sets the value to the given scalar value. */
-    public Builder setValue(String value) {
-      this.value = value;
-      return this;
-    }
+    public abstract Builder setValue(String value);
 
     /** Sets array values. The type must set to ARRAY. */
     public Builder setArrayValues(List<QueryParameterValue> arrayValues) {
-      this.arrayValues = arrayValues == null ? null : Lists.newArrayList(arrayValues);
-      return this;
+      return setArrayValuesInner(ImmutableList.copyOf(arrayValues));
     }
+
+    abstract Builder setArrayValuesInner(ImmutableList<QueryParameterValue> arrayValues);
 
     /** Sets the parameter data type. */
-    public Builder setType(StandardSQLTypeName type) {
-      this.type = checkNotNull(type);
-      return this;
-    }
+    public abstract Builder setType(StandardSQLTypeName type);
 
     /** Sets the data type of the array elements. The type must set to ARRAY. */
-    public Builder setArrayType(StandardSQLTypeName arrayType) {
-      this.arrayType = arrayType;
-      return this;
-    }
+    public abstract Builder setArrayType(StandardSQLTypeName arrayType);
+
+    abstract QueryParameterValue autoBuild();
 
     /** Creates a {@code QueryParameterValue} object. */
     public QueryParameterValue build() {
-      return new QueryParameterValue(this);
+      QueryParameterValue value = autoBuild();
+      boolean isArray = (value.getType() == StandardSQLTypeName.ARRAY);
+      checkArgument(
+          isArray == (value.getArrayType() != null),
+          "arrayType must be set if and only if the type is ARRAY");
+      checkArgument(
+          isArray == (value.getArrayValues() != null),
+          "arrayValues must be set if and only if the type is ARRAY");
+      checkArgument(
+          isArray == (value.getValue() == null),
+          "value must be set if and only if the type is not ARRAY");
+      return value;
     }
   }
 
-  private QueryParameterValue(Builder builder) {
-    if (builder.arrayValues != null) {
-      checkArgument(
-          StandardSQLTypeName.ARRAY.equals(builder.type),
-          "type must be ARRAY if arrayValues is set");
-      checkArgument(builder.arrayType != null, "arrayType must be set if arrayValues is set");
-      checkArgument(builder.value == null, "value can't be set if arrayValues is set");
-      this.arrayValues = ImmutableList.copyOf(builder.arrayValues);
-    } else {
-      checkArgument(
-          !StandardSQLTypeName.ARRAY.equals(builder.type),
-          "type can't be ARRAY if arrayValues is not set");
-      checkArgument(builder.arrayType == null, "arrayType can't be set if arrayValues is not set");
-      checkArgument(builder.value != null, "value must be set if arrayValues is not set");
-      this.arrayValues = null;
-    }
-    this.type = checkNotNull(builder.type);
-    this.value = builder.value;
-    this.arrayType = builder.arrayType;
+  QueryParameterValue() {
+    // Package-private so it's extensible by AutoValue but not users.
   }
 
   /** Returns the value of this parameter. */
-  public String getValue() {
-    return value;
+  @Nullable
+  public abstract String getValue();
+
+  /** Returns the array values of this parameter. The returned list, if not null, is immutable. */
+  @Nullable
+  public List<QueryParameterValue> getArrayValues() {
+    return getArrayValuesInner();
   }
 
-  /** Returns the array values of this parameter. */
-  public List<QueryParameterValue> getArrayValues() {
-    return arrayValues;
-  }
+  @Nullable
+  abstract ImmutableList<QueryParameterValue> getArrayValuesInner();
 
   /** Returns the data type of this parameter. */
-  public StandardSQLTypeName getType() {
-    return type;
-  }
+  public abstract StandardSQLTypeName getType();
 
   /** Returns the data type of the array elements. */
-  public StandardSQLTypeName getArrayType() {
-    return arrayType;
-  }
+  @Nullable
+  public abstract StandardSQLTypeName getArrayType();
 
   /** Creates a {@code QueryParameterValue} object with the given value and type. */
   public static <T> QueryParameterValue of(T value, Class<T> type) {
@@ -366,55 +333,31 @@ public class QueryParameterValue implements Serializable {
         "Type " + type + " incompatible with " + value.getClass().getCanonicalName());
   }
 
-  /** Returns a builder for the {@code QueryParameterValue} object. */
-  public Builder toBuilder() {
-    return new Builder(this);
-  }
-
   /** Returns a builder for a QueryParameterValue object with given value. */
+  public abstract Builder toBuilder();
+
+  /** Returns a builder for the {@code QueryParameterValue} object. */
   public static Builder newBuilder() {
-    return new Builder();
-  }
-
-  @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("value", value)
-        .add("arrayValues", arrayValues)
-        .add("type", type)
-        .add("arrayType", arrayType)
-        .toString();
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(value, arrayValues);
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    return obj instanceof QueryParameterValue
-        && Objects.equals(toValuePb(), ((QueryParameterValue) obj).toValuePb())
-        && Objects.equals(toTypePb(), ((QueryParameterValue) obj).toTypePb());
+    return new AutoValue_QueryParameterValue.Builder();
   }
 
   com.google.api.services.bigquery.model.QueryParameterValue toValuePb() {
     com.google.api.services.bigquery.model.QueryParameterValue valuePb =
         new com.google.api.services.bigquery.model.QueryParameterValue();
-    valuePb.setValue(value);
-    if (arrayValues != null && !arrayValues.isEmpty()) {
+    valuePb.setValue(getValue());
+    if (getArrayValues() != null) {
       valuePb.setArrayValues(
-          Lists.transform(arrayValues, QueryParameterValue.TO_VALUE_PB_FUNCTION));
+          Lists.transform(getArrayValues(), QueryParameterValue.TO_VALUE_PB_FUNCTION));
     }
     return valuePb;
   }
 
   QueryParameterType toTypePb() {
     QueryParameterType typePb = new QueryParameterType();
-    typePb.setType(type.toString());
-    if (arrayType != null) {
+    typePb.setType(getType().toString());
+    if (getArrayType() != null) {
       QueryParameterType arrayTypePb = new QueryParameterType();
-      arrayTypePb.setType(arrayType.toString());
+      arrayTypePb.setType(getArrayType().toString());
       typePb.setArrayType(arrayTypePb);
     }
     return typePb;
@@ -423,18 +366,25 @@ public class QueryParameterValue implements Serializable {
   static QueryParameterValue fromPb(
       com.google.api.services.bigquery.model.QueryParameterValue valuePb,
       QueryParameterType typePb) {
-    Builder valueBuilder = new Builder();
-    valueBuilder.setValue(valuePb.getValue());
-    if (valuePb.getArrayValues() != null && valuePb.getArrayValues().size() > 0) {
-      List<QueryParameterValue> arrayValues = new ArrayList<>();
-      for (com.google.api.services.bigquery.model.QueryParameterValue elementValuePb :
-          valuePb.getArrayValues()) {
-        arrayValues.add(fromPb(elementValuePb, typePb.getArrayType()));
-      }
-      valueBuilder.setArrayValues(arrayValues);
+    Builder valueBuilder = newBuilder();
+
+    StandardSQLTypeName type = StandardSQLTypeName.valueOf(typePb.getType());
+    valueBuilder.setType(type);
+    if (type == StandardSQLTypeName.ARRAY) {
       valueBuilder.setArrayType(StandardSQLTypeName.valueOf(typePb.getArrayType().getType()));
+      if (valuePb == null || valuePb.getArrayValues() == null) {
+        valueBuilder.setArrayValues(ImmutableList.<QueryParameterValue>of());
+      } else {
+        ImmutableList.Builder<QueryParameterValue> arrayValues = ImmutableList.builder();
+        for (com.google.api.services.bigquery.model.QueryParameterValue elementValuePb :
+            valuePb.getArrayValues()) {
+          arrayValues.add(fromPb(elementValuePb, typePb.getArrayType()));
+        }
+        valueBuilder.setArrayValues(arrayValues.build());
+      }
+    } else {
+      valueBuilder.setValue(valuePb == null ? "" : valuePb.getValue());
     }
-    valueBuilder.setType(StandardSQLTypeName.valueOf(typePb.getType()));
 
     return valueBuilder.build();
   }

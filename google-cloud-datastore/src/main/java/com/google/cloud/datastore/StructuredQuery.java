@@ -659,6 +659,14 @@ public abstract class StructuredQuery<V> extends Query<V> {
       Direction direction = Direction.fromPb(propertyOrderPb.getDirection());
       return new OrderBy(property, direction);
     }
+
+    @Override
+    public String toString() {
+      ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
+      toStringHelper.add("property", getProperty());
+      toStringHelper.add("direction", getDirection());
+      return toStringHelper.toString();
+    }
   }
 
   /**

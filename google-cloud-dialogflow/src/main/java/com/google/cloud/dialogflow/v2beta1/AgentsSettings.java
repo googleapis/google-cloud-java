@@ -20,10 +20,10 @@ import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.SearchAg
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcExtraHeaderData;
+import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.grpc.ProtoOperationTransformers;
@@ -89,14 +89,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
-
-  private static final String DEFAULT_GAPIC_NAME = "gapic";
-  private static final String DEFAULT_GAPIC_VERSION = "";
-
-  private static final String PROPERTIES_FILE = "/com/google/cloud/dialogflow/project.properties";
-  private static final String META_VERSION_KEY = "artifact.version";
-
-  private static String gapicVersion;
 
   private final UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings;
   private final PagedCallSettings<
@@ -210,18 +202,9 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
-        .setApiClientHeaderLineKey("x-goog-api-client")
-        .addApiClientHeaderLineData(GrpcExtraHeaderData.getXGoogApiClientData());
-  }
-
-  private static String getGapicVersion() {
-    if (gapicVersion == null) {
-      gapicVersion =
-          PropertiesProvider.loadProperty(AgentsSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
-      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
-    }
-    return gapicVersion;
+        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(AgentsSettings.class))
+        .setTransportToken(
+            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
   /** Returns a new builder for this class. */
@@ -403,7 +386,7 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
       Builder builder = new Builder((ClientContext) null);
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
       return initDefaults(builder);
     }

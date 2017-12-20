@@ -84,7 +84,7 @@ public class TransactionTest {
 
   @Before
   public void before() {
-    doReturn(Executors.newSingleThreadExecutor()).when(firestoreRpc).getExecutor();
+    doReturn(Executors.newSingleThreadScheduledExecutor()).when(firestoreRpc).getExecutor();
 
     documentReference = firestoreMock.document("coll/doc");
     queryReference = firestoreMock.collection("coll");

@@ -21,6 +21,7 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
@@ -142,14 +143,12 @@ class FirestoreImpl implements Firestore {
                     new DocumentReference(
                         FirestoreImpl.this, ResourcePath.create(response.getMissing()));
                 documentSnapshot =
-                    new DocumentSnapshot(
+                    DocumentSnapshot.fromMissing(
                         FirestoreImpl.this,
                         documentReference,
-                        null,
                         Instant.ofEpochSecond(
-                            response.getReadTime().getSeconds(), response.getReadTime().getNanos()),
-                        null,
-                        null);
+                            response.getReadTime().getSeconds(),
+                            response.getReadTime().getNanos()));
                 break;
               default:
                 return;
@@ -328,12 +327,19 @@ class FirestoreImpl implements Firestore {
     return callable.futureCall(requestT);
   }
 
-  /** Request funnel for all streaming requests. */
+  /** Request funnel for all unidirectional streaming requests. */
   <RequestT, ResponseT> void streamRequest(
       RequestT requestT,
       ApiStreamObserver<ResponseT> responseObserverT,
       ServerStreamingCallable<RequestT, ResponseT> callable) {
     callable.serverStreamingCall(requestT, responseObserverT);
+  }
+
+  /** Request funnel for all bidirectional streaming requests. */
+  <RequestT, ResponseT> ApiStreamObserver<RequestT> streamRequest(
+      ApiStreamObserver<ResponseT> responseObserverT,
+      BidiStreamingCallable<RequestT, ResponseT> callable) {
+    return callable.bidiStreamingCall(responseObserverT);
   }
 
   @Override
