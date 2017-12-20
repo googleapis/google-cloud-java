@@ -67,26 +67,15 @@ class Watch implements ApiStreamObserver<ListenResponse> {
    */
   private static final int WATCH_TARGET_ID = 0xD0;
 
-  private static int RETRY_INITIAL_DELAY_MS = 1000;
-
-  /** The maximum backoff time in milliseconds. */
-  private static int RETRY_MAX_DELAY_MS = 60 * 1000;
-
-  /** The factor to increase the backup by after each failed attempt. */
-  private static double RETRY_BACKOFF_FACTOR = 1.5;
-
   private static RetrySettings RETRY_SETTINGS =
       RetrySettings.newBuilder()
-          .
           // The initial backoff time in seconds after an error.
           // Set to 1s according to https://cloud.google.com/apis/design/errors.
-          setInitialRetryDelay(Duration.ofSeconds(1))
-          .
+          .setInitialRetryDelay(Duration.ofSeconds(1))
           // The maximum backoff time in minutes.
-          setMaxRetryDelay(Duration.ofMinutes(1))
-          .
+          .setMaxRetryDelay(Duration.ofMinutes(1))
           // The factor to increase the backup by after each failed attempt.
-          setRetryDelayMultiplier(1.5)
+          .setRetryDelayMultiplier(1.5)
           .setJittered(true)
           .build();
 

@@ -193,6 +193,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
   @Override
   public BidiStreamingCallable<ListenRequest, ListenResponse> listenCallable() {
     return firestoreStub.listenCallable();
+  }
 
   // This class is needed solely to get access to protected method setInternalHeaderProvider()
   private static class FirestoreSettingsBuilder extends FirestoreSettings.Builder {
