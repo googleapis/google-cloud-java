@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dep-verification</artifactId>
-  <version>0.30.1-alpha-SNAPSHOT</version>
+  <version>0.32.1-alpha-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Google Cloud Dependency Verification</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-dep-verification</url>
