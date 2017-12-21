@@ -44,7 +44,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Google Cloud Bigtable API.
+ * gRPC stub implementation for Cloud Bigtable API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

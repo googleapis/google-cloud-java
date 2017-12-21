@@ -65,7 +65,6 @@ import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
-import com.google.firestore.v1beta1.ListCollectionIdsRequest;
 import com.google.firestore.v1beta1.Value;
 import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
@@ -99,8 +98,6 @@ public class DocumentReferenceTest {
   @Captor private ArgumentCaptor<BatchGetDocumentsRequest> getAllCapture;
 
   @Captor private ArgumentCaptor<ApiStreamObserver> streamObserverCapture;
-
-  @Captor private ArgumentCaptor<ListCollectionIdsRequest> listCollectionIdsCapture;
 
   private DocumentReference documentReference;
 
@@ -586,37 +583,29 @@ public class DocumentReferenceTest {
 
   @Test
   public void updateConflictingFields() throws Exception {
-   try {
-     documentReference
-         .update("a.b", "foo", "a", "foo")
-         .get();
-     fail();
-   } catch (IllegalArgumentException e) {
+    try {
+      documentReference.update("a.b", "foo", "a", "foo").get();
+      fail();
+    } catch (IllegalArgumentException e) {
       assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a'.");
-   }
+    }
 
     try {
-      documentReference
-          .update("a.b", "foo", "a.b.c", "foo")
-          .get();
+      documentReference.update("a.b", "foo", "a.b.c", "foo").get();
       fail();
     } catch (IllegalArgumentException e) {
       assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a.b'.");
     }
 
     try {
-      documentReference
-          .update("a.b", SINGLE_FIELD_MAP, "a", SINGLE_FIELD_MAP)
-          .get();
+      documentReference.update("a.b", SINGLE_FIELD_MAP, "a", SINGLE_FIELD_MAP).get();
       fail();
     } catch (IllegalArgumentException e) {
       assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a'.");
     }
 
     try {
-      documentReference
-          .update("a.b", SINGLE_FIELD_MAP, "a.b.c", SINGLE_FIELD_MAP)
-          .get();
+      documentReference.update("a.b", SINGLE_FIELD_MAP, "a.b.c", SINGLE_FIELD_MAP).get();
       fail();
     } catch (IllegalArgumentException e) {
       assertEquals(e.getMessage(), "Detected ambiguous definition for field 'a.b'.");

@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore.spi.v1beta1;
 
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.ServiceRpc;
@@ -27,50 +28,41 @@ import com.google.firestore.v1beta1.BeginTransactionResponse;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
+import com.google.firestore.v1beta1.ListenRequest;
+import com.google.firestore.v1beta1.ListenResponse;
 import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
 import com.google.protobuf.Empty;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ScheduledExecutorService;
 
-/**
- * Contains the RPC stubs used by the manual Cloud Firestore client.
- */
+/** Contains the RPC stubs used by the manual Cloud Firestore client. */
 public interface FirestoreRpc extends AutoCloseable, ServiceRpc {
 
-  /**
-   * Commits a transaction, while optionally updating documents.
-   */
+  /** Commits a transaction, while optionally updating documents. */
   UnaryCallable<CommitRequest, CommitResponse> commitCallable();
 
-  /**
-   * Gets multiple documents.
-   */
+  /** Gets multiple documents. */
   ServerStreamingCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
-  batchGetDocumentsCallable();
+      batchGetDocumentsCallable();
 
-  /**
-   * Returns the executor used by the GAPIC client.
-   */
-  Executor getExecutor();
+  /** Returns the executor used by the GAPIC client. */
+  ScheduledExecutorService getExecutor();
 
-  /**
-   * Runs a query.
-   */
+  /** Runs a query. */
   ServerStreamingCallable<RunQueryRequest, RunQueryResponse> runQueryCallable();
 
-  /**
-   * Starts a new transaction.
-   */
+  /** Starts a new transaction. */
   UnaryCallable<BeginTransactionRequest, BeginTransactionResponse> beginTransactionCallable();
 
-  /**
-   * Rolls back a transaction.
-   */
+  /** Rolls back a transaction. */
   UnaryCallable<RollbackRequest, Empty> rollbackCallable();
 
-  /**
-   * Returns a list of collections IDs.
-   */
-  UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse> listCollectionIdsPagedCallable();
+  /** Returns a list of collections IDs. */
+  UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
+      listCollectionIdsPagedCallable();
+
+  /** Returns a bi-directional watch stream. */
+  BidiStreamingCallable<ListenRequest, ListenResponse> listenCallable();
 }

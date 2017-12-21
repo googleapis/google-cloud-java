@@ -18,16 +18,21 @@ package com.google.cloud.firestore.spi.v1beta1;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.TransportChannel;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings.Builder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.firestore.FirestoreOptions;
 import com.google.cloud.firestore.v1beta1.FirestoreSettings;
 import com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
@@ -43,6 +48,8 @@ import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.DatabaseRootName;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
+import com.google.firestore.v1beta1.ListenRequest;
+import com.google.firestore.v1beta1.ListenResponse;
 import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
@@ -87,24 +94,32 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
                 .setExecutor(executor)
                 .setTransportChannel(transportChannel)
                 .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
-                .setBackgroundResources(Collections.<BackgroundResource>singletonList(transportChannel))
+                .setBackgroundResources(
+                    Collections.<BackgroundResource>singletonList(transportChannel))
                 .build();
       } else {
-        FirestoreSettings.Builder settingsBuilder = FirestoreSettings.newBuilder();
+        FirestoreSettingsBuilder settingsBuilder =
+            new FirestoreSettingsBuilder(FirestoreSettings.newBuilder().build());
 
-        DatabaseRootName databaseName = DatabaseRootName
-            .of(options.getProjectId(), options.getDatabaseId());
+        DatabaseRootName databaseName =
+            DatabaseRootName.of(options.getProjectId(), options.getDatabaseId());
 
-        settingsBuilder.setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options));
+        settingsBuilder.setCredentialsProvider(
+            GrpcTransportOptions.setUpCredentialsProvider(options));
         settingsBuilder.setTransportChannelProvider(
-            GrpcTransportOptions.setUpChannelProvider(FirestoreSettings.defaultGrpcTransportProviderBuilder(), options));
+            GrpcTransportOptions.setUpChannelProvider(
+                FirestoreSettings.defaultGrpcTransportProviderBuilder(), options));
 
-        ApiClientHeaderProvider.Builder headerProvider =
-            FirestoreSettings.defaultApiClientHeaderProviderBuilder();
-        headerProvider.setGoogleCloudResourcePrefix(databaseName.toString());
+        HeaderProvider internalHeaderProvider =
+            FirestoreSettings.defaultApiClientHeaderProviderBuilder()
+                .setClientLibToken(
+                    ServiceOptions.getGoogApiClientLibName(),
+                    GaxProperties.getLibraryVersion(options.getClass()))
+                .setResourceToken(databaseName.toString())
+                .build();
 
-        settingsBuilder.setHeaderProvider(
-            GrpcTransportOptions.setUpHeaderProvider(headerProvider, options));
+        settingsBuilder.setInternalHeaderProvider(internalHeaderProvider);
+        settingsBuilder.setHeaderProvider(options.getMergedHeaderProvider(new NoHeaderProvider()));
 
         clientContext = ClientContext.create(settingsBuilder.build());
       }
@@ -117,8 +132,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
             }
           };
       FirestoreSettings.Builder firestoreBuilder =
-          FirestoreSettings.newBuilder(clientContext)
-              .applyToAllUnaryMethods(retrySettingsSetter);
+          FirestoreSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       firestoreStub = GrpcFirestoreStub.create(firestoreBuilder.build());
     } catch (Exception e) {
       throw new IOException(e);
@@ -139,7 +153,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
   }
 
   @Override
-  public Executor getExecutor() {
+  public ScheduledExecutorService getExecutor() {
     return executor;
   }
 
@@ -150,7 +164,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
 
   @Override
   public ServerStreamingCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
-  batchGetDocumentsCallable() {
+      batchGetDocumentsCallable() {
     return firestoreStub.batchGetDocumentsCallable();
   }
 
@@ -161,7 +175,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
 
   @Override
   public UnaryCallable<BeginTransactionRequest, BeginTransactionResponse>
-  beginTransactionCallable() {
+      beginTransactionCallable() {
     return firestoreStub.beginTransactionCallable();
   }
 
@@ -172,7 +186,25 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
 
   @Override
   public UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
-  listCollectionIdsPagedCallable() {
+      listCollectionIdsPagedCallable() {
     return firestoreStub.listCollectionIdsPagedCallable();
+  }
+
+  @Override
+  public BidiStreamingCallable<ListenRequest, ListenResponse> listenCallable() {
+    return firestoreStub.listenCallable();
+  }
+
+  // This class is needed solely to get access to protected method setInternalHeaderProvider()
+  private static class FirestoreSettingsBuilder extends FirestoreSettings.Builder {
+    private FirestoreSettingsBuilder(FirestoreSettings settings) {
+      super(settings);
+    }
+
+    @Override
+    protected FirestoreSettings.Builder setInternalHeaderProvider(
+        HeaderProvider internalHeaderProvider) {
+      return super.setInternalHeaderProvider(internalHeaderProvider);
+    }
   }
 }

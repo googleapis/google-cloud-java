@@ -44,7 +44,6 @@ import com.google.privacy.dlp.v2beta1.ListRootCategoriesResponse;
 import com.google.privacy.dlp.v2beta1.OutputStorageConfig;
 import com.google.privacy.dlp.v2beta1.PrivacyMetric;
 import com.google.privacy.dlp.v2beta1.RedactContentRequest;
-import com.google.privacy.dlp.v2beta1.RedactContentRequest.ReplaceConfig;
 import com.google.privacy.dlp.v2beta1.RedactContentResponse;
 import com.google.privacy.dlp.v2beta1.ResultName;
 import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationMetadata;
@@ -68,10 +67,22 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
- *   DeidentifyConfig deidentifyConfig = DeidentifyConfig.newBuilder().build();
- *   InspectConfig inspectConfig = InspectConfig.newBuilder().build();
- *   List&lt;ContentItem&gt; items = new ArrayList&lt;&gt;();
- *   DeidentifyContentResponse response = dlpServiceClient.deidentifyContent(deidentifyConfig, inspectConfig, items);
+ *   String name = "EMAIL_ADDRESS";
+ *   InfoType infoTypesElement = InfoType.newBuilder()
+ *     .setName(name)
+ *     .build();
+ *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
+ *   InspectConfig inspectConfig = InspectConfig.newBuilder()
+ *     .addAllInfoTypes(infoTypes)
+ *     .build();
+ *   String type = "text/plain";
+ *   String value = "My email is example{@literal @}example.com.";
+ *   ContentItem itemsElement = ContentItem.newBuilder()
+ *     .setType(type)
+ *     .setValue(value)
+ *     .build();
+ *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
+ *   InspectContentResponse response = dlpServiceClient.inspectContent(inspectConfig, items);
  * }
  * </code>
  * </pre>
@@ -187,6 +198,205 @@ public class DlpServiceClient implements BackgroundResource {
    */
   public final OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finds potentially sensitive info in a list of strings. This method has limits on input size,
+   * processing time, and output size.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name = "EMAIL_ADDRESS";
+   *   InfoType infoTypesElement = InfoType.newBuilder()
+   *     .setName(name)
+   *     .build();
+   *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
+   *   InspectConfig inspectConfig = InspectConfig.newBuilder()
+   *     .addAllInfoTypes(infoTypes)
+   *     .build();
+   *   String type = "text/plain";
+   *   String value = "My email is example{@literal @}example.com.";
+   *   ContentItem itemsElement = ContentItem.newBuilder()
+   *     .setType(type)
+   *     .setValue(value)
+   *     .build();
+   *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
+   *   InspectContentResponse response = dlpServiceClient.inspectContent(inspectConfig, items);
+   * }
+   * </code></pre>
+   *
+   * @param inspectConfig Configuration for the inspector.
+   * @param items The list of items to inspect. Items in a single request are considered "related"
+   *     unless inspect_config.independent_inputs is true. Up to 100 are allowed per request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectContentResponse inspectContent(
+      InspectConfig inspectConfig, List<ContentItem> items) {
+
+    InspectContentRequest request =
+        InspectContentRequest.newBuilder()
+            .setInspectConfig(inspectConfig)
+            .addAllItems(items)
+            .build();
+    return inspectContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finds potentially sensitive info in a list of strings. This method has limits on input size,
+   * processing time, and output size.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name = "EMAIL_ADDRESS";
+   *   InfoType infoTypesElement = InfoType.newBuilder()
+   *     .setName(name)
+   *     .build();
+   *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
+   *   InspectConfig inspectConfig = InspectConfig.newBuilder()
+   *     .addAllInfoTypes(infoTypes)
+   *     .build();
+   *   String type = "text/plain";
+   *   String value = "My email is example{@literal @}example.com.";
+   *   ContentItem itemsElement = ContentItem.newBuilder()
+   *     .setType(type)
+   *     .setValue(value)
+   *     .build();
+   *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
+   *   InspectContentRequest request = InspectContentRequest.newBuilder()
+   *     .setInspectConfig(inspectConfig)
+   *     .addAllItems(items)
+   *     .build();
+   *   InspectContentResponse response = dlpServiceClient.inspectContent(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InspectContentResponse inspectContent(InspectContentRequest request) {
+    return inspectContentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finds potentially sensitive info in a list of strings. This method has limits on input size,
+   * processing time, and output size.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name = "EMAIL_ADDRESS";
+   *   InfoType infoTypesElement = InfoType.newBuilder()
+   *     .setName(name)
+   *     .build();
+   *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
+   *   InspectConfig inspectConfig = InspectConfig.newBuilder()
+   *     .addAllInfoTypes(infoTypes)
+   *     .build();
+   *   String type = "text/plain";
+   *   String value = "My email is example{@literal @}example.com.";
+   *   ContentItem itemsElement = ContentItem.newBuilder()
+   *     .setType(type)
+   *     .setValue(value)
+   *     .build();
+   *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
+   *   InspectContentRequest request = InspectContentRequest.newBuilder()
+   *     .setInspectConfig(inspectConfig)
+   *     .addAllItems(items)
+   *     .build();
+   *   ApiFuture&lt;InspectContentResponse&gt; future = dlpServiceClient.inspectContentCallable().futureCall(request);
+   *   // Do something
+   *   InspectContentResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<InspectContentRequest, InspectContentResponse>
+      inspectContentCallable() {
+    return stub.inspectContentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Redacts potentially sensitive info from a list of strings. This method has limits on input
+   * size, processing time, and output size.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name = "EMAIL_ADDRESS";
+   *   InfoType infoTypesElement = InfoType.newBuilder()
+   *     .setName(name)
+   *     .build();
+   *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
+   *   InspectConfig inspectConfig = InspectConfig.newBuilder()
+   *     .addAllInfoTypes(infoTypes)
+   *     .build();
+   *   String type = "text/plain";
+   *   String value = "My email is example{@literal @}example.com.";
+   *   ContentItem itemsElement = ContentItem.newBuilder()
+   *     .setType(type)
+   *     .setValue(value)
+   *     .build();
+   *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
+   *   RedactContentRequest request = RedactContentRequest.newBuilder()
+   *     .setInspectConfig(inspectConfig)
+   *     .addAllItems(items)
+   *     .build();
+   *   RedactContentResponse response = dlpServiceClient.redactContent(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RedactContentResponse redactContent(RedactContentRequest request) {
+    return redactContentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Redacts potentially sensitive info from a list of strings. This method has limits on input
+   * size, processing time, and output size.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name = "EMAIL_ADDRESS";
+   *   InfoType infoTypesElement = InfoType.newBuilder()
+   *     .setName(name)
+   *     .build();
+   *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
+   *   InspectConfig inspectConfig = InspectConfig.newBuilder()
+   *     .addAllInfoTypes(infoTypes)
+   *     .build();
+   *   String type = "text/plain";
+   *   String value = "My email is example{@literal @}example.com.";
+   *   ContentItem itemsElement = ContentItem.newBuilder()
+   *     .setType(type)
+   *     .setValue(value)
+   *     .build();
+   *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
+   *   RedactContentRequest request = RedactContentRequest.newBuilder()
+   *     .setInspectConfig(inspectConfig)
+   *     .addAllItems(items)
+   *     .build();
+   *   ApiFuture&lt;RedactContentResponse&gt; future = dlpServiceClient.redactContentCallable().futureCall(request);
+   *   // Do something
+   *   RedactContentResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable() {
+    return stub.redactContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -387,285 +597,6 @@ public class DlpServiceClient implements BackgroundResource {
   public final UnaryCallable<AnalyzeDataSourceRiskRequest, Operation>
       analyzeDataSourceRiskCallable() {
     return stub.analyzeDataSourceRiskCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Finds potentially sensitive info in a list of strings. This method has limits on input size,
-   * processing time, and output size.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = "EMAIL_ADDRESS";
-   *   InfoType infoTypesElement = InfoType.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
-   *   InspectConfig inspectConfig = InspectConfig.newBuilder()
-   *     .addAllInfoTypes(infoTypes)
-   *     .build();
-   *   String type = "text/plain";
-   *   String value = "My email is example{@literal @}example.com.";
-   *   ContentItem itemsElement = ContentItem.newBuilder()
-   *     .setType(type)
-   *     .setValue(value)
-   *     .build();
-   *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
-   *   InspectContentResponse response = dlpServiceClient.inspectContent(inspectConfig, items);
-   * }
-   * </code></pre>
-   *
-   * @param inspectConfig Configuration for the inspector.
-   * @param items The list of items to inspect. Items in a single request are considered "related"
-   *     unless inspect_config.independent_inputs is true. Up to 100 are allowed per request.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final InspectContentResponse inspectContent(
-      InspectConfig inspectConfig, List<ContentItem> items) {
-
-    InspectContentRequest request =
-        InspectContentRequest.newBuilder()
-            .setInspectConfig(inspectConfig)
-            .addAllItems(items)
-            .build();
-    return inspectContent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Finds potentially sensitive info in a list of strings. This method has limits on input size,
-   * processing time, and output size.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = "EMAIL_ADDRESS";
-   *   InfoType infoTypesElement = InfoType.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
-   *   InspectConfig inspectConfig = InspectConfig.newBuilder()
-   *     .addAllInfoTypes(infoTypes)
-   *     .build();
-   *   String type = "text/plain";
-   *   String value = "My email is example{@literal @}example.com.";
-   *   ContentItem itemsElement = ContentItem.newBuilder()
-   *     .setType(type)
-   *     .setValue(value)
-   *     .build();
-   *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
-   *   InspectContentRequest request = InspectContentRequest.newBuilder()
-   *     .setInspectConfig(inspectConfig)
-   *     .addAllItems(items)
-   *     .build();
-   *   InspectContentResponse response = dlpServiceClient.inspectContent(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final InspectContentResponse inspectContent(InspectContentRequest request) {
-    return inspectContentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Finds potentially sensitive info in a list of strings. This method has limits on input size,
-   * processing time, and output size.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = "EMAIL_ADDRESS";
-   *   InfoType infoTypesElement = InfoType.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
-   *   InspectConfig inspectConfig = InspectConfig.newBuilder()
-   *     .addAllInfoTypes(infoTypes)
-   *     .build();
-   *   String type = "text/plain";
-   *   String value = "My email is example{@literal @}example.com.";
-   *   ContentItem itemsElement = ContentItem.newBuilder()
-   *     .setType(type)
-   *     .setValue(value)
-   *     .build();
-   *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
-   *   InspectContentRequest request = InspectContentRequest.newBuilder()
-   *     .setInspectConfig(inspectConfig)
-   *     .addAllItems(items)
-   *     .build();
-   *   ApiFuture&lt;InspectContentResponse&gt; future = dlpServiceClient.inspectContentCallable().futureCall(request);
-   *   // Do something
-   *   InspectContentResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<InspectContentRequest, InspectContentResponse>
-      inspectContentCallable() {
-    return stub.inspectContentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Redacts potentially sensitive info from a list of strings. This method has limits on input
-   * size, processing time, and output size.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = "EMAIL_ADDRESS";
-   *   InfoType infoTypesElement = InfoType.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
-   *   InspectConfig inspectConfig = InspectConfig.newBuilder()
-   *     .addAllInfoTypes(infoTypes)
-   *     .build();
-   *   String type = "text/plain";
-   *   String value = "My email is example{@literal @}example.com.";
-   *   ContentItem itemsElement = ContentItem.newBuilder()
-   *     .setType(type)
-   *     .setValue(value)
-   *     .build();
-   *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
-   *   String name2 = "EMAIL_ADDRESS";
-   *   InfoType infoType = InfoType.newBuilder()
-   *     .setName(name2)
-   *     .build();
-   *   String replaceWith = "REDACTED";
-   *   RedactContentRequest.ReplaceConfig replaceConfigsElement = RedactContentRequest.ReplaceConfig.newBuilder()
-   *     .setInfoType(infoType)
-   *     .setReplaceWith(replaceWith)
-   *     .build();
-   *   List&lt;RedactContentRequest.ReplaceConfig&gt; replaceConfigs = Arrays.asList(replaceConfigsElement);
-   *   RedactContentResponse response = dlpServiceClient.redactContent(inspectConfig, items, replaceConfigs);
-   * }
-   * </code></pre>
-   *
-   * @param inspectConfig Configuration for the inspector.
-   * @param items The list of items to inspect. Up to 100 are allowed per request.
-   * @param replaceConfigs The strings to replace findings text findings with. Must specify at least
-   *     one of these or one ImageRedactionConfig if redacting images.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final RedactContentResponse redactContent(
-      InspectConfig inspectConfig,
-      List<ContentItem> items,
-      List<RedactContentRequest.ReplaceConfig> replaceConfigs) {
-
-    RedactContentRequest request =
-        RedactContentRequest.newBuilder()
-            .setInspectConfig(inspectConfig)
-            .addAllItems(items)
-            .addAllReplaceConfigs(replaceConfigs)
-            .build();
-    return redactContent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Redacts potentially sensitive info from a list of strings. This method has limits on input
-   * size, processing time, and output size.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = "EMAIL_ADDRESS";
-   *   InfoType infoTypesElement = InfoType.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
-   *   InspectConfig inspectConfig = InspectConfig.newBuilder()
-   *     .addAllInfoTypes(infoTypes)
-   *     .build();
-   *   String type = "text/plain";
-   *   String value = "My email is example{@literal @}example.com.";
-   *   ContentItem itemsElement = ContentItem.newBuilder()
-   *     .setType(type)
-   *     .setValue(value)
-   *     .build();
-   *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
-   *   String name2 = "EMAIL_ADDRESS";
-   *   InfoType infoType = InfoType.newBuilder()
-   *     .setName(name2)
-   *     .build();
-   *   String replaceWith = "REDACTED";
-   *   RedactContentRequest.ReplaceConfig replaceConfigsElement = RedactContentRequest.ReplaceConfig.newBuilder()
-   *     .setInfoType(infoType)
-   *     .setReplaceWith(replaceWith)
-   *     .build();
-   *   List&lt;RedactContentRequest.ReplaceConfig&gt; replaceConfigs = Arrays.asList(replaceConfigsElement);
-   *   RedactContentRequest request = RedactContentRequest.newBuilder()
-   *     .setInspectConfig(inspectConfig)
-   *     .addAllItems(items)
-   *     .addAllReplaceConfigs(replaceConfigs)
-   *     .build();
-   *   RedactContentResponse response = dlpServiceClient.redactContent(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final RedactContentResponse redactContent(RedactContentRequest request) {
-    return redactContentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Redacts potentially sensitive info from a list of strings. This method has limits on input
-   * size, processing time, and output size.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = "EMAIL_ADDRESS";
-   *   InfoType infoTypesElement = InfoType.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   List&lt;InfoType&gt; infoTypes = Arrays.asList(infoTypesElement);
-   *   InspectConfig inspectConfig = InspectConfig.newBuilder()
-   *     .addAllInfoTypes(infoTypes)
-   *     .build();
-   *   String type = "text/plain";
-   *   String value = "My email is example{@literal @}example.com.";
-   *   ContentItem itemsElement = ContentItem.newBuilder()
-   *     .setType(type)
-   *     .setValue(value)
-   *     .build();
-   *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
-   *   String name2 = "EMAIL_ADDRESS";
-   *   InfoType infoType = InfoType.newBuilder()
-   *     .setName(name2)
-   *     .build();
-   *   String replaceWith = "REDACTED";
-   *   RedactContentRequest.ReplaceConfig replaceConfigsElement = RedactContentRequest.ReplaceConfig.newBuilder()
-   *     .setInfoType(infoType)
-   *     .setReplaceWith(replaceWith)
-   *     .build();
-   *   List&lt;RedactContentRequest.ReplaceConfig&gt; replaceConfigs = Arrays.asList(replaceConfigsElement);
-   *   RedactContentRequest request = RedactContentRequest.newBuilder()
-   *     .setInspectConfig(inspectConfig)
-   *     .addAllItems(items)
-   *     .addAllReplaceConfigs(replaceConfigs)
-   *     .build();
-   *   ApiFuture&lt;RedactContentResponse&gt; future = dlpServiceClient.redactContentCallable().futureCall(request);
-   *   // Do something
-   *   RedactContentResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable() {
-    return stub.redactContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

@@ -80,6 +80,9 @@ public final class LocalFirestoreHelper {
   public static final Map<String, Value> SINGLE_FIELD_PROTO;
   public static final DocumentSnapshot SINGLE_FIELD_SNAPSHOT;
 
+  public static final Map<String, Object> UPDATED_FIELD_MAP;
+  public static final Map<String, Value> UPDATED_FIELD_PROTO;
+
   public static final NestedClass NESTED_CLASS_OBJECT;
 
   public static final Map<String, Object> SERVER_TIMESTAMP_MAP;
@@ -563,12 +566,15 @@ public final class LocalFirestoreHelper {
             null,
             new DocumentReference(
                 null,
-                ResourcePath.create(
-                    DatabaseRootName.of("", ""), ImmutableList.of("coll", "doc"))),
+                ResourcePath.create(DatabaseRootName.of("", ""), ImmutableList.of("coll", "doc"))),
             SINGLE_FIELD_PROTO,
             Instant.ofEpochSecond(5, 6),
             Instant.ofEpochSecond(3, 4),
             Instant.ofEpochSecond(1, 2));
+
+    UPDATED_FIELD_MAP = ImmutableMap.of("foo", (Object) "foobar");
+    UPDATED_FIELD_PROTO =
+        ImmutableMap.of("foo", Value.newBuilder().setStringValue("foobar").build());
 
     SERVER_TIMESTAMP_MAP = new HashMap<>();
     SERVER_TIMESTAMP_MAP.put("foo", FieldValue.serverTimestamp());

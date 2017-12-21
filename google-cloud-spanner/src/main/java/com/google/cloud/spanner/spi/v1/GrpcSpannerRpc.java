@@ -18,10 +18,13 @@ package com.google.cloud.spanner.spi.v1;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
+import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.NoCredentials;
-import com.google.cloud.TransportOptions;
-import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
@@ -78,12 +81,17 @@ import io.grpc.ForwardingClientCall;
 import io.grpc.ForwardingClientCallListener;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
+import io.grpc.ServiceDescriptor;
 import io.grpc.Status;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.AbstractStub;
 import io.grpc.stub.ClientCallStreamObserver;
 import io.grpc.stub.ClientCalls;
 import io.grpc.stub.ClientResponseObserver;
+import io.opencensus.trace.export.SampledSpanStore;
+import io.opencensus.trace.Tracing;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -92,33 +100,30 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
 /** Implementation of Cloud Spanner remote calls using gRPC. */
 public class GrpcSpannerRpc implements SpannerRpc {
+  
+  static {
+    setupTracingConfig();
+  }
+  
   private static final Logger logger = Logger.getLogger(GrpcSpannerRpc.class.getName());
 
-  private static final Metadata.Key<String> API_CLIENT_KEY =
-      Metadata.Key.of("x-goog-api-client", Metadata.ASCII_STRING_MARSHALLER);
-  private static final Metadata.Key<String> RESOURCE_PREFIX_KEY =
-      Metadata.Key.of("google-cloud-resource-prefix", Metadata.ASCII_STRING_MARSHALLER);
-  private static final Pattern DATABASE_PATTERN =
-      Pattern.compile("^(?<database>projects/[^/]*/instances/[^/]*/databases/[^/]*)(.*)?");
-  private static final Pattern INSTANCE_PATTERN =
-      Pattern.compile("^(?<instance>projects/[^/]*/instances/[^/]*)(.*)?");
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
 
   private final Random random = new Random();
   private final List<Channel> channels;
   private final String projectId;
+  private final String projectName;
   private final CallCredentials credentials;
-  private final String xGoogApiClientHeader;
+  private final SpannerMetadataProvider metadataProvider;
 
   public GrpcSpannerRpc(SpannerOptions options) {
     this.projectId = options.getProjectId();
+    this.projectName = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
     this.credentials = callCredentials(options);
     ImmutableList.Builder<Channel> channelsBuilder = ImmutableList.builder();
     ImmutableList.Builder<SpannerGrpc.SpannerFutureStub> stubsBuilder = ImmutableList.builder();
@@ -133,18 +138,23 @@ public class GrpcSpannerRpc implements SpannerRpc {
       stubsBuilder.add(withCredentials(SpannerGrpc.newFutureStub(channel), credentials));
     }
     this.channels = channelsBuilder.build();
-    TransportOptions transportOptions = options.getTransportOptions();
-    // Note, getXGoogApiClientHeader() method can be added to TransportOptions directly.
-    // Doing explicit casting here (instead of "contaminating" the top level interface) since most
-    // probably it is a temporary solution (eventually all grpc clients will become gapic-based,
-    // and gapic handles the header internally).
-    if (transportOptions instanceof GrpcTransportOptions) {
-      this.xGoogApiClientHeader =
-          ((GrpcTransportOptions) transportOptions)
-              .getXGoogApiClientHeader(options.getLibraryVersion());
-    } else {
-      this.xGoogApiClientHeader = "";
-    }
+
+    ApiClientHeaderProvider.Builder internalHeaderProviderBuilder =
+        ApiClientHeaderProvider.newBuilder();
+    ApiClientHeaderProvider internalHeaderProvider =
+        internalHeaderProviderBuilder
+            .setClientLibToken(
+                ServiceOptions.getGoogApiClientLibName(),
+                GaxProperties.getLibraryVersion(options.getClass()))
+            .setTransportToken(
+                GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion())
+            .build();
+
+    HeaderProvider mergedHeaderProvider = options.getMergedHeaderProvider(internalHeaderProvider);
+    this.metadataProvider =
+        SpannerMetadataProvider.create(
+            mergedHeaderProvider.getHeaders(),
+            internalHeaderProviderBuilder.getResourceHeaderKey());
   }
 
   private static CallCredentials callCredentials(SpannerOptions options) {
@@ -165,7 +175,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   }
 
   private String projectName() {
-    return PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
+    return projectName;
   }
 
   @Override
@@ -334,8 +344,8 @@ public class GrpcSpannerRpc implements SpannerRpc {
     CreateSessionRequest.Builder request =
         CreateSessionRequest.newBuilder().setDatabase(databaseName);
     if (labels != null && !labels.isEmpty()) {
-    	  Session.Builder session = Session.newBuilder().putAllLabels(labels);
-    	  request.setSession(session);
+      Session.Builder session = Session.newBuilder().putAllLabels(labels);
+      request.setSession(session);
     }
     return get(
         doUnaryCall(
@@ -458,7 +468,8 @@ public class GrpcSpannerRpc implements SpannerRpc {
             : CallOptions.DEFAULT.withCallCredentials(credentials);
     final ClientCall<ReqT, RespT> call =
         new MetadataClientCall<>(
-            pick(channelHint, channels).newCall(method, callOptions), newMetadata(resource));
+            pick(channelHint, channels).newCall(method, callOptions),
+            metadataProvider.newMetadata(resource, projectName()));
     return ClientCalls.futureUnaryCall(call, request);
   }
 
@@ -476,7 +487,8 @@ public class GrpcSpannerRpc implements SpannerRpc {
             : CallOptions.DEFAULT.withCallCredentials(credentials);
     final ClientCall<T, PartialResultSet> call =
         new MetadataClientCall<>(
-            pick(channelHint, channels).newCall(method, callOptions), newMetadata(resource));
+            pick(channelHint, channels).newCall(method, callOptions),
+            metadataProvider.newMetadata(resource, projectName()));
     ResultSetStreamObserver<T> observer = new ResultSetStreamObserver<T>(consumer, context, call);
     ClientCalls.asyncServerStreamingCall(call, request, observer);
     return observer;
@@ -499,27 +511,41 @@ public class GrpcSpannerRpc implements SpannerRpc {
     }
   }
 
-  private Metadata newMetadata(String resource) {
-    Metadata metadata = new Metadata();
-    metadata.put(RESOURCE_PREFIX_KEY, extractHeader(resource));
-    metadata.put(API_CLIENT_KEY, xGoogApiClientHeader);
-    return metadata;
-  }
-
-  @VisibleForTesting
-  String extractHeader(String resource) {
-    Matcher m = DATABASE_PATTERN.matcher(resource);
-    if (m.matches()) {
-      return m.group("database");
-    }
-    m = INSTANCE_PATTERN.matcher(resource);
-    return m.matches() ? m.group("instance") : projectName();
-  }
-
   private <T> T pick(@Nullable Long hint, List<T> elements) {
     long hintVal = Math.abs(hint != null ? hint : random.nextLong());
     long index = hintVal % elements.size();
     return elements.get((int) index);
+  }
+
+  /**
+   * This is a one time setup for grpcz pages. This adds all of the methods to the Tracing
+   * environment required to show a consistent set of methods relating to Cloud Bigtable on the
+   * grpcz page.  If HBase artifacts are present, this will add tracing metadata for HBase methods.
+   *
+   * TODO: Remove this when we depend on gRPC 1.8
+   */
+  private static void setupTracingConfig() {
+    SampledSpanStore store = Tracing.getExportComponent().getSampledSpanStore();
+    if (store == null) {
+      // Tracing implementation is not linked.
+      return;
+    }
+    List<String> descriptors = new ArrayList<>();
+    addDescriptor(descriptors, SpannerGrpc.getServiceDescriptor());
+    addDescriptor(descriptors, DatabaseAdminGrpc.getServiceDescriptor());
+    addDescriptor(descriptors, InstanceAdminGrpc.getServiceDescriptor());
+    store.registerSpanNamesForCollection(descriptors);
+  }
+
+  /**
+   * Reads a list of {@link MethodDescriptor}s from a {@link ServiceDescriptor} and creates a list
+   * of Open Census tags.
+   */
+  private static void addDescriptor(List<String> descriptors, ServiceDescriptor serviceDescriptor) {
+    for (MethodDescriptor<?, ?> method : serviceDescriptor.getMethods()) {
+      // This is added by a grpc ClientInterceptor
+      descriptors.add("Sent." + method.getFullMethodName().replace('/', '.'));
+    }
   }
 
   private static class ResultSetStreamObserver<T>

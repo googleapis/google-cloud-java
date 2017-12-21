@@ -24,7 +24,6 @@ import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
-
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.JobConfiguration.Type;
 import java.io.IOException;

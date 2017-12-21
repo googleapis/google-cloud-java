@@ -55,6 +55,14 @@ public abstract class DlpServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  public UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: inspectContentCallable()");
+  }
+
+  public UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: redactContentCallable()");
+  }
+
   public UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
       deidentifyContentCallable() {
     throw new UnsupportedOperationException("Not implemented: deidentifyContentCallable()");
@@ -69,14 +77,6 @@ public abstract class DlpServiceStub implements BackgroundResource {
 
   public UnaryCallable<AnalyzeDataSourceRiskRequest, Operation> analyzeDataSourceRiskCallable() {
     throw new UnsupportedOperationException("Not implemented: analyzeDataSourceRiskCallable()");
-  }
-
-  public UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable() {
-    throw new UnsupportedOperationException("Not implemented: inspectContentCallable()");
-  }
-
-  public UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable() {
-    throw new UnsupportedOperationException("Not implemented: redactContentCallable()");
   }
 
   public OperationCallable<

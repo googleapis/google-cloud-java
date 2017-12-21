@@ -20,6 +20,8 @@ import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import com.google.firestore.v1beta1.DatabaseRootName;
 import java.util.Arrays;
+import java.util.Comparator;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /** An immutable representation of a Firestore path to a Document or Collection. */
@@ -133,6 +135,29 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
     }
   }
 
+  /**
+   * Compare the current path against another ResourcePath object.
+   *
+   * @param other The path to compare to.
+   * @return -1 if current < other, 1 if current > other, 0 if equal
+   */
+  @Override
+  public int compareTo(@Nonnull ResourcePath other) {
+    int cmp = this.getDatabaseName().getProject().compareTo(other.getDatabaseName().getProject());
+
+    if (cmp != 0) {
+      return cmp;
+    }
+
+    cmp = this.getDatabaseName().getDatabase().compareTo(other.getDatabaseName().getDatabase());
+
+    if (cmp != 0) {
+      return cmp;
+    }
+
+    return super.compareTo(other);
+  }
+
   @Override
   public String toString() {
     return getName();
@@ -146,5 +171,14 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
   @Override
   ResourcePath createPathWithSegments(ImmutableList<String> segments) {
     return create(getDatabaseName(), segments);
+  }
+
+  public static Comparator<ResourcePath> comparator() {
+    return new Comparator<ResourcePath>() {
+      @Override
+      public int compare(ResourcePath left, ResourcePath right) {
+        return left.compareTo(right);
+      }
+    };
   }
 }

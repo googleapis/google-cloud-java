@@ -30,7 +30,6 @@ import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-
 /**
  * A snippet for Google Cloud Storage showing how to create a bucket and a blob in it. The snippet
  * also shows how to get a blob's content, list buckets and list blobs.
