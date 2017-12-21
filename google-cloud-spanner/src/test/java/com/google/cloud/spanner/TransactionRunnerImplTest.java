@@ -79,6 +79,14 @@ public class TransactionRunnerImplTest {
   }
 
   @Test
+  public void runResourceExhausted() {
+    runTransaction(new StatusRuntimeException(Status.fromCodeValue(Status.Code.RESOURCE_EXHAUSTED.value())));
+    ArgumentCaptor<Long> backoffMillis = ArgumentCaptor.forClass(Long.class);
+    verify(sleeper, times(1)).backoffSleep(Mockito.<Context>any(), backoffMillis.capture());
+    assertThat(backoffMillis.getValue()).isGreaterThan(0L);
+  }
+
+  @Test
   public void commitAbort() {
     final SpannerException error =
         SpannerExceptionFactory.newSpannerException(createRetryException());
