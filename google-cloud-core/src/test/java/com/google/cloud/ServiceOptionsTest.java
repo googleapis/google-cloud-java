@@ -19,6 +19,7 @@ package com.google.cloud;
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -28,10 +29,14 @@ import com.google.api.core.CurrentMillisClock;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.util.Set;
 import java.util.regex.Pattern;
+
+import com.google.common.io.Files;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -282,5 +287,30 @@ public class ServiceOptionsTest {
   public void testBaseHashCode() {
     assertEquals(OPTIONS.hashCode(), OPTIONS_COPY.hashCode());
     assertNotEquals(DEFAULT_OPTIONS.hashCode(), OPTIONS.hashCode());
+  }
+
+  @Test
+  public void testGetServiceAccountProjectId() throws Exception {
+    File credentialsFile = File.createTempFile("credentials", ".json");
+    credentialsFile.deleteOnExit();
+    Files.write("{\"project_id\":\"my-project-id\"}".getBytes(), credentialsFile);
+
+    assertEquals("my-project-id", ServiceOptions.getServiceAccountProjectId(credentialsFile.getPath()));
+  }
+
+  @Test
+  public void testGetServiceAccountProjectId_badJson() throws Exception {
+    File credentialsFile = File.createTempFile("credentials", ".json");
+    credentialsFile.deleteOnExit();
+    Files.write("asdfghj".getBytes(), credentialsFile);
+
+    assertNull(ServiceOptions.getServiceAccountProjectId(credentialsFile.getPath()));
+  }
+
+  @Test
+  public void testGetServiceAccountProjectId_nonExistentFile() throws Exception {
+    File credentialsFile = new File("/doesnotexist");
+
+    assertNull(ServiceOptions.getServiceAccountProjectId(credentialsFile.getPath()));
   }
 }
