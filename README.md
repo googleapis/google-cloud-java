@@ -12,7 +12,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
 -  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
 
-This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
+This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
 -  [Stackdriver Logging](google-cloud-logging) (GA)
 -  [Cloud Datastore](google-cloud-datastore) (GA)
 -  [Cloud Natural Language](google-cloud-language) (GA)
@@ -20,7 +20,7 @@ This client supports the following Google Cloud Platform services at a [GA](#ver
 -  [Cloud Translation](google-cloud-translate) (GA)
 -  [Cloud Vision](google-cloud-vision) (GA)
 
-This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
+This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
 -  [BigQuery](google-cloud-bigquery) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-dlp) (Beta)
@@ -32,12 +32,13 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Cloud Video Intelligence](google-cloud-video-intelligence) (Beta)
 -  [Stackdriver Trace](google-cloud-trace) (Beta)
 
-This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
+This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
 -  [Cloud Compute](google-cloud-compute) (Alpha)
 -  [Cloud DNS](google-cloud-dns) (Alpha)
 -  [Cloud Resource Manager](google-cloud-resourcemanager) (Alpha)
 -  [Cloud Speech](google-cloud-speech) (Alpha)
+-  [Dialogflow](google-cloud-dialogflow) (Alpha)
 
 > Note: google-cloud-java is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
