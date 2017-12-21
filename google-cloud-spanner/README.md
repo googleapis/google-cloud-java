@@ -85,14 +85,15 @@ try {
   DatabaseClient dbClient = spanner.getDatabaseClient(
     DatabaseId.of(options.getProjectId(), instance, database));
   // Queries the database
-  ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"));
-  // Prints the results
-  while (resultSet.next()) {
-    System.out.printf("%d\n", resultSet.getLong(0));
+  try (ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"))) {
+    // Prints the results
+    while (resultSet.next()) {
+      System.out.printf("%d\n", resultSet.getLong(0));
+    }
   }
 } finally {
   // Closes the client which will free up the resources used
-  spanner.closeAsync().get();
+  spanner.close();
 }
 ```
 
