@@ -1493,6 +1493,8 @@ public interface Storage extends Service<StorageOptions> {
   @Deprecated
   Blob create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options);
 
+  Blob create(BlobInfo blobInfo, RestartableInputStream content, BlobWriteOption... options);
+
   /**
    * Returns the requested bucket or {@code null} if not found.
    *
