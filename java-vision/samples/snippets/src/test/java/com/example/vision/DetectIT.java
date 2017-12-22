@@ -283,7 +283,8 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Zepra");
+    // Note: entities and labels can change over time.
+    assertThat(got).contains("Tel Aviv");
   }
 
   @Test
