@@ -131,9 +131,6 @@ public class SignatureInfo {
      * @throws IllegalArgumentException if required field is not provided.
      */
     public Builder(HttpMethod httpVerb, long expiration, URI canonicalizedResource) {
-      checkArgument(httpVerb != null, "Required HTTP method");
-      checkArgument(canonicalizedResource != null, "Required canonicalized resource");
-
       this.httpVerb = httpVerb;
       this.expiration = expiration;
       this.canonicalizedResource = canonicalizedResource;
@@ -171,6 +168,10 @@ public class SignatureInfo {
      * Creates an {@code SignatureInfo} object from this builder.
      */
     public SignatureInfo build() {
+      checkArgument(httpVerb != null, "Required HTTP method");
+      checkArgument(canonicalizedResource != null, "Required canonicalized resource");
+      checkArgument(expiration >= 0, "Expiration must be greater than or equal to zero");
+      
       return new SignatureInfo(this);
     }
   }
