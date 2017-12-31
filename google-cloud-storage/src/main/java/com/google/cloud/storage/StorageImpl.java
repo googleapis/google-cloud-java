@@ -532,7 +532,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     URI path = URI.create(stPath.toString());
     
     try {
-      SignatureInfo signatureInfo = buildSignarueInfo(optionMap, blobInfo, expiration, path);
+      SignatureInfo signatureInfo = buildSignatureInfo(optionMap, blobInfo, expiration, path);
       byte[] signatureBytes =
           credentials.sign(signatureInfo.constructUnsignedPayload().getBytes(UTF_8));
       StringBuilder stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
@@ -557,7 +557,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
    * @param path the resource URI
    * @return signature info
    */
-  private SignatureInfo buildSignarueInfo(Map<SignUrlOption.Option, Object> optionMap,
+  private SignatureInfo buildSignatureInfo(Map<SignUrlOption.Option, Object> optionMap,
       BlobInfo blobInfo, long expiration, URI path) {
 
     HttpMethod httpVerb = optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD)
