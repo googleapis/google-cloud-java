@@ -34,7 +34,7 @@ public class CanonicalExtensionHeadersSerializerTest {
   }
   
   @Test
-  public void given_no_headers_when_serialize_then_produce_empty_string() {
+  public void givenNoHeadersWhenSerializeThenProduceNothing() {
     
     StringBuilder sb = serializer.serialize(Collections.<String, String>emptyMap());
     
@@ -42,7 +42,7 @@ public class CanonicalExtensionHeadersSerializerTest {
   }
   
   @Test
-  public void given_null_headers_when_serialize_then_produce_empty_string() {
+  public void givenNullHeadersWhenSerializeThenProduceNothing() {
     
     StringBuilder sb = serializer.serialize(null);
     
@@ -50,7 +50,7 @@ public class CanonicalExtensionHeadersSerializerTest {
   }
   
   @Test
-  public void given_encryption_headers_when_serialize_then_are_remvoed() {
+  public void givenEncryptionHeadersWhenSerializeThenAreRemvoed() {
     
     Map<String, String> encryptionHeaders = new HashMap<>();
     encryptionHeaders.put("x-goog-encryption-key", "");
@@ -62,7 +62,7 @@ public class CanonicalExtensionHeadersSerializerTest {
   }
   
   @Test
-  public void given_headers_when_serialize_then_success() {
+  public void givenHeadersWhenSerializeThenSuccess() {
     
     Map<String, String> encryptionHeaders = new HashMap<>();
     encryptionHeaders.put("x-goog-encryption-key", "");
