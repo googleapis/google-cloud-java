@@ -17,11 +17,7 @@
 package com.google.cloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
-
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,8 +29,7 @@ import java.util.Map;
  */
 public class SignatureInfo {
 
-  private static final char COMPONENT_SEPARATOR = '\n';
-  private static final char HEADER_SEPARATOR = ':';
+  public static final char COMPONENT_SEPARATOR = '\n';
 
   private final HttpMethod httpVerb;
   private final String contentMd5;
@@ -75,15 +70,10 @@ public class SignatureInfo {
     payload.append(expiration).append(COMPONENT_SEPARATOR);
     
     if (canonicalizedExtensionHeaders != null) {
-      
-      List<String> orderedKeys = new ArrayList<>(canonicalizedExtensionHeaders.keySet());
-      Collections.sort(orderedKeys);
-      
-      for (String key : orderedKeys) {
-        payload.append(key).append(HEADER_SEPARATOR).append(canonicalizedExtensionHeaders.get(key))
-        .append(COMPONENT_SEPARATOR);
-      }
+      payload.append(new CanonicalExtensionHeadersSerializer()
+          .serialize(canonicalizedExtensionHeaders));
     }
+    
     payload.append(canonicalizedResource);
 
     return payload.toString();
