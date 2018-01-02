@@ -10,7 +10,7 @@ apply plugin: 'signing'
 
 description = 'GRPC library for grpc-google-iam-v1'
 group = "com.google.api.grpc"
-version = "0.1.26"
+version = "0.1.27"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
@@ -83,14 +83,14 @@ if (project.hasProperty('ossrhUsername') && project.hasProperty('ossrhPassword')
           licenses {
             license {
               name 'Apache-2.0'
-              url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+              url 'https://www.apache.org/licenses/LICENSE-2.0.txt'
             }
           }
 
           developers {
             developer {
-              id 'Google Inc'
-              name 'Google Inc'
+              id 'Google LLC'
+              name 'Google LLC'
               email 'googleapis-packages@google.com'
               url 'https://github.com/googleapis/googleapis'
               organization 'Google LLC'

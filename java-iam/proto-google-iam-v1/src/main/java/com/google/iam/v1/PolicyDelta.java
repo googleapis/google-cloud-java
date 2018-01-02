@@ -14,6 +14,7 @@ public  final class PolicyDelta extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:google.iam.v1.PolicyDelta)
     PolicyDeltaOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use PolicyDelta.newBuilder() to construct.
   private PolicyDelta(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -25,7 +26,7 @@ public  final class PolicyDelta extends
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private PolicyDelta(
       com.google.protobuf.CodedInputStream input,
@@ -33,6 +34,8 @@ public  final class PolicyDelta extends
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -42,7 +45,8 @@ public  final class PolicyDelta extends
             done = true;
             break;
           default: {
-            if (!input.skipField(tag)) {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
             break;
@@ -67,6 +71,7 @@ public  final class PolicyDelta extends
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         bindingDeltas_ = java.util.Collections.unmodifiableList(bindingDeltas_);
       }
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -152,6 +157,7 @@ public  final class PolicyDelta extends
     for (int i = 0; i < bindingDeltas_.size(); i++) {
       output.writeMessage(1, bindingDeltas_.get(i));
     }
+    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -163,11 +169,11 @@ public  final class PolicyDelta extends
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, bindingDeltas_.get(i));
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -181,6 +187,7 @@ public  final class PolicyDelta extends
     boolean result = true;
     result = result && getBindingDeltasList()
         .equals(other.getBindingDeltasList());
+    result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
@@ -376,7 +383,7 @@ public  final class PolicyDelta extends
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -389,12 +396,12 @@ public  final class PolicyDelta extends
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -434,6 +441,7 @@ public  final class PolicyDelta extends
           }
         }
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -774,12 +782,12 @@ public  final class PolicyDelta extends
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 

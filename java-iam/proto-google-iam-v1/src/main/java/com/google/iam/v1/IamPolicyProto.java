@@ -61,10 +61,11 @@ public final class IamPolicyProto {
       "TestIamPermissions\022(.google.iam.v1.TestI" +
       "amPermissionsRequest\032).google.iam.v1.Tes" +
       "tIamPermissionsResponse\"/\202\323\344\223\002)\"$/v1/{re" +
-      "source=**}:testIamPermissions:\001*Bp\n\021com." +
-      "google.iam.v1B\016IamPolicyProtoP\001Z0google.",
-      "golang.org/genproto/googleapis/iam/v1;ia" +
-      "m\370\001\001\252\002\023Google.Cloud.Iam.V1b\006proto3"
+      "source=**}:testIamPermissions:\001*B\206\001\n\021com" +
+      ".google.iam.v1B\016IamPolicyProtoP\001Z0google",
+      ".golang.org/genproto/googleapis/iam/v1;i" +
+      "am\370\001\001\252\002\023Google.Cloud.Iam.V1\312\002\023Google\\Clo" +
+      "ud\\Iam\\V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
