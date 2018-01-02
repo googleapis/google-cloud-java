@@ -71,16 +71,16 @@ import org.threeten.bp.Instant;
 
 @RunWith(AllTests.class)
 public class ConformanceTest {
+  private static final String TEST_FILE = "./src/test/resources/test_data.binprotos";
+
   /** Interface implemented by the conformance test cases. */
   private interface ConformanceTestCase extends Test, Describable {}
 
-  private static final String TEST_FILE = "./src/test/resources/test_data.binprotos";
-
   /** Excluded tests by test description. */
-  private Set<String> excludedTests = Collections.emptySet();
+  private final Set<String> excludedTests = Collections.emptySet();
 
   /** If non-empty, only runs tests included in this set. */
-  private Set<String> includedTests = Collections.emptySet();
+  private final Set<String> includedTests = Collections.emptySet();
 
   @Spy
   private FirestoreImpl firestoreMock =
@@ -191,9 +191,9 @@ public class ConformanceTest {
       return convertMap((Map<String, Object>) data);
     } else if (data instanceof List) {
       return convertArray((List<Object>) data);
-    } else if (data.equals("Delete")) {
+    } else if ("Delete".equals(data)) {
       return FieldValue.delete();
-    } else if (data.equals("ServerTimestamp")) {
+    } else if ("ServerTimestamp".equals(data)) {
       return FieldValue.serverTimestamp();
     } else if (data instanceof Double
         && Double.compare((double) data, Math.floor((double) data)) == 0) {
@@ -227,7 +227,7 @@ public class ConformanceTest {
           read);
       TestDefinition.Test testDefinition = TestDefinition.Test.parseFrom(buffer);
 
-      if ((!includedTests.isEmpty() && !includedTests.contains(testDefinition.getDescription()))
+      if (!includedTests.isEmpty() && !includedTests.contains(testDefinition.getDescription())
           || excludedTests.contains(testDefinition.getDescription())) {
         continue;
       }
