@@ -41,7 +41,6 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.TimestampOrBuilder;
 import com.google.type.LatLng;
-
 import java.io.File;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -52,8 +51,10 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
 
 /**
  * Helper methods for {@link Datastore}.
@@ -92,6 +93,8 @@ public final class DatastoreHelper {
   public static final String PRIVATE_KEY_FILE_ENV_VAR = "DATASTORE_PRIVATE_KEY_FILE";
 
   private static final String URL_OVERRIDE_ENV_VAR = "__DATASTORE_URL_OVERRIDE";
+
+  private static final AtomicReference<String> projectIdFromComputeEngine = new AtomicReference<>();
 
   /**
    * Comparator for Keys
@@ -281,20 +284,31 @@ public final class DatastoreHelper {
    * project ID cannot be determined (because, for instance, the code is not running on Compute
    * Engine).
    */
+  @Nullable
   public static String getProjectIdFromComputeEngine() {
+    String cachedProjectId = projectIdFromComputeEngine.get();
+    return cachedProjectId != null ? cachedProjectId : queryProjectIdFromComputeEngine();
+  }
+
+  @Nullable
+  private static String queryProjectIdFromComputeEngine() {
     HttpTransport transport;
+
     try {
       transport = newTransport();
     } catch (GeneralSecurityException | IOException e) {
       logger.log(Level.WARNING, "Failed to create HttpTransport.", e);
       return null;
     }
+
     try {
       GenericUrl projectIdUrl =
           new GenericUrl("http://metadata/computeMetadata/v1/project/project-id");
       HttpRequest request = transport.createRequestFactory().buildGetRequest(projectIdUrl);
       request.getHeaders().set("Metadata-Flavor", "Google");
-      return request.execute().parseAsString();
+      String result = request.execute().parseAsString();
+      projectIdFromComputeEngine.set(result);
+      return result;
     } catch (IOException e) {
       logger.log(Level.INFO, "Could not determine project ID from Compute Engine.", e);
       return null;
