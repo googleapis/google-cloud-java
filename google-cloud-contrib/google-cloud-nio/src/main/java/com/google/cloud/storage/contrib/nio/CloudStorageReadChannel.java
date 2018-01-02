@@ -77,8 +77,9 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     this.position = position;
     this.maxChannelReopens = maxChannelReopens;
     this.maxRetries = Math.max(3, maxChannelReopens);
-    // XXX: Reading size and opening file should be atomic.
     fetchSize(gcsStorage, file);
+    // innerOpen checks that it sees the same generation as fetchSize did,
+    // which ensure the file hasn't changed.
     innerOpen();
   }
 
@@ -127,7 +128,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
       }
       if (amt > 0) {
         position += amt;
-        // XXX: This would only ever happen if the fetchSize() race-condition occurred.
+        // This can only happen if the file changed under us and we didn't notice.
         if (position > size) {
           size = position;
         }
@@ -220,5 +221,6 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
       // but here at this higher level we can retry them.
       innerOpen();
     }
+  }
 
 }
