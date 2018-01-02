@@ -242,12 +242,7 @@ public class DocumentReferenceTest {
     assertEquals(documentReference, snapshot.getReference());
     assertFalse(snapshot.exists());
     assertEquals(snapshot.getReadTime(), Instant.ofEpochSecond(5, 6));
-
-    try {
-      snapshot.getData();
-      fail();
-    } catch (IllegalStateException ignored) {
-    }
+    assertNull(snapshot.getData());
   }
 
   @Test

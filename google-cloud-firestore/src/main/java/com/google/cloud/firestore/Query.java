@@ -669,7 +669,7 @@ public class Query {
     stream(
         new QuerySnapshotObserver() {
           @Override
-          public void onNext(DocumentSnapshot documentSnapshot) {
+          public void onNext(QueryDocumentSnapshot documentSnapshot) {
             responseObserver.onNext(documentSnapshot);
           }
 
@@ -688,7 +688,7 @@ public class Query {
 
   /** Stream observer that captures DocumentSnapshots as well as the Query read time. */
   private abstract static class QuerySnapshotObserver
-      implements ApiStreamObserver<DocumentSnapshot> {
+      implements ApiStreamObserver<QueryDocumentSnapshot> {
 
     private Instant readTime;
 
@@ -719,8 +719,8 @@ public class Query {
           public void onNext(RunQueryResponse response) {
             if (response.hasDocument()) {
               Document document = response.getDocument();
-              DocumentSnapshot documentSnapshot =
-                  DocumentSnapshot.fromDocument(firestore, response.getReadTime(), document);
+              QueryDocumentSnapshot documentSnapshot =
+                  QueryDocumentSnapshot.fromDocument(firestore, response.getReadTime(), document);
               documentObserver.onNext(documentSnapshot);
             }
 
@@ -784,11 +784,11 @@ public class Query {
 
     stream(
         new QuerySnapshotObserver() {
-          List<DocumentSnapshot> documentSnapshots = new ArrayList<>();
+          List<QueryDocumentSnapshot> documentSnapshots = new ArrayList<>();
           List<DocumentChange> documentChanges = new ArrayList<>();
 
           @Override
-          public void onNext(DocumentSnapshot documentSnapshot) {
+          public void onNext(QueryDocumentSnapshot documentSnapshot) {
             documentSnapshots.add(documentSnapshot);
             documentChanges.add(
                 new DocumentChange(documentSnapshot, Type.ADDED, -1, documentSnapshots.size() - 1));
@@ -812,10 +812,10 @@ public class Query {
     return result;
   }
 
-  Comparator<DocumentSnapshot> comparator() {
-    return new Comparator<DocumentSnapshot>() {
+  Comparator<QueryDocumentSnapshot> comparator() {
+    return new Comparator<QueryDocumentSnapshot>() {
       @Override
-      public int compare(DocumentSnapshot doc1, DocumentSnapshot doc2) {
+      public int compare(QueryDocumentSnapshot doc1, QueryDocumentSnapshot doc2) {
         // Add implicit sorting by name, using the last specified direction.
         Direction lastDirection =
             options.fieldOrders.size() == 0
