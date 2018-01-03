@@ -16,14 +16,13 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
-import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -578,8 +577,7 @@ public abstract class JobStatistics implements Serializable {
   }
 
   @SuppressWarnings("unchecked")
-  static <T extends JobStatistics> T fromPb(
-      com.google.api.services.bigquery.model.Job jobPb) {
+  static <T extends JobStatistics> T fromPb(com.google.api.services.bigquery.model.Job jobPb) {
     JobConfiguration jobConfigPb = jobPb.getConfiguration();
     com.google.api.services.bigquery.model.JobStatistics statisticPb = jobPb.getStatistics();
     if (jobConfigPb.getLoad() != null) {

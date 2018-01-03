@@ -19,7 +19,6 @@ package com.google.cloud.bigquery;
 import com.google.api.services.bigquery.model.Job;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 

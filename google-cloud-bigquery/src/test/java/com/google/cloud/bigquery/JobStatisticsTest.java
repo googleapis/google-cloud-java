@@ -18,16 +18,14 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.QueryStage.QueryStep;
-
-import org.junit.Test;
-
+import com.google.common.collect.ImmutableList;
 import java.util.List;
+import org.junit.Test;
 
 public class JobStatisticsTest {
 
