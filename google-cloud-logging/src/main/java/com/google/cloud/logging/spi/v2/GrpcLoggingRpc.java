@@ -19,6 +19,9 @@ package com.google.cloud.logging.spi.v2;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.FlowControlSettings;
+import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
@@ -72,6 +75,7 @@ import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
+import org.threeten.bp.Duration;
 
 public class GrpcLoggingRpc implements LoggingRpc {
 
@@ -138,6 +142,22 @@ public class GrpcLoggingRpc implements LoggingRpc {
           LoggingSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       MetricsSettings.Builder metricsBuilder =
           MetricsSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
+
+      logBuilder
+          .writeLogEntriesSettings()
+          .setBatchingSettings(
+              BatchingSettings.newBuilder()
+                  .setElementCountThreshold(1000L)
+                  .setRequestByteThreshold(1048576L)
+                  .setDelayThreshold(Duration.ofMillis(50))
+                  .setFlowControlSettings(
+                      FlowControlSettings.newBuilder()
+                          .setMaxOutstandingElementCount(100000L)
+                          .setMaxOutstandingRequestBytes(10485760L)
+                          .setLimitExceededBehavior(LimitExceededBehavior.Block)
+                          .build())
+                  .build());
+
       configClient = ConfigClient.create(confBuilder.build());
       loggingClient = LoggingClient.create(logBuilder.build());
       metricsClient = MetricsClient.create(metricsBuilder.build());
