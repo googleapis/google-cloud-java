@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,9 @@ package com.google.cloud.speech.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.OperationFuture;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.speech.v1.stub.SpeechStub;
 import com.google.longrunning.Operation;
@@ -99,13 +99,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * SpeechSettings speechSettings =
- *     SpeechSettings.newBuilder()
- *         .setTransportProvider(SpeechSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(SpeechSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
- *             .build())
- *         .build();
+ *     SpeechSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SpeechClient speechClient =
  *     SpeechClient.create(speechSettings);
  * </code>
@@ -135,6 +129,7 @@ public class SpeechClient implements BackgroundResource {
    * Constructs an instance of SpeechClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use SpeechSettings}.
    */
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SpeechClient create(SpeechStub stub) {
     return new SpeechClient(stub);
   }
@@ -149,6 +144,7 @@ public class SpeechClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SpeechClient(SpeechStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +155,7 @@ public class SpeechClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SpeechStub getStub() {
     return stub;
   }
@@ -311,8 +307,7 @@ public class SpeechClient implements BackgroundResource {
    * @param audio &#42;Required&#42; The audio data to be recognized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<
-          LongRunningRecognizeResponse, LongRunningRecognizeMetadata, Operation>
+  public final OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeAsync(RecognitionConfig config, RecognitionAudio audio) {
 
     LongRunningRecognizeRequest request =
@@ -353,8 +348,7 @@ public class SpeechClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<
-          LongRunningRecognizeResponse, LongRunningRecognizeMetadata, Operation>
+  public final OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeAsync(LongRunningRecognizeRequest request) {
     return longRunningRecognizeOperationCallable().futureCall(request);
   }
@@ -392,8 +386,7 @@ public class SpeechClient implements BackgroundResource {
    * </code></pre>
    */
   public final OperationCallable<
-          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata,
-          Operation>
+          LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeOperationCallable() {
     return stub.longRunningRecognizeOperationCallable();
   }

@@ -45,6 +45,7 @@ import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
 import com.google.cloud.storage.Storage.BlobWriteOption;
+import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.Storage.BucketGetOption;
 import com.google.cloud.storage.Storage.BucketListOption;
 import com.google.cloud.storage.Storage.BucketSourceOption;
@@ -1100,7 +1101,8 @@ public class StorageSnippets {
     // The name of the bucket to retrieve requester-pays status, eg. "my-bucket"
     // String bucketName = "my-bucket"
     // Retrieve the bucket, throws StorageException on failure
-    Bucket bucket = storage.get(bucketName);
+    Bucket bucket = storage.get(bucketName,
+        Storage.BucketGetOption.fields(BucketField.BILLING));
 
     System.out.println("Requester pays status : " + bucket.requesterPays());
     // [END get_requester_pays_status]
@@ -1113,8 +1115,6 @@ public class StorageSnippets {
   public void downloadFileUsingRequesterPays(String projectId, String bucketName,
       String srcFilename, Path destFilePath) throws IOException {
     // [START storage_download_file_requester_pays]
-    // Instantiate a Google Cloud Storage client
-
     // The project ID to bill
     // String projectId = "my-billable-project-id";
 
@@ -1125,20 +1125,16 @@ public class StorageSnippets {
     // String srcFilename = "file.txt";
 
     // The path to which the file should be downloaded
-    // String destFilePath = "/local/path/to/file.txt";
+    // Path destFilePath = Paths.get("/local/path/to/file.txt");
 
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
-    BlobSourceOption option = BlobSourceOption.userProject(projectId);
+    // Get specific file from specified bucket
+    Blob blob = storage.get(BlobId.of(bucketName, srcFilename));
 
-    // read blob in a single pass
-    byte[] readBytes = storage.readAllBytes(bucketName, srcFilename, option);
-
-    // write out to file
-    PrintStream out = new PrintStream(new FileOutputStream(destFilePath.toFile()));
-    out.write(readBytes);
-    out.close();
+    // Download file to specified path
+    blob.downloadTo(destFilePath, Blob.BlobSourceOption.userProject(projectId));
     // [END storage_download_file_requester_pays]
   }
 }

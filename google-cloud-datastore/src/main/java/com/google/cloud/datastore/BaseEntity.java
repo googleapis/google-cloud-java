@@ -514,7 +514,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the {@link Value} for the given property {@code name}.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    */
   public <V extends Value<?>> V getValue(String name) {
     @SuppressWarnings("unchecked")
@@ -528,7 +528,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns true if property is an instance of NullValue.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    */
   public boolean isNull(String name) {
     return getValue(name) instanceof NullValue;
@@ -538,7 +538,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a string.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a string
    */
   @SuppressWarnings("unchecked")
@@ -549,7 +549,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as long.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a long
    */
   @SuppressWarnings("unchecked")
@@ -560,7 +560,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a double.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a double
    */
   @SuppressWarnings("unchecked")
@@ -571,7 +571,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a boolean.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a boolean
    */
   @SuppressWarnings("unchecked")
@@ -582,7 +582,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a Timestamp.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a Timestamp
    */
   @SuppressWarnings("unchecked")
@@ -593,7 +593,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a LatLng.
    *
-   * @throws DatastoreException if not such property.
+   * @throws DatastoreException if no such property.
    * @throws ClassCastException if value is not a LatLng.
    */
   @SuppressWarnings("unchecked")
@@ -604,7 +604,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a Key.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a Key
    */
   @SuppressWarnings("unchecked")
@@ -615,7 +615,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as an entity.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not an entity
    */
   @SuppressWarnings("unchecked")
@@ -626,7 +626,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a list of values.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a list of values
    */
   @SuppressWarnings("unchecked")
@@ -637,7 +637,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a blob.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a blob
    */
   @SuppressWarnings("unchecked")

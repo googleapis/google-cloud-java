@@ -27,14 +27,24 @@ import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.GenericJson;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.JsonObjectParser;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.util.Charsets;
 import com.google.api.core.ApiClock;
+import com.google.api.core.BetaApi;
 import com.google.api.core.CurrentMillisClock;
 import com.google.api.core.InternalApi;
-import com.google.api.gax.core.PropertiesProvider;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.FixedHeaderProvider;
+import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
 import java.io.BufferedReader;
@@ -48,14 +58,12 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 import java.util.ServiceLoader;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 import org.threeten.bp.Duration;
 
 /**
@@ -72,12 +80,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
-  private static final String LIBRARY_NAME = "gcloud-java";
-  private static final String X_GOOGLE_CLIENT_HEADER_NAME = "gccl";
-
-  private static final String PROPERTIES_VERSION_KEY = "artifact.version";
-  private static final String DEFAULT_PACKAGE_PATH = "com/google/cloud";
-  private static final String PROPERTIES_FILE = "project.properties";
 
   private static final RetrySettings DEFAULT_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
       .build();
@@ -94,6 +96,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private final ApiClock clock;
   protected Credentials credentials;
   private final TransportOptions transportOptions;
+  private final HeaderProvider headerProvider;
 
   private transient ServiceRpcFactory<OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
@@ -119,6 +122,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     private ServiceRpcFactory<OptionsT> serviceRpcFactory;
     private ApiClock clock;
     private TransportOptions transportOptions;
+    private HeaderProvider headerProvider;
 
     @InternalApi("This class should only be extended within google-cloud-java")
     protected Builder() {}
@@ -234,6 +238,22 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       this.transportOptions = transportOptions;
       return self();
     }
+
+    /**
+     * Sets the static header provider. The header provider will be called during client
+     * construction only once. The headers returned by the provider will be cached and supplied as
+     * is for each request issued by the constructed client. Some reserved headers can be overridden
+     * (e.g. Content-Type) or merged with the default value (e.g. User-Agent) by the underlying
+     * transport layer.
+     *
+     * @param headerProvider the header provider
+     * @return the builder
+     */
+    @BetaApi
+    public B setHeaderProvider(HeaderProvider headerProvider) {
+      this.headerProvider = headerProvider;
+      return self();
+    }
   }
 
   @InternalApi("This class should only be extended within google-cloud-java")
@@ -260,6 +280,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     clock = firstNonNull(builder.clock, CurrentMillisClock.getDefaultClock());
     transportOptions = firstNonNull(builder.transportOptions,
         serviceDefaults.getDefaultTransportOptions());
+    headerProvider = firstNonNull(builder.headerProvider, new NoHeaderProvider());
   }
 
   /**
@@ -435,13 +456,20 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   protected static String getServiceAccountProjectId() {
+    return getServiceAccountProjectId(System.getenv(CREDENTIAL_ENV_NAME));
+  }
+
+  @InternalApi("Visible for testing")
+  static String getServiceAccountProjectId(String credentialsPath) {
     String project = null;
-    String credentialsPath = System.getenv(CREDENTIAL_ENV_NAME);
     if (credentialsPath != null) {
       try (InputStream credentialsStream = new FileInputStream(credentialsPath)) {
-        JSONObject json = new JSONObject(new JSONTokener(credentialsStream));
-        project = json.getString("project_id");
-      } catch (IOException | JSONException ex) {
+        JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
+        JsonObjectParser parser = new JsonObjectParser(jsonFactory);
+        GenericJson fileContents = parser.parseAndClose(
+            credentialsStream, Charsets.UTF_8, GenericJson.class);
+        project = (String) fileContents.get("project_id");
+      } catch (IOException e) {
         // ignore
       }
     }
@@ -535,40 +563,69 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   /**
-   * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
+   * Returns the application's name as a string in the format {@code gcloud-java/[version]},
+   * optionally prepended with externally supplied User-Agent header value (via setting custom
+   * header provider).
    */
   public String getApplicationName() {
     String libraryVersion = getLibraryVersion();
-    return libraryVersion == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + libraryVersion;
-  }
 
+    // We have to do the following since underlying layers often do not appreciate User-Agent
+    // provided as a normal header and override it or treat setting "application name" as the only
+    // way to append something to User-Agent header.
+    StringBuilder sb = new StringBuilder();
+    String customUserAgentValue = getUserAgent();
+    if (customUserAgentValue != null) {
+      sb.append(customUserAgentValue).append(' ');
+    }
+    if (libraryVersion == null) {
+      sb.append(getLibraryName());
+    } else {
+      sb.append(getLibraryName()).append('/').append(libraryVersion);
+    }
+
+    return sb.toString();
+  }
 
   /**
    * Returns the library's name, {@code gcloud-java}, as a string.
    */
   public static String getLibraryName() {
-    return LIBRARY_NAME;
+    return "gcloud-java";
   }
 
   /**
    * Returns the library's name used by x-goog-api-client header as a string.
    */
   public static String getGoogApiClientLibName() {
-    return X_GOOGLE_CLIENT_HEADER_NAME;
+    return "gccl";
   }
 
   /**
    * Returns the library's version as a string.
    */
   public String getLibraryVersion() {
-    try {
-      String version = getVersionProperty(getPackagePath());
-      if (version == null) {
-        version = getVersionProperty(DEFAULT_PACKAGE_PATH);
+    return GaxProperties.getLibraryVersion(this.getClass());
+  }
+
+  @InternalApi
+  public final HeaderProvider getMergedHeaderProvider(HeaderProvider internalHeaderProvider) {
+    Map<String, String> mergedHeaders =
+        ImmutableMap.<String, String>builder()
+            .putAll(internalHeaderProvider.getHeaders())
+            .putAll(headerProvider.getHeaders())
+            .build();
+    return FixedHeaderProvider.create(mergedHeaders);
+  }
+
+  @InternalApi
+  public final String getUserAgent() {
+    if (headerProvider != null) {
+      for (Map.Entry<String, String> entry : headerProvider.getHeaders().entrySet()) {
+        if ("user-agent".equals(entry.getKey().toLowerCase())) {
+          return entry.getValue();
+        }
       }
-      return version;
-    } catch (Exception e) {
-      // ignore
     }
     return null;
   }
@@ -640,15 +697,5 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   @InternalApi
   public static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
-  }
-
-  private String getVersionProperty(String packagePath) {
-    String projectPropertiesPath = "/" + packagePath + "/" + PROPERTIES_FILE;
-    return PropertiesProvider.loadProperty(
-        ServiceOptions.class, projectPropertiesPath, PROPERTIES_VERSION_KEY);
-  }
-
-  private String getPackagePath() {
-    return this.getClass().getPackage().getName().replaceAll("\\.", "/");
   }
 }

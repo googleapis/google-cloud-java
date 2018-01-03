@@ -18,11 +18,14 @@ package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.cloud.pubsub.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.v1.MessageDispatcher.PendingModifyAckDeadline;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
@@ -39,6 +42,8 @@ import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -53,14 +58,15 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private static final Duration MAX_CHANNEL_RECONNECT_BACKOFF = Duration.ofSeconds(10);
   private static final int MAX_PER_REQUEST_CHANGES = 10000;
 
-  private final AtomicLong channelReconnectBackoffMillis =
-      new AtomicLong(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
-
   private final SubscriberStub asyncStub;
-
   private final String subscription;
   private final ScheduledExecutorService executor;
   private final MessageDispatcher messageDispatcher;
+
+  private final AtomicLong channelReconnectBackoffMillis =
+      new AtomicLong(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
+
+  private final Lock lock = new ReentrantLock();
   private ClientCallStreamObserver<StreamingPullRequest> requestObserver;
 
   public StreamingSubscriberConnection(
@@ -68,7 +74,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       MessageReceiver receiver,
       Duration ackExpirationPadding,
       Duration maxAckExtensionPeriod,
-      int streamAckDeadlineSeconds,
       Distribution ackLatencyDistribution,
       SubscriberStub asyncStub,
       FlowController flowController,
@@ -91,12 +96,12 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             executor,
             alarmsExecutor,
             clock);
-    messageDispatcher.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
   }
 
   @Override
   protected void doStart() {
     logger.config("Starting subscriber.");
+    messageDispatcher.start();
     initialize();
     notifyStarted();
   }
@@ -104,8 +109,14 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   @Override
   protected void doStop() {
     messageDispatcher.stop();
-    requestObserver.onError(Status.CANCELLED.asException());
-    notifyStopped();
+
+    lock.lock();
+    try {
+      requestObserver.onError(Status.CANCELLED.asException());
+    } finally {
+      lock.unlock();
+      notifyStopped();
+    }
   }
 
   private class StreamingPullResponseObserver
@@ -113,13 +124,22 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     final SettableFuture<Void> errorFuture;
 
+    /**
+     * When a batch finsihes processing, we want to request one more batch from the server. But by
+     * the time this happens, our stream might have already errored, and new stream created. We
+     * don't want to request more batches from the new stream -- that might pull more messages than
+     * the user can deal with -- so we save the request observer this response observer is "paired
+     * with". If the stream has already errored, requesting more messages is a no-op.
+     */
+    ClientCallStreamObserver<StreamingPullRequest> thisRequestObserver;
+
     StreamingPullResponseObserver(SettableFuture<Void> errorFuture) {
       this.errorFuture = errorFuture;
     }
 
     @Override
     public void beforeStart(ClientCallStreamObserver<StreamingPullRequest> requestObserver) {
-      StreamingSubscriberConnection.this.requestObserver = requestObserver;
+      thisRequestObserver = requestObserver;
       requestObserver.disableAutoInboundFlowControl();
     }
 
@@ -131,9 +151,18 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
           new Runnable() {
             @Override
             public void run() {
-              // Only if not shutdown we will request one more batches of messages to be delivered.
-              if (isAlive()) {
-                requestObserver.request(1);
+              // Only request more if we're not shutdown.
+              // If errorFuture is done, the stream has either failed or hung up,
+              // and we don't need to request.
+              if (isAlive() && !errorFuture.isDone()) {
+                lock.lock();
+                try {
+                  thisRequestObserver.request(1);
+                } catch (Exception e) {
+                  logger.log(Level.WARNING, "cannot request more messages", e);
+                } finally {
+                  lock.unlock();
+                }
               }
             }
           });
@@ -160,14 +189,27 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             (asyncStub.streamingPull(responseObserver));
     logger.log(
         Level.FINER,
-        "Initializing stream to subscription {0} with deadline {1}",
-        new Object[] {subscription, messageDispatcher.getMessageDeadlineSeconds()});
+        "Initializing stream to subscription {0}",subscription);
+        // We need to set streaming ack deadline, but it's not useful since we'll modack to send receipt anyway.
+        // Set to some big-ish value in case we modack late.
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
-            .setStreamAckDeadlineSeconds(messageDispatcher.getMessageDeadlineSeconds())
+            .setStreamAckDeadlineSeconds(60)
             .build());
     requestObserver.request(1);
+
+    /**
+     * Must make sure we do this after sending the subscription name and deadline. Otherwise, some
+     * other thread might use this stream to do something else before we could send the first
+     * request.
+     */
+    lock.lock();
+    try {
+      this.requestObserver = requestObserver;
+    } finally {
+      lock.unlock();
+    }
 
     Futures.addCallback(
         errorFuture,
@@ -190,28 +232,31 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
               logger.log(Level.FINE, "pull failure after service no longer running", cause);
               return;
             }
-            logger.log(Level.WARNING, "Terminated streaming with exception", cause);
-            if (StatusUtil.isRetryable(cause)) {
-              long backoffMillis = channelReconnectBackoffMillis.get();
-              long newBackoffMillis =
-                  Math.min(backoffMillis * 2, MAX_CHANNEL_RECONNECT_BACKOFF.toMillis());
-              channelReconnectBackoffMillis.set(newBackoffMillis);
-
-              executor.schedule(
-                  new Runnable() {
-                    @Override
-                    public void run() {
-                      initialize();
-                    }
-                  },
-                  backoffMillis,
-                  TimeUnit.MILLISECONDS);
-            } else {
-              notifyFailed(cause);
+            if (!StatusUtil.isRetryable(cause)) {
+              ApiException gaxException =
+                  ApiExceptionFactory.createException(
+                      cause, GrpcStatusCode.of(Status.fromThrowable(cause).getCode()), false);
+              logger.log(Level.SEVERE, "terminated streaming with exception", gaxException);
+              notifyFailed(gaxException);
+              return;
             }
+            logger.log(Level.FINE, "stream closed with retryable exception; will reconnect", cause);
+            long backoffMillis = channelReconnectBackoffMillis.get();
+            long newBackoffMillis =
+                Math.min(backoffMillis * 2, MAX_CHANNEL_RECONNECT_BACKOFF.toMillis());
+            channelReconnectBackoffMillis.set(newBackoffMillis);
+
+            executor.schedule(
+                new Runnable() {
+                  @Override
+                  public void run() {
+                    initialize();
+                  }
+                },
+                backoffMillis,
+                TimeUnit.MILLISECONDS);
           }
-        },
-        executor);
+        });
   }
 
   private boolean isAlive() {
@@ -223,12 +268,20 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
     List<StreamingPullRequest> requests =
         partitionAckOperations(acksToSend, ackDeadlineExtensions, MAX_PER_REQUEST_CHANGES);
-    for (StreamingPullRequest request : requests) {
-      requestObserver.onNext(request);
+    lock.lock();
+    try {
+      for (StreamingPullRequest request : requests) {
+        requestObserver.onNext(request);
+      }
+    } catch (Exception e) {
+      Level level = isAlive() ? Level.WARNING : Level.FINER;
+      logger.log(level, "failed to send ack operations", e);
+    } finally {
+      lock.unlock();
     }
   }
 
-  @VisibleForTesting
+  @InternalApi
   static List<StreamingPullRequest> partitionAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions, int size) {
     int numExtensions = 0;
@@ -270,13 +323,5 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       ret.add(builder.build());
     }
     return ret;
-  }
-
-  public void updateStreamAckDeadline(int newAckDeadlineSeconds) {
-    messageDispatcher.setMessageDeadlineSeconds(newAckDeadlineSeconds);
-    requestObserver.onNext(
-        StreamingPullRequest.newBuilder()
-            .setStreamAckDeadlineSeconds(newAckDeadlineSeconds)
-            .build());
   }
 }

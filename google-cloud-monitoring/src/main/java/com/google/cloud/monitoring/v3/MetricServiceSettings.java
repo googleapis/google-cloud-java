@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,26 +24,23 @@ import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.core.PropertiesProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransport;
-import com.google.api.gax.grpc.GrpcTransportProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.SimpleCallSettings;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.TransportProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.GrpcMetricServiceStub;
@@ -65,7 +62,6 @@ import com.google.monitoring.v3.ListTimeSeriesRequest;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -99,7 +95,7 @@ import org.threeten.bp.Duration;
  */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
-public class MetricServiceSettings extends ClientSettings {
+public class MetricServiceSettings extends ClientSettings<MetricServiceSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -109,35 +105,27 @@ public class MetricServiceSettings extends ClientSettings {
           .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
-  private static final String DEFAULT_GAPIC_NAME = "gapic";
-  private static final String DEFAULT_GAPIC_VERSION = "";
-
-  private static final String PROPERTIES_FILE = "/com/google/cloud/monitoring/project.properties";
-  private static final String META_VERSION_KEY = "artifact.version";
-
-  private static String gapicVersion;
-
   private final PagedCallSettings<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings;
-  private final SimpleCallSettings<
+  private final UnaryCallSettings<
           GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorSettings;
   private final PagedCallSettings<
           ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
           ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsSettings;
-  private final SimpleCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
+  private final UnaryCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
       getMetricDescriptorSettings;
-  private final SimpleCallSettings<CreateMetricDescriptorRequest, MetricDescriptor>
+  private final UnaryCallSettings<CreateMetricDescriptorRequest, MetricDescriptor>
       createMetricDescriptorSettings;
-  private final SimpleCallSettings<DeleteMetricDescriptorRequest, Empty>
+  private final UnaryCallSettings<DeleteMetricDescriptorRequest, Empty>
       deleteMetricDescriptorSettings;
   private final PagedCallSettings<
           ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
       listTimeSeriesSettings;
-  private final SimpleCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings;
+  private final UnaryCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings;
 
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
   public PagedCallSettings<
@@ -148,7 +136,7 @@ public class MetricServiceSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to getMonitoredResourceDescriptor. */
-  public SimpleCallSettings<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
+  public UnaryCallSettings<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorSettings() {
     return getMonitoredResourceDescriptorSettings;
   }
@@ -162,19 +150,19 @@ public class MetricServiceSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to getMetricDescriptor. */
-  public SimpleCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
+  public UnaryCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
       getMetricDescriptorSettings() {
     return getMetricDescriptorSettings;
   }
 
   /** Returns the object with the settings used for calls to createMetricDescriptor. */
-  public SimpleCallSettings<CreateMetricDescriptorRequest, MetricDescriptor>
+  public UnaryCallSettings<CreateMetricDescriptorRequest, MetricDescriptor>
       createMetricDescriptorSettings() {
     return createMetricDescriptorSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteMetricDescriptor. */
-  public SimpleCallSettings<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorSettings() {
+  public UnaryCallSettings<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorSettings() {
     return deleteMetricDescriptorSettings;
   }
 
@@ -186,16 +174,19 @@ public class MetricServiceSettings extends ClientSettings {
   }
 
   /** Returns the object with the settings used for calls to createTimeSeries. */
-  public SimpleCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings() {
+  public UnaryCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings() {
     return createTimeSeriesSettings;
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MetricServiceStub createStub() throws IOException {
-    if (getTransportProvider().getTransportName().equals(GrpcTransport.getGrpcTransportName())) {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcMetricServiceStub.create(this);
     } else {
       throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportProvider().getTransportName());
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
   }
 
@@ -220,45 +211,20 @@ public class MetricServiceSettings extends ClientSettings {
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingChannelProvider.Builder defaultGrpcChannelProviderBuilder() {
-    return InstantiatingChannelProvider.newBuilder()
-        .setEndpoint(getDefaultEndpoint())
-        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion());
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder();
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static GrpcTransportProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return GrpcTransportProvider.newBuilder()
-        .setChannelProvider(defaultGrpcChannelProviderBuilder().build());
-  }
-
-  public static TransportProvider defaultTransportProvider() {
+  public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  private static String getGapicVersion() {
-    if (gapicVersion == null) {
-      gapicVersion =
-          PropertiesProvider.loadProperty(
-              MetricServiceSettings.class, PROPERTIES_FILE, META_VERSION_KEY);
-      gapicVersion = gapicVersion == null ? DEFAULT_GAPIC_VERSION : gapicVersion;
-    }
-    return gapicVersion;
-  }
-
-  /** Returns a builder for this class with recommended defaults. */
-  @Deprecated
-  public static Builder defaultBuilder() {
-    return Builder.createDefault();
-  }
-
-  /**
-   * Returns a builder for this class with recommended defaults for API methods, and the given
-   * ClientContext used for executor/transport/credentials.
-   */
-  @Deprecated
-  public static Builder defaultBuilder(ClientContext clientContext) {
-    return new Builder(clientContext);
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(MetricServiceSettings.class))
+        .setTransportToken(
+            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
   /** Returns a new builder for this class. */
@@ -277,11 +243,7 @@ public class MetricServiceSettings extends ClientSettings {
   }
 
   private MetricServiceSettings(Builder settingsBuilder) throws IOException {
-    super(
-        settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getTransportProvider(),
-        settingsBuilder.getCredentialsProvider(),
-        settingsBuilder.getClock());
+    super(settingsBuilder);
 
     listMonitoredResourceDescriptorsSettings =
         settingsBuilder.listMonitoredResourceDescriptorsSettings().build();
@@ -485,43 +447,44 @@ public class MetricServiceSettings extends ClientSettings {
           };
 
   /** Builder for MetricServiceSettings. */
-  public static class Builder extends ClientSettings.Builder {
-    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+  public static class Builder extends ClientSettings.Builder<MetricServiceSettings, Builder> {
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
             ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
             ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings;
-    private final SimpleCallSettings.Builder<
+    private final UnaryCallSettings.Builder<
             GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
         getMonitoredResourceDescriptorSettings;
     private final PagedCallSettings.Builder<
             ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
             ListMetricDescriptorsPagedResponse>
         listMetricDescriptorsSettings;
-    private final SimpleCallSettings.Builder<GetMetricDescriptorRequest, MetricDescriptor>
+    private final UnaryCallSettings.Builder<GetMetricDescriptorRequest, MetricDescriptor>
         getMetricDescriptorSettings;
-    private final SimpleCallSettings.Builder<CreateMetricDescriptorRequest, MetricDescriptor>
+    private final UnaryCallSettings.Builder<CreateMetricDescriptorRequest, MetricDescriptor>
         createMetricDescriptorSettings;
-    private final SimpleCallSettings.Builder<DeleteMetricDescriptorRequest, Empty>
+    private final UnaryCallSettings.Builder<DeleteMetricDescriptorRequest, Empty>
         deleteMetricDescriptorSettings;
     private final PagedCallSettings.Builder<
             ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
         listTimeSeriesSettings;
-    private final SimpleCallSettings.Builder<CreateTimeSeriesRequest, Empty>
+    private final UnaryCallSettings.Builder<CreateTimeSeriesRequest, Empty>
         createTimeSeriesSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
           ImmutableSet.copyOf(
-              Lists.<StatusCode>newArrayList(
-                  GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-                  GrpcStatusCode.of(Status.Code.UNAVAILABLE))));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode>newArrayList()));
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -554,23 +517,23 @@ public class MetricServiceSettings extends ClientSettings {
       listMonitoredResourceDescriptorsSettings =
           PagedCallSettings.newBuilder(LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT);
 
-      getMonitoredResourceDescriptorSettings = SimpleCallSettings.newBuilder();
+      getMonitoredResourceDescriptorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listMetricDescriptorsSettings =
           PagedCallSettings.newBuilder(LIST_METRIC_DESCRIPTORS_PAGE_STR_FACT);
 
-      getMetricDescriptorSettings = SimpleCallSettings.newBuilder();
+      getMetricDescriptorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      createMetricDescriptorSettings = SimpleCallSettings.newBuilder();
+      createMetricDescriptorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteMetricDescriptorSettings = SimpleCallSettings.newBuilder();
+      deleteMetricDescriptorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listTimeSeriesSettings = PagedCallSettings.newBuilder(LIST_TIME_SERIES_PAGE_STR_FACT);
 
-      createTimeSeriesSettings = SimpleCallSettings.newBuilder();
+      createTimeSeriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listMonitoredResourceDescriptorsSettings,
               getMonitoredResourceDescriptorSettings,
               listMetricDescriptorsSettings,
@@ -585,8 +548,10 @@ public class MetricServiceSettings extends ClientSettings {
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportProvider(defaultTransportProvider());
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
       return initDefaults(builder);
     }
 
@@ -650,7 +615,7 @@ public class MetricServiceSettings extends ClientSettings {
       createTimeSeriesSettings = settings.createTimeSeriesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listMonitoredResourceDescriptorsSettings,
               getMonitoredResourceDescriptorSettings,
               listMetricDescriptorsSettings,
@@ -661,31 +626,13 @@ public class MetricServiceSettings extends ClientSettings {
               createTimeSeriesSettings);
     }
 
-    @Override
-    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
-      super.setExecutorProvider(executorProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setTransportProvider(TransportProvider transportProvider) {
-      super.setTransportProvider(transportProvider);
-      return this;
-    }
-
-    @Override
-    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
-      super.setCredentialsProvider(credentialsProvider);
-      return this;
-    }
-
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -699,7 +646,7 @@ public class MetricServiceSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to getMonitoredResourceDescriptor. */
-    public SimpleCallSettings.Builder<
+    public UnaryCallSettings.Builder<
             GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
         getMonitoredResourceDescriptorSettings() {
       return getMonitoredResourceDescriptorSettings;
@@ -714,19 +661,19 @@ public class MetricServiceSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to getMetricDescriptor. */
-    public SimpleCallSettings.Builder<GetMetricDescriptorRequest, MetricDescriptor>
+    public UnaryCallSettings.Builder<GetMetricDescriptorRequest, MetricDescriptor>
         getMetricDescriptorSettings() {
       return getMetricDescriptorSettings;
     }
 
     /** Returns the builder for the settings used for calls to createMetricDescriptor. */
-    public SimpleCallSettings.Builder<CreateMetricDescriptorRequest, MetricDescriptor>
+    public UnaryCallSettings.Builder<CreateMetricDescriptorRequest, MetricDescriptor>
         createMetricDescriptorSettings() {
       return createMetricDescriptorSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteMetricDescriptor. */
-    public SimpleCallSettings.Builder<DeleteMetricDescriptorRequest, Empty>
+    public UnaryCallSettings.Builder<DeleteMetricDescriptorRequest, Empty>
         deleteMetricDescriptorSettings() {
       return deleteMetricDescriptorSettings;
     }
@@ -739,7 +686,7 @@ public class MetricServiceSettings extends ClientSettings {
     }
 
     /** Returns the builder for the settings used for calls to createTimeSeries. */
-    public SimpleCallSettings.Builder<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings() {
+    public UnaryCallSettings.Builder<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings() {
       return createTimeSeriesSettings;
     }
 

@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub.v1;
 
-import com.google.common.annotations.VisibleForTesting;
+import com.google.api.core.InternalApi;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -39,7 +39,7 @@ class AtomicRoundRobin {
     return next;
   }
 
-  @VisibleForTesting
+  @InternalApi
   void set(int i) {
     current.set(i);
   }

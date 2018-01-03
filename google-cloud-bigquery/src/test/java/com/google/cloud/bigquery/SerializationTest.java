@@ -71,17 +71,17 @@ public class SerializationTest extends BaseSerializationTest {
       .setSkipLeadingRows(42L)
       .build();
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", Field.Type.string())
+      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.newBuilder("IntegerField", Field.Type.integer())
+      Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
           .setMode(Field.Mode.REPEATED)
           .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+      Field.newBuilder("RecordField", LegacySQLTypeName.RECORD, FIELD_SCHEMA1, FIELD_SCHEMA2)
           .setMode(Field.Mode.REQUIRED)
           .setDescription("FieldDescription3")
           .build();
@@ -193,21 +193,14 @@ public class SerializationTest extends BaseSerializationTest {
       ImmutableMap.<Long, List<BigQueryError>>of(0L, ImmutableList.of(BIGQUERY_ERROR));
   private static final InsertAllResponse INSERT_ALL_RESPONSE = new InsertAllResponse(ERRORS_MAP);
   private static final FieldValue FIELD_VALUE =
-      new FieldValue(FieldValue.Attribute.PRIMITIVE, "value");
-  private static final QueryRequest QUERY_REQUEST = QueryRequest.newBuilder("query")
-      .setUseQueryCache(true)
-      .setDefaultDataset(DATASET_ID)
-      .setDryRun(false)
-      .setPageSize(42L)
-      .setMaxWaitTime(10L)
-      .build();
+      FieldValue.of(FieldValue.Attribute.PRIMITIVE, "value");
   private static final QueryResult QUERY_RESULT = QueryResult.newBuilder()
       .setSchema(TABLE_SCHEMA)
       .setTotalRows(1L)
       .setTotalBytesProcessed(42L)
       .setCursor("cursor")
       .setPageFetcher(null)
-      .setResults(ImmutableList.<List<FieldValue>>of())
+      .setResults(ImmutableList.<FieldValueList>of())
       .build();
   private static final QueryResponse QUERY_RESPONSE = QueryResponse.newBuilder()
       .setEtag(ETAG)
@@ -241,7 +234,7 @@ public class SerializationTest extends BaseSerializationTest {
         LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR, JOB_STATUS, JOB_ID,
         COPY_JOB_CONFIGURATION, EXTRACT_JOB_CONFIGURATION, LOAD_CONFIGURATION,
         LOAD_JOB_CONFIGURATION, QUERY_JOB_CONFIGURATION, JOB_INFO, INSERT_ALL_REQUEST,
-        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE, BIG_QUERY_EXCEPTION,
+        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_RESPONSE, BIG_QUERY_EXCEPTION,
         TIME_PARTITIONING, BigQuery.DatasetOption.fields(),
         BigQuery.DatasetDeleteOption.deleteContents(), BigQuery.DatasetListOption.all(),
         BigQuery.TableOption.fields(), BigQuery.TableListOption.pageSize(42L),

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,20 @@
 package com.google.cloud.dlp.v2beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
+import com.google.privacy.dlp.v2beta1.AnalyzeDataSourceRiskRequest;
+import com.google.privacy.dlp.v2beta1.BigQueryTable;
 import com.google.privacy.dlp.v2beta1.CloudStorageOptions;
 import com.google.privacy.dlp.v2beta1.CloudStorageOptions.FileSet;
 import com.google.privacy.dlp.v2beta1.ContentItem;
 import com.google.privacy.dlp.v2beta1.CreateInspectOperationRequest;
+import com.google.privacy.dlp.v2beta1.DeidentifyConfig;
+import com.google.privacy.dlp.v2beta1.DeidentifyContentRequest;
+import com.google.privacy.dlp.v2beta1.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2beta1.InfoType;
 import com.google.privacy.dlp.v2beta1.InspectConfig;
 import com.google.privacy.dlp.v2beta1.InspectContentRequest;
@@ -38,16 +42,16 @@ import com.google.privacy.dlp.v2beta1.ListInspectFindingsResponse;
 import com.google.privacy.dlp.v2beta1.ListRootCategoriesRequest;
 import com.google.privacy.dlp.v2beta1.ListRootCategoriesResponse;
 import com.google.privacy.dlp.v2beta1.OutputStorageConfig;
-import com.google.privacy.dlp.v2beta1.RedactContentRequest;
-import com.google.privacy.dlp.v2beta1.RedactContentRequest.ReplaceConfig;
-import com.google.privacy.dlp.v2beta1.RedactContentResponse;
+import com.google.privacy.dlp.v2beta1.PrivacyMetric;
 import com.google.privacy.dlp.v2beta1.ResultName;
+import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationResult;
 import com.google.privacy.dlp.v2beta1.StorageConfig;
 import com.google.protobuf.Any;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -82,11 +86,8 @@ public class DlpServiceClientTest {
     serviceHelper.reset();
     DlpServiceSettings settings =
         DlpServiceSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = DlpServiceClient.create(settings);
   }
@@ -147,68 +148,39 @@ public class DlpServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void redactContentTest() {
-    RedactContentResponse expectedResponse = RedactContentResponse.newBuilder().build();
+  public void deidentifyContentTest() {
+    DeidentifyContentResponse expectedResponse = DeidentifyContentResponse.newBuilder().build();
     mockDlpService.addResponse(expectedResponse);
 
-    String name = "EMAIL_ADDRESS";
-    InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
-    List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
-    InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
-    String type = "text/plain";
-    String value = "My email is example@example.com.";
-    ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
-    List<ContentItem> items = Arrays.asList(itemsElement);
-    String name2 = "EMAIL_ADDRESS";
-    InfoType infoType = InfoType.newBuilder().setName(name2).build();
-    String replaceWith = "REDACTED";
-    RedactContentRequest.ReplaceConfig replaceConfigsElement =
-        RedactContentRequest.ReplaceConfig.newBuilder()
-            .setInfoType(infoType)
-            .setReplaceWith(replaceWith)
-            .build();
-    List<RedactContentRequest.ReplaceConfig> replaceConfigs = Arrays.asList(replaceConfigsElement);
+    DeidentifyConfig deidentifyConfig = DeidentifyConfig.newBuilder().build();
+    InspectConfig inspectConfig = InspectConfig.newBuilder().build();
+    List<ContentItem> items = new ArrayList<>();
 
-    RedactContentResponse actualResponse =
-        client.redactContent(inspectConfig, items, replaceConfigs);
+    DeidentifyContentResponse actualResponse =
+        client.deidentifyContent(deidentifyConfig, inspectConfig, items);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockDlpService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    RedactContentRequest actualRequest = (RedactContentRequest) actualRequests.get(0);
+    DeidentifyContentRequest actualRequest = (DeidentifyContentRequest) actualRequests.get(0);
 
+    Assert.assertEquals(deidentifyConfig, actualRequest.getDeidentifyConfig());
     Assert.assertEquals(inspectConfig, actualRequest.getInspectConfig());
     Assert.assertEquals(items, actualRequest.getItemsList());
-    Assert.assertEquals(replaceConfigs, actualRequest.getReplaceConfigsList());
   }
 
   @Test
   @SuppressWarnings("all")
-  public void redactContentExceptionTest() throws Exception {
+  public void deidentifyContentExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockDlpService.addException(exception);
 
     try {
-      String name = "EMAIL_ADDRESS";
-      InfoType infoTypesElement = InfoType.newBuilder().setName(name).build();
-      List<InfoType> infoTypes = Arrays.asList(infoTypesElement);
-      InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
-      String type = "text/plain";
-      String value = "My email is example@example.com.";
-      ContentItem itemsElement = ContentItem.newBuilder().setType(type).setValue(value).build();
-      List<ContentItem> items = Arrays.asList(itemsElement);
-      String name2 = "EMAIL_ADDRESS";
-      InfoType infoType = InfoType.newBuilder().setName(name2).build();
-      String replaceWith = "REDACTED";
-      RedactContentRequest.ReplaceConfig replaceConfigsElement =
-          RedactContentRequest.ReplaceConfig.newBuilder()
-              .setInfoType(infoType)
-              .setReplaceWith(replaceWith)
-              .build();
-      List<RedactContentRequest.ReplaceConfig> replaceConfigs =
-          Arrays.asList(replaceConfigsElement);
+      DeidentifyConfig deidentifyConfig = DeidentifyConfig.newBuilder().build();
+      InspectConfig inspectConfig = InspectConfig.newBuilder().build();
+      List<ContentItem> items = new ArrayList<>();
 
-      client.redactContent(inspectConfig, items, replaceConfigs);
+      client.deidentifyContent(deidentifyConfig, inspectConfig, items);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -217,8 +189,55 @@ public class DlpServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void analyzeDataSourceRiskTest() throws Exception {
+    RiskAnalysisOperationResult expectedResponse = RiskAnalysisOperationResult.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("analyzeDataSourceRiskTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDlpService.addResponse(resultOperation);
+
+    PrivacyMetric privacyMetric = PrivacyMetric.newBuilder().build();
+    BigQueryTable sourceTable = BigQueryTable.newBuilder().build();
+
+    RiskAnalysisOperationResult actualResponse =
+        client.analyzeDataSourceRiskAsync(privacyMetric, sourceTable).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeDataSourceRiskRequest actualRequest =
+        (AnalyzeDataSourceRiskRequest) actualRequests.get(0);
+
+    Assert.assertEquals(privacyMetric, actualRequest.getPrivacyMetric());
+    Assert.assertEquals(sourceTable, actualRequest.getSourceTable());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void analyzeDataSourceRiskExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      PrivacyMetric privacyMetric = PrivacyMetric.newBuilder().build();
+      BigQueryTable sourceTable = BigQueryTable.newBuilder().build();
+
+      client.analyzeDataSourceRiskAsync(privacyMetric, sourceTable).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createInspectOperationTest() throws Exception {
-    ResultName name2 = ResultName.create("[RESULT]");
+    ResultName name2 = ResultName.of("[RESULT]");
     InspectOperationResult expectedResponse =
         InspectOperationResult.newBuilder().setNameWithResultName(name2).build();
     Operation resultOperation =
@@ -281,9 +300,7 @@ public class DlpServiceClientTest {
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(
-          Status.INVALID_ARGUMENT.getCode(),
-          ((GrpcStatusCode) apiException.getStatusCode()).getCode());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -295,7 +312,7 @@ public class DlpServiceClientTest {
         ListInspectFindingsResponse.newBuilder().setNextPageToken(nextPageToken).build();
     mockDlpService.addResponse(expectedResponse);
 
-    ResultName name = ResultName.create("[RESULT]");
+    ResultName name = ResultName.of("[RESULT]");
 
     ListInspectFindingsResponse actualResponse = client.listInspectFindings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -314,7 +331,7 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      ResultName name = ResultName.create("[RESULT]");
+      ResultName name = ResultName.of("[RESULT]");
 
       client.listInspectFindings(name);
       Assert.fail("No exception raised");

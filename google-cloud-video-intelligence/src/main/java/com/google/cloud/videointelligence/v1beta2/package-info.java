@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,13 +28,10 @@
  * <pre>
  * <code>
  * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
- *   String inputUri = "";
- *   List&lt;Feature&gt; features = new ArrayList&lt;&gt;();
- *   ByteString inputContent = ByteString.copyFromUtf8("");
- *   VideoContext videoContext = VideoContext.newBuilder().build();
- *   String outputUri = "";
- *   String locationId = "";
- *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features, inputContent, videoContext, outputUri, locationId);
+ *   String inputUri = "gs://demomaker/cat.mp4";
+ *   Feature featuresElement = Feature.LABEL_DETECTION;
+ *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
+ *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features);
  * }
  * </code>
  * </pre>

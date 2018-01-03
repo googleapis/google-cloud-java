@@ -17,7 +17,6 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
-import static com.google.spanner.v1.Mutation.Write;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.Timestamp;
@@ -28,6 +27,7 @@ import com.google.protobuf.util.Timestamps;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.Mutation.Write;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.ResultSetMetadata;
@@ -75,7 +75,8 @@ public class SessionImplTest {
     DatabaseId db = DatabaseId.of(dbName);
 
     Session sessionProto = Session.newBuilder().setName(sessionName).build();
-    Mockito.when(rpc.createSession(Mockito.eq(dbName), optionsCaptor.capture()))
+    Mockito.when(rpc.createSession(Mockito.eq(dbName),
+    		Mockito.anyMapOf(String.class, String.class), optionsCaptor.capture()))
         .thenReturn(sessionProto);
     session = spanner.createSession(db);
     // We expect the same options, "options", on all calls on "session".

@@ -21,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>0.24.0-beta</version>
+  <version>0.32.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-spanner:0.24.0-beta'
+compile 'com.google.cloud:google-cloud-spanner:0.32.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.24.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.32.0-beta"
 ```
 
 ## Authentication
@@ -85,14 +85,15 @@ try {
   DatabaseClient dbClient = spanner.getDatabaseClient(
     DatabaseId.of(options.getProjectId(), instance, database));
   // Queries the database
-  ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"));
-  // Prints the results
-  while (resultSet.next()) {
-    System.out.printf("%d\n", resultSet.getLong(0));
+  try (ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"))) {
+    // Prints the results
+    while (resultSet.next()) {
+      System.out.printf("%d\n", resultSet.getLong(0));
+    }
   }
 } finally {
   // Closes the client which will free up the resources used
-  spanner.closeAsync().get();
+  spanner.close();
 }
 ```
 

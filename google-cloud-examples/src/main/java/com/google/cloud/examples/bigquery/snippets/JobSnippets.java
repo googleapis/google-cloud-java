@@ -22,13 +22,14 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
-import com.google.cloud.WaitForOption;
+import com.google.api.gax.retrying.PollException;
+import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobStatus;
 
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import org.threeten.bp.Duration;
 
 public class JobSnippets {
 
@@ -66,7 +67,7 @@ public class JobSnippets {
   /**
    * Example usage of {@code waitFor()}.
    */
-  // [TARGET waitFor(WaitForOption...)]
+  // [TARGET waitFor(RetryOption...)]
   public boolean waitFor() throws InterruptedException {
     try {
       // [START waitFor]
@@ -79,9 +80,12 @@ public class JobSnippets {
         // job completed successfully
       }
       // [END waitFor]
-    } catch (TimeoutException e) {
+    } catch (BigQueryException e) {
       // Timeouts shouldn't happen without a timeout option.
-      return false;
+      if (e.getCause() instanceof PollException) {
+        return false;
+      }
+      throw e;
     }
     return true;
   }
@@ -89,14 +93,14 @@ public class JobSnippets {
   /**
    * Example usage of {@code waitFor()} with checking period and timeout.
    */
-  // [TARGET waitFor(WaitForOption...)]
+  // [TARGET waitFor(RetryOption...)]
   public boolean waitForWithOptions() throws InterruptedException {
     try {
       // [START waitForWithOptions]
       Job completedJob =
           job.waitFor(
-              WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-              WaitForOption.timeout(60, TimeUnit.SECONDS));
+              RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+              RetryOption.totalTimeout(Duration.ofMinutes(1)));
       if (completedJob == null) {
         // job no longer exists
       } else if (completedJob.getStatus().getError() != null) {
@@ -105,8 +109,11 @@ public class JobSnippets {
         // job completed successfully
       }
       // [END waitForWithOptions]
-    } catch (TimeoutException e) {
-      return true;
+    } catch (BigQueryException e) {
+      if (e.getCause() instanceof PollException) {
+        return false;
+      }
+      throw e;
     }
     return true;
   }

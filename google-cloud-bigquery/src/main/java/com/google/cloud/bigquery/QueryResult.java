@@ -20,10 +20,9 @@ import com.google.cloud.PageImpl;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 
-import java.util.List;
 import java.util.Objects;
 
-public class QueryResult extends PageImpl<List<FieldValue>> {
+public class QueryResult extends PageImpl<FieldValueList> {
 
   private static final long serialVersionUID = -4831062717210349818L;
 
@@ -32,7 +31,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
   private final long totalRows;
   private final long totalBytesProcessed;
 
-  interface QueryResultsPageFetcher extends PageImpl.NextPageFetcher<List<FieldValue>> {
+  interface QueryResultsPageFetcher extends PageImpl.NextPageFetcher<FieldValueList> {
 
     @Override
     QueryResult getNextPage();
@@ -42,7 +41,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
 
     private QueryResultsPageFetcher pageFetcher;
     private String cursor;
-    private Iterable<List<FieldValue>> results;
+    private Iterable<FieldValueList> results;
     private boolean cacheHit;
     private Schema schema;
     private long totalRows;
@@ -80,7 +79,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
       return this;
     }
 
-    Builder setResults(Iterable<List<FieldValue>> results) {
+    Builder setResults(Iterable<FieldValueList> results) {
       this.results = results;
       return this;
     }
@@ -91,8 +90,9 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
   }
 
   private QueryResult(Builder builder) {
-    super(builder.pageFetcher, builder.cursor, builder.results != null ? builder.results
-      : ImmutableList.<List<FieldValue>>of());
+    super(builder.pageFetcher,
+        builder.cursor,
+        builder.results != null ? builder.results : ImmutableList.<FieldValueList>of());
     this.cacheHit = builder.cacheHit;
     this.schema = builder.schema;
     this.totalBytesProcessed = builder.totalBytesProcessed;

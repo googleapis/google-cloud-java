@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.cloud.bigquery.BigQuery.QueryOption;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 
@@ -26,21 +27,15 @@ import java.util.Objects;
 /**
  * Google Cloud BigQuery Query Response. This class contains the results of a Query Job
  * ({@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)}) or of a
- * Query Request ({@link BigQuery#query(QueryRequest)}).
+ * Query Request ({@link BigQuery#query(QueryJobConfiguration, QueryOption...)}).
  *
  * <p>Example usage of a query response:
  * <pre> {@code
- * QueryResponse response = bigquery.query(request);
- * while (!response.jobCompleted()) {
- *   Thread.sleep(1000);
- *   response = bigquery.getQueryResults(response.getJobId());
- * }
+ * QueryResponse response = bigquery.query(queryConfig);
  * List<BigQueryError> executionErrors = response.getExecutionErrors();
  * // look for errors in executionErrors
  * QueryResult result = response.getResult();
- * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
- * while(rowIterator.hasNext()) {
- *   List<FieldValue> row = rowIterator.next();
+ * for(FieldValueList row : result.iterateAll()) {
  *   // do something with row
  * }
  * }</pre>

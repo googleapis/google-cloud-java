@@ -188,7 +188,7 @@ public interface SpannerRpc extends ServiceRpc {
   /** Retrieves a long running operation. */
   Operation getOperation(String name) throws SpannerException;
 
-  Session createSession(String databaseName, @Nullable Map<Option, ?> options)
+  Session createSession(String databaseName, @Nullable Map<String, String> labels, @Nullable Map<Option, ?> options)
       throws SpannerException;
 
   void deleteSession(String sessionName, @Nullable Map<Option, ?> options) throws SpannerException;

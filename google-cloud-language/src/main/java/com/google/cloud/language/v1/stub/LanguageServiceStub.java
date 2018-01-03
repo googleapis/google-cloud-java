@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,8 @@ import com.google.cloud.language.v1.AnalyzeSyntaxRequest;
 import com.google.cloud.language.v1.AnalyzeSyntaxResponse;
 import com.google.cloud.language.v1.AnnotateTextRequest;
 import com.google.cloud.language.v1.AnnotateTextResponse;
+import com.google.cloud.language.v1.ClassifyTextRequest;
+import com.google.cloud.language.v1.ClassifyTextResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -37,7 +39,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by GAPIC v0.0.5")
-@BetaApi
+@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class LanguageServiceStub implements BackgroundResource {
 
   public UnaryCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
@@ -56,6 +58,10 @@ public abstract class LanguageServiceStub implements BackgroundResource {
 
   public UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable() {
     throw new UnsupportedOperationException("Not implemented: analyzeSyntaxCallable()");
+  }
+
+  public UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable() {
+    throw new UnsupportedOperationException("Not implemented: classifyTextCallable()");
   }
 
   public UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable() {

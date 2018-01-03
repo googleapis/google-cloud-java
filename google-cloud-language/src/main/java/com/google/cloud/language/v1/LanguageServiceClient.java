@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,20 +86,13 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * LanguageServiceSettings languageServiceSettings =
- *     LanguageServiceSettings.newBuilder()
- *         .setTransportProvider(LanguageServiceSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(LanguageServiceSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
- *             .build())
- *         .build();
+ *     LanguageServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * LanguageServiceClient languageServiceClient =
  *     LanguageServiceClient.create(languageServiceSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
-@BetaApi
 public class LanguageServiceClient implements BackgroundResource {
   private final LanguageServiceSettings settings;
   private final LanguageServiceStub stub;
@@ -122,6 +115,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * Constructs an instance of LanguageServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer to use LanguageServiceSettings}.
    */
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final LanguageServiceClient create(LanguageServiceStub stub) {
     return new LanguageServiceClient(stub);
   }
@@ -136,6 +130,7 @@ public class LanguageServiceClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected LanguageServiceClient(LanguageServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -145,7 +140,7 @@ public class LanguageServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LanguageServiceStub getStub() {
     return stub;
   }
@@ -453,6 +448,73 @@ public class LanguageServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable() {
     return stub.analyzeSyntaxCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Classifies a document into categories.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   ClassifyTextResponse response = languageServiceClient.classifyText(document);
+   * }
+   * </code></pre>
+   *
+   * @param document Input document.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ClassifyTextResponse classifyText(Document document) {
+
+    ClassifyTextRequest request = ClassifyTextRequest.newBuilder().setDocument(document).build();
+    return classifyText(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Classifies a document into categories.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   ClassifyTextRequest request = ClassifyTextRequest.newBuilder()
+   *     .setDocument(document)
+   *     .build();
+   *   ClassifyTextResponse response = languageServiceClient.classifyText(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ClassifyTextResponse classifyText(ClassifyTextRequest request) {
+    return classifyTextCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Classifies a document into categories.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   ClassifyTextRequest request = ClassifyTextRequest.newBuilder()
+   *     .setDocument(document)
+   *     .build();
+   *   ApiFuture&lt;ClassifyTextResponse&gt; future = languageServiceClient.classifyTextCallable().futureCall(request);
+   *   // Do something
+   *   ClassifyTextResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable() {
+    return stub.classifyTextCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

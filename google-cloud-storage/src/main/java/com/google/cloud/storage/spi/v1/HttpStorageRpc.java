@@ -46,9 +46,11 @@ import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.Buckets;
 import com.google.api.services.storage.model.ComposeRequest;
 import com.google.api.services.storage.model.ComposeRequest.SourceObjects.ObjectPreconditions;
+import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Objects;
 import com.google.api.services.storage.model.Policy;
+import com.google.api.services.storage.model.ServiceAccount;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.BaseServiceException;
@@ -252,6 +254,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
           .setFields(Option.FIELDS.getString(options))
+          .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
       return Tuple.<String, Iterable<Bucket>>of(buckets.getNextPageToken(), buckets.getItems());
     } catch (IOException ex) {
@@ -680,9 +683,11 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BucketAccessControl getAcl(String bucket, String entity) {
+  public BucketAccessControl getAcl(String bucket, String entity, Map<Option, ?> options) {
     try {
-      return storage.bucketAccessControls().get(bucket, entity).execute();
+      return storage.bucketAccessControls().get(bucket, entity)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
@@ -693,9 +698,11 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public boolean deleteAcl(String bucket, String entity) {
+  public boolean deleteAcl(String bucket, String entity, Map<Option, ?> options) {
     try {
-      storage.bucketAccessControls().delete(bucket, entity).execute();
+      storage.bucketAccessControls().delete(bucket, entity)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
       return true;
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
@@ -707,28 +714,34 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BucketAccessControl createAcl(BucketAccessControl acl) {
+  public BucketAccessControl createAcl(BucketAccessControl acl, Map<Option, ?> options) {
     try {
-      return storage.bucketAccessControls().insert(acl.getBucket(), acl).execute();
+      return storage.bucketAccessControls().insert(acl.getBucket(), acl)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
   @Override
-  public BucketAccessControl patchAcl(BucketAccessControl acl) {
+  public BucketAccessControl patchAcl(BucketAccessControl acl, Map<Option, ?> options) {
     try {
       return storage.bucketAccessControls()
-          .patch(acl.getBucket(), acl.getEntity(), acl).execute();
+          .patch(acl.getBucket(), acl.getEntity(), acl)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
   @Override
-  public List<BucketAccessControl> listAcls(String bucket) {
+  public List<BucketAccessControl> listAcls(String bucket, Map<Option, ?> options) {
     try {
-      return storage.bucketAccessControls().list(bucket).execute().getItems();
+      return storage.bucketAccessControls().list(bucket)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute().getItems();
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -855,28 +868,75 @@ public class HttpStorageRpc implements StorageRpc {
     }
   }
 
+
   @Override
-  public Policy getIamPolicy(String bucket) {
+  public Policy getIamPolicy(String bucket, Map<Option, ?> options) {
     try {
-      return storage.buckets().getIamPolicy(bucket).execute();
+      return storage.buckets().getIamPolicy(bucket)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
   @Override
-  public Policy setIamPolicy(String bucket, Policy policy) {
+  public Policy setIamPolicy(String bucket, Policy policy, Map<Option, ?> options) {
     try {
-      return storage.buckets().setIamPolicy(bucket, policy).execute();
+      return storage.buckets().setIamPolicy(bucket, policy)
+          .setUserProject(Option.USER_PROJECT.getString(options))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
   @Override
-  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions) {
+  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions, Map<Option, ?> options) {
     try {
-      return storage.buckets().testIamPermissions(bucket, permissions).execute();
+      return storage.buckets().testIamPermissions(bucket, permissions)
+          .setUserProject(Option.USER_PROJECT.getString(options)).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public boolean deleteNotification(String bucket, String notification) {
+    try {
+      storage.notifications().delete(bucket, notification).execute();
+      return true;
+    } catch (IOException ex) {
+      StorageException serviceException = translate(ex);
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
+        return false;
+      }
+      throw serviceException;
+    }
+  }
+
+  @Override
+  public List<Notification> listNotifications(String bucket) {
+    try {
+      return storage.notifications().list(bucket).execute().getItems();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Notification createNotification(String bucket, Notification notification) {
+    try {
+      return storage.notifications().insert(bucket, notification).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public ServiceAccount getServiceAccount(String projectId) {
+    try {
+      return storage.projects().serviceAccount().get(projectId).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }

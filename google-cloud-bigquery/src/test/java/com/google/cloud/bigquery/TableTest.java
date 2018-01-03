@@ -60,7 +60,7 @@ public class TableTest {
       JobInfo.of(LoadJobConfiguration.of(TABLE_ID1, ImmutableList.of("URI"), FormatOptions.json()));
   private static final JobInfo EXTRACT_JOB_INFO =
       JobInfo.of(ExtractJobConfiguration.of(TABLE_ID1, ImmutableList.of("URI"), "CSV"));
-  private static final Field FIELD = Field.of("FieldName", Field.Type.integer());
+  private static final Field FIELD = Field.of("FieldName", LegacySQLTypeName.INTEGER);
   private static final TableDefinition TABLE_DEFINITION =
       StandardTableDefinition.of(Schema.of(FIELD));
   private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID1, TABLE_DEFINITION);
@@ -77,12 +77,13 @@ public class TableTest {
   private static final InsertAllResponse EMPTY_INSERT_ALL_RESPONSE =
       new InsertAllResponse(ImmutableMap.<Long, List<BigQueryError>>of());
   private static final FieldValue FIELD_VALUE1 =
-      new FieldValue(FieldValue.Attribute.PRIMITIVE, "val1");
+      FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
   private static final FieldValue FIELD_VALUE2 =
-      new FieldValue(FieldValue.Attribute.PRIMITIVE, "val1");
-  private static final Iterable<List<FieldValue>> ROWS = ImmutableList.of(
-      (List<FieldValue>) ImmutableList.of(FIELD_VALUE1), ImmutableList.of(FIELD_VALUE2));
-
+      FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
+  private static final Iterable<FieldValueList> ROWS =
+      ImmutableList.of(
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE1)),
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE2)));
   private BigQuery serviceMockReturnsOptions = createStrictMock(BigQuery.class);
   private BigQueryOptions mockOptions = createMock(BigQueryOptions.class);
   private BigQuery bigquery;
@@ -272,13 +273,13 @@ public class TableTest {
   public void testList() throws Exception {
     initializeExpectedTable(1);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    PageImpl<List<FieldValue>> tableDataPage = new PageImpl<>(null, "c", ROWS);
+    PageImpl<FieldValueList> tableDataPage = new PageImpl<>(null, "c", ROWS);
     expect(bigquery.listTableData(TABLE_ID1)).andReturn(tableDataPage);
     replay(bigquery);
     initializeTable();
-    Page<List<FieldValue>> dataPage = table.list();
-    Iterator<List<FieldValue>> tableDataIterator = dataPage.getValues().iterator();
-    Iterator<List<FieldValue>> dataIterator = dataPage.getValues().iterator();
+    Page<FieldValueList> dataPage = table.list();
+    Iterator<FieldValueList> tableDataIterator = dataPage.getValues().iterator();
+    Iterator<FieldValueList> dataIterator = dataPage.getValues().iterator();
     assertTrue(Iterators.elementsEqual(tableDataIterator, dataIterator));
   }
 
@@ -286,14 +287,14 @@ public class TableTest {
   public void testListWithOptions() throws Exception {
     initializeExpectedTable(1);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    PageImpl<List<FieldValue>> tableDataPage = new PageImpl<>(null, "c", ROWS);
+    PageImpl<FieldValueList> tableDataPage = new PageImpl<>(null, "c", ROWS);
     expect(bigquery.listTableData(TABLE_ID1, BigQuery.TableDataListOption.pageSize(10L)))
         .andReturn(tableDataPage);
     replay(bigquery);
     initializeTable();
-    Page<List<FieldValue>> dataPage = table.list(BigQuery.TableDataListOption.pageSize(10L));
-    Iterator<List<FieldValue>> tableDataIterator = dataPage.getValues().iterator();
-    Iterator<List<FieldValue>> dataIterator = dataPage.getValues().iterator();
+    Page<FieldValueList> dataPage = table.list(BigQuery.TableDataListOption.pageSize(10L));
+    Iterator<FieldValueList> tableDataIterator = dataPage.getValues().iterator();
+    Iterator<FieldValueList> dataIterator = dataPage.getValues().iterator();
     assertTrue(Iterators.elementsEqual(tableDataIterator, dataIterator));
   }
 

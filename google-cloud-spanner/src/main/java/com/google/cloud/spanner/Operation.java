@@ -18,19 +18,34 @@ package com.google.cloud.spanner;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
-import com.google.cloud.WaitForOption;
-import com.google.cloud.WaitForOption.CheckingPeriod;
-import com.google.cloud.WaitForOption.Timeout;
+import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
+import com.google.api.gax.retrying.PollException;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.BaseServiceException;
+import com.google.cloud.RetryHelper;
+import com.google.cloud.RetryOption;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.longrunning.Operation.ResultCase;
 import com.google.protobuf.Any;
 import com.google.rpc.Status;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Nullable;
+import org.threeten.bp.Duration;
 
 /** Represents a long running operation. */
 // TODO(user): Implement other operations on Operation.
 public class Operation<R, M> {
+
+  private final RetrySettings DEFAULT_OPERATION_WAIT_SETTINGS =
+      RetrySettings.newBuilder()
+          .setTotalTimeout(Duration.ofHours(12L))
+          .setInitialRetryDelay(Duration.ofMillis(500L))
+          .setRetryDelayMultiplier(1.0)
+          .setJittered(false)
+          .setMaxRetryDelay(Duration.ofMinutes(500L))
+          .build();
 
   static interface Parser<R, M> {
     R parseResult(Any response);
@@ -120,43 +135,59 @@ public class Operation<R, M> {
    *
    * @return null if operation is not found otherwise the current operation.
    */
-  public Operation<R, M> waitFor(WaitForOption... options) throws SpannerException {
-    if (isDone) {
+  public Operation<R, M> waitFor(RetryOption... waitOptions) throws SpannerException {
+    if (isDone()) {
       return this;
     }
-    long timeoutMillis = Timeout.getOrDefault(options).getTimeoutMillis();
-    boolean hasTimeout = timeoutMillis != -1;
-    CheckingPeriod period = CheckingPeriod.getOrDefault(options);
-    long startMillis = clock.millisTime();
-    while (true) {
-      try {
-        com.google.longrunning.Operation proto = rpc.getOperation(name);
-        if (proto.getDone()) {
-          return Operation.<R, M>create(rpc, proto, parser);
-        }
-        long elapsed = clock.millisTime() - startMillis;
-        if (hasTimeout && elapsed >= timeoutMillis) {
-          throw SpannerExceptionFactory.newSpannerException(
-              ErrorCode.DEADLINE_EXCEEDED, "Operation did not complete in the given time");
-        }
-      } catch (SpannerException e) {
-        if (e.getErrorCode() == ErrorCode.NOT_FOUND) {
+    RetrySettings waitSettings =
+        RetryOption.mergeToSettings(DEFAULT_OPERATION_WAIT_SETTINGS, waitOptions);
+    try {
+      com.google.longrunning.Operation proto = RetryHelper.poll(
+          new Callable<com.google.longrunning.Operation>() {
+            @Override
+            public com.google.longrunning.Operation call() throws Exception {
+              return rpc.getOperation(name);
+            }
+          },
+          waitSettings,
+          new BasicResultRetryAlgorithm<com.google.longrunning.Operation>() {
+            @Override
+            public boolean shouldRetry(
+                Throwable prevThrowable, com.google.longrunning.Operation prevResponse) {
+              if (prevResponse != null) {
+                return !prevResponse.getDone();
+              }
+              if (prevThrowable instanceof SpannerException) {
+                SpannerException spannerException = (SpannerException) prevThrowable;
+                return spannerException.getErrorCode() != ErrorCode.NOT_FOUND
+                    && spannerException.isRetryable();
+              }
+              return false;
+            }
+          },
+          clock);
+      return Operation.create(rpc, proto, parser);
+    } catch (InterruptedException e) {
+      throw SpannerExceptionFactory.propagateInterrupt(e);
+    } catch (ExecutionException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof SpannerException) {
+        SpannerException spannerException = (SpannerException) cause;
+        if(spannerException.getErrorCode() == ErrorCode.NOT_FOUND) {
           return null;
         }
-        if (!e.isRetryable()) {
-          throw e;
-        }
+        throw spannerException;
       }
-      try {
-        period.getUnit().sleep(period.getPeriod());
-      } catch (InterruptedException e) {
-        throw SpannerExceptionFactory.propagateInterrupt(e);
+      if (cause instanceof PollException) {
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.DEADLINE_EXCEEDED, "Operation did not complete in the given time");
       }
+      throw SpannerExceptionFactory.newSpannerException(cause);
     }
   }
 
   /**
-   * Returns the metadata returned by the last refersh of this operation. Returns null if no
+   * Returns the metadata returned by the last refresh of this operation. Returns null if no
    * metadata was returned or if this operation has not been refereshed.
    */
   public M getMetadata() {

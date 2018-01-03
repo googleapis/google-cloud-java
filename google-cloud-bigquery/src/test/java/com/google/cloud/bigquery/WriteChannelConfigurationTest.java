@@ -42,10 +42,11 @@ public class WriteChannelConfigurationTest {
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final String FORMAT = "CSV";
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
-  private static final Field FIELD_SCHEMA = Field.newBuilder("IntegerField", Field.Type.integer())
-      .setMode(Field.Mode.REQUIRED)
-      .setDescription("FieldDescription")
-      .build();
+  private static final Field FIELD_SCHEMA =
+      Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
+          .setMode(Field.Mode.REQUIRED)
+          .setDescription("FieldDescription")
+          .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
   private static final Boolean AUTODETECT = true;
   private static final List<JobInfo.SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =

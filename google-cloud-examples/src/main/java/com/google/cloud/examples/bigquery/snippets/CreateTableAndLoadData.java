@@ -27,6 +27,7 @@ import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -48,7 +49,7 @@ public class CreateTableAndLoadData {
     Table table = bigquery.getTable(tableId);
     if (table == null) {
       System.out.println("Creating table " + tableId);
-      Field integerField = Field.of("fieldName", Field.Type.integer());
+      Field integerField = Field.of("fieldName", LegacySQLTypeName.INTEGER);
       Schema schema = Schema.of(integerField);
       table = bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
     }

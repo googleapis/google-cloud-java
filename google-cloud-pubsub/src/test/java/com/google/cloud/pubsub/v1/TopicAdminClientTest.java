@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscrip
 import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.InvalidArgumentException;
@@ -88,11 +87,8 @@ public class TopicAdminClientTest {
     serviceHelper.reset();
     TopicAdminSettings settings =
         TopicAdminSettings.newBuilder()
-            .setTransportProvider(
-                GrpcTransportProvider.newBuilder()
-                    .setChannelProvider(serviceHelper.createChannelProvider())
-                    .build())
-            .setCredentialsProvider(new NoCredentialsProvider())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = TopicAdminClient.create(settings);
   }
@@ -105,11 +101,11 @@ public class TopicAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void createTopicTest() {
-    TopicName name2 = TopicName.create("[PROJECT]", "[TOPIC]");
+    TopicName name2 = TopicName.of("[PROJECT]", "[TOPIC]");
     Topic expectedResponse = Topic.newBuilder().setNameWithTopicName(name2).build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
+    TopicName name = TopicName.of("[PROJECT]", "[TOPIC]");
 
     Topic actualResponse = client.createTopic(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -128,7 +124,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
+      TopicName name = TopicName.of("[PROJECT]", "[TOPIC]");
 
       client.createTopic(name);
       Assert.fail("No exception raised");
@@ -146,7 +142,7 @@ public class TopicAdminClientTest {
         PublishResponse.newBuilder().addAllMessageIds(messageIds).build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
     ByteString data = ByteString.copyFromUtf8("-86");
     PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
     List<PubsubMessage> messages = Arrays.asList(messagesElement);
@@ -169,7 +165,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
       ByteString data = ByteString.copyFromUtf8("-86");
       PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
       List<PubsubMessage> messages = Arrays.asList(messagesElement);
@@ -184,11 +180,11 @@ public class TopicAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTopicTest() {
-    TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
+    TopicName name = TopicName.of("[PROJECT]", "[TOPIC]");
     Topic expectedResponse = Topic.newBuilder().setNameWithTopicName(name).build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
 
     Topic actualResponse = client.getTopic(topic);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -207,7 +203,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
 
       client.getTopic(topic);
       Assert.fail("No exception raised");
@@ -229,7 +225,7 @@ public class TopicAdminClientTest {
             .build();
     mockPublisher.addResponse(expectedResponse);
 
-    ProjectName project = ProjectName.create("[PROJECT]");
+    ProjectName project = ProjectName.of("[PROJECT]");
 
     ListTopicsPagedResponse pagedListResponse = client.listTopics(project);
 
@@ -251,7 +247,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      ProjectName project = ProjectName.create("[PROJECT]");
+      ProjectName project = ProjectName.of("[PROJECT]");
 
       client.listTopics(project);
       Assert.fail("No exception raised");
@@ -264,7 +260,7 @@ public class TopicAdminClientTest {
   @SuppressWarnings("all")
   public void listTopicSubscriptionsTest() {
     String nextPageToken = "";
-    SubscriptionName subscriptionsElement = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+    SubscriptionName subscriptionsElement = SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
     List<SubscriptionName> subscriptions = Arrays.asList(subscriptionsElement);
     ListTopicSubscriptionsResponse expectedResponse =
         ListTopicSubscriptionsResponse.newBuilder()
@@ -273,7 +269,7 @@ public class TopicAdminClientTest {
             .build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
 
     ListTopicSubscriptionsPagedResponse pagedListResponse = client.listTopicSubscriptions(topic);
 
@@ -301,7 +297,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
 
       client.listTopicSubscriptions(topic);
       Assert.fail("No exception raised");
@@ -316,7 +312,7 @@ public class TopicAdminClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
 
     client.deleteTopic(topic);
 
@@ -334,7 +330,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
 
       client.deleteTopic(topic);
       Assert.fail("No exception raised");
@@ -351,7 +347,7 @@ public class TopicAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
+    String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(formattedResource, policy);
@@ -372,7 +368,7 @@ public class TopicAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
+      String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(formattedResource, policy);
@@ -390,7 +386,7 @@ public class TopicAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
+    String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
 
     Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -409,7 +405,7 @@ public class TopicAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
+      String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
 
       client.getIamPolicy(formattedResource);
       Assert.fail("No exception raised");
@@ -424,7 +420,7 @@ public class TopicAdminClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
+    String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse =
@@ -446,7 +442,7 @@ public class TopicAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
+      String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(formattedResource, permissions);

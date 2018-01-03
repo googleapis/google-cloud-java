@@ -22,6 +22,7 @@ import com.google.cloud.http.BaseHttpServiceException;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.Set;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Compute Engine service exception.
@@ -50,6 +51,11 @@ public class ComputeException extends BaseHttpServiceException {
    * @throws ComputeException when {@code ex} was caused by a {@code ComputeException}
    */
   static BaseServiceException translateAndThrow(RetryHelperException ex) {
+    BaseServiceException.translate(ex);
+    throw new ComputeException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
+  }
+
+  static BaseServiceException translateAndThrow(ExecutionException ex) {
     BaseServiceException.translate(ex);
     throw new ComputeException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }

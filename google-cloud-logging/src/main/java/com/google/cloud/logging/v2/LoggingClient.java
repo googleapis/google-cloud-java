@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (LoggingClient loggingClient = LoggingClient.create()) {
- *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+ *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
  *   loggingClient.deleteLog(logName);
  * }
  * </code>
@@ -90,7 +90,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * LoggingSettings loggingSettings =
- *     LoggingSettings.defaultBuilder()
+ *     LoggingSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * LoggingClient loggingClient =
@@ -103,13 +103,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * LoggingSettings loggingSettings =
- *     LoggingSettings.defaultBuilder()
- *         .setTransportProvider(LoggingSettings.defaultGrpcTransportProviderBuilder()
- *             .setChannelProvider(LoggingSettings.defaultGrpcChannelProviderBuilder()
- *                 .setEndpoint(myEndpoint)
- *                 .build())
- *             .build())
- *         .build();
+ *     LoggingSettings.newBuilder().setEndpoint(myEndpoint).build();
  * LoggingClient loggingClient =
  *     LoggingClient.create(loggingSettings);
  * </code>
@@ -123,7 +117,7 @@ public class LoggingClient implements BackgroundResource {
 
   /** Constructs an instance of LoggingClient with default settings. */
   public static final LoggingClient create() throws IOException {
-    return create(LoggingSettings.defaultBuilder().build());
+    return create(LoggingSettings.newBuilder().build());
   }
 
   /**
@@ -138,6 +132,7 @@ public class LoggingClient implements BackgroundResource {
    * Constructs an instance of LoggingClient, using the given stub for making calls. This is for
    * advanced usage - prefer to use LoggingSettings}.
    */
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final LoggingClient create(LoggingServiceV2Stub stub) {
     return new LoggingClient(stub);
   }
@@ -151,6 +146,7 @@ public class LoggingClient implements BackgroundResource {
     this.stub = settings.createStub();
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected LoggingClient(LoggingServiceV2Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -160,6 +156,7 @@ public class LoggingClient implements BackgroundResource {
     return settings;
   }
 
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LoggingServiceV2Stub getStub() {
     return stub;
   }
@@ -173,7 +170,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
    *   loggingClient.deleteLog(logName);
    * }
    * </code></pre>
@@ -202,7 +199,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
    *     .setLogNameWithLogNameOneof(logName)
    *     .build();
@@ -226,7 +223,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
    *     .setLogNameWithLogNameOneof(logName)
    *     .build();
@@ -242,13 +239,17 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Writes log entries to Stackdriver Logging.
+   * ## Log entry resources
+   *
+   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
+   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
+   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
    *   MonitoredResource resource = MonitoredResource.newBuilder().build();
    *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
@@ -272,16 +273,22 @@ public class LoggingClient implements BackgroundResource {
    *     in `entries`. If a log entry already has a label with the same key as a label in this
    *     parameter, then the log entry's label is not changed. See
    *     [LogEntry][google.logging.v2.LogEntry].
-   * @param entries Required. The log entries to write. Values supplied for the fields `log_name`,
-   *     `resource`, and `labels` in this `entries.write` request are inserted into those log
-   *     entries in this list that do not provide their own values.
-   *     <p>Stackdriver Logging also creates and inserts values for `timestamp` and `insert_id` if
-   *     the entries do not provide them. The created `insert_id` for the N'th entry in this list
-   *     will be greater than earlier entries and less than later entries. Otherwise, the order of
-   *     log entries in this list does not matter.
+   * @param entries Required. The log entries to send to Stackdriver Logging. The order of log
+   *     entries in this list does not matter. Values supplied in this method's `log_name`,
+   *     `resource`, and `labels` fields are copied into those log entries in this list that do not
+   *     include values for their corresponding fields. For more information, see the
+   *     [LogEntry][google.logging.v2.LogEntry] type.
+   *     <p>If the `timestamp` or `insert_id` fields are missing in log entries, then this method
+   *     supplies the current time or a unique identifier, respectively. The supplied values are
+   *     chosen so that, among the log entries that did not supply their own values, the entries
+   *     earlier in the list will sort before the entries later in the list. See the `entries.list`
+   *     method.
+   *     <p>Log entries with timestamps that are more than the [logs retention
+   *     period](/logging/quota-policy) in the past or more than 24 hours in the future might be
+   *     discarded. Discarding does not return an error.
    *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
-   *     for calls to `entries.write`, you should write multiple log entries at once rather than
-   *     calling this method for each individual log entry.
+   *     for calls to `entries.write`, you should try to include several log entries in this list,
+   *     rather than calling this method for each individual log entry.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WriteLogEntriesResponse writeLogEntries(
@@ -302,7 +309,11 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Writes log entries to Stackdriver Logging.
+   * ## Log entry resources
+   *
+   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
+   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
+   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
    *
    * <p>Sample code:
    *
@@ -325,7 +336,11 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Writes log entries to Stackdriver Logging.
+   * ## Log entry resources
+   *
+   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
+   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
+   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
    *
    * <p>Sample code:
    *
@@ -563,7 +578,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   for (String element : loggingClient.listLogs(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -590,7 +605,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();
@@ -616,7 +631,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();
@@ -641,7 +656,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();

@@ -34,7 +34,7 @@ import java.util.List;
 public class CreateTopicAndPublishMessages {
 
   public static void createTopic() throws Exception {
-    TopicName topic = TopicName.create("my-project-id", "my-topic-id");
+    TopicName topic = TopicName.of("my-project-id", "my-topic-id");
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.createTopic(topic);
     }
@@ -42,13 +42,13 @@ public class CreateTopicAndPublishMessages {
 
   public static void publishMessages() throws Exception {
     // [START pubsub_publish]
-    TopicName topicName = TopicName.create("my-project-id", "my-topic-id");
+    TopicName topicName = TopicName.of("my-project-id", "my-topic-id");
     Publisher publisher = null;
     List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
 
     try {
       // Create a publisher instance with default settings bound to the topic
-      publisher = Publisher.defaultBuilder(topicName).build();
+      publisher = Publisher.newBuilder(topicName).build();
 
       List<String> messages = Arrays.asList("first message", "second message");
 

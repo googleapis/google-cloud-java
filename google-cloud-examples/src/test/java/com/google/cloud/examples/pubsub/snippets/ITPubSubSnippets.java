@@ -60,9 +60,9 @@ public class ITPubSubSnippets {
 
   @Before
   public void setUp() throws Exception {
-    topicName = TopicName.create(ServiceOptions.getDefaultProjectId(), formatForTest("test-topic"));
+    topicName = TopicName.of(ServiceOptions.getDefaultProjectId(), formatForTest("test-topic"));
     subscriptionName =
-        SubscriptionName.create(
+        SubscriptionName.of(
             ServiceOptions.getDefaultProjectId(), formatForTest("test-subscription"));
 
     try (TopicAdminClient publisherClient = TopicAdminClient.create();
@@ -79,7 +79,7 @@ public class ITPubSubSnippets {
 
     Publisher publisher = null;
     try {
-      publisher = Publisher.defaultBuilder(topicName).build();
+      publisher = Publisher.newBuilder(topicName).build();
       PublisherSnippets snippets = new PublisherSnippets(publisher);
       final SettableApiFuture<Void> done = SettableApiFuture.create();
       ApiFutures.addCallback(
@@ -134,7 +134,7 @@ public class ITPubSubSnippets {
     String messageToPublish = "my-message";
     Publisher publisher = null;
     try {
-      publisher = Publisher.defaultBuilder(topicName).build();
+      publisher = Publisher.newBuilder(topicName).build();
       PublisherSnippets snippets = new PublisherSnippets(publisher);
       List<ApiFuture<String>> apiFutures = new ArrayList<>();
       for (int i = 0; i < 5; i++) {

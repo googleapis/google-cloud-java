@@ -33,8 +33,8 @@ import com.google.pubsub.v1.TopicName;
 public class CreateSubscriptionAndConsumeMessages {
 
   public static void main(String... args) throws Exception {
-    TopicName topic = TopicName.create("my-project-id", "my-topic-id");
-    SubscriptionName subscription = SubscriptionName.create("my-project-id", "my-topic-id");
+    TopicName topic = TopicName.of("my-project-id", "my-topic-id");
+    SubscriptionName subscription = SubscriptionName.of("my-project-id", "my-subscription-id");
 
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
@@ -50,7 +50,7 @@ public class CreateSubscriptionAndConsumeMessages {
         };
     Subscriber subscriber = null;
     try {
-      subscriber = Subscriber.defaultBuilder(subscription, receiver).build();
+      subscriber = Subscriber.newBuilder(subscription, receiver).build();
       subscriber.addListener(
           new Subscriber.Listener() {
             @Override
@@ -62,10 +62,13 @@ public class CreateSubscriptionAndConsumeMessages {
           MoreExecutors.directExecutor());
       subscriber.startAsync().awaitRunning();
 
+      // In this example, we will pull messages for one minute (60,000ms) then stop.
+      // In a real application, this sleep-then-stop is not necessary.
+      // Simply call stopAsync().awaitTerminated() when the server is shutting down, etc.
       Thread.sleep(60000);
     } finally {
       if (subscriber != null) {
-        subscriber.stopAsync();
+        subscriber.stopAsync().awaitTerminated();
       }
     }
   }

@@ -17,7 +17,7 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.client.util.Preconditions;
-import com.google.common.annotations.VisibleForTesting;
+import com.google.api.core.InternalApi;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
@@ -238,7 +238,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
   }
 
   /** Returns the number of times getSubscription is called. */
-  @VisibleForTesting
+  @InternalApi
   int getSubscriptionCalledCount() {
     return getSubscriptionCalled.get();
   }
@@ -295,11 +295,9 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
 
   public List<String> waitAndConsumeReceivedAcks(int expectedCount) throws InterruptedException {
     synchronized (acks) {
-      while (acks.size() < expectedCount) {
-        acks.wait();
-      }
+      waitAtLeast(acks, expectedCount);
       List<String> receivedAcksCopy = ImmutableList.copyOf(acks.subList(0, expectedCount));
-      acks.removeAll(receivedAcksCopy);
+      acks.subList(0, expectedCount).clear();
       return receivedAcksCopy;
     }
   }
@@ -307,31 +305,39 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
   public List<ModifyAckDeadline> waitAndConsumeModifyAckDeadlines(int expectedCount)
       throws InterruptedException {
     synchronized (modAckDeadlines) {
-      while (modAckDeadlines.size() < expectedCount) {
-        modAckDeadlines.wait();
-      }
+      waitAtLeast(modAckDeadlines, expectedCount);
       List<ModifyAckDeadline> modAckDeadlinesCopy =
           ImmutableList.copyOf(modAckDeadlines.subList(0, expectedCount));
-      modAckDeadlines.removeAll(modAckDeadlinesCopy);
+      modAckDeadlines.subList(0, expectedCount).clear();
       return modAckDeadlinesCopy;
     }
   }
 
   public int waitForClosedStreams(int expectedCount) throws InterruptedException {
     synchronized (closedStreams) {
-      while (closedStreams.size() < expectedCount) {
-        closedStreams.wait();
-      }
+      waitAtLeast(closedStreams, expectedCount);
       return closedStreams.size();
     }
   }
 
   public int waitForOpenedStreams(int expectedCount) throws InterruptedException {
     synchronized (openedStreams) {
-      while (openedStreams.size() < expectedCount) {
-        openedStreams.wait();
-      }
+      waitAtLeast(openedStreams, expectedCount);
       return openedStreams.size();
+    }
+  }
+
+  // wait until the collection has at least target number of elements.
+  // caller MUST hold the monitor for the collection.
+  private static void waitAtLeast(Collection<?> collection, int target)
+      throws InterruptedException {
+    long untilMillis = System.currentTimeMillis() + 20_000;
+    while (collection.size() < target) {
+      long now = System.currentTimeMillis();
+      if (now >= untilMillis) {
+        throw new IllegalStateException("timed out, last state: " + collection);
+      }
+      collection.wait(untilMillis - now);
     }
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,21 @@
  */
 package com.google.cloud.logging.v2;
 
+import com.google.api.core.BetaApi;
 import com.google.logging.v2.ConfigServiceV2Grpc.ConfigServiceV2ImplBase;
+import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListExclusionsRequest;
+import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
@@ -32,6 +40,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;
@@ -121,6 +130,81 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
 
   @Override
   public void deleteSink(DeleteSinkRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listExclusions(
+      ListExclusionsRequest request, StreamObserver<ListExclusionsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListExclusionsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListExclusionsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getExclusion(
+      GetExclusionRequest request, StreamObserver<LogExclusion> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof LogExclusion) {
+      requests.add(request);
+      responseObserver.onNext((LogExclusion) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void createExclusion(
+      CreateExclusionRequest request, StreamObserver<LogExclusion> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof LogExclusion) {
+      requests.add(request);
+      responseObserver.onNext((LogExclusion) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateExclusion(
+      UpdateExclusionRequest request, StreamObserver<LogExclusion> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof LogExclusion) {
+      requests.add(request);
+      responseObserver.onNext((LogExclusion) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void deleteExclusion(
+      DeleteExclusionRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);

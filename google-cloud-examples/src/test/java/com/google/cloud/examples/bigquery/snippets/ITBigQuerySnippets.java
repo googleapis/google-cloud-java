@@ -29,11 +29,11 @@ import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.Field.Type;
-import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
+import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
@@ -58,7 +58,6 @@ import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
@@ -193,8 +192,8 @@ public class ITBigQuerySnippets {
     outputRows = bigquerySnippets.writeFileToTable(DATASET, tableName, csvPath);
     assertEquals(2L, outputRows);
     // List all rows
-    Page<List<FieldValue>> listPage = bigquerySnippets.listTableData(DATASET, tableName);
-    Iterator<List<FieldValue>> rowIterator = listPage.getValues().iterator();
+    Page<FieldValueList> listPage = bigquerySnippets.listTableData(DATASET, tableName);
+    Iterator<FieldValueList> rowIterator = listPage.getValues().iterator();
     assertEquals("StringValue1", rowIterator.next().get(0).getStringValue());
     assertEquals("StringValue2", rowIterator.next().get(0).getStringValue());
     assertEquals("StringValue3", rowIterator.next().get(0).getStringValue());
@@ -212,20 +211,21 @@ public class ITBigQuerySnippets {
     TableId tableId = TableId.of(DATASET, tableName);
     Schema schema =
         Schema.of(
-            Field.of(fieldName1, Type.bool()),
-            Field.of(fieldName2, Type.bytes()),
-            Field.of(fieldName3, Type.record(Field.of(fieldName4, Type.string()))));
+            Field.of(fieldName1, LegacySQLTypeName.BOOLEAN),
+            Field.of(fieldName2, LegacySQLTypeName.BYTES),
+            Field.of(fieldName3, LegacySQLTypeName.RECORD,
+                Field.of(fieldName4, LegacySQLTypeName.STRING)));
     TableInfo table = TableInfo.of(tableId, StandardTableDefinition.of(schema));
     assertNotNull(bigquery.create(table));
     InsertAllResponse response = bigquerySnippets.insertAll(DATASET, tableName);
     assertFalse(response.hasErrors());
     assertTrue(response.getInsertErrors().isEmpty());
-    Page<List<FieldValue>> listPage = bigquerySnippets.listTableDataFromId(DATASET, tableName);
+    Page<FieldValueList> listPage = bigquerySnippets.listTableDataFromId(DATASET, tableName);
     while (Iterators.size(listPage.iterateAll().iterator()) < 1) {
       Thread.sleep(500);
       listPage = bigquerySnippets.listTableDataFromId(DATASET, tableName);
     }
-    List<FieldValue> row = listPage.getValues().iterator().next();
+    FieldValueList row = listPage.getValues().iterator().next();
     assertEquals(true, row.get(0).getBooleanValue());
     assertArrayEquals(new byte[]{0xA, 0xD, 0xD, 0xE, 0xD}, row.get(1).getBytesValue());
     assertEquals("Hello, World!", row.get(2).getRecordValue().get(0).getStringValue());

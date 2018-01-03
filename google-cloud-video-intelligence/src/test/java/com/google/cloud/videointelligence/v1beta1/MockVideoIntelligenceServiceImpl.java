@@ -1,5 +1,5 @@
 /*
- * Copyright 2017, Google Inc. All rights reserved.
+ * Copyright 2017, Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package com.google.cloud.videointelligence.v1beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceGrpc.VideoIntelligenceServiceImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.GeneratedMessageV3;
@@ -25,6 +26,7 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
+@BetaApi
 public class MockVideoIntelligenceServiceImpl extends VideoIntelligenceServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;
