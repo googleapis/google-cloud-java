@@ -26,12 +26,12 @@ import org.threeten.bp.Instant;
 
 /**
  * A QueryDocumentSnapshot contains data read from a document in your Firestore database as part of
- * a query. The document is guaranteed to exist and its data can be extracted using the getData() or
- * get() methods.
+ * a query. The document is guaranteed to exist and its data can be extracted using the {@code
+ * getData()} or {@code get()} methods.
  *
  * <p>QueryDocumentSnapshot offers the same API surface as {@link DocumentSnapshot}. Since query
- * results contain only existing documents, the exists() method will always return true and
- * getData() will never be null.
+ * results contain only existing documents, the {@code exists()} method will always return true and
+ * {@code getData()} will never be null.
  */
 public final class QueryDocumentSnapshot extends DocumentSnapshot {
   private QueryDocumentSnapshot(
@@ -68,7 +68,7 @@ public final class QueryDocumentSnapshot extends DocumentSnapshot {
   public Map<String, Object> getData() {
     Map<String, Object> result = super.getData();
     Preconditions.checkNotNull(result, "Data in a QueryDocumentSnapshot should be non-null");
-    return super.getData();
+    return result;
   }
 
   /**

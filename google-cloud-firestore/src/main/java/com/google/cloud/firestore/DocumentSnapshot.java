@@ -34,11 +34,11 @@ import org.threeten.bp.Instant;
 
 /**
  * A DocumentSnapshot contains data read from a document in a Firestore database. The data can be
- * extracted with the getData() or get() methods.
+ * extracted with the {@code getData()} or {@code get()} methods.
  *
  * <p>If the DocumentSnapshot points to a non-existing document, getData() and its corresponding
  * methods will return null. You can always explicitly check for a document's existence by calling
- * exists().
+ * {@code exists()}.
  */
 public class DocumentSnapshot {
 
@@ -201,15 +201,15 @@ public class DocumentSnapshot {
    */
   @Nullable
   public Map<String, Object> getData() {
-    if (fields != null) {
-      Map<String, Object> decodedFields = new HashMap<>();
-      for (Map.Entry<String, Value> entry : fields.entrySet()) {
-        decodedFields.put(entry.getKey(), decodeValue(entry.getValue()));
-      }
-      return decodedFields;
-    } else {
+    if (fields == null) {
       return null;
     }
+
+    Map<String, Object> decodedFields = new HashMap<>();
+    for (Map.Entry<String, Value> entry : fields.entrySet()) {
+      decodedFields.put(entry.getKey(), decodeValue(entry.getValue()));
+    }
+    return decodedFields;
   }
 
   /**
