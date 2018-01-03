@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
+import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Lists;
@@ -578,15 +579,19 @@ public abstract class JobStatistics implements Serializable {
 
   @SuppressWarnings("unchecked")
   static <T extends JobStatistics> T fromPb(
-      com.google.api.services.bigquery.model.JobStatistics statisticPb) {
-    if (statisticPb.getLoad() != null) {
+      com.google.api.services.bigquery.model.Job jobPb) {
+    JobConfiguration jobConfigPb = jobPb.getConfiguration();
+    com.google.api.services.bigquery.model.JobStatistics statisticPb = jobPb.getStatistics();
+    if (jobConfigPb.getLoad() != null) {
       return (T) LoadStatistics.fromPb(statisticPb);
-    } else if (statisticPb.getExtract() != null) {
+    } else if (jobConfigPb.getExtract() != null) {
       return (T) ExtractStatistics.fromPb(statisticPb);
-    } else if (statisticPb.getQuery() != null) {
+    } else if (jobConfigPb.getQuery() != null) {
       return (T) QueryStatistics.fromPb(statisticPb);
-    } else {
+    } else if (jobConfigPb.getCopy() != null) {
       return (T) CopyStatistics.fromPb(statisticPb);
+    } else {
+      throw new IllegalArgumentException("unknown job configuration: " + jobConfigPb);
     }
   }
 }

@@ -157,7 +157,7 @@ public class JobStatisticsTest {
         ExtractStatistics.fromPb(EXTRACT_STATISTICS.toPb()));
     compareLoadStatistics(LOAD_STATISTICS, LoadStatistics.fromPb(LOAD_STATISTICS.toPb()));
     compareQueryStatistics(QUERY_STATISTICS, QueryStatistics.fromPb(QUERY_STATISTICS.toPb()));
-    compareStatistics(COPY_STATISTICS, JobStatistics.fromPb(COPY_STATISTICS.toPb()));
+    compareStatistics(COPY_STATISTICS, CopyStatistics.fromPb(COPY_STATISTICS.toPb()));
 
     compareLoadStatistics(LOAD_STATISTICS_INCOMPLETE,
         LoadStatistics.fromPb(LOAD_STATISTICS_INCOMPLETE.toPb()));
