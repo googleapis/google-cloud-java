@@ -22,7 +22,6 @@ import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
 import java.util.List;
 import java.util.Objects;
 
@@ -39,11 +38,13 @@ public class ViewDefinition extends TableDefinition {
 
   private final String query;
   private final List<UserDefinedFunction> userDefinedFunctions;
+  private final Boolean useLegacySql;
 
   public static final class Builder extends TableDefinition.Builder<ViewDefinition, Builder> {
 
     private String query;
     private List<UserDefinedFunction> userDefinedFunctions;
+    private Boolean useLegacySql;
 
     private Builder() {
       super(Type.VIEW);
@@ -53,6 +54,7 @@ public class ViewDefinition extends TableDefinition {
       super(viewDefinition);
       this.query = viewDefinition.query;
       this.userDefinedFunctions = viewDefinition.userDefinedFunctions;
+      this.useLegacySql = viewDefinition.useLegacySql;
     }
 
     private Builder(Table tablePb) {
@@ -60,6 +62,7 @@ public class ViewDefinition extends TableDefinition {
       com.google.api.services.bigquery.model.ViewDefinition viewPb = tablePb.getView();
       if (viewPb != null) {
         this.query = viewPb.getQuery();
+        this.useLegacySql = viewPb.getUseLegacySql();
         if (viewPb.getUserDefinedFunctionResources() != null) {
           this.userDefinedFunctions = Lists.transform(viewPb.getUserDefinedFunctionResources(),
               UserDefinedFunction.FROM_PB_FUNCTION);
@@ -101,6 +104,19 @@ public class ViewDefinition extends TableDefinition {
     }
 
     /**
+     * Sets whether to use BigQuery's legacy SQL dialect for this query. By default this property is
+     * set to {@code false}. If set to {@code false}, the query will use BigQuery's <a
+     * href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>.
+     *
+     * <p>If set to {@code null} or {@code true}, legacy SQL dialect is used. This property is
+     * experimental and might be subject to change.
+     */
+    public Builder setUseLegacySql(Boolean useLegacySql) {
+      this.useLegacySql = useLegacySql;
+      return this;
+    }
+
+    /**
      * Creates a {@code ViewDefinition} object.
      */
     @Override
@@ -112,6 +128,7 @@ public class ViewDefinition extends TableDefinition {
   private ViewDefinition(Builder builder) {
     super(builder);
     this.query = builder.query;
+    this.useLegacySql = builder.useLegacySql;
     this.userDefinedFunctions = builder.userDefinedFunctions;
   }
 
@@ -136,6 +153,17 @@ public class ViewDefinition extends TableDefinition {
   }
 
   /**
+   * Returns whether to use BigQuery's legacy SQL dialect for this query. By default this property
+   * is set to {@code false}. If set to {@code false}, the query will use BigQuery's <a
+   * href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>. If set to {@code
+   * null} or {@code true}, legacy SQL dialect is used. This property is experimental and might be
+   * subject to change.
+   */
+  public Boolean useLegacySql() {
+    return useLegacySql;
+  }
+
+  /**
    * Returns a builder for the {@code ViewInfo} object.
    */
   @Override
@@ -147,6 +175,7 @@ public class ViewDefinition extends TableDefinition {
   ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("query", query)
+        .add("useLegacySql", useLegacySql)
         .add("userDefinedFunctions", userDefinedFunctions);
   }
 
@@ -172,6 +201,7 @@ public class ViewDefinition extends TableDefinition {
       viewDefinition.setUserDefinedFunctionResources(Lists.transform(userDefinedFunctions,
           UserDefinedFunction.TO_PB_FUNCTION));
     }
+    viewDefinition.setUseLegacySql(useLegacySql);
     tablePb.setView(viewDefinition);
     return tablePb;
   }
