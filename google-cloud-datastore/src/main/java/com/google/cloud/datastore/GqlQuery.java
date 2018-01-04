@@ -27,7 +27,6 @@ import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -404,9 +403,7 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
-    /**
-     * Sets a new null positional binding.
-     */
+    /** Sets a new null positional binding. */
     public Builder<V> addNullBinding() {
       positionalBindings.add(toNullBinding());
       return this;

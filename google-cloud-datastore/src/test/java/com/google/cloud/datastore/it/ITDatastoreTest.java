@@ -135,10 +135,22 @@ public class ITDatastoreTest {
       .set("list", LIST_VALUE2)
       .set("emptyList", EMPTY_LIST_VALUE)
       .build();
-  private static final Entity ENTITY2 = Entity.newBuilder(ENTITY1).setKey(KEY2).remove("str")
-      .set("name", "Dan").setNull("null").set("age", 20).build();
-  private static final Entity ENTITY3 = Entity.newBuilder(ENTITY1).setKey(KEY3).remove("str")
-      .set("null", NULL_VALUE).set("partial1", PARTIAL_ENTITY2).set("partial2", ENTITY2).build();
+  private static final Entity ENTITY2 =
+      Entity.newBuilder(ENTITY1)
+          .setKey(KEY2)
+          .remove("str")
+          .set("name", "Dan")
+          .setNull("null1")
+          .set("age", 20)
+          .build();
+  private static final Entity ENTITY3 =
+      Entity.newBuilder(ENTITY1)
+          .setKey(KEY3)
+          .remove("str")
+          .set("null1", NULL_VALUE)
+          .set("partial1", PARTIAL_ENTITY2)
+          .set("partial2", ENTITY2)
+          .build();
 
   private <T> Iterator<T> getStronglyConsistentResults (Query scQuery, Query query) throws InterruptedException {
     //scQuery is equivalent to query, but with an ancestor filter in it
@@ -359,6 +371,24 @@ public class ITDatastoreTest {
     assertNull(entities.get(4));
     assertNull(entities.get(5));
     assertEquals(6, entities.size());
+  }
+
+  @Test
+  public void testRunGqlQueryWithNull() throws InterruptedException {
+    Query<Entity> query1 =
+        Query.newGqlQueryBuilder(
+                ResultType.ENTITY, "select * from " + KIND2 + " where null1 = @null")
+            .setNullBinding("null")
+            .setNamespace(NAMESPACE)
+            .build();
+    Query<Entity> scQuery1 =
+        Query.newEntityQueryBuilder().setNamespace(NAMESPACE).setKind(KIND2).build();
+
+    Iterator<Entity> results1 = getStronglyConsistentResults(scQuery1, query1);
+
+    assertTrue(results1.hasNext());
+    assertEquals(ENTITY2, results1.next());
+    assertFalse(results1.hasNext());
   }
 
   @Test
@@ -621,7 +651,7 @@ public class ITDatastoreTest {
     assertEquals(ENTITY2, result.next());
     Entity entity3 = result.next();
     assertEquals(ENTITY3, entity3);
-    assertTrue(entity3.isNull("null"));
+    assertTrue(entity3.isNull("null1"));
     assertFalse(entity3.getBoolean("bool"));
     assertEquals(LIST_VALUE2.get(), entity3.getList("list"));
     FullEntity<IncompleteKey> partial1 = entity3.getEntity("partial1");
