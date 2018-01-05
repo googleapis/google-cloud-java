@@ -20,7 +20,6 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.BatchingSettings;
-import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.GaxProperties;
@@ -75,7 +74,6 @@ import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
-import org.threeten.bp.Duration;
 
 public class GrpcLoggingRpc implements LoggingRpc {
 
@@ -143,17 +141,19 @@ public class GrpcLoggingRpc implements LoggingRpc {
       MetricsSettings.Builder metricsBuilder =
           MetricsSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
 
+      // TODO(pongad): Take advantage of https://github.com/googleapis/gax-java/pull/452 when it's
+      // released.
+      BatchingSettings oldBatchSettings =
+          logBuilder.writeLogEntriesSettings().getBatchingSettings();
       logBuilder
           .writeLogEntriesSettings()
           .setBatchingSettings(
-              BatchingSettings.newBuilder()
-                  .setElementCountThreshold(1000L)
-                  .setRequestByteThreshold(1048576L)
-                  .setDelayThreshold(Duration.ofMillis(50))
+              oldBatchSettings
+                  .toBuilder()
                   .setFlowControlSettings(
-                      FlowControlSettings.newBuilder()
-                          .setMaxOutstandingElementCount(100000L)
-                          .setMaxOutstandingRequestBytes(10485760L)
+                      oldBatchSettings
+                          .getFlowControlSettings()
+                          .toBuilder()
                           .setLimitExceededBehavior(LimitExceededBehavior.Block)
                           .build())
                   .build());
