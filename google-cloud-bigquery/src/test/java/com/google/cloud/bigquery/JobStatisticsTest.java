@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
@@ -157,10 +158,41 @@ public class JobStatisticsTest {
     compareQueryStatistics(QUERY_STATISTICS, QueryStatistics.fromPb(QUERY_STATISTICS.toPb()));
     compareStatistics(COPY_STATISTICS, CopyStatistics.fromPb(COPY_STATISTICS.toPb()));
 
-    compareLoadStatistics(LOAD_STATISTICS_INCOMPLETE,
-        LoadStatistics.fromPb(LOAD_STATISTICS_INCOMPLETE.toPb()));
-    compareQueryStatistics(QUERY_STATISTICS_INCOMPLETE,
-        QueryStatistics.fromPb(QUERY_STATISTICS_INCOMPLETE.toPb()));
+    compareLoadStatistics(
+        LOAD_STATISTICS_INCOMPLETE, LoadStatistics.fromPb(LOAD_STATISTICS_INCOMPLETE.toPb()));
+    compareQueryStatistics(
+        QUERY_STATISTICS_INCOMPLETE, QueryStatistics.fromPb(QUERY_STATISTICS_INCOMPLETE.toPb()));
+  }
+
+  @Test
+  public void testIncomplete() {
+    // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2357
+    com.google.api.services.bigquery.model.Job job =
+        new com.google.api.services.bigquery.model.Job()
+            .setStatistics(
+                new com.google.api.services.bigquery.model.JobStatistics()
+                    .setCreationTime(1234L)
+                    .setStartTime(5678L));
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setCopy(new com.google.api.services.bigquery.model.JobConfigurationTableCopy()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(CopyStatistics.class);
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setLoad(new com.google.api.services.bigquery.model.JobConfigurationLoad()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(LoadStatistics.class);
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setExtract(new com.google.api.services.bigquery.model.JobConfigurationExtract()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(ExtractStatistics.class);
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setQuery(new com.google.api.services.bigquery.model.JobConfigurationQuery()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(QueryStatistics.class);
   }
 
   private void compareExtractStatistics(ExtractStatistics expected, ExtractStatistics value) {

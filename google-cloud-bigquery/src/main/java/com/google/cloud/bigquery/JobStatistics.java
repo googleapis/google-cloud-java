@@ -104,7 +104,9 @@ public abstract class JobStatistics implements Serializable {
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
         super(statisticsPb);
-        this.destinationUriFileCounts = statisticsPb.getExtract().getDestinationUriFileCounts();
+        if (statisticsPb.getExtract() != null) {
+          this.destinationUriFileCounts = statisticsPb.getExtract().getDestinationUriFileCounts();
+        }
       }
 
       Builder setDestinationUriFileCounts(List<Long> destinationUriFileCounts) {
@@ -192,10 +194,12 @@ public abstract class JobStatistics implements Serializable {
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
         super(statisticsPb);
-        this.inputBytes = statisticsPb.getLoad().getInputFileBytes();
-        this.inputFiles = statisticsPb.getLoad().getInputFiles();
-        this.outputBytes = statisticsPb.getLoad().getOutputBytes();
-        this.outputRows = statisticsPb.getLoad().getOutputRows();
+        if (statisticsPb.getLoad() != null) {
+          this.inputBytes = statisticsPb.getLoad().getInputFileBytes();
+          this.inputFiles = statisticsPb.getLoad().getInputFiles();
+          this.outputBytes = statisticsPb.getLoad().getOutputBytes();
+          this.outputRows = statisticsPb.getLoad().getOutputRows();
+        }
       }
 
       Builder setInputBytes(Long inputBytes) {
@@ -332,13 +336,16 @@ public abstract class JobStatistics implements Serializable {
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
         super(statisticsPb);
-        this.billingTier = statisticsPb.getQuery().getBillingTier();
-        this.cacheHit = statisticsPb.getQuery().getCacheHit();
-        this.totalBytesBilled = statisticsPb.getQuery().getTotalBytesBilled();
-        this.totalBytesProcessed = statisticsPb.getQuery().getTotalBytesProcessed();
-        if (statisticsPb.getQuery().getQueryPlan() != null) {
-          this.queryPlan =
-              Lists.transform(statisticsPb.getQuery().getQueryPlan(), QueryStage.FROM_PB_FUNCTION);
+        if (statisticsPb.getQuery() != null) {
+          this.billingTier = statisticsPb.getQuery().getBillingTier();
+          this.cacheHit = statisticsPb.getQuery().getCacheHit();
+          this.totalBytesBilled = statisticsPb.getQuery().getTotalBytesBilled();
+          this.totalBytesProcessed = statisticsPb.getQuery().getTotalBytesProcessed();
+          if (statisticsPb.getQuery().getQueryPlan() != null) {
+            this.queryPlan =
+                Lists.transform(
+                    statisticsPb.getQuery().getQueryPlan(), QueryStage.FROM_PB_FUNCTION);
+          }
         }
       }
 
