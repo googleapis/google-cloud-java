@@ -19,7 +19,6 @@ package com.google.cloud.bigquery;
 import com.google.api.services.bigquery.model.Job;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -178,7 +177,7 @@ public class JobInfo implements Serializable {
         this.status = JobStatus.fromPb(jobPb.getStatus());
       }
       if (jobPb.getStatistics() != null) {
-        this.statistics = JobStatistics.fromPb(jobPb.getStatistics());
+        this.statistics = JobStatistics.fromPb(jobPb);
       }
       this.userEmail = jobPb.getUserEmail();
       this.configuration = JobConfiguration.fromPb(jobPb.getConfiguration());
