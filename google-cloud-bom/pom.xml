@@ -138,6 +138,7 @@
     <guava.version>20.0</guava.version>
     <http-client.version>1.23.0</http-client.version>
     <protobuf.version>3.4.0</protobuf.version>
+    <opencensus.version>0.9.1</opencensus.version>
 
     <cloud.version>0.32.1-alpha-SNAPSHOT</cloud.version>
     <bigtable.version>0.32.1-beta-SNAPSHOT</bigtable.version>
@@ -872,7 +873,7 @@
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>jsr305</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.protobuf</groupId>
@@ -978,6 +979,16 @@
         <groupId>io.netty</groupId>
         <artifactId>netty-tcnative-boringssl-static</artifactId>
         <version>${nettyssl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.opencensus</groupId>
+        <artifactId>opencensus-api</artifactId>
+        <version>${opencensus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.opencensus</groupId>
+        <artifactId>opencensus-contrib-grpc-util</artifactId>
+        <version>${opencensus.version}</version>
       </dependency>
 
       <!-- testlib deps. Only put testlib dependencies here, which are testlib packages

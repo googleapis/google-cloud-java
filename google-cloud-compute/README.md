@@ -12,8 +12,9 @@ Java idiomatic client for [Google Cloud Compute][cloud-compute].
 - [Product Documentation][compute-product-docs]
 - [Client Library Documentation][compute-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
+> Note: This client is no longer receiving updates; new features in the Compute API will not be added to this client.
+Check https://cloud.google.com/compute/docs/api/libraries for the recommended Java client library to use for
+accessing Compute.
 
 Quickstart
 ----------
