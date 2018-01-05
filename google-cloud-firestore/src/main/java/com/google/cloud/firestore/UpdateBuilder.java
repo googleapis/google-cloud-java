@@ -48,8 +48,8 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
     com.google.firestore.v1beta1.Precondition precondition;
   }
 
-  FirestoreImpl firestore;
-  private List<Mutation> mutations;
+  final FirestoreImpl firestore;
+  private final List<Mutation> mutations;
   private boolean committed;
 
   UpdateBuilder(FirestoreImpl firestore) {
@@ -629,12 +629,11 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
             while (mutationIterator.hasNext()) {
               Mutation mutation = mutationIterator.next();
 
-              // Don't return both write results for a write that contains a
-              // transform, as the fact that we have to split one write operation
-              // into two distinct write requests is an implementation detail.
+              // Don't return both write results for a write that contains a transform, as the fact
+              // that we have to split one write operation into two distinct write requests is an
+              // implementation detail.
               if (mutation.document != null && mutation.transform != null) {
-                // The document transform is always sent last and produces the
-                // latest update time.
+                // The document transform is always sent last and produces the latest update time.
                 responseIterator.next();
               }
 
