@@ -85,6 +85,9 @@ import org.threeten.bp.Duration;
 public class Publisher {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
 
+  @InternalApi static final Duration MIN_TOTAL_TIMEOUT = Duration.ofSeconds(10);
+  @InternalApi static final Duration MIN_RPC_TIMEOUT = Duration.ofMillis(10);
+
   private final TopicName topicName;
   private final String cachedTopicNameString;
 
@@ -123,8 +126,13 @@ public class Publisher {
     cachedTopicNameString = topicName.toString();
 
     this.batchingSettings = builder.batchingSettings;
-    this.retrySettings = builder.retrySettings;
+    this.retrySettings = builder.retrySettings.build();
     this.longRandom = builder.longRandom;
+
+    Preconditions.checkArgument(
+        this.retrySettings.getTotalTimeout().compareTo(MIN_TOTAL_TIMEOUT) >= 0);
+    Preconditions.checkArgument(
+        this.retrySettings.getInitialRpcTimeout().compareTo(MIN_RPC_TIMEOUT) >= 0);
 
     messagesBatch = new LinkedList<>();
     messagesBatchLock = new ReentrantLock();
@@ -539,9 +547,6 @@ public class Publisher {
 
   /** A builder of {@link Publisher}s. */
   public static final class Builder {
-    static final Duration MIN_TOTAL_TIMEOUT = Duration.ofSeconds(10);
-    static final Duration MIN_RPC_TIMEOUT = Duration.ofMillis(10);
-
     // Meaningful defaults.
     static final long DEFAULT_ELEMENT_COUNT_THRESHOLD = 100L;
     static final long DEFAULT_REQUEST_BYTES_THRESHOLD = 1000L; // 1 kB
@@ -583,7 +588,7 @@ public class Publisher {
     // Batching options
     BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
 
-    RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
+    RetrySettings.Builder retrySettings = DEFAULT_RETRY_SETTINGS.toBuilder();
     LongRandom longRandom = DEFAULT_LONG_RANDOM;
 
     TransportChannelProvider channelProvider =
@@ -635,14 +640,21 @@ public class Publisher {
       return this;
     }
 
-    /** Configures the Publisher's retry parameters. */
+    /**
+     * Configures the Publisher's retry parameters.
+     *
+     * @deprecated {@link #retrySettingsBuilder()} is more reliable as it would be impossible to
+     *     miss fields.
+     */
+    @Deprecated
     public Builder setRetrySettings(RetrySettings retrySettings) {
-      Preconditions.checkArgument(
-          retrySettings.getTotalTimeout().compareTo(MIN_TOTAL_TIMEOUT) >= 0);
-      Preconditions.checkArgument(
-          retrySettings.getInitialRpcTimeout().compareTo(MIN_RPC_TIMEOUT) >= 0);
-      this.retrySettings = retrySettings;
+      this.retrySettings = retrySettings.toBuilder();
       return this;
+    }
+
+    /** Configures the Publisher's retry parameters. */
+    public RetrySettings.Builder retrySettingsBuilder() {
+      return this.retrySettings;
     }
 
     @InternalApi
