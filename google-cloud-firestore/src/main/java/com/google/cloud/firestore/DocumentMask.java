@@ -20,13 +20,18 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /** A DocumentMask contains the field paths affected by an update. */
 final class DocumentMask {
-
-  private final Collection<FieldPath> fieldPaths;
+  private final SortedSet<FieldPath> fieldPaths; // Sorted for testing.
 
   DocumentMask(Collection<FieldPath> fieldPaths) {
+    this(new TreeSet<>(fieldPaths));
+  }
+
+  private DocumentMask(SortedSet<FieldPath> fieldPaths) {
     this.fieldPaths = fieldPaths;
   }
 

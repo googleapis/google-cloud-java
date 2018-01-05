@@ -19,6 +19,7 @@ package com.google.cloud.firestore;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.UnmodifiableIterator;
@@ -107,7 +108,8 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
   private T performCreate(
       @Nonnull DocumentReference documentReference, @Nonnull Map<String, Object> fields) {
     DocumentSnapshot documentSnapshot =
-        DocumentSnapshot.fromObject(firestore, documentReference, fields);
+        DocumentSnapshot.fromObject(
+            firestore, documentReference, fields, UserDataConverter.NO_DELETES);
     Write.Builder write = Write.newBuilder();
     write.setUpdate(documentSnapshot.toPb());
     write.getCurrentDocumentBuilder().setExists(false);
@@ -213,17 +215,19 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
     Map<FieldPath, Object> documentData;
 
     if (options.getFieldMask() != null) {
-      documentData = applyFieldMask(fields, options.getFieldMask(), FieldPath.empty());
+      documentData = applyFieldMask(fields, options.getFieldMask());
     } else {
       documentData = convertToFieldPaths(fields, /* splitOnDots= */ false);
     }
 
     DocumentSnapshot document =
-        DocumentSnapshot.fromObject(firestore, documentReference, expandObject(documentData));
+        DocumentSnapshot.fromObject(
+            firestore, documentReference, expandObject(documentData), options.getEncodingOptions());
     Write.Builder write = Write.newBuilder();
     write.setUpdate(document.toPb());
 
     if (options.isMerge()) {
+      Preconditions.checkArgument(!fields.isEmpty(), "Data to merge cannot be empty.");
       DocumentMask documentMask;
       if (options.getFieldMask() != null) {
         documentMask = new DocumentMask(options.getFieldMask());
@@ -246,16 +250,40 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   /** Removes all values in 'fields' that are not specified in 'fieldMask'. */
   private Map<FieldPath, Object> applyFieldMask(
+      Map<String, Object> fields, List<FieldPath> fieldMask) {
+    List<FieldPath> remainingFields = new ArrayList<>(fieldMask);
+    Map<FieldPath, Object> filteredData =
+        applyFieldMask(fields, remainingFields, FieldPath.empty());
+
+    if (!remainingFields.isEmpty()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Field masks contains invalid path. No data exist at field '%s'.",
+              remainingFields.get(0)));
+    }
+
+    return filteredData;
+  }
+
+  /**
+   * Strips all values in 'fields' that are not specified in 'fieldMask'. Modifies 'fieldMask'
+   * inline and removes all matched fields.
+   */
+  private Map<FieldPath, Object> applyFieldMask(
       Map<String, Object> fields, List<FieldPath> fieldMask, FieldPath root) {
     Map<FieldPath, Object> filteredMap = new HashMap<>();
 
     for (Entry<String, Object> entry : fields.entrySet()) {
       FieldPath currentField = root.append(FieldPath.of(entry.getKey()));
-      if (fieldMask.contains(currentField)) {
+      if (fieldMask.remove(currentField)) {
         filteredMap.put(currentField, entry.getValue());
       } else if (entry.getValue() instanceof Map) {
         filteredMap.putAll(
             applyFieldMask((Map<String, Object>) entry.getValue(), fieldMask, currentField));
+      } else if (entry.getValue() == FieldValue.DELETE_SENTINEL) {
+        throw new IllegalArgumentException(
+            String.format(
+                "Cannot specify FieldValue.delete() for non-merged field '%s'.", currentField));
       }
     }
 
@@ -288,7 +316,10 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
   @Nonnull
   public T update(
       @Nonnull DocumentReference documentReference, @Nonnull Map<String, Object> fields) {
-    return update(documentReference, fields, Precondition.exists(true));
+    return performUpdate(
+        documentReference,
+        convertToFieldPaths(fields, /* splitOnDots= */ true),
+        Precondition.exists(true));
   }
 
   /**
@@ -305,6 +336,8 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull DocumentReference documentReference,
       @Nonnull Map<String, Object> fields,
       Precondition options) {
+    Preconditions.checkArgument(
+        !options.hasExists(), "Precondition 'exists' cannot be specified for update() calls.");
     return performUpdate(
         documentReference, convertToFieldPaths(fields, /* splitOnDots= */ true), options);
   }
@@ -325,7 +358,12 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull String field,
       @Nullable Object value,
       Object... moreFieldsAndValues) {
-    return update(documentReference, Precondition.exists(true), field, value, moreFieldsAndValues);
+    return performUpdate(
+        documentReference,
+        Precondition.exists(true),
+        FieldPath.fromDotSeparatedString(field),
+        value,
+        moreFieldsAndValues);
   }
 
   /**
@@ -344,7 +382,7 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull FieldPath fieldPath,
       @Nullable Object value,
       Object... moreFieldsAndValues) {
-    return update(
+    return performUpdate(
         documentReference, Precondition.exists(true), fieldPath, value, moreFieldsAndValues);
   }
 
@@ -366,7 +404,9 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull String field,
       @Nullable Object value,
       Object... moreFieldsAndValues) {
-    return update(
+    Preconditions.checkArgument(
+        !options.hasExists(), "Precondition 'exists' cannot be specified for update() calls.");
+    return performUpdate(
         documentReference,
         options,
         FieldPath.fromDotSeparatedString(field),
@@ -392,6 +432,17 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull FieldPath fieldPath,
       @Nullable Object value,
       Object... moreFieldsAndValues) {
+    Preconditions.checkArgument(
+        !options.hasExists(), "Precondition 'exists' cannot be specified for update() calls.");
+    return performUpdate(documentReference, options, fieldPath, value, moreFieldsAndValues);
+  }
+
+  private T performUpdate(
+      @Nonnull DocumentReference documentReference,
+      @Nonnull Precondition options,
+      @Nonnull FieldPath fieldPath,
+      @Nullable Object value,
+      Object[] moreFieldsAndValues) {
     Map<FieldPath, Object> fields = new HashMap<>();
     fields.put(fieldPath, value);
 
@@ -401,14 +452,23 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       Object objectPath = moreFieldsAndValues[i];
       Object objectValue = moreFieldsAndValues[i + 1];
 
+      FieldPath currentPath;
+
       if (objectPath instanceof String) {
-        fields.put(FieldPath.fromDotSeparatedString((String) objectPath), objectValue);
+        currentPath = FieldPath.fromDotSeparatedString((String) objectPath);
       } else if (objectPath instanceof FieldPath) {
-        fields.put((FieldPath) objectPath, objectValue);
+        currentPath = (FieldPath) objectPath;
       } else {
         throw new IllegalArgumentException(
             "Field '" + objectPath + "' is not of type String or Field Path.");
       }
+
+      if (fields.containsKey(currentPath)) {
+        throw new IllegalArgumentException(
+            "Field value for field '" + objectPath + "' was specified multiple times.");
+      }
+
+      fields.put(currentPath, objectValue);
     }
 
     return performUpdate(documentReference, fields, options);
@@ -416,16 +476,27 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   private T performUpdate(
       @Nonnull DocumentReference documentReference,
-      @Nonnull Map<FieldPath, Object> fields,
-      Precondition options) {
+      @Nonnull final Map<FieldPath, Object> fields,
+      @Nonnull Precondition precondition) {
+    Preconditions.checkArgument(!fields.isEmpty(), "Data for update() cannot be empty.");
+
     Map<String, Object> deconstructedMap = expandObject(fields);
     DocumentSnapshot document =
-        DocumentSnapshot.fromObject(firestore, documentReference, deconstructedMap);
+        DocumentSnapshot.fromObject(
+            firestore,
+            documentReference,
+            deconstructedMap,
+            new EncodingOptions() {
+              @Override
+              public boolean allowDelete(FieldPath fieldPath) {
+                return fields.containsKey(fieldPath);
+              }
+            });
     DocumentMask documentMask = new DocumentMask(fields.keySet());
 
     Write.Builder write = Write.newBuilder();
     write.setUpdate(document.toPb());
-    write.setCurrentDocument(options.toPb());
+    write.setCurrentDocument(precondition.toPb());
     write.setUpdateMask(documentMask.toPb());
     writes.add(write.build());
 
@@ -465,7 +536,9 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull DocumentReference documentReference, @Nonnull Precondition precondition) {
     Write.Builder writeBuilder = Write.newBuilder();
     writeBuilder.setDelete(documentReference.getName());
-    writeBuilder.setCurrentDocument(precondition.toPb());
+    if (!precondition.isEmpty()) {
+      writeBuilder.setCurrentDocument(precondition.toPb());
+    }
     writes.add(writeBuilder.build());
     return (T) this;
   }

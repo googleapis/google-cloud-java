@@ -59,6 +59,14 @@ public final class Precondition {
     return new Precondition(null, updateTime);
   }
 
+  boolean isEmpty() {
+    return exists == null && updateTime == null;
+  }
+
+  boolean hasExists() {
+    return exists != null;
+  }
+
   com.google.firestore.v1beta1.Precondition toPb() {
     com.google.firestore.v1beta1.Precondition.Builder precondition =
         com.google.firestore.v1beta1.Precondition.newBuilder();

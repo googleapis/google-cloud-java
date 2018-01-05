@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Document;
 import com.google.firestore.v1beta1.Value;
@@ -71,10 +72,14 @@ public final class DocumentSnapshot {
   }
 
   static DocumentSnapshot fromObject(
-      FirestoreImpl firestore, DocumentReference docRef, Map<String, Object> values) {
+      FirestoreImpl firestore,
+      DocumentReference docRef,
+      Map<String, Object> values,
+      EncodingOptions options) {
     Map<String, Value> fields = new HashMap<>();
     for (Map.Entry<String, Object> entry : values.entrySet()) {
-      Value encodedValue = FirestoreImpl.encodeValue(entry.getValue());
+      Value encodedValue =
+          UserDataConverter.encodeValue(FieldPath.of(entry.getKey()), entry.getValue(), options);
       if (encodedValue != null) {
         fields.put(entry.getKey(), encodedValue);
       }

@@ -41,7 +41,10 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Int32Value;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.concurrent.Executor;
 import javax.annotation.Nonnull;
@@ -201,7 +204,8 @@ public class Query {
     Filter.Builder result = Filter.newBuilder();
 
     Object sanitizedObject = CustomClassMapper.serialize(value);
-    Value encodedValue = FirestoreImpl.encodeValue(sanitizedObject);
+    Value encodedValue =
+        UserDataConverter.encodeValue(fieldPath, sanitizedObject, UserDataConverter.NO_DELETES);
 
     if (encodedValue == null) {
       throw FirestoreException.invalidState("Cannot use Firestore Sentinels in FieldFilter");
@@ -239,15 +243,19 @@ public class Query {
         "Too many cursor values specified. The specified values must match the "
             + "orderBy() constraints of the query.");
 
-    for (int i = 0; i < fieldValues.length; ++i) {
+    Iterator<FieldOrder> fieldOrderIterator = options.fieldOrders.iterator();
+
+    for (Object fieldValue : fieldValues) {
       Object sanitizedValue;
 
-      if (options.fieldOrders.get(i).fieldPath.equals(FieldPath.DOCUMENT_ID)) {
+      FieldPath fieldPath = fieldOrderIterator.next().fieldPath;
+
+      if (fieldPath.equals(FieldPath.DOCUMENT_ID)) {
         DocumentReference cursorDocument;
-        if (fieldValues[i] instanceof String) {
-          cursorDocument = new DocumentReference(firestore, path.append((String) fieldValues[i]));
-        } else if (fieldValues[i] instanceof DocumentReference) {
-          cursorDocument = (DocumentReference) fieldValues[i];
+        if (fieldValue instanceof String) {
+          cursorDocument = new DocumentReference(firestore, path.append((String) fieldValue));
+        } else if (fieldValue instanceof DocumentReference) {
+          cursorDocument = (DocumentReference) fieldValue;
         } else {
           throw new IllegalArgumentException(
               "The corresponding value for FieldPath.documentId() must be a String or a "
@@ -269,10 +277,11 @@ public class Query {
 
         sanitizedValue = cursorDocument;
       } else {
-        sanitizedValue = CustomClassMapper.serialize(fieldValues[i]);
+        sanitizedValue = CustomClassMapper.serialize(fieldValue);
       }
 
-      Value encodedValue = FirestoreImpl.encodeValue(sanitizedValue);
+      Value encodedValue =
+          UserDataConverter.encodeValue(fieldPath, sanitizedValue, UserDataConverter.NO_DELETES);
       if (encodedValue == null) {
         throw FirestoreException.invalidState("Cannot use Firestore Sentinels in Cursor");
       }
@@ -482,6 +491,7 @@ public class Query {
 
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldOrders.add(new FieldOrder(fieldPath, direction));
+
     return new Query(firestore, path, newOptions);
   }
 
@@ -818,7 +828,7 @@ public class Query {
       public int compare(DocumentSnapshot doc1, DocumentSnapshot doc2) {
         // Add implicit sorting by name, using the last specified direction.
         Direction lastDirection =
-            options.fieldOrders.size() == 0
+            options.fieldOrders.isEmpty()
                 ? Direction.ASCENDING
                 : options.fieldOrders.get(options.fieldOrders.size() - 1).direction;
 
