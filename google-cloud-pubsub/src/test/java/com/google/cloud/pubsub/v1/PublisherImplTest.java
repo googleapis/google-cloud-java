@@ -486,7 +486,7 @@ public class PublisherImplTest {
 
   @Test
   public void testBuilderInvalidArguments() throws Exception {
-    Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
+    Publisher.Builder builder = getTestPublisherBuilder();
 
     try {
       builder.setChannelProvider(null);
@@ -614,7 +614,7 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      Publisher.Builder builder2 = Publisher.newBuilder(TEST_TOPIC);
+      Publisher.Builder builder2 = getTestPublisherBuilder();
       builder2.retrySettingsBuilder().setInitialRpcTimeout(Publisher.MIN_RPC_TIMEOUT.minusMillis(1));
       builder2.build().shutdown();
       fail("Should have thrown an IllegalArgumentException");
@@ -644,7 +644,7 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      Publisher.Builder builder2 = Publisher.newBuilder(TEST_TOPIC);
+      Publisher.Builder builder2 = getTestPublisherBuilder();
       builder2.retrySettingsBuilder().setTotalTimeout(Publisher.MIN_TOTAL_TIMEOUT.minusMillis(1));
       builder2.build().shutdown();
       fail("Should have thrown an IllegalArgumentException");
