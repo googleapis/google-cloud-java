@@ -36,11 +36,11 @@ import org.threeten.bp.Instant;
 
 /**
  * A DocumentSnapshot contains data read from a document in a Firestore database. The data can be
- * extracted with the {@code getData()} or {@code get()} methods.
+ * extracted with the {@link #getData()} or {@link #get(String)} methods.
  *
  * <p>If the DocumentSnapshot points to a non-existing document, getData() and its corresponding
  * methods will return null. You can always explicitly check for a document's existence by calling
- * {@code exists()}.
+ * {@link #exists()}.
  */
 public class DocumentSnapshot {
 

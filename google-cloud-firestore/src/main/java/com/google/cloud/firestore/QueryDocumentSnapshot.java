@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2018 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,12 +25,12 @@ import javax.annotation.Nonnull;
 import org.threeten.bp.Instant;
 
 /**
- * A QueryDocumentSnapshot contains data read from a document in your Firestore database as part of
- * a query. The document is guaranteed to exist and its data can be extracted using the {@code
- * getData()} or {@code get()} methods.
+ * A QueryDocumentSnapshot contains data read from a document in a Firestore database as part of
+ * a query. The document is guaranteed to exist and its data can be extracted using the {@link
+ * #getData()} or {@link #get(String)} methods.
  *
  * <p>QueryDocumentSnapshot offers the same API surface as {@link DocumentSnapshot}. Since query
- * results contain only existing documents, the {@code exists()} method will always return true and
+ * results contain only existing documents, the {@link #exists()} method will always return true and
  * {@code getData()} will never be null.
  */
 public final class QueryDocumentSnapshot extends DocumentSnapshot {
