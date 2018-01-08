@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore.it;
 
+import static com.google.cloud.firestore.LocalFirestoreHelper.map;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -48,8 +49,9 @@ import com.google.cloud.firestore.Transaction.Function;
 import com.google.cloud.firestore.WriteBatch;
 import com.google.cloud.firestore.WriteResult;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -78,6 +80,7 @@ public class ITSystemTest {
 
   private Firestore firestore;
   private CollectionReference randomColl;
+  private DocumentReference randomDoc;
 
   @Before
   public void before() {
@@ -85,6 +88,7 @@ public class ITSystemTest {
     randomColl =
         firestore.collection(
             String.format("java-%s-%s", testName.getMethodName(), LocalFirestoreHelper.autoId()));
+    randomDoc = randomColl.document();
   }
 
   private DocumentReference addDocument(String key, Object value, Object... fields)
@@ -120,10 +124,9 @@ public class ITSystemTest {
 
   @Test
   public void createDocument() throws Exception {
-    DocumentReference documentReference = randomColl.document();
-    assertEquals(20, documentReference.getId().length());
-    documentReference.create(SINGLE_FIELD_MAP).get();
-    DocumentSnapshot documentSnapshot = documentReference.get().get();
+    assertEquals(20, randomDoc.getId().length());
+    randomDoc.create(SINGLE_FIELD_MAP).get();
+    DocumentSnapshot documentSnapshot = randomDoc.get().get();
     assertEquals(SINGLE_FIELD_OBJECT, documentSnapshot.toObject(SingleField.class));
   }
 
@@ -132,38 +135,34 @@ public class ITSystemTest {
     Map<String, Object> nanNullMap = new HashMap<>();
     nanNullMap.put("nan", Double.NaN);
     nanNullMap.put("null", null);
-    DocumentReference documentReference = randomColl.document("doc");
-    documentReference.set(nanNullMap).get();
-    DocumentSnapshot documentSnapshot = documentReference.get().get();
+    randomDoc.set(nanNullMap).get();
+    DocumentSnapshot documentSnapshot = randomDoc.get().get();
     assertEquals((Double) Double.NaN, documentSnapshot.getDouble("nan"));
     assertEquals(null, documentSnapshot.get("null"));
   }
 
   @Test
   public void setDocumentWithMerge() throws Exception {
-    ImmutableMap<String, Object> originalMap =
-        ImmutableMap.<String, Object>of("a.b", "c", "nested", ImmutableMap.of("d", "e"));
-    ImmutableMap<String, Object> updateMap =
-        ImmutableMap.<String, Object>of("f.g", "h", "nested", ImmutableMap.of("i", "j"));
-    ImmutableMap<String, Object> resultMap =
-        ImmutableMap.<String, Object>of(
-            "a.b", "c", "f.g", "h", "nested", ImmutableMap.of("d", "e", "i", "j"));
-    DocumentReference documentReference = randomColl.document("doc");
-    documentReference.set(originalMap).get();
-    documentReference.set(updateMap, SetOptions.merge()).get();
-    DocumentSnapshot documentSnapshot = documentReference.get().get();
+    Map<String, Object> originalMap =
+        LocalFirestoreHelper.<String, Object>map("a.b", "c", "nested", map("d", "e"));
+    Map<String, Object> updateMap =
+        LocalFirestoreHelper.<String, Object>map("f.g", "h", "nested", map("i", "j"));
+    Map<String, Object> resultMap =
+        LocalFirestoreHelper.<String, Object>map(
+            "a.b", "c", "f.g", "h", "nested", map("d", "e", "i", "j"));
+    randomDoc.set(originalMap).get();
+    randomDoc.set(updateMap, SetOptions.merge()).get();
+    DocumentSnapshot documentSnapshot = randomDoc.get().get();
     assertEquals(resultMap, documentSnapshot.getData());
   }
 
   @Test
   public void mergeDocumentWithServerTimestamp() throws Exception {
-    ImmutableMap<String, Object> originalMap = ImmutableMap.<String, Object>of("a", "b");
-    ImmutableMap<String, Object> updateMap =
-        ImmutableMap.<String, Object>of("c", FieldValue.serverTimestamp());
-    DocumentReference documentReference = randomColl.document("doc");
-    documentReference.set(originalMap).get();
-    documentReference.set(updateMap, SetOptions.merge()).get();
-    DocumentSnapshot documentSnapshot = documentReference.get().get();
+    Map<String, Object> originalMap = LocalFirestoreHelper.<String, Object>map("a", "b");
+    Map<String, Object> updateMap = map("c", FieldValue.serverTimestamp());
+    randomDoc.set(originalMap).get();
+    randomDoc.set(updateMap, SetOptions.merge()).get();
+    DocumentSnapshot documentSnapshot = randomDoc.get().get();
     assertEquals("b", documentSnapshot.getString("a"));
     assertNotNull(documentSnapshot.getDate("c"));
   }
@@ -171,29 +170,24 @@ public class ITSystemTest {
   @Test
   public void updateDocument() throws Exception {
     AllSupportedTypes expectedResult = new AllSupportedTypes();
-    DocumentReference documentReference = randomColl.document("doc");
-    WriteResult writeResult = documentReference.set(ALL_SUPPORTED_TYPES_MAP).get();
-    DocumentSnapshot documentSnapshot = documentReference.get().get();
+    WriteResult writeResult = randomDoc.set(ALL_SUPPORTED_TYPES_MAP).get();
+    DocumentSnapshot documentSnapshot = randomDoc.get().get();
     assertEquals(expectedResult, documentSnapshot.toObject(AllSupportedTypes.class));
-    documentReference
-        .update(Precondition.updatedAt(writeResult.getUpdateTime()), "foo", "updated")
-        .get();
-    documentSnapshot = documentReference.get().get();
+    randomDoc.update(Precondition.updatedAt(writeResult.getUpdateTime()), "foo", "updated").get();
+    documentSnapshot = randomDoc.get().get();
     expectedResult.foo = "updated";
     assertEquals(expectedResult, documentSnapshot.toObject(AllSupportedTypes.class));
   }
 
   @Test(expected = ExecutionException.class)
   public void updateDocumentExists() throws Exception {
-    DocumentReference documentReference = randomColl.document("doc");
-    documentReference.update(SINGLE_FIELD_MAP).get();
+    randomDoc.update(SINGLE_FIELD_MAP).get();
   }
 
   @Test
   public void serverTimestamp() throws Exception {
-    DocumentReference documentReference = randomColl.document("doc");
-    documentReference.set(ImmutableMap.of("time", FieldValue.serverTimestamp())).get();
-    DocumentSnapshot documentSnapshot = documentReference.get().get();
+    randomDoc.set(map("time", FieldValue.serverTimestamp())).get();
+    DocumentSnapshot documentSnapshot = randomDoc.get().get();
     assertTrue(documentSnapshot.getDate("time").getTime() > 0);
   }
 
@@ -202,31 +196,29 @@ public class ITSystemTest {
     Map<String, Object> fields = new HashMap<>();
     fields.put("foo1", "bar1");
     fields.put("foo2", "bar2");
-    DocumentReference documentReference = randomColl.document("doc");
-    documentReference.set(fields).get();
-    DocumentSnapshot documentSnapshot = documentReference.get().get();
+    randomDoc.set(fields).get();
+
+    DocumentSnapshot documentSnapshot = randomDoc.get().get();
     assertEquals("bar1", documentSnapshot.getString("foo1"));
     assertEquals("bar2", documentSnapshot.getString("foo2"));
-    documentReference.update("foo1", "bar3", "foo2", FieldValue.delete()).get();
-    documentSnapshot = documentReference.get().get();
+    randomDoc.update("foo1", "bar3", "foo2", FieldValue.delete()).get();
+    documentSnapshot = randomDoc.get().get();
     assertEquals("bar3", documentSnapshot.getString("foo1"));
     assertNull(documentSnapshot.getString("foo2"));
   }
 
   @Test
   public void deleteDocument() throws Exception {
-    DocumentReference documentReference = randomColl.document("doc");
-    documentReference.delete().get();
-    WriteResult writeResult = documentReference.set(ALL_SUPPORTED_TYPES_MAP).get();
+    randomDoc.delete().get();
+    WriteResult writeResult = randomDoc.set(ALL_SUPPORTED_TYPES_MAP).get();
     try {
-      documentReference.delete(Precondition.updatedAt(Instant.ofEpochSecond(1))).get();
+      randomDoc.delete(Precondition.updatedAt(Instant.ofEpochSecond(1))).get();
       fail();
     } catch (ExecutionException e) {
       assertTrue(e.getMessage().contains("FAILED_PRECONDITION"));
     }
-    writeResult =
-        documentReference.delete(Precondition.updatedAt(writeResult.getUpdateTime())).get();
-    DocumentSnapshot documentSnapshot = documentReference.get().get();
+    writeResult = randomDoc.delete(Precondition.updatedAt(writeResult.getUpdateTime())).get();
+    DocumentSnapshot documentSnapshot = randomDoc.get().get();
     assertFalse(documentSnapshot.exists());
     assertTrue(writeResult.getUpdateTime().getEpochSecond() > 0);
   }
@@ -514,7 +506,7 @@ public class ITSystemTest {
       throws ExecutionException, InterruptedException {
     WriteBatch batch = firestore.batch();
     batch.set(randomColl.document(), SINGLE_FIELD_MAP);
-    batch.set(randomColl.document(), ImmutableMap.of("time", FieldValue.serverTimestamp()));
+    batch.set(randomColl.document(), map("time", FieldValue.serverTimestamp()));
     List<WriteResult> writeResults = batch.commit().get();
     assertEquals(2, writeResults.size());
   }
@@ -530,21 +522,186 @@ public class ITSystemTest {
         };
     Arrays.sort(collections); // Sort in alphabetical (non-numeric) order.
 
-    DocumentReference documentReference = randomColl.document("doc");
-
     WriteBatch batch = firestore.batch();
     for (String collection : collections) {
-      batch.create(documentReference.collection(collection).document("doc"), SINGLE_FIELD_OBJECT);
+      batch.create(randomDoc.collection(collection).document("doc"), SINGLE_FIELD_OBJECT);
     }
     batch.commit().get();
 
-    Iterable<CollectionReference> collectionRefs = documentReference.getCollections();
+    Iterable<CollectionReference> collectionRefs = randomDoc.getCollections();
 
     int count = 0;
     for (CollectionReference collectionRef : collectionRefs) {
       assertEquals(collections[count++], collectionRef.getId());
     }
     assertEquals(collections.length, count);
+  }
+
+  @Test
+  public void addAndRemoveFields() throws ExecutionException, InterruptedException {
+    Map<String, Object> expected = new HashMap<>();
+
+    randomDoc.create(Collections.<String, Object>emptyMap()).get();
+    assertEquals(expected, getData());
+
+    randomDoc.delete();
+    assertFalse(randomDoc.get().get().exists());
+
+    randomDoc.create(map("a", map("b", "c"))).get();
+    expected.put("a", map("b", "c"));
+    assertEquals(expected, getData());
+
+    randomDoc.set(Collections.<String, Object>emptyMap()).get();
+    expected = map();
+    assertEquals(expected, getData());
+
+    randomDoc.set(map("a", map("b", "c"))).get();
+    expected.put("a", map("b", "c"));
+    assertEquals(expected, getData());
+
+    randomDoc.set(map("a", map("d", "e")), SetOptions.merge()).get();
+    getNestedMap(expected, "a").put("d", "e");
+    assertEquals(expected, getData());
+
+    randomDoc
+        .set(
+            LocalFirestoreHelper.<String, Object>map("a", map("d", FieldValue.delete())),
+            SetOptions.merge())
+        .get();
+    getNestedMap(expected, "a").remove("d");
+    assertEquals(expected, getData());
+
+    randomDoc
+        .set(
+            LocalFirestoreHelper.<String, Object>map("a", map("b", FieldValue.delete())),
+            SetOptions.merge())
+        .get();
+    getNestedMap(expected, "a").remove("b");
+    assertEquals(expected, getData());
+
+    randomDoc
+        .set(LocalFirestoreHelper.<String, Object>map("a", map("e", "foo")), SetOptions.merge())
+        .get();
+    getNestedMap(expected, "a").put("e", "foo");
+    assertEquals(expected, getData());
+
+    randomDoc.set(map("f", "foo"), SetOptions.merge()).get();
+    expected.put("f", "foo");
+    assertEquals(expected, getData());
+
+    randomDoc
+        .set(LocalFirestoreHelper.<String, Object>map("f", map("g", "foo")), SetOptions.merge())
+        .get();
+    expected.put("f", map("g", "foo"));
+    assertEquals(expected, getData());
+
+    randomDoc.update("f.h", "foo").get();
+    getNestedMap(expected, "f").put("h", "foo");
+    assertEquals(expected, getData());
+
+    randomDoc.update("f.g", FieldValue.delete()).get();
+    getNestedMap(expected, "f").remove("g");
+    assertEquals(expected, getData());
+
+    randomDoc.update("f.h", FieldValue.delete()).get();
+    getNestedMap(expected, "f").remove("h");
+    assertEquals(expected, getData());
+
+    randomDoc.update("f", FieldValue.delete()).get();
+    expected.remove("f");
+    assertEquals(expected, getData());
+
+    randomDoc.update("i.j", map()).get();
+    expected.put("i", map("j", map()));
+    assertEquals(expected, getData());
+
+    randomDoc.update("i.j", map("k", "foo")).get();
+    getNestedMap(expected, "i").put("j", map("k", "foo"));
+    assertEquals(expected, getData());
+
+    randomDoc.update("i.j", LocalFirestoreHelper.<String, Object>map("l", map("k", "foo"))).get();
+    getNestedMap(expected, "i").put("j", map("l", map("k", "foo")));
+    assertEquals(expected, getData());
+
+    randomDoc.update("i.j", LocalFirestoreHelper.<String, Object>map("l", map())).get();
+    getNestedMap(expected, "i").put("j", map("l", map()));
+    assertEquals(expected, getData());
+
+    randomDoc.update("i", FieldValue.delete()).get();
+    expected.remove("i");
+    assertEquals(expected, getData());
+
+    randomDoc.update("a", FieldValue.delete()).get();
+    expected.remove("a");
+    assertEquals(expected, getData());
+  }
+
+  @Test
+  public void addAndRemoveServerTimestamps() throws ExecutionException, InterruptedException {
+    Map<String, Object> expected = new HashMap<>();
+
+    randomDoc
+        .create(
+            map("time", FieldValue.serverTimestamp(), "a", map("b", FieldValue.serverTimestamp())))
+        .get();
+    Date time = (Date) getData().get("time");
+    expected.put("time", time);
+    expected.put("a", map("b", time));
+    assertEquals(expected, getData());
+
+    randomDoc
+        .set(map("time", FieldValue.serverTimestamp(), "a", map("c", FieldValue.serverTimestamp())))
+        .get();
+    time = updateTime(expected);
+    expected.put("a", map("c", time));
+    assertEquals(expected, getData());
+
+    randomDoc
+        .set(
+            map("time", FieldValue.serverTimestamp(), "e", FieldValue.serverTimestamp()),
+            SetOptions.merge())
+        .get();
+    time = updateTime(expected);
+    expected.put("e", time);
+    assertEquals(expected, getData());
+
+    randomDoc
+        .set(
+            map("time", FieldValue.serverTimestamp(), "e", map("f", FieldValue.serverTimestamp())),
+            SetOptions.merge())
+        .get();
+    time = updateTime(expected);
+    expected.put("e", map("f", time));
+    assertEquals(expected, getData());
+
+    randomDoc
+        .update("time", FieldValue.serverTimestamp(), "g.h", FieldValue.serverTimestamp())
+        .get();
+    time = updateTime(expected);
+    expected.put("g", map("h", time));
+    assertEquals(expected, getData());
+
+    randomDoc
+        .update("time", FieldValue.serverTimestamp(), "g.j", map("k", FieldValue.serverTimestamp()))
+        .get();
+    time = updateTime(expected);
+    getNestedMap(expected, "g").put("j", map("k", time));
+    assertEquals(expected, getData());
+  }
+
+  private Date updateTime(Map<String, Object> dataWithTime)
+      throws ExecutionException, InterruptedException {
+    Date time = (Date) getData().get("time");
+    dataWithTime.put("time", time);
+    return time;
+  }
+
+  private Map<String, Object> getNestedMap(Map<String, Object> map, String key) {
+    return (Map<String, Object>) map.get(key);
+  }
+
+  private Map<String, Object> getData() throws ExecutionException, InterruptedException {
+    return randomDoc.get().get().getData();
   }
 
   @Test
@@ -565,13 +722,13 @@ public class ITSystemTest {
                     switch (semaphore.availablePermits()) {
                       case 0:
                         assertFalse(value.exists());
-                        documentReference.set(ImmutableMap.of("foo", "foo"));
+                        documentReference.set(map("foo", "foo"));
                         break;
                       case 1:
                         assertTrue(value.exists());
                         DocumentSnapshot documentSnapshot = documentReference.get().get();
                         assertEquals("foo", documentSnapshot.getString("foo"));
-                        documentReference.set(ImmutableMap.of("foo", "bar"));
+                        documentReference.set(map("foo", "bar"));
                         break;
                       case 2:
                         assertTrue(value.exists());
@@ -619,27 +776,27 @@ public class ITSystemTest {
                         switch (semaphore.availablePermits()) {
                           case 0:
                             assertTrue(value.isEmpty());
-                            ref1 = randomColl.add(ImmutableMap.of("foo", "foo")).get();
-                            ref2 = randomColl.add(ImmutableMap.of("foo", "bar")).get();
+                            ref1 = randomColl.add(map("foo", "foo")).get();
+                            ref2 = randomColl.add(map("foo", "bar")).get();
                             break;
                           case 1:
                             assertEquals(1, value.size());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(Type.ADDED, value.getDocumentChanges().get(0).getType());
-                            ref1.set(ImmutableMap.of("foo", "bar"));
+                            ref1.set(map("foo", "bar"));
                             break;
                           case 2:
                             assertEquals(2, value.size());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(Type.ADDED, value.getDocumentChanges().get(0).getType());
-                            ref1.set(ImmutableMap.of("foo", "bar", "bar", " foo"));
+                            ref1.set(map("foo", "bar", "bar", " foo"));
                             break;
                           case 3:
                             assertEquals(2, value.size());
                             assertEquals(1, value.getDocumentChanges().size());
                             assertEquals(
                                 Type.MODIFIED, value.getDocumentChanges().get(0).getType());
-                            ref2.set(ImmutableMap.of("foo", "foo"));
+                            ref2.set(map("foo", "foo"));
                             break;
                           case 4:
                             assertEquals(1, value.size());

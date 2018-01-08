@@ -16,9 +16,11 @@
 
 package com.google.cloud.firestore;
 
+import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Document;
 import com.google.firestore.v1beta1.Value;
+import com.google.firestore.v1beta1.Write;
 import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -75,10 +77,14 @@ public class DocumentSnapshot {
   }
 
   static DocumentSnapshot fromObject(
-      FirestoreImpl firestore, DocumentReference docRef, Map<String, Object> values) {
+      FirestoreImpl firestore,
+      DocumentReference docRef,
+      Map<String, Object> values,
+      EncodingOptions options) {
     Map<String, Value> fields = new HashMap<>();
     for (Map.Entry<String, Object> entry : values.entrySet()) {
-      Value encodedValue = FirestoreImpl.encodeValue(entry.getValue());
+      Value encodedValue =
+          UserDataConverter.encodeValue(FieldPath.of(entry.getKey()), entry.getValue(), options);
       if (encodedValue != null) {
         fields.put(entry.getKey(), encodedValue);
       }
@@ -191,6 +197,11 @@ public class DocumentSnapshot {
    */
   public boolean exists() {
     return fields != null;
+  }
+
+  /** Checks whether this DocumentSnapshot contains any fields. */
+  boolean isEmpty() {
+    return fields == null || fields.isEmpty();
   }
 
   /**
@@ -391,12 +402,13 @@ public class DocumentSnapshot {
     return docRef;
   }
 
-  Document.Builder toPb() {
+  Write.Builder toPb() {
     Preconditions.checkState(exists(), "Can't call toDocument() on a document that doesn't exist");
-    Document.Builder document = Document.newBuilder();
+    Write.Builder write = Write.newBuilder();
+    Document.Builder document = write.getUpdateBuilder();
     document.setName(docRef.getName());
     document.putAllFields(fields);
-    return document;
+    return write;
   }
 
   @Override

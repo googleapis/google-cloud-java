@@ -98,8 +98,7 @@ public class Publisher {
 
   private final AtomicBoolean activeAlarm;
 
-  private final Channel[] channels;
-  private final AtomicRoundRobin channelIndex;
+  private final Channel channel;
   @Nullable private final CallCredentials callCredentials;
 
   private final ScheduledExecutorService executor;
@@ -133,7 +132,6 @@ public class Publisher {
     if (builder.executorProvider.shouldAutoClose()) {
       closeables.add(new ExecutorAsBackgroundResource(executor));
     }
-    channels = new Channel[Runtime.getRuntime().availableProcessors()];
     TransportChannelProvider channelProvider = builder.channelProvider;
     if (channelProvider.needsExecutor()) {
       channelProvider = channelProvider.withExecutor(executor);
@@ -144,15 +142,12 @@ public class Publisher {
     if (channelProvider.needsEndpoint()) {
       channelProvider = channelProvider.withEndpoint(TopicAdminSettings.getDefaultEndpoint());
     }
-    for (int i = 0; i < channels.length; i++) {
-      GrpcTransportChannel transportChannel =
-          (GrpcTransportChannel) channelProvider.getTransportChannel();
-      channels[i] = transportChannel.getChannel();
-      if (channelProvider.shouldAutoClose()) {
-        closeables.add(transportChannel);
-      }
+    GrpcTransportChannel transportChannel =
+        (GrpcTransportChannel) channelProvider.getTransportChannel();
+    channel = transportChannel.getChannel();
+    if (channelProvider.shouldAutoClose()) {
+      closeables.add(transportChannel);
     }
-    channelIndex = new AtomicRoundRobin(channels.length);
 
     Credentials credentials = builder.credentialsProvider.getCredentials();
     callCredentials = credentials == null ? null : MoreCallCredentials.from(credentials);
@@ -312,8 +307,6 @@ public class Publisher {
       publishRequest.addMessages(outstandingPublish.message);
     }
 
-    int currentChannel = channelIndex.next();
-
     long rpcTimeoutMs =
         Math.round(
             retrySettings.getInitialRpcTimeout().toMillis()
@@ -321,8 +314,7 @@ public class Publisher {
     rpcTimeoutMs = Math.min(rpcTimeoutMs, retrySettings.getMaxRpcTimeout().toMillis());
 
     PublisherFutureStub stub =
-        PublisherGrpc.newFutureStub(channels[currentChannel])
-            .withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS);
+        PublisherGrpc.newFutureStub(channel).withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS);
     if (callCredentials != null) {
       stub = stub.withCallCredentials(callCredentials);
     }
@@ -587,7 +579,7 @@ public class Publisher {
     LongRandom longRandom = DEFAULT_LONG_RANDOM;
 
     TransportChannelProvider channelProvider =
-        TopicAdminSettings.defaultGrpcTransportProviderBuilder().build();
+        TopicAdminSettings.defaultGrpcTransportProviderBuilder().setChannelsPerCpu(1).build();
     HeaderProvider headerProvider =
         TopicAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
@@ -602,9 +594,8 @@ public class Publisher {
      * {@code ChannelProvider} to use to create Channels, which must point at Cloud Pub/Sub
      * endpoint.
      *
-     * <p>For performance, this client benefits from having multiple channels open at once. Users
-     * are encouraged to provide instances of {@code ChannelProvider} that creates new channels
-     * instead of returning pre-initialized ones.
+     * <p>For performance, this client benefits from having multiple underlying connections. See
+     * {@link InstantiatingGrpcChannelProvider#setPoolSize(int)}.
      */
     public Builder setChannelProvider(TransportChannelProvider channelProvider) {
       this.channelProvider = Preconditions.checkNotNull(channelProvider);

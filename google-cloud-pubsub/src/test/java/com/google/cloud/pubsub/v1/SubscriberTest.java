@@ -99,7 +99,7 @@ public class SubscriberTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setExecutorProvider(
+                .setSystemExecutorProvider(
                     InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build()));
 
     // Recoverable error
@@ -117,7 +117,7 @@ public class SubscriberTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setExecutorProvider(
+                .setSystemExecutorProvider(
                     InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(10).build()));
 
     // Fatal error

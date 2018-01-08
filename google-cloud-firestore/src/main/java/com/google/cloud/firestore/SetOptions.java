@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.List;
@@ -116,6 +117,11 @@ public final class SetOptions {
   @Nonnull
   public static SetOptions mergeFieldPaths(List<FieldPath> fields) {
     return new SetOptions(true, fields);
+  }
+
+  /** Returns the EncodingOptions to use for a set() call. */
+  EncodingOptions getEncodingOptions() {
+    return merge ? UserDataConverter.ALLOW_ALL_DELETES : UserDataConverter.NO_DELETES;
   }
 
   @Override

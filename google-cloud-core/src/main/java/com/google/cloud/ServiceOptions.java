@@ -27,6 +27,11 @@ import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.GenericJson;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.JsonObjectParser;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.util.Charsets;
 import com.google.api.core.ApiClock;
 import com.google.api.core.BetaApi;
 import com.google.api.core.CurrentMillisClock;
@@ -59,9 +64,6 @@ import java.util.ServiceLoader;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 import org.threeten.bp.Duration;
 
 /**
@@ -454,13 +456,20 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   protected static String getServiceAccountProjectId() {
+    return getServiceAccountProjectId(System.getenv(CREDENTIAL_ENV_NAME));
+  }
+
+  @InternalApi("Visible for testing")
+  static String getServiceAccountProjectId(String credentialsPath) {
     String project = null;
-    String credentialsPath = System.getenv(CREDENTIAL_ENV_NAME);
     if (credentialsPath != null) {
       try (InputStream credentialsStream = new FileInputStream(credentialsPath)) {
-        JSONObject json = new JSONObject(new JSONTokener(credentialsStream));
-        project = json.getString("project_id");
-      } catch (IOException | JSONException ex) {
+        JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
+        JsonObjectParser parser = new JsonObjectParser(jsonFactory);
+        GenericJson fileContents = parser.parseAndClose(
+            credentialsStream, Charsets.UTF_8, GenericJson.class);
+        project = (String) fileContents.get("project_id");
+      } catch (IOException e) {
         // ignore
       }
     }

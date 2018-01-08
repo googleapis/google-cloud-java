@@ -57,6 +57,9 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   private ReadChannel channel;
   private long position;
   private long size;
+  // generation at time of first open, to make sure reopens don't give us a different version of the file.
+  // It can be null if not implemented, in which case we don't check.
+  private Long generation;
 
   /**
    * @param maxChannelReopens max number of times to try re-opening the channel if it closes on us unexpectedly.
@@ -74,13 +77,18 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     this.position = position;
     this.maxChannelReopens = maxChannelReopens;
     this.maxRetries = Math.max(3, maxChannelReopens);
-    // XXX: Reading size and opening file should be atomic.
-    this.size = fetchSize(gcsStorage, file);
+    fetchSize(gcsStorage, file);
+    // innerOpen checks that it sees the same generation as fetchSize did,
+    // which ensure the file hasn't changed.
     innerOpen();
   }
 
   private void innerOpen() throws IOException {
-    this.channel = gcsStorage.reader(file);
+    if (null != generation) {
+      this.channel = gcsStorage.reader(file, Storage.BlobSourceOption.generationMatch(generation));
+    } else {
+      this.channel = gcsStorage.reader(file);
+    }
     if (position > 0) {
       channel.seek(position);
     }
@@ -120,7 +128,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
       }
       if (amt > 0) {
         position += amt;
-        // XXX: This would only ever happen if the fetchSize() race-condition occurred.
+        // This can only happen if the file changed under us and we didn't notice.
         if (position > size) {
           size = position;
         }
@@ -180,11 +188,13 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
 
     while (true) {
       try {
-        BlobInfo blobInfo = gcsStorage.get(file);
+        BlobInfo blobInfo = gcsStorage.get(file, Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE));
         if ( blobInfo == null ) {
           throw new NoSuchFileException(String.format("gs://%s/%s", file.getBucket(), file.getName()));
         }
-        return blobInfo.getSize();
+        this.generation = blobInfo.getGeneration();
+        this.size = blobInfo.getSize();
+        return this.size;
       } catch (StorageException exs) {
         // Will rethrow a StorageException if all retries/reopens are exhausted
         retryHandler.handleStorageException(exs);
@@ -212,4 +222,5 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
       innerOpen();
     }
   }
+
 }
