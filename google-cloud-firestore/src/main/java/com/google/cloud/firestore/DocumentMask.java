@@ -25,6 +25,8 @@ import java.util.TreeSet;
 
 /** A DocumentMask contains the field paths affected by an update. */
 final class DocumentMask {
+  static final DocumentMask EMPTY_MASK = new DocumentMask(new TreeSet<FieldPath>());
+
   private final SortedSet<FieldPath> fieldPaths; // Sorted for testing.
 
   DocumentMask(Collection<FieldPath> fieldPaths) {
@@ -46,7 +48,11 @@ final class DocumentMask {
     for (Map.Entry<String, Object> entry : values.entrySet()) {
       Object value = entry.getValue();
       FieldPath childPath = path.append(FieldPath.of(entry.getKey()));
-      if (value instanceof Map) {
+      if (entry.getValue() == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
+        // Ignore
+      } else if (entry.getValue() == FieldValue.DELETE_SENTINEL) {
+        fieldPaths.add(childPath);
+      } else if (value instanceof Map) {
         fieldPaths.addAll(extractFromMap((Map<String, Object>) value, childPath));
       } else {
         // We don't need to special case arrays here as we don't support partial array updates.
@@ -64,5 +70,9 @@ final class DocumentMask {
       updateMask.addFieldPaths(fieldPath.getEncodedPath());
     }
     return updateMask.build();
+  }
+
+  boolean isEmpty() {
+    return fieldPaths.isEmpty();
   }
 }
