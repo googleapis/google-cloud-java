@@ -302,7 +302,7 @@ public class Dataset extends DatasetInfo {
   /**
    * Returns the dataset's {@code BigQuery} object used to issue requests.
    */
-  public BigQuery getBigquery() {
+  public BigQuery getBigQuery() {
     return bigquery;
   }
 

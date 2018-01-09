@@ -349,10 +349,10 @@ public class DatasetTest {
   }
 
   @Test
-  public void testBigquery() {
+  public void testBigQuery() {
     initializeExpectedDataset(1);
     replay(bigquery);
-    assertSame(serviceMockReturnsOptions, expectedDataset.getBigquery());
+    assertSame(serviceMockReturnsOptions, expectedDataset.getBigQuery());
   }
 
 
@@ -367,7 +367,7 @@ public class DatasetTest {
   private void compareDataset(Dataset expected, Dataset value) {
     assertEquals(expected, value);
     compareDatasetInfo(expected, value);
-    assertEquals(expected.getBigquery().getOptions(), value.getBigquery().getOptions());
+    assertEquals(expected.getBigQuery().getOptions(), value.getBigQuery().getOptions());
   }
 
   private void compareDatasetInfo(DatasetInfo expected, DatasetInfo value) {

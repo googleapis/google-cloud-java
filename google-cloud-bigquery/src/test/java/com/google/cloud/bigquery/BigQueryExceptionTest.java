@@ -37,7 +37,7 @@ import org.junit.Test;
 public class BigQueryExceptionTest {
 
   @Test
-  public void testBigqueryException() {
+  public void testBigQueryException() {
     BigQueryException exception = new BigQueryException(500, "message");
     assertEquals(500, exception.getCode());
     assertEquals("message", exception.getMessage());

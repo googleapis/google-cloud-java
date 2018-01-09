@@ -25,9 +25,13 @@ import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
+import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.JobConfiguration.Type;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -62,11 +66,9 @@ public class Job extends JobInfo {
           .setMaxRetryDelay(Duration.ofSeconds(3L))
           .build();
 
-  static final QueryResultsOption[] DEFAULT_QUERY_WAIT_OPTIONS =
-      new QueryResultsOption[] {
-        QueryResultsOption.pageSize(0L),
-        QueryResultsOption.maxWaitTime(Duration.ofMinutes(1).toMillis())
-      };
+  static final QueryResultsOption[] DEFAULT_QUERY_WAIT_OPTIONS = {
+    QueryResultsOption.pageSize(0L),
+  };
 
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
@@ -246,15 +248,17 @@ public class Job extends JobInfo {
   /**
    * Gets the query results of this job. This job must be of type {@code
    * JobConfiguration.Type.QUERY}, otherwise this method will throw {@link
-   * UnsupportedOperationException}. This method does not wait for the job to complete, to ensure that the job is completed first call {@link #waitFor(RetryOption...)} method.
+   * UnsupportedOperationException}.
+   *
+   * <p>If the job hasn't finished, this method waits for the job to complete. However, the state of
+   * the current {@code Job} instance is not updated. To get the new state, call {@link
+   * #waitFor(RetryOption...)} or {@link #reload(JobOption...)}.
    *
    * <p>Example of getting the results of a query job.
-   * <pre>{@code
    *
+   * <pre>{@code
    * Job job = bigquery.create(queryJobInfo);
-   * job.waitFor();
-   * QueryResponse response = job.getQueryResults();
-   * QueryResult result = response.getResult();
+   * TableResult result = job.getQueryResults();
    * for (FieldValueList row : result.iterateAll()) {
    *   // do something with the data
    * }
@@ -262,16 +266,46 @@ public class Job extends JobInfo {
    *
    * @throws BigQueryException upon failure
    */
-  public QueryResponse getQueryResults(QueryResultsOption... options) {
+  public TableResult getQueryResults(QueryResultsOption... options)
+      throws InterruptedException, JobException {
     if (getConfiguration().getType() != Type.QUERY) {
       throw new UnsupportedOperationException(
           "Getting query results is supported only for " + Type.QUERY + " jobs");
     }
 
-    return bigquery.getQueryResults(getJobId(), options);
+    List<QueryResultsOption> waitOptions =
+        new ArrayList<>(Arrays.asList(DEFAULT_QUERY_WAIT_OPTIONS));
+    List<TableDataListOption> listOptions = new ArrayList<>();
+    for (QueryResultsOption option : options) {
+      switch (option.getRpcOption()) {
+        case MAX_RESULTS:
+          listOptions.add(TableDataListOption.pageSize((Long) option.getValue()));
+          break;
+        case PAGE_TOKEN:
+          listOptions.add(TableDataListOption.pageToken((String) option.getValue()));
+          break;
+        case START_INDEX:
+          listOptions.add(TableDataListOption.startIndex((Long) option.getValue()));
+          break;
+        case TIMEOUT:
+          waitOptions.add(QueryResultsOption.maxWaitTime((Long) option.getValue()));
+          break;
+      }
+    }
+
+    QueryResponse response =
+        waitForQueryResults(
+            DEFAULT_JOB_WAIT_SETTINGS, waitOptions.toArray(new QueryResultsOption[0]));
+    if (response.getSchema() == null) {
+      throw new JobException(getJobId(), response.getErrors());
+    }
+    
+    TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
+    return bigquery.listTableData(
+        table, response.getSchema(), listOptions.toArray(new TableDataListOption[0]));
   }
 
-  QueryResponse waitForQueryResults(
+  private QueryResponse waitForQueryResults(
       RetrySettings waitSettings, final QueryResultsOption... resultsOptions)
       throws InterruptedException {
     if (getConfiguration().getType() != Type.QUERY) {
@@ -291,7 +325,7 @@ public class Job extends JobInfo {
           new BasicResultRetryAlgorithm<QueryResponse>() {
             @Override
             public boolean shouldRetry(Throwable prevThrowable, QueryResponse prevResponse) {
-              return prevResponse != null && !prevResponse.jobCompleted();
+              return prevResponse != null && !prevResponse.getCompleted();
             }
           },
           options.getClock());
@@ -380,7 +414,7 @@ public class Job extends JobInfo {
   }
 
   /** Returns the job's {@code BigQuery} object used to issue requests. */
-  public BigQuery getBigquery() {
+  public BigQuery getBigQuery() {
     return bigquery;
   }
 

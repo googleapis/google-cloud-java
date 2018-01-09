@@ -29,7 +29,7 @@ import java.util.Objects;
  * {@link JobStatus#getError()}. A job can also encounter errors during its execution that do not
  * cause the whole job to fail (see {@link JobStatus#getExecutionErrors()}). Similarly, queries and
  * insert all requests can cause BigQuery errors that do not mean the whole operation failed (see
- * {@link QueryResponse#getExecutionErrors()} and {@link InsertAllResponse#getInsertErrors()}).
+ * {@link JobStatus#getExecutionErrors()} and {@link InsertAllResponse#getInsertErrors()}).
  * When a {@link BigQueryException} is thrown the BigQuery Error that caused it, if any, can be
  * accessed with {@link BigQueryException#getError()}.
  */
