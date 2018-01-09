@@ -38,7 +38,11 @@ public class TraceLoggingEnhancer implements LoggingEnhancer {
    * @param id The traceID
    */
   public static void setCurrentTraceId(String id) {
-    traceId.set(id);
+    if (id == null) {
+      traceId.remove();
+    } else {
+      traceId.set(id);
+    }
   }
 
   /**
