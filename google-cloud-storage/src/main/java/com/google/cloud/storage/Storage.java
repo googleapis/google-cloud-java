@@ -806,7 +806,8 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * The HTTP method to be used with the signed URL. Defaults to GET.
+     * The HTTP method to be used with the signed URL. 
+     * If this method is not called, defaults to GET.
      */
     public static SignUrlOption httpMethod(HttpMethod httpMethod) {
       return new SignUrlOption(Option.HTTP_METHOD, httpMethod.name());
