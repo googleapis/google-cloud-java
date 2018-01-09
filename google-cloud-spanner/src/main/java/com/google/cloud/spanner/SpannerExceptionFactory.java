@@ -159,6 +159,10 @@ public final class SpannerExceptionFactory {
                 // See b/27794742.
                 return true;
               }
+              if (cause.getMessage()
+                  .contains("Received unexpected EOS on DATA frame from server")) {
+                return true;
+              }
             }
             return false;
           }
