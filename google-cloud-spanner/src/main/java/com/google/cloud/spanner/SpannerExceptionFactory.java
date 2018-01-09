@@ -126,6 +126,8 @@ public final class SpannerExceptionFactory {
         return hasCauseMatching(cause, Matchers.isRetryableInternalError);
       case UNAVAILABLE:
         return true;
+      case RESOURCE_EXHAUSTED:
+        return SpannerException.extractRetryDelay(cause) > 0;
       default:
         return false;
     }
