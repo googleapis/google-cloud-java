@@ -24,7 +24,9 @@ import javax.annotation.Nullable;
 @InternalApi
 @AutoValue
 public abstract class QueryResponse {
-  QueryResponse() {}
+  QueryResponse() {
+    // Package private so users can't subclass it but AutoValue can.
+  }
 
   // Only null if the job fails.
   @Nullable

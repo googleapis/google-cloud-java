@@ -251,7 +251,7 @@ public class JobTest {
     expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock()).times(2);
     Job completedJob = expectedJob.toBuilder().setStatus(status).build();
-    // TODO(pongad): remove when https://github.com/googleapis/gax-java/pull/431/ lands.
+    // TODO(pongad): remove when we bump gax to 1.15.
     Page<FieldValueList> emptyPage =
         new Page<FieldValueList>() {
           @Override

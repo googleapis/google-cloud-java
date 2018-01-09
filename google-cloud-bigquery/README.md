@@ -179,7 +179,7 @@ Then add the following code to run the query and wait for the result:
 ```java
 // Create a query request
 QueryJobConfiguration queryConfig =
-    QueryJobConfiguration.newBuilder("SELECT * FROM my_dataset_id.my_table_id").build();
+    QueryJobConfiguration.newBuilder("SELECT my_column FROM my_dataset_id.my_table_id").build();
 // Read rows
 System.out.println("Table rows:");
 for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {

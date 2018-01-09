@@ -1197,7 +1197,6 @@ public class BigQueryImplTest {
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    // TODO(pongad): pagesize = 42
     Job job = bigquery.create(JobInfo.of(queryJob, QUERY_JOB_CONFIGURATION_FOR_QUERY));
     TableResult result = job.getQueryResults(pageSizeOption);
     assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
@@ -1217,11 +1216,6 @@ public class BigQueryImplTest {
             .setJobReference(queryJob.toPb())
             .setId(JOB);
     jobResponsePb1.getConfiguration().getQuery().setDestinationTable(TABLE_ID.toPb());
-
-    com.google.api.services.bigquery.model.Job jobResponsePb2 =
-        jobResponsePb1
-            .clone()
-            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"));
 
     GetQueryResultsResponse responsePb1 =
         new GetQueryResultsResponse()
@@ -1263,7 +1257,6 @@ public class BigQueryImplTest {
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    // TODO(pongad): pagesize = 42
     TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
     assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
     assertThat(result.getTotalRows()).isEqualTo(1);
@@ -1313,7 +1306,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     QueryResponse response = bigquery.getQueryResults(queryJob);
-    assertEquals(true, response.getCompleted());
+    assertTrue(response.getCompleted());
     assertEquals(null, response.getSchema());
   }
 

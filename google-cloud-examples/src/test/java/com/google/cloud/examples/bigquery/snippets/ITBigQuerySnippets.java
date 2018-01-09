@@ -228,7 +228,7 @@ public class ITBigQuerySnippets {
 
     listPage = bigquerySnippets.listTableDataSchema(DATASET, tableName, schema, fieldName1);
     row = listPage.getValues().iterator().next();
-    assertEquals(true, row.get(fieldName1));
+    assertNotNull(row.get(fieldName1));
     assertArrayEquals(new byte[] {0xA, 0xD, 0xD, 0xE, 0xD}, row.get(fieldName2).getBytesValue());
 
     bigquerySnippets.listTableDataSchemaId();

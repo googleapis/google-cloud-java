@@ -273,8 +273,6 @@ public class Job extends JobInfo {
           "Getting query results is supported only for " + Type.QUERY + " jobs");
     }
 
-    TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
-
     List<QueryResultsOption> waitOptions =
         new ArrayList<>(Arrays.asList(DEFAULT_QUERY_WAIT_OPTIONS));
     List<TableDataListOption> listOptions = new ArrayList<>();
@@ -301,6 +299,8 @@ public class Job extends JobInfo {
     if (response.getSchema() == null) {
       throw new JobException(getJobId(), response.getErrors());
     }
+    
+    TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
     return bigquery.listTableData(
         table, response.getSchema(), listOptions.toArray(new TableDataListOption[0]));
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2018 Google LLC All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,8 +49,6 @@ public class TableResult implements Page<FieldValueList>, Serializable {
   /**
    * Returns the total number of rows in the complete result set, which can be more than the number
    * of rows in the first page of results returned by {@link #getValues()}.
-   *
-   * <p>If this instance is a result of a dry-run query, returns {@code 0}.
    */
   public long getTotalRows() {
     return totalRows;

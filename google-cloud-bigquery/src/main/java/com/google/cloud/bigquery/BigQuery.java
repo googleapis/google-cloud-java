@@ -911,7 +911,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String tableName = "my_table_name";
    * Schema schema = ...;
    * String field = "my_field";
-   * Page<FieldValueList> tableData =
+   * TableResult tableData =
    *     bigquery.listTableData(datasetName, tableName, schema);
    * for (FieldValueList row : tableData.iterateAll()) {
    *   row.get(field)
@@ -936,10 +936,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *         Field.of("word_count", LegacySQLTypeName.STRING),
    *         Field.of("corpus", LegacySQLTypeName.STRING),
    *         Field.of("corpus_date", LegacySQLTypeName.STRING));
-   * Page<FieldValueList> page =
+   * TableResult tableData =
    *     bigquery.listTableData(
    *         TableId.of("bigquery-public-data", "samples", "shakespeare"), schema);
-   * FieldValueList row = page.getValues().iterator().next();
+   * FieldValueList row = tableData.getValues().iterator().next();
    * System.out.println(row.get("word").getStringValue());
    * }</pre>
    *

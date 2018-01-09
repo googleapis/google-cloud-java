@@ -25,6 +25,7 @@ package com.google.cloud.examples.bigquery.snippets;
 import com.google.api.client.util.Charsets;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
@@ -436,11 +437,11 @@ public class BigQuerySnippets {
   // [TARGET listTableData(String, String, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Page<FieldValueList> listTableData(String datasetName, String tableName) {
+  public TableResult listTableData(String datasetName, String tableName) {
     // [START listTableData]
     // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
     // simply omit the option.
-    Page<FieldValueList> tableData =
+    TableResult tableData =
         bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
     for (FieldValueList row : tableData.iterateAll()) {
       // do something with the row
@@ -455,12 +456,12 @@ public class BigQuerySnippets {
   // [TARGET listTableData(TableId, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Page<FieldValueList> listTableDataFromId(String datasetName, String tableName) {
+  public TableResult listTableDataFromId(String datasetName, String tableName) {
     // [START listTableDataFromId]
     TableId tableIdObject = TableId.of(datasetName, tableName);
     // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
     // simply omit the option.
-    Page<FieldValueList> tableData =
+    TableResult tableData =
         bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
     for (FieldValueList row : tableData.iterateAll()) {
       // do something with the row
@@ -475,10 +476,10 @@ public class BigQuerySnippets {
   // [VARIABLE "my_table_name"]
   // [VARIABLE ...]
   // [VARIABLE "field"]
-  public Page<FieldValueList> listTableDataSchema(
+  public TableResult listTableDataSchema(
       String datasetName, String tableName, Schema schema, String field) {
     // [START listTableDataSchema]
-    Page<FieldValueList> tableData =
+    TableResult tableData =
         bigquery.listTableData(datasetName, tableName, schema);
     for (FieldValueList row : tableData.iterateAll()) {
       row.get(field);
@@ -497,10 +498,10 @@ public class BigQuerySnippets {
             Field.of("word_count", LegacySQLTypeName.STRING),
             Field.of("corpus", LegacySQLTypeName.STRING),
             Field.of("corpus_date", LegacySQLTypeName.STRING));
-    Page<FieldValueList> page =
+    TableResult tableData =
         bigquery.listTableData(
             TableId.of("bigquery-public-data", "samples", "shakespeare"), schema);
-    FieldValueList row = page.getValues().iterator().next();
+    FieldValueList row = tableData.getValues().iterator().next();
     System.out.println(row.get("word").getStringValue());
     // [END listTableDataSchemaId]
     return row;
