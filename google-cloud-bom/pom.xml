@@ -130,8 +130,8 @@
     <gax.version>1.16.0</gax.version>
     <gax-grpc.version>1.16.0</gax-grpc.version>
     <gax-httpjson.version>0.33.0</gax-httpjson.version>
-    <generated-proto-beta.version>0.1.26</generated-proto-beta.version>
-    <generated-proto-ga.version>1.0.2</generated-proto-ga.version>
+    <generated-proto-beta.version>0.1.27</generated-proto-beta.version>
+    <generated-proto-ga.version>1.0.3</generated-proto-ga.version>
     <google.auth.version>0.9.0</google.auth.version>
     <grpc.version>1.7.0</grpc.version>
     <nettyssl.version>2.0.6.Final</nettyssl.version>
@@ -368,14 +368,14 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
-        <groupId>com.google.cloud.datastore</groupId>
-        <artifactId>datastore-v1-protos</artifactId>
-        <version>1.5.0</version>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-datastore-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud.datastore</groupId>
         <artifactId>datastore-v1-proto-client</artifactId>
-        <version>1.5.1</version>
+        <version>1.6.0</version>
       </dependency>
 
       <dependency>
