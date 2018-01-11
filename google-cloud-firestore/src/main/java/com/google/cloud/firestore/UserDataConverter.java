@@ -55,8 +55,7 @@ class UserDataConverter {
         }
       };
 
-  private UserDataConverter() {
-  }
+  private UserDataConverter() {}
 
   /**
    * Encodes a Java Object to a Firestore Value proto.

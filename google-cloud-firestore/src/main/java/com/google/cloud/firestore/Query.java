@@ -33,6 +33,7 @@ import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
 import com.google.firestore.v1beta1.StructuredQuery;
 import com.google.firestore.v1beta1.StructuredQuery.CompositeFilter;
+import com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator;
 import com.google.firestore.v1beta1.StructuredQuery.FieldReference;
 import com.google.firestore.v1beta1.StructuredQuery.Filter;
 import com.google.firestore.v1beta1.StructuredQuery.Order;
@@ -75,6 +76,88 @@ public class Query {
     }
   }
 
+  private abstract static class FieldFilter {
+    final FieldPath fieldPath;
+    final Object value;
+
+    FieldFilter(FieldPath fieldPath, Object value) {
+      this.value = value;
+      this.fieldPath = fieldPath;
+    }
+
+    Value encodeValue() {
+      Object sanitizedObject = CustomClassMapper.serialize(value);
+      Value encodedValue =
+          UserDataConverter.encodeValue(fieldPath, sanitizedObject, UserDataConverter.NO_DELETES);
+
+      if (encodedValue == null) {
+        throw FirestoreException.invalidState("Cannot use Firestore Sentinels in FieldFilter");
+      }
+      return encodedValue;
+    }
+
+    abstract boolean isEqualsFilter();
+
+    abstract Filter toProto();
+  }
+
+  private static class UnaryFilter extends FieldFilter {
+    UnaryFilter(FieldPath fieldPath, Object value) {
+      super(fieldPath, value);
+      Preconditions.checkArgument(
+          isUnaryComparison(value), "Cannot use '%s' in unary comparison", value);
+    }
+
+    @Override
+    boolean isEqualsFilter() {
+      return true;
+    }
+
+    Filter toProto() {
+      Filter.Builder result = Filter.newBuilder();
+
+      result
+          .getUnaryFilterBuilder()
+          .setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()))
+          .setOp(
+              value == null
+                  ? StructuredQuery.UnaryFilter.Operator.IS_NULL
+                  : StructuredQuery.UnaryFilter.Operator.IS_NAN);
+
+      return result.build();
+    }
+  }
+
+  private static class ComparisonFilter extends FieldFilter {
+    final StructuredQuery.FieldFilter.Operator operator;
+
+    ComparisonFilter(
+        FieldPath fieldPath, StructuredQuery.FieldFilter.Operator operator, Object value) {
+      super(fieldPath, value);
+      Preconditions.checkArgument(
+          !isUnaryComparison(value), "Cannot use '%s' in field comparison", value);
+      this.operator = operator;
+    }
+
+    @Override
+    boolean isEqualsFilter() {
+      return operator.equals(Operator.EQUAL);
+    }
+
+    Filter toProto() {
+      Filter.Builder result = Filter.newBuilder();
+
+      Value encodedValue = encodeValue();
+
+      result
+          .getFieldFilterBuilder()
+          .setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()))
+          .setValue(encodedValue)
+          .setOp(operator);
+      return result.build();
+    }
+  }
+
   private static class FieldOrder {
     final FieldPath fieldPath;
     final Direction direction;
@@ -84,7 +167,7 @@ public class Query {
       this.direction = direction;
     }
 
-    private Order toProto() {
+    Order toProto() {
       Order.Builder result = Order.newBuilder();
       result.setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()));
       result.setDirection(direction.getDirection());
@@ -99,7 +182,7 @@ public class Query {
     private int offset;
     private Cursor startCursor;
     private Cursor endCursor;
-    private List<Filter> fieldFilters;
+    private List<FieldFilter> fieldFilters;
     private List<FieldOrder> fieldOrders;
     private List<FieldReference> fieldProjections;
 
@@ -194,54 +277,66 @@ public class Query {
     return value == null || value.equals(Double.NaN) || value.equals(Float.NaN);
   }
 
-  private Filter createFieldFilter(
-      FieldPath fieldPath, StructuredQuery.FieldFilter.Operator operator, Object value) {
-    Preconditions.checkState(
-        !isUnaryComparison(value), "Firestore only support equals comparisons with Null and NaN");
+  /** Computes the backend ordering semantics for DocumentSnapshot cursors. */
+  private List<FieldOrder> createImplicitOrderBy() {
+    List<FieldOrder> implicitOrders = new ArrayList<>(options.fieldOrders);
+    boolean hasDocumentId = false;
 
-    Filter.Builder result = Filter.newBuilder();
-
-    Object sanitizedObject = CustomClassMapper.serialize(value);
-    Value encodedValue =
-        UserDataConverter.encodeValue(fieldPath, sanitizedObject, UserDataConverter.NO_DELETES);
-
-    if (encodedValue == null) {
-      throw FirestoreException.invalidState("Cannot use Firestore Sentinels in FieldFilter");
+    if (implicitOrders.isEmpty()) {
+      // If no explicit ordering is specified, use the first inequality to define an implicit order.
+      for (FieldFilter fieldFilter : options.fieldFilters) {
+        if (!fieldFilter.isEqualsFilter()) {
+          implicitOrders.add(new FieldOrder(fieldFilter.fieldPath, Direction.ASCENDING));
+          break;
+        }
+      }
+    } else {
+      for (FieldOrder fieldOrder : options.fieldOrders) {
+        if (fieldOrder.fieldPath.equals(FieldPath.DOCUMENT_ID)) {
+          hasDocumentId = true;
+        }
+      }
     }
 
-    result
-        .getFieldFilterBuilder()
-        .setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()))
-        .setValue(encodedValue)
-        .setOp(operator);
+    if (!hasDocumentId) {
+      // Add implicit sorting by name, using the last specified direction.
+      Direction lastDirection =
+          implicitOrders.isEmpty()
+              ? Direction.ASCENDING
+              : implicitOrders.get(implicitOrders.size() - 1).direction;
 
-    return result.build();
+      implicitOrders.add(new FieldOrder(FieldPath.documentId(), lastDirection));
+    }
+    return implicitOrders;
   }
 
-  private Filter createUnaryFilter(FieldPath fieldPath, Object value) {
-    Preconditions.checkState(isUnaryComparison(value));
+  private Cursor createCursor(
+      List<FieldOrder> order, DocumentSnapshot documentSnapshot, boolean before) {
+    List<Object> fieldValues = new ArrayList<>();
 
-    Filter.Builder result = Filter.newBuilder();
-    result
-        .getUnaryFilterBuilder()
-        .setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()))
-        .setOp(
-            value == null
-                ? StructuredQuery.UnaryFilter.Operator.IS_NULL
-                : StructuredQuery.UnaryFilter.Operator.IS_NAN);
+    for (FieldOrder fieldOrder : order) {
+      if (fieldOrder.fieldPath.equals(FieldPath.DOCUMENT_ID)) {
+        fieldValues.add(documentSnapshot.getReference());
+      } else {
+        Preconditions.checkArgument(
+            documentSnapshot.contains(fieldOrder.fieldPath),
+            "Field '%s' is missing in the provided DocumentSnapshot. Please provide a document that contains values for all specified orderBy() and where() constraints.");
+        fieldValues.add(documentSnapshot.get(fieldOrder.fieldPath));
+      }
+    }
 
-    return result.build();
+    return createCursor(order, fieldValues.toArray(), before);
   }
 
-  private Cursor createCursor(Object[] fieldValues, boolean before) {
+  private Cursor createCursor(List<FieldOrder> order, Object[] fieldValues, boolean before) {
     Cursor.Builder result = Cursor.newBuilder();
 
     Preconditions.checkState(
-        fieldValues.length <= options.fieldOrders.size(),
+        fieldValues.length <= order.size(),
         "Too many cursor values specified. The specified values must match the "
             + "orderBy() constraints of the query.");
 
-    Iterator<FieldOrder> fieldOrderIterator = options.fieldOrders.iterator();
+    Iterator<FieldOrder> fieldOrderIterator = order.iterator();
 
     for (Object fieldValue : fieldValues) {
       Object sanitizedValue;
@@ -280,8 +375,10 @@ public class Query {
 
       Value encodedValue =
           UserDataConverter.encodeValue(fieldPath, sanitizedValue, UserDataConverter.NO_DELETES);
+
       if (encodedValue == null) {
-        throw FirestoreException.invalidState("Cannot use Firestore Sentinels in Cursor");
+        throw FirestoreException.invalidState(
+            "Cannot use FieldValue.delete() or FieldValue.serverTimestamp() in a query boundary");
       }
       result.addValues(encodedValue);
     }
@@ -314,12 +411,16 @@ public class Query {
    */
   @Nonnull
   public Query whereEqualTo(@Nonnull FieldPath fieldPath, @Nullable Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereEqualTo() after defining a boundary with startAt(), " +
+            "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
 
     if (isUnaryComparison(value)) {
-      newOptions.fieldFilters.add(createUnaryFilter(fieldPath, value));
+      newOptions.fieldFilters.add(new UnaryFilter(fieldPath, value));
     } else {
-      newOptions.fieldFilters.add(createFieldFilter(fieldPath, EQUAL, value));
+      newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, EQUAL, value));
     }
 
     return new Query(firestore, path, newOptions);
@@ -348,8 +449,12 @@ public class Query {
    */
   @Nonnull
   public Query whereLessThan(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereLessThan() after defining a boundary with startAt(), " +
+            "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(createFieldFilter(fieldPath, LESS_THAN, value));
+    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, LESS_THAN, value));
     return new Query(firestore, path, newOptions);
   }
 
@@ -376,8 +481,12 @@ public class Query {
    */
   @Nonnull
   public Query whereLessThanOrEqualTo(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereLessThanOrEqualTo() after defining a boundary with startAt(), " +
+            "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(createFieldFilter(fieldPath, LESS_THAN_OR_EQUAL, value));
+    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, LESS_THAN_OR_EQUAL, value));
     return new Query(firestore, path, newOptions);
   }
 
@@ -404,8 +513,12 @@ public class Query {
    */
   @Nonnull
   public Query whereGreaterThan(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereGreaterThan() after defining a boundary with startAt(), " +
+            "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(createFieldFilter(fieldPath, GREATER_THAN, value));
+    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, GREATER_THAN, value));
     return new Query(firestore, path, newOptions);
   }
 
@@ -432,8 +545,12 @@ public class Query {
    */
   @Nonnull
   public Query whereGreaterThanOrEqualTo(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereGreaterThanOrEqualTo() after defining a boundary with startAt(), " +
+            "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(createFieldFilter(fieldPath, GREATER_THAN_OR_EQUAL, value));
+    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, GREATER_THAN_OR_EQUAL, value));
     return new Query(firestore, path, newOptions);
   }
 
@@ -521,6 +638,22 @@ public class Query {
   }
 
   /**
+   * Creates and returns a new Query that starts at the provided document (inclusive). The starting
+   * position is relative to the order of the query. The document must contain all of the fields
+   * provided in the orderBy of this query.
+   *
+   * @param snapshot The snapshot of the document to start at.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query startAt(@Nonnull DocumentSnapshot snapshot) {
+    QueryOptions newOptions = new QueryOptions(options);
+    newOptions.fieldOrders = createImplicitOrderBy();
+    newOptions.startCursor = createCursor(newOptions.fieldOrders, snapshot, true);
+    return new Query(firestore, path, newOptions);
+  }
+
+  /**
    * Creates and returns a new Query that starts at the provided fields relative to the order of the
    * query. The order of the field values must match the order of the order by clauses of the query.
    *
@@ -530,7 +663,7 @@ public class Query {
   @Nonnull
   public Query startAt(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.startCursor = createCursor(fieldValues, true);
+    newOptions.startCursor = createCursor(newOptions.fieldOrders, fieldValues, true);
     return new Query(firestore, path, newOptions);
   }
 
@@ -580,6 +713,22 @@ public class Query {
   }
 
   /**
+   * Creates and returns a new Query that starts after the provided document (exclusive). The
+   * starting position is relative to the order of the query. The document must contain all of the
+   * fields provided in the orderBy of this query.
+   *
+   * @param snapshot The snapshot of the document to start after.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query startAfter(@Nonnull DocumentSnapshot snapshot) {
+    QueryOptions newOptions = new QueryOptions(options);
+    newOptions.fieldOrders = createImplicitOrderBy();
+    newOptions.startCursor = createCursor(newOptions.fieldOrders, snapshot, false);
+    return new Query(firestore, path, newOptions);
+  }
+
+  /**
    * Creates and returns a new Query that starts after the provided fields relative to the order of
    * the query. The order of the field values must match the order of the order by clauses of the
    * query.
@@ -590,7 +739,23 @@ public class Query {
    */
   public Query startAfter(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.startCursor = createCursor(fieldValues, false);
+    newOptions.startCursor = createCursor(newOptions.fieldOrders, fieldValues, false);
+    return new Query(firestore, path, newOptions);
+  }
+
+  /**
+   * Creates and returns a new Query that ends before the provided document (exclusive). The end
+   * position is relative to the order of the query. The document must contain all of the fields
+   * provided in the orderBy of this query.
+   *
+   * @param snapshot The snapshot of the document to end before.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query endBefore(@Nonnull DocumentSnapshot snapshot) {
+    QueryOptions newOptions = new QueryOptions(options);
+    newOptions.fieldOrders = createImplicitOrderBy();
+    newOptions.endCursor = createCursor(newOptions.fieldOrders, snapshot, true);
     return new Query(firestore, path, newOptions);
   }
 
@@ -605,7 +770,7 @@ public class Query {
   @Nonnull
   public Query endBefore(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.endCursor = createCursor(fieldValues, true);
+    newOptions.endCursor = createCursor(newOptions.fieldOrders, fieldValues, true);
     return new Query(firestore, path, newOptions);
   }
 
@@ -619,7 +784,23 @@ public class Query {
   @Nonnull
   public Query endAt(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.endCursor = createCursor(fieldValues, false);
+    newOptions.endCursor = createCursor(newOptions.fieldOrders, fieldValues, false);
+    return new Query(firestore, path, newOptions);
+  }
+
+  /**
+   * Creates and returns a new Query that ends at the provided document (inclusive). The end
+   * position is relative to the order of the query. The document must contain all of the fields
+   * provided in the orderBy of this query.
+   *
+   * @param snapshot The snapshot of the document to end at.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query endAt(@Nonnull DocumentSnapshot snapshot) {
+    QueryOptions newOptions = new QueryOptions(options);
+    newOptions.fieldOrders = createImplicitOrderBy();
+    newOptions.endCursor = createCursor(newOptions.fieldOrders, snapshot, false);
     return new Query(firestore, path, newOptions);
   }
 
@@ -634,7 +815,9 @@ public class Query {
       StructuredQuery.CompositeFilter.Builder compositeFilter =
           StructuredQuery.CompositeFilter.newBuilder();
       compositeFilter.setOp(CompositeFilter.Operator.AND);
-      compositeFilter.addAllFilters(options.fieldFilters);
+      for (FieldFilter fieldFilter : options.fieldFilters) {
+        compositeFilter.addFilters(fieldFilter.toProto());
+      }
       filter.setCompositeFilter(compositeFilter.build());
       structuredQuery.setWhere(filter.build());
     }
