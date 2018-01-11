@@ -206,10 +206,15 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   private LogEntry logEntryFor(ILoggingEvent e) {
-    String payload = e.getFormattedMessage();
+    StringBuilder payload = new StringBuilder(e.getFormattedMessage());
+    for (StackTraceElement stackEl : e.getCallerData()) {
+      payload.append("\n    ");
+      payload.append(stackEl.toString());
+    }
+
     Level level = e.getLevel();
     LogEntry.Builder builder =
-        LogEntry.newBuilder(Payload.StringPayload.of(payload))
+        LogEntry.newBuilder(Payload.StringPayload.of(payload.toString()))
             .setTimestamp(e.getTimeStamp())
             .setSeverity(severityFor(level));
 
