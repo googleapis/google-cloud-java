@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,7 +31,9 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
+//CHECKSTYLE OFF: AbbreviationAsWordInName
 public class RedactIT {
+  //CHECKSTYLE ON: AbbreviationAsWordInName
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
