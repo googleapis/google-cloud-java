@@ -26,7 +26,6 @@ import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.StringValue;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.Transaction;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
