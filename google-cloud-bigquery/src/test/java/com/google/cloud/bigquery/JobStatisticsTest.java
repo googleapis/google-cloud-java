@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,17 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.QueryStage.QueryStep;
-
-import org.junit.Test;
-
+import com.google.common.collect.ImmutableList;
 import java.util.List;
+import org.junit.Test;
 
 public class JobStatisticsTest {
 
@@ -157,12 +156,43 @@ public class JobStatisticsTest {
         ExtractStatistics.fromPb(EXTRACT_STATISTICS.toPb()));
     compareLoadStatistics(LOAD_STATISTICS, LoadStatistics.fromPb(LOAD_STATISTICS.toPb()));
     compareQueryStatistics(QUERY_STATISTICS, QueryStatistics.fromPb(QUERY_STATISTICS.toPb()));
-    compareStatistics(COPY_STATISTICS, JobStatistics.fromPb(COPY_STATISTICS.toPb()));
+    compareStatistics(COPY_STATISTICS, CopyStatistics.fromPb(COPY_STATISTICS.toPb()));
 
-    compareLoadStatistics(LOAD_STATISTICS_INCOMPLETE,
-        LoadStatistics.fromPb(LOAD_STATISTICS_INCOMPLETE.toPb()));
-    compareQueryStatistics(QUERY_STATISTICS_INCOMPLETE,
-        QueryStatistics.fromPb(QUERY_STATISTICS_INCOMPLETE.toPb()));
+    compareLoadStatistics(
+        LOAD_STATISTICS_INCOMPLETE, LoadStatistics.fromPb(LOAD_STATISTICS_INCOMPLETE.toPb()));
+    compareQueryStatistics(
+        QUERY_STATISTICS_INCOMPLETE, QueryStatistics.fromPb(QUERY_STATISTICS_INCOMPLETE.toPb()));
+  }
+
+  @Test
+  public void testIncomplete() {
+    // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2357
+    com.google.api.services.bigquery.model.Job job =
+        new com.google.api.services.bigquery.model.Job()
+            .setStatistics(
+                new com.google.api.services.bigquery.model.JobStatistics()
+                    .setCreationTime(1234L)
+                    .setStartTime(5678L));
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setCopy(new com.google.api.services.bigquery.model.JobConfigurationTableCopy()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(CopyStatistics.class);
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setLoad(new com.google.api.services.bigquery.model.JobConfigurationLoad()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(LoadStatistics.class);
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setExtract(new com.google.api.services.bigquery.model.JobConfigurationExtract()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(ExtractStatistics.class);
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setQuery(new com.google.api.services.bigquery.model.JobConfigurationQuery()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(QueryStatistics.class);
   }
 
   private void compareExtractStatistics(ExtractStatistics expected, ExtractStatistics value) {

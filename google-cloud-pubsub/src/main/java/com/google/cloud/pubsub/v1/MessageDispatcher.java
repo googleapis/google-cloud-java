@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.core.Distribution;
 import com.google.cloud.pubsub.v1.MessageDispatcher.OutstandingMessageBatch.OutstandingMessage;
+import com.google.common.collect.ArrayListMultimap;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
@@ -29,6 +30,8 @@ import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Deque;
 import java.util.Iterator;
@@ -50,6 +53,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
+import org.threeten.bp.temporal.ChronoUnit;
 
 /**
  * Dispatches messages to a message receiver while handling the messages acking and lease
@@ -98,11 +102,12 @@ class MessageDispatcher {
     final int deadlineExtensionSeconds;
 
     PendingModifyAckDeadline(int deadlineExtensionSeconds, String... ackIds) {
-      this.ackIds = new ArrayList<String>();
+      this(deadlineExtensionSeconds, Arrays.asList(ackIds));
+    }
+
+    private PendingModifyAckDeadline(int deadlineExtensionSeconds, Collection<String> ackIds) {
+      this.ackIds = new ArrayList<String>(ackIds);
       this.deadlineExtensionSeconds = deadlineExtensionSeconds;
-      for (String ackId : ackIds) {
-        addAckId(ackId);
-      }
     }
 
     public void addAckId(String ackId) {
@@ -426,21 +431,39 @@ class MessageDispatcher {
 
   @InternalApi
   void extendDeadlines() {
-    List<String> acksToSend = Collections.<String>emptyList();
-    PendingModifyAckDeadline modack = new PendingModifyAckDeadline(getMessageDeadlineSeconds());
+    int extendSeconds = getMessageDeadlineSeconds();
+    List<PendingModifyAckDeadline> modacks = new ArrayList<>();
+    PendingModifyAckDeadline modack = new PendingModifyAckDeadline(extendSeconds);
     Instant now = now();
+    Instant extendTo = now.plusSeconds(extendSeconds);
 
+    int count = 0;
     Iterator<Map.Entry<String, Instant>> it = pendingMessages.entrySet().iterator();
     while (it.hasNext()) {
       Map.Entry<String, Instant> entry = it.next();
-      if (entry.getValue().isBefore(now)) {
-        it.remove();
-      } else {
-        modack.ackIds.add(entry.getKey());
+      String ackId = entry.getKey();
+      Instant totalExpiration = entry.getValue();
+      // TODO(pongad): PendingModifyAckDeadline is created to dance around polling pull,
+      // since one modack RPC only takes one expiration.
+      // Whenever we delete polling pull, we should also delete PendingModifyAckDeadline,
+      // and just construct StreamingPullRequest directly.
+      if (totalExpiration.isAfter(extendTo)) {
+        modack.ackIds.add(ackId);
+        count++;
+        continue;
+      }
+      it.remove();
+      if (totalExpiration.isAfter(now)) {
+        int sec = Math.max(1, (int) now.until(totalExpiration, ChronoUnit.SECONDS));
+        modacks.add(new PendingModifyAckDeadline(sec, ackId));
+        count++;
       }
     }
+    modacks.add(modack);
+    logger.log(Level.FINER, "Sending {0} modacks", count);
 
-    ackProcessor.sendAckOperations(acksToSend, Collections.singletonList(modack));
+    List<String> acksToSend = Collections.<String>emptyList();
+    ackProcessor.sendAckOperations(acksToSend, modacks);
   }
 
   @InternalApi

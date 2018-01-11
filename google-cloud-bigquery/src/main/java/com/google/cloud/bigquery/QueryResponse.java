@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,196 +16,43 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.cloud.bigquery.BigQuery.QueryOption;
-import com.google.common.base.MoreObjects;
+import com.google.api.core.InternalApi;
+import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
+import javax.annotation.Nullable;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.Objects;
-
-/**
- * Google Cloud BigQuery Query Response. This class contains the results of a Query Job
- * ({@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)}) or of a
- * Query Request ({@link BigQuery#query(QueryJobConfiguration, QueryOption...)}).
- *
- * <p>Example usage of a query response:
- * <pre> {@code
- * QueryResponse response = bigquery.query(queryConfig);
- * List<BigQueryError> executionErrors = response.getExecutionErrors();
- * // look for errors in executionErrors
- * QueryResult result = response.getResult();
- * for(FieldValueList row : result.iterateAll()) {
- *   // do something with row
- * }
- * }</pre>
- *
- * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/getQueryResults">Get Query
- *     Results</a>
- * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/query">Query</a>
- */
-public class QueryResponse implements Serializable {
-
-  private static final long serialVersionUID = 3549226764825005655L;
-
-  private final QueryResult result;
-  private final String etag;
-  private final JobId jobId;
-  private final Long numDmlAffectedRows;
-  private final boolean jobCompleted;
-  private final List<BigQueryError> executionErrors;
-
-  static final class Builder {
-
-    private QueryResult result;
-    private String etag;
-    private JobId jobId;
-    private Long numDmlAffectedRows;
-    private boolean jobCompleted;
-    private List<BigQueryError> executionErrors;
-
-    private Builder() {}
-
-    Builder setResult(QueryResult result) {
-      this.result = result;
-      return this;
-    }
-
-    Builder setEtag(String etag) {
-      this.etag = etag;
-      return this;
-    }
-
-    Builder setJobId(JobId jobId) {
-      this.jobId = jobId;
-      return this;
-    }
-
-    Builder setNumDmlAffectedRows(Long numDmlAffectedRows) {
-      this.numDmlAffectedRows = numDmlAffectedRows;
-      return this;
-    }
-
-    Builder setJobCompleted(boolean jobCompleted) {
-      this.jobCompleted = jobCompleted;
-      return this;
-    }
-
-    Builder setExecutionErrors(List<BigQueryError> executionErrors) {
-      this.executionErrors = executionErrors;
-      return this;
-    }
-
-    QueryResponse build() {
-      return new QueryResponse(this);
-    }
+@InternalApi
+@AutoValue
+public abstract class QueryResponse {
+  QueryResponse() {
+    // Package private so users can't subclass it but AutoValue can.
   }
 
-  private QueryResponse(Builder builder) {
-    this.result = builder.result;
-    this.etag = builder.etag;
-    this.jobId = builder.jobId;
-    this.numDmlAffectedRows = builder.numDmlAffectedRows;
-    this.jobCompleted = builder.jobCompleted;
-    this.executionErrors = builder.executionErrors != null ? builder.executionErrors
-      : ImmutableList.<BigQueryError>of();
-  }
+  // Only null if the job fails.
+  @Nullable
+  abstract Schema getSchema();
 
+  abstract boolean getCompleted();
 
-  /**
-   * Returns the result of the query. Returns {@code null} if {@link #jobCompleted()} is {@code
-   * false}.
-   */
-  public QueryResult getResult() {
-    return result;
-  }
+  abstract long getTotalRows();
 
-
-  /**
-   * Returns the hash of the {@code QueryResponse} resource or {@code null} if not set.
-   */
-  public String getEtag() {
-    return etag;
-  }
-
-
-  /**
-   * Returns the identity of the BigQuery Job that was created to run the query. This field will be
-   * present even if the original request timed out.
-   */
-  public JobId getJobId() {
-    return jobId;
-  }
-
-  /**
-   * Returns the number of rows affected by a DML statement. Present only for DML statements INSERT,
-   * UPDATE or DELETE.
-   */
-  public Long getNumDmlAffectedRows() { return numDmlAffectedRows; }
-
-  /**
-   * Returns whether the job running the query has completed or not. If {@link #getResult()} is not
-   * {@code null}, this method will always return {@code true}. If this method returns {@code false}
-   * {@link #getResult()} returns {@code null}. This method can be used to check if query execution
-   * completed and results are available.
-   */
-  public boolean jobCompleted() {
-    return jobCompleted;
-  }
-
-  /**
-   * Returns whether errors and warnings occurred during the execution of the job. If this method
-   * returns {@code true} it does not necessarily mean that the job has completed or was
-   * unsuccessful.
-   */
-  public boolean hasErrors() {
-    return !executionErrors.isEmpty();
-  }
-
-
-  /**
-   * Returns errors and warnings encountered during the running of the job, if any. Errors here do
-   * not necessarily mean that the job has completed or was unsuccessful.
-   */
-  public List<BigQueryError> getExecutionErrors() {
-    return executionErrors;
-  }
-
-  @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("result", result)
-        .add("etag", etag)
-        .add("jobId", jobId)
-        .add("numDmlAffectedRows", numDmlAffectedRows)
-        .add("jobCompleted", jobCompleted)
-        .add("executionErrors", executionErrors)
-        .toString();
-  }
-
-  @Override
-  public final int hashCode() {
-    return Objects.hash(result, etag, jobId, numDmlAffectedRows, jobCompleted, executionErrors);
-  }
-
-  @Override
-  public final boolean equals(Object obj) {
-    if (obj == this) {
-      return true;
-    }
-    if (obj == null || !obj.getClass().equals(QueryResponse.class)) {
-      return false;
-    }
-    QueryResponse response = (QueryResponse) obj;
-    return jobCompleted == response.jobCompleted
-        && Objects.equals(etag, response.etag)
-        && Objects.equals(result, response.result)
-        && Objects.equals(jobId, response.jobId)
-        && Objects.equals(numDmlAffectedRows, response.numDmlAffectedRows)
-        && Objects.equals(executionErrors, response.executionErrors);
-  }
+  abstract ImmutableList<BigQueryError> getErrors();
 
   static Builder newBuilder() {
-    return new Builder();
+    return new AutoValue_QueryResponse.Builder();
   }
+
+  @AutoValue.Builder
+  abstract static class Builder {
+    abstract Builder setSchema(Schema val);
+
+    abstract Builder setCompleted(boolean val);
+
+    abstract Builder setTotalRows(long val);
+
+    abstract Builder setErrors(ImmutableList<BigQueryError> val);
+
+    abstract QueryResponse build();
+  }
+
 }

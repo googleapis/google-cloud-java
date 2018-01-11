@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -231,7 +231,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           throw e;
         }
         logger.log(Level.FINE, "Retryable exception, will sleep and retry", e);
-        backoffSleep(context, backOff);
+        long delay = e.getRetryDelayInMillis();
+        if (delay != -1) {
+          backoffSleep(context, delay);
+        } else {
+          backoffSleep(context, backOff);
+        }
       } catch (Exception e) {
         Throwables.throwIfUnchecked(e);
         throw newSpannerException(ErrorCode.INTERNAL, "Unexpected exception thrown", e);
@@ -2396,7 +2401,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             assert buffer.isEmpty() || buffer.getLast().getResumeToken().equals(resumeToken);
             stream = null;
             try (Scope s = tracer.withSpan(span)) {
-              backoffSleep(context, backOff);
+              long delay = e.getRetryDelayInMillis();
+              if (delay != -1) {
+                backoffSleep(context, delay);
+              } else {
+                backoffSleep(context, backOff);
+              }
             }
             continue;
           }

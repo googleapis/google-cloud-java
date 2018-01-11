@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ package com.google.cloud.logging.spi.v2;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
@@ -138,6 +140,24 @@ public class GrpcLoggingRpc implements LoggingRpc {
           LoggingSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       MetricsSettings.Builder metricsBuilder =
           MetricsSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
+
+      // TODO(pongad): Take advantage of https://github.com/googleapis/gax-java/pull/452 when it's
+      // released.
+      BatchingSettings oldBatchSettings =
+          logBuilder.writeLogEntriesSettings().getBatchingSettings();
+      logBuilder
+          .writeLogEntriesSettings()
+          .setBatchingSettings(
+              oldBatchSettings
+                  .toBuilder()
+                  .setFlowControlSettings(
+                      oldBatchSettings
+                          .getFlowControlSettings()
+                          .toBuilder()
+                          .setLimitExceededBehavior(LimitExceededBehavior.Block)
+                          .build())
+                  .build());
+
       configClient = ConfigClient.create(confBuilder.build());
       loggingClient = LoggingClient.create(logBuilder.build());
       metricsClient = MetricsClient.create(metricsBuilder.build());

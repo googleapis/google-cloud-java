@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.examples.bigquery;
 import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.CopyJobConfiguration;
 import com.google.cloud.bigquery.Dataset;
@@ -36,7 +35,6 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -621,17 +619,8 @@ public class BigQueryExample {
     @Override
     void run(BigQuery bigquery, QueryJobConfiguration queryConfig) throws Exception {
       System.out.println("Running query");
-      QueryResponse queryResponse = bigquery.query(queryConfig);
-      if (!queryResponse.hasErrors()) {
-        System.out.println("Query succeeded. Results:");
-        for (FieldValueList row : queryResponse.getResult().iterateAll()) {
-          System.out.println(row);
-        }
-      } else {
-        System.out.println("Query completed with errors. Errors:");
-        for (BigQueryError err : queryResponse.getExecutionErrors()) {
-          System.out.println(err);
-        }
+      for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
+        System.out.println(row);
       }
     }
 

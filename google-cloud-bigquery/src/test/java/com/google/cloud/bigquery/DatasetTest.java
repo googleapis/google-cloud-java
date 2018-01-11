@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -349,10 +349,10 @@ public class DatasetTest {
   }
 
   @Test
-  public void testBigquery() {
+  public void testBigQuery() {
     initializeExpectedDataset(1);
     replay(bigquery);
-    assertSame(serviceMockReturnsOptions, expectedDataset.getBigquery());
+    assertSame(serviceMockReturnsOptions, expectedDataset.getBigQuery());
   }
 
 
@@ -367,7 +367,7 @@ public class DatasetTest {
   private void compareDataset(Dataset expected, Dataset value) {
     assertEquals(expected, value);
     compareDatasetInfo(expected, value);
-    assertEquals(expected.getBigquery().getOptions(), value.getBigquery().getOptions());
+    assertEquals(expected.getBigQuery().getOptions(), value.getBigQuery().getOptions());
   }
 
   private void compareDatasetInfo(DatasetInfo expected, DatasetInfo value) {

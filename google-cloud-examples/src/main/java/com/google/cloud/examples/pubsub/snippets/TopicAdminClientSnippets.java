@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ public class TopicAdminClientSnippets {
     // [END pubsub_list_topics]
   }
 
-  /** Example of listing topics for a subscription. */
+  /** Example of listing subscriptions for a topic. */
   public ListTopicSubscriptionsPagedResponse listTopicSubscriptions(String topicId)
       throws Exception {
     // [START pubsub_list_topic_subscriptions]

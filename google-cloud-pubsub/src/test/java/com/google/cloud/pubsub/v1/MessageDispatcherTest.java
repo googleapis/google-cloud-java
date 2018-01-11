@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,13 +155,30 @@ public class MessageDispatcherTest {
   }
 
   @Test
+  public void testExtension_Close() throws Exception {
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    dispatcher.extendDeadlines();
+    assertThat(sentModAcks)
+        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
+    sentModAcks.clear();
+
+    // Default total expiration is an hour (60*60 seconds). We normally would extend by 10s.
+    // However, only extend by 5s here, since there's only 5s left before total expiration.
+    clock.advance(60 * 60 - 5, TimeUnit.SECONDS);
+    dispatcher.extendDeadlines();
+    assertThat(sentModAcks).contains(ModAckItem.of(TEST_MESSAGE.getAckId(), 5));
+  }
+
+  @Test
   public void testExtension_GiveUp() throws Exception {
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
     dispatcher.extendDeadlines();
     assertThat(sentModAcks)
         .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
-
     sentModAcks.clear();
+
+    // If we run extendDeadlines after totalExpiration, we shouldn't send anything.
+    // In particular, don't send negative modacks.
     clock.advance(1, TimeUnit.DAYS);
     dispatcher.extendDeadlines();
     assertThat(sentModAcks).isEmpty();

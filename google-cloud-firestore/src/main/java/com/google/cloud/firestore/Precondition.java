@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,14 @@ public final class Precondition {
   @Nonnull
   public static Precondition updatedAt(Instant updateTime) {
     return new Precondition(null, updateTime);
+  }
+
+  boolean isEmpty() {
+    return exists == null && updateTime == null;
+  }
+
+  boolean hasExists() {
+    return exists != null;
   }
 
   com.google.firestore.v1beta1.Precondition toPb() {

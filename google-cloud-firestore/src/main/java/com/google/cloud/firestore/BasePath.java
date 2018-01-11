@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,6 +110,11 @@ abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
       }
     }
     return Integer.compare(this.getSegments().size(), other.getSegments().size());
+  }
+
+  /** Returns the number of path components. */
+  int size() {
+    return this.getSegments().size();
   }
 
   abstract String[] splitChildPath(String path);

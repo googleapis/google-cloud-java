@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,7 @@ public class TransactionRunnerImplTest {
 
   @Test
   public void runAbort() {
-    runTransaction(createRetryException());
+    runTransaction(createRetryException(Status.Code.ABORTED));
     ArgumentCaptor<Long> backoffMillis = ArgumentCaptor.forClass(Long.class);
     verify(sleeper, times(1)).backoffSleep(Mockito.<Context>any(), backoffMillis.capture());
     assertThat(backoffMillis.getValue()).isEqualTo(1001L);
@@ -81,7 +81,7 @@ public class TransactionRunnerImplTest {
   @Test
   public void commitAbort() {
     final SpannerException error =
-        SpannerExceptionFactory.newSpannerException(createRetryException());
+        SpannerExceptionFactory.newSpannerException(createRetryException(Status.Code.ABORTED));
     when(rpc.commit(Mockito.<CommitRequest>any(), Mockito.<Map<Option, ?>>any()))
         .thenThrow(error)
         .thenReturn(
@@ -106,9 +106,15 @@ public class TransactionRunnerImplTest {
     assertThat(backoffMillis.getValue()).isEqualTo(1001L);
   }
 
-  private StatusRuntimeException createRetryException() {
+  @Test(expected = SpannerException.class)
+  public void runResourceExhaustedNoRetry() throws Exception {
+    runTransaction(
+        new StatusRuntimeException(Status.fromCodeValue(Status.Code.RESOURCE_EXHAUSTED.value())));
+  }
+
+  private StatusRuntimeException createRetryException(Status.Code code) {
     Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
-    Status status = Status.fromCodeValue(Status.Code.ABORTED.value());
+    Status status = Status.fromCodeValue(code.value());
     Metadata trailers = new Metadata();
     RetryInfo retryInfo =
         RetryInfo.newBuilder()

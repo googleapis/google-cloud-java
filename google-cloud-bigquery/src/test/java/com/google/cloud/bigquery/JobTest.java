@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.collect.ObjectArrays.concat;
+import static com.google.common.truth.Truth.assertThat;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.expect;
@@ -30,15 +31,16 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
-
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.common.collect.ImmutableList;
+import java.util.Collections;
 import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
 import org.threeten.bp.Duration;
 
 public class JobTest {
@@ -130,7 +132,7 @@ public class JobTest {
     assertEquals(JOB_STATUS, builtJob.getStatus());
     assertEquals(COPY_CONFIGURATION, builtJob.getConfiguration());
     assertEquals(COPY_JOB_STATISTICS, builtJob.getStatistics());
-    assertSame(serviceMockReturnsOptions, builtJob.getBigquery());
+    assertSame(serviceMockReturnsOptions, builtJob.getBigQuery());
   }
 
   @Test
@@ -224,7 +226,8 @@ public class JobTest {
 
   @Test
   public void testWaitForAndGetQueryResults() throws InterruptedException {
-    QueryJobConfiguration jobConfig = QueryJobConfiguration.of("SELECT 1");
+    QueryJobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder("SELECT 1").setDestinationTable(TABLE_ID1).build();
     QueryStatistics jobStatistics =
         QueryStatistics.newBuilder()
             .setCreationTimestamp(1L)
@@ -246,18 +249,55 @@ public class JobTest {
     initializeExpectedJob(2, jobInfo);
     JobStatus status = createStrictMock(JobStatus.class);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
+    expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock()).times(2);
     Job completedJob = expectedJob.toBuilder().setStatus(status).build();
-    QueryResponse completedQuery = QueryResponse.newBuilder().setJobCompleted(true).build();
+    // TODO(pongad): remove when we bump gax to 1.15.
+    Page<FieldValueList> emptyPage =
+        new Page<FieldValueList>() {
+          @Override
+          public boolean hasNextPage() {
+            return false;
+          }
+
+          @Override
+          public String getNextPageToken() {
+            return "";
+          }
+
+          @Override
+          public Page<FieldValueList> getNextPage() {
+            return null;
+          }
+
+          @Override
+          public Iterable<FieldValueList> iterateAll() {
+            return Collections.emptyList();
+          }
+
+          @Override
+          public Iterable<FieldValueList> getValues() {
+            return Collections.emptyList();
+          }
+        };
+    TableResult result = new TableResult(Schema.of(), 0, emptyPage);
+    QueryResponse completedQuery =
+        QueryResponse.newBuilder()
+            .setCompleted(true)
+            .setTotalRows(0)
+            .setSchema(Schema.of())
+            .setErrors(ImmutableList.<BigQueryError>of())
+            .build();
 
     expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS)).andReturn(completedQuery);
     expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(completedJob);
-    expect(bigquery.getQueryResults(jobInfo.getJobId())).andReturn(completedQuery);
+    expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS))
+        .andReturn(completedQuery);
+    expect(bigquery.listTableData(TABLE_ID1, Schema.of())).andReturn(result);
 
     replay(status, bigquery, mockOptions);
     initializeJob(jobInfo);
-    assertSame(completedJob, job.waitFor(TEST_RETRY_OPTIONS));
-    assertSame(completedQuery, job.getQueryResults());
+    assertThat(job.waitFor(TEST_RETRY_OPTIONS)).isSameAs(completedJob);
+    assertThat(job.getQueryResults().iterateAll()).isEmpty();
     verify(status, mockOptions);
   }
 
@@ -395,10 +435,10 @@ public class JobTest {
   }
 
   @Test
-  public void testBigquery() {
+  public void testBigQuery() {
     initializeExpectedJob(1);
     replay(bigquery);
-    assertSame(serviceMockReturnsOptions, expectedJob.getBigquery());
+    assertSame(serviceMockReturnsOptions, expectedJob.getBigQuery());
   }
 
   @Test
@@ -411,7 +451,7 @@ public class JobTest {
   private void compareJob(Job expected, Job value) {
     assertEquals(expected, value);
     compareJobInfo(expected, value);
-    assertEquals(expected.getBigquery().getOptions(), value.getBigquery().getOptions());
+    assertEquals(expected.getBigQuery().getOptions(), value.getBigQuery().getOptions());
   }
 
   private void compareJobInfo(JobInfo expected, JobInfo value) {

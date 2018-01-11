@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   private final SubscriberStub asyncStub;
   private final String subscription;
-  private final ScheduledExecutorService executor;
+  private final ScheduledExecutorService systemExecutor;
   private final MessageDispatcher messageDispatcher;
 
   private final AtomicLong channelReconnectBackoffMillis =
@@ -79,10 +79,10 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       FlowController flowController,
       Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches,
       ScheduledExecutorService executor,
-      @Nullable ScheduledExecutorService alarmsExecutor,
+      ScheduledExecutorService systemExecutor,
       ApiClock clock) {
     this.subscription = subscription;
-    this.executor = executor;
+    this.systemExecutor = systemExecutor;
     this.asyncStub = asyncStub;
     this.messageDispatcher =
         new MessageDispatcher(
@@ -94,7 +94,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             flowController,
             outstandingMessageBatches,
             executor,
-            alarmsExecutor,
+            systemExecutor,
             clock);
   }
 
@@ -246,7 +246,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                 Math.min(backoffMillis * 2, MAX_CHANNEL_RECONNECT_BACKOFF.toMillis());
             channelReconnectBackoffMillis.set(newBackoffMillis);
 
-            executor.schedule(
+            systemExecutor.schedule(
                 new Runnable() {
                   @Override
                   public void run() {

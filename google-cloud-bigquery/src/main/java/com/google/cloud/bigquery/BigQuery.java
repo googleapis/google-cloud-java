@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
@@ -27,7 +28,6 @@ import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -434,8 +434,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
     /**
      * Returns an option that sets how long to wait for the query to complete, in milliseconds,
-     * before returning. Default is 10 seconds. If the timeout passes before the job completes,
-     * {@link QueryResponse#jobCompleted()} will be {@code false}.
+     * before returning. Default is 10 seconds.
      */
     public static QueryResultsOption maxWaitTime(long maxWaitTime) {
       checkArgument(maxWaitTime >= 0);
@@ -862,10 +861,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Lists the table's rows.
    *
    * <p>Example of listing table rows, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
-   * Page<FieldValueList> tableData =
+   * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+   * // simply omit the option.
+   * TableResult tableData =
    *     bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
    * for (FieldValueList row : tableData.iterateAll()) {
    *   // do something with the row
@@ -874,18 +876,20 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  Page<FieldValueList> listTableData(String datasetId, String tableId,
-      TableDataListOption... options);
+  TableResult listTableData(String datasetId, String tableId, TableDataListOption... options);
 
   /**
    * Lists the table's rows.
    *
    * <p>Example of listing table rows, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * TableId tableIdObject = TableId.of(datasetName, tableName);
-   * Page<FieldValueList> tableData =
+   * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+   * // simply omit the option.
+   * TableResult tableData =
    *     bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
    * for (FieldValueList row : rowIterator.hasNext()) {
    *   // do something with the row
@@ -894,7 +898,54 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  Page<FieldValueList> listTableData(TableId tableId, TableDataListOption... options);
+  TableResult listTableData(TableId tableId, TableDataListOption... options);
+
+  /**
+   * Lists the table's rows. If the {@code schema} is not {@code null}, it is available to the
+   * {@link FieldValueList} iterated over.
+   *
+   * <p>Example of listing table rows.
+   *
+   * <pre>{@code
+   * String datasetName = "my_dataset_name";
+   * String tableName = "my_table_name";
+   * Schema schema = ...;
+   * String field = "my_field";
+   * TableResult tableData =
+   *     bigquery.listTableData(datasetName, tableName, schema);
+   * for (FieldValueList row : tableData.iterateAll()) {
+   *   row.get(field)
+   * }
+   * }</pre>
+   *
+   * @throws BigQueryException upon failure
+   */
+  TableResult listTableData(
+      String datasetId, String tableId, Schema schema, TableDataListOption... options);
+
+  /**
+   * Lists the table's rows. If the {@code schema} is not {@code null}, it is available to the
+   * {@link FieldValueList} iterated over.
+   *
+   * <p>Example of listing table rows.
+   *
+   * <pre>{@code
+   * Schema schema =
+   *     Schema.of(
+   *         Field.of("word", LegacySQLTypeName.STRING),
+   *         Field.of("word_count", LegacySQLTypeName.STRING),
+   *         Field.of("corpus", LegacySQLTypeName.STRING),
+   *         Field.of("corpus_date", LegacySQLTypeName.STRING));
+   * TableResult tableData =
+   *     bigquery.listTableData(
+   *         TableId.of("bigquery-public-data", "samples", "shakespeare"), schema);
+   * FieldValueList row = tableData.getValues().iterator().next();
+   * System.out.println(row.get("word").getStringValue());
+   * }</pre>
+   *
+   * @throws BigQueryException upon failure
+   */
+  TableResult listTableData(TableId tableId, Schema schema, TableDataListOption... options);
 
   /**
    * Returns the requested job or {@code null} if not found.
@@ -993,7 +1044,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Runs the query associated with the request, using an internally-generated random JobId.
    *
    * <p>Example of running a query.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare`";
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.of(query);
    *
@@ -1002,29 +1054,20 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * //   QueryJobConfiguration queryConfig =
    * //       QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
    *
-   * QueryResponse response = bigquery.query(queryConfig);
-   * if (response.hasErrors()) {
-   *   // handle errors
-   * }
-   * QueryResult result = response.getResult();
-   * for (FieldValueList row : result.iterateAll()) {
+   * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
    *
    * <p>Example of running a query with query parameters.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String query =
    *     "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > ?";
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
    *     .addPositionalParameter(QueryParameterValue.int64(5))
    *     .build();
-   * QueryResponse response = bigquery.query(queryConfig);
-   * if (response.hasErrors()) {
-   *   // handle errors
-   * }
-   * QueryResult result = response.getResult();
-   * for (FieldValueList row : result.iterateAll()) {
+   * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
@@ -1032,60 +1075,43 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
    *     to complete
+   * @throws JobException if the job completes unsuccessfully
    */
-  QueryResponse query(QueryJobConfiguration configuration, QueryOption... options)
-      throws InterruptedException;
+  TableResult query(QueryJobConfiguration configuration, JobOption... options)
+      throws InterruptedException, JobException;
 
   /**
-   * Runs the query associated with the request, using the given job id.
+   * Runs the query associated with the request, using the given JobId.
    *
-   * <p>See {@link #query(QueryJobConfiguration, QueryOption...)} for examples on populating a
-   * {@link QueryJobConfiguration}.
+   * <p>See {@link #query(QueryJobConfiguration, JobOption...)} for examples on populating a {@link
+   * QueryJobConfiguration}.
    *
-   * <p>
-   * The recommended way to create a randomly generated JobId is the following:
+   * <p>The recommended way to create a randomly generated JobId is the following:
    *
-   * <pre> {@code
-   *  JobId jobId = JobId.of();
+   * <pre>{@code
+   * JobId jobId = JobId.of();
    * }</pre>
    *
    * For a user specified job id with an optional prefix use the following:
-   * <pre> {@code
-   *  JobId jobId = JobId.of("my_prefix-my_unique_job_id");
+   *
+   * <pre>{@code
+   * JobId jobId = JobId.of("my_prefix-my_unique_job_id");
    * }</pre>
    *
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
    *     to complete
+   * @throws JobException if the job completes unsuccessfully
    */
-  QueryResponse query(QueryJobConfiguration configuration, JobId jobId, QueryOption... options)
-      throws InterruptedException;
+  TableResult query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
+      throws InterruptedException, JobException;
 
   /**
    * Returns results of the query associated with the provided job.
    *
-   * <p>Example of getting the results of query.
-   * <pre> {@code
-   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare`";
-   * QueryJobConfiguration queryConfig = QueryJobConfiguration.of(query);
-   * QueryResponse response = bigquery.query(queryConfig);
-   * // Wait for things to finish
-   * while (!response.jobCompleted()) {
-   *   Thread.sleep(1000);
-   *   response = bigquery.getQueryResults(response.getJobId());
-   * }
-   * if (response.hasErrors()) {
-   *   // handle errors
-   * }
-   * QueryResult result = response.getResult();
-   * Iterator<FieldValueList> rowIterator = result.iterateAll();
-   * for (FieldValueList row : result.iterateAll()) {
-   *   // do something with the data
-   * }
-   * }</pre>
-   *
-   * @throws BigQueryException upon failure
+   * <p>Users are encouraged to use {@link Job#getQueryResults(QueryResultsOption...)} instead.
    */
+  @InternalApi
   QueryResponse getQueryResults(JobId jobId, QueryResultsOption... options);
 
   /**

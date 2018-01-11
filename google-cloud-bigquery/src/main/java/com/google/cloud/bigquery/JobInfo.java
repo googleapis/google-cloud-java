@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.bigquery;
 import com.google.api.services.bigquery.model.Job;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -178,7 +177,7 @@ public class JobInfo implements Serializable {
         this.status = JobStatus.fromPb(jobPb.getStatus());
       }
       if (jobPb.getStatistics() != null) {
-        this.statistics = JobStatistics.fromPb(jobPb.getStatistics());
+        this.statistics = JobStatistics.fromPb(jobPb);
       }
       this.userEmail = jobPb.getUserEmail();
       this.configuration = JobConfiguration.fromPb(jobPb.getConfiguration());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -893,7 +893,8 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * The HTTP method to be used with the signed URL.
+     * The HTTP method to be used with the signed URL. 
+     * If this method is not called, defaults to GET.
      */
     public static SignUrlOption httpMethod(HttpMethod httpMethod) {
       return new SignUrlOption(Option.HTTP_METHOD, httpMethod.name());
@@ -902,6 +903,7 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Use it if signature should include the blob's content-type.
      * When used, users of the signed URL should include the blob's content-type with their request.
+     * If using this URL from a browser, you must include a content type that matches what the browser will send.
      */
     public static SignUrlOption withContentType() {
       return new SignUrlOption(Option.CONTENT_TYPE, true);
