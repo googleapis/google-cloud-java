@@ -27,14 +27,8 @@
       <artifactId>google-cloud-core-http</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud.datastore</groupId>
-      <artifactId>datastore-v1-protos</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>com.google.api.grpc</groupId>
-          <artifactId>grpc-google-common-protos</artifactId>
-        </exclusion>
-      </exclusions>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-datastore-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.cloud.datastore</groupId>
