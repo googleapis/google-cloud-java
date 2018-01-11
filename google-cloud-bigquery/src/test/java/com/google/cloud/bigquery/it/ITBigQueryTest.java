@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +33,6 @@ import com.google.cloud.bigquery.BigQuery.DatasetOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
-import com.google.cloud.bigquery.BigQuery.QueryOption;
-import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryError;
@@ -52,6 +50,7 @@ import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
@@ -59,7 +58,6 @@ import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
-import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -67,6 +65,7 @@ import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.TimePartitioning;
 import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.cloud.bigquery.ViewDefinition;
@@ -428,11 +427,10 @@ public class ITBigQueryTest {
         .setDefaultDataset(DatasetId.of(DATASET))
         .setUseLegacySql(true)
         .build();
-    QueryResponse response = bigquery.query(
-        config, QueryOption.of(QueryResultsOption.maxWaitTime(60000L)));
+    TableResult result = bigquery.query(config);
     long integerValue = 0;
     int rowCount = 0;
-    for (FieldValueList row : response.getResult().getValues()) {
+    for (FieldValueList row : result.getValues()) {
       FieldValue timestampCell = row.get(0);
       assertEquals(timestampCell, row.get("TimestampField"));
       FieldValue stringCell = row.get(1);
@@ -488,12 +486,9 @@ public class ITBigQueryTest {
         .setDefaultDataset(DatasetId.of(DATASET))
         .setUseLegacySql(true)
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
+    TableResult result = bigquery.query(config);
     int rowCount = 0;
-    for (FieldValueList row : response.getResult().getValues()) {
+    for (FieldValueList row : result.getValues()) {
       FieldValue timestampCell = row.get(0);
       assertEquals(timestampCell, row.get("TimestampField"));
       FieldValue stringCell = row.get(1);
@@ -778,13 +773,12 @@ public class ITBigQueryTest {
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query)
         .setDefaultDataset(DatasetId.of(DATASET))
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
-    assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
+    Job job = bigquery.create(JobInfo.of(JobId.of(), config));
+
+    TableResult result = job.getQueryResults();
+    assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
     int rowCount = 0;
-    for (FieldValueList row : response.getResult().getValues()) {
+    for (FieldValueList row : result.getValues()) {
       FieldValue timestampCell = row.get(0);
       assertEquals(timestampCell, row.get("TimestampField"));
       FieldValue stringCell = row.get(1);
@@ -800,8 +794,9 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
-    Job queryJob = bigquery.getJob(response.getJobId());
-    JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
+
+    Job job2 = bigquery.getJob(job.getJobId());
+    JobStatistics.QueryStatistics statistics = job2.getStatistics();
     assertNotNull(statistics.getQueryPlan());
   }
 
@@ -830,12 +825,9 @@ public class ITBigQueryTest {
         .addPositionalParameter(int64Parameter)
         .addPositionalParameter(float64Parameter)
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
-    assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
-    assertEquals(2, Iterables.size(response.getResult().getValues()));
+    TableResult result = bigquery.query(config);
+    assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
+    assertEquals(2, Iterables.size(result.getValues()));
   }
 
   @Test
@@ -853,12 +845,9 @@ public class ITBigQueryTest {
         .addNamedParameter("stringParam", stringParameter)
         .addNamedParameter("integerList", intArrayParameter)
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
-    assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
-    assertEquals(2, Iterables.size(response.getResult().getValues()));
+    TableResult result = bigquery.query(config);
+    assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
+    assertEquals(2, Iterables.size(result.getValues()));
   }
 
   @Test
@@ -870,10 +859,9 @@ public class ITBigQueryTest {
         .setUseLegacySql(false)
         .addNamedParameter("p", bytesParameter)
         .build();
-    QueryResponse response = bigquery.query(
-        config, QueryOption.of(QueryResultsOption.maxWaitTime(60000L)));
+    TableResult result = bigquery.query(config);
     int rowCount = 0;
-    for (FieldValueList row : response.getResult().getValues()) {
+    for (FieldValueList row : result.getValues()) {
       rowCount++;
       assertEquals(2, row.get(0).getLongValue());
       assertEquals(2, row.get("length").getLongValue());
@@ -1034,11 +1022,10 @@ public class ITBigQueryTest {
     remoteJob = remoteJob.waitFor();
     assertNull(remoteJob.getStatus().getError());
 
-    QueryResponse response = remoteJob.getQueryResults();
-    assertFalse(response.hasErrors());
-    assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
+    TableResult result = remoteJob.getQueryResults();
+    assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
     int rowCount = 0;
-    for (FieldValueList row : response.getResult().getValues()) {
+    for (FieldValueList row : result.getValues()) {
       FieldValue timestampCell = row.get(0);
       FieldValue stringCell = row.get(1);
       FieldValue booleanCell = row.get(2);

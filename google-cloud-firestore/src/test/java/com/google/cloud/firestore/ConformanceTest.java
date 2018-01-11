@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,6 @@ import com.google.cloud.firestore.conformance.TestDefinition.UpdatePathsTest;
 import com.google.cloud.firestore.conformance.TestDefinition.UpdateTest;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableSet;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.Precondition;
@@ -72,39 +71,16 @@ import org.threeten.bp.Instant;
 
 @RunWith(AllTests.class)
 public class ConformanceTest {
-  /** Interface implemented by the conformance test cases. */
-  private interface ConformanceTestCase extends Test, Describable { }
-
   private static final String TEST_FILE = "./src/test/resources/test_data.binprotos";
 
-  // The Firestore Java SDK currently does not strip empty writes. These tests fail without this
-  // optimization.
+  /** Interface implemented by the conformance test cases. */
+  private interface ConformanceTestCase extends Test, Describable {}
+
   /** Excluded tests by test description. */
-  private Set<String> excludedTests =
-      ImmutableSet.<String>builder()
-          .add(
-              "set: nested ServerTimestamp field",
-              "set: multiple ServerTimestamp fields",
-              "create: nested ServerTimestamp field",
-              "create: multiple ServerTimestamp fields",
-              "create: ServerTimestamp alone",
-              "set: ServerTimestamp with MergeAll",
-              "set: ServerTimestamp alone with MergeAll",
-              "set-merge: ServerTimestamp with Merge of both fields",
-              "set-merge: If no ordinary values in Merge, no write",
-              "update: ServerTimestamp alone",
-              "update: ServerTimestamp with data",
-              "update: nested ServerTimestamp field",
-              "update: multiple ServerTimestamp fields",
-              "update: ServerTimestamp with dotted field",
-              "update-paths: ServerTimestamp alone",
-              "update-paths: ServerTimestamp with data",
-              "update-paths: nested ServerTimestamp field",
-              "update-paths: multiple ServerTimestamp fields")
-          .build();
+  private final Set<String> excludedTests = Collections.emptySet();
 
   /** If non-empty, only runs tests included in this set. */
-  private Set<String> includedTests = Collections.emptySet();
+  private final Set<String> includedTests = Collections.emptySet();
 
   @Spy
   private FirestoreImpl firestoreMock =
@@ -215,9 +191,9 @@ public class ConformanceTest {
       return convertMap((Map<String, Object>) data);
     } else if (data instanceof List) {
       return convertArray((List<Object>) data);
-    } else if (data.equals("Delete")) {
+    } else if ("Delete".equals(data)) {
       return FieldValue.delete();
-    } else if (data.equals("ServerTimestamp")) {
+    } else if ("ServerTimestamp".equals(data)) {
       return FieldValue.serverTimestamp();
     } else if (data instanceof Double
         && Double.compare((double) data, Math.floor((double) data)) == 0) {
@@ -251,7 +227,7 @@ public class ConformanceTest {
           read);
       TestDefinition.Test testDefinition = TestDefinition.Test.parseFrom(buffer);
 
-      if ((!includedTests.isEmpty() && !includedTests.contains(testDefinition.getDescription()))
+      if (!includedTests.isEmpty() && !includedTests.contains(testDefinition.getDescription())
           || excludedTests.contains(testDefinition.getDescription())) {
         continue;
       }

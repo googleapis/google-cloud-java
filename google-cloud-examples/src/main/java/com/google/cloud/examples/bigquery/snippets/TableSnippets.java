@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,6 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
-import com.google.cloud.bigquery.FieldValueList;
-import org.threeten.bp.Duration;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
@@ -32,18 +30,19 @@ import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import org.threeten.bp.Duration;
 
 /**
  * This class contains a number of snippets for the {@link Table} class.
@@ -168,9 +167,25 @@ public class TableSnippets {
   // [TARGET list(TableDataListOption...)]
   public Page<FieldValueList> list() {
     // [START list]
+    // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+    // simply omit the option.
     Page<FieldValueList> page = table.list(TableDataListOption.pageSize(100));
     for (FieldValueList row : page.iterateAll()) {
       // do something with the row
+    }
+    // [END list]
+    return page;
+  }
+
+  /** Example of listing rows in the table. */
+  // [TARGET list(Schema, TableDataListOption...)]
+  // [VARIABLE ...]
+  // [VARIABLE "my_field"]
+  public Page<FieldValueList> list(Schema schema, String field) {
+    // [START list]
+    Page<FieldValueList> page = table.list(schema);
+    for (FieldValueList row : page.iterateAll()) {
+      row.get(field);
     }
     // [END list]
     return page;

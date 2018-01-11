@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,18 @@ package com.google.cloud.spanner;
 
 import com.google.cloud.grpc.BaseGrpcServiceException;
 import com.google.common.base.Preconditions;
+import com.google.protobuf.util.Durations;
+import com.google.rpc.RetryInfo;
+import io.grpc.Metadata;
+import io.grpc.Status;
+import io.grpc.protobuf.ProtoUtils;
 import javax.annotation.Nullable;
 
 /** Base exception type for all exceptions produced by the Cloud Spanner service. */
 public class SpannerException extends BaseGrpcServiceException {
   private static final long serialVersionUID = 20150916L;
+  private static final Metadata.Key<RetryInfo> KEY_RETRY_INFO =
+      ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
 
   private final ErrorCode code;
 
@@ -48,4 +55,26 @@ public class SpannerException extends BaseGrpcServiceException {
   enum DoNotConstructDirectly {
     ALLOWED
   }
+
+  /**
+   * Return the retry delay for operation in milliseconds. Return -1 if this does not specify any
+   * retry delay.
+   */
+  public long getRetryDelayInMillis() {
+    return extractRetryDelay(this.getCause());
+  }
+
+  static long extractRetryDelay(Throwable cause) {
+    if (cause != null) {
+      Metadata trailers = Status.trailersFromThrowable(cause);
+      if (trailers != null && trailers.containsKey(KEY_RETRY_INFO)) {
+        RetryInfo retryInfo = trailers.get(KEY_RETRY_INFO);
+        if (retryInfo.hasRetryDelay()) {
+          return Durations.toMillis(retryInfo.getRetryDelay());
+        }
+      }
+    }
+    return -1L;
+  }
+
 }

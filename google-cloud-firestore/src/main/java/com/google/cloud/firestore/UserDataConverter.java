@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,9 @@ class UserDataConverter {
         }
       };
 
+  private UserDataConverter() {
+  }
+
   /**
    * Encodes a Java Object to a Firestore Value proto.
    *
@@ -64,11 +67,12 @@ class UserDataConverter {
    * @param options Encoding opions to use for this value.
    * @return The Value proto.
    */
+  @Nullable
   static Value encodeValue(
       FieldPath path, @Nullable Object sanitizedObject, EncodingOptions options) {
     if (sanitizedObject == FieldValue.DELETE_SENTINEL) {
-      Preconditions.checkArgument(options.allowDelete(path),
-          "Encountered unexpected delete sentinel at field '%s'.", path);
+      Preconditions.checkArgument(
+          options.allowDelete(path), "Encountered unexpected delete sentinel at field '%s'.", path);
       return null;
     } else if (sanitizedObject == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
       return null;
@@ -113,13 +117,24 @@ class UserDataConverter {
       return Value.newBuilder().setReferenceValue(docRef.getName()).build();
     } else if (sanitizedObject instanceof Map) {
       MapValue.Builder res = MapValue.newBuilder();
-      for (Map.Entry<String, Object> entry : ((Map<String, Object>) sanitizedObject).entrySet()) {
+      Map<String, Object> map = (Map<String, Object>) sanitizedObject;
+
+      for (Map.Entry<String, Object> entry : map.entrySet()) {
         Value encodedValue = encodeValue(path.append(entry.getKey()), entry.getValue(), options);
         if (encodedValue != null) {
           res.putFields(entry.getKey(), encodedValue);
         }
       }
-      return Value.newBuilder().setMapValue(res.build()).build();
+
+      // If we encounter an empty object, we always need to send it to make sure
+      // the server creates a map entry.
+      if (map.isEmpty() || res.getFieldsCount() != 0) {
+        return Value.newBuilder().setMapValue(res.build()).build();
+      } else {
+        // The input map may only have contained field transforms, in which case we don't need to
+        // send the map.
+        return null;
+      }
     }
 
     throw FirestoreException.invalidState("Cannot convert %s to Firestore Value", sanitizedObject);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Document;
 import com.google.firestore.v1beta1.Value;
+import com.google.firestore.v1beta1.Write;
 import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -191,6 +192,11 @@ public final class DocumentSnapshot {
    */
   public boolean exists() {
     return fields != null;
+  }
+
+  /** Checks whether this DocumentSnapshot contains any fields. */
+  boolean isEmpty() {
+    return fields == null || fields.isEmpty();
   }
 
   /**
@@ -395,12 +401,13 @@ public final class DocumentSnapshot {
     return docRef;
   }
 
-  Document.Builder toPb() {
+  Write.Builder toPb() {
     Preconditions.checkState(exists(), "Can't call toDocument() on a document that doesn't exist");
-    Document.Builder document = Document.newBuilder();
+    Write.Builder write = Write.newBuilder();
+    Document.Builder document = write.getUpdateBuilder();
     document.setName(docRef.getName());
     document.putAllFields(fields);
-    return document;
+    return write;
   }
 
   @Override
