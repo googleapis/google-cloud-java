@@ -141,7 +141,7 @@ public class Query {
 
     @Override
     boolean isEqualsFilter() {
-      return operator.equals(Operator.EQUAL);
+      return operator.equals(EQUAL);
     }
 
     Filter toProto() {
