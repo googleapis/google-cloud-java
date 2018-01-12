@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,8 +16,11 @@
 package com.google.cloud.dlp.v2beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
@@ -67,6 +70,7 @@ public class DlpServiceClientTest {
   private static MockDlpService mockDlpService;
   private static MockServiceHelper serviceHelper;
   private DlpServiceClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -84,9 +88,10 @@ public class DlpServiceClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     DlpServiceSettings settings =
         DlpServiceSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = DlpServiceClient.create(settings);
@@ -121,6 +126,10 @@ public class DlpServiceClientTest {
 
     Assert.assertEquals(inspectConfig, actualRequest.getInspectConfig());
     Assert.assertEquals(items, actualRequest.getItemsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -167,6 +176,10 @@ public class DlpServiceClientTest {
     Assert.assertEquals(deidentifyConfig, actualRequest.getDeidentifyConfig());
     Assert.assertEquals(inspectConfig, actualRequest.getInspectConfig());
     Assert.assertEquals(items, actualRequest.getItemsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -213,6 +226,10 @@ public class DlpServiceClientTest {
 
     Assert.assertEquals(privacyMetric, actualRequest.getPrivacyMetric());
     Assert.assertEquals(sourceTable, actualRequest.getSourceTable());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -273,6 +290,10 @@ public class DlpServiceClientTest {
     Assert.assertEquals(inspectConfig, actualRequest.getInspectConfig());
     Assert.assertEquals(storageConfig, actualRequest.getStorageConfig());
     Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -322,6 +343,10 @@ public class DlpServiceClientTest {
     ListInspectFindingsRequest actualRequest = (ListInspectFindingsRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsResultName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -358,6 +383,10 @@ public class DlpServiceClientTest {
 
     Assert.assertEquals(category, actualRequest.getCategory());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -393,6 +422,10 @@ public class DlpServiceClientTest {
     ListRootCategoriesRequest actualRequest = (ListRootCategoriesRequest) actualRequests.get(0);
 
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

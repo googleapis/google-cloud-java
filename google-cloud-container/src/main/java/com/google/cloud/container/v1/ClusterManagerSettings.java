@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -368,7 +368,7 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     return new Builder(this);
   }
 
-  private ClusterManagerSettings(Builder settingsBuilder) throws IOException {
+  protected ClusterManagerSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
     listClustersSettings = settingsBuilder.listClustersSettings().build();
@@ -490,11 +490,11 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
-    private Builder() {
+    protected Builder() {
       this((ClientContext) null);
     }
 
-    private Builder(ClientContext clientContext) {
+    protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listClustersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -597,7 +597,7 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
       Builder builder = new Builder((ClientContext) null);
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
       return initDefaults(builder);
     }
@@ -757,7 +757,7 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
       return builder;
     }
 
-    private Builder(ClusterManagerSettings settings) {
+    protected Builder(ClusterManagerSettings settings) {
       super(settings);
 
       listClustersSettings = settings.listClustersSettings.toBuilder();

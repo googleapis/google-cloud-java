@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.v2;
+package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -27,8 +27,8 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
@@ -43,8 +43,8 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
-import com.google.cloud.bigtable.v2.stub.BigtableStub;
-import com.google.cloud.bigtable.v2.stub.GrpcBigtableStub;
+import com.google.cloud.bigtable.data.v2.stub.BigtableStub;
+import com.google.cloud.bigtable.data.v2.stub.GrpcBigtableStub;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -56,7 +56,7 @@ import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link BigtableClient}.
+ * Settings class to configure an instance of {@link BaseBigtableDataClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -72,17 +72,17 @@ import org.threeten.bp.Duration;
  *
  * <pre>
  * <code>
- * BigtableSettings.Builder bigtableSettingsBuilder =
- *     BigtableSettings.newBuilder();
- * bigtableSettingsBuilder.mutateRowSettings().getRetrySettingsBuilder()
+ * BaseBigtableDataSettings.Builder baseBigtableDataSettingsBuilder =
+ *     BaseBigtableDataSettings.newBuilder();
+ * baseBigtableDataSettingsBuilder.mutateRowSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
- * BigtableSettings bigtableSettings = bigtableSettingsBuilder.build();
+ * BaseBigtableDataSettings baseBigtableDataSettings = baseBigtableDataSettingsBuilder.build();
  * </code>
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
-public class BigtableSettings extends ClientSettings<BigtableSettings> {
+public class BaseBigtableDataSettings extends ClientSettings<BaseBigtableDataSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -94,23 +94,24 @@ public class BigtableSettings extends ClientSettings<BigtableSettings> {
           .add("https://www.googleapis.com/auth/cloud-platform.read-only")
           .build();
 
-  private final StreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings;
-  private final StreamingCallSettings<SampleRowKeysRequest, SampleRowKeysResponse>
+  private final ServerStreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings;
+  private final ServerStreamingCallSettings<SampleRowKeysRequest, SampleRowKeysResponse>
       sampleRowKeysSettings;
   private final UnaryCallSettings<MutateRowRequest, MutateRowResponse> mutateRowSettings;
-  private final StreamingCallSettings<MutateRowsRequest, MutateRowsResponse> mutateRowsSettings;
+  private final ServerStreamingCallSettings<MutateRowsRequest, MutateRowsResponse>
+      mutateRowsSettings;
   private final UnaryCallSettings<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
       checkAndMutateRowSettings;
   private final UnaryCallSettings<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowSettings;
 
   /** Returns the object with the settings used for calls to readRows. */
-  public StreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings() {
+  public ServerStreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings() {
     return readRowsSettings;
   }
 
   /** Returns the object with the settings used for calls to sampleRowKeys. */
-  public StreamingCallSettings<SampleRowKeysRequest, SampleRowKeysResponse>
+  public ServerStreamingCallSettings<SampleRowKeysRequest, SampleRowKeysResponse>
       sampleRowKeysSettings() {
     return sampleRowKeysSettings;
   }
@@ -121,7 +122,7 @@ public class BigtableSettings extends ClientSettings<BigtableSettings> {
   }
 
   /** Returns the object with the settings used for calls to mutateRows. */
-  public StreamingCallSettings<MutateRowsRequest, MutateRowsResponse> mutateRowsSettings() {
+  public ServerStreamingCallSettings<MutateRowsRequest, MutateRowsResponse> mutateRowsSettings() {
     return mutateRowsSettings;
   }
 
@@ -181,7 +182,8 @@ public class BigtableSettings extends ClientSettings<BigtableSettings> {
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(BigtableSettings.class))
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(BaseBigtableDataSettings.class))
         .setTransportToken(
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
@@ -201,7 +203,7 @@ public class BigtableSettings extends ClientSettings<BigtableSettings> {
     return new Builder(this);
   }
 
-  private BigtableSettings(Builder settingsBuilder) throws IOException {
+  protected BaseBigtableDataSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
     readRowsSettings = settingsBuilder.readRowsSettings().build();
@@ -212,15 +214,16 @@ public class BigtableSettings extends ClientSettings<BigtableSettings> {
     readModifyWriteRowSettings = settingsBuilder.readModifyWriteRowSettings().build();
   }
 
-  /** Builder for BigtableSettings. */
-  public static class Builder extends ClientSettings.Builder<BigtableSettings, Builder> {
+  /** Builder for BaseBigtableDataSettings. */
+  public static class Builder extends ClientSettings.Builder<BaseBigtableDataSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final StreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse> readRowsSettings;
-    private final StreamingCallSettings.Builder<SampleRowKeysRequest, SampleRowKeysResponse>
+    private final ServerStreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse>
+        readRowsSettings;
+    private final ServerStreamingCallSettings.Builder<SampleRowKeysRequest, SampleRowKeysResponse>
         sampleRowKeysSettings;
     private final UnaryCallSettings.Builder<MutateRowRequest, MutateRowResponse> mutateRowSettings;
-    private final StreamingCallSettings.Builder<MutateRowsRequest, MutateRowsResponse>
+    private final ServerStreamingCallSettings.Builder<MutateRowsRequest, MutateRowsResponse>
         mutateRowsSettings;
     private final UnaryCallSettings.Builder<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
         checkAndMutateRowSettings;
@@ -261,20 +264,20 @@ public class BigtableSettings extends ClientSettings<BigtableSettings> {
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
-    private Builder() {
+    protected Builder() {
       this((ClientContext) null);
     }
 
-    private Builder(ClientContext clientContext) {
+    protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      readRowsSettings = StreamingCallSettings.newBuilder();
+      readRowsSettings = ServerStreamingCallSettings.newBuilder();
 
-      sampleRowKeysSettings = StreamingCallSettings.newBuilder();
+      sampleRowKeysSettings = ServerStreamingCallSettings.newBuilder();
 
       mutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      mutateRowsSettings = StreamingCallSettings.newBuilder();
+      mutateRowsSettings = ServerStreamingCallSettings.newBuilder();
 
       checkAndMutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -316,7 +319,7 @@ public class BigtableSettings extends ClientSettings<BigtableSettings> {
       return builder;
     }
 
-    private Builder(BigtableSettings settings) {
+    protected Builder(BaseBigtableDataSettings settings) {
       super(settings);
 
       readRowsSettings = settings.readRowsSettings.toBuilder();
@@ -343,12 +346,13 @@ public class BigtableSettings extends ClientSettings<BigtableSettings> {
     }
 
     /** Returns the builder for the settings used for calls to readRows. */
-    public StreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse> readRowsSettings() {
+    public ServerStreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse>
+        readRowsSettings() {
       return readRowsSettings;
     }
 
     /** Returns the builder for the settings used for calls to sampleRowKeys. */
-    public StreamingCallSettings.Builder<SampleRowKeysRequest, SampleRowKeysResponse>
+    public ServerStreamingCallSettings.Builder<SampleRowKeysRequest, SampleRowKeysResponse>
         sampleRowKeysSettings() {
       return sampleRowKeysSettings;
     }
@@ -359,7 +363,7 @@ public class BigtableSettings extends ClientSettings<BigtableSettings> {
     }
 
     /** Returns the builder for the settings used for calls to mutateRows. */
-    public StreamingCallSettings.Builder<MutateRowsRequest, MutateRowsResponse>
+    public ServerStreamingCallSettings.Builder<MutateRowsRequest, MutateRowsResponse>
         mutateRowsSettings() {
       return mutateRowsSettings;
     }
@@ -377,8 +381,8 @@ public class BigtableSettings extends ClientSettings<BigtableSettings> {
     }
 
     @Override
-    public BigtableSettings build() throws IOException {
-      return new BigtableSettings(this);
+    public BaseBigtableDataSettings build() throws IOException {
+      return new BaseBigtableDataSettings(this);
     }
   }
 }

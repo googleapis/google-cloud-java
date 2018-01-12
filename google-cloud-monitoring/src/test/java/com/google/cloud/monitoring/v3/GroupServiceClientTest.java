@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,8 +19,11 @@ import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupMemb
 
 import com.google.api.MonitoredResource;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.monitoring.v3.CreateGroupRequest;
@@ -50,16 +53,21 @@ import org.junit.Test;
 public class GroupServiceClientTest {
   private static MockGroupService mockGroupService;
   private static MockMetricService mockMetricService;
+  private static MockUptimeCheckService mockUptimeCheckService;
   private static MockServiceHelper serviceHelper;
   private GroupServiceClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockGroupService = new MockGroupService();
     mockMetricService = new MockMetricService();
+    mockUptimeCheckService = new MockUptimeCheckService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1", Arrays.<MockGrpcService>asList(mockGroupService, mockMetricService));
+            "in-process-1",
+            Arrays.<MockGrpcService>asList(
+                mockGroupService, mockMetricService, mockUptimeCheckService));
     serviceHelper.start();
   }
 
@@ -71,9 +79,10 @@ public class GroupServiceClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     GroupServiceSettings settings =
         GroupServiceSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = GroupServiceClient.create(settings);
@@ -112,6 +121,10 @@ public class GroupServiceClientTest {
     GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsGroupName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -160,6 +173,10 @@ public class GroupServiceClientTest {
 
     Assert.assertEquals(name, actualRequest.getNameAsProjectName());
     Assert.assertEquals(group, actualRequest.getGroup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -207,6 +224,10 @@ public class GroupServiceClientTest {
     UpdateGroupRequest actualRequest = (UpdateGroupRequest) actualRequests.get(0);
 
     Assert.assertEquals(group, actualRequest.getGroup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -240,6 +261,10 @@ public class GroupServiceClientTest {
     DeleteGroupRequest actualRequest = (DeleteGroupRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsGroupName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -262,7 +287,7 @@ public class GroupServiceClientTest {
   @SuppressWarnings("all")
   public void listGroupMembersTest() {
     String nextPageToken = "";
-    int totalSize = -705419236;
+    int totalSize = 705419236;
     MonitoredResource membersElement = MonitoredResource.newBuilder().build();
     List<MonitoredResource> members = Arrays.asList(membersElement);
     ListGroupMembersResponse expectedResponse =
@@ -286,6 +311,10 @@ public class GroupServiceClientTest {
     ListGroupMembersRequest actualRequest = (ListGroupMembersRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsGroupName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

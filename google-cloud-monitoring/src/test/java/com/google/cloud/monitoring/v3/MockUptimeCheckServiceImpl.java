@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,22 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.v2;
+package com.google.cloud.monitoring.v3;
 
 import com.google.api.core.BetaApi;
-import com.google.bigtable.v2.BigtableGrpc.BigtableImplBase;
-import com.google.bigtable.v2.CheckAndMutateRowRequest;
-import com.google.bigtable.v2.CheckAndMutateRowResponse;
-import com.google.bigtable.v2.MutateRowRequest;
-import com.google.bigtable.v2.MutateRowResponse;
-import com.google.bigtable.v2.MutateRowsRequest;
-import com.google.bigtable.v2.MutateRowsResponse;
-import com.google.bigtable.v2.ReadModifyWriteRowRequest;
-import com.google.bigtable.v2.ReadModifyWriteRowResponse;
-import com.google.bigtable.v2.ReadRowsRequest;
-import com.google.bigtable.v2.ReadRowsResponse;
-import com.google.bigtable.v2.SampleRowKeysRequest;
-import com.google.bigtable.v2.SampleRowKeysResponse;
+import com.google.monitoring.v3.CreateUptimeCheckConfigRequest;
+import com.google.monitoring.v3.DeleteUptimeCheckConfigRequest;
+import com.google.monitoring.v3.GetUptimeCheckConfigRequest;
+import com.google.monitoring.v3.ListUptimeCheckConfigsRequest;
+import com.google.monitoring.v3.ListUptimeCheckConfigsResponse;
+import com.google.monitoring.v3.ListUptimeCheckIpsRequest;
+import com.google.monitoring.v3.ListUptimeCheckIpsResponse;
+import com.google.monitoring.v3.UpdateUptimeCheckConfigRequest;
+import com.google.monitoring.v3.UptimeCheckConfig;
+import com.google.monitoring.v3.UptimeCheckServiceGrpc.UptimeCheckServiceImplBase;
+import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -38,11 +36,11 @@ import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
-public class MockBigtableImpl extends BigtableImplBase {
+public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
   private Queue<Object> responses;
 
-  public MockBigtableImpl() {
+  public MockUptimeCheckServiceImpl() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
   }
@@ -69,11 +67,13 @@ public class MockBigtableImpl extends BigtableImplBase {
   }
 
   @Override
-  public void readRows(ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
+  public void listUptimeCheckConfigs(
+      ListUptimeCheckConfigsRequest request,
+      StreamObserver<ListUptimeCheckConfigsResponse> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof ReadRowsResponse) {
+    if (response instanceof ListUptimeCheckConfigsResponse) {
       requests.add(request);
-      responseObserver.onNext((ReadRowsResponse) response);
+      responseObserver.onNext((ListUptimeCheckConfigsResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -83,12 +83,12 @@ public class MockBigtableImpl extends BigtableImplBase {
   }
 
   @Override
-  public void sampleRowKeys(
-      SampleRowKeysRequest request, StreamObserver<SampleRowKeysResponse> responseObserver) {
+  public void getUptimeCheckConfig(
+      GetUptimeCheckConfigRequest request, StreamObserver<UptimeCheckConfig> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof SampleRowKeysResponse) {
+    if (response instanceof UptimeCheckConfig) {
       requests.add(request);
-      responseObserver.onNext((SampleRowKeysResponse) response);
+      responseObserver.onNext((UptimeCheckConfig) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -98,12 +98,12 @@ public class MockBigtableImpl extends BigtableImplBase {
   }
 
   @Override
-  public void mutateRow(
-      MutateRowRequest request, StreamObserver<MutateRowResponse> responseObserver) {
+  public void createUptimeCheckConfig(
+      CreateUptimeCheckConfigRequest request, StreamObserver<UptimeCheckConfig> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof MutateRowResponse) {
+    if (response instanceof UptimeCheckConfig) {
       requests.add(request);
-      responseObserver.onNext((MutateRowResponse) response);
+      responseObserver.onNext((UptimeCheckConfig) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -113,12 +113,12 @@ public class MockBigtableImpl extends BigtableImplBase {
   }
 
   @Override
-  public void mutateRows(
-      MutateRowsRequest request, StreamObserver<MutateRowsResponse> responseObserver) {
+  public void updateUptimeCheckConfig(
+      UpdateUptimeCheckConfigRequest request, StreamObserver<UptimeCheckConfig> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof MutateRowsResponse) {
+    if (response instanceof UptimeCheckConfig) {
       requests.add(request);
-      responseObserver.onNext((MutateRowsResponse) response);
+      responseObserver.onNext((UptimeCheckConfig) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -128,13 +128,12 @@ public class MockBigtableImpl extends BigtableImplBase {
   }
 
   @Override
-  public void checkAndMutateRow(
-      CheckAndMutateRowRequest request,
-      StreamObserver<CheckAndMutateRowResponse> responseObserver) {
+  public void deleteUptimeCheckConfig(
+      DeleteUptimeCheckConfigRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof CheckAndMutateRowResponse) {
+    if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((CheckAndMutateRowResponse) response);
+      responseObserver.onNext((Empty) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -144,13 +143,13 @@ public class MockBigtableImpl extends BigtableImplBase {
   }
 
   @Override
-  public void readModifyWriteRow(
-      ReadModifyWriteRowRequest request,
-      StreamObserver<ReadModifyWriteRowResponse> responseObserver) {
+  public void listUptimeCheckIps(
+      ListUptimeCheckIpsRequest request,
+      StreamObserver<ListUptimeCheckIpsResponse> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof ReadModifyWriteRowResponse) {
+    if (response instanceof ListUptimeCheckIpsResponse) {
       requests.add(request);
-      responseObserver.onNext((ReadModifyWriteRowResponse) response);
+      responseObserver.onNext((ListUptimeCheckIpsResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

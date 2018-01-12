@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,9 +19,12 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSnapshotsPage
 import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
@@ -79,6 +82,7 @@ public class SubscriptionAdminClientTest {
   private static MockSubscriber mockSubscriber;
   private static MockServiceHelper serviceHelper;
   private SubscriptionAdminClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -100,9 +104,10 @@ public class SubscriptionAdminClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     SubscriptionAdminSettings settings =
         SubscriptionAdminSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = SubscriptionAdminClient.create(settings);
@@ -118,7 +123,7 @@ public class SubscriptionAdminClientTest {
   public void createSubscriptionTest() {
     SubscriptionName name2 = SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
     TopicNameOneof topic2 = TopicNameOneof.from(TopicName.of("[PROJECT]", "[TOPIC]"));
-    int ackDeadlineSeconds2 = -921632575;
+    int ackDeadlineSeconds2 = 921632575;
     boolean retainAckedMessages = false;
     Subscription expectedResponse =
         Subscription.newBuilder()
@@ -146,6 +151,10 @@ public class SubscriptionAdminClientTest {
     Assert.assertEquals(TopicNameOneof.from(topic), actualRequest.getTopicAsTopicNameOneof());
     Assert.assertEquals(pushConfig, actualRequest.getPushConfig());
     Assert.assertEquals(ackDeadlineSeconds, actualRequest.getAckDeadlineSeconds());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -193,6 +202,10 @@ public class SubscriptionAdminClientTest {
     GetSubscriptionRequest actualRequest = (GetSubscriptionRequest) actualRequests.get(0);
 
     Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -237,6 +250,10 @@ public class SubscriptionAdminClientTest {
     ListSubscriptionsRequest actualRequest = (ListSubscriptionsRequest) actualRequests.get(0);
 
     Assert.assertEquals(project, actualRequest.getProjectAsProjectName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -270,6 +287,10 @@ public class SubscriptionAdminClientTest {
     DeleteSubscriptionRequest actualRequest = (DeleteSubscriptionRequest) actualRequests.get(0);
 
     Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -307,6 +328,10 @@ public class SubscriptionAdminClientTest {
     Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
     Assert.assertEquals(ackIds, actualRequest.getAckIdsList());
     Assert.assertEquals(ackDeadlineSeconds, actualRequest.getAckDeadlineSeconds());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -344,6 +369,10 @@ public class SubscriptionAdminClientTest {
 
     Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
     Assert.assertEquals(ackIds, actualRequest.getAckIdsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -383,6 +412,10 @@ public class SubscriptionAdminClientTest {
     Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
     Assert.assertEquals(returnImmediately, actualRequest.getReturnImmediately());
     Assert.assertEquals(maxMessages, actualRequest.getMaxMessages());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -483,6 +516,10 @@ public class SubscriptionAdminClientTest {
 
     Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
     Assert.assertEquals(pushConfig, actualRequest.getPushConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -528,6 +565,10 @@ public class SubscriptionAdminClientTest {
     ListSnapshotsRequest actualRequest = (ListSnapshotsRequest) actualRequests.get(0);
 
     Assert.assertEquals(project, actualRequest.getProjectAsProjectName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -567,6 +608,10 @@ public class SubscriptionAdminClientTest {
 
     Assert.assertEquals(name, actualRequest.getNameAsSnapshotName());
     Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -601,6 +646,10 @@ public class SubscriptionAdminClientTest {
     DeleteSnapshotRequest actualRequest = (DeleteSnapshotRequest) actualRequests.get(0);
 
     Assert.assertEquals(snapshot, actualRequest.getSnapshotAsSnapshotName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -639,6 +688,10 @@ public class SubscriptionAdminClientTest {
 
     Assert.assertEquals(formattedResource, actualRequest.getResource());
     Assert.assertEquals(policy, actualRequest.getPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -676,6 +729,10 @@ public class SubscriptionAdminClientTest {
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -713,6 +770,10 @@ public class SubscriptionAdminClientTest {
 
     Assert.assertEquals(formattedResource, actualRequest.getResource());
     Assert.assertEquals(permissions, actualRequest.getPermissionsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

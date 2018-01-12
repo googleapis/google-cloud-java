@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -236,7 +236,7 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     return new Builder(this);
   }
 
-  private ConfigSettings(Builder settingsBuilder) throws IOException {
+  protected ConfigSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
     listSinksSettings = settingsBuilder.listSinksSettings().build();
@@ -423,11 +423,11 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
-    private Builder() {
+    protected Builder() {
       this((ClientContext) null);
     }
 
-    private Builder(ClientContext clientContext) {
+    protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listSinksSettings = PagedCallSettings.newBuilder(LIST_SINKS_PAGE_STR_FACT);
@@ -530,7 +530,7 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
       return builder;
     }
 
-    private Builder(ConfigSettings settings) {
+    protected Builder(ConfigSettings settings) {
       super(settings);
 
       listSinksSettings = settings.listSinksSettings.toBuilder();

@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,9 +35,8 @@ import javax.annotation.Generated;
 /**
  * Service Description: Manages conversational agents.
  *
- * <p>Refer to [documentation](https://dialogflow.com/docs/agents) for more details # about agents.
- *
- * <p>Standard methods.
+ * <p>Refer to the [Dialogflow documentation](https://dialogflow.com/docs/agents) for more details
+ * about agents. #
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -362,7 +361,8 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Trains the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -388,7 +388,8 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Trains the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -413,7 +414,8 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Trains the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -437,7 +439,8 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Trains the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -461,7 +464,9 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Exports the specified agent to a ZIP file.
    *
-   * <p>Operation&lt;response: ExportAgentResponse, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response:
+   * [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -487,7 +492,9 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Exports the specified agent to a ZIP file.
    *
-   * <p>Operation&lt;response: ExportAgentResponse, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response:
+   * [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -513,7 +520,9 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Exports the specified agent to a ZIP file.
    *
-   * <p>Operation&lt;response: ExportAgentResponse, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response:
+   * [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -538,7 +547,9 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Exports the specified agent to a ZIP file.
    *
-   * <p>Operation&lt;response: ExportAgentResponse, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response:
+   * [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -565,7 +576,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
    * types with the same name are replaced with the new versions from ImportAgentRequest.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -593,7 +605,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
    * types with the same name are replaced with the new versions from ImportAgentRequest.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -620,7 +633,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
    * types with the same name are replaced with the new versions from ImportAgentRequest.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -647,7 +661,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Replaces the current agent version with a new one. All the intents and entity types in the
    * older version are deleted.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -675,7 +690,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Replaces the current agent version with a new one. All the intents and entity types in the
    * older version are deleted.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -703,7 +719,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Replaces the current agent version with a new one. All the intents and entity types in the
    * older version are deleted.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *

@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.v2;
+package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
@@ -55,10 +58,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class BigtableClientTest {
+public class BaseBigtableDataClientTest {
   private static MockBigtable mockBigtable;
   private static MockServiceHelper serviceHelper;
-  private BigtableClient client;
+  private BaseBigtableDataClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -76,12 +80,13 @@ public class BigtableClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
-    BigtableSettings settings =
-        BigtableSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+    channelProvider = serviceHelper.createChannelProvider();
+    BaseBigtableDataSettings settings =
+        BaseBigtableDataSettings.newBuilder()
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = BigtableClient.create(settings);
+    client = BaseBigtableDataClient.create(settings);
   }
 
   @After
@@ -202,6 +207,10 @@ public class BigtableClientTest {
     Assert.assertEquals(tableName, actualRequest.getTableNameAsTableName());
     Assert.assertEquals(rowKey, actualRequest.getRowKey());
     Assert.assertEquals(mutations, actualRequest.getMutationsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -302,6 +311,10 @@ public class BigtableClientTest {
     Assert.assertEquals(predicateFilter, actualRequest.getPredicateFilter());
     Assert.assertEquals(trueMutations, actualRequest.getTrueMutationsList());
     Assert.assertEquals(falseMutations, actualRequest.getFalseMutationsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -344,6 +357,10 @@ public class BigtableClientTest {
     Assert.assertEquals(tableName, actualRequest.getTableNameAsTableName());
     Assert.assertEquals(rowKey, actualRequest.getRowKey());
     Assert.assertEquals(rules, actualRequest.getRulesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
