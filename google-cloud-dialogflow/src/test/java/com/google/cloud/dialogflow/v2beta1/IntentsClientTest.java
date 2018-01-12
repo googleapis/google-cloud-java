@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,8 +18,11 @@ package com.google.cloud.dialogflow.v2beta1;
 import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListIntentsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
@@ -52,6 +55,7 @@ public class IntentsClientTest {
   private static MockSessions mockSessions;
   private static MockServiceHelper serviceHelper;
   private IntentsClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -82,9 +86,10 @@ public class IntentsClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     IntentsSettings settings =
         IntentsSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = IntentsClient.create(settings);
@@ -121,6 +126,10 @@ public class IntentsClientTest {
     ListIntentsRequest actualRequest = (ListIntentsRequest) actualRequests.get(0);
 
     Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -167,6 +176,10 @@ public class IntentsClientTest {
 
     Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -191,7 +204,7 @@ public class IntentsClientTest {
   public void getIntentTest() {
     IntentName name2 = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
-    int priority = -1165461084;
+    int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
     String action = "action-1422950858";
@@ -222,6 +235,10 @@ public class IntentsClientTest {
     GetIntentRequest actualRequest = (GetIntentRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsIntentName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -245,7 +262,7 @@ public class IntentsClientTest {
   public void getIntentTest2() {
     IntentName name2 = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
-    int priority = -1165461084;
+    int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
     String action = "action-1422950858";
@@ -278,6 +295,10 @@ public class IntentsClientTest {
 
     Assert.assertEquals(name, actualRequest.getNameAsIntentName());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -302,7 +323,7 @@ public class IntentsClientTest {
   public void createIntentTest() {
     IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
-    int priority = -1165461084;
+    int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
     String action = "action-1422950858";
@@ -335,6 +356,10 @@ public class IntentsClientTest {
 
     Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
     Assert.assertEquals(intent, actualRequest.getIntent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -359,7 +384,7 @@ public class IntentsClientTest {
   public void createIntentTest2() {
     IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
-    int priority = -1165461084;
+    int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
     String action = "action-1422950858";
@@ -394,6 +419,10 @@ public class IntentsClientTest {
     Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
     Assert.assertEquals(intent, actualRequest.getIntent());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -419,7 +448,7 @@ public class IntentsClientTest {
   public void updateIntentTest() {
     IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
-    int priority = -1165461084;
+    int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
     String action = "action-1422950858";
@@ -452,6 +481,10 @@ public class IntentsClientTest {
 
     Assert.assertEquals(intent, actualRequest.getIntent());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -476,7 +509,7 @@ public class IntentsClientTest {
   public void updateIntentTest2() {
     IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
     String displayName = "displayName1615086568";
-    int priority = -1165461084;
+    int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
     String action = "action-1422950858";
@@ -511,6 +544,10 @@ public class IntentsClientTest {
     Assert.assertEquals(intent, actualRequest.getIntent());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -546,6 +583,10 @@ public class IntentsClientTest {
     DeleteIntentRequest actualRequest = (DeleteIntentRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsIntentName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -588,6 +629,10 @@ public class IntentsClientTest {
 
     Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
     Assert.assertEquals(intents, actualRequest.getIntentsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

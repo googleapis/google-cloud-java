@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -21,8 +21,11 @@ import static com.google.cloud.bigquery.datatransfer.v1.PagedResponseWrappers.Li
 import static com.google.cloud.bigquery.datatransfer.v1.PagedResponseWrappers.ListTransferRunsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
@@ -46,6 +49,7 @@ public class DataTransferServiceClientTest {
   private static MockDataTransferService mockDataTransferService;
   private static MockServiceHelper serviceHelper;
   private DataTransferServiceClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -64,9 +68,10 @@ public class DataTransferServiceClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     DataTransferServiceSettings settings =
         DataTransferServiceSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = DataTransferServiceClient.create(settings);
@@ -92,7 +97,7 @@ public class DataTransferServiceClientTest {
     String defaultSchedule = "defaultSchedule-800168235";
     boolean supportsCustomSchedule = true;
     String helpUrl = "helpUrl-789431439";
-    int defaultDataRefreshWindowDays = -1804935157;
+    int defaultDataRefreshWindowDays = 1804935157;
     boolean manualRunsDisabled = true;
     DataSource expectedResponse =
         DataSource.newBuilder()
@@ -123,6 +128,10 @@ public class DataTransferServiceClientTest {
     GetDataSourceRequest actualRequest = (GetDataSourceRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsDataSourceNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -169,6 +178,10 @@ public class DataTransferServiceClientTest {
     ListDataSourcesRequest actualRequest = (ListDataSourcesRequest) actualRequests.get(0);
 
     Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -199,7 +212,7 @@ public class DataTransferServiceClientTest {
     String schedule = "schedule-697920873";
     int dataRefreshWindowDays = 327632845;
     boolean disabled = true;
-    long userId = -147132913L;
+    long userId = 147132913L;
     String datasetRegion = "datasetRegion959248539";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
@@ -227,6 +240,10 @@ public class DataTransferServiceClientTest {
 
     Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
     Assert.assertEquals(transferConfig, actualRequest.getTransferConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -258,7 +275,7 @@ public class DataTransferServiceClientTest {
     String schedule = "schedule-697920873";
     int dataRefreshWindowDays = 327632845;
     boolean disabled = true;
-    long userId = -147132913L;
+    long userId = 147132913L;
     String datasetRegion = "datasetRegion959248539";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
@@ -286,6 +303,10 @@ public class DataTransferServiceClientTest {
 
     Assert.assertEquals(transferConfig, actualRequest.getTransferConfig());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -322,6 +343,10 @@ public class DataTransferServiceClientTest {
     DeleteTransferConfigRequest actualRequest = (DeleteTransferConfigRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsTransferConfigNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -354,7 +379,7 @@ public class DataTransferServiceClientTest {
     String schedule = "schedule-697920873";
     int dataRefreshWindowDays = 327632845;
     boolean disabled = true;
-    long userId = -147132913L;
+    long userId = 147132913L;
     String datasetRegion = "datasetRegion959248539";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
@@ -382,6 +407,10 @@ public class DataTransferServiceClientTest {
     GetTransferConfigRequest actualRequest = (GetTransferConfigRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsTransferConfigNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -428,6 +457,10 @@ public class DataTransferServiceClientTest {
     ListTransferConfigsRequest actualRequest = (ListTransferConfigsRequest) actualRequests.get(0);
 
     Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -470,6 +503,10 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(parent, actualRequest.getParentAsTransferConfigNameOneof());
     Assert.assertEquals(startTime, actualRequest.getStartTime());
     Assert.assertEquals(endTime, actualRequest.getEndTime());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -500,7 +537,7 @@ public class DataTransferServiceClientTest {
             LocationRunName.of("[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]"));
     String destinationDatasetId = "destinationDatasetId1541564179";
     String dataSourceId = "dataSourceId-1015796374";
-    long userId = -147132913L;
+    long userId = 147132913L;
     String schedule = "schedule-697920873";
     TransferRun expectedResponse =
         TransferRun.newBuilder()
@@ -524,6 +561,10 @@ public class DataTransferServiceClientTest {
     GetTransferRunRequest actualRequest = (GetTransferRunRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsRunNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -561,6 +602,10 @@ public class DataTransferServiceClientTest {
     DeleteTransferRunRequest actualRequest = (DeleteTransferRunRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsRunNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -609,6 +654,10 @@ public class DataTransferServiceClientTest {
     ListTransferRunsRequest actualRequest = (ListTransferRunsRequest) actualRequests.get(0);
 
     Assert.assertEquals(parent, actualRequest.getParentAsTransferConfigNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -657,6 +706,10 @@ public class DataTransferServiceClientTest {
     ListTransferLogsRequest actualRequest = (ListTransferLogsRequest) actualRequests.get(0);
 
     Assert.assertEquals(parent, actualRequest.getParentAsRunNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -697,6 +750,10 @@ public class DataTransferServiceClientTest {
     CheckValidCredsRequest actualRequest = (CheckValidCredsRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsDataSourceNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

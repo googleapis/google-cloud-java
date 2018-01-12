@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -37,10 +37,8 @@ import javax.annotation.Generated;
 /**
  * Service Description: Manages agent intents.
  *
- * <p>Refer to [documentation](https://dialogflow.com/docs/intents) for more # details about agent
- * intents.
- *
- * <p>Standard methods.
+ * <p>Refer to the [Dialogflow documentation](https://dialogflow.com/docs/intents) for more details
+ * about agent intents. #
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -705,7 +703,8 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Updates/Creates multiple intents in the specified agent.
    *
-   * <p>Operation&lt;response: BatchUpdateIntentsResponse&gt;
+   * <p>Operation &lt;response:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
    *
    * <p>Sample code:
    *
@@ -733,7 +732,8 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Updates/Creates multiple intents in the specified agent.
    *
-   * <p>Operation&lt;response: BatchUpdateIntentsResponse&gt;
+   * <p>Operation &lt;response:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
    *
    * <p>Sample code:
    *
@@ -760,7 +760,8 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Updates/Creates multiple intents in the specified agent.
    *
-   * <p>Operation&lt;response: BatchUpdateIntentsResponse&gt;
+   * <p>Operation &lt;response:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
    *
    * <p>Sample code:
    *
@@ -786,7 +787,7 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Deletes intents in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -819,7 +820,7 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Deletes intents in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -847,7 +848,7 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Deletes intents in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -874,7 +875,7 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Deletes intents in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *

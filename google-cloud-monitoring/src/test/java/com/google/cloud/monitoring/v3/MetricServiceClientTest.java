@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,8 +22,11 @@ import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListTimeSerie
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
@@ -62,16 +65,21 @@ import org.junit.Test;
 public class MetricServiceClientTest {
   private static MockGroupService mockGroupService;
   private static MockMetricService mockMetricService;
+  private static MockUptimeCheckService mockUptimeCheckService;
   private static MockServiceHelper serviceHelper;
   private MetricServiceClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockGroupService = new MockGroupService();
     mockMetricService = new MockMetricService();
+    mockUptimeCheckService = new MockUptimeCheckService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1", Arrays.<MockGrpcService>asList(mockGroupService, mockMetricService));
+            "in-process-1",
+            Arrays.<MockGrpcService>asList(
+                mockGroupService, mockMetricService, mockUptimeCheckService));
     serviceHelper.start();
   }
 
@@ -83,9 +91,10 @@ public class MetricServiceClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     MetricServiceSettings settings =
         MetricServiceSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = MetricServiceClient.create(settings);
@@ -127,6 +136,10 @@ public class MetricServiceClientTest {
         (ListMonitoredResourceDescriptorsRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsProjectName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -173,6 +186,10 @@ public class MetricServiceClientTest {
         (GetMonitoredResourceDescriptorRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsMonitoredResourceDescriptorName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -219,6 +236,10 @@ public class MetricServiceClientTest {
         (ListMetricDescriptorsRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsProjectName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -265,6 +286,10 @@ public class MetricServiceClientTest {
     GetMetricDescriptorRequest actualRequest = (GetMetricDescriptorRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsMetricDescriptorName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -314,6 +339,10 @@ public class MetricServiceClientTest {
 
     Assert.assertEquals(name, actualRequest.getNameAsProjectName());
     Assert.assertEquals(metricDescriptor, actualRequest.getMetricDescriptor());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -349,6 +378,10 @@ public class MetricServiceClientTest {
         (DeleteMetricDescriptorRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsMetricDescriptorName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -400,6 +433,10 @@ public class MetricServiceClientTest {
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertEquals(interval, actualRequest.getInterval());
     Assert.assertEquals(view, actualRequest.getView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -438,6 +475,10 @@ public class MetricServiceClientTest {
 
     Assert.assertEquals(name, actualRequest.getNameAsProjectName());
     Assert.assertEquals(timeSeries, actualRequest.getTimeSeriesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

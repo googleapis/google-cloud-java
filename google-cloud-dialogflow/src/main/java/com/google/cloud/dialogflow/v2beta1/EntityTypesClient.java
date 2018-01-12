@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -37,10 +37,8 @@ import javax.annotation.Generated;
 /**
  * Service Description: Manages agent entity types.
  *
- * <p>Refer to [documentation](https://dialogflow.com/docs/entities) for more # details about entity
- * types.
- *
- * <p>Standard methods.
+ * <p>Refer to the [Dialogflow documentation](https://dialogflow.com/docs/entities) for more details
+ * about entity types. #
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -698,7 +696,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates/Creates multiple entity types in the specified agent.
    *
-   * <p>Operation&lt;response: BatchUpdateEntityTypesResponse, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response:
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
+   * metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -724,7 +724,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates/Creates multiple entity types in the specified agent.
    *
-   * <p>Operation&lt;response: BatchUpdateEntityTypesResponse, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response:
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
+   * metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -750,7 +752,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates/Creates multiple entity types in the specified agent.
    *
-   * <p>Operation&lt;response: BatchUpdateEntityTypesResponse, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response:
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
+   * metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -775,7 +779,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -808,7 +813,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -836,7 +842,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -863,7 +870,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -891,7 +899,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Creates multiple new entities in the specified entity type (extends the existing collection of
    * entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -924,7 +932,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Creates multiple new entities in the specified entity type (extends the existing collection of
    * entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -963,7 +971,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Creates multiple new entities in the specified entity type (extends the existing collection of
    * entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -992,7 +1000,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Creates multiple new entities in the specified entity type (extends the existing collection of
    * entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1020,7 +1028,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Creates multiple new entities in the specified entity type (extends the existing collection of
    * entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1046,7 +1054,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates entities in the specified entity type (replaces the existing collection of entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1078,7 +1087,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates entities in the specified entity type (replaces the existing collection of entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1116,7 +1126,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates entities in the specified entity type (replaces the existing collection of entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1144,7 +1155,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates entities in the specified entity type (replaces the existing collection of entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1171,7 +1183,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates entities in the specified entity type (replaces the existing collection of entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1197,7 +1210,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1230,7 +1244,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1269,7 +1284,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1297,7 +1313,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1324,7 +1341,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *

@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,8 +19,11 @@ import static com.google.cloud.logging.v2.PagedResponseWrappers.ListExclusionsPa
 import static com.google.cloud.logging.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
@@ -66,6 +69,7 @@ public class ConfigClientTest {
   private static MockMetricsServiceV2 mockMetricsServiceV2;
   private static MockServiceHelper serviceHelper;
   private ConfigClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -88,9 +92,10 @@ public class ConfigClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     ConfigSettings settings =
         ConfigSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = ConfigClient.create(settings);
@@ -124,6 +129,10 @@ public class ConfigClientTest {
     ListSinksRequest actualRequest = (ListSinksRequest) actualRequests.get(0);
 
     Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -170,6 +179,10 @@ public class ConfigClientTest {
     GetSinkRequest actualRequest = (GetSinkRequest) actualRequests.get(0);
 
     Assert.assertEquals(sinkName, actualRequest.getSinkNameAsSinkNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -218,6 +231,10 @@ public class ConfigClientTest {
 
     Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
     Assert.assertEquals(sink, actualRequest.getSink());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -267,6 +284,10 @@ public class ConfigClientTest {
 
     Assert.assertEquals(sinkName, actualRequest.getSinkNameAsSinkNameOneof());
     Assert.assertEquals(sink, actualRequest.getSink());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -301,6 +322,10 @@ public class ConfigClientTest {
     DeleteSinkRequest actualRequest = (DeleteSinkRequest) actualRequests.get(0);
 
     Assert.assertEquals(sinkName, actualRequest.getSinkNameAsSinkNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -345,6 +370,10 @@ public class ConfigClientTest {
     ListExclusionsRequest actualRequest = (ListExclusionsRequest) actualRequests.get(0);
 
     Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -389,6 +418,10 @@ public class ConfigClientTest {
     GetExclusionRequest actualRequest = (GetExclusionRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsExclusionNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -436,6 +469,10 @@ public class ConfigClientTest {
 
     Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
     Assert.assertEquals(exclusion, actualRequest.getExclusion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -485,6 +522,10 @@ public class ConfigClientTest {
     Assert.assertEquals(name, actualRequest.getNameAsExclusionNameOneof());
     Assert.assertEquals(exclusion, actualRequest.getExclusion());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -521,6 +562,10 @@ public class ConfigClientTest {
     DeleteExclusionRequest actualRequest = (DeleteExclusionRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, actualRequest.getNameAsExclusionNameOneof());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

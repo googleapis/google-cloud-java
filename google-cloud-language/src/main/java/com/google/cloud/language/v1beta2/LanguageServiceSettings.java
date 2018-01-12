@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -183,7 +183,7 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
     return new Builder(this);
   }
 
-  private LanguageServiceSettings(Builder settingsBuilder) throws IOException {
+  protected LanguageServiceSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
     analyzeSentimentSettings = settingsBuilder.analyzeSentimentSettings().build();
@@ -246,11 +246,11 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
-    private Builder() {
+    protected Builder() {
       this((ClientContext) null);
     }
 
-    private Builder(ClientContext clientContext) {
+    protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       analyzeSentimentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -321,7 +321,7 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
       return builder;
     }
 
-    private Builder(LanguageServiceSettings settings) {
+    protected Builder(LanguageServiceSettings settings) {
       super(settings);
 
       analyzeSentimentSettings = settings.analyzeSentimentSettings.toBuilder();

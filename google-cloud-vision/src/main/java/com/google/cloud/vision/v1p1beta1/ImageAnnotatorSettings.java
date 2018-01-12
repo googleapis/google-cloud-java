@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -151,7 +151,7 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
     return new Builder(this);
   }
 
-  private ImageAnnotatorSettings(Builder settingsBuilder) throws IOException {
+  protected ImageAnnotatorSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
     batchAnnotateImagesSettings = settingsBuilder.batchAnnotateImagesSettings().build();
@@ -198,11 +198,11 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
-    private Builder() {
+    protected Builder() {
       this((ClientContext) null);
     }
 
-    private Builder(ClientContext clientContext) {
+    protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       batchAnnotateImagesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -217,7 +217,7 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
       Builder builder = new Builder((ClientContext) null);
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
       return initDefaults(builder);
     }
@@ -232,7 +232,7 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
       return builder;
     }
 
-    private Builder(ImageAnnotatorSettings settings) {
+    protected Builder(ImageAnnotatorSettings settings) {
       super(settings);
 
       batchAnnotateImagesSettings = settings.batchAnnotateImagesSettings.toBuilder();
