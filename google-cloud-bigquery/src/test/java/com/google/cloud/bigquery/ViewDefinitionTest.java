@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -68,20 +67,20 @@ public class ViewDefinitionTest {
     assertEquals(VIEW_QUERY, viewDefinition.getQuery());
     assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
     assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.getUserDefinedFunctions());
-    assertFalse(viewDefinition.useLegacySql());
+    assertNull(viewDefinition.useLegacySql());
 
     viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY,
         UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI")).build();
     assertEquals(VIEW_QUERY, viewDefinition.getQuery());
     assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
     assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.getUserDefinedFunctions());
-    assertFalse(viewDefinition.useLegacySql());
+    assertNull(viewDefinition.useLegacySql());
 
     viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY).build();
     assertEquals(VIEW_QUERY, viewDefinition.getQuery());
     assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
     assertNull(viewDefinition.getUserDefinedFunctions());
-    assertFalse(viewDefinition.useLegacySql());
+    assertNull(viewDefinition.useLegacySql());
 
     viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY).setUseLegacySql(true).build();
     assertEquals(VIEW_QUERY, viewDefinition.getQuery());

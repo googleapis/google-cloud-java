@@ -44,7 +44,7 @@ public class ViewDefinition extends TableDefinition {
 
     private String query;
     private List<UserDefinedFunction> userDefinedFunctions;
-    private Boolean useLegacySql = false;
+    private Boolean useLegacySql;
 
     private Builder() {
       super(Type.VIEW);
@@ -105,11 +105,11 @@ public class ViewDefinition extends TableDefinition {
 
     /**
      * Sets whether to use BigQuery's legacy SQL dialect for this query. By default this property is
-     * set to {@code false}. If set to {@code null} or {@code false}, the query will use BigQuery's
-     * <a href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>.
+     * set to {@code false}. If set to {@code false}, the query will use BigQuery's <a
+     * href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>.
      *
-     * <p>If set to {@code true}, legacy SQL dialect is used. This property is experimental and
-     * might be subject to change.
+     * <p>If set to {@code null} or {@code true}, legacy SQL dialect is used. This property is
+     * experimental and might be subject to change.
      */
     public Builder setUseLegacySql(Boolean useLegacySql) {
       this.useLegacySql = useLegacySql;
@@ -154,10 +154,10 @@ public class ViewDefinition extends TableDefinition {
 
   /**
    * Returns whether to use BigQuery's legacy SQL dialect for this query. By default this property
-   * is set to {@code false}. If set to {@code null} or {@code false}, the query will use BigQuery's
-   * <a href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>. If set to {@code
-   * true}, legacy SQL dialect is used. This property is experimental and might be subject to
-   * change.
+   * is set to {@code false}. If set to {@code false}, the query will use BigQuery's <a
+   * href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>. If set to {@code
+   * null} or {@code true}, legacy SQL dialect is used. This property is experimental and might be
+   * subject to change.
    */
   public Boolean useLegacySql() {
     return useLegacySql;
@@ -201,11 +201,7 @@ public class ViewDefinition extends TableDefinition {
       viewDefinition.setUserDefinedFunctionResources(Lists.transform(userDefinedFunctions,
           UserDefinedFunction.TO_PB_FUNCTION));
     }
-    if (useLegacySql == null) {
-      viewDefinition.setUseLegacySql(false);
-    } else {
-      viewDefinition.setUseLegacySql(useLegacySql);
-    }
+    viewDefinition.setUseLegacySql(useLegacySql);
     tablePb.setView(viewDefinition);
     return tablePb;
   }
