@@ -165,6 +165,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
+    checkNotDryRun("exists");
     return bigquery.getJob(getJobId(), JobOption.fields()) != null;
   }
 
@@ -185,6 +186,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean isDone() {
+    checkNotDryRun("isDone");
     Job job = bigquery.getJob(getJobId(), JobOption.fields(BigQuery.JobField.STATUS));
     return job == null || job.getStatus().getState() == JobStatus.State.DONE;
   }
@@ -231,6 +233,7 @@ public class Job extends JobInfo {
    *     to complete
    */
   public Job waitFor(RetryOption... waitOptions) throws InterruptedException {
+    checkNotDryRun("waitFor");
     Object completedJobResponse;
     if (getConfiguration().getType() == Type.QUERY) {
       completedJobResponse =
@@ -268,6 +271,7 @@ public class Job extends JobInfo {
    */
   public TableResult getQueryResults(QueryResultsOption... options)
       throws InterruptedException, JobException {
+    checkNotDryRun("getQueryResults");
     if (getConfiguration().getType() != Type.QUERY) {
       throw new UnsupportedOperationException(
           "Getting query results is supported only for " + Type.QUERY + " jobs");
@@ -389,6 +393,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public Job reload(JobOption... options) {
+    checkNotDryRun("reload");
     return bigquery.getJob(getJobId(), options);
   }
 
@@ -410,7 +415,32 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean cancel() {
+    checkNotDryRun("cancel");
     return bigquery.cancel(getJobId());
+  }
+
+  private void checkNotDryRun(String op) {
+    checkNotDryRun(getConfiguration(), op);
+  }
+
+  static void checkNotDryRun(JobConfiguration jobConfig, String op) {
+    QueryJobConfiguration config;
+    if (jobConfig instanceof QueryJobConfiguration) {
+      config = (QueryJobConfiguration) jobConfig;
+    } else {
+      return;
+    }
+
+    // Not "if (config.dryRun())", which fails if the Boolean is null.
+    // The below assumes that null means not-dryrun.
+    if (config.dryRun() == Boolean.TRUE) {
+      String msg =
+          "Operation \"%s\" does not work for dryrun queries, "
+              + "since a dry run does not actually create a job. "
+              + "To validate a query and obtain some processing statistics, consider calling "
+              + "BigQuery.create(JobInfo).";
+      throw new UnsupportedOperationException(String.format(msg, op));
+    }
   }
 
   /** Returns the job's {@code BigQuery} object used to issue requests. */
