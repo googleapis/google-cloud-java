@@ -239,4 +239,6 @@ public interface DatabaseClient {
    *
    */
   TransactionRunner readWriteTransaction();
+  
+  TransactionManager transactionManager();
 }
