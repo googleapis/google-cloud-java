@@ -15,7 +15,9 @@
  */
 
 package com.example.logging.logback.enhancers;
+
 // [START logging_enhancer]
+
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.LoggingEnhancer;
 
