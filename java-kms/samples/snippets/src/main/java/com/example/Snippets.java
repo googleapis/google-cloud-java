@@ -1,15 +1,17 @@
 /*
- * Copyright (c) 2017 Google Inc.
+ * Copyright 2017 Google Inc.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package com.example;
@@ -20,18 +22,17 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.cloudkms.v1.CloudKMS;
-import com.google.api.services.cloudkms.v1.CloudKMS.Projects.Locations.KeyRings.CryptoKeys.UpdatePrimaryVersion;
 import com.google.api.services.cloudkms.v1.CloudKMSScopes;
 import com.google.api.services.cloudkms.v1.model.Binding;
 import com.google.api.services.cloudkms.v1.model.CryptoKey;
 import com.google.api.services.cloudkms.v1.model.CryptoKeyVersion;
 import com.google.api.services.cloudkms.v1.model.DestroyCryptoKeyVersionRequest;
-import com.google.api.services.cloudkms.v1.model.RestoreCryptoKeyVersionRequest;
 import com.google.api.services.cloudkms.v1.model.KeyRing;
 import com.google.api.services.cloudkms.v1.model.ListCryptoKeyVersionsResponse;
 import com.google.api.services.cloudkms.v1.model.ListCryptoKeysResponse;
 import com.google.api.services.cloudkms.v1.model.ListKeyRingsResponse;
 import com.google.api.services.cloudkms.v1.model.Policy;
+import com.google.api.services.cloudkms.v1.model.RestoreCryptoKeyVersionRequest;
 import com.google.api.services.cloudkms.v1.model.SetIamPolicyRequest;
 import com.google.api.services.cloudkms.v1.model.UpdateCryptoKeyPrimaryVersionRequest;
 import java.io.IOException;
@@ -179,8 +180,7 @@ public class Snippets {
   }
   // [END kms_disable_cryptokey_version]
 
-    // [START kms_enable_cryptokey_version]
-
+  // [START kms_enable_cryptokey_version]
   /**
    * Enables the given version of the crypto key.
    */
@@ -563,7 +563,7 @@ public class Snippets {
       for (CryptoKey key : cryptoKeys.getCryptoKeys()) {
         System.out.println(key);
       }
-    } while(cryptoKeys.getNextPageToken() != null);
+    } while (cryptoKeys.getNextPageToken() != null);
   }
 
   /**
