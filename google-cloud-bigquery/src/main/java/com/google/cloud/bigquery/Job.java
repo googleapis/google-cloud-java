@@ -431,9 +431,11 @@ public class Job extends JobInfo {
       return;
     }
 
-    // Not "if (config.dryRun())", which fails if the Boolean is null.
-    // The below assumes that null means not-dryrun.
-    if (config.dryRun() == Boolean.TRUE) {
+    Boolean dryRun = config.dryRun();
+    if (dryRun == null) {
+      dryRun = false;
+    }
+    if (dryRun) {
       String msg =
           "Operation \"%s\" does not work for dryrun queries, "
               + "since a dry run does not actually create a job. "
