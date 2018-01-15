@@ -18,8 +18,11 @@ package com.google.cloud.logging.logback;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.classic.spi.IThrowableProxy;
+import ch.qos.logback.classic.spi.StackTraceElementProxy;
 import ch.qos.logback.core.UnsynchronizedAppenderBase;
 import ch.qos.logback.core.util.Loader;
+import com.google.api.core.InternalApi;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
@@ -29,7 +32,6 @@ import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.MonitoredResourceUtil;
 import com.google.cloud.logging.Payload;
 import com.google.cloud.logging.Severity;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -206,15 +208,12 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   private LogEntry logEntryFor(ILoggingEvent e) {
-    StringBuilder payload = new StringBuilder(e.getFormattedMessage());
-    for (StackTraceElement stackEl : e.getCallerData()) {
-      payload.append("\n    ");
-      payload.append(stackEl.toString());
-    }
+    StringBuilder payload = new StringBuilder(e.getFormattedMessage()).append('\n');
+    writeStack(e.getThrowableProxy(), "", payload);
 
     Level level = e.getLevel();
     LogEntry.Builder builder =
-        LogEntry.newBuilder(Payload.StringPayload.of(payload.toString()))
+        LogEntry.newBuilder(Payload.StringPayload.of(payload.toString().trim()))
             .setTimestamp(e.getTimeStamp())
             .setSeverity(severityFor(level));
 
@@ -229,6 +228,34 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     }
 
     return builder.build();
+  }
+
+  @InternalApi
+  static void writeStack(IThrowableProxy throwProxy, String prefix, StringBuilder payload) {
+    if (throwProxy == null) {
+      return;
+    }
+    payload
+        .append(prefix)
+        .append(throwProxy.getClassName())
+        .append(": ")
+        .append(throwProxy.getMessage())
+        .append('\n');
+    StackTraceElementProxy[] trace = throwProxy.getStackTraceElementProxyArray();
+    if (trace == null) {
+      trace = new StackTraceElementProxy[0];
+    }
+
+    int commonFrames = throwProxy.getCommonFrames();
+    int printFrames = trace.length - commonFrames;
+    for (int i = 0; i < printFrames; i++) {
+      payload.append("    ").append(trace[i]).append('\n');
+    }
+    if (commonFrames != 0) {
+      payload.append("    ... ").append(commonFrames).append(" common frames elided\n");
+    }
+
+    writeStack(throwProxy.getCause(), "caused by: ", payload);
   }
 
   /**
