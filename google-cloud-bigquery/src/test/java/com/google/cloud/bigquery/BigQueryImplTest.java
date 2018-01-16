@@ -1400,4 +1400,17 @@ public class BigQueryImplTest {
     thrown.expectMessage(exceptionMessage);
     bigquery.getDataset(DATASET);
   }
+
+  @Test
+  public void testQueryDryRun() throws Exception {
+    // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2479
+    EasyMock.replay(bigqueryRpcMock);
+    thrown.expect(UnsupportedOperationException.class);
+    options
+        .toBuilder()
+        .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+        .build()
+        .getService()
+        .query(QueryJobConfiguration.newBuilder("foo").setDryRun(true).build());
+  }
 }
