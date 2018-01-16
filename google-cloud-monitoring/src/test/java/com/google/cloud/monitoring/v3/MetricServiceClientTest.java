@@ -135,7 +135,7 @@ public class MetricServiceClientTest {
     ListMonitoredResourceDescriptorsRequest actualRequest =
         (ListMonitoredResourceDescriptorsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsProjectName());
+    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -185,7 +185,7 @@ public class MetricServiceClientTest {
     GetMonitoredResourceDescriptorRequest actualRequest =
         (GetMonitoredResourceDescriptorRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsMonitoredResourceDescriptorName());
+    Assert.assertEquals(name, MonitoredResourceDescriptorName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -235,7 +235,7 @@ public class MetricServiceClientTest {
     ListMetricDescriptorsRequest actualRequest =
         (ListMetricDescriptorsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsProjectName());
+    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -285,7 +285,7 @@ public class MetricServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetMetricDescriptorRequest actualRequest = (GetMetricDescriptorRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsMetricDescriptorName());
+    Assert.assertEquals(name, MetricDescriptorName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -337,7 +337,7 @@ public class MetricServiceClientTest {
     CreateMetricDescriptorRequest actualRequest =
         (CreateMetricDescriptorRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsProjectName());
+    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
     Assert.assertEquals(metricDescriptor, actualRequest.getMetricDescriptor());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -377,7 +377,7 @@ public class MetricServiceClientTest {
     DeleteMetricDescriptorRequest actualRequest =
         (DeleteMetricDescriptorRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsMetricDescriptorName());
+    Assert.assertEquals(name, MetricDescriptorName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -429,7 +429,7 @@ public class MetricServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListTimeSeriesRequest actualRequest = (ListTimeSeriesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsProjectName());
+    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertEquals(interval, actualRequest.getInterval());
     Assert.assertEquals(view, actualRequest.getView());
@@ -473,7 +473,7 @@ public class MetricServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateTimeSeriesRequest actualRequest = (CreateTimeSeriesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsProjectName());
+    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
     Assert.assertEquals(timeSeries, actualRequest.getTimeSeriesList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(

@@ -823,7 +823,7 @@ public class DlpServiceClient implements BackgroundResource {
   public final ListInspectFindingsResponse listInspectFindings(ResultName name) {
 
     ListInspectFindingsRequest request =
-        ListInspectFindingsRequest.newBuilder().setNameWithResultName(name).build();
+        ListInspectFindingsRequest.newBuilder().setName(name.toString()).build();
     return listInspectFindings(request);
   }
 
@@ -837,7 +837,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ResultName name = ResultName.of("[RESULT]");
    *   ListInspectFindingsRequest request = ListInspectFindingsRequest.newBuilder()
-   *     .setNameWithResultName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ListInspectFindingsResponse response = dlpServiceClient.listInspectFindings(request);
    * }
@@ -860,7 +860,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ResultName name = ResultName.of("[RESULT]");
    *   ListInspectFindingsRequest request = ListInspectFindingsRequest.newBuilder()
-   *     .setNameWithResultName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;ListInspectFindingsResponse&gt; future = dlpServiceClient.listInspectFindingsCallable().futureCall(request);
    *   // Do something

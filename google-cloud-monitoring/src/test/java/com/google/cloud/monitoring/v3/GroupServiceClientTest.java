@@ -103,9 +103,9 @@ public class GroupServiceClientTest {
     boolean isCluster = false;
     Group expectedResponse =
         Group.newBuilder()
-            .setNameWithGroupName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
-            .setParentNameWithGroupName(parentName)
+            .setParentName(parentName.toString())
             .setFilter(filter)
             .setIsCluster(isCluster)
             .build();
@@ -120,7 +120,7 @@ public class GroupServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsGroupName());
+    Assert.assertEquals(name, GroupName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -153,9 +153,9 @@ public class GroupServiceClientTest {
     boolean isCluster = false;
     Group expectedResponse =
         Group.newBuilder()
-            .setNameWithGroupName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
-            .setParentNameWithGroupName(parentName)
+            .setParentName(parentName.toString())
             .setFilter(filter)
             .setIsCluster(isCluster)
             .build();
@@ -171,7 +171,7 @@ public class GroupServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateGroupRequest actualRequest = (CreateGroupRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsProjectName());
+    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
     Assert.assertEquals(group, actualRequest.getGroup());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -206,9 +206,9 @@ public class GroupServiceClientTest {
     boolean isCluster = false;
     Group expectedResponse =
         Group.newBuilder()
-            .setNameWithGroupName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
-            .setParentNameWithGroupName(parentName)
+            .setParentName(parentName.toString())
             .setFilter(filter)
             .setIsCluster(isCluster)
             .build();
@@ -260,7 +260,7 @@ public class GroupServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteGroupRequest actualRequest = (DeleteGroupRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsGroupName());
+    Assert.assertEquals(name, GroupName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -310,7 +310,7 @@ public class GroupServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListGroupMembersRequest actualRequest = (ListGroupMembersRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsGroupName());
+    Assert.assertEquals(name, GroupName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

@@ -92,7 +92,7 @@ public class TraceServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchWriteSpansRequest actualRequest = (BatchWriteSpansRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsProjectName());
+    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
     Assert.assertEquals(spans, actualRequest.getSpansList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(

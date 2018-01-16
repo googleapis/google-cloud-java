@@ -128,7 +128,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListSinksRequest actualRequest = (ListSinksRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -162,7 +162,7 @@ public class ConfigClientTest {
     LogSink expectedResponse =
         LogSink.newBuilder()
             .setName(name)
-            .setDestinationWithResourceName(destination)
+            .setDestination(destination.toString())
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
             .setIncludeChildren(includeChildren)
@@ -178,7 +178,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetSinkRequest actualRequest = (GetSinkRequest) actualRequests.get(0);
 
-    Assert.assertEquals(sinkName, actualRequest.getSinkNameAsSinkNameOneof());
+    Assert.assertEquals(sinkName, SinkNameOneof.parse(actualRequest.getSinkName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -212,7 +212,7 @@ public class ConfigClientTest {
     LogSink expectedResponse =
         LogSink.newBuilder()
             .setName(name)
-            .setDestinationWithResourceName(destination)
+            .setDestination(destination.toString())
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
             .setIncludeChildren(includeChildren)
@@ -229,7 +229,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateSinkRequest actualRequest = (CreateSinkRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
     Assert.assertEquals(sink, actualRequest.getSink());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -265,7 +265,7 @@ public class ConfigClientTest {
     LogSink expectedResponse =
         LogSink.newBuilder()
             .setName(name)
-            .setDestinationWithResourceName(destination)
+            .setDestination(destination.toString())
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
             .setIncludeChildren(includeChildren)
@@ -282,7 +282,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     UpdateSinkRequest actualRequest = (UpdateSinkRequest) actualRequests.get(0);
 
-    Assert.assertEquals(sinkName, actualRequest.getSinkNameAsSinkNameOneof());
+    Assert.assertEquals(sinkName, SinkNameOneof.parse(actualRequest.getSinkName()));
     Assert.assertEquals(sink, actualRequest.getSink());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -321,7 +321,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteSinkRequest actualRequest = (DeleteSinkRequest) actualRequests.get(0);
 
-    Assert.assertEquals(sinkName, actualRequest.getSinkNameAsSinkNameOneof());
+    Assert.assertEquals(sinkName, SinkNameOneof.parse(actualRequest.getSinkName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -369,7 +369,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListExclusionsRequest actualRequest = (ListExclusionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -417,7 +417,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetExclusionRequest actualRequest = (GetExclusionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsExclusionNameOneof());
+    Assert.assertEquals(name, ExclusionNameOneof.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -467,7 +467,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateExclusionRequest actualRequest = (CreateExclusionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
     Assert.assertEquals(exclusion, actualRequest.getExclusion());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -519,7 +519,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     UpdateExclusionRequest actualRequest = (UpdateExclusionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsExclusionNameOneof());
+    Assert.assertEquals(name, ExclusionNameOneof.parse(actualRequest.getName()));
     Assert.assertEquals(exclusion, actualRequest.getExclusion());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
@@ -561,7 +561,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteExclusionRequest actualRequest = (DeleteExclusionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsExclusionNameOneof());
+    Assert.assertEquals(name, ExclusionNameOneof.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

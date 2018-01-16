@@ -185,8 +185,7 @@ public class LoggingClient implements BackgroundResource {
    */
   public final void deleteLog(LogNameOneof logName) {
 
-    DeleteLogRequest request =
-        DeleteLogRequest.newBuilder().setLogNameWithLogNameOneof(logName).build();
+    DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(logName.toString()).build();
     deleteLog(request);
   }
 
@@ -201,7 +200,7 @@ public class LoggingClient implements BackgroundResource {
    * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
-   *     .setLogNameWithLogNameOneof(logName)
+   *     .setLogName(logName.toString())
    *     .build();
    *   loggingClient.deleteLog(request);
    * }
@@ -225,7 +224,7 @@ public class LoggingClient implements BackgroundResource {
    * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
-   *     .setLogNameWithLogNameOneof(logName)
+   *     .setLogName(logName.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = loggingClient.deleteLogCallable().futureCall(request);
    *   // Do something
@@ -299,7 +298,7 @@ public class LoggingClient implements BackgroundResource {
 
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
-            .setLogNameWithLogNameOneof(logName)
+            .setLogName(logName.toString())
             .setResource(resource)
             .putAllLabels(labels)
             .addAllEntries(entries)
@@ -591,8 +590,7 @@ public class LoggingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLogsPagedResponse listLogs(ParentNameOneof parent) {
-    ListLogsRequest request =
-        ListLogsRequest.newBuilder().setParentWithParentNameOneof(parent).build();
+    ListLogsRequest request = ListLogsRequest.newBuilder().setParent(parent.toString()).build();
     return listLogs(request);
   }
 
@@ -607,7 +605,7 @@ public class LoggingClient implements BackgroundResource {
    * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (String element : loggingClient.listLogs(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -633,7 +631,7 @@ public class LoggingClient implements BackgroundResource {
    * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListLogsPagedResponse&gt; future = loggingClient.listLogsPagedCallable().futureCall(request);
    *   // Do something
@@ -658,7 +656,7 @@ public class LoggingClient implements BackgroundResource {
    * try (LoggingClient loggingClient = LoggingClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListLogsResponse response = loggingClient.listLogsCallable().call(request);

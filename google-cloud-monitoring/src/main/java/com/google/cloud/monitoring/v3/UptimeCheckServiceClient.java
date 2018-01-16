@@ -51,7 +51,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
- *   String formattedName = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]").toString();
+ *   String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
  *   UptimeCheckConfig response = uptimeCheckServiceClient.getUptimeCheckConfig(formattedName);
  * }
  * </code>
@@ -171,7 +171,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedParent = ProjectName.of("[PROJECT]").toString();
+   *   String formattedParent = ProjectName.format("[PROJECT]");
    *   for (UptimeCheckConfig element : uptimeCheckServiceClient.listUptimeCheckConfigs(formattedParent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -197,7 +197,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedParent = ProjectName.of("[PROJECT]").toString();
+   *   String formattedParent = ProjectName.format("[PROJECT]");
    *   ListUptimeCheckConfigsRequest request = ListUptimeCheckConfigsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -224,7 +224,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedParent = ProjectName.of("[PROJECT]").toString();
+   *   String formattedParent = ProjectName.format("[PROJECT]");
    *   ListUptimeCheckConfigsRequest request = ListUptimeCheckConfigsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -250,7 +250,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedParent = ProjectName.of("[PROJECT]").toString();
+   *   String formattedParent = ProjectName.format("[PROJECT]");
    *   ListUptimeCheckConfigsRequest request = ListUptimeCheckConfigsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -282,7 +282,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedName = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]").toString();
+   *   String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
    *   UptimeCheckConfig response = uptimeCheckServiceClient.getUptimeCheckConfig(formattedName);
    * }
    * </code></pre>
@@ -306,7 +306,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedName = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]").toString();
+   *   String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
    *   GetUptimeCheckConfigRequest request = GetUptimeCheckConfigRequest.newBuilder()
    *     .setName(formattedName)
    *     .build();
@@ -329,7 +329,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedName = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]").toString();
+   *   String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
    *   GetUptimeCheckConfigRequest request = GetUptimeCheckConfigRequest.newBuilder()
    *     .setName(formattedName)
    *     .build();
@@ -352,7 +352,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedParent = ProjectName.of("[PROJECT]").toString();
+   *   String formattedParent = ProjectName.format("[PROJECT]");
    *   UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
    *   UptimeCheckConfig response = uptimeCheckServiceClient.createUptimeCheckConfig(formattedParent, uptimeCheckConfig);
    * }
@@ -382,7 +382,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedParent = ProjectName.of("[PROJECT]").toString();
+   *   String formattedParent = ProjectName.format("[PROJECT]");
    *   UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
    *   CreateUptimeCheckConfigRequest request = CreateUptimeCheckConfigRequest.newBuilder()
    *     .setParent(formattedParent)
@@ -407,7 +407,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedParent = ProjectName.of("[PROJECT]").toString();
+   *   String formattedParent = ProjectName.format("[PROJECT]");
    *   UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
    *   CreateUptimeCheckConfigRequest request = CreateUptimeCheckConfigRequest.newBuilder()
    *     .setParent(formattedParent)
@@ -514,7 +514,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedName = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]").toString();
+   *   String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
    *   uptimeCheckServiceClient.deleteUptimeCheckConfig(formattedName);
    * }
    * </code></pre>
@@ -540,7 +540,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedName = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]").toString();
+   *   String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
    *   DeleteUptimeCheckConfigRequest request = DeleteUptimeCheckConfigRequest.newBuilder()
    *     .setName(formattedName)
    *     .build();
@@ -565,7 +565,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   String formattedName = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]").toString();
+   *   String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
    *   DeleteUptimeCheckConfigRequest request = DeleteUptimeCheckConfigRequest.newBuilder()
    *     .setName(formattedName)
    *     .build();

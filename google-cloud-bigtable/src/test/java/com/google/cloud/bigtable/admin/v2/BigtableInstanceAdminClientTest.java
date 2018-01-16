@@ -125,7 +125,7 @@ public class BigtableInstanceAdminClientTest {
     InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
     String displayName = "displayName1615086568";
     Instance expectedResponse =
-        Instance.newBuilder().setNameWithInstanceName(name).setDisplayName(displayName).build();
+        Instance.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("createInstanceTest")
@@ -147,7 +147,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateInstanceRequest actualRequest = (CreateInstanceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(instanceId, actualRequest.getInstanceId());
     Assert.assertEquals(instance, actualRequest.getInstance());
     Assert.assertEquals(clusters, actualRequest.getClustersMap());
@@ -184,7 +184,7 @@ public class BigtableInstanceAdminClientTest {
     InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
     String displayName = "displayName1615086568";
     Instance expectedResponse =
-        Instance.newBuilder().setNameWithInstanceName(name2).setDisplayName(displayName).build();
+        Instance.newBuilder().setName(name2.toString()).setDisplayName(displayName).build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
     InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -196,7 +196,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetInstanceRequest actualRequest = (GetInstanceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsInstanceName());
+    Assert.assertEquals(name, InstanceName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -236,7 +236,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListInstancesRequest actualRequest = (ListInstancesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -317,7 +317,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteInstanceRequest actualRequest = (DeleteInstanceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsInstanceName());
+    Assert.assertEquals(name, InstanceName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -348,8 +348,8 @@ public class BigtableInstanceAdminClientTest {
     int serveNodes = 1288838783;
     Cluster expectedResponse =
         Cluster.newBuilder()
-            .setNameWithClusterName(name)
-            .setLocationWithLocationName(location)
+            .setName(name.toString())
+            .setLocation(location.toString())
             .setServeNodes(serveNodes)
             .build();
     Operation resultOperation =
@@ -371,7 +371,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateClusterRequest actualRequest = (CreateClusterRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsInstanceName());
+    Assert.assertEquals(parent, InstanceName.parse(actualRequest.getParent()));
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(cluster, actualRequest.getCluster());
     Assert.assertTrue(
@@ -408,8 +408,8 @@ public class BigtableInstanceAdminClientTest {
     int serveNodes = 1288838783;
     Cluster expectedResponse =
         Cluster.newBuilder()
-            .setNameWithClusterName(name2)
-            .setLocationWithLocationName(location)
+            .setName(name2.toString())
+            .setLocation(location.toString())
             .setServeNodes(serveNodes)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
@@ -423,7 +423,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetClusterRequest actualRequest = (GetClusterRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsClusterName());
+    Assert.assertEquals(name, ClusterName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -463,7 +463,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListClustersRequest actualRequest = (ListClustersRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsInstanceName());
+    Assert.assertEquals(parent, InstanceName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -500,7 +500,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteClusterRequest actualRequest = (DeleteClusterRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsClusterName());
+    Assert.assertEquals(name, ClusterName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -544,7 +544,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateAppProfileRequest actualRequest = (CreateAppProfileRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsInstanceName());
+    Assert.assertEquals(parent, InstanceName.parse(actualRequest.getParent()));
     Assert.assertEquals(appProfileId, actualRequest.getAppProfileId());
     Assert.assertEquals(appProfile, actualRequest.getAppProfile());
     Assert.assertTrue(
@@ -590,7 +590,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetAppProfileRequest actualRequest = (GetAppProfileRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsAppProfileName());
+    Assert.assertEquals(name, AppProfileName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -638,7 +638,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListAppProfilesRequest actualRequest = (ListAppProfilesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsInstanceName());
+    Assert.assertEquals(parent, InstanceName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -718,7 +718,7 @@ public class BigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteAppProfileRequest actualRequest = (DeleteAppProfileRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsAppProfileName());
+    Assert.assertEquals(name, AppProfileName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -749,7 +749,7 @@ public class BigtableInstanceAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    String formattedResource = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
+    String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
 
     Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -772,7 +772,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      String formattedResource = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
+      String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
 
       client.getIamPolicy(formattedResource);
       Assert.fail("No exception raised");
@@ -789,7 +789,7 @@ public class BigtableInstanceAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    String formattedResource = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
+    String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(formattedResource, policy);
@@ -814,7 +814,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      String formattedResource = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
+      String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(formattedResource, policy);
@@ -830,7 +830,7 @@ public class BigtableInstanceAdminClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    String formattedResource = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
+    String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse =
@@ -856,7 +856,7 @@ public class BigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      String formattedResource = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
+      String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(formattedResource, permissions);

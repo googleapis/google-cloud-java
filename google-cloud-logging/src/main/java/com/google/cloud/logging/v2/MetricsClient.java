@@ -174,7 +174,7 @@ public class MetricsClient implements BackgroundResource {
    */
   public final ListLogMetricsPagedResponse listLogMetrics(ParentNameOneof parent) {
     ListLogMetricsRequest request =
-        ListLogMetricsRequest.newBuilder().setParentWithParentNameOneof(parent).build();
+        ListLogMetricsRequest.newBuilder().setParent(parent.toString()).build();
     return listLogMetrics(request);
   }
 
@@ -188,7 +188,7 @@ public class MetricsClient implements BackgroundResource {
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (LogMetric element : metricsClient.listLogMetrics(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -213,7 +213,7 @@ public class MetricsClient implements BackgroundResource {
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListLogMetricsPagedResponse&gt; future = metricsClient.listLogMetricsPagedCallable().futureCall(request);
    *   // Do something
@@ -238,7 +238,7 @@ public class MetricsClient implements BackgroundResource {
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListLogMetricsResponse response = metricsClient.listLogMetricsCallable().call(request);
@@ -280,7 +280,7 @@ public class MetricsClient implements BackgroundResource {
   public final LogMetric getLogMetric(MetricNameOneof metricName) {
 
     GetLogMetricRequest request =
-        GetLogMetricRequest.newBuilder().setMetricNameWithMetricNameOneof(metricName).build();
+        GetLogMetricRequest.newBuilder().setMetricName(metricName.toString()).build();
     return getLogMetric(request);
   }
 
@@ -294,7 +294,7 @@ public class MetricsClient implements BackgroundResource {
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
    *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .build();
    *   LogMetric response = metricsClient.getLogMetric(request);
    * }
@@ -317,7 +317,7 @@ public class MetricsClient implements BackgroundResource {
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
    *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .build();
    *   ApiFuture&lt;LogMetric&gt; future = metricsClient.getLogMetricCallable().futureCall(request);
    *   // Do something
@@ -352,10 +352,7 @@ public class MetricsClient implements BackgroundResource {
   public final LogMetric createLogMetric(ParentNameOneof parent, LogMetric metric) {
 
     CreateLogMetricRequest request =
-        CreateLogMetricRequest.newBuilder()
-            .setParentWithParentNameOneof(parent)
-            .setMetric(metric)
-            .build();
+        CreateLogMetricRequest.newBuilder().setParent(parent.toString()).setMetric(metric).build();
     return createLogMetric(request);
   }
 
@@ -370,7 +367,7 @@ public class MetricsClient implements BackgroundResource {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .setMetric(metric)
    *     .build();
    *   LogMetric response = metricsClient.createLogMetric(request);
@@ -395,7 +392,7 @@ public class MetricsClient implements BackgroundResource {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .setMetric(metric)
    *     .build();
    *   ApiFuture&lt;LogMetric&gt; future = metricsClient.createLogMetricCallable().futureCall(request);
@@ -434,7 +431,7 @@ public class MetricsClient implements BackgroundResource {
 
     UpdateLogMetricRequest request =
         UpdateLogMetricRequest.newBuilder()
-            .setMetricNameWithMetricNameOneof(metricName)
+            .setMetricName(metricName.toString())
             .setMetric(metric)
             .build();
     return updateLogMetric(request);
@@ -451,7 +448,7 @@ public class MetricsClient implements BackgroundResource {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .setMetric(metric)
    *     .build();
    *   LogMetric response = metricsClient.updateLogMetric(request);
@@ -476,7 +473,7 @@ public class MetricsClient implements BackgroundResource {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .setMetric(metric)
    *     .build();
    *   ApiFuture&lt;LogMetric&gt; future = metricsClient.updateLogMetricCallable().futureCall(request);
@@ -509,7 +506,7 @@ public class MetricsClient implements BackgroundResource {
   public final void deleteLogMetric(MetricNameOneof metricName) {
 
     DeleteLogMetricRequest request =
-        DeleteLogMetricRequest.newBuilder().setMetricNameWithMetricNameOneof(metricName).build();
+        DeleteLogMetricRequest.newBuilder().setMetricName(metricName.toString()).build();
     deleteLogMetric(request);
   }
 
@@ -523,7 +520,7 @@ public class MetricsClient implements BackgroundResource {
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
    *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .build();
    *   metricsClient.deleteLogMetric(request);
    * }
@@ -546,7 +543,7 @@ public class MetricsClient implements BackgroundResource {
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
    *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = metricsClient.deleteLogMetricCallable().futureCall(request);
    *   // Do something

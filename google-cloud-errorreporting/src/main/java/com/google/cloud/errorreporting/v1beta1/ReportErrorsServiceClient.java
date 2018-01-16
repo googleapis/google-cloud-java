@@ -181,7 +181,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
 
     ReportErrorEventRequest request =
         ReportErrorEventRequest.newBuilder()
-            .setProjectNameWithProjectName(projectName)
+            .setProjectName(projectName.toString())
             .setEvent(event)
             .build();
     return reportErrorEvent(request);
@@ -205,7 +205,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setEvent(event)
    *     .build();
    *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(request);
@@ -237,7 +237,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setEvent(event)
    *     .build();
    *   ApiFuture&lt;ReportErrorEventResponse&gt; future = reportErrorsServiceClient.reportErrorEventCallable().futureCall(request);

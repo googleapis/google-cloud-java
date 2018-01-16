@@ -176,7 +176,7 @@ public class SessionsClient implements BackgroundResource {
 
     DetectIntentRequest request =
         DetectIntentRequest.newBuilder()
-            .setSessionWithSessionName(session)
+            .setSession(session.toString())
             .setQueryInput(queryInput)
             .build();
     return detectIntent(request);
@@ -195,7 +195,7 @@ public class SessionsClient implements BackgroundResource {
    *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
-   *     .setSessionWithSessionName(session)
+   *     .setSession(session.toString())
    *     .setQueryInput(queryInput)
    *     .build();
    *   DetectIntentResponse response = sessionsClient.detectIntent(request);
@@ -222,7 +222,7 @@ public class SessionsClient implements BackgroundResource {
    *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
-   *     .setSessionWithSessionName(session)
+   *     .setSession(session.toString())
    *     .setQueryInput(queryInput)
    *     .build();
    *   ApiFuture&lt;DetectIntentResponse&gt; future = sessionsClient.detectIntentCallable().futureCall(request);

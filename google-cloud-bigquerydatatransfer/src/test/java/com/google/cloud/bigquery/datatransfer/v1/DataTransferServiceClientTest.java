@@ -101,7 +101,7 @@ public class DataTransferServiceClientTest {
     boolean manualRunsDisabled = true;
     DataSource expectedResponse =
         DataSource.newBuilder()
-            .setNameWithDataSourceNameOneof(name2)
+            .setName(name2.toString())
             .setDataSourceId(dataSourceId)
             .setDisplayName(displayName)
             .setDescription(description)
@@ -127,7 +127,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetDataSourceRequest actualRequest = (GetDataSourceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsDataSourceNameOneof());
+    Assert.assertEquals(name, DataSourceNameOneof.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -177,7 +177,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListDataSourcesRequest actualRequest = (ListDataSourcesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -216,7 +216,7 @@ public class DataTransferServiceClientTest {
     String datasetRegion = "datasetRegion959248539";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
-            .setNameWithTransferConfigNameOneof(name)
+            .setName(name.toString())
             .setDestinationDatasetId(destinationDatasetId)
             .setDisplayName(displayName)
             .setDataSourceId(dataSourceId)
@@ -238,7 +238,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateTransferConfigRequest actualRequest = (CreateTransferConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
     Assert.assertEquals(transferConfig, actualRequest.getTransferConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -279,7 +279,7 @@ public class DataTransferServiceClientTest {
     String datasetRegion = "datasetRegion959248539";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
-            .setNameWithTransferConfigNameOneof(name)
+            .setName(name.toString())
             .setDestinationDatasetId(destinationDatasetId)
             .setDisplayName(displayName)
             .setDataSourceId(dataSourceId)
@@ -342,7 +342,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteTransferConfigRequest actualRequest = (DeleteTransferConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsTransferConfigNameOneof());
+    Assert.assertEquals(name, TransferConfigNameOneof.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -383,7 +383,7 @@ public class DataTransferServiceClientTest {
     String datasetRegion = "datasetRegion959248539";
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
-            .setNameWithTransferConfigNameOneof(name2)
+            .setName(name2.toString())
             .setDestinationDatasetId(destinationDatasetId)
             .setDisplayName(displayName)
             .setDataSourceId(dataSourceId)
@@ -406,7 +406,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetTransferConfigRequest actualRequest = (GetTransferConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsTransferConfigNameOneof());
+    Assert.assertEquals(name, TransferConfigNameOneof.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -456,7 +456,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListTransferConfigsRequest actualRequest = (ListTransferConfigsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -500,7 +500,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ScheduleTransferRunsRequest actualRequest = (ScheduleTransferRunsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsTransferConfigNameOneof());
+    Assert.assertEquals(parent, TransferConfigNameOneof.parse(actualRequest.getParent()));
     Assert.assertEquals(startTime, actualRequest.getStartTime());
     Assert.assertEquals(endTime, actualRequest.getEndTime());
     Assert.assertTrue(
@@ -541,7 +541,7 @@ public class DataTransferServiceClientTest {
     String schedule = "schedule-697920873";
     TransferRun expectedResponse =
         TransferRun.newBuilder()
-            .setNameWithRunNameOneof(name2)
+            .setName(name2.toString())
             .setDestinationDatasetId(destinationDatasetId)
             .setDataSourceId(dataSourceId)
             .setUserId(userId)
@@ -560,7 +560,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetTransferRunRequest actualRequest = (GetTransferRunRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsRunNameOneof());
+    Assert.assertEquals(name, RunNameOneof.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -601,7 +601,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteTransferRunRequest actualRequest = (DeleteTransferRunRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsRunNameOneof());
+    Assert.assertEquals(name, RunNameOneof.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -653,7 +653,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListTransferRunsRequest actualRequest = (ListTransferRunsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsTransferConfigNameOneof());
+    Assert.assertEquals(parent, TransferConfigNameOneof.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -705,7 +705,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListTransferLogsRequest actualRequest = (ListTransferLogsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsRunNameOneof());
+    Assert.assertEquals(parent, RunNameOneof.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -749,7 +749,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CheckValidCredsRequest actualRequest = (CheckValidCredsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsDataSourceNameOneof());
+    Assert.assertEquals(name, DataSourceNameOneof.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

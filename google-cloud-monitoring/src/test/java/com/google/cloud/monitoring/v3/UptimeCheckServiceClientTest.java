@@ -105,7 +105,7 @@ public class UptimeCheckServiceClientTest {
             .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
-    String formattedParent = ProjectName.of("[PROJECT]").toString();
+    String formattedParent = ProjectName.format("[PROJECT]");
 
     ListUptimeCheckConfigsPagedResponse pagedListResponse =
         client.listUptimeCheckConfigs(formattedParent);
@@ -133,7 +133,7 @@ public class UptimeCheckServiceClientTest {
     mockUptimeCheckService.addException(exception);
 
     try {
-      String formattedParent = ProjectName.of("[PROJECT]").toString();
+      String formattedParent = ProjectName.format("[PROJECT]");
 
       client.listUptimeCheckConfigs(formattedParent);
       Assert.fail("No exception raised");
@@ -151,8 +151,7 @@ public class UptimeCheckServiceClientTest {
         UptimeCheckConfig.newBuilder().setName(name2).setDisplayName(displayName).build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
-    String formattedName =
-        UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]").toString();
+    String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
 
     UptimeCheckConfig actualResponse = client.getUptimeCheckConfig(formattedName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -175,8 +174,7 @@ public class UptimeCheckServiceClientTest {
     mockUptimeCheckService.addException(exception);
 
     try {
-      String formattedName =
-          UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]").toString();
+      String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
 
       client.getUptimeCheckConfig(formattedName);
       Assert.fail("No exception raised");
@@ -194,7 +192,7 @@ public class UptimeCheckServiceClientTest {
         UptimeCheckConfig.newBuilder().setName(name).setDisplayName(displayName).build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
-    String formattedParent = ProjectName.of("[PROJECT]").toString();
+    String formattedParent = ProjectName.format("[PROJECT]");
     UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
 
     UptimeCheckConfig actualResponse =
@@ -221,7 +219,7 @@ public class UptimeCheckServiceClientTest {
     mockUptimeCheckService.addException(exception);
 
     try {
-      String formattedParent = ProjectName.of("[PROJECT]").toString();
+      String formattedParent = ProjectName.format("[PROJECT]");
       UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
 
       client.createUptimeCheckConfig(formattedParent, uptimeCheckConfig);
@@ -279,8 +277,7 @@ public class UptimeCheckServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
-    String formattedName =
-        UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]").toString();
+    String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
 
     client.deleteUptimeCheckConfig(formattedName);
 
@@ -303,8 +300,7 @@ public class UptimeCheckServiceClientTest {
     mockUptimeCheckService.addException(exception);
 
     try {
-      String formattedName =
-          UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]").toString();
+      String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
 
       client.deleteUptimeCheckConfig(formattedName);
       Assert.fail("No exception raised");

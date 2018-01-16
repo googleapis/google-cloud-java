@@ -185,8 +185,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSinksPagedResponse listSinks(ParentNameOneof parent) {
-    ListSinksRequest request =
-        ListSinksRequest.newBuilder().setParentWithParentNameOneof(parent).build();
+    ListSinksRequest request = ListSinksRequest.newBuilder().setParent(parent.toString()).build();
     return listSinks(request);
   }
 
@@ -200,7 +199,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (LogSink element : configClient.listSinks(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -225,7 +224,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListSinksPagedResponse&gt; future = configClient.listSinksPagedCallable().futureCall(request);
    *   // Do something
@@ -249,7 +248,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListSinksResponse response = configClient.listSinksCallable().call(request);
@@ -293,8 +292,7 @@ public class ConfigClient implements BackgroundResource {
    */
   public final LogSink getSink(SinkNameOneof sinkName) {
 
-    GetSinkRequest request =
-        GetSinkRequest.newBuilder().setSinkNameWithSinkNameOneof(sinkName).build();
+    GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(sinkName.toString()).build();
     return getSink(request);
   }
 
@@ -308,7 +306,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
    *   GetSinkRequest request = GetSinkRequest.newBuilder()
-   *     .setSinkNameWithSinkNameOneof(sinkName)
+   *     .setSinkName(sinkName.toString())
    *     .build();
    *   LogSink response = configClient.getSink(request);
    * }
@@ -331,7 +329,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
    *   GetSinkRequest request = GetSinkRequest.newBuilder()
-   *     .setSinkNameWithSinkNameOneof(sinkName)
+   *     .setSinkName(sinkName.toString())
    *     .build();
    *   ApiFuture&lt;LogSink&gt; future = configClient.getSinkCallable().futureCall(request);
    *   // Do something
@@ -371,7 +369,7 @@ public class ConfigClient implements BackgroundResource {
   public final LogSink createSink(ParentNameOneof parent, LogSink sink) {
 
     CreateSinkRequest request =
-        CreateSinkRequest.newBuilder().setParentWithParentNameOneof(parent).setSink(sink).build();
+        CreateSinkRequest.newBuilder().setParent(parent.toString()).setSink(sink).build();
     return createSink(request);
   }
 
@@ -389,7 +387,7 @@ public class ConfigClient implements BackgroundResource {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   LogSink sink = LogSink.newBuilder().build();
    *   CreateSinkRequest request = CreateSinkRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .setSink(sink)
    *     .build();
    *   LogSink response = configClient.createSink(request);
@@ -417,7 +415,7 @@ public class ConfigClient implements BackgroundResource {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   LogSink sink = LogSink.newBuilder().build();
    *   CreateSinkRequest request = CreateSinkRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .setSink(sink)
    *     .build();
    *   ApiFuture&lt;LogSink&gt; future = configClient.createSinkCallable().futureCall(request);
@@ -460,7 +458,7 @@ public class ConfigClient implements BackgroundResource {
   public final LogSink updateSink(SinkNameOneof sinkName, LogSink sink) {
 
     UpdateSinkRequest request =
-        UpdateSinkRequest.newBuilder().setSinkNameWithSinkNameOneof(sinkName).setSink(sink).build();
+        UpdateSinkRequest.newBuilder().setSinkName(sinkName.toString()).setSink(sink).build();
     return updateSink(request);
   }
 
@@ -477,7 +475,7 @@ public class ConfigClient implements BackgroundResource {
    *   SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
    *   LogSink sink = LogSink.newBuilder().build();
    *   UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
-   *     .setSinkNameWithSinkNameOneof(sinkName)
+   *     .setSinkName(sinkName.toString())
    *     .setSink(sink)
    *     .build();
    *   LogSink response = configClient.updateSink(request);
@@ -504,7 +502,7 @@ public class ConfigClient implements BackgroundResource {
    *   SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
    *   LogSink sink = LogSink.newBuilder().build();
    *   UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
-   *     .setSinkNameWithSinkNameOneof(sinkName)
+   *     .setSinkName(sinkName.toString())
    *     .setSink(sink)
    *     .build();
    *   ApiFuture&lt;LogSink&gt; future = configClient.updateSinkCallable().futureCall(request);
@@ -543,7 +541,7 @@ public class ConfigClient implements BackgroundResource {
   public final void deleteSink(SinkNameOneof sinkName) {
 
     DeleteSinkRequest request =
-        DeleteSinkRequest.newBuilder().setSinkNameWithSinkNameOneof(sinkName).build();
+        DeleteSinkRequest.newBuilder().setSinkName(sinkName.toString()).build();
     deleteSink(request);
   }
 
@@ -558,7 +556,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
    *   DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
-   *     .setSinkNameWithSinkNameOneof(sinkName)
+   *     .setSinkName(sinkName.toString())
    *     .build();
    *   configClient.deleteSink(request);
    * }
@@ -582,7 +580,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
    *   DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
-   *     .setSinkNameWithSinkNameOneof(sinkName)
+   *     .setSinkName(sinkName.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = configClient.deleteSinkCallable().futureCall(request);
    *   // Do something
@@ -616,7 +614,7 @@ public class ConfigClient implements BackgroundResource {
    */
   public final ListExclusionsPagedResponse listExclusions(ParentNameOneof parent) {
     ListExclusionsRequest request =
-        ListExclusionsRequest.newBuilder().setParentWithParentNameOneof(parent).build();
+        ListExclusionsRequest.newBuilder().setParent(parent.toString()).build();
     return listExclusions(request);
   }
 
@@ -630,7 +628,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListExclusionsRequest request = ListExclusionsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (LogExclusion element : configClient.listExclusions(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -655,7 +653,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListExclusionsRequest request = ListExclusionsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListExclusionsPagedResponse&gt; future = configClient.listExclusionsPagedCallable().futureCall(request);
    *   // Do something
@@ -680,7 +678,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   ListExclusionsRequest request = ListExclusionsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListExclusionsResponse response = configClient.listExclusionsCallable().call(request);
@@ -725,8 +723,7 @@ public class ConfigClient implements BackgroundResource {
    */
   public final LogExclusion getExclusion(ExclusionNameOneof name) {
 
-    GetExclusionRequest request =
-        GetExclusionRequest.newBuilder().setNameWithExclusionNameOneof(name).build();
+    GetExclusionRequest request = GetExclusionRequest.newBuilder().setName(name.toString()).build();
     return getExclusion(request);
   }
 
@@ -740,7 +737,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
    *   GetExclusionRequest request = GetExclusionRequest.newBuilder()
-   *     .setNameWithExclusionNameOneof(name)
+   *     .setName(name.toString())
    *     .build();
    *   LogExclusion response = configClient.getExclusion(request);
    * }
@@ -763,7 +760,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
    *   GetExclusionRequest request = GetExclusionRequest.newBuilder()
-   *     .setNameWithExclusionNameOneof(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;LogExclusion&gt; future = configClient.getExclusionCallable().futureCall(request);
    *   // Do something
@@ -802,7 +799,7 @@ public class ConfigClient implements BackgroundResource {
 
     CreateExclusionRequest request =
         CreateExclusionRequest.newBuilder()
-            .setParentWithParentNameOneof(parent)
+            .setParent(parent.toString())
             .setExclusion(exclusion)
             .build();
     return createExclusion(request);
@@ -820,7 +817,7 @@ public class ConfigClient implements BackgroundResource {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   CreateExclusionRequest request = CreateExclusionRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .setExclusion(exclusion)
    *     .build();
    *   LogExclusion response = configClient.createExclusion(request);
@@ -846,7 +843,7 @@ public class ConfigClient implements BackgroundResource {
    *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   CreateExclusionRequest request = CreateExclusionRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .setExclusion(exclusion)
    *     .build();
    *   ApiFuture&lt;LogExclusion&gt; future = configClient.createExclusionCallable().futureCall(request);
@@ -895,7 +892,7 @@ public class ConfigClient implements BackgroundResource {
 
     UpdateExclusionRequest request =
         UpdateExclusionRequest.newBuilder()
-            .setNameWithExclusionNameOneof(name)
+            .setName(name.toString())
             .setExclusion(exclusion)
             .setUpdateMask(updateMask)
             .build();
@@ -914,7 +911,7 @@ public class ConfigClient implements BackgroundResource {
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateExclusionRequest request = UpdateExclusionRequest.newBuilder()
-   *     .setNameWithExclusionNameOneof(name)
+   *     .setName(name.toString())
    *     .setExclusion(exclusion)
    *     .setUpdateMask(updateMask)
    *     .build();
@@ -941,7 +938,7 @@ public class ConfigClient implements BackgroundResource {
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateExclusionRequest request = UpdateExclusionRequest.newBuilder()
-   *     .setNameWithExclusionNameOneof(name)
+   *     .setName(name.toString())
    *     .setExclusion(exclusion)
    *     .setUpdateMask(updateMask)
    *     .build();
@@ -979,7 +976,7 @@ public class ConfigClient implements BackgroundResource {
   public final void deleteExclusion(ExclusionNameOneof name) {
 
     DeleteExclusionRequest request =
-        DeleteExclusionRequest.newBuilder().setNameWithExclusionNameOneof(name).build();
+        DeleteExclusionRequest.newBuilder().setName(name.toString()).build();
     deleteExclusion(request);
   }
 
@@ -993,7 +990,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
    *   DeleteExclusionRequest request = DeleteExclusionRequest.newBuilder()
-   *     .setNameWithExclusionNameOneof(name)
+   *     .setName(name.toString())
    *     .build();
    *   configClient.deleteExclusion(request);
    * }
@@ -1016,7 +1013,7 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
    *   DeleteExclusionRequest request = DeleteExclusionRequest.newBuilder()
-   *     .setNameWithExclusionNameOneof(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = configClient.deleteExclusionCallable().futureCall(request);
    *   // Do something

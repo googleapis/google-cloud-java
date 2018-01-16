@@ -119,7 +119,7 @@ public class ContextsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListContextsRequest actualRequest = (ListContextsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsSessionName());
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -148,7 +148,7 @@ public class ContextsClientTest {
     ContextName name2 = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
     int lifespanCount = 1178775510;
     Context expectedResponse =
-        Context.newBuilder().setNameWithContextName(name2).setLifespanCount(lifespanCount).build();
+        Context.newBuilder().setName(name2.toString()).setLifespanCount(lifespanCount).build();
     mockContexts.addResponse(expectedResponse);
 
     ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
@@ -160,7 +160,7 @@ public class ContextsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetContextRequest actualRequest = (GetContextRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsContextName());
+    Assert.assertEquals(name, ContextName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -189,7 +189,7 @@ public class ContextsClientTest {
     ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
     int lifespanCount = 1178775510;
     Context expectedResponse =
-        Context.newBuilder().setNameWithContextName(name).setLifespanCount(lifespanCount).build();
+        Context.newBuilder().setName(name.toString()).setLifespanCount(lifespanCount).build();
     mockContexts.addResponse(expectedResponse);
 
     SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
@@ -202,7 +202,7 @@ public class ContextsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateContextRequest actualRequest = (CreateContextRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsSessionName());
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
     Assert.assertEquals(context, actualRequest.getContext());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -233,7 +233,7 @@ public class ContextsClientTest {
     ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
     int lifespanCount = 1178775510;
     Context expectedResponse =
-        Context.newBuilder().setNameWithContextName(name).setLifespanCount(lifespanCount).build();
+        Context.newBuilder().setName(name.toString()).setLifespanCount(lifespanCount).build();
     mockContexts.addResponse(expectedResponse);
 
     Context context = Context.newBuilder().build();
@@ -282,7 +282,7 @@ public class ContextsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteContextRequest actualRequest = (DeleteContextRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsContextName());
+    Assert.assertEquals(name, ContextName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -319,7 +319,7 @@ public class ContextsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteAllContextsRequest actualRequest = (DeleteAllContextsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsSessionName());
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

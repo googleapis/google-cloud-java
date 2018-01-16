@@ -112,7 +112,7 @@ public class BigtableTableAdminClientTest {
   @SuppressWarnings("all")
   public void createTableTest() {
     TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
-    Table expectedResponse = Table.newBuilder().setNameWithTableName(name).build();
+    Table expectedResponse = Table.newBuilder().setName(name.toString()).build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
     InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -126,7 +126,7 @@ public class BigtableTableAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateTableRequest actualRequest = (CreateTableRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsInstanceName());
+    Assert.assertEquals(parent, InstanceName.parse(actualRequest.getParent()));
     Assert.assertEquals(tableId, actualRequest.getTableId());
     Assert.assertEquals(table, actualRequest.getTable());
     Assert.assertTrue(
@@ -157,7 +157,7 @@ public class BigtableTableAdminClientTest {
   @SuppressWarnings("all")
   public void createTableFromSnapshotTest() throws Exception {
     TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
-    Table expectedResponse = Table.newBuilder().setNameWithTableName(name).build();
+    Table expectedResponse = Table.newBuilder().setName(name.toString()).build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("createTableFromSnapshotTest")
@@ -179,7 +179,7 @@ public class BigtableTableAdminClientTest {
     CreateTableFromSnapshotRequest actualRequest =
         (CreateTableFromSnapshotRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsInstanceName());
+    Assert.assertEquals(parent, InstanceName.parse(actualRequest.getParent()));
     Assert.assertEquals(tableId, actualRequest.getTableId());
     Assert.assertEquals(sourceSnapshot, actualRequest.getSourceSnapshot());
     Assert.assertTrue(
@@ -233,7 +233,7 @@ public class BigtableTableAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListTablesRequest actualRequest = (ListTablesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsInstanceName());
+    Assert.assertEquals(parent, InstanceName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -260,7 +260,7 @@ public class BigtableTableAdminClientTest {
   @SuppressWarnings("all")
   public void getTableTest() {
     TableName name2 = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
-    Table expectedResponse = Table.newBuilder().setNameWithTableName(name2).build();
+    Table expectedResponse = Table.newBuilder().setName(name2.toString()).build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
     TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
@@ -272,7 +272,7 @@ public class BigtableTableAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetTableRequest actualRequest = (GetTableRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsTableName());
+    Assert.assertEquals(name, TableName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -309,7 +309,7 @@ public class BigtableTableAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteTableRequest actualRequest = (DeleteTableRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsTableName());
+    Assert.assertEquals(name, TableName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -336,7 +336,7 @@ public class BigtableTableAdminClientTest {
   @SuppressWarnings("all")
   public void modifyColumnFamiliesTest() {
     TableName name2 = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
-    Table expectedResponse = Table.newBuilder().setNameWithTableName(name2).build();
+    Table expectedResponse = Table.newBuilder().setName(name2.toString()).build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
     TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
@@ -349,7 +349,7 @@ public class BigtableTableAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ModifyColumnFamiliesRequest actualRequest = (ModifyColumnFamiliesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsTableName());
+    Assert.assertEquals(name, TableName.parse(actualRequest.getName()));
     Assert.assertEquals(modifications, actualRequest.getModificationsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -392,7 +392,7 @@ public class BigtableTableAdminClientTest {
     GenerateConsistencyTokenRequest actualRequest =
         (GenerateConsistencyTokenRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsTableName());
+    Assert.assertEquals(name, TableName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -433,7 +433,7 @@ public class BigtableTableAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CheckConsistencyRequest actualRequest = (CheckConsistencyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsTableName());
+    Assert.assertEquals(name, TableName.parse(actualRequest.getName()));
     Assert.assertEquals(consistencyToken, actualRequest.getConsistencyToken());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -481,7 +481,7 @@ public class BigtableTableAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetSnapshotRequest actualRequest = (GetSnapshotRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsSnapshotName());
+    Assert.assertEquals(name, SnapshotName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -529,7 +529,7 @@ public class BigtableTableAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListSnapshotsRequest actualRequest = (ListSnapshotsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsClusterName());
+    Assert.assertEquals(parent, ClusterName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -566,7 +566,7 @@ public class BigtableTableAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteSnapshotRequest actualRequest = (DeleteSnapshotRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsSnapshotName());
+    Assert.assertEquals(name, SnapshotName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

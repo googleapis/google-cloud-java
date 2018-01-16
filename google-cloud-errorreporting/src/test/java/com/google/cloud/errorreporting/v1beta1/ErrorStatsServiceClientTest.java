@@ -119,7 +119,7 @@ public class ErrorStatsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListGroupStatsRequest actualRequest = (ListGroupStatsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(projectName, actualRequest.getProjectNameAsProjectName());
+    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
     Assert.assertEquals(timeRange, actualRequest.getTimeRange());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -170,7 +170,7 @@ public class ErrorStatsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListEventsRequest actualRequest = (ListEventsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(projectName, actualRequest.getProjectNameAsProjectName());
+    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
     Assert.assertEquals(groupId, actualRequest.getGroupId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -210,7 +210,7 @@ public class ErrorStatsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteEventsRequest actualRequest = (DeleteEventsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(projectName, actualRequest.getProjectNameAsProjectName());
+    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

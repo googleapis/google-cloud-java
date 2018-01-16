@@ -119,7 +119,7 @@ public class MetricsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListLogMetricsRequest actualRequest = (ListLogMetricsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -167,7 +167,7 @@ public class MetricsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetLogMetricRequest actualRequest = (GetLogMetricRequest) actualRequests.get(0);
 
-    Assert.assertEquals(metricName, actualRequest.getMetricNameAsMetricNameOneof());
+    Assert.assertEquals(metricName, MetricNameOneof.parse(actualRequest.getMetricName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -216,7 +216,7 @@ public class MetricsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateLogMetricRequest actualRequest = (CreateLogMetricRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
     Assert.assertEquals(metric, actualRequest.getMetric());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -267,7 +267,7 @@ public class MetricsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     UpdateLogMetricRequest actualRequest = (UpdateLogMetricRequest) actualRequests.get(0);
 
-    Assert.assertEquals(metricName, actualRequest.getMetricNameAsMetricNameOneof());
+    Assert.assertEquals(metricName, MetricNameOneof.parse(actualRequest.getMetricName()));
     Assert.assertEquals(metric, actualRequest.getMetric());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -306,7 +306,7 @@ public class MetricsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteLogMetricRequest actualRequest = (DeleteLogMetricRequest) actualRequests.get(0);
 
-    Assert.assertEquals(metricName, actualRequest.getMetricNameAsMetricNameOneof());
+    Assert.assertEquals(metricName, MetricNameOneof.parse(actualRequest.getMetricName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
