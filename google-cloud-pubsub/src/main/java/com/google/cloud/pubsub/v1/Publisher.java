@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
@@ -30,11 +31,13 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.pubsub.v1.PublishRequest;
@@ -52,6 +55,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ThreadLocalRandom;
@@ -137,7 +141,12 @@ public class Publisher {
       channelProvider = channelProvider.withExecutor(executor);
     }
     if (channelProvider.needsHeaders()) {
-      channelProvider = channelProvider.withHeaders(builder.headerProvider.getHeaders());
+      Map<String, String> headers =
+          ImmutableMap.<String, String>builder()
+              .putAll(builder.headerProvider.getHeaders())
+              .putAll(builder.internalHeaderProvider.getHeaders())
+              .build();
+      channelProvider = channelProvider.withHeaders(headers);
     }
     if (channelProvider.needsEndpoint()) {
       channelProvider = channelProvider.withEndpoint(TopicAdminSettings.getDefaultEndpoint());
@@ -580,7 +589,9 @@ public class Publisher {
 
     TransportChannelProvider channelProvider =
         TopicAdminSettings.defaultGrpcTransportProviderBuilder().setChannelsPerCpu(1).build();
-    HeaderProvider headerProvider =
+
+    HeaderProvider headerProvider = new NoHeaderProvider();
+    HeaderProvider internalHeaderProvider =
         TopicAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     CredentialsProvider credentialsProvider =
@@ -595,15 +606,42 @@ public class Publisher {
      * endpoint.
      *
      * <p>For performance, this client benefits from having multiple underlying connections. See
-     * {@link InstantiatingGrpcChannelProvider#setPoolSize(int)}.
+     * {@link com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder#setPoolSize(int)}.
      */
     public Builder setChannelProvider(TransportChannelProvider channelProvider) {
       this.channelProvider = Preconditions.checkNotNull(channelProvider);
       return this;
     }
 
+    /**
+     * Sets the static header provider. The header provider will be called during client
+     * construction only once. The headers returned by the provider will be cached and supplied as
+     * is for each request issued by the constructed client. Some reserved headers can be overridden
+     * (e.g. Content-Type) or merged with the default value (e.g. User-Agent) by the underlying
+     * transport layer.
+     *
+     * @param headerProvider the header provider
+     * @return the builder
+     */
+    @BetaApi
     public Builder setHeaderProvider(HeaderProvider headerProvider) {
       this.headerProvider = Preconditions.checkNotNull(headerProvider);
+      return this;
+    }
+
+    /**
+     * Sets the static header provider for getting internal (library-defined) headers. The header
+     * provider will be called during client construction only once. The headers returned by the
+     * provider will be cached and supplied as is for each request issued by the constructed client.
+     * Some reserved headers can be overridden (e.g. Content-Type) or merged with the default value
+     * (e.g. User-Agent) by the underlying transport layer.
+     *
+     * @param internalHeaderProvider the internal header provider
+     * @return the builder
+     */
+    @BetaApi
+    protected Builder setInternalHeaderProvider(HeaderProvider internalHeaderProvider) {
+      this.internalHeaderProvider = Preconditions.checkNotNull(internalHeaderProvider);
       return this;
     }
 
