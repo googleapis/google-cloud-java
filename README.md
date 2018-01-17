@@ -35,7 +35,9 @@ This library supports the following Google Cloud Platform services with clients 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
 -  [Cloud Compute](google-cloud-compute) (Alpha)
+-  [Cloud Dataproc](google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-dns) (Alpha)
+-  [Cloud OS Login](google-cloud-os-login) (Alpha)
 -  [Cloud Resource Manager](google-cloud-resourcemanager) (Alpha)
 -  [Cloud Speech](google-cloud-speech) (Alpha)
 -  [Dialogflow](google-cloud-dialogflow) (Alpha)
