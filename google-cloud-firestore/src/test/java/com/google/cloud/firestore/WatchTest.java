@@ -682,7 +682,7 @@ public class WatchTest {
     QuerySnapshot querySnapshot = querySnapshots.take();
 
     // List of documents to use a base to replay all changes. Verifies oldIndex and newIndex.
-    List<DocumentSnapshot> updatedDocuments = new ArrayList<>();
+    List<QueryDocumentSnapshot> updatedDocuments = new ArrayList<>();
 
     if (lastSnapshot != null) {
       updatedDocuments.addAll(lastSnapshot.getDocuments());
@@ -691,7 +691,7 @@ public class WatchTest {
     // List of document names in the expected sorted order.
     List<String> expectedOrder = new ArrayList<>();
 
-    Iterator<DocumentSnapshot> snapshotIterator = querySnapshot.getDocuments().iterator();
+    Iterator<QueryDocumentSnapshot> snapshotIterator = querySnapshot.getDocuments().iterator();
 
     for (SnapshotDocument expected : documents) {
       if (expected.type != ChangeType.REMOVED) {
@@ -730,7 +730,8 @@ public class WatchTest {
     verifyOrder(expectedOrder, updatedDocuments);
   }
 
-  private void verifyOrder(List<String> expectedOrder, List<DocumentSnapshot> updatedDocuments) {
+  private void verifyOrder(
+      List<String> expectedOrder, List<QueryDocumentSnapshot> updatedDocuments) {
     assertEquals(expectedOrder.size(), updatedDocuments.size());
 
     for (int i = 0; i < expectedOrder.size(); ++i) {

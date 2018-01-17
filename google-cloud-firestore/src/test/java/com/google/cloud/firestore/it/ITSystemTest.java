@@ -41,6 +41,7 @@ import com.google.cloud.firestore.LocalFirestoreHelper.AllSupportedTypes;
 import com.google.cloud.firestore.LocalFirestoreHelper.SingleField;
 import com.google.cloud.firestore.Precondition;
 import com.google.cloud.firestore.Query;
+import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.SetOptions;
 import com.google.cloud.firestore.Transaction;
@@ -231,7 +232,7 @@ public class ITSystemTest {
     QuerySnapshot querySnapshot = randomColl.get().get();
     assertEquals(2, querySnapshot.size());
 
-    Iterator<DocumentSnapshot> documents = querySnapshot.iterator();
+    Iterator<QueryDocumentSnapshot> documents = querySnapshot.iterator();
     assertEquals("bar", documents.next().get("foo"));
     assertEquals("bar", documents.next().get("foo"));
   }
@@ -279,7 +280,7 @@ public class ITSystemTest {
     addDocument("foo", 2);
 
     QuerySnapshot querySnapshot = randomColl.orderBy("foo").get().get();
-    Iterator<DocumentSnapshot> documents = querySnapshot.iterator();
+    Iterator<QueryDocumentSnapshot> documents = querySnapshot.iterator();
     assertEquals(1L, documents.next().get("foo"));
     assertEquals(2L, documents.next().get("foo"));
 
@@ -373,7 +374,7 @@ public class ITSystemTest {
 
     QuerySnapshot querySnapshot = randomColl.orderBy("foo").startAt(1).get().get();
     assertEquals(2, querySnapshot.size());
-    Iterator<DocumentSnapshot> documents = querySnapshot.iterator();
+    Iterator<QueryDocumentSnapshot> documents = querySnapshot.iterator();
     assertEquals(1L, documents.next().get("foo"));
     assertEquals(2L, documents.next().get("foo"));
   }
@@ -395,7 +396,7 @@ public class ITSystemTest {
 
     QuerySnapshot querySnapshot = randomColl.orderBy("foo").endAt(2).get().get();
     assertEquals(2, querySnapshot.size());
-    Iterator<DocumentSnapshot> documents = querySnapshot.iterator();
+    Iterator<QueryDocumentSnapshot> documents = querySnapshot.iterator();
     assertEquals(1L, documents.next().get("foo"));
     assertEquals(2L, documents.next().get("foo"));
   }

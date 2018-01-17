@@ -508,7 +508,7 @@ public class QueryTest {
     assertEquals(2, result.size());
     assertEquals(2, result.getDocuments().size());
 
-    Iterator<DocumentSnapshot> iterator = result.iterator();
+    Iterator<QueryDocumentSnapshot> iterator = result.iterator();
     assertEquals("doc1", iterator.next().getId());
     assertEquals("doc2", iterator.next().getId());
     assertFalse(iterator.hasNext());

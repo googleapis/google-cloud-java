@@ -36,9 +36,13 @@ import org.threeten.bp.Instant;
 
 /**
  * A DocumentSnapshot contains data read from a document in a Firestore database. The data can be
- * extracted with the getData or get methods.
+ * extracted with the {@link #getData()} or {@link #get(String)} methods.
+ *
+ * <p>If the DocumentSnapshot points to a non-existing document, getData() and its corresponding
+ * methods will return null. You can always explicitly check for a document's existence by calling
+ * {@link #exists()}.
  */
-public final class DocumentSnapshot {
+public class DocumentSnapshot {
 
   private final FirestoreImpl firestore;
   private final DocumentReference docRef;
@@ -186,7 +190,8 @@ public final class DocumentSnapshot {
   }
 
   /**
-   * Returns whether the backing document exists in Firestore.
+   * Returns whether or not the field exists in the document. Returns false if the document does not
+   * exist.
    *
    * @return whether the document existed in this snapshot.
    */
@@ -200,15 +205,17 @@ public final class DocumentSnapshot {
   }
 
   /**
-   * Returns the fields of the document as a Map. Field values will be converted to their native
-   * Java representation.
+   * Returns the fields of the document as a Map or null if the document doesn't exist. Field values
+   * will be converted to their native Java representation.
    *
-   * @return The fields of the document as a Map.
-   * @throws IllegalStateException if the document doesn't exist.
+   * @return The fields of the document as a Map or null if the document doesn't exist.
    */
-  @Nonnull
+  @Nullable
   public Map<String, Object> getData() {
-    Preconditions.checkState(exists(), "Cannot call getData() on missing document.");
+    if (fields == null) {
+      return null;
+    }
+
     Map<String, Object> decodedFields = new HashMap<>();
     for (Map.Entry<String, Value> entry : fields.entrySet()) {
       decodedFields.put(entry.getKey(), decodeValue(entry.getValue()));
@@ -217,34 +224,35 @@ public final class DocumentSnapshot {
   }
 
   /**
-   * Returns the contents of the document converted to a POJO.
+   * Returns the contents of the document converted to a POJO or null if the document doesn't exist.
    *
-   * @param valueType The Java class to create.
-   * @return The contents of the document in an object of type T.
-   * @throws IllegalStateException if the document doesn't exist.
+   * @param valueType The Java class to create
+   * @return The contents of the document in an object of type T or null if the document doesn't
+   *     exist.
    */
-  @Nonnull
+  @Nullable
   public <T> T toObject(@Nonnull Class<T> valueType) {
-    return CustomClassMapper.convertToCustomClass(getData(), valueType);
+    Map<String, Object> data = getData();
+    return data == null ? null : CustomClassMapper.convertToCustomClass(getData(), valueType);
   }
 
   /**
-   * Returns whether or not the field exists in the document.
+   * Returns whether or not the field exists in the document. Returns false if the document does not
+   * exist.
    *
    * @param field the path to the field.
    * @return true iff the field exists.
-   * @throws IllegalStateException if the document doesn't exist.
    */
   public boolean contains(@Nonnull String field) {
     return contains(FieldPath.fromDotSeparatedString(field));
   }
 
   /**
-   * Returns whether or not the field exists in the document.
+   * Returns whether or not the field exists in the document. Returns false if the document does not
+   * exist.
    *
    * @param fieldPath the path to the field.
    * @return true iff the field exists.
-   * @throws IllegalStateException if the document doesn't exist.
    */
   public boolean contains(@Nonnull FieldPath fieldPath) {
     return this.extractField(fieldPath) != null;
@@ -255,7 +263,6 @@ public final class DocumentSnapshot {
    *
    * @param field The path to the field.
    * @return The value at the given field or null.
-   * @throws IllegalStateException if the document doesn't exist.
    */
   @Nullable
   public Object get(@Nonnull String field) {
@@ -267,7 +274,6 @@ public final class DocumentSnapshot {
    *
    * @param fieldPath The path to the field.
    * @return The value at the given field or null.
-   * @throws IllegalStateException if the document doesn't exist.
    */
   @Nullable
   public Object get(@Nonnull FieldPath fieldPath) {
@@ -301,12 +307,11 @@ public final class DocumentSnapshot {
   }
 
   /**
-   * Returns the value of the field as a boolean. If the value is not a boolean this will throw a
-   * runtime exception
+   * Returns the value of the field as a boolean.
    *
    * @param field The path to the field.
+   * @throws RuntimeException if the value is not a Boolean.
    * @return The value of the field.
-   * @throws IllegalStateException if the document doesn't exist.
    */
   @Nullable
   public Boolean getBoolean(@Nonnull String field) {
@@ -314,25 +319,24 @@ public final class DocumentSnapshot {
   }
 
   /**
-   * Returns the value of the field as a double. If the value is not a double this will throw a
-   * runtime exception.
+   * Returns the value of the field as a double.
    *
    * @param field The path to the field.
+   * @throws RuntimeException if the value is not a Number.
    * @return The value of the field.
-   * @throws IllegalStateException if the document doesn't exist.
    */
   @Nullable
   public Double getDouble(@Nonnull String field) {
-    return (Double) get(field);
+    Number number = (Number) get(field);
+    return number == null ? null : number.doubleValue();
   }
 
   /**
-   * Returns the value of the field as a String. If the value is not a String this will throw a
-   * runtime exception
+   * Returns the value of the field as a String.
    *
    * @param field The path to the field.
+   * @throws RuntimeException if the value is not a String.
    * @return The value of the field.
-   * @throws IllegalStateException if the document doesn't exist.
    */
   @Nullable
   public String getString(@Nonnull String field) {
@@ -340,25 +344,24 @@ public final class DocumentSnapshot {
   }
 
   /**
-   * Returns the value of the field as a long. If the value is not a long this will throw a runtime
-   * exception
+   * Returns the value of the field as a long.
    *
    * @param field The path to the field.
+   * @throws RuntimeException if the value is not a Number.
    * @return The value of the field.
-   * @throws IllegalStateException if the document doesn't exist.
    */
   @Nullable
   public Long getLong(@Nonnull String field) {
-    return (Long) get(field);
+    Number number = (Number) get(field);
+    return number == null ? null : number.longValue();
   }
 
   /**
-   * Returns the value of the field as a Date. If the value is not a Date this will throw a runtime
-   * exception
+   * Returns the value of the field as a Date.
    *
    * @param field The path to the field.
+   * @throws RuntimeException if the value is not a Date.
    * @return The value of the field.
-   * @throws IllegalStateException if the document doesn't exist.
    */
   @Nullable
   public Date getDate(@Nonnull String field) {
@@ -366,12 +369,11 @@ public final class DocumentSnapshot {
   }
 
   /**
-   * Returns the value of the field as a Blob. If the value is not a Blob this will throw a runtime
-   * exception
+   * Returns the value of the field as a Blob.
    *
    * @param field The path to the field.
+   * @throws RuntimeException if the value is not a Blob.
    * @return The value of the field.
-   * @throws IllegalStateException if the document doesn't exist.
    */
   @Nullable
   public Blob getBlob(@Nonnull String field) {
@@ -379,12 +381,11 @@ public final class DocumentSnapshot {
   }
 
   /**
-   * Returns the value of the field as a GeoPoint. If the value is not a GeoPoint this will throw a
-   * runtime exception
+   * Returns the value of the field as a GeoPoint.
    *
    * @param field The path to the field.
+   * @throws RuntimeException if the value is not a GeoPoint.
    * @return The value of the field.
-   * @throws IllegalStateException if the document doesn't exist.
    */
   @Nullable
   public GeoPoint getGeoPoint(@Nonnull String field) {
