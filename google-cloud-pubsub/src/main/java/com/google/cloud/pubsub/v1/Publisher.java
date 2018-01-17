@@ -640,7 +640,7 @@ public class Publisher {
      * @return the builder
      */
     @BetaApi
-    protected Builder setInternalHeaderProvider(HeaderProvider internalHeaderProvider) {
+    Builder setInternalHeaderProvider(HeaderProvider internalHeaderProvider) {
       this.internalHeaderProvider = Preconditions.checkNotNull(internalHeaderProvider);
       return this;
     }
