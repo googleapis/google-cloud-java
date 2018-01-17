@@ -43,7 +43,6 @@ import com.google.gson.reflect.TypeToken;
 import com.google.protobuf.Message;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -71,7 +70,7 @@ import org.threeten.bp.Instant;
 
 @RunWith(AllTests.class)
 public class ConformanceTest {
-  private static final String TEST_FILE = "./src/test/resources/test_data.binprotos";
+  private static final String TEST_FILE = "./src/test/resources/test-suite.binproto";
 
   /** Interface implemented by the conformance test cases. */
   private interface ConformanceTestCase extends Test, Describable {}
@@ -138,21 +137,6 @@ public class ConformanceTest {
     return convertedFields;
   }
 
-  /** Decodes a Protobuf varint. */
-  public int parseLength(InputStream in) throws IOException {
-    int res = 0;
-    int pos = 0;
-    int b;
-    while (((b = in.read()) & 0x80) != 0) {
-      if (b == -1) {
-        return -1;
-      }
-      res |= (b & 0x7F) << pos;
-      pos += 7;
-    }
-    return res | (b << pos);
-  }
-
   /** Converts a JSON string into a Java Map. */
   private Map<String, Object> convertInput(String jsonData) {
     Type type = new TypeToken<Map<String, Object>>() {}.getType();
@@ -214,19 +198,10 @@ public class ConformanceTest {
   /** Reads the test definition from the Proto file. */
   private List<Test> parseTests() throws IOException {
     List<Test> tests = new ArrayList<>();
-    FileInputStream inputStream = new FileInputStream(TEST_FILE);
 
-    int length;
-    while ((length = parseLength(inputStream)) != -1) {
-      byte[] buffer = new byte[length];
-      int read = inputStream.read(buffer);
-      Preconditions.checkState(
-          length == read,
-          "Encountered unexpected length for test case. Expected %d, but was %d",
-          length,
-          read);
-      TestDefinition.Test testDefinition = TestDefinition.Test.parseFrom(buffer);
-
+    TestDefinition.TestSuite testSuite = TestDefinition.TestSuite.parseFrom(
+        new FileInputStream(TEST_FILE));
+    for (TestDefinition.Test testDefinition : testSuite.getTestsList()) {
       if (!includedTests.isEmpty() && !includedTests.contains(testDefinition.getDescription())
           || excludedTests.contains(testDefinition.getDescription())) {
         continue;

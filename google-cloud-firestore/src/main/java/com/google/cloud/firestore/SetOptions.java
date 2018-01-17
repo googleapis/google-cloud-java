@@ -121,7 +121,18 @@ public final class SetOptions {
 
   /** Returns the EncodingOptions to use for a set() call. */
   EncodingOptions getEncodingOptions() {
-    return merge ? UserDataConverter.ALLOW_ALL_DELETES : UserDataConverter.NO_DELETES;
+    if (!merge) {
+      return UserDataConverter.NO_DELETES;
+    } else if (fieldMask == null) {
+      return UserDataConverter.ALLOW_ALL_DELETES;
+    } else {
+      return new EncodingOptions() {
+        @Override
+        public boolean allowDelete(FieldPath fieldPath) {
+          return fieldMask.contains(fieldPath);
+        }
+      };
+    }
   }
 
   @Override
