@@ -44,7 +44,7 @@ public class ViewDefinition extends TableDefinition {
 
     private String query;
     private List<UserDefinedFunction> userDefinedFunctions;
-    private Boolean useLegacySql;
+    private Boolean useLegacySql = false;
 
     private Builder() {
       super(Type.VIEW);
