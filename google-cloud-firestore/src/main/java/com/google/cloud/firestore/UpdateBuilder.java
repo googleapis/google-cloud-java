@@ -135,7 +135,8 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   /** Adds a new mutation to the batch. */
   private Mutation addMutation() {
-    Preconditions.checkState(!committed, "Cannot modify a WriteBatch that has already been committed.");
+    Preconditions.checkState(
+        !committed, "Cannot modify a WriteBatch that has already been committed.");
     Mutation mutation = new Mutation();
     mutations.add(mutation);
     return mutation;

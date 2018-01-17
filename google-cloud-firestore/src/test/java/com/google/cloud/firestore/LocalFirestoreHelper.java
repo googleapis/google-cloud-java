@@ -357,6 +357,11 @@ public final class LocalFirestoreHelper {
   }
 
   public static StructuredQuery filter(StructuredQuery.FieldFilter.Operator operator) {
+    return filter(operator, "foo", "bar");
+  }
+
+  public static StructuredQuery filter(
+      StructuredQuery.FieldFilter.Operator operator, String path, String value) {
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
     StructuredQuery.CompositeFilter.Builder compositeFilter =
         structuredQuery.getWhereBuilder().getCompositeFilterBuilder();
@@ -364,9 +369,9 @@ public final class LocalFirestoreHelper {
 
     StructuredQuery.FieldFilter.Builder fieldFilter =
         compositeFilter.addFiltersBuilder().getFieldFilterBuilder();
-    fieldFilter.setField(StructuredQuery.FieldReference.newBuilder().setFieldPath("foo"));
+    fieldFilter.setField(StructuredQuery.FieldReference.newBuilder().setFieldPath(path));
     fieldFilter.setOp(operator);
-    fieldFilter.setValue(Value.newBuilder().setStringValue("bar"));
+    fieldFilter.setValue(Value.newBuilder().setStringValue(value));
 
     return structuredQuery.build();
   }
@@ -594,7 +599,9 @@ public final class LocalFirestoreHelper {
             null,
             new DocumentReference(
                 null,
-                ResourcePath.create(DatabaseRootName.of("", ""), ImmutableList.of("coll", "doc"))),
+                ResourcePath.create(
+                    DatabaseRootName.of("test-project", "(default)"),
+                    ImmutableList.of("coll", "doc"))),
             SINGLE_FIELD_PROTO,
             Instant.ofEpochSecond(5, 6),
             Instant.ofEpochSecond(3, 4),
