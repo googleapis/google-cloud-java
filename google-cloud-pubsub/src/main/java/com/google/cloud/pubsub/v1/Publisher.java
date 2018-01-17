@@ -639,7 +639,6 @@ public class Publisher {
      * @param internalHeaderProvider the internal header provider
      * @return the builder
      */
-    @BetaApi
     Builder setInternalHeaderProvider(HeaderProvider internalHeaderProvider) {
       this.internalHeaderProvider = Preconditions.checkNotNull(internalHeaderProvider);
       return this;
