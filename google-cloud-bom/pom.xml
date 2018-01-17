@@ -151,6 +151,7 @@
     <core-http.version>1.14.1-SNAPSHOT</core-http.version>
     <core-grpc.version>1.14.1-SNAPSHOT</core-grpc.version>
     <datastore.version>1.14.1-SNAPSHOT</datastore.version>
+    <dataproc.version>0.32.1-alpha-SNAPSHOT</dataproc.version>
     <dialogflow.version>0.32.1-alpha-SNAPSHOT</dialogflow.version>
     <dlp.version>0.32.1-beta-SNAPSHOT</dlp.version>
     <dns.version>0.32.1-alpha-SNAPSHOT</dns.version>
@@ -160,6 +161,7 @@
     <language.version>1.14.1-SNAPSHOT</language.version>
     <logging.version>1.14.1-SNAPSHOT</logging.version>
     <monitoring.version>0.32.1-beta-SNAPSHOT</monitoring.version>
+    <os-login.version>0.32.1-alpha-SNAPSHOT</os-login.version>
     <pubsub.version>0.32.1-beta-SNAPSHOT</pubsub.version>
     <resourcemanager.version>0.32.1-alpha-SNAPSHOT</resourcemanager.version>
     <spanner.version>0.32.1-beta-SNAPSHOT</spanner.version>
@@ -354,6 +356,28 @@
         <artifactId>google-cloud-core-http</artifactId>
         <version>${core-http.version}</version>
         <type>test-jar</type>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-dataproc</artifactId>
+        <version>${dataproc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-dataproc</artifactId>
+        <version>${dataproc.version}</version>
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dataproc-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dataproc-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
 
       <dependency>
@@ -573,6 +597,28 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-os-login</artifactId>
+        <version>${os-login.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-os-login</artifactId>
+        <version>${os-login.version}</version>
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-os-login-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-os-login-v1</artifactId>
         <version>${generated-proto-beta.version}</version>
       </dependency>
 
