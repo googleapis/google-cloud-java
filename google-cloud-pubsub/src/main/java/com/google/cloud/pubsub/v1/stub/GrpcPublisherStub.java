@@ -156,12 +156,12 @@ public class GrpcPublisherStub extends PublisherStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
-  public static final GrpcPublisherStub create(TopicAdminSettings settings) throws IOException {
+  public static final GrpcPublisherStub create(PublisherStubSettings settings) throws IOException {
     return new GrpcPublisherStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcPublisherStub create(ClientContext clientContext) throws IOException {
-    return new GrpcPublisherStub(TopicAdminSettings.newBuilder().build(), clientContext);
+    return new GrpcPublisherStub(PublisherStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -169,7 +169,7 @@ public class GrpcPublisherStub extends PublisherStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcPublisherStub(TopicAdminSettings settings, ClientContext clientContext)
+  protected GrpcPublisherStub(PublisherStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<Topic, Topic> createTopicTransportSettings =
