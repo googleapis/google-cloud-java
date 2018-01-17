@@ -208,6 +208,7 @@
     <module>google-cloud-core</module>
     <module>google-cloud-core-http</module>
     <module>google-cloud-core-grpc</module>
+    <module>google-cloud-dataproc</module>
     <module>google-cloud-datastore</module>
     <module>google-cloud-dlp</module>
     <module>google-cloud-dialogflow</module>
@@ -219,6 +220,7 @@
     <module>google-cloud-logging</module>
     <module>google-cloud-monitoring</module>
     <module>google-cloud-notification</module>
+    <module>google-cloud-os-login</module>
     <module>google-cloud-pubsub</module>
     <module>google-cloud-resourcemanager</module>
     <module>google-cloud-spanner</module>
