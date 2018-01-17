@@ -174,7 +174,7 @@ public class TraceServiceClient implements BackgroundResource {
   public final void batchWriteSpans(ProjectName name, List<Span> spans) {
 
     BatchWriteSpansRequest request =
-        BatchWriteSpansRequest.newBuilder().setNameWithProjectName(name).addAllSpans(spans).build();
+        BatchWriteSpansRequest.newBuilder().setName(name.toString()).addAllSpans(spans).build();
     batchWriteSpans(request);
   }
 
@@ -189,7 +189,7 @@ public class TraceServiceClient implements BackgroundResource {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   List&lt;Span&gt; spans = new ArrayList&lt;&gt;();
    *   BatchWriteSpansRequest request = BatchWriteSpansRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .addAllSpans(spans)
    *     .build();
    *   traceServiceClient.batchWriteSpans(request);
@@ -214,7 +214,7 @@ public class TraceServiceClient implements BackgroundResource {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   List&lt;Span&gt; spans = new ArrayList&lt;&gt;();
    *   BatchWriteSpansRequest request = BatchWriteSpansRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .addAllSpans(spans)
    *     .build();
    *   ApiFuture&lt;Void&gt; future = traceServiceClient.batchWriteSpansCallable().futureCall(request);
@@ -241,7 +241,7 @@ public class TraceServiceClient implements BackgroundResource {
    *   Timestamp startTime = Timestamp.newBuilder().build();
    *   Timestamp endTime = Timestamp.newBuilder().build();
    *   Span request = Span.newBuilder()
-   *     .setNameWithSpanName(name)
+   *     .setName(name.toString())
    *     .setSpanId(spanId)
    *     .setDisplayName(displayName)
    *     .setStartTime(startTime)
@@ -272,7 +272,7 @@ public class TraceServiceClient implements BackgroundResource {
    *   Timestamp startTime = Timestamp.newBuilder().build();
    *   Timestamp endTime = Timestamp.newBuilder().build();
    *   Span request = Span.newBuilder()
-   *     .setNameWithSpanName(name)
+   *     .setName(name.toString())
    *     .setSpanId(spanId)
    *     .setDisplayName(displayName)
    *     .setStartTime(startTime)
