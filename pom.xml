@@ -229,7 +229,6 @@
     <module>google-cloud-vision</module>
     <module>google-cloud-video-intelligence</module>
 
-    <module>google-cloud-dep-verification</module>
     <module>google-cloud-util</module>
     <module>google-cloud</module>
 
