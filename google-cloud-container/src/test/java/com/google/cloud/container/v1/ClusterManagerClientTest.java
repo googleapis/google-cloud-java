@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,8 +16,11 @@
 package com.google.cloud.container.v1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.container.v1.AddonsConfig;
 import com.google.container.v1.CancelOperationRequest;
@@ -74,6 +77,7 @@ public class ClusterManagerClientTest {
   private static MockClusterManager mockClusterManager;
   private static MockServiceHelper serviceHelper;
   private ClusterManagerClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -91,9 +95,10 @@ public class ClusterManagerClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     ClusterManagerSettings settings =
         ClusterManagerSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = ClusterManagerClient.create(settings);
@@ -122,6 +127,10 @@ public class ClusterManagerClientTest {
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -207,6 +216,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -265,6 +278,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(cluster, actualRequest.getCluster());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -325,6 +342,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(update, actualRequest.getUpdate());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -386,6 +407,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(loggingService, actualRequest.getLoggingService());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -448,6 +473,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(monitoringService, actualRequest.getMonitoringService());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -509,6 +538,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(addonsConfig, actualRequest.getAddonsConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -570,6 +603,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(locations, actualRequest.getLocationsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -631,6 +668,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(masterVersion, actualRequest.getMasterVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -690,6 +731,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -728,6 +773,10 @@ public class ClusterManagerClientTest {
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -785,6 +834,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(operationId, actualRequest.getOperationId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -824,6 +877,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(operationId, actualRequest.getOperationId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -868,6 +925,10 @@ public class ClusterManagerClientTest {
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -907,6 +968,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -961,6 +1026,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(nodePoolId, actualRequest.getNodePoolId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -1022,6 +1091,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(nodePool, actualRequest.getNodePool());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -1083,6 +1156,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(nodePoolId, actualRequest.getNodePoolId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -1146,6 +1223,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(nodePoolId, actualRequest.getNodePoolId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -1207,6 +1288,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(enabled, actualRequest.getEnabled());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -1266,6 +1351,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -1324,6 +1413,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -1384,6 +1477,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(networkPolicy, actualRequest.getNetworkPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -1446,6 +1543,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(zone, actualRequest.getZone());
     Assert.assertEquals(clusterId, actualRequest.getClusterId());
     Assert.assertEquals(maintenancePolicy, actualRequest.getMaintenancePolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

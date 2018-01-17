@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -181,7 +181,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
 
     ReportErrorEventRequest request =
         ReportErrorEventRequest.newBuilder()
-            .setProjectNameWithProjectName(projectName)
+            .setProjectName(projectName.toString())
             .setEvent(event)
             .build();
     return reportErrorEvent(request);
@@ -205,7 +205,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setEvent(event)
    *     .build();
    *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(request);
@@ -237,7 +237,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setEvent(event)
    *     .build();
    *   ApiFuture&lt;ReportErrorEventResponse&gt; future = reportErrorsServiceClient.reportErrorEventCallable().futureCall(request);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,6 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQuery.QueryOption;
-import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
@@ -33,12 +31,10 @@ import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -83,14 +79,9 @@ public class InsertDataAndQueryTable {
     // Create a query request
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder("SELECT * FROM my_dataset_id.my_table_id").build();
-    // Request query to be executed and wait for results
-    QueryResponse queryResponse = bigquery.query(
-        queryConfig,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
     // Read rows
     System.out.println("Table rows:");
-    for (FieldValueList row : queryResponse.getResult().iterateAll()) {
+    for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
       System.out.println(row);
     }
   }

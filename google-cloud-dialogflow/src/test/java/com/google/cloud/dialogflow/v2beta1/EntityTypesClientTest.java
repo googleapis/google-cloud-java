@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,8 +18,11 @@ package com.google.cloud.dialogflow.v2beta1;
 import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListEntityTypesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.dialogflow.v2beta1.EntityType.Entity;
@@ -52,6 +55,7 @@ public class EntityTypesClientTest {
   private static MockSessions mockSessions;
   private static MockServiceHelper serviceHelper;
   private EntityTypesClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -82,9 +86,10 @@ public class EntityTypesClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     EntityTypesSettings settings =
         EntityTypesSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = EntityTypesClient.create(settings);
@@ -120,7 +125,11 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListEntityTypesRequest actualRequest = (ListEntityTypesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -165,8 +174,12 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListEntityTypesRequest actualRequest = (ListEntityTypesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -192,10 +205,7 @@ public class EntityTypesClientTest {
     EntityTypeName name2 = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
     EntityType expectedResponse =
-        EntityType.newBuilder()
-            .setNameWithEntityTypeName(name2)
-            .setDisplayName(displayName)
-            .build();
+        EntityType.newBuilder().setName(name2.toString()).setDisplayName(displayName).build();
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
@@ -207,7 +217,11 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetEntityTypeRequest actualRequest = (GetEntityTypeRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsEntityTypeName());
+    Assert.assertEquals(name, EntityTypeName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -232,10 +246,7 @@ public class EntityTypesClientTest {
     EntityTypeName name2 = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
     EntityType expectedResponse =
-        EntityType.newBuilder()
-            .setNameWithEntityTypeName(name2)
-            .setDisplayName(displayName)
-            .build();
+        EntityType.newBuilder().setName(name2.toString()).setDisplayName(displayName).build();
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
@@ -248,8 +259,12 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetEntityTypeRequest actualRequest = (GetEntityTypeRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsEntityTypeName());
+    Assert.assertEquals(name, EntityTypeName.parse(actualRequest.getName()));
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -275,7 +290,7 @@ public class EntityTypesClientTest {
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
     EntityType expectedResponse =
-        EntityType.newBuilder().setNameWithEntityTypeName(name).setDisplayName(displayName).build();
+        EntityType.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
     mockEntityTypes.addResponse(expectedResponse);
 
     ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
@@ -288,8 +303,12 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateEntityTypeRequest actualRequest = (CreateEntityTypeRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
     Assert.assertEquals(entityType, actualRequest.getEntityType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -315,7 +334,7 @@ public class EntityTypesClientTest {
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
     EntityType expectedResponse =
-        EntityType.newBuilder().setNameWithEntityTypeName(name).setDisplayName(displayName).build();
+        EntityType.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
     mockEntityTypes.addResponse(expectedResponse);
 
     ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
@@ -329,9 +348,13 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateEntityTypeRequest actualRequest = (CreateEntityTypeRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
     Assert.assertEquals(entityType, actualRequest.getEntityType());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -358,7 +381,7 @@ public class EntityTypesClientTest {
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
     EntityType expectedResponse =
-        EntityType.newBuilder().setNameWithEntityTypeName(name).setDisplayName(displayName).build();
+        EntityType.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityType entityType = EntityType.newBuilder().build();
@@ -371,6 +394,10 @@ public class EntityTypesClientTest {
     UpdateEntityTypeRequest actualRequest = (UpdateEntityTypeRequest) actualRequests.get(0);
 
     Assert.assertEquals(entityType, actualRequest.getEntityType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -395,7 +422,7 @@ public class EntityTypesClientTest {
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
     EntityType expectedResponse =
-        EntityType.newBuilder().setNameWithEntityTypeName(name).setDisplayName(displayName).build();
+        EntityType.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityType entityType = EntityType.newBuilder().build();
@@ -410,6 +437,10 @@ public class EntityTypesClientTest {
 
     Assert.assertEquals(entityType, actualRequest.getEntityType());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -443,7 +474,11 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteEntityTypeRequest actualRequest = (DeleteEntityTypeRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsEntityTypeName());
+    Assert.assertEquals(name, EntityTypeName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -485,8 +520,12 @@ public class EntityTypesClientTest {
     BatchDeleteEntityTypesRequest actualRequest =
         (BatchDeleteEntityTypesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
     Assert.assertEquals(entityTypeNames, actualRequest.getEntityTypeNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -530,8 +569,12 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchCreateEntitiesRequest actualRequest = (BatchCreateEntitiesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsEntityTypeName());
+    Assert.assertEquals(parent, EntityTypeName.parse(actualRequest.getParent()));
     Assert.assertEquals(entities, actualRequest.getEntitiesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -576,9 +619,13 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchCreateEntitiesRequest actualRequest = (BatchCreateEntitiesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsEntityTypeName());
+    Assert.assertEquals(parent, EntityTypeName.parse(actualRequest.getParent()));
     Assert.assertEquals(entities, actualRequest.getEntitiesList());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -623,8 +670,12 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchUpdateEntitiesRequest actualRequest = (BatchUpdateEntitiesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsEntityTypeName());
+    Assert.assertEquals(parent, EntityTypeName.parse(actualRequest.getParent()));
     Assert.assertEquals(entities, actualRequest.getEntitiesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -669,9 +720,13 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchUpdateEntitiesRequest actualRequest = (BatchUpdateEntitiesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsEntityTypeName());
+    Assert.assertEquals(parent, EntityTypeName.parse(actualRequest.getParent()));
     Assert.assertEquals(entities, actualRequest.getEntitiesList());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -716,8 +771,12 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchDeleteEntitiesRequest actualRequest = (BatchDeleteEntitiesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsEntityTypeName());
+    Assert.assertEquals(parent, EntityTypeName.parse(actualRequest.getParent()));
     Assert.assertEquals(entityValues, actualRequest.getEntityValuesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -763,9 +822,13 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchDeleteEntitiesRequest actualRequest = (BatchDeleteEntitiesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsEntityTypeName());
+    Assert.assertEquals(parent, EntityTypeName.parse(actualRequest.getParent()));
     Assert.assertEquals(entityValues, actualRequest.getEntityValuesList());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

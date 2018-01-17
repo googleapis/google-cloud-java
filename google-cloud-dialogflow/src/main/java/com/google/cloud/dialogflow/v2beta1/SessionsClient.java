@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,7 +28,7 @@ import javax.annotation.Generated;
 /**
  * Service Description: Manages user sessions.
  *
- * <p>Custom methods.
+ * <p>#
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -176,7 +176,7 @@ public class SessionsClient implements BackgroundResource {
 
     DetectIntentRequest request =
         DetectIntentRequest.newBuilder()
-            .setSessionWithSessionName(session)
+            .setSession(session.toString())
             .setQueryInput(queryInput)
             .build();
     return detectIntent(request);
@@ -195,7 +195,7 @@ public class SessionsClient implements BackgroundResource {
    *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
-   *     .setSessionWithSessionName(session)
+   *     .setSession(session.toString())
    *     .setQueryInput(queryInput)
    *     .build();
    *   DetectIntentResponse response = sessionsClient.detectIntent(request);
@@ -222,7 +222,7 @@ public class SessionsClient implements BackgroundResource {
    *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
-   *     .setSessionWithSessionName(session)
+   *     .setSession(session.toString())
    *     .setQueryInput(queryInput)
    *     .build();
    *   ApiFuture&lt;DetectIntentResponse&gt; future = sessionsClient.detectIntentCallable().futureCall(request);

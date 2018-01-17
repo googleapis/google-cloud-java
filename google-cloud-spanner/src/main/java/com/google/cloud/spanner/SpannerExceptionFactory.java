@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,8 @@ public final class SpannerExceptionFactory {
         return hasCauseMatching(cause, Matchers.isRetryableInternalError);
       case UNAVAILABLE:
         return true;
+      case RESOURCE_EXHAUSTED:
+        return SpannerException.extractRetryDelay(cause) > 0;
       default:
         return false;
     }
@@ -155,6 +157,10 @@ public final class SpannerExceptionFactory {
               }
               if (cause.getMessage().contains("Connection closed with unknown cause")) {
                 // See b/27794742.
+                return true;
+              }
+              if (cause.getMessage()
+                  .contains("Received unexpected EOS on DATA frame from server")) {
                 return true;
               }
             }

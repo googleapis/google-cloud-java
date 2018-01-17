@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,7 @@ import com.google.cloud.firestore.Transaction.Function;
 import com.google.cloud.firestore.WriteBatch;
 import com.google.cloud.firestore.WriteResult;
 import com.google.common.collect.ImmutableList;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
@@ -823,5 +824,58 @@ public class ITSystemTest {
         registration.remove();
       }
     }
+  }
+
+
+  private int paginateResults(Query query, List<DocumentSnapshot> results)
+      throws ExecutionException, InterruptedException {
+    if (!results.isEmpty()) {
+      query = query.startAfter(results.get(results.size() - 1));
+    }
+
+    QuerySnapshot querySnapshot = query.get().get();
+
+    if (querySnapshot.isEmpty()) {
+      return 0;
+    } else {
+      results.addAll(querySnapshot.getDocuments());
+      return 1 + paginateResults(query, results);
+    }
+  }
+
+  @Test
+  public void queryPaginationWithOrderByClause() throws ExecutionException, InterruptedException {
+    WriteBatch batch = firestore.batch();
+
+    for (int i = 0; i < 10; ++i) {
+      batch.set(randomColl.document(), map("val", i));
+    }
+
+    batch.commit().get();
+
+    Query query = randomColl.orderBy("val").limit(3);
+
+    List<DocumentSnapshot> results = new ArrayList<>();
+    int pageCount = paginateResults(query, results);
+    assertEquals(4, pageCount);
+    assertEquals(10, results.size());
+  }
+
+  @Test
+  public void queryPaginationWithWhereClause() throws ExecutionException, InterruptedException {
+    WriteBatch batch = firestore.batch();
+
+    for (int i = 0; i < 10; ++i) {
+      batch.set(randomColl.document(), map("val", i));
+    }
+
+    batch.commit().get();
+
+    Query query = randomColl.whereGreaterThanOrEqualTo("val", 1).limit(3);
+
+    List<DocumentSnapshot> results = new ArrayList<>();
+    int pageCount = paginateResults(query, results);
+    assertEquals(3, pageCount);
+    assertEquals(9, results.size());
   }
 }

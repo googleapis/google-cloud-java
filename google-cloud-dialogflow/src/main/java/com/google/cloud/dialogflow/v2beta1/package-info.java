@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,9 +23,8 @@
  *
  * <p>Service Description: Manages conversational agents.
  *
- * <p>Refer to [documentation](https://dialogflow.com/docs/agents) for more details # about agents.
- *
- * <p>Standard methods.
+ * <p>Refer to the [Dialogflow documentation](https://dialogflow.com/docs/agents) for more details
+ * about agents. #
  *
  * <p>Sample for AgentsClient:
  *
@@ -42,10 +41,8 @@
  *
  * <p>Service Description: Manages contexts.
  *
- * <p>Refer to [documentation](https://dialogflow.com/docs/contexts) for more # details about
- * contexts.
- *
- * <p>Standard methods.
+ * <p>Refer to the [Dialogflow documentation](https://dialogflow.com/docs/contexts) for more details
+ * about contexts. #
  *
  * <p>Sample for ContextsClient:
  *
@@ -62,10 +59,8 @@
  *
  * <p>Service Description: Manages agent entity types.
  *
- * <p>Refer to [documentation](https://dialogflow.com/docs/entities) for more # details about entity
- * types.
- *
- * <p>Standard methods.
+ * <p>Refer to the [Dialogflow documentation](https://dialogflow.com/docs/entities) for more details
+ * about entity types. #
  *
  * <p>Sample for EntityTypesClient:
  *
@@ -82,10 +77,8 @@
  *
  * <p>Service Description: Manages agent intents.
  *
- * <p>Refer to [documentation](https://dialogflow.com/docs/intents) for more # details about agent
- * intents.
- *
- * <p>Standard methods.
+ * <p>Refer to the [Dialogflow documentation](https://dialogflow.com/docs/intents) for more details
+ * about agent intents. #
  *
  * <p>Sample for IntentsClient:
  *
@@ -105,7 +98,7 @@
  * <p>Session entity types can be redefined on a session level, allowing for specific concepts, like
  * a user's playlists.
  *
- * <p>Standard methods.
+ * <p>#
  *
  * <p>Sample for SessionEntityTypesClient:
  *
@@ -122,7 +115,7 @@
  *
  * <p>Service Description: Manages user sessions.
  *
- * <p>Custom methods.
+ * <p>#
  *
  * <p>Sample for SessionsClient:
  *

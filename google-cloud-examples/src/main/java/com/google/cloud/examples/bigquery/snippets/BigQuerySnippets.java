@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ package com.google.cloud.examples.bigquery.snippets;
 import com.google.api.client.util.Charsets;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
@@ -48,8 +49,6 @@ import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
-import com.google.cloud.bigquery.QueryResponse;
-import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -58,7 +57,6 @@ import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
@@ -439,9 +437,11 @@ public class BigQuerySnippets {
   // [TARGET listTableData(String, String, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Page<FieldValueList> listTableData(String datasetName, String tableName) {
+  public TableResult listTableData(String datasetName, String tableName) {
     // [START listTableData]
-    Page<FieldValueList> tableData =
+    // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+    // simply omit the option.
+    TableResult tableData =
         bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
     for (FieldValueList row : tableData.iterateAll()) {
       // do something with the row
@@ -456,16 +456,55 @@ public class BigQuerySnippets {
   // [TARGET listTableData(TableId, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  public Page<FieldValueList> listTableDataFromId(String datasetName, String tableName) {
+  public TableResult listTableDataFromId(String datasetName, String tableName) {
     // [START listTableDataFromId]
     TableId tableIdObject = TableId.of(datasetName, tableName);
-    Page<FieldValueList> tableData =
+    // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+    // simply omit the option.
+    TableResult tableData =
         bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
     for (FieldValueList row : tableData.iterateAll()) {
       // do something with the row
     }
     // [END listTableDataFromId]
     return tableData;
+  }
+
+  /** Example of listing table rows with schema. */
+  // [TARGET listTableData(String, String, Schema, TableDataListOption...)]
+  // [VARIABLE "my_dataset_name"]
+  // [VARIABLE "my_table_name"]
+  // [VARIABLE ...]
+  // [VARIABLE "field"]
+  public TableResult listTableDataSchema(
+      String datasetName, String tableName, Schema schema, String field) {
+    // [START listTableDataSchema]
+    TableResult tableData =
+        bigquery.listTableData(datasetName, tableName, schema);
+    for (FieldValueList row : tableData.iterateAll()) {
+      row.get(field);
+    }
+    // [END listTableDataSchema]
+    return tableData;
+  }
+
+  /** Example of listing table rows with schema. */
+  // [TARGET listTableData(TableId, Schema, TableDataListOption...)]
+  public FieldValueList listTableDataSchemaId() {
+    // [START listTableDataSchemaId]
+    Schema schema =
+        Schema.of(
+            Field.of("word", LegacySQLTypeName.STRING),
+            Field.of("word_count", LegacySQLTypeName.STRING),
+            Field.of("corpus", LegacySQLTypeName.STRING),
+            Field.of("corpus_date", LegacySQLTypeName.STRING));
+    TableResult tableData =
+        bigquery.listTableData(
+            TableId.of("bigquery-public-data", "samples", "shakespeare"), schema);
+    FieldValueList row = tableData.getValues().iterator().next();
+    System.out.println(row.get("word").getStringValue());
+    // [END listTableDataSchemaId]
+    return row;
   }
 
   /**
@@ -568,68 +607,32 @@ public class BigQuerySnippets {
     return success;
   }
 
-  /**
-   * Example of running a query.
-   */
+  /** Example of running a query. */
   // [TARGET query(QueryJobConfiguration, QueryOption...)]
   // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
-  public QueryResponse runQuery(String query) throws InterruptedException {
+  public void runQuery(String query) throws InterruptedException {
     // [START runQuery]
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
-    QueryResponse response = bigquery.query(queryConfig);
-    if (response.hasErrors()) {
-      // handle errors
-    }
-    QueryResult result = response.getResult();
-    for (FieldValueList row : result.iterateAll()) {
+    for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
       // do something with the data
     }
     // [END runQuery]
-    return response;
   }
 
-  /**
-   * Example of running a query with query parameters.
-   */
+  /** Example of running a query with query parameters. */
   // [TARGET query(QueryJobConfiguration, QueryOption...)]
-  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount"]
-  public QueryResponse runQueryWithParameters(String query) throws InterruptedException {
+  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where
+  // word_count > @wordCount"]
+  public void runQueryWithParameters(String query) throws InterruptedException {
     // [START runQueryWithParameters]
     // Note, standard SQL is required to use query parameters. Legacy SQL will not work.
     QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
         .addNamedParameter("wordCount", QueryParameterValue.int64(5))
         .build();
-    QueryResponse response = bigquery.query(queryConfig);
-    if (response.hasErrors()) {
-      // handle errors
-    }
-    QueryResult result = response.getResult();
-    for (FieldValueList row : result.iterateAll()) {
+    for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
       // do something with the data
     }
     // [END runQueryWithParameters]
-    return response;
-  }
-
-  /**
-   * Example of getting the results of query.
-   */
-  // [TARGET getQueryResults(JobId, QueryResultsOption...)]
-  // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
-  public QueryResponse queryResults(final String query) throws InterruptedException {
-    // [START queryResults]
-    QueryJobConfiguration queryConfig =
-        QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
-    QueryResponse response = bigquery.query(queryConfig);
-    if (response.hasErrors()) {
-      // handle errors
-    }
-    QueryResult result = response.getResult();
-    for (FieldValueList row : result.iterateAll()) {
-      // do something with the data
-    }
-    // [END queryResults]
-    return response;
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,8 +34,6 @@ import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.LegacySQLTypeName;
-import com.google.cloud.bigquery.QueryResponse;
-import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -46,13 +44,6 @@ import com.google.common.base.Function;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.common.io.Resources;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.Timeout;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
@@ -61,6 +52,11 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.Timeout;
 
 public class ITBigQuerySnippets {
 
@@ -229,6 +225,14 @@ public class ITBigQuerySnippets {
     assertEquals(true, row.get(0).getBooleanValue());
     assertArrayEquals(new byte[]{0xA, 0xD, 0xD, 0xE, 0xD}, row.get(1).getBytesValue());
     assertEquals("Hello, World!", row.get(2).getRecordValue().get(0).getStringValue());
+
+    listPage = bigquerySnippets.listTableDataSchema(DATASET, tableName, schema, fieldName1);
+    row = listPage.getValues().iterator().next();
+    assertNotNull(row.get(fieldName1));
+    assertArrayEquals(new byte[] {0xA, 0xD, 0xD, 0xE, 0xD}, row.get(fieldName2).getBytesValue());
+
+    bigquerySnippets.listTableDataSchemaId();
+
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
   }
 
@@ -254,30 +258,11 @@ public class ITBigQuerySnippets {
 
   @Test
   public void testRunQuery() throws InterruptedException {
-    QueryResponse queryResponse = bigquerySnippets.runQuery(QUERY);
-    assertNotNull(queryResponse);
-    assertTrue(queryResponse.jobCompleted());
-    assertFalse(queryResponse.hasErrors());
-    QueryResult result = queryResponse.getResult();
-    assertNotNull(result);
-    assertTrue(bigquerySnippets.cancelJob(queryResponse.getJobId().getJob()));
-    queryResponse = bigquerySnippets.queryResults(QUERY);
-    assertNotNull(queryResponse);
-    assertTrue(queryResponse.jobCompleted());
-    assertFalse(queryResponse.hasErrors());
-    result = queryResponse.getResult();
-    assertNotNull(result);
-    assertTrue(bigquerySnippets.cancelJobFromId(queryResponse.getJobId().getJob()));
+    bigquerySnippets.runQuery(QUERY);
   }
 
   @Test
   public void testRunQueryWithParameters() throws InterruptedException {
-    QueryResponse queryResponse = bigquerySnippets.runQueryWithParameters(QUERY_WITH_PARAMETERS);
-    assertNotNull(queryResponse);
-    assertTrue(queryResponse.jobCompleted());
-    assertFalse(queryResponse.hasErrors());
-    QueryResult result = queryResponse.getResult();
-    assertNotNull(result);
-    assertTrue(bigquerySnippets.cancelJob(queryResponse.getJobId().getJob()));
+    bigquerySnippets.runQueryWithParameters(QUERY_WITH_PARAMETERS);
   }
 }

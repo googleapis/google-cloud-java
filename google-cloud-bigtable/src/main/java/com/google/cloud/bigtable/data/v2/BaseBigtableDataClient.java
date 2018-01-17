@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.v2;
+package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -35,7 +35,7 @@ import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.bigtable.v2.TableName;
-import com.google.cloud.bigtable.v2.stub.BigtableStub;
+import com.google.cloud.bigtable.data.v2.stub.BigtableStub;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
@@ -51,17 +51,18 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * try (BigtableClient bigtableClient = BigtableClient.create()) {
+ * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
  *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
  *   ByteString rowKey = ByteString.copyFromUtf8("");
  *   List&lt;Mutation&gt; mutations = new ArrayList&lt;&gt;();
- *   MutateRowResponse response = bigtableClient.mutateRow(tableName, rowKey, mutations);
+ *   MutateRowResponse response = baseBigtableDataClient.mutateRow(tableName, rowKey, mutations);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the bigtableClient object to clean up resources such as
- * threads. In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Note: close() needs to be called on the baseBigtableDataClient object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
+ * close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -83,19 +84,19 @@ import javax.annotation.Generated;
  * these names, this class includes a format method for each type of name, and additionally a parse
  * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of BigtableSettings to create().
- * For example:
+ * <p>This class can be customized by passing in a custom instance of BaseBigtableDataSettings to
+ * create(). For example:
  *
  * <p>To customize credentials:
  *
  * <pre>
  * <code>
- * BigtableSettings bigtableSettings =
- *     BigtableSettings.newBuilder()
+ * BaseBigtableDataSettings baseBigtableDataSettings =
+ *     BaseBigtableDataSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * BigtableClient bigtableClient =
- *     BigtableClient.create(bigtableSettings);
+ * BaseBigtableDataClient baseBigtableDataClient =
+ *     BaseBigtableDataClient.create(baseBigtableDataSettings);
  * </code>
  * </pre>
  *
@@ -103,57 +104,59 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * BigtableSettings bigtableSettings =
- *     BigtableSettings.newBuilder().setEndpoint(myEndpoint).build();
- * BigtableClient bigtableClient =
- *     BigtableClient.create(bigtableSettings);
+ * BaseBigtableDataSettings baseBigtableDataSettings =
+ *     BaseBigtableDataSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * BaseBigtableDataClient baseBigtableDataClient =
+ *     BaseBigtableDataClient.create(baseBigtableDataSettings);
  * </code>
  * </pre>
  */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
-public class BigtableClient implements BackgroundResource {
-  private final BigtableSettings settings;
+public class BaseBigtableDataClient implements BackgroundResource {
+  private final BaseBigtableDataSettings settings;
   private final BigtableStub stub;
 
-  /** Constructs an instance of BigtableClient with default settings. */
-  public static final BigtableClient create() throws IOException {
-    return create(BigtableSettings.newBuilder().build());
+  /** Constructs an instance of BaseBigtableDataClient with default settings. */
+  public static final BaseBigtableDataClient create() throws IOException {
+    return create(BaseBigtableDataSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of BigtableClient, using the given settings. The channels are created
-   * based on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of BaseBigtableDataClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final BigtableClient create(BigtableSettings settings) throws IOException {
-    return new BigtableClient(settings);
+  public static final BaseBigtableDataClient create(BaseBigtableDataSettings settings)
+      throws IOException {
+    return new BaseBigtableDataClient(settings);
   }
 
   /**
-   * Constructs an instance of BigtableClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use BigtableSettings}.
+   * Constructs an instance of BaseBigtableDataClient, using the given stub for making calls. This
+   * is for advanced usage - prefer to use BaseBigtableDataSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-  public static final BigtableClient create(BigtableStub stub) {
-    return new BigtableClient(stub);
+  public static final BaseBigtableDataClient create(BigtableStub stub) {
+    return new BaseBigtableDataClient(stub);
   }
 
   /**
-   * Constructs an instance of BigtableClient, using the given settings. This is protected so that
-   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of BaseBigtableDataClient, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
-  protected BigtableClient(BigtableSettings settings) throws IOException {
+  protected BaseBigtableDataClient(BaseBigtableDataSettings settings) throws IOException {
     this.settings = settings;
     this.stub = settings.createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-  protected BigtableClient(BigtableStub stub) {
+  protected BaseBigtableDataClient(BigtableStub stub) {
     this.settings = null;
     this.stub = stub;
   }
 
-  public final BigtableSettings getSettings() {
+  public final BaseBigtableDataSettings getSettings() {
     return settings;
   }
 
@@ -172,7 +175,7 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   ApiStreamObserver&lt;ReadRowsResponse&gt; responseObserver =
    *       new ApiStreamObserver&lt;ReadRowsResponse&gt;() {
    *         {@literal @}Override
@@ -193,10 +196,10 @@ public class BigtableClient implements BackgroundResource {
    *
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ReadRowsRequest request = ReadRowsRequest.newBuilder()
-   *     .setTableNameWithTableName(tableName)
+   *     .setTableName(tableName.toString())
    *     .build();
    *
-   *   bigtableClient.readRowsCallable().serverStreamingCall(request, responseObserver));
+   *   baseBigtableDataClient.readRowsCallable().serverStreamingCall(request, responseObserver));
    * }
    * </code></pre>
    */
@@ -213,7 +216,7 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   ApiStreamObserver&lt;SampleRowKeysResponse&gt; responseObserver =
    *       new ApiStreamObserver&lt;SampleRowKeysResponse&gt;() {
    *         {@literal @}Override
@@ -234,10 +237,10 @@ public class BigtableClient implements BackgroundResource {
    *
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   SampleRowKeysRequest request = SampleRowKeysRequest.newBuilder()
-   *     .setTableNameWithTableName(tableName)
+   *     .setTableName(tableName.toString())
    *     .build();
    *
-   *   bigtableClient.sampleRowKeysCallable().serverStreamingCall(request, responseObserver));
+   *   baseBigtableDataClient.sampleRowKeysCallable().serverStreamingCall(request, responseObserver));
    * }
    * </code></pre>
    */
@@ -254,11 +257,11 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ByteString rowKey = ByteString.copyFromUtf8("");
    *   List&lt;Mutation&gt; mutations = new ArrayList&lt;&gt;();
-   *   MutateRowResponse response = bigtableClient.mutateRow(tableName, rowKey, mutations);
+   *   MutateRowResponse response = baseBigtableDataClient.mutateRow(tableName, rowKey, mutations);
    * }
    * </code></pre>
    *
@@ -275,7 +278,7 @@ public class BigtableClient implements BackgroundResource {
 
     MutateRowRequest request =
         MutateRowRequest.newBuilder()
-            .setTableNameWithTableName(tableName)
+            .setTableName(tableName.toString())
             .setRowKey(rowKey)
             .addAllMutations(mutations)
             .build();
@@ -290,16 +293,16 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ByteString rowKey = ByteString.copyFromUtf8("");
    *   List&lt;Mutation&gt; mutations = new ArrayList&lt;&gt;();
    *   MutateRowRequest request = MutateRowRequest.newBuilder()
-   *     .setTableNameWithTableName(tableName)
+   *     .setTableName(tableName.toString())
    *     .setRowKey(rowKey)
    *     .addAllMutations(mutations)
    *     .build();
-   *   MutateRowResponse response = bigtableClient.mutateRow(request);
+   *   MutateRowResponse response = baseBigtableDataClient.mutateRow(request);
    * }
    * </code></pre>
    *
@@ -318,16 +321,16 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ByteString rowKey = ByteString.copyFromUtf8("");
    *   List&lt;Mutation&gt; mutations = new ArrayList&lt;&gt;();
    *   MutateRowRequest request = MutateRowRequest.newBuilder()
-   *     .setTableNameWithTableName(tableName)
+   *     .setTableName(tableName.toString())
    *     .setRowKey(rowKey)
    *     .addAllMutations(mutations)
    *     .build();
-   *   ApiFuture&lt;MutateRowResponse&gt; future = bigtableClient.mutateRowCallable().futureCall(request);
+   *   ApiFuture&lt;MutateRowResponse&gt; future = baseBigtableDataClient.mutateRowCallable().futureCall(request);
    *   // Do something
    *   MutateRowResponse response = future.get();
    * }
@@ -345,7 +348,7 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   ApiStreamObserver&lt;MutateRowsResponse&gt; responseObserver =
    *       new ApiStreamObserver&lt;MutateRowsResponse&gt;() {
    *         {@literal @}Override
@@ -367,11 +370,11 @@ public class BigtableClient implements BackgroundResource {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   List&lt;MutateRowsRequest.Entry&gt; entries = new ArrayList&lt;&gt;();
    *   MutateRowsRequest request = MutateRowsRequest.newBuilder()
-   *     .setTableNameWithTableName(tableName)
+   *     .setTableName(tableName.toString())
    *     .addAllEntries(entries)
    *     .build();
    *
-   *   bigtableClient.mutateRowsCallable().serverStreamingCall(request, responseObserver));
+   *   baseBigtableDataClient.mutateRowsCallable().serverStreamingCall(request, responseObserver));
    * }
    * </code></pre>
    */
@@ -386,13 +389,13 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ByteString rowKey = ByteString.copyFromUtf8("");
    *   RowFilter predicateFilter = RowFilter.newBuilder().build();
    *   List&lt;Mutation&gt; trueMutations = new ArrayList&lt;&gt;();
    *   List&lt;Mutation&gt; falseMutations = new ArrayList&lt;&gt;();
-   *   CheckAndMutateRowResponse response = bigtableClient.checkAndMutateRow(tableName, rowKey, predicateFilter, trueMutations, falseMutations);
+   *   CheckAndMutateRowResponse response = baseBigtableDataClient.checkAndMutateRow(tableName, rowKey, predicateFilter, trueMutations, falseMutations);
    * }
    * </code></pre>
    *
@@ -422,7 +425,7 @@ public class BigtableClient implements BackgroundResource {
 
     CheckAndMutateRowRequest request =
         CheckAndMutateRowRequest.newBuilder()
-            .setTableNameWithTableName(tableName)
+            .setTableName(tableName.toString())
             .setRowKey(rowKey)
             .setPredicateFilter(predicateFilter)
             .addAllTrueMutations(trueMutations)
@@ -438,14 +441,14 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ByteString rowKey = ByteString.copyFromUtf8("");
    *   CheckAndMutateRowRequest request = CheckAndMutateRowRequest.newBuilder()
-   *     .setTableNameWithTableName(tableName)
+   *     .setTableName(tableName.toString())
    *     .setRowKey(rowKey)
    *     .build();
-   *   CheckAndMutateRowResponse response = bigtableClient.checkAndMutateRow(request);
+   *   CheckAndMutateRowResponse response = baseBigtableDataClient.checkAndMutateRow(request);
    * }
    * </code></pre>
    *
@@ -463,14 +466,14 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ByteString rowKey = ByteString.copyFromUtf8("");
    *   CheckAndMutateRowRequest request = CheckAndMutateRowRequest.newBuilder()
-   *     .setTableNameWithTableName(tableName)
+   *     .setTableName(tableName.toString())
    *     .setRowKey(rowKey)
    *     .build();
-   *   ApiFuture&lt;CheckAndMutateRowResponse&gt; future = bigtableClient.checkAndMutateRowCallable().futureCall(request);
+   *   ApiFuture&lt;CheckAndMutateRowResponse&gt; future = baseBigtableDataClient.checkAndMutateRowCallable().futureCall(request);
    *   // Do something
    *   CheckAndMutateRowResponse response = future.get();
    * }
@@ -491,11 +494,11 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ByteString rowKey = ByteString.copyFromUtf8("");
    *   List&lt;ReadModifyWriteRule&gt; rules = new ArrayList&lt;&gt;();
-   *   ReadModifyWriteRowResponse response = bigtableClient.readModifyWriteRow(tableName, rowKey, rules);
+   *   ReadModifyWriteRowResponse response = baseBigtableDataClient.readModifyWriteRow(tableName, rowKey, rules);
    * }
    * </code></pre>
    *
@@ -513,7 +516,7 @@ public class BigtableClient implements BackgroundResource {
 
     ReadModifyWriteRowRequest request =
         ReadModifyWriteRowRequest.newBuilder()
-            .setTableNameWithTableName(tableName)
+            .setTableName(tableName.toString())
             .setRowKey(rowKey)
             .addAllRules(rules)
             .build();
@@ -530,16 +533,16 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ByteString rowKey = ByteString.copyFromUtf8("");
    *   List&lt;ReadModifyWriteRule&gt; rules = new ArrayList&lt;&gt;();
    *   ReadModifyWriteRowRequest request = ReadModifyWriteRowRequest.newBuilder()
-   *     .setTableNameWithTableName(tableName)
+   *     .setTableName(tableName.toString())
    *     .setRowKey(rowKey)
    *     .addAllRules(rules)
    *     .build();
-   *   ReadModifyWriteRowResponse response = bigtableClient.readModifyWriteRow(request);
+   *   ReadModifyWriteRowResponse response = baseBigtableDataClient.readModifyWriteRow(request);
    * }
    * </code></pre>
    *
@@ -560,16 +563,16 @@ public class BigtableClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (BigtableClient bigtableClient = BigtableClient.create()) {
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ByteString rowKey = ByteString.copyFromUtf8("");
    *   List&lt;ReadModifyWriteRule&gt; rules = new ArrayList&lt;&gt;();
    *   ReadModifyWriteRowRequest request = ReadModifyWriteRowRequest.newBuilder()
-   *     .setTableNameWithTableName(tableName)
+   *     .setTableName(tableName.toString())
    *     .setRowKey(rowKey)
    *     .addAllRules(rules)
    *     .build();
-   *   ApiFuture&lt;ReadModifyWriteRowResponse&gt; future = bigtableClient.readModifyWriteRowCallable().futureCall(request);
+   *   ApiFuture&lt;ReadModifyWriteRowResponse&gt; future = baseBigtableDataClient.readModifyWriteRowCallable().futureCall(request);
    *   // Do something
    *   ReadModifyWriteRowResponse response = future.get();
    * }

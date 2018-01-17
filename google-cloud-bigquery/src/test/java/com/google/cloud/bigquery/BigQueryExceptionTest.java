@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ import org.junit.Test;
 public class BigQueryExceptionTest {
 
   @Test
-  public void testBigqueryException() {
+  public void testBigQueryException() {
     BigQueryException exception = new BigQueryException(500, "message");
     assertEquals(500, exception.getCode());
     assertEquals("message", exception.getMessage());

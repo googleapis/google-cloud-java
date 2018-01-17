@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,8 +20,11 @@ import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogsPagedRes
 
 import com.google.api.MonitoredResource;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.logging.v2.DeleteLogRequest;
@@ -60,6 +63,7 @@ public class LoggingClientTest {
   private static MockMetricsServiceV2 mockMetricsServiceV2;
   private static MockServiceHelper serviceHelper;
   private LoggingClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -82,9 +86,10 @@ public class LoggingClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     LoggingSettings settings =
         LoggingSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = LoggingClient.create(settings);
@@ -109,7 +114,11 @@ public class LoggingClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteLogRequest actualRequest = (DeleteLogRequest) actualRequests.get(0);
 
-    Assert.assertEquals(logName, actualRequest.getLogNameAsLogNameOneof());
+    Assert.assertEquals(logName, LogNameOneof.parse(actualRequest.getLogName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -147,10 +156,14 @@ public class LoggingClientTest {
     Assert.assertEquals(1, actualRequests.size());
     WriteLogEntriesRequest actualRequest = (WriteLogEntriesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(logName, actualRequest.getLogNameAsLogNameOneof());
+    Assert.assertEquals(logName, LogNameOneof.parse(actualRequest.getLogName()));
     Assert.assertEquals(resource, actualRequest.getResource());
     Assert.assertEquals(labels, actualRequest.getLabelsMap());
     Assert.assertEquals(entries, actualRequest.getEntriesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -203,6 +216,10 @@ public class LoggingClientTest {
     Assert.assertEquals(resourceNames, actualRequest.getResourceNamesList());
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertEquals(orderBy, actualRequest.getOrderBy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -248,7 +265,11 @@ public class LoggingClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListLogsRequest actualRequest = (ListLogsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

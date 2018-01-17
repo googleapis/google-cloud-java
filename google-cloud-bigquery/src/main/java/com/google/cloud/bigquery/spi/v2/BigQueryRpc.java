@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
-import com.google.api.services.bigquery.model.TableRow;
+import com.google.api.services.bigquery.model.TableDataList;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryException;
@@ -168,8 +168,8 @@ public interface BigQueryRpc extends ServiceRpc {
    *
    * @throws BigQueryException upon failure
    */
-  Tuple<String, Iterable<TableRow>> listTableData(String projectId, String datasetId,
-      String tableId, Map<Option, ?> options);
+  TableDataList listTableData(
+      String projectId, String datasetId, String tableId, Map<Option, ?> options);
 
   /**
    * Returns the requested job or {@code null} if not found.

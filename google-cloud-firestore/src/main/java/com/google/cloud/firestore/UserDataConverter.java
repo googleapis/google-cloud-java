@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,8 +55,7 @@ class UserDataConverter {
         }
       };
 
-  private UserDataConverter() {
-  }
+  private UserDataConverter() {}
 
   /**
    * Encodes a Java Object to a Firestore Value proto.

@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +15,10 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListAppProfilesPagedResponse;
+
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -27,27 +30,41 @@ import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.admin.v2.AppProfile;
 import com.google.bigtable.admin.v2.Cluster;
+import com.google.bigtable.admin.v2.CreateAppProfileRequest;
 import com.google.bigtable.admin.v2.CreateClusterMetadata;
 import com.google.bigtable.admin.v2.CreateClusterRequest;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
 import com.google.bigtable.admin.v2.CreateInstanceRequest;
+import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
 import com.google.bigtable.admin.v2.DeleteClusterRequest;
 import com.google.bigtable.admin.v2.DeleteInstanceRequest;
+import com.google.bigtable.admin.v2.GetAppProfileRequest;
 import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.Instance;
+import com.google.bigtable.admin.v2.ListAppProfilesRequest;
+import com.google.bigtable.admin.v2.ListAppProfilesResponse;
 import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
+import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.GrpcBigtableInstanceAdminStub;
@@ -55,6 +72,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -112,6 +134,8 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
   private final UnaryCallSettings<ListInstancesRequest, ListInstancesResponse>
       listInstancesSettings;
   private final UnaryCallSettings<Instance, Instance> updateInstanceSettings;
+  private final UnaryCallSettings<PartialUpdateInstanceRequest, Operation>
+      partialUpdateInstanceSettings;
   private final UnaryCallSettings<DeleteInstanceRequest, Empty> deleteInstanceSettings;
   private final UnaryCallSettings<CreateClusterRequest, Operation> createClusterSettings;
   private final OperationCallSettings<CreateClusterRequest, Cluster, CreateClusterMetadata>
@@ -122,6 +146,17 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
   private final OperationCallSettings<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationSettings;
   private final UnaryCallSettings<DeleteClusterRequest, Empty> deleteClusterSettings;
+  private final UnaryCallSettings<CreateAppProfileRequest, AppProfile> createAppProfileSettings;
+  private final UnaryCallSettings<GetAppProfileRequest, AppProfile> getAppProfileSettings;
+  private final PagedCallSettings<
+          ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>
+      listAppProfilesSettings;
+  private final UnaryCallSettings<UpdateAppProfileRequest, Operation> updateAppProfileSettings;
+  private final UnaryCallSettings<DeleteAppProfileRequest, Empty> deleteAppProfileSettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   /** Returns the object with the settings used for calls to createInstance. */
   public UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings() {
@@ -147,6 +182,12 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
   /** Returns the object with the settings used for calls to updateInstance. */
   public UnaryCallSettings<Instance, Instance> updateInstanceSettings() {
     return updateInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to partialUpdateInstance. */
+  public UnaryCallSettings<PartialUpdateInstanceRequest, Operation>
+      partialUpdateInstanceSettings() {
+    return partialUpdateInstanceSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteInstance. */
@@ -189,6 +230,49 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
   /** Returns the object with the settings used for calls to deleteCluster. */
   public UnaryCallSettings<DeleteClusterRequest, Empty> deleteClusterSettings() {
     return deleteClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAppProfile. */
+  public UnaryCallSettings<CreateAppProfileRequest, AppProfile> createAppProfileSettings() {
+    return createAppProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAppProfile. */
+  public UnaryCallSettings<GetAppProfileRequest, AppProfile> getAppProfileSettings() {
+    return getAppProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAppProfiles. */
+  public PagedCallSettings<
+          ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>
+      listAppProfilesSettings() {
+    return listAppProfilesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAppProfile. */
+  public UnaryCallSettings<UpdateAppProfileRequest, Operation> updateAppProfileSettings() {
+    return updateAppProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAppProfile. */
+  public UnaryCallSettings<DeleteAppProfileRequest, Empty> deleteAppProfileSettings() {
+    return deleteAppProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -256,7 +340,7 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
     return new Builder(this);
   }
 
-  private BigtableInstanceAdminSettings(Builder settingsBuilder) throws IOException {
+  protected BigtableInstanceAdminSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
     createInstanceSettings = settingsBuilder.createInstanceSettings().build();
@@ -264,6 +348,7 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
     getInstanceSettings = settingsBuilder.getInstanceSettings().build();
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
     updateInstanceSettings = settingsBuilder.updateInstanceSettings().build();
+    partialUpdateInstanceSettings = settingsBuilder.partialUpdateInstanceSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     createClusterSettings = settingsBuilder.createClusterSettings().build();
     createClusterOperationSettings = settingsBuilder.createClusterOperationSettings().build();
@@ -272,7 +357,71 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
     updateClusterSettings = settingsBuilder.updateClusterSettings().build();
     updateClusterOperationSettings = settingsBuilder.updateClusterOperationSettings().build();
     deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
+    createAppProfileSettings = settingsBuilder.createAppProfileSettings().build();
+    getAppProfileSettings = settingsBuilder.getAppProfileSettings().build();
+    listAppProfilesSettings = settingsBuilder.listAppProfilesSettings().build();
+    updateAppProfileSettings = settingsBuilder.updateAppProfileSettings().build();
+    deleteAppProfileSettings = settingsBuilder.deleteAppProfileSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
+
+  private static final PagedListDescriptor<
+          ListAppProfilesRequest, ListAppProfilesResponse, AppProfile>
+      LIST_APP_PROFILES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAppProfilesRequest injectToken(
+                ListAppProfilesRequest payload, String token) {
+              return ListAppProfilesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAppProfilesRequest injectPageSize(
+                ListAppProfilesRequest payload, int pageSize) {
+              throw new UnsupportedOperationException(
+                  "page size is not supported by this API method");
+            }
+
+            @Override
+            public Integer extractPageSize(ListAppProfilesRequest payload) {
+              throw new UnsupportedOperationException(
+                  "page size is not supported by this API method");
+            }
+
+            @Override
+            public String extractNextToken(ListAppProfilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AppProfile> extractResources(ListAppProfilesResponse payload) {
+              return payload.getAppProfilesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>
+      LIST_APP_PROFILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAppProfilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAppProfilesRequest, ListAppProfilesResponse> callable,
+                ListAppProfilesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAppProfilesResponse> futureResponse) {
+              PageContext<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile> pageContext =
+                  PageContext.create(callable, LIST_APP_PROFILES_PAGE_STR_DESC, request, context);
+              return ListAppProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Builder for BigtableInstanceAdminSettings. */
   public static class Builder
@@ -288,6 +437,8 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
     private final UnaryCallSettings.Builder<ListInstancesRequest, ListInstancesResponse>
         listInstancesSettings;
     private final UnaryCallSettings.Builder<Instance, Instance> updateInstanceSettings;
+    private final UnaryCallSettings.Builder<PartialUpdateInstanceRequest, Operation>
+        partialUpdateInstanceSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceRequest, Empty> deleteInstanceSettings;
     private final UnaryCallSettings.Builder<CreateClusterRequest, Operation> createClusterSettings;
     private final OperationCallSettings.Builder<
@@ -300,6 +451,20 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
     private final OperationCallSettings.Builder<Cluster, Cluster, UpdateClusterMetadata>
         updateClusterOperationSettings;
     private final UnaryCallSettings.Builder<DeleteClusterRequest, Empty> deleteClusterSettings;
+    private final UnaryCallSettings.Builder<CreateAppProfileRequest, AppProfile>
+        createAppProfileSettings;
+    private final UnaryCallSettings.Builder<GetAppProfileRequest, AppProfile> getAppProfileSettings;
+    private final PagedCallSettings.Builder<
+            ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>
+        listAppProfilesSettings;
+    private final UnaryCallSettings.Builder<UpdateAppProfileRequest, Operation>
+        updateAppProfileSettings;
+    private final UnaryCallSettings.Builder<DeleteAppProfileRequest, Empty>
+        deleteAppProfileSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -337,11 +502,11 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
-    private Builder() {
+    protected Builder() {
       this((ClientContext) null);
     }
 
-    private Builder(ClientContext clientContext) {
+    protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -353,6 +518,8 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
       listInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      partialUpdateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -370,18 +537,43 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
 
       deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      createAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listAppProfilesSettings = PagedCallSettings.newBuilder(LIST_APP_PROFILES_PAGE_STR_FACT);
+
+      updateAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createInstanceSettings,
               getInstanceSettings,
               listInstancesSettings,
               updateInstanceSettings,
+              partialUpdateInstanceSettings,
               deleteInstanceSettings,
               createClusterSettings,
               getClusterSettings,
               listClustersSettings,
               updateClusterSettings,
-              deleteClusterSettings);
+              deleteClusterSettings,
+              createAppProfileSettings,
+              getAppProfileSettings,
+              listAppProfilesSettings,
+              updateAppProfileSettings,
+              deleteAppProfileSettings,
+              getIamPolicySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
 
       initDefaults(this);
     }
@@ -418,6 +610,11 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .partialUpdateInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .deleteInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -444,6 +641,46 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
 
       builder
           .deleteClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createAppProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getAppProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listAppProfilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateAppProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteAppProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
@@ -518,7 +755,7 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
       return builder;
     }
 
-    private Builder(BigtableInstanceAdminSettings settings) {
+    protected Builder(BigtableInstanceAdminSettings settings) {
       super(settings);
 
       createInstanceSettings = settings.createInstanceSettings.toBuilder();
@@ -526,6 +763,7 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
       getInstanceSettings = settings.getInstanceSettings.toBuilder();
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
       updateInstanceSettings = settings.updateInstanceSettings.toBuilder();
+      partialUpdateInstanceSettings = settings.partialUpdateInstanceSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       createClusterSettings = settings.createClusterSettings.toBuilder();
       createClusterOperationSettings = settings.createClusterOperationSettings.toBuilder();
@@ -534,6 +772,14 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
       updateClusterSettings = settings.updateClusterSettings.toBuilder();
       updateClusterOperationSettings = settings.updateClusterOperationSettings.toBuilder();
       deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
+      createAppProfileSettings = settings.createAppProfileSettings.toBuilder();
+      getAppProfileSettings = settings.getAppProfileSettings.toBuilder();
+      listAppProfilesSettings = settings.listAppProfilesSettings.toBuilder();
+      updateAppProfileSettings = settings.updateAppProfileSettings.toBuilder();
+      deleteAppProfileSettings = settings.deleteAppProfileSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -541,12 +787,21 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
               getInstanceSettings,
               listInstancesSettings,
               updateInstanceSettings,
+              partialUpdateInstanceSettings,
               deleteInstanceSettings,
               createClusterSettings,
               getClusterSettings,
               listClustersSettings,
               updateClusterSettings,
-              deleteClusterSettings);
+              deleteClusterSettings,
+              createAppProfileSettings,
+              getAppProfileSettings,
+              listAppProfilesSettings,
+              updateAppProfileSettings,
+              deleteAppProfileSettings,
+              getIamPolicySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     /**
@@ -585,6 +840,12 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
     /** Returns the builder for the settings used for calls to updateInstance. */
     public UnaryCallSettings.Builder<Instance, Instance> updateInstanceSettings() {
       return updateInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to partialUpdateInstance. */
+    public UnaryCallSettings.Builder<PartialUpdateInstanceRequest, Operation>
+        partialUpdateInstanceSettings() {
+      return partialUpdateInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
@@ -628,6 +889,51 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
     /** Returns the builder for the settings used for calls to deleteCluster. */
     public UnaryCallSettings.Builder<DeleteClusterRequest, Empty> deleteClusterSettings() {
       return deleteClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAppProfile. */
+    public UnaryCallSettings.Builder<CreateAppProfileRequest, AppProfile>
+        createAppProfileSettings() {
+      return createAppProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAppProfile. */
+    public UnaryCallSettings.Builder<GetAppProfileRequest, AppProfile> getAppProfileSettings() {
+      return getAppProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAppProfiles. */
+    public PagedCallSettings.Builder<
+            ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>
+        listAppProfilesSettings() {
+      return listAppProfilesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAppProfile. */
+    public UnaryCallSettings.Builder<UpdateAppProfileRequest, Operation>
+        updateAppProfileSettings() {
+      return updateAppProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAppProfile. */
+    public UnaryCallSettings.Builder<DeleteAppProfileRequest, Empty> deleteAppProfileSettings() {
+      return deleteAppProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override
