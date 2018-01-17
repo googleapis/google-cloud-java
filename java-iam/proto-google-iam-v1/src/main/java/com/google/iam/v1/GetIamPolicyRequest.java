@@ -523,6 +523,13 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * @deprecated Use the following instead:
+     * <pre><code>
+     * protoBuilder.setResource(resourceName.toString());
+     * </code></pre>
+     */
+    @Deprecated
     public final Builder setResourceWithResourceName(com.google.api.resourcenames.ResourceName value) {
       if (value == null) {
         return setResource("");
@@ -530,6 +537,13 @@ private static final long serialVersionUID = 0L;
       return setResource(value.toString());
     }
     
+    /**
+     * @deprecated Use the following instead:
+     * <pre><code>
+     * ResourceName.parse(protoBuilder.getResource());
+     * </code></pre>
+     */
+    @Deprecated
     public final com.google.api.resourcenames.ResourceName getResourceAsResourceName() {
       java.lang.String str = getResource();
       if (str.isEmpty()) {
@@ -540,6 +554,13 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(builder_scope:google.iam.v1.GetIamPolicyRequest)
   }
 
+  /**
+   * @deprecated Use the following instead:
+   * <pre><code>
+   * ResourceName.parse(protoObject.getResource());
+   * </code></pre>
+   */
+  @Deprecated
   public final com.google.api.resourcenames.ResourceName getResourceAsResourceName() {
     java.lang.String str = getResource();
     if (str.isEmpty()) {
