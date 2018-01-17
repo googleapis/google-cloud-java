@@ -189,7 +189,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
       ProjectName projectName, QueryTimeRange timeRange) {
     ListGroupStatsRequest request =
         ListGroupStatsRequest.newBuilder()
-            .setProjectNameWithProjectName(projectName)
+            .setProjectName(projectName.toString())
             .setTimeRange(timeRange)
             .build();
     return listGroupStats(request);
@@ -206,7 +206,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setTimeRange(timeRange)
    *     .build();
    *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(request).iterateAll()) {
@@ -233,7 +233,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setTimeRange(timeRange)
    *     .build();
    *   ApiFuture&lt;ListGroupStatsPagedResponse&gt; future = errorStatsServiceClient.listGroupStatsPagedCallable().futureCall(request);
@@ -260,7 +260,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setTimeRange(timeRange)
    *     .build();
    *   while (true) {
@@ -308,7 +308,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   public final ListEventsPagedResponse listEvents(ProjectName projectName, String groupId) {
     ListEventsRequest request =
         ListEventsRequest.newBuilder()
-            .setProjectNameWithProjectName(projectName)
+            .setProjectName(projectName.toString())
             .setGroupId(groupId)
             .build();
     return listEvents(request);
@@ -325,7 +325,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setGroupId(groupId)
    *     .build();
    *   for (ErrorEvent element : errorStatsServiceClient.listEvents(request).iterateAll()) {
@@ -352,7 +352,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setGroupId(groupId)
    *     .build();
    *   ApiFuture&lt;ListEventsPagedResponse&gt; future = errorStatsServiceClient.listEventsPagedCallable().futureCall(request);
@@ -378,7 +378,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setGroupId(groupId)
    *     .build();
    *   while (true) {
@@ -421,7 +421,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   public final DeleteEventsResponse deleteEvents(ProjectName projectName) {
 
     DeleteEventsRequest request =
-        DeleteEventsRequest.newBuilder().setProjectNameWithProjectName(projectName).build();
+        DeleteEventsRequest.newBuilder().setProjectName(projectName.toString()).build();
     return deleteEvents(request);
   }
 
@@ -435,7 +435,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .build();
    *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(request);
    * }
@@ -458,7 +458,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .build();
    *   ApiFuture&lt;DeleteEventsResponse&gt; future = errorStatsServiceClient.deleteEventsCallable().futureCall(request);
    *   // Do something

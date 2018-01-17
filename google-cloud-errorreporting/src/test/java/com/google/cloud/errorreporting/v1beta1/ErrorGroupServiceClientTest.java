@@ -89,7 +89,7 @@ public class ErrorGroupServiceClientTest {
     GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
     String groupId = "groupId506361563";
     ErrorGroup expectedResponse =
-        ErrorGroup.newBuilder().setNameWithGroupName(name).setGroupId(groupId).build();
+        ErrorGroup.newBuilder().setName(name.toString()).setGroupId(groupId).build();
     mockErrorGroupService.addResponse(expectedResponse);
 
     GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
@@ -101,7 +101,7 @@ public class ErrorGroupServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
 
-    Assert.assertEquals(groupName, actualRequest.getGroupNameAsGroupName());
+    Assert.assertEquals(groupName, GroupName.parse(actualRequest.getGroupName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -130,7 +130,7 @@ public class ErrorGroupServiceClientTest {
     GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
     String groupId = "groupId506361563";
     ErrorGroup expectedResponse =
-        ErrorGroup.newBuilder().setNameWithGroupName(name).setGroupId(groupId).build();
+        ErrorGroup.newBuilder().setName(name.toString()).setGroupId(groupId).build();
     mockErrorGroupService.addResponse(expectedResponse);
 
     ErrorGroup group = ErrorGroup.newBuilder().build();

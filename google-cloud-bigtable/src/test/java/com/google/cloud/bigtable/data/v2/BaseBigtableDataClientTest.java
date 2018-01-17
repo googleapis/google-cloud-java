@@ -103,7 +103,7 @@ public class BaseBigtableDataClientTest {
     mockBigtable.addResponse(expectedResponse);
     TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     ReadRowsRequest request =
-        ReadRowsRequest.newBuilder().setTableNameWithTableName(tableName).build();
+        ReadRowsRequest.newBuilder().setTableName(tableName.toString()).build();
 
     MockStreamObserver<ReadRowsResponse> responseObserver = new MockStreamObserver<>();
 
@@ -122,7 +122,7 @@ public class BaseBigtableDataClientTest {
     mockBigtable.addException(exception);
     TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     ReadRowsRequest request =
-        ReadRowsRequest.newBuilder().setTableNameWithTableName(tableName).build();
+        ReadRowsRequest.newBuilder().setTableName(tableName.toString()).build();
 
     MockStreamObserver<ReadRowsResponse> responseObserver = new MockStreamObserver<>();
 
@@ -149,7 +149,7 @@ public class BaseBigtableDataClientTest {
     mockBigtable.addResponse(expectedResponse);
     TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     SampleRowKeysRequest request =
-        SampleRowKeysRequest.newBuilder().setTableNameWithTableName(tableName).build();
+        SampleRowKeysRequest.newBuilder().setTableName(tableName.toString()).build();
 
     MockStreamObserver<SampleRowKeysResponse> responseObserver = new MockStreamObserver<>();
 
@@ -169,7 +169,7 @@ public class BaseBigtableDataClientTest {
     mockBigtable.addException(exception);
     TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
     SampleRowKeysRequest request =
-        SampleRowKeysRequest.newBuilder().setTableNameWithTableName(tableName).build();
+        SampleRowKeysRequest.newBuilder().setTableName(tableName.toString()).build();
 
     MockStreamObserver<SampleRowKeysResponse> responseObserver = new MockStreamObserver<>();
 
@@ -204,7 +204,7 @@ public class BaseBigtableDataClientTest {
     Assert.assertEquals(1, actualRequests.size());
     MutateRowRequest actualRequest = (MutateRowRequest) actualRequests.get(0);
 
-    Assert.assertEquals(tableName, actualRequest.getTableNameAsTableName());
+    Assert.assertEquals(tableName, TableName.parse(actualRequest.getTableName()));
     Assert.assertEquals(rowKey, actualRequest.getRowKey());
     Assert.assertEquals(mutations, actualRequest.getMutationsList());
     Assert.assertTrue(
@@ -240,7 +240,7 @@ public class BaseBigtableDataClientTest {
     List<MutateRowsRequest.Entry> entries = new ArrayList<>();
     MutateRowsRequest request =
         MutateRowsRequest.newBuilder()
-            .setTableNameWithTableName(tableName)
+            .setTableName(tableName.toString())
             .addAllEntries(entries)
             .build();
 
@@ -264,7 +264,7 @@ public class BaseBigtableDataClientTest {
     List<MutateRowsRequest.Entry> entries = new ArrayList<>();
     MutateRowsRequest request =
         MutateRowsRequest.newBuilder()
-            .setTableNameWithTableName(tableName)
+            .setTableName(tableName.toString())
             .addAllEntries(entries)
             .build();
 
@@ -306,7 +306,7 @@ public class BaseBigtableDataClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CheckAndMutateRowRequest actualRequest = (CheckAndMutateRowRequest) actualRequests.get(0);
 
-    Assert.assertEquals(tableName, actualRequest.getTableNameAsTableName());
+    Assert.assertEquals(tableName, TableName.parse(actualRequest.getTableName()));
     Assert.assertEquals(rowKey, actualRequest.getRowKey());
     Assert.assertEquals(predicateFilter, actualRequest.getPredicateFilter());
     Assert.assertEquals(trueMutations, actualRequest.getTrueMutationsList());
@@ -354,7 +354,7 @@ public class BaseBigtableDataClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ReadModifyWriteRowRequest actualRequest = (ReadModifyWriteRowRequest) actualRequests.get(0);
 
-    Assert.assertEquals(tableName, actualRequest.getTableNameAsTableName());
+    Assert.assertEquals(tableName, TableName.parse(actualRequest.getTableName()));
     Assert.assertEquals(rowKey, actualRequest.getRowKey());
     Assert.assertEquals(rules, actualRequest.getRulesList());
     Assert.assertTrue(

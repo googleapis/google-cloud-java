@@ -132,7 +132,7 @@ public class AgentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetAgentRequest actualRequest = (GetAgentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -180,7 +180,7 @@ public class AgentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     SearchAgentsRequest actualRequest = (SearchAgentsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -224,7 +224,7 @@ public class AgentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     TrainAgentRequest actualRequest = (TrainAgentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -276,7 +276,7 @@ public class AgentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ExportAgentRequest actualRequest = (ExportAgentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

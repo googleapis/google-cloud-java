@@ -256,7 +256,7 @@ public class DlpServiceClientTest {
   public void createInspectOperationTest() throws Exception {
     ResultName name2 = ResultName.of("[RESULT]");
     InspectOperationResult expectedResponse =
-        InspectOperationResult.newBuilder().setNameWithResultName(name2).build();
+        InspectOperationResult.newBuilder().setName(name2.toString()).build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("createInspectOperationTest")
@@ -342,7 +342,7 @@ public class DlpServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListInspectFindingsRequest actualRequest = (ListInspectFindingsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsResultName());
+    Assert.assertEquals(name, ResultName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

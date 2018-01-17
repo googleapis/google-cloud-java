@@ -112,7 +112,7 @@ public class SessionsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DetectIntentRequest actualRequest = (DetectIntentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(session, actualRequest.getSessionAsSessionName());
+    Assert.assertEquals(session, SessionName.parse(actualRequest.getSession()));
     Assert.assertEquals(queryInput, actualRequest.getQueryInput());
     Assert.assertTrue(
         channelProvider.isHeaderSent(

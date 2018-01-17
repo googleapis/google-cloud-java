@@ -125,7 +125,7 @@ public class IntentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListIntentsRequest actualRequest = (ListIntentsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -174,7 +174,7 @@ public class IntentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListIntentsRequest actualRequest = (ListIntentsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -213,7 +213,7 @@ public class IntentsClientTest {
     String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
     Intent expectedResponse =
         Intent.newBuilder()
-            .setNameWithIntentName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setPriority(priority)
             .setIsFallback(isFallback)
@@ -234,7 +234,7 @@ public class IntentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetIntentRequest actualRequest = (GetIntentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsIntentName());
+    Assert.assertEquals(name, IntentName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -271,7 +271,7 @@ public class IntentsClientTest {
     String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
     Intent expectedResponse =
         Intent.newBuilder()
-            .setNameWithIntentName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setPriority(priority)
             .setIsFallback(isFallback)
@@ -293,7 +293,7 @@ public class IntentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetIntentRequest actualRequest = (GetIntentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsIntentName());
+    Assert.assertEquals(name, IntentName.parse(actualRequest.getName()));
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -332,7 +332,7 @@ public class IntentsClientTest {
     String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
     Intent expectedResponse =
         Intent.newBuilder()
-            .setNameWithIntentName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setPriority(priority)
             .setIsFallback(isFallback)
@@ -354,7 +354,7 @@ public class IntentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateIntentRequest actualRequest = (CreateIntentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
     Assert.assertEquals(intent, actualRequest.getIntent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -393,7 +393,7 @@ public class IntentsClientTest {
     String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
     Intent expectedResponse =
         Intent.newBuilder()
-            .setNameWithIntentName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setPriority(priority)
             .setIsFallback(isFallback)
@@ -416,7 +416,7 @@ public class IntentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateIntentRequest actualRequest = (CreateIntentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectAgentName());
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
     Assert.assertEquals(intent, actualRequest.getIntent());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertTrue(
@@ -457,7 +457,7 @@ public class IntentsClientTest {
     String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
     Intent expectedResponse =
         Intent.newBuilder()
-            .setNameWithIntentName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setPriority(priority)
             .setIsFallback(isFallback)
@@ -518,7 +518,7 @@ public class IntentsClientTest {
     String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
     Intent expectedResponse =
         Intent.newBuilder()
-            .setNameWithIntentName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setPriority(priority)
             .setIsFallback(isFallback)
@@ -582,7 +582,7 @@ public class IntentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteIntentRequest actualRequest = (DeleteIntentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsIntentName());
+    Assert.assertEquals(name, IntentName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -627,7 +627,7 @@ public class IntentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchDeleteIntentsRequest actualRequest = (BatchDeleteIntentsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(intents, actualRequest.getIntentsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(

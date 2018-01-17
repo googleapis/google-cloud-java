@@ -99,7 +99,7 @@ public class ReportErrorsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ReportErrorEventRequest actualRequest = (ReportErrorEventRequest) actualRequests.get(0);
 
-    Assert.assertEquals(projectName, actualRequest.getProjectNameAsProjectName());
+    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
     Assert.assertEquals(event, actualRequest.getEvent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
