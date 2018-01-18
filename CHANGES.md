@@ -1,4 +1,4 @@
-# RELEASE DATE HERE
+# v0.33.0
 ## BigQuery
 - Fix spelling. The name "Bigquery" is some methods are now properly spelled "BigQuery".
 - `Job.getQueryResults` now waits for the query to complete.
