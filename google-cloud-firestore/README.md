@@ -41,6 +41,10 @@ Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
+Transport
+---------
+Firestore uses gRPC for the transport layer.
+
 Java Versions
 -------------
 
