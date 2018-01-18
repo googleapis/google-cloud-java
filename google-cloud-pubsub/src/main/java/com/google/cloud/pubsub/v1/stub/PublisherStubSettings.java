@@ -49,7 +49,6 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.pubsub.v1.TopicAdminSettings.Builder;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -79,7 +78,7 @@ import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link TopicAdminClient}.
+ * Settings class to configure an instance of {@link PublisherStub}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
