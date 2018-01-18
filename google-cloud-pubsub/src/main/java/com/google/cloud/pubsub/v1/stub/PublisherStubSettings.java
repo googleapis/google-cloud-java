@@ -118,8 +118,8 @@ public class PublisherStubSettings extends ClientSettings<PublisherStubSettings>
   private final PagedCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
       listTopicsSettings;
   private final PagedCallSettings<
-      ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
-      ListTopicSubscriptionsPagedResponse>
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings;
   private final UnaryCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
@@ -149,15 +149,15 @@ public class PublisherStubSettings extends ClientSettings<PublisherStubSettings>
 
   /** Returns the object with the settings used for calls to listTopics. */
   public PagedCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
-  listTopicsSettings() {
+      listTopicsSettings() {
     return listTopicsSettings;
   }
 
   /** Returns the object with the settings used for calls to listTopicSubscriptions. */
   public PagedCallSettings<
-      ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
-      ListTopicSubscriptionsPagedResponse>
-  listTopicSubscriptionsSettings() {
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsPagedResponse>
+      listTopicSubscriptionsSettings() {
     return listTopicSubscriptionsSettings;
   }
 
@@ -178,7 +178,7 @@ public class PublisherStubSettings extends ClientSettings<PublisherStubSettings>
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-  testIamPermissionsSettings() {
+      testIamPermissionsSettings() {
     return testIamPermissionsSettings;
   }
 
@@ -263,116 +263,116 @@ public class PublisherStubSettings extends ClientSettings<PublisherStubSettings>
 
   private static final PagedListDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>
       LIST_TOPICS_PAGE_STR_DESC =
-      new PagedListDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>() {
-        @Override
-        public String emptyToken() {
-          return "";
-        }
+          new PagedListDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
 
-        @Override
-        public ListTopicsRequest injectToken(ListTopicsRequest payload, String token) {
-          return ListTopicsRequest.newBuilder(payload).setPageToken(token).build();
-        }
+            @Override
+            public ListTopicsRequest injectToken(ListTopicsRequest payload, String token) {
+              return ListTopicsRequest.newBuilder(payload).setPageToken(token).build();
+            }
 
-        @Override
-        public ListTopicsRequest injectPageSize(ListTopicsRequest payload, int pageSize) {
-          return ListTopicsRequest.newBuilder(payload).setPageSize(pageSize).build();
-        }
+            @Override
+            public ListTopicsRequest injectPageSize(ListTopicsRequest payload, int pageSize) {
+              return ListTopicsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
 
-        @Override
-        public Integer extractPageSize(ListTopicsRequest payload) {
-          return payload.getPageSize();
-        }
+            @Override
+            public Integer extractPageSize(ListTopicsRequest payload) {
+              return payload.getPageSize();
+            }
 
-        @Override
-        public String extractNextToken(ListTopicsResponse payload) {
-          return payload.getNextPageToken();
-        }
+            @Override
+            public String extractNextToken(ListTopicsResponse payload) {
+              return payload.getNextPageToken();
+            }
 
-        @Override
-        public Iterable<Topic> extractResources(ListTopicsResponse payload) {
-          return payload.getTopicsList();
-        }
-      };
+            @Override
+            public Iterable<Topic> extractResources(ListTopicsResponse payload) {
+              return payload.getTopicsList();
+            }
+          };
 
   private static final PagedListDescriptor<
-      ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
       LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC =
-      new PagedListDescriptor<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>() {
-        @Override
-        public String emptyToken() {
-          return "";
-        }
+          new PagedListDescriptor<
+              ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
 
-        @Override
-        public ListTopicSubscriptionsRequest injectToken(
-            ListTopicSubscriptionsRequest payload, String token) {
-          return ListTopicSubscriptionsRequest.newBuilder(payload).setPageToken(token).build();
-        }
+            @Override
+            public ListTopicSubscriptionsRequest injectToken(
+                ListTopicSubscriptionsRequest payload, String token) {
+              return ListTopicSubscriptionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
 
-        @Override
-        public ListTopicSubscriptionsRequest injectPageSize(
-            ListTopicSubscriptionsRequest payload, int pageSize) {
-          return ListTopicSubscriptionsRequest.newBuilder(payload)
-              .setPageSize(pageSize)
-              .build();
-        }
+            @Override
+            public ListTopicSubscriptionsRequest injectPageSize(
+                ListTopicSubscriptionsRequest payload, int pageSize) {
+              return ListTopicSubscriptionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
 
-        @Override
-        public Integer extractPageSize(ListTopicSubscriptionsRequest payload) {
-          return payload.getPageSize();
-        }
+            @Override
+            public Integer extractPageSize(ListTopicSubscriptionsRequest payload) {
+              return payload.getPageSize();
+            }
 
-        @Override
-        public String extractNextToken(ListTopicSubscriptionsResponse payload) {
-          return payload.getNextPageToken();
-        }
+            @Override
+            public String extractNextToken(ListTopicSubscriptionsResponse payload) {
+              return payload.getNextPageToken();
+            }
 
-        @Override
-        public Iterable<String> extractResources(ListTopicSubscriptionsResponse payload) {
-          return payload.getSubscriptionsList();
-        }
-      };
+            @Override
+            public Iterable<String> extractResources(ListTopicSubscriptionsResponse payload) {
+              return payload.getSubscriptionsList();
+            }
+          };
 
   private static final PagedListResponseFactory<
-      ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
+          ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
       LIST_TOPICS_PAGE_STR_FACT =
-      new PagedListResponseFactory<
-          ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>() {
-        @Override
-        public ApiFuture<ListTopicsPagedResponse> getFuturePagedResponse(
-            UnaryCallable<ListTopicsRequest, ListTopicsResponse> callable,
-            ListTopicsRequest request,
-            ApiCallContext context,
-            ApiFuture<ListTopicsResponse> futureResponse) {
-          PageContext<ListTopicsRequest, ListTopicsResponse, Topic> pageContext =
-              PageContext.create(callable, LIST_TOPICS_PAGE_STR_DESC, request, context);
-          return ListTopicsPagedResponse.createAsync(pageContext, futureResponse);
-        }
-      };
+          new PagedListResponseFactory<
+              ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTopicsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTopicsRequest, ListTopicsResponse> callable,
+                ListTopicsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTopicsResponse> futureResponse) {
+              PageContext<ListTopicsRequest, ListTopicsResponse, Topic> pageContext =
+                  PageContext.create(callable, LIST_TOPICS_PAGE_STR_DESC, request, context);
+              return ListTopicsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   private static final PagedListResponseFactory<
-      ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
-      ListTopicSubscriptionsPagedResponse>
-      LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_FACT =
-      new PagedListResponseFactory<
           ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
-          ListTopicSubscriptionsPagedResponse>() {
-        @Override
-        public ApiFuture<ListTopicSubscriptionsPagedResponse> getFuturePagedResponse(
-            UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
-                callable,
-            ListTopicSubscriptionsRequest request,
-            ApiCallContext context,
-            ApiFuture<ListTopicSubscriptionsResponse> futureResponse) {
-          PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
-              pageContext =
-              PageContext.create(
-                  callable, LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
-          return ListTopicSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
-        }
-      };
+          ListTopicSubscriptionsPagedResponse>
+      LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+              ListTopicSubscriptionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTopicSubscriptionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
+                    callable,
+                ListTopicSubscriptionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTopicSubscriptionsResponse> futureResponse) {
+              PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+              return ListTopicSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   private static final BatchingDescriptor<PublishRequest, PublishResponse> PUBLISH_BATCHING_DESC =
       new BatchingDescriptor<PublishRequest, PublishResponse>() {
@@ -449,11 +449,11 @@ public class PublisherStubSettings extends ClientSettings<PublisherStubSettings>
     private final BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
     private final UnaryCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings;
     private final PagedCallSettings.Builder<
-        ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
+            ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
         listTopicsSettings;
     private final PagedCallSettings.Builder<
-        ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
-        ListTopicSubscriptionsPagedResponse>
+            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+            ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings;
     private final UnaryCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
@@ -704,15 +704,15 @@ public class PublisherStubSettings extends ClientSettings<PublisherStubSettings>
 
     /** Returns the builder for the settings used for calls to listTopics. */
     public PagedCallSettings.Builder<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
-    listTopicsSettings() {
+        listTopicsSettings() {
       return listTopicsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listTopicSubscriptions. */
     public PagedCallSettings.Builder<
-        ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
-        ListTopicSubscriptionsPagedResponse>
-    listTopicSubscriptionsSettings() {
+            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+            ListTopicSubscriptionsPagedResponse>
+        listTopicSubscriptionsSettings() {
       return listTopicSubscriptionsSettings;
     }
 
@@ -733,7 +733,7 @@ public class PublisherStubSettings extends ClientSettings<PublisherStubSettings>
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-    testIamPermissionsSettings() {
+        testIamPermissionsSettings() {
       return testIamPermissionsSettings;
     }
 
