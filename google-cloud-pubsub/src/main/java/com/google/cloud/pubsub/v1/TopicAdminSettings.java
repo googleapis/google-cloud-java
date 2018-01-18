@@ -20,6 +20,7 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedRe
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -27,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -207,7 +209,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
 
   /** Builder for TopicAdminSettings. */
   public static class Builder extends ClientSettings.Builder<TopicAdminSettings, Builder> {
-    private PublisherStubSettings.Builder stubBuilder = PublisherStubSettings.newBuilder();
+    private PublisherStubSettings.Builder stubBuilder;
 
     protected Builder() {
       this((ClientContext) null);
@@ -237,6 +239,33 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     protected Builder(PublisherStubSettings stubSettings) {
       super(stubSettings);
       stubBuilder = stubSettings.toBuilder();
+    }
+
+    @Override
+    public Builder setTransportChannelProvider(TransportChannelProvider channelProvider) {
+      super.setTransportChannelProvider(channelProvider);
+      stubBuilder.setTransportChannelProvider(channelProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
+      super.setCredentialsProvider(credentialsProvider);
+      stubBuilder.setCredentialsProvider(credentialsProvider);
+      return this;
+    }
+
+    protected Builder setInternalHeaderProvider(HeaderProvider headerProvider) {
+      super.setInternalHeaderProvider(headerProvider);
+      stubBuilder.setInternalHeaderProvider(headerProvider);
+      return this;
+    }
+
+    @Override
+    public Builder setEndpoint(String endpoint) {
+      super.setEndpoint(endpoint);
+      stubBuilder.setEndpoint(endpoint);
+      return this;
     }
 
     /**
