@@ -86,11 +86,6 @@ import org.threeten.bp.Duration;
 public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   private final PublisherStubSettings stubSettings;
 
-  /** Constructs an instance of TopicAdminClient with default settings. */
-  public static final TopicAdminSettings create() throws IOException {
-    return create(PublisherStubSettings.newBuilder().build());
-  }
-
   public static final TopicAdminSettings create(PublisherStubSettings stub) throws IOException {
     return new TopicAdminSettings.Builder(stub).build();
   }
@@ -176,24 +171,21 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(getDefaultServiceScopes());
+    return PublisherStubSettings.defaultCredentialsProviderBuilder();
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder();
+    return PublisherStubSettings.defaultGrpcTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultGrpcTransportProviderBuilder().build();
+    return PublisherStubSettings.defaultGrpcTransportProviderBuilder().build();
   }
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(TopicAdminSettings.class))
-        .setTransportToken(
-            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+    return PublisherStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
   /** Returns a new builder for this class. */
@@ -232,6 +224,10 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
       builder.stubBuilder = PublisherStubSettings.newBuilder();
       return builder;
     }
@@ -242,6 +238,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     }
 
     protected Builder(PublisherStubSettings stubSettings) {
+      super(stubSettings);
       stubBuilder = stubSettings.toBuilder();
     }
 
@@ -252,6 +249,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
      */
     public Builder applyToAllUnaryMethods(
         ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+      super.applyToAllUnaryMethods(stubBuilder.unaryMethodSettingsBuilders(), settingsUpdater);
       stubBuilder.applyToAllUnaryMethods(settingsUpdater);
       return this;
     }

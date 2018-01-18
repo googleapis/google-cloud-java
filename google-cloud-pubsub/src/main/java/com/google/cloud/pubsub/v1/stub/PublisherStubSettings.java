@@ -678,6 +678,10 @@ public class PublisherStubSettings extends ClientSettings<PublisherStubSettings>
       return this;
     }
 
+    public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
+      return unaryMethodSettingsBuilders;
+    }
+
     /** Returns the builder for the settings used for calls to createTopic. */
     public UnaryCallSettings.Builder<Topic, Topic> createTopicSettings() {
       return createTopicSettings;
