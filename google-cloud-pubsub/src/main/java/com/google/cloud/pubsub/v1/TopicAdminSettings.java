@@ -20,10 +20,8 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedRe
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.BatchingCallSettings;
@@ -53,7 +51,6 @@ import com.google.pubsub.v1.UpdateTopicRequest;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -90,7 +87,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     return new TopicAdminSettings.Builder(stub).build();
   }
 
-  public PublisherStubSettings getStub() {
+  public PublisherStubSettings getStubSettings() {
     return stubSettings;
   }
 
@@ -233,8 +230,8 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     }
 
     protected Builder(TopicAdminSettings settings) {
-      super(settings);
-      stubBuilder = settings.getStub().toBuilder();
+      super(settings.getStubSettings());
+      stubBuilder = settings.getStubSettings().toBuilder();
     }
 
     protected Builder(PublisherStubSettings stubSettings) {
