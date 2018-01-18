@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -37,7 +37,6 @@ import com.google.monitoring.v3.TimeSeries;
 import com.google.monitoring.v3.TypedValue;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Timestamps;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -134,6 +133,7 @@ public class Snippets {
    * DOUBLE value_type and GAUGE metric kind. If the metric descriptor
    * doesn't exist, it will be auto-created.
    */
+  //CHECKSTYLE OFF: VariableDeclarationUsageDistance
   void writeTimeSeries() throws IOException {
     // [START monitoring_write_timeseries]
     String projectId = System.getProperty("projectId");
@@ -194,6 +194,7 @@ public class Snippets {
     System.out.println("Done writing time series value.");
     // [END monitoring_write_timeseries]
   }
+  //CHECKSTYLE ON: VariableDeclarationUsageDistance
 
   /**
    * Demonstrates listing time series headers.
