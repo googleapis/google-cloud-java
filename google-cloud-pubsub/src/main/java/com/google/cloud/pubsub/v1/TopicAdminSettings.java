@@ -21,10 +21,6 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedRe
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.GoogleCredentialsProvider;
-import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
@@ -51,7 +47,6 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.UpdateTopicRequest;
 import java.io.IOException;
-import java.util.List;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -153,40 +148,6 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     return stubSettings.createStub();
   }
 
-  /** Returns a builder for the default ExecutorProvider for this service. */
-  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
-    return InstantiatingExecutorProvider.newBuilder();
-  }
-
-  /** Returns the default service endpoint. */
-  public static String getDefaultEndpoint() {
-    return "pubsub.googleapis.com:443";
-  }
-
-  /** Returns the default service scopes. */
-  public static List<String> getDefaultServiceScopes() {
-    return PublisherStubSettings.getDefaultServiceScopes();
-  }
-
-  /** Returns a builder for the default credentials for this service. */
-  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return PublisherStubSettings.defaultCredentialsProviderBuilder();
-  }
-
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return PublisherStubSettings.defaultGrpcTransportProviderBuilder();
-  }
-
-  public static TransportChannelProvider defaultTransportChannelProvider() {
-    return PublisherStubSettings.defaultGrpcTransportProviderBuilder().build();
-  }
-
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return PublisherStubSettings.defaultApiClientHeaderProviderBuilder();
-  }
-
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
@@ -223,10 +184,10 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
 
     private static Builder createDefault() {
       Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
+      builder.setTransportChannelProvider(PublisherStubSettings.defaultTransportChannelProvider());
+      builder.setCredentialsProvider(PublisherStubSettings.defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(PublisherStubSettings.defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(PublisherStubSettings.getDefaultEndpoint());
       builder.stubBuilder = PublisherStubSettings.newBuilder();
       return builder;
     }
