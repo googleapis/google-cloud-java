@@ -230,7 +230,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     return builder.build();
   }
 
-  @InternalApi
+  @InternalApi("Visible for testing")
   static void writeStack(IThrowableProxy throwProxy, String prefix, StringBuilder payload) {
     if (throwProxy == null) {
       return;
