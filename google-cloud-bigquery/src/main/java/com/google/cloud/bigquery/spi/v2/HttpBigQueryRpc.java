@@ -31,6 +31,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson.JacksonFactory;
+import com.google.api.core.InternalApi;
 import com.google.api.services.bigquery.Bigquery;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.DatasetList;
@@ -67,6 +68,20 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   private static final int HTTP_RESUME_INCOMPLETE = 308;
   private final BigQueryOptions options;
   private final Bigquery bigquery;
+
+  @InternalApi("Visible for testing")
+  static final Function<DatasetList.Datasets, Dataset> LIST_TO_DATASET =
+      new Function<DatasetList.Datasets, Dataset>() {
+        @Override
+        public Dataset apply(DatasetList.Datasets datasetPb) {
+          return new Dataset()
+              .setDatasetReference(datasetPb.getDatasetReference())
+              .setFriendlyName(datasetPb.getFriendlyName())
+              .setId(datasetPb.getId())
+              .setKind(datasetPb.getKind())
+              .setLabels(datasetPb.getLabels());
+        }
+      };
 
   public HttpBigQueryRpc(BigQueryOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
@@ -110,19 +125,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
           .setPageToken(Option.PAGE_TOKEN.getString(options))
           .execute();
       Iterable<DatasetList.Datasets> datasets = datasetsList.getDatasets();
-      return Tuple.of(datasetsList.getNextPageToken(),
-          Iterables.transform(datasets != null ? datasets
-              : ImmutableList.<DatasetList.Datasets>of(),
-              new Function<DatasetList.Datasets, Dataset>() {
-                @Override
-                public Dataset apply(DatasetList.Datasets datasetPb) {
-                  return new Dataset()
-                      .setDatasetReference(datasetPb.getDatasetReference())
-                      .setFriendlyName(datasetPb.getFriendlyName())
-                      .setId(datasetPb.getId())
-                      .setKind(datasetPb.getKind());
-                }
-              }));
+      return Tuple.of(
+          datasetsList.getNextPageToken(),
+          Iterables.transform(
+              datasets != null ? datasets : ImmutableList.<DatasetList.Datasets>of(),
+              LIST_TO_DATASET));
     } catch (IOException ex) {
       throw translate(ex);
     }
