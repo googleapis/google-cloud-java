@@ -26,8 +26,8 @@ import java.util.Map;
  * Canonical extension header serializer.
  * 
  * @see <a href=
- *      "https://cloud.google.com/storage/docs/access-control/signed-urls
- *      #about-canonical-extension-headers"> Canonical Extension Headers</a>
+ *      "https://cloud.google.com/storage/docs/access-control/signed-urls#about-canonical-extension-headers">
+ *      Canonical Extension Headers</a>
  */
 public class CanonicalExtensionHeadersSerializer {
   
