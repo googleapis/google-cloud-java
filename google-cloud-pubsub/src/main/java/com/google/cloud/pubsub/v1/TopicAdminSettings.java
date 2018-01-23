@@ -94,12 +94,12 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   }
 
   /** Returns the object with the settings used for calls to updateTopic. */
-  public UnaryCallSettings<UpdateTopicRequest, Topic> updateTopicSettings() {
+  UnaryCallSettings<UpdateTopicRequest, Topic> updateTopicSettings() {
     return stubSettings.updateTopicSettings();
   }
 
   /** Returns the object with the settings used for calls to publish. */
-  public BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
+  BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
     return stubSettings.publishSettings();
   }
 
@@ -247,12 +247,12 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateTopic. */
-    public UnaryCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings() {
+    UnaryCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings() {
       return stubBuilder.updateTopicSettings();
     }
 
     /** Returns the builder for the settings used for calls to publish. */
-    public BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
+    BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
       return stubBuilder.publishSettings();
     }
 
