@@ -9,8 +9,8 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
+- [Google Cloud Platform Documentation][cloud-platform-docs]
+- [Client Library Documentation][client-lib-docs]
 
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
 -  [Stackdriver Logging](google-cloud-logging) (GA)
@@ -42,28 +42,32 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Speech](google-cloud-speech) (Alpha)
 -  [Dialogflow](google-cloud-dialogflow) (Alpha)
 
-> Note: google-cloud-java is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
+
+The easy way to get started is to add the umbrella package which pulls in all of the supported clients as
+dependencies. Note that even though the version of the umbrella package is Alpha, the individual clients are
+at different support levels (Alpha, Beta, and GA).
 
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.32.0-alpha</version>
+  <version>0.33.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.32.0-alpha'
+compile 'com.google.cloud:google-cloud:0.33.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.32.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.33.0-alpha"
 ```
+
+It also works just as well to declare a dependency only on the specific clients that you need. See the README of
+each client for instructions.
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
 
@@ -274,7 +278,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.32.0-alpha</version>
+        <version>0.33.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -337,4 +341,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md
+
 [cloud-platform]: https://cloud.google.com/
+[cloud-platform-docs]: https://cloud.google.com/docs/
+[client-lib-docs]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/
