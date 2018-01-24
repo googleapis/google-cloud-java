@@ -46,6 +46,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -104,7 +105,7 @@ import org.threeten.bp.Duration;
  */
 @Generated("by GAPIC v0.0.5")
 @BetaApi
-public class PublisherStubSettings extends ClientSettings<PublisherStubSettings> {
+public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -442,7 +443,7 @@ public class PublisherStubSettings extends ClientSettings<PublisherStubSettings>
       };
 
   /** Builder for PublisherStubSettings. */
-  public static class Builder extends ClientSettings.Builder<PublisherStubSettings, Builder> {
+  public static class Builder extends StubSettings.Builder<PublisherStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<Topic, Topic> createTopicSettings;
