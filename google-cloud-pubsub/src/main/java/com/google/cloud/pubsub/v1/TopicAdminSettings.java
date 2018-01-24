@@ -20,13 +20,21 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedRe
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
+import com.google.common.collect.ImmutableList;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -44,6 +52,7 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.UpdateTopicRequest;
 import java.io.IOException;
+import java.util.List;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -138,6 +147,40 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PublisherStub createStub() throws IOException {
     return ((PublisherStubSettings) getStubSettings()).createStub();
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return PublisherStubSettings.defaultExecutorProviderBuilder();
+  }
+
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return PublisherStubSettings.getDefaultEndpoint();
+  }
+
+  /** Returns the default service scopes. */
+  public static List<String> getDefaultServiceScopes() {
+    return PublisherStubSettings.getDefaultServiceScopes();
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return PublisherStubSettings.defaultCredentialsProviderBuilder();
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return PublisherStubSettings.defaultGrpcTransportProviderBuilder();
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return PublisherStubSettings.defaultTransportChannelProvider();
+  }
+
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return PublisherStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
   /** Returns a new builder for this class. */
