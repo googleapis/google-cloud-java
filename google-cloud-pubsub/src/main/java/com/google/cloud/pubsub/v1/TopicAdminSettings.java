@@ -23,7 +23,6 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.pubsub.v1.stub.PublisherStub;
@@ -163,8 +162,6 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   /** Builder for TopicAdminSettings. */
   public static class Builder extends ClientSettings.Builder<TopicAdminSettings, Builder> {
 
-
-
     protected Builder() throws IOException {
       this((ClientContext) null);
     }
@@ -185,7 +182,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
       super(stubSettings);
     }
 
-    public PublisherStubSettings.Builder getStubSettings() {
+    public PublisherStubSettings.Builder getStubSettingsBuilder() {
       return ((PublisherStubSettings.Builder) getStubSettings());
     }
 
@@ -196,34 +193,35 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
      */
     public Builder applyToAllUnaryMethods(
         ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
-      super.applyToAllUnaryMethods(getStubSettings().unaryMethodSettingsBuilders(), settingsUpdater);
+      super.applyToAllUnaryMethods(
+          getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to createTopic. */
     public UnaryCallSettings.Builder<Topic, Topic> createTopicSettings() {
-      return getStubSettings().createTopicSettings();
+      return getStubSettingsBuilder().createTopicSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateTopic. */
-    UnaryCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings() {
-      return getStubSettings().updateTopicSettings();
+    public UnaryCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings() {
+      return getStubSettingsBuilder().updateTopicSettings();
     }
 
     /** Returns the builder for the settings used for calls to publish. */
-    BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
-      return getStubSettings().publishSettings();
+    public BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
+      return getStubSettingsBuilder().publishSettings();
     }
 
     /** Returns the builder for the settings used for calls to getTopic. */
     public UnaryCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings() {
-      return getStubSettings().getTopicSettings();
+      return getStubSettingsBuilder().getTopicSettings();
     }
 
     /** Returns the builder for the settings used for calls to listTopics. */
     public PagedCallSettings.Builder<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
         listTopicsSettings() {
-      return getStubSettings().listTopicsSettings();
+      return getStubSettingsBuilder().listTopicsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listTopicSubscriptions. */
@@ -231,28 +229,28 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
             ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
             ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings() {
-      return getStubSettings().listTopicSubscriptionsSettings();
+      return getStubSettingsBuilder().listTopicSubscriptionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteTopic. */
     public UnaryCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings() {
-      return getStubSettings().deleteTopicSettings();
+      return getStubSettingsBuilder().deleteTopicSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return getStubSettings().setIamPolicySettings();
+      return getStubSettingsBuilder().setIamPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */
     public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getStubSettings().getIamPolicySettings();
+      return getStubSettingsBuilder().getIamPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
-      return getStubSettings().testIamPermissionsSettings();
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override
