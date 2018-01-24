@@ -20,10 +20,10 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
-import java.util.Collections;
 import org.junit.Test;
 
 public class InsertAllRequestTest {
@@ -220,7 +220,9 @@ public class InsertAllRequestTest {
 
   @Test
   public void testNullOK() {
-    InsertAllRequest.RowToInsert.of(Collections.singletonMap("foo", null));
+    InsertAllRequest.RowToInsert row =
+        InsertAllRequest.RowToInsert.of(Collections.singletonMap("foo", null));
+    assertThat(row.getContent()).containsExactly("foo", null);
   }
 
   private void compareInsertAllRequest(InsertAllRequest expected, InsertAllRequest value) {
