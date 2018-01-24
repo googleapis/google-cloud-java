@@ -9,7 +9,7 @@ Umbrella package that declares a dependency on all currently-available Java clie
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
-- See the [root README of google-cloud-java](https://googlecloudplatform.github.io/google-cloud-java/) for more details
+- See the [root README of google-cloud-java](https://github.com/GoogleCloudPlatform/google-cloud-java) for more details
 on which clients are alpha, beta, and GA.
 
 > Note: This package does not have guaranteed stability and may experience backwards-incompatible changes.
