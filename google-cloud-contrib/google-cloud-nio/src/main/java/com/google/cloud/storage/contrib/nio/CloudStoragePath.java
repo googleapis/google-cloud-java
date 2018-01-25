@@ -75,7 +75,7 @@ public final class CloudStoragePath implements Path {
    */
   BlobId getBlobId() {
     checkArgument(!path.toString().isEmpty(), 
-      "I/O not allowed on empty Google Cloud Storage object names.");
+      "Object names cannot be empty.");
     return BlobId.of(bucket(), toRealPath().path.toString());
   }
 
