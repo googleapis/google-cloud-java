@@ -53,6 +53,7 @@ import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
@@ -382,6 +383,34 @@ public class ITGcsNio {
       Files.deleteIfExists(fs.getPath("Racine"));
       assertThat(Files.exists(fs.getPath("Racine"))).isFalse();
     }
+  }
+
+  @Test
+  public void testListFilesInRootDirectory() throws IOException {
+    CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket(
+      BUCKET, CloudStorageConfiguration.builder().permitEmptyPathComponents(true)
+      .build());
+    
+    // test absolute path
+    Path rootPath = fs.getPath("");
+    List<String> objectNames = new ArrayList<String>();
+    for (Path path : Files.newDirectoryStream(rootPath)) {
+      objectNames.add(path.toString());
+    }
+    Collections.sort(objectNames);
+    assertThat(objectNames.size()).isEqualTo(2);
+    assertThat(objectNames.get(0)).isEqualTo(BIG_FILE);
+    assertThat(objectNames.get(1)).isEqualTo(SML_FILE);
+    
+    // test relative path
+    rootPath = fs.getPath(".");
+    for (Path path : Files.newDirectoryStream(rootPath)) {
+      objectNames.add(path.toString());
+    }
+    Collections.sort(objectNames);
+    assertThat(objectNames.size()).isEqualTo(2);
+    assertThat(objectNames.get(0)).isEqualTo(BIG_FILE);
+    assertThat(objectNames.get(1)).isEqualTo(SML_FILE);
   }
 
   /**
