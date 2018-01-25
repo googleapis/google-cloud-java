@@ -397,7 +397,7 @@ public class ITGcsNio {
     for (Path path : Files.newDirectoryStream(rootPath)) {
       objectNames.add(path.toString());
     }
-    assertThat(objectNames.size()).containsExactly(BIG_FILE, SML_FILE);
+    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
     
     // test relative path
     rootPath = fs.getPath(".");
@@ -405,7 +405,7 @@ public class ITGcsNio {
       objectNames.add(path.toString());
     }
     Collections.sort(objectNames);
-    assertThat(objectNames.size()).containsExactly(BIG_FILE, SML_FILE);
+    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
   }
 
   /**
