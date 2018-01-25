@@ -30,13 +30,16 @@ import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.DatabaseRootName;
 import com.google.protobuf.ByteString;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
+import java.util.logging.Level;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
@@ -65,6 +68,8 @@ class FirestoreImpl implements Firestore {
   private final FirestoreRpc firestoreClient;
   private final FirestoreOptions firestoreOptions;
   private final ResourcePath databasePath;
+
+  private boolean closed = false;
 
   FirestoreImpl(FirestoreOptions options) {
     this(options, options.getFirestoreRpc());
@@ -324,6 +329,7 @@ class FirestoreImpl implements Firestore {
   /** Request funnel for all read/write requests. */
   <RequestT, ResponseT> ApiFuture<ResponseT> sendRequest(
       RequestT requestT, UnaryCallable<RequestT, ResponseT> callable) {
+    Preconditions.checkState(!closed, "Firestore client has already been closed");
     return callable.futureCall(requestT);
   }
 
@@ -332,6 +338,7 @@ class FirestoreImpl implements Firestore {
       RequestT requestT,
       ApiStreamObserver<ResponseT> responseObserverT,
       ServerStreamingCallable<RequestT, ResponseT> callable) {
+    Preconditions.checkState(!closed, "Firestore client has already been closed");
     callable.serverStreamingCall(requestT, responseObserverT);
   }
 
@@ -339,11 +346,18 @@ class FirestoreImpl implements Firestore {
   <RequestT, ResponseT> ApiStreamObserver<RequestT> streamRequest(
       ApiStreamObserver<ResponseT> responseObserverT,
       BidiStreamingCallable<RequestT, ResponseT> callable) {
+    Preconditions.checkState(!closed, "Firestore client has already been closed");
     return callable.bidiStreamingCall(responseObserverT);
   }
 
   @Override
   public FirestoreOptions getOptions() {
     return firestoreOptions;
+  }
+
+  @Override
+  public void close() throws Exception {
+    closed = true;
+    firestoreClient.close();
   }
 }

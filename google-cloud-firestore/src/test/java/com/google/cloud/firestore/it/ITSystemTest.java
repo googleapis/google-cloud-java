@@ -62,6 +62,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -90,6 +91,11 @@ public class ITSystemTest {
         firestore.collection(
             String.format("java-%s-%s", testName.getMethodName(), LocalFirestoreHelper.autoId()));
     randomDoc = randomColl.document();
+  }
+
+  @After
+  public void after() throws Exception {
+    firestore.close();
   }
 
   private DocumentReference addDocument(String key, Object value, Object... fields)
