@@ -52,19 +52,11 @@ class FirestoreImpl implements Firestore {
   private static final String AUTO_ID_ALPHABET =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-  /** Creates a pseudo-random 20-character ID that can be used for Firestore documents. */
-  static String autoId() {
-    StringBuilder builder = new StringBuilder();
-    int maxRandom = AUTO_ID_ALPHABET.length();
-    for (int i = 0; i < AUTO_ID_LENGTH; i++) {
-      builder.append(AUTO_ID_ALPHABET.charAt(RANDOM.nextInt(maxRandom)));
-    }
-    return builder.toString();
-  }
-
   private final FirestoreRpc firestoreClient;
   private final FirestoreOptions firestoreOptions;
   private final ResourcePath databasePath;
+
+  private boolean closed;
 
   FirestoreImpl(FirestoreOptions options) {
     this(options, options.getFirestoreRpc());
@@ -79,6 +71,16 @@ class FirestoreImpl implements Firestore {
             + "Please explicitly set your Project ID in FirestoreOptions.");
     this.databasePath =
         ResourcePath.create(DatabaseRootName.of(options.getProjectId(), options.getDatabaseId()));
+  }
+
+  /** Creates a pseudo-random 20-character ID that can be used for Firestore documents. */
+  static String autoId() {
+    StringBuilder builder = new StringBuilder();
+    int maxRandom = AUTO_ID_ALPHABET.length();
+    for (int i = 0; i < AUTO_ID_LENGTH; i++) {
+      builder.append(AUTO_ID_ALPHABET.charAt(RANDOM.nextInt(maxRandom)));
+    }
+    return builder.toString();
   }
 
   @Nonnull
@@ -324,6 +326,7 @@ class FirestoreImpl implements Firestore {
   /** Request funnel for all read/write requests. */
   <RequestT, ResponseT> ApiFuture<ResponseT> sendRequest(
       RequestT requestT, UnaryCallable<RequestT, ResponseT> callable) {
+    Preconditions.checkState(!closed, "Firestore client has already been closed");
     return callable.futureCall(requestT);
   }
 
@@ -332,6 +335,7 @@ class FirestoreImpl implements Firestore {
       RequestT requestT,
       ApiStreamObserver<ResponseT> responseObserverT,
       ServerStreamingCallable<RequestT, ResponseT> callable) {
+    Preconditions.checkState(!closed, "Firestore client has already been closed");
     callable.serverStreamingCall(requestT, responseObserverT);
   }
 
@@ -339,11 +343,18 @@ class FirestoreImpl implements Firestore {
   <RequestT, ResponseT> ApiStreamObserver<RequestT> streamRequest(
       ApiStreamObserver<ResponseT> responseObserverT,
       BidiStreamingCallable<RequestT, ResponseT> callable) {
+    Preconditions.checkState(!closed, "Firestore client has already been closed");
     return callable.bidiStreamingCall(responseObserverT);
   }
 
   @Override
   public FirestoreOptions getOptions() {
     return firestoreOptions;
+  }
+
+  @Override
+  public void close() throws Exception {
+    firestoreClient.close();
+    closed = true;
   }
 }
