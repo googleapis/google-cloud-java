@@ -53,7 +53,6 @@ import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
@@ -404,7 +403,6 @@ public class ITGcsNio {
     for (Path path : Files.newDirectoryStream(rootPath)) {
       objectNames.add(path.toString());
     }
-    Collections.sort(objectNames);
     assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
   }
 
