@@ -357,7 +357,7 @@ class FirestoreImpl implements Firestore {
 
   @Override
   public void close() throws Exception {
-    closed = true;
     firestoreClient.close();
+    closed = true;
   }
 }
