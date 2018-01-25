@@ -30,16 +30,13 @@ import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.DatabaseRootName;
 import com.google.protobuf.ByteString;
-import io.grpc.ManagedChannel;
 import io.grpc.Status;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
-import java.util.logging.Level;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
@@ -55,21 +52,11 @@ class FirestoreImpl implements Firestore {
   private static final String AUTO_ID_ALPHABET =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-  /** Creates a pseudo-random 20-character ID that can be used for Firestore documents. */
-  static String autoId() {
-    StringBuilder builder = new StringBuilder();
-    int maxRandom = AUTO_ID_ALPHABET.length();
-    for (int i = 0; i < AUTO_ID_LENGTH; i++) {
-      builder.append(AUTO_ID_ALPHABET.charAt(RANDOM.nextInt(maxRandom)));
-    }
-    return builder.toString();
-  }
-
   private final FirestoreRpc firestoreClient;
   private final FirestoreOptions firestoreOptions;
   private final ResourcePath databasePath;
 
-  private boolean closed = false;
+  private boolean closed;
 
   FirestoreImpl(FirestoreOptions options) {
     this(options, options.getFirestoreRpc());
@@ -84,6 +71,16 @@ class FirestoreImpl implements Firestore {
             + "Please explicitly set your Project ID in FirestoreOptions.");
     this.databasePath =
         ResourcePath.create(DatabaseRootName.of(options.getProjectId(), options.getDatabaseId()));
+  }
+
+  /** Creates a pseudo-random 20-character ID that can be used for Firestore documents. */
+  static String autoId() {
+    StringBuilder builder = new StringBuilder();
+    int maxRandom = AUTO_ID_ALPHABET.length();
+    for (int i = 0; i < AUTO_ID_LENGTH; i++) {
+      builder.append(AUTO_ID_ALPHABET.charAt(RANDOM.nextInt(maxRandom)));
+    }
+    return builder.toString();
   }
 
   @Nonnull
