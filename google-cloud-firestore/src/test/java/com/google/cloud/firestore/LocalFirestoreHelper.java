@@ -42,6 +42,7 @@ import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
 import com.google.firestore.v1beta1.StructuredQuery;
+import com.google.firestore.v1beta1.StructuredQuery.CompositeFilter;
 import com.google.firestore.v1beta1.StructuredQuery.FieldFilter;
 import com.google.firestore.v1beta1.StructuredQuery.UnaryFilter;
 import com.google.firestore.v1beta1.Value;
@@ -408,15 +409,14 @@ public final class LocalFirestoreHelper {
       structuredQuery.mergeFrom(option);
     }
 
-    if (structuredQuery.getWhere().getCompositeFilter().getFiltersCount() == 1) {
-      if (structuredQuery.getWhere().getCompositeFilter().getFilters(0).hasFieldFilter()) {
-        FieldFilter fieldFilter =
-            structuredQuery.getWhere().getCompositeFilter().getFilters(0).getFieldFilter();
-        structuredQuery.clearWhere().getWhereBuilder().setFieldFilter(fieldFilter);
+    CompositeFilter compositeFilter = structuredQuery.getWhere().getCompositeFilter();
+    if (compositeFilter.getFiltersCount() == 1) {
+      if (compositeFilter.getFilters(0).hasFieldFilter()) {
+        FieldFilter fieldFilter = compositeFilter.getFilters(0).getFieldFilter();
+        structuredQuery.getWhereBuilder().setFieldFilter(fieldFilter);
       } else {
-        UnaryFilter unaryFilter =
-            structuredQuery.getWhere().getCompositeFilter().getFilters(0).getUnaryFilter();
-        structuredQuery.clearWhere().getWhereBuilder().setUnaryFilter(unaryFilter);
+        UnaryFilter unaryFilter = compositeFilter.getFilters(0).getUnaryFilter();
+        structuredQuery.getWhereBuilder().setUnaryFilter(unaryFilter);
       }
     }
 
