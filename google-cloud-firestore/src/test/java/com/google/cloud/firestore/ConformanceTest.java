@@ -365,9 +365,9 @@ public class ConformanceTest {
         }
         break;
       case ORDER_BY:
-        OrderBy oderClause = clause.getOrderBy();
-        fieldPath = convertPath(oderClause.getPath());
-        switch (oderClause.getDirection()) {
+        OrderBy orderClause = clause.getOrderBy();
+        fieldPath = convertPath(orderClause.getPath());
+        switch (orderClause.getDirection()) {
           case "asc":
             query = query.orderBy(fieldPath, Direction.ASCENDING);
             break;
