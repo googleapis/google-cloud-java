@@ -76,7 +76,6 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 import org.threeten.bp.Instant;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 @RunWith(AllTests.class)
 public class ConformanceTest {
@@ -294,7 +293,7 @@ public class ConformanceTest {
                     runQueryTest(testDefinition.getQuery());
                     break;
                   default:
-                    throw new NotImplementedException();
+                    throw new UnsupportedOperationException();
                 }
               }
             });
@@ -318,13 +317,12 @@ public class ConformanceTest {
         query = applyClause(query, clause);
       }
 
-      query.get().get();
-
+      ApiFuture<QuerySnapshot> apiCall = query.get();
       Assert.assertFalse(testCase.getIsError());
 
+      apiCall.get();
       RunQueryRequest request = runQueryCapture.getValue();
       Assert.assertEquals(testCase.getQuery(), request.getStructuredQuery());
-
     } catch (Exception e) {
       Assert.assertTrue(testCase.getIsError());
     }
@@ -334,8 +332,8 @@ public class ConformanceTest {
   private Query applyClause(Query query, Clause clause) {
     FieldPath fieldPath;
     Object value;
-    List<Object> values;
     Cursor cursor;
+
     switch (clause.getClauseCase()) {
       case SELECT:
         query =
@@ -363,7 +361,7 @@ public class ConformanceTest {
             query = query.whereGreaterThan(fieldPath, value);
             break;
           default:
-            throw new NotImplementedException();
+            throw new UnsupportedOperationException();
         }
         break;
       case ORDER_BY:
@@ -377,7 +375,7 @@ public class ConformanceTest {
             query = query.orderBy(fieldPath, Direction.DESCENDING);
             break;
           default:
-            throw new NotImplementedException();
+            throw new UnsupportedOperationException();
         }
         break;
       case OFFSET:
@@ -419,7 +417,7 @@ public class ConformanceTest {
         }
         break;
       default:
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
     return query;
   }
