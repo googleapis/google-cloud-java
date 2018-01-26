@@ -810,7 +810,15 @@ public class Query {
     structuredQuery.addFrom(
         StructuredQuery.CollectionSelector.newBuilder().setCollectionId(path.getId()));
 
-    if (!options.fieldFilters.isEmpty()) {
+    if (options.fieldFilters.size() == 1) {
+      Filter filter = options.fieldFilters.get(0).toProto();
+      if (filter.hasFieldFilter()){
+        structuredQuery.getWhereBuilder().setFieldFilter(filter.getFieldFilter());
+      } else {
+        Preconditions.checkState (filter.hasUnaryFilter(), "Expected a UnaryFilter or a FieldFilter.");
+        structuredQuery.getWhereBuilder().setUnaryFilter(filter.getUnaryFilter());
+      }
+    } else if (options.fieldFilters.size() > 1) {
       Filter.Builder filter = Filter.newBuilder();
       StructuredQuery.CompositeFilter.Builder compositeFilter =
           StructuredQuery.CompositeFilter.newBuilder();
