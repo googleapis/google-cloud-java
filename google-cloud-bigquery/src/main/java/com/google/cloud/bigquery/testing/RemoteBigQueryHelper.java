@@ -93,7 +93,7 @@ public class RemoteBigQueryHelper {
     try {
       HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
       transportOptions = transportOptions.toBuilder().setConnectTimeout(connectTimeout).setReadTimeout(connectTimeout)
-           .build();
+          .build();
       BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
           .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
@@ -116,7 +116,7 @@ public class RemoteBigQueryHelper {
   public static RemoteBigQueryHelper create() {
     HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
     transportOptions = transportOptions.toBuilder().setConnectTimeout(connectTimeout).setReadTimeout(connectTimeout)
-         .build();
+        .build();
     BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
         .setRetrySettings(retrySettings())
         .setTransportOptions(transportOptions)
@@ -138,7 +138,7 @@ public class RemoteBigQueryHelper {
         .setInitialRpcTimeout(Duration.ofMillis(totalTimeOut))
         .setRpcTimeoutMultiplier(retryDelayMultiplier)
         .setMaxRpcTimeout(Duration.ofMillis(totalTimeOut))
-         .build();
+        .build();
   }
 
   public static class BigQueryHelperException extends RuntimeException {
