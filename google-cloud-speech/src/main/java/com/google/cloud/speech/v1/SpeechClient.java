@@ -455,7 +455,7 @@ public class SpeechClient implements BackgroundResource {
    *         }
    *       };
    *   ApiStreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
-   *       speechClient.streamingRecognizeCallable().bidiStreamingCall(responseObserver));
+   *       speechClient.streamingRecognizeCallable().bidiStreamingCall(responseObserver);
    *
    *   StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
    *   requestObserver.onNext(request);
