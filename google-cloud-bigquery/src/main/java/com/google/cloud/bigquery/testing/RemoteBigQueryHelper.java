@@ -46,6 +46,7 @@ public class RemoteBigQueryHelper {
   private static final Logger log = Logger.getLogger(RemoteBigQueryHelper.class.getName());
   private static final String DATASET_NAME_PREFIX = "gcloud_test_dataset_temp_";
   private final BigQueryOptions options;
+  private static final int connectTimeout = 60000;
 
   private RemoteBigQueryHelper(BigQueryOptions options) {
     this.options = options;
@@ -91,8 +92,8 @@ public class RemoteBigQueryHelper {
       throws BigQueryHelperException {
     try {
       HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
-      transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
-          .build();
+      transportOptions = transportOptions.toBuilder().setConnectTimeout(connectTimeout).setReadTimeout(connectTimeout)
+           .build();
       BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
           .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
@@ -114,8 +115,8 @@ public class RemoteBigQueryHelper {
    */
   public static RemoteBigQueryHelper create() {
     HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
-    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
-        .build();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(connectTimeout).setReadTimeout(connectTimeout)
+         .build();
     BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
         .setRetrySettings(retrySettings())
         .setTransportOptions(transportOptions)
@@ -124,15 +125,20 @@ public class RemoteBigQueryHelper {
   }
 
   private static RetrySettings retrySettings() {
-    return RetrySettings.newBuilder().setMaxAttempts(10)
-        .setMaxRetryDelay(Duration.ofMillis(30000L))
-        .setTotalTimeout(Duration.ofMillis(120000L))
-        .setInitialRetryDelay(Duration.ofMillis(250L))
-        .setRetryDelayMultiplier(1.0)
-        .setInitialRpcTimeout(Duration.ofMillis(120000L))
-        .setRpcTimeoutMultiplier(1.0)
-        .setMaxRpcTimeout(Duration.ofMillis(120000L))
-        .build();
+    double retryDelayMultiplier = 1.0;
+    int maxAttempts = 10;
+    long initialRetryDelay = 250L;
+    long maxRetryDelay = 30000L;
+    long totalTimeOut = 120000L;
+    return RetrySettings.newBuilder().setMaxAttempts(maxAttempts)
+        .setMaxRetryDelay(Duration.ofMillis(maxRetryDelay))
+        .setTotalTimeout(Duration.ofMillis(totalTimeOut))
+        .setInitialRetryDelay(Duration.ofMillis(initialRetryDelay))
+        .setRetryDelayMultiplier(retryDelayMultiplier)
+        .setInitialRpcTimeout(Duration.ofMillis(totalTimeOut))
+        .setRpcTimeoutMultiplier(retryDelayMultiplier)
+        .setMaxRpcTimeout(Duration.ofMillis(totalTimeOut))
+         .build();
   }
 
   public static class BigQueryHelperException extends RuntimeException {
