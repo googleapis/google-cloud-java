@@ -160,6 +160,7 @@
     <examples.version>0.33.1-alpha-SNAPSHOT</examples.version>
     <language.version>1.15.1-SNAPSHOT</language.version>
     <logging.version>1.15.1-SNAPSHOT</logging.version>
+    <logging-logback.version>0.33.1-beta-SNAPSHOT</logging-logback.version>
     <monitoring.version>0.33.1-beta-SNAPSHOT</monitoring.version>
     <os-login.version>0.33.1-alpha-SNAPSHOT</os-login.version>
     <pubsub.version>0.33.1-beta-SNAPSHOT</pubsub.version>
@@ -576,6 +577,11 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-logging-v2</artifactId>
         <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-logging-logback</artifactId>
+        <version>${logging-logback.version}</version>
       </dependency>
 
       <dependency>
