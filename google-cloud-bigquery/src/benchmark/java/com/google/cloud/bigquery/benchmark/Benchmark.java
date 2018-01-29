@@ -71,6 +71,7 @@ public class Benchmark {
       }
       Duration total = Duration.between(start, clock.instant());
 
+      assert firstByte != null;
       double firstByteSec = (double) (firstByte.getNano()) / NS_PER_SECOND + firstByte.getSeconds();
       double totalSec = (double) (total.getNano()) / NS_PER_SECOND + total.getSeconds();
 
