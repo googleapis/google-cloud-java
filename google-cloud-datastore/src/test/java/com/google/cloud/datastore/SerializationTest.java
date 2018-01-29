@@ -80,7 +80,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final BooleanValue BOOLEAN_VALUE = BooleanValue.of(true);
   private static final TimestampValue TIMESTAMP_VALUE = TimestampValue.of(Timestamp.now());
   private static final BlobValue BLOB_VALUE = BlobValue.of(BLOB1);
-  private static final RawValue RAW_VALUE = 
+  private static final RawValue RAW_VALUE =
       RawValue.of(com.google.datastore.v1.Value.newBuilder().setMeaning(18).build());
   private static final LatLngValue LAT_LNG_VALUE = LatLngValue.of(LAT_LNG);
   private static final Entity ENTITY1 = Entity.newBuilder(KEY1).build();
