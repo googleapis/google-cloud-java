@@ -593,6 +593,26 @@ public class DocumentReferenceTest {
   }
 
   @Test
+  public void updateNestedMap() throws Exception {
+    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference.update("a.b", "foo", "a.c", FieldValue.delete()).get();
+
+    Map<String, Value> nestedUpdate = new HashMap<>();
+    Value.Builder valueProto = Value.newBuilder();
+    valueProto
+        .getMapValueBuilder()
+        .putFields("b", Value.newBuilder().setStringValue("foo").build());
+    nestedUpdate.put("a", valueProto.build());
+
+    CommitRequest expectedCommit = commit(update(nestedUpdate, Arrays.asList("a.b", "a.c")));
+    assertCommitEquals(expectedCommit, commitCapture.getValue());
+  }
+
+  @Test
   public void updateConflictingFields() throws Exception {
     try {
       documentReference.update("a.b", "foo", "a", "foo").get();
