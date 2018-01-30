@@ -452,7 +452,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
             .setReadTimeout(500)
             .setHeaders(new HttpHeaders().set("Metadata-Flavor", "Google"));
     HttpResponse response = request.execute();
-    return response.parseAsString();
+    String projectId = response.parseAsString();
+    return isValidProjectId(projectId)? projectId : null;
   }
 
   protected static String getServiceAccountProjectId() {
@@ -476,6 +477,18 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return project;
   }
 
+  /* 
+   * Returns true if the projectId is valid.
+   * projectId must be between 6 and 30 characters
+   * projectId can have lowercase letters, digits or hyphens
+   * and must start with a lowercase letter
+   */
+  private boolean isValidProjectId(String projectId) {
+    Pattern p = Pattern.compile("^[a-z][a-z0-9-]*$");
+    Matcher m = p.matcher(projectId);
+    return projectId.length() >= 6 && projectId.length() <= 30
+      && m.matches();
+  }
 
   /**
    * Returns a Service object for the current service. For instance, when using Google Cloud
