@@ -478,6 +478,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   /* 
+   * Returns true if the projectId is valid.
    * projectId must be between 6 and 30 characters
    * projectId can have lowercase letters, digits or hyphens
    * and must start with a lowercase letter
