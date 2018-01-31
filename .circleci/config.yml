@@ -1,25 +1,42 @@
 version: 2.0
 
+anchor_docker: &anchor_docker
+  docker:
+    - image: circleci/openjdk:8-jdk
+      environment:
+        TERM: dumb
+
+anchor_run_decrypt: &anchor_run_decrypt
+  name: Decrypt credentials.
+  command: |
+    openssl aes-256-cbc -md sha256 -d -in .circleci/it-service-account.json.enc \
+        -out .circleci/it-service-account.json -k "${SYSTEM_TESTS_ENCRYPTION_KEY}"
+
 jobs:
   datastore_it:
     working_directory: ~/googleapis
-    docker:
-      - image: circleci/openjdk:8-jdk
-        environment:
-          TERM: dumb
+    <<: *anchor_docker
     steps:
       - checkout
       - run:
-          name: Decrypt credentials.
-          command: |
-            openssl aes-256-cbc -md sha256 -d -in .circleci/it-service-account.json.enc \
-                -out .circleci/it-service-account.json -k "${SYSTEM_TESTS_ENCRYPTION_KEY}"
+          <<: *anchor_run_decrypt
       - run:
           name: Run integration tests for google-cloud-datastore
           command: ./utilities/verify_single_it.sh google-cloud-datastore
+  speech_it:
+    working_directory: ~/googleapis
+    <<: *anchor_docker
+    steps:
+      - checkout
+      - run:
+          <<: *anchor_run_decrypt
+      - run:
+          name: Run integration tests for google-cloud-speech
+          command: ./utilities/verify_single_it.sh google-cloud-speech
 
 workflows:
   version: 2
   build:
     jobs:
       - datastore_it
+      - speech_it
