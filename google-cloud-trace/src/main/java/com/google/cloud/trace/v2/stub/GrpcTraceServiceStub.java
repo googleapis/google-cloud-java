@@ -22,7 +22,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.trace.v2.TraceServiceSettings;
 import com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest;
 import com.google.devtools.cloudtrace.v2.Span;
 import com.google.protobuf.Empty;
@@ -64,13 +63,13 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
   private final UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable;
   private final UnaryCallable<Span, Span> createSpanCallable;
 
-  public static final GrpcTraceServiceStub create(TraceServiceSettings settings)
+  public static final GrpcTraceServiceStub create(TraceServiceStubSettings settings)
       throws IOException {
     return new GrpcTraceServiceStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcTraceServiceStub create(ClientContext clientContext) throws IOException {
-    return new GrpcTraceServiceStub(TraceServiceSettings.newBuilder().build(), clientContext);
+    return new GrpcTraceServiceStub(TraceServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -78,7 +77,7 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcTraceServiceStub(TraceServiceSettings settings, ClientContext clientContext)
+  protected GrpcTraceServiceStub(TraceServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansTransportSettings =

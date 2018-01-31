@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.monitoring.v3.GroupServiceSettings;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
 import com.google.monitoring.v3.GetGroupRequest;
@@ -112,13 +111,13 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
   private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
       listGroupMembersPagedCallable;
 
-  public static final GrpcGroupServiceStub create(GroupServiceSettings settings)
+  public static final GrpcGroupServiceStub create(GroupServiceStubSettings settings)
       throws IOException {
     return new GrpcGroupServiceStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcGroupServiceStub create(ClientContext clientContext) throws IOException {
-    return new GrpcGroupServiceStub(GroupServiceSettings.newBuilder().build(), clientContext);
+    return new GrpcGroupServiceStub(GroupServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -126,7 +125,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcGroupServiceStub(GroupServiceSettings settings, ClientContext clientContext)
+  protected GrpcGroupServiceStub(GroupServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<ListGroupsRequest, ListGroupsResponse> listGroupsTransportSettings =

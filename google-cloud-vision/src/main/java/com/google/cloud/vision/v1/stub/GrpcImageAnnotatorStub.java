@@ -24,7 +24,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
-import com.google.cloud.vision.v1.ImageAnnotatorSettings;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -57,14 +56,15 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
   private final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable;
 
-  public static final GrpcImageAnnotatorStub create(ImageAnnotatorSettings settings)
+  public static final GrpcImageAnnotatorStub create(ImageAnnotatorStubSettings settings)
       throws IOException {
     return new GrpcImageAnnotatorStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcImageAnnotatorStub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcImageAnnotatorStub(ImageAnnotatorSettings.newBuilder().build(), clientContext);
+    return new GrpcImageAnnotatorStub(
+        ImageAnnotatorStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -72,7 +72,7 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcImageAnnotatorStub(ImageAnnotatorSettings settings, ClientContext clientContext)
+  protected GrpcImageAnnotatorStub(ImageAnnotatorStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>

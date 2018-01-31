@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceSettings;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
@@ -88,7 +87,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
   private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
-  public static final GrpcErrorStatsServiceStub create(ErrorStatsServiceSettings settings)
+  public static final GrpcErrorStatsServiceStub create(ErrorStatsServiceStubSettings settings)
       throws IOException {
     return new GrpcErrorStatsServiceStub(settings, ClientContext.create(settings));
   }
@@ -96,7 +95,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
   public static final GrpcErrorStatsServiceStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcErrorStatsServiceStub(
-        ErrorStatsServiceSettings.newBuilder().build(), clientContext);
+        ErrorStatsServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -105,7 +104,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
    * should be preferred.
    */
   protected GrpcErrorStatsServiceStub(
-      ErrorStatsServiceSettings settings, ClientContext clientContext) throws IOException {
+      ErrorStatsServiceStubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<ListGroupStatsRequest, ListGroupStatsResponse>
         listGroupStatsTransportSettings =

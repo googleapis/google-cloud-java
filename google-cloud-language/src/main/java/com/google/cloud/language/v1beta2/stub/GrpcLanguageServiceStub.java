@@ -34,7 +34,6 @@ import com.google.cloud.language.v1beta2.AnnotateTextRequest;
 import com.google.cloud.language.v1beta2.AnnotateTextResponse;
 import com.google.cloud.language.v1beta2.ClassifyTextRequest;
 import com.google.cloud.language.v1beta2.ClassifyTextResponse;
-import com.google.cloud.language.v1beta2.LanguageServiceSettings;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -125,14 +124,15 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
   private final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable;
   private final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
-  public static final GrpcLanguageServiceStub create(LanguageServiceSettings settings)
+  public static final GrpcLanguageServiceStub create(LanguageServiceStubSettings settings)
       throws IOException {
     return new GrpcLanguageServiceStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcLanguageServiceStub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcLanguageServiceStub(LanguageServiceSettings.newBuilder().build(), clientContext);
+    return new GrpcLanguageServiceStub(
+        LanguageServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -140,8 +140,8 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcLanguageServiceStub(LanguageServiceSettings settings, ClientContext clientContext)
-      throws IOException {
+  protected GrpcLanguageServiceStub(
+      LanguageServiceStubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
         analyzeSentimentTransportSettings =

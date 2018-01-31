@@ -26,7 +26,6 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.videointelligence.v1beta2.AnnotateVideoProgress;
 import com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1beta2.AnnotateVideoResponse;
-import com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -65,14 +64,14 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
       annotateVideoOperationCallable;
 
   public static final GrpcVideoIntelligenceServiceStub create(
-      VideoIntelligenceServiceSettings settings) throws IOException {
+      VideoIntelligenceServiceStubSettings settings) throws IOException {
     return new GrpcVideoIntelligenceServiceStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcVideoIntelligenceServiceStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcVideoIntelligenceServiceStub(
-        VideoIntelligenceServiceSettings.newBuilder().build(), clientContext);
+        VideoIntelligenceServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -81,7 +80,8 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
    * should be preferred.
    */
   protected GrpcVideoIntelligenceServiceStub(
-      VideoIntelligenceServiceSettings settings, ClientContext clientContext) throws IOException {
+      VideoIntelligenceServiceStubSettings settings, ClientContext clientContext)
+      throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 
     GrpcCallSettings<AnnotateVideoRequest, Operation> annotateVideoTransportSettings =

@@ -48,7 +48,6 @@ import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
-import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -270,15 +269,15 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
-  public static final GrpcBigtableInstanceAdminStub create(BigtableInstanceAdminSettings settings)
-      throws IOException {
+  public static final GrpcBigtableInstanceAdminStub create(
+      BigtableInstanceAdminStubSettings settings) throws IOException {
     return new GrpcBigtableInstanceAdminStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcBigtableInstanceAdminStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcBigtableInstanceAdminStub(
-        BigtableInstanceAdminSettings.newBuilder().build(), clientContext);
+        BigtableInstanceAdminStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -287,7 +286,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
    * should be preferred.
    */
   protected GrpcBigtableInstanceAdminStub(
-      BigtableInstanceAdminSettings settings, ClientContext clientContext) throws IOException {
+      BigtableInstanceAdminStubSettings settings, ClientContext clientContext) throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =

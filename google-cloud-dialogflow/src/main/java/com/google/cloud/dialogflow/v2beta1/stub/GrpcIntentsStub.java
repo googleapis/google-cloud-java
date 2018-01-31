@@ -32,7 +32,6 @@ import com.google.cloud.dialogflow.v2beta1.CreateIntentRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest;
 import com.google.cloud.dialogflow.v2beta1.GetIntentRequest;
 import com.google.cloud.dialogflow.v2beta1.Intent;
-import com.google.cloud.dialogflow.v2beta1.IntentsSettings;
 import com.google.cloud.dialogflow.v2beta1.ListIntentsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListIntentsResponse;
 import com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest;
@@ -129,19 +128,19 @@ public class GrpcIntentsStub extends IntentsStub {
   private final OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationCallable;
 
-  public static final GrpcIntentsStub create(IntentsSettings settings) throws IOException {
+  public static final GrpcIntentsStub create(IntentsStubSettings settings) throws IOException {
     return new GrpcIntentsStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcIntentsStub create(ClientContext clientContext) throws IOException {
-    return new GrpcIntentsStub(IntentsSettings.newBuilder().build(), clientContext);
+    return new GrpcIntentsStub(IntentsStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
    * Constructs an instance of GrpcIntentsStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected GrpcIntentsStub(IntentsSettings settings, ClientContext clientContext)
+  protected GrpcIntentsStub(IntentsStubSettings settings, ClientContext clientContext)
       throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 

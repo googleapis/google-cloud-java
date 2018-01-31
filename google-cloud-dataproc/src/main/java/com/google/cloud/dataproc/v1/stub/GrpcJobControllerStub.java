@@ -28,7 +28,6 @@ import com.google.cloud.dataproc.v1.CancelJobRequest;
 import com.google.cloud.dataproc.v1.DeleteJobRequest;
 import com.google.cloud.dataproc.v1.GetJobRequest;
 import com.google.cloud.dataproc.v1.Job;
-import com.google.cloud.dataproc.v1.JobControllerSettings;
 import com.google.cloud.dataproc.v1.ListJobsRequest;
 import com.google.cloud.dataproc.v1.ListJobsResponse;
 import com.google.cloud.dataproc.v1.SubmitJobRequest;
@@ -104,13 +103,13 @@ public class GrpcJobControllerStub extends JobControllerStub {
   private final UnaryCallable<CancelJobRequest, Job> cancelJobCallable;
   private final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable;
 
-  public static final GrpcJobControllerStub create(JobControllerSettings settings)
+  public static final GrpcJobControllerStub create(JobControllerStubSettings settings)
       throws IOException {
     return new GrpcJobControllerStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcJobControllerStub create(ClientContext clientContext) throws IOException {
-    return new GrpcJobControllerStub(JobControllerSettings.newBuilder().build(), clientContext);
+    return new GrpcJobControllerStub(JobControllerStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -118,7 +117,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcJobControllerStub(JobControllerSettings settings, ClientContext clientContext)
+  protected GrpcJobControllerStub(JobControllerStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<SubmitJobRequest, Job> submitJobTransportSettings =

@@ -46,7 +46,6 @@ import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -206,7 +205,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
       listSnapshotsPagedCallable;
   private final UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable;
 
-  public static final GrpcBigtableTableAdminStub create(BigtableTableAdminSettings settings)
+  public static final GrpcBigtableTableAdminStub create(BigtableTableAdminStubSettings settings)
       throws IOException {
     return new GrpcBigtableTableAdminStub(settings, ClientContext.create(settings));
   }
@@ -214,7 +213,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   public static final GrpcBigtableTableAdminStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcBigtableTableAdminStub(
-        BigtableTableAdminSettings.newBuilder().build(), clientContext);
+        BigtableTableAdminStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -223,7 +222,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
    * should be preferred.
    */
   protected GrpcBigtableTableAdminStub(
-      BigtableTableAdminSettings settings, ClientContext clientContext) throws IOException {
+      BigtableTableAdminStubSettings settings, ClientContext clientContext) throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 
     GrpcCallSettings<CreateTableRequest, Table> createTableTransportSettings =

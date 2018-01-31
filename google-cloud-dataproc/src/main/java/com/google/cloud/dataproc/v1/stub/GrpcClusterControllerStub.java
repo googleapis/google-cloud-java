@@ -26,7 +26,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1.Cluster;
-import com.google.cloud.dataproc.v1.ClusterControllerSettings;
 import com.google.cloud.dataproc.v1.ClusterOperationMetadata;
 import com.google.cloud.dataproc.v1.CreateClusterRequest;
 import com.google.cloud.dataproc.v1.DeleteClusterRequest;
@@ -128,7 +127,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
   private final OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
       diagnoseClusterOperationCallable;
 
-  public static final GrpcClusterControllerStub create(ClusterControllerSettings settings)
+  public static final GrpcClusterControllerStub create(ClusterControllerStubSettings settings)
       throws IOException {
     return new GrpcClusterControllerStub(settings, ClientContext.create(settings));
   }
@@ -136,7 +135,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
   public static final GrpcClusterControllerStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcClusterControllerStub(
-        ClusterControllerSettings.newBuilder().build(), clientContext);
+        ClusterControllerStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -145,7 +144,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
    * should be preferred.
    */
   protected GrpcClusterControllerStub(
-      ClusterControllerSettings settings, ClientContext clientContext) throws IOException {
+      ClusterControllerStubSettings settings, ClientContext clientContext) throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
