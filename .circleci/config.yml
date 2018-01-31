@@ -1,9 +1,10 @@
 version: 2.0
 
-anchor_docker_image: &anchor_docker_image
-  - image: circleci/openjdk:8-jdk
-    environment:
-      TERM: dumb
+anchor_docker: &anchor_docker
+  docker:
+    - image: circleci/openjdk:8-jdk
+      environment:
+        TERM: dumb
 
 anchor_run_decrypt: &anchor_run_decrypt
   name: Decrypt credentials.
@@ -14,8 +15,7 @@ anchor_run_decrypt: &anchor_run_decrypt
 jobs:
   datastore_it:
     working_directory: ~/googleapis
-    docker:
-      - <<: *anchor_docker_image
+    <<: *anchor_docker_image
     steps:
       - checkout
       - run:
@@ -25,8 +25,7 @@ jobs:
           command: ./utilities/verify_single_it.sh google-cloud-datastore
   speech_it:
     working_directory: ~/googleapis
-    docker:
-      - <<: *anchor_docker_image
+    <<: *anchor_docker_image
     steps:
       - checkout
       - run:
