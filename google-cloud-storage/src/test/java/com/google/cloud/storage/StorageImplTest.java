@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -257,6 +257,8 @@ public class StorageImplTest {
               Identity.user("test2@gmail.com"))
           .setEtag(POLICY_ETAG1)
           .build();
+
+  private static final ServiceAccount SERVICE_ACCOUNT = ServiceAccount.of("test@google.com");
 
   private static final com.google.api.services.storage.model.Policy API_POLICY1 =
       new com.google.api.services.storage.model.Policy()
@@ -1673,6 +1675,63 @@ public class StorageImplTest {
           signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
     }
   }
+  
+  @Test
+  public void testSignUrlWithExtHeaders()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    Map<String, String> extHeaders = new HashMap<String, String>();
+    extHeaders.put("x-goog-acl", "public-read");
+    extHeaders.put("x-goog-meta-owner", "myself");
+    URL url =
+        storage.signUrl(
+            BLOB_INFO1,
+            14,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.httpMethod(HttpMethod.PUT),
+            Storage.SignUrlOption.withContentType(),
+            Storage.SignUrlOption.withExtHeaders(extHeaders));
+    String stringUrl = url.toString();
+    String expectedUrl =
+        new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            .append("?GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.PUT)
+        .append('\n')
+        .append('\n')
+        .append(BLOB_INFO1.getContentType())
+        .append('\n')
+        .append(42L + 1209600)
+        .append('\n')
+        .append("x-goog-acl:public-read\n")
+        .append("x-goog-meta-owner:myself\n")
+        .append('/')
+        .append(BUCKET_NAME1)
+        .append('/')
+        .append(BLOB_NAME1);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
 
   @Test
   public void testSignUrlForBlobWithSlashes()
@@ -2172,6 +2231,16 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     assertEquals(expectedPermissions, storage.testIamPermissions(BUCKET_NAME1, checkedPermissions));
+  }
+
+  @Test
+  public void testGetServiceAccount() {
+    EasyMock.expect(storageRpcMock.getServiceAccount("projectId"))
+        .andReturn(SERVICE_ACCOUNT.toPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    ServiceAccount serviceAccount = storage.getServiceAccount("projectId");
+    assertEquals(SERVICE_ACCOUNT, serviceAccount);
   }
 
   @Test

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -658,6 +658,14 @@ public abstract class StructuredQuery<V> extends Query<V> {
       String property = propertyOrderPb.getProperty().getName();
       Direction direction = Direction.fromPb(propertyOrderPb.getDirection());
       return new OrderBy(property, direction);
+    }
+
+    @Override
+    public String toString() {
+      ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
+      toStringHelper.add("property", getProperty());
+      toStringHelper.add("direction", getDirection());
+      return toStringHelper.toString();
     }
   }
 

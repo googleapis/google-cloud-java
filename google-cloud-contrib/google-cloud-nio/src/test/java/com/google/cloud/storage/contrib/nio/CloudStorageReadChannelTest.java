@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,12 +63,13 @@ public class CloudStorageReadChannelTest {
   @Before
   public void before() throws IOException {
     when(metadata.getSize()).thenReturn(42L);
-    when(gcsStorage.get(file)).thenReturn(metadata);
-    when(gcsStorage.reader(eq(file))).thenReturn(gcsChannel);
+    when(metadata.getGeneration()).thenReturn(2L);
+    when(gcsStorage.get(file, Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE))).thenReturn(metadata);
+    when(gcsStorage.reader(file, Storage.BlobSourceOption.generationMatch(2L))).thenReturn(gcsChannel);
     when(gcsChannel.isOpen()).thenReturn(true);
     chan = CloudStorageReadChannel.create(gcsStorage, file, 0, 1);
-    verify(gcsStorage).get(eq(file));
-    verify(gcsStorage).reader(eq(file));
+    verify(gcsStorage).get(eq(file), eq(Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE)));
+    verify(gcsStorage).reader(eq(file), eq(Storage.BlobSourceOption.generationMatch(2L)));
   }
 
   @Test

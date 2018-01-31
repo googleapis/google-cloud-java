@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub.v1;
 
-import com.google.common.annotations.VisibleForTesting;
+import com.google.api.core.InternalApi;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -39,8 +39,8 @@ class MessageWaiter {
   public synchronized void waitNoMessages() {
     waitNoMessages(new AtomicBoolean());
   }
-  
-  @VisibleForTesting
+
+  @InternalApi
   synchronized void waitNoMessages(AtomicBoolean waitReached) {
     boolean interrupted = false;
     try {
@@ -59,8 +59,8 @@ class MessageWaiter {
       }
     }
   }
-  
-  @VisibleForTesting
+
+  @InternalApi
   public int pendingMessages() {
     return pendingMessages;
   }

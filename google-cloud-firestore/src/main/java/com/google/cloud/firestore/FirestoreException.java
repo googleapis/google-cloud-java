@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,21 @@
 
 package com.google.cloud.firestore;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.grpc.BaseGrpcServiceException;
 import io.grpc.Status;
 import java.io.IOException;
+import javax.annotation.Nullable;
 
 /** A Firestore Service exception. */
 public final class FirestoreException extends BaseGrpcServiceException {
+  private Status status;
 
   private FirestoreException(String reason, Status status) {
     super(reason, null, status.getCode().value(), false);
+
+    this.status = status;
   }
 
   private FirestoreException(IOException exception, boolean retryable) {
@@ -72,5 +77,11 @@ public final class FirestoreException extends BaseGrpcServiceException {
    */
   static FirestoreException apiException(ApiException exception) {
     return new FirestoreException(exception);
+  }
+
+  @InternalApi
+  @Nullable
+  Status getStatus() {
+    return status;
   }
 }

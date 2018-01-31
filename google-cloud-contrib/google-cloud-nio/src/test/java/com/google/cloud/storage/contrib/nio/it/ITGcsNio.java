@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -382,6 +382,28 @@ public class ITGcsNio {
       Files.deleteIfExists(fs.getPath("Racine"));
       assertThat(Files.exists(fs.getPath("Racine"))).isFalse();
     }
+  }
+
+  @Test
+  public void testListFilesInRootDirectory() throws IOException {
+    CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket(
+      BUCKET, CloudStorageConfiguration.builder().permitEmptyPathComponents(true)
+      .build());
+    
+    // test absolute path
+    Path rootPath = fs.getPath("");
+    List<String> objectNames = new ArrayList<String>();
+    for (Path path : Files.newDirectoryStream(rootPath)) {
+      objectNames.add(path.toString());
+    }
+    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
+    
+    // test relative path
+    rootPath = fs.getPath(".");
+    for (Path path : Files.newDirectoryStream(rootPath)) {
+      objectNames.add(path.toString());
+    }
+    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
   }
 
   /**

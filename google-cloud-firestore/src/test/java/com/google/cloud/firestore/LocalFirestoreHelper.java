@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,9 @@ import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
 import com.google.firestore.v1beta1.StructuredQuery;
+import com.google.firestore.v1beta1.StructuredQuery.CompositeFilter;
+import com.google.firestore.v1beta1.StructuredQuery.FieldFilter;
+import com.google.firestore.v1beta1.StructuredQuery.UnaryFilter;
 import com.google.firestore.v1beta1.Value;
 import com.google.firestore.v1beta1.Write;
 import com.google.protobuf.ByteString;
@@ -80,6 +83,9 @@ public final class LocalFirestoreHelper {
   public static final Map<String, Value> SINGLE_FIELD_PROTO;
   public static final DocumentSnapshot SINGLE_FIELD_SNAPSHOT;
 
+  public static final Map<String, Object> UPDATED_FIELD_MAP;
+  public static final Map<String, Value> UPDATED_FIELD_PROTO;
+
   public static final NestedClass NESTED_CLASS_OBJECT;
 
   public static final Map<String, Object> SERVER_TIMESTAMP_MAP;
@@ -100,6 +106,10 @@ public final class LocalFirestoreHelper {
   public static final Date DATE;
   public static final GeoPoint GEO_POINT;
   public static final Blob BLOB;
+
+  public static final Precondition CREATE_PRECONDITION;
+
+  public static final Precondition UPDATE_PRECONDITION;
 
   public static class SingleField {
 
@@ -134,6 +144,21 @@ public final class LocalFirestoreHelper {
 
       @com.google.cloud.firestore.annotation.ServerTimestamp public Date bar;
     }
+  }
+
+  public static <K, V> Map<K, V> map(K key, V value, Object... moreKeysAndValues) {
+    Map<K, V> map = new HashMap<>();
+    map.put(key, value);
+
+    for (int i = 0; i < moreKeysAndValues.length; i += 2) {
+      map.put((K) moreKeysAndValues[i], (V) moreKeysAndValues[i + 1]);
+    }
+
+    return map;
+  }
+
+  public static Map<String, Object> map() {
+    return new HashMap<>();
   }
 
   public static Answer<BatchGetDocumentsResponse> getAllResponse(
@@ -236,6 +261,10 @@ public final class LocalFirestoreHelper {
   }
 
   public static Write transform(String... fieldPaths) {
+    return transform(null, fieldPaths);
+  }
+
+  public static Write transform(@Nullable Precondition precondition, String... fieldPaths) {
     Write.Builder write = Write.newBuilder();
     DocumentTransform.Builder transform = write.getTransformBuilder();
     transform.setDocument(DOCUMENT_NAME);
@@ -245,6 +274,10 @@ public final class LocalFirestoreHelper {
           .addFieldTransformsBuilder()
           .setFieldPath(fieldPath)
           .setSetToServerValue(DocumentTransform.FieldTransform.ServerValue.REQUEST_TIME);
+    }
+
+    if (precondition != null) {
+      write.setCurrentDocument(precondition);
     }
 
     return write.build();
@@ -277,7 +310,9 @@ public final class LocalFirestoreHelper {
   }
 
   public static Write delete() {
-    return delete(Precondition.getDefaultInstance());
+    Write.Builder write = Write.newBuilder();
+    write.setDelete(DOCUMENT_NAME);
+    return write.build();
   }
 
   public static Write delete(Precondition precondition) {
@@ -325,6 +360,11 @@ public final class LocalFirestoreHelper {
   }
 
   public static StructuredQuery filter(StructuredQuery.FieldFilter.Operator operator) {
+    return filter(operator, "foo", "bar");
+  }
+
+  public static StructuredQuery filter(
+      StructuredQuery.FieldFilter.Operator operator, String path, String value) {
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
     StructuredQuery.CompositeFilter.Builder compositeFilter =
         structuredQuery.getWhereBuilder().getCompositeFilterBuilder();
@@ -332,9 +372,9 @@ public final class LocalFirestoreHelper {
 
     StructuredQuery.FieldFilter.Builder fieldFilter =
         compositeFilter.addFiltersBuilder().getFieldFilterBuilder();
-    fieldFilter.setField(StructuredQuery.FieldReference.newBuilder().setFieldPath("foo"));
+    fieldFilter.setField(StructuredQuery.FieldReference.newBuilder().setFieldPath(path));
     fieldFilter.setOp(operator);
-    fieldFilter.setValue(Value.newBuilder().setStringValue("bar"));
+    fieldFilter.setValue(Value.newBuilder().setStringValue(value));
 
     return structuredQuery.build();
   }
@@ -367,6 +407,17 @@ public final class LocalFirestoreHelper {
 
     for (StructuredQuery option : query) {
       structuredQuery.mergeFrom(option);
+    }
+
+    CompositeFilter compositeFilter = structuredQuery.getWhere().getCompositeFilter();
+    if (compositeFilter.getFiltersCount() == 1) {
+      if (compositeFilter.getFilters(0).hasFieldFilter()) {
+        FieldFilter fieldFilter = compositeFilter.getFilters(0).getFieldFilter();
+        structuredQuery.getWhereBuilder().setFieldFilter(fieldFilter);
+      } else {
+        UnaryFilter unaryFilter = compositeFilter.getFilters(0).getUnaryFilter();
+        structuredQuery.getWhereBuilder().setUnaryFilter(unaryFilter);
+      }
     }
 
     if (transactionId != null) {
@@ -450,7 +501,7 @@ public final class LocalFirestoreHelper {
     return Value.newBuilder().setStringValue(value).build();
   }
 
-  public static Value map(String key, Value value) {
+  public static Value object(String key, Value value) {
     Value.Builder result = Value.newBuilder();
     result.getMapValueBuilder().putFields(key, value);
     return result.build();
@@ -552,23 +603,26 @@ public final class LocalFirestoreHelper {
     DOCUMENT_NAME = DATABASE_NAME + "/documents/" + DOCUMENT_PATH;
 
     EMPTY_MAP_PROTO =
-        ImmutableMap.of(
-            "inner", Value.newBuilder().setMapValue(MapValue.getDefaultInstance()).build());
+        map("inner", Value.newBuilder().setMapValue(MapValue.getDefaultInstance()).build());
 
-    SINGLE_FIELD_MAP = ImmutableMap.of("foo", (Object) "bar");
+    SINGLE_FIELD_MAP = map("foo", (Object) "bar");
     SINGLE_FIELD_OBJECT = new SingleField();
-    SINGLE_FIELD_PROTO = ImmutableMap.of("foo", Value.newBuilder().setStringValue("bar").build());
+    SINGLE_FIELD_PROTO = map("foo", Value.newBuilder().setStringValue("bar").build());
     SINGLE_FIELD_SNAPSHOT =
         new DocumentSnapshot(
             null,
             new DocumentReference(
                 null,
                 ResourcePath.create(
-                    DatabaseRootName.create("", ""), ImmutableList.of("coll", "doc"))),
+                    DatabaseRootName.of("test-project", "(default)"),
+                    ImmutableList.of("coll", "doc"))),
             SINGLE_FIELD_PROTO,
             Instant.ofEpochSecond(5, 6),
             Instant.ofEpochSecond(3, 4),
             Instant.ofEpochSecond(1, 2));
+
+    UPDATED_FIELD_MAP = map("foo", (Object) "foobar");
+    UPDATED_FIELD_PROTO = map("foo", Value.newBuilder().setStringValue("foobar").build());
 
     SERVER_TIMESTAMP_MAP = new HashMap<>();
     SERVER_TIMESTAMP_MAP.put("foo", FieldValue.serverTimestamp());
@@ -578,7 +632,7 @@ public final class LocalFirestoreHelper {
 
     Value.Builder mapValue = Value.newBuilder();
     mapValue.getMapValueBuilder();
-    SERVER_TIMESTAMP_PROTO = ImmutableMap.of("inner", mapValue.build());
+    SERVER_TIMESTAMP_PROTO = Collections.emptyMap();
     SERVER_TIMESTAMP_OBJECT = new ServerTimestamp();
     SERVER_TIMESTAMP_TRANSFORM = transform("foo", "inner.bar");
 
@@ -591,7 +645,7 @@ public final class LocalFirestoreHelper {
     ALL_SUPPORTED_TYPES_MAP.put("negInfValue", Double.NEGATIVE_INFINITY);
     ALL_SUPPORTED_TYPES_MAP.put("trueValue", true);
     ALL_SUPPORTED_TYPES_MAP.put("falseValue", false);
-    ALL_SUPPORTED_TYPES_MAP.put("objectValue", ImmutableMap.of("foo", (Object) "bar"));
+    ALL_SUPPORTED_TYPES_MAP.put("objectValue", map("foo", (Object) "bar"));
     ALL_SUPPORTED_TYPES_MAP.put("dateValue", DATE);
     ALL_SUPPORTED_TYPES_MAP.put("arrayValue", ImmutableList.of("foo"));
     ALL_SUPPORTED_TYPES_MAP.put("nullValue", null);
@@ -643,6 +697,10 @@ public final class LocalFirestoreHelper {
     SERVER_TIMESTAMP_COMMIT_RESPONSE = commitResponse(/* adds= */ 2, /* deletes= */ 0);
 
     NESTED_CLASS_OBJECT = new NestedClass();
+
+    CREATE_PRECONDITION = Precondition.newBuilder().setExists(false).build();
+
+    UPDATE_PRECONDITION = Precondition.newBuilder().setExists(true).build();
   }
 
   public static String autoId() {

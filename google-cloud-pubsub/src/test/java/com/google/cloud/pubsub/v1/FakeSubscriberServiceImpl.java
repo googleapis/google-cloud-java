@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.client.util.Preconditions;
-import com.google.common.annotations.VisibleForTesting;
+import com.google.api.core.InternalApi;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
@@ -238,7 +238,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
   }
 
   /** Returns the number of times getSubscription is called. */
-  @VisibleForTesting
+  @InternalApi
   int getSubscriptionCalledCount() {
     return getSubscriptionCalled.get();
   }

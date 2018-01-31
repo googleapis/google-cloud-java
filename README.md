@@ -9,17 +9,18 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
+- [Google Cloud Platform Documentation][cloud-platform-docs]
+- [Client Library Documentation][client-lib-docs]
 
-This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
+This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
 -  [Stackdriver Logging](google-cloud-logging) (GA)
 -  [Cloud Datastore](google-cloud-datastore) (GA)
 -  [Cloud Natural Language](google-cloud-language) (GA)
 -  [Cloud Storage](google-cloud-storage) (GA)
 -  [Cloud Translation](google-cloud-translate) (GA)
+-  [Cloud Vision](google-cloud-vision) (GA)
 
-This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
+This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
 -  [BigQuery](google-cloud-bigquery) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-dlp) (Beta)
@@ -29,40 +30,51 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Cloud Pub/Sub](google-cloud-pubsub) (Beta)
 -  [Cloud Spanner](google-cloud-spanner) (Beta)
 -  [Cloud Video Intelligence](google-cloud-video-intelligence) (Beta)
--  [Cloud Vision](google-cloud-vision) (Beta)
 -  [Stackdriver Trace](google-cloud-trace) (Beta)
 
-This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
+This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
--  [Cloud Compute](google-cloud-compute) (Alpha)
+-  [Cloud Dataproc](google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-dns) (Alpha)
+-  [Cloud OS Login](google-cloud-os-login) (Alpha)
 -  [Cloud Resource Manager](google-cloud-resourcemanager) (Alpha)
 -  [Cloud Speech](google-cloud-speech) (Alpha)
+-  [Dialogflow](google-cloud-dialogflow) (Alpha)
 
-> Note: google-cloud-java is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
+These libraries are deprecated and no longer receive updates:
+
+-  [Cloud Compute](google-cloud-compute) (Deprecated)
 
 Quickstart
 ----------
+
+The easy way to get started is to add the umbrella package which pulls in all of the supported clients as
+dependencies. Note that even though the version of the umbrella package is Alpha, the individual clients are
+at different support levels (Alpha, Beta, and GA).
 
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.28.0-alpha</version>
+  <version>0.33.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.28.0-alpha'
+compile 'com.google.cloud:google-cloud:0.33.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.28.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.33.0-alpha"
 ```
 
+It also works just as well to declare a dependency only on the specific clients that you need. See the README of
+each client for instructions.
+
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
+
+If you are running into problems with version conflicts, see [Version Management](#version-management).
 
 Specifying a Project ID
 -----------------------
@@ -258,6 +270,61 @@ a higher priority.
 **Alpha**: Libraries defined at an Alpha quality level are still a work-in-progress and
 are more likely to get backwards-incompatible updates.
 
+Version Management
+------------------
+
+The easiest way to solve version conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
+
+```
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bom</artifactId>
+        <version>0.33.0-alpha</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+```
+
+This BOM is only available starting at version 0.32.0-alpha. If you are having problems with prior versions of
+google-cloud, use the following table as a reference to make sure that your versions are compatible. Definitions:
+
+* **alpha**: The version of any alpha package in google-cloud
+* **beta**: The version of any beta package in google-cloud
+* **GA**: The version of any GA package in google-cloud
+* **gax**: The version of com.google.api:gax
+* **gax-grpc**: The version of com.google.api:gax-grpc
+
+Something to be aware of is that a package can be promoted from alpha -> beta or beta -> GA between versions, which
+means that after a certain point for any given package, the alpha or beta version won't be valid any more.
+
+alpha         | beta         | GA         | gax        | gax-grpc
+------------- | ------------ | ---------- | ---------- | --------
+0.30.0-alpha  | 0.30.0-beta  | 1.12.0     | 1.15.0     | 1.15.0
+0.29.0-alpha  | 0.29.0-beta  | 1.11.0     | 1.15.0     | 1.15.0
+0.28.0-alpha  | 0.28.0-beta  | 1.10.0     | 1.14.0     | 1.14.0
+0.27.0-alpha  | 0.27.0-beta  | 1.9.0      | 1.13.0     | 0.30.0
+0.26.0-alpha  | 0.26.0-beta  | 1.8.0      | 1.9.0      | 0.26.0
+0.25.0-alpha  | 0.25.0-beta  | 1.7.0      | 1.8.1      | 0.25.1
+0.24.0-alpha  | 0.24.0-beta  | 1.6.0      | 1.8.1      | 0.25.1
+0.23.1-alpha  | 0.23.1-beta  | 1.5.1      | 1.8.1      | 0.25.1
+0.23.0-alpha  | 0.23.0-beta  | 1.5.0      | 1.5.0      | 0.22.0
+0.22.0-alpha  | 0.22.0-beta  | 1.4.0      | 1.5.0      | 0.22.0
+0.21.1-alpha  | 0.21.1-beta  | 1.3.1      | 1.5.0      | 0.22.0
+0.21.0-alpha  | 0.21.0-beta  | 1.3.0      | 1.5.0      | 0.22.0
+0.20.3-alpha  | 0.20.3-beta  | 1.2.3      | 1.4.2      | 0.21.2
+0.20.2-alpha  | 0.20.2-beta  | 1.2.2      | 1.4.2      | 0.21.2
+0.20.1-alpha  | 0.20.1-beta  | 1.2.1      | 1.4.1      | 0.21.1
+0.20.0-alpha  | 0.20.0-beta  | 1.2.0      | 1.3.1      | 0.20.0
+0.19.0-alpha  | 0.19.0-beta  | 1.1.0      | 1.3.0      | 0.19.0
+0.18.0-alpha  | 0.18.0-beta  | 1.0.2      | 1.1.0      | 0.17.0
+0.17.2-alpha  | 0.17.2-beta  | 1.0.1      | 1.0.0      | 0.16.0
+0.17.1-alpha  | 0.17.1-beta  | 1.0.0      | 1.0.0      | 0.16.0
+0.17.0-alpha  | 0.17.0-beta  | 1.0.0-rc4  | 1.0.0-rc1  | 0.15.0
+
 Contributing
 ------------
 
@@ -277,4 +344,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md
+
 [cloud-platform]: https://cloud.google.com/
+[cloud-platform-docs]: https://cloud.google.com/docs/
+[client-lib-docs]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,10 @@ package com.google.cloud.storage.contrib.nio.testing;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Policy;
+import com.google.api.services.storage.model.ServiceAccount;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.Tuple;
@@ -49,6 +51,7 @@ import javax.annotation.concurrent.NotThreadSafe;
  *   <li>object get
  *   <li>object delete
  *   <li>list the contents of a bucket
+ *   <li>generations
  *   </ul>
  * <li>Unsupported
  *   <ul>
@@ -56,7 +59,6 @@ import javax.annotation.concurrent.NotThreadSafe;
  *   <li>bucket get
  *   <li>bucket delete
  *   <li>list all buckets
- *   <li>generations
  *   <li>file attributes
  *   <li>patch
  *   <li>continueRewrite
@@ -186,6 +188,7 @@ class FakeStorageRpc implements StorageRpc {
         ret.setSize(BigInteger.valueOf(contents.get(key).length));
       }
       ret.setId(key);
+
       return ret;
     }
     return null;
@@ -241,11 +244,20 @@ class FakeStorageRpc implements StorageRpc {
   public Tuple<String, byte[]> read(
       StorageObject from, Map<Option, ?> options, long zposition, int zbytes)
       throws StorageException {
-    potentiallyThrow(options);
+    // if non-null, then we check the file's at that generation.
+    Long generationMatch = null;
+    for (Option op : options.keySet()) {
+      if (op.equals(StorageRpc.Option.IF_GENERATION_MATCH)) {
+        generationMatch = (Long)options.get(op);
+      } else {
+        throw new UnsupportedOperationException("Unknown option: " + op);
+      }
+    }
     String key = fullname(from);
     if (!contents.containsKey(key)) {
       throw new StorageException(404, "File not found: " + key);
     }
+    checkGeneration(key, generationMatch);
     long position = zposition;
     int bytes = zbytes;
     if (position < 0) {
@@ -267,16 +279,15 @@ class FakeStorageRpc implements StorageRpc {
   @Override
   public String open(StorageObject object, Map<Option, ?> options) throws StorageException {
     String key = fullname(object);
-    boolean mustNotExist = false;
+    // if non-null, then we check the file's at that generation.
+    Long generationMatch = null;
     for (Option option : options.keySet()) {
       // this is a bit of a hack, since we don't implement generations.
-      if (option == Option.IF_GENERATION_MATCH && ((Long) options.get(option)) == 0L) {
-        mustNotExist = true;
+      if (option == Option.IF_GENERATION_MATCH) {
+        generationMatch = (Long) options.get(option);
       }
     }
-    if (mustNotExist && metadata.containsKey(key)) {
-      throw new StorageException(new FileAlreadyExistsException(key));
-    }
+    checkGeneration(key, generationMatch);
     metadata.put(key, object);
 
     return fullname(object);
@@ -302,6 +313,15 @@ class FakeStorageRpc implements StorageRpc {
     if (last) {
       contents.put(uploadId, bytes);
       futureContents.remove(uploadId);
+      if (metadata.containsKey(uploadId)) {
+        StorageObject storageObject = metadata.get(uploadId);
+        Long generation = storageObject.getGeneration();
+        if (null == generation) {
+          generation = Long.valueOf(0);
+        }
+        storageObject.setGeneration(++generation);
+        metadata.put(uploadId, storageObject);
+      }
     } else {
       futureContents.put(uploadId, bytes);
     }
@@ -310,24 +330,24 @@ class FakeStorageRpc implements StorageRpc {
   @Override
   public RewriteResponse openRewrite(RewriteRequest rewriteRequest) throws StorageException {
     String sourceKey = fullname(rewriteRequest.source);
+
     // a little hackish, just good enough for the tests to work.
     if (!contents.containsKey(sourceKey)) {
       throw new StorageException(404, "File not found: " + sourceKey);
     }
 
-    boolean mustNotExist = false;
+    // if non-null, then we check the file's at that generation.
+    Long generationMatch = null;
     for (Option option : rewriteRequest.targetOptions.keySet()) {
       // this is a bit of a hack, since we don't implement generations.
-      if (option == Option.IF_GENERATION_MATCH
-          && (Long) rewriteRequest.targetOptions.get(option) == 0L) {
-        mustNotExist = true;
+      if (option == Option.IF_GENERATION_MATCH) {
+        generationMatch = (Long) rewriteRequest.targetOptions.get(option);
       }
     }
 
     String destKey = fullname(rewriteRequest.target);
-    if (mustNotExist && contents.containsKey(destKey)) {
-      throw new StorageException(new FileAlreadyExistsException(destKey));
-    }
+
+    checkGeneration(destKey, generationMatch);
 
     metadata.put(destKey, rewriteRequest.target);
 
@@ -427,6 +447,28 @@ class FakeStorageRpc implements StorageRpc {
     }
   }
 
+  /**
+   * Throw if we're asking for generation 0 and the file exists,
+   * or if the requested generation number doesn't match what is asked.
+   *
+   * @param key
+   * @param generationMatch
+   */
+  private void checkGeneration(String key, Long generationMatch) {
+    if (null == generationMatch) {
+      return;
+    }
+    if (generationMatch == 0 && metadata.containsKey(key)) {
+      throw new StorageException(new FileAlreadyExistsException(key));
+    }
+    if (generationMatch != 0) {
+      Long generation = metadata.get(key).getGeneration();
+      if (!generationMatch.equals(generation)) {
+        throw new StorageException(404, "Generation mismatch. Requested " + generationMatch + " but got " + generation);
+      }
+    }
+  }
+
   // Returns true if this is a folder. Adds it to folders if it isn't already there.
   private static boolean processedAsFolder(StorageObject so, String delimiter, String prefix, /* inout */ Map<String, StorageObject> folders) {
     if (delimiter == null) {
@@ -461,5 +503,25 @@ class FakeStorageRpc implements StorageRpc {
   @Override
   public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean deleteNotification(String bucket, String notification) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public List<Notification> listNotifications(String bucket) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Notification createNotification(String bucket, Notification notification) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public ServiceAccount getServiceAccount(String projectId) {
+    return null;
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ import javax.annotation.Nonnull;
  * field in the document).
  */
 @AutoValue
-public abstract class FieldPath extends BasePath<FieldPath> {
+public abstract class FieldPath extends BasePath<FieldPath> implements Comparable<FieldPath> {
 
   /**
    * A special sentinel FieldPath to refer to the ID of a document. It can be used in queries to
@@ -151,5 +151,10 @@ public abstract class FieldPath extends BasePath<FieldPath> {
   @Override
   public String toString() {
     return getEncodedPath();
+  }
+
+  @Override
+  public int compareTo(@Nonnull FieldPath other) {
+    return getEncodedPath().compareTo(other.getEncodedPath());
   }
 }

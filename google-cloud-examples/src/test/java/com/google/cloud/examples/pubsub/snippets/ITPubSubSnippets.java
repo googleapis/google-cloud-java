@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,9 +60,9 @@ public class ITPubSubSnippets {
 
   @Before
   public void setUp() throws Exception {
-    topicName = TopicName.create(ServiceOptions.getDefaultProjectId(), formatForTest("test-topic"));
+    topicName = TopicName.of(ServiceOptions.getDefaultProjectId(), formatForTest("test-topic"));
     subscriptionName =
-        SubscriptionName.create(
+        SubscriptionName.of(
             ServiceOptions.getDefaultProjectId(), formatForTest("test-subscription"));
 
     try (TopicAdminClient publisherClient = TopicAdminClient.create();

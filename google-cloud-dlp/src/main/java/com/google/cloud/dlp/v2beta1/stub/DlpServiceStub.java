@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -55,6 +55,14 @@ public abstract class DlpServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  public UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: inspectContentCallable()");
+  }
+
+  public UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: redactContentCallable()");
+  }
+
   public UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
       deidentifyContentCallable() {
     throw new UnsupportedOperationException("Not implemented: deidentifyContentCallable()");
@@ -69,14 +77,6 @@ public abstract class DlpServiceStub implements BackgroundResource {
 
   public UnaryCallable<AnalyzeDataSourceRiskRequest, Operation> analyzeDataSourceRiskCallable() {
     throw new UnsupportedOperationException("Not implemented: analyzeDataSourceRiskCallable()");
-  }
-
-  public UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable() {
-    throw new UnsupportedOperationException("Not implemented: inspectContentCallable()");
-  }
-
-  public UnaryCallable<RedactContentRequest, RedactContentResponse> redactContentCallable() {
-    throw new UnsupportedOperationException("Not implemented: redactContentCallable()");
   }
 
   public OperationCallable<

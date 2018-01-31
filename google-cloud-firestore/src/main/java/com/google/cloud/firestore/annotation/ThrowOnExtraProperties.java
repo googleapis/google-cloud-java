@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +22,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Properties that don't map to class fields when serializing to a class
- * annotated with this annotation cause an exception to be thrown.
+ * Properties that don't map to class fields when serializing to a class annotated with this
+ * annotation cause an exception to be thrown.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
-public @interface ThrowOnExtraProperties {
-
-}
+public @interface ThrowOnExtraProperties {}

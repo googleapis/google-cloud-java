@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,13 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -104,7 +104,9 @@ public abstract class JobStatistics implements Serializable {
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
         super(statisticsPb);
-        this.destinationUriFileCounts = statisticsPb.getExtract().getDestinationUriFileCounts();
+        if (statisticsPb.getExtract() != null) {
+          this.destinationUriFileCounts = statisticsPb.getExtract().getDestinationUriFileCounts();
+        }
       }
 
       Builder setDestinationUriFileCounts(List<Long> destinationUriFileCounts) {
@@ -192,10 +194,12 @@ public abstract class JobStatistics implements Serializable {
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
         super(statisticsPb);
-        this.inputBytes = statisticsPb.getLoad().getInputFileBytes();
-        this.inputFiles = statisticsPb.getLoad().getInputFiles();
-        this.outputBytes = statisticsPb.getLoad().getOutputBytes();
-        this.outputRows = statisticsPb.getLoad().getOutputRows();
+        if (statisticsPb.getLoad() != null) {
+          this.inputBytes = statisticsPb.getLoad().getInputFileBytes();
+          this.inputFiles = statisticsPb.getLoad().getInputFiles();
+          this.outputBytes = statisticsPb.getLoad().getOutputBytes();
+          this.outputRows = statisticsPb.getLoad().getOutputRows();
+        }
       }
 
       Builder setInputBytes(Long inputBytes) {
@@ -332,13 +336,16 @@ public abstract class JobStatistics implements Serializable {
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
         super(statisticsPb);
-        this.billingTier = statisticsPb.getQuery().getBillingTier();
-        this.cacheHit = statisticsPb.getQuery().getCacheHit();
-        this.totalBytesBilled = statisticsPb.getQuery().getTotalBytesBilled();
-        this.totalBytesProcessed = statisticsPb.getQuery().getTotalBytesProcessed();
-        if (statisticsPb.getQuery().getQueryPlan() != null) {
-          this.queryPlan =
-              Lists.transform(statisticsPb.getQuery().getQueryPlan(), QueryStage.FROM_PB_FUNCTION);
+        if (statisticsPb.getQuery() != null) {
+          this.billingTier = statisticsPb.getQuery().getBillingTier();
+          this.cacheHit = statisticsPb.getQuery().getCacheHit();
+          this.totalBytesBilled = statisticsPb.getQuery().getTotalBytesBilled();
+          this.totalBytesProcessed = statisticsPb.getQuery().getTotalBytesProcessed();
+          if (statisticsPb.getQuery().getQueryPlan() != null) {
+            this.queryPlan =
+                Lists.transform(
+                    statisticsPb.getQuery().getQueryPlan(), QueryStage.FROM_PB_FUNCTION);
+          }
         }
       }
 
@@ -577,16 +584,19 @@ public abstract class JobStatistics implements Serializable {
   }
 
   @SuppressWarnings("unchecked")
-  static <T extends JobStatistics> T fromPb(
-      com.google.api.services.bigquery.model.JobStatistics statisticPb) {
-    if (statisticPb.getLoad() != null) {
+  static <T extends JobStatistics> T fromPb(com.google.api.services.bigquery.model.Job jobPb) {
+    JobConfiguration jobConfigPb = jobPb.getConfiguration();
+    com.google.api.services.bigquery.model.JobStatistics statisticPb = jobPb.getStatistics();
+    if (jobConfigPb.getLoad() != null) {
       return (T) LoadStatistics.fromPb(statisticPb);
-    } else if (statisticPb.getExtract() != null) {
+    } else if (jobConfigPb.getExtract() != null) {
       return (T) ExtractStatistics.fromPb(statisticPb);
-    } else if (statisticPb.getQuery() != null) {
+    } else if (jobConfigPb.getQuery() != null) {
       return (T) QueryStatistics.fromPb(statisticPb);
-    } else {
+    } else if (jobConfigPb.getCopy() != null) {
       return (T) CopyStatistics.fromPb(statisticPb);
+    } else {
+      throw new IllegalArgumentException("unknown job configuration: " + jobConfigPb);
     }
   }
 }

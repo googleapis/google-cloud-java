@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,13 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class ViewDefinitionTest {
 
@@ -45,6 +44,9 @@ public class ViewDefinitionTest {
         .setQuery(VIEW_QUERY)
         .build();
     compareViewDefinition(VIEW_DEFINITION, viewDefinition);
+
+    viewDefinition = viewDefinition.toBuilder().setUseLegacySql(true).build();
+    assertTrue(viewDefinition.useLegacySql());
   }
 
   @Test
@@ -58,6 +60,7 @@ public class ViewDefinitionTest {
     assertEquals(VIEW_QUERY, VIEW_DEFINITION.getQuery());
     assertEquals(TableDefinition.Type.VIEW, VIEW_DEFINITION.getType());
     assertEquals(USER_DEFINED_FUNCTIONS, VIEW_DEFINITION.getUserDefinedFunctions());
+
     ViewDefinition viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY)
         .setUserDefinedFunctions(UserDefinedFunction.inline("Function"),
             UserDefinedFunction.fromUri("URI"))
@@ -65,28 +68,41 @@ public class ViewDefinitionTest {
     assertEquals(VIEW_QUERY, viewDefinition.getQuery());
     assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
     assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.getUserDefinedFunctions());
+    assertFalse(viewDefinition.useLegacySql());
+
     viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY,
         UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI")).build();
     assertEquals(VIEW_QUERY, viewDefinition.getQuery());
     assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
     assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.getUserDefinedFunctions());
+    assertFalse(viewDefinition.useLegacySql());
+
     viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY).build();
     assertEquals(VIEW_QUERY, viewDefinition.getQuery());
     assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
     assertNull(viewDefinition.getUserDefinedFunctions());
+    assertFalse(viewDefinition.useLegacySql());
+
+    viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY).setUseLegacySql(true).build();
+    assertEquals(VIEW_QUERY, viewDefinition.getQuery());
+    assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
+    assertNull(viewDefinition.getUserDefinedFunctions());
+    assertTrue(viewDefinition.useLegacySql());
   }
 
 
   @Test
   public void testToAndFromPb() {
-    assertTrue(TableDefinition.fromPb(VIEW_DEFINITION.toPb()) instanceof ViewDefinition);
-    compareViewDefinition(VIEW_DEFINITION,
-        TableDefinition.<ViewDefinition>fromPb(VIEW_DEFINITION.toPb()));
+    ViewDefinition viewDefinition = VIEW_DEFINITION.toBuilder().setUseLegacySql(false).build();
+    assertTrue(TableDefinition.fromPb(viewDefinition.toPb()) instanceof ViewDefinition);
+    compareViewDefinition(
+        viewDefinition, TableDefinition.<ViewDefinition>fromPb(viewDefinition.toPb()));
   }
 
   private void compareViewDefinition(ViewDefinition expected, ViewDefinition value) {
     assertEquals(expected, value);
     assertEquals(expected.getQuery(), value.getQuery());
+    assertEquals(expected.useLegacySql(), value.useLegacySql());
     assertEquals(expected.getUserDefinedFunctions(), value.getUserDefinedFunctions());
     assertEquals(expected.hashCode(), value.hashCode());
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,17 +19,21 @@ package com.google.cloud.logging.spi.v2;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannel;
-import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings.Builder;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.logging.LoggingException;
@@ -40,7 +44,6 @@ import com.google.cloud.logging.v2.LoggingClient;
 import com.google.cloud.logging.v2.LoggingSettings;
 import com.google.cloud.logging.v2.MetricsClient;
 import com.google.cloud.logging.v2.MetricsSettings;
-import com.google.common.collect.Lists;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
@@ -104,13 +107,23 @@ public class GrpcLoggingRpc implements LoggingRpc {
             .setBackgroundResources(Collections.<BackgroundResource>singletonList(transportChannel))
             .build();
       } else {
-        LoggingSettings.Builder settingsBuilder = LoggingSettings.newBuilder();
+        LoggingSettingsBuilder settingsBuilder =
+            new LoggingSettingsBuilder(LoggingSettings.newBuilder().build());
 
         settingsBuilder.setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options));
         settingsBuilder.setTransportChannelProvider(
             GrpcTransportOptions.setUpChannelProvider(LoggingSettings.defaultGrpcTransportProviderBuilder(), options));
-        settingsBuilder.setHeaderProvider(
-            GrpcTransportOptions.setUpHeaderProvider(LoggingSettings.defaultApiClientHeaderProviderBuilder(), options));
+
+        HeaderProvider internalHeaderProvider =
+            LoggingSettings
+                .defaultApiClientHeaderProviderBuilder()
+                .setClientLibToken(
+                    ServiceOptions.getGoogApiClientLibName(),
+                    GaxProperties.getLibraryVersion(options.getClass()))
+                .build();
+        HeaderProvider headerProvider = options.getMergedHeaderProvider(internalHeaderProvider);
+        settingsBuilder.setInternalHeaderProvider(headerProvider);
+
         clientContext = ClientContext.create(settingsBuilder.build());
       }
       ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> retrySettingsSetter =
@@ -127,6 +140,24 @@ public class GrpcLoggingRpc implements LoggingRpc {
           LoggingSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       MetricsSettings.Builder metricsBuilder =
           MetricsSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
+
+      // TODO(pongad): Take advantage of https://github.com/googleapis/gax-java/pull/452 when it's
+      // released.
+      BatchingSettings oldBatchSettings =
+          logBuilder.writeLogEntriesSettings().getBatchingSettings();
+      logBuilder
+          .writeLogEntriesSettings()
+          .setBatchingSettings(
+              oldBatchSettings
+                  .toBuilder()
+                  .setFlowControlSettings(
+                      oldBatchSettings
+                          .getFlowControlSettings()
+                          .toBuilder()
+                          .setLimitExceededBehavior(LimitExceededBehavior.Block)
+                          .build())
+                  .build());
+
       configClient = ConfigClient.create(confBuilder.build());
       loggingClient = LoggingClient.create(logBuilder.build());
       metricsClient = MetricsClient.create(metricsBuilder.build());
@@ -244,5 +275,18 @@ public class GrpcLoggingRpc implements LoggingRpc {
       resource.close();
     }
     executorFactory.release(executor);
+  }
+
+  // This class is needed solely to get access to protected method setInternalHeaderProvider()
+  private static class LoggingSettingsBuilder extends LoggingSettings.Builder {
+    private LoggingSettingsBuilder(LoggingSettings settings) {
+      super(settings);
+    }
+
+    @Override
+    protected LoggingSettings.Builder setInternalHeaderProvider(
+        HeaderProvider internalHeaderProvider) {
+      return super.setInternalHeaderProvider(internalHeaderProvider);
+    }
   }
 }

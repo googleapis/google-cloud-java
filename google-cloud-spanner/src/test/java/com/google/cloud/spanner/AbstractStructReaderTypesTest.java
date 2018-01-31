@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -290,7 +290,8 @@ public class AbstractStructReaderTypesTest {
     try {
       return reader.getClass().getMethod(methodName, int.class).invoke(reader, columnIndex);
     } catch (InvocationTargetException e) {
-      throw Throwables.propagate(e.getCause());
+      Throwables.throwIfUnchecked(e.getCause());
+      throw new RuntimeException(e);
     } catch (NoSuchMethodException | IllegalAccessException e) {
       throw new RuntimeException(e);
     }
@@ -304,7 +305,8 @@ public class AbstractStructReaderTypesTest {
     try {
       return reader.getClass().getMethod(methodName, String.class).invoke(reader, columnName);
     } catch (InvocationTargetException e) {
-      throw Throwables.propagate(e.getCause());
+      Throwables.throwIfUnchecked(e.getCause());
+      throw new RuntimeException(e);
     } catch (NoSuchMethodException | IllegalAccessException e) {
       throw new RuntimeException(e);
     }

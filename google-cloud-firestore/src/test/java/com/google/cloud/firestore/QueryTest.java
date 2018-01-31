@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_SNAPSHOT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.endAt;
 import static com.google.cloud.firestore.LocalFirestoreHelper.filter;
 import static com.google.cloud.firestore.LocalFirestoreHelper.limit;
@@ -36,6 +37,8 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.StructuredQuery;
+import com.google.firestore.v1beta1.StructuredQuery.Direction;
+import com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator;
 import com.google.firestore.v1beta1.Value;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -248,6 +251,129 @@ public class QueryTest {
   }
 
   @Test
+  public void withDocumentSnapshotCursor() throws Exception {
+    doAnswer(queryResponse())
+        .when(firestoreMock)
+        .streamRequest(
+            runQuery.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    query.startAt(SINGLE_FIELD_SNAPSHOT).get();
+
+    Value documentBoundary =
+        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/doc").build();
+
+    RunQueryRequest queryRequest =
+        query(
+            order("__name__", StructuredQuery.Direction.ASCENDING),
+            startAt(documentBoundary, true));
+
+    assertEquals(queryRequest, runQuery.getValue());
+  }
+
+  @Test
+  public void withDocumentIdAndDocumentSnapshotCursor() throws Exception {
+    doAnswer(queryResponse())
+        .when(firestoreMock)
+        .streamRequest(
+            runQuery.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    query.orderBy(FieldPath.documentId()).startAt(SINGLE_FIELD_SNAPSHOT).get();
+
+    Value documentBoundary =
+        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/doc").build();
+
+    RunQueryRequest queryRequest =
+        query(
+            order("__name__", StructuredQuery.Direction.ASCENDING),
+            startAt(documentBoundary, true));
+
+    assertEquals(queryRequest, runQuery.getValue());
+  }
+
+  @Test
+  public void withExtractedDirectionForDocumentSnapshotCursor() throws Exception {
+    doAnswer(queryResponse())
+        .when(firestoreMock)
+        .streamRequest(
+            runQuery.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    query.orderBy("foo", Query.Direction.DESCENDING).startAt(SINGLE_FIELD_SNAPSHOT).get();
+
+    Value documentBoundary =
+        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/doc").build();
+
+    RunQueryRequest queryRequest =
+        query(
+            order("foo", Direction.DESCENDING),
+            order("__name__", StructuredQuery.Direction.DESCENDING),
+            startAt(true),
+            startAt(documentBoundary, true));
+
+    assertEquals(queryRequest, runQuery.getValue());
+  }
+
+  @Test
+  public void withInequalityFilterForDocumentSnapshotCursor() throws Exception {
+    doAnswer(queryResponse())
+        .when(firestoreMock)
+        .streamRequest(
+            runQuery.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    query
+        .whereEqualTo("a", "b")
+        .whereGreaterThanOrEqualTo("foo", "bar")
+        .whereEqualTo("c", "d")
+        .startAt(SINGLE_FIELD_SNAPSHOT)
+        .get();
+
+    Value documentBoundary =
+        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/doc").build();
+
+    RunQueryRequest queryRequest =
+        query(
+            filter(Operator.EQUAL, "a", "b"),
+            filter(Operator.GREATER_THAN_OR_EQUAL),
+            filter(Operator.EQUAL, "c", "d"),
+            order("foo", Direction.ASCENDING),
+            order("__name__", StructuredQuery.Direction.ASCENDING),
+            startAt(true),
+            startAt(documentBoundary, true));
+
+    assertEquals(queryRequest, runQuery.getValue());
+  }
+
+  @Test
+  public void withEqualityFilterForDocumentSnapshotCursor() throws Exception {
+    doAnswer(queryResponse())
+        .when(firestoreMock)
+        .streamRequest(
+            runQuery.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    query.whereEqualTo("foo", "bar").startAt(SINGLE_FIELD_SNAPSHOT).get();
+
+    Value documentBoundary =
+        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/doc").build();
+
+    RunQueryRequest queryRequest =
+        query(
+            filter(Operator.EQUAL),
+            order("__name__", StructuredQuery.Direction.ASCENDING),
+            startAt(documentBoundary, true));
+
+    assertEquals(queryRequest, runQuery.getValue());
+  }
+
+  @Test
   public void withStartAt() throws Exception {
     doAnswer(queryResponse())
         .when(firestoreMock)
@@ -382,7 +508,7 @@ public class QueryTest {
     assertEquals(2, result.size());
     assertEquals(2, result.getDocuments().size());
 
-    Iterator<DocumentSnapshot> iterator = result.iterator();
+    Iterator<QueryDocumentSnapshot> iterator = result.iterator();
     assertEquals("doc1", iterator.next().getId());
     assertEquals("doc2", iterator.next().getId());
     assertFalse(iterator.hasNext());

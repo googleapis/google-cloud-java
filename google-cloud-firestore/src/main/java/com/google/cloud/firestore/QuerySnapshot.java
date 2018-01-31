@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,28 +16,46 @@
 
 package com.google.cloud.firestore;
 
-import com.google.common.collect.ImmutableList;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
 
 /**
  * A QuerySnapshot contains the results of a query. It can contain zero or more DocumentSnapshot
  * objects.
  */
-public final class QuerySnapshot implements Iterable<DocumentSnapshot> {
+public final class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
 
   private final Query query;
-  private final List<DocumentSnapshot> documentSnapshots;
+  private final DocumentSet documentSet;
+  @Nullable private volatile List<QueryDocumentSnapshot> documentSnapshots;
   private final Instant readTime;
+  private final List<DocumentChange> documentChanges;
 
-  QuerySnapshot(Query query, Instant readTime, List<DocumentSnapshot> results) {
+  QuerySnapshot(
+      Query query,
+      Instant readTime,
+      List<QueryDocumentSnapshot> results,
+      List<DocumentChange> documentChanges) {
     this.query = query;
+    this.documentSet = null;
     this.documentSnapshots = results;
     this.readTime = readTime;
+    this.documentChanges = documentChanges;
+  }
+
+  QuerySnapshot(
+      Query query, Instant readTime, DocumentSet results, List<DocumentChange> documentChanges) {
+    this.query = query;
+    this.documentSet = results;
+    this.readTime = readTime;
+    this.documentChanges = documentChanges;
   }
 
   /**
@@ -66,23 +84,43 @@ public final class QuerySnapshot implements Iterable<DocumentSnapshot> {
    * @return The list of documents.
    */
   @Nonnull
-  public List<DocumentSnapshot> getDocuments() {
-    return ImmutableList.copyOf(documentSnapshots);
+  public List<QueryDocumentSnapshot> getDocuments() {
+    if (documentSnapshots == null) {
+      Preconditions.checkState(documentSet != null);
+      synchronized (documentSet) {
+        if (documentSnapshots == null) {
+          documentSnapshots = documentSet.toList();
+        }
+      }
+    }
+
+    return Collections.unmodifiableList(documentSnapshots);
+  }
+
+  /**
+   * Returns the list of documents that changed since the last snapshot. If it's the first snapshot
+   * all documents will be in the list as added changes.
+   *
+   * @return The list of documents that changed since the last snapshot.
+   */
+  @Nonnull
+  public List<DocumentChange> getDocumentChanges() {
+    return Collections.unmodifiableList(documentChanges);
   }
 
   /** Returns true if there are no documents in the QuerySnapshot. */
   public boolean isEmpty() {
-    return documentSnapshots.isEmpty();
+    return documentSnapshots != null ? documentSnapshots.isEmpty() : documentSet.isEmpty();
   }
 
   /** Returns the number of documents in the QuerySnapshot. */
   public int size() {
-    return documentSnapshots.size();
+    return documentSnapshots != null ? documentSnapshots.size() : documentSet.size();
   }
 
   @Override
   @Nonnull
-  public Iterator<DocumentSnapshot> iterator() {
+  public Iterator<QueryDocumentSnapshot> iterator() {
     return getDocuments().iterator();
   }
 
@@ -96,7 +134,7 @@ public final class QuerySnapshot implements Iterable<DocumentSnapshot> {
   public <T> List<T> toObjects(@Nonnull Class<T> clazz) {
     List<T> results = new ArrayList<>();
 
-    for (DocumentSnapshot documentSnapshot : documentSnapshots) {
+    for (DocumentSnapshot documentSnapshot : getDocuments()) {
       results.add(CustomClassMapper.convertToCustomClass(documentSnapshot.getData(), clazz));
     }
 
@@ -112,13 +150,11 @@ public final class QuerySnapshot implements Iterable<DocumentSnapshot> {
       return false;
     }
     QuerySnapshot that = (QuerySnapshot) o;
-    return Objects.equals(query, that.query)
-        && Objects.equals(documentSnapshots, that.documentSnapshots)
-        && Objects.equals(readTime, that.readTime);
+    return Objects.equals(query, that.query) && Objects.equals(readTime, that.readTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, documentSnapshots, readTime);
+    return Objects.hash(query, readTime);
   }
 }

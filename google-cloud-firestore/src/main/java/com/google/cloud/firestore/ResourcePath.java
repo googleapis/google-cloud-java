@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,8 @@ import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import com.google.firestore.v1beta1.DatabaseRootName;
 import java.util.Arrays;
+import java.util.Comparator;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /** An immutable representation of a Firestore path to a Document or Collection. */
@@ -56,7 +58,7 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
     if (parts.length >= 6 && parts[0].equals("projects") && parts[2].equals("databases")) {
       String[] path = Arrays.copyOfRange(parts, 5, parts.length);
       return create(
-          DatabaseRootName.create(parts[1], parts[3]),
+          DatabaseRootName.of(parts[1], parts[3]),
           ImmutableList.<String>builder().add(path).build());
     }
 
@@ -133,6 +135,29 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
     }
   }
 
+  /**
+   * Compare the current path against another ResourcePath object.
+   *
+   * @param other The path to compare to.
+   * @return -1 if current < other, 1 if current > other, 0 if equal
+   */
+  @Override
+  public int compareTo(@Nonnull ResourcePath other) {
+    int cmp = this.getDatabaseName().getProject().compareTo(other.getDatabaseName().getProject());
+
+    if (cmp != 0) {
+      return cmp;
+    }
+
+    cmp = this.getDatabaseName().getDatabase().compareTo(other.getDatabaseName().getDatabase());
+
+    if (cmp != 0) {
+      return cmp;
+    }
+
+    return super.compareTo(other);
+  }
+
   @Override
   public String toString() {
     return getName();
@@ -146,5 +171,14 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
   @Override
   ResourcePath createPathWithSegments(ImmutableList<String> segments) {
     return create(getDatabaseName(), segments);
+  }
+
+  public static Comparator<ResourcePath> comparator() {
+    return new Comparator<ResourcePath>() {
+      @Override
+      public int compare(ResourcePath left, ResourcePath right) {
+        return left.compareTo(right);
+      }
+    };
   }
 }

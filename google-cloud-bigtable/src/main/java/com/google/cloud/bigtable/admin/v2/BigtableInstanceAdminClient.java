@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,37 +15,52 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListAppProfilesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.admin.v2.AppProfile;
+import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.Cluster;
 import com.google.bigtable.admin.v2.ClusterName;
+import com.google.bigtable.admin.v2.CreateAppProfileRequest;
 import com.google.bigtable.admin.v2.CreateClusterMetadata;
 import com.google.bigtable.admin.v2.CreateClusterRequest;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
 import com.google.bigtable.admin.v2.CreateInstanceRequest;
+import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
 import com.google.bigtable.admin.v2.DeleteClusterRequest;
 import com.google.bigtable.admin.v2.DeleteInstanceRequest;
+import com.google.bigtable.admin.v2.GetAppProfileRequest;
 import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.Instance;
-import com.google.bigtable.admin.v2.Instance.Type;
 import com.google.bigtable.admin.v2.InstanceName;
+import com.google.bigtable.admin.v2.ListAppProfilesRequest;
+import com.google.bigtable.admin.v2.ListAppProfilesResponse;
 import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
-import com.google.bigtable.admin.v2.LocationName;
+import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.ProjectName;
-import com.google.bigtable.admin.v2.StorageType;
+import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -216,7 +231,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
-            .setParentWithProjectName(parent)
+            .setParent(parent.toString())
             .setInstanceId(instanceId)
             .setInstance(instance)
             .putAllClusters(clusters)
@@ -237,7 +252,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *   Instance instance = Instance.newBuilder().build();
    *   Map&lt;String, Cluster&gt; clusters = new HashMap&lt;&gt;();
    *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
-   *     .setParentWithProjectName(parent)
+   *     .setParent(parent.toString())
    *     .setInstanceId(instanceId)
    *     .setInstance(instance)
    *     .putAllClusters(clusters)
@@ -267,7 +282,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *   Instance instance = Instance.newBuilder().build();
    *   Map&lt;String, Cluster&gt; clusters = new HashMap&lt;&gt;();
    *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
-   *     .setParentWithProjectName(parent)
+   *     .setParent(parent.toString())
    *     .setInstanceId(instanceId)
    *     .setInstance(instance)
    *     .putAllClusters(clusters)
@@ -296,7 +311,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *   Instance instance = Instance.newBuilder().build();
    *   Map&lt;String, Cluster&gt; clusters = new HashMap&lt;&gt;();
    *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
-   *     .setParentWithProjectName(parent)
+   *     .setParent(parent.toString())
    *     .setInstanceId(instanceId)
    *     .setInstance(instance)
    *     .putAllClusters(clusters)
@@ -330,8 +345,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    */
   public final Instance getInstance(InstanceName name) {
 
-    GetInstanceRequest request =
-        GetInstanceRequest.newBuilder().setNameWithInstanceName(name).build();
+    GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(name.toString()).build();
     return getInstance(request);
   }
 
@@ -345,7 +359,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
-   *     .setNameWithInstanceName(name)
+   *     .setName(name.toString())
    *     .build();
    *   Instance response = bigtableInstanceAdminClient.getInstance(request);
    * }
@@ -368,7 +382,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
-   *     .setNameWithInstanceName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Instance&gt; future = bigtableInstanceAdminClient.getInstanceCallable().futureCall(request);
    *   // Do something
@@ -400,7 +414,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
   public final ListInstancesResponse listInstances(ProjectName parent) {
 
     ListInstancesRequest request =
-        ListInstancesRequest.newBuilder().setParentWithProjectName(parent).build();
+        ListInstancesRequest.newBuilder().setParent(parent.toString()).build();
     return listInstances(request);
   }
 
@@ -414,7 +428,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setParentWithProjectName(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ListInstancesResponse response = bigtableInstanceAdminClient.listInstances(request);
    * }
@@ -437,7 +451,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setParentWithProjectName(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListInstancesResponse&gt; future = bigtableInstanceAdminClient.listInstancesCallable().futureCall(request);
    *   // Do something
@@ -460,43 +474,12 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String displayName = "";
    *   Instance.Type type = Instance.Type.TYPE_UNSPECIFIED;
-   *   Instance response = bigtableInstanceAdminClient.updateInstance(name, displayName, type);
-   * }
-   * </code></pre>
-   *
-   * @param name (`OutputOnly`) The unique name of the instance. Values are of the form
-   *     `projects/&lt;project&gt;/instances/[a-z][a-z0-9\\-]+[a-z0-9]`.
-   * @param displayName The descriptive name for this instance as it appears in UIs. Can be changed
-   *     at any time, but should be kept globally unique to avoid confusion.
-   * @param type The type of the instance. Defaults to `PRODUCTION`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Instance updateInstance(InstanceName name, String displayName, Instance.Type type) {
-
-    Instance request =
-        Instance.newBuilder()
-            .setNameWithInstanceName(name)
-            .setDisplayName(displayName)
-            .setType(type)
-            .build();
-    return updateInstance(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates an instance within a project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   String displayName = "";
-   *   Instance.Type type = Instance.Type.TYPE_UNSPECIFIED;
+   *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
    *   Instance request = Instance.newBuilder()
-   *     .setNameWithInstanceName(name)
+   *     .setName(name.toString())
    *     .setDisplayName(displayName)
    *     .setType(type)
+   *     .putAllLabels(labels)
    *     .build();
    *   Instance response = bigtableInstanceAdminClient.updateInstance(request);
    * }
@@ -520,10 +503,12 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   String displayName = "";
    *   Instance.Type type = Instance.Type.TYPE_UNSPECIFIED;
+   *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
    *   Instance request = Instance.newBuilder()
-   *     .setNameWithInstanceName(name)
+   *     .setName(name.toString())
    *     .setDisplayName(displayName)
    *     .setType(type)
+   *     .putAllLabels(labels)
    *     .build();
    *   ApiFuture&lt;Instance&gt; future = bigtableInstanceAdminClient.updateInstanceCallable().futureCall(request);
    *   // Do something
@@ -533,6 +518,85 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<Instance, Instance> updateInstanceCallable() {
     return stub.updateInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Partially updates an instance within a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   Instance instance = Instance.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Operation response = bigtableInstanceAdminClient.partialUpdateInstance(instance, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param instance The Instance which will (partially) replace the current value.
+   * @param updateMask The subset of Instance fields which should be replaced. Must be explicitly
+   *     set.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation partialUpdateInstance(Instance instance, FieldMask updateMask) {
+
+    PartialUpdateInstanceRequest request =
+        PartialUpdateInstanceRequest.newBuilder()
+            .setInstance(instance)
+            .setUpdateMask(updateMask)
+            .build();
+    return partialUpdateInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Partially updates an instance within a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   Instance instance = Instance.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   PartialUpdateInstanceRequest request = PartialUpdateInstanceRequest.newBuilder()
+   *     .setInstance(instance)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   Operation response = bigtableInstanceAdminClient.partialUpdateInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation partialUpdateInstance(PartialUpdateInstanceRequest request) {
+    return partialUpdateInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Partially updates an instance within a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   Instance instance = Instance.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   PartialUpdateInstanceRequest request = PartialUpdateInstanceRequest.newBuilder()
+   *     .setInstance(instance)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.partialUpdateInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<PartialUpdateInstanceRequest, Operation>
+      partialUpdateInstanceCallable() {
+    return stub.partialUpdateInstanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -555,7 +619,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
   public final void deleteInstance(InstanceName name) {
 
     DeleteInstanceRequest request =
-        DeleteInstanceRequest.newBuilder().setNameWithInstanceName(name).build();
+        DeleteInstanceRequest.newBuilder().setName(name.toString()).build();
     deleteInstance(request);
   }
 
@@ -569,7 +633,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
-   *     .setNameWithInstanceName(name)
+   *     .setName(name.toString())
    *     .build();
    *   bigtableInstanceAdminClient.deleteInstance(request);
    * }
@@ -592,7 +656,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
-   *     .setNameWithInstanceName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = bigtableInstanceAdminClient.deleteInstanceCallable().futureCall(request);
    *   // Do something
@@ -631,7 +695,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
 
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
-            .setParentWithInstanceName(parent)
+            .setParent(parent.toString())
             .setClusterId(clusterId)
             .setCluster(cluster)
             .build();
@@ -650,7 +714,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
    *   CreateClusterRequest request = CreateClusterRequest.newBuilder()
-   *     .setParentWithInstanceName(parent)
+   *     .setParent(parent.toString())
    *     .setClusterId(clusterId)
    *     .setCluster(cluster)
    *     .build();
@@ -678,7 +742,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
    *   CreateClusterRequest request = CreateClusterRequest.newBuilder()
-   *     .setParentWithInstanceName(parent)
+   *     .setParent(parent.toString())
    *     .setClusterId(clusterId)
    *     .setCluster(cluster)
    *     .build();
@@ -705,7 +769,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *   String clusterId = "";
    *   Cluster cluster = Cluster.newBuilder().build();
    *   CreateClusterRequest request = CreateClusterRequest.newBuilder()
-   *     .setParentWithInstanceName(parent)
+   *     .setParent(parent.toString())
    *     .setClusterId(clusterId)
    *     .setCluster(cluster)
    *     .build();
@@ -738,7 +802,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    */
   public final Cluster getCluster(ClusterName name) {
 
-    GetClusterRequest request = GetClusterRequest.newBuilder().setNameWithClusterName(name).build();
+    GetClusterRequest request = GetClusterRequest.newBuilder().setName(name.toString()).build();
     return getCluster(request);
   }
 
@@ -752,7 +816,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   GetClusterRequest request = GetClusterRequest.newBuilder()
-   *     .setNameWithClusterName(name)
+   *     .setName(name.toString())
    *     .build();
    *   Cluster response = bigtableInstanceAdminClient.getCluster(request);
    * }
@@ -775,7 +839,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   GetClusterRequest request = GetClusterRequest.newBuilder()
-   *     .setNameWithClusterName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Cluster&gt; future = bigtableInstanceAdminClient.getClusterCallable().futureCall(request);
    *   // Do something
@@ -809,7 +873,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
   public final ListClustersResponse listClusters(InstanceName parent) {
 
     ListClustersRequest request =
-        ListClustersRequest.newBuilder().setParentWithInstanceName(parent).build();
+        ListClustersRequest.newBuilder().setParent(parent.toString()).build();
     return listClusters(request);
   }
 
@@ -823,7 +887,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListClustersRequest request = ListClustersRequest.newBuilder()
-   *     .setParentWithInstanceName(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ListClustersResponse response = bigtableInstanceAdminClient.listClusters(request);
    * }
@@ -846,7 +910,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   ListClustersRequest request = ListClustersRequest.newBuilder()
-   *     .setParentWithInstanceName(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListClustersResponse&gt; future = bigtableInstanceAdminClient.listClustersCallable().futureCall(request);
    *   // Do something
@@ -869,53 +933,10 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
    *   int serveNodes = 0;
-   *   StorageType defaultStorageType = StorageType.STORAGE_TYPE_UNSPECIFIED;
-   *   Cluster response = bigtableInstanceAdminClient.updateClusterAsync(name, location, serveNodes, defaultStorageType).get();
-   * }
-   * </code></pre>
-   *
-   * @param name (`OutputOnly`) The unique name of the cluster. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/[a-z][-a-z0-9]&#42;`.
-   * @param location (`CreationOnly`) The location where this cluster's nodes and storage reside.
-   *     For best performance, clients should be located as close as possible to this cluster.
-   *     Currently only zones are supported, so values should be of the form
-   *     `projects/&lt;project&gt;/locations/&lt;zone&gt;`.
-   * @param serveNodes The number of nodes allocated to this cluster. More nodes enable higher
-   *     throughput and more consistent performance.
-   * @param defaultStorageType (`CreationOnly`) The type of storage used by this cluster to serve
-   *     its parent instance's tables, unless explicitly overridden.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Cluster, UpdateClusterMetadata> updateClusterAsync(
-      ClusterName name, LocationName location, int serveNodes, StorageType defaultStorageType) {
-
-    Cluster request =
-        Cluster.newBuilder()
-            .setNameWithClusterName(name)
-            .setLocationWithLocationName(location)
-            .setServeNodes(serveNodes)
-            .setDefaultStorageType(defaultStorageType)
-            .build();
-    return updateClusterAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates a cluster within an instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
-   *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   int serveNodes = 0;
-   *   StorageType defaultStorageType = StorageType.STORAGE_TYPE_UNSPECIFIED;
    *   Cluster request = Cluster.newBuilder()
-   *     .setNameWithClusterName(name)
-   *     .setLocationWithLocationName(location)
+   *     .setName(name.toString())
+   *     .setLocation(location.toString())
    *     .setServeNodes(serveNodes)
-   *     .setDefaultStorageType(defaultStorageType)
    *     .build();
    *   Cluster response = bigtableInstanceAdminClient.updateClusterAsync(request).get();
    * }
@@ -939,12 +960,10 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
    *   int serveNodes = 0;
-   *   StorageType defaultStorageType = StorageType.STORAGE_TYPE_UNSPECIFIED;
    *   Cluster request = Cluster.newBuilder()
-   *     .setNameWithClusterName(name)
-   *     .setLocationWithLocationName(location)
+   *     .setName(name.toString())
+   *     .setLocation(location.toString())
    *     .setServeNodes(serveNodes)
-   *     .setDefaultStorageType(defaultStorageType)
    *     .build();
    *   OperationFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.updateClusterOperationCallable().futureCall(request);
    *   // Do something
@@ -968,12 +987,10 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
    *   int serveNodes = 0;
-   *   StorageType defaultStorageType = StorageType.STORAGE_TYPE_UNSPECIFIED;
    *   Cluster request = Cluster.newBuilder()
-   *     .setNameWithClusterName(name)
-   *     .setLocationWithLocationName(location)
+   *     .setName(name.toString())
+   *     .setLocation(location.toString())
    *     .setServeNodes(serveNodes)
-   *     .setDefaultStorageType(defaultStorageType)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.updateClusterCallable().futureCall(request);
    *   // Do something
@@ -1005,7 +1022,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
   public final void deleteCluster(ClusterName name) {
 
     DeleteClusterRequest request =
-        DeleteClusterRequest.newBuilder().setNameWithClusterName(name).build();
+        DeleteClusterRequest.newBuilder().setName(name.toString()).build();
     deleteCluster(request);
   }
 
@@ -1019,7 +1036,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder()
-   *     .setNameWithClusterName(name)
+   *     .setName(name.toString())
    *     .build();
    *   bigtableInstanceAdminClient.deleteCluster(request);
    * }
@@ -1042,7 +1059,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
    *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder()
-   *     .setNameWithClusterName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = bigtableInstanceAdminClient.deleteClusterCallable().futureCall(request);
    *   // Do something
@@ -1052,6 +1069,779 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteClusterRequest, Empty> deleteClusterCallable() {
     return stub.deleteClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Creates an app profile within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   String appProfileId = "";
+   *   AppProfile appProfile = AppProfile.newBuilder().build();
+   *   AppProfile response = bigtableInstanceAdminClient.createAppProfile(parent, appProfileId, appProfile);
+   * }
+   * </code></pre>
+   *
+   * @param parent The unique name of the instance in which to create the new app profile. Values
+   *     are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @param appProfileId The ID to be used when referring to the new app profile within its
+   *     instance, e.g., just `myprofile` rather than
+   *     `projects/myproject/instances/myinstance/appProfiles/myprofile`.
+   * @param appProfile The app profile to be created. Fields marked `OutputOnly` will be ignored.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AppProfile createAppProfile(
+      InstanceName parent, String appProfileId, AppProfile appProfile) {
+
+    CreateAppProfileRequest request =
+        CreateAppProfileRequest.newBuilder()
+            .setParent(parent.toString())
+            .setAppProfileId(appProfileId)
+            .setAppProfile(appProfile)
+            .build();
+    return createAppProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Creates an app profile within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   String appProfileId = "";
+   *   AppProfile appProfile = AppProfile.newBuilder().build();
+   *   CreateAppProfileRequest request = CreateAppProfileRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setAppProfileId(appProfileId)
+   *     .setAppProfile(appProfile)
+   *     .build();
+   *   AppProfile response = bigtableInstanceAdminClient.createAppProfile(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AppProfile createAppProfile(CreateAppProfileRequest request) {
+    return createAppProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Creates an app profile within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   String appProfileId = "";
+   *   AppProfile appProfile = AppProfile.newBuilder().build();
+   *   CreateAppProfileRequest request = CreateAppProfileRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setAppProfileId(appProfileId)
+   *     .setAppProfile(appProfile)
+   *     .build();
+   *   ApiFuture&lt;AppProfile&gt; future = bigtableInstanceAdminClient.createAppProfileCallable().futureCall(request);
+   *   // Do something
+   *   AppProfile response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateAppProfileRequest, AppProfile> createAppProfileCallable() {
+    return stub.createAppProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Gets information about an app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   AppProfile response = bigtableInstanceAdminClient.getAppProfile(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The unique name of the requested app profile. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/&lt;app_profile&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AppProfile getAppProfile(AppProfileName name) {
+
+    GetAppProfileRequest request =
+        GetAppProfileRequest.newBuilder().setName(name.toString()).build();
+    return getAppProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Gets information about an app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   GetAppProfileRequest request = GetAppProfileRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   AppProfile response = bigtableInstanceAdminClient.getAppProfile(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  private final AppProfile getAppProfile(GetAppProfileRequest request) {
+    return getAppProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Gets information about an app profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   GetAppProfileRequest request = GetAppProfileRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;AppProfile&gt; future = bigtableInstanceAdminClient.getAppProfileCallable().futureCall(request);
+   *   // Do something
+   *   AppProfile response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetAppProfileRequest, AppProfile> getAppProfileCallable() {
+    return stub.getAppProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Lists information about app profiles in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   for (AppProfile element : bigtableInstanceAdminClient.listAppProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent The unique name of the instance for which a list of app profiles is requested.
+   *     Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAppProfilesPagedResponse listAppProfiles(InstanceName parent) {
+    ListAppProfilesRequest request =
+        ListAppProfilesRequest.newBuilder().setParent(parent.toString()).build();
+    return listAppProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Lists information about app profiles in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   ListAppProfilesRequest request = ListAppProfilesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (AppProfile element : bigtableInstanceAdminClient.listAppProfiles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAppProfilesPagedResponse listAppProfiles(ListAppProfilesRequest request) {
+    return listAppProfilesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Lists information about app profiles in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   ListAppProfilesRequest request = ListAppProfilesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListAppProfilesPagedResponse&gt; future = bigtableInstanceAdminClient.listAppProfilesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (AppProfile element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListAppProfilesRequest, ListAppProfilesPagedResponse>
+      listAppProfilesPagedCallable() {
+    return stub.listAppProfilesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Lists information about app profiles in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   ListAppProfilesRequest request = ListAppProfilesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListAppProfilesResponse response = bigtableInstanceAdminClient.listAppProfilesCallable().call(request);
+   *     for (AppProfile element : response.getAppProfilesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListAppProfilesRequest, ListAppProfilesResponse>
+      listAppProfilesCallable() {
+    return stub.listAppProfilesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Updates an app profile within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   AppProfile appProfile = AppProfile.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Operation response = bigtableInstanceAdminClient.updateAppProfile(appProfile, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param appProfile The app profile which will (partially) replace the current value.
+   * @param updateMask The subset of app profile fields which should be replaced. If unset, all
+   *     fields will be replaced.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation updateAppProfile(AppProfile appProfile, FieldMask updateMask) {
+
+    UpdateAppProfileRequest request =
+        UpdateAppProfileRequest.newBuilder()
+            .setAppProfile(appProfile)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAppProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Updates an app profile within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   AppProfile appProfile = AppProfile.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateAppProfileRequest request = UpdateAppProfileRequest.newBuilder()
+   *     .setAppProfile(appProfile)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   Operation response = bigtableInstanceAdminClient.updateAppProfile(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation updateAppProfile(UpdateAppProfileRequest request) {
+    return updateAppProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Updates an app profile within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   AppProfile appProfile = AppProfile.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateAppProfileRequest request = UpdateAppProfileRequest.newBuilder()
+   *     .setAppProfile(appProfile)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = bigtableInstanceAdminClient.updateAppProfileCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateAppProfileRequest, Operation> updateAppProfileCallable() {
+    return stub.updateAppProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Deletes an app profile from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   bigtableInstanceAdminClient.deleteAppProfile(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The unique name of the app profile to be deleted. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/&lt;app_profile&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAppProfile(AppProfileName name) {
+
+    DeleteAppProfileRequest request =
+        DeleteAppProfileRequest.newBuilder().setName(name.toString()).build();
+    deleteAppProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Deletes an app profile from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   boolean ignoreWarnings = false;
+   *   DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setIgnoreWarnings(ignoreWarnings)
+   *     .build();
+   *   bigtableInstanceAdminClient.deleteAppProfile(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAppProfile(DeleteAppProfileRequest request) {
+    deleteAppProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable replication. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Deletes an app profile from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   boolean ignoreWarnings = false;
+   *   DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setIgnoreWarnings(ignoreWarnings)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = bigtableInstanceAdminClient.deleteAppProfileCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteAppProfileRequest, Empty> deleteAppProfileCallable() {
+    return stub.deleteAppProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
+   * not currently available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Gets the access control policy for an instance resource. Returns an empty policy if an
+   * instance exists but does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   Policy response = bigtableInstanceAdminClient.getIamPolicy(formattedResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. `resource` is
+   *     usually specified as a path. For example, a Project resource is specified as
+   *     `projects/{project}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String resource) {
+
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
+   * not currently available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Gets the access control policy for an instance resource. Returns an empty policy if an
+   * instance exists but does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .build();
+   *   Policy response = bigtableInstanceAdminClient.getIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
+   * not currently available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Gets the access control policy for an instance resource. Returns an empty policy if an
+   * instance exists but does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = bigtableInstanceAdminClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
+   * not currently available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Sets the access control policy on an instance resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = bigtableInstanceAdminClient.setIamPolicy(formattedResource, policy);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. `resource` is
+   *     usually specified as a path. For example, a Project resource is specified as
+   *     `projects/{project}`.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(String resource, Policy policy) {
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
+   * not currently available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Sets the access control policy on an instance resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .setPolicy(policy)
+   *     .build();
+   *   Policy response = bigtableInstanceAdminClient.setIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
+   * not currently available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Sets the access control policy on an instance resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .setPolicy(policy)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = bigtableInstanceAdminClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
+   * not currently available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Returns permissions that the caller has on the specified instance resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsResponse response = bigtableInstanceAdminClient.testIamPermissions(formattedResource, permissions);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy detail is being requested.
+   *     `resource` is usually specified as a path. For example, a Project resource is specified as
+   *     `projects/{project}`.
+   * @param permissions The set of permissions to check for the `resource`. Permissions with
+   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(
+      String resource, List<String> permissions) {
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource)
+            .addAllPermissions(permissions)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
+   * not currently available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Returns permissions that the caller has on the specified instance resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .addAllPermissions(permissions)
+   *     .build();
+   *   TestIamPermissionsResponse response = bigtableInstanceAdminClient.testIamPermissions(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable instance level permissions. This feature is
+   * not currently available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Returns permissions that the caller has on the specified instance resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.create()) {
+   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .addAllPermissions(permissions)
+   *     .build();
+   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = bigtableInstanceAdminClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override

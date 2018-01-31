@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,7 @@ public class UsePubSubEmulatorSnippet {
                   .setCredentialsProvider(credentialsProvider)
                   .build());
 
-      TopicName topicName = TopicName.create("my-project-id", "my-topic-id");
+      TopicName topicName = TopicName.of("my-project-id", "my-topic-id");
       // Set the channel and credentials provider when creating a `Publisher`.
       // Similarly for Subscriber
       Publisher publisher =

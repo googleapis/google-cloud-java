@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,7 @@ import static org.junit.Assert.fail;
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
 
-  private static final TopicName TEST_TOPIC = TopicName.create("test-project", "test-topic");
+  private static final TopicName TEST_TOPIC = TopicName.of("test-project", "test-topic");
 
   private static final ExecutorProvider SINGLE_THREAD_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,8 +170,8 @@ public class ITTopicAdminClientSnippets {
   private String createSubscription(String topic, String subscriptionName) throws Exception {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       Subscription subscription = subscriptionAdminClient.createSubscription(
-          SubscriptionName.create(projectId, subscriptionName),
-          TopicName.create(projectId, topic), PushConfig.getDefaultInstance(), 0);
+          SubscriptionName.of(projectId, subscriptionName),
+          TopicName.of(projectId, topic), PushConfig.getDefaultInstance(), 0);
       return subscription.getName();
     }
   }

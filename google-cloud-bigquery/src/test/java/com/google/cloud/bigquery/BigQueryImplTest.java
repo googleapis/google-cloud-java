@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.eq;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
@@ -32,11 +32,11 @@ import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.TableCell;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
+import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
-import com.google.cloud.bigquery.BigQuery.QueryOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
@@ -92,21 +92,16 @@ public class BigQueryImplTest {
   private static final TableId OTHER_TABLE_ID = TableId.of(PROJECT, DATASET, OTHER_TABLE);
   private static final TableId TABLE_ID_WITH_PROJECT = TableId.of(PROJECT, DATASET, TABLE);
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
+      Field.newBuilder("BooleanField", LegacySQLTypeName.BOOLEAN)
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
       Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
-          .setMode(Field.Mode.REPEATED)
+          .setMode(Field.Mode.NULLABLE)
           .setDescription("FieldDescription2")
           .build();
-  private static final Field FIELD_SCHEMA3 =
-      Field.newBuilder("RecordField", LegacySQLTypeName.RECORD, FIELD_SCHEMA1, FIELD_SCHEMA2)
-          .setMode(Field.Mode.REQUIRED)
-          .setDescription("FieldDescription3")
-          .build();
-  private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
+  private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2);
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.of(TABLE_SCHEMA);
   private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
@@ -169,12 +164,14 @@ public class BigQueryImplTest {
       ImmutableList.of(
           FieldValueList.of(ImmutableList.of(FieldValue.fromPb(CELL_PB1))),
           FieldValueList.of(ImmutableList.of(FieldValue.fromPb(CELL_PB2))));
-  private static final Tuple<String, Iterable<TableRow>> TABLE_DATA_PB =
-      Tuple.<String, Iterable<TableRow>>of(
-          CURSOR,
-          ImmutableList.of(
-              new TableRow().setF(ImmutableList.of(new TableCell().setV("Value1"))),
-              new TableRow().setF(ImmutableList.of(new TableCell().setV("Value2")))));
+  private static final TableDataList TABLE_DATA_PB =
+      new TableDataList()
+          .setPageToken(CURSOR)
+          .setTotalRows(3L)
+          .setRows(
+              ImmutableList.of(
+                  new TableRow().setF(ImmutableList.of(new TableCell().setV("Value1"))),
+                  new TableRow().setF(ImmutableList.of(new TableCell().setV("Value2")))));
 
   // Empty BigQueryRpc options
   private static final Map<BigQueryRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -1116,7 +1113,9 @@ public class BigQueryImplTest {
         new com.google.api.services.bigquery.model.Job()
             .setConfiguration(QUERY_JOB_CONFIGURATION_FOR_QUERY.toPb())
             .setJobReference(queryJob.toPb())
-            .setId(JOB);
+            .setId(JOB)
+            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"));
+    jobResponsePb.getConfiguration().getQuery().setDestinationTable(TABLE_ID.toPb());
     GetQueryResultsResponse responsePb =
         new GetQueryResultsResponse()
             .setJobReference(queryJob.toPb())
@@ -1125,7 +1124,57 @@ public class BigQueryImplTest {
             .setCacheHit(false)
             .setPageToken(CURSOR)
             .setTotalBytesProcessed(42L)
-            .setTotalRows(BigInteger.valueOf(1L));
+            .setTotalRows(BigInteger.valueOf(1L))
+            .setSchema(TABLE_SCHEMA.toPb());
+
+    EasyMock.expect(
+            bigqueryRpcMock.create(
+                JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
+        .andReturn(jobResponsePb);
+    EasyMock.expect(
+            bigqueryRpcMock.getQueryResults(
+                PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+        .andReturn(responsePb);
+    EasyMock.expect(
+            bigqueryRpcMock.listTableData(
+                PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap()))
+        .andReturn(
+            new TableDataList()
+                .setPageToken("")
+                .setRows(ImmutableList.of(TABLE_ROW))
+                .setTotalRows(1L));
+
+    EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.getService();
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
+    assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
+    assertThat(result.getTotalRows()).isEqualTo(1);
+    for (FieldValueList row : result.getValues()) {
+      assertThat(row.get(0).getBooleanValue()).isFalse();
+      assertThat(row.get(1).getLongValue()).isEqualTo(1);
+    }
+  }
+
+  @Test
+  public void testQueryRequestCompletedOptions() throws InterruptedException {
+    JobId queryJob = JobId.of(PROJECT, JOB);
+    com.google.api.services.bigquery.model.Job jobResponsePb =
+        new com.google.api.services.bigquery.model.Job()
+            .setConfiguration(QUERY_JOB_CONFIGURATION_FOR_QUERY.toPb())
+            .setJobReference(queryJob.toPb())
+            .setId(JOB)
+            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"));
+    jobResponsePb.getConfiguration().getQuery().setDestinationTable(TABLE_ID.toPb());
+    GetQueryResultsResponse responsePb =
+        new GetQueryResultsResponse()
+            .setJobReference(queryJob.toPb())
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setJobComplete(true)
+            .setCacheHit(false)
+            .setPageToken(CURSOR)
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(1L))
+            .setSchema(TABLE_SCHEMA.toPb());
 
     EasyMock.expect(
         bigqueryRpcMock.create(JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
@@ -1134,39 +1183,39 @@ public class BigQueryImplTest {
     Map<BigQueryRpc.Option, Object> optionMap = Maps.newEnumMap(BigQueryRpc.Option.class);
     QueryResultsOption pageSizeOption = QueryResultsOption.pageSize(42L);
     optionMap.put(pageSizeOption.getRpcOption(), pageSizeOption.getValue());
+
     EasyMock.expect(
-        bigqueryRpcMock.getQueryResults(PROJECT, JOB, optionMap)).andReturn(responsePb);
+            bigqueryRpcMock.getQueryResults(
+                PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+        .andReturn(responsePb);
+    EasyMock.expect(bigqueryRpcMock.listTableData(PROJECT, DATASET, TABLE, optionMap))
+        .andReturn(
+            new TableDataList()
+                .setPageToken("")
+                .setRows(ImmutableList.of(TABLE_ROW))
+                .setTotalRows(1L));
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    QueryResponse response = bigquery.query(
-        QUERY_JOB_CONFIGURATION_FOR_QUERY,
-        queryJob,
-        QueryOption.of(QueryResultsOption.pageSize(42L)));
-    assertNull(response.getEtag());
-    assertEquals(queryJob, response.getJobId());
-    assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.getResult().cacheHit());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
-    assertFalse(response.hasErrors());
-    assertEquals(null, response.getResult().getSchema());
-    assertEquals(42L, response.getResult().getTotalBytesProcessed());
-    assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValueList row : response.getResult().getValues()) {
-      assertEquals(false, row.get(0).getBooleanValue());
-      assertEquals(1L, row.get(1).getLongValue());
+    Job job = bigquery.create(JobInfo.of(queryJob, QUERY_JOB_CONFIGURATION_FOR_QUERY));
+    TableResult result = job.getQueryResults(pageSizeOption);
+    assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
+    assertThat(result.getTotalRows()).isEqualTo(1);
+    for (FieldValueList row : result.getValues()) {
+      assertThat(row.get(0).getBooleanValue()).isFalse();
+      assertThat(row.get(1).getLongValue()).isEqualTo(1);
     }
-    assertEquals(CURSOR, response.getResult().getNextPageToken());
   }
 
   @Test
   public void testQueryRequestCompletedOnSecondAttempt() throws InterruptedException {
     JobId queryJob = JobId.of(PROJECT, JOB);
-    com.google.api.services.bigquery.model.Job jobResponsePb =
+    com.google.api.services.bigquery.model.Job jobResponsePb1 =
         new com.google.api.services.bigquery.model.Job()
             .setConfiguration(QUERY_JOB_CONFIGURATION_FOR_QUERY.toPb())
             .setJobReference(queryJob.toPb())
             .setId(JOB);
+    jobResponsePb1.getConfiguration().getQuery().setDestinationTable(TABLE_ID.toPb());
 
     GetQueryResultsResponse responsePb1 =
         new GetQueryResultsResponse()
@@ -1181,38 +1230,40 @@ public class BigQueryImplTest {
             .setCacheHit(false)
             .setPageToken(CURSOR)
             .setTotalBytesProcessed(42L)
-            .setTotalRows(BigInteger.valueOf(1L));
+            .setTotalRows(BigInteger.valueOf(1L))
+            .setSchema(TABLE_SCHEMA.toPb());
 
     EasyMock.expect(
-        bigqueryRpcMock.create(JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
-        .andReturn(jobResponsePb);
+            bigqueryRpcMock.create(
+                JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
+        .andReturn(jobResponsePb1);
 
-    QueryResultsOption pageSizeOption = QueryResultsOption.pageSize(42L);
-    Map<BigQueryRpc.Option, Object> optionMap = Maps.newEnumMap(BigQueryRpc.Option.class);
-    optionMap.put(pageSizeOption.getRpcOption(), pageSizeOption.getValue());
     EasyMock.expect(
-        bigqueryRpcMock.getQueryResults(PROJECT, JOB, optionMap)).andReturn(responsePb1);
+            bigqueryRpcMock.getQueryResults(
+                PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+        .andReturn(responsePb1);
     EasyMock.expect(
-        bigqueryRpcMock.getQueryResults(PROJECT, JOB, optionMap)).andReturn(responsePb2);
+            bigqueryRpcMock.getQueryResults(
+                PROJECT, JOB, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+        .andReturn(responsePb2);
+    EasyMock.expect(
+            bigqueryRpcMock.listTableData(
+                PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap()))
+        .andReturn(
+            new TableDataList()
+                .setPageToken("")
+                .setRows(ImmutableList.of(TABLE_ROW))
+                .setTotalRows(1L));
 
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    QueryResponse response = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob,
-        QueryOption.of(QueryResultsOption.pageSize(42L)));
-    assertNull(response.getEtag());
-    assertEquals(queryJob, response.getJobId());
-    assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.getResult().cacheHit());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
-    assertFalse(response.hasErrors());
-    assertEquals(null, response.getResult().getSchema());
-    assertEquals(42L, response.getResult().getTotalBytesProcessed());
-    assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValueList row : response.getResult().getValues()) {
-      assertEquals(false, row.get(0).getBooleanValue());
-      assertEquals(1L, row.get(1).getLongValue());
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY, queryJob);
+    assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
+    assertThat(result.getTotalRows()).isEqualTo(1);
+    for (FieldValueList row : result.getValues()) {
+      assertThat(row.get(0).getBooleanValue()).isFalse();
+      assertThat(row.get(1).getLongValue()).isEqualTo(1);
     }
-    assertEquals(CURSOR, response.getResult().getNextPageToken());
   }
 
   @Test
@@ -1233,20 +1284,8 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     QueryResponse response = bigquery.getQueryResults(queryJob);
-    assertEquals("etag", response.getEtag());
-    assertEquals(queryJob, response.getJobId());
-    assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.getResult().cacheHit());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
-    assertFalse(response.hasErrors());
-    assertEquals(null, response.getResult().getSchema());
-    assertEquals(42L, response.getResult().getTotalBytesProcessed());
-    assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValueList row : response.getResult().getValues()) {
-      assertEquals(false, row.get(0).getBooleanValue());
-      assertEquals(1L, row.get(1).getLongValue());
-    }
-    assertEquals(CURSOR, response.getResult().getNextPageToken());
+    assertEquals(true, response.getCompleted());
+    assertEquals(null, response.getSchema());
   }
 
   @Test
@@ -1267,20 +1306,8 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     QueryResponse response = bigquery.getQueryResults(queryJob);
-    assertEquals("etag", response.getEtag());
-    assertEquals(queryJob, response.getJobId());
-    assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.getResult().cacheHit());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
-    assertFalse(response.hasErrors());
-    assertEquals(null, response.getResult().getSchema());
-    assertEquals(42L, response.getResult().getTotalBytesProcessed());
-    assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValueList row : response.getResult().getValues()) {
-      assertEquals(false, row.get(0).getBooleanValue());
-      assertEquals(1L, row.get(1).getLongValue());
-    }
-    assertEquals(CURSOR, response.getResult().getNextPageToken());
+    assertTrue(response.getCompleted());
+    assertEquals(null, response.getSchema());
   }
 
   @Test
@@ -1306,19 +1333,8 @@ public class BigQueryImplTest {
             QUERY_RESULTS_OPTION_INDEX,
             QUERY_RESULTS_OPTION_PAGE_SIZE,
             QUERY_RESULTS_OPTION_PAGE_TOKEN);
-    assertEquals(queryJob, response.getJobId());
-    assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.getResult().cacheHit());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
-    assertFalse(response.hasErrors());
-    assertEquals(null, response.getResult().getSchema());
-    assertEquals(42L, response.getResult().getTotalBytesProcessed());
-    assertEquals(1L, response.getResult().getTotalRows());
-    for (FieldValueList row : response.getResult().getValues()) {
-      assertEquals(false, row.get(0).getBooleanValue());
-      assertEquals(1L, row.get(1).getLongValue());
-    }
-    assertEquals(CURSOR, response.getResult().getNextPageToken());
+    assertEquals(true, response.getCompleted());
+    assertEquals(null, response.getSchema());
   }
 
   @Test
@@ -1383,5 +1399,18 @@ public class BigQueryImplTest {
     thrown.expect(BigQueryException.class);
     thrown.expectMessage(exceptionMessage);
     bigquery.getDataset(DATASET);
+  }
+
+  @Test
+  public void testQueryDryRun() throws Exception {
+    // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2479
+    EasyMock.replay(bigqueryRpcMock);
+    thrown.expect(UnsupportedOperationException.class);
+    options
+        .toBuilder()
+        .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+        .build()
+        .getService()
+        .query(QueryJobConfiguration.newBuilder("foo").setDryRun(true).build());
   }
 }

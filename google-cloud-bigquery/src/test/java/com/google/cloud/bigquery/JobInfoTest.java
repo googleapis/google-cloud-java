@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,19 +22,17 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
-import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
+import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
 import java.util.List;
 import java.util.Map;
+import org.junit.Test;
 
 public class JobInfoTest {
 
@@ -311,14 +309,14 @@ public class JobInfoTest {
     assertNull(COPY_JOB.toPb().getConfiguration().getExtract());
     assertNull(COPY_JOB.toPb().getConfiguration().getLoad());
     assertNull(COPY_JOB.toPb().getConfiguration().getQuery());
-    assertEquals(COPY_JOB_STATISTICS, JobStatistics.fromPb(COPY_JOB.getStatistics().toPb()));
+    assertEquals(COPY_JOB_STATISTICS, JobStatistics.fromPb(COPY_JOB.toPb()));
     compareJobInfo(COPY_JOB, JobInfo.fromPb(COPY_JOB.toPb()));
     assertTrue(JobInfo.fromPb(COPY_JOB.toPb()).getConfiguration() instanceof CopyJobConfiguration);
     assertNull(EXTRACT_JOB.toPb().getConfiguration().getCopy());
     assertNotNull(EXTRACT_JOB.toPb().getConfiguration().getExtract());
     assertNull(EXTRACT_JOB.toPb().getConfiguration().getLoad());
     assertNull(EXTRACT_JOB.toPb().getConfiguration().getQuery());
-    assertEquals(EXTRACT_JOB_STATISTICS, JobStatistics.fromPb(EXTRACT_JOB.getStatistics().toPb()));
+    assertEquals(EXTRACT_JOB_STATISTICS, JobStatistics.fromPb(EXTRACT_JOB.toPb()));
     compareJobInfo(EXTRACT_JOB, JobInfo.fromPb(EXTRACT_JOB.toPb()));
     assertTrue(
         JobInfo.fromPb(EXTRACT_JOB.toPb()).getConfiguration() instanceof ExtractJobConfiguration);
@@ -327,7 +325,7 @@ public class JobInfoTest {
     assertNull(LOAD_JOB.toPb().getConfiguration().getExtract());
     assertNotNull(LOAD_JOB.toPb().getConfiguration().getLoad());
     assertNull(LOAD_JOB.toPb().getConfiguration().getQuery());
-    assertEquals(LOAD_JOB_STATISTICS, JobStatistics.fromPb(LOAD_JOB.getStatistics().toPb()));
+    assertEquals(LOAD_JOB_STATISTICS, JobStatistics.fromPb(LOAD_JOB.toPb()));
     compareJobInfo(LOAD_JOB, JobInfo.fromPb(LOAD_JOB.toPb()));
     assertTrue(JobInfo.fromPb(LOAD_JOB.toPb()).getConfiguration() instanceof LoadJobConfiguration);
     assertTrue(JobInfo.fromPb(LOAD_JOB.toPb()).getStatistics() instanceof LoadStatistics);
@@ -335,7 +333,7 @@ public class JobInfoTest {
     assertNull(QUERY_JOB.toPb().getConfiguration().getExtract());
     assertNull(QUERY_JOB.toPb().getConfiguration().getLoad());
     assertNotNull(QUERY_JOB.toPb().getConfiguration().getQuery());
-    assertEquals(QUERY_JOB_STATISTICS, JobStatistics.fromPb(QUERY_JOB.getStatistics().toPb()));
+    assertEquals(QUERY_JOB_STATISTICS, JobStatistics.fromPb(QUERY_JOB.toPb()));
     compareJobInfo(QUERY_JOB, JobInfo.fromPb(QUERY_JOB.toPb()));
     assertTrue(
         JobInfo.fromPb(QUERY_JOB.toPb()).getConfiguration() instanceof QueryJobConfiguration);

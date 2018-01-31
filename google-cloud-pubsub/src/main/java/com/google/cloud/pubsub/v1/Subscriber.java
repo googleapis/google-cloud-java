@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,9 @@ package com.google.cloud.pubsub.v1;
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiService;
+import com.google.api.core.BetaApi;
 import com.google.api.core.CurrentMillisClock;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
@@ -30,14 +32,13 @@ import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.HeaderProvider;
-import com.google.api.gax.rpc.TransportChannel;
+import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
-import com.google.common.primitives.Ints;
+import com.google.common.collect.ImmutableMap;
 import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberFutureStub;
@@ -46,13 +47,13 @@ import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.CallCredentials;
 import io.grpc.Channel;
-import io.grpc.ManagedChannel;
 import io.grpc.auth.MoreCallCredentials;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -95,14 +96,11 @@ import org.threeten.bp.Duration;
  */
 public class Subscriber extends AbstractApiService {
   private static final int THREADS_PER_CHANNEL = 5;
-  @VisibleForTesting static final int CHANNELS_PER_CORE = 1;
+  @InternalApi static final int CHANNELS_PER_CORE = 1;
   private static final int MAX_INBOUND_MESSAGE_SIZE =
       20 * 1024 * 1024; // 20MB API maximum message size.
-  private static final int INITIAL_ACK_DEADLINE_SECONDS = 10;
-  private static final int MAX_ACK_DEADLINE_SECONDS = 600;
-  static final int MIN_ACK_DEADLINE_SECONDS = 10;
-  private static final Duration ACK_DEADLINE_UPDATE_PERIOD = Duration.ofMinutes(1);
-  private static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
+  @InternalApi static final int MAX_ACK_DEADLINE_SECONDS = 600;
+  @InternalApi static final int MIN_ACK_DEADLINE_SECONDS = 10;
 
   private static final ScheduledExecutorService SHARED_SYSTEM_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(6).build().getExecutor();
@@ -132,20 +130,21 @@ public class Subscriber extends AbstractApiService {
   private final List<AutoCloseable> closeables = new ArrayList<>();
   private final boolean useStreaming;
   private ScheduledFuture<?> ackDeadlineUpdater;
-  private int streamAckDeadlineSeconds;
 
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
     subscriptionName = builder.subscriptionName;
     cachedSubscriptionNameString = subscriptionName.toString();
+
+    Preconditions.checkArgument(
+        builder.ackExpirationPadding.compareTo(Duration.ZERO) > 0, "padding must be positive");
+    Preconditions.checkArgument(
+        builder.ackExpirationPadding.compareTo(Duration.ofSeconds(MIN_ACK_DEADLINE_SECONDS)) < 0,
+        "padding must be less than %s seconds",
+        MIN_ACK_DEADLINE_SECONDS);
     ackExpirationPadding = builder.ackExpirationPadding;
     maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
-    long streamAckDeadlineMillis = ackExpirationPadding.toMillis();
-    streamAckDeadlineSeconds =
-        Math.max(
-            INITIAL_ACK_DEADLINE_SECONDS,
-            Ints.saturatedCast(TimeUnit.MILLISECONDS.toSeconds(streamAckDeadlineMillis)));
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
     flowController =
@@ -182,7 +181,12 @@ public class Subscriber extends AbstractApiService {
       channelProvider = channelProvider.withExecutor(executor);
     }
     if (channelProvider.needsHeaders()) {
-      channelProvider = channelProvider.withHeaders(builder.headerProvider.getHeaders());
+      Map<String, String> headers =
+          ImmutableMap.<String, String>builder()
+              .putAll(builder.headerProvider.getHeaders())
+              .putAll(builder.internalHeaderProvider.getHeaders())
+              .build();
+      channelProvider = channelProvider.withHeaders(headers);
     }
     if (channelProvider.needsEndpoint()) {
       channelProvider = channelProvider.withEndpoint(SubscriptionAdminSettings.getDefaultEndpoint());
@@ -234,7 +238,8 @@ public class Subscriber extends AbstractApiService {
   }
 
   /** Acknowledgement expiration padding. See {@link Builder#setAckExpirationPadding}. */
-  public Duration getAckExpirationPadding() {
+  @InternalApi
+  Duration getAckExpirationPadding() {
     return ackExpirationPadding;
   }
 
@@ -260,8 +265,19 @@ public class Subscriber extends AbstractApiService {
    * // Wait for a stop signal.
    * // In a server, this might be a signal to stop serving.
    * // In this example, the signal is just a dummy Future.
+   * //
+   * // By default, Subscriber uses daemon threads (see
+   * // https://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html).
+   * // Consequently, once other threads have terminated, Subscriber will not stop the JVM from
+   * // exiting.
+   * // If the Subscriber should simply run forever, either use the setExecutorProvider method in
+   * // Subscriber.Builder
+   * // to use non-daemon threads or run
+   * //   for (;;) {
+   * //     Thread.sleep(Long.MAX_VALUE);
+   * //   }
+   * // at the end of main() to previent the main thread from exiting.
    * done.get();
-   *
    * subscriber.stopAsync().awaitTerminated();
    * }</pre>
    */
@@ -406,7 +422,6 @@ public class Subscriber extends AbstractApiService {
                 receiver,
                 ackExpirationPadding,
                 maxAckExtensionPeriod,
-                streamAckDeadlineSeconds,
                 ackLatencyDistribution,
                 stub,
                 flowController,
@@ -433,37 +448,6 @@ public class Subscriber extends AbstractApiService {
               }
             }
           });
-    }
-
-    ackDeadlineUpdater =
-        executor.scheduleAtFixedRate(
-            new Runnable() {
-              @Override
-              public void run() {
-                updateAckDeadline();
-              }
-            },
-            ACK_DEADLINE_UPDATE_PERIOD.toMillis(),
-            ACK_DEADLINE_UPDATE_PERIOD.toMillis(),
-            TimeUnit.MILLISECONDS);
-  }
-
-  private void updateAckDeadline() {
-    // It is guaranteed this will be <= MAX_ACK_DEADLINE_SECONDS, the max of the API.
-    long ackLatency = ackLatencyDistribution.getNthPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
-    if (ackLatency > 0) {
-      int possibleStreamAckDeadlineSeconds =
-          Math.max(
-              MIN_ACK_DEADLINE_SECONDS,
-              Ints.saturatedCast(Math.max(ackLatency, ackExpirationPadding.getSeconds())));
-      if (streamAckDeadlineSeconds != possibleStreamAckDeadlineSeconds) {
-        streamAckDeadlineSeconds = possibleStreamAckDeadlineSeconds;
-        logger.log(
-            Level.FINER, "Updating stream deadline to {0} seconds.", streamAckDeadlineSeconds);
-        for (StreamingSubscriberConnection subscriberConnection : streamingSubscriberConnections) {
-          subscriberConnection.updateStreamAckDeadline(streamAckDeadlineSeconds);
-        }
-      }
     }
   }
 
@@ -512,7 +496,7 @@ public class Subscriber extends AbstractApiService {
   /** Builder of {@link Subscriber Subscribers}. */
   public static final class Builder {
     private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.ofMillis(100);
-    private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.ofMillis(500);
+    private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.ofSeconds(5);
     private static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
     private static final long DEFAULT_MEMORY_PERCENTAGE = 20;
 
@@ -543,7 +527,8 @@ public class Subscriber extends AbstractApiService {
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
             .setKeepAliveTime(Duration.ofMinutes(5))
             .build();
-    HeaderProvider headerProvider =
+    HeaderProvider headerProvider = new NoHeaderProvider();
+    HeaderProvider internalHeaderProvider =
         SubscriptionAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     CredentialsProvider credentialsProvider =
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
@@ -569,8 +554,34 @@ public class Subscriber extends AbstractApiService {
       return this;
     }
 
+    /**
+     * Sets the static header provider. The header provider will be called during client
+     * construction only once. The headers returned by the provider will be cached and supplied as
+     * is for each request issued by the constructed client. Some reserved headers can be overridden
+     * (e.g. Content-Type) or merged with the default value (e.g. User-Agent) by the underlying
+     * transport layer.
+     *
+     * @param headerProvider the header provider
+     * @return the builder
+     */
+    @BetaApi
     public Builder setHeaderProvider(HeaderProvider headerProvider) {
       this.headerProvider = Preconditions.checkNotNull(headerProvider);
+      return this;
+    }
+
+    /**
+     * Sets the static header provider for getting internal (library-defined) headers. The header
+     * provider will be called during client construction only once. The headers returned by the
+     * provider will be cached and supplied as is for each request issued by the constructed client.
+     * Some reserved headers can be overridden (e.g. Content-Type) or merged with the default value
+     * (e.g. User-Agent) by the underlying transport layer.
+     *
+     * @param internalHeaderProvider the internal header provider
+     * @return the builder
+     */
+    Builder setInternalHeaderProvider(HeaderProvider internalHeaderProvider) {
+      this.internalHeaderProvider = Preconditions.checkNotNull(internalHeaderProvider);
       return this;
     }
 
@@ -592,7 +603,8 @@ public class Subscriber extends AbstractApiService {
      *
      * @param ackExpirationPadding must be greater or equal to {@link #MIN_ACK_EXPIRATION_PADDING}
      */
-    public Builder setAckExpirationPadding(Duration ackExpirationPadding) {
+    @InternalApi
+    Builder setAckExpirationPadding(Duration ackExpirationPadding) {
       Preconditions.checkArgument(ackExpirationPadding.compareTo(MIN_ACK_EXPIRATION_PADDING) >= 0);
       this.ackExpirationPadding = ackExpirationPadding;
       return this;

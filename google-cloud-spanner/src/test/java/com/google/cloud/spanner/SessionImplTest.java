@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,8 @@ public class SessionImplTest {
     DatabaseId db = DatabaseId.of(dbName);
 
     Session sessionProto = Session.newBuilder().setName(sessionName).build();
-    Mockito.when(rpc.createSession(Mockito.eq(dbName), optionsCaptor.capture()))
+    Mockito.when(rpc.createSession(Mockito.eq(dbName),
+    		Mockito.anyMapOf(String.class, String.class), optionsCaptor.capture()))
         .thenReturn(sessionProto);
     session = spanner.createSession(db);
     // We expect the same options, "options", on all calls on "session".

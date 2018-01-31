@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage;
 
+import com.google.cloud.NoCredentials;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
@@ -126,6 +127,13 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
    */
   public static StorageOptions getDefaultInstance() {
     return newBuilder().build();
+  }
+
+  /**
+   * Returns a unauthenticated {@code StorageOptions} instance.
+   */
+  public static StorageOptions getUnauthenticatedInstance() {
+    return newBuilder().setCredentials(NoCredentials.getInstance()).build();
   }
 
   @SuppressWarnings("unchecked")

@@ -2,35 +2,35 @@
 # This file controls who is tagged for review for any given pull request.
 
 # For anything not explicitly taken by someone else.
-*                                     @garrettjonesgoogle
+*                                     @pongad
 # Owners per module.
 google-cloud-bigquery/src/*           @vam-google @tswast
 google-cloud-bigtable/src/*           @igorbernstein2
 google-cloud-compute/src/*            @andreamlin
-google-cloud-contrib/src/*            @garrettjonesgoogle @jean-philippe-martin
-google-cloud-core-grpc/src/*          @garrettjonesgoogle
-google-cloud-core-http/src/*          @garrettjonesgoogle
-google-cloud-core/src/*               @garrettjonesgoogle
+google-cloud-contrib/src/*            @pongad @jean-philippe-martin
+google-cloud-core-grpc/src/*          @pongad
+google-cloud-core-http/src/*          @pongad
+google-cloud-core/src/*               @pongad
 google-cloud-datastore/src/*          @neozwu @vam-google
-google-cloud-dep-verification/src/*   @garrettjonesgoogle
+google-cloud-dep-verification/src/*   @pongad
 google-cloud-dlp/src/*                @neozwu
-google-cloud-dns/src/*                @garrettjonesgoogle
-google-cloud-errorreporting/src/*     @garrettjonesgoogle
-google-cloud-examples/src/*           @garrettjonesgoogle
+google-cloud-dns/src/*                @pongad
+google-cloud-errorreporting/src/*     @pongad
+google-cloud-examples/src/*           @pongad
 google-cloud-firestore/src/*          @schmidt-sebastian
-google-cloud-language/src/*           @garrettjonesgoogle
+google-cloud-language/src/*           @pongad
 google-cloud-logging/src/*            @saicheems @andreamlin @jabubake
-google-cloud-monitoring/src/*         @garrettjonesgoogle
-google-cloud-pubsub/src/*             @pongad @garrettjonesgoogle
-google-cloud-resourcemanager/src/*    @garrettjonesgoogle
+google-cloud-monitoring/src/*         @pongad
+google-cloud-pubsub/src/*             @pongad
+google-cloud-resourcemanager/src/*    @pongad
 google-cloud-spanner/src/*            @vam-google @vkedia
 google-cloud-speech/src/*             @vam-google
 google-cloud-storage/src/*            @andreamlin @neozwu
 google-cloud-testing/src/*            @vam-google
-google-cloud-trace/src/*              @garrettjonesgoogle
+google-cloud-trace/src/*              @pongad
 google-cloud-translate/src/*          @andreamlin @saicheems
-google-cloud-util/src/*               @garrettjonesgoogle
+google-cloud-util/src/*               @pongad
 google-cloud-video-intelligence/src/* @vam-google
 google-cloud-vision/src/*             @vam-google
-google-cloud/src/*                    @garrettjonesgoogle
+google-cloud/src/*                    @pongad
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannel;
@@ -36,11 +37,14 @@ import io.netty.handler.ssl.SslContext;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import javax.net.ssl.SSLException;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
+  private static final long serialVersionUID = 2789571558532701170L;
+
   private static final String API_SHORT_NAME = "Spanner";
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
   private static final ImmutableSet<String> SCOPES =
@@ -74,12 +78,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final SessionPoolOptions sessionPoolOptions;
   private final int prefetchChunks;
   private final int numChannels;
-  private final String userAgent;
-
+  private final ImmutableMap<String, String> sessionLabels;
+  
   private SpannerOptions(Builder builder) {
     super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
     numChannels = builder.numChannels;
-    userAgent = builder.userAgentPrefix;
+    String userAgent = getUserAgent();
     RpcChannelFactory defaultRpcChannelFactory =
         userAgent == null
             ? DEFAULT_RPC_CHANNEL_FACTORY
@@ -94,6 +98,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             ? builder.sessionPoolOptions
             : SessionPoolOptions.newBuilder().build();
     prefetchChunks = builder.prefetchChunks;
+    sessionLabels = builder.sessionLabels;
   }
 
   /** Builder for {@link SpannerOptions} instances. */
@@ -107,7 +112,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     private int prefetchChunks = DEFAULT_PREFETCH_CHUNKS;
     private SessionPoolOptions sessionPoolOptions;
-    private String userAgentPrefix;
+    private ImmutableMap<String, String> sessionLabels;
 
     private Builder() {}
 
@@ -116,7 +121,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.numChannels = options.numChannels;
       this.sessionPoolOptions = options.sessionPoolOptions;
       this.prefetchChunks = options.prefetchChunks;
-      this.userAgentPrefix = options.userAgent;
+      this.sessionLabels = options.sessionLabels;
     }
 
     @Override
@@ -153,6 +158,23 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
+     * Sets the labels to add to all Sessions created in this client.
+     * 
+     * @param sessionLabels Map from label key to label value. Label key and value cannot be null.
+     *     For more information on valid syntax see
+     *     <a href="https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#google.spanner.v1.Session">
+     *     api docs </a>.
+     */
+    public Builder setSessionLabels(Map<String, String> sessionLabels) {
+      Preconditions.checkNotNull(sessionLabels, "Session labels map cannot be null");
+      for (String value : sessionLabels.values()) {
+        Preconditions.checkNotNull(value, "Null values are not allowed in the labels map.");
+      }
+      this.sessionLabels = ImmutableMap.copyOf(sessionLabels);
+      return this;
+    }
+    
+    /**
      * Specifying this will allow the client to prefetch up to {@code prefetchChunks} {@code
      * PartialResultSet} chunks for each read and query. The data size of each chunk depends on the
      * server implementation but a good rule of thumb is that each chunk will be up to 1 MiB. Larger
@@ -165,12 +187,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      */
     public Builder setPrefetchChunks(int prefetchChunks) {
       this.prefetchChunks = prefetchChunks;
-      return this;
-    }
-
-    /** If specified, this will be prefixed to the default user agent sent in the requests. */
-    public Builder setUserAgentPrefix(String userAgentPrefix) {
-      this.userAgentPrefix = userAgentPrefix;
       return this;
     }
 
@@ -205,6 +221,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return sessionPoolOptions;
   }
 
+  public Map<String, String> getSessionLabels() {
+    return sessionLabels;
+  }
+  
   public int getPrefetchChunks() {
     return prefetchChunks;
   }

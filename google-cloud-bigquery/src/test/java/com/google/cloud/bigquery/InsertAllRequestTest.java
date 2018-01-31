@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,15 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.Test;
 
 public class InsertAllRequestTest {
 
@@ -118,88 +115,88 @@ public class InsertAllRequestTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST1.getTable());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST2.getTable());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST3.getTable());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST4.getTable());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST5.getTable());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST6.getTable());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST7.getTable());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST8.getTable());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST9.getTable());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST10.getTable());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST11.getTable());
-    assertEquals(ROWS, INSERT_ALL_REQUEST1.getRows());
-    assertEquals(ROWS, INSERT_ALL_REQUEST2.getRows());
-    assertEquals(ROWS, INSERT_ALL_REQUEST4.getRows());
-    assertEquals(ROWS, INSERT_ALL_REQUEST6.getRows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST3.getRows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST5.getRows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST7.getRows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST8.getRows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST9.getRows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST10.getRows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST11.getRows());
-    assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST1.skipInvalidRows());
-    assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST2.skipInvalidRows());
-    assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST3.skipInvalidRows());
-    assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST4.skipInvalidRows());
-    assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST5.skipInvalidRows());
-    assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST6.skipInvalidRows());
-    assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST7.skipInvalidRows());
-    assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST8.skipInvalidRows());
-    assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST9.skipInvalidRows());
-    assertFalse(INSERT_ALL_REQUEST10.skipInvalidRows());
-    assertFalse(INSERT_ALL_REQUEST11.skipInvalidRows());
-    assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST1.ignoreUnknownValues());
-    assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST2.ignoreUnknownValues());
-    assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST3.ignoreUnknownValues());
-    assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST4.ignoreUnknownValues());
-    assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST5.ignoreUnknownValues());
-    assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST6.ignoreUnknownValues());
-    assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST7.ignoreUnknownValues());
-    assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST8.ignoreUnknownValues());
-    assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST9.ignoreUnknownValues());
-    assertTrue(INSERT_ALL_REQUEST10.ignoreUnknownValues());
-    assertTrue(INSERT_ALL_REQUEST11.ignoreUnknownValues());
-    assertNull(INSERT_ALL_REQUEST1.getTemplateSuffix());
-    assertNull(INSERT_ALL_REQUEST2.getTemplateSuffix());
-    assertNull(INSERT_ALL_REQUEST3.getTemplateSuffix());
-    assertNull(INSERT_ALL_REQUEST4.getTemplateSuffix());
-    assertNull(INSERT_ALL_REQUEST5.getTemplateSuffix());
-    assertNull(INSERT_ALL_REQUEST6.getTemplateSuffix());
-    assertNull(INSERT_ALL_REQUEST7.getTemplateSuffix());
-    assertNull(INSERT_ALL_REQUEST8.getTemplateSuffix());
-    assertNull(INSERT_ALL_REQUEST9.getTemplateSuffix());
-    assertNull(INSERT_ALL_REQUEST10.getTemplateSuffix());
-    assertEquals(TEMPLATE_SUFFIX, INSERT_ALL_REQUEST11.getTemplateSuffix());
+    assertThat(TABLE_ID).isEqualTo(INSERT_ALL_REQUEST1.getTable());
+    assertThat(TABLE_ID).isEqualTo(INSERT_ALL_REQUEST2.getTable());
+    assertThat(TABLE_ID).isEqualTo(INSERT_ALL_REQUEST3.getTable());
+    assertThat(TABLE_ID).isEqualTo(INSERT_ALL_REQUEST4.getTable());
+    assertThat(TABLE_ID).isEqualTo(INSERT_ALL_REQUEST5.getTable());
+    assertThat(TABLE_ID).isEqualTo(INSERT_ALL_REQUEST6.getTable());
+    assertThat(TABLE_ID).isEqualTo(INSERT_ALL_REQUEST7.getTable());
+    assertThat(TABLE_ID).isEqualTo(INSERT_ALL_REQUEST8.getTable());
+    assertThat(TABLE_ID).isEqualTo(INSERT_ALL_REQUEST9.getTable());
+    assertThat(TABLE_ID).isEqualTo(INSERT_ALL_REQUEST10.getTable());
+    assertThat(TABLE_ID).isEqualTo(INSERT_ALL_REQUEST11.getTable());
+    assertThat(ROWS).isEqualTo(INSERT_ALL_REQUEST1.getRows());
+    assertThat(ROWS).isEqualTo(INSERT_ALL_REQUEST2.getRows());
+    assertThat(ROWS).isEqualTo(INSERT_ALL_REQUEST4.getRows());
+    assertThat(ROWS).isEqualTo(INSERT_ALL_REQUEST6.getRows());
+    assertThat(ROWS_WITH_ID).isEqualTo(INSERT_ALL_REQUEST3.getRows());
+    assertThat(ROWS_WITH_ID).isEqualTo(INSERT_ALL_REQUEST5.getRows());
+    assertThat(ROWS_WITH_ID).isEqualTo(INSERT_ALL_REQUEST7.getRows());
+    assertThat(ROWS_WITH_ID).isEqualTo(INSERT_ALL_REQUEST8.getRows());
+    assertThat(ROWS_WITH_ID).isEqualTo(INSERT_ALL_REQUEST9.getRows());
+    assertThat(ROWS_WITH_ID).isEqualTo(INSERT_ALL_REQUEST10.getRows());
+    assertThat(ROWS_WITH_ID).isEqualTo(INSERT_ALL_REQUEST11.getRows());
+    assertThat(SKIP_INVALID_ROWS).isEqualTo(INSERT_ALL_REQUEST1.skipInvalidRows());
+    assertThat(SKIP_INVALID_ROWS).isEqualTo(INSERT_ALL_REQUEST2.skipInvalidRows());
+    assertThat(SKIP_INVALID_ROWS).isEqualTo(INSERT_ALL_REQUEST3.skipInvalidRows());
+    assertThat(SKIP_INVALID_ROWS).isEqualTo(INSERT_ALL_REQUEST4.skipInvalidRows());
+    assertThat(SKIP_INVALID_ROWS).isEqualTo(INSERT_ALL_REQUEST5.skipInvalidRows());
+    assertThat(SKIP_INVALID_ROWS).isEqualTo(INSERT_ALL_REQUEST6.skipInvalidRows());
+    assertThat(SKIP_INVALID_ROWS).isEqualTo(INSERT_ALL_REQUEST7.skipInvalidRows());
+    assertThat(SKIP_INVALID_ROWS).isEqualTo(INSERT_ALL_REQUEST8.skipInvalidRows());
+    assertThat(SKIP_INVALID_ROWS).isEqualTo(INSERT_ALL_REQUEST9.skipInvalidRows());
+    assertThat(INSERT_ALL_REQUEST10.skipInvalidRows()).isFalse();
+    assertThat(INSERT_ALL_REQUEST11.skipInvalidRows()).isFalse();
+    assertThat(IGNORE_UNKNOWN_VALUES).isEqualTo(INSERT_ALL_REQUEST1.ignoreUnknownValues());
+    assertThat(IGNORE_UNKNOWN_VALUES).isEqualTo(INSERT_ALL_REQUEST2.ignoreUnknownValues());
+    assertThat(IGNORE_UNKNOWN_VALUES).isEqualTo(INSERT_ALL_REQUEST3.ignoreUnknownValues());
+    assertThat(IGNORE_UNKNOWN_VALUES).isEqualTo(INSERT_ALL_REQUEST4.ignoreUnknownValues());
+    assertThat(IGNORE_UNKNOWN_VALUES).isEqualTo(INSERT_ALL_REQUEST5.ignoreUnknownValues());
+    assertThat(IGNORE_UNKNOWN_VALUES).isEqualTo(INSERT_ALL_REQUEST6.ignoreUnknownValues());
+    assertThat(IGNORE_UNKNOWN_VALUES).isEqualTo(INSERT_ALL_REQUEST7.ignoreUnknownValues());
+    assertThat(IGNORE_UNKNOWN_VALUES).isEqualTo(INSERT_ALL_REQUEST8.ignoreUnknownValues());
+    assertThat(IGNORE_UNKNOWN_VALUES).isEqualTo(INSERT_ALL_REQUEST9.ignoreUnknownValues());
+    assertThat(INSERT_ALL_REQUEST10.ignoreUnknownValues()).isTrue();
+    assertThat(INSERT_ALL_REQUEST11.ignoreUnknownValues()).isTrue();
+    assertThat(INSERT_ALL_REQUEST1.getTemplateSuffix()).isNull();
+    assertThat(INSERT_ALL_REQUEST2.getTemplateSuffix()).isNull();
+    assertThat(INSERT_ALL_REQUEST3.getTemplateSuffix()).isNull();
+    assertThat(INSERT_ALL_REQUEST4.getTemplateSuffix()).isNull();
+    assertThat(INSERT_ALL_REQUEST5.getTemplateSuffix()).isNull();
+    assertThat(INSERT_ALL_REQUEST6.getTemplateSuffix()).isNull();
+    assertThat(INSERT_ALL_REQUEST7.getTemplateSuffix()).isNull();
+    assertThat(INSERT_ALL_REQUEST8.getTemplateSuffix()).isNull();
+    assertThat(INSERT_ALL_REQUEST9.getTemplateSuffix()).isNull();
+    assertThat(INSERT_ALL_REQUEST10.getTemplateSuffix()).isNull();
+    assertThat(TEMPLATE_SUFFIX).isEqualTo(INSERT_ALL_REQUEST11.getTemplateSuffix());
   }
 
 
   @Test
   public void testOf() {
     InsertAllRequest request = InsertAllRequest.of(TABLE_ID, ROWS);
-    assertEquals(TABLE_ID, request.getTable());
-    assertEquals(ROWS, request.getRows());
+    assertThat(TABLE_ID).isEqualTo(request.getTable());
+    assertThat(ROWS).isEqualTo(request.getRows());
     request = InsertAllRequest.of(TABLE_INFO, ROWS);
-    assertEquals(TABLE_ID, request.getTable());
-    assertEquals(ROWS, request.getRows());
+    assertThat(TABLE_ID).isEqualTo(request.getTable());
+    assertThat(ROWS).isEqualTo(request.getRows());
     request = InsertAllRequest.of(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS);
-    assertEquals(TABLE_ID, request.getTable());
-    assertEquals(ROWS, request.getRows());
+    assertThat(TABLE_ID).isEqualTo(request.getTable());
+    assertThat(ROWS).isEqualTo(request.getRows());
     request = InsertAllRequest.of(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS);
-    assertEquals(TABLE_ID, request.getTable());
-    assertEquals(ROWS, request.getRows());
+    assertThat(TABLE_ID).isEqualTo(request.getTable());
+    assertThat(ROWS).isEqualTo(request.getRows());
     request = InsertAllRequest.of(TABLE_ID, ROWS.get(0), ROWS.get(1));
-    assertEquals(TABLE_ID, request.getTable());
-    assertEquals(ROWS, request.getRows());
+    assertThat(TABLE_ID).isEqualTo(request.getTable());
+    assertThat(ROWS).isEqualTo(request.getRows());
     request = InsertAllRequest.of(TABLE_INFO, ROWS.get(0), ROWS.get(1));
-    assertEquals(TABLE_ID, request.getTable());
-    assertEquals(ROWS, request.getRows());
+    assertThat(TABLE_ID).isEqualTo(request.getTable());
+    assertThat(ROWS).isEqualTo(request.getRows());
     request =
         InsertAllRequest.of(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS.get(0), ROWS.get(1));
-    assertEquals(TABLE_ID, request.getTable());
-    assertEquals(ROWS, request.getRows());
+    assertThat(TABLE_ID).isEqualTo(request.getTable());
+    assertThat(ROWS).isEqualTo(request.getRows());
   }
 
   @Test
@@ -215,14 +212,27 @@ public class InsertAllRequestTest {
     compareInsertAllRequest(INSERT_ALL_REQUEST11, INSERT_ALL_REQUEST11);
   }
 
+  @Test(expected=UnsupportedOperationException.class)
+  public void testImmutable() {
+    InsertAllRequest.RowToInsert row = InsertAllRequest.RowToInsert.of(new HashMap<String,Object>());
+    row.getContent().put("zip", "zap");
+  }
+
+  @Test
+  public void testNullOK() {
+    InsertAllRequest.RowToInsert row =
+        InsertAllRequest.RowToInsert.of(Collections.singletonMap("foo", null));
+    assertThat(row.getContent()).containsExactly("foo", null);
+  }
+
   private void compareInsertAllRequest(InsertAllRequest expected, InsertAllRequest value) {
-    assertEquals(expected, value);
-    assertEquals(expected.toString(), value.toString());
-    assertEquals(expected.hashCode(), value.hashCode());
-    assertEquals(expected.getTable(), value.getTable());
-    assertEquals(expected.getRows(), value.getRows());
-    assertEquals(expected.ignoreUnknownValues(), value.ignoreUnknownValues());
-    assertEquals(expected.skipInvalidRows(), value.skipInvalidRows());
-    assertEquals(expected.getTemplateSuffix(), value.getTemplateSuffix());
+    assertThat(expected).isEqualTo(value);
+    assertThat(expected.toString()).isEqualTo(value.toString());
+    assertThat(expected.hashCode()).isEqualTo(value.hashCode());
+    assertThat(expected.getTable()).isEqualTo(value.getTable());
+    assertThat(expected.getRows()).isEqualTo(value.getRows());
+    assertThat(expected.ignoreUnknownValues()).isEqualTo(value.ignoreUnknownValues());
+    assertThat(expected.skipInvalidRows()).isEqualTo(value.skipInvalidRows());
+    assertThat(expected.getTemplateSuffix()).isEqualTo(value.getTemplateSuffix());
   }
 }

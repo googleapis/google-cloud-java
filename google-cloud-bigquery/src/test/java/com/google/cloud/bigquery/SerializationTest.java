@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,10 +19,10 @@ package com.google.cloud.bigquery;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
+import com.google.cloud.PageImpl;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -194,21 +194,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final InsertAllResponse INSERT_ALL_RESPONSE = new InsertAllResponse(ERRORS_MAP);
   private static final FieldValue FIELD_VALUE =
       FieldValue.of(FieldValue.Attribute.PRIMITIVE, "value");
-  private static final QueryResult QUERY_RESULT = QueryResult.newBuilder()
-      .setSchema(TABLE_SCHEMA)
-      .setTotalRows(1L)
-      .setTotalBytesProcessed(42L)
-      .setCursor("cursor")
-      .setPageFetcher(null)
-      .setResults(ImmutableList.<FieldValueList>of())
-      .build();
-  private static final QueryResponse QUERY_RESPONSE = QueryResponse.newBuilder()
-      .setEtag(ETAG)
-      .setJobId(JOB_ID)
-      .setNumDmlAffectedRows(NUM_DL_AFFECTED_ROWS)
-      .setJobCompleted(true)
-      .setResult(QUERY_RESULT)
-      .build();
+  private static final TableResult TABLE_RESULT = new TableResult(Schema.of(), 0L, new PageImpl(null, "", ImmutableList.of()));
   private static final BigQuery BIGQUERY =
       BigQueryOptions.newBuilder().setProjectId("p1").build().getService();
   private static final Dataset DATASET =
@@ -227,19 +213,57 @@ public class SerializationTest extends BaseSerializationTest {
         .setCredentials(NoCredentials.getInstance())
         .build();
     BigQueryOptions otherOptions = options.toBuilder().setProjectId("p2").build();
-    return new Serializable[]{DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
-        DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, TABLE_DEFINITION,
-        EXTERNAL_TABLE_DEFINITION, VIEW_DEFINITION, TABLE_SCHEMA, TABLE_INFO, VIEW_INFO,
-        EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION, COPY_STATISTICS, EXTRACT_STATISTICS,
-        LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR, JOB_STATUS, JOB_ID,
-        COPY_JOB_CONFIGURATION, EXTRACT_JOB_CONFIGURATION, LOAD_CONFIGURATION,
-        LOAD_JOB_CONFIGURATION, QUERY_JOB_CONFIGURATION, JOB_INFO, INSERT_ALL_REQUEST,
-        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_RESPONSE, BIG_QUERY_EXCEPTION,
-        TIME_PARTITIONING, BigQuery.DatasetOption.fields(),
-        BigQuery.DatasetDeleteOption.deleteContents(), BigQuery.DatasetListOption.all(),
-        BigQuery.TableOption.fields(), BigQuery.TableListOption.pageSize(42L),
-        BigQuery.JobOption.fields(), BigQuery.JobListOption.allUsers(), DATASET, TABLE, JOB,
-        options, otherOptions};
+    return new Serializable[] {
+      DOMAIN_ACCESS,
+      GROUP_ACCESS,
+      USER_ACCESS,
+      VIEW_ACCESS,
+      DATASET_ID,
+      DATASET_INFO,
+      TABLE_ID,
+      CSV_OPTIONS,
+      STREAMING_BUFFER,
+      TABLE_DEFINITION,
+      EXTERNAL_TABLE_DEFINITION,
+      VIEW_DEFINITION,
+      TABLE_SCHEMA,
+      TABLE_INFO,
+      VIEW_INFO,
+      EXTERNAL_TABLE_INFO,
+      INLINE_FUNCTION,
+      URI_FUNCTION,
+      COPY_STATISTICS,
+      EXTRACT_STATISTICS,
+      LOAD_STATISTICS,
+      QUERY_STATISTICS,
+      BIGQUERY_ERROR,
+      JOB_STATUS,
+      JOB_ID,
+      COPY_JOB_CONFIGURATION,
+      EXTRACT_JOB_CONFIGURATION,
+      LOAD_CONFIGURATION,
+      LOAD_JOB_CONFIGURATION,
+      QUERY_JOB_CONFIGURATION,
+      JOB_INFO,
+      INSERT_ALL_REQUEST,
+      INSERT_ALL_RESPONSE,
+      FIELD_VALUE,
+      BIG_QUERY_EXCEPTION,
+      TIME_PARTITIONING,
+      TABLE_RESULT,
+      BigQuery.DatasetOption.fields(),
+      BigQuery.DatasetDeleteOption.deleteContents(),
+      BigQuery.DatasetListOption.all(),
+      BigQuery.TableOption.fields(),
+      BigQuery.TableListOption.pageSize(42L),
+      BigQuery.JobOption.fields(),
+      BigQuery.JobListOption.allUsers(),
+      DATASET,
+      TABLE,
+      JOB,
+      options,
+      otherOptions
+    };
   }
 
   @Override

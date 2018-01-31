@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,12 @@ package com.google.cloud.firestore;
 
 import com.google.firestore.v1beta1.DocumentTransform.FieldTransform;
 import com.google.firestore.v1beta1.Write;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 /**
  * A DocumentTransform contains pending server-side transforms and their corresponding field paths.
@@ -28,16 +31,17 @@ import java.util.Map;
 final class DocumentTransform {
 
   private DocumentReference documentReference;
-  private final List<FieldTransform> transforms;
+  private final SortedMap<FieldPath, FieldTransform> transforms; // Sorted for testing.
 
-  private DocumentTransform(DocumentReference documentReference, List<FieldTransform> transforms) {
+  private DocumentTransform(
+      DocumentReference documentReference, SortedMap<FieldPath, FieldTransform> transforms) {
     this.documentReference = documentReference;
     this.transforms = transforms;
   }
 
   static DocumentTransform fromFieldPathMap(
       DocumentReference documentReference, Map<FieldPath, Object> values) {
-    List<FieldTransform> transforms = new ArrayList<>();
+    SortedMap<FieldPath, FieldTransform> transforms = new TreeMap<>();
 
     for (Map.Entry<FieldPath, Object> entry : values.entrySet()) {
       FieldPath path = entry.getKey();
@@ -46,23 +50,23 @@ final class DocumentTransform {
         FieldTransform.Builder fieldTransform = FieldTransform.newBuilder();
         fieldTransform.setFieldPath(path.getEncodedPath());
         fieldTransform.setSetToServerValue(FieldTransform.ServerValue.REQUEST_TIME);
-        transforms.add(fieldTransform.build());
+        transforms.put(path, fieldTransform.build());
       } else if (value instanceof Map) {
-        transforms.addAll(
+        transforms.putAll(
             extractFromMap((Map<String, Object>) value, path, /* allowTransforms= */ true));
       } else if (entry.getValue() instanceof List) {
         // DocumentTransforms cannot be contained in Lists. We still process the List for
         // validation.
-        extractFromArray((List<Object>) entry.getValue(), path);
+        validateArray((List<Object>) entry.getValue(), path);
       }
     }
 
     return new DocumentTransform(documentReference, transforms);
   }
 
-  private static List<FieldTransform> extractFromMap(
+  private static SortedMap<FieldPath, FieldTransform> extractFromMap(
       Map<String, Object> values, FieldPath path, boolean allowTransforms) {
-    List<FieldTransform> transforms = new ArrayList<>();
+    SortedMap<FieldPath, FieldTransform> transforms = new TreeMap<>();
 
     for (Map.Entry<String, Object> entry : values.entrySet()) {
       Object value = entry.getValue();
@@ -72,15 +76,15 @@ final class DocumentTransform {
           FieldTransform.Builder fieldTransform = FieldTransform.newBuilder();
           fieldTransform.setFieldPath(path.getEncodedPath());
           fieldTransform.setSetToServerValue(FieldTransform.ServerValue.REQUEST_TIME);
-          transforms.add(fieldTransform.build());
+          transforms.put(path, fieldTransform.build());
         } else {
           throw FirestoreException.invalidState(
               "Server timestamps are not supported as Array values.");
         }
       } else if (value instanceof Map) {
-        transforms.addAll(extractFromMap((Map<String, Object>) value, path, allowTransforms));
+        transforms.putAll(extractFromMap((Map<String, Object>) value, path, allowTransforms));
       } else if (entry.getValue() instanceof List) {
-        extractFromArray((List<Object>) entry.getValue(), path);
+        validateArray((List<Object>) entry.getValue(), path);
       }
       path = path.getParent();
     }
@@ -88,9 +92,7 @@ final class DocumentTransform {
     return transforms;
   }
 
-  private static List<FieldTransform> extractFromArray(List<Object> values, FieldPath path) {
-    List<FieldTransform> transforms = new ArrayList<>();
-
+  private static void validateArray(List<Object> values, FieldPath path) {
     for (int i = 0; i < values.size(); ++i) {
       Object value = values.get(i);
       path = path.append(FieldPath.of(Integer.toString(i)));
@@ -98,25 +100,27 @@ final class DocumentTransform {
         throw FirestoreException.invalidState(
             "Server timestamps are not supported as Array values.");
       } else if (value instanceof Map) {
-        transforms.addAll(extractFromMap((Map<String, Object>) value, path, false));
+        extractFromMap((Map<String, Object>) value, path, false);
       } else if (value instanceof List) {
-        extractFromArray((List<Object>) value, path);
+        validateArray((List<Object>) value, path);
       }
       path = path.getParent();
     }
-
-    return transforms;
   }
 
   boolean isEmpty() {
     return transforms.isEmpty();
   }
 
-  Write toPb() {
+  Set<FieldPath> getFields() {
+    return Collections.unmodifiableSet(transforms.keySet());
+  }
+
+  Write.Builder toPb() {
     Write.Builder write = Write.newBuilder();
     com.google.firestore.v1beta1.DocumentTransform.Builder transform = write.getTransformBuilder();
-    transform.addAllFieldTransforms(transforms);
+    transform.addAllFieldTransforms(transforms.values());
     transform.setDocument(documentReference.getName());
-    return write.build();
+    return write;
   }
 }

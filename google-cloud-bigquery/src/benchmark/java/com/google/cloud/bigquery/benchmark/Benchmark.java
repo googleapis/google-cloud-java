@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryResponse;
+import com.google.cloud.bigquery.TableResult;
 import java.io.FileInputStream;
 import java.util.List;
 import org.threeten.bp.Clock;
@@ -53,13 +53,13 @@ public class Benchmark {
       }
 
       Instant start = clock.instant();
-      QueryResponse queryResponse =
+      TableResult result =
           bq.query(QueryJobConfiguration.newBuilder(request).setUseLegacySql(false).build());
 
       int rows = 0;
       int cols = 0;
       Duration firstByte = null;
-      for (List<FieldValue> row : queryResponse.getResult().iterateAll()) {
+      for (List<FieldValue> row : result.iterateAll()) {
         rows++;
         if (cols == 0) {
           cols = row.size();
@@ -71,6 +71,7 @@ public class Benchmark {
       }
       Duration total = Duration.between(start, clock.instant());
 
+      assert firstByte != null;
       double firstByteSec = (double) (firstByte.getNano()) / NS_PER_SECOND + firstByte.getSeconds();
       double totalSec = (double) (total.getNano()) / NS_PER_SECOND + total.getSeconds();
 

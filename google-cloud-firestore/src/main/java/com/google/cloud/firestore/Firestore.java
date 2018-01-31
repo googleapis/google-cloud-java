@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 /** Represents a Firestore Database and is the entry point for all Firestore operations */
-public interface Firestore extends Service<FirestoreOptions> {
+public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
 
   /**
    * Gets a {@link CollectionReference} that refers to the collection at the specified path.
@@ -91,4 +91,12 @@ public interface Firestore extends Service<FirestoreOptions> {
    */
   @Nonnull
   WriteBatch batch();
+
+  /**
+   * Closes the gRPC channels associated with this instance and frees up their resources. This
+   * method blocks until all channels are closed. Once this method is called, this Firestore client
+   * is no longer usable.
+   */
+  @Override
+  void close() throws Exception;
 }
