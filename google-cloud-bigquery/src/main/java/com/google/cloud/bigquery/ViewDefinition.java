@@ -16,14 +16,12 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.api.services.bigquery.model.Table;
-import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.util.List;
-import java.util.Objects;
+import javax.annotation.Nullable;
 
 /**
  * Google BigQuery view table definition. BigQuery's views are logical views, not materialized
@@ -32,53 +30,15 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
  */
-public class ViewDefinition extends TableDefinition {
+@AutoValue
+public abstract class ViewDefinition extends TableDefinition {
 
   private static final long serialVersionUID = -8789311196910794545L;
 
-  private final String query;
-  private final List<UserDefinedFunction> userDefinedFunctions;
-  private final Boolean useLegacySql;
-
-  public static final class Builder extends TableDefinition.Builder<ViewDefinition, Builder> {
-
-    private String query;
-    private List<UserDefinedFunction> userDefinedFunctions;
-    private Boolean useLegacySql = false;
-
-    private Builder() {
-      super(Type.VIEW);
-    }
-
-    private Builder(ViewDefinition viewDefinition) {
-      super(viewDefinition);
-      this.query = viewDefinition.query;
-      this.userDefinedFunctions = viewDefinition.userDefinedFunctions;
-      this.useLegacySql = viewDefinition.useLegacySql;
-    }
-
-    private Builder(Table tablePb) {
-      super(tablePb);
-      com.google.api.services.bigquery.model.ViewDefinition viewPb = tablePb.getView();
-      if (viewPb != null) {
-        this.query = viewPb.getQuery();
-        this.useLegacySql = viewPb.getUseLegacySql();
-        if (viewPb.getUserDefinedFunctionResources() != null) {
-          this.userDefinedFunctions = Lists.transform(viewPb.getUserDefinedFunctionResources(),
-              UserDefinedFunction.FROM_PB_FUNCTION);
-        }
-      }
-    }
-
-
-    /**
-     * Sets the query used to create the view.
-     */
-    public Builder setQuery(String query) {
-      this.query = checkNotNull(query);
-      return self();
-    }
-
+  @AutoValue.Builder
+  public abstract static class Builder extends TableDefinition.Builder<ViewDefinition, Builder> {
+    /** Sets the query used to create the view. */
+    public abstract Builder setQuery(String query);
 
     /**
      * Sets user defined functions that can be used by {@link #getQuery()}.
@@ -87,9 +47,9 @@ public class ViewDefinition extends TableDefinition {
      *     Functions</a>
      */
     public Builder setUserDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
-      this.userDefinedFunctions = ImmutableList.copyOf(checkNotNull(userDefinedFunctions));
-      return self();
+      return setUserDefinedFunctionsImmut(ImmutableList.copyOf(userDefinedFunctions));
     }
+
 
 
     /**
@@ -99,9 +59,11 @@ public class ViewDefinition extends TableDefinition {
      *     Functions</a>
      */
     public Builder setUserDefinedFunctions(UserDefinedFunction... userDefinedFunctions) {
-      this.userDefinedFunctions = ImmutableList.copyOf(userDefinedFunctions);
-      return self();
+      return setUserDefinedFunctionsImmut(ImmutableList.copyOf(userDefinedFunctions));
     }
+
+    abstract Builder setUserDefinedFunctionsImmut(
+        ImmutableList<UserDefinedFunction> userDefinedFunctions);
 
     /**
      * Sets whether to use BigQuery's legacy SQL dialect for this query. By default this property is
@@ -111,35 +73,21 @@ public class ViewDefinition extends TableDefinition {
      * <p>If set to {@code null} or {@code true}, legacy SQL dialect is used. This property is
      * experimental and might be subject to change.
      */
-    public Builder setUseLegacySql(Boolean useLegacySql) {
-      this.useLegacySql = useLegacySql;
-      return this;
-    }
+    public abstract Builder setUseLegacySql(Boolean useLegacySql);
 
-    /**
-     * Creates a {@code ViewDefinition} object.
-     */
+    public abstract Builder setType(Type type);
+
+    /** Sets the table schema. */
+    public abstract Builder setSchema(Schema schema);
+
+    /** Creates a {@code ViewDefinition} object. */
     @Override
-    public ViewDefinition build() {
-      return new ViewDefinition(this);
-    }
+    public abstract ViewDefinition build();
   }
 
-  private ViewDefinition(Builder builder) {
-    super(builder);
-    this.query = builder.query;
-    this.useLegacySql = builder.useLegacySql;
-    this.userDefinedFunctions = builder.userDefinedFunctions;
-  }
-
-
-  /**
-   * Returns the query used to create the view.
-   */
-  public String getQuery() {
-    return query;
-  }
-
+  /** Returns the query used to create the view. */
+  @Nullable
+  public abstract String getQuery();
 
   /**
    * Returns user defined functions that can be used by {@link #getQuery()}. Returns {@code null} if
@@ -149,8 +97,11 @@ public class ViewDefinition extends TableDefinition {
    *     </a>
    */
   public List<UserDefinedFunction> getUserDefinedFunctions() {
-    return userDefinedFunctions;
+    return getUserDefinedFunctionsImmut();
   }
+
+  @Nullable
+  abstract ImmutableList<UserDefinedFunction> getUserDefinedFunctionsImmut();
 
   /**
    * Returns whether to use BigQuery's legacy SQL dialect for this query. By default this property
@@ -159,53 +110,34 @@ public class ViewDefinition extends TableDefinition {
    * null} or {@code true}, legacy SQL dialect is used. This property is experimental and might be
    * subject to change.
    */
+  @Nullable
   public Boolean useLegacySql() {
-    return useLegacySql;
+    return getUseLegacySql();
   }
 
-  /**
-   * Returns a builder for the {@code ViewInfo} object.
-   */
-  @Override
-  public Builder toBuilder() {
-    return new Builder(this);
-  }
+  @Nullable
+  abstract Boolean getUseLegacySql();
 
-  @Override
-  ToStringHelper toStringHelper() {
-    return super.toStringHelper()
-        .add("query", query)
-        .add("useLegacySql", useLegacySql)
-        .add("userDefinedFunctions", userDefinedFunctions);
-  }
-
-  @Override
-  public final boolean equals(Object obj) {
-    return obj == this
-        || obj != null
-        && obj.getClass().equals(ViewDefinition.class)
-        && baseEquals((ViewDefinition) obj);
-  }
-
-  @Override
-  public final int hashCode() {
-    return Objects.hash(baseHashCode(), query, userDefinedFunctions);
-  }
+  /** Returns a builder for the {@code ViewInfo} object. */
+  public abstract Builder toBuilder();
 
   @Override
   Table toPb() {
     Table tablePb = super.toPb();
     com.google.api.services.bigquery.model.ViewDefinition viewDefinition =
-        new com.google.api.services.bigquery.model.ViewDefinition().setQuery(query);
-    if (userDefinedFunctions != null) {
-      viewDefinition.setUserDefinedFunctionResources(Lists.transform(userDefinedFunctions,
-          UserDefinedFunction.TO_PB_FUNCTION));
+        new com.google.api.services.bigquery.model.ViewDefinition().setQuery(getQuery());
+    if (getUserDefinedFunctions() != null) {
+      viewDefinition.setUserDefinedFunctionResources(
+          Lists.transform(getUserDefinedFunctions(), UserDefinedFunction.TO_PB_FUNCTION));
     }
-    viewDefinition.setUseLegacySql(useLegacySql);
+    viewDefinition.setUseLegacySql(useLegacySql());
     tablePb.setView(viewDefinition);
     return tablePb;
   }
 
+  static Builder newBuilder() {
+    return new AutoValue_ViewDefinition.Builder().setType(Type.VIEW).setUseLegacySql(false);
+  }
 
   /**
    * Returns a builder for a BigQuery view definition.
@@ -213,7 +145,7 @@ public class ViewDefinition extends TableDefinition {
    * @param query the query used to generate the view
    */
   public static Builder newBuilder(String query) {
-    return new Builder().setQuery(query);
+    return newBuilder().setQuery(query);
   }
 
 
@@ -269,6 +201,16 @@ public class ViewDefinition extends TableDefinition {
 
   @SuppressWarnings("unchecked")
   static ViewDefinition fromPb(Table tablePb) {
-    return new Builder(tablePb).build();
+    Builder builder = newBuilder().table(tablePb);
+    com.google.api.services.bigquery.model.ViewDefinition viewPb = tablePb.getView();
+    if (viewPb != null) {
+      builder.setQuery(viewPb.getQuery()).setUseLegacySql(viewPb.getUseLegacySql());
+      if (viewPb.getUserDefinedFunctionResources() != null) {
+        builder.setUserDefinedFunctions(
+            Lists.transform(
+                viewPb.getUserDefinedFunctionResources(), UserDefinedFunction.FROM_PB_FUNCTION));
+      }
+    }
+    return builder.build();
   }
 }
