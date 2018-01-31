@@ -317,13 +317,10 @@ public class ServiceOptionsTest {
 
   @Test
   public void testValidateProjectId() throws Exception {
-    String validProjectId = "abc-123";
-    String invalidProjectId1 = "abc=123";
-    String invalidProjectId2 = "abc123-";
-    String invalidProjectId3 = "1abc-23";
-    assertThat(ServiceOptions.isValidProjectId(validProjectId)).isTrue();
-    assertThat(ServiceOptions.isValidProjectId(invalidProjectId1)).isFalse();
-    assertThat(ServiceOptions.isValidProjectId(invalidProjectId2)).isFalse();
-    assertThat(ServiceOptions.isValidProjectId(invalidProjectId3)).isFalse();
+    assertThat(ServiceOptions.isValidProjectId("abc-123")).isTrue();
+    assertThat(ServiceOptions.isValidProjectId("abc-123-ab")).isTrue();
+    assertThat(ServiceOptions.isValidProjectId("abc=123")).isFalse();
+    assertThat(ServiceOptions.isValidProjectId("abc123-")).isFalse();
+    assertThat(ServiceOptions.isValidProjectId("1abc-23")).isFalse();
   }
 }

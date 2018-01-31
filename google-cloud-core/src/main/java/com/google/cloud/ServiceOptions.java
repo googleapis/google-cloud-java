@@ -86,7 +86,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private static final RetrySettings NO_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
       .setMaxAttempts(1).build();
 
-  private static final Pattern projectIdPattern = Pattern.compile("^[a-z][a-z0-9-]*[a-z0-9]+$");
+  private static final Pattern projectIdPattern = Pattern.compile("^[a-z]([a-z0-9]*-*)*[a-z0-9]$");
 
   private static final long serialVersionUID = 9198896031667942014L;
 
