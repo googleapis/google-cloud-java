@@ -22,9 +22,6 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.testing.BaseEmulatorHelper;
 import com.google.common.collect.ImmutableList;
-
-import org.threeten.bp.Duration;
-
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -40,11 +37,12 @@ import java.util.UUID;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.threeten.bp.Duration;
 
 /**
- * Utility to start and stop local Google Cloud Datastore process.
- * 
- * Internal testing use only
+ * Utility to start and stop local Google Cloud Datastore emulators.
+ *
+ * <p>This class is unstable.
  */
 @InternalApi
 public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
@@ -185,6 +183,8 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
   /**
    * Starts the local Datastore emulator through {@code gcloud}, downloads and caches the zip file
    * if user does not have {@code gcloud} or a compatible emulator version installed.
+   *
+   * <p>Currently the emulator does not persist any state across runs.
    */
   @Override
   public void start() throws IOException, InterruptedException {
@@ -193,7 +193,10 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
   }
 
   /**
-   * Reset the internal state of the Datastore emulator.
+   * Resets the internal state of the Datastore emulator.
+   *
+   * <p>When running tests, one might {@code reset()} before each test, so earlier tests would not
+   * affect later ones.
    */
   public void reset() throws IOException {
     sendPostRequest("/reset");
@@ -201,6 +204,11 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
 
   /**
    * Stops the Datastore emulator.
+   *
+   * <p>It is important to stop the emulator. Since the emulator runs in its own process, not
+   * stopping it might cause it to become orphan.
+   *
+   * <p>It is not required to call {@link #reset()} before {@code stop()}.
    */
   public void stop(Duration timeout) throws IOException, InterruptedException, TimeoutException {
     sendPostRequest("/shutdown");
