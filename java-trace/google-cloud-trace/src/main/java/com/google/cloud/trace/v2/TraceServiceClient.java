@@ -19,6 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.trace.v2.stub.TraceServiceStub;
+import com.google.cloud.trace.v2.stub.TraceServiceStubSettings;
 import com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest;
 import com.google.devtools.cloudtrace.v2.ProjectName;
 import com.google.devtools.cloudtrace.v2.Span;
@@ -133,7 +134,7 @@ public class TraceServiceClient implements BackgroundResource {
    */
   protected TraceServiceClient(TraceServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((TraceServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
